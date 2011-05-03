@@ -1,0 +1,87 @@
+
+var Chart = Backbone.Model.extend({
+  initialize : function() {
+    this.series = new ChartSeries;
+    if (this.get('type') == 'bezier')
+      new BezierChartView({model : this});
+    else if (this.get('type') == 'horizontal_bar')
+      new HorizontalBarChartView({model : this});
+    else if (this.get('type') == 'vertical_stacked_bar')
+      new VerticalStackedBarChartView({model : this});
+  },
+
+  // @return [ApiResultArray] = [
+  //   [[2010,0.4],[2040,0.6]],
+  //   [[2010,20.4],2040,210.4]]
+  // ]
+  results : function() {
+    return this.series.map(function(serie) { return serie.result(); });
+  },
+  colors : function() {
+    return this.series.map(function(serie) { return serie.get('color'); });
+  },
+  labels : function() {
+    return this.series.map(function(serie) { return serie.get('label'); });
+  },
+  // @return [Float] Only values of the present
+  values_present : function() {
+    return _.map(this.results(), function(result) { return result[0][1]; });
+  },
+  // @return [Float] Only values of the future
+  values_future : function() {
+    return _.map(this.results(), function(result) { return result[1][1]; });
+  },
+  // @return [Float] All possible values. Helpful to determine min/max values
+  values : function() {
+    return _.flatten([this.values_present(), this.values_future()]);
+  },
+  // @return [[Float,Float]] Array of present/future values [Float,Float]
+  value_pairs : function() {
+    return this.series.map(function(serie) { return serie.result_pairs(); });
+  },
+  non_target_series : function() {
+    return this.series
+      .reject(function(serie) { return serie.get('is_target'); });
+  },
+  target_series : function() {
+    return this.series
+      .select(function(serie) { return serie.get('is_target'); });
+  }
+});
+
+
+
+var ChartList = Backbone.Collection.extend({
+  model : Chart,
+
+  initialize : function() {
+    //_.bindAll(this, 'change_chart');
+    //this.bind('add', this.change_chart);
+  },
+
+  change : function(chart) {
+    var old_chart = this.first();
+    if (old_chart != undefined) {
+      this.remove(old_chart);      
+    }
+    this.add(chart);
+  },
+
+  // this should be refactored into events. So we can trigger('loading') or 'loaded'
+  show_loading : function() { $('#chart_loading').show(); },
+  hide_loading : function() { $('#chart_loading').hide(); },
+
+  load : function(chart_id) {
+    if (this.first().get('id')+'' == chart_id + '') {
+      // if chart_id == currently shown chart, skip.
+      return;
+    }
+    window.charts.show_loading();
+    var url = '/output_elements/'+chart_id+'.js?'+timestamp();
+    $.getScript(url, function() { 
+      window.charts.hide_loading();
+      App.call_api('');
+    });
+  }
+});
+window.charts = new ChartList();

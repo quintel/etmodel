@@ -1,0 +1,10 @@
+
+%p 
+  If a GQL statement is defined, the other value is ignored (e.g. start_value: 10, start_value_gql: xyz => start_value is the result of gql-statement xyz)
+
+%div{:style => "width: 60%"}
+  -semantic_form_for [:admin, @input_element] do |form|
+    = form.inputs
+    = form.buttons
+  
+  = link_to "back", admin_input_elements_path

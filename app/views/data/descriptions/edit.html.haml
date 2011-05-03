@@ -1,0 +1,47 @@
+= render 'list'
+
+#content
+  .header
+    Descriptions
+  - semantic_form_for [:data, @description] do |form|
+    - form.inputs do
+      - unless @description.short_content_en.blank?
+        %p
+          %h2 Preview short_content_en
+          = @description.short_content_en.html_safe
+      %h2 Edit
+      = form.inputs :short_content_en
+      %hr
+    
+      - unless @description.content_en.blank?
+        %p
+          %h2 Preview content_en
+          = @description.content_en.html_safe
+      %h2 Edit
+      = form.input :content_en
+      %hr
+
+      - unless @description.short_content_nl.blank?
+        %p
+          %h2 Preview short_content_nl
+          = @description.short_content_nl.html_safe
+      %h2 Edit
+      = form.input :short_content_nl
+      %hr
+
+
+      - unless @description.content_nl.blank?
+        %p
+          %h2 Preview content_nl
+          = @description.content_nl.html_safe
+      %h2 Edit
+      = form.input :content_nl
+      %hr
+
+
+    = form.buttons
+  
+  = link_to "back", :back
+
+
+  = render '/admin/shared/revisions', :versioned => @description

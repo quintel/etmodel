@@ -1,0 +1,64 @@
+#search_results
+  %h2 Publications
+  %table
+    %tr
+      %td.img
+        %img.slide_icon{:src => "http://refman.et-model.com/publications/1540/thumbnail/Agentschap%20NL_20100831_Rapport%20energiecijfers%20kantoren.png"}
+      %td.result
+        = link_to "View references about #{params[:q]} in our reference manager ","http://refman.et-model.com/publications?q=#{params[:q]}",:target=> "_blank"
+
+  - unless @pages.empty?
+    %h2 Pages
+    %table
+      - @pages.each do |result|
+        %tr
+          %td.img
+            %img.slide_icon{:src => "/images/layout/diamond_#{result.controller}.gif"}
+          %td.result
+            %h4= result.search_result.title
+            %p
+              = search_result_description(result)
+              %br
+              = link_to 'Jump to page', :controller => result.controller, :action => result.action
+
+  - unless @input_elements.empty?
+    %h2 Sliders
+    %table
+      - @input_elements.each do |result|
+        - if slide = result.slide
+          %tr
+            %td.img
+              - if path = slide_image_path(slide)
+                %img.slide_icon{:src => path}
+            %td.result
+              %h4= result.search_result.title
+              %p
+                = search_result_description(result)
+                %br
+                = link_to 'Full description', result.description, :class => 'fancybox'
+                |
+                = link_to 'Jump to page', :controller => slide.controller_name, :action => slide.action_name, :slide => slide.name
+
+  - unless @slides.empty?
+    %h2 Slides
+    %table
+      - @slides.each do |result|
+        - slide = result
+        %tr
+          %td.img
+            - if path = slide_image_path(slide)
+              %img.slide_icon{:src => path}
+          %td.result
+            %h4= link_to result.search_result.title, :controller => result.controller_name, :action => result.action_name, :slide => result.name
+            %p
+              = search_result_description(result)
+              %br
+              = link_to 'Full description', result.description, :class => 'fancybox'
+              |
+              = link_to 'Jump to page', :controller => slide.controller_name, :action => slide.action_name, :slide => slide.name
+
+#search_results_from_reference_mananager
+  - if [@pages, @input_elements, @slides].flatten.empty?
+    %p
+      %strong No results found for: 
+      %em= @query

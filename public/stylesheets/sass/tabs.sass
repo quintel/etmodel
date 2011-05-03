@@ -1,0 +1,128 @@
+#nav
+  position: absolute
+  width: 100%
+  top: 100px
+  z-index: 100
+  overflow: hidden
+  
+  .nav-holder
+    width: 960px
+    margin: 0 auto
+
+  .nav-holder-inner
+    min-width: 960px
+    max-width: 100%
+
+  ul
+    list-style: none
+    margin: 20px 0 0 147px
+    padding: 0
+
+    li
+      float: left
+
+      a
+        background: url(/images/layout/bg-nav-l.gif) no-repeat
+        float: left
+        color: #fff
+        text-decoration: none
+        cursor: pointer
+
+        &:hover
+          background-position: 0 -26px
+          color: #000
+
+      &.active a
+        background-position: 0 -26px
+        color: #000
+
+      a
+        span
+          float: left
+          background: url(/images/layout/bg-nav-r.gif) no-repeat 100% 0
+          height: 20px
+          padding: 8px 10px 0
+          width: 99px
+          text-align: center
+
+        &:hover span
+          background-position: 100% -26px
+
+      &.active a span
+        background-position: 100% -26px
+
+      a.demand, a.costs, a.supply, a.policy
+        em
+          background: url(/images/layout/ico-demand.gif) no-repeat
+          padding: 2px 0 0 29px
+          font-style: normal
+          
+      a
+        &.home
+          background: url(/images/layout/btn-home.gif) no-repeat !important
+          width: 52px
+          height: 26px
+          margin: 0 6px 0 0
+
+        &.demand em
+          background: url(/images/layout/ico-demand.gif) no-repeat
+
+        &.costs em
+          background: url(/images/layout/ico-demand.gif) no-repeat
+
+#nav.nav-inner
+  background: url(../images/layout/bg-nav-inner.gif) repeat-x
+  height: 42px
+
+  ul
+    font-size: 13px
+    margin-top: 13px
+
+    li
+      padding: 0 13px 0 14px
+
+      a
+        color: #333
+        border: 2px solid #dfe8f3
+        padding: 2px 25px 5px 26px
+        margin: 5px 0 0
+        background: #dfe8f3
+
+      a:hover
+        background: #fff
+        margin: 0
+        padding: 7px 25px 6px 26px
+        
+    li.active a
+      background: #fff
+      margin: 0
+      padding: 7px 25px 6px 26px
+
+#nav.nav-admin
+  background: url(../images/layout/bg-nav-inner.gif) repeat-x
+  height: 42px
+
+  ul
+    font-size: 13px
+    margin: 13px auto 0 auto
+    width:  840px
+
+    li
+      padding: 0 3px 0 3px
+
+      a
+        color: #333
+        border: 2px solid #dfe8f3
+        padding: 2px 5px 5px 5px
+        margin: 5px 0 0
+        background: #dfe8f3
+
+      a:hover
+        background: #fff
+        margin: 0
+        padding-top: 7px
+        
+    li.active a
+      background: #fff
+      margin: 0
+      padding: 7px 25px 6px 26px

@@ -1,0 +1,16 @@
+#sidebar
+  %span &nbsp;
+
+- form_tag settings_path, :method => :put do
+
+  %table
+    %tbody
+      %tr
+        %td.label End year
+        %td.value= text_field_tag :end_year, Current.scenario.end_year
+        %td.descr The end year of the scenario.
+
+    %tfoot
+      %tr
+        %td &nbsp
+        %td= submit_tag 'save'

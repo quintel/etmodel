@@ -1,0 +1,18 @@
+#panel.panel.panel_tree{:style => "width: 300px; float: left"}
+  .header
+    %div
+      -#%label#search-label{:for => 'search'} Search
+      %table
+        %tr
+          %td
+            %input#search{:'data-search_scope' => 'areas'}
+
+  .tree
+    = cache("data/#{params[:blueprint_id]}/#{params{:region_code}}/areas/_list/") do
+      %ul
+        - Area.all.each do |area|
+          %li.level_0{:'data-search' => area.region_code}
+            .content
+              %h1
+                %a{:href => data_area_path(:id => area.id)}
+                  %span.key= area.region_code

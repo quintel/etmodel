@@ -1,0 +1,39 @@
+#home
+  #start
+    - if has_update_statements?
+      %h1= t("Welcome back")
+    - else
+      %h1= t("Start right away")
+      %p.nodownloads= t("No downloads")
+
+ 
+    - if has_update_statements?    
+      %a{:id=>"continue_scenario_button", :class=>"style_button", :href =>  last_etm_path(:include_action => false),:alt=>"continue",:title=>"continue"}
+        .button_left
+        .button_center
+          %span= t('continue with current scenario').capitalize
+        .button_right
+    %a{:id=>"new_scenario_button", :class=>"style_button", :href =>"#",:alt=>"new scenario",:title=>"new scenario"}
+      .button_left
+      .button_center
+        %span= t('Start a new scenario').capitalize
+      .button_right
+    %ul#new_scenario_form
+      
+      =form_tag root_path do
+        = render "pages/root_page/country_select"
+        = render "pages/root_page/year_select"
+        = render "pages/root_page/level_select"
+        = render 'pages/root_page/start_button'
+    %a{:id=>"existing_scenario_button", :class=>" style_button", :href =>"#",:alt=>"continue",:title=>"continue"}
+      .button_left
+      .button_center
+        %span= t('load a scenario').capitalize
+      .button_right
+    %ul#existing_scenario_form
+      = render 'pages/root_page/scenario_select_form'
+          
+
+  =render 'pages/root_page/movies'
+    
+.clear

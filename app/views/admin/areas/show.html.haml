@@ -1,0 +1,24 @@
+- title "Area"
+
+%h3 In area groups:
+%p= @area.areagroups.map{|x| "#{x.name}"}
+  
+%h3 Info:
+%table{table_defaults}
+  %thead
+    - Area.column_names.each do |column_name|
+      %tr{cycles}
+        %td= column_name
+        %td= @area.send(column_name)
+
+%p
+  = link_to "Edit", edit_admin_area_path(@area)
+  |
+  = link_to "View All", admin_areas_path
+
+
+= render "/admin/shared/revisions", :versioned => @area
+
+%h3 Carrier Datas
+
+= render "admin/carrier_datas/carrier_datas", :carrier_datas =>  @area.carrier_datas

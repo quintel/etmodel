@@ -1,0 +1,162 @@
+= link_to 'next step', optimizer_optimizer_path(@optimizer.id)
+AutoReload:
+= link_to 'on', optimizer_optimizer_path(@optimizer.id, :autoreload => 1)
+= link_to 'off', optimizer_optimizer_path(@optimizer.id)
+
+= link_to "save as scenario", new_scenario_path
+
+- if @optimizer.mission.all_targets_met?
+  %h1 Success! All targets met.
+  %br
+  %br
+  %br
+
+-if params[:show_sliders_table]
+  %h1 InputElement
+
+  - form_tag "/optimizer/optimizers/#{@optimizer.id}", :method => :put do
+    %table{:border => 1, :style => "text-align: right", :cellpadding => 3, :class=>"zebra"}
+      %thead
+        %tr
+          %th{:colspan => 4}
+          %th{:colspan => 4} Range of values
+          %th This Step
+          %th{:colspan => 2} Modify
+        %tr
+          %th
+          %th Share group
+          %th ID
+          %th Name
+          %th Min
+          %th Max
+          %th Start
+          %th Step size
+          %th Current Value
+          %th Step Size
+          %th Current Value
+      %thead
+        - @slider_controls.each do |slider_control|
+          - input_element = slider_control.input_element
+          %tr{:style => (slider_control == @current_step.current_slider ? "background: #ccc" : nil), :class=>cycle("odd","even")}
+            %td= check_box_tag "input_element[#{input_element.id}][include]", 1, :checked => true
+            %td
+              = input_element.share_group
+              - if input_element.remainder?
+                %strong R
+            %td= input_element.id
+            %td{:style => "text-align: left"}= input_element.name
+            %td= input_element.min_value.round(2)
+            %td= input_element.max_value.round(2)
+            %td= input_element.start_value
+            %td= slider_control.step_value
+            %td
+              %strong= slider_control.current_step_value.andand.round(3)
+            %td= text_field_tag "input_element[#{input_element.id}][step_value]", slider_control.step_value
+            %td= text_field_tag "input_element[#{input_element.id}][current_step_value]", slider_control.current_step_value.andand.round(3)
+    = submit_tag 'Update'
+
+%h1 Gquery / Results
+
+%table{:border => 1, :style => "text-align: right", :cellpadding => 3, :class=>"zebra"}
+  %thead
+    %tr
+      %th
+      %th ID
+      %th Key
+      %th Weight
+      %th= Current.scenario.start_year
+      %th= Current.scenario.end_year
+      %th Target
+      %th Fitness
+
+      %th Target
+      %th Weight
+
+  %tbody
+    - @gquery_controls.each do |gquery_control|
+      - gquery = gquery_control.gquery
+      %tr{:class=>cycle("odd","even")}
+        %td= check_box_tag "gquery[#{gquery.id}][include]", 1, :checked => true
+        %td= gquery.id
+        %td= gquery.key
+        %td= gquery_control.weight
+        - result =  Current.gql.query(gquery.query)
+        %td= result.present_value.round(5)
+        %td= result.future_value.round(5)
+        %td
+          %strong= gquery_control.target.round(5)
+        %td= gquery_control.fitness.andand.round(5)
+        %td= text_field_tag "gquery[#{gquery_control.id}][target]", gquery_control.target
+        %td= select_tag "gquery[#{gquery_control.id}][weight]", options_for_select((1..10).to_a.map{|i| [i,i]}, gquery_control.weight.to_i )
+
+
+= submit_tag 'Update'
+
+
+%h1 Current step
+
+%table.zebra
+  %tr
+    %td Fitness
+    %td= @optimizer.mission.fitness
+  %tr
+    %td Step
+    %td= @current_step.id
+  %tr
+    %td Slider
+    %td= @current_step.current_slider.andand.input_element.name
+  %tr
+    %td Direction
+    %td= @current_step.direction_of_slider
+%table
+  -#%tr
+    %td Fitness
+    %td= @current_step.slider_up_fitness
+    %td= @current_step.slider_down_fitness
+    %td= @current_step.steps.last.andand.fitness
+  -#%tr
+    %td Value
+    %td= @current_step.slider_up_setting.value
+    %td= @current_step.slider_down_setting.value
+    %td
+
+%h1 Progress
+
+%table.zebra
+  %thead
+    %tr
+      %th Step
+      %th Fitness
+      - @optimizer.gquery_controls.each do |gquery_control|
+        %th= gquery_control.gquery.key
+      %th Current element
+      %th Slider 1
+      %th
+      %th
+      %th Slider 2
+      %th
+      %th
+
+  %tbody
+    - @optimizer.steps.reverse.each do |step|
+      %tr{:class=>cycle("odd","even")}
+        %td= step.id
+        %td= step.mission_fitness.andand.round(5)
+        - @optimizer.gquery_controls.each do |gquery_control|
+          %td= step.gquery_values[gquery_control].andand.round(5)
+        %td= step.current_slider.input_element.name
+        - step.step_settings.values.select(&:has_action?).each do |setting|
+          %td
+            = setting.control.input_element.name
+          %td
+            = setting.direction
+            = setting.step_value
+          %td
+            = setting.value.round(2)
+
+- @optimizer.save
+- @optimizer.load_last_step
+
+- if params[:autoreload]
+  %script
+    window.location.reload( false );

@@ -1,0 +1,9 @@
+= render "list"
+
+
+
+#content
+  - semantic_form_for [:data, @carrier_data] do |f|
+    = f.error_messages
+    = f.inputs :cost_per_mj, :co2_per_mj, :sustainable, :typical_production_per_km2
+    = f.buttons

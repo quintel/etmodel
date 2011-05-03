@@ -1,0 +1,46 @@
+#transitionprize
+  #start
+
+    %h1=t("transition_prize.root.title")
+    %p
+      =t("transition_prize.root.description").html_safe
+    
+    
+    - if !current_user
+      = form_tag transition_price_intro_path do
+      
+        %ul
+          = render 'pages/root_page/start_button', :level => '&nbsp;'.html_safe, :label_text => t('transition_prize.root.start_button'), :disable_continue => true
+    %ul
+      %li
+        
+        - if !current_user
+          %h3 
+            %span
+            = t("transition_prize.root.login")    
+            %br
+        
+          - form_for(@user_session, :url => {:action => 'login_and_load_scenario'}) do |form|
+            %ul{:class => "login"}
+              %li
+                %label="#{t('user.email')}:"
+                = form.text_field :email
+                .clear
+              %li
+                %label="#{t('user.password')}:"
+                = form.password_field :password
+                .clear
+              %li 
+                = submit_tag t('transition_prize.root.login_button'), :class => 'button'
+            
+        - else
+          %h3 
+            = t("transition_prize.root.logged_in")    
+            %br
+          %p= t('transition_prize.root.logged_in_as', :email => current_user.email)
+          %p= link_to(t('transition_prize.root.go_further'), :action => 'load_scenario')
+            
+
+  = render 'pages/root_page/movies'
+    
+.clear

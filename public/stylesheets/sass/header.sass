@@ -1,0 +1,93 @@
+body#outside-model
+  #header
+    height: 100px
+
+#header
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 150px
+  background: url(../images/layout/bg-header-inner.gif) repeat-x
+  z-index: 101
+  img 
+    background: none !important
+    background-color: #63A1C9
+  .frame
+    position: relative
+    z-index: 102
+    height: 77px
+    min-width: 980px
+    max-width: 1259px
+    margin: 0 auto
+    padding: 0
+    width: 100%
+
+  .sub-nav
+    float: right
+    list-style: none
+    margin: 42px 0 0 0
+    padding: 0
+    overflow: hidden
+    width: 445px
+
+
+    li
+      float: left
+      background: url(../images/layout/separator-01.gif) no-repeat 0 3px
+      font-size: 13px
+      font-weight: normal
+      padding: 0
+      margin: 0 0 0 -2px
+
+      a
+        color: #fff
+        text-decoration: none
+
+        &:hover
+          text-decoration: underline
+  .header_logo
+    overflow: hidden
+    float: left
+    margin-top: 7px
+    margin-left: 20px
+#searchform
+  float: right
+  margin: 0
+  padding: 0 10px 0 0
+  display: inline
+  font-size: 12px
+
+  fieldset
+    display: inline
+
+  .btn-search
+    float: left
+    background: url(/images/layout/btn-seaech.gif) no-repeat
+    width: 18px
+    height: 22px
+    border: none
+    padding: 0
+    
+  .text
+    float: left
+    background: url(/images/layout/bg-search.gif) no-repeat right
+    width: 132px
+    height: 22px
+
+    input
+      background: none
+      border: none
+      padding: 0 3px
+      float: left
+      width: 136px
+      margin: 4px 0 0
+      color: #bababa
+      outline: 0
+
+.black_layout
+  #searchform
+    .btn-search
+      background: url(/images/layout/btn-search-black.gif) no-repeat
+    .text
+      background: url(/images/layout/bg-search-black.gif) no-repeat right

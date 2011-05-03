@@ -1,0 +1,20 @@
+= render "list"
+
+
+#content
+  .header
+    New BlueprintLayout
+
+  - form_for @blueprint_layout, :url => data_blueprint_layouts_path do |f|
+    %table
+      %tbody
+
+        %tr
+          %th Key
+          %td= f.text_field :key
+
+      %tfoot
+        %tr
+          %td
+          %td= f.submit 'save'
+          

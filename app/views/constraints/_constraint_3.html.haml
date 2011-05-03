@@ -1,0 +1,16 @@
+.constraint_box_content
+  -#%h1.tal{:style => "font-size: 14px"} Foreign Dependence
+  - @output_element = OutputElement.find(47)
+  - @output_element2 = OutputElement.find(76)
+  %p.tal
+    =t("constraint.dependence")
+  #charts_wrapper{:style=>"width:580px;float:left"}
+    %div{ :id => "#{dom_id(@output_element)}",:style=>'height:250px;width:290px;float:left'}
+    %div{ :id => "#{dom_id(@output_element2)}",:style=>'height:250px;width:290px;float:left'}
+
+    %script=@output_element2.call_jqplot_function
+    %script=@output_element.call_jqplot_function
+  #legend{:style=>"width:540px;float:left;clear:both"}
+    -@output_element.output_element_series.each do |serie|
+      %div{:style=>"clear:both;float:left;margin-top:5px;margin-right:5px;width:15px;height:12px;background-color:#{serie.converted_color}"}
+      %span{:style=>"float:left;font-size:12px;"}= t("serie.#{serie.label}")

@@ -1,0 +1,23 @@
+embed_assets: on
+package_path: 'packages'
+
+javascripts:
+  main:
+    - public/javascripts/jquery-1.4.4.min.js
+    - public/javascripts/jquery_plugins/jquery.class.js
+
+  jquery_plugins:
+    - public/javascripts/jquery_plugins/jquery.ui.core.js
+    - public/javascripts/jquery_plugins/jquery.ui.widget.js
+    - public/javascripts/jquery_plugins/jquery.ui.accordion.js
+    - public/javascripts/jquery_plugins/jquery.slider.js
+    - public/javascripts/jquery_plugins/jquery.superfish.js
+    - public/javascripts/jquery_plugins/jquery.jqplot.js
+    - public/javascripts/jquery_plugins/jquery.cookie.js
+    - public/javascripts/jquery_plugins/jquery.effects.core.js
+    - public/javascripts/jquery_plugins/jquery.qtip-1.0.0-rc3.min.js
+    - public/javascripts/jquery_plugins/jquery.fancybox-1.3.1.js
+    - public/javascripts/jquery_plugins/jquery.easing-1.3.js
+    - public/javascripts/jquery_plugins/jquery.cycle.js
+    - public/javascripts/jquery_plugins/jquery.class.js
+    - public/javascripts/jquery_plugins/jquery.highlight.js

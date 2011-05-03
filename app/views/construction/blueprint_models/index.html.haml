@@ -1,0 +1,8 @@
+#content
+  .header
+    Blueprint
+    
+
+  %ul
+    - @blueprint_models.each do |blueprint_model|
+      %li= link_to blueprint_model.title, construction_converters_path(:blueprint_model_id => blueprint_model)

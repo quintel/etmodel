@@ -1,0 +1,41 @@
+!!! Strict
+%html{ :xmlns => "http://www.w3.org/1999/xhtml", :class => "#{"black_layout" if is_transitionprice?}"}
+  %head
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
+    %meta{:description => "#{t('meta.description')}" }
+    %title
+      = t("meta.title")
+    %link{ :href => "/stylesheets/all.css", :rel => "stylesheet", :type => "text/css" }    
+    /
+      [if lt IE 8]><link rel="stylesheet" type="text/css" href="/stylesheets/ie.css" /><![endif]
+      [if lt IE 8]><link rel="stylesheet" type="text/css" href="/stylesheets/ie.slider.css" /><![endif]
+
+    = stylesheet_link_tag 'all',"jquery.fancybox-1.3.1"
+    = sprocket_layout_init :pages
+
+    = render "layouts/etm/javascript_unselectable"
+    
+    
+    %meta{:name=>"google-site-verification", :content=>"ILDmdAxQTYxcPyy969IJXq7YlXKzhGFfGCHqFi8fiWA"}
+  %body#outside-model
+    #wrapper
+      
+      #content
+        - if is_transitionprice?
+          - rounded_corners
+        - flash_message
+        = yield
+        - if is_transitionprice?
+          #footer
+            = render "layouts/etm/footer"
+            .clear
+          .clear          
+      #header{:style => ("height: 150px" if @render_tabs)}
+        = render "layouts/etm/header"
+      - unless is_transitionprice?
+        #footer
+          = render "layouts/etm/footer"
+        %a{:id =>'epn_module',:href=>'/pages/education',:class => "side_tabs #{I18n.locale}"}
+    = render "layouts/etm/ga"
+    %a{:id =>'feedback-tab',:href=>'/feedback',:class => "select_chart side_tabs #{I18n.locale}"}
+    %a{:id =>'refman-tab',:href=>'http://refman.et-model.com',:class => "side_tabs #{I18n.locale}",:target=>"_blank"}

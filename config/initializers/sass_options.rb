@@ -1,0 +1,1 @@
+Sass::Plugin.add_template_location('vendor/javascripts/qislider/stylesheets')

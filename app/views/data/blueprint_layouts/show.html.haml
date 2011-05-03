@@ -1,0 +1,14 @@
+= sprocket_layout_init :senkey
+= javascript_include_tag 'underscore.min' # underscore does not work with sprockets :(
+
+#blueprint_layout
+  %ul
+    %li Shift + click: highlight links
+    %li ALT + Shift + click: hide converter
+    %li Double-click on converter to open details in new converter
+    %li Search for converters using id (with #) using Ctrl+F. For low ids, finish search with a ".", e.g. #30.
+
+  = render 'graph_controls'
+  = render 'initialize_graph'
+
+

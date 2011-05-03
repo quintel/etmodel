@@ -1,0 +1,86 @@
+
+%fieldset{:id => "signin_menu", :class => "topnav header_menu"} 
+  - @user_session = UserSession.new
+  = form_for(@user_session) do |f|
+    = f.error_messages
+    %p
+      = f.label :email, t("user.email") 
+      %br 
+      = f.text_field :email 
+
+    %p
+      = f.label :password, t("user.password")
+      %br
+      = f.password_field :password
+    %p
+      = f.label :remember_me, t("user.remember")
+      %br
+      = f.check_box :remember_me, :checked => "checked"
+    
+    
+    = f.submit 'Login'
+  %a{:href => new_user_path}= "#{t("or")} #{t("header.create account")}"
+  
+#settings_menu.header_menu.topnav
+  %li
+    #flag
+      %img{:src => "/images/icons/#{Current.scenario.country}.png"}
+      = Current.scenario.region if Current.scenario.region != "nl"
+    = t("header.Current country")+":"
+  %li
+    #year
+      = Current.scenario.end_year
+    = t("header.Current end year")+":"
+
+  %li
+    = form_tag "/scenario/change_complexity", :method => :put do
+      - options = options_for_select [[t("Easy").downcase,1],[t("Medium").downcase,2],[t("Advanced").downcase,3]], Current.scenario.complexity
+      = select_tag("scenario[complexity]", options, { :index => nil, :onchange => 'this.form.submit()'})
+
+    = t("header.Current level")+":" 
+
+  %li
+    = form_tag "/application/set_locale" do
+      = select_tag("locale", options_for_select(["en", "nl"], I18n.locale.to_s), { :index => nil, :onchange => 'this.form.submit()'})
+    = t("header.Current language")+":" 
+ 
+
+  %li
+    - if Current.scenario && Current.scenario.is_scenario_type?(:transition_price)
+      =link_to t("header.Save scenario"), edit_scenario_path
+      =link_to t("header.Reset scenario"), reset_to_preset_scenario_path, :method => :get, :confirm => t("scenario.reset_to_preset_confirmation")
+      =link_to t("transition_prize.header.intro_link"), transition_price_intro_path(:step => 2)
+      
+    - else
+      %a{:href => new_scenario_path}= t("header.Save scenario")
+      %a{:href => scenarios_path}= t("header.Load scenario")
+      %a{:href => reset_scenario_path}= t("header.Reset scenario")
+      - if Current.scenario.use_peak_load
+        %label
+          = check_box :track_peak_load, :settings, :onchange => 'toggle_peak_load_tracking()', :checked => Current.setting.track_peak_load
+          = t('header.notify_of_grid_investments')
+
+- unless is_transitionprice?
+  #information_menu.header_menu.topnav
+    %li
+      %a{:href => "/about"}= t("header.About QI")
+    %li  
+      %a{:href => partners_path}= t("header.Partners")
+    %li  
+      %a{:href => "/education"}= t("header.Education")
+
+    %li  
+      %a{:href => "/testimonials"}= t("header.Testimonials")
+    %li  
+      %a{:href => "/recommendations"}= t("header.Recommendations")
+    %li  
+      %a{:href => "/press_releases"}= t("header.Press releases")
+    %li  
+      %a{:href => "/units"}= t("header.Units used")
+    %li  
+      %a{:href => "/optimize"}= t("header.Optimize")
+    %li  
+      %a{:href => "/privacy_statement"}= t("header.Privacy statement")
+    %li  
+      %a{:href => "/disclaimer"}= t("header.disclaimer")
+

@@ -1,0 +1,9 @@
+%li
+  %h3
+    = t("Choose level")
+  - all_views = Current.scenario.all_levels.map{|n|[t("views.#{n.last}"), n.first]}
+  - if (Rails.env.development? || Rails.env.test?)
+    - options = all_views
+  - else
+    - options = all_views[0..2]
+  = select_tag :complexity, options_for_select(options,3), :style=>"width:142px"

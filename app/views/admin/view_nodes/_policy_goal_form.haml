@@ -1,0 +1,3 @@
+- form_tag "/admin/view_nodes/update/#{@view_node.id}" do |f|
+  = select_tag "policy_goals", options_from_collection_for_select(PolicyGoal.all, :id,:key, @view_node.policy_goals.map(&:id)),:multiple => true
+  = submit_tag

@@ -1,0 +1,13 @@
+%table
+  %tr
+    -@column_names.each do |column_name|
+      %th.tal=column_name.humanize
+
+  -@sidebar_items.each do |sidebar_item|
+    %tr{cycles}
+      -@column_names.each do |column_name|
+        %td
+          %a{:href => edit_admin_sidebar_item_path(sidebar_item.id), :style => "color: #000; text-decoration: none;"}
+            =sidebar_item.send(column_name)
+%a{:href => new_admin_sidebar_item_path}
+  new category

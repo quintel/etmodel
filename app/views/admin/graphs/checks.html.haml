@@ -1,0 +1,100 @@
+%h1 Electricity
+
+- left_ids = [236, 240,241,242, 237, 250,260 ]
+
+- left_elements = OutputElementSerie.where(:id => left_ids)
+- right_elements = OutputElementSerie.where(:output_element_id => 41)
+
+- [left_elements, right_elements].each do |elements|
+  - left_total_now = 0
+  - left_total_fut = 0
+  %table
+    %thead
+      %tr
+        %th Label
+        %th Now
+        %th Future
+    - elements.each do |el|
+      %tr
+        %td== #{el.label} (#{el.id})
+        -left_total_now += Current.gql.query_present(el.key)
+        -left_total_fut += Current.gql.query_future(el.key)
+        %td.tar= (Current.gql.query_present(el.key) / 10**9).round(2)
+        %td.tar= (Current.gql.query_future(el.key) / 10**9).round(2)
+      %tr
+        %td{:colspan => 3}
+          %small= el.key
+    %tfoot
+      %tr
+        %th Total
+        %th= (left_total_now / 10**9).round(2)
+        %th= (left_total_fut / 10**9).round(2)
+
+
+
+%h1 Transport
+
+- left_ids = [204, 205, 206, ]
+
+- left_elements = OutputElementSerie.where(:id => left_ids)
+- right_elements = OutputElementSerie.where(:output_element_id => 43)
+
+- [left_elements, right_elements].each do |elements|
+  - left_total_now = 0
+  - left_total_fut = 0
+  %table
+    %thead
+      %tr
+        %th Label
+        %th Now
+        %th Future
+    - elements.each do |el|
+      %tr
+        %td== #{el.label} (#{el.id})
+        -left_total_now += Current.gql.query_present(el.key)
+        -left_total_fut += Current.gql.query_future(el.key)
+        %td.tar= (Current.gql.query_present(el.key) / 10**9).round(2)
+        %td.tar= (Current.gql.query_future(el.key) / 10**9).round(2)
+      %tr
+        %td{:colspan => 3}
+          %small= el.key
+    %tfoot
+      %tr
+        %th Total
+        %th= (left_total_now / 10**9).round(2)
+        %th= (left_total_fut / 10**9).round(2)
+
+
+%h1 Heat
+
+
+
+- left_ids = [31, 32, 234,   232, 233,   248, 249,   258, 259]
+
+- left_elements = OutputElementSerie.find(left_ids)
+- right_elements = OutputElementSerie.where(:output_element_id => 42)
+
+- [left_elements, right_elements].each do |elements|
+  - left_total_now = 0
+  - left_total_fut = 0
+  %table
+    %thead
+      %tr
+        %th Label
+        %th Now
+        %th Future
+    - elements.each do |el|
+      %tr
+        %td== #{el.label} (#{el.id})
+        -left_total_now += Current.gql.query_present(el.key)
+        -left_total_fut += Current.gql.query_future(el.key)
+        %td.tar= (Current.gql.query_present(el.key) / 10**9).round(2)
+        %td.tar= (Current.gql.query_future(el.key) / 10**9).round(2)
+      %tr
+        %td{:colspan => 3}
+          %small= el.key
+    %tfoot
+      %tr
+        %th Total
+        %th= (left_total_now / 10**9).round(2)
+        %th= (left_total_fut / 10**9).round(2)

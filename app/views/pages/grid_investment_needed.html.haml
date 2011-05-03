@@ -1,0 +1,14 @@
+-#    params[:parts] = "lv,mv,hv" is input
+-parts = params[:parts].split(",") if params[:parts]
+
+#grid_investment_needed_container{:style=>"width: 960px;height:700px"}
+  %h1=t('grid_investment.header')
+  #image_holder{:style => "position: relative"}
+    %img{ :src => "/images/popups/img_elec_network_#{I18n.locale}.jpg" }
+      -if parts
+        -parts.each do |part|
+          %div{:id => "locator_#{part}", :class => "locator"}
+            %img{:src => "/images/popups/network_investment_needed_locator_#{I18n.locale}.png"}
+  %p=t('grid_investment.body').html_safe
+  %br
+  %a{:id => "disable_peak_load_tracking", :href => "#" ,:class => "no_target"}= t('grid_investment.stop_bugging')

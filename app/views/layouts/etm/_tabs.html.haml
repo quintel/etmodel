@@ -1,0 +1,7 @@
+#nav.nav-inner
+  .nav-holder.nav-holder-inner
+    %ul
+      - if Current.view
+        - tab("Home",'')
+        - Current.view.tabs.each do |tab|
+          - tab(tab.key)

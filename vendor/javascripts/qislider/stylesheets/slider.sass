@@ -1,0 +1,209 @@
+$slider_image_location: '/images/slider'
+
+.slider-holder
+  margin-top: 10px
+  margin-bottom: 10px
+
+.slider-button
+  cursor: pointer
+  z-index: 10
+  position: absolute
+  width: 20px
+  padding: 2px
+  height: 20px
+  
+.slider
+  div
+    -webkit-user-select: none
+    -moz-user-select: none
+  
+.slider-input
+  position: absolute
+  cursor: pointer
+  font-family: arial
+  padding-top: 0px
+  font-size: 12px
+  width: 75px
+  right: 0px
+  input
+    width: 30px
+    float: left
+  .value
+    font-size: 12px
+    width: 65px
+    text-align: right
+  .edit
+    float: left
+    height: 5px
+    width: 5px
+    background-color: red
+  input[type='text']
+    width: 30px
+    border: 1px solid #999
+
+.slider
+  
+  -moz-user-select: none
+  -webkit-user-select: none
+  -webkit-user-drag: none
+  width: 160px
+  height: 25px
+  position: relative
+  -moz-user-select: none
+  -khtml-user-select: none
+  
+  user-select: none
+
+  .slider-bar
+    background: url('#{$slider_image_location}/slider-bar.png')
+    position: absolute
+    left: 25px
+    width: 110px
+    height: 30px
+    margin-top: -12px
+    background-repeat: no-repeat
+    background-position: 0px 12px
+    cursor: pointer
+  .slider-toggle-button
+    top: 12px
+    cursor: pointer
+    left: 80px
+    background: url('#{$slider_image_location}/slider-toggle-button.png') no-repeat
+  .slider-button-over
+    background: url('#{$slider_image_location}/slider-toggle-button-over.png') no-repeat
+  .slider-button-active
+    background: url('#{$slider_image_location}/slider-toggle-button-active.png') no-repeat
+
+  .slider-left-button
+    left: 0px
+    // background: url('#{$slider_image_location}/slider-left-button.png')    
+  .slider-left-button-over
+    background: url('#{$slider_image_location}/slider-left-button-over.png') no-repeat
+  .slider-left-button-active
+    background: url('#{$slider_image_location}/slider-left-button-active.png') no-repeat  
+  .slider-right-button
+    left: 140px
+    //background: url('#{$slider_image_location}/slider-right-button.png')
+  .slider-right-button-over
+    background: url('#{$slider_image_location}/slider-right-button-over.png') no-repeat
+  .slider-right-button-active
+    background: url('#{$slider_image_location}/slider-right-button-active.png') no-repeat
+
+
+
+  .municipality-toggle
+    background: url('#{$slider_image_location}/slider_red.png') no-repeat
+    
+.slider-disabled
+  .slider-toggle-button
+    cursor: pointer
+    left: 80px
+    background: url('#{$slider_image_location}/slider-disabled.png')
+    cursor: default
+  .slider-bar
+    cursor: default
+  
+.slider-advanced
+  text-align: left
+  position: relative
+  margin-bottom: 1px
+  clear: both
+  .slider-elements
+    width: 290px
+    float: right
+  .toprow
+    position: relative
+    height: auto
+  .name
+    font-size: 12px
+    padding-left: 3px
+    cursor: pointer
+    padding-top: 3px
+    right: 300px
+    .text
+      color: #191919
+      float: left
+      width: 30%
+    .label
+      float: left
+      font-size: 10px
+      color: #ccc
+      margin-left: 10px
+      position: absolute
+      right: 290px
+    
+  .slider
+    float: left
+    left: 5px
+    top: 3px
+    position: relative
+  .slider-reset-button
+    float: left
+    top: 2px
+    position: relative
+    left: 0px
+    background: url('#{$slider_image_location}/slider-reset.gif') no-repeat
+    background-position: -5px 0px
+    width: 20px
+    height: 20px
+  .slider-input
+    float: left
+    left: 20px
+    position: relative
+    width: 80px
+    margin-top: 3px
+  .slider-reset-button-over  
+  .slider-reset-button-active
+
+  .slider-down-button
+    position: relative
+    float: left
+    left: 7px
+    top: 3px
+    background: url('#{$slider_image_location}/slider-down-button.png')  no-repeat
+    width: 20px
+    background-position: 0px 0px
+    
+  .slider-down-button-over
+    background: url('#{$slider_image_location}/slider-down-button-over.png') no-repeat
+  .slider-down-button-active
+    background: url('#{$slider_image_location}/slider-down-button-active.png') no-repeat
+    
+    
+    
+    
+
+
+.slider-info-box
+  font-size: 12px
+  margin-top: 10px
+  margin-bottom: 20px
+  
+  width: 415px
+  display: none
+  padding: 4px
+  background-color: #eee
+  .text
+    width: 280px
+    float: left
+  .text-without-data
+    width: 410px
+    
+  .data 
+    width: 130px
+    float: right
+    .label
+      clear: both
+      width: 70px
+      float: left
+      font-weight: bold
+    .value
+      text-align: right
+      width: 60px
+      float: right
+.clear
+  clear: both
+  
+  
+ 
+  

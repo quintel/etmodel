@@ -1,0 +1,10 @@
+%h1
+  Translations
+%ul
+- @translations.each do |translation|
+  %li
+    =link_to translation.key, edit_admin_translation_path(translation)
+    =h truncate(translation.content_nl, :length => 20)
+    =h truncate(translation.content_en, :length => 20)
+    
+%p= link_to "New Translation", new_admin_translation_path

@@ -1,0 +1,12 @@
+- title "Edit Area"
+
+%p
+  %strong Attention:
+  %em changing area data requires restarting the server.
+
+= render 'form'
+
+%p
+  = link_to "Show", admin_areagroup_path(@area_group)
+  |
+  = link_to "View All", admin_areagroups_path

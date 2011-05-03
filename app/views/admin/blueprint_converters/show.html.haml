@@ -1,0 +1,35 @@
+%h1= @blueprint_converter.name
+
+%p= link_to 'Edit', edit_admin_blueprint_converter_path(@blueprint_converter)
+
+%table
+  %tr
+    %th Display Name
+    %td= @blueprint_converter.name
+  %tr
+    %th Excel ID
+    %td= @blueprint_converter.converter_id
+  %tr
+    %th Full Key
+    %td= @blueprint_converter.to_qernel.full_key
+  %tr
+    %th Key
+    %td= @blueprint_converter.key
+  %tr
+    %th Use
+    %td== (#{@blueprint_converter.use_id}) #{Qernel::Converter::USES[@blueprint_converter.use_id]}
+  %tr
+    %th Sector
+    %td== (#{@blueprint_converter.sector_id}) #{Qernel::Converter::SECTORS[@blueprint_converter.sector_id]}
+
+%h3 Blueprints and Datasets
+%table
+  - @blueprint_converter.blueprints.reverse.each do |blueprint|
+    %tr
+      %td
+        = blueprint.graph_version
+      %td
+        = blueprint.description
+      %td
+        = blueprint.datasets.map{|gd| gd.region_code }.join(', ')
+    

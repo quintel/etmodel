@@ -1,0 +1,39 @@
+= render 'list'
+
+#content
+  .header
+    Descriptions
+
+  #top
+  - %w[PageTitle Slide OutputElement InputElement OutputElementSerie Partner].each do |x|
+    = link_to x, "##{x}"
+    |
+  
+  - descriptions_for_class(PageTitle, PageTitle.order(:controller,:action)) do |pt| 
+    %td= pt.controller
+    %td= pt.action
+    %td= pt.title
+  
+  - descriptions_for_class(Slide, Slide.order(:controller_name,:action_name)) do |slide| 
+    %td= slide.controller_name
+    %td= slide.action_name
+    %td= slide.name
+
+  - descriptions_for_class(InputElement, InputElement.ordered_for_admin.includes([:description, :slide])) do |input_element| 
+    %td= input_element.slide.andand.controller_name
+    %td= input_element.slide.andand.action_name
+    %td= input_element.slide.andand.name
+    %td= input_element.name
+    %td= input_element.description.andand.short_content
+
+  - descriptions_for_class(OutputElement, OutputElement.order('output_elements.group')) do |output_element| 
+    %td= output_element.group
+    %td= output_element.name
+    %td= output_element.description.andand.short_content
+
+  - descriptions_for_class(OutputElementSerie, OutputElementSerie.block_charts.includes(:description)) do |output_element_serie| 
+    %td= output_element_serie.output_element.name
+    %td= output_element_serie.label
+
+  - descriptions_for_class(Partner) do |partner| 
+    %td= partner.name

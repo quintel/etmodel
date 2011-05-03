@@ -1,0 +1,59 @@
+en:
+  house_selection:
+    new houses: "New houses"
+    existing houses: "Existing houses"
+    old_houses_description: "Welk energielabel zal een gemiddeld, bestaand, huis hebben? (gebouwd voor 1995)"
+    old_houses_description: "Which energylabel will an average, existing, household have? (built before 1995)"
+    new_houses_description: "Which energylabel will an average, new, household have? (built after 1995)"
+    build_quality: "Build quality"
+    installations: "Heating, cooling & hot water"
+    solarpanels: "Solar panels PV"
+    apply: "Apply"
+    average:
+      title: "Average"
+      description: "These averages are calculated using the number of existing and new houses, and for installations, their heat demand. These numbers change when population or house replacment rate increases."
+    existing:
+      button: "Choose this label for existing houses"
+      share: "The share of existing houses is"
+    new:
+      button: "Choose this label for new houses"
+      share: "The share of new houses is"
+    description:
+      default: "Choose your label"
+      existing:
+        a:
+          build_quality: "Floors, ceilings, exterior facing walls are well insulated during reconstruction. The windows have HR++ glass and the window frames are insulated."
+          installations: "A micro-CHP or add-on heatpump is used for water and space heating and in conjunction produces electricity."
+          solarpanels: "Thermal solarpanels are used to warm water and PV solarpanels are used for the production of electricity."
+        b:
+          build_quality: "Floors, ceilings, exterior facing walls are well insulated during reconstruction. The windows have HR++ glass and the window frames are insulated."
+          installations: "A micro-CHP or add-on heatpump is used for water and space heating, and in conjunction produces electricity."
+        c:
+          build_quality: "Floors, ceilings, and exterior facing walls are well insulated during reconstruction. The windows have HR++ glass and window frames are insulated."
+          installations: "The house uses a modern central heater for water and space heating."
+          solarpanels: "Thermal solarpanels are used to warm water."
+        d:
+          build_quality: "Old window frames are replaced with insulating window frames with HR glass, and the roof and walls are post-insulated."
+          installations: "The house uses a modern central heater for water and space heating." 
+        e:
+          build_quality: "The house has a standard degree of insulation, doors and windows are well sealed, and single glass is replaced with double glass."
+          installations: "The house uses a modern central heater for water and space heating." 
+
+      new:
+        aaa: 
+          build_quality: "A house insulated to passive level, oriented to the sun and airtight, with three layers insulation glass."
+          installations: "A heatpump uses the heat exchangers in the ground to heat and cool the house."
+          solarpanels: "Thermal solarpanels are used to warm water and the whole roof will be used for PV solar panels to produce electricity."
+        aa:
+          build_quality: "A well insulated house. For construction, orientation with respect to the sun has been taken into consideration. <br/> The house has HR++ glass and the incoming air is preheated by outgoing air by balanced ventilation with heat recovery."
+          installations: "A heatpump uses the heat exchangers in the ground to heat and cool the house."
+          solarpanels: "Thermal solarpanels are used to warm water and half the roof will be used for PV solar panels to produce electricity."
+        a:
+          build_quality: "A well insulated house. For construction, orientation with respect to the sun has been taken into consideration. <br/> The house has HR+ glass and heat is recovered from ventilation air to preheat water."
+          installations: "A heatpump uses the heat exchangers in the ground to heat and cool the house."
+        b:
+          build_quality: "A well insulated house. For construction, orientation with respect to the sun has been taken into consideration. <br/> The house has HR+ glass and heat is recovered from ventilation air to preheat water."
+          installations: "The house uses a modern central heater for water and space heating."
+        c:
+          build_quality: "A house with well insulated walls and roof, double glass in insulated window frames, and blinds."
+          installations: "The house uses a modern central heater for water and space heating."

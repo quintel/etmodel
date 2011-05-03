@@ -1,0 +1,44 @@
+=# render "list"
+
+#content
+  .header
+    Create new Blueprint
+
+  = form_for [:construction, @blueprint] do |f|
+    %table
+      %tbody
+        %tr
+          %th Copy from
+          %td
+            = select_tag :copy_blueprint_id, options_from_collection_for_select(Blueprint.ordered, :id, :to_label, params[:copy_blueprint_id])
+        %tr
+          %th Version
+          %td
+            = f.text_field :version
+        %tr
+          %th Description
+          %td= f.text_field :description
+
+        - if params[:copy_blueprint_id]
+          %tr
+            %th{:colspan => 2} 
+              %strong Copy Datasets of the specified blueprint
+
+          - @copy_blueprint.datasets.each do |dataset|
+            %tr
+              %th= dataset.region_code
+              %td= check_box_tag :'copy_dataset_id[]', dataset.id
+
+          %tr
+            %th{:colspan => 2} 
+              %strong Or Copy other datasets (might cause errors with outdated blueprints)
+
+          - Dataset.group('region_code').select('region_code').map(&:region_code).each do |region_code|
+            %tr
+              %th= region_code
+              %td= select_tag :'copy_dataset_id[]', options_from_collection_for_select(Dataset.region_code(region_code).ordered, :id, :to_label), :include_blank => true
+      %tfoot
+        %tr
+          %th
+          %td= f.submit
+

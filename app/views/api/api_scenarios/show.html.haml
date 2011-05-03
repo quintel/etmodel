@@ -1,0 +1,34 @@
+= link_to 'back', api_scenarios_path
+
+%h1 Output
+
+%h2 JSON
+%pre
+  = @json.to_json
+
+%h2 Results
+
+%table
+  %thead
+    %tr
+      %th Query
+      %th= Current.scenario.start_year
+      %th= Current.scenario.end_year
+
+  - @json['result'].each do |key, result|
+    %tr
+      %td= key
+      -# TODO make it possible to write Current.gql.query(gquery)
+      %td= result.present_value
+      %td= result.future_value
+
+
+%h2 Constraints (just for testing)
+%table
+  - Constraint.all.each do |constraint|
+    %tr
+      %td= constraint.key
+      %td= constraint.output
+
+
+%pre= Current.scenario.update_statements.inspect

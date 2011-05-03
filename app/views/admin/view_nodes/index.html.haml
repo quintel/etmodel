@@ -1,0 +1,6 @@
+%h1 ETM View Structure
+Select your version:
+%ul{:class=> "view_nodes"}
+  - @view_nodes.each do |view_node|
+    %li= link_to view_node.key, admin_view_node_path(view_node)
+  %li= link_to image_tag("/images/layout/icons/add.png"), new_admin_view_node_path(:element_type => "Root")

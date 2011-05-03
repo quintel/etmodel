@@ -1,0 +1,11 @@
+= javascript_tag "Util.makeSureConsoleExists();"
+
+- if Current.scenario.municipality?
+  = javascript_tag "App.municipalityController.setMunicipality(true)"
+  - if !Current.setting.show_municipality_introduction
+    = javascript_tag "App.municipalityController.setMunicipalityMessageShown(true)"
+
+
+- if Current.scenario.transitionprice?
+  = javascript_tag "App.transitionpriceController.setTransitionprice(true)"
+

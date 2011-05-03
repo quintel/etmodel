@@ -1,0 +1,11 @@
+- if I18n.locale.to_s == "en"
+  - if page == "how" 
+    - movie_id = 15661126 
+  - else
+    - movie_id = 15765569
+- else
+  - if page == "how" 
+    - movie_id = 15663129 
+  - else
+    - movie_id = 15660970
+%iframe{:frameborder => "0", :height => "290", :src => "http://player.vimeo.com/video/#{movie_id}", :width => "510"}

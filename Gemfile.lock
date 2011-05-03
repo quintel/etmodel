@@ -1,0 +1,241 @@
+GIT
+  remote: git://github.com/japetheape/http_status_exceptions.git
+  revision: 99b37cbca57072be710da571d03e3e50483fbd6e
+  specs:
+    http_status_exceptions (0.2.1)
+      actionpack (>= 3)
+      rack (>= 1.2.1)
+
+GIT
+  remote: git://github.com/odorcicd/authlogic.git
+  revision: a087ad0cba3c165ba22fcf176c28b6f7517931e8
+  branch: rails3
+  specs:
+    authlogic (2.1.3)
+      activesupport
+
+GEM
+  remote: http://rubygems.org/
+  remote: http://gems.github.com/
+  specs:
+    abstract (1.0.0)
+    actionmailer (3.0.3)
+      actionpack (= 3.0.3)
+      mail (~> 2.2.9)
+    actionpack (3.0.3)
+      activemodel (= 3.0.3)
+      activesupport (= 3.0.3)
+      builder (~> 2.1.2)
+      erubis (~> 2.6.6)
+      i18n (~> 0.4)
+      rack (~> 1.2.1)
+      rack-mount (~> 0.6.13)
+      rack-test (~> 0.5.6)
+      tzinfo (~> 0.3.23)
+    activemodel (3.0.3)
+      activesupport (= 3.0.3)
+      builder (~> 2.1.2)
+      i18n (~> 0.4)
+    activerecord (3.0.3)
+      activemodel (= 3.0.3)
+      activesupport (= 3.0.3)
+      arel (~> 2.0.2)
+      tzinfo (~> 0.3.23)
+    activeresource (3.0.3)
+      activemodel (= 3.0.3)
+      activesupport (= 3.0.3)
+    activesupport (3.0.3)
+    acts_as_list (0.1.2)
+    addressable (2.2.2)
+    ancestry (1.2.3)
+      activerecord (>= 2.2.2)
+    annotate (2.4.0)
+    archive-tar-minitar (0.5.2)
+    arel (2.0.4)
+    autotest (4.4.5)
+    bluecloth (2.0.9)
+    builder (2.1.2)
+    closure-compiler (0.3.3)
+    columnize (0.3.2)
+    daemons (1.0.10)
+    declarative_authorization (0.5.1)
+    default_value_for (1.0.1)
+    diff-lcs (1.1.2)
+    erubis (2.6.6)
+      abstract (>= 1.0.0)
+    eventmachine (0.12.10)
+    factory_girl (1.3.2)
+    faraday (0.5.3)
+      addressable (~> 2.2.2)
+      multipart-post (~> 1.0.1)
+      rack (< 2, >= 1.1.0)
+    formtastic (1.2.2)
+      actionpack (>= 2.3.7)
+      activesupport (>= 2.3.7)
+      i18n (>= 0.4.0)
+    gem_plugin (0.2.3)
+    haml (3.0.23)
+    hoe (2.7.0)
+      rake (>= 0.8.7)
+      rubyforge (>= 2.0.4)
+    hoptoad_notifier (2.4.2)
+      activesupport
+      builder
+    i18n (0.5.0)
+    i18n-js (1.0.2)
+      i18n
+    jammit (0.5.4)
+      closure-compiler (>= 0.1.0)
+      yui-compressor (>= 0.9.1)
+    jquery-rails (0.2.5)
+      rails (~> 3.0)
+      thor (~> 0.14.4)
+    json_pure (1.4.6)
+    libxml-ruby (1.1.4)
+    linecache19 (0.5.11)
+      ruby_core_source (>= 0.1.4)
+    mail (2.2.11)
+      activesupport (>= 2.3.6)
+      i18n (~> 0.5.0)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
+    memcache-client (1.8.5)
+    mime-types (1.16)
+    mongrel (1.2.0.pre2)
+      daemons (~> 1.0.10)
+      gem_plugin (~> 0.2.3)
+    multipart-post (1.0.1)
+    mysql (2.8.1)
+    mysql2 (0.2.6)
+    nokogiri (1.4.4)
+    paper_trail (1.6.4)
+      actionpack (>= 2.3)
+      activerecord (>= 2.3)
+    paperclip (2.3.8)
+      activerecord
+      activesupport
+    polyglot (0.3.1)
+    rack (1.2.1)
+    rack-mount (0.6.13)
+      rack (>= 1.0.0)
+    rack-sprockets (1.0.4)
+      rack (>= 0.4)
+      sprockets (>= 1.0.0)
+    rack-test (0.5.6)
+      rack (>= 1.0)
+    rails (3.0.3)
+      actionmailer (= 3.0.3)
+      actionpack (= 3.0.3)
+      activerecord (= 3.0.3)
+      activeresource (= 3.0.3)
+      activesupport (= 3.0.3)
+      bundler (~> 1.0)
+      railties (= 3.0.3)
+    railties (3.0.3)
+      actionpack (= 3.0.3)
+      activesupport (= 3.0.3)
+      rake (>= 0.8.7)
+      thor (~> 0.14.4)
+    rake (0.8.7)
+    riddle (1.2.1)
+    roauth (0.0.3)
+    rspec (2.1.0)
+      rspec-core (~> 2.1.0)
+      rspec-expectations (~> 2.1.0)
+      rspec-mocks (~> 2.1.0)
+    rspec-core (2.1.0)
+    rspec-expectations (2.1.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.1.0)
+    rspec-rails (2.1.0)
+      rspec (~> 2.1.0)
+    ruby-debug-base19 (0.11.24)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby_core_source (>= 0.1.4)
+    ruby-debug19 (0.11.6)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby-debug-base19 (>= 0.11.19)
+    ruby-graphviz (0.9.20)
+    ruby-openid (2.1.8)
+    ruby_core_source (0.1.4)
+      archive-tar-minitar (>= 0.5.2)
+    rubyforge (2.0.4)
+      json_pure (>= 1.1.7)
+    rubyzip (0.9.4)
+    selenium-client (1.2.18)
+    sprockets (1.0.2)
+    sprockets-rails (0.0.1)
+      sprockets (>= 1.0.2)
+    test-unit (1.2.3)
+      hoe (>= 1.5.1)
+    thinking-sphinx (2.0.1)
+      activerecord (>= 3.0.3)
+      riddle (>= 1.2.1)
+    thor (0.14.6)
+    tinder (1.4.2)
+      activesupport
+      eventmachine
+      faraday (~> 0.5.1)
+      mime-types
+      multipart-post
+      twitter-stream
+    treetop (1.4.8)
+      polyglot (>= 0.3.1)
+    twitter-stream (0.1.10)
+      eventmachine (>= 0.12.8)
+      roauth (>= 0.0.2)
+    tzinfo (0.3.23)
+    webrat (0.7.2)
+      nokogiri (>= 1.2.0)
+      rack (>= 1.0)
+      rack-test (>= 0.5.3)
+    yard (0.5.4)
+    yui-compressor (0.9.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  acts_as_list
+  ancestry (~> 1.2.3)
+  annotate
+  authlogic!
+  autotest
+  bluecloth
+  declarative_authorization (= 0.5.1)
+  default_value_for
+  factory_girl (>= 1.2.3)
+  formtastic
+  haml (= 3.0.23)
+  hoptoad_notifier (= 2.4.2)
+  http_status_exceptions!
+  i18n-js
+  jammit
+  jquery-rails
+  libxml-ruby
+  memcache-client
+  mongrel (= 1.2.0.pre2)
+  mysql
+  mysql2
+  nokogiri
+  paper_trail (>= 1.6.4)
+  paperclip (>= 2.3.8)
+  rack-sprockets
+  rails (= 3.0.3)
+  rspec-rails (~> 2.1.0)
+  ruby-debug19
+  ruby-graphviz
+  ruby-openid
+  rubyzip (= 0.9.4)
+  selenium-client (>= 1.2.18)
+  sprockets
+  sprockets-rails
+  test-unit (= 1.2.3)
+  thinking-sphinx (>= 2.0.1)
+  tinder
+  treetop (= 1.4.8)
+  webrat
+  yard (= 0.5.4)
+  yui-compressor

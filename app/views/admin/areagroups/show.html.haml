@@ -1,0 +1,24 @@
+- title "Area Group: #{@area_group.name}"
+
+%p
+  = @area_group.description
+
+
+%table{table_defaults}
+  %thead
+  - @area_group.areas.each do |area|
+    %tr{cycles}
+      %td= area.country
+%p
+  = link_to "Edit", edit_admin_areagroup_path(@area_group)
+  |
+  = link_to "Destroy", [:admin, @area_group], :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", admin_areagroups_path
+
+
+= render "/admin/shared/revisions", :versioned => @area_group
+
+-#%h3 Carrier Datas
+
+-# render "admin/carrier_datas/carrier_datas", :carrier_datas =>  @area_group.carrier_datas

@@ -1,0 +1,11 @@
+- if result = Current.gql.query(@query) rescue nil
+  %table{:border => 1}
+    %tr
+      %td= result.present_year
+      %td.tar= result.present_value
+    %tr
+      %td= result.future_year
+      %td.tar= result.future_value
+
+- else
+  %pre Error 

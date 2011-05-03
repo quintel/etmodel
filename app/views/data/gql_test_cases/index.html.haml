@@ -1,0 +1,75 @@
+= render 'list'
+
+#content
+  .header
+    GQL Test Cases
+
+  %p= link_to 'New Test', new_data_gql_test_case_path
+  %p= link_to 'Run Tests', '#', :onclick => 'run_tests()'
+
+  %p
+    %label
+      API Server: 
+      = select_tag 'server', options_for_select([['This Server', ''], ['testing', 'http://testing.et-model.com'],['staging', 'http://staging.et-model.com']])
+    
+  %ul
+    - @gql_test_cases.each do |gql_test_case|
+      - api_path = "/api/v1/api_scenarios/test.json?callback=?&#{gql_test_case.api_params}"
+      %li.gql_test_case[gql_test_case]{:'data-json' => api_path}
+        %h3
+          == ##{gql_test_case.id} #{gql_test_case.name}
+          %small
+            = link_to 'Edit', edit_data_gql_test_case_path(:id => gql_test_case)
+            = link_to 'JSON', api_path
+            = link_to 'Inspect', api_path.gsub('test.json', 'test')
+            = link_to 'Delete', data_gql_test_case_path(:id => gql_test_case), :method => "delete", :confirm => "are you sure?"
+            = link_to 'Run', "javascript:run_test($('##{dom_id(gql_test_case)}'));"
+        %p= gql_test_case.description
+        %pre= gql_test_case.instruction
+        
+        %p
+          %ol
+            - gql_test_case.result_queries.each do |query, line|
+              - min, max = GqlTestCase.min_max_of(line)
+              %li.matcher{:'data-query' => query, :'data-min-result' => min, :'data-max-result' => max}
+                = query
+                %label
+                  = line
+                  == (#{detailed_number(min)} - #{detailed_number(max)})
+                %strong.result ...
+                %small
+
+  :javascript
+    function run_test(matcher_element, index) {
+      if ($(matcher_element).length == 0) {return false;}
+      
+      $('.result', matcher_element).empty().append('loading...');
+      var url = $('#server').val();
+      url += $(matcher_element).attr('data-json');
+      
+      $.getJSON(url, function(data) {
+        $('.matcher', matcher_element).each(function(i,matcher) {
+          var query = $(matcher).attr('data-query');
+          var result = parseInt(data.result[query][1][1]);
+          var min = parseInt($(matcher).attr('data-min-result'));
+          var max = parseInt($(matcher).attr('data-max-result'));
+          var res = (result > min && result < max) ? 'passed' : 'failed';
+          
+          $(matcher).addClass(res);
+          
+          $('.result', matcher).empty().append(res);
+          $('.result', matcher).attr('title', result);
+        })
+        if (index > 0) {
+          next_test(index)
+        }
+      })
+    }
+    function run_tests() {
+      run_test($('.gql_test_case:nth-child(1)'), 1);
+      run_test($('.gql_test_case:nth-child(2)'), 2);
+    }
+    function next_test(curent_index) {
+      var next_index = curent_index + 2;
+      run_test($('.gql_test_case:nth-child('+next_index+')'), next_index);      
+    }

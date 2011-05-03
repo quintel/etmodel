@@ -1,0 +1,43 @@
+
+- shadowbox do
+  .municipality-left
+    = image_tag "layout/municipality_%s.jpg" % [Current.scenario.region_or_country]
+  .municipality-right
+    %h1
+      =  t("municipality.subtitle")
+    %p
+      %strong 
+        = t("municipality.public_presets")
+    %form{:method => :post}
+      %ul
+        - @scenarios.each do |scenario|
+          %li{:style => "list-style-type: none;"}
+            %label
+              = radio_button_tag 'scenario', scenario.id
+              = scenario.title
+   
+      - if @user_scenarios
+        %p
+          %strong
+            = t("municipality.private_presets")
+        %ul
+          - readable_collection(@user_scenarios, 4) do |scenario|
+            %li{:style => "list-style-type: none;"}
+              %label
+                = radio_button_tag 'scenario', scenario.id
+                = scenario.title
+                %span{:style => "color: #999;"}
+                  = "saved on " + scenario.created_at.to_s + ""
+            %li{:style => "list-style-type: none;"} 
+          = link_to t("municipality.create_a_new_one"), root_path
+      - else
+        %p
+          %strong
+            = t("municipality.private_presets_and_login", :login => link_to(t("login"), login_and_come_back_path)).html_safe
+        
+        %br
+      = submit_tag t('continue'), :class => 'button'
+      %br
+      %br
+      = link_to t('go_back'), root_path
+  .clear

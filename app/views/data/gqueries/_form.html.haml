@@ -1,0 +1,31 @@
+- form_for [:data, @gquery] do |f|
+
+  %p.error_messages
+    = error_messages_for :gquery
+
+  %table
+    %tbody
+      %tr
+        %th Key
+        %td= f.text_field :key
+      %tr
+        %th Query
+        %td= f.text_area :query
+      %tr
+        %th Groups
+        %td
+          = select_tag :gquery_groups, options_from_collection_for_select(GqueryGroup.all, :id,:group_key, @gquery.gquery_groups.map(&:id)),:multiple => true
+          = link_to "group descriptions", group_descriptions_data_gqueries_path, :target=>"_blank"
+      %tr
+        %th not_cacheable
+        %td= f.check_box :not_cacheable
+      %tr
+        %th Description
+        %td= f.text_area :description
+
+    %tfoot          
+      %tr
+        %th
+        %td= f.submit 'save'
+
+

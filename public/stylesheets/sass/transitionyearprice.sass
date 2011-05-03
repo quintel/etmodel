@@ -1,0 +1,117 @@
+.black_layout
+  height: 100%
+  background: #000
+  
+  #header
+    background: #000
+    height: 110px
+    .sub-nav
+      width: 330px
+  #content
+    background: #fff
+    z-index: 0
+    height: 100%
+
+  #footer
+    position: relative
+    max-width: 1230px
+    min-width: 990px
+    margin-left: -20px
+    padding-right: 20px
+
+    #constraints_container
+      padding-right: 20px
+    #logos
+      padding-right: 20px
+      height: 100px
+      background: #DFE8F3
+
+  body#outside-model
+    #header
+      height: 130px  
+    #content
+      padding: 150px 0px 0px 20px    
+      #footer
+        position: relative
+        height: 140px
+        margin-top: 30px
+  body#model
+    #content
+      padding: 150px 0px 300px 20px    
+    #footer
+      position: fixed
+      
+  .rounded_corners
+    width: 100%
+    margin-top: -9px
+    height: 20px
+    div
+      height: 9px
+      float: left
+    .left_corner
+      margin-left: -20px
+      float: left
+      width: 9px      
+      background: url(../images/layout/rounded_corner_left_top.png) no-repeat
+    .right_corner
+      float: right
+      width: 9px      
+      background: url(../images/layout/rounded_corner_right_top.png) no-repeat
+  #outside-model
+    .rounded_corners
+      margin-top: -20px
+      
+  #transitionprice-intro
+    ul
+      margin: 0px
+      padding: 0px
+      li
+        list-style-type: none
+        margin-bottom: 3px
+        label
+          font-weight: bold
+          display: block
+
+  #errorExplanation
+    ul
+      li
+        color: red
+
+  #transitionprice
+    .login
+      margin-top: 10px
+      li
+        margin-bottom: 4px
+        display: block
+        clear: both
+        label
+          width: 100px
+          float: left
+          text-align: left
+          margin-right: 10px
+        input 
+          float: left
+
+      li
+        .button
+          margin-left: 113px
+          clear: both
+  #nav.nav-inner
+    background: #000
+    
+#save_button
+  position: absolute
+  top: 115px
+  left: 80%
+  margin: 0 5px
+  z-index: 1001
+  text-align: left
+  #icon
+    float: left
+    padding: 3px 4px 4px 10px
+  #text
+    float: left
+    margin-bottom: 10px
+    margin-left: 5px
+#content_stable
+  margin-right: 10px

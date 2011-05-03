@@ -1,0 +1,23 @@
+= render 'list'
+
+#content
+  .header
+    Test Query
+
+  - form_tag test_data_gqueries_path do |f|
+    %p= text_area_tag :query, params[:query], :style => "width: 500px; height: 200px"
+  
+    %p= submit_tag 'check'
+
+  %h3 Result
+  - if @query
+    = render 'result'
+    %h2 Query Debug
+    %p
+      %small Sorry, that this is ugly, but only had an hour left. Left side is the value return from a function and right the function name and its arguments. 
+    %h3 present
+    %pre= Current.gql.query_interface.debug_graph(@query, Current.gql.present).reverse.join("\n") rescue 'error'
+    %h3 future
+    %pre= Current.gql.query_interface.debug_graph(@query, Current.gql.present).reverse.join("\n") rescue 'error'
+  - else
+    %em no query

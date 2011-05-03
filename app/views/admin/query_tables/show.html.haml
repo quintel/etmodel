@@ -1,0 +1,33 @@
+- title h(@query_table.name)
+
+%p=h @query_table.description
+
+- row_total = {}
+- col_total = {}
+%table#query_table{:border => 1}
+  - 1.upto(@query_table.row_count) do |row|
+    %tr
+      - 1.upto(@query_table.column_count) do |col|
+        - if cell = @query_table.cell(row,col)
+          - result = cell.result
+          - url = edit_admin_query_table_cell_path(cell)
+          %td.result= link_to result, url, :class => 'fancybox'
+          - if result.is_a?(Numeric)
+            - (row_total[row] ||= []) << result 
+            - (col_total[col] ||= []) << result 
+        - else
+          - url = new_admin_query_table_cell_path(:query_table_id => @query_table.id, :row => row, :column => col)
+          %td.new= link_to 'edit', url, :class => 'fancybox'
+
+      %td.total.result= row_total[row].compact.sum rescue '-'
+  %tr
+    - 1.upto(@query_table.column_count) do |col|
+      %td.total.result= col_total[col].compact.sum rescue '-'
+    %td.total.result -
+
+%p
+  = link_to "Edit", edit_admin_query_table_path(@query_table)
+  |
+  = link_to "Destroy", [:admin, @query_table], :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", admin_query_tables_path

@@ -1,0 +1,12 @@
+
+%ul
+  %li
+    = select_tag 'period', options_for_select(['future', 'present']), :onchange => 'GRAPH.show_attribute_values()'
+    = select_tag 'attribute', options_for_select(attributes_for_json), :onchange => 'GRAPH.show_attribute_values()'
+    = link_to 'Show', 'javscript:GRAPH.show_attribute_values()'
+  %li
+    = select_tag 'selected', options_for_select([*Qernel::Converter::SECTORS.values, 'all'])
+    = link_to 'show', 'javascript:GRAPH.show_selected()'
+    = link_to 'hide', 'javascript:GRAPH.hide_selected()'
+    (to only show one sector, hide 'all' first, then show 'sector')
+

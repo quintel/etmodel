@@ -1,0 +1,6 @@
+#transitionyearprice-intro
+  - shadowbox do
+    %h1=t('transition_prize.step2.more_info')
+    %p=t('transition_prize.step2.description').html_safe
+    = form_tag(:controller => 'demand') do
+      = submit_tag t('transition_prize.step2.start'), :class => 'button'

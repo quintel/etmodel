@@ -1,0 +1,59 @@
+nl:
+  house_selection:
+    new houses: "Nieuwe huizen"
+    existing houses: "Bestaande huizen"
+    old_houses_description: "Welk energielabel zal een gemiddeld, bestaand, huis hebben? (gebouwd voor 1995)"
+    new_houses_description: "Welk energielabel zal een gemiddeld, nieuw, huis hebben? (gebouwd na 1995)"
+    build_quality: "Bouwkwaliteit"
+    installations: "Verwarming, koeling & warm tap water"
+    solarpanels: "Zonnepanelen PV"
+    apply: "Pas toe"
+    average: 
+      title: "Gemiddelde"
+      description: "Deze gemiddelden zijn berekend aan de hand van het aantal bestaande en nieuwe huishoudens, en voor installaties, hun warmte vraag. Deze aantallen veranderen wanneer het aantal inwoners of de vervanging van bestaande huizen toeneemt."
+    existing:
+      button: "Kies dit label voor bestaande huizen"
+      share: "Het aandeel bestaande huizen is"
+    new:
+      button: "Kies dit label voor nieuwe huizen"
+      share: "Het aandeel nieuwe huizen is"
+    description:
+      default: "Kies een label"        
+      existing:
+        a:
+          build_quality: "Vloeren, daken en gevels zijn goed geïsoleerd tijdens een verbouwing. De ramen zijn voorzien van HR++ glas en geïsoleerde kozijnen."
+          installations: "Een micro-WKK of add-on warmtepomp verwamt het huis en zorgt voor warm tapwater, waarbij tegelijkertijd elekticiteit wordt opgewekt."
+          solarpanels: "Thermische zonnepanelen worden gebruikt om warm tapwater voor te verwarmen en PV-panelen om elektriciteit op te wekken."
+        b:
+          build_quality: "Vloeren, daken en gevels zijn goed geïsoleerd tijdens een verbouwing. De ramen zijn voorzien van HR+ glas en geïsoleerde kozijnen."
+          installations: "Een micro-WKK of add-on warmtepomp verwamt het huis en zorgt voor warm tapwater, waarbij tegelijkertijd elekticiteit wordt opgewekt."
+        c:
+          build_quality: "Vloeren, daken en gevels zijn goed geïsoleerd tijdens een verbouwing. De ramen zijn voorzien van HR glas en geïsoleerde kozijnen."
+          installations: "Het huis gebruikt een moderne CV-ketel voor ruimteverwarming en warm tapwater."
+          solarpanels: "Thermische zonnepanelen worden gebruikt om warm tapwater voor te verwarmen."
+        d:
+          build_quality: "Oude raamkozijnen zijn vervangen door geïsoleerde kozijnen met HR glas, en dak en spouwmuren zijn na-geïsoleerd."
+          installations: "Het huis gebruikt een moderne CV-ketel voor ruimteverwarming en warm tapwater."
+        e:
+          build_quality: "Het huis heeft een standaard pakket van isolatie, een goede kierdichting, en enkelglas is vervangen voor dubbelglas."
+          installations: "Het huis gebruikt een moderne CV-ketel voor ruimteverwarming en warm tapwater."
+
+      new:
+        aaa: 
+          build_quality: "Tot passiefhuis niveau geïsoleerde woning, zongericht en luchtdicht gebouwd, met drielaags isolatieglas."
+          installations: "Een warmtepomp gebruikt de warmtewisselaars in grond om het huis te verwarmen en te koelen."
+          solarpanels: "Thermische zonnepanelen worden gebruikt om warm tapwater voor te verwarmen en het gehele dak wordt voorzien van PV-panelen om elektriciteit op te wekken."
+        aa:
+          build_quality: "Een goed geisoleerde woning, waarbij met de bouw rekening is gehouden met de orientatie ten opzicht van de zon. <br/> Bovendien is het huis voorzien van HR++ glas. Met behulp van balansventilatie met warmteterugwinning wordt de inkomende lucht voorverwarmd door uitgaande lucht."
+          installations: "Een warmtepomp gebruikt de warmtewisselaars in grond om het huis te verwarmen en te koelen."
+          solarpanels: "Thermische zonnepanelen worden gebruikt om warm tapwater voor te verwarmen en de helft van het dak wordt voorzien van PV-panelen om elektriciteit op te wekken."
+        a:
+          build_quality: "Een goed geisoleerde woning, waarbij met de orientatie rekening is gehouden met de stand van de zon. <br/> Bovendien is het huis voorzien van HR+ glas en wordt warmte uit de ventilatielucht teruggewonnen om het warm tapwater voor te verwarmen."
+          installations: "Een warmtepomp gebruikt warmtewisselaars in de grond om het huis te verwarmen en te koelen."
+        b:
+          build_quality: "Een goed geisoleerde woning, waarbij met de orientatie rekening is gehouden met de stand van de zon. <br/> Bovendien is het huis voorzien van HR glas en wordt warmte uit de ventilatielucht teruggewonnen om het warm tapwater voor te verwarmen."
+          installations: "Het huis gebruikt een moderne CV-ketel voor ruimteverwarming en de naverwarming van warm tapwater."
+        c:
+          build_quality: "Een huis met goede isolatie van spouwmuren en dak, dubbelglas in geisoleerde kozijnen, en zonwering."
+          installations: "Het huis gebruikt een moderne CV-ketel voor ruimteverwarming en warm tapwater."
+  

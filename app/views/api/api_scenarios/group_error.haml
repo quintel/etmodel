@@ -1,0 +1,5 @@
+The following group(s) do not add up. All their updates have not been stored and are reset to default values.
+- @groups.each do |g,e| 
+  - element_ids = e.map{|e| "#{e.id} [#{e.key || 'no_key'}]" }.join(', ')
+  == Group: '#{g}' with elements (#{element_ids})
+== user_values: #{Current.scenario.user_values}

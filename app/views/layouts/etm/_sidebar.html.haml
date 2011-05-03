@@ -1,0 +1,4 @@
+#sidebar
+  %ul
+    - Current.view.sidebar_items.each do |sidebar_item|
+      - generate_sidebar_item(sidebar_item)

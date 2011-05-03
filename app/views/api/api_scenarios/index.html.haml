@@ -1,0 +1,67 @@
+%h2 New
+%p
+  
+= link_to 'New Session', new_api_scenario_path
+
+%h2 Existing
+%table
+  %thead
+    %tr
+      %th ID
+      %th JSON
+      %th Country
+      %th Last update
+      %th 
+  - @api_scenarios.each do |api_scenario|
+    %tr
+      %td= link_to api_scenario.api_session_key, api_scenario_path(api_scenario)
+      %td= link_to 'json', api_scenario_path(api_scenario, :format => 'json')
+      %td= api_scenario.country
+      %td= api_scenario.updated_at.to_s
+      %td= button_to 'del', api_scenario_path(api_scenario), :method => 'delete'
+      %td= link_to 'load in ETM', load_scenario_path(:id => api_scenario.id)
+      
+
+
+
+
+%h1 API DOC
+%h2 Creating new session
+%p
+  Default: 
+  %pre /api/VERSION/api_scenarios/new
+  Create a new session with current timestamp as api_session_key
+%p
+  Custom api_session_key (must be unique!):
+  %pre /api/VERSION/api_scenarios/new?settings[api_session_key]=foo
+%p
+  Overwrite settings: 
+  %pre /api/VERSION/api_scenarios/new?settings[country]=nl&settings[end_year]=2050
+
+%h2 Working with session  
+%p
+  %pre BASE_PATH: /api/:version/api_scenarios/:id
+  e.g.: 
+  %pre /api/v1/api_scenarios/321
+
+%h3 Updating slider values
+%p
+  Update the session by given slider id and value. The values will be persisted. So you only have to update once.
+  %br
+
+  %pre BASE_PATH?input[SLIDER_ID_1]=VALUE_1&input[SLIDER_ID_2]=VALUE_2
+  e.g.: 
+  %pre BASE_PATH?input[335]=1&input[421]=2.9
+
+%h3 Results
+%p
+  Add more queries by adding result[] parameters. E.g.:
+  %br
+  %pre BASE_PATH?result[]=co2_emission_total
+  %pre BASE_PATH?result[]=co2_emission_total&result[]=cost_refinery
+
+%h3 Updatind and Querying
+%p
+  When updating sessions, you can at the same time also retrieve result
+  e.g.
+  %pre BASE_PATH?result[]=co2_emission_total&input[335]=1

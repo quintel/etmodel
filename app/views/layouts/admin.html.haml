@@ -1,0 +1,58 @@
+!!! Strict
+%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
+    %title
+      EnergyTransitionModel
+    %link{ :href => "/stylesheets/all.css", :rel => "stylesheet", :type => "text/css" }
+    %link{ :href => "/stylesheets/jquery.slider.css", :rel => "stylesheet", :type => "text/css" }
+    %link{ :href => "/stylesheets/jquery.fancybox-1.3.1.css", :rel => "stylesheet", :type => "text/css" }
+
+    = stylesheet_link_tag 'formtastic', 'formtastic_changes'
+    = stylesheet_link_tag "jquery.jqplot", 'jquery.superfish', :cache => false
+    = stylesheet_link_tag 'admin'
+    = sprocket_layout_init :etm
+
+    /
+      [if lt IE 8]><link rel="stylesheet" type="text/css" href="/stylesheets/ie.css" /><![endif]
+      [if lt IE 8]><link rel="stylesheet" type="text/css" href="/stylesheets/ie.slider.css" /><![endif]
+
+    / - jquery_plugins = %w[accordion slider fancybox-1.3.1 jqplot]
+    / = javascript_include_tag "jquery-1.4.4.min", 'excanvas', *jquery_plugins.map{|plugin_name| "jquery.#{plugin_name}" }
+
+    / = javascript_include_tag "jquery.qtip-1.0.0-rc3.min", "jquery.effects.core"
+
+    / - custom = %w[output_elements input_elements tooltip fancybox header_menu].map{|j| "etm.#{j}"}
+    / = javascript_include_tag "etm", *custom
+
+  %body#model
+    #wrapper
+      #content
+        = render "layouts/etm/content_admin"
+
+      #header
+        = render "layouts/etm/header"
+        #nav.nav-admin
+          .nav-holder.nav-holder-inner{:style=>"float:left"}
+            %ul{:style=>"width:1400px;height:30px;"}
+              %li= link_to Current.scenario.country.upcase, '#'
+              - tab("Graphs", 'admin/graphs', '')
+              - tab("Gqueries", "data/latest/#{Current.scenario.country}/gqueries", '')
+              - tab("Tables", 'admin/query_tables', '')
+              - tab("Areas", "data/latest/#{Current.scenario.country}/areas", '')
+              - tab("Carriers", "data/latest/#{Current.scenario.country}/carriers", '')
+              - tab("Blackboxes", 'admin/blackboxes', '')
+              - tab("Bb scenarios", 'admin/blackbox_scenarios', '')
+              - tab("Descriptions", 'admin/descriptions','')
+              - tab("Translations", 'admin/translations', '')              
+              - tab("Views", 'admin/view_nodes', '')
+              - tab("Tabs", 'admin/tabs', '')
+              - tab("Categories", 'admin/sidebar_items', '')
+              - tab("Slides", 'admin/slides', '')
+              - tab("Sliders", 'admin/input_elements', '')
+              - tab("Charts", 'admin/output_elements', '')
+              - tab("Series", 'admin/output_element_series', '')
+              - tab("Historic", 'admin/historic_series', '')
+              - tab("Expert", 'admin/expert_predictions', '')
+              - tab("Press", 'admin/press_releases', '')              
+

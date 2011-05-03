@@ -1,0 +1,20 @@
+%h2 Blackbox Scenarios
+
+%p 
+  %em
+    Blackbox scenarios are essentialy the same as normal scenarios. When creating a new blackbox 
+    %small (not: blackbox scenario)
+    the tests run for every stored blackbox scenario. The purpose is to see if the blackbox still behaves correctly with different slider settings.
+
+%p= link_to 'Create new scenario', new_admin_blackbox_scenario_path
+
+%table{table_defaults}
+  %thead
+    %tr
+      %th Name
+      %th Created
+  %tbody
+    - @blackbox_scenarios.each do |scenario|
+      %tr{cycles}
+        %td= link_to scenario.name, [:admin, scenario]
+        %td= scenario.created_at

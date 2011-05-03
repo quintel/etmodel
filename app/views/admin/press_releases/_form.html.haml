@@ -1,0 +1,19 @@
+%div
+  - semantic_form_for [:admin, @press_release] do |f|
+    = f.error_messages
+    = f.input :title
+    = f.input :medium
+    = f.input :release_type, :as => :select, :collection => ["dagblad","radio","magazine"]
+    = f.input :release_date
+    = f.input :link
+    = f.buttons
+
+%div  
+  %h2 Upload file
+  - form_tag '/admin/press_releases/upload', :multipart => true do 
+
+    %p
+      file will be uploaded to /assets/filename 
+      %br
+      = file_field_tag :press_file
+    %p= submit_tag 'upload'

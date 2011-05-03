@@ -1,0 +1,29 @@
+// GRAPH is uppercase to make it obvious that it is in global namespace!
+var GRAPH = new Graph();
+
+<%
+  @bp = @graph.blueprint
+  blueprint_converters = Converter.includes(:groups).all
+  blueprint_converter_ids = blueprint_converters.map(&:id)
+
+  blueprint_converters.each do |bc|
+    position = @converter_positions[bc.id]
+    
+
+    params = [bc.id, bc.key, position.andand.x || 100, position.andand.y || 100, bc.sector_key.to_s, bc.use_key.to_s, bc.key]
+    params << (position.andand.hidden == true)
+    params << (position.andand.fill_color || '#eee')
+    params << (position.andand.stroke_color || '#000')
+  -%>
+<%= "new Converter(#{js_params(params)});".html_safe %>
+<% end %>      
+
+<% @bp.links.includes(:carrier).each do |bl| 
+  if blueprint_converter_ids.include?(bl.parent_id) and blueprint_converter_ids.include?(bl.child_id)
+    params = [bl.child_id, bl.parent_id, "##{bl.carrier.carrier_color || '999'}", "1|#{bl.link_style}"]
+    -%>
+<%= "new Link(#{js_params(params)});".html_safe %>
+  <% end %>
+<% end %>
+
+GRAPH.draw();

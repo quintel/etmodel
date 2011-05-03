@@ -1,0 +1,70 @@
+= sprocket_page_init :intro
+#home{:style => "z-index: 3; padding-top:50px"}
+  #shadowbox-outer{:style => "width: 800px; height:420px; margin: 0px auto 40px auto;"}
+    #shadow-bg-n.shadow-bg
+    #shadow-bg-ne.shadow-bg
+    #shadow-bg-e.shadow-bg
+    #shadow-bg-se.shadow-bg
+    #shadow-bg-s.shadow-bg
+    #shadow-bg-sw.shadow-bg
+    #shadow-bg-w.shadow-bg
+    #shadow-bg-nw.shadow-bg
+    #shadowbox-inner{:style => "padding: 20px 40px 40px 40px; float: left;" }
+      #shadowbox-content{:style => "width: 688px;"}
+        #text
+          .intro_text
+            = t_db("intro_pages")
+          %p.button
+            %a.button{:href=>"/policy/intro"}
+              = I18n.t("start with policy")
+        #diamond-container
+          -#%a#home{:href => "#"}Overview
+          #diamonds
+            #policy.diamond
+              = link_to t("Policy"), '/policy/intro'
+            #demand.diamond
+              = link_to t("Demand"), '/demand/intro'
+            #supply.diamond
+              = link_to t("Supply"), '/supply/intro'
+            #costs.diamond
+              = link_to t("Costs"), '/costs/intro'
+    %div{:style=>'clear:both'}
+  %div{:style=>'clear:both'}  
+  / #arrow_box
+  /   = t("intro.section")
+#textrepository_home{:style => "display: none;"}
+  .intro_text
+    = t_db("intro_pages").html_safe
+  %p.button
+    %a.button{:href=>"/policy/intro"}= I18n.t("start with policy")
+
+
+#textrepository_demand{:style => "display: none;"}
+  .intro_text
+    %h1= t("intro.demand").html_safe + " #{Current.scenario.end_year}?".html_safe
+    = t_db("intro_page_demand").html_safe
+  %p.button
+    %a.button{:href=>"/demand/intro"}= I18n.t("start with demand")
+
+#textrepository_supply{:style => "display: none;"}
+  .intro_text
+    %h1= t("intro.supply").html_safe + " #{Current.scenario.end_year}?".html_safe
+    = t_db("intro_page_supply").html_safe
+  %p.button
+    %a.button{:href=>"/supply/intro"}= I18n.t("start with supply")
+
+#textrepository_policy{:style => "display: none;"}
+  .intro_text
+    %h1= t("intro.policy").html_safe + " #{Current.scenario.end_year}?".html_safe
+    = t_db("intro_page_policy").html_safe
+  %p.button
+    %a.button{:href=>"/policy/intro"}= I18n.t("start with policy")
+      
+#textrepository_costs{:style => "display: none;"}
+  .intro_text
+    %h1= t("intro.costs").html_safe + " #{Current.scenario.end_year}?".html_safe
+    = t_db("intro_page_cost").html_safe
+  %p.button
+    %a.button{:href=>"/costs/intro"}= I18n.t("start with costs")
+
+#textrepository_home{:style => "display: none;"}

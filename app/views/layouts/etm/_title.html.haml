@@ -1,0 +1,8 @@
+#title
+  - if current_tutorial_movie
+    %a{:class=>"tutorial_button", :href => "/tutorial/#{params[:controller]}/#{params[:id]}",:alt=>"Tutorial",:title=>"Tutorial"}
+      .button_left_movie
+      .button_center
+        %span= t("tutorial.button")
+      .button_right
+  - title_text

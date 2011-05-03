@@ -1,0 +1,15 @@
+%h2 New translation
+
+- semantic_form_for [:admin, @translation] do |form|
+
+  =form.input :key
+  
+  - form.inputs 'English' do
+    = form.input :content_en
+
+  - form.inputs 'Dutch' do
+    = form.input :content_nl
+
+  = form.buttons
+  
+= link_to "back", admin_translations_path

@@ -1,0 +1,204 @@
+#constraints_container
+  width: 100%
+  background-color: #fff
+  #constraints
+    background:
+      image: url(../images/layout/divider-01.gif)
+      color: #fff
+      repeat: repeat-x
+    min-width: 960px
+    max-width: 1230px
+    margin: 0 auto
+    list-style: none
+    z-index: 1051
+    .constraint
+      float: left
+      cursor: pointer
+      background: url(../images/layout/separator-02.gif) repeat-y
+      width: 14%
+      position: relative
+    
+      .arrow
+        position: absolute
+        right: 5px
+        top: 15px
+        width: 40px
+        height: 40px
+        margin: 0
+        padding: 0
+      .arrow_neutral
+        background: url(../images/layout/arrow_none.png)
+      .arrow_up
+        top: 12px
+        background-color: red
+        background: url(../images/layout/arrow_up.png)
+      .arrow_down
+        top: 15px
+        background-color: green
+        background: url(../images/layout/arrow_down.png)
+        
+      img.questionmark
+        position: absolute
+        right: 5px
+        top: 15px
+        cursor: pointer
+      
+      .header
+        float: left
+        font-family: Georgia, "Times New Roman", Times, serif
+        display: block
+        color: #214367
+        font-size: 15px
+        width: 110px
+        padding: 8px 0 4px 15px
+        margin: 0
+      strong
+        clear: left
+        float: left
+        display: block
+        font-weight: normal
+        color: #000
+        padding: 0 0 5px 15px
+        font-size: 24px
+        // height: 26px
+        width: 120px
+      .difference
+        font-size: 10px
+        position: absolute
+        right: 12px
+        color: #999
+        bottom: -3px
+      .difference_down
+        top: 5px
+        
+        
+    .first
+      background: none
+      padding-left: 20px
+      
+    h3
+      font-family: Georgia, "Times New Roman", Times, serif
+      font-weight: normal
+
+#shadowbox-body
+  height: 350px
+//  overflow: hidden
+  width: 560px
+
+
+
+.constraint_box_content
+  width: 540px !important
+  padding: 5px 10px
+  background: none !important
+  #charts_wrapper
+    text-align: center
+    width: 440px
+  ul
+    margin: 0px
+    padding: 0px
+    list-style: none
+    float: left
+    clear: both
+    li
+      float: left      
+  .name
+    width: 250px
+  .target
+    text-align: right
+    width: 80px
+  .you
+    text-align: right
+    width: 80px
+  .check
+    text-align: right
+    width: 20px
+
+#constraint_1
+  position: absolute
+  // z-index: 1001
+  #shadowbox-outer
+    left: 0px
+  #shadow-bg-arrow-tip
+    position: absolute
+    // z-index: 1002
+#constraint_2
+  #shadowbox-outer
+    left: -150px
+  #shadow-bg-arrow-tip
+    left: 200px
+#constraint_3
+  #shadowbox-outer
+    left: -200px
+  #shadow-bg-arrow-tip
+    left: 250px
+#constraint_4
+  #shadowbox-outer
+    left: -200px
+  #shadow-bg-arrow-tip
+    left: 250px
+#constraint_5
+  #shadowbox-outer
+    left: -200px
+  #shadow-bg-arrow-tip
+    left: 250px
+#constraint_6
+  #shadowbox-outer
+    left: -300px
+  #shadow-bg-arrow-tip
+    left: 350px
+#constraint_7, #constraint_8
+  #shadowbox-outer
+    right: 450px
+  #shadow-bg-arrow-tip
+    left: 450px
+
+/* Hide the constraint_popup by moving it outside the window, instead of display: none, otherwise the jqplot doesn't draw correctly */
+
+.constraint_popup
+  position: absolute
+  left: 0
+  bottom: 8000px
+  width: 600px
+  height: 410px
+
+
+  #shadowbox-outer
+    position: relative
+    bottom: 0px
+    width: 600px
+    height: 400px
+    opacity: 0.01
+  
+  #shadowbox-inner
+    width: 590px
+    height: 390px
+    float: left
+    background-color: #DFE8F3
+    border: 5px solid #FFF
+   
+    h3.shadowbox-title
+      background-color: #63A1C9
+      color: #fff
+      margin: 0 0 0 0
+      padding: 8px 10px
+      
+  .constraint
+    table#policies
+      font-family: 13px/13px Lucida Grande, Verdana, Arial, Helvetica, sans-serif
+      margin: 0 auto
+      line-height: 0.9em
+      th
+        font-family: Lucida Grande, Verdana, Arial, Helvetica, sans-serif
+        text-align: left
+      tr
+        td
+          padding: 3px 30px 3px 0
+          border-bottom: 1px solid #ccc
+          margin: 0 0 0 0
+        td.check
+          padding-right: 0
+      tr.odd
+        background: none
+    .loading
+      border: 1px solid #000

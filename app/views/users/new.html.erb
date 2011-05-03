@@ -1,0 +1,41 @@
+<h1><%= t("header.create account").capitalize %></h1>
+
+<%= form_for(@user) do |f| %>
+  <%= error_messages_for :user, :header_message => t("user.error_header"),:message=> t("user.error_message") %>
+
+  <p>
+    <%= f.label :name, t("user.username") %><br />
+    <%= f.text_field :name %>
+
+  </p>
+  <p>
+    <%= f.label :email, t("user.email") %><br />
+    <%= f.text_field :email%>
+  </p>
+  <p>
+    <%= f.label :company_school, t("user.company_school").html_safe %><br />
+    <%= f.text_field :company_school %>
+  </p>
+  <p>
+    <%= f.label :heared_first_at, t("user.heared_first_at") %><br />
+    <%= f.select :heared_first_at, ["..","tv","internet","radio"], :checked => 'none' %>
+  </p>
+
+  <p>
+    <%= f.label :allow_news, t("user.allow_news") %><br />
+    <%= f.check_box :allow_news %>
+  </p>
+
+  <p>
+    <%= f.label :password, t("user.password") %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, t("user.password_confirmation") %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= f.submit t('Create') %>
+  </p>
+
+<% end %>

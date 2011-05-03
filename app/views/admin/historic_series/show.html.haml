@@ -1,0 +1,21 @@
+%h2
+  ==#{@historic_serie.key}
+  %small= link_to 'Edit', edit_admin_historic_serie_path(@historic_serie)
+
+
+%pre== Key: #{@historic_serie.key}
+
+%table{table_defaults}
+  %thead
+    %tr
+      %th.tal year
+      %th.tal value
+      %th.tal
+  %tbody
+    - @historic_serie.year_values.each do |entry|
+      %tr{cycles}
+        %td= entry.year
+        %td= entry.value
+        %td= link_to 'edit', edit_admin_year_value_path(entry)
+= link_to 'New', new_admin_year_value_path
+= render '/admin/shared/revisions', :versioned => @historic_serie

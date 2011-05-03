@@ -1,0 +1,31 @@
+#select_curve
+  %h1 
+    = "#{t("Available predictions for")} #{t("slidetitle."+@slide.name)}".html_safe
+  %div{:style => "width:500px; height:400px;margin-left:50px; float:right"}
+    - @output_element = OutputElement.find(64)
+    %div{ :id => "#{dom_id(@output_element)}",:style=>'height:300px'}
+  -form_tag "" do
+    - @slide.input_elements.each do |input_element|
+      - if input_element.expert_predictions.size > 0
+        %div
+          %a{:class => "pick_prediction", :id =>"input_#{input_element.id}"}
+            %h2= t("slider."+input_element.name)
+            %p   
+              - input_element.expert_predictions.each do |prediction|
+                = "'#{prediction.name}'"
+                = t("predicts")
+                = t("slider."+input_element.name).downcase
+                = t("slidetitle.#{@slide.name}").downcase
+                = prediction.year_values.select_year(Current.scenario.end_year).first.value > 1 ? t('grows') : t('decreases') 
+                = prediction.year_values.select_year(Current.scenario.end_year).first.value.to_s.gsub("-", "") 
+                = "% in #{Current.scenario.end_year}."
+                
+                = t("use this")
+                = check_box :input_element, input_element.id,  :class =>"pick_prediction", 'data-prediction_id' => prediction.id
+                %br
+                %br
+    = button_to_function "See results","close_fancybox()"
+    
+    = "<script>setTimeout( function(){ #{@output_element.call_jqplot_function} }, 100);</script>".html_safe
+  
+    

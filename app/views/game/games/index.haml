@@ -1,0 +1,65 @@
+#navigation.interface_block
+  %h1 Production park
+  
+  
+  %ul{:class => 'menu', :id => 'interface_menu'}
+    %li= render 'build_plants'
+    %li= render 'extract_resources'
+    %li= render 'extend_electricity'
+    %li= render 'extend_gas'
+        
+= javascript_tag "ETM.gameController.interfaceController.initMenuItems($('#interface_menu'));"
+  
+#canvas_3d
+  
+
+#navigation_3d.interface_block.no_border
+
+
+
+  #slider-normal
+  %script
+    var a = new SimpleSliderView({'value':0.5, 'step_value':0.1, 'max_value': 1, 'name': "Zoom"});
+    a.slider.addEventListener('change', function(v) {ETM.gameController.renderController.setZoomLevel(a.sliderVO.getValue());});
+    $("#slider-normal").append(a.element);
+    
+  #arrows
+    %br
+    %a{:href => '#', :onclick => 'ETM.gameController.renderController.move(new Point(0,150,0));', :class => 'arrow arrow-top'}
+      &uarr;
+
+    %a{:href => '#', :onclick => 'ETM.gameController.renderController.move(new Point(-150,0,0));', :class => 'arrow arrow-left'}
+      &larr;
+
+    %a{:href => '#', :onclick => 'ETM.gameController.renderController.move(new Point(150,0,0));', :class => 'arrow arrow-right'}
+      &rarr;
+
+    %a{:href => '#', :onclick => 'ETM.gameController.renderController.move(new Point(0,-150,0));', :class => 'arrow arrow-down'}
+      &darr;
+    
+    %br
+    %br
+  
+  #showhide
+    %input{:type => 'checkbox', :checked => true, :onclick => 'ETM.gameController.electricityNetworkController.toggle()'} Show electricity network
+    %br
+    %input{:type => 'checkbox', :checked => true, :onclick => 'ETM.gameController.gasNetworkController.toggle();'} Show gas network
+  
+  
+  
+#progress.interface_block
+
+= javascript_tag "ETM.gameController.progressController.setElement($('#progress'));"
+  
+= javascript_tag "ETM.gameController.renderController.render();"
+
+
+= render 'layouts/etm/constraints'
+
+= @input_elements.each do |ie|
+  = javascript_tag create_input_element(ie)
+
+
+
+
+

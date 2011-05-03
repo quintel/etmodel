@@ -1,0 +1,24 @@
+= render "list"
+
+= @area.region_code
+
+#content
+  .header
+    = @area.region_code
+    %small= link_to 'back', data_area_path(:id => @area.id)
+    
+
+  = notice_message
+  %p
+    %strong Attention:
+    %em changing area data requires restarting the server.
+
+  = render 'form'
+
+  %p
+    = link_to "Show", admin_area_path(@area)
+    |
+    = link_to "View All", admin_areas_path
+
+
+  = render "/admin/shared/revisions", :versioned => @area

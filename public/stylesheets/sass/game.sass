@@ -1,0 +1,181 @@
+
+
+
+#constraints_container
+  z-index: 100
+  position: absolute
+  bottom: 0px
+  border-top: 1px solid #ccc
+
+.category
+  .categoryHeader
+    border-bottom: 1px solid black
+    cursor: pointer
+  .items
+   
+    height: 100px
+    overflow: auto
+    display: none
+    .categoryItem
+      margin: 5px
+      margin-left: 0px
+      width: 70px
+      height: 80px
+      border: 1px solid #ccc
+      float: left
+      cursor: pointer
+      text-align: center
+      padding: 2px
+      padding-bottom: 10px
+      img
+        width: 40px
+        margin: 0px auto
+      
+
+.interface_block
+  z-index: 100
+  width: 200px
+  background-color: white
+  border: 2px solid #659FC4
+  
+  padding: 10px
+  margin: 10px
+  
+  h1
+    margin: 0px 5px 20px 5px
+    font-size: 22px
+    
+    color: #333
+
+
+#header
+  height: auto
+#progress
+  border: 1px solid #ccc
+  position: absolute
+  right: 20px
+  bottom: 60px
+  right: 20px
+
+  color: black
+  font-size: 10px
+  .totalProgress 
+    width: 100%
+    height: 10px
+    background-color: #999
+    margin-bottom: 5px
+  .progress
+    height: 10px
+    background-color: black
+    width: 0%
+  
+#navigation_3d
+  position: absolute  
+  top: 100px
+  right: 10px
+  border: 0px
+  width: 230px
+  height: 130px
+  border: 1px dashed #666
+  #slider-normal
+    position: relative
+    left: 70px
+    top: 29px
+  #arrows
+    position: absolute
+    top: 20px
+    .arrow
+      color: #666
+      text-decoration: none
+      font-weight: bold
+      font-size: 20px
+      position: absolute
+      height: 15px
+      width: 15px
+    .arrow:hover
+      font-weight: bolder
+      padding: 2px
+
+    .arrow-top, .arrow-down
+      padding: 0px 2px
+    .arrow-left, .arrow-right
+      padding: 2px 0px
+    .arrow-top
+      top: 0px
+      left: 15px
+    .arrow-left
+      top: 15px
+      left: 0px
+    .arrow-right
+      top: 15px
+      left: 30px
+    .arrow-down
+      top: 35px
+      left: 15px
+
+  #showhide
+    position: absolute
+    top: 100px
+    
+    
+#navigation
+  position: absolute
+  left: 10px
+  top: 100px
+  ul.menu
+    list-style-type: none
+    margin: 0px
+    padding: 0px
+    border: 0px solid #659FC4
+    li
+      .header
+        border: 1px solid white
+        cursor: pointer
+        color: white
+        background-color: #999
+        padding: 10px
+        .title
+          font-size: 12px
+          font-weight: bold
+        .subtitle
+          font-size: 11px
+        .content
+          font-size: 9px
+      .content
+        height: 200px
+        font-size: 11px
+        padding: 10px    
+    .header.build_plants
+      background-color: #659FC4
+    .header.extract_resources
+      background-color: #659FC4
+    .header.extend_electricity
+      background-color: #659FC4
+    .header.extend_gas
+      background-color: #659FC4
+
+        
+body  
+  height: 100%
+  margin: 0px
+  padding: 0px
+html
+  margin: 0px
+  padding: 0px
+  height: 100%
+  overflow: hidden
+
+#game
+  position: relative
+  
+  #canvas_3d
+    top: 100px
+    overflow: hidden
+    width: 100%
+    height: 100%
+    img
+
+.drag
+  cursor: url('/images/icons/drag_hand.png')
+    
+  

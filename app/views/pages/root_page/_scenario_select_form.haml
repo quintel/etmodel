@@ -1,0 +1,17 @@
+%h3= t('select a scenario')
+= form_tag root_path do
+  #select_container
+    %select#scenarios_select{:name => "scenario"}
+      %option{:value => nil}
+      - @scenarios.each do |scenario|
+        %option{:value => scenario.id, :id => "option_scenario_#{scenario.id}"}
+          = truncate(scenario.title, :length => 40)
+  .clear
+  %input#go_button.button_align_right.button{:type => 'submit', :value => t('scenario.load')}      
+  .clear
+  
+  #description_container{:class=>"description_container_#{I18n.locale}"}
+    -@scenarios.each do |scenario|
+      %div{:class => 'description', :id => "description_#{scenario.id}", :style => "display: none;"}
+        %img{:src => '/images/layout/ico_info_big.png'}
+        = scenario.description.html_safe

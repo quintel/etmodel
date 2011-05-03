@@ -1,0 +1,16 @@
+
+= render 'list'
+
+#content
+  .header
+    Edit:
+    = @gquery.key
+
+  = render 'form'
+
+  = render '/admin/shared/revisions', :versioned => @gquery
+
+  - @query = Gql::GqueryCleanerParser.clean(@gquery.query)
+
+  %h3 Result
+  = render 'result' rescue 'ERROR in Calculation'

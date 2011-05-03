@@ -1,0 +1,14 @@
+%li{:id=> "output_elements", :class => "node_list grey_left"}    
+  %h1 Output Element
+  %hr
+  %ul
+    - elements.each do |output_element|
+      %li{:class => "node_item #{output_element.id.to_s == params[:output_element].to_s ? "active": ""}", :id=>"node_#{output_element.id}"}
+        - if output_element.element
+          = link_to output_element.element.name, "#"
+          = link_to image_tag("/images/layout/icons/edit.png", :size=>"14x14", :class=> "edit_button"), edit_admin_view_node_path(output_element, :tab => params[:tab], :sidebar => params[:sidebar], :slide => params[:slide],:output_element => true)
+          = button_to "", admin_view_node_path(output_element), :confirm => "This will remove this input element!", :method => :delete
+    %li
+      = link_to image_tag("/images/layout/icons/add.png", :size=>"14x14"), new_admin_view_node_path(:view_node => {:parent_id => params[:slide]},:tab => params[:tab], :sidebar => params[:sidebar], :slide => params[:slide],:output_element => true)
+
+    

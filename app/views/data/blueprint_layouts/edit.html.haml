@@ -1,0 +1,30 @@
+= sprocket_layout_init :senkey
+= javascript_include_tag 'underscore.min' # underscore does not work with sprockets :(
+
+#blueprint_layout
+  %ul
+    %li
+      = link_to 'save', '#', :onclick => 'update_positions()'
+      (Shortcut: Ctrl+S)
+    %li ALT + click to select/deselect multiple converters
+    %li Shift + click: highlight links
+    %li ALT + Shift + click: hide converter
+    %li Double-click on converter to open details in new converter
+    %li
+      = link_to 'deselect all', 'javascript:GRAPH.deselect_all()'
+      (Shortcut: Ctrl+D)
+    %li Search for converters using id (with #) using Ctrl+F. For low ids, finish search with a ".", e.g. #30.
+
+  = render 'graph_controls'
+  = render 'initialize_graph'
+
+  :javascript
+    function update_positions() {
+      $.post(update_converter_positions_path, {'converter_positions' : getUpdatedValues()});
+      updated_coordinates = {};
+      return false;
+    };
+
+    GRAPH.enableDragging();
+    $(document).bind('keydown', 'ctrl+s', update_positions);
+    $(document).bind('keydown', 'ctrl+d', GRAPH.deselect_all);

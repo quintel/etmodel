@@ -1,0 +1,29 @@
+= render "data/converters/list"
+
+
+#content
+  .header
+    == ##{@converter.id}
+    = @converter.key
+
+
+  - form_for @converter_data, :url => data_converter_data_path(:id => @converter_data) do |f|
+    %table
+      %tbody.numeric_rows
+        - Qernel::ConverterApi::ATTRIBUTES_USED.sort.each do |key|
+          %tr
+            %th= key
+            %td= f.text_field key
+
+        %tr
+          %th municipality_demand
+          %td= f.text_field :municipality_demand
+        %tr
+          %th preset_demand
+          %td= f.text_field :preset_demand
+
+      %tfoot
+        %tr
+          %td
+          %td= f.submit 'save'
+          

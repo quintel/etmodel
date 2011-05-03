@@ -12,12 +12,13 @@
  * The slider class is responsible for drawing the slider and maintaining
  * all states of the slider.
  */
-var Slider = EventDispatcher.extend({
+var Slider = Backbone.Model.extend({
   
   /**
    * View of the slider.
    */
-  init:function(sliderVO, options) {
+  initialize:function(sliderVO, options) {
+  
     this.options = options || {};
     this.element = $('<div></div>');
     this.element.addClass('slider');
@@ -39,7 +40,7 @@ var Slider = EventDispatcher.extend({
     this.element.append(this.leftButton.element);
     this.sliderBar.element.append(this.toggleButton.element);
     this.element.prepend(this.rightButton.element);
-
+    
     this.initEventListeners();
     
     if(!this.options.disabled) {
@@ -54,7 +55,8 @@ var Slider = EventDispatcher.extend({
       this.leftButton.setHover();
       this.rightButton.setHover();
     }
-    this.sliderVO.addEventListener('update', jQuery.proxy(this.redraw, this));
+  
+    this.sliderVO.bind('update', jQuery.proxy(this.redraw, this));
     this.redraw();
     $(window).load(jQuery.proxy(this.redraw, this));
   },
@@ -69,8 +71,8 @@ var Slider = EventDispatcher.extend({
       this.element.bind('mouseover', jQuery.proxy(this.handleMouseOver, this));
       this.element.bind('mouseout', jQuery.proxy(this.handleMouseOut, this));    
 
-      this.leftButton.addEventListener('down', jQuery.proxy(this.handleLeftButtonDown, this));
-      this.rightButton.addEventListener('down', jQuery.proxy(this.handleRightButtonDown, this));
+      this.leftButton.bind('down', jQuery.proxy(this.handleLeftButtonDown, this));
+      this.rightButton.bind('down', jQuery.proxy(this.handleRightButtonDown, this));
 
       if(!Browser.doesTouch()) {
        this.sliderBar.element.bind('mouseup', jQuery.proxy(this.handleToggleButtonDown, this));
@@ -82,10 +84,10 @@ var Slider = EventDispatcher.extend({
        this.sliderBar.element.bind('touchend', jQuery.proxy(this.handleTouchEnd, this));
        $(document).bind('touchend', jQuery.proxy(this.handleTouchEnd, this));
       }
-      this.toggleButton.addEventListener('down', jQuery.proxy(this.handleToggleButtonDown, this));
+      this.toggleButton.bind('down', jQuery.proxy(this.handleToggleButtonDown, this));
 
-      this.sliderVO.addEventListener('update', jQuery.proxy(function() {
-        this.dispatchEvent('move', this);
+      this.sliderVO.bind('update', jQuery.proxy(function() {
+        this.trigger('move', this);
       }, this));
   },
 
@@ -125,7 +127,7 @@ var Slider = EventDispatcher.extend({
     this.toggleButton.setActive();
     $(document).bind('mousemove', jQuery.proxy(this.handleMouseMove, this));
     this.sliderBar.element.bind('mouseup', jQuery.proxy(this.handleToggleButtonUp, this));
-    this.dispatchEvent('toggleButtonDown', this);
+    this.trigger('toggleButtonDown', this);
     $(document).bind('mouseup', jQuery.proxy(this.handleToggleButtonUp, this));
   },
 
@@ -135,7 +137,7 @@ var Slider = EventDispatcher.extend({
   handleToggleButtonUp:function() {
     $(document).unbind('mousemove', jQuery.proxy(this.handleMouseMove, this));
     this.sliderBar.element.unbind('mouseup', jQuery.proxy(this.handleToggleButtonUp, this));
-    this.dispatchEvent('change');
+    this.trigger('change');
     $(document).unbind('mouseup', jQuery.proxy(this.handleToggleButtonUp, this));
   },
   
@@ -155,7 +157,7 @@ var Slider = EventDispatcher.extend({
   handleTouchEnd:function(e) {
     $(document).unbind('touchmove', jQuery.proxy(this.handleTouchMove, this));
     $(document).unbind('touchend', jQuery.proxy(this.handleTouchEnd, this));
-    this.dispatchEvent('change');
+    this.trigger('change');
   },
   handleTouchMove:function(e) {
     this.setPosition(this.sliderBar.getPosition(e.originalEvent.targetTouches[0].pageX));
@@ -171,21 +173,22 @@ var Slider = EventDispatcher.extend({
   handleLeftButtonUp:function() {
     $(document).unbind('mouseup', jQuery.proxy(this.handleLeftButtonUp, this));
     this.stepValueAdjuster.disable();
-    this.dispatchEvent('change');
+    this.trigger('change');
   },
   handleRightButtonUp:function() {
     this.stepValueAdjuster.disable();
     $(document).unbind('mouseup', jQuery.proxy(this.handleRightButtonUp, this));
-    this.dispatchEvent('change');
+    this.trigger('change');
   },
   
 
   setPosition:function(position) {
-    
+   
     position = Math.min(position, 1);
     position = Math.max(position, 0);
+    
     this.sliderVO.relative.setPosition(position);
-//    this.dispatchEvent('update');
+//    this.trigger('update');
     this.redraw();
   },
   getValue:function() {
@@ -193,6 +196,7 @@ var Slider = EventDispatcher.extend({
   },
   
   setValue:function(pValue, opts) {
+
     this.sliderVO.setValue(pValue, opts);
     this.redraw();
   },
@@ -200,7 +204,7 @@ var Slider = EventDispatcher.extend({
  
   
   redraw:function() {
-    
+
     this.toggleButton.setPosition(this.sliderVO.relative.getPosition(this.sliderVO.getValue()));
     
     

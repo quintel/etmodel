@@ -3,8 +3,12 @@
  */
 var SliderResetButton = SliderButton.extend({
   
-  init:function(opts) {
-    this._super({'className':'slider-reset-button', 'name':'reset'});
+  initialize:function(opts) {
+    
+    // backbone super method calling is uggly, sorry!
+    SliderResetButton.__super__.initialize.call(this, {'className':'slider-reset-button', 'name':'reset'});
+    
+    // this._super({'className':'slider-reset-button', 'name':'reset'});
   },
   hide:function() {
     this.element.css('opacity', 0);

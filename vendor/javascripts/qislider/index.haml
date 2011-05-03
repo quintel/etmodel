@@ -4,6 +4,8 @@
     %script{:src => "ext/jquery-1.4.4.min.js"}
     %script{:src => "ext/jquery.class.js"}
     %script{:src => "ext/event_dispatcher.js"}
+    %script{:src => "ext/underscore.js"}
+    %script{:src => "ext/backbone-0.3.3.min.js"}
     %script{:src => "qislider.js"}
     %link{:href => "qislider.css", :rel => "stylesheet", :type => "text/css"}
     %style
@@ -45,7 +47,7 @@
         g.addSlider(a.sliderVO);
         $("#slider-#{i}").append(a.element);
 
-
+    
     %h2 Advanced sliders  
 
     %div{:id => "slider-advanced"}
@@ -73,7 +75,7 @@
     - 3.times do |i|
       %div{:id => "slider-group-heating-#{i}"}
       %script
-        var a = new AdvancedSliderView({'value':10, 'step_value':1, 'max_value': 100, 'name':'#{i}', 'formatter':function(n) {return n.toFixed(2) + '%'}});
+        var a = new AdvancedSliderView({'value':10, 'step_value':1, 'max_value': 100, 'name':'#{i}'});
         g2.addSlider(a.sliderVO);
         $("#slider-group-heating-#{i}").append(a.element);
 
@@ -112,7 +114,7 @@
     %script
       var a = new SimpleSliderView({'value':200, 'step_value':10, 'max_value': 800, 'name': "CO2 emission"});
       $("#slider-events").append(a.element);
-      a.addEventListener('change', function() { $('#slider-log').html($('#slider-log').html() + ' event')});
+      a.bind('change', function() { $('#slider-log').html($('#slider-log').html() + ' event')});
 
 
     %h2 Slider step value

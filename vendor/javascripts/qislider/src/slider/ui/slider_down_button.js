@@ -1,7 +1,7 @@
 var SliderDownButton = SliderButton.extend({
   
-  init:function(opts) {
-    this._super({'className':'slider-down-button', 'name':'down'});
+  initialize:function(opts) {
+    SliderDownButton.__super__.initialize({'className':'slider-down-button', 'name':'down'});
   }
   
   

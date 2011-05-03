@@ -5,9 +5,9 @@
  * The slider class is responsible for drawing the slider and maintaining
  * all states of the slider.
  */
-var SliderVoRelative = EventDispatcher.extend({
+var SliderVoRelative = Backbone.Model.extend({
 
-  init:function(sliderVO) {
+  initialize:function(sliderVO) {
     this.sliderVO = sliderVO;
   },
 
@@ -26,11 +26,12 @@ var SliderVoRelative = EventDispatcher.extend({
  * The slider class is responsible for drawing the slider and maintaining
  * all states of the slider.
  */
-var SliderVO = EventDispatcher.extend({
+var SliderVO = Backbone.Model.extend({
   /**
    * This will initialize the slider.
    */
-  init:function(options) {
+  initialize:function(options) {
+
     options = options || {};
     this.options = options;
     this.precision = options.precision || null;
@@ -38,7 +39,7 @@ var SliderVO = EventDispatcher.extend({
     this.min_value = options.min_value || 0;
     this.step_value = options.step_value;
     this.value = options.value || 0;
-    this.reset_value = this.value;
+    this.reset_value = options.reset_value;
     this.relative = new SliderVoRelative(this);
   },
 
@@ -79,6 +80,7 @@ var SliderVO = EventDispatcher.extend({
    * by setting the options.
    */
   setValue:function(value, settings) {
+
     if(this.options && this.options.disabled) {
       return false;
     }
@@ -105,7 +107,8 @@ var SliderVO = EventDispatcher.extend({
 
 
     if(!(settings && settings.noEvent)) {
-      this.dispatchEvent('update', this);
+
+      this.trigger('update', this);
     }
 
   },
@@ -116,7 +119,11 @@ var SliderVO = EventDispatcher.extend({
   getRoundedStepValue:function(value) {
     var diff = Math.abs((value % this.getStepValue()));
     if(diff < (this.getStepValue() / 2)) {
-      return value - diff;
+      if (value > 0){
+        return value - diff;
+      }else{
+        return value + diff;
+      }
     } else {
       return value - diff + this.getStepValue();
     }
@@ -131,9 +138,16 @@ var SliderVO = EventDispatcher.extend({
     return this.value;
   },
   getRoundedValue:function() {
-    if(this.precision)
-      return this.value.toFixed(this.precision);
-    return this.value;
+    if(this.value >= 10000){ // larger then 10k does not fit nicely in the inputbox when not rounded down
+      return this.value.toFixed();
+    }
+    else{
+      if(this.options.precision == null){
+        return this.value;
+      } else {
+        return this.value.toFixed(this.options.precision);
+      }
+    }
   },
   getFormattedValue:function() {
     return this.formatValue(this.getRoundedValue());
@@ -164,8 +178,8 @@ var SliderVO = EventDispatcher.extend({
  * Adjusts the slider with steps
  */
 
-var StepValueAdjuster = EventDispatcher.extend({
-  init:function(sliderVO) {
+var StepValueAdjuster = Backbone.Model.extend({
+  initialize:function(sliderVO) {
     this.sliderVO = sliderVO;
   },
 
@@ -194,16 +208,16 @@ var StepValueAdjuster = EventDispatcher.extend({
     var lPosition = this.sliderVO.relative.getPosition(this.sliderVO.getValue());
     var lRelativeStep = this.sliderVO.relative.getPosition(this.sliderVO.getStepValue());
     this.sliderVO.setValue(this.sliderVO.getValue() + this.direction * this.sliderVO.getStepValue());
-    this.dispatchEvent("update");
+    this.trigger("update");
 
     if(this.enabled)
       setTimeout(jQuery.proxy(this.adjustStepValue, this), this.standardSleepTime);
     this.standardSleepTime = this.standardSleepTime / 1.08;
   }
 });
-var SliderBar = EventDispatcher.extend({
+var SliderBar = Backbone.View.extend({
 
-  init:function(options) {
+  initialize:function(options) {
     this.element = $('<div></div');
     this.element.addClass('slider-bar');
     this.width = options.sliderWidth;
@@ -225,8 +239,9 @@ var SliderBar = EventDispatcher.extend({
  * This button is used in a slider.
  *
  */
-var SliderButton = EventDispatcher.extend({
-  init:function(opts) {
+var SliderButton = Backbone.View.extend({
+  initialize:function(opts) {
+
     this.element = $('<div></div>');
     this.element.addClass('slider-button')
     this.name = opts.name;
@@ -254,7 +269,7 @@ var SliderButton = EventDispatcher.extend({
     }
   },
   handleMouseDown:function() {
-    this.dispatchEvent('down');
+    this.trigger('down');
     this.setActive();
   },
   setActive:function() {
@@ -278,8 +293,8 @@ var SliderButton = EventDispatcher.extend({
   },
 
   handleMouseUp:function() {
-    this.dispatchEvent('up');
-    this.dispatchEvent('click');
+    this.trigger('up');
+    this.trigger('click');
     this.disableMouseOver = false;
 
     this.element.removeClass('slider-button-active')
@@ -303,8 +318,8 @@ var SliderButton = EventDispatcher.extend({
  */
 var SliderLeftButton = SliderButton.extend({
 
-  init:function(opts) {
-    this._super({'className':'slider-left-button', 'name':'left', 'disabled':opts && opts.disabled});
+  initialize:function(opts) {
+    SliderLeftButton.__super__.initialize.call(this, {'className':'slider-left-button', 'name':'left', 'disabled':opts && opts.disabled});
   }
 
 
@@ -314,8 +329,8 @@ var SliderLeftButton = SliderButton.extend({
  */
 var SliderRightButton = SliderButton.extend({
 
-  init:function(opts) {
-    this._super({'className':'slider-right-button', 'name':'right','disabled':opts && opts.disabled});
+  initialize:function(opts) {
+    SliderRightButton.__super__.initialize.call(this, {'className':'slider-right-button', 'name':'right','disabled':opts && opts.disabled});
   }
 
 
@@ -325,8 +340,11 @@ var SliderRightButton = SliderButton.extend({
  */
 var SliderToggleButton = SliderButton.extend({
 
-  init:function(sliderBar, opts) {
-    this._super({'className':'slider-toggle-button'});
+  initialize:function(sliderBar, opts) {
+    SliderToggleButton.__super__.initialize.call(this, {'className':'slider-toggle-button'});
+
+
+
     this.sliderBar = sliderBar;
     this.width = 20;
   },
@@ -378,12 +396,13 @@ Browser.makeSureArrayHasFunctionIndexOf();
  * The slider class is responsible for drawing the slider and maintaining
  * all states of the slider.
  */
-var Slider = EventDispatcher.extend({
+var Slider = Backbone.Model.extend({
 
   /**
    * View of the slider.
    */
-  init:function(sliderVO, options) {
+  initialize:function(sliderVO, options) {
+
     this.options = options || {};
     this.element = $('<div></div>');
     this.element.addClass('slider');
@@ -405,21 +424,22 @@ var Slider = EventDispatcher.extend({
     this.sliderBar.element.append(this.toggleButton.element);
     this.element.prepend(this.rightButton.element);
 
+    this.initEventListeners();
 
     if(!this.options.disabled) {
       this.initEventListeners();
-    } else {
+    }
+    else{
       this.element.addClass('slider-disabled')
     }
-
-
     this.element.append($('<div>').addClass('clear'));
 
     if(Browser.doesTouch()) {
       this.leftButton.setHover();
       this.rightButton.setHover();
     }
-    this.sliderVO.addEventListener('update', jQuery.proxy(this.redraw, this));
+
+    this.sliderVO.bind('update', jQuery.proxy(this.redraw, this));
     this.redraw();
     $(window).load(jQuery.proxy(this.redraw, this));
   },
@@ -428,26 +448,28 @@ var Slider = EventDispatcher.extend({
    * Initialize all event listeners.
    */
   initEventListeners:function() {
-    this.element.bind('mouseover', jQuery.proxy(this.handleMouseOver, this));
-    this.element.bind('mouseout', jQuery.proxy(this.handleMouseOut, this));
 
-    this.leftButton.addEventListener('down', jQuery.proxy(this.handleLeftButtonDown, this));
-    this.rightButton.addEventListener('down', jQuery.proxy(this.handleRightButtonDown, this));
 
-    if(!Browser.doesTouch()) {
-     this.sliderBar.element.bind('mousedown', jQuery.proxy(this.handleToggleButtonDown, this));
+      this.element.bind('mouseover', jQuery.proxy(this.handleMouseOver, this));
+      this.element.bind('mouseout', jQuery.proxy(this.handleMouseOut, this));
 
-    } else {
-     this.toggleButton.element.bind('touchstart', jQuery.proxy(this.handleTouchStart, this));
-     this.sliderBar.element.bind('touchstart', jQuery.proxy(this.handleTouchStart, this));
-     this.sliderBar.element.bind('touchend', jQuery.proxy(this.handleTouchEnd, this));
-     $(document).bind('touchend', jQuery.proxy(this.handleTouchEnd, this));
-    }
-    this.toggleButton.addEventListener('down', jQuery.proxy(this.handleToggleButtonDown, this));
+      this.leftButton.bind('down', jQuery.proxy(this.handleLeftButtonDown, this));
+      this.rightButton.bind('down', jQuery.proxy(this.handleRightButtonDown, this));
 
-    this.sliderVO.addEventListener('update', jQuery.proxy(function() {
-      this.dispatchEvent('move', this);
-    }, this));
+      if(!Browser.doesTouch()) {
+       this.sliderBar.element.bind('mouseup', jQuery.proxy(this.handleToggleButtonDown, this));
+
+      } else {
+       this.toggleButton.element.bind('touchstart', jQuery.proxy(this.handleTouchStart, this));
+       this.sliderBar.element.bind('touchstart', jQuery.proxy(this.handleTouchStart, this));
+       this.sliderBar.element.bind('touchend', jQuery.proxy(this.handleTouchEnd, this));
+       $(document).bind('touchend', jQuery.proxy(this.handleTouchEnd, this));
+      }
+      this.toggleButton.bind('down', jQuery.proxy(this.handleToggleButtonDown, this));
+
+      this.sliderVO.bind('update', jQuery.proxy(function() {
+        this.trigger('move', this);
+      }, this));
   },
 
   /**
@@ -486,7 +508,7 @@ var Slider = EventDispatcher.extend({
     this.toggleButton.setActive();
     $(document).bind('mousemove', jQuery.proxy(this.handleMouseMove, this));
     this.sliderBar.element.bind('mouseup', jQuery.proxy(this.handleToggleButtonUp, this));
-    this.dispatchEvent('toggleButtonDown', this);
+    this.trigger('toggleButtonDown', this);
     $(document).bind('mouseup', jQuery.proxy(this.handleToggleButtonUp, this));
   },
 
@@ -496,7 +518,7 @@ var Slider = EventDispatcher.extend({
   handleToggleButtonUp:function() {
     $(document).unbind('mousemove', jQuery.proxy(this.handleMouseMove, this));
     this.sliderBar.element.unbind('mouseup', jQuery.proxy(this.handleToggleButtonUp, this));
-    this.dispatchEvent('change');
+    this.trigger('change');
     $(document).unbind('mouseup', jQuery.proxy(this.handleToggleButtonUp, this));
   },
 
@@ -516,7 +538,7 @@ var Slider = EventDispatcher.extend({
   handleTouchEnd:function(e) {
     $(document).unbind('touchmove', jQuery.proxy(this.handleTouchMove, this));
     $(document).unbind('touchend', jQuery.proxy(this.handleTouchEnd, this));
-    this.dispatchEvent('change');
+    this.trigger('change');
   },
   handleTouchMove:function(e) {
     this.setPosition(this.sliderBar.getPosition(e.originalEvent.targetTouches[0].pageX));
@@ -532,12 +554,12 @@ var Slider = EventDispatcher.extend({
   handleLeftButtonUp:function() {
     $(document).unbind('mouseup', jQuery.proxy(this.handleLeftButtonUp, this));
     this.stepValueAdjuster.disable();
-    this.dispatchEvent('change');
+    this.trigger('change');
   },
   handleRightButtonUp:function() {
     this.stepValueAdjuster.disable();
     $(document).unbind('mouseup', jQuery.proxy(this.handleRightButtonUp, this));
-    this.dispatchEvent('change');
+    this.trigger('change');
   },
 
 
@@ -545,6 +567,7 @@ var Slider = EventDispatcher.extend({
 
     position = Math.min(position, 1);
     position = Math.max(position, 0);
+
     this.sliderVO.relative.setPosition(position);
     this.redraw();
   },
@@ -553,6 +576,7 @@ var Slider = EventDispatcher.extend({
   },
 
   setValue:function(pValue, opts) {
+
     this.sliderVO.setValue(pValue, opts);
     this.redraw();
   },
@@ -568,9 +592,9 @@ var Slider = EventDispatcher.extend({
 
 });
 
-var SimpleSliderView = EventDispatcher.extend({
+var SimpleSliderView = Backbone.View.extend({
 
-  init:function(options) {
+  initialize:function(options) {
     this.options = options;
     this.sliderVO = new SliderVO(this.options);
     this.slider = new Slider(this.sliderVO, this.options);
@@ -580,8 +604,9 @@ var SimpleSliderView = EventDispatcher.extend({
   }
 
 });
-var SliderInfoBox = EventDispatcher.extend({
-  init:function(sliderVO, opts) {
+var SliderInfoBox = Backbone.Model.extend({
+  initialize:function(sliderVO, opts) {
+
     var infoBoxElement;
     if(opts.element)
       infoBoxElement = $('.info-box', opts.element);
@@ -619,7 +644,7 @@ var SliderInfoBox = EventDispatcher.extend({
 
     this.sliderVO = sliderVO;
 
-    this.sliderVO.addEventListener("update", jQuery.proxy(this.handleSliderUpdate, this));
+    this.sliderVO.bind("update", jQuery.proxy(this.handleSliderUpdate, this));
     this.isVisible = false;
     this.handleSliderUpdate();
   },
@@ -639,14 +664,14 @@ var SliderInfoBox = EventDispatcher.extend({
   show:function() {
     this.element.show();
     this.isVisible = true;
-    this.dispatchEvent("visibility")
-    this.dispatchEvent("show", this);
+    this.trigger("visibility")
+    this.trigger("show", this);
   },
   hide:function() {
     this.element.hide();
     this.isVisible = false;
-    this.dispatchEvent("visibility")
-    this.dispatchEvent("hide", this);
+    this.trigger("visibility")
+    this.trigger("hide", this);
   },
 
   handleSliderUpdate:function() {
@@ -658,8 +683,8 @@ var SliderInfoBox = EventDispatcher.extend({
   }
 
 })
-var SliderInput = EventDispatcher.extend({
-  init:function(sliderVO) {
+var SliderInput = Backbone.View.extend({
+  initialize:function(sliderVO) {
     this.sliderVO = sliderVO;
     this.element = $('<div></div>');
     this.element.addClass('slider-input');
@@ -693,7 +718,7 @@ var SliderInput = EventDispatcher.extend({
     this.element.append(this.edit_form_element);
 
 
-    this.sliderVO.addEventListener('update', jQuery.proxy(this.handleUpdate, this));
+    this.sliderVO.bind('update', jQuery.proxy(this.handleUpdate, this));
     this.draw();
   },
 
@@ -736,7 +761,7 @@ var SliderInput = EventDispatcher.extend({
   },
   handleFinishedEdit:function() {
     this.sliderVO.setValue(this.input_element.attr('value'));
-    this.dispatchEvent('update');
+    this.trigger('update');
     this.value_element.show();
     this.edit_form_element.hide();
     this.edit_element.hide();
@@ -750,8 +775,10 @@ var SliderInput = EventDispatcher.extend({
  */
 var SliderResetButton = SliderButton.extend({
 
-  init:function(opts) {
-    this._super({'className':'slider-reset-button', 'name':'reset'});
+  initialize:function(opts) {
+
+    SliderResetButton.__super__.initialize.call(this, {'className':'slider-reset-button', 'name':'reset'});
+
   },
   hide:function() {
     this.element.css('opacity', 0);
@@ -764,17 +791,17 @@ var SliderResetButton = SliderButton.extend({
 });
 var SliderDownButton = SliderButton.extend({
 
-  init:function(opts) {
-    this._super({'className':'slider-down-button', 'name':'down'});
+  initialize:function(opts) {
+    SliderDownButton.__super__.initialize({'className':'slider-down-button', 'name':'down'});
   }
 
 
 });
 
 
-var AdvancedSliderView = EventDispatcher.extend({
+var AdvancedSliderView = Backbone.View.extend({
 
-  init:function(options) {
+  initialize:function(options) {
     this.options = options;
 
 
@@ -784,6 +811,8 @@ var AdvancedSliderView = EventDispatcher.extend({
     this.resetButton.hide();
     this.downButton = new SliderDownButton();
     this.sliderInput = new SliderInput(this.getSliderVO());
+
+
     this.infoBox = new SliderInfoBox(this.slider.getSliderVO(), options);
 
     this.initElements();
@@ -799,8 +828,6 @@ var AdvancedSliderView = EventDispatcher.extend({
   initElements:function() {
     this.element = $('<div></div>');
     this.element.addClass('slider-advanced');
-    this.topRowElement = $('<div></div>').addClass('toprow');
-    this.element.append(this.topRowElement);
 
 
     if(this.options.element)
@@ -810,6 +837,8 @@ var AdvancedSliderView = EventDispatcher.extend({
       this.name = this.options.name || "untitled";
       this.nameElement = $('<div class="name"></div>').html(this.name);
     }
+    this.topRowElement = $('<div></div>').addClass('toprow');
+    this.element.append(this.topRowElement);
 
     this.nameElement.bind('selectstart', function() {return false;});
     this.sliderElementsElement = $('<div></div>').addClass('slider-elements');
@@ -823,7 +852,7 @@ var AdvancedSliderView = EventDispatcher.extend({
     this.element.append(this.downButton.element);
     this.sliderElementsElement.append(this.sliderInput.element);
     this.sliderElementsElement.append(this.downButton.element);
-    this.resetButton.addEventListener('up', jQuery.proxy(this.handleReset, this));
+    this.resetButton.bind('up', jQuery.proxy(this.handleReset, this));
     this.topRowElement.append($('<div>').addClass('clear'));
     this.element.append($('<div>').addClass('clear'));
     this.element.append(this.infoBox.element);
@@ -841,22 +870,22 @@ var AdvancedSliderView = EventDispatcher.extend({
    * All event listeners are initialized.
    */
   initEventListeners:function() {
-    this.sliderInput.addEventListener('update', jQuery.proxy(function() {
-      this.dispatchEvent('change');
+    this.sliderInput.bind('update', jQuery.proxy(function() {
+      this.trigger('change');
     }, this));
 
-    this.slider.addEventListener('change', jQuery.proxy(function() {
-      this.dispatchEvent('change');
+    this.slider.bind('change', jQuery.proxy(function() {
+      this.trigger('change');
     }, this));
 
     this.nameElement.bind('click', jQuery.proxy(function() {this.infoBox.toggle();}, this));
-    this.infoBox.addEventListener('visibility', jQuery.proxy(this.handleVisibilityChange, this));
-    this.downButton.addEventListener('click', jQuery.proxy(this.handleDownButtonClicked, this));
+    this.infoBox.bind('visibility', jQuery.proxy(this.handleVisibilityChange, this));
+    this.downButton.bind('click', jQuery.proxy(this.handleDownButtonClicked, this));
     this.element.bind('mouseover', jQuery.proxy(this.handleMouseOver, this));
     this.element.bind('mouseout', jQuery.proxy(this.handleMouseOut, this));
 
     if(!this.options.disabled) {
-      this.resetButton.addEventListener('up', jQuery.proxy(this.handleReset, this));
+      this.resetButton.bind('up', jQuery.proxy(this.handleReset, this));
     }
 
   },
@@ -868,7 +897,7 @@ var AdvancedSliderView = EventDispatcher.extend({
   handleReset:function() {
 
     this.sliderVO.reset();
-    this.dispatchEvent('change');
+    this.trigger('change');
   },
   handleMouseOver:function() {
 
@@ -909,8 +938,8 @@ var AdvancedSliderView = EventDispatcher.extend({
   }
 
 });
-var SliderGroup = EventDispatcher.extend({
-  init:function(opts) {
+var SliderGroup = Backbone.Model.extend({
+  initialize:function(opts) {
     this.opts = opts || {};
     this.sliders = [];
     this.sliderChangeStack = [];
@@ -933,7 +962,8 @@ var SliderGroup = EventDispatcher.extend({
 
   disableEventListeners:function() {
     for(var i = 0; i < this.sliders.length; i++) {
-      this.sliders[i].removeEventListener('update', this.sliderUpdateFunctions[i]);
+      if(this.sliderUpdateFunctions[i])
+        this.sliders[i].unbind('update', this.sliderUpdateFunctions[i]);
     }
     this.sliderUpdateFunctions = [];
 
@@ -942,7 +972,8 @@ var SliderGroup = EventDispatcher.extend({
   enableEventListeners:function() {
     for(var i = 0; i < this.sliders.length; i++) {
       this.sliderUpdateFunctions.push(jQuery.proxy(this.handleUpdate, this));
-      this.sliders[i].addEventListener('update', this.sliderUpdateFunctions[i]);
+      this.sliders[i].bind('update', this.sliderUpdateFunctions[i]);
+
     }
   },
 
@@ -950,7 +981,7 @@ var SliderGroup = EventDispatcher.extend({
   handleUpdate:function(slider) {
       this.handleSliderChange(slider);
       this.handleSliderTouched(slider);
-      this.dispatchEvent("slider_updated");
+      this.trigger("slider_updated");
   },
   /**
    * This method calculates how much the others must in or decrease. It chooses a slider to adjust.
@@ -958,6 +989,8 @@ var SliderGroup = EventDispatcher.extend({
    */
   handleSliderChange:function(pSlider) {
     this.disableEventListeners();
+
+
 
     var k = 0;
     while(k < 20 && this.getTotalToAdjust() != 0) {
@@ -979,7 +1012,6 @@ var SliderGroup = EventDispatcher.extend({
     var lIndex = this.sliderChangeStack.indexOf(slider);
     if(lIndex != -1)
       this.sliderChangeStack.splice(lIndex, 1);
-    console.info(slider)
     this.sliderChangeStack.push(slider);
   },
 

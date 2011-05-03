@@ -3,8 +3,12 @@
  */
 var SliderToggleButton = SliderButton.extend({
   
-  init:function(sliderBar, opts) {
-    this._super({'className':'slider-toggle-button'});
+  initialize:function(sliderBar, opts) {
+    SliderToggleButton.__super__.initialize.call(this, {'className':'slider-toggle-button'});
+ 
+    
+    
+    // this._super({'className':'slider-toggle-button'});
     this.sliderBar = sliderBar;
     this.width = 20;
   },

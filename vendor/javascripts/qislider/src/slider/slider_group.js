@@ -1,5 +1,5 @@
-var SliderGroup = EventDispatcher.extend({
-  init:function(opts) {
+var SliderGroup = Backbone.Model.extend({
+  initialize:function(opts) {
     this.opts = opts || {};
     this.sliders = [];
     this.sliderChangeStack = [];
@@ -23,7 +23,8 @@ var SliderGroup = EventDispatcher.extend({
   
   disableEventListeners:function() {
     for(var i = 0; i < this.sliders.length; i++) {
-      this.sliders[i].removeEventListener('update', this.sliderUpdateFunctions[i]);
+      if(this.sliderUpdateFunctions[i])
+        this.sliders[i].unbind('update', this.sliderUpdateFunctions[i]);
     }
     this.sliderUpdateFunctions = [];
       
@@ -32,7 +33,8 @@ var SliderGroup = EventDispatcher.extend({
   enableEventListeners:function() {
     for(var i = 0; i < this.sliders.length; i++) {
       this.sliderUpdateFunctions.push(jQuery.proxy(this.handleUpdate, this));
-      this.sliders[i].addEventListener('update', this.sliderUpdateFunctions[i]);
+      this.sliders[i].bind('update', this.sliderUpdateFunctions[i]);
+      
     }  
   },
   
@@ -40,7 +42,7 @@ var SliderGroup = EventDispatcher.extend({
   handleUpdate:function(slider) {
       this.handleSliderChange(slider);
       this.handleSliderTouched(slider);
-      this.dispatchEvent("slider_updated");
+      this.trigger("slider_updated");
   },
   /**
    * This method calculates how much the others must in or decrease. It chooses a slider to adjust.
@@ -48,7 +50,9 @@ var SliderGroup = EventDispatcher.extend({
    */
   handleSliderChange:function(pSlider) {
     this.disableEventListeners();
-
+    
+    
+    
     var k = 0;
     while(k < 20 && this.getTotalToAdjust() != 0) {
       var lSlider = this.getAdjustableSlider(pSlider, k % (this.sliders.length - 1));
@@ -62,7 +66,7 @@ var SliderGroup = EventDispatcher.extend({
     }
       
     
-
+    
     this.enableEventListeners();
    
   },

@@ -20,7 +20,7 @@
   #slider-normal
   %script
     var a = new SimpleSliderView({'value':0.5, 'step_value':0.1, 'max_value': 1, 'name': "Zoom"});
-    a.slider.addEventListener('change', function(v) {ETM.gameController.renderController.setZoomLevel(a.sliderVO.getValue());});
+    a.slider.bind('change', function(v) {ETM.gameController.renderController.setZoomLevel(a.sliderVO.getValue());});
     $("#slider-normal").append(a.element);
     
   #arrows

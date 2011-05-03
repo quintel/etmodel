@@ -20,14 +20,14 @@
   font-family: arial;
   padding-top: 0px;
   font-size: 12px;
-  width: 70px;
+  width: 75px;
   right: 0px; }
   .slider-input input {
     width: 30px;
     float: left; }
   .slider-input .value {
     font-size: 12px;
-    width: 60px;
+    width: 65px;
     text-align: right; }
   .slider-input .edit {
     float: left;
@@ -93,7 +93,8 @@
 .slider-advanced {
   text-align: left;
   position: relative;
-  margin-bottom: 1px; }
+  margin-bottom: 1px;
+  clear: both; }
   .slider-advanced .slider-elements {
     width: 290px;
     float: right; }
@@ -107,8 +108,9 @@
     padding-top: 3px;
     right: 300px; }
     .slider-advanced .name .text {
+      color: #191919;
       float: left;
-      width: 149px; }
+      width: 30%; }
     .slider-advanced .name .label {
       float: left;
       font-size: 10px;
@@ -139,7 +141,7 @@
   .slider-advanced .slider-down-button {
     position: relative;
     float: left;
-    left: 2px;
+    left: 7px;
     top: 3px;
     background: url("images/slider/slider-down-button.png") no-repeat;
     width: 20px;
@@ -153,7 +155,7 @@
   font-size: 12px;
   margin-top: 10px;
   margin-bottom: 20px;
-  width: 430px;
+  width: 415px;
   display: none;
   padding: 4px;
   background-color: #eeeeee; }
@@ -161,7 +163,7 @@
     width: 280px;
     float: left; }
   .slider-info-box .text-without-data {
-    width: 430px; }
+    width: 410px; }
   .slider-info-box .data {
     width: 130px;
     float: right; }

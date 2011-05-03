@@ -5,9 +5,9 @@
 //= require <slider/ui/slider_down_button>
 
 
-var AdvancedSliderView = EventDispatcher.extend({
+var AdvancedSliderView = Backbone.View.extend({
   
-  init:function(options) {
+  initialize:function(options) {
     this.options = options;
     
     
@@ -17,6 +17,8 @@ var AdvancedSliderView = EventDispatcher.extend({
     this.resetButton.hide();
     this.downButton = new SliderDownButton();
     this.sliderInput = new SliderInput(this.getSliderVO());
+
+
     this.infoBox = new SliderInfoBox(this.slider.getSliderVO(), options);
     
     this.initElements();
@@ -59,7 +61,7 @@ var AdvancedSliderView = EventDispatcher.extend({
     this.element.append(this.downButton.element);   
     this.sliderElementsElement.append(this.sliderInput.element);
     this.sliderElementsElement.append(this.downButton.element);
-    this.resetButton.addEventListener('up', jQuery.proxy(this.handleReset, this));
+    this.resetButton.bind('up', jQuery.proxy(this.handleReset, this));
     this.topRowElement.append($('<div>').addClass('clear'));
     this.element.append($('<div>').addClass('clear'));
     this.element.append(this.infoBox.element);
@@ -77,22 +79,22 @@ var AdvancedSliderView = EventDispatcher.extend({
    * All event listeners are initialized.
    */ 
   initEventListeners:function() {
-    this.sliderInput.addEventListener('update', jQuery.proxy(function() {
-      this.dispatchEvent('change');
+    this.sliderInput.bind('update', jQuery.proxy(function() {
+      this.trigger('change');
     }, this));
 
-    this.slider.addEventListener('change', jQuery.proxy(function() {
-      this.dispatchEvent('change');
+    this.slider.bind('change', jQuery.proxy(function() {
+      this.trigger('change');
     }, this));
   
     this.nameElement.bind('click', jQuery.proxy(function() {this.infoBox.toggle();}, this));
-    this.infoBox.addEventListener('visibility', jQuery.proxy(this.handleVisibilityChange, this));
-    this.downButton.addEventListener('click', jQuery.proxy(this.handleDownButtonClicked, this));
+    this.infoBox.bind('visibility', jQuery.proxy(this.handleVisibilityChange, this));
+    this.downButton.bind('click', jQuery.proxy(this.handleDownButtonClicked, this));
     this.element.bind('mouseover', jQuery.proxy(this.handleMouseOver, this));
     this.element.bind('mouseout', jQuery.proxy(this.handleMouseOut, this));
     
     if(!this.options.disabled) {
-      this.resetButton.addEventListener('up', jQuery.proxy(this.handleReset, this));
+      this.resetButton.bind('up', jQuery.proxy(this.handleReset, this));
     }
     
   },
@@ -104,7 +106,7 @@ var AdvancedSliderView = EventDispatcher.extend({
   handleReset:function() {
     
     this.sliderVO.reset();
-    this.dispatchEvent('change');
+    this.trigger('change');
   },
   handleMouseOver:function() {
 

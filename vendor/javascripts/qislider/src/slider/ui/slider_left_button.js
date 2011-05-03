@@ -4,8 +4,9 @@
  */
 var SliderLeftButton = SliderButton.extend({
   
-  init:function(opts) {
-    this._super({'className':'slider-left-button', 'name':'left', 'disabled':opts && opts.disabled});
+  initialize:function(opts) {
+    SliderLeftButton.__super__.initialize.call(this, {'className':'slider-left-button', 'name':'left', 'disabled':opts && opts.disabled});
+    // this._super({'className':'slider-left-button', 'name':'left', 'disabled':opts && opts.disabled});
   }
   
   

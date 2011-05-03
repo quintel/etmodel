@@ -1,6 +1,6 @@
-var SliderBar = EventDispatcher.extend({
+var SliderBar = Backbone.View.extend({
   
-  init:function(options) {
+  initialize:function(options) {
     this.element = $('<div></div');
     this.element.addClass('slider-bar');
     this.width = options.sliderWidth;

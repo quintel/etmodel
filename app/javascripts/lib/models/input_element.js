@@ -120,7 +120,7 @@ var InputElementList = Backbone.Collection.extend({
     var inputElementView = new InputElementView(inputElement, options.element);
     inputElementView.bind('show', $.proxy(this.handleInputElementInfoBoxShowed, this));
     this.inputElementViews[inputElement.id] = inputElementView;
-    inputElementView.sliderView.addEventListener("change", $.proxy(this.handleUpdate, this));
+    inputElementView.sliderView.bind("change", $.proxy(this.handleUpdate, this));
     this.initShareGroup(inputElement);
   },
   
@@ -141,7 +141,7 @@ var InputElementList = Backbone.Collection.extend({
     var shareGroupKey = inputElement.get("share_group");
     if(shareGroupKey && shareGroupKey.length) {
       var shareGroup = this.getOrCreateShareGroup(shareGroupKey);
-      shareGroup.addEventListener("slider_updated",$.proxy(function(){ inputElement.markDirty();},this)); //set all sliders from same sharegroup to dirty when one is touched
+      shareGroup.bind("slider_updated",$.proxy(function(){ inputElement.markDirty();},this)); //set all sliders from same sharegroup to dirty when one is touched
       shareGroup.addSlider(inputElementView.sliderView.sliderVO);
     }
   },

@@ -1,5 +1,6 @@
-var SliderInfoBox = EventDispatcher.extend({
-  init:function(sliderVO, opts) {
+var SliderInfoBox = Backbone.Model.extend({
+  initialize:function(sliderVO, opts) {
+
     var infoBoxElement;
     if(opts.element) 
       infoBoxElement = $('.info-box', opts.element);
@@ -37,7 +38,7 @@ var SliderInfoBox = EventDispatcher.extend({
     
     this.sliderVO = sliderVO;
     
-    this.sliderVO.addEventListener("update", jQuery.proxy(this.handleSliderUpdate, this));
+    this.sliderVO.bind("update", jQuery.proxy(this.handleSliderUpdate, this));
     this.isVisible = false;
     this.handleSliderUpdate();
   },
@@ -57,14 +58,14 @@ var SliderInfoBox = EventDispatcher.extend({
   show:function() {
     this.element.show();
     this.isVisible = true;
-    this.dispatchEvent("visibility")
-    this.dispatchEvent("show", this);
+    this.trigger("visibility")
+    this.trigger("show", this);
   },
   hide:function() {
     this.element.hide();
     this.isVisible = false;
-    this.dispatchEvent("visibility")
-    this.dispatchEvent("hide", this);
+    this.trigger("visibility")
+    this.trigger("hide", this);
   },
   
   handleSliderUpdate:function() {

@@ -44,12 +44,12 @@ var InputElementView = Class.extend({
    * Init event listeners.
    */
   initEventListeners:function() {
-    this.sliderView.slider.sliderVO.addEventListener('update', $.proxy(function() { 
+    this.sliderView.slider.sliderVO.bind('update', $.proxy(function() { 
       this.model.set({"user_value" : this.sliderView.slider.getValue()});
     }, this));
-    this.sliderView.getInfoBox().addEventListener('show', $.proxy(this.handleInputElementInfoBoxShowed, this));
-    this.sliderView.addEventListener('change', $.proxy(this.checkMunicipalityNotice, this));
-    this.sliderView.slider.addEventListener('change', $.proxy(this.handleSliderUpdate, this));
+    this.sliderView.getInfoBox().bind('show', $.proxy(this.handleInputElementInfoBoxShowed, this));
+    this.sliderView.bind('change', $.proxy(this.checkMunicipalityNotice, this));
+    this.sliderView.slider.bind('change', $.proxy(this.handleSliderUpdate, this));
     if(this.model.get("disabled_with_message"))
       this.sliderView.slider.sliderBar.element.bind('click', $.proxy(this.checkTransitionpriceNotice, this));
   },

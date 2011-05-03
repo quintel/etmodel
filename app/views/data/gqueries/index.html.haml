@@ -1,0 +1,42 @@
+= render 'list'
+
+#content
+  .header
+    Gqueries
+
+  %div{:style=>"width:200px;float:left"}
+    %h2 Gqueries
+
+    %p= link_to 'Query sandbox', test_data_gqueries_path
+    %p= link_to 'Create new Gquery', new_data_gquery_path
+    %p= link_to 'Query Dump', dump_data_gqueries_path
+
+  %div{:style=>"width:600px;float:left; clear:both"}
+    %h2 Groups
+    - GqueryGroup.order(:group_key).each do |group|
+      %p{:style=>"float:left;width: 190px"}
+        = check_box :group, group.id, :class=>'select_group', :checked => params[:groups].split(',').include?(group.id.to_s), :title=>(group.description || "No description"), :alt=>(group.description || "No description")
+        = link_to group.group_key, data_gqueries_path(:groups => group.id), :title=>(group.description || "No description"), :alt=>(group.description || "No description")
+    - if params[:groups]
+      %p= link_to "Show all queries", data_gqueries_path
+  
+  %table{table_defaults,:style => "clear: both"}
+    %thead
+      %tr
+        = sortable_table_header :name => "Key", :sort=>"key"
+        %th 
+        %th
+        = sortable_table_header :name => "Updated", :sort=>"updated_at"      
+        %th Created
+        %th.rensy Groups
+
+    %tbody
+      - @gqueries.flatten.each do |gquery|
+        %tr{cycles}
+          %td= link_to gquery.key, data_gquery_path(:id => gquery)
+          %td= link_to 'Edit', edit_data_gquery_url(:id => gquery)
+          %td
+            = link_to 'Delete', data_gquery_path(:id => gquery), :method => 'delete', :confirm => 'Are you sure?'
+          %td= format_date_with_time(gquery.updated_at) if gquery.updated_at
+          %td= format_date_with_time(gquery.created_at) if gquery.created_at
+          %td= gquery.gquery_groups.andand.map{|g| "#{g.group_key}"}

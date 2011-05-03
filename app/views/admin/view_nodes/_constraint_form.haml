@@ -1,0 +1,3 @@
+- form_tag "/admin/view_nodes/update/#{@view_node.id}" do |f|
+  = select_tag "constraints", options_from_collection_for_select(Constraint.all, :id,:key, @view_node.constraints.map(&:id)),:multiple => true
+  = submit_tag

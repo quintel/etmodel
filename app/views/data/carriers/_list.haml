@@ -1,0 +1,19 @@
+#panel.panel.panel_tree{:style => "width: 300px; float: left"}
+  .header
+    %div
+      -#%label#search-label{:for => 'search'} Search
+      %table
+        %tr
+          %td
+            %input#search{:'data-search_scope' => 'carriers'}
+
+  .tree
+    = cache("data/#{params[:blueprint_id]}/#{params{:region_code}}/carriers/_list/") do
+      %ul
+        - Carrier.order('id ASC').each do |carrier|
+          %li.level_0{:'data-search' => carrier.key}
+            .content
+              %h1
+                %a{:href => data_carrier_path(:id => carrier)}
+                  %span.id== ##{carrier.id}
+                  %span.key= carrier.key

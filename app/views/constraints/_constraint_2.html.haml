@@ -1,0 +1,8 @@
+.constraint_box_content
+  %p.tal
+    =t("constraint.co2").html_safe
+
+  #charts_wrapper
+    - @output_element = OutputElement.find(46)
+    %div{ :id => "#{dom_id(@output_element)}",:style=>'height:250px'}
+    %script=@output_element.call_jqplot_function

@@ -1,0 +1,39 @@
+= render 'list'
+
+#content
+  .header
+    Key:
+    = @gquery.key
+    %small= link_to 'Edit', edit_data_gquery_path(@gquery)
+
+  %h2
+    = @gquery.key
+    %small= link_to 'Edit', edit_data_gquery_path(@gquery)
+
+  %h3 Query
+
+  %pre 
+    = color_syntaxed_gquery @gquery.query
+
+  %h3 Result
+  - @query = Gql::GqueryCleanerParser.clean(@gquery.query)
+  %p= render 'result'
+
+
+  %h3 Group
+  %p
+    = @gquery.gquery_groups.map(&:group_key)
+
+  %h3 Description
+  %p
+    = @gquery.description
+
+  %h3 References
+  %p 
+    This query is used here (most probably, just a simple CMD+F style search):
+    %ul
+      - Gquery.contains(@gquery.key).each do |gquery|
+        %li= link_to gquery.key, data_gquery_path(:id => gquery.id)
+
+
+  = render '/admin/shared/revisions', :versioned => @gquery

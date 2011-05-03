@@ -1,0 +1,101 @@
+var api_base = "/api/v1/api_scenarios/"
+
+/*
+ * This is an example on how to test the API.
+ * Provide a hash of slider_ids with values {335 => 2} and the desired results.
+ */
+function test_query(update, result, settings) {
+  var url = api_base+"test.json?callback=?";
+  $.getJSON(url, {
+      'settings' : settings,
+      'update'   : update,
+      'result'   : result
+    },
+    function(data) {
+      var result   = data.result;   // The results of this request, as defined in "result" parameter
+      var settings = data.settings; // Settings of current scenario
+      var errors   = data.errors;   // Potential errors can be accessed here.
+      print_results(result);
+    }
+  );
+}
+
+/*
+ * Prints results of the API result object.
+ *
+ * e.g.: 
+ * { 'co2_emission_total' : // the query key
+ *   [
+ *    [2010, 10],           // the first row holds present year and result
+ *    [2040, 11]            // the 2nd row holds future year and result
+ *   ],
+ *  // additional results if specified in "result" parameter
+ * }
+ * 
+ */
+function print_results(result) {
+  $.each(result, function(query_key, value_arr) { 
+    /* query => "co2_emission_total"
+     * value_arr => [[2010, 10],[2040, 11]]
+     */
+    $('#results').append('<h2>'+query_key+'</h2>');
+    var present_year  = value_arr[0][0];
+    var present_value = value_arr[0][1];
+    var future_year   = value_arr[1][0];
+    var future_value  = value_arr[1][1];
+    
+    var present_html = "<tr><th>"+ present_year +"</th><td>"+ present_value +"</td></tr>";
+    var future_html  = "<tr><th>"+ future_year +"</th><td>"+ future_value +"</td></tr>";
+    $('#results').append("<table>"+present_html+future_html+"</table>");
+  });
+}
+
+
+/*
+ * Create a new scenario. 
+ */
+function new_scenario(settings) {
+  var url = api_base+"new.json?callback=?";
+  $.getJSON(url, {
+      "settings" : settings
+    },
+    function(data) {
+      var scenario_settings = data.api_scenario;
+      // Code to execute with the result. E.g. update a form.
+    }
+  );
+}
+
+/*
+ * Asynchronous call to te query a scenario.
+ */
+function query_scenario(api_session_key, update, result) {
+  var url = api_base+""+api_session_key+".json?callback=?";
+  $.getJSON(url, {
+      "update" : update,
+      "result" : result
+    },
+    function(data) {
+      var result   = data.result;   // The results of this request, as defined in "result" parameter
+      var settings = data.settings; // Settings of current scenario
+      var errors   = data.errors;   // Potential errors can be accessed here.
+      
+      // Code to execute with the result data. E.g. update a form.
+      print_results(result);
+    }
+  );
+}
+
+test_query({335 : 1}, ['co2_emission_total'], {});
+
+new_scenario({
+  'country' : 'nl',      // 'nl' is default and can be ommited
+  'end_year' : '2040'    // '2040' is default and can be ommited
+  // 'api_session_key' : '' // assign a custom session_key otherwise api creates a unique one
+})
+
+new_scenario({
+  'scenario_id' : '322'  // Use a predefined scenario. Warning: you cannot use the other
+                         // settings together with scenario_id. 
+})
+

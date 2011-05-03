@@ -1,0 +1,268 @@
+html
+  height: 100%
+  background: #fff
+
+body
+  margin: 0
+  height: 100%
+  font: 13px/20px Lucida Grande, Verdana, Arial, Helvetica, sans-serif
+
+h1
+  line-height: 1em
+img
+  border-style: none
+
+img, div 
+  behavior: url(/iepngfix/iepngfix.htc)
+a
+  color: #63A0C9
+  &:hover
+    //text-decoration: none
+
+input.button
+  cursor: pointer
+
+input, textarea, select
+  font: 100% arial,sans-serif
+  vertical-align: middle
+
+form, fieldset
+  margin: 0
+  padding: 0
+  border: none
+
+//separate model from pages
+body#model #wrapper
+  min-height: 100%  
+  
+body#outside-model #wrapper
+  min-height: 100%
+  height: auto !important
+  height: 100%
+  margin: 0 auto -160px
+
+
+
+#wrapper
+  min-width: 980px
+  width: 100%
+  position: relative
+//separate model from pages  
+* html body#model #wrapper
+  height: 100%
+  overflow: visible
+
+//separate model from pages
+body#model #content
+  padding: 160px 0px 160px 35px
+  z-index: 1
+
+body#outside-model #content
+  padding: 130px 0px 150px 35px
+  z-index: 0
+
+.monotyped
+  font-family: Courier
+
+#content
+  position: relative
+  min-width: 950px
+  max-width: 1230px
+  margin: 0 auto
+
+  .seo
+    position: absolute
+    left: -9999px
+    top: auto
+    height: 1px
+    width: 1px
+    
+  .tree-columns
+    width: 100%
+    overflow: hidden
+
+
+  #flash
+    position: absolute
+    left: 50%
+    top: 150px
+    background: #FFF1A8
+    width: 400px
+    margin-left:  -200px
+    -moz-border-radius: 8px
+    -webkit-border-radius: 8px
+
+    &.error
+      background: #ff9999
+    &.error a
+      color: white
+    p
+      padding: 1px 10px
+      margin: 0
+
+
+
+body#outside-model #flash
+  top: 95px
+  
+  
+table.default
+  thead th
+    :background #5DA1CB
+    :border-bottom 1px solid #999
+    a
+      color: white
+  td,th
+    padding: 2px 4px 
+  td
+    :vertical-align top
+    :border-right 1px solid #ddd
+  tr.odd 
+    td,th
+      :background-color #eee
+
+.tar
+  text-align: right
+.tal
+  text-align: left
+.tac
+  text-align: center
+
+#under_construction
+  float: left
+  width: 60%
+  border: 1px solid #E07033
+  background-color: #E07033
+  padding: 100px
+  color: #fff
+  text-align: center
+  
+.description_container_nl
+  .en
+    display: none
+
+.description_container_en
+  .nl
+    display: none
+
+
+.side_tabs
+  position: fixed
+  left: 0
+  top: 25%
+  border-width: 0
+  height: 118px !important
+  width: 27px !important 
+  cursor: pointer
+  z-index: 2000
+  
+
+#feedback-tab.nl
+  background: url("../images/layout/feedback_button_nl.png") no-repeat scroll 0 0 #FFFFFF
+  height: 97px !important
+#feedback-tab.en
+  background: url("../images/layout/feedback_button.gif") no-repeat scroll 0 0 #FFFFFF
+
+#epn_module.nl
+  margin-top: 107px
+  background: url("../images/layout/education_button_nl.gif") no-repeat scroll 0 0 #FFFFFF
+#epn_module.en
+  margin-top: 127px
+  background: url("../images/layout/education_button.gif") no-repeat scroll 0 0 #FFFFFF
+
+#refman-tab.en
+  background: url("../images/layout/publications_button.png") no-repeat scroll 0 0 #FFFFFF
+  height: 129px !important
+  margin-top: 249px
+#refman-tab.nl
+  background: url("../images/layout/publications_button_nl.png") no-repeat scroll 0 0 #FFFFFF
+  height: 114px !important
+  margin-top: 229px
+
+
+.locator
+  position: absolute
+
+#locator_hv
+  left: 402px
+  top: 288px
+
+#locator_hv-mv
+  left: 414px
+  top: 172px
+
+#locator_mv
+  left: 188px
+  top: 202px
+
+#locator_mv-lv
+  left: 207px
+  top: 117px
+
+#locator_lv
+  left: 26px
+  top: 131px
+
+.municipality-left
+  float: left  
+
+  
+.municipality-right
+  float: left
+  margin-left: 30px
+  width: 430px
+  h2
+    font: 20px/25px Georgia, "Times New Roman", Times, serif
+
+.style_button
+  float: left
+  text-decoration: none
+  cursor: pointer
+  div
+    float: left
+    height: 51px
+.button_left_movie
+  background: #fff url(../images/layout/movie_button_left_with_icon.png) no-repeat
+  width: 70px
+
+.button_left
+  background: #fff url(../images/layout/movie_button_left_with_icon.png) no-repeat
+  width: 10px
+.button_center
+  background: #fff url(../images/layout/movie_button_middle.png) repeat-x
+  span
+    float: left
+    margin: 15px 10px 0 0    
+    color: #000
+
+.button_right
+  background: #fff url(../images/layout/movie_button_right.png) no-repeat
+  width: 34px
+
+
+.clear
+  clear: both
+  
+  
+  
+@import reset
+@import title
+@import accordion
+@import chart
+@import header
+@import tabs
+@import sidebar
+@import constraints
+@import footer
+@import fancybox
+@import search
+@import home
+@import shadowbox
+@import blockchart
+@import partners
+@import header_menu
+@import pages
+@import house_selection_tool
+@import testimonials
+@import transitionyearprice
+@import view_nodes

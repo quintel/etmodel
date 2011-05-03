@@ -1,0 +1,161 @@
+- if params[:log]
+  %p
+    = session[:user_values]
+  %hr
+  %p
+    = session[:update_statements]
+    = link_to 'reset', '/scenario/reset'
+  
+%h4
+  Unexpected 
+  %br
+  - if unhappy = Current.gql.present.converters.select{|c| c.query.demand_expected? == false}.length
+    == #{ "&#x2639;".html_safe * unhappy }
+    = "everybody's happy" if unhappy == 0
+  - else
+    error
+
+%h3 Other
+-#%table
+  %tr
+    %td Total co2 Emission
+    %td= (Current.gql.present.query.total_co2_emission.andand./ 10**9).round(3)
+    %td= (Current.gql.future.query.total_co2_emission.andand./ 10**9).round(3)
+  %tr
+    %td co2_emission_electricity
+    %td= (Current.gql.present.query.co2_emission_electricity.andand./ 10**9).round(3)
+    %td= (Current.gql.future.query.co2_emission_electricity.andand./ 10**9).round(3)
+  %tr
+    %td co2_emission_electricity_ex_import
+    %td= (Current.gql.present.query.co2_emission_electricity_ex_import.andand./ 10**9).round(3)
+    %td= (Current.gql.future.query.co2_emission_electricity_ex_import.andand./ 10**9).round(3)
+  %tr
+    %td co2_emission_electricity_import
+    %td= (Current.gql.present.query.co2_emission_electricity_import.andand./ 10**9).round(3)
+    %td= (Current.gql.future.query.co2_emission_electricity_import.andand./ 10**9).round(3)
+-#%table
+
+  %tr
+    %td share_of_renewable_electricity
+    %td= Current.gql.future.query.share_of_renewable_electricity.andand.round(3)
+  %tr
+    %td share_of_renewable_energy
+    %td= Current.gql.future.query.share_of_renewable_energy.andand.round(3)
+  %tr
+    %td electricity_dependence
+    %td= Current.gql.future.query.electricity_dependence.andand.round(3)
+  %tr
+    %td fuel_dependence
+    %td= Current.gql.future.query.fuel_dependence.andand.round(3)
+
+  %tr
+    %td sustainability_heat_production
+    %td= Current.gql.future.query.sustainability_heat_production.andand.round(3)
+  %tr
+    %td sustainability_electricity_production
+    %td= Current.gql.future.query.sustainability_electricity_production.andand.round(3)
+
+
+  %tr
+    %td energy_dependence
+    %td= Current.gql.future.query.energy_dependence.andand.round(5)
+
+  %tr
+    %td renewable_electricity
+    %td
+      = number_with_precision Current.gql.query_future("sum.group_electricity_production.primary_demand_of_sustainable") / 10**9, :precision => 0, :delimiter => ","
+      %small * 10**9
+
+
+%h3 Groups
+
+-#%table{table_defaults}
+  - [:primary_energy_demand, :electricity_production, :heat_production, :useful_demand, :final_demand_cbs, :decentral_production].each do |group|
+    %tr
+      %th{:colspan => 2}= group
+    %tr
+      %td Demand
+      %td
+        = number_with_precision Current.gql.query_future("sum.group_#{group}.demand") / 10**9, :precision => 0, :delimiter => ","
+        %small * 10**9
+    %tr
+      %td Primary Demand
+      %td
+        = number_with_precision Current.gql.query_future("sum.group_#{group}.primary_demand") / 10**9, :precision => 0, :delimiter => ","
+        %small * 10**9
+    %tr
+      %td Final Demand
+      %td
+        = number_with_precision Current.gql.query_future("sum.group_#{group}.final_demand") / 10**9, :precision => 0, :delimiter => ","
+        %small * 10**9
+    %tr
+      %td Prim Demand Sustainable
+      %td
+        = number_with_precision Current.gql.query_future("sum.group_#{group}.primary_demand_of_sustainable") / 10**9, :precision => 0, :delimiter => ","
+        %small * 10**9    
+    %tr
+      %td Prim Demand Fossil
+      %td
+        = number_with_precision Current.gql.query_future("sum.group_#{group}.primary_demand_of_fossil") / 10**9, :precision => 0, :delimiter => ","
+        %small * 10**9    
+    
+    %tr
+      %td CO2 Emission (MT)
+      %td= number_with_precision Current.gql.future.query.co2_emission_total_for_group(group) / 10**9, :precision => 0, :delimiter => ","
+    %tr
+      %td CO2 Primary Emission Total (MT)
+      %td= number_with_precision Current.gql.present.query.co2_primary_emission_for_group(group) / 10**9, :delimiter => ",", :precision => 0
+      %td= number_with_precision Current.gql.future.query.co2_primary_emission_for_group(group) / 10**9, :delimiter => ",", :precision => 0
+
+%table{table_defaults}
+  %thead
+    %tr
+      %th ID
+      %th Name
+      %th{:width => 100}
+      %th Demand
+      %th Preset Demand
+      %th Co2 (primary)
+
+  - Current.gql.present.converters.sort_by(&:id).each do |converter|
+    %tr{cycles}
+      %td{:style => "text-align: right"}== ##{converter.id}
+      %td
+        = converter.name
+        
+        %small{:style => "color: #666"}
+          == [#{converter.full_key}]
+          == {#{converter.groups.map(&:key).join(', ')}}
+      %td
+        %small
+          -#= link_to 'Edit', edit_admin_converter_path(converter.id, :graph_id => @graph.id), :target => '_blank'
+          = link_to 'Graph', admin_converter_path(converter.id, :graph_id => @graph.id, :format => 'png'), :target => '_blank'
+          = link_to '(Fut)', admin_converter_path(converter.id, :graph_id => @graph.id, :graph => 'future', :format => 'png'), :target => '_blank'
+          = link_to 'Details', admin_converter_path(converter.id, :graph_id => @graph.id), :target => '_blank'
+          = link_to '(Fut)', admin_converter_path(converter.id, :graph_id => @graph.id, :graph => 'future'), :target => '_blank'
+          %br
+          = link_to 'Edit', edit_admin_graph_converter_data_path(:graph_id => @graph.id, :id => converter.id)
+      %td{:style => "text-align: right"}
+        - demand_value(converter)
+      %td{:style => "text-align: right"}= converter.preset_demand
+      %td{:style => "text-align: right"}= (converter.primary_co2_emission / 10**9).round(3) rescue nil
+        
+
+%h2 Time Curves
+%p Note: only decades are shown (2010,2020,2030)
+%p Not working since upgrade to blueprint
+
+%table{:border => 1}
+  %tr
+    %th Id
+    %th attribute
+    %th year
+    %th value (rounded)
+  -# @graph.present.time_curve_entries.ordered.only_decades.each do |time_curve_entry|
+    %tr
+      %td= time_curve_entry.converter_id
+      %td= time_curve_entry.value_type
+      %td= time_curve_entry.year
+      %td.tar.monotyped= number_with_precision time_curve_entry.value, :delimiter => "'"
+
+

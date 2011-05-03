@@ -1,0 +1,228 @@
+#accordion_wrapper
+  float: left
+  padding: 0 1% 0 1% 
+  color: #333
+  width: 418px
+
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    overflow: hidden
+
+    li
+      overflow: hidden
+      vertical-align: top
+      padding: 0 0 3px
+
+      a.slide_header
+        display: block
+        padding: 0 0 0 31px
+        background: #dfe8f3 url(../images/layout/bg-column-c-a.gif) no-repeat
+        font:normal 16px/30px Georgia, "Times New Roman", Times, serif
+        text-decoration: none
+        text-align: left
+        overflow: hidden
+        height: 1%
+
+      a.slide_header:hover
+        background: #dfe8f3 url(../images/layout/bg-column-c-a-hover.gif) no-repeat
+
+      .selected a
+        background: #dfe8f3 url(../images/layout/bg-column-c-a-hover.gif) no-repeat
+      
+      .ui-state-active a
+        background: #dfe8f3 url(../images/layout/bg-column-c-a-hover.gif) no-repeat
+
+      #accordion_wrapper a
+        text-decoration: none
+        color: #63a0c9
+        float: right
+        background: none
+        font: 13px Verdana, Geneva, Arial, Helvetica, sans-serif
+        word-spacing: -1px
+        letter-spacing: -1px
+
+      #accordion_wrapper a:hover
+        text-decoration: underline
+        background: none
+
+  .accordion
+    li div p img
+      float: left
+      padding: 0 20px 0 0
+  
+    li.accordion_element
+
+      .headline
+        position: relative
+        background: #dfe8f3
+        display: block    
+        width: 100%
+        height: 30px
+        outline: none
+        
+        a
+          font: 16px/30px Georgia,"Times New Roman",Times,serif1
+          height: 30px
+          margin: 0 0 2px
+          color: #224368
+          text-decoration: none
+        
+    .slide
+      overflow: hidden
+      padding: 0 0 10px 0
+      p
+        margin: 13px 0
+      a.btn-done
+        background: #fff
+        height: 20px
+        text-align: center
+        text-decoration: none
+        float: right
+
+        &:hover
+          text-decoration: underline
+
+  .container
+    width: 100% 
+    overflow: hidden
+    margin: 26px 0 0
+
+    .plot_container
+      width: 430px 
+      height: 320px
+
+    .plot
+      float: right
+      width: 420px 
+      height: 220px
+    
+    .img-holder
+      float: left
+      margin: 10px 24px 10px 0
+      display: inline
+
+      img
+        display: block
+
+    p
+      color: #474747
+      margin: 19px 0 0
+      line-height: 17px
+
+  .valuees
+    float: left
+    clear: both
+    width: 100%
+    list-style: none
+    overflow: hidden
+    margin: 5px 0 0
+    padding: 0
+
+    li.sub_header
+      padding: 0 0 5px
+      
+      img.subheader_image
+        float: left
+        margin-left: 178px
+        width: 115px
+        height: 40px
+    span.slider
+      float: left
+      width: 45%
+      line-height: 18px
+
+    li
+      width: 100%
+      overflow: hidden
+      padding: 0 0 1px
+      position: relative
+      
+      span
+        a
+          float: left
+          text-decoration: none
+          position: relative
+        a.icon
+          display: inline
+          width: 15%
+          overflow: hidden
+          background: none center center no-repeat
+          display: none
+
+        a.label
+          margin: 0 0 0 0px
+          width: 85%
+          display: inline
+          outline: none
+          color: #333
+          background: #fff
+          em.price
+            color: #999
+            font-size: smaller
+            font-style: normal
+          .question_mark
+            position: absolute
+            display: none
+            right: 10px
+            top: 2px
+            width: 16px
+            height: 16px
+            background: url(/images/layout/ico-questionmark.gif) no-repeat top right
+
+      .graph-box
+        position: relative
+        width: 32%
+        height: 14px
+        float: left
+        margin: 0 0 0 0
+        input
+          position: absolute
+          top: 3px
+          right: -55%
+          width: 55px
+          border: none
+          padding: 0
+          text-align: right
+          margin: 0
+          
+        span.suffix
+          position: absolute
+          top: 4px
+          right: -69%
+          width: 18px
+          border: none
+          padding: 0
+          text-align: right
+          color: #333
+          margin: 0
+          font: 100% arial,sans-serif
+          vertical-align: middle
+      .value
+        float: left
+        text-align: right
+        color: #4c6d7f
+        text-decoration: none
+    li.sub_header
+      text-align: right
+      color: #aaa
+    
+    li.interface_group
+      text-align: left
+      color: #aaa
+      border-top: 1px solid #aaa
+      margin-top: 5px
+      padding: 0 0 5px
+
+    span.subheader_arrow
+      float: right
+      margin-right: 7px
+      background: url('/images/layout/grey_triangle_down.gif') no-repeat scroll right bottom transparent
+      padding: 0 0 5px
+
+    li:hover
+      a.icon
+        background-image : url(/images/layout/ico-reset.gif)
+  .accordion_element
+    display: none

@@ -1,0 +1,15 @@
+%h1="ETM View Structure => "+ @view_node.key
+
+%ul{:class =>"view_nodes"}
+  - unless @sidebars
+    = render 'admin/view_nodes/tree/constraints'
+    = render 'admin/view_nodes/tree/policy_goals'
+
+  = render 'admin/view_nodes/tree/tabs', :tabs => @tabs
+  - if @sidebars
+    = render 'admin/view_nodes/tree/sidebars', :sidebars => @sidebars
+  - if @slides
+    = render 'admin/view_nodes/tree/slides', :slides => @slides
+  - if @elements
+    = render 'admin/view_nodes/tree/input_elements', :elements => @elements.where(:element_type => "InputElement")
+    = render 'admin/view_nodes/tree/default_output_element', :elements => @elements.where(:element_type => "OutputElement")

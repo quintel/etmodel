@@ -1,0 +1,19 @@
+- title = nil if local_assigns[:title].nil? # make local variable 'title' optional
+
+.constraint_popup
+  #shadowbox-outer
+    #shadow-bg-n.shadow-bg
+    #shadow-bg-ne.shadow-bg
+    #shadow-bg-e.shadow-bg
+    #shadow-bg-se.shadow-bg
+    #shadow-bg-s.shadow-bg
+    #shadow-bg-sw.shadow-bg
+    #shadow-bg-w.shadow-bg
+    #shadow-bg-nw.shadow-bg
+    #shadow-bg-arrow-tip
+    #shadowbox-inner
+      %a#shadow-bg-close-button{:href=>'#'}
+      #shadowbox-content{:style => "width: 100%;position:relative"}
+        %h3.shadowbox-title= t("output.#{title}").html_safe if title
+        #shadowbox-body
+          .loading= t("constraint.loading")

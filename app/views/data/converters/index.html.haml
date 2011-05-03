@@ -1,0 +1,43 @@
+= render "list"
+
+
+
+#content
+  .header
+    Converters for:
+    = params[:blueprint_id]
+    = params[:region_code]
+    
+  - fields = (params[:fields] ||= 'demand').split(',').map(&:strip)
+  %table
+    %thead
+      %tr
+        %th{:colspan => 3}
+          = form_tag( {}, {:method => 'get'}) do 
+            Attributes:
+            = text_field_tag :fields, (params[:fields])
+            = submit_tag 'show'
+        - fields.each do |field|
+          %th{:colspan => 2}= field
+      %tr
+        %th id
+        %th Key
+        %th Graph
+        - fields.each do |field|
+          %th Present
+          %th Future
+    - @blueprint.converter_records.each do |converter|
+      %tr
+        %th== ##{converter.id}
+        %th= link_to converter.full_key, data_converter_path(:id => converter)
+        %th
+          = link_to 'Pres', admin_converter_path(converter.id, :graph_id => @graph.id, :format => 'png'), :target => '_blank'
+          = link_to 'Fut', admin_converter_path(converter.id, :graph_id => @graph.id, :graph => 'future', :format => 'png'), :target => '_blank'
+        - fields.each do |field|
+          - v = @present_graph.converter(converter.id).send(field)
+          %td.tar{:title => title_tag_number(v)}= auto_number v
+          - v = @future_graph.converter(converter.id).send(field)
+          %td.tar{:title => title_tag_number(v)}= auto_number v
+  
+  
+  

@@ -1,0 +1,56 @@
+Code style guideline:
+
+Base: http://www.caliban.org/ruby/rubyguide.shtml#style
+
+
+  ##################
+  # Javascript:
+  ##################
+
+ALWAYS put a ";" at the end of line (otherwise you get hard-to-debug bugs in IE).
+
+
+  ##################
+  # Whitespace
+  ##################
+
+***************************
+* If/else:
+***************************
+
+if (true) { }
+else { }
+
+Not:
+if(true){}
+else{}
+
+***************************
+* Functions:
+***************************
+
+function foo() { }
+Not:
+function foo(){ }
+
+*********************************************
+* Remove all whitespace at end of line.
+*********************************************
+
+Turn on "View > Hide Invisibles" in Textmate
+Use "git diff --check" before checking in
+
+
+******************
+* HAML:
+******************
+
+* Put 1 whitespace between "-" and "="
+
+- if
+Not:
+-if
+
+= comment.title
+Not:
+=comment.title

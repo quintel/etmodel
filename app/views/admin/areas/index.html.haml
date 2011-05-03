@@ -1,0 +1,22 @@
+- title "Areas"
+
+%p
+  %em 
+    Area data that is specific to every country. 
+
+%table{table_defaults}
+  %thead
+    %tr
+      %th id
+      %th region_code
+      %th
+      %th
+  - for area in @areas
+    %tr{cycles}
+      %td== ##{area.id}
+      %td= link_to area.country, [:admin, area]
+      %td= link_to 'Edit', edit_admin_area_path(area)
+      -#= link_to 'Destroy', [:admin, area], :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Area", new_admin_area_path
+

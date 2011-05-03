@@ -1,0 +1,39 @@
+.frame{:style => "position: relative;"}
+  %ul.sub-nav
+    - unless is_transitionprice?
+      %li
+        %a{:href=>"#", :class=>"information"}
+          %span=t("header.Information")
+    %li
+      %a{:href=>"#", :class=>"settings"}
+        %span=t("header.Settings")
+    - if current_user
+      %li
+        %a{:href=>"/logout", :class=>"signout"}
+          %span=t("header.Sign out")
+    - else
+      %li
+        %a{:href=>"#", :class=>"signin"}
+          %span=t("header.Sign in")
+
+    %li{:style=>'width: 160px'}
+      %form#searchform{ :action => "/search", :method => :get }
+        %fieldset
+          %input.btn-search{ :type => "submit", :value => "" }
+          %span.text
+            %input{ :name => 'q', :type => "text", :value => "#{t("search the website")}", :onclick => "$(this).val('');" }
+
+  %strong
+    %a{ :href => "/" }
+      - if Current.server_config.header_logo
+        %img{:src => Current.server_config.header_logo}
+      - else
+        %img{:src => "/images/layout/bg-logo3.png", :class=>"header_logo"}
+
+   
+  = render "layouts/etm/header_menus"
+
+  - if defined?(info_box)	&& info_box && !is_transitionprice?
+    = render "layouts/etm/info_box"
+  - if defined?(save_button) && save_button	
+    = render "layouts/etm/save_button"

@@ -1,0 +1,15 @@
+%h3
+  =" #{I18n.t("output.#{@output_element.name}")}".html_safe 
+
+#charts_container
+  = render "/output_elements/output_element_actions"
+  #chart_loading{:style => "display: none"} Loading...
+  -if @output_element.under_construction || (params[:id] == "buildings" && Current.scenario.country == "de")
+    #chart_not_finished
+
+  %div#current_chart.column-r-content
+  
+    - if @output_element.html_table?
+      = render '/output_elements/html_table'
+
+= javascript_include_tag output_element_path(:id => @output_element, :format => 'js')

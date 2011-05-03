@@ -1,0 +1,16 @@
+#information
+  %h1{:style=>"padding-bottom:20px"}= t("Introduction")
+  %div.tabs
+    %ul
+      %li#what.active
+        %a#what
+          =t("What is this?")
+      %li#how
+        %a#how
+          =t("How does this work?")
+  /
+    [if lt IE 8]><style>#information .tabs {height: 50px} </style><![endif]
+  #movie_content
+    = render 'pages/movie', :page => "what"
+  %div.movie_shadow
+  = t_db("intro_root")

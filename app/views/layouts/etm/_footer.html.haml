@@ -1,0 +1,29 @@
+- if params[:country]
+  - country = params[:country]
+- else
+  - country = Current.scenario.country
+
+- @partners = Partner.country(country).include_descriptions
+
+#logos
+  #all_container
+    .link_container.facebook
+      %a{:class=>"fb-share", :href => "http://www.facebook.com/sharer.php?u=www.energytransitionmodel.com", :target=>"_blank" } &nbsp;
+
+    .link_container.twitter
+      %a{:class=>"twitter-share", :href => "http://twitter.com/share?url=http://www.energytransitionmodel.com", :target=>"_blank" }&nbsp;
+    #two_container
+      - %w[left right].each do |position|
+        %ul{:class => position}
+          - # TODO rails 3
+          - partners = Partner.place(position).country(country).include_descriptions || Partner.first
+          - partners.each_with_index do |company,i|
+            %li{:timeout => company.time }
+              - href = (company.description? ? partner_path(company.name.downcase) : company.url)
+
+              %a{ :href => href, :id=> company.name.downcase, :style => "background-image: url('/images/layout/ico-#{company.name.downcase}-inner.png');" }
+                = company.name
+
+              .clear
+
+              %p#subheader= t(company.subheader)

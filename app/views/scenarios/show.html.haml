@@ -1,0 +1,29 @@
+%h3
+  == Scenario #{h @scenario.title}
+%h3
+  %small
+    = t("scenario.author") 
+    == #{h @scenario.author}
+  %small
+    = t("scenario.created") 
+    == #{@scenario.created_at.strftime("%d/%m/%Y %H:%M")})
+
+%p
+  %pre=h @scenario.description
+
+%h3
+  Your settings:
+
+%p
+  %pre=h @scenario.user_values
+
+%h2
+  = link_to t("scenario.load"), load_scenario_path(@scenario)
+  %small{:style => "font-size: 12px; font-weight: normal"}
+    (
+    = t("scenario.overwritten")
+    = link_to t("scenario.save_first"), new_scenario_path
+    = t("scenario.go_back")
+     
+    == #{link_to t("scenario.overview"), scenarios_path})
+  

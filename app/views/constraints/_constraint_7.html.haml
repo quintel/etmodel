@@ -1,0 +1,17 @@
+.constraint_box_content
+  %table#policies
+    %thead
+      %tr
+        %th.check
+        %th.name
+        %th.target= t("Goals")
+        %th.you
+          Scenario
+
+    %tbody
+      - Current.gql.policy.goals.each do |goal|
+        %tr
+          %td.check= goal_reached(goal)
+          %td.name= t("policies.#{goal.name.humanize}").html_safe
+          %td.target= goal.output_user_target || t("policies.not_set")
+          %td.you= goal.output_future_value

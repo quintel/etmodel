@@ -1,0 +1,2 @@
+VERSION = "1.0.2"
+# QISLIDER_VERSION = 

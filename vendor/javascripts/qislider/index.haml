@@ -1,0 +1,144 @@
+
+%html
+  %head
+    %script{:src => "ext/jquery-1.4.4.min.js"}
+    %script{:src => "ext/jquery.class.js"}
+    %script{:src => "ext/event_dispatcher.js"}
+    %script{:src => "qislider.js"}
+    %link{:href => "qislider.css", :rel => "stylesheet", :type => "text/css"}
+    %style
+      p {font-size:12px; color:#333}
+  %body{:style => "width:400px"}
+    
+    %style
+      h2 {margin-top: 40px;font-family: Arial; letter-spacing: 0px; font-size: 15px}
+      * {font-family: Arial;}
+    %h1 QISlider #{::VERSION}
+    %p The QISlider is an advanced slider set, developed by Quintel Intelligence for the <a href="http://energytransitionmodel.com">EnergyTransitionModel.com</a>
+    %br
+    %p Download the complete package here: <a href="qislider-#{::VERSION}.zip">qislider-#{::VERSION}.zip</a>
+    %br
+    %p Source code is on: <a href="https://github.com/dennisschoenmakers/qislider">Github</a>
+    
+    %script
+      var g = new SliderGroup();
+    %h2 Normal slider
+    %div{:id => "slider-normal"}      
+    %script
+      var a = new SimpleSliderView({'value':200, 'step_value':10, 'max_value': 800, 'name': "CO2 emission"});
+      $("#slider-normal").append(a.element);
+
+
+    %h2 Disabled slider
+
+    %div{:id => "slider-disabled"}
+    %script
+      var a = new SimpleSliderView({'value':10, 'step_value':10, 'max_value': 800, 'disabled':true});
+      $("#slider-disabled").append(a.element);
+
+    %h2 Grouped sliderss  
+    - 3.times do |i|
+      %div{:id => "slider-#{i}"}
+
+      %script
+        var a = new SimpleSliderView({'value':10, 'step_value':10, 'max_value': 800});
+        g.addSlider(a.sliderVO);
+        $("#slider-#{i}").append(a.element);
+
+
+    %h2 Advanced sliders  
+
+    %div{:id => "slider-advanced"}
+
+    %script
+      var a = new AdvancedSliderView({'value':10, 'step_value':10, 'max_value': 800});
+      $("#slider-advanced").append(a.element);
+
+
+    %h2 Advanced slider with already set view
+
+    %div{:id => "slider-advanced-with-view"}
+      %div{:class => "info-box"}
+        Advanced view
+
+
+
+
+    %script
+      var a = new AdvancedSliderView({'value':10, 'step_value':10, 'max_value': 800, 'element':$("#slider-advanced-with-view"), 'name':'This is a very loooong title as you may already have noticed so yeah.'});
+
+    %script
+      var g2 = new SliderGroup({'total_value':100});
+    %h2 Advanced grouped sliders  
+    - 3.times do |i|
+      %div{:id => "slider-group-heating-#{i}"}
+      %script
+        var a = new AdvancedSliderView({'value':10, 'step_value':1, 'max_value': 100, 'name':'#{i}', 'formatter':function(n) {return n.toFixed(2) + '%'}});
+        g2.addSlider(a.sliderVO);
+        $("#slider-group-heating-#{i}").append(a.element);
+
+
+    %script
+      var g3 = new SliderGroup({'total_value':100});
+    %h2 2nd Advanced grouped sliders  
+    - 3.times do |i|
+      %div{:id => "slider-ag2#{i}"}
+      %script
+        var a = new AdvancedSliderView({'value':10, 'step_value':1, 'max_value': 100, 'name':'#{i}', 'formatter':function(n) {return n.toFixed(2) + '%'}});
+        g3.addSlider(a.sliderVO);
+        $("#slider-ag2#{i}").append(a.element);
+
+
+    %h2 Slider with formatter
+
+    %div{:id => "slider-formatter"}
+
+    %script
+      var a = new AdvancedSliderView({'value':10, 'step_value':2, 'max_value': 1936, 'formatter':function(number) { return number + "KJ" }});
+      $("#slider-formatter").append(a.element);
+
+    %div{:id => "slider-formatter-2"}
+    %script
+      var a = new AdvancedSliderView({'value':10.00000001, 'step_value':2, 'max_value': 1936, 'precision':2});
+      $("#slider-formatter-2").append(a.element);
+
+
+    %div{:id => "log"}
+
+    %h2 Event testing
+
+    %div{:id => "slider-events"}
+    %div{:id => "slider-log"}
+    %script
+      var a = new SimpleSliderView({'value':200, 'step_value':10, 'max_value': 800, 'name': "CO2 emission"});
+      $("#slider-events").append(a.element);
+      a.addEventListener('change', function() { $('#slider-log').html($('#slider-log').html() + ' event')});
+
+
+    %h2 Slider step value
+    %div{:id => "slider-step"}
+    %script
+      var a = new AdvancedSliderView({'value':1, 'step_value':0.1, 'max_value': 3, 'min_value':1});
+      $("#slider-step").append(a.element);
+
+    %h2 Slider before callback
+    %div{:id => "slider-callback"}
+    %script
+      var a = new AdvancedSliderView({'value':1, 'step_value':0.1, 'max_value': 3, 'min_value':1});
+      $("#slider-callback").append(a.element);
+
+      / var console = {info:function(m) {$('#log').html($('#log').html() + "<br />" + m);}}
+
+
+
+    %h2 Custom name element
+    %p Custom name element it is.
+    %div{:id => "slider-custom-label"}
+      %div{:class => "name"}
+        Great name
+      
+    %script
+      var a = new AdvancedSliderView({'value':1, 'step_value':0.1, 'max_value': 3, 'min_value':1, 'name':'asdasd', 'element':$('#slider-custom-label')});
+      $("#slider-advanced-label").append(a.element);
+  
+      

@@ -1,0 +1,18 @@
+
+#panel.panel.panel_tree
+  .header
+    %div
+      %table
+        %tr
+          %td
+            %input#search{:'data-search_scope' => 'converters'}
+
+  .tree
+    %ul    
+      - BlueprintLayout.all.each do |blueprint_layout|
+        %li.level_0{:'data-search' => [blueprint_layout.id, blueprint_layout.key].flatten.join(' ')}
+          .content
+            %h1
+              %a{:href => data_blueprint_layout_path(:id => blueprint_layout.id), :target => '_blank'}
+                %span.id== ##{blueprint_layout.id}
+                %span.key= blueprint_layout.key

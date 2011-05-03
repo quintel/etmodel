@@ -1,0 +1,114 @@
+#charts_image
+  width: 204px
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 3
+
+#chart_loading
+  position: absolute
+  top: -5px
+  z-index: 2
+  left: 5px
+  background: #63A1C9
+  color: #fff
+  font-size: 10px
+  padding: 1px 2px 1px 4px
+  width: 50px
+
+#chart_not_finished
+  position: absolute
+  top: -5px
+  height: 53px
+  width: 264px
+  right: -5px
+  z-index: 3
+  background: url(/images/layout/still_to_do.png) no-repeat
+
+#charts_buttons
+  float: right
+  margin-bottom: 15px
+  position: relative
+
+#charts_container
+  clear: both
+  position: relative
+  height: 450px
+  #output_element_actions
+    height: 13px
+    width: 200px
+    position: absolute
+    left: 20px
+    top: 273px
+    z-index: 2
+    a 
+      float: left
+      height: 13px
+      margin-right: 5px
+    .chart_info
+      width: 15px
+      background: url("../images/slider/slider-down-button.png") no-repeat  -2px -4px
+    .select_chart
+      width: 65px
+      background: url("../images/layout/change_chart_button.png") no-repeat
+    .default_charts
+      width: 60px
+      background: url("../images/layout/default_chart_button.png") no-repeat
+  #output_element_actions.waterfall
+    top: -5px
+  #output_element_actions.html_table
+    top: -10px
+  #output_element_actions.grouped_vertical_bar
+    top: -10px
+  #output_element_actions.policy_bar
+    top: -10px
+  #output_element_actions.horizontal_bar
+    top: -10px
+  #output_element_actions.mekko
+    left: 40px
+  
+#charts_wrapper
+  float: right
+  width: 37%
+  height: 450px
+
+  h3
+    margin: 0 0 22px
+    font: 16px/30px Georgia, "Times New Roman", Times, serif1
+    color: #224368
+    height: 30px
+    background: #dfe8f3
+    padding: 0 0 0 31px
+
+  img.block
+    display: block
+
+
+  
+  a.right
+    font-size: 13px
+    text-decoration: none
+    color: #63a0c9
+    float: right
+    margin: 0 1px 0 0
+    letter-spacing: -1px
+
+  a:hover
+    text-decoration: underline
+
+#supply_output_table
+  width: 100%
+  th
+    text-align: left
+  th.unit
+    font-weight: normal
+    text-align: center
+    font-size: 10px
+  .border-rgt
+    border-right: 1px solid #999
+  
+  tfoot#total
+    td
+      border-top: 1px solid #999
+      border-bottom: 3px double #999
+      font-weight: bold

@@ -1,0 +1,199 @@
+body
+  :font-family "Helvetica Neue", "Arial", sans-serif
+  :font-size 10pt
+#panel
+  :width 300px
+  :bottom 0
+
+  a
+    :text-decoration none
+    :display block
+    :color #333
+    :cursor hand
+    .id
+      :font-family Courier
+      :font-size 12px
+    .sector, .use
+      :font-size 10px
+  li
+    :cursor pointer
+
+#notice
+  :background #090
+  :padding 5px 10px
+  :color #fff
+  :margin-bottom 5px
+
+#content
+  :position absolute
+  :left 300px
+  :right 0
+  :top 30px
+  :padding 40px 10px
+
+  .header
+    :position absolute
+    :left 0
+    :top 0
+    :right 0
+    :background #eee
+    :height 29px
+    :border-bottom 1px solid #666
+
+    :font-size 16px
+    :margin-bottom 10px
+    :line-height 26px
+
+#header
+  :position absolute
+  :left 0
+  :right 0
+  :top 0
+  :height 30px
+  :background url(/images/layout/bg-header-inner.gif) repeat-x
+  :color #fff
+  :line-height 28px
+
+  a
+    :padding  3px 20px 10px
+    :color #000
+    :text-decoration none
+    :opacity 0.8
+    :background #fff
+    
+table
+  :border-top 1px solid #ccc
+  :border-left 1px solid #ccc
+  thead
+    th
+      :text-align center
+      :background #ddd
+      :padding 5px
+  th,td
+    :border-right 1px solid #ccc
+    :border-bottom 1px solid #ccc
+    :padding 3px
+
+  tbody
+    th
+      :text-align left
+      :font-weight normal
+  tbody.numeric_rows
+    td
+      :text-align right
+
+table.data
+  :table-layout fixed
+  th
+    :width 400px
+  td
+    :width 120px
+
+table.model_form
+  border: none
+  th
+    width: 100px
+    border: none
+    font-weight: bold
+    vertical-align: top
+  td
+    border: none
+    width: 500px
+    vertical-align: top
+
+    input[type=text]
+      font-size: 12px
+    input[type=text], select
+      width: 300px
+    textarea
+      width: 500px
+
+h2,h3
+  small, small a
+    font-weight: 10px
+    font-weight: normal
+h2
+  background: #666
+  color: #fff
+  font-weight: bold
+  font-size: 120%
+  padding: 5px 6px 8px
+  margin-left: -6px
+  -moz-border-radius: 5px
+  -webkit-border-radius: 5px
+  margin-bottom: 1em
+
+h3
+  background: #ddf
+  font-weight: bold
+  font-size: 110%
+  margin-left: -6px
+  padding: 4px 0px 4px 6px
+  -moz-border-radius: 5px
+  -webkit-border-radius: 5px
+  margin-bottom: 1em
+
+pre, textarea#gquery_query
+  background: #333
+  color: #fff
+  padding: 10px
+  line-height: 1.2em
+  margin-bottom: 1.2em
+  font-family: Courier
+  font-size: 12px
+p
+  line-height: 1.2em
+  margin-bottom: 1.2em
+
+
+span.gql_operator
+  //#DD712E
+  color: #DAD07E
+  &:hover
+    text-decoration: underline
+span.gql_gquery_key
+  color: #71BAFF
+span.gql_group_key
+  color: #65A735
+
+  
+
+span.detailed_number
+  position: relative
+  small
+    display: none
+  &:hover small
+    display: inline
+    position: absolute
+    top: 0
+    right: 0
+    background: #fff
+    padding: 5px
+    border: 1px solid #ccc
+    
+.gql_test_case 
+
+  .matcher
+    position: relative
+    background: #666
+    color: #fff
+    font-weight: bold
+    font-size: 100%
+    padding: 3px 6px 5px
+    -moz-border-radius: 5px
+    -webkit-border-radius: 5px
+    margin-bottom: 1em
+    &.passed
+      background: #090 !important
+    &.failed
+      background: #900 !important
+
+    .result
+      position: absolute
+      top: 2px
+      right: 10px
+    font-weight: 10px
+    font-weight: normal
+    
+#blueprint_layout
+  margin-top: 30px

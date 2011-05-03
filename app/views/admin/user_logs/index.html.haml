@@ -1,0 +1,13 @@
+%table
+  -@user_logs.group_by(&:ip).sort.each do |ip, logs|
+    %tr
+      %th Ip
+      %th Number of sliders moved
+      %th First action
+      %th last action
+    %tr
+      %td
+        =link_to ip, :controller => 'admin/user_logs', :action => 'show', :ip => ip
+      %td=logs.size
+      %td=logs.
+      

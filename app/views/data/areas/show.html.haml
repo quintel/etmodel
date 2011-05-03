@@ -1,0 +1,25 @@
+= render "list"
+
+
+#content
+  .header
+    = @area.region_code
+    %small= link_to 'edit', edit_data_area_path(:id => @area.id)
+  = notice_message
+
+  %table.data
+    %thead
+      %tr
+        %th Attribute
+        %th= @area.region_code
+    %tbody
+      - Area.column_names.sort.each do |column_name|
+        %tr{cycles}
+          %th= column_name
+          - v = @area.send(column_name)
+          %td{:title => v}
+            - if v.is_a?(Numeric)
+              = auto_number v
+            - else
+              = v
+  = render "/admin/shared/revisions", :versioned => @area

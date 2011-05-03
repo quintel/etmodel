@@ -1,0 +1,70 @@
+-vertical_grid_lines = 5
+-horizontal_grid_lines = 5
+
+%h3
+  =" #{I18n.t("output.#{@output_element.name}").html_safe}"
+
+#charts_container
+  = render "/output_elements/output_element_actions"
+  #chart_loading{:style => "display: none"} Loading...
+  -if @output_element.under_construction 
+    #chart_not_finished
+  %div.column-r-content{ :id => "#{dom_id(@output_element)}"}
+
+  #blockchart
+    #canvas_container
+      #canvas
+        %ul#x-grid
+          - horizontal_grid_lines.times do
+            %li{:style => "width: #{(100.0/horizontal_grid_lines).round(1)}%"}
+        %ul#y-grid
+          - vertical_grid_lines.times do
+            %li{:style => "height: #{(100.0/vertical_grid_lines).round(1)}%"}
+        %ul#x-axis
+          - horizontal_grid_lines.times do |int|
+            %li{:id => "xtick_#{int}",:style => "width: #{(100.0/horizontal_grid_lines).round(1)}%"}
+              =#{}"#{((max_investment/horizontal_grid_lines)*(int+1)).round()}"
+        %ul#y-axis
+          - vertical_grid_lines.times do |int|
+            %li{:id => "ytick_#{int}", :style => "height: #{(100.0/vertical_grid_lines).round(1)}%"}
+              =#{}"#{((max_cost/vertical_grid_lines)*(vertical_grid_lines-(int))).round()}"
+        #y-axis-label{:style => "background-image: url(/images/layout/euro_per_mwh_#{I18n.locale}.gif)"} EUR/MWhe
+        #x-axis-label=t("output.Total investment cost of production")
+        - data_array = []              
+        - @blocks.each do |block|
+          - if session["block_#{block.id}"]
+            - show_or_not = session["block_#{block.id}"]
+          - else
+            - show_or_not = block.show_at_first ? 'visible' : 'invisible'
+          .block_container{:style => "bottom: 0%; left: 0%;", :class => "#{show_or_not}", :id => "block_container_#{block.id}"}
+            .block{:id => "block_#{block.id}"}
+              .header{:class => block.group.downcase}= t("serie.#{block.label}")
+              .content
+                %h4= t("serie.#{block.label}")
+                %p= block.description.short_content
+                = link_to t('pagetitle.readmore'), "/descriptions/serie/#{block.id}", :class => 'fancybox'
+            .balloon-tip
+
+          - result_cost = Current.gql.query("#{block.key}total_cost_per_mje)),MJ_TO_MHW)")
+          - result_investment = (Current.gql.query("#{block.key}overnight_investment_co2_capture_per_mj_s)),DIVIDE(1,MILLIONS))")) + (Current.gql.query("#{block.key}overnight_investment_ex_co2_per_mj_s)),DIVIDE(1,MILLIONS))"))
+          - data_array << [block.id,result_cost.round(1),result_investment.round(1)]
+           
+        %script= "update_block_charts(#{data_array})"
+  %ul#block_list
+    -@blocks.group_by(&:group).each do |group, blocks|
+      %li.group
+        %input{:type => "checkbox", :class => 'block_list_checkbox', :id => "block_list_checkbox_#{group}"}
+        %ul{:id => group, :class => 'group'}
+          - blocks.each do |b|
+            %li
+              - if session["block_#{b.id}"]
+                - show_or_not = session["block_#{b.id}"]
+              - else
+                - show_or_not = b.show_at_first ? 'visible' : 'invisible'
+              %a{:href=>'#', :class=>"show_hide_block #{show_or_not}", :id => "show_hide_block_#{b.id}"}=t("serie.#{b.label}")
+
+        %a{:href=>"#"}
+          //%span{:class => "#{group.downcase} swatch"} &nbsp
+          = t("serie.#{group}")
+
+= add_output_element_js(@output_element)

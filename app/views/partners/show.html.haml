@@ -1,0 +1,5 @@
+#partner
+  .header
+    %img{:src => "/images/partners/#{@partner.name.downcase}.png"}
+  %a{:href => partners_path} << Back to overview
+  = @partner.description.content

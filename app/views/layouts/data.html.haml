@@ -1,0 +1,75 @@
+!!! Strict
+%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
+    %title
+      EnergyTransitionModel
+
+    = sprocket_layout_init :etm
+    = sprocket_layout_init :data
+
+    = stylesheet_link_tag 'data.reset'
+    = stylesheet_link_tag 'data'
+    = stylesheet_link_tag 'data.panel'
+
+
+  :javascript
+    $(document).ready(function() {
+      $('input#search').keyup(function(ev) {
+        var search = $(this).val();
+        $.cookie($(this).attr('data-search_scope'), search);
+        var condition = $.map(search.split(' '), function(el) {
+          if (el != "")
+            return "[data-search*="+el+"]";
+        }).join('');
+        console.log(condition);
+        $('.tree li').hide();
+        $('.tree li'+condition).show();
+      })
+      var stored_search = $.cookie($('input#search').attr('data-search_scope'));
+      $('input#search').val(stored_search).keyup();
+      
+      $('.gql_operator').click(function(ev) {
+        window.open()
+      })
+      
+      $('.gql_operator').mouseover(function(ev) {
+        // E.g.: VALUE( ... )
+        // operator: VALUE
+        // statement: ( ...)
+        var statement = $(this).next().text();
+        var query = $(this).text() + statement;
+        $(this).next().css('background', '#666');
+      })      
+      $('.gql_operator').mouseout(function(ev) {
+        $(this).next().css('background', 'none');
+      })
+    })
+
+
+  %body#data
+    #header
+      - form_tag(data_redirect_path, {:method => 'get'}) do 
+
+        %label
+          Blueprint
+          = select_tag :blueprint_id, options_for_select(['latest'], params[:blueprint_id]), :onchange => 'submit()'
+        %label
+          Region
+          = select_tag :region_code, options_for_select(Area.region_codes, params[:region_code]), :onchange => 'submit()'
+    
+        = link_to 'Area', data_area_path(:id => @dataset.area_id)
+        = link_to 'Carriers', data_carriers_path
+        = link_to 'Converters', data_converters_path
+        = link_to 'Gqueries', data_gqueries_path
+        = link_to 'Tests', data_gql_test_cases_path
+        = link_to 'Graph', data_blueprint_layouts_path
+
+        -#= link_to 'Graph Construction Site', '#'
+
+        -#
+          = link_to 'Tweak', '#'
+          = link_to 'Tables', '#'
+          = link_to 'Tests', '#'
+
+    = yield

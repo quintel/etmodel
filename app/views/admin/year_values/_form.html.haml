@@ -1,0 +1,16 @@
+
+%div{:style => "width: 60%"}
+  -semantic_form_for [:admin, @year_value] do |form|
+
+    = form.inputs :year, :value
+    - if request.referer.include?("historic")
+      = form.input :value_by_year_id, :collection => HistoricSerie.all.map{|x| [x.key,x.id]},:label => 'HistoricSerie'
+      = form.input :value_by_year_type, :value => "HistoricSerie",:as => :hidden
+    - else
+      = form.input :value_by_year_id, :collection => ExpertPrediction.all.map{|x| [x.name,x.id]},:label => 'ExpertPrediction'
+      = form.input :value_by_year_type, :value => "ExpertPrediction",:as => :hidden
+
+    = form.buttons
+
+  = link_to "back", admin_expert_predictions_path
+

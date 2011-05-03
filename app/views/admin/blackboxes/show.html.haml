@@ -1,0 +1,84 @@
+%h2= @blackbox.name
+
+%p= @blackbox.description
+
+%pre
+  = Current.scenario.user_values.inspect
+  = Current.scenario.update_statements.inspect
+  = Current.setting.network_parts_affected.inspect
+  = Current.scenario.has_buildings?.inspect
+
+%ul
+  Jump to Scenario:
+  - # TODO: cleanup mess with load_scenario
+  - @blackbox_scenarios.each do |scenario|
+    - scenario.load_scenario
+    - deviation = scenario.deviation_total(@blackbox_gqueries, @blackbox_output_series)
+    - gqueries = scenario.scenario_items(@blackbox, @blackbox_gqueries)
+    - series = scenario.scenario_items(@blackbox, @blackbox_output_series)
+    - diff = [series, gqueries].flatten.map(&:difference_absolute).compact.sum
+    %li= link_to scenario.name+" #{million(diff)}", "##{dom_id(scenario)}"
+
+
+%p= link_to 'Show all queries', nil, :onclick => "$('tr.hide-row').show();"
+
+- @blackbox_scenarios.each do |scenario|
+  %a{:id => dom_id(scenario)}
+  - scenario.load_scenario
+  - gqueries = scenario.scenario_items(@blackbox, @blackbox_gqueries)
+  - series = scenario.scenario_items(@blackbox, @blackbox_output_series)
+  - deviation = scenario.deviation_total(gqueries, series)
+
+  %h3== Scenario: #{scenario.name} #{deviation}
+  %h4== Gquery: #{gqueries.length}
+  %table.blackbox-results{table_defaults}
+    %thead
+      %tr
+        %th{:style => "border-right: 1px solid #999"}
+        %th{:colspan => 4, :style => "border-right: 1px solid #999"} Present
+        %th{:colspan => 4} Future
+      %tr
+        %th.tal{:style => "border-right: 1px solid #999"} Queries
+        %th.tar Diff %
+        %th.tar Diff Abs
+        %th.tar Expected
+        %th.tar{:style => "border-right: 1px solid #999"} Actual
+        %th.tar Diff %
+        %th.tar Diff Abs
+        %th.tar Expected
+        %th.tar Actual
+    %tbody
+      - gqueries.sort_by(&:deviation).reverse.each do |gquery|
+        %tr{cycles(:class => (gquery.difference_absolute == 0.0) ? 'hide-row' : nil)}
+          %td
+            - if gquery.gquery
+              = gquery.gquery.andand.key
+              = link_to '>', [:admin, gquery.gquery]
+            - else
+              Deleted
+          %td.tar= Metric.percentage_html(gquery.present_change)
+          %td.tar= million gquery.difference_absolute_present
+          %td.tar= million gquery.expected_present_value
+          %td.tar= million gquery.current_present_value
+          %td.tar= Metric.percentage_html(gquery.future_change)
+          %td.tar= million gquery.difference_absolute_present
+          %td.tar= million gquery.expected_future_value
+          %td.tar= million gquery.current_future_value
+    %thead        
+      %tr
+        %th.tal{:colspan => 9} Outputelement Series
+    %tbody
+      - series.sort_by(&:deviation).reverse.each do |serie|
+        %tr{cycles(:class => (serie.difference_absolute == 0.0) ? 'hide-row' : nil)}
+          %td
+            = serie.output_element_serie.label#.gquery.andand.key
+            = link_to '>', [:admin, serie.output_element_serie]
+
+          %td.tar= Metric.percentage_html(serie.present_change)
+          %td.tar= million serie.difference_absolute_present
+          %td.tar= million serie.expected_present_value
+          %td.tar= million serie.current_present_value
+          %td.tar= Metric.percentage_html(serie.future_change)
+          %td.tar= million serie.difference_absolute_future
+          %td.tar= million serie.expected_future_value
+          %td.tar= million serie.current_future_value

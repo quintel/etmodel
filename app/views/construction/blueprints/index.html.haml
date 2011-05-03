@@ -1,0 +1,33 @@
+= render "list"
+
+#content
+  .header
+    Blueprints
+
+  %p
+    All the Blueprints in the database. 
+    A blueprint defines the structure of the graph. The country-specific data sits in a graph dataset.
+  
+  %p
+    Create a new Blueprint by copying from an old one. 
+    %br
+    = link_to "Create a new Blueprint", new_construction_blueprint_path
+
+  %table{table_defaults}
+    %thead
+      %tr
+        %th ID
+        %th Version
+        %th Description
+        %th
+        %th Datasets
+        %th Created At
+    %tbody
+      - @blueprints.each do |blueprint|
+        %tr
+          %td= blueprint.id
+          %td= blueprint.graph_version
+          %td= blueprint.description
+          %td= link_to 'Copy', new_construction_blueprint_path(:copy_blueprint_id => blueprint.id)
+          %th= blueprint.datasets.map(&:region_code).join(', ')
+          %td= blueprint.created_at

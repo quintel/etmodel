@@ -1,0 +1,23 @@
+= render "list"
+
+
+
+#content
+  .header
+    Blueprint Layouts
+    = link_to 'New', new_data_blueprint_layout_path
+
+
+  %table
+    %thead
+      %tr
+        %th id
+        %th Key
+    %tbody
+      - @blueprint_layouts.each do |blueprint_layout|
+        %tr
+          %td= blueprint_layout.id
+          %td= blueprint_layout.key
+          %td= link_to 'Show', data_blueprint_layout_path(:id => blueprint_layout), :target => '_blank'
+          %td= link_to 'Edit', edit_data_blueprint_layout_path(:id => blueprint_layout), :target => '_blank'
+

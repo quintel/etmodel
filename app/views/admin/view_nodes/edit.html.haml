@@ -1,0 +1,24 @@
+%h1= @view_node.key
+
+
+- if @view_node.parent
+  %h2
+    Parent:
+  
+    - if @view_node.parent.tab?
+      Tab
+    - if @view_node.parent.category?
+      Category
+    - if @view_node.parent.slide?
+      Slide
+
+  %h3 
+    Depth:
+    = @view_node.depth
+
+
+  = render 'form'
+
+- else
+  
+  = render "#{params[:update]}_form"

@@ -1,0 +1,47 @@
+= form_for [:construction, @converter] do |f|
+  %table
+    %tbody
+      %tr
+        %th # ID
+        %td
+          = f.text_field :converter_id
+          %p 
+            This used to be called the excel_id. It is the numeric unique identifier of a converter. 
+
+      %tr
+        %th Key
+        %td
+          = f.text_field :key
+          %p
+            Key is part of the unique textual identifier of a converter. 
+
+      %tr
+        %th Full Key
+        %td
+          - if @converter.new_record?
+            %em Full key is shown after saving.
+          - else
+            = @converter.full_key 
+          %p
+            Full Key is the unique textual identifier of a converter:
+            KEY_SECTOR_USE
+
+
+      %tr
+        %th Name
+        %td= f.text_field :key
+
+      %tr
+        %th Use
+        %td= f.select :use_id, Qernel::Converter::USES.invert
+
+      %tr
+        %th Sector
+        %td= f.select :sector_id, Qernel::Converter::SECTORS.invert
+
+
+    %tfoot
+      %tr
+        %th
+        %td= f.submit
+

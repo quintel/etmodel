@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+$: << "." # Ruby 1.9.2 fix
+require File.dirname(__FILE__) + '/../config/boot'
+require 'commands/console'

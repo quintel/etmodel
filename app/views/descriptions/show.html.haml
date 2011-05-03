@@ -1,0 +1,18 @@
+#overlay_container
+  %h1= t(@description.describable.title_for_description).html_safe
+
+  %p
+    - if @description.content
+      = @description.content.html_safe
+    - else
+      %small (Nederlandse tekst nog niet beschikbaar)
+      %br
+      = @description.content_en.html_safe
+
+    -#= @description.content.gsub('<a ', '<a target="_blank" ') || "Lorem"
+    %div{:style => 'clear:both'} &nbsp;
+
+- if @description.content.andand.include?("player")  || @description.content.andand.include?("object")
+  %script flowplayer("player", "/flash/flowplayer-3.2.6.swf");
+
+

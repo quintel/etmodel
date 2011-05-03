@@ -1,0 +1,9 @@
+%h2 New Blackbox Scenario
+
+- semantic_form_for [:admin, @blackbox_scenario] do |f|
+  = f.inputs :name, :description
+  = f.buttons
+
+%h3 Following user updates will be stored in this
+%p
+  = Current.scenario.update_statements

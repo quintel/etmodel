@@ -1,0 +1,21 @@
+
+- form_for @area, :url => data_area_path(:id => @area) do |f|
+
+  %table
+    %thead
+      %tr
+        %th Area
+        %th
+
+    %tbody.numeric_rows
+      - attributes = Qernel::Area::ATTRIBUTES_USED.map(&:to_s) & Area.column_names
+      - attributes = attributes - %w[id country created_at updated_at]
+      - attributes.each do |key|
+        %tr
+          %th= key
+          %td= f.text_field key
+
+    %tfoot
+      %tr
+        %td
+        %td= f.submit 'save'

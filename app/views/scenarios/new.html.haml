@@ -1,0 +1,11 @@
+%h1= t("scenario.save")
+
+%p
+  = t("scenario.save_desc")
+
+%div{:style => "width: 600px"}
+
+  - semantic_form_for @scenario do |f|
+    %div{:style => "color: #c00; margin-bottom: 10px"}= error_messages_for :scenario
+    = f.inputs :title, :description
+    = f.buttons

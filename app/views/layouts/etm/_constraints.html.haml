@@ -1,0 +1,35 @@
+#constraints_container
+  %script#constraint-template{:type => 'text/template'}
+    .arrow
+    %span.header 
+      <%= name %>
+      %span.scale <%= formatted_output_scale ? formatted_output_scale : '' %>
+    %strong <%= output %>
+    .difference
+    = render 'layouts/etm/constraint_box'
+
+
+
+  #constraints
+    - Current.view.root.constraints.order(:id).each_with_index do |constraint, i|
+      - opts = {}
+      - opts[:id] ="constraint_#{constraint.id}"
+      - opts[:class] = (constraint.id == 1) ? 'first' : nil
+      - opts[:rel] = "/constraints/#{constraint.id}"
+      -# opts[:'data-tooltip'] = "#{t("constraint.click for more information")}"
+      
+      .constraint{opts}
+        %div.arrow
+        %span.header
+          = I18n.t(constraint.name)
+          %span.scale
+            =# "(%s)" % constraint.formatted_output_scale if ! constraint.formatted_output_scale.blank?
+        %strong 
+        -#%strong=#= #{constraint.output}
+        .difference 
+        = render 'layouts/etm/constraint_box', :title => constraint.extended_title
+    .clear
+   
+  %script
+    - Current.view.root.constraints.order(:id).each_with_index do |constraint, i|
+      == dashboard.add({ id : #{constraint.id.inspect}, key : #{constraint.key.to_s.inspect.html_safe}, gquery_key : #{constraint.gquery.key.to_s.inspect.html_safe}});

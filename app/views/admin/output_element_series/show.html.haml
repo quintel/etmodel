@@ -1,0 +1,9 @@
+%h2
+  ==#{@output_element_serie.label}
+  %small= link_to 'Edit', edit_admin_output_element_serie_path(@output_element_serie)
+
+
+%pre== Key: #{@output_element_serie.key}
+
+
+= render '/admin/shared/revisions', :versioned => @output_element_serie

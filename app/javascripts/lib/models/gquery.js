@@ -1,0 +1,53 @@
+var Gquery = Backbone.Model.extend({
+  initialize : function() {
+    window.gqueries.add(this);
+  },
+
+  result : function() {
+    var present_value = this.get('present_value');
+    var future_value = this.get('future_value');
+
+    if (_.compact([present_value, future_value]) < 2) {
+      console.warn('Gquery "'+this.get('key')+'" has undefined/null values. ' + present_value + '/' + future_value + "\n Reset to 0");
+      present_value = 0;
+      future_value = 0;
+    }
+
+    var result = [
+      [this.get('present_year'), present_value], 
+      [this.get('future_year'), future_value]
+    ];
+
+    return result;
+  },
+
+  /*
+   * api_result is either 
+   * - Number: when adding present:V(...)
+   * - Array: normal GQL Queries
+   */
+  handle_api_result : function(api_result) {
+    if (!(api_result instanceof Array)) { 
+      this.set({present_value : api_result, future_value : api_result});
+    } else {
+      this.set({
+        present_year  : api_result[0][0], present_value : api_result[0][1],
+        future_year   : api_result[1][0], future_value  : api_result[1][1]
+      });
+    }
+  }
+});
+
+var GqueryList = Backbone.Collection.extend({
+  model : Gquery,
+
+  with_key : function(gquery_key) {
+    return this.filter(function(gquery){ return gquery.get('key') == gquery_key; });
+  },
+
+  keys : function() {
+    var keys = window.gqueries.map(function(gquery) { return gquery.get('key') });
+    return _.compact(keys);
+  }
+});
+window.gqueries = new GqueryList;

@@ -1,0 +1,35 @@
+%h3 Revisions
+
+%table
+  %tr
+    %td
+      %small 
+        %strong Updated by
+    %td
+      - if @version
+        current
+      - else
+        %strong current
+    %td
+      %small 
+        %strong Updated @
+
+    %td    
+      = link_to('show', :action => :show)
+      = link_to('edit', :action => :edit)
+    
+  - versioned.versions.reverse.each do |version|
+    %tr
+      %td
+        %small= User.find(version.whodunnit).name if version.whodunnit
+        
+      %td
+        - if version == @version
+          %strong= version.event
+        - else
+          = version.event
+      %td
+        %small= format_date_nicely_with_time version.created_at
+      %td
+        = link_to 'show', :action => :show, :version_id => version.id
+        = link_to 'edit', :action => :edit, :version_id => version.id

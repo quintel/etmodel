@@ -1,0 +1,13 @@
+- title "Edit Carrier Data #{@carrier_data.andand.carrier.key} "
+
+
+%p
+  %strong Attention:
+  %em changing data requires restarting the memcached.
+
+= render 'form'
+
+%p
+  = link_to "Go back", :back
+
+= render "/admin/shared/revisions", :versioned => @carrier_data

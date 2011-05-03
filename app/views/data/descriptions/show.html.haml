@@ -1,0 +1,14 @@
+%h2 Show description
+
+%table{table_defaults}
+  %tr
+    %td Short
+    %td= @description.short_content
+  %tr
+    %td Content
+    %td= @description.content
+
+  
+= link_to "back", admin_descriptions_path
+
+= render '/admin/shared/revisions', :versioned => @description

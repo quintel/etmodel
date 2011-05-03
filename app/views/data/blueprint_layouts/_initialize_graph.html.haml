@@ -1,0 +1,26 @@
+#holder
+%script
+  == var converter_url_prefix = "#{data_converters_path()}";
+  == var data_json_url = "#{data_blueprint_layout_path(:id => @blueprint_layout, :format => 'json')}";
+  == var update_converter_positions_path = "#{data_blueprint_layout_converter_positions_path(:blueprint_layout_id => @blueprint_layout)}";
+
+
+:javascript
+  var r = Raphael("holder", 8000, 10000).initZoom();
+  var data;
+  
+  $.getJSON(data_json_url, function(json_data) {
+    data = json_data;
+    for (var key in data['present']['1']) {
+      $('#attribute').append($('<option></option>').val(key).html(key));
+    }
+  })
+  
+  
+  function update_positions() {
+    $.post(update_converter_positions_path, {'converter_positions' : getUpdatedValues()});
+    updated_coordinates = {};
+    return false;
+  };
+
+= javascript_include_tag data_blueprint_layout_path(:id => @blueprint_layout, :format => 'js')

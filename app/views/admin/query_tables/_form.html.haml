@@ -1,0 +1,20 @@
+- form_for [:admin, @query_table] do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :description
+    %br
+    = f.text_area :description
+  %p
+    = f.label :row_count
+    %br
+    = f.text_field :row_count
+  %p
+    = f.label :column_count
+    %br
+    = f.text_field :column_count
+  %p
+    = f.submit

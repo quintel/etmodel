@@ -1,0 +1,31 @@
+<% if current_user%>
+<%= link_to t("header.Sign out"), "/logout" %> 
+<%= link_to "Home", root_path %> 
+<% else %>
+<h1>Login</h1>
+
+<%= form_for(@user_session) do |f| %>
+  <%= error_messages_for @user_session, :header_message => t("user.error_header"),:message=> t("user.error_message") %>
+
+  <p>
+    <%= f.label :email, t("user.email") %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password, t("user.password") %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :remember_me, t("user.remember") %><br />
+    <%= f.check_box :remember_me, :checked => "checked" %>
+  </p>
+
+  
+  <p>
+    <%= hidden_field_tag 'redirect_to', @redirect_to %>
+    <%= f.submit 'Login' %>
+  </p>
+  
+  <%= link_to t("header.create account"), new_user_path %>
+<% end %>
+<% end %>

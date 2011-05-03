@@ -1,0 +1,20 @@
+#panel.panel.panel_tree
+  .header
+    %div
+      -#%label#search-label{:for => 'search'} Search
+      %table
+        %tr
+          %td
+            %input#search{:'data-search_scope' => 'converters'}
+
+  .tree
+
+    %ul    
+      - Gquery.includes(:gquery_groups).each do |gquery|
+        %li.level_0{:'data-search' => [gquery.id, gquery.key, gquery.gquery_groups.map{|g| g.group_key.underscore}].flatten.join(' ')}
+          .content
+            %h1
+              %a{:href => data_gquery_path(:id => gquery)}
+                %span.id== ##{gquery.id}
+                %span.key= gquery.key
+                %span.sector= gquery.gquery_groups.first.andand.group_key

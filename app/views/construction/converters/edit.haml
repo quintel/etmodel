@@ -1,0 +1,79 @@
+= render "list"
+
+
+
+#content
+  .header
+    Edit Converter
+  
+  = render 'form'
+
+  %h2 Slots
+
+  %table
+    %thead
+      %tr
+        %th Direction
+        %th Carrier
+        %th Links
+        %th
+        
+    %tbody
+      - @converter.slots.blueprint(@blueprint).input.each do |slot|
+        - form_for [:construction, slot] do |f|
+          %tr
+            %td= f.select :direction, [['Input', Slot::INPUT_DIRECTION], ['Output', Slot::OUTPUT_DIRECTION]]
+            %td= f.collection_select :carrier_id, Carrier.all, :id, :key
+            %td
+              - slot.links.each do |link|
+                = link.input_converter.key
+                %br
+            %td= f.submit 'save'
+      - @converter.slots.blueprint(@blueprint).output.each do |slot|
+        - form_for [:construction, slot] do |f|
+          %tr
+            %td= f.select :direction, [['Input', Slot::INPUT_DIRECTION], ['Output', Slot::OUTPUT_DIRECTION]]
+            %td= f.collection_select :carrier_id, Carrier.all, :id, :key
+            %td
+              - slot.links.each do |link|
+                = link.output_converter.key
+                %br
+            %td= f.submit 'save'
+
+      %tr
+        %th{:colspan => 4} New Slot
+      - form_for [:construction, Slot.new] do |f|
+        %tr
+          %td= f.select :direction, [['Input', Slot::INPUT_DIRECTION], ['Output', Slot::OUTPUT_DIRECTION]]
+          %td= f.collection_select :carrier_id, Carrier.all, :id, :key
+          %td
+          %td= f.submit 'create'
+
+  %h2 Links
+
+  %table
+    %thead
+      %tr
+        %th Direction
+        %th Converter
+        %th Carrier
+        %th Link Type
+        %th
+
+    %tbody
+      - @converter.input_links.blueprint(@blueprint).each do |link|
+        - form_for [:construction, link] do |f|
+          %tr
+            %td Input
+            %td= f.collection_select :child_id, @blueprint.converter_records, :id, :to_label
+            %td= f.collection_select :carrier_id, @converter.slots.blueprint(@blueprint).map(&:carrier).uniq, :id, :key
+            %td= f.select :link_type, Link::LINK_TYPES.invert
+            %td= f.submit 'save'
+      - @converter.output_links.blueprint(@blueprint).each do |link|
+        - form_for [:construction, link] do |f|
+          %tr
+            %td Output
+            %td= f.collection_select :parent_id, @blueprint.converter_records, :id, :to_label
+            %td= f.collection_select :carrier_id, @converter.slots.blueprint(@blueprint).map(&:carrier).uniq, :id, :key
+            %td= f.select :link_type, Link::LINK_TYPES.invert
+            %td= f.submit 'save'

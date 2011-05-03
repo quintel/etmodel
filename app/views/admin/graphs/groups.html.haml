@@ -1,0 +1,105 @@
+%h1= @graph.version
+
+%h1 Primary Demand of Final Demand per Carrier
+
+%table{:border => 1}
+  - total = {}
+  - groups = [:group_useful_demand, :group_final_demand_cbs, :group_primary_energy_demand, :group_heat_production, :group_electricity_production, :group_non_energetic_use_INTERSECTION_group_final_demand_cbs, :sector_industry_INTERSECTION_group_final_demand_cbs]
+  %tr
+    %th Carrier
+    - groups.each do |group|
+      %th= group.to_s.gsub('_', ' ')
+    %th Co2 (Useful)
+    %th Mio EUR
+  - Current.gql.present.primary_energy_carriers.each do |carrier|
+    %tr
+      %th= carrier.key
+      - groups.each do |select|
+        - converters = Current.gql.select(select.to_s, Current.gql.present)
+        - total[select] ||= 0
+        - sum = converters.map{|c| c.primary_demand_of_carrier(carrier.key)}.sum
+        - total[select] += sum
+        %td{:style => "text-align: right"}= (sum / 10**9).round(4)
+
+      - co2 = Current.gql.present.group_converters(:useful_demand).map{|c| c.query.primary_co2_emission_for_carrier(carrier)}.compact.sum
+      - total[:co2] ||= 0; total[:co2] += co2
+      %td{:style => "text-align: right"}= (co2 / 10**9).round(1)
+      %td{:style => "text-align: right"}
+        = (Current.gql.present.group_converters(:primary_energy_demand).map{|c| c.primary_demand_of_carrier(carrier.key)}.sum * (carrier.cost_per_mj || 0) / 10**6).round(4)
+
+  %tr
+    %th Total (Summed)
+    - [groups, :co2].flatten.each do |g|
+      %td{:style => "text-align: right"}
+        %strong=(total[g]  / 10**9).round(1)
+
+  %tr
+    %th Total
+    - groups.each do |select|
+      %td{:style => "text-align: right"}
+        %strong= (Current.gql.query("present.#{select}.primary_demand") / 10**9).round(1)
+    %td{:style => "text-align: right"}
+      %strong= (Current.gql.query_present('sum.group_final_demand_cbs.primary_co2_emission') / 10**9).round(1)
+
+  %tr
+    %th Infinite
+    - groups.each do |select|
+      %td{:style => "text-align: right"}
+        - sum = Current.gql.select(select.to_s, Current.gql.present).map{|c| c.infinite_demand }.sum
+        %strong= (sum / 10**9).round(1)
+
+- Group.all.map(&:to_qernel).each do |group|
+  %br
+
+  - with_options :delimiter => "'", :precision => 0 do |numb|
+    %table{:border => 1}
+      %tr
+        %th{:colspan => 2}= group.key
+        %th Demand
+        %th Primary
+        %th Difference
+        %th Infinite
+        %th Co2
+
+      - demand_total, primary_total = 0.0, 0.0
+      - converters = Current.gql.present.group_converters(group.key)
+      - converters.each do |converter|
+        - future = Current.gql.future.converter(converter.id)
+        %tr
+          %td= converter.id
+          %td= converter.full_key
+          %td{:style => "text-align: right"}= numb.number_with_precision(d = converter.query.demand)
+          %td{:style => "text-align: right"}= numb.number_with_precision(p = converter.query.primary_demand)
+          %td{:style => "text-align: right"}= numb.number_with_precision(p - d)
+          - demand_total += d
+          - primary_total += p
+          %td{:style => "text-align: right"}= numb.number_with_precision(converter.infinite_demand)
+          %td{:style => "text-align: right"}
+            = numb.number_with_precision(converter.query.primary_co2_emission)
+          %td{:style => "text-align: right"}
+            = numb.number_with_precision(future.query.primary_co2_emission)
+
+      %tr{:style => "font-weight: bold"}
+        %td{:colspan => 2} Total
+        %td{:style => "text-align: right"}= numb.number_with_precision(demand_total)
+        %td{:style => "text-align: right"}= numb.number_with_precision(primary_total)
+        %td{:style => "text-align: right"}= numb.number_with_precision(primary_total - demand_total)
+        %td
+        %td{:style => "text-align: right"}= numb.number_with_precision(converters.map{|c| c.query.primary_co2_emission}.compact.sum)
+
+%br
+
+%table{:border => 1}
+  %tr
+    %th{:colspan => 2} Dead Ends
+    %th Group
+    %th Demand
+    %th Primary
+  - Current.gql.present.converters.sort_by(&:id).each do |c|
+    - if c.output_links.empty?
+      %tr
+        %td= link_to c.id, admin_converter_path(c.id, :graph_id => @graph.id, :format => 'png'), :target => '_blank'
+        %td= c.full_key
+        %td== [#{c.groups.map(&:key).join(', ')}]
+        %td= c.demand
+        %td= c.primary_demand

@@ -1,0 +1,19 @@
+= render 'list'
+
+#content
+  .header
+    Gqueries Dump
+
+  %p Here you find all Gqueries so that you can easily find things with CMD+F
+
+  - form_tag do
+    = text_field_tag 'search', params[:search] || ''
+    = submit_tag 'Filter'
+
+  %ul
+    - @gqueries.each do |gquery|
+      %li
+        %h3
+          = gquery.key
+          %small= link_to 'link', data_gquery_path(:id => gquery.id)
+        %pre= gquery.query

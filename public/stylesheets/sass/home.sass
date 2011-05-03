@@ -1,0 +1,393 @@
+#start
+  float: left
+  width: 35%
+  border-right: 1px solid #CCC
+  select
+    float: left
+    margin-right: 5px
+  h1 
+    color: #0c6c9c
+    margin: 0
+    padding: 0
+  p
+    padding-right: 10px 
+  p.nodownloads
+    color: #666
+    margin: 8px 0
+  h3 
+    float: left
+    color: #224368
+    margin-bottom: 4px
+    margin-top: 4px
+
+  ul
+    list-style-type: none
+
+    ul, p /* Intend the boxes below the header */
+
+    
+  ul, li
+    padding: 0
+    margin: 0
+
+  li
+    padding: 2px 0
+    float: left
+    clear: both
+    width: 100%
+    padding-top: 5px
+    
+    ul 
+      li
+        padding-top: 3px
+        label: 
+          width: 100%
+          line-height: 1em
+        input
+          float: left
+          line-height: 1em
+        span
+          color: #000
+          font-size: 12px
+          float: left
+          line-height: 1em
+          small
+            color: #999
+        img
+          float: left
+          line-height: 1em
+          margin: 2px 5px 0px 0px
+        &.disabled
+          color: #999
+
+
+  label input
+    margin-right: 8px
+    vertical-align: bottom
+    margin-bottom: 3px
+  
+  #year_forms
+    float: left
+
+  .button_align_right
+    margin-right: 12px
+    margin-top: 10px
+    float: right
+    
+  #go_button
+    clear: both
+    display: none
+    
+  #description_container
+    margin-top: 10px 
+    margin-right: 10px
+    color: #999
+    
+    span
+      color: #999      
+      font-size: 12px
+      
+    img 
+      float: left
+      margin: 10px
+      v-align: top
+  .style_button
+    .button_left
+      width: 9px
+    float: left
+    clear: both
+    margin: 15px 0 0 10px 
+    .button_center
+      span
+        width: 250px
+  #existing_scenario_button,#new_scenario_button,#continue_scenario_button
+    width: 303px
+#information
+  float: right
+  width: 60%
+
+#information,#house_selection
+  .tabs
+    // background: url("../images/layout/bg-nav-inner.gif") repeat-x scroll 0 0 transparent
+    height: 30px
+    margin: auto
+    width: 512px
+    margin-top: 30px
+    
+    ul, li
+      padding: 0
+      margin: 0
+      
+    ul
+      font-size: 13px
+      margin: 0px auto 0 auto
+      width: 512px
+      list-style: none outside none
+
+      li
+        float: left
+        padding-bottom: 8px
+        //border-bottom: 2px solid #dfe8f3
+        //width: 140px
+        margin-right: 15px
+      
+        height: 28px
+        a
+          // width: 100%
+          float: left
+          color: #333
+          border: 2px solid #dfe8f3
+          border-bottom: 0px
+          padding: 4px 10px 4px 10px
+
+          background: #dfe8f3
+
+        a:hover
+          background: #fff
+          margin: 0
+          //padding-top: 7px
+
+      li:hover
+        cursor: pointer
+      li.active
+        background: #fff
+
+      li.active a
+        background: #fff
+        margin: 0
+        padding: 4px 10px 4px 15px
+
+  #movie_content
+    margin: -2px auto 0 auto
+    width: 512px
+    height: 289px
+    border: 2px solid #dfe8f3
+    padding: 15px
+    padding-bottom: 15px
+
+  .movie_shadow
+    margin: -1px auto 20px auto
+    width: 512px
+    height: 5px
+    background: url(/images/layout/movie_shadow.png) bottom center no-repeat
+  h1 
+    color: #0c6c9c
+    margin: 0
+    padding: 0
+
+#shadowbox-content
+  position: relative
+  float: left
+  #text
+    height: 350px
+    width: 67%
+    float: left
+    .right
+      position: absolute
+      bottom: 0px
+      right: 200px
+  #diamond-container
+    float: left
+    height: 300px
+    width: 23%
+    position: relative
+    margin-top: 50px
+    a#home
+      width: 50px
+      height: 35px
+      position: absolute
+      left: 30px
+      top: 0
+      text-align: center
+    #diamonds
+      position: relative
+      margin-left: 30%
+      margin-top: 10px
+      .diamond
+        width: 97px
+        height: 103px
+        position: absolute
+        background: url(/images/layout/diamond_white.png) no-repeat
+        text-align: center
+        a
+          padding-top: 37px
+          height: 100%
+          display: block
+          color: #000
+          text-decoration: none
+        a:hover
+          color: #fff
+      .active
+        a
+          color: #fff
+      #policy
+        left: 52px
+      #demand
+        top: 52px
+      #supply
+        top: 52px
+        left: 104px
+      #costs
+        top: 104px
+        left: 52px
+      .active
+        background: url(/images/layout/diamond_blue.png) no-repeat
+        color: #fff
+      
+#arrow_box
+  position: absolute
+  top: 150px
+  left: 120px
+  width: 117px
+  height: 60px
+  z-index: 4
+  padding-top: 80px
+  background: url(/images/layout/curved_arrow_up_up_right.png) top right no-repeat
+  color: #EE8833
+  font-size: 14px
+
+#arrow_box_households
+  position: absolute
+  top: 500px
+  left: 70px
+  width: 117px
+  height: 100px
+  z-index: -1
+  padding-top: 80px
+  background: url(/images/layout/curved_arrow_up.png) no-repeat
+  color: #EE8833
+  font-size: 14px
+
+#arrow_box_constraints
+  width: 160px
+  height: 72px
+  z-index: -1
+  margin-left: 300px
+  padding-left: 80px
+  background: url(/images/layout/arrow_constraints.png) no-repeat
+  color: #EE8833
+  font-size: 14px
+
+.clear
+  clear: both
+
+p.button
+  float: right
+  height: 22px
+  margin: 0px
+  background: #63A1C9
+  border: 1px solid #000
+  
+  a.button, input.button
+    background: none
+    border: 0px
+    text-decoration: none
+    color: #fff
+
+
+a.button, input.button
+  border: 1px solid #000
+  padding: 5px 10px
+  background: #63A1C9
+  text-decoration: none
+  color: #fff
+  
+a.button:hover, input.button:hover
+  background: #568CB0
+
+input
+  font-family: inherit
+
+
+//define chars of block graph here
+!width = 100
+!gap = 20
+!height_multi = 5
+  
+ul#blocks
+  list-style: none
+  width = 680px
+  margin: 30px auto 30px auto
+  height: 250px
+  position: relative
+  li
+    float: left
+    width = !width + "px"
+    border: 1px solid #000
+    height: 100px
+    margin-left: 10px
+    position: absolute
+    text-align: center
+    bottom: 10px
+    line-height: 2em
+    background-color: #DFE8F3
+    a
+      color: #000
+      text-decoration: none
+      height: 100%
+      display: block
+    .number, .percentage
+      position: absolute
+      top: -2em
+      color: #fff
+    .number
+      left: 0px
+    .percentage
+      right: 0px
+      font-size: small
+  li.active
+    background-color: #63A1C9
+    color: #fff
+    a
+      color: #fff
+      text-decoration: none
+    .number
+      color: #000
+    .percentage
+      color: #666
+
+  li.households
+    left: 0
+    height = 15 * !height_multi +"px"
+  li.buildings
+    left = (!width + !gap) * 1 + "px"
+    height = 10 * !height_multi +"px"
+  li.transport
+    left = (!width + !gap) * 2 + "px"
+    height = 18 * !height_multi +"px"
+  li.industry
+    left = (!width + !gap) * 3 + "px"
+    height = 41 * !height_multi +"px"
+  li.agriculture
+    left = (!width + !gap) * 4 + "px"
+    height = 5 * !height_multi +"px"
+  li.other
+    left = (!width + !gap) * 5 + "px"
+    height = 2 * !height_multi +"px"
+    
+.intro_text
+  height: 300px
+.movie_container
+  border: 1px solid #ccc
+  margin: 0 auto 20px auto
+  width: 450px
+  .movie_title
+    display: block
+    background-color: #000
+    color: #fff
+    padding: 2px 10px
+  a
+    padding: 0 10px 5px 10px
+
+#start ul#new_scenario_form, #start ul#existing_scenario_form
+  clear: both
+  float: left
+  display: none
+  width: 304px
+  margin-left: 20px
+  margin-top: 15px
+  
+  h3 
+    width: 100%
+  select
+    margin-top: 5px

@@ -1,0 +1,33 @@
+%h2 Upload Zipfile
+- form_tag '/admin/graphs/import', :multipart => true do 
+
+  %p
+    version
+    = text_field_tag :version
+  %p
+    Description
+    = text_area_tag :description
+  %p
+    zip_file
+    = file_field_tag :zip_file
+  %p= submit_tag 'upload and import'
+
+%table{table_defaults}
+  %thead
+    %tr
+      %th.tal Country
+      %th.tal Version
+      %th.tal Description
+      %th.tal Created
+      %th.tal
+
+  - @graphs.each do |graph|
+    %tr{cycles}
+      %td
+        = image_tag "icons/#{graph.country}.png" if graph.country and graph.country.length == 2
+        = graph.country
+      %td= link_to graph.version, admin_graph_path(graph)
+      %td= link_to graph.description, admin_graph_path(graph)
+      %td= graph.created_at
+      %td= link_to 'Delete', admin_graph_path(graph), :method => :delete, :confirm => 'Are you sure'
+

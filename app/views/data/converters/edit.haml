@@ -1,0 +1,7 @@
+= render "list"
+
+.panel{:style => "width: 600px; float: left"}
+  - semantic_form_for [:data, @converter_data] do |f|
+    = f.inputs Qernel::ConverterApi::ATTRIBUTES_USED
+    = f.buttons
+    

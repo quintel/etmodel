@@ -1,0 +1,6 @@
+#info_box{:style => "position: absolute; top: 118px; right: 38px; margin: 0 5px; border: 2px solid #DFE8F3; z-index: 1000000001; text-align: center"}
+  #flag{:style => "display: inline; padding: 0 10px; border-right: 2px solid #DFE8F3;"}
+    %img{:src => "/images/icons/#{Current.scenario.country}.png"}
+      = Current.scenario.region if Current.scenario.region != "nl"
+  #year{:style => "display: inline; padding: 0 10px;"}
+    = Current.scenario.end_year

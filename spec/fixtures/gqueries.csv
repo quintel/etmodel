@@ -1,0 +1,1244 @@
+"id","key","query","name","description","created_at","updated_at","not_cacheable"
+1,"co2_emission_electricity_ex_import","SUM(VALUE(GROUP(electricity_production);primary_co2_emission))","Co2 emission electriciy excl import","","","2010-05-19 14:37:33",0
+6,"co2_emission_electricity_import","PRODUCT(
+ Q(co2_per_mj_domestic_electricity_production), 
+ VALUE(electricity_import_export_energy;demand)
+  )
+","","","2010-05-19 08:44:35","2010-06-20 11:25:28",0
+7,"co2_emission_electricity","SUM(Q(co2_emission_electricity_ex_import),Q(co2_emission_electricity_import))","","","2010-05-19 08:45:06","2010-05-19 08:45:06",0
+8,"co2_emission_total","SUM(VALUE(G(final_demand_cbs);primary_co2_emission),Q(co2_emission_electricity_import))","","Total co2 emission of this graph. 
+
+MECE groups should have the same total_co2_emissions, with the exception of primary_demand:
+
+We exclude the energy coming from non-energetic use converters. As they
+are left of the primary energy demand and therefore not subtracted when 
+calculating the total_co2_emission of primary_demand
+
+final_demand.primary_co2_emission == useful_demand.primary_co2_emission != primary_demand.primary_co2_emission 
+","2010-05-19 08:45:29","2010-05-20 09:37:08",0
+10,"co2_reduction_final_demand_to_1990_in_percent","SUM(
+  DIVIDE(
+    SUM( V( G(final_demand_cbs); primary_co2_emission ) ),
+    PRODUCT( AREA( co2_emission_1990 ), BILLIONS )
+  ),
+  -1
+)","","co2_primary_emission_of_final_demand / co2_emission in 1990 - 1","2010-05-20 09:31:48","2010-05-20 09:31:48",0
+11,"oil_use_refinery","SUM(
+  V( lpg_production_transport,diesel_production_transport,gasoline_production_transport; input_of_crude_oil )
+)","","","2010-05-20 09:44:07","2010-05-20 09:44:07",0
+12,"cost_refinery","SUM(
+  PRODUCT( V(CARRIER(lpg); cost_per_mj), V(lpg_production_transport; output_of_lpg) ),
+  PRODUCT( V(CARRIER(diesel); cost_per_mj), V(diesel_production_transport; output_of_diesel) ),
+  PRODUCT( V(CARRIER(gasoline); cost_per_mj), V(gasoline_production_transport; output_of_gasoline) ),
+  NEG( PRODUCT( V(CARRIER(crude_oil); cost_per_mj), Q(oil_use_refinery) ) )
+)","","","2010-05-20 09:45:41","2010-05-21 15:47:33",0
+13,"cost_fuels_energy_sector","SUM(
+  PRODUCT( V(CARRIER(natural_gas);cost_per_mj), V(gas_demand_energy_energetic;input_of_natural_gas)),
+  PRODUCT( V(CARRIER(crude_oil);cost_per_mj), V(oil_demand_energy_energetic;input_of_crude_oil))
+)
+","","","2010-05-20 09:46:08","2010-05-20 09:46:08",0
+14,"cost_fuels_grid_losses","SUM(
+  PRODUCT( V(CARRIER(natural_gas);cost_per_mj), V(grid_losses_gas_energy;demand)),
+  PRODUCT( V(CARRIER(crude_oil);cost_per_mj), V(grid_losses_oil_energy;demand))
+)","","","2010-05-20 09:46:35","2010-05-20 09:46:35",0
+15,"cost_energy_sector_fuels","SUM( Q(cost_fuels_grid_losses), Q(cost_fuels_energy_sector), Q(cost_refinery) )","","","2010-05-20 09:47:02","2010-05-20 09:47:02",0
+17,"cost_heat_production","SUM( V(
+         G(heat_production),G(decentral_production); demand * useful_output * total_cost_per_mj
+           ), Q(co2_cost_industry_without_electricity)
+)","","","2010-05-20 09:52:07","2010-06-30 13:31:51",0
+18,"cost_electricity_production","SUM(
+  Q(cost_electricity_ex_import),
+  Q(cost_electricity_import)
+)","","","2010-05-20 09:53:00","2010-05-20 09:53:00",0
+19,"cost_electricity_import","PRODUCT(
+  Q(cost_electricity_ex_import),
+  V(electricity_import_export_energy;demand),
+  INVERSE(SUM(V(GROUP(electricity_production);output_of_electricity)))
+)
+","","Multiplies the imported electricity with the average electricity production cost of the domestic production.","2010-05-20 09:53:31","2010-07-16 12:59:01",0
+20,"cost_electricity_ex_import","SUM(
+  V(G(electricity_production); total_cost_electricity)
+)","","","2010-05-20 09:53:59","2010-05-20 09:53:59",0
+21,"cost_transport_fuels","SUM( 
+  V( INTERSECTION( G(final_demand_cbs), SECTOR(transport) ); cost_of_outputs)
+)","","","2010-05-20 09:55:06","2010-06-30 13:32:53",0
+22,"cost_non_energetic_fuels","SUM( 
+  V( INTERSECTION( G(final_demand_cbs), USE(non_energetic) ); cost_of_inputs)
+)","","","2010-05-20 09:55:36","2010-05-21 15:06:37",0
+23,"cost_total","SUM(
+  Q(cost_heat_production),
+  Q(cost_electricity_production),
+  Q(cost_transport_fuels),
+  Q(cost_energy_sector_fuels),
+  Q(cost_non_energetic_fuels),
+  IF(EQUALS(AREA(area),nl),
+    PRODUCT(Q(annual_netwerk_cost),BILLIONS),
+    0)
+)    ","","Sums up the costs. Only for the Netherlands the netwerk costs are included.","2010-05-20 09:56:09","2010-07-09 09:48:13",0
+24,"area_footprint_per_nl","DIVIDE(
+  GRAPH(area_footprint), AREA(areable_land)
+)","","","2010-05-21 08:11:43","2010-05-21 08:11:43",0
+25,"potential_roof_pv_production","PRODUCT(
+  DIVIDE(
+    AREA(roof_surface_available_pv),
+    V(local_solar_pv_grid_connected_energy_energetic;land_use_in_nl)
+  ),
+  V(local_solar_pv_grid_connected_energy_energetic;typical_capacity_effective_in_mj_s),
+  V(local_solar_pv_grid_connected_energy_energetic;capacity_factor),
+  SECS_PER_YEAR
+)","","","2010-05-21 08:14:29","2010-05-21 08:15:49",0
+26,"energy_dependence","DIVIDE(
+  SUM(V(G(energy_import_export);demand)),
+  SUM(V(G(primary_energy_demand);demand))
+)","","","2010-05-21 08:16:33","2010-05-21 08:16:33",0
+27,"fuel_dependence","DIVIDE(
+  SUM(V( G(energy_import_export) ;demand)),
+  SUM(V( G(mining_and_extraction),G(energy_import_export) ;demand))
+)","","","2010-05-21 08:17:07","2010-05-21 15:33:01",0
+28,"primary_demand_of_final_demand","SUM(V(G(final_demand_cbs);primary_demand))","","","2010-05-21 09:33:24","2010-05-21 09:33:24",0
+29,"sustainability_heat_production","DIVIDE(
+  SUM(V( G(heat_production); useful_output * demand * sustainable_input_factor)),
+  SUM(V( G(heat_production); useful_output * demand))
+)","","","2010-05-21 09:35:34","2010-05-21 09:35:34",0
+30,"sustainability_electricity_production","DIVIDE(
+   SUM(V( G(electricity_production); useful_output * demand * sustainable_input_factor)),
+   SUM(V( G(electricity_production); useful_output * demand))
+)","","","2010-05-21 09:36:03","2010-05-21 09:36:03",0
+31,"share_of_renewable_electricity","DIVIDE(
+  SUM(V( G(electricity_production); primary_demand_of_sustainable)),
+  SUM(V( G(electricity_production); primary_demand))
+)
+","","","2010-05-21 09:39:50","2010-05-21 09:39:50",0
+32,"share_of_renewable_energy","DIVIDE(
+  SUM(V( G(final_demand_cbs); primary_demand_of_sustainable),Q(ambient_heat_use)),
+  SUM(V( G(final_demand_cbs); final_demand),Q(ambient_heat_use))
+)","","","2010-05-21 09:40:06","2010-06-15 14:33:04",0
+33,"share_of_renewable_energy_in_procent","PRODUCT(Q(share_of_renewable_energy), 100)","","","2010-05-21 09:40:18","2010-05-21 09:40:18",0
+34,"centrally_produced_electricity_industry","SUM(
+  V(electricity_industry_energetic;demand),
+  NEG(
+    SUM(
+      V(small_chp_industry_energetic,large_chp_industry_energetic,biomass_chp_industry_energetic,bio_oil_chp_industry_energetic;output_of_electricity)
+    )
+  )
+)","","","2010-05-21 09:43:50","2010-06-28 11:00:07",0
+35,"fossil_heat_old","SUM(
+  V(
+    micro_chp_households_energetic,
+    central_heating_households_energetic,
+    heater_on_coal_households_energetic,
+    heater_on_oil_households_energetic,
+    heater_on_greengas_households_energetic,
+    cv_hot_water_households_energetic,
+    heatpump_boiler_using_city_heat_households_energetic;output_of_heat_carriers
+  ),
+  NEG(V(heatpump_boiler_using_city_heat_households_energetic;input_of_electricity))
+)","","","2010-05-21 09:47:20","2010-05-21 09:47:20",0
+36,"fossil_heat","SUM(
+  V(
+    micro_chp_households_energetic,
+    central_heating_households_energetic,
+    heater_on_coal_households_energetic,
+    heater_on_oil_households_energetic,
+    heater_on_greengas_households_energetic,
+    cv_hot_water_households_energetic,
+    cooking_energy_demand_households_energetic,
+    cooling_demand_households_energetic,
+    heatpump_boiler_using_city_heat_households_energetic,
+    hot_water_demand_households_energetic,
+    gasheatpump_households_energetic;
+      output_of_heat_carriers
+  ),
+  NEG(
+  V(
+    micro_chp_households_energetic,
+    central_heating_households_energetic,
+    heater_on_coal_households_energetic,
+    heater_on_oil_households_energetic,
+    heater_on_greengas_households_energetic,
+    cv_hot_water_households_energetic,
+    cooking_energy_demand_households_energetic,
+    cooling_demand_households_energetic,
+    heatpump_boiler_using_city_heat_households_energetic,
+    hot_water_demand_households_energetic,
+    gasheatpump_households_energetic;
+      input_of_electricity
+   )
+ )
+)     ","","","2010-05-21 09:48:43","2010-06-14 10:14:43",0
+37,"fossil_heat_other","SUM(
+  V(
+    gas_burner_other_other_energetic, 
+    oil_burner_other_other_energetic, 
+    coal_burner_other_other_energetic,
+    steam_hot_water_other_energetic;
+      output_of_heat_carriers
+  )
+)","","","2010-05-21 09:52:10","2010-07-01 15:24:14",0
+38,"fossil_heat_industry","SUM(
+  V(
+    coal_burner_industry_industry_energetic,
+    oil_burner_industry_industry_energetic,
+    gas_burner_industry_industry_energetic,
+    greengas_burner_industry_industry_energetic,
+    large_chp_industry_energetic,
+    small_chp_industry_energetic;
+      output_of_heat_carriers
+  )
+)","","","2010-05-21 09:54:21","2010-06-25 15:09:27",0
+39,"fossil_heat_agriculture","SUM(
+  V(
+    oil_burner_agri_agriculture_energetic,
+    gas_burner_agri_agriculture_energetic,
+    steam_hot_water_agriculture_energetic;
+      output_of_heat_carriers
+  ))","","","2010-05-21 09:55:33","2010-07-01 14:37:14",0
+40,"fossil_heat_production","SUM(
+  Q(fossil_heat),
+  Q(fossil_heat_industry),
+  Q(fossil_heat_agriculture),
+  Q(fossil_heat_other)
+)","","","2010-05-21 09:56:33","2010-05-21 09:56:33",0
+41,"biomass_heat","V(heater_on_biomass_households_energetic;output_of_useable_heat)","","","2010-05-21 10:02:09","2010-05-21 10:02:09",0
+42,"geothermal_supply","SUM(V(
+  heat_pump_with_CHS_agri_agriculture_energetic,
+  heat_pump_with_chs_households_energetic,
+  geothermal_agri_agriculture_energetic,
+  geothermal_heat_energy,
+  heatpump_boiler_households_energetic,
+  heatpump_using_city_heat_households_energetic,
+  heatpump_households_energetic;
+    output_of_useable_heat + output_of_hot_water + output_of_steam_hot_water
+))","","","2010-05-21 10:03:29","2010-05-21 10:03:29",0
+43,"ambient_heat","SUM(V(
+  heatpump_boiler_households_energetic,
+  heat_pump_with_chs_households_energetic,
+  heatpump_households_energetic,
+  heatpump_using_city_heat_households_energetic,
+  solar_panel_for_heating_households_energetic,
+  solar_panel_for_hot_water_households_energetic;
+    output_of_heat_carriers
+))    ","","","2010-05-21 10:05:03","2010-05-21 10:05:03",0
+44,"electricity_for_heat","SUM(
+  V(
+    heatpump_boiler_households_energetic,
+    electric_boiler_households_energetic,
+    heat_pump_with_chs_households_energetic,
+    electric_heater_households_energetic,
+    heatpump_households_energetic,
+    heatpump_using_city_heat_households_energetic
+    gasheatpump_households_energetic;
+      input_of_electricity
+  )
+)","","","2010-05-21 11:20:26","2010-06-14 19:38:05",0
+45,"centrally_produced_electricity_households","SUM(
+  V(electricity_households_energetic;demand),
+  NEG(V(local_solar_pv_grid_connected_energy_energetic;output_of_electricity))
+)
+","","","2010-05-21 11:22:09","2010-05-21 11:22:09",0
+46,"ambient_heat_agri","SUM(V(
+  heat_pump_with_CHS_agri_agriculture_energetic,geothermal_agri_agriculture_energetic;
+  output_of_heat_carriers - input_of_electricity
+))","","","2010-05-21 11:23:46","2010-05-21 11:24:35",0
+47,"biomass_heat_production","SUM(V(
+  biomass_burner_agri_agriculture_energetic,
+  bio_oil_chp_industry_energetic,
+  biomass_chp_industry_energetic,
+  biomass_burner_industry_industry_energetic,
+  greengas_burner_industry_industry_energetic, 
+  biomass_burner_other_other_energetic,
+  heater_on_greengas_households_energetic,
+  heater_on_biomass_households_energetic;
+    output_of_heat_carriers
+))","","","2010-05-21 11:26:28","2010-05-21 11:26:28",0
+48,"imported_energy_share","PRODUCT(Q(energy_dependence),100)","","","2010-05-21 11:28:00","2010-05-21 11:28:00",0
+49,"electricity_production","SUM(
+  V(G(electricity_production);output_of_electricity)
+)","","","2010-05-21 11:38:07","2010-05-21 11:38:07",0
+50,"electricity_dependence","DIVIDE(
+  V(interconnection_energy;demand),
+  SUM(Q(electricity_production), V(interconnection_energy;demand))
+)","","","2010-05-21 11:39:53","2010-06-18 14:31:53",0
+51,"imported_electricity","V(electricity_import_export_energy;output_of_imported_electricity)","","","2010-05-21 11:43:02","2010-05-21 11:43:02",0
+52,"imported_electricity_share","PRODUCT(
+  100,
+  DIVIDE( Q(imported_electricity), SUM(Q(electricity_production),Q(imported_electricity)) )
+)","","","2010-05-21 11:44:34","2010-06-21 14:42:56",0
+53,"avg_total_cost_for_electricity_production_per_mj","
+  DIVIDE(
+    SUM(V(G(electricity_production);total_cost_electricity)),
+    SUM(V(G(electricity_production);output_of_electricity))
+  )
+","","Fixed. Before the costs per MWh were calculated.
+
+Deleted this :
+
+PRODUCT(
+  SECS_PER_HOUR,","2010-05-21 11:54:13","2010-07-16 12:52:32",0
+54,"electricity_import_total_cost","PRODUCT(Q(imported_electricity), Q(avg_total_cost_for_electricity_production_per_mj))","","","2010-05-21 11:54:55","2010-05-21 11:54:55",0
+55,"total_cost_electricity","SUM(Q(electricity_import_total_cost), Q(avg_total_cost_for_electricity_production_per_mj))","","","2010-05-21 11:55:32","2010-05-21 11:55:32",0
+56,"natural_gas_share","V(energy_sector_gas_mixer_energy;natural_gas_input_conversion)","","","2010-05-21 11:57:08","2010-05-21 11:57:08",0
+57,"greengas_share"," V(energy_sector_gas_mixer_energy;greengas_input_conversion)","","","2010-05-21 11:58:00","2010-05-21 11:58:00",0
+58,"electricity_produced_from_natural_gas","PRODUCT(GRAPH(electricity_produced_from_gas),Q(natural_gas_share))","","","2010-05-21 11:59:44","2010-05-21 11:59:44",0
+59,"electricity_produced_from_greengas","PRODUCT(GRAPH(electricity_produced_from_gas),Q(greengas_share))","","","2010-05-21 12:00:11","2010-05-21 12:00:11",0
+60,"other_share_of_heating_demand_households_energetic","SUM(1,NEG(SUM(V(electric_heater_households_energetic,solar_panel_for_heating_households_energetic,micro_chp_households_energetic,heat_pump_with_chs_households_energetic,heatpump_households_energetic,central_heating_households_energetic,electric_heater_households_energetic;share_of_heating_demand_households_energetic))))
+","","gets the combined share of the converters that are not a slider","2010-06-03 10:06:54","2010-06-03 10:06:54",0
+61,"wind_coastal_percentage_used","PRODUCT(DIVIDE(V(wind_coastal_energy;total_land_use),AREA(onshore_suitable_for_wind)),100)","","","2010-06-04 08:10:14","2010-06-04 08:10:14",0
+62,"wind_inland_percentage_used","PRODUCT(DIVIDE(V(wind_inland_energy;total_land_use),AREA(onshore_suitable_for_wind)),100)","","","2010-06-04 08:10:47","2010-06-04 08:10:47",0
+63,"wind_offshore_percentage_used","PRODUCT(DIVIDE(V(wind_offshore_energy;total_land_use),AREA(onshore_suitable_for_wind)),100)","","","2010-06-04 08:11:35","2010-06-04 08:11:35",0
+64,"land_pv_percentage_used","PRODUCT(DIVIDE(V(solar_pv_central_production_energy_energetic;total_land_use),AREA(land_available_for_solar)),100)","","","2010-06-04 08:22:38","2010-06-04 08:45:56",0
+65,"land_csp_percentage_used","PRODUCT(DIVIDE(V(solar_csp_energy;total_land_use),AREA(land_available_for_solar)),100)","","","2010-06-04 08:23:24","2010-06-04 08:45:30",0
+66,"roof_pv_percentage_used","PRODUCT(DIVIDE(V(local_solar_pv_grid_connected_energy_energetic;total_land_use),AREA(roof_surface_available_pv)),100)","","","2010-06-04 08:26:16","2010-06-04 08:28:01",0
+67,"electricity_produced_from_coal","SUM(V(coal_conv_energy,coal_pwd_energy,coal_pwd_ccs_energy,coal_lignite_energy,coal_igcc_energy,coal_igcc_ccs_energy,coal_oxyfuel_ccs_energy,coal_chp_energy;output_of_electricity))","","","2010-06-04 10:00:52","2010-06-04 10:00:52",0
+68,"chp_electricity_output","DIVIDE(SUM(V(micro_chp_households_energetic,small_chp_industry_energetic,large_chp_industry_energetic,biomass_chp_industry_energetic,coal_chp_energy,bio_oil_chp_industry_energetic,chp_other_other_energetic,chp_agri_agriculture_energetic;output_of_electricity)),BILLIONS)","","","2010-06-07 15:24:47","2010-06-07 15:24:47",0
+69,"heatpumps_input_of_electricity","DIVIDE(SUM(
+V(
+heatpump_households_energetic,
+heatpump_boiler_using_city_heat_households_energetic,
+heatpump_using_city_heat_households_energetic,
+heatpump_boiler_households_energetic,
+heat_pump_with_CHS_agri_agriculture_energetic,
+heat_pump_with_chs_households_energetic
+;input_of_electricity)),BILLIONS)","","","2010-06-07 15:40:13","2010-06-07 15:44:31",0
+70,"geothermal_output_of_electricity","DIVIDE(SUM(
+NEG(V(
+geothermal_electricity_energy;output_of_electricity)),V(
+geothermal_agri_agriculture_energetic
+;input_of_electricity)),BILLIONS)","","","2010-06-07 15:48:38","2010-06-07 15:57:13",0
+71,"electricity_growth","DIVIDE(
+ SUM(
+  V(
+   electricity_excl_heating_demand_households_energetic,
+   electricity_agriculture_energetic,
+   electricity_industry_energetic,
+   electricity_other_energetic;output_of_electricity
+  ),
+  NEG(
+   SUM(
+    V(
+     electricity_demand_lighting_households_energetic,
+     heat_pump_with_CHS_agri_agriculture_energetic,
+     geothermal_agri_agriculture_energetic;input_of_electricity
+    )
+   )
+  )
+),BILLIONS)","","","2010-06-08 08:54:13","2010-06-08 09:34:20",0
+72,"electricity_for_heat_without_heatpumps","DIVIDE(SUM(V(electric_boiler_households_energetic,electric_heater_households_energetic;input_of_electricity)),BILLIONS)","","","2010-06-08 09:09:47","2010-06-08 09:09:47",0
+73,"all_biofuels_transport_primary","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));primary_demand_of_biodiesel),
+V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));primary_demand_of_biofuel),
+V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));primary_demand_of_algae_diesel),
+V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));primary_demand_of_bio_ethanol)),BILLIONS)","","","2010-06-10 16:08:47","2010-06-10 16:08:47",0
+74,"all_biofuels_agriculture_primary","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));primary_demand_of_biodiesel),
+V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));primary_demand_of_biofuel),
+V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));primary_demand_of_algae_diesel),
+V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));primary_demand_of_bio_ethanol)),BILLIONS)","","","2010-06-10 16:10:11","2010-06-10 16:10:11",0
+75,"all_biofuels_industry_primary","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(industry),G(final_demand_cbs));primary_demand_of_biodiesel),
+V(INTERSECTION(SECTOR(industry),G(final_demand_cbs));primary_demand_of_biofuel),
+V(INTERSECTION(SECTOR(industry),G(final_demand_cbs));primary_demand_of_algae_diesel),
+V(INTERSECTION(SECTOR(industry),G(final_demand_cbs));primary_demand_of_bio_ethanol)),BILLIONS)","","","2010-06-10 16:10:29","2010-06-10 16:10:29",0
+76,"all_biofuels_other_primary","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(other),G(final_demand_cbs));primary_demand_of_biodiesel),
+V(INTERSECTION(SECTOR(other),G(final_demand_cbs));primary_demand_of_biofuel),
+V(INTERSECTION(SECTOR(other),G(final_demand_cbs));primary_demand_of_algae_diesel),
+V(INTERSECTION(SECTOR(other),G(final_demand_cbs));primary_demand_of_bio_ethanol)),BILLIONS)","","","2010-06-10 16:10:51","2010-06-10 16:10:51",0
+77,"all_biofuels_households_primary","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(households),G(final_demand_cbs));primary_demand_of_biodiesel),
+V(INTERSECTION(SECTOR(households),G(final_demand_cbs));primary_demand_of_biofuel),
+V(INTERSECTION(SECTOR(households),G(final_demand_cbs));primary_demand_of_algae_diesel),
+V(INTERSECTION(SECTOR(households),G(final_demand_cbs));primary_demand_of_bio_ethanol)),BILLIONS)","","","2010-06-10 16:11:09","2010-06-10 16:11:09",0
+78,"all_biofuels_energy_primary","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(energy),G(final_demand_cbs));primary_demand_of_biodiesel),
+V(INTERSECTION(SECTOR(energy),G(final_demand_cbs));primary_demand_of_biofuel),
+V(INTERSECTION(SECTOR(energy),G(final_demand_cbs));primary_demand_of_algae_diesel),
+V(INTERSECTION(SECTOR(energy),G(final_demand_cbs));primary_demand_of_bio_ethanol)),BILLIONS)","","","2010-06-10 16:11:26","2010-06-10 16:11:26",0
+79,"all_biofuels_energy_final","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(energy),G(final_demand_cbs));input_of_biodiesel),
+V(INTERSECTION(SECTOR(energy),G(final_demand_cbs));input_of_biofuel),
+V(INTERSECTION(SECTOR(energy),G(final_demand_cbs));input_of_algae_diesel),
+V(INTERSECTION(SECTOR(energy),G(final_demand_cbs));input_of_bio_ethanol)),BILLIONS)","","","2010-06-10 16:39:08","2010-06-10 16:39:08",0
+80,"all_biofuels_industry_final","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(industry),G(final_demand_cbs));input_of_biodiesel),
+V(INTERSECTION(SECTOR(industry),G(final_demand_cbs));input_of_biofuel),
+V(INTERSECTION(SECTOR(industry),G(final_demand_cbs));input_of_algae_diesel),
+V(INTERSECTION(SECTOR(industry),G(final_demand_cbs));input_of_bio_ethanol)),BILLIONS)","","","2010-06-10 16:40:00","2010-06-10 16:40:00",0
+81,"all_biofuels_transport_final","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));input_of_biodiesel),
+V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));input_of_biofuel),
+V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));input_of_algae_diesel),
+V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));input_of_bio_ethanol)),BILLIONS)","","","2010-06-10 16:40:19","2010-06-10 16:40:19",0
+82,"all_biofuels_agriculture_final","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));input_of_biodiesel),
+V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));input_of_biofuel),
+V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));input_of_algae_diesel),
+V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));input_of_bio_ethanol)),BILLIONS)","","","2010-06-10 16:41:00","2010-06-10 16:41:00",0
+83,"all_biofuels_other_final","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(other),G(final_demand_cbs));input_of_biodiesel),
+V(INTERSECTION(SECTOR(other),G(final_demand_cbs));input_of_biofuel),
+V(INTERSECTION(SECTOR(other),G(final_demand_cbs));input_of_algae_diesel),
+V(INTERSECTION(SECTOR(other),G(final_demand_cbs));input_of_bio_ethanol)),BILLIONS)","","","2010-06-10 16:41:33","2010-06-10 16:41:33",0
+84,"all_biofuels_households_final","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(households),G(final_demand_cbs));input_of_biodiesel),
+V(INTERSECTION(SECTOR(households),G(final_demand_cbs));input_of_biofuel),
+V(INTERSECTION(SECTOR(households),G(final_demand_cbs));input_of_algae_diesel),
+V(INTERSECTION(SECTOR(households),G(final_demand_cbs));input_of_bio_ethanol)),BILLIONS)","","","2010-06-10 16:41:47","2010-06-10 16:41:47",0
+85,"conventional_gas_use_for_micro_chp_output","SUM(
+  DIVIDE(
+    V( micro_chp_households_energetic; output_of_heat_carriers),
+    V( gas_burner_other_other_energetic; useable_heat_output_conversion)
+  ),
+  DIVIDE(
+    V( micro_chp_households_energetic; output_of_electricity),
+    0.53
+  )
+)","","Used for the chart: Comparison of gas use from micro-chp versus conventional use. Attention: We use a fixed value for CCGT electricity conversion, which reflects the state of the art. Take care to change this to be more generic.","2010-06-11 09:26:25","2010-06-11 09:26:25",0
+86,"coal_plants","V(
+  coal_pwd_energy,
+  coal_pwd_ccs_energy,
+  coal_conv_energy,
+  coal_lignite_energy,
+  coal_oxyfuel_ccs_energy,
+  coal_igcc_energy,
+  coal_igcc_ccs_energy,
+  coal_chp_energy
+)","","","2010-06-11 12:01:10","2010-06-11 12:02:17",1
+87,"oil_plants","V(oil_plant_energy)","","","2010-06-11 12:05:34","2010-06-11 12:05:34",1
+88,"gas_plants","V(
+  gas_conv_energy_energetic,
+  gas_ccgt_energy,
+  small_chp_industry_energetic,
+  large_chp_industry_energetic,
+  micro_chp_households_energetic
+)
+  ","","","2010-06-11 12:07:26","2010-06-11 12:07:26",1
+89,"nuclear_plants","V(
+  nuclear_iii_energy
+)","","","2010-06-11 12:07:59","2010-06-11 12:07:59",1
+90,"wind_plants","V(
+  wind_inland_energy,
+  wind_coastal_energy,
+  wind_offshore_energy
+)","","","2010-06-11 12:08:48","2010-06-11 12:08:48",1
+91,"biomass_plants","V(
+  co_firing_coal_energy,
+  co_firing_gas_energy,
+  biomass_chp_industry_energetic,
+  bio_oil_chp_industry_energetic
+)","","","2010-06-11 12:09:56","2010-06-11 14:07:12",1
+92,"other_plants","V(
+  waste_incinerator_energy_energetic,
+  solar_pv_central_production_energy_energetic,
+  solar_csp_energy,
+  hydro_river_energy,
+  hydro_mount_energy,
+  geothermal_electricity_energy,
+  blue_energy_energy,
+  local_solar_pv_grid_connected_energy_energetic,
+  local_solar_pv_not_grid_connected_energy_energetic
+)","","","2010-06-11 12:14:07","2010-06-11 12:14:07",1
+93,"industry_biomass_primary_demand","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(industry),G(final_demand_cbs));primary_demand_of_biomass),
+V(INTERSECTION(SECTOR(energy),G(final_demand_cbs));primary_demand_of_biomass),
+V(INTERSECTION(SECTOR(industry),G(final_demand_cbs));primary_demand_of_bio_oil),
+V(INTERSECTION(SECTOR(energy),G(final_demand_cbs));primary_demand_of_bio_oil)
+
+),BILLIONS)","","DIVIDE(SUM(V(INTERSECTION(SECTOR(industry),G(final_demand_cbs)),INTERSECTION(SECTOR(energy),G(final_demand_cbs));primary_demand_of_biomass)),BILLIONS)","2010-06-11 15:35:15","2010-06-14 20:57:52",0
+94,"industry_oil_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(industry),G(final_demand_cbs)),INTERSECTION(SECTOR(energy),G(final_demand_cbs));primary_demand_of_crude_oil)),BILLIONS)","","","2010-06-11 15:36:37","2010-06-11 15:36:37",0
+95,"industry_uranium_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(industry),G(final_demand_cbs)),INTERSECTION(SECTOR(energy),G(final_demand_cbs));primary_demand_of_uranium)),BILLIONS)","","","2010-06-11 15:37:11","2010-06-11 15:37:11",0
+96,"industry_coal_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(industry),G(final_demand_cbs)),INTERSECTION(SECTOR(energy),G(final_demand_cbs));primary_demand_of_coal)),BILLIONS)","","","2010-06-11 15:37:56","2010-06-11 15:37:56",0
+97,"industry_lignite_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(industry),G(final_demand_cbs)),INTERSECTION(SECTOR(energy),G(final_demand_cbs));primary_demand_of_lignite)),BILLIONS)","","","2010-06-11 15:39:03","2010-06-11 15:40:25",0
+98,"industry_waste_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(industry),G(final_demand_cbs)),INTERSECTION(SECTOR(energy),G(final_demand_cbs));primary_demand_of_waste)),BILLIONS)","","","2010-06-11 15:39:57","2010-06-11 15:39:57",0
+99,"industry_greengas_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(industry),G(final_demand_cbs)),INTERSECTION(SECTOR(energy),G(final_demand_cbs));primary_demand_of_greengas)),BILLIONS)","","","2010-06-11 15:44:07","2010-06-11 15:44:07",0
+100,"industry_primary_demand_without_gas","SUM(Q(industry_biomass_primary_demand),
+Q(industry_oil_primary_demand),
+Q(industry_uranium_primary_demand),
+Q(industry_coal_primary_demand),
+Q(industry_lignite_primary_demand),
+Q(industry_waste_primary_demand),
+Q(industry_greengas_primary_demand),
+Q(all_biofuels_industry_primary),
+Q(industry_non_e_primary_demand),
+Q(all_biofuels_energy_primary),
+Q(industry_imported_e_primary_demand)
+)","","","2010-06-11 15:50:32","2010-06-14 21:05:17",0
+101,"households_primary_demand_without_gas","SUM(
+Q(households_biomass_primary_demand),
+Q(households_oil_primary_demand),
+Q(households_uranium_primary_demand),
+Q(households_coal_primary_demand),
+Q(households_lignite_primary_demand),
+Q(households_waste_primary_demand),
+Q(households_non_e_primary_demand),
+Q(households_greengas_primary_demand),
+Q(all_biofuels_households_primary),
+Q(households_imported_e_primary_demand)
+)","","","2010-06-11 16:00:49","2010-06-14 21:05:53",0
+102,"households_biomass_primary_demand","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(households),G(final_demand_cbs));primary_demand_of_biomass),
+V(INTERSECTION(SECTOR(households),G(final_demand_cbs));primary_demand_of_bio_oil)
+),BILLIONS)","","","2010-06-11 16:02:03","2010-06-14 21:00:18",0
+103,"households_oil_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(households),G(final_demand_cbs));primary_demand_of_crude_oil)),BILLIONS)","","","2010-06-11 16:02:24","2010-06-11 16:02:24",0
+104,"households_uranium_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(households),G(final_demand_cbs));primary_demand_of_uranium)),BILLIONS)","","","2010-06-11 16:02:53","2010-06-11 16:02:53",0
+105,"households_coal_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(households),G(final_demand_cbs));primary_demand_of_coal)),BILLIONS)","","","2010-06-11 16:03:12","2010-06-11 16:03:12",0
+106,"households_lignite_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(households),G(final_demand_cbs));primary_demand_of_lignite)),BILLIONS)","","","2010-06-11 16:03:47","2010-06-11 16:03:47",0
+107,"households_waste_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(households),G(final_demand_cbs));primary_demand_of_waste)),BILLIONS)","","","2010-06-11 16:04:36","2010-06-11 16:04:36",0
+108,"households_greengas_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(households),G(final_demand_cbs));primary_demand_of_greengas)),BILLIONS)","","","2010-06-11 16:05:13","2010-06-11 16:05:13",0
+109,"transport_biomass_primary_demand","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));primary_demand_of_biomass),
+V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));primary_demand_of_bio_oil)
+),BILLIONS)","","","2010-06-11 16:06:32","2010-06-14 21:02:06",0
+110,"transport_oil_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));primary_demand_of_crude_oil)),BILLIONS)","","","2010-06-11 16:07:12","2010-06-11 16:07:12",0
+111,"transport_uranium_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));primary_demand_of_uranium)),BILLIONS)","","","2010-06-11 16:07:35","2010-06-11 16:07:35",0
+112,"transport_coal_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));primary_demand_of_coal)),BILLIONS)","","","2010-06-11 16:07:54","2010-06-11 16:07:54",0
+113,"transport_lignite_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));primary_demand_of_lignite)),BILLIONS)","","","2010-06-11 16:08:22","2010-06-11 16:08:22",0
+114,"transport_waste_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));primary_demand_of_waste)),BILLIONS)","","","2010-06-11 16:08:39","2010-06-11 16:08:39",0
+115,"transport_greengas_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));primary_demand_of_greengas)),BILLIONS)","","","2010-06-11 16:09:16","2010-06-11 16:09:16",0
+116,"agriculture_biomass_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));primary_demand_of_biomass)),BILLIONS)","","","2010-06-11 16:10:15","2010-06-11 16:10:15",0
+117,"agriculture_oil_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));primary_demand_of_crude_oil)),BILLIONS)","","","2010-06-11 16:10:31","2010-06-11 16:10:31",0
+118,"agriculture_uranium_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));primary_demand_of_uranium)),BILLIONS)","","","2010-06-11 16:11:12","2010-06-11 16:11:12",0
+119,"agriculture_coal_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));primary_demand_of_coal)),BILLIONS)","","","2010-06-11 16:11:21","2010-06-11 16:11:21",0
+120,"agriculture_lignite_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));primary_demand_of_lignite)),BILLIONS)","","","2010-06-11 16:11:50","2010-06-11 16:11:50",0
+121,"agriculture_waste_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));primary_demand_of_waste)),BILLIONS)","","","2010-06-11 16:43:06","2010-06-11 16:43:06",0
+122,"agriculture_greengas_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));primary_demand_of_greengas)),BILLIONS)","","","2010-06-14 07:34:14","2010-06-14 07:34:14",0
+123,"other_oil_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(other),G(final_demand_cbs));primary_demand_of_crude_oil)),BILLIONS)","","","2010-06-14 07:35:11","2010-06-14 07:35:11",0
+124,"other_uranium_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(other),G(final_demand_cbs));primary_demand_of_uranium)),BILLIONS)","","","2010-06-14 07:36:03","2010-06-14 07:36:03",0
+125,"other_coal_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(other),G(final_demand_cbs));primary_demand_of_coal)),BILLIONS)","","","2010-06-14 07:36:41","2010-06-14 07:36:41",0
+126,"other_lignite_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(other),G(final_demand_cbs));primary_demand_of_lignite)),BILLIONS)","","","2010-06-14 07:37:05","2010-06-14 07:37:05",0
+127,"other_waste_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(other),G(final_demand_cbs));primary_demand_of_waste)),BILLIONS)","","","2010-06-14 07:37:32","2010-06-14 07:37:32",0
+128,"other_greengas_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(other),G(final_demand_cbs));primary_demand_of_greengas)),BILLIONS)","","","2010-06-14 07:38:01","2010-06-14 07:38:17",0
+129,"other_biomass_primary_demand","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(other),G(final_demand_cbs));primary_demand_of_biomass),
+V(INTERSECTION(SECTOR(other),G(final_demand_cbs));primary_demand_of_bio_oil)
+
+),BILLIONS)","","","2010-06-14 07:39:58","2010-06-14 20:59:12",0
+130,"transport_primary_demand_without_gas","SUM(
+Q(transport_biomass_primary_demand),
+Q(transport_oil_primary_demand),
+Q(transport_uranium_primary_demand),
+Q(transport_coal_primary_demand),
+Q(transport_lignite_primary_demand),
+Q(transport_non_e_primary_demand),
+Q(transport_waste_primary_demand),
+Q(transport_greengas_primary_demand),
+Q(all_biofuels_transport_primary),
+Q(transport_imported_e_primary_demand)
+)","","","2010-06-14 07:47:51","2010-06-14 21:04:08",0
+131,"agriculture_primary_demand_without_gas","SUM(
+Q(agriculture_biomass_primary_demand),
+Q(agriculture_oil_primary_demand),
+Q(agriculture_uranium_primary_demand),
+Q(agriculture_coal_primary_demand),
+Q(agriculture_lignite_primary_demand),
+Q(agriculture_waste_primary_demand),
+Q(agriculture_greengas_primary_demand),
+Q(agriculture_non_e_primary_demand),
+Q(all_biofuels_agriculture_primary),
+Q(agriculture_imported_e_primary_demand)
+)","","","2010-06-14 07:49:27","2010-06-14 21:03:30",0
+132,"other_primary_demand_without_gas","SUM(
+Q(other_biomass_primary_demand),
+Q(other_oil_primary_demand),
+Q(other_uranium_primary_demand),
+Q(other_coal_primary_demand),
+Q(other_lignite_primary_demand),
+Q(other_waste_primary_demand),
+Q(other_greengas_primary_demand),
+Q(all_biofuels_other_primary),
+Q(other_non_e_primary_demand),
+Q(other_imported_e_primary_demand)
+)","","","2010-06-14 07:52:19","2010-06-14 21:04:40",0
+133,"industry_non_e_primary_demand","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(industry),G(final_demand_cbs));primary_demand_of_electricity),
+V(INTERSECTION(SECTOR(energy),G(final_demand_cbs));primary_demand_of_electricity)
+)
+,BILLIONS)","","","2010-06-14 08:44:52","2010-06-14 20:21:43",0
+134,"households_non_e_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(households),G(final_demand_cbs));primary_demand_of_electricity)),BILLIONS)","","","2010-06-14 08:47:08","2010-06-14 08:47:08",0
+135,"transport_non_e_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));primary_demand_of_electricity)),BILLIONS)","","","2010-06-14 08:47:20","2010-06-14 08:47:20",0
+136,"agriculture_non_e_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));primary_demand_of_electricity)),BILLIONS)","","","2010-06-14 08:47:43","2010-06-14 08:47:43",0
+137,"other_non_e_primary_demand","DIVIDE(SUM(V(INTERSECTION(SECTOR(other),G(final_demand_cbs));primary_demand_of_electricity)),BILLIONS)","","","2010-06-14 08:48:10","2010-06-14 08:48:10",0
+138,"gas_plants_temporary_withouth_chp","V(
+  gas_conv_energy_energetic,
+  gas_ccgt_energy,
+  large_chp_industry_energetic,
+  micro_chp_households_energetic
+)
+  ","","small_chp_industry_energetic removed so that it works with the supply table","2010-06-14 14:49:09","2010-06-14 14:49:09",0
+139,"households_heating_converters","V(
+heat_pump_with_chs_households_energetic,
+electric_heater_households_energetic,
+solar_panel_for_heating_households_energetic,
+micro_chp_households_energetic,
+city_heating_network_households_energetic,
+heatpump_households_energetic,
+heatpump_using_city_heat_households_energetic,
+heater_on_biomass_households_energetic,
+heater_on_coal_households_energetic,
+heater_on_greengas_households_energetic,
+heater_on_oil_households_energetic,
+gasheatpump_households_energetic,
+central_heating_households_energetic
+)","","","2010-06-14 11:18:19","2010-06-14 13:55:27",0
+140,"households_heating_final_demand_total","SUM(V(Q(households_heating_converters);demand))","","","2010-06-14 14:00:08","2010-06-14 14:00:28",0
+141,"households_heating_final_demand_electricity","SUM(V(Q(households_heating_converters);input_of_electricity))","","","2010-06-14 14:02:37","2010-06-14 14:02:37",0
+142,"households_heating_final_demand_biomass","SUM(
+V(Q(households_heating_converters);input_of_biomass),
+V(Q(households_heating_converters);input_of_biofuel),
+V(Q(households_heating_converters);input_of_greengas),
+V(Q(households_heating_converters);input_of_biodiesel),
+V(Q(households_heating_converters);input_of_bio_ethanol),
+V(Q(households_heating_converters);input_of_algae_diesel),
+V(Q(households_heating_converters);input_of_biogas)
+)","","","2010-06-14 14:02:55","2010-06-14 14:12:42",0
+143,"households_heating_final_demand_ambient","SUM(V(Q(households_heating_converters);input_of_ambient_heat),V(Q(households_heating_converters);input_of_solar_radiation))","","","2010-06-14 14:03:33","2010-06-14 14:09:47",0
+144,"households_heating_final_demand_fossil","SUM(
+V(Q(households_heating_converters);input_of_coal),
+V(Q(households_heating_converters);input_of_crude_oil),
+V(Q(households_heating_converters);input_of_natural_gas),
+V(Q(households_heating_converters);input_of_diesel),
+V(Q(households_heating_converters);input_of_gasoline),
+V(Q(households_heating_converters);input_of_lignite)
+)","","","2010-06-14 14:15:15","2010-06-14 14:15:15",0
+145,"all_plants","V(
+  Q(coal_plants),
+  Q(oil_plants),
+  Q(gas_plants),
+  Q(nuclear_plants),
+  Q(wind_plants),
+  Q(biomass_plants),
+  Q(other_plants)
+)","","All plants including","2010-06-14 16:22:45","2010-06-14 16:22:45",1
+146,"ambient_heat_use","SUM(V(ALL();input_of_ambient_heat))","","The total use of all ambient heat in the model","2010-06-14 17:00:21","2010-06-14 17:00:21",0
+147,"industry_imported_e_primary_demand","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(industry),G(final_demand_cbs));primary_demand_of_imported_electricity),
+V(INTERSECTION(SECTOR(energy),G(final_demand_cbs));primary_demand_of_imported_electricity)
+),BILLIONS)","","","2010-06-14 20:18:02","2010-06-24 12:19:14",0
+148,"other_imported_e_primary_demand","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(other),G(final_demand_cbs));primary_demand_of_imported_electricity)
+)
+,BILLIONS)","","","2010-06-14 20:23:19","2010-06-14 20:30:40",0
+149,"agriculture_imported_e_primary_demand","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(agriculture),G(final_demand_cbs));primary_demand_of_imported_electricity)
+)
+,BILLIONS)","","","2010-06-14 20:23:46","2010-06-14 20:30:16",0
+150,"households_imported_e_primary_demand","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(households),G(final_demand_cbs));primary_demand_of_imported_electricity)
+)
+,BILLIONS)","","","2010-06-14 20:24:00","2010-06-14 20:29:37",0
+151,"transport_imported_e_primary_demand","DIVIDE(SUM(
+V(INTERSECTION(SECTOR(transport),G(final_demand_cbs));primary_demand_of_imported_electricity)
+)
+,BILLIONS)","","","2010-06-14 20:25:22","2010-06-14 20:29:12",0
+158,"number_of_electric_cars","DIVIDE(
+  PRODUCT(
+    VALUE( cars_kms_demand_transport_energetic; demand ),
+    VALUE( electric_cars_transport_energetic ; car_kms_output_link_share )
+  ),
+  AREA( km_per_car )
+)","","","2010-06-17 15:06:36","2010-06-17 15:06:36",0
+159,"peak_load_units_delta_electric_cars","SUM(
+  Q( number_of_electric_cars ),
+  NEG(
+    VALUE( electric_cars_transport_energetic ; peak_load_units_present )
+  )
+)","","","2010-06-17 15:10:58","2010-06-17 15:10:58",0
+160,"peak_load_delta_wd_electric_cars","PRODUCT(
+  Q( peak_load_units_delta_electric_cars),
+  V( electric_cars_transport_energetic ; simult_wd ),
+  Q(peak_load_per_unit_electric_car)
+              )","","","2010-06-17 15:13:09","2010-06-17 15:13:09",0
+161,"peak_load_per_unit_electric_car","PRODUCT (
+
+              V (electric_cars_transport_energetic; typical_capacity_gross_in_mj_s),   
+              V (electric_cars_transport_energetic; electricity_input_conversion)
+
+               )","","Systematic way to determine the peak load per energy converter unit. This is the number to multiply with the 'simult_wd' etc attributes.","2010-06-17 15:15:11","2010-06-17 15:16:34",0
+162,"peak_load_delta_we_electric_cars","PRODUCT(
+  Q( peak_load_units_delta_electric_cars),
+  V( electric_cars_transport_energetic ; simult_we ),
+  Q(peak_load_per_unit_electric_car)
+              )","","","2010-06-17 15:19:24","2010-06-17 15:19:24",0
+163,"peak_load_delta_se_electric_cars","PRODUCT(
+  Q( peak_load_units_delta_electric_cars),
+  V( electric_cars_transport_energetic ; simult_se),
+  Q(peak_load_per_unit_electric_car)
+              )","","","2010-06-17 15:20:07","2010-06-17 15:20:07",0
+164,"peak_load_delta_sd_electric_cars","PRODUCT(
+  Q( peak_load_units_delta_electric_cars),
+  V( electric_cars_transport_energetic ; simult_sd ),
+  Q(peak_load_per_unit_electric_car)
+)","","","2010-06-17 15:22:13","2010-06-17 15:22:13",0
+165,"peak_load_delta_we_lv_total","SUM(
+  Q(peak_load_delta_we_electric_cars),
+  Q(peak_load_delta_we_electric_trucks),
+  Q(peak_load_delta_hh_heaters)
+)","","","2010-06-17 15:23:45","2010-07-01 14:19:23",0
+166,"peak_load_delta_wd_lv_total","SUM(
+  Q(peak_load_delta_wd_electric_cars),
+  Q(peak_load_delta_wd_electric_trucks),
+  Q(peak_load_delta_hh_heaters)
+)","","","2010-06-17 15:27:31","2010-07-01 14:19:59",0
+167,"peak_load_delta_se_lv_total","SUM(
+  Q(peak_load_delta_se_electric_cars),
+  Q(peak_load_delta_se_electric_trucks)
+)","","In theory peakload delta heaters needs to be taken into account, but they have no demand during the summer","2010-06-17 15:28:45","2010-07-01 14:20:54",0
+168,"peak_load_delta_sd_lv_total","SUM(
+  Q(peak_load_delta_sd_electric_cars),
+  Q(peak_load_delta_sd_electric_trucks)
+)","","In theory peak load delta heaters needs to be taken into account but they have no demand in the summer","2010-06-17 15:30:32","2010-07-01 14:21:28",0
+169,"peak_load_delta_max_lv_net","MAX(
+  Q(peak_load_delta_we_lv_total),
+  Q(peak_load_delta_wd_lv_total),
+  Q(peak_load_delta_se_lv_total),
+  Q(peak_load_delta_sd_lv_total),
+  Q(peak_load_delta_supply_lv_total)
+)","","","2010-06-17 15:32:17","2010-06-30 14:28:52",0
+170,"peak_load_delta_max_mv_lv_transformer","PRODUCT(
+  Q( peak_load_delta_max_lv_net ),
+  V( lv_electricity_network_energy_energetic ; simult_wd )
+)","","Note: 
+1. we use peak_load_delta_max_LV instead of ""peak_load_delta_max_transformer_lv_mv"". 
+
+2. theoretically speaking use : 
+MAX( 
+V( lv_electricity_network_energy_energetic ; simult_wd ) 
+V( lv_electricity_network_energy_energetic ; simult_we ) 
+V( lv_electricity_network_energy_energetic ; simult_sd ) 
+V( lv_electricity_network_energy_energetic ; simult_se ) 
+)","2010-06-17 15:34:39","2010-06-30 14:29:58",0
+171,"co2_cost_electricity_production","PRODUCT(
+AREA(co2_price), SUM (1, NEG( AREA(co2_percentage_free))), 
+Q(co2_emission_electricity_ex_import))","","","2010-06-18 14:56:59","2010-06-18 15:37:03",0
+172,"co2_emission_industry","   SUM(V (
+   INTERSECTION(
+        USE(energetic),
+        INTERSECTION(SECTOR(industry),GROUP(final_demand_cbs) )
+        )
+       ;primary_co2_emission)
+   )","","","2010-06-18 15:02:21","2010-06-23 10:55:22",0
+173,"co2_cost_industry","PRODUCT(
+AREA(co2_price), SUM (1, NEG( AREA(co2_percentage_free))),  Q(co2_emission_industry)
+)
+","","","2010-06-18 15:04:04","2010-06-18 15:38:32",0
+174,"co2_per_mj_domestic_electricity_production","DIVIDE
+ (
+  SUM(
+     VALUE(GROUP(electricity_production);primary_co2_emission)
+         ),
+
+ SUM(VALUE(GROUP(electricity_production);output_of_electricity))
+ )","","How much kg CO2 the average MJ electricity produces domestically","2010-06-20 11:21:14","2010-06-20 11:21:14",0
+175,"share_domestic_electrity_production","MIN(1,
+ SUM(
+   1,
+   NEG(
+     DIVIDE( 
+     V(interconnection_energy;demand),
+     V(hv_electricity_network_energy;demand))
+     )
+  ))","","","2010-06-21 14:46:14","2010-06-21 15:09:04",0
+176,"total_share_industry_chps","SUM(
+V(small_chp_industry_energetic;share_of_steam_hot_water_industry_energetic),
+V(large_chp_industry_energetic;share_of_steam_hot_water_industry_energetic),
+V(biomass_chp_industry_energetic;share_of_steam_hot_water_industry_energetic),
+V(bio_oil_chp_industry_energetic;share_of_steam_hot_water_industry_energetic)
+)","","used in hack for inversed flexible bug","2010-06-22 19:31:00","2010-06-22 20:22:09",0
+177,"start_value_large_chp_industry","PRODUCT(DIVIDE(V(large_chp_industry_energetic;share_of_steam_hot_water_industry_energetic),Q(total_share_industry_chps)),V(steam_hot_water_demand_industry;share_of_heating_demand_industry_energetic))
+","","","2010-06-22 19:47:36","2010-06-23 17:57:41",0
+178,"start_value_biomass_chp_industry","PRODUCT(DIVIDE(V(biomass_chp_industry_energetic;share_of_steam_hot_water_industry_energetic),Q(total_share_industry_chps)),V(steam_hot_water_demand_industry;share_of_heating_demand_industry_energetic))
+","","","2010-06-22 19:57:19","2010-06-22 19:57:19",0
+179,"start_value_bio_oil_chp_industry","PRODUCT(DIVIDE(V(bio_oil_chp_industry_energetic;share_of_steam_hot_water_industry_energetic),Q(total_share_industry_chps)),V(steam_hot_water_demand_industry;share_of_heating_demand_industry_energetic))
+","","","2010-06-22 19:58:12","2010-06-22 19:58:12",0
+180,"industry_final_demand_gas_and_green_gas","DIVIDE(SUM(V(INTERSECTION(SECTOR(industry),G(final_demand_cbs));input_of_natural_gas),V(INTERSECTION(SECTOR(energy),G(final_demand_cbs));input_of_natural_gas),
+V(INTERSECTION(SECTOR(industry),G(final_demand_cbs));input_of_greengas),V(INTERSECTION(SECTOR(energy),G(final_demand_cbs));input_of_greengas)),BILLIONS)
+","","","2010-06-22 19:58:12","2010-06-22 19:58:12",0
+181,"start_value_small_chp_industry","PRODUCT(DIVIDE(V(small_chp_industry_energetic;share_of_steam_hot_water_industry_energetic),Q(total_share_industry_chps)),V(steam_hot_water_demand_industry;share_of_heating_demand_industry_energetic))
+","","","2010-06-23 10:09:05","2010-06-23 17:58:29",0
+182,"co2_emission_industry_without_electricity","   SUM(V (
+   INTERSECTION(
+        USE(energetic),
+        INTERSECTION(SECTOR(industry),GROUP(final_demand_cbs) )
+        )
+       ;primary_co2_emission)
+      ,
+NEG (
+
+        V( electricity_industry_energetic
+      ;primary_co2_emission))
+
+)","","","2010-06-23 10:54:25","2010-06-23 10:54:25",0
+183,"co2_cost_industry_without_electricity","PRODUCT(
+                AREA(co2_price), 
+                SUM (
+                         1, 
+                         NEG( AREA(co2_percentage_free))
+                ),  
+                Q(co2_emission_industry_without_electricity)
+)","","Same as co2_cost_industry, only with the CO2 costs for electricity decucted, because these are already calculated in the energy sector","2010-06-23 12:50:25","2010-07-12 11:34:18",0
+184,"industy_chp_renewable_heat","DIVIDE(SUM(V(bio_oil_chp_industry_energetic,biomass_chp_industry_energetic;output_of_heat_carriers)),BILLIONS)","","","2010-06-28 10:53:07","2010-06-28 10:53:07",0
+185,"industy_chp_fossil_heat","DIVIDE(SUM(V(small_chp_industry_energetic,large_chp_industry_energetic;output_of_heat_carriers)),BILLIONS)","","","2010-06-28 10:53:38","2010-06-28 10:53:38",0
+186,"industy_chp_renewable_electricity","DIVIDE(SUM(V(bio_oil_chp_industry_energetic,biomass_chp_industry_energetic;output_of_electricity)),BILLIONS)","","","2010-06-28 10:54:18","2010-06-28 10:54:18",0
+187,"industy_chp_fossil_electricity","DIVIDE(SUM(V(small_chp_industry_energetic,large_chp_industry_energetic;output_of_electricity)),BILLIONS)","","","2010-06-28 10:55:13","2010-06-28 10:55:13",0
+188,"industry_other_heat","SUM(
+  V(heating_demand_industry_energetic;demand),
+  NEG(
+    SUM(
+      V(small_chp_industry_energetic,large_chp_industry_energetic,biomass_chp_industry_energetic,bio_oil_chp_industry_energetic;output_of_heat_carriers)
+    )
+  )
+)","","","2010-06-28 10:59:34","2010-06-28 10:59:34",0
+189,"number_of_electric_trucks","DIVIDE(
+  PRODUCT(
+    VALUE( truck_kms_demand_transport_energetic; demand ),
+    VALUE( electric_trucks_transport_energetic ; truck_kms_output_link_share )
+  ),
+  AREA(km_per_truck)
+)","","","2010-06-28 12:27:34","2010-06-30 14:52:29",0
+196,"peak_load_units_delta_agri_heat_pumps_chs"," V(heat_pump_with_CHS_agri_agriculture_energetic; number_of_heat_plants_future - peak_load_units_present)","","","2010-06-29 11:40:19","2010-07-01 14:37:03",0
+197,"peak_load_per_unit_agri_heat_pump_chs","PRODUCT (
+
+              V (heat_pump_with_CHS_agri_agriculture_energetic; typical_capacity_gross_in_mj_s),   
+              V (heat_pump_with_CHS_agri_agriculture_energetic; electricity_input_conversion)
+
+               )","","","2010-06-29 11:43:00","2010-06-29 11:43:00",0
+198,"peak_load_delta_wd_agri_heat_pumps_chs","PRODUCT (
+   
+                   Q(peak_load_per_unit_agri_heat_pump_chs),
+              
+                   V(heat_pump_with_CHS_agri_agriculture_energetic; simult_wd),
+    
+                   Q(peak_load_units_delta_agri_heat_pumps_chs)
+)","","","2010-06-29 11:48:42","2010-06-29 11:48:42",0
+199,"peak_load_delta_sd_agri_heat_pumps_chs","PRODUCT (
+   
+                   Q(peak_load_per_unit_agri_heat_pump_chs),
+              
+                   V(heat_pump_with_CHS_agri_agriculture_energetic; simult_sd),
+    
+                   Q(peak_load_units_delta_agri_heat_pumps_chs)
+)","","","2010-06-29 11:50:09","2010-06-29 11:50:09",0
+200,"peak_load_delta_we_agri_heat_pumps_chs","PRODUCT (
+   
+                   Q(peak_load_per_unit_agri_heat_pump_chs),
+              
+                   V(heat_pump_with_CHS_agri_agriculture_energetic; simult_we),
+    
+                   Q(peak_load_units_delta_agri_heat_pumps_chs)
+)","","","2010-06-29 11:50:53","2010-06-29 11:50:53",0
+201,"peak_load_delta_se_agri_heat_pumps_chs","PRODUCT (
+   
+                   Q(peak_load_per_unit_agri_heat_pump_chs),
+              
+                   V(heat_pump_with_CHS_agri_agriculture_energetic; simult_se),
+    
+                   Q(peak_load_units_delta_agri_heat_pumps_chs)
+)","","","2010-06-29 11:51:26","2010-06-29 11:51:26",0
+210,"peak_load_delta_local_solar_pv_grid_connected","PRODUCT (
+   
+                    V (local_solar_pv_grid_connected_energy_energetic; typical_capacity_gross_in_mj_s),
+    
+                   Q(peak_load_units_delta_local_solar_pv_grid_connected)
+)","","No simultaneousness considered for local solar pv grid connected.
+Typical gross capacity of local solar pv is equal to the peak load per unit.
+
+","2010-06-29 13:18:56","2010-06-29 14:12:58",0
+213,"peak_load_delta_hh_micro_chp","PRODUCT (
+        V(micro_chp_households_energetic;
+            simult_we*
+            1/1000*
+            share_of_heating_demand_households_energetic)
+     ,
+    AREA(number_households)
+    )","","OLD query:
+
+PRODUCT (
+   
+                   Q(peak_load_per_unit_hh_micro_chp),
+    
+                   Q(peak_load_units_delta_hh_micro_chp)
+)","2010-06-29 13:48:53","2010-07-08 11:39:24",0
+214,"peak_load_delta_supply_lv_total","SUM(
+  Q(peak_load_delta_hh_micro_chp),
+  Q(peak_load_delta_local_solar_pv_grid_connected)
+)","","This is the peak load on transformer level based on the household technologies that produce electricity","2010-06-29 14:20:46","2010-06-29 14:27:03",0
+237,"peak_load_units_delta_electric_trucks","SUM(
+  Q( number_of_electric_trucks ),
+  NEG(
+    VALUE( electric_trucks_transport_energetic ; peak_load_units_present )
+  )
+)","","","2010-06-30 07:42:12","2010-06-30 07:42:12",0
+238,"peak_load_per_unit_electric_truck","PRODUCT (
+
+              V (electric_trucks_transport_energetic; typical_capacity_gross_in_mj_s),   
+              V (electric_trucks_transport_energetic; electricity_input_conversion)
+
+               )","","","2010-06-30 07:43:22","2010-06-30 07:43:22",0
+239,"peak_load_delta_wd_electric_trucks","PRODUCT(
+  Q( peak_load_units_delta_electric_trucks),
+  V( electric_trucks_transport_energetic ; simult_wd ),
+  Q(peak_load_per_unit_electric_truck)
+              )","","","2010-06-30 07:47:41","2010-06-30 07:48:02",0
+240,"peak_load_delta_we_electric_trucks","PRODUCT(
+  Q( peak_load_units_delta_electric_trucks),
+  V( electric_trucks_transport_energetic ; simult_we ),
+  Q(peak_load_per_unit_electric_truck)
+              )","","","2010-06-30 07:49:30","2010-06-30 07:49:30",0
+241,"peak_load_delta_se_electric_trucks","PRODUCT(
+  Q( peak_load_units_delta_electric_trucks),
+  V( electric_trucks_transport_energetic ; simult_se),
+  Q(peak_load_per_unit_electric_truck)
+              )","","","2010-06-30 07:50:01","2010-06-30 07:51:00",0
+242,"peak_load_delta_sd_electric_trucks","PRODUCT(
+  Q( peak_load_units_delta_electric_trucks),
+  V( electric_trucks_transport_energetic ; simult_sd ),
+  Q(peak_load_per_unit_electric_truck)
+)","","","2010-06-30 07:50:47","2010-06-30 07:50:47",0
+244,"plants_connected_to_mv_hv_transformer","V(
+  solar_pv_central_production_energy_energetic,
+  large_chp_industry_energetic,
+  biomass_chp_industry_energetic,
+  waste_incinerator_energy_energetic,
+  bio_oil_chp_industry_energetic,
+  wind_inland_energy,
+  wind_coastal_energy,
+  solar_csp_energy,
+  hydro_river_energy,
+  geothermal_electricity_energy,
+  chp_agri_agriculture_energetic
+)","","","2010-06-30 09:48:48","2010-06-30 12:37:59",1
+245,"peak_load_delta_on_mv_hv_transformer","PRODUCT(
+  SUM(
+    V(Q(plants_connected_to_mv_hv_transformer); peak_load_capacity_delta_for_mv_hv)
+  ),
+  0.75
+)","","peak_load_capacity_delta_for_mv_hv calculates delta unit number of plants (future - present) and multiplies this by the simultaneousness and typical gross capacity for each plant. Simultaneousness needs to be added to simult_sd","2010-06-30 09:51:40","2010-06-30 15:41:14",0
+246,"max_percentage_heat_network_industry","MIN(
+  1,
+  DIVIDE(
+     SUM(V(small_chp_industry_energetic,large_chp_industry_energetic,biomass_chp_industry_energetic,bio_oil_chp_industry_energetic;output_of_steam_hot_water))
+     ,
+     V(heating_demand_industry_energetic;demand)
+     )
+   )","","The maximum share the heat network can supply of the industry heat demand, capped by 100%
+
+OLD:
+MIN(
+  1,
+  DIVIDE(
+     V(steam_hot_water_industry_energetic;demand)
+     ,
+     V(heating_demand_industry_energetic;demand)
+     )
+   )","2010-06-30 09:54:30","2010-07-04 17:13:17",0
+247,"high_voltage_electricity_production","V(
+  coal_pwd_energy,
+  coal_pwd_ccs_energy,
+  coal_conv_energy,
+  coal_lignite_energy,
+  coal_oxyfuel_ccs_energy,
+  coal_igcc_energy,
+  coal_igcc_ccs_energy,
+  oil_plant_energy,
+  gas_conv_energy_energetic,
+  gas_ccgt_energy,
+  nuclear_iii_energy,
+  wind_offshore_energy,
+  co_firing_coal_energy,
+  co_firing_gas_energy,
+  hydro_mount_energy,
+  blue_energy_energy
+)","","","2010-06-29 13:09:11","2010-06-29 13:09:11",1
+248,"high_voltage_capacity_delta","SUM(V(Q(high_voltage_electricity_production);delta_in_capacity_in_mj_s))","","","2010-06-29 13:14:15","2010-06-29 14:44:12",0
+250,"decentral_capacity_delta","SUM(
+ V(Q(plants_connected_to_mv_hv_transformer);delta_in_capacity_in_mj_s),
+ V(local_solar_pv_grid_connected_energy_energetic;delta_in_capacity_in_mj_s)
+)","","Added solar PV grid connected to decentral electricity production","2010-06-29 14:44:47","2010-07-08 12:02:36",0
+251,"total_capacity_delta","SUM(
+Q(decentral_capacity_delta),Q(high_voltage_capacity_delta)
+)","","","2010-06-29 14:59:49","2010-06-29 15:10:16",0
+252,"check_capacity_buffer_decentral","GREATER(
+Q(decentral_capacity_delta),AREA(capacity_buffer_decentral_in_mj_s)
+)","","","2010-06-30 08:37:04","2010-06-30 08:37:04",0
+253,"check_capacity_buffer_total","GREATER(
+Q(total_capacity_delta),AREA(capacity_buffer_in_mj_s)
+)","","","2010-06-30 08:37:42","2010-06-30 08:37:42",0
+254,"investment_cost_hv_net_total","IF(EQUALS(AREA(area),nl),
+ IF(
+   Q( check_capacity_buffer_total ),
+   IF(
+     Q( check_capacity_buffer_decentral ), 
+     SUM(
+       PRODUCT(
+         Q( high_voltage_capacity_delta ),
+         0.20
+       ),
+       PRODUCT(
+         Q( decentral_capacity_delta ),
+         0.25 
+       )
+     ),
+     PRODUCT(
+       Q(total_capacity_delta),
+       0.20
+     )
+   ),
+  0
+ ),
+ 0)
+","","First checks if the country is set to NL before it does the calculation.","2010-06-30 13:31:28","2010-07-09 09:52:33",0
+255,"investment_cost_hv_grid_per_year","IF(EQUALS(AREA(area),nl),
+   SUM(
+    DIVIDE(
+     Q(investment_cost_hv_net_total),V(hv_electricity_network_energy;technical_lifetime)
+     ),
+     PRODUCT(
+     DIVIDE(
+       Q(investment_cost_hv_net_total),2
+       ),
+       V(hv_electricity_network_energy;wacc)
+       )
+     ),
+  0)
+","","First checks if the country is set to NL before it does the calculation.","2010-06-30 13:37:46","2010-07-09 09:54:36",0
+256,"peak_load_units_delta_local_solar_pv_grid_connected","  V(local_solar_pv_grid_connected_energy_energetic; number_of_plants_future - peak_load_units_present)
+","","","2010-06-30 13:40:53","2010-07-01 14:36:35",0
+257,"investment_cost_lv_net_total","PRODUCT(
+  SUM(
+    MAX(
+      SUM(Q(peak_load_delta_max_lv_net), 
+             V(lv_electricity_network_energy_energetic; typical_capacity_effective_in_mj_s)
+),
+      V(lv_electricity_network_energy_energetic;typical_capacity_gross_in_mj_s)
+),
+    NEG(
+      V(lv_electricity_network_energy_energetic;typical_capacity_gross_in_mj_s)
+)
+),
+V(lv_electricity_network_energy_energetic;overnight_investment_ex_co2_per_mj_s)
+)","","This query calculates the total investment required for the LV network. It calculates the new peak load and compares it to the available capacity. If the new peak load is higher than available capacity it multiplies by the cost coeffecient.
+
+overnight_investment_ex_co2_per_mj_s contains the investment costs per MVA per km
+
+land_use_in_nl contains length of network","2010-06-30 14:17:04","2010-07-05 09:21:32",0
+258,"investment_cost_mv_lv_transformer_total","PRODUCT(
+  SUM(
+    MAX(
+      SUM(Q(peak_load_delta_max_mv_lv_transformer), V(lv_mv_transformer_energy; typical_capacity_effective_in_mj_s)),
+      V(lv_mv_transformer_energy;typical_capacity_gross_in_mj_s)
+    ),
+    NEG(
+      V(lv_mv_transformer_energy;typical_capacity_gross_in_mj_s)
+    )
+  ),
+V(lv_mv_transformer_energy;overnight_investment_ex_co2_per_mj_s)
+)","","","2010-06-30 14:30:45","2010-06-30 14:34:46",0
+259,"peak_load_delta_max_mv_distribution_net","PRODUCT(
+  Q( peak_load_delta_max_mv_lv_transformer ),
+  V( lv_mv_transformer_energy ; simult_wd )
+)","","Doesn't matter which simult is used, since: simult_wd = simult_se = simult_we = simult_sd","2010-06-30 14:33:48","2010-06-30 14:33:48",0
+260,"investment_cost_mv_distribution_net_total","PRODUCT(
+  SUM(
+    MAX(
+      SUM(Q(peak_load_delta_max_mv_distribution_net), V(mv_distribution_network_energy_energetic; typical_capacity_effective_in_mj_s)),
+      V(mv_distribution_network_energy_energetic;typical_capacity_gross_in_mj_s)
+    ),
+    NEG(
+      V(mv_distribution_network_energy_energetic;typical_capacity_gross_in_mj_s)
+    )
+  ),
+V(mv_distribution_network_energy_energetic;overnight_investment_ex_co2_per_mj_s)
+)","","","2010-06-30 14:35:54","2010-07-05 09:22:05",0
+261,"peak_load_delta_max_mv_transport_net","PRODUCT(
+  Q( peak_load_delta_max_mv_distribution_net ),
+  V( mv_distribution_network_energy_energetic ; simult_wd )
+)","","","2010-06-30 14:43:09","2010-06-30 14:43:09",0
+262,"investment_cost_mv_transport_net_total","PRODUCT(
+  SUM(
+    MAX(
+      SUM(Q(peak_load_delta_max_mv_transport_net), V(mv_transport_network_energy; typical_capacity_effective_in_mj_s)),
+      V(mv_transport_network_energy;typical_capacity_gross_in_mj_s)
+    ),
+    NEG(
+      V(mv_transport_network_energy;typical_capacity_gross_in_mj_s)
+    )
+  ),
+V(mv_transport_network_energy;overnight_investment_ex_co2_per_mj_s)
+)","","","2010-06-30 14:44:45","2010-07-01 10:55:32",0
+263,"peak_load_delta_max_hv_mv_transformer","MAX(
+  PRODUCT(
+  Q( peak_load_delta_max_mv_transport_net ),
+  V( mv_transport_network_energy ; simult_wd )
+  ),
+  Q(peak_load_delta_on_mv_hv_transformer)
+)","","","2010-06-30 15:01:12","2010-06-30 15:04:44",0
+264,"investment_cost_lv_net_per_year","SUM(
+ DIVIDE(
+  Q(investment_cost_lv_net_total),V(lv_electricity_network_energy_energetic;technical_lifetime)
+ ),
+ PRODUCT(
+  DIVIDE(
+   Q(investment_cost_lv_net_total),2
+  ),
+  V(lv_electricity_network_energy_energetic;wacc)
+ )
+ )
+","","","2010-06-30 15:01:45","2010-06-30 15:01:45",0
+265,"investment_cost_mv_lv_transformer_per_year","SUM(
+ DIVIDE(
+  Q(investment_cost_mv_lv_transformer_total),V(lv_mv_transformer_energy;technical_lifetime)
+ ),
+ PRODUCT(
+  DIVIDE(
+   Q(investment_cost_mv_lv_transformer_total),2
+  ),
+  V(lv_mv_transformer_energy;wacc)
+ )
+ )
+","","","2010-06-30 15:05:32","2010-06-30 15:05:32",0
+266,"investment_cost_lv_grid_per_year","DIVIDE(
+SUM(
+ Q(investment_cost_mv_lv_transformer_per_year),
+ Q(investment_cost_lv_net_per_year)
+),
+MILLIONS)","","","2010-06-30 15:06:34","2010-06-30 15:11:05",0
+267,"investment_cost_mv_grid_per_year","DIVIDE(
+SUM(
+Q(investment_cost_mv_transport_net_per_year),
+Q(investment_cost_mv_distribution_net_per_year),
+Q(investment_cost_hv_mv_transformer_per_year)
+),
+MILLIONS)","","","2010-06-30 15:15:04","2010-07-01 12:00:51",0
+268,"investment_cost_hv_mv_transformer_total","PRODUCT(
+  SUM(
+    MAX(
+      SUM(
+        Q(peak_load_delta_max_hv_mv_transformer), 
+        V(mv_hv_transformer_energy; typical_capacity_effective_in_mj_s)
+      ),
+      Q(peak_load_delta_on_mv_hv_transformer),
+      V(mv_hv_transformer_energy;typical_capacity_gross_in_mj_s)
+    ),
+    NEG(
+      V(mv_hv_transformer_energy;typical_capacity_gross_in_mj_s)
+    )
+  ),
+V(mv_hv_transformer_energy;overnight_investment_ex_co2_per_mj_s)
+)","","For the investment costs HV MV transformer, an extra 'if' statement is added (Q(peak_load_delta_on_mv_hv_transformer) ). For this transformer it is important to check which value is the largest:
+1. Impact from demand technologies from LV grid
+2. Impact from supply technologies attached to the HV MV transformer","2010-06-30 15:22:00","2010-06-30 15:31:32",0
+269,"investment_cost_mv_distribution_net_per_year","SUM(
+ DIVIDE(
+  Q(investment_cost_mv_distribution_net_total),V(mv_distribution_network_energy_energetic;technical_lifetime)
+ ),
+ PRODUCT(
+  DIVIDE(
+   Q(investment_cost_mv_distribution_net_total),2
+  ),
+  V(mv_distribution_network_energy_energetic;wacc)
+ )
+ )","","","2010-06-30 15:29:14","2010-06-30 15:29:14",0
+270,"investment_cost_hv_mv_transformer_per_year","SUM(
+ DIVIDE(
+  Q(investment_cost_hv_mv_transformer_total),V(mv_hv_transformer_energy;technical_lifetime)
+ ),
+ PRODUCT(
+  DIVIDE(
+   Q(investment_cost_hv_mv_transformer_total),2
+  ),
+  V(mv_hv_transformer_energy;wacc)
+ )
+ )","","","2010-06-30 15:46:32","2010-06-30 15:46:32",0
+271,"max_percentage_heat_network_agriculture","MIN(
+  1,
+  DIVIDE(
+     V(chp_agri_agriculture_energetic;output_of_steam_hot_water)
+     ,
+     V(heating_demand_agriculture_energetic;demand)
+     )
+   )","","The maximum share the heat network can supply of the agriculture heat demand, capped by 100%
+
+NOT ANYMORE HOPEFULLY NOT NEEDED: Also, limited to 99% of heat demand, to avoid negative numbers.","2010-06-30 15:53:53","2010-07-05 07:47:11",0
+273,"grid_investment_needed","GREATER(
+ SUM(
+  Q(investment_cost_lv_grid_per_year),
+  Q(investment_cost_mv_grid_per_year),
+  Q(investment_cost_hv_grid_per_year)
+ ),
+0
+)","","","2010-07-01 10:15:48","2010-07-01 12:34:00",0
+274,"investment_cost_mv_transport_net_per_year","SUM(
+ DIVIDE(
+  Q(investment_cost_mv_transport_net_total),V(mv_transport_network_energy;technical_lifetime)
+ ),
+ PRODUCT(
+  DIVIDE(
+   Q(investment_cost_mv_transport_net_total),2
+  ),
+  V(mv_transport_network_energy;wacc)
+ )
+ )
+
+","","","2010-07-01 12:03:13","2010-07-01 12:03:13",0
+275,"hh_heaters","V(
+  heatpump_households_energetic,
+  heat_pump_with_chs_households_energetic,
+  electric_heater_households_energetic
+)
+","","","2010-07-01 13:28:32","2010-07-01 14:08:01",1
+276,"peak_load_delta_hh_heaters","PRODUCT (
+  MAX(
+     SUM(
+        V(Q(hh_heaters);
+          simult_we*
+          electricity_input_conversion*
+          typical_capacity_gross_in_mj_s*
+          share_of_heating_demand_households_energetic),
+        NEG(
+          V(micro_chp_households_energetic;
+            simult_we*
+            1/1000*
+            share_of_heating_demand_households_energetic)
+          )
+        )
+       ,
+     0
+     )
+     ,
+    AREA(number_households)
+    )","","This query gives the peak load delta due to heater technologies using electricity.
+
+In theory the query needs to be written for all 4 time periods: we, wd, se, sd. And then take the max value.
+
+The electricity production of micro_chp compensates electricity demand by the other heaters. Without micro_chp the query would be:
+
+PRODUCT (
+     SUM(
+        V(Q(hh_heaters);
+          simult_we*
+          electricity_input_conversion*
+          typical_capacity_gross_in_mj_s*
+          share_of_heating_demand_households_energetic)
+         )
+     ,
+    AREA(number_households)
+    )
+
+
+Micro CHP capacity is 1/1000 MWe. In theory this value needs to be: 
+  typical_capacity_gross_in_mj_s*electricity_output_conversion/useable_heat_output_conversion
+However typical_capacity_gross_in_mj_s does not change in time while the heat output does..therefore this gives an incorrect value in future years.
+
+Max value is used to make sure the peak load is always positive.","2010-07-01 14:14:08","2010-07-08 11:10:08",0
+277,"annual_netwerk_cost","DIVIDE(SUM(MAX(AREA(annual_infrastructure_cost),0),Q(investment_cost_lv_grid_per_year),Q(investment_cost_mv_grid_per_year),Q(investment_cost_hv_grid_per_year)),1000)","","","2010-07-01 16:13:19","2010-07-01 16:13:19",0
+278,"number_electric_cars","DIVIDE(
+  V(electric_cars_transport_energetic;output_of_car_kms),
+  AREA(km_per_car)
+  )","","Number of electric cars","2010-07-02 08:05:05","2010-07-02 08:05:05",0
+281,"peak_load_units_delta_agri_chp"," V(chp_agri_agriculture_energetic; number_of_plants_future - peak_load_units_present)","","","2010-07-08 09:16:31","2010-07-08 09:16:47",0
+282,"peak_load_per_unit_agri_chp","PRODUCT (
+
+              V (chp_agri_agriculture_energetic; typical_capacity_gross_in_mj_s),   
+              V (chp_agri_agriculture_energetic; electricity_output_conversion)
+
+               )","","","2010-07-08 09:17:59","2010-07-08 09:17:59",0

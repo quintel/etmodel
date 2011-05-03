@@ -1,0 +1,11 @@
+= render 'list'
+
+#content
+  .header
+
+  %h1= @gql_test_case.name
+
+  %pre= @gql_test_case.instruction
+
+  %strong= @gql_test_case.api_params
+  

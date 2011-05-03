@@ -1,0 +1,49 @@
+.view_nodes
+  margin: 0px
+  padding: 0px
+  h1, h2, ul, li, div, p 
+    margin: 0px
+    padding: 0px
+  div 
+    float: left
+  ul,li 
+    list-style: none
+  li.node_list
+    float: left
+    width: 200px
+    height: 500px
+    padding: 10px
+    border: 1px black solid
+    .active
+      background-color: #63A1c9
+      a
+        color: white
+    li.node_item
+      float: left
+      clear: both
+      width: 194px
+      padding: 3px
+      a
+        float: left
+      .edit_button
+        margin-top: 3px
+        margin-left: 3px
+      form
+        float: left
+        div
+          float: left
+          height: 14px
+        input
+          float: left
+          margin-left: 5px
+          padding: 0px
+          border: 0px
+          width: 15px
+          cursor: pointer
+          background: transparent url('/images/layout/icons/delete.png')
+  li.node_list.grey_left  
+    border-left: 1px lightgrey solid
+  li.node_list.grey_right
+    border-right: 1px lightgrey solid
+
+    

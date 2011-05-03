@@ -7,10 +7,10 @@ var Gquery = Backbone.Model.extend({
     var present_value = this.get('present_value');
     var future_value = this.get('future_value');
 
-    if (_.compact([present_value, future_value]) < 2) {
+    if ( !(this.is_acceptable_value(present_value) && this.is_acceptable_value(future_value))) {
       console.warn('Gquery "'+this.get('key')+'" has undefined/null values. ' + present_value + '/' + future_value + "\n Reset to 0");
       present_value = 0;
-      future_value = 0;
+      future_value  = 0;
     }
 
     var result = [
@@ -35,6 +35,10 @@ var Gquery = Backbone.Model.extend({
         future_year   : api_result[1][0], future_value  : api_result[1][1]
       });
     }
+  },
+  
+  is_acceptable_value : function(n) {
+    return !(n === false || n === undefined || n === "" || n === NaN)
   }
 });
 

@@ -1,8 +1,8 @@
 //= require <slider/slider>
 
-var SimpleSliderView = EventDispatcher.extend({
+var SimpleSliderView = Backbone.View.extend({
   
-  init:function(options) {
+  initialize:function(options) {
     this.options = options;
     this.sliderVO = new SliderVO(this.options);
     this.slider = new Slider(this.sliderVO, this.options);

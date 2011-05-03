@@ -3,6 +3,8 @@
     <script src='ext/jquery-1.4.4.min.js'></script>
     <script src='ext/jquery.class.js'></script>
     <script src='ext/event_dispatcher.js'></script>
+    <script src='ext/underscore.js'></script>
+    <script src='ext/backbone-0.3.3.min.js'></script>
     <script src='qislider.js'></script>
     <link href='qislider.css' rel='stylesheet' type='text/css' />
     <style>
@@ -75,19 +77,19 @@
     <h2>Advanced grouped sliders</h2>
     <div id='slider-group-heating-0'></div>
     <script>
-      var a = new AdvancedSliderView({'value':10, 'step_value':1, 'max_value': 100, 'name':'0', 'formatter':function(n) {return n.toFixed(2) + '%'}});
+      var a = new AdvancedSliderView({'value':10, 'step_value':1, 'max_value': 100, 'name':'0'});
       g2.addSlider(a.sliderVO);
       $("#slider-group-heating-0").append(a.element);
     </script>
     <div id='slider-group-heating-1'></div>
     <script>
-      var a = new AdvancedSliderView({'value':10, 'step_value':1, 'max_value': 100, 'name':'1', 'formatter':function(n) {return n.toFixed(2) + '%'}});
+      var a = new AdvancedSliderView({'value':10, 'step_value':1, 'max_value': 100, 'name':'1'});
       g2.addSlider(a.sliderVO);
       $("#slider-group-heating-1").append(a.element);
     </script>
     <div id='slider-group-heating-2'></div>
     <script>
-      var a = new AdvancedSliderView({'value':10, 'step_value':1, 'max_value': 100, 'name':'2', 'formatter':function(n) {return n.toFixed(2) + '%'}});
+      var a = new AdvancedSliderView({'value':10, 'step_value':1, 'max_value': 100, 'name':'2'});
       g2.addSlider(a.sliderVO);
       $("#slider-group-heating-2").append(a.element);
     </script>
@@ -131,7 +133,7 @@
     <script>
       var a = new SimpleSliderView({'value':200, 'step_value':10, 'max_value': 800, 'name': "CO2 emission"});
       $("#slider-events").append(a.element);
-      a.addEventListener('change', function() { $('#slider-log').html($('#slider-log').html() + ' event')});
+      a.bind('change', function() { $('#slider-log').html($('#slider-log').html() + ' event')});
     </script>
     <h2>Slider step value</h2>
     <div id='slider-step'></div>

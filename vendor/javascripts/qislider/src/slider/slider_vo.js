@@ -4,11 +4,12 @@
  * The slider class is responsible for drawing the slider and maintaining
  * all states of the slider.
  */
-var SliderVO = EventDispatcher.extend({
+var SliderVO = Backbone.Model.extend({
   /**
    * This will initialize the slider.
    */
-  init:function(options) {
+  initialize:function(options) {
+    
     options = options || {};
     this.options = options;
     this.precision = options.precision || null;
@@ -57,6 +58,7 @@ var SliderVO = EventDispatcher.extend({
    * by setting the options.
    */
   setValue:function(value, settings) {
+    
     if(this.options && this.options.disabled) {
       return false;
     }
@@ -83,7 +85,8 @@ var SliderVO = EventDispatcher.extend({
     
       
     if(!(settings && settings.noEvent)) {
-      this.dispatchEvent('update', this);
+      
+      this.trigger('update', this);
     } 
       
   },

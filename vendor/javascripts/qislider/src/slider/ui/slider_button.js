@@ -3,8 +3,9 @@
  * This button is used in a slider.
  * 
  */
-var SliderButton = EventDispatcher.extend({
-  init:function(opts) {
+var SliderButton = Backbone.View.extend({
+  initialize:function(opts) {
+
     this.element = $('<div></div>');
     this.element.addClass('slider-button')
     this.name = opts.name;
@@ -33,7 +34,7 @@ var SliderButton = EventDispatcher.extend({
     } 
   },  
   handleMouseDown:function() {
-    this.dispatchEvent('down');
+    this.trigger('down');
     this.setActive();
   },
   setActive:function() {
@@ -57,8 +58,8 @@ var SliderButton = EventDispatcher.extend({
   },
   
   handleMouseUp:function() {
-    this.dispatchEvent('up');
-    this.dispatchEvent('click');
+    this.trigger('up');
+    this.trigger('click');
     this.disableMouseOver = false;
 
     this.element.removeClass('slider-button-active')

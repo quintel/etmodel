@@ -1,5 +1,5 @@
-var SliderInput = EventDispatcher.extend({
-  init:function(sliderVO) {
+var SliderInput = Backbone.View.extend({
+  initialize:function(sliderVO) {
     this.sliderVO = sliderVO;
     this.element = $('<div></div>');
     this.element.addClass('slider-input');
@@ -35,7 +35,7 @@ var SliderInput = EventDispatcher.extend({
     this.element.append(this.edit_form_element);
     
     
-    this.sliderVO.addEventListener('update', jQuery.proxy(this.handleUpdate, this));
+    this.sliderVO.bind('update', jQuery.proxy(this.handleUpdate, this));
     this.draw();
   },
   
@@ -83,7 +83,7 @@ var SliderInput = EventDispatcher.extend({
   },
   handleFinishedEdit:function() {
     this.sliderVO.setValue(this.input_element.attr('value'));
-    this.dispatchEvent('update');
+    this.trigger('update');
     this.value_element.show();
     this.edit_form_element.hide();
     this.edit_element.hide();

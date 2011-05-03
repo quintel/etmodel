@@ -93,7 +93,7 @@
     %script
       var a = new SimpleSliderView({'value':200, 'step_value':10, 'max_value': 800, 'name': "CO2 emission"});
       $("#slider-events").append(a.element);
-      a.addEventListener('change', function() { $('#slider-log').html($('#slider-log').html() + ' event')});
+      a.addEventListener('bind', function() { $('#slider-log').html($('#slider-log').html() + ' event')});
     
     
     %h1 Slider step value

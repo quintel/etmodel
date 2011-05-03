@@ -3,8 +3,9 @@
  */
 var SliderRightButton = SliderButton.extend({
   
-  init:function(opts) {
-    this._super({'className':'slider-right-button', 'name':'right','disabled':opts && opts.disabled});
+  initialize:function(opts) {
+    SliderRightButton.__super__.initialize.call(this, {'className':'slider-right-button', 'name':'right','disabled':opts && opts.disabled});
+    // this._super({'className':'slider-right-button', 'name':'right','disabled':opts && opts.disabled});
   }
   
   

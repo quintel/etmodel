@@ -2,9 +2,9 @@
  * The slider class is responsible for drawing the slider and maintaining
  * all states of the slider.
  */
-var SliderVoRelative = EventDispatcher.extend({
+var SliderVoRelative = Backbone.Model.extend({
   
-  init:function(sliderVO) {
+  initialize:function(sliderVO) {
     this.sliderVO = sliderVO;
   },
   

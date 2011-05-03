@@ -2,8 +2,8 @@
  * Adjusts the slider with steps
  */
  
-var StepValueAdjuster = EventDispatcher.extend({
-  init:function(sliderVO) {
+var StepValueAdjuster = Backbone.Model.extend({
+  initialize:function(sliderVO) {
     this.sliderVO = sliderVO;
   },
   
@@ -33,7 +33,7 @@ var StepValueAdjuster = EventDispatcher.extend({
     var lRelativeStep = this.sliderVO.relative.getPosition(this.sliderVO.getStepValue());
     //this.sliderVO.relative.setPosition(lPosition + this.direction * lRelativeStep);
     this.sliderVO.setValue(this.sliderVO.getValue() + this.direction * this.sliderVO.getStepValue());
-    this.dispatchEvent("update");
+    this.trigger("update");
     
     if(this.enabled)
       setTimeout(jQuery.proxy(this.adjustStepValue, this), this.standardSleepTime);

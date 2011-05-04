@@ -29,7 +29,7 @@ var HorizontalBarChartView = BaseChartView.extend({
     var model_results = this.model.results();    
     var out = []
     for(i = 0; i < model_results.length; i++) {
-      out.push([model_results[i][0][1], parseInt(i)+1]);
+      out.push([model_results[i][0][1], i+1]);
     }
     this.cached_results = out;
     return out;

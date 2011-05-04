@@ -42,32 +42,6 @@ var ConstraintView = Backbone.View.extend({
     $('.constraint_popup').css('bottom', '8000px');
   },
 
-  // Formats the result of calculate_result() for the end-user
-  format_result : function() {
-    var result = this.model.get('result');
-    var key = this.model.get('key');
-    var result_rounded = Metric.round_number(result, 2);
-
-    if (key == 'total_primary_energy' ) 
-      return this.format_percentage(result, true);
-    else if (key == 'co2_reduction' )
-      return this.format_percentage(result, true);
-    else if (key == 'net_energy_import') 
-      return this.format_percentage(result); // TODO add :signed => false
-    else if (key == 'renewable_percentage') 
-      return this.format_percentage(result); // TODO add :signed => false
-    else if (key == 'total_energy_cost')
-      return this.format_with_suffix(result_rounded, 'EUR'); // Metric.currency((result / BILLIONS))
-    else if (key == 'not_shown')
-      return this.format_with_suffix(result_rounded, 'EUR'); // TODO round(2), add correct currency
-    else if (key == 'targets_met') 
-      return null; //Metric.out_of(result, Current.gql.policy.goals.length)
-    else if (key == 'score')
-      return parseInt(result);
-    else
-      return result;
-  },
-
   render : function() {
     $('strong', this.dom_id).empty().append(this.format_result());
     this.updateArrows(this.model.get('diff'));

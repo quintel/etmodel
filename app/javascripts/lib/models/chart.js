@@ -2,12 +2,23 @@
 var Chart = Backbone.Model.extend({
   initialize : function() {
     this.series = new ChartSeries;
-    if (this.get('type') == 'bezier')
-      new BezierChartView({model : this});
-    else if (this.get('type') == 'horizontal_bar')
-      new HorizontalBarChartView({model : this});
-    else if (this.get('type') == 'vertical_stacked_bar')
-      new VerticalStackedBarChartView({model : this});
+    var type = this.get('type');
+    switch (type) {
+      case 'bezier' :
+        new BezierChartView({model : this});
+        break;
+      case 'horizontal_bar' :
+        new HorizontalBarChartView({model : this});
+        break;
+      case 'vertical_stacked_bar' :
+        new VerticalStackedBarChartView({model : this});
+        break;
+      case 'vertical_bar' :
+        new VerticalBarChartView({model : this});
+        break;
+      default:
+        console.log("Unsupported chart type: " + type);
+    }
   },
 
   // @return [ApiResultArray] = [

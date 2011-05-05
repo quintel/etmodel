@@ -4,10 +4,11 @@ describe Admin::OutputElementSeriesController do
   before(:all) { Authorization.ignore_access_control(true); OutputElementSerie.new().save }
   after(:all)  { Authorization.ignore_access_control(false) }
 
-#  before(:each) do
+   before(:each) do
+     controller.class.skip_before_filter :restrict_to_admin
 #    output_element_serie = OutputElementSerie.new().save
 #    output_element_serie.save(false)
-#  end
+   end
 
   render_views
 

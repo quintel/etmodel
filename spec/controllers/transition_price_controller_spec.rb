@@ -80,7 +80,7 @@ describe TransitionPriceController do
         get :load_scenario
       }.to change(Scenario, :count).by(1)
       
-      response.should redirect_to(load_scenario_path(:id => Scenario.last.id))
+      response.should redirect_to(load_scenario_path(:id => Scenario.last.id, :redirect_to => transition_price_intro_path(:step => '2')))
     end
   end  
   

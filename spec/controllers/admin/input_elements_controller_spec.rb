@@ -5,6 +5,7 @@ describe Admin::InputElementsController do
   after(:all)  { Authorization.ignore_access_control(false) }
 
   before(:each) do
+    controller.class.skip_before_filter :restrict_to_admin
     @input_element = InputElement.new().save(false)
   end
 

@@ -7,7 +7,7 @@
 
 %div{:style => "width: 600px"}
   - semantic_form_for @scenario, :html => {:multipart => true} do |f|
-    = render 'form', :object => f
+    = render :partial => 'form', :object => f
 
 - if !(@existing_attachments.nil? || @existing_attachments.empty?)
   %fieldset{:class => 'inputs'}

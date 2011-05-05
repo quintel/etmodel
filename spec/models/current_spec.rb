@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe Current do
-
-
   describe "already_shown" do
     before {
       Current.session['already_shown'] = nil
@@ -15,7 +13,6 @@ describe Current do
       specify { Current.already_shown?('demand/intro').should be_true}
     end
   end
-  
   
   describe "#server_config" do
     context "nothing set" do      
@@ -62,21 +59,5 @@ describe Current do
       it {should_not be_nil}
       its(:name) { should == :touchscreen}
     end
-            
   end
-  
-  describe "gql_calculated?" do
-    context "without gql" do
-      before { Current.gql = nil }
-      specify { Current.gql_calculated?.should be_false}
-    end
-    context "with uncalculated gql" do
-      before { Current.gql = mock_model(Gql::Gql, :calculated? => false) }
-      specify { Current.gql_calculated?.should be_false}
-    end
-    context "with calculated gql" do
-      before { Current.gql = mock_model(Gql::Gql, :calculated? => true) }
-      specify { Current.gql_calculated?.should be_true}
-    end
-  end  
 end

@@ -50,7 +50,7 @@ class ViewSetting
   # @return [SidebarItem]
   #
   def current_sidebar_item
-    current_sidebar_item_node.element
+    current_sidebar_item_node.andand.element
   end
 
   ##################
@@ -121,7 +121,9 @@ class ViewSetting
 private
 
   def tab_nodes
-    @tab_nodes ||= root.children.element_list
+    # TODO: refactor this section to make testing easier and 
+    # remove the rescue clause added by me - PZ Wed 27 Apr 2011 17:19:44 CEST
+    @tab_nodes ||= root.children.element_list rescue []
   end
 
   def current_tab_node

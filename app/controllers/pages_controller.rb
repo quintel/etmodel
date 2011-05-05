@@ -16,9 +16,9 @@ class PagesController < ApplicationController
       Current.scenario = Scenario.default  
 
       Current.scenario.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
-      country,region = params[:region].split("-")
-
-      Current.scenario.set_country_and_region(country, params[:region])
+      country = params[:region].split("-").first
+      region = params[:region] # we need the full region code here
+      Current.scenario.set_country_and_region(country, region)
       Current.scenario.complexity = params[:complexity]
       Current.setting = Setting.default
 

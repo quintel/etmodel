@@ -7,10 +7,5 @@
   - form.object.attachments.select(&:new_record?).each do |attachment|
     / = form.input 'attachments_attributes[][title]', :as => 'text', :label => "Title"
     = form.input 'attachments_attributes[][file]', :as => 'file', :label => "File"
-
-
-
 - form.buttons do
   = form.commit_button
-
-

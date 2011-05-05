@@ -53,6 +53,7 @@ GEM
     archive-tar-minitar (0.5.2)
     arel (2.0.4)
     autotest (4.4.5)
+    awesome_print (0.3.2)
     bluecloth (2.0.9)
     builder (2.1.2)
     closure-compiler (0.3.3)
@@ -75,6 +76,7 @@ GEM
       i18n (>= 0.4.0)
     gem_plugin (0.2.3)
     haml (3.0.23)
+    hirb (0.4.5)
     hoe (2.7.0)
       rake (>= 0.8.7)
       rubyforge (>= 2.0.4)
@@ -105,7 +107,6 @@ GEM
       daemons (~> 1.0.10)
       gem_plugin (~> 0.2.3)
     multipart-post (1.0.1)
-    mysql (2.8.1)
     mysql2 (0.2.6)
     nokogiri (1.4.4)
     paper_trail (1.6.4)
@@ -157,7 +158,6 @@ GEM
       columnize (>= 0.3.1)
       linecache19 (>= 0.5.11)
       ruby-debug-base19 (>= 0.11.19)
-    ruby-graphviz (0.9.20)
     ruby-openid (2.1.8)
     ruby_core_source (0.1.4)
       archive-tar-minitar (>= 0.5.2)
@@ -203,12 +203,14 @@ DEPENDENCIES
   annotate
   authlogic!
   autotest
+  awesome_print
   bluecloth
   declarative_authorization (= 0.5.1)
   default_value_for
   factory_girl (>= 1.2.3)
   formtastic
   haml (= 3.0.23)
+  hirb
   hoptoad_notifier (= 2.4.2)
   http_status_exceptions!
   i18n-js
@@ -217,7 +219,6 @@ DEPENDENCIES
   libxml-ruby
   memcache-client
   mongrel (= 1.2.0.pre2)
-  mysql
   mysql2
   nokogiri
   paper_trail (>= 1.6.4)
@@ -226,7 +227,6 @@ DEPENDENCIES
   rails (= 3.0.3)
   rspec-rails (~> 2.1.0)
   ruby-debug19
-  ruby-graphviz
   ruby-openid
   rubyzip (= 0.9.4)
   selenium-client (>= 1.2.18)
@@ -235,7 +235,6 @@ DEPENDENCIES
   test-unit (= 1.2.3)
   thinking-sphinx (>= 2.0.1)
   tinder
-  treetop (= 1.4.8)
   webrat
   yard (= 0.5.4)
   yui-compressor

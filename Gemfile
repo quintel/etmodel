@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-gem 'rails', '3.0.3'
+gem 'rails', '3.0.3' # upgrade
 gem 'jquery-rails'
 gem 'haml', '3.0.23'
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
@@ -11,8 +11,6 @@ gem 'formtastic'
 gem 'http_status_exceptions', :git => 'git://github.com/japetheape/http_status_exceptions.git' 
 gem 'jammit'
 gem 'paper_trail', '>= 1.6.4'
-gem 'ruby-graphviz', :require => "graphviz"
-gem 'treetop', '1.4.8'
 gem 'default_value_for'
 gem 'paperclip', '>= 2.3.8'
 gem 'acts_as_list'
@@ -33,10 +31,9 @@ gem 'yard', '0.5.4'
 
 # system gems
 gem 'thinking-sphinx', '>=2.0.1'
-gem 'mysql' # Legacy support. Can be removed when all servers have changed their database.yml files.
 gem 'mysql2'
 gem 'memcache-client'
-gem 'mongrel', '1.2.0.pre2'
+gem 'mongrel', '1.2.0.pre2' # Do we need it?
 
 #gem 'perftools.rb', :require => 'perftools'
 #gem 'visitbench', '0.3.0'
@@ -51,6 +48,8 @@ group :test, :development do
   # It needs to be in the :development group to expose generators and rake tasks without having to type RAILS_ENV=test.
   gem "rspec-rails", "~> 2.1.0"
   gem 'ruby-debug19'
+  gem 'hirb'
+  gem 'awesome_print', :require => 'ap'
 end
 
 group :test do
@@ -61,7 +60,7 @@ group :test do
   gem 'factory_girl', '>= 1.2.3'
   gem 'webrat'
   gem 'selenium-client', '>= 1.2.18'
-  gem 'test-unit', '1.2.3'
+  gem 'test-unit', '1.2.3' # required?
   gem 'libxml-ruby'
 end
 

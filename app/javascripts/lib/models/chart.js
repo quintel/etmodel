@@ -16,9 +16,14 @@ var Chart = Backbone.Model.extend({
       case 'vertical_bar' :
         new VerticalBarChartView({model : this});
         break;
+      case 'html_table' :
+        new HtmlTableChartView({model : this});
+        break;
       default:
-        console.log("Unsupported chart type: " + type);
+        // console.log("Unsupported chart type: " + type);
+        new HtmlTableChartView({model : this});
     }
+    
   },
 
   // @return [ApiResultArray] = [

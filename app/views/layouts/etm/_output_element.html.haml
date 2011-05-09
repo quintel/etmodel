@@ -9,7 +9,4 @@
 
   %div#current_chart.column-r-content
   
-    - if @output_element.html_table?
-      = render '/output_elements/html_table'
-
 = javascript_include_tag output_element_path(:id => @output_element, :format => 'js')

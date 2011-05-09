@@ -1,0 +1,93 @@
+!!! 5
+%html
+  %head
+    
+  %body
+    %header
+      %h2 Energy Transition Model
+      %nav
+        %ul
+          %li
+            %a{:href=>"#"} login
+    %section#scenario
+      %nav
+        %ul#tabs
+          %li
+            %a{:href=>"#"} policy 
+          %li
+            %a{:href=>"#"} demand
+            %ul
+              %li
+                %a{:href=>"#"} households
+              %li
+                %a{:href=>"#"} industry
+              %li
+                %a{:href=>"#"} transport
+              %li
+                %a{:href=>"#"} agriculture
+          %li
+            %a{:href=>"#"} supply
+          %li
+            %a{:href=>"#"} costs
+      %header
+        %h1 Houshold Energy Demand
+      %section#sliders
+        %h3 Your inputs:
+        %ul
+          %li
+            %a{:href=>"#"} Heating
+          %li
+            %a{:href=>"#"} Hot water
+          %li
+            %a{:href=>"#"} insulation
+          %li
+            Lighting
+            %p The changes in energy use per person you indicate here are due to changes in personal prosperity. This is excluding efficiencies and technological changes you can indicate in the subsections below. The demand is also influenced by the population growth and the rate at which existing houses are replaced. 
+            %ul
+              %li
+                %label
+                  LED:
+                  %input{:type=>"text-field", :value=>100}
+                  \%
+              %li
+                %label
+                  Light saving bulbs:
+                  %input{:type=>"text-field", :value=>100}
+                  \%
+              %li
+                %label
+                  Classic lighting:
+                  %input{:type=>"text-field", :value=>100}
+                  \%
+      %section#charts
+        %h3 Output: Energy Mix
+        
+        %table
+          %thead
+            %tr
+              %th Serie
+              %th 2010
+              %th 2040
+          %tbody
+            %tr
+              %td Coal
+              %td 12.90
+              %td 2981
+            %tr
+              %td Gas
+              %td 298.120
+              %td 2092.1
+            %tr
+              %td Nuclear
+              %td 110.21
+              %td 293
+            %tr
+              %td Biomass
+              %td 29
+              %td 43.2
+    %footer
+      %ul
+        %li
+          %a{:href=>"#"} Gasterra
+        %li
+          %a{:href=>"#"} Alliander

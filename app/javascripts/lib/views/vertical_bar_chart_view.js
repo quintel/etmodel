@@ -11,7 +11,6 @@ var VerticalBarChartView = BaseChartView.extend({
 
     // function InitializeVerticalBar(id,series,ticks,filler,show_point_label,unit,axis_values,colors,labels){
     
-    debugger;
     InitializeVerticalBar("current_chart", 
       this.results(), 
       this.ticks(),

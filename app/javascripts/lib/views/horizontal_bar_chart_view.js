@@ -7,7 +7,7 @@ var HorizontalBarChartView = BaseChartView.extend({
   },
   
   render : function() {
-    this.clear_cached_results();
+    this.clear_results_cache();
     // SEB: maybe needs a better way to remove jqplot objects.
     //      => possible js memory leak
     $('#current_chart').empty().css('height', this.HEIGHT);

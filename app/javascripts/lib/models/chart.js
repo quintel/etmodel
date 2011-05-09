@@ -2,6 +2,11 @@
 var Chart = Backbone.Model.extend({
   initialize : function() {
     this.series = new ChartSeries;
+    this.bind('change:type', this.render);
+    this.render();
+  },
+  
+  render : function() {
     var type = this.get('type');
     switch (type) {
       case 'bezier' :
@@ -22,7 +27,6 @@ var Chart = Backbone.Model.extend({
       default:
         new HtmlTableChartView({model : this});
     }
-    
   },
 
   // @return [ApiResultArray] = [

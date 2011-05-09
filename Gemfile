@@ -50,6 +50,7 @@ group :test, :development do
   gem 'ruby-debug19'
   gem 'hirb'
   gem 'awesome_print', :require => 'ap'
+  gem 'watchr'
 end
 
 group :test do

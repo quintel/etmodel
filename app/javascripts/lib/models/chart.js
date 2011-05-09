@@ -20,7 +20,6 @@ var Chart = Backbone.Model.extend({
         new HtmlTableChartView({model : this});
         break;
       default:
-        // console.log("Unsupported chart type: " + type);
         new HtmlTableChartView({model : this});
     }
     
@@ -62,6 +61,18 @@ var Chart = Backbone.Model.extend({
   target_series : function() {
     return this.series
       .select(function(serie) { return serie.get('is_target'); });
+  },
+  // @return Array of hashes {label, present_value, future_value}
+  series_hash : function() {
+    return this.series.map(function(serie) {
+      var res = serie.result();
+      var out = {
+        label : serie.get('label'),
+        present_value : res[0][1],
+        future_value : res[1][1],
+      }
+      return out; 
+    });
   }
 });
 

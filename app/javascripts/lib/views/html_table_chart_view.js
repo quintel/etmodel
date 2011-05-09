@@ -15,13 +15,24 @@ var HtmlTableChartView = BaseChartView.extend({
   create_table : function(data) {
     var results = this.model.series_hash();
     
-    var table = $("<table>");
-    _.each(results, function(i){
-      var r = $("<tr>")
-      r.html("<td>"+i.label+"</td><td>"+i.present_value+"</td><td>"+i.future_value+"</td>");
-      r.appendTo(table);
-    });
+    var table     = $('<table class="dynamic_table">');
+    var text      = [];
+    var row_count = results.length;
+    var ct        = 0;
     
+    // way faster
+    for (var i = 0; i < row_count; i++) {
+      text[ct++] = "<tr><td>";
+      text[ct++] = results[i].label;
+      text[ct++] = "</td><td>";
+      text[ct++] = results[i].present_value;
+      text[ct++] = "</td><td>";
+      text[ct++] = results[i].future_value;
+      text[ct++] = "</td></tr>";
+    }
+    
+    table.append(text.join(''));
+
     $('#current_chart').append(table);
   }
   

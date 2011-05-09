@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <header>
+      <h2>Energy Transition Model</h2>
+      <nav>
+        <ul>
+          <li>
+            <a href='#'>login</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section id='scenario'>
+      <nav>
+        <ul id='tabs'>
+          <li>
+            <a href='#'>policy</a>
+          </li>
+          <li>
+            <a href='#'>demand</a>
+            <ul>
+              <li>
+                <a href='#'>households</a>
+              </li>
+              <li>
+                <a href='#'>industry</a>
+              </li>
+              <li>
+                <a href='#'>transport</a>
+              </li>
+              <li>
+                <a href='#'>agriculture</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href='#'>supply</a>
+          </li>
+          <li>
+            <a href='#'>costs</a>
+          </li>
+        </ul>
+      </nav>
+      <header>
+        <h1>Houshold Energy Demand</h1>
+      </header>
+      <section id='sliders'>
+        <h3>Your inputs:</h3>
+        <ul>
+          <li>
+            <a href='#'>Heating</a>
+          </li>
+          <li>
+            <a href='#'>Hot water</a>
+          </li>
+          <li>
+            <a href='#'>insulation</a>
+          </li>
+          <li>
+            Lighting
+            <p>The changes in energy use per person you indicate here are due to changes in personal prosperity. This is excluding efficiencies and technological changes you can indicate in the subsections below. The demand is also influenced by the population growth and the rate at which existing houses are replaced.</p>
+            <ul>
+              <li>
+                <label>
+                  LED:
+                  <input type='range' value='100' />
+                  %
+                </label>
+              </li>
+              <li>
+                <label>
+                  Light saving bulbs:
+                  <input type='text-field' value='100' />
+                  %
+                </label>
+              </li>
+              <li>
+                <label>
+                  Classic lighting:
+                  <input type='text-field' value='100' />
+                  %
+                </label>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section id='charts'>
+        <h3>Output: Energy Mix</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Serie</th>
+              <th>2010</th>
+              <th>2040</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Coal</td>
+              <td>12.90</td>
+              <td>2981</td>
+            </tr>
+            <tr>
+              <td>Gas</td>
+              <td>298.120</td>
+              <td>2092.1</td>
+            </tr>
+            <tr>
+              <td>Nuclear</td>
+              <td>110.21</td>
+              <td>293</td>
+            </tr>
+            <tr>
+              <td>Biomass</td>
+              <td>29</td>
+              <td>43.2</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+    <footer>
+      <ul>
+        <li>
+          <a href='#'>Gasterra</a>
+        </li>
+        <li>
+          <a href='#'>Alliander</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

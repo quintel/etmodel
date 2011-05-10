@@ -48,8 +48,6 @@ group :test, :development do
 end
 
 group :test do
-  gem 'nokogiri' # AWAY?
-
   gem 'factory_girl', '>= 1.2.3'
   gem 'webrat'
   gem 'simplecov'

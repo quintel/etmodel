@@ -13,12 +13,11 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 #require 'spec/autorun'
 #require 'spec/rails'
 #require "selenium/client"
-#gem "selenium-client"
 
-require 'webrat'
+# require 'webrat'
 
 # Uncomment the next line to use webrat's matchers
-#require 'webrat/integrations/rspec-rails'
+# require 'webrat/integrations/rspec-rails'
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.

@@ -1,7 +1,0 @@
-- semantic_form_for [:admin, @group] do |f|
-  - f.inputs :identifier do 
-    = f.input :key, :hint => "This key is currently used in #{Gquery.containing_converter_key(@group.key).count} Gqueries."
-    = f.input :title, :hint => "Display name: is not used in Qernel. Can be changed without worrying."
-
-  = f.buttons
-  = link_to 'Cancel and go back', admin_groups_path

@@ -1,11 +1,7 @@
 require 'spec_helper'
 
 describe Slide do
-
-  describe "infrastructure" do
-    before { @slide = Slide.new }
-  end
-
+  pending
 end
 
 # == Schema Information

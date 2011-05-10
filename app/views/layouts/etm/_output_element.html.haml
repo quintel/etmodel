@@ -7,6 +7,17 @@
   -if @output_element.under_construction || (params[:id] == "buildings" && Current.scenario.country == "de")
     #chart_not_finished
 
-  %div#current_chart.column-r-content
+  #chart_switcher
+    %select
+      %option='html_table'
+      %option='bezier'
+  #current_chart.column-r-content
   
 = javascript_include_tag output_element_path(:id => @output_element, :format => 'js')
+
+:javascript
+  $(function(){
+    $("#chart_switcher select").live('change', function(){
+      charts.first().set({type: $(this).val()});
+    })
+  });

@@ -7,7 +7,6 @@ gem 'haml', '~>3.1.1'
 gem 'sass', '~>3.1.1'
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 gem 'bluecloth'
-gem 'declarative_authorization', '0.5.1' # AWAY
 gem 'formtastic'
 gem 'http_status_exceptions', :git => 'git://github.com/japetheape/http_status_exceptions.git' 
 gem 'jammit' # TODO: still used?

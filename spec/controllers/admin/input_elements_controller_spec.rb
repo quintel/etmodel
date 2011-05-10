@@ -1,8 +1,7 @@
 require 'spec_helper'
 
 describe Admin::InputElementsController do
-  before(:all) { Authorization.ignore_access_control(true); InputElement.new().save(false) }
-  after(:all)  { Authorization.ignore_access_control(false) }
+  before(:all) { InputElement.new().save(false) }
 
   before(:each) do
     controller.class.skip_before_filter :restrict_to_admin

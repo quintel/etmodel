@@ -49,7 +49,4 @@ describe ServerConfig do
       its(:root_page) { should == nil }
     end
   end
-  
-  
-  
 end

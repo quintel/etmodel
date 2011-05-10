@@ -1,8 +1,7 @@
 require 'spec_helper'
 
 describe Admin::OutputElementSeriesController do
-  before(:all) { Authorization.ignore_access_control(true); OutputElementSerie.new().save }
-  after(:all)  { Authorization.ignore_access_control(false) }
+  before(:all) { OutputElementSerie.new().save }
 
    before(:each) do
      controller.class.skip_before_filter :restrict_to_admin

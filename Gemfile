@@ -52,7 +52,6 @@ group :test do
 
   gem 'factory_girl', '>= 1.2.3'
   gem 'webrat'# AWAY
-  gem 'libxml-ruby' # AWAY?
   gem 'simplecov'
 end
 

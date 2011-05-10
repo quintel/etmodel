@@ -1,9 +1,10 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-gem 'rails', '3.0.7' # TODO: any reason not to upgrade?
+gem 'rails', '3.0.7'
 gem 'jquery-rails'
-gem 'haml', '3.0.23' # TODO: upgrade to 3.1 (w/ separate SASS gem) # UPGRADE
+gem 'haml', '~>3.1.1'
+gem 'sass', '~>3.1.1'
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 gem 'bluecloth'
 gem 'declarative_authorization', '0.5.1' # AWAY

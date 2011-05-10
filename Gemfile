@@ -1,12 +1,12 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-gem 'rails', '3.0.3' # TODO: any reason not to upgrade?
+gem 'rails', '3.0.7' # TODO: any reason not to upgrade?
 gem 'jquery-rails'
-gem 'haml', '3.0.23' # TODO: upgrade to 3.1 (w/ separate SASS gem)
+gem 'haml', '3.0.23' # TODO: upgrade to 3.1 (w/ separate SASS gem) # UPGRADE
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 gem 'bluecloth'
-gem 'declarative_authorization', '0.5.1'
+gem 'declarative_authorization', '0.5.1' # AWAY
 gem 'formtastic'
 gem 'http_status_exceptions', :git => 'git://github.com/japetheape/http_status_exceptions.git' 
 gem 'jammit' # TODO: still used?
@@ -17,9 +17,9 @@ gem 'acts_as_list'
 gem 'ancestry', '~> 1.2.3'
 
 # javascript
-gem 'sprockets'
-gem 'sprockets-rails'
-gem 'rack-sprockets'
+gem 'sprockets' # CHECK
+gem 'sprockets-rails'# CHECK
+gem 'rack-sprockets'# CHECK
 gem 'yui-compressor'
 gem 'i18n-js'
 
@@ -32,8 +32,7 @@ gem 'mysql2'
 gem 'memcache-client'
 
 # Optional gems that were commented in environment.rb
-gem 'rubyzip', '0.9.4'
-gem "ruby-openid", :require => "openid"
+gem 'rubyzip', '0.9.4' # AWAY?
 
 group :development do
   gem 'yard', '0.5.4'
@@ -49,11 +48,11 @@ group :test, :development do
 end
 
 group :test do
-  gem 'nokogiri'
+  gem 'nokogiri' # AWAY?
 
   gem 'factory_girl', '>= 1.2.3'
-  gem 'webrat'
-  gem 'libxml-ruby'
+  gem 'webrat'# AWAY
+  gem 'libxml-ruby' # AWAY?
   gem 'simplecov'
 end
 

@@ -64,7 +64,6 @@ Etm::Application.routes.draw do
               :query_tables, 
               :query_table_cells, 
               :press_releases, 
-              :blueprint_converters, 
               :groups, 
               :converter_positions,
               :view_nodes
@@ -91,11 +90,6 @@ Etm::Application.routes.draw do
         post :test
         get :result
       end
-    end
-    resources :blueprints do
-      get :graph, :on => :member
-      resources :blueprint_converters
-      resources :groups
     end
   end
 

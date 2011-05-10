@@ -36,7 +36,6 @@
           .nav-holder.nav-holder-inner{:style=>"float:left"}
             %ul{:style=>"width:1400px;height:30px;"}
               %li= link_to Current.scenario.country.upcase, '#'
-              - tab("Graphs", 'admin/graphs', '')
               - tab("Gqueries", "data/latest/#{Current.scenario.country}/gqueries", '')
               - tab("Tables", 'admin/query_tables', '')
               - tab("Areas", "data/latest/#{Current.scenario.country}/areas", '')

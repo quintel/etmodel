@@ -119,11 +119,6 @@ Etm::Application.routes.draw do
   namespace :optimizer do
     resources :optimizers
   end
-  
-  
-  namespace :game do
-    resources :games
-  end
 
 # TODO rails 3
   resources :output_elements do

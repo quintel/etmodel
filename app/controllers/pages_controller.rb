@@ -5,9 +5,6 @@ class PagesController < ApplicationController
   before_filter :defaults
   skip_before_filter :show_intro_screens_only_once, :only => [:intro]
 
-  before_filter :restrict_to_admin, :only => [:admin]
-
-
   # TODO refactor move the Current-stuff somewhere else (seb 2010-10-11)
   def root
     redirect_to APP_CONFIG[:root_page] if APP_CONFIG[:root_page]
@@ -47,10 +44,6 @@ class PagesController < ApplicationController
   def intro
     @render_tabs = true
     render :layout => 'pages'
-  end
-
-  def admin
-    render :layout => 'admin'
   end
 
   def press_releases

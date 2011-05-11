@@ -18,14 +18,6 @@ module ApplicationHelper
     str.html_safe
   end
 
-  def ga_tracker_code
-    if Current.server_config.name.to_s == "transition_price"
-      "UA-4089905-5"
-    else
-      "UA-4089905-4"
-    end
-  end
-
   # TODO refactor. Move to lib/ (seb 2010-10-11)
   # TODO documentation. Write a little documenation. 
   # QUESTION: Do we still need this?
@@ -131,7 +123,7 @@ module ApplicationHelper
   end
   
   def is_transitionprice?
-    Current.server_config.name.to_s == 'transition_price'
+    APP_CONFIG[:transition_price]
   end
  
 end

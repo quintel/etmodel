@@ -1,7 +1,7 @@
 = back_to_model_link
 %h1= t("scenario.save")
 %p
-  - unless Current.server_config.max_scenarios == 1
+  - unless APP_CONFIG[:max_scenarios] == 1
     = t("scenario.save_desc_asmany")
   = t("scenario.save_desc")
 

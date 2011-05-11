@@ -34,23 +34,6 @@
 # A big difference between Setting and Scenario is, that Scenario influences the GQL.
 # E.g. in scenario we set end_year, can overwrite number_of_households, etc.
 #
-# == Current.server_config
-#
-# Holds all server specific variables. On some servers special things need to happen.
-# Add a configuration file like: config/server_configs/name.yml to add specific server configurations.
-#
-# Change the SERVER_CONFIG variable in server_variables.rb on the deployed server to make sure it loads
-# the correct server config.
-#
-# The server config is defined in this order:
-#    1. It checks first the subdomain. If it is in the ServerConfig::SUBDOMAIN_CONFIGS 
-#       it gets this config.
-#       
-#    2. The environment variable ENV["SERVER_CONFIG"]. Rails can be started with: 
-#       > SERVER_CONFIG=testing rails s
-# 
-#    3. ENV["SERVER_CONFIG"] defined in server_variables.rb.
-#
 #
 # == Implementation details
 #
@@ -109,26 +92,6 @@ class Current
   # This is loaded in application_controller.
   def subdomain=(subdomain)
     session[:subdomain] = subdomain
-  end
-
-
-  # Loads the server config. Caching is done in +ServerConfig.from_config+.
-  # 
-  #
-  # @tested 2010-12-28 jape
-  #
-  def server_config
-    if !subdomain.nil? && override = ServerConfig.override_for_subdomain(subdomain)
-      return ServerConfig.from_config(override)
-    end
-      
-    server_config = ENV['SERVER_CONFIG'] ? ENV['SERVER_CONFIG'] : nil
-
-    if Rails.env.development?
-      ServerConfig.from_config(server_config) 
-    else
-      session[:server_config] ||= ServerConfig.from_config(server_config) 
-    end
   end
 
   # TODO refactor or make a bit more clear&transparent

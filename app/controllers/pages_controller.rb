@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 
   # TODO refactor move the Current-stuff somewhere else (seb 2010-10-11)
   def root
-    redirect_to Current.server_config.root_page if Current.server_config.root_page
+    redirect_to APP_CONFIG[:root_page] if APP_CONFIG[:root_page]
     # if user wanted to start with a new scenario
     if params[:end_year]
       Current.scenario = Scenario.default  

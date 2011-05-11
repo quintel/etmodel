@@ -1,13 +1,11 @@
 db/dumps
 db/sphinx
-config/tinder.rb
 config/development.sphinx.conf
-config/server_variables.rb
 config/initializers/hoptoad.rb
-config/server_configs/*.yml
 db/schema.rb
 log/*
 config/database.yml
+config/config.yml
 .yardoc
 doc/*
 public/tmp/*
@@ -45,7 +43,6 @@ public/assets
 public/.DS_Store
 etm_dev.sql
 public/doc
-config/tinder.rb
 vendor/bundle
 .bundle
 public/sprockets

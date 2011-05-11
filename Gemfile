@@ -53,5 +53,3 @@ group :test do
   gem 'webrat'
   gem 'simplecov'
 end
-
-

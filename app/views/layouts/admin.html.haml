@@ -36,14 +36,9 @@
           .nav-holder.nav-holder-inner{:style=>"float:left"}
             %ul{:style=>"width:1400px;height:30px;"}
               %li= link_to Current.scenario.country.upcase, '#'
-              - tab("Gqueries", "data/latest/#{Current.scenario.country}/gqueries", '')
               - tab("Tables", 'admin/query_tables', '')
-              - tab("Areas", "data/latest/#{Current.scenario.country}/areas", '')
-              - tab("Carriers", "data/latest/#{Current.scenario.country}/carriers", '')
-              - tab("Blackboxes", 'admin/blackboxes', '')
-              - tab("Bb scenarios", 'admin/blackbox_scenarios', '')
               - tab("Descriptions", 'admin/descriptions','')
-              - tab("Translations", 'admin/translations', '')              
+              - tab("Translations", 'admin/translations', '')
               - tab("Views", 'admin/view_nodes', '')
               - tab("Tabs", 'admin/tabs', '')
               - tab("Categories", 'admin/sidebar_items', '')
@@ -53,5 +48,4 @@
               - tab("Series", 'admin/output_element_series', '')
               - tab("Historic", 'admin/historic_series', '')
               - tab("Expert", 'admin/expert_predictions', '')
-              - tab("Press", 'admin/press_releases', '')              
-
+              - tab("Press", 'admin/press_releases', '')

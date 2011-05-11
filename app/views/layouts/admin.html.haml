@@ -13,17 +13,8 @@
     = stylesheet_link_tag 'admin'
     = sprocket_layout_init :etm
 
-    /
-      [if lt IE 8]><link rel="stylesheet" type="text/css" href="/stylesheets/ie.css" /><![endif]
-      [if lt IE 8]><link rel="stylesheet" type="text/css" href="/stylesheets/ie.slider.css" /><![endif]
-
-    / - jquery_plugins = %w[accordion slider fancybox-1.3.1 jqplot]
-    / = javascript_include_tag "jquery-1.4.4.min", 'excanvas', *jquery_plugins.map{|plugin_name| "jquery.#{plugin_name}" }
-
-    / = javascript_include_tag "jquery.qtip-1.0.0-rc3.min", "jquery.effects.core"
-
-    / - custom = %w[output_elements input_elements tooltip fancybox header_menu].map{|j| "etm.#{j}"}
-    / = javascript_include_tag "etm", *custom
+    /[if lt IE 8]
+      = stylesheet_link_tag "ie", "ie.slider"
 
   %body#model
     #wrapper

@@ -148,7 +148,7 @@ class InputElement < ActiveRecord::Base
   #  
   #end
   def disabled
-    has_locked_input_element_type?(input_element_type) || blacklisted_if_whitelist_available?(id)
+    has_locked_input_element_type?(input_element_type)
   end
   #############################################
   # Methods that interact with a users values
@@ -291,14 +291,6 @@ class InputElement < ActiveRecord::Base
   #
   def has_locked_input_element_type?(input_type)
     %w[fixed remainder fixed_share].include?(input_type)
-  end
-
-  ##
-  # @tested 2010-12-22 robbert
-  #
-  def blacklisted_if_whitelist_available?(id)
-    return false if Current.server_config.whitelist.nil?
-    return !Current.server_config.whitelist.include?(id.to_i)
   end
   
   def has_flash_movie

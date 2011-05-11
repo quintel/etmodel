@@ -43,6 +43,8 @@ Etm::Application.routes.draw do
   resource :settings, :searches
 
   namespace :admin do
+    root :to => 'pages#index'
+    
     match 'carrier_datas/update_by_areagroup/:areagroup/:carrier' => "carrier_datas#update_by_areagroup"
     resources :areas,
               :areagroups,
@@ -151,7 +153,6 @@ Etm::Application.routes.draw do
   match '/careers' => 'pages#careers', :as => :careers
   match '/sitemap' => 'pages#sitemap', :as => :sitemap
   match '/information' => 'pages#information', :as => :information
-  match '/admin' => 'pages#admin', :as => :admin_home
 
   match '/:controller(/:action(/:id))'
 

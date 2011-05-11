@@ -19,6 +19,7 @@ module LayoutHelpers::OutputElementHelper
     end
   end
 
+  # TODO: refactor, use standard partials and keep things simple
   def charts
     return unless @output_element
 
@@ -27,8 +28,10 @@ module LayoutHelpers::OutputElementHelper
     haml_tag 'div#charts_wrapper' do
       haml_tag 'div#charts_holder' do
         if @output_element.block_chart?
-          @blocks = @output_element.allowed_output_element_series
-          haml_concat render "layouts/etm/cost_output_element"
+          concat "BLOCK CHART ELEMENT"
+          # TODO: reimplement - PZ Wed 11 May 2011 15:20:42 CEST
+          # @blocks = @output_element.allowed_output_element_series
+          # haml_concat render "layouts/etm/cost_output_element"
         else
           haml_concat render "layouts/etm/output_element"
         end

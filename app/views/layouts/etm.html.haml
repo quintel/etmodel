@@ -37,7 +37,7 @@
             = render "layouts/etm/footer"
           .clear
       #header
-        = render "layouts/etm/header", :info_box => true, :save_button => Current.server_config.save_button
+        = render "layouts/etm/header", :info_box => true, :save_button => APP_CONFIG[:save_button]
         = render "layouts/etm/tabs"
       - unless is_transitionprice?
         #footer

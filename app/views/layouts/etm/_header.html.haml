@@ -25,8 +25,8 @@
 
   %strong
     %a{ :href => "/" }
-      - if Current.server_config.header_logo
-        %img{:src => Current.server_config.header_logo}
+      - if APP_CONFIG[:header_logo]
+        %img{:src => APP_CONFIG[:header_logo]}
       - else
         %img{:src => "/images/layout/bg-logo3.png", :class=>"header_logo"}
 

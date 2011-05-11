@@ -1,3 +1,3 @@
 class Api::Scenario < ActiveResource::Base
-  self.site = Current.server_config.api_url
+  self.site = APP_CONFIG[:api_url]
 end

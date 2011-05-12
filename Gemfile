@@ -28,7 +28,7 @@ gem 'hoptoad_notifier', '2.4.2'
 
 # system gems
 gem 'thinking-sphinx', '>=2.0.1'
-gem 'mysql2'
+gem 'mysql2', '~>0.2.6'
 gem 'memcache-client'
 
 # Optional gems that were commented in environment.rb

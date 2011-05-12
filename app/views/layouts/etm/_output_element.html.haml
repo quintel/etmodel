@@ -8,16 +8,21 @@
     #chart_not_finished
 
   #chart_switcher
-    %select
-      %option='html_table'
-      %option='bezier'
+    = link_to_function 'switch chart type', 'switch_chart()'
   #current_chart.column-r-content
   
 = javascript_include_tag output_element_path(:id => @output_element, :format => 'js')
 
 :javascript
-  $(function(){
-    $("#chart_switcher select").live('change', function(){
-      charts.first().set({type: $(this).val()});
-    })
-  });
+  function switch_chart() {
+    var chart        = charts.first();
+    var current_type = chart.get("type");
+    
+    if(!chart.get("original_type")) {
+      chart.set({ original_type : current_type});
+    }
+    
+    var new_type = (current_type == 'html_table' ? chart.get("original_type") : 'html_table');
+    chart.set({ previous_chart_type : current_type});    
+    chart.set({ type : new_type});
+  }

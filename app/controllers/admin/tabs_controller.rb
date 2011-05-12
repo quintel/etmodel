@@ -1,5 +1,4 @@
 class Admin::TabsController < Admin::AdminController
-
   def index
     @tabs = Tab.all
     @column_names = %w[id key]

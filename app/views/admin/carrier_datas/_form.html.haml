@@ -1,8 +1,0 @@
-%h2 update
-%div
-  - semantic_form_for [:admin, @areagroup.areas.first.carrier_datas.select{|c| c.carrier_id == @carrier.id}.first] do |f|
-    =hidden_field_tag :areagroup,@areagroup.id
-    =hidden_field_tag :carrier_id, @carrier.id
-    = f.error_messages
-    = f.inputs :cost_per_mj, :co2_per_mj, :sustainable, :typical_production_per_km2, :mj_per_kg, :kg_per_liter
-    = f.buttons

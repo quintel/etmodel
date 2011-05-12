@@ -6,7 +6,7 @@ class ConvertOutputElementSeriesKeyToGqueries < ActiveRecord::Migration
     OutputElementSerie.find_each do |serie|
       next if serie.output_element.blank?
       clean_label = serie.label.downcase.gsub(/[^a-z0-9_]/, '_')
-      gquery_name = "#{clean_label}_#{serie.output_element.key}"
+      gquery_name = "chart_#{clean_label}_#{serie.output_element.key}"
       serie.update_attribute :gquery, gquery_name
     end
   end

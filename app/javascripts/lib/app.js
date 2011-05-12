@@ -21,7 +21,16 @@ window.AppView = Backbone.View.extend({
     var params = {'result' : window.gqueries.keys() };
 
     LockableFunction.setLock('call_api');
-    $.getJSON(url, params, this.handle_api_result);
+    // TODO: consider using jquery.jsonp plugin
+    // http://code.google.com/p/jquery-jsonp/
+    $.ajax({
+      url: url,
+      data: params,
+      crossDomain: true,
+      dataType: "jsonp",
+      success: this.handle_api_result,
+      error: function() { console.log("Something went wrong"); }
+    });
   },
 
   // The following method could need some refactoring

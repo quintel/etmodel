@@ -1,5 +1,5 @@
 var output_element = new Chart(<%= @output_element.options_for_js.to_json.html_safe %>);
 <% @output_element.allowed_output_element_series.each do |serie| %>
-<%= output_element_serie(serie) %>
+<%= raw output_element_serie(serie) %>
 <% end %>
 window.charts.change(output_element);

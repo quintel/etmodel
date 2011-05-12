@@ -1,10 +1,12 @@
 module OutputElementsHelper
   def output_element_serie(serie)
-    str = "output_element.series.add({ "
-    str += "gquery_key : #{serie.key.inspect}, "
-    str += "color : #{serie.converted_color.inspect}, "
-    str += "label : #{serie.title_translated.inspect} "    
-    str += "});"
-    str.html_safe
+    s = {      
+      :gquery_key => serie.gquery, # New column!
+      :color      => serie.converted_color,
+      :label      => serie.title_translated,
+      :group      => serie.group
+    }
+
+    "output_element.series.add(#{s.to_json})"
   end
 end

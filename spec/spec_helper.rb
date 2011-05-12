@@ -1,6 +1,9 @@
 if ENV["COVERAGE"]
   require 'simplecov'
-  SimpleCov.start
+  SimpleCov.start do
+    add_group "Models", "app/models"
+    add_group "Controllers", "app/controllers"
+  end  
 end
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'

@@ -45,13 +45,9 @@ Etm::Application.routes.draw do
   namespace :admin do
     root :to => 'pages#index'
     
-    match 'carrier_datas/update_by_areagroup/:areagroup/:carrier' => "carrier_datas#update_by_areagroup"
     resources :areas,
-              :areagroups,
-              :carriers,
               :expert_predictions, 
               :input_elements, 
-              :carrier_datas,
               :historic_series, 
               :year_values, 
               :tabs, 
@@ -59,14 +55,11 @@ Etm::Application.routes.draw do
               :sidebar_items, 
               :descriptions, 
               :translations, 
-              :blackbox_scenarios, 
-              :converters, 
               :output_elements, 
               :output_element_series, 
               :query_tables, 
               :query_table_cells, 
               :press_releases, 
-              :groups, 
               :converter_positions,
               :view_nodes
 

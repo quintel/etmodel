@@ -1,35 +1,91 @@
 require 'spec_helper'
 
+# TODO: speed-up using let blocks wherever possible - PZ Tue 10 May 2011 14:59:14 CEST
 describe ViewNode do
-  
   describe "order of nodes" do
-    before { r = RootNode.create :key => 'test'}
     context "TabNode" do
-      pending "only valid if parent is root"
-      pending "only valid if element is a tab"
+      before do
+        @t = Factory :tab_node
+      end
+      
+      it "only valid if parent is root" do
+        @t.parent_id = Factory(:tab_node).id
+        @t.should_not be_valid
+        @t.should have(1).error_on(:parent_id)
+      end
+      
+      it "only valid if element is a tab" do
+        elem = Factory(:slide)
+        @t.element = elem
+        @t.should_not be_valid
+        @t.should have(1).error_on(:element_type)
+
+        elem = Factory(:tab)
+        @t.element = elem
+        @t.should be_valid
+      end
     end
-    context "SlideNode" do
-      pending "only valid if parent is tab"
-      pending "only valid if element is a Slide"
-    end
+    
     context "SidebarItemNode" do
-      pending "only valid if parent is slide"
-      pending "only valid if element is a SidebarItem"
+      before do
+        @s = Factory :sidebar_item_node
+      end
+      
+      it "only valid if parent is tab" do
+        @s.parent_id = Factory(:root_node).id
+        @s.should_not be_valid
+        @s.should have(1).error_on(:parent_id)
+      end
+
+      it "only valid if element is a SidebarItem" do
+        elem = Factory(:slide)
+        @s.element = elem
+        @s.should_not be_valid
+        @s.should have(1).error_on(:element_type)
+
+        elem = Factory(:sidebar_item)
+        @s.element = elem
+        @s.should be_valid
+      end
     end
-    # etc
+    
+    context "SlideNode" do
+      before do
+        @s = Factory :slide_node
+      end
+      
+      it "only valid if parent is sidebar item" do
+        @s.parent_id = Factory(:root_node).id
+        @s.should_not be_valid
+        @s.should have(1).error_on(:parent_id)
+      end
+      
+      it "only valid if element is a Slide" do
+        elem = Factory(:sidebar_item)
+        @s.element = elem
+        @s.should_not be_valid
+        @s.should have(1).error_on(:element_type)
+
+        elem = Factory(:slide)
+        @s.element = elem
+        @s.should be_valid
+      end
+    end
+
+    context "InputElementNode" do
+      pending
+    end
+
+    context "OutputElementNode" do
+      pending
+    end
   end
 end
 
-# == Schema Information
-#
-# Table name: view_nodes
-#
-#  id             :integer(4)      not null, primary key
-#  key            :string(255)
-#  element_id     :integer(4)
-#  element_type   :string(255)
-#  ancestry       :string(255)
-#  position       :integer(4)
-#  ancestry_depth :integer(4)      default(0)
-#  type           :string(255)
-#
+# The structure is
+# RootNode
+#   Tab
+#     SidebarItem
+#       Slide
+#         InputElement
+#         OutputElement

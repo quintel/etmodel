@@ -52,9 +52,6 @@
       - form_tag(data_redirect_path, {:method => 'get'}) do 
 
         %label
-          Blueprint
-          = select_tag :blueprint_id, options_for_select(['latest'], params[:blueprint_id]), :onchange => 'submit()'
-        %label
           Region
           = select_tag :region_code, options_for_select(Area.region_codes, params[:region_code]), :onchange => 'submit()'
     
@@ -63,7 +60,6 @@
         = link_to 'Converters', data_converters_path
         = link_to 'Gqueries', data_gqueries_path
         = link_to 'Tests', data_gql_test_cases_path
-        = link_to 'Graph', data_blueprint_layouts_path
 
         -#= link_to 'Graph Construction Site', '#'
 

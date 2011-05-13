@@ -1,6 +1,6 @@
 class OutputElementsController < ApplicationController
   around_filter :disable_gc
-  
+
 
   # layout 'fancybox'
   def show
@@ -49,5 +49,4 @@ class OutputElementsController < ApplicationController
     render :update do |page|
     end
   end
-
 end

@@ -5,20 +5,17 @@ class PagesController < ApplicationController
   before_filter :defaults
   skip_before_filter :show_intro_screens_only_once, :only => [:intro]
 
-  before_filter :restrict_to_admin, :only => [:admin]
-
-
   # TODO refactor move the Current-stuff somewhere else (seb 2010-10-11)
   def root
-    redirect_to Current.server_config.root_page if Current.server_config.root_page
+    redirect_to APP_CONFIG[:root_page] if APP_CONFIG[:root_page]
     # if user wanted to start with a new scenario
     if params[:end_year]
       Current.scenario = Scenario.default  
 
       Current.scenario.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
-      country,region = params[:region].split("-")
-
-      Current.scenario.set_country_and_region(country, params[:region])
+      country = params[:region].split("-").first
+      region = params[:region] # we need the full region code here
+      Current.scenario.set_country_and_region(country, region)
       Current.scenario.complexity = params[:complexity]
       Current.setting = Setting.default
 
@@ -47,10 +44,6 @@ class PagesController < ApplicationController
   def intro
     @render_tabs = true
     render :layout => 'pages'
-  end
-
-  def admin
-    render :layout => 'admin'
   end
 
   def press_releases

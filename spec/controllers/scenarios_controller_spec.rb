@@ -1,4 +1,3 @@
-
 require 'spec_helper'
 
 describe ScenariosController do
@@ -6,12 +5,11 @@ describe ScenariosController do
   
   before(:each) do
     stub_etm_layout_methods!  
-    @scenario = Factory(:scenario)
-    @user = Factory(:user)
+    @scenario      = Factory(:scenario)
+    @user          = Factory(:user)
     @scenario.user = @user
     @scenario.save
   end
-  
   
   context "User has loaded a scenario" do
     before(:each) do
@@ -52,8 +50,6 @@ describe ScenariosController do
       end
     end
     
-    
-    
     describe "#edit" do
       context "not logged in" do
         it "should not display the edit form" do
@@ -74,8 +70,6 @@ describe ScenariosController do
         end
       end
     end
-
-
 
     describe "#update" do
       it "should save the user values when they are updated" do
@@ -121,11 +115,4 @@ describe ScenariosController do
     end
   
   end
-  
-  
-  
-  
-  
-  
-  
 end

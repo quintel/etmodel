@@ -4,7 +4,7 @@ module ApplicationController::ExceptionHandling
   included do
     HTTPStatus::Base.template_layout = 'pages'
 
-    self.rescue_from(ActionController::NotImplemented) do |exception|
+    rescue_from(ActionController::NotImplemented) do |exception|
       logger.debug "Handling ActionController::NotImplemented."
       notify_hoptoad(exception)
       http_status_exception(HTTPStatus::MethodNotAllowed.new(exception.message))
@@ -25,7 +25,7 @@ module ApplicationController::ExceptionHandling
     rescue_from(ActionController::RoutingError) do |exception|
       logger.debug "Handling ActiveRecord::RoutingError."
       notify_hoptoad(exception)
-      http_status_exception(HTTPStatus::MovedPermanently.new(exception.message))
+      http_status_exception(HTTPStatus::NotFound.new(exception.message))
     end
 
     rescue_from(AbstractController::ActionNotFound) do |exception|
@@ -33,7 +33,6 @@ module ApplicationController::ExceptionHandling
       notify_hoptoad(exception)
       http_status_exception(HTTPStatus::MovedPermanently.new(exception.message))
     end
-
 
     rescue_from(HTTPStatus::Base) do |exception|
       logger.debug "Handling HTTPStatus::Base."

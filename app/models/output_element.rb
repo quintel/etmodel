@@ -88,6 +88,11 @@ class OutputElement < ActiveRecord::Base
   def parsed_name_for_admin
     "#{group} | #{name} | #{description.andand.short_content}"
   end
+  
+  # returns the type of chart (bezier, html_table, ...)
+  def type
+    output_element_type.try(:name)
+  end
 end
 
 

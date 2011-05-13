@@ -8,28 +8,29 @@
     .difference
     = render 'layouts/etm/constraint_box'
 
-
-
   #constraints
-    - Current.view.root.constraints.order(:id).each_with_index do |constraint, i|
-      - opts = {}
-      - opts[:id] ="constraint_#{constraint.id}"
-      - opts[:class] = (constraint.id == 1) ? 'first' : nil
-      - opts[:rel] = "/constraints/#{constraint.id}"
-      -# opts[:'data-tooltip'] = "#{t("constraint.click for more information")}"
+    - if Current.view.root # TODO: remove this but find a solution to make testing possible - PZ Thu May 5 16:20:08 CEST 2011 
+      - Current.view.root.constraints.order(:id).each_with_index do |constraint, i|
+        - opts = {}
+        - opts[:id] ="constraint_#{constraint.id}"
+        - opts[:class] = (constraint.id == 1) ? 'first' : nil
+        - opts[:rel] = "/constraints/#{constraint.id}"
+        -# opts[:'data-tooltip'] = "#{t("constraint.click for more information")}"
       
-      .constraint{opts}
-        %div.arrow
-        %span.header
-          = I18n.t(constraint.name)
-          %span.scale
-            =# "(%s)" % constraint.formatted_output_scale if ! constraint.formatted_output_scale.blank?
-        %strong 
-        -#%strong=#= #{constraint.output}
-        .difference 
-        = render 'layouts/etm/constraint_box', :title => constraint.extended_title
-    .clear
+        .constraint{opts}
+          %div.arrow
+          %span.header
+            = I18n.t(constraint.name)
+            %span.scale
+              =# "(%s)" % constraint.formatted_output_scale if ! constraint.formatted_output_scale.blank?
+          %strong 
+          -#%strong=#= #{constraint.output}
+          .difference 
+          = render 'layouts/etm/constraint_box', :title => constraint.extended_title
+      .clear
    
-  %script
-    - Current.view.root.constraints.order(:id).each_with_index do |constraint, i|
-      == dashboard.add({ id : #{constraint.id.inspect}, key : #{constraint.key.to_s.inspect.html_safe}, gquery_key : #{constraint.gquery.key.to_s.inspect.html_safe}});
+      %script
+        - Current.view.root.constraints.order(:id).each do |c|
+          dashboard.add(
+          = { :id => c.id, :key => c.key, :gquery_key => c.gquery.try(:key) }.to_json.html_safe
+          );

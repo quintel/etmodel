@@ -1,13 +1,13 @@
 = back_to_model_link
 %h1= t("scenario.save")
 %p
-  - unless Current.server_config.max_scenarios == 1
+  - unless APP_CONFIG[:max_scenarios] == 1
     = t("scenario.save_desc_asmany")
   = t("scenario.save_desc")
 
 %div{:style => "width: 600px"}
   - semantic_form_for @scenario, :html => {:multipart => true} do |f|
-    = render 'form', :object => f
+    = render :partial => 'form', :object => f
 
 - if !(@existing_attachments.nil? || @existing_attachments.empty?)
   %fieldset{:class => 'inputs'}

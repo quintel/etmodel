@@ -137,18 +137,15 @@ class InputElement < ActiveRecord::Base
     self[:max_value] || 0
   end
 
-
   def self.households_heating_sliders
     where("slide_id = 4")
   end
-  
-  
-  
+
   #def fixed?
   #  
   #end
   def disabled
-    has_locked_input_element_type?(input_element_type) || blacklisted_if_whitelist_available?(id)
+    has_locked_input_element_type?(input_element_type)
   end
   #############################################
   # Methods that interact with a users values
@@ -167,17 +164,6 @@ class InputElement < ActiveRecord::Base
     Current.scenario.store_user_value(self, value || start_value || 0).round(2)
   end
   
-  def backbone_options
-    [
-      :id, :name, :unit, :share_group,
-      :start_value, :min_value, :max_value, :step_value, 
-      :user_value, :disabled, :translated_name, 
-      :semi_unadaptable,:disabled_with_message, 
-      :input_element_type, :has_flash_movie
-    ].inject({}) do |hsh, key|
-      hsh.merge key.to_s => self.send(key)
-    end
-  end
 
   def as_json(options = {})
     super(:only => [:id, :name, :unit, :share_group, :factor], 
@@ -207,8 +193,11 @@ class InputElement < ActiveRecord::Base
     (description.andand.content.andand.gsub('id="player"','class="player"') || "").html_safe
   end
   
+  # TODO - refactor
   def parsed_label
     "#{Current.gql.query_present(label_query).round(2)} #{label}".html_safe unless label_query.blank?
+  rescue
+    "Missing parsed label"
   end
   
   ##
@@ -291,14 +280,6 @@ class InputElement < ActiveRecord::Base
   #
   def has_locked_input_element_type?(input_type)
     %w[fixed remainder fixed_share].include?(input_type)
-  end
-
-  ##
-  # @tested 2010-12-22 robbert
-  #
-  def blacklisted_if_whitelist_available?(id)
-    return false if Current.server_config.whitelist.nil?
-    return !Current.server_config.whitelist.include?(id.to_i)
   end
   
   def has_flash_movie

@@ -2,7 +2,6 @@ class TabNode < ViewNode
   has_many :sidebar_item_nodes
 
   validate :parent_is_root
-
   validates :element_id, :presence => true
   validates :element_type, :inclusion => %w[Tab]
 end

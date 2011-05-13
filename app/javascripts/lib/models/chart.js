@@ -2,12 +2,31 @@
 var Chart = Backbone.Model.extend({
   initialize : function() {
     this.series = new ChartSeries;
-    if (this.get('type') == 'bezier')
-      new BezierChartView({model : this});
-    else if (this.get('type') == 'horizontal_bar')
-      new HorizontalBarChartView({model : this});
-    else if (this.get('type') == 'vertical_stacked_bar')
-      new VerticalStackedBarChartView({model : this});
+    this.bind('change:type', this.render);
+    this.render();
+  },
+  
+  render : function() {
+    var type = this.get('type');
+    switch (type) {
+      case 'bezier' :
+        new BezierChartView({model : this});
+        break;
+      case 'horizontal_bar' :
+        new HorizontalBarChartView({model : this});
+        break;
+      case 'vertical_stacked_bar' :
+        new VerticalStackedBarChartView({model : this});
+        break;
+      case 'vertical_bar' :
+        new VerticalBarChartView({model : this});
+        break;
+      case 'html_table' :
+        new HtmlTableChartView({model : this});
+        break;
+      default:
+        new HtmlTableChartView({model : this});
+    }
   },
 
   // @return [ApiResultArray] = [
@@ -46,6 +65,18 @@ var Chart = Backbone.Model.extend({
   target_series : function() {
     return this.series
       .select(function(serie) { return serie.get('is_target'); });
+  },
+  // @return Array of hashes {label, present_value, future_value}
+  series_hash : function() {
+    return this.series.map(function(serie) {
+      var res = serie.result();
+      var out = {
+        label : serie.get('label'),
+        present_value : res[0][1],
+        future_value : res[1][1],
+      }
+      return out; 
+    });
   }
 });
 

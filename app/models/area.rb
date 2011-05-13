@@ -3,21 +3,11 @@ class Area < ActiveRecord::Base
   scope :country, lambda {|country| where(:country => country) }
 
   has_many :datasets, :dependent => :destroy
-  has_many :carrier_datas, :dependent => :delete_all
-
-  after_create :create_carrier_datas
 
   # TODO change country to region_code
   def region_code
     country
   end
-
-  def create_carrier_datas
-    Carrier.all.each do |carrier|
-      CarrierData.create(:area_id => self.id, :carrier_id => carrier.id)
-    end
-  end
-
   
   def is_municipality?
     entity == "municipality"
@@ -29,9 +19,6 @@ class Area < ActiveRecord::Base
 
   def dataset_key
     :area_data
-  end
-
-  def to_qernel
   end
 
   def number_of_existing_households

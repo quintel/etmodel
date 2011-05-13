@@ -58,6 +58,8 @@ class Scenario < ActiveRecord::Base
       end
       
     end
+    puts "_______________________________________________"
+    puts "#{lce.update_statements}"
     add_update_statements(lce.update_statements)
   end
 
@@ -197,12 +199,13 @@ class Scenario < ActiveRecord::Base
   #
   # @tested 2010-12-06 seb
   #
+  # TODO: refactor this or refactor the tests - PZ Wed 27 Apr 2011 15:48:52 CEST
   def scale_factor_for_municipality(input_element)
-    return nil if input_element.locked_for_municipalities.blank?
+    return nil unless input_element.locked_for_municipalities
     if input_element_scaled_for_municipality?(input_element)
       electricity_country = area_country.current_electricity_demand_in_mj
-      electricity_region = area_region.current_electricity_demand_in_mj
-      (electricity_country / electricity_region).to_f
+      electricity_region  = area_region.current_electricity_demand_in_mj
+      electricity_country.to_f / electricity_region rescue nil # prevent division by zero, you never know
     end
   end
 
@@ -216,6 +219,6 @@ class Scenario < ActiveRecord::Base
   #
   def input_element_scaled_for_municipality?(input_element)
     # TODO move to InputElement as no scenario state is used anymore
-    input_element.slide.andand.controller_name == 'supply' || input_element.slide.contains_chp_slider?
+    input_element.slide.andand.controller_name == 'supply' || input_element.slide.andand.contains_chp_slider?
   end
 end

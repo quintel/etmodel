@@ -24,7 +24,8 @@ class OutputElementSerie < ActiveRecord::Base
   scope :block_charts, where(:output_element_id => OutputElement::BLOCK_CHART_ID)
 
   scope :contains, lambda{|search| where("`key` LIKE ?", "%#{search}%")}
-
+  
+  validates :gquery, :presence => true
 
   # delegate :name, :to => :output_element, :prefix => 'output_element', :allow_nil => true
 

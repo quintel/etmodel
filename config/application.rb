@@ -43,7 +43,6 @@ module Etm
   end
 
   require 'lib/session_accessor'
-  require 'vendor/plugins/hodel_3000_compliant_logger/lib/hodel_3000_compliant_logger'
   
   # see ApplicationController#browser for list of browser types
  

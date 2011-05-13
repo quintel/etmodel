@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: page_titles
+#
+#  id         :integer(4)      not null, primary key
+#  controller :string(255)
+#  action     :string(255)
+#  title      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class PageTitle < ActiveRecord::Base
   has_paper_trail
 
@@ -19,16 +31,4 @@ class PageTitle < ActiveRecord::Base
   end
 
 end
-
-# == Schema Information
-#
-# Table name: page_titles
-#
-#  id         :integer(4)      not null, primary key
-#  controller :string(255)
-#  action     :string(255)
-#  title      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#
 

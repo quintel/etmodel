@@ -1,3 +1,38 @@
+# == Schema Information
+#
+# Table name: input_elements
+#
+#  id                        :integer(4)      not null, primary key
+#  name                      :string(255)
+#  key                       :string(255)
+#  keys                      :text
+#  attr_name                 :string(255)
+#  slide_id                  :integer(4)
+#  share_group               :string(255)
+#  start_value_gql           :string(255)
+#  min_value_gql             :string(255)
+#  max_value_gql             :string(255)
+#  min_value                 :float
+#  max_value                 :float
+#  start_value               :float
+#  order_by                  :float
+#  step_value                :decimal(4, 2)
+#  created_at                :datetime
+#  updated_at                :datetime
+#  update_type               :string(255)
+#  unit                      :string(255)
+#  factor                    :float
+#  input_element_type        :string(255)
+#  label                     :string(255)
+#  comments                  :text
+#  update_value              :string(255)
+#  complexity                :integer(4)      default(1)
+#  interface_group           :string(255)
+#  update_max                :string(255)
+#  locked_for_municipalities :boolean(1)
+#  label_query               :string(255)
+#
+
  # More defined in pkg/optimize/input_element.rb!!!
 #
 #
@@ -299,39 +334,4 @@ end
 
 
 
-
-# == Schema Information
-#
-# Table name: input_elements
-#
-#  id                        :integer(4)      not null, primary key
-#  name                      :string(255)
-#  slide_id                  :integer(4)
-#  share_group               :string(255)
-#  start_value_gql           :string(255)
-#  min_value_gql             :string(255)
-#  max_value_gql             :string(255)
-#  min_value                 :float
-#  max_value                 :float
-#  start_value               :float
-#  keys                      :text
-#  attr_name                 :string(255)
-#  order_by                  :float
-#  step_value                :decimal(4, 2)
-#  created_at                :datetime
-#  updated_at                :datetime
-#  update_type               :string(255)
-#  unit                      :string(255)
-#  factor                    :float
-#  input_element_type        :string(255)
-#  label                     :string(255)
-#  comments                  :text
-#  update_value              :string(255)
-#  complexity                :integer(4)      default(1)
-#  interface_group           :string(255)
-#  update_max                :string(255)
-#  locked_for_municipalities :boolean(1)
-#  label_query               :string(255)
-#  key                       :string(255)
-#
 

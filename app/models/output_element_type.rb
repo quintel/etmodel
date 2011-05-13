@@ -1,13 +1,3 @@
-class OutputElementType < ActiveRecord::Base
-  has_paper_trail
-
-  has_many :output_elements
-
-  def html_table?
-    name == 'html_table'
-  end
-end
-
 # == Schema Information
 #
 # Table name: output_element_types
@@ -17,4 +7,14 @@ end
 #  created_at :datetime
 #  updated_at :datetime
 #
+
+class OutputElementType < ActiveRecord::Base
+  has_paper_trail
+
+  has_many :output_elements
+
+  def html_table?
+    name == 'html_table'
+  end
+end
 

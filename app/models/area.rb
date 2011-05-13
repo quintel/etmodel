@@ -1,43 +1,3 @@
-class Area < ActiveRecord::Base
-  has_paper_trail
-  scope :country, lambda {|country| where(:country => country) }
-
-  has_many :datasets, :dependent => :destroy
-
-  # TODO change country to region_code
-  def region_code
-    country
-  end
-  
-  def is_municipality?
-    entity == "municipality"
-  end
-
-  def co2_emission_1990_billions
-    co2_emission_1990 * BILLIONS
-  end
-
-  def dataset_key
-    :area_data
-  end
-
-  def number_of_existing_households
-    number_households * (1 - (percentage_of_new_houses/100))
-  end
-
-  def dataset_attributes
-    attributes.merge(:area => country)
-  end
-
-  def self.region_codes
-    find(:all, :select => "DISTINCT country").map(&:country)
-  end
-end
-
-
-
-
-
 # == Schema Information
 #
 # Table name: areas
@@ -94,5 +54,46 @@ end
 #  current_electricity_demand_in_mj         :integer(8)      default(1)
 #  has_solar_csp                            :boolean(1)
 #  has_old_technologies                     :boolean(1)
+#  parent_id                                :integer(4)
 #
+
+class Area < ActiveRecord::Base
+  has_paper_trail
+  scope :country, lambda {|country| where(:country => country) }
+
+  has_many :datasets, :dependent => :destroy
+
+  # TODO change country to region_code
+  def region_code
+    country
+  end
+  
+  def is_municipality?
+    entity == "municipality"
+  end
+
+  def co2_emission_1990_billions
+    co2_emission_1990 * BILLIONS
+  end
+
+  def dataset_key
+    :area_data
+  end
+
+  def number_of_existing_households
+    number_households * (1 - (percentage_of_new_houses/100))
+  end
+
+  def dataset_attributes
+    attributes.merge(:area => country)
+  end
+
+  def self.region_codes
+    find(:all, :select => "DISTINCT country").map(&:country)
+  end
+end
+
+
+
+
 

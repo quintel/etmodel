@@ -5,7 +5,7 @@
   </script>
   <script type="text/javascript">
   try {
-  = "var tracker_code = '#{ga_tracker_code}'"
+  = "var tracker_code = '#{APP_CONFIG['ga_tracker_code']}'"
   var pageTracker = _gat._getTracker(tracker_code);
   pageTracker._trackPageview();
   } catch(err) {}</script>

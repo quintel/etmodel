@@ -38,7 +38,8 @@ var Gquery = Backbone.Model.extend({
   },
   
   is_acceptable_value : function(n) {
-    return !(n === false || n === undefined || n === "" || n === NaN)
+    var x = parseInt(n);
+    return ( _.isNumber(x) && !_.isNaN(x) );
   }
 });
 

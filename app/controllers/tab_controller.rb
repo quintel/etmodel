@@ -8,11 +8,18 @@ class TabController < ApplicationController
                 :load_output_element,
                 :preload_gql
 
+  before_filter :show_intro_at_least_once, :only => :show
+
   def show
-    show_intro_at_least_once
   end
 
   def load_output_element
     @output_element = Current.view.default_output_element_for_sidebar_item
   end
+
+  protected
+
+    def show_intro_at_least_once
+      redirect_to :action => 'intro' unless Current.already_shown?("#{params[:controller]}")
+    end
 end

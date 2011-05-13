@@ -21,7 +21,12 @@ window.AppView = Backbone.View.extend({
     var params = {'result' : window.gqueries.keys() };
 
     LockableFunction.setLock('call_api');
-    $.getJSON(url, params, this.handle_api_result);
+    $.jsonp({
+      url: url + '?callback=?',
+      data: params,
+      success: this.handle_api_result,
+      error: function() { console.log("Something went wrong"); }
+    });
   },
 
   // The following method could need some refactoring

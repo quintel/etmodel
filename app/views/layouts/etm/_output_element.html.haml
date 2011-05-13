@@ -7,9 +7,22 @@
   -if @output_element.under_construction || (params[:id] == "buildings" && Current.scenario.country == "de")
     #chart_not_finished
 
-  %div#current_chart.column-r-content
+  #chart_switcher
+    = link_to_function 'switch chart type', 'switch_chart()'
+  #current_chart.column-r-content
   
-    - if @output_element.html_table?
-      = render '/output_elements/html_table'
-
 = javascript_include_tag output_element_path(:id => @output_element, :format => 'js')
+
+:javascript
+  function switch_chart() {
+    var chart        = charts.first();
+    var current_type = chart.get("type");
+    
+    if(!chart.get("original_type")) {
+      chart.set({ original_type : current_type});
+    }
+    
+    var new_type = (current_type == 'html_table' ? chart.get("original_type") : 'html_table');
+    chart.set({ previous_chart_type : current_type});    
+    chart.set({ type : new_type});
+  }

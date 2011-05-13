@@ -43,13 +43,11 @@ Etm::Application.routes.draw do
   resource :settings, :searches
 
   namespace :admin do
-    match 'carrier_datas/update_by_areagroup/:areagroup/:carrier' => "carrier_datas#update_by_areagroup"
+    root :to => 'pages#index'
+    
     resources :areas,
-              :areagroups,
-              :carriers,
               :expert_predictions, 
               :input_elements, 
-              :carrier_datas,
               :historic_series, 
               :year_values, 
               :tabs, 
@@ -57,15 +55,11 @@ Etm::Application.routes.draw do
               :sidebar_items, 
               :descriptions, 
               :translations, 
-              :blackbox_scenarios, 
-              :converters, 
               :output_elements, 
               :output_element_series, 
               :query_tables, 
               :query_table_cells, 
               :press_releases, 
-              :blueprint_converters, 
-              :groups, 
               :converter_positions,
               :view_nodes
 
@@ -92,11 +86,6 @@ Etm::Application.routes.draw do
         get :result
       end
     end
-    resources :blueprints do
-      get :graph, :on => :member
-      resources :blueprint_converters
-      resources :groups
-    end
   end
 
   resource :scenario do
@@ -118,11 +107,6 @@ Etm::Application.routes.draw do
 
   namespace :optimizer do
     resources :optimizers
-  end
-  
-  
-  namespace :game do
-    resources :games
   end
 
 # TODO rails 3
@@ -162,7 +146,6 @@ Etm::Application.routes.draw do
   match '/careers' => 'pages#careers', :as => :careers
   match '/sitemap' => 'pages#sitemap', :as => :sitemap
   match '/information' => 'pages#information', :as => :information
-  match '/admin' => 'pages#admin', :as => :admin_home
 
   match '/:controller(/:action(/:id))'
 

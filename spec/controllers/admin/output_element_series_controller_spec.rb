@@ -1,13 +1,11 @@
 require 'spec_helper'
 
 describe Admin::OutputElementSeriesController do
-  before(:all) { Authorization.ignore_access_control(true); OutputElementSerie.new().save }
-  after(:all)  { Authorization.ignore_access_control(false) }
+  let!(:serie) { Factory :output_element_serie }
 
-#  before(:each) do
-#    output_element_serie = OutputElementSerie.new().save
-#    output_element_serie.save(false)
-#  end
+   before(:each) do
+     controller.class.skip_before_filter :restrict_to_admin
+   end
 
   render_views
 
@@ -27,24 +25,16 @@ describe Admin::OutputElementSeriesController do
   end
 
   describe "create" do
-    before do
-      @output_element_serie = OutputElementSerie.new 
-      OutputElementSerie.should_receive(:new).with(any_args).and_return(@output_element_serie)
-    end
-
     it "create action should render new template when model is invalid" do
-      @output_element_serie.stub!(:save).and_return(false)
       post :create
       response.should render_template(:new)
     end
 
     it "create action should redirect when model is valid" do
-      @output_element_serie.stub!(:save).and_return(true)
-      post :create
+      post :create, :output_element_serie => Factory.attributes_for(:output_element_serie)
       response.should redirect_to(admin_output_element_series_url)
     end
   end
-
 
   describe "update" do
     before do
@@ -66,14 +56,14 @@ describe Admin::OutputElementSeriesController do
   end
 
   it "edit action should render edit template" do
-    get :edit, :id => OutputElementSerie.first
+    get :edit, :id => serie.id
     response.should render_template(:edit)
   end
 
 
   it "destroy action should destroy model and redirect to index action" do
-    output_element_serie = OutputElementSerie.first
-    delete :destroy, :id => output_element_serie
+    output_element_serie = Factory :output_element_serie
+    delete :destroy, :id => output_element_serie.id
     response.should redirect_to(admin_output_element_series_url)
     OutputElementSerie.exists?(output_element_serie.id).should be_false
   end

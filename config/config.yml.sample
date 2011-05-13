@@ -1,0 +1,18 @@
+development: &DEV
+    api_url: http://etengine.dev/api/v2
+    debug_qernel: true
+    ga_tracker_code: 123456
+    transition_price: false
+    unselectable_text: false
+    header_logo:
+    max_scenarios:
+    root_page:
+    save_button:
+
+production:
+    <<: *DEV
+    debug_qernel: false
+    hoptoad_api_key: '3ea5a72aad48a32d7bb486bc71ad4fd5'
+
+test:
+    <<: *DEV

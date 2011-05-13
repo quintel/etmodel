@@ -1,6 +1,5 @@
 class Admin::AdminController < ApplicationController
   layout 'admin'
-
   before_filter :restrict_to_admin
 
   # This is to remind the analysts to start using the new data interface
@@ -39,5 +38,4 @@ class Admin::AdminController < ApplicationController
     raise "@graph is undefined. Probably forgot to add before_filter :load_graph" unless @graph
     @qernel_graph = (params[:graph] == 'future') ? @graph.gql.future : @graph.gql.present
   end
-
 end

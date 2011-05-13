@@ -75,28 +75,23 @@ class TransitionPriceController < ApplicationController
   #
   def load_scenario
     scenario = current_user.scenarios.by_type(:transition_price).first
-    
     if scenario.nil?
       preset = find_transition_price_preset
       raise HTTPStatus::Forbidden.new("A preset scenario need to be created with as scenariotype: transition_price_preset") if preset.nil?
       scenario = current_user.scenarios.create( :title => preset.title, :preset_scenario_id => preset.id, :preset_scenario => preset, :scenario_type => Scenario::TRANSITION_PRICE_TYPE)
     end
     
-    redirect_to load_scenario_path(:id => scenario.id ,:redirect_to => transition_price_intro_path(:step => '2'))
+    redirect_to load_scenario_path(:id => scenario.id, :redirect_to => transition_price_intro_path(:step => '2'))
   end
 
-
-  
   private 
   
-  #
-  # Finds the transition price preset
-  #
-  # NOTE: Make sure this scenario exists in the database.
-  #
-  def find_transition_price_preset
-    Scenario.by_type('transition_price_preset').first
-  end
-
-
+    #
+    # Finds the transition price preset
+    #
+    # NOTE: Make sure this scenario exists in the database.
+    #
+    def find_transition_price_preset
+      Scenario.by_type('transition_price_preset').first
+    end
 end

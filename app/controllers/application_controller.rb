@@ -40,10 +40,6 @@ class ApplicationController < ActionController::Base
     
   end
 
-  def show_intro_at_least_once
-    redirect_to :action => 'intro' unless Current.already_shown?("#{params[:controller]}")
-  end
-
   def show_qernel_errors(exception)
     @exception = exception
     render :file => 'pages/qernel_error', :layout => 'pages'

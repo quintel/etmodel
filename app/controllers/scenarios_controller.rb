@@ -88,7 +88,6 @@ class ScenariosController < ApplicationController
   # @tested 2010-12-22 jape
   #
   def update
-      puts "CURRENT?"
     if request.put?
       flash[:notice] = t('flash.succesfully_saved')
 

@@ -11,7 +11,6 @@ class Admin::OutputElementSeriesController  < Admin::AdminController
 
   def create
     @output_element_serie = OutputElementSerie.new(params[:output_element_serie])
-
     if @output_element_serie.save
       flash[:notice] = "OutputElementSerie saved"
       redirect_to admin_output_element_series_url

@@ -80,20 +80,15 @@ describe InputElement do
   
   describe "set correct input_elements as disabled" do
     it "should be true when input_element is locked_for_transition_price? or has_locked_input_element_type?" do
-      Current.stub_chain([:server_config, :whitelist]).and_return([ 16])
       InputElement.stub!(:find).and_return([])
       input_element = InputElement.new
-      input_element.blacklisted_if_whitelist_available?(256).should be_true #coal plant
-      input_element.blacklisted_if_whitelist_available?(16).should  be_false #gas cost
       input_element.has_locked_input_element_type?("fixed").should be_true
       input_element.has_locked_input_element_type?("share").should be_false
     end
-
   end
 
   describe "#caching of values" do
-    
-    
+    pending
   end
 end
 

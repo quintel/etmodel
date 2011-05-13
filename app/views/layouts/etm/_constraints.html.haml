@@ -8,8 +8,6 @@
     .difference
     = render 'layouts/etm/constraint_box'
 
-
-
   #constraints
     - if Current.view.root # TODO: remove this but find a solution to make testing possible - PZ Thu May 5 16:20:08 CEST 2011 
       - Current.view.root.constraints.order(:id).each_with_index do |constraint, i|
@@ -32,5 +30,7 @@
       .clear
    
       %script
-        - Current.view.root.constraints.order(:id).each_with_index do |constraint, i|
-          == dashboard.add({ id : #{constraint.id.inspect}, key : #{constraint.key.to_s.inspect.html_safe}, gquery_key : #{constraint.gquery.key.to_s.inspect.html_safe}});
+        - Current.view.root.constraints.order(:id).each do |c|
+          dashboard.add(
+          = { :id => c.id, :key => c.key, :gquery_key => c.gquery.try(:key) }.to_json.html_safe
+          );

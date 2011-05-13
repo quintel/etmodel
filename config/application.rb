@@ -68,5 +68,4 @@ module Etm
 end
 
 ALLOWED_BROWSERS = %w[firefox ie9 ie8 ie7 chrome safari]
-AVAILABLE_LOCALES = %w[nl en]
 GC_DISABLING_HACK_ENABLED = true

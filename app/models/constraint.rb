@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: constraints
+#
+#  id             :integer(4)      not null, primary key
+#  key            :string(255)
+#  name           :string(255)
+#  extended_title :string(255)
+#  query          :string(255)
+#  created_at     :datetime
+#  updated_at     :datetime
+#  gquery_id      :integer(4)
+#
+
 # REFACTOR seb : this should probably belong within helpers
 module ConstraintFormatter
 
@@ -92,17 +106,4 @@ class Constraint < ActiveRecord::Base
   
   
 end
-
-# == Schema Information
-#
-# Table name: constraints
-#
-#  id             :integer(4)      not null, primary key
-#  key            :string(255)
-#  name           :string(255)
-#  extended_title :string(255)
-#  query          :string(255)
-#  created_at     :datetime
-#  updated_at     :datetime
-#
 

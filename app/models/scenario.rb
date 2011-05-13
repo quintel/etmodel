@@ -1,3 +1,28 @@
+# == Schema Information
+#
+# Table name: scenarios
+#
+#  id                 :integer(4)      not null, primary key
+#  author             :string(255)
+#  title              :string(255)
+#  description        :text
+#  user_updates       :text
+#  created_at         :datetime
+#  updated_at         :datetime
+#  user_values        :text
+#  end_year           :integer(4)      default(2040)
+#  country            :string(255)
+#  in_start_menu      :boolean(1)
+#  region             :string(255)
+#  user_id            :integer(4)
+#  complexity         :integer(4)      default(3)
+#  scenario_type      :string(255)
+#  preset_scenario_id :integer(4)
+#  type               :string(255)
+#  api_session_key    :string(255)
+#  lce_settings       :text
+#
+
 ##
 # Useage:
 # Getting the default scenario:
@@ -192,29 +217,4 @@ class Scenario < ActiveRecord::Base
   Dir["app/models/scenario/*.rb"].sort.each {|file| require_dependency file }
 end
 
-
-# == Schema Information
-#
-# Table name: scenarios
-#
-#  id                 :integer(4)      not null, primary key
-#  author             :string(255)
-#  title              :string(255)
-#  description        :text
-#  user_updates       :text
-#  created_at         :datetime
-#  updated_at         :datetime
-#  user_values        :text
-#  end_year           :integer(4)      default(2040)
-#  country            :string(255)
-#  in_start_menu      :boolean(1)
-#  region             :string(255)
-#  user_id            :integer(4)
-#  complexity         :integer(4)      default(3)
-#  scenario_type      :string(255)
-#  preset_scenario_id :integer(4)
-#  type               :string(255)
-#  api_session_key    :string(255)
-#  lce_settings       :text
-#
 

@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: view_nodes
+#
+#  id             :integer(4)      not null, primary key
+#  key            :string(255)
+#  element_id     :integer(4)
+#  element_type   :string(255)
+#  ancestry       :string(255)
+#  position       :integer(4)
+#  ancestry_depth :integer(4)      default(0)
+#  type           :string(255)
+#
+
 ##
 # In the user-facing front end, ViewNode and all depending classes
 # should not be used. Use {ViewSetting} instead!

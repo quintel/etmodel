@@ -1,7 +1,3 @@
-class Role < ActiveRecord::Base
-  has_many :users
-end
-
 # == Schema Information
 #
 # Table name: roles
@@ -11,4 +7,8 @@ end
 #  created_at :datetime
 #  updated_at :datetime
 #
+
+class Role < ActiveRecord::Base
+  has_many :users
+end
 

@@ -137,13 +137,10 @@ class InputElement < ActiveRecord::Base
     self[:max_value] || 0
   end
 
-
   def self.households_heating_sliders
     where("slide_id = 4")
   end
-  
-  
-  
+
   #def fixed?
   #  
   #end
@@ -167,17 +164,6 @@ class InputElement < ActiveRecord::Base
     Current.scenario.store_user_value(self, value || start_value || 0).round(2)
   end
   
-  def backbone_options
-    [
-      :id, :name, :unit, :share_group,
-      :start_value, :min_value, :max_value, :step_value, 
-      :user_value, :disabled, :translated_name, 
-      :semi_unadaptable,:disabled_with_message, 
-      :input_element_type, :has_flash_movie
-    ].inject({}) do |hsh, key|
-      hsh.merge key.to_s => self.send(key)
-    end
-  end
 
   def as_json(options = {})
     super(:only => [:id, :name, :unit, :share_group, :factor], 

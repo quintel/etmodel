@@ -1,10 +1,3 @@
-class YearValue < ActiveRecord::Base
-  has_paper_trail
-
-  belongs_to :value_by_year, :polymorphic => true
-  scope :select_year, lambda {|year| where(:year => year) }
-end
-
 # == Schema Information
 #
 # Table name: year_values
@@ -18,4 +11,11 @@ end
 #  created_at         :datetime
 #  updated_at         :datetime
 #
+
+class YearValue < ActiveRecord::Base
+  has_paper_trail
+
+  belongs_to :value_by_year, :polymorphic => true
+  scope :select_year, lambda {|year| where(:year => year) }
+end
 

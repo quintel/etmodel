@@ -1,8 +1,3 @@
-class HistoricSerieEntry < ActiveRecord::Base
-  has_paper_trail
-  belongs_to :historic_serie
-end
-
 # == Schema Information
 #
 # Table name: historic_serie_entries
@@ -14,4 +9,9 @@ end
 #  created_at        :datetime
 #  updated_at        :datetime
 #
+
+class HistoricSerieEntry < ActiveRecord::Base
+  has_paper_trail
+  belongs_to :historic_serie
+end
 

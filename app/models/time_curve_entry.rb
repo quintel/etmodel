@@ -1,15 +1,3 @@
-class TimeCurveEntry < ActiveRecord::Base
-  belongs_to :graph
-
-  scope :ordered, order("converter_id ASC, value_type ASC, year ASC")
-  scope :only_decades, where("year % 10 = 0")
-
-  def preset_demand?
-    true
-  end
-
-end
-
 # == Schema Information
 #
 # Table name: time_curve_entries
@@ -23,4 +11,16 @@ end
 #  created_at   :datetime
 #  updated_at   :datetime
 #
+
+class TimeCurveEntry < ActiveRecord::Base
+  belongs_to :graph
+
+  scope :ordered, order("converter_id ASC, value_type ASC, year ASC")
+  scope :only_decades, where("year % 10 = 0")
+
+  def preset_demand?
+    true
+  end
+
+end
 

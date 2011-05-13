@@ -1,10 +1,3 @@
-class ExpertPrediction < ActiveRecord::Base
-  has_one :input_element
-  has_many :year_values, :as => :value_by_year
-  has_paper_trail
-end
-
-
 # == Schema Information
 #
 # Table name: expert_predictions
@@ -17,4 +10,11 @@ end
 #  updated_at       :datetime
 #  key              :string(255)
 #
+
+class ExpertPrediction < ActiveRecord::Base
+  has_one :input_element
+  has_many :year_values, :as => :value_by_year
+  has_paper_trail
+end
+
 

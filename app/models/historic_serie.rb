@@ -1,8 +1,3 @@
-class HistoricSerie < ActiveRecord::Base
-  has_paper_trail
-  has_many :year_values, :as => :value_by_year
-end
-
 # == Schema Information
 #
 # Table name: historic_series
@@ -13,4 +8,9 @@ end
 #  created_at :datetime
 #  updated_at :datetime
 #
+
+class HistoricSerie < ActiveRecord::Base
+  has_paper_trail
+  has_many :year_values, :as => :value_by_year
+end
 

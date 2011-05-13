@@ -61,22 +61,3 @@ end
 #  show_point_label       :boolean(1)
 #  growth_chart           :boolean(1)
 #
-
-# == Schema Information
-#
-# Table name: output_elements
-#
-#  id                     :integer(4)      not null, primary key
-#  name                   :string(255)
-#  output_element_type_id :integer(4)
-#  created_at             :datetime
-#  updated_at             :datetime
-#  under_construction     :boolean(1)      default(FALSE)
-#  legend_columns         :integer(4)
-#  legend_location        :string(255)
-#  unit                   :string(255)
-#  percentage             :boolean(1)
-#  group                  :string(255)
-#  show_point_label       :boolean(1)
-#  growth_chart           :boolean(1)
-#

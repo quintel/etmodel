@@ -1,17 +1,3 @@
-class PressRelease < ActiveRecord::Base
-  # has_one :description, :as => :describable
-  
-  def self.upload_file(upload)
-    name =  upload.original_filename
-    directory = "public/assets"
-    # create the file path
-    path = File.join(directory, name)
-    # write the file
-    File.open(path, "wb") { |f| f.write(upload.read) }
-  end
-end
-
-
 # == Schema Information
 #
 # Table name: press_releases
@@ -25,4 +11,18 @@ end
 #  updated_at   :datetime
 #  title        :string(255)
 #
+
+class PressRelease < ActiveRecord::Base
+  # has_one :description, :as => :describable
+  
+  def self.upload_file(upload)
+    name =  upload.original_filename
+    directory = "public/assets"
+    # create the file path
+    path = File.join(directory, name)
+    # write the file
+    File.open(path, "wb") { |f| f.write(upload.read) }
+  end
+end
+
 

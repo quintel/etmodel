@@ -1,11 +1,3 @@
-class Attachment < ActiveRecord::Base
-  has_attached_file :file
-  belongs_to :attachable, :polymorphic => true
-  
-  attr_accessible :file, :title
-
-end
-
 # == Schema Information
 #
 # Table name: attachments
@@ -21,4 +13,12 @@ end
 #  created_at        :datetime
 #  updated_at        :datetime
 #
+
+class Attachment < ActiveRecord::Base
+  has_attached_file :file
+  belongs_to :attachable, :polymorphic => true
+  
+  attr_accessible :file, :title
+
+end
 

@@ -1,6 +1,6 @@
 # This usually sits at the root of the project and is called ".watchr"
-@spec_cmd = "bundle exec rspec"
-@cuc_cmd  = "bundle exec cucumber"
+@spec_cmd = "rspec --drb"
+@cuc_cmd  = "cucumber"
 
 # Convenience methods ########################################################
 # Working on eventually adding Growl support. The problem right now is catching

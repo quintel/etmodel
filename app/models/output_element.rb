@@ -65,7 +65,8 @@ class OutputElement < ActiveRecord::Base
       'id' => self.id,
       'type' => output_element_type.name,
       'percentage' => percentage == true ,
-      'unit' => unit
+      'unit' => unit,
+      'group' => group
     }
   end
 

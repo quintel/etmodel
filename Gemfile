@@ -47,6 +47,7 @@ group :test, :development do
   gem 'hirb'
   gem 'awesome_print', :require => 'ap'
   gem 'watchr'
+  gem 'spork'
 end
 
 group :test do

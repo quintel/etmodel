@@ -7,7 +7,7 @@
     %meta{:'http-equiv'=>"X-UA-Compatible", :content=>"IE=7"}
     = csrf_meta_tag
     %title= t("meta.title").force_encoding("UTF-8")
-    = stylesheet_link_tag 'all',"jquery.fancybox-1.3.1","jquery.jqplot", 'formtastic', 'formtastic_changes', 'slider', :cache => asset_cache_name('all')
+    = stylesheet_link_tag 'all',"vendor/jquery.fancybox-1.3.1","vendor/jquery.jqplot", 'vendor/formtastic', 'slider', :cache => asset_cache_name('all')
     = render "layouts/etm/javascript_globals"
     = javascript_include_tag 'underscore.min'
     = sprocket_layout_init :etm

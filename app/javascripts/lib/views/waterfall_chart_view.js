@@ -13,13 +13,20 @@ var WaterfallChartView = BaseChartView.extend({
       this.results(), 
       'PJ', //this.parsed_unit(), 
       this.axis_scale_adjusted_with_ticks(), 
-      this.model.colors(), 
+      this.colors(), 
       this.labels(),
       this.number_of_ticks());
   },
 
+  colors : function() {
+    var colors = this.model.colors();
+    colors.push(colors[0]);
+    return colors;
+  },
+
   labels : function() {
     var labels = this.model.labels();
+    // DEBT: change 2040 into something meaningful
     labels.push(this.model.get('id') == 51 ? '2040' : 'Total');
     return labels;
   },
@@ -34,6 +41,7 @@ var WaterfallChartView = BaseChartView.extend({
         return future - present;
       }
     });
+
     var start_scale = (this.model.get('id') == 61) ? 2 : 3;
     
     var scale_sum = Metric.scaled_scale(_.reduce(series, function(sum,n) {return sum + n;}, 0), start_scale);
@@ -43,6 +51,7 @@ var WaterfallChartView = BaseChartView.extend({
     var series_scaled = _.map(series, function(value) {
       return Metric.scaled_value(value, start_scale, scale);
     });
+
     return series;
   },
 

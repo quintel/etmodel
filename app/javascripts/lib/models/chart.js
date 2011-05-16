@@ -15,6 +15,9 @@ var Chart = Backbone.Model.extend({
       case 'horizontal_bar' :
         new HorizontalBarChartView({model : this});
         break;
+      case 'mekko' :
+        new MekkoChartView({model : this});
+        break;
       case 'waterfall' :
         new WaterfallChartView({model : this});
         break;

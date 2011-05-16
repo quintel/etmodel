@@ -1,3 +1,8 @@
+_.extend(_, {
+  sum: function (arr) {
+    return _.reduce(arr, function(sum, v) {return sum + v;}, 0);
+  }
+});
 
 window.AppView = Backbone.View.extend({
   API_URL : globals.api_url,

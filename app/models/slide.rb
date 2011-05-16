@@ -111,9 +111,4 @@ class Slide < ActiveRecord::Base
   def parsed_name_for_admin
     "#{action_name.andand[0..30]} | #{name}"
   end
-
-
 end
-
-
-

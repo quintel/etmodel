@@ -41,7 +41,6 @@ class Scenario < ActiveRecord::Base
 
 
   belongs_to :user
-
   has_many :attachments, :as => :attachable
 
   # A scenario can have a preset. We use this 
@@ -59,9 +58,7 @@ class Scenario < ActiveRecord::Base
 
   # it's a national preset scenario when there is no region defined and it's defined in the start menu
   scope :by_region, lambda {|region| where(:region => region) }
-  
   scope :by_type, lambda {|type| where(:scenario_type => type.to_s)}
-
   scope :exclude_api, where("`type` IS NULL OR `type` = 'Scenario'")
 
   # before_validation :copy_scenario_state
@@ -216,5 +213,3 @@ class Scenario < ActiveRecord::Base
   # loads all the "open classes" in calculator
   Dir["app/models/scenario/*.rb"].sort.each {|file| require_dependency file }
 end
-
-

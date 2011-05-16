@@ -1,0 +1,37 @@
+body {
+  font: 13px/20px Lucida Grande, Verdana, Arial, Helvetica, sans-serif;
+  margin-top: 15px; }
+
+a {
+  color: #003366; }
+
+#input {
+  width: 100%;
+  float: left; }
+  #input .tableactions span {
+    margin: 10px 10px; }
+
+#output {
+  width: 20%;
+  float: left;
+  background-color: #cccccc; }
+  #output #optimizerlog {
+    border: 1px solid #003366;
+    background-color: white;
+    height: 500px;
+    width: 20%;
+    position: fixed;
+    top: 10px;
+    right: 10px; }
+    #output #optimizerlog #menubar {
+      background-color: #003366;
+      color: white;
+      height: 20px;
+      text-align: left;
+      padding: 10px; }
+      #output #optimizerlog #menubar span {
+        margin: 0px 10px; }
+    #output #optimizerlog #optimizerview {
+      padding: 10px;
+      overflow: auto;
+      height: 400px; }

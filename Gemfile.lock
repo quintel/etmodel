@@ -60,6 +60,7 @@ GEM
     builder (2.1.2)
     closure-compiler (1.1.1)
     columnize (0.3.2)
+    daemons (1.0.10)
     default_value_for (1.0.1)
     diff-lcs (1.1.2)
     erubis (2.6.6)
@@ -72,6 +73,7 @@ GEM
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
       i18n (~> 0.4)
+    gem_plugin (0.2.3)
     haml (3.1.1)
     hirb (0.4.5)
     hoptoad_notifier (2.4.2)
@@ -95,6 +97,9 @@ GEM
       treetop (~> 1.4.8)
     memcache-client (1.8.5)
     mime-types (1.16)
+    mongrel (1.2.0.pre2)
+      daemons (~> 1.0.10)
+      gem_plugin (~> 0.2.3)
     mysql2 (0.2.6)
     nokogiri (1.4.4)
     open4 (1.0.1)
@@ -196,6 +201,7 @@ DEPENDENCIES
   jammit
   jquery-rails
   memcache-client
+  mongrel (= 1.2.0.pre2)
   mysql2 (~> 0.2.6)
   paper_trail (>= 1.6.4)
   paperclip (>= 2.3.8)

@@ -30,6 +30,7 @@ gem 'hoptoad_notifier', '2.4.2'
 gem 'thinking-sphinx', '>=2.0.1'
 gem 'mysql2', '~>0.2.6'
 gem 'memcache-client'
+gem 'mongrel', '1.2.0.pre2'
 
 # Optional gems that were commented in environment.rb
 gem 'rubyzip', '0.9.4' # AWAY?

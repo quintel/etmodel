@@ -1,27 +1,23 @@
+- countries  = %w[nl de uk ro pl tr]
+- show_all   = session[:show_municipalities] || session[:show_all_countries] 
+- countries += ["za", "be-vlg"] if session[:show_all_countries]
+- nl_regions = %w[nl-drenthe nl-flevoland nl-friesland nl-gelderland nl-groningen nl-limburg nl-noord-brabant nl-noord-holland nl-overijssel nl-utrecht nl-zeeland nl-zuid-holland]
+
 %li
   %h3 
     = I18n.t("Choose country")
-    - countries = %w[nl de uk ro pl tr]
-    - show_all = session[:show_municipalities] || session[:show_all_countries] 
-    - if session[:show_all_countries]
-      - countries << "za" 
-      - countries << "be-vlg"
-      
   %select{:name => "region"}  
     - countries.each do |code|
       %option{:value => code, :selected => Current.scenario.region == code}
-        = t(code).html_safe
+        = raw t(code)
         - if code == 'nl'
           %optgroup{:label => "Provinces of the Netherlands"}
-            - %w[nl-drenthe nl-flevoland nl-friesland nl-gelderland nl-groningen nl-limburg nl-noord-brabant nl-noord-holland nl-overijssel nl-utrecht nl-zeeland nl-zuid-holland].each do |region|
-              %option{:value => region, :selected => Current.scenario.region == region}
-                = t(region)
+            - nl_regions.each do |region|
+              %option{:value => region, :selected => Current.scenario.region == region}= t(region)
             - if show_all
-              %option{:value => "nl-noord", :selected => Current.scenario.region == "nl-noord"}
-                = t("nl-noord")
+              %option{:value => "nl-noord", :selected => Current.scenario.region == "nl-noord"}= t("nl-noord")
               %optgroup{:label => "Municipalities of the Netherlands"}
                 - %w[grs ame ams].each do |region|
-                  %option{:value => region, :selected => Current.scenario.region == region}
-                    = t(region)
-        - unless %w[nl].include?(code)
+                  %option{:value => region, :selected => Current.scenario.region == region}= t(region)
+        - else
           %small (test)

@@ -8,8 +8,6 @@ var VerticalBarChartView = BaseChartView.extend({
     // SEB: maybe needs a better way to remove jqplot objects.
     //      => possible js memory leak
     $('#current_chart').empty().css('height', this.HEIGHT);
-
-    // function InitializeVerticalBar(id,series,ticks,filler,show_point_label,unit,axis_values,colors,labels){
     
     InitializeVerticalBar("current_chart", 
       this.results(), 

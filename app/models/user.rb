@@ -22,7 +22,6 @@
 #  role_id            :integer(4)
 #  created_at         :datetime
 #  updated_at         :datetime
-#  openid_identifier  :string(255)
 #  phone_number       :string(255)
 #  group              :string(255)
 #  trackable          :string(255)     default("0")
@@ -40,14 +39,8 @@ class User < ActiveRecord::Base
                         :if => Proc.new { |o| !o.phone_number.nil? }
 
   validates_presence_of :name
-  # validates_length_of :phone_number, :is => 10, :message => "moet 10 cijfers zijn"
-  
-  # acts_as_authentic do |a|
-  #     a.validates_format_of_login_field_options = {:with => LOGIN_REGEXP}
-  #     a.validates_format_of_email_field_options = {:with => EMAIL_REGEXP}
-  # end
+
   acts_as_authentic
-  # no open id right now
 
   # HUMANIZED_ATTRIBUTES = {
   #   :name             => I18n.t("user.name"),
@@ -59,27 +52,6 @@ class User < ActiveRecord::Base
   # }
   
   def admin?
-    self.role.andand.name == "admin"
+    role.try(:name) == "admin"
   end
-
-  def role_symbols
-    if self.role.andand.name == "admin"
-      [:admin]
-    else
-      [:guest]
-    end
-  end
-  
-
-  # no open id right now
-  # private
-  #
-  # def map_openid_registration(registration)
-  #   self.email = registration["email"] if email.blank?
-  #   self.username = registration["nickname"] if username.blank?
-  # end
-
 end
-
-
-

@@ -5,8 +5,7 @@ class TabController < ApplicationController
                 :load_view_settings,
                 :ensure_settings_defined,
                 :store_last_etm_page,
-                :load_output_element,
-                :preload_gql
+                :load_output_element
 
   before_filter :show_intro_at_least_once, :only => :show
 

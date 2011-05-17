@@ -1,13 +1,9 @@
 class ApplicationController < ActionController::Base
-#  include Oink::MemoryUsageLogger
-#  include Oink::InstanceTypeCounter
   include LayoutHelper
   include JavascriptHelper
   include SprocketsHelper
-  # preferred way of adding modules
+
   include ApplicationController::ExceptionHandling
-  include ApplicationController::PerformanceProfiling
-  include ApplicationController::GcDisabling
   include SortableTable::App::Controllers::ApplicationController
   
   helper :all
@@ -23,7 +19,6 @@ class ApplicationController < ActionController::Base
     after_filter :assign_current_for_inspection_in_tests
   end
   after_filter :teardown_current
-
   before_filter :export_i18n_messages
 
   ##
@@ -38,16 +33,6 @@ class ApplicationController < ActionController::Base
       end
     end
     
-  end
-
-  def show_qernel_errors(exception)
-    @exception = exception
-    render :file => 'pages/qernel_error', :layout => 'pages'
-  end
-
-  def show_gql_errors(exception)
-    @exception = exception
-    render :file => 'pages/gql_error', :layout => 'pages'
   end
 
   def set_locale
@@ -65,23 +50,6 @@ class ApplicationController < ActionController::Base
   def get_locale_from_url
     # set locale based on host or default
     request.host.split(".").last == 'nl' ? 'nl' : I18n.default_locale
-  end
-  
-  ##
-  # Loads Qernel and GQL in the controller, so that exceptions can be catched
-  # by the rescue_from Qernel::*Error and thus displayed a nice debug panel,
-  # instead of the default error page.
-  #
-  def preload_gql
-  end
-
-  # TODO make one generic method
-  def page_update_constraints(page)
-    Current.view.root.constraints.each do |constraint|
-      benchmark("updating constraint: #{constraint.key}") do
-        page << update_constraint(constraint)
-      end
-    end
   end
 
   def ensure_valid_browser
@@ -115,15 +83,12 @@ protected
     Current.teardown_after_request!
   end
 
-
   ##
   # Shortcut for Current.setting
   #
   def setting
     Current.setting
   end
-
-  
 
   def redirect_from_root
     if true # !Current.already_shown?('/pages/intro') or always_show_intro_screen?

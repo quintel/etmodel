@@ -3,9 +3,9 @@ var Chart = Backbone.Model.extend({
   defaults : {
     'container' : 'current_chart'
   },
-
+  
   initialize : function() {
-    this.series = new ChartSeries;
+    this.series = new ChartSeries();
     this.bind('change:type', this.render);
     this.render();
   },
@@ -13,39 +13,39 @@ var Chart = Backbone.Model.extend({
   container_node : function() {
     return $("#" + this.get("container"));
   },
-
+  
   render : function() {
     var type = this.get('type');
     switch (type) {
       case 'bezier' :
-        new BezierChartView({model : this});
+        this.view = new BezierChartView({model : this});
         break;
       case 'horizontal_bar' :
-        new HorizontalBarChartView({model : this});
+        this.view = new HorizontalBarChartView({model : this});
         break;
       case 'mekko' :
-        new MekkoChartView({model : this});
+        this.view = new MekkoChartView({model : this});
         break;
       case 'waterfall' :
-        new WaterfallChartView({model : this});
+        this.view = new WaterfallChartView({model : this});
         break;
       case 'vertical_stacked_bar' :
-        new VerticalStackedBarChartView({model : this});
+        this.view = new VerticalStackedBarChartView({model : this});
         break;
       case 'policy_bar' :
-        new PolicyBarChartView({model : this});
+        this.view = new PolicyBarChartView({model : this});
         break;
       case 'policy_line' :
-        new PolicyLineChartView({model : this});
+        this.view = new PolicyLineChartView({model : this});
         break;
       case 'vertical_bar' :
-        new VerticalBarChartView({model : this});
+        this.view = new VerticalBarChartView({model : this});
         break;
       case 'html_table' :
-        new HtmlTableChartView({model : this});
+        this.view = new HtmlTableChartView({model : this});
         break;
       default:
-        new HtmlTableChartView({model : this});
+        this.view = new HtmlTableChartView({model : this});
     }
   },
 
@@ -93,8 +93,8 @@ var Chart = Backbone.Model.extend({
       var out = {
         label : serie.get('label'),
         present_value : res[0][1],
-        future_value : res[1][1],
-      }
+        future_value : res[1][1]
+      };
       return out; 
     });
   }
@@ -112,7 +112,7 @@ var ChartList = Backbone.Collection.extend({
 
   change : function(chart) {
     var old_chart = this.first();
-    if (old_chart != undefined) {
+    if (old_chart !== undefined) {
       this.remove(old_chart);      
     }
     this.add(chart);

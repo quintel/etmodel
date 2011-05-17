@@ -32,5 +32,5 @@
       %script
         - Current.view.root.constraints.order(:id).each do |c|
           dashboard.add(
-          = { :id => c.id, :key => c.key, :gquery_key => c.gquery.try(:key) }.to_json.html_safe
+          = { :id => c.id, :key => c.key, :gquery_key => c.gquery_key }.to_json.html_safe
           );

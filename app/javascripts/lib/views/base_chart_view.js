@@ -8,6 +8,12 @@ var BaseChartView = Backbone.View.extend({
     this.model.bind('change', this.render);
     this.model.view = this;
   },
+  
+  // SEB: maybe needs a better way to remove jqplot objects.
+  //      => possible js memory leak  
+  clear_container : function() {
+    this.model.container_node().empty().css('height', this.HEIGHT);
+  },
 
   // was axis_values
   axis_scale : function() {

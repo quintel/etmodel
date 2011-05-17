@@ -1,11 +1,19 @@
 
 var Chart = Backbone.Model.extend({
+  defaults : {
+    'container' : 'current_chart'
+  },
+
   initialize : function() {
     this.series = new ChartSeries;
     this.bind('change:type', this.render);
     this.render();
   },
   
+  container_node : function() {
+    return $("#" + this.get("container"));
+  },
+
   render : function() {
     var type = this.get('type');
     switch (type) {

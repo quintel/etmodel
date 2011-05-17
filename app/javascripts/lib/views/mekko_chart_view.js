@@ -5,9 +5,9 @@ var MekkoChartView = BaseChartView.extend({
   },
   
   render : function() {
-    $('#current_chart').empty().css('height', this.HEIGHT);
+    this.clear_container();
 
-    InitializeMekko("current_chart", 
+    InitializeMekko(this.model.get("container"), 
       this.results(), 
       'PJ', //this.parsed_unit(), 
       this.axis_scale(), 

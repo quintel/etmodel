@@ -5,11 +5,9 @@ var PolicyLineChartView = BaseChartView.extend({
   },
 
   render : function() {
-    // SEB: maybe needs a better way to remove jqplot objects.
-    //      => possible js memory leak
-    $('#current_chart').empty().css('height', this.HEIGHT);
+    this.clear_container();
 
-    InitializePolicyLine("current_chart", 
+    InitializePolicyLine(this.model.get("container"), 
       this.model.results(), 
       this.model.get('unit'), 
       this.axis_scale(), 

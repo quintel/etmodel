@@ -7,9 +7,8 @@ var WaterfallChartView = BaseChartView.extend({
   },
 
   render : function() {
-    $('#current_chart').empty().css('height', this.HEIGHT);
-
-    InitializeWaterfall("current_chart", 
+    this.clear_container();
+    InitializeWaterfall(this.model.get("container"), 
       this.results(), 
       'PJ', //this.parsed_unit(), 
       this.axis_scale_adjusted_with_ticks(), 

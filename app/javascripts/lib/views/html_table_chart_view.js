@@ -7,7 +7,7 @@ var HtmlTableChartView = BaseChartView.extend({
   },
   
   render : function() {
-    $('#current_chart').empty().css('height', this.HEIGHT);
+    this.clear_container();
     this.create_table(this.model);
   },
   
@@ -33,7 +33,7 @@ var HtmlTableChartView = BaseChartView.extend({
     
     table.append(text.join(''));
 
-    $('#current_chart').append(table);
+    this.model.container_node().append(table);
   }
   
 });

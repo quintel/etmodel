@@ -5,10 +5,8 @@ var BezierChartView = BaseChartView.extend({
   },
 
   render : function() {
-    // SEB: maybe needs a better way to remove jqplot objects.
-    //      => possible js memory leak
-    $('#current_chart').empty().css('height', this.HEIGHT);
-    InitializeBezier("current_chart", 
+    this.clear_container();
+    InitializeBezier(this.model.get("container"), 
       this.model.results(), 
       true, 
       this.parsed_unit(), 

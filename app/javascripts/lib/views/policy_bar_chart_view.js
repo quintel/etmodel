@@ -5,11 +5,9 @@ var PolicyBarChartView = BaseChartView.extend({
   },
 
   render : function() {
-    // SEB: maybe needs a better way to remove jqplot objects.
-    //      => possible js memory leak
-    $('#current_chart').empty().css('height', this.HEIGHT);
+    this.clear_container();
 
-    InitializePolicyBar("current_chart", 
+    InitializePolicyBar(this.model.get("container"), 
       this.result_serie1(), 
       this.result_serie2(), 
       this.ticks(), 

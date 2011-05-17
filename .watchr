@@ -1,3 +1,5 @@
+require 'jslint'
+
 # This usually sits at the root of the project and is called ".watchr"
 @spec_cmd = "rspec --drb"
 @cuc_cmd  = "cucumber"
@@ -54,6 +56,11 @@ def find_debt
   system('find . -name "*.rb" | xargs grep -n "# DEBT"')
 end
 
+def run_js_lint(f)
+  lint = JSLint::Lint.new(:paths => f)
+  lint.run rescue nil
+end
+
 # Watchr rules ###############################################################
 watch('spec/spec_helper\.rb') { run_all_specs }
 watch('spec/support/.*') { run_all_specs }
@@ -63,6 +70,7 @@ watch('app/.*\.rb') { |m| related_specs(m[0]).map { |s| run_spec s } }
 watch('lib/.*\.rb') { |m| related_specs(m[0]).map { |s| run_spec s } }
 watch('features/support/.*') { |m| run_all_features }
 watch('features/.*\.feature') { |m| run_feature m[0] }
+watch('app/javascripts/.*\.js') { |m| run_js_lint m[0] }
 
 # Signals ####################################################################
 @interrupted = false

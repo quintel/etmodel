@@ -9,11 +9,9 @@ var PolicyLineChartView = BaseChartView.extend({
     //      => possible js memory leak
     $('#current_chart').empty().css('height', this.HEIGHT);
 
-    //function InitializePolicyLine(id,series,unit,axis_values,colors,labels){
-    InitializeBezier("current_chart", 
+    InitializePolicyLine("current_chart", 
       this.model.results(), 
-      true, 
-      this.parsed_unit(), 
+      this.model.get('unit'), 
       this.axis_scale(), 
       this.model.colors(), 
       this.model.labels());

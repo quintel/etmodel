@@ -48,7 +48,6 @@ Etm::Application.routes.draw do
     resources :areas,
               :expert_predictions, 
               :input_elements, 
-              :historic_series, 
               :year_values, 
               :tabs, 
               :slides, 

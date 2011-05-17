@@ -53,7 +53,7 @@ class OutputElement < ActiveRecord::Base
   end
 
   def call_jqplot_function
-    "alert('call_jqplot_function is deprecated')"  #"Initialize#{output_element_type.name.camelcase}(\"output_element_#{id}\",#{options.map(&:to_json).join(',')});".html_safe
+    "alert('call_jqplot_function is deprecated')"
   end
 
   def block_chart?
@@ -70,32 +70,10 @@ class OutputElement < ActiveRecord::Base
     }
   end
 
-  def options
-    unless @options
-      @options = call_method("series")
-      # raise @options.inspect
-      @options << call_method("axis_values")
-      @options << call_method("colors")
-      @options << call_method("labels")
-      #CHANGED: moved unit into serie method (its now dependent on the size of the series)
-      @options << number_of_ticks if output_element_type.name == "waterfall"
-    end
-    @options
-  end
-    
   def under_construction(opts = {})
     return true if opts[:country] == "de" && opts[:id] == "buildings"
     return true if self[:under_construction]
     return false
-  end
-
-  def call_method(method_name)
-    specfic_method_name = "#{method_name}_#{output_element_type.name}"
-    if respond_to? specfic_method_name
-      send specfic_method_name
-    else
-      send method_name
-    end
   end
 
   def self.select_by_group(group)

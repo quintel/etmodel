@@ -1,7 +1,4 @@
 class OutputElementsController < ApplicationController
-  around_filter :disable_gc
-
-
   # layout 'fancybox'
   def show
     @output_element = OutputElement.find(params[:id])

@@ -2,6 +2,7 @@
   %p.tal 
     =t("constraint.energy").html_safe
   #charts_wrapper
-    - @output_element = OutputElement.find(45)
-    %div{ :id => "#{dom_id(@output_element)}",:style=>'height:250px'}
-    %script= @output_element.call_jqplot_function
+    %div{ :id => "output_element_45",:style=>'height:250px'}
+:javascript
+  #{ js_for_output_element(45, 'output_element_45') }
+  App.call_api();

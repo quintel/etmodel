@@ -1,8 +1,9 @@
 .constraint_box_content
-  -#%h1{:style => "font-size: 14px; text-align: left"} Renewables
   %p.tal
-    =t("constraint.renewable").html_safe
+    = raw t("constraint.renewable")
   %div#charts_wrapper
-    - @output_element = OutputElement.find(49)
-    %div{ :id => "#{dom_id(@output_element)}",:style=>'height:250px'}
-    %script=@output_element.call_jqplot_function
+    %div{ :id => "output_element_49",:style=>'height:250px'}
+
+:javascript
+  #{ js_for_output_element(49, 'output_element_49') }
+  App.call_api();

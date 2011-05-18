@@ -6,7 +6,6 @@ var BaseChartView = Backbone.View.extend({
     this.HEIGHT = '360px';
     _.bindAll(this, 'render');
     this.model.bind('change', this.render);
-    this.model.view = this;
   },
   
   // SEB: maybe needs a better way to remove jqplot objects.
@@ -38,24 +37,27 @@ var BaseChartView = Backbone.View.extend({
   axis_max_value : function(values) {
     var empty_space = 1.1;
     var total = _.max(values) * empty_space;
-    var length = parseInt(Math.log(total) / Math.log(10));
+    var length = parseInt(Math.log(total) / Math.log(10), 10);
     var tick_size = Math.pow(10, length) ;
     var ratio = (total / 5) / tick_size;
 
     var result;
 
-    if (ratio < 0.025) 
+    if (ratio < 0.025) {
       result = tick_size * 0.05;
-    else if (ratio < 0.1)
+    } else if (ratio < 0.1) {
       result = tick_size * 0.1;
-    else if (ratio < 0.5)
+    } else if (ratio < 0.5) {
       result = tick_size * 0.5;
-    else if (ratio < 1)
+    } else if (ratio < 1) {
       result = tick_size;
-    else if (ratio < 1.5)
+    } else if (ratio < 1.5) {
       result = tick_size * 1.5;
-    else if (ratio < 2)
+    } else if (ratio < 2) {
       result = tick_size * 2;
+    } else {
+      result
+    }
 
     return result * 5;
   },
@@ -83,4 +85,4 @@ var BaseChartView = Backbone.View.extend({
       return Metric.scaling_in_words(scale, unit);
     }
   }
-})
+});

@@ -47,6 +47,7 @@ var Chart = Backbone.Model.extend({
       default:
         this.view = new HtmlTableChartView({model : this});
     }
+    return this.view;
   },
 
   // @return [ApiResultArray] = [

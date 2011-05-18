@@ -1,5 +1,5 @@
 !!! Strict
-%html{ :xmlns => "http://www.w3.org/1999/xhtml", :class => "#{"black_layout" if is_transitionprice?}"}
+%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
     %meta{:description => "#{t('meta.description')}" }
@@ -24,32 +24,22 @@
   %body#model
     #wrapper
       #content
-        - rounded_corners if is_transitionprice?
-
         = render "layouts/etm/title"
         = render "layouts/etm/content"
         .clear
         
-        - if is_transitionprice?
-          #footer
-            = render "layouts/etm/constraints"
-            = render "layouts/etm/footer"
-          .clear
-
       #header
         = render "layouts/etm/header", :info_box => true, :save_button => APP_CONFIG[:save_button]
         = render "layouts/etm/tabs"
         
-      - unless is_transitionprice?
-        #footer
-          = render "layouts/etm/constraints"
-          = render "layouts/etm/footer"
+      #footer
+        = render "layouts/etm/constraints"
+        = render "layouts/etm/footer"
       .clear
 
     %a{:id =>'feedback-tab',:href=>'/feedback',:class => "select_chart side_tabs #{I18n.locale}"}
     %a{:id =>'refman-tab',:href=>'http://refman.et-model.com',:class => "side_tabs #{I18n.locale}",:target=>"_blank"}
-    - unless is_transitionprice?
-      %a{:id =>'epn_module',:href=>'/pages/education',:class => "side_tabs #{I18n.locale}"}
+    %a{:id =>'epn_module',:href=>'/pages/education',:class => "side_tabs #{I18n.locale}"}
     = render "layouts/etm/ga"
     
     //stick the footer at the bottom of the page if we're on an iPad/iPhone due to viewport/page bugs in mobile webkit

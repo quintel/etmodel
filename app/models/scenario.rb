@@ -37,8 +37,6 @@
 class Scenario < ActiveRecord::Base
   # has_paper_trail will break saving and laoding scenarios
   # has_paper_trail 
-  TRANSITION_PRICE_TYPE = 'transition_price'
-
 
   belongs_to :user
   has_many :attachments, :as => :attachable
@@ -124,13 +122,6 @@ class Scenario < ActiveRecord::Base
     self[:displayed_output_element] = value
   end
   
-  ##
-  # @untested 2011-01-11 rob
-  # 
-  def transitionprice?
-    scenario_type == "transition_price"
-  end
-
   ##
   # @tested 2010-11-30 seb
   # 

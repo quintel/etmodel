@@ -1,8 +1,8 @@
 .constraint_box_content
-  -#%h1{:style => "font-size: 14px; text-align: left"} Average total cost
   %p.tal
-    =t("constraint.costs").html_safe
+    = raw t("constraint.costs")
   #charts_wrapper
-    - @output_element = OutputElement.find(48)
-    %div{ :id => "#{dom_id(@output_element)}",:style=>'height:200px'}
-    %script=@output_element.call_jqplot_function
+    %div{ :id => "output_element_48", :style => 'height:200px' }
+:javascript
+  #{ js_for_output_element(48, 'output_element_48') }
+  App.call_api();

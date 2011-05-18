@@ -134,12 +134,6 @@ Etm::Application.routes.draw do
   match '/show_all_countries' => 'pages#show_all_countries'
   match '/show_all_views' => 'pages#show_all_views'
   match '/municipalities' => 'pages#municipalities'
-  match '/transitiejaarprijs' => 'transition_price#index', :as => :transition_price
-  match '/transitiejaarprijs/intro/' => 'transition_price#intro', :as => :transition_price_intro
-  match '/transitiejaarprijs/intro/(:step)' => 'transition_price#intro_2', :as => :transition_price_intro
-  
-  
-  
 
   match '/home' => 'pages#home', :as => :home
   match '/careers' => 'pages#careers', :as => :careers
@@ -147,5 +141,4 @@ Etm::Application.routes.draw do
   match '/information' => 'pages#information', :as => :information
 
   match '/:controller(/:action(/:id))'
-
 end

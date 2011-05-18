@@ -34,10 +34,8 @@ class Slide < ActiveRecord::Base
     SearchResult.new(name, description)
   end
 
-  
   define_index do
     indexes name
-
     indexes description(:content_en), :as => :description_content_en
     indexes description(:content_nl), :as => :description_content_nl
     indexes description(:short_content_en), :as => :description_short_content_en
@@ -49,8 +47,7 @@ class Slide < ActiveRecord::Base
   end
 
   def show_expert_prediction_link
-    # raise Current.scenario.transitionprice?
-    input_elements.any?{|ie| ie.expert_predictions.present? } && !Current.scenario.transitionprice?
+    input_elements.any?{|ie| ie.expert_predictions.present? }
   end
 
   def infrastructure_slide?

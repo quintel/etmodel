@@ -49,9 +49,7 @@ describe InputElement do
       ie = InputElement.new(:min_value => min_value, :max_value => max_value)
       ie.calculated_step_value.should be_within(0.05).of((max_value - min_value) /100.0)
     end
-    
   end
-
 
   describe "#input_elements_to_update" do
     it "should split a value" do
@@ -79,7 +77,7 @@ describe InputElement do
   end
   
   describe "set correct input_elements as disabled" do
-    it "should be true when input_element is locked_for_transition_price? or has_locked_input_element_type?" do
+    it "should be true when input_element is has_locked_input_element_type?" do
       InputElement.stub!(:find).and_return([])
       input_element = InputElement.new
       input_element.has_locked_input_element_type?("fixed").should be_true

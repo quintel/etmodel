@@ -321,17 +321,7 @@ class InputElement < ActiveRecord::Base
     description.andand.content.andand.include?("player")  || description.andand.content.andand.include?("object")
   end
   
-  def disabled_with_message?
-    disabled && Current.scenario.transitionprice?
-  end
-  alias_method :disabled_with_message, :disabled_with_message?
-
   def is_policy?
     key.split('_').first == "policy" 
   end
 end
-
-
-
-
-

@@ -13,7 +13,6 @@ window.AppView = Backbone.View.extend({
     // Jaap MVC legacy
     this.inputElementsController = window.input_elements;
     this.municipalityController = new MunicipalityController();
-    this.transitionpriceController = new TransitionpriceController();
 
     var func = $.proxy(this.handleInputElementsUpdate);
     this.inputElementsController.bind("change", func);

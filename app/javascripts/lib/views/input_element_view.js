@@ -50,8 +50,6 @@ var InputElementView = Class.extend({
     this.sliderView.getInfoBox().bind('show', $.proxy(this.handleInputElementInfoBoxShowed, this));
     this.sliderView.bind('change', $.proxy(this.checkMunicipalityNotice, this));
     this.sliderView.slider.bind('change', $.proxy(this.handleSliderUpdate, this));
-    if(this.model.get("disabled_with_message"))
-      this.sliderView.slider.sliderBar.element.bind('click', $.proxy(this.checkTransitionpriceNotice, this));
   },
   
   getPrecision:function() {
@@ -101,13 +99,6 @@ var InputElementView = Class.extend({
     if(this.model.get("semi_unadaptable") && App.municipalityController.showMessage()) 
       App.municipalityController.showMunicipalityMessage();
   },
-  /**
-   * This checks if the transitionprice message has been shown. It is has not been shown, show it!
-   */
-  checkTransitionpriceNotice:function() {
-    if(App.transitionpriceController.showMessage()) 
-      App.transitionpriceController.showTransitionpriceMessage();
-  },  
   /**
    * Is called when something in the constraint model changed.
    * @override

@@ -57,7 +57,7 @@ window.AppView = Backbone.View.extend({
    */
   handleInputElementsUpdate:function() {
     var func = $.proxy(this.doUpdateRequest, this);
-    var lockable_function = function() { LockableFunction.deferExecutionIfLocked('update', func)};
+    var lockable_function = function() { LockableFunction.deferExecutionIfLocked('update', func); };
     Util.cancelableAction('update',  lockable_function, {'sleepTime':500});
   },
   
@@ -68,14 +68,11 @@ window.AppView = Backbone.View.extend({
   doUpdateRequest:function() {
     var dirtyInputElements = window.input_elements.dirty();
 
-    if(dirtyInputElements.length == 0)
-      return;
+    if(dirtyInputElements.length == 0) { return; }
 
     window.App.call_api(window.input_elements.api_update_params());
-
     window.input_elements.reset_dirty();
   }
 });
 
 window.App = new AppView();
-

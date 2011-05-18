@@ -4,5 +4,11 @@
 
   #charts_wrapper
     - @output_element = OutputElement.find(46)
-    %div{ :id => "#{dom_id(@output_element)}",:style=>'height:250px'}
-    %script=@output_element.call_jqplot_function
+    %div{ :id => "output_element_46", :style=>'height:250px'}
+:javascript
+    var output_element = new Chart(
+      #{ @output_element.options_for_js.merge(:container => 'output_element_46').to_json }
+    );
+    #{ @output_element.allowed_output_element_series.map{|s| output_element_serie(s)}.join }
+    charts.add(output_element);
+    App.call_api();

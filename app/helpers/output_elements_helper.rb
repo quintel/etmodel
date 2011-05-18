@@ -7,6 +7,6 @@ module OutputElementsHelper
       :group      => serie.group
     }
 
-    "output_element.series.add(#{s.to_json})"
+    "output_element.series.add(#{s.to_json});"
   end
 end

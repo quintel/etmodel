@@ -9,7 +9,7 @@
 #  query          :string(255)
 #  created_at     :datetime
 #  updated_at     :datetime
-#  gquery_id      :integer(4)
+#  gquery_key     :string(255)
 #
 
 class Constraint < ActiveRecord::Base

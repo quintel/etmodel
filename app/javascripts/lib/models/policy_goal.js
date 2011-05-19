@@ -10,8 +10,12 @@ var PolicyGoal = Backbone.Model.extend({
   },
   
   update_view : function() {
-    this.dom_element().find(".check").html(this.result());
-    this.dom_element().find(".gquery").html(this.gquery.get("key"));
+    var success = this.result();
+    var template = $("<span>")
+    template.append(success ? 'V' : 'X');
+    template.css('color', success ? 'green' : 'red');
+    console.log(template);
+    this.dom_element().find(".check").html(template);
   },
   
   dom_element : function() {

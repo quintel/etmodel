@@ -11,7 +11,7 @@
     %tbody
       - PolicyGoal.allowed_policies.each do |goal|
         %tr{:id => "goal_#{goal.id}"}
-          %td.check=# goal_reached(goal)
+          %td.check
           %td.name= t("policies.#{goal.name.humanize}").html_safe
           %td.target=# goal.output_user_target || t("policies.not_set")
           %td.you=# goal.output_future_value

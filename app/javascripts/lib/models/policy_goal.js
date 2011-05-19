@@ -10,11 +10,10 @@ var PolicyGoal = Backbone.Model.extend({
   },
   
   update_view : function() {
-    var success = this.result();
+    var success = this.result() === true;
     var template = $("<span>")
     template.append(success ? 'V' : 'X');
     template.css('color', success ? 'green' : 'red');
-    console.log(template);
     this.dom_element().find(".check").html(template);
   },
   

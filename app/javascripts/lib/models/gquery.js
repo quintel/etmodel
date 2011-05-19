@@ -28,18 +28,21 @@ var Gquery = Backbone.Model.extend({
    */
   handle_api_result : function(api_result) {
     if (!(api_result instanceof Array)) { 
-      this.set({present_value : api_result, future_value : api_result});
+      this.set({
+        present_value : api_result, future_value : api_result,
+        value : api_result, result_type : 'scalar'});
     } else {
       this.set({
         present_year  : api_result[0][0], present_value : api_result[0][1],
-        future_year   : api_result[1][0], future_value  : api_result[1][1]
+        future_year   : api_result[1][0], future_value  : api_result[1][1],
+        result_type : 'array'
       });
     }
   },
   
   is_acceptable_value : function(n) {
     var x = parseInt(n);
-    return ( _.isNumber(x) && !_.isNaN(x) );
+    return ( _.isNumber(x) && !_.isNaN(x) && !_.isBoolean(x));
   }
 });
 

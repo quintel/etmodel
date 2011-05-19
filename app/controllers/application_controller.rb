@@ -90,17 +90,6 @@ protected
     Current.setting
   end
 
-  def redirect_from_root
-    if true # !Current.already_shown?('/pages/intro') or always_show_intro_screen?
-      redirect_to :controller => 'pages', :action => 'intro'
-    elsif c = setting.last_etm_controller_name and a = setting.last_etm_controller_action
-      redirect_to :controller => c, :action => a
-    else # this should actually not happen
-      redirect_to :controller => 'pages', :action => 'intro'
-    end
-  end
-  
-  
   #
   # Redirect to params[:redirect_to] if if has been set. 
   #
@@ -116,8 +105,6 @@ protected
       redirect_to(*args)
     end
   end
-  
-  
   
   def store_last_etm_page
     setting.last_etm_controller_name = params[:controller]

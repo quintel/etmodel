@@ -25,8 +25,4 @@ class PolicyGoal < ActiveRecord::Base
   def self.allowed_policies
     Current.view.root.policy_goals.reject(&:area_dependent)
   end
-
-  def to_gql
-    Gql::PolicyGoal.new(id, key, name, query, display_format, unit, start_value_query, reached_query)
-  end
 end

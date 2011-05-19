@@ -56,14 +56,6 @@ module LayoutHelper
     end
   end
 
-  def goal_reached(policy)
-    if policy.reached?
-      "<span style=\"color:green\">V</span>".html_safe
-    else
-      "<span style=\"color:red\">X</span>".html_safe
-    end
-  end
-  
   def search_result_description(result)
     if d = result.andand.description
       if d.content.present?

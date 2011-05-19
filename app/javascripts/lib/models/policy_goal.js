@@ -1,20 +1,33 @@
 var PolicyGoal = Backbone.Model.extend({
   initialize : function() {
     window.policy_goals.add(this);
-    this.gquery = new Gquery({ key: this.get("reached_query")});
+    this.reached_query = new Gquery({ key: this.get("reached_query")}); // returns boolean
+    this.value_query   = new Gquery({ key: this.get("value_query")});   // returns value
   },
   
-  result : function() {
-    var res = this.gquery.result()[0][1];
+  success : function() {
+    var res = this.reached_query.result()[0][1];
+    return res;
+  },
+  
+  current_value : function() {
+    var res = this.value_query.result()[0][1];
     return res;
   },
   
   update_view : function() {
-    var success = this.result() === true;
+    var success = this.success() === true;
     var template = $("<span>")
     template.append(success ? 'V' : 'X');
     template.css('color', success ? 'green' : 'red');
     this.dom_element().find(".check").html(template);
+    
+    var current_value = this.current_value();
+    this.dom_element().find(".you").html(current_value);    
+  },
+  
+  is_set : function() {
+    return false;
   },
   
   dom_element : function() {

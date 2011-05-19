@@ -8,7 +8,7 @@ var Gquery = Backbone.Model.extend({
     var future_value = this.get('future_value');
 
     if ( !(this.is_acceptable_value(present_value) && this.is_acceptable_value(future_value))) {
-      console.warn('Gquery "'+this.get('key')+'" has undefined/null values. ' + present_value + '/' + future_value + "\n Reset to 0");
+      console.warn('Gquery "'+this.get('key')+'" has undefined/null values. ' + present_value + '/' + future_value + ", reset to 0");
       present_value = 0;
       future_value  = 0;
     }
@@ -41,8 +41,9 @@ var Gquery = Backbone.Model.extend({
   },
   
   is_acceptable_value : function(n) {
-    var x = parseInt(n);
-    return ( _.isNumber(x) && !_.isNaN(x) && !_.isBoolean(x));
+    if (_.isBoolean(n)) { return true; }
+    var x = parseInt(n, 10);
+    return ( _.isNumber(x) && !_.isNaN(x));
   }
 });
 

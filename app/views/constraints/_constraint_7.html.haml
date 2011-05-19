@@ -13,17 +13,15 @@
         %tr{:id => "goal_#{goal.id}"}
           %td.check
           %td.name= t("policies.#{goal.name.humanize}").html_safe
-          %td.target=# goal.output_user_target || t("policies.not_set")
+          %td.target= t("policies.not_set") # goal.output_user_target || t("policies.not_set")
           %td.you=# goal.output_future_value
         :javascript
           new PolicyGoal({
             goal_id : #{goal.id},
             name : '#{t("policies.#{goal.name.humanize}")}',
-            reached_query : '#{goal.reached_query}'
+            reached_query : '#{goal.reached_query}',
+            value_query : '#{goal.query}'
           })
     
 :javascript
   App.call_api();
-  policy_goals.each(function(g){
-    g.update_view();
-  });

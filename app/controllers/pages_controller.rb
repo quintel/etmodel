@@ -22,7 +22,7 @@ class PagesController < ApplicationController
       if Current.scenario.municipality?
         redirect_to :action => "municipality" and return
       else
-        redirect_from_root
+        redirect_to :controller => 'pages', :action => 'intro'
       end  
     end
 
@@ -76,7 +76,7 @@ class PagesController < ApplicationController
         # commented this out, since users should be able to load without a scenario (for now), DS
         # flash[:error] = I18n.t('flash.need_scenario')
       end
-      redirect_from_root and return
+      redirect_to(:controller => 'pages', :action => 'intro') and return
     end
   end
 

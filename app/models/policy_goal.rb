@@ -30,7 +30,3 @@ class PolicyGoal < ActiveRecord::Base
     Gql::PolicyGoal.new(id, key, name, query, display_format, unit, start_value_query, reached_query)
   end
 end
-
-
-
-

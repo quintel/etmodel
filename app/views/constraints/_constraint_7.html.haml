@@ -9,9 +9,21 @@
           Scenario
 
     %tbody
-      - Current.gql.policy.goals.each do |goal|
-        %tr
-          %td.check= goal_reached(goal)
+      - PolicyGoal.allowed_policies.each do |goal|
+        %tr{:id => "goal_#{goal.id}"}
+          %td.check=# goal_reached(goal)
           %td.name= t("policies.#{goal.name.humanize}").html_safe
-          %td.target= goal.output_user_target || t("policies.not_set")
-          %td.you= goal.output_future_value
+          %td.target=# goal.output_user_target || t("policies.not_set")
+          %td.you=# goal.output_future_value
+        :javascript
+          new PolicyGoal({
+            goal_id : #{goal.id},
+            name : '#{t("policies.#{goal.name.humanize}")}',
+            reached_query : '#{goal.reached_query}'
+          })
+    
+:javascript
+  App.call_api();
+  policy_goals.each(function(g){
+    g.update_view();
+  });

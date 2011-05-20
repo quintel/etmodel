@@ -4,6 +4,7 @@ var PeakLoad = Backbone.Model.extend({
     _.bindAll(this, 'check_results');
     this.bind('change', this.check_results);
 
+    // DEBT: make Gqueries
     this.gqueries = {
       'lv' :    new Gquery({key : 'future:GREATER(Q(investment_cost_lv_net_total),0)'}),
       'mv-lv' : new Gquery({key : 'future:GREATER(Q(investment_cost_mv_lv_transformer_total),0)'}),
@@ -26,6 +27,7 @@ var PeakLoad = Backbone.Model.extend({
 
   save_state_in_session : function() {
     window.settings.set({network_parts_affected : this.parts_affected() });
+    window.settings.save();
   },
 
   /*

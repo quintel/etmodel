@@ -146,13 +146,6 @@ class InputElement < ActiveRecord::Base
     input_element_type == 'remainder'
   end
 
-  # The input elements that must also be updated if this input element is updated.
-  def input_elements_to_update
-    return [] if self.update_value.blank?
-    elements_to_update = self.update_value.blank? ? [] : self.update_value.split("_")
-    InputElement.find(elements_to_update)
-  end
-
   # some input values are not adaptable by municipalities
   def semi_unadaptable?
     Current.scenario.municipality? && locked_for_municipalities == true
@@ -176,9 +169,6 @@ class InputElement < ActiveRecord::Base
     where("slide_id = 4")
   end
 
-  #def fixed?
-  #  
-  #end
   def disabled
     has_locked_input_element_type?(input_element_type)
   end
@@ -242,6 +232,7 @@ class InputElement < ActiveRecord::Base
   def parsed_name_for_admin
     "#{key} | #{name} | #{unit} | #{input_element_type}"
   end
+
   ##
   # Resets the user values
   #
@@ -263,53 +254,6 @@ class InputElement < ActiveRecord::Base
     ((max_value - min_value) / 100).round(2)
   end
 
-
-  # TODO refactor (seb 2010-10-11)
-  def use_for_optimize?
-    self.share_group != "other hidden_slider" and 
-    self.update_type != "carriers" and 
-    self.update_type != "policies" and 
-    self.slide.andand.controller_name !="costs" and 
-    self.slide.andand.controller_name !=nil and 
-    self.input_element_type != "fixed" and 
-    self.share_group != "hidden_slider"
-  end
-  alias_method :use_for_optimize, :use_for_optimize?
-
-  def use_for_calibrate
-    self.use_for_optimize and self.keys != nil and self.keys != 0 and self.keys != "" and !self.attr_name.include? "_conversion"
-  end
-
-  def use_value
-    if value = Current.user_values[self.id] rescue nil
-    elsif value = self.start_value rescue nil
-    elsif value = Current.gql.query(self.start_value_gql) rescue nil
-    end
-    return value
-  end  
-
-  def update_current(value)
-    # DON'T do that for now. because of DoubleGqlLoad Weirdness
-    # value = value_within_range(value.to_f)
-    # value = value.to_f
-    # Current.user_values[id] = value
-    # Current.update_user_updates({update_type => {
-    #   keys => {attr_name => value / factor}
-    # }})
-    Current.scenario.update_input_element(self, value)
-  end
-
-  def value_within_range(value)
-    raise "DANGEROUS: DoubleGqlLoad Weirdness ahead"
-    if value > max_value
-      max_value
-    elsif value < min_value
-      min_value
-    else
-      value
-    end
-  end
-
   ##
   # @tested 2010-12-22 robbert
   #
@@ -321,7 +265,4 @@ class InputElement < ActiveRecord::Base
     description.andand.content.andand.include?("player")  || description.andand.content.andand.include?("object")
   end
   
-  def is_policy?
-    key.split('_').first == "policy" 
-  end
 end

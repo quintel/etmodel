@@ -67,14 +67,11 @@ class InputElement < ActiveRecord::Base
   end
 
   def step_value
-    # cache(:step_value) do
-      if Current.scenario.municipality? and self.locked_for_municipalities? and self.slide.andand.controller_name == "supply" 
-        (self[:step_value] / 1000).to_f
-      else
-        self[:step_value].to_f
-      end
-      
-    # end
+    if Current.scenario.municipality? and self.locked_for_municipalities? and self.slide.andand.controller_name == "supply" 
+      (self[:step_value] / 1000).to_f
+    else
+      self[:step_value].to_f
+    end
   end
 
   def title_for_description
@@ -172,6 +169,7 @@ class InputElement < ActiveRecord::Base
   def disabled
     has_locked_input_element_type?(input_element_type)
   end
+
   #############################################
   # Methods that interact with a users values
   #############################################

@@ -7,13 +7,8 @@ var Gquery = Backbone.Model.extend({
     var present_value = this.get('present_value');
     var future_value = this.get('future_value');
 
-<<<<<<< HEAD
     if ( !(this.is_acceptable_value(present_value) && this.is_acceptable_value(future_value))) {
       console.warn('Gquery "'+this.get('key')+'" has undefined/null values. ' + present_value + '/' + future_value + ", reset to 0");
-=======
-    if ( _.isNaN(present_value) || _.isNaN(future_value)) {
-      console.warn('Gquery "'+this.get('key')+'" has undefined/null values. ' + present_value + '/' + future_value + "\n Reset to 0");
->>>>>>> ported peak_load, added settings.js
       present_value = 0;
       future_value  = 0;
     }

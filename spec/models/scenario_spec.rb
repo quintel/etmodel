@@ -111,11 +111,11 @@ describe Scenario do
 
   describe "#use_peak_load" do
     context "Scenario != advanced" do
-      before {@scenario.stub!(:advanced?).and_return(false)}
+      before { Current.setting.stub!(:advanced?).and_return(false)}
       specify { @scenario.use_peak_load.should be_false}
     end
     context "Scenario is advanced" do
-      before {@scenario.stub!(:advanced?).and_return(true)}
+      before { Current.setting.stub!(:advanced?).and_return(true)}
       [true, false].each do |flag|
         context "use_network_calculations? = #{flag}" do
           before {@scenario.stub!(:use_network_calculations?).and_return(flag)}

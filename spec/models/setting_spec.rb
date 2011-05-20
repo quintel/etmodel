@@ -76,10 +76,10 @@ describe Setting do
     end
     describe "#complexity = " do
       before { 
-        @scenario = Setting.new
-        @scenario.complexity = "1"
+        @setting = Setting.new
+        @setting.complexity = "1"
       }
-      specify { @scenario.complexity.should == 1}
+      specify { @setting.complexity.should == 1}
     end
   end
   
@@ -87,7 +87,7 @@ describe Setting do
     before do
       @random_attributes = Setting.default_attributes.clone
       @random_attributes.each do |key, value|
-        @random_attributes[key] = :foo
+        @random_attributes[key] = 11
       end
       @setting = Setting.new(@random_attributes)
     end

@@ -15,8 +15,8 @@ class PagesController < ApplicationController
       Current.scenario.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
       country = params[:region].split("-").first
       Current.scenario.set_country_and_region(country, params[:region]) # we need the full region code here
-      Current.scenario.complexity = params[:complexity]
       Current.setting = Setting.default
+      Current.setting.complexity = params[:complexity]
 
       if Current.scenario.municipality?
         redirect_to :action => "municipality" and return
@@ -27,7 +27,7 @@ class PagesController < ApplicationController
 
     # if user wanted to load a scenario directly
     if params[:scenario]
-      Current.scenario.complexity = params[:complexity].to_i
+      Current.setting.complexity = params[:complexity].to_i
       redirect_to load_scenario_path(params[:scenario])
     end
     

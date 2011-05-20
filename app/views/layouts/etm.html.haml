@@ -17,7 +17,9 @@
 
     = render "layouts/etm/javascript_init"
     = render "layouts/etm/javascript_unselectable"
+
     %script
+      window.settings = new Setting(#{Current.setting.to_json.html_safe});
       I18n.defaultLocale = "#{I18n.default_locale}";
       I18n.locale = "#{I18n.locale}";
 

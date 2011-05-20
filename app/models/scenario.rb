@@ -196,7 +196,7 @@ class Scenario < ActiveRecord::Base
   end
   
   def current_view
-    Current.scenario.all_levels[Current.scenario.complexity.to_i]
+    Current.scenario.all_levels[Current.setting.complexity.to_i]
   end
   
   

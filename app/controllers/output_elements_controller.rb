@@ -1,5 +1,4 @@
 class OutputElementsController < ApplicationController
-  # layout 'fancybox'
   def show
     @output_element = OutputElement.find(params[:id])
 

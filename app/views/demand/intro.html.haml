@@ -14,12 +14,7 @@
       #text_wide
         %h1= t("Who uses most energy?")
         %ul#blocks
-          -# total = Current.gql.query('present:SUM(V(G(final_demand_cbs);final_demand))')
-          -# query = Proc.new{|sector| "present:SUM(V(INTERSECTION(G(final_demand_cbs),SECTOR(#{sector}));final_demand))" }
-
           - options = Proc.new{|key| {:query => nil, :total => nil, :clickable => Current.view.sidebar_items.map(&:key).include?(key)}}
-
-          - # TODO this does not completely work like before
 
           - intro_charts_item('Households', 'households', options.call('households')) 
           - if Current.scenario.has_buildings?

@@ -36,7 +36,7 @@ var Scenario = Backbone.Model.extend({
     var url = globals.api_url + "/api_scenarios/new.json?callback=?&";
     $.getJSON(url,
       function(data) {
-        $.cookie('api_session_id', data.api_scenario.api_session_key);
+        $.cookie('api_session_id', data.api_scenario.api_session_key, { path : '/' });
       }
     );
   },

@@ -32,7 +32,6 @@ class ApplicationController < ActionController::Base
         Current.scenario.add_update_statements(round.get_input_element.update_statement(round.value))
       end
     end
-    
   end
 
   def set_locale

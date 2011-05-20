@@ -16,7 +16,9 @@
   %body#model
     #wrapper
       #content
-        = render "layouts/etm/content_admin"
+        - flash_message
+        = yield
+        .clear
 
       #header
         = render "layouts/etm/header"

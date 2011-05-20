@@ -2,44 +2,52 @@ var PolicyGoal = Backbone.Model.extend({
   initialize : function() {
     window.policy_goals.add(this);
     
-    this.success_query = new Gquery({ key: this.get("success_query")}); // returns boolean
-    this.value_query   = new Gquery({ key: this.get("value_query")});   // returns value
-    this.target_query  = new Gquery({ key: this.get("target_query")});  // returns value
+    this.success_query    = new Gquery({ key: this.get("success_query")});
+    this.value_query      = new Gquery({ key: this.get("value_query")});
+    this.target_query     = new Gquery({ key: this.get("target_query")});
+    this.user_value_query = new Gquery({ key: this.get("user_value_query")});
   },
   
+  // goal achieved? true/false
   success_value : function() {
     var res = this.success_query.result()[0][1];
     return res;
   },
   
+  // numeric value
   current_value : function() {
-    var res = this.value_query.result()[0][1];
+    var res = this.value_query.result()[1][1];
     return res;
   },
   
+  // goal, numeric value
   target_value : function() {
-    var res = this.target_query.result()[0][1];
+    var res = this.target_query.result()[1][1];
     return res;
   },
   
+  // returns true if the user has set a goal
+  is_set : function() {
+    var res = this.user_value_query.get("future_value");
+    return res != null;
+  },
+
   // DEBT: we could use a BB view
   update_view : function() {
     var success = this.success_value() === true;
-    var template = $("<span>")
-    template.append(success ? 'V' : 'X');
-    template.css('color', success ? 'green' : 'red');
-    this.dom_element().find(".check").html(template);
+
+    if(this.is_set()) {
+      var template = $("<span>")
+      template.append(success ? 'V' : 'X');
+      template.css('color', success ? 'green' : 'red');
+      this.dom_element().find(".check").html(template);
+
+      var formatted = this.format_value(this.target_value());
+      this.dom_element().find(".target").html(formatted);
+    }
     
     var current_value = this.format_value(this.current_value());
     this.dom_element().find(".you").html(current_value);    
-    
-    var target_value = this.format_value(this.target_value());
-    this.dom_element().find(".target").html(target_value);    
-  },
-  
-  // TODO
-  is_set : function() {
-    return false;
   },
   
   dom_element : function() {

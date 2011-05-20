@@ -17,13 +17,14 @@
           %td.you=# goal.output_future_value
         :javascript
           new PolicyGoal({
-            goal_id       : #{goal.id},
-            name          : '#{t("policies.#{goal.name.humanize}")}',
-            success_query : '#{goal.reached_query}',
-            value_query   : '#{goal.query}',
-            target_query  : 'GOAL(#{goal.key})',
-            unit          : '#{goal.unit}',
-            display_fmt   : '#{goal.display_format}'
+            goal_id          : #{goal.id},
+            name             : '#{t("policies.#{goal.name.humanize}")}',
+            success_query    : '#{goal.reached_query}',
+            value_query      : '#{goal.query}',
+            target_query     : 'GOAL(#{goal.key})',
+            user_value_query : 'GOAL_USER_VALUE(#{goal.key})',
+            unit             : '#{goal.unit}',
+            display_fmt      : '#{goal.display_format}'
           })
     
 :javascript

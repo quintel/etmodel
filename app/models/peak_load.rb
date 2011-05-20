@@ -1,4 +1,19 @@
-##
+#  # If we use PeakLoad in another controller move it to application_controller.
+#  def peak_load
+#    @peak_load ||= PeakLoad.new(Current.gql)
+#  end
+#  def page_update_peak_load(page)
+#    benchmark("check peakload") do
+#      if peak_load.enabled? && peak_load.grid_investment_needed?
+#        if peak_load.unknown_parts_affected?
+#          page.call("notify_grid_investment_needed", peak_load.parts_affected.join(","))
+#        end
+#        peak_load.save_state_in_session
+#      end
+#    end
+#  end
+
+###
 # PeakLoad
 #
 class PeakLoad

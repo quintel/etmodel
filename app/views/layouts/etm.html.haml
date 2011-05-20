@@ -37,13 +37,15 @@
         = render "layouts/etm/footer"
       .clear
 
-    %a{:id =>'feedback-tab',:href=>'/feedback',:class => "select_chart side_tabs #{I18n.locale}"}
-    %a{:id =>'refman-tab',:href=>'http://refman.et-model.com',:class => "side_tabs #{I18n.locale}",:target=>"_blank"}
-    %a{:id =>'epn_module',:href=>'/pages/education',:class => "side_tabs #{I18n.locale}"}
+    %a#feedback-tab.side_tabs.select_chart{:href=>'/feedback', :class => I18n.locale}
+    %a#refman-tab.side_tabs{:href=>'http://refman.et-model.com',:class => I18n.locale, :target=>"_blank" }
+    %a#epn_module.side_tabs{:href=>'/pages/education', :class => I18n.locale}
+
     = render "layouts/etm/ga"
     
     //stick the footer at the bottom of the page if we're on an iPad/iPhone due to viewport/page bugs in mobile webkit
-    %script 
+    %script
+      == window.settings = new Setting(#{Current.setting.to_json.html_safe});
       if(navigator.platform == 'iPad' || navigator.platform == 'iPhone' || navigator.platform == 'iPod')
       {
       $("#footer").css("position", "static");

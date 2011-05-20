@@ -17,5 +17,7 @@
 //= require <lib/models/input_element.js>
 //= require <lib/models/metric.js>
 //= require <lib/models/gquery.js>
+//= require <lib/models/peak_load.js>
 //= require <lib/models/scenario.js>
 //= require <lib/models/policy_goal.js>
+//= require <lib/models/setting.js>

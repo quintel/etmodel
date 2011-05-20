@@ -51,30 +51,6 @@ describe InputElement do
     end
   end
 
-  describe "#input_elements_to_update" do
-    it "should split a value" do
-       InputElement.stub!(:find).and_return(["",""])
-       input_element = InputElement.new
-       input_element.stub!(:update_value).and_return("333_334")
-       input_element.input_elements_to_update.length.should == 2
-    end
-    
-    it "should find the input elements to update" do
-       InputElement.stub!(:find).and_return([""])
-       input_element = InputElement.new
-       input_element.stub!(:update_value).and_return("333")
-       input_element.input_elements_to_update.length.should == 1
-    end
-    
-    
-    it "should should deal with input elements without a update_value" do
-       InputElement.stub!(:find).and_return([])
-       input_element = InputElement.new
-       input_element.stub!(:update_value).and_return("")
-       input_element.input_elements_to_update.length.should == 0
-    end
-    
-  end
   
   describe "set correct input_elements as disabled" do
     it "should be true when input_element is has_locked_input_element_type?" do

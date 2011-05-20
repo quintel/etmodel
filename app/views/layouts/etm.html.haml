@@ -25,7 +25,12 @@
     #wrapper
       #content
         = render "layouts/etm/title"
-        = render "layouts/etm/content"
+        - flash_message
+        - if Current.view
+          = render "layouts/etm/sidebar"
+        = yield
+
+        .clear
         .clear
         
       #header

@@ -18,6 +18,7 @@ window.AppView = Backbone.View.extend({
     this.inputElementsController.bind("change", func);
 
     this.scenario = new Scenario();
+    this.peak_load = new PeakLoad();
   },
 
   call_api : function(input_params) {
@@ -49,7 +50,8 @@ window.AppView = Backbone.View.extend({
     window.charts.each(function(chart) { chart.trigger('change'); });
     window.input_elements.init_legacy_controller();
     window.policy_goals.invoke('update_view');
-    
+    window.App.peak_load.trigger('change');
+
     $("body").trigger("dashboardUpdate");
   },
 

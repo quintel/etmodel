@@ -18,34 +18,6 @@ describe Scenario do
     end
   end
 
-  describe "#complexities" do
-    context "simple" do
-      subject { Scenario.new(:complexity => 1) }
-      its(:simple?) { should be_true}
-      its(:medium?) { should be_false}
-      its(:advanced?) { should be_false}
-    end
-    context "medium" do
-      subject { Scenario.new(:complexity => 2) }
-      its(:simple?) { should be_false }
-      its(:medium?) { should be_true }
-      its(:advanced?) { should be_false }
-    end
-    context "advanced" do
-      subject { Scenario.new(:complexity => 3) }
-      its(:simple?) { should be_false }
-      its(:medium?) { should be_false }
-      its(:advanced?) { should be_true }
-    end
-    describe "#complexity = " do
-      before { 
-        @scenario = Scenario.new
-        @scenario.complexity = "1"
-      }
-      specify { @scenario.complexity.should == 1}
-    end
-  end
-
   describe "set_country_and_region" do
     before { @scenario = Scenario.new }
     context "region = nil" do

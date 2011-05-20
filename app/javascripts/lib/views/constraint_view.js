@@ -31,11 +31,9 @@ var ConstraintView = Backbone.View.extend({
     $('.constraint_popup', constraint).css('bottom', '80px');
 
     $('#shadowbox-outer', constraint).animate({opacity: 0.95}, 'slow');
-    if ($('.loading', constraint).length == 1) {  
-      $.get($(constraint).attr('rel')+"?t="+timestamp(), function(data) {
-        $('#shadowbox-body', constraint).html(data);
-      });      
-    }
+    $.get($(constraint).attr('rel')+"?t="+timestamp(), function(data) {
+      $('#shadowbox-body', constraint).html(data);
+    });      
   },
 
   close_all_popups : function() {

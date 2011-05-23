@@ -46,17 +46,11 @@
  
 
   %li
-    - if Current.setting && Current.setting.is_scenario_type?(:transition_price)
-      =link_to t("header.Save scenario"), edit_scenario_path
-      =link_to t("header.Reset scenario"), reset_to_preset_scenario_path, :method => :get, :confirm => t("scenario.reset_to_preset_confirmation")
-      =link_to t("transition_prize.header.intro_link"), transition_price_intro_path(:step => 2)
-      
-    - else
-      %a{:href => new_scenario_path}= t("header.Save scenario")
-      %a{:href => scenarios_path}= t("header.Load scenario")
-      %a{:href => reset_scenario_path}= t("header.Reset scenario")
-      - if Current.setting.use_peak_load
-        %label
-          = check_box :track_peak_load, :settings, :onchange => 'toggle_peak_load_tracking()', :checked => Current.setting.track_peak_load
-          = t('header.notify_of_grid_investments')
+    %a{:href => new_scenario_path}= t("header.Save scenario")
+    %a{:href => scenarios_path}= t("header.Load scenario")
+    %a{:href => reset_scenario_path}= t("header.Reset scenario")
+    - if Current.setting.use_peak_load
+      %label
+        = check_box :track_peak_load, :settings, :onchange => 'toggle_peak_load_tracking()', :checked => Current.setting.track_peak_load
+        = t('header.notify_of_grid_investments')
 

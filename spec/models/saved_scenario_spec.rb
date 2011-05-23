@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe SavedScenarios do
+describe SavedScenario do
   it { should belong_to :user }
 end

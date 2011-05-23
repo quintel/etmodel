@@ -80,7 +80,7 @@ class PagesController < ApplicationController
   end
 
   def update_footer
-    render :partial=>"layouts/etm/footer"
+    render :partial => "layouts/etm/footer"
   end
   
   def select_movie
@@ -105,10 +105,6 @@ class PagesController < ApplicationController
     redirect_to '/'
   end
   
-  def input_element_list
-    @input_elements = InputElement.includes([:description, :slide]).order('slides.controller_name, slides.action_name, slides.name, input_elements.name')
-  end
-
   ######################################
   # Browser Checks
   ######################################
@@ -125,20 +121,6 @@ class PagesController < ApplicationController
   def enable_browser_check
     session[:disable_browser_check] = false
     redirect_to '/'
-  end
-
-
-  def slider_test
-    render :layout => false
-  end
-  
-  def input_elements
-    out = "" 
-    Current.scenario.user_values.each do |id,value|
-        ip = InputElement.find(id)
-        out += "%d\t %s \t %0.02f<br/>" % [ip.id, ip.translated_name, ip.user_value.to_s]
-    end
-    render :text => out
   end
 
   def feedback
@@ -173,10 +155,6 @@ class PagesController < ApplicationController
   end
   
 private
-
-  def reset_scenario
-    
-  end
 
   def defaults
     @render_tabs = false

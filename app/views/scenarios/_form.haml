@@ -1,11 +1,5 @@
 %div{:style => "color: #c00; margin-bottom: 10px"}
 = error_messages_for :scenario
 = form.inputs :title, :description
-/ - form.object.attachments.size.times do |i|
-/ = form.inputs "attachments", :as => :file, :collection => ['hoj']
-= form.inputs :name => "New Attachments" do
-  - form.object.attachments.select(&:new_record?).each do |attachment|
-    / = form.input 'attachments_attributes[][title]', :as => 'text', :label => "Title"
-    = form.input 'attachments_attributes[][file]', :as => 'file', :label => "File"
 - form.buttons do
   = form.commit_button

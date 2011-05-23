@@ -39,7 +39,6 @@ class Scenario < ActiveRecord::Base
   end
 
   belongs_to :user
-  has_many :attachments, :as => :attachable
 
   # A scenario can have a preset. We use this 
   # when it has to be reset to this scenario. 

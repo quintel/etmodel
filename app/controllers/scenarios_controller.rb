@@ -90,7 +90,6 @@ class ScenariosController < ApplicationController
       flash[:notice] = t('flash.succesfully_saved')
 
       @scenario.attributes = params[:scenario]
-      @scenario.attachments.each { |x| @scenario.attachments.delete(x)  if x.new_record? && x.file_file_size.nil? }
       @scenario.copy_scenario_state(Current.scenario)
       @scenario.save
       redirect_to :back
@@ -107,15 +106,8 @@ class ScenariosController < ApplicationController
   # @tested 2010-12-22 jape
   #
   def edit
-    # @scenario.reload
-    @scenario.attachments.reload
-    new_attachments = @scenario.attachments.select {|x| x.new_record? }
-    @scenario.attachments.build if new_attachments.size == 0
     raise HTTPStatus::Forbidden.new if (!current_user || @scenario.user.nil? || @scenario.user.id != current_user.id)
-    @existing_attachments =  @scenario.attachments.select{|x| !x.new_record? }
   end
-  
-  
   
   ##############################
   # Singular resource methods

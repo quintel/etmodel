@@ -96,8 +96,6 @@ Etm::Application.routes.draw do
   end
   
   resources :scenarios do
-    resources :attachments
-    
     collection do
       get :municipality
     end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110523080501) do
+ActiveRecord::Schema.define(:version => 20110523125033) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -73,18 +73,6 @@ ActiveRecord::Schema.define(:version => 20110523080501) do
     t.integer  "current_electricity_demand_in_mj",         :limit => 8, :default => 1
     t.boolean  "has_solar_csp"
     t.boolean  "has_old_technologies"
-  end
-
-  create_table "attachments", :force => true do |t|
-    t.integer  "attachable_id"
-    t.string   "attachable_type"
-    t.string   "title"
-    t.string   "file_file_name"
-    t.string   "file_content_type"
-    t.string   "file_file_size"
-    t.string   "file_updated_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "blackbox_gqueries", :force => true do |t|

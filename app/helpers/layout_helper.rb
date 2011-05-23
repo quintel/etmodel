@@ -83,15 +83,6 @@ module LayoutHelper
     end
   end
   
-  def rounded_corners
-    haml_tag :div, :class => "rounded_corners" do
-      haml_tag :div, :class => "right_corner"
-      haml_tag :div, :class => "left_corner"
-      haml_tag :div, :class => "spacer"
-    end
-    
-  end
-  
   def current_tutorial_movie
     SidebarItem.find_by_key(params[:id]).andand.send("#{I18n.locale}_vimeo_id")
   end

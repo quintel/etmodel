@@ -13,7 +13,7 @@ module LayoutHelpers::SlideHelper
         haml_tag 'ul.accordion' do
           slides.each do |slide|
             
-            slides_dependent_on = "slides-%s" % [slide.id, I18n.locale, Current.scenario.region_or_country, Current.setting.complexity].join("-")
+            slides_dependent_on = "slides-%s" % [slide.id, I18n.locale, Current.setting.region_or_country, Current.setting.complexity].join("-")
 
             type = slide_type_in_collection(slide, slides)
             accordion_slide(slide, type)

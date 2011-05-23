@@ -32,7 +32,7 @@ describe Setting do
 
   describe "#track_peak_load?" do
     context "use_peak_load is off" do
-      before { Current.scenario.stub!(:use_peak_load).and_return(false) } 
+      before { Current.setting.stub!(:use_peak_load).and_return(false) } 
       context "track_peak_load on" do
         subject { Setting.new(:track_peak_load => true) }
         its(:track_peak_load?) { should be_false}
@@ -43,13 +43,12 @@ describe Setting do
       end
     end
     context "use_peak_load is on" do
-      before { Current.scenario.stub!(:use_peak_load).and_return(true) } 
       context "track_peak_load on" do
-        subject { Setting.new(:track_peak_load => true) }
+        subject { Setting.new(:track_peak_load => true, :use_peak_load => true) }
         its(:track_peak_load?) { should be_true}
       end
       context "track_peak_load off" do
-        subject { Setting.new(:track_peak_load => false) }
+        subject { Setting.new(:track_peak_load => false, :use_peak_load => true) }
         its(:track_peak_load?) { should be_false}
       end
     end

@@ -20,7 +20,7 @@ namespace :p do
   desc "Executing" 
   task :default => :environment do
     GC.disable
-    Current.scenario.country = 'nl'
+    Current.setting.country = 'nl'
     gql = Current.gql
     gql.query('Q(cost_electricity_production)')
     queries = [
@@ -43,7 +43,7 @@ namespace :p do
   task :gquery => :environment do
     GC::Profiler.enable
     GC.disable
-    Current.scenario.country = 'nl'
+    Current.setting.country = 'nl'
     gql = Current.gql
     gquery = gql.query_interface
     gquery.graph = gql.future
@@ -99,7 +99,7 @@ namespace :p do
 
   desc "Selecting converters by keys"
   task :graph_api => :environment do
-    Current.scenario.country = 'nl'
+    Current.setting.country = 'nl'
     gql = Current.gql
     converter_keys = gql.present.converters.map(&:full_key)
     group_keys = gql.present.groups.map(&:key).uniq

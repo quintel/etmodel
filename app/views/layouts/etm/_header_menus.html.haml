@@ -24,8 +24,8 @@
 #settings_menu.header_menu.topnav
   %li
     #flag
-      %img{:src => "/images/icons/#{Current.scenario.country}.png"}
-      = Current.scenario.region if Current.scenario.region != "nl"
+      %img{:src => "/images/icons/#{Current.setting.country}.png"}
+      = Current.setting.region if Current.setting.region != "nl"
     = t("header.Current country")+":"
   %li
     #year
@@ -55,7 +55,7 @@
       %a{:href => new_scenario_path}= t("header.Save scenario")
       %a{:href => scenarios_path}= t("header.Load scenario")
       %a{:href => reset_scenario_path}= t("header.Reset scenario")
-      - if Current.scenario.use_peak_load
+      - if Current.setting.use_peak_load
         %label
           = check_box :track_peak_load, :settings, :onchange => 'toggle_peak_load_tracking()', :checked => Current.setting.track_peak_load
           = t('header.notify_of_grid_investments')

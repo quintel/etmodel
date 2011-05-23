@@ -67,7 +67,7 @@ class InputElement < ActiveRecord::Base
   end
 
   def step_value
-    if Current.scenario.municipality? and self.locked_for_municipalities? and self.slide.andand.controller_name == "supply" 
+    if Current.setting.municipality? and self.locked_for_municipalities? and self.slide.andand.controller_name == "supply" 
       (self[:step_value] / 1000).to_f
     else
       self[:step_value].to_f
@@ -97,7 +97,7 @@ class InputElement < ActiveRecord::Base
   
   
   def cache_conditions_key
-    "%s_%s_%s_%s" % [self.class.name, self.id, Current.graph.id, Current.scenario.area.id]
+    "%s_%s_%s_%s" % [self.class.name, self.id, Current.graph.id, Current.setting.area.id]
   end
   
   # Cache
@@ -145,7 +145,7 @@ class InputElement < ActiveRecord::Base
 
   # some input values are not adaptable by municipalities
   def semi_unadaptable?
-    Current.scenario.municipality? && locked_for_municipalities == true
+    Current.setting.municipality? && locked_for_municipalities == true
   end
   alias_method :semi_unadaptable, :semi_unadaptable?
 
@@ -173,20 +173,6 @@ class InputElement < ActiveRecord::Base
   #############################################
   # Methods that interact with a users values
   #############################################
-
-  ##
-  # The current value of this slider for the current user. If the user hasn't touched
-  # the slider, its start value is return.
-  #
-  # @return [Float] Users value
-  #
-  def user_value
-    unless input_element_type == "fixed" # if a slider is fixed, the user cant 
-      value = Current.scenario.user_value_for(self) 
-    end
-    Current.scenario.store_user_value(self, value || start_value || 0).round(2)
-  end
-  
 
   def as_json(options = {})
     super(:only => [:id, :name, :unit, :share_group, :factor], 
@@ -237,12 +223,12 @@ class InputElement < ActiveRecord::Base
   # @todo Probably this should be moved into a Scenario class
   #
   def reset
-    val = Current.scenario.user_values.delete(self.id)
-    if updates = Current.scenario.update_statements[update_type]
-      if keys = updates[keys]
-        val = keys.delete(attr_name)
-      end
-    end
+    # val = Current.scenario.user_values.delete(self.id)
+    # if updates = Current.scenario.update_statements[update_type]
+    #   if keys = updates[keys]
+    #     val = keys.delete(attr_name)
+    #   end
+    # end
   end
 
 

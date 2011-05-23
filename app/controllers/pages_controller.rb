@@ -10,15 +10,13 @@ class PagesController < ApplicationController
     redirect_to APP_CONFIG[:root_page] if APP_CONFIG[:root_page]
     # if user wanted to start with a new scenario
     if params[:end_year]
-      Current.scenario = Scenario.default  
-      country = params[:region].split("-").first
-      Current.scenario.set_country_and_region(country, params[:region]) # we need the full region code here
-
       Current.setting = Setting.default
       Current.setting.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
       Current.setting.complexity = params[:complexity]
+      country = params[:region].split("-").first
+      Current.setting.set_country_and_region(country, params[:region]) # we need the full region code here
 
-      if Current.scenario.municipality?
+      if Current.setting.municipality?
         redirect_to :action => "municipality" and return
       else
         redirect_to :controller => 'pages', :action => 'intro'
@@ -53,8 +51,8 @@ class PagesController < ApplicationController
       @user_scenarios = current_user.scenarios.by_region('nl').order("updated_at DESC") #if current_user.andand.scenarios.by_region('nl')
     end
     # raise @user_scenarios.inspect
-    @area = Current.scenario.region
-    # redirect_to(root_path) and return unless Current.scenario.municipality?
+    @area = Current.setting.region
+
     if request.post?
       Current.setting.hide_unadaptable_sliders = params[:hide_unadaptable_sliders] == "1"
       if params[:scenario]

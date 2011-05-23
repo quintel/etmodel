@@ -1,7 +1,7 @@
 - if params[:country]
   - country = params[:country]
 - else
-  - country = Current.scenario.country
+  - country = Current.setting.country
 
 - @partners = Partner.country(country).include_descriptions
 

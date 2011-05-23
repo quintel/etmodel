@@ -20,8 +20,8 @@ var PeakLoad = Backbone.Model.extend({
     if (this.grid_investment_needed()) {
       if (this.unknown_parts_affected()) {
         notify_grid_investment_needed(this.parts_affected().join(','));
+        this.save_state_in_session();
       }
-      this.save_state_in_session();
     }
   },
 

@@ -5,18 +5,13 @@ class ScenariosController < ApplicationController
   before_filter :ensure_valid_browser
   before_filter :set_scenario, :only => [:edit, :reset_to_preset, :update]
   before_filter :find_scenario, :only => :load
-
+  before_filter :require_user, :only => [:index, :new]
 
   def index
-    unless current_user
-      flash[:notice] = I18n.t("flash.need_login")
-      redirect_to "/login?redirect_to=\/scenarios"
+    if current_user.role_id
+      @scenarios = Scenario.exclude_api.order("created_at DESC")
     else
-      if current_user.role_id
-        @scenarios = Scenario.exclude_api.order("created_at DESC")
-      else
-        @scenarios = current_user.scenarios.exclude_api.order("created_at DESC")
-      end
+      @scenarios = current_user.scenarios.exclude_api.order("created_at DESC")
     end
   end
  
@@ -24,16 +19,9 @@ class ScenariosController < ApplicationController
     @scenario = Scenario.find(params[:id])
   end
   
-  
-
   def new
-    unless current_user
-      flash[:notice] = I18n.t("flash.need_login")
-      redirect_to "/login?redirect_to=\/scenarios"
-    else
-      @scenario = Scenario.new
-      @scenario.description = get_constraint_description
-    end
+    @scenario = Scenario.new
+    @scenario.description = get_constraint_description
   end
 
   ##

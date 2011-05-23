@@ -17,8 +17,10 @@ class SettingsController < ApplicationController
     end
 
     if year = params[:end_year].to_s and year[/\d{4}/]
-      Current.setting.end_year = year.to_i
-      flash[:notice] = "#{I18n.t("flash.end_year")} #{Current.setting.end_year}."
+      if Current.setting.end_year != year.to_i
+        Current.setting.end_year = year.to_i
+        flash[:notice] = "#{I18n.t("flash.end_year")} #{Current.setting.end_year}."
+      end
     end
 
     respond_to do |format|

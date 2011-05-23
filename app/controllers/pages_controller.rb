@@ -5,9 +5,7 @@ class PagesController < ApplicationController
   before_filter :defaults
   skip_before_filter :show_intro_screens_only_once, :only => [:intro]
 
-  # TODO refactor move the Current-stuff somewhere else (seb 2010-10-11)
   def root
-    redirect_to APP_CONFIG[:root_page] if APP_CONFIG[:root_page]
     # if user wanted to start with a new scenario
     if params[:end_year]
       Current.setting = Setting.default
@@ -61,9 +59,6 @@ class PagesController < ApplicationController
         raise HTTPStatus::Forbidden if @scenario.user.nil? && @scenario.user != current_user
         # TODO seb: help what is this?? :municipality_preset??
         @scenario.load_scenario(:municipality_preset => true)
-      else
-        # commented this out, since users should be able to load without a scenario (for now), DS
-        # flash[:error] = I18n.t('flash.need_scenario')
       end
       redirect_to(:controller => 'pages', :action => 'intro') and return
     end

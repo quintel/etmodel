@@ -11,7 +11,7 @@ class HouseSelectionsController < ApplicationController
     session["house_label_new"] = nil
     session["house_label_existing"] = nil
     render :update do |page|
-		  page[:house_selection].replace_html( render "select")
+      page[:house_selection].replace_html( render "select")
     end
   end
 
@@ -30,7 +30,7 @@ class HouseSelectionsController < ApplicationController
       @perc_existing_houses = (percentage_of_existing_houses * 100).round(1)
 
       render :update do |page|
-			  page[:house_selection].replace_html( render "house_selections/result")
+        page[:house_selection].replace_html( render "house_selections/result")
       end
     else
       render :update do |page|
@@ -84,7 +84,7 @@ private
       session['calculated_hst_sliders'][slider.first.to_s] = average_share
     end
   end
-	
+  
 
   #this method updates the solar pv
   def set_solar_pv_slider
@@ -94,47 +94,47 @@ private
     
     return existing_pv + new_pv
   end  
-	
+  
   # this method updates the insulation sliders
-	def set_insulation_slider(lbl,house_type)
+  def set_insulation_slider(lbl,house_type)
     if house_type == 'new'
-  		case lbl
-  		  when 'aaa'
-  			  value = 5
-  			when 'aa'
-  				value = 4
+      case lbl
+        when 'aaa'
+          value = 5
+        when 'aa'
+          value = 4
         when 'a'
-  				value = 3.5
-  			when 'b'
-  				value = 3
-  			when 'c'
-  				value = 2.5
-  		end		 
+          value = 3.5
+        when 'b'
+          value = 3
+        when 'c'
+          value = 2.5
+      end    
     elsif house_type == 'existing'
-  		case lbl
+      case lbl
         when 'a'
-  				value = 2.8
-  			when 'b'
-  				value = 2.6
-  			when 'c'
-  				value = 2.4
-  			when 'd'
-  				value = 2
-  			when 'e'
-  				value = 1.5
-  		end
+          value = 2.8
+        when 'b'
+          value = 2.6
+        when 'c'
+          value = 2.4
+        when 'd'
+          value = 2
+        when 'e'
+          value = 1.5
+      end
     end
-		if house_type == "existing"
-			slider_id = 336
-		else
-			slider_id = 337
-		end
-		session['calculated_hst_sliders'][slider_id.to_s] = value
-	end
-	
-	####### HELPER METHODS #########
-	
-	def set_existing_installations
+    if house_type == "existing"
+      slider_id = 336
+    else
+      slider_id = 337
+    end
+    session['calculated_hst_sliders'][slider_id.to_s] = value
+  end
+  
+  ####### HELPER METHODS #########
+  
+  def set_existing_installations
     case session["house_label_existing"]
       when "a" 
         session['calculated_hst_sliders_existing']["51"] = 55
@@ -174,19 +174,19 @@ private
     end
   end
   
-	def percentage_of_heat_existing_houses
+  def percentage_of_heat_existing_houses
     heat_demand_existing_houses = Current.gql.query("future:V(heating_demand_with_current_insulation_households_energetic;demand)").to_f
     heat_demand_new_houses = Current.gql.query("future:V(heating_new_houses_current_insulation_households_energetic;demand)").to_f
     heat_demand_total = heat_demand_new_houses + heat_demand_existing_houses
     heat_demand_existing_houses / heat_demand_total
   end
 
- 	def percentage_of_heat_new_houses
+  def percentage_of_heat_new_houses
     1 - percentage_of_heat_existing_houses
   end
 
- 	def percentage_of_existing_houses
- 	  nr_of_old_houses = Current.setting.number_of_existing_households
+  def percentage_of_existing_houses
+    nr_of_old_houses = Current.setting.number_of_existing_households
     total_nr_of_houses = Current.setting.number_of_households
     nr_of_old_houses / total_nr_of_houses
   end
@@ -198,8 +198,8 @@ private
   def initialize_installations_sliders(house_type)
     session["calculated_hst_sliders_#{house_type}"] = {}
     InputElement.households_heating_sliders.each do |slider|
-  		session["calculated_hst_sliders_#{house_type}"][slider.id.to_s] = 0
-  		session["calculated_hst_sliders_#{house_type}"]["47"] = false # remove solar pv if exists
+      session["calculated_hst_sliders_#{house_type}"][slider.id.to_s] = 0
+      session["calculated_hst_sliders_#{house_type}"]["47"] = false # remove solar pv if exists
     end
   end
 

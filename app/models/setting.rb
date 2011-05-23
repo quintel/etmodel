@@ -20,7 +20,9 @@ class Setting
   attr_accessor :last_etm_controller_name,
                 :last_etm_controller_action,
                 :displayed_output_element,
-                :selected_output_element
+                :selected_output_element,
+                
+                :scenario_type
                 
 
   ##

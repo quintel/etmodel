@@ -1,6 +1,6 @@
 = javascript_tag "Util.makeSureConsoleExists();"
 
-- if Current.scenario.municipality?
+- if Current.setting.municipality?
   = javascript_tag "App.municipalityController.setMunicipality(true)"
   - if !Current.setting.show_municipality_introduction
     = javascript_tag "App.municipalityController.setMunicipalityMessageShown(true)"

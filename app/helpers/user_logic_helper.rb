@@ -25,7 +25,7 @@ module UserLogicHelper
   # The default parameters that can be used in the 
   # user logic block.
   def default_user_logic_environment
-    {:country => (Current.scenario && Current.setting.country) || "", :language => I18n.locale}
+    {:country => (Current.setting && Current.setting.country) || "", :language => I18n.locale}
   end
   
   # Keys that are allowed in country.

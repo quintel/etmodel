@@ -17,7 +17,7 @@
           - options = Proc.new{|key| {:query => nil, :total => nil, :clickable => Current.view.sidebar_items.map(&:key).include?(key)}}
 
           - intro_charts_item('Households', 'households', options.call('households')) 
-          - if Current.scenario.has_buildings?
+          - if Current.setting.area
             - intro_charts_item('Buildings', 'buildings', options.call('buildings')) 
           - intro_charts_item('Transport', 'transport', options.call('transport'))
           - intro_charts_item('Industry', 'industry', options.call('industry'))

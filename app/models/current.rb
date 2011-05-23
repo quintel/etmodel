@@ -21,14 +21,6 @@
 # 
 # The setting object will be persisted in the session.
 #
-# == Current.scenario
-#
-# At any point if you want to reset the scenario:
-#
-#   Current.reset_to_default_scenario!
-#   # which is the same as:
-#   Current.scenario = Scenario.default
-#
 # == Scenario vs Setting
 # 
 # A big difference between Setting and Scenario is, that Scenario influences the GQL.
@@ -60,15 +52,6 @@ class Current
     @session = session
   end
 
-  def scenario=(scenario)
-    session[:scenario] = scenario
-    scenario.load!
-  end
-
-  def scenario
-    session[:scenario] ||= Scenario.default
-  end
-
   def setting=(setting)
     session[:setting] = setting
   end
@@ -97,7 +80,7 @@ class Current
   # TODO refactor or make a bit more clear&transparent
   def graph
     unless @graph
-      region_or_country = scenario.region_or_country
+      region_or_country = setting.region_or_country
 
       @graph = self.user_graph
 
@@ -121,7 +104,7 @@ class Current
     if self.graph_id
       Graph.find(self.graph_id)
     else
-      region_or_country = scenario.region_or_country
+      region_or_country = setting.region_or_country
       Graph.latest_from_country(region_or_country)
     end
   end
@@ -189,7 +172,7 @@ class Current
   def load_graph_from_marshal(filename)
     raise "File '#{filename}' does not exist" unless File.exists?(filename)
     self.gql = Marshal.load(File.read(filename))
-    scenario.area = self.gql.present.area
+    setting.area = self.gql.present.area
 
     self.gql.prepare_graphs
   end
@@ -207,28 +190,7 @@ class Current
   # @untested 2010-12-27 seb
   #
   def reset_to_default!
-    reset_to_default_scenario!
     reset_to_default_setting!
-  end
-
-  ##
-  # Set to default scenario. Also overwrites year and country values!
-  #
-  # Do not use this method to reset slider values!
-  #
-  # @untested 2010-12-27 seb
-  #
-  def reset_to_default_scenario!
-    scenario = Scenario.default
-  end
-
-  ##
-  # Resets the scenarios from user values. But not what country, year we're in.
-  #
-  # @untested 2010-12-27 seb
-  #
-  def reset_scenario!
-    scenario.reset_user_values!
   end
 
   ##
@@ -253,7 +215,8 @@ class Current
   end
 
   def reset_gql
-    self.scenario.reset_user_values!
+    # FIXME:
+    # self.scenario.reset_user_values!
     
     self.gql = nil
     self.graph_id = nil

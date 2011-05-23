@@ -16,7 +16,7 @@ class SettingsController < ApplicationController
       Current.setting.send("#{setting}=", params[setting]) unless params[setting].nil?
     end
 
-    if year = params[:end_year] and year[/\d{4}/]
+    if year = params[:end_year].to_s and year[/\d{4}/]
       Current.scenario.end_year = year.to_i
       flash[:notice] = "#{I18n.t("flash.end_year")} #{Current.scenario.end_year}."
     end

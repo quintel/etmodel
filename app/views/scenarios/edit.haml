@@ -8,17 +8,3 @@
 %div{:style => "width: 600px"}
   - semantic_form_for @scenario, :html => {:multipart => true} do |f|
     = render :partial => 'form', :object => f
-
-- if !(@existing_attachments.nil? || @existing_attachments.empty?)
-  %fieldset{:class => 'inputs'}
-    %legend
-      %span="Existing Attachments"
-    %ul    
-      - @existing_attachments.each do |attachment|
-        %li
-          %div
-            %small
-              = link_to attachment.file_file_name, attachment.file.url, :target => '_blank'
-            %br
-            =form_tag  scenario_attachment_path(@scenario, attachment.id), :method => :delete do
-              = submit_tag "Delete"

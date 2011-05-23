@@ -12,7 +12,6 @@ gem 'http_status_exceptions', :git => 'git://github.com/japetheape/http_status_e
 gem 'jammit' # TODO: still used?
 gem 'paper_trail', '>= 1.6.4'
 gem 'default_value_for'
-gem 'paperclip', '>= 2.3.8'
 gem 'acts_as_list'
 gem 'ancestry', '~> 1.2.3'
 

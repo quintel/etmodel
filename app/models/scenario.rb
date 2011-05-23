@@ -93,14 +93,4 @@ class Scenario < ActiveRecord::Base
       :end_year => 2040
     }.with_indifferent_access
   end
-
-  
-  ##############################
-  # Scenario Attributes
-  ##############################
-
-  
-  # add all the attributes and methods that are modularized in calculator/
-  # loads all the "open classes" in calculator
-  Dir["app/models/scenario/*.rb"].sort.each {|file| require_dependency file }
 end

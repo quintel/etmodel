@@ -41,6 +41,7 @@ class Scenario < ActiveRecord::Base
     else
       Current.scenario = self
     end
+
     if !options[:municipality_preset]
       # when the user loads a scenario from the start menu, the form contains a complexity selector
       self.complexity ||= scenario_before.complexity 

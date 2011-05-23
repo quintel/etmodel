@@ -9,7 +9,7 @@ class OutputElementsController < ApplicationController
 
   def change
     Current.current_slide = Slide.find(params[:slide]).name.underscore
-    id = Current.scenario.selected_output_element || params[:id]
+    id = Current.setting.selected_output_element || params[:id]
     render_chart(id)
   end
 
@@ -17,12 +17,12 @@ class OutputElementsController < ApplicationController
   end
 
   def select_chart
-    Current.scenario.selected_output_element = params[:id]
-    render_chart(Current.scenario.selected_output_element)
+    Current.setting.selected_output_element = params[:id]
+    render_chart(Current.setting.selected_output_element)
   end
   
   def default_chart
-    Current.scenario.selected_output_element = nil
+    Current.setting.selected_output_element = nil
     render_chart(params[:id])
   end
 

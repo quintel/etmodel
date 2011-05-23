@@ -61,7 +61,7 @@ class Slide < ActiveRecord::Base
       #EXEPTION: simulate a slider for this slides, otherwise they will be hidden because they dont have sliders
       ["1"]
     else
-      input_elements.max_complexity(Current.scenario.complexity).reject {|x| x.hidden_input_element?}
+      input_elements.max_complexity(Current.setting.complexity).reject {|x| x.hidden_input_element?}
     end
   end
 
@@ -72,7 +72,7 @@ class Slide < ActiveRecord::Base
 
   def input_elements_for_display
     Rails.logger.warn('DEPRECATED: input_elements_for_display')
-    self.input_elements.max_complexity(Current.scenario.complexity).reject(&:area_dependent)
+    self.input_elements.max_complexity(Current.setting.complexity).reject(&:area_dependent)
   end
   
   ##

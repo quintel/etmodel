@@ -54,12 +54,40 @@ describe Setting do
       end
     end
   end
-
+  
+  describe "#complexities" do
+    context "simple" do
+      subject { Setting.new(:complexity => 1) }
+      its(:simple?) { should be_true}
+      its(:medium?) { should be_false}
+      its(:advanced?) { should be_false}
+    end
+    context "medium" do
+      subject { Setting.new(:complexity => 2) }
+      its(:simple?) { should be_false }
+      its(:medium?) { should be_true }
+      its(:advanced?) { should be_false }
+    end
+    context "advanced" do
+      subject { Setting.new(:complexity => 3) }
+      its(:simple?) { should be_false }
+      its(:medium?) { should be_false }
+      its(:advanced?) { should be_true }
+    end
+    describe "#complexity = " do
+      before { 
+        @setting = Setting.new
+        @setting.complexity = "1"
+      }
+      specify { @setting.complexity.should == 1}
+    end
+  end
+  
   describe "#reset!" do
     before do
       @random_attributes = Setting.default_attributes.clone
       @random_attributes.each do |key, value|
-        @random_attributes[key] = :foo
+        @random_attributes[key] = 11
       end
       @setting = Setting.new(@random_attributes)
     end

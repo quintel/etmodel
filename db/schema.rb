@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110517111521) do
+ActiveRecord::Schema.define(:version => 20110523080501) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -590,6 +590,17 @@ ActiveRecord::Schema.define(:version => 20110517111521) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "saved_scenarios", :force => true do |t|
+    t.integer  "user_id",     :null => false
+    t.integer  "scenario_id", :null => false
+    t.text     "settings"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "saved_scenarios", ["scenario_id"], :name => "index_saved_scenarios_on_scenario_id"
+  add_index "saved_scenarios", ["user_id"], :name => "index_saved_scenarios_on_user_id"
 
   create_table "scenarios", :force => true do |t|
     t.string   "author"

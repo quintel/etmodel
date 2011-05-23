@@ -22,11 +22,4 @@ Etm::Application.configure do
   #config.cache_store = :memory_store
   config.cache_store = :mem_cache_store
   #config.cache_store = :file_store, '/tmp/cache'
-
-
-
-
-  require 'lib/gc_stats'
-  config.middleware.use "GCStats"
-
 end

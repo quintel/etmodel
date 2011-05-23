@@ -41,16 +41,6 @@ describe InputElement do
         
   end
   
-  describe "#calculated_step_value" do
-    
-    it "should be 1/100th of the difference between max and min" do
-      max_value = 137
-      min_value = -237
-      ie = InputElement.new(:min_value => min_value, :max_value => max_value)
-      ie.calculated_step_value.should be_within(0.05).of((max_value - min_value) /100.0)
-    end
-  end
-
   
   describe "set correct input_elements as disabled" do
     it "should be true when input_element is has_locked_input_element_type?" do

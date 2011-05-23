@@ -91,11 +91,6 @@ class InputElement < ActiveRecord::Base
   end
 
   
-  def global_cache_settings
-    {}
-  end
-  
-  
   def cache_conditions_key
     "%s_%s_%s_%s" % [self.class.name, self.id, Current.graph.id, Current.setting.area.id]
   end
@@ -124,20 +119,6 @@ class InputElement < ActiveRecord::Base
     return self[:start_value]
   end
 
-  ##
-  # update hash for this input_element with the given value.
-  # {'converters' => {'converter_keys' => {'demand_growth' => 2.4}}}
-  #
-  # @param [Float] value the (user) value of that input_element
-  # @return [Hash]
-  #
-  def update_statement(value)
-    {
-      update_type => {
-        keys => {
-          attr_name => value / factor
-    }}}
-  end
 
   def remainder?
     input_element_type == 'remainder'
@@ -233,10 +214,6 @@ class InputElement < ActiveRecord::Base
 
 
   ##### optimizer
-
-  def calculated_step_value
-    ((max_value - min_value) / 100).round(2)
-  end
 
   ##
   # @tested 2010-12-22 robbert

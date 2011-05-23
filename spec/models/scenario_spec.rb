@@ -6,16 +6,9 @@ describe Scenario do
 
   describe "#default" do
     subject { Scenario.default }
-    its(:complexity) { should == 3}
     its(:country) { should == 'nl'}
     its(:region) { should == nil}
     its(:user_values) { should == {} }
-    its(:end_year) { should == 2040 }
-    its(:start_year) { should == 2010 }
-
-    describe "#years" do
-      its(:years) { should == 30 }
-    end
   end
 
   describe "set_country_and_region" do

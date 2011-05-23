@@ -9,7 +9,7 @@
 
 #existing_house_content.content
   %img{:src => "/images/layout/existing_house.gif",:style=>"float:right"}
-  %h1= t("house_selection.existing houses")+ " in #{Current.scenario.end_year}" 
+  %h1= t("house_selection.existing houses")+ " in #{Current.setting.end_year}" 
   
   = t("house_selection.old_houses_description")
 
@@ -40,7 +40,7 @@
       
 #new_house_content.content{:style=>'display:none'}
   %img{:src => "/images/layout/new_house.gif",:style=>"float:right"}
-  %h1= t("house_selection.new houses")+ " in #{Current.scenario.end_year}" 
+  %h1= t("house_selection.new houses")+ " in #{Current.setting.end_year}" 
   = t("house_selection.new_houses_description")
   
   .pick_label

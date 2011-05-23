@@ -12,7 +12,7 @@
 
   %div.present{:style => "position: relative; background: url(#{map_grey}) repeat-x; height: 105px; width: 70px"}
     %h3.tal{:style => "position:absolute; left: 0; top: 0; margin: 0; padding: 0"}
-      = Current.scenario.start_year
+      = Current.setting.start_year
 
     %div{:style => "background: url(#{map}) repeat-x; height: 105px; width: #{(70*now).round(0)}px"} &nbsp;    
 
@@ -20,6 +20,6 @@
 
   %div.future{:style => "position: relative; background: url(#{map_grey}) repeat-x; height: 105px; width: 70px"}
     %h3.tal{:style => "position:absolute; left: 0; top: 0; margin: 0; padding: 0"}
-      = Current.scenario.end_year
+      = Current.setting.end_year
     
     %div{:style => "background: url(#{map}) repeat-x; height: 105px; width: #{(70*fut).round(0)}px"} &nbsp;

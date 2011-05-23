@@ -18,7 +18,7 @@ describe PagesController do
       end
 
       specify { response.should redirect_to(:action => 'intro') }
-      specify { assigns(:current).scenario.end_year.should eql(year.to_i) }
+      specify { assigns(:current).setting.end_year.should eql(year.to_i) }
       specify { assigns(:current).scenario.country.should eql(country) }
     end
   end
@@ -56,12 +56,12 @@ describe PagesController do
     
     it "should not select custom year values if it's not selected" do
       post :root, :region => "nl", :other_year => '2034'
-      Current.scenario.end_year.should_not == 2034
+      Current.setting.end_year.should_not == 2034
     end
     
     it "should not select other field" do
       post :root, :region => "nl", :end_year => 'other', :other_year => '2036'
-      assigns(:current).scenario.end_year.should == 2036
+      assigns(:current).setting.end_year.should == 2036
     end                                        
   end
   

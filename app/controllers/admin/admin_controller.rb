@@ -21,21 +21,4 @@ class Admin::AdminController < ApplicationController
     send_data(Marshal.dump(object), :filename => options[:filename], :disposition => 'attachment')
   end
 
-
-  ##
-  # Loads selected graph into @graph and Current.graph
-  # Use params[:graph_id] if exists, otherwise params[:id]
-  #
-  def load_graph
-    @graph = Graph.find(params[:graph_id] || params[:id])
-    Current.graph = @graph
-  end
-
-  ##
-  # Sets @qernel_graph to 
-  #
-  def find_qernel_graph
-    raise "@graph is undefined. Probably forgot to add before_filter :load_graph" unless @graph
-    @qernel_graph = (params[:graph] == 'future') ? @graph.gql.future : @graph.gql.present
-  end
 end

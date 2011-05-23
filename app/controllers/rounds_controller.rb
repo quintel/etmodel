@@ -13,7 +13,7 @@ class RoundsController < ApplicationController
 
       unless params[:activate] == "4"
         # option = round.generate_policy_update_params(params[:value])
-        #         Current.scenario.update_input_elements(option)
+        #         Current.setting.update_input_elements(option)
       end
     end
   end

@@ -46,7 +46,7 @@
  
 
   %li
-    - if Current.scenario && Current.scenario.is_scenario_type?(:transition_price)
+    - if Current.setting && Current.setting.is_scenario_type?(:transition_price)
       =link_to t("header.Save scenario"), edit_scenario_path
       =link_to t("header.Reset scenario"), reset_to_preset_scenario_path, :method => :get, :confirm => t("scenario.reset_to_preset_confirmation")
       =link_to t("transition_prize.header.intro_link"), transition_price_intro_path(:step => 2)

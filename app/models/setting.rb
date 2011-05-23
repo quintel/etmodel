@@ -44,13 +44,6 @@ class Setting
   end
 
   ##
-  # @tested 2010-12-07 seb
-  #
-  def track_peak_load?
-    use_peak_load and track_peak_load
-  end
-  
-  ##
   # @tested 2010-12-06 seb
   #
   def self.default
@@ -73,6 +66,7 @@ class Setting
       send("#{key}=", value)
     end
   end
+
   ####### Complexities
 
   LEVELS = {
@@ -132,6 +126,13 @@ class Setting
   ####### Peak load
 
   ##
+  # @tested 2010-12-07 seb
+  #
+  def track_peak_load?
+    use_peak_load and track_peak_load
+  end
+
+  ##
   # @tested 2010-11-30 seb
   # 
   def use_peak_load
@@ -174,12 +175,6 @@ class Setting
     area.andand.is_municipality? == true
   end
 
-  ##
-  # @tested 2010-11-30 seb
-  # 
-  def has_buildings?
-    area.andand.has_buildings == true
-  end
 
   ##
   # @tested 2010-11-30 seb
@@ -202,59 +197,32 @@ class Setting
     @area ||= Area.find_by_country(region_or_country)
   end
 
-
   ##
   # @tested 2010-11-30 seb
   # 
+  # DEBT: Remove after we have ported house_selection tool
   def number_of_households
     @number_of_households ||= area.andand.number_households
   end
 
+  # DEBT: Remove after we have ported house_selection tool
   def number_of_households=(value)
     @number_of_households = value
   end
 
-
   ##
   # @tested 2010-11-30 seb
   # 
+  # DEBT: Remove after we have ported house_selection tool
   def number_of_existing_households
     @number_of_existing_households ||= area.andand.number_of_existing_households
   end
 
+  # DEBT: Remove after we have ported house_selection tool
   def number_of_existing_households=(value)
     @number_of_existing_households = value
   end
 
-
-  def score_to_tracker
-    scores = Current.gql.policy.goals.map{|g| [g.name,g.score.to_s]}
-    
-    number_of_rounds = Round.where('completed = 1').length
-    
-    array_to_send = scores.take(number_of_rounds) 
-    
-    (scores.length - number_of_rounds).times do
-    
-      array_to_send << ["x", "x"]
-    end
-    array_to_send << ["Total", array_to_send.collect{|x| x.last.to_i}.sum]
-    
-    array_to_send
-  end
-
-  ##
-  # Is it this or that type of scenario?
-  # 
-  # @param [String, Symbol] type
-  # @return [Boolean]
-  #
-  # @untested 2010-12-21 jape
-  #
-  def is_scenario_type?(type)
-    self.scenario_type && self.scenario_type == type.to_s
-  end
-  
   def current_view
     all_levels[complexity.to_i]
   end

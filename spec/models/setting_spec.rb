@@ -196,10 +196,9 @@ describe Setting do
 
 
 
-  describe "#municipality?, #has_buildings?, #use_network_calculations?, #number_of_households, #number_of_existing_households" do
+  describe "#municipality?, #use_network_calculations?, #number_of_households, #number_of_existing_households" do
     {
       :municipality? => :is_municipality?,
-      :has_buildings? => :has_buildings,
       :use_network_calculations? => :use_network_calculations,
       :number_of_households => :number_households,
       :number_of_existing_households => :number_of_existing_households

@@ -92,7 +92,7 @@ class InputElement < ActiveRecord::Base
 
   
   def cache_conditions_key
-    "%s_%s_%s_%s" % [self.class.name, self.id, Current.graph.id, Current.setting.area.id]
+    [self.class.name, self.id, Current.setting.area.id].join('_')
   end
   
   # Cache
@@ -185,7 +185,9 @@ class InputElement < ActiveRecord::Base
   
   # TODO - refactor
   def parsed_label
-    "#{Current.gql.query_present(label_query).round(2)} #{label}".html_safe unless label_query.blank?
+    #"#{Current.gql.query_present(label_query).round(2)} #{label}".html_safe unless label_query.blank?
+    # FIXME: removed label_query
+    label.html_safe unless label_query.blank?
   rescue
     "Missing parsed label"
   end

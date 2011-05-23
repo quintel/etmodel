@@ -21,11 +21,6 @@
 # 
 # The setting object will be persisted in the session.
 #
-# == Scenario vs Setting
-# 
-# A big difference between Setting and Scenario is, that Scenario influences the GQL.
-# E.g. in scenario we set end_year, can overwrite number_of_households, etc.
-#
 #
 # == Implementation details
 #
@@ -77,72 +72,6 @@ class Current
     session[:subdomain] = subdomain
   end
 
-  # TODO refactor or make a bit more clear&transparent
-  def graph
-    unless @graph
-      region_or_country = setting.region_or_country
-
-      @graph = self.user_graph
-
-      raise "No graph for: #{region_or_country}" unless @graph
-      raise "No Area data for: #{region_or_country}" unless Area.find_by_country(region_or_country)
-    end
-    @graph
-  end
-
-  ##
-  # Manually set the Graph that is active for the GQl
-  #
-  # @param [Graph] graph 
-  #
-  def graph=(graph)
-    @graph = graph
-  end
-
-  # TODO renmae user_graph to graph... but we have def graph already :(
-  def user_graph
-    if self.graph_id
-      Graph.find(self.graph_id)
-    else
-      region_or_country = setting.region_or_country
-      Graph.latest_from_country(region_or_country)
-    end
-  end
-
-
-  ##
-  # is the GQL calculated? If true, prevent the programmers
-  # to add further update statements ({Scenario#add_update_statements}). 
-  # Because they won't affect the system anymore.
-  #
-  # @return [Boolean]
-  #
-  def gql_calculated?
-    # We have to access the gql with @gql, because accessing it with self.gql
-    # would initialize it. If gql is not initialized it is also not calculated.
-    @gql.andand.calculated? == true
-  end
-
-  ##
-  # Access the GQL through Current.gql
-  # Lazy loads the latest graph if no gql has been manually assigned yet
-  # (for example if you want to show an older version)
-  def gql
-    @gql ||= graph.andand.gql
-  end
-
-  def gql=(gql)
-    @gql = gql
-  end
-
-  ##
-  #
-  #
-  def constraints
-    Constraint.all
-  end
-
-
   ##
   # Use for pages that should only be shown once to a user.
   # Example Usage in controller:
@@ -168,15 +97,6 @@ class Current
       false
     end
   end
-
-  def load_graph_from_marshal(filename)
-    raise "File '#{filename}' does not exist" unless File.exists?(filename)
-    self.gql = Marshal.load(File.read(filename))
-    setting.area = self.gql.present.area
-
-    self.gql.prepare_graphs
-  end
-
 
   ##############################
   # Resetting
@@ -204,25 +124,12 @@ class Current
     # TODO: move into either scenario or setting
     session["house_label_new"] = nil
     session["house_label_existing"] = nil
+
     OutputElementSerie.block_charts.order('`group`').each do |block|
       session["block_#{block.id}"] = nil
     end
   end
   alias_method :reset_to_default_setting!, :reset_setting!
-
-  def reset_user_session!
-    self.reset_to_default!
-  end
-
-  def reset_gql
-    # FIXME:
-    # self.scenario.reset_user_values!
-    
-    self.gql = nil
-    self.graph_id = nil
-
-    @graph = nil
-  end
 
 
   ##

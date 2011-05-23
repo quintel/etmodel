@@ -1,24 +1,5 @@
 module ApplicationHelper
   include SortableTable::App::Helpers::ApplicationHelper  
-  # QUESTION: Do we still need this?
-  def load_chart(index = 0)
-    load = [(current_load[index]*100).to_i, 100].min
-    "http://chart.apis.google.com/chart?chs=50x25&cht=gom&chd=t:#{load}&chco=009900,00CC00,00FF00,FFFF00,FF8040,FF0000"
-  end
-
-
-  # TODO refactor. Move to lib/ (seb 2010-10-11)
-  # TODO documentation. Write a little documenation. 
-  # QUESTION: Do we still need this?
-  def current_load
-    if RUBY_PLATFORM.downcase =~ /linux/
-      %x['uptime'].split(" ")[9..-1].map{|c| c.chomp(',').to_f }
-    elsif RUBY_PLATFORM.downcase =~ /darwin/ # Mac OS X
-      %x['uptime'].split(" ")[9..-1].map{|c| c.gsub(",",".").to_f }
-    else
-      [0.0,0.0,0.0] # Can't determine load, just return 0.0 in that case.
-    end
-  end
 
   def asset_cache_name(name)
     if Rails.env.development? || Rails.env.builded?
@@ -41,11 +22,6 @@ module ApplicationHelper
     str.gsub(/<\/?[^>]*>/, "")
   end
 
-
-  def resolve_variables(txt)
-    TextReplace.replace(txt)
-  end
-  alias_method :rv, :resolve_variables
 
   def table_defaults
     {:cellspacing => 0, :cellpadding => 0, :border => 0, :class => 'default'}
@@ -71,7 +47,6 @@ module ApplicationHelper
     end
   end
 
-  # TODO document - what the hell is %s/%s... (seb 2010-10-11)
   def last_etm_path(options = {})
     options[:include_action] = true if !options.has_key?(:include_action)
     if options[:include_action]
@@ -81,31 +56,12 @@ module ApplicationHelper
     end
   end
 
-  # TODO refactor (what does this do?) (seb 2010-10-11)
-  # Probably isnt used anyway
-  def show_locale_files
-    output = ''
-    Dir["#{LOCALES_DIRECTORY}#{I18n.locale}.{rb,yml}"].sort.each do |locale_file|
-      output << "\n#{locale_file.sub(Rails.root + "/", "")}:\n\n"
-      counter, lineWidth = 1, 80
-      lines = *open(locale_file).map(&:rstrip).each do |line|
-        output << "#{sprintf('%3d', counter)}: #{line}\n"
-        counter += 1
-      end
-    end
-    output
-  end
-
   def t_db(key)
     begin
       Translation.find_by_key(key).content.html_safe
     rescue
       "translation missing, #{I18n.locale.to_s.split('-').first} #{key}"
     end
-  end
-
-  def show_default_link?
-    session[:selected_output_element].andand.to_s && session[:selected_output_element].to_s != session[:default_output_element].to_s
   end
   
   def login_and_come_back_path

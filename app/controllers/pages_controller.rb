@@ -31,10 +31,8 @@ class PagesController < ApplicationController
       redirect_to load_scenario_path(params[:scenario])
     end
     
-    @scenarios = Scenario.where(:in_start_menu => true)
+    @scenarios = Api::Scenario.all
   end
-  
-  
 
   def grid_investment_needed
     render :layout => false

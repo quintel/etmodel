@@ -9,6 +9,7 @@ describe PagesController do
     Current.stub!(:graph)
     @area = Area.create(:country => 'nl')
     Area.create(:country => 'ch')
+    Api::Scenario.stub(:all).and_return([])
   end
 
   {'nl' => '2030', 'de' => '2050'}.each do |country, year|

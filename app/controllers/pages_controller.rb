@@ -25,12 +25,6 @@ class PagesController < ApplicationController
       end  
     end
 
-    # if user wanted to load a scenario directly
-    if params[:scenario]
-      Current.setting.complexity = params[:complexity].to_i
-      redirect_to load_scenario_path(params[:scenario])
-    end
-    
     @scenarios = Api::Scenario.all
   end
 

@@ -2,7 +2,8 @@
 # Class for all user settings that should persist over a session.
 #
 class Setting
-  
+  extend ActiveModel::Naming
+
   DEFAULT_ATTRIBUTES = {
     :show_municipality_introduction => true,
     :hide_unadaptable_sliders => false,
@@ -21,7 +22,6 @@ class Setting
                 :last_etm_controller_action,
                 :displayed_output_element,
                 :selected_output_element,
-                
                 :scenario_type
                 
 
@@ -135,7 +135,7 @@ class Setting
   # @tested 2010-11-30 seb
   # 
   def use_peak_load
-    Current.setting.advanced? and Current.setting.use_network_calculations?
+    advanced? and use_network_calculations?
   end
 
   ##
@@ -207,11 +207,11 @@ class Setting
   # @tested 2010-11-30 seb
   # 
   def number_of_households
-    self[:number_of_households] ||= area.andand.number_households
+    @number_of_households ||= area.andand.number_households
   end
 
   def number_of_households=(value)
-    self[:number_of_households] = value
+    @number_of_households = value
   end
 
 
@@ -219,11 +219,11 @@ class Setting
   # @tested 2010-11-30 seb
   # 
   def number_of_existing_households
-    self[:number_of_existing_households] ||= area.andand.number_of_existing_households
+    @number_of_existing_households ||= area.andand.number_of_existing_households
   end
 
   def number_of_existing_households=(value)
-    self[:number_of_existing_households] = value
+    @number_of_existing_households = value
   end
 
 
@@ -256,7 +256,46 @@ class Setting
   end
   
   def current_view
-    Current.setting.all_levels[complexity.to_i]
+    all_levels[complexity.to_i]
   end
-  
+
+  ##
+  # @tested 2010-12-06 seb
+  # 
+  def area_country
+    Area.find_by_country(country)
+  end
+ 
+ 
+  ##
+  # Returns the scale factor for the municipality. Nil if not scaled
+  #
+  # @param [InputElement] input_element
+  # @return [Float, nil] the scale factor or nil if not scaled.
+  #
+  # @tested 2010-12-06 seb
+  #
+  # TODO: refactor this or refactor the tests - PZ Wed 27 Apr 2011 15:48:52 CEST
+  def scale_factor_for_municipality(input_element)
+    return nil unless input_element.locked_for_municipalities
+    if input_element_scaled_for_municipality?(input_element)
+      electricity_country = area_country.current_electricity_demand_in_mj
+      electricity_region  = area_region.current_electricity_demand_in_mj
+      electricity_country.to_f / electricity_region rescue nil # prevent division by zero, you never know
+    end
+  end
+ 
+  ##
+  # Does the input_element have to be scaled?
+  #
+  # @param [InputElement] input_element
+  # @return [Boolean]
+  #
+  # @tested 2010-12-06 seb
+  #
+  def input_element_scaled_for_municipality?(input_element)
+    # TODO move to InputElement as no scenario state is used anymore
+    input_element.slide.andand.controller_name == 'supply' ||  
+      input_element.slide.andand.contains_chp_slider?
+  end
 end

@@ -100,33 +100,10 @@ class Scenario < ActiveRecord::Base
   ##############################
 
   ##
-  # @untested 2011-03-07 rob
-  # 
-  def selected_output_element
-    self[:selected_output_element]
-  end
-
-  def selected_output_element=(value)
-    self[:selected_output_element] = value
-  end
-
-
-  ##
-  # @untested 2011-03-08 rob
-  # 
-  def displayed_output_element
-    self[:displayed_output_element]
-  end
-
-  def displayed_output_element=(value)
-    self[:displayed_output_element] = value
-  end
-  
-  ##
   # @tested 2010-11-30 seb
   # 
   def use_peak_load
-    advanced? and use_network_calculations?
+    Current.setting.advanced? and use_network_calculations?
   end
 
   ##
@@ -196,7 +173,7 @@ class Scenario < ActiveRecord::Base
   end
   
   def current_view
-    Current.scenario.all_levels[Current.scenario.complexity.to_i]
+    Current.setting.all_levels[Current.setting.complexity.to_i]
   end
   
   

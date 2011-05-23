@@ -69,7 +69,7 @@ class ScenariosController < ApplicationController
   end
   
   def change_complexity
-    Current.scenario.complexity = params[:scenario][:complexity]
+    Current.setting.complexity = params[:scenario][:complexity]
     redirect_to :back
   end
 

@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   # This is used by the tvshow. When someone activated a round remotly the policy should be set localy
   # TODO: dont set when already set.
   def check_for_round_update
-    if current_user.andand.trackable  && Current.scenario.complexity_key == "watt_nu"
+    if current_user.andand.trackable  && Current.setting.complexity_key == "watt_nu"
       round = Round.where("active = 1").order(:position).last
       if round.andand.policy_goal
         Current.scenario.store_user_value(round.get_input_element,round.value)
@@ -123,7 +123,7 @@ protected
   end
 
   def load_view_settings
-    Current.view = ViewSetting.new(Current.scenario.complexity_key, params[:controller], params[:id])
+    Current.view = ViewSetting.new(Current.setting.complexity_key, params[:controller], params[:id])
   end
 
 

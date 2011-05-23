@@ -1,7 +1,7 @@
 %li
   %h3
     = t("Choose level")
-  - all_views = Current.scenario.all_levels.map{|n|[t("views.#{n.last}"), n.first]}
+  - all_views = Current.setting.all_levels.map{|n|[t("views.#{n.last}"), n.first]}
   - if (Rails.env.development? || Rails.env.test?)
     - options = all_views
   - else

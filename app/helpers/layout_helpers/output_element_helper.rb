@@ -23,8 +23,8 @@ module LayoutHelpers::OutputElementHelper
   def charts
     return unless @output_element
 
-    Current.scenario.selected_output_element = nil
-    Current.scenario.displayed_output_element = @output_element.id
+    Current.setting.selected_output_element = nil
+    Current.setting.displayed_output_element = @output_element.id
     haml_tag 'div#charts_wrapper' do
       haml_tag 'div#charts_holder' do
         if @output_element.block_chart?
@@ -44,6 +44,6 @@ module LayoutHelpers::OutputElementHelper
   end
   
   def displayed_output_element_is_default?
-    Current.scenario.selected_output_element.nil?
+    Current.setting.selected_output_element.nil?
   end
 end

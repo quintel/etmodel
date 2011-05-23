@@ -119,7 +119,19 @@ protected
   def load_view_settings
     Current.view = ViewSetting.new(Current.setting.complexity_key, params[:controller], params[:id])
   end
-
+  
+  def require_user
+    unless current_user
+      store_location
+      flash[:notice] = I18n.t("flash.need_login")
+      redirect_to login_url
+      return false
+    end
+  end
+  
+  def store_location
+    session[:return_to] = request.request_uri
+  end
 
   def restrict_to_admin
     if current_user.andand.admin?
@@ -168,4 +180,3 @@ private
   end
 
 end
-

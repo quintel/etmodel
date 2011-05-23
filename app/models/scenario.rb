@@ -35,8 +35,8 @@
 #
 #
 class Scenario < ActiveRecord::Base
-  # has_paper_trail will break saving and laoding scenarios
-  # has_paper_trail 
+  class LifeCycleEmission
+  end
 
   belongs_to :user
   has_many :attachments, :as => :attachable

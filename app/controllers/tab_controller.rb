@@ -3,7 +3,6 @@ class TabController < ApplicationController
 
   before_filter :ensure_valid_browser,
                 :load_view_settings,
-                :ensure_settings_defined,
                 :store_last_etm_page,
                 :load_output_element
 

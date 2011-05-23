@@ -28,8 +28,8 @@ class ApplicationController < ActionController::Base
     if current_user.andand.trackable  && Current.setting.complexity_key == "watt_nu"
       round = Round.where("active = 1").order(:position).last
       if round.andand.policy_goal
-        Current.scenario.store_user_value(round.get_input_element,round.value)
-        Current.scenario.add_update_statements(round.get_input_element.update_statement(round.value))
+        # Current.scenario.store_user_value(round.get_input_element,round.value)
+        # Current.scenario.add_update_statements(round.get_input_element.update_statement(round.value))
       end
     end
   end
@@ -108,12 +108,6 @@ protected
   def store_last_etm_page
     setting.last_etm_controller_name = params[:controller]
     setting.last_etm_controller_action = params[:action]
-  end
-
-  def ensure_settings_defined    
-    if Current.setting.country.nil? or Current.setting.end_year.nil?
-      redirect_to root_path
-    end
   end
 
   def permission_denied

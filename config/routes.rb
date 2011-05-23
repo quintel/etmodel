@@ -38,7 +38,7 @@ Etm::Application.routes.draw do
 
   match 'view_nodes/new/:node_type' => 'view_nodes#new'
   
-  resources :areas, :partners, :input_elements, :user_sessions, :users, :descriptions, :translations
+  resources :areas, :partners, :user_sessions, :users, :descriptions, :translations
   resources :constraints, :only => :show do
     get :iframe, :on => :member
   end

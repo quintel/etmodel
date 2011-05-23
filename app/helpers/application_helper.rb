@@ -81,21 +81,6 @@ module ApplicationHelper
     end
   end
 
-  # TODO refactor (what does this do?) (seb 2010-10-11)
-  # Probably isnt used anyway
-  def show_locale_files
-    output = ''
-    Dir["#{LOCALES_DIRECTORY}#{I18n.locale}.{rb,yml}"].sort.each do |locale_file|
-      output << "\n#{locale_file.sub(Rails.root + "/", "")}:\n\n"
-      counter, lineWidth = 1, 80
-      lines = *open(locale_file).map(&:rstrip).each do |line|
-        output << "#{sprintf('%3d', counter)}: #{line}\n"
-        counter += 1
-      end
-    end
-    output
-  end
-
   def t_db(key)
     begin
       Translation.find_by_key(key).content.html_safe
@@ -104,10 +89,6 @@ module ApplicationHelper
     end
   end
 
-  def show_default_link?
-    session[:selected_output_element].andand.to_s && session[:selected_output_element].to_s != session[:default_output_element].to_s
-  end
-  
   def login_and_come_back_path
     login_path(:redirect_to => request.env['REQUEST_PATH'])
   end

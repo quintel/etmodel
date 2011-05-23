@@ -8,8 +8,8 @@ class ScenariosController < ApplicationController
   before_filter :require_user, :only => [:index, :new]
 
   def index
-    if current_user.role_id
-      @scenarios = Scenario.exclude_api.order("created_at DESC")
+    if current_user.admin?
+      @scenarios = Api::Scenario.all # TODO: add some kind of pagination
     else
       @scenarios = current_user.scenarios.exclude_api.order("created_at DESC")
     end

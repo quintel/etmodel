@@ -21,7 +21,7 @@ class PagesController < ApplicationController
       end  
     end
 
-    @scenarios = Api::Scenario.all
+    @scenarios = Api::Scenario.all(:from => :homepage)
   end
 
   def grid_investment_needed

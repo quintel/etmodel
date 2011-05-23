@@ -4,7 +4,7 @@ class ScenariosController < ApplicationController
   
   before_filter :ensure_valid_browser
   before_filter :set_scenario, :only => [:edit, :reset_to_preset, :update]
-  before_filter :set_scenario_from_id, :only => :load
+  before_filter :find_scenario, :only => :load
 
 
   def index
@@ -20,8 +20,6 @@ class ScenariosController < ApplicationController
     end
   end
  
-
-
   def show
     @scenario = Scenario.find(params[:id])
   end
@@ -160,31 +158,20 @@ class ScenariosController < ApplicationController
     redirect_to :back
   end
   
-  
-  
   private
   
-  # Finds the scenario from id, or from the Current.scenario.
-  def set_scenario
-    @scenario = Current.scenario  if !(set_scenario_from_id)
-  end
-
-
-  # Finds the scenario from id
-  def set_scenario_from_id
-    if params[:id] && params[:id] != 'current'
-      @scenario = Scenario.find(params[:id])
-      true
-    else
-      false
+    # Finds the scenario from id, or from the Current.scenario.
+    def set_scenario
+      @scenario = Current.scenario  if !(set_scenario_from_id)
     end
-  end
-  
-  
-  # Makes a nice description out of the constraints.
-  def get_constraint_description
-    Current.view.root.constraints.map{|c| "#{c.name}: #{c.output.to_s.gsub(/<\/?[^>]*>/, "")}"}.join("\n")
-  end
 
+    # Finds the scenario from id
+    def find_scenario
+      @scenario = Scenario.find(params[:id])
+    end  
+  
+    # Makes a nice description out of the constraints.
+    def get_constraint_description
+      Current.view.root.constraints.map{|c| "#{c.name}: #{c.output.to_s.gsub(/<\/?[^>]*>/, "")}"}.join("\n")
+    end
 end
-

@@ -1,7 +1,7 @@
 %h3= t('select a scenario')
-= form_tag root_path do
+= form_tag url_for(:controller => 'scenarios', :action => 'load') do
   #select_container
-    %select#scenarios_select{:name => "scenario"}
+    %select#scenarios_select{:name => "id"}
       %option{:value => nil}
       - @scenarios.each do |scenario|
         %option{:value => scenario.id, :id => "option_scenario_#{scenario.id}"}

@@ -43,15 +43,6 @@ class User < ActiveRecord::Base
 
   acts_as_authentic
 
-  # HUMANIZED_ATTRIBUTES = {
-  #   :name             => I18n.t("user.name"),
-  #   :email            => I18n.t("user.email"),
-  #   :company_school   => I18n.t("user.company_school"),
-  #   :allow_news       => I18n.t("user.allow_news"),
-  #   :heared_first_at  => I18n.t("user.heared_first_at"),
-  #   :phone_number     => I18n.t("user.phone_number")
-  # }
-  
   def admin?
     role.try(:name) == "admin"
   end

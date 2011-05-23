@@ -3,4 +3,4 @@
     %img{:src => "/images/icons/#{Current.scenario.country}.png"}
       = Current.scenario.region if Current.scenario.region != "nl"
   #year{:style => "display: inline; padding: 0 10px;"}
-    = Current.scenario.end_year
+    = Current.setting.end_year

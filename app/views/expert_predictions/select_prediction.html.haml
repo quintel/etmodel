@@ -16,9 +16,9 @@
                 = t("predicts")
                 = t("slider."+input_element.name).downcase
                 = t("slidetitle.#{@slide.name}").downcase
-                = prediction.year_values.select_year(Current.scenario.end_year).first.value > 1 ? t('grows') : t('decreases') 
-                = prediction.year_values.select_year(Current.scenario.end_year).first.value.to_s.gsub("-", "") 
-                = "% in #{Current.scenario.end_year}."
+                = prediction.year_values.select_year(Current.setting.end_year).first.value > 1 ? t('grows') : t('decreases') 
+                = prediction.year_values.select_year(Current.setting.end_year).first.value.to_s.gsub("-", "") 
+                = "% in #{Current.setting.end_year}."
                 
                 = t("use this")
                 = check_box :input_element, input_element.id,  :class =>"pick_prediction", 'data-prediction_id' => prediction.id

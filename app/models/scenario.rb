@@ -129,20 +129,6 @@ class Scenario < ActiveRecord::Base
     self[:number_of_existing_households] = value
   end
 
-  ##
-  # @tested 2010-11-30 seb
-  # 
-  def start_year
-    2010
-  end
-
-
-  ##
-  # @tested 2010-11-30 seb
-  # 
-  def years
-    end_year - start_year
-  end
 
   def score_to_tracker
     scores = Current.gql.policy.goals.map{|g| [g.name,g.score.to_s]}

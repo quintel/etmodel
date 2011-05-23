@@ -11,6 +11,7 @@ class Setting
     :complexity => 3,
     :country => 'nl',
     :region => nil,
+    :start_year => 2010,
     :end_year => 2040
   }
 
@@ -113,6 +114,17 @@ class Setting
   def medium?;    self.complexity == 2; end
   def advanced?;  self.complexity == 3; end
 
-  #######
+  ####### Years
+
+  def end_year=(end_year)
+    @end_year = end_year.to_i
+  end
+
+  ##
+  # @tested 2010-11-30 seb
+  # 
+  def years
+    end_year - start_year
+  end
 
 end

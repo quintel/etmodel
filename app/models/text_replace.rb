@@ -2,8 +2,8 @@ class TextReplace
 
   def self.variables
     {
-      '_ENDYEAR_' => Current.scenario.end_year,
-      '_YEARS_' => Current.scenario.years
+      '_ENDYEAR_' => Current.setting.end_year,
+      '_YEARS_' => Current.setting.years
     }
   end
 

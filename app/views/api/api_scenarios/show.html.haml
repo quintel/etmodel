@@ -12,8 +12,8 @@
   %thead
     %tr
       %th Query
-      %th= Current.scenario.start_year
-      %th= Current.scenario.end_year
+      %th= Current.setting.start_year
+      %th= Current.setting.end_year
 
   - @json['result'].each do |key, result|
     %tr

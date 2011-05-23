@@ -77,16 +77,6 @@ Etm::Application.routes.draw do
         post :import
       end
     end
-    resources :gqueries do
-      get :result, :on => :member
-      collection do
-        get :dump
-        post :dump
-        get :test
-        post :test
-        get :result
-      end
-    end
   end
 
   resource :scenario do

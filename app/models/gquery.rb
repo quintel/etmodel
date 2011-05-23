@@ -1,3 +1,5 @@
+# DEBT: remove after separation
+
 # == Schema Information
 #
 # Table name: gqueries
@@ -46,58 +48,6 @@ class Gquery < ActiveRecord::Base
     raise Gql::GqlError.new("Gquery.get: no query found with key: #{key}") if query.nil?
     query
   end
-
-
-  ##
-  # The GqlParser currently does not work with whitespace.
-  # So we remove all whitespace before running the query
-  #
-  # Note: (sb) Alternatively we could also clean the query
-  # in the GQL engine. But then it would run for every (sub)query.
-  # Instead we memoize (see self.gquery_hash) the clean queries
-  # once and for all, saving us a few milliseconds per request.
-  #
-  # ejp- cleaning algorithm is encapsulated in Gql:GqueryCleanerParser
-  def parsed_query
-    @parsed_query ||= Gql::GqueryCleanerParser.clean_and_parse(query)
-  end
-
-  @@gquery_hash = nil
-  ##
-  # Memoize gquery_hash
-  #
-  def self.gquery_hash
-    @@gquery_hash ||= build_gquery_hash
-  end
-
-  def self.build_gquery_hash
-    self.all.inject({}) {|hsh,gquery| hsh.merge(gquery.key => gquery)}
-  end
-
-  def self.load_gquery_hash_from_marshal(filename)
-    raise "File '#{filename}' does not exist" unless File.exists?(filename)
-    @@gquery_hash = Marshal.load(File.read(filename))
-  end
-
-private
-
-  ##
-  # Method to invalidate the memoized gquery_hash.
-  #
-  def reload_cache
-    @@gquery_hash = nil
-  end
-
-
-  def validate_query_parseable
-    if Gql::GqueryCleanerParser.check_query(self[:query]).nil?
-      errors.add(:query, "cannot be parsed")
-      false
-    else
-      true
-    end
-  end
-
 
 end
 

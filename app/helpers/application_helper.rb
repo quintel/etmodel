@@ -6,17 +6,6 @@ module ApplicationHelper
     "http://chart.apis.google.com/chart?chs=50x25&cht=gom&chd=t:#{load}&chco=009900,00CC00,00FF00,FFFF00,FF8040,FF0000"
   end
 
-  def color_syntaxed_gquery(q)
-    str = q
-    str = str.gsub(/([A-Z]+)/, '<span class="gql_operator">\1</span>')
-
-    str = str.gsub(/(\()/, '<span class="gql_statement">\1')
-    str = str.gsub(/(\))/, '\1</span>')
-
-    str = str.gsub(/(\(\s*)(#{Gquery.gquery_hash.keys.join('|')})(\s*\))/, '\1<span class="gql_gquery_key">\2</span>\3')    
-    str = str.gsub(/(\(\s*)(#{Group.keys.join('|')})(\s*\))/, '\1<span class="gql_group_key">\2</span>\3')    
-    str.html_safe
-  end
 
   # TODO refactor. Move to lib/ (seb 2010-10-11)
   # TODO documentation. Write a little documenation. 

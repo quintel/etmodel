@@ -111,7 +111,7 @@ protected
   end
 
   def ensure_settings_defined    
-    if Current.scenario.country.nil? or Current.setting.end_year.nil?
+    if Current.setting.country.nil? or Current.setting.end_year.nil?
       redirect_to root_path
     end
   end

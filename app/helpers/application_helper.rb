@@ -42,7 +42,9 @@ module ApplicationHelper
   end
 
   def has_update_statements?
-    Current.scenario.update_statements.present?
+    # FIXME: add this functionality
+    # Current.scenario.update_statements.present?
+    true
   end
 
   def strip_html(str)

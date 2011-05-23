@@ -99,69 +99,6 @@ class Scenario < ActiveRecord::Base
   # Scenario Attributes
   ##############################
 
-  ##
-  # @tested 2010-11-30 seb
-  # 
-  def use_peak_load
-    Current.setting.advanced? and use_network_calculations?
-  end
-
-  ##
-  # @tested 2010-11-30 seb
-  # 
-  def number_of_households
-    self[:number_of_households] ||= area.andand.number_households
-  end
-
-  def number_of_households=(value)
-    self[:number_of_households] = value
-  end
-
-
-  ##
-  # @tested 2010-11-30 seb
-  # 
-  def number_of_existing_households
-    self[:number_of_existing_households] ||= area.andand.number_of_existing_households
-  end
-
-  def number_of_existing_households=(value)
-    self[:number_of_existing_households] = value
-  end
-
-
-  def score_to_tracker
-    scores = Current.gql.policy.goals.map{|g| [g.name,g.score.to_s]}
-    
-    number_of_rounds = Round.where('completed = 1').length
-    
-    array_to_send = scores.take(number_of_rounds) 
-    
-    (scores.length - number_of_rounds).times do
-    
-      array_to_send << ["x", "x"]
-    end
-    array_to_send << ["Total", array_to_send.collect{|x| x.last.to_i}.sum]
-    
-    array_to_send
-  end
-
-  ##
-  # Is it this or that type of scenario?
-  # 
-  # @param [String, Symbol] type
-  # @return [Boolean]
-  #
-  # @untested 2010-12-21 jape
-  #
-  def is_scenario_type?(type)
-    self.scenario_type && self.scenario_type == type.to_s
-  end
-  
-  def current_view
-    Current.setting.all_levels[Current.setting.complexity.to_i]
-  end
-  
   
   # add all the attributes and methods that are modularized in calculator/
   # loads all the "open classes" in calculator

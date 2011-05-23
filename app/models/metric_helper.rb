@@ -138,10 +138,10 @@ module MetricHelper
 
   def x_country(country)
     #TODO: change region codes for provinces so this hack isnt needed
-    if Current.scenario.region
-      "x#{Current.scenario.region.gsub('nl-','')[0..2].upcase}"
+    if Current.setting.region
+      "x#{Current.setting.region.gsub('nl-','')[0..2].upcase}"
     else
-      "x#{Current.scenario.country.upcase}"
+      "x#{Current.setting.country.upcase}"
     end
   end
   ##

@@ -186,8 +186,8 @@ private
   end
 
  	def percentage_of_existing_houses
- 	  nr_of_old_houses = Current.scenario.number_of_existing_households
-    total_nr_of_houses = Current.scenario.number_of_households
+ 	  nr_of_old_houses = Current.setting.number_of_existing_households
+    total_nr_of_houses = Current.setting.number_of_households
     nr_of_old_houses / total_nr_of_houses
   end
 

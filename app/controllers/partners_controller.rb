@@ -7,9 +7,9 @@ class PartnersController < ApplicationController
   end
 
   def index
-    @country = Current.scenario.country
+    @country = Current.setting.country
     @partners = Partner.country(@country).unique.sort_by{Kernel.rand}
-    #if @country = Current.scenario.country
+    #if @country = Current.setting.country
     #  @partners_in_country = Partner.country(@country)
     #end
   end

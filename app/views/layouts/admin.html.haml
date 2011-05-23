@@ -16,16 +16,14 @@
   %body#model
     #wrapper
       #content
-        - flash_message
-        = yield
-        .clear
+        = render "layouts/etm/content_admin"
 
       #header
         = render "layouts/etm/header"
         #nav.nav-admin
           .nav-holder.nav-holder-inner{:style=>"float:left"}
             %ul{:style=>"width:1400px;height:30px;"}
-              %li= link_to Current.scenario.country.upcase, '#'
+              %li= link_to Current.setting.country.upcase, '#'
               - tab("Tables", 'admin/query_tables', '')
               - tab("Descriptions", 'admin/descriptions','')
               - tab("Translations", 'admin/translations', '')

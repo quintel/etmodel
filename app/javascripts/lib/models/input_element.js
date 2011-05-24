@@ -129,7 +129,7 @@ var InputElementList = Backbone.Collection.extend({
   addInputElement:function(inputElement, options) {
     var options = inputElement.ui_options;
     this.inputElements[inputElement.id] = inputElement;
-    var inputElementView = new InputElementView(inputElement, options.element);
+    var inputElementView = new InputElementView({model : inputElement, element : options.element});
     inputElementView.bind('show', $.proxy(this.handleInputElementInfoBoxShowed, this));
     this.inputElementViews[inputElement.id] = inputElementView;
     inputElementView.sliderView.bind("change", $.proxy(this.handleUpdate, this));

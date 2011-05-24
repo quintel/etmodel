@@ -72,11 +72,6 @@ var InputElement = Backbone.Model.extend({
 });
 
 
-
-
-
-
-
 var InputElementList = Backbone.Collection.extend({
   model : InputElement,
 
@@ -84,12 +79,29 @@ var InputElementList = Backbone.Collection.extend({
     this.inputElements = {};
     this.inputElementViews = {};
     this.shareGroups = {};
-    this.openInputElementInfoBox;    
+    this.openInputElementInfoBox;
   },
 
   init_legacy_controller : function() {
     this.each(function(input_element) {
       input_element.init_legacy_controller();
+    });
+  },
+
+  load_user_values : function() {
+    _.bindAll(this, 'initialize_user_values');
+    $.jsonp({
+      url: window.App.scenario.user_values_url(),
+      success : this.initialize_user_values
+    });
+  },
+
+  initialize_user_values : function(user_value_hash) {
+    this.each(function(input_element) {
+      var user_value = user_value_hash[input_element.get('id')+''];
+      if (_.isNumber(user_value)) {
+        input_element.set({user_value : user_value});
+      }
     });
   },
 

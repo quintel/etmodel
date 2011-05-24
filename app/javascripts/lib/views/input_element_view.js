@@ -28,7 +28,7 @@ var InputElementView = Class.extend({
                             'formatter':   this.getFormatter(),
                             'precision':   this.getPrecision(),
                             'element':     this.element, 
-                            'infoBox':{'disableDataBox':true}};
+                            'infoBox': {'disableDataBox':true}};
     
     this.sliderView = new AdvancedSliderView(lSliderOptions);
     

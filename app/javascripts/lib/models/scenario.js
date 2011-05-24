@@ -41,9 +41,17 @@ var Scenario = Backbone.Model.extend({
     );
   },
 
+  user_values_url : function() {
+    return this.url_path()+"/user_values.json?callback=?&";
+  },
+
   query_url : function(input_params) {
     if (!input_params) input_params = '';
-    var url = globals.api_url + "/api_scenarios/"+this.api_session_id()+".json?callback=?&"+input_params;
+    var url = this.url_path()+".json?callback=?&"+input_params;
     return url;
+  },
+  
+  url_path : function() {
+    return globals.api_url + "/api_scenarios/"+this.api_session_id();
   }
 });

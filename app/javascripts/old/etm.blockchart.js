@@ -45,20 +45,24 @@ $(document).ready(function(){
 function toggle_block(block_id){
   if ( $('#canvas').find('#block_container_'+block_id).hasClass('visible') ) {
     hide_block(block_id);
-  }
-  else{
+  } else {
     show_block(block_id);
   }
 };
 
-function show_block(block_id){
-  $('#canvas').find('#block_container_'+block_id).removeClass('invisible').addClass('visible').css({'z-index':current_z_index});
+function show_block(block_id) {         
+  $('#canvas').find('#block_container_'+block_id).removeClass('invisible').
+    addClass('visible').css({'z-index':current_z_index});
+
   $('#block_list #show_hide_block_'+block_id).addClass('visible').removeClass('invisible');
+
   $.ajax({
    url: "/output_elements/visible/block_"+block_id,//+"&t="+timestamp(), // appending now() prevents the browser from caching the request
    method: 'post' // use GET requests. otherwise chrome and safari cause problems.
   });
+
   current_z_index++;  
+
   update_block_charts(global_data_array);
 }
 
@@ -112,15 +116,15 @@ function bind_hovers(){
       $(this).find("ul").hide(1);
     }
   );
-
 }
+
 function update_block_charts(data_array){
   // max values check
   global_data_array = data_array;
   var max_cost = 0;
   var max_invest = 0;
   $.each(data_array, function(index, block) {
-    if ($('#block_container_'+block[0]).attr('class').match(/\bvisible/)){
+    if ($('#block_container_'+block[0]).hasClass('visible')) {
       if (max_cost < block[1]) max_cost = block[1];
       if (max_invest < block[2]) max_invest = block[2];
     }

@@ -64,6 +64,14 @@ class OutputElementSerie < ActiveRecord::Base
     convert_color(color)
   end
 
+  # DEBT: hack because block charts contain incomplete gql queries.
+  def gquery_or_key_for_etengine
+    if output_element_id == OutputElement::BLOCK_CHART_ID
+      key
+    else
+      gquery
+    end
+  end
 end
 
 

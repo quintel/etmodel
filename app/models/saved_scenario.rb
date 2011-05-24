@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: saved_scenarios
+#
+#  id          :integer(4)      not null, primary key
+#  user_id     :integer(4)      not null
+#  scenario_id :integer(4)      not null
+#  settings    :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class SavedScenario < ActiveRecord::Base
   belongs_to :user
 

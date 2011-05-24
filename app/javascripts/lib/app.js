@@ -21,6 +21,11 @@ window.AppView = Backbone.View.extend({
     this.peak_load = new PeakLoad();
   },
 
+  // Load User values for Sliders
+  load_user_values : function() {
+    this.inputElementsController.load_user_values();
+  },
+
   call_api : function(input_params) {
     var url = this.scenario.query_url(input_params);
     var params = {'result' : window.gqueries.keys() };
@@ -79,3 +84,4 @@ window.AppView = Backbone.View.extend({
 });
 
 window.App = new AppView();
+

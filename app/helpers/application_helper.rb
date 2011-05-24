@@ -63,8 +63,4 @@ module ApplicationHelper
       "translation missing, #{I18n.locale.to_s.split('-').first} #{key}"
     end
   end
-
-  def login_and_come_back_path
-    login_path(:redirect_to => request.env['REQUEST_PATH'])
-  end
 end

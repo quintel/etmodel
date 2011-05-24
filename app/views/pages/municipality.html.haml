@@ -33,7 +33,8 @@
       - else
         %p
           %strong
-            = t("municipality.private_presets_and_login", :login => link_to(t("login"), login_and_come_back_path)).html_safe
+            - link = link_to t('login'), login_path(:redirect_to => request.env['REQUEST_PATH'])
+            = t("municipality.private_presets_and_login", :login => link).html_safe
         
         %br
       = submit_tag t('continue'), :class => 'button'

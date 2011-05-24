@@ -75,6 +75,6 @@
         %p
           = "#{t("slider."+InputElement.find(47).name)} = #{news["47"].round(1)}%".html_safe
   .new_button.button{:style=>"float:right"}
-    = link_to t("house_selection.apply"), "/house_selections/apply_house_selection_labels", {:remote => true}
+    = link_to t("house_selection.apply"), house_selection_apply_path, :remote => true
   .new_button.button
-    = link_to t("back"), "/house_selections/go_back", {:remote => true}
+    = link_to t("back"), house_selection_clear_path, :remote => true

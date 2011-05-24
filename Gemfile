@@ -9,7 +9,6 @@ gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => '
 gem 'bluecloth'
 gem 'formtastic'
 gem 'http_status_exceptions', :git => 'git://github.com/japetheape/http_status_exceptions.git' 
-gem 'jammit' # TODO: still used?
 gem 'paper_trail', '>= 1.6.4'
 gem 'default_value_for'
 gem 'acts_as_list'
@@ -17,8 +16,8 @@ gem 'ancestry', '~> 1.2.3'
 
 # javascript
 gem 'sprockets' # CHECK
-gem 'sprockets-rails'# CHECK
-gem 'rack-sprockets'# CHECK
+gem 'sprockets-rails' # CHECK
+gem 'rack-sprockets' # CHECK
 gem 'yui-compressor'
 gem 'i18n-js'
 

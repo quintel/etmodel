@@ -5,7 +5,10 @@
 
 %div{:style => "width: 600px"}
 
-  - semantic_form_for @scenario do |f|
+  = semantic_form_for @saved_scenario, :url => scenarios_path do |f|
     %div{:style => "color: #c00; margin-bottom: 10px"}= error_messages_for :scenario
-    = f.inputs :title, :description
+    = f.inputs do
+      = f.input :title
+      = f.input :description, :as => :text
+      = f.input :scenario_id
     = f.buttons

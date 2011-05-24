@@ -10,7 +10,7 @@ var VerticalStackedBarChartView = BaseChartView.extend({
       this.results(), 
       this.ticks(),
       this.filler(),
-      this.get('show_point_label') ,
+      this.model.get('show_point_label'),
       this.parsed_unit(), // this.parsed_unit(smallest_scale)
       this.axis_scale(),
       this.model.colors(),
@@ -18,7 +18,6 @@ var VerticalStackedBarChartView = BaseChartView.extend({
   },
 
   results : function() {
-    return [];
     var results = this.results_without_targets();
     var smallest_scale = null; 
 
@@ -33,10 +32,10 @@ var VerticalStackedBarChartView = BaseChartView.extend({
       });
     }
 
-    this.model.target_series().each(function(serie) {
+    _.each(this.model.target_series(), function(serie) {
       var result = serie.result()[0]; // target_series has only present or future value
       if (smallest_scale)
-        result = Metric.scaled_value(result[0], 3, smallest_scale)
+        result = Metric.scaled_value(result[0], 3, smallest_scale);
       var x = serie.get('position');
       results.push([[x - 0.4, result], [x + 0.4, result]]);
     });
@@ -44,17 +43,12 @@ var VerticalStackedBarChartView = BaseChartView.extend({
   },
 
   results_without_targets : function() {
-    return this.model.non_target_series()
-      .map(function(serie) { return serie.result_pairs(); });
+    return _.map(this.model.non_target_series(), function(serie) { return serie.result_pairs(); });
   },
   filler : function() {
-    return this.model.non_target_series()
-      .map(function(s) { return {}; });
+    return _.map(this.model.non_target_series(), function(serie) { return {}; });
   },
   ticks : function() {
     return ['2010', '2040'];
-  },
-  axis_scale : function() {
-    
   }
 });

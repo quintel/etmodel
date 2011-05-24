@@ -5,7 +5,7 @@ var Chart = Backbone.Model.extend({
   },
   
   initialize : function() {
-    this.series = new ChartSeries();
+    this.series = (this.get('type') == 'block') ? new BlockChartSeries() : new ChartSeries();
     this.bind('change:type', this.render);
     this.render();
   },
@@ -37,6 +37,9 @@ var Chart = Backbone.Model.extend({
         break;
       case 'policy_line' :
         this.view = new PolicyLineChartView({model : this});
+        break;
+      case 'block' :
+        this.view = new BlockChartView({model : this});
         break;
       case 'vertical_bar' :
         this.view = new VerticalBarChartView({model : this});

@@ -28,10 +28,8 @@ module LayoutHelpers::OutputElementHelper
     haml_tag 'div#charts_wrapper' do
       haml_tag 'div#charts_holder' do
         if @output_element.block_chart?
-          concat "BLOCK CHART ELEMENT"
-          # TODO: reimplement - PZ Wed 11 May 2011 15:20:42 CEST
-          # @blocks = @output_element.allowed_output_element_series
-          # haml_concat render "layouts/etm/cost_output_element"
+          @blocks = @output_element.allowed_output_element_series
+          haml_concat render "layouts/etm/cost_output_element"
         else
           haml_concat render "layouts/etm/output_element"
         end
@@ -39,10 +37,6 @@ module LayoutHelpers::OutputElementHelper
     end
   end
 
-  def add_output_element_js(output_element)
-    #javascript_tag("ETM.outputElementsController.addOutputElement(new OutputElement(#{output_element.to_json}.output_element), {'element':$('#charts_container')})")
-  end
-  
   def displayed_output_element_is_default?
     Current.setting.selected_output_element.nil?
   end

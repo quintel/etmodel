@@ -14,6 +14,7 @@
 //= require <lib/models/constraint.js>
 //= require <lib/models/chart.js>
 //= require <lib/models/chart_serie.js>
+//= require <lib/models/block_chart_serie.js>
 //= require <lib/models/input_element.js>
 //= require <lib/models/metric.js>
 //= require <lib/models/gquery.js>

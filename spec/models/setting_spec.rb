@@ -138,15 +138,10 @@ describe Setting do
     before { 
       @setting = Setting.default
       @area = Area.new
-      Area.should_receive(:find_by_country).with(@setting.region_or_country).and_return(@area)
+      Area.should_receive(:find_by_country_memoized).with(@setting.region_or_country).and_return(@area)
     }
     it "should return area" do
       @setting.area.should == @area
-    end
-    it "should memoize area" do
-      @setting.area
-      # if it Area is called twice the should_receive would raise an exception
-      @setting.area
     end
   end
 
@@ -157,8 +152,6 @@ describe Setting do
       @setting.area_region
     end
   end
-
-
 
 
   describe "number_of_households is memoized (does not lookup value from area when present)" do

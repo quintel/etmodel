@@ -4,17 +4,12 @@
  * Controls the view of a single input element.
  *
  */
-var InputElementView = Class.extend({
-  init: function(inputElement,element) {
-    _.extend(this, Backbone.Events);
-    this.initialize(inputElement,element);
-  },
-
-  initialize:function(inputElement, element) {
+var InputElementView = Backbone.View.extend({
+  initialize:function(options) {
     _.bindAll(this, 'updateHandler');
-    this.model = inputElement;
-    this.element = element;
-    inputElement.bind('change', this.updateHandler);
+    this.model = this.options.model;
+    this.element = this.options.element;
+    this.model.bind('change', this.updateHandler);
 
     var lSliderOptions = {  'reset_value': this.model.get('start_value'), 
                             'value':       this.model.get('user_value'), 

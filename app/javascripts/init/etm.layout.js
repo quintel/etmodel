@@ -3,7 +3,6 @@
 
 //= require <backbone-0.3.3-min>
 
-//= require <mvcjs>
 //= require <qislider>
 
 //= require <init/always>

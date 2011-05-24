@@ -60,7 +60,10 @@ class Area < ActiveRecord::Base
   has_paper_trail
   scope :country, lambda {|country| where(:country => country) }
 
-  has_many :datasets, :dependent => :destroy
+  def self.find_by_country_memoized(region_or_country)
+    @areas_by_country ||= {}.with_indifferent_access
+    @areas_by_country[region_or_country] ||= Area.find_by_country(region_or_country)
+  end
 
   # TODO change country to region_code
   def region_code
@@ -71,24 +74,8 @@ class Area < ActiveRecord::Base
     entity == "municipality"
   end
 
-  def co2_emission_1990_billions
-    co2_emission_1990 * BILLIONS
-  end
-
-  def dataset_key
-    :area_data
-  end
-
   def number_of_existing_households
     number_households * (1 - (percentage_of_new_houses/100))
-  end
-
-  def dataset_attributes
-    attributes.merge(:area => country)
-  end
-
-  def self.region_codes
-    find(:all, :select => "DISTINCT country").map(&:country)
   end
 end
 

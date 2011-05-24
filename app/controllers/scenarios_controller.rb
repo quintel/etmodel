@@ -33,14 +33,7 @@ class ScenariosController < ApplicationController
   # @tested 2010-12-22 jape
   #
   def create
-    @scenario = current_user.scenarios.build(params[:scenario])
-    @scenario.copy_scenario_state(Current.scenario)
-    if @scenario.save
-      flash[:notice] = "#{I18n.t("flash.scenario_saved")}:#{@scenario.title}"
-      redirect_to scenarios_url
-    else
-      render :action => 'new'
-    end
+
   end
 
   ##
@@ -97,47 +90,7 @@ class ScenariosController < ApplicationController
   def edit
     raise HTTPStatus::Forbidden.new if (!current_user || @scenario.user.nil? || @scenario.user.id != current_user.id)
   end
-  
-  ##############################
-  # Singular resource methods
-  # These are  methods that are invoked on Current.scenario
-  ##############################
 
-
-  ##
-  # Resets the current scenario to it's default values
-  #
-  # GET /scenario/reset
-  #
-  # @untested 2010-12-27 seb
-  #
-  def reset
-    begin
-      Current.scenario.reset!
-      flash[:notice] = I18n.t("flash.reset")
-      redirect_to :back
-    rescue ActionController::RedirectBackError => e
-      logger.debug "No HTTP Referer was set, so not reverting back."
-      render :text => "Ok reset, no HTTP_REFERER found."
-    end
-  end
-
-  ##
-  # Resets the current scenario to it's preset scenario.
-  #
-  # POST /scenario/reset_to_preset
-  #
-  # @tested 2010-12-21 jaap
-  #
-  def reset_to_preset
-    raise HTTPStatus::Forbidden if @scenario.preset_scenario.nil?
-    Current.reset_to_default!
-    @scenario.copy_scenario_state(@scenario.preset_scenario)
-    @scenario.save
-    Current.scenario = @scenario
-
-    redirect_to :back
-  end
   
   private
   

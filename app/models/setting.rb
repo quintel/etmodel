@@ -191,10 +191,13 @@ class Setting
   end
 
   ##
+  # Do not memoize area in setting, because it gets stored in session and 
+  # backbone settings.
+  #
   # @tested 2010-11-30 seb
   # 
   def area
-    @area ||= Area.find_by_country(region_or_country)
+    Area.find_by_country_memoized(region_or_country)
   end
 
   ##
@@ -231,7 +234,7 @@ class Setting
   # @tested 2010-12-06 seb
   # 
   def area_country
-    Area.find_by_country(country)
+    Area.find_by_country_memoized(country)
   end
  
  

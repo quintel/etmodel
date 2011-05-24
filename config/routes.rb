@@ -31,14 +31,13 @@ Etm::Application.routes.draw do
   match '/descriptions/slider/:id' => 'descriptions#show', :output => "InputElement"
 
   match '/descriptions/slider/:id' => 'descriptions#show', :output => "InputElement"
-  match 'house_selections/set_element/:id' => 'house_selections#set_element'
+  
+  match 'house_selections/tool' => 'house_selections#tool'
 
   match 'login'  => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
 
-  match 'view_nodes/new/:node_type' => 'view_nodes#new'
-  
-  resources :areas, :partners, :user_sessions, :users, :descriptions, :translations
+  resources :partners, :user_sessions, :users, :descriptions
   resources :constraints, :only => :show do
     get :iframe, :on => :member
   end
@@ -54,7 +53,6 @@ Etm::Application.routes.draw do
               :tabs, 
               :slides, 
               :sidebar_items, 
-              :descriptions, 
               :translations, 
               :output_elements, 
               :output_element_series, 
@@ -63,20 +61,6 @@ Etm::Application.routes.draw do
               :press_releases, 
               :converter_positions,
               :view_nodes
-
-    resources :blackboxes do
-      get :rspec, :on => :member
-    end
-    resources :graphs do
-      collection do
-        post :import
-      end
-      resources :converters
-      resources :converter_datas
-      collection do
-        post :import
-      end
-    end
   end
 
   resource :scenario do
@@ -94,41 +78,33 @@ Etm::Application.routes.draw do
     end
   end
 
-  namespace :optimizer do
-    resources :optimizers
-  end
-
-# TODO rails 3
   resources :output_elements do
     collection do
       get :select
     end
   end
 
-  match 'query/update/:output/' => 'query#update', :value => /[-0-9]+(?:\.[-0-9]*)?/
-  #match 'query/reset' => 'query#reset', :as => :reset_scenario
-
-  match '/select_movie/:id' => 'pages#select_movie'
-  match '/units' => 'pages#units'
-  match '/about' => 'pages#about'
-  match '/feedback' => 'pages#feedback'
+  match '/select_movie/:id'                => 'pages#select_movie'
+  match '/units'                           => 'pages#units'
+  match '/about'                           => 'pages#about'
+  match '/feedback'                        => 'pages#feedback'
   match '/tutorial/(:section)(/:category)' => 'pages#tutorial'  
-  match '/education' => 'pages#education'  
-  match '/pages/intro' => 'pages#intro', :as => :start
-  match '/testimonials' => 'pages#testimonials'
-  match '/recommendations' => 'pages#recommendations'
-  match '/press_releases' => 'pages#press_releases'
-  match '/optimize' => 'pages#optimize'
-  match '/disclaimer' => 'pages#disclaimer'
-  match '/privacy_statement' => 'pages#privacy_statement'
-  match '/show_all_countries' => 'pages#show_all_countries'
-  match '/show_all_views' => 'pages#show_all_views'
-  match '/municipalities' => 'pages#municipalities'
+  match '/education'                       => 'pages#education'  
+  match '/pages/intro'                     => 'pages#intro', :as => :start
+  match '/testimonials'                    => 'pages#testimonials'
+  match '/recommendations'                 => 'pages#recommendations'
+  match '/press_releases'                  => 'pages#press_releases'
+  match '/optimize'                        => 'pages#optimize'
+  match '/disclaimer'                      => 'pages#disclaimer'
+  match '/privacy_statement'               => 'pages#privacy_statement'
+  match '/show_all_countries'              => 'pages#show_all_countries'
+  match '/show_all_views'                  => 'pages#show_all_views'
+  match '/municipalities'                  => 'pages#municipalities'
 
-  match '/home' => 'pages#home', :as => :home
-  match '/careers' => 'pages#careers', :as => :careers
-  match '/sitemap' => 'pages#sitemap', :as => :sitemap
-  match '/information' => 'pages#information', :as => :information
+  match '/home'                            => 'pages#home',        :as => :home
+  match '/careers'                         => 'pages#careers',     :as => :careers
+  match '/sitemap'                         => 'pages#sitemap',     :as => :sitemap
+  match '/information'                     => 'pages#information', :as => :information
 
   match '/:controller(/:action(/:id))'
 end

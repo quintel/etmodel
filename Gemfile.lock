@@ -58,7 +58,6 @@ GEM
     awesome_print (0.3.2)
     bluecloth (2.1.0)
     builder (2.1.2)
-    closure-compiler (1.1.1)
     columnize (0.3.2)
     daemons (1.0.10)
     default_value_for (1.0.1)
@@ -82,9 +81,6 @@ GEM
     i18n (0.5.0)
     i18n-js (1.0.2)
       i18n
-    jammit (0.6.0)
-      closure-compiler (>= 0.1.0)
-      yui-compressor (>= 0.9.1)
     jquery-rails (1.0.1)
       railties (~> 3.0)
       thor (~> 0.14)
@@ -197,7 +193,6 @@ DEPENDENCIES
   hoptoad_notifier (= 2.4.2)
   http_status_exceptions!
   i18n-js
-  jammit
   jquery-rails
   jslint_on_rails
   memcache-client

@@ -54,7 +54,6 @@
 #  current_electricity_demand_in_mj         :integer(8)      default(1)
 #  has_solar_csp                            :boolean(1)
 #  has_old_technologies                     :boolean(1)
-#  parent_id                                :integer(4)
 #
 
 class Area < ActiveRecord::Base

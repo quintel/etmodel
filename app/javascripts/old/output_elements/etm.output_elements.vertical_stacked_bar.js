@@ -2,8 +2,6 @@ function InitializeVerticalBar(id,series,ticks,filler,show_point_label,unit,axis
   InitializeVerticalStackedBar(id,series,ticks,filler,show_point_label,unit,axis_values,colors,labels);
 }
 function InitializeVerticalStackedBar(id,series,ticks,filler,show_point_label,unit,axis_values,colors,labels){
-    console.info(series.length);
-    console.info(filler.length);
   var max_value = axis_values[1];
   var min_value = axis_values[0];
 

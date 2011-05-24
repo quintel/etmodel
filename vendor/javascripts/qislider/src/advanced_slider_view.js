@@ -87,9 +87,10 @@ var AdvancedSliderView = Backbone.View.extend({
       this.trigger('change');
     }, this));
   
-    this.nameElement.bind('click', jQuery.proxy(function() {this.infoBox.toggle();}, this));
+    this.nameElement.bind('click', jQuery.proxy(this.handleDownButtonClicked, this));
+    this.downButton.element.bind('click', jQuery.proxy(this.handleDownButtonClicked, this));
+
     this.infoBox.bind('visibility', jQuery.proxy(this.handleVisibilityChange, this));
-    this.downButton.bind('click', jQuery.proxy(this.handleDownButtonClicked, this));
     this.element.bind('mouseover', jQuery.proxy(this.handleMouseOver, this));
     this.element.bind('mouseout', jQuery.proxy(this.handleMouseOut, this));
     

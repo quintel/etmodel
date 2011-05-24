@@ -16,13 +16,5 @@ class Constraint < ActiveRecord::Base
   has_and_belongs_to_many :root_nodes
   belongs_to :gquery
 
-  def to_json(options={})
-    super(:only => [:id], :methods => [:output, :formatted_output_scale, :unformatted_output])
-  end
-
-  def data
-    @data ||= Current.gql.query(query)
-  end
-  
 end
 

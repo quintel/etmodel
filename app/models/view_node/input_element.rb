@@ -12,11 +12,11 @@
 #  type           :string(255)
 #
 
-class SlideNode < ViewNode
-  validate :parent_is_sidebar_item
+class ViewNode::InputElement < ViewNode
+  validate :parent_is_slide
 
   validates :element_id, :presence => true
-  validates :element_type, :inclusion => %w[Slide]
+  validates :element_type, :inclusion => %w[InputElement]
 end
 
 # == Schema Information

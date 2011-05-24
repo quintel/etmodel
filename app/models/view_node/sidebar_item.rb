@@ -12,7 +12,7 @@
 #  type           :string(255)
 #
 
-class SidebarItemNode < ViewNode
+class ViewNode::SidebarItem < ViewNode
   validate :parent_is_tab
 
   validates :element_id, :presence => true

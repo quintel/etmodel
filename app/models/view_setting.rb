@@ -5,14 +5,14 @@ class ViewSetting
   attr_reader :setting_key, :tab_key, :sidebar_item_key, :slide_key
 
   def initialize(setting_key, tab_key, sidebar_item_key, slide_key = nil)
-    @setting_key = setting_key.to_s
-    @tab_key = tab_key.to_s
+    @setting_key      = setting_key.to_s
+    @tab_key          = tab_key.to_s
     @sidebar_item_key = sidebar_item_key.to_s
-    @slide_key = slide_key
+    @slide_key        = slide_key
   end
 
   def root
-    @root ||= RootNode.find_by_key(setting_key)
+    @root ||= ViewNode::Root.find_by_key(setting_key)
   end
  
   # TODO use ids instead of 

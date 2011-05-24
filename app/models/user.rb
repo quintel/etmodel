@@ -30,7 +30,7 @@
 
 class User < ActiveRecord::Base
   has_many :scenarios
-  has_many :user_scenarios, :dependent => :destroy
+  has_many :saved_scenarios, :dependent => :destroy
   belongs_to :role
   attr_protected :role_id #To refrain Hackers from using mass assignment when creating new account
 

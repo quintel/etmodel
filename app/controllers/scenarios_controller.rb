@@ -20,8 +20,9 @@ class ScenariosController < ApplicationController
   end
   
   def new
-    @scenario = Scenario.new
-    @scenario.description = get_constraint_description
+    @saved_scenario = SavedScenario.new(
+      :scenario_id => cookies[:api_session_id]
+    )
   end
 
   ##
@@ -149,9 +150,4 @@ class ScenariosController < ApplicationController
     def find_scenario
       @scenario = Scenario.find(params[:id])
     end  
-  
-    # Makes a nice description out of the constraints.
-    def get_constraint_description
-      Current.view.root.constraints.map{|c| "#{c.name}: #{c.output.to_s.gsub(/<\/?[^>]*>/, "")}"}.join("\n")
-    end
 end

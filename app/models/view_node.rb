@@ -69,7 +69,7 @@ class ViewNode < ActiveRecord::Base
   TYPES = %w[root tab sidebar_item slide input_element output_element]
 
   TYPES.each do |type|
-    node_class_name = "#{type.camelcase}Node"
+    node_class_name = "ViewNode::#{type.camelcase}"
 
     ##
     # e.g.
@@ -96,7 +96,9 @@ class ViewNode < ActiveRecord::Base
     end
   end
 
-  def category?;      self.type == "SidebarItemNode"; end
+  def category?
+    self.type == "ViewNode::SidebarItem"
+  end
 
   def element_type_or_default
     self[:element_type] || default_element_type
@@ -104,10 +106,10 @@ class ViewNode < ActiveRecord::Base
 
   def default_element_type
     case parent.depth
-    when 0 then 'Tab'
-    when 1 then 'SidebarItem'
-    when 2 then 'Slide'
-    when 3 then 'InputElement'
+    when 0 then 'ViewNode::Tab'
+    when 1 then 'ViewNode::SidebarItem'
+    when 2 then 'ViewNode::Slide'
+    when 3 then 'ViewNode::InputElement'
     else ''
     end
   end
@@ -180,23 +182,23 @@ class ViewNode < ActiveRecord::Base
   end
   def self.create_new_view(old_view,new_view)
     old_view = ViewNode.find_by_key(old_view)
-    new_view = RootNode.new(:key=>new_view)
+    new_view = ViewNode::Root.new(:key=>new_view)
     new_view.save
     old_view.children.each do |old_tab|
       #generate tabs
-      new_tab = TabNode.new(:element_id=> old_tab.element_id, :element_type=>'Tab',:ancestry=>"#{new_view.id}",:position=>old_tab.position,:ancestry_depth=>old_tab.ancestry_depth)
+      new_tab = ViewNode::Tab.new(:element_id=> old_tab.element_id, :element_type=>'Tab',:ancestry=>"#{new_view.id}",:position=>old_tab.position,:ancestry_depth=>old_tab.ancestry_depth)
       new_tab.save
       old_tab.children.each do |old_sidebar|
         #generate sidebars
-        new_sidebar = SidebarItemNode.new(:element_id=> old_sidebar.element_id, :element_type=>'SidebarItem',:ancestry=>"#{new_view.id}/#{new_tab.id}",:position=>old_sidebar.position,:ancestry_depth=>old_sidebar.ancestry_depth)
+        new_sidebar = ViewNode::SidebarItem.new(:element_id=> old_sidebar.element_id, :element_type=>'SidebarItem',:ancestry=>"#{new_view.id}/#{new_tab.id}",:position=>old_sidebar.position,:ancestry_depth=>old_sidebar.ancestry_depth)
         new_sidebar.save
         old_sidebar.children.each do |old_slide|
           #generate sidebars
-          new_slide = SlideNode.new(:element_id=> old_slide.element_id, :element_type=>'Slide',:ancestry=>"#{new_view.id}/#{new_tab.id}/#{new_sidebar.id}",:position=>old_slide.position,:ancestry_depth=>old_slide.ancestry_depth)
+          new_slide = ViewNode::Slide.new(:element_id=> old_slide.element_id, :element_type=>'Slide',:ancestry=>"#{new_view.id}/#{new_tab.id}/#{new_sidebar.id}",:position=>old_slide.position,:ancestry_depth=>old_slide.ancestry_depth)
           new_slide.save
           old_slide.children.each do |old_input|
             #generate inputelements
-            InputElementNode.new(:element_id=> old_input.element_id, :element_type=>'InputElement',:ancestry=>"#{new_view.id}/#{new_tab.id}/#{new_sidebar.id}/#{new_slide.id}",:position=>old_input.position,:ancestry_depth=>old_input.ancestry_depth).save
+            ViewNode::InputElement.new(:element_id=> old_input.element_id, :element_type=>'InputElement',:ancestry=>"#{new_view.id}/#{new_tab.id}/#{new_sidebar.id}/#{new_slide.id}",:position=>old_input.position,:ancestry_depth=>old_input.ancestry_depth).save
           end
         end
       end

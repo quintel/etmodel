@@ -12,7 +12,7 @@
 #  type           :string(255)
 #
 
-class TabNode < ViewNode
+class ViewNode::Tab < ViewNode
   has_many :sidebar_item_nodes
 
   validate :parent_is_root

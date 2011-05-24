@@ -12,7 +12,7 @@
 #  type           :string(255)
 #
 
-class OutputElementNode < ViewNode
+class ViewNode::OutputElement < ViewNode
   validate :parent_is_slide
   validates :element_id, :presence => true
   validates :element_type, :inclusion => %w[OutputElement]

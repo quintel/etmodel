@@ -30,9 +30,6 @@ gem 'mysql2', '~>0.2.6'
 gem 'memcache-client'
 gem 'mongrel', '1.2.0.pre2'
 
-# Optional gems that were commented in environment.rb
-gem 'rubyzip', '0.9.4' # AWAY?
-
 group :development do
   gem 'yard', '0.5.4'
   gem 'annotate', :require => false

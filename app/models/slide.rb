@@ -27,8 +27,6 @@ class Slide < ActiveRecord::Base
   scope :controller, lambda {|controller| where(:controller_name => controller) }
   scope :action, lambda {|action| where(:action_name => action) }
   scope :max_complexity, lambda {|complexity| where("complexity <= #{complexity}") }
-  # DEPRECATED DO NOT USE ANYMORE
-  scope :ordered, order("order_by ASC")
 
   def search_result
     SearchResult.new(name, description)
@@ -43,6 +41,7 @@ class Slide < ActiveRecord::Base
   end
 
   def show_house_selection_tool
+    # DEBT: Create show_house_selection_tool flag in table
     true if [1,4,5,106,108].include?(id)
   end
 

@@ -21,7 +21,6 @@ window.AppView = Backbone.View.extend({
     this.inputElementsController.bind("change", func);
 
     this.settings = new Setting();
-    //this.settings.bind('change', this.settings.save);
     this.scenario = new Scenario();
     this.peak_load = new PeakLoad();
   },
@@ -30,6 +29,7 @@ window.AppView = Backbone.View.extend({
     if (this.scenario.api_session_key() == null) {
       this.scenario.new_session();
     } else {
+      // this.scenario.new_session() will call App.bootstrap when completed again.
       this.load_user_values();
       this.call_api();
     }

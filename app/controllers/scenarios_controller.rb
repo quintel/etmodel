@@ -21,7 +21,7 @@ class ScenariosController < ApplicationController
   
   def new
     @saved_scenario = SavedScenario.new(
-      :api_session_key => cookies[:api_session_id]
+      :api_session_key => Current.settings.api_session_key
     )
   end
 
@@ -46,7 +46,9 @@ class ScenariosController < ApplicationController
   # @tested 2010-12-22 jape
   #
   def load
-    Current.scenario = @scenario
+    @scenario = Api::Scenario.find(params[:id])
+    settings = Setting::SCENARIO_ATTRIBUTES.inject({}) {|hsh,key| hsh.merge key => @scenario.send(key) }
+    Current.setting = Setting.new(settings.merge(:scenario_id => @scenario.id));
     redirect_to_if start_path
   end
   

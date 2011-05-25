@@ -1,6 +1,9 @@
 _.extend(_, {
   sum: function (arr) {
     return _.reduce(arr, function(sum, v) {return sum + v;}, 0);
+  },
+  isPresent : function(obj) {
+    return !(_.isNull(obj) || _.isUndefined(obj));
   }
 });
 
@@ -17,12 +20,22 @@ window.AppView = Backbone.View.extend({
     var func = $.proxy(this.handleInputElementsUpdate);
     this.inputElementsController.bind("change", func);
 
-    this.scenario = new Scenario();
     this.settings = new Setting();
-    this.settings.bind('change', this.scenario.copy_shared_settings);
     //this.settings.bind('change', this.settings.save);
-
+    this.scenario = new Scenario();
     this.peak_load = new PeakLoad();
+  },
+
+  after_initialize : function() {
+  },
+
+  bootstrap : function() {
+    if (this.scenario.api_session_key() == null) {
+      this.scenario.new_session();
+    } else {
+      this.load_user_values();
+      this.call_api();
+    }
   },
 
   // Load User values for Sliders
@@ -88,4 +101,4 @@ window.AppView = Backbone.View.extend({
 });
 
 window.App = App = new AppView();
-
+window.App.after_initialize();

@@ -4,6 +4,13 @@
 class Setting
   extend ActiveModel::Naming
 
+  SCENARIO_ATTRIBUTES = [
+    :country,
+    :region,
+    :end_year,
+    :api_session_key
+  ]
+
   DEFAULT_ATTRIBUTES = {
     :show_municipality_introduction => true,
     :hide_unadaptable_sliders => false,
@@ -22,8 +29,10 @@ class Setting
                 :last_etm_controller_action,
                 :displayed_output_element,
                 :selected_output_element,
-                :scenario_type
-                
+                :scenario_type,
+                :scenario_id,
+                :api_session_key
+
 
   ##
   # @tested 2010-12-06 seb

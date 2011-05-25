@@ -55,5 +55,4 @@
       I18n.locale = "#{I18n.locale}";
 
       App.settings.set(#{Current.setting.to_json.html_safe}, {silent : true});
-      App.load_user_values();
-      App.call_api();
+      App.bootstrap();

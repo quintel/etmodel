@@ -13,6 +13,7 @@ gem 'paper_trail', '>= 1.6.4'
 gem 'default_value_for'
 gem 'acts_as_list'
 gem 'ancestry', '~> 1.2.3'
+gem 'httparty', '~> 0.7.4'
 
 # javascript
 gem 'sprockets' # CHECK

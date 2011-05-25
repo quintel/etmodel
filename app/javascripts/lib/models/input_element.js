@@ -91,7 +91,7 @@ var InputElementList = Backbone.Collection.extend({
   load_user_values : function() {
     _.bindAll(this, 'initialize_user_values');
     $.jsonp({
-      url: window.App.scenario.user_values_url(),
+      url: App.scenario.user_values_url(),
       success : this.initialize_user_values
     });
   },

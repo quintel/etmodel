@@ -26,8 +26,8 @@ var PeakLoad = Backbone.Model.extend({
   },
 
   save_state_in_session : function() {
-    window.settings.set({network_parts_affected : this.parts_affected() });
-    window.settings.save();
+    App.settings.set({network_parts_affected : this.parts_affected() });
+    App.settings.save();
   },
 
   /*
@@ -53,7 +53,7 @@ var PeakLoad = Backbone.Model.extend({
    */
   unknown_parts_affected : function() {
     return _.any(this.parts_affected, function(key) { 
-      return _.include(window.settings.network_parts_affected, key)
+      return _.include(App.settings.network_parts_affected, key)
     })
   }
 });
@@ -75,7 +75,7 @@ function disable_peak_load_tracking() {
 }
 
 function toggle_peak_load_tracking(){
-  window.settings.set({track_peak_load : $("#track_peak_load_settings").is(':checked')});
+  App.settings.set({track_peak_load : $("#track_peak_load_settings").is(':checked')});
   close_fancybox();
-  window.settings.save();
+  App.settings.save();
 }

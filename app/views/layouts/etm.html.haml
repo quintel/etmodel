@@ -19,9 +19,6 @@
     = render "layouts/etm/javascript_unselectable"
 
     %script
-      window.settings = new Setting(#{Current.setting.to_json.html_safe});
-      I18n.defaultLocale = "#{I18n.default_locale}";
-      I18n.locale = "#{I18n.locale}";
 
   %body#model
     #wrapper
@@ -52,6 +49,11 @@
     
     -# stick the footer at the bottom of the page if we're on an iPad/iPhone due to viewport/page bugs in mobile webkit
     %script
-      if (navigator.platform == 'iPad' || navigator.platform == 'iPhone' || navigator.platform == 'iPod') { $("#footer").css("position", "static"); };
-      window.App.load_user_values();
-      window.App.call_api();
+      if (_.include(['iPad', 'iPhone', 'iPod'], navigator.platform)) { $("#footer").css("position", "static"); };
+
+      App.settings = new Setting(#{Current.setting.to_json.html_safe});
+
+      I18n.defaultLocale = "#{I18n.default_locale}";
+      I18n.locale = "#{I18n.locale}";
+      App.load_user_values();
+      App.call_api();

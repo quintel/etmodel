@@ -77,5 +77,4 @@ function disable_peak_load_tracking() {
 function toggle_peak_load_tracking(){
   App.settings.set({track_peak_load : $("#track_peak_load_settings").is(':checked')});
   close_fancybox();
-  App.settings.save();
 }

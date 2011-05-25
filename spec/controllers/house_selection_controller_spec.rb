@@ -13,7 +13,7 @@ describe HouseSelectionsController do
   
   describe "tool" do
     it "should clear the label sessions when opening the tool " do
-      post "tool"
+      post :tool
       session["house_label_existing"].should eql(nil)
       session["house_label_new"].should eql(nil)
     end
@@ -21,23 +21,23 @@ describe HouseSelectionsController do
   
   describe "selecting a label" do
     it "should initialize the calculated sliders session" do
-      post "tool"
-      post "set_house_selection_label", :lbl => 'a', :id => 'new'
+      post :tool
+      post :set, :label => 'a', :type => 'new'
       session['calculated_hst_sliders'].should_not eql(nil)
     end
     
     %w[aaa aa a b c].each do |lbl|      
       it "should set house label new session be '#{lbl}' when this label is chosen" do
-        post "tool"
-        post "set_house_selection_label", :lbl => lbl, :id => 'new'        
+        post :tool
+        post :set, :label => lbl, :type => 'new'
         session["house_label_new"].should eql(lbl)
       end
     end
     
     %w[a b c d c].each do |lbl|      
       it "should set house label existing session be '#{lbl}' when this label is chosen" do
-        post "tool"
-        post "set_house_selection_label", :lbl => lbl, :id => 'existing'        
+        post :tool
+        post :set, :label => lbl, :type => 'existing'
         session["house_label_existing"].should eql(lbl)
       end
     end
@@ -46,11 +46,11 @@ describe HouseSelectionsController do
       controller.stub!(:render)
       
       controller.stub!(:update_installation_sliders)
-      get "tool"
+      get :tool
       controller.send(:labels_ready_to_calculate?).should be_false
-      get "set_house_selection_label", :lbl => "a", :id => 'existing'        
+      get :set, :label => "a", :type => 'existing'
       controller.send(:labels_ready_to_calculate?).should be_false
-      get "set_house_selection_label", :lbl => "a", :id => 'new'        
+      get :set, :label => "a", :type => 'new'
       controller.send(:labels_ready_to_calculate?).should be_true
     end
   end
@@ -59,9 +59,9 @@ describe HouseSelectionsController do
     before(:each) do
       controller.stub!(:render)
       controller.stub!(:update_installation_sliders)
-      get "tool"
-      get "set_house_selection_label", :lbl => "a", :id => 'existing'        
-      get "set_house_selection_label", :lbl => "a", :id => 'new'        
+      get :tool
+      get :set, :label => "a", :type => 'existing'
+      get :set, :label => "a", :type => 'new'
     end
     it "should set the slider 337 value in the session when house_type is new" do
       controller.send(:set_insulation_slider,"a","new")
@@ -72,5 +72,4 @@ describe HouseSelectionsController do
       session['calculated_hst_sliders']["336"].should_not eql(nil)
     end
   end
-  
 end

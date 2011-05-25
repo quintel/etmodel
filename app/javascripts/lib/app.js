@@ -26,9 +26,6 @@ window.AppView = Backbone.View.extend({
     this.peak_load = new PeakLoad();
   },
 
-  after_initialize : function() {
-  },
-
   bootstrap : function() {
     if (this.scenario.api_session_key() == null) {
       this.scenario.new_session();
@@ -101,4 +98,3 @@ window.AppView = Backbone.View.extend({
 });
 
 window.App = App = new AppView();
-window.App.after_initialize();

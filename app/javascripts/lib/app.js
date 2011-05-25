@@ -83,5 +83,5 @@ window.AppView = Backbone.View.extend({
   }
 });
 
-window.App = new AppView();
+window.App = App = new AppView();
 

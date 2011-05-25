@@ -92,7 +92,8 @@ module LayoutHelpers::SlideHelper
     
     default_output = Current.view.default_output_element_for(slide)
     haml_tag 'span.headline', :id => "default_output_#{default_output.id}", :slide => slide.id do
-      haml_tag 'a.slide_header', t("slidetitle.#{slide.name}").html_safe, :href => "/#{controller_name}/#{params[:id]}/#{slide.name.underscore}", :id => slide.name.underscore
+      haml_tag 'a.slide_header', t("slidetitle.#{slide.name}").html_safe,
+        :href => "/#{controller_name}/#{params[:id]}/#{slide.name.underscore}", :id => slide.name.underscore
     end
   end
 
@@ -142,9 +143,11 @@ module LayoutHelpers::SlideHelper
 
   def slide_mind_meister_link(slide)
     if slide.id == 25
-      haml_tag 'a.mind_meister', t("accordion.mindmeister"),:style => "float:left",:href => "http://www.mindmeister.com/maps/show?api_key=aa25bd3be1d339ee02078af0afc80068&auth_token=07d2973007497068&id=86926401&api_sig=sig"
+      haml_tag 'a.mind_meister', t("accordion.mindmeister"),:style => "float:left",
+        :href => "http://www.mindmeister.com/maps/show?api_key=aa25bd3be1d339ee02078af0afc80068&auth_token=07d2973007497068&id=86926401&api_sig=sig"
     elsif slide.id == 49
-      haml_tag 'a.mind_meister', t("accordion.mindmeister"),:style => "float:left",:href => "http://www.mindmeister.com/maps/show?api_key=aa25bd3be1d339ee02078af0afc80068&auth_token=07d2973007497068&id=86926830&api_sig=sig"
+      haml_tag 'a.mind_meister', t("accordion.mindmeister"),:style => "float:left",
+        :href => "http://www.mindmeister.com/maps/show?api_key=aa25bd3be1d339ee02078af0afc80068&auth_token=07d2973007497068&id=86926830&api_sig=sig"
     end
     
   end
@@ -156,7 +159,8 @@ module LayoutHelpers::SlideHelper
   #
   def slide_expert_prediction_link(slide)
     if slide.show_expert_prediction_link
-      haml_tag 'a.expert_header', t("accordion.expert predictions available"),:style => "float:left",:href => "/expert_predictions/select_prediction/#{slide.id}" 
+      haml_tag 'a.expert_header', t("accordion.expert predictions available"),:style => "float:left",
+        :href => "/expert_predictions/select_prediction/#{slide.id}" 
     end
   end
   ##
@@ -166,7 +170,7 @@ module LayoutHelpers::SlideHelper
   #
   def slide_optional_house_selection_link(slide)
     if slide.show_house_selection_tool
-      haml_tag 'a.house_selection_tool', t("accordion.help me choose"), :href => "/house_selections/tool" 
+      haml_tag 'a.house_selection_tool', t("accordion.help me choose"), :href => house_selection_tool_path
     end
   end
 

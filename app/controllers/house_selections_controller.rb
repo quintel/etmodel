@@ -5,6 +5,8 @@ class HouseSelectionsController < ApplicationController
   end
   
   def set
+    @gql = Api::Query.new
+    @gql.api_session_id = cookies[:api_session_id]
     house_type  = params[:type]
     house_label = params[:label]
     session['calculated_hst_sliders']  ||= {}
@@ -13,7 +15,7 @@ class HouseSelectionsController < ApplicationController
       set_insulation_slider(session["house_label_new"],"new")
       set_insulation_slider(session["house_label_existing"],"existing")
       update_installation_sliders
-      @perc_new_houses = (percentage_of_new_houses * 100).round(1)
+      @perc_new_houses      = (percentage_of_new_houses * 100).round(1)
       @perc_existing_houses = (percentage_of_existing_houses * 100).round(1)
 
       render :update do |page|
@@ -34,11 +36,9 @@ class HouseSelectionsController < ApplicationController
     render :update do |page|
       page.call "close_fancybox"
       session['calculated_hst_sliders'].each_with_index do |slider,i|
-        slider_call = "App.inputElementsController.get(%s)" % slider.first.to_i
-        logger.info "#{slider_call}.set", "{user_value : #{slider.last} };" 
-        page.call "#{slider_call}.set", "{ user_value : #{slider.last}} " 
+        logger.info "input_elements[#{slider[0]}].set({ user_value : #{slider[1]} })"
+        page << "input_elements.inputElements[#{slider[0]}].set({ user_value : #{slider[1]} });"
       end
-      page.call "App.doUpdateRequest"
     end
   end
 
@@ -57,7 +57,7 @@ class HouseSelectionsController < ApplicationController
     end
 
     def labels_ready_to_calculate?
-      (session["house_label_new"] && session["house_label_existing"])
+      session["house_label_new"] && session["house_label_existing"]
     end
     
     def update_installation_sliders
@@ -70,14 +70,14 @@ class HouseSelectionsController < ApplicationController
   
     def calculate_average_installation_sliders
       existing_percent = percentage_of_heat_existing_houses
-      new_percent = percentage_of_heat_new_houses
+      new_percent      = percentage_of_heat_new_houses
       session["calculated_hst_sliders_existing"].each do |slider|
         if slider.first == "47"
           average_share = set_solar_pv_slider
         else
           existing_share = slider.last * existing_percent
-          new_share = session["calculated_hst_sliders_new"][slider.first] * new_percent
-          average_share = existing_share + new_share
+          new_share      = session["calculated_hst_sliders_new"][slider.first] * new_percent
+          average_share  = existing_share + new_share
         end
         session['calculated_hst_sliders'][slider.first.to_s] = average_share
       end
@@ -86,7 +86,8 @@ class HouseSelectionsController < ApplicationController
 
     #this method updates the solar pv
     def set_solar_pv_slider
-      current_pv = Current.gql.query("present:DIVIDE(V(local_solar_pv_grid_connected_energy_energetic;output_of_electricity),Q(potential_roof_pv_production))")
+      @gql.query = "present:DIVIDE(V(local_solar_pv_grid_connected_energy_energetic;output_of_electricity),Q(potential_roof_pv_production))"
+      current_pv = @gql.fetch_single_value
       existing_pv = (session['calculated_hst_sliders_existing']["47"] ? session['calculated_hst_sliders_existing']["47"] : current_pv) * percentage_of_existing_houses
       new_pv = (session['calculated_hst_sliders_new']["47"] ? session['calculated_hst_sliders_new']["47"] : current_pv) * percentage_of_new_houses
     
@@ -96,37 +97,23 @@ class HouseSelectionsController < ApplicationController
     # this method updates the insulation sliders
     def set_insulation_slider(lbl,house_type)
       if house_type == 'new'
-        case lbl
-          when 'aaa'
-            value = 5
-          when 'aa'
-            value = 4
-          when 'a'
-            value = 3.5
-          when 'b'
-            value = 3
-          when 'c'
-            value = 2.5
+        value = case lbl
+          when 'aaa' then 5
+          when 'aa'  then 4
+          when 'a'   then 3.5
+          when 'b'   then 3
+          when 'c'   then 2.5
         end
       elsif house_type == 'existing'
-        case lbl
-          when 'a'
-            value = 2.8
-          when 'b'
-            value = 2.6
-          when 'c'
-            value = 2.4
-          when 'd'
-            value = 2
-          when 'e'
-            value = 1.5
+        value = case lbl
+          when 'a' then 2.8
+          when 'b' then 2.6
+          when 'c' then 2.4
+          when 'd' then 2
+          when 'e' then 1.5
         end
       end
-      if house_type == "existing"
-        slider_id = 336
-      else
-        slider_id = 337
-      end
+      slider_id = (house_type == "existing" ? 336 : 337)
       session['calculated_hst_sliders'][slider_id.to_s] = value
     end
   
@@ -135,17 +122,17 @@ class HouseSelectionsController < ApplicationController
     def set_existing_installations
       case session["house_label_existing"]
         when "a"
-          session['calculated_hst_sliders_existing']["51"] = 55
+          session['calculated_hst_sliders_existing']["51"]  = 55
           session['calculated_hst_sliders_existing']["339"] = 30
-          session['calculated_hst_sliders_existing']["48"] = 15
-          session['calculated_hst_sliders_existing']["47"] = 100
+          session['calculated_hst_sliders_existing']["48"]  = 15
+          session['calculated_hst_sliders_existing']["47"]  = 100
         when "b"
-          session['calculated_hst_sliders_existing']["51"] = 55
+          session['calculated_hst_sliders_existing']["51"]  = 55
           session['calculated_hst_sliders_existing']["333"] = 30
-          session['calculated_hst_sliders_existing']["48"] = 15
+          session['calculated_hst_sliders_existing']["48"]  = 15
         when "c"
           session['calculated_hst_sliders_existing']["333"] = 85
-          session['calculated_hst_sliders_existing']["48"] = 15
+          session['calculated_hst_sliders_existing']["48"]  = 15
         when "d"
           session['calculated_hst_sliders_existing']["333"] = 100
         when "e"
@@ -157,12 +144,12 @@ class HouseSelectionsController < ApplicationController
       case session["house_label_new"]
         when "aaa"
           session['calculated_hst_sliders_new']["338"] = 85
-          session['calculated_hst_sliders_new']["48"] = 15
-          session['calculated_hst_sliders_new']["47"] = 100
+          session['calculated_hst_sliders_new']["48"]  = 15
+          session['calculated_hst_sliders_new']["47"]  = 100
         when "aa"
           session['calculated_hst_sliders_new']["338"] = 85
-          session['calculated_hst_sliders_new']["48"] = 15
-          session['calculated_hst_sliders_new']["47"] = 50
+          session['calculated_hst_sliders_new']["48"]  = 15
+          session['calculated_hst_sliders_new']["47"]  = 50
         when "a"
           session['calculated_hst_sliders_new']["338"] = 100
         when "b"
@@ -173,8 +160,10 @@ class HouseSelectionsController < ApplicationController
     end
   
     def percentage_of_heat_existing_houses
-      heat_demand_existing_houses = Current.gql.query("future:V(heating_demand_with_current_insulation_households_energetic;demand)").to_f
-      heat_demand_new_houses = Current.gql.query("future:V(heating_new_houses_current_insulation_households_energetic;demand)").to_f
+      @gql.query = "future:V(heating_demand_with_current_insulation_households_energetic;demand)"
+      heat_demand_existing_houses = @gql.fetch_single_value.to_f
+      @gql.query = "future:V(heating_new_houses_current_insulation_households_energetic;demand)"
+      heat_demand_new_houses = @gql.fetch_single_value.to_f
       heat_demand_total = heat_demand_new_houses + heat_demand_existing_houses
       heat_demand_existing_houses / heat_demand_total
     end
@@ -184,7 +173,7 @@ class HouseSelectionsController < ApplicationController
     end
 
     def percentage_of_existing_houses
-      nr_of_old_houses = Current.setting.number_of_existing_households
+      nr_of_old_houses   = Current.setting.number_of_existing_households
       total_nr_of_houses = Current.setting.number_of_households
       nr_of_old_houses / total_nr_of_houses
     end

@@ -51,9 +51,9 @@
     %script
       if (_.include(['iPad', 'iPhone', 'iPod'], navigator.platform)) { $("#footer").css("position", "static"); };
 
-      App.settings = new Setting(#{Current.setting.to_json.html_safe});
-
       I18n.defaultLocale = "#{I18n.default_locale}";
       I18n.locale = "#{I18n.locale}";
+
+      App.settings.set(#{Current.setting.to_json.html_safe}, {silent : true});
       App.load_user_values();
       App.call_api();

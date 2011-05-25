@@ -4,7 +4,7 @@
 var Scenario = Backbone.Model.extend({
 
   initialize : function() {
-    _.bindAll(this, 'update_api');
+    _.bindAll(this, 'update_api', 'copy_shared_settings');
     this.bind('change', this.update_api);
 
     if (this.api_session_id() == null) {
@@ -12,11 +12,21 @@ var Scenario = Backbone.Model.extend({
     }
   },
 
+  copy_shared_settings : function() {
+    var s = App.settings;
+    this.set({
+      end_year : s.get('end_year'), 
+      country : s.get('country'),
+      region : s.get('region')
+    });
+  },
+
   api_session_id : function() {
     return $.cookie('api_session_id');
   },
 
   update_api : function() {
+    console.log('updating api');
     $.getJSON(this.query_url(), {'settings' : this.api_attributes()}, 
       function(data) {
         App.call_api();

@@ -21,7 +21,7 @@ class ScenariosController < ApplicationController
   
   def new
     @saved_scenario = SavedScenario.new(
-      :scenario_id => cookies[:api_session_id]
+      :api_session_key => cookies[:api_session_id]
     )
   end
 
@@ -33,7 +33,9 @@ class ScenariosController < ApplicationController
   # @tested 2010-12-22 jape
   #
   def create
-
+    @scenario = Api::Scenario.create(params[:saved_scenario])
+    @saved_scenario = current_user.saved_scenarios.create(:scenario_id => @scenario.id)
+    redirect_to scenarios_url
   end
 
   ##

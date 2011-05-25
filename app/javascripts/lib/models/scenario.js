@@ -4,29 +4,15 @@
 var Scenario = Backbone.Model.extend({
 
   initialize : function() {
-    _.bindAll(this, 'update_api', 'copy_shared_settings');
-    this.bind('change', this.update_api);
-
-    if (this.api_session_id() == null) {
-      this.new_session();
-    }
+    _.bindAll(this, 'update_api');
   },
 
-  copy_shared_settings : function() {
-    var s = App.settings;
-    this.set({
-      end_year : s.get('end_year'), 
-      country : s.get('country'),
-      region : s.get('region')
-    });
-  },
-
-  api_session_id : function() {
-    return $.cookie('api_session_id');
+  api_session_key : function() {
+    var key = App.settings.get('api_session_key');
+    return _.isPresent(key) ? key : null;
   },
 
   update_api : function() {
-    console.log('updating api');
     $.getJSON(this.query_url(), {'settings' : this.api_attributes()}, 
       function(data) {
         App.call_api();
@@ -35,18 +21,23 @@ var Scenario = Backbone.Model.extend({
   },
 
   api_attributes : function() {
+    var s = App.settings;
     var data = {
-      'country' : this.get('country'),
-      'end_year' : this.get('end_year')
+      'country' : s.get('country'),
+      'region' : s.get('region'),
+      'end_year' : s.get('end_year'),
+      "scenario_id" : s.get('scenario_id')
     };
     return data;
   },
 
   new_session : function() {
+    console.log('new_session', this.api_attributes());
     var url = globals.api_url + "/api_scenarios/new.json?callback=?&";
-    $.getJSON(url,
+    $.getJSON(url, {settings : this.api_attributes()},
       function(data) {
-        $.cookie('api_session_id', data.api_scenario.api_session_key, { path : '/' });
+        App.settings.set({'api_session_key' : data.api_scenario.api_session_key});
+        App.bootstrap();
       }
     );
   },
@@ -62,6 +53,6 @@ var Scenario = Backbone.Model.extend({
   },
   
   url_path : function() {
-    return globals.api_url + "/api_scenarios/"+this.api_session_id();
+    return globals.api_url + "/api_scenarios/"+this.api_session_key();
   }
 });

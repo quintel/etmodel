@@ -52,4 +52,8 @@ end
 
 Spork.each_run do
   # This code will be run each time you run your specs.
+  
+  # To reload factories every time and not having to restart spork
+  # https://github.com/thoughtbot/factory_girl/issues/55
+  require 'factory_girl_rails'  
 end

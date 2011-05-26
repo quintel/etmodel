@@ -199,7 +199,7 @@ class Setting
   # @tested 2010-12-06 seb
   # 
   def area_region
-    Area.find_by_country(region)
+    Api::Area.find_by_country(region)
   end
 
   ##
@@ -209,8 +209,16 @@ class Setting
   # @tested 2010-11-30 seb
   # 
   def area
-    Area.find_by_country_memoized(region_or_country)
+    Api::Area.find_by_country_memoized(region_or_country)
   end
+
+  ##
+  # @tested 2010-12-06 seb
+  #
+  def area_country
+    Api::Area.find_by_country_memoized(country)
+  end
+
 
   ##
   # @tested 2010-11-30 seb
@@ -241,14 +249,6 @@ class Setting
   def current_view
     all_levels[complexity.to_i]
   end
-
-  ##
-  # @tested 2010-12-06 seb
-  # 
-  def area_country
-    Area.find_by_country_memoized(country)
-  end
- 
  
   ##
   # Returns the scale factor for the municipality. Nil if not scaled

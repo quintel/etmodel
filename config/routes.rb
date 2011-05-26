@@ -49,8 +49,7 @@ Etm::Application.routes.draw do
   namespace :admin do
     root :to => 'pages#index'
     
-    resources :areas,
-              :expert_predictions, 
+    resources :expert_predictions,
               :input_elements, 
               :year_values, 
               :tabs, 
@@ -62,6 +61,7 @@ Etm::Application.routes.draw do
               :press_releases, 
               :converter_positions,
               :view_nodes
+    resources :areas, :only => [:index, :show]
   end
 
   resource :scenario do

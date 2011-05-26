@@ -193,8 +193,6 @@ module LayoutHelpers::SlideHelper
     end  
   end
   
-  
-  
   def render_input_element_javascript_create(input_elements)
     haml_tag :script, input_elements.map{ |ip|  create_input_element(ip) }.join("\n").html_safe
   end

@@ -6,46 +6,27 @@ var InputElement = Backbone.Model.extend({
     this.dirty = false;
     this.ui_options = {'element' : $('#input_element_'+this.get('id'))};
     this.bind('change:user_value', this.markDirty);
-
-    if (this.get('min_value_gql') != null && this.get('min_value_gql').length > 1) {
-      this.min_value_gquery = new Gquery({key : this.get('min_value_gql')});
-      this.min_value_gquery.bind('change', this.update_min_value);
-    }
-    if (this.get('start_value_gql') != null && this.get('start_value_gql').length > 1) {
-      this.start_value_gquery = new Gquery({key : this.get('start_value_gql')});
-      this.start_value_gquery.bind('change', this.update_start_value);
-    }
-    if (this.get('max_value_gql') != null && this.get('max_value_gql').length > 1) {
-      this.max_value_gquery = new Gquery({key : this.get('max_value_gql')});
-      this.max_value_gquery.bind('change', this.update_max_value);
-    }
   },
 
-  // after update_min_max_start_values we no longer need the xxx_value_gquery, 
-  // removed it from Gqueries, so that it doesnt calculate everytime.
-  update_min_value : function() {
+  set_min_value : function(result) {
     var factor = this.get('factor');    
-    this.set({'min_value' : factor * this.min_value_gquery.get('present_value')});
-    window.gqueries.remove(this.min_value_gquery);
+    this.set({'min_value' : result});
   },
-  update_max_value : function() {
+  set_max_value : function(result) {
     var factor = this.get('factor');
-    this.set({'max_value' : factor * this.max_value_gquery.get('present_value')});
-    window.gqueries.remove(this.max_value_gquery);
+    this.set({'max_value' : result});
   },
-  update_start_value : function() {
+  set_start_value : function(result) {
     var factor = this.get('factor');
-    var result = this.start_value_gquery.get('present_value');
     var step_value = this.get('step_value');
 
     var rounded_result = Metric.round_number(result, this.get('number_to_round_with'));
-    result = (rounded_result * factor);
+    result = (rounded_result);
 
     if (step_value == 0.1 || step_value == 5) 
       result = Metric.round_number(result, 1);
 
     this.set({'start_value' : result});
-    window.gqueries.remove(this.start_value_gquery);
   },
 
   init_legacy_controller : function() {
@@ -98,10 +79,11 @@ var InputElementList = Backbone.Collection.extend({
 
   initialize_user_values : function(user_value_hash) {
     this.each(function(input_element) {
-      var user_value = user_value_hash[input_element.get('id')+''];
-      if (_.isNumber(user_value)) {
-        input_element.set({user_value : user_value});
-      }
+      var values = user_value_hash[input_element.get('id')+''];
+      input_element.set_min_value(values.min_value);
+      input_element.set_max_value(values.max_value);
+      input_element.set_start_value(values.start_value);
+      input_element.set({user_value : values.user_value});
     });
   },
 

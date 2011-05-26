@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110524125143) do
+ActiveRecord::Schema.define(:version => 20110526074113) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20110524125143) do
     t.integer  "current_electricity_demand_in_mj",         :limit => 8, :default => 1
     t.boolean  "has_solar_csp"
     t.boolean  "has_old_technologies"
+    t.integer  "parent_id"
   end
 
   create_table "blackbox_gqueries", :force => true do |t|
@@ -414,6 +415,19 @@ ActiveRecord::Schema.define(:version => 20110524125143) do
   add_index "input_elements", ["key"], :name => "unique api key", :unique => true
   add_index "input_elements", ["slide_id"], :name => "index_input_elements_on_slide_id"
 
+  create_table "lce_values", :force => true do |t|
+    t.string   "using_country"
+    t.string   "origin_country"
+    t.float    "co2_exploration_per_mj"
+    t.float    "co2_extraction_per_mj"
+    t.float    "co2_treatment_per_mj"
+    t.float    "co2_transportation_per_mj"
+    t.float    "co2_conversion_per_mj"
+    t.float    "co2_waste_treatment_per_mj"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "link_datas", :force => true do |t|
     t.integer  "link_type",  :default => 0
     t.float    "share"
@@ -527,25 +541,6 @@ ActiveRecord::Schema.define(:version => 20110524125143) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
-  end
-
-  create_table "query_table_cells", :force => true do |t|
-    t.integer  "query_table_id"
-    t.integer  "row"
-    t.integer  "column"
-    t.string   "name"
-    t.text     "gquery"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "query_tables", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "row_count"
-    t.integer  "column_count"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "roles", :force => true do |t|

@@ -59,8 +59,6 @@ Etm::Application.routes.draw do
               :translations, 
               :output_elements, 
               :output_element_series, 
-              :query_tables, 
-              :query_table_cells, 
               :press_releases, 
               :converter_positions,
               :view_nodes

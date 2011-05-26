@@ -1,6 +1,6 @@
 %h1="ETM View Structure => "+ @view_node.key
 
-%ul{:class =>"view_nodes"}
+%ul.view_nodes
   - unless @sidebars
     = render 'admin/view_nodes/tree/constraints'
     = render 'admin/view_nodes/tree/policy_goals'

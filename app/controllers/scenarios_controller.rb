@@ -25,6 +25,11 @@ class ScenariosController < ApplicationController
     )
   end
 
+  def reset
+    Current.setting.reset_scenario
+    redirect_to :back
+  end
+
   ##
   # Creates a scenario and saves the current settings into it. 
   # 

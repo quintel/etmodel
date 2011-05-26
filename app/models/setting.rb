@@ -33,7 +33,6 @@ class Setting
                 :scenario_id,
                 :api_session_key
 
-
   ##
   # @tested 2010-12-06 seb
   #
@@ -74,6 +73,10 @@ class Setting
     self.class.default_attributes.each do |key, value|
       send("#{key}=", value)
     end
+  end
+
+  def reset_scenario
+    api_session_key = nil
   end
 
   ####### Complexities

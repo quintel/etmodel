@@ -1,4 +1,8 @@
 #sidebar
   %ul
-    - Current.view.sidebar_items.each do |sidebar_item|
-      - generate_sidebar_item(sidebar_item)
+    - Current.view.sidebar_items.each do |item|
+      %li{:id => item.key, :class => (params[:id] == item.key) ? 'active' : nil}
+        %a{:class => "ico-#{item.key}", :href => url_for(:action => item.key)}
+          %em &nbsp;
+          %p
+            %span.title= raw t("sidebar_item.#{item.key}")

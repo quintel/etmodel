@@ -15,12 +15,11 @@ window.AppView = Backbone.View.extend({
 
     // Jaap MVC legacy
     this.inputElementsController = window.input_elements;
+    this.inputElementsController.bind("change", this.handleInputElementsUpdate);
+
     this.municipalityController = new MunicipalityController();
 
-    var func = $.proxy(this.handleInputElementsUpdate);
-    this.inputElementsController.bind("change", func);
-
-    this.settings = new Setting();
+    this.settings = new Setting(); // At this point settings is empty.
     this.scenario = new Scenario();
     this.peak_load = new PeakLoad();
   },
@@ -28,8 +27,8 @@ window.AppView = Backbone.View.extend({
   bootstrap : function() {
     if (this.scenario.api_session_key() == null) {
       this.scenario.new_session();
+      // after copmleting new_session() App.bootstrap is called again and will thus continue the else part
     } else {
-      // this.scenario.new_session() will call App.bootstrap when completed again.
       this.load_user_values();
       this.call_api();
     }

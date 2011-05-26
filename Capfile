@@ -27,21 +27,9 @@ end
 
 
 namespace :deploy do
-  desc "generate rdoc (only on staging)" 
-  task :generate_rdoc  do
-    if server_type == 'staging' 
-      dir = release_path
-      run "cd #{dir}; rake yard;"      
-      run "ln -nfs #{dir}/doc #{dir}/public/doc"
-    end
-  end
-
   task :after_update_code do
-    run "cp #{shared_path}/config_files/database.yml #{release_path}/config/database.yml"
-    run "cp #{shared_path}/config_files/server_variables.rb #{release_path}/config/server_variables.rb"
-    run "cp #{shared_path}/config_files/hoptoad.rb #{release_path}/config/initializers/hoptoad.rb"
-    run "cd #{release_path}; ls -lh public"
-    run "cd #{release_path}; chmod 777 public/sprockets public/images public/stylesheets import tmp"
+    run "cp #{config_files}/* #{release_path}/config/"
+    run "cd #{release_path}; chmod 777 public/images public/stylesheets tmp"
     run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
     run "ln -nfs #{shared_path}/assets/pdf #{release_path}/public/pdf"
     run "ln -nfs #{shared_path}/vendor_bundle #{release_path}/vendor/bundle"
@@ -52,11 +40,6 @@ namespace :deploy do
     symlink_sphinx_indexes
   end
 
-  desc 'Import seeds on server'
-  task :seed, :roles => [:db] do
-    run "cd #{deploy_to}/current; rake db:seed RAILS_ENV=#{stage}"
-  end
-
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
@@ -64,7 +47,6 @@ namespace :deploy do
     # in your models have changed, you will need to perform an index.
     # If these are changing frequently, you can use the following
     # in place of running_start
-
     thinking_sphinx.stop
     if stage == 'production' or stage == 'transitionprice'
       # Only re-index on production servers to save time with deploys
@@ -99,7 +81,7 @@ namespace :deploy do
         notify_command << " API_KEY=05a325f77515e6a413bc4adb8980d3f8"
       when 'staging'
         notify_command << " API_KEY=2c213df905badf7362e925de0b28e7a8"
-      when 'prod'
+      when 'production'
         notify_command << " API_KEY=3ea5a72aad48a32d7bb486bc71ad4fd5"
     end
     
@@ -123,13 +105,4 @@ task :db2local do
   system "gunzip -f etm_#{server_type}.sql.gz"
   puts "Importing sql file to db"
   system "mysql -u root etm_dev < etm_#{server_type}.sql"
-end
-
-
-%w[staging testing prod].each do |stage|
-  desc "Move #{stage} db to local db"
-  task "#{stage}2local" do
-    self.send(stage)
-    db2local
-  end
 end

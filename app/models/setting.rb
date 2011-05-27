@@ -13,14 +13,14 @@ class Setting
 
   DEFAULT_ATTRIBUTES = {
     :show_municipality_introduction => true,
-    :hide_unadaptable_sliders => false,
-    :network_parts_affected => [],
-    :track_peak_load => true,
-    :complexity => 3,
-    :country => 'nl',
-    :region => nil,
-    :start_year => 2010,
-    :end_year => 2040
+    :hide_unadaptable_sliders       => false,
+    :network_parts_affected         => [],
+    :track_peak_load                => true,
+    :complexity                     => 3,
+    :country                        => 'nl',
+    :region                         => nil,
+    :start_year                     => 2010,
+    :end_year                       => 2040
   }
 
   attr_accessor *DEFAULT_ATTRIBUTES.keys
@@ -58,13 +58,9 @@ class Setting
     new(default_attributes)
   end
 
-  ##
-  # @tested 2010-12-06 seb
-  #
   def self.default_attributes
     DEFAULT_ATTRIBUTES
   end
-
 
   ##
   # @tested 2010-12-06 seb
@@ -137,32 +133,21 @@ class Setting
 
   ####### Peak load
 
-  ##
-  # @tested 2010-12-07 seb
-  #
   def track_peak_load?
-    use_peak_load and track_peak_load
+    use_peak_load && track_peak_load
   end
 
-  ##
-  # @tested 2010-11-30 seb
-  # 
   def use_peak_load
-    advanced? and use_network_calculations?
+    advanced? && use_network_calculations?
   end
 
-  ##
-  # @tested 2010-11-30 seb
-  # 
   def use_network_calculations?
-    area.andand.use_network_calculations == true
+    area.try(:use_network_calculations)
   end
-
 
   ####### Area / Region
 
   attr_writer :area
-
 
   ##
   # @tested 2010-11-30 seb
@@ -180,24 +165,14 @@ class Setting
     end
   end
 
-  ##
-  # @tested 2010-11-30 seb
-  # 
   def municipality?
-    area.andand.is_municipality? == true
+    area.try(:is_municipality?)
   end
 
-
-  ##
-  # @tested 2010-11-30 seb
-  # 
   def region_or_country
     region || country
   end
 
-  ##
-  # @tested 2010-12-06 seb
-  # 
   def area_region
     Api::Area.find_by_country(region)
   end
@@ -218,7 +193,6 @@ class Setting
   def area_country
     Api::Area.find_by_country_memoized(country)
   end
-
 
   ##
   # @tested 2010-11-30 seb
@@ -249,36 +223,5 @@ class Setting
   def current_view
     all_levels[complexity.to_i]
   end
- 
-  ##
-  # Returns the scale factor for the municipality. Nil if not scaled
-  #
-  # @param [InputElement] input_element
-  # @return [Float, nil] the scale factor or nil if not scaled.
-  #
-  # @tested 2010-12-06 seb
-  #
-  # TODO: refactor this or refactor the tests - PZ Wed 27 Apr 2011 15:48:52 CEST
-  def scale_factor_for_municipality(input_element)
-    return nil unless input_element.locked_for_municipalities
-    if input_element_scaled_for_municipality?(input_element)
-      electricity_country = area_country.current_electricity_demand_in_mj
-      electricity_region  = area_region.current_electricity_demand_in_mj
-      electricity_country.to_f / electricity_region rescue nil # prevent division by zero, you never know
-    end
-  end
- 
-  ##
-  # Does the input_element have to be scaled?
-  #
-  # @param [InputElement] input_element
-  # @return [Boolean]
-  #
-  # @tested 2010-12-06 seb
-  #
-  def input_element_scaled_for_municipality?(input_element)
-    # TODO move to InputElement as no scenario state is used anymore
-    input_element.slide.andand.controller_name == 'supply' ||  
-      input_element.slide.andand.contains_chp_slider?
-  end
+
 end

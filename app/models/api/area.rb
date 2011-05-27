@@ -7,7 +7,7 @@ class Api::Area < ActiveResource::Base
   end
   
   def self.find_by_country(country)
-    all(:params => { :country => country })
+    first(:params => { :country => country })
   end
   
   def is_municipality?

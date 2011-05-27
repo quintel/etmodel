@@ -6,12 +6,13 @@ class HouseSelectionsController < ApplicationController
   
   def set
     @gql = Api::Query.new
-    @gql.api_session_id = cookies[:api_session_id]
+    @gql.api_session_id = Current.setting.api_session_key
     house_type  = params[:type]
     house_label = params[:label]
     session['calculated_hst_sliders']  ||= {}
     session["house_label_#{house_type}"] = house_label
     if labels_ready_to_calculate?
+      run_gqueries
       set_insulation_slider(session["house_label_new"],"new")
       set_insulation_slider(session["house_label_existing"],"existing")
       update_installation_sliders
@@ -60,6 +61,17 @@ class HouseSelectionsController < ApplicationController
       session["house_label_new"] && session["house_label_existing"]
     end
     
+    def run_gqueries
+      @gql.queries = [
+        "present:DIVIDE(V(local_solar_pv_grid_connected_energy_energetic;output_of_electricity),Q(potential_roof_pv_production))",
+        "future:V(heating_demand_with_current_insulation_households_energetic;demand)",
+        "future:V(heating_new_houses_current_insulation_households_energetic;demand)",
+        "AREA(number_of_existing_households)",
+        "AREA(number_households)"
+      ]
+      @gql.execute!
+    end
+
     def update_installation_sliders
       initialize_installations_sliders("new") # adds all the installation sliders to the session['calculated_hst_sliders']
       initialize_installations_sliders("existing")
@@ -86,8 +98,8 @@ class HouseSelectionsController < ApplicationController
 
     #this method updates the solar pv
     def set_solar_pv_slider
-      @gql.query = "present:DIVIDE(V(local_solar_pv_grid_connected_energy_energetic;output_of_electricity),Q(potential_roof_pv_production))"
-      current_pv = @gql.fetch_single_value
+      query = "present:DIVIDE(V(local_solar_pv_grid_connected_energy_energetic;output_of_electricity),Q(potential_roof_pv_production))"
+      current_pv = @gql.fetch_single_value(query)
       existing_pv = (session['calculated_hst_sliders_existing']["47"] ? session['calculated_hst_sliders_existing']["47"] : current_pv) * percentage_of_existing_houses
       new_pv = (session['calculated_hst_sliders_new']["47"] ? session['calculated_hst_sliders_new']["47"] : current_pv) * percentage_of_new_houses
     
@@ -160,10 +172,10 @@ class HouseSelectionsController < ApplicationController
     end
   
     def percentage_of_heat_existing_houses
-      @gql.query = "future:V(heating_demand_with_current_insulation_households_energetic;demand)"
-      heat_demand_existing_houses = @gql.fetch_single_value.to_f
-      @gql.query = "future:V(heating_new_houses_current_insulation_households_energetic;demand)"
-      heat_demand_new_houses = @gql.fetch_single_value.to_f
+      query = "future:V(heating_demand_with_current_insulation_households_energetic;demand)"
+      heat_demand_existing_houses = @gql.fetch_single_value(query)
+      query = "future:V(heating_new_houses_current_insulation_households_energetic;demand)"
+      heat_demand_new_houses = @gql.fetch_single_value(query)
       heat_demand_total = heat_demand_new_houses + heat_demand_existing_houses
       heat_demand_existing_houses / heat_demand_total
     end
@@ -173,8 +185,10 @@ class HouseSelectionsController < ApplicationController
     end
 
     def percentage_of_existing_houses
-      nr_of_old_houses   = Current.setting.number_of_existing_households
-      total_nr_of_houses = Current.setting.number_of_households
+      query = "AREA(number_of_existing_households)"
+      nr_of_old_houses = @gql.fetch_single_value(query)
+      query = "AREA(number_households)"
+      total_nr_of_houses = @gql.fetch_single_value(query)
       nr_of_old_houses / total_nr_of_houses
     end
 

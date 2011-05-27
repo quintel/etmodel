@@ -194,34 +194,7 @@ class Setting
     Api::Area.find_by_country_memoized(country)
   end
 
-  ##
-  # @tested 2010-11-30 seb
-  # 
-  # DEBT: Remove after we have ported house_selection tool
-  def number_of_households
-    @number_of_households ||= area.andand.number_households
-  end
-
-  # DEBT: Remove after we have ported house_selection tool
-  def number_of_households=(value)
-    @number_of_households = value
-  end
-
-  ##
-  # @tested 2010-11-30 seb
-  # 
-  # DEBT: Remove after we have ported house_selection tool
-  def number_of_existing_households
-    @number_of_existing_households ||= area.andand.number_of_existing_households
-  end
-
-  # DEBT: Remove after we have ported house_selection tool
-  def number_of_existing_households=(value)
-    @number_of_existing_households = value
-  end
-
   def current_view
     all_levels[complexity.to_i]
   end
-
 end

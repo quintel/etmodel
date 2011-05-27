@@ -1,6 +1,6 @@
 class AddGqueriesForPolicies < ActiveRecord::Migration
   def self.up
-    add_column :constraints, :gquery_id, :integer
+    add_column :constraints, :gquery_id, :integer unless column_exists? :constraints, :gquery_id
 
     g = Constraint.find(1).create_gquery :key => 'policy_total_primary_energy', 
       :query => "Q(primary_demand_of_final_demand)"

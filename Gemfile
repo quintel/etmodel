@@ -39,7 +39,7 @@ end
 
 group :test, :development do
   # It needs to be in the :development group to expose generators and rake tasks without having to type RAILS_ENV=test.
-  gem "rspec-rails", "~> 2.5.0"
+  gem "rspec-rails", "~> 2.6.1"
   gem 'ruby-debug19'
   gem 'hirb'
   gem 'awesome_print', :require => 'ap'

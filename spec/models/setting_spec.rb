@@ -146,7 +146,7 @@ describe Setting do
     describe "#area" do
       before {
         @setting = Setting.default
-        @area = Area.new
+        @area = Api::Area.new
         Api::Area.should_receive(:find_by_country_memoized).with(@setting.region_or_country).and_return(@area)
       }
       it "should return area" do
@@ -196,7 +196,7 @@ describe Setting do
       :use_network_calculations? => :use_network_calculations
     }.each do |setting_method_name, area_method_name|
       describe "##{setting_method_name} should be true if area##{area_method_name} is true" do
-        before { @setting.stub!(:area).and_return(mock_model(Area, area_method_name => true))}
+        before { @setting.stub!(:area).and_return(mock_model(Api::Area, area_method_name => true))}
         specify { @setting.send(setting_method_name).should be_true}
       end
       describe "##{setting_method_name} with no area should be false" do

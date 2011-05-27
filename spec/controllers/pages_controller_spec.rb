@@ -7,8 +7,6 @@ describe PagesController do
     ApplicationController.stub!(:ensure_valid_browser)
     Current.stub!(:teardown_after_request!)
     Current.stub!(:graph)
-    @area = Area.create(:country => 'nl')
-    Area.create(:country => 'ch')
     Api::Scenario.stub(:all).and_return([])
   end
 

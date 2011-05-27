@@ -78,8 +78,3 @@ class Area < ActiveRecord::Base
     number_households * (1 - (percentage_of_new_houses/100))
   end
 end
-
-
-
-
-

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110527095730) do
+ActiveRecord::Schema.define(:version => 20110527124826) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -402,18 +402,6 @@ ActiveRecord::Schema.define(:version => 20110527095730) do
     t.string "nl_vimeo_id"
     t.string "en_vimeo_id"
   end
-
-  create_table "time_curve_entries", :force => true do |t|
-    t.integer  "graph_id"
-    t.integer  "converter_id"
-    t.integer  "year"
-    t.float    "value"
-    t.string   "value_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "time_curve_entries", ["graph_id"], :name => "index_time_curve_entries_on_graph_id"
 
   create_table "translations", :force => true do |t|
     t.string   "key"

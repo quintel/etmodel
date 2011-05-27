@@ -12,11 +12,4 @@ module EtmFixtures
       Fixtures.create_fixtures(fixtures_path, File.basename(file, '.*'))
     end
   end
-
-  def load_carriers
-    fixtures_path = "spec/fixtures"
-    Carrier.delete_all
-    Fixtures.create_fixtures(fixtures_path, File.basename('carriers', '.*'))
-    Qernel::ConverterApi.create_methods_for_each_carrier(::Carrier.all.map(&:key))
-  end
 end

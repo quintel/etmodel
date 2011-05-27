@@ -144,6 +144,26 @@ ActiveRecord::Schema.define(:version => 20110526074113) do
 
   add_index "blueprints_converters", ["blueprint_id"], :name => "index_blueprints_converters_on_blueprint_id"
 
+  create_table "carrier_datas", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "carrier_id"
+    t.float    "cost_per_mj"
+    t.float    "co2_conversion_per_mj"
+    t.float    "sustainable"
+    t.float    "typical_production_per_km2"
+    t.integer  "area_id"
+    t.float    "kg_per_liter"
+    t.float    "mj_per_kg"
+    t.float    "co2_exploration_per_mj",                     :default => 0.0
+    t.float    "co2_extraction_per_mj",                      :default => 0.0
+    t.float    "co2_treatment_per_mj",                       :default => 0.0
+    t.float    "co2_transportation_per_mj",                  :default => 0.0
+    t.float    "co2_waste_treatment_per_mj",                 :default => 0.0
+    t.float    "supply_chain_margin_per_mj"
+    t.float    "oil_price_correlated_part_production_costs"
+  end
+
   create_table "carriers", :force => true do |t|
     t.integer  "carrier_id"
     t.string   "key"
@@ -171,60 +191,14 @@ ActiveRecord::Schema.define(:version => 20110526074113) do
     t.datetime "updated_at"
   end
 
-  create_table "converter_positions", :force => true do |t|
-    t.integer  "converter_id"
-    t.integer  "x"
-    t.integer  "y"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "hidden"
-    t.string   "fill_color"
-    t.string   "stroke_color"
-    t.integer  "blueprint_layout_id"
-  end
-
-  create_table "converters", :force => true do |t|
-    t.integer  "converter_id"
-    t.string   "key"
+  create_table "converter_datas", :force => true do |t|
     t.string   "name"
-    t.integer  "use_id"
-    t.integer  "sector_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "energy_balance_group"
-  end
-
-  create_table "converters_groups", :id => false, :force => true do |t|
-    t.integer "converter_id"
-    t.integer "group_id"
-  end
-
-  create_table "dataset_carrier_data", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "carrier_id"
-    t.float    "cost_per_mj"
-    t.float    "co2_per_mj"
-    t.float    "sustainable"
-    t.float    "typical_production_per_km2"
-    t.integer  "area_id"
-    t.float    "kg_per_liter"
-    t.float    "mj_per_kg"
-    t.float    "co2_exploration_per_mj",     :default => 0.0
-    t.float    "co2_extraction_per_mj",      :default => 0.0
-    t.float    "co2_treatment_per_mj",       :default => 0.0
-    t.float    "co2_transportation_per_mj",  :default => 0.0
-    t.float    "co2_waste_treatment_per_mj", :default => 0.0
-  end
-
-  create_table "dataset_converter_data", :force => true do |t|
-    t.string   "name"
-    t.integer  "preset_demand",                                     :limit => 8
+    t.integer  "preset_demand",                                              :limit => 8
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "dataset_id"
     t.integer  "converter_id"
-    t.integer  "demand_expected_value",                             :limit => 8
+    t.integer  "demand_expected_value",                                      :limit => 8
     t.float    "typical_capacity_gross_in_mj_s"
     t.float    "typical_capacity_effective_in_mj_s"
     t.float    "typical_thermal_capacity_effective_in_mj_yr"
@@ -268,43 +242,54 @@ ActiveRecord::Schema.define(:version => 20110526074113) do
     t.float    "typical_heat_capacity"
     t.float    "full_load_hours"
     t.float    "operation_hours"
-    t.float    "operation_and_maintenance_cost_fixed"
-    t.float    "operation_and_maintenance_cost_variable"
+    t.float    "operation_and_maintenance_cost_fixed_per_mw_input"
+    t.float    "operation_and_maintenance_cost_variable_per_full_load_hour"
     t.float    "investment"
     t.float    "purchase_price"
     t.float    "installing_costs"
     t.float    "economic_lifetime"
-    t.integer  "municipality_demand",                               :limit => 8
-    t.float    "typical_input_capacity"
+    t.integer  "municipality_demand",                                        :limit => 8
+    t.float    "typical_nominal_input_capacity"
     t.float    "fixed_operation_and_maintenance_cost_per_mw_input"
     t.float    "residual_value_per_mw_input"
     t.float    "decommissioning_costs_per_mw_input"
     t.float    "purchase_price_per_mw_input"
     t.float    "installing_costs_per_mw_input"
     t.float    "part_ets"
+    t.float    "ccs_investment_per_mw_input"
+    t.float    "ccs_operation_and_maintenance_cost_per_full_load_hour"
+    t.float    "decrease_in_nomimal_capacity_over_lifetime"
   end
 
-  add_index "dataset_converter_data", ["dataset_id"], :name => "index_converter_datas_on_graph_data_id"
+  add_index "converter_datas", ["dataset_id"], :name => "index_converter_datas_on_graph_data_id"
 
-  create_table "dataset_link_data", :force => true do |t|
-    t.integer  "link_type",  :default => 0
-    t.float    "share"
+  create_table "converter_positions", :force => true do |t|
+    t.integer  "converter_id"
+    t.integer  "x"
+    t.integer  "y"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "dataset_id"
-    t.integer  "link_id"
+    t.boolean  "hidden"
+    t.string   "fill_color"
+    t.string   "stroke_color"
+    t.integer  "blueprint_layout_id"
   end
 
-  add_index "dataset_link_data", ["dataset_id"], :name => "index_link_datas_on_graph_data_id"
-
-  create_table "dataset_slot_data", :force => true do |t|
-    t.integer "dataset_id"
-    t.integer "slot_id"
-    t.float   "conversion"
-    t.boolean "dynamic"
+  create_table "converters", :force => true do |t|
+    t.integer  "converter_id"
+    t.string   "key"
+    t.string   "name"
+    t.integer  "use_id"
+    t.integer  "sector_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "energy_balance_group"
   end
 
-  add_index "dataset_slot_data", ["dataset_id"], :name => "index_slot_datas_on_graph_data_id"
+  create_table "converters_groups", :id => false, :force => true do |t|
+    t.integer "converter_id"
+    t.integer "group_id"
+  end
 
   create_table "datasets", :force => true do |t|
     t.integer  "blueprint_id"
@@ -316,6 +301,19 @@ ActiveRecord::Schema.define(:version => 20110526074113) do
 
   add_index "datasets", ["region_code"], :name => "index_graph_datas_on_region_code"
 
+  create_table "descriptions", :force => true do |t|
+    t.text     "content_en"
+    t.text     "short_content_en"
+    t.integer  "describable_id"
+    t.string   "describable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "content_nl"
+    t.text     "short_content_nl"
+  end
+
+  add_index "descriptions", ["describable_id", "describable_type"], :name => "index_descriptions_on_describable_id_and_describable_type"
+
   create_table "expert_predictions", :force => true do |t|
     t.integer  "input_element_id"
     t.string   "name"
@@ -326,6 +324,15 @@ ActiveRecord::Schema.define(:version => 20110526074113) do
   end
 
   add_index "expert_predictions", ["input_element_id"], :name => "index_expert_predictions_on_input_element_id"
+
+  create_table "general_user_notifications", :force => true do |t|
+    t.string   "key"
+    t.string   "notification_nl"
+    t.string   "notification_en"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "gql_test_cases", :force => true do |t|
     t.string   "name"
@@ -436,7 +443,19 @@ ActiveRecord::Schema.define(:version => 20110526074113) do
     t.float    "co2_waste_treatment_per_mj"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "carrier"
   end
+
+  create_table "link_datas", :force => true do |t|
+    t.integer  "link_type",  :default => 0
+    t.float    "share"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "dataset_id"
+    t.integer  "link_id"
+  end
+
+  add_index "link_datas", ["dataset_id"], :name => "index_link_datas_on_graph_data_id"
 
   create_table "links", :force => true do |t|
     t.integer "blueprint_id"
@@ -620,6 +639,15 @@ ActiveRecord::Schema.define(:version => 20110526074113) do
   end
 
   add_index "slides", ["key"], :name => "index_slides_on_key"
+
+  create_table "slot_datas", :force => true do |t|
+    t.integer "dataset_id"
+    t.integer "slot_id"
+    t.float   "conversion"
+    t.boolean "dynamic"
+  end
+
+  add_index "slot_datas", ["dataset_id"], :name => "index_slot_datas_on_graph_data_id"
 
   create_table "slots", :force => true do |t|
     t.integer "blueprint_id"

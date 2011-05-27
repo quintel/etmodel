@@ -26,10 +26,9 @@ class Gquery < ActiveRecord::Base
   validates_presence_of :key
   validates_uniqueness_of :key
   validates_presence_of :query
-  validate :validate_query_parseable
+
   # belongs_to :gquery_group
   has_and_belongs_to_many :gquery_groups
-  after_save :reload_cache
 
   strip_attributes! :only => [:key]
 

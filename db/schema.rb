@@ -74,9 +74,6 @@ ActiveRecord::Schema.define(:version => 20110527124826) do
     t.boolean  "has_solar_csp"
     t.boolean  "has_old_technologies"
     t.integer  "parent_id"
-    t.boolean  "has_cold_network"
-    t.float    "cold_network_potential"
-    t.boolean  "has_heat_import"
   end
 
   create_table "constraints", :force => true do |t|
@@ -119,15 +116,6 @@ ActiveRecord::Schema.define(:version => 20110527124826) do
   end
 
   add_index "expert_predictions", ["input_element_id"], :name => "index_expert_predictions_on_input_element_id"
-
-  create_table "general_user_notifications", :force => true do |t|
-    t.string   "key"
-    t.string   "notification_nl"
-    t.string   "notification_en"
-    t.boolean  "active"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "gqueries", :force => true do |t|
     t.string   "key"
@@ -221,7 +209,6 @@ ActiveRecord::Schema.define(:version => 20110527124826) do
     t.float    "co2_waste_treatment_per_mj"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "carrier"
   end
 
   create_table "output_element_series", :force => true do |t|
@@ -435,7 +422,6 @@ ActiveRecord::Schema.define(:version => 20110527124826) do
     t.string   "group"
     t.string   "trackable",          :default => "0"
     t.boolean  "send_score",         :default => false
-    t.boolean  "new_round"
   end
 
   add_index "users", ["trackable"], :name => "index_users_on_trackable"

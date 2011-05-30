@@ -4,7 +4,7 @@ class ScenariosController < ApplicationController
   
   before_filter :ensure_valid_browser
   before_filter :set_scenario, :only => [:edit, :reset_to_preset, :update]
-  before_filter :find_scenario, :only => :load
+  before_filter :find_scenario, :only => [:load, :show]
   before_filter :require_user, :only => [:index, :new]
 
   def index
@@ -16,7 +16,6 @@ class ScenariosController < ApplicationController
   end
  
   def show
-    @scenario = Scenario.find(params[:id])
   end
   
   def new
@@ -51,7 +50,6 @@ class ScenariosController < ApplicationController
   # @tested 2010-12-22 jape
   #
   def load
-    @scenario = Api::Scenario.find(params[:id])
     settings = Setting::SCENARIO_ATTRIBUTES.inject({}) {|hsh,key| hsh.merge key => @scenario.send(key) }
     Current.setting = Setting.new(settings.merge(:scenario_id => @scenario.id));
     redirect_to_if start_path
@@ -110,6 +108,6 @@ class ScenariosController < ApplicationController
 
     # Finds the scenario from id
     def find_scenario
-      @scenario = Scenario.find(params[:id])
+      @scenario = Api::Scenario.find(params[:id])
     end  
 end

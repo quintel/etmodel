@@ -19,4 +19,56 @@ namespace :maintenance do
       # Be sure you've created a gquery with the same name on the ETE
     end
   end
+  
+  desc "check referential integrity"
+  task :check_ref => :environment do
+    puts "Use FORCE=1 parameter to actually delete stuff"
+    @deleted = 0
+    puts "* Area dependencies"
+    AreaDependency.find_each do |a|
+      unless a.dependable
+        puts "! Missing dependable, id=#{a.id}"
+        if ENV["FORCE"]
+          a.destroy
+          @deleted += 1
+        end
+      end
+    end
+        
+    puts "* Descriptions"
+    Description.find_each do |a|
+      if a.describable_id.blank? || !a.describable
+        puts "! Missing describable, id=#{a.id}"
+        if ENV["FORCE"]
+          a.destroy
+          @deleted += 1
+        end
+      end
+    end
+        
+    puts "* Output Element Series"
+    OutputElementSerie.find_each do |a|
+      unless a.output_element
+        puts "! Missing output_element, id=#{a.id}"
+        if ENV["FORCE"]
+          a.destroy
+          @deleted += 1
+        end
+      end
+    end
+        
+    puts "* View Nodes"
+    ViewNode.find_each do |a|
+      next if a.type == "ViewNode::Root"
+      unless a.element
+        puts "! Missing element, id=#{a.id}"
+        if ENV["FORCE"]
+          a.destroy
+          @deleted += 1
+        end
+      end
+    end
+    
+    puts "Deleted #{@deleted} elements"
+  end
 end

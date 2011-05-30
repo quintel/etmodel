@@ -10,6 +10,5 @@
 #
 
 class AreaDependency < ActiveRecord::Base
-  belongs_to :dependendable, :polymorphic => true
+  belongs_to :dependable, :polymorphic => true
 end
-

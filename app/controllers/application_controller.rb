@@ -88,22 +88,6 @@ protected
   def setting
     Current.setting
   end
-
-  #
-  # Redirect to params[:redirect_to] if if has been set. 
-  #
-  # Usage:
-  #   redirect_to_if
-  #
-  # @untested 2010-12-21 jaap
-  #
-  def redirect_to_if(*args)
-    if params[:redirect_to]
-      redirect_to params[:redirect_to]
-    else
-      redirect_to(*args)
-    end
-  end
   
   def store_last_etm_page
     setting.last_etm_controller_name = params[:controller]

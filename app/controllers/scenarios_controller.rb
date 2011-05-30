@@ -52,7 +52,7 @@ class ScenariosController < ApplicationController
   def load
     settings = Setting::SCENARIO_ATTRIBUTES.inject({}) {|hsh,key| hsh.merge key => @scenario.send(key) }
     Current.setting = Setting.new(settings.merge(:scenario_id => @scenario.id));
-    redirect_to_if start_path
+    redirect_to start_path
   end
   
   def change_complexity

@@ -42,6 +42,7 @@ group :test, :development do
   gem "rspec-rails", "~> 2.6.1"
   gem 'ruby-debug19'
   gem 'hirb'
+  gem 'wirble'
   gem 'awesome_print', :require => 'ap'
   gem 'watchr'
   gem 'spork'

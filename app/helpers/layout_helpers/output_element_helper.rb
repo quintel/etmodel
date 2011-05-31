@@ -1,23 +1,4 @@
 module LayoutHelpers::OutputElementHelper
-  def intro_charts_item(title, action, options = {})
-    value, percent, scale_factor = 0, 0, 5
-    options[:total] = 0
-    if options[:query] and total = options[:total] and total != 0.0
-      value = 0 #Current.gql.query(options[:query])
-      percent = ((value / total) * 100).to_i
-    end
-    height = percent * scale_factor
-
-    class_name = (params[:action] == action) ? "active " : ''
-    class_name += title.downcase
-
-    haml_tag :li, :style =>"height:#{height}px", :class => class_name do
-      haml_tag :a, t("#{title}"), :href => ( options[:clickable] ? url_for(:action => action) : "#" )
-      haml_tag 'div.number', "#{(value / BILLIONS).round(1)} PJ"
-      haml_tag 'div.percentage', "#{percent}%"
-    end
-  end
-
   # TODO: refactor, use standard partials and keep things simple
   def charts
     return unless @output_element

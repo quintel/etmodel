@@ -18,10 +18,6 @@ class SidebarItem < ActiveRecord::Base
   include AreaDependent
   has_one :area_dependency, :as => :dependable
   
-  def self.allowed_sidebar_items(section)
-    where("section = '#{section}'").includes(:area_dependency).reject(&:area_dependent)
-  end
-  
   def parsed_key_for_admin
     "#{section.andand} | #{key}"
   end

@@ -30,9 +30,6 @@ class OutputElement < ActiveRecord::Base
   has_one :description, :as => :describable
   has_one :area_dependency, :as => :dependable
 
-  scope :for_update, includes([:output_element_series, :output_element_type])
-
-
   delegate :html_table?, :to => :output_element_type
   
   define_index do
@@ -41,11 +38,6 @@ class OutputElement < ActiveRecord::Base
     indexes description(:content_nl), :as => :description_content_nl
     indexes description(:short_content_en), :as => :description_short_content_en
     indexes description(:short_content_nl), :as => :description_short_content_nl
-  end
-
-  def self.find_selected_or_default(selected_id, default_id)
-    id = selected_id.present? ? selected_id : default_id
-    OutputElement.for_update.find(id)
   end
 
   def title_for_description
@@ -70,6 +62,7 @@ class OutputElement < ActiveRecord::Base
     }
   end
 
+  # DEBT
   def under_construction(opts = {})
     return true if opts[:country] == "de" && opts[:id] == "buildings"
     return true if self[:under_construction]

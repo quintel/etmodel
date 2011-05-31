@@ -14,15 +14,35 @@
       #text_wide
         %h1= t("Who uses most energy?")
         %ul#blocks
-          - options = Proc.new{|key| {:query => nil, :total => nil, :clickable => Current.view.sidebar_items.map(&:key).include?(key)}}
-
-          - intro_charts_item('Households', 'households', options.call('households')) 
-          - if Current.setting.area
-            - intro_charts_item('Buildings', 'buildings', options.call('buildings')) 
-          - intro_charts_item('Transport', 'transport', options.call('transport'))
-          - intro_charts_item('Industry', 'industry', options.call('industry'))
-          - intro_charts_item('Agriculture', 'agriculture', options.call('agriculture')) 
-          - intro_charts_item('Other', 'other', options.call('other'))
+          -# DEBT The API::Query object is still very ugly and I'm not happy with it
+          - bars  = ['Households']
+          - bars += ['Buildings'] if Current.setting.area
+          - bars += ['Transport', 'Industry', 'Agriculture', 'Other']
+          
+          - queries = ['present:SUM(V(G(final_demand_cbs);final_demand))']
+          - queries += bars.map{|x| "present:SUM(V(INTERSECTION(G(final_demand_cbs),SECTOR(#{x.downcase}));final_demand))"}
+          - gql = Api::Query.new
+          - gql.queries = queries
+          - gql.fresh_session_id # DEBT: recycle existing session
+          
+          - total = gql.fetch_single_value('present:SUM(V(G(final_demand_cbs);final_demand))')
+          - scale = 5
+          
+          - bars.each do |b|
+            - key       = b.downcase
+            - value     = gql.fetch_single_value("present:SUM(V(INTERSECTION(G(final_demand_cbs),SECTOR(#{key}));final_demand))")
+            - percent   = value / total.to_f * 100
+            - height    = percent * scale
+            - active    = params[:action] == key
+            - clickable = Current.view.sidebar_items.map(&:key).include?(key)
+            %li{:style =>"height:#{height}px", :class => "#{key} #{'active' if active}"}
+              %a{:href => ( clickable ? url_for(:action => key) : "#" )}
+                = t(b)
+              .number
+                #{(value / BILLIONS).round(1)} PJ
+              .percentage
+                #{"%.2f" % percent}%
+            
   .clear
 #arrow_box_constraints
   = t("intro.results")

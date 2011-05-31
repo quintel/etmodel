@@ -14,34 +14,16 @@
       #text_wide
         %h1= t("Who uses most energy?")
         %ul#blocks
-          -# DEBT The API::Query object is still very ugly and I'm not happy with it
-          - bars  = ['Households']
-          - bars += ['Buildings'] if Current.setting.area
-          - bars += ['Transport', 'Industry', 'Agriculture', 'Other']
-          
-          - queries = ['present:SUM(V(G(final_demand_cbs);final_demand))']
-          - queries += bars.map{|x| "present:SUM(V(INTERSECTION(G(final_demand_cbs),SECTOR(#{x.downcase}));final_demand))"}
-          - gql = Api::Query.new
-          - gql.queries = queries
-          - gql.fresh_session_id # DEBT: recycle existing session
-          
-          - total = gql.fetch_single_value('present:SUM(V(G(final_demand_cbs);final_demand))')
           - scale = 5
-          
-          - bars.each do |b|
-            - key       = b.downcase
-            - value     = gql.fetch_single_value("present:SUM(V(INTERSECTION(G(final_demand_cbs),SECTOR(#{key}));final_demand))")
-            - percent   = value / total.to_f * 100
-            - height    = percent * scale
-            - active    = params[:action] == key
-            - clickable = Current.view.sidebar_items.map(&:key).include?(key)
-            %li{:style =>"height:#{height}px", :class => "#{key} #{'active' if active}"}
-              %a{:href => ( clickable ? url_for(:action => key) : "#" )}
-                = t(b)
+          - @items.each_pair do |key, i|
+            - height = i[:percent] * scale
+            %li{:style =>"height:#{height}px", :class => "#{key} #{'active' if i[:active]}"}
+              %a{:href => ( i[:clickable] ? url_for(:action => key) : "#" )}
+                = t(i[:name])
               .number
-                #{(value / BILLIONS).round(1)} PJ
+                #{(i[:value] / BILLIONS).round(1)} PJ
               .percentage
-                #{"%.2f" % percent}%
+                #{i[:percent].round(1)}%
             
   .clear
 #arrow_box_constraints

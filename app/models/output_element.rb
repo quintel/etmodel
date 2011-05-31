@@ -93,6 +93,3 @@ class OutputElement < ActiveRecord::Base
     output_element_type.try(:name)
   end
 end
-
-
-

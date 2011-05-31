@@ -82,12 +82,12 @@ class Scenario < ActiveRecord::Base
   #
   def self.default_attributes
     {
-      :complexity => 3,
-      :country => 'nl',
-      :user_values => {},
+      :complexity   => 3,
+      :country      => 'nl',
+      :user_values  => {},
       :lce_settings => {},
-      :region => nil,
-      :end_year => 2040
+      :region       => nil,
+      :end_year     => 2040
     }.with_indifferent_access
   end
 end

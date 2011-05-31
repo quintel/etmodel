@@ -1,3 +1,4 @@
+# TODO: are we using this?
 class TextReplace
 
   def self.variables

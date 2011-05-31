@@ -73,5 +73,3 @@ class OutputElementSerie < ActiveRecord::Base
     end
   end
 end
-
-

@@ -4,7 +4,7 @@ class ScenariosController < ApplicationController
   
   before_filter :ensure_valid_browser
   before_filter :set_scenario, :only => [:edit, :reset_to_preset, :update]
-  before_filter :find_scenario, :only => [:load, :show]
+  before_filter :find_scenario, :only => [:show]
   before_filter :require_user, :only => [:index, :new]
 
   def index
@@ -50,6 +50,12 @@ class ScenariosController < ApplicationController
   # @tested 2010-12-22 jape
   #
   def load
+    # TODO: Check if this is the correct behaviour.
+    # when the user loads a predefined scenario or opens a scenario he's
+    # been playing with on the mixer he has to work with a copy, right?
+    # I have therefore added the clone parameter (which is handled on the ETE)
+    # The Scenario life-cycle is convoluted - PZ Tue 31 May 2011 16:11:52 CEST
+    @scenario = Api::Scenario.find(params[:id], :params => {:clone => true})
     settings = Setting::SCENARIO_ATTRIBUTES.inject({}) {|hsh,key| hsh.merge key => @scenario.send(key) }
     Current.setting = Setting.new(settings.merge(:scenario_id => @scenario.id));
     redirect_to start_path

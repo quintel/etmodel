@@ -21,34 +21,36 @@ class ViewNode::Root < ViewNode
     node.has_and_belongs_to_many :constraints,  :join_table => 'constraints_root_nodes'
     node.has_and_belongs_to_many :policy_goals, :join_table => 'policy_goals_root_nodes'
   end
+end
 
-  def tree_to_yml
-    # The structure is
-    # RootNode
-    #   Tab
-    #     SidebarItem
-    #       Slide
-    #         InputElement
-    #         OutputElement
-    out = {}
+__END__
 
-    children.each do |tab|
-      a = out[I18n.t(tab.element.key.capitalize)] = {}
-      tab.children.each do |sidebar_item|
-        b = a[I18n.t("sidebar_item.#{sidebar_item.element.key}")] = {}
-        sidebar_item.children.each do |slide|
-          c = b[I18n.t("slidetitle.#{slide.element.name}")] = {"sliders" => []}
-            slide.children.each do |input|
-              if input.element_type == "InputElement"
-                c["sliders"] << I18n.t("slider.#{input.element.name}")
-              else
-                # c["charts"] << input.element.key
-              end
+def tree_to_yml
+  # The structure is
+  # RootNode
+  #   Tab
+  #     SidebarItem
+  #       Slide
+  #         InputElement
+  #         OutputElement
+  out = {}
+
+  children.each do |tab|
+    a = out[I18n.t(tab.element.key.capitalize)] = {}
+    tab.children.each do |sidebar_item|
+      b = a[I18n.t("sidebar_item.#{sidebar_item.element.key}")] = {}
+      sidebar_item.children.each do |slide|
+        c = b[I18n.t("slidetitle.#{slide.element.name}")] = {"sliders" => []}
+          slide.children.each do |input|
+            if input.element_type == "InputElement"
+              c["sliders"] << I18n.t("slider.#{input.element.name}")
+            else
+              # c["charts"] << input.element.key
             end
-        end
+          end
       end
     end
-
-    out.to_yaml
   end
+
+  out.to_yaml
 end

@@ -33,11 +33,6 @@
 #  label_query               :string(255)
 #
 
- # More defined in pkg/optimize/input_element.rb!!!
-#
-#
-#
-#
 class InputElement < ActiveRecord::Base
   include AreaDependent
   has_paper_trail

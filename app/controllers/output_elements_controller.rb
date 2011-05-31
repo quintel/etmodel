@@ -7,7 +7,7 @@ class OutputElementsController < ApplicationController
     end
   end
 
-  def change
+  def change # TODO: is this used? It looks like we're using select_chart only
     Current.current_slide = Slide.find(params[:slide]).name.underscore
     id = Current.setting.selected_output_element || params[:id]
     render_chart(id)

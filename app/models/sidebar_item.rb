@@ -26,5 +26,3 @@ class SidebarItem < ActiveRecord::Base
     "#{section.andand} | #{key}"
   end
 end
-
-

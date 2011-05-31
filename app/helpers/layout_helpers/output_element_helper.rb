@@ -1,6 +1,5 @@
 module LayoutHelpers::OutputElementHelper
-  # TODO rob (2010-08-20) rename "a" to a more explanatory name
-  def intro_charts_item(title, a, options = {})
+  def intro_charts_item(title, action, options = {})
     value, percent, scale_factor = 0, 0, 5
     options[:total] = 0
     if options[:query] and total = options[:total] and total != 0.0
@@ -9,11 +8,11 @@ module LayoutHelpers::OutputElementHelper
     end
     height = percent * scale_factor
 
-    class_name = (params[:action] == a) ? "active " : ''
+    class_name = (params[:action] == action) ? "active " : ''
     class_name += title.downcase
 
     haml_tag :li, :style =>"height:#{height}px", :class => class_name do
-      haml_tag :a, t("#{title}"), :href => ( options[:clickable] ? url_for(:action => a) : "#" )
+      haml_tag :a, t("#{title}"), :href => ( options[:clickable] ? url_for(:action => action) : "#" )
       haml_tag 'div.number', "#{(value / BILLIONS).round(1)} PJ"
       haml_tag 'div.percentage', "#{percent}%"
     end

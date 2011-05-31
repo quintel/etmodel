@@ -73,11 +73,27 @@ describe ViewNode do
     end
 
     context "InputElementNode" do
-      pending
+      before do
+        @s = Factory :input_element_node
+      end
+      
+      it "only valid if parent is slide" do
+        @s.parent_id = Factory(:root_node).id
+        @s.should_not be_valid
+        @s.should have(1).error_on(:parent_id)
+      end
     end
 
     context "OutputElementNode" do
-      pending
+      before do
+        @s = Factory :output_element_node
+      end
+      
+      it "only valid if parent is slide" do
+        @s.parent_id = Factory(:root_node).id
+        @s.should_not be_valid
+        @s.should have(1).error_on(:parent_id)
+      end
     end
   end
 end

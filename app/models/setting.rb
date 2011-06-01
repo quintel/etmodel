@@ -72,7 +72,9 @@ class Setting
   end
 
   def reset_scenario
-    api_session_key = nil
+    #RD: used self. here otherwise an other settings object was reset
+    self.api_session_key = nil
+
   end
 
   ####### Complexities

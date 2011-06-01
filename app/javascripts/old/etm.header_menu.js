@@ -9,7 +9,7 @@ $(document).ready(function() {
 		return false;
 	});
 	$(document).mouseup(function(e) {
-		if($(e.target).parent("a.signin").length==0) {
+		if($(e.target).parent("a.signin").length === 0) {
 			$(".signin").removeClass("menu-open");
 			$("fieldset#signin_menu").hide();
 		}
@@ -24,7 +24,7 @@ $(document).ready(function() {
 		return false;
 	});
 	$(document).mouseup(function(e) {
-		if($(e.target).parent("a.settings").length==0) {
+		if($(e.target).parent("a.settings").length === 0) {
 			$(".settings").removeClass("menu-open");
 			$("#settings_menu").hide();
 		}
@@ -40,12 +40,12 @@ $(document).ready(function() {
 		return false;
 	});
 	$(document).mouseup(function(e) {
-		if($(e.target).parent("a.information").length==0) {
+		if($(e.target).parent("a.information").length === 0) {
 			$(".information").removeClass("menu-open");
 			$("#information_menu").hide();
 		}
 	});
-	
+
 	$("#disable_peak_load_tracking").live('click',function() {          
     disable_peak_load_tracking();
   });

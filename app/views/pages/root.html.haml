@@ -20,10 +20,13 @@
       .button_right
     %ul#new_scenario_form
       
-      =form_tag root_path do
+      = form_tag root_path do
         = render "pages/root_page/country_select"
         = render "pages/root_page/year_select"
-        = render "pages/root_page/level_select"
+        %li
+          %h3= t("Choose level")
+          = select_tag :complexity, options_for_select(@scenario_levels,3), :style => "width:142px"
+
         = render 'pages/root_page/start_button'
     %a{:id=>"existing_scenario_button", :class=>" style_button", :href =>"#",:alt=>"continue",:title=>"continue"}
       .button_left

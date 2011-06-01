@@ -124,13 +124,6 @@ class Setting
     @end_year = end_year.to_i
   end
 
-  ##
-  # @tested 2010-11-30 seb
-  # 
-  def years
-    end_year - start_year
-  end
-
   ####### Peak load
 
   def track_peak_load?

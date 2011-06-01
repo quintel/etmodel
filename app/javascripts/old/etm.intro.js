@@ -77,10 +77,17 @@ $(document).ready(function() {
   $("#new_scenario_button").click(function(e) {          
     $("#new_scenario_form").slideToggle();
     $("#existing_scenario_form").hide();
+    $("#energy_mixer_desc").hide();
   });
   $("#existing_scenario_button").click(function(e) {          
     $("#existing_scenario_form").slideToggle();
     $("#new_scenario_form").hide();
+    $("#energy_mixer_desc").hide();
+  });
+  $("#energy_mixer_button").click(function(e) {          
+    $("#energy_mixer_desc").slideToggle();
+    $("#new_scenario_form").hide();
+    $("#existing_scenario_form").hide();
   });
 
 });

@@ -116,6 +116,27 @@ $(document).ready(function() {
     // alert('hit');
     return false;
   });
+  
+  $(".energy_mixer").live('click', function() {
+
+    $(this).fancybox({
+      width    : 773,
+      height   : "80%",
+      titleShow: false,
+      padding  : 0,
+      scrolling: 'auto',
+      type     : 'iframe',
+      ajax : {
+        type  : "GET"
+      }
+    });
+
+    $(this).trigger('click');
+    // alert('hit');
+    return false;
+  });
+  
+  
   $('#overlay_container a').live('click', function(i,el) {
     if (!$(this).hasClass('no_target')){
       window.open($(this).attr('href'), '_blank');

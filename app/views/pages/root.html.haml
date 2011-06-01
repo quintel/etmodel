@@ -32,6 +32,14 @@
       .button_right
     %ul#existing_scenario_form
       = render 'pages/root_page/scenario_select_form'
+    - if I18n.locale.to_s == "nl"
+      %a{:id=>"energy_mixer_button", :class=>" style_button", :href => "#", :alt=>"energy mixer", :title=>"energy mixer"}
+        .button_left
+        .button_center
+          %span= t('energy_mixer').capitalize
+        .button_right      
+      %ul#energy_mixer_desc
+        = render 'pages/root_page/energy_mixer_desc'
           
   =render 'pages/root_page/movies'
     

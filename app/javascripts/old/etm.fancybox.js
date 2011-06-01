@@ -136,7 +136,7 @@ $(document).ready(function() {
     return false;
   });
   
-  
+
   $('#overlay_container a').live('click', function(i,el) {
     if (!$(this).hasClass('no_target')){
       window.open($(this).attr('href'), '_blank');
@@ -148,5 +148,4 @@ $(document).ready(function() {
 
 function close_fancybox(){
   $.fancybox.close();
-};
-
+}

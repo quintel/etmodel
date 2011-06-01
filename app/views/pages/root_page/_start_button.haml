@@ -1,4 +1,4 @@
-- if has_update_statements? && !(defined?(disable_continue) && disable_continue)
+- if has_active_scenario? && !(defined?(disable_continue) && disable_continue)
   = submit_tag "Start", {:class => 'button', :style=>"float:right;margin-right:12px",:onclick => "return confirm('%s')" % t('newscenario')}
 - else
   = submit_tag "Start", :class => 'button button_align_right'

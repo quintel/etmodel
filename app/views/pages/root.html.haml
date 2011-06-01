@@ -1,13 +1,13 @@
 #home
   #start
-    - if has_update_statements?
+    - if has_active_scenario?
       %h1= t("Welcome back")
     - else
       %h1= t("Start right away")
       %p.nodownloads= t("No downloads")
 
  
-    - if has_update_statements?    
+    - if has_active_scenario?
       %a{:id=>"continue_scenario_button", :class=>"style_button", :href =>  last_etm_path(:include_action => false),:alt=>"continue",:title=>"continue"}
         .button_left
         .button_center

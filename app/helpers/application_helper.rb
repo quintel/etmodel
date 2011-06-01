@@ -11,10 +11,9 @@ module ApplicationHelper
     end
   end
 
-  def has_update_statements?
-    # FIXME: add this functionality
-    # Current.scenario.update_statements.present?
-    true
+  def has_active_scenario?
+    #RD: renamed from has_update_statements?
+    Current.setting.api_session_key.present?
   end
 
   def strip_html(str)

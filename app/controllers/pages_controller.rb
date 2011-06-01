@@ -6,6 +6,13 @@ class PagesController < ApplicationController
   skip_before_filter :show_intro_screens_only_once, :only => [:intro]
 
   def root
+    all_views = Current.setting.all_levels.map{|id, name| [t("views.#{name}"), id]}
+    @scenario_levels = if Rails.env.development? || Rails.env.test?
+      all_views
+    else
+      all_views[0..2]
+    end
+
     # if user wanted to start with a new scenario
     if params[:end_year]
       Current.setting = Setting.default

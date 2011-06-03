@@ -1,0 +1,22 @@
+body {
+  font: 13px/20px Lucida Grande, Verdana, Arial, Helvetica, sans-serif;
+  background-color: #DBE4F2;
+  
+  table {
+    td {
+      font: 13px/20px Lucida Grande, Verdana, Arial, Helvetica, sans-serif;
+      text-align: right;
+    }
+    th {
+      text-align: right;
+    }
+  }
+  
+  #loading {
+    background-color: red;
+    position: fixed;
+    top: 0px;
+    left: 48%;
+    padding: 5px 20px;
+  }
+}

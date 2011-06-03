@@ -112,7 +112,10 @@ var InputElementList = Backbone.Collection.extend({
     var options = inputElement.ui_options;
     this.inputElements[inputElement.id] = inputElement;
     var inputElementView = new InputElementView({model : inputElement, element : options.element});
-    inputElementView.bind('show', $.proxy(this.handleInputElementInfoBoxShowed, this));
+    // The following binding was for obscure reasons preventing the videos
+    // to work. Commented it out. Investigate. PZ Fri 3 Jun 2011 16:34:36 CEST
+    // inputElementView.bind('show', $.proxy(this.handleInputElementInfoBoxShowed, this));
+    
     this.inputElementViews[inputElement.id] = inputElementView;
     inputElementView.sliderView.bind("change", $.proxy(this.handleUpdate, this));
     this.initShareGroup(inputElement);

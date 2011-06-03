@@ -3,7 +3,6 @@
 
 var BaseChartView = Backbone.View.extend({
   initialize_defaults : function() {
-    this.HEIGHT = '360px';
     _.bindAll(this, 'render');
     this.model.bind('change', this.render);
   },
@@ -11,7 +10,7 @@ var BaseChartView = Backbone.View.extend({
   // SEB: maybe needs a better way to remove jqplot objects.
   //      => possible js memory leak  
   clear_container : function() {
-    this.model.container_node().empty().css('height', this.HEIGHT);
+    this.model.container_node().empty();
   },
 
   // was axis_values

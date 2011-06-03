@@ -26,7 +26,6 @@ $(document).ready(function() {
       url: url+"?"+timestamp(), 
       method: 'get',
       beforeSend: function() {
-        $('#chart_loading').show();
         close_fancybox();
       }
     });

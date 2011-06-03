@@ -122,19 +122,13 @@ var ChartList = Backbone.Collection.extend({
     this.add(chart);
   },
 
-  // this should be refactored into events. So we can trigger('loading') or 'loaded'
-  show_loading : function() { $('#chart_loading').show(); },
-  hide_loading : function() { $('#chart_loading').hide(); },
-
   load : function(chart_id) {
     if (this.first().get('id')+'' == chart_id + '') {
       // if chart_id == currently shown chart, skip.
       return;
     }
-    window.charts.show_loading();
     var url = '/output_elements/'+chart_id+'.js?'+timestamp();
     $.getScript(url, function() { 
-      window.charts.hide_loading();
       App.call_api('');
     });
   },

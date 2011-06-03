@@ -35,14 +35,31 @@ class Api::Query
   end
 
   # returns data in this format: {2010 => 1.0, 2040 => 1.0}
+  # DEBT: some commands return a value not enclosed in a hash!
+  # 
+  # ruby-1.9.2-p180 :006 > Current.gql.query "V(1.0)"
+  # => [[2010, [1.0]], [2040, [1.0]]]  # enclosed in an array
+  # 
+  # ruby-1.9.2-p180 :004 > Current.gql.query "Q(policy_not_shown)"
+  # => [[2010, 0.6045053247669468], [2040, 0.6045053247669468]] # not!
+  #
   def fetch_pair(q)
     res = execute[q]
     {
-      res[0][0] => res[0][1][0].to_f,
-      res[1][0] => res[1][1][0].to_f,
+      res[0][0] => res[0][1].kind_of?(Array) ? res[0][1][0].to_f : res[0][1].to_f,
+      res[1][0] => res[1][1].kind_of?(Array) ? res[1][1][0].to_f : res[1][1].to_f,
     }
-  rescue
-    nil
+  # rescue
+  #   nil
+  end
+  
+  # Fast statement execution
+  # DEBT: this class interface sucks
+  def fast_pair(q)
+    self.queries = [q]
+    Rails.logger.debug "*** GQL: #{q}"
+    execute!
+    fetch_pair(q)
   end
   
   def execute

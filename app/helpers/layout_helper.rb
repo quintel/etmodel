@@ -75,7 +75,7 @@ module LayoutHelper
         haml_tag :div, :id => "shadow-bg-%s" % dir, :class => "shadow-bg"
       end
       
-      haml_tag :div, :id => "shadowbox-inner", :style => "padding: 20px 40px 40px 40px;" do
+      haml_tag :div, :id => "shadowbox-inner" do
         haml_tag :div, :id => "shadowbox-content", :style => "width: 100%; float:none;" do
           yield
         end

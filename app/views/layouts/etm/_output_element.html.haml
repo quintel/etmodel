@@ -3,7 +3,6 @@
 
 #charts_container
   = render "/output_elements/output_element_actions"
-  #chart_loading{:style => "display: none"} Loading...
   - if @output_element.under_construction || (params[:id] == "buildings" && Current.setting.country == "de")
     #chart_not_finished
 

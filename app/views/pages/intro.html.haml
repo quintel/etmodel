@@ -1,14 +1,7 @@
 = sprocket_page_init :intro
 #home{:style => "z-index: 3; padding-top:50px"}
   #shadowbox-outer{:style => "width: 800px; height:420px; margin: 0px auto 40px auto;"}
-    #shadow-bg-n.shadow-bg
-    #shadow-bg-ne.shadow-bg
-    #shadow-bg-e.shadow-bg
-    #shadow-bg-se.shadow-bg
-    #shadow-bg-s.shadow-bg
-    #shadow-bg-sw.shadow-bg
-    #shadow-bg-w.shadow-bg
-    #shadow-bg-nw.shadow-bg
+    = render :partial => 'shared/shadowbox_frame'
     #shadowbox-inner{:style => "padding: 20px 40px 40px 40px; float: left;" }
       #shadowbox-content{:style => "width: 688px;"}
         #text

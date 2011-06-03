@@ -44,11 +44,15 @@ window.AppView = Backbone.View.extend({
     var params = {'result' : window.gqueries.keys() };
 
     LockableFunction.setLock('call_api');
+    showLoading();
     $.jsonp({
       url: url + '?callback=?',
       data: params,
       success: this.handle_api_result,
-      error: function() { console.log("Something went wrong"); }
+      error: function() {
+        console.log("Something went wrong"); 
+        hideLoading();
+      }
     });
   },
 
@@ -71,6 +75,7 @@ window.AppView = Backbone.View.extend({
     App.peak_load.trigger('change');
 
     $("body").trigger("dashboardUpdate");
+    hideLoading();
   },
 
   /**
@@ -96,4 +101,9 @@ window.AppView = Backbone.View.extend({
   }
 });
 
+
+function showLoading() { $("#loading").show(); }
+function hideLoading() { $("#loading").hide(); }
+
 window.App = App = new AppView();
+

@@ -40,6 +40,8 @@
         = render "layouts/etm/constraints"
         = render "layouts/etm/footer"
       .clear
+      #loading{:style => 'display: none'} Loading...
+      
 
     %a#feedback-tab.side_tabs.select_chart{:href => '/feedback', :class => I18n.locale}
     %a#refman-tab.side_tabs{:href => 'http://refman.et-model.com', :class => I18n.locale, :target => "_blank" }

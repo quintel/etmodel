@@ -3,8 +3,11 @@
   %p
     =t("constraint.footprint").html_safe
 
-  - now = @constraint.data.present_value.round(1)
-  - fut = @constraint.data.future_value.round(1)
+
+  -# data = @api_client.fast_pair("Q(area_footprint_per_nl)")
+  - data = @api_client.fast_pair("Q(policy_not_shown)") # ?!?!
+  - now = data.values.first rescue 0
+  - fut = data.values.last rescue 0
   - country = Current.setting.country
   - country = Current.setting.region if Current.setting.region == "ame"
   - map = "/images/layout/#{country}_map.png"
@@ -23,3 +26,7 @@
       = Current.setting.end_year
     
     %div{:style => "background: url(#{map}) repeat-x; height: 105px; width: #{(70*fut).round(0)}px"} &nbsp;
+  :javascript
+    $(function(){
+      hideLoading();
+    });

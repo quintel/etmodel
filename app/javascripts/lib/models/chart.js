@@ -131,19 +131,6 @@ var ChartList = Backbone.Collection.extend({
     $.getScript(url, function() { 
       App.call_api('');
     });
-  },
-
-  switch_chart : function() {
-    var chart        = this.charts.first();
-    var current_type = chart.get("type");
-    
-    if(!chart.get("original_type")) {
-      chart.set({ original_type : current_type});
-    }
-    
-    var new_type = (current_type == 'html_table' ? chart.get("original_type") : 'html_table');
-    chart.set({ previous_chart_type : current_type});    
-    chart.set({ type : new_type});
   }
 });
 window.charts = new ChartList();

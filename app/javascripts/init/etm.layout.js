@@ -1,4 +1,3 @@
-//= require <jquery>
 //= require <jqplot>
 
 //= require <backbone-0.3.3-min>
@@ -14,8 +13,3 @@
 //= require <lib/views.js>
 //= require <lib/models.js>
 //= require <lib/app.js>
-
-
-
-
-

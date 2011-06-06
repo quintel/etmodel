@@ -5,7 +5,7 @@ describe DemandController do
   
   describe "GET intro" do
     before do
-      Api::Query.any_instance.stub(:fetch_single_value).and_return(1.234)
+      Api::Client.any_instance.stub(:fetch_single_value).and_return(1.234)
     end
   
     it "should be successful" do

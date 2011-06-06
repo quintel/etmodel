@@ -9,17 +9,18 @@ class DemandController < TabController
     queries = ['present:SUM(V(G(final_demand_cbs);final_demand))']
     queries += bars.map{|x| "present:SUM(V(INTERSECTION(G(final_demand_cbs),SECTOR(#{x.downcase}));final_demand))"}
     
-    gql = Api::Query.new
+    gql = Api::Client.new
+    # Assigning queries now, to prevent multiple requests
     gql.queries = queries
-    gql.fresh_session_id # DEBT: recycle existing session
+    gql.api_session_id = Current.setting.api_session_key rescue nil
     
-    @total = gql.fetch_single_value('present:SUM(V(G(final_demand_cbs);final_demand))').to_f
+    @total = gql.simple_query('present:SUM(V(G(final_demand_cbs);final_demand))')
     
     @items = {}
     
     bars.each do |b|
       key = b.downcase
-      val = gql.fetch_single_value("present:SUM(V(INTERSECTION(G(final_demand_cbs),SECTOR(#{key}));final_demand))")
+      val = gql.simple_query("present:SUM(V(INTERSECTION(G(final_demand_cbs),SECTOR(#{key}));final_demand))")
       @items[key] ||= {
         :name      => b,
         :value     => val,

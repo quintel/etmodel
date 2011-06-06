@@ -20,7 +20,7 @@ class HouseSelectionsController < ApplicationController
       @perc_existing_houses = (percentage_of_existing_houses * 100).round(1)
 
       render :update do |page|
-        page[:house_selection].replace_html( render "house_selections/result")
+        page["#house_selection"].html(render "house_selections/result")
       end
     else
       render :update do |page|
@@ -46,7 +46,7 @@ class HouseSelectionsController < ApplicationController
   def clear
     clear_session
     render :update do |page|
-      page[:house_selection].replace_html( render "select")
+      page['#house_selection'].html( render "select")
     end
   end
 

@@ -77,7 +77,7 @@ class PagesController < ApplicationController
   
   def select_movie
     render :update do |page|
-      page[:movie_content].replace_html(render 'movie', :page => params[:id])
+      page["#movie_content"].html(render 'movie', :page => params[:id])
       page.call('set_active_tab', params[:id])
     end
   end
@@ -130,7 +130,7 @@ class PagesController < ApplicationController
         end
       else
         render :update do |page|
-           page[:errors].replace_html(t("feedback_error"))
+           page['#errors'].html(t("feedback_error"))
          end
        end
     else

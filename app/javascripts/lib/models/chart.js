@@ -14,6 +14,10 @@ var Chart = Backbone.Model.extend({
     return $("#" + this.get("container"));
   },
   
+  title_node : function() {
+    return $("#charts_holder h3");
+  },
+  
   render : function() {
     var type = this.get('type');
     switch (type) {
@@ -50,6 +54,7 @@ var Chart = Backbone.Model.extend({
       default:
         this.view = new HtmlTableChartView({model : this});
     }
+    this.title_node().html(this.get("name"));
     return this.view;
   },
 

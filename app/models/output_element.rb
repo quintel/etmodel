@@ -54,11 +54,12 @@ class OutputElement < ActiveRecord::Base
 
   def options_for_js
     { 
-      'id' => self.id,
-      'type' => output_element_type.name,
+      'id'         => self.id,
+      'type'       => output_element_type.name,
       'percentage' => percentage == true ,
-      'unit' => unit,
-      'group' => group
+      'unit'       => unit,
+      'group'      => group,
+      'name'       => I18n.t("output.#{name}").html_safe
     }
   end
 

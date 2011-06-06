@@ -5,7 +5,7 @@
 
 
   -# data = @api_client.fast_pair("Q(area_footprint_per_nl)")
-  - data = @api_client.fast_pair("Q(policy_not_shown)") # ?!?!
+  - data = @api_client.simple_query("Q(policy_not_shown)") # ?!?!
   - now = data.values.first rescue 0
   - fut = data.values.last rescue 0
   - country = Current.setting.country

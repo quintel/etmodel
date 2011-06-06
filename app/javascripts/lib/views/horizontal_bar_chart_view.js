@@ -8,8 +8,6 @@ var HorizontalBarChartView = BaseChartView.extend({
   
   render : function() {
     this.clear_results_cache();
-    // SEB: maybe needs a better way to remove jqplot objects.
-    //      => possible js memory leak
     this.clear_container();
       InitializeHorizontalBar(
         this.model.get("container"),
@@ -43,6 +41,7 @@ var HorizontalBarChartView = BaseChartView.extend({
   axis_scale : function() {
     var values = _.map(this.results(), function(i){ return i[0]});
     var max = _.max(values);
+    if (max == 0) { max = 3 };
     return [0, max * 1.1];
   }
 });

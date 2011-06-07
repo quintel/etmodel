@@ -6,7 +6,6 @@ var PolicyLineChartView = BaseChartView.extend({
 
   render : function() {
     this.clear_container();
-
     InitializePolicyLine(this.model.get("container"), 
       this.model.results(), 
       this.model.get('unit'), 

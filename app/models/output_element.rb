@@ -44,10 +44,6 @@ class OutputElement < ActiveRecord::Base
     "output.#{name}"
   end
 
-  def call_jqplot_function
-    "alert('call_jqplot_function is deprecated')"
-  end
-
   def block_chart?
     id == BLOCK_CHART_ID
   end

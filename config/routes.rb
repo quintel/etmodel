@@ -84,6 +84,13 @@ Etm::Application.routes.draw do
       get :select
     end
   end
+  
+  resources :expert_predictions, :only => :index do
+    collection do
+      get :set
+      get :reset
+    end
+  end
 
   match '/select_movie/:id'                => 'pages#select_movie'
   match '/units'                           => 'pages#units'

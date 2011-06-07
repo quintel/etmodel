@@ -115,7 +115,6 @@ $(document).ready(function() {
     });
 
     $(this).trigger('click');
-    // alert('hit');
     return false;
   });
   

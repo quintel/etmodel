@@ -25,7 +25,7 @@ en:
   municipalities: "municipalities"
   provinces: "provinces"
   be-vlg: "Flanders"
-  
+  br: "Brandenburg"  
   # ----------- Meta tags ------------ #
   meta:
     title: "Energy Transition Model - Your free, independent, comprehensive, fact-based scenario builder."
@@ -41,6 +41,7 @@ en:
   Local_demand: "Local demand"
   National_supply: "National supply"
   Demographics: "Demographics"
+  Lce: "Life cycle emissions"
   
   #------- Admin -------#
   Graphs: "Graphs"
@@ -148,6 +149,10 @@ en:
   information:
     in the news: "Press releases about the Energy Transition Model"
     overview: "An overview of recently published articles related to the energy transition model (in Dutch)"
+  lce:
+    check: "Use Life cycle emissions"
+    description: "When you start using Life cycle emissions it will mean that the model will also include greenhouse gasses which are emitted during the extraction, treatment and transportation of the energycarrier. These numbers are normally not included because they often are emitted in other countries"
+    notice: "You are using Life cycle emissions"
   # ---------------------------- #
   # ----------- Menu ----------- #
   # ----------- Demand ----------- #
@@ -195,6 +200,7 @@ en:
   Welcome back: "Welcome back"
   Continue with your scenario: "Continue with your scenario"
   Start a new scenario: "Start a new scenario"
+  energy_mixer: "Build a scenario in 8 steps"
   Start right away: "Start right away"
   "Choose province": "Choose province"
   No downloads: "No downloads or plugins required. Run it straight from your browser."
@@ -281,11 +287,11 @@ en:
     click for more information: "click for more information"
     loading: "Loading.."
     energy: "Will you use more or less energy in the future? (Figure depicts primary energy demand)"
-    co2: "How have future CO<sub>2</sub> emissions changed, as a result of your assumptions?"
+    co2: "This chart shows the CO<sub>2</sub> emissions, with im/export included, for different years. Click <a href='#' class='pick_charts' id='output_97'>here</a> to see the im/export values."
     dependence: "How much energy does your country import or export? The chart shows all cross-border imports and exports. One might question whether imports or exports within an integrated market (like Western Europe) should be included here."
     costs: "By how much have future energy costs changed, as a result of your input?"
     footprint: "What is your country's future biomass footprint in the world? The graph below shows how much arable land you would need to cover your country's biomass, biofuel and biogas needs. It is shown in multiples of your country's total arable land area."
-    renewable: "What percentage of all energy used is renewable?"
+    renewable: "What percentage of all final energy use is renewable? <small>(Number may deviate from national statistics due to different definitions. See our wiki for more details)</small>"
   
   grid_investment:
     header: "Grid Investment Needed"
@@ -357,7 +363,7 @@ en:
     Final energy demand trucks: "Final energy demand trucks"
     Heat demand:  "Heat demand"
     Total cost of electricity production: "Total cost of electricity production"
-    Targeted CO2 emission:  "Targeted CO<sub>2</sub> emissions"
+    Targeted CO2 emission:  "Targeted CO<sub>2</sub> emissions w.r.t. 1990"
     Targeted percentage of renewables:  "Targeted percentage of renewables"
     Targeted area use for wind turbines:  "Targeted area use for wind turbines"
     Targeted area use for solar power:  "Targeted area use for solar power"
@@ -401,6 +407,11 @@ en:
     CO2 emissions with import export waterfall: "Effect of im- or export on CO<sub>2</sub> emission allocation"
     Decentral Heat and Electricity Industry: "Decentral heat and electricity industry"
     CO2 emissions with import: "CO<sub>2</sub> emissions with im- or export"
+    CO2 emissions per carrier: "CO<sub>2</sub> emissions per carrier, per GJ"
+    CO2 emissions with import export: "CO<sub>2</sub> emissies met im- of export"
+    Breakdown electricity costs: "Uitsplitsing elektriciteitskosten"
+    Breakdown heat costs: "Uitsplitsing warmtekosten"    
+
   #------------ Output Serie Labels ------------- #
   serie:
     Total: "Total"
@@ -605,6 +616,15 @@ en:
     Fuel cell: "Fuel cell"
     fuels: "Fuels"
     Fuels: "Fuels"
+    Imported heat: "Imported heat"
+    CO2 emission rights: "CO2 emission rights"
+    Fuel cost: "Fuel cost"
+    Operation & maintenance cost: "Operation & maintenance cost"
+    Depreciation: "Depreciation"
+    Cost of capital: "Cost of capital"
+    Breakdown electricity costs: "Specification of the electricity costs"
+    Breakdown heating costs: "Specification of the heating costs"
+    Primary energy of electricity export: "Primary energy of electricity export"
     
   scenario:
     saved: "Saved Scenarios"

@@ -160,7 +160,7 @@ module LayoutHelpers::SlideHelper
   def slide_expert_prediction_link(slide)
     if slide.show_expert_prediction_link
       haml_tag 'a.expert_header', t("accordion.expert predictions available"),:style => "float:left",
-        :href => "/expert_predictions/select_prediction/#{slide.id}" 
+        :href => "/expert_predictions?slide_id=#{slide.id}" 
     end
   end
   ##

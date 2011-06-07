@@ -135,6 +135,11 @@ var ChartList = Backbone.Collection.extend({
     var url = '/output_elements/'+chart_id+'.js?'+timestamp();
     $.getScript(url, function() { 
       App.call_api('');
+      if(chart_id != charts.current_default_chart) {
+        $("a.default_charts").show();
+      } else {
+        $("a.default_charts").hide();
+      }
     });
   }
 });

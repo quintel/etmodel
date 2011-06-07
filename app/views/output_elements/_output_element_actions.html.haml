@@ -1,6 +1,8 @@
 #output_element_actions{:class=>"#{@output_element.output_element_type.name}"}
-  %a{:class=>"fancybox chart_info", :href => "/descriptions/charts/#{@output_element.id}",:alt=>"info",:title=>"info"}
-  %a{:class=>"select_chart", :href => "/output_elements/select",:alt=>t("output.change_chart"),:title=>t("output.change_chart")}
-  - unless displayed_output_element_is_default? # this isnt called now where using backbone!
-    %a{:class => "default_charts", :href => "#",:alt=>t("output.back_to_default"),:title=>t("output.back_to_default")}
+  %a.chart_info.fancybox{:href => "/descriptions/charts/#{@output_element.id}",:alt=>"info",:title=>"info"}
+  %a.select_chart{:href => "/output_elements/select",:alt=>t("output.change_chart"),:title=>t("output.change_chart")}
+  %a.default_charts{:href => "#",:alt=>t("output.back_to_default"),:title=>t("output.back_to_default"), :style => 'display: none'}
 
+:javascript
+  // DEBT: I'd gladly move this somewhere else
+  charts.current_default_chart = #{@output_element.id};

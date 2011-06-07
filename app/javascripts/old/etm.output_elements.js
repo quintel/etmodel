@@ -1,22 +1,9 @@
 // functions for select an other charts
 $(document).ready(function() {
   $.jqplot.config.enablePlugins = true;
-  $("a.default_charts").live('click',function () { // it this the same as in accordion.js?
-    var output_element;
-    var output_element_id;
-    output_element = $(".ui-state-active").attr('id');
-    if (output_element){
-      output_element_id = output_element.match(/\d+$/);
-    }
-     else{
-      output_element_id = $(".ui-accordion-header")[0].id.match(/\d+$/);
-    }  
 
-    var url = "/output_elements/default_chart/"+output_element_id;
-    $.ajax({ 
-      url: url+"?"+timestamp(),
-      method: 'get'
-    });
+  $("a.default_charts").live('click',function () { // it this the same as in accordion.js?
+    charts.load(charts.current_default_chart);
   });
   
   $(".pick_charts").live('click',function () {

@@ -9,7 +9,7 @@ var MekkoChartView = BaseChartView.extend({
 
     InitializeMekko(this.model.get("container"), 
       this.results(), 
-      'PJ', //this.parsed_unit(), 
+      this.parsed_unit(), 
       this.axis_scale(), 
       this.colors(), 
       this.labels());

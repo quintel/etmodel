@@ -72,11 +72,13 @@ $(document).ready(function() {
       padding  : 0,
       ajax : {
         type  : "GET"
+      },
+      onComplete: function() { 
+        $("#fancybox-inner").css({'overflow-x':'hidden'}); 
       }
     });
 
     $(this).trigger('click');
-    // alert('hit');
     return false;
   });
 

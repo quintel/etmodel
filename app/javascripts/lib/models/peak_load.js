@@ -27,7 +27,6 @@ var PeakLoad = Backbone.Model.extend({
 
   save_state_in_session : function() {
     App.settings.set({network_parts_affected : this.parts_affected() });
-    //App.settings.save();
   },
 
   /*
@@ -42,20 +41,21 @@ var PeakLoad = Backbone.Model.extend({
    */
   parts_affected : function() {
     return _.compact(
-      _.map(this.gqueries, function(gquery, part_affected) {
-        return gquery.result()[0][1] ? part_affected : null;
-      })
-    );
+          _.map(this.gqueries, function(gquery, part_affected) {
+            return gquery.result()[0][1] ? part_affected : null;
+          })
+        );
   },
   
   /*
    * @return Boolean
    */
   unknown_parts_affected : function() {
-    return _.any(this.parts_affected, function(key) { 
-      return _.include(App.settings.network_parts_affected, key)
+    return  _.any(this.parts_affected(), function(key) { 
+      return !(_.include(App.settings.get("network_parts_affected"), key))
     })
-  }
+  },
+  
 });
 
 

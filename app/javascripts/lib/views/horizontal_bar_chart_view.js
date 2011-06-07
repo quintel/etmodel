@@ -13,7 +13,7 @@ var HorizontalBarChartView = BaseChartView.extend({
         this.model.get("container"),
         this.results(),
         true,
-        'PJ',
+        this.parsed_unit(),
         this.axis_scale(),
         this.model.colors(),
         this.model.labels()

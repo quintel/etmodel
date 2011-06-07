@@ -74,6 +74,7 @@ class Setting
   def reset_scenario
     #RD: used self. here otherwise an other settings object was reset
      self.api_session_key = nil
+     self.network_parts_affected = []
   end
 
   ####### Complexities

@@ -83,7 +83,8 @@ var InputElementList = Backbone.Collection.extend({
       input_element.set_min_value(values.min_value);
       input_element.set_max_value(values.max_value);
       input_element.set_start_value(values.start_value);
-      input_element.set({user_value : values.user_value});
+      var default_value = values.user_value || values.start_value
+      input_element.set({user_value : default_value});
     });
   },
 

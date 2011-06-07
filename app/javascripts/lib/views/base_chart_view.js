@@ -64,6 +64,7 @@ var BaseChartView = Backbone.View.extend({
   parsed_unit : function() {
     var unit = this.model.get('unit');
     var min_value = _.min(this.model.values());
+    var max_value = this.axis_max_value(this.model.values());
     var start_scale; 
 
     if (this.model.get('unit') == "MT") {
@@ -72,7 +73,7 @@ var BaseChartView = Backbone.View.extend({
       start_scale = 3;
     }
 
-    var scale = Metric.scaled_scale(min_value, start_scale);
+    var scale = Metric.scaled_scale(max_value, start_scale);
 
     if (unit == 'PJ') {
       return Metric.scaling_in_words(scale, 'joules');

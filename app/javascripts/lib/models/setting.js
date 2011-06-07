@@ -6,7 +6,7 @@ var Setting = Backbone.Model.extend({
   },
 
   url : function() {
-    return '/settings'
+    return '/settings';
   },
 
   isNew : function() {

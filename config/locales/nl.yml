@@ -25,7 +25,7 @@ nl:
   municipalities: "gemeenten"
   provinces: "provincies"
   be-vlg: "Vlaanderen"
-
+  br: "Brandenburg"
   # ----------- Meta tags ------------ #
   meta:
     title: "Energietransitiemodel - Je eigen onafhankelijke, volledige en op feiten gebaseerde energiescenario."
@@ -41,6 +41,7 @@ nl:
   Local_demand: "Lokale Vraag"
   National_supply: "Nationaal aanbod"
   Demographics: "Demografie"
+  Lce: "Ketenanalyse"
   
   #------- Admin -------#
   Graphs: "Graphs"
@@ -143,6 +144,10 @@ nl:
   information:
     in the news: "Het Energietransitiemodel in het nieuws"
     overview: "Een overzicht van recent verschenen persartikelen"
+  lce:
+    check: "Gebruik ketenanalyse"
+    notice: "Je gebruikt ketenanalyse"
+    description: "Wanneer ketenanalyse wordt gebruikt zal het model de broeikasgassen, welke worden uitgestoot bij de extractie, behandeling en transport van energiedragers, ook meenemen in de berekeningen"  
   # ---------------------------- #
   # ----------- Menu ----------- #
   # ----------- Demand ----------- #
@@ -174,9 +179,9 @@ nl:
 
   # ----------- Supply ----------- #
   Electricity: "Elektriciteit"
-  Renewable electricity: "Duurzame elektr./gas"
+  Renewable electricity: "Hernieuwbare elektr./gas"
   Fossil heat: "Fossiele warmte"
-  Renewable heat: "Duurzame warmte"
+  Renewable heat: "Hernieuwbare warmte"
   fuels: "Brandstoffen"
   Fuels: "Brandstoffen"
   Transport fuels: "Brandstoffen"
@@ -192,6 +197,7 @@ nl:
   Continue with your scenario: "Ga door met je eigen scenario"
   Start a new scenario: "Start een nieuw scenario"
   Start right away: "Meteen beginnen"
+  energy_mixer: "Bouw een scenario in 8 stappen"
   "Choose province": "Kies een provincie"
   No downloads: "Het model werkt in je browser, zonder dat je iets hoeft te downloaden."
   Introduction: "Introductie voor het Energietransitiemodel"
@@ -202,7 +208,6 @@ nl:
   reset scenario: "scenario resetten"
   mixer_title: "" 
   mixer_desc: "Hoe denkt u dat de EnergyMix van Nederland er over 15 jaar uit zal zien? De 'Future Energy Mixer' maakt de bediening van het ETM een stuk eenvoudiger. Bouw hiermee in acht stappen uw eigen mix, gebaseerd op hetzelfde rekenmodel als waarmee de beleidsmakers werken."
-  energy_mixer: "Bouw een scenario in 8 stappen"
   Choose a scenario: "Kies een scenario"
   Or load a scenario: "Of start met een bestaand scenario"
   A new scenario: "Een nieuw scenario"
@@ -260,7 +265,7 @@ nl:
   
   policies:
     Co2: CO<sub>2</sub>
-    Renewables: "Duurzaamheid"
+    Renewables: "Hernieuwbaar"
     Onshore land: "Op land"
     Onshore coast: "Kust"
     Offshore: "Op zee"
@@ -279,11 +284,11 @@ nl:
     click for more information: "klik voor meer informatie"
     loading: "Laden.."
     energy: "Ga je meer of minder energie gebruiken in de toekomst? (Figuur toont primair energieverbruik)"
-    co2: "Hoe verandert de CO<sub>2</sub> uitstoot, als resultaat van uw aannames?"
+    co2: "Hoe verandert de CO<sub>2</sub> uitstoot, als resultaat van uw aannames? De getoonde waarden zijn inclusief im/export. Klik <a href='#' class='pick_charts' id='output_97'> hier</a> om deze waardes te bekijken."
     dependence: "Is jouw land meer of minder afhankelijk geworden van energie-import?"
     costs: "Met hoeveel zijn de toekomstige energiekosten veranderd, als gevolg van jouw aannames?"
     footprint: "Wat is de 'biomassavoetafdruk' van jouw land in de wereld? De afbeelding hieronder toont de oppervlakte die het land nodig zou hebben voor het biomassa-, biobrandstof- en biogasgebruik, uitgedrukt in aantal malen het eigen landbouwareaal."
-    renewable: "Welk percentage van de gebruikte energie is duurzaam?"
+    renewable: "Welk percentage van de gebruikte energie is hernieuwbaar? <small>(Getal kan afwijken van nationale statistieken vanwege verschillen in definities. Zie onze wiki voor meer details)</small>"
 
   grid_investment:
     header: "Er zijn investeringen in het energienetwerk nodig"
@@ -295,7 +300,7 @@ nl:
   Energy use: "Energiegebruik"
   Cost: "Kosten"
   Bio-footprint: "Bio-voetafdruk"
-  Renewables: "Duurzaamheid"
+  Renewables: "Hernieuwbaar"
   Policies met: "Doelen"
   Score: "Score"
   
@@ -336,7 +341,7 @@ nl:
     Electricity demand: "Elektriciteitsvraag"
     Final energy demand:  "Eindgebruik energie"
     Fuel costs per MWh (fossil):  "Brandstofkosten per MWh (fossiel)"
-    Fuel costs per MWh (sustainable): "Brandstofkosten per MWh (duurzaam)"
+    Fuel costs per MWh (sustainable): "Brandstofkosten per MWh (hernieuwbaar)"
     O & M costs per MWh, combustion:  "O & B kosten per MWh, verbranding"
     O & M costs per MWh, wind:  "O & B kosten per MWh, wind"
     O & M costs per MWh, water: "O & B kosten per MWh, water"
@@ -356,8 +361,8 @@ nl:
     Final energy demand trucks: "Eindgebruik energie vrachtwagens"
     Heat demand:  "Warmtevraag"
     Total cost of electricity production: "Totale kosten elektriciteitsproductie"
-    Targeted CO2 emission:  "CO<sub>2</sub> uitstoot volgens doelstelling"
-    Targeted percentage of renewables:  "Doelstelling percentage duurzaamheid"
+    Targeted CO2 emission:  "CO<sub>2</sub> uitstoot t.o.v. 1990 volgens doelstelling"
+    Targeted percentage of renewables:  "Doelstelling percentage hernieuwbaar"
     Targeted area use for wind turbines:  "Doelstelling oppervlaktebeslag windmolens"
     Targeted area use for solar power:  "Doelstelling landgebruik zonnestroom"
     Targeted area use for biomass:  "Doelstelling landgebruik biomassa"
@@ -371,7 +376,7 @@ nl:
     Net foreign dependence: "Netto import uit het buitenland"
     Annual energy costs (in billions of Euros): "Jaarlijkse energiekosten"
     Footprint of biomass applications: "Voetafdruk door biomassatoepassingen"
-    Total share of renewable energy: "Totaal aandeel duurzame energie"
+    Total share of renewable energy: "Totaal aandeel hernieuwbare energie"
     Policies which are met or not: "Beleidsdoelen die wel of niet gehaald worden"
     CO2 emissions: "CO<sub>2</sub> emissies"
     Dependence: "Energie import"
@@ -380,7 +385,7 @@ nl:
     change_chart: "Wijzig grafiek"
     Keep selected chart: "Geselecteerde grafiek behouden"
     Comparison of gas use: "Vergelijking gasgebruik micro-WKK"
-    Renewables: "Duurzaamheid"
+    Renewables: "Hernieuwbaar"
     Costs: "Kosten"
     Power Plants: "Elektriciteitscentrales"
     Total investment cost of production: "Investeringskosten (Eur/MWe)"
@@ -399,6 +404,9 @@ nl:
     Green gas in gas network: "Groengas in gasnet"
     CO2 emissions with import export waterfall: "Effect van im- of export op CO<sub>2</sub> emissie allocatie"
     CO2 emissions with import: "CO<sub>2</sub> emissies met im- of export"
+    CO2 emissions with import export: "CO<sub>2</sub> emissies met im- of export"
+    Breakdown electricity costs: "Uitsplitsing elektriciteitskosten"
+    Breakdown heat costs: "Uitsplitsing warmtekosten"    
 
   #------------ Output Serie Labels ------------- #
   serie:
@@ -426,7 +434,7 @@ nl:
     co2_emmision: "CO<sub>2</sub> uitstoot 1990"
     actual CO2 emitted: "Eigenlijke CO2 emissies"
     assigned CO2 emission: "Im- of export CO2 emissies"
-    Percentage of renewables: "Percentage duurzaam"
+    Percentage of renewables: "Percentage hernieuwbaar"
     Coastal: "Kust"
     Roof use: "Gebruik daken"
     PV: "PV"
@@ -463,7 +471,7 @@ nl:
     Gas CHP large: "Centrale gas WKK"
     Gas Conventional: "Gas Conventioneel"
     Non energetic fuels: "Niet-energetische brandstoffen"
-    Percentage renewables: "Percentage duurzaam"
+    Percentage renewables: "Percentage hernieuwbaar"
     Fossil heat: "Fossiele warmte"
     Electricity: "Elektriciteit"
     Other: "Overig"
@@ -530,12 +538,12 @@ nl:
     Heat demand: "Warmtevraag"
     Insulation savings: "Isolatie besparingen"
     Imported Electricity: "Ge&iuml;mporteerde elektriciteit"
-    Sustainable electricity: "Duurzame elektriciteit"
+    Sustainable electricity: "Hernieuwbare elektriciteit"
     Centrally Produced: "Centraal geproduceerd"
     Other heat: "Overige warmte"
     CHP fossil heat: "WKK fossiele warmte"
-    CHP renewable electricity: "WKK duurzame elektriciteit"
-    CHP renewable heat: "WKK duurzame warmte"
+    CHP renewable electricity: "WKK hernieuwbare elektriciteit"
+    CHP renewable heat: "WKK hernieuwbare warmte"
     CHP fossil electricity: "WKK fossiele elektriciteit"
     Centrally produced electricity: "Centraal geproduceerde elektriciteit"
     Heat from bio-oil: "Warmte uit bio-olie"
@@ -599,6 +607,18 @@ nl:
     Fuel cell: "Brandstofcel"
     fuels: "Brandstoffen"
     Fuels: "Brandstoffen"
+    Imported heat: "Geïmporteerde warmte"
+    CO2 emissions per carrier: "CO<sub>2</sub> uitstoot per energiedrager, per GJ"
+    CO2 emission rights: "CO2 emissie rechten"
+    Fuel cost: "Brandstof"
+    Operation & maintenance cost: "Onderhoud en beheer"
+    Depreciation: "Afschrijving"
+    Cost of capital: "Kapitaalkosten"
+    Breakdown electricity costs: "Opsplitsing van kosten elektriciteitsproductie"
+    Breakdown heating costs: "Opsplitsing van kosten warmteproductie"
+    Primary energy of electricity export: "Primair energiegebruik van geëxporteerde elektriciteit"
+    
+
   #------------ Page titles ------------- #
 
   scenario:
@@ -670,5 +690,3 @@ nl:
     dedicated space heating: "alleen ruimte verwarming"
     hot water only: "alleen warm water"
     combi options_hot_water: "gecombineerd met ruimte verwarming"
-
-    

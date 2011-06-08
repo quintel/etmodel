@@ -32,3 +32,15 @@
         dashboard.add(
         = { :id => c.id, :key => c.key, :gquery_key => c.gquery_key }.to_json.html_safe
         );
+    - @goals.each do |goal|
+      :javascript
+        new PolicyGoal({
+            goal_id          : #{goal.id},
+            name             : '#{t("policies.#{goal.name.humanize}")}',
+            success_query    : '#{goal.reached_query}',
+            value_query      : '#{goal.query}',
+            target_query     : 'GOAL(#{goal.key})',
+            user_value_query : 'GOAL_USER_VALUE(#{goal.key})',
+            unit             : '#{goal.unit}',
+            display_fmt      : '#{goal.display_format}'
+          });

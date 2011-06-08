@@ -14,6 +14,10 @@ var PolicyGoal = Backbone.Model.extend({
     return res;
   },
   
+  successful : function() {
+    return (this.success_value() === true);
+  },
+
   // numeric value
   current_value : function() {
     var res = this.value_query.result()[1][1];
@@ -34,7 +38,7 @@ var PolicyGoal = Backbone.Model.extend({
 
   // DEBT: we could use a BB view
   update_view : function() {
-    var success = this.success_value() === true;
+    var success = this.successful();
 
     if(this.is_set()) {
       var template = $("<span>")
@@ -76,7 +80,24 @@ var PolicyGoal = Backbone.Model.extend({
 });
 
 var PolicyGoalList = Backbone.Collection.extend({
-  model : PolicyGoal
+  model : PolicyGoal,
+
+  // returns the number of user set goals
+  goals_set : function() {
+    return this.select(function(g){ return g.is_set()}).length;
+  },
+
+  // returns the number of goals achieved
+  goals_achieved : function() {
+    return this.select(function(g){ return g.is_set() && g.successful()}).length;
+  },
+
+  update_totals : function() {
+    var set      = this.goals_set();
+    var achieved = this.goals_achieved();
+    var string   = "" + achieved + "/" + set;
+    $("#constraint_7 strong").html(string);
+  }
 });
 
 window.policy_goals = new PolicyGoalList();

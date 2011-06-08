@@ -1,4 +1,5 @@
 module LayoutHelpers::SlideHelper
+  # I'd rather use common partials - PZ Wed Jun 8 12:41:22 CEST 2011
 
   # move this to slide!
   def slide_image_path(slide)

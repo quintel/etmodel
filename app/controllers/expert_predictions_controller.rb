@@ -23,7 +23,7 @@ class ExpertPredictionsController < ApplicationController
   
     def update_slider(slider_id,value)
       render :update do |page|
-        page << "input_elements._byId[#{slider_id}].set({user_value: #{value}})"
+        page << "input_elements.get(#{slider_id}).set({user_value: #{value}})"
         page.call "App.doUpdateRequest"
       end
     end

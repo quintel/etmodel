@@ -5,7 +5,8 @@ class TabController < ApplicationController
                 :load_view_settings,
                 :store_last_etm_page,
                 :load_output_element,
-                :load_constraints
+                :load_constraints,
+                :load_goals
 
   before_filter :show_intro_at_least_once, :only => :show
 
@@ -25,5 +26,9 @@ class TabController < ApplicationController
 
     def load_constraints
       @constraints = Current.view.root.constraints.order(:id) rescue []
+    end
+
+    def load_goals
+      @goals = PolicyGoal.allowed_policies
     end
 end

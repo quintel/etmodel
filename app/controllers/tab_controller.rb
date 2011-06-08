@@ -4,7 +4,8 @@ class TabController < ApplicationController
   before_filter :ensure_valid_browser,
                 :load_view_settings,
                 :store_last_etm_page,
-                :load_output_element
+                :load_output_element,
+                :load_constraints
 
   before_filter :show_intro_at_least_once, :only => :show
 
@@ -20,5 +21,9 @@ class TabController < ApplicationController
 
     def show_intro_at_least_once
       redirect_to :action => 'intro' unless Current.already_shown?("#{params[:controller]}")
+    end
+
+    def load_constraints
+      @constraints = Current.view.root.constraints.order(:id) rescue []
     end
 end

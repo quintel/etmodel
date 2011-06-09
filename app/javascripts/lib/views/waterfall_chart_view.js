@@ -25,8 +25,7 @@ var WaterfallChartView = BaseChartView.extend({
 
   labels : function() {
     var labels = this.model.labels();
-    // DEBT: change 2040 into something meaningful
-    labels.push(this.model.get('id') == 51 ? '2040' : 'Total');
+    labels.push(this.model.get('id') == 51 ? App.settings.get("end_year") : 'Total');
     return labels;
   },
 

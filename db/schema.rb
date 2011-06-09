@@ -62,6 +62,15 @@ ActiveRecord::Schema.define(:version => 20110527135817) do
 
   add_index "expert_predictions", ["input_element_id"], :name => "index_expert_predictions_on_input_element_id"
 
+  create_table "general_user_notifications", :force => true do |t|
+    t.string   "key"
+    t.string   "notification_nl"
+    t.string   "notification_en"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "gqueries", :force => true do |t|
     t.string   "key"
     t.text     "query"
@@ -154,6 +163,7 @@ ActiveRecord::Schema.define(:version => 20110527135817) do
     t.float    "co2_waste_treatment_per_mj"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "carrier"
   end
 
   create_table "output_element_series", :force => true do |t|
@@ -367,6 +377,7 @@ ActiveRecord::Schema.define(:version => 20110527135817) do
     t.string   "group"
     t.string   "trackable",          :default => "0"
     t.boolean  "send_score",         :default => false
+    t.boolean  "new_round"
   end
 
   add_index "users", ["trackable"], :name => "index_users_on_trackable"

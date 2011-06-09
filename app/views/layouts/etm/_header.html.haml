@@ -1,3 +1,9 @@
+- #if Current.setting.use_lce_settings?
+-##notice_bar
+-#    = t("lce.notice")
+- if user_notification = GeneralUserNotification.where(:active => true).first
+  #notice_bar
+    = user_notification.notification
 .frame{:style => "position: relative;"}
   %ul.sub-nav
     %li

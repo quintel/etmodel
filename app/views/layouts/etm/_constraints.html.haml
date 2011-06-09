@@ -20,7 +20,7 @@
       .constraint{opts}
         %div.arrow
         %span.header
-          = I18n.t(c.name)
+          = raw I18n.t("dashboard.#{c.name}")
           %span.scale
         %strong
         .difference

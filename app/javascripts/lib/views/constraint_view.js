@@ -2,8 +2,6 @@
 // Therefore, we have to move the .constraint_popup outside the view area (bottom: 8000px),
 // and animate the shadowbox-outer to an opacity of 0.01, because fadeIn/fadeOut sets display: none at the end.
 
-
-
 var ConstraintView = Backbone.View.extend({
   initialize : function() {
     _.bindAll(this, 'render', 'open_popup', 'close_all_popups');
@@ -21,7 +19,7 @@ var ConstraintView = Backbone.View.extend({
 
   render : function() {
     $('strong', this.dom_id).empty().append(this.format_result());
-    this.updateArrows(this.model.get('diff'));
+    this.updateArrows();
     return this;
   },
 
@@ -29,7 +27,6 @@ var ConstraintView = Backbone.View.extend({
     var constraint = $(this.dom_id);
     this.close_all_popups();
     $('.constraint_popup', constraint).css('bottom', '80px');
-
     $('#shadowbox-outer', constraint).animate({opacity: 0.95}, 'slow');
     $.get($(constraint).attr('rel')+"?t="+timestamp(), function(data) {
       $('#shadowbox-body', constraint).html(data);
@@ -38,12 +35,6 @@ var ConstraintView = Backbone.View.extend({
 
   close_all_popups : function() {
     $('.constraint_popup').css('bottom', '8000px');
-  },
-
-  render : function() {
-    $('strong', this.dom_id).empty().append(this.format_result());
-    this.updateArrows(this.model.get('diff'));
-    return this;
   },
 
   // Formats the result of calculate_result() for the end-user
@@ -67,11 +58,10 @@ var ConstraintView = Backbone.View.extend({
     else if (key == 'targets_met') 
       return null; //Metric.out_of(result, Current.gql.policy.goals.length)
     else if (key == 'score')
-      return parseInt(result);
+      return parseInt(result,10);
     else
       return result;
   },
-
 
   format_with_prefix : function(value, prefix) {
     return prefix + value;
@@ -81,30 +71,30 @@ var ConstraintView = Backbone.View.extend({
     return "" + value + suffix;
   },
 
-  format_percentage : function(value, signed) {
-    //if (signed == undefined || signed == null) { signed = true };
-    value = Metric.round_number(value * 100, 2);
-    //if (value > 0.0) { value = "+"+value; }
-    return this.format_with_suffix(value, '%')
+  /**
+   * If the precentage is signed then a + should appear when a number is positive
+   */
+     format_percentage : function(value, signed) {
+    value = Metric.round_number(value * 100, 1);
+    if ( (signed != undefined || signed != null) && (value > 0.0)) { 
+      value = "+"+value;
+    };
+    return this.format_with_suffix(value, '%');
   },
-
 
   /**
    * Updates the arrows, if the difference is negative .
    * @param diff - the difference of old_value and new_value.
    */
-  updateArrows:function(diff) {
+  updateArrows : function() {
+    diff = this.model.calculate_diff(this.model.get('result'),this.model.get('previous_result'));
     if (diff == undefined || diff == null) { return false; }
-    var delta = 0.001;
     var arrow_element = $('.arrow', this.dom_id);
     this.cleanArrows();
     var newClass;
-    if(Math.abs(diff) > delta) {
-      if (diff > 0) { newClass = 'arrow_up';} 
-      else if(diff < 0) { newClass = 'arrow_down'; }
-    } else {
-      newClass = 'arrow_neutral';      
-    }
+    if (diff > 0) { newClass = 'arrow_up';} 
+    else if(diff < 0) { newClass = 'arrow_down'; }
+    else { newClass = 'arrow_neutral'; }
     
     arrow_element.addClass(newClass);
     arrow_element.css('opacity', 1.0);
@@ -123,22 +113,7 @@ var ConstraintView = Backbone.View.extend({
     arrow_element.removeClass('arrow_neutral');
     arrow_element.removeClass('arrow_down');
     arrow_element.removeClass('arrow_up');
-  },
-  
-  /**
-   * Updates the scale
-   */
-  updateScale:function() {
-    if(this.model.getFormattedOutputScale() != null && this.model.getFormattedOutputScale() != "" )
-      $('.header .scale', this.element).html("(" + this.model.getFormattedOutputScale() + ")");
-  },
-
-  /**
-   * Updates the output
-   */ 
-  updateOutput:function() {
-     $('strong', this.element).empty().append(this.model.getOutput());
-     $('strong', this.element).attr('data-value');
-     $('#shadowbox-body', this.element).html('<div class="loading">Loading...</div>');
   }
+  
+
 });

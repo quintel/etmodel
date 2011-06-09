@@ -8,17 +8,16 @@ var Constraint = Backbone.Model.extend({
     this.gquery = new Gquery({key : this.get('gquery_key')});
     // let gquery notify the constraint, when it has changed.
     this.gquery.bind('change', this.update_values );
-    // this.update_values() will change attributes diff and result
+    // this.update_values() will change attributes previous_result and result
     // => this will trigger a 'change' event on this object
     // ==> as ConstraintView binds the 'change' event, it will update itself.
 
     new ConstraintView({model : this});
   },
 
-  calculate_diff : function(new_result) {
-    var previous_result = this.get('result');
+  calculate_diff : function(new_result, previous_result) {
     if (previous_result != undefined) {
-      return previous_result - new_result;
+      return Metric.round_number((new_result - previous_result),4);
     } else {
       return null;
     }
@@ -37,13 +36,14 @@ var Constraint = Backbone.Model.extend({
     } 
   },
 
-  // Update the result and diff, based on new gquery results
+  // Update the result and previous result, based on new gquery result
   update_values : function() {
-    var new_result = this.calculate_result();
-    var new_diff = this.calculate_diff(new_result);
+    //set the result to previous result before calculating the new one 
+    var previous_result = this.get('result');
+    var result = this.calculate_result();
     this.set({
-      result : new_result,
-      diff : new_diff
+      previous_result : previous_result,
+      result : result
     });
   }
 });

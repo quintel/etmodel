@@ -5,7 +5,9 @@ module OutputElementsHelper
       :gquery_key => serie.gquery_or_key_for_etengine,
       :color      => serie.converted_color,
       :label      => serie.title_translated,
-      :group      => serie.group
+      :group      => serie.group,
+      :is_target  => serie.is_target,
+      :position   => serie.position
     }
 
     "output_element.series.add(#{s.to_json});"

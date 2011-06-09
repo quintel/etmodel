@@ -33,10 +33,10 @@ var VerticalStackedBarChartView = BaseChartView.extend({
     }
 
     _.each(this.model.target_series(), function(serie) {
-      var result = serie.result()[0]; // target_series has only present or future value
+      var result = serie.result()[0][1]; // target_series has only present or future value
       if (smallest_scale)
-        result = Metric.scaled_value(result[0], 3, smallest_scale);
-      var x = serie.get('position');
+        result = Metric.scaled_value(result, 3, smallest_scale);
+      var x = parseFloat(serie.get('position'));
       results.push([[x - 0.4, result], [x + 0.4, result]]);
     });
     return results;

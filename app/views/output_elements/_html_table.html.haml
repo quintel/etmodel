@@ -44,23 +44,23 @@
         -# use the Label of the first column 
         %th= columns[1][row].label rescue '-'
         - if @output_element.id == 54
-          %td.tar.border-rgt= number_with_precision Current.gql.query(columns[1][row].key), :precision => 1 rescue '-'
+          %td.tar.border-rgt= number_with_precision @api.simple_query(columns[1][row].key), :precision => 1 rescue '-'
         - else
-          %td.tar= number_with_precision Current.gql.query(columns[1][row].key), :precision => 1 rescue '-'
-        %td.tar= number_with_precision Current.gql.query(columns[2][row].key), :precision => 1 rescue '-'
-        %td.tar= number_with_precision Current.gql.query(columns[3][row].key), :precision => 1 rescue '-'
-        %td.tar= number_with_precision Current.gql.query(columns[4][row].key), :precision => 1 rescue '-'
-        %td.tar= number_with_precision Current.gql.query(columns[5][row].key), :precision => 1 rescue '-'
+          %td.tar= number_with_precision @api.simple_query(columns[1][row].key), :precision => 1 rescue '-'
+        %td.tar= number_with_precision @api.simple_query(columns[2][row].key), :precision => 1 rescue '-'
+        %td.tar= number_with_precision @api.simple_query(columns[3][row].key), :precision => 1 rescue '-'
+        %td.tar= number_with_precision @api.simple_query(columns[4][row].key), :precision => 1 rescue '-'
+        %td.tar= number_with_precision @api.simple_query(columns[5][row].key), :precision => 1 rescue '-'
         - unless @output_element.id == 54
-          %td.tar= number_with_precision Current.gql.query(columns[6][row].key), :precision => 1 rescue '-'
+          %td.tar= number_with_precision @api.simple_query(columns[6][row].key), :precision => 1 rescue '-'
   - if @output_element.id == 54
     %tfoot#total
       %tr
         %td 
           %strong Total
         - row = rows + 1
-        %td.tar.border-rgt= number_with_precision Current.gql.query(columns[1][row].key), :precision => 1 rescue '-'
-        %td.tar= number_with_precision Current.gql.query(columns[2][row].key), :precision => 1 rescue '-'
-        %td.tar= number_with_precision Current.gql.query(columns[3][row].key), :precision => 1 rescue '-'
-        %td.tar= number_with_precision Current.gql.query(columns[4][row].key), :precision => 1 rescue '-'
-        %td.tar= number_with_precision Current.gql.query(columns[5][row].key), :precision => 1 rescue '-'
+        %td.tar.border-rgt= number_with_precision @api.simple_query(columns[1][row].key), :precision => 1 rescue '-'
+        %td.tar= number_with_precision @api.simple_query(columns[2][row].key), :precision => 1 rescue '-'
+        %td.tar= number_with_precision @api.simple_query(columns[3][row].key), :precision => 1 rescue '-'
+        %td.tar= number_with_precision @api.simple_query(columns[4][row].key), :precision => 1 rescue '-'
+        %td.tar= number_with_precision @api.simple_query(columns[5][row].key), :precision => 1 rescue '-'

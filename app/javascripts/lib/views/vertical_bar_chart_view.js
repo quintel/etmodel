@@ -23,7 +23,7 @@ var VerticalBarChartView = BaseChartView.extend({
   },
 
   ticks : function() {
-    return ['2010', '2040'];
+    return [App.settings.get("start_year"), App.settings.get("end_year")];
   },
   filler : function() {
     return [];

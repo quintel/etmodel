@@ -49,6 +49,6 @@ var VerticalStackedBarChartView = BaseChartView.extend({
     return _.map(this.model.non_target_series(), function(serie) { return {}; });
   },
   ticks : function() {
-    return ['2010', '2040'];
+    return [App.settings.get("start_year"), App.settings.get("end_year")];
   }
 });

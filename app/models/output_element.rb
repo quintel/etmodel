@@ -55,7 +55,8 @@ class OutputElement < ActiveRecord::Base
       'percentage' => percentage == true ,
       'unit'       => unit,
       'group'      => group,
-      'name'       => I18n.t("output.#{name}").html_safe
+      'name'       => I18n.t("output.#{name}").html_safe,
+      'show_point_label' => show_point_label
     }
   end
 

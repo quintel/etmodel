@@ -2,14 +2,31 @@ body {
   font: 13px/20px Lucida Grande, Verdana, Arial, Helvetica, sans-serif;
   background-color: #DBE4F2;
   
-  table {
-    td {
-      font: 13px/20px Lucida Grande, Verdana, Arial, Helvetica, sans-serif;
-      text-align: right;
-    }
+  table#policies {
+    font-family: 13px/13px Lucida Grande, Verdana, Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    line-height: 0.9em;
+    
     th {
-      text-align: right;
+      font-family: Lucida Grande, Verdana, Arial, Helvetica, sans-serif;
+      text-align: left;
     }
+    
+    tr {
+      &.odd {
+        background: none;
+      }
+      td {
+        padding: 3px 30px 3px 0;
+        margin: 0;
+        &.name {
+          width: 250px;
+        }
+        &.check {
+          padding-right: 0;
+        }        
+      }
+    }      
   }
   
   #loading {

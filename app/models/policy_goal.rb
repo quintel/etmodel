@@ -23,6 +23,6 @@ class PolicyGoal < ActiveRecord::Base
   has_paper_trail
 
   def self.allowed_policies
-    Current.view.root.policy_goals.reject(&:area_dependent)
+    Current.view.root.policy_goals.reject(&:area_dependent) rescue []
   end
 end

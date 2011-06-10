@@ -23,7 +23,7 @@ function InitializeHorizontalBar(id,series,show_point_label,unit,axis_values,col
         max: axis_values[1],
         numberTicks: 6,
         tickOptions: {
-          formatString: '%.0f'+unit,
+          formatString: '%.1f'+unit,
           fontSize: font_size
         }
       }

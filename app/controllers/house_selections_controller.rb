@@ -66,8 +66,8 @@ class HouseSelectionsController < ApplicationController
         "present:DIVIDE(V(local_solar_pv_grid_connected_energy_energetic;output_of_electricity),Q(potential_roof_pv_production))",
         "future:V(heating_demand_with_current_insulation_households_energetic;demand)",
         "future:V(heating_new_houses_current_insulation_households_energetic;demand)",
-        "AREA(number_of_existing_households)",
-        "AREA(number_households)"
+        "future:AREA(number_of_existing_households)",
+        "future:AREA(number_households)"
       ]
     end
 

@@ -30,10 +30,7 @@
 
   %strong
     %a{ :href => "/" }
-      - if APP_CONFIG[:header_logo]
-        %img{:src => APP_CONFIG[:header_logo]}
-      - else
-        %img{:src => "/images/layout/bg-logo3.png", :class=>"header_logo"}
+      %img{:src => "/images/layout/bg-logo3.png", :class=>"header_logo"}
 
   = render "layouts/etm/header_menus"
 

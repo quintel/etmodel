@@ -143,6 +143,9 @@ var ChartList = Backbone.Collection.extend({
       }
       // update chart information link
       $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/" + chart_id);
+      // update the position of the output_element_actions
+      $("#output_element_actions").removeClass()
+      $("#output_element_actions").addClass(charts.first().get("type"))
     });
   }
 });

@@ -32,8 +32,14 @@ $(document).ready(function() {
         var output_element_id = ui.newHeader.attr('id').match(/\d+$/);
         if (output_element_id != '32') {
           window.charts.current_default_chart = output_element_id;
-          window.charts.load(output_element_id);
-          $("a.default_charts").hide();
+          // if the user has selected a chart then we keep showing it,          
+          // otherwise we show the default chart for the slide
+          if(!!window.charts.user_selected_chart) {
+            console.log("Don't refresh chart");
+          } else {
+            window.charts.load(output_element_id);
+            $("a.default_charts").hide();
+          }
         }
       }
     });

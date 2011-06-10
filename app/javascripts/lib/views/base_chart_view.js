@@ -26,6 +26,8 @@ var BaseChartView = Backbone.View.extend({
       _.reduce(values_future, function(sum, v) { return sum + (v > 0 ? v : 0); }, 0)
     ];
     
+    // if the target is higher then the total it should use the target for scaling so the must be added to the total_values array
+    axis_total_values = $.merge(this.model.target_results(),axis_total_values)
     return [0,this.axis_max_value(axis_total_values)];
   },
 

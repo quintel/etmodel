@@ -62,9 +62,17 @@ var Chart = Backbone.Model.extend({
   //   [[2010,0.4],[2040,0.6]],
   //   [[2010,20.4],2040,210.4]]
   // ]
-  results : function() {
-    return this.series.map(function(serie) { return serie.result(); });
+  results : function(exclude_target) {
+    var series;
+    if (exclude_target == undefined || exclude_target == null){
+      series =  this.series;
+    }
+    else{
+      series =  this.non_target_series();
+    }
+    return series.map(function(serie) { return serie.result(); });  
   },
+
   colors : function() {
     return this.series.map(function(serie) { return serie.get('color'); });
   },
@@ -73,11 +81,13 @@ var Chart = Backbone.Model.extend({
   },
   // @return [Float] Only values of the present
   values_present : function() {
-    return _.map(this.results(), function(result) { return result[0][1]; });
+    var exclude_target_series = true
+    return _.map(this.results(exclude_target_series), function(result) { return result[0][1]; });
   },
   // @return [Float] Only values of the future
   values_future : function() {
-    return _.map(this.results(), function(result) { return result[1][1]; });
+    var exclude_target_series = true
+    return _.map(this.results(exclude_target_series), function(result) { return result[1][1]; });
   },
   // @return [Float] All possible values. Helpful to determine min/max values
   values : function() {
@@ -94,6 +104,10 @@ var Chart = Backbone.Model.extend({
   target_series : function() {
     return this.series
       .select(function(serie) { return serie.get('is_target'); });
+  },
+  // @return Array of present and future target
+  target_results : function() {
+    return _.flatten(this.target_series().map(function(serie) { return serie.result()[1][1]; })); 
   },
   // @return Array of hashes {label, present_value, future_value}
   series_hash : function() {

@@ -12,7 +12,7 @@ var VerticalBarChartView = BaseChartView.extend({
       this.ticks(),
       this.filler(),
       this.model.get('show_point_label'),
-      this.parsed_unit(), // this.parsed_unit(smallest_scale)
+      this.parsed_unit(),
       this.axis_scale(),
       this.model.colors(),
       this.model.labels());
@@ -27,9 +27,6 @@ var VerticalBarChartView = BaseChartView.extend({
   },
   filler : function() {
     return [];
-  },
-  parsed_unit : function() {
-    return 'PJ';
   },
   axis_scale : function() {
     return [0,10];

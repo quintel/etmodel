@@ -54,7 +54,7 @@ var ConstraintView = Backbone.View.extend({
     else if (key == 'total_energy_cost')
       return this.format_with_prefix(result_rounded, '&euro;'); // Metric.currency((result / BILLIONS))
     else if (key == 'not_shown') // bio_footprint actually
-      return this.format_with_suffix(result_rounded, 'xNL'); // TODO round(2), add correct currency
+      return this.format_with_suffix(result_rounded,'x'+ App.settings.get("country").toUpperCase());
     else if (key == 'targets_met') 
       return null; //Metric.out_of(result, Current.gql.policy.goals.length)
     else if (key == 'score')

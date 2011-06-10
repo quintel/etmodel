@@ -184,9 +184,9 @@ class HouseSelectionsController < ApplicationController
     end
 
     def percentage_of_existing_houses
-      query = "AREA(number_of_existing_households)"
+      query = "future:AREA(number_of_existing_households)"
       nr_of_old_houses = @gql.simple_query(query)
-      query = "AREA(number_households)"
+      query = "future:AREA(number_households)"
       total_nr_of_houses = @gql.simple_query(query)
       nr_of_old_houses / total_nr_of_houses
     end

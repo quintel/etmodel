@@ -14,7 +14,8 @@ class ScenariosController < ApplicationController
     if current_user.admin?
       @scenarios = Api::Scenario.all # TODO: add some kind of pagination
     else
-      @scenarios = current_user.scenarios.exclude_api.order("created_at DESC")
+      @scenarios = current_user.saved_scenarios.order("created_at DESC")
+      @scenarios = @scenarios.map(&:scenario).compact
     end
   end
 
@@ -46,7 +47,8 @@ class ScenariosController < ApplicationController
   #
   def create
     @scenario = Api::Scenario.create(params[:saved_scenario])
-    @saved_scenario = current_user.saved_scenarios.create(:scenario_id => @scenario.id)
+    attributes = {:scenario_id => @scenario.id}
+    @saved_scenario = current_user.saved_scenarios.create!(attributes)
     redirect_to scenarios_url
   end
 

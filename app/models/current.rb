@@ -13,8 +13,6 @@
 # 
 # At any point if you want to reset settings:
 #
-#   Current.reset_setting!
-#   # which is a shortcut to
 #   Current.setting.reset!
 #   # which does more less the same as:
 #   Current.setting = Setting.default
@@ -101,36 +99,6 @@ class Current
   ##############################
   # Resetting
   ##############################
-
-  ##
-  # Resets to all default values. Will also reset country and year!
-  #
-  # Do not use this method to reset slider values!
-  #
-  # @untested 2010-12-27 seb
-  #
-  def reset_to_default!
-    reset_to_default_setting!
-  end
-
-  ##
-  # Resets user values. Currently equivalent to resetting to default values
-  #
-  # @untested 2010-12-27 seb
-  #
-  def reset_setting!
-    setting.reset!
-
-    # TODO: move into either scenario or setting
-    session["house_label_new"] = nil
-    session["house_label_existing"] = nil
-
-    OutputElementSerie.block_charts.order('`group`').each do |block|
-      session["block_#{block.id}"] = nil
-    end
-  end
-  alias_method :reset_to_default_setting!, :reset_setting!
-
 
   ##
   # Singleton instance

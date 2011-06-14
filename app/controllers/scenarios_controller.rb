@@ -46,7 +46,6 @@ class ScenariosController < ApplicationController
     redirect_to scenarios_url
   end
 
-  ##
   # Loads a scenario from a id. 
   # 
   # GET /scenarios/:id/load
@@ -59,13 +58,18 @@ class ScenariosController < ApplicationController
     # been playing with on the mixer he has to work with a copy, right?
     # I have therefore added the clone parameter (which is handled on the ETE)
     # The Scenario life-cycle is convoluted - PZ Tue 31 May 2011 16:11:52 CEST
-    @scenario = Api::Scenario.find(params[:id], :params => {:clone => true})
-    settings = Setting::SCENARIO_ATTRIBUTES.inject({}) {|hsh,key| hsh.merge key => @scenario.send(key) }
-    Current.setting = Setting.new(settings.merge(:scenario_id => @scenario.id));
+    #
+    # => ANSWER: by setting api_session_id to nil (done in load_from_scenario)
+    #            a new ETengine scenario session will be created, and Scenario is untouched.
+    #
+    scenario = Api::Scenario.find(params[:id])
+    Current.setting = Setting.load_from_scenario(@scenario);
     redirect_to start_path
   end
 
+
   def change_complexity
+    # DEBT: Remove. Should be in settings controller, in the standard update action
     Current.setting.complexity = params[:scenario][:complexity]
     redirect_to :back
   end

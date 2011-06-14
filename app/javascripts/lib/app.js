@@ -95,7 +95,7 @@ window.AppView = Backbone.View.extend({
   doUpdateRequest:function() {
     var dirtyInputElements = window.input_elements.dirty();
 
-    if(dirtyInputElements.length == 0) { return; }
+    if (dirtyInputElements.length == 0) { return; }
 
     window.App.call_api(window.input_elements.api_update_params());
     window.input_elements.reset_dirty();

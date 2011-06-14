@@ -51,7 +51,7 @@ class PagesController < ApplicationController
   # intro screen for municipalitities
   # in the view a preset scenario will be loaded.
   def municipality
-    @scenarios = Scenario.where(:in_start_menu => true)
+    @scenarios = Api::Scenario.all(:from => :homepage)
     if current_user
       @user_scenarios = current_user.scenarios.by_region('nl').order("updated_at DESC") #if current_user.andand.scenarios.by_region('nl')
     end
@@ -61,7 +61,7 @@ class PagesController < ApplicationController
     if request.post?
       Current.setting.hide_unadaptable_sliders = params[:hide_unadaptable_sliders] == "1"
       if params[:scenario]
-        @scenario = Scenario.find(params[:scenario])
+        @scenario = Api::Scenario.find(params[:scenario])
         # must never occur, unless someone tries to load another scenario
         raise HTTPStatus::Forbidden if @scenario.user.nil? && @scenario.user != current_user
         # TODO seb: help what is this?? :municipality_preset??

@@ -27,7 +27,7 @@ protected
 
   def assign_settings_and_redirect
     Current.setting = Setting.default
-    Current.setting.complexity = params[:complexity])
+    Current.setting.complexity = params[:complexity]
     Current.setting.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
     Current.setting.set_country_and_region_from_param(params[:region]) # we need the full region code here
 

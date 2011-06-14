@@ -51,6 +51,22 @@ class Setting
     self.send("#{key}=", param)
   end
 
+  # Create a new setting object for a Api::Scenario.
+  # The setting object has no api_session_key, so that backbone
+  # initializes a new ETengine session, based on the loaded scenario.
+  #
+  # param scenario [Api::Scenario]
+  # return [Setting] setting object loaded with the country/end_year/etc from scenario
+  #
+  def self.load_from_scenario(scenario)
+    settings = SCENARIO_ATTRIBUTES.inject({}) {|hsh,key| hsh.merge key => scenario.send(key) }
+    # By removing api_session_key we force backbone to create a new ApiScenario
+    #   based on :scenario_id
+    settings.delete(:api_session_key)
+    settings[:scenario_id] = scenario.id
+    new(settings)
+  end
+
   ##
   # @tested 2010-12-06 seb
   #
@@ -72,9 +88,9 @@ class Setting
   end
 
   def reset_scenario
-    #RD: used self. here otherwise an other settings object was reset
-     self.api_session_key = nil
-     self.network_parts_affected = []
+    # RD: used self. here otherwise an other settings object was reset
+    self.api_session_key = nil
+    self.network_parts_affected = []
   end
 
   ####### Complexities

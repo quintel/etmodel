@@ -160,6 +160,11 @@ class Setting
 
   attr_writer :area
 
+  def set_country_and_region_from_param(param)
+    country = param.split("-").first
+    set_country_and_region(country, param)
+  end
+
   ##
   # @tested 2010-11-30 seb
   # 

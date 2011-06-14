@@ -1,11 +1,15 @@
 class ScenariosController < ApplicationController
   layout 'etm'
   helper :all
-  
+
   before_filter :ensure_valid_browser
   before_filter :set_scenario, :only => [:edit, :reset_to_preset, :update]
   before_filter :find_scenario, :only => [:show]
   before_filter :require_user, :only => [:index, :new]
+
+  # included here, so that we don't mess with the before_filter order
+  include ApplicationController::HasDashboard
+
 
   def index
     if current_user.admin?
@@ -20,7 +24,7 @@ class ScenariosController < ApplicationController
   
   def new
     @saved_scenario = SavedScenario.new(
-      :api_session_key => Current.settings.api_session_key
+      :api_session_key => Current.setting.api_session_key
     )
   end
 
@@ -60,7 +64,7 @@ class ScenariosController < ApplicationController
     Current.setting = Setting.new(settings.merge(:scenario_id => @scenario.id));
     redirect_to start_path
   end
-  
+
   def change_complexity
     Current.setting.complexity = params[:scenario][:complexity]
     redirect_to :back

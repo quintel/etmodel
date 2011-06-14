@@ -4,9 +4,11 @@ class TabController < ApplicationController
   before_filter :ensure_valid_browser,
                 :load_view_settings,
                 :store_last_etm_page,
-                :load_output_element,
-                :load_constraints,
-                :load_goals
+                :load_output_element
+
+  # included here, so that we don't mess with the before_filter order
+  include ApplicationController::HasDashboard
+
 
   before_filter :show_intro_at_least_once, :only => :show
 
@@ -24,11 +26,4 @@ class TabController < ApplicationController
       redirect_to :action => 'intro' unless Current.already_shown?("#{params[:controller]}")
     end
 
-    def load_constraints
-      @constraints = Current.view.root.constraints.order(:id) rescue []
-    end
-
-    def load_goals
-      @goals = PolicyGoal.allowed_policies
-    end
 end

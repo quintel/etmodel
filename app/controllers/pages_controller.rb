@@ -73,8 +73,6 @@ public
         @scenario = Api::Scenario.find(params[:scenario])
         # must never occur, unless someone tries to load another scenario
         raise HTTPStatus::Forbidden if @scenario.user.nil? && @scenario.user != current_user
-        # TODO seb: help what is this?? :municipality_preset??
-        @scenario.load_scenario(:municipality_preset => true)
       end
       redirect_to(:controller => 'pages', :action => 'intro') and return
     end

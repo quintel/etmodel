@@ -15,10 +15,8 @@ class SavedScenario < ActiveRecord::Base
 
   attr_accessor :title, :description, :api_session_key
 
-  validates :title, :presence => true
+  # validates :title, :presence => true
 
-  # We're dealing with an ActiveResource object, most ActiveRecord
-  # automagic methods don't work.
   def scenario
     @scenario ||= Api::Scenario.find(scenario_id)
   end

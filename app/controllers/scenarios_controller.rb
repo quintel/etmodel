@@ -67,7 +67,7 @@ class ScenariosController < ApplicationController
     #            a new ETengine scenario session will be created, and Scenario is untouched.
     #
     scenario = Api::Scenario.find(params[:id])
-    Current.setting = Setting.load_from_scenario(@scenario);
+    Current.setting = Setting.load_from_scenario(scenario);
     redirect_to start_path
   end
 

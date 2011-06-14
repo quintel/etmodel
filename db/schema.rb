@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110527135817) do
+ActiveRecord::Schema.define(:version => 20110614150035) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -37,6 +37,9 @@ ActiveRecord::Schema.define(:version => 20110527135817) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "constraints_root_nodes", ["constraint_id"], :name => "index_constraints_root_nodes_on_constraint_id"
+  add_index "constraints_root_nodes", ["root_node_id"], :name => "index_constraints_root_nodes_on_root_node_id"
 
   create_table "descriptions", :force => true do |t|
     t.text     "content_en"
@@ -87,6 +90,9 @@ ActiveRecord::Schema.define(:version => 20110527135817) do
     t.string "gquery_group_id"
   end
 
+  add_index "gqueries_gquery_groups", ["gquery_group_id"], :name => "index_gqueries_gquery_groups_on_gquery_group_id"
+  add_index "gqueries_gquery_groups", ["gquery_id"], :name => "index_gqueries_gquery_groups_on_gquery_id"
+
   create_table "gquery_groups", :force => true do |t|
     t.string   "group_key"
     t.datetime "created_at"
@@ -103,6 +109,8 @@ ActiveRecord::Schema.define(:version => 20110527135817) do
     t.integer  "group_id"
   end
 
+  add_index "groups", ["group_id"], :name => "index_groups_on_group_id"
+
   create_table "historic_serie_entries", :force => true do |t|
     t.integer  "historic_serie_id"
     t.integer  "year"
@@ -110,6 +118,8 @@ ActiveRecord::Schema.define(:version => 20110527135817) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "historic_serie_entries", ["historic_serie_id"], :name => "index_historic_serie_entries_on_historic_serie_id"
 
   create_table "historic_series", :force => true do |t|
     t.string   "key"
@@ -353,6 +363,8 @@ ActiveRecord::Schema.define(:version => 20110527135817) do
     t.datetime "updated_at"
   end
 
+  add_index "translations", ["key"], :name => "index_translations_on_key"
+
   create_table "users", :force => true do |t|
     t.string   "name",                                  :null => false
     t.string   "email",                                 :null => false
@@ -380,6 +392,7 @@ ActiveRecord::Schema.define(:version => 20110527135817) do
     t.boolean  "new_round"
   end
 
+  add_index "users", ["email"], :name => "index_users_on_email"
   add_index "users", ["trackable"], :name => "index_users_on_trackable"
 
   create_table "versions", :force => true do |t|
@@ -402,6 +415,9 @@ ActiveRecord::Schema.define(:version => 20110527135817) do
     t.integer "ancestry_depth", :default => 0
     t.string  "type"
   end
+
+  add_index "view_nodes", ["element_id", "element_type"], :name => "index_view_nodes_on_element_id_and_element_type"
+  add_index "view_nodes", ["type"], :name => "index_view_nodes_on_type"
 
   create_table "year_values", :force => true do |t|
     t.integer  "year"

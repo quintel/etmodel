@@ -3,7 +3,6 @@ class ScenariosController < ApplicationController
   helper :all
 
   before_filter :ensure_valid_browser
-  before_filter :set_scenario, :only => [:edit, :reset_to_preset, :update]
   before_filter :find_scenario, :only => [:show]
   before_filter :require_user, :only => [:index, :new]
 
@@ -18,8 +17,13 @@ class ScenariosController < ApplicationController
       @scenarios = current_user.scenarios.exclude_api.order("created_at DESC")
     end
   end
- 
+
+  def edit
+    
+  end
+
   def show
+    
   end
   
   def new
@@ -114,11 +118,6 @@ class ScenariosController < ApplicationController
 
   
   private
-  
-    # Finds the scenario from id, or from the Current.scenario.
-    def set_scenario
-      @scenario = Current.scenario  if !(set_scenario_from_id)
-    end
 
     # Finds the scenario from id
     def find_scenario

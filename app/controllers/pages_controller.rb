@@ -6,30 +6,39 @@ class PagesController < ApplicationController
   skip_before_filter :show_intro_screens_only_once, :only => [:intro]
 
   def root
+    if params[:end_year]
+      assign_settings_and_redirect
+    else
+      show_root_page
+    end
+  end
+
+protected
+
+  def show_root_page
     all_views = Current.setting.all_levels.map{|id, name| [t("views.#{name}"), id]}
     @scenario_levels = if Rails.env.development? || Rails.env.test?
       all_views
     else
       all_views[0..2]
     end
-
-    # if user wanted to start with a new scenario
-    if params[:end_year]
-      Current.setting = Setting.default
-      Current.setting.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
-      Current.setting.complexity = params[:complexity]
-      country = params[:region].split("-").first
-      Current.setting.set_country_and_region(country, params[:region]) # we need the full region code here
-
-      if Current.setting.municipality?
-        redirect_to :action => "municipality" and return
-      else
-        redirect_to :controller => 'pages', :action => 'intro'
-      end  
-    end
-
     @scenarios = Api::Scenario.all(:from => :homepage)
   end
+
+  def assign_settings_and_redirect
+    Current.setting = Setting.default
+    Current.setting.complexity = params[:complexity])
+    Current.setting.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
+    Current.setting.set_country_and_region_from_param(params[:region]) # we need the full region code here
+
+    if Current.setting.municipality?
+      redirect_to :action => "municipality" and return
+    else
+      redirect_to :controller => 'pages', :action => 'intro' and return
+    end
+  end
+
+public
 
   def grid_investment_needed
     render :layout => false

@@ -3,8 +3,6 @@ class ConstraintsController < ApplicationController
   end
   
   def iframe
-    # DEBT: I'm not happy with name and interface of Api::Query.
-    # rename it to Api::Client or something like that
     @api_client = Api::Client.new
     api_key = Current.setting.api_session_key rescue nil
   

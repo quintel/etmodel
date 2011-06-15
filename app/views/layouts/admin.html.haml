@@ -28,7 +28,6 @@
           .nav-holder.nav-holder-inner{:style=>"float:left"}
             %ul{:style=>"width:1400px;height:30px;"}
               %li= link_to Current.setting.country.upcase, '#'
-              - tab("Descriptions", 'admin/descriptions','')
               - tab("Translations", 'admin/translations', '')
               - tab("Views", 'admin/view_nodes', '')
               - tab("Tabs", 'admin/tabs', '')

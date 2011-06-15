@@ -10,7 +10,7 @@
     = f.error_messages
 
     - if @view_node.parent.nil?
-      = render "root_form", :f  => f
+      = f.input :key
 
     - if @view_node.parent.andand.root?
       = f.input :element_id, :as => :select, :collection => Tab.all, :label_method => :key

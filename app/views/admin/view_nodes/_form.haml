@@ -1,5 +1,10 @@
 - url = @view_node.new_record? ? admin_view_nodes_path : admin_view_node_path(@view_node)
 
+# DEBT
+# watch out: if the saving fails and we're presented this form one more time
+# then the @view_node will be an instance of the subclass, and the form will
+# use as paramter key something like 'view_node_tab' rather than the expected
+# 'view_node'. Be aware of this.
 - semantic_form_for @view_node, :url => url do |f|
   - f.inputs do 
     = hidden_field_tag :type, @view_node.element_type      

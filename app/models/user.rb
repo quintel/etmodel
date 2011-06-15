@@ -26,6 +26,7 @@
 #  group              :string(255)
 #  trackable          :string(255)     default("0")
 #  send_score         :boolean(1)      default(FALSE)
+#  new_round          :boolean(1)
 #
 
 class User < ActiveRecord::Base

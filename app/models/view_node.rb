@@ -121,7 +121,7 @@ class ViewNode < ActiveRecord::Base
       element_type = "Root"
     end
     
-    type = "#{element_type.camelcase}Node".constantize
+    type = "ViewNode::#{element_type.camelcase}".constantize
     type.new(attributes)
   end
 

@@ -1,4 +1,6 @@
 class Admin::TabsController < Admin::AdminController
+  before_filter :find_model, :only => [:show, :edit]
+  
   def index
     @tabs = Tab.all
     @column_names = %w[id key]
@@ -32,20 +34,20 @@ class Admin::TabsController < Admin::AdminController
   end
 
   def show
-    find_model
   end
 
   def edit
-    find_model
   end
 
-  def find_model
-    if params[:version_id]
-      @version = Version.find(params[:version_id])
-      @tab = @version.reify
-      flash[:notice] = "Revision"
-    else
-      @tab = Tab.find(params[:id])
+  private
+  
+    def find_model
+      if params[:version_id]
+        @version = Version.find(params[:version_id])
+        @tab = @version.reify
+        flash[:notice] = "Revision"
+      else
+        @tab = Tab.find(params[:id])
+      end
     end
-  end
 end

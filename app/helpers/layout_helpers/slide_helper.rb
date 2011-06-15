@@ -13,12 +13,8 @@ module LayoutHelpers::SlideHelper
       haml_tag 'div#accordion_wrapper' do
         haml_tag 'ul.accordion' do
           slides.each do |slide|
-            
-            slides_dependent_on = "slides-%s" % [slide.id, I18n.locale, Current.setting.region_or_country, Current.setting.complexity].join("-")
-
             type = slide_type_in_collection(slide, slides)
             accordion_slide(slide, type)
-
             # this is uncached!
             render_input_element_javascript_create(Current.view.input_elements_for(slide))
           end
@@ -70,7 +66,7 @@ module LayoutHelpers::SlideHelper
           slide_sub_header(slide)
 
           Current.view.ungrouped_input_elements_for(slide).each do |input_element|
-            slider(input_element)
+            haml_concat(render :partial => 'input_elements/slider', :object => input_element)
           end
 
           Current.view.interface_groups_with_input_elements_for(slide).each do |group|
@@ -190,7 +186,7 @@ module LayoutHelpers::SlideHelper
       end
     end
     group.last.each do |input_element|
-      slider(input_element)
+     haml_concat(render :partial => 'input_elements/slider', :object => input_element)
     end  
   end
   

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110614150035) do
+ActiveRecord::Schema.define(:version => 20110615114241) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -74,32 +74,6 @@ ActiveRecord::Schema.define(:version => 20110614150035) do
     t.datetime "updated_at"
   end
 
-  create_table "gqueries", :force => true do |t|
-    t.string   "key"
-    t.text     "query"
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "not_cacheable",        :default => false
-    t.boolean  "usable_for_optimizer", :default => false
-  end
-
-  create_table "gqueries_gquery_groups", :id => false, :force => true do |t|
-    t.string "gquery_id"
-    t.string "gquery_group_id"
-  end
-
-  add_index "gqueries_gquery_groups", ["gquery_group_id"], :name => "index_gqueries_gquery_groups_on_gquery_group_id"
-  add_index "gqueries_gquery_groups", ["gquery_id"], :name => "index_gqueries_gquery_groups_on_gquery_id"
-
-  create_table "gquery_groups", :force => true do |t|
-    t.string   "group_key"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "description"
-  end
-
   create_table "groups", :force => true do |t|
     t.string   "title"
     t.datetime "created_at"
@@ -159,7 +133,7 @@ ActiveRecord::Schema.define(:version => 20110614150035) do
     t.string   "label_query"
   end
 
-  add_index "input_elements", ["key"], :name => "unique api key", :unique => true
+  add_index "input_elements", ["key"], :name => "unique api key"
   add_index "input_elements", ["slide_id"], :name => "index_input_elements_on_slide_id"
 
   create_table "lce_values", :force => true do |t|

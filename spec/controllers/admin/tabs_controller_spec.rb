@@ -21,4 +21,11 @@ describe Admin::TabsController do
       response.should render_template(:new)
     end
   end
+  
+  describe "POST create" do
+    it "should be successful" do
+      post :create, :tab => { :key => 'a_tab' }
+      response.should be_redirect
+    end
+  end
 end

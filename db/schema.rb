@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110615114241) do
+ActiveRecord::Schema.define(:version => 20110615115414) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20110615114241) do
     t.string   "key"
     t.string   "name"
     t.string   "extended_title"
-    t.string   "query"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "gquery_key"

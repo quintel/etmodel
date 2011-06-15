@@ -6,7 +6,6 @@
 #  key            :string(255)
 #  name           :string(255)
 #  extended_title :string(255)
-#  query          :string(255)
 #  created_at     :datetime
 #  updated_at     :datetime
 #  gquery_key     :string(255)

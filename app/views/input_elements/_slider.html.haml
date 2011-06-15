@@ -1,0 +1,7 @@
+%div{:id => "slider-group-%s-%s" % [slider.share_group, slider.id]}
+  %div{:id => dom_id(slider)}
+    .name
+      .text= raw slider.translated_name
+      .label= slider.parsed_label
+    .info-box{:style => 'display: none'}
+      .text= slider.parsed_description

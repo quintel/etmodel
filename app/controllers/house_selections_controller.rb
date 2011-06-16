@@ -37,7 +37,6 @@ class HouseSelectionsController < ApplicationController
     render :update do |page|
       page.call "close_fancybox"
       session['calculated_hst_sliders'].each_with_index do |slider,i|
-        logger.info "input_elements[#{slider[0]}].set({ user_value : #{slider[1]} })"
         page << "input_elements.inputElements[#{slider[0]}].set({ user_value : #{slider[1]} });"
       end
     end

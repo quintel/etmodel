@@ -61,9 +61,20 @@ var PolicyGoal = Backbone.Model.extend({
   // TODO: move to metric.js as much as possible
   format_value : function(n) {
     var out = null;
+    
     switch(this.get('display_fmt')) {
       case 'percentage' :
-        out = "" + Metric.round_number(n * 100, 2) + "%";
+        // DEBT: this constraint should use a gquery that returns
+        // a delta, rather than absolute values. We already have
+        // the gquery to get the user scenario emissions delta, 
+        // it is called co2_emission_percent_change_from_1990_corrected_for_electricity_import,
+        // but we still need a new one to show the user goal as delta, ie
+        // GOAL(co2_emission_percent_change_from_1990_corrected_for_electricity_import)
+        if (this.get('unit') == 'co2_pct') {
+          out = "" + Metric.round_number(n, 2) + "MT";
+        } else {
+          out = "" + Metric.round_number(n * 100, 2) + "%";
+        }
         break;
       case 'number':
         out = Metric.round_number(n, 2);
@@ -76,7 +87,7 @@ var PolicyGoal = Backbone.Model.extend({
     }
     return out;
   }
-
+  
 });
 
 var PolicyGoalList = Backbone.Collection.extend({

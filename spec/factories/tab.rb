@@ -1,3 +1,3 @@
 Factory.define :tab do |f|
-  f.key "TabFactory"
+  f.sequence(:key) {|n| "tab_#{n}" }
 end

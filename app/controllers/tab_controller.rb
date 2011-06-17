@@ -25,5 +25,4 @@ class TabController < ApplicationController
     def show_intro_at_least_once
       redirect_to :action => 'intro' unless Current.already_shown?("#{params[:controller]}")
     end
-
 end

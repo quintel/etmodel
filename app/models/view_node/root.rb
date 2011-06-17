@@ -63,5 +63,3 @@ class ViewNode::Root < ViewNode
   end
 
 end
-
-__END__

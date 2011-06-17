@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110615115414) do
+ActiveRecord::Schema.define(:version => 20110617085216) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -134,6 +134,17 @@ ActiveRecord::Schema.define(:version => 20110615115414) do
 
   add_index "input_elements", ["key"], :name => "unique api key"
   add_index "input_elements", ["slide_id"], :name => "index_input_elements_on_slide_id"
+
+  create_table "interfaces", :force => true do |t|
+    t.string   "key"
+    t.text     "structure"
+    t.boolean  "enabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "interfaces", ["enabled"], :name => "index_interfaces_on_enabled"
+  add_index "interfaces", ["key"], :name => "index_interfaces_on_key"
 
   create_table "lce_values", :force => true do |t|
     t.string   "using_country"

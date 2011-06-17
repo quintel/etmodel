@@ -30,6 +30,8 @@ class OutputElement < ActiveRecord::Base
   has_one :description, :as => :describable
   has_one :area_dependency, :as => :dependable
 
+  validates :key, :presence => true, :uniqueness => true
+
   delegate :html_table?, :to => :output_element_type
   
   define_index do

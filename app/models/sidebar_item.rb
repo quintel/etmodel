@@ -17,6 +17,7 @@
 class SidebarItem < ActiveRecord::Base
   include AreaDependent
   has_one :area_dependency, :as => :dependable
+  validates :key, :presence => true, :uniqueness => true
   
   def parsed_key_for_admin
     "#{section.andand} | #{key}"

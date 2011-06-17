@@ -24,6 +24,8 @@ class Slide < ActiveRecord::Base
   has_one :description, :as => :describable
   has_many :input_elements, :order => "order_by"
 
+  validates :key, :presence => true, :uniqueness => true
+
   scope :controller, lambda {|controller| where(:controller_name => controller) }
   scope :action, lambda {|action| where(:action_name => action) }
   scope :max_complexity, lambda {|complexity| where("complexity <= #{complexity}") }

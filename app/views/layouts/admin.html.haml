@@ -20,7 +20,7 @@
         = render "layouts/etm/header"
         #nav.nav-admin
           .nav-holder.nav-holder-inner{:style=>"float:left"}
-            - tabs_tag do |tab|
+            = tabs_tag do |tab|
               = tab.current_country        Current.setting.country.upcase, '#'
               = tab.translations           'Translations', admin_translations_path
               = tab.interfaces             'Interfaces', admin_interfaces_path

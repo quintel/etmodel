@@ -20,15 +20,14 @@
         = render "layouts/etm/header"
         #nav.nav-admin
           .nav-holder.nav-holder-inner{:style=>"float:left"}
-            %ul{:style=>"width:1400px;height:30px;"}
-              %li= link_to Current.setting.country.upcase, '#'
-              - tab("Translations", 'admin/translations', '')
-              - tab("Views", 'admin/view_nodes', '')
-              - tab("Tabs", 'admin/tabs', '')
-              - tab("Categories", 'admin/sidebar_items', '')
-              - tab("Slides", 'admin/slides', '')
-              - tab("Sliders", 'admin/input_elements', '')
-              - tab("Charts", 'admin/output_elements', '')
-              - tab("Series", 'admin/output_element_series', '')
-              - tab("Expert", 'admin/expert_predictions', '')
-              - tab("Press", 'admin/press_releases', '')
+            - tabs_tag do |tab|
+              = tab.current_country        Current.setting.country.upcase, '#'
+              = tab.translations           'Translations', admin_translations_path
+              = tab.tabs                   'Tabs', admin_tabs_path
+              = tab.sidebar_items          'Sidebar Items', admin_sidebar_items_path
+              = tab.slides                 'Slides', admin_slides_path
+              = tab.input_elements         'Input Elements', admin_input_elements_path
+              = tab.output_elements        'Output Elements', admin_output_elements_path
+              = tab.output_elements_series 'Output Element Series', admin_output_element_series_path
+              = tab.expert_predictions     'Expert Predictions', admin_expert_predictions_path
+              = tab.press_releases         'Press Releases', admin_press_releases_path

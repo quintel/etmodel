@@ -41,7 +41,8 @@ class InputElement < ActiveRecord::Base
   has_one :description, :as => :describable
   has_one :area_dependency, :as => :dependable
   has_many :expert_predictions
-
+  has_many :predictions
+  
   validates :key, :presence => true, :uniqueness => true
 
   scope :ordered_for_admin, order("slides.controller_name, slides.action_name, slides.name, input_elements.id").includes('slide')

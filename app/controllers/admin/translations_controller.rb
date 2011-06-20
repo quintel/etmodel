@@ -1,4 +1,5 @@
-class Admin::TranslationsController < Admin::AdminController
+module Admin
+class TranslationsController < BaseController
 
   def index
     @translations = Translation.all
@@ -33,4 +34,5 @@ class Admin::TranslationsController < Admin::AdminController
   end
 
 
+end
 end

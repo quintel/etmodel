@@ -1,4 +1,5 @@
-class Admin::TabsController < Admin::AdminController
+module Admin
+class TabsController < BaseController
   before_filter :find_model, :only => [:show, :edit]
   
   def index
@@ -50,4 +51,5 @@ class Admin::TabsController < Admin::AdminController
         @tab = Tab.find(params[:id])
       end
     end
+end
 end

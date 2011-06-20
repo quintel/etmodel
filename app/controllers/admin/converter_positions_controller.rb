@@ -1,4 +1,5 @@
-class Admin::ConverterPositionsController  < Admin::AdminController
+module Admin
+class ConverterPositionsController < BaseController
 
   def create
     if params[:coordinates]
@@ -13,6 +14,5 @@ class Admin::ConverterPositionsController  < Admin::AdminController
     end
     render :text => ''
   end
-
-
+end
 end

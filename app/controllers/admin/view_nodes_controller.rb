@@ -1,4 +1,5 @@
-class Admin::ViewNodesController < Admin::AdminController
+module Admin
+class ViewNodesController < BaseController
   before_filter :find_model, :only => [:show, :edit, :update, :destroy]
 
   def index
@@ -73,4 +74,5 @@ class Admin::ViewNodesController < Admin::AdminController
     end
     redirect_to admin_view_node_url(@view_node.id)
   end
+end
 end

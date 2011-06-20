@@ -1,4 +1,5 @@
-class Admin::OutputElementSeriesController  < Admin::AdminController
+module Admin
+class OutputElementSeriesController  < BaseController
 
   def index
     @output_element_series = OutputElementSerie.ordered_for_admin
@@ -58,4 +59,5 @@ class Admin::OutputElementSeriesController  < Admin::AdminController
       @output_element_serie = OutputElementSerie.find(params[:id])
     end
   end
+end
 end

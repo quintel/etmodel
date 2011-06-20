@@ -33,4 +33,9 @@ class Interface < ActiveRecord::Base
   def default_chart_for_slide(slide_key)
     OutputElement.find(Slide.find_by_key(slide_key).default_output_element_id) rescue nil
   end
+  
+  def constraints
+    # DEBT: move to yml file
+    Constraint.ordered.where(:id => 1..7)
+  end
 end

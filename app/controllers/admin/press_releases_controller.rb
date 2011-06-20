@@ -1,4 +1,5 @@
-class Admin::PressReleasesController < Admin::AdminController
+module Admin
+class PressReleasesController < BaseController
 
   def index
     @releases = PressRelease.all
@@ -48,4 +49,5 @@ class Admin::PressReleasesController < Admin::AdminController
     flash[:notice] = "File has been uploaded successfully. use as link: /assets/#{params[:press_file].original_filename}"
     redirect_to :back
   end
+end
 end

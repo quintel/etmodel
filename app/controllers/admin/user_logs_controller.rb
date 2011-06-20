@@ -1,4 +1,5 @@
-class Admin::UserLogsController < Admin::AdminController
+module Admin
+class UserLogsController < BaseController
 
   def index
     @user_logs = UserLog.all
@@ -8,4 +9,5 @@ class Admin::UserLogsController < Admin::AdminController
     @user_logs = UserLog.where(:ip => params[:ip])
   end
 
+end
 end

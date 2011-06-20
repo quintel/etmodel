@@ -1,4 +1,5 @@
-class Admin::AreasController < Admin::AdminController
+module Admin
+class AreasController < BaseController
   before_filter :deprecated_admin_area_notice
 
   def index
@@ -8,4 +9,5 @@ class Admin::AreasController < Admin::AdminController
   def show
     @area = Api::Area.find(params[:id])
   end
+end
 end

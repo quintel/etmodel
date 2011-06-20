@@ -1,4 +1,5 @@
-class Admin::InterfacesController < Admin::AdminController
+module Admin
+class InterfacesController < BaseController
   before_filter :find_interface, :only => [:show, :edit, :update, :destroy]
   def index
     @interfaces = Interface.all
@@ -41,4 +42,5 @@ class Admin::InterfacesController < Admin::AdminController
     def find_interface
       @interface = Interface.find(params[:id])
     end
+end
 end

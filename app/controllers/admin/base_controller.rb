@@ -1,4 +1,5 @@
-class Admin::AdminController < ApplicationController
+module Admin
+class BaseController < ApplicationController
   layout 'admin'
   before_filter :restrict_to_admin
 
@@ -21,4 +22,5 @@ class Admin::AdminController < ApplicationController
     send_data(Marshal.dump(object), :filename => options[:filename], :disposition => 'attachment')
   end
 
+end
 end

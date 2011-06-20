@@ -1,4 +1,5 @@
-class Admin::InputElementsController < Admin::AdminController
+module Admin
+class InputElementsController < BaseController
 
   def index
     @input_elements = InputElement.ordered_for_admin
@@ -62,4 +63,5 @@ class Admin::InputElementsController < Admin::AdminController
       @input_element = InputElement.find(params[:id])
     end
   end
+end
 end

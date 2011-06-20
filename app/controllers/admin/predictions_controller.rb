@@ -1,4 +1,5 @@
-class Admin::PredictionsController < Admin::AdminController
+module Admin
+class PredictionsController < BaseController
   # GET /predictions
   def index
     @predictions = Prediction.all
@@ -69,4 +70,5 @@ class Admin::PredictionsController < Admin::AdminController
     end
   end
   
+end
 end

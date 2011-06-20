@@ -1,4 +1,5 @@
-class Admin::PredictionValuesController < Admin::AdminController
+module Admin
+class PredictionValuesController < BaseController
   def index
     @prediction_values = PredictionValue.all
   end
@@ -56,4 +57,5 @@ class Admin::PredictionValuesController < Admin::AdminController
       @prediction_value = PredictionValue.find(params[:id])
     end
   end
+end
 end

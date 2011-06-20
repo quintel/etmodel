@@ -35,7 +35,6 @@ class PredictionsController < BaseController
   # POST /predictions
   def create
     @prediction = Prediction.new(params[:prediction])
-    @prediction.user_id = @current_user.id
     respond_to do |format|
       if @prediction.save
         flash[:notice] = 'Prediction was successfully created.'
@@ -49,7 +48,6 @@ class PredictionsController < BaseController
   # PUT /predictions/1
   def update
     @prediction = Prediction.find(params[:id])
-    @prediction.user_id = @current_user.id
     respond_to do |format|
       if @prediction.update_attributes(params[:prediction])
         flash[:notice] = 'Prediction was successfully updated.'

@@ -1,6 +1,6 @@
 = link_to "back", admin_predictions_path
 %h2
-  ==#{@prediction.id}
+  ==#{@prediction.input_element.name} (#{@prediction.input_element.id}) 
   %small= link_to 'edit', edit_admin_prediction_path(@prediction)
 
 %table{table_defaults}

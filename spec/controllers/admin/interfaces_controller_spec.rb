@@ -4,7 +4,7 @@ describe Admin::InterfacesController do
   render_views
   
   let!(:interface) { Factory :interface }
-  let(:admin) { Factory :admin }
+  let!(:admin) { Factory :admin }
   
   before do
     login_as(admin)

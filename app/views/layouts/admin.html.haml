@@ -23,6 +23,7 @@
             - tabs_tag do |tab|
               = tab.current_country        Current.setting.country.upcase, '#'
               = tab.translations           'Translations', admin_translations_path
+              = tab.interfaces             'Interfaces', admin_interfaces_path
               = tab.tabs                   'Tabs', admin_tabs_path
               = tab.sidebar_items          'Sidebar Items', admin_sidebar_items_path
               = tab.slides                 'Slides', admin_slides_path

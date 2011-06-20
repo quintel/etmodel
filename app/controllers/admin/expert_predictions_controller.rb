@@ -1,4 +1,5 @@
-class Admin::ExpertPredictionsController < Admin::AdminController
+module Admin
+class ExpertPredictionsController < BaseController
   # GET /expert_predictions
   # GET /expert_predictions.xml
   def index
@@ -82,4 +83,5 @@ class Admin::ExpertPredictionsController < Admin::AdminController
       format.xml  { head :ok }
     end
   end
+end
 end

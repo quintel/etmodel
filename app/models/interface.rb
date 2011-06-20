@@ -1,6 +1,10 @@
 class Interface < ActiveRecord::Base
+  has_paper_trail
+  
   validates :key, :presence => true
   validates :key, :uniqueness => true
+  
+  attr_accessible :key, :enabled, :structure
   
   def tabs
     tree.keys.map{|k| Tab.find_by_key(k)} rescue []

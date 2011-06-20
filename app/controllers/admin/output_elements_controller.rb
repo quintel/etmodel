@@ -1,4 +1,5 @@
-class Admin::OutputElementsController < Admin::AdminController
+module Admin
+class OutputElementsController < BaseController
   sortable_attributes :name,:group,:percentage,:unit,:output_element_type_id => "`output_element_type_id`"
 
   def index
@@ -64,4 +65,5 @@ class Admin::OutputElementsController < Admin::AdminController
     end
   end
 
+end
 end

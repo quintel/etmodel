@@ -1,4 +1,5 @@
-class Admin::SlidesController < Admin::AdminController
+module Admin
+class SlidesController < BaseController
 
   def index
     @slides = Slide.all
@@ -49,4 +50,5 @@ class Admin::SlidesController < Admin::AdminController
       @slide = Slide.find(params[:id])
     end
   end
+end
 end

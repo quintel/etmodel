@@ -1,4 +1,5 @@
-class Admin::SidebarItemsController < Admin::AdminController
+module Admin
+class SidebarItemsController < BaseController
 
   def index
     @sidebar_items = SidebarItem.all
@@ -49,4 +50,5 @@ class Admin::SidebarItemsController < Admin::AdminController
       @sidebar_item = SidebarItem.find(params[:id])
     end
   end
+end
 end

@@ -1,4 +1,5 @@
-class Admin::YearValuesController < Admin::AdminController
+module Admin
+class YearValuesController < BaseController
 
   def index
     @year_values = YearValue.all
@@ -59,4 +60,5 @@ class Admin::YearValuesController < Admin::AdminController
       @year_value = YearValue.find(params[:id])
     end
   end
+end
 end

@@ -34,6 +34,10 @@ class ViewSetting
   def current_sidebar_item
     @current_sidebar_item ||= SidebarItem.find_by_key(sidebar_item_key)
   end
+  
+  def constraints
+    root.constraints
+  end
 
   ##################
   # OutputElement

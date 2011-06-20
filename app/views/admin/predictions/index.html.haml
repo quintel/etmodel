@@ -4,7 +4,7 @@
   %thead
     %tr
       %th.tal id
-      %th.tal input_element_id
+      %th.tal input element
       %th.tal User
       %th.tal expert
       %th.tal curve_type
@@ -16,7 +16,7 @@
     - @predictions.each do |prediction|
       %tr{cycles}
         %td= link_to prediction.id, admin_prediction_path(prediction)
-        %td= prediction.input_element_id
+        %td= "#{prediction.input_element.name} (#{prediction.input_element.id})"
         %td= prediction.user.name
         %td= prediction.expert
         %td= prediction.curve_type

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110617085216) do
+ActiveRecord::Schema.define(:version => 20110620091616) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -242,6 +242,26 @@ ActiveRecord::Schema.define(:version => 20110617085216) do
     t.integer  "root_node_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "prediction_values", :force => true do |t|
+    t.integer  "prediction_id"
+    t.float    "min"
+    t.float    "best"
+    t.float    "max"
+    t.integer  "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "predictions", :force => true do |t|
+    t.integer  "input_element_id"
+    t.integer  "user_id"
+    t.boolean  "expert"
+    t.string   "curve_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "description"
   end
 
   create_table "press_releases", :force => true do |t|

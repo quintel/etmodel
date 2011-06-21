@@ -1,5 +1,7 @@
 require 'bundler/capistrano'
 require 'thinking_sphinx/deploy/capistrano'
+require 'config/boot'
+require 'hoptoad_notifier/capistrano'
 
 
 set :application, "etmodel"

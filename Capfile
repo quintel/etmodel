@@ -33,7 +33,7 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
     run "ln -nfs #{shared_path}/assets/pdf #{release_path}/public/pdf"
     run "ln -nfs #{shared_path}/vendor_bundle #{release_path}/vendor/bundle"
-    run "cd #{release_path} && bundle install"
+    run "cd #{release_path} && bundle install --deployment"
 
     #deploy.generate_rdoc
     memcached.flush
@@ -70,7 +70,7 @@ namespace :deploy do
     rails_env = fetch(:hoptoad_env, fetch(:rails_env, "production"))
     local_user = ENV['USER'] || ENV['USERNAME']
     notify_command = "bundle exec rake hoptoad:deploy TO=#{rails_env} REVISION=#{current_revision} REPO=#{repository} USER=#{local_user}"
-    notify_command << " API_KEY=aadd4cc40d52dabf842d4dce932e84a3"
+    notify_command << " API_KEY=aadd4cc40d52dabf842d4dce932e84a3 --trace"
     puts "Notifying Hoptoad of Deploy of #{server_type} (#{notify_command})"
     run "cd #{release_path} && #{notify_command}"
     puts "Hoptoad Notification Complete."

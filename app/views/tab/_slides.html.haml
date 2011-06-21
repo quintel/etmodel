@@ -8,7 +8,7 @@
           - slide_header(slide)
           .slide
             %p
-              = image_tag(slide_image_path(slide)) if slide.image.present?
+              = image_tag(slide.image_path) if slide.image.present?
               = raw slide.description.try(:content)
               - if slide.show_house_selection_tool
                 = link_to t("accordion.help me choose"), house_selection_tool_path, :class => 'house_selection_tool'

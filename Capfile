@@ -37,7 +37,7 @@ namespace :deploy do
 
     #deploy.generate_rdoc
     memcached.flush
-    symlink_sphinx_indexes
+    # symlink_sphinx_indexes
   end
 
   task :start do ; end
@@ -47,9 +47,9 @@ namespace :deploy do
     # in your models have changed, you will need to perform an index.
     # If these are changing frequently, you can use the following
     # in place of running_start
-    thinking_sphinx.stop
-    thinking_sphinx.index
-    thinking_sphinx.start
+    # thinking_sphinx.stop
+    # thinking_sphinx.index
+    # thinking_sphinx.start
 
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
@@ -60,7 +60,7 @@ namespace :deploy do
   end
 
   task :after_deploy do
-    run "chmod 777 #{release_path}/log/searchd.production.pid"
+    # run "chmod 777 #{release_path}/log/searchd.production.pid"
     deploy.cleanup
     notify_hoptoad
   end
@@ -69,7 +69,7 @@ namespace :deploy do
   task :notify_hoptoad, :except => { :no_release => true } do
     rails_env = fetch(:hoptoad_env, fetch(:rails_env, "production"))
     local_user = ENV['USER'] || ENV['USERNAME']
-    notify_command = "rake hoptoad:deploy TO=#{rails_env} REVISION=#{current_revision} REPO=#{repository} USER=#{local_user}"
+    notify_command = "bundle exec rake hoptoad:deploy TO=#{rails_env} REVISION=#{current_revision} REPO=#{repository} USER=#{local_user}"
     notify_command << " API_KEY=aadd4cc40d52dabf842d4dce932e84a3"
     puts "Notifying Hoptoad of Deploy of #{server_type} (#{notify_command})"
     run "cd #{release_path} && #{notify_command}"

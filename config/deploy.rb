@@ -1,6 +1,5 @@
 require 'bundler/capistrano'
-require 'thinking_sphinx/deploy/capistrano'
-require 'config/boot'
+# require 'thinking_sphinx/deploy/capistrano'
 require 'hoptoad_notifier/capistrano'
 
 

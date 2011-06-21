@@ -13,6 +13,8 @@ class TabController < ApplicationController
   before_filter :show_intro_at_least_once, :only => :show
 
   def show
+    @slides = Current.view.slides
+    @output_element = Current.view.default_output_element_for(@slides.first) if @slides.any?
     render :template => 'tab/show'
   end
 

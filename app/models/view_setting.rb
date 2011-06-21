@@ -31,16 +31,6 @@ class ViewSetting
   def constraints
     interface.constraints
   end
-
-
-
-  def current_tab
-    @current_tab ||= Tab.find_by_key(tab_key)
-  end
-
-  def current_sidebar_item
-    @current_sidebar_item ||= SidebarItem.find_by_key(sidebar_item_key)
-  end
   
   ##################
   # OutputElement

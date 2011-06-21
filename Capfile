@@ -32,7 +32,7 @@ namespace :deploy do
     run "cd #{release_path}; chmod 777 public/images public/stylesheets tmp"
     run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
     run "ln -nfs #{shared_path}/assets/pdf #{release_path}/public/pdf"
-    # run "ln -nfs #{shared_path}/vendor_bundle #{release_path}/vendor/bundle"
+    run "ln -nfs #{shared_path}/vendor_bundle #{release_path}/vendor/bundle"
     run "cd #{release_path} && bundle install --without development test"
 
     #deploy.generate_rdoc

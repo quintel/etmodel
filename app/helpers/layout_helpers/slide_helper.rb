@@ -1,11 +1,6 @@
 module LayoutHelpers::SlideHelper
   # I'd rather use common partials - PZ Wed Jun 8 12:41:22 CEST 2011
 
-  # move this to slide!
-  def slide_image_path(slide)
-    "/images/layout/#{slide.image}" if slide.image.present?
-  end
-
   def slide_type_in_collection(slide, all_slides)
     case slide
     when all_slides.last

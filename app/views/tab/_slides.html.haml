@@ -7,14 +7,20 @@
         %li.accordion_element{:class => selected}
           - slide_header(slide)
           .slide
-            - slide_info_block(slide)
+            %p
+              = image_tag(slide_image_path(slide)) if slide.image.present?
+              = raw slide.description.try(:content)
+              - if slide.show_house_selection_tool
+                = link_to t("accordion.help me choose"), house_selection_tool_path, :class => 'house_selection_tool'
+            
             %ul.valuees
               - slide_sub_header(slide)
               - Current.view.ungrouped_input_elements_for(slide).each do |input_element|
                 = render :partial => 'input_elements/slider', :object => input_element
               - Current.view.interface_groups_with_input_elements_for(slide).each do |group|
                 - render_interface_group(group, slide.sub_header2)
-            - next_slide_button unless type == :last
+            - unless type == :last
+              %a.btn-done.next{:href => '#'}= I18n.t("go to next")
 
         - render_input_element_javascript_create(Current.view.input_elements_for(slide))
   - else

@@ -10,12 +10,11 @@ module ApplicationController::HasDashboard
   module InstanceMethods
 
     def load_constraints
-      @constraints = Current.view.root.constraints.order(:id) rescue []
+      @constraints = Current.view.interface.constraints rescue []
     end
 
     def load_goals
       @goals = PolicyGoal.allowed_policies
     end
   end
-
 end

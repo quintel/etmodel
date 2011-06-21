@@ -11,21 +11,28 @@ class ViewSetting
     @slide_key        = slide_key
   end
 
-  def root
-    @root ||= Interface.find_by_key(setting_key)
+
+  def interface
+    @interface ||= Interface.find_by_key(setting_key)
   end
  
   def tabs
-    root.tabs rescue []
+    interface.tabs rescue []
   end
 
   def sidebar_items
-    root.sidebar_items_for(tab_key).reject(&:area_dependent) rescue []
+    interface.sidebar_items_for(tab_key).reject(&:area_dependent) rescue []
   end
 
   def slides
-    root.slides_for(tab_key, sidebar_item_key) rescue []
+    interface.slides_for(tab_key, sidebar_item_key) rescue []
   end
+
+  def constraints
+    interface.constraints
+  end
+
+
 
   def current_tab
     @current_tab ||= Tab.find_by_key(tab_key)
@@ -35,10 +42,6 @@ class ViewSetting
     @current_sidebar_item ||= SidebarItem.find_by_key(sidebar_item_key)
   end
   
-  def constraints
-    root.constraints
-  end
-
   ##################
   # OutputElement
   ##################
@@ -70,7 +73,7 @@ class ViewSetting
     def input_elements_for(slide)
       @input_elements_for_slide ||= {}
       @input_elements_for_slide[slide.id] ||= 
-        root.input_elements_for(tab_key, sidebar_item_key, slide.key).
+        interface.input_elements_for(tab_key, sidebar_item_key, slide.key).
           compact.reject(&:area_dependent)
     end
 

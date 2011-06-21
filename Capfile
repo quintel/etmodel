@@ -70,7 +70,7 @@ namespace :deploy do
     rails_env = fetch(:hoptoad_env, fetch(:rails_env, "production"))
     local_user = ENV['USER'] || ENV['USERNAME']
     notify_command = "bundle exec rake hoptoad:deploy TO=#{rails_env} REVISION=#{current_revision} REPO=#{repository} USER=#{local_user}"
-    notify_command << " API_KEY=aadd4cc40d52dabf842d4dce932e84a3 --trace"
+    notify_command << " API_KEY=aadd4cc40d52dabf842d4dce932e84a3"
     puts "Notifying Hoptoad of Deploy of #{server_type} (#{notify_command})"
     run "cd #{release_path} && #{notify_command}"
     puts "Hoptoad Notification Complete."

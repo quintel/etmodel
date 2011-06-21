@@ -29,7 +29,11 @@ class ViewSetting
   end
 
   def constraints
-    interface.constraints
+    interface.constraints rescue []
+  end
+  
+  def policy_goals
+    interface.allowed_policy_goals rescue []
   end
   
   ##################

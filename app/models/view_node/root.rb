@@ -32,12 +32,17 @@ class ViewNode::Root < ViewNode
     #         InputElement
     #         OutputElement
     out = {
-      :dashboard => [],
-      :tabs      => {}
+      :dashboard    => [],
+      :tabs         => {},
+      :policy_goals => []
     }
 
     constraints.ordered.each do |c|
       out[:dashboard] << c.key
+    end
+
+    policy_goals.each do |c|
+      out[:policy_goals] << c.key
     end
 
     children.each do |tab|

@@ -21,8 +21,4 @@ class PolicyGoal < ActiveRecord::Base
   has_and_belongs_to_many :root_nodes
   belongs_to :round
   has_paper_trail
-
-  def self.allowed_policies
-    Current.view.root.policy_goals.reject(&:area_dependent) rescue []
-  end
 end

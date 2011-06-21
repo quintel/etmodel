@@ -14,14 +14,13 @@ class TabController < ApplicationController
 
   def show
     @slides = Current.view.slides
-    @output_element = Current.view.default_output_element_for(@slides.first) if @slides.any?
     render :template => 'tab/show'
   end
 
   protected
 
     def load_output_element
-      @output_element = Current.view.default_output_element_for_sidebar_item
+      @output_element = Current.view.default_output_element_for_current_sidebar_item
     end
 
     def show_intro_at_least_once

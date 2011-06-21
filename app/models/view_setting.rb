@@ -40,20 +40,12 @@ class ViewSetting
   # OutputElement
   ##################
 
-    ##
-    # @param [Slide] slide
-    # @return [OutputElement]
-    #
-    def default_output_element_for(slide)
-      OutputElement.find(slide.default_output_element_id) rescue nil
+    def default_output_element_for_slide(slide)
+      interface.default_chart_for_slide(tab_key, sidebar_item_key, slide.key)
     end
 
-    ##
-    # @param [Slide] slide
-    # @return [OutputElement]
-    #
-    def default_output_element_for_sidebar_item
-      default_output_element_for(slides.first)
+    def default_output_element_for_current_sidebar_item
+      interface.default_chart_for_sidebar_item(tab_key, sidebar_item_key) rescue nil
     end
 
   ##################

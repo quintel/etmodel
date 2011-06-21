@@ -33,8 +33,8 @@ class ViewNode::Root < ViewNode
     #         OutputElement
     out = {
       :dashboard    => [],
-      :tabs         => {},
-      :policy_goals => []
+      :policy_goals => [],
+      :tabs         => {}
     }
 
     constraints.ordered.each do |c|
@@ -47,20 +47,15 @@ class ViewNode::Root < ViewNode
 
     children.each do |tab|
       next unless tab.element
-      tab_hash = out[:tabs][tab.element.key] = {
-        :sidebar_items => {}
-      }
+      tab_hash = out[:tabs][tab.element.key] ||= {}
 
       tab.children.each do |sidebar_item|
         next unless sidebar_item.element
-        sidebar_hash = tab_hash[:sidebar_items][sidebar_item.element.key] = {
-          :default_chart => nil,
-          :slides => {}
-        }
+        sidebar_hash = tab_hash[sidebar_item.element.key] ||= {}
 
         sidebar_item.children.each do |slide|
           next unless slide.element
-          sidebar_item_hash = sidebar_hash[:slides][slide.element.key] ||= {
+          sidebar_item_hash = sidebar_hash[slide.element.key] ||= {
               :input_elements  => [],
               :output_elements => []
             }

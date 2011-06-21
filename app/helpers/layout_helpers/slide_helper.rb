@@ -13,20 +13,6 @@ module LayoutHelpers::SlideHelper
   end
 
   ##
-  # The slide header is the blue part you can click on when the slide is minimized.
-  #
-  # @param [Slide] slide
-  #
-  def slide_header(slide)
-    
-    default_output = Current.view.default_output_element_for(slide)
-    haml_tag 'span.headline', :id => "default_output_#{default_output.id}", :slide => slide.id do
-      haml_tag 'a.slide_header', t("slidetitle.#{slide.name}").html_safe,
-        :href => "/#{controller_name}/#{params[:id]}/#{slide.name.underscore}", :id => slide.name.underscore
-    end
-  end
-
-  ##
   # The sub header
   #
   # @param [Slide] slide

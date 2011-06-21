@@ -15,23 +15,29 @@ class Interface < ActiveRecord::Base
   end
   
   def sidebar_items_for(tab_key)
-    tree[:tabs][tab_key][:sidebar_items].keys.map{|k| SidebarItem.find_by_key(k)} rescue []
+    tree[:tabs][tab_key].keys.map{|k| SidebarItem.find_by_key(k)} rescue []
   end
   
   def slides_for(tab_key, sidebar_item_key)
-    tree[:tabs][tab_key][:sidebar_items][sidebar_item_key][:slides].keys.map{|k| Slide.find_by_key(k)} rescue []
+    tree[:tabs][tab_key][sidebar_item_key].keys.map{|k| Slide.find_by_key(k)} rescue []
   end
   
   def input_elements_for(tab_key, sidebar_item_key, slide_key)
-    tree[:tabs][tab_key][:sidebar_items][sidebar_item_key][:slides][slide_key][:input_elements].map{|k| InputElement.find_by_key(k)} rescue []
+    tree[:tabs][tab_key][sidebar_item_key][slide_key][:input_elements].map{|k| InputElement.find_by_key(k)} rescue []
   end
   
   def output_elements_for(tab_key, sidebar_item_key, slide_key)
-    tree[:tabs][tab_key][:sidebar_items][sidebar_item_key][:slides][slide_key][:output_elements].map{|k| OutputElement.find_by_key(k)} rescue []
+    tree[:tabs][tab_key][sidebar_item_key][slide_key][:output_elements].map{|k| OutputElement.find_by_key(k)} rescue []
   end
   
-  def default_chart_for_slide(slide_key)
-    OutputElement.find(Slide.find_by_key(slide_key).default_output_element_id) rescue nil
+  def default_chart_for_slide(tab_key, sidebar_item_key, slide_key)
+    key = tree[:tabs][tab_key][sidebar_item_key][slide_key][:output_elements].first
+    OutputElement.find_by_key(key) rescue nil
+  end
+  
+  def default_chart_for_sidebar_item(tab_key, sidebar_item_key)
+    slide_key = slides_for(tab_key, sidebar_item_key).first.key
+    default_chart_for_slide(tab_key, sidebar_item_key, slide_key)
   end
   
   def constraints

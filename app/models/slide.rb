@@ -6,7 +6,6 @@
 #  controller_name           :string(255)
 #  action_name               :string(255)
 #  name                      :string(255)
-#  default_output_element_id :integer(4)
 #  order_by                  :integer(4)
 #  image                     :string(255)
 #  created_at                :datetime

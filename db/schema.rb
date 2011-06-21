@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110617085216) do
+ActiveRecord::Schema.define(:version => 20110621073305) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(:version => 20110617085216) do
     t.datetime "updated_at"
     t.string   "gquery_key"
   end
+
+  add_index "constraints", ["key"], :name => "index_constraints_on_key"
 
   create_table "constraints_root_nodes", :id => false, :force => true do |t|
     t.integer  "constraint_id"
@@ -237,6 +239,8 @@ ActiveRecord::Schema.define(:version => 20110617085216) do
     t.string   "reached_query"
   end
 
+  add_index "policy_goals", ["key"], :name => "index_policy_goals_on_key"
+
   create_table "policy_goals_root_nodes", :id => false, :force => true do |t|
     t.integer  "policy_goal_id"
     t.integer  "root_node_id"
@@ -315,6 +319,8 @@ ActiveRecord::Schema.define(:version => 20110617085216) do
     t.string   "en_vimeo_id"
   end
 
+  add_index "sidebar_items", ["key"], :name => "index_sidebar_items_on_key"
+
   create_table "slides", :force => true do |t|
     t.string   "controller_name"
     t.string   "action_name"
@@ -338,6 +344,8 @@ ActiveRecord::Schema.define(:version => 20110617085216) do
     t.string "nl_vimeo_id"
     t.string "en_vimeo_id"
   end
+
+  add_index "tabs", ["key"], :name => "index_tabs_on_key"
 
   create_table "translations", :force => true do |t|
     t.string   "key"

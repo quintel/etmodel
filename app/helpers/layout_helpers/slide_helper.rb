@@ -6,32 +6,6 @@ module LayoutHelpers::SlideHelper
     "/images/layout/#{slide.image}" if slide.image.present?
   end
 
-  def slides
-    slides = Current.view.slides
-    if slides.present?
-      @output_element = Current.view.default_output_element_for(slides.first)
-      haml_tag 'div#accordion_wrapper' do
-        haml_tag 'ul.accordion' do
-          slides.each do |slide|
-            type = slide_type_in_collection(slide, slides)
-            accordion_slide(slide, type)
-            # this is uncached!
-            render_input_element_javascript_create(Current.view.input_elements_for(slide))
-          end
-        end
-      end
-    else
-      haml_tag 'div#accordion_wrapper', t("not_available")
-    end
-    
-    if Current.current_slide
-      haml_tag :script do
-        haml_concat "active_slide = '#{Current.current_slide}'"
-      end
-    end 
-    
-  end
-
   def slide_type_in_collection(slide, all_slides)
     case slide
     when all_slides.last
@@ -41,43 +15,6 @@ module LayoutHelpers::SlideHelper
     else
       nil
     end
-  end
-
-
-  # FIXME: add extra parameter 'key' instead of abusing the title in find_by_name.
-  # this key could be used for many things (translating, descriptions)
-  # e.g.: accordion_slide(title, key, options = {}, &block)
-  #
-  # QUESTIONS: (DS 2010-10-26)
-  #   - What is interface group?
-  # TODO: (DS 2010-10-26)
-  #   - Move all the CSS to SASS
-  #   - Cut this to nice pieces, its way too long and reads very difficult. Probably we can delete a lot of excess HTML right?
-  def accordion_slide(slide, slide_type = nil)
-    selected = ' selected' if ((params[:slide] and params[:slide] == slide.name) or slide_type == :first)
-
-    haml_tag 'li.accordion_element', :class => selected do 
-      slide_header(slide)
-
-      haml_tag 'div.slide' do
-        slide_info_block(slide)
-        
-        haml_tag 'ul.valuees' do
-          slide_sub_header(slide)
-
-          Current.view.ungrouped_input_elements_for(slide).each do |input_element|
-            haml_concat(render :partial => 'input_elements/slider', :object => input_element)
-          end
-
-          Current.view.interface_groups_with_input_elements_for(slide).each do |group|
-            render_interface_group(group, slide.sub_header2)
-          end
-        end
-
-        next_slide_button unless slide_type == :last
-      end
-    end
-    
   end
 
   ##

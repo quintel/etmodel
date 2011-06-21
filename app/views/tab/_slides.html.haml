@@ -1,0 +1,25 @@
+#accordion_wrapper
+  - if @slides.any?
+    %ul.accordion
+      - @slides.each do |slide|
+        - type = slide_type_in_collection(slide, @slides)
+        - selected = ' selected' if ((params[:slide] and params[:slide] == slide.name) or type == :first)
+        %li.accordion_element{:class => selected}
+          - slide_header(slide)
+          .slide
+            - slide_info_block(slide)
+            %ul.valuees
+              - slide_sub_header(slide)
+              - Current.view.ungrouped_input_elements_for(slide).each do |input_element|
+                = render :partial => 'input_elements/slider', :object => input_element
+              - Current.view.interface_groups_with_input_elements_for(slide).each do |group|
+                - render_interface_group(group, slide.sub_header2)
+            - next_slide_button unless type == :last
+
+        - render_input_element_javascript_create(Current.view.input_elements_for(slide))
+  - else
+    = t("not_available")
+
+-  if Current.current_slide
+  %script
+    active_slide = '#{Current.current_slide}'

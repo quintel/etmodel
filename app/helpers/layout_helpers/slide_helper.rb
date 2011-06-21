@@ -54,22 +54,6 @@ module LayoutHelpers::SlideHelper
   end
 
   ##
-  # The slide_info_block is the part just below the slide_header that has a picture
-  # and some info text.
-  #
-  # @param [Slide] slide
-  #
-  def slide_info_block(slide)
-    haml_tag :p do
-      haml_tag :img, :src => slide_image_path(slide) if slide.image.present?
-
-      haml_concat slide.description.andand.content.andand.html_safe
-
-      slide_optional_house_selection_link(slide)
-    end
-  end
-
-  ##
   # Optional link to the mind meister tool.
   #
   # @param [Slide] slide
@@ -96,23 +80,6 @@ module LayoutHelpers::SlideHelper
       haml_tag 'a.expert_header', t("accordion.expert predictions available"),:style => "float:left",
         :href => "/expert_predictions?slide_id=#{slide.id}" 
     end
-  end
-  ##
-  # Optional link to the house selection tool.
-  #
-  # @param [Slide] slide
-  #
-  def slide_optional_house_selection_link(slide)
-    if slide.show_house_selection_tool
-      haml_tag 'a.house_selection_tool', t("accordion.help me choose"), :href => house_selection_tool_path
-    end
-  end
-
-  ##
-  # Link to jump to next slide
-  #
-  def next_slide_button
-    haml_tag 'a.btn-done.next', I18n.t("go to next"), :href => "#"
   end
 
   def render_interface_group(group, title = nil)

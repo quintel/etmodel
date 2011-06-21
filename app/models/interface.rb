@@ -37,4 +37,12 @@ class Interface < ActiveRecord::Base
   def constraints
     @contraints ||= tree[:dashboard].map{|x| Constraint.find_by_key(x)} rescue []
   end
+  
+  def policy_goals
+    @policy_goals ||= tree[:policy_goals].map{|x| PolicyGoal.find_by_key(x)} rescue []
+  end
+  
+  def allowed_policy_goals
+    @allowed_policy_goals ||= policy_goals.reject(&:area_dependent) rescue []
+  end
 end

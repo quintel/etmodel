@@ -48,11 +48,7 @@ namespace :deploy do
     # If these are changing frequently, you can use the following
     # in place of running_start
     thinking_sphinx.stop
-    if stage == 'production' or stage == 'transitionprice'
-      # Only re-index on production servers to save time with deploys
-      #  we don't necessarly need search engine on testing & staging.
-      thinking_sphinx.index
-    end
+    thinking_sphinx.index
     thinking_sphinx.start
 
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
@@ -74,17 +70,7 @@ namespace :deploy do
     rails_env = fetch(:hoptoad_env, fetch(:rails_env, "production"))
     local_user = ENV['USER'] || ENV['USERNAME']
     notify_command = "rake hoptoad:deploy TO=#{rails_env} REVISION=#{current_revision} REPO=#{repository} USER=#{local_user}"
-    case server_type
-      when 'transitionprice'
-        notify_command << " API_KEY=1d5a09b7fdf676e3ff69d20eba322caa"
-      when 'testing'
-        notify_command << " API_KEY=05a325f77515e6a413bc4adb8980d3f8"
-      when 'staging'
-        notify_command << " API_KEY=2c213df905badf7362e925de0b28e7a8"
-      when 'production'
-        notify_command << " API_KEY=3ea5a72aad48a32d7bb486bc71ad4fd5"
-    end
-    
+    notify_command << " API_KEY=aadd4cc40d52dabf842d4dce932e84a3"
     puts "Notifying Hoptoad of Deploy of #{server_type} (#{notify_command})"
     run "cd #{release_path} && #{notify_command}"
     puts "Hoptoad Notification Complete."

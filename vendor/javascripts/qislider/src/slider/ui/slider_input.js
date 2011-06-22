@@ -17,7 +17,7 @@ var SliderInput = Backbone.View.extend({
     
     // edit element
     
-    this.edit_form_element = $('<form action="#">').addClass('edit-value');
+    this.edit_form_element = $('<form>').addClass('edit-value');
     this.input_element = $('<input type="text">');
     this.cancel_element = $('<input type="button" value="Cancel">');
     this.cancel_element.bind('click', jQuery.proxy(this.handleCancelEdit, this));

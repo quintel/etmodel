@@ -107,6 +107,7 @@ var InputElementView = Backbone.View.extend({
     if(this.disableUpdate) return;
 
     this.sliderView.setValue(this.model.get('user_value'), {'noEvent':true});
+    return false;
   },
 
   /**

@@ -3,7 +3,8 @@
 //= require <backbone-0.3.3-min>
 
 //= require <qislider>
-//= require <jquery.quinn.min.js>
+;
+//= require <jquery.quinn.js>
 
 //= require <init/always>
 //= require <output_elements>

@@ -156,11 +156,8 @@ class InputElement < ActiveRecord::Base
     super(:only => [:id, :input_id, :name, :unit, :share_group, :factor], 
       :methods => [ 
         :start_value, 
-        :start_value_gql,
         :min_value, 
-        :min_value_gql,
         :max_value, 
-        :max_value_gql,
         :step_value, 
         :number_to_round_with,
         :output, :user_value, :disabled, :translated_name, 

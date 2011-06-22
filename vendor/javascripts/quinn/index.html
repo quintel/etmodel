@@ -1,0 +1,371 @@
+<!doctype html>
+<html>
+  <head>
+
+    <title>Quinn</title>
+    <link rel="stylesheet" type="text/css" href="quinn.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/examples.css" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+
+    <div id="content">
+    <!-- edit README.md, not this file -->
+    <!-- then run rake readme to regenerate this file -->
+    <!-- begin README -->
+
+    <h1 id="quinn">Quinn</h1>
+
+<p><a href="http://github.com/antw/quinn">Quinn</a> is a jQuery-based library which creates sliders (aka.
+ranges, aka. track  bars) for HTML applications. The project is hosted
+on <a href="http://github.com/antw/quinn">GitHub</a>; you can report bugs and discuss features on the
+<a href="http://github.com/antw/quinn/issues">issue tracker</a>, or direct your tweets at <a href="http://twitter.com/antw">@antw</a>. An
+<a href="http://antw.github.com/quinn/docs/jquery.quinn.html">annotated version</a> of the source is available.</p>
+
+<pre><code>$('.slider').quinn();
+</code></pre>
+
+<p>The library requires <a href="http://jquery.com">jQuery</a> and <a href="http://documentcloud.github.com/underscore">Underscore.js</a>.</p>
+
+<p>Quinn has been tested and works in the following environments:</p>
+
+<ul class="yes">
+  <li>Chrome 11 and 12</li>
+  <li>Firefox 3.5 and 4.0</li>
+  <li>Safari 4</li>
+  <li>Opera 11</li>
+  <li>Internet Explorer 7 and 8</li>
+</ul>
+
+<p>There are no plans to support Internet Explorer 6. The unit tests can
+be run <a href="http://antw.github.com/quinn/test">in your browser</a>.</p>
+
+<p>Quinn was developed by <a href="http://github.com/antw">~antw</a> as part of Quintel
+Intelligence’s <a href="http://www.energytransitionmodel.com">Energy Transition Model</a> application, and has been
+open-sourced with their kind permission. Quinn is released under the
+<a href="http://github.com/antw/quinn/blob/master/LICENSE">New BSD License</a>.</p>
+
+<h2 id="downloads">Downloads</h2>
+
+<dl>
+  <dt><a href="https://github.com/antw/quinn/tarball/v0.2.1">Everything (0.2.1)</a></dt>
+  <dd>Tarball containing JS, CSS, and images</dd>
+  <dt><a href="http://antw.github.com/quinn/jquery.quinn.js">Development Version (0.2.1)</a></dt>
+  <dd>13.3kb, JS only, Uncompressed with comments</dd>
+  <dt><a href="http://antw.github.com/quinn/jquery.quinn.min.js">Production Version (0.2.1)</a></dt>
+  <dd>1.54kb, JS only, Minified and Gzipped</dd>
+</dl>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<h4 id="options">Options</h4>
+
+<p><a href="#range">Minima and Maxima</a>, <a href="#value">Initial Values</a>,
+<a href="#step">Steps</a>, <a href="#selectable">Selectable Ranges</a>, <a href="#effects">Effects</a>,
+<a href="#only">Specific Values</a>, <a href="#disable">Disabling the Slider</a></p>
+
+<h4 id="callbacks">Callbacks</h4>
+
+<p><a href="#onsetup">onSetup</a>, <a href="#onchange">onChange</a>, <a href="#oncomplete">onComplete</a></p>
+
+<h4 id="themingtheming"><a href="#theming">Theming</a></h4>
+
+<h2 id="options-1">Options</h2>
+
+<p>In order to customise the appearance and behaviour of the Quinn slider
+instance, you may pass extra options when initializing:</p>
+
+<pre class="no-example"><code>$(selector).quinn(optionsHash);
+</code></pre>
+
+<h3 id="range">Minima and Maxima <code>range: [min, max]</code></h3>
+
+<p>By default, a Quinn slider allows selection of whole numbers between 0
+and 100. By supplying a <strong>range</strong> option, you can change these values:
+<strong>range</strong> should be an array of two values, where the first value is the
+minimum value represented on the slider, and the second is the maximum.</p>
+
+<pre><code>// Our volume knobs go up to eleven.
+$('.slider').quinn({ range: [ 0, 11 ] });
+</code></pre>
+
+<p>Negative values are perfectly acceptable, but the “active bar” (the blue
+background) doesn’t yet handle this correctly – it ought to originate
+at zero rather than always on the left.</p>
+
+<pre><code>$('.slider').quinn({ range: [ -100, 0 ] });
+</code></pre>
+
+<h3 id="value">Initial Values <code>value: number</code></h3>
+
+<p>When a slider is created without a default value, it will initialize
+with the slider in the minimum value position. Supplying a <strong>value</strong>
+option results in the slider being created with a different starting
+value.</p>
+
+<pre><code>$('.slider').quinn({ value: 25 });
+</code></pre>
+
+<h3 id="step">Steps <code>step: number</code></h3>
+
+<p>The <strong>step</strong> option restricts the values which may be selected using the
+slider to numbers which are divisible by the step without a remainder.
+For example, a step of 10 only 0, 10, 20, 30, …, n, to be chosen.</p>
+
+<pre><code>$('.slider').quinn({ step: 10 });
+</code></pre>
+
+<p>If you supply an initial value which can’t be used as it doesn’t “fit”
+with the step, the value will be rounded to the nearest acceptable point
+on the slider. For example, an step of 10, and an initial value of 17
+will result in the slider being initialized with a value of 20 instead.</p>
+
+<p>Combining the <strong>step</strong> option with <strong><a href="#range">range</a></strong> permits the
+creation of sliders with arbitrary values:</p>
+
+<pre><code>$('.slider').quinn({ range: [0, 1.21], step: 0.01 });
+</code></pre>
+
+<h3 id="selectable">Selectable Ranges <code>selectable: [min, max]</code></h3>
+
+<p>Sometimes you want to show a slider where only a certain partition of
+the values may be chosen by the user. This is achieved using the
+<strong>selectable</strong> option.</p>
+
+<p>The example below is created with the default range <code>[0, 100]</code>, but
+restricts the values the user may select:</p>
+
+<pre><code>$('.slider').quinn({ selectable: [35, 80] });
+</code></pre>
+
+<p>The “selectable” values can be changed later with <code>setSelectable(min,
+max)</code>.</p>
+
+<p>When using <strong>selectable</strong>, your <strong>step</strong> option will still be respected
+and <strong>selectable</strong> values which don’t fit with the step will be rounded
+to the nearest inclusive step. Note that in the example below the lowest
+selectable value (5) is not available since <code>step: 20</code> is used. The
+lower value is instead rounded to 20 (not 0 since this is outside the
+selectable range supplied and might break your data validation later).</p>
+
+<pre><code>$('.slider').quinn({ selectable: [5, 80], step: 20 });
+</code></pre>
+
+<h3 id="effects">Effects <code>effects: bool</code> <code>effectSpeed: number</code></h3>
+
+<p>Some Quinn actions make use of jQuery effects. For example, clicking on
+the slider bar immediately changes the value and animates movement of
+the handle to the new position. Animation length may be altered with the
+<strong>effectSpeed</strong> option which may be any valid jQuery animation length
+(fast, slow, or a number), or disabled completely by setting <code>effects:
+false</code>.</p>
+
+<p>If the <a href="http://gsgd.co.uk/sandbox/jquery/easing">Easing</a> library is available, your default animation
+easing function will be used.</p>
+
+<pre><code>$('.slider').quinn({ effects: false });
+</code></pre>
+
+<h3 id="only">Specific Values <code>only: [value, value, ...]</code></h3>
+
+<p>To create a slider where the user may select only from specific values,
+use the <strong>only</strong> option with an array of values which may be chosen.</p>
+
+<pre><code>$('.slider').quinn({ only: [10, 15, 50, 80], value: 50 });
+</code></pre>
+
+<h3 id="disable">Disabling the Slider <code>disable: bool</code></h3>
+
+<p>When you do not wish the user to be able to interact with the slider,
+pass <code>false</code> with the <strong>disable</strong> option:</p>
+
+<pre><code>$('.slider').quinn({ value: 50, disable: true });
+</code></pre>
+
+<h2 id="callbacks-1">Callbacks</h2>
+
+<p>The behavior of the slider may be further customised through the use of
+callback functions which are supplied as part of the options object when
+creating the slider.</p>
+
+<h3 id="onsetup">onSetup <code>onSetup: function (currentValue, quinn)</code></h3>
+
+<p><strong>onSetup</strong> is run only once, immediately after the Quinn constructor
+has completed. Two arguments are supplied: the current value of the
+slider and the Quinn instance. Note that the slider value given during
+initialization may differ from the one given to the callback since the
+constructor adjusts the slider value to fit with the <strong>range</strong>,
+<strong>selectable</strong>, and <strong>step</strong> options. The value supplied to the
+callback is correct.</p>
+
+<h3 id="onchange">onChange <code>onChange: function (newValue, quinn)</code></h3>
+
+<p>The <strong>onChange</strong> callback is run each time the slider value changes. The
+function is supplied with two arguments: the new slider value, and the
+Quinn instance. The previous value of the slider can be retrieved with
+<code>quinn.value</code> since the value attribute is only updated after the
+callback has completed.</p>
+
+<pre><code>function changeValueColour (value) {
+    var h = (128 - value * 1.28).toFixed(),
+        l = (35 + value * 0.1).toFixed();
+
+    $('.value').css('color', 'hsl('+h+', 50%, '+l+'%)');
+}
+
+$('.slider').quinn({
+    onChange: function (newValue, slider) {
+        changeValueColour(newValue);
+    },
+
+    onSetup: function (value, slider) {
+        // Set the initial colour.
+        changeValueColour(value);
+    }
+});
+</code></pre>
+
+<p>Be aware that the <strong>onChange</strong> callback is run every time the slider
+value changes, which can be extremely frequent when dragging the slider
+handle. This is perfect for “hooking” in to the slider to display the
+value elsewhere in your UI (such as the examples on this page), to
+update a graph in real-time, etc, but is not suitable for persisting the
+slider value to a server unless you like flooding your application with
+tens of HTTP requests per second. Use <strong>onComplete</strong> which is fired only
+after the user has finished dragging the handle.</p>
+
+<p>Explicitly returning false in the callback will prevent the change.</p>
+
+<pre><code>$('.slider').quinn({
+    onChange: function (newValue, slider) {
+        // Prevent selection of 41 to 59.
+        if (newValue &gt; 40 &amp;&amp; newValue &lt; 60) {
+            return false;
+        }
+    }
+});
+</code></pre>
+
+<h3 id="oncomplete">onComplete <code>onComplete: function (newValue, quinn)</code></h3>
+
+<p><strong>onComplete</strong> is similar to the to the <strong>onChange</strong> event in that it is
+fired when the slider value is changed by a user. However, unlike
+<strong>onChange</strong> it is fired only after the user has <em>finished</em> changing the
+value. This is defined as clicking the slider bar to change the value,
+or lifting the left mouse button after dragging the slider handle.</p>
+
+<pre><code>$('.slider').quinn({
+    value: 25,
+
+    onComplete: function (newValue, slider) {
+        // Disallow selecting a value over 50, but only
+        // after the user has finished moving the slider.
+        if (newValue &gt; 50) {
+            return false;
+        }
+    }
+});
+</code></pre>
+
+<h2 id="theming">Theming</h2>
+
+<p>Altering Quinn’s appearance is relatively simple. The default style uses
+a <a href="http://antw.github.com/quinn/images/default.png">single-image sprite</a>. If you don’t need to resize any
+of the slider elements, replacing this image with
+<a href="http://antw.github.com/quinn/vendor/rainbow.png">an alternative</a> is all it takes. In some cases, you may
+need to alter the CSS. For example:</p>
+
+<pre class="no-example css"><code>.rainbow .bar .left, .rainbow .bar .main, .rainbow .bar .right,
+.rainbow .active-bar .left, .rainbow .active-bar .main,
+.rainbow .active-bar .right, .rainbow .handle {
+  background-image: url(vendor/rainbow.png);
+}
+
+.rainbow .bar, .rainbow .bar .left, .rainbow .bar .main,
+.rainbow .bar .right, .rainbow .active-bar .left,
+.rainbow .active-bar .main, .rainbow .active-bar .right {
+  height: 25px;
+}
+
+.rainbow .handle {
+  height: 23px;
+  width: 23px;
+}
+</code></pre>
+
+<pre class="rainbow hide-code"><code>function changeValueColour (value) {
+    var h = (128 - value * 1.28).toFixed(),
+        l = (35 + value * 0.1).toFixed();
+
+    $('.value').css('color', 'hsl('+h+', 50%, '+l+'%)');
+}
+
+$('.slider').quinn({
+    value: 25,
+
+    onChange: function (newValue, slider) {
+        changeValueColour(newValue);
+    },
+
+    onSetup: function (value, slider) {
+        // Set the initial colour.
+        changeValueColour(value);
+    }
+});
+</code></pre>
+
+<h2 id="history">History</h2>
+
+<h4 id="june-14th-2011">0.2.1 <em>June 14th, 2011</em></h4>
+
+<p>Quinn has now been tested and fixed for IE7, urgh. Opera has been tested
+and, unsurprisingly, works perfectly.</p>
+
+<h4 id="june-13th-2011">0.2.0 <em>June 13th, 2011</em></h4>
+
+<p><code>stepUp</code> and <code>stepDown</code> have been added which are similar to the methods
+of the same name on HTML 5 range and number inputs. Quinn instances may
+now be created using <code>new $.Quinn(...)</code> if you need to hang on to the
+slider instance after creation. Default theme changed to use a modified
+version of Aristo. Fixed an issue when using <code>selectable</code> with <code>step</code>
+when the selectable options didn’t fit the step.</p>
+
+<h4 id="june-10th-2011">0.1.6 <em>June 10th, 2011</em></h4>
+
+<p>The <code>only</code> option has been added which restricts the choosable values
+to those which are in the <code>only</code> array. Respects the <code>selectable</code> and
+<code>range</code> settings. Clicking in the space above the visible slider bar now
+correctly triggers events.</p>
+
+<h4 id="june-9th-2011">0.1.4 <em>June 9th, 2011</em></h4>
+
+<p>Adds support for touch devices (iOS, Android, etc). Various small fixes
+to make the library “more jQuery-like”, including the ability to chain
+other functions off <code>$.fn.quinn()</code>. “Click-dragging” no longer fires two
+<code>onComplete</code> events; only one when the user releases the mouse button.</p>
+
+<h4 id="june-9th-2011-1">0.1.2 <em>June 9th, 2011</em></h4>
+
+<p>When clicking on the slider bar, the mouse button may be held down to refine
+the value by dragging the handle. The click and drag actions will fire
+separate <code>onComplete</code> events.</p>
+
+<h4 id="june-8th-2011">0.1.0 <em>June 8th, 2011</em></h4>
+
+<p>Initial release on GitHub. Supports most planned features, but tests in
+Opera and Internet Explorer are not yet complete.</p>
+
+
+    <!-- end README -->
+    </div>
+
+    <script type="text/javascript" src="vendor/jquery-1.6.1.js"></script>
+    <script type="text/javascript" src="vendor/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="vendor/underscore-1.1.6.js"></script>
+    <script type="text/javascript" src="jquery.quinn.js"></script>
+    <script type="text/javascript" src="vendor/highlight.pack.js"></script>
+    <script type="text/javascript" src="vendor/examples.js"></script>
+
+  </body>
+</html>

@@ -89,7 +89,7 @@ var InputElementList = Backbone.Collection.extend({
       input_element.set_start_value(values.start_value);
       input_element.set_label(values.full_label); 
       var user_value = values.user_value;
-      var default_value = (_.isUndefined(user_value) || _.isNan(user_value) || _.isNull(user_value)) ? values.start_value : user_value;
+      var default_value = (_.isUndefined(user_value) || _.isNaN(user_value) || _.isNull(user_value)) ? values.start_value : user_value;
       input_element.set({user_value : default_value});
     });
   },

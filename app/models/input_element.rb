@@ -155,9 +155,6 @@ class InputElement < ActiveRecord::Base
   def as_json(options = {})
     super(:only => [:id, :input_id, :name, :unit, :share_group, :factor], 
       :methods => [ 
-        :start_value, 
-        :min_value, 
-        :max_value, 
         :step_value, 
         :number_to_round_with,
         :output, :user_value, :disabled, :translated_name, 

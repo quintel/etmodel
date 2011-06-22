@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110621140527) do
+ActiveRecord::Schema.define(:version => 20110622115315) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(:version => 20110621140527) do
     t.string   "update_max"
     t.boolean  "locked_for_municipalities"
     t.string   "label_query"
+    t.integer  "input_id"
   end
 
   add_index "input_elements", ["key"], :name => "unique api key"

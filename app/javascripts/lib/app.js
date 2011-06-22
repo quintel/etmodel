@@ -132,7 +132,10 @@ function showLoading() {
     spinner: '<img src="/images/layout/ajax-loader.gif" />'
   }).fadeIn('fast') 
 }
-function hideLoading() {     $("#charts_wrapper").busyBox('close'); }
+function hideLoading() {     
+  $("#charts_wrapper").busyBox('close'); 
+  $("#constraints").busyBox('close');
+}
 
 window.App = App = new AppView();
 

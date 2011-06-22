@@ -53,19 +53,11 @@ var InputElementView = Backbone.View.extend({
 
     this.element.append(quinnElement);
 
-    console.log({
-      range: [ this.model.get('min_value') || 0,
-               this.model.get('max_value') || 100 ],
-      value:   this.model.get('user_value'),
-      step:    this.model.get('step_value'),
-      disable: this.model.get('disabled')
-    });
-
     // new $.Quinn is an alternative to $(...).quinn(), and allows us to
     // easily keep hold of the Quinn instance.
     this.quinn = new $.Quinn(quinnElement, {
-      range: [ this.model.get('min_value') || 0,
-               this.model.get('max_value') || 100 ],
+      range: [ this.model.get('min_value'),
+               this.model.get('max_value') ],
       value:   this.model.get('user_value'),
       step:    this.model.get('step_value'),
       disable: this.model.get('disabled')

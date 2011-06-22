@@ -83,7 +83,9 @@ var InputElementList = Backbone.Collection.extend({
 
   initialize_user_values : function(user_value_hash) {
     this.each(function(input_element) {
-      var values = user_value_hash[input_element.get('input_id')+''];
+      var values = user_value_hash[
+        (input_element.get('input_id') || input_element.id) + ''];
+
       input_element.set_min_value(values.min_value);
       input_element.set_max_value(values.max_value);
       input_element.set_start_value(values.start_value);

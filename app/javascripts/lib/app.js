@@ -48,7 +48,7 @@ window.AppView = Backbone.View.extend({
     LockableFunction.setLock('call_api');
     showLoading();
     $.jsonp({
-      url: url + '?callback=?',
+      url: url,
       data: params,
       success: this.handle_api_result,
       error: function() {

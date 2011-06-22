@@ -74,14 +74,4 @@ module LayoutHelpers::SlideHelper
      haml_concat(render :partial => 'input_elements/slider', :object => input_element)
     end  
   end
-  
-  def render_input_element_javascript_create(input_elements)
-    haml_tag :script, input_elements.map{ |ip|  create_input_element(ip) }.join("\n").html_safe
-  end
-  
-  
-  def render_input_element_javascript_update(input_elements)
-    haml_tag :script, input_elements.map{ |ip|  update_input_element(ip) }.join("\n").html_safe
-  end
-  
 end

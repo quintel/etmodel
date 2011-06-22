@@ -40,7 +40,38 @@ var InputElementView = Backbone.View.extend({
       this.sliderView.slider.toggleButton.element.addClass('municipality-toggle');
     }
 
+    this.render();
     this.initEventListeners();
+  },
+
+  /**
+   * Creates the HTML elements used to display the slider.
+   */
+  render: function () {
+    var quinnElement = $('<div class="quinn"></div>').
+      css({ width: '110px', height: '22px'});
+
+    this.element.append(quinnElement);
+
+    console.log({
+      range: [ this.model.get('min_value') || 0,
+               this.model.get('max_value') || 100 ],
+      value:   this.model.get('user_value'),
+      step:    this.model.get('step_value'),
+      disable: this.model.get('disabled')
+    });
+
+    // new $.Quinn is an alternative to $(...).quinn(), and allows us to
+    // easily keep hold of the Quinn instance.
+    this.quinn = new $.Quinn(quinnElement, {
+      range: [ this.model.get('min_value') || 0,
+               this.model.get('max_value') || 100 ],
+      value:   this.model.get('user_value'),
+      step:    this.model.get('step_value'),
+      disable: this.model.get('disabled')
+    });
+
+    return this;
   },
 
   set_full_label: function (text) {

@@ -1,3 +1,6 @@
+//loading overlay vars:
+var loading = $("#content").busyBox({spinner: '<img src="/images/layout/ajax-loader.gif" />'} );
+
 _.extend(_, {
   sum: function (arr) {
     return _.reduce(arr, function(sum, v) {return sum + v;}, 0);
@@ -54,6 +57,9 @@ window.AppView = Backbone.View.extend({
       error: function() {
         console.log("Something went wrong"); 
         hideLoading();
+      },
+      complete: function(){
+        loading.busyBox('close');
       }
     });
   },
@@ -64,6 +70,7 @@ window.AppView = Backbone.View.extend({
   // window.dashboard.trigger('change');
   handle_api_result : function(data) {
     LockableFunction.removeLock('call_api');
+    loading.fadeIn('fast'); //show loading overlay
     var result   = data.result;   // Results of this request for every "result[]" parameter
 
     $.each(result, function(gquery_key, value_arr) { 
@@ -105,8 +112,27 @@ window.AppView = Backbone.View.extend({
 });
 
 
-function showLoading() { $("#loading").show(); }
-function hideLoading() { $("#loading").hide(); }
+
+// $.ajax({
+//   url: "/my-url",
+//   success: function(data, textStatus, XMLHttpRequest){
+//     $("#my_container").html(data).fadeIn('fast');
+//   },
+//   complete: function complete(XMLHttpRequest, textStatus){
+//     loading.busyBox('close');
+//   }
+// });
+
+function showLoading() { 
+  $("#charts_wrapper").busyBox({
+    spinner: '<img src="/images/layout/ajax-loader.gif" />'
+  }).fadeIn('fast') 
+  $("#constraints").busyBox({
+    classes: 'busybox ontop',
+    spinner: '<img src="/images/layout/ajax-loader.gif" />'
+  }).fadeIn('fast') 
+}
+function hideLoading() {     $("#charts_wrapper").busyBox('close'); }
 
 window.App = App = new AppView();
 

@@ -41,6 +41,8 @@ class Api::Client
   def fetch_session_id
     response = self.class.get("/api_scenarios/new.json")
     self.api_session_id = response["api_scenario"]["api_session_key"]
+    Rails.logger.debug("Fetching api_session_id: #{self.api_session_id}")
+    self.api_session_id
   end
 
   private

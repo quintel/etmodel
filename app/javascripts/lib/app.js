@@ -20,6 +20,8 @@ window.AppView = Backbone.View.extend({
     this.municipalityController = new MunicipalityController();
 
     this.settings = new Setting(); // At this point settings is empty.
+    // let's get the ruby-fetched api_session_key
+    this.settings.set({'api_session_key' : globals.api_session_key});
     this.scenario = new Scenario();
     this.peak_load = new PeakLoad();
   },

@@ -42,10 +42,10 @@ var PeakLoad = Backbone.Model.extend({
    */
   parts_affected : function() {
     return _.compact(
-          _.map(this.gqueries, function(gquery, part_affected) {
-            return gquery.result()[0][1] ? part_affected : null;
-          })
-        );
+      _.map(this.gqueries, function(gquery, part_affected) {
+        return gquery.result()[0][1] ? part_affected : null;
+      })
+    );
   },
   
   /*

@@ -153,7 +153,7 @@ class InputElement < ActiveRecord::Base
   #############################################
 
   def as_json(options = {})
-    super(:only => [:id, :name, :unit, :share_group, :factor], 
+    super(:only => [:id, :input_id, :name, :unit, :share_group, :factor], 
       :methods => [ 
         :start_value, 
         :start_value_gql,

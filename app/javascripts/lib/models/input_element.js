@@ -44,7 +44,11 @@ var InputElement = Backbone.Model.extend({
    * Returns if this is dirty, meaning a attribute has changed.
    */
   isDirty:function() {
-    return this.dirty;
+    if (this.get('input_element_type') == 'fixed') {
+      return false;
+    } else {
+      return this.dirty;
+    }
   },
 
   markDirty:function() {

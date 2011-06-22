@@ -13,13 +13,14 @@ class TabController < ApplicationController
   before_filter :show_intro_at_least_once, :only => :show
 
   def show
+    @slides = Current.view.slides
     render :template => 'tab/show'
   end
 
   protected
 
     def load_output_element
-      @output_element = Current.view.default_output_element_for_sidebar_item
+      @output_element = Current.view.default_output_element_for_current_sidebar_item
     end
 
     def show_intro_at_least_once

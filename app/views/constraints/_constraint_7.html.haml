@@ -7,7 +7,7 @@
         %th.target= t("Goals")
         %th.you Scenario
     %tbody
-      - PolicyGoal.allowed_policies.each do |goal|
+      - Current.view.policy_goals.each do |goal|
         %tr{:id => "goal_#{goal.id}"}
           %td.check
           %td.name= t("policies.#{goal.name.humanize}").html_safe

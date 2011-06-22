@@ -31,30 +31,42 @@ class ViewNode::Root < ViewNode
     #       Slide
     #         InputElement
     #         OutputElement
-    out = {}
+    out = {
+      :dashboard    => [],
+      :policy_goals => [],
+      :tabs         => {}
+    }
+
+    constraints.ordered.each do |c|
+      out[:dashboard] << c.key
+    end
+
+    policy_goals.each do |c|
+      out[:policy_goals] << c.key
+    end
 
     children.each do |tab|
       next unless tab.element
-      a = out[tab.element.key] = {}
+      tab_hash = out[:tabs][tab.element.key] ||= {}
 
       tab.children.each do |sidebar_item|
         next unless sidebar_item.element
-        b = a[sidebar_item.element.key] = {}
+        sidebar_hash = tab_hash[sidebar_item.element.key] ||= {}
 
         sidebar_item.children.each do |slide|
           next unless slide.element
-          c = b[slide.element.key] = {
-            :input_elements  => [],
-            :output_elements => []
+          sidebar_item_hash = sidebar_hash[slide.element.key] ||= {
+              :input_elements  => [],
+              :output_elements => []
             }
-            slide.children.each do |input|
-              next unless input.element
-              if input.element_type == "InputElement"
-                c[:input_elements] << input.element.key
-              else
-                c[:output_elements] << input.element.key
-              end
+          slide.children.each do |input|
+            next unless input.element
+            if input.element_type == "InputElement"
+              sidebar_item_hash[:input_elements] << input.element.key
+            else
+              sidebar_item_hash[:output_elements] << input.element.key
             end
+          end
         end
       end
     end

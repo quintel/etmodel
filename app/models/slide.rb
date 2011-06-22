@@ -6,7 +6,6 @@
 #  controller_name           :string(255)
 #  action_name               :string(255)
 #  name                      :string(255)
-#  default_output_element_id :integer(4)
 #  order_by                  :integer(4)
 #  image                     :string(255)
 #  created_at                :datetime
@@ -108,5 +107,9 @@ class Slide < ActiveRecord::Base
   
   def parsed_name_for_admin
     "#{action_name.andand[0..30]} | #{name}"
+  end
+  
+  def image_path
+    "/images/layout/#{image}" if image.present? 
   end
 end

@@ -44,7 +44,8 @@ group :test, :development do
   gem 'ruby-debug19'
   gem 'hirb'
   gem 'wirble'
-  gem 'awesome_print', :require => 'ap'
+  gem 'awesome_print'#, :require => 'ap'
+  gem 'ap'
   gem 'watchr'
   gem 'spork'
 end

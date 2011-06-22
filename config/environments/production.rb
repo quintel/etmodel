@@ -13,12 +13,11 @@ Etm::Application.configure do
 #    :secret      => '73916e8ec68237f87e1e9ae492e8eb3de2157da4d3141c74f3918060cba89e8fdd39a145990041ced83ffb5a96212399ff12b853157a4df9a0bdc71833130'
 #  }
 
-
   # Use a different logger for distributed setups
   # config.logger = SyslogLogger.new
 
   # Full error reports are disabled and caching is turned on
-  config.action_controller.consider_all_requests_local = false
+  config.consider_all_requests_local = false
   config.action_controller.perform_caching             = true
 
   # Use a different cache store in production

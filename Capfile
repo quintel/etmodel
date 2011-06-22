@@ -33,11 +33,11 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
     run "ln -nfs #{shared_path}/assets/pdf #{release_path}/public/pdf"
     run "ln -nfs #{shared_path}/vendor_bundle #{release_path}/vendor/bundle"
-    run "cd #{release_path} && bundle install"
+    run "cd #{release_path} && bundle install --without development test"
 
     #deploy.generate_rdoc
     memcached.flush
-    symlink_sphinx_indexes
+    # symlink_sphinx_indexes
   end
 
   task :start do ; end
@@ -47,13 +47,9 @@ namespace :deploy do
     # in your models have changed, you will need to perform an index.
     # If these are changing frequently, you can use the following
     # in place of running_start
-    thinking_sphinx.stop
-    if stage == 'production' or stage == 'transitionprice'
-      # Only re-index on production servers to save time with deploys
-      #  we don't necessarly need search engine on testing & staging.
-      thinking_sphinx.index
-    end
-    thinking_sphinx.start
+    # thinking_sphinx.stop
+    # thinking_sphinx.index
+    # thinking_sphinx.start
 
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
@@ -64,7 +60,7 @@ namespace :deploy do
   end
 
   task :after_deploy do
-    run "chmod 777 #{release_path}/log/searchd.production.pid"
+    # run "chmod 777 #{release_path}/log/searchd.production.pid"
     deploy.cleanup
     notify_hoptoad
   end
@@ -73,18 +69,8 @@ namespace :deploy do
   task :notify_hoptoad, :except => { :no_release => true } do
     rails_env = fetch(:hoptoad_env, fetch(:rails_env, "production"))
     local_user = ENV['USER'] || ENV['USERNAME']
-    notify_command = "rake hoptoad:deploy TO=#{rails_env} REVISION=#{current_revision} REPO=#{repository} USER=#{local_user}"
-    case server_type
-      when 'transitionprice'
-        notify_command << " API_KEY=1d5a09b7fdf676e3ff69d20eba322caa"
-      when 'testing'
-        notify_command << " API_KEY=05a325f77515e6a413bc4adb8980d3f8"
-      when 'staging'
-        notify_command << " API_KEY=2c213df905badf7362e925de0b28e7a8"
-      when 'production'
-        notify_command << " API_KEY=3ea5a72aad48a32d7bb486bc71ad4fd5"
-    end
-    
+    notify_command = "bundle exec rake hoptoad:deploy TO=#{rails_env} REVISION=#{current_revision} REPO=#{repository} USER=#{local_user}"
+    notify_command << " API_KEY=aadd4cc40d52dabf842d4dce932e84a3"
     puts "Notifying Hoptoad of Deploy of #{server_type} (#{notify_command})"
     run "cd #{release_path} && #{notify_command}"
     puts "Hoptoad Notification Complete."

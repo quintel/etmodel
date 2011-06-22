@@ -16,4 +16,3 @@ class Constraint < ActiveRecord::Base
   
   scope :ordered, order('id')
 end
-

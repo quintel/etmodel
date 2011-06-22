@@ -11,7 +11,7 @@ var VerticalStackedBarChartView = BaseChartView.extend({
       this.ticks(),
       this.filler(),
       this.model.get('show_point_label'),
-      this.model.get('unit'), // this.parsed_unit(smallest_scale)
+      this.parsed_unit(),
       this.axis_scale(),
       this.model.colors(),
       this.model.labels());

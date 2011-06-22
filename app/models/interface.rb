@@ -7,7 +7,7 @@ class Interface < ActiveRecord::Base
   attr_accessible :key, :enabled, :structure
   
   def tabs
-    tree.keys.map{|k| Tab.find_by_key(k)} rescue []
+    tree[:tabs].keys.map{|k| Tab.find_by_key(k)} rescue []
   end
   
   def tree
@@ -15,27 +15,40 @@ class Interface < ActiveRecord::Base
   end
   
   def sidebar_items_for(tab_key)
-    tree[tab_key].keys.map{|k| SidebarItem.find_by_key(k)} rescue []
+    tree[:tabs][tab_key].keys.map{|k| SidebarItem.find_by_key(k)} rescue []
   end
   
   def slides_for(tab_key, sidebar_item_key)
-    tree[tab_key][sidebar_item_key].keys.map{|k| Slide.find_by_key(k)} rescue []
+    tree[:tabs][tab_key][sidebar_item_key].keys.map{|k| Slide.find_by_key(k)} rescue []
   end
   
   def input_elements_for(tab_key, sidebar_item_key, slide_key)
-    tree[tab_key][sidebar_item_key][slide_key][:input_elements].map{|k| InputElement.find_by_key(k)} rescue []
+    tree[:tabs][tab_key][sidebar_item_key][slide_key][:input_elements].map{|k| InputElement.find_by_key(k)} rescue []
   end
   
   def output_elements_for(tab_key, sidebar_item_key, slide_key)
-    tree[tab_key][sidebar_item_key][slide_key][:output_elements].map{|k| OutputElement.find_by_key(k)} rescue []
+    tree[:tabs][tab_key][sidebar_item_key][slide_key][:output_elements].map{|k| OutputElement.find_by_key(k)} rescue []
   end
   
-  def default_chart_for_slide(slide_key)
-    OutputElement.find(Slide.find_by_key(slide_key).default_output_element_id) rescue nil
+  def default_chart_for_slide(tab_key, sidebar_item_key, slide_key)
+    key = tree[:tabs][tab_key][sidebar_item_key][slide_key][:output_elements].first
+    OutputElement.find_by_key(key) rescue nil
+  end
+  
+  def default_chart_for_sidebar_item(tab_key, sidebar_item_key)
+    slide_key = slides_for(tab_key, sidebar_item_key).first.key
+    default_chart_for_slide(tab_key, sidebar_item_key, slide_key)
   end
   
   def constraints
-    # DEBT: move to yml file
-    Constraint.ordered.where(:id => 1..7)
+    @contraints ||= tree[:dashboard].map{|x| Constraint.find_by_key(x)} rescue []
+  end
+  
+  def policy_goals
+    @policy_goals ||= tree[:policy_goals].map{|x| PolicyGoal.find_by_key(x)} rescue []
+  end
+  
+  def allowed_policy_goals
+    @allowed_policy_goals ||= policy_goals.reject(&:area_dependent) rescue []
   end
 end

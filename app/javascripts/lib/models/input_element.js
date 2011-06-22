@@ -16,6 +16,10 @@ var InputElement = Backbone.Model.extend({
     var factor = this.get('factor');
     this.set({'max_value' : result});
   },
+  set_label : function(label) {
+    if(!_.isString(label)) return;
+    this.set({'label' : label});
+  },
   set_start_value : function(result) {
     var factor = this.get('factor');
     var step_value = this.get('step_value');
@@ -83,6 +87,7 @@ var InputElementList = Backbone.Collection.extend({
       input_element.set_min_value(values.min_value);
       input_element.set_max_value(values.max_value);
       input_element.set_start_value(values.start_value);
+      input_element.set_label(values.full_label); 
       var default_value = values.user_value || values.start_value
       input_element.set({user_value : default_value});
     });

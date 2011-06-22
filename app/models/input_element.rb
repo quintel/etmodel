@@ -180,15 +180,6 @@ class InputElement < ActiveRecord::Base
     (description.andand.content.andand.gsub('id="player"','class="player"') || "").html_safe
   end
   
-  # TODO - refactor
-  def parsed_label
-    #"#{Current.gql.query_present(label_query).round(2)} #{label}".html_safe unless label_query.blank?
-    # FIXME: removed label_query
-    label.html_safe unless label_query.blank?
-  rescue
-    "Missing parsed label"
-  end
-  
   ##
   # For showing the name and the action of the inputelement in the admin
   #

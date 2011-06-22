@@ -1,8 +1,5 @@
 module Admin
 class PredictionValuesController < BaseController
-  def index
-    @prediction_values = PredictionValue.all
-  end
 
   def new
     @prediction_value = PredictionValue.new
@@ -12,7 +9,7 @@ class PredictionValuesController < BaseController
     @prediction_value = PredictionValue.new(params[:prediction_value])
     if @prediction_value.save
       flash[:notice] = "PredictionValue saved"
-      redirect_to :back
+      redirect_to admin_prediction_path(@prediction_value.prediction)
     else
       render :action => 'new'
     end
@@ -22,7 +19,7 @@ class PredictionValuesController < BaseController
     @prediction_value = PredictionValue.find(params[:id])
     if @prediction_value.update_attributes(params[:prediction_value])
       flash[:notice] = "PredictionValue updated"
-      redirect_to :back
+      redirect_to admin_prediction_path(@prediction_value.prediction)
     else
       render :action => 'edit'
     end
@@ -31,17 +28,12 @@ class PredictionValuesController < BaseController
   def destroy
     @prediction_value = PredictionValue.find(params[:id])
     if @prediction_value.destroy
-      flash[:notice] = "Successfully destroyed historic serie."
-      redirect_to admin_prediction_values_url
+      flash[:notice] = "Successfully destroyed PredictionValue."
+      redirect_to admin_predictions_url
     else
-      flash[:error] = "Error while deleting historic serie."
-      redirect_to admin_prediction_values_url
+      flash[:error] = "Error while deleting PredictionValue."
+      redirect_to admin_predictions_url
     end
-  end
-
-
-  def show
-    find_model
   end
 
   def edit

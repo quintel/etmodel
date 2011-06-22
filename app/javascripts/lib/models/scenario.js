@@ -4,20 +4,11 @@
 var Scenario = Backbone.Model.extend({
 
   initialize : function() {
-    _.bindAll(this, 'update_api');
   },
 
   api_session_key : function() {
     var key = App.settings.get('api_session_key');
     return _.isPresent(key) ? key : null;
-  },
-
-  update_api : function() {
-    $.getJSON(this.query_url(), {'settings' : this.api_attributes()}, 
-      function(data) {
-        App.call_api();
-      }
-    );
   },
 
   api_attributes : function() {

@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   include LayoutHelper
-  include JavascriptHelper
   include SprocketsHelper
 
   include ApplicationController::ExceptionHandling

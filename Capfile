@@ -6,17 +6,17 @@ load 'config/deploy' # remove this line to skip loading any of the default tasks
 namespace :memcached do 
   desc "Start memcached"
   task :start, :roles => [:app] do
-    run "/etc/init.d/memcached start"
+    sudo "/etc/init.d/memcached start"
   end
 
   desc "Stop memcached"
   task :stop, :roles => [:app] do
-    run "/etc/init.d/memcached stop"
+    sudo "/etc/init.d/memcached stop"
   end
 
   desc "Restart memcached"
   task :restart, :roles => [:app] do
-    run "/etc/init.d/memcached restart"
+    sudo "/etc/init.d/memcached restart"
   end        
 
   desc "Flush memcached - this assumes memcached is on port 11211"

@@ -53,10 +53,11 @@ var InputElementView = Backbone.View.extend({
    */
   render: function () {
     var quinnElement = $('<div class="quinn"></div>'),
-        valueElement = $('<div class="value"></div>'),
 
         // Need to keep hold of this to add the text to the new info box...
-        description  = this.element.find('.info-box .text').text();
+        description = this.element.find('.info-box .text').text(),
+
+        quinnOnChange, quinnOnComplete;
 
     // TEMPLATING.
 
@@ -80,7 +81,8 @@ var InputElementView = Backbone.View.extend({
     this.element.append('<div class="increase"></div>');
 
     // Displays the current value to the user.
-    this.element.append(valueElement);
+    this.valueElement = $('<div class="value"></div>');
+    this.element.append(this.valueElement);
 
     // The help / info button.
     this.element.append('<div class="show-info"></div>');
@@ -90,18 +92,33 @@ var InputElementView = Backbone.View.extend({
 
     // INITIALIZATION.
 
+    // The Quinn onChange event is fired whenever the user moves the slider
+    // but not until the onComplete event is fired has the user _finished_.
+    // onChange is for updating the UI only, onComplete is where persistance
+    // should be. onChange is also fired once when the is initialized.
+    quinnOnChange = _.bind(function (newValue, quinn) {
+      this.setTransientValue(newValue, true);
+    }, this);
+
+    // Fired once the user has finished editing the value.
+    quinnOnComplete = _.bind(function (newValue, quinn) {
+      this.model.set({ user_value: newValue });
+    }, this);
+
     // new $.Quinn is an alternative to $(...).quinn(), and allows us to
     // easily keep hold of the Quinn instance.
     this.quinn = new $.Quinn(quinnElement, {
-      range: [ this.model.get('min_value'),
-               this.model.get('max_value') ],
-      value:   this.model.get('user_value'),
-      step:    this.model.get('step_value'),
-      disable: this.model.get('disabled'),
+      range:    [ this.model.get('min_value'),
+                  this.model.get('max_value') ],
 
-      // Temporary; to prove that it works.
-      onChange: function (newValue, quinn) { valueElement.text(newValue); },
-      onSetup:  function (value, quinn)    { valueElement.text(value);    }
+      value:      this.model.get('user_value'),
+      step:       this.model.get('step_value'),
+      disable:    this.model.get('disabled'),
+
+      // Callbacks.
+      onSetup:    quinnOnChange,
+      onChange:   quinnOnChange,
+      onComplete: quinnOnComplete
     });
 
     // EVENTS.
@@ -228,6 +245,28 @@ var InputElementView = Backbone.View.extend({
    */
 
   /**
+   * Updates elements of the UI to show the new slider value, but does _not_
+   * set the value on the model (which is done later). The value is set on
+   * the model as part of the Quinn onComplete callback (see `render`).
+   *
+   * The `fromSlider` argument indicates whether the new value has come from
+   * the Quinn slider, in which case we can trust the value to fit the step,
+   * min, and max values, and do not need to run the Quinn callbacks.
+   *
+   * TODO Buttons need may need to be enabled / disabled, such as when the new
+   *      value is the minimum, the decrease button should not be clickable.
+   */
+  setTransientValue: function (newValue, fromSlider) {
+    if (! fromSlider) {
+      newValue = this.quinn.setValue(newValue);
+    }
+
+    this.valueElement.text(newValue);
+
+    return newValue;
+  },
+
+  /**
    * Resets the value of the slider to it's original value.
    */
   resetValue: function () {
@@ -257,7 +296,6 @@ var InputElementView = Backbone.View.extend({
 
   /**
    * Toggles display of the slider information box.
-   * TODO Animate?
    */
   toggleInfoBox: function () {
     this.element.toggleClass('info-box-visible');

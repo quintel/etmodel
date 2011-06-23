@@ -69,7 +69,7 @@ var BaseChartView = Backbone.View.extend({
     var max_value = this.axis_max_value(this.model.values());
     var start_scale; 
 
-    if (this.model.get('unit') == "MT") {
+    if (unit == "MT") {
       start_scale = 2;
     } else {
       start_scale = 3;
@@ -83,6 +83,8 @@ var BaseChartView = Backbone.View.extend({
       return Metric.scaling_in_words(scale, 'ton');
     } else if (unit == 'EUR') {
       return Metric.scaling_in_words(scale, 'currency');
+    } else if (unit == '%') {
+      return '';
     } else {
       return Metric.scaling_in_words(scale, unit);
     }

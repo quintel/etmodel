@@ -7,8 +7,9 @@ var InputElementView = Backbone.View.extend({
     _.bindAll(this, 'updateHandler', 'resetValue',
                     'beginStepDown', 'beginStepUp', 'toggleInfoBox');
 
-    this.model   = this.options.model;
-    this.element = this.options.element;
+    this.model       = this.options.model;
+    this.element     = this.options.element;
+    this.formatValue = this.__getFormatter();
 
     // Keeps track of intervals used to repeat stepDown and stepUp
     // operations when the user holds down the mouse button.
@@ -159,6 +160,8 @@ var InputElementView = Backbone.View.extend({
    * shown for the input element.
    */
   getPrecision: function () {
+    console.log('DEPRECATION: use formatValue instead of getPrecision');
+
     var lPrecisionStr = this.model.get('step_value').toString() + '';
     lPrecision = lPrecisionStr.replace('.', '').length - 1;
     return lPrecision;
@@ -168,6 +171,8 @@ var InputElementView = Backbone.View.extend({
    * Returns a formatter on basis of the step_value.
    */
   getFormatter: function () {
+    console.log('DEPRECATION: use formatValue instead of getFormatter');
+
     switch (this.model.get('unit')) {
       case "%":
         return SliderFormatter.numberWithSymbolFactory('%');
@@ -240,9 +245,7 @@ var InputElementView = Backbone.View.extend({
     }
   },
 
-  /**
-   * ## Event Handlers
-   */
+  // ## Event Handlers
 
   /**
    * Updates elements of the UI to show the new slider value, but does _not_
@@ -261,7 +264,7 @@ var InputElementView = Backbone.View.extend({
       newValue = this.quinn.setValue(newValue);
     }
 
-    this.valueElement.text(newValue);
+    this.valueElement.text(this.formatValue(newValue));
 
     return newValue;
   },
@@ -299,7 +302,42 @@ var InputElementView = Backbone.View.extend({
    */
   toggleInfoBox: function () {
     this.element.toggleClass('info-box-visible');
-  }
+  },
+
+  // ## Pseudo-Private Methods
+
+  /**
+   * Used to format values in the .value div. Memoized as this.formatValue.
+   */
+  __getFormatter: function () {
+    var mStep     = this.model.get('step_value'),
+        mUnit     = this.model.get('unit'),
+        unit      = '',
+        precision = 0;
+
+    if (_.isNumber(mStep)) {
+        precision = mStep.toString().split('.');
+        precision = precision[1] ? precision[1].length : 0
+    }
+
+    if (_.isString(mUnit)) {
+      switch (mUnit) {
+        case "%":
+        case "#":
+        case "MW":
+        case "km2":
+        case "km":
+        case "x":
+          unit = ' ' + mUnit;
+          break;
+        // Add custom units here...
+      }
+    }
+
+    return function (value) {
+      return value.toFixed(precision) + unit;
+    };
+  },
 });
 
 // The number of milliseconds which pass before stepping up and down values

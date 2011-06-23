@@ -104,6 +104,7 @@ var InputElementView = Backbone.View.extend({
     // Fired once the user has finished editing the value.
     quinnOnComplete = _.bind(function (newValue, quinn) {
       this.model.set({ user_value: newValue });
+      this.checkMunicipalityNotice();
       this.trigger('change');
     }, this);
 

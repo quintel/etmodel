@@ -3,7 +3,7 @@ var Util = {
    * This function invokes a function after a timeout. If in the mean time this is invoked 
    * with other functions, the last functions will be invoked
    */
-  cancelableAction: function(key, fun, options) {
+  cancelableAction: function(key, func, options) {
     var sleepTime = options.sleepTime || 2000;
     if(!this.timeOuts) {
       this.timeOuts = {};
@@ -12,7 +12,7 @@ var Util = {
     }
     
     this.timeOuts[key] = setTimeout($.proxy(function() {
-      fun.apply();
+      func.apply();
       clearTimeout(this.timeOuts[key]);
     }, this), sleepTime);
   },

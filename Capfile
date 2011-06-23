@@ -25,6 +25,31 @@ namespace :memcached do
   end     
 end
 
+namespace :ts do
+  desc "Start Search"
+  task :start, :roles => :app do
+    run "cd #{current_path} && bundle exec rake ts:start RAILS_ENV=production"
+  end
+
+  desc "Stop Search"
+  task :stop, :roles => :app do
+    run "cd #{current_path} && bundle exec rake ts:stop RAILS_ENV=production"
+  end
+
+  desc "Rebuild Search"
+  task :rebuild, :roles => :app do
+    run "cd #{current_path} && bundle exec rake ts:stop RAILS_ENV=production"
+    run "cd #{current_path} && bundle exec rake ts:config RAILS_ENV=production"
+    run "cd #{current_path} && bundle exec rake ts:index RAILS_ENV=production"
+    run "cd #{current_path} && bundle exec rake ts:start RAILS_ENV=production"
+  end
+
+  desc "Index Search"
+  task :index, :roles => :app do
+    run "cd #{current_path} && bundle exec rake ts:in RAILS_ENV=production"
+  end
+end
+
 
 namespace :deploy do
   task :after_update_code do

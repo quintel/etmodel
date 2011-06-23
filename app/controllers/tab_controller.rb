@@ -2,9 +2,9 @@ class TabController < ApplicationController
   layout 'etm'
 
   before_filter :ensure_valid_browser,
-                :load_view_settings,
                 :store_last_etm_page,
-                :load_output_element
+                :load_output_element,
+                :fetch_api_session_id
 
   # included here, so that we don't mess with the before_filter order
   include ApplicationController::HasDashboard
@@ -25,5 +25,10 @@ class TabController < ApplicationController
 
     def show_intro_at_least_once
       redirect_to :action => 'intro' unless Current.already_shown?("#{params[:controller]}")
+    end
+    
+    def fetch_api_session_id      
+      Current.setting.api_session_key ||= Api::Client.new.fetch_session_id
+      # TODO: add graceful degradation if the request fails
     end
 end

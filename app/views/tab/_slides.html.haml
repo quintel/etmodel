@@ -25,7 +25,10 @@
             - unless type == :last
               %a.btn-done.next{:href => '#'}= I18n.t("go to next")
 
-        - render_input_element_javascript_create(Current.view.input_elements_for(slide))
+        %script
+          - Current.view.input_elements_for(slide).each do |i|
+            window.input_elements.add(#{i.to_json.html_safe}.input_element);
+
   - else
     = t("not_available")
 

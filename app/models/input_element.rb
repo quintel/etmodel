@@ -154,14 +154,8 @@ class InputElement < ActiveRecord::Base
   #############################################
 
   def as_json(options = {})
-    super(:only => [:id, :name, :unit, :share_group, :factor], 
+    super(:only => [:id, :input_id, :name, :unit, :share_group, :factor], 
       :methods => [ 
-        :start_value, 
-        :start_value_gql,
-        :min_value, 
-        :min_value_gql,
-        :max_value, 
-        :max_value_gql,
         :step_value, 
         :number_to_round_with,
         :output, :user_value, :disabled, :translated_name, 
@@ -179,15 +173,6 @@ class InputElement < ActiveRecord::Base
   #
   def parsed_description
     (description.andand.content.andand.gsub('id="player"','class="player"') || "").html_safe
-  end
-  
-  # TODO - refactor
-  def parsed_label
-    #"#{Current.gql.query_present(label_query).round(2)} #{label}".html_safe unless label_query.blank?
-    # FIXME: removed label_query
-    label.html_safe unless label_query.blank?
-  rescue
-    "Missing parsed label"
   end
   
   ##

@@ -4,20 +4,11 @@
 var Scenario = Backbone.Model.extend({
 
   initialize : function() {
-    _.bindAll(this, 'update_api');
   },
 
   api_session_key : function() {
     var key = App.settings.get('api_session_key');
     return _.isPresent(key) ? key : null;
-  },
-
-  update_api : function() {
-    $.getJSON(this.query_url(), {'settings' : this.api_attributes()}, 
-      function(data) {
-        App.call_api();
-      }
-    );
   },
 
   api_attributes : function() {
@@ -31,8 +22,10 @@ var Scenario = Backbone.Model.extend({
     return data;
   },
 
+  // this method shouldn't be called as long as we keep using
+  // the api_session_key fetched by the tabs_controller filter
   new_session : function() {
-    console.log('new_session', this.api_attributes());
+    console.log('js fetching new_session', this.api_attributes());
     var url = globals.api_url + "/api_scenarios/new.json?callback=?&";
     $.getJSON(url, {settings : this.api_attributes()},
       function(data) {

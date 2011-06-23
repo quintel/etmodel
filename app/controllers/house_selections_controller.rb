@@ -6,7 +6,7 @@ class HouseSelectionsController < ApplicationController
   
   def set
     @gql = Api::Client.new
-    @gql.api_session_id = Current.setting.api_session_key rescue nil
+    @gql.api_session_id = Current.setting.api_session_key
     house_type  = params[:type]
     house_label = params[:label]
     session['calculated_hst_sliders']  ||= {}

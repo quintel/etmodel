@@ -1,3 +1,6 @@
+//loading overlay vars:
+var loading = $("#content").busyBox({spinner: '<img src="/images/layout/ajax-loader.gif" />'} );
+
 _.extend(_, {
   sum: function (arr) {
     return _.reduce(arr, function(sum, v) {return sum + v;}, 0);
@@ -20,6 +23,8 @@ window.AppView = Backbone.View.extend({
     this.municipalityController = new MunicipalityController();
 
     this.settings = new Setting(); // At this point settings is empty.
+    // let's get the ruby-fetched api_session_key
+    this.settings.set({'api_session_key' : globals.api_session_key});
     this.scenario = new Scenario();
     this.peak_load = new PeakLoad();
   },
@@ -46,12 +51,15 @@ window.AppView = Backbone.View.extend({
     LockableFunction.setLock('call_api');
     showLoading();
     $.jsonp({
-      url: url + '?callback=?',
+      url: url,
       data: params,
       success: this.handle_api_result,
       error: function() {
         console.log("Something went wrong"); 
         hideLoading();
+      },
+      complete: function(){
+        loading.busyBox('close');
       }
     });
   },
@@ -62,6 +70,7 @@ window.AppView = Backbone.View.extend({
   // window.dashboard.trigger('change');
   handle_api_result : function(data) {
     LockableFunction.removeLock('call_api');
+    loading.fadeIn('fast'); //show loading overlay
     var result   = data.result;   // Results of this request for every "result[]" parameter
 
     $.each(result, function(gquery_key, value_arr) { 
@@ -103,8 +112,30 @@ window.AppView = Backbone.View.extend({
 });
 
 
-function showLoading() { $("#loading").show(); }
-function hideLoading() { $("#loading").hide(); }
+
+// $.ajax({
+//   url: "/my-url",
+//   success: function(data, textStatus, XMLHttpRequest){
+//     $("#my_container").html(data).fadeIn('fast');
+//   },
+//   complete: function complete(XMLHttpRequest, textStatus){
+//     loading.busyBox('close');
+//   }
+// });
+
+function showLoading() { 
+  $("#charts_wrapper").busyBox({
+    spinner: '<img src="/images/layout/ajax-loader.gif" />'
+  }).fadeIn('fast') 
+  $("#constraints").busyBox({
+    classes: 'busybox ontop',
+    spinner: '<img src="/images/layout/ajax-loader.gif" />'
+  }).fadeIn('fast') 
+}
+function hideLoading() {     
+  $("#charts_wrapper").busyBox('close'); 
+  $("#constraints").busyBox('close');
+}
 
 window.App = App = new AppView();
 

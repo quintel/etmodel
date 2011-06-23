@@ -11,6 +11,8 @@
     background-position: -$position -88px
 
 .new-input-slider
+  min-height: 22px
+
   // Clearfix.
   overflow: visible
 
@@ -72,3 +74,11 @@
     font-size: 12px
     padding-top: 1px
     height: 21px
+
+  // Buttons are only visible on hovering the slider div.
+  .reset, .decrease, .increase
+    opacity: 0
+
+  &:hover
+    .reset, .decrease, .increase
+      opacity: 1

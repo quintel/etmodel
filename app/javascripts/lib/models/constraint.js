@@ -49,6 +49,8 @@ var Constraint = Backbone.Model.extend({
 });
 
 var Dashboard = Backbone.Collection.extend({
-  model : Constraint
+  model : Constraint,
+  current_popup : null
 });
+
 window.dashboard = new Dashboard();

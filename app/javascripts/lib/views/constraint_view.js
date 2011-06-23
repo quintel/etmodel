@@ -60,11 +60,11 @@ var ConstraintView = Backbone.View.extend({
     else if (key == 'co2_reduction' )
       return this.format_percentage(result, true);
     else if (key == 'net_energy_import') 
-      return this.format_percentage(result); // TODO add :signed => false
+      return this.format_percentage(result_rounded); // TODO add :signed => false
     else if (key == 'renewable_percentage') 
       return this.format_percentage(result); // TODO add :signed => false
     else if (key == 'total_energy_cost')
-      return this.format_with_prefix(result_rounded, '&euro;'); // Metric.currency((result / BILLIONS))
+      return this.format_with_prefix(Metric.round_number(result, 1), '&euro;'); // Metric.currency((result / BILLIONS))
     else if (key == 'not_shown') // bio_footprint actually
       return this.format_with_suffix(result_rounded,'x'+ App.settings.get("country").toUpperCase());
     else if (key == 'targets_met') 

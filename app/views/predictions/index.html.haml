@@ -1,4 +1,8 @@
+%h2
+  = "Experts verwachten een adoptie van maximaal {max} in {year}. Jouw scenario ligt {location} de verwachtingen van experts. Hoe denk je dat de adoptie zal verlopen?"
+%br
 - @InputElement.predictions.each do |prediction|
+  %br
   = prediction.description
   = "(#{prediction.user.name})"
   %br
@@ -6,6 +10,5 @@
     = prediction_value.year
     = prediction_value.best
     %br
-
 
 #prediction_chart

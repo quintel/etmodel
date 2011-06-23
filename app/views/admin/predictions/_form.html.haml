@@ -1,7 +1,7 @@
 %div{:style => "width: 60%"}
   -semantic_form_for [:admin, @prediction] do |form|
     = form.select :input_element_id, InputElement.all.select{|x|!x.slide.nil?}.map{|x| ["#{x.id} - #{x.slide.controller_name} - #{x.slide.name} - #{x.name}",x.id]}
-    = form.inputs
+    = form.inputs :user, :expert, :curve_type, :description
     = form.buttons
   
   = link_to "back", admin_predictions_path

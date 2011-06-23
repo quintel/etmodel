@@ -27,12 +27,17 @@ var InputElementView = Backbone.View.extend({
     
     this.sliderView = new AdvancedSliderView(lSliderOptions);
     
+    this.set_full_label(this.model.get('label'));
 
     // make the toggle red if it's semi unadaptable and in a municipality.
     if(App.municipalityController.isMunicipality() && this.model.get("semi_unadaptable"))  
       this.sliderView.slider.toggleButton.element.addClass('municipality-toggle');
   
     this.initEventListeners();
+  },
+  
+  set_full_label : function(text) {
+    this.element.find(".label").html(text);
   },
 
   /**
@@ -102,6 +107,7 @@ var InputElementView = Backbone.View.extend({
     if(this.disableUpdate) return;
 
     this.sliderView.setValue(this.model.get('user_value'), {'noEvent':true});
+    return false;
   },
 
   /**

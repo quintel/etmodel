@@ -16,6 +16,10 @@ var InputElement = Backbone.Model.extend({
     var factor = this.get('factor');
     this.set({'max_value' : result});
   },
+  set_label : function(label) {
+    if(!_.isString(label)) return;
+    this.set({'label' : label});
+  },
   set_start_value : function(result) {
     var factor = this.get('factor');
     var step_value = this.get('step_value');
@@ -40,7 +44,11 @@ var InputElement = Backbone.Model.extend({
    * Returns if this is dirty, meaning a attribute has changed.
    */
   isDirty:function() {
-    return this.dirty;
+    if (this.get('input_element_type') == 'fixed') {
+      return false;
+    } else {
+      return this.dirty;
+    }
   },
 
   markDirty:function() {
@@ -79,11 +87,13 @@ var InputElementList = Backbone.Collection.extend({
 
   initialize_user_values : function(user_value_hash) {
     this.each(function(input_element) {
-      var values = user_value_hash[input_element.get('id')+''];
+      var values = user_value_hash[input_element.get('input_id')+''];
       input_element.set_min_value(values.min_value);
       input_element.set_max_value(values.max_value);
       input_element.set_start_value(values.start_value);
-      var default_value = values.user_value || values.start_value
+      input_element.set_label(values.full_label); 
+      var user_value = values.user_value;
+      var default_value = (_.isUndefined(user_value) || _.isNaN(user_value) || _.isNull(user_value)) ? values.start_value : user_value;
       input_element.set({user_value : default_value});
     });
   },
@@ -93,7 +103,7 @@ var InputElementList = Backbone.Collection.extend({
    */  
   api_update_params:function() {
     return this.dirty().map(function(el) {
-      return ("input["+el.id+"]=" + el.get("user_value"));      
+      return ("input["+el.get('input_id')+"]=" + el.get("user_value"));
     }).join("&");
   },
 

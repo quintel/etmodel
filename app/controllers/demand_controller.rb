@@ -9,24 +9,24 @@ class DemandController < TabController
     queries = ['future:SUM(V(G(final_demand_cbs);final_demand))']
     queries += bars.map{|x| "future:SUM(V(INTERSECTION(G(final_demand_cbs),SECTOR(#{x.downcase}));final_demand))"}
     
-    gql = Api::Client.new
+    client = Api::Client.new
     # Assigning queries now, to prevent multiple requests
-    gql.queries = queries
-    gql.api_session_id = Current.setting.api_session_key rescue nil
+    client.queries = queries
+    client.api_session_id = Current.setting.api_session_key
   
-    @total = gql.simple_query('future:SUM(V(G(final_demand_cbs);final_demand))')
+    @total = client.simple_query('future:SUM(V(G(final_demand_cbs);final_demand))')
     
     @items = {}
     
     bars.each do |b|
       key = b.downcase
-      val = gql.simple_query("future:SUM(V(INTERSECTION(G(final_demand_cbs),SECTOR(#{key}));final_demand))")
+      val = client.simple_query("future:SUM(V(INTERSECTION(G(final_demand_cbs),SECTOR(#{key}));final_demand))")
       @items[key] ||= {
         :name      => b,
         :value     => val,
         :percent   => val / @total * 100,
         :clickable => Current.view.sidebar_items.map(&:key).include?(key),
-        :active    => params[:action] = key # can this ever happen?
+        :active    => params[:action] == key # can this ever happen?
       }
     end
     

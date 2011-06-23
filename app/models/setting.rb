@@ -213,4 +213,12 @@ class Setting
   def current_view
     all_levels[complexity.to_i]
   end
+
+  def new_settings_hash
+    {
+      :country  => country,
+      :region   => region,
+      :end_year => end_year
+    }
+  end
 end

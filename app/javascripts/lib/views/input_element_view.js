@@ -47,6 +47,13 @@ var InputElementView = Backbone.View.extend({
 
     this.render();
     this.initEventListeners();
+
+    // Disable buttons?
+    if (this.model.get('disabled')) {
+      this.disableButton('reset');
+      this.disableButton('decrease');
+      this.disableButton('increase');
+    }
   },
 
   /**
@@ -72,14 +79,18 @@ var InputElementView = Backbone.View.extend({
       $('<label><label>').text(this.model.get('translated_name')));
 
     // Reset and decrease-value buttons.
-    this.element.append('<div class="reset"></div>');
-    this.element.append('<div class="decrease"></div>');
+    this.resetElement = $('<div class="reset"></div>');
+    this.element.append(this.resetElement);
+
+    this.decreaseElement = $('<div class="decrease"></div>');
+    this.element.append(this.decreaseElement);
 
     // Holds the Quinn slider widget.
     this.element.append(quinnElement);
 
     // Increase-value button.
-    this.element.append('<div class="increase"></div>');
+    this.increaseElement = $('<div class="increase"></div>');
+    this.element.append(this.increaseElement);
 
     // Displays the current value to the user.
     this.valueElement = $('<div class="value"></div>');
@@ -133,6 +144,30 @@ var InputElementView = Backbone.View.extend({
       delegate('.show-info', 'click',     this.toggleInfoBox);
 
     return this;
+  },
+
+  /**
+   * Disables a slider button.
+   *
+   * The sole argument should be the string "reset", "decrease", or "increase"
+   * depending on which button you want to be disabled. All this does is add a
+   * disabled class to the button, since the Quinn instance will enforce that
+   * the value cannot be changed.
+   */
+  disableButton: function (buttonName) {
+    var buttonElement = this[buttonName + 'Element'];
+    buttonElement && buttonElement.addClass('disabled');
+  },
+
+  /**
+   * Enables a slider button.
+   *
+   * The sole argument should be the string "reset", "decrease", or "increase"
+   * depending on which button you want to be enabled.
+   */
+  enableButton: function (buttonName) {
+    var buttonElement = this[buttonName + 'Element'];
+    buttonElement && buttonElement.removeClass('disabled');
   },
 
   set_full_label: function (text) {

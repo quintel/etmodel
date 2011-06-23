@@ -199,7 +199,7 @@ var InputElementView = Backbone.View.extend({
   handleSliderUpdate: function () {
     this.disableUpdate = true;
 
-    this.model.set({ 'user_value': this.sliderView.slider.getValue() });
+    this.model.set({ 'user_value': this.quinn.value });
 
     this.sliderView.slider.setValue(
       this.model.get('user_value'), { noEvent: true });

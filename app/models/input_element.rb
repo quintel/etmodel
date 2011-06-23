@@ -36,7 +36,7 @@
 class InputElement < ActiveRecord::Base
   include AreaDependent
   has_paper_trail
-  strip_attributes! :only => [:start_value_gql, :min_value_gql, :max_value_gql, :start_value, :min_value, :max_value]
+
   belongs_to :slide
   has_one :description, :as => :describable
   has_one :area_dependency, :as => :dependable
@@ -44,6 +44,8 @@ class InputElement < ActiveRecord::Base
   has_many :predictions
   
   validates :key, :presence => true, :uniqueness => true
+  validates :input_id, :presence => true
+
 
   scope :ordered_for_admin, order("slides.controller_name, slides.action_name, slides.name, input_elements.id").includes('slide')
   scope :max_complexity, lambda {|complexity| where("complexity <= #{complexity}") }
@@ -51,10 +53,6 @@ class InputElement < ActiveRecord::Base
   scope :with_share_group, where('NOT(share_group IS NULL OR share_group = "")')
 
   scope :contains, lambda{|search| 
-    where([
-      "start_value_gql LIKE :q OR min_value_gql LIKE :q OR max_value_gql LIKE :q OR `keys` LIKE :q OR `attr_name` LIKE :q",
-      {:q => "%#{search}%"}
-    ])
   }
 
 
@@ -189,12 +187,6 @@ class InputElement < ActiveRecord::Base
   # @todo Probably this should be moved into a Scenario class
   #
   def reset
-    # val = Current.scenario.user_values.delete(self.id)
-    # if updates = Current.scenario.update_statements[update_type]
-    #   if keys = updates[keys]
-    #     val = keys.delete(attr_name)
-    #   end
-    # end
   end
 
 

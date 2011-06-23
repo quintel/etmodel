@@ -39,10 +39,22 @@ class Api::Client
   # useful for debugging, whenever possible you'd rather recycle
   # an existing session
   def fetch_session_id
-    response = self.class.get("/api_scenarios/new.json")
-    self.api_session_id = response["api_scenario"]["api_session_key"]
-    Rails.logger.debug("Fetching api_session_id: #{self.api_session_id}")
-    self.api_session_id
+    settings = { :settings => Current.setting.new_settings_hash } rescue nil
+    if settings
+      response = self.class.get("/api_scenarios/new.json", :query => settings)
+    else
+      response = self.class.get("/api_scenarios/new.json")
+    end
+    
+    result = response["api_scenario"]["api_session_key"] rescue nil
+    
+    if result
+      self.api_session_id = result
+      Rails.logger.debug("Got api_session_id: #{result}")
+    else
+      Rails.logger.debug("Error fetching api_session_id")
+    end
+    result
   end
 
   private

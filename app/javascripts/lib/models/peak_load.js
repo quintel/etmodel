@@ -15,10 +15,9 @@ var PeakLoad = Backbone.Model.extend({
 
     this.grid_investment_needed_gquery = new Gquery({key : 'future:Q(grid_investment_needed)'});
   },
-
   check_results : function() {
     if (this.grid_investment_needed()) {
-      if (this.unknown_parts_affected()) {
+      if (this.unknown_parts_affected() && App.settings.get("track_peak_load")) {
         notify_grid_investment_needed(this.parts_affected().join(','));
         this.save_state_in_session();
       }
@@ -53,9 +52,9 @@ var PeakLoad = Backbone.Model.extend({
    */
   unknown_parts_affected : function() {
     return  _.any(this.parts_affected(), function(key) { 
-      return !(_.include(App.settings.get("network_parts_affected"), key))
-    })
-  },
+      return !(_.include(App.settings.get("network_parts_affected"), key));
+    });
+  }
   
 });
 

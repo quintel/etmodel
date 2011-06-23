@@ -43,6 +43,8 @@ class InputElement < ActiveRecord::Base
   has_many :expert_predictions
 
   validates :key, :presence => true, :uniqueness => true
+  validates :input_id, :presence => true
+
 
   scope :ordered_for_admin, order("slides.controller_name, slides.action_name, slides.name, input_elements.id").includes('slide')
   scope :max_complexity, lambda {|complexity| where("complexity <= #{complexity}") }

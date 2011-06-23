@@ -70,7 +70,6 @@ var SliderInput = Backbone.View.extend({
   handleCancelEdit:function(e) {
     var lParents = $(e.target).parents();
     for(var i = 0; i < lParents.length; i++) {
-      // console.info(lParents[i])
       if(lParents[i] == this.element[0])
         return;
     }

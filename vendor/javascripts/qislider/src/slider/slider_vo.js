@@ -58,11 +58,13 @@ var SliderVO = Backbone.Model.extend({
    * by setting the options.
    */
   setValue:function(value, settings) {
-    
+    value = Number(value); // Make sure value is a number!
+
     if(this.options && this.options.disabled) {
       return false;
     }
     var roundedValue = this.getRoundedStepValue(value);
+
     if(!settings || settings && (settings.check != false && !settings.set_to_extreme)) {
       if(roundedValue < this.min_value || roundedValue > this.max_value)
         return false;
@@ -78,17 +80,13 @@ var SliderVO = Backbone.Model.extend({
       } else {
         this.value = roundedValue;
       }
-      
     } else {
       this.value = roundedValue;
     }
-    
-      
+ 
     if(!(settings && settings.noEvent)) {
-      
       this.trigger('update', this);
-    } 
-      
+    }
   },
   
   /**
@@ -96,7 +94,8 @@ var SliderVO = Backbone.Model.extend({
    */
   getRoundedStepValue:function(value) {
     var diff = Math.abs((value % this.getStepValue()));
-    if(diff < (this.getStepValue() / 2)) {
+
+    if (diff < (this.getStepValue() / 2)) {
       if (value > 0){
         return value - diff;
       }else{

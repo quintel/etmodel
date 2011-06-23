@@ -1,0 +1,11 @@
+- @InputElement.predictions.each do |prediction|
+  = prediction.description
+  = "(#{prediction.user.name})"
+  %br
+  - prediction.prediction_values.each do |prediction_value|
+    = prediction_value.year
+    = prediction_value.best
+    %br
+
+
+#prediction_chart

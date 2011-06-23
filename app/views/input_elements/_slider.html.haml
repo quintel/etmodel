@@ -5,3 +5,5 @@
       .label
     .info-box{:style => 'display: none'}
       .text= slider.parsed_description
+      - if !slider.predictions.empty?
+        %a.prediction(href="/predictions?input_element_id=#{slider.id}") Prediction(s)

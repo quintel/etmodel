@@ -26,7 +26,7 @@ class DemandController < TabController
         :value     => val,
         :percent   => val / @total * 100,
         :clickable => Current.view.sidebar_items.map(&:key).include?(key),
-        :active    => params[:action] = key # can this ever happen?
+        :active    => params[:action] == key # can this ever happen?
       }
     end
     

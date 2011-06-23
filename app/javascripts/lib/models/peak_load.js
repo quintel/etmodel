@@ -1,4 +1,12 @@
 var PeakLoad = Backbone.Model.extend({
+  /* move demand population to the right => peak load is triggered => Popup
+   * move demand population to the left => no peak load anymore
+   * move demand population to the right again => peak load is triggered again
+   * => if you want the popup to reappear again, set this to true. 
+   *     (disadvantage: for every api_call the settings have to be synced to etmodel)
+   */   
+  SHOW_EVERY_TIME_PEAK_LOAD_IS_TRIGGERED : false,
+
 
   initialize : function() {
     _.bindAll(this, 'check_results');
@@ -19,9 +27,10 @@ var PeakLoad = Backbone.Model.extend({
     if (this.grid_investment_needed()) {
       if (this.unknown_parts_affected() && App.settings.get("track_peak_load")) {
         notify_grid_investment_needed(this.parts_affected().join(','));
-        this.save_state_in_session();
+        if (!this.SHOW_EVERY_TIME_PEAK_LOAD_IS_TRIGGERED) this.save_state_in_session(); 
       }
     }
+    if (this.SHOW_EVERY_TIME_PEAK_LOAD_IS_TRIGGERED) this.save_state_in_session();
   },
 
   save_state_in_session : function() {
@@ -37,7 +46,7 @@ var PeakLoad = Backbone.Model.extend({
   },
 
   /*
-   * @return Array
+   * @return Array [lv, mv-lv, mv, hv-mv, hv]
    */
   parts_affected : function() {
     return _.compact(

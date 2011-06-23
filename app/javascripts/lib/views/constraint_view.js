@@ -25,7 +25,17 @@ var ConstraintView = Backbone.View.extend({
 
   open_popup : function() {
     var constraint = $(this.dom_id);
+    var constraint_id = this.model.get('id');
     this.close_all_popups();
+    // if the user clicks a second time on an open popup
+    // we hide it
+    if(window.dashboard.current_popup == constraint_id) {
+      window.dashboard.current_popup = null;
+      return;
+    } else {
+      // otherwise we load the new one
+      window.dashboard.current_popup = constraint_id;
+    }
     $('.constraint_popup', constraint).css('bottom', '80px');
     $('#shadowbox-outer', constraint).animate({opacity: 0.95}, 'slow');
     $.get($(constraint).attr('rel')+"?t="+timestamp(), function(data) {
@@ -34,6 +44,8 @@ var ConstraintView = Backbone.View.extend({
   },
 
   close_all_popups : function() {
+    // DEBT: is there any reason not to remove the element from the dom?
+    // PZ - Thu 23 Jun 2011 11:31:03 CEST
     $('.constraint_popup').css('bottom', '8000px');
   },
 

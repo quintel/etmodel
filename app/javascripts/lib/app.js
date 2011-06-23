@@ -88,8 +88,14 @@ window.AppView = Backbone.View.extend({
     hideLoading();
   },
 
+
+
   /**
-   * Set the update in a cancelable action
+   * Set the update in a cancelable action. When you 
+   * pull a slider A this method is called. It will call doUpdateRequest
+   * after 500ms. When a slider is pulled again, that call will be canceled
+   * (so that we don't flood the server). doUpdateRequest will get the dirty
+   * sliders, reset all dirtyiness and make an API call. 
    */
   handleInputElementsUpdate:function() {
     var func = $.proxy(this.doUpdateRequest, this);
@@ -106,8 +112,9 @@ window.AppView = Backbone.View.extend({
 
     if (dirtyInputElements.length == 0) { return; }
 
-    window.App.call_api(window.input_elements.api_update_params());
+    var input_params = window.input_elements.api_update_params();
     window.input_elements.reset_dirty();
+    window.App.call_api(input_params);
   }
 });
 

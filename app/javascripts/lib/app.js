@@ -16,6 +16,10 @@ window.AppView = Backbone.View.extend({
   initialize : function() {
     _.bindAll(this, 'api_result', 'handleInputElementsUpdate');
 
+    // this at the moment used for the loading box. to figure out 
+    // if there are still api calls happening.
+    this.api_call_stack = [];
+
     // Jaap MVC legacy
     this.inputElementsController = window.input_elements;
     this.inputElementsController.bind("change", this.handleInputElementsUpdate);
@@ -45,23 +49,34 @@ window.AppView = Backbone.View.extend({
   },
 
   call_api : function(input_params) {
+    var self = this;
     var url = this.scenario.query_url(input_params);
     var params = {'result' : window.gqueries.keys() };
 
     LockableFunction.setLock('call_api');
-    showLoading();
-    $.jsonp({
+    this.showLoading();
+    var jsonp = $.jsonp({
       url: url,
       data: params,
       success: this.handle_api_result,
       error: function() {
         console.log("Something went wrong"); 
-        hideLoading();
-      },
-      complete: function(){
-        loading.busyBox('close');
+        self.hideLoading();
       }
     });
+    this.register_api_call(jsonp);
+  },
+
+  has_unfinished_api_calls : function() {
+    return _.isEmpty(this.api_call_stack);
+  },
+
+  register_api_call : function(api_call) {
+    this.api_call_stack.push(api_call);
+  },
+
+  unregister_api_call : function(api_call) {
+    this.api_call_stack = _.without(this.api_call_stack, api_call);
   },
 
   // The following method could need some refactoring
@@ -69,6 +84,16 @@ window.AppView = Backbone.View.extend({
   // window.charts.first().trigger('change');
   // window.dashboard.trigger('change');
   handle_api_result : function(data) {
+    //#############################################
+    // 
+    // ATTENTION: This method is not called in the context of App
+    //            but in the context of the jsonp object. So 'this'
+    //            refers to the jsonp (that's how we get access to data)
+    //            and not the App object. 
+    // 
+    //#############################################
+    App.unregister_api_call(this);
+
     LockableFunction.removeLock('call_api');
     loading.fadeIn('fast'); //show loading overlay
     var result   = data.result;   // Results of this request for every "result[]" parameter
@@ -85,7 +110,7 @@ window.AppView = Backbone.View.extend({
     App.peak_load.trigger('change');
 
     $("body").trigger("dashboardUpdate");
-    hideLoading();
+    App.hideLoading();
   },
 
 
@@ -115,34 +140,39 @@ window.AppView = Backbone.View.extend({
     var input_params = window.input_elements.api_update_params();
     window.input_elements.reset_dirty();
     window.App.call_api(input_params);
+  },
+
+
+  /*
+   * Shows a busy box. Only if api_call_stack is empty. Make sure
+   * that you call the showLoading before adding the jsonp to api_call_stack.
+   */
+  showLoading : function () {
+    if (this.has_unfinished_api_calls()) {
+      $("#charts_wrapper").busyBox({
+        spinner: '<img src="/images/layout/ajax-loader.gif" />'
+      }).fadeIn('fast') 
+      $("#constraints").busyBox({
+        classes: 'busybox ontop',
+        spinner: '<img src="/images/layout/ajax-loader.gif" />'
+      }).fadeIn('fast');
+    }
+  },
+
+  /*
+   * Closes the loading box. will only close if there's no api_calls 
+   * running at the moment
+   */
+  hideLoading : function() {
+    if (this.has_unfinished_api_calls()) {
+      $("#charts_wrapper").busyBox('close'); 
+      $("#constraints").busyBox('close');
+      //loading.busyBox('close');
+    }
   }
 });
 
 
-
-// $.ajax({
-//   url: "/my-url",
-//   success: function(data, textStatus, XMLHttpRequest){
-//     $("#my_container").html(data).fadeIn('fast');
-//   },
-//   complete: function complete(XMLHttpRequest, textStatus){
-//     loading.busyBox('close');
-//   }
-// });
-
-function showLoading() { 
-  $("#charts_wrapper").busyBox({
-    spinner: '<img src="/images/layout/ajax-loader.gif" />'
-  }).fadeIn('fast') 
-  $("#constraints").busyBox({
-    classes: 'busybox ontop',
-    spinner: '<img src="/images/layout/ajax-loader.gif" />'
-  }).fadeIn('fast') 
-}
-function hideLoading() {     
-  $("#charts_wrapper").busyBox('close'); 
-  $("#constraints").busyBox('close');
-}
 
 window.App = App = new AppView();
 

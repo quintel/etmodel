@@ -4,7 +4,8 @@
  */
 var InputElementView = Backbone.View.extend({
   initialize: function (options) {
-    _.bindAll(this, 'updateHandler', 'resetValue', 'beginStepDown', 'beginStepUp');
+    _.bindAll(this, 'updateHandler', 'resetValue',
+                    'beginStepDown', 'beginStepUp', 'toggleInfoBox');
 
     this.model   = this.options.model;
     this.element = this.options.element;
@@ -106,9 +107,10 @@ var InputElementView = Backbone.View.extend({
     // EVENTS.
 
     this.element.
-      delegate('.reset',    'click',     this.resetValue).
-      delegate('.decrease', 'mousedown', this.beginStepDown).
-      delegate('.increase', 'mousedown', this.beginStepUp);
+      delegate('.reset',     'click',     this.resetValue).
+      delegate('.decrease',  'mousedown', this.beginStepDown).
+      delegate('.increase',  'mousedown', this.beginStepUp).
+      delegate('.show-info', 'click',     this.toggleInfoBox);
 
     return this;
   },
@@ -251,6 +253,14 @@ var InputElementView = Backbone.View.extend({
    */
   beginStepUp: function () {
     this.quinn.stepUp();
+  },
+
+  /**
+   * Toggles display of the slider information box.
+   * TODO Animate?
+   */
+  toggleInfoBox: function () {
+    this.element.toggleClass('info-box-visible');
   }
 });
 

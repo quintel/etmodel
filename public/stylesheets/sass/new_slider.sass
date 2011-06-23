@@ -53,9 +53,16 @@
     border-top: 10px solid white
     border-bottom: 10px solid white
     clear: both
+    display: none
     margin: 0 0 10px
     padding: 7px 10px
     width: 418px - 20px
+
+  &.info-box-visible
+    .show-info
+      @include input-slider-button(120px)
+    .info
+      display: block
 
   // Adjustment to vertical alignment of label and value text.
   .label, .value

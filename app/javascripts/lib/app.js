@@ -26,14 +26,18 @@ window.AppView = Backbone.View.extend({
 
     this.municipalityController = new MunicipalityController();
 
-    this.settings = new Setting(); // At this point settings is empty.
+    this.settings = new Setting(); // At this point settings is empty!!
     // let's get the ruby-fetched api_session_key
     this.settings.set({'api_session_key' : globals.api_session_key});
     this.scenario = new Scenario();
-    this.peak_load = new PeakLoad();
+    this.peak_load = null; // initialize later in bootstrap, because we need to know what country it is
   },
 
+  // At this point we have all the settings initialized.
   bootstrap : function() {
+    if (this.settings.get('country') == 'nl') {
+      this.peak_load = new PeakLoad();
+    }
     if (this.scenario.api_session_key() == null) {
       this.scenario.new_session();
       // after copmleting new_session() App.bootstrap is called again and will thus continue the else part
@@ -107,7 +111,10 @@ window.AppView = Backbone.View.extend({
     window.input_elements.init_legacy_controller();
     window.policy_goals.invoke('update_view');
     window.policy_goals.update_totals();
-    App.peak_load.trigger('change');
+
+    if (App.peak_load != null) { 
+      App.peak_load.trigger('change'); 
+    }
 
     $("body").trigger("dashboardUpdate");
     App.hideLoading();

@@ -1,31 +1,57 @@
+@mixin input-slider-button($position)
+  background-position: -$position 2px
+
+  &:hover
+    background-position: -$position -28px
+
+  &:active
+    background-position: -$position -58px
+
+  &.disabled
+    background-position: -$position -88px
+
 .new-input-slider
   // Clearfix.
   overflow: visible
 
-  label, .left-buttons, .quinn, .right-buttons, .value, .show-info
+  label, .reset, .decrease, .quinn, .increase, .value, .show-info
     float: left
-    margin-bottom: 5px
     height: 22px
 
   label
     width: 124px
 
-  .left-buttons
-    width: 40px
-
   .quinn
-    width: 110px
+    width: 120px
 
-  .right-buttons, .show-info
+  .reset, .decrease, .increase, .show-info
+    background: url(/images/slider/buttons.png) no-repeat
+    cursor: pointer
+    margin-left: 5px
     width: 20px
 
+  .reset
+    @include input-slider-button(0px)
+    margin-left: 0
+    width: 21px
+
+  .decrease
+    @include input-slider-button(30px)
+
+  .increase
+    @include input-slider-button(60px)
+
+  .show-info
+    @include input-slider-button(90px)
+
   .value
-    padding-right: 5px
     text-align: right
-    width: 99px
+    width: 78px
 
   .info
     background: #eee
+    border-top: 10px solid white
+    border-bottom: 10px solid white
     clear: both
     margin: 0 0 10px
     padding: 7px 10px

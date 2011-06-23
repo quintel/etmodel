@@ -65,13 +65,14 @@ var InputElementView = Backbone.View.extend({
       $('<label><label>').text(this.model.get('translated_name')));
 
     // Reset and decrease-value buttons.
-    this.element.append('<div class="left-buttons"></div>');
+    this.element.append('<div class="reset"></div>');
+    this.element.append('<div class="decrease"></div>');
 
     // Holds the Quinn slider widget.
     this.element.append(quinnElement);
 
     // Increase-value button.
-    this.element.append('<div class="right-buttons"></div>');
+    this.element.append('<div class="increase"></div>');
 
     // Displays the current value to the user.
     this.element.append(valueElement);

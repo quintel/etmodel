@@ -1,7 +1,6 @@
 /**
  * InputElementView
  * Controls the view of a single input element.
- *
  */
 var InputElementView = Backbone.View.extend({
   initialize: function (options) {
@@ -48,10 +47,42 @@ var InputElementView = Backbone.View.extend({
    * Creates the HTML elements used to display the slider.
    */
   render: function () {
-    var quinnElement = $('<div class="quinn"></div>').
-      css({ width: '110px', height: '22px'});
+    var quinnElement = $('<div class="quinn"></div>'),
+        valueElement = $('<div class="value"></div>'),
 
+        // Need to keep hold of this to add the text to the new info box...
+        description  = this.element.find('.info-box .text').text();
+
+    // TEMPLATING.
+
+    // Start by removing the contents of the existing element, so that we
+    // may add our own.
+    this.element.empty();
+    this.element.addClass('new-input-slider');
+
+    // The label.
+    this.element.append(
+      $('<label><label>').text(this.model.get('translated_name')));
+
+    // Reset and decrease-value buttons.
+    this.element.append('<div class="left-buttons"></div>');
+
+    // Holds the Quinn slider widget.
     this.element.append(quinnElement);
+
+    // Increase-value button.
+    this.element.append('<div class="right-buttons"></div>');
+
+    // Displays the current value to the user.
+    this.element.append(valueElement);
+
+    // The help / info button.
+    this.element.append('<div class="show-info"></div>');
+
+    // Finally, the help / info box itself.
+    this.element.append($('<div class="info"></div>').text(description));
+
+    // INITIALIZATION.
 
     // new $.Quinn is an alternative to $(...).quinn(), and allows us to
     // easily keep hold of the Quinn instance.
@@ -60,7 +91,11 @@ var InputElementView = Backbone.View.extend({
                this.model.get('max_value') ],
       value:   this.model.get('user_value'),
       step:    this.model.get('step_value'),
-      disable: this.model.get('disabled')
+      disable: this.model.get('disabled'),
+
+      // Temporary; to prove that it works.
+      onChange: function (newValue, quinn) { valueElement.text(newValue); },
+      onSetup:  function (value, quinn)    { valueElement.text(value);    }
     });
 
     return this;

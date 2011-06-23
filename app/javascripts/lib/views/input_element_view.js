@@ -60,7 +60,8 @@ var InputElementView = Backbone.View.extend({
    * Creates the HTML elements used to display the slider.
    */
   render: function () {
-    var quinnElement = $('<div class="quinn"></div>'),
+    var quinnElement   = $('<div class="quinn"></div>'),
+        wrapperElement = $('<div class="slider-controls"></div>'),
 
         // Need to keep hold of this to add the text to the new info box...
         description = this.element.find('.info-box .text').text(),
@@ -75,31 +76,32 @@ var InputElementView = Backbone.View.extend({
     this.element.addClass('new-input-slider');
 
     // The label.
-    this.element.append(
+    wrapperElement.append(
       $('<label><label>').text(this.model.get('translated_name')));
 
     // Reset and decrease-value buttons.
     this.resetElement = $('<div class="reset"></div>');
-    this.element.append(this.resetElement);
+    wrapperElement.append(this.resetElement);
 
     this.decreaseElement = $('<div class="decrease"></div>');
-    this.element.append(this.decreaseElement);
+    wrapperElement.append(this.decreaseElement);
 
     // Holds the Quinn slider widget.
-    this.element.append(quinnElement);
+    wrapperElement.append(quinnElement);
 
     // Increase-value button.
     this.increaseElement = $('<div class="increase"></div>');
-    this.element.append(this.increaseElement);
+    wrapperElement.append(this.increaseElement);
 
     // Displays the current value to the user.
     this.valueElement = $('<div class="value"></div>');
-    this.element.append(this.valueElement);
+    wrapperElement.append(this.valueElement);
 
     // The help / info button.
-    this.element.append('<div class="show-info"></div>');
+    wrapperElement.append('<div class="show-info"></div>');
 
     // Finally, the help / info box itself.
+    this.element.append(wrapperElement);
     this.element.append($('<div class="info"></div>').text(description));
 
     // INITIALIZATION.

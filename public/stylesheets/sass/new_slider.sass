@@ -11,15 +11,18 @@
     background-position: -$position -88px
     cursor: default
 
-.new-input-slider
-  min-height: 22px
+$slider-box-height: 22px
 
-  // Clearfix.
-  overflow: visible
+.new-input-slider
+  .slider-controls
+    min-height: $slider-box-height
+
+    // Clearfix.
+    overflow: auto
 
   label, .reset, .decrease, .quinn, .increase, .value, .show-info
     float: left
-    height: 22px
+    min-height: $slider-box-height
     margin-bottom: 5px
 
   label
@@ -38,7 +41,7 @@
   .reset
     @include input-slider-button(0px)
     margin-left: 0
-    width: 21px
+    min-height: $slider-box-height - 1px
 
   .decrease
     @include input-slider-button(30px)
@@ -63,7 +66,6 @@
     display: none
     margin: 0 0 10px
     padding: 7px 10px
-    width: 418px - 20px
 
   &.info-box-visible
     .show-info
@@ -75,7 +77,7 @@
   label, .value
     font-size: 12px
     padding-top: 1px
-    height: 21px
+    min-height: $slider-box-height - 1px
 
   // Buttons are only visible on hovering the slider div.
   .reset, .decrease, .increase

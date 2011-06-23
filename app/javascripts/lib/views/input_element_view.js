@@ -4,10 +4,14 @@
  */
 var InputElementView = Backbone.View.extend({
   initialize: function (options) {
-    _.bindAll(this, 'updateHandler');
+    _.bindAll(this, 'updateHandler', 'resetValue', 'beginStepDown', 'beginStepUp');
 
     this.model   = this.options.model;
     this.element = this.options.element;
+
+    // Keeps track of intervals used to repeat stepDown and stepUp
+    // operations when the user holds down the mouse button.
+    this.incrementInterval = null;
 
     this.model.bind('change', this.updateHandler);
 
@@ -98,6 +102,13 @@ var InputElementView = Backbone.View.extend({
       onChange: function (newValue, quinn) { valueElement.text(newValue); },
       onSetup:  function (value, quinn)    { valueElement.text(value);    }
     });
+
+    // EVENTS.
+
+    this.element.
+      delegate('.reset',    'click',     this.resetValue).
+      delegate('.decrease', 'mousedown', this.beginStepDown).
+      delegate('.increase', 'mousedown', this.beginStepUp);
 
     return this;
   },
@@ -208,5 +219,41 @@ var InputElementView = Backbone.View.extend({
     if (this.model.get('has_flash_movie')) {
       flowplayer('a.player', '/flash/flowplayer-3.2.6.swf');
     }
+  },
+
+  /**
+   * ## Event Handlers
+   */
+
+  /**
+   * Resets the value of the slider to it's original value.
+   */
+  resetValue: function () {
+    this.quinn.setValue(this.model.get('start_value'));
+  },
+
+  /**
+   * Triggered when the users mouses-down on the decrease button. Reduces the
+   * slider value by one step increment. If after HOLD_ACCELERATE ms the button
+   * is still being held down, the slider value will continue to be decreased
+   * until either the minimum value is reached, or the user lifts the button.
+   */
+  beginStepDown: function () {
+    this.quinn.stepDown();
+  },
+
+  /**
+   * Triggered when the users mouses-down on the increase button. Increases
+   * the slider value by one step increment. If after HOLD_ACCELERATE ms the
+   * button is still being held down, the slider value will continue to be
+   * decreased until either the minimum value is reached, or the user lifts
+   * the button.
+   */
+  beginStepUp: function () {
+    this.quinn.stepUp();
   }
 });
+
+// The number of milliseconds which pass before stepping up and down values
+// should begin being repeated.
+InputElementView.HOLD_ACCELERATE = 125;

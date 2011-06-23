@@ -126,7 +126,7 @@ var InputElementList = Backbone.Collection.extend({
     // inputElementView.bind('show', $.proxy(this.handleInputElementInfoBoxShowed, this));
     
     this.inputElementViews[inputElement.id] = inputElementView;
-    inputElementView.sliderView.bind("change", $.proxy(this.handleUpdate, this));
+    inputElementView.bind("change", $.proxy(this.handleUpdate, this));
     this.initShareGroup(inputElement);
   },
   

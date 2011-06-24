@@ -40,6 +40,10 @@ class PredictionValuesController < BaseController
     find_model
   end
   
+  def show
+    find_model
+  end
+  
   def find_model
     if params[:version_id]
       @version = Version.find(params[:version_id])

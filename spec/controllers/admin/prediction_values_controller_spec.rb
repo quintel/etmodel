@@ -2,11 +2,10 @@ require 'spec_helper'
 
 describe Admin::PredictionValuesController do
   render_views
-  let!(:admin) { Factory :admin }
   let!(:prediction_value) { Factory :prediction_value }
   
   before do
-    login_as(admin)
+    controller.class.skip_before_filter :restrict_to_admin
   end
   
 
@@ -22,7 +21,7 @@ describe Admin::PredictionValuesController do
   describe "POST create" do
     before do
       @old_prediction_value_count = PredictionValue.count
-      post :create, :predictionvalue => Factory.attributes_for(:prediction_value)
+      post :create, :prediction_value => Factory.attributes_for(:prediction_value)
     end
         
     it "should create a new prediction_value" do

@@ -1,4 +1,19 @@
 var Metric = {
+  test_parsed_unit : function(value, unit, expected_result) {
+    var result = Metric.parsed_unit(value, unit);
+    var failed_string = (expected_result == result) ? "" : 'FAILED: '
+    console.log(failed_string+""+value+" "+unit+" => "+ result +"(expected: "+expected_result+")")
+  },
+
+  suite_parsed_unit : function() {
+    this.test_parsed_unit(     1, 'PJ', 'PJ') ;
+    this.test_parsed_unit(   100, 'PJ', 'PJ') ;
+    this.test_parsed_unit(  1000, 'PJ', 'PJ') ;
+    this.test_parsed_unit(  5000, 'PJ', 'PJ') ;
+    this.test_parsed_unit( 10000, 'PJ', 'PJ') ;
+    this.test_parsed_unit(100000, 'PJ', 'PJ') ;
+  },
+
   parsed_unit : function(value, unit) {
     var start_scale; 
 
@@ -102,5 +117,4 @@ var Metric = {
 
     return I18n.t("units." + unit + "." + symbol);
   }
-  
 }

@@ -3,7 +3,16 @@
  * Controls the view of a single input element.
  */
 var InputElementView = Backbone.View.extend({
+  events: {
+    'click     .reset':     'resetValue',
+    'mousedown .decrease':  'beginStepDown',
+    'mousedown .increase':  'beginStepUp',
+    'click     .show-info': 'toggleInfoBox'
+  },
+
   initialize: function (options) {
+    Backbone.View.prototype.initialize.call(this, options);
+
     _.bindAll(this, 'updateHandler', 'resetValue', 'toggleInfoBox',
                     'beginStepDown', 'beginStepUp',
                     'quinnOnChange', 'quinnOnComplete');
@@ -124,14 +133,6 @@ var InputElementView = Backbone.View.extend({
 
     // Need to do this manually, since it needs this.quinn to be set.
     this.quinnOnChange(this.quinn.value, this.quinn);
-
-    // EVENTS.
-
-    this.el.
-      delegate('.reset',     'click',     this.resetValue).
-      delegate('.decrease',  'mousedown', this.beginStepDown).
-      delegate('.increase',  'mousedown', this.beginStepUp).
-      delegate('.show-info', 'click',     this.toggleInfoBox);
 
     return this;
   },

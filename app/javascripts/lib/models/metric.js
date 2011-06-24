@@ -36,9 +36,12 @@ var Metric = {
     return this.scaled(value, start_scale, target_scale, max_scale)[1];
   },
 
-  round_number : function(value, round) {
-    var rounded = Math.pow(10, round);
-    return Math.round(value* (rounded))/rounded;
+  /*
+   * Doesn't add trailing zeros. Let's use sprintf.js in case
+   */
+  round_number : function(value, precision) {
+    var rounded = Math.pow(10, precision);
+    return Math.round(value * (rounded)) / rounded;
   },
 
   calculate_performance : function(now, fut) {
@@ -56,7 +59,9 @@ var Metric = {
    * 1000 ^ 2 = millions
    * etc.
    *
-   * @param scale [Float] The value that must be translated into a word
+   * @param scale [Float] The scale that must be translated into a word
+   * @param unit [String] The unit - currently {currency|joules|nounit|ton}
+   * Add other units on config/locales/{en|nl}.yml
    */
   scaling_in_words : function(scale, unit) {
     var scale_symbols = {
@@ -68,7 +73,9 @@ var Metric = {
       "5" : 'quadrillions',
       "6" : 'quintillions'
     };
-    return I18n.t("units."+unit+'.'+scale_symbols[""+scale]);
+    var symbol = scale_symbols["" + scale];
+
+    return I18n.t("units." + unit + "." + symbol);
   }
   
 }

@@ -1,4 +1,29 @@
 var Metric = {
+  parsed_unit : function(value, unit) {
+    var start_scale; 
+
+    if (unit == "MT") {
+      start_scale = 2;
+    } else {
+      start_scale = 3;
+    }
+
+    var scale = Metric.scaled_scale(value, start_scale);
+
+    if (unit == 'PJ') {
+      if (scale >= 3 && scale < 5) scale = 3;
+      return Metric.scaling_in_words(scale, 'joules');
+    } else if (unit == 'MT') {
+      return Metric.scaling_in_words(scale, 'ton');
+    } else if (unit == 'EUR') {
+      return Metric.scaling_in_words(scale, 'currency');
+    } else if (unit == '%') {
+      return '';
+    } else {
+      return Metric.scaling_in_words(scale, unit);
+    }
+  },
+
   scaled : function(value, start_scale, target_scale, max_scale) {
     var scale = start_scale || 0;
     var target = target_scale || null;

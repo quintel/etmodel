@@ -218,7 +218,8 @@ class Setting
     {
       :country  => country,
       :region   => region,
-      :end_year => end_year
+      :end_year => end_year,
+      :scenario_id => scenario_id
     }
   end
 end

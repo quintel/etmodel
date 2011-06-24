@@ -53,20 +53,19 @@ var ConstraintView = Backbone.View.extend({
   format_result : function() {
     var result = this.model.get('result');
     var key = this.model.get('key');
-    var result_rounded = Metric.round_number(result, 2);
 
     if (key == 'total_primary_energy' ) 
       return this.format_percentage(result, true);
     else if (key == 'co2_reduction' )
       return this.format_percentage(result, true);
     else if (key == 'net_energy_import') 
-      return this.format_percentage(result_rounded); // TODO add :signed => false
+      return this.format_percentage(result, false, 1);
     else if (key == 'renewable_percentage') 
-      return this.format_percentage(result); // TODO add :signed => false
+      return this.format_percentage(result);
     else if (key == 'total_energy_cost')
       return this.format_with_prefix(Metric.round_number(result, 1), '&euro;'); // Metric.currency((result / BILLIONS))
     else if (key == 'not_shown') // bio_footprint actually
-      return this.format_with_suffix(result_rounded,'x'+ App.settings.get("country").toUpperCase());
+      return this.format_with_suffix(Metric.round_number(result, 1),'x'+ App.settings.get("country").toUpperCase());
     else if (key == 'targets_met') 
       return null; //Metric.out_of(result, Current.gql.policy.goals.length)
     else if (key == 'score')
@@ -86,9 +85,10 @@ var ConstraintView = Backbone.View.extend({
   /**
    * If the precentage is signed then a + should appear when a number is positive
    */
-     format_percentage : function(value, signed) {
-    value = Metric.round_number(value * 100, 1);
-    if ( (signed != undefined || signed != null) && (value > 0.0)) { 
+  format_percentage : function(value, signed, precision) {
+    precision = precision || 1;       
+    value = Metric.round_number(value * 100, precision);
+    if ( signed && (value > 0.0)) { 
       value = "+"+value;
     };
     return this.format_with_suffix(value, '%');

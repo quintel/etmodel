@@ -132,7 +132,7 @@ window.AppView = Backbone.View.extend({
   handleInputElementsUpdate:function() {
     var func = $.proxy(this.doUpdateRequest, this);
     var lockable_function = function() { LockableFunction.deferExecutionIfLocked('update', func); };
-    Util.cancelableAction('update',  lockable_function, {'sleepTime':500});
+    Util.cancelableAction('update',  lockable_function, {'sleepTime': 100});
   },
   
   

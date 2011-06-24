@@ -54,24 +54,29 @@ var ConstraintView = Backbone.View.extend({
     var result = this.model.get('result');
     var key = this.model.get('key');
 
-    if (key == 'total_primary_energy' ) 
-      return this.format_percentage(result, true);
-    else if (key == 'co2_reduction' )
-      return this.format_percentage(result, true);
-    else if (key == 'net_energy_import') 
-      return this.format_percentage(result, false, 1);
-    else if (key == 'renewable_percentage') 
-      return this.format_percentage(result);
-    else if (key == 'total_energy_cost')
-      return this.format_with_prefix(Metric.round_number(result, 1), '&euro;'); // Metric.currency((result / BILLIONS))
-    else if (key == 'not_shown') // bio_footprint actually
-      return this.format_with_suffix(Metric.round_number(result, 1),'x'+ App.settings.get("country").toUpperCase());
-    else if (key == 'targets_met') 
-      return null; //Metric.out_of(result, Current.gql.policy.goals.length)
-    else if (key == 'score')
-      return parseInt(result,10);
-    else
-      return result;
+    switch(key) {
+      case 'total_primary_energy':
+        return this.format_percentage(result, true);
+      case 'co2_reduction':
+        return this.format_percentage(result, true);
+      case 'net_energy_import':
+        return this.format_percentage(result, false, 1);
+      case 'renewable_percentage':
+        return this.format_percentage(result);
+      case 'total_energy_cost':
+        return this.format_with_prefix(Metric.round_number(result, 1), '&euro;');
+        // Metric.currency((result / BILLIONS))
+      case 'not_shown':
+        // bio_footprint actually
+        return this.format_with_suffix(Metric.round_number(result, 1),'x'+ App.settings.get("country").toUpperCase());
+      case 'targets_met':
+        //Metric.out_of(result, Current.gql.policy.goals.length)
+        return null;
+      case 'score':
+        return parseInt(result,10);
+      default:
+        return result;
+    }
   },
 
   format_with_prefix : function(value, prefix) {

@@ -57,7 +57,7 @@ var InputElement = Backbone.Model.extend({
 
   setDirty:function(dirty) {
     this.dirty = dirty;
-  },
+  }
 });
 
 

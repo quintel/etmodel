@@ -4,8 +4,9 @@
  */
 var InputElementView = Backbone.View.extend({
   initialize: function (options) {
-    _.bindAll(this, 'updateHandler', 'resetValue',
-                    'beginStepDown', 'beginStepUp', 'toggleInfoBox');
+    _.bindAll(this, 'updateHandler', 'resetValue', 'toggleInfoBox',
+                    'beginStepDown', 'beginStepUp',
+                    'quinnOnChange', 'quinnOnComplete');
 
     this.model       = this.options.model;
     this.element     = this.options.element;
@@ -106,21 +107,6 @@ var InputElementView = Backbone.View.extend({
 
     // INITIALIZATION.
 
-    // The Quinn onChange event is fired whenever the user moves the slider
-    // but not until the onComplete event is fired has the user _finished_.
-    // onChange is for updating the UI only, onComplete is where persistance
-    // should be. onChange is also fired once when the is initialized.
-    quinnOnChange = _.bind(function (newValue, quinn) {
-      this.setTransientValue(newValue, true);
-    }, this);
-
-    // Fired once the user has finished editing the value.
-    quinnOnComplete = _.bind(function (newValue, quinn) {
-      this.model.set({ user_value: newValue });
-      this.checkMunicipalityNotice();
-      this.trigger('change');
-    }, this);
-
     // new $.Quinn is an alternative to $(...).quinn(), and allows us to
     // easily keep hold of the Quinn instance.
     this.quinn = new $.Quinn(quinnElement, {
@@ -132,10 +118,13 @@ var InputElementView = Backbone.View.extend({
       disable:    this.model.get('disabled'),
 
       // Callbacks.
-      onSetup:    quinnOnChange,
-      onChange:   quinnOnChange,
-      onComplete: quinnOnComplete
+      onChange:   this.quinnOnChange,
+      onComplete: this.quinnOnComplete
     });
+
+    // Need to do this manually, since setTransientValue needs this.quinn to
+    // have been set.
+    this.quinnOnChange(this.quinn.value, this.quinn);
 
     // EVENTS.
 
@@ -341,6 +330,28 @@ var InputElementView = Backbone.View.extend({
    */
   toggleInfoBox: function () {
     this.element.toggleClass('info-box-visible');
+  },
+
+  /**
+   * Used as the Quinn onComplete callback. Updates the UI.
+   *
+   * The Quinn onChange event is fired whenever the user moves the slider
+   * but not until the onComplete event is fired has the user _finished_.
+   * onChange is for updating the UI only, onComplete is where persistance
+   * should be. onChange is also fired once when the is initialized.
+   */
+  quinnOnChange: function (newValue, quinn) {
+    this.setTransientValue(newValue, true);
+  },
+
+  /**
+   * Used as the Quinn onComplete callback. Takes care of setting the value
+   * back to the model.
+   */
+  quinnOnComplete: function (newValue, quinn) {
+    this.model.set({ user_value: newValue });
+    this.checkMunicipalityNotice();
+    this.trigger('change');
   },
 
   // ## Pseudo-Private Methods

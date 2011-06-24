@@ -1,5 +1,9 @@
 //= require <jqplot>
 
+
+// Needed to make IE work
+//= require <util/json2.js>
+
 //= require <backbone-0.3.3-min>
 
 //= require <qislider>

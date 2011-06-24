@@ -98,16 +98,14 @@ var Chart = Backbone.Model.extend({
     return _.map(this.series, function(serie) { return serie.result_pairs(); });
   },
   non_target_series : function() {
-    return this.series
-      .reject(function(serie) { return serie.get('is_target'); });
+    return this.series.reject(function(serie) { return serie.get('is_target'); });
   },
   target_series : function() {
-    return this.series
-      .select(function(serie) { return serie.get('is_target'); });
+    return this.series.select(function(serie) { return serie.get('is_target'); });
   },
   // @return Array of present and future target
   target_results : function() {
-    return _.flatten(this.target_series().map(function(serie) { return serie.result()[1][1]; })); 
+    return _.flatten(_.map(this.target_series(), function(serie) { return serie.result()[1][1]; })); 
   },
   // @return Array of hashes {label, present_value, future_value}
   series_hash : function() {

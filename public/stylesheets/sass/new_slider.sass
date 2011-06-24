@@ -20,7 +20,8 @@ $slider-box-height: 22px
     // Clearfix.
     overflow: auto
 
-  label, .reset, .decrease, .quinn, .increase, .value, .show-info
+  label, .reset, .decrease, .quinn, .increase, output, .show-info
+    display: block
     float: left
     min-height: $slider-box-height
     margin-bottom: 5px
@@ -55,7 +56,7 @@ $slider-box-height: 22px
   .show-info
     @include input-slider-button(90px)
 
-  .value
+  output
     text-align: right
     width: 78px
 
@@ -75,7 +76,7 @@ $slider-box-height: 22px
       display: block
 
   // Adjustment to vertical alignment of label and value text.
-  label, .value
+  label, output
     font-size: 12px
     padding-top: 1px
     min-height: $slider-box-height - 1px

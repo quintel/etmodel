@@ -95,7 +95,7 @@ var InputElementView = Backbone.View.extend({
     wrapperElement.append(this.increaseElement);
 
     // Displays the current value to the user.
-    this.valueElement = $('<div class="value"></div>');
+    this.valueElement = $('<output></output>');
     wrapperElement.append(this.valueElement);
 
     // The help / info button.
@@ -379,7 +379,8 @@ var InputElementView = Backbone.View.extend({
   // ## Pseudo-Private Methods
 
   /**
-   * Used to format values in the .value div. Memoized as this.formatValue.
+   * Used to format values in the output element. Memoized as
+   * this.formatValue.
    */
   __getFormatter: function () {
     var mStep     = this.model.get('step_value'),

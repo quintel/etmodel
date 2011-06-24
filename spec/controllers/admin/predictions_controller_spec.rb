@@ -2,11 +2,10 @@ require 'spec_helper'
 
 describe Admin::PredictionsController do
   render_views
-  let!(:admin) { Factory :admin }
   let!(:prediction) { Factory :prediction }
   
   before do
-    login_as(admin)
+    controller.class.skip_before_filter :restrict_to_admin
   end
   
   describe "GET index" do

@@ -9,7 +9,7 @@ var InputElementView = Backbone.View.extend({
                     'quinnOnChange', 'quinnOnComplete');
 
     this.model       = this.options.model;
-    this.element     = this.options.element;
+    this.el          = this.options.el;
     this.formatValue = this.__getFormatter();
 
     // Keeps track of intervals used to repeat stepDown and stepUp
@@ -31,7 +31,7 @@ var InputElementView = Backbone.View.extend({
                      this.model.get("input_element_type") == "fixed_share",
       'formatter':   this.getFormatter(),
       'precision':   this.getPrecision(),
-      'element':     this.element,
+      'element':     this.el,
       'infoBox':     { 'disableDataBox': true }
     };
 
@@ -65,7 +65,7 @@ var InputElementView = Backbone.View.extend({
         wrapperElement = $('<div class="slider-controls"></div>'),
 
         // Need to keep hold of this to add the text to the new info box...
-        description = this.element.find('.info-box .text').text(),
+        description = this.el.find('.info-box .text').text(),
 
         quinnOnChange, quinnOnComplete;
 
@@ -73,8 +73,8 @@ var InputElementView = Backbone.View.extend({
 
     // Start by removing the contents of the existing element, so that we
     // may add our own.
-    this.element.empty();
-    this.element.addClass('new-input-slider');
+    this.el.empty();
+    this.el.addClass('new-input-slider');
 
     // The label.
     wrapperElement.append(
@@ -102,8 +102,8 @@ var InputElementView = Backbone.View.extend({
     wrapperElement.append('<div class="show-info"></div>');
 
     // Finally, the help / info box itself.
-    this.element.append(wrapperElement);
-    this.element.append($('<div class="info"></div>').text(description));
+    this.el.append(wrapperElement);
+    this.el.append($('<div class="info"></div>').text(description));
 
     // INITIALIZATION.
 
@@ -127,7 +127,7 @@ var InputElementView = Backbone.View.extend({
 
     // EVENTS.
 
-    this.element.
+    this.el.
       delegate('.reset',     'click',     this.resetValue).
       delegate('.decrease',  'mousedown', this.beginStepDown).
       delegate('.increase',  'mousedown', this.beginStepUp).
@@ -161,7 +161,7 @@ var InputElementView = Backbone.View.extend({
   },
 
   set_full_label: function (text) {
-    this.element.find(".label").html(text);
+    this.el.find(".label").html(text);
   },
 
   /**
@@ -328,7 +328,7 @@ var InputElementView = Backbone.View.extend({
    * Toggles display of the slider information box.
    */
   toggleInfoBox: function () {
-    this.element.toggleClass('info-box-visible');
+    this.el.toggleClass('info-box-visible');
   },
 
   /**

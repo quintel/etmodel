@@ -65,12 +65,12 @@ var Chart = Backbone.Model.extend({
   results : function(exclude_target) {
     var series;
     if (exclude_target == undefined || exclude_target == null){
-      series =  this.series;
+      series =  this.series.toArray();
     }
     else{
       series =  this.non_target_series();
     }
-    return _.map(series, function(serie) { return serie.result(); });  
+    return _(series).map(function(serie) { return serie.result(); });  
   },
 
   colors : function() {
@@ -95,7 +95,7 @@ var Chart = Backbone.Model.extend({
   },
   // @return [[Float,Float]] Array of present/future values [Float,Float]
   value_pairs : function() {
-    return _.map(this.series, function(serie) { return serie.result_pairs(); });
+    return this.series.map(function(serie) { return serie.result_pairs(); });
   },
   non_target_series : function() {
     return this.series.reject(function(serie) { return serie.get('is_target'); });

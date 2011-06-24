@@ -122,8 +122,7 @@ var InputElementView = Backbone.View.extend({
       onComplete: this.quinnOnComplete
     });
 
-    // Need to do this manually, since setTransientValue needs this.quinn to
-    // have been set.
+    // Need to do this manually, since it needs this.quinn to be set.
     this.quinnOnChange(this.quinn.value, this.quinn);
 
     // EVENTS.
@@ -349,6 +348,29 @@ var InputElementView = Backbone.View.extend({
    * back to the model.
    */
   quinnOnComplete: function (newValue, quinn) {
+    if (! this.model.get('disabled')) {
+      // Disable min / max button if the input is set to it's lowest or
+      // highest permitted value, and the reset button if the current
+      // slider value is the original value.
+
+      if (newValue === this.quinn.range[0]) {
+        this.disableButton('decrease');
+        this.enableButton('increase');
+      } else if (newValue === this.quinn.range[1]) {
+        this.disableButton('increase');
+        this.enableButton('decrease');
+      } else {
+        this.enableButton('decrease');
+        this.enableButton('increase');
+      }
+
+      if (newValue === this.model.get('start_value')) {
+        this.disableButton('reset');
+      } else {
+        this.enableButton('reset');
+      }
+    }
+
     this.model.set({ user_value: newValue });
     this.checkMunicipalityNotice();
     this.trigger('change');

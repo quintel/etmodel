@@ -136,7 +136,7 @@ var ChartList = Backbone.Collection.extend({
   change : function(chart) {
     var old_chart = this.first();
     if (old_chart !== undefined) {
-      this.remove(old_chart);      
+      this.remove(old_chart);
     }
     this.add(chart);
   },
@@ -158,8 +158,8 @@ var ChartList = Backbone.Collection.extend({
       // update chart information link
       $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/" + chart_id);
       // update the position of the output_element_actions
-      $("#output_element_actions").removeClass()
-      $("#output_element_actions").addClass(charts.first().get("type"))
+      $("#output_element_actions").removeClass();
+      $("#output_element_actions").addClass(charts.first().get("type"));
     });
   }
 });

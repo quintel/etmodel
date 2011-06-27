@@ -28,36 +28,15 @@ var InputElementView = Backbone.View.extend({
 
     this.model.bind('change', this.updateFromModel);
 
-    var lSliderOptions = {
-      'reset_value': this.model.get('start_value'),
-      'value':       this.model.get('user_value'),
-      'step_value':  this.model.get('step_value'),
-      'min_value':   this.model.get('min_value'),
-      'max_value':   this.model.get('max_value'),
-      'name':        this.model.get('translated_name'),
-      'share_group': this.model.get('share_group'),
-      'disabled':    this.model.get('disabled'),
-      'fixed':       this.model.get("input_element_type") == "fixed" ||
-                     this.model.get("input_element_type") == "fixed_share",
-      'formatter':   this.getFormatter(),
-      'precision':   this.getPrecision(),
-      'element':     this.el,
-      'infoBox':     { 'disableDataBox': true }
-    };
-
-    this.sliderView = new AdvancedSliderView(lSliderOptions);
-
-    this.set_full_label(this.model.get('label'));
-
     // make the toggle red if it's semi unadaptable and in a municipality.
     if (App.municipalityController.isMunicipality() &&
                 this.model.get("semi_unadaptable")) {
 
-      this.sliderView.slider.toggleButton.element.addClass('municipality-toggle');
+      // TODO Needs a custom Quinn sprite to do this on the new slider.
+      // this.sliderView.slider.toggleButton.element.addClass('municipality-toggle');
     }
 
     this.render();
-    this.initEventListeners();
 
     if (this.model.get('share_group')) {
       InputElement.Balancer.
@@ -173,19 +152,6 @@ var InputElementView = Backbone.View.extend({
   },
 
   /**
-   * Init event listeners.
-   */
-  initEventListeners: function () {
-    this.sliderView.slider.sliderVO.bind('update', $.proxy(function() {
-      this.model.set({ 'user_value': this.sliderView.slider.getValue() });
-    }, this));
-
-    this.sliderView.getInfoBox().bind('show', this.inputElementInfoBoxShown);
-    this.sliderView.bind('change', this.checkMunicipalityNotice);
-    this.sliderView.slider.bind('change', this.handleQuinnUpdate);
-  },
-
-  /**
    * Returns the number of decimal places used when formatting the value
    * shown for the input element.
    */
@@ -242,9 +208,6 @@ var InputElementView = Backbone.View.extend({
     if (! this.disableUpdate) {
       return;
     }
-
-    this.sliderView.setValue(
-      this.model.get('user_value'), { noEvent: true });
 
     this.quinn.setValue(this.model.get('user_value'));
 

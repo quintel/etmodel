@@ -65,6 +65,7 @@ function InitializeVerticalStackedBar(id,series,ticks,filler,show_point_label,un
         },
         pointLabels:{
           show: show_point_label,
+          stackedValue: true,
           formatString: '%.1f'
         },
 

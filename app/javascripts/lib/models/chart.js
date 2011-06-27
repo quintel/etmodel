@@ -65,12 +65,12 @@ var Chart = Backbone.Model.extend({
   results : function(exclude_target) {
     var series;
     if (exclude_target == undefined || exclude_target == null){
-      series =  this.series;
+      series =  this.series.toArray();
     }
     else{
       series =  this.non_target_series();
     }
-    return series.map(function(serie) { return serie.result(); });  
+    return _(series).map(function(serie) { return serie.result(); });  
   },
 
   colors : function() {
@@ -98,16 +98,14 @@ var Chart = Backbone.Model.extend({
     return this.series.map(function(serie) { return serie.result_pairs(); });
   },
   non_target_series : function() {
-    return this.series
-      .reject(function(serie) { return serie.get('is_target'); });
+    return this.series.reject(function(serie) { return serie.get('is_target'); });
   },
   target_series : function() {
-    return this.series
-      .select(function(serie) { return serie.get('is_target'); });
+    return this.series.select(function(serie) { return serie.get('is_target'); });
   },
   // @return Array of present and future target
   target_results : function() {
-    return _.flatten(this.target_series().map(function(serie) { return serie.result()[1][1]; })); 
+    return _.flatten(_.map(this.target_series(), function(serie) { return serie.result()[1][1]; })); 
   },
   // @return Array of hashes {label, present_value, future_value}
   series_hash : function() {
@@ -136,7 +134,7 @@ var ChartList = Backbone.Collection.extend({
   change : function(chart) {
     var old_chart = this.first();
     if (old_chart !== undefined) {
-      this.remove(old_chart);      
+      this.remove(old_chart);
     }
     this.add(chart);
   },
@@ -158,8 +156,8 @@ var ChartList = Backbone.Collection.extend({
       // update chart information link
       $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/" + chart_id);
       // update the position of the output_element_actions
-      $("#output_element_actions").removeClass()
-      $("#output_element_actions").addClass(charts.first().get("type"))
+      $("#output_element_actions").removeClass();
+      $("#output_element_actions").addClass(charts.first().get("type"));
     });
   }
 });

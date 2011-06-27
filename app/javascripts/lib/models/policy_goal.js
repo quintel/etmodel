@@ -10,7 +10,7 @@ var PolicyGoal = Backbone.Model.extend({
   
   // goal achieved? true/false
   success_value : function() {
-    var res = this.success_query.result()[0][1];
+    var res = this.success_query.result()[1][1];
     return res;
   },
   

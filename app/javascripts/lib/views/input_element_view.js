@@ -134,8 +134,8 @@ var InputElementView = Backbone.View.extend({
       disable:    this.model.get('disabled'),
 
       // Callbacks.
-      onChange:   this.quinnOnChange,
-      onComplete: this.quinnOnComplete
+      onChange: this.quinnOnChange,
+      onCommit: this.quinnOnComplete
     });
 
     // Need to do this manually, since it needs this.quinn to be set.
@@ -268,7 +268,7 @@ var InputElementView = Backbone.View.extend({
   /**
    * Updates elements of the UI to show the new slider value, but does _not_
    * set the value on the model (which is done later). The value is set on
-   * the model as part of the Quinn onComplete callback (see `render`).
+   * the model as part of the Quinn onCommit callback (see `render`).
    *
    * The `fromSlider` argument indicates whether the new value has come from
    * the Quinn slider, in which case we can trust the value to fit the step,
@@ -323,11 +323,11 @@ var InputElementView = Backbone.View.extend({
   },
 
   /**
-   * Used as the Quinn onComplete callback. Updates the UI.
+   * Used as the Quinn onCommit callback. Updates the UI.
    *
    * The Quinn onChange event is fired whenever the user moves the slider
-   * but not until the onComplete event is fired has the user _finished_.
-   * onChange is for updating the UI only, onComplete is where persistance
+   * but not until the onCommit event is fired has the user _finished_.
+   * onChange is for updating the UI only, onCommit is where persistance
    * should be. onChange is also fired once when the is initialized.
    */
   quinnOnChange: function (newValue, quinn) {
@@ -335,7 +335,7 @@ var InputElementView = Backbone.View.extend({
   },
 
   /**
-   * Used as the Quinn onComplete callback. Takes care of setting the value
+   * Used as the Quinn onCommit callback. Takes care of setting the value
    * back to the model.
    */
   quinnOnComplete: function (newValue, quinn) {

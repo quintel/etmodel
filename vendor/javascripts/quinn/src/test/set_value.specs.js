@@ -44,17 +44,17 @@ QUnit.specify('', function () {
                 assert(onChangeRun).isTrue();
             });
 
-            it('should run the onComplete callback', function () {
-                var onCompleteRun = false;
+            it('should run the onCommit callback', function () {
+                var onCommitRun = false;
 
                 slider = new $.Quinn(wrapper, {
-                    onComplete: function () {
-                        onCompleteRun = true;
+                    onCommit: function () {
+                        onCommitRun = true;
                     }
                 });
 
                 slider.setValue(50);
-                assert(onCompleteRun).isTrue();
+                assert(onCommitRun).isTrue();
             });
         }); // when setting a value
 
@@ -109,12 +109,12 @@ QUnit.specify('', function () {
         }); // when the value does not match the step
 
         describe('when the onChange callback returns false', function () {
-            var onCompleteRun;
+            var onCommitRun;
 
             before(function () {
                 slider = new $.Quinn(wrapper, {
-                    onChange:   function () { return false },
-                    onComplete: function () { onCompleteRun = true; }
+                    onChange: function () { return false },
+                    onCommit: function () { onCommitRun = true; }
                 });
             });
 
@@ -127,16 +127,16 @@ QUnit.specify('', function () {
                 assert(slider.previousValues.length).equals(0);
             });
 
-            it('should not run onComplete', function () {
+            it('should not run onCommit', function () {
                 slider.setValue(5);
-                assert(onCompleteRun).isFalse();
+                assert(onCommitRun).isFalse();
             });
         }); // when the onChange callback returns false
 
-        describe('when the onComplete callback returns false', function () {
+        describe('when the onCommit callback returns false', function () {
             before(function () {
                 slider = new $.Quinn(wrapper, {
-                    onComplete: function () { return false }
+                    onCommit: function () { return false }
                 });
             });
 
@@ -148,15 +148,15 @@ QUnit.specify('', function () {
             it('should not change previousValues', function () {
                 assert(slider.previousValues.length).equals(0);
             });
-        }); // when the onComplete callback returns false
+        }); // when the onCommit callback returns false
 
         describe('when the value is unchanged', function () {
-            var onChangeRun, onCompleteRun;
+            var onChangeRun, onCommitRun;
 
             before(function () {
                 slider = new $.Quinn(wrapper, {
-                    onChange:   function () { onChangeRun   = true },
-                    onComplete: function () { onCompleteRun = true; }
+                    onChange: function () { onChangeRun = true },
+                    onCommit: function () { onCommitRun = true; }
                 });
 
                 slider.setValue(0);
@@ -170,8 +170,8 @@ QUnit.specify('', function () {
                 assert(onChangeRun).isFalse();
             });
 
-            it('should not run onComplete', function () {
-                assert(onCompleteRun).isFalse();
+            it('should not run onCommit', function () {
+                assert(onCommitRun).isFalse();
             });
         }); // when the value is unchanged
 

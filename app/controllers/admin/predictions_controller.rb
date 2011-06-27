@@ -42,21 +42,11 @@ class PredictionsController < BaseController
   
   
   def show
-    find_model
+    @prediction = Prediction.find(params[:id])
   end
 
   def edit
-    find_model
-  end
-
-  def find_model
-    if params[:version_id]
-      @version = Version.find(params[:version_id])
-      @prediction = @version.reify
-      flash[:notice] = "Revision"
-    else
-      @prediction = Prediction.find(params[:id])
-    end
+    @prediction = Prediction.find(params[:id])
   end
   
 end

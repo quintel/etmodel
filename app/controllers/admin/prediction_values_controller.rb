@@ -37,21 +37,12 @@ class PredictionValuesController < BaseController
   end
 
   def edit
-    find_model
+    @prediction_value = PredictionValue.find(params[:id])
   end
   
   def show
-    find_model
+    @prediction_value = PredictionValue.find(params[:id])
   end
   
-  def find_model
-    if params[:version_id]
-      @version = Version.find(params[:version_id])
-      @prediction_value = @version.reify
-      flash[:notice] = "Revision"
-    else
-      @prediction_value = PredictionValue.find(params[:id])
-    end
-  end
 end
 end

@@ -5,7 +5,6 @@ class PredictionValue < ActiveRecord::Base
   
   default_scope order('year')
   
-  validates_associated :prediction
-  validates_presence_of :year, :best , :message => "can't be blank"
+  validates_presence_of :prediction_id, :year, :best , :message => "can't be blank"
   
 end

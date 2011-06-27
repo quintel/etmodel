@@ -38,7 +38,6 @@
   height: 18px;
   float: left;
   position: relative;
-  width: 140px;
 }
 
 .quinn .bar .left, .quinn .bar .main, .quinn .bar .right,
@@ -118,15 +117,6 @@
   height: 18px;
   float: left;
   position: relative;
-
-  /* a slightly negative left margin allows the handle to "dangle" over the
-   * left of the slider bar */
-  /* margin-left: -144px; [> width(.bar) - width(.handle) / 4 <]*/
-
-  /* the full width should be the width of the slider bar, with a little
-   * added so as to allow part of the handle to "dangle" over the
-   * right of the slider bar */
-  /* width: 126px; [> width(.bar) - width(.handle) * 3/4 <]*/
 }
 
 .quinn .handle {

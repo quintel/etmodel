@@ -65,9 +65,12 @@ var InputElementList = Backbone.Collection.extend({
   model : InputElement,
 
   initialize : function() {
-    this.inputElements = {};
+    this.inputElements     = {};
     this.inputElementViews = {};
+
     this.shareGroups = {};
+    this.balancers   = {};
+
     this.openInputElementInfoBox;
   },
 
@@ -131,6 +134,8 @@ var InputElementList = Backbone.Collection.extend({
     
     this.inputElementViews[inputElement.id] = inputElementView;
     inputElementView.bind("change", $.proxy(this.handleUpdate, this));
+
+    return true;
     this.initShareGroup(inputElement);
   },
   
@@ -153,6 +158,9 @@ var InputElementList = Backbone.Collection.extend({
       var shareGroup = this.getOrCreateShareGroup(shareGroupKey);
       shareGroup.bind("slider_updated",$.proxy(function(){ inputElement.markDirty();},this)); //set all sliders from same sharegroup to dirty when one is touched
       shareGroup.addSlider(inputElementView.sliderView.sliderVO);
+
+      var balancer = this.getOrCreateBalancer(shareGroupKey);
+      balancer.add(inputElementView);
     }
   },
 
@@ -165,6 +173,14 @@ var InputElementList = Backbone.Collection.extend({
       this.shareGroups[shareGroup] = new SliderGroup({'total_value':100}); // add group if not created yet
     
     return this.shareGroups[shareGroup];
+  },
+
+  getOrCreateBalancer: function(name) {
+    if (! this.balancers.hasOwnProperty(name)) {
+      this.balancers[name] = new InputElementGroup({ max: 100 });
+    }
+
+    return this.balancers[name];
   },
 
   /**

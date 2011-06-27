@@ -4,8 +4,6 @@
 
 //= require <backbone-0.3.3-min>
 
-//= require <qislider>
-;
 //= require <jquery.quinn.js>
 
 //= require <init/always>

@@ -147,47 +147,6 @@ var InputElementView = Backbone.View.extend({
     buttonElement && buttonElement.removeClass('disabled');
   },
 
-  set_full_label: function (text) {
-    this.el.find(".label").html(text);
-  },
-
-  /**
-   * Returns the number of decimal places used when formatting the value
-   * shown for the input element.
-   */
-  getPrecision: function () {
-    console.log('DEPRECATION: use formatValue instead of getPrecision');
-
-    var lPrecisionStr = this.model.get('step_value').toString() + '';
-    lPrecision = lPrecisionStr.replace('.', '').length - 1;
-    return lPrecision;
-  },
-
-  /**
-   * Returns a formatter on basis of the step_value.
-   */
-  getFormatter: function () {
-    console.log('DEPRECATION: use formatValue instead of getFormatter');
-
-    switch (this.model.get('unit')) {
-      case "%":
-        return SliderFormatter.numberWithSymbolFactory('%');
-      case "#":
-        return SliderFormatter.numberWithSymbolFactory('#');
-      case "MW":
-        return SliderFormatter.numberWithSymbolFactory('MW');
-      case "km2":
-        return SliderFormatter.numberWithSymbolFactory('km2');
-      case "km":
-        return SliderFormatter.numberWithSymbolFactory('km');
-      case "x":
-        return SliderFormatter.numberWithSymbolFactory('x');
-
-      default:
-        return null;
-    }
-  },
-
   /**
    * This checks if the municipality message has been shown. It is has not
    * been shown, show it!

@@ -2,7 +2,7 @@ QUnit.specify('', function () {
     var wrapper = $('#slider'), slider;
 
     describe('stepUp', function () {
-        var wrapper = $('#slider'), slider, onChangeRun, onCompleteRun;
+        var wrapper = $('#slider'), slider, onChangeRun, onCommitRun;
 
         after(function () {
             wrapper.html('');
@@ -10,12 +10,12 @@ QUnit.specify('', function () {
 
         describe('When step: 1', function () {
             before(function () {
-                onChangeRun   = false;
-                onCompleteRun = false;
+                onChangeRun = false;
+                onCommitRun = false;
 
                 slider = new $.Quinn(wrapper, {
-                    onChange:   function () { onChangeRun   = true },
-                    onComplete: function () { onCompleteRun = true },
+                    onChange: function () { onChangeRun = true },
+                    onCommit: function () { onCommitRun = true },
                 });
             });
 
@@ -39,9 +39,9 @@ QUnit.specify('', function () {
                 assert(onChangeRun).isTrue();
             });
 
-            it('should run onComplete', function () {
+            it('should run onCommit', function () {
                 slider.stepUp();
-                assert(onCompleteRun).isTrue();
+                assert(onCommitRun).isTrue();
             });
         });
 
@@ -63,8 +63,8 @@ QUnit.specify('', function () {
 
         describe('When already at maximum value', function () {
             before(function () {
-                onChangeRun   = false;
-                onCompleteRun = false;
+                onChangeRun = false;
+                onCommitRun = false;
 
                 slider = new $.Quinn(wrapper, { value: 100 });
             });
@@ -79,9 +79,9 @@ QUnit.specify('', function () {
                 assert(onChangeRun).isFalse();
             });
 
-            it('should not run onComplete', function () {
+            it('should not run onCommit', function () {
                 slider.stepUp();
-                assert(onCompleteRun).isFalse();
+                assert(onCommitRun).isFalse();
             });
         });
 
@@ -98,8 +98,8 @@ QUnit.specify('', function () {
 
         describe('when the slider is disabled', function () {
             before(function () {
-                onChangeRun   = false;
-                onCompleteRun = false;
+                onChangeRun = false;
+                onCommitRun = false;
 
                 slider = new $.Quinn(wrapper, { disable: true });
             });
@@ -119,15 +119,15 @@ QUnit.specify('', function () {
                 assert(onChangeRun).isFalse();
             });
 
-            it('should not run onComplete', function () {
+            it('should not run onCommit', function () {
                 slider.stepUp();
-                assert(onCompleteRun).isFalse();
+                assert(onCommitRun).isFalse();
             });
         });
     });
 
     describe('stepDown', function () {
-        var wrapper = $('#slider'), slider, onChangeRun, onCompleteRun;
+        var wrapper = $('#slider'), slider, onChangeRun, onCommitRun;
 
         after(function () {
             wrapper.html('');
@@ -135,13 +135,13 @@ QUnit.specify('', function () {
 
         describe('When step: 1', function () {
             before(function () {
-                onChangeRun   = false;
-                onCompleteRun = false;
+                onChangeRun = false;
+                onCommitRun = false;
 
                 slider = new $.Quinn(wrapper, {
                     value:      100,
-                    onChange:   function () { onChangeRun   = true },
-                    onComplete: function () { onCompleteRun = true },
+                    onChange: function () { onChangeRun = true },
+                    onCommit: function () { onCommitRun = true },
                 });
             });
 
@@ -165,9 +165,9 @@ QUnit.specify('', function () {
                 assert(onChangeRun).isTrue();
             });
 
-            it('should run onComplete', function () {
+            it('should run onCommit', function () {
                 slider.stepDown();
-                assert(onCompleteRun).isTrue();
+                assert(onCommitRun).isTrue();
             });
         });
 
@@ -189,8 +189,8 @@ QUnit.specify('', function () {
 
         describe('When already at minumum value', function () {
             before(function () {
-                onChangeRun   = false;
-                onCompleteRun = false;
+                onChangeRun = false;
+                onCommitRun = false;
 
                 slider = new $.Quinn(wrapper);
             });
@@ -205,9 +205,9 @@ QUnit.specify('', function () {
                 assert(onChangeRun).isFalse();
             });
 
-            it('should not run onComplete', function () {
+            it('should not run onCommit', function () {
                 slider.stepDown();
-                assert(onCompleteRun).isFalse();
+                assert(onCommitRun).isFalse();
             });
         });
 
@@ -224,8 +224,8 @@ QUnit.specify('', function () {
 
         describe('when the slider is disabled', function () {
             before(function () {
-                onChangeRun   = false;
-                onCompleteRun = false;
+                onChangeRun = false;
+                onCommitRun = false;
 
                 slider = new $.Quinn(wrapper, { value: 100, disable: true });
             });
@@ -244,9 +244,9 @@ QUnit.specify('', function () {
                 assert(onChangeRun).isFalse();
             });
 
-            it('should not run onComplete', function () {
+            it('should not run onCommit', function () {
                 slider.stepDown();
-                assert(onCompleteRun).isFalse();
+                assert(onCommitRun).isFalse();
             });
         });
     });

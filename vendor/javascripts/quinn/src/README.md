@@ -31,13 +31,13 @@ open-sourced with their kind permission. Quinn is released under the
 Downloads
 ---------
 
-[Everything (0.2.1)][tarball]
+[Everything (0.3.0)][tarball]
 :   Tarball containing JS, CSS, and images
 
-[Development Version (0.2.1)][development-js]
+[Development Version (0.3.0)][development-js]
 :   13.3kb, JS only, Uncompressed with comments
 
-[Production Version (0.2.1)][production-js]
+[Production Version (0.3.0)][production-js]
 :   1.54kb, JS only, Minified and Gzipped
 
 Table of Contents
@@ -329,7 +329,7 @@ need to alter the CSS. For example:
 History
 -------
 
-#### Git Head (will be 0.3.0)
+#### 0.3.0 _June 27th, 2011_
 
 Events may be bound to the Quinn instance just like DOM events in jQuery
 using `bind`. The onComplete callback has been renamed onCommit.
@@ -385,7 +385,7 @@ Opera and Internet Explorer are not yet complete.
 [us]:             http://documentcloud.github.com/underscore
 [easing]:         http://gsgd.co.uk/sandbox/jquery/easing
 
-[tarball]:        https://github.com/antw/quinn/tarball/v0.2.1
+[tarball]:        https://github.com/antw/quinn/tarball/v0.3.0
 [development-js]: http://antw.github.com/quinn/jquery.quinn.js
 [production-js]:  http://antw.github.com/quinn/jquery.quinn.min.js
 

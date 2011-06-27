@@ -53,6 +53,7 @@ Etm::Application.routes.draw do
     resources :expert_predictions,
               :predictions,
               :prediction_values,
+              :prediction_measures,
               :input_elements, 
               :year_values, 
               :tabs, 
@@ -97,6 +98,7 @@ Etm::Application.routes.draw do
   end
   
   resources :predictions, :only => :index
+  resources :prediction_measures, :only => :index
   
 
   match '/select_movie/:id'                => 'pages#select_movie'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110623151450) do
+ActiveRecord::Schema.define(:version => 20110627113337) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -234,6 +234,18 @@ ActiveRecord::Schema.define(:version => 20110623151450) do
   create_table "policy_goals_root_nodes", :id => false, :force => true do |t|
     t.integer  "policy_goal_id"
     t.integer  "root_node_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prediction_measures", :force => true do |t|
+    t.integer  "prediction_id"
+    t.string   "name"
+    t.float    "impact"
+    t.float    "cost"
+    t.integer  "year_start"
+    t.string   "actor"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

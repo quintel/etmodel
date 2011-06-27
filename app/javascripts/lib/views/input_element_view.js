@@ -180,14 +180,9 @@ var InputElementView = Backbone.View.extend({
       this.model.set({ 'user_value': this.sliderView.slider.getValue() });
     }, this));
 
-    this.sliderView.getInfoBox().bind(
-      'show', $.proxy(this.handleInputElementInfoBoxShowed, this));
-
-    this.sliderView.bind(
-      'change', $.proxy(this.checkMunicipalityNotice, this));
-
-    this.sliderView.slider.bind(
-      'change', $.proxy(this.handleSliderUpdate, this));
+    this.sliderView.getInfoBox().bind('show', this.inputElementInfoBoxShown);
+    this.sliderView.bind('change', this.checkMunicipalityNotice);
+    this.sliderView.slider.bind('change', this.handleQuinnUpdate);
   },
 
   /**
@@ -260,7 +255,7 @@ var InputElementView = Backbone.View.extend({
    * Is called when then infobox is clicked.
    * @override
    */
-  handleInputElementInfoBoxShowed: function () {
+  inputElementInfoBoxShown: function () {
     this.trigger('show');
 
     if (this.model.get('has_flash_movie')) {

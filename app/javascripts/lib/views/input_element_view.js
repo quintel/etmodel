@@ -14,8 +14,9 @@ var InputElementView = Backbone.View.extend({
     Backbone.View.prototype.initialize.call(this, options);
 
     _.bindAll(this, 'updateFromModel', 'resetValue', 'toggleInfoBox',
-                    'beginStepDown', 'beginStepUp',
-                    'quinnOnChange', 'quinnOnComplete');
+                    'beginStepDown', 'beginStepUp', 'quinnOnChange',
+                    'quinnOnComplete', 'checkMunicipalityNotice',
+                    'inputElementInfoBoxShown');
 
     this.model       = this.options.model;
     this.el          = this.options.el;
@@ -224,20 +225,6 @@ var InputElementView = Backbone.View.extend({
       default:
         return null;
     }
-  },
-
-  /**
-   * When the user does something on a slider this handler is invoked.
-   */
-  handleSliderUpdate: function () {
-    this.disableUpdate = true;
-
-    this.model.set({ 'user_value': this.quinn.value });
-
-    this.sliderView.slider.setValue(
-      this.model.get('user_value'), { noEvent: true });
-
-    this.disableUpdate = false;
   },
 
   /**

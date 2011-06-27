@@ -67,7 +67,8 @@ open-sourced with their kind permission. Quinn is released under the
 
 <h4 id="callbacks">Callbacks</h4>
 
-<p><a href="#onsetup">onSetup</a>, <a href="#onchange">onChange</a>, <a href="#oncomplete">onComplete</a></p>
+<p><a href="#onsetup">onSetup</a>, <a href="#onbegin">onBegin</a>, <a href="#onchange">onChange</a>,
+<a href="#oncommit">onCommit</a>, <a href="#onbort">onAbort</a></p>
 
 <h4 id="themingtheming"><a href="#theming">Theming</a></h4>
 
@@ -189,6 +190,31 @@ pass <code>false</code> with the <strong>disable</strong> option:</p>
 callback functions which are supplied as part of the options object when
 creating the slider.</p>
 
+<p>When the user alters the slider position, the order of events firing is:</p>
+
+<ol>
+  <li><strong><a href="#onbegin">onBegin</a></strong>: Each time the user starts changing the slider value.</li>
+  <li><strong><a href="#onchange">onChange</a></strong>: Repeatedly as the user drags the handle to new
+positions.</li>
+  <li><strong><a href="#oncommit">onCommit</a></strong>: When the user releases the mouse button.</li>
+  <li><strong><a href="#onbort">onAbort</a></strong>: When the user releases the mouse button, and the
+onCommit callback returns false.</li>
+</ol>
+
+<p>In addition to supplying callbacks when initializing a slider, you may
+bind further callbacks to the Quinn instance:</p>
+
+<pre class="no-example"><code>var slider = new $.Quinn(element, options);
+
+slider.bind('change', function (value) {
+    console.log(value);
+});
+
+slider.bind('abort', function (value) {
+    console.log('Value reset to ' + value);
+});
+</code></pre>
+
 <h3 id="onsetup">onSetup <code>onSetup: function (currentValue, quinn)</code></h3>
 
 <p><strong>onSetup</strong> is run only once, immediately after the Quinn constructor
@@ -198,6 +224,12 @@ initialization may differ from the one given to the callback since the
 constructor adjusts the slider value to fit with the <strong>range</strong>,
 <strong>selectable</strong>, and <strong>step</strong> options. The value supplied to the
 callback is correct.</p>
+
+<h3 id="onbegin">onBegin <code>onBegin: function (currentValue, quinn)</code></h3>
+
+<p><strong>onBegin</strong> is fired as the user starts to adjust the slider value. This
+happens when they click on the slider bar, or on the handle <em>prior</em> to
+the slider being dragged to a new position.</p>
 
 <h3 id="onchange">onChange <code>onChange: function (newValue, quinn)</code></h3>
 
@@ -232,7 +264,7 @@ handle. This is perfect for “hooking” in to the slider to display the
 value elsewhere in your UI (such as the examples on this page), to
 update a graph in real-time, etc, but is not suitable for persisting the
 slider value to a server unless you like flooding your application with
-tens of HTTP requests per second. Use <strong>onComplete</strong> which is fired only
+tens of HTTP requests per second. Use <strong>onCommit</strong> which is fired only
 after the user has finished dragging the handle.</p>
 
 <p>Explicitly returning false in the callback will prevent the change.</p>
@@ -247,9 +279,9 @@ after the user has finished dragging the handle.</p>
 });
 </code></pre>
 
-<h3 id="oncomplete">onComplete <code>onComplete: function (newValue, quinn)</code></h3>
+<h3 id="oncommit">onCommit <code>onCommit: function (newValue, quinn)</code></h3>
 
-<p><strong>onComplete</strong> is similar to the to the <strong>onChange</strong> event in that it is
+<p><strong>onCommit</strong> is similar to the to the <strong>onChange</strong> event in that it is
 fired when the slider value is changed by a user. However, unlike
 <strong>onChange</strong> it is fired only after the user has <em>finished</em> changing the
 value. This is defined as clicking the slider bar to change the value,
@@ -258,7 +290,7 @@ or lifting the left mouse button after dragging the slider handle.</p>
 <pre><code>$('.slider').quinn({
     value: 25,
 
-    onComplete: function (newValue, slider) {
+    onCommit: function (newValue, slider) {
         // Disallow selecting a value over 50, but only
         // after the user has finished moving the slider.
         if (newValue &gt; 50) {
@@ -267,6 +299,13 @@ or lifting the left mouse button after dragging the slider handle.</p>
     }
 });
 </code></pre>
+
+<h3 id="onabort">onAbort <code>onAbort: function (restoredValue, quinn)</code></h3>
+
+<p>The <strong>onAbort</strong> event is fired once the user has finished adjusting the
+value (like <strong>onCommit</strong>) but the change failed either because the
+<strong>onCommit</strong> callback returned false, or the user set the slider back
+to it’s starting value.</p>
 
 <h2 id="theming">Theming</h2>
 
@@ -316,6 +355,11 @@ $('.slider').quinn({
 </code></pre>
 
 <h2 id="history">History</h2>
+
+<h4 id="git-head-will-be-030">Git Head (will be 0.3.0)</h4>
+
+<p>Events may be bound to the Quinn instance just like DOM events in jQuery
+using <code>bind</code>. The onComplete callback has been renamed onCommit.</p>
 
 <h4 id="june-14th-2011">0.2.1 <em>June 14th, 2011</em></h4>
 

@@ -58,6 +58,12 @@ var InputElementView = Backbone.View.extend({
     this.render();
     this.initEventListeners();
 
+    if (this.model.get('share_group')) {
+      InputElement.Balancer.
+        get(this.model.get('share_group'), { max: 100 }).
+        add(this);
+    }
+
     // Disable buttons?
     if (this.model.get('disabled')) {
       this.disableButton('reset');

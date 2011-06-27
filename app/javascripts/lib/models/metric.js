@@ -1,4 +1,44 @@
 var Metric = {
+  test_parsed_unit : function(value, unit, expected_result) {
+    var result = Metric.parsed_unit(value, unit);
+    var failed_string = (expected_result == result) ? "" : 'FAILED: '
+    console.log(failed_string+""+value+" "+unit+" => "+ result +"(expected: "+expected_result+")")
+  },
+
+  suite_parsed_unit : function() {
+    this.test_parsed_unit(     1, 'PJ', 'PJ') ;
+    this.test_parsed_unit(   100, 'PJ', 'PJ') ;
+    this.test_parsed_unit(  1000, 'PJ', 'PJ') ;
+    this.test_parsed_unit(  5000, 'PJ', 'PJ') ;
+    this.test_parsed_unit( 10000, 'PJ', 'PJ') ;
+    this.test_parsed_unit(100000, 'PJ', 'PJ') ;
+  },
+
+  parsed_unit : function(value, unit) {
+    var start_scale; 
+
+    if (unit == "MT") {
+      start_scale = 2;
+    } else {
+      start_scale = 3;
+    }
+
+    var scale = Metric.scaled_scale(value, start_scale);
+
+    if (unit == 'PJ') {
+      if (scale >= 3 && scale < 5) scale = 3;
+      return Metric.scaling_in_words(scale, 'joules');
+    } else if (unit == 'MT') {
+      return Metric.scaling_in_words(scale, 'ton');
+    } else if (unit == 'EUR') {
+      return Metric.scaling_in_words(scale, 'currency');
+    } else if (unit == '%') {
+      return '';
+    } else {
+      return Metric.scaling_in_words(scale, unit);
+    }
+  },
+
   scaled : function(value, start_scale, target_scale, max_scale) {
     var scale = start_scale || 0;
     var target = target_scale || null;
@@ -36,9 +76,12 @@ var Metric = {
     return this.scaled(value, start_scale, target_scale, max_scale)[1];
   },
 
-  round_number : function(value, round) {
-    var rounded = Math.pow(10, round);
-    return Math.round(value* (rounded))/rounded;
+  /*
+   * Doesn't add trailing zeros. Let's use sprintf.js in case
+   */
+  round_number : function(value, precision) {
+    var rounded = Math.pow(10, precision);
+    return Math.round(value * (rounded)) / rounded;
   },
 
   calculate_performance : function(now, fut) {
@@ -56,7 +99,9 @@ var Metric = {
    * 1000 ^ 2 = millions
    * etc.
    *
-   * @param scale [Float] The value that must be translated into a word
+   * @param scale [Float] The scale that must be translated into a word
+   * @param unit [String] The unit - currently {currency|joules|nounit|ton}
+   * Add other units on config/locales/{en|nl}.yml
    */
   scaling_in_words : function(scale, unit) {
     var scale_symbols = {
@@ -68,7 +113,8 @@ var Metric = {
       "5" : 'quadrillions',
       "6" : 'quintillions'
     };
-    return I18n.t("units."+unit+'.'+scale_symbols[""+scale]);
+    var symbol = scale_symbols["" + scale];
+
+    return I18n.t("units." + unit + "." + symbol);
   }
-  
 }

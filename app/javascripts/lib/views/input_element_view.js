@@ -264,6 +264,8 @@ var InputElementView = Backbone.View.extend({
     this.sliderView.setValue(
       this.model.get('user_value'), { noEvent: true });
 
+    this.quinn.setValue(this.model.get('user_value'));
+
     return false;
   },
 

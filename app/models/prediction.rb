@@ -5,7 +5,6 @@ class Prediction < ActiveRecord::Base
   
   has_paper_trail
   
-  validates_associated :input_element, :user
-  validates_presence_of :description , :message => "can't be blank"
+  validates_presence_of :input_element_id, :user_id , :description , :message => "can't be blank"
   
 end

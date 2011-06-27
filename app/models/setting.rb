@@ -192,7 +192,7 @@ class Setting
   end
 
   def area_region
-    Api::Area.find_by_country(region)
+    Api::Area.find_by_country_memoized(region)
   end
 
   ##

@@ -108,7 +108,6 @@ window.AppView = Backbone.View.extend({
       });
     });
     window.charts.each(function(chart) { chart.trigger('change'); });
-    window.input_elements.init_legacy_controller();
     window.policy_goals.invoke('update_view');
     window.policy_goals.update_totals();
 

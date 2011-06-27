@@ -57,7 +57,7 @@ var InputElement = Backbone.Model.extend({
 
   setDirty:function(dirty) {
     this.dirty = dirty;
-  },
+  }
 });
 
 
@@ -84,7 +84,8 @@ var InputElementList = Backbone.Collection.extend({
     _.bindAll(this, 'initialize_user_values');
     $.jsonp({
       url: App.scenario.user_values_url(),
-      success : this.initialize_user_values
+      success : this.initialize_user_values,
+      timeout: 15000
     });
   },
 
@@ -100,6 +101,8 @@ var InputElementList = Backbone.Collection.extend({
       var user_value = values.user_value;
       var default_value = (_.isUndefined(user_value) || _.isNaN(user_value) || _.isNull(user_value)) ? values.start_value : user_value;
       input_element.set({user_value : default_value}, {silent : true});
+
+      input_element.init_legacy_controller();
     });
   },
 

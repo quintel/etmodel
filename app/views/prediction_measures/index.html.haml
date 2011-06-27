@@ -6,13 +6,15 @@
   = prediction.description
   = "(#{prediction.user.name})"
   %br
-  - prediction.prediction_values.each do |prediction_value|
-    = prediction_value.year
-    = prediction_value.best
+  - prediction.prediction_measures.each do |prediction_measure|
+    = prediction_measure.name
+    = prediction_measure.cost
+    = prediction_measure.impact
+    = prediction_measure.year_start
+    = prediction_measure.actor
     %br
-
-#prediction_chart
+    
 
 #nav_prediction
-  %a.prediction.right(href="/prediction_measures?input_element_id=#{@InputElement.id}") Volgende
+  %a.prediction(href="/predictions?input_element_id=#{@InputElement.id}") Vorige
   = "Close"

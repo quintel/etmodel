@@ -13,7 +13,7 @@ var InputElementView = Backbone.View.extend({
   initialize: function (options) {
     Backbone.View.prototype.initialize.call(this, options);
 
-    _.bindAll(this, 'updateHandler', 'resetValue', 'toggleInfoBox',
+    _.bindAll(this, 'updateFromModel', 'resetValue', 'toggleInfoBox',
                     'beginStepDown', 'beginStepUp',
                     'quinnOnChange', 'quinnOnComplete');
 
@@ -25,7 +25,7 @@ var InputElementView = Backbone.View.extend({
     // operations when the user holds down the mouse button.
     this.incrementInterval = null;
 
-    this.model.bind('change', this.updateHandler);
+    this.model.bind('change', this.updateFromModel);
 
     var lSliderOptions = {
       'reset_value': this.model.get('start_value'),
@@ -256,8 +256,8 @@ var InputElementView = Backbone.View.extend({
    * Is called when something in the constraint model changed.
    * @override
    */
-  updateHandler: function () {
-    if (this.disableUpdate) {
+  updateFromModel: function () {
+    if (! this.disableUpdate) {
       return;
     }
 

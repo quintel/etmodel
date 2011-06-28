@@ -94,8 +94,6 @@
 
     // Adjust the subordinate sliders to balance; max 20 iterations.
     while (iterations--) {
-      console.log('iteration', 20-iterations);
-
       // Determine which sliders can be altered; of the subordinates, some may
       // already be at their maximum or minimum values, so there's no point
       // changing those.

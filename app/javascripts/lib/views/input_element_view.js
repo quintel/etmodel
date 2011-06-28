@@ -38,12 +38,6 @@ var InputElementView = Backbone.View.extend({
 
     this.render();
 
-    if (this.model.get('share_group')) {
-      InputElement.Balancer.
-        get(this.model.get('share_group'), { max: 100 }).
-        add(this);
-    }
-
     // Disable buttons?
     if (this.model.get('disabled')) {
       this.disableButton('reset');
@@ -115,11 +109,19 @@ var InputElementView = Backbone.View.extend({
       // Disable effects on sliders which are part of a group, since the
       // animation can look a little jarring.
       effects:  ! this.model.get('share_group'),
-
-      // Callbacks.
-      onChange: this.quinnOnChange,
-      onCommit: this.quinnOnComplete
     });
+
+    // The group onChange needs to be bound before the InputElementView
+    // onChange, or the displayed value may be updated even though the actual
+    // value doesn't change.
+    if (this.model.get('share_group')) {
+      InputElement.Balancer.
+        get(this.model.get('share_group'), { max: 100 }).
+        add(this);
+    }
+
+    this.quinn.bind('change', this.quinnOnChange);
+    this.quinn.bind('commit', this.quinnOnCommit);
 
     // Need to do this manually, since it needs this.quinn to be set.
     this.quinnOnChange(this.quinn.value, this.quinn);
@@ -288,6 +290,7 @@ var InputElementView = Backbone.View.extend({
       }
     }
 
+    this.setTransientValue(newValue, true);
     this.model.set({ user_value: newValue });
     this.checkMunicipalityNotice();
     this.trigger('change');

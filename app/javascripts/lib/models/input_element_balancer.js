@@ -1,4 +1,5 @@
 (function (window) {
+  'use strict';
 
   /**
    * Creates a balancer instance.
@@ -90,7 +91,7 @@
 
         originalValues, originalQuinns,
 
-        flexPerSlider, flex, sliders, sLength, slider,
+        flexPerSlider, flex, sliders, sLength, slider, prevValue,
         previousFlex, nextIterationSliders, i;
 
     // Return quickly; if the amount changed is larger than max, then the
@@ -167,7 +168,6 @@
         } else if (flex === 0) {
           break; // We're done!
         }
-
       }
 
       sliders = nextIterationSliders;
@@ -190,15 +190,6 @@
   };
 
   /**
-   * Returns the sum of all of the slider values.
-   */
-  Balancer.prototype.getSum = function () {
-    return _.reduce(this.quinns, function (sum, quinn) {
-      return sum + quinn.value;
-    });
-  };
-
-  /**
    * Given a float, "snaps" it to match the precision (i.e. if the smallest
    * step value of any of the balanced sliders is 0.1, it will round the
    * number to the nearest 0.1). Used heavily in doBalance to account for the
@@ -207,6 +198,14 @@
    */
   Balancer.prototype.snapValue = function (value) {
     return parseFloat(value.toFixed(this.precision));
+  };
+
+  /**
+   * Returns if the given Quinn instance is the current master slider.
+   */
+  Balancer.prototype.isMaster = function (quinn) {
+    return (this.masterId !== null &&
+            this.masterId === quinn.balanceId);
   };
 
   // ### Events.
@@ -265,7 +264,7 @@
     var self = this, subs;
 
     subs = _.select(this.quinns, function (quinn) {
-      return (! self.isMaster(quinn) && ! quinn.isDisabled)
+      return (! self.isMaster(quinn) && ! quinn.isDisabled);
     });
 
     if (this.quinns.length <= 2) {
@@ -290,13 +289,11 @@
 
     var balanceId = quinn.balanceId;
 
-    this.quinnOrder = _.without(this.quinnOrder, balanceId)
+    this.quinnOrder = _.without(this.quinnOrder, balanceId);
     this.quinnOrder.push(balanceId);
   };
 
   /**
-   * #### _getMax
-   *
    * Returns the maximum permitted cumulative value of the sliders which are
    * members of the group. This is cached as this.max.
    */
@@ -306,9 +303,9 @@
     }
 
     // No explicit max, just use the total of all the sliders (no balancing).
-    return _.reduce(this.views, function (sum, view) {
-      return (sum + view.quinn.range[1]);
-    }, 0) / this.views.length;
+    return _.reduce(this.quinns, function (sum, quinn) {
+      return (sum + quinn.range[1]);
+    }, 0) / this.quinns.length;
   };
 
   /**
@@ -376,14 +373,6 @@
     for (i = 0; i < length; i++) {
       quinns[i].__setValue(values[quinns[i].balanceId]);
     }
-  };
-
-  /**
-   * Returns if the given Quinn instance is the current master slider.
-   */
-  Balancer.prototype.isMaster = function (quinn) {
-    return (this.masterId !== null &&
-            this.masterId === quinn.balanceId)
   };
 
   // ## Globals

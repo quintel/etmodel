@@ -25,8 +25,9 @@
     this.max       = this.__getMax();
     this.precision = 1;
 
-    this.views  = [];
-    this.quinns = [];
+    this.views      = [];
+    this.quinns     = [];
+    this.quinnOrder = [];
 
     this.masterId     = null;
     this.subordinates = null;
@@ -71,6 +72,7 @@
 
     this.views.push(inputView);
     this.quinns.push(inputView.quinn);
+    this.quinnOrder.push(quinn.balanceId);
 
     this.max       = this.__getMax();
     this.precision = this.__getPrecision();
@@ -148,7 +150,9 @@
         slider    = sliders[i];
         prevValue = slider.value;
 
-        slider.__setValue(prevValue + flexPerSlider);
+        if (slider.__setValue(prevValue + flexPerSlider)) {
+          this.__sliderUsed(slider);
+        }
 
         // Reduce the flex by the amount by which the slider was changed, in
         // case more iterations are required.
@@ -163,6 +167,7 @@
         } else if (flex === 0) {
           break; // We're done!
         }
+
       }
 
       sliders = nextIterationSliders;
@@ -257,11 +262,28 @@
    * interacting, minus those which are disabled.
    */
   Balancer.prototype.__getSubordinates = function () {
-    var self = this;
+    var self = this, subs;
 
-    return _.select(this.quinns, function (quinn) {
+    subs = _.select(this.quinns, function (quinn) {
       return (! self.isMaster(quinn) && ! quinn.isDisabled)
     });
+
+    // The subs are now re-ordered so that the most recently used sliders are
+    // at the end of the array. Otherwise doBalance is somewhat biased towards
+    // the first slider.
+    return _.sortBy(subs, function (quinn) {
+      return _.indexOf(self.quinnOrder, quinn.balanceId);
+    });
+  };
+
+  /**
+   * Marks a slider as used, pushing it to the back of the quinnOrder array.
+   */
+  Balancer.prototype.__sliderUsed = function (quinn) {
+    var balanceId = quinn.balanceId;
+
+    this.quinnOrder = _.without(this.quinnOrder, balanceId)
+    this.quinnOrder.push(balanceId);
   };
 
   /**

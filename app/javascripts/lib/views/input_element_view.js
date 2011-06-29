@@ -15,7 +15,7 @@ var InputElementView = Backbone.View.extend({
 
     _.bindAll(this, 'updateFromModel', 'resetValue', 'toggleInfoBox',
                     'beginStepDown', 'beginStepUp', 'quinnOnChange',
-                    'quinnOnComplete', 'checkMunicipalityNotice',
+                    'quinnOnCommit', 'checkMunicipalityNotice',
                     'inputElementInfoBoxShown');
 
     this.model       = this.options.model;
@@ -266,7 +266,7 @@ var InputElementView = Backbone.View.extend({
    * Used as the Quinn onCommit callback. Takes care of setting the value
    * back to the model.
    */
-  quinnOnComplete: function (newValue, quinn) {
+  quinnOnCommit: function (newValue, quinn) {
     if (! this.model.get('disabled')) {
       // Disable min / max button if the input is set to it's lowest or
       // highest permitted value, and the reset button if the current

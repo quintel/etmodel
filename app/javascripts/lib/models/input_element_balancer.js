@@ -268,6 +268,10 @@
       return (! self.isMaster(quinn) && ! quinn.isDisabled)
     });
 
+    if (this.quinns.length <= 2) {
+      return subs;
+    }
+
     // The subs are now re-ordered so that the most recently used sliders are
     // at the end of the array. Otherwise doBalance is somewhat biased towards
     // the first slider.
@@ -280,6 +284,10 @@
    * Marks a slider as used, pushing it to the back of the quinnOrder array.
    */
   Balancer.prototype.__sliderUsed = function (quinn) {
+    if (this.quinns.length <= 2) {
+      return true;
+    }
+
     var balanceId = quinn.balanceId;
 
     this.quinnOrder = _.without(this.quinnOrder, balanceId)

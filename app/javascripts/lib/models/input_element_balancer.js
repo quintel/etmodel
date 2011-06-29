@@ -148,7 +148,7 @@
         slider    = sliders[i];
         prevValue = slider.value;
 
-        slider.__setValue(this.snapValue(prevValue + flexPerSlider));
+        slider.__setValue(prevValue + flexPerSlider);
 
         // Reduce the flex by the amount by which the slider was changed, in
         // case more iterations are required.

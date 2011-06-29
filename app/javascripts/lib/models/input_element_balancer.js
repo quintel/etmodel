@@ -117,10 +117,7 @@
     }
 
     originalQuinns = sliders;
-    originalValues = _.reduce(sliders, function (vals, quinn) {
-      vals[quinn.balanceId] = quinn.value;
-      return vals;
-    }, {});
+    originalValues = this.__originalValues(sliders);
 
     // Flex is the balance maximum value, minus the value of those sliders
     // which may be altered.

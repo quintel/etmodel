@@ -27,7 +27,6 @@
 
     this.views  = [];
     this.quinns = [];
-    this.brutes = [];
 
     this.masterId     = null;
     this.subordinates = null;

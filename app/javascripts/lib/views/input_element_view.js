@@ -10,7 +10,8 @@ var InputElementView = Backbone.View.extend({
     'click     .show-info':             'toggleInfoBox',
     'click      output':                'showValueSelector',
     'click     .value-selector button': 'commitValueSelection',
-    'submit    .value-selector form':   'commitValueSelection'
+    'submit    .value-selector form':   'commitValueSelection',
+    'change    .value-selector select': 'changeValueMultiplier'
   },
 
   initialize: function (options) {
@@ -22,10 +23,12 @@ var InputElementView = Backbone.View.extend({
                     'abortValueSelection', 'checkMunicipalityNotice',
                     'inputElementInfoBoxShown');
 
-    this.model       = this.options.model;
-    this.el          = this.options.el;
-    this.precision   = this.__getPrecision();
-    this.formatValue = this.__getFormatter();
+    this.uiMultiplier = 1;
+
+    this.model        = this.options.model;
+    this.el           = this.options.el;
+    this.precision    = this.__getPrecision();
+    this.formatValue  = this.__getFormatter();
 
     // Keeps track of intervals used to repeat stepDown and stepUp
     // operations when the user holds down the mouse button.
@@ -217,6 +220,10 @@ var InputElementView = Backbone.View.extend({
 
     this.valueElement.text(this.formatValue(newValue));
 
+    if (this.valueInputElement) {
+      this.valueInputElement.val(this.formatValue(newValue));
+    }
+
     return newValue;
   },
 
@@ -258,11 +265,19 @@ var InputElementView = Backbone.View.extend({
   /**
    * Shows the overlay which allows the user to enter a custom value, and swap
    * between different unit conversions supported by the model.
+   *
+   * This is a bit messy.
+   *
+   * TODO Move to an Underscore template?
    */
   showValueSelector: function (event) {
     // If the value selector hasn't been shown previously, render it now...
     if (! this.valueSelectorElement) {
-      var form;
+      var units   = this.model.get('conversions'),
+          uLength = units.length,
+          form, i;
+
+      form = $('<form action=""></form>');
 
       this.valueSelectorElement = $('<div class="value-selector"></div>');
       this.valueInputElement    = $('<input type="text"></input>');
@@ -270,15 +285,23 @@ var InputElementView = Backbone.View.extend({
 
       this.valueSelectorElement.attr('id', _.uniqueId('vse_'));
 
-      // Add unit types to the select.
-      this.valueUnitElement.append($('<option>Unit One</option>'));
-      this.valueUnitElement.append($('<option>Unit Two</option>'));
-      this.valueUnitElement.append($('<option>Unit Three</option>'));
+      this.valueUnitElement.append(
+        $('<option></options').text('Default Unit').attr('value', -1));
 
-      form = $('<form action=""></form>');
+      // Add unit types to the select.
+      for (i = 0; i < uLength; i++) {
+        this.valueUnitElement.append(
+          $('<option></options').text(units[i].name).attr('value', i)
+        );
+      }
 
       form.append(this.valueInputElement);
-      form.append(this.valueUnitElement);
+
+      if (i > 0) {
+        // Only show the unit selection if there were any.
+        form.append(this.valueUnitElement);
+      }
+
       form.append($('<button>Update</button>'));
 
       this.el.append(this.valueSelectorElement.append(form));
@@ -308,7 +331,7 @@ var InputElementView = Backbone.View.extend({
       newValue = parseFloat(newValue);
 
       if (! _.isNaN(newValue)) {
-        this.quinn.setValue(newValue);
+        this.quinn.setValue(newValue * ( 1 / this.multiplier ));
       }
     }
 
@@ -332,6 +355,26 @@ var InputElementView = Backbone.View.extend({
       // child of the selection element.
       this.valueSelectorElement.fadeOut('fast');
     }
+  },
+
+  /**
+   * Triggered when the user changes the unit type, tweaking the display of
+   * values to use a different multiplier.
+   */
+  changeValueMultiplier: function (event) {
+    var index = parseInt($(event.currentTarget).val(), 10);
+
+    if (index === -1) {
+      this.uiMultiplier = 1;
+    } else {
+      this.uiMultiplier = this.model.get('conversions')[index].multiplier;
+    }
+
+    this.formatValue = this.__getFormatter();
+    this.setTransientValue(this.quinn.value, true);
+
+    event.stopPropagation();
+    return false;
   },
 
   /**
@@ -403,9 +446,10 @@ var InputElementView = Backbone.View.extend({
    * this.formatValue.
    */
   __getFormatter: function () {
-    var precision = this.precision,
-        mUnit     = this.model.get('unit'),
-        unit      = '';
+    var precision  = this.precision,
+        multiplier = this.uiMultiplier,
+        mUnit      = this.model.get('unit'),
+        unit       = '';
 
     if (_.isString(mUnit)) {
       switch (mUnit) {
@@ -422,7 +466,7 @@ var InputElementView = Backbone.View.extend({
     }
 
     return function (value) {
-      return value.toFixed(precision) + unit;
+      return (value * multiplier).toFixed(precision) + unit;
     };
   },
 });

@@ -6,6 +6,15 @@ var InputElement = Backbone.Model.extend({
     this.dirty = false;
     this.ui_options = {'element' : $('#input_element_'+this.get('id'))};
     this.bind('change:user_value', this.markDirty);
+
+    // Temporary; for developing the flexible inputs feature.
+    this.set({
+      conversions: [
+        { name: 'Unit One',   multiplier: 0.5  },
+        { name: 'Unit Two',   multiplier: 0.25 },
+        { name: 'Unit Three', multiplier: 2    },
+      ]
+    }, { silent: true });
   },
 
   set_min_value : function(result) {

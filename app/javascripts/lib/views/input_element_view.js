@@ -260,6 +260,45 @@
       return this;
     },
 
+    /**
+     * Creates HTML for the value selector (the overlay which pops up when a
+     * user clicks on the slider value.
+     */
+    renderValueSelector: function () {
+      var cLength = this.conversions.length, form, i;
+
+      form = $('<form action=""></form>');
+
+      this.valueSelectorElement = $('<div class="value-selector"></div>');
+      this.valueSelectorElement.attr('id', _.uniqueId('vse_'));
+
+      this.valueInputElement    = $('<input type="text"></input>');
+      this.valueUnitElement     = $('<select></select>');
+
+      // Add unit types to the select.
+      for (i = 0; i < cLength; i++) {
+        this.valueUnitElement.append(this.conversions[i].toOptionEl());
+      }
+
+      form.append(this.valueInputElement);
+
+      if (i > 0) {
+        // Only show the unit selection if there were any.
+        form.append(this.valueUnitElement);
+      }
+
+      form.append($('<button>Update</button>'));
+
+      this.el.append(this.valueSelectorElement.append(form));
+
+      if (BODY_HIDE_EVENT === false) {
+        $('body').click(this.abortValueSelection);
+        BODY_HIDE_EVENT = true;
+      }
+
+      return this;
+    },
+
     // ## Instance Methods ---------------------------------------------------
 
     /**
@@ -400,36 +439,7 @@
     showValueSelector: function (event) {
       // If the value selector hasn't been shown previously, render it now...
       if (! this.valueSelectorElement) {
-        var cLength = this.conversions.length, form, i;
-
-        form = $('<form action=""></form>');
-
-        this.valueSelectorElement = $('<div class="value-selector"></div>');
-        this.valueSelectorElement.attr('id', _.uniqueId('vse_'));
-
-        this.valueInputElement    = $('<input type="text"></input>');
-        this.valueUnitElement     = $('<select></select>');
-
-        // Add unit types to the select.
-        for (i = 0; i < cLength; i++) {
-          this.valueUnitElement.append(this.conversions[i].toOptionEl());
-        }
-
-        form.append(this.valueInputElement);
-
-        if (i > 0) {
-          // Only show the unit selection if there were any.
-          form.append(this.valueUnitElement);
-        }
-
-        form.append($('<button>Update</button>'));
-
-        this.el.append(this.valueSelectorElement.append(form));
-
-        if (BODY_HIDE_EVENT === false) {
-          $('body').click(this.abortValueSelection);
-          BODY_HIDE_EVENT = true;
-        }
+        this.renderValueSelector();
       }
 
       this.valueInputElement.val(this.conversion.value(this.quinn.value));

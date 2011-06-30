@@ -429,8 +429,8 @@
     },
 
     /**
-     * Shows the overlay which allows the user to enter a custom value, and swap
-     * between different unit conversions supported by the model.
+     * Shows the overlay which allows the user to enter a custom value, and
+     * swap between different unit conversions supported by the model.
      *
      * This is a bit messy.
      *
@@ -451,8 +451,8 @@
     },
 
     /**
-     * Commits the new settings selected by the user from the value selector and
-     * updates the UI.
+     * Commits the new settings selected by the user from the value selector
+     * and updates the UI.
      */
     commitValueSelection: function (event) {
       var newValue = this.valueInputElement.val();
@@ -481,8 +481,8 @@
       if ($target.attr('id') !== vseId &&
           ! $target.parents('#' + vseId).length) {
 
-        // Hide if the element clicked was not the value selection elemnt, or a
-        // child of the selection element.
+        // Hide if the element clicked was not the value selection elemnt, or
+        // a child of the selection element.
         this.valueSelectorElement.fadeOut('fast');
       }
     },

@@ -8,16 +8,16 @@
    *
    *    master:
    *
-   *       When the user begins to alter a slider, this slider is
-   *       designated the master. A slider is only a master while the
-   *       user is making a change.
+   *       When the user begins to alter a slider, this slider is designated
+   *       the master. A slider is only a master while the user is making a
+   *       change.
    *
    *    subordinates:
    *
-   *       When the user is altering a slider value, all of the other
-   *       sliders, minus those which are disabled, are considered
-   *       subordinates. The subordinates are the sliders whose values
-   *       are changes to ensure that the group remains balanced.
+   *       When the user is altering a slider value, all of the other sliders,
+   *       minus those which are disabled, are considered subordinates. The
+   *       subordinates are the sliders whose values are changes to ensure
+   *       that the group remains balanced.
    */
   function Balancer (options) {
     _.bindAll(this, 'onBegin', 'onChange', 'onCommit', 'onAbort');
@@ -34,32 +34,31 @@
     this.subordinates = null;
   }
 
-  // Holds balancer instances so that InputElements may automatically
-  // add themselves to the correct balancer when initialzed.
+  // ## Class-Level Stuff ----------------------------------------------------
+
+  // Balancer triggers Quinn-like begin, change, commit, and abort events when
+  // the master slider is adjusted.
+  _.extend(Balancer.prototype, Backbone.Events);
+
+  // Holds balancer instances so that InputElements may automatically add
+  // themselves to the correct balancer when initialzed.
   Balancer.balancers = {};
 
   // Gets the Balancer with the given name. If one does not exist, it
   // will be created with the given options.
   Balancer.get = function (name, options) {
-    if (! Balancer.balancers[name]) {
+    if (! Balancer.balancers.hasOwnProperty(name)) {
       Balancer.balancers[name] = new Balancer(options);
     }
 
     return Balancer.balancers[name];
   };
 
-  // Balancer triggers Quinn-like begin, change, commit, and abort events when
-  // the master slider is adjusted.
-  _.extend(Balancer.prototype, Backbone.Events);
+  // ## Instance-Level Stuff -------------------------------------------------
 
   /**
-   * ### add
-   *
-   * Given an initialized InputElementView, adds the view to the group and
-   * will balance the slider value when it, or other sliders, have their value
-   * changed.
-   *
-   * Note that add expects an InputElementView, not an InputElement.
+   * Adds a slider to be balanced. Note that `add` expects an
+   * InputElementView, _not_ an InputElement.
    */
   Balancer.prototype.add = function (inputView) {
     var quinn = inputView.quinn;
@@ -94,9 +93,9 @@
         flexPerSlider, flex, sliders, sLength, slider, prevValue,
         previousFlex, nextIterationSliders, i;
 
-    // Return quickly; if the amount changed is larger than max, then the
-    // change is impossible
-    if (amountChanged > this.max) {
+    // Return quickly: if the amount changed is larger than the balancer
+    // allows as the change is impossible.
+    if (amountChanged > this.max || amountChanged < -this.max) {
       return false;
     }
 
@@ -114,24 +113,22 @@
     });
 
     if ((sLength = sliders.length) === 0) {
-      // All subordinates are at their min or max value; the change is not
-      // possible.
+      // Return quickly if all none of the subordinate sliders can be moved
+      // any further.
       return false;
     }
 
     originalQuinns = sliders;
     originalValues = this.__originalValues(sliders);
 
-    // Flex is the balance maximum value, minus the value of those sliders
-    // which may be altered.
     // Flex is the amount of "value" which needs to be adjusted for. e.g.
     //
     //    max: 100
     //    slider 1: 0
     //    slider 2: 100
     //
-    //  If slider 1 is moved to 25, the Flex is -25, since in order to balance
-    //  the sliders we need to subtract 25 from the subordinate sliders.
+    //  If slider 1 is moved to 25, the flex is -25 since in order to balance
+    //  the sliders we need to subtract 25 from the subordinates.
     //
     flex = _.sum(_.pluck(sliders, 'value')) + newValue;
     flex = this.snapValue(this.max - flex);
@@ -140,12 +137,14 @@
       nextIterationSliders = [];
 
       for (i = 0; i < sLength; i++) {
-        // The amount of flex to be given to each slider. Calculated each time
-        // we balance a slider since the previous slider may have used up all
-        // of the flex if it was less than the smallest slider step value (with
-        // a step value of 0.1, in a three-slider group, a per-subordinate
-        // change of 0.05 would round UP to 0.1, leaving no flex for the
-        // second slider).
+        // The amount of flex given to each slider. Calculated each time we
+        // balance a slider since the previous one may have used up all of the
+        // available flex the flexPerSlider was rounded up by the slider's
+        // __setValue method.
+        //
+        // For example, a flexPerSlider of 0.05, and a slider step value of
+        // 0.1 would result in 0.05 being round up, leaving no flex for the
+        // second slider.
         flexPerSlider = this.snapValue(flex / (sLength - i));
 
         slider    = sliders[i];
@@ -155,13 +154,12 @@
           this.__sliderUsed(slider);
         }
 
-        // Reduce the flex by the amount by which the slider was changed, in
-        // case more iterations are required.
+        // Reduce the flex by the amount by which the slider was changed,
+        // ready for subsequent iterations.
         flex = this.snapValue(flex - (slider.value - prevValue));
 
-        // Finally, if this slider still can be moved further as it isn't at
-        // it's min or max selectable value, it may be used again in the next
-        // iteration.
+        // Finally, if this slider still can be moved further, it may be used
+        // again in the next iteration.
         if ((flex < 0 && slider.value !== slider.selectable[0]) ||
             (flex > 0 && slider.value !== slider.selectable[1])) {
           nextIterationSliders.push(slider);
@@ -173,17 +171,16 @@
       sliders = nextIterationSliders;
       sLength = sliders.length;
 
-      // Can't go any further; either we used up all the flex successfully
-      // balancing the sliders, or the flex was unchanged from the previous
-      // iterations, in which case balancing isn't possible.
-      if (this.snapValue(flex) === 0.0 || previousFlex === flex) {
+      // We can't go any further if flex is 0, or if the flex value hasn't
+      // changed in this iteration.
+      if (this.snapValue(flex) === 0 || previousFlex === flex) {
         break;
       }
 
       previousFlex = flex;
     }
 
-    if (this.snapValue(flex) !== 0.0) {
+    if (this.snapValue(flex) !== 0) {
       this.__revert(originalQuinns, originalValues);
       return false;
     }
@@ -208,7 +205,7 @@
             this.masterId === quinn.balanceId);
   };
 
-  // ### Events.
+  // ## Event-Handling -------------------------------------------------------
 
   Balancer.prototype.onBegin = function (value, quinn) {
     // If no slider is already being adjusted, then this is when the
@@ -227,9 +224,8 @@
   };
 
   Balancer.prototype.onChange = function (value, quinn) {
-    // Fired when a slider value is changed; we only want to track
-    // changes to the master slider, as the onChange event for the
-    // subordinates should be ignored.
+    // Fired when a slider value is changed. We only care about changes to the
+    // master slider, and subordinates are ignored.
     if (this.isMaster(quinn)) {
       if (this.doBalance(value, quinn) === false) {
         // Can't do the balance, so we prevent the slider movement.
@@ -254,11 +250,11 @@
     }
   };
 
-  // ### Pseudo-Private Methods.
+  // ## Pseudo-Private Methods -----------------------------------------------
 
   /**
    * Returns all the sliders except the one with which the user is
-   * interacting, minus those which are disabled.
+   * interacting and those which are disabled.
    */
   Balancer.prototype.__getSubordinates = function () {
     var self = this, subs;
@@ -281,6 +277,7 @@
 
   /**
    * Marks a slider as used, pushing it to the back of the quinnOrder array.
+   * This prevents doBalance favouring balancing one slider over the others.
    */
   Balancer.prototype.__sliderUsed = function (quinn) {
     if (this.quinns.length <= 2) {

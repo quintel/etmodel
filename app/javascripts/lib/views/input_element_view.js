@@ -426,9 +426,9 @@
 
         this.el.append(this.valueSelectorElement.append(form));
 
-        if (InputElementView.BODY_HIDE_EVENT === false) {
+        if (BODY_HIDE_EVENT === false) {
           $('body').click(this.abortValueSelection);
-          InputElementView.BODY_HIDE_EVENT = true;
+          BODY_HIDE_EVENT = true;
         }
       }
 

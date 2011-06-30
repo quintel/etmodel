@@ -446,7 +446,6 @@
       this.valueSelectorElement.fadeIn('fast');
       this.valueInputElement.focus();
 
-      event.stopPropagation();
       return false;
     },
 
@@ -463,7 +462,6 @@
 
       this.valueSelectorElement.fadeOut('fast');
 
-      event.stopPropagation();
       return false;
     },
 
@@ -496,7 +494,6 @@
 
       this.setTransientValue(this.quinn.value, true);
 
-      event.stopPropagation();
       return false;
     },
 

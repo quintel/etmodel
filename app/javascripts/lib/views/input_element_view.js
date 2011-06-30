@@ -1,7 +1,7 @@
 (function (window) {
 
-  var HOLD_ACCELERATE, BODY_HIDE_EVENT,
-      floatPrecision, conversionsFromModel,
+  var HOLD_ACCELERATE, BODY_HIDE_EVENT, ACTIVE_VALUE_SELECTOR,
+      floatPrecision, conversionsFromModel, abortValueSelection,
       UnitConversion, InputElementView;
 
   // # Constants -------------------------------------------------------------
@@ -13,6 +13,10 @@
   // Tracks whether the body has been assigned an event to hide input
   // selection boxes when the user clicks outside them.
   BODY_HIDE_EVENT = false;
+
+  // Holds the ID of the currently displayed value selector so it can be
+  // hidden if the user clicks outside of it.
+  ACTIVE_VALUE_SELECTOR = null;
 
   /**
    * Given an integer or float, returns how many decimal places are present,
@@ -52,6 +56,22 @@
     }
 
     return conversions;
+  };
+
+  /**
+   * Closes the currently open value selector without changing the value.
+   */
+  abortValueSelection = function (event) {
+    if (! ACTIVE_VALUE_SELECTOR) {
+      return true;
+    }
+
+    // Hide if the element clicked was not the value selection elemnt, or a
+    // child of the selection element.
+    if (! $(event.target).closest('#' + ACTIVE_VALUE_SELECTOR).get(0)) {
+      $('#' + ACTIVE_VALUE_SELECTOR).fadeOut('fast');
+      ACTIVE_VALUE_SELECTOR = null;
+    }
   };
 
   // # UnitConversion --------------------------------------------------------
@@ -292,7 +312,7 @@
       this.el.append(this.valueSelectorElement.append(form));
 
       if (BODY_HIDE_EVENT === false) {
-        $('body').click(this.abortValueSelection);
+        $('body').click(abortValueSelection);
         BODY_HIDE_EVENT = true;
       }
 
@@ -442,6 +462,13 @@
         this.renderValueSelector();
       }
 
+      if (ACTIVE_VALUE_SELECTOR) {
+        // Simulate a click to hide the currently open selector.
+        $('body').click();
+      }
+
+      ACTIVE_VALUE_SELECTOR = this.valueSelectorElement.attr('id');
+
       this.valueInputElement.val(this.conversion.value(this.quinn.value));
       this.valueSelectorElement.fadeIn('fast');
       this.valueInputElement.focus();
@@ -461,24 +488,9 @@
       }
 
       this.valueSelectorElement.fadeOut('fast');
+      ACTIVE_VALUE_SELECTOR = null;
 
       return false;
-    },
-
-    /**
-     * Closes the value selector without changing the value.
-     */
-    abortValueSelection: function (event) {
-      var $target = $(event.target),
-          vseId   = this.valueSelectorElement.attr('id');
-
-      if ($target.attr('id') !== vseId &&
-          ! $target.parents('#' + vseId).length) {
-
-        // Hide if the element clicked was not the value selection elemnt, or
-        // a child of the selection element.
-        this.valueSelectorElement.fadeOut('fast');
-      }
     },
 
     /**

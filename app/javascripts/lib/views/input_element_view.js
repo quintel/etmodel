@@ -4,18 +4,22 @@
  */
 var InputElementView = Backbone.View.extend({
   events: {
-    'click     .reset':     'resetValue',
-    'mousedown .decrease':  'beginStepDown',
-    'mousedown .increase':  'beginStepUp',
-    'click     .show-info': 'toggleInfoBox'
+    'click     .reset':                 'resetValue',
+    'mousedown .decrease':              'beginStepDown',
+    'mousedown .increase':              'beginStepUp',
+    'click     .show-info':             'toggleInfoBox',
+    'click      output':                'showValueSelector',
+    'click     .value-selector button': 'commitValueSelection',
+    'submit    .value-selector form':   'commitValueSelection'
   },
 
   initialize: function (options) {
     Backbone.View.prototype.initialize.call(this, options);
 
     _.bindAll(this, 'updateFromModel', 'resetValue', 'toggleInfoBox',
-                    'beginStepDown', 'beginStepUp', 'quinnOnChange',
-                    'quinnOnCommit', 'checkMunicipalityNotice',
+                    'showValueSelector', 'beginStepDown', 'beginStepUp',
+                    'quinnOnChange', 'quinnOnCommit', 'commitValueSelection',
+                    'abortValueSelection', 'checkMunicipalityNotice',
                     'inputElementInfoBoxShown');
 
     this.model       = this.options.model;
@@ -252,6 +256,85 @@ var InputElementView = Backbone.View.extend({
   },
 
   /**
+   * Shows the overlay which allows the user to enter a custom value, and swap
+   * between different unit conversions supported by the model.
+   */
+  showValueSelector: function (event) {
+    // If the value selector hasn't been shown previously, render it now...
+    if (! this.valueSelectorElement) {
+      var form;
+
+      this.valueSelectorElement = $('<div class="value-selector"></div>');
+      this.valueInputElement    = $('<input type="text"></input>');
+      this.valueUnitElement     = $('<select></select>');
+
+      this.valueSelectorElement.attr('id', _.uniqueId('vse_'));
+
+      // Add unit types to the select.
+      this.valueUnitElement.append($('<option>Unit One</option>'));
+      this.valueUnitElement.append($('<option>Unit Two</option>'));
+      this.valueUnitElement.append($('<option>Unit Three</option>'));
+
+      form = $('<form action=""></form>');
+
+      form.append(this.valueInputElement);
+      form.append(this.valueUnitElement);
+      form.append($('<button>Update</button>'));
+
+      this.el.append(this.valueSelectorElement.append(form));
+
+      if (InputElementView.BODY_HIDE_EVENT === false) {
+        $('body').click(this.abortValueSelection);
+        InputElementView.BODY_HIDE_EVENT = true;
+      }
+    }
+
+    this.valueInputElement.val(this.quinn.value);
+    this.valueSelectorElement.fadeIn('fast');
+    this.valueInputElement.focus();
+
+    event.stopPropagation();
+    return false;
+  },
+
+  /**
+   * Commits the new settings selected by the user from the value selector and
+   * updates the UI.
+   */
+  commitValueSelection: function (event) {
+    var newValue = this.valueInputElement.val();
+
+    if (newValue.length > 0) {
+      newValue = parseFloat(newValue);
+
+      if (! _.isNaN(newValue)) {
+        this.quinn.setValue(newValue);
+      }
+    }
+
+    this.valueSelectorElement.fadeOut('fast');
+
+    event.stopPropagation();
+    return false;
+  },
+
+  /**
+   * Closes the value selector without changing the value.
+   */
+  abortValueSelection: function (event) {
+    var $target = $(event.target),
+        vseId   = this.valueSelectorElement.attr('id');
+
+    if ($target.attr('id') !== vseId &&
+        ! $target.parents('#' + vseId).length) {
+
+      // Hide if the element clicked was not the value selection elemnt, or a
+      // child of the selection element.
+      this.valueSelectorElement.fadeOut('fast');
+    }
+  },
+
+  /**
    * Used as the Quinn onCommit callback. Updates the UI.
    *
    * The Quinn onChange event is fired whenever the user moves the slider
@@ -347,3 +430,7 @@ var InputElementView = Backbone.View.extend({
 // The number of milliseconds which pass before stepping up and down values
 // should begin being repeated.
 InputElementView.HOLD_ACCELERATE = 125;
+
+// Tracks whether the body has been assigned an event to hide input selection
+// boxes when the user clicks outside them.
+InputElementView.BODY_HIDE_EVENT = false;

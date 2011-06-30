@@ -526,10 +526,10 @@
         // highest permitted value, and the reset button if the current
         // slider value is the original value.
 
-        if (newValue === this.quinn.range[0]) {
+        if (newValue === this.quinn.selectable[0]) {
           this.disableButton('decrease');
           this.enableButton('increase');
-        } else if (newValue === this.quinn.range[1]) {
+        } else if (newValue === this.quinn.selectable[1]) {
           this.disableButton('increase');
           this.enableButton('decrease');
         } else {

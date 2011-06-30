@@ -1,16 +1,119 @@
 (function (window) {
 
-  // Constants ---------------------------------------------------------------
+  var HOLD_ACCELERATE, BODY_HIDE_EVENT,
+      floatPrecision, conversionsFromModel,
+      UnitConversion, InputElementView;
+
+  // # Constants -------------------------------------------------------------
 
   // The number of milliseconds which pass before stepping up and down values
   // should begin being repeated.
-  var HOLD_ACCELERATE = 125,
+  HOLD_ACCELERATE = 125;
 
   // Tracks whether the body has been assigned an event to hide input
   // selection boxes when the user clicks outside them.
-  BODY_HIDE_EVENT = false,
+  BODY_HIDE_EVENT = false;
 
-  // InputElementView --------------------------------------------------------
+  /**
+   * Given an integer or float, returns how many decimal places are present,
+   * so that other numbers can be displayed with the same precisioin with
+   * toFixed().
+   */
+  floatPrecision = function (value) {
+    var precision = 0;
+
+    if (_.isNumber(value)) {
+        precision = value.toString().split('.');
+        precision = precision[1] ? precision[1].length : 0
+    }
+
+    return precision;
+  };
+
+  /**
+   * Creates an array of UnitConversions suitable for displaying an
+   * InputElement model.
+   */
+  conversionsFromModel = function (model) {
+    var conversions = [],
+        modelConvs  = model.get('conversions'),
+        cLength     = modelConvs.length,
+        mPrecision  = floatPrecision(model.get('step_value')),
+        i;
+
+    conversions.push(new UnitConversion({
+      name:      'Default Unit',
+      unit:       model.get('unit'),
+      multiplier: 1
+    }, mPrecision));
+
+    for (i = 0; i < cLength; i++) {
+      conversions.push(new UnitConversion(modelConvs[i], mPrecision));
+    }
+
+    return conversions;
+  };
+
+  // # UnitConversion --------------------------------------------------------
+
+  function UnitConversion (data, originalPrecision) {
+    this.name       = data.name;
+    this.multiplier = data.multiplier;
+    this.unit       = data.unit;
+    this.precision  = originalPrecision + floatPrecision(this.multiplier);
+    this.uid        = _.uniqueId('uconv_');
+  }
+
+  /**
+   * Given the slider value, formats the value taking into account the
+   * conversion multiplier and precision. Returns a string.
+   *
+   * For example:
+   *
+   *    u.value(2) # => "4.2"
+   */
+  UnitConversion.prototype.value = function (value) {
+    return (value * (this.multiplier || 1)).toFixed(this.precision);
+  };
+
+  /**
+   * Given the slider value, formats it taking into account the multiplier and
+   * precision, and appends the unit suffix, such as would be displayed in the
+   * <output/> element.
+   *
+   * For example:
+   *
+   *    u.valueWithUnit(2) # => "4.2 GW"
+   */
+  UnitConversion.prototype.valueWithUnit = function (value) {
+    if (this.unit && this.unit.length > 0) {
+      return this.value(value) + ' ' + this.unit;
+    }
+
+    return this.value(value);
+  };
+
+  /**
+   * Given a converted value (such as one entered in the value input element,
+   * converts it back to the value which should be used internally by Quinn to
+   * represent the value.
+   *
+   * For example:
+   *
+   *    u.formattedToInternal(4.2) # => 2.0
+   */
+  UnitConversion.prototype.formattedToInternal = function (formatted) {
+    return formatted * (1 / this.multiplier);
+  };
+
+  /**
+   * Creates an <option> element which represents the unit conversion.
+   */
+  UnitConversion.prototype.toOptionEl = function () {
+    return $('<option></option>').val(this.uid).text(this.name);
+  };
+
+  // # InputElementView ------------------------------------------------------
 
   InputElementView = Backbone.View.extend({
     events: {
@@ -27,18 +130,26 @@
     initialize: function (options) {
       Backbone.View.prototype.initialize.call(this, options);
 
-      _.bindAll(this, 'updateFromModel', 'resetValue', 'toggleInfoBox',
-                      'showValueSelector', 'beginStepDown', 'beginStepUp',
-                      'quinnOnChange', 'quinnOnCommit',
-                      'commitValueSelection', 'abortValueSelection',
-                      'checkMunicipalityNotice', 'inputElementInfoBoxShown');
+      _.bindAll(
+         this,
+        'updateFromModel',
+        'resetValue',
+        'toggleInfoBox',
+        'showValueSelector',
+        'beginStepDown',
+        'beginStepUp',
+        'quinnOnChange',
+        'quinnOnCommit',
+        'commitValueSelection',
+        'abortValueSelection',
+        'checkMunicipalityNotice',
+        'inputElementInfoBoxShown'
+      )
 
-      this.uiMultiplier = 1;
-
-      this.model        = this.options.model;
-      this.el           = this.options.el;
-      this.precision    = this.__getPrecision();
-      this.formatValue  = this.__getFormatter();
+      this.model       = this.options.model;
+      this.el          = this.options.el;
+      this.conversions = conversionsFromModel(this.model);
+      this.conversion  = this.conversions[0];
 
       // Keeps track of intervals used to repeat stepDown and stepUp
       // operations when the user holds down the mouse button.
@@ -55,14 +166,9 @@
       }
 
       this.render();
-
-      // Disable buttons?
-      if (this.model.get('disabled')) {
-        this.disableButton('reset');
-        this.disableButton('decrease');
-        this.disableButton('increase');
-      }
     },
+
+    // ## Rendering ----------------------------------------------------------
 
     /**
      * Creates the HTML elements used to display the slider.
@@ -144,8 +250,17 @@
       // Need to do this manually, since it needs this.quinn to be set.
       this.quinnOnChange(this.quinn.value, this.quinn);
 
+      // Disable buttons?
+      if (this.model.get('disabled')) {
+        this.disableButton('reset');
+        this.disableButton('decrease');
+        this.disableButton('increase');
+      }
+
       return this;
     },
+
+    // ## Instance Methods ---------------------------------------------------
 
     /**
      * Disables a slider button.
@@ -209,7 +324,7 @@
       }
     },
 
-    // ## Event Handlers
+    // ## Event Handlers -----------------------------------------------------
 
     /**
      * Updates elements of the UI to show the new slider value, but does _not_
@@ -229,10 +344,10 @@
         newValue = this.quinn.setValue(newValue);
       }
 
-      this.valueElement.text(this.formatValue(newValue));
+      this.valueElement.text(this.conversion.valueWithUnit(newValue));
 
       if (this.valueInputElement) {
-        this.valueInputElement.val(this.formatValue(newValue));
+        this.valueInputElement.val(this.conversion.value(newValue));
       }
 
       return newValue;
@@ -285,26 +400,19 @@
     showValueSelector: function (event) {
       // If the value selector hasn't been shown previously, render it now...
       if (! this.valueSelectorElement) {
-        var units   = this.model.get('conversions'),
-            uLength = units.length,
-            form, i;
+        var cLength = this.conversions.length, form, i;
 
         form = $('<form action=""></form>');
 
         this.valueSelectorElement = $('<div class="value-selector"></div>');
+        this.valueSelectorElement.attr('id', _.uniqueId('vse_'));
+
         this.valueInputElement    = $('<input type="text"></input>');
         this.valueUnitElement     = $('<select></select>');
 
-        this.valueSelectorElement.attr('id', _.uniqueId('vse_'));
-
-        this.valueUnitElement.append(
-          $('<option></options').text('Default Unit').attr('value', -1));
-
         // Add unit types to the select.
-        for (i = 0; i < uLength; i++) {
-          this.valueUnitElement.append(
-            $('<option></options').text(units[i].name).attr('value', i)
-          );
+        for (i = 0; i < cLength; i++) {
+          this.valueUnitElement.append(this.conversions[i].toOptionEl());
         }
 
         form.append(this.valueInputElement);
@@ -324,7 +432,7 @@
         }
       }
 
-      this.valueInputElement.val(this.quinn.value);
+      this.valueInputElement.val(this.conversion.value(this.quinn.value));
       this.valueSelectorElement.fadeIn('fast');
       this.valueInputElement.focus();
 
@@ -343,7 +451,7 @@
         newValue = parseFloat(newValue);
 
         if (! _.isNaN(newValue)) {
-          this.quinn.setValue(newValue * ( 1 / this.multiplier ));
+          this.quinn.setValue(this.conversion.formattedToInternal(newValue));
         }
       }
 
@@ -374,15 +482,12 @@
      * values to use a different multiplier.
      */
     changeValueMultiplier: function (event) {
-      var index = parseInt($(event.currentTarget).val(), 10);
+      var uid = $(event.currentTarget).val();
 
-      if (index === -1) {
-        this.uiMultiplier = 1;
-      } else {
-        this.uiMultiplier = this.model.get('conversions')[index].multiplier;
-      }
+      this.conversion = _.detect(this.conversions, function (conv) {
+        return conv.uid === uid;
+      });
 
-      this.formatValue = this.__getFormatter();
       this.setTransientValue(this.quinn.value, true);
 
       event.stopPropagation();
@@ -435,52 +540,6 @@
       this.trigger('change');
     },
 
-    // ## Pseudo-Private Methods
-
-    /**
-     * Determines how many decimal places should be used when formatting the
-     * slider value for display.
-     */
-    __getPrecision: function () {
-      var mStep     = this.model.get('step_value'),
-          precision = 0;
-
-      if (_.isNumber(mStep)) {
-          precision = mStep.toString().split('.');
-          precision = precision[1] ? precision[1].length : 0
-      }
-
-      return precision;
-    },
-
-    /**
-     * Used to format values in the output element. Memoized as
-     * this.formatValue.
-     */
-    __getFormatter: function () {
-      var precision  = this.precision,
-          multiplier = this.uiMultiplier,
-          mUnit      = this.model.get('unit'),
-          unit       = '';
-
-      if (_.isString(mUnit)) {
-        switch (mUnit) {
-          case "%":
-          case "#":
-          case "MW":
-          case "km2":
-          case "km":
-          case "x":
-            unit = ' ' + mUnit;
-            break;
-          // Add custom units here...
-        }
-      }
-
-      return function (value) {
-        return (value * multiplier).toFixed(precision) + unit;
-      };
-    },
   });
 
   // Globals -----------------------------------------------------------------

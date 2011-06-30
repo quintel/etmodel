@@ -10,9 +10,9 @@ var InputElement = Backbone.Model.extend({
     // Temporary; for developing the flexible inputs feature.
     this.set({
       conversions: [
-        { name: 'Unit One',   multiplier: 0.5  },
-        { name: 'Unit Two',   multiplier: 0.25 },
-        { name: 'Unit Three', multiplier: 2    },
+        { name: 'Unit One',   unit: '#', multiplier: 0.5  },
+        { name: 'Unit Two',   unit: '#', multiplier: 0.25 },
+        { name: 'Unit Three', unit: '#', multiplier: 2    },
       ]
     }, { silent: true });
   },

@@ -161,7 +161,6 @@
         'quinnOnChange',
         'quinnOnCommit',
         'commitValueSelection',
-        'abortValueSelection',
         'checkMunicipalityNotice',
         'inputElementInfoBoxShown'
       )

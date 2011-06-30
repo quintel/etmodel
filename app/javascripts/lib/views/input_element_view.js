@@ -20,6 +20,7 @@ var InputElementView = Backbone.View.extend({
 
     this.model       = this.options.model;
     this.el          = this.options.el;
+    this.precision   = this.__getPrecision();
     this.formatValue = this.__getFormatter();
 
     // Keeps track of intervals used to repeat stepDown and stepUp
@@ -299,19 +300,29 @@ var InputElementView = Backbone.View.extend({
   // ## Pseudo-Private Methods
 
   /**
-   * Used to format values in the output element. Memoized as
-   * this.formatValue.
+   * Determines how many decimal places should be used when formatting the
+   * slider value for display.
    */
-  __getFormatter: function () {
+  __getPrecision: function () {
     var mStep     = this.model.get('step_value'),
-        mUnit     = this.model.get('unit'),
-        unit      = '',
         precision = 0;
 
     if (_.isNumber(mStep)) {
         precision = mStep.toString().split('.');
         precision = precision[1] ? precision[1].length : 0
     }
+
+    return precision;
+  },
+
+  /**
+   * Used to format values in the output element. Memoized as
+   * this.formatValue.
+   */
+  __getFormatter: function () {
+    var precision = this.precision,
+        mUnit     = this.model.get('unit'),
+        unit      = '';
 
     if (_.isString(mUnit)) {
       switch (mUnit) {

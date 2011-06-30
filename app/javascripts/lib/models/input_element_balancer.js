@@ -312,12 +312,7 @@
    * integers.
    */
   Balancer.prototype.__getPrecision = function () {
-    var precision = _.max(_.map(this.quinns, function (quinn) {
-      var strStep = quinn.options.step.toString().split('.');
-      return parseInt((strStep[1] || '').length, 10);
-    }));
-
-    return precision || 0;
+    return _.max(_.pluck(this.views, 'precision')) || 0;
   };
 
   /**

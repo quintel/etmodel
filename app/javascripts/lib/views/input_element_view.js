@@ -457,12 +457,8 @@
     commitValueSelection: function (event) {
       var newValue = this.valueInputElement.val();
 
-      if (newValue.length > 0) {
-        newValue = parseFloat(newValue);
-
-        if (! _.isNaN(newValue)) {
-          this.quinn.setValue(this.conversion.formattedToInternal(newValue));
-        }
+      if (newValue.length > 0 && !! ( newValue = parseFloat(newValue) )) {
+        this.quinn.setValue(this.conversion.formattedToInternal(newValue));
       }
 
       this.valueSelectorElement.fadeOut('fast');

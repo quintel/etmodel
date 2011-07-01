@@ -312,7 +312,9 @@
    * integers.
    */
   Balancer.prototype.__getPrecision = function () {
-    return _.max(_.pluck(this.views, 'precision')) || 0;
+    return _.max(_.map(this.views, function (view) {
+      return view.conversion.precision;
+    })) || 0;
   };
 
   /**

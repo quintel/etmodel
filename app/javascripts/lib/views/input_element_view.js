@@ -473,7 +473,8 @@
     events: {
       'click  button': 'commit',
       'submit form':   'commit',
-      'change select': 'changeConversion'
+      'change select': 'changeConversion',
+      'keydown input': 'inputKeypress'
     },
 
     initialize: function (options) {
@@ -611,6 +612,36 @@
       this.inputEl.focus().select();
 
       return false;
+    },
+
+    /**
+     * Triggered when a user presses a key when the input element is focused.
+     * This allows us to track when they press the up or down cursor keys, and
+     * step up and down the slider values.
+     */
+    inputKeypress: function (event) {
+      var step = this.view.quinn.options.step,
+          newValue;
+
+      // Don't change value if shift is held (commonly used on OS X to select
+      // a field value).
+      if (! event.shiftKey) {
+        if (event.which === 38) { // Up key
+          newValue = this.inputValue() + step;
+        } else if (event.which === 40) { // Down key
+          newValue = this.inputValue() - step;
+        }
+      }
+
+      // If an acceptable new value was calculated, set it.
+      if (newValue <= this.view.quinn.selectable[1] &&
+          newValue >= this.view.quinn.selectable[0]) {
+
+        this.inputEl.val(this.selectedConversion.value(newValue)).select();
+        return false;
+      }
+
+      return true;
     }
   });
 

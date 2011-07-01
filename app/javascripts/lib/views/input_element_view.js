@@ -573,7 +573,7 @@
       this.unitNameEl.text(this.selectedConversion.unit);
 
       $(this.el).fadeIn('fast');
-      this.inputEl.focus();
+      this.inputEl.focus().select();
 
       return false;
     },
@@ -608,7 +608,7 @@
       this.inputEl.val(this.selectedConversion.value(this.view.quinn.value));
       this.unitNameEl.text(this.selectedConversion.unit);
 
-      this.inputEl.focus();
+      this.inputEl.focus().select();
 
       return false;
     }

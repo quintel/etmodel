@@ -91,9 +91,9 @@
    *
    * For example:
    *
-   *    u.value(2) # => "4.2"
+   *    u.format(2) # => "4.2"
    */
-  UnitConversion.prototype.value = function (value) {
+  UnitConversion.prototype.format = function (value) {
     return (value * (this.multiplier || 1)).toFixed(this.precision);
   };
 
@@ -104,14 +104,14 @@
    *
    * For example:
    *
-   *    u.valueWithUnit(2) # => "4.2 GW"
+   *    u.formatWithUnit(2) # => "4.2 GW"
    */
-  UnitConversion.prototype.valueWithUnit = function (value) {
+  UnitConversion.prototype.formatWithUnit = function (value) {
     if (this.unit && this.unit.length > 0) {
-      return this.value(value) + ' ' + this.unit;
+      return this.format(value) + ' ' + this.unit;
     }
 
-    return this.value(value);
+    return this.format(value);
   };
 
   /**
@@ -121,9 +121,9 @@
    *
    * For example:
    *
-   *    u.formattedToInternal(4.2) # => 2.0
+   *    u.toInternal(4.2) # => 2.0
    */
-  UnitConversion.prototype.formattedToInternal = function (formatted) {
+  UnitConversion.prototype.toInternal = function (formatted) {
     return formatted * (1 / this.multiplier);
   };
 
@@ -380,7 +380,7 @@
         newValue = this.quinn.setValue(newValue);
       }
 
-      this.valueElement.text(this.conversion.valueWithUnit(newValue));
+      this.valueElement.text(this.conversion.formatWithUnit(newValue));
 
       return newValue;
     },
@@ -542,7 +542,7 @@
       if (newValue.length > 0 &&
               ((newValue = parseFloat(newValue)) || newValue === 0)) {
 
-        return this.selectedConversion.formattedToInternal(parseFloat(newValue));
+        return this.selectedConversion.toInternal(parseFloat(newValue));
       }
 
       return 0;
@@ -569,7 +569,7 @@
       ACTIVE_VALUE_SELECTOR   = this.uid;
       this.selectedConversion = this.view.conversion;
 
-      this.inputEl.val(this.selectedConversion.value(this.view.quinn.value));
+      this.inputEl.val(this.selectedConversion.format(this.view.quinn.value));
       this.unitEl.val(this.selectedConversion.uid);
       this.unitNameEl.text(this.selectedConversion.unit);
 
@@ -606,7 +606,7 @@
         return conv.uid === uid;
       });
 
-      this.inputEl.val(this.selectedConversion.value(this.view.quinn.value));
+      this.inputEl.val(this.selectedConversion.format(this.view.quinn.value));
       this.unitNameEl.text(this.selectedConversion.unit);
 
       this.inputEl.focus().select();
@@ -637,7 +637,7 @@
       if (newValue <= this.view.quinn.selectable[1] &&
           newValue >= this.view.quinn.selectable[0]) {
 
-        this.inputEl.val(this.selectedConversion.value(newValue)).select();
+        this.inputEl.val(this.selectedConversion.format(newValue)).select();
         return false;
       }
 

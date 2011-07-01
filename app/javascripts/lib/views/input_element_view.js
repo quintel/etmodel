@@ -522,12 +522,29 @@
         $('body').click(abortValueSelection);
         BODY_HIDE_EVENT = true;
       }
+
       form.append($('<button>Update</button>'));
 
       $(this.el).attr('id', this.uid);
       $(this.view.el).append($(this.el).append(form));
 
       return this;
+    },
+
+    /**
+     * Returns the current value of the input field, converted to the internal
+     * representation used by Quinn.
+     */
+    inputValue: function () {
+      var newValue = this.inputEl.val();
+
+      if (newValue.length > 0 &&
+              ((newValue = parseFloat(newValue)) || newValue === 0)) {
+
+        return this.selectedConversion.formattedToInternal(parseFloat(newValue));
+      }
+
+      return 0;
     },
 
     // ## Event-Handlers -----------------------------------------------------
@@ -566,16 +583,7 @@
      * that it may be updated with the new value and unit conversion.
      */
     commit: function () {
-      var newValue = this.inputEl.val();
-      this.view.conversion = this.selectedConversion;
-
-      if (newValue.length > 0 &&
-              ((newValue = parseFloat(newValue)) || newValue === 0)) {
-
-        this.view.setTransientValue(
-          this.selectedConversion.formattedToInternal(newValue));
-      }
-
+      this.view.setTransientValue(this.inputValue());
       $(this.el).fadeOut('fast');
 
       ACTIVE_VALUE_SELECTOR = null;

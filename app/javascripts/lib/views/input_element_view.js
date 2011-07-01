@@ -493,10 +493,12 @@
     render: function () {
       var cLength = this.conversions.length,
           form    = $('<form action=""></form>'),
+          conv    = $('<div class="conversion"></div>'),
           i;
 
-      this.inputEl = $('<input type="text"></input>');
-      this.unitEl  = $('<select></select>');
+      this.inputEl    = $('<input type="text"></input>');
+      this.unitEl     = $('<select></select>');
+      this.unitNameEl = $('<span class="unit"></span>');
 
       form.append(this.inputEl);
 
@@ -510,14 +512,16 @@
           this.unitEl.append(this.conversions[i].toOptionEl());
         }
 
-        form.append(this.unitEl);
+        conv.append(this.unitNameEl);
+        conv.append(this.unitEl);
+
+        form.append(conv);
       }
 
       if (BODY_HIDE_EVENT === false) {
         $('body').click(abortValueSelection);
         BODY_HIDE_EVENT = true;
       }
-
       form.append($('<button>Update</button>'));
 
       $(this.el).attr('id', this.uid);
@@ -549,6 +553,7 @@
 
       this.inputEl.val(this.selectedConversion.value(this.view.quinn.value));
       this.unitEl.val(this.selectedConversion.uid);
+      this.unitNameEl.text(this.selectedConversion.unit);
 
       $(this.el).fadeIn('fast');
       this.inputEl.focus();
@@ -593,6 +598,9 @@
       });
 
       this.inputEl.val(this.selectedConversion.value(this.view.quinn.value));
+      this.unitNameEl.text(this.selectedConversion.unit);
+
+      this.inputEl.focus();
 
       return false;
     }

@@ -1,8 +1,9 @@
 (function (window) {
+  'use strict';
 
   var HOLD_ACCELERATE, BODY_HIDE_EVENT, ACTIVE_VALUE_SELECTOR,
       floatPrecision, conversionsFromModel, abortValueSelection,
-      UnitConversion, InputElementView;
+      InputElementView, ValueSelector;
 
   // # Constants -------------------------------------------------------------
 
@@ -28,7 +29,7 @@
 
     if (_.isNumber(value)) {
         precision = value.toString().split('.');
-        precision = precision[1] ? precision[1].length : 0
+        precision = precision[1] ? precision[1].length : 0;
     }
 
     return precision;
@@ -141,10 +142,7 @@
       'mousedown .decrease':              'beginStepDown',
       'mousedown .increase':              'beginStepUp',
       'click     .show-info':             'toggleInfoBox',
-      'click      output':                'showValueSelector',
-      'click     .value-selector button': 'commitValueSelection',
-      'submit    .value-selector form':   'commitValueSelection',
-      'change    .value-selector select': 'changeValueMultiplier'
+      'click      output':                'showValueSelector'
     },
 
     initialize: function (options) {
@@ -153,22 +151,17 @@
       _.bindAll(
          this,
         'updateFromModel',
-        'resetValue',
-        'toggleInfoBox',
-        'showValueSelector',
-        'beginStepDown',
-        'beginStepUp',
         'quinnOnChange',
         'quinnOnCommit',
-        'commitValueSelection',
         'checkMunicipalityNotice',
         'inputElementInfoBoxShown'
-      )
+      );
 
-      this.model       = this.options.model;
-      this.el          = this.options.el;
-      this.conversions = conversionsFromModel(this.model);
-      this.conversion  = this.conversions[0];
+      this.model         = this.options.model;
+      this.el            = this.options.el;
+      this.conversions   = conversionsFromModel(this.model);
+      this.conversion    = this.conversions[0];
+      this.valueSelector = new ValueSelector({ view: this });
 
       // Keeps track of intervals used to repeat stepDown and stepUp
       // operations when the user holds down the mouse button.
@@ -251,7 +244,7 @@
 
         // Disable effects on sliders which are part of a group, since the
         // animation can look a little jarring.
-        effects:  ! this.model.get('share_group'),
+        effects:  ! this.model.get('share_group')
       });
 
       // The group onChange needs to be bound before the InputElementView
@@ -274,48 +267,37 @@
         this.disableButton('reset');
         this.disableButton('decrease');
         this.disableButton('increase');
+      } else {
+        this.refreshButtons();
       }
 
       return this;
     },
 
     /**
-     * Creates HTML for the value selector (the overlay which pops up when a
-     * user clicks on the slider value.
+     * Disable min / max button if the input is set to it's lowest or highest
+     * permitted value, and the reset button if the current slider value is
+     * the original value.
      */
-    renderValueSelector: function () {
-      var cLength = this.conversions.length, form, i;
+    refreshButtons: function () {
+      var value = this.quinn.value;
 
-      form = $('<form action=""></form>');
-
-      this.valueSelectorElement = $('<div class="value-selector"></div>');
-      this.valueSelectorElement.attr('id', _.uniqueId('vse_'));
-
-      this.valueInputElement    = $('<input type="text"></input>');
-      this.valueUnitElement     = $('<select></select>');
-
-      // Add unit types to the select.
-      for (i = 0; i < cLength; i++) {
-        this.valueUnitElement.append(this.conversions[i].toOptionEl());
+      if (value === this.quinn.selectable[0]) {
+        this.disableButton('decrease');
+        this.enableButton('increase');
+      } else if (value === this.quinn.selectable[1]) {
+        this.disableButton('increase');
+        this.enableButton('decrease');
+      } else {
+        this.enableButton('decrease');
+        this.enableButton('increase');
       }
 
-      form.append(this.valueInputElement);
-
-      if (i > 0) {
-        // Only show the unit selection if there were any.
-        form.append(this.valueUnitElement);
+      if (value === this.model.get('start_value')) {
+        this.disableButton('reset');
+      } else {
+        this.enableButton('reset');
       }
-
-      form.append($('<button>Update</button>'));
-
-      this.el.append(this.valueSelectorElement.append(form));
-
-      if (BODY_HIDE_EVENT === false) {
-        $('body').click(abortValueSelection);
-        BODY_HIDE_EVENT = true;
-      }
-
-      return this;
     },
 
     // ## Instance Methods ---------------------------------------------------
@@ -348,7 +330,7 @@
      * This checks if the municipality message has been shown. It is has not
      * been shown, show it!
      */
-    checkMunicipalityNotice:function () {
+    checkMunicipalityNotice: function () {
       if (this.model.get('semi_unadaptable') &&
             App.municipalityController.showMessage()) {
 
@@ -404,10 +386,6 @@
 
       this.valueElement.text(this.conversion.valueWithUnit(newValue));
 
-      if (this.valueInputElement) {
-        this.valueInputElement.val(this.conversion.value(newValue));
-      }
-
       return newValue;
     },
 
@@ -456,54 +434,9 @@
      * TODO Move to an Underscore template?
      */
     showValueSelector: function (event) {
-      // If the value selector hasn't been shown previously, render it now...
-      if (! this.valueSelectorElement) {
-        this.renderValueSelector();
+      if (! this.model.get('disabled')) {
+        this.valueSelector.show();
       }
-
-      if (ACTIVE_VALUE_SELECTOR) {
-        // Simulate a click to hide the currently open selector.
-        $('body').click();
-      }
-
-      ACTIVE_VALUE_SELECTOR = this.valueSelectorElement.attr('id');
-
-      this.valueInputElement.val(this.conversion.value(this.quinn.value));
-      this.valueSelectorElement.fadeIn('fast');
-      this.valueInputElement.focus();
-
-      return false;
-    },
-
-    /**
-     * Commits the new settings selected by the user from the value selector
-     * and updates the UI.
-     */
-    commitValueSelection: function (event) {
-      var newValue = this.valueInputElement.val();
-
-      if (newValue.length > 0 && !! ( newValue = parseFloat(newValue) )) {
-        this.quinn.setValue(this.conversion.formattedToInternal(newValue));
-      }
-
-      this.valueSelectorElement.fadeOut('fast');
-      ACTIVE_VALUE_SELECTOR = null;
-
-      return false;
-    },
-
-    /**
-     * Triggered when the user changes the unit type, tweaking the display of
-     * values to use a different multiplier.
-     */
-    changeValueMultiplier: function (event) {
-      var uid = $(event.currentTarget).val();
-
-      this.conversion = _.detect(this.conversions, function (conv) {
-        return conv.uid === uid;
-      });
-
-      this.setTransientValue(this.quinn.value, true);
 
       return false;
     },
@@ -526,34 +459,147 @@
      */
     quinnOnCommit: function (newValue, quinn) {
       if (! this.model.get('disabled')) {
-        // Disable min / max button if the input is set to it's lowest or
-        // highest permitted value, and the reset button if the current
-        // slider value is the original value.
-
-        if (newValue === this.quinn.selectable[0]) {
-          this.disableButton('decrease');
-          this.enableButton('increase');
-        } else if (newValue === this.quinn.selectable[1]) {
-          this.disableButton('increase');
-          this.enableButton('decrease');
-        } else {
-          this.enableButton('decrease');
-          this.enableButton('increase');
-        }
-
-        if (newValue === this.model.get('start_value')) {
-          this.disableButton('reset');
-        } else {
-          this.enableButton('reset');
-        }
+        this.refreshButtons();
       }
 
       this.setTransientValue(newValue, true);
       this.model.set({ user_value: newValue });
       this.checkMunicipalityNotice();
       this.trigger('change');
+    }
+  });
+
+  // # ValueSelector ---------------------------------------------------------
+
+  ValueSelector = Backbone.View.extend({
+    className: 'value-selector',
+
+    events: {
+      'click  button': 'commit',
+      'submit form':   'commit',
+      'change select': 'changeConversion'
     },
 
+    initialize: function (options) {
+      this.view = options.view;
+      this.uid  = _.uniqueId('vse_');
+
+      this.conversions        = this.view.conversions;
+      this.selectedConversion = this.view.conversion;
+    },
+
+    // ## Rendering ----------------------------------------------------------
+
+    /**
+     * Creates the HTML elements for the value selector, and adds them to the
+     * parent element.
+     */
+    render: function () {
+      var cLength = this.conversions.length,
+          form    = $('<form action=""></form>'),
+          i;
+
+      this.inputEl = $('<input type="text"></input>');
+      this.unitEl  = $('<select></select>');
+
+      form.append(this.inputEl);
+
+      if (this.conversions.length > 1) {
+        // The view always has at least one unit conversion (the default), so
+        // we only show the unit conversion <select/> if there are others
+        // available.
+
+        // Add unit types to the select.
+        for (i = 0; i < cLength; i++) {
+          this.unitEl.append(this.conversions[i].toOptionEl());
+        }
+
+        form.append(this.unitEl);
+      }
+
+      if (BODY_HIDE_EVENT === false) {
+        $('body').click(abortValueSelection);
+        BODY_HIDE_EVENT = true;
+      }
+
+      form.append($('<button>Update</button>'));
+
+      $(this.el).attr('id', this.uid);
+      $(this.view.el).append($(this.el).append(form));
+
+      return this;
+    },
+
+    // ## Event-Handlers -----------------------------------------------------
+
+    /**
+     * Triggered when the user clicks the input element <output/> element;
+     * sets the selector values only when shown.
+     */
+    show: function () {
+      // If this is the first time the selector is being shown, it needs to be
+      // rendered first.
+      if (! this.inputEl) {
+        this.render();
+      }
+
+      if (ACTIVE_VALUE_SELECTOR) {
+        // Simulate a click to hide the currently open selector.
+        $('body').click();
+      }
+
+      ACTIVE_VALUE_SELECTOR   = this.uid;
+      this.selectedConversion = this.view.conversion;
+
+      this.inputEl.val(this.selectedConversion.value(this.view.quinn.value));
+      this.unitEl.val(this.selectedConversion.uid);
+
+      $(this.el).fadeIn('fast');
+      this.inputEl.focus();
+
+      return false;
+    },
+
+    /**
+     * When the selector is closes, commits the changes back to the view so
+     * that it may be updated with the new value and unit conversion.
+     */
+    commit: function () {
+      var newValue = this.inputEl.val();
+      this.view.conversion = this.selectedConversion;
+
+      if (newValue.length > 0 &&
+              ((newValue = parseFloat(newValue)) || newValue === 0)) {
+
+        this.view.setTransientValue(
+          this.selectedConversion.formattedToInternal(newValue));
+      }
+
+      $(this.el).fadeOut('fast');
+
+      ACTIVE_VALUE_SELECTOR = null;
+
+      return false;
+    },
+
+    /**
+     * Triggered when the user changes the value of the unit conversion
+     * drop-down -- changes the <input/> to be converted by the newly selected
+     * unit, but does not yet commit the change (if the user closes the
+     * selector without clicking "update", the changed unit conversion will
+     * not be kept).
+     */
+    changeConversion: function () {
+      var uid = this.unitEl.val();
+
+      this.selectedConversion = _.detect(this.conversions, function (conv) {
+        return conv.uid === uid;
+      });
+
+      this.inputEl.val(this.selectedConversion.value(this.view.quinn.value));
+
+      return false;
+    }
   });
 
   // Globals -----------------------------------------------------------------

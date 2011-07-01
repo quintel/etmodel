@@ -146,8 +146,6 @@
     },
 
     initialize: function (options) {
-      Backbone.View.prototype.initialize.call(this, options);
-
       _.bindAll(
          this,
         'updateFromModel',
@@ -157,8 +155,6 @@
         'inputElementInfoBoxShown'
       );
 
-      this.model         = this.options.model;
-      this.el            = this.options.el;
       this.conversions   = conversionsFromModel(this.model);
       this.conversion    = this.conversions[0];
       this.valueSelector = new ValueSelector({ view: this });

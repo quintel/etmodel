@@ -244,11 +244,14 @@
       wrapperElement.append(this.valueElement);
 
       // The help / info button.
-      wrapperElement.append('<div class="show-info"></div>');
+      wrapperElement.append($('<div class="show-info"></div>'));
 
       // Finally, the help / info box itself.
+      this.infoElement = $('<div class="info-wrap"></div>').append(
+        $('<div class="info"></div>').text(description));
+
       this.el.append(wrapperElement);
-      this.el.append($('<div class="info"></div>').text(description));
+      this.el.append(this.infoElement);
 
       // INITIALIZATION.
 
@@ -443,6 +446,13 @@
      */
     toggleInfoBox: function () {
       this.el.toggleClass('info-box-visible');
+
+      this.infoElement.animate({
+        height:  ['toggle', 'easeOutCubic'],
+        opacity: ['toggle', 'easeOutQuad']
+      }, 'fast');
+
+      return false;
     },
 
     /**

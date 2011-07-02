@@ -454,9 +454,9 @@
      * TODO Move to an Underscore template?
      */
     showValueSelector: function (event) {
-      if (! this.model.get('disabled')) {
+      // if (! this.model.get('disabled')) {
         this.valueSelector.show();
-      }
+      // }
 
       return false;
     },
@@ -548,6 +548,10 @@
       $(this.el).attr('id', this.uid);
       $(this.view.el).append($(this.el).append(form));
 
+      if (this.view.model.get('disabled')) {
+        this.inputEl.attr('disabled', true);
+      }
+
       bindValueSelectorBodyEvents();
 
       return this;
@@ -595,7 +599,10 @@
       this.unitNameEl.text(this.selectedConversion.unit);
 
       $(this.el).fadeIn('fast');
-      this.inputEl.focus().select();
+
+      if (! this.inputEl.attr('disabled')) {
+        this.inputEl.focus().select();
+      }
 
       return false;
     },
@@ -631,7 +638,9 @@
       this.inputEl.val(this.selectedConversion.format(this.view.quinn.value));
       this.unitNameEl.text(this.selectedConversion.unit);
 
-      this.inputEl.focus().select();
+      if (! this.inputEl.attr('disabled')) {
+        this.inputEl.focus().select();
+      }
 
       return false;
     },

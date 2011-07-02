@@ -2,7 +2,10 @@
   'use strict';
 
   var HOLD_ACCELERATE, BODY_HIDE_EVENT, ACTIVE_VALUE_SELECTOR,
-      floatPrecision, conversionsFromModel, abortValueSelection,
+
+      floatPrecision, conversionsFromModel,
+      abortValueSelection, bindValueSelectorBodyEvents,
+
       InputElementView, ValueSelector;
 
   // # Constants -------------------------------------------------------------
@@ -73,6 +76,27 @@
       $('#' + ACTIVE_VALUE_SELECTOR).fadeOut('fast');
       ACTIVE_VALUE_SELECTOR = null;
     }
+  };
+
+  /**
+   * When the first ValueSelector is created, some events need to be added to
+   * the body element to make things a little more intuitive:
+   *
+   *  - binds a click event such that clicking outside the selector closes it,
+   *  - binds a keyup so that hitting [Escape] closes the selector.
+   */
+  bindValueSelectorBodyEvents = function () {
+    if (BODY_HIDE_EVENT) {
+      return true;
+    }
+
+    var $body = $('body');
+
+    $body
+      .click(abortValueSelection)
+      .keyup(function (event) { if (event.which === 27) { $body.click(); } });
+
+    BODY_HIDE_EVENT = true;
   };
 
   // # UnitConversion --------------------------------------------------------
@@ -519,15 +543,12 @@
         form.append(conv);
       }
 
-      if (BODY_HIDE_EVENT === false) {
-        $('body').click(abortValueSelection);
-        BODY_HIDE_EVENT = true;
-      }
-
       form.append($('<button>Update</button>'));
 
       $(this.el).attr('id', this.uid);
       $(this.view.el).append($(this.el).append(form));
+
+      bindValueSelectorBodyEvents();
 
       return this;
     },

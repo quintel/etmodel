@@ -1,0 +1,19 @@
+<script id="value-selector-template" type="text/template">
+    <form action="#">
+        <input type="text" />
+
+        <div class="conversion">
+            <span class="unit"> </span>
+
+            <select>
+                <%% _.each(conversions, function (conversion) { %>
+                    <option value="<%%= conversion.uid %>">
+                        <%%= conversion.name %>
+                    </option>
+                <%% }); %>
+            </select>
+        </div>
+
+        <button>Update</button>
+    </form>
+</script>

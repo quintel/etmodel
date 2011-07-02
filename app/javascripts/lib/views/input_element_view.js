@@ -2,6 +2,7 @@
   'use strict';
 
   var HOLD_ACCELERATE, BODY_HIDE_EVENT, ACTIVE_VALUE_SELECTOR,
+      INPUT_ELEMENT_T, VALUE_SELECTOR_T,
 
       floatPrecision, conversionsFromModel,
       abortValueSelection, bindValueSelectorBodyEvents,
@@ -21,6 +22,12 @@
   // Holds the ID of the currently displayed value selector so it can be
   // hidden if the user clicks outside of it.
   ACTIVE_VALUE_SELECTOR = null;
+
+  // Templates.
+  $(function () {
+    INPUT_ELEMENT_T  = _.template($('#input-element-template').html());
+    VALUE_SELECTOR_T = _.template($('#value-selector-template').html());
+  });
 
   /**
    * Given an integer or float, returns how many decimal places are present,
@@ -206,58 +213,26 @@
      * Creates the HTML elements used to display the slider.
      */
     render: function () {
-      var quinnElement   = $('<div class="quinn"></div>'),
-          wrapperElement = $('<div class="slider-controls"></div>'),
-
-          // Need to keep hold of this to add the text to the new info box...
-          description = this.el.find('.info-box .text').text(),
-
-          quinnOnChange, quinnOnComplete;
 
       // TEMPLATING.
 
-      // Start by removing the contents of the existing element, so that we
-      // may add our own.
-      this.el.empty();
-      this.el.addClass('new-input-slider');
+      this.el.addClass('new-input-slider').html(
+        INPUT_ELEMENT_T({
+          name: this.model.get('translated_name'),
+          info: this.el.find('.info-box .text').text()
+        })
+      );
 
-      // The label.
-      wrapperElement.append(
-        $('<label><label>').text(this.model.get('translated_name')));
-
-      // Reset and decrease-value buttons.
-      this.resetElement = $('<div class="reset"></div>');
-      wrapperElement.append(this.resetElement);
-
-      this.decreaseElement = $('<div class="decrease"></div>');
-      wrapperElement.append(this.decreaseElement);
-
-      // Holds the Quinn slider widget.
-      wrapperElement.append(quinnElement);
-
-      // Increase-value button.
-      this.increaseElement = $('<div class="increase"></div>');
-      wrapperElement.append(this.increaseElement);
-
-      // Displays the current value to the user.
-      this.valueElement = $('<output></output>');
-      wrapperElement.append(this.valueElement);
-
-      // The help / info button.
-      wrapperElement.append($('<div class="show-info"></div>'));
-
-      // Finally, the help / info box itself.
-      this.infoElement = $('<div class="info-wrap"></div>').append(
-        $('<div class="info"></div>').text(description));
-
-      this.el.append(wrapperElement);
-      this.el.append(this.infoElement);
+      this.resetElement    = this.$('.reset');
+      this.decreaseElement = this.$('.decrease');
+      this.increaseElement = this.$('.increase');
+      this.valueElement    = this.$('output');
 
       // INITIALIZATION.
 
       // new $.Quinn is an alternative to $(...).quinn(), and allows us to
       // easily keep hold of the Quinn instance.
-      this.quinn = new $.Quinn(quinnElement, {
+      this.quinn = new $.Quinn(this.$('.quinn'), {
         range:    [ this.model.get('min_value'),
                     this.model.get('max_value') ],
 
@@ -397,10 +372,6 @@
      * The `fromSlider` argument indicates whether the new value has come from
      * the Quinn slider, in which case we can trust the value to fit the step,
      * min, and max values, and do not need to run the Quinn callbacks.
-     *
-     * TODO Buttons need may need to be enabled / disabled, such as when the
-     *      new value is the minimum, the decrease button should not be
-     *      clickable.
      */
     setTransientValue: function (newValue, fromSlider) {
       if (! fromSlider) {
@@ -447,7 +418,7 @@
     toggleInfoBox: function () {
       this.el.toggleClass('info-box-visible');
 
-      this.infoElement.animate({
+      this.$('.info-wrap').animate({
         height:  ['toggle', 'easeOutCubic'],
         opacity: ['toggle', 'easeOutQuad']
       }, 'fast');
@@ -458,10 +429,6 @@
     /**
      * Shows the overlay which allows the user to enter a custom value, and
      * swap between different unit conversions supported by the model.
-     *
-     * This is a bit messy.
-     *
-     * TODO Move to an Underscore template?
      */
     showValueSelector: function (event) {
       this.valueSelector.show();
@@ -523,37 +490,16 @@
      * parent element.
      */
     render: function () {
-      var cLength = this.conversions.length,
-          form    = $('<form action=""></form>'),
-          conv    = $('<div class="conversion"></div>'),
-          i;
+      var $el = $(this.el);
 
-      this.inputEl    = $('<input type="text"></input>');
-      this.unitEl     = $('<select></select>');
-      this.unitNameEl = $('<span class="unit"></span>');
+      $el.append( VALUE_SELECTOR_T({ conversions: this.conversions }) );
+      $el.attr('id', this.uid);
 
-      form.append(this.inputEl);
+      this.inputEl    = this.$('input');
+      this.unitEl     = this.$('select');
+      this.unitNameEl = this.$('.unit');
 
-      if (this.conversions.length > 1) {
-        // The view always has at least one unit conversion (the default), so
-        // we only show the unit conversion <select/> if there are others
-        // available.
-
-        // Add unit types to the select.
-        for (i = 0; i < cLength; i++) {
-          this.unitEl.append(this.conversions[i].toOptionEl());
-        }
-
-        conv.append(this.unitNameEl);
-        conv.append(this.unitEl);
-
-        form.append(conv);
-      }
-
-      form.append($('<button>Update</button>'));
-
-      $(this.el).attr('id', this.uid);
-      $(this.view.el).append($(this.el).append(form));
+      this.view.el.append($el);
 
       if (this.view.model.get('disabled')) {
         this.inputEl.attr('disabled', true);

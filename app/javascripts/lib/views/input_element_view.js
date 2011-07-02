@@ -454,10 +454,7 @@
      * TODO Move to an Underscore template?
      */
     showValueSelector: function (event) {
-      // if (! this.model.get('disabled')) {
-        this.valueSelector.show();
-      // }
-
+      this.valueSelector.show();
       return false;
     },
 

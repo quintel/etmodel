@@ -69,17 +69,19 @@ $slider-box-height: 22px
 
   .info
     background: #eee
-    border-top: 5px solid white
-    border-bottom: 10px solid white
     clear: both
-    margin: 0 0 10px
-    padding: 7px 10px
+    font-size: 12px
+    line-height: 18px
+    margin: 5px 0 20px
+    padding: 12px 15px
+
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    border-radius: 5px
 
   &.info-box-visible
     .show-info
       @include input-slider-button(120px)
-    .info
-      display: block
 
   // Adjustment to vertical alignment of label and value text.
   label, output

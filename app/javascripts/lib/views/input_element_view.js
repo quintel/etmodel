@@ -584,6 +584,7 @@
      * that it may be updated with the new value and unit conversion.
      */
     commit: function () {
+      this.view.conversion = this.selectedConversion;
       this.view.setTransientValue(this.inputValue());
       $(this.el).fadeOut('fast');
 

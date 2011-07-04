@@ -10,7 +10,7 @@ var WaterfallChartView = BaseChartView.extend({
     this.clear_container();
     InitializeWaterfall(this.model.get("container"), 
       this.results(), 
-      'PJ', //this.parsed_unit(), 
+      this.model.get('unit'), 
       this.axis_scale_adjusted_with_ticks(), 
       this.colors(), 
       this.labels(),

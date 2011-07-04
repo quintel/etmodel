@@ -28,7 +28,7 @@
         - if slide = result.slide
           %tr
             %td.img
-              - if path = slide_image_path(slide)
+              - if path = slide.image_path
                 %img.slide_icon{:src => path}
             %td.result
               %h4= result.search_result.title
@@ -46,7 +46,7 @@
         - slide = result
         %tr
           %td.img
-            - if path = slide_image_path(slide)
+            - if path = slide.image_path
               %img.slide_icon{:src => path}
           %td.result
             %h4= link_to result.search_result.title, :controller => result.controller_name, :action => result.action_name, :slide => result.name

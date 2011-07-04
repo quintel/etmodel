@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
-  layout 'etm'
+  layout 'pages'
   
   def index
     @user = User.new
     render :action=>"new"
   end
+
   def new
     @user = User.new
     respond_to do |format|

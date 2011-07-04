@@ -3,22 +3,6 @@ module LayoutHelper
   def title(str)
     haml_tag :h2, str
   end
-
-  def title_text
-    if title = PageTitle.for_page(controller.controller_name, params[:id]).first
-      haml_tag :h2, I18n.t("pagetitle.#{title.title}").html_safe
-      haml_tag 'p#content_short.visible' do
-        haml_tag :span, truncate(title.description.andand.short_content.html_safe, :length => 135).html_safe
-        haml_tag 'a#read_more', I18n.t("pagetitle.readmore"), :href => "#"
-      end
-
-      haml_tag "p#content_long.hidden" do
-        haml_tag :span, title.description.andand.content.force_encoding("UTF-8").html_safe
-
-        haml_tag "a#read_less", I18n.t("pagetitle.hidetext"), :href => "#"
-      end
-    end
-  end
   
   # splits the collection in two and adds a read more link if 
   # the collection.length > limit

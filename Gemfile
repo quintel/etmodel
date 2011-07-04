@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-gem 'rails', '3.0.8'
+gem 'rails', '3.0.9'
 gem 'jquery-rails'
 gem 'haml', '~>3.1.1'
 gem 'sass', '~>3.1.1'

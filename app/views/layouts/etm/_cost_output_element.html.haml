@@ -11,54 +11,54 @@
   - if @output_element.under_construction 
     #chart_not_finished
 
-  %div.column-r-content{ :id => dom_id(@output_element)}
+  #current_chart.column-r-content
 
-  #blockchart
-    #canvas_container
-      #canvas
-        %ul#x-grid
-          - horizontal_grid_lines.times do
-            %li{:style => "width: #{(100.0/horizontal_grid_lines).round(1)}%"}
-        %ul#y-grid
-          - vertical_grid_lines.times do
-            %li{:style => "height: #{(100.0/vertical_grid_lines).round(1)}%"}
-        %ul#x-axis
-          - horizontal_grid_lines.times do |int|
-            %li{:id => "xtick_#{int}",:style => "width: #{(100.0/horizontal_grid_lines).round(1)}%"}
-        %ul#y-axis
-          - vertical_grid_lines.times do |int|
-            %li{:id => "ytick_#{int}", :style => "height: #{(100.0/vertical_grid_lines).round(1)}%"}
+    #blockchart
+      #canvas_container
+        #canvas
+          %ul#x-grid
+            - horizontal_grid_lines.times do
+              %li{:style => "width: #{(100.0/horizontal_grid_lines).round(1)}%"}
+          %ul#y-grid
+            - vertical_grid_lines.times do
+              %li{:style => "height: #{(100.0/vertical_grid_lines).round(1)}%"}
+          %ul#x-axis
+            - horizontal_grid_lines.times do |int|
+              %li{:id => "xtick_#{int}",:style => "width: #{(100.0/horizontal_grid_lines).round(1)}%"}
+          %ul#y-axis
+            - vertical_grid_lines.times do |int|
+              %li{:id => "ytick_#{int}", :style => "height: #{(100.0/vertical_grid_lines).round(1)}%"}
 
-        #y-axis-label{:style => "background-image: url(/images/layout/euro_per_mwh_#{I18n.locale}.gif)"} EUR/MWhe
-        #x-axis-label= t("output.Total investment cost of production")
+          #y-axis-label{:style => "background-image: url(/images/layout/euro_per_mwh_#{I18n.locale}.gif)"} EUR/MWhe
+          #x-axis-label= t("output.Total investment cost of production")
 
-        - @blocks.each do |block|
-          - show_or_not = session["block_#{block.id}"]
-          - show_or_not ||= block.show_at_first ? 'visible' : 'invisible'
+          - @blocks.each do |block|
+            - show_or_not = session["block_#{block.id}"]
+            - show_or_not ||= block.show_at_first ? 'visible' : 'invisible'
 
-          .block_container{:style => "bottom: 0%; left: 0%;", :class => show_or_not, :id => "block_container_#{block.id}"}
-            .block{:id => "block_#{block.id}"}
-              .header{:class => block.group.downcase}= t("serie.#{block.label}")
-              .content
-                %h4= t("serie.#{block.label}")
-                %p= block.description.short_content
-                = link_to t('pagetitle.readmore'), "/descriptions/serie/#{block.id}", :class => 'fancybox'
-            .balloon-tip
+            .block_container{:style => "bottom: 0%; left: 0%;", :class => show_or_not, :id => "block_container_#{block.id}"}
+              .block{:id => "block_#{block.id}"}
+                .header{:class => block.group.downcase}= t("serie.#{block.label}")
+                .content
+                  %h4= t("serie.#{block.label}")
+                  %p= block.description.short_content
+                  = link_to t('pagetitle.readmore'), "/descriptions/serie/#{block.id}", :class => 'fancybox'
+              .balloon-tip
 
 
-  %ul#block_list
-    - @blocks.group_by(&:group).each do |group, blocks|
-      %li.group
-        %input.block_list_checkbox{:type => "checkbox", :id => "block_list_checkbox_#{group}"}
-        %ul.group{:id => group}
-          - blocks.each do |b|
-            %li
-              - show_or_not = session["block_#{b.id}"]
-              - show_or_not ||= b.show_at_first ? 'visible' : 'invisible'
+    %ul#block_list
+      - @blocks.group_by(&:group).each do |group, blocks|
+        %li.group
+          %input.block_list_checkbox{:type => "checkbox", :id => "block_list_checkbox_#{group}"}
+          %ul.group{:id => group}
+            - blocks.each do |b|
+              %li
+                - show_or_not = session["block_#{b.id}"]
+                - show_or_not ||= b.show_at_first ? 'visible' : 'invisible'
 
-              %a.show_hide_block{:href=>'#', :class => show_or_not, :id => "show_hide_block_#{b.id}"}
-                = t("serie.#{b.label}")
-        = link_to t("serie.#{group}"), "#"
+                %a.show_hide_block{:href=>'#', :class => show_or_not, :id => "show_hide_block_#{b.id}"}
+                  = t("serie.#{b.label}")
+          = link_to t("serie.#{group}"), "#"
 
 
 = javascript_include_tag output_element_path(:id => @output_element, :format => 'js')

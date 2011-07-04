@@ -126,6 +126,7 @@ $(document).ready(function() {
       titleShow: false,
       padding  : 0,
       scrolling: 'no',
+      type     : 'iframe',
       ajax : {
         type  : "GET"
       }

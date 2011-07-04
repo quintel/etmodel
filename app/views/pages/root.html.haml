@@ -8,12 +8,12 @@
 
  
     - if has_active_scenario?
-      %a{:id=>"continue_scenario_button", :class=>"style_button", :href =>  last_etm_path(:include_action => false),:alt=>"continue",:title=>"continue"}
+      %a#continue_scenario_button.style_button{:href =>  last_etm_path(:include_action => false),:alt=>"continue",:title=>"continue"}
         .button_left
         .button_center
           %span= t('continue with current scenario').capitalize
         .button_right
-    %a{:id=>"new_scenario_button", :class=>"style_button", :href =>"#",:alt=>"new scenario",:title=>"new scenario"}
+    %a#new_scenario_button.style_button{:href =>"#",:alt=>"new scenario",:title=>"new scenario"}
       .button_left
       .button_center
         %span= t('Start a new scenario').capitalize
@@ -28,7 +28,7 @@
           = select_tag :complexity, options_for_select(@scenario_levels,3), :style => "width:142px"
 
         = render 'pages/root_page/start_button'
-    %a{:id=>"existing_scenario_button", :class=>" style_button", :href =>"#",:alt=>"continue",:title=>"continue"}
+    %a#existing_scenario_button.style_button{:href =>"#",:alt=>"continue",:title=>"continue"}
       .button_left
       .button_center
         %span= t('load a scenario').capitalize

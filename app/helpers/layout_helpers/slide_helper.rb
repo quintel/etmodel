@@ -21,7 +21,6 @@ module LayoutHelpers::SlideHelper
     return if slide.sub_header.blank?
 
     haml_tag 'li.sub_header', :id => "sub_header_#{slide.id}" do
-      slide_mind_meister_link(slide)
       slide_expert_prediction_link(slide)
 
       haml_tag :span, t("subheaders.#{slide.sub_header}"), :class=>"subheader_arrow"
@@ -34,23 +33,6 @@ module LayoutHelpers::SlideHelper
     end
   end
 
-  ##
-  # Optional link to the mind meister tool.
-  #
-  # @param [Slide] slide
-  #
-
-  def slide_mind_meister_link(slide)
-    if slide.id == 25
-      haml_tag 'a.mind_meister', t("accordion.mindmeister"),:style => "float:left",
-        :href => "http://www.mindmeister.com/maps/show?api_key=aa25bd3be1d339ee02078af0afc80068&auth_token=07d2973007497068&id=86926401&api_sig=sig"
-    elsif slide.id == 49
-      haml_tag 'a.mind_meister', t("accordion.mindmeister"),:style => "float:left",
-        :href => "http://www.mindmeister.com/maps/show?api_key=aa25bd3be1d339ee02078af0afc80068&auth_token=07d2973007497068&id=86926830&api_sig=sig"
-    end
-    
-  end
-  
   ##
   # Optional link to the expert prediction tool.
   #

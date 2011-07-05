@@ -7,7 +7,9 @@
       #text_wide
         %h1= t("Who uses most energy?")
         %ul#blocks
-          - scale = 5
+          - max_height  = 240
+          - tallest_bar = @items.values.map{|x| x[:percent]}.max
+          - scale       = max_height / tallest_bar.to_f
           - @items.each_pair do |key, i|
             - height = i[:percent] * scale
             %li{:style =>"height:#{height}px", :class => "#{key} #{'active' if i[:active]}"}

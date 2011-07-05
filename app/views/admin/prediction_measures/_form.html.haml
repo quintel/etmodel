@@ -3,7 +3,7 @@
   -semantic_form_for [:admin, @prediction_measure] do |form|
 
     = form.inputs :name, :impact, :cost, :year_start, :actor, :description
-    = form.select :prediction_id, Prediction.all.map{|x| ["#{x.id} - #{x.input_element.name} (#{x.input_element.id}) - #{x.user.name} "]},:label => 'Prediction'
+    = form.select :prediction_id, Prediction.all.map{|x| ["#{x.id} - #{x.input_element.name} (#{x.input_element.id}) - #{x.user.name} ",x.id]},:label => 'Prediction'
     = form.buttons
 
   = link_to "back", admin_predictions_path

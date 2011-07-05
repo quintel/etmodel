@@ -1,0 +1,43 @@
+- type     = slide_type_in_collection(slide, @slides)
+- selected = 'selected' if (params[:slide] == slide.name or type == :first)
+%li.accordion_element{:class => selected}
+  - default_output = Current.view.default_output_element_for_slide(slide)
+  %span.headline{:id => "default_output_#{default_output.id}", :slide => slide.id}
+    %a.slide_header{:href => "/#{controller_name}/#{params[:id]}/#{slide.name.underscore}", :id => slide.name.underscore}
+      = raw t("slidetitle.#{slide.name}")
+  .slide
+    %p
+      = image_tag(slide.image_path) if slide.image.present?
+      = raw slide.description.try(:content)
+      - if slide.show_house_selection_tool
+        = link_to t("accordion.help me choose"), house_selection_tool_path, :class => 'house_selection_tool'
+    
+    %ul.valuees
+      - unless slide.sub_header.blank?
+        %li.sub_header{:id => "sub_header_#{slide.id}"}
+          - if slide.show_expert_prediction_link
+            %a.expert_header{:style => "float:left", :href => "/expert_predictions?slide_id=#{slide.id}"}
+          
+          %span.subheader_arrow= t("subheaders.#{slide.sub_header}")
+          - unless slide.subheader_image.blank?
+            %img.subheader_image{:src => "/images/layout/#{slide.subheader_image}"}
+          .clear
+      
+      - Current.view.ungrouped_input_elements_for(slide).each do |input_element|
+        = render :partial => 'input_elements/slider', :object => input_element
+
+      - Current.view.interface_groups_with_input_elements_for(slide).each do |group|
+        - title = slide.sub_header2
+        %li.interface_group
+          %span{:style =>"float:left"}= t("accordion.#{group[0]}")
+          - unless title.blank?
+            %span.subheader_arrow= t("subheaders.#{title}")
+        - group.last.each do |input_element|
+          = render :partial => 'input_elements/slider', :object => input_element
+
+    - unless type == :last
+      %a.btn-done.next{:href => '#'}= I18n.t("go to next")
+
+%script
+  - Current.view.input_elements_for(slide).each do |i|
+    window.input_elements.add(#{i.to_json.html_safe}.input_element);

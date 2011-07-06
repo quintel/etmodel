@@ -105,7 +105,7 @@ var InputElementList = Backbone.Collection.extend({
    * Get the string which contains the update values for all dirty input elements.
    */  
   api_update_params:function() {
-    return this.dirty().map(function(el) {
+    return _.map(this.dirty(), function(el) {
       return ("input["+el.get('input_id')+"]=" + el.get("user_value"));
     }).join("&");
   },

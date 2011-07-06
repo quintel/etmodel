@@ -52,7 +52,7 @@ end
 
 
 namespace :deploy do
-  task :after_update_code do
+  task :copy_configuration_files do
     run "cp #{config_files}/* #{release_path}/config/"
     run "cd #{release_path}; chmod 777 public/images public/stylesheets tmp"
     run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
@@ -60,9 +60,8 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/vendor_bundle #{release_path}/vendor/bundle"
     run "cd #{release_path} && bundle install --without development test"
 
-    #deploy.generate_rdoc
     memcached.flush
-    # symlink_sphinx_indexes
+    #symlink_sphinx_indexes
   end
 
   task :start do ; end
@@ -84,11 +83,6 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/db/sphinx #{release_path}/db/sphinx"
   end
 
-  task :after_deploy do
-    # run "chmod 777 #{release_path}/log/searchd.production.pid"
-    deploy.cleanup
-    notify_hoptoad
-  end
   
   desc "Notify Hoptoad of the deployment"
   task :notify_hoptoad, :except => { :no_release => true } do
@@ -100,8 +94,11 @@ namespace :deploy do
     run "cd #{release_path} && #{notify_command}"
     puts "Hoptoad Notification Complete."
   end
-
 end
+
+after "deploy:update_code", "deploy:copy_configuration_files"
+after "deploy", "deploy:cleanup"
+after "deploy", "deploy:notify_hoptoad"
 
 desc "Move db server to local db"
 task :db2local do

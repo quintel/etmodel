@@ -15,15 +15,18 @@ role :db,  domain, :primary => true # This is where Rails migrations will run
 
 task :production do
   set :branch, "master"
-  set :deploy_to, "/home/ubuntu/apps/#{application}"
-  set :config_files, "/home/ubuntu/config_files/#{application}"
+  set :application_key, "#{application}"
+  set :deploy_to, "/home/ubuntu/apps/#{application_key}"
+  set :config_files, "/home/ubuntu/config_files/#{application_key}"
 end
 
 task :staging do
+  set :application_key, "#{application}_staging"
   set :branch, "staging"
-  set :deploy_to, "/home/ubuntu/apps/#{application}_staging"
-  set :config_files, "/home/ubuntu/config_files/#{application}_staging"
+  set :deploy_to, "/home/ubuntu/apps/#{application_key}"
+  set :config_files, "/home/ubuntu/config_files/#{application_key}"
 end
+
 
 set :user, 'ubuntu'
 

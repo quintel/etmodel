@@ -30,8 +30,8 @@ Etm::Application.routes.draw do
   match '/descriptions/serie/:id'  => 'descriptions#show', :output => "OutputElementSerie"
   match '/descriptions/slider/:id' => 'descriptions#show', :output => "InputElement"
 
-  match '/descriptions/slider/:id' => 'descriptions#show', :output => "InputElement"
-  
+  match '/translations/:id' => 'translations#show'
+
   match 'house_selections/tool'  => 'house_selections#tool',  :as => :house_selection_tool
   match 'house_selections/set'   => 'house_selections#set',   :as => :house_selection_set
   match 'house_selections/apply' => 'house_selections#apply', :as => :house_selection_apply

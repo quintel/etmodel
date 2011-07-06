@@ -1,9 +1,9 @@
 #constraints_container
   %script#constraint-template{:type => 'text/template'}
     .arrow
-    %span.header 
+    .header 
       <%= name %>
-      %span.scale <%= formatted_output_scale ? formatted_output_scale : '' %>
+    .scale <%= formatted_output_scale ? formatted_output_scale : '' %>
     %strong <%= output %>
     .difference
     = render 'layouts/etm/constraint_box'
@@ -18,10 +18,9 @@
         }
 
       .constraint{opts}
-        %div.arrow
-        %span.header
-          = raw I18n.t("dashboard.#{c.name}")
-          %span.scale
+        .arrow
+        .header= raw I18n.t("dashboard.#{c.name}")
+        .scale
         %strong
         .difference
         = render 'layouts/etm/constraint_box', :title => c.extended_title

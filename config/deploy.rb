@@ -3,18 +3,30 @@ require 'bundler/capistrano'
 require 'hoptoad_notifier/capistrano'
 
 
-set :application, "etmodel"
 
 set :stage, :production
 
 #### UNCOMMENT roles when we setup server
 
 task :production do
+  set :application, "etmodel"
+
   set :domain, "46.137.109.15"
   role :web, domain # Your HTTP server, Apache/etc
   role :app, domain # This may be the same as your `Web` server
   role :db,  domain, :primary => true # This is where Rails migrations will run
   set :branch, "master"
+  set :server_type, 'production'
+end
+
+task :staging do
+  set :application, "etmodel_staging"
+
+  set :domain, "46.137.109.15"
+  role :web, domain # Your HTTP server, Apache/etc
+  role :app, domain # This may be the same as your `Web` server
+  role :db,  domain, :primary => true # This is where Rails migrations will run
+  set :branch, "staging"
   set :server_type, 'production'
 end
 

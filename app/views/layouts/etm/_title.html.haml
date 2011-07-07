@@ -1,11 +1,11 @@
-#title
-  - if current_tutorial_movie
-    %a{:class=>"tutorial_button", :href => "/tutorial/#{params[:controller]}/#{params[:id]}",:alt=>"Tutorial",:title=>"Tutorial"}
-      .button_left_movie
-      .button_center
-        %span= t("tutorial.button")
-      .button_right
-  - if title = PageTitle.for_page(controller.controller_name, params[:id]).first
+- if title = PageTitle.for_page(controller.controller_name, params[:id]).first
+  #title
+    - if current_tutorial_movie
+      %a{:class=>"tutorial_button", :href => "/tutorial/#{params[:controller]}/#{params[:id]}",:alt=>"Tutorial",:title=>"Tutorial"}
+        .button_left_movie
+        .button_center
+          %span= t("tutorial.button")
+        .button_right
     %h2= raw I18n.t("pagetitle.#{title.title}")
     %p#content_short.visible
       %span= raw truncate(title.description.andand.short_content.html_safe, :length => 135)

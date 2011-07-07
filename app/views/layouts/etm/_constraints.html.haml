@@ -1,13 +1,4 @@
 #constraints_container
-  %script#constraint-template{:type => 'text/template'}
-    .arrow
-    .header 
-      <%= name %>
-    .scale <%= formatted_output_scale ? formatted_output_scale : '' %>
-    %strong <%= output %>
-    .difference
-    = render 'layouts/etm/constraint_box'
-
   #constraints
     - @constraints.each do |c|
       :ruby
@@ -31,15 +22,16 @@
         dashboard.add(
         = { :id => c.id, :key => c.key, :gquery_key => c.gquery_key }.to_json.html_safe
         );
-    - @goals.each do |goal|
-      :javascript
-        new PolicyGoal({
-            goal_id          : #{goal.id},
-            name             : '#{escape_javascript t("policies.#{goal.name.humanize}")}',
-            success_query    : '#{goal.reached_query}',
-            value_query      : '#{goal.query}',
-            target_query     : 'GOAL(#{goal.key})',
-            user_value_query : 'GOAL_USER_VALUE(#{goal.key})',
-            unit             : '#{goal.unit}',
-            display_fmt      : '#{goal.display_format}'
-          });
+      - @goals.each do |goal|
+        :ruby
+          goal_opts = {
+            :goal_id          => goal.id,
+            :name             => t("policies.#{goal.name.humanize}"),
+            :success_query    => goal.reached_query,
+            :value_query      => goal.query,
+            :target_query     => "GOAL(#{goal.key})",
+            :user_value_query => "GOAL_USER_VALUE(#{goal.key})",
+            :unit             => goal.unit,
+            :display_fmt      => goal.display_format
+          }
+        new PolicyGoal(#{goal_opts.to_json.html_safe});

@@ -7,7 +7,7 @@
   - @InputElement.predictions.each do |prediction|
     %br
     = prediction.description
-    = "(#{prediction.user.name}) at #{prediction.created_at.strftime("%d-%m-%Y")}"
+    = "(#{prediction.user.try(:name)}) at #{prediction.created_at.strftime("%d-%m-%Y")}"
     %br
   
     - prediction.prediction_measures.each do |prediction_measure|

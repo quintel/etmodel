@@ -19,8 +19,8 @@
             name             : '#{escape_javascript t("policies.#{goal.name.humanize}")}',
             success_query    : '#{goal.reached_query}',
             value_query      : '#{goal.query}',
-            target_query     : 'GOAL(#{goal.key})',
-            user_value_query : 'GOAL_USER_VALUE(#{goal.key})',
+            target_query     : '#{goal.target_query}',
+            user_value_query : '#{goal.user_value_query}',
             unit             : '#{goal.unit}',
             display_fmt      : '#{goal.display_format}'
           })

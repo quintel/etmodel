@@ -1,7 +1,7 @@
 $(document).ready(function() {  
   $(".valuees a.label, a.fancybox").live('click', function() {
     $(this).fancybox({
-      padding  : 30,
+      padding  : 20,
       titleShow: false,
       ajax : {
         type  : "GET"

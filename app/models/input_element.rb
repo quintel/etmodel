@@ -41,7 +41,8 @@ class InputElement < ActiveRecord::Base
   has_one :description, :as => :describable
   has_one :area_dependency, :as => :dependable
   has_many :expert_predictions
-
+  has_many :predictions
+  
   validates :key, :presence => true, :uniqueness => true
   validates :input_id, :presence => true
 

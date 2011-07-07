@@ -1,0 +1,17 @@
+%table{table_defaults}
+  %thead
+    %tr
+      %th.tal year
+      %th.tal min
+      %th.tal best
+      %th.tal max
+  %tbody
+    %tr{cycles}
+      %td= @prediction_value.year
+      %td= @prediction_value.min
+      %td= @prediction_value.best
+      %td= @prediction_value.max
+      
+
+= link_to "back", admin_prediction_path(@prediction_value.prediction)
+      

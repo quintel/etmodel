@@ -27,10 +27,10 @@
           goal_opts = {
             :goal_id          => goal.id,
             :name             => t("policies.#{goal.name.humanize}"),
-            :success_query    => goal.reached_query,
-            :value_query      => goal.query,
-            :target_query     => "GOAL(#{goal.key})",
-            :user_value_query => "GOAL_USER_VALUE(#{goal.key})",
+            :success_query    => goal.reached_query.to_s,
+            :value_query      => goal.query.to_s,
+            :target_query     => goal.target_query.to_s,
+            :user_value_query => goal.user_value_query.to_s,
             :unit             => goal.unit,
             :display_fmt      => goal.display_format
           }

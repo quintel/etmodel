@@ -30,6 +30,8 @@
     this.quinns     = [];
     this.quinnOrder = [];
 
+    this.oValues    = null;
+
     this.masterId     = null;
     this.subordinates = null;
   }
@@ -86,9 +88,9 @@
    */
   Balancer.prototype.doBalance = function (newValue, quinn) {
     var iterations    = 20,
-        amountChanged = newValue - quinn.value,
+        amountChanged = newValue - this.oValues.value(quinn),
 
-        originalValues, originalQuinns,
+        valuesBeforeBalancing,
 
         flexPerSlider, flex, sliders, sLength, slider, prevValue,
         previousFlex, nextIterationSliders, i;
@@ -102,15 +104,17 @@
     // Determine which sliders can be altered; of the subordinates, some may
     // already be at their maximum or minimum values, so there's no point
     // changing those.
-    sliders = _.select(this.subordinates, function (sub) {
+    sliders = _.select(this.subordinates, _.bind(function (sub) {
+      var value = this.oValues.value(sub);
+
       if (amountChanged >= 0) {
         // Master slider is being increased.
-        return (sub.value > sub.selectable[0]);
+        return (value > sub.selectable[0]);
       } else {
         // Master slider is being reduced.
-        return (sub.value < sub.selectable[1]);
+        return (value < sub.selectable[1]);
       }
-    });
+    }, this));
 
     if ((sLength = sliders.length) === 0) {
       // Return quickly if all none of the subordinate sliders can be moved
@@ -118,8 +122,7 @@
       return false;
     }
 
-    originalQuinns = sliders;
-    originalValues = this.__originalValues(sliders);
+    valuesBeforeBalancing = new OriginalValues(sliders);
 
     // Flex is the amount of "value" which needs to be adjusted for. e.g.
     //
@@ -130,7 +133,7 @@
     //  If slider 1 is moved to 25, the flex is -25 since in order to balance
     //  the sliders we need to subtract 25 from the subordinates.
     //
-    flex = _.sum(_.pluck(sliders, 'value')) + newValue;
+    flex = this.oValues.sumOf(sliders) + newValue;
     flex = this.snapValue(this.max - flex);
 
     while (iterations--) {
@@ -150,6 +153,11 @@
         slider    = sliders[i];
         prevValue = slider.value;
 
+        if (iterations === 19) {
+          // first iteration.
+          prevValue = this.oValues.value(slider);
+        }
+
         if (slider.__setValue(prevValue + flexPerSlider)) {
           this.__sliderUsed(slider);
         }
@@ -163,8 +171,6 @@
         if ((flex < 0 && slider.value !== slider.selectable[0]) ||
             (flex > 0 && slider.value !== slider.selectable[1])) {
           nextIterationSliders.push(slider);
-        } else if (flex === 0) {
-          break; // We're done!
         }
       }
 
@@ -181,7 +187,7 @@
     }
 
     if (this.snapValue(flex) !== 0) {
-      this.__revert(originalQuinns, originalValues);
+      valuesBeforeBalancing.revert();
       return false;
     }
   };
@@ -213,6 +219,7 @@
     if (this.masterId === null) {
       this.masterId     = quinn.balanceId;
       this.subordinates = this.__getSubordinates();
+      this.oValues      = new OriginalValues(this.quinns);
 
       this.__runOnSubordinates('__willChange');
 
@@ -326,6 +333,7 @@
 
     this.masterId     = null;
     this.subordinates = null;
+    this.oValues      = null;
   };
 
   /**
@@ -339,37 +347,59 @@
     }
   };
 
+  // # OriginalValues --------------------------------------------------------
+
   /**
-   * Given an array of sliders, returns an object with their values keyed on
-   * the balance ID assigned to the slider.
+   * Given an array of Quinn instances, OriginalValues keeps track of the
+   * value of each slider at the time the OriginalValues instance was created.
    */
-  Balancer.prototype.__originalValues = function (quinns) {
-    var values  = {},
-        qLength = quinns.length,
-        i;
+  function OriginalValues (quinns) {
+    var i;
 
-    for (i = 0; i < qLength; i++) {
-      values[quinns[i].balanceId] = quinns[i].value;
+    this.length = quinns.length;
+    this.quinns = quinns;
+    this.values = {};
+
+    for (i = 0; i < this.length; i++) {
+      this.values[quinns[i].balanceId] = quinns[i].value;
     }
+  }
 
-    return values;
+  /**
+   * Given a Quinn instance, returns the value of that instance at the time
+   * the OriginalValues was initialized.
+   */
+  OriginalValues.prototype.value = function (quinn) {
+    return this.values[quinn.balanceId];
   };
 
   /**
-   * Given an array of subordinates, and a hash of balance IDs and values,
-   * restores each slider to it's value prior to being changed.
-   *
-   * Used when balancing fails.
+   * Given an array of Quinns, returns the sum of their values at the time the
+   * OriginalValues was initialized.
    */
-  Balancer.prototype.__revert = function (quinns, values) {
-    var length = quinns.length, i;
+  OriginalValues.prototype.sumOf = function (sliders) {
+    var sLength = sliders.length, sum = 0, i;
 
-    for (i = 0; i < length; i++) {
-      quinns[i].__setValue(values[quinns[i].balanceId]);
+    for (i = 0; i < sLength; i++) {
+      sum += this.value(sliders[i]);
+    }
+
+    return sum;
+  };
+
+  /**
+   * Reverts the Quinn instances back to their original value.
+   */
+  OriginalValues.prototype.revert = function () {
+    var i;
+
+    for (i = 0; i < this.length; i++) {
+      this.quinns[i].__setValue(this.values[ this.quinns[i].balanceId ]);
     }
   };
 
-  // ## Globals
+  // # Globals ---------------------------------------------------------------
+
   window.InputElement.Balancer = Balancer;
 
 })(window);

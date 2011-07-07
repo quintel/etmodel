@@ -1,0 +1,46 @@
+= link_to "back", admin_predictions_path
+%h2
+  ==#{@prediction.input_element.name} (#{@prediction.input_element.id}) 
+  %small= link_to 'edit', edit_admin_prediction_path(@prediction)
+
+%table{table_defaults}
+  %thead
+    %tr
+      %th.tal year
+      %th.tal min
+      %th.tal best
+      %th.tal max
+      %th.tal
+  %tbody
+    - @prediction.prediction_values.each do |entry|
+      %tr{cycles}
+        %td= entry.year
+        %td= entry.min
+        %td= entry.best
+        %td= entry.max
+        %td= link_to 'edit', edit_admin_prediction_value_path(entry)
+= link_to 'New', new_admin_prediction_value_path
+%br
+%br
+%table{table_defaults}
+  %thead
+    %tr
+      %th.tal name
+      %th.tal impact
+      %th.tal cost
+      %th.tal year_start
+      %th.tal actor
+      %th.tal description
+      %th.tal 
+  %tbody
+    - @prediction.prediction_measures.each do |entry|
+      %tr{cycles}
+        %td= entry.name
+        %td= entry.impact
+        %td= entry.cost
+        %td= entry.year_start
+        %td= entry.actor
+        %td= entry.description
+
+        %td= link_to 'edit', edit_admin_prediction_measure_path(entry)
+= link_to 'New', new_admin_prediction_measure_path

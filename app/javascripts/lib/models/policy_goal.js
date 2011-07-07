@@ -58,7 +58,6 @@ var PolicyGoal = Backbone.Model.extend({
     return $("#goal_" + this.get("goal_id"));
   },
   
-  // TODO: move to metric.js as much as possible
   format_value : function(n) {
     var out = null;
     
@@ -73,7 +72,7 @@ var PolicyGoal = Backbone.Model.extend({
         if (this.get('unit') == 'co2_pct') {
           out = "" + Metric.round_number(n, 2) + "MT";
         } else {
-          out = "" + Metric.round_number(n * 100, 2) + "%";
+          out = Metric.ratio_as_percentage(n, 2);
         }
         break;
       case 'number':

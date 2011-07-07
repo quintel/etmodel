@@ -27,8 +27,7 @@ var ConstraintView = Backbone.View.extend({
     var constraint = $(this.dom_id);
     var constraint_id = this.model.get('id');
     this.close_all_popups();
-    // if the user clicks a second time on an open popup
-    // we hide it
+    // if the user clicks a second time on an open popup we hide it
     if(window.dashboard.current_popup == constraint_id) {
       window.dashboard.current_popup = null;
       return;
@@ -52,23 +51,25 @@ var ConstraintView = Backbone.View.extend({
   // Formats the result of calculate_result() for the end-user
   format_result : function() {
     var result = this.model.get('result');
-    var key = this.model.get('key');
+    var key    = this.model.get('key');
 
     switch(key) {
       case 'total_primary_energy':
-        return this.format_percentage(result, true);
+        // show + prefix if needed
+        return Metric.ratio_as_percentage(result, true);
       case 'co2_reduction':
-        return this.format_percentage(result, true);
+        return Metric.ratio_as_percentage(result, true);
       case 'net_energy_import':
-        return this.format_percentage(result, false, 1);
+        // 1 point precision
+        return Metric.ratio_as_percentage(result, false, 1);
       case 'renewable_percentage':
-        return this.format_percentage(result);
+        return Metric.ratio_as_percentage(result);
       case 'total_energy_cost':
-        return this.format_with_prefix(Metric.round_number(result, 1), '&euro;');
-        // Metric.currency((result / BILLIONS))
+        // 1 point precision
+        return Metric.autoscale_value(result, 'euro', 1);
       case 'not_shown':
         // bio_footprint actually
-        return this.format_with_suffix(Metric.round_number(result, 1),'x'+ App.settings.get("country").toUpperCase());
+        return '' + Metric.round_number(result, 1) +'x'+ App.settings.get("country").toUpperCase();
       case 'targets_met':
         //Metric.out_of(result, Current.gql.policy.goals.length)
         return null;
@@ -77,26 +78,6 @@ var ConstraintView = Backbone.View.extend({
       default:
         return result;
     }
-  },
-
-  format_with_prefix : function(value, prefix) {
-    return prefix + value;
-  },
-
-  format_with_suffix : function(value, suffix) {
-    return "" + value + suffix;
-  },
-
-  /**
-   * If the precentage is signed then a + should appear when a number is positive
-   */
-  format_percentage : function(value, signed, precision) {
-    precision = precision || 1;       
-    value = Metric.round_number(value * 100, precision);
-    if ( signed && (value > 0.0)) { 
-      value = "+"+value;
-    };
-    return this.format_with_suffix(value, '%');
   },
 
   /**

@@ -98,6 +98,24 @@ $(document).ready(function() {
     $(this).trigger('click');
     return false;
   });
+
+  $("a.prediction").live('click', function() {
+
+    $(this).fancybox({
+      width    : 970,    
+      height   : 650,
+      titleShow: false,
+      padding  : 0,
+      scrolling: 'no',
+      type     : 'iframe',
+      ajax : {
+        type  : "GET"
+      }
+    });
+
+    $(this).trigger('click');
+    return false;
+  });
   
   $(".energy_mixer").live('click', function() {
 

@@ -1,0 +1,22 @@
+%table{table_defaults}
+  %thead
+    %tr
+      %th.tal name
+      %th.tal impact
+      %th.tal cost
+      %th.tal year_start
+      %th.tal actor
+      %th.tal description
+
+  %tbody
+    %tr{cycles}
+      %td= @prediction_measure.name
+      %td= @prediction_measure.impact
+      %td= @prediction_measure.cost
+      %td= @prediction_measure.year_start
+      %td= @prediction_measure.actor
+      %td= @prediction_measure.description
+      
+
+= link_to "back", admin_prediction_path(@prediction_measure.prediction)
+      

@@ -240,6 +240,38 @@ ActiveRecord::Schema.define(:version => 20110707090205) do
     t.datetime "updated_at"
   end
 
+  create_table "prediction_measures", :force => true do |t|
+    t.integer  "prediction_id"
+    t.string   "name"
+    t.float    "impact"
+    t.float    "cost"
+    t.integer  "year_start"
+    t.string   "actor"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prediction_values", :force => true do |t|
+    t.integer  "prediction_id"
+    t.float    "min"
+    t.float    "best"
+    t.float    "max"
+    t.integer  "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "predictions", :force => true do |t|
+    t.integer  "input_element_id"
+    t.integer  "user_id"
+    t.boolean  "expert"
+    t.string   "curve_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "description"
+  end
+
   create_table "press_releases", :force => true do |t|
     t.string   "medium"
     t.string   "release_type"

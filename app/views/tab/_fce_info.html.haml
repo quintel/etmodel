@@ -1,0 +1,5 @@
+%div.fce_info
+  %p= t('fce.description')
+  %label{:style => "float:left;clear:both"}
+    = t('fce.check')
+    = check_box(:use_lce, :settings, :onchange => 'toggle_fce_settings()')#, :checked => Current.scenario.use_lce_settings?)

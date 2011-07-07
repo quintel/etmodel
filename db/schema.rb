@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110707090205) do
+ActiveRecord::Schema.define(:version => 20110707121314) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -252,6 +252,8 @@ ActiveRecord::Schema.define(:version => 20110707090205) do
     t.datetime "updated_at"
   end
 
+  add_index "prediction_measures", ["prediction_id"], :name => "index_prediction_measures_on_prediction_id"
+
   create_table "prediction_values", :force => true do |t|
     t.integer  "prediction_id"
     t.float    "min"
@@ -262,6 +264,8 @@ ActiveRecord::Schema.define(:version => 20110707090205) do
     t.datetime "updated_at"
   end
 
+  add_index "prediction_values", ["prediction_id"], :name => "index_prediction_values_on_prediction_id"
+
   create_table "predictions", :force => true do |t|
     t.integer  "input_element_id"
     t.integer  "user_id"
@@ -271,6 +275,9 @@ ActiveRecord::Schema.define(:version => 20110707090205) do
     t.datetime "updated_at"
     t.text     "description"
   end
+
+  add_index "predictions", ["input_element_id"], :name => "index_predictions_on_input_element_id"
+  add_index "predictions", ["user_id"], :name => "index_predictions_on_user_id"
 
   create_table "press_releases", :force => true do |t|
     t.string   "medium"

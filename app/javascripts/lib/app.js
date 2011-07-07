@@ -55,7 +55,7 @@ window.AppView = Backbone.View.extend({
   call_api : function(input_params) {
     var self = this;
     var url = this.scenario.query_url(input_params);
-    var params = {'result' : window.gqueries.keys() };
+    var params = {'r' : window.gqueries.keys() };
 
     LockableFunction.setLock('call_api');
     this.showLoading();

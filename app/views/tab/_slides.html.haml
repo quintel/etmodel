@@ -1,4 +1,6 @@
 #accordion_wrapper
+  - if @active_sidebar.try(:additional_info_partial)
+    = render :partial => "tab/#{@active_sidebar.additional_info_partial}"
   - if @slides.any?
     %ul.accordion
       = render :partial => 'tab/slide', :collection => @slides

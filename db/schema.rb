@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110707121314) do
+ActiveRecord::Schema.define(:version => 20110707124321) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -348,6 +348,7 @@ ActiveRecord::Schema.define(:version => 20110707121314) do
     t.datetime "updated_at"
     t.string   "nl_vimeo_id"
     t.string   "en_vimeo_id"
+    t.string   "additional_info_partial"
   end
 
   add_index "sidebar_items", ["key"], :name => "index_sidebar_items_on_key"

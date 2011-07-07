@@ -13,6 +13,7 @@ class TabController < ApplicationController
   before_filter :show_intro_at_least_once, :only => :show
 
   def show
+    @active_sidebar = Current.view.sidebar_items.select{|item| params[:id] == item.key}.first
     @slides = Current.view.slides
     render :template => 'tab/show'
   end

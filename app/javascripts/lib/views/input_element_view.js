@@ -38,8 +38,8 @@
     var precision = 0;
 
     if (_.isNumber(value)) {
-        precision = value.toString().split('.');
-        precision = precision[1] ? precision[1].length : 0;
+      precision = value.toString().split('.');
+      precision = precision[1] ? precision[1].length : 0;
     }
 
     return precision;

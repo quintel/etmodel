@@ -1,6 +1,5 @@
 %table#supply_output_table{table_defaults}
   %thead
-  - if @output_element.id == 54
     %tr
       %th
       %th.border-rgt= Current.setting.start_year
@@ -14,49 +13,28 @@
       %th.tac Capacity
       %th.tac Investment
     %tr
-      %th 
+      %th
       %th.tac.unit.border-rgt PJ
       %th.tac.unit #
       %th.tac.unit PJ
       %th.tac.unit GW
       %th.tac.unit M EUR
-  - else
-    %tr
-      %th
-      %th Netvlak
-    %tr
-      %th
-      %th LS net
-      %th MS-LS trafo
-      %th MS Distributienet
-      %th MS Transportnet
-      %th HS-MS trafo
-      %th HS net
-      
-
   - columns = @output_element.allowed_output_element_series.group_by{|serie| (serie.order_by / 100).to_i }
-  -# columns = {1 => [<Serie>,<Serie>], 2 => [...], 3 => [...]}
   - rows = columns.values.map(&:length).max - 1 rescue 0
-  - rows -= 1 if @output_element.id == 54
+  - rows -= 1
   %tbody
     - 0.upto(rows) do |row|
       %tr{cycles}
-        -# use the Label of the first column 
+        -# use the Label of the first column
         %th= columns[1][row].label rescue '-'
-        - if @output_element.id == 54
-          %td.tar.border-rgt= number_with_precision @api.simple_query(columns[1][row].key), :precision => 1 rescue '-'
-        - else
-          %td.tar= number_with_precision @api.simple_query(columns[1][row].key), :precision => 1 rescue '-'
+        %td.tar.border-rgt= number_with_precision @api.simple_query(columns[1][row].key), :precision => 1 rescue '-'
         %td.tar= number_with_precision @api.simple_query(columns[2][row].key), :precision => 1 rescue '-'
         %td.tar= number_with_precision @api.simple_query(columns[3][row].key), :precision => 1 rescue '-'
         %td.tar= number_with_precision @api.simple_query(columns[4][row].key), :precision => 1 rescue '-'
         %td.tar= number_with_precision @api.simple_query(columns[5][row].key), :precision => 1 rescue '-'
-        - unless @output_element.id == 54
-          %td.tar= number_with_precision @api.simple_query(columns[6][row].key), :precision => 1 rescue '-'
-  - if @output_element.id == 54
     %tfoot#total
       %tr
-        %td 
+        %td
           %strong Total
         - row = rows + 1
         %td.tar.border-rgt= number_with_precision @api.simple_query(columns[1][row].key), :precision => 1 rescue '-'

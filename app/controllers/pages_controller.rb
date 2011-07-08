@@ -15,7 +15,19 @@ class PagesController < ApplicationController
 
 protected
 
+  def setup_countries_and_regions
+    show_all = session[:show_municipalities] || session[:show_all_countries] 
+    @countries  = %w[nl de uk ro pl tr]
+    @countries += ["za", "be-vlg"] if session[:show_all_countries]
+    @nl_regions = %w[nl-drenthe nl-flevoland nl-friesland nl-gelderland nl-groningen nl-limburg nl-noord-brabant nl-noord-holland nl-overijssel nl-utrecht nl-zeeland nl-zuid-holland]
+    @nl_regions << "nl-noord" if show_all
+    @nl_municipalities = ["ame"]
+    @nl_municipalities << "ams" if (current_user.try(:email) == "amsterdam@et-model.com" || session[:show_all_countries])
+    @nl_municipalities << "grs" if show_all
+  end
+
   def show_root_page
+    setup_countries_and_regions
     all_views = Current.setting.all_levels.map{|id, name| [t("views.#{name}"), id]}
     @scenario_levels = if Rails.env.development? || Rails.env.test?
       all_views

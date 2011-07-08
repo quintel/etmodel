@@ -74,4 +74,9 @@ module LayoutHelper
   def current_tutorial_movie
     SidebarItem.find_by_key(params[:id]).andand.send("#{I18n.locale}_vimeo_id")
   end
+  
+  # Used on _country_select partial
+  def current_region?(code)
+    Current.setting.region == code
+  end
 end

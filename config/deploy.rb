@@ -9,7 +9,7 @@ set :server_type, 'production'
 #### UNCOMMENT roles when we setup server
 
 task :production do
-  set :branch, "master"
+  set :branch, "production"
   set :domain, "46.137.109.15"
 
   set :application_key, "#{application}"

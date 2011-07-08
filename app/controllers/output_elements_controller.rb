@@ -3,10 +3,7 @@ class OutputElementsController < ApplicationController
     @output_element = OutputElement.find(params[:id])
 
     if @output_element.html_table?
-      @api = Api::Client.new
-      @api.api_session_id = Current.setting.api_session_key
-      # queries caching
-      @api.queries = @output_element.allowed_output_element_series.map(&:key)
+      @gquery_ids = @output_element.allowed_output_element_series.map(&:gquery)
     end
 
     respond_to do |format|

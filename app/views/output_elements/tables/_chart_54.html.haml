@@ -3,8 +3,7 @@
     %tr
       %th
       %th.border-rgt= Current.setting.start_year
-      %th{:colspan => 4, :style => "text-align: center"}
-        = Current.setting.end_year
+      %th{:colspan => 4, :style => "text-align: center"}= Current.setting.end_year
     %tr
       %th Types
       %th.tac.border-rgt Prod.
@@ -27,18 +26,18 @@
       %tr{cycles}
         -# use the Label of the first column
         %th= columns[1][row].label rescue '-'
-        %td.tar.border-rgt= number_with_precision @api.simple_query(columns[1][row].key), :precision => 1 rescue '-'
-        %td.tar= number_with_precision @api.simple_query(columns[2][row].key), :precision => 1 rescue '-'
-        %td.tar= number_with_precision @api.simple_query(columns[3][row].key), :precision => 1 rescue '-'
-        %td.tar= number_with_precision @api.simple_query(columns[4][row].key), :precision => 1 rescue '-'
-        %td.tar= number_with_precision @api.simple_query(columns[5][row].key), :precision => 1 rescue '-'
+        %td.tar.border-rgt{:data => {:gquery_id => columns[1][row].gquery}} -
+        %td.tar{:data => {:gquery_id => columns[2][row].gquery}} -
+        %td.tar{:data => {:gquery_id => columns[3][row].gquery}} -
+        %td.tar{:data => {:gquery_id => columns[4][row].gquery}} -
+        %td.tar{:data => {:gquery_id => columns[5][row].gquery}} -
     %tfoot#total
       %tr
         %td
           %strong Total
         - row = rows + 1
-        %td.tar.border-rgt= number_with_precision @api.simple_query(columns[1][row].key), :precision => 1 rescue '-'
-        %td.tar= number_with_precision @api.simple_query(columns[2][row].key), :precision => 1 rescue '-'
-        %td.tar= number_with_precision @api.simple_query(columns[3][row].key), :precision => 1 rescue '-'
-        %td.tar= number_with_precision @api.simple_query(columns[4][row].key), :precision => 1 rescue '-'
-        %td.tar= number_with_precision @api.simple_query(columns[5][row].key), :precision => 1 rescue '-'
+        %td.tar.border-rgt{:data => {:gquery_id => columns[1][row].gquery}} -
+        %td.tar{:data => {:gquery_id => columns[2][row].gquery}} -
+        %td.tar{:data => {:gquery_id => columns[3][row].gquery}} -
+        %td.tar{:data => {:gquery_id => columns[4][row].gquery}} -
+        %td.tar{:data => {:gquery_id => columns[5][row].gquery}} -

@@ -15,9 +15,9 @@ var PeakLoad = Backbone.Model.extend({
     // DEBT: make Gqueries
     this.gqueries = {
       'lv' :    new Gquery({key : 'peak_load_check_lv'}),
-      'mv-lv' : new Gquery({key : 'peak_load_check_mv-lv'}),
+      'mv-lv' : new Gquery({key : 'peak_load_check_mv_lv'}),
       'mv'    : new Gquery({key : 'peak_load_check_mv'}),
-      'hv-mv' : new Gquery({key : 'peak_load_check_hv-mv'}),
+      'hv-mv' : new Gquery({key : 'peak_load_check_hv_mv'}),
       'hv'    : new Gquery({key : 'peak_load_check_hv'})
     };
 

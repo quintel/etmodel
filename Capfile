@@ -97,6 +97,7 @@ namespace :deploy do
 end
 
 after "deploy:update_code", "deploy:copy_configuration_files"
+after "deploy", "deploy:migrate"
 after "deploy", "deploy:cleanup"
 after "deploy", "deploy:notify_hoptoad"
 

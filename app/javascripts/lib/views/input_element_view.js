@@ -2,7 +2,7 @@
   'use strict';
 
   var HOLD_ACCELERATE, BODY_HIDE_EVENT, ACTIVE_VALUE_SELECTOR,
-      INPUT_ELEMENT_T, VALUE_SELECTOR_T,
+      INPUT_ELEMENT_T, VALUE_SELECTOR_T, HOLD_DELAY, HOLD_DURATION,
 
       floatPrecision, conversionsFromModel,
       abortValueSelection, bindValueSelectorBodyEvents,
@@ -13,7 +13,8 @@
 
   // The number of milliseconds which pass before stepping up and down values
   // should begin being repeated.
-  HOLD_ACCELERATE = 125;
+  HOLD_DELAY    = 500;
+  HOLD_DURATION = 3000;
 
   // Tracks whether the body has been assigned an event to hide input
   // selection boxes when the user clicks outside them.
@@ -169,11 +170,11 @@
 
   InputElementView = Backbone.View.extend({
     events: {
-      'click     .reset':                 'resetValue',
-      'mousedown .decrease':              'beginStepDown',
-      'mousedown .increase':              'beginStepUp',
-      'click     .show-info':             'toggleInfoBox',
-      'click      output':                'showValueSelector'
+      'click     .reset':      'resetValue',
+      'mousedown .decrease':   'beginStepDown',
+      'mousedown .increase':   'beginStepUp',
+      'click     .show-info':  'toggleInfoBox',
+      'click      output':     'showValueSelector'
     },
 
     initialize: function (options) {
@@ -182,6 +183,10 @@
         'updateFromModel',
         'quinnOnChange',
         'quinnOnCommit',
+        'beginStepUp',
+        'beginStepDown',
+        'performStepping',
+        'finishStepping',
         'checkMunicipalityNotice',
         'inputElementInfoBoxShown'
       );
@@ -392,24 +397,112 @@
 
     /**
      * Triggered when the users mouses-down on the decrease button. Reduces
-     * the slider value by one step increment. If after HOLD_ACCELERATE ms the
+     * the slider value by one step increment. If after HOLD_DELAY ms the
      * button is still being held down, the slider value will continue to be
      * decreased until either the minimum value is reached, or the user lifts
      * the button.
      */
     beginStepDown: function () {
-      this.quinn.stepDown();
+      this.performStepping(this.quinn.selectable[0]);
+      return false;
     },
 
     /**
      * Triggered when the users mouses-down on the increase button. Increases
-     * the slider value by one step increment. If after HOLD_ACCELERATE ms the
+     * the slider value by one step increment. If after HOLD_DELAY ms the
      * button is still being held down, the slider value will continue to be
      * decreased until either the minimum value is reached, or the user lifts
      * the button.
      */
     beginStepUp: function () {
-      this.quinn.stepUp();
+      this.performStepping(this.quinn.selectable[1]);
+      return false;
+    },
+
+    performStepping: function (targetValue) {
+      var initialValue   = this.quinn.value,
+          duration       = HOLD_DURATION / 10,
+          isIncreasing   = (targetValue > initialValue),
+          stepIterations = 0,
+
+          delta          = this.quinn.selectable[1] -
+                           this.quinn.selectable[0],
+
+          progress, timeoutId, intervalId, intervalFunc, onFinish;
+
+      // --
+
+      if (! this.quinn.__willChange()) {
+        return false;
+      }
+
+      if (isIncreasing) {
+        this.quinn.__setValue(initialValue + this.quinn.options.step);
+      } else {
+        this.quinn.__setValue(initialValue - this.quinn.options.step);
+      }
+
+      initialValue = this.quinn.value;
+
+      // Reduce how long it takes to move the slider to the target value by
+      // how close it is. For example, if moving from 0% to 100%, the movement
+      // will take the full three seconds. If moving from 50% to 100%, it will
+      // take 1.5 seconds, etc...
+      duration *= Math.abs((targetValue - initialValue) / delta);
+
+      // Interval function is what happens every 10 ms, where the slider value
+      // is changed while the user continues to hold their mouse-button.
+      intervalFunc = _.bind(function () {
+        progress = $.easing.easeInCubic(
+          null,
+          stepIterations++, // current time
+          0, 1,             // start / finish value
+          duration          // total number of iterations
+        );
+
+        this.quinn.__setValue(
+          initialValue + ((targetValue - initialValue) * progress));
+
+        if (this.quinn.value === targetValue) {
+          // We've reached the target value, so stop trying to move further.
+          window.clearInterval(intervalId);
+        }
+      }, this);
+
+      // Set a timeout so that after HOLD_DELAY seconds, the slider value will
+      // continue to be changed so long as the user holds the mouse button.
+      timeoutId = window.setTimeout(_.bind(function () {
+        intervalId = window.setInterval(intervalFunc, 10);
+      }, this), HOLD_DELAY);
+
+      // Executed when the user lifts the mouse button; commits the new value.
+      onFinish = _.bind(function () {
+        $('body').unbind('mouseup.stepaccel');
+
+        this.quinn.__hasChanged();
+
+        window.clearTimeout(timeoutId);
+        window.clearInterval(intervalId);
+
+        timeoutId  = null;
+        intervalId = null;
+      }, this);
+
+      $('body').bind('mouseup.stepaccel', onFinish);
+    },
+
+    finishStepping: function () {
+      if (this.stepTimeout || this.stepInterval) {
+        $('body').unbind('mouseup.stepaccel');
+
+        this.quinn.__hasChanged();
+
+        window.clearTimeout(this.stepTimeout);
+        window.clearInterval(this.stepInterval);
+
+        this.stepTimeout  = null;
+        this.stepInterval = null;
+      }
     },
 
     /**

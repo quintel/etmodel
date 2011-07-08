@@ -1,8 +1,9 @@
 (function (window) {
   'use strict';
 
-  var HOLD_ACCELERATE, BODY_HIDE_EVENT, ACTIVE_VALUE_SELECTOR,
-      INPUT_ELEMENT_T, VALUE_SELECTOR_T, HOLD_DELAY, HOLD_DURATION,
+  var BODY_HIDE_EVENT, ACTIVE_VALUE_SELECTOR,
+      INPUT_ELEMENT_T, VALUE_SELECTOR_T,
+      HOLD_DELAY, HOLD_DURATION,
 
       floatPrecision, conversionsFromModel,
       abortValueSelection, bindValueSelectorBodyEvents,
@@ -14,7 +15,7 @@
   // The number of milliseconds which pass before stepping up and down values
   // should begin being repeated.
   HOLD_DELAY    = 500;
-  HOLD_DURATION = 3000;
+  HOLD_DURATION = 2000;
 
   // Tracks whether the body has been assigned an event to hide input
   // selection boxes when the user clicks outside them.
@@ -183,10 +184,6 @@
         'updateFromModel',
         'quinnOnChange',
         'quinnOnCommit',
-        'beginStepUp',
-        'beginStepDown',
-        'performStepping',
-        'finishStepping',
         'checkMunicipalityNotice',
         'inputElementInfoBoxShown'
       );
@@ -419,6 +416,11 @@
       return false;
     },
 
+    /**
+     * Sets up events, intervals and timeouts when the user clicks the
+     * increase or decrease buttons, such that the value continues to be
+     * adjusted so long as they hold the mouse button.
+     */
     performStepping: function (targetValue) {
       var initialValue   = this.quinn.value,
           duration       = HOLD_DURATION / 10,
@@ -489,20 +491,6 @@
       }, this);
 
       $('body').bind('mouseup.stepaccel', onFinish);
-    },
-
-    finishStepping: function () {
-      if (this.stepTimeout || this.stepInterval) {
-        $('body').unbind('mouseup.stepaccel');
-
-        this.quinn.__hasChanged();
-
-        window.clearTimeout(this.stepTimeout);
-        window.clearInterval(this.stepInterval);
-
-        this.stepTimeout  = null;
-        this.stepInterval = null;
-      }
     },
 
     /**

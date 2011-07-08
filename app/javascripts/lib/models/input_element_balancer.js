@@ -179,14 +179,14 @@
 
       // We can't go any further if flex is 0, or if the flex value hasn't
       // changed in this iteration.
-      if (this.snapValue(flex) === 0 || previousFlex === flex) {
+      if (flex === 0 || previousFlex === flex) {
         break;
       }
 
       previousFlex = flex;
     }
 
-    if (this.snapValue(flex) !== 0) {
+    if (flex !== 0) {
       valuesBeforeBalancing.revert();
       return false;
     }

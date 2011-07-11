@@ -401,7 +401,6 @@
      */
     beginStepDown: function () {
       this.performStepping(this.quinn.selectable[0]);
-      return false;
     },
 
     /**
@@ -413,7 +412,6 @@
      */
     beginStepUp: function () {
       this.performStepping(this.quinn.selectable[1]);
-      return false;
     },
 
     /**

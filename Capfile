@@ -100,6 +100,7 @@ after "deploy:update_code", "deploy:copy_configuration_files"
 after "deploy", "deploy:migrate"
 after "deploy", "deploy:cleanup"
 after "deploy", "deploy:notify_hoptoad"
+after "deploy", "ts:rebuild"
 
 desc "Move db server to local db"
 task :db2local do

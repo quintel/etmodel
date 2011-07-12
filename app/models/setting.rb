@@ -8,7 +8,8 @@ class Setting
     :country,
     :region,
     :end_year,
-    :api_session_key
+    :api_session_key,
+    :use_fce
   ]
 
   DEFAULT_ATTRIBUTES = {
@@ -20,7 +21,8 @@ class Setting
     :country                        => 'nl',
     :region                         => nil,
     :start_year                     => 2010,
-    :end_year                       => 2040
+    :end_year                       => 2040,
+    :use_fce                        => false
   }
 
   attr_accessor *DEFAULT_ATTRIBUTES.keys
@@ -138,6 +140,7 @@ class Setting
   def medium?;    self.complexity == 2; end
   def advanced?;  self.complexity == 3; end
 
+  
   ####### Years
 
   def end_year=(end_year)
@@ -221,7 +224,8 @@ class Setting
       :country  => country,
       :region   => region,
       :end_year => end_year,
-      :scenario_id => scenario_id
+      :scenario_id => scenario_id,
+      :use_fce => use_fce
     }
   end
 end

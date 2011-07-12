@@ -17,7 +17,8 @@ var Scenario = Backbone.Model.extend({
       'country' : s.get('country'),
       'region' : s.get('region'),
       'end_year' : s.get('end_year'),
-      "scenario_id" : s.get('scenario_id')
+      "scenario_id" : s.get('scenario_id'),
+      'use_fce' : s.get('use_fce')
     };
     return data;
   },
@@ -47,5 +48,16 @@ var Scenario = Backbone.Model.extend({
   
   url_path : function() {
     return globals.api_url + "/api_scenarios/"+this.api_session_key();
+  },
+  
+  toggle_fce : function(){
+    var use_fce = $("#use_fce_settings").is(':checked');
+    console.log(use_fce);
+    App.settings.set({'use_fce' : use_fce});  
+    // App.bootstrap();
+    App.settings.save();
+         App.bootstrap();
+    // 
+    // location.reload();
   }
 });

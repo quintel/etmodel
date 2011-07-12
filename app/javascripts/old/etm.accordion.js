@@ -1,18 +1,20 @@
 var active_slide;
+var open_slide_index;
+
 $(document).ready(function() {
 
   $('.accordion').each(function(i,el) {
 
-    var selected_index = 0;
     $('li.accordion_element', this).each(function(i,el) { 
-      if ($(el).is('.selected')) { selected_index = i; }
+      if ($(el).is('.selected')) { open_slide_index = i; }
       $(el).show();
     });
+    
     var accordion = {};
     if ($('li.accordion_element').length > 1){ 
         accordion = $(el).accordion({
         header: '.headline',
-     		collapsible: true,
+        collapsible: true,
         fillSpace: false,
         autoHeight: false,
         active: false
@@ -20,7 +22,7 @@ $(document).ready(function() {
     } else {
       accordion = $(el).accordion({
         header: '.headline',
-     		collapsible: true,
+        collapsible: true,
         fillSpace: false,
         autoHeight: false
       });
@@ -52,18 +54,9 @@ $(document).ready(function() {
     });
   });
   
-  if (active_slide){
-    open_slide(active_slide);
+  // open default/requested slide
+  if (_.isNumber(open_slide_index)){
+    $('.ui-accordion').accordion( "activate" , open_slide_index);
   }
-  
-  
+    
 });
-
-function open_slide(slide_title){
-  $('li.accordion_element a.slide_header').each(function(i,el) { 
-     if ($(el).attr('id') == slide_title){
-       $('.ui-accordion').accordion( "activate" , i );
-     }
-   });
-}
-

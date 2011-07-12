@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110707124321) do
+ActiveRecord::Schema.define(:version => 20110712122946) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -31,16 +31,6 @@ ActiveRecord::Schema.define(:version => 20110707124321) do
   end
 
   add_index "constraints", ["key"], :name => "index_constraints_on_key"
-
-  create_table "constraints_root_nodes", :id => false, :force => true do |t|
-    t.integer  "constraint_id"
-    t.integer  "root_node_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "constraints_root_nodes", ["constraint_id"], :name => "index_constraints_root_nodes_on_constraint_id"
-  add_index "constraints_root_nodes", ["root_node_id"], :name => "index_constraints_root_nodes_on_root_node_id"
 
   create_table "descriptions", :force => true do |t|
     t.text     "content_en"
@@ -138,20 +128,6 @@ ActiveRecord::Schema.define(:version => 20110707124321) do
   add_index "interfaces", ["enabled"], :name => "index_interfaces_on_enabled"
   add_index "interfaces", ["key"], :name => "index_interfaces_on_key"
 
-  create_table "lce_values", :force => true do |t|
-    t.string   "using_country"
-    t.string   "origin_country"
-    t.float    "co2_exploration_per_mj"
-    t.float    "co2_extraction_per_mj"
-    t.float    "co2_treatment_per_mj"
-    t.float    "co2_transportation_per_mj"
-    t.float    "co2_conversion_per_mj"
-    t.float    "co2_waste_treatment_per_mj"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "carrier"
-  end
-
   create_table "output_element_series", :force => true do |t|
     t.integer  "output_element_id"
     t.string   "key"
@@ -233,13 +209,6 @@ ActiveRecord::Schema.define(:version => 20110707124321) do
 
   add_index "policy_goals", ["key"], :name => "index_policy_goals_on_key"
 
-  create_table "policy_goals_root_nodes", :id => false, :force => true do |t|
-    t.integer  "policy_goal_id"
-    t.integer  "root_node_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "prediction_measures", :force => true do |t|
     t.integer  "prediction_id"
     t.string   "name"
@@ -316,27 +285,6 @@ ActiveRecord::Schema.define(:version => 20110707124321) do
 
   add_index "saved_scenarios", ["scenario_id"], :name => "index_saved_scenarios_on_scenario_id"
   add_index "saved_scenarios", ["user_id"], :name => "index_saved_scenarios_on_user_id"
-
-  create_table "scenarios", :force => true do |t|
-    t.string   "author"
-    t.string   "title"
-    t.text     "description"
-    t.text     "user_updates"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "user_values"
-    t.integer  "end_year",           :default => 2040
-    t.string   "country"
-    t.boolean  "in_start_menu"
-    t.string   "region"
-    t.integer  "user_id"
-    t.integer  "complexity",         :default => 3
-    t.string   "scenario_type"
-    t.integer  "preset_scenario_id"
-    t.string   "type"
-    t.string   "api_session_key"
-    t.text     "lce_settings"
-  end
 
   create_table "sidebar_items", :force => true do |t|
     t.string   "name"
@@ -428,19 +376,6 @@ ActiveRecord::Schema.define(:version => 20110707124321) do
   end
 
   add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"
-
-  create_table "view_nodes", :force => true do |t|
-    t.string  "key"
-    t.integer "element_id"
-    t.string  "element_type"
-    t.string  "ancestry"
-    t.integer "position"
-    t.integer "ancestry_depth", :default => 0
-    t.string  "type"
-  end
-
-  add_index "view_nodes", ["element_id", "element_type"], :name => "index_view_nodes_on_element_id_and_element_type"
-  add_index "view_nodes", ["type"], :name => "index_view_nodes_on_type"
 
   create_table "year_values", :force => true do |t|
     t.integer  "year"

@@ -1,9 +1,0 @@
-%li{:id=> "tabs", :class => "node_list"}
-  %h1 Constraints
-  %hr
-  %ul
-    - @view_node.constraints.each do |constraint|
-      %li{:class => "node_item",}
-        = constraint.name
-    %li
-      = link_to image_tag("/images/layout/icons/edit.png", :size=>"14x14"), edit_admin_view_node_path(@view_node, :update =>'constraint')

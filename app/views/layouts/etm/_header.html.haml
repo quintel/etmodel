@@ -1,6 +1,5 @@
-- #if Current.setting.use_lce_settings?
--##notice_bar
--#    = t("lce.notice")
+#notice_bar.fce_notice{ :class=>"#{Current.setting.use_fce ? '' : 'hidden' }"}
+  = t("fce.notice")
 - if user_notification = GeneralUserNotification.where(:active => true).first
   #notice_bar
     = user_notification.notification

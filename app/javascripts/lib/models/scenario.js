@@ -54,10 +54,7 @@ var Scenario = Backbone.Model.extend({
     var use_fce = $("#use_fce_settings").is(':checked');
     console.log(use_fce);
     App.settings.set({'use_fce' : use_fce});  
-    // App.bootstrap();
-    App.settings.save();
-         App.bootstrap();
-    // 
-    // location.reload();
+    App.bootstrap();
+    $('.fce_notice').toggle(use_fce);
   }
 });

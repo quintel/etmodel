@@ -52,7 +52,6 @@ var Scenario = Backbone.Model.extend({
   
   toggle_fce : function(){
     var use_fce = $("#use_fce_settings").is(':checked');
-    console.log(use_fce);
     App.settings.set({'use_fce' : use_fce});  
     App.bootstrap();
     $('.fce_notice').toggle(use_fce);

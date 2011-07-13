@@ -1,6 +1,4 @@
 function InitializeHorizontalStackedBar(id,series,ticks,show_point_label,unit,axis_values,colors,labels){
-  console.info(series)
-  ticks = ["ex", "min","com","oth"] 
   $.jqplot(id, series, {
     stackSeries: true,
     seriesColors: colors,

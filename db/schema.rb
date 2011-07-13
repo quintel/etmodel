@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110712122946) do
+ActiveRecord::Schema.define(:version => 20110713182430) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -168,6 +168,8 @@ ActiveRecord::Schema.define(:version => 20110712122946) do
     t.boolean  "show_point_label"
     t.boolean  "growth_chart"
     t.string   "key"
+    t.float    "max_axis_value"
+    t.float    "min_axis_value"
   end
 
   add_index "output_elements", ["key"], :name => "index_output_elements_on_key"

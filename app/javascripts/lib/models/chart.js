@@ -27,6 +27,9 @@ var Chart = Backbone.Model.extend({
       case 'horizontal_bar' :
         this.view = new HorizontalBarChartView({model : this});
         break;
+      case 'horizontal_stacked_bar' :
+        this.view = new HorizontalStackedBarChartView({model : this});
+        break;
       case 'mekko' :
         this.view = new MekkoChartView({model : this});
         break;

@@ -3,35 +3,39 @@ var HorizontalStackedBarChartView = BaseChartView.extend({
   cached_results : null,
   
   initialize : function() {
+    console.info("loading")
     this.initialize_defaults();
   },
   
   render : function() {
     this.clear_results_cache();
     this.clear_container();
-      InitializeHorizontalBar(
+      InitializeHorizontalStackedBar(
         this.model.get("container"),
         this.results(),
-        true,
-        this.parsed_unit(),
+        this.ticks(),
+        false,
+        "KG/GJ",
         this.axis_scale(),
-        this.model.colors(),
-        this.model.labels()
+        ["#4169E1", "#FFA500", "#228B22", "#FF0000"],
+        [ "Coal" ,"Oil" ,"Gas","Uranium" ]
       );
   },
   
   // the horizontal graph expects data in this format:
   // [value, 1], [value, 2], ...
-  // TODO: refactoring - PZ Tue 3 May 2011 17:44:14 CEST
   results : function() {
-    if (this.cached_results) return this.cached_results;
-    var model_results = this.model.results();    
-    var out = []
-    for(i = 0; i < model_results.length; i++) {
-      out.push([model_results[i][0][1], parseInt(i)+1]);
-    }
-    this.cached_results = out;
-    return out;
+      var series = {};
+      this.model.series.each(function(serie) {
+        var group = serie.get('group');
+        if (group) {
+          if (!series[group]) { series[group] = []; }
+          series[group].push([serie.result_pairs()[0],(series[group].length + 1)]);
+        }
+      });
+      out = _.map(series, function(values, group) {return values})
+
+     return out;
   },
   
   clear_results_cache : function() {
@@ -39,10 +43,14 @@ var HorizontalStackedBarChartView = BaseChartView.extend({
   },
   
   axis_scale : function() {
-    var values = _.map(this.results(), function(i){ return i[0]});
-    var max = _.max(values);
-    if (max == 0) { max = 3 };
-    return [0, max * 1.1];
+    // var values = _.map(this.results(), function(i){ return i[0]});
+    // var max = _.max(values);
+    // if (max == 0) { max = 3 };
+    return [0, 100 * 1.1];
+  },
+    
+  ticks : function() {
+    ["a","b","c","d"];
   }
 });
 

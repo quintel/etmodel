@@ -17,13 +17,13 @@ var HorizontalStackedBarChartView = BaseChartView.extend({
         false,
         "KG/GJ",
         this.axis_scale(),
-        ["#4169E1", "#FFA500", "#228B22", "#FF0000"],
+        this.colors(),
         [ "Coal" ,"Oil" ,"Gas","Uranium" ]
       );
   },
   
-  // the horizontal graph expects data in this format:
-  // [value, 1], [value, 2], ...
+  // the horizontal stacked graph expects data in this format:
+  // [[value1, 1], [value1, 2]],[[value2, 1], [value2, 2]] ...
   results : function() {
       var series = {};
       this.model.series.each(function(serie) {
@@ -43,14 +43,21 @@ var HorizontalStackedBarChartView = BaseChartView.extend({
   },
   
   axis_scale : function() {
-    // var values = _.map(this.results(), function(i){ return i[0]});
-    // var max = _.max(values);
-    // if (max == 0) { max = 3 };
-    return [0, 100 * 1.1];
+    var min = this.model.get('min_axis_value')
+    if (min == undefined)  console.info('minimal axis value not defined');
+    var max = this.model.get('max_axis_value')
+    if (max == undefined)  console.info('maximal axis value not defined');
+    return [min, max];
   },
     
   ticks : function() {
-    ["a","b","c","d"];
-  }
+    var groups = this.model.series.map(function(serie) {return serie.get('group')});
+    return _.uniq(groups);
+  },
+  colors : function() {
+    return _.uniq(this.model.colors());
+  },
+  
+  
 });
 

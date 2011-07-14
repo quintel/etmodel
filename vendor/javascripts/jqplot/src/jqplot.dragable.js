@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r701
+ * Version: 1.0.0b2_r792
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -79,10 +79,16 @@
     // insert it before the eventCanvas, so eventCanvas will still capture events.
     // add a new DragCanvas object to the plot plugins to handle drawing on this new canvas.
     $.jqplot.Dragable.postPlotDraw = function() {
+        // Memory Leaks patch    
+        if (this.plugins.dragable && this.plugins.dragable.highlightCanvas) {
+            this.plugins.dragable.highlightCanvas.resetCanvas();
+            this.plugins.dragable.highlightCanvas = null;
+        }
+
         this.plugins.dragable = {previousCursor:'auto', isOver:false};
         this.plugins.dragable.dragCanvas = new DragCanvas();
         
-        this.eventCanvas._elem.before(this.plugins.dragable.dragCanvas.createElement(this._gridPadding, 'jqplot-dragable-canvas', this._plotDimensions));
+        this.eventCanvas._elem.before(this.plugins.dragable.dragCanvas.createElement(this._gridPadding, 'jqplot-dragable-canvas', this._plotDimensions, this));
         var dctx = this.plugins.dragable.dragCanvas.setContext();
     };
     
@@ -180,7 +186,7 @@
                 initDragPoint(plot, neighbor);
                 drag.markerRenderer.draw(s.gridData[neighbor.pointIndex][0], s.gridData[neighbor.pointIndex][1], dc._ctx);
                 ev.target.style.cursor = "move";
-                plot.target.trigger('jqlotDragStart', [neighbor.seriesIndex, neighbor.pointIndex, gridpos, datapos]);
+                plot.target.trigger('jqplotDragStart', [neighbor.seriesIndex, neighbor.pointIndex, gridpos, datapos]);
             }
         }
         // Just in case of a hickup, we'll clear the drag canvas and reset.
@@ -212,7 +218,7 @@
             plot.drawSeries({preventJqPlotSeriesDrawTrigger:true}, dp.seriesIndex);
             dc._neighbor = null;
             ev.target.style.cursor = dc._cursors.pop();
-            plot.target.trigger('jqlotDragStop', [gridpos, datapos]);
+            plot.target.trigger('jqplotDragStop', [gridpos, datapos]);
         }
     }
 })(jQuery);

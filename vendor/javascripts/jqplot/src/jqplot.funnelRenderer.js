@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r701
+ * Version: 1.0.0b2_r792
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -146,6 +146,7 @@
         // Threshhold in percentage (0 - 100) of pie area, below which no label will be displayed.
         // This applies to all label types, not just to percentage labels.
         this.dataLabelThreshold = 3;
+        this._type = 'funnel';
         
         this.tickRenderer = $.jqplot.FunnelTickRenderer;
         
@@ -793,7 +794,7 @@
     function postInit(target, data, options) {
         // if multiple series, add a reference to the previous one so that
         // funnel rings can nest.
-        for (i=0; i<this.series.length; i++) {
+        for (var i=0; i<this.series.length; i++) {
             if (this.series[i].renderer.constructor == $.jqplot.FunnelRenderer) {
                 // don't allow mouseover and mousedown at same time.
                 if (this.series[i].highlightMouseOver) {
@@ -902,17 +903,23 @@
     // create a canvas which we can draw on.
     // insert it before the eventCanvas, so eventCanvas will still capture events.
     function postPlotDraw() {
+        // Memory Leaks patch    
+        if (this.plugins.funnelRenderer && this.plugins.funnelRenderer.highlightCanvas) {
+            this.plugins.funnelRenderer.highlightCanvas.resetCanvas();
+            this.plugins.funnelRenderer.highlightCanvas = null;
+        }
+
         this.plugins.funnelRenderer = {};
         this.plugins.funnelRenderer.highlightCanvas = new $.jqplot.GenericCanvas();
         
         // do we have any data labels?  if so, put highlight canvas before those
         var labels = $(this.targetId+' .jqplot-data-label');
         if (labels.length) {
-            $(labels[0]).before(this.plugins.funnelRenderer.highlightCanvas.createElement(this._gridPadding, 'jqplot-funnelRenderer-highlight-canvas', this._plotDimensions));
+            $(labels[0]).before(this.plugins.funnelRenderer.highlightCanvas.createElement(this._gridPadding, 'jqplot-funnelRenderer-highlight-canvas', this._plotDimensions, this));
         }
         // else put highlight canvas before event canvas.
         else {
-            this.eventCanvas._elem.before(this.plugins.funnelRenderer.highlightCanvas.createElement(this._gridPadding, 'jqplot-funnelRenderer-highlight-canvas', this._plotDimensions));
+            this.eventCanvas._elem.before(this.plugins.funnelRenderer.highlightCanvas.createElement(this._gridPadding, 'jqplot-funnelRenderer-highlight-canvas', this._plotDimensions, this));
         }
         var hctx = this.plugins.funnelRenderer.highlightCanvas.setContext();
     }

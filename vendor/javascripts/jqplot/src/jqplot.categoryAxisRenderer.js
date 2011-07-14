@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r701
+ * Version: 1.0.0b2_r792
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -297,7 +297,7 @@
     };
     
     // called with scope of axis
-    $.jqplot.CategoryAxisRenderer.prototype.draw = function(ctx) {
+    $.jqplot.CategoryAxisRenderer.prototype.draw = function(ctx, plot) {
         if (this.show) {
             // populate the axis label and value properties.
             // createTicks is a method on the renderer, but
@@ -310,9 +310,11 @@
             var temp;
             // Added for theming.
             if (this._elem) {
-                this._elem.empty();
+                // this._elem.empty();
+                // Memory Leaks patch
+                this._elem.emptyForce();
             }
-            
+
             this._elem = this._elem || $('<div class="jqplot-axis jqplot-'+this.name+'" style="position:absolute;"></div>');
             
             if (this.name == 'xaxis' || this.name == 'x2axis') {
@@ -326,7 +328,7 @@
             this.labelOptions.axis = this.name;
             this._label = new this.labelRenderer(this.labelOptions);
             if (this._label.show) {
-                var elem = this._label.draw(ctx);
+                var elem = this._label.draw(ctx, plot);
                 elem.appendTo(this._elem);
             }
     
@@ -334,7 +336,7 @@
             for (var i=0; i<t.length; i++) {
                 var tick = t[i];
                 if (tick.showLabel && (!tick.isMinorTick || this.showMinorTicks)) {
-                    var elem = tick.draw(ctx);
+                    var elem = tick.draw(ctx, plot);
                     elem.appendTo(this._elem);
                 }
             }
@@ -427,7 +429,8 @@
         var offmax = offsets.max;
         var offmin = offsets.min;
         var lshow = (this._label == null) ? false : this._label.show;
-        
+        var i;
+		
         for (var p in pos) {
             this._elem.css(p, pos[p]);
         }

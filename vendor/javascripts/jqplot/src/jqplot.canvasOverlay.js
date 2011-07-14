@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r701
+ * Version: 1.0.0b2_r792
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -31,9 +31,6 @@
     // class: $.jqplot.CanvasOverlay
     $.jqplot.CanvasOverlay = function(opts){
 		var options = opts || {};
-        // Group: Properties
-        // prop: show
-        // wether or not to show the marker.
         this.options = {
 			show: $.jqplot.config.enablePlugins,
 			deferDraw: false
@@ -57,6 +54,17 @@
 						case 'horizontalLine':
 							this.addHorizontalLine(obj[n]);
 							break;
+						case 'dashedHorizontalLine':
+							this.addDashedHorizontalLine(obj[n]);
+							break;
+						case 'verticalLine':
+							this.addVerticalLine(obj[n]);
+							break;
+						case 'dashedVerticalLine':
+							this.addDashedVerticalLine(obj[n]);
+							break;
+						default:
+							break;
 					}
 				}	
 			}
@@ -70,14 +78,29 @@
         // add a canvasOverlay attribute to the plot
         this.plugins.canvasOverlay = new $.jqplot.CanvasOverlay(options.canvasOverlay);		
 	};
-	
+
+	/**
+	 * Class: Line
+	 * A straight line.
+	 */
 	function Line(options) {
 		this.type = 'line';
 		this.options = {
+			// prop: name
+			// Optional name for this overlay object.
+			// Can be later used to retrieve the object by name.
 			name: null,
+			// prop: show
+			// true to show (draw), false to not draw.
 			show: true,
+			// prop: lineWidth
+			// Width of the line.
 			lineWidth: 2,
+			// prop: lineCap
+			// Type of ending placed on the line ['round', 'butt', 'square']
 			lineCap: 'round',
+			// prop: color
+			// color of the line
 			color: '#666666',
 	        // prop: shadow
 	        // wether or not to draw a shadow on the line
@@ -94,21 +117,44 @@
 	        // prop: shadowAlpha
 	        // Alpha channel transparency of shadow.  0 = transparent.
 	        shadowAlpha: '0.07',
+	        // prop: xaxis
+	        // X axis to use for positioning/scaling the line.
 			xaxis: 'xaxis',
+	        // prop: yaxis
+	        // Y axis to use for positioning/scaling the line.
 			yaxis: 'yaxis',
+			// prop: start
+			// [x, y] coordinates for the start of the line.
 			start: [],
+			// prop: stop
+			// [x, y] coordinates for the end of the line.
 			stop: []
 		};
 		$.extend(true, this.options, options);
 	}
-	
+
+	/**
+	 * Class: HorizontalLine
+	 * A straight horizontal line.
+	 */
 	function HorizontalLine(options) {
 		this.type = 'horizontalLine';
 		this.options = {
+			// prop: name
+			// Optional name for this overlay object.
+			// Can be later used to retrieve the object by name.
 			name: null,
+			// prop: show
+			// true to show (draw), false to not draw.
 			show: true,
+			// prop: lineWidth
+			// Width of the line.
 			lineWidth: 2,
+			// prop: lineCap
+			// Type of ending placed on the line ['round', 'butt', 'square']
 			lineCap: 'round',
+			// prop: color
+			// color of the line
 			color: '#666666',
 	        // prop: shadow
 	        // wether or not to draw a shadow on the line
@@ -125,14 +171,201 @@
 	        // prop: shadowAlpha
 	        // Alpha channel transparency of shadow.  0 = transparent.
 	        shadowAlpha: '0.07',
+	        // prop: xaxis
+	        // X axis to use for positioning/scaling the line.
 			xaxis: 'xaxis',
+	        // prop: yaxis
+	        // Y axis to use for positioning/scaling the line.
+			yaxis: 'yaxis',
+			// prop: y
+			// y value to position the line
+			y: null,
+			// prop: xmin
+			// x value for the start of the line, null to scale to axis min.
+			xmin: null,
+			// prop: xmax
+			// x value for the end of the line, null to scale to axis max.
+			xmax: null,
+			// prop xOffset
+			// offset ends of the line inside the grid.  Number 
+			xOffset: '6px',	// number or string.  Number interpreted as units, string as pixels.
+			xminOffset: null,
+			xmaxOffset: null
+		};
+		$.extend(true, this.options, options);
+	}
+	
+
+	/**
+	 * Class: DashedHorizontalLine
+	 * A straight dashed horizontal line.
+	 */
+	function DashedHorizontalLine(options) {
+		this.type = 'dashedHorizontalLine';
+		this.options = {
+			// prop: name
+			// Optional name for this overlay object.
+			// Can be later used to retrieve the object by name.
+			name: null,
+			// prop: show
+			// true to show (draw), false to not draw.
+			show: true,
+			// prop: lineWidth
+			// Width of the line.
+			lineWidth: 2,
+			// prop: lineCap
+			// Type of ending placed on the line ['round', 'butt', 'square']
+			lineCap: 'butt',
+			// prop: color
+			// color of the line
+			color: '#666666',
+	        // prop: shadow
+	        // wether or not to draw a shadow on the line
+	        shadow: true,
+	        // prop: shadowAngle
+	        // Shadow angle in degrees
+	        shadowAngle: 45,
+	        // prop: shadowOffset
+	        // Shadow offset from line in pixels
+	        shadowOffset: 1,
+	        // prop: shadowDepth
+	        // Number of times shadow is stroked, each stroke offset shadowOffset from the last.
+	        shadowDepth: 3,
+	        // prop: shadowAlpha
+	        // Alpha channel transparency of shadow.  0 = transparent.
+	        shadowAlpha: '0.07',
+	        // prop: xaxis
+	        // X axis to use for positioning/scaling the line.
+			xaxis: 'xaxis',
+	        // prop: yaxis
+	        // Y axis to use for positioning/scaling the line.
 			yaxis: 'yaxis',
 			y: null,
 			xmin: null,
 			xmax: null,
 			xOffset: '6px',	// number or string.  Number interpreted as units, string as pixels.
 			xminOffset: null,
-			xmaxOffset: null
+			xmaxOffset: null,
+			// prop: dashPattern
+			// Array of line, space settings in pixels.
+			// Default is 8 pixel of line, 8 pixel of space.
+			// Note, limit to a 2 element array b/c of bug with higher order arrays.
+			dashPattern: [8,8]
+		};
+		$.extend(true, this.options, options);
+	}
+	
+
+	/**
+	 * Class: VerticalLine
+	 * A straight vertical line.
+	 */
+	function VerticalLine(options) {
+		this.type = 'verticalLine';
+		this.options = {
+			// prop: name
+			// Optional name for this overlay object.
+			// Can be later used to retrieve the object by name.
+			name: null,
+			// prop: show
+			// true to show (draw), false to not draw.
+			show: true,
+			// prop: lineWidth
+			// Width of the line.
+			lineWidth: 2,
+			// prop: lineCap
+			// Type of ending placed on the line ['round', 'butt', 'square']
+			lineCap: 'round',
+			// prop: color
+			// color of the line
+			color: '#666666',
+	        // prop: shadow
+	        // wether or not to draw a shadow on the line
+	        shadow: true,
+	        // prop: shadowAngle
+	        // Shadow angle in degrees
+	        shadowAngle: 45,
+	        // prop: shadowOffset
+	        // Shadow offset from line in pixels
+	        shadowOffset: 1,
+	        // prop: shadowDepth
+	        // Number of times shadow is stroked, each stroke offset shadowOffset from the last.
+	        shadowDepth: 3,
+	        // prop: shadowAlpha
+	        // Alpha channel transparency of shadow.  0 = transparent.
+	        shadowAlpha: '0.07',
+	        // prop: xaxis
+	        // X axis to use for positioning/scaling the line.
+			xaxis: 'xaxis',
+	        // prop: yaxis
+	        // Y axis to use for positioning/scaling the line.
+			yaxis: 'yaxis',
+			x: null,
+			ymin: null,
+			ymax: null,
+			yOffset: '6px',	// number or string.  Number interpreted as units, string as pixels.
+			yminOffset: null,
+			ymaxOffset: null
+		};
+		$.extend(true, this.options, options);
+	}
+	
+
+	/**
+	 * Class: DashedVerticalLine
+	 * A straight dashed vertical line.
+	 */
+	function DashedVerticalLine(options) {
+		this.type = 'dashedVerticalLine';
+		this.options = {
+			// prop: name
+			// Optional name for this overlay object.
+			// Can be later used to retrieve the object by name.
+			name: null,
+			// prop: show
+			// true to show (draw), false to not draw.
+			show: true,
+			// prop: lineWidth
+			// Width of the line.
+			lineWidth: 2,
+			// prop: lineCap
+			// Type of ending placed on the line ['round', 'butt', 'square']
+			lineCap: 'butt',
+			// prop: color
+			// color of the line
+			color: '#666666',
+	        // prop: shadow
+	        // wether or not to draw a shadow on the line
+	        shadow: true,
+	        // prop: shadowAngle
+	        // Shadow angle in degrees
+	        shadowAngle: 45,
+	        // prop: shadowOffset
+	        // Shadow offset from line in pixels
+	        shadowOffset: 1,
+	        // prop: shadowDepth
+	        // Number of times shadow is stroked, each stroke offset shadowOffset from the last.
+	        shadowDepth: 3,
+	        // prop: shadowAlpha
+	        // Alpha channel transparency of shadow.  0 = transparent.
+	        shadowAlpha: '0.07',
+	        // prop: xaxis
+	        // X axis to use for positioning/scaling the line.
+			xaxis: 'xaxis',
+	        // prop: yaxis
+	        // Y axis to use for positioning/scaling the line.
+			yaxis: 'yaxis',
+			x: null,
+			ymin: null,
+			ymax: null,
+			yOffset: '6px',	// number or string.  Number interpreted as units, string as pixels.
+			yminOffset: null,
+			ymaxOffset: null,
+			// prop: dashPattern
+			// Array of line, space settings in pixels.
+			// Default is 8 pixel of line, 8 pixel of space.
+			// Note, limit to a 2 element array b/c of bug with higher order arrays.
+			dashPattern: [8,8]
 		};
 		$.extend(true, this.options, options);
 	}
@@ -145,6 +378,24 @@
 	
 	$.jqplot.CanvasOverlay.prototype.addHorizontalLine = function(opts) {
 		var line = new HorizontalLine(opts);
+		this.objects.push(line);
+		this.objectNames.push(line.options.name);
+	};
+	
+	$.jqplot.CanvasOverlay.prototype.addDashedHorizontalLine = function(opts) {
+		var line = new DashedHorizontalLine(opts);
+		this.objects.push(line);
+		this.objectNames.push(line.options.name);
+	};
+	
+	$.jqplot.CanvasOverlay.prototype.addVerticalLine = function(opts) {
+		var line = new VerticalLine(opts);
+		this.objects.push(line);
+		this.objectNames.push(line.options.name);
+	};
+	
+	$.jqplot.CanvasOverlay.prototype.addDashedVerticalLine = function(opts) {
+		var line = new DashedVerticalLine(opts);
 		this.objects.push(line);
 		this.objectNames.push(line.options.name);
 	};
@@ -194,8 +445,8 @@
 			stop;
 		if (this.options.show) {
 			this.canvas._ctx.clearRect(0,0,this.canvas.getWidth(), this.canvas.getHeight());
-			for (var i=0; i<objs.length; i++) {
-				obj = objs[i];
+			for (var k=0; k<objs.length; k++) {
+				obj = objs[k];
 				var opts = $.extend(true, {}, obj.options);
 				if (obj.options.show) {
 					// style and shadow properties should be set before
@@ -207,8 +458,8 @@
 							// every draw of marker renderer.
 							mr.style = 'line';
 							opts.closePath = false;
-							start = [plot.axes[obj.options.xaxis].u2p(obj.options.start[0]), plot.axes[obj.options.yaxis].u2p(obj.options.start[1])];
-							stop = [plot.axes[obj.options.xaxis].u2p(obj.options.stop[0]), plot.axes[obj.options.yaxis].u2p(obj.options.stop[1])];
+							start = [plot.axes[obj.options.xaxis].series_u2p(obj.options.start[0]), plot.axes[obj.options.yaxis].series_u2p(obj.options.start[1])];
+							stop = [plot.axes[obj.options.xaxis].series_u2p(obj.options.stop[0]), plot.axes[obj.options.yaxis].series_u2p(obj.options.stop[1])];
 							mr.draw(start, stop, this.canvas._ctx, opts);
 							break;
 						case 'horizontalLine':
@@ -221,35 +472,208 @@
 								var xaxis = plot.axes[obj.options.xaxis],
 									xstart,
 									xstop,
-									y = plot.axes[obj.options.yaxis].u2p(obj.options.y),
+									y = plot.axes[obj.options.yaxis].series_u2p(obj.options.y),
 									xminoff = obj.options.xminOffset || obj.options.xOffset,
 									xmaxoff = obj.options.xmaxOffset || obj.options.xOffset;
 								if (obj.options.xmin != null) {
-									xstart = xaxis.u2p(obj.options.xmin);
+									xstart = xaxis.series_u2p(obj.options.xmin);
 								}
 								else if (xminoff != null) {
 									if ($.type(xminoff) == "number") {
-										xstart = xaxis.u2p(xaxis.min + xminoff);
+										xstart = xaxis.series_u2p(xaxis.min + xminoff);
 									}
 									else if ($.type(xminoff) == "string") {
-										xstart = xaxis.u2p(xaxis.min) + parseFloat(xminoff);
+										xstart = xaxis.series_u2p(xaxis.min) + parseFloat(xminoff);
 									}
 								}
 								if (obj.options.xmax != null) {
-									xstop = xaxis.u2p(obj.options.xmax);
+									xstop = xaxis.series_u2p(obj.options.xmax);
 								}
 								else if (xmaxoff != null) {
 									if ($.type(xmaxoff) == "number") {
-										xstop = xaxis.u2p(xaxis.max - xmaxoff);
+										xstop = xaxis.series_u2p(xaxis.max - xmaxoff);
 									}
 									else if ($.type(xmaxoff) == "string") {
-										xstop = xaxis.u2p(xaxis.max) - parseFloat(xmaxoff);
+										xstop = xaxis.series_u2p(xaxis.max) - parseFloat(xmaxoff);
 									}
 								}
 								if (xstop != null && xstart != null) {
 									mr.draw([xstart, y], [xstop, y], this.canvas._ctx, opts);
 								}
 							}
+							break;
+
+						case 'dashedHorizontalLine':
+							
+							var dashPat = obj.options.dashPattern;
+							var dashPatLen = 0;
+							for (var i=0; i<dashPat.length; i++) {
+								dashPatLen += dashPat[i];
+							}
+
+							// style and shadow properties should be set before
+							// every draw of marker renderer.
+							if (obj.options.y != null) {
+								mr.style = 'line';
+								opts.closePath = false;
+								var xaxis = plot.axes[obj.options.xaxis],
+									xstart,
+									xstop,
+									y = plot.axes[obj.options.yaxis].series_u2p(obj.options.y),
+									xminoff = obj.options.xminOffset || obj.options.xOffset,
+									xmaxoff = obj.options.xmaxOffset || obj.options.xOffset;
+								if (obj.options.xmin != null) {
+									xstart = xaxis.series_u2p(obj.options.xmin);
+								}
+								else if (xminoff != null) {
+									if ($.type(xminoff) == "number") {
+										xstart = xaxis.series_u2p(xaxis.min + xminoff);
+									}
+									else if ($.type(xminoff) == "string") {
+										xstart = xaxis.series_u2p(xaxis.min) + parseFloat(xminoff);
+									}
+								}
+								if (obj.options.xmax != null) {
+									xstop = xaxis.series_u2p(obj.options.xmax);
+								}
+								else if (xmaxoff != null) {
+									if ($.type(xmaxoff) == "number") {
+										xstop = xaxis.series_u2p(xaxis.max - xmaxoff);
+									}
+									else if ($.type(xmaxoff) == "string") {
+										xstop = xaxis.series_u2p(xaxis.max) - parseFloat(xmaxoff);
+									}
+								}
+								if (xstop != null && xstart != null) {
+									var numDash = Math.ceil((xstop - xstart)/dashPatLen);
+									var b=xstart, e;
+									for (var i=0; i<numDash; i++) {
+										for (var j=0; j<dashPat.length; j+=2) {
+											e = b+dashPat[j];
+											mr.draw([b, y], [e, y], this.canvas._ctx, opts);
+											b += dashPat[j];
+											if (j < dashPat.length-1) {
+												b += dashPat[j+1];
+											}
+										}
+									}
+								}
+							}
+							break;
+
+						case 'verticalLine':
+							
+							// style and shadow properties should be set before
+							// every draw of marker renderer.
+							if (obj.options.x != null) {
+								mr.style = 'line';
+								opts.closePath = false;
+								var yaxis = plot.axes[obj.options.yaxis],
+									ystart,
+									ystop,
+									x = plot.axes[obj.options.xaxis].series_u2p(obj.options.x),
+									yminoff = obj.options.yminOffset || obj.options.yOffset,
+									ymaxoff = obj.options.ymaxOffset || obj.options.yOffset;
+								if (obj.options.ymin != null) {
+									ystart = yaxis.series_u2p(obj.options.ymin);
+								}
+								else if (yminoff != null) {
+									if ($.type(yminoff) == "number") {
+										ystart = yaxis.series_u2p(yaxis.min - yminoff);
+									}
+									else if ($.type(yminoff) == "string") {
+										ystart = yaxis.series_u2p(yaxis.min) - parseFloat(yminoff);
+									}
+								}
+								if (obj.options.ymax != null) {
+									ystop = yaxis.series_u2p(obj.options.ymax);
+								}
+								else if (ymaxoff != null) {
+									if ($.type(ymaxoff) == "number") {
+										ystop = yaxis.series_u2p(yaxis.max + ymaxoff);
+									}
+									else if ($.type(ymaxoff) == "string") {
+										ystop = yaxis.series_u2p(yaxis.max) + parseFloat(ymaxoff);
+									}
+								}
+								if (ystop != null && ystart != null) {
+									mr.draw([x, ystart], [x, ystop], this.canvas._ctx, opts);
+								}
+							}
+							break;
+
+						case 'dashedVerticalLine':
+							
+							var dashPat = obj.options.dashPattern;
+							var dashPatLen = 0;
+							for (var i=0; i<dashPat.length; i++) {
+								dashPatLen += dashPat[i];
+							}
+
+							// style and shadow properties should be set before
+							// every draw of marker renderer.
+							if (obj.options.x != null) {
+								mr.style = 'line';
+								opts.closePath = false;
+								var yaxis = plot.axes[obj.options.yaxis],
+									ystart,
+									ystop,
+									x = plot.axes[obj.options.xaxis].series_u2p(obj.options.x),
+									yminoff = obj.options.yminOffset || obj.options.yOffset,
+									ymaxoff = obj.options.ymaxOffset || obj.options.yOffset;
+								if (obj.options.ymin != null) {
+									ystart = yaxis.series_u2p(obj.options.ymin);
+								}
+								else if (yminoff != null) {
+									if ($.type(yminoff) == "number") {
+										ystart = yaxis.series_u2p(yaxis.min - yminoff);
+									}
+									else if ($.type(yminoff) == "string") {
+										ystart = yaxis.series_u2p(yaxis.min) - parseFloat(yminoff);
+									}
+								}
+								if (obj.options.ymax != null) {
+									ystop = yaxis.series_u2p(obj.options.ymax);
+								}
+								else if (ymaxoff != null) {
+									if ($.type(ymaxoff) == "number") {
+										ystop = yaxis.series_u2p(yaxis.max + ymaxoff);
+									}
+									else if ($.type(ymaxoff) == "string") {
+										ystop = yaxis.series_u2p(yaxis.max) + parseFloat(ymaxoff);
+									}
+								}
+
+
+								if (ystop != null && ystart != null) {
+									var numDash = Math.ceil((ystart - ystop)/dashPatLen);
+									var firstDashAdjust = ((numDash * dashPatLen) - (ystart - ystop))/2.0;
+									var b=ystart, e, bs, es;
+									for (var i=0; i<numDash; i++) {
+										for (var j=0; j<dashPat.length; j+=2) {
+											e = b - dashPat[j];
+											if (e < ystop) {
+												e = ystop;
+											}
+											if (b < ystop) {
+												b = ystop;
+											}
+											// es = e;
+											// if (i == 0) {
+											// 	es += firstDashAdjust;
+											// }
+											mr.draw([x, b], [x, e], this.canvas._ctx, opts);
+											b -= dashPat[j];
+											if (j < dashPat.length-1) {
+												b -= dashPat[j+1];
+											}
+										}
+									}
+								}
+							}
+							break;
+
+						default:
 							break;
 					}
 				}
@@ -261,9 +685,14 @@
     // create a canvas which we can draw on.
     // insert it before the eventCanvas, so eventCanvas will still capture events.
     $.jqplot.CanvasOverlay.postPlotDraw = function() {
+        // Memory Leaks patch    
+        if (this.plugins.canvasOverlay && this.plugins.canvasOverlay.highlightCanvas) {
+            this.plugins.canvasOverlay.highlightCanvas.resetCanvas();
+            this.plugins.canvasOverlay.highlightCanvas = null;
+        }
         this.plugins.canvasOverlay.canvas = new $.jqplot.GenericCanvas();
         
-        this.eventCanvas._elem.before(this.plugins.canvasOverlay.canvas.createElement({top:0, right:0, bottom:0, left:0}, 'jqplot-overlayCanvas-canvas', this._plotDimensions));
+        this.eventCanvas._elem.before(this.plugins.canvasOverlay.canvas.createElement(this._gridPadding, 'jqplot-overlayCanvas-canvas', this._plotDimensions, this));
         this.plugins.canvasOverlay.canvas.setContext();
 		if (!this.plugins.canvasOverlay.deferDraw) {
 			this.plugins.canvasOverlay.draw(this);

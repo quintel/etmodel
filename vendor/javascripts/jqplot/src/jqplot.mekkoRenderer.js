@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r701
+ * Version: 1.0.0b2_r792
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -77,6 +77,7 @@
         var opts = {lineJoin:'miter', lineCap:'butt', isarc:false, fillRect:this.fillRect, strokeRect:this.strokeRect};
         this.renderer.shapeRenderer.init(opts);
         plot.axes.x2axis._series.push(this);
+        this._type = 'mekko';
     };
     
     // Method: setGridData
@@ -285,6 +286,10 @@
                         idx++;
                     }   
                 }
+
+                tr = null;
+                td1 = null;
+                td2 = null;
             }
         }
         return this._elem;

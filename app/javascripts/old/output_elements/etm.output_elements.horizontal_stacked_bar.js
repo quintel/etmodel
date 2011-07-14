@@ -10,8 +10,8 @@ function InitializeHorizontalStackedBar(id,series,ticks,show_point_label,unit,ax
       rendererOptions: {
         barDirection: 'horizontal',
         varyBarColor: true,
-        barPadding: 6,
-        barMargin: 40,
+        barPadding: 8,
+        barMargin: 30,
         shadow: false
       }
     },
@@ -25,7 +25,7 @@ function InitializeHorizontalStackedBar(id,series,ticks,show_point_label,unit,ax
         max: axis_values[1],
         numberTicks: 6,
         tickOptions: {
-          formatString: '%.0f'+unit
+          formatString: '%.2f'+unit
         }
       }
     }

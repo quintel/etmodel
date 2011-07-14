@@ -16,6 +16,11 @@ task :production do
   set :deploy_to, "/home/ubuntu/apps/#{application_key}"
   set :config_files, "/home/ubuntu/config_files/#{application_key}"
 
+  set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
+  set :db_pass, "Energy2.0"
+  set :db_name, application_key
+  set :db_user, application_key
+
   role :web, domain # Your HTTP server, Apache/etc
   role :app, domain # This may be the same as your `Web` server
   role :db,  domain, :primary => true # This is where Rails migrations will run
@@ -28,6 +33,11 @@ task :staging do
   set :application_key, "#{application}_staging"
   set :deploy_to, "/home/ubuntu/apps/#{application_key}"
   set :config_files, "/home/ubuntu/config_files/#{application_key}"
+
+  set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
+  set :db_pass, "Energy2.0"
+  set :db_name, application_key
+  set :db_user, application_key
 
   role :web, domain # Your HTTP server, Apache/etc
   role :app, domain # This may be the same as your `Web` server
@@ -45,3 +55,5 @@ set :chmod755, "app config db lib public vendor script script/* public/disp*"  	
 ssh_options[:forward_agent] = true
 set :use_sudo,     false
 set :rvm_ruby_string, '1.9.2'
+
+set :local_db_name, 'etmodel_dev'

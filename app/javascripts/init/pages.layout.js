@@ -1,4 +1,3 @@
-//= require <jquery>
 //= require <jquery_plugins>
 //= require <excanvas>
 //= require <jquery.hoverIntent.min>

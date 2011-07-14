@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r701
+ * Version: 1.0.0b2_r792
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -89,6 +89,7 @@
         this.shadowCanvas =  new $.jqplot.BlockCanvas();
         this.canvas._plotDimensions = this._plotDimensions;
         this.shadowCanvas._plotDimensions = this._plotDimensions;
+        this._type = 'block';
         
         // group: Methods 
         //

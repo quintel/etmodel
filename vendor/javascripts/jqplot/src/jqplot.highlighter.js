@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r701
+ * Version: 1.0.0b2_r792
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -155,6 +155,10 @@
         $.extend(true, this, options);
     };
     
+    var locations = ['nw', 'n', 'ne', 'e', 'se', 's', 'sw', 'w'];
+    var locationIndicies = {'nw':0, 'n':1, 'ne':2, 'e':3, 'se':4, 's':5, 'sw':6, 'w':7};
+    var oppositeLocations = ['se', 's', 'sw', 'w', 'nw', 'n', 'ne', 'e'];
+    
     // axis.renderer.tickrenderer.formatter
     
     // called with scope of plot
@@ -175,14 +179,29 @@
     // create a canvas which we can draw on.
     // insert it before the eventCanvas, so eventCanvas will still capture events.
     $.jqplot.Highlighter.postPlotDraw = function() {
+        // Memory Leaks patch    
+        if (this.plugins.highlighter && this.plugins.highlighter.highlightCanvas) {
+            this.plugins.highlighter.highlightCanvas.resetCanvas();
+            this.plugins.highlighter.highlightCanvas = null;
+        }
+
+        if (this.plugins.highlighter && this.plugins.highlighter._tooltipElem) {
+            this.plugins.highlighter._tooltipElem.emptyForce();
+            this.plugins.highlighter._tooltipElem = null;
+        }
+
         this.plugins.highlighter.highlightCanvas = new $.jqplot.GenericCanvas();
         
-        this.eventCanvas._elem.before(this.plugins.highlighter.highlightCanvas.createElement(this._gridPadding, 'jqplot-highlight-canvas', this._plotDimensions));
+        this.eventCanvas._elem.before(this.plugins.highlighter.highlightCanvas.createElement(this._gridPadding, 'jqplot-highlight-canvas', this._plotDimensions, this));
         this.plugins.highlighter.highlightCanvas.setContext();
+
+        var elem = document.createElement('div');
+        this.plugins.highlighter._tooltipElem = $(elem);
+        elem = null;
+        this.plugins.highlighter._tooltipElem.addClass('jqplot-highlighter-tooltip');
+        this.plugins.highlighter._tooltipElem.css({position:'absolute', display:'none'});
         
-        var p = this.plugins.highlighter;
-        p._tooltipElem = $('<div class="jqplot-highlighter-tooltip" style="position:absolute;display:none"></div>');
-        this.eventCanvas._elem.before(p._tooltipElem);
+        this.eventCanvas._elem.before(this.plugins.highlighter._tooltipElem);
     };
     
     $.jqplot.preInitHooks.push($.jqplot.Highlighter.init);
@@ -308,7 +327,13 @@
         if (series.markerRenderer.show == true) { 
             ms = (series.markerRenderer.size + hl.sizeAdjust)/2;
         }
-        switch (hl.tooltipLocation) {
+		
+		var loc = locations;
+		if (series.fillToZero && series.fill && neighbor.data[1] < 0) {
+			loc = oppositeLocations;
+		}
+		
+        switch (loc[locationIndicies[hl.tooltipLocation]]) {
             case 'nw':
                 var x = gridpos.x + plot._gridPadding.left - elem.outerWidth(true) - hl.tooltipOffset - fact * ms;
                 var y = gridpos.y + plot._gridPadding.top - hl.tooltipOffset - elem.outerHeight(true) - fact * ms;
@@ -379,7 +404,7 @@
         	  ctx = null;
             
             }
-            if (neighbor != null && plot.series[neighbor.seriesIndex].showHighlight && !hl.isHighlighting) {
+            else if (neighbor != null && plot.series[neighbor.seriesIndex].showHighlight && !hl.isHighlighting) {
                 hl.isHighlighting = true;
                 if (hl.showMarker) {
                     draw(plot, neighbor);

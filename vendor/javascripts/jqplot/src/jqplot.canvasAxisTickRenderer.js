@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r701
+ * Version: 1.0.0b2_r792
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -85,7 +85,8 @@
         // string passed to the formatter.
         this.formatString = '';
         // prop: prefix
-        // string appended to the tick label if no formatString is specified.
+        // String to prepend to the tick label.
+        // Prefix is prepended to the formatted tick label.
         this.prefix = '';
         // prop: fontFamily
         // css spec for the font-family css attribute.
@@ -198,40 +199,48 @@
         return this;
     };
     
-    $.jqplot.CanvasAxisTickRenderer.prototype.draw = function(ctx) {
+    $.jqplot.CanvasAxisTickRenderer.prototype.draw = function(ctx, plot) {
         if (!this.label) {
-            this.label = this.formatter(this.formatString, this.value);
+            this.label = this.prefix + this.formatter(this.formatString, this.value);
         }
-        // add prefix if needed
-        if (this.prefix && !this.formatString) {
-            this.label = this.prefix + this.label;
+        
+        // Memory Leaks patch
+        if (this._elem) {
+            if ($.jqplot.use_excanvas) {
+                window.G_vmlCanvasManager.uninitElement(this._elem.get(0));
+            }
+            
+            this._elem.emptyForce();
+            this._elem = null;
         }
+
         // create a canvas here, but can't draw on it untill it is appended
         // to dom for IE compatability.
-        var domelem = document.createElement('canvas');
+
+        var elem = plot.canvasManager.getCanvas();
+
         this._textRenderer.setText(this.label, ctx);
         var w = this.getWidth(ctx);
         var h = this.getHeight(ctx);
-        domelem.width = w;
-        domelem.height = h;
-        domelem.style.width = w;
-        domelem.style.height = h;
-        domelem.style.textAlign = 'left';
-        domelem.style.position = 'absolute';
-        this._domelem = domelem;
-        this._elem = $(domelem);
+        // canvases seem to need to have width and heigh attributes directly set.
+        elem.width = w;
+        elem.height = h;
+        elem.style.width = w;
+        elem.style.height = h;
+        elem.style.textAlign = 'left';
+        elem.style.position = 'absolute';
+		
+		elem = plot.canvasManager.initCanvas(elem);
+		
+        this._elem = $(elem);
         this._elem.css(this._styles);
         this._elem.addClass('jqplot-'+this.axis+'-tick');
-        
-        domelem = null;
+		
+        elem = null;
         return this._elem;
     };
     
     $.jqplot.CanvasAxisTickRenderer.prototype.pack = function() {
-        if ($.jqplot.use_excanvas) {
-            window.G_vmlCanvasManager.init_(document);
-            this._domelem = window.G_vmlCanvasManager.initElement(this._domelem);
-        }
         this._textRenderer.draw(this._elem.get(0).getContext("2d"), this.label);
     };
     

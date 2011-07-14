@@ -2,7 +2,7 @@ var output_element = new Chart(<%= @output_element.options_for_js.to_json.html_s
 <%- if @output_element.html_table? -%>
   var table_content = "<%= escape_javascript(render "output_elements/tables/chart_#{@output_element.id}")%>";
   <%- @gquery_ids.each do |i| %>
-    new Gquery({key: '<%= i %>'});
+    new Gquery({key: '<%= gquery_id(i) %>'});
   <% end -%>
 <% else %>
   <% @output_element.allowed_output_element_series.each do |serie| %>

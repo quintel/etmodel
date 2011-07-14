@@ -63,9 +63,4 @@ class OutputElementSerie < ActiveRecord::Base
   def converted_color
     convert_color(color)
   end
-
-  # DEBT: hack because block charts contain incomplete gql queries.
-  def gquery_or_key_for_etengine
-    gquery
-  end
 end

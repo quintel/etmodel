@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r701
+ * Version: 1.0.0b2_r792
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -82,21 +82,21 @@
             
             for (var j=0; j<d.length; j++) { 
                 if (this.name == 'xaxis' || this.name == 'x2axis') {
-                    if (d[j][0] > db.max || db.max == null) {
-                        db.max = d[j][0];
+                    if ((d[j][0] != null && d[j][0] < db.min) || db.min == null) {
+                        db.min = d[j][0];
                     }
-                    if (d[j][0] > db.max || db.max == null) {
+                    if ((d[j][0] != null && d[j][0] > db.max) || db.max == null) {
                         db.max = d[j][0];
                     }
                 }              
                 else {
-                    if (d[j][1] < db.min || db.min == null) {
+                    if ((d[j][1] != null && d[j][1] < db.min) || db.min == null) {
                         db.min = d[j][1];
                     }
-                    if (d[j][1] > db.max || db.max == null) {
+                    if ((d[j][1] != null && d[j][1] > db.max) || db.max == null) {
                         db.max = d[j][1];
                     }
-                }              
+                }               
             }
         }
     };
@@ -285,8 +285,8 @@
         var ticks = this._ticks;
         var trans = function (v) { return Math.log(v)/Math.log(lb); };
         var invtrans = function (v) { return Math.pow(Math.E, (Math.log(lb)*v)); };
-        max = trans(this.max);
-        min = trans(this.min);
+        var max = trans(this.max);
+        var min = trans(this.min);
         var offmax = offsets.max;
         var offmin = offsets.min;
         var lshow = (this._label == null) ? false : this._label.show;
@@ -329,7 +329,7 @@
         
         if (this.show) {
             if (this.name == 'xaxis' || this.name == 'x2axis') {
-                for (i=0; i<ticks.length; i++) {
+                for (var i=0; i<ticks.length; i++) {
                     var t = ticks[i];
                     if (t.show && t.showLabel) {
                         var shim;
@@ -382,7 +382,7 @@
                 }
             }
             else {
-                for (i=0; i<ticks.length; i++) {
+                for (var i=0; i<ticks.length; i++) {
                     var t = ticks[i];
                     if (t.show && t.showLabel) {                        
                         var shim;

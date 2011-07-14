@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r701
+ * Version: 1.0.0b2_r792
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -107,6 +107,10 @@
         // true if is a hi-low-close chart (no open price).
         // This is determined automatically from the series data.
         this.hlc = false;
+        // prop: lineWidth
+        // Width of the hi-low line and open/close ticks.
+        // Must be set in the rendererOptions for the series.
+        this.lineWidth = 1.5;
         this._tickLength;
         this._bodyWidth;
     };
@@ -116,10 +120,13 @@
     
     // called with scope of series.
     $.jqplot.OHLCRenderer.prototype.init = function(options) {
-        // prop: lineWidth
-        // Width of the hi-low line and open/close ticks.
-        this.lineWidth = 1.5;
+        options = options || {};
+        // lineWidth has to be set on the series, changes in renderer
+        // constructor have no effect.  set the default here
+        // if no renderer option for lineWidth is specified.
+        this.lineWidth = options.lineWidth || 1.5;
         $.jqplot.LineRenderer.prototype.init.call(this, options);
+        this._type = 'ohlc';
         // set the yaxis data bounds here to account for hi and low values
         var db = this._yaxis._dataBounds;
         var d = this._plotData;
@@ -183,13 +190,23 @@
                     xmaxidx = i+1;
                 }
             }
+
+            var dwidth = this.gridData[xmaxidx-1][0] - this.gridData[xminidx][0];
+            var nvisiblePoints = xmaxidx - xminidx;
+            try {
+                var dinterval = Math.abs(this._xaxis.series_u2p(parseInt(this._xaxis._intervalStats[0].sortedIntervals[0].interval)) - this._xaxis.series_u2p(0)); 
+            }
+
+            catch (e) {
+                var dinterval = dwidth / nvisiblePoints;
+            }
             
             if (r.candleStick) {
                 if (typeof(r.bodyWidth) == 'number') {
                     r._bodyWidth = r.bodyWidth;
                 }
                 else {
-                    r._bodyWidth = Math.min(20, ctx.canvas.width/(xmaxidx - xminidx)/2);
+                    r._bodyWidth = Math.min(20, dinterval/1.75);
                 }
             }
             else {
@@ -197,7 +214,7 @@
                     r._tickLength = r.tickLength;
                 }
                 else {
-                    r._tickLength = Math.min(10, ctx.canvas.width/(xmaxidx - xminidx)/4);
+                    r._tickLength = Math.min(10, dinterval/3.5);
                 }
             }
             

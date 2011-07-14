@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r701
+ * Version: 1.0.0b2_r792
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -64,7 +64,7 @@
     // returns float
     $.jqplot.CanvasTextRenderer.prototype.normalizeFontSize = function(sz) {
         sz = String(sz);
-        n = parseFloat(sz);
+        var n = parseFloat(sz);
         if (sz.indexOf('px') > -1) {
             return n/this.pt2px;
         }
@@ -173,7 +173,7 @@
         var total = 0;
         var len = str.length;
  
-        for ( i = 0; i < len; i++) {
+        for (var i = 0; i < len; i++) {
             var c = this.letter(str.charAt(i));
             if (c) {
                 total += c.width * this.normalizedFontSize / 25.0 * this.fontStretch;

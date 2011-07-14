@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110713182430) do
+ActiveRecord::Schema.define(:version => 20110714085756) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -205,8 +205,8 @@ ActiveRecord::Schema.define(:version => 20110713182430) do
     t.datetime "updated_at"
     t.string   "display_format"
     t.string   "reached_query"
-    t.integer  "target_query"
-    t.integer  "user_value_query"
+    t.string   "target_query"
+    t.string   "user_value_query"
   end
 
   add_index "policy_goals", ["key"], :name => "index_policy_goals_on_key"

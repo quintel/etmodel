@@ -2,7 +2,7 @@ module OutputElementsHelper
   def output_element_serie(serie)
     s = {      
       :id         => serie.id, # needed for block charts
-      :gquery_key => serie.gquery_or_key_for_etengine,
+      :gquery_key => gquery_id(serie.gquery).to_s,
       :color      => serie.converted_color,
       :label      => serie.title_translated,
       :group      => serie.group,

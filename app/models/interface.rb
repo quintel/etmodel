@@ -15,19 +15,23 @@ class Interface < ActiveRecord::Base
   end
   
   def sidebar_items_for(tab_key)
-    tree[:tabs][tab_key].keys.map{|k| SidebarItem.find_by_key(k)} rescue []
+    tree[:tabs][tab_key].keys.map{|k| SidebarItem.find_by_key(k)}.
+    reject(&:area_dependent) rescue []
   end
   
   def slides_for(tab_key, sidebar_item_key)
-    tree[:tabs][tab_key][sidebar_item_key].keys.map{|k| Slide.find_by_key(k)} rescue []
+    tree[:tabs][tab_key][sidebar_item_key].keys.map{|k| Slide.find_by_key(k)}
+    rescue []
   end
   
   def input_elements_for(tab_key, sidebar_item_key, slide_key)
-    tree[:tabs][tab_key][sidebar_item_key][slide_key][:input_elements].map{|k| InputElement.find_by_key(k)} rescue []
+    tree[:tabs][tab_key][sidebar_item_key][slide_key][:input_elements].map{|k| InputElement.find_by_key(k)}.
+      reject(&:area_dependent) rescue []
   end
   
   def output_elements_for(tab_key, sidebar_item_key, slide_key)
-    tree[:tabs][tab_key][sidebar_item_key][slide_key][:output_elements].map{|k| OutputElement.find_by_key(k)} rescue []
+    tree[:tabs][tab_key][sidebar_item_key][slide_key][:output_elements].map{|k| OutputElement.find_by_key(k)}.
+      reject(&:area_dependent) rescue []
   end
   
   def default_chart_for_slide(tab_key, sidebar_item_key, slide_key)

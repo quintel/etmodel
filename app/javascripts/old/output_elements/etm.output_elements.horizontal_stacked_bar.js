@@ -1,4 +1,5 @@
 function InitializeHorizontalStackedBar(id,series,ticks,show_point_label,unit,axis_values,colors,labels){
+
   $.jqplot(id, series, {
     stackSeries: true,
     seriesColors: colors,
@@ -25,8 +26,10 @@ function InitializeHorizontalStackedBar(id,series,ticks,show_point_label,unit,ax
         max: axis_values[1],
         numberTicks: 6,
         tickOptions: {
-          formatString: '%.2f'+unit
+          formatString: '%.2f'+unit,
+          fontSize: '10px'
         }
+        
       }
     }
   });

@@ -15,7 +15,7 @@ function InitializeMekko(id,series,unit,axis_values,colors,labels){
       markSize: 0
     }
   };
-  
+  $.jqplot.config.enablePlugins = true;
   x2axis = { // top axis
     show: true,
     tickMode: 'bar',
@@ -23,7 +23,8 @@ function InitializeMekko(id,series,unit,axis_values,colors,labels){
     min: axis_values[0],
     tickSpacing: (517 / axis_values[1]) * (axis_values[1] / 9),
     numberTicks: 4,
-    tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+    // the CanvasAxisTickRenderer doesn't work in this version in combination with the mekko chart
+    // tickRenderer: $.jqplot.CanvasAxisTickRenderer, 
     tickOptions:{
       formatString:'%.0f'+unit,
       angle: -45,
@@ -40,8 +41,8 @@ function InitializeMekko(id,series,unit,axis_values,colors,labels){
   	    barLabelOptions: {
   	        fontSize: font_size,
   	        angle: -45
-  	    },
-  	    barLabelRenderer: $.jqplot.CanvasAxisLabelRenderer
+  	    }// ,      // the CanvasAxisTickRenderer doesn't work in this version in combination with the mekko chart
+  	    //         barLabelRenderer: $.jqplot.CanvasAxisLabelRenderer
   	},
     tickOptions:{
       formatString:'&nbsp;' // ugly but it works

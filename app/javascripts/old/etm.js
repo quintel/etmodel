@@ -144,6 +144,11 @@ $(document).ready(function() {
     window.location.href = url;
 
   });
+  
+  // sets the fce checkbox the the value that is stored in backbone
+  $("#use_fce_settings").attr('checked',   App.settings.get('use_fce'));
+  
+
 });
 
 

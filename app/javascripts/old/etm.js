@@ -145,11 +145,11 @@ $(document).ready(function() {
 
   });
   
-  // This also causes the start pages to not work!! because there App is undefined!
+  // RD 18-07-2011 TODO: move this to backbone together with the onchange listener
   // sets the fce checkbox the the value that is stored in backbone
-
-  // $("#use_fce_settings").attr('checked',   App.settings.get('use_fce'));
-  
+  if (window.App !== undefined){
+    $("#use_fce_settings").attr('checked', App.settings.get('use_fce'));
+  }
 
 });
 

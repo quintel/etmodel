@@ -92,6 +92,7 @@ class Setting
   def reset_scenario
     # RD: used self. here otherwise an other settings object was reset
     self.api_session_key = nil
+    self.use_fce = false
     self.network_parts_affected = []
     # set scenario_id to nil to go back to a blank slate scenario
     self.scenario_id = nil

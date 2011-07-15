@@ -35,8 +35,9 @@
               %p
                 = search_result_description(result)
                 %br
-                = link_to 'Full description', result.description, :class => 'fancybox'
-                |
+                - if result.description
+                  = link_to 'Full description', result.description, :class => 'fancybox'
+                  |
                 = link_to 'Jump to page', :controller => slide.controller_name, :action => slide.action_name, :slide => slide.name
 
   - unless @slides.empty?
@@ -53,8 +54,9 @@
             %p
               = search_result_description(result)
               %br
-              = link_to 'Full description', result.description, :class => 'fancybox'
-              |
+              - if result.description
+                = link_to 'Full description', result.description, :class => 'fancybox'
+                |
               = link_to 'Jump to page', :controller => slide.controller_name, :action => slide.action_name, :slide => slide.name
 
 #search_results_from_reference_mananager

@@ -3,7 +3,7 @@
 
   var BODY_HIDE_EVENT, ACTIVE_VALUE_SELECTOR,
       INPUT_ELEMENT_T, VALUE_SELECTOR_T,
-      HOLD_DELAY, HOLD_DURATION,
+      HOLD_DELAY, HOLD_DURATION, HOLD_FPS,
 
       floatPrecision, conversionsFromModel,
       abortValueSelection, bindValueSelectorBodyEvents,
@@ -16,6 +16,7 @@
   // should begin being repeated.
   HOLD_DELAY    = 500;
   HOLD_DURATION = 2000;
+  HOLD_FPS      = 60;
 
   // Tracks whether the body has been assigned an event to hide input
   // selection boxes when the user clicks outside them.
@@ -421,7 +422,7 @@
      */
     performStepping: function (targetValue) {
       var initialValue   = this.quinn.value,
-          duration       = HOLD_DURATION / 10,
+          duration       = HOLD_DURATION / (1000 / HOLD_FPS),
           isIncreasing   = (targetValue > initialValue),
           stepIterations = 0,
 
@@ -472,7 +473,7 @@
       // Set a timeout so that after HOLD_DELAY seconds, the slider value will
       // continue to be changed so long as the user holds the mouse button.
       timeoutId = window.setTimeout(_.bind(function () {
-        intervalId = window.setInterval(intervalFunc, 10);
+        intervalId = window.setInterval(intervalFunc, 1000 / HOLD_FPS);
       }, this), HOLD_DELAY);
 
       // Executed when the user lifts the mouse button; commits the new value.

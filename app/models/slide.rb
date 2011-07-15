@@ -112,4 +112,9 @@ class Slide < ActiveRecord::Base
   def image_path
     "/images/layout/#{image}" if image.present? 
   end
+
+  def title_for_description
+    "slidetitle.#{name}"
+  end
+
 end

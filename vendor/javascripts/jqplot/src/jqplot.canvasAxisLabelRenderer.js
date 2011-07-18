@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0b2_r792
+ * Version: 1.0.0a_r720
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -167,40 +167,32 @@
         return a;
     };
     
-    $.jqplot.CanvasAxisLabelRenderer.prototype.draw = function(ctx, plot) {
-          // Memory Leaks patch
-          if (this._elem) {
-              if ($.jqplot.use_excanvas) {
-                  window.G_vmlCanvasManager.uninitElement(this._elem.get(0));
-              }
-            
-              this._elem.emptyForce();
-              this._elem = null;
-          }
-
+    $.jqplot.CanvasAxisLabelRenderer.prototype.draw = function(ctx) {
         // create a canvas here, but can't draw on it untill it is appended
         // to dom for IE compatability.
-        var elem = plot.canvasManager.getCanvas();
-
+        var domelem = document.createElement('canvas');
         this._textRenderer.setText(this.label, ctx);
         var w = this.getWidth(ctx);
         var h = this.getHeight(ctx);
-        elem.width = w;
-        elem.height = h;
-        elem.style.width = w;
-        elem.style.height = h;
-        
-		elem = plot.canvasManager.initCanvas(elem);
-		
-        this._elem = $(elem);
-        this._elem.css({ position: 'absolute'});
+        domelem.width = w;
+        domelem.height = h;
+        domelem.style.width = w;
+        domelem.style.height = h;
+        // domelem.style.textAlign = 'center';
+        domelem.style.position = 'absolute';
+        this._domelem = domelem;
+        this._elem = $(domelem);
         this._elem.addClass('jqplot-'+this.axis+'-label');
         
-        elem = null;
+        domelem = null;
         return this._elem;
     };
     
     $.jqplot.CanvasAxisLabelRenderer.prototype.pack = function() {
+        if ($.jqplot.use_excanvas) {
+            window.G_vmlCanvasManager.init_(document);
+            this._domelem = window.G_vmlCanvasManager.initElement(this._domelem);
+        }
         this._textRenderer.draw(this._elem.get(0).getContext("2d"), this.label);
     };
     

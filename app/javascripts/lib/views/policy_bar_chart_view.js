@@ -31,8 +31,8 @@ var PolicyBarChartView = BaseChartView.extend({
   ticks : function() {
     var ticks = [];
     this.model.series.each(function(serie) {
-      ticks.push([ serie.result()[0][0] ]);
-      ticks.push([ serie.result()[1][0] ]);
+      ticks.push(serie.result()[0][0]);
+      ticks.push(serie.result()[1][0]);
     });
     return ticks;
   } 

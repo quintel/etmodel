@@ -60,7 +60,8 @@ class OutputElement < ActiveRecord::Base
       'name'       => I18n.t("output.#{name}").html_safe,
       'show_point_label' => show_point_label,
       'max_axis_value' => max_axis_value,
-      'min_axis_value' => min_axis_value
+      'min_axis_value' => min_axis_value,
+      'growth_chart' => growth_chart
     }
   end
 

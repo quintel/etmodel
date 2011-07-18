@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0b2_r792
+ * Version: 1.0.0a_r720
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -170,7 +170,7 @@
                 }
             }
             else {
-                var d = this._plotData;
+                var d = this.data;
                 if (this.renderer.constructor == $.jqplot.BarRenderer && this.waterfall) {
                     d = this._data;
                 }
@@ -180,7 +180,6 @@
                         p._labels.push(d[i][labelIdx]);
                     }
                 }
-                d = null;
             }
         }
         else if (p.labels.length){
@@ -269,12 +268,8 @@
         p.setLabels.call(this);
         // remove any previous labels
         for (var i=0; i<p._elems.length; i++) {
-            // Memory Leaks patch
-            // p._elems[i].remove();
-            p._elems[i].emptyForce();
+            p._elems[i].remove();
         }
-        p._elems.splice(0, p._elems.length);
-
         if (p.show) {
             var ax = '_'+this._stackAxis+'axis';
         
@@ -286,9 +281,8 @@
             var pd = this._plotData;
             var xax = this._xaxis;
             var yax = this._yaxis;
-            var elem, helem;
 
-            for (var i=0, l=p._labels.length; i < l; i++) {
+            for (var i=p._labels.length-1; i>=0; i--) {
                 var label = p._labels[i];
                 
                 if (p.hideZeros && parseInt(p._labels[i], 10) == 0) {
@@ -298,17 +292,9 @@
                 if (label != null) {
                     label = p.formatter(p.formatString, label);
                 } 
-
-                helem = document.createElement('div');
-                p._elems[i] = $(helem);
-
-                elem = p._elems[i];
-
-
-                elem.addClass('jqplot-point-label jqplot-series-'+this.index+' jqplot-point-'+i);
-                elem.css('position', 'absolute');
+                var elem = $('<div class="jqplot-point-label jqplot-series-'+this.index+' jqplot-point-'+i+'" style="position:absolute"></div>');
                 elem.insertAfter(sctx.canvas);
-
+                p._elems.push(elem);
                 if (p.escapeHTML) {
                     elem.text(label);
                 }
@@ -331,8 +317,8 @@
                 }
                 elem.css('left', ell);
                 elem.css('top', elt);
-                var elr = ell + elem.width();
-                var elb = elt + elem.height();
+                var elr = ell + $(elem).width();
+                var elb = elt + $(elem).height();
                 var et = p.edgeTolerance;
                 var scl = $(sctx.canvas).position().left;
                 var sct = $(sctx.canvas).position().top;
@@ -340,10 +326,8 @@
                 var scb = sctx.canvas.height + sct;
                 // if label is outside of allowed area, remove it
                 if (ell - et < scl || elt - et < sct || elr + et > scr || elb + et > scb) {
-                    elem.remove();
+                    $(elem).detach();
                 }
-                elem = null;
-                helem = null;
             }
         }
     };

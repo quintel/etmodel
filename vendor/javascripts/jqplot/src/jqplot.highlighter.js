@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0b2_r792
+ * Version: 1.0.0a_r720
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -179,29 +179,14 @@
     // create a canvas which we can draw on.
     // insert it before the eventCanvas, so eventCanvas will still capture events.
     $.jqplot.Highlighter.postPlotDraw = function() {
-        // Memory Leaks patch    
-        if (this.plugins.highlighter && this.plugins.highlighter.highlightCanvas) {
-            this.plugins.highlighter.highlightCanvas.resetCanvas();
-            this.plugins.highlighter.highlightCanvas = null;
-        }
-
-        if (this.plugins.highlighter && this.plugins.highlighter._tooltipElem) {
-            this.plugins.highlighter._tooltipElem.emptyForce();
-            this.plugins.highlighter._tooltipElem = null;
-        }
-
         this.plugins.highlighter.highlightCanvas = new $.jqplot.GenericCanvas();
         
-        this.eventCanvas._elem.before(this.plugins.highlighter.highlightCanvas.createElement(this._gridPadding, 'jqplot-highlight-canvas', this._plotDimensions, this));
+        this.eventCanvas._elem.before(this.plugins.highlighter.highlightCanvas.createElement(this._gridPadding, 'jqplot-highlight-canvas', this._plotDimensions));
         this.plugins.highlighter.highlightCanvas.setContext();
-
-        var elem = document.createElement('div');
-        this.plugins.highlighter._tooltipElem = $(elem);
-        elem = null;
-        this.plugins.highlighter._tooltipElem.addClass('jqplot-highlighter-tooltip');
-        this.plugins.highlighter._tooltipElem.css({position:'absolute', display:'none'});
         
-        this.eventCanvas._elem.before(this.plugins.highlighter._tooltipElem);
+        var p = this.plugins.highlighter;
+        p._tooltipElem = $('<div class="jqplot-highlighter-tooltip" style="position:absolute;display:none"></div>');
+        this.eventCanvas._elem.before(p._tooltipElem);
     };
     
     $.jqplot.preInitHooks.push($.jqplot.Highlighter.init);

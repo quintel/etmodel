@@ -149,8 +149,6 @@ $(document).ready(function() {
   if (window.App !== undefined){
     $("#use_fce_settings").attr('checked', App.settings.get('use_fce'));  
   }
-  
-  
 
 });
 

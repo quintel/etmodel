@@ -65,13 +65,11 @@ var ConstraintView = Backbone.View.extend({
       case 'renewable_percentage':
         return Metric.ratio_as_percentage(result);
       case 'total_energy_cost':
-        // 1 point precision
-        return Metric.autoscale_value(result, 'euro', 1);
+        return this.format_costs(result);
       case 'not_shown':
         // bio_footprint actually
         return '' + Metric.round_number(result, 1) +'x'+ App.settings.get("country").toUpperCase();
       case 'targets_met':
-        //Metric.out_of(result, Current.gql.policy.goals.length)
         return null;
       case 'score':
         return parseInt(result,10);
@@ -79,7 +77,18 @@ var ConstraintView = Backbone.View.extend({
         return result;
     }
   },
-
+  
+  /*
+    the total_energy_cost box has a slightly different behaviour -
+    it should show billions only up to a certain amount. Since it is peculiar to the dashboard
+    I keep this method here, rather than in the common metric.js. I'd like the gquery to return
+    the value in euros, instead of bln euros
+  */
+  format_costs: function(x) {
+    if (x > 1) return Metric.autoscale_value(x, 'euro', 1) + I18n.t('dashboard.costs.bln');
+    return Metric.autoscale_value(x * 1000, 'euro', 1) + I18n.t('dashboard.costs.mln');
+  },
+  
   /**
    * Updates the arrows, if the difference is negative .
    * @param diff - the difference of old_value and new_value.

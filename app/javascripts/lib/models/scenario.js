@@ -53,6 +53,8 @@ var Scenario = Backbone.Model.extend({
   toggle_fce : function(){
     var use_fce = $("#use_fce_settings").is(':checked');
     App.settings.set({'use_fce' : use_fce});  
+    // TODO RD why bootstrap? it should be called only once after the page has loaded.
+    //         find a way to just use call_api() instead.
     App.bootstrap();
     $('.fce_notice').toggle(use_fce);
   }

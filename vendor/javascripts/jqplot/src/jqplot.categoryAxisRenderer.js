@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0b2_r792
+ * Version: 1.0.0a_r720
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -297,7 +297,7 @@
     };
     
     // called with scope of axis
-    $.jqplot.CategoryAxisRenderer.prototype.draw = function(ctx, plot) {
+    $.jqplot.CategoryAxisRenderer.prototype.draw = function(ctx) {
         if (this.show) {
             // populate the axis label and value properties.
             // createTicks is a method on the renderer, but
@@ -310,11 +310,9 @@
             var temp;
             // Added for theming.
             if (this._elem) {
-                // this._elem.empty();
-                // Memory Leaks patch
-                this._elem.emptyForce();
+                this._elem.empty();
             }
-
+            
             this._elem = this._elem || $('<div class="jqplot-axis jqplot-'+this.name+'" style="position:absolute;"></div>');
             
             if (this.name == 'xaxis' || this.name == 'x2axis') {
@@ -328,7 +326,7 @@
             this.labelOptions.axis = this.name;
             this._label = new this.labelRenderer(this.labelOptions);
             if (this._label.show) {
-                var elem = this._label.draw(ctx, plot);
+                var elem = this._label.draw(ctx);
                 elem.appendTo(this._elem);
             }
     
@@ -336,7 +334,7 @@
             for (var i=0; i<t.length; i++) {
                 var tick = t[i];
                 if (tick.showLabel && (!tick.isMinorTick || this.showMinorTicks)) {
-                    var elem = tick.draw(ctx, plot);
+                    var elem = tick.draw(ctx);
                     elem.appendTo(this._elem);
                 }
             }

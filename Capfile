@@ -1,7 +1,8 @@
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
+require 'thinking_sphinx/deploy/capistrano'
 Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
 load 'lib/capistrano/db_recipes'
-require 'thinking_sphinx/deploy/capistrano'
+
 
 load 'config/deploy' # remove this line to skip loading any of the default tasks
 
@@ -54,12 +55,7 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 
-  desc "Link up Sphinx's indexes."
-  task :symlink_sphinx_indexes, :roles => [:app] do
-    run "ln -nfs #{shared_path}/db/sphinx #{release_path}/db/sphinx"
-  end
 
-  
   desc "Notify Hoptoad of the deployment"
   task :notify_hoptoad, :except => { :no_release => true } do
     rails_env = fetch(:hoptoad_env, fetch(:rails_env, "production"))
@@ -82,8 +78,13 @@ task :after_update_code, :roles => [:app] do
   thinking_sphinx.start
 end
 
+desc "Link up Sphinx's indexes."
+task :symlink_sphinx_indexes, :roles => [:app] do
+  run "ln -nfs #{shared_path}/db/sphinx #{release_path}/db/sphinx"
+end
+
+
 after "deploy:update_code", "deploy:copy_configuration_files"
 after "deploy", "deploy:migrate"
 after "deploy", "deploy:cleanup"
 after "deploy", "deploy:notify_hoptoad"
-after "deploy", "ts:rebuild"

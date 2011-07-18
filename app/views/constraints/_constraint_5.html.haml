@@ -27,6 +27,4 @@
     
     %div{:style => "background: url(#{map}) repeat-x; height: 105px; width: #{(70*fut).round(0)}px"} &nbsp;
   :javascript
-    $(function(){
-      hideLoading();
-    });
+    App.call_api();

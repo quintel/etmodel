@@ -2,4 +2,6 @@
   %p= t('fce.description')
   %label{:style => "float:left;clear:both"}
     = t('fce.check')
+    -# TODO RD ideally what is in :onchange should be somewhere in the Backbone-code
+    -#         e.g. make a FceSettingView (there you can also add the onload code)
     = check_box(:use_fce, :settings, :onchange => 'App.scenario.toggle_fce()', :checked => Current.setting.use_fce)

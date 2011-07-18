@@ -58,8 +58,8 @@ window.AppView = Backbone.View.extend({
     var url = this.scenario.query_url(input_params);
     var keys = window.gqueries.keys();
 
-    var keys_ids = _.select(keys, function(key) { return !key.match(/\(/)});
-    var keys_string = _.select(keys, function(key) { return key.match(/\(/)});
+    var keys_ids = _.select(keys, function(key) { return !key.match(/\(/);});
+    var keys_string = _.select(keys, function(key) { return key.match(/\(/);});
 
     var params = {'r' : keys_ids.join(';'), 'result' : keys_string, 'use_fce' : App.settings.get('use_fce') };
 
@@ -163,7 +163,7 @@ window.AppView = Backbone.View.extend({
     if (this.has_unfinished_api_calls()) {
       $("#charts_wrapper").busyBox({
         spinner: '<img src="/images/layout/ajax-loader.gif" />'
-      }).fadeIn('fast') 
+      }).fadeIn('fast'); 
       $("#constraints").busyBox({
         classes: 'busybox ontop',
         spinner: '<img src="/images/layout/ajax-loader.gif" />'

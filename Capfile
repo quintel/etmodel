@@ -1,6 +1,7 @@
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
 load 'lib/capistrano/db_recipes'
+require 'thinking_sphinx/deploy/capistrano'
 
 load 'config/deploy' # remove this line to skip loading any of the default tasks
 
@@ -25,32 +26,6 @@ namespace :memcached do
     run "echo 'flush_all' | nc -q 1 localhost 11211"
   end     
 end
-
-namespace :ts do
-  desc "Start Search"
-  task :start, :roles => :app do
-    run "cd #{current_path} && bundle exec rake ts:start RAILS_ENV=production"
-  end
-
-  desc "Stop Search"
-  task :stop, :roles => :app do
-    run "cd #{current_path} && bundle exec rake ts:stop RAILS_ENV=production"
-  end
-
-  desc "Rebuild Search"
-  task :rebuild, :roles => :app do
-    run "cd #{current_path} && bundle exec rake ts:stop RAILS_ENV=production"
-    run "cd #{current_path} && bundle exec rake ts:config RAILS_ENV=production"
-    run "cd #{current_path} && bundle exec rake ts:index RAILS_ENV=production"
-    run "cd #{current_path} && bundle exec rake ts:start RAILS_ENV=production"
-  end
-
-  desc "Index Search"
-  task :index, :roles => :app do
-    run "cd #{current_path} && bundle exec rake ts:in RAILS_ENV=production"
-  end
-end
-
 
 namespace :deploy do
   task :copy_configuration_files do
@@ -95,6 +70,16 @@ namespace :deploy do
     run "cd #{release_path} && #{notify_command}"
     puts "Hoptoad Notification Complete."
   end
+end
+
+task :before_update_code, :roles => [:app] do
+  thinking_sphinx.stop
+end
+
+task :after_update_code, :roles => [:app] do
+  symlink_sphinx_indexes
+  thinking_sphinx.configure
+  thinking_sphinx.start
 end
 
 after "deploy:update_code", "deploy:copy_configuration_files"

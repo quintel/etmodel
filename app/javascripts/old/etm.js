@@ -145,8 +145,10 @@ $(document).ready(function() {
 
   });
   
+  // This also causes the start pages to not work!! because there App is undefined!
   // sets the fce checkbox the the value that is stored in backbone
-  $("#use_fce_settings").attr('checked',   App.settings.get('use_fce'));
+
+  // $("#use_fce_settings").attr('checked',   App.settings.get('use_fce'));
   
 
 });

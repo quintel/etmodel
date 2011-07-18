@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0b2_r792
+ * Version: 1.0.0a_r720
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -122,7 +122,7 @@
         // Format string for data labels.  If none, '%s' is used for "label" and for arrays, '%d' for value and '%d%%' for percentage.
         this.dataLabelFormatString = null;
         // prop: dataLabelThreshold
-        // Threshhold in percentage (0-100) of pie area, below which no label will be displayed.
+        // Threshhold in percentage (0 - 100) of pie area, below which no label will be displayed.
         // This applies to all label types, not just to percentage labels.
         this.dataLabelThreshold = 3;
         // prop: dataLabelPositionFactor
@@ -155,11 +155,9 @@
         }
         
         $.extend(true, this, options);
-
-        if (this.sliceMargin < 0) {
-            this.sliceMargin = 0;
+        if (this.diameter != null) {
+            this.diameter = this.diameter - this.sliceMargin;
         }
-
         this._diameter = null;
         this._radius = null;
         // array of [start,end] angles arrays, one for each slice.  In radians.
@@ -250,74 +248,32 @@
         }
         return td;
     };
-
-    function calcRadiusAdjustment(ang) {
-        return Math.sin((ang - (ang-Math.PI) / 8 / Math.PI )/2.0);
-    }
-
-    function calcRPrime(ang1, ang2, sliceMargin, fill, lineWidth) {
-        var rprime = 0;
-        var ang = ang2 - ang1;
-        var absang = Math.abs(ang);
-        var sm = sliceMargin;
-        if (fill == false) {
-            sm += lineWidth;
-        }
-
-        if (sm > 0 && absang > 0.01 && absang < 6.282) {
-            rprime = parseFloat(sm) / 2.0 / calcRadiusAdjustment(ang);
-        }
-
-        return rprime;
-    }
     
     $.jqplot.PieRenderer.prototype.drawSlice = function (ctx, ang1, ang2, color, isShadow) {
         if (this._drawData) {
-            var r = this._radius;
+            var r = this._diameter / 2;
             var fill = this.fill;
             var lineWidth = this.lineWidth;
-            var sm = this.sliceMargin;
-            if (this.fill == false) {
-                sm += this.lineWidth;
-            }
             ctx.save();
             ctx.translate(this._center[0], this._center[1]);
-            
-            var rprime = calcRPrime(ang1, ang2, this.sliceMargin, this.fill, this.lineWidth);
-
-            var transx = rprime * Math.cos((ang1 + ang2) / 2.0);
-            var transy = rprime * Math.sin((ang1 + ang2) / 2.0);
-
-            if ((ang2 - ang1) <= Math.PI) {
-                r -= rprime;  
-            }
-            else {
-                r += rprime;
-            }
-
-            ctx.translate(transx, transy);
-            
+            ctx.translate(this.sliceMargin*Math.cos((ang1+ang2)/2), this.sliceMargin*Math.sin((ang1+ang2)/2));
+    
             if (isShadow) {
-                for (var i=0, l=this.shadowDepth; i<l; i++) {
+                for (var i=0; i<this.shadowDepth; i++) {
                     ctx.save();
                     ctx.translate(this.shadowOffset*Math.cos(this.shadowAngle/180*Math.PI), this.shadowOffset*Math.sin(this.shadowAngle/180*Math.PI));
-                    doDraw(r);
-                }
-                for (var i=0, l=this.shadowDepth; i<l; i++) {
-                    ctx.restore();
+                    doDraw();
                 }
             }
     
             else {
-                doDraw(r);
+                doDraw();
             }
-            ctx.restore();
         }
     
-        function doDraw (rad) {
+        function doDraw () {
             // Fix for IE and Chrome that can't seem to draw circles correctly.
             // ang2 should always be <= 2 pi since that is the way the data is converted.
-            // 2Pi = 6.2831853, Pi = 3.1415927
              if (ang2 > 6.282 + this.startAngle) {
                 ang2 = 6.282 + this.startAngle;
                 if (ang1 > ang2) {
@@ -334,7 +290,7 @@
             ctx.fillStyle = color;
             ctx.strokeStyle = color;
             ctx.lineWidth = lineWidth;
-            ctx.arc(0, 0, rad, ang1, ang2, false);
+            ctx.arc(0, 0, r, ang1, ang2, false);
             ctx.lineTo(0,0);
             ctx.closePath();
         
@@ -345,6 +301,14 @@
                 ctx.stroke();
             }
         }
+        
+        if (isShadow) {
+            for (var i=0; i<this.shadowDepth; i++) {
+                ctx.restore();
+            }
+        }
+        
+        ctx.restore();
     };
     
     // called with scope of series
@@ -393,6 +357,7 @@
         }
         
         var shadow = (opts.shadow != undefined) ? opts.shadow : this.shadow;
+        var showLine = (opts.showLine != undefined) ? opts.showLine : this.showLine;
         var fill = (opts.fill != undefined) ? opts.fill : this.fill;
         var cw = ctx.canvas.width;
         var ch = ctx.canvas.height;
@@ -400,67 +365,38 @@
         var h = ch - offy - 2 * this.padding;
         var mindim = Math.min(w,h);
         var d = mindim;
+        // this._diameter = this.diameter || d;
+        this._diameter = this.diameter  || d - this.sliceMargin;
+
+        var r = this._radius = this._diameter/2;
+        var sa = this.startAngle / 180 * Math.PI;
+        this._center = [(cw - trans * offx)/2 + trans * offx, (ch - trans*offy)/2 + trans * offy];
         
         // Fixes issue #272.  Thanks hugwijst!
         // reset slice angles array.
         this._sliceAngles = [];
-
-        var sm = this.sliceMargin;
-        if (this.fill == false) {
-            sm += this.lineWidth;
-        }
         
-        var rprime;
-        var maxrprime = 0;
-
-        var ang, ang1, ang2, shadowColor;
-        var sa = this.startAngle / 180 * Math.PI;
-
-        // have to pre-draw shadows, so loop throgh here and calculate some values also.
-        for (var i=0, l=gd.length; i<l; i++) {
-            ang1 = (i == 0) ? sa : gd[i-1][1] + sa;
-            ang2 = gd[i][1] + sa;
-
-            this._sliceAngles.push([ang1, ang2]);
-
-            rprime = calcRPrime(ang1, ang2, this.sliceMargin, this.fill, this.lineWidth);
-
-            if (Math.abs(ang2-ang1) > Math.PI) {
-                maxrprime = Math.max(rprime, maxrprime);  
-            }
-        }
-
-        if (this.diameter != null && this.diameter > 0) {
-            this._diameter = this.diameter - 2*maxrprime;
-        }
-        else {
-            this._diameter = d - 2*maxrprime;
-        }
-
-        // Need to check for undersized pie.  This can happen if
-        // plot area too small and legend is too big.
-        if (this._diameter < 6) {
-            $.jqplot.log('Diameter of pie too small, not rendering.');
-            return;
-        }
-
-        var r = this._radius = this._diameter/2;
-
-        this._center = [(cw - trans * offx)/2 + trans * offx + maxrprime * Math.cos(sa), (ch - trans*offy)/2 + trans * offy + maxrprime * Math.sin(sa)];
-
         if (this.shadow) {
-            for (var i=0, l=gd.length; i<l; i++) {
-                shadowColor = 'rgba(0,0,0,'+this.shadowAlpha+')';
-                this.renderer.drawSlice.call (this, ctx, this._sliceAngles[i][0], this._sliceAngles[i][1], shadowColor, true);
+            var shadowColor = 'rgba(0,0,0,'+this.shadowAlpha+')';
+            for (var i=0; i<gd.length; i++) {
+                var ang1 = (i == 0) ? sa : gd[i-1][1] + sa;
+                // Adjust ang1 and ang2 for sliceMargin
+                ang1 += this.sliceMargin/180*Math.PI;
+                this.renderer.drawSlice.call (this, ctx, ang1, gd[i][1]+sa, shadowColor, true);
             }
+            
         }
-        
         for (var i=0; i<gd.length; i++) {
+            var ang1 = (i == 0) ? sa : gd[i-1][1] + sa;
+            // Adjust ang1 and ang2 for sliceMargin
+            ang1 += this.sliceMargin/180*Math.PI;
+            var ang2 = gd[i][1] + sa;
+            this._sliceAngles.push([ang1, ang2]);
                       
-            this.renderer.drawSlice.call (this, ctx, this._sliceAngles[i][0], this._sliceAngles[i][1], colorGenerator.next(), false);
+            this.renderer.drawSlice.call (this, ctx, ang1, ang2, colorGenerator.next(), false);
         
             if (this.showDataLabels && gd[i][2]*100 >= this.dataLabelThreshold) {
-                var fstr, avgang = (this._sliceAngles[i][0] + this._sliceAngles[i][1])/2, label;
+                var fstr, avgang = (ang1+ang2)/2, label;
             
                 if (this.dataLabels == 'label') {
                     fstr = this.dataLabelFormatString || '%s';
@@ -497,7 +433,8 @@
                 y = Math.round(y);
                 labelelem.css({left: x, top: y});
             }
-        }            
+        }
+               
     };
     
     $.jqplot.PieAxisRenderer = function() {
@@ -561,49 +498,24 @@
         var legend = this;
         if (this.show) {
             var series = this._series;
-
-
-            this._elem = $(document.createElement('table'));
-            this._elem.addClass('jqplot-table-legend');
-
-            var ss = {position:'absolute'};
-            if (this.background) {
-                ss['background'] = this.background;
-            }
-            if (this.border) {
-                ss['border'] = this.border;
-            }
-            if (this.fontSize) {
-                ss['fontSize'] = this.fontSize;
-            }
-            if (this.fontFamily) {
-                ss['fontFamily'] = this.fontFamily;
-            }
-            if (this.textColor) {
-                ss['textColor'] = this.textColor;
-            }
-            if (this.marginTop != null) {
-                ss['marginTop'] = this.marginTop;
-            }
-            if (this.marginBottom != null) {
-                ss['marginBottom'] = this.marginBottom;
-            }
-            if (this.marginLeft != null) {
-                ss['marginLeft'] = this.marginLeft;
-            }
-            if (this.marginRight != null) {
-                ss['marginRight'] = this.marginRight;
-            }
-
-            this._elem.css(ss);
-
+            var ss = 'position:absolute;';
+            ss += (this.background) ? 'background:'+this.background+';' : '';
+            ss += (this.border) ? 'border:'+this.border+';' : '';
+            ss += (this.fontSize) ? 'font-size:'+this.fontSize+';' : '';
+            ss += (this.fontFamily) ? 'font-family:'+this.fontFamily+';' : '';
+            ss += (this.textColor) ? 'color:'+this.textColor+';' : '';
+            ss += (this.marginTop != null) ? 'margin-top:'+this.marginTop+';' : '';
+            ss += (this.marginBottom != null) ? 'margin-bottom:'+this.marginBottom+';' : '';
+            ss += (this.marginLeft != null) ? 'margin-left:'+this.marginLeft+';' : '';
+            ss += (this.marginRight != null) ? 'margin-right:'+this.marginRight+';' : '';
+            this._elem = $('<table class="jqplot-table-legend" style="'+ss+'"></table>');
             // Pie charts legends don't go by number of series, but by number of data points
             // in the series.  Refactor things here for that.
             
             var pad = false, 
                 reverse = false,
                 nr, 
-                nc;
+				nc;
             var s = series[0];
             var colorGenerator = new $.jqplot.ColorGenerator(s.seriesColors);
             
@@ -627,24 +539,16 @@
                     nc = 1;
                 }
                 
-                var i, j;
-                var tr, td1, td2; 
-                var lt, rs, color;
-                var idx = 0; 
-                var div0, div1;   
+                var i, j, tr, td1, td2, lt, rs, color;
+                var idx = 0;    
                 
                 for (i=0; i<nr; i++) {
-                    tr = $(document.createElement('tr'));
-                    tr.addClass('jqplot-table-legend');
-                    
                     if (reverse){
-                        tr.prependTo(this._elem);
+                        tr = $('<tr class="jqplot-table-legend"></tr>').prependTo(this._elem);
                     }
-                    
                     else{
-                        tr.appendTo(this._elem);
+                        tr = $('<tr class="jqplot-table-legend"></tr>').appendTo(this._elem);
                     }
-                    
                     for (j=0; j<nc; j++) {
                         if (idx < pd.length){
                             lt = this.labels[idx] || pd[idx][0].toString();
@@ -666,23 +570,11 @@
                                 }
                             }
                             rs = (pad) ? this.rowSpacing : '0';
-
-
-
-                            td1 = $(document.createElement('td'));
-                            td1.addClass('jqplot-table-legend');
-                            td1.css({textAlign: 'center', paddingTop: rs});
-
-                            div0 = $(document.createElement('div'));
-                            div1 = $(document.createElement('div'));
-                            div1.addClass('jqplot-table-legend-swatch');
-                            div1.css({backgroundColor: color, borderColor: color});
-                            td1.append(div0.append(div1));
-
-                            td2 = $(document.createElement('td'));
-                            td2.addClass('jqplot-table-legend');
-                            td2.css('paddingTop', rs);
-
+                
+                            td1 = $('<td class="jqplot-table-legend" style="text-align:center;padding-top:'+rs+';">'+
+                                '<div><div class="jqplot-table-legend-swatch" style="border-color:'+color+';"></div>'+
+                                '</div></td>');
+                            td2 = $('<td class="jqplot-table-legend" style="padding-top:'+rs+';"></td>');
                             if (this.escapeHtml){
                                 td2.text(lt);
                             }
@@ -862,23 +754,17 @@
     // create a canvas which we can draw on.
     // insert it before the eventCanvas, so eventCanvas will still capture events.
     function postPlotDraw() {
-        // Memory Leaks patch    
-        if (this.plugins.pieRenderer && this.plugins.pieRenderer.highlightCanvas) {
-            this.plugins.pieRenderer.highlightCanvas.resetCanvas();
-            this.plugins.pieRenderer.highlightCanvas = null;
-        }
-
         this.plugins.pieRenderer = {highlightedSeriesIndex:null};
         this.plugins.pieRenderer.highlightCanvas = new $.jqplot.GenericCanvas();
         
         // do we have any data labels?  if so, put highlight canvas before those
         var labels = $(this.targetId+' .jqplot-data-label');
         if (labels.length) {
-            $(labels[0]).before(this.plugins.pieRenderer.highlightCanvas.createElement(this._gridPadding, 'jqplot-pieRenderer-highlight-canvas', this._plotDimensions, this));
+            $(labels[0]).before(this.plugins.pieRenderer.highlightCanvas.createElement(this._gridPadding, 'jqplot-pieRenderer-highlight-canvas', this._plotDimensions));
         }
         // else put highlight canvas before event canvas.
         else {
-            this.eventCanvas._elem.before(this.plugins.pieRenderer.highlightCanvas.createElement(this._gridPadding, 'jqplot-pieRenderer-highlight-canvas', this._plotDimensions, this));
+            this.eventCanvas._elem.before(this.plugins.pieRenderer.highlightCanvas.createElement(this._gridPadding, 'jqplot-pieRenderer-highlight-canvas', this._plotDimensions));
         }
         
         var hctx = this.plugins.pieRenderer.highlightCanvas.setContext();

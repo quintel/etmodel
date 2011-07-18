@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0b2_r792
+ * Version: 1.0.0a_r720
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -165,7 +165,7 @@
                             if (this.seriesToggle) {
                                 var speed;
                                 if (typeof(this.seriesToggle) == 'string' || typeof(this.seriesToggle) == 'number') {
-                                    if (!$.jqplot.use_excanvas || !this.disableIEFading) {
+                                    if (!$.browser.msie || !this.disableIEFading) {
                                         speed = this.seriesToggle;
                                     }
                                 } 

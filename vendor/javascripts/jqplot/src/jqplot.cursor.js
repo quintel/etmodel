@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0b2_r792
+ * Version: 1.0.0a_r720
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -92,10 +92,6 @@
         // They Will be set through call to zoomProxy method.
         this.zoomProxy = false;
         this.zoomTarget = false;
-        // prop: looseZoom
-        // Will expand zoom range to provide more rounded tick values.
-        // Works only with linear axes and date axes.
-        this.looseZoom = false;
         // prop: clickReset
         // Will reset plot zoom if single click on plot without drag.
         this.clickReset = false;
@@ -185,10 +181,6 @@
                 if (!c.zoomProxy) {
                     for (var ax in axes) {
                         axes[ax].reset();
-                        axes[ax]._ticks = [];
-                        // fake out tick creation algorithm to make sure original auto
-                        // computed format string is used if _overrideFormatString is true
-                        axes[ax]._autoFormatString = c._zoom.axes[ax].tickFormatString;
                     }
                     this.redraw();
                 }
@@ -215,48 +207,16 @@
     // called with context of plot
     $.jqplot.Cursor.postDraw = function() {
         var c = this.plugins.cursor;
-        
-        // Memory Leaks patch
-        if (c.zoomCanvas) {
-            c.zoomCanvas.resetCanvas();
-            c.zoomCanvas = null;
-        }
-        
-        if (c.cursorCanvas) {
-            c.cursorCanvas.resetCanvas();
-            c.cursorCanvas = null;
-        }
-        
-        if (c._tooltipElem) {
-            c._tooltipElem.emptyForce();
-            c._tooltipElem = null;
-        }
-
-        
-        if (c.zoom) {
-            c.zoomCanvas = new $.jqplot.GenericCanvas();
-            this.eventCanvas._elem.before(c.zoomCanvas.createElement(this._gridPadding, 'jqplot-zoom-canvas', this._plotDimensions, this));
-            c.zoomCanvas.setContext();
-        }
-
-        var elem = document.createElement('div');
-        c._tooltipElem = $(elem);
-        elem = null;
-        c._tooltipElem.addClass('jqplot-cursor-tooltip');
-        c._tooltipElem.css({position:'absolute', display:'none'});
-        
-        
-        if (c.zoomCanvas) {
-            c.zoomCanvas._elem.before(c._tooltipElem);
-        }
-
-        else {
-            this.eventCanvas._elem.before(c._tooltipElem);
-        }
-
+        // if (c.zoom) {
+        c.zoomCanvas = new $.jqplot.GenericCanvas();
+        this.eventCanvas._elem.before(c.zoomCanvas.createElement(this._gridPadding, 'jqplot-zoom-canvas', this._plotDimensions));
+        c.zoomCanvas.setContext();
+        // }
+        c._tooltipElem = $('<div class="jqplot-cursor-tooltip" style="position:absolute;display:none"></div>');
+        c.zoomCanvas._elem.before(c._tooltipElem);
         if (c.showVerticalLine || c.showHorizontalLine) {
             c.cursorCanvas = new $.jqplot.GenericCanvas();
-            this.eventCanvas._elem.before(c.cursorCanvas.createElement(this._gridPadding, 'jqplot-cursor-canvas', this._plotDimensions, this));
+            this.eventCanvas._elem.before(c.cursorCanvas.createElement(this._gridPadding, 'jqplot-cursor-canvas', this._plotDimensions));
             c.cursorCanvas.setContext();
         }
 
@@ -316,18 +276,13 @@
         var cax = cursor._zoom.axes;
         if (!plot.plugins.cursor.zoomProxy && cursor._zoom.isZoomed) {
             for (var ax in axes) {
-                // axes[ax]._ticks = [];
-                // axes[ax].min = cax[ax].min;
-                // axes[ax].max = cax[ax].max;
-                // axes[ax].numberTicks = cax[ax].numberTicks; 
-                // axes[ax].tickInterval = cax[ax].tickInterval;
-                // // for date axes
-                // axes[ax].daTickInterval = cax[ax].daTickInterval;
-                axes[ax].reset();
                 axes[ax]._ticks = [];
-                // fake out tick creation algorithm to make sure original auto
-                // computed format string is used if _overrideFormatString is true
-                axes[ax]._autoFormatString = cax[ax].tickFormatString;
+                axes[ax].min = cax[ax].min;
+                axes[ax].max = cax[ax].max;
+                axes[ax].numberTicks = cax[ax].numberTicks; 
+                axes[ax].tickInterval = cax[ax].tickInterval;
+                // for date axes
+                axes[ax].daTickInterval = cax[ax].daTickInterval;
             }
             plot.redraw();
             cursor._zoom.isZoomed = false;
@@ -352,7 +307,7 @@
         var end = zaxes.end;
         var min, max, dp, span;
         var ctx = plot.plugins.cursor.zoomCanvas._ctx;
-        // don't zoom if zoom area is too small (in pixels)
+        // don't zoom is zoom area is too small (in pixels)
         if ((c.constrainZoomTo == 'none' && Math.abs(gridpos.x - c._zoom.start[0]) > 6 && Math.abs(gridpos.y - c._zoom.start[1]) > 6) || (c.constrainZoomTo == 'x' && Math.abs(gridpos.x - c._zoom.start[0]) > 6) ||  (c.constrainZoomTo == 'y' && Math.abs(gridpos.y - c._zoom.start[1]) > 6)) {
             if (!plot.plugins.cursor.zoomProxy) {
                 for (var ax in datapos) {
@@ -365,42 +320,22 @@
                         c._zoom.axes[ax].daTickInterval = axes[ax].daTickInterval;
                         c._zoom.axes[ax].min = axes[ax].min;
                         c._zoom.axes[ax].max = axes[ax].max;
-                        c._zoom.axes[ax].tickFormatString = (axes[ax].tickOptions != null) ? axes[ax].tickOptions.formatString :  '';
                     }
-
-
                     if ((c.constrainZoomTo == 'none') || (c.constrainZoomTo == 'x' && ax.charAt(0) == 'x') || (c.constrainZoomTo == 'y' && ax.charAt(0) == 'y')) {   
                         dp = datapos[ax];
-                        if (dp != null) {  
-                            var newmin, newmax;         
+                        if (dp != null) {           
                             if (dp > start[ax]) { 
-                                newmin = start[ax];
-                                newmax = dp;
+                                axes[ax].min = start[ax];
+                                axes[ax].max = dp;
                             }
                             else {
                                 span = start[ax] - dp;
-                                newmin = dp;
-                                newmax = start[ax];
+                                axes[ax].max = start[ax];
+                                axes[ax].min = dp;
                             }
-                            
-                            if (this.looseZoom && (axes[ax].renderer.constructor === $.jqplot.LinearAxisRenderer || axes[ax].renderer.constructor === $.jqplot.DateAxisRenderer)) {
-                                var ret = $.jqplot.LinearTickGenerator(newmin, newmax);
-                                axes[ax].min = ret[0];
-                                axes[ax].max = ret[1];
-                                axes[ax]._autoFormatString = ret[3];
-                                axes[ax].numberTicks = ret[2];
-                                axes[ax].tickInterval = ret[4];
-                                // for date axes...
-                                axes[ax].daTickInterval = [ret[4]/1000, 'seconds'];
-                            }
-                            else {
-                                axes[ax].min = newmin;
-                                axes[ax].max = newmax;
-                                axes[ax].tickInterval = null;
-                                // for date axes...
-                                axes[ax].daTickInterval = null;
-                            }
-
+                            axes[ax].tickInterval = null;
+                            // for date axes...
+                            axes[ax].daTickInterval = null;
                             axes[ax]._ticks = [];
                         }
                     }
@@ -767,6 +702,7 @@
     
     function handleMouseMove(ev, gridpos, datapos, neighbor, plot) {
         var c = plot.plugins.cursor;
+        var ctx = c.zoomCanvas._ctx;
         if (c.show) {
             if (c.showTooltip) {
                 updateTooltip(gridpos, datapos, plot);
@@ -778,6 +714,7 @@
                 moveLine(gridpos, plot);
             }
         }
+        ctx = null;
     }
             
     function getEventPosition(ev) {
@@ -984,23 +921,15 @@
     
     // called in context of a Legend
     $.jqplot.CursorLegendRenderer.prototype.draw = function() {
-        if (this._elem) {
-            this._elem.emptyForce();
-            this._elem = null;
-        }
         if (this.show) {
             var series = this._series, s;
             // make a table.  one line label per row.
-            var elem = document.createElement('div');
-            this._elem = $(elem);
-            elem = null;
-            this._elem.addClass('jqplot-legend jqplot-cursor-legend');
-            this._elem.css('position', 'absolute');
+            this._elem = $('<table class="jqplot-legend jqplot-cursor-legend" style="position:absolute"></table>');
         
             var pad = false;
             for (var i = 0; i< series.length; i++) {
                 s = series[i];
-                if (s.show && s.showLabel) {
+                if (s.show) {
                     var lt = $.jqplot.sprintf(this.formatString, s.label.toString());
                     if (lt) {
                         var color = s.color;
@@ -1020,9 +949,6 @@
                     }
                 }
             }
-            series = s = null;
-            delete series;
-            delete s;
         }
         
         function addrow(label, color, pad, idx) {

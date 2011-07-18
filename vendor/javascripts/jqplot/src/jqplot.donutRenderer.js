@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0b2_r792
+ * Version: 1.0.0a_r720
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -82,7 +82,7 @@
         // Outer diameter of the donut, auto computed by default
         this.diameter = null;
         // prop: innerDiameter
-        // Inner diameter of the donut, auto calculated by default.
+        // Inner diameter of teh donut, auto calculated by default.
         // If specified will override thickness value.
         this.innerDiameter = null;
         // prop: thickness
@@ -141,7 +141,7 @@
         // prop: dataLabelPositionFactor
         // A Multiplier (0-1) of the pie radius which controls position of label on slice.
         // Increasing will slide label toward edge of pie, decreasing will slide label toward center of pie.
-        this.dataLabelPositionFactor = 0.4;
+        this.dataLabelPositionFactor = 0.5;
         // prop: dataLabelNudge
         // Number of pixels to slide the label away from (+) or toward (-) the center of the pie.
         this.dataLabelNudge = 0;
@@ -875,23 +875,17 @@
     // create a canvas which we can draw on.
     // insert it before the eventCanvas, so eventCanvas will still capture events.
     function postPlotDraw() {
-        // Memory Leaks patch    
-        if (this.plugins.donutRenderer && this.plugins.donutRenderer.highlightCanvas) {
-            this.plugins.donutRenderer.highlightCanvas.resetCanvas();
-            this.plugins.donutRenderer.highlightCanvas = null;
-        }
-
         this.plugins.donutRenderer = {highlightedSeriesIndex:null};
         this.plugins.donutRenderer.highlightCanvas = new $.jqplot.GenericCanvas();
         // do we have any data labels?  if so, put highlight canvas before those
         // Fix for broken jquery :first selector with canvas (VML) elements.
         var labels = $(this.targetId+' .jqplot-data-label');
         if (labels.length) {
-            $(labels[0]).before(this.plugins.donutRenderer.highlightCanvas.createElement(this._gridPadding, 'jqplot-donutRenderer-highlight-canvas', this._plotDimensions, this));
+            $(labels[0]).before(this.plugins.donutRenderer.highlightCanvas.createElement(this._gridPadding, 'jqplot-donutRenderer-highlight-canvas', this._plotDimensions));
         }
         // else put highlight canvas before event canvas.
         else {
-            this.eventCanvas._elem.before(this.plugins.donutRenderer.highlightCanvas.createElement(this._gridPadding, 'jqplot-donutRenderer-highlight-canvas', this._plotDimensions, this));
+            this.eventCanvas._elem.before(this.plugins.donutRenderer.highlightCanvas.createElement(this._gridPadding, 'jqplot-donutRenderer-highlight-canvas', this._plotDimensions));
         }
         var hctx = this.plugins.donutRenderer.highlightCanvas.setContext();
     }

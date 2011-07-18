@@ -1,3 +1,6 @@
+-# DEBT RD please use the coding standards: #notice_bar.fce_notice{:class => ...}
+-# DEBT RD Why do you have to add the #{} block into a ""
+-#         You can just Current.setting.use_fce ? '' : 'hidden'
 #notice_bar.fce_notice{ :class=>"#{Current.setting.use_fce ? '' : 'hidden' }"}
   = t("fce.notice")
 - if user_notification = GeneralUserNotification.where(:active => true).first

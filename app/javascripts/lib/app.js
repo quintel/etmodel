@@ -35,6 +35,7 @@ window.AppView = Backbone.View.extend({
 
   // At this point we have all the settings initialized.
   bootstrap : function() {
+    // DEBT Add check, so that boostrap is only called once.
     if (this.settings.get('country') == 'nl') {
       this.peak_load = new PeakLoad();
     }

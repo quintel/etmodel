@@ -47,7 +47,8 @@ function create_legend(columns,location,labels,offset) {
     labels: labels,
     yoffset: legend_offset,
     rendererOptions: {
-       numberColumns: columns
+       numberColumns: columns,
+       seriesToggle: false
     }
   };
   

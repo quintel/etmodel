@@ -1,5 +1,3 @@
-// Dash ---------------------------------------------------------------
-
 var Constraint = Backbone.Model.extend({
   initialize : function() {
     // we need this so that the following works: this.gquery.bind('change', this.update_value );

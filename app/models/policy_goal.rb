@@ -18,7 +18,6 @@ class PolicyGoal < ActiveRecord::Base
   include AreaDependent
 
   has_one :area_dependency, :as => :dependable
-  has_and_belongs_to_many :root_nodes
   belongs_to :round
   has_paper_trail
 end

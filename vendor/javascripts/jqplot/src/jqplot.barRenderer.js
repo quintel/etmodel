@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r701
+ * Version: 1.0.0a_r720
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -92,6 +92,7 @@
         // prop: highlightColors
         // an array of colors to use when highlighting a bar.
         this.highlightColors = [];
+        this._type = 'bar';
         
         // if user has passed in highlightMouseDown option and not set highlightMouseOver, disable highlightMouseOver
         if (options.highlightMouseDown && options.highlightMouseOver == null) {
@@ -132,6 +133,7 @@
         // set the shadow renderer options
         var sopts = {lineJoin:'miter', lineCap:'round', fill:true, isarc:false, angle:this.shadowAngle, offset:this.shadowOffset, alpha:this.shadowAlpha, depth:this.shadowDepth, closePath:this.fill};
         this.renderer.shadowRenderer.init(sopts);
+        
         plot.postInitHooks.addOnce(postInit);
         plot.postDrawHooks.addOnce(postPlotDraw);
         plot.eventListenerHooks.addOnce('jqplotMouseMove', handleMove);
@@ -265,7 +267,7 @@
         var yaxis = this.yaxis;
         var xp = this._xaxis.series_u2p;
         var yp = this._yaxis.series_u2p;
-        var pointx, pointy, nvals, nseries, pos;
+        var pointx, pointy;
         // clear out data colors.
         this._dataColors = [];
         this._barPoints = [];
@@ -275,9 +277,10 @@
         }
         
         var temp = this._plotSeriesInfo = this.renderer.calcSeriesNumbers.call(this);
-        nvals = temp[0];
-        nseries = temp[1];
-        pos = temp[2];
+        var nvals = temp[0];
+        var nseries = temp[1];
+        var pos = temp[2];
+		var points = [];
         
         if (this._stack) {
             this._barNudge = 0;
@@ -293,6 +296,9 @@
                 negativeColor = opts.fillStyle;
             }
             var positiveColor = opts.fillStyle;
+			var base;
+			var xstart; 
+			var ystart;
             
             if (this.barDirection == 'vertical') {
                 for (var i=0; i<gridData.length; i++) {
@@ -300,8 +306,8 @@
                         continue;
                     }
                     points = [];
-                    var base = gridData[i][0] + this._barNudge;
-                    var ystart;
+                    base = gridData[i][0] + this._barNudge;
+                    ystart;
                     
                     // stacked
                     if (this._stack && this._prevGridData.length) {
@@ -314,6 +320,28 @@
                         }
                         else if (this.waterfall && i > 0 && i < this.gridData.length-1) {
                             ystart = this.gridData[i-1][1];
+                        }
+                        else if (this.waterfall && i == 0 && i < this.gridData.length-1) {
+                            if (this._yaxis.min <= 0 && this._yaxis.max >= 0) {
+                                ystart = this._yaxis.series_u2p(0);
+                            }
+                            else if (this._yaxis.min > 0) {
+                                ystart = ctx.canvas.height;
+                            }
+                            else {
+                                ystart = 0;
+                            }
+                        }
+                        else if (this.waterfall && i == this.gridData.length - 1) {
+                            if (this._yaxis.min <= 0 && this._yaxis.max >= 0) {
+                                ystart = this._yaxis.series_u2p(0);
+                            }
+                            else if (this._yaxis.min > 0) {
+                                ystart = ctx.canvas.height;
+                            }
+                            else {
+                                ystart = 0;
+                            }
                         }
                         else {
                             ystart = ctx.canvas.height;
@@ -340,11 +368,20 @@
                             opts.fillStyle = positiveColor;
                         }
                     }
-                    
-                    points.push([base-this.barWidth/2, ystart]);
-                    points.push([base-this.barWidth/2, gridData[i][1]]);
-                    points.push([base+this.barWidth/2, gridData[i][1]]);
-                    points.push([base+this.barWidth/2, ystart]);
+					
+					if (!this.fillToZero || this._plotData[i][1] >= 0) { 
+						points.push([base-this.barWidth/2, ystart]);
+						points.push([base-this.barWidth/2, gridData[i][1]]);
+						points.push([base+this.barWidth/2, gridData[i][1]]);
+						points.push([base+this.barWidth/2, ystart]);
+					}
+					// for negative bars make sure points are always ordered clockwise
+					else {              
+						points.push([base-this.barWidth/2, gridData[i][1]]);
+						points.push([base-this.barWidth/2, ystart]);
+						points.push([base+this.barWidth/2, ystart]);
+						points.push([base+this.barWidth/2, gridData[i][1]]);
+					}
                     this._barPoints.push(points);
                     // now draw the shadows if not stacked.
                     // for stacked plots, they are predrawn by drawShadow
@@ -366,8 +403,8 @@
                         continue;
                     }
                     points = [];
-                    var base = gridData[i][1] - this._barNudge;
-                    var xstart;
+                    base = gridData[i][1] - this._barNudge;
+                    xstart;
                     
                     if (this._stack && this._prevGridData.length) {
                         xstart = this._prevGridData[i][0];
@@ -379,6 +416,28 @@
                         }
                         else if (this.waterfall && i > 0 && i < this.gridData.length-1) {
                             xstart = this.gridData[i-1][1];
+                        }
+                        else if (this.waterfall && i == 0 && i < this.gridData.length-1) {
+                            if (this._xaxis.min <= 0 && this._xaxis.max >= 0) {
+                                xstart = this._xaxis.series_u2p(0);
+                            }
+                            else if (this._xaxis.min > 0) {
+                                xstart = 0;
+                            }
+                            else {
+                                xstart = ctx.canvas.width;
+                            }
+                        }
+                        else if (this.waterfall && i == this.gridData.length - 1) {
+                            if (this._xaxis.min <= 0 && this._xaxis.max >= 0) {
+                                xstart = this._xaxis.series_u2p(0);
+                            }
+                            else if (this._xaxis.min > 0) {
+                                xstart = 0;
+                            }
+                            else {
+                                xstart = ctx.canvas.width;
+                            }
                         }
                         else {
                             xstart = 0;
@@ -448,7 +507,7 @@
         var yaxis = this.yaxis;
         var xp = this._xaxis.series_u2p;
         var yp = this._yaxis.series_u2p;
-        var pointx, pointy, nvals, nseries, pos;
+        var pointx, points, pointy, nvals, nseries, pos;
         
         if (this._stack && this.shadow) {
             if (this.barWidth == null) {
@@ -526,7 +585,7 @@
     };
     
     function postInit(target, data, options) {
-        for (i=0; i<this.series.length; i++) {
+        for (var i=0; i<this.series.length; i++) {
             if (this.series[i].renderer.constructor == $.jqplot.BarRenderer) {
                 // don't allow mouseover and mousedown at same time.
                 if (this.series[i].highlightMouseOver) {

@@ -14,14 +14,14 @@ var PeakLoad = Backbone.Model.extend({
 
     // DEBT: make Gqueries
     this.gqueries = {
-      'lv' :    new Gquery({key : 'future:GREATER(Q(investment_cost_lv_net_total),0)'}),
-      'mv-lv' : new Gquery({key : 'future:GREATER(Q(investment_cost_mv_lv_transformer_total),0)'}),
-      'mv'    : new Gquery({key : 'future:GREATER(SUM(Q(investment_cost_mv_distribution_net_total),Q(investment_cost_mv_transport_net_total)),0)'}),
-      'hv-mv' : new Gquery({key : 'future:GREATER(Q(investment_cost_hv_mv_transformer_total),0)'}),
-      'hv'    : new Gquery({key : 'future:GREATER(Q(investment_cost_hv_net_total),0)'})
+      'lv' :    new Gquery({key : 'peak_load_check_lv'}),
+      'mv-lv' : new Gquery({key : 'peak_load_check_mv_lv'}),
+      'mv'    : new Gquery({key : 'peak_load_check_mv'}),
+      'hv-mv' : new Gquery({key : 'peak_load_check_hv_mv'}),
+      'hv'    : new Gquery({key : 'peak_load_check_hv'})
     };
 
-    this.grid_investment_needed_gquery = new Gquery({key : 'future:Q(grid_investment_needed)'});
+    this.grid_investment_needed_gquery = new Gquery({key : 'peak_load_check_total'});
   },
   check_results : function() {
     if (this.grid_investment_needed()) {

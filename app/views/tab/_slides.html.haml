@@ -1,34 +1,9 @@
 #accordion_wrapper
+  - if @active_sidebar.try(:additional_info_partial)
+    = render :partial => "tab/#{@active_sidebar.additional_info_partial}"
   - if @slides.any?
     %ul.accordion
-      - @slides.each do |slide|
-        - type = slide_type_in_collection(slide, @slides)
-        - selected = 'selected' if (params[:slide] == slide.name or type == :first)
-        %li.accordion_element{:class => selected}
-          - default_output = Current.view.default_output_element_for_slide(slide)
-          %span.headline{:id => "default_output_#{default_output.id}", :slide => slide.id}
-            %a.slide_header{:href => "/#{controller_name}/#{params[:id]}/#{slide.name.underscore}", :id => slide.name.underscore}
-              = raw t("slidetitle.#{slide.name}")
-          .slide
-            %p
-              = image_tag(slide.image_path) if slide.image.present?
-              = raw slide.description.try(:content)
-              - if slide.show_house_selection_tool
-                = link_to t("accordion.help me choose"), house_selection_tool_path, :class => 'house_selection_tool'
-            
-            %ul.valuees
-              - slide_sub_header(slide)
-              - Current.view.ungrouped_input_elements_for(slide).each do |input_element|
-                = render :partial => 'input_elements/slider', :object => input_element
-              - Current.view.interface_groups_with_input_elements_for(slide).each do |group|
-                - render_interface_group(group, slide.sub_header2)
-            - unless type == :last
-              %a.btn-done.next{:href => '#'}= I18n.t("go to next")
-
-        %script
-          - Current.view.input_elements_for(slide).each do |i|
-            window.input_elements.add(#{i.to_json.html_safe}.input_element);
-
+      = render :partial => 'tab/slide', :collection => @slides
   - else
     = t("not_available")
 

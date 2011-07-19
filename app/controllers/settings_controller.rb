@@ -4,7 +4,6 @@ class SettingsController < ApplicationController
   before_filter :ensure_valid_browser
 
   def edit
-
   end
 
   def update
@@ -12,7 +11,7 @@ class SettingsController < ApplicationController
       Current.setting.show_municipality_introduction = false
     end
 
-    [:api_session_key, :network_parts_affected, :track_peak_load].each do |setting|
+    [:api_session_key, :network_parts_affected, :track_peak_load, :use_fce].each do |setting|
       Current.setting.send("#{setting}=", params[setting]) unless params[setting].nil?
     end
 
@@ -30,4 +29,11 @@ class SettingsController < ApplicationController
     end
   end
 
+  # Temporary, to be removed when the backcasting will be enabled in production
+  # PZ - Tue 19 Jul 2011 14:48:08 CEST
+  def backcasting
+    session[:enable_backcasting] = true
+    flash[:notice] = "Backcasting enabled"
+    redirect_to root_path and return
+  end
 end

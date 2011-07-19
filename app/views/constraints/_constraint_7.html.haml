@@ -17,10 +17,10 @@
           new PolicyGoal({
             goal_id          : #{goal.id},
             name             : '#{escape_javascript t("policies.#{goal.name.humanize}")}',
-            success_query    : '#{goal.reached_query}',
-            value_query      : '#{goal.query}',
-            target_query     : 'GOAL(#{goal.key})',
-            user_value_query : 'GOAL_USER_VALUE(#{goal.key})',
+            success_query    : '#{gquery_id goal.reached_query}',
+            value_query      : '#{gquery_id goal.query}',
+            target_query     : '#{gquery_id goal.target_query}',
+            user_value_query : '#{gquery_id goal.user_value_query}',
             unit             : '#{goal.unit}',
             display_fmt      : '#{goal.display_format}'
           })

@@ -14,7 +14,6 @@ nl:
   Local_demand: "Lokale Vraag"
   National_supply: "Nationaal aanbod"
   Demographics: "Demografie"
-  Lce: "Ketenanalyse"
   
   #------- Admin -------#
   Graphs: "Graphs"
@@ -30,6 +29,7 @@ nl:
   Translations: "Vertalingen"
   Historic: "Historie"
   Expert: "Expert predictions"
+  Predictions: "Predictions"
   # ---------------------------- #
   # ----------- Header ----------- #  
   Save your settings: "Sla instellingen op"
@@ -117,7 +117,7 @@ nl:
   information:
     in the news: "Het Energietransitiemodel in het nieuws"
     overview: "Een overzicht van recent verschenen persartikelen"
-  lce:
+  fce:
     check: "Gebruik ketenanalyse"
     notice: "Je gebruikt ketenanalyse"
     description: "Wanneer ketenanalyse wordt gebruikt zal het model de broeikasgassen, welke worden uitgestoot bij de extractie, behandeling en transport van energiedragers, ook meenemen in de berekeningen"  
@@ -257,7 +257,7 @@ nl:
     click for more information: "klik voor meer informatie"
     loading: "Laden.."
     energy: "Ga je meer of minder energie gebruiken in de toekomst? (Figuur toont primair energieverbruik)"
-    co2: "Hoe verandert de CO<sub>2</sub> uitstoot, als resultaat van uw aannames? De getoonde waarden zijn inclusief im/export. "
+    co2: "Hoe verandert de CO<sub>2</sub> uitstoot, als resultaat van uw aannames? De getoonde waarden zijn inclusief im/export. Wanneer je ketenemissies gebruikt bevatten deze waarden ook andere broeikasgassen"
     dependence: "Is jouw land meer of minder afhankelijk geworden van energie-import?"
     costs: "Met hoeveel zijn de toekomstige energiekosten veranderd, als gevolg van jouw aannames?"
     footprint: "Wat is de 'biomassavoetafdruk' van jouw land in de wereld? De afbeelding hieronder toont de oppervlakte die het land nodig zou hebben voor het biomassa-, biobrandstof- en biogasgebruik, uitgedrukt in aantal malen het eigen landbouwareaal."
@@ -274,13 +274,15 @@ nl:
     CO2 emissions: "CO<sub>2</sub> uitstoot"
     Dependence: Energie import
     Energy use: "Energiegebruik"
-    Cost: "Kosten (mlrd)"
+    Cost: "Kosten"
     Bio-footprint: "Bio-voetafdruk"
     Renewables: "Hernieuwbaar"
     Policies met: "Doelen"
     Score: "Score"
+    costs:
+      bln: mlrd
+      mln: mln
   
-  # ---------------------------- #  
   # ----------- Slides ----------- # 
 
   # ----------- General ----------- # 
@@ -358,7 +360,6 @@ nl:
     energietransitiemodel: "Klik hier voor de complete versie van het ETM"
   accordion:
     expert predictions available: "expert voorspelling beschikbaar"
-    mindmeister: "discussie over transitiepaden"
     collective: "collectief"
     appliances without label: "apparaten zonder label"
     intelligent control: "intelligente regeling"

@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r701
+ * Version: 1.0.0a_r720
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -199,8 +199,9 @@
 				sum += intv;              
             }
 			
-			var tempf=tempn=0;
-			for (n in stats.frequencies) {
+			var tempf = 0,
+				tempn=0;
+			for (var n in stats.frequencies) {
 				stats.sortedIntervals.push({interval:n, frequency:stats.frequencies[n]});
 			}
 			stats.sortedIntervals.sort(function(a, b){

@@ -1,4 +1,7 @@
 var Metric = {
+  
+  /* testing stuff */
+  
   test_parsed_unit : function(value, unit, expected_result) {
     var result = Metric.parsed_unit(value, unit);
     var failed_string = (expected_result == result) ? "" : 'FAILED: '
@@ -14,6 +17,8 @@ var Metric = {
     this.test_parsed_unit(100000, 'PJ', 'PJ') ;
   },
 
+  /* previous stuff */
+  
   parsed_unit : function(value, unit) {
     var start_scale; 
 
@@ -72,13 +77,12 @@ var Metric = {
   scaled_scale : function(value, start_scale, target_scale, max_scale) {
     return this.scaled(value, start_scale, target_scale, max_scale)[0];
   },
+  
   scaled_value : function(value, start_scale, target_scale, max_scale) {
     return this.scaled(value, start_scale, target_scale, max_scale)[1];
   },
 
-  /*
-   * Doesn't add trailing zeros. Let's use sprintf.js in case
-   */
+  // Doesn't add trailing zeros. Let's use sprintf.js in case
   round_number : function(value, precision) {
     var rounded = Math.pow(10, precision);
     return Math.round(value * (rounded)) / rounded;
@@ -116,5 +120,94 @@ var Metric = {
     var symbol = scale_symbols["" + scale];
 
     return I18n.t("units." + unit + "." + symbol);
+  },
+  
+  /* new stuff */
+  
+  // given a value and a unit, returns a translated string
+  // uses i18n.js, so be sure the required translation keys
+  // are available.
+  // The available units are:
+  //
+  // av(20, '%') => 20%
+  // av(1234)    => 1234
+  autoscale_value : function(x, unit, precision) {
+    precision  = precision || 0;
+    var pow    = Metric.power_of_thousand(x)
+    var value  = x / Math.pow(1000, pow);
+    value = Metric.round_number(value, precision);
+    var scale_string = Metric.power_of_thousand_to_string(pow);
+
+    var prefix = '';
+    var out    = '';
+    var suffix = '';
+
+    switch(unit) {
+      case '%' :
+        out = Metric.percentage_to_string(x);
+        break;
+      case 'MJ' :
+        out = x / Math.pow(1000, pow);
+        suffix = I18n.t('units.joules.' + scale_string);
+      case 'euro':
+        out = value;
+        prefix = "&euro;";
+        break;
+      default :
+        out = x;
+    }
+
+    output = prefix + out + suffix;
+    // console.log('' + x + unit + ' -> ' + output);
+    return output;
+  },
+
+  /* formatters */
+
+  // x: the value - no transformations on it
+  // prefix: if true, add a leading + on positive values
+  // precision: default = 1, the number of decimal points
+  // pts(10) => 10%
+  // pts(10, true) => +10%
+  // pts(10, true, 2) => 10.00%
+  percentage_to_string: function(x, prefix, precision) {
+    precision = precision || 1;
+    prefix = prefix || false;
+    value = Metric.round_number(x, precision);
+    if (prefix && (value > 0.0)) { value = "+" + value; }
+    return '' + value + '%';
+  },
+
+  // as format_percentage, but multiplying the value * 100
+  ratio_as_percentage: function(x, prefix, precision) {
+    return Metric.percentage_to_string(x * 100, prefix, precision);
+  },
+
+
+  /* utility methods */
+
+  // 0-999: 0, 1000-999999: 1, ...
+  power_of_thousand: function(x) {
+    return parseInt(Math.log(x) / Math.log(1000));
+  },
+
+  // Returns the string currently used on the i18n file
+  power_of_thousand_to_string: function(x) {
+    switch(x) {
+      case 0:
+        return 'unit';
+      case 1:
+        return 'thousands';
+      case 2:
+        return 'millions';
+      case 3:
+        return 'billions';
+      case 4:
+        return 'trillions';
+      case 5:
+        return 'quadrillions';
+      case 6:
+        return 'quintillions';
+    }
   }
 }

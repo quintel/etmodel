@@ -1,4 +1,5 @@
 Etm::Application.routes.draw do  
+
   root :to => 'pages#root'
 
   match '/costs/intro' => 'costs#intro'
@@ -30,8 +31,8 @@ Etm::Application.routes.draw do
   match '/descriptions/serie/:id'  => 'descriptions#show', :output => "OutputElementSerie"
   match '/descriptions/slider/:id' => 'descriptions#show', :output => "InputElement"
 
-  match '/descriptions/slider/:id' => 'descriptions#show', :output => "InputElement"
-  
+  match '/translations/:id' => 'translations#show'
+
   match 'house_selections/tool'  => 'house_selections#tool',  :as => :house_selection_tool
   match 'house_selections/set'   => 'house_selections#set',   :as => :house_selection_set
   match 'house_selections/apply' => 'house_selections#apply', :as => :house_selection_apply
@@ -44,12 +45,20 @@ Etm::Application.routes.draw do
   resources :constraints, :only => :show do
     get :iframe, :on => :member
   end
-  resource :settings, :searches
+
+  resource :settings, :only => [:edit, :update] do
+    get :backcasting
+  end
+
+  resource :searches
 
   namespace :admin do
     root :to => 'pages#index'
     
     resources :expert_predictions,
+              :predictions,
+              :prediction_values,
+              :prediction_measures,
               :input_elements, 
               :year_values, 
               :tabs, 
@@ -60,7 +69,6 @@ Etm::Application.routes.draw do
               :output_element_series, 
               :press_releases, 
               :converter_positions,
-              :view_nodes,
               :interfaces
     resources :areas, :only => [:index, :show]
   end
@@ -92,6 +100,10 @@ Etm::Application.routes.draw do
       get :reset
     end
   end
+  
+  resources :predictions, :only => :index
+  resources :prediction_measures, :only => :index
+  
 
   match '/select_movie/:id'                => 'pages#select_movie'
   match '/units'                           => 'pages#units'

@@ -9,10 +9,10 @@ class TabController < ApplicationController
   # included here, so that we don't mess with the before_filter order
   include ApplicationController::HasDashboard
 
-
-  before_filter :show_intro_at_least_once, :only => :show
+  before_filter :show_intro_at_least_once, :check_valid_sidebar_item, :only => :show
 
   def show
+    @active_sidebar = Current.view.sidebar_items.select{|item| params[:id] == item.key}.first
     @slides = Current.view.slides
     render :template => 'tab/show'
   end
@@ -30,5 +30,13 @@ class TabController < ApplicationController
     def fetch_api_session_id      
       Current.setting.api_session_key ||= Api::Client.new.fetch_session_id
       # TODO: add graceful degradation if the request fails
+    end
+    
+    # Some sidebar items are area dependent. Let's redirect the user who crafted an invalid URL
+    def check_valid_sidebar_item
+      allowed = Current.view.sidebar_items.map(&:key)
+      if params[:id] && !allowed.include?(params[:id])
+        redirect_to :action => 'intro' and return
+      end
     end
 end

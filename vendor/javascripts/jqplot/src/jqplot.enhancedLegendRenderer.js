@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r701
+ * Version: 1.0.0a_r720
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -66,6 +66,7 @@
         var legend = this;
         if (this.show) {
             var series = this._series;
+			var s;
             var ss = 'position:absolute;';
             ss += (this.background) ? 'background:'+this.background+';' : '';
             ss += (this.border) ? 'border:'+this.border+';' : '';
@@ -189,7 +190,7 @@
     };
     
     // called with scope of plot.
-    postDraw = function () {
+    var postDraw = function () {
         if (this.legend.renderer.constructor == $.jqplot.EnhancedLegendRenderer && this.legend.seriesToggle){
             var e = this.legend._elem.detach();
             this.eventCanvas._elem.after(e);

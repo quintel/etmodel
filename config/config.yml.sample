@@ -6,6 +6,7 @@ development: &DEV
     header_logo:
     max_scenarios:
     root_page:
+    enable_backcasting: false
 
 production:
     <<: *DEV

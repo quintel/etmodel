@@ -16,11 +16,12 @@ describe Setting do
     end
     context "other settings" do
       before do
-        @setting = Setting.new(:track_peak_load => :bar, :show_municipality_introduction => :foo)
+        @setting = Setting.new(:track_peak_load => :bar, :show_municipality_introduction => :foo, :use_fce =>:baz)
       end
       subject { @setting }
       its(:track_peak_load) { should == :bar}
       its(:show_municipality_introduction) { should == :foo}
+      its(:use_fce) { should == :baz}
     end
   end
 
@@ -66,6 +67,7 @@ describe Setting do
       end
     end
   end
+  
   
   describe "#complexities" do
     context "simple" do
@@ -205,4 +207,5 @@ describe Setting do
       end
     end
   end
+
 end

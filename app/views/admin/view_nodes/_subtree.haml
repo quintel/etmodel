@@ -1,8 +1,0 @@
-%li
-  - if el = node.element
-    = el.respond_to?(:key) ? el.key : el.name
-  - else
-    = node.key 
-
-  = link_to 'edit', edit_admin_view_node_path(node)
-  = link_to 'add', new_admin_view_node_path(:view_node => {:parent_id => node.id})

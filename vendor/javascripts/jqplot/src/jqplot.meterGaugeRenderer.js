@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r701
+ * Version: 1.0.0a_r720
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -163,6 +163,7 @@
         // True will stop needle just below/above the  min/max values if data is below/above min/max,
         // as if the meter is "pegged".
         this.pegNeedle = true;
+        this._type = 'meterGauge';
         
         $.extend(true, this, options);
         this.type = null;
@@ -301,7 +302,7 @@
         
     function getnmt(pos, interval, fact) {
         var temp;
-        for (i=pos.length-1; i>=0; i--) {
+        for (var i=pos.length-1; i>=0; i--) {
             temp = interval/(pos[i] * Math.pow(10, fact));
             if (temp == 4 || temp == 5) {
                 return temp - 1;
@@ -585,8 +586,8 @@
                     this.numberMinorTicks = 1;
                     var nums = [4, 5, 3, 6, 2];
                     for (i=0; i<5; i++) {
-                        temp = this.tickInterval/nums[i];
-                        if (temp == parseInt(temp)) {
+                        var temp = this.tickInterval/nums[i];
+                        if (temp == parseInt(temp, 10)) {
                             this.numberMinorTicks = nums[i]-1;
                             break;
                         }
@@ -706,7 +707,7 @@
             
             // draw the tick labels
             if (this.showTickLabels) {
-                var elem, l, t, ew, dim, maxdim=0;
+                var elem, l, t, ew, eh, dim, maxdim=0;
                 var tp = this.tickPadding * (1 - 1/(this.diameter/80+1));
                 for (i=0; i<this.ticks.length; i++) {
                     elem = $('<div class="jqplot-meterGauge-tick" style="position:absolute;">'+this.ticks[i][1]+'</div>');

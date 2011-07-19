@@ -1,32 +1,21 @@
-- countries = %w[nl de uk ro pl tr]
-- nl_regions = %w[nl-drenthe nl-flevoland nl-friesland nl-gelderland nl-groningen nl-limburg nl-noord-brabant nl-noord-holland nl-overijssel nl-utrecht nl-zeeland nl-zuid-holland]
-- show_all   = session[:show_municipalities] || session[:show_all_countries] 
-- countries += ["za", "be-vlg"] if session[:show_all_countries]
-
 %li
-  %h3 
-    = I18n.t("Choose country")
+  %h3= t("Choose country")
   %select{:name => "region"}  
-    - countries.each do |code|
-      %option{:value => code, :selected => Current.setting.region == code}
+    - @countries.each do |code|
+      %option{:value => code, :selected => current_region?(code)}
         = t(code).html_safe
         - if code == 'nl'
           %optgroup{:label => "Provinces of the Netherlands"}
-            - nl_regions.each do |region|
-              %option{:value => region, :selected => Current.setting.region == region}= t(region)
-            - nl_munici = ["ame"]
-            - nl_munici << "ams" if (current_user.andand.email == "amsterdam@et-model.com"|| session[:show_all_countries])
-            - if show_all
-              - nl_munici << "grs"
-              %option{:value => "nl-noord", :selected => Current.setting.region == "nl-noord"}= t("nl-noord")
+            - @nl_regions.each do |region|
+              %option{:value => region, :selected => current_region?(region)}= t(region)
             %optgroup{:label => "Municipalities of the Netherlands"}
-              - nl_munici.each do |region|
-                %option{:value => region, :selected => Current.setting.region == region}= t(region)
-        - if code == 'de' and (current_user.andand.email == "brandenburg@et-model.com" || session[:show_all_countries])
+              - @nl_municipalities.each do |region|
+                %option{:value => region, :selected => current_region?(region)}= t(region)
+        - if code == 'de' and (current_user.try(:email) == "brandenburg@et-model.com" || session[:show_all_countries])
           %optgroup{:label => "Provinces of Germany"}
             - %w[br].each do |region|
-              %option{:value => region, :selected => Current.setting.region == region}
+              %option{:value => region, :selected => current_region?(region)}
                 = t(region)
-                %small (test)
+                (test)
         - unless %w[nl].include?(code)
-          %small (test)
+          (test)

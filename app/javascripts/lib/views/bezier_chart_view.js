@@ -8,7 +8,7 @@ var BezierChartView = BaseChartView.extend({
     this.clear_container();
     InitializeBezier(this.model.get("container"), 
       this.model.results(), 
-      true, 
+      this.model.get("growth_chart"),
       this.parsed_unit(), 
       this.axis_scale(), 
       this.model.colors(), 

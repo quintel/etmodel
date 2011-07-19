@@ -1,5 +1,8 @@
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
+require 'thinking_sphinx/deploy/capistrano'
 Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
+load 'lib/capistrano/db_recipes'
+
 
 load 'config/deploy' # remove this line to skip loading any of the default tasks
 
@@ -25,34 +28,8 @@ namespace :memcached do
   end     
 end
 
-namespace :ts do
-  desc "Start Search"
-  task :start, :roles => :app do
-    run "cd #{current_path} && bundle exec rake ts:start RAILS_ENV=production"
-  end
-
-  desc "Stop Search"
-  task :stop, :roles => :app do
-    run "cd #{current_path} && bundle exec rake ts:stop RAILS_ENV=production"
-  end
-
-  desc "Rebuild Search"
-  task :rebuild, :roles => :app do
-    run "cd #{current_path} && bundle exec rake ts:stop RAILS_ENV=production"
-    run "cd #{current_path} && bundle exec rake ts:config RAILS_ENV=production"
-    run "cd #{current_path} && bundle exec rake ts:index RAILS_ENV=production"
-    run "cd #{current_path} && bundle exec rake ts:start RAILS_ENV=production"
-  end
-
-  desc "Index Search"
-  task :index, :roles => :app do
-    run "cd #{current_path} && bundle exec rake ts:in RAILS_ENV=production"
-  end
-end
-
-
 namespace :deploy do
-  task :after_update_code do
+  task :copy_configuration_files do
     run "cp #{config_files}/* #{release_path}/config/"
     run "cd #{release_path}; chmod 777 public/images public/stylesheets tmp"
     run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
@@ -60,9 +37,8 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/vendor_bundle #{release_path}/vendor/bundle"
     run "cd #{release_path} && bundle install --without development test"
 
-    #deploy.generate_rdoc
     memcached.flush
-    # symlink_sphinx_indexes
+    #symlink_sphinx_indexes
   end
 
   task :start do ; end
@@ -79,17 +55,7 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 
-  desc "Link up Sphinx's indexes."
-  task :symlink_sphinx_indexes, :roles => [:app] do
-    run "ln -nfs #{shared_path}/db/sphinx #{release_path}/db/sphinx"
-  end
 
-  task :after_deploy do
-    # run "chmod 777 #{release_path}/log/searchd.production.pid"
-    deploy.cleanup
-    notify_hoptoad
-  end
-  
   desc "Notify Hoptoad of the deployment"
   task :notify_hoptoad, :except => { :no_release => true } do
     rails_env = fetch(:hoptoad_env, fetch(:rails_env, "production"))
@@ -100,20 +66,25 @@ namespace :deploy do
     run "cd #{release_path} && #{notify_command}"
     puts "Hoptoad Notification Complete."
   end
-
 end
 
-desc "Move db server to local db"
-task :db2local do
-  puts "Exporting db to sql file"
-  file = "/tmp/etmodel.sql"
-  run "mysqldump -u etmodel --password=Energy2.0 --host=etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com etmodel > #{file}"
-  puts "Gzipping sql file"
-  run "gzip -f #{file}"
-  puts "Downloading gzip file"
-  get file + ".gz", "etmodel.sql.gz"
-  puts "Gunzip gzip file"
-  system "gunzip -f etmodel.sql.gz"
-  puts "Importing sql file to db"
-  system "mysql -u root etmodel_dev < etmodel.sql"
+task :before_update_code, :roles => [:app] do
+  thinking_sphinx.stop
 end
+
+task :after_update_code, :roles => [:app] do
+  symlink_sphinx_indexes
+  thinking_sphinx.configure
+  thinking_sphinx.start
+end
+
+desc "Link up Sphinx's indexes."
+task :symlink_sphinx_indexes, :roles => [:app] do
+  run "ln -nfs #{shared_path}/db/sphinx #{release_path}/db/sphinx"
+end
+
+
+after "deploy:update_code", "deploy:copy_configuration_files"
+after "deploy", "deploy:migrate"
+after "deploy", "deploy:cleanup"
+after "deploy", "deploy:notify_hoptoad"

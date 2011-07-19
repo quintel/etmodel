@@ -3,7 +3,7 @@ class SlidesController < BaseController
 
   def index
     @slides = Slide.all
-    @column_names = %w[id controller_name action_name name default_output_element_id order_by image sub_header complexity]
+    @column_names = %w[id controller_name action_name name order_by image sub_header complexity]
   end
 
   def new

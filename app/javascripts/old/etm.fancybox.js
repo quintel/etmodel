@@ -1,7 +1,7 @@
 $(document).ready(function() {  
   $(".valuees a.label, a.fancybox").live('click', function() {
     $(this).fancybox({
-      padding  : 30,
+      padding  : 20,
       titleShow: false,
       ajax : {
         type  : "GET"
@@ -82,25 +82,6 @@ $(document).ready(function() {
     return false;
   });
 
-  $("a.mind_meister").live('click', function() {
-
-    $(this).fancybox({
-      width    : 1400,    
-      height   : 1000,    
-      titleShow: false,
-      padding  : 0,
-      scrolling: 'no',
-      type     : 'iframe',
-      ajax : {
-        type  : "GET"
-      }
-    });
-
-    $(this).trigger('click');
-    // alert('hit');
-    return false;
-  });
-  
   $("a.expert_header").live('click', function() {
 
     $(this).fancybox({
@@ -109,6 +90,24 @@ $(document).ready(function() {
       titleShow: false,
       padding  : 0,
       scrolling: 'no',
+      ajax : {
+        type  : "GET"
+      }
+    });
+
+    $(this).trigger('click');
+    return false;
+  });
+
+  $("a.prediction").live('click', function() {
+
+    $(this).fancybox({
+      width    : 970,    
+      height   : 650,
+      titleShow: false,
+      padding  : 0,
+      scrolling: 'no',
+      type     : 'iframe',
       ajax : {
         type  : "GET"
       }

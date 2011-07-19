@@ -27,8 +27,7 @@ var ConstraintView = Backbone.View.extend({
     var constraint = $(this.dom_id);
     var constraint_id = this.model.get('id');
     this.close_all_popups();
-    // if the user clicks a second time on an open popup
-    // we hide it
+    // if the user clicks a second time on an open popup we hide it
     if(window.dashboard.current_popup == constraint_id) {
       window.dashboard.current_popup = null;
       return;
@@ -52,25 +51,25 @@ var ConstraintView = Backbone.View.extend({
   // Formats the result of calculate_result() for the end-user
   format_result : function() {
     var result = this.model.get('result');
-    var key = this.model.get('key');
+    var key    = this.model.get('key');
 
     switch(key) {
       case 'total_primary_energy':
-        return this.format_percentage(result, true);
+        // show + prefix if needed
+        return Metric.ratio_as_percentage(result, true);
       case 'co2_reduction':
-        return this.format_percentage(result, true);
+        return Metric.ratio_as_percentage(result, true);
       case 'net_energy_import':
-        return this.format_percentage(result, false, 1);
+        // 1 point precision
+        return Metric.ratio_as_percentage(result, false, 1);
       case 'renewable_percentage':
-        return this.format_percentage(result);
+        return Metric.ratio_as_percentage(result);
       case 'total_energy_cost':
-        return this.format_with_prefix(Metric.round_number(result, 1), '&euro;');
-        // Metric.currency((result / BILLIONS))
+        return this.format_costs(result);
       case 'not_shown':
         // bio_footprint actually
-        return this.format_with_suffix(Metric.round_number(result, 1),'x'+ App.settings.get("country").toUpperCase());
+        return '' + Metric.round_number(result, 1) +'x'+ App.settings.get("country").toUpperCase();
       case 'targets_met':
-        //Metric.out_of(result, Current.gql.policy.goals.length)
         return null;
       case 'score':
         return parseInt(result,10);
@@ -78,27 +77,18 @@ var ConstraintView = Backbone.View.extend({
         return result;
     }
   },
-
-  format_with_prefix : function(value, prefix) {
-    return prefix + value;
+  
+  /*
+    the total_energy_cost box has a slightly different behaviour -
+    it should show billions only up to a certain amount. Since it is peculiar to the dashboard
+    I keep this method here, rather than in the common metric.js. I'd like the gquery to return
+    the value in euros, instead of bln euros
+  */
+  format_costs: function(x) {
+    if (x > 1) return Metric.autoscale_value(x, 'euro', 1) + I18n.t('dashboard.costs.bln');
+    return Metric.autoscale_value(x * 1000, 'euro', 1) + I18n.t('dashboard.costs.mln');
   },
-
-  format_with_suffix : function(value, suffix) {
-    return "" + value + suffix;
-  },
-
-  /**
-   * If the precentage is signed then a + should appear when a number is positive
-   */
-  format_percentage : function(value, signed, precision) {
-    precision = precision || 1;       
-    value = Metric.round_number(value * 100, precision);
-    if ( signed && (value > 0.0)) { 
-      value = "+"+value;
-    };
-    return this.format_with_suffix(value, '%');
-  },
-
+  
   /**
    * Updates the arrows, if the difference is negative .
    * @param diff - the difference of old_value and new_value.

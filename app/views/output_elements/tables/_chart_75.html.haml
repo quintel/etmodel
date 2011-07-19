@@ -1,0 +1,28 @@
+%table#supply_output_table{table_defaults}
+  %thead
+  %tr
+    %th
+    %th Netvlak
+  %tr
+    %th
+    %th LS net
+    %th MS-LS trafo
+    %th MS Distributienet
+    %th MS Transportnet
+    %th HS-MS trafo
+    %th HS net
+
+  - columns = @output_element.allowed_output_element_series.group_by{|serie| (serie.order_by / 100).to_i }
+  -# columns = {1 => [<Serie>,<Serie>], 2 => [...], 3 => [...]}
+  - rows = columns.values.map(&:length).max - 1 rescue 0
+  %tbody
+    - 0.upto(rows) do |row|
+      %tr{cycles}
+        -# use the Label of the first column
+        %th= columns[1][row].label rescue '-'
+        %td.tar{:data => {:gquery_id => gquery_id(columns[1][row].gquery)}} -
+        %td.tar{:data => {:gquery_id => gquery_id(columns[2][row].gquery)}} -
+        %td.tar{:data => {:gquery_id => gquery_id(columns[3][row].gquery)}} -
+        %td.tar{:data => {:gquery_id => gquery_id(columns[4][row].gquery)}} -
+        %td.tar{:data => {:gquery_id => gquery_id(columns[5][row].gquery)}} -
+        %td.tar{:data => {:gquery_id => gquery_id(columns[6][row].gquery)}} -

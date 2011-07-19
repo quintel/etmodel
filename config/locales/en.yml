@@ -14,7 +14,6 @@ en:
   Local_demand: "Local demand"
   National_supply: "National supply"
   Demographics: "Demographics"
-  Lce: "Life cycle emissions"
   
   #------- Admin -------#
   Graphs: "Graphs"
@@ -35,6 +34,7 @@ en:
   Historic: "Historic"
   Translations: "Translations"
   Expert: "Expert predictions"
+  Predictions: "Predictions"
   Press: "Press"
   back: "Back"  
 
@@ -122,10 +122,10 @@ en:
   information:
     in the news: "Press releases about the Energy Transition Model"
     overview: "An overview of recently published articles related to the energy transition model (in Dutch)"
-  lce:
-    check: "Use Life cycle emissions"
-    description: "When you start using Life cycle emissions it will mean that the model will also include greenhouse gasses which are emitted during the extraction, treatment and transportation of the energycarrier. These numbers are normally not included because they often are emitted in other countries"
-    notice: "You are using Life cycle emissions"
+  fce:
+    check: "Use Fuel chain emissions"
+    description: "When you start using Fuel chain emissions it will mean that the model will also include greenhouse gasses which are emitted during the extraction, treatment and transportation of the energycarrier. These numbers are normally not included because they often are emitted in other countries"
+    notice: "You are using Fuel chain emissions"
   # ---------------------------- #
   # ----------- Menu ----------- #
   # ----------- Demand ----------- #
@@ -260,7 +260,7 @@ en:
     click for more information: "click for more information"
     loading: "Loading.."
     energy: "Will you use more or less energy in the future? (Figure depicts primary energy demand)"
-    co2: "This chart shows the CO<sub>2</sub> emissions, with im/export included, for different years."
+    co2: "This chart shows the CO<sub>2</sub> emissions, with im/export included, for different years. <br/> When you are using Fuel Chain Emissions these values will also include other greenhouse gasses."
     dependence: "How much energy does your country import or export? The chart shows all cross-border imports and exports. One might question whether imports or exports within an integrated market (like Western Europe) should be included here."
     costs: "By how much have future energy costs changed, as a result of your input?"
     footprint: "What is your country's future biomass footprint in the world? The graph below shows how much arable land you would need to cover your country's biomass, biofuel and biogas needs. It is shown in multiples of your country's total arable land area."
@@ -277,7 +277,10 @@ en:
     Dependence: "Energy imports"
     CO2 emissions: "CO<sub>2</sub> emissions"
     Energy use: "Energy use"
-    Cost: "Cost (bln)"
+    Cost: "Cost"
+    costs:
+      bln: bln
+      mln: mln    
     Bio-footprint: "Bio-footprint"
     Renewables: "Renewables"
     Policies met: "Goals"
@@ -360,7 +363,6 @@ en:
     energietransitiemodel: "Click here for the full version of the ETM"
   accordion:
     expert predictions available: "expert predictions available"
-    mindmeister: "discussion about transition paths"
     collective: "collective"  
     appliances without label: "appliances without label"
     intelligent control: "intelligent control"

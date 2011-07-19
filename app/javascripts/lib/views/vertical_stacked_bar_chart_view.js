@@ -25,8 +25,8 @@ var VerticalStackedBarChartView = BaseChartView.extend({
       var smallest_value = _.min(this.model.values);
       smallest_scale = Metric.scaled_scale(smallest_value, 3);
 
-      results = results.map(function(x) {
-        return x.map(function(value) {
+      results = _.map(results, function(x) {
+        return _.map(x, function(value) {
           return Metric.scaled_value(value, 3, smallest_scale);
         });
       });

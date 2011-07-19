@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r701
+ * Version: 1.0.0a_r720
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -180,7 +180,7 @@
                 initDragPoint(plot, neighbor);
                 drag.markerRenderer.draw(s.gridData[neighbor.pointIndex][0], s.gridData[neighbor.pointIndex][1], dc._ctx);
                 ev.target.style.cursor = "move";
-                plot.target.trigger('jqlotDragStart', [neighbor.seriesIndex, neighbor.pointIndex, gridpos, datapos]);
+                plot.target.trigger('jqplotDragStart', [neighbor.seriesIndex, neighbor.pointIndex, gridpos, datapos]);
             }
         }
         // Just in case of a hickup, we'll clear the drag canvas and reset.
@@ -212,7 +212,7 @@
             plot.drawSeries({preventJqPlotSeriesDrawTrigger:true}, dp.seriesIndex);
             dc._neighbor = null;
             ev.target.style.cursor = dc._cursors.pop();
-            plot.target.trigger('jqlotDragStop', [gridpos, datapos]);
+            plot.target.trigger('jqplotDragStop', [gridpos, datapos]);
         }
     }
 })(jQuery);

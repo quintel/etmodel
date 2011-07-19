@@ -49,7 +49,8 @@ function InitializeVerticalStackedBar(id,series,ticks,filler,show_point_label,un
       labels: labels,
       yoffset: 25,
       rendererOptions:{
-        numberColumns: cols
+        numberColumns: cols,
+        seriesToggle: false
       }
     },
     stackSeries:true,

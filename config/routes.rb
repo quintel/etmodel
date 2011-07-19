@@ -48,7 +48,6 @@ Etm::Application.routes.draw do
   resource :settings, :only => [:edit, :update] do
     get :backcasting
   end
-  
   resource :searches
 
   namespace :admin do

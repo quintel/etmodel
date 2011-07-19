@@ -45,7 +45,11 @@ Etm::Application.routes.draw do
   resources :constraints, :only => :show do
     get :iframe, :on => :member
   end
-  resource :settings, :searches
+  resource :settings, :only => [:edit, :update] do
+    get :backcasting
+  end
+
+  resource :searches
 
   namespace :admin do
     root :to => 'pages#index'

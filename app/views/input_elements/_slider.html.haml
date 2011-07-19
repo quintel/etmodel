@@ -3,7 +3,7 @@
     .name
       .text
         = raw slider.translated_name
-        - if APP_CONFIG[:enable_backcasting] && slider.predictions.any?
+        - if (APP_CONFIG[:enable_backcasting] || session[:enable_backcasting]) && slider.predictions.any?
           %a.prediction(href="/predictions?input_element_id=#{slider.id}") Prediction
       .label
     .info-box{:style => 'display: none'}

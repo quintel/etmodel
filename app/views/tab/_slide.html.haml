@@ -16,7 +16,7 @@
       - unless slide.sub_header.blank?
         %div.sub_header{:id => "sub_header_#{slide.id}"}
           - if slide.show_expert_prediction_link
-            %a.expert_header{:style => "float:left", :href => "/expert_predictions?slide_id=#{slide.id}"}
+            %a.expert_header{:style => "float:left", :href => "/expert_predictions?slide_id=#{slide.id}"}= t("accordion.expert predictions available")
         
           %span.subheader_arrow= t("subheaders.#{slide.sub_header}")
           - unless slide.subheader_image.blank?

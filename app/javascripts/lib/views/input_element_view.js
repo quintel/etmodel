@@ -26,6 +26,7 @@ var InputElementView = Backbone.View.extend({
                             'infoBox': {'disableDataBox':true}};
     
     this.sliderView = new AdvancedSliderView(lSliderOptions);
+    this.update_units_link_target();
     
     this.set_full_label(this.model.get('label'));
 
@@ -34,6 +35,13 @@ var InputElementView = Backbone.View.extend({
       this.sliderView.slider.toggleButton.element.addClass('municipality-toggle');
   
     this.initEventListeners();
+  },
+  
+  // Some slider description links have a missing target="_blank" attribute
+  // DEBT: We should better update the description table and remove this method
+  // PZ - Wed 20 Jul 2011 11:32:37 CEST
+  update_units_link_target : function() {
+    this.element.find(".info-box a[href='/units']").attr('target', '_blank');
   },
   
   set_full_label : function(text) {

@@ -188,7 +188,8 @@ var Metric = {
 
   // 0-999: 0, 1000-999999: 1, ...
   power_of_thousand: function(x) {
-    return parseInt(Math.log(x) / Math.log(1000));
+    
+    return parseInt(Math.log(Math.abs(x)) / Math.log(1000));
   },
 
   // Returns the string currently used on the i18n file

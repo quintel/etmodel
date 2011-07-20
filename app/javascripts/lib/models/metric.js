@@ -183,12 +183,27 @@ var Metric = {
     return Metric.percentage_to_string(x * 100, prefix, precision);
   },
 
+  /* This formatter is used by the total_costs dashboard item. Since its behaviour is
+     very specific I'm keeping it separated from autoscale_value.
+     1_000_000     => &euro;1mln
+     -1_000_000    => -&euro;1mln
+     1_000_000_000 => &euro;1bln
+  */
+  euros_to_string: function(x) {
+    var prefix    = x < 0 ? '-' : '';
+    var abs_value = Math.abs(x);
+    var scale     = Metric.power_of_thousand(x);
+    var value     = abs_value / Math.pow(1000, scale);
+    var suffix    = I18n.t('units.currency.' + Metric.power_of_thousand_to_string(scale));
+
+    return prefix + '&euro;' + Metric.round_number(value, 1) + suffix;
+  },
+
 
   /* utility methods */
 
   // 0-999: 0, 1000-999999: 1, ...
   power_of_thousand: function(x) {
-    
     return parseInt(Math.log(Math.abs(x)) / Math.log(1000));
   },
 

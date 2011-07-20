@@ -85,7 +85,7 @@ var ConstraintView = Backbone.View.extend({
     the value in euros, instead of bln euros
   */
   format_costs: function(x) {
-    if (x > 1) return Metric.autoscale_value(x, 'euro', 1) + I18n.t('dashboard.costs.bln');
+    if (Math.abs(x) > 1) return Metric.autoscale_value(x, 'euro', 1) + I18n.t('dashboard.costs.bln');
     return Metric.autoscale_value(x * 1000, 'euro', 1) + I18n.t('dashboard.costs.mln');
   },
   

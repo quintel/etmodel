@@ -78,7 +78,7 @@
       }
     }
 
-    return _.sortBy(conversions, function (c) { c.name });
+    return _.sortBy(conversions, function (c) { return c.name; });
   };
 
   /**

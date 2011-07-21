@@ -176,7 +176,7 @@ by developers later.</p>
         <p>The current Quinn version.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">VERSION</span> <span class="o">=</span> <span class="s1">&#39;0.3.0&#39;</span><span class="p">;</span></pre></div>
+        <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">VERSION</span> <span class="o">=</span> <span class="s1">&#39;0.3.1&#39;</span><span class="p">;</span></pre></div>
       </td>
     </tr>
     <tr id='section-Rendering'>
@@ -508,12 +508,14 @@ the Quinn instance permitting chaining.</p>
     <span class="p">};</span></pre></div>
       </td>
     </tr>
-    <tr id='section-27'>
+    <tr id='section-trigger'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-27">&#182;</a>
+          <a class="pilcrow" href="#section-trigger">&#182;</a>
         </div>
-        <p>Runs the callbacks of the given type.</p>
+        <h3>trigger</h3>
+
+<p>Runs the callbacks of the given type.</p>
 
 <p>If any of the callbacks return false, other callbacks will not be run,
 and trigger will return false; otherwise true is returned.</p>
@@ -786,7 +788,7 @@ the bar&rsquo;s width.</p>
       <td class=code>
         <div class='highlight'><pre>            <span class="nx">barPosition</span> <span class="o">=</span> <span class="nx">barWidth</span><span class="p">;</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="nx">barPosition</span> <span class="o">=</span> <span class="nx">mousePosition</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">bar</span><span class="p">.</span><span class="nx">offset</span><span class="p">().</span><span class="nx">left</span><span class="p">;</span>
+            <span class="nx">barPosition</span> <span class="o">=</span> <span class="nx">mousePosition</span> <span class="o">-</span> <span class="nx">maxLeft</span><span class="p">;</span>
         <span class="p">}</span>
 
         <span class="k">return</span> <span class="nx">barPosition</span> <span class="o">/</span> <span class="nx">barWidth</span> <span class="o">*</span> <span class="mi">100</span><span class="p">;</span>

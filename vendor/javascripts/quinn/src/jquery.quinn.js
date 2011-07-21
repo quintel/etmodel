@@ -89,7 +89,7 @@
     }
 
     // The current Quinn version.
-    Quinn.VERSION = '0.3.0';
+    Quinn.VERSION = '0.3.1';
 
     // ## Rendering
 
@@ -299,6 +299,8 @@
     };
 
     /**
+     * ### trigger
+     *
      * Runs the callbacks of the given type.
      *
      * If any of the callbacks return false, other callbacks will not be run,
@@ -457,7 +459,7 @@
             // Mouse is to the right of the bar.
             barPosition = barWidth;
         } else {
-            barPosition = mousePosition - this.bar.offset().left;
+            barPosition = mousePosition - maxLeft;
         }
 
         return barPosition / barWidth * 100;

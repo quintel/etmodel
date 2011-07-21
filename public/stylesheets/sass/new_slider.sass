@@ -16,7 +16,7 @@ $slider-box-height: 22px
 .new-input-slider
   position: relative
 
-  .slider-controls
+  .slider-row
     min-height: $slider-box-height
 
     // Clearfix.
@@ -25,12 +25,17 @@ $slider-box-height: 22px
   label, .reset, .decrease, .quinn, .increase, output, .show-info
     display: block
     float: left
+    text-align: left
     min-height: $slider-box-height
     margin-bottom: 5px
 
   label
+    float: left
     line-height: 15px
     width: 124px
+
+  .slider-controls
+    float: right
 
   .quinn
     width: 120px

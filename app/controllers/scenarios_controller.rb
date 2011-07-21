@@ -35,7 +35,7 @@ class ScenariosController < ApplicationController
 
   def reset
     Current.setting.reset_scenario
-    redirect_to :back
+    redirect_to_back
   end
 
   ##

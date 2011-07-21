@@ -9,12 +9,10 @@
     %h2= raw I18n.t("pagetitle.#{title.title}")
     %p#content_short.visible
       - short_content = title.description.andand.short_content
-      - if short_content.include?('<input')
-        %span= raw short_content.html_safe
-      - else
-        %span= raw truncate(short_content.html_safe, :length => 135)
+      %span= short_content.html_safe
       %a#read_more{:href => '#'}= I18n.t("pagetitle.readmore")
     %p#content_long.hidden
-      %span= raw title.description.andand.content.force_encoding("UTF-8")
+      %span= title.description.andand.content.html_safe
       %a#read_less{:href => '#'}= I18n.t("pagetitle.hidetext")
-  
+    - if @active_sidebar.try(:additional_info_partial)
+      = render :partial => "tab/#{@active_sidebar.additional_info_partial}"

@@ -19,8 +19,12 @@
                 = prediction.year_values.select_year(Current.setting.end_year).first.value.to_s.gsub("-", "") 
                 = "% in #{Current.setting.end_year}."
                 
+                %br
+                = radio_button :input_element, input_element.id, prediction.id, :class =>"pick_prediction", 'data-prediction_id' => prediction.id
                 = t("use this")
-                = check_box :input_element, input_element.id,  :class =>"pick_prediction", 'data-prediction_id' => prediction.id
                 %br
                 %br
+              = radio_button :input_element, input_element.id, 0, :class =>"pick_prediction", 'data-prediction_id' => 0
+              = t("nevermind")
+
     = button_to_function "See results", "close_fancybox()"

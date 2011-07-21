@@ -1,0 +1,7 @@
+---
+# Unit conversions are added using the `key` for the InputElement, then use an
+# array of hashes where each hash is an alternative unit which may be
+# displayed. The hash keys should be `name`, `unit` and `multiplier`.
+number_of_pulverized_coal:
+  megawatts: [ MW, 2000 ]
+  gigawatts: [ GW, 2.0  ]

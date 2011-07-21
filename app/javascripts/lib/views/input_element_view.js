@@ -51,25 +51,34 @@
   /**
    * Creates an array of UnitConversions suitable for displaying an
    * InputElement model.
+   *
+   * Conversions come from the application as a hash where each key is an I18n
+   * key, and each value an array in the format [ unit, multiplier ].
    */
   conversionsFromModel = function (model) {
     var conversions = [],
         modelConvs  = model.get('conversions'),
         cLength     = modelConvs.length,
         mPrecision  = floatPrecision(model.get('step_value')),
-        i;
+        cKey, i;
 
     conversions.push(new UnitConversion({
-      name:      'Default Unit',
+      name:       I18n.t('unit_conversions.default'),
       unit:       model.get('unit'),
       multiplier: 1
     }, mPrecision));
 
-    for (i = 0; i < cLength; i++) {
-      conversions.push(new UnitConversion(modelConvs[i], mPrecision));
+    for (cKey in modelConvs) {
+      if (modelConvs.hasOwnProperty(cKey)) {
+        conversions.push(new UnitConversion({
+          name:       I18n.t('unit_conversions.' + cKey),
+          unit:       modelConvs[cKey][0],
+          multiplier: modelConvs[cKey][1]
+        }, mPrecision));
+      }
     }
 
-    return conversions;
+    return _.sortBy(conversions, function (c) { c.name });
   };
 
   /**

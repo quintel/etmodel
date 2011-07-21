@@ -58,9 +58,8 @@
   conversionsFromModel = function (model) {
     var conversions = [],
         modelConvs  = model.get('conversions'),
-        cLength     = modelConvs.length,
         mPrecision  = floatPrecision(model.get('step_value')),
-        cKey, i;
+        cKey;
 
     conversions.push(new UnitConversion({
       name:       I18n.t('unit_conversions.default'),

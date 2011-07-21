@@ -124,6 +124,13 @@ protected
       false
     end
   end
+  
+  # redirect_to :back fails fairly often. This is safer
+  def redirect_to_back(default_url = root_path)
+    redirect_to :back
+  rescue ActionController::RedirectBackError
+    redirect_to default_url
+  end
 
 private
   def assign_current_for_inspection_in_tests

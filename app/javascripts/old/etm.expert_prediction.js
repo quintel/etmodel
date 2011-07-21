@@ -4,10 +4,9 @@ $(document).ready(function() {
     var slider_id = $(this).parents('a:first').attr('id').match(/\d+$/);
     var prediction_id = $(this).attr('data-prediction_id');
     var url = "";
-    if ($(this).is(':checked')) {
+    if (prediction_id != 0) {
       url = "/expert_predictions/set?prediction_id=" + prediction_id + "&slider_id=" + slider_id;
-    }
-    else {
+    } else {
       url = "/expert_predictions/reset?slider_id=" + slider_id;
     }
     $.ajax({ 

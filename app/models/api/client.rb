@@ -116,6 +116,8 @@ class Api::Client
       else
         return parse_single_value(data)
       end
+    rescue
+      nil
     end
 
     def execute!

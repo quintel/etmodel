@@ -1,12 +1,49 @@
 ---
-# Unit conversions are added using the `key` for the InputElement, then use an
-# array of hashes where each hash is an alternative unit which may be
-# displayed. The hash keys should be `name`, `unit` and `multiplier`.
+# Unit conversions are added by using the `key` for the input element. Then,
+# create a hash where each key is an I18n string (under unit_conversions.*)
+# and the value a two-element array consisting of the unit suffix, and the
+# multiplier.
+#
+# For example, assuming a slider whose default value is in gigawatts:
+#
+#   my_input_element:
+#     megawatts: [ MW, 1000 ]
+#
+# This would add a "megawatts" conversion to the "my_input_element" element.
+# The label for the conversion would be looked up using I18n as
+# "unit_conversions.megawatts".
+#
+# When displaying the value of the slider in megawatts, the sliders internal
+# value will be multiplied by 1000, and given the suffix "MW".
+#
+#   My Input Element   (-) <-----()------------------> (+)   2.5 GW
+#
+#     ... becomes ...
+#
+#   My Input Element   (-) <-----()------------------> (+)  2500 MW
+#
+# YAML references may be used to reduce duplication.
+#
+#   common_coal_conversions: &common_coal_conversions
+#     kilowatts: [ KW, 1000000 ]
+#     megawatts: [ MW, 1000    ]
+#
+#   coal_ccs:
+#     <<: *common_coal_conversions
+#   coal_iggc:
+#     <<: *common_coal_conversions
+#
+# In the above example, the `coal_ccs` and `coal_iggc` elements would inherit
+# their conversions from `common_coal_conversions`.
+#
+# For more information see:
+# http://en.wikipedia.org/wiki/YAML#Data_merge_and_references
+#
+
 number_of_pulverized_coal: &coal_plants
   megawatts: [ MW, 2000 ]
   gigawatts: [ GW, 2.0  ]
 
-# YAML references may be used to share data between several input elements...
 number_of_pulverized_coal_ccs:
   <<: *coal_plants
 number_of_coal_iggc:

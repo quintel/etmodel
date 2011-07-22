@@ -72,7 +72,8 @@ var PolicyGoal = Backbone.Model.extend({
         if (this.get('unit') == 'co2_pct') {
           out = "" + Metric.round_number(n, 2) + "MT";
         } else {
-          out = Metric.ratio_as_percentage(n, 2);
+          // no +/- prefix, 2 point precision
+          out = Metric.ratio_as_percentage(n, false, 2);
         }
         break;
       case 'number':

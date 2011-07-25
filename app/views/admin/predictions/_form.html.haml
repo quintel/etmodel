@@ -1,7 +1,24 @@
-%div{:style => "width: 60%"}
-  -semantic_form_for [:admin, @prediction] do |form|
-    = form.select :input_element_id, InputElement.all.select{|x|!x.slide.nil?}.map{|x| ["#{x.id} - #{x.slide.controller_name} - #{x.slide.name} - #{x.name}",x.id]}
-    = form.inputs :user, :expert, :curve_type, :description
-    = form.buttons
-  
-  = link_to "back", admin_predictions_path
+= semantic_form_for [:admin, @prediction] do |f|
+  = f.label :input_element_id
+  = f.select :input_element_id, InputElement.all.select{|x|!x.slide.nil?}.map{|x| [x.parsed_name_for_admin, x.id]}
+  = f.inputs :user, :expert, :curve_type, :description
+  = f.buttons
+
+  %h3 Values
+  %table
+    %tr
+      %th Year
+      %th Value
+      %th Delete
+    = f.inputs :for => :values do |v|
+      %tr
+        %td= v.text_field :year
+        %td= v.text_field :best
+        %td= v.check_box :_destroy
+  %h3 Measures
+  = f.inputs :for => :measures do |m|
+    = m.inputs do
+      = m.inputs :name, :impact, :cost, :year_start, :actor, :description
+      = m.input :_destroy, :as => :boolean
+
+= link_to "back", admin_predictions_path

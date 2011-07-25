@@ -20,9 +20,10 @@
         %td= scenario.end_year
         %td= scenario.created_at.andand.strftime("%d %b %H:%M")
         %td= link_to t('scenario.load'), load_scenario_path(scenario)
-    %tr
-      %td{:colspan => 4}
-        = link_to "Prev", scenarios_path(:page => @current_page - 1) if @current_page > 1
-        = link_to "Next", scenarios_path(:page => @current_page + 1) unless @scenarios.empty?
+    - if @current_page
+      %tr
+        %td{:colspan => 4}
+          = link_to "Prev", scenarios_path(:page => @current_page - 1) if @current_page > 1
+          = link_to "Next", scenarios_path(:page => @current_page + 1) unless @scenarios.empty?
 
 %br

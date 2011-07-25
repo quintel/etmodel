@@ -1,11 +1,12 @@
 module Admin
 class OutputElementsController < BaseController
+  before_filter :find_element, :only => [:show, :edit, :update, :destroy]
+  
   sortable_attributes :name,:group,:percentage,:unit,:output_element_type_id => "`output_element_type_id`"
 
   def index
     @output_elements = OutputElement.all
   end
-
 
   def new
     @output_element = OutputElement.new
@@ -24,8 +25,6 @@ class OutputElementsController < BaseController
   end
 
   def update
-    @output_element = OutputElement.find(params[:id])
-
     if @output_element.update_attributes(params[:output_element])
       ["nl","en"].each do |l|
         expire_fragment("slider_#{@output_element.id}_#{l}")
@@ -38,33 +37,33 @@ class OutputElementsController < BaseController
   end
 
   def destroy
-    @output_element = OutputElement.find(params[:id])
     if @output_element.destroy
       flash[:notice] = "Successfully destroyed output_element."
       redirect_to admin_output_elements_url
     else
-      flash[:error] = "Error while deleting output_elementq."
+      flash[:error] = "Error while deleting output_element."
       redirect_to admin_output_elements_url
     end
   end
 
   def show
-    find_model
   end
 
   def edit
-    find_model
+    @output_element.build_description unless @output_element.description
   end
 
-  def find_model
-    if params[:version_id]
-      @version = Version.find(params[:version_id])
-      @output_element = @version.reify
-      flash[:notice] = "Revision"
-    else
-      @output_element = OutputElement.find(params[:id])
+  private
+  
+    def find_model
+      if params[:version_id]
+        @version = Version.find(params[:version_id])
+        @output_element = @version.reify
+        flash[:notice] = "Revision"
+      else
+        @output_element = OutputElement.find(params[:id])
+      end
     end
-  end
 
 end
 end

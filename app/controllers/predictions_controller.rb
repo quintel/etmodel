@@ -1,7 +1,5 @@
 class PredictionsController < ApplicationController
-
   def index
-    @InputElement = InputElement.find(params[:input_element_id])
+    @input_element = InputElement.find(params[:input_element_id])
   end
-  
 end

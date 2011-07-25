@@ -4,7 +4,7 @@
       .text
         = raw slider.translated_name
         - if (APP_CONFIG[:enable_backcasting] || session[:enable_backcasting]) && slider.predictions.any?
-          %a.prediction(href="/predictions?input_element_id=#{slider.id}") Prediction
+          = link_to "Predictions", predictions_path(:input_element_id => slider.id), :class => 'prediction'
       .label
     .info-box{:style => 'display: none'}
       .text= slider.parsed_description

@@ -21,8 +21,7 @@ protected
     @countries += ["za", "be-vlg"] if session[:show_all_countries]
     @nl_regions = %w[nl-drenthe nl-flevoland nl-friesland nl-gelderland nl-groningen nl-limburg nl-noord-brabant nl-noord-holland nl-overijssel nl-utrecht nl-zeeland nl-zuid-holland]
     @nl_regions << "nl-noord" if show_all
-    @nl_municipalities = ["ame"]
-    @nl_municipalities << "ams" if (current_user.try(:email) == "amsterdam@et-model.com" || session[:show_all_countries])
+    @nl_municipalities = ["ame", "ams"]
     @nl_municipalities << "grs" if show_all
   end
 

@@ -9,6 +9,7 @@ class OutputElementsController < BaseController
 
   def new
     @output_element = OutputElement.new
+    @output_element.build_description
   end
 
   def create

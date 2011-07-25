@@ -15,6 +15,7 @@ gem 'acts_as_list'
 gem 'ancestry', '~> 1.2.3'
 gem 'httparty', '~> 0.7.4'
 gem 'tabs_on_rails', '~>2.0.1'
+gem 'kaminari'
 
 # javascript
 gem 'sprockets' # CHECK

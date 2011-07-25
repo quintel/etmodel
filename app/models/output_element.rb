@@ -34,6 +34,8 @@ class OutputElement < ActiveRecord::Base
 
   delegate :html_table?, :to => :output_element_type
   
+  accepts_nested_attributes_for :description
+  
   define_index do
     indexes name
     indexes description(:content_en), :as => :description_content_en

@@ -5,6 +5,7 @@ var BlockChartView = BaseChartView.extend({
   },
 
   render : function() {
+    $("a.select_chart").hide();
     update_block_charts(this.model.series.map(function(serie) { return serie.result() }));
   }
 });

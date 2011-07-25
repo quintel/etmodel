@@ -31,17 +31,25 @@ $(document).ready(function() {
     // Here we load the new default chart
     $('.ui-accordion').bind('accordionchange', function(ev,ui) {
       if (ui.newHeader.length > 0){
-        var output_element_id = ui.newHeader.attr('id').match(/\d+$/);
-        if (output_element_id != '32') {
-          window.charts.current_default_chart = output_element_id;
-          // if the user has selected a chart then we keep showing it,          
-          // otherwise we show the default chart for the slide
-          if(!!window.charts.user_selected_chart) {
-            console.log("Don't refresh chart");
-          } else {
-            window.charts.load(output_element_id);
+        var output_element_id = parseInt(ui.newHeader.attr('id').match(/\d+$/));
+        
+        if(output_element_id == 32) { return; }
+        
+        window.charts.current_default_chart = output_element_id;
+        // if the user has selected a chart then we keep showing it
+        if(!!window.charts.user_selected_chart) {
+          // if the user selected chart is the default chart for the slide then
+          // let's go back to the standard behaviour, ie show the default chart
+          // whenever we click on a new slide
+          if(window.charts.user_selected_chart == output_element_id) {
+            window.charts.user_selected_chart = null;
             $("a.default_charts").hide();
           }
+          return;
+        } else {
+          // otherwise the chart has to be shown
+          window.charts.load(output_element_id);
+          $("a.default_charts").hide();
         }
       }
     });

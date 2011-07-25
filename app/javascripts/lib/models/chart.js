@@ -143,7 +143,7 @@ var ChartList = Backbone.Collection.extend({
   },
 
   load : function(chart_id) {
-    if (this.first().get('id')+'' == chart_id + '') {
+    if (this.current() == parseInt(chart_id)) {
       // if chart_id == currently shown chart, skip.
       return;
     }
@@ -162,6 +162,11 @@ var ChartList = Backbone.Collection.extend({
       $("#output_element_actions").removeClass();
       $("#output_element_actions").addClass(charts.first().get("type"));
     });
+  },
+  
+  // returns the current chart id
+  current : function() {
+    return parseInt(this.first().get('id'));
   }
 });
 window.charts = new ChartList();

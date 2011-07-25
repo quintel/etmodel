@@ -89,6 +89,8 @@ GEM
       railties (~> 3.0)
       thor (~> 0.14)
     jslint_on_rails (1.0.6)
+    kaminari (0.12.4)
+      rails (>= 3.0.0)
     linecache19 (0.5.12)
       ruby_core_source (>= 0.1.4)
     mail (2.2.19)
@@ -204,6 +206,7 @@ DEPENDENCIES
   i18n-js
   jquery-rails
   jslint_on_rails
+  kaminari
   memcache-client
   mongrel (= 1.2.0.pre2)
   mysql2 (~> 0.2.6)

@@ -75,8 +75,9 @@ module LayoutHelper
     SidebarItem.find_by_key(params[:id]).andand.send("#{I18n.locale}_vimeo_id")
   end
   
-  # Used on _country_select partial
-  def current_region?(code)
-    Current.setting.region == code
+  def country_option(code, opts = {})
+    current = Current.setting.region == code
+    selected = current ? "selected='true'" : nil
+    %Q{<option value="#{code}" #{selected}>#{I18n.t(code)} #{"(test)" if opts[:test]}</option>}.html_safe
   end
 end

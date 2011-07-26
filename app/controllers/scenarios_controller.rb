@@ -12,7 +12,8 @@ class ScenariosController < ApplicationController
 
   def index
     if current_user.admin?
-      @scenarios = Api::Scenario.all # TODO: add some kind of pagination
+      @current_page = (params[:page] || 1).to_i
+      @scenarios = Api::Scenario.all(:params => { :page => @current_page})
     else
       @scenarios = current_user.saved_scenarios.order("created_at DESC")
       @scenarios = @scenarios.map(&:scenario).compact

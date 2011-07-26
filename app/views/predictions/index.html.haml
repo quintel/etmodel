@@ -1,21 +1,29 @@
 = stylesheet_link_tag 'prediction'
+= javascript_include_tag :defaults
 
 .prediction
-  %h2
-    = "Experts verwachten een adoptie van maximaal {max} in {year}. Jouw scenario ligt {location} de verwachtingen van experts. Hoe denk je dat de adoptie zal verlopen?"
-  %br
-  - @InputElement.predictions.each do |prediction|
-    %br
-    = prediction.description
-    = "(#{prediction.user.try(:name)}) at #{prediction.created_at.strftime("%d-%m-%Y")}"
-    %br
-    - prediction.prediction_values.each do |prediction_value|
-      = prediction_value.year
-      = prediction_value.best
-      %br
+  .intro
+    Hier kun je jouw scenario vergelijken met verwachtingen van experts. Jouw scenario valt binnen/buiten de expertverwachtingen. Deze verwachtingen zijn gebaseerd op een aantal maatregelen. Hoe denk jij dat de adoptie van elektrische auto’s zal verlopen?
+  .slider_title= @input_element.name
+  .chart
+    = image_tag "http://placekitten.com/350/200"
+  .available_predictions
+    - @input_element.predictions.each do |p|
+      .item
+        = radio_button_tag :prediction_id, p.id
+        .color
+        .label
+          #{p.user.try(:name)}
+          (#{p.last_value.best} in #{p.last_value.year})
+  .prediction_details
+    = render @prediction
 
-  #prediction_chart
-
-  .nav_prediction
-    %a.prediction(href="/prediction_measures?input_element_id=#{@InputElement.id}") Volgende
-    .close_prediction= "Close"
+:javascript
+  $(function(){
+    $("input[type=radio]").click(function(){
+      var prediction_id = $(this).val();
+      var url = "/predictions/" + prediction_id;
+      console.log("Loading" + url);
+      $(".prediction_details").load(url);
+    });
+  });

@@ -1,0 +1,25 @@
+.header
+  %strong Predictionz
+  by
+  %strong= @prediction.user.try(:name)
+  = @prediction.created_at.to_s(:medium)
+  
+.description
+  = @prediction.description
+.measures
+  %table
+    %thead
+      %tr
+        %th{:colspan => 2} Maatregelen om expertverwachting te behalen
+        %th Impact
+        %th Kosten
+        %th Uitvoerder
+    %tbody
+      - @prediction.measures.each do |m|
+        %tr
+          %td= m.name
+          %td= m.year_start
+          %td= m.impact
+          %td= m.cost
+          %td= m.actor
+.comments

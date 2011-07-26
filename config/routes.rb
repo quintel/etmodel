@@ -100,7 +100,7 @@ Etm::Application.routes.draw do
     end
   end
   
-  resources :predictions, :only => :index
+  resources :predictions, :only => [:index, :show]
   resources :prediction_measures, :only => :index
   
 

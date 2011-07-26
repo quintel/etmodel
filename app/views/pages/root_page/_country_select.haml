@@ -1,21 +1,27 @@
+:ruby
+  @nl_regions = %w[nl-drenthe nl-flevoland nl-friesland nl-gelderland nl-groningen nl-limburg nl-noord-brabant nl-noord-holland nl-overijssel nl-utrecht nl-zeeland nl-zuid-holland]
+  @nl_regions << "nl-noord" if @show_all
+  
 %li
   %h3= t("Choose country")
-  %select{:name => "region"}  
-    - @countries.each do |code|
-      %option{:value => code, :selected => current_region?(code)}
-        = t(code).html_safe
-        - if code == 'nl'
-          %optgroup{:label => "Provinces of the Netherlands"}
-            - @nl_regions.each do |region|
-              %option{:value => region, :selected => current_region?(region)}= t(region)
-            %optgroup{:label => "Municipalities of the Netherlands"}
-              - @nl_municipalities.each do |region|
-                %option{:value => region, :selected => current_region?(region)}= t(region)
-        - if code == 'de' and (current_user.try(:email) == "brandenburg@et-model.com" || session[:show_all_countries])
-          %optgroup{:label => "Provinces of Germany"}
-            - %w[br].each do |region|
-              %option{:value => region, :selected => current_region?(region)}
-                = t(region)
-                (test)
-        - unless %w[nl].include?(code)
-          (test)
+  %select{:name => "region"}
+    = country_option 'nl'
+    %optgroup{:label => "Provinces of the Netherlands"}
+      - @nl_regions.each do |code|
+        = country_option code
+    %optgroup{:label => "Municipalities of the Netherlands"}
+      = country_option 'ame'
+      = country_option 'ams', :test => true
+      - if @show_all
+        = country_option 'grs'
+    = country_option 'de'
+    - if @show_german_provinces
+      %optgroup{:label => "Provinces of Germany"}
+        = country_option 'br', :test => true
+    = country_option 'uk', :test => true
+    = country_option 'ro', :test => true
+    = country_option 'pl', :test => true
+    = country_option 'tr', :test => true
+    - if session[:show_all_countries]
+      = country_option 'za', :test => true
+      = country_option 'be-vlg', :test => true

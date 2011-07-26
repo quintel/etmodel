@@ -16,13 +16,8 @@ class PagesController < ApplicationController
 protected
 
   def setup_countries_and_regions
-    show_all = session[:show_municipalities] || session[:show_all_countries] 
-    @countries  = %w[nl de uk ro pl tr]
-    @countries += ["za", "be-vlg"] if session[:show_all_countries]
-    @nl_regions = %w[nl-drenthe nl-flevoland nl-friesland nl-gelderland nl-groningen nl-limburg nl-noord-brabant nl-noord-holland nl-overijssel nl-utrecht nl-zeeland nl-zuid-holland]
-    @nl_regions << "nl-noord" if show_all
-    @nl_municipalities = ["ame", "ams"]
-    @nl_municipalities << "grs" if show_all
+    @show_all = session[:show_municipalities] || session[:show_all_countries]
+    @show_german_provinces = (current_user.try(:email) == "brandenburg@et-model.com" || session[:show_all_countries])
   end
 
   def show_root_page

@@ -1,11 +1,7 @@
--# DEBT RD please use the coding standards: #notice_bar.fce_notice{:class => ...}
--# DEBT RD Why do you have to add the #{} block into a ""
--#         You can just Current.setting.use_fce ? '' : 'hidden'
-#notice_bar.fce_notice{ :class=>"#{Current.setting.use_fce ? '' : 'hidden' }"}
-  = t("fce.notice")
+// DEBT We're using twice the same id.
+#notice_bar.fce_notice{ :class => Current.setting.use_fce ? nil : 'hidden' }= t("fce.notice")
 - if user_notification = GeneralUserNotification.active.first
-  #notice_bar
-    = raw user_notification.text
+  #notice_bar= raw user_notification.text
 .frame{:style => "position: relative;"}
   %ul.sub-nav
     %li

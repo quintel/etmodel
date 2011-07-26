@@ -67,7 +67,8 @@ Etm::Application.routes.draw do
               :output_element_series, 
               :press_releases, 
               :converter_positions,
-              :interfaces
+              :interfaces,
+              :general_user_notifications
     resources :areas, :only => [:index, :show]
   end
 

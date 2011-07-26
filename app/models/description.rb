@@ -31,5 +31,15 @@ class Description < ActiveRecord::Base
   def t(attr_name)
     send("#{attr_name}_#{I18n.locale.to_s.split('-').first}").andand.html_safe
   end
+  
+  def title
+    s = if describable.respond_to?(:title_for_description)
+      describable.title_for_description
+    elsif describable.respond_to?(:title)
+      describable.title
+    else
+      nil
+    end
+  end
 end
 

@@ -1,13 +1,13 @@
 #overlay_container
-  %h1= t(@description.describable.title_for_description).html_safe
+  %h1= raw t(@description.title)
 
   %p
     - if @description.content
-      = @description.content.html_safe
+      = raw @description.content
     - else
       %small (Nederlandse tekst nog niet beschikbaar)
       %br
-      = @description.content_en.html_safe
+      = raw @description.content_en
 
     -#= @description.content.gsub('<a ', '<a target="_blank" ') || "Lorem"
     %div{:style => 'clear:both'} &nbsp;

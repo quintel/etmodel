@@ -184,7 +184,7 @@
       'mousedown .decrease':   'beginStepDown',
       'mousedown .increase':   'beginStepUp',
       'click     .show-info':  'toggleInfoBox',
-      'click      output':     'showValueSelector'
+      'click     .output':     'showValueSelector'
     },
 
     initialize: function (options) {
@@ -237,7 +237,7 @@
       this.resetElement    = this.$('.reset');
       this.decreaseElement = this.$('.decrease');
       this.increaseElement = this.$('.increase');
-      this.valueElement    = this.$('output');
+      this.valueElement    = this.$('.output');
 
       // INITIALIZATION.
 

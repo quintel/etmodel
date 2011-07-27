@@ -5,8 +5,6 @@ set :application, "etmodel"
 set :stage, :production
 set :server_type, 'production'
 
-#### UNCOMMENT roles when we setup server
-
 task :production do
   set :branch, "production"
   set :domain, "46.137.109.15"
@@ -43,16 +41,15 @@ task :staging do
   role :db,  domain, :primary => true # This is where Rails migrations will run
 end
 
-
-set :user, 'ubuntu'
-
 set :scm, :git
 set :repository,  "git@github.com:dennisschoenmakers/etmodel.git"
-set :scm, "git"
+
+set :user, 'ubuntu'
 set :deploy_via, :remote_cache
 set :chmod755, "app config db lib public vendor script script/* public/disp*"  	# Some files that will need proper permissions set :use_sudo, false
 ssh_options[:forward_agent] = true
 set :use_sudo,     false
+
 set :rvm_ruby_string, '1.9.2'
 
 set :local_db_name, 'etmodel_dev'

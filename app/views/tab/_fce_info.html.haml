@@ -1,7 +1,7 @@
 %div.fce_info
-  %label{:style => "float:left;clear:both"}
+  %label.fce_checkbox_container{:style => "float:left;clear:both"}
     = t('fce.check')
-    -# TODO RD ideally what is in :onchange should be somewhere in the Backbone-code
-    -#         e.g. make a FceSettingView (there you can also add the onload code)
-    = check_box(:use_fce, :settings, :onclick => 'App.scenario.toggle_fce()', :checked => Current.setting.use_fce)
-  = link_to(image_tag("/images/layout/powered_by_cedelft.png",:style => "float:right"),"http://www.ce.nl/",:target=>"_blank")    
+  = link_to(image_tag("/images/layout/powered_by_cedelft.png",:style => "float:right"),"http://www.ce.nl/",:target=>"_blank")
+:javascript
+  $(document).ready(function() { var fce_view = new FuelChainView })
+

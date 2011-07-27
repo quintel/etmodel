@@ -10,7 +10,6 @@ var Scenario = Backbone.Model.extend({
     var key = App.settings.get('api_session_key');
     return _.isPresent(key) ? key : null;
   },
-
   api_attributes : function() {
     var s = App.settings;
     var data = {
@@ -48,12 +47,5 @@ var Scenario = Backbone.Model.extend({
   
   url_path : function() {
     return globals.api_url + "/api_scenarios/"+this.api_session_key();
-  },
-  
-  toggle_fce : function(){
-    var use_fce = $("#use_fce_settings").is(':checked');
-    App.settings.set({'use_fce' : use_fce});  
-    App.call_api();
-    $('.fce_notice').toggle(use_fce);
   }
 });

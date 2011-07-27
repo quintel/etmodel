@@ -16,6 +16,9 @@ $slider-box-height: 22px
 .new-input-slider
   position: relative
 
+  // IE
+  z-index: 10
+
   .slider-row
     min-height: $slider-box-height
 
@@ -113,11 +116,11 @@ $slider-box-height: 22px
     background: -o-linear-gradient(#fff, #f0f0f0)
     display: none
     top: -27px
-    right: 5px
+    left: 5px
     line-height: 1
     padding: 20px
     position: absolute
-    z-index: 25
+    z-index: 5000
 
     -webkit-border-radius: 7px
     -moz-border-radius: 7px

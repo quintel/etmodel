@@ -91,7 +91,9 @@
     // Hide if the element clicked was not the value selection elemnt, or a
     // child of the selection element.
     if (! $(event.target).closest('#' + ACTIVE_VALUE_SELECTOR).get(0)) {
-      $('#' + ACTIVE_VALUE_SELECTOR).fadeOut('fast');
+      $('#' + ACTIVE_VALUE_SELECTOR).fadeOut('fast').
+        parent('.new-input-slider').css('z-index', 10);
+
       ACTIVE_VALUE_SELECTOR = null;
     }
   };
@@ -645,6 +647,9 @@
         this.inputEl.focus().select();
       }
 
+      // IE.
+      this.view.el.css('z-index', 4000);
+
       return false;
     },
 
@@ -656,6 +661,8 @@
       this.view.conversion = this.selectedConversion;
       this.view.setTransientValue(this.inputValue());
       $(this.el).fadeOut('fast');
+
+      this.view.el.css('z-index', 10);
 
       ACTIVE_VALUE_SELECTOR = null;
 

@@ -7,6 +7,11 @@ class PredictionsController < BaseController
 
   def new
     @prediction = Prediction.new
+
+    5.times do
+      @prediction.measures.build
+      @prediction.values.build
+    end
   end
 
   def create

@@ -12,13 +12,9 @@
 #
 
 class GeneralUserNotification < ActiveRecord::Base
-
-  def notification
-    t(:notification)
+  scope :active, where(:active => true)
+  
+  def text
+    I18n.locale.to_sym == :en ? notification_en : notification_nl
   end
-
-  def t(attr_name)
-    send("#{attr_name}_#{I18n.locale.to_s.split('-').first}").andand.html_safe
-  end
-
 end

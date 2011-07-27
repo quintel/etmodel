@@ -12,6 +12,7 @@
       =sortable_table_header :name=> "Unit", :sort=>"unit",:class=>"tal"
       =sortable_table_header :name=> "%", :sort=>"percentage",:class=>"tal"
       =sortable_table_header :name=> "Group", :sort=>"group",:class=>"tal"
+      %th
 
   %tbody
     - @output_elements.each do |output_element|
@@ -23,3 +24,4 @@
         %td= output_element.unit
         %td= output_element.percentage
         %td= output_element.group
+        %td= link_to "Edit", edit_admin_output_element_path(output_element)

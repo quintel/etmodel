@@ -15,6 +15,9 @@
     = javascript_include_tag 'underscore.min'
     = sprocket_layout_init :etm
 
+    /[if lte IE 7]
+      %link(rel="stylesheet" type="text/css" href="/stylesheets/ie7.css")
+
     = javascript_include_tag 'i18n'
     = javascript_include_tag 'translations'
 

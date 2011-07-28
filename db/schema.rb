@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110714085756) do
+ActiveRecord::Schema.define(:version => 20110728144206) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -128,6 +128,20 @@ ActiveRecord::Schema.define(:version => 20110714085756) do
   add_index "interfaces", ["enabled"], :name => "index_interfaces_on_enabled"
   add_index "interfaces", ["key"], :name => "index_interfaces_on_key"
 
+  create_table "lce_values", :force => true do |t|
+    t.string   "using_country"
+    t.string   "origin_country"
+    t.float    "co2_exploration_per_mj"
+    t.float    "co2_extraction_per_mj"
+    t.float    "co2_treatment_per_mj"
+    t.float    "co2_transportation_per_mj"
+    t.float    "co2_conversion_per_mj"
+    t.float    "co2_waste_treatment_per_mj"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "carrier"
+  end
+
   create_table "output_element_series", :force => true do |t|
     t.integer  "output_element_id"
     t.string   "key"
@@ -214,28 +228,28 @@ ActiveRecord::Schema.define(:version => 20110714085756) do
   create_table "prediction_measures", :force => true do |t|
     t.integer  "prediction_id"
     t.string   "name"
-    t.float    "impact"
-    t.float    "cost"
+    t.integer  "impact"
+    t.integer  "cost"
     t.integer  "year_start"
     t.string   "actor"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "year_end"
   end
 
   add_index "prediction_measures", ["prediction_id"], :name => "index_prediction_measures_on_prediction_id"
 
   create_table "prediction_values", :force => true do |t|
     t.integer  "prediction_id"
-    t.float    "min"
-    t.float    "best"
-    t.float    "max"
+    t.float    "value"
     t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "prediction_values", ["prediction_id"], :name => "index_prediction_values_on_prediction_id"
+  add_index "prediction_values", ["year"], :name => "index_prediction_values_on_year"
 
   create_table "predictions", :force => true do |t|
     t.integer  "input_element_id"
@@ -245,6 +259,7 @@ ActiveRecord::Schema.define(:version => 20110714085756) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
+    t.string   "title"
   end
 
   add_index "predictions", ["input_element_id"], :name => "index_predictions_on_input_element_id"

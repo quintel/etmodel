@@ -13,16 +13,17 @@
 
 $slider-box-height: 22px
 
-.new-input-slider
+.slider-row, .new-input-slider, .valuees
+  // IE :(
   position: relative
 
+.new-input-slider
   // IE
   z-index: 10
 
   .slider-row
     min-height: $slider-box-height
 
-    // Clearfix.
     overflow: auto
 
   label, .reset, .decrease, .quinn, .increase, .output, .show-info

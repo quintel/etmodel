@@ -31,13 +31,13 @@ open-sourced with their kind permission. Quinn is released under the
 Downloads
 ---------
 
-[Everything (0.3.1)][tarball]
+[Everything (0.3.3)][tarball]
 :   Tarball containing JS, CSS, and images
 
-[Development Version (0.3.1)][development-js]
+[Development Version (0.3.3)][development-js]
 :   13.3kb, JS only, Uncompressed with comments
 
-[Production Version (0.3.1)][production-js]
+[Production Version (0.3.3)][production-js]
 :   1.54kb, JS only, Minified and Gzipped
 
 Table of Contents
@@ -329,6 +329,11 @@ need to alter the CSS. For example:
 History
 -------
 
+#### 0.3.3 _July 28th, 2011_
+
+Add a `disabledOpacity` option for controlling what opacity is used
+when disabling.
+
 #### 0.3.1 _July 21st, 2011_
 
 Small stylesheet adjustment to ensure that the slider handle may be
@@ -390,7 +395,7 @@ Opera and Internet Explorer are not yet complete.
 [us]:             http://documentcloud.github.com/underscore
 [easing]:         http://gsgd.co.uk/sandbox/jquery/easing
 
-[tarball]:        https://github.com/antw/quinn/tarball/v0.3.1
+[tarball]:        https://github.com/antw/quinn/tarball/v0.3.3
 [development-js]: http://antw.github.com/quinn/jquery.quinn.js
 [production-js]:  http://antw.github.com/quinn/jquery.quinn.min.js
 

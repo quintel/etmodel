@@ -101,20 +101,7 @@
       return false;
     }
 
-    // Determine which sliders can be altered; of the subordinates, some may
-    // already be at their maximum or minimum values, so there's no point
-    // changing those.
-    sliders = _.select(this.subordinates, function (sub) {
-      var value = this.oValues.value(sub);
-
-      if (amountChanged >= 0) {
-        // Master slider is being increased.
-        return (value > sub.selectable[0]);
-      } else {
-        // Master slider is being reduced.
-        return (value < sub.selectable[1]);
-      }
-    }, this);
+    sliders = _.clone(this.subordinates);
 
     if ((sLength = sliders.length) === 0) {
       // Return quickly if all none of the subordinate sliders can be moved

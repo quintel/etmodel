@@ -53,3 +53,12 @@ set :use_sudo,     false
 set :rvm_ruby_string, '1.9.2'
 
 set :local_db_name, 'etmodel_dev'
+
+# Useful, taken from the capistrano gem
+def rake_on_current(*tasks)
+  rails_env = fetch(:rails_env, "production")
+  rake = fetch(:rake, "rake")
+  tasks.each do |t|
+    run "if [ -d #{release_path} ]; then cd #{release_path}; else cd #{current_path}; fi; #{rake} RAILS_ENV=#{rails_env} #{t}"
+  end
+end

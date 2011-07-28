@@ -4,6 +4,7 @@
   var BODY_HIDE_EVENT, ACTIVE_VALUE_SELECTOR,
       INPUT_ELEMENT_T, VALUE_SELECTOR_T,
       HOLD_DELAY, HOLD_DURATION, HOLD_FPS,
+      IS_IE_LTE_EIGHT,
 
       floatPrecision, conversionsFromModel,
       abortValueSelection, bindValueSelectorBodyEvents,
@@ -25,6 +26,10 @@
   // Holds the ID of the currently displayed value selector so it can be
   // hidden if the user clicks outside of it.
   ACTIVE_VALUE_SELECTOR = null;
+
+  // Detect IE8 so that we can use the custom PNG when disabled, since it
+  // managed to screw up opacity so spectacularly.
+  IS_IE_LTE_EIGHT = ($.browser.msie && $.browser.version <= 8);
 
   // Templates.
   $(function () {
@@ -255,7 +260,10 @@
 
         // Disable effects on sliders which are part of a group, since the
         // animation can look a little jarring.
-        effects:  ! this.model.get('share_group')
+        effects:  ! this.model.get('share_group'),
+
+        // No opacity for IE <= 8.
+        disabledOpacity: (IS_IE_LTE_EIGHT ? 1.0 : 0.5)
       });
 
       // The group onChange needs to be bound before the InputElementView

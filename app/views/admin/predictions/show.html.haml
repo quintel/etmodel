@@ -7,17 +7,13 @@
   %thead
     %tr
       %th.tal year
-      %th.tal min
-      %th.tal best
-      %th.tal max
+      %th.tal value
       %th.tal
   %tbody
-    - @prediction.prediction_values.each do |entry|
+    - @prediction.values.each do |entry|
       %tr{cycles}
         %td= entry.year
-        %td= entry.min
-        %td= entry.best
-        %td= entry.max
+        %td= entry.value
         %td= link_to 'edit', edit_admin_prediction_value_path(entry)
 = link_to 'New', new_admin_prediction_value_path
 %br
@@ -29,16 +25,18 @@
       %th.tal impact
       %th.tal cost
       %th.tal year_start
+      %th.tal year_end
       %th.tal actor
       %th.tal description
       %th.tal 
   %tbody
-    - @prediction.prediction_measures.each do |entry|
+    - @prediction.measures.each do |entry|
       %tr{cycles}
         %td= entry.name
         %td= entry.impact
         %td= entry.cost
         %td= entry.year_start
+        %td= entry.year_end
         %td= entry.actor
         %td= entry.description
 

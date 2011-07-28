@@ -16,6 +16,8 @@
 #  show_point_label       :boolean(1)
 #  growth_chart           :boolean(1)
 #  key                    :string(255)
+#  max_axis_value         :float
+#  min_axis_value         :float
 #
 
 class OutputElement < ActiveRecord::Base

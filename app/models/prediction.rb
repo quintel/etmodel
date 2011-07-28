@@ -21,8 +21,10 @@ class Prediction < ActiveRecord::Base
     
   has_paper_trail
 
-  accepts_nested_attributes_for :values,   :allow_destroy => true, :reject_if => :all_blank
-  accepts_nested_attributes_for :measures, :allow_destroy => true, :reject_if => :all_blank
+  accepts_nested_attributes_for :values,   :allow_destroy => true, :reject_if => proc {|a| a[:year].blank? || a[:value].blank? }
+  accepts_nested_attributes_for :measures, :allow_destroy => true, :reject_if => proc {|a| a[:name].blank? }
+  
+  validates :title, :presence => true
   
   def last_value
     @last_value ||= values.future_first.first

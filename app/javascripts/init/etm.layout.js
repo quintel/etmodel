@@ -4,7 +4,7 @@
 
 //= require <backbone-0.3.3-min>
 
-//= require <jquery.quinn.js>
+//= require <jquery.quinn.min.js>
 
 //= require <init/always>
 //= require <output_elements>

@@ -89,7 +89,7 @@
     }
 
     // The current Quinn version.
-    Quinn.VERSION = '0.3.1';
+    Quinn.VERSION = '0.3.3';
 
     // ## Rendering
 
@@ -264,7 +264,11 @@
      */
     Quinn.prototype.disable = function () {
         this.isDisabled = true;
-        this.wrapper.addClass('disabled').css('opacity', 0.5);
+        this.wrapper.addClass('disabled');
+
+        if (this.options.disabledOpacity !== 1.0) {
+            this.wrapper.css('opacity', this.options.disabledOpacity);
+        }
     };
 
     /**
@@ -274,7 +278,11 @@
      */
     Quinn.prototype.enable = function () {
         this.isDisabled = false;
-        this.wrapper.removeClass('disabled').css('opacity', 1.0);
+        this.wrapper.removeClass('disabled');
+
+        if (this.options.disabledOpacity !== 1.0) {
+            this.wrapper.css('opacity', 1.0);
+        }
     };
 
     // ## Event Handlers
@@ -611,6 +619,12 @@
         // Disables the slider when initialized so that a user may not change
         // it's value.
         disable: false,
+
+        // By default, Quinn fades the opacity of the slider to 50% when
+        // disabled, however this may not work perfectly with older Internet
+        // Explorer versions when using transparent PNGs. Setting this to 1.0
+        // will tell Quinn not to fade the slider when disabled.
+        disabledOpacity: 0.5,
 
         // A callback which is run when changing the slider value. Additional
         // callbacks may be added with Quinn#bind('change').

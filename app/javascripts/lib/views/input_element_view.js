@@ -207,6 +207,7 @@
       this.conversions   = conversionsFromModel(this.model);
       this.conversion    = this.conversions[0];
       this.valueSelector = new ValueSelector({ view: this });
+      this.initialValue  = this.model.get('user_value');
 
       // Keeps track of intervals used to repeat stepDown and stepUp
       // operations when the user holds down the mouse button.
@@ -254,7 +255,7 @@
         range:    [ this.model.get('min_value'),
                     this.model.get('max_value') ],
 
-        value:      this.model.get('user_value'),
+        value:      this.initialValue,
         step:       this.model.get('step_value'),
         disable:    this.model.get('disabled'),
 
@@ -312,7 +313,7 @@
         this.enableButton('increase');
       }
 
-      if (value === this.model.get('start_value')) {
+      if (value === this.initialValue) {
         this.disableButton('reset');
       } else {
         this.enableButton('reset');
@@ -407,8 +408,15 @@
     /**
      * Resets the value of the slider to it's original value.
      */
-    resetValue: function () {
-      this.quinn.setValue(this.model.get('start_value'));
+    resetValue: function (event) {
+      // Sliders which are part of a balancer should reset the whole group.
+      // event will be false when the balancer calls resetValue so that
+      // resetValue can easily be called to reset each slider in turn.
+      if (event && this.model.get('share_group')) {
+        InputElement.Balancer.get(this.model.get('share_group')).resetAll();
+      } else {
+        this.quinn.setValue(this.initialValue);
+      }
     },
 
     /**

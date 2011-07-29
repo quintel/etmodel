@@ -198,9 +198,26 @@
             this.masterId === quinn.balanceId);
   };
 
+  /**
+   * Resetting a single slider in a group resets them all to their original
+   * values.
+   */
+  Balancer.prototype.resetAll = function () {
+    try {
+      this.isDisabled = true;
+      _.invoke(this.views, 'resetValue', false);
+    } finally {
+      this.isDisabled = false;
+    }
+  };
+
   // ## Event-Handling -------------------------------------------------------
 
   Balancer.prototype.onBegin = function (value, quinn) {
+    if (this.isDisabled) {
+      return true;
+    }
+
     // If no slider is already being adjusted, then this is when the
     // user begins moving a slider.
     if (this.masterId === null) {

@@ -1,7 +1,8 @@
 = semantic_form_for [:admin, @prediction] do |f|
+  = f.error_messages
   = f.label :input_element_id
   = f.select :input_element_id, InputElement.all.select{|x|!x.slide.nil?}.map{|x| [x.parsed_name_for_admin, x.id]}
-  = f.inputs :user, :expert, :curve_type, :description
+  = f.inputs :user, :title, :expert, :curve_type, :description
   = f.buttons
 
   %h3 Values
@@ -13,12 +14,14 @@
     = f.inputs :for => :values do |v|
       %tr
         %td= v.text_field :year
-        %td= v.text_field :best
-        %td= v.check_box :_destroy
+        %td= v.text_field :value
+        - unless v.object.new_record?
+          %td= v.check_box :_destroy
   %h3 Measures
   = f.inputs :for => :measures do |m|
     = m.inputs do
-      = m.inputs :name, :impact, :cost, :year_start, :actor, :description
-      = m.input :_destroy, :as => :boolean
+      = m.inputs :name, :impact, :cost, :year_start, :year_end, :actor, :description
+      - unless m.object.new_record?
+        = m.input :_destroy, :as => :boolean
 
 = link_to "back", admin_predictions_path

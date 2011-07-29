@@ -12,6 +12,8 @@
 #  updated_at        :datetime
 #  display_format    :string(255)
 #  reached_query     :string(255)
+#  target_query      :string(255)
+#  user_value_query  :string(255)
 #
 
 class PolicyGoal < ActiveRecord::Base

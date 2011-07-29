@@ -55,8 +55,6 @@ Etm::Application.routes.draw do
     
     resources :expert_predictions,
               :predictions,
-              :prediction_values,
-              :prediction_measures,
               :input_elements, 
               :year_values, 
               :tabs, 

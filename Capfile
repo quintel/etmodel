@@ -2,31 +2,10 @@ load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 require 'thinking_sphinx/deploy/capistrano'
 Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
 load 'lib/capistrano/db_recipes'
-
+load 'lib/capistrano/memcached'
+load 'lib/capistrano/sphinx'
 
 load 'config/deploy' # remove this line to skip loading any of the default tasks
-
-namespace :memcached do 
-  desc "Start memcached"
-  task :start, :roles => [:app] do
-    sudo "/etc/init.d/memcached start"
-  end
-
-  desc "Stop memcached"
-  task :stop, :roles => [:app] do
-    sudo "/etc/init.d/memcached stop"
-  end
-
-  desc "Restart memcached"
-  task :restart, :roles => [:app] do
-    sudo "/etc/init.d/memcached restart"
-  end        
-
-  desc "Flush memcached - this assumes memcached is on port 11211"
-  task :flush, :roles => [:app] do
-    run "echo 'flush_all' | nc -q 1 localhost 11211"
-  end     
-end
 
 namespace :deploy do
   task :copy_configuration_files do
@@ -34,27 +13,19 @@ namespace :deploy do
     run "cd #{release_path}; chmod 777 public/images public/stylesheets tmp"
     run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
     run "ln -nfs #{shared_path}/assets/pdf #{release_path}/public/pdf"
-    run "ln -nfs #{shared_path}/vendor_bundle #{release_path}/vendor/bundle"
     run "cd #{release_path} && bundle install --without development test"
 
     memcached.flush
-    #symlink_sphinx_indexes
   end
 
+  # with mod_rails these are a no-op
   task :start do ; end
   task :stop do ; end
+
   task :restart, :roles => :app, :except => { :no_release => true } do
-    # The above does not re-index. If any of your define_index blocks
-    # in your models have changed, you will need to perform an index.
-    # If these are changing frequently, you can use the following
-    # in place of running_start
-    # thinking_sphinx.stop
-    # thinking_sphinx.index
-    # thinking_sphinx.start
-
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+    memcached.restart
   end
-
 
   desc "Notify Hoptoad of the deployment"
   task :notify_hoptoad, :except => { :no_release => true } do
@@ -68,17 +39,9 @@ namespace :deploy do
   end
 end
 
-task :before_update_code, :roles => [:app] do
-  thinking_sphinx.stop
-end
-
-desc "Link up Sphinx's indexes."
-task :symlink_sphinx_indexes, :roles => [:app] do
-  run "ln -nfs #{shared_path}/db/sphinx #{release_path}/db/sphinx"
-end
-
-
 after "deploy:update_code", "deploy:copy_configuration_files"
-after "deploy", "deploy:migrate"
-after "deploy", "deploy:cleanup"
-after "deploy", "deploy:notify_hoptoad"
+# after "deploy", "deploy:migrate"
+# after "deploy", "deploy:cleanup" # why?
+# after "deploy", "deploy:notify_hoptoad"
+after "deploy:symlink", "sphinx:symlink_indexes"
+after "deploy:migrations", "sphinx:rebuild_and_restart"

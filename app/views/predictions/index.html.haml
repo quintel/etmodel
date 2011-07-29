@@ -14,7 +14,8 @@
         .color
         .label
           #{p.user.try(:name)}
-          (#{p.last_value.best} in #{p.last_value.year})
+          - if v = p.last_value
+            (#{v.value} in #{v.year})
   .prediction_details
     = render @prediction
 

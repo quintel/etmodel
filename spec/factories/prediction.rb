@@ -1,4 +1,5 @@
 Factory.define :prediction do |f|
+  f.title 'foobar'
   f.association :input_element, :factory => :input_element
   f.expert true
   f.curve_type 

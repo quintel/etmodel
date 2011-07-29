@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: interfaces
+#
+#  id         :integer(4)      not null, primary key
+#  key        :string(255)
+#  structure  :text
+#  enabled    :boolean(1)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Interface < ActiveRecord::Base
   has_paper_trail
   

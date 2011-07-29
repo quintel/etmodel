@@ -1,34 +1,31 @@
 = link_to "back", admin_predictions_path
 %h2
-  ==#{@prediction.input_element.name} (#{@prediction.input_element.id}) 
+  #{@prediction.input_element.name} (#{@prediction.input_element.id}) 
   %small= link_to 'edit', edit_admin_prediction_path(@prediction)
 
 %table{table_defaults}
   %thead
     %tr
-      %th.tal year
-      %th.tal value
-      %th.tal
+      %th year
+      %th value
   %tbody
     - @prediction.values.each do |entry|
       %tr{cycles}
         %td= entry.year
         %td= entry.value
-        %td= link_to 'edit', edit_admin_prediction_value_path(entry)
-= link_to 'New', new_admin_prediction_value_path
-%br
+
 %br
 %table{table_defaults}
   %thead
     %tr
-      %th.tal name
-      %th.tal impact
-      %th.tal cost
-      %th.tal year_start
-      %th.tal year_end
-      %th.tal actor
-      %th.tal description
-      %th.tal 
+      %th name
+      %th impact
+      %th cost
+      %th year_start
+      %th year_end
+      %th actor
+      %th description
+      %th 
   %tbody
     - @prediction.measures.each do |entry|
       %tr{cycles}
@@ -39,6 +36,3 @@
         %td= entry.year_end
         %td= entry.actor
         %td= entry.description
-
-        %td= link_to 'edit', edit_admin_prediction_measure_path(entry)
-= link_to 'New', new_admin_prediction_measure_path

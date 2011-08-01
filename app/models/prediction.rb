@@ -25,8 +25,21 @@ class Prediction < ActiveRecord::Base
   accepts_nested_attributes_for :measures, :allow_destroy => true, :reject_if => proc {|a| a[:name].blank? }
   
   validates :title, :presence => true
+  validates :input_element_id, :presence => true
   
   def last_value
     @last_value ||= values.future_first.first
+  end
+  
+  # Prepare blank records, useful when building forms
+  def prepare_nested_attributes
+    (5 - values.size).times { values.build }
+    (5 - measures.size).times { measures.build }
+  end
+  
+  # Prepare blank records, useful when building forms
+  def add_blank_nested_attributes
+    5.times { values.build }
+    5.times { measures.build }
   end
 end

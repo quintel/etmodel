@@ -1,9 +1,12 @@
-= semantic_form_for [:admin, @prediction] do |f|
+= simple_form_for [:admin, @prediction] do |f|
   = f.error_messages
-  = f.label :input_element_id
-  = f.select :input_element_id, InputElement.all.select{|x|!x.slide.nil?}.map{|x| [x.parsed_name_for_admin, x.id]}
-  = f.inputs :user, :title, :expert, :curve_type, :description
-  = f.buttons
+  = f.input :input_element_id, :collection => InputElement.all.select{|x|!x.slide.nil?}.map{|x| [x.parsed_name_for_admin, x.id]}
+  = f.input :user_id, :collection => User.all.map{|u| [u.email, u.id]}
+  = f.input :title, :required => false
+  = f.input :expert
+  = f.input :curve_type
+  = f.input :description
+  = f.button :submit
 
   %h3 Values
   %table
@@ -11,17 +14,22 @@
       %th Year
       %th Value
       %th Delete
-    = f.inputs :for => :values do |v|
+    = f.simple_fields_for :values do |v|
       %tr
         %td= v.text_field :year
         %td= v.text_field :value
         - unless v.object.new_record?
           %td= v.check_box :_destroy
   %h3 Measures
-  = f.inputs :for => :measures do |m|
-    = m.inputs do
-      = m.inputs :name, :impact, :cost, :year_start, :year_end, :actor, :description
-      - unless m.object.new_record?
-        = m.input :_destroy, :as => :boolean
+  = f.simple_fields_for :measures do |m|
+    = m.input :name, :required => false
+    = m.input :impact
+    = m.input :cost
+    = m.input :year_start
+    = m.input :year_end
+    = m.input :actor
+    = m.input :description
+    - unless m.object.new_record?
+      = m.input :_destroy, :as => :boolean
 
 = link_to "back", admin_predictions_path

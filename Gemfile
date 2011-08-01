@@ -16,6 +16,7 @@ gem 'ancestry', '~> 1.2.3'
 gem 'httparty', '~> 0.7.4'
 gem 'tabs_on_rails', '~>2.0.1'
 gem 'kaminari'
+gem 'simple_form'
 
 # javascript
 gem 'sprockets' # CHECK

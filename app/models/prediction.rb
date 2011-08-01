@@ -42,4 +42,8 @@ class Prediction < ActiveRecord::Base
     5.times { values.build }
     5.times { measures.build }
   end
+  
+  def values_to_a
+    values.map{|v| [v.year, v.value]}
+  end
 end

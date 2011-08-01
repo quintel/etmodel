@@ -1,13 +1,13 @@
 = stylesheet_link_tag 'prediction'
 = javascript_include_tag :defaults
+= sprocket_include_tag 'backcasting'
 
 .prediction
   .intro
     Hier kun je jouw scenario vergelijken met verwachtingen van experts. Jouw scenario valt binnen/buiten de expertverwachtingen. Deze verwachtingen zijn gebaseerd op een aantal maatregelen. Hoe denk jij dat de adoptie van elektrische auto’s zal verlopen?
   .slider_title= @input_element.name
   .upper_block
-    .chart
-      = image_tag "http://placekitten.com/350/200"
+    .chart#backcasting
     .available_predictions
       - @input_element.predictions.each do |p|
         .item
@@ -23,10 +23,15 @@
 
 :javascript
   $(function(){
+    // ajax loading of prediction details
     $("input[type=radio]").click(function(){
       var prediction_id = $(this).val();
       var url = "/predictions/" + prediction_id;
       console.log("Loading" + url);
       $(".prediction_details").load(url);
     });
+    
+    //charts
+    $.jqplot("backcasting", #{@input_element.predictions.map{|p| p.values_to_a}.to_json}
+    );
   });

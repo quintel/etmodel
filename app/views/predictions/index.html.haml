@@ -19,6 +19,8 @@
             = p.title
             - if v = p.last_value
               (#{v.value} in #{v.year})
+            - if current_user.try(:admin?)
+              = link_to 'edit', edit_admin_prediction_path(p), :target => '_new'
   .prediction_details
     = render @prediction
 

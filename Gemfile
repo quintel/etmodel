@@ -17,6 +17,7 @@ gem 'httparty', '~> 0.7.4'
 gem 'tabs_on_rails', '~>2.0.1'
 gem 'kaminari'
 gem 'simple_form'
+gem 'acts_as_commentable'
 
 # javascript
 gem 'sprockets' # CHECK

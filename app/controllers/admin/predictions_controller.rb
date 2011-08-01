@@ -7,11 +7,7 @@ class PredictionsController < BaseController
 
   def new
     @prediction = Prediction.new
-
-    5.times do
-      @prediction.measures.build
-      @prediction.values.build
-    end
+    @prediction.prepare_nested_attributes
   end
 
   def create
@@ -20,6 +16,7 @@ class PredictionsController < BaseController
       flash[:notice] = 'Prediction was successfully created.'
       redirect_to admin_predictions_path
     else
+      @prediction.prepare_nested_attributes
       render :action => 'new'
     end
   end
@@ -52,6 +49,7 @@ class PredictionsController < BaseController
 
   def edit
     @prediction = Prediction.find(params[:id])
+    @prediction.add_blank_nested_attributes
   end
   
 end

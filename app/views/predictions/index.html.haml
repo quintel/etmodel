@@ -32,8 +32,10 @@
     $("input[type=radio]").click(function(){
       var prediction_id = $(this).val();
       var url = "/predictions/" + prediction_id;
-      console.log("Loading" + url);
-      $(".prediction_details").load(url);
+      $(".prediction_details").busyBox({spinner: '<img src="/images/layout/ajax-loader.gif" />'});
+      $(".prediction_details").load(url, function() {
+        $(".prediction_details").busyBox('close');
+      });
     });
     
     //charts
@@ -53,7 +55,7 @@
     );
     
     // extra info links
-    $(".more_info a").click(function(event){
+    $(".more_info a").live('click', function(event){
       event.preventDefault();
       $(this).parent().find(".inline_description").toggle();
     });

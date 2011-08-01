@@ -1,6 +1,6 @@
 .header
-  %strong Predictionz
-  by
+  %strong= @prediction.title
+  \- by
   %strong= @prediction.user.try(:name)
   = @prediction.created_at.to_s(:medium)
   
@@ -16,10 +16,13 @@
         %th Uitvoerder
     %tbody
       - @prediction.measures.each do |m|
-        %tr
+        %tr{:class => cycle('even', 'odd')}
           %td= m.name
-          %td= m.year_start
-          %td= m.impact
-          %td= m.cost
+          %td
+            = m.year_start
+            - if m.year_end
+              \- #{m.year_end}
+          %td= PredictionMeasure::IMPACT[m.impact]
+          %td= PredictionMeasure::COST[m.cost]
           %td= m.actor
 .comments

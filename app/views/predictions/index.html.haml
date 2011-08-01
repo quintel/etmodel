@@ -5,17 +5,19 @@
   .intro
     Hier kun je jouw scenario vergelijken met verwachtingen van experts. Jouw scenario valt binnen/buiten de expertverwachtingen. Deze verwachtingen zijn gebaseerd op een aantal maatregelen. Hoe denk jij dat de adoptie van elektrische auto’s zal verlopen?
   .slider_title= @input_element.name
-  .chart
-    = image_tag "http://placekitten.com/350/200"
-  .available_predictions
-    - @input_element.predictions.each do |p|
-      .item
-        = radio_button_tag :prediction_id, p.id
-        .color
-        .label
-          #{p.user.try(:name)}
-          - if v = p.last_value
-            (#{v.value} in #{v.year})
+  .upper_block
+    .chart
+      = image_tag "http://placekitten.com/350/200"
+    .available_predictions
+      - @input_element.predictions.each do |p|
+        .item
+          = radio_button_tag :prediction_id, p.id, (p.id == @prediction.id)
+          .color
+          .label
+            #{p.user.try(:name)}, 
+            = p.title
+            - if v = p.last_value
+              (#{v.value} in #{v.year})
   .prediction_details
     = render @prediction
 

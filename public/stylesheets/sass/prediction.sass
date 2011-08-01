@@ -1,4 +1,6 @@
 .prediction
+  font-family: 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif
+  font-size: 12px
   width: 960px
   height: 650px
   .intro
@@ -6,32 +8,55 @@
     margin: 1em 0
     font-size: 1.3em
     font-weight: bold
-  .chart
-    border:  1px solid red
-    width: 350px
+  .upper_block
     height: 200px
-    float: left
-  .available_predictions
-    width: 590px
-    height: 200px
-    border:  1px solid black
-    float: left
-    margin-left: 10px
-    .item
-      clear: left
-      .color
-        background: red
-        width: 20px
-        height: 5px
-        float: left
-        margin: 10px 10px
-      input[type=radio]
-        margin: 5px
-        float: left
-        .label
+    .chart
+      border:  1px solid red
+      width: 350px
+      height: 200px
+      float: left
+    .available_predictions
+      width: 590px
+      height: 200px
+      border:  1px solid black
+      float: left
+      margin-left: 10px
+      .item
+        clear: left
+        .color
+          background: red
+          width: 20px
+          height: 5px
           float: left
+          margin: 10px 10px
+        input[type=radio]
+          margin: 5px
+          float: left
+          .label
+            float: left
   .prediction_details
+    clear: both
+    margin-top: 10px
+    width: 940px
+    border: 2px solid #ccc
+    padding: 5px
     .header
     .description
+      line-height: 20px
     .measures
+      margin-top: 20px
+      table
+        width: 940px
+        border-collapse: collapse
+        tr
+          border: 1px solid #879EC2
+          &.even
+            background-color: #B8C6DC
+          &.odd
+            background-color: #fff
+        td, th
+          font-size: 12px
+          padding: 5px
+        th
+          text-align: left
     .comments

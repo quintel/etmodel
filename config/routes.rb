@@ -98,7 +98,10 @@ Etm::Application.routes.draw do
     end
   end
   
-  resources :predictions, :only => [:index, :show]
+  resources :predictions, :only => [:index, :show] do
+    post :comment, :on => :member
+  end
+  
   resources :prediction_measures, :only => :index
   
 

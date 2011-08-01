@@ -31,3 +31,18 @@
           %td= PredictionMeasure::COST[m.cost]
           %td= m.actor
 .comments
+  %h3 Comments
+  - for c in @prediction.comments
+    .comment
+      .author= c.author_name
+      .date= c.created_at
+      .body= c.body
+  
+  = simple_form_for @comment, :url => comment_prediction_path(@prediction) do |f|
+    %h4 Post a new comment
+    - unless current_user
+      = f.input :email
+      = f.input :name
+    = f.input :body, :label => false
+    = f.button :submit
+

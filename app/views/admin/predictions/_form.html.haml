@@ -23,10 +23,10 @@
   %h3 Measures
   = f.simple_fields_for :measures do |m|
     = m.input :name, :required => false
-    = m.input :impact
-    = m.input :cost
-    = m.input :year_start
-    = m.input :year_end
+    = m.input :impact, :collection => PredictionMeasure::IMPACT.invert.to_a
+    = m.input :cost, :collection => PredictionMeasure::COST.invert.to_a
+    = m.input :year_start, :collection => 2000.step(2050,5).to_a
+    = m.input :year_end, :collection => 2000.step(2050,5).to_a
     = m.input :actor
     = m.input :description
     - unless m.object.new_record?

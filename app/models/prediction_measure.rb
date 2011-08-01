@@ -21,4 +21,18 @@ class PredictionMeasure < ActiveRecord::Base
   has_paper_trail
   
   validates :name, :presence => true
+  
+  IMPACT = {
+    0 => '+-',
+    1 => '+',
+    2 => '++',
+    3 => '+++'
+  }
+  
+  COST = {
+    0 => '-',
+    1 => '$',
+    2 => '$$',
+    3 => '$$$'
+  }
 end

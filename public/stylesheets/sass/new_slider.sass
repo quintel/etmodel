@@ -23,10 +23,9 @@ $slider-box-height: 22px
 
   .slider-row
     min-height: $slider-box-height
-
     overflow: auto
 
-  label, .reset, .decrease, .quinn, .increase, .output, .show-info
+  label, .sublabel, .reset, .decrease, .quinn, .increase, .output, .show-info
     display: block
     float: left
     text-align: left
@@ -34,7 +33,6 @@ $slider-box-height: 22px
     margin-bottom: 5px
 
   label
-    float: left
     line-height: 15px
     width: 124px
 
@@ -43,6 +41,12 @@ $slider-box-height: 22px
 
   .quinn
     width: 120px
+
+  .sublabel
+    font-size: 10px
+    color: #666
+    position: absolute
+    right: 250px
 
   .reset, .decrease, .increase, .show-info
     background: url(/images/slider/buttons.png) no-repeat
@@ -102,9 +106,12 @@ $slider-box-height: 22px
   .reset, .decrease, .increase
     visibility: hidden
 
-  &:hover
+  .slider-row:hover
     .reset, .decrease, .increase
       visibility: visible
+
+    .sublabel
+      display: none
 
   // Custom value selection, and flexible input values.
   .value-selector

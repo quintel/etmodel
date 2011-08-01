@@ -32,6 +32,17 @@
     });
     
     //charts
-    $.jqplot("backcasting", #{@input_element.predictions.map{|p| p.values_to_a}.to_json}
+    $.jqplot("backcasting", #{@input_element.predictions.map{|p| p.values_to_a}.to_json}, {
+        grid: {
+          background: '#ffffff',
+          borderWidth: 0,
+          borderColor: '#ffffff',
+          shadow: false
+        },
+        axes:{
+          xaxis:{tickOptions:{formatString:'%.0f'}},
+          yaxis:{tickOptions:{formatString:'%.0f'}}
+        }
+      }
     );
   });

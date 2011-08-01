@@ -1,7 +1,7 @@
 class PredictionsController < ApplicationController
   def index
     @input_element = InputElement.find(params[:input_element_id])
-    @prediction = @input_element.predictions.find(params[:prediction_id]) || @input_element.predictions.first
+    @prediction = @input_element.predictions.find(params[:prediction_id]) rescue @input_element.predictions.first
     @comment = Comment.new
     @comment.commentable = @prediction#(:commentable_id => @prediction.id, :commentable_type => 'Prediction')
   end

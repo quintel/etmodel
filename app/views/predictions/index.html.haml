@@ -15,7 +15,9 @@
           = radio_button_tag :prediction_id, p.id, (p.id == @prediction.id)
           .color{:style => "background: #{cycle(*colours)}"}
           .label
-            #{p.user.try(:name)}, 
+            #{p.user.try(:name)},
+            - if p.user.try(:company_school)
+              #{p.user.company_school},
             = p.title
             - if v = p.last_value
               (#{v.value} in #{v.year})

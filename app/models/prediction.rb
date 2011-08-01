@@ -16,7 +16,7 @@
 class Prediction < ActiveRecord::Base
   belongs_to :user
   belongs_to :input_element
-  has_many :values,   :class_name => "PredictionValue",   :dependent => :destroy, :order => 'year ASC'
+  has_many :values,   :class_name => "PredictionValue",   :dependent => :destroy
   has_many :measures, :class_name => "PredictionMeasure", :dependent => :destroy
     
   has_paper_trail

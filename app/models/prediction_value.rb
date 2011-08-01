@@ -18,7 +18,5 @@ class PredictionValue < ActiveRecord::Base
   validates :value, :presence => true
   validates :year, :presence => true
   
-  default_scope order('year')
-  
   scope :future_first, order("year DESC")
 end

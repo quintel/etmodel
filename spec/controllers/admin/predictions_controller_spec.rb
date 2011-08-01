@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe Admin::PredictionsController do
   render_views
-  let!(:prediction) { Factory :prediction }
+  let(:input_element) { Factory.create :input_element }
+  let!(:prediction)   { Factory.create :prediction }
   
   before do
     controller.class.skip_before_filter :restrict_to_admin
@@ -29,7 +30,8 @@ describe Admin::PredictionsController do
   describe "POST create" do
     before do
       @old_prediction_count = Prediction.count
-      post :create, :prediction => Factory.attributes_for(:prediction)
+      attributes = Factory.attributes_for(:prediction).merge({:input_element_id => input_element.id})
+      post :create, :prediction => attributes
     end
         
     it "should create a new prediction" do
@@ -59,7 +61,7 @@ describe Admin::PredictionsController do
 
   describe "PUT update" do
     before do
-      @prediction = Factory :prediction
+      @prediction = Factory.create :prediction
       put :update, :id => @prediction.id, :prediction => { :description => 'this is a other description'}
     end
     
@@ -68,7 +70,7 @@ describe Admin::PredictionsController do
 
   describe "DELETE destroy" do
     before do
-      @prediction = Factory :prediction
+      @prediction = Factory.create :prediction
       @old_prediction_count = Prediction.count
       delete :destroy, :id => @prediction.id
     end
@@ -78,5 +80,4 @@ describe Admin::PredictionsController do
     end
     it { should redirect_to(admin_predictions_path)}
   end
-
 end

@@ -20,7 +20,10 @@
         %td= prediction.user.try(:name)
         %td= prediction.expert
         %td= prediction.curve_type
-        %td= prediction.description
-        %td= link_to 'edit', edit_admin_prediction_path(prediction)
+        %td= truncate(prediction.description)
+        %td
+          = link_to 'edit', edit_admin_prediction_path(prediction)
+          |
+          = link_to 'delete', admin_prediction_path(prediction), :method => :delete, :confirm => 'Are you sure?'
 
 %p= link_to 'New', new_admin_prediction_path

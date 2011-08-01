@@ -17,7 +17,12 @@
     %tbody
       - @prediction.measures.each do |m|
         %tr{:class => cycle('even', 'odd')}
-          %td= m.name
+          %td
+            = m.name
+            - if m.description.present?
+              %span.more_info
+                = link_to 'info', '#'
+                .inline_description= m.description
           %td
             = m.year_start
             - if m.year_end

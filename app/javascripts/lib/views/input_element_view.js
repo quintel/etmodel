@@ -237,8 +237,9 @@
 
       this.el.addClass('new-input-slider').html(
         INPUT_ELEMENT_T({
-          name: this.model.get('translated_name'),
-          info: this.el.find('.info-box .text').text()
+          name:     this.model.get('translated_name'),
+          info:     this.el.find('.info-box .text').text(),
+          sublabel: this.model.get('label')
         })
       );
 

@@ -1,0 +1,26 @@
+<script id="input-element-template" type="text/template">
+    <div class="slider-row">
+        <label><%%= name %></label>
+
+        <%% if (sublabel) { %>
+            <div class="sublabel"><%%= sublabel %></div>
+        <%% } %>
+
+        <div class="slider-controls">
+            <div class="reset"></div>
+            <div class="decrease"></div>
+
+            <div class="quinn"></div>
+
+            <div class="increase"></div>
+            <div class="output"></div>
+            <div class="show-info"></div>
+        </div>
+    </div>
+
+    <div class="info-wrap">
+        <div class="info">
+            <%%= info %>
+        </div>
+    </div>
+</script>

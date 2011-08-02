@@ -31,3 +31,8 @@ public/sprockets
 coverage/*
 spec/controllers/coverage/*
 spec/models/coverage/*
+.sass-cache/*
+
+# Quinn stylesheet needs to be tracked, at least until Rails 3.1 when it
+# can be used straight from vendor/
+!public/stylesheets/quinn.css

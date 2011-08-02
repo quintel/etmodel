@@ -65,9 +65,12 @@ var InputElementList = Backbone.Collection.extend({
   model : InputElement,
 
   initialize : function() {
-    this.inputElements = {};
+    this.inputElements     = {};
     this.inputElementViews = {};
+
     this.shareGroups = {};
+    this.balancers   = {};
+
     this.openInputElementInfoBox;
   },
 
@@ -88,7 +91,7 @@ var InputElementList = Backbone.Collection.extend({
 
   initialize_user_values : function(user_value_hash) {
     this.each(function(input_element) {
-      var values = user_value_hash[input_element.get('input_id')+''];
+      var values = user_value_hash['' + input_element.get('input_id')];
       input_element.set_min_value(values.min_value);
       input_element.set_max_value(values.max_value);
       input_element.set_start_value(values.start_value);
@@ -125,13 +128,15 @@ var InputElementList = Backbone.Collection.extend({
   addInputElement:function(inputElement, options) {
     var options = inputElement.ui_options;
     this.inputElements[inputElement.id] = inputElement;
-    var inputElementView = new InputElementView({model : inputElement, element : options.element});
+    var inputElementView = new InputElementView({model : inputElement, el : options.element});
     // The following binding was for obscure reasons preventing the videos
     // to work. Commented it out. Investigate. PZ Fri 3 Jun 2011 16:34:36 CEST
     // inputElementView.bind('show', $.proxy(this.handleInputElementInfoBoxShowed, this));
     
     this.inputElementViews[inputElement.id] = inputElementView;
-    inputElementView.sliderView.bind("change", $.proxy(this.handleUpdate, this));
+    inputElementView.bind("change", $.proxy(this.handleUpdate, this));
+
+    return true;
     this.initShareGroup(inputElement);
   },
   
@@ -154,6 +159,9 @@ var InputElementList = Backbone.Collection.extend({
       var shareGroup = this.getOrCreateShareGroup(shareGroupKey);
       shareGroup.bind("slider_updated",$.proxy(function(){ inputElement.markDirty();},this)); //set all sliders from same sharegroup to dirty when one is touched
       shareGroup.addSlider(inputElementView.sliderView.sliderVO);
+
+      var balancer = this.getOrCreateBalancer(shareGroupKey);
+      balancer.add(inputElementView);
     }
   },
 
@@ -166,6 +174,14 @@ var InputElementList = Backbone.Collection.extend({
       this.shareGroups[shareGroup] = new SliderGroup({'total_value':100}); // add group if not created yet
     
     return this.shareGroups[shareGroup];
+  },
+
+  getOrCreateBalancer: function(name) {
+    if (! this.balancers.hasOwnProperty(name)) {
+      this.balancers[name] = new InputElementGroup({ max: 100 });
+    }
+
+    return this.balancers[name];
   },
 
   /**

@@ -16,6 +16,7 @@
 //= require <lib/models/chart_serie.js>
 //= require <lib/models/block_chart_serie.js>
 //= require <lib/models/input_element.js>
+//= require <lib/models/input_element_balancer.js>
 //= require <lib/models/metric.js>
 //= require <lib/models/gquery.js>
 //= require <lib/models/peak_load.js>

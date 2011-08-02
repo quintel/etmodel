@@ -24,6 +24,8 @@
 #
 
 class InputElement < ActiveRecord::Base
+  CONVERSIONS = YAML.load(Rails.root.join('db', 'unit_conversions.yml'))
+
   include AreaDependent
   has_paper_trail
 
@@ -137,18 +139,27 @@ class InputElement < ActiveRecord::Base
     has_locked_input_element_type?(input_element_type)
   end
 
+  # Retrieves an array of suitable unit conversions for the element. Allows
+  # the user to swap between different unit types in the UI.
+  #
+  # @return [Array(Hash)]
+  #
+  def conversions
+    CONVERSIONS[key] || Array.new
+  end
+
   #############################################
   # Methods that interact with a users values
   #############################################
 
   def as_json(options = {})
-    super(:only => [:id, :input_id, :name, :unit, :share_group, :factor], 
+    super(:only => [:id, :input_id, :name, :unit, :share_group, :factor],
       :methods => [ 
         :step_value, 
         :number_to_round_with,
         :output, :user_value, :disabled, :translated_name, 
         :semi_unadaptable,:disabled_with_message, 
-        :input_element_type, :has_flash_movie])
+        :input_element_type, :has_flash_movie, :conversions])
   end
 
   def translated_name

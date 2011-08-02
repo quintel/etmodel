@@ -5,6 +5,9 @@
   color: #333
   min-width: 418px
 
+  .accordion_element
+    position: relative
+
 
   ul
     margin: 0
@@ -119,8 +122,7 @@
     clear: both
     width: 100%
     list-style: none
-    overflow: hidden
-    margin: 5px 0 0
+    overflow: visible
     padding: 0
 
     img.subheader_image
@@ -207,6 +209,7 @@
     div.sub_header
       text-align: right
       color: #aaa
+      overflow: auto
       a.expert_header
         float: left
     
@@ -216,6 +219,7 @@
       color: #aaa
       border-top: 1px solid #aaa
       margin-top: 5px
+      overflow: hidden
 
 
     span.subheader_arrow

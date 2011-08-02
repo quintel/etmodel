@@ -8,7 +8,7 @@
     %div
       =image_tag("layout/#{(release.release_type == 'radio' ? "speaker.jpeg" : "pdf_icon.gif")}", :class =>"left", :size=>"35x40",:style =>"padding-right:10px")
     %strong= release.medium
-    %small= format_date_nicely_veryshort(release.release_date)
+    %small= l release.release_date, :format => :date_only
     %br
     = link_to(release.title ? release.title : "Open persbericht", release.link, :target => '_blank')
     %h3

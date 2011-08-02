@@ -2,7 +2,7 @@
 #
 # Use this as the base for the locale file of your language.
 
-"en-US":
+en:
   date:
     formats:
       default: "%Y-%m-%d"
@@ -64,6 +64,7 @@
       default: "%a, %d %b %Y %H:%M:%S %z"
       short: "%d %b %H:%M"
       long: "%B %d, %Y %H:%M"
+      date_only: "%Y-%m-%d"
     am: "am"
     pm: "pm"
 

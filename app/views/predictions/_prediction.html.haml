@@ -2,7 +2,7 @@
   %strong= @prediction.title
   \- by
   %strong= @prediction.user.try(:name)
-  = @prediction.created_at.to_s(:medium)
+  = l(@prediction.created_at, :format => :long)
   
 .description
   = @prediction.description
@@ -35,7 +35,7 @@
   - for c in @prediction.comments
     .comment
       .author= c.author_name
-      .date= c.created_at
+      .date= l c.created_at, :format => :long
       .body= c.body
   
   = simple_form_for @comment, :url => comment_prediction_path(@prediction) do |f|

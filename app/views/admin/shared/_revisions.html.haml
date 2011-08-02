@@ -30,7 +30,7 @@
         - else
           = version.event
       %td
-        %small= format_date_nicely_with_time version.created_at
+        %small= l version.created_at, :format => :long
       %td
         = link_to 'show', :action => :show, :id => versioned, :version_id => version.id
         = link_to 'edit', :action => :edit, :id => versioned, :version_id => version.id

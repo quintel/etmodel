@@ -34,9 +34,11 @@
   %h3 Comments
   - for c in @prediction.comments
     .comment
+      .avatar= image_tag('user_missing.png')
       .author= c.author_name
       .date= l c.created_at, :format => :long
       .body= c.body
+      .clear
   
   = simple_form_for @comment, :url => comment_prediction_path(@prediction) do |f|
     %h4 Post a new comment

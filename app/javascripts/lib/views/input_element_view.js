@@ -241,7 +241,8 @@
           info:             this.el.find('.info-box .text').text(),
           sublabel:         this.model.get('label'),
           predictions:      this.model.get('has_predictions'),
-          predictions_link: "/predictions?input_element_id=" + this.model.get("id")
+          input_element_id: this.model.get("id"),
+          end_year:         App.settings.get("end_year")
         })
       );
 

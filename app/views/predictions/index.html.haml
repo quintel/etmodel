@@ -1,7 +1,17 @@
 = stylesheet_link_tag 'prediction'
 = javascript_include_tag :defaults
 = sprocket_include_tag 'backcasting'
-- colours = ["F00", "0F0", "00F", "FF0", "F0F", "0FF"]
+:ruby
+  colours = ["F00", "0F0", "00F", "FF0", "F0F", "0FF"]
+  series = @input_element.predictions.map{|p| p.values_to_a}
+  series_options = series.map{|x| {}}
+  # To show the vertical bar representing the scenario end year I must add the
+  # serie options as the last item.
+  # TODO: refactor
+  if @end_year
+    series << [[@end_year, @min_value], [@end_year, @max_value]]
+    series_options << { lineWidth: 1, color: "ff0000", markerOptions: { show: false}}
+  end
 
 .prediction
   .intro
@@ -39,7 +49,7 @@
     });
     
     //charts
-    $.jqplot("backcasting", #{@input_element.predictions.map{|p| p.values_to_a}.to_json}, {
+    $.jqplot("backcasting", #{series.to_json}, {
         grid: {
           background: '#ffffff',
           borderWidth: 0,
@@ -50,7 +60,8 @@
           xaxis:{tickOptions:{formatString:'%.0f'}},
           yaxis:{tickOptions:{formatString:'%.0f'}}
         },
-        seriesColors: #{colours.to_json}
+        seriesColors: #{colours.to_json},
+        series: #{series_options.to_json}
       }
     );
     

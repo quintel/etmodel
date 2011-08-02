@@ -1,9 +1,13 @@
 class PredictionsController < ApplicationController
   def index
     @input_element = InputElement.find(params[:input_element_id])
-    @prediction = @input_element.predictions.find(params[:prediction_id]) rescue @input_element.predictions.first
+    @predictions = @input_element.predictions
+    @prediction  = @predictions.find(params[:prediction_id]) rescue @predictions.first
     @comment = Comment.new
-    @comment.commentable = @prediction#(:commentable_id => @prediction.id, :commentable_type => 'Prediction')
+    @comment.commentable = @prediction
+    @end_year = params[:end_year]
+    @min_value = @predictions.map(&:min_value).min
+    @max_value = @predictions.map(&:max_value).max
   end
   
   def show

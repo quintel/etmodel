@@ -147,6 +147,11 @@ class InputElement < ActiveRecord::Base
   def conversions
     CONVERSIONS[key] || Array.new
   end
+  
+  def has_predictions?
+    predictions.any?
+  end  
+  alias_method :has_predictions, :has_predictions?
 
   #############################################
   # Methods that interact with a users values
@@ -158,7 +163,7 @@ class InputElement < ActiveRecord::Base
         :step_value, 
         :number_to_round_with,
         :output, :user_value, :disabled, :translated_name, 
-        :semi_unadaptable,:disabled_with_message, 
+        :semi_unadaptable,:disabled_with_message, :has_predictions,
         :input_element_type, :has_flash_movie, :conversions])
   end
 

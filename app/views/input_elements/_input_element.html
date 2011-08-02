@@ -1,6 +1,11 @@
 <script id="input-element-template" type="text/template">
     <div class="slider-row">
-        <label><%%= name %></label>
+        <label>
+          <%%= name %>
+          <%% if (predictions) { %>
+              <a href="<%%= predictions_link %>" class="prediction">Predictions</a>
+          <%% } %>
+        </label>
 
         <%% if (sublabel) { %>
             <div class="sublabel"><%%= sublabel %></div>

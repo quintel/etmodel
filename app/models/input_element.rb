@@ -149,6 +149,7 @@ class InputElement < ActiveRecord::Base
   end
   
   def has_predictions?
+    return false unless Current.backcasting_enabled
     predictions.any?
   end  
   alias_method :has_predictions, :has_predictions?

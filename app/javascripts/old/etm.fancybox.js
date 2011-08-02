@@ -106,7 +106,7 @@ $(document).ready(function() {
       height   : 650,
       titleShow: false,
       padding  : 0,
-      scrolling: 'no',
+      scrolling: 'auto',
       type     : 'iframe',
       ajax : {
         type  : "GET"

@@ -69,6 +69,14 @@ class Current
   def subdomain=(subdomain)
     session[:subdomain] = subdomain
   end
+  
+  def backcasting_enabled
+    APP_CONFIG[:enable_backcasting] && session[:backcasting_enabled]
+  end
+
+  def backcasting_enabled=(x)
+    session[:backcasting_enabled] = x
+  end
 
   ##
   # Use for pages that should only be shown once to a user.

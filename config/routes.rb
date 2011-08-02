@@ -101,9 +101,6 @@ Etm::Application.routes.draw do
   resources :predictions, :only => [:index, :show] do
     post :comment, :on => :member
   end
-  
-  resources :prediction_measures, :only => :index
-  
 
   match '/select_movie/:id'                => 'pages#select_movie'
   match '/units'                           => 'pages#units'

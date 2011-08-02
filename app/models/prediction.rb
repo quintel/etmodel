@@ -47,4 +47,12 @@ class Prediction < ActiveRecord::Base
   def values_to_a
     values.map{|v| [v.year, v.value]}
   end
+  
+  def max_value
+    values.map(&:value).compact.max
+  end
+  
+  def min_value
+    values.map(&:value).compact.min
+  end
 end

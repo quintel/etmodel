@@ -5,7 +5,7 @@
   = l(@prediction.created_at, :format => :long)
   
 .description
-  = @prediction.description
+  = smart_truncate @prediction.description, :length => 250
 .measures
   %table
     %thead

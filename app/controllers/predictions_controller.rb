@@ -13,7 +13,7 @@ class PredictionsController < ApplicationController
   def show
     @prediction = Prediction.find params[:id]
     @comment = Comment.new
-    @comment.commentable = @prediction#(:commentable_id => @prediction.id, :commentable_type => 'Prediction')
+    @comment.commentable = @prediction
     render :layout => false if request.xhr?    
   end
   

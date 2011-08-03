@@ -2,7 +2,7 @@
   %strong= @prediction.title
   \- by
   %strong= @prediction.user.try(:name)
-  = l(@prediction.created_at, :format => :long)
+  = l(@prediction.created_at, :format => :date_only)
   
 .description
   = smart_truncate @prediction.description, :length => 250

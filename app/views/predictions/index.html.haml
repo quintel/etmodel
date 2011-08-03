@@ -8,14 +8,14 @@
   # To show the vertical bar representing the scenario end year I must add the
   # serie options as the last item.
   # TODO: refactor
-  if @end_year
+  if @end_year && @end_year.to_i != 2050
     series << [[@end_year, @min_value], [@end_year, @max_value]]
     series_options << { lineWidth: 1, color: "ff0000", markerOptions: { show: false}}
   end
 
 .prediction
   .intro
-    Hier kun je jouw scenario vergelijken met verwachtingen van experts. Jouw scenario valt binnen/buiten de expertverwachtingen. Deze verwachtingen zijn gebaseerd op een aantal maatregelen. Hoe denk jij dat de adoptie van elektrische auto’s zal verlopen?
+    Hier kun je jouw scenario vergelijken met verwachtingen van experts. Jouw scenario valt binnen/buiten de expertverwachtingen.
   .slider_title= @input_element.name
   .upper_block
     .chart#backcasting
@@ -30,7 +30,7 @@
               #{p.user.company_school},
             = p.title
             - if v = p.last_value
-              (#{v.value} in #{v.year})
+              (#{"%0.f" % v.value}#{@input_element.unit} in #{v.year})
             - if current_user.try(:admin?)
               = link_to 'edit', edit_admin_prediction_path(p), :target => '_new'
   .prediction_details

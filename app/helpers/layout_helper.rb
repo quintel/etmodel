@@ -26,6 +26,17 @@ module LayoutHelper
       end
     end
   end
+  
+  # Cuts the text to the desired length and adds a js-enabled more link
+  def smart_truncate(text, opts = {})
+    opts.reverse_merge!(:length => 80)
+    return text unless text.length > opts[:length]      
+    short = content_tag :span, truncate(text, :length => opts[:length]), :class => '_truncated'
+    long  = content_tag :span, text, :class => '_original', :style => 'display: none'
+    link  = link_to_function 'more..', '$(this).siblings("._original").show();$(this).siblings("._truncated").hide();$(this).hide()'
+    out   = short + link + long
+    out.html_safe
+  end
 
   # TODO move controller_name logic to Tab
   def tab(title, controller_name = title, action_name = nil)

@@ -38,6 +38,24 @@
 
 :javascript
   $(function(){
+
+    // let's prepare the json data produced on the ruby side
+    var chart_data = {
+      series: #{series.to_json},
+      series_options: #{series_options.to_json},
+      colours: #{colours.to_json}
+    }
+
+    // let's get the current slider value
+    if (parent && parent.input_elements) {
+      console.log("Yo!");
+      var user_value = parent.input_elements.get(#{@input_element.id}).get('user_value');
+      console.log("User value: " + user_value);
+      chart_data.series.push([[2010,0],[#{@end_year}, 500]]);
+    } else {
+      console.log(":(");
+    }
+
     // ajax loading of prediction details
     $("input[type=radio]").click(function(){
       var prediction_id = $(this).val();
@@ -49,7 +67,7 @@
     });
     
     //charts
-    $.jqplot("backcasting", #{series.to_json}, {
+    $.jqplot("backcasting", chart_data.series, {
         grid: {
           background: '#ffffff',
           borderWidth: 0,
@@ -60,8 +78,8 @@
           xaxis:{tickOptions:{formatString:'%.0f'}},
           yaxis:{tickOptions:{formatString:'%.0f'}}
         },
-        seriesColors: #{colours.to_json},
-        series: #{series_options.to_json}
+        seriesColors: chart_data.colours,
+        series: chart_data.series_options
       }
     );
     

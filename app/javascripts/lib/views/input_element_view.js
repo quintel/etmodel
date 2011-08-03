@@ -214,6 +214,9 @@
       this.incrementInterval = null;
 
       this.model.bind('change', this.updateFromModel);
+      this.model.bind('change:user_value', _.bind(function () {
+        this.setTransientValue(this.model.get('user_value'));
+      }, this));
 
       // make the toggle red if it's semi unadaptable and in a municipality.
       if (App.municipalityController.isMunicipality() &&

@@ -43,8 +43,14 @@ class User < ActiveRecord::Base
   validates_presence_of :name
 
   acts_as_authentic
+  
+  scope :ordered, order('name')
 
   def admin?
     role.try(:name) == "admin"
+  end
+  
+  def backend_label
+    "#{name} - #{email}"
   end
 end

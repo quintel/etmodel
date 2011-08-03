@@ -34,14 +34,14 @@ class Prediction < ActiveRecord::Base
   
   # Prepare blank records, useful when building forms
   def prepare_nested_attributes
-    (5 - values.size).times { values.build }
-    (5 - measures.size).times { measures.build }
+    (8 - values.size).times { values.build }
+    (8 - measures.size).times { measures.build }
   end
   
   # Prepare blank records, useful when building forms
   def add_blank_nested_attributes
-    5.times { values.build }
-    5.times { measures.build }
+    8.times { values.build }
+    8.times { measures.build }
   end
   
   def values_to_a

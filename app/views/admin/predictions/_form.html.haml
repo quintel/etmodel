@@ -1,7 +1,7 @@
 = simple_form_for [:admin, @prediction] do |f|
   = f.error_messages
   = f.input :input_element_id, :collection => InputElement.all.select{|x|!x.slide.nil?}.map{|x| [x.parsed_name_for_admin, x.id]}
-  = f.input :user_id, :collection => User.all.map{|u| [u.email, u.id]}
+  = f.input :user_id, :collection => User.ordered.map{|u| [u.backend_label, u.id]}
   = f.input :title, :required => false
   = f.input :expert
   = f.input :curve_type

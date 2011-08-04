@@ -1,3 +1,5 @@
-Factory.define :carrier do |carrier|
-  carrier.name {'carrier_name'}
+FactoryGirl.define do
+  factory :carrier do
+    name 'carrier_name'
+  end
 end

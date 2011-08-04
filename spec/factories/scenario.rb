@@ -1,5 +1,5 @@
-Factory.define :scenario do |scenario|
-  scenario.title {"Some scenario"}
+FactoryGirl.define do
+  factory :scenario do
+    title "Some scenario"
+  end
 end
-
-

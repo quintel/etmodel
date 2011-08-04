@@ -1,7 +1,9 @@
-Factory.define :role do |f|
-  f.name 'user'
-end
+FactoryGirl.define do
+  factory :role do
+    name 'user'
+  end
 
-Factory.define :admin_role, :parent => :role do |f|
-  f.name 'admin'
+  factory :admin_role, :parent => :role do
+    name 'admin'
+  end
 end

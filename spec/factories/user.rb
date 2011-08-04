@@ -1,10 +1,12 @@
-Factory.define :user do |user|
-  user.name {"Username"}
-  user.sequence(:email) {|n| "person#{n}@quintel.com" }
-  user.password {"password"}
-  user.password_confirmation {"password"}
-end
+FactoryGirl.define do
+  factory :user do
+    name "Username"
+    sequence(:email) {|n| "person#{n}@quintel.com" }
+    password "password"
+    password_confirmation "password"
+  end
 
-Factory.define :admin, :parent => :user do |f|
-  f.association :role, :factory => :admin_role
+  factory :admin, :parent => :user do
+    association :role, :factory => :admin_role
+  end
 end

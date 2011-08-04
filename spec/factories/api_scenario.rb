@@ -1,4 +1,6 @@
-Factory.define :api_scenario, :class => Api::Scenario do |api_scenario|
-  api_scenario.country {"de"}
-  api_scenario.end_year { 2050 }
+FactoryGirl.define do
+  factory :api_scenario, :class => Api::Scenario do
+    country "de"
+    end_year 2050
+  end
 end

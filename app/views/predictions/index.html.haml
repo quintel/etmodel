@@ -56,15 +56,20 @@
       colours: #{colours.to_json}
     }
 
+    // this method should have the logic to convert the slider value
+    var calculate_user_value = function(x) {
+      // var number_of_years = 10;
+      // var base_value = ???
+      // var out = base_value * Math.pow(1 + x / 100.0, number_of_years);
+      return 500;
+    }
+
     // let's get the current slider value
     if (parent && parent.input_elements) {
-      console.log("Yo!");
       var user_value = parent.input_elements.get(#{@input_element.id}).get('user_value');
-      console.log("User value: " + user_value);
-      chart_data.series.push([[2010,0],[#{@end_year}, 500]]);
+      var processed_value = calculate_user_value(user_value);
+      chart_data.series.push([[2010,0],[#{@end_year}, processed_value]]);
       $("tr.user_prediction").show();
-    } else {
-      console.log(":(");
     }
 
     // ajax loading of prediction details

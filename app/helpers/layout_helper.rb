@@ -29,6 +29,7 @@ module LayoutHelper
   
   # Cuts the text to the desired length and adds a js-enabled more link
   def smart_truncate(text, opts = {})
+    return nil unless text
     opts.reverse_merge!(:length => 80)
     return text unless text.length > opts[:length]      
     short = content_tag :span, truncate(text, :length => opts[:length]), :class => '_truncated'

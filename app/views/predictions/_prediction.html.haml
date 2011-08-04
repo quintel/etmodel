@@ -1,6 +1,6 @@
 .header
   %strong= @prediction.title
-  \- by
+  \- #{t 'prediction.by'}
   %strong= @prediction.user.try(:name)
   = l(@prediction.created_at, :format => :date_only)
   
@@ -11,16 +11,16 @@
     %thead
       %tr
         %th{:colspan => 2} Maatregelen om expertverwachting te behalen
-        %th Impact
-        %th Kosten
-        %th Uitvoerder
+        %th= t 'prediction.impact'
+        %th= t 'prediction.cost'
+        %th= t 'prediction.actor'
     %tbody
       - @prediction.measures.each do |m|
         %tr{:class => cycle('even', 'odd')}
-          %td
+          %td.name
             = m.name
             - if m.description.present?
-              %span.more_info
+              .more_info
                 = link_to 'info', '#'
                 .inline_description= m.description
           %td
@@ -30,15 +30,13 @@
           %td= PredictionMeasure::IMPACT[m.impact]
           %td= PredictionMeasure::COST[m.cost]
           %td= m.actor
+      %tfoot
+        %tr
+          %td{:colspan => 5}
+            De kosten van deze maatregelen worden niet meegenomen in de rest van het model
 .comments
   %h3 Comments
-  - for c in @prediction.comments
-    .comment
-      .avatar= image_tag('user_missing.png')
-      .author= c.author_name
-      .date= l c.created_at, :format => :long
-      .body= c.body
-      .clear
+  = render @prediction.comments
   
   = simple_form_for @comment, :url => comment_prediction_path(@prediction) do |f|
     %h4 Post a new comment

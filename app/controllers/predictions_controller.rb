@@ -1,4 +1,6 @@
 class PredictionsController < ApplicationController
+  layout 'pages'
+  
   def index
     @input_element = InputElement.find(params[:input_element_id])
     @predictions = @input_element.predictions

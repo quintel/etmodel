@@ -20,21 +20,31 @@
   .upper_block
     .chart#backcasting
     .available_predictions
-      - @input_element.predictions.each do |p|
-        .item
-          = radio_button_tag :prediction_id, p.id, (p.id == @prediction.id)
-          .color{:style => "background: #{cycle(*colours)}"}
-          .label
-            #{p.user.try(:name)},
-            - if p.user.try(:company_school)
-              #{p.user.company_school},
-            = p.title
-            - if v = p.last_value
-              (#{"%0.f" % v.value}#{@input_element.unit} in #{v.year})
-            - if current_user.try(:admin?)
-              = link_to 'edit', edit_admin_prediction_path(p), :target => '_new'
+      %table
+        - @input_element.predictions.each do |p|
+          %tr
+            %td= radio_button_tag :prediction_id, p.id, (p.id == @prediction.id)
+            %td
+              .colour{:style => "background: #{cycle(*colours)}"}
+            %td
+              #{p.user.try(:name)},
+              - if p.user.try(:company_school)
+                #{p.user.company_school},
+              = p.title
+              - if v = p.last_value
+                (#{"%0.f" % v.value}#{@input_element.unit} in #{v.year})
+              - if current_user.try(:admin?)
+                = link_to 'edit', edit_admin_prediction_path(p), :target => '_new'
+        %tr.user_prediction
+          %td
+          %td
+            .colour{:style => "background: #{cycle(*colours)}"}
+          %td Your prediction
   .prediction_details
     = render @prediction
+  .buttons
+    = button_to_function "apply", "alert('Not implemented yet')"
+    = button_to_function "back", "parent.$.fancybox.close()"
 
 :javascript
   $(function(){
@@ -52,6 +62,7 @@
       var user_value = parent.input_elements.get(#{@input_element.id}).get('user_value');
       console.log("User value: " + user_value);
       chart_data.series.push([[2010,0],[#{@end_year}, 500]]);
+      $("tr.user_prediction").show();
     } else {
       console.log(":(");
     }
@@ -79,7 +90,10 @@
           yaxis:{tickOptions:{formatString:'%.0f'}}
         },
         seriesColors: chart_data.colours,
-        series: chart_data.series_options
+        series: chart_data.series_options,
+        seriesDefaults : {
+          markerOptions: { show: false }
+        }
       }
     );
     

@@ -9,5 +9,6 @@ require 'rake/rdoctask'
 
 desc "Runs annotate on all models"
 task :annotate do
+  system "annotate -d"
   system "annotate -p before -e tests,fixtures"
 end

@@ -11,6 +11,7 @@
 #  updated_at       :datetime
 #  description      :text
 #  title            :string(255)
+#  area             :string(255)
 #
 
 class Prediction < ActiveRecord::Base

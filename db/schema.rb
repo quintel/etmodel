@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110801145543) do
+ActiveRecord::Schema.define(:version => 20110805140304) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -127,9 +127,11 @@ ActiveRecord::Schema.define(:version => 20110801145543) do
     t.string   "interface_group"
     t.boolean  "locked_for_municipalities"
     t.integer  "input_id"
+    t.boolean  "growth"
   end
 
-  add_index "input_elements", ["key"], :name => "unique api key"
+  add_index "input_elements", ["growth"], :name => "index_input_elements_on_growth"
+  add_index "input_elements", ["key"], :name => "unique api key", :unique => true
   add_index "input_elements", ["slide_id"], :name => "index_input_elements_on_slide_id"
 
   create_table "interfaces", :force => true do |t|
@@ -275,8 +277,10 @@ ActiveRecord::Schema.define(:version => 20110801145543) do
     t.datetime "updated_at"
     t.text     "description"
     t.string   "title"
+    t.string   "area"
   end
 
+  add_index "predictions", ["area"], :name => "index_predictions_on_area"
   add_index "predictions", ["input_element_id"], :name => "index_predictions_on_input_element_id"
   add_index "predictions", ["user_id"], :name => "index_predictions_on_user_id"
 

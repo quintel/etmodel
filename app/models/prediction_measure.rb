@@ -12,7 +12,7 @@
 #  description   :text
 #  created_at    :datetime
 #  updated_at    :datetime
-#  end_year      :integer(4)
+#  year_end      :integer(4)
 #
 
 class PredictionMeasure < ActiveRecord::Base

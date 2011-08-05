@@ -74,17 +74,20 @@ $(document).ready(function() {
     //put check here to see whether or not the value is > 2020 and < 2100 and alert otherwise
   });
 
-  $("#new_scenario_button").click(function(e) {          
+  $("#new_scenario_button").click(function(e) {
+    e.preventDefault();
     $("#new_scenario_form").slideToggle();
     $("#existing_scenario_form").hide();
     $("#energy_mixer_desc").hide();
   });
-  $("#existing_scenario_button").click(function(e) {          
+  $("#existing_scenario_button").click(function(e) {
+    e.preventDefault();
     $("#existing_scenario_form").slideToggle();
     $("#new_scenario_form").hide();
     $("#energy_mixer_desc").hide();
   });
-  $("#energy_mixer_button").click(function(e) {          
+  $("#energy_mixer_button").click(function(e) {
+    e.preventDefault();
     $("#energy_mixer_desc").slideToggle();
     $("#new_scenario_form").hide();
     $("#existing_scenario_form").hide();
@@ -96,5 +99,3 @@ $(document).ready(function() {
 function select_netherlands() {
   $('#country_nl').attr('checked', true);
 }
-
-

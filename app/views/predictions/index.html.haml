@@ -56,19 +56,37 @@
       colours: #{colours.to_json}
     }
 
-    // this method should have the logic to convert the slider value
-    var calculate_user_value = function(x) {
-      // var number_of_years = 10;
-      // var base_value = ???
-      // var out = base_value * Math.pow(1 + x / 100.0, number_of_years);
-      return 500;
+    // information about the slider
+    var input_element = {
+      growth: #{@input_element.growth?.to_json},
+      scenario_duration: #{@end_year.to_i - 2010}
+    }
+
+    // when sliders represent a growth I must compute the end value
+    var _calculate_user_value = function(x) {
+      if(!input_element.growth) { return x; }
+      var number_of_years = input_element.scenario_duration;
+      var base = 1 + x / 100.0;
+      var out = Math.pow(base, number_of_years) * 100;
+      return out;
+    }
+
+    // returns a serie in the jqplot format
+    var build_user_value_chart_serie = function(user_value) {
+      var out;
+      if(!input_element.growth) {
+        out = [[2010,0],  [#{@end_year}, user_value]];
+      } else {
+        out = [[2010,100],[#{@end_year}, _calculate_user_value(user_value)]];
+      }
+      return out;
     }
 
     // let's get the current slider value
     if (parent && parent.input_elements) {
       var user_value = parent.input_elements.get(#{@input_element.id}).get('user_value');
-      var processed_value = calculate_user_value(user_value);
-      chart_data.series.push([[2010,0],[#{@end_year}, processed_value]]);
+      var user_serie = build_user_value_chart_serie(user_value);
+      chart_data.series.push(user_serie);
       $("tr.user_prediction").show();
     }
 
@@ -82,7 +100,7 @@
       });
     });
     
-    //charts
+    // Let's plot the chart
     $.jqplot("backcasting", chart_data.series, {
         grid: {
           background: '#ffffff',

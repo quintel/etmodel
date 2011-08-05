@@ -87,13 +87,8 @@
    * subordinates.
    */
   Balancer.prototype.doBalance = function (newValue, quinn) {
-    var iterations    = 20,
-        amountChanged = newValue - this.oValues.value(quinn),
-
-        valuesBeforeBalancing,
-
-        flexPerSlider, flex, sliders, sLength, slider, prevValue,
-        previousFlex, nextIterationSliders, i;
+    var amountChanged = newValue - this.oValues.value(quinn),
+        valuesBeforeBalancing, flex, sLength, slider, prevValue, i;
 
     // Return quickly: if the amount changed is larger than the balancer
     // allows as the change is impossible.
@@ -101,15 +96,13 @@
       return false;
     }
 
-    sliders = _.clone(this.subordinates);
-
-    if ((sLength = sliders.length) === 0) {
+    if ((sLength = this.subordinates.length) === 0) {
       // Return quickly if all none of the subordinate sliders can be moved
       // any further.
       return false;
     }
 
-    valuesBeforeBalancing = new OriginalValues(sliders);
+    valuesBeforeBalancing = new OriginalValues(this.subordinates);
 
     // Flex is the amount of "value" which needs to be adjusted for. e.g.
     //
@@ -120,57 +113,23 @@
     //  If slider 1 is moved to 25, the flex is -25 since in order to balance
     //  the sliders we need to subtract 25 from the subordinates.
     //
-    flex = this.oValues.sumOf(sliders) + newValue;
+    flex = this.oValues.sumOf(this.subordinates) + newValue;
     flex = this.snapValue(this.max - flex);
 
-    while (iterations--) {
-      nextIterationSliders = [];
+    for (i = 0; i < sLength; i++) {
+      // The balancer seeks to assign the full flex amount to one slider; if
+      // this can't be done, it moves on to the next slider, and keeps going
+      // until either all of the flex has been assigned, or we run out of
+      // sliders.
 
-      for (i = 0; i < sLength; i++) {
-        // The amount of flex given to each slider. Calculated each time we
-        // balance a slider since the previous one may have used up all of the
-        // available flex the flexPerSlider was rounded up by the slider's
-        // __setValue method.
-        //
-        // For example, a flexPerSlider of 0.05, and a slider step value of
-        // 0.1 would result in 0.05 being round up, leaving no flex for the
-        // second slider.
-        flexPerSlider = this.snapValue(flex / (sLength - i));
+      slider    = sliders[i];
+      prevValue = this.oValues.value(slider);
 
-        slider    = sliders[i];
-        prevValue = slider.value;
+      slider.__setValue(prevValue + flex);
 
-        if (iterations === 19) {
-          // first iteration.
-          prevValue = this.oValues.value(slider);
-        }
-
-        if (slider.__setValue(prevValue + flexPerSlider)) {
-          this.__sliderUsed(slider);
-        }
-
-        // Reduce the flex by the amount by which the slider was changed,
-        // ready for subsequent iterations.
-        flex = this.snapValue(flex - (slider.value - prevValue));
-
-        // Finally, if this slider still can be moved further, it may be used
-        // again in the next iteration.
-        if ((flex < 0 && slider.value !== slider.selectable[0]) ||
-            (flex > 0 && slider.value !== slider.selectable[1])) {
-          nextIterationSliders.push(slider);
-        }
-      }
-
-      sliders = nextIterationSliders;
-      sLength = sliders.length;
-
-      // We can't go any further if flex is 0, or if the flex value hasn't
-      // changed in this iteration.
-      if (flex === 0 || previousFlex === flex) {
-        break;
-      }
-
-      previousFlex = flex;
+      // Reduce the flex by the amount by which the slider was changed,
+      // ready for the next slider.
+      flex = this.snapValue(flex - (slider.value - prevValue));
     }
 
     if (flex !== 0) {
@@ -249,6 +208,7 @@
 
   Balancer.prototype.onCommit = function (value, quinn) {
     if (this.isMaster(quinn)) {
+      this.__sliderUsed(quinn);
       this.__finish('__hasChanged');
       this.trigger('commit');
     }

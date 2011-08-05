@@ -8,7 +8,7 @@
 
  
     - if has_active_scenario?
-      %a#continue_scenario_button.style_button{:href =>  last_etm_path(:include_action => false),:alt=>"continue",:title=>"continue"}
+      %a#continue_scenario_button.style_button{:href => last_etm_path(:include_action => false),:alt=>"continue",:title=>"continue"}
         .button_left
         .button_center
           %span= t('continue with current scenario').capitalize
@@ -19,7 +19,6 @@
         %span= t('Start a new scenario').capitalize
       .button_right
     %ul#new_scenario_form
-      
       = form_tag root_path do
         = render "pages/root_page/country_select"
         = render "pages/root_page/year_select"

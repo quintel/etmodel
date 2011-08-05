@@ -58,26 +58,38 @@
 
     // information about the slider
     var input_element = {
-      growth: #{@input_element.growth?.to_json},
-      scenario_duration: #{@end_year.to_i - 2010}
+      growth: #{@input_element.growth?.to_json}
     }
 
-    // when sliders represent a growth I must compute the end value
-    var _calculate_user_value = function(x) {
-      if(!input_element.growth) { return x; }
-      var number_of_years = input_element.scenario_duration;
+    var scenario = {
+      start_year: 2010,
+      end_year: #{@end_year.to_i}
+    }
+
+    var calculate_value = function(x, years) {
       var base = 1 + x / 100.0;
-      var out = Math.pow(base, number_of_years) * 100;
+      var out = Math.pow(base, years) * 100;
       return out;
+    }
+
+    var get_mid_year = function() {
+      return Math.floor(scenario.end_year - scenario.start_year) / 2 + scenario.start_year;
     }
 
     // returns a serie in the jqplot format
     var build_user_value_chart_serie = function(user_value) {
       var out;
       if(!input_element.growth) {
-        out = [[2010,0],  [#{@end_year}, user_value]];
+        out = [
+          [scenario.start_year,0],
+          [scenario.end_year, user_value]
+        ];
       } else {
-        out = [[2010,100],[#{@end_year}, _calculate_user_value(user_value)]];
+        out = [
+          [scenario.start_year, 100],
+          [get_mid_year(),      calculate_value(user_value, scenario.end_year - get_mid_year())],
+          [scenario.end_year,   calculate_value(user_value, scenario.end_year - scenario.start_year)]
+        ];
       }
       return out;
     }

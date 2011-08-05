@@ -594,6 +594,7 @@
 
       this.conversions        = this.view.conversions;
       this.selectedConversion = this.view.conversion;
+      this.lastVisChange      = new Date();
     },
 
     // ## Rendering ----------------------------------------------------------
@@ -646,6 +647,14 @@
      * sets the selector values only when shown.
      */
     show: function () {
+      // Don't show the selector if it was hidden less than 500ms ago (user
+      // probably accidentally double-clicked).
+      if (new Date() - this.lastVisChange < 500) {
+        return false;
+      }
+
+      this.lastVisChange = new Date();
+
       // If this is the first time the selector is being shown, it needs to be
       // rendered first.
       if (! this.inputEl) {
@@ -681,6 +690,14 @@
      * that it may be updated with the new value and unit conversion.
      */
     commit: function () {
+      // Don't do anything if the selector was shown less than 500ms ago (user
+      // probably accidentally double-clicked the slider value).
+      if (new Date() - this.lastVisChange < 500) {
+        return false;
+      }
+
+      this.lastVisChange = new Date();
+
       this.view.conversion = this.selectedConversion;
       this.view.setTransientValue(this.inputValue());
       $(this.el).fadeOut('fast');

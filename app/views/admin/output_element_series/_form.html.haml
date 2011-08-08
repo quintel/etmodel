@@ -1,8 +1,11 @@
-
 %div{:style => "width: 60%"}
-  -semantic_form_for [:admin, @output_element_serie] do |form|
-    = form.inputs
-
-    = form.buttons
+  = semantic_form_for [:admin, @output_element_serie] do |f|
+    = f.inputs
+    = f.inputs :for => :description do |j|
+      = j.input :short_content_en
+      = j.input :short_content_nl
+      = j.input :content_en
+      = j.input :content_nl
+    = f.buttons
   
   = link_to "back", admin_output_element_series_path

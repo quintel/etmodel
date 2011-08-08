@@ -48,6 +48,8 @@ class OutputElementSerie < ActiveRecord::Base
   scope :contains, lambda{|search| where("`key` LIKE ?", "%#{search}%")}
   
   validates :gquery, :presence => true
+  
+  accepts_nested_attributes_for :description
 
   # delegate :name, :to => :output_element, :prefix => 'output_element', :allow_nil => true
 

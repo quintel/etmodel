@@ -44,6 +44,8 @@ class InputElement < ActiveRecord::Base
   scope :with_share_group, where('NOT(share_group IS NULL OR share_group = "")')
   scope :households_heating_sliders, where(:slide_id => 4)
 
+  accepts_nested_attributes_for :description
+
   def self.input_elements_grouped
     @input_elements_grouped ||= InputElement.
       with_share_group.select('id, share_group, `key`').

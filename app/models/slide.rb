@@ -28,6 +28,8 @@ class Slide < ActiveRecord::Base
   scope :controller, lambda {|controller| where(:controller_name => controller) }
   scope :action, lambda {|action| where(:action_name => action) }
   scope :max_complexity, lambda {|complexity| where("complexity <= #{complexity}") }
+  
+  accepts_nested_attributes_for :description
 
   def search_result
     SearchResult.new(name, description)

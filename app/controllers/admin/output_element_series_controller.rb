@@ -1,6 +1,7 @@
 module Admin
 class OutputElementSeriesController  < BaseController
-
+  before_filter :find_model, :only => [:edit, :show]
+  
   def index
     @output_element_series = OutputElementSerie.ordered_for_admin
   end
@@ -8,6 +9,7 @@ class OutputElementSeriesController  < BaseController
 
   def new
     @output_element_serie = OutputElementSerie.new
+    @output_element_serie.build_description
   end
 
   def create
@@ -43,21 +45,22 @@ class OutputElementSeriesController  < BaseController
   end
 
   def show
-    find_model
   end
 
   def edit
-    find_model
+    @output_element_serie.build_description unless @output_element_serie.description
   end
 
-  def find_model
-    if params[:version_id]
-      @version = Version.find(params[:version_id])
-      @output_element_serie = @version.reify
-      flash[:notice] = "Revision"
-    else
-      @output_element_serie = OutputElementSerie.find(params[:id])
+  private
+  
+    def find_model
+      if params[:version_id]
+        @version = Version.find(params[:version_id])
+        @output_element_serie = @version.reify
+        flash[:notice] = "Revision"
+      else
+        @output_element_serie = OutputElementSerie.find(params[:id])
+      end
     end
   end
-end
 end

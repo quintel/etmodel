@@ -1,5 +1,6 @@
 module Admin
 class SlidesController < BaseController
+  before_filter :find_model, :only => [:edit, :show]
 
   def index
     @slides = Slide.all
@@ -8,6 +9,7 @@ class SlidesController < BaseController
 
   def new
     @slide = Slide.new
+    @slide.build_description
   end
 
   def create
@@ -34,21 +36,22 @@ class SlidesController < BaseController
   end
 
   def show
-    find_model
   end
 
   def edit
-    find_model
+    @slide.build_description unless @slide.description
   end
+  
+  private
 
-  def find_model
-    if params[:version_id]
-      @version = Version.find(params[:version_id])
-      @slide = @version.reify
-      flash[:notice] = "Revision"
-    else
-      @slide = Slide.find(params[:id])
+    def find_model
+      if params[:version_id]
+        @version = Version.find(params[:version_id])
+        @slide = @version.reify
+        flash[:notice] = "Revision"
+      else
+        @slide = Slide.find(params[:id])
+      end
     end
   end
-end
 end

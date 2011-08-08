@@ -1,5 +1,6 @@
 module Admin
 class InputElementsController < BaseController
+  before_filter :find_model, :only => [:show, :edit]
 
   def index
     @input_elements = InputElement.ordered_for_admin
@@ -8,6 +9,7 @@ class InputElementsController < BaseController
 
   def new
     @input_element = InputElement.new
+    @input_element.build_description
   end
 
   def create
@@ -47,21 +49,22 @@ class InputElementsController < BaseController
   end
 
   def show
-    find_model
   end
 
   def edit
-    find_model
+    @input_element.build_description unless @input_element.description
   end
 
-  def find_model
-    if params[:version_id]
-      @version = Version.find(params[:version_id])
-      @input_element = @version.reify
-      flash[:notice] = "Revision"
-    else
-      @input_element = InputElement.find(params[:id])
+  private
+  
+    def find_model
+      if params[:version_id]
+        @version = Version.find(params[:version_id])
+        @input_element = @version.reify
+        flash[:notice] = "Revision"
+      else
+        @input_element = InputElement.find(params[:id])
+      end
     end
-  end
 end
 end

@@ -1,18 +1,19 @@
+-# DEBT ugly
 - if title = PageTitle.for_page(controller.controller_name, params[:id]).first
+  - description = @active_sidebar.try(:description) || title.description
   #title
     - if current_tutorial_movie
-      %a{:class=>"tutorial_button", :href => "/tutorial/#{params[:controller]}/#{params[:id]}",:alt=>"Tutorial",:title=>"Tutorial"}
+      %a.tutorial_button{ :href => "/tutorial/#{params[:controller]}/#{params[:id]}",:alt=>"Tutorial",:title=>"Tutorial"}
         .button_left_movie
         .button_center
           %span= t("tutorial.button")
         .button_right
     %h2= raw I18n.t("pagetitle.#{title.title}")
     %p#content_short.visible
-      - short_content = title.description.andand.short_content
-      %span= short_content.html_safe
+      %span= raw description.try(:short_content)
       %a#read_more{:href => '#'}= I18n.t("pagetitle.readmore")
     %p#content_long.hidden
-      %span= title.description.andand.content.html_safe
+      %span= raw description.try(:content)
       %a#read_less{:href => '#'}= I18n.t("pagetitle.hidetext")
-    - if @active_sidebar.try(:additional_info_partial)
-      = render :partial => "tab/#{@active_sidebar.additional_info_partial}"
+    - if additional_info = @active_sidebar.try(:additional_info_partial)
+      = render :partial => "tab/#{additional_info}" unless additional_info.blank?

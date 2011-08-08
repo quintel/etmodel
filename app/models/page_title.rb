@@ -10,6 +10,8 @@
 #  updated_at :datetime
 #
 
+# TODO: get rid of this object, use standard description class
+# Remember to update the search engine index!
 class PageTitle < ActiveRecord::Base
   has_paper_trail
 

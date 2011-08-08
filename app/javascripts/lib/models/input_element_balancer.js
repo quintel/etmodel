@@ -122,7 +122,7 @@
       // until either all of the flex has been assigned, or we run out of
       // sliders.
 
-      slider    = sliders[i];
+      slider    = this.subordinates[i];
       prevValue = this.oValues.value(slider);
 
       slider.__setValue(prevValue + flex);

@@ -11,9 +11,7 @@
       .constraint{opts}
         .arrow
         .header= raw I18n.t("dashboard.#{c.name}")
-        .scale
         %strong
-        .difference
         = render 'layouts/etm/constraint_box', :title => c.extended_title
     .clear
 

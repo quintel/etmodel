@@ -35,19 +35,14 @@ class InputElement < ActiveRecord::Base
   has_one :area_dependency, :as => :dependable
   has_many :expert_predictions
   has_many :predictions
-  
+
   validates :key, :presence => true, :uniqueness => true
   validates :input_id, :presence => true
 
-
   scope :ordered_for_admin, order("slides.controller_name, slides.action_name, slides.name, input_elements.id").includes('slide')
   scope :max_complexity, lambda {|complexity| where("complexity <= #{complexity}") }
-  
   scope :with_share_group, where('NOT(share_group IS NULL OR share_group = "")')
-
-  scope :contains, lambda{|search| 
-  }
-
+  scope :households_heating_sliders, where(:slide_id => 4)
 
   def self.input_elements_grouped
     @input_elements_grouped ||= InputElement.
@@ -56,7 +51,7 @@ class InputElement < ActiveRecord::Base
   end
 
   def step_value
-    if Current.setting.municipality? and self.locked_for_municipalities? and self.slide.andand.controller_name == "supply" 
+    if Current.setting.municipality? and self.locked_for_municipalities? and self.slide.andand.controller_name == "supply"
       (self[:step_value] / 1000).to_f
     else
       self[:step_value].to_f
@@ -65,6 +60,10 @@ class InputElement < ActiveRecord::Base
 
   def title_for_description
     "slider.#{name}"
+  end
+
+  def translated_name
+    I18n.t(title_for_description)
   end
 
   def search_result
@@ -79,11 +78,11 @@ class InputElement < ActiveRecord::Base
     indexes description(:short_content_nl), :as => :description_short_content_nl
   end
 
-  
+
   def cache_conditions_key
     [self.class.name, self.id, Current.setting.area.id].join('_')
   end
-  
+
   # Cache
   def cache(method, options = {}, &block)
     if options[:cache] == false
@@ -94,20 +93,19 @@ class InputElement < ActiveRecord::Base
       end
     end
   end
-  
+
   def number_to_round_with
-    if factor == 1           
+    if factor == 1
       step_value == 1 ? 0 : 1
-    elsif factor >= 100      
+    elsif factor >= 100
       3
-    end         
+    end
   end
-  
+
   # TODO refactor (seb 2010-10-11)
   def start_value
     return self[:start_value]
   end
-
 
   def remainder?
     input_element_type == 'remainder'
@@ -119,11 +117,6 @@ class InputElement < ActiveRecord::Base
   end
   alias_method :semi_unadaptable, :semi_unadaptable?
 
-
-  def hidden_input_element?
-    false
-  end
-
   def min_value
     self[:min_value] || 0
   end
@@ -132,9 +125,6 @@ class InputElement < ActiveRecord::Base
     self[:max_value] || 0
   end
 
-  def self.households_heating_sliders
-    where("slide_id = 4")
-  end
 
   def disabled
     has_locked_input_element_type?(input_element_type)
@@ -148,17 +138,17 @@ class InputElement < ActiveRecord::Base
   def conversions
     CONVERSIONS[key] || Array.new
   end
-  
+
   def available_predictions
     predictions.for_area(Current.setting.region)
   rescue
     []
   end
-  
+
   def has_predictions?
     return false unless Current.backcasting_enabled
     available_predictions.any?
-  end  
+  end
   alias_method :has_predictions, :has_predictions?
 
   #############################################
@@ -167,16 +157,12 @@ class InputElement < ActiveRecord::Base
 
   def as_json(options = {})
     super(:only => [:id, :input_id, :name, :unit, :share_group, :factor],
-      :methods => [ 
-        :step_value, 
-        :number_to_round_with,
-        :output, :user_value, :disabled, :translated_name, 
-        :semi_unadaptable,:disabled_with_message, :has_predictions,
-        :input_element_type, :has_flash_movie, :conversions])
-  end
-
-  def translated_name
-    I18n.t("slider.%s" % self.name)
+          :methods => [
+            :step_value,
+            :number_to_round_with,
+            :output, :user_value, :disabled, :translated_name,
+            :semi_unadaptable,:disabled_with_message, :has_predictions,
+    :input_element_type, :has_flash_movie, :conversions])
   end
 
   ##
@@ -186,11 +172,11 @@ class InputElement < ActiveRecord::Base
   def parsed_description
     (description.andand.content.andand.gsub('id="player"','class="player"') || "").html_safe
   end
-  
+
   ##
   # For showing the name and the action of the inputelement in the admin
   #
-  
+
   def parsed_name_for_admin
     "#{key} | #{name} | #{unit} | #{input_element_type}"
   end
@@ -212,9 +198,9 @@ class InputElement < ActiveRecord::Base
   def has_locked_input_element_type?(input_type)
     %w[fixed remainder fixed_share].include?(input_type)
   end
-  
+
   def has_flash_movie
     description.andand.content.andand.include?("player")  || description.andand.content.andand.include?("object")
   end
-  
+
 end

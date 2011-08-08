@@ -61,7 +61,7 @@ class Slide < ActiveRecord::Base
       #EXEPTION: simulate a slider for this slides, otherwise they will be hidden because they dont have sliders
       ["1"]
     else
-      input_elements.max_complexity(Current.setting.complexity).reject {|x| x.hidden_input_element?}
+      input_elements.max_complexity(Current.setting.complexity)
     end
   end
 

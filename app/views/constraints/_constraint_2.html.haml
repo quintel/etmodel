@@ -1,7 +1,6 @@
 .constraint_box_content
   %p.tal
-    =t("constraint.co2").html_safe
-
+    = @constraint.description.try :t, :short_content
   #charts_wrapper
     %div{ :id => "output_element_46", :style=>'height:230px;width:550px'}
 :javascript

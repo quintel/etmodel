@@ -1,6 +1,6 @@
 .constraint_box_content
   %p.tal
-    = raw t("constraint.renewable")
+    = @constraint.description.try :t, :short_content
   %div#charts_wrapper
     %div{ :id => "output_element_49",:style=>'height:230px;width:550px'}
 

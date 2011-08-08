@@ -35,9 +35,9 @@ class OutputElement < ActiveRecord::Base
   validates :key, :presence => true, :uniqueness => true
 
   delegate :html_table?, :to => :output_element_type
-  
+
   accepts_nested_attributes_for :description
-  
+
   define_index do
     indexes name
     indexes description(:content_en), :as => :description_content_en
@@ -55,7 +55,7 @@ class OutputElement < ActiveRecord::Base
   end
 
   def options_for_js
-    { 
+    {
       'id'         => self.id,
       'type'       => output_element_type.name,
       'percentage' => percentage == true ,
@@ -83,11 +83,11 @@ class OutputElement < ActiveRecord::Base
   def allowed_output_element_series
     output_element_series.includes(:area_dependency).reject(&:area_dependent)
   end
-  
+
   def parsed_name_for_admin
     "#{group} | #{name} | #{description.andand.short_content}"
   end
-  
+
   # returns the type of chart (bezier, html_table, ...)
   def type
     output_element_type.try(:name)

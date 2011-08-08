@@ -1,9 +1,11 @@
 
 %p 
   If a GQL statement is defined, the other value is ignored (e.g. start_value: 10, start_value_gql: xyz => start_value is the result of gql-statement xyz)
+%p
+  The growth checkbox must be checked if the slider expresses a growth (ex: population growth per year). The backcasting module uses this attribute to plot the user chart.
 
 %div{:style => "width: 60%"}
-  -semantic_form_for [:admin, @input_element] do |form|
+  = semantic_form_for [:admin, @input_element] do |form|
     = form.inputs
     = form.buttons
   

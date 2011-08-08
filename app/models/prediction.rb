@@ -29,6 +29,8 @@ class Prediction < ActiveRecord::Base
   validates :title, :presence => true
   validates :input_element_id, :presence => true
   
+  scope :for_area, lambda{|a| where(:area => a)}
+  
   def last_value
     @last_value ||= values.future_first.first
   end

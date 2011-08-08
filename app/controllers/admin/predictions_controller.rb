@@ -6,7 +6,7 @@ class PredictionsController < BaseController
   end
 
   def new
-    @prediction = Prediction.new
+    @prediction = Prediction.new(:area => 'nl')
     @prediction.prepare_nested_attributes
   end
 

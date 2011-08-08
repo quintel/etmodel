@@ -1,6 +1,6 @@
 :ruby
   colours = ["F00", "0F0", "00F", "FF0", "F0F", "0FF"]
-  series = @input_element.predictions.map{|p| p.values_to_a}
+  series = @predictions.map{|p| p.values_to_a}
   series_options = series.map{|x| {}}
 
 - content_for :head do
@@ -35,7 +35,7 @@
     .chart#backcasting
     .available_predictions
       %table
-        - @input_element.predictions.each do |p|
+        - @predictions.each do |p|
           %tr
             %td= radio_button_tag :prediction_id, p.id, (p.id == @prediction.id)
             %td

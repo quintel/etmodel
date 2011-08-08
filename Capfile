@@ -44,4 +44,7 @@ after "deploy:update_code", "deploy:copy_configuration_files"
 # after "deploy", "deploy:cleanup" # why?
 # after "deploy", "deploy:notify_hoptoad"
 after "deploy:symlink", "sphinx:symlink_indexes"
-after "deploy:migrations", "sphinx:rebuild_and_restart"
+
+# Thinking sphinx keeps hanging on the stop phase.
+# If you migrate, run manually thinking_sphinx:rebuild
+# after "deploy:migrations", "sphinx:rebuild_and_restart"

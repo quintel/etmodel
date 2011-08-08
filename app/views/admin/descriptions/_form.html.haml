@@ -1,0 +1,13 @@
+%div
+  = semantic_form_for [:admin, @description] do |f|
+    = f.inputs do
+      = f.input :describable_type
+      = f.input :describable_id
+      = f.input :short_content_en
+      = f.input :short_content_nl
+      = f.input :content_en
+      = f.input :content_nl
+
+    = f.buttons
+  
+  = link_to "back", :back

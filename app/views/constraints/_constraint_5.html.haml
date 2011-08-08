@@ -1,6 +1,6 @@
 .constraint_box_content
   %p
-    = @constraint.description.try :t, :short_content
+    = @constraint.description.try :short_content
 
   - data = @api_client.simple_query("Q(policy_not_shown)") # ?!?!
   - now = data.values.first rescue 0

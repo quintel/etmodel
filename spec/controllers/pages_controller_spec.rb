@@ -8,6 +8,16 @@ describe PagesController do
     Current.stub!(:teardown_after_request!)
     Current.stub!(:graph)
     Api::Scenario.stub(:all).and_return([])
+    
+    ActiveResource::HttpMock.respond_to do |mock|
+      ["de", "nl", "nl-flevoland", "ch"].each do |code|
+        area = [{ :id => 1, :country => code, :use_network_calculations => false, :entity => nil}].to_xml(:root => "area")
+        mock.get "/api/v2/areas.xml?country=#{code}", { "Accept" => "application/xml" }, area
+      end
+      area = [{ :id => 1, :country => 'nl', :use_network_calculations => false}].to_xml(:root => "area")
+      mock.get "/api/v2/areas.xml", { "Accept" => "application/xml" }, area
+    end
+    
   end
 
   {'nl' => '2030', 'de' => '2050'}.each do |country, year|

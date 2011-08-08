@@ -15,10 +15,16 @@
 #  additional_info_partial :string(255)
 #
 
-class SidebarItem < ActiveRecord::Base
+class SidebarItem < ActiveRecord::Base  
   include AreaDependent
+  
+  has_paper_trail
+  
   has_one :area_dependency, :as => :dependable
   validates :key, :presence => true, :uniqueness => true
+  
+  has_one :description, :as => :describable, :dependent => :destroy
+  accepts_nested_attributes_for :description
   
   def parsed_key_for_admin
     "#{section.andand} | #{key}"

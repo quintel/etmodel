@@ -38,7 +38,7 @@ module Admin
     end
 
     def edit
-      @sidebar_item.build_description unless @description
+      @sidebar_item.build_description unless @sidebar_item.description
     end
     
     private

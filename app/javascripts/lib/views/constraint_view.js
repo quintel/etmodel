@@ -4,7 +4,7 @@
 
 var ConstraintView = Backbone.View.extend({
   initialize : function() {
-    _.bindAll(this, 'render', 'open_popup', 'close_all_popups');
+    _.bindAll(this, 'render', 'open_popup', 'close_all_popups', 'render_total_cost_label');
     this.id = "constraint_"+this.model.get('id');
     this.dom_id = '#'+this.id;
     this.element = $(this.dom_id);
@@ -18,9 +18,22 @@ var ConstraintView = Backbone.View.extend({
   },
 
   render : function() {
-    $('strong', this.dom_id).empty().append(this.format_result());
+    if(this.model.get("key") == 'total_energy_cost') {
+      this.render_total_cost_label();
+    }
+    var formatted_value = this.format_result();
+    $('strong', this.dom_id).empty().append(formatted_value);
     this.updateArrows();
     return this;
+  },
+  
+  // different behaviour unfortunately
+  render_total_cost_label : function() {
+    var value = this.model.get('result') * 1000000000;
+    var scale = Metric.power_of_thousand(value);
+    var unit  = I18n.t('units.currency.' + Metric.power_of_thousand_to_string(scale));
+    var label = "(" + unit + ")";
+    $('.header .sub_header', this.dom_id).html(label);
   },
 
   open_popup : function() {
@@ -54,6 +67,8 @@ var ConstraintView = Backbone.View.extend({
     var key    = this.model.get('key');
 
     switch(key) {
+      case 'total_energy_cost' :
+        return Metric.euros_to_string(result * 1000000000);
       case 'total_primary_energy':
         // show + prefix if needed
         return Metric.ratio_as_percentage(result, true);
@@ -64,9 +79,6 @@ var ConstraintView = Backbone.View.extend({
         return Metric.ratio_as_percentage(result, false, 1);
       case 'renewable_percentage':
         return Metric.ratio_as_percentage(result);
-      case 'total_energy_cost':
-        // the query returns billions of euros
-        return Metric.euros_to_string(result * 1000000000);
       case 'not_shown':
         // bio_footprint actually
         return '' + Metric.round_number(result, 1) +'x'+ App.settings.get("country").toUpperCase();

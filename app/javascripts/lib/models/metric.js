@@ -188,14 +188,19 @@ var Metric = {
      1_000_000     => &euro;1mln
      -1_000_000    => -&euro;1mln
      1_000_000_000 => &euro;1bln
+     The unit_suffix parameters adds a translated mln/bln suffix
   */
-  euros_to_string: function(x) {
+  euros_to_string: function(x, unit_suffix) {
     var prefix    = x < 0 ? '-' : '';
     var abs_value = Math.abs(x);
     var scale     = Metric.power_of_thousand(x);
     var value     = abs_value / Math.pow(1000, scale);
-    var suffix    = I18n.t('units.currency.' + Metric.power_of_thousand_to_string(scale));
-
+    var suffix    = '';
+    
+    if (unit_suffix) {
+     suffix = I18n.t('units.currency.' + Metric.power_of_thousand_to_string(scale));
+    }
+    
     return prefix + '&euro;' + Metric.round_number(value, 1) + suffix;
   },
 

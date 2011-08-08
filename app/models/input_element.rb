@@ -149,9 +149,15 @@ class InputElement < ActiveRecord::Base
     CONVERSIONS[key] || Array.new
   end
   
+  def available_predictions
+    predictions.for_area(Current.setting.region)
+  rescue
+    []
+  end
+  
   def has_predictions?
     return false unless Current.backcasting_enabled
-    predictions.any?
+    available_predictions.any?
   end  
   alias_method :has_predictions, :has_predictions?
 

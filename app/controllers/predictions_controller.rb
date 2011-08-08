@@ -1,7 +1,9 @@
 class PredictionsController < ApplicationController
+  before_filter :find_input_element, :only => :index
+  before_filter :find_prediction, :only => [:show, :comment]
+  
   def index
-    @input_element = InputElement.find(params[:input_element_id])
-    @predictions = @input_element.predictions
+    @predictions = @input_element.available_predictions
     @prediction  = @predictions.find(params[:prediction_id]) rescue @predictions.first
     @comment = Comment.new
     @comment.commentable = @prediction
@@ -11,14 +13,13 @@ class PredictionsController < ApplicationController
   end
   
   def show
-    @prediction = Prediction.find params[:id]
+    @input_element = @prediction.input_element
     @comment = Comment.new
     @comment.commentable = @prediction
     render :layout => false if request.xhr?
   end
   
   def comment
-    @prediction = Prediction.find(params[:id])
     @comment = Comment.new(params[:comment])
     @comment.user_id = current_user.id if current_user
     @comment.commentable = @prediction
@@ -29,4 +30,14 @@ class PredictionsController < ApplicationController
     end
     redirect_to predictions_path(:input_element_id => @prediction.input_element_id, :prediction_id => @prediction.id)
   end
+  
+  private
+  
+    def find_input_element
+      @input_element = InputElement.find(params[:input_element_id])
+    end
+    
+    def find_prediction
+      @prediction = Prediction.find(params[:id])
+    end
 end

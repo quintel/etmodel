@@ -1,6 +1,6 @@
 .constraint_box_content
   %p.tal
-    = raw t("constraint.costs")
+    = @constraint.description.try :t, :short_content
   #charts_wrapper
     %div{ :id => "output_element_48", :style => 'height:200px' }
 :javascript

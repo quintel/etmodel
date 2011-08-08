@@ -13,9 +13,9 @@
 
 class Constraint < ActiveRecord::Base
   has_paper_trail
-  
+
   has_one :description, :as => :describable, :dependent => :destroy
-  
+
   accepts_nested_attributes_for :description
 
   scope :ordered, order('id')

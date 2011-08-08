@@ -1,10 +1,7 @@
 .constraint_box_content
-  -#%h1{:style => "font-size: 14px; text-align: left"} Biomass Footprint
   %p
-    =t("constraint.footprint").html_safe
+    = @constraint.description.try :t, :short_content
 
-
-  -# data = @api_client.fast_pair("Q(area_footprint_per_nl)")
   - data = @api_client.simple_query("Q(policy_not_shown)") # ?!?!
   - now = data.values.first rescue 0
   - fut = data.values.last rescue 0

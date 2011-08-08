@@ -1,5 +1,6 @@
 class ConstraintsController < ApplicationController
-  def show
+  def show    
+    @constraint = Constraint.find(params[:id])
   end
   
   def iframe
@@ -10,7 +11,7 @@ class ConstraintsController < ApplicationController
     # The client is smart enough to fetch a fresh session_id if missing
     @api_client.api_session_id = api_key
     
-    # We don't need to fetch the object from the db
+    @constraint = Constraint.find(params[:id])
     @constraint_id = params[:id]
     
     render :layout => 'constraint_iframe'

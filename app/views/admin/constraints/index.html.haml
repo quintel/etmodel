@@ -1,0 +1,20 @@
+- title 'Constraints'
+
+%p= link_to 'Create new constraint', new_admin_constraint_path
+
+%table{table_defaults}
+  %thead
+    %tr
+      %th Id
+      %th Key
+      %th Name
+      %th
+      
+
+  %tbody
+    - @constraints.each do |c|
+      %tr{cycles}
+        %td= c.id
+        %td= c.key
+        %td= c.name
+        %td= link_to 'edit', edit_admin_constraint_path(c)

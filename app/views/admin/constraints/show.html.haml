@@ -1,0 +1,6 @@
+%h2
+  = @constraint.key  
+  %small= link_to 'Edit', edit_admin_constraint_path(@constraint)
+
+%pre== Key: #{@constraint.key}
+= render '/admin/shared/revisions', :versioned => @constraint

@@ -55,7 +55,7 @@ class OutputElementsController < BaseController
 
   private
   
-    def find_model
+    def find_element
       if params[:version_id]
         @version = Version.find(params[:version_id])
         @output_element = @version.reify

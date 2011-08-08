@@ -1,6 +1,6 @@
 %h1= @output_element.name
 
-%table{table_defaults,:style=>"float:left"}
+%table{table_defaults}
   %thead
     %tr
       %th.tal id
@@ -17,6 +17,6 @@
         %td= truncate(serie.key, :length => 50)
         %td= serie.color
         %td= serie.is_target
-%br        
-%p= link_to 'Create new serie', new_admin_output_element_serie_path
-- charts
+
+%p
+  = link_to 'Create new serie', new_admin_output_element_serie_path

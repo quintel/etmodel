@@ -67,7 +67,8 @@ Etm::Application.routes.draw do
               :converter_positions,
               :interfaces,
               :general_user_notifications,
-              :constraints
+              :constraints,
+              :descriptions
     resources :areas, :only => [:index, :show]
   end
 

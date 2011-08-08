@@ -7,6 +7,12 @@ describe Admin::PredictionsController do
   
   before do
     controller.class.skip_before_filter :restrict_to_admin
+    
+    ActiveResource::HttpMock.respond_to do |mock|
+      area = [{ :id => 1, :country => 'nl', :use_network_calculations => false}].to_xml(:root => "area")
+      mock.get "/api/v2/areas.xml?country=nl", { "Accept" => "application/xml" }, area
+      mock.get "/api/v2/areas.xml", { "Accept" => "application/xml" }, area
+    end
   end
   
   describe "GET index" do

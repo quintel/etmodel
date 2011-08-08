@@ -6,10 +6,8 @@ class PredictionsController < ApplicationController
     @comment = Comment.new
     @comment.commentable = @prediction
     @end_year = params[:end_year]
-    @min_value = @predictions.map(&:min_value).min
-    @max_value = @predictions.map(&:max_value).max
 
-    render :layout => false if request.xhr?
+    render :layout => 'iframe'
   end
   
   def show

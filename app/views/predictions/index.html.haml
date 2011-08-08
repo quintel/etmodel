@@ -1,18 +1,31 @@
-= stylesheet_link_tag 'prediction'
-= javascript_include_tag :defaults
-= sprocket_include_tag 'backcasting'
-= javascript_include_tag 'backcasting'
 :ruby
   colours = ["F00", "0F0", "00F", "FF0", "F0F", "0FF"]
   series = @input_element.predictions.map{|p| p.values_to_a}
   series_options = series.map{|x| {}}
-  # To show the vertical bar representing the scenario end year I must add the
-  # serie options as the last item.
-  # TODO: refactor
-  if @end_year && @end_year.to_i != 2050
-    series << [[@end_year, @min_value], [@end_year, @max_value]]
-    series_options << { lineWidth: 1, color: "ff0000", markerOptions: { show: false}}
-  end
+
+- content_for :head do
+  = stylesheet_link_tag 'prediction'
+  = javascript_include_tag :defaults
+  = sprocket_include_tag 'backcasting'
+  = javascript_include_tag 'backcasting'
+  :javascript
+    // let's prepare the json data produced on the ruby side
+    var chart_data = {
+      series: #{series.to_json},
+      series_options: #{series_options.to_json},
+      colours: #{colours.to_json}
+    }
+
+    // information about the slider
+    var input_element = {
+      growth: #{@input_element.growth?.to_json},
+      id: #{@input_element.id}
+    }
+
+    var scenario = {
+      start_year: 2010,
+      end_year: #{@end_year.to_i}
+    }
 
 .prediction
   .intro
@@ -26,7 +39,7 @@
           %tr
             %td= radio_button_tag :prediction_id, p.id, (p.id == @prediction.id)
             %td
-              .colour{:style => "background: #{cycle(*colours)}"}
+              .colour{:style => "background: ##{cycle(*colours)}"}
             %td
               #{p.user.try(:name)},
               - if p.user.try(:company_school)
@@ -39,29 +52,10 @@
         %tr.user_prediction
           %td
           %td
-            .colour{:style => "background: #{cycle(*colours)}"}
+            .colour{:style => "background: ##{cycle(*colours)}"}
           %td Your prediction
   .prediction_details
     = render @prediction
   .buttons
     = button_to_function "apply", "alert('Not implemented yet')"
     = button_to_function "back", "parent.$.fancybox.close()"
-
-:javascript
-  // let's prepare the json data produced on the ruby side
-  var chart_data = {
-    series: #{series.to_json},
-    series_options: #{series_options.to_json},
-    colours: #{colours.to_json}
-  }
-
-  // information about the slider
-  var input_element = {
-    growth: #{@input_element.growth?.to_json},
-    id: #{@input_element.id}
-  }
-
-  var scenario = {
-    start_year: 2010,
-    end_year: #{@end_year.to_i}
-  }

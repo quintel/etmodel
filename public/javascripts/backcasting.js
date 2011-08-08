@@ -26,24 +26,30 @@ $(function(){
     }
     return out;
   }
+  
+  // shows the grey bar with the scenario end year
+  var add_reference_bar = function() {
+    if(scenario.end_year == 2050) { return; }
+        
+    // get the series values. It's a doubly nested array
+    var values = _.flatten(_.map(chart_data.series, function(x) {
+      return _.map(x, function(y) { return y[1]; });
+    }));
+    
+    chart_data.series.push([[scenario.end_year, _.min(values)],[scenario.end_year, _.max(values)]]);
+    chart_data.series_options.push({ lineWidth: 1, color: "777777", markerOptions: { show: false}});
+  }
 
   // let's get the current slider value
   if (parent && parent.input_elements) {
     var user_value = parent.input_elements.get(input_element.id).get('user_value');
     var user_serie = build_user_value_chart_serie(user_value);
     chart_data.series.push(user_serie);
+    chart_data.series_options.push({ lineWidth: 2, markerOptions: { show: false}});
     $("tr.user_prediction").show();
   }
-
-  // ajax loading of prediction details
-  $("input[type=radio]").click(function(){
-    var prediction_id = $(this).val();
-    var url = "/predictions/" + prediction_id;
-    $(".prediction_details").busyBox({spinner: '<img src="/images/layout/ajax-loader.gif" />'});
-    $(".prediction_details").load(url, function() {
-      $(".prediction_details").busyBox('close');
-    });
-  });
+  
+  add_reference_bar();
   
   // Let's plot the chart
   $.jqplot("backcasting", chart_data.series, {
@@ -65,6 +71,18 @@ $(function(){
     }
   );
   
+  // interface stuff
+  
+  // ajax loading of prediction details
+  $("input[type=radio]").click(function(){
+    var prediction_id = $(this).val();
+    var url = "/predictions/" + prediction_id;
+    $(".prediction_details").busyBox({spinner: '<img src="/images/layout/ajax-loader.gif" />'});
+    $(".prediction_details").load(url, function() {
+      $(".prediction_details").busyBox('close');
+    });
+  });
+
   // extra info links
   $(".more_info a").live('click', function(event){
     event.preventDefault();

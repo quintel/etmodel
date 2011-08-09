@@ -1,6 +1,6 @@
 .comment
   .avatar= image_tag('user_missing.png')
-  .author= comment.author_name
+  %span.author= comment.author_name
+  %span.date= l comment.created_at, :format => :long
   .body= comment.body
-  .date= l comment.created_at, :format => :long
   .clear

@@ -28,9 +28,9 @@
     }
 
 .prediction
-  .intro
-    Hier kun je jouw scenario vergelijken met verwachtingen van experts. Jouw scenario valt binnen/buiten de expertverwachtingen.
-  .slider_title= @input_element.name
+  .intro= t('prediction.intro_text')
+  .slider_title= t('prediction.chart_header')
+    
   .upper_block
     .chart#backcasting
     .available_predictions

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110805140304) do
+ActiveRecord::Schema.define(:version => 20110809133600) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20110805140304) do
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id"
-    t.integer  "commentable_type"
+    t.string   "commentable_type"
     t.integer  "user_id"
     t.string   "email"
     t.string   "name"

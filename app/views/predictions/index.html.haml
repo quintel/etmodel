@@ -50,7 +50,7 @@
               - if current_user.try(:admin?)
                 = link_to 'edit', edit_admin_prediction_path(p), :target => '_new'
         %tr.user_prediction
-          %td
+          %td= radio_button_tag :prediction_id, ''
           %td
             .colour{:style => "background: ##{cycle(*colours)}"}
           %td Your prediction

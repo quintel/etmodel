@@ -76,6 +76,11 @@ $(function(){
   // ajax loading of prediction details
   $("input[type=radio]").click(function(){
     var prediction_id = $(this).val();
+    // if the user selects his own prediction
+    if(prediction_id == '') {
+      $(".prediction_details").empty();
+      return;
+    }    
     var url = "/predictions/" + prediction_id;
     $(".prediction_details").busyBox({spinner: '<img src="/images/layout/ajax-loader.gif" />'});
     $(".prediction_details").load(url, function() {

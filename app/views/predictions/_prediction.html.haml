@@ -38,14 +38,14 @@
   %a{:href => "http://twitter.com/share", :class => "twitter-share-button", :'data-count' => "none"} Tweet
   %script{:src => "http://platform.twitter.com/widgets.js"}
 .comments
-  %h3 Comments
+  %h3= t('prediction.comments')
   = render @prediction.comments
   
   = simple_form_for @comment, :url => comment_prediction_path(@prediction) do |f|
-    %h4 Post a new comment
+    %h4= t('prediction.new_comment')
     - unless current_user
       = f.input :email
       = f.input :name
     = f.input :body, :label => false
-    = f.button :submit
+    = f.submit t('prediction.post_comment')
 

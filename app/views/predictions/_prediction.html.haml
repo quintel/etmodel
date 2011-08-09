@@ -32,8 +32,7 @@
           %td= m.actor
       %tfoot
         %tr
-          %td{:colspan => 5}
-            De kosten van deze maatregelen worden niet meegenomen in de rest van het model
+          %td{:colspan => 5}= t('prediction.table_footer')
 .share
   = link_to "Link to this page", predictions_path(:input_element_id => @input_element.id, :prediction_id => @prediction.id)
   %a{:href => "http://twitter.com/share", :class => "twitter-share-button", :'data-count' => "none"} Tweet

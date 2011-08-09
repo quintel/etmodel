@@ -39,10 +39,39 @@ $(function(){
     chart_data.series.push([[scenario.end_year, _.min(values)],[scenario.end_year, _.max(values)]]);
     chart_data.series_options.push({ lineWidth: 1, color: "777777", markerOptions: { show: false}});
   }
+  
+  var slider_is_available = function() {
+    return parent && parent.input_elements
+  }
+  
+  var set_slider_value = function(x) {
+    if(!slider_is_available()) { return false; }
+    return get_slider().set({ user_value : x });
+  }
+  
+  var update_input_element = function() {
+    var new_value;
+    var user_value = get_slider().get('user_value');    
+    var selected_prediction_id = $(input[type=radio]).val();
+    
+    if(prediction_id == '') {
+      new_value = user_value;
+    } else {
+      // TODO: We've got to translate the prediction value to the same unit of the slider
+      new_value = 1;
+    }
+    set_slider_value(new_value);
+  }
+  
+  // returns the related input element
+  var get_slider = function() {
+    if(!slider_is_available()) { return false; }
+    return parent.input_elements.get(input_element.id);
+  }
 
   // let's get the current slider value
-  if (parent && parent.input_elements) {
-    var user_value = parent.input_elements.get(input_element.id).get('user_value');
+  if (slider_is_available()) {
+    var user_value = get_slider().get('user_value');
     var user_serie = build_user_value_chart_serie(user_value);
     chart_data.series.push(user_serie);
     chart_data.series_options.push({ lineWidth: 2, markerOptions: { show: false}});
@@ -92,5 +121,11 @@ $(function(){
   $(".more_info a").live('click', function(event){
     event.preventDefault();
     $(this).parent().find(".inline_description").toggle();
+  });
+  
+  // apply prediction
+  $("input.apply_prediction").click(function(){
+    update_input_element();
+    parent.$.fancybox.close();
   });
 });

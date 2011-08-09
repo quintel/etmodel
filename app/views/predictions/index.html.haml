@@ -57,5 +57,5 @@
   .prediction_details
     = render @prediction
   .buttons
-    = button_to_function "apply", "alert('Not implemented yet')"
+    = button_to_function "apply", "return false", :class => 'apply_prediction'
     = button_to_function "back", "parent.$.fancybox.close()"

@@ -1,3 +1,4 @@
+# TODO: Are we using this stuff?? PZ Wed 10 Aug 2011 11:48:57 CEST
 ##
 # The +UserLogicHelper+ is a helper, which provides some basic user logic to 
 # a user . 

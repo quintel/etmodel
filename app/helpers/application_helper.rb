@@ -12,7 +12,6 @@ module ApplicationHelper
   end
 
   def has_active_scenario?
-    #RD: renamed from has_update_statements?
     Current.setting.api_session_key.present?
   end
 
@@ -22,10 +21,12 @@ module ApplicationHelper
   end
 
 
+  # TODO: get rid of this, use CSS
   def table_defaults
     {:cellspacing => 0, :cellpadding => 0, :border => 0, :class => 'default'}
   end
 
+  # TODO: get rid of this, use CSS
   def cycles(html_attrs = {})
     class_name = cycle('odd', 'even')
     html_attrs[:class] = "#{html_attrs[:class]} #{class_name}"
@@ -47,11 +48,11 @@ module ApplicationHelper
   end
 
   def last_etm_path(options = {})
-    options[:include_action] = true if !options.has_key?(:include_action)
+    options[:include_action] = true unless options.has_key?(:include_action)
     if options[:include_action]
-     "%s/%s" % [Current.setting.last_etm_controller_name, Current.setting.last_etm_controller_action]
+     "#{Current.setting.last_etm_controller_name}/#{Current.setting.last_etm_controller_action}"
     else
-      "%s" % [Current.setting.last_etm_controller_name]
+      Current.setting.last_etm_controller_name
     end
   end
 

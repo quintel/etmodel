@@ -46,8 +46,7 @@
               - if p.user.try(:company_school)
                 #{p.user.company_school},
               = p.title
-              - if v = p.last_value
-                (#{"%0.f" % v.value}#{@input_element.unit} in #{v.year})
+              (#{"%.1f" % p.corresponding_slider_value} #{@input_element.unit} in #{@end_year})
               - if current_user.try(:admin?)
                 = link_to 'edit', edit_admin_prediction_path(p), :target => '_new'
         %tr.user_prediction

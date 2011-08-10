@@ -32,7 +32,6 @@ $(function(){
         out.push([scenario.start_year + i, calculate_value(user_value, -i)]);
       }
     }
-    console.log(out);
     return out;
   }
   
@@ -59,7 +58,7 @@ $(function(){
   }
   
   var update_input_element = function() {
-    if(input_element.value_for_prediction) {
+    if(input_element.value_for_prediction !== false) {
       set_slider_value(input_element.value_for_prediction);
     }
   }

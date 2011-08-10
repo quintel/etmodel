@@ -5,18 +5,18 @@
 .frame{:style => "position: relative;"}
   %ul.sub-nav
     %li
-      %a{:href=>"#", :class=>"information"}
+      %a.information{:href=>"#"}
         %span=t("header.Information")
     %li
-      %a{:href=>"#", :class=>"settings"}
+      %a.settings{:href=>"#"}
         %span=t("header.Settings")
     - if current_user
       %li
-        %a{:href=>"/logout", :class=>"signout"}
+        %a.signout{:href=>"/logout"}
           %span=t("header.Sign out")
     - else
       %li
-        %a{:href=>"#", :class=>"signin"}
+        %a.signin{:href=>"#"}
           %span=t("header.Sign in")
 
     %li{:style=>'width: 160px'}
@@ -28,7 +28,7 @@
 
   %strong
     %a{ :href => "/" }
-      %img{:src => "/images/layout/bg-logo3.png", :class=>"header_logo"}
+      %img.header_logo{:src => "/images/layout/bg-logo3.png"}
 
   = render "layouts/etm/header_menus"
 

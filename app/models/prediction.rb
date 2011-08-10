@@ -98,6 +98,8 @@ class Prediction < ActiveRecord::Base
         # This assumes the prediction values use 100 as current value
         # while the slider assumes 0 as current value
         raw - 100
+      when 'efficiency_improvement'
+        false
       else
         false
     end

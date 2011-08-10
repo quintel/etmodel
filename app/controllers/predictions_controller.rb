@@ -9,7 +9,11 @@ class PredictionsController < ApplicationController
     @comment.commentable = @prediction
     @end_year = params[:end_year]
 
-    render :layout => 'iframe'
+    if has_active_scenario?
+      render :layout => 'iframe'
+    else
+      render :layout => 'pages'
+    end
   end
   
   def show
@@ -39,5 +43,9 @@ class PredictionsController < ApplicationController
     
     def find_prediction
       @prediction = Prediction.find(params[:id])
+    end
+    
+    def has_active_scenario?
+      Current.setting.api_session_key.present? rescue false
     end
 end

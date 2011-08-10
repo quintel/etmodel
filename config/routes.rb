@@ -68,7 +68,8 @@ Etm::Application.routes.draw do
               :interfaces,
               :general_user_notifications,
               :constraints,
-              :descriptions
+              :descriptions,
+              :partners
     resources :comments, :except => [:new, :create]
     resources :areas, :only => [:index, :show]
   end

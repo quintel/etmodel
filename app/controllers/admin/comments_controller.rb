@@ -3,7 +3,7 @@ module Admin
     before_filter :find_comment, :only => [:show, :edit, :update, :destroy]
     
     def index
-      @comments = Comment.page(params[:page]).per(20)
+      @comments = Comment.recent_first.page(params[:page]).per(20)
     end
     
     def show

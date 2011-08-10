@@ -50,17 +50,9 @@ $(function(){
   }
   
   var update_input_element = function() {
-    var new_value;
-    var user_value = get_slider().get('user_value');    
-    var selected_prediction_id = $(input[type=radio]).val();
-    
-    if(prediction_id == '') {
-      new_value = user_value;
-    } else {
-      // TODO: We've got to translate the prediction value to the same unit of the slider
-      new_value = 1;
+    if(input_element.value_for_prediction) {
+      set_slider_value(input_element.value_for_prediction);
     }
-    set_slider_value(new_value);
   }
   
   // returns the related input element
@@ -68,46 +60,55 @@ $(function(){
     if(!slider_is_available()) { return false; }
     return parent.input_elements.get(input_element.id);
   }
+  
+  var plot_chart = function() {
+    // let's get the current slider value
+    if (slider_is_available()) {
+      var user_value = get_slider().get('user_value');
+      var user_serie = build_user_value_chart_serie(user_value);
+      chart_data.series.push(user_serie);
+      chart_data.series_options.push({ lineWidth: 2, markerOptions: { show: false}});
+      $("tr.user_prediction").show();
+    }
 
-  // let's get the current slider value
-  if (slider_is_available()) {
-    var user_value = get_slider().get('user_value');
-    var user_serie = build_user_value_chart_serie(user_value);
-    chart_data.series.push(user_serie);
-    chart_data.series_options.push({ lineWidth: 2, markerOptions: { show: false}});
-    $("tr.user_prediction").show();
+    add_reference_bar();
+
+    // Let's plot the chart
+    $.jqplot("backcasting", chart_data.series, {
+        grid: {
+          background: '#ffffff',
+          borderWidth: 0,
+          borderColor: '#ffffff',
+          shadow: false
+        },
+        axes:{
+          xaxis:{tickOptions:{formatString:'%.0f'}},
+          yaxis:{tickOptions:{formatString:'%.0f'}}
+        },
+        seriesColors: chart_data.colours,
+        series: chart_data.series_options,
+        seriesDefaults : {
+          markerOptions: { show: false }
+        }
+      }
+    );
   }
   
-  add_reference_bar();
+  // bootstrap
   
-  // Let's plot the chart
-  $.jqplot("backcasting", chart_data.series, {
-      grid: {
-        background: '#ffffff',
-        borderWidth: 0,
-        borderColor: '#ffffff',
-        shadow: false
-      },
-      axes:{
-        xaxis:{tickOptions:{formatString:'%.0f'}},
-        yaxis:{tickOptions:{formatString:'%.0f'}}
-      },
-      seriesColors: chart_data.colours,
-      series: chart_data.series_options,
-      seriesDefaults : {
-        markerOptions: { show: false }
-      }
-    }
-  );
+  plot_chart();
+
   
   // interface stuff
   
   // ajax loading of prediction details
   $("input[type=radio]").click(function(){
     var prediction_id = $(this).val();
+    input_element.value_for_prediction = $(this).data('slider_value');
     // if the user selects his own prediction
     if(prediction_id == '') {
       $(".prediction_details").empty();
+      input_element.value_for_prediction = false;
       return;
     }    
     var url = "/predictions/" + prediction_id;

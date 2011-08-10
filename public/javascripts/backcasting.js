@@ -1,15 +1,21 @@
 $(function(){
+  
+  // Chart series methods
+  // Move on the server side
+  //
   var calculate_value = function(x, years) {
     var base = 1 + x / 100.0;
     var out = Math.pow(base, years) * 100;
     return out;
   }
 
+  // Move on the server side
   var get_mid_year = function() {
     return Math.floor(scenario.end_year - scenario.start_year) / 2 + scenario.start_year;
   }
 
   // returns a serie in the jqplot format
+  // Move on the server side
   var build_user_value_chart_serie = function(user_value) {
     var out;
     if(!input_element.growth) {

@@ -18,7 +18,7 @@
 
     // information about the slider
     var input_element = {
-      growth: #{@input_element.growth?.to_json},
+      command_type: #{@input_element.command_type.to_json},
       id: #{@input_element.id},
       value_for_prediction: #{@prediction.try(:corresponding_slider_value)}
     }

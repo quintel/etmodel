@@ -103,7 +103,10 @@ Etm::Application.routes.draw do
   end
   
   resources :predictions, :only => [:index, :show] do
-    post :comment, :on => :member
+    member do
+      post :comment
+      get :share
+    end
   end
 
   match '/select_movie/:id'                => 'pages#select_movie'

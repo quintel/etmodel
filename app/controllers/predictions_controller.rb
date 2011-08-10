@@ -1,6 +1,6 @@
 class PredictionsController < ApplicationController
   before_filter :find_input_element, :only => :index
-  before_filter :find_prediction, :only => [:show, :comment]
+  before_filter :find_prediction, :only => [:show, :comment, :share]
   
   def index
     @predictions = @input_element.available_predictions
@@ -9,11 +9,16 @@ class PredictionsController < ApplicationController
     @comment.commentable = @prediction
     @end_year = params[:end_year]
 
-    if has_active_scenario?
-      render :layout => 'iframe'
-    else
-      render :layout => 'pages'
-    end
+    render :layout => 'iframe'
+  end
+  
+  def share
+    current_area = @prediction.area
+    @input_element = @prediction.input_element
+    @predictions = @input_element.predictions.for_area(current_area)
+    @comment = Comment.new
+    @comment.commentable = @prediction
+    render :layout => 'pages', :action => 'index'
   end
   
   def show
@@ -27,12 +32,18 @@ class PredictionsController < ApplicationController
     @comment = Comment.new(params[:comment])
     @comment.user_id = current_user.id if current_user
     @comment.commentable = @prediction
-    if @comment.save
-      flash[:notice] = "Your comment has been added"
-    else
-      flash[:error] = "Error saving the comment"
+    
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to predictions_path(:input_element_id => @prediction.input_element_id, :prediction_id => @prediction.id), 
+                        :notice => "Your comment has been added"}
+        format.js { }
+      else
+        format.html { redirect_to predictions_path(:input_element_id => @prediction.input_element_id, :prediction_id => @prediction.id),
+                        :error => "Error saving the comment"}
+        format.js { page.alert("Error saving the comment! Please try again") }
+      end
     end
-    redirect_to predictions_path(:input_element_id => @prediction.input_element_id, :prediction_id => @prediction.id)
   end
   
   private

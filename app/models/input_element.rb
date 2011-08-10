@@ -143,8 +143,6 @@ class InputElement < ActiveRecord::Base
 
   def available_predictions
     predictions.for_area(Current.setting.region)
-  rescue
-    []
   end
 
   def has_predictions?

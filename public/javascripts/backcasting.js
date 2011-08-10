@@ -9,27 +9,30 @@ $(function(){
     return out;
   }
 
-  // Move on the server side
-  var get_mid_year = function() {
-    return Math.floor(scenario.end_year - scenario.start_year) / 2 + scenario.start_year;
-  }
-
   // returns a serie in the jqplot format
   // Move on the server side
   var build_user_value_chart_serie = function(user_value) {
     var out;
-    if(input_element.command_type != 'growth_rate') {
+    // no interpolations or mid points, just draw a straight line
+    if(input_element.command_type == 'value') {
       out = [
         [scenario.start_year,0],
         [scenario.end_year, user_value]
       ];
-    } else {
-      out = [
-        [scenario.start_year, 100],
-        [get_mid_year(),      calculate_value(user_value, scenario.end_year - get_mid_year())],
-        [scenario.end_year,   calculate_value(user_value, scenario.end_year - scenario.start_year)]
-      ];
+    } else if(input_element.command_type == 'growth_rate') {
+      // draw a nice curve
+      out = [[scenario.start_year, 100]];
+      for(i = 1; scenario.start_year + i <= scenario.end_year; i++) {
+        out.push([scenario.start_year + i, calculate_value(user_value, i)]);
+      }
+    } else if(input_element.command_type == 'efficiency_improvement') {
+      // as above, inverted
+      out = [[scenario.start_year, 100]];
+      for(i = 1; scenario.start_year + i <= scenario.end_year; i++) {
+        out.push([scenario.start_year + i, calculate_value(user_value, -i)]);
+      }
     }
+    console.log(out);
     return out;
   }
   

@@ -34,14 +34,15 @@
         %tr
           %td{:colspan => 5}= t('prediction.table_footer')
 .share
-  = link_to "Link to this page", predictions_path(:input_element_id => @input_element.id, :prediction_id => @prediction.id)
+  = link_to "Link to this page", share_prediction_path(@prediction)
   -#%a{:href => "http://twitter.com/share", :class => "twitter-share-button", :'data-count' => "none"} Tweet
   -#%script{:src => "http://platform.twitter.com/widgets.js"}
 .comments
   %h3= t('prediction.comments')
-  = render @prediction.comments
+  #comments_container
+    = render @prediction.comments
   
-  = simple_form_for @comment, :url => comment_prediction_path(@prediction) do |f|
+  = simple_form_for @comment, :url => comment_prediction_path(@prediction), :remote => true do |f|
     %h4= t('prediction.new_comment')
     - unless current_user
       = f.input :email

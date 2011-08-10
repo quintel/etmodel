@@ -5,7 +5,6 @@
 
 - content_for :head do
   = stylesheet_link_tag 'prediction'
-  = javascript_include_tag :defaults
   = sprocket_include_tag 'backcasting'
   = javascript_include_tag 'backcasting'
   :javascript
@@ -46,7 +45,7 @@
               - if p.user.try(:company_school)
                 #{p.user.company_school},
               = p.title
-              (#{"%.1f" % p.corresponding_slider_value} #{@input_element.unit} in #{@end_year})
+              (#{"%.1f" % p.corresponding_slider_value rescue nil} #{@input_element.unit} in #{@end_year})
               - if current_user.try(:admin?)
                 = link_to 'edit', edit_admin_prediction_path(p), :target => '_new'
         %tr.user_prediction
@@ -56,6 +55,7 @@
           %td Your prediction
   .prediction_details
     = render @prediction
-  .buttons
-    = button_to_function "apply", "return false", :class => 'apply_prediction'
-    = button_to_function "back", "parent.$.fancybox.close()"
+  - unless params[:action] == 'link'  
+    .buttons
+      = button_to_function "apply", "return false", :class => 'apply_prediction'
+      = button_to_function "back", "parent.$.fancybox.close()"

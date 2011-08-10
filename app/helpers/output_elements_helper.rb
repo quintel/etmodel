@@ -30,18 +30,4 @@ module OutputElementsHelper
 EOJS
     out.html_safe
   end
-  
-  # TODO: make a generic one
-  def render_prediction_chart(c)
-    out = <<EOJS
-      InitializePolicyLine(
-        'prediction_chart',
-        [[1,2],[3,4]],
-        '#{c.unit}',
-        [0,4],
-        ['#234876', '#826151'],
-        ['foo', 'bar']
-      )
-EOJS
-  end
 end

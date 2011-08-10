@@ -21,7 +21,7 @@
 #  interface_group           :string(255)
 #  locked_for_municipalities :boolean(1)
 #  input_id                  :integer(4)
-#  growth                    :boolean(1)
+#  command_type              :string(255)
 #
 
 class InputElement < ActiveRecord::Base

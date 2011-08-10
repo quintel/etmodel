@@ -22,6 +22,8 @@ class Comment < ActiveRecord::Base
   
   attr_accessible :body, :name, :email
   
+  scope :recent_first, order('created_at DESC')
+  
   def author_name
     if user
       user.name

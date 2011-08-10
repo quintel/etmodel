@@ -18,7 +18,7 @@ $(function(){
   // Move on the server side
   var build_user_value_chart_serie = function(user_value) {
     var out;
-    if(!input_element.growth) {
+    if(input_element.command_type != 'growth_rate') {
       out = [
         [scenario.start_year,0],
         [scenario.end_year, user_value]

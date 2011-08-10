@@ -91,15 +91,17 @@ class Prediction < ActiveRecord::Base
   # The slider often uses a different unit from the prediction. Let's convert it
   def corresponding_slider_value
     raw = value_for_year(Current.setting.end_year)
+    span = Current.setting.end_year - Current.setting.start_year
     case input_element.command_type
       when 'value'
         raw
       when 'growth_rate'
+        # Here things become slightly more complex: we must convert a cumulative value into the yearly growth unit
         # This assumes the prediction values use 100 as current value
         # while the slider assumes 0 as current value
-        raw - 100
+        100 * ((raw / 100) ** (1.0 / span) - 1)
       when 'efficiency_improvement'
-        false
+        100 * ((raw / 100) ** (-1.0 / span) - 1)
       else
         false
     end

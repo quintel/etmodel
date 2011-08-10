@@ -19,7 +19,8 @@
     // information about the slider
     var input_element = {
       growth: #{@input_element.growth?.to_json},
-      id: #{@input_element.id}
+      id: #{@input_element.id},
+      value_for_prediction: #{@prediction.try(:corresponding_slider_value)}
     }
 
     var scenario = {
@@ -37,7 +38,7 @@
       %table
         - @predictions.each do |p|
           %tr
-            %td= radio_button_tag :prediction_id, p.id, (p.id == @prediction.id)
+            %td= radio_button_tag :prediction_id, p.id, (p.id == @prediction.id), :'data-slider_value' => p.corresponding_slider_value
             %td
               .colour{:style => "background: ##{cycle(*colours)}"}
             %td

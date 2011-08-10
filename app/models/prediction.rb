@@ -51,11 +51,47 @@ class Prediction < ActiveRecord::Base
     values.map{|v| [v.year, v.value]}
   end
   
+  def values_to_h
+    @values_hash ||= {}.tap{|h| values.each{|v| h[v.year] = v.value}}
+  end
+  
   def max_value
     values.map(&:value).compact.max
   end
   
   def min_value
     values.map(&:value).compact.min
+  end
+  
+  # calculates the prediction value for a year
+  def value_for_year(x)
+    hash = values_to_h
+    # empty prediction
+    return nil if hash.empty?
+    # exact value
+    return hash[x] if hash[x]
+    # single value
+    return hash.values.first if hash.size == 1
+    # year outside the range. We could also use linear extrapolation
+    years = hash.keys.sort
+    if x > (max_year = years.max)
+      return hash[max_year]
+    end
+    if x < (min_year = years.min)
+      return hash[min_year]
+    end
+    # linear interpolation    
+    x0 = years.select{|z| z < x}.max
+    x1 = years.select{|z| z > x}.min
+    y0 = hash[x0]
+    y1 = hash[x1]
+    y = y0 + (x - x0) * ((y1- y0) / (x1 - x0))
+  end
+  
+  # The slider often uses a different unit from the prediction. Let's convert it
+  def corresponding_slider_value
+    2.7
+  rescue
+    false
   end
 end

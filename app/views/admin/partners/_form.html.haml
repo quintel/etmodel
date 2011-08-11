@@ -8,4 +8,10 @@
   = f.input :place, :as => :select, :collection => ['left', 'right']
   = f.input :long_name
   
+  = f.simple_fields_for :description do |j|
+    = j.input :short_content_en, :as => :text
+    = j.input :short_content_nl, :as => :text
+    = j.input :content_en, :as => :text
+    = j.input :content_nl, :as => :text
+  
   = f.button :submit

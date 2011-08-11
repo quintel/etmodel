@@ -3,17 +3,17 @@
 #log2
 %h1= t("partners.Partners of the Energy Transition Model")
 #partners
-  -@partners.each do |partner|
+  - @partners.each do |p|
     .partner_container
-      %a{:id => "partner_#{partner.id}",:class=>"partner_link", :href=> (partner.description? ? "/partners/#{partner.name.downcase}" : partner.url )}
+      %a.partner_link{:id => "partner_#{p.id}", :href => p.link }
         .header
-          %img{:src => "/images/partners/#{partner.name.downcase}.png"}
+          = image_tag p.logo
 
-  -@partners.each do |partner|
-    .content{:id => "partner_#{partner.id}_content"}
-      - if partner.description
-        = partner.description.short_content
+  - @partners.each do |p|
+    .content{:id => "partner_#{p.id}_content"}
+      - if p.description
+        = p.description.short_content
       - else
-        = t("partners.Click here to go to the website of") + "#{partner.name_or_long_name}."
+        = t("partners.Click here to go to the website of") + "#{p.name_or_long_name}."
   
   .clear

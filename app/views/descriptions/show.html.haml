@@ -9,10 +9,9 @@
       %br
       = raw @description.content_en
 
-    -#= @description.content.gsub('<a ', '<a target="_blank" ') || "Lorem"
     %div{:style => 'clear:both'} &nbsp;
 
-- if @description.content.andand.include?("player")  || @description.content.andand.include?("object")
+- if @description.embeds_player?
   %script flowplayer("player", "/flash/flowplayer-3.2.6.swf");
 
 

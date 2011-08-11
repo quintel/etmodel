@@ -1,5 +1,4 @@
 #partner
-  .header
-    %img{:src => "/images/partners/#{@partner.name.downcase}.png"}
-  %a{:href => partners_path} << Back to overview
-  = @partner.description.content
+  .header= image_tag @partner.logo
+  = link_to "<< Back to overview", partners_path
+  = @partner.description.try(:content)

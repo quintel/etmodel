@@ -41,7 +41,10 @@ Etm::Application.routes.draw do
   match 'login'  => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
 
-  resources :partners, :user_sessions, :users, :descriptions
+  resources :user_sessions, :users, :descriptions
+  
+  resources :partners, :only => [:show, :index]
+  
   resources :constraints, :only => :show do
     get :iframe, :on => :member
   end

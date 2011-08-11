@@ -43,6 +43,8 @@ class Partner < ActiveRecord::Base
   def name_or_long_name
     self.long_name ? self.long_name : self.name
   end
+  
+  def logo
+    "/images/partners/#{name.downcase}.png"
+  end
 end
-
-

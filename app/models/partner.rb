@@ -24,8 +24,8 @@ class Partner < ActiveRecord::Base
   scope :right, where(:place => "right")
   scope :unique, group("name")
   scope :include_descriptions, includes(:description)
-
-
+  
+  accepts_nested_attributes_for :description
 
   ##
   # TODO: Handle the case when a partner has strange characters in the name.
@@ -46,5 +46,9 @@ class Partner < ActiveRecord::Base
   
   def logo
     "/images/partners/#{name.downcase}.png"
+  end
+  
+  def link
+    description && !description.content.blank? ? "/partners/#{name.downcase}" : url
   end
 end

@@ -8,6 +8,7 @@ module Admin
 
     def new
       @partner = Partner.new
+      @partner.build_description
     end
 
     def create
@@ -24,6 +25,7 @@ module Admin
     end
 
     def edit
+      @partner.build_description unless @partner.description
     end
 
     def update

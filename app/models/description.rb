@@ -41,5 +41,9 @@ class Description < ActiveRecord::Base
       nil
     end
   end
+  
+  def embeds_player?
+    content.andand.include?("player")  || content.andand.include?("object")
+  end
 end
 

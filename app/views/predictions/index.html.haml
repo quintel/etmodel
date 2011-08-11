@@ -1,5 +1,5 @@
 :ruby
-  colours = ["F00", "0F0", "00F", "FF0", "F0F", "0FF"]
+  colours = ["#ffff00", "#ffb200", "#ff6600", "#e60066", "#660099", "#1919b3"]
   series = @predictions.map{|p| p.values_to_a}
   series_options = series.map{|x| {}}
 
@@ -39,7 +39,7 @@
           %tr
             %td= radio_button_tag :prediction_id, p.id, (p.id == @prediction.id), :'data-slider_value' => p.corresponding_slider_value
             %td
-              .colour{:style => "background: ##{cycle(*colours)}"}
+              .colour{:style => "background: #{cycle(*colours)}"}
             %td
               #{p.user.try(:name)},
               - if p.user.try(:company_school)
@@ -51,7 +51,7 @@
         %tr.user_prediction
           %td= radio_button_tag :prediction_id, ''
           %td
-            .colour{:style => "background: ##{cycle(*colours)}"}
+            .colour{:style => "background: #{cycle(*colours)}"}
           %td Your prediction
   .prediction_details
     = render @prediction

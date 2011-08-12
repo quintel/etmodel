@@ -11,8 +11,7 @@
       %a.twitter-share{:href => "http://twitter.com/share?url=http://www.energytransitionmodel.com", :target=>"_blank" }&nbsp;
     #two_container
       - %w[left right].each do |position|
-        %ul.position
-          - # TODO rails 3
+        %ul{:class => position}
           - partners = Partner.place(position).country(country).include_descriptions || Partner.first
           - partners.each_with_index do |company,i|
             %li{:timeout => company.time }

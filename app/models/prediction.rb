@@ -36,14 +36,12 @@ class Prediction < ActiveRecord::Base
   
   # Prepare blank records, useful when building forms
   def prepare_nested_attributes
-    (8 - values.size).times { values.build }
+    if new_record?
+      [2010, 2015, 2020, 2025, 2030, 2040, 2050].each{|y| values.build(:year => y)}
+    else
+      8.times { values.build }
+    end
     (8 - measures.size).times { measures.build }
-  end
-  
-  # Prepare blank records, useful when building forms
-  def add_blank_nested_attributes
-    8.times { values.build }
-    8.times { measures.build }
   end
   
   def values_to_a

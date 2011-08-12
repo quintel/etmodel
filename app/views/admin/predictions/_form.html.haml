@@ -34,6 +34,6 @@
     = m.input :actor
     = m.input :description
     - unless m.object.new_record?
-      = m.input :_destroy, :as => :boolean
+      = m.input :_destroy, :as => :boolean, :label => 'delete'
 
 = link_to "back", admin_predictions_path

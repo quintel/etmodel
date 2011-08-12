@@ -18,7 +18,7 @@
             %li{:timeout => company.time }
               - href = (company.description? ? partner_path(company.name.downcase) : company.url)
 
-              %a{ :href => href, :id=> company.name.downcase, :style => "background-image: url('/images/layout/ico-#{company.name.downcase}-inner.png');" }
+              %a{ :href => href, :id=> company.name.downcase, :style => "background-image: url('#{company.footer_logo}');" }
                 = company.name
 
               .clear

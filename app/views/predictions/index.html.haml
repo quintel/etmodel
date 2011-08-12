@@ -29,7 +29,7 @@
 
 .prediction
   .intro= t('prediction.intro_text')
-  .slider_title= t('prediction.chart_header')
+  .slider_title= I18n.t('prediction.chart_title.' + @input_element.key)
     
   .upper_block
     .chart#backcasting

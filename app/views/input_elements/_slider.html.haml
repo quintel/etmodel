@@ -1,5 +1,5 @@
 %div{:id => "slider-group-#{slider.share_group}-#{slider.id}"}
-  %div{:id => dom_id(slider)}
+  %div{:id => dom_id(slider), :'data-key' => slider.key}
     .name
       .text
         = raw slider.translated_name

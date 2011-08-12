@@ -34,7 +34,7 @@ module LayoutHelper
     return text unless text.length > opts[:length]      
     short = content_tag :span, truncate(text, :length => opts[:length]), :class => '_truncated'
     long  = content_tag :span, text, :class => '_original', :style => 'display: none'
-    link  = link_to_function 'more..', '$(this).siblings("._original").show();$(this).siblings("._truncated").hide();$(this).hide()'
+    link  = link_to_function I18n.t('more_text'), '$(this).siblings("._original").show();$(this).siblings("._truncated").hide();$(this).hide()'
     out   = short + link + long
     out.html_safe
   end

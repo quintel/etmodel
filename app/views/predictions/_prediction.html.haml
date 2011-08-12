@@ -11,7 +11,7 @@
     %table
       %thead
         %tr
-          %th{:colspan => 2} Maatregelen om expertverwachting te behalen
+          %th{:colspan => 2}= t('prediction.measures_header')
           %th= t 'prediction.impact'
           %th= t 'prediction.cost'
           %th= t 'prediction.actor'
@@ -37,7 +37,7 @@
   - else
     %p= t('prediction.no_measures_available')
 .share
-  = link_to "Link to this page", share_prediction_path(@prediction), :target => '_blank'
+  = link_to t('prediction.share_link'), share_prediction_path(@prediction), :target => '_blank'
   -#%a{:href => "http://twitter.com/share", :class => "twitter-share-button", :'data-count' => "none"} Tweet
   -#%script{:src => "http://platform.twitter.com/widgets.js"}
 .comments

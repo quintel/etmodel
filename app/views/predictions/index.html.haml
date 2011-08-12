@@ -57,5 +57,5 @@
     = render @prediction
   - unless params[:action] == 'link'  
     .buttons
-      = button_to_function "apply", "return false", :class => 'apply_prediction'
-      = button_to_function "back", "parent.$.fancybox.close()"
+      = button_to_function t('prediction.apply'), "return false", :class => 'apply_prediction'
+      = button_to_function t('prediction.back'), "parent.$.fancybox.close()"

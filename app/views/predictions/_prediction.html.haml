@@ -37,7 +37,7 @@
   - else
     %p= t('prediction.no_measures_available')
 .share
-  = link_to "Link to this page", share_prediction_path(@prediction)
+  = link_to "Link to this page", share_prediction_path(@prediction), :target => '_blank'
   -#%a{:href => "http://twitter.com/share", :class => "twitter-share-button", :'data-count' => "none"} Tweet
   -#%script{:src => "http://platform.twitter.com/widgets.js"}
 .comments

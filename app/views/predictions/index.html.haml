@@ -52,7 +52,7 @@
           %td= radio_button_tag :prediction_id, ''
           %td
             .colour{:style => "background: #{cycle(*colours)}"}
-          %td Your prediction
+          %td= t 'prediction.your_scenario'
   .prediction_details
     = render @prediction
   - unless params[:action] == 'link'  

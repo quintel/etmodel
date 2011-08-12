@@ -49,7 +49,7 @@ class PredictionsController < BaseController
 
   def edit
     @prediction = Prediction.find(params[:id])
-    @prediction.add_blank_nested_attributes
+    @prediction.prepare_nested_attributes
   end
   
 end

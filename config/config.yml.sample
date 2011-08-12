@@ -7,6 +7,7 @@ development: &DEV
     max_scenarios:
     root_page:
     enable_backcasting: false
+    enable_rdebug: false
 
 production:
     <<: *DEV

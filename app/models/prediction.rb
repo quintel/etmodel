@@ -6,7 +6,6 @@
 #  input_element_id :integer(4)
 #  user_id          :integer(4)
 #  expert           :boolean(1)
-#  curve_type       :string(255)
 #  created_at       :datetime
 #  updated_at       :datetime
 #  description      :text

@@ -5,7 +5,6 @@
   = f.input :user_id, :collection => User.ordered.map{|u| [u.backend_label, u.id]}
   = f.input :title, :required => false
   = f.input :expert
-  = f.input :curve_type
   = f.input :description
   = f.button :submit
 

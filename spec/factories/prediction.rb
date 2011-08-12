@@ -3,7 +3,6 @@ FactoryGirl.define do
     title 'foobar'
     association :input_element, :factory => :input_element
     expert true
-    curve_type nil
     description 'This is a nice test discriprion'
     association :user, :factory => :user
   end

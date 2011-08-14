@@ -89,8 +89,8 @@
     $('pre.no-example:not(.css) code').addClass('javascript');
 
 
-    // Skip syntax highlighting on IE < 8
-    if (! $.browser.msie || $.browser.version > 7.0) {
+    // Skip syntax highlighting on IE < 9
+    if (! $.browser.msie || $.browser.version > 8.0) {
         $('pre.css code').each(function () {
             var $this = $(this).addClass('css');
 

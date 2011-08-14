@@ -15,6 +15,11 @@
   background-repeat: no-repeat;
 }
 
+/* Slider height */
+.quinn, .quinn .bar, .quinn .active-bar, .quinn .movable-range {
+  height: 18px;
+}
+
 /* Float clearing */
 
 .quinn {
@@ -35,9 +40,9 @@
  */
 
 .quinn .bar, .quinn .active-bar {
-  height: 18px;
   float: left;
-  position: relative;
+  position: absolute;
+  width: auto;
 }
 
 .quinn .bar .left, .quinn .bar .main, .quinn .bar .right,
@@ -81,8 +86,9 @@
  */
 
 .quinn .active-bar {
-  min-width: 10px;
+  overflow: hidden;
   width: auto;
+  z-index: 5;
 }
 
 .quinn .active-bar .left,
@@ -114,9 +120,8 @@
  */
 
 .quinn .movable-range {
-  height: 18px;
   float: left;
-  position: relative;
+  position: absolute;
 }
 
 .quinn .handle {

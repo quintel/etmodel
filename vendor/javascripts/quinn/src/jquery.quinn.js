@@ -89,7 +89,7 @@
     }
 
     // The current Quinn version.
-    Quinn.VERSION = '0.3.3';
+    Quinn.VERSION = '0.3.4';
 
     // ## Rendering
 
@@ -144,7 +144,6 @@
         });
 
         this.wrapper.find('.movable-range').css({
-            marginLeft: (-barWidth + handleDangle).toString() + 'px',
             width: (barWidth - handleWidth).toString() + 'px'
         });
 
@@ -170,35 +169,49 @@
         var opts       = this.options,
             delta      = this.range[1] - this.range[0],
             percent    = (this.value - this.range[0]) / delta * 100,
-            percentStr = percent.toString() + '%',
-            barPercentStr, barMin, barMinAsPercent;
+            percentStr = percent.toString() + '%';
 
         this.handle.stop(true);
         this.activeBar.stop(true);
 
         if (animate && opts.effects) {
-            barPercentStr = percentStr;
+            this.handle.animate({ left: percentStr }, {
+                duration: opts.effectSpeed,
+                step: _.bind(function (now) {
+                    // "now" is the current "left" position of the handle.
+                    // Convert that to the equivalent value. For example, if
+                    // the slider is 0->200, and now is 20, the equivalent
+                    // value is 40.
+                    this.__positionActiveBar((now / 100) *
+                        (this.range[1] - this.range[0]) + this.range[0]);
+                }, this)
+            });
 
-            // Animating the bar to less then it's minimum width results in
-            // weird glitches, so use the min-width when necessary.
-            if (_.isString(barMin = this.activeBar.css('min-width'))) {
-                barMin = barMin.match(/^\d+/);
-                barMin = (barMin && parseInt(barMin[0], 10)) || 0;
-
-                barMinAsPercent = this.bar.width();
-                barMinAsPercent = (barMin / barMinAsPercent) * 100;
-
-                if (percent < barMinAsPercent) {
-                    barPercentStr = barMin.toString() + 'px';
-                }
-            }
-
-            this.handle.animate({ left: percentStr }, opts.effectSpeed);
-            this.activeBar.animate({ width: barPercentStr }, opts.effectSpeed);
         } else {
             this.handle.css('left', percentStr);
-            this.activeBar.css('width', percentStr);
+            this.__positionActiveBar(this.value);
         }
+    };
+
+    Quinn.prototype.__positionActiveBar = function (value) {
+        var leftPosition, rightPosition;
+
+        if (value < 0) {
+            // position with the left edge underneath the handle, and the
+            // right edge at 0
+            leftPosition  = this.__positionForValue(value);
+            rightPosition = this.__positionForValue(0);
+        } else {
+            // position with the right edge underneath the handle, and the
+            // left edge at 0
+            leftPosition  = this.__positionForValue(0);
+            rightPosition = this.__positionForValue(value);
+        }
+
+        rightPosition = this.bar.width() - rightPosition;
+
+        this.activeBar.css('left', leftPosition.toString() + 'px');
+        this.activeBar.css('right', rightPosition.toString() + 'px');
     };
 
     // ## Slider Manipulation
@@ -471,6 +484,13 @@
         }
 
         return barPosition / barWidth * 100;
+    };
+
+    Quinn.prototype.__positionForValue = function (value) {
+        var barWidth = this.bar.width(),
+            delta    = this.range[1] - this.range[0];
+
+        return ((Math.abs(this.range[0]) + value) / delta) * barWidth;
     };
 
     /**

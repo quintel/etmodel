@@ -49,11 +49,11 @@ open-sourced with their kind permission. Quinn is released under the
 <h2 id="downloads">Downloads</h2>
 
 <dl>
-  <dt><a href="https://github.com/antw/quinn/tarball/v0.3.3">Everything (0.3.3)</a></dt>
+  <dt><a href="https://github.com/antw/quinn/tarball/v0.3.4">Everything (0.3.4)</a></dt>
   <dd>Tarball containing JS, CSS, and images</dd>
-  <dt><a href="http://antw.github.com/quinn/jquery.quinn.js">Development Version (0.3.3)</a></dt>
+  <dt><a href="http://antw.github.com/quinn/jquery.quinn.js">Development Version (0.3.4)</a></dt>
   <dd>13.3kb, JS only, Uncompressed with comments</dd>
-  <dt><a href="http://antw.github.com/quinn/jquery.quinn.min.js">Production Version (0.3.3)</a></dt>
+  <dt><a href="http://antw.github.com/quinn/jquery.quinn.min.js">Production Version (0.3.4)</a></dt>
   <dd>1.54kb, JS only, Minified and Gzipped</dd>
 </dl>
 
@@ -91,11 +91,10 @@ minimum value represented on the slider, and the second is the maximum.</p>
 $('.slider').quinn({ range: [ 0, 11 ] });
 </code></pre>
 
-<p>Negative values are perfectly acceptable, but the “active bar” (the blue
-background) doesn’t yet handle this correctly – it ought to originate
-at zero rather than always on the left.</p>
+<p>Negative values are perfectly acceptable, and the “active bar” (the
+blue background) will always be anchored at zero.</p>
 
-<pre><code>$('.slider').quinn({ range: [ -100, 0 ] });
+<pre><code>$('.slider').quinn({ range: [ -100, 100 ] });
 </code></pre>
 
 <h3 id="value">Initial Values <code>value: number</code></h3>
@@ -355,6 +354,12 @@ $('.slider').quinn({
 </code></pre>
 
 <h2 id="history">History</h2>
+
+<h4 id="august-14th-2011">0.3.4 <em>August 14th, 2011</em></h4>
+
+<p>The blue “active bar” now originates at zero rather than the lowest
+slider value, allowing sliders with sub-zero values to be better
+represented than before.</p>
 
 <h4 id="july-28th-2011">0.3.3 <em>July 28th, 2011</em></h4>
 

@@ -31,13 +31,13 @@ open-sourced with their kind permission. Quinn is released under the
 Downloads
 ---------
 
-[Everything (0.3.3)][tarball]
+[Everything (0.3.4)][tarball]
 :   Tarball containing JS, CSS, and images
 
-[Development Version (0.3.3)][development-js]
+[Development Version (0.3.4)][development-js]
 :   13.3kb, JS only, Uncompressed with comments
 
-[Production Version (0.3.3)][production-js]
+[Production Version (0.3.4)][production-js]
 :   1.54kb, JS only, Minified and Gzipped
 
 Table of Contents
@@ -75,11 +75,10 @@ minimum value represented on the slider, and the second is the maximum.
     // Our volume knobs go up to eleven.
     $('.slider').quinn({ range: [ 0, 11 ] });
 
-Negative values are perfectly acceptable, but the "active bar" (the blue
-background) doesn't yet handle this correctly -- it ought to originate
-at zero rather than always on the left.
+Negative values are perfectly acceptable, and the "active bar" (the
+blue background) will always be anchored at zero.
 
-    $('.slider').quinn({ range: [ -100, 0 ] });
+    $('.slider').quinn({ range: [ -100, 100 ] });
 
 ### Initial Values `value: number` {#value}
 
@@ -329,6 +328,12 @@ need to alter the CSS. For example:
 History
 -------
 
+#### 0.3.4 _August 14th, 2011_
+
+The blue "active bar" now originates at zero rather than the lowest
+slider value, allowing sliders with sub-zero values to be better
+represented than before.
+
 #### 0.3.3 _July 28th, 2011_
 
 Add a `disabledOpacity` option for controlling what opacity is used
@@ -395,7 +400,7 @@ Opera and Internet Explorer are not yet complete.
 [us]:             http://documentcloud.github.com/underscore
 [easing]:         http://gsgd.co.uk/sandbox/jquery/easing
 
-[tarball]:        https://github.com/antw/quinn/tarball/v0.3.3
+[tarball]:        https://github.com/antw/quinn/tarball/v0.3.4
 [development-js]: http://antw.github.com/quinn/jquery.quinn.js
 [production-js]:  http://antw.github.com/quinn/jquery.quinn.min.js
 

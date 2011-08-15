@@ -176,7 +176,7 @@ by developers later.</p>
         <p>The current Quinn version.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">VERSION</span> <span class="o">=</span> <span class="s1">&#39;0.3.5&#39;</span><span class="p">;</span></pre></div>
+        <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">VERSION</span> <span class="o">=</span> <span class="s1">&#39;0.3.6&#39;</span><span class="p">;</span></pre></div>
       </td>
     </tr>
     <tr id='section-Rendering'>
@@ -862,9 +862,16 @@ on the slider bar. For example, in a 200px wide bar whose values are
       <td class=code>
         <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">__positionForValue</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">barWidth</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">bar</span><span class="p">.</span><span class="nx">width</span><span class="p">(),</span>
-            <span class="nx">delta</span>    <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+            <span class="nx">delta</span>    <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="nx">position</span> <span class="o">=</span> <span class="p">(((</span><span class="nx">value</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="nx">delta</span><span class="p">))</span> <span class="o">*</span> <span class="nx">barWidth</span><span class="p">;</span>
 
-        <span class="k">return</span> <span class="p">((</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="nx">value</span><span class="p">)</span> <span class="o">/</span> <span class="nx">delta</span><span class="p">)</span> <span class="o">*</span> <span class="nx">barWidth</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">position</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">position</span> <span class="o">&gt;</span> <span class="nx">barWidth</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">barWidth</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">position</span><span class="p">;</span>
+        <span class="p">}</span>
     <span class="p">};</span></pre></div>
       </td>
     </tr>

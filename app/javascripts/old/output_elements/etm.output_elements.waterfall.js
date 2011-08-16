@@ -10,7 +10,6 @@ function InitializeWaterfall(id,series,unit,axis_values,colors,labels,ticks){
   y2axis = {
     min: min_value, // afhankelijk van positive ticks maken 2500 / 5 -> 1000 / 2 == 7
     // autoscale: true,
-    numberTicks: ticks[0],
     max: max_value,  
     tickInterval: ticks[1],
     tickOptions:{
@@ -26,7 +25,7 @@ function InitializeWaterfall(id,series,unit,axis_values,colors,labels,ticks){
     tickRenderer: $.jqplot.CanvasAxisTickRenderer,
     tickOptions: {
       angle: -90,
-      fontSize: font_size,
+      fontSize: '11px',
       showGridline: false
     }
   };

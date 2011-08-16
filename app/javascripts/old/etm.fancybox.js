@@ -102,15 +102,15 @@ $(document).ready(function() {
   $("a.prediction").live('click', function() {
 
     $(this).fancybox({
-      width    : 970,    
+      width    : 960,    
       height   : 650,
       titleShow: false,
       padding  : 0,
-      scrolling: 'auto',
       type     : 'iframe',
       ajax : {
         type  : "GET"
       }
+      
     });
 
     $(this).trigger('click');

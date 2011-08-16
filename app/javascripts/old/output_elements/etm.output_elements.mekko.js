@@ -27,7 +27,7 @@ function InitializeMekko(id,series,unit,axis_values,colors,labels){
     tickRenderer: $.jqplot.CanvasAxisTickRenderer, 
     tickOptions:{
       formatString:'%.0f'+unit,
-      angle: -45,
+      angle: 45,
       markSize: 4,
       fontSize: font_size
     },

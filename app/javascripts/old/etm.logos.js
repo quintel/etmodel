@@ -7,7 +7,7 @@ $(document).ready(function(){
       method: 'get', // use GET requests. otherwise chrome and safari cause problems.
       success: function(data){
         $("#logos").replaceWith(data);//update html
-          call_the_cyclists();
+        call_the_cyclists();
       }
     });
   });
@@ -15,20 +15,24 @@ $(document).ready(function(){
 });
 
 function call_the_cyclists(){
-  $("#logos ul.left").cycle({
-    speed: 500,
-    timeoutFn: function(curr,next,opts,fwd) {
-      var timeout = $(this).attr('timeout');
-      return parseInt(timeout,10);
-    }
-  });
-  $("#logos ul.right").cycle({
-    speed: 500,
-    random: 1,
-    notRandomFirst: 0, //my own addition to the Cycle plugin! DS
-    timeoutFn: function(curr,next,opts,fwd) {
-      var timeout = $(this).attr('timeout');
-      return parseInt(timeout,10);
-    }
-  });
+  if ($"#logos ul.left li").length > 0) {
+    $("#logos ul.left").cycle({
+      speed: 500,
+      timeoutFn: function(curr,next,opts,fwd) {
+        var timeout = $(this).attr('timeout');
+        return parseInt(timeout,10);
+      }
+    });
+  }
+  if ($"#logos ul.right li").length > 0) {
+    $("#logos ul.right").cycle({
+      speed: 500,
+      random: 1,
+      notRandomFirst: 0, //my own addition to the Cycle plugin! DS
+      timeoutFn: function(curr,next,opts,fwd) {
+        var timeout = $(this).attr('timeout');
+        return parseInt(timeout,10);
+      }
+    });
+  }
 }

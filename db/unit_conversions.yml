@@ -39,12 +39,13 @@
 # For more information see:
 # http://en.wikipedia.org/wiki/YAML#Data_merge_and_references
 #
-
-number_of_pulverized_coal: &coal_plants
-  megawatts: [ MW, 2000 ]
-  gigawatts: [ GW, 2.0  ]
-
-number_of_pulverized_coal_ccs:
-  <<: *coal_plants
-number_of_coal_iggc:
-  <<: *coal_plants
+### COMMENTED OUT, Since sliders were loading from GasMixer with the 'wrong' kind of unit, DS Wed Aug 17 12:25:40 CEST 2011
+# 
+# number_of_pulverized_coal: &coal_plants
+#   megawatts: [ MW, 2000 ]
+#   gigawatts: [ GW, 2.0  ]
+# 
+# number_of_pulverized_coal_ccs:
+#   <<: *coal_plants
+# number_of_coal_iggc:
+#   <<: *coal_plants

@@ -466,7 +466,7 @@
 
       // --
 
-      if (! this.quinn.__willChange()) {
+      if (targetValue === initialValue || ! this.quinn.__willChange()) {
         return false;
       }
 

@@ -113,6 +113,7 @@ class InputElement < ActiveRecord::Base
     input_element_type == 'remainder'
   end
 
+  # TODO CLEANUP DEBT: Can be removed, DS Wed Aug 17 13:44:14 CEST 2011
   # some input values are not adaptable by municipalities
   def semi_unadaptable?
     Current.setting.municipality? && locked_for_municipalities == true
@@ -162,7 +163,7 @@ class InputElement < ActiveRecord::Base
             :number_to_round_with,
             :output, :user_value, :disabled, :translated_name,
             :semi_unadaptable,:disabled_with_message, :has_predictions,
-    :input_element_type, :has_flash_movie, :conversions])
+    :input_element_type, :has_flash_movie])
   end
 
   ##

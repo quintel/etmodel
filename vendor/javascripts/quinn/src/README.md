@@ -31,13 +31,13 @@ open-sourced with their kind permission. Quinn is released under the
 Downloads
 ---------
 
-[Everything (0.3.6)][tarball]
+[Everything (0.3.7)][tarball]
 :   Tarball containing JS, CSS, and images
 
-[Development Version (0.3.6)][development-js]
+[Development Version (0.3.7)][development-js]
 :   13.3kb, JS only, Uncompressed with comments
 
-[Production Version (0.3.6)][production-js]
+[Production Version (0.3.7)][production-js]
 :   1.54kb, JS only, Minified and Gzipped
 
 Table of Contents
@@ -328,6 +328,11 @@ need to alter the CSS. For example:
 History
 -------
 
+#### 0.3.7 _August 18th, 2011_
+
+Fix a bug with Firefox 6 where elements positioned absolutely with
+fractional pixel values would not display correctly.
+
 #### 0.3.6 _August 15th, 2011_
 
 Fix a rendering error introduced in 0.3.4 where the blue active bar
@@ -410,7 +415,7 @@ Opera and Internet Explorer are not yet complete.
 [us]:             http://documentcloud.github.com/underscore
 [easing]:         http://gsgd.co.uk/sandbox/jquery/easing
 
-[tarball]:        https://github.com/antw/quinn/tarball/v0.3.6
+[tarball]:        https://github.com/antw/quinn/tarball/v0.3.7
 [development-js]: http://antw.github.com/quinn/jquery.quinn.js
 [production-js]:  http://antw.github.com/quinn/jquery.quinn.min.js
 

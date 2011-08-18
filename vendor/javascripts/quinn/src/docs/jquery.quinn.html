@@ -176,7 +176,7 @@ by developers later.</p>
         <p>The current Quinn version.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">VERSION</span> <span class="o">=</span> <span class="s1">&#39;0.3.6&#39;</span><span class="p">;</span></pre></div>
+        <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">VERSION</span> <span class="o">=</span> <span class="s1">&#39;0.3.7&#39;</span><span class="p">;</span></pre></div>
       </td>
     </tr>
     <tr id='section-Rendering'>
@@ -870,7 +870,7 @@ on the slider bar. For example, in a 200px wide bar whose values are
         <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">position</span> <span class="o">&gt;</span> <span class="nx">barWidth</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span> <span class="nx">barWidth</span><span class="p">;</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="nx">position</span><span class="p">;</span>
+            <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">position</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">};</span></pre></div>
       </td>

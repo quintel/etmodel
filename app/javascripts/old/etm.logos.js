@@ -15,7 +15,7 @@ $(document).ready(function(){
 });
 
 function call_the_cyclists(){
-  if ($("#logos ul.left li").length > 0) {
+  if ($("#logos ul.left li").length > 1) {
     $("#logos ul.left").cycle({
       speed: 500,
       timeoutFn: function(curr,next,opts,fwd) {
@@ -24,7 +24,7 @@ function call_the_cyclists(){
       }
     });
   }
-  if ($("#logos ul.right li").length > 0) {
+  if ($("#logos ul.right li").length > 1) {
     $("#logos ul.right").cycle({
       speed: 500,
       random: 1,

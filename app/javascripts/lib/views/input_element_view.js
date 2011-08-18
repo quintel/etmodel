@@ -4,7 +4,7 @@
   var BODY_HIDE_EVENT, ACTIVE_VALUE_SELECTOR,
       INPUT_ELEMENT_T, VALUE_SELECTOR_T,
       HOLD_DELAY, HOLD_DURATION, HOLD_FPS,
-      IS_IE_LTE_EIGHT,
+      IS_IE_LTE_EIGHT, ACTIVE_INFO_BOX,
 
       floatPrecision, conversionsFromModel,
       abortValueSelection, bindValueSelectorBodyEvents,
@@ -529,9 +529,23 @@
      * Toggles display of the slider information box.
      */
     toggleInfoBox: function () {
-      this.el.toggleClass('info-box-visible');
+      var active  = ACTIVE_INFO_BOX,
+          infoBox = this.$('.info-wrap');
 
-      this.$('.info-wrap').animate({
+      if (infoBox.is(':visible')) {
+        // Info box already open; user is closing it.
+        ACTIVE_INFO_BOX = null;
+      } else if (active && active !== this) {
+        // Show this sliders info, another info box is already open. Close it.
+        active.toggleInfoBox();
+        ACTIVE_INFO_BOX = this;
+      } else {
+        // Showing this sliders info, none already open.
+        ACTIVE_INFO_BOX = this;
+      }
+
+      this.el.toggleClass('info-box-visible');
+      infoBox.animate({
         height:  ['toggle', 'easeOutCubic'],
         opacity: ['toggle', 'easeOutQuad']
       }, 'fast');

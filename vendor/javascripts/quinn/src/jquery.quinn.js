@@ -89,7 +89,7 @@
     }
 
     // The current Quinn version.
-    Quinn.VERSION = '0.3.6';
+    Quinn.VERSION = '0.3.7';
 
     // ## Rendering
 
@@ -510,7 +510,7 @@
         } else if (position > barWidth) {
             return barWidth;
         } else {
-            return position;
+            return Math.round(position);
         }
     };
 

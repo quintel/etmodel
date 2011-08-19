@@ -15,5 +15,3 @@
     %p#content_long.hidden
       %span= raw description.try(:content)
       %a#read_less{:href => '#'}= I18n.t("pagetitle.hidetext")
-    - if additional_info = @active_sidebar.try(:additional_info_partial)
-      = render :partial => "tab/#{additional_info}" unless additional_info.blank?

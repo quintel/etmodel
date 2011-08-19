@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110812122658) do
+ActiveRecord::Schema.define(:version => 20110819093013) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -144,20 +144,6 @@ ActiveRecord::Schema.define(:version => 20110812122658) do
 
   add_index "interfaces", ["enabled"], :name => "index_interfaces_on_enabled"
   add_index "interfaces", ["key"], :name => "index_interfaces_on_key"
-
-  create_table "lce_values", :force => true do |t|
-    t.string   "using_country"
-    t.string   "origin_country"
-    t.float    "co2_exploration_per_mj"
-    t.float    "co2_extraction_per_mj"
-    t.float    "co2_treatment_per_mj"
-    t.float    "co2_transportation_per_mj"
-    t.float    "co2_conversion_per_mj"
-    t.float    "co2_waste_treatment_per_mj"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "carrier"
-  end
 
   create_table "output_element_series", :force => true do |t|
     t.integer  "output_element_id"
@@ -331,7 +317,6 @@ ActiveRecord::Schema.define(:version => 20110812122658) do
     t.datetime "updated_at"
     t.string   "nl_vimeo_id"
     t.string   "en_vimeo_id"
-    t.string   "additional_info_partial"
   end
 
   add_index "sidebar_items", ["key"], :name => "index_sidebar_items_on_key"

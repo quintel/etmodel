@@ -162,6 +162,11 @@ class Setting
     area.try(:use_network_calculations)
   end
 
+  ####### FCE
+  def allow_fce?
+    advanced? && area.try(:has_fce)
+  end
+  
   ####### Area / Region
 
   attr_writer :area

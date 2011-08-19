@@ -50,10 +50,16 @@
     %a{:href => new_scenario_path}= t("header.Save scenario")
     %a{:href => scenarios_path}= t("header.Load scenario")
     %a{:href => reset_scenario_path}= t("header.Reset scenario")
-    - if Current.setting.use_peak_load
+  - if Current.setting.use_peak_load
+    %li
       %label
-        = check_box :track_peak_load, :settings, :onchange => 'toggle_peak_load_tracking()', :checked => Current.setting.track_peak_load
+        = check_box :track_peak_load, :settings, :onchange => 'App.settings.toggle_peak_load_tracking()', :checked => Current.setting.track_peak_load
         = t('header.notify_of_grid_investments')
+  - if Current.setting.allow_fce?
+    %li
+      %label
+        = check_box :use_fce, :settings, :onchange => 'App.settings.toggle_fce()', :checked => Current.setting.use_fce
+        = t('fce.check')
 
 #information_menu.header_menu.topnav
   %li

@@ -79,11 +79,6 @@ function notify_grid_investment_needed(parts) {
 }
 
 function disable_peak_load_tracking() {
-  $("#track_peak_load_settings").attr('checked', false);
-  toggle_peak_load_tracking();
-}
-
-function toggle_peak_load_tracking(){
-  App.settings.set({track_peak_load : $("#track_peak_load_settings").is(':checked')});
+  $("#track_peak_load_settings").click(); // simulate clicking the checkbox in the settings menu
   close_fancybox();
 }

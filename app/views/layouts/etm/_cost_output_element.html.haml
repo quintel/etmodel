@@ -42,7 +42,7 @@
                 .content
                   %h4= t("serie.#{block.label}")
                   %p= block.description.short_content
-                  = link_to t('pagetitle.readmore'), "/descriptions/serie/#{block.id}", :class => 'fancybox'
+                  = link_to t('pagetitle.readmore'), "/descriptions/#{block.description.andand.id}", :class => 'fancybox'
               .balloon-tip
 
 

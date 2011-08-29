@@ -21,15 +21,6 @@ var InputElement = Backbone.Model.extend({
     this.set({'label' : label});
   },
   set_start_value : function(result) {
-    var factor = this.get('factor');
-    var step_value = this.get('step_value');
-
-    var rounded_result = Metric.round_number(result, this.get('number_to_round_with'));
-    result = (rounded_result);
-
-    if (step_value == 0.1 || step_value == 5) 
-      result = Metric.round_number(result, 1);
-
     this.set({'start_value' : result});
   },
 
@@ -129,9 +120,6 @@ var InputElementList = Backbone.Collection.extend({
     var options = inputElement.ui_options;
     this.inputElements[inputElement.id] = inputElement;
     var inputElementView = new InputElementView({model : inputElement, el : options.element});
-    // The following binding was for obscure reasons preventing the videos
-    // to work. Commented it out. Investigate. PZ Fri 3 Jun 2011 16:34:36 CEST
-    // inputElementView.bind('show', $.proxy(this.handleInputElementInfoBoxShowed, this));
     
     this.inputElementViews[inputElement.id] = inputElementView;
     inputElementView.bind("change", $.proxy(this.handleUpdate, this));
@@ -139,14 +127,7 @@ var InputElementList = Backbone.Collection.extend({
     return true;
     this.initShareGroup(inputElement);
   },
-  
-  handleInputElementInfoBoxShowed:function(inputElementView) {
-    var infoBox = inputElementView.sliderView.getInfoBox();
-    if(this.openInputElementInfoBox && this.openInputElementInfoBox != infoBox)
-      this.openInputElementInfoBox.hide();
-    
-    this.openInputElementInfoBox = infoBox;
-  },
+
   
   
   /**

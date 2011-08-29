@@ -88,23 +88,6 @@ class InputElement < ActiveRecord::Base
     end
   end
 
-  # TODO refactor (seb 2010-10-11)
-  def start_value
-    return self[:start_value]
-  end
-  
-  def step_value
-    return self[:step_value].to_f
-  end
-
-  def min_value
-    self[:min_value] || 0
-  end
-
-  def max_value
-    self[:max_value] || 0
-  end
-
   def disabled
     has_locked_input_element_type?(input_element_type)
   end
@@ -136,8 +119,8 @@ class InputElement < ActiveRecord::Base
     super(:only => [:id, :input_id, :name, :unit, :share_group, :factor],
           :methods => [
             :step_value,
-            :output, :user_value, :disabled, :translated_name,
-            :semi_unadaptable,:disabled_with_message, :has_predictions,
+            :output, :user_value, :disabled, :translated_name, 
+            :parsed_description,:has_predictions,
     :input_element_type, :has_flash_movie])
   end
 

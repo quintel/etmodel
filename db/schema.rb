@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110819093013) do
+ActiveRecord::Schema.define(:version => 20110829124127) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(:version => 20110819093013) do
     t.integer  "slide_id"
     t.string   "share_group"
     t.float    "order_by"
-    t.decimal  "step_value",                :precision => 4, :scale => 2
+    t.float    "step_value"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "update_type"
@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(:version => 20110819093013) do
     t.string   "input_element_type"
     t.string   "label"
     t.text     "comments"
-    t.integer  "complexity",                                              :default => 1
+    t.integer  "complexity",                :default => 1
     t.string   "interface_group"
     t.boolean  "locked_for_municipalities"
     t.integer  "input_id"

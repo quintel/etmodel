@@ -71,11 +71,7 @@ class Current
   end
   
   def backcasting_enabled
-    APP_CONFIG[:enable_backcasting] && session[:backcasting_enabled]
-  end
-
-  def backcasting_enabled=(x)
-    session[:backcasting_enabled] = x
+    APP_CONFIG[:enable_backcasting]
   end
 
   ##

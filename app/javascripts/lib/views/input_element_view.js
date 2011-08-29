@@ -196,12 +196,10 @@
 
     initialize: function (options) {
       _.bindAll(
-         this,
+        this,
         'updateFromModel',
         'quinnOnChange',
-        'quinnOnCommit',
-        'checkMunicipalityNotice',
-        'inputElementInfoBoxShown'
+        'quinnOnCommit'
       );
 
       this.conversions   = conversionsFromModel(this.model);
@@ -218,14 +216,6 @@
         this.setTransientValue(this.model.get('user_value'));
       }, this));
 
-      // make the toggle red if it's semi unadaptable and in a municipality.
-      if (App.municipalityController.isMunicipality() &&
-                  this.model.get("semi_unadaptable")) {
-
-        // TODO Needs a custom Quinn sprite to do this on the new slider.
-        // this.sliderView.slider.toggleButton.element.addClass('municipality-toggle');
-      }
-
       this.render();
     },
 
@@ -241,7 +231,7 @@
       this.el.addClass('new-input-slider').html(
         INPUT_ELEMENT_T({
           name:             this.model.get('translated_name'),
-          info:             this.el.find('.info-box .text').text(),
+          info:             this.model.get('parsed_description'),
           sublabel:         this.model.get('label'),
           predictions:      this.model.get('has_predictions'),
           input_element_id: this.model.get("id"),
@@ -354,18 +344,6 @@
     },
 
     /**
-     * This checks if the municipality message has been shown. It is has not
-     * been shown, show it!
-     */
-    checkMunicipalityNotice: function () {
-      if (this.model.get('semi_unadaptable') &&
-            App.municipalityController.showMessage()) {
-
-        App.municipalityController.showMunicipalityMessage();
-      }
-    },
-
-    /**
      * Is called when something in the constraint model changed.
      * @override
      */
@@ -379,17 +357,6 @@
       return false;
     },
 
-    /**
-     * Is called when then infobox is clicked.
-     * @override
-     */
-    inputElementInfoBoxShown: function () {
-      this.trigger('show');
-
-      if (this.model.get('has_flash_movie')) {
-        flowplayer('a.player', '/flash/flowplayer-3.2.6.swf');
-      }
-    },
 
     // ## Event Handlers -----------------------------------------------------
 
@@ -549,8 +516,18 @@
         height:  ['toggle', 'easeOutCubic'],
         opacity: ['toggle', 'easeOutQuad']
       }, 'fast');
-
+      
+      this.initFlowplayer();
       return false;
+    },
+    
+    /**
+    * Loads the flowplayer when the desciption of the input element contains a flash movie
+    */
+    initFlowplayer : function() {
+      if (this.model.get('has_flash_movie')) {
+        flowplayer('a.player', '/flash/flowplayer-3.2.6.swf');
+      }
     },
 
     /**
@@ -585,7 +562,6 @@
 
       this.setTransientValue(newValue, true);
       this.model.set({ user_value: newValue });
-      this.checkMunicipalityNotice();
       this.trigger('change');
     }
   });

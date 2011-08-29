@@ -1,15 +1,15 @@
 ##
 # Wrapper for (user-) variables of a request that are accessible to all models.
 #
-# I created a new Setting class, which holds all the settings specific for a user session. Such as :show_municipality_introduction and so on. 
+# I created a new Setting class, which holds all the settings specific for a user session. Such as :backcasting_enabled and so on. 
 # 
 # == Current.setting
 # 
-# Holds all the settings specific for a user session. Such as :show_municipality_introduction and so on. 
+# Holds all the settings specific for a user session. Such as :backcasting_enabled and so on. 
 # Attributes in Setting are meant for front-end and similar things. And cannot influence the GQL.
 # 
-#   Current.setting.show_municipality_introduction
-#   Current.setting.show_municipality_introduction = false
+#   Current.setting.backcasting_enabled
+#   Current.setting.backcasting_enabled = false
 # 
 # At any point if you want to reset settings:
 #

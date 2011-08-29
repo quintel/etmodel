@@ -7,10 +7,6 @@ class SettingsController < ApplicationController
   end
 
   def update
-    if ! params[:show_municipality_introduction].nil?
-      Current.setting.show_municipality_introduction = false
-    end
-
     [:api_session_key, :network_parts_affected, :track_peak_load, :use_fce].each do |setting|
       Current.setting.send("#{setting}=", params[setting]) unless params[setting].nil?
     end

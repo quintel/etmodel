@@ -9,11 +9,7 @@ class Api::Area < ActiveResource::Base
   def self.find_by_country(country)
     first(:params => { :country => country })
   end
-  
-  def is_municipality?
-    entity == "municipality"
-  end
-  
+    
   def number_of_existing_households
     number_households * (1 - (percentage_of_new_houses/100))
   end  

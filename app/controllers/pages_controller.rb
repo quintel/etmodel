@@ -37,11 +37,7 @@ protected
     Current.setting.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
     Current.setting.set_country_and_region_from_param(params[:region]) # we need the full region code here
 
-    if Current.setting.municipality?
-      redirect_to :action => "municipality" and return
-    else
-      redirect_to :controller => 'pages', :action => 'intro' and return
-    end
+    redirect_to :controller => 'pages', :action => 'intro' and return
   end
 
 public
@@ -61,27 +57,6 @@ public
 
   def education
     @ie_detected = browser =~ /^ie/
-  end
-  
-  # intro screen for municipalitities
-  # in the view a preset scenario will be loaded.
-  def municipality
-    @scenarios = Api::Scenario.all(:from => :homepage)
-    if current_user
-      @user_scenarios = current_user.scenarios.by_region('nl').order("updated_at DESC") #if current_user.andand.scenarios.by_region('nl')
-    end
-    # raise @user_scenarios.inspect
-    @area = Current.setting.region
-
-    if request.post?
-      Current.setting.hide_unadaptable_sliders = params[:hide_unadaptable_sliders] == "1"
-      if params[:scenario]
-        @scenario = Api::Scenario.find(params[:scenario])
-        # must never occur, unless someone tries to load another scenario
-        raise HTTPStatus::Forbidden if @scenario.user.nil? && @scenario.user != current_user
-      end
-      redirect_to(:controller => 'pages', :action => 'intro') and return
-    end
   end
 
   def update_footer

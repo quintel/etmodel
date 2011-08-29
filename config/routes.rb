@@ -49,7 +49,7 @@ Etm::Application.routes.draw do
     get :iframe, :on => :member
   end
   resource :settings, :only => [:edit, :update] do
-    get :backcasting
+
   end
   resource :searches
 

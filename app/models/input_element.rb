@@ -52,14 +52,6 @@ class InputElement < ActiveRecord::Base
       group_by(&:share_group)
   end
 
-  def step_value
-    if Current.setting.municipality? and self.locked_for_municipalities? and self.slide.andand.controller_name == "supply"
-      (self[:step_value] / 1000).to_f
-    else
-      self[:step_value].to_f
-    end
-  end
-
   def title_for_description
     "slider.#{name}"
   end
@@ -96,22 +88,15 @@ class InputElement < ActiveRecord::Base
     end
   end
 
-  def number_to_round_with
-    if factor == 1
-      step_value == 1 ? 0 : 1
-    elsif factor >= 100
-      3
-    end
-  end
-
   # TODO refactor (seb 2010-10-11)
   def start_value
     return self[:start_value]
   end
-
-  def remainder?
-    input_element_type == 'remainder'
+  
+  def step_value
+    self[:step_value].to_f
   end
+
 
   # TODO CLEANUP DEBT: Can be removed, DS Wed Aug 17 13:44:14 CEST 2011
   # some input values are not adaptable by municipalities
@@ -160,7 +145,6 @@ class InputElement < ActiveRecord::Base
     super(:only => [:id, :input_id, :name, :unit, :share_group, :factor],
           :methods => [
             :step_value,
-            :number_to_round_with,
             :output, :user_value, :disabled, :translated_name,
             :semi_unadaptable,:disabled_with_message, :has_predictions,
     :input_element_type, :has_flash_movie])

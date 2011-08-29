@@ -1,10 +1,10 @@
 <script id="input-element-template" type="text/template">
     <div class="slider-row">
         <label>
-          <%%= name %>
           <%% if (predictions) { %>
-              <a href="/predictions?input_element_id=<%%= input_element_id %>&end_year=<%%= end_year %>" class="prediction">Predictions</a>
+              <a href="/predictions?input_element_id=<%%= input_element_id %>&end_year=<%%= end_year %>" class="prediction"></a>
           <%% } %>
+          <%%= name %>
         </label>
 
         <%% if (sublabel) { %>

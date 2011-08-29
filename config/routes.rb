@@ -84,9 +84,6 @@ Etm::Application.routes.draw do
   end
   
   resources :scenarios do
-    collection do
-      get :municipality
-    end
     member do
       get :load
     end

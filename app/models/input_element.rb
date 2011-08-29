@@ -94,16 +94,8 @@ class InputElement < ActiveRecord::Base
   end
   
   def step_value
-    self[:step_value].to_f
+    return self[:step_value].to_f
   end
-
-
-  # TODO CLEANUP DEBT: Can be removed, DS Wed Aug 17 13:44:14 CEST 2011
-  # some input values are not adaptable by municipalities
-  def semi_unadaptable?
-    Current.setting.municipality? && locked_for_municipalities == true
-  end
-  alias_method :semi_unadaptable, :semi_unadaptable?
 
   def min_value
     self[:min_value] || 0
@@ -112,7 +104,6 @@ class InputElement < ActiveRecord::Base
   def max_value
     self[:max_value] || 0
   end
-
 
   def disabled
     has_locked_input_element_type?(input_element_type)

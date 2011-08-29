@@ -24,8 +24,6 @@ window.AppView = Backbone.View.extend({
     this.inputElementsController = window.input_elements;
     this.inputElementsController.bind("change", this.handleInputElementsUpdate);
 
-    this.municipalityController = new MunicipalityController();
-
     this.settings = new Setting(); // At this point settings is empty!!
     // let's get the ruby-fetched api_session_key
     this.settings.set({'api_session_key' : globals.api_session_key});

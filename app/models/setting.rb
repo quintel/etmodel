@@ -13,7 +13,6 @@ class Setting
   ]
 
   DEFAULT_ATTRIBUTES = {
-    :show_municipality_introduction => true,
     :hide_unadaptable_sliders       => false,
     :network_parts_affected         => [],
     :track_peak_load                => true,
@@ -190,10 +189,6 @@ class Setting
         end
       else region
     end
-  end
-
-  def municipality?
-    area.try(:is_municipality?)
   end
 
   def region_or_country

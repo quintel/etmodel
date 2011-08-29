@@ -74,19 +74,5 @@ describe PagesController do
     end                                        
   end
   
-  ## 
-  # FIXME: does this
-  #describe "selected municipality page" do  
-  #  describe "selected an area that is a municipality" do
-  #    it "should go to intro page if posted with setting selected" do
-  #      Current.stub_chain(:setting, :municipality?).and_return(true)
-  #      Current.stub_chain(:setting, :region).and_return(Area.new(:entity => 'municipality'))
-  #      Current.stub_chain(:setting, :complexity_key).and_return(1)
-  #
-  #      post :municipality, :setting => '1'
-  #      flash[:error].should be_nil 
-  #      response.should redirect_to(:action => 'intro')
-  #    end
-  #  end
-  #end
+
 end

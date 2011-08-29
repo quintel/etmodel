@@ -91,7 +91,7 @@ $(function(){
         },
         axes:{
           xaxis:{tickOptions:{formatString:'%.0f'}},
-          yaxis:{tickOptions:{formatString:'%.0f'}}
+          yaxis:{tickOptions:{formatString:'%.0f'},min: 0}
         },
         seriesColors: chart_data.colours,
         series: chart_data.series_options,

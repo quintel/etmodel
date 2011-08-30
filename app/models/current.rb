@@ -71,7 +71,7 @@ class Current
   end
   
   def backcasting_enabled
-    APP_CONFIG[:enable_backcasting] && (I18n.locale.to_s == 'nl')
+    I18n.locale.to_s == 'nl'
   end
 
   ##

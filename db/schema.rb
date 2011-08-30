@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110829124127) do
+ActiveRecord::Schema.define(:version => 20110830090524) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -111,28 +111,21 @@ ActiveRecord::Schema.define(:version => 20110829124127) do
   create_table "input_elements", :force => true do |t|
     t.string   "name"
     t.string   "key"
-    t.integer  "slide_id"
     t.string   "share_group"
-    t.float    "order_by"
     t.float    "step_value"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "update_type"
     t.string   "unit"
-    t.float    "factor"
     t.string   "input_element_type"
     t.string   "label"
     t.text     "comments"
-    t.integer  "complexity",                :default => 1
     t.string   "interface_group"
-    t.boolean  "locked_for_municipalities"
     t.integer  "input_id"
     t.string   "command_type"
   end
 
   add_index "input_elements", ["command_type"], :name => "index_input_elements_on_command_type"
   add_index "input_elements", ["key"], :name => "unique api key", :unique => true
-  add_index "input_elements", ["slide_id"], :name => "index_input_elements_on_slide_id"
 
   create_table "interfaces", :force => true do |t|
     t.string   "key"
@@ -285,17 +278,6 @@ ActiveRecord::Schema.define(:version => 20110829124127) do
     t.datetime "updated_at"
   end
 
-  create_table "rounds", :force => true do |t|
-    t.string   "name"
-    t.boolean  "active"
-    t.integer  "position"
-    t.integer  "value"
-    t.integer  "policy_goal_id"
-    t.boolean  "completed"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "saved_scenarios", :force => true do |t|
     t.integer  "user_id",     :null => false
     t.integer  "scenario_id", :null => false
@@ -334,6 +316,7 @@ ActiveRecord::Schema.define(:version => 20110829124127) do
     t.string   "sub_header2"
     t.string   "subheader_image"
     t.string   "key"
+    t.boolean  "house_selection"
   end
 
   add_index "slides", ["key"], :name => "index_slides_on_key"
@@ -357,17 +340,17 @@ ActiveRecord::Schema.define(:version => 20110829124127) do
   add_index "translations", ["key"], :name => "index_translations_on_key"
 
   create_table "users", :force => true do |t|
-    t.string   "name",                                  :null => false
-    t.string   "email",                                 :null => false
+    t.string   "name",                                 :null => false
+    t.string   "email",                                :null => false
     t.string   "company_school"
     t.boolean  "allow_news",         :default => true
     t.string   "heared_first_at",    :default => ".."
     t.string   "crypted_password"
     t.string   "password_salt"
-    t.string   "persistence_token",                     :null => false
-    t.string   "perishable_token",                      :null => false
-    t.integer  "login_count",        :default => 0,     :null => false
-    t.integer  "failed_login_count", :default => 0,     :null => false
+    t.string   "persistence_token",                    :null => false
+    t.string   "perishable_token",                     :null => false
+    t.integer  "login_count",        :default => 0,    :null => false
+    t.integer  "failed_login_count", :default => 0,    :null => false
     t.datetime "last_request_at"
     t.datetime "current_login_at"
     t.datetime "last_login_at"
@@ -378,13 +361,9 @@ ActiveRecord::Schema.define(:version => 20110829124127) do
     t.datetime "updated_at"
     t.string   "phone_number"
     t.string   "group"
-    t.string   "trackable",          :default => "0"
-    t.boolean  "send_score",         :default => false
-    t.boolean  "new_round"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
-  add_index "users", ["trackable"], :name => "index_users_on_trackable"
 
   create_table "versions", :force => true do |t|
     t.string   "item_type",  :null => false

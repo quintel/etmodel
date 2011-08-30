@@ -196,6 +196,7 @@ class HouseSelectionsController < ApplicationController
 
     def initialize_installations_sliders(house_type)
       session["calculated_hst_sliders_#{house_type}"] = {}
+      ## TODO: refactor households_heating_sliders 
       InputElement.households_heating_sliders.each do |slider|
         session["calculated_hst_sliders_#{house_type}"][slider.id.to_s] = 0
         session["calculated_hst_sliders_#{house_type}"]["47"] = false # remove solar pv if exists

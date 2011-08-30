@@ -30,27 +30,17 @@ class InputElement < ActiveRecord::Base
   include AreaDependent
   has_paper_trail
 
-  belongs_to :slide
   has_one :description, :as => :describable
   has_one :area_dependency, :as => :dependable
-  has_many :expert_predictions
   has_many :predictions
 
   validates :key, :presence => true, :uniqueness => true
   validates :input_id, :presence => true
 
-  scope :ordered_for_admin, order("slides.controller_name, slides.action_name, slides.name, input_elements.id").includes('slide')
-  scope :with_share_group, where('NOT(share_group IS NULL OR share_group = "")')
-  ## TODO: refactor households_heating_sliders 
-  scope :households_heating_sliders, where(:slide_id => 4)
+  scope :households_heating_sliders, where(:share_group => 'heating_households')
 
   accepts_nested_attributes_for :description
 
-  def self.input_elements_grouped
-    @input_elements_grouped ||= InputElement.
-      with_share_group.select('id, share_group, `key`').
-      group_by(&:share_group)
-  end
 
   def title_for_description
     "slider.#{name}"
@@ -89,7 +79,7 @@ class InputElement < ActiveRecord::Base
   end
 
   def disabled
-    has_locked_input_element_type?(input_element_type)
+    input_element_type == 'fixed'
   end
 
   # Retrieves an array of suitable unit conversions for the element. Allows
@@ -125,14 +115,6 @@ class InputElement < ActiveRecord::Base
   end
 
   ##
-  # For loading multiple flowplayers classname is needed instead of id
-  # added the andand chack and html_safe to clean up the helper
-  #
-  def parsed_description
-    (description.andand.content.andand.gsub('id="player"','class="player"') || "").html_safe
-  end
-
-  ##
   # For showing the name and the action of the inputelement in the admin
   #
 
@@ -140,26 +122,15 @@ class InputElement < ActiveRecord::Base
     "#{key} | #{name} | #{unit} | #{input_element_type}"
   end
 
-  ##
-  # Resets the user values
-  #
-  # @todo Probably this should be moved into a Scenario class
-  #
-  def reset
-  end
-
-
-  ##### optimizer
-
-  ##
-  # @tested 2010-12-22 robbert
-  #
-  def has_locked_input_element_type?(input_type)
-    %w[fixed remainder fixed_share].include?(input_type)
-  end
-
   def has_flash_movie
     description.andand.content.andand.include?("player")  || description.andand.content.andand.include?("object")
   end
 
+  ##
+  # For loading multiple flowplayers classname is needed instead of id
+  # added the andand check and html_safe to clean up the helper
+  #
+  def parsed_description
+    (description.andand.content.andand.gsub('id="player"','class="player"') || "").html_safe
+  end
 end

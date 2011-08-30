@@ -15,18 +15,6 @@ Etm::Application.routes.draw do
   match '/supply/intro' => 'supply#intro'
   match '/supply(/:id)' => 'supply#show', :defaults => {:id => 'electricity'}
 
-  match '/local_supply/intro' => 'local_supply#intro'
-  match '/local_supply(/:id)' => 'local_supply#show', :defaults => {:id => 'electricity_renewable'}
-
-  match '/local_demand/intro' => 'local_demand#intro'
-  match '/local_demand(/:id)' => 'local_demand#show', :defaults => {:id => 'electricity_renewable'}
-
-  match '/national_supply/intro' => 'national_supply#intro'
-  match '/national_supply(/:id)' => 'national_supply#show', :defaults => {:id => 'electricity'}
-  
-  match '/demographics/intro' => 'demographics#intro'
-  match '/demographics(/:id)' => 'demographics#show', :defaults => {:id => 'households'}
-
   match '/descriptions/chart/:id'  => 'descriptions#show'
 
   match '/translations/:id' => 'translations#show'

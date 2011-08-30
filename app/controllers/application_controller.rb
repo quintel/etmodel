@@ -10,7 +10,6 @@ class ApplicationController < ActionController::Base
 
   # TODO refactor move the hooks and corresponding actions into a "concern"
   before_filter :initialize_current
-  before_filter :check_for_round_update
   before_filter :locale
   before_filter :load_view_settings
 
@@ -19,19 +18,6 @@ class ApplicationController < ActionController::Base
   end
   after_filter :teardown_current
   before_filter :export_i18n_messages
-
-  ##
-  # This is used by the tvshow. When someone activated a round remotly the policy should be set localy
-  # TODO: dont set when already set.
-  def check_for_round_update
-    if current_user.andand.trackable  && Current.setting.complexity_key == "watt_nu"
-      round = Round.where("active = 1").order(:position).last
-      if round.andand.policy_goal
-        # Current.scenario.store_user_value(round.get_input_element,round.value)
-        # Current.scenario.add_update_statements(round.get_input_element.update_statement(round.value))
-      end
-    end
-  end
 
   def set_locale
     locale

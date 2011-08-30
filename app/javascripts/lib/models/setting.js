@@ -11,6 +11,7 @@ var Setting = Backbone.Model.extend({
   },
 
   isNew : function() {
+    // RD: This is still needed, otherwise when loading a new page the stored settings are not there anymore
     return false;
   },
   

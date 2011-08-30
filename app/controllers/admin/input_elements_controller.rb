@@ -3,7 +3,7 @@ module Admin
     before_filter :find_model, :only => [:show, :edit]
 
     def index
-      @input_elements = InputElement.ordered_for_admin
+      @input_elements = InputElement.all
     end
 
 

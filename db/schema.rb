@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110830131707) do
+ActiveRecord::Schema.define(:version => 20110830140315) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -79,17 +79,6 @@ ActiveRecord::Schema.define(:version => 20110830131707) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "groups", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "key"
-    t.string   "shortcut"
-    t.integer  "group_id"
-  end
-
-  add_index "groups", ["group_id"], :name => "index_groups_on_group_id"
 
   create_table "historic_serie_entries", :force => true do |t|
     t.integer  "historic_serie_id"

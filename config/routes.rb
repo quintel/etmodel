@@ -27,9 +27,7 @@ Etm::Application.routes.draw do
   match '/demographics/intro' => 'demographics#intro'
   match '/demographics(/:id)' => 'demographics#show', :defaults => {:id => 'households'}
 
-  match '/descriptions/chart/:id'  => 'descriptions#show', :output => "OutputElement"
-  match '/descriptions/serie/:id'  => 'descriptions#show', :output => "OutputElementSerie"
-  match '/descriptions/slider/:id' => 'descriptions#show', :output => "InputElement"
+  match '/descriptions/chart/:id'  => 'descriptions#show'
 
   match '/translations/:id' => 'translations#show'
 

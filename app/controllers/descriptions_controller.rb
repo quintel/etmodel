@@ -1,7 +1,5 @@
 class DescriptionsController < ApplicationController
 
-  #RD: REFACTOR: It does not make sense that in the first the params[:output] is used to set the type and in the second, it is params[:type].
-  
   def show
     @description = Description.find(params[:id]) rescue nil
     if @description.nil? || @description.title.blank?
@@ -9,10 +7,10 @@ class DescriptionsController < ApplicationController
     end
   end
 
-  # TODO: is this used?
+  ##
+  # This is used in the '?'- button for output elements. It gets the description using the outputelement id
   def charts
-    params[:type] = 'OutputElement'
-    @description = Description.where(:describable_id => params[:id], :describable_type => params[:type]).first
+    @description = Description.where(:describable_id => params[:id], :describable_type => 'OutputElement').first
     render :show
   end
 end

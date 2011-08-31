@@ -1,5 +1,4 @@
 require 'bundler/capistrano'
-require 'hoptoad_notifier/capistrano'
 
 set :application, "etmodel"
 set :stage, :production

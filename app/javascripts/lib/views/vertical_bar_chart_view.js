@@ -28,7 +28,7 @@ var VerticalBarChartView = BaseChartView.extend({
     var result = target_serie.result()[1][1]; // target_series has only present or future value
     // result = Metric.scaled_value(result, 2, 3);
 
-    var x = parseFloat(target_serie.get('position'));
+    var x = parseFloat(target_serie.get('target_line_position'));
     results.push([[x - 0.4, result], [x + 0.4, result]]);
     return results;
   },

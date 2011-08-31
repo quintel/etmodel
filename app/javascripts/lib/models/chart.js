@@ -101,10 +101,10 @@ var Chart = Backbone.Model.extend({
     return this.series.map(function(serie) { return serie.result_pairs(); });
   },
   non_target_series : function() {
-    return this.series.reject(function(serie) { return serie.get('is_target'); });
+    return this.series.reject(function(serie) { return serie.get('is_target_line'); });
   },
   target_series : function() {
-    return this.series.select(function(serie) { return serie.get('is_target'); });
+    return this.series.select(function(serie) { return serie.get('is_target_line'); });
   },
   // @return Array of present and future target
   target_results : function() {

@@ -7,7 +7,7 @@
       %th.tal label
       %th.tal key
       %th.tal color
-      %th.tal is_target
+      %th.tal is_target_line
 
   %tbody
     -@output_element.output_element_series.each do |serie|
@@ -16,7 +16,7 @@
         %td= link_to serie.label, admin_output_element_serie_path(serie)
         %td= truncate(serie.key, :length => 50)
         %td= serie.color
-        %td= serie.is_target
+        %td= serie.is_target_line
 
 %p
   = link_to 'Create new serie', new_admin_output_element_serie_path

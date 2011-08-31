@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110830140315) do
+ActiveRecord::Schema.define(:version => 20110831102404) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -129,7 +129,6 @@ ActiveRecord::Schema.define(:version => 20110830140315) do
 
   create_table "output_element_series", :force => true do |t|
     t.integer  "output_element_id"
-    t.string   "key"
     t.string   "label"
     t.string   "color"
     t.integer  "order_by"
@@ -138,11 +137,9 @@ ActiveRecord::Schema.define(:version => 20110830140315) do
     t.datetime "updated_at"
     t.string   "short_label"
     t.boolean  "show_at_first"
-    t.boolean  "is_target"
-    t.string   "position"
-    t.string   "historic_key"
-    t.string   "expert_key"
-    t.string   "gquery",            :null => false
+    t.boolean  "is_target_line"
+    t.string   "target_line_position"
+    t.string   "gquery",               :null => false
   end
 
   add_index "output_element_series", ["output_element_id"], :name => "index_output_element_series_on_output_element_id"
@@ -164,7 +161,7 @@ ActiveRecord::Schema.define(:version => 20110830140315) do
     t.string   "unit"
     t.boolean  "percentage"
     t.string   "group"
-    t.boolean  "show_point_label"
+    t.boolean  "show_point_label",       :default => false
     t.boolean  "growth_chart"
     t.string   "key"
     t.float    "max_axis_value"

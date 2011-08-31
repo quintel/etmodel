@@ -6,8 +6,8 @@ module OutputElementsHelper
       :color      => serie.converted_color,
       :label      => serie.title_translated,
       :group      => serie.group,
-      :is_target  => serie.is_target,
-      :position   => serie.position
+      :is_target_line  => serie.is_target_line,
+      :target_line_position   => serie.target_line_position
     }
 
     "output_element.series.add(#{s.to_json});"

@@ -11,7 +11,7 @@ development: &DEV
 production:
     <<: *DEV
     debug_qernel: false
-    hoptoad_api_key: '3ea5a72aad48a32d7bb486bc71ad4fd5'
+    airbrake_api_key: '3ea5a72aad48a32d7bb486bc71ad4fd5'
 
 test:
     <<: *DEV

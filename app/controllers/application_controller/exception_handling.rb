@@ -6,31 +6,31 @@ module ApplicationController::ExceptionHandling
 
     rescue_from(ActionController::NotImplemented) do |exception|
       logger.debug "Handling ActionController::NotImplemented."
-      notify_hoptoad(exception)
+      notify_airbrake(exception)
       http_status_exception(HTTPStatus::MethodNotAllowed.new(exception.message))
     end
 
     rescue_from(ActionController::MethodNotAllowed) do |exception|
       logger.debug "Handling ActionController::MethodNotAllowed."
-      notify_hoptoad(exception)
+      notify_airbrake(exception)
       http_status_exception(HTTPStatus::MethodNotAllowed.new(exception.message))
     end
 
     rescue_from(ActiveRecord::RecordNotFound) do |exception|
       logger.debug "Handling ActiveRecord::RecordNotFound." + exception.inspect
-      notify_hoptoad(exception)
+      notify_airbrake(exception)
       http_status_exception(HTTPStatus::NotFound.new(exception.message))
     end
 
     rescue_from(ActionController::RoutingError) do |exception|
       logger.debug "Handling ActiveRecord::RoutingError."
-      notify_hoptoad(exception)
+      notify_airbrake(exception)
       http_status_exception(HTTPStatus::NotFound.new(exception.message))
     end
 
     rescue_from(AbstractController::ActionNotFound) do |exception|
       logger.debug "Handling AbstractController::ActionNotFound."
-      notify_hoptoad(exception)
+      notify_airbrake(exception)
       http_status_exception(HTTPStatus::MovedPermanently.new(exception.message))
     end
 
@@ -47,7 +47,7 @@ module ApplicationController::ExceptionHandling
 
     if !(Rails.env.development? || Rails.env.test?)
       rescue_from(RuntimeError) do |exception|
-        notify_hoptoad(exception)
+        notify_airbrake(exception)
         logger.fatal exception.message
         http_status_exception(HTTPStatus::InternalServerError.new("We're sorry an error has occured"))
       end

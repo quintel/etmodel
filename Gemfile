@@ -27,7 +27,7 @@ gem 'yui-compressor'
 gem 'i18n-js'
 
 # supporting gems
-gem 'hoptoad_notifier', '2.4.2'
+gem 'airbrake', '3.0.2'
 
 # system gems
 gem 'thinking-sphinx', '>=2.0.1'

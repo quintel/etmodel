@@ -60,6 +60,10 @@ class OutputElementSerie < ActiveRecord::Base
   def title_translated
     I18n.t("serie.#{self.label}")
   end
+  
+  def group_translated
+    I18n.t("serie.#{self.group}")
+  end
 
 
   def converted_color

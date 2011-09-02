@@ -14,6 +14,10 @@ class TabController < ApplicationController
   def show
     @active_sidebar = Current.view.sidebar_items.select{|item| params[:id] == item.key}.first
     @slides = Current.view.slides
+    
+    Current.setting.selected_output_element = nil
+    Current.setting.displayed_output_element = @output_element.id
+    
     render :template => 'tab/show'
   end
 

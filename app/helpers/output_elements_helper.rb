@@ -5,7 +5,7 @@ module OutputElementsHelper
       :gquery_key => gquery_id(serie.gquery).to_s,
       :color      => serie.converted_color,
       :label      => serie.title_translated,
-      :group      => serie.group,
+      :group      => serie.group_translated,
       :is_target_line  => serie.is_target_line,
       :target_line_position   => serie.target_line_position
     }

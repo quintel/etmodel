@@ -9,7 +9,7 @@ class TabController < ApplicationController
   # included here, so that we don't mess with the before_filter order
   include ApplicationController::HasDashboard
 
-  before_filter :show_intro_at_least_once, :check_valid_sidebar_item, :only => :show
+  before_filter :check_valid_sidebar_item, :only => :show
 
   def show
     @active_sidebar = Current.view.sidebar_items.select{|item| params[:id] == item.key}.first
@@ -25,10 +25,6 @@ class TabController < ApplicationController
 
     def load_output_element
       @output_element = Current.view.default_output_element_for_current_sidebar_item
-    end
-
-    def show_intro_at_least_once
-      redirect_to :action => 'intro' unless Current.already_shown?("#{params[:controller]}")
     end
     
     def fetch_api_session_id      

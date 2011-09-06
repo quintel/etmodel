@@ -2,26 +2,20 @@
 #
 # Table name: input_elements
 #
-#  id                        :integer(4)      not null, primary key
-#  name                      :string(255)
-#  key                       :string(255)
-#  slide_id                  :integer(4)
-#  share_group               :string(255)
-#  order_by                  :float
-#  step_value                :decimal(4, 2)
-#  created_at                :datetime
-#  updated_at                :datetime
-#  update_type               :string(255)
-#  unit                      :string(255)
-#  factor                    :float
-#  input_element_type        :string(255)
-#  label                     :string(255)
-#  comments                  :text
-#  complexity                :integer(4)      default(1)
-#  interface_group           :string(255)
-#  locked_for_municipalities :boolean(1)
-#  input_id                  :integer(4)
-#  command_type              :string(255)
+#  id                 :integer(4)      not null, primary key
+#  name               :string(255)
+#  key                :string(255)
+#  share_group        :string(255)
+#  step_value         :float
+#  created_at         :datetime
+#  updated_at         :datetime
+#  unit               :string(255)
+#  input_element_type :string(255)
+#  label              :string(255)
+#  comments           :text
+#  interface_group    :string(255)
+#  input_id           :integer(4)
+#  command_type       :string(255)
 #
 
 class InputElement < ActiveRecord::Base

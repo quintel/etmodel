@@ -24,7 +24,7 @@ task :production do
 end
 
 task :staging do
-  set :domain, "ec2-46-137-68-95.eu-west-1.compute.amazonaws.com"
+  set :domain, "ec2-46-137-123-187.eu-west-1.compute.amazonaws.com"
   set :branch, "staging"
 
   set :application_key, "#{application}_staging"

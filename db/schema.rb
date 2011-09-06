@@ -161,7 +161,7 @@ ActiveRecord::Schema.define(:version => 20110902122601) do
     t.string   "unit"
     t.boolean  "percentage"
     t.string   "group"
-    t.boolean  "show_point_label",       :default => false
+    t.boolean  "show_point_label"
     t.boolean  "growth_chart"
     t.string   "key"
     t.float    "max_axis_value"

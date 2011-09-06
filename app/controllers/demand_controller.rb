@@ -1,4 +1,7 @@
 class DemandController < TabController
+
+  before_filter :show_intro_at_least_once
+
   def intro
     Current.already_shown?('demand', true)
     
@@ -31,4 +34,11 @@ class DemandController < TabController
     end
     
   end
+
+protected
+
+  def show_intro_at_least_once
+    redirect_to :action => 'intro' unless Current.already_shown?("#{params[:controller]}")
+  end
+
 end

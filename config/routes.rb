@@ -2,17 +2,11 @@ Etm::Application.routes.draw do
 
   root :to => 'pages#root'
 
-  match '/costs/intro' => 'costs#intro'
-  match '/costs(/:id)' => 'costs#show', :defaults => {:id => 'combustion'}
-
   match '/demand/intro' => 'demand#intro'
+
   match '/demand(/:id(/:slide))' => 'demand#show', :defaults => {:id => 'households'}
-
-
-  match '/policy/intro' => 'policy#intro'
+  match '/costs(/:id)' => 'costs#show', :defaults => {:id => 'combustion'}
   match '/policy(/:id)' => 'policy#show', :defaults => {:id => 'sustainability'}
-
-  match '/supply/intro' => 'supply#intro'
   match '/supply(/:id)' => 'supply#show', :defaults => {:id => 'electricity'}
 
   match '/descriptions/chart/:id'  => 'descriptions#show'

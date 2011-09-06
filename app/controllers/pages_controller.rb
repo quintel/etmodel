@@ -79,11 +79,6 @@ public
     session[:show_all_views] = true
     redirect_to '/'
   end
-
-  def municipalities
-    session[:show_municipalities] = true
-    redirect_to '/'
-  end
   
   ######################################
   # Browser Checks

@@ -20,11 +20,7 @@
       %tr{cycles}
         %td= input_element.id
         %td
-          - if slide = input_element.slide
-            = slide.controller_name
-            \/
-            = slide.action_name
-        %td= input_element.slide.andand.name
+        %td= #input_element.slide.andand.name
         %td= link_to input_element.name, edit_admin_input_element_path(input_element)
         %td= input_element.start_value rescue "ERROR!! fix it"
         %td= input_element.share_group

@@ -1,47 +1,48 @@
 %h1 
+  %span= "#{distance_of_time_in_words(Time.now, @prediction.created_at)} geleden"
   %strong= @prediction.title
   #{t 'prediction.by'}
   = @prediction.user.try(:name)
-
+  = "(#{@prediction.user.try(:company_school)})"
 
 - unless params[:action] == 'link'  
+  .buttons.right
+    = button_to_function "Deel deze voorspelling", "return false"#, :class => 'apply_prediction'
+
   .buttons
     = button_to_function "Gebruik deze voorspelling", "return false", :class => 'apply_prediction'
 
+.expert_avatar
+  = image_tag("/images/layout/prediction_#{@prediction.user.try(:name).gsub(' ','_').downcase}.png")
 .description
   = @prediction.description
 .measures
+  %i= t('prediction.measures_header')
+  
   - if @prediction.measures.any?
-    %table
-      %thead
-        %tr
-          %th{:colspan => 2}= t('prediction.measures_header')
-          %th= t 'prediction.impact'
-          %th= t 'prediction.cost'
-          %th= t 'prediction.actor'
-      %tbody
-        - @prediction.measures.each do |m|
-          %tr{:class => cycle('even', 'odd')}
-            %td.name
-              = m.name
-              - if m.description.present?
-                .more_info
-                  = link_to 'info', '#'
-                  .inline_description= m.description
-            %td
-              = m.year_start
-              - if m.year_end
-                \- #{m.year_end}
-            %td= PredictionMeasure::IMPACT[m.impact]
-            %td= PredictionMeasure::COST[m.cost]
-            %td= m.actor
-        %tfoot
-          %tr
-            %td{:colspan => 5}= t('prediction.table_footer')
+    - @prediction.measures.each do |m|
+      %ul{:class => cycle('even', 'odd')}
+        %li.more_info
+        %li.name
+          = m.name
+        %li
+          = m.year_start
+          - if m.year_end
+            \- #{m.year_end}
+        
+        - if m.description.present?
+          %li.inline_description
+            = m.description
+            #{t 'prediction.cost'} #{PredictionMeasure::IMPACT[m.impact]}
+            #{t 'prediction.actor'} #{PredictionMeasure::COST[m.cost]}
+        
+    %ul
+      %li
+        = t('prediction.table_footer')
   - else
     %p= t('prediction.no_measures_available')
-.share
-  = link_to t('prediction.share_link'), share_prediction_path(@prediction), :target => '_blank'
+-#.share
+  -# link_to t('prediction.share_link'), share_prediction_path(@prediction), :target => '_blank'
   -#%a{:href => "http://twitter.com/share", :class => "twitter-share-button", :'data-count' => "none"} Tweet
   -#%script{:src => "http://platform.twitter.com/widgets.js"}
 .comments

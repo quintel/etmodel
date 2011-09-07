@@ -45,7 +45,7 @@ $(function(){
     }));
     
     chart_data.series.push([[scenario.end_year, _.min(values)],[scenario.end_year, _.max(values)]]);
-    chart_data.series_options.push({ lineWidth: 1, color: "777777", markerOptions: { show: false}});
+    chart_data.series_options.push({ lineWidth: 3, color: "#FFA013", markerOptions: { show: false}});
   }
   
   var slider_is_available = function() {
@@ -75,7 +75,7 @@ $(function(){
       var user_value = get_slider().get('user_value');
       var user_serie = build_user_value_chart_serie(user_value);
       chart_data.series.unshift(user_serie);
-      chart_data.series_options.unshift({ lineWidth: 2, markerOptions: { show: false}});
+      chart_data.series_options.unshift({ lineWidth: 2, markerOptions: { show: false},});
       $("tr.user_prediction").show();
       $("#user_value").html(user_value);
     }
@@ -91,18 +91,18 @@ $(function(){
           shadow: false
         },
         axes:{
-          xaxis:{tickOptions:{formatString:'%.0f'}},
-          yaxis:{tickOptions:{formatString:'%.0f'},min: 0}
+          xaxis:{tickOptions:{formatString:'%.0f',showGridline: false},numberTicks:5},
+          yaxis:{tickOptions:{formatString:'%.0f'},numberTicks:5,min: 0}
         },
         seriesColors: chart_data.colours,
         series: chart_data.series_options,
         seriesDefaults : {
-          markerOptions: { show: false }
+          markerOptions: { show: false },
         }
       }
     );
   }
-  
+
   // bootstrap
   
   plot_chart();
@@ -128,9 +128,10 @@ $(function(){
   });
 
   // extra info links
-  $(".more_info a").live('click', function(event){
+  $(".more_info").live('click', function(event){
     event.preventDefault();
     $(this).parent().find(".inline_description").toggle();
+    $(this).toggleClass('active');
   });
   
   // apply prediction

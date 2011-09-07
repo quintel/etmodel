@@ -5,7 +5,6 @@
     %tr
       %th.tal id
       %th.tal label
-      %th.tal key
       %th.tal color
       %th.tal is_target_line
 
@@ -14,7 +13,6 @@
       %tr{cycles}
         %td= serie.id
         %td= link_to serie.label, admin_output_element_serie_path(serie)
-        %td= truncate(serie.key, :length => 50)
         %td= serie.color
         %td= serie.is_target_line
 

@@ -1,6 +1,6 @@
 class DemographicsController < TabController
 
   def intro
-    Current.already_shown?('demographics', true)
+    Current.setting.already_shown?('demographics', true)
   end
 end

@@ -206,4 +206,39 @@ describe Setting do
     end
   end
 
+  describe "#already_shown?" do
+    before do
+      @setting = Setting.default
+    end
+
+    it "should not be false the first, true the 2nd time" do
+      @setting.already_shown?('demand/intro').should be_false
+      @setting.already_shown?('demand/intro').should be_true
+    end
+
+    it "should reset already_shown? when calling reset! so everything is false again" do
+      @setting.already_shown?('demand/intro')
+      @setting.reset!
+      @setting.already_shown?('demand/intro').should be_false
+    end
+
+    it "should reset already_shown? when resetting scenario so everything is false again" do
+      @setting.already_shown?('demand/intro')
+      @setting.reset_scenario
+      @setting.already_shown?('demand/intro').should be_false # again
+    end
+  end  
+
+  describe "regression tests" do
+    describe "DEFAULT_ATTRIBUTES" do
+      it "should not persist default values that are objects, e.g. Array" do
+        # BUG: Storing default_attributes in constant DEFAULT_ATTRIBUTES
+        #      messes with arrays as default_attributes. 
+        s1 = Setting.default
+        s1.network_parts_affected << :network
+        Setting.default_attributes[:network_parts_affected].should be_empty
+      end
+    end
+  end
+
 end

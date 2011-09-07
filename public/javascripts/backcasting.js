@@ -74,9 +74,10 @@ $(function(){
     if (slider_is_available()) {
       var user_value = get_slider().get('user_value');
       var user_serie = build_user_value_chart_serie(user_value);
-      chart_data.series.push(user_serie);
-      chart_data.series_options.push({ lineWidth: 2, markerOptions: { show: false}});
+      chart_data.series.unshift(user_serie);
+      chart_data.series_options.unshift({ lineWidth: 2, markerOptions: { show: false}});
       $("tr.user_prediction").show();
+      $("#user_value").html(user_value);
     }
 
     add_reference_bar();

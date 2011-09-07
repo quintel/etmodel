@@ -3,12 +3,13 @@
   font-size: 12px
   width: 880px
   height: 650px
-  .intro
-    font-size: 1.3em
-  .slider_title
-    margin: 1em 0
-    font-size: 1.3em
-    font-weight: bold
+  padding: 20px
+  
+  h1
+    font: 26px/28px Georgia, "Times New Roman", Times, serif
+    padding: 0px 0px 5px
+    margin: 0px
+    border-bottom: 2px solid #aaa
   .upper_block
     height: 200px
     .chart
@@ -19,36 +20,61 @@
       width: 470px
       height: 200px
       float: left
-      margin-left: 10px
-      table
-        tr.user_prediction
-          display: none
-        td
+      ul
+        padding: 0px
+        margin: 0px
+        list-style: none
+        li.user_prediction
+        
+        li.active
+          color: #fff
+          background: url('/images/layout/bg-prediction-active.png') no-repeat
+        li
           font-size: 12px
+          width: 356px
+          height: 32px
+          padding: 6px
+          margin: 8px 0 0
+          color: #000
           .colour
-            width: 20px
-            height: 4px
-  .buttons
-    float: right
-    padding: 4px
-    input[type=button]
-      float: right
-      background-color: #aaa
-      border: 0
-      padding: 10px 20px
-      color: white
-      font-weight: bold
-      font-size: 14px
-      margin-left: 10px
+            float: left
+            width: 45px
+            height: 5px
+            padding-top: 8px
+          span
+            width: 42%
+            float: left
+        li:hover
+          background: url('/images/layout/bg-prediction-active.png') no-repeat
+          color: #FFF
+
   .prediction_details
     clear: both
-    margin-top: 10px
+    margin-top: 20px
     width: 870px
-    border: 2px solid #ccc
-    padding: 5px
-    .header
+  
+    h1
+      font: italic 20px/22px Georgia, "Times New Roman", Times, serif 
+    .buttons
+      float: left
+      padding: 8px 0
+      input[type=button]
+        float: right
+        background-color: #63A1C9
+        border: 0
+        padding: 5px 10px
+        color: white
+        font-size: 10px
+        margin-right: 10px
     .description
+      font: italic
+      clear: both
       line-height: 20px
+      a
+        color: #63A1C9
+        text-decoration: none
+      a:hover
+        text-decoration: underline
     .measures
       margin-top: 20px
       table

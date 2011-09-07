@@ -28,35 +28,31 @@
     }
 
 .prediction
-  %h1= t('prediction.header')
-  .intro= t('prediction.intro_text')
-  .slider_title= I18n.t('prediction.chart_title.' + @input_element.key)
+  %h1= "Wat denken anderen over: " + I18n.t('prediction.chart_title.' + @input_element.key)# t('prediction.header')
     
   .upper_block
-    .chart#backcasting
     .available_predictions
-      %table
+      %ul
+        %li.user_prediction.active
+        
+          %span
+            - radio_button_tag :prediction_id, ''
+            = t 'prediction.your_scenario'
+          %span#user_value 
+          .colour{:style => "border-bottom: solid 4px #{cycle(*colours)}"}
         - @predictions.each do |p|
-          %tr
-            %td= radio_button_tag :prediction_id, p.id, (p.id == @prediction.id), :'data-slider_value' => p.corresponding_slider_value
-            %td
-              .colour{:style => "background: #{cycle(*colours)}"}
-            %td
-              #{p.user.try(:name)},
-              - if p.user.try(:company_school)
-                #{p.user.company_school},
-              = p.title
-              (#{describe_prediction(p)})
+          %li
+            %span
+              - radio_button_tag :prediction_id, p.id, (p.id == @prediction.id), :'data-slider_value' => p.corresponding_slider_value
+              #{p.user.try(:name)}
+              %br
+              %i= p.title
+            %span
+              #{describe_prediction(p)}
               - if current_user.try(:admin?)
                 = link_to 'edit', edit_admin_prediction_path(p), :target => '_new'
-        %tr.user_prediction
-          %td= radio_button_tag :prediction_id, ''
-          %td
-            .colour{:style => "background: #{cycle(*colours)}"}
-          %td= t 'prediction.your_scenario'
+            .colour{:style => "border-bottom: solid 4px #{cycle(*colours)}"}
+
+    .chart#backcasting
   .prediction_details
     = render @prediction
-  - unless params[:action] == 'link'  
-    .buttons
-      = button_to_function t('prediction.apply'), "return false", :class => 'apply_prediction'
-      = button_to_function t('prediction.back'), "parent.$.fancybox.close()"

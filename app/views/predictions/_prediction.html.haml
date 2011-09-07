@@ -1,11 +1,15 @@
-.header
+%h1 
   %strong= @prediction.title
-  \- #{t 'prediction.by'}
-  %strong= @prediction.user.try(:name)
-  = l(@prediction.created_at, :format => :date_only)
-  
+  #{t 'prediction.by'}
+  = @prediction.user.try(:name)
+
+
+- unless params[:action] == 'link'  
+  .buttons
+    = button_to_function "Gebruik deze voorspelling", "return false", :class => 'apply_prediction'
+
 .description
-  = smart_truncate @prediction.description, :length => 250
+  = @prediction.description
 .measures
   - if @prediction.measures.any?
     %table

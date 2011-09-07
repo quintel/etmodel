@@ -5,7 +5,7 @@ class DemandController < TabController
   end
 
   def intro
-    Current.already_shown?('demand', true)
+    Current.setting.already_shown?('demand', true)
     
     bars  = ['Households']
     bars += ['Buildings'] if Current.setting.area

@@ -1,5 +1,5 @@
 class SupplyController < TabController
   def intro
-    Current.already_shown?('supply', true)
+    Current.setting.already_shown?('supply', true)
   end
 end

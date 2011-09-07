@@ -74,32 +74,6 @@ class Current
     I18n.locale.to_s == 'nl'
   end
 
-  ##
-  # Use for pages that should only be shown once to a user.
-  # Example Usage in controller:
-  #
-  #   if Current.already_shown?("demand/intro")
-  #     redirect_to :action => 'index'
-  #   else 
-  #    render :action => 'show'
-  #   end
-  #
-  #
-  # @param key [String] key of page, normally the path
-  # @param touch [Boolean] save key as shown; default true.
-  # @return true if page has been shown once
-  # @return false if page hasn't been shown yet
-  #
-  def already_shown?(key, touch = true)
-    session['already_shown'] ||= []
-    if session['already_shown'].include?(key.to_s)
-      true
-    else
-      session['already_shown'] << key.to_s if touch
-      false
-    end
-  end
-
   ##############################
   # Resetting
   ##############################

@@ -1,5 +1,5 @@
 :ruby
-  colours = ["#ffff00", "#ffb200", "#ff6600", "#e60066", "#660099", "#1919b3"]
+  colours = ["#9B0505", "#040268", "#127024", "#CD9B06", "#660099", "#FF0057"]
   series = @predictions.map{|p| p.values_to_a}
   series_options = series.map{|x| {}}
 
@@ -28,8 +28,8 @@
     }
 
 .prediction
-  %h1= "Wat denken anderen over: " + I18n.t('prediction.chart_title.' + @input_element.key)# t('prediction.header')
-    
+  %h1
+    = "Wat denken anderen over: " + I18n.t('prediction.chart_title.' + @input_element.key)
   .upper_block
     .available_predictions
       %ul
@@ -53,6 +53,8 @@
                 = link_to 'edit', edit_admin_prediction_path(p), :target => '_new'
             .colour{:style => "border-bottom: solid 4px #{cycle(*colours)}"}
 
+    %h2.chart_title= I18n.t('prediction.chart_title.' + @input_element.key)
     .chart#backcasting
+    
   .prediction_details
     = render @prediction

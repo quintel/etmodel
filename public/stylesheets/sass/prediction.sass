@@ -1,3 +1,8 @@
+ul
+  padding: 0px
+  margin: 0px
+  list-style: none
+  
 .prediction
   font-family: 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif
   font-size: 12px
@@ -10,20 +15,28 @@
     padding: 0px 0px 5px
     margin: 0px
     border-bottom: 2px solid #aaa
+    span
+      float: right
+      padding-top: 7px
+      font: 16px/18px Georgia, "Times New Roman", Times, serif
+      color: #aaa
+      
   .upper_block
-    height: 200px
+    height: 220px
+    h2.chart_title
+      width: 400px
+      height: 20px
+      float: left
+      font-size: 12px
     .chart
       width: 400px
-      height: 200px
+      height: 180px
       float: left
     .available_predictions
       width: 470px
       height: 200px
       float: left
       ul
-        padding: 0px
-        margin: 0px
-        list-style: none
         li.user_prediction
         
         li.active
@@ -61,55 +74,89 @@
       input[type=button]
         float: right
         background-color: #63A1C9
-        border: 0
+        border: 1 px
         padding: 5px 10px
         color: white
         font-size: 10px
         margin-right: 10px
-    .description
-      font: italic
+    .buttons.right
+      float: right
+      input[type=button]
+        margin-right: 0px
+
+    .expert_avatar
+      float: left
       clear: both
+      width: 54px
+      height: 70%
+      margin: 5px 10px 0 0
+      img
+        height: 54px
+        border: 1px solid #CCC
+
+    .description
+      float: right
+      width: 786px
+      padding: 10px
+      font: italic
       line-height: 20px
+      background-color: #F0F0F0
       a
         color: #63A1C9
         text-decoration: none
       a:hover
         text-decoration: underline
     .measures
+      float: right
+      width: 786px
       margin-top: 20px
-      table
-        width: 870px
-        border-collapse: collapse
-        tr
-          border: 1px solid #879EC2
-          &.even
-            background-color: #B8C6DC
-          &.odd
-            background-color: #fff
-        td, th
+      padding: 10px
+      background-color: #F0F0F0
+      
+      i
+        float: left
+        margin-bottom: 5px
+      ul
+        float: left
+        width: 786px
+        &.even
+          background-color: #E4E4E4
+        &.odd
+          background-color: #fff
+        li
+          float: left
           font-size: 12px
-          padding: 5px
+          padding: 7px
           vertical-align: top
-        td.name
-          width: 60%
-        th
-          text-align: left
-        .more_info
+        li.name
+          width: 75%
+        li.more_info
           a
             text-decoration: none
             font-size: 11px
             color: #666
-          .inline_description
-            display: none
-            font-size: 11px
-            font-style: italic
+        li.inline_description
+          display: none
+          font-size: 11px
+          font-style: italic
+      
+      .more_info,.more_info.active:hover
+        clear: both
+        width: 18px
+        height: 18px
+        background: url('/images/layout/bg-prediction-readmore.png') no-repeat
+      .more_info:hover,.more_info.active 
+        background: url('/images/layout/bg-prediction-readmore-active.png') no-repeat
+        
     .share
       margin-top: 10px
       float: right
     .comments
+      float: right
+      width: 806px
       form
         padding: 5px
-        background: #D6DDF1
+        background: #E4E4E4
         textarea
           width: 500px
           height: 60px

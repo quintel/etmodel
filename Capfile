@@ -31,7 +31,7 @@ namespace :deploy do
   task :notify_airbrake, :except => { :no_release => true } do
     rails_env = fetch(:airbrake_env, fetch(:rails_env, "production"))
     local_user = ENV['USER'] || ENV['USERNAME']
-    notify_command = "bundle exec RAILS_ENV=production rake airbrake:deploy TO=#{rails_env} REVISION=#{current_revision} REPO=#{repository} USER=#{local_user}"
+    notify_command = "bundle exec rake RAILS_ENV=production airbrake:deploy TO=#{rails_env} REVISION=#{current_revision} REPO=#{repository} USER=#{local_user}"
     if application_key == "etmodel"
       notify_command << " API_KEY=aadd4cc40d52dabf842d4dce932e84a3"
     elsif application_key == "etmodel_staging"

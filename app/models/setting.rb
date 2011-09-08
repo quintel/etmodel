@@ -8,7 +8,6 @@ class Setting
     :country,
     :region,
     :end_year,
-    :api_session_key,
     :use_fce
   ]
 
@@ -34,7 +33,7 @@ class Setting
                 :selected_output_element,
                 :scenario_type,
                 :scenario_id,
-                :api_session_key
+                :api_session_id
 
   ##
   # @tested 2010-12-06 seb
@@ -55,7 +54,7 @@ class Setting
   end
 
   # Create a new setting object for a Api::Scenario.
-  # The setting object has no api_session_key, so that backbone
+  # The setting object has no api_session_id, so that backbone
   # initializes a new ETengine session, based on the loaded scenario.
   #
   # param scenario [Api::Scenario]
@@ -63,9 +62,9 @@ class Setting
   #
   def self.load_from_scenario(scenario)
     settings = SCENARIO_ATTRIBUTES.inject({}) {|hsh,key| hsh.merge key => scenario.send(key) }
-    # By removing api_session_key we force backbone to create a new ApiScenario
+    # By removing api_session_id we force backbone to create a new ApiScenario
     #   based on :scenario_id
-    settings.delete(:api_session_key)
+    settings.delete(:api_session_id)
     settings[:scenario_id] = scenario.id
     new(settings)
   end
@@ -121,7 +120,7 @@ class Setting
   #
   def reset_scenario
     # RD: used self. here otherwise an other settings object was reset
-    self.api_session_key = nil
+    self.api_session_id = nil
     self.scenario_id = nil # to go back to a blank slate scenario
 
     [:use_fce, :network_parts_affected, :already_shown].each do |key|

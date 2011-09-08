@@ -32,7 +32,7 @@ class TabController < ApplicationController
     end
     
     def fetch_api_session_id      
-      Current.setting.api_session_key ||= Api::Client.new.fetch_session_id
+      Current.setting.api_session_id ||= Api::Client.new.fetch_session_id
       # TODO: add graceful degradation if the request fails
     end
     

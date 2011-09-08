@@ -12,7 +12,7 @@ module ApplicationHelper
   end
 
   def has_active_scenario?
-    Current.setting.api_session_key.present?
+    Current.setting.api_session_id.present?
   end
 
   def strip_html(str)

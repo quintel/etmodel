@@ -46,7 +46,7 @@ class Api::Client
       response = self.class.get("/api_scenarios/new.json")
     end
     
-    result = response["api_scenario"]["api_session_key"] rescue nil
+    result = response["api_scenario"]["id"] rescue nil
     
     if result
       self.api_session_id = result

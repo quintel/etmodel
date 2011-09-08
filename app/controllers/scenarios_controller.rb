@@ -30,7 +30,7 @@ class ScenariosController < ApplicationController
   
   def new
     @saved_scenario = SavedScenario.new(
-      :api_session_key => Current.setting.api_session_key
+      :api_session_id => Current.setting.api_session_id
     )
   end
 

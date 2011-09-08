@@ -5,7 +5,7 @@ class ConstraintsController < ApplicationController
   
   def iframe
     @api_client = Api::Client.new
-    api_key = Current.setting.api_session_key rescue nil
+    api_key = Current.setting.api_session_id rescue nil
   
     # be sure we're using the current session id
     # The client is smart enough to fetch a fresh session_id if missing

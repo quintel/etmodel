@@ -25,8 +25,8 @@ window.AppView = Backbone.View.extend({
     this.inputElementsController.bind("change", this.handleInputElementsUpdate);
 
     this.settings = new Setting(); // At this point settings is empty!!
-    // let's get the ruby-fetched api_session_key
-    this.settings.set({'api_session_key' : globals.api_session_key});
+    // let's get the ruby-fetched api_session_id
+    this.settings.set({'api_session_id' : globals.api_session_id});
     this.scenario = new Scenario();
     this.peak_load = null; // initialize later in bootstrap, because we need to know what country it is
   },
@@ -37,7 +37,7 @@ window.AppView = Backbone.View.extend({
     if (this.settings.get('country') == 'nl') {
       this.peak_load = new PeakLoad();
     }
-    if (this.scenario.api_session_key() == null) {
+    if (this.scenario.api_session_id() == null) {
       this.scenario.new_session();
       // after copmleting new_session() App.bootstrap is called again and will thus continue the else part
     } else {

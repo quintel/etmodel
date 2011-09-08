@@ -200,10 +200,6 @@ class Setting
     end
   end
 
-  def municipality?
-    area.andand.is_municipality?
-  end
-
   def region_or_country
     region || country
   end

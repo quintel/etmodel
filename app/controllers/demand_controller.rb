@@ -1,7 +1,7 @@
 class DemandController < TabController
 
   def show
-    Current.already_shown?('demand') ? super : (redirect_to :action => 'intro')
+    Current.setting.already_shown?('demand') ? super : (redirect_to :action => 'intro')
   end
 
   def intro

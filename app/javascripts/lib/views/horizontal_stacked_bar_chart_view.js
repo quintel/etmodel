@@ -53,7 +53,7 @@ var HorizontalStackedBarChartView = BaseChartView.extend({
   },
     
   ticks : function() {
-    var groups = this.model.series.map(function(serie) {return serie.get('group');});
+    var groups = this.model.series.map(function(serie) {return serie.get('group_translated');});
     return _.uniq(groups);
   },
   colors : function() {

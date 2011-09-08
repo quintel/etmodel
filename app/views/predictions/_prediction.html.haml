@@ -7,7 +7,7 @@
 
 - unless params[:action] == 'link'  
   .buttons.right
-    = button_to_function "Deel deze voorspelling", "return false"#, :class => 'apply_prediction'
+    = button_to_function "Deel deze voorspelling", "#", :class => 'share_prediction', :href => share_prediction_path(@prediction)
 
   .buttons
     = button_to_function "Gebruik deze voorspelling", "return false", :class => 'apply_prediction'
@@ -21,7 +21,7 @@
   
   - if @prediction.measures.any?
     - @prediction.measures.each do |m|
-      %ul{:class => cycle('even', 'odd')}
+      %ul.measure{:class => cycle('even', 'odd')}
         %li.more_info
         %li.name
           = m.name
@@ -33,8 +33,18 @@
         - if m.description.present?
           %li.inline_description
             = m.description
-            #{t 'prediction.cost'} #{PredictionMeasure::IMPACT[m.impact]}
-            #{t 'prediction.actor'} #{PredictionMeasure::COST[m.cost]}
+            %br
+            %strong
+              #{t 'prediction.impact'} 
+            #{PredictionMeasure::IMPACT[m.impact]}
+            %br
+            %strong
+              #{t 'prediction.cost'} 
+            #{PredictionMeasure::COST[m.cost]}
+            %br
+            %strong
+              #{t 'prediction.actor'} 
+            #{PredictionMeasure::COST[m.actor] || "-"}
         
     %ul
       %li

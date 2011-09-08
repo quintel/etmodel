@@ -44,7 +44,7 @@ $(function(){
       return _.map(x, function(y) { return y[1]; });
     }));
     
-    chart_data.series.push([[scenario.end_year, _.min(values)],[scenario.end_year, _.max(values)]]);
+    chart_data.series.push([[scenario.end_year, 0],[scenario.end_year, _.max(values)]]);
     chart_data.series_options.push({ lineWidth: 3, color: "#FFA013", markerOptions: { show: false}});
   }
   
@@ -76,8 +76,10 @@ $(function(){
       var user_serie = build_user_value_chart_serie(user_value);
       chart_data.series.unshift(user_serie);
       chart_data.series_options.unshift({ lineWidth: 2, markerOptions: { show: false},});
+      var unit = get_slider().get('unit')
+      var describe_prediction = get_slider().get('command_type');
       $("tr.user_prediction").show();
-      $("#user_value").html(user_value);
+      $("#user_value").html(user_value + unit + " " + describe_prediction);
     }
 
     add_reference_bar();
@@ -98,6 +100,7 @@ $(function(){
         series: chart_data.series_options,
         seriesDefaults : {
           markerOptions: { show: false },
+          yaxis:'y2axis'
         }
       }
     );
@@ -111,11 +114,12 @@ $(function(){
   // interface stuff
   
   // ajax loading of prediction details
-  $("input[type=radio]").click(function(){
-    var prediction_id = $(this).val();
+  $(".clickable_prediction").click(function(){
+    
+    var prediction_id = $(this).attr("prediction_id");
     input_element.value_for_prediction = $(this).data('slider_value');
     // if the user selects his own prediction
-    if(prediction_id == '') {
+    if(prediction_id == undefined) {
       $(".prediction_details").empty();
       input_element.value_for_prediction = false;
       return;
@@ -125,18 +129,25 @@ $(function(){
     $(".prediction_details").load(url, function() {
       $(".prediction_details").busyBox('close');
     });
+    $(".clickable_prediction").removeClass('active')
+    $(this).addClass('active')
   });
 
   // extra info links
-  $(".more_info").live('click', function(event){
+  $(".measure").live('click', function(event){
     event.preventDefault();
-    $(this).parent().find(".inline_description").toggle();
+    $(this).find(".inline_description").toggle();
     $(this).toggleClass('active');
   });
   
   // apply prediction
-  $("input.apply_prediction").click(function(){
+  $("input.apply_prediction").live('click', function(){
     update_input_element();
     parent.$.fancybox.close();
+  });
+  
+  // share prediction
+  $("input.share_prediction").live('click', function(){
+    window.open(this.getAttribute('href'), '_blank')
   });
 });

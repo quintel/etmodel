@@ -7,15 +7,15 @@
     %tr
       %th.tal id
       %th.tal Tab
-      %th.tal 
-      %th.tal Result
+      %th.tal Gquery
+      %th
       
 
   %tbody
-    - @output_element_series.each do |output_element_serie|
-      -if output_element_serie.output_element
+    - @output_element_series.each do |s|
+      -if s.output_element
         %tr{cycles}
-          %td= output_element_serie.output_element.name
-          %td= link_to output_element_serie.label, admin_output_element_serie_path(output_element_serie)
-          %td= link_to 'edit', edit_admin_output_element_serie_path(output_element_serie)
-          %td.tar= Current.gql.query(output_element_serie.key).present_value rescue nil
+          %td= s.output_element.name
+          %td= link_to s.label, admin_output_element_serie_path(s)
+          %td= s.gquery
+          %td= link_to 'edit', edit_admin_output_element_serie_path(s)

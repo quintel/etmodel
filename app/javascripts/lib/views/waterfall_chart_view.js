@@ -40,6 +40,7 @@ var WaterfallChartView = BaseChartView.extend({
       }
     });
 
+
     var start_scale = (this.model.get('id') == 61) ? 2 : 3;
     
     var scale_sum = Metric.scaled_scale(_.reduce(series, function(sum,n) {return sum + n;}, 0), start_scale);

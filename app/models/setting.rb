@@ -23,7 +23,9 @@ class Setting
     5 => 'watt_nu',
     6 => 'new_municipality_view',
     7 => 'ameland_advanced',
-    8 => 'network'
+    8 => 'network',
+    9 => 'nl_noord'
+    
   }.freeze
 
   attr_accessor :last_etm_controller_name,

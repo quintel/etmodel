@@ -4,9 +4,9 @@ module BackcastingHelper
     slider = p.input_element
     if @end_year
       if ['growth_rate', 'efficiency_improvement'].include?(slider.command_type)
-        "#{value}#{slider.unit} #{I18n.t('prediction.average_per_year')} #{@end_year}"
+        "#{value}#{slider.unit} #{I18n.t('prediction.per_year')}"
       else
-        "#{value}#{slider.unit} in #{@end_year}"
+        "#{value}#{slider.unit}"
       end
     else
       "#{value}#{slider.unit}"

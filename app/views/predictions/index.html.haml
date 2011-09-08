@@ -29,19 +29,20 @@
 
 .prediction
   %h1
-    = "Wat denken anderen over: " + I18n.t('prediction.chart_title.' + @input_element.key)
+    %span.help_link
+      = link_to "Wat is dit?", "http://wiki.quintel.nl/index.php/Backcasting", :target=>"_blank"
+    = "Wat denken anderen over " + I18n.t('prediction.page_title.' + @input_element.key)
   .upper_block
     .available_predictions
       %ul
-        %li.user_prediction.active
-        
+        %li.clickable_prediction.user_prediction
           %span
             - radio_button_tag :prediction_id, ''
             = t 'prediction.your_scenario'
           %span#user_value 
           .colour{:style => "border-bottom: solid 4px #{cycle(*colours)}"}
         - @predictions.each do |p|
-          %li
+          %li.clickable_prediction{:prediction_id => "#{p.id}",:'data-slider_value' => "#{p.corresponding_slider_value}", :class=>"#{p.id == @prediction.id ? 'active' : ''}"}
             %span
               - radio_button_tag :prediction_id, p.id, (p.id == @prediction.id), :'data-slider_value' => p.corresponding_slider_value
               #{p.user.try(:name)}

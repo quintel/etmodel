@@ -20,6 +20,15 @@ ul
       padding-top: 7px
       font: 16px/18px Georgia, "Times New Roman", Times, serif
       color: #aaa
+    span.help_link
+      padding-top: 14px
+      padding-left: 20px
+      background: url(/images/layout/ico-questionmark.png) left 13px  no-repeat
+      a
+        color: #aaa
+        text-decoration: none
+      a:hover
+        text-decoration: underline
       
   .upper_block
     height: 220px
@@ -123,6 +132,7 @@ ul
           background-color: #E4E4E4
         &.odd
           background-color: #fff
+
         li
           float: left
           font-size: 12px
@@ -130,23 +140,21 @@ ul
           vertical-align: top
         li.name
           width: 75%
-        li.more_info
-          a
-            text-decoration: none
-            font-size: 11px
-            color: #666
         li.inline_description
           display: none
           font-size: 11px
           font-style: italic
-      
-      .more_info,.more_info.active:hover
+      .measure
+        cursor: pointer
+      .more_info,.measure.active:hover .more_info
         clear: both
         width: 18px
         height: 18px
         background: url('/images/layout/bg-prediction-readmore.png') no-repeat
-      .more_info:hover,.more_info.active 
-        background: url('/images/layout/bg-prediction-readmore-active.png') no-repeat
+        cursor: pointer
+      .measure:hover,.measure.active
+        .more_info
+          background: url('/images/layout/bg-prediction-readmore-active.png') no-repeat
         
     .share
       margin-top: 10px

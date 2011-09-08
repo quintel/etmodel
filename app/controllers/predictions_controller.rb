@@ -57,6 +57,6 @@ class PredictionsController < ApplicationController
     end
     
     def has_active_scenario?
-      Current.setting.api_session_key.present? rescue false
+      Current.setting.api_session_id.present? rescue false
     end
 end

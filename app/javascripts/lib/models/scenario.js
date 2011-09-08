@@ -6,8 +6,8 @@ var Scenario = Backbone.Model.extend({
   initialize : function() {
   },
 
-  api_session_key : function() {
-    var key = App.settings.get('api_session_key');
+  api_session_id : function() {
+    var key = App.settings.get('api_session_id');
     return _.isPresent(key) ? key : null;
   },
   api_attributes : function() {
@@ -23,13 +23,13 @@ var Scenario = Backbone.Model.extend({
   },
 
   // this method shouldn't be called as long as we keep using
-  // the api_session_key fetched by the tabs_controller filter
+  // the api_session_id fetched by the tabs_controller filter
   new_session : function() {
     console.log('js fetching new_session', this.api_attributes());
     var url = globals.api_url + "/api_scenarios/new.json?callback=?&";
     $.getJSON(url, {settings : this.api_attributes()},
       function(data) {
-        App.settings.set({'api_session_key' : data.api_scenario.api_session_key});
+        App.settings.set({'api_session_id' : data.api_scenario.api_session_id});
         App.bootstrap();
       }
     );
@@ -46,6 +46,6 @@ var Scenario = Backbone.Model.extend({
   },
   
   url_path : function() {
-    return globals.api_url + "/api_scenarios/"+this.api_session_key();
+    return globals.api_url + "/api_scenarios/"+this.api_session_id();
   }
 });

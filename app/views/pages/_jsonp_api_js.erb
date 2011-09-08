@@ -69,8 +69,8 @@ function new_scenario(settings) {
 /*
  * Asynchronous call to te query a scenario.
  */
-function query_scenario(api_session_key, update, result) {
-  var url = api_base+""+api_session_key+".json?callback=?";
+function query_scenario(api_session_id, update, result) {
+  var url = api_base+""+api_session_id+".json?callback=?";
   $.getJSON(url, {
       "update" : update,
       "result" : result
@@ -91,7 +91,7 @@ test_query({335 : 1}, ['co2_emission_total'], {});
 new_scenario({
   'country' : 'nl',      // 'nl' is default and can be ommited
   'end_year' : '2040'    // '2040' is default and can be ommited
-  // 'api_session_key' : '' // assign a custom session_key otherwise api creates a unique one
+  // 'api_session_id' : '' // assign a custom session_key otherwise api creates a unique one
 })
 
 new_scenario({

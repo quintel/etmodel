@@ -17,7 +17,7 @@ class DemandController < TabController
     client = Api::Client.new
     # Assigning queries now, to prevent multiple requests
     client.queries = queries
-    client.api_session_id = Current.setting.api_session_key
+    client.api_session_id = Current.setting.api_session_id
   
     @total = client.simple_query('future:SUM(V(G(final_demand_cbs);final_demand))')
     

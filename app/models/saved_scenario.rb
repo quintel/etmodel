@@ -13,7 +13,7 @@
 class SavedScenario < ActiveRecord::Base
   belongs_to :user
 
-  attr_accessor :title, :description, :api_session_key
+  attr_accessor :title, :description, :api_session_id
 
   # validates :title, :presence => true
 

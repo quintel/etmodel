@@ -1,6 +1,6 @@
 require 'spec_helper'
 
 describe Slide do
-  it { should have_many :input_elements }
+  it { should validate_presence_of :key }
 end
 

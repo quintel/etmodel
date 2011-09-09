@@ -5,22 +5,16 @@
 %div{:style => "width: 60%"}
   = semantic_form_for [:admin, @input_element] do |f|
     = f.inputs do
-      = f.input :slide
       = f.input :name
       = f.input :key
       = f.input :share_group
-      = f.input :order_by
       = f.input :step_value
-      = f.input :update_type
       = f.input :unit
-      = f.input :factor
       = f.input :command_type, :as => :select, :collection => ['growth_rate', 'value', 'efficiency_improvement']
       = f.input :input_element_type
       = f.input :label
       = f.input :comments
-      = f.input :complexity
       = f.input :interface_group
-      = f.input :locked_for_municipalities
     
     = f.inputs :for => :description do |j|
       = j.input :short_content_en

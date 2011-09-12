@@ -81,7 +81,7 @@ class Setting
     {
       :hide_unadaptable_sliders       => false,
       :network_parts_affected         => [],
-      :track_peak_load                => true,
+      :track_peak_load                => false,
       :complexity                     => 3,
       :country                        => 'nl',
       :region                         => nil,

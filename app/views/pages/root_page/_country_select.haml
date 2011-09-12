@@ -12,8 +12,7 @@
     %optgroup{:label => "Municipalities of the Netherlands"}
       = country_option 'ame'
       = country_option 'ams', :test => true
-      - if @show_all
-        = country_option 'grs'
+      = country_option 'grs', :test => true
     = country_option 'de'
     - if @show_german_provinces
       %optgroup{:label => "Provinces of Germany"}

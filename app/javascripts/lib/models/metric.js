@@ -37,6 +37,8 @@ var Metric = {
       return Metric.scaling_in_words(scale, 'ton');
     } else if (unit == 'EUR') {
       return Metric.scaling_in_words(scale, 'currency');
+    } else if (unit == 'MW') {
+      return Metric.scaling_in_words(scale, 'watt');
     } else if (unit == '%') {
       return '';
     } else {

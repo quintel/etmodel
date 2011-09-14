@@ -12,4 +12,11 @@ module BackcastingHelper
       "#{value}#{slider.unit}"
     end
   end
+  
+  def describe_user_value(slider)
+
+    if @end_year && ['growth_rate', 'efficiency_improvement'].include?(slider.command_type)
+      "#{I18n.t('prediction.per_year')}"
+    end
+  end
 end

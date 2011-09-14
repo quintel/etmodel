@@ -17,11 +17,11 @@ ul
     border-bottom: 2px solid #aaa
     span
       float: right
-      padding-top: 7px
-      font: 16px/18px Georgia, "Times New Roman", Times, serif
+      padding-top: 10px
+      font: 12px/14px Verdana, Arial, Helvetica, sans-serif
       color: #aaa
     span.help_link
-      padding-top: 14px
+      padding-top: 18px
       padding-left: 20px
       background: url(/images/layout/ico-questionmark.png) left 13px  no-repeat
       a
@@ -46,7 +46,8 @@ ul
       height: 200px
       float: left
       ul
-        li.user_prediction
+        li.clickable_prediction
+          cursor: pointer
         
         li.active
           color: #fff
@@ -58,6 +59,7 @@ ul
           padding: 6px
           margin: 8px 0 0
           color: #000
+          background: url('/images/layout/bg-prediction.png') no-repeat
           .colour
             float: left
             width: 45px
@@ -131,13 +133,15 @@ ul
         &.even
           background-color: #E4E4E4
         &.odd
-          background-color: #fff
+          background-color: #F0F0F0
 
         li
           float: left
           font-size: 12px
           padding: 7px
           vertical-align: top
+        li.years
+          float: right
         li.name
           width: 75%
         li.inline_description

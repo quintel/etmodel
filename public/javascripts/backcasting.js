@@ -77,9 +77,9 @@ $(function(){
       chart_data.series.unshift(user_serie);
       chart_data.series_options.unshift({ lineWidth: 2, markerOptions: { show: false},});
       var unit = get_slider().get('unit')
-      var describe_prediction = get_slider().get('command_type');
+
       $("tr.user_prediction").show();
-      $("#user_value").html(user_value + unit + " " + describe_prediction);
+      $('#user_value').prepend(user_value+unit);
     }
 
     add_reference_bar();

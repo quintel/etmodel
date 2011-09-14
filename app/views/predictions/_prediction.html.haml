@@ -1,5 +1,5 @@
 %h1 
-  %span= "#{distance_of_time_in_words(Time.now, @prediction.created_at)} geleden"
+  %span= "#{distance_of_time_in_words(Time.now, @prediction.created_at)} #{t 'ago'} "
   %strong= @prediction.title
   #{t 'prediction.by'}
   = @prediction.user.try(:name)
@@ -7,10 +7,10 @@
 
 - unless params[:action] == 'link'  
   .buttons.right
-    = button_to_function "Deel deze voorspelling", "#", :class => 'share_prediction', :href => share_prediction_path(@prediction)
+    = button_to_function t('prediction.share_prediction'), "#", :class => 'share_prediction', :href => share_prediction_path(@prediction)
 
   .buttons
-    = button_to_function "Gebruik deze voorspelling", "return false", :class => 'apply_prediction'
+    = button_to_function t('prediction.use_prediction'), "return false", :class => 'apply_prediction'
 
 .expert_avatar
   = image_tag("/images/layout/prediction_#{@prediction.user.try(:name).gsub(' ','_').downcase}.png")
@@ -23,16 +23,17 @@
     - @prediction.measures.each do |m|
       %ul.measure{:class => cycle('even', 'odd')}
         %li.more_info
-        %li.name
-          = m.name
-        %li
+        %li.years
           = m.year_start
           - if m.year_end
             \- #{m.year_end}
+        %li.name
+          = m.name
         
         - if m.description.present?
           %li.inline_description
             = m.description
+            %br
             %br
             %strong
               #{t 'prediction.impact'} 
@@ -44,13 +45,12 @@
             %br
             %strong
               #{t 'prediction.actor'} 
-            #{PredictionMeasure::COST[m.actor] || "-"}
-        
-    %ul
-      %li
-        = t('prediction.table_footer')
+            = m.actor || "-"
+            %br
+            = t('prediction.table_footer')
   - else
-    %p= t('prediction.no_measures_available')
+    %ul.measure
+      %li= t('prediction.no_measures_available')
 -#.share
   -# link_to t('prediction.share_link'), share_prediction_path(@prediction), :target => '_blank'
   -#%a{:href => "http://twitter.com/share", :class => "twitter-share-button", :'data-count' => "none"} Tweet

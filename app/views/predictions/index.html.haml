@@ -30,8 +30,8 @@
 .prediction
   %h1
     %span.help_link
-      = link_to "Wat is dit?", "http://wiki.quintel.nl/index.php/Backcasting", :target=>"_blank"
-    = "Wat denken anderen over " + I18n.t('prediction.page_title.' + @input_element.key)
+      = link_to t('prediction.help'), "http://wiki.quintel.nl/index.php/Backcasting", :target=>"_blank"
+    = t('prediction.page_title.prefix') + " " + t('prediction.page_title.' + @input_element.key)
   .upper_block
     .available_predictions
       %ul
@@ -40,6 +40,7 @@
             - radio_button_tag :prediction_id, ''
             = t 'prediction.your_scenario'
           %span#user_value 
+            #{describe_user_value(@input_element)}
           .colour{:style => "border-bottom: solid 4px #{cycle(*colours)}"}
         - @predictions.each do |p|
           %li.clickable_prediction{:prediction_id => "#{p.id}",:'data-slider_value' => "#{p.corresponding_slider_value}", :class=>"#{p.id == @prediction.id ? 'active' : ''}"}
@@ -54,7 +55,7 @@
                 = link_to 'edit', edit_admin_prediction_path(p), :target => '_new'
             .colour{:style => "border-bottom: solid 4px #{cycle(*colours)}"}
 
-    %h2.chart_title= I18n.t('prediction.chart_title.' + @input_element.key)
+    %h2.chart_title= t('prediction.chart_title.' + @input_element.key)
     .chart#backcasting
     
   .prediction_details

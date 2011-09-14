@@ -13,11 +13,12 @@ class PredictionsController < ApplicationController
   end
   
   def share
-    current_area = @prediction.area
+    # current_area = @prediction.area
     @input_element = @prediction.input_element
-    @predictions = @input_element.predictions.for_area(current_area)
+    @predictions = @input_element.available_predictions#.predictions.for_area(current_area)
     @comment = Comment.new
     @comment.commentable = @prediction
+    @end_year = Current.setting.end_year || 2040
     render :layout => 'pages', :action => 'index'
   end
   

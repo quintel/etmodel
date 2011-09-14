@@ -68,10 +68,12 @@ en:
       billions: "GT"
       trillions: "TT"
     watt:
+      # This units should be checked with Chris Laumans when the units are refactored!
       unit: "MW"
-      thousands: "GW"
-      millions: "TW"
-      billions: "PW"
+      thousands: "MW"
+      millions: "MW"
+      billions: "MW"
+      trillions: "MW"
 
   # ---------------------------- #
   # ----------- Header ----------- #  

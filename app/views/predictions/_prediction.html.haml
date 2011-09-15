@@ -15,7 +15,7 @@
 .expert_avatar
   = image_tag("/images/layout/prediction_#{@prediction.user.try(:name).gsub(' ','_').downcase}.png")
 .description
-  = @prediction.description
+  = @prediction.description.html_safe
 .measures
   %i= t('prediction.measures_header')
   
@@ -32,7 +32,7 @@
         
         - if m.description.present?
           %li.inline_description
-            = m.description
+            = m.description.html_safe
             %br
             %br
             %strong

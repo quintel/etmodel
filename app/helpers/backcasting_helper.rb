@@ -19,4 +19,8 @@ module BackcastingHelper
       "#{I18n.t('prediction.per_year')}"
     end
   end
+  
+  def user_scenario_available?
+    params[:end_year].present?
+  end
 end

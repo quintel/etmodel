@@ -5,17 +5,20 @@
   = @prediction.user.try(:name)
   = "(#{@prediction.user.try(:company_school)})"
 
-- unless params[:action] == 'link'  
+- if user_scenario_available?
   .buttons.right
     = button_to_function t('prediction.share_prediction'), "#", :class => 'share_prediction', :href => share_prediction_path(@prediction)
-
   .buttons
     = button_to_function t('prediction.use_prediction'), "return false", :class => 'apply_prediction'
+- else
+  .buttons
 
 .expert_avatar
   = image_tag("/images/layout/prediction_#{@prediction.user.try(:name).gsub(' ','_').downcase}.png")
 .description
   = @prediction.description.html_safe
+.connector
+
 .measures
   %i= t('prediction.measures_header')
   

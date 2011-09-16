@@ -35,7 +35,7 @@ $(function(){
     return out;
   }
   
-  // shows the grey bar with the scenario end year
+  // shows the bar with the scenario end year
   var add_reference_bar = function() {
     if(scenario.end_year == 2050) { return; }
         
@@ -71,15 +71,15 @@ $(function(){
   
   var plot_chart = function() {
     // let's get the current slider value
-    if (slider_is_available()) {
-      var user_value = get_slider().get('user_value');
-      var user_serie = build_user_value_chart_serie(user_value);
-      chart_data.series.unshift(user_serie);
-      chart_data.series_options.unshift({ lineWidth: 2, markerOptions: { show: false},});
-      var unit = get_slider().get('unit')
-
-      $("tr.user_prediction").show();
-      $('#user_value').prepend(user_value+unit);
+    if (scenario.available){
+        console.info('geen scenario')
+      if (slider_is_available()) {
+        var user_value = get_slider().get('user_value');
+        var user_serie = build_user_value_chart_serie(user_value);
+        chart_data.series.unshift(user_serie);
+        var unit = get_slider().get('unit')
+        $('#user_value').prepend(user_value+unit);
+      }
     }
 
     add_reference_bar();
@@ -107,8 +107,9 @@ $(function(){
   }
 
   // bootstrap
-  
-  plot_chart();
+  $(document).ready(function(){
+    plot_chart();
+  });
 
   
   // interface stuff

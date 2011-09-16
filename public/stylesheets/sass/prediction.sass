@@ -20,18 +20,22 @@ ul
       padding-top: 10px
       font: 12px/14px Verdana, Arial, Helvetica, sans-serif
       color: #aaa
-    span.help_link
-      padding-top: 18px
-      padding-left: 20px
-      background: url(/images/layout/ico-questionmark.png) left 13px  no-repeat
-      a
-        color: #aaa
-        text-decoration: none
-      a:hover
-        text-decoration: underline
+  div.help_link
+    position: absolute
+    top: 0px
+    right: 20px
+    padding-top: 18px
+    padding-left: 20px
+    background: url(/images/layout/ico-questionmark.png) left 13px  no-repeat
+    a
+      color: #aaa
+      text-decoration: none
+    a:hover
+      text-decoration: underline
       
   .upper_block
     height: 220px
+    padding: 20px 0px
     h2.chart_title
       width: 400px
       height: 20px
@@ -68,11 +72,13 @@ ul
           span
             width: 42%
             float: left
+            font: 12px/14px "Lucida Grande",Verdana, Arial
         li:hover
           background: url('/images/layout/bg-prediction-active.png') no-repeat
           color: #FFF
 
   .prediction_details
+    float: left
     clear: both
     margin-top: 20px
     width: 870px
@@ -81,7 +87,7 @@ ul
       font: italic 20px/22px Georgia, "Times New Roman", Times, serif 
     .buttons
       float: left
-      padding: 8px 0
+      padding: 15px 0
       input[type=button]
         float: right
         background-color: #63A1C9
@@ -100,7 +106,9 @@ ul
       clear: both
       width: 54px
       height: 70%
-      margin: 5px 10px 0 0
+      margin: 5px 0 0 0
+      padding-right: 10px
+      background: url('/images/layout/bg-prediction-speechbox.png') no-repeat center right
       img
         height: 54px
         border: 1px solid #CCC
@@ -117,10 +125,14 @@ ul
         text-decoration: none
       a:hover
         text-decoration: underline
+    .connector
+      float: right
+      width: 806px
+      height: 13px
+      background: url('/images/layout/bg-prediction-connector.png') no-repeat top center
     .measures
       float: right
       width: 786px
-      margin-top: 20px
       padding: 10px
       background-color: #F0F0F0
       
@@ -169,11 +181,17 @@ ul
       form
         padding: 5px
         background: #E4E4E4
+        input.string
+          width: 436px
         textarea
           width: 500px
           height: 60px
   .input label
     width: 60px
     float: left
-    
+.footer_spacer
+  clear: both
+  float: left
+  height: 100px
+  width: 100%
 @import comments

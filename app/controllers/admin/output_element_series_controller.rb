@@ -3,7 +3,9 @@ class OutputElementSeriesController  < BaseController
   before_filter :find_model, :only => [:edit, :show]
   
   def index
-    @output_element_series = OutputElementSerie.ordered_for_admin
+    scope = OutputElementSerie
+    scope = scope.gquery_contains(params[:gquery]) if params[:gquery]
+    @output_element_series = scope.ordered_for_admin
   end
 
 

@@ -84,6 +84,8 @@ task :db2local do
   puts "Gunzip gzip file"
     system "gunzip -f #{db_name}.sql.gz"
   puts "Importing sql file to db"
+    system "mysqladmin -f -u root drop #{local_db_name}"
+    system "mysqladmin -u root create #{local_db_name}"
     system "mysql -u root #{local_db_name} < #{db_name}.sql"
 end
 

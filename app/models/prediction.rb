@@ -87,8 +87,8 @@ class Prediction < ActiveRecord::Base
   
   # The slider often uses a different unit from the prediction. Let's convert it
   def corresponding_slider_value
-    raw = value_for_year(Current.setting.end_year)
-    span = Current.setting.end_year - Current.setting.start_year
+    raw = value_for_year(Current.setting.end_year || 2050)
+    span = (Current.setting.end_year || 2050) - (Current.setting.start_year || 2010)
     case input_element.command_type
       when 'value'
         raw

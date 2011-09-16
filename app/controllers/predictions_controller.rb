@@ -3,7 +3,7 @@ class PredictionsController < ApplicationController
   before_filter :find_prediction, :only => [:show, :comment, :share]
   
   def index
-    @predictions = @input_element.available_predictions
+    @predictions = @input_element.available_predictions(Current.setting.region)
     @prediction  = @predictions.find(params[:prediction_id]) rescue @predictions.first
     @comment = Comment.new
     @comment.commentable = @prediction
@@ -13,12 +13,14 @@ class PredictionsController < ApplicationController
   end
   
   def share
-    # current_area = @prediction.area
+    # Set the locale to nl untill en translations are available
+    I18n.locale =  'nl'
     @input_element = @prediction.input_element
-    @predictions = @input_element.available_predictions#.predictions.for_area(current_area)
+    @predictions = @input_element.available_predictions('nl')
+    logger.info "predictions #{@predictions.inspect}"
     @comment = Comment.new
     @comment.commentable = @prediction
-    @end_year = Current.setting.end_year || 2040
+    @end_year = 2050
     render :layout => 'pages', :action => 'index'
   end
   

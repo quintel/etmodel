@@ -125,7 +125,7 @@ $(function(){
       input_element.value_for_prediction = false;
       return;
     }    
-    var url = "/predictions/" + prediction_id;
+    var url = "/predictions/" + prediction_id + "?end_year="+scenario.end_year;
     $(".prediction_details").busyBox({spinner: '<img src="/images/layout/ajax-loader.gif" />'});
     $(".prediction_details").load(url, function() {
       $(".prediction_details").busyBox('close');

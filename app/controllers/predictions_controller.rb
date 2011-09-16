@@ -14,7 +14,10 @@ class PredictionsController < ApplicationController
   
   def share
     # Set the locale to nl untill en translations are available
-    I18n.locale =  'nl'
+    if I18n.locale.to_s == 'en'
+      I18n.locale = 'nl'
+      flash[:notice] = 'Sorry, this page is only available in dutch'
+    end
     @input_element = @prediction.input_element
     @predictions = @input_element.available_predictions('nl')
     logger.info "predictions #{@predictions.inspect}"
@@ -25,6 +28,8 @@ class PredictionsController < ApplicationController
   end
   
   def show
+    I18n.locale = 'nl'
+    
     @input_element = @prediction.input_element
     @comment = Comment.new
     @comment.commentable = @prediction

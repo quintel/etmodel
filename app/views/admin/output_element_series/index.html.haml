@@ -1,6 +1,12 @@
 - title 'Output Element Series'
 
-%p= link_to 'Create new serie', new_admin_output_element_serie_path
+%p
+  = form_tag admin_output_element_series_path, :method => :get do
+    = label_tag :gquery, "Filter by gquery"
+    = text_field_tag :gquery, params[:gquery]
+    = submit_tag "Search"
+  
+  = link_to 'Create new serie', new_admin_output_element_serie_path
 
 %table{table_defaults}
   %thead
@@ -17,5 +23,5 @@
         %tr{cycles}
           %td= s.output_element.name
           %td= link_to s.label, admin_output_element_serie_path(s)
-          %td= s.gquery
+          %td= highlight s.gquery, params[:gquery]
           %td= link_to 'edit', edit_admin_output_element_serie_path(s)

@@ -39,6 +39,7 @@ class OutputElementSerie < ActiveRecord::Base
   has_one :description, :as => :describable
   has_one :area_dependency, :as => :dependable
 
+  scope :gquery_contains, lambda {|q| where("gquery LIKE ?", "%#{q}%")}
   scope :ordered_for_admin, order("output_elements.name").includes('output_element')
   scope :block_charts, where(:output_element_id => OutputElement::BLOCK_CHART_ID)
 

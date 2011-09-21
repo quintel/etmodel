@@ -30,7 +30,7 @@
 
 .prediction
   %h1
-    = t('prediction.page_title.prefix') + " " + t('prediction.page_title.' + @input_element.key)
+    = t('prediction.page_title.prefix') + "&nbsp;" + t('prediction.page_title.' + @input_element.key)
   .help_link
     = link_to t('prediction.help'), "http://wiki.quintel.nl/index.php/Backcasting", :target=>"_blank"
 

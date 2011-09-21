@@ -205,7 +205,7 @@
       this.conversions   = conversionsFromModel(this.model);
       this.conversion    = this.conversions[0];
       this.valueSelector = new ValueSelector({ view: this });
-      this.initialValue  = this.model.get('user_value');
+      this.initialValue  = this.model.get('start_value');
 
       // Keeps track of intervals used to repeat stepDown and stepUp
       // operations when the user holds down the mouse button.
@@ -252,7 +252,7 @@
         range:    [ this.model.get('min_value'),
                     this.model.get('max_value') ],
 
-        value:      this.initialValue,
+        value:      this.model.get('user_value'),
         step:       this.model.get('step_value'),
         disable:    this.model.get('disabled'),
 

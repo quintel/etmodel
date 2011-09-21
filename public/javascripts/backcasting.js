@@ -15,8 +15,9 @@ $(function(){
     var out;
     // no interpolations or mid points, just draw a straight line
     if(input_element.command_type == 'value') {
+      var start_value = get_slider().get('start_value');
       out = [
-        [scenario.start_year,0],
+        [scenario.start_year,start_value],
         [scenario.end_year, user_value]
       ];
     } else if(input_element.command_type == 'growth_rate') {
@@ -93,7 +94,7 @@ $(function(){
         },
         axes:{
           xaxis:{tickOptions:{formatString:'%.0f',showGridline: false},numberTicks:5},
-          yaxis:{tickOptions:{formatString:'%.0f'},numberTicks:5,min: 0}
+          yaxis:{tickOptions:{formatString:'%.0f'},numberTicks:5, min: 0}
         },
         seriesColors: chart_data.colours,
         series: chart_data.series_options,

@@ -46,7 +46,8 @@ $(function(){
       return _.map(x, function(y) { return y[1]; });
     }));
     
-    chart_data.series.push([[scenario.end_year, 0],[scenario.end_year, _.max(values)]]);
+    var min_value = (_.min(values) > 1) ? 0 : _.min(values)
+    chart_data.series.push([[scenario.end_year, min_value],[scenario.end_year, _.max(values)]]);
     chart_data.series_options.push({ lineWidth: 3, color: "#FFA013", markerOptions: { show: false}});
   }
   

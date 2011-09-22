@@ -1,1 +1,4 @@
 $("#comments_container").append("<%= escape_javascript(render @comment)%>");
+$(':input','#new_comment')
+ .not(':button, :submit, :reset, :hidden')
+ .val('')

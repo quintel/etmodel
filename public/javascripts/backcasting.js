@@ -33,7 +33,8 @@ $(function(){
         out.push([scenario.start_year + i, calculate_value(user_value, -i)]);
       }
     }
-    return out;
+    chart_data.series.unshift(out);
+    chart_data.series_options.unshift({});
   }
   
   // shows the bar with the scenario end year
@@ -74,14 +75,12 @@ $(function(){
     // let's get the current slider value
     if (scenario.available){
       if (slider_is_available()) {
-        var user_value = get_slider().get('user_value');
-        var user_serie = build_user_value_chart_serie(user_value);
-        chart_data.series.unshift(user_serie);
+        var user_value = Metric.round_number(get_slider().get('user_value'),1);
+        build_user_value_chart_serie(user_value);
         var unit = get_slider().get('unit')
         $('#user_value').prepend(user_value+unit);
       }
     }
-
     add_reference_bar();
 
     // Let's plot the chart

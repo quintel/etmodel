@@ -19,7 +19,7 @@ class PredictionsController < ApplicationController
       flash[:notice] = 'Sorry, this page is only available in dutch'
     end
     @input_element = @prediction.input_element
-    @predictions = @input_element.available_predictions('nl')
+    @predictions = @input_element.available_predictions('nl') # the area should probably be include inside the url when more then 1 area is available
     logger.info "predictions #{@predictions.inspect}"
     @comment = Comment.new
     @comment.commentable = @prediction

@@ -23,9 +23,9 @@ $slider-box-height: 22px
 
   .slider-row
     min-height: $slider-box-height
-    overflow: auto
+    overflow: hidden
 
-  label, .sublabel, .reset, .decrease, .quinn, .increase, .output, .show-info,.prediction
+  label, .sublabel, .reset, .decrease, .quinn, .increase, .output, .show-info, .prediction
     display: block
     float: left
     text-align: left
@@ -34,7 +34,7 @@ $slider-box-height: 22px
 
   label
     line-height: 15px
-    width: 122px
+    width: 127px
 
   .slider-controls
     float: right
@@ -46,13 +46,14 @@ $slider-box-height: 22px
     font-size: 10px
     color: #666
     position: absolute
-    right: 250px
+    right: 260px
 
   .prediction
     background: url(/images/icons/expert.png) no-repeat
     width: 31px
+    min-height: $slider-box-height - 1px
     position: absolute
-    right: 295px
+    right: 287px
 
   .reset, .decrease, .increase, .show-info
     background: url(/images/slider/buttons.png) no-repeat
@@ -79,7 +80,7 @@ $slider-box-height: 22px
 
   .output
     text-align: right
-    width: 78px
+    width: 70px
 
   .info-wrap
     border: 1px solid white

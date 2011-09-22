@@ -4,7 +4,7 @@
   %thead
     %tr
       %th Id
-      %th Commentable
+      %th Scenario
       %th Author
       %th Title
       %th Body
@@ -16,8 +16,9 @@
         %td= c.id
         %td
           = link_to [:admin, c.commentable] do
-            = c.commentable_type
-            = c.commentable_id
+            = c.commentable.input_element.name
+            \-
+            = c.commentable.title
         %td= c.author_name
         %td= c.title
         %td= truncate(c.body)

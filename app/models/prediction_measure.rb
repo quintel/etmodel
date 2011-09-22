@@ -23,7 +23,6 @@ class PredictionMeasure < ActiveRecord::Base
   validates :name, :presence => true
   
   IMPACT = {
-    0 => '+-',
     1 => '+',
     2 => '++',
     3 => '+++'

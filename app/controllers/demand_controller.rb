@@ -8,8 +8,9 @@ class DemandController < TabController
     Current.setting.already_shown?('demand', true)
     
     bars  = ['Households']
-    bars += ['Buildings'] if Current.setting.area
-    bars += ['Transport', 'Industry', 'Agriculture', 'Other']
+    bars += ['Buildings'] if Current.setting.area.has_buildings?
+    bars += ['Agriculture'] if Current.setting.area.has_agri?
+    bars += ['Transport', 'Industry', 'Other']
     
     queries = ['future:SUM(V(G(final_demand_cbs);final_demand))']
     queries += bars.map{|x| "future:SUM(V(INTERSECTION(G(final_demand_cbs),SECTOR(#{x.downcase}));final_demand))"}

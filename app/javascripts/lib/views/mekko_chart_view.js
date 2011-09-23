@@ -45,7 +45,7 @@ var MekkoChartView = BaseChartView.extend({
   
   labels : function() {
     var labels = this.model.labels();
-    var groups = this.model.series.map(function(serie) {return serie.get('translated_group')});
+    var groups = this.model.series.map(function(serie) {return serie.get('group_translated')});
     // TODO: the old model also has percentage per group. was ommited to simplify things.
     return [_.uniq(labels), _.uniq(groups)];
   }

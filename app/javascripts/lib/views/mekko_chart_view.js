@@ -22,7 +22,7 @@ var MekkoChartView = BaseChartView.extend({
     var values = [];
 
     this.model.series.each(function(serie) {
-      var group = serie.get('translated_group');
+      var group = serie.get('group');
       if (group) {
         if (!series[group]) { series[group] = []; }
         series[group].push(serie.result_pairs()[0]);

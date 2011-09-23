@@ -34,7 +34,7 @@ Etm::Application.routes.draw do
   resource :searches
 
   namespace :admin do
-    root :to => 'pages#index'
+    root :to => 'translations#index'
     
     resources :expert_predictions,
               :predictions,

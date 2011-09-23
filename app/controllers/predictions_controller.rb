@@ -43,6 +43,10 @@ class PredictionsController < ApplicationController
     
     respond_to do |format|
       if @comment.save
+        spawn do #use spawn to create a bg process for sending mail
+          Notifier.comment_mail.deliver 
+        end
+  
         format.html { redirect_to predictions_path(:input_element_id => @prediction.input_element_id, :prediction_id => @prediction.id), 
                         :notice => "Your comment has been added"}
         format.js { }

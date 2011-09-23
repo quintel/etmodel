@@ -1,4 +1,11 @@
 class Notifier < ActionMailer::Base
+
+  def comment_mail
+    mail( :to => "robbert.dol@quintel.com",#mark.denheijer@quintel.com",
+          :from => "info@energytransitionmodel.com",
+          :subject => "Comment geplaatst bij backcasting")
+  end
+
   def feedback_mail(options)
     @options = options
     mail( :to => "john.kerkhoven@quintel.com,robbert.dol@quintel.com,dennis.schoenmakers@quintel.com",

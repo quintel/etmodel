@@ -3,7 +3,7 @@
   %strong= @prediction.title
   #{t 'prediction.by'}
   = @prediction.user.try(:name)
-  = "(#{@prediction.user.try(:company_school)})"
+  = parenthesize @prediction.user.try(:company_school)
 
 - if user_scenario_available?
   .buttons.right

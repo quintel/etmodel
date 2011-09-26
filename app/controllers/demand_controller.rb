@@ -9,7 +9,7 @@ class DemandController < TabController
     
     bars  = ['Households']
     bars += ['Buildings'] if Current.setting.area.has_buildings?
-    bars += ['Agriculture'] if Current.setting.area.has_agri?
+    bars += ['Agriculture'] if Current.setting.area.has_agriculture?
     bars += ['Transport', 'Industry', 'Other']
     
     queries = ['future:SUM(V(G(final_demand_cbs);final_demand))']

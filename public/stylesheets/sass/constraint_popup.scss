@@ -30,4 +30,38 @@ body {
       }
     }      
   }
+  .import_chart_title{
+    font-size: 11px;
+    height: 12px; 
+    width: 255px;
+    float: left;
+    padding-left: 15px;
+  }
+  #legend{
+    width: 540px;
+    float:left;
+    clear:both;
+    div{
+      float: left;
+      margin: 3px 5px 0 5px;
+      width: 15px;
+      height: 12px;
+    }
+    span{
+      float: left;
+      font-size: 12px;
+    }
+  }
+  #charts_wrapper.wide{
+    width: 550px;
+    height: 210px;
+    float: left;
+    margin-top: 0px;
+    overflow: hidden;
+    .half{
+      height: 210px;
+      width: 270px;
+      float: left;
+    }
+  }
 }

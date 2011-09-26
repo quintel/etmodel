@@ -76,7 +76,7 @@ $(function(){
     // let's get the current slider value
     if (scenario.available){
       if (slider_is_available()) {
-        var user_value = Metric.round_number(get_slider().get('user_value'),1);
+        var user_value = get_slider().get('user_value').toFixed(1);
         build_user_value_chart_serie(user_value);
         var unit = get_slider().get('unit')
         $('#user_value').prepend(user_value+unit);

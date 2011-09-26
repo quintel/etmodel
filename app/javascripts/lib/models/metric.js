@@ -40,7 +40,7 @@ var Metric = {
     } else if (unit == 'MW') {
       return Metric.scaling_in_words(scale, 'watt');
     } else if (unit == '%') {
-      return '';
+      return '%';
     } else {
       return Metric.scaling_in_words(scale, unit);
     }

@@ -1,14 +1,17 @@
 .constraint_box_content
   %p.tal
     = @constraint.description.try :short_content
-  #charts_wrapper{:style=>"width:550px;height:210px;float:left;margin-top:0px;overflow:hidden"}
-    %div{ :id => "output_element_47",:style=>'height:210px;width:270px;float:left'}
-    %div{ :id => "output_element_76",:style=>'height:210px;width:270px;float:left'}
+  .import_chart_title= Current.setting.start_year
+  .import_chart_title= Current.setting.end_year
 
-  #legend{:style=>"width:540px;float:left;clear:both"}
+  #charts_wrapper.wide
+    #output_element_47.half
+    #output_element_76.half
+
+  #legend
     - OutputElement.find(47).output_element_series.each do |serie|
-      %div{:style=>"float:left;margin-top:3px;margin-right:5px;margin-left:5px;width:15px;height:12px;background-color:#{serie.converted_color}"}
-      %span{:style=>"float:left;font-size:12px;"}= t("serie.#{serie.label}")
+      %div{:style=>"background-color:#{serie.converted_color}"}
+      %span= t("serie.#{serie.label}")
 :javascript
   #{ js_for_output_element(47, 'output_element_47') }
   #{ js_for_output_element(76, 'output_element_76') }

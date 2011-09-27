@@ -153,6 +153,9 @@ $(function(){
   
   // share prediction
   $("input.share_prediction").live('click', function(){
-    window.open(this.getAttribute('href'), '_blank')
+    $(this).hide();
+    $('#share_box').fadeIn('slow');
+    $('#share_link').focus().select();
+    
   });
 });

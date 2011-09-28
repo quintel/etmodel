@@ -2,10 +2,8 @@
   %thead
     %tr
       %th Id
-      %th Controller
-      %th Action
       %th Name
-      %th Order
+      %th Key
       %th Image
       %th Subheader
       %th
@@ -13,10 +11,8 @@
     - @slides.each do |s|
       %tr{cycles}
         %td= s.id
-        %td= s.controller_name
-        %td= s.action_name
         %td= s.name
-        %td= s.order_by
+        %td= s.key
         %td= s.image
         %td= s.sub_header
         %td= link_to 'edit', edit_admin_slide_path(s.id)

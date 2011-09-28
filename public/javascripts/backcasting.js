@@ -119,6 +119,10 @@ $(function(){
     
     var prediction_id = $(this).attr("prediction_id");
     input_element.value_for_prediction = $(this).data('slider_value');
+
+    $(".clickable_prediction").removeClass('active')
+    $(this).addClass('active')
+
     // if the user selects his own prediction
     if(prediction_id == undefined) {
       $(".prediction_details").empty();
@@ -130,12 +134,10 @@ $(function(){
        url = url + "?end_year="+scenario.end_year;
     };
     
-    $(".prediction_details").busyBox({spinner: '<img src="/images/layout/ajax-loader.gif" />'});
+    $(".prediction").busyBox({spinner: '<img src="/images/layout/ajax-loader.gif" />'});
     $(".prediction_details").load(url, function() {
-      $(".prediction_details").busyBox('close');
+      $(".prediction").busyBox('close');
     });
-    $(".clickable_prediction").removeClass('active')
-    $(this).addClass('active')
   });
 
   // extra info links

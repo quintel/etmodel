@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110930092147) do
+ActiveRecord::Schema.define(:version => 20110930095616) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -282,8 +282,8 @@ ActiveRecord::Schema.define(:version => 20110930092147) do
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "sub_header"
-    t.string   "sub_header2"
+    t.string   "general_sub_header"
+    t.string   "group_sub_header"
     t.string   "subheader_image"
     t.string   "key"
     t.boolean  "house_selection"

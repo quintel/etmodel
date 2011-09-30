@@ -4,8 +4,6 @@
       %th Id
       %th Name
       %th Key
-      %th Image
-      %th Subheader
       %th
   %tbody
     - @slides.each do |s|
@@ -13,7 +11,5 @@
         %td= s.id
         %td= s.name
         %td= s.key
-        %td= s.image
-        %td= s.sub_header
         %td= link_to 'edit', edit_admin_slide_path(s.id)
 = link_to 'New slide' , new_admin_slide_path

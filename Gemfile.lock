@@ -70,10 +70,6 @@ GEM
     factory_girl_rails (1.2.0)
       factory_girl (~> 2.1.0)
       railties (>= 3.0.0)
-    formtastic (1.2.4)
-      actionpack (>= 2.3.7)
-      activesupport (>= 2.3.7)
-      i18n (~> 0.4)
     gem_plugin (0.2.3)
     haml (3.1.2)
     hirb (0.5.0)
@@ -201,7 +197,6 @@ DEPENDENCIES
   bluecloth
   default_value_for
   factory_girl_rails
-  formtastic
   haml (~> 3.1.1)
   hirb
   http_status_exceptions!

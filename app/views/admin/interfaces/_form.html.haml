@@ -1,7 +1,6 @@
-= semantic_form_for [:admin, @interface] do |f|
-  = f.inputs do
-    = f.input :key
-    = f.input :structure
-    = f.input :enabled
-  = f.buttons
+= simple_form_for [:admin, @interface] do |f|
+  = f.input :key
+  = f.input :structure,:hint => "Be very, no really, VERY careful editting this. One misplaced character will result in a failing interface structure"
+  = f.input :enabled
+  = f.button :submit
   

@@ -1,13 +1,13 @@
 %h2 Edit translation
 
-- semantic_form_for [:admin, @translation] do |form|
-  - form.inputs 'English' do
-    = form.inputs :content_en
+- simple_form_for [:admin, @translation] do |form|
+  English
+  = form.input :content_en
 
-  - form.inputs 'Dutch' do
-    = form.input :content_nl
+  Dutch
+  = form.input :content_nl
 
-  = form.buttons
+  = form.button :submit
   
 = link_to "back", admin_translations_path
 

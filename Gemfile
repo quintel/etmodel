@@ -28,6 +28,7 @@ gem 'i18n-js'
 
 # supporting gems
 gem 'airbrake', '3.0.2'
+gem 'newrelic_rpm'
 
 # system gems
 gem 'thinking-sphinx', '>=2.0.1'

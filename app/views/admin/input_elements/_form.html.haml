@@ -1,26 +1,19 @@
-
-%p 
-  If a GQL statement is defined, the other value is ignored (e.g. start_value: 10, start_value_gql: xyz => start_value is the result of gql-statement xyz)
-
 %div{:style => "width: 60%"}
-  = semantic_form_for [:admin, @input_element] do |f|
-    = f.inputs do
-      = f.input :name
-      = f.input :key
-      = f.input :share_group
-      = f.input :step_value
-      = f.input :unit
-      = f.input :command_type, :as => :select, :collection => ['growth_rate', 'value', 'efficiency_improvement']
-      = f.input :fixed
-      = f.input :comments
-      = f.input :interface_group
-    
-    = f.inputs :for => :description do |j|
-      = j.input :short_content_en
-      = j.input :short_content_nl
-      = j.input :content_en
+  = simple_form_for [:admin, @input_element] do |f|
+    = f.input :name, :hint => "This will be used for translating and in the admin"
+    = f.input :key, :hint => "Should be uniq and recognizable! yes, also for others, check for conventions with WvL"
+    = f.input :input_id, :required => true, :hint => "This is the link to the input_id on the engine, which contains the update command. Check the inputs over there"
+    = f.input :fixed, :hint => "When you want to disable a slider, but still show it, this is your friend"
+    = f.input :share_group, :hint => "Sliders with the same share_group will be connected and sum up to 100%"
+    = f.input :interface_group, :hint => "Sliders with the same interface_group will be shown as a group inside the slide, divided by a line and sub_header"
+    = f.input :step_value
+    = f.input :unit
+    = f.input :command_type, :as => :select, :collection => ['growth_rate', 'value', 'efficiency_improvement'], :hint => "This is used by the backcasting module"
+    = f.input :comments
+
+    = f.simple_fields_for :description do |j|
+      = j.input :content_en, :hint => "Extra info which shows up when the ? icon is clicked can be changed here!"
       = j.input :content_nl
-    
-    = f.buttons
+    = f.button :submit
   
   = link_to "back", admin_input_elements_path

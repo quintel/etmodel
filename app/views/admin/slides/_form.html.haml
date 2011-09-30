@@ -1,13 +1,16 @@
 %div{:style => "width: 60%"}
-  = semantic_form_for [:admin, @slide] do |f|
-    = f.inputs
-    
-    = f.inputs :for => :description do |j|
-      = j.input :short_content_en
-      = j.input :short_content_nl
+  = simple_form_for [:admin, @slide] do |f|
+    = f.input :name, :hint => "This will be used for translating and in the admin"
+    = f.input :key, :hint => "Should be uniq and recognizable! yes, also for others, check for conventions with WvL"
+    = f.input :image, :hint => "this is the image shown in the slide description"
+    = f.input :general_sub_header, :hint => "This will be shown above the unit of all the sliders"
+    = f.input :group_sub_header, :hint => "This will be shown above all the groups of sliders (if there are any)"
+    = f.input :subheader_image, :hint => "It's possible to add an extra image to the slide, check households > appliances for an example"
+    = f.input :house_selection, :hint => "Do you wanna show the link to the house selection module?"
+    = f.simple_fields_for :description do |j|
       = j.input :content_en
       = j.input :content_nl
     
-    = f.buttons
+    = f.button :submit
   
   = link_to "back", admin_slides_path

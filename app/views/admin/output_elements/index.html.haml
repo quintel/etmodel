@@ -9,19 +9,18 @@
       =sortable_table_header :name=> "Name", :sort=>"name",:class=>"tal"
       %th.tal Desc
       =sortable_table_header :name=> "Type", :sort=>"output_element_type",:class=>"tal"
-      =sortable_table_header :name=> "Unit", :sort=>"unit",:class=>"tal"
-      =sortable_table_header :name=> "%", :sort=>"percentage",:class=>"tal"
       =sortable_table_header :name=> "Group", :sort=>"group",:class=>"tal"
       %th
-
+      %th
+      
   %tbody
     - @output_elements.each do |output_element|
       %tr{cycles}
         %td= output_element.id
-        %td= link_to output_element.name, admin_output_element_path(output_element)
+        %td= output_element.name
         %td= output_element.description.andand.short_content
         %td= output_element.output_element_type.name
-        %td= output_element.unit
-        %td= output_element.percentage
         %td= output_element.group
+        %td= link_to "Show", admin_output_element_path(output_element)
         %td= link_to "Edit", edit_admin_output_element_path(output_element)
+        

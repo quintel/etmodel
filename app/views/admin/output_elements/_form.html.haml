@@ -1,13 +1,23 @@
 %div{:style => "width: 60%"}
-  - semantic_form_for [:admin, @output_element] do |f|
-    = f.inputs
-    
-    = f.inputs :for => :description do |j|
+  - simple_form_for [:admin, @output_element] do |f|
+    = f.input :name
+    = f.input :key, :hint => "Should be uniq and recognizable! (yes, also for others) , check for conventions with WvL"
+
+    = f.association :output_element_type, :hint => "Todo: create an explanation page!!"
+    = f.input :unit, :hint => "This will be used on the axis"
+    = f.input :percentage, :hint => "Some chart_types (in policy) are showing percentages. Check this box if your charts should go from 0% to 100%"
+    = f.input :group, :as => :select, :collection => ['Overview', 'Dashboard', 'Demand', 'Supply', 'Policy', 'Cost'],  :hint => "Where do you want to put your charts in the 'select chart' screen"
+    = f.input :show_point_label, :hint => "Do you want the values of the series to show up inside the chart?"
+    = f.input :growth_chart, :hint => "Do you want your chart to be exponential? check this box"
+    = f.input :min_axis_value, :hint => "when filled in this will override the generated axis values for some chart_types"
+    = f.input :max_axis_value, :hint => "when filled in this will override the generated axis values for some chart_types"
+        
+    = f.simple_fields_for :description do |j|
       = j.input :short_content_en
       = j.input :short_content_nl
       = j.input :content_en
       = j.input :content_nl
-
-    = f.buttons
+    = f.input :under_construction, :hint => "Do you want a 'Under construction' label on your chart?"
+    = f.button :submit
   
   = link_to "back", :back

@@ -1,13 +1,18 @@
 %div
-  = semantic_form_for [:admin, @sidebar_item] do |f|
-    = f.inputs
-    
-    = f.inputs :for => :description do |j|
+  = simple_form_for [:admin, @sidebar_item] do |f|
+    = f.input :name
+    = f.input :key
+    = f.input :section, :hint=>"This is used by the tutorial button to determin which 'section' video should be showed"
+    = f.input :percentage_bar_query, :hint=>"Underneath the name there is sometimes shown a small bar which displays the shares of energy use of a certain section"
+    = f.input :nl_vimeo_id, :hint=>"This value should be the key of a vimeo video, it will be shown when the tutorial button is clicked"
+    = f.input :en_vimeo_id, :hint=>"This value should be the key of a vimeo video, it will be shown when the tutorial button is clicked"
+
+    = f.simple_fields_for :description do |j|
       = j.input :short_content_en
       = j.input :short_content_nl
       = j.input :content_en
       = j.input :content_nl
     
-    = f.buttons
+    = f.button :submit
   
   = link_to "back", :back

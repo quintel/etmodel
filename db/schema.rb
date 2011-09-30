@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110902122601) do
+ActiveRecord::Schema.define(:version => 20110930082848) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -59,17 +59,6 @@ ActiveRecord::Schema.define(:version => 20110902122601) do
   end
 
   add_index "descriptions", ["describable_id", "describable_type"], :name => "index_descriptions_on_describable_id_and_describable_type"
-
-  create_table "expert_predictions", :force => true do |t|
-    t.integer  "input_element_id"
-    t.string   "name"
-    t.string   "extra_key"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "key"
-  end
-
-  add_index "expert_predictions", ["input_element_id"], :name => "index_expert_predictions_on_input_element_id"
 
   create_table "general_user_notifications", :force => true do |t|
     t.string   "key"

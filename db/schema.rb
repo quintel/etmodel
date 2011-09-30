@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110930082848) do
+ActiveRecord::Schema.define(:version => 20110930092147) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -94,8 +94,7 @@ ActiveRecord::Schema.define(:version => 20110930082848) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "unit"
-    t.string   "input_element_type"
-    t.string   "label"
+    t.boolean  "fixed"
     t.text     "comments"
     t.string   "interface_group"
     t.integer  "input_id"

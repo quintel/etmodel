@@ -7,12 +7,15 @@
     %tr
       %th.tal id
       %th.tal Name
+      %th.tal Key
       %th.tal Comment      
-   
+      %th.tal 
 
   %tbody
     - @input_elements.each do |input_element|
       %tr{cycles}
         %td= input_element.id
-        %td= link_to input_element.name, edit_admin_input_element_path(input_element)
-        %td= input_element.comments
+        %td= input_element.name
+        %td= input_element.key
+        %td= truncate(input_element.comments, :length => 100)
+        %td= link_to 'Edit', edit_admin_input_element_path(input_element)

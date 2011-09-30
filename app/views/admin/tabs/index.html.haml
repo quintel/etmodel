@@ -1,13 +1,16 @@
-%table
-  %tr
-    -@column_names.each do |column_name|
-      %th.tal=column_name.humanize
-
-  -@tabs.each do |tab|
-    %tr{cycles}
+%h2 Tabs
+%table{table_defaults}
+  %thead
+    %tr
       -@column_names.each do |column_name|
-        %td
-          %a{:href => edit_admin_tab_path(tab.id), :style => "color: #000; text-decoration: none;"}
-            =tab.send(column_name)
+        %th.tal=column_name.humanize
+
+  %tbody
+    -@tabs.each do |tab|
+      %tr{cycles}
+        -@column_names.each do |column_name|
+          %td
+            %a{:href => edit_admin_tab_path(tab.id), :style => "color: #000; text-decoration: none;"}
+              =tab.send(column_name)
 %a{:href => new_admin_tab_path}
   new tab

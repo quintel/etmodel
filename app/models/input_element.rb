@@ -10,8 +10,7 @@
 #  created_at         :datetime
 #  updated_at         :datetime
 #  unit               :string(255)
-#  input_element_type :string(255)
-#  label              :string(255)
+#  fixed              :boolean
 #  comments           :text
 #  interface_group    :string(255)
 #  input_id           :integer(4)
@@ -73,7 +72,7 @@ class InputElement < ActiveRecord::Base
   end
 
   def disabled
-    input_element_type == 'fixed'
+    fixed
   end
 
   # Retrieves an array of suitable unit conversions for the element. Allows
@@ -105,7 +104,7 @@ class InputElement < ActiveRecord::Base
             :step_value,
             :output, :user_value, :disabled, :translated_name, 
             :parsed_description,:has_predictions,
-    :input_element_type, :has_flash_movie])
+            :fixed, :has_flash_movie])
   end
 
   ##
@@ -113,7 +112,7 @@ class InputElement < ActiveRecord::Base
   #
 
   def parsed_name_for_admin
-    "#{key} | #{name} | #{unit} | #{input_element_type}"
+    "#{key} | #{name} | #{unit}"
   end
 
   def has_flash_movie

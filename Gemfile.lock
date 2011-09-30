@@ -101,6 +101,7 @@ GEM
       daemons (~> 1.0.10)
       gem_plugin (~> 0.2.3)
     mysql2 (0.2.11)
+    newrelic_rpm (3.1.2)
     nokogiri (1.5.0)
     open4 (1.1.0)
     paper_trail (2.2.9)
@@ -212,6 +213,7 @@ DEPENDENCIES
   memcache-client
   mongrel (= 1.2.0.pre2)
   mysql2 (~> 0.2.6)
+  newrelic_rpm
   paper_trail (~> 2.2.4)
   rack-sprockets
   rails (= 3.0.9)

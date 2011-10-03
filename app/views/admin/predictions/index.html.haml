@@ -7,7 +7,6 @@
       %th.tal input element
       %th.tal Area
       %th.tal User
-      %th.tal Expert
       %th.tal Title
       %th.tal 
 
@@ -21,7 +20,6 @@
           = link_to prediction.input_element.id, edit_admin_input_element_path(prediction.input_element)
         %td= prediction.area
         %td= prediction.user.try(:name)
-        %td= prediction.expert
         %td= prediction.title
         %td
           = link_to 'edit', edit_admin_prediction_path(prediction)

@@ -1,4 +1,5 @@
-= semantic_form_for [:admin, @notification] do |f|
-  = f.inputs do
-    = f.inputs :notification_nl, :notification_en, :active
-  = f.buttons
+= simple_form_for [:admin, @notification] do |f|
+  = f.input :notification_nl
+  = f.input :notification_en
+  = f.input :active
+  = f.button :submit

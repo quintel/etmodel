@@ -15,6 +15,7 @@ class PagesController < ApplicationController
 
   def refresh_gqueries
     Rails.cache.delete('engine_gqueries')
+    render :text => 'ok', :layout => false
   end
 
 protected

@@ -13,6 +13,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def refresh_gqueries
+    Rails.cache.delete('engine_gqueries')
+  end
+
 protected
 
   def setup_countries_and_regions

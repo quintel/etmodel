@@ -111,5 +111,7 @@ Etm::Application.routes.draw do
   match '/sitemap'                         => 'pages#sitemap',     :as => :sitemap
   match '/information'                     => 'pages#information', :as => :information
 
+  match '/pages/refresh_gqueries'       => 'pages#refresh_gqueries'
+
   match '/:controller(/:action(/:id))'
 end

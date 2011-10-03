@@ -39,6 +39,9 @@ var Chart = Backbone.Model.extend({
       case 'vertical_stacked_bar' :
         this.view = new VerticalStackedBarChartView({model : this});
         break;
+      case 'grouped_vertical_bar' :
+        this.view = new GroupedVerticalBarChartView({model : this});
+        break;
       case 'policy_bar' :
         this.view = new PolicyBarChartView({model : this});
         break;

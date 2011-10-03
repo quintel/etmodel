@@ -6,18 +6,18 @@
     = f.association :output_element_type, :hint => "Todo: create an explanation page!!"
     = f.input :unit, :hint => "This will be used on the axis"
     = f.input :percentage, :hint => "Some chart_types (in policy) are showing percentages. Check this box if your charts should go from 0% to 100%"
-    = f.input :group, :as => :select, :collection => ['Overview', 'Dashboard', 'Demand', 'Supply', 'Policy', 'Cost'],  :hint => "Where do you want to put your charts in the 'select chart' screen"
-    = f.input :show_point_label, :hint => "Do you want the values of the series to show up inside the chart?"
-    = f.input :growth_chart, :hint => "Do you want your chart to be exponential? check this box"
-    = f.input :min_axis_value, :hint => "when filled in this will override the generated axis values for some chart_types"
-    = f.input :max_axis_value, :hint => "when filled in this will override the generated axis values for some chart_types"
+    = f.input :group, :as => :select, :collection => ['Overview', 'Dashboard', 'Demand', 'Supply', 'Policy', 'Cost'],  :hint => "In which section do you want to put your charts in the 'select chart' screen?"
+    = f.input :show_point_label, :hint => "Do you want the values of the series to show up inside the chart? This doesnt apply to all the charts"
+    = f.input :growth_chart, :hint => "Do you want your chart to be exponential? check this box. (only applies to bezier chart)"
+    = f.input :min_axis_value, :hint => "When filled in this will override the generated axis values (only applies to horizontal stacked bar chart)"
+    = f.input :max_axis_value, :hint => "When filled in this will override the generated axis values (only applies to horizontal stacked bar chart)"
         
     = f.simple_fields_for :description do |j|
-      = j.input :short_content_en
-      = j.input :short_content_nl
+      = j.input :short_content_en, :hint => "This is shown in the 'select chart' screen"
+      = j.input :short_content_nl, :hint => "This is shown in the 'select chart' screen"
       = j.input :content_en
       = j.input :content_nl
-    = f.input :under_construction, :hint => "Do you want a 'Under construction' label on your chart?"
+    = f.input :under_construction, :hint => "Do you want a 'Under construction' label on top of your chart?"
     = f.button :submit
   
   = link_to "back", :back

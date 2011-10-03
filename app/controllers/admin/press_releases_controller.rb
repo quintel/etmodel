@@ -2,7 +2,7 @@ module Admin
 class PressReleasesController < BaseController
 
   def index
-    @releases = PressRelease.all
+    @releases = PressRelease.order('release_date DESC')
   end
 
   def new

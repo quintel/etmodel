@@ -4,7 +4,12 @@ module GqlHelper
   # So we can store in the column both ids and gqueries
   def gquery_id(key)
     gqueries = Rails.cache.fetch('engine_gqueries') do
-      h = {}; Api::Gquery.all.map{|g| h[g.key] = g.id }; h
+      h = {}
+      Api::Gquery.all.map do |g|
+        h[g.key] = g.id
+        h[g.deprecated_key] = g.id if g.deprecated_key 
+      end
+      h
     end
     id = gqueries[key] || key
   end

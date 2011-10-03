@@ -16,8 +16,8 @@
 
       %th.tal Gquery
       %th
-      %th      
-
+      %th
+      %th
   %tbody
     - @output_element_series.each do |s|
       -if s.output_element
@@ -28,3 +28,4 @@
           %td= highlight s.gquery, params[:gquery]
           %td= link_to 'show', admin_output_element_serie_path(s)
           %td= link_to 'edit', edit_admin_output_element_serie_path(s)
+          %td= link_to "Destroy", [:admin, s], :confirm => 'Are you sure?', :method => :delete

@@ -1,7 +1,7 @@
 %div{:style => "width: 60%"}
   = simple_form_for [:admin, @output_element_serie] do |f|
     = f.association :output_element
-    = f.input :label
+    = f.input :label, :hint => "The translations of the label should be available!"
     = f.input :gquery, :hint => "This should be the key of your fantastic gquery! These can be found on the engine!"
     = f.input :color, :hint => "TODO: explain the colors or create a select box"
     = f.input :order_by, :hint => "Which serie should be first, second, etc .. ?"

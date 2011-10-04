@@ -8,8 +8,7 @@ var GroupedVerticalBarChartView = BaseChartView.extend({
     this.clear_container();
 
     InitializeGroupedVerticalBar(this.model.get("container"),
-      this.result_serie1(),
-      this.result_serie2(),
+      this.result_serie(),
       this.ticks(),
       this.model.series.length,
       this.parsed_unit(),
@@ -18,15 +17,10 @@ var GroupedVerticalBarChartView = BaseChartView.extend({
       this.model.labels());
   },
 
-  result_serie1 : function() {
+  result_serie : function() {
     return _.flatten(this.model.value_pairs());
   },
 
-  result_serie2 : function() {
-    return _.map(this.result_serie1(), function(r) {
-      return 100 - r;
-    });
-  },
 
   ticks : function() {
     var ticks = [];

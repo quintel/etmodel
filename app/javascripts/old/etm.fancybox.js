@@ -120,7 +120,7 @@ $(document).ready(function() {
   $(".energy_mixer").live('click', function() {
 
     $(this).fancybox({
-      width    : 773,
+      width    : 890,
       height   : "80%",
       titleShow: false,
       padding  : 0,

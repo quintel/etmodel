@@ -25,20 +25,16 @@
     %h2 Sliders
     %table
       - @input_elements.each do |result|
-        - if slide = result.slide
-          %tr
-            %td.img
-              - if path = slide.image_path
-                %img.slide_icon{:src => path}
-            %td.result
-              %h4= result.search_result.title
-              %p
-                = search_result_description(result)
-                %br
-                - if result.description
-                  = link_to t('search.Full description'), result.description, :class => 'fancybox'
-                  |
-                = link_to t('search.Jump to page'), :controller => slide.controller_name, :action => slide.action_name, :slide => slide.name
+        %tr
+          %td.img
+          %td.result
+            %h4= result.search_result.title
+            %p
+              = search_result_description(result)
+              %br
+              - if result.description
+                = link_to t('search.Full description'), result.description, :class => 'fancybox'
+                |
 
   - unless @slides.empty?
     %h2 Slides
@@ -50,14 +46,14 @@
             - if path = slide.image_path
               %img.slide_icon{:src => path}
           %td.result
-            %h4= link_to result.search_result.title, :controller => result.controller_name, :action => result.action_name, :slide => result.name
+            %h4= result.search_result.title
             %p
               = search_result_description(result)
               %br
               - if result.description
                 = link_to t('search.Full description'), result.description, :class => 'fancybox'
                 |
-              = link_to t('search.Jump to page'), :controller => slide.controller_name, :action => slide.action_name, :slide => slide.name
+
 
 #search_results_from_reference_mananager
   - if [@pages, @input_elements, @slides].flatten.empty?

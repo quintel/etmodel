@@ -19,4 +19,5 @@ class Constraint < ActiveRecord::Base
   accepts_nested_attributes_for :description
 
   scope :ordered, order('id')
+  scope :gquery_contains, lambda{|search| where("`gquery_key` LIKE ?", "%#{search}%")}
 end

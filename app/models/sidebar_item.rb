@@ -25,6 +25,8 @@ class SidebarItem < ActiveRecord::Base
   has_one :description, :as => :describable, :dependent => :destroy
   accepts_nested_attributes_for :description
   
+  scope :gquery_contains, lambda{|search| where("percentage_bar_query LIKE ?", "%#{search}%")}
+
   def parsed_key_for_admin
     "#{section.andand} | #{key}"
   end

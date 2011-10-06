@@ -21,4 +21,9 @@ class PolicyGoal < ActiveRecord::Base
 
   has_one :area_dependency, :as => :dependable
   has_paper_trail
+
+  scope :gquery_contains, lambda{|search| where([
+    "query LIKE :q OR start_value_query LIKE :q OR reached_query LIKE :q OR target_query LIKE :q OR user_value_query LIKE :q",
+    {:q => "%#{search}%"}]
+  )}
 end

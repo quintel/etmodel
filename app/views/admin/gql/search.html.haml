@@ -1,0 +1,73 @@
+%h2 Search
+= form_tag search_admin_gql_index_path, :method => :get do
+  = label_tag 'Search'
+  = text_field_tag :q, @q
+  = submit_tag
+
+%h2 Constraints
+
+%table
+  %thead
+    %tr
+      %th Id
+      %th Key
+      %th GQuery
+  %tbody
+  - @constraints.each do |c|
+    %tr
+      %td= link_to c.id, admin_constraint_path(c)
+      %td= c.key
+      %td= highlight c.gquery_key, @q
+
+%h2 OutputElementSerie
+
+%table
+  %thead
+    %tr
+      %th Id
+      %th GQuery
+  %tbody
+  - @output_element_series.each do |o|
+    %tr
+      %td= link_to o.id, edit_admin_output_element_serie_path(o)
+      %td= highlight o.gquery, @q
+
+%h2 Policy Goals
+
+%table
+  %thead
+    %tr
+      %th Id
+      %th Key
+      %th Query
+      %th Start Value Query
+      %th Reached Query
+      %th Target Query
+      %th User Value Query
+  %tbody
+  - @policy_goals.each do |p|
+    %tr
+      %td= p.id
+      %td= p.key
+      %td= highlight p.query, @q
+      %td= highlight p.start_value_query, @q
+      %td= highlight p.reached_query, @q
+      %td= highlight p.target_query, @q
+      %td= highlight p.user_value_query, @q
+
+%h2 Sidebar Items
+
+%table
+  %thead
+    %tr
+      %th Id
+      %th Key
+      %th Name
+      %th Query
+  %tbody
+    - @sidebar_items.each do |s|
+      %tr
+        %td= s.id
+        %td= link_to s.key, edit_admin_sidebar_item_path(s)
+        %td= s.name
+        %td= highlight s.percentage_bar_query, @q

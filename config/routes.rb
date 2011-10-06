@@ -1,5 +1,7 @@
 Etm::Application.routes.draw do  
 
+  get "gql/search"
+
   root :to => 'pages#root'
 
   match '/demand/intro' => 'demand#intro'
@@ -55,6 +57,11 @@ Etm::Application.routes.draw do
               :partners
     resources :comments, :except => [:new, :create]
     resources :areas, :only => [:index, :show]
+    resources :gql do
+      collection do
+        get :search
+      end
+    end
   end
 
   resource :scenario do

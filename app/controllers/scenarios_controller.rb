@@ -1,5 +1,5 @@
 class ScenariosController < ApplicationController
-  layout 'etm'
+  layout 'pages'
   helper :all
 
   before_filter :ensure_valid_browser

@@ -92,4 +92,15 @@ module LayoutHelper
     selected = current ? "selected='true'" : nil
     %Q{<option value="#{code}" #{selected}>#{I18n.t(code)} #{"(test)" if opts[:test]}</option>}.html_safe
   end
+  
+  def percentage_bar(item)
+    unless item.percentage_bar_query.blank?
+      # need client for showing % bars
+      if client ||= Api::Client.new
+        client.api_session_id = Current.setting.api_session_id
+      end
+      val = client.simple_query(item.percentage_bar_query)
+      haml_tag :span, :class=>'bar',:style => "width: #{(val * 100).round(2)}%", :alt =>"#{t("sidebar_item.alt")}"
+    end
+  end
 end

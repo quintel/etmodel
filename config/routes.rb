@@ -48,7 +48,6 @@ Etm::Application.routes.draw do
               :translations, 
               :output_elements, 
               :output_element_series, 
-              :press_releases, 
               :converter_positions,
               :interfaces,
               :general_user_notifications,
@@ -60,6 +59,11 @@ Etm::Application.routes.draw do
     resources :gql do
       collection do
         get :search
+      end
+    end
+    resources :press_releases do
+      collection do
+        post :upload
       end
     end
   end

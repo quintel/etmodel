@@ -34,7 +34,7 @@ var Setting = Backbone.Model.extend({
   },
   
   toggle_peak_load_tracking: function(){
-    App.settings.set({track_peak_load : $("#track_peak_load_settings").is(':checked')});
+    App.settings.set({'track_peak_load' : $("#track_peak_load_settings").is(':checked')});
   }
 });
 

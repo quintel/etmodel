@@ -34,7 +34,7 @@ var PeakLoad = Backbone.Model.extend({
   },
 
   save_state_in_session : function() {
-    App.settings.set({network_parts_affected : this.parts_affected() });
+    App.settings.set({'network_parts_affected' : this.parts_affected() });
     App.settings.save();
   },
 

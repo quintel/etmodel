@@ -1,5 +1,6 @@
 - title 'Expert predictions'
 
+
 %table{table_defaults}
   %thead
     %tr
@@ -27,3 +28,4 @@
           = link_to 'delete', admin_prediction_path(prediction), :method => :delete, :confirm => 'Are you sure?'
 
 %p= link_to 'New', new_admin_prediction_path
+%p= link_to 'Comments', admin_comments_path

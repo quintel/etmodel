@@ -100,7 +100,11 @@ module LayoutHelper
         client.api_session_id = Current.setting.api_session_id
       end
       val = client.simple_query(item.percentage_bar_query)
-      haml_tag :span, :class=>'bar',:style => "width: #{(val * 100).round(2)}%", :alt =>"#{t("sidebar_item.alt")}"
+      # multiplied by 90 because of interface limits, there should be some space left for the value
+      haml_tag :span, :class=>'bar',:style => "width: #{(val * 90).round(2)}%", :alt =>"#{t("sidebar_item.alt")}"
+      haml_tag :span, :class=>'value',:style => "left: #{(val * 90).round(2)}%" do
+        haml_concat "#{(val * 100).round}%"
+      end
     end
   end
 end

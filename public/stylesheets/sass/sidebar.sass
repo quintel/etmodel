@@ -17,6 +17,10 @@
         background: #fff
       span.bar
         background: #fff
+      span.value
+        background: #63a1c9
+        color: #fff
+
 
     li
       padding: 0 0 0px
@@ -34,7 +38,9 @@
           background: #fff
         span.bar
           background: #fff
-
+        span.value
+          color: #fff
+          background: #63a1c9
       &.overview a
         height: 22px
 
@@ -117,6 +123,7 @@
           height: 28px
           width: 106px
           padding-bottom: 10px
+          position: relative
 
         span.bar
           float: left
@@ -124,8 +131,17 @@
           background: #63a1c9
           margin: 5px 0 0 
           overflow: hidden
+        span.value
+          position: absolute
+          top: 14px
+          color: #63a1c9
+          font-size: 9px
+          height: 10px
+          width: 20px
+          padding-left: 3px
 
         span.title
+          position: relative
           float: left
           width: 106px
           background: transparent none
@@ -133,6 +149,7 @@
           overflow: visible
           line-height: 120%
           height: 16px
+
         small
           float: left
           font-size: 10px

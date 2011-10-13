@@ -13,6 +13,7 @@ class PressReleasesController < BaseController
     @press_release = PressRelease.new(params[:press_release])
     if @press_release.save
       flash[:notice] = "Successfully created release."
+      session[:link] = nil
       redirect_to admin_press_releases_url
     else
       render :action => 'new'
@@ -23,6 +24,7 @@ class PressReleasesController < BaseController
     @press_release = PressRelease.find(params[:id])
     if @press_release.update_attributes(params[:press_release])
       flash[:notice] = "Successfully updated release."
+      session[:link] = nil
       redirect_to admin_press_releases_url
     else
       render :action => 'edit'
@@ -47,7 +49,9 @@ class PressReleasesController < BaseController
   def upload
     PressRelease.upload_file(params[:press_file])
     flash[:notice] = "File has been uploaded successfully. use as link: /assets/#{params[:press_file].original_filename}"
-    redirect_to :back
+    session[:link] = "/assets/#{params[:press_file].original_filename}"
+    
+    redirect_to request.referer
   end
 end
 end

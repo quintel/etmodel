@@ -5,7 +5,7 @@
     = f.input :medium
     = f.input :release_type, :as => :select, :collection => ["internet","dagblad","radio","magazine"]
     = f.input :release_date
-    = f.input :link
+    = f.input :link,  :input_html => { :value => (session[:link] ? session[:link] : '')}
     = f.button :submit
 
 %div  

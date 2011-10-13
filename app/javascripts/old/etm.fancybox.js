@@ -10,6 +10,7 @@ $(document).ready(function() {
         setTimeout(function(){
           $.fancybox.resize();
         },100);
+       $("#fancybox-inner").css({'overflow-x':'hidden'}); 
       }
     });
     

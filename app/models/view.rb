@@ -1,7 +1,4 @@
-##
-# TODO rename to View
-#
-class ViewSetting
+class View
   attr_reader :setting_key, :tab_key, :sidebar_item_key, :slide_key
 
   def initialize(setting_key, tab_key, sidebar_item_key, slide_key = nil)

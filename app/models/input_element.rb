@@ -85,7 +85,7 @@ class InputElement < ActiveRecord::Base
   end
 
   def available_predictions(area = nil)
-    predictions.for_area(area || Current.setting.region)
+    predictions.for_area(area || Current.setting.region || Current.setting.country)
   end
 
   def has_predictions?

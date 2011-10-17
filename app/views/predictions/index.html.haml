@@ -7,15 +7,12 @@
   = sprocket_include_tag 'backcasting'
   = javascript_include_tag 'backcasting'
   :javascript
-    // let's prepare the json data produced on the ruby side
     var chart_data = {
-
       series: #{series.to_json},
       series_options: #{series_options.to_json},
       colours: #{colours.to_json}
     }
 
-    // information about the slider
     var input_element = {
       command_type: #{@input_element.command_type.to_json},
       id: #{@input_element.id},
@@ -62,6 +59,6 @@
     .chart#backcasting
     
   .prediction_details
-    = render @prediction
+    = render @prediction if @prediction
 - unless user_scenario_available?
   .footer_spacer

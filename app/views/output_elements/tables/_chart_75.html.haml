@@ -1,16 +1,16 @@
 %table#supply_output_table{table_defaults}
   %thead
-  %tr
-    %th
-    %th Netvlak
-  %tr
-    %th
-    %th LS net
-    %th MS-LS trafo
-    %th MS Distributienet
-    %th MS Transportnet
-    %th HS-MS trafo
-    %th HS net
+    %tr
+      %th
+      %th Netvlak
+    %tr
+      %th
+      %th LS net
+      %th MS-LS trafo
+      %th MS Distributienet
+      %th MS Transportnet
+      %th HS-MS trafo
+      %th HS net
 
   - columns = @output_element.allowed_output_element_series.group_by{|serie| (serie.order_by / 100).to_i }
   -# columns = {1 => [<Serie>,<Serie>], 2 => [...], 3 => [...]}

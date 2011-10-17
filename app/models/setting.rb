@@ -230,27 +230,4 @@ class Setting
     all_levels[complexity.to_i]
   end
 
-  # Use for pages that should only be shown once to a user.
-  # Example Usage in controller:
-  #
-  #   if Current.setting.already_shown?("demand/intro")
-  #     redirect_to :action => 'index'
-  #   else 
-  #    render :action => 'show'
-  #   end
-  #
-  #
-  # @param key [String] key of page, normally the path
-  # @param touch [Boolean] save key as shown; default true.
-  # @return true if page has been shown once
-  # @return false if page hasn't been shown yet
-  #
-  def already_shown?(key, touch = true)
-    if already_shown.include?(key.to_s)
-      true
-    else
-      already_shown << key.to_s if touch
-      false
-    end
-  end
 end

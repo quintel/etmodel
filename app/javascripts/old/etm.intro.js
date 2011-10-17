@@ -24,32 +24,7 @@ $(document).ready(function() {
     }
   );
 
-  //barcharts intro in demand
-  //TO DO: (1) Make this dynamic (2) Make the code clean
-  $('#sidebar li').hover(
-    function(){
-      //update blocks
-      var id_name = $(this).attr('id');
-      //clean up actives
-      // $('#blocks li, #sidebar ul li').removeClass('active');
-      $('#blocks li').removeClass('active');
-      //make current one active
-      // $('#sidebar li#'+id_name).addClass('active');
-      $('#blocks li.'+id_name).addClass('active');
-    }
-  );
-  
-  $('#blocks li').hover(
-    function(){
-      //update blocks
-      var id_name = $(this).attr('class');
-      //clean up actives
-      $('#blocks li, #sidebar ul li').removeClass('active');
-      //make current one active
-      $('#sidebar li#'+id_name).addClass('active');
-      $('#blocks li.'+id_name).addClass('active');
-    }
-  );
+
   // used in root form
   $("#scenarios_select").change(function () {
     //show description

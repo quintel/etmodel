@@ -14,7 +14,7 @@ class YearValuesController < BaseController
 
     if @year_value.save
       flash[:notice] = "YearValue saved"
-      redirect_to :back
+      redirect_to [:admin, @year_value]
     else
       render :action => 'new'
     end
@@ -25,7 +25,7 @@ class YearValuesController < BaseController
 
     if @year_value.update_attributes(params[:year_value])
       flash[:notice] = "YearValue updated"
-      redirect_to :back
+      redirect_to [:admin, @year_value]
     else
       render :action => 'edit'
     end

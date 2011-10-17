@@ -31,7 +31,7 @@ class UserSessionsController < ApplicationController
           redirect_to "/admin"
         else
           begin
-            redirect_to :back
+            redirect_to_back
           rescue ActionController::RedirectBackError => e
             redirect_to(root_url)
           end

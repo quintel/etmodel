@@ -78,7 +78,7 @@ class ScenariosController < ApplicationController
   def change_complexity
     # DEBT: Remove. Should be in settings controller, in the standard update action
     Current.setting.complexity = params[:scenario][:complexity]
-    redirect_to :back
+    redirect_to_back
   end
 
   ##############################
@@ -102,7 +102,7 @@ class ScenariosController < ApplicationController
       @scenario.attributes = params[:scenario]
       @scenario.copy_scenario_state(Current.scenario)
       @scenario.save
-      redirect_to :back
+      redirect_to_back
     end
   end
   

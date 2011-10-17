@@ -19,7 +19,7 @@ class SettingsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to :back }
+      format.html { redirect_to_back }
       format.js { render :text => '', :status => 200}
       format.json { render :json => Current.setting }
     end

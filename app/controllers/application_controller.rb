@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     locale
-    redirect_to :back
+    redirect_to_back
   end
 
   def locale

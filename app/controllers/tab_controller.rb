@@ -26,10 +26,6 @@ class TabController < ApplicationController
     def load_output_element
       @output_element = Current.view.default_output_element_for_current_sidebar_item
     end
-
-    def show_intro_at_least_once
-      redirect_to :action => 'intro' unless Current.setting.already_shown?("#{params[:controller]}")
-    end
     
     def fetch_api_session_id      
       Current.setting.api_session_id ||= Api::Client.new.fetch_session_id

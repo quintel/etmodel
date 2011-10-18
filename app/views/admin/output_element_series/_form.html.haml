@@ -6,7 +6,7 @@
     = f.association :output_element
     = f.input :label, :hint => "The translations of the label should be available!"
     = f.input :gquery, :hint => "This should be the key of your fantastic gquery! These can be found on the engine!"
-    = f.input :color, :hint => "TODO: explain the colors or create a select box"
+    = f.input :color, :collection => OutputElementSerie::COLORS.to_a,:hint => "<span class='color_hint'></span><br/>".html_safe
     = f.input :order_by, :hint => "Which serie should be first, second, etc .. ?"
     = f.input :group, :hint => "This is only used for mekko's and horizontal stacked bars. This groups series with the same group. e.g.: the series query the carrier, the group defines the sector"
     = f.input :short_label, :hint => "The label shown in the cost/block chart"

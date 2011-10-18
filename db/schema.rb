@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110930095616) do
+ActiveRecord::Schema.define(:version => 20111018133023) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -123,7 +123,6 @@ ActiveRecord::Schema.define(:version => 20110930095616) do
     t.string   "group"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "short_label"
     t.boolean  "show_at_first"
     t.boolean  "is_target_line"
     t.string   "target_line_position"
@@ -264,15 +263,12 @@ ActiveRecord::Schema.define(:version => 20110930095616) do
   add_index "saved_scenarios", ["user_id"], :name => "index_saved_scenarios_on_user_id"
 
   create_table "sidebar_items", :force => true do |t|
-    t.string   "name"
-    t.string   "key"
-    t.string   "section"
-    t.text     "percentage_bar_query"
-    t.integer  "order_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "nl_vimeo_id"
-    t.string   "en_vimeo_id"
+    t.string "name"
+    t.string "key"
+    t.string "section"
+    t.text   "percentage_bar_query"
+    t.string "nl_vimeo_id"
+    t.string "en_vimeo_id"
   end
 
   add_index "sidebar_items", ["key"], :name => "index_sidebar_items_on_key"

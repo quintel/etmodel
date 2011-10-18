@@ -10,7 +10,6 @@
 #  group                :string(255)
 #  created_at           :datetime
 #  updated_at           :datetime
-#  short_label          :string(255)
 #  show_at_first        :boolean(1)
 #  is_target_line       :boolean(1)
 #  target_line_position :string(255)

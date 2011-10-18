@@ -6,5 +6,5 @@
   = t("scenario.save_desc")
 
 %div{:style => "width: 600px"}
-  - semantic_form_for @scenario, :html => {:multipart => true} do |f|
+  - simple_form_for @scenario, :html => {:multipart => true} do |f|
     = render :partial => 'form', :object => f

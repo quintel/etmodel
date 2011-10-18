@@ -1,13 +1,6 @@
 %h2 Edit translation
 
-- simple_form_for [:admin, @translation] do |form|
-  English
-  = form.input :content_en
-
-  Dutch
-  = form.input :content_nl
-
-  = form.button :submit
+= render 'form'
   
 = link_to "back", admin_translations_path
 

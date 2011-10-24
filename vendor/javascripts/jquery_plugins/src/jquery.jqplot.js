@@ -5,7 +5,7 @@
  * 
  * About: Version
  * 
- * 1.0.0a_r720 
+ * 1.0.0b2_r947 
  * 
  * About: Copyright & License
  * 
@@ -84,9 +84,40 @@
 (function($) {
     // make sure undefined is undefined
     var undefined;
+    
+    $.fn.emptyForce = function() {
+      for ( var i = 0, elem; (elem = $(this)[i]) != null; i++ ) {
+        // Remove element nodes and prevent memory leaks
+        if ( elem.nodeType === 1 ) {
+          jQuery.cleanData( elem.getElementsByTagName("*") );
+        }
+  
+        // Remove any remaining nodes
+        if ($.jqplot_use_excanvas) {
+          elem.outerHTML = "";
+        }
+        else {
+          while ( elem.firstChild ) {
+            elem.removeChild( elem.firstChild );
+          }
+        }
+
+        elem = null;
+      }
+  
+      return $(this);
+    };
+  
+    $.fn.removeChildForce = function(parent) {
+      while ( parent.firstChild ) {
+        this.removeChildForce( parent.firstChild );
+        parent.removeChild( parent.firstChild );
+      }
+    };
+
 
     /**
-     * Class: $.jqplot
+     * Namespace: $.jqplot
      * jQuery function called by the user to create a plot.
      *  
      * Parameters:
@@ -158,11 +189,91 @@
         }
     };
 
+    $.jqplot.version = "1.0.0b2_r947";
+
+    // canvas manager to reuse canvases on the plot.
+    // Should help solve problem of canvases not being freed and
+    // problem of waiting forever for firefox to decide to free memory.
+    $.jqplot.CanvasManager = function() {
+        // canvases are managed globally so that they can be reused
+        // across plots after they have been freed
+        if (typeof $.jqplot.CanvasManager.canvases == 'undefined') {
+            $.jqplot.CanvasManager.canvases = [];
+            $.jqplot.CanvasManager.free = [];
+        }
+        
+        var myCanvases = [];
+        
+        this.getCanvas = function() {
+            var canvas;
+            var makeNew = true;
             
-    // Convienence function that won't hang IE of FF without FireBug.
+            if (!$.jqplot.use_excanvas) {
+                for (var i = 0, l = $.jqplot.CanvasManager.canvases.length; i < l; i++) {
+                    if ($.jqplot.CanvasManager.free[i] === true) {
+                        makeNew = false;
+                        canvas = $.jqplot.CanvasManager.canvases[i];
+                        // $(canvas).removeClass('jqplot-canvasManager-free').addClass('jqplot-canvasManager-inuse');
+                        $.jqplot.CanvasManager.free[i] = false;
+                        myCanvases.push(i);
+                        break;
+                    }
+                }
+            }
+
+            if (makeNew) {
+                canvas = document.createElement('canvas');
+                myCanvases.push($.jqplot.CanvasManager.canvases.length);
+                $.jqplot.CanvasManager.canvases.push(canvas);
+                $.jqplot.CanvasManager.free.push(false);
+            }   
+            
+            return canvas;
+        };
+        
+        // this method has to be used after settings the dimesions
+        // on the element returned by getCanvas()
+        this.initCanvas = function(canvas) {
+            if ($.jqplot.use_excanvas) {
+                return window.G_vmlCanvasManager.initElement(canvas);
+            }
+            return canvas;
+        };
+
+        this.freeAllCanvases = function() {
+            for (var i = 0, l=myCanvases.length; i < l; i++) {
+                this.freeCanvas(myCanvases[i]);
+            }
+            myCanvases = [];
+        };
+
+        this.freeCanvas = function(idx) {
+            if ($.jqplot.use_excanvas && window.G_vmlCanvasManager.uninitElement !== undefined) {
+                // excanvas can't be reused, but properly unset
+                window.G_vmlCanvasManager.uninitElement($.jqplot.CanvasManager.canvases[idx]);
+                $.jqplot.CanvasManager.canvases[idx] = null;
+            } 
+            else {
+                var canvas = $.jqplot.CanvasManager.canvases[idx];
+                canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+                $(canvas).unbind().removeAttr('class').removeAttr('style');
+                // Style attributes seemed to be still hanging around.  wierd.  Some ticks
+                // still retained a left: 0px attribute after reusing a canvas.
+                $(canvas).css({left: '', top: '', position: ''});
+                // setting size to 0 may save memory of unused canvases?
+                canvas.width = 0;
+                canvas.height = 0;
+                $.jqplot.CanvasManager.free[idx] = true;
+            }
+        };
+        
+    };
+
+            
+    // Convienence function that won't hang IE or FF without FireBug.
     $.jqplot.log = function() {
         if (window.console) {
-            console.log.apply(console, arguments);
+            window.console.log.apply(window.console, arguments);
         }
     };
         
@@ -180,7 +291,14 @@
         errorFontStyle: '',
         errorFontWeight: '',
         catchErrors: false,
-        defaultTickFormatString: "%.1f"
+        defaultTickFormatString: "%.1f",
+        defaultColors: [ "#4bb2c5", "#EAA228", "#c5b47f", "#579575", "#839557", "#958c12", "#953579", "#4b5de4", "#d8b83f", "#ff5800", "#0085cc", "#c747a3", "#cddf54", "#FBD178", "#26B4E3", "#bd70c7"],
+        defaultNegativeColors: [ "#498991", "#C08840", "#9F9274", "#546D61", "#646C4A", "#6F6621", "#6E3F5F", "#4F64B0", "#A89050", "#C45923", "#187399", "#945381", "#959E5C", "#C7AF7B", "#478396", "#907294"],
+        dashLength: 4,
+        gapLength: 4,
+        dotGapLength: 2.5,
+        srcLocation: 'jqplot/src/',
+        pluginLocation: 'jqplot/src/plugins/'
     };
     
     
@@ -195,15 +313,27 @@
     $.jqplot.enablePlugins = $.jqplot.config.enablePlugins;
     
     // canvas related tests taken from modernizer:
-    // Copyright © 2009ñ2010 Faruk Ates.
+    // Copyright (c) 2009 - 2010 Faruk Ates.
     // http://www.modernizr.com
     
     $.jqplot.support_canvas = function() {
-        return !!document.createElement('canvas').getContext;
+        if (typeof $.jqplot.support_canvas.result == 'undefined') {
+            $.jqplot.support_canvas.result = !!document.createElement('canvas').getContext; 
+        }
+        return $.jqplot.support_canvas.result;
     };
             
     $.jqplot.support_canvas_text = function() {
-        return !!(document.createElement('canvas').getContext && typeof document.createElement('canvas').getContext('2d').fillText == 'function');
+        if (typeof $.jqplot.support_canvas_text.result == 'undefined') {
+            if (window.G_vmlCanvasManager !== undefined && window.G_vmlCanvasManager._version > 887) {
+                $.jqplot.support_canvas_text.result = true;
+            }
+            else {
+                $.jqplot.support_canvas_text.result = !!(document.createElement('canvas').getContext && typeof document.createElement('canvas').getContext('2d').fillText == 'function');
+            }
+             
+        }
+        return $.jqplot.support_canvas_text.result;
     };
     
     $.jqplot.use_excanvas = ($.browser.msie && !$.jqplot.support_canvas()) ? true : false;
@@ -340,8 +470,8 @@
         // >        y2axis: {ticks:[22, 44, 66, 88]}
         // >        }
         // > }
-        // There are 4 axes, 'xaxis', 'yaxis', 'x2axis', 'y2axis'.  Any or all of 
-        // which may be specified.
+        // There are 2 x axes, 'xaxis' and 'x2axis', and 
+        // 9 yaxes, 'yaxis', 'y2axis'. 'y3axis', ...  Any or all of which may be specified.
         this.name = name;
         this._series = [];
         // prop: show
@@ -368,16 +498,13 @@
         this.showLabel = true;
         // prop: min
         // minimum value of the axis (in data units, not pixels).
-        this.min=null;
+        this.min = null;
         // prop: max
         // maximum value of the axis (in data units, not pixels).
-        this.max=null;
+        this.max = null;
         // prop: autoscale
-        // Autoscale the axis min and max values to provide sensible tick spacing.
-        // If axis min or max are set, autoscale will be turned off.
-        // The numberTicks, tickInterval and pad options do work with 
-        // autoscale, although tickInterval has not been tested yet.
-        // padMin and padMax do nothing when autoscale is on.
+        // DEPRECATED
+        // the default scaling algorithm produces superior results.
         this.autoscale = false;
         // prop: pad
         // Padding to extend the range above and below the data bounds.
@@ -421,8 +548,19 @@
         this.showTickMarks = true;
         // prop: showMinorTicks
         // Wether or not to show minor ticks.  This is renderer dependent.
-        // The default <$.jqplot.LinearAxisRenderer> does not have minor ticks.
         this.showMinorTicks = true;
+        // prop: drawMajorGridlines
+        // True to draw gridlines for major axis ticks.
+        this.drawMajorGridlines = true;
+        // prop: drawMinorGridlines
+        // True to draw gridlines for minor ticks.
+        this.drawMinorGridlines = false;
+        // prop: drawMajorTickMarks
+        // True to draw tick marks for major axis ticks.
+        this.drawMajorTickMarks = true;
+        // prop: drawMinorTickMarks
+        // True to draw tick marks for minor ticks.  This is renderer dependent.
+        this.drawMinorTickMarks = true;
         // prop: useSeriesColor
         // Use the color of the first series associated with this axis for the
         // tick marks and line bordering this axis.
@@ -460,6 +598,8 @@
         this._tickInterval = null;
         this._numberTicks = null;
         this.__ticks = null;
+        // hold original user options.
+        this._options = {};
     }
     
     Axis.prototype = new $.jqplot.ElemContainer();
@@ -525,8 +665,13 @@
         
     };
     
-    Axis.prototype.draw = function(ctx) {
-        return this.renderer.draw.call(this, ctx);
+    Axis.prototype.draw = function(ctx, plot) {
+        // Memory Leaks patch
+        if (this.__ticks) {
+          this.__ticks = null;
+        }
+
+        return this.renderer.draw.call(this, ctx, plot);
         
     };
     
@@ -564,9 +709,16 @@
         var db = this._dataBounds;
         db.min = null;
         db.max = null;
+        var l, s, d;
+        // check for when to force min 0 on bar series plots.
+        var doforce = (this.show) ? true : false;
         for (var i=0; i<this._series.length; i++) {
-            var s = this._series[i];
-            var d = s._plotData;
+            s = this._series[i];
+            d = s._plotData;
+            if (s._type === 'line' && s.renderer.bands.show && this.name.charAt(0) !== 'x') {
+                d = [[0, s.renderer.bands._min], [1, s.renderer.bands._max]];
+            }
+
             var minyidx = 1, maxyidx = 1;
 
             if (s._type != null && s._type == 'ohlc') {
@@ -574,7 +726,7 @@
                 maxyidx = 2;
             }
             
-            for (var j=0; j<d.length; j++) { 
+            for (var j=0, l=d.length; j<l; j++) { 
                 if (this.name == 'xaxis' || this.name == 'x2axis') {
                     if ((d[j][0] != null && d[j][0] < db.min) || db.min == null) {
                         db.min = d[j][0];
@@ -592,6 +744,38 @@
                     }
                 }              
             }
+
+            // Hack to not pad out bottom of bar plots unless user has specified a padding.
+            // every series will have a chance to set doforce to false.  once it is set to 
+            // false, it cannot be reset to true.
+            // If any series attached to axis is not a bar, wont force 0.
+            if (doforce && s.renderer.constructor !== $.jqplot.BarRenderer) {
+                doforce = false;
+            }
+
+            else if (doforce && this._options.hasOwnProperty('forceTickAt0') && this._options.forceTickAt0 == false) {
+                doforce = false;
+            }
+
+            else if (doforce && s.renderer.constructor === $.jqplot.BarRenderer) {
+                if (s.barDirection == 'vertical' && this.name != 'xaxis' && this.name != 'x2axis') { 
+                    if (this._options.pad != null || this._options.padMin != null) {
+                        doforce = false;
+                    }
+                }
+
+                else if (s.barDirection == 'horizontal' && (this.name == 'xaxis' || this.name == 'x2axis')) {
+                    if (this._options.pad != null || this._options.padMin != null) {
+                        doforce = false;
+                    }
+                }
+
+            }
+        }
+
+        if (doforce && this.renderer.constructor === $.jqplot.LinearAxisRenderer && db.min >= 0) {
+            this.padMin = 1.0;
+            this.forceTickAt0 = true;
         }
     };
 
@@ -686,7 +870,9 @@
         // CSS style for the margin which will override any style sheet setting.
         // The default will be taken from the stylesheet.
         this.marginLeft = null;
-        
+        // prop: escapeHtml
+        // True to escape special characters with their html entity equivalents
+        // in legend text.  "<" becomes &lt; and so on, so html tags are not rendered.
         this.escapeHtml = false;
         this._series = [];
         
@@ -858,6 +1044,10 @@
         // prop: rendererOptions
         // renderer specific options passed to the renderer.
         this.rendererOptions = {};   
+        // prop: escapeHtml
+        // True to escape special characters with their html entity equivalents
+        // in title text.  "<" becomes &lt; and so on, so html tags are not rendered.
+        this.escapeHtml = false;
     }
     
     Title.prototype = new $.jqplot.ElemContainer();
@@ -927,11 +1117,25 @@
         // prop: color
         // css color spec for the series
         this.color;
+        // prop: negativeColor
+        // css color spec used for filled (area) plots that are filled to zero and
+        // the "useNegativeColors" option is true.
+        this.negativeColor;
         // prop: lineWidth
         // width of the line in pixels.  May have different meanings depending on renderer.
         this.lineWidth = 2.5;
-        // prop: shadow
-        // wether or not to draw a shadow on the line
+        // prop: lineJoin
+        // Canvas lineJoin style between segments of series.
+        this.lineJoin = 'round';
+        // prop: lineCap
+        // Canvas lineCap style at ends of line.
+        this.lineCap = 'round';
+        // prop: linePattern
+        // line pattern 'dashed', 'dotted', 'solid', some combination
+        // of '-' and '.' characters such as '.-.' or a numerical array like 
+        // [draw, skip, draw, skip, ...] such as [1, 10] to draw a dotted line, 
+        // [1, 10, 20, 10] to draw a dot-dash line, and so on.
+        this.linePattern = 'solid';
         this.shadow = true;
         // prop: shadowAngle
         // Shadow angle in degrees
@@ -946,7 +1150,7 @@
         // Alpha channel transparency of shadow.  0 = transparent.
         this.shadowAlpha = '0.1';
         // prop: breakOnNull
-        // Not implemented. wether line segments should be be broken at null value.
+        // Wether line segments should be be broken at null value.
         // False will join point on either side of line.
         this.breakOnNull = false;
         // prop: markerRenderer
@@ -1062,6 +1266,16 @@
             }
         }
         this.data = temp;
+
+        // parse the renderer options and apply default colors if not provided
+        if (!this.color && this.show) {
+            this.color = plot.colorGenerator.get(this.index);
+        }
+        if (!this.negativeColor && this.show) {
+            this.negativeColor = plot.negativeColorGenerator.get(this.index);
+        }
+
+
         if (!this.fillColor) {
             this.fillColor = this.color;
         }
@@ -1114,6 +1328,11 @@
                 data = this._plotData;
             }
             gridData = options.gridData || this.renderer.makeGridData.call(this, data, plot);
+
+            if (this._type === 'line' && this.renderer.smooth && this.renderer._smoothedData.length) {
+                gridData = this.renderer._smoothedData;
+            }
+
             this.renderer.draw.call(this, sctx, gridData, options, plot);
         }
         
@@ -1175,6 +1394,7 @@
         }
         if (speed) {
             if (s.canvas._elem.is(':hidden')) {
+                s.canvas._elem.removeClass('jqplot-series-hidden');
                 if (s.shadowCanvas._elem) {
                     s.shadowCanvas._elem.fadeIn(speed);
                 }
@@ -1182,6 +1402,7 @@
                 s.canvas._elem.nextAll('.jqplot-point-label.jqplot-series-'+s.index).fadeIn(speed);
             }
             else {
+                s.canvas._elem.addClass('jqplot-series-hidden');
                 if (s.shadowCanvas._elem) {
                     s.shadowCanvas._elem.fadeOut(speed);
                 }
@@ -1191,6 +1412,7 @@
         }
         else {
             if (s.canvas._elem.is(':hidden')) {
+                s.canvas._elem.removeClass('jqplot-series-hidden');
                 if (s.shadowCanvas._elem) {
                     s.shadowCanvas._elem.show();
                 }
@@ -1198,6 +1420,7 @@
                 s.canvas._elem.nextAll('.jqplot-point-label.jqplot-series-'+s.index).show();
             }
             else {
+                s.canvas._elem.addClass('jqplot-series-hidden');
                 if (s.shadowCanvas._elem) {
                     s.shadowCanvas._elem.hide();
                 }
@@ -1290,9 +1513,9 @@
         this.renderer.init.call(this, this.rendererOptions);
     };
     
-    Grid.prototype.createElement = function(offsets) {
+    Grid.prototype.createElement = function(offsets,plot) {
         this._offsets = offsets;
-        return this.renderer.createElement.call(this);
+        return this.renderer.createElement.call(this, plot);
     };
     
     Grid.prototype.draw = function() {
@@ -1307,22 +1530,18 @@
     $.jqplot.GenericCanvas.prototype = new $.jqplot.ElemContainer();
     $.jqplot.GenericCanvas.prototype.constructor = $.jqplot.GenericCanvas;
     
-    $.jqplot.GenericCanvas.prototype.createElement = function(offsets, clss, plotDimensions) {
+    $.jqplot.GenericCanvas.prototype.createElement = function(offsets, clss, plotDimensions, plot) {
         this._offsets = offsets;
         var klass = 'jqplot';
         if (clss != undefined) {
             klass = clss;
         }
         var elem;
-        // if this canvas already has a dom element, don't make a new one.
-        if (this._elem) {
-            elem = this._elem.get(0);
-        }
-        else {
-            elem = document.createElement('canvas');
-        }
+
+        elem = plot.canvasManager.getCanvas();
+        
         // if new plotDimensions supplied, use them.
-        if (plotDimensions != undefined) {
+        if (plotDimensions != null) {
             this._plotDimensions = plotDimensions;
         }
         
@@ -1332,11 +1551,9 @@
         this._elem.css({ position: 'absolute', left: this._offsets.left, top: this._offsets.top });
         
         this._elem.addClass(klass);
-        if ($.jqplot.use_excanvas) {
-            window.G_vmlCanvasManager.init_(document);
-            elem = window.G_vmlCanvasManager.initElement(elem);
-        }
-        // avoid memory leak
+        
+        elem = plot.canvasManager.initCanvas(elem);
+        
         elem = null;
         return this._elem;
     };
@@ -1344,6 +1561,20 @@
     $.jqplot.GenericCanvas.prototype.setContext = function() {
         this._ctx = this._elem.get(0).getContext("2d");
         return this._ctx;
+    };
+    
+    // Memory Leaks patch
+    $.jqplot.GenericCanvas.prototype.resetCanvas = function() {
+      if (this._elem) {
+        if ($.jqplot.use_excanvas && window.G_vmlCanvasManager.uninitElement !== undefined) {
+           window.G_vmlCanvasManager.uninitElement(this._elem.get(0));
+        }
+        
+        //this._elem.remove();
+        this._elem.emptyForce();
+      }
+      
+      this._ctx = null;
     };
     
     $.jqplot.HooksManager = function () {
@@ -1387,6 +1618,9 @@
         this.hooks.push([ev, fn]);
     };
 
+
+    var _axisNames = ['yMidAxis', 'xaxis', 'yaxis', 'x2axis', 'y2axis', 'y3axis', 'y4axis', 'y5axis', 'y6axis', 'y7axis', 'y8axis', 'y9axis'];
+
     /**
      * Class: jqPlot
      * Plot object returned by call to $.jqplot.  Handles parsing user options,
@@ -1409,15 +1643,15 @@
         // The data should be in the form of an array of 2D or 1D arrays like
         // > [ [[x1, y1], [x2, y2],...], [y1, y2, ...] ].
         this.data = [];
-        // prop dataRenderer
+        // prop: dataRenderer
         // A callable which can be used to preprocess data passed into the plot.
         // Will be called with 2 arguments, the plot data and a reference to the plot.
         this.dataRenderer;
-        // prop dataRendererOptions
+        // prop: dataRendererOptions
         // Options that will be passed to the dataRenderer.
         // Can be of any type.
         this.dataRendererOptions;
-        // prop noDataIndicator
+        // prop: noDataIndicator
         // Options to set up a mock plot with a data loading indicator if no data is specified.
         this.noDataIndicator = {    
             show: false,
@@ -1446,7 +1680,7 @@
             // default options that will be applied to all axes.
             // see <Axis> for axes options.
             axesDefaults: {},
-            axes: {xaxis:{}, yaxis:{}, x2axis:{}, y2axis:{}, y3axis:{}, y4axis:{}, y5axis:{}, y6axis:{}, y7axis:{}, y8axis:{}, y9axis:{}},
+            axes: {xaxis:{}, yaxis:{}, x2axis:{}, y2axis:{}, y3axis:{}, y4axis:{}, y5axis:{}, y6axis:{}, y7axis:{}, y8axis:{}, y9axis:{}, yMidAxis:{}},
             // prop: seriesDefaults
             // default options that will be applied to all series.
             // see <Series> for series options.
@@ -1460,7 +1694,7 @@
         // prop: axes
         // up to 4 axes are supported, each with it's own options, 
         // See <Axis> for axis specific options.
-        this.axes = {xaxis: new Axis('xaxis'), yaxis: new Axis('yaxis'), x2axis: new Axis('x2axis'), y2axis: new Axis('y2axis'), y3axis: new Axis('y3axis'), y4axis: new Axis('y4axis'), y5axis: new Axis('y5axis'), y6axis: new Axis('y6axis'), y7axis: new Axis('y7axis'), y8axis: new Axis('y8axis'), y9axis: new Axis('y9axis')};
+        this.axes = {xaxis: new Axis('xaxis'), yaxis: new Axis('yaxis'), x2axis: new Axis('x2axis'), y2axis: new Axis('y2axis'), y3axis: new Axis('y3axis'), y4axis: new Axis('y4axis'), y5axis: new Axis('y5axis'), y6axis: new Axis('y6axis'), y7axis: new Axis('y7axis'), y8axis: new Axis('y8axis'), y9axis: new Axis('y9axis'), yMidAxis: new Axis('yMidAxis')};
         // prop: grid
         // See <Grid> for grid specific options.
         this.grid = new Grid();
@@ -1488,8 +1722,8 @@
         // to the series in the plot.  Colors will wrap around so, if their
         // are more series than colors, colors will be reused starting at the
         // beginning.  For pie charts, this specifies the colors of the slices.
-        this.seriesColors = [ "#4bb2c5", "#EAA228", "#c5b47f", "#579575", "#839557", "#958c12", "#953579", "#4b5de4", "#d8b83f", "#ff5800", "#0085cc", "#c747a3", "#cddf54", "#FBD178", "#26B4E3", "#bd70c7"];
-        this.negativeSeriesColors = [ "#498991", "#C08840", "#9F9274", "#546D61", "#646C4A", "#6F6621", "#6E3F5F", "#4F64B0", "#A89050", "#C45923", "#187399", "#945381", "#959E5C", "#C7AF7B", "#478396", "#907294"];
+        this.seriesColors = $.jqplot.config.defaultColors;
+        this.negativeSeriesColors = $.jqplot.config.defaultNegativeColors;
         // prop: sortData
         // false to not sort the data passed in by the user.
         // Many bar, stakced and other graphs as well as many plugins depend on
@@ -1571,7 +1805,10 @@
         this.preDrawSeriesShadowHooks = new $.jqplot.HooksManager();
         this.postDrawSeriesShadowHooks = new $.jqplot.HooksManager();
         
-        this.colorGenerator = $.jqplot.ColorGenerator;
+        this.colorGenerator = new $.jqplot.ColorGenerator();
+        this.negativeColorGenerator = new $.jqplot.ColorGenerator();
+
+        this.canvasManager = new $.jqplot.CanvasManager();
         
         // Group: methods
         //
@@ -1749,9 +1986,18 @@
                 this._sumx += this.series[i]._sumx;
             }
 
-            for (var name in this.axes) {
+            for (var i=0; i<12; i++) {
+                name = _axisNames[i];
                 this.axes[name]._plotDimensions = this._plotDimensions;
                 this.axes[name].init();
+                if (this.axes[name].borderColor == null) {
+                    if (name.charAt(0) !== 'x' && this.axes[name].useSeriesColor === true && this.axes[name].show) {
+                        this.axes[name].borderColor = this.axes[name]._series[0].color;
+                    }
+                    else {
+                        this.axes[name].borderColor = this.grid.borderColor;
+                    }
+                }
             }
             
             if (this.sortData) {
@@ -1878,6 +2124,9 @@
             this._sumx = 0;
             for (var i=0; i<this.series.length; i++) {
                 this.populatePlotData(this.series[i], i);
+                if (this.series[i]._type === 'line' && this.series[i].renderer.bands.show) {
+                    this.series[i].renderer.initBands.call(this.series[i], this.series[i].renderer.options, this);
+                }
                 this.series[i]._plotDimensions = this._plotDimensions;
                 this.series[i].canvas._plotDimensions = this._plotDimensions;
                 //this.series[i].init(i, this.grid.borderWidth);
@@ -1885,10 +2134,27 @@
                 this._sumx += this.series[i]._sumx;
             }
             
-            for (var name in this.axes) {
+            for (var j=0; j<12; j++) {
+                name = _axisNames[j];
+                // Memory Leaks patch : clear ticks elements
+                var t = this.axes[name]._ticks;
+                for (var i = 0; i < t.length; i++) {
+                  var el = t[i]._elem;
+                  if (el) {
+                    // if canvas renderer
+                    if ($.jqplot.use_excanvas && window.G_vmlCanvasManager.uninitElement !== undefined) {
+                      window.G_vmlCanvasManager.uninitElement(el.get(0));
+                    }
+                    el.emptyForce();
+                    el = null;
+                    t._elem = null;
+                  }
+                }
+                t = null;
+                
                 this.axes[name]._plotDimensions = this._plotDimensions;
                 this.axes[name]._ticks = [];
-                this.axes[name].renderer.init.call(this.axes[name], {});
+                // this.axes[name].renderer.init.call(this.axes[name], {});
             }
             
             if (this.sortData) {
@@ -2047,12 +2313,17 @@
                 this.captureRightClick = this.options.captureRightClick;
             }
             this.defaultAxisStart = (options && options.defaultAxisStart != null) ? options.defaultAxisStart : this.defaultAxisStart;
-            var cg = new this.colorGenerator(this.seriesColors);
+            this.colorGenerator.setColors(this.seriesColors);
+            this.negativeColorGenerator.setColors(this.negativeSeriesColors);
+            // var cg = new this.colorGenerator(this.seriesColors);
+            // var ncg = new this.colorGenerator(this.negativeSeriesColors);
             // this._gridPadding = this.options.gridPadding;
             $.extend(true, this._gridPadding, this.options.gridPadding);
             this.sortData = (this.options.sortData != null) ? this.options.sortData : this.sortData;
-            for (var n in this.axes) {
+            for (var i=0; i<12; i++) {
+                var n = _axisNames[i];
                 var axis = this.axes[n];
+                axis._options = $.extend(true, {}, this.options.axesDefaults, this.options.axes[n]);
                 $.extend(true, axis, this.options.axesDefaults, this.options.axes[n]);
                 axis._plotWidth = this._width;
                 axis._plotHeight = this._height;
@@ -2090,6 +2361,7 @@
                 return temp;
             };
 
+            var colorIndex = 0;
             for (var i=0; i<this.data.length; i++) {
                 var temp = new Series();
                 for (var j=0; j<$.jqplot.preParseSeriesOptionsHooks.length; j++) {
@@ -2100,7 +2372,7 @@
                 }
                 $.extend(true, temp, {seriesColors:this.seriesColors, negativeSeriesColors:this.negativeSeriesColors}, this.options.seriesDefaults, this.options.series[i]);
                 var dir = 'vertical';
-                if (temp.renderer.constructor == $.jqplot.barRenderer && temp.rendererOptions && temp.rendererOptions.barDirection == 'horizontal') {
+                if (temp.renderer === $.jqplot.BarRenderer && temp.rendererOptions && temp.rendererOptions.barDirection == 'horizontal' && temp.transposeData === true) {
                     dir = 'horizontal';
                 }
                 temp.data = normalizeData(this.data[i], dir, this.defaultAxisStart);
@@ -2122,10 +2394,15 @@
                     temp._yaxis.show = true;
                 }
 
-                // parse the renderer options and apply default colors if not provided
-                if (!temp.color && temp.show != false) {
-                    temp.color = cg.next();
-                }
+                // // parse the renderer options and apply default colors if not provided
+                // if (!temp.color && temp.show != false) {
+                //     temp.color = cg.next();
+                //     colorIndex = cg.getIndex() - 1;;
+                // }
+                // if (!temp.negativeColor && temp.show != false) {
+                //     temp.negativeColor = ncg.get(colorIndex);
+                //     ncg.setIndex(colorIndex);
+                // }
                 if (!temp.label) {
                     temp.label = 'Series '+ (i+1).toString();
                 }
@@ -2143,18 +2420,11 @@
             // copy the grid and title options into this object.
             $.extend(true, this.grid, this.options.grid);
             // if axis border properties aren't set, set default.
-            for (var n in this.axes) {
+            for (var i=0; i<12; i++) {
+                var n = _axisNames[i];
                 var axis = this.axes[n];
                 if (axis.borderWidth == null) {
                     axis.borderWidth =this.grid.borderWidth;
-                }
-                if (axis.borderColor == null) {
-                    if (n != 'xaxis' && n != 'x2axis' && axis.useSeriesColor === true && axis.show) {
-                        axis.borderColor = axis._series[0].color;
-                    }
-                    else {
-                        axis.borderColor = this.grid.borderColor;
-                    }
                 }
             }
             
@@ -2175,6 +2445,22 @@
             }
         };
         
+        // method: destroy
+        // Releases all resources occupied by the plot
+        this.destroy = function() {
+            this.canvasManager.freeAllCanvases();
+            if (this.eventCanvas && this.eventCanvas._elem) {
+                this.eventCanvas._elem.unbind();
+            }
+            // Couple of posts on Stack Overflow indicate that empty() doesn't
+            // always cear up the dom and release memory.  Sometimes setting
+            // innerHTML property to null is needed.  Particularly on IE, may 
+            // have to directly set it to null, bypassing jQuery.
+            this.target.empty();
+
+            this.target[0].innerHTML = '';
+        };
+        
         // method: replot
         // Does a reinitialization of the plot followed by
         // a redraw.  Method could be used to interactively
@@ -2192,12 +2478,9 @@
             var clear = opts.clear || true;
             var resetAxes = opts.resetAxes || false;
             this.target.trigger('jqplotPreReplot');
+            
             if (clear) {
-                // Couple of posts on Stack Overflow indicate that empty() doesn't
-                // always cear up the dom and release memory.  Sometimes setting
-                // innerHTML property to null is needed.  Particularly on IE, may 
-                // have to directly set it to null, bypassing jQuery.
-                this.target.empty();
+                this.destroy();
             }
             this.reInitialize();
             if (resetAxes) {
@@ -2222,10 +2505,11 @@
             clear = (clear != null) ? clear : true;
             this.target.trigger('jqplotPreRedraw');
             if (clear) {
-                // Couple of posts on Stack Overflow indicate that empty() doesn't
-                // always cear up the dom and release memory.  Sometimes setting
-                // innerHTML property to null is needed.  Particularly on IE, may 
-                // have to directly set it to null, bypassing jQuery.
+                this.canvasManager.freeAllCanvases();
+                this.eventCanvas._elem.unbind();
+                // Dont think I bind any events to the target, this shouldn't be necessary.
+                // It will remove user's events.
+                // this.target.unbind();
                 this.target.empty();
             }
              for (var ax in this.axes) {
@@ -2258,7 +2542,7 @@
                     this.preDrawHooks.hooks[i].call(this);
                 }
                 // create an underlying canvas to be used for special features.
-                this.target.append(this.baseCanvas.createElement({left:0, right:0, top:0, bottom:0}, 'jqplot-base-canvas'));
+                this.target.append(this.baseCanvas.createElement({left:0, right:0, top:0, bottom:0}, 'jqplot-base-canvas', null, this));
                 this.baseCanvas.setContext();
                 this.target.append(this.title.draw());
                 this.title.pack({top:0, left:0});
@@ -2296,8 +2580,10 @@
                 }
                 
                 var ax = this.axes;
-                for (var name in ax) {
-                    this.target.append(ax[name].draw(this.baseCanvas._ctx));
+                // draw the yMidAxis first, so xaxis of pyramid chart can adjust itself if needed.
+                for (i=0; i<12; i++) {
+                    name = _axisNames[i];
+                    this.target.append(ax[name].draw(this.baseCanvas._ctx, this));
                     ax[name].set();
                 }
                 if (ax.yaxis.show) {
@@ -2325,6 +2611,21 @@
                 }
                 
                 // end of gridPadding adjustments.
+
+                // if user passed in gridDimensions option, check against calculated gridPadding
+                if (this.options.gridDimensions && $.isPlainObject(this.options.gridDimensions)) {
+                    var gdw = parseInt(this.options.gridDimensions.width, 10) || 0;
+                    var gdh = parseInt(this.options.gridDimensions.height, 10) || 0;
+                    var widthAdj = (this._width - gridPadding.left - gridPadding.right - gdw)/2;
+                    var heightAdj = (this._height - gridPadding.top - gridPadding.bottom - gdh)/2;
+
+                    if (heightAdj >= 0 && widthAdj >= 0) {
+                        gridPadding.top += heightAdj;
+                        gridPadding.bottom += heightAdj;
+                        gridPadding.left += widthAdj;
+                        gridPadding.right += widthAdj;
+                    }
+                }
                 var arr = ['top', 'bottom', 'left', 'right'];
                 for (var n in arr) {
                     if (this._gridPadding[arr[n]] == null && gridPadding[arr[n]] > 0) {
@@ -2343,9 +2644,10 @@
                 for (i=8; i>0; i--) {
                     ax[ra[i-1]].pack({position:'absolute', top:0, right:this._gridPadding.right - rapad[i-1]}, {min:this._height - this._gridPadding.bottom, max: this._gridPadding.top});
                 }
-                // ax.y2axis.pack({position:'absolute', top:0, right:0}, {min:this._height - this._gridPadding.bottom, max: this._gridPadding.top});
+                var ltemp = (this._width - this._gridPadding.left - this._gridPadding.right)/2.0 + this._gridPadding.left - ax.yMidAxis.getWidth()/2.0;
+                ax.yMidAxis.pack({position:'absolute', top:0, left:ltemp, zIndex:9, textAlign: 'center'}, {min:this._height - this._gridPadding.bottom, max: this._gridPadding.top});
             
-                this.target.append(this.grid.createElement(this._gridPadding));
+                this.target.append(this.grid.createElement(this._gridPadding, this));
                 this.grid.draw();
                 
                 // put the shadow canvases behind the series canvases so shadows don't overlap on stacked bars.
@@ -2353,7 +2655,7 @@
                     // draw series in order of stacking.  This affects only
                     // order in which canvases are added to dom.
                     j = this.seriesStack[i];
-                    this.target.append(this.series[j].shadowCanvas.createElement(this._gridPadding, 'jqplot-series-shadowCanvas'));
+                    this.target.append(this.series[j].shadowCanvas.createElement(this._gridPadding, 'jqplot-series-shadowCanvas', null, this));
                     this.series[j].shadowCanvas.setContext();
                     this.series[j].shadowCanvas._elem.data('seriesIndex', j);
                 }
@@ -2362,13 +2664,13 @@
                     // draw series in order of stacking.  This affects only
                     // order in which canvases are added to dom.
                     j = this.seriesStack[i];
-                    this.target.append(this.series[j].canvas.createElement(this._gridPadding, 'jqplot-series-canvas'));
+                    this.target.append(this.series[j].canvas.createElement(this._gridPadding, 'jqplot-series-canvas', null, this));
                     this.series[j].canvas.setContext();
                     this.series[j].canvas._elem.data('seriesIndex', j);
                 }
                 // Need to use filled canvas to capture events in IE.
                 // Also, canvas seems to block selection of other elements in document on FF.
-                this.target.append(this.eventCanvas.createElement(this._gridPadding, 'jqplot-event-canvas'));
+                this.target.append(this.eventCanvas.createElement(this._gridPadding, 'jqplot-event-canvas', null, this));
                 this.eventCanvas.setContext();
                 this.eventCanvas._ctx.fillStyle = 'rgba(0,0,0,0)';
                 this.eventCanvas._ctx.fillRect(0,0,this.eventCanvas._ctx.canvas.width, this.eventCanvas._ctx.canvas.height);
@@ -2447,8 +2749,8 @@
             var plot = ev.data.plot;
             var go = plot.eventCanvas._elem.offset();
             var gridPos = {x:ev.pageX - go.left, y:ev.pageY - go.top};
-            var dataPos = {xaxis:null, yaxis:null, x2axis:null, y2axis:null, y3axis:null, y4axis:null, y5axis:null, y6axis:null, y7axis:null, y8axis:null, y9axis:null};
-            var an = ['xaxis', 'yaxis', 'x2axis', 'y2axis', 'y3axis', 'y4axis', 'y5axis', 'y6axis', 'y7axis', 'y8axis', 'y9axis'];
+            var dataPos = {xaxis:null, yaxis:null, x2axis:null, y2axis:null, y3axis:null, y4axis:null, y5axis:null, y6axis:null, y7axis:null, y8axis:null, y9axis:null, yMidAxis:null};
+            var an = ['xaxis', 'yaxis', 'x2axis', 'y2axis', 'y3axis', 'y4axis', 'y5axis', 'y6axis', 'y7axis', 'y8axis', 'y9axis', 'yMidAxis'];
             var ax = plot.axes;
             var n, axis;
             for (n=11; n>0; n--) {
@@ -2473,6 +2775,7 @@
                 s = series[i];
                 switch (s.renderer.constructor) {
                     case $.jqplot.BarRenderer:
+                    case $.jqplot.PyramidRenderer:
                         x = gridpos.x;
                         y = gridpos.y;
                         for (j=0; j<s._barPoints.length; j++) {
@@ -2630,7 +2933,7 @@
                         y = gridpos.y;
                         r = s.renderer;
                         if (s.show) {
-                            if (s.fill) {
+                            if ((s.fill || (s.renderer.bands.show && s.renderer.bands.fill)) && (!plot.plugins.highlighter || !plot.plugins.highlighter.show)) {
                                 // first check if it is in bounding box
                                 var inside = false;
                                 if (x>s._boundingBox[0][0] && x<s._boundingBox[1][0] && y>s._boundingBox[1][1] && y<s._boundingBox[0][1]) { 
@@ -2659,6 +2962,7 @@
                                 break;
                                 
                             }
+
                             else {
                                 t = s.markerRenderer.size/2+s.neighborThreshold;
                                 threshold = (t > 0) ? t : 0;
@@ -2829,6 +3133,7 @@
             var evt = jQuery.Event('jqplotMouseEnter');
             evt.pageX = ev.pageX;
             evt.pageY = ev.pageY;
+            evt.relatedTarget = ev.relatedTarget;
             $(this).trigger(evt, [positions.gridPos, positions.dataPos, null, p]);
         };
         
@@ -2838,6 +3143,7 @@
             var evt = jQuery.Event('jqplotMouseLeave');
             evt.pageX = ev.pageX;
             evt.pageY = ev.pageY;
+            evt.relatedTarget = ev.relatedTarget;
             $(this).trigger(evt, [positions.gridPos, positions.dataPos, null, p]);
         };
         
@@ -3003,10 +3309,14 @@
                 var sum = newrgb[0] + newrgb[1] + newrgb[2];
                 for (var j=0; j<3; j++) {
                     // when darkening, lowest color component can be is 60.
-                    newrgb[j] = (sum > 570) ?  newrgb[j] * 0.8 : newrgb[j] + 0.3 * (255 - newrgb[j]);
+                    newrgb[j] = (sum > 660) ?  newrgb[j] * 0.85 : 0.73 * newrgb[j] + 90;
                     newrgb[j] = parseInt(newrgb[j], 10);
+                    (newrgb[j] > 255) ? 255 : newrgb[j];
                 }
-                ret.push('rgb('+newrgb[0]+','+newrgb[1]+','+newrgb[2]+')');
+                // newrgb[3] = (rgba[3] > 0.4) ? rgba[3] * 0.4 : rgba[3] * 1.5;
+                // newrgb[3] = (rgba[3] > 0.5) ? 0.8 * rgba[3] - .1 : rgba[3] + 0.2;
+                newrgb[3] = 0.3 + 0.35 * rgba[3];
+                ret.push('rgba('+newrgb[0]+','+newrgb[1]+','+newrgb[2]+','+newrgb[3]+')');
             }
         }
         else {
@@ -3015,15 +3325,22 @@
             var sum = newrgb[0] + newrgb[1] + newrgb[2];
             for (var j=0; j<3; j++) {
                 // when darkening, lowest color component can be is 60.
-                newrgb[j] = (sum > 570) ?  newrgb[j] * 0.8 : newrgb[j] + 0.3 * (255 - newrgb[j]);
+                // newrgb[j] = (sum > 570) ?  newrgb[j] * 0.8 : newrgb[j] + 0.3 * (255 - newrgb[j]);
+                // newrgb[j] = parseInt(newrgb[j], 10);
+                newrgb[j] = (sum > 660) ?  newrgb[j] * 0.85 : 0.73 * newrgb[j] + 90;
                 newrgb[j] = parseInt(newrgb[j], 10);
+                (newrgb[j] > 255) ? 255 : newrgb[j];
             }
-            ret = 'rgb('+newrgb[0]+','+newrgb[1]+','+newrgb[2]+')';
+            // newrgb[3] = (rgba[3] > 0.4) ? rgba[3] * 0.4 : rgba[3] * 1.5;
+            // newrgb[3] = (rgba[3] > 0.5) ? 0.8 * rgba[3] - .1 : rgba[3] + 0.2;
+            newrgb[3] = 0.3 + 0.35 * rgba[3];
+            ret = 'rgba('+newrgb[0]+','+newrgb[1]+','+newrgb[2]+','+newrgb[3]+')';
         }
         return ret;
     };
         
    $.jqplot.ColorGenerator = function(colors) {
+        colors = colors || $.jqplot.config.defaultColors;
         var idx = 0;
         
         this.next = function () { 
@@ -3058,6 +3375,14 @@
         
         this.reset = function() {
             idx = 0;
+        };
+
+        this.getIndex = function() {
+            return idx;
+        };
+
+        this.setIndex = function(index) {
+            idx = index;
         };
     };
 
@@ -3135,7 +3460,155 @@
         return ret;
     };
     
-    $.jqplot.colorKeywordMap = {aliceblue: 'rgb(240, 248, 255)', antiquewhite: 'rgb(250, 235, 215)', aqua: 'rgb( 0, 255, 255)', aquamarine: 'rgb(127, 255, 212)', azure: 'rgb(240, 255, 255)', beige: 'rgb(245, 245, 220)', bisque: 'rgb(255, 228, 196)', black: 'rgb( 0, 0, 0)', blanchedalmond: 'rgb(255, 235, 205)', blue: 'rgb( 0, 0, 255)', blueviolet: 'rgb(138, 43, 226)', brown: 'rgb(165, 42, 42)', burlywood: 'rgb(222, 184, 135)', cadetblue: 'rgb( 95, 158, 160)', chartreuse: 'rgb(127, 255, 0)', chocolate: 'rgb(210, 105, 30)', coral: 'rgb(255, 127, 80)', cornflowerblue: 'rgb(100, 149, 237)', cornsilk: 'rgb(255, 248, 220)', crimson: 'rgb(220, 20, 60)', cyan: 'rgb( 0, 255, 255)', darkblue: 'rgb( 0, 0, 139)', darkcyan: 'rgb( 0, 139, 139)', darkgoldenrod: 'rgb(184, 134, 11)', darkgray: 'rgb(169, 169, 169)', darkgreen: 'rgb( 0, 100, 0)', darkgrey: 'rgb(169, 169, 169)', darkkhaki: 'rgb(189, 183, 107)', darkmagenta: 'rgb(139, 0, 139)', darkolivegreen: 'rgb( 85, 107, 47)', darkorange: 'rgb(255, 140, 0)', darkorchid: 'rgb(153, 50, 204)', darkred: 'rgb(139, 0, 0)', darksalmon: 'rgb(233, 150, 122)', darkseagreen: 'rgb(143, 188, 143)', darkslateblue: 'rgb( 72, 61, 139)', darkslategray: 'rgb( 47, 79, 79)', darkslategrey: 'rgb( 47, 79, 79)', darkturquoise: 'rgb( 0, 206, 209)', darkviolet: 'rgb(148, 0, 211)', deeppink: 'rgb(255, 20, 147)', deepskyblue: 'rgb( 0, 191, 255)', dimgray: 'rgb(105, 105, 105)', dimgrey: 'rgb(105, 105, 105)', dodgerblue: 'rgb( 30, 144, 255)', firebrick: 'rgb(178, 34, 34)', floralwhite: 'rgb(255, 250, 240)', forestgreen: 'rgb( 34, 139, 34)', fuchsia: 'rgb(255, 0, 255)', gainsboro: 'rgb(220, 220, 220)', ghostwhite: 'rgb(248, 248, 255)', gold: 'rgb(255, 215, 0)', goldenrod: 'rgb(218, 165, 32)', gray: 'rgb(128, 128, 128)', grey: 'rgb(128, 128, 128)', green: 'rgb( 0, 128, 0)', greenyellow: 'rgb(173, 255, 47)', honeydew: 'rgb(240, 255, 240)', hotpink: 'rgb(255, 105, 180)', indianred: 'rgb(205, 92, 92)', indigo: 'rgb( 75, 0, 130)', ivory: 'rgb(255, 255, 240)', khaki: 'rgb(240, 230, 140)', lavender: 'rgb(230, 230, 250)', lavenderblush: 'rgb(255, 240, 245)', lawngreen: 'rgb(124, 252, 0)', lemonchiffon: 'rgb(255, 250, 205)', lightblue: 'rgb(173, 216, 230)', lightcoral: 'rgb(240, 128, 128)', lightcyan: 'rgb(224, 255, 255)', lightgoldenrodyellow: 'rgb(250, 250, 210)', lightgray: 'rgb(211, 211, 211)', lightgreen: 'rgb(144, 238, 144)', lightgrey: 'rgb(211, 211, 211)', lightpink: 'rgb(255, 182, 193)', lightsalmon: 'rgb(255, 160, 122)', lightseagreen: 'rgb( 32, 178, 170)', lightskyblue: 'rgb(135, 206, 250)', lightslategray: 'rgb(119, 136, 153)', lightslategrey: 'rgb(119, 136, 153)', lightsteelblue: 'rgb(176, 196, 222)', lightyellow: 'rgb(255, 255, 224)', lime: 'rgb( 0, 255, 0)', limegreen: 'rgb( 50, 205, 50)', linen: 'rgb(250, 240, 230)', magenta: 'rgb(255, 0, 255)', maroon: 'rgb(128, 0, 0)', mediumaquamarine: 'rgb(102, 205, 170)', mediumblue: 'rgb( 0, 0, 205)', mediumorchid: 'rgb(186, 85, 211)', mediumpurple: 'rgb(147, 112, 219)', mediumseagreen: 'rgb( 60, 179, 113)', mediumslateblue: 'rgb(123, 104, 238)', mediumspringgreen: 'rgb( 0, 250, 154)', mediumturquoise: 'rgb( 72, 209, 204)', mediumvioletred: 'rgb(199, 21, 133)', midnightblue: 'rgb( 25, 25, 112)', mintcream: 'rgb(245, 255, 250)', mistyrose: 'rgb(255, 228, 225)', moccasin: 'rgb(255, 228, 181)', navajowhite: 'rgb(255, 222, 173)', navy: 'rgb( 0, 0, 128)', oldlace: 'rgb(253, 245, 230)', olive: 'rgb(128, 128, 0)', olivedrab: 'rgb(107, 142, 35)', orange: 'rgb(255, 165, 0)', orangered: 'rgb(255, 69, 0)', orchid: 'rgb(218, 112, 214)', palegoldenrod: 'rgb(238, 232, 170)', palegreen: 'rgb(152, 251, 152)', paleturquoise: 'rgb(175, 238, 238)', palevioletred: 'rgb(219, 112, 147)', papayawhip: 'rgb(255, 239, 213)', peachpuff: 'rgb(255, 218, 185)', peru: 'rgb(205, 133, 63)', pink: 'rgb(255, 192, 203)', plum: 'rgb(221, 160, 221)', powderblue: 'rgb(176, 224, 230)', purple: 'rgb(128, 0, 128)', red: 'rgb(255, 0, 0)', rosybrown: 'rgb(188, 143, 143)', royalblue: 'rgb( 65, 105, 225)', saddlebrown: 'rgb(139, 69, 19)', salmon: 'rgb(250, 128, 114)', sandybrown: 'rgb(244, 164, 96)', seagreen: 'rgb( 46, 139, 87)', seashell: 'rgb(255, 245, 238)', sienna: 'rgb(160, 82, 45)', silver: 'rgb(192, 192, 192)', skyblue: 'rgb(135, 206, 235)', slateblue: 'rgb(106, 90, 205)', slategray: 'rgb(112, 128, 144)', slategrey: 'rgb(112, 128, 144)', snow: 'rgb(255, 250, 250)', springgreen: 'rgb( 0, 255, 127)', steelblue: 'rgb( 70, 130, 180)', tan: 'rgb(210, 180, 140)', teal: 'rgb( 0, 128, 128)', thistle: 'rgb(216, 191, 216)', tomato: 'rgb(255, 99, 71)', turquoise: 'rgb( 64, 224, 208)', violet: 'rgb(238, 130, 238)', wheat: 'rgb(245, 222, 179)', white: 'rgb(255, 255, 255)', whitesmoke: 'rgb(245, 245, 245)', yellow: 'rgb(255, 255, 0)', yellowgreen: 'rgb(154, 205, 50)'};
+    $.jqplot.colorKeywordMap = {
+        aliceblue: 'rgb(240, 248, 255)',
+        antiquewhite: 'rgb(250, 235, 215)',
+        aqua: 'rgb( 0, 255, 255)',
+        aquamarine: 'rgb(127, 255, 212)',
+        azure: 'rgb(240, 255, 255)',
+        beige: 'rgb(245, 245, 220)',
+        bisque: 'rgb(255, 228, 196)',
+        black: 'rgb( 0, 0, 0)',
+        blanchedalmond: 'rgb(255, 235, 205)',
+        blue: 'rgb( 0, 0, 255)',
+        blueviolet: 'rgb(138, 43, 226)',
+        brown: 'rgb(165, 42, 42)',
+        burlywood: 'rgb(222, 184, 135)',
+        cadetblue: 'rgb( 95, 158, 160)',
+        chartreuse: 'rgb(127, 255, 0)',
+        chocolate: 'rgb(210, 105, 30)',
+        coral: 'rgb(255, 127, 80)',
+        cornflowerblue: 'rgb(100, 149, 237)',
+        cornsilk: 'rgb(255, 248, 220)',
+        crimson: 'rgb(220, 20, 60)',
+        cyan: 'rgb( 0, 255, 255)',
+        darkblue: 'rgb( 0, 0, 139)',
+        darkcyan: 'rgb( 0, 139, 139)',
+        darkgoldenrod: 'rgb(184, 134, 11)',
+        darkgray: 'rgb(169, 169, 169)',
+        darkgreen: 'rgb( 0, 100, 0)',
+        darkgrey: 'rgb(169, 169, 169)',
+        darkkhaki: 'rgb(189, 183, 107)',
+        darkmagenta: 'rgb(139, 0, 139)',
+        darkolivegreen: 'rgb( 85, 107, 47)',
+        darkorange: 'rgb(255, 140, 0)',
+        darkorchid: 'rgb(153, 50, 204)',
+        darkred: 'rgb(139, 0, 0)',
+        darksalmon: 'rgb(233, 150, 122)',
+        darkseagreen: 'rgb(143, 188, 143)',
+        darkslateblue: 'rgb( 72, 61, 139)',
+        darkslategray: 'rgb( 47, 79, 79)',
+        darkslategrey: 'rgb( 47, 79, 79)',
+        darkturquoise: 'rgb( 0, 206, 209)',
+        darkviolet: 'rgb(148, 0, 211)',
+        deeppink: 'rgb(255, 20, 147)',
+        deepskyblue: 'rgb( 0, 191, 255)',
+        dimgray: 'rgb(105, 105, 105)',
+        dimgrey: 'rgb(105, 105, 105)',
+        dodgerblue: 'rgb( 30, 144, 255)',
+        firebrick: 'rgb(178, 34, 34)',
+        floralwhite: 'rgb(255, 250, 240)',
+        forestgreen: 'rgb( 34, 139, 34)',
+        fuchsia: 'rgb(255, 0, 255)',
+        gainsboro: 'rgb(220, 220, 220)',
+        ghostwhite: 'rgb(248, 248, 255)',
+        gold: 'rgb(255, 215, 0)',
+        goldenrod: 'rgb(218, 165, 32)',
+        gray: 'rgb(128, 128, 128)',
+        grey: 'rgb(128, 128, 128)',
+        green: 'rgb( 0, 128, 0)',
+        greenyellow: 'rgb(173, 255, 47)',
+        honeydew: 'rgb(240, 255, 240)',
+        hotpink: 'rgb(255, 105, 180)',
+        indianred: 'rgb(205, 92, 92)',
+        indigo: 'rgb( 75, 0, 130)',
+        ivory: 'rgb(255, 255, 240)',
+        khaki: 'rgb(240, 230, 140)',
+        lavender: 'rgb(230, 230, 250)',
+        lavenderblush: 'rgb(255, 240, 245)',
+        lawngreen: 'rgb(124, 252, 0)',
+        lemonchiffon: 'rgb(255, 250, 205)',
+        lightblue: 'rgb(173, 216, 230)',
+        lightcoral: 'rgb(240, 128, 128)',
+        lightcyan: 'rgb(224, 255, 255)',
+        lightgoldenrodyellow: 'rgb(250, 250, 210)',
+        lightgray: 'rgb(211, 211, 211)',
+        lightgreen: 'rgb(144, 238, 144)',
+        lightgrey: 'rgb(211, 211, 211)',
+        lightpink: 'rgb(255, 182, 193)',
+        lightsalmon: 'rgb(255, 160, 122)',
+        lightseagreen: 'rgb( 32, 178, 170)',
+        lightskyblue: 'rgb(135, 206, 250)',
+        lightslategray: 'rgb(119, 136, 153)',
+        lightslategrey: 'rgb(119, 136, 153)',
+        lightsteelblue: 'rgb(176, 196, 222)',
+        lightyellow: 'rgb(255, 255, 224)',
+        lime: 'rgb( 0, 255, 0)',
+        limegreen: 'rgb( 50, 205, 50)',
+        linen: 'rgb(250, 240, 230)',
+        magenta: 'rgb(255, 0, 255)',
+        maroon: 'rgb(128, 0, 0)',
+        mediumaquamarine: 'rgb(102, 205, 170)',
+        mediumblue: 'rgb( 0, 0, 205)',
+        mediumorchid: 'rgb(186, 85, 211)',
+        mediumpurple: 'rgb(147, 112, 219)',
+        mediumseagreen: 'rgb( 60, 179, 113)',
+        mediumslateblue: 'rgb(123, 104, 238)',
+        mediumspringgreen: 'rgb( 0, 250, 154)',
+        mediumturquoise: 'rgb( 72, 209, 204)',
+        mediumvioletred: 'rgb(199, 21, 133)',
+        midnightblue: 'rgb( 25, 25, 112)',
+        mintcream: 'rgb(245, 255, 250)',
+        mistyrose: 'rgb(255, 228, 225)',
+        moccasin: 'rgb(255, 228, 181)',
+        navajowhite: 'rgb(255, 222, 173)',
+        navy: 'rgb( 0, 0, 128)',
+        oldlace: 'rgb(253, 245, 230)',
+        olive: 'rgb(128, 128, 0)',
+        olivedrab: 'rgb(107, 142, 35)',
+        orange: 'rgb(255, 165, 0)',
+        orangered: 'rgb(255, 69, 0)',
+        orchid: 'rgb(218, 112, 214)',
+        palegoldenrod: 'rgb(238, 232, 170)',
+        palegreen: 'rgb(152, 251, 152)',
+        paleturquoise: 'rgb(175, 238, 238)',
+        palevioletred: 'rgb(219, 112, 147)',
+        papayawhip: 'rgb(255, 239, 213)',
+        peachpuff: 'rgb(255, 218, 185)',
+        peru: 'rgb(205, 133, 63)',
+        pink: 'rgb(255, 192, 203)',
+        plum: 'rgb(221, 160, 221)',
+        powderblue: 'rgb(176, 224, 230)',
+        purple: 'rgb(128, 0, 128)',
+        red: 'rgb(255, 0, 0)',
+        rosybrown: 'rgb(188, 143, 143)',
+        royalblue: 'rgb( 65, 105, 225)',
+        saddlebrown: 'rgb(139, 69, 19)',
+        salmon: 'rgb(250, 128, 114)',
+        sandybrown: 'rgb(244, 164, 96)',
+        seagreen: 'rgb( 46, 139, 87)',
+        seashell: 'rgb(255, 245, 238)',
+        sienna: 'rgb(160, 82, 45)',
+        silver: 'rgb(192, 192, 192)',
+        skyblue: 'rgb(135, 206, 235)',
+        slateblue: 'rgb(106, 90, 205)',
+        slategray: 'rgb(112, 128, 144)',
+        slategrey: 'rgb(112, 128, 144)',
+        snow: 'rgb(255, 250, 250)',
+        springgreen: 'rgb( 0, 255, 127)',
+        steelblue: 'rgb( 70, 130, 180)',
+        tan: 'rgb(210, 180, 140)',
+        teal: 'rgb( 0, 128, 128)',
+        thistle: 'rgb(216, 191, 216)',
+        tomato: 'rgb(255, 99, 71)',
+        turquoise: 'rgb( 64, 224, 208)',
+        violet: 'rgb(238, 130, 238)',
+        wheat: 'rgb(245, 222, 179)',
+        white: 'rgb(255, 255, 255)',
+        whitesmoke: 'rgb(245, 245, 245)',
+        yellow: 'rgb(255, 255, 0)',
+        yellowgreen: 'rgb(154, 205, 50)'
+    };
 
     
 
@@ -3170,7 +3643,13 @@
         $.extend(true, this, options);
     };
     
-    $.jqplot.AxisLabelRenderer.prototype.draw = function() {
+    $.jqplot.AxisLabelRenderer.prototype.draw = function(ctx, plot) {
+        // Memory Leaks patch
+        if (this._elem) {
+            this._elem.emptyForce();
+            this._elem = null;
+        }
+
         this._elem = $('<div style="position:absolute;" class="jqplot-'+this.axis+'-label"></div>');
         
         if (Number(this.label)) {
@@ -3234,14 +3713,15 @@
         // prop: showLabel
         // wether or not to show the label.
         this.showLabel = true;
-        this.label = '';
+        this.label = null;
         this.value = null;
         this._styles = {};
         // prop: formatter
         // A class of a formatter for the tick text.  sprintf by default.
         this.formatter = $.jqplot.DefaultTickFormatter;
         // prop: prefix
-        // string appended to the tick label if no formatString is specified.
+        // String to prepend to the tick label.
+        // Prefix is prepended to the formatted tick label.
         this.prefix = '';
         // prop: formatString
         // string passed to the formatter.
@@ -3255,6 +3735,9 @@
         // prop: textColor
         // css spec for the color attribute.
         this.textColor;
+        // prop: escapeHTML
+        // true to escape HTML entities in the label.
+        this.escapeHTML = false;
         this._elem;
 		this._breakTick = false;
         
@@ -3278,19 +3761,32 @@
     };
     
     $.jqplot.AxisTickRenderer.prototype.draw = function() {
-        if (!this.label) {
-            this.label = this.formatter(this.formatString, this.value);
+        if (this.label === null) {
+            this.label = this.prefix + this.formatter(this.formatString, this.value);
         }
-        // add prefix if needed
-        if (this.prefix && !this.formatString) {
-            this.label = this.prefix + this.label;
-        }
-        var style ='style="position:absolute;';
+        var style = {position: 'absolute'};
         if (Number(this.label)) {
-            style +='white-space:nowrap;';
+            style['whitSpace'] = 'nowrap';
         }
-        style += '"';
-        this._elem = $('<div '+style+' class="jqplot-'+this.axis+'-tick">'+this.label+'</div>');
+        
+        // Memory Leaks patch
+        if (this._elem) {
+            this._elem.emptyForce();
+            this._elem = null;
+        }
+
+        this._elem = $(document.createElement('div'));
+        this._elem.addClass("jqplot-"+this.axis+"-tick");
+        
+        if (!this.escapeHTML) {
+            this._elem.html(this.label);
+        }
+        else {
+            this._elem.text(this.label);
+        }
+        
+        this._elem.css(style);
+
         for (var s in this._styles) {
             this._elem.css(s, this._styles[s]);
         }
@@ -3306,6 +3802,7 @@
 		if (this._breakTick) {
 			this._elem.addClass('jqplot-breakTick');
 		}
+        
         return this._elem;
     };
         
@@ -3341,8 +3838,22 @@
     };
     
     // called with context of Grid.
-    $.jqplot.CanvasGridRenderer.prototype.createElement = function() {
-        var elem = document.createElement('canvas');
+    $.jqplot.CanvasGridRenderer.prototype.createElement = function(plot) {
+        var elem;
+        // Memory Leaks patch
+        if (this._elem) {
+          if ($.jqplot.use_excanvas && window.G_vmlCanvasManager.uninitElement !== undefined) {
+            elem = this._elem.get(0);
+            window.G_vmlCanvasManager.uninitElement(elem);
+            elem = null;
+          }
+          
+          this._elem.emptyForce();
+          this._elem = null;
+        }
+      
+        elem = plot.canvasManager.getCanvas();
+
         var w = this._plotDimensions.width;
         var h = this._plotDimensions.height;
         elem.width = w;
@@ -3350,12 +3861,9 @@
         this._elem = $(elem);
         this._elem.addClass('jqplot-grid-canvas');
         this._elem.css({ position: 'absolute', left: 0, top: 0 });
-        if ($.jqplot.use_excanvas) {
-            window.G_vmlCanvasManager.init_(document);
-        }
-        if ($.jqplot.use_excanvas) {
-            elem = window.G_vmlCanvasManager.initElement(elem);
-        }
+        
+		elem = plot.canvasManager.initCanvas(elem);
+		
         this._top = this._offsets.top;
         this._bottom = h - this._offsets.bottom;
         this._left = this._offsets.left;
@@ -3377,235 +3885,259 @@
         ctx.fillStyle = this.backgroundColor || this.background;
         ctx.fillRect(this._left, this._top, this._width, this._height);
         
-        if (true) {
-            ctx.save();
-            ctx.lineJoin = 'miter';
-            ctx.lineCap = 'butt';
-            ctx.lineWidth = this.gridLineWidth;
-            ctx.strokeStyle = this.gridLineColor;
-            var b, e, s, m;
-            var ax = ['xaxis', 'yaxis', 'x2axis', 'y2axis'];
-            for (var i=4; i>0; i--) {
-                var name = ax[i-1];
-                var axis = axes[name];
-                var ticks = axis._ticks;
-                if (axis.show) {
-                    for (var j=ticks.length; j>0; j--) {
-                        var t = ticks[j-1];
-                        if (t.show) {
-                            var pos = Math.round(axis.u2p(t.value)) + 0.5;
-                            switch (name) {
-                                case 'xaxis':
-                                    // draw the grid line
-                                    if (t.showGridline && this.drawGridlines) {
-                                        drawLine(pos, this._top, pos, this._bottom);
+        ctx.save();
+        ctx.lineJoin = 'miter';
+        ctx.lineCap = 'butt';
+        ctx.lineWidth = this.gridLineWidth;
+        ctx.strokeStyle = this.gridLineColor;
+        var b, e, s, m;
+        var ax = ['xaxis', 'yaxis', 'x2axis', 'y2axis'];
+        for (var i=4; i>0; i--) {
+            var name = ax[i-1];
+            var axis = axes[name];
+            var ticks = axis._ticks;
+            var numticks = ticks.length;
+            if (axis.show) {
+                if (axis.drawBaseline) {
+                    var bopts = {};
+                    if (axis.baselineWidth !== null) {
+                        bopts.lineWidth = axis.baselineWidth;
+                    }
+                    if (axis.baselineColor !== null) {
+                        bopts.strokeStyle = axis.baselineColor;
+                    }
+                    switch (name) {
+                        case 'xaxis':
+                            drawLine (this._left, this._bottom, this._right, this._bottom, bopts);
+                            break;
+                        case 'yaxis':
+                            drawLine (this._left, this._bottom, this._left, this._top, bopts);
+                            break;
+                        case 'x2axis':
+                            drawLine (this._left, this._bottom, this._right, this._bottom, bopts);
+                            break;
+                        case 'y2axis':
+                            drawLine (this._right, this._bottom, this._right, this._top, bopts);
+                            break;
+                    }
+                }
+                for (var j=numticks; j>0; j--) {
+                    var t = ticks[j-1];
+                    if (t.show) {
+                        var pos = Math.round(axis.u2p(t.value)) + 0.5;
+                        switch (name) {
+                            case 'xaxis':
+                                // draw the grid line if we should
+                                if (t.showGridline && this.drawGridlines && ((!t.isMinorTick && axis.drawMajorGridlines) || (t.isMinorTick && axis.drawMinorGridlines)) ) {
+                                    drawLine(pos, this._top, pos, this._bottom);
+                                }
+                                // draw the mark
+                                if (t.showMark && t.mark && ((!t.isMinorTick && axis.drawMajorTickMarks) || (t.isMinorTick && axis.drawMinorTickMarks)) ) {
+                                    s = t.markSize;
+                                    m = t.mark;
+                                    var pos = Math.round(axis.u2p(t.value)) + 0.5;
+                                    switch (m) {
+                                        case 'outside':
+                                            b = this._bottom;
+                                            e = this._bottom+s;
+                                            break;
+                                        case 'inside':
+                                            b = this._bottom-s;
+                                            e = this._bottom;
+                                            break;
+                                        case 'cross':
+                                            b = this._bottom-s;
+                                            e = this._bottom+s;
+                                            break;
+                                        default:
+                                            b = this._bottom;
+                                            e = this._bottom+s;
+                                            break;
                                     }
-                                    
-                                    // draw the mark
-	                                if (t.showMark && t.mark) {
-                                        s = t.markSize;
-                                        m = t.mark;
-                                        var pos = Math.round(axis.u2p(t.value)) + 0.5;
-                                        switch (m) {
-                                            case 'outside':
-                                                b = this._bottom;
-                                                e = this._bottom+s;
-                                                break;
-                                            case 'inside':
-                                                b = this._bottom-s;
-                                                e = this._bottom;
-                                                break;
-                                            case 'cross':
-                                                b = this._bottom-s;
-                                                e = this._bottom+s;
-                                                break;
-                                            default:
-                                                b = this._bottom;
-                                                e = this._bottom+s;
-                                                break;
-                                        }
-                                        // draw the shadow
-                                        if (this.shadow) {
-                                            this.renderer.shadowRenderer.draw(ctx, [[pos,b],[pos,e]], {lineCap:'butt', lineWidth:this.gridLineWidth, offset:this.gridLineWidth*0.75, depth:2, fill:false, closePath:false});
-                                        }
-                                        // draw the line
-                                        drawLine(pos, b, pos, e);
+                                    // draw the shadow
+                                    if (this.shadow) {
+                                        this.renderer.shadowRenderer.draw(ctx, [[pos,b],[pos,e]], {lineCap:'butt', lineWidth:this.gridLineWidth, offset:this.gridLineWidth*0.75, depth:2, fill:false, closePath:false});
                                     }
-                                    break;
-                                case 'yaxis':
-                                    // draw the grid line
-                                    if (t.showGridline && this.drawGridlines) {
-                                        drawLine(this._right, pos, this._left, pos);
+                                    // draw the line
+                                    drawLine(pos, b, pos, e);
+                                }
+                                break;
+                            case 'yaxis':
+                                // draw the grid line
+                                if (t.showGridline && this.drawGridlines && ((!t.isMinorTick && axis.drawMajorGridlines) || (t.isMinorTick && axis.drawMinorGridlines)) ) {
+                                    drawLine(this._right, pos, this._left, pos);
+                                }
+                                // draw the mark
+                                if (t.showMark && t.mark && ((!t.isMinorTick && axis.drawMajorTickMarks) || (t.isMinorTick && axis.drawMinorTickMarks)) ) {
+                                    s = t.markSize;
+                                    m = t.mark;
+                                    var pos = Math.round(axis.u2p(t.value)) + 0.5;
+                                    switch (m) {
+                                        case 'outside':
+                                            b = this._left-s;
+                                            e = this._left;
+                                            break;
+                                        case 'inside':
+                                            b = this._left;
+                                            e = this._left+s;
+                                            break;
+                                        case 'cross':
+                                            b = this._left-s;
+                                            e = this._left+s;
+                                            break;
+                                        default:
+                                            b = this._left-s;
+                                            e = this._left;
+                                            break;
+                                            }
+                                    // draw the shadow
+                                    if (this.shadow) {
+                                        this.renderer.shadowRenderer.draw(ctx, [[b, pos], [e, pos]], {lineCap:'butt', lineWidth:this.gridLineWidth*1.5, offset:this.gridLineWidth*0.75, fill:false, closePath:false});
                                     }
-                                    // draw the mark
-                                    if (t.showMark && t.mark) {
-                                        s = t.markSize;
-                                        m = t.mark;
-                                        var pos = Math.round(axis.u2p(t.value)) + 0.5;
-                                        switch (m) {
-                                            case 'outside':
-                                                b = this._left-s;
-                                                e = this._left;
-                                                break;
-                                            case 'inside':
-                                                b = this._left;
-                                                e = this._left+s;
-                                                break;
-                                            case 'cross':
-                                                b = this._left-s;
-                                                e = this._left+s;
-                                                break;
-                                            default:
-                                                b = this._left-s;
-                                                e = this._left;
-                                                break;
-                                                }
-                                        // draw the shadow
-                                        if (this.shadow) {
-                                            this.renderer.shadowRenderer.draw(ctx, [[b, pos], [e, pos]], {lineCap:'butt', lineWidth:this.gridLineWidth*1.5, offset:this.gridLineWidth*0.75, fill:false, closePath:false});
-                                        }
-                                        drawLine(b, pos, e, pos, {strokeStyle:axis.borderColor});
+                                    drawLine(b, pos, e, pos, {strokeStyle:axis.borderColor});
+                                }
+                                break;
+                            case 'x2axis':
+                                // draw the grid line
+                                if (t.showGridline && this.drawGridlines && ((!t.isMinorTick && axis.drawMajorGridlines) || (t.isMinorTick && axis.drawMinorGridlines)) ) {
+                                    drawLine(pos, this._bottom, pos, this._top);
+                                }
+                                // draw the mark
+                                if (t.showMark && t.mark && ((!t.isMinorTick && axis.drawMajorTickMarks) || (t.isMinorTick && axis.drawMinorTickMarks)) ) {
+                                    s = t.markSize;
+                                    m = t.mark;
+                                    var pos = Math.round(axis.u2p(t.value)) + 0.5;
+                                    switch (m) {
+                                        case 'outside':
+                                            b = this._top-s;
+                                            e = this._top;
+                                            break;
+                                        case 'inside':
+                                            b = this._top;
+                                            e = this._top+s;
+                                            break;
+                                        case 'cross':
+                                            b = this._top-s;
+                                            e = this._top+s;
+                                            break;
+                                        default:
+                                            b = this._top-s;
+                                            e = this._top;
+                                            break;
+                                            }
+                                    // draw the shadow
+                                    if (this.shadow) {
+                                        this.renderer.shadowRenderer.draw(ctx, [[pos,b],[pos,e]], {lineCap:'butt', lineWidth:this.gridLineWidth, offset:this.gridLineWidth*0.75, depth:2, fill:false, closePath:false});
                                     }
-                                    break;
-                                case 'x2axis':
-                                    // draw the grid line
-                                    if (t.showGridline && this.drawGridlines) {
-                                        drawLine(pos, this._bottom, pos, this._top);
+                                    drawLine(pos, b, pos, e);
+                                }
+                                break;
+                            case 'y2axis':
+                                // draw the grid line
+                                if (t.showGridline && this.drawGridlines && ((!t.isMinorTick && axis.drawMajorGridlines) || (t.isMinorTick && axis.drawMinorGridlines)) ) {
+                                    drawLine(this._left, pos, this._right, pos);
+                                }
+                                // draw the mark
+                                if (t.showMark && t.mark && ((!t.isMinorTick && axis.drawMajorTickMarks) || (t.isMinorTick && axis.drawMinorTickMarks)) ) {
+                                    s = t.markSize;
+                                    m = t.mark;
+                                    var pos = Math.round(axis.u2p(t.value)) + 0.5;
+                                    switch (m) {
+                                        case 'outside':
+                                            b = this._right;
+                                            e = this._right+s;
+                                            break;
+                                        case 'inside':
+                                            b = this._right-s;
+                                            e = this._right;
+                                            break;
+                                        case 'cross':
+                                            b = this._right-s;
+                                            e = this._right+s;
+                                            break;
+                                        default:
+                                            b = this._right;
+                                            e = this._right+s;
+                                            break;
+                                            }
+                                    // draw the shadow
+                                    if (this.shadow) {
+                                        this.renderer.shadowRenderer.draw(ctx, [[b, pos], [e, pos]], {lineCap:'butt', lineWidth:this.gridLineWidth*1.5, offset:this.gridLineWidth*0.75, fill:false, closePath:false});
                                     }
-                                    // draw the mark
-                                    if (t.showMark && t.mark) {
-                                        s = t.markSize;
-                                        m = t.mark;
-                                        var pos = Math.round(axis.u2p(t.value)) + 0.5;
-                                        switch (m) {
-                                            case 'outside':
-                                                b = this._top-s;
-                                                e = this._top;
-                                                break;
-                                            case 'inside':
-                                                b = this._top;
-                                                e = this._top+s;
-                                                break;
-                                            case 'cross':
-                                                b = this._top-s;
-                                                e = this._top+s;
-                                                break;
-                                            default:
-                                                b = this._top-s;
-                                                e = this._top;
-                                                break;
-                                                }
-                                        // draw the shadow
-                                        if (this.shadow) {
-                                            this.renderer.shadowRenderer.draw(ctx, [[pos,b],[pos,e]], {lineCap:'butt', lineWidth:this.gridLineWidth, offset:this.gridLineWidth*0.75, depth:2, fill:false, closePath:false});
-                                        }
-                                        drawLine(pos, b, pos, e);
-                                    }
-                                    break;
-                                case 'y2axis':
-                                    // draw the grid line
-                                    if (t.showGridline && this.drawGridlines) {
-                                        drawLine(this._left, pos, this._right, pos);
-                                    }
-                                    // draw the mark
-                                    if (t.showMark && t.mark) {
-                                        s = t.markSize;
-                                        m = t.mark;
-                                        var pos = Math.round(axis.u2p(t.value)) + 0.5;
-                                        switch (m) {
-                                            case 'outside':
-                                                b = this._right;
-                                                e = this._right+s;
-                                                break;
-                                            case 'inside':
-                                                b = this._right-s;
-                                                e = this._right;
-                                                break;
-                                            case 'cross':
-                                                b = this._right-s;
-                                                e = this._right+s;
-                                                break;
-                                            default:
-                                                b = this._right;
-                                                e = this._right+s;
-                                                break;
-                                                }
-                                        // draw the shadow
-                                        if (this.shadow) {
-                                            this.renderer.shadowRenderer.draw(ctx, [[b, pos], [e, pos]], {lineCap:'butt', lineWidth:this.gridLineWidth*1.5, offset:this.gridLineWidth*0.75, fill:false, closePath:false});
-                                        }
-                                        drawLine(b, pos, e, pos, {strokeStyle:axis.borderColor});
-                                    }
-                                    break;
-                                default:
-                                    break;
-                            }
+                                    drawLine(b, pos, e, pos, {strokeStyle:axis.borderColor});
+                                }
+                                break;
+                            default:
+                                break;
                         }
+                    }
+                }
+                t = null;
+            }
+            axis = null;
+            ticks = null;
+        }
+        // Now draw grid lines for additional y axes
+        //////
+        // TO DO: handle yMidAxis
+        //////
+        ax = ['y3axis', 'y4axis', 'y5axis', 'y6axis', 'y7axis', 'y8axis', 'y9axis', 'yMidAxis'];
+        for (var i=7; i>0; i--) {
+            var axis = axes[ax[i-1]];
+            var ticks = axis._ticks;
+            if (axis.show) {
+                var tn = ticks[axis.numberTicks-1];
+                var t0 = ticks[0];
+                var left = axis.getLeft();
+                var points = [[left, tn.getTop() + tn.getHeight()/2], [left, t0.getTop() + t0.getHeight()/2 + 1.0]];
+                // draw the shadow
+                if (this.shadow) {
+                    this.renderer.shadowRenderer.draw(ctx, points, {lineCap:'butt', fill:false, closePath:false});
+                }
+                // draw the line
+                drawLine(points[0][0], points[0][1], points[1][0], points[1][1], {lineCap:'butt', strokeStyle:axis.borderColor, lineWidth:axis.borderWidth});
+                // draw the tick marks
+                for (var j=ticks.length; j>0; j--) {
+                    var t = ticks[j-1];
+                    s = t.markSize;
+                    m = t.mark;
+                    var pos = Math.round(axis.u2p(t.value)) + 0.5;
+                    if (t.showMark && t.mark) {
+                        switch (m) {
+                            case 'outside':
+                                b = left;
+                                e = left+s;
+                                break;
+                            case 'inside':
+                                b = left-s;
+                                e = left;
+                                break;
+                            case 'cross':
+                                b = left-s;
+                                e = left+s;
+                                break;
+                            default:
+                                b = left;
+                                e = left+s;
+                                break;
+                        }
+                        points = [[b,pos], [e,pos]];
+                        // draw the shadow
+                        if (this.shadow) {
+                            this.renderer.shadowRenderer.draw(ctx, points, {lineCap:'butt', lineWidth:this.gridLineWidth*1.5, offset:this.gridLineWidth*0.75, fill:false, closePath:false});
+                        }
+                        // draw the line
+                        drawLine(b, pos, e, pos, {strokeStyle:axis.borderColor});
                     }
                     t = null;
                 }
-                axis = null;
-                ticks = null;
+                t0 = null;
             }
-            // Now draw grid lines for additional y axes
-            ax = ['y3axis', 'y4axis', 'y5axis', 'y6axis', 'y7axis', 'y8axis', 'y9axis'];
-            for (var i=7; i>0; i--) {
-                var axis = axes[ax[i-1]];
-                var ticks = axis._ticks;
-                if (axis.show) {
-                    var tn = ticks[axis.numberTicks-1];
-                    var t0 = ticks[0];
-                    var left = axis.getLeft();
-                    var points = [[left, tn.getTop() + tn.getHeight()/2], [left, t0.getTop() + t0.getHeight()/2 + 1.0]];
-                    // draw the shadow
-                    if (this.shadow) {
-                        this.renderer.shadowRenderer.draw(ctx, points, {lineCap:'butt', fill:false, closePath:false});
-                    }
-                    // draw the line
-                    drawLine(points[0][0], points[0][1], points[1][0], points[1][1], {lineCap:'butt', strokeStyle:axis.borderColor, lineWidth:axis.borderWidth});
-                    // draw the tick marks
-                    for (var j=ticks.length; j>0; j--) {
-                        var t = ticks[j-1];
-                        s = t.markSize;
-                        m = t.mark;
-                        var pos = Math.round(axis.u2p(t.value)) + 0.5;
-                        if (t.showMark && t.mark) {
-                            switch (m) {
-                                case 'outside':
-                                    b = left;
-                                    e = left+s;
-                                    break;
-                                case 'inside':
-                                    b = left-s;
-                                    e = left;
-                                    break;
-                                case 'cross':
-                                    b = left-s;
-                                    e = left+s;
-                                    break;
-                                default:
-                                    b = left;
-                                    e = left+s;
-                                    break;
-                            }
-                            points = [[b,pos], [e,pos]];
-                            // draw the shadow
-                            if (this.shadow) {
-                                this.renderer.shadowRenderer.draw(ctx, points, {lineCap:'butt', lineWidth:this.gridLineWidth*1.5, offset:this.gridLineWidth*0.75, fill:false, closePath:false});
-                            }
-                            // draw the line
-                            drawLine(b, pos, e, pos, {strokeStyle:axis.borderColor});
-                        }
-                        t = null;
-                    }
-                    t0 = null;
-                }
-                axis = null;
-                ticks =  null;
-            }
-            
-            ctx.restore();
+            axis = null;
+            ticks =  null;
         }
+        
+        ctx.restore();
         
         function drawLine(bx, by, ex, ey, opts) {
             ctx.save();
@@ -3651,10 +4183,21 @@
     };
     
     $.jqplot.DivTitleRenderer.prototype.draw = function() {
+        // Memory Leaks patch
+        if (this._elem) {
+            this._elem.emptyForce();
+            this._elem = null;
+        }
+
         var r = this.renderer;
+        var elem = document.createElement('div');
+        this._elem = $(elem);
+        this._elem.addClass('jqplot-title');
+
         if (!this.text) {
             this.show = false;
-            this._elem = $('<div class="jqplot-title" style="height:0px;width:0px;"></div>');
+            this._elem.height(0);
+            this._elem.width(0);
         }
         else if (this.text) {
             var color;
@@ -3664,18 +4207,53 @@
             else if (this.textColor) {
                 color = this.textColor;
             }
+
             // don't trust that a stylesheet is present, set the position.
-            var styletext = 'position:absolute;top:0px;left:0px;';
-            styletext += (this._plotWidth) ? 'width:'+this._plotWidth+'px;' : '';
-            styletext += (this.fontSize) ? 'font-size:'+this.fontSize+';' : '';
-            styletext += (this.textAlign) ? 'text-align:'+this.textAlign+';' : 'text-align:center;';
-            styletext += (color) ? 'color:'+color+';' : '';
-            styletext += (this.paddingBottom) ? 'padding-bottom:'+this.paddingBottom+';' : '';
-            this._elem = $('<div class="jqplot-title" style="'+styletext+'">'+this.text+'</div>');
-            if (this.fontFamily) {
-                this._elem.css('font-family', this.fontFamily);
+            var styles = {position:'absolute', top:'0px', left:'0px'};
+
+            if (this._plotWidth) {
+                styles['width'] = this._plotWidth+'px';
             }
+            if (this.fontSize) {
+                styles['fontSize'] = this.fontSize;
+            }
+            if (typeof this.textAlign === 'string') {
+                styles['textAlign'] = this.textAlign;
+            }
+            else {
+                styles['textAlign'] = 'center';
+            }
+            if (color) {
+                styles['color'] = color;
+            }
+            if (this.paddingBottom) {
+                styles['paddingBottom'] = this.paddingBottom;
+            }
+            if (this.fontFamily) {
+                styles['fontFamily'] = this.fontFamily;
+            }
+
+            this._elem.css(styles);
+            if (this.escapeHtml) {
+                this._elem.text(this.text);
+            }
+            else {
+                this._elem.html(this.text);
+            }
+
+
+            // styletext += (this._plotWidth) ? 'width:'+this._plotWidth+'px;' : '';
+            // styletext += (this.fontSize) ? 'font-size:'+this.fontSize+';' : '';
+            // styletext += (this.textAlign) ? 'text-align:'+this.textAlign+';' : 'text-align:center;';
+            // styletext += (color) ? 'color:'+color+';' : '';
+            // styletext += (this.paddingBottom) ? 'padding-bottom:'+this.paddingBottom+';' : '';
+            // this._elem = $('<div class="jqplot-title" style="'+styletext+'">'+this.text+'</div>');
+            // if (this.fontFamily) {
+            //     this._elem.css('font-family', this.fontFamily);
+            // }
         }
+
+        elem = null;
         
         return this._elem;
     };
@@ -3684,6 +4262,116 @@
         // nothing to do here
     };
   
+
+    var dotlen = 0.1;
+
+    $.jqplot.LinePattern = function (ctx, pattern) {
+
+		var defaultLinePatterns = {
+			dotted: [ dotlen, $.jqplot.config.dotGapLength ],
+			dashed: [ $.jqplot.config.dashLength, $.jqplot.config.gapLength ],
+			solid: null
+		};   	
+
+        if (typeof pattern === 'string') {
+            if (pattern[0] === '.' || pattern[0] === '-') {
+                var s = pattern;
+                pattern = [];
+                for (var i=0, imax=s.length; i<imax; i++) {
+                    if (s[i] === '.') {
+                        pattern.push( dotlen );
+                    }
+                    else if (s[i] === '-') {
+                        pattern.push( $.jqplot.config.dashLength );
+                    }
+                    else {
+                        continue;
+                    }
+                    pattern.push( $.jqplot.config.gapLength );
+                }
+            }
+            else {
+                pattern = defaultLinePatterns[pattern];
+            }
+        }
+
+        if (!(pattern && pattern.length)) {
+            return ctx;
+        }
+
+        var patternIndex = 0;
+        var patternDistance = pattern[0];
+        var px = 0;
+        var py = 0;
+        var pathx0 = 0;
+        var pathy0 = 0;
+
+        var moveTo = function (x, y) {
+            ctx.moveTo( x, y );
+            px = x;
+            py = y;
+            pathx0 = x;
+            pathy0 = y;
+        };
+
+        var lineTo = function (x, y) {
+            var scale = ctx.lineWidth;
+            var dx = x - px;
+            var dy = y - py;
+            var dist = Math.sqrt(dx*dx+dy*dy);
+            if ((dist > 0) && (scale > 0)) {
+                dx /= dist;
+                dy /= dist;
+                while (true) {
+                    var dp = scale * patternDistance;
+                    if (dp < dist) {
+                        px += dp * dx;
+                        py += dp * dy;
+                        if ((patternIndex & 1) == 0) {
+                            ctx.lineTo( px, py );
+                        }
+                        else {
+                            ctx.moveTo( px, py );
+                        }
+                        dist -= dp;
+                        patternIndex++;
+                        if (patternIndex >= pattern.length) {
+                            patternIndex = 0;
+                        }
+                        patternDistance = pattern[patternIndex];
+                    }
+                    else {
+                        px = x;
+                        py = y;
+                        if ((patternIndex & 1) == 0) {
+                            ctx.lineTo( px, py );
+                        }
+                        else {
+                            ctx.moveTo( px, py );
+                        }
+                        patternDistance -= dist / scale;
+                        break;
+                    }
+                }
+            }
+        };
+
+        var beginPath = function () {
+            ctx.beginPath();
+        };
+
+        var closePath = function () {
+            lineTo( pathx0, pathy0 );
+        };
+
+        return {
+            moveTo: moveTo,
+            lineTo: lineTo,
+            beginPath: beginPath,
+            closePath: closePath
+        };
+    };
+
     // Class: $.jqplot.LineRenderer
     // The default line renderer for jqPlot, this class has no options beyond the <Series> class.
     // Draws series as a line.
@@ -3694,8 +4382,88 @@
     
     // called with scope of series.
     $.jqplot.LineRenderer.prototype.init = function(options, plot) {
+        // Group: Properties
+        //
         options = options || {};
         this._type='line';
+        // prop: smooth
+        // True to draw a smoothed (interpolated) line through the data points
+        // with automatically computed number of smoothing points.
+        // Set to an integer number > 2 to specify number of smoothing points
+        // to use between each data point.
+        this.renderer.smooth = false;  // true or a number > 2 for smoothing.
+        this.renderer.tension = null; // null to auto compute or a number typically > 6.  Fewer points requires higher tension.
+        // prop: constrainSmoothing
+        // True to use a more accurate smoothing algorithm that will
+        // not overshoot any data points.  False to allow overshoot but
+        // produce a smoother looking line.
+        this.renderer.constrainSmoothing = true;
+        // this is smoothed data in grid coordinates, like gridData
+        this.renderer._smoothedData = [];
+        // this is smoothed data in plot units (plot coordinates), like plotData.
+        this.renderer._smoothedPlotData = [];
+        this.renderer._hiBandGridData = [];
+        this.renderer._lowBandGridData = [];
+        this.renderer._hiBandSmoothedData = [];
+        this.renderer._lowBandSmoothedData = [];
+
+        // prop: bandData
+        // Data used to draw error bands or confidence intervals above/below a line.
+        //
+        // bandData can be input in 3 forms.  jqPlot will figure out which is the
+        // low band line and which is the high band line for all forms:
+        // 
+        // A 2 dimensional array like [[yl1, yl2, ...], [yu1, yu2, ...]] where
+        // [yl1, yl2, ...] are y values of the lower line and
+        // [yu1, yu2, ...] are y values of the upper line.
+        // In this case there must be the same number of y data points as data points
+        // in the series and the bands will inherit the x values of the series.
+        //
+        // A 2 dimensional array like [[[xl1, yl1], [xl2, yl2], ...], [[xh1, yh1], [xh2, yh2], ...]]
+        // where [xl1, yl1] are x,y data points for the lower line and
+        // [xh1, yh1] are x,y data points for the high line.
+        // x values do not have to correspond to the x values of the series and can
+        // be of any arbitrary length.
+        //
+        // Can be of form [[yl1, yu1], [yl2, yu2], [yl3, yu3], ...] where
+        // there must be 3 or more arrays and there must be the same number of arrays
+        // as there are data points in the series.  In this case, 
+        // [yl1, yu1] specifies the lower and upper y values for the 1st
+        // data point and so on.  The bands will inherit the x
+        // values from the series.
+        this.renderer.bandData = [];
+
+        // Group: bands
+        // Banding around line, e.g error bands or confidence intervals.
+        this.renderer.bands = {
+            // prop: show
+            // true to show the bands.  If bandData or interval is
+            // supplied, show will be set to true by default.
+            show: false,
+            hiData: [],
+            lowData: [],
+            // prop: color
+            // color of lines at top and bottom of bands [default: series color].
+            color: this.color,
+            // prop: showLines
+            // True to show lines at top and bottom of bands [default: false].
+            showLines: false,
+            // prop: fill
+            // True to fill area between bands [default: true].
+            fill: true,
+            // prop: fillColor
+            // css color spec for filled area.  [default: series color].
+            fillColor: null,
+            _min: null,
+            _max: null,
+            // prop: interval
+            // User specified interval above and below line for bands [default: '3%''].
+            // Can be a value like 3 or a string like '3%' 
+            // or an upper/lower array like [1, -2] or ['2%', '-1.5%']
+            interval: '3%'
+        };
+
+
         var lopts = {highlightMouseOver: options.highlightMouseOver, highlightMouseDown: options.highlightMouseDown, highlightColor: options.highlightColor};
         
         delete (options.highlightMouseOver);
@@ -3703,26 +4471,60 @@
         delete (options.highlightColor);
         
         $.extend(true, this.renderer, options);
+
+        this.renderer.options = options;
+
+        // if we are given some band data, and bands aren't explicity set to false in options, turn them on.
+        if (this.renderer.bandData.length > 1 && (!options.bands || options.bands.show == null)) {
+            this.renderer.bands.show = true;
+        }
+
+        // if we are given an interval, and bands aren't explicity set to false in options, turn them on.
+        else if (options.bands && options.bands.show == null && options.bands.interval != null) {
+            this.renderer.bands.show = true;
+        }
+
+        // if plot is filled, turn off bands.
+        if (this.fill) {
+            this.renderer.bands.show = false;
+        }
+
+        if (this.renderer.bands.show) {
+            this.renderer.initBands.call(this, this.renderer.options, plot);
+        }
+
+
+        // smoothing is not compatible with stacked lines, disable
+        if (this._stack) {
+            this.renderer.smooth = false;
+        }
+
         // set the shape renderer options
-        var opts = {lineJoin:'round', lineCap:'round', fill:this.fill, isarc:false, strokeStyle:this.color, fillStyle:this.fillColor, lineWidth:this.lineWidth, closePath:this.fill};
+        var opts = {lineJoin:this.lineJoin, lineCap:this.lineCap, fill:this.fill, isarc:false, strokeStyle:this.color, fillStyle:this.fillColor, lineWidth:this.lineWidth, linePattern:this.linePattern, closePath:this.fill};
         this.renderer.shapeRenderer.init(opts);
+
+        var shadow_offset = options.shadowOffset;
         // set the shadow renderer options
-        // scale the shadowOffset to the width of the line.
-        if (this.lineWidth > 2.5) {
-            var shadow_offset = this.shadowOffset* (1 + (Math.atan((this.lineWidth/2.5))/0.785398163 - 1)*0.6);
-            // var shadow_offset = this.shadowOffset;
+        if (shadow_offset == null) {
+            // scale the shadowOffset to the width of the line.
+            if (this.lineWidth > 2.5) {
+                shadow_offset = 1.25 * (1 + (Math.atan((this.lineWidth/2.5))/0.785398163 - 1)*0.6);
+                // var shadow_offset = this.shadowOffset;
+            }
+            // for skinny lines, don't make such a big shadow.
+            else {
+                shadow_offset = 1.25 * Math.atan((this.lineWidth/2.5))/0.785398163;
+            }
         }
-        // for skinny lines, don't make such a big shadow.
-        else {
-            var shadow_offset = this.shadowOffset*Math.atan((this.lineWidth/2.5))/0.785398163;
-        }
-        var sopts = {lineJoin:'round', lineCap:'round', fill:this.fill, isarc:false, angle:this.shadowAngle, offset:shadow_offset, alpha:this.shadowAlpha, depth:this.shadowDepth, lineWidth:this.lineWidth, closePath:this.fill};
+        
+        var sopts = {lineJoin:this.lineJoin, lineCap:this.lineCap, fill:this.fill, isarc:false, angle:this.shadowAngle, offset:shadow_offset, alpha:this.shadowAlpha, depth:this.shadowDepth, lineWidth:this.lineWidth, linePattern:this.linePattern, closePath:this.fill};
         this.renderer.shadowRenderer.init(sopts);
         this._areaPoints = [];
         this._boundingBox = [[],[]];
         
-        if (!this.isTrendline && this.fill) {
-        
+        if (!this.isTrendline && this.fill || this.renderer.bands.show) {
+            // Group: Properties
+            //        
             // prop: highlightMouseOver
             // True to highlight area on a filled plot when moused over.
             // This must be false to enable highlightMouseDown to highlight when clicking on an area on a filled plot.
@@ -3742,7 +4544,8 @@
             $.extend(true, this, {highlightMouseOver: lopts.highlightMouseOver, highlightMouseDown: lopts.highlightMouseDown, highlightColor: lopts.highlightColor});
             
             if (!this.highlightColor) {
-                this.highlightColor = $.jqplot.computeHighlightColors(this.fillColor);
+                var fc = (this.renderer.bands.show) ? this.renderer.bands.fillColor : this.fillColor;
+                this.highlightColor = $.jqplot.computeHighlightColors(fc);
             }
             // turn off (disable) the highlighter plugin
             if (this.highlighter) {
@@ -3762,8 +4565,448 @@
         }
 
     };
+
+    $.jqplot.LineRenderer.prototype.initBands = function(options, plot) {
+        // use bandData if no data specified in bands option
+        //var bd = this.renderer.bandData;
+        var bd = options.bandData || [];
+        var bands = this.renderer.bands;
+        bands.hiData = [];
+        bands.lowData = [];
+        var data = this.data;
+        bands._max = null;
+        bands._min = null;
+        // If 2 arrays, and each array greater than 2 elements, assume it is hi and low data bands of y values.
+        if (bd.length == 2) {
+            // Do we have an array of x,y values?
+            // like [[[1,1], [2,4], [3,3]], [[1,3], [2,6], [3,5]]]
+            if ($.isArray(bd[0][0])) {
+                // since an arbitrary array of points, spin through all of them to determine max and min lines.
+
+                var p;
+                var bdminidx = 0, bdmaxidx = 0;
+                for (var i = 0, l = bd[0].length; i<l; i++) {
+                    p = bd[0][i];
+                    if ((p[1] != null && p[1] > bands._max) || bands._max == null) {
+                        bands._max = p[1];
+                    }
+                    if ((p[1] != null && p[1] < bands._min) || bands._min == null) {
+                        bands._min = p[1];
+                    }
+                }
+                for (var i = 0, l = bd[1].length; i<l; i++) {
+                    p = bd[1][i];
+                    if ((p[1] != null && p[1] > bands._max) || bands._max == null) {
+                        bands._max = p[1];
+                        bdmaxidx = 1;
+                    }
+                    if ((p[1] != null && p[1] < bands._min) || bands._min == null) {
+                        bands._min = p[1];
+                        bdminidx = 1;
+                    }
+                }
+
+                if (bdmaxidx === bdminidx) {
+                    bands.show = false;
+                }
+
+                bands.hiData = bd[bdmaxidx];
+                bands.lowData = bd[bdminidx];
+            }
+            // else data is arrays of y values
+            // like [[1,4,3], [3,6,5]]
+            // must have same number of band data points as points in series
+            else if (bd[0].length === data.length && bd[1].length === data.length) {
+                var hi = (bd[0][0] > bd[1][0]) ? 0 : 1;
+                var low = (hi) ? 0 : 1;
+                for (var i=0, l=data.length; i < l; i++) {
+                    bands.hiData.push([data[i][0], bd[hi][i]]);
+                    bands.lowData.push([data[i][0], bd[low][i]]);
+                }
+            }
+
+            // we don't have proper data array, don't show bands.
+            else {
+                bands.show = false;
+            }
+        }
+
+        // if more than 2 arrays, have arrays of [ylow, yhi] values.
+        // note, can't distinguish case of [[ylow, yhi], [ylow, yhi]] from [[ylow, ylow], [yhi, yhi]]
+        // this is assumed to be of the latter form.
+        else if (bd.length > 2 && !$.isArray(bd[0][0])) {
+            var hi = (bd[0][0] > bd[0][1]) ? 0 : 1;
+            var low = (hi) ? 0 : 1;
+            for (var i=0, l=bd.length; i<l; i++) {
+                bands.hiData.push([data[i][0], bd[i][hi]]);
+                bands.lowData.push([data[i][0], bd[i][low]]);
+            }
+        }
+
+        // don't have proper data, auto calculate
+        else {
+            var intrv = bands.interval;
+            var a = null;
+            var b = null;
+            var afunc = null;
+            var bfunc = null;
+
+            if ($.isArray(intrv)) {
+                a = intrv[0];
+                b = intrv[1];
+            }
+            else {
+                a = intrv;
+            }
+
+            if (isNaN(a)) {
+                // we have a string
+                if (a.charAt(a.length - 1) === '%') {
+                    afunc = 'multiply';
+                    a = parseFloat(a)/100 + 1;
+                }
+            }
+
+            else {
+                a = parseFloat(a);
+                afunc = 'add';
+            }
+
+            if (b !== null && isNaN(b)) {
+                // we have a string
+                if (b.charAt(b.length - 1) === '%') {
+                    bfunc = 'multiply';
+                    b = parseFloat(b)/100 + 1;
+                }
+            }
+
+            else if (b !== null) {
+                b = parseFloat(b);
+                bfunc = 'add';
+            }
+
+            if (a !== null) {
+                if (b === null) {
+                    b = -a;
+                    bfunc = afunc;
+                    if (bfunc === 'multiply') {
+                        b += 2;
+                    }
+                }
+
+                // make sure a always applies to hi band.
+                if (a < b) {
+                    var temp = a;
+                    a = b;
+                    b = temp;
+                    temp = afunc;
+                    afunc = bfunc;
+                    bfunc = temp;
+                }
+
+                for (var i=0, l = data.length; i < l; i++) {
+                    switch (afunc) {
+                        case 'add':
+                            bands.hiData.push([data[i][0], data[i][1] + a]);
+                            break;
+                        case 'multiply':
+                            bands.hiData.push([data[i][0], data[i][1] * a]);
+                            break;
+                    }
+                    switch (bfunc) {
+                        case 'add':
+                            bands.lowData.push([data[i][0], data[i][1] + b]);
+                            break;
+                        case 'multiply':
+                            bands.lowData.push([data[i][0], data[i][1] * b]);
+                            break;
+                    }
+                }
+            }
+
+            else {
+                bands.show = false;
+            }
+        }
+
+        var hd = bands.hiData;
+        var ld = bands.lowData;
+        for (var i = 0, l = hd.length; i<l; i++) {
+            if ((hd[i][1] != null && hd[i][1] > bands._max) || bands._max == null) {
+                bands._max = hd[i][1];
+            }
+        }
+        for (var i = 0, l = ld.length; i<l; i++) {
+            if ((ld[i][1] != null && ld[i][1] < bands._min) || bands._min == null) {
+                bands._min = ld[i][1];
+            }
+        }
+
+        // one last check for proper data
+        // these don't apply any more since allowing arbitrary x,y values
+        // if (bands.hiData.length != bands.lowData.length) {
+        //     bands.show = false;
+        // }
+
+        // if (bands.hiData.length != this.data.length) {
+        //     bands.show = false;
+        // }
+
+        if (bands.fillColor === null) {
+            var c = $.jqplot.getColorComponents(bands.color);
+            // now adjust alpha to differentiate fill
+            c[3] = c[3] * 0.5;
+            bands.fillColor = 'rgba(' + c[0] +', '+ c[1] +', '+ c[2] +', '+ c[3] + ')';
+        }
+    };
+
+    function getSteps (d, f) {
+        return (3.4182054+f) * Math.pow(d, -0.3534992);
+    }
+
+    function computeSteps (d1, d2) {
+        var s = Math.sqrt(Math.pow((d2[0]- d1[0]), 2) + Math.pow ((d2[1] - d1[1]), 2));
+        return 5.7648 * Math.log(s) + 7.4456;
+    }
+
+    function tanh (x) {
+        var a = (Math.exp(2*x) - 1) / (Math.exp(2*x) + 1);
+        return a;
+    }
+
+    //////////
+    // computeConstrainedSmoothedData
+    // An implementation of the constrained cubic spline interpolation
+    // method as presented in:
+    //
+    // Kruger, CJC, Constrained Cubic Spine Interpolation for Chemical Engineering Applications
+    // http://www.korf.co.uk/spline.pdf
+    //
+    // The implementation below borrows heavily from the sample Visual Basic
+    // implementation by CJC Kruger found in http://www.korf.co.uk/spline.xls
+    //
+    /////////
+
+    // called with scope of series
+    function computeConstrainedSmoothedData (gd) {
+        var smooth = this.renderer.smooth;
+        var dim = this.canvas.getWidth();
+        var xp = this._xaxis.series_p2u;
+        var yp = this._yaxis.series_p2u; 
+        var steps =null;
+        var _steps = null;
+        var dist = gd.length/dim;
+        var _smoothedData = [];
+        var _smoothedPlotData = [];
+
+        if (!isNaN(parseFloat(smooth))) {
+            steps = parseFloat(smooth);
+        }
+        else {
+            steps = getSteps(dist, 0.5);
+        }
+
+        var yy = [];
+        var xx = [];
+
+        for (var i=0, l = gd.length; i<l; i++) {
+            yy.push(gd[i][1]);
+            xx.push(gd[i][0]);
+        }
+
+        function dxx(x1, x0) {
+            if (x1 - x0 == 0) {
+                return Math.pow(10,10);
+            }
+            else {
+                return x1 - x0;
+            }
+        }
+
+        var A, B, C, D;
+        // loop through each line segment.  Have # points - 1 line segments.  Nmber segments starting at 1.
+        var nmax = gd.length - 1;
+        for (var num = 1, gdl = gd.length; num<gdl; num++) {
+            var gxx = [];
+            var ggxx = [];
+            // point at each end of segment.
+            for (var j = 0; j < 2; j++) {
+                var i = num - 1 + j; // point number, 0 to # points.
+
+                if (i == 0 || i == nmax) {
+                    gxx[j] = Math.pow(10, 10);
+                }
+                else if (yy[i+1] - yy[i] == 0 || yy[i] - yy[i-1] == 0) {
+                    gxx[j] = 0;
+                }
+                else if (((xx[i+1] - xx[i]) / (yy[i+1] - yy[i]) + (xx[i] - xx[i-1]) / (yy[i] - yy[i-1])) == 0 ) {
+                    gxx[j] = 0;
+                }
+                else if ( (yy[i+1] - yy[i]) * (yy[i] - yy[i-1]) < 0 ) {
+                    gxx[j] = 0;
+                }
+
+                else {
+                    gxx[j] = 2 / (dxx(xx[i + 1], xx[i]) / (yy[i + 1] - yy[i]) + dxx(xx[i], xx[i - 1]) / (yy[i] - yy[i - 1]));
+                }
+            }
+
+            // Reset first derivative (slope) at first and last point
+            if (num == 1) {
+                // First point has 0 2nd derivative
+                gxx[0] = 3 / 2 * (yy[1] - yy[0]) / dxx(xx[1], xx[0]) - gxx[1] / 2;
+            }
+            else if (num == nmax) {
+                // Last point has 0 2nd derivative
+                gxx[1] = 3 / 2 * (yy[nmax] - yy[nmax - 1]) / dxx(xx[nmax], xx[nmax - 1]) - gxx[0] / 2;
+            }   
+
+            // Calc second derivative at points
+            ggxx[0] = -2 * (gxx[1] + 2 * gxx[0]) / dxx(xx[num], xx[num - 1]) + 6 * (yy[num] - yy[num - 1]) / Math.pow(dxx(xx[num], xx[num - 1]), 2);
+            ggxx[1] = 2 * (2 * gxx[1] + gxx[0]) / dxx(xx[num], xx[num - 1]) - 6 * (yy[num] - yy[num - 1]) / Math.pow(dxx(xx[num], xx[num - 1]), 2);
+
+            // Calc constants for cubic interpolation
+            D = 1 / 6 * (ggxx[1] - ggxx[0]) / dxx(xx[num], xx[num - 1]);
+            C = 1 / 2 * (xx[num] * ggxx[0] - xx[num - 1] * ggxx[1]) / dxx(xx[num], xx[num - 1]);
+            B = (yy[num] - yy[num - 1] - C * (Math.pow(xx[num], 2) - Math.pow(xx[num - 1], 2)) - D * (Math.pow(xx[num], 3) - Math.pow(xx[num - 1], 3))) / dxx(xx[num], xx[num - 1]);
+            A = yy[num - 1] - B * xx[num - 1] - C * Math.pow(xx[num - 1], 2) - D * Math.pow(xx[num - 1], 3);
+
+            var increment = (xx[num] - xx[num - 1]) / steps;
+            var temp, tempx;
+
+            for (var j = 0, l = steps; j < l; j++) {
+                temp = [];
+                tempx = xx[num - 1] + j * increment;
+                temp.push(tempx);
+                temp.push(A + B * tempx + C * Math.pow(tempx, 2) + D * Math.pow(tempx, 3));
+                _smoothedData.push(temp);
+                _smoothedPlotData.push([xp(temp[0]), yp(temp[1])]);
+            }
+        }
+
+        _smoothedData.push(gd[i]);
+        _smoothedPlotData.push([xp(gd[i][0]), yp(gd[i][1])]);
+
+        return [_smoothedData, _smoothedPlotData];
+    }
+
+    ///////
+    // computeHermiteSmoothedData
+    // A hermite spline smoothing of the plot data.
+    // This implementation is derived from the one posted
+    // by krypin on the jqplot-users mailing list:
+    //
+    // http://groups.google.com/group/jqplot-users/browse_thread/thread/748be6a445723cea?pli=1
+    //
+    // with a blog post:
+    //
+    // http://blog.statscollector.com/a-plugin-renderer-for-jqplot-to-draw-a-hermite-spline/
+    //
+    // and download of the original plugin:
+    //
+    // http://blog.statscollector.com/wp-content/uploads/2010/02/jqplot.hermiteSplineRenderer.js
+    //////////
+
+    // called with scope of series
+    function computeHermiteSmoothedData (gd) {
+        var smooth = this.renderer.smooth;
+        var tension = this.renderer.tension;
+        var dim = this.canvas.getWidth();
+        var xp = this._xaxis.series_p2u;
+        var yp = this._yaxis.series_p2u; 
+        var steps =null;
+        var _steps = null;
+        var a = null;
+        var a1 = null;
+        var a2 = null;
+        var slope = null;
+        var slope2 = null;
+        var temp = null;
+        var t, s, h1, h2, h3, h4;
+        var TiX, TiY, Ti1X, Ti1Y;
+        var pX, pY, p;
+        var sd = [];
+        var spd = [];
+        var dist = gd.length/dim;
+        var min, max, stretch, scale, shift;
+        var _smoothedData = [];
+        var _smoothedPlotData = [];
+        if (!isNaN(parseFloat(smooth))) {
+            steps = parseFloat(smooth);
+        }
+        else {
+            steps = getSteps(dist, 0.5);
+        }
+        if (!isNaN(parseFloat(tension))) {
+            tension = parseFloat(tension);
+        }
+
+        for (var i=0, l = gd.length-1; i < l; i++) {
+
+            if (tension === null) {
+                slope = Math.abs((gd[i+1][1] - gd[i][1]) / (gd[i+1][0] - gd[i][0]));
+
+                min = 0.3;
+                max = 0.6;
+                stretch = (max - min)/2.0;
+                scale = 2.5;
+                shift = -1.4;
+
+                temp = slope/scale + shift;
+
+                a1 = stretch * tanh(temp) - stretch * tanh(shift) + min;
+
+                // if have both left and right line segments, will use  minimum tension. 
+                if (i > 0) {
+                    slope2 = Math.abs((gd[i][1] - gd[i-1][1]) / (gd[i][0] - gd[i-1][0]));
+                }
+                temp = slope2/scale + shift;
+
+                a2 = stretch * tanh(temp) - stretch * tanh(shift) + min;
+
+                a = (a1 + a2)/2.0;
+
+            }
+            else {
+                a = tension;
+            }
+            for (t=0; t < steps; t++) {
+                s = t / steps;
+                h1 = (1 + 2*s)*Math.pow((1-s),2);
+                h2 = s*Math.pow((1-s),2);
+                h3 = Math.pow(s,2)*(3-2*s);
+                h4 = Math.pow(s,2)*(s-1);     
+                
+                if (gd[i-1]) {  
+                    TiX = a * (gd[i+1][0] - gd[i-1][0]); 
+                    TiY = a * (gd[i+1][1] - gd[i-1][1]);
+                } else {
+                    TiX = a * (gd[i+1][0] - gd[i][0]); 
+                    TiY = a * (gd[i+1][1] - gd[i][1]);                                  
+                }
+                if (gd[i+2]) {  
+                    Ti1X = a * (gd[i+2][0] - gd[i][0]); 
+                    Ti1Y = a * (gd[i+2][1] - gd[i][1]);
+                } else {
+                    Ti1X = a * (gd[i+1][0] - gd[i][0]); 
+                    Ti1Y = a * (gd[i+1][1] - gd[i][1]);                                 
+                }
+                
+                pX = h1*gd[i][0] + h3*gd[i+1][0] + h2*TiX + h4*Ti1X;
+                pY = h1*gd[i][1] + h3*gd[i+1][1] + h2*TiY + h4*Ti1Y;
+                p = [pX, pY];
+
+                _smoothedData.push(p);
+                _smoothedPlotData.push([xp(pX), yp(pY)]);
+            }
+        }
+        _smoothedData.push(gd[l]);
+        _smoothedPlotData.push([xp(gd[l][0]), yp(gd[l][1])]);
+
+        return [_smoothedData, _smoothedPlotData];
+    }
     
-    // Method: setGridData
+    // setGridData
     // converts the user data values to grid coordinates and stores them
     // in the gridData array.
     // Called with scope of a series.
@@ -3775,16 +5018,26 @@
         var pdata = this._prevPlotData;
         this.gridData = [];
         this._prevGridData = [];
-        for (var i=0; i<this.data.length; i++) {
+        this.renderer._smoothedData = [];
+        this.renderer._smoothedPlotData = [];
+        this.renderer._hiBandGridData = [];
+        this.renderer._lowBandGridData = [];
+        this.renderer._hiBandSmoothedData = [];
+        this.renderer._lowBandSmoothedData = [];
+        var bands = this.renderer.bands;
+        var hasNull = false;
+        for (var i=0, l=this.data.length; i < l; i++) {
             // if not a line series or if no nulls in data, push the converted point onto the array.
             if (data[i][0] != null && data[i][1] != null) {
                 this.gridData.push([xp.call(this._xaxis, data[i][0]), yp.call(this._yaxis, data[i][1])]);
             }
             // else if there is a null, preserve it.
             else if (data[i][0] == null) {
+                hasNull = true;
                 this.gridData.push([null, yp.call(this._yaxis, data[i][1])]);
             }
             else if (data[i][1] == null) {
+                hasNull = true;
                 this.gridData.push([xp.call(this._xaxis, data[i][0]), null]);
             }
             // if not a line series or if no nulls in data, push the converted point onto the array.
@@ -3799,9 +5052,59 @@
                 this._prevGridData.push([xp.call(this._xaxis, pdata[i][0]), null]);
             }
         }
+
+        // don't do smoothing or bands on broken lines.
+        if (hasNull) {
+            this.renderer.smooth = false;
+            if (this._type === 'line') {
+                bands.show = false;
+            }
+        }
+
+        if (this._type === 'line' && bands.show) {
+            for (var i=0, l=bands.hiData.length; i<l; i++) {
+                this.renderer._hiBandGridData.push([xp.call(this._xaxis, bands.hiData[i][0]), yp.call(this._yaxis, bands.hiData[i][1])]);
+            }
+            for (var i=0, l=bands.lowData.length; i<l; i++) {
+                this.renderer._lowBandGridData.push([xp.call(this._xaxis, bands.lowData[i][0]), yp.call(this._yaxis, bands.lowData[i][1])]);
+            }
+        }
+
+        // calculate smoothed data if enough points and no nulls
+        if (this._type === 'line' && this.renderer.smooth && this.gridData.length > 2) {
+            var ret;
+            if (this.renderer.constrainSmoothing) {
+                ret = computeConstrainedSmoothedData.call(this, this.gridData);
+                this.renderer._smoothedData = ret[0];
+                this.renderer._smoothedPlotData = ret[1];
+
+                if (bands.show) {
+                    ret = computeConstrainedSmoothedData.call(this, this.renderer._hiBandGridData);
+                    this.renderer._hiBandSmoothedData = ret[0];
+                    ret = computeConstrainedSmoothedData.call(this, this.renderer._lowBandGridData);
+                    this.renderer._lowBandSmoothedData = ret[0];
+                }
+
+                ret = null;
+            }
+            else {
+                ret = computeHermiteSmoothedData.call(this, this.gridData);
+                this.renderer._smoothedData = ret[0];
+                this.renderer._smoothedPlotData = ret[1];
+
+                if (bands.show) {
+                    ret = computeHermiteSmoothedData.call(this, this.renderer._hiBandGridData);
+                    this.renderer._hiBandSmoothedData = ret[0];
+                    ret = computeHermiteSmoothedData.call(this, this.renderer._lowBandGridData);
+                    this.renderer._lowBandSmoothedData = ret[0];
+                }
+
+                ret = null;
+            }
+        }
     };
     
-    // Method: makeGridData
+    // makeGridData
     // converts any arbitrary data values to grid coordinates and
     // returns them.  This method exists so that plugins can use a series'
     // linerenderer to generate grid data points without overwriting the
@@ -3813,6 +5116,14 @@
         var yp = this._yaxis.series_u2p;
         var gd = [];
         var pgd = [];
+        this.renderer._smoothedData = [];
+        this.renderer._smoothedPlotData = [];
+        this.renderer._hiBandGridData = [];
+        this.renderer._lowBandGridData = [];
+        this.renderer._hiBandSmoothedData = [];
+        this.renderer._lowBandSmoothedData = [];
+        var bands = this.renderer.bands;
+        var hasNull = false;
         for (var i=0; i<data.length; i++) {
             // if not a line series or if no nulls in data, push the converted point onto the array.
             if (data[i][0] != null && data[i][1] != null) {
@@ -3820,10 +5131,61 @@
             }
             // else if there is a null, preserve it.
             else if (data[i][0] == null) {
+                hasNull = true;
                 gd.push([null, yp.call(this._yaxis, data[i][1])]);
             }
             else if (data[i][1] == null) {
+                hasNull = true;
                 gd.push([xp.call(this._xaxis, data[i][0]), null]);
+            }
+        }
+
+        // don't do smoothing or bands on broken lines.
+        if (hasNull) {
+            this.renderer.smooth = false;
+            if (this._type === 'line') {
+                bands.show = false;
+            }
+        }
+
+        if (this._type === 'line' && bands.show) {
+            for (var i=0, l=bands.hiData.length; i<l; i++) {
+                this.renderer._hiBandGridData.push([xp.call(this._xaxis, bands.hiData[i][0]), yp.call(this._yaxis, bands.hiData[i][1])]);
+            }
+            for (var i=0, l=bands.lowData.length; i<l; i++) {
+                this.renderer._lowBandGridData.push([xp.call(this._xaxis, bands.lowData[i][0]), yp.call(this._yaxis, bands.lowData[i][1])]);
+            }
+        }
+
+        if (this._type === 'line' && this.renderer.smooth && gd.length > 2) {
+            var ret;
+            if (this.renderer.constrainSmoothing) {
+                ret = computeConstrainedSmoothedData.call(this, gd);
+                this.renderer._smoothedData = ret[0];
+                this.renderer._smoothedPlotData = ret[1];
+
+                if (bands.show) {
+                    ret = computeConstrainedSmoothedData.call(this, this.renderer._hiBandGridData);
+                    this.renderer._hiBandSmoothedData = ret[0];
+                    ret = computeConstrainedSmoothedData.call(this, this.renderer._lowBandGridData);
+                    this.renderer._lowBandSmoothedData = ret[0];
+                }
+
+                ret = null;
+            }
+            else {
+                ret = computeHermiteSmoothedData.call(this, gd);
+                this.renderer._smoothedData = ret[0];
+                this.renderer._smoothedPlotData = ret[1];
+
+                if (bands.show) {
+                    ret = computeHermiteSmoothedData.call(this, this.renderer._hiBandGridData);
+                    this.renderer._hiBandSmoothedData = ret[0];
+                    ret = computeHermiteSmoothedData.call(this, this.renderer._lowBandGridData);
+                    this.renderer._lowBandSmoothedData = ret[0];
+                }
+
+                ret = null;
             }
         }
         return gd;
@@ -3831,9 +5193,10 @@
     
 
     // called within scope of series.
-    $.jqplot.LineRenderer.prototype.draw = function(ctx, gd, options) {
+    $.jqplot.LineRenderer.prototype.draw = function(ctx, gd, options, plot) {
         var i;
-        var opts = (options != undefined) ? options : {};
+        // get a copy of the options, so we don't modify the original object.
+        var opts = $.extend(true, {}, options);
         var shadow = (opts.shadow != undefined) ? opts.shadow : this.shadow;
         var showLine = (opts.showLine != undefined) ? opts.showLine : this.showLine;
         var fill = (opts.fill != undefined) ? opts.fill : this.fill;
@@ -3844,10 +5207,9 @@
             if (showLine) {
                 // if we fill, we'll have to add points to close the curve.
                 if (fill) {
-                    if (this.fillToZero) {
+                    if (this.fillToZero) { 
                         // have to break line up into shapes at axis crossings
-                        var negativeColors = new $.jqplot.ColorGenerator(this.negativeSeriesColors);
-                        var negativeColor = negativeColors.get(this.index);
+                        var negativeColor = this.negativeColor;
                         if (! this.useNegativeColors) {
                             negativeColor = opts.fillStyle;
                         }
@@ -3862,9 +5224,12 @@
                         if (this.index == 0 || !this._stack) {
                         
                             var tempgd = [];
+                            var pd = (this.renderer.smooth) ? this.renderer._smoothedPlotData : this._plotData;
                             this._areaPoints = [];
                             var pyzero = this._yaxis.series_u2p(this.fillToValue);
                             var pxzero = this._xaxis.series_u2p(this.fillToValue);
+
+                            opts.closePath = true;
                             
                             if (this.fillAxis == 'y') {
                                 tempgd.push([gd[0][0], pyzero]);
@@ -3874,8 +5239,8 @@
                                     tempgd.push(gd[i]);
                                     this._areaPoints.push(gd[i]);
                                     // do we have an axis crossing?
-                                    if (this._plotData[i][1] * this._plotData[i+1][1] < 0) {
-                                        if (this._plotData[i][1] < 0) {
+                                    if (pd[i][1] * pd[i+1][1] < 0) {
+                                        if (pd[i][1] < 0) {
                                             isnegative = true;
                                             opts.fillStyle = negativeColor;
                                         }
@@ -3897,7 +5262,7 @@
                                         // this._areaPoints = [[xintercept, pyzero]];
                                     }   
                                 }
-                                if (this._plotData[gd.length-1][1] < 0) {
+                                if (pd[gd.length-1][1] < 0) {
                                     isnegative = true;
                                     opts.fillStyle = negativeColor;
                                 }
@@ -3910,7 +5275,7 @@
                                 tempgd.push([gd[gd.length-1][0], pyzero]); 
                                 this._areaPoints.push([gd[gd.length-1][0], pyzero]); 
                             }
-                            // now draw this shape and shadow.
+                            // now draw the last area.
                             if (shadow) {
                                 this.renderer.shadowRenderer.draw(ctx, tempgd, opts);
                             }
@@ -3979,6 +5344,9 @@
                         // }
                         // now draw the markers
                         if (this.markerRenderer.show) {
+                            if (this.renderer.smooth) {
+                                fasgd = this.gridData;
+                            }
                             for (i=0; i<fasgd.length; i++) {
                                 this.markerRenderer.draw(fasgd[i][0], fasgd[i][1], ctx, opts.markerOptions);
                             }
@@ -3986,6 +5354,32 @@
                     }
                 }
                 else {
+
+                    if (this.renderer.bands.show) {
+                        var bdat;
+                        var bopts = $.extend(true, {}, opts);
+                        if (this.renderer.bands.showLines) {
+                            bdat = (this.renderer.smooth) ? this.renderer._hiBandSmoothedData : this.renderer._hiBandGridData;
+                            this.renderer.shapeRenderer.draw(ctx, bdat, opts);
+                            bdat = (this.renderer.smooth) ? this.renderer._lowBandSmoothedData : this.renderer._lowBandGridData;
+                            this.renderer.shapeRenderer.draw(ctx, bdat, bopts);
+                        }
+
+                        if (this.renderer.bands.fill) {
+                            if (this.renderer.smooth) {
+                                bdat = this.renderer._hiBandSmoothedData.concat(this.renderer._lowBandSmoothedData.reverse());
+                            }
+                            else {
+                                bdat = this.renderer._hiBandGridData.concat(this.renderer._lowBandGridData.reverse());
+                            }
+                            this._areaPoints = bdat;
+                            bopts.closePath = true;
+                            bopts.fill = true;
+                            bopts.fillStyle = this.renderer.bands.fillColor;
+                            this.renderer.shapeRenderer.draw(ctx, bdat, bopts);
+                        }
+                    }
+
                     if (shadow) {
                         this.renderer.shadowRenderer.draw(ctx, gd, opts);
                     }
@@ -4010,10 +5404,19 @@
                     ymin = p[1];
                 }
             }
+
+            if (this.type === 'line' && this.renderer.bands.show) {
+                ymax = this._yaxis.series_u2p(this.renderer.bands._min);
+                ymin = this._yaxis.series_u2p(this.renderer.bands._max);
+            }
+
             this._boundingBox = [[xmin, ymax], [xmax, ymin]];
         
             // now draw the markers
             if (this.markerRenderer.show && !fill) {
+                if (this.renderer.smooth) {
+                    gd = this.gridData;
+                }
                 for (i=0; i<gd.length; i++) {
                     if (gd[i][0] != null && gd[i][1] != null) {
                         this.markerRenderer.draw(gd[i][0], gd[i][1], ctx, opts.markerOptions);
@@ -4040,18 +5443,24 @@
                 }
             }
         }
-        this.target.bind('mouseout', {plot:this}, function (ev) { unhighlight(ev.data.plot); });
     }  
     
     // called within context of plot
     // create a canvas which we can draw on.
     // insert it before the eventCanvas, so eventCanvas will still capture events.
     function postPlotDraw() {
+        // Memory Leaks patch    
+        if (this.plugins.lineRenderer && this.plugins.lineRenderer.highlightCanvas) {
+          this.plugins.lineRenderer.highlightCanvas.resetCanvas();
+          this.plugins.lineRenderer.highlightCanvas = null;
+        }
+        
         this.plugins.lineRenderer.highlightedSeriesIndex = null;
         this.plugins.lineRenderer.highlightCanvas = new $.jqplot.GenericCanvas();
         
-        this.eventCanvas._elem.before(this.plugins.lineRenderer.highlightCanvas.createElement(this._gridPadding, 'jqplot-lineRenderer-highlight-canvas', this._plotDimensions));
+        this.eventCanvas._elem.before(this.plugins.lineRenderer.highlightCanvas.createElement(this._gridPadding, 'jqplot-lineRenderer-highlight-canvas', this._plotDimensions, this));
         this.plugins.lineRenderer.highlightCanvas.setContext();
+        this.eventCanvas._elem.bind('mouseleave', {plot:this}, function (ev) { unhighlight(ev.data.plot); });
     } 
     
     function highlight (plot, sidx, pidx, points) {
@@ -4061,6 +5470,10 @@
         s._highlightedPoint = pidx;
         plot.plugins.lineRenderer.highlightedSeriesIndex = sidx;
         var opts = {fillStyle: s.highlightColor};
+        if (s.type === 'line' && s.renderer.bands.show) {
+            opts.fill = true;
+            opts.closePath = true;
+        }
         s.renderer.shapeRenderer.draw(canvas._ctx, points, opts);
         canvas = null;
     }
@@ -4147,43 +5560,87 @@
     
     // class: $.jqplot.LinearAxisRenderer
     // The default jqPlot axis renderer, creating a numeric axis.
-    // The renderer has no additional options beyond the <Axis> object.
     $.jqplot.LinearAxisRenderer = function() {
     };
     
     // called with scope of axis object.
     $.jqplot.LinearAxisRenderer.prototype.init = function(options){
-		// prop: breakPoints
-		// EXPERIMENTAL!! Use at your own risk!
-		// Works only with linear axes and the default tick renderer.
-		// Array of [start, stop] points to create a broken axis.
-		// Broken axes have a "jump" in them, which is an immediate 
-		// transition from a smaller value to a larger value.
-		// Currently, axis ticks MUST be manually assigned if using breakPoints
-		// by using the axis ticks array option.
-		this.breakPoints = null;
-		// prop: breakTickLabel
-		// Label to use at the axis break if breakPoints are specified.
-		this.breakTickLabel = "&asymp;";
+        // prop: breakPoints
+        // EXPERIMENTAL!! Use at your own risk!
+        // Works only with linear axes and the default tick renderer.
+        // Array of [start, stop] points to create a broken axis.
+        // Broken axes have a "jump" in them, which is an immediate 
+        // transition from a smaller value to a larger value.
+        // Currently, axis ticks MUST be manually assigned if using breakPoints
+        // by using the axis ticks array option.
+        this.breakPoints = null;
+        // prop: breakTickLabel
+        // Label to use at the axis break if breakPoints are specified.
+        this.breakTickLabel = "&asymp;";
+        // prop: drawBaseline
+        // True to draw the axis baseline.
+        this.drawBaseline = true;
+        // prop: baselineWidth
+        // width of the baseline in pixels.
+        this.baselineWidth = null;
+        // prop: baselineColor
+        // CSS color spec for the baseline.
+        this.baselineColor = null;
+        // prop: forceTickAt0
+        // This will ensure that there is always a tick mark at 0.
+        // If data range is strictly positive or negative,
+        // this will force 0 to be inside the axis bounds unless
+        // the appropriate axis pad (pad, padMin or padMax) is set
+        // to 0, then this will force an axis min or max value at 0.
+        // This has know effect when any of the following options
+        // are set:  autoscale, min, max, numberTicks or tickInterval.
+        this.forceTickAt0 = false;
+        // prop: forceTickAt100
+        // This will ensure that there is always a tick mark at 100.
+        // If data range is strictly above or below 100,
+        // this will force 100 to be inside the axis bounds unless
+        // the appropriate axis pad (pad, padMin or padMax) is set
+        // to 0, then this will force an axis min or max value at 100.
+        // This has know effect when any of the following options
+        // are set:  autoscale, min, max, numberTicks or tickInterval.
+        this.forceTickAt100 = false;
+        // prop: tickInset
+        // Controls the amount to inset the first and last ticks from 
+        // the edges of the grid, in multiples of the tick interval.
+        // 0 is no inset, 0.5 is one half a tick interval, 1 is a full
+        // tick interval, etc.
+        this.tickInset = 0;
+        // prop: minorTicks
+        // Number of ticks to add between "major" ticks.
+        // Major ticks are ticks supplied by user or auto computed.
+        // Minor ticks cannot be created by user.
+        this.minorTicks = 0;
+        this.alignTicks = false;
+        this._autoFormatString = '';
+        this._overrideFormatString = false;
+        this._scalefact = 1.0;
         $.extend(true, this, options);
-		if (this.breakPoints) {
-			if (!$.isArray(this.breakPoints)) {
-				this.breakPoints = null;
-			}
-			else if (this.breakPoints.length < 2 || this.breakPoints[1] <= this.breakPoints[0]) {
-				this.breakPoints = null;
-			}
-		}
-		this.resetDataBounds();
+        if (this.breakPoints) {
+            if (!$.isArray(this.breakPoints)) {
+                this.breakPoints = null;
+            }
+            else if (this.breakPoints.length < 2 || this.breakPoints[1] <= this.breakPoints[0]) {
+                this.breakPoints = null;
+            }
+        }
+        if (this.numberTicks != null && this.numberTicks < 2) {
+            this.numberTicks = 2;
+        }
+        this.resetDataBounds();
     };
     
     // called with scope of axis
-    $.jqplot.LinearAxisRenderer.prototype.draw = function(ctx) {
+    $.jqplot.LinearAxisRenderer.prototype.draw = function(ctx, plot) {
         if (this.show) {
             // populate the axis label and value properties.
             // createTicks is a method on the renderer, but
             // call it within the scope of the axis.
-            this.renderer.createTicks.call(this);
+            this.renderer.createTicks.call(this, plot);
             // fill a div with axes labels in the right direction.
             // Need to pregenerate each axis to get it's bounds and
             // position it and the labels correctly on the plot.
@@ -4191,10 +5648,16 @@
             var temp;
             // Added for theming.
             if (this._elem) {
-                this._elem.empty();
+                // Memory Leaks patch
+                //this._elem.empty();
+                this._elem.emptyForce();
+                this._elem = null;
             }
             
-            this._elem = $('<div class="jqplot-axis jqplot-'+this.name+'" style="position:absolute;"></div>');
+            this._elem = $(document.createElement('div'));
+            this._elem.addClass('jqplot-axis jqplot-'+this.name);
+            this._elem.css('position', 'absolute');
+
             
             if (this.name == 'xaxis' || this.name == 'x2axis') {
                 this._elem.width(this._plotDimensions.width);
@@ -4206,31 +5669,37 @@
             // create a _label object.
             this.labelOptions.axis = this.name;
             this._label = new this.labelRenderer(this.labelOptions);
-            var elem;
             if (this._label.show) {
-                elem = this._label.draw(ctx);
+                var elem = this._label.draw(ctx, plot);
                 elem.appendTo(this._elem);
+                elem = null;
             }
     
             var t = this._ticks;
+            var tick;
             for (var i=0; i<t.length; i++) {
-                var tick = t[i];
+                tick = t[i];
                 if (tick.show && tick.showLabel && (!tick.isMinorTick || this.showMinorTicks)) {
-                    elem = tick.draw(ctx);
-                    elem.appendTo(this._elem);
+                    this._elem.append(tick.draw(ctx, plot));
                 }
             }
-            elem = null;
+            tick = null;
+            t = null;
         }
         return this._elem;
     };
     
     // called with scope of an axis
     $.jqplot.LinearAxisRenderer.prototype.reset = function() {
-        this.min = this._min;
-        this.max = this._max;
-        this.tickInterval = this._tickInterval;
-        this.numberTicks = this._numberTicks;
+        this.min = this._options.min;
+        this.max = this._options.max;
+        this.tickInterval = this._options.tickInterval;
+        this.numberTicks = this._options.numberTicks;
+        this._autoFormatString = '';
+        if (this._overrideFormatString && this.tickOptions && this.tickOptions.formatString) {
+            this.tickOptions.formatString = '';
+        }
+
         // this._ticks = this.__ticks;
     };
     
@@ -4243,8 +5712,9 @@
         var lshow = (this._label == null) ? false : this._label.show;
         if (this.show) {
             var t = this._ticks;
+            var tick;
             for (var i=0; i<t.length; i++) {
-                var tick = t[i];
+                tick = t[i];
                 if (!tick._breakTick && tick.show && tick.showLabel && (!tick.isMinorTick || this.showMinorTicks)) {
                     if (this.name == 'xaxis' || this.name == 'x2axis') {
                         temp = tick._elem.outerHeight(true);
@@ -4257,6 +5727,8 @@
                     }
                 }
             }
+            tick = null;
+            t = null;
             
             if (lshow) {
                 w = this._label._elem.outerWidth(true);
@@ -4288,7 +5760,7 @@
     };    
     
     // called with scope of axis
-    $.jqplot.LinearAxisRenderer.prototype.createTicks = function() {
+    $.jqplot.LinearAxisRenderer.prototype.createTicks = function(plot) {
         // we're are operating on an axis here
         var ticks = this._ticks;
         var userTicks = this.ticks;
@@ -4313,45 +5785,51 @@
             for (i=0; i<userTicks.length; i++){
                 var ut = userTicks[i];
                 var t = new this.tickRenderer(this.tickOptions);
-                if (ut.constructor == Array) {
-	                t.value = ut[0];
-					if (this.breakPoints) {
-						if (ut[0] == this.breakPoints[0]) {
-							t.label = this.breakTickLabel;
-							t._breakTick = true;
-							t.showGridline = false;
-							t.showMark = false;
-						}
-						else if (ut[0] > this.breakPoints[0] && ut[0] <= this.breakPoints[1]) {
-							t.show = false;
-							t.showGridline = false;
-		                    t.label = ut[1];
-						}
-						else {
-		                    t.label = ut[1];
-						}
-					}
-					else {
-	                    t.label = ut[1];
-					}
+                if ($.isArray(ut)) {
+                    t.value = ut[0];
+                    if (this.breakPoints) {
+                        if (ut[0] == this.breakPoints[0]) {
+                            t.label = this.breakTickLabel;
+                            t._breakTick = true;
+                            t.showGridline = false;
+                            t.showMark = false;
+                        }
+                        else if (ut[0] > this.breakPoints[0] && ut[0] <= this.breakPoints[1]) {
+                            t.show = false;
+                            t.showGridline = false;
+                            t.label = ut[1];
+                        }
+                        else {
+                            t.label = ut[1];
+                        }
+                    }
+                    else {
+                        t.label = ut[1];
+                    }
                     t.setTick(ut[0], this.name);
+                    this._ticks.push(t);
+                }
+
+                else if ($.isPlainObject(ut)) {
+                    $.extend(true, t, ut);
+                    t.axis = this.name;
                     this._ticks.push(t);
                 }
                 
                 else {
-	                t.value = ut;
-					if (this.breakPoints) {
-						if (ut == this.breakPoints[0]) {
-							t.label = this.breakTickLabel;
-							t._breakTick = true;
-							t.showGridline = false;
-							t.showMark = false;
-						}
-						else if (ut > this.breakPoints[0] && ut <= this.breakPoints[1]) {
-							t.show = false;
-							t.showGridline = false;
-						}
-					}
+                    t.value = ut;
+                    if (this.breakPoints) {
+                        if (ut == this.breakPoints[0]) {
+                            t.label = this.breakTickLabel;
+                            t._breakTick = true;
+                            t.showGridline = false;
+                            t.showMark = false;
+                        }
+                        else if (ut > this.breakPoints[0] && ut <= this.breakPoints[1]) {
+                            t.show = false;
+                            t.showGridline = false;
+                        }
+                    }
                     t.setTick(ut, this.name);
                     this._ticks.push(t);
                 }
@@ -4370,11 +5848,25 @@
             else {
                 dim = this._plotDimensions.height;
             }
-            
-            // if min, max and number of ticks specified, user can't specify interval.
-            if (!this.autoscale && this.min != null && this.max != null && this.numberTicks != null) {
-                this.tickInterval = null;
+
+            var _numberTicks = this.numberTicks;
+
+            // if aligning this axis, use number of ticks from previous axis.
+            // Do I need to reset somehow if alignTicks is changed and then graph is replotted??
+            if (this.alignTicks) {
+                if (this.name === 'x2axis' && plot.axes.xaxis.show) {
+                    _numberTicks = plot.axes.xaxis.numberTicks;
+                }
+                else if (this.name.charAt(0) === 'y' && this.name !== 'yaxis' && this.name !== 'yMidAxis' && plot.axes.yaxis.show) {
+                    _numberTicks = plot.axes.yaxis.numberTicks;
+                }
             }
+            
+            // // if min, max and number of ticks specified, user can't specify interval.
+            // if (!this.autoscale && this.min != null && this.max != null && this.numberTicks != null) {
+            //     console.log('doing this');
+            //     this.tickInterval = null;
+            // }
             
             // if max, min, and interval specified and interval won't fit, ignore interval.
             // if (this.min != null && this.max != null && this.tickInterval != null) {
@@ -4390,25 +5882,55 @@
             var rmin, rmax;
             var temp;
 
+            if (this.tickOptions == null || !this.tickOptions.formatString) {
+                this._overrideFormatString = true;
+            }
+
             // Doing complete autoscaling
-            if (this.min == null && this.max == null && this.numberTicks == null && this.tickInterval == null && !this.autoscale) {
-                var ret = $.jqplot.LinearTickGenerator(min, max); 
+            if (this.min == null && this.max == null && this.tickInterval == null && !this.autoscale) {
+                // Check if user must have tick at 0 or 100 and ensure they are in range.
+                // The autoscaling algorithm will always place ticks at 0 and 100 if they are in range.
+                if (this.forceTickAt0) {
+                    if (min > 0) {
+                        min = 0;
+                    }
+                    if (max < 0) {
+                        max = 0;
+                    }
+                }
+
+                if (this.forceTickAt100) {
+                    if (min > 100) {
+                        min = 100;
+                    }
+                    if (max < 100) {
+                        max = 100;
+                    }
+                }
+
+                var threshold = 30;
+                var tdim = Math.max(dim, threshold+1);
+                this._scalefact =  (tdim-threshold)/300.0;
+                var ret = $.jqplot.LinearTickGenerator(min, max, this._scalefact, _numberTicks); 
                 // calculate a padded max and min, points should be less than these
                 // so that they aren't too close to the edges of the plot.
                 // User can adjust how much padding is allowed with pad, padMin and PadMax options. 
                 var tumin = min + range*(this.padMin - 1);
                 var tumax = max - range*(this.padMax - 1);
 
-                if (min <=tumin || max >= tumax) {
+                // if they're equal, we shouldn't have to do anything, right?
+                // if (min <=tumin || max >= tumax) {
+                if (min <tumin || max > tumax) {
                     tumin = min - range*(this.padMin - 1);
                     tumax = max + range*(this.padMax - 1);
-                    ret = $.jqplot.LinearTickGenerator(tumin, tumax);
+                    ret = $.jqplot.LinearTickGenerator(tumin, tumax, this._scalefact, _numberTicks);
                 }
 
                 this.min = ret[0];
                 this.max = ret[1];
+                // if numberTicks specified, it should return the same.
                 this.numberTicks = ret[2];
-                //this.tickInterval = Math.abs(this.max - this.min)/(this.numberTicks - 1);
+                this._autoFormatString = ret[3];
                 this.tickInterval = ret[4];
             }
 
@@ -4520,7 +6042,7 @@
                         temp = Math.pow(10, Math.abs(Math.floor(Math.log(ti)/Math.LN10)));
                         this.tickInterval = Math.ceil(ti/temp) * temp;
                         this.max = this.tickInterval * ntmax;
-                        this.min = -this.tickInterval * ntmin;                  
+                        this.min = -this.tickInterval * ntmin;
                     }
                     
                     // if nothing else, do autoscaling which will try to line up ticks across axes.
@@ -4563,23 +6085,40 @@
                             this.max = this.min + rrange;
                         }
                     }
+
+                    // Compute a somewhat decent format string if it is needed.
+                    // get precision of interval and determine a format string.
+                    var sf = $.jqplot.getSignificantFigures(this.tickInterval);
+
+                    var fstr;
+
+                    // if we have only a whole number, use integer formatting
+                    if (sf.digitsLeft >= sf.significantDigits) {
+                        fstr = '%d';
+                    }
+
+                    else {
+                        var temp = Math.max(0, 5 - sf.digitsLeft);
+                        temp = Math.min(temp, sf.digitsRight);
+                        fstr = '%.'+ temp + 'f';
+                    }
+
+                    this._autoFormatString = fstr;
                 }
                 
                 // Use the default algorithm which pads each axis to make the chart
                 // centered nicely on the grid.
                 else {
+
                     rmin = (this.min != null) ? this.min : min - range*(this.padMin - 1);
                     rmax = (this.max != null) ? this.max : max + range*(this.padMax - 1);
-                    this.min = rmin;
-                    this.max = rmax;
-                    range = this.max - this.min;
+                    range = rmax - rmin;
         
                     if (this.numberTicks == null){
                         // if tickInterval is specified by user, we will ignore computed maximum.
                         // max will be equal or greater to fit even # of ticks.
                         if (this.tickInterval != null) {
-                            this.numberTicks = Math.ceil((this.max - this.min)/this.tickInterval)+1;
-                            this.max = this.min + this.tickInterval*(this.numberTicks-1);
+                            this.numberTicks = Math.ceil((rmax - rmin)/this.tickInterval)+1;
                         }
                         else if (dim > 100) {
                             this.numberTicks = parseInt(3+(dim-100)/75, 10);
@@ -4592,9 +6131,38 @@
                     if (this.tickInterval == null) {
                         this.tickInterval = range / (this.numberTicks-1);
                     }
+                    
+                    if (this.max == null) {
+                        rmax = rmin + this.tickInterval*(this.numberTicks - 1);
+                    }        
+                    if (this.min == null) {
+                        rmin = rmax - this.tickInterval*(this.numberTicks - 1);
+                    }
+
+                    // get precision of interval and determine a format string.
+                    var sf = $.jqplot.getSignificantFigures(this.tickInterval);
+
+                    var fstr;
+
+                    // if we have only a whole number, use integer formatting
+                    if (sf.digitsLeft >= sf.significantDigits) {
+                        fstr = '%d';
+                    }
+
+                    else {
+                        var temp = Math.max(0, 5 - sf.digitsLeft);
+                        temp = Math.min(temp, sf.digitsRight);
+                        fstr = '%.'+ temp + 'f';
+                    }
+
+
+                    this._autoFormatString = fstr;
+
+                    this.min = rmin;
+                    this.max = rmax;
                 }
                 
-                if (this.renderer.constructor == $.jqplot.LinearAxisRenderer) {
+                if (this.renderer.constructor == $.jqplot.LinearAxisRenderer && this._autoFormatString == '') {
                     // fix for misleading tick display with small range and low precision.
                     range = this.max - this.min;
                     // figure out precision
@@ -4669,55 +6237,76 @@
                 }
                 
             }
+            
+            if (this._overrideFormatString && this._autoFormatString != '') {
+                this.tickOptions = this.tickOptions || {};
+                this.tickOptions.formatString = this._autoFormatString;
+            }
 
+            var t, to;
             for (var i=0; i<this.numberTicks; i++){
                 tt = this.min + i * this.tickInterval;
-                var t = new this.tickRenderer(this.tickOptions);
+                t = new this.tickRenderer(this.tickOptions);
                 // var t = new $.jqplot.AxisTickRenderer(this.tickOptions);
 
                 t.setTick(tt, this.name);
                 this._ticks.push(t);
+
+                if (i < this.numberTicks - 1) {
+                    for (var j=0; j<this.minorTicks; j++) {
+                        tt += this.tickInterval/(this.minorTicks+1);
+                        to = $.extend(true, {}, this.tickOptions, {name:this.name, value:tt, label:'', isMinorTick:true});
+                        t = new this.tickRenderer(to);
+                        this._ticks.push(t);
+                    }
+                }
+                t = null;
             }
         }
+
+        if (this.tickInset) {
+            this.min = this.min - this.tickInset * this.tickInterval;
+            this.max = this.max + this.tickInset * this.tickInterval;
+        }
+
+        ticks = null;
     };
-	
-	// Used to reset just the values of the ticks and then repack, which will
-	// recalculate the positioning functions.  It is assuemd that the 
-	// number of ticks is the same and the values of the new array are at the
-	// proper interval.
-	// This method needs to be called with the scope of an axis object, like:
-	//
-	// > plot.axes.yaxis.renderer.resetTickValues.call(plot.axes.yaxis, yarr);
-	//
-	$.jqplot.LinearAxisRenderer.prototype.resetTickValues = function(opts) {
-		if ($.isArray(opts) && opts.length == this._ticks.length) {
-			var t;
-			for (var i=0; i<opts.length; i++) {
-				t = this._ticks[i];
-				t.value = opts[i];
-				t.label = t.formatter(t.formatString, opts[i]);
-				// add prefix if needed
-				if (t.prefix && !t.formatString) {
-					t.label = t.prefix + t.label;
-				}
-				t._elem.html(t.label);
-			}
-			this.min = $.jqplot.arrayMin(opts);
-			this.max = $.jqplot.arrayMax(opts);
-			this.pack();
-		}
-		// Not implemented yet.
+    
+    // Used to reset just the values of the ticks and then repack, which will
+    // recalculate the positioning functions.  It is assuemd that the 
+    // number of ticks is the same and the values of the new array are at the
+    // proper interval.
+    // This method needs to be called with the scope of an axis object, like:
+    //
+    // > plot.axes.yaxis.renderer.resetTickValues.call(plot.axes.yaxis, yarr);
+    //
+    $.jqplot.LinearAxisRenderer.prototype.resetTickValues = function(opts) {
+        if ($.isArray(opts) && opts.length == this._ticks.length) {
+            var t;
+            for (var i=0; i<opts.length; i++) {
+                t = this._ticks[i];
+                t.value = opts[i];
+                t.label = t.formatter(t.formatString, opts[i]);
+                t.label = t.prefix + t.label;
+                t._elem.html(t.label);
+            }
+            t = null;
+            this.min = $.jqplot.arrayMin(opts);
+            this.max = $.jqplot.arrayMax(opts);
+            this.pack();
+        }
+        // Not implemented yet.
         // else if ($.isPlainObject(opts)) {
         // 
         // }
-	};
+    };
     
     // called with scope of axis
     $.jqplot.LinearAxisRenderer.prototype.pack = function(pos, offsets) {
-		// Add defaults for repacking from resetTickValues function.
-		pos = pos || {};
-		offsets = offsets || this._offsets;
-		
+        // Add defaults for repacking from resetTickValues function.
+        pos = pos || {};
+        offsets = offsets || this._offsets;
+        
         var ticks = this._ticks;
         var max = this.max;
         var min = this.min;
@@ -4735,86 +6324,86 @@
         var unitlength = max - min;
         
         // point to unit and unit to point conversions references to Plot DOM element top left corner.
-		if (this.breakPoints) {
-			unitlength = unitlength - this.breakPoints[1] + this.breakPoints[0];
-			
-	        this.p2u = function(p){
-	            return (p - offmin) * unitlength / pixellength + min;
-	        };
+        if (this.breakPoints) {
+            unitlength = unitlength - this.breakPoints[1] + this.breakPoints[0];
+            
+            this.p2u = function(p){
+                return (p - offmin) * unitlength / pixellength + min;
+            };
         
-	        this.u2p = function(u){
-				if (u > this.breakPoints[0] && u < this.breakPoints[1]){
-					u = this.breakPoints[0];
-				}
-				if (u <= this.breakPoints[0]) {
-	            	return (u - min) * pixellength / unitlength + offmin;
-				}
-				else {
-					return (u - this.breakPoints[1] + this.breakPoints[0] - min) * pixellength / unitlength + offmin;
-				}
-	        };
+            this.u2p = function(u){
+                if (u > this.breakPoints[0] && u < this.breakPoints[1]){
+                    u = this.breakPoints[0];
+                }
+                if (u <= this.breakPoints[0]) {
+                    return (u - min) * pixellength / unitlength + offmin;
+                }
+                else {
+                    return (u - this.breakPoints[1] + this.breakPoints[0] - min) * pixellength / unitlength + offmin;
+                }
+            };
                 
-	        if (this.name.charAt(0) == 'x'){
-	            this.series_u2p = function(u){
-					if (u > this.breakPoints[0] && u < this.breakPoints[1]){
-						u = this.breakPoints[0];
-					}
-					if (u <= this.breakPoints[0]) {
-		            	return (u - min) * pixellength / unitlength;
-					}
-					else {
-						return (u - this.breakPoints[1] + this.breakPoints[0] - min) * pixellength / unitlength;
-					}
-	            };
-	            this.series_p2u = function(p){
-	                return p * unitlength / pixellength + min;
-	            };
-	        }
+            if (this.name.charAt(0) == 'x'){
+                this.series_u2p = function(u){
+                    if (u > this.breakPoints[0] && u < this.breakPoints[1]){
+                        u = this.breakPoints[0];
+                    }
+                    if (u <= this.breakPoints[0]) {
+                        return (u - min) * pixellength / unitlength;
+                    }
+                    else {
+                        return (u - this.breakPoints[1] + this.breakPoints[0] - min) * pixellength / unitlength;
+                    }
+                };
+                this.series_p2u = function(p){
+                    return p * unitlength / pixellength + min;
+                };
+            }
         
-	        else {
-	            this.series_u2p = function(u){
-					if (u > this.breakPoints[0] && u < this.breakPoints[1]){
-						u = this.breakPoints[0];
-					}
-					if (u >= this.breakPoints[1]) {
-		            	return (u - max) * pixellength / unitlength;
-					}
-					else {
-						return (u + this.breakPoints[1] - this.breakPoints[0] - max) * pixellength / unitlength;
-					}
-	            };
-	            this.series_p2u = function(p){
-	                return p * unitlength / pixellength + max;
-	            };
-	        }
-		}
-		else {
-	        this.p2u = function(p){
-	            return (p - offmin) * unitlength / pixellength + min;
-	        };
+            else {
+                this.series_u2p = function(u){
+                    if (u > this.breakPoints[0] && u < this.breakPoints[1]){
+                        u = this.breakPoints[0];
+                    }
+                    if (u >= this.breakPoints[1]) {
+                        return (u - max) * pixellength / unitlength;
+                    }
+                    else {
+                        return (u + this.breakPoints[1] - this.breakPoints[0] - max) * pixellength / unitlength;
+                    }
+                };
+                this.series_p2u = function(p){
+                    return p * unitlength / pixellength + max;
+                };
+            }
+        }
+        else {
+            this.p2u = function(p){
+                return (p - offmin) * unitlength / pixellength + min;
+            };
         
-	        this.u2p = function(u){
-	            return (u - min) * pixellength / unitlength + offmin;
-	        };
+            this.u2p = function(u){
+                return (u - min) * pixellength / unitlength + offmin;
+            };
                 
-	        if (this.name == 'xaxis' || this.name == 'x2axis'){
-	            this.series_u2p = function(u){
-	                return (u - min) * pixellength / unitlength;
-	            };
-	            this.series_p2u = function(p){
-	                return p * unitlength / pixellength + min;
-	            };
-	        }
+            if (this.name == 'xaxis' || this.name == 'x2axis'){
+                this.series_u2p = function(u){
+                    return (u - min) * pixellength / unitlength;
+                };
+                this.series_p2u = function(p){
+                    return p * unitlength / pixellength + min;
+                };
+            }
         
-	        else {
-	            this.series_u2p = function(u){
-	                return (u - max) * pixellength / unitlength;
-	            };
-	            this.series_p2u = function(p){
-	                return p * unitlength / pixellength + max;
-	            };
-	        }
-		}
+            else {
+                this.series_u2p = function(u){
+                    return (u - max) * pixellength / unitlength;
+                };
+                this.series_p2u = function(p){
+                    return p * unitlength / pixellength + max;
+                };
+            }
+        }
         
         if (this.show) {
             if (this.name == 'xaxis' || this.name == 'x2axis') {
@@ -4934,6 +6523,8 @@
                 }
             }
         }
+
+        ticks = null;
     };
 
 
@@ -4960,54 +6551,251 @@
     // use the magnitude of the interval to determine the number of digits to show.
     function bestFormatString (interval)
     {
+        var fstr;
         interval = Math.abs(interval);
-        if (interval > 1) {return '%.0f';}
+        if (interval >= 10) {
+            fstr = '%d';
+        }
 
-        var expv = -Math.floor(Math.log(interval)/Math.LN10);
-        return '%.' + expv + 'f'; 
+        else if (interval > 1) {
+            if (interval === parseInt(interval)) {
+                fstr = '%d';
+            }
+            else {
+                fstr = '%.1f';
+            }
+        }
+
+        else {
+            var expv = -Math.floor(Math.log(interval)/Math.LN10);
+            fstr = '%.' + expv + 'f';
+        }
+        
+        return fstr; 
     }
 
-    // This is somewhat surprising in its simplicity. The range is normalized
-    // to a number between 1 and 10. The interval is chosen so that the number
-    // of tick marks will range from 4-8.
-    function bestLinearInterval(range) {
+    var _factors = [0.1, 0.2, 0.3, 0.4, 0.5, 0.8, 1, 2, 3, 4, 5];
+
+    var _getLowerFactor = function(f) {
+        var i = _factors.indexOf(f);
+        if (i > 0) {
+            return _factors[i-1];
+        }
+        else {
+            return _factors[_factors.length - 1] / 100;
+        }
+    };
+
+    var _getHigherFactor = function(f) {
+        var i = _factors.indexOf(f);
+        if (i < _factors.length-1) {
+            return _factors[i+1];
+        }
+        else {
+            return _factors[0] * 100;
+        }
+    };
+
+    // This will return an interval of form 2 * 10^n, 5 * 10^n or 10 * 10^n
+    // it is based soley on the range and number of ticks.  So if user specifies
+    // number of ticks, use this.
+    function bestInterval(range, numberTicks) {
+        var minimum = range / (numberTicks - 1);
+        var magnitude = Math.pow(10, Math.floor(Math.log(minimum) / Math.LN10));
+        var residual = minimum / magnitude;
+        var interval;
+        // "nicest" ranges are 1, 2, 5 or powers of these.
+        // for magnitudes below 1, only allow these. 
+        if (magnitude < 1) {
+            if (residual > 5) {
+                interval = 10 * magnitude;
+            }
+            else if (residual > 2) {
+                interval = 5 * magnitude;
+            }
+            else if (residual > 1) {
+                interval = 2 * magnitude;
+            }
+            else {
+                interval = magnitude;
+            }
+        }
+        // for large ranges (whole integers), allow intervals like 3, 4 or powers of these.
+        // this helps a lot with poor choices for number of ticks. 
+        else {
+            if (residual > 5) {
+                interval = 10 * magnitude;
+            }
+            else if (residual > 4) {
+                interval = 5 * magnitude;
+            }
+            else if (residual > 3) {
+                interval = 4 * magnitude;
+            }
+            else if (residual > 2) {
+                interval = 3 * magnitude;
+            }
+            else if (residual > 1) {
+                interval = 2 * magnitude;
+            }
+            else {
+                interval = magnitude;
+            }
+        }
+
+        return interval;
+    }
+
+    // This will return an interval of form 2 * 10^n, 5 * 10^n or 10 * 10^n
+    // it is based soley on the range of data, number of ticks must be computed later.
+    function bestLinearInterval(range, scalefact) {
         var expv = Math.floor(Math.log(range)/Math.LN10);
         var magnitude = Math.pow(10, expv);
+        // 0 < f < 10
         var f = range / magnitude;
+        var fact;
+        // for large plots, scalefact will decrease f and increase number of ticks.
+        // for small plots, scalefact will increase f and decrease number of ticks.
+        f = f/scalefact;
 
-        if (f<=1.6) {return 0.2*magnitude;}
-        if (f<=4.0) {return 0.5*magnitude;}
-        if (f<=8.0) {return magnitude;}
-        return 2*magnitude; 
+        // for large plots, smaller interval, more ticks.
+        if (f<=0.38) {
+            fact = 0.1;
+        }
+        else if (f<=1.6) {
+            fact = 0.2;
+        }
+        else if (f<=4.0) {
+            fact = 0.5;
+        }
+        else if (f<=8.0) {
+            fact = 1.0;
+        }
+        // for very small plots, larger interval, less ticks in number ticks
+        else if (f<=16.0) {
+            fact = 2;
+        }
+        else {
+            fact = 5;
+        } 
+
+        return fact*magnitude; 
+    }
+
+    function bestLinearComponents(range, scalefact) {
+        var expv = Math.floor(Math.log(range)/Math.LN10);
+        var magnitude = Math.pow(10, expv);
+        // 0 < f < 10
+        var f = range / magnitude;
+        var interval;
+        var fact;
+        // for large plots, scalefact will decrease f and increase number of ticks.
+        // for small plots, scalefact will increase f and decrease number of ticks.
+        f = f/scalefact;
+
+        // for large plots, smaller interval, more ticks.
+        if (f<=0.38) {
+            fact = 0.1;
+        }
+        else if (f<=1.6) {
+            fact = 0.2;
+        }
+        else if (f<=4.0) {
+            fact = 0.5;
+        }
+        else if (f<=8.0) {
+            fact = 1.0;
+        }
+        // for very small plots, larger interval, less ticks in number ticks
+        else if (f<=16.0) {
+            fact = 2;
+        }
+        // else if (f<=20.0) {
+        //     fact = 3;
+        // }
+        // else if (f<=24.0) {
+        //     fact = 4;
+        // }
+        else {
+            fact = 5;
+        } 
+
+        interval = fact * magnitude;
+
+        return [interval, fact, magnitude];
     }
 
     // Given the min and max for a dataset, return suitable endpoints
     // for the graphing, a good number for the number of ticks, and a
     // format string so that extraneous digits are not displayed.
     // returned is an array containing [min, max, nTicks, format]
-    $.jqplot.LinearTickGenerator = function(axis_min, axis_max) {
+    $.jqplot.LinearTickGenerator = function(axis_min, axis_max, scalefact, numberTicks) {
         // if endpoints are equal try to include zero otherwise include one
-        if (axis_min == axis_max) {
-        axis_max = (axis_max) ? 0 : 1;
+        if (axis_min === axis_max) {
+            axis_max = (axis_max) ? 0 : 1;
         }
+
+        scalefact = scalefact || 1.0;
 
         // make sure range is positive
         if (axis_max < axis_min) {
-        var a = axis_max;
-        axis_max = axis_min;
-        axis_min = a;
+            var a = axis_max;
+            axis_max = axis_min;
+            axis_min = a;
         }
 
-        var ss = bestLinearInterval(axis_max - axis_min);
         var r = [];
-        r[0] = Math.floor(axis_min / ss) * ss;
-        r[1] = Math.ceil(axis_max / ss) * ss;
-        r[2] = Math.round((r[1]-r[0])/ss+1);
-        r[3] = bestFormatString(ss);
-        r[4] = ss;
-        //console.log('min: %s, max: %s, numTicks: %s, rawNumTicks: %s, tickInterval: %s', r[0], r[1], r[2], (r[1]-r[0])/ss+1, r[4]);
+        var ss = bestLinearInterval(axis_max - axis_min, scalefact);
+        
+        if (numberTicks == null) {
+
+            // Figure out the axis min, max and number of ticks
+            // the min and max will be some multiple of the tick interval,
+            // 1*10^n, 2*10^n or 5*10^n.  This gaurantees that, if the
+            // axis min is negative, 0 will be a tick.
+            r[0] = Math.floor(axis_min / ss) * ss;  // min
+            r[1] = Math.ceil(axis_max / ss) * ss;   // max
+            r[2] = Math.round((r[1]-r[0])/ss+1.0);  // number of ticks
+            r[3] = bestFormatString(ss);            // format string
+            r[4] = ss;                              // tick Interval
+        }
+
+        else {
+            var tempr = [];
+
+            // Figure out the axis min, max and number of ticks
+            // the min and max will be some multiple of the tick interval,
+            // 1*10^n, 2*10^n or 5*10^n.  This gaurantees that, if the
+            // axis min is negative, 0 will be a tick.
+            tempr[0] = Math.floor(axis_min / ss) * ss;  // min
+            tempr[1] = Math.ceil(axis_max / ss) * ss;   // max
+            tempr[2] = Math.round((tempr[1]-tempr[0])/ss+1.0);    // number of ticks
+            tempr[3] = bestFormatString(ss);            // format string
+            tempr[4] = ss;                              // tick Interval
+
+            // first, see if we happen to get the right number of ticks
+            if (tempr[2] === numberTicks) {
+                r = tempr;
+            }
+
+            else {
+
+                var newti = bestInterval(tempr[1] - tempr[0], numberTicks);
+
+                r[0] = tempr[0];
+                r[2] = numberTicks;
+                r[4] = newti;
+                r[3] = bestFormatString(newti);
+                r[1] = r[0] + (r[2] - 1) * r[4];        // max
+            }
+        }
+
         return r;
-    }
+    };
+
+    $.jqplot.LinearTickGenerator.bestLinearInterval = bestLinearInterval;
+    $.jqplot.LinearTickGenerator.bestInterval = bestInterval;
+    $.jqplot.LinearTickGenerator.bestLinearComponents = bestLinearComponents;
 
 
     // class: $.jqplot.MarkerRenderer
@@ -5261,21 +7049,29 @@
         ctx.save();
         var opts = (options != null) ? options : {};
         var fill = (opts.fill != null) ? opts.fill : this.fill;
+        var fillRect = (opts.fillRect != null) ? opts.fillRect : this.fillRect;
         var closePath = (opts.closePath != null) ? opts.closePath : this.closePath;
         var offset = (opts.offset != null) ? opts.offset : this.offset;
         var alpha = (opts.alpha != null) ? opts.alpha : this.alpha;
         var depth = (opts.depth != null) ? opts.depth : this.depth;
         var isarc = (opts.isarc != null) ? opts.isarc : this.isarc;
+        var linePattern = (opts.linePattern != null) ? opts.linePattern : this.linePattern;
         ctx.lineWidth = (opts.lineWidth != null) ? opts.lineWidth : this.lineWidth;
         ctx.lineJoin = (opts.lineJoin != null) ? opts.lineJoin : this.lineJoin;
         ctx.lineCap = (opts.lineCap != null) ? opts.lineCap : this.lineCap;
         ctx.strokeStyle = opts.strokeStyle || this.strokeStyle || 'rgba(0,0,0,'+alpha+')';
         ctx.fillStyle = opts.fillStyle || this.fillStyle || 'rgba(0,0,0,'+alpha+')';
         for (var j=0; j<depth; j++) {
+            var ctxPattern = $.jqplot.LinePattern(ctx, linePattern);
             ctx.translate(Math.cos(this.angle*Math.PI/180)*offset, Math.sin(this.angle*Math.PI/180)*offset);
-            ctx.beginPath();
+            ctxPattern.beginPath();
             if (isarc) {
                 ctx.arc(points[0], points[1], points[2], points[3], points[4], true);                
+            }
+            else if (fillRect) {
+                if (fillRect) {
+                    ctx.fillRect(points[0], points[1], points[2], points[3]);
+                }
             }
             else if (points && points.length){
                 var move = true;
@@ -5283,11 +7079,11 @@
                     // skip to the first non-null point and move to it.
                     if (points[i][0] != null && points[i][1] != null) {
                         if (move) {
-                            ctx.moveTo(points[i][0], points[i][1]);
+                            ctxPattern.moveTo(points[i][0], points[i][1]);
                             move = false;
                         }
                         else {
-                            ctx.lineTo(points[i][0], points[i][1]);
+                            ctxPattern.lineTo(points[i][0], points[i][1]);
                         }
                     }
                     else {
@@ -5297,7 +7093,7 @@
                 
             }
             if (closePath) {
-                ctx.closePath();
+                ctxPattern.closePath();
             }
             if (fill) {
                 ctx.fill();
@@ -5317,6 +7113,12 @@
     $.jqplot.ShapeRenderer = function(options){
         
         this.lineWidth = 1.5;
+        // prop: linePattern
+        // line pattern 'dashed', 'dotted', 'solid', some combination
+        // of '-' and '.' characters such as '.-.' or a numerical array like 
+        // [draw, skip, draw, skip, ...] such as [1, 10] to draw a dotted line, 
+        // [1, 10, 20, 10] to draw a dot-dash line, and so on.
+        this.linePattern = 'solid';
         // prop: lineJoin
         // How line segments of the shadow are joined.
         this.lineJoin = 'miter';
@@ -5371,8 +7173,10 @@
         var strokeRect = (opts.strokeRect != null) ? opts.strokeRect : this.strokeRect;
         var clearRect = (opts.clearRect != null) ? opts.clearRect : this.clearRect;
         var isarc = (opts.isarc != null) ? opts.isarc : this.isarc;
+        var linePattern = (opts.linePattern != null) ? opts.linePattern : this.linePattern;
+        var ctxPattern = $.jqplot.LinePattern(ctx, linePattern);
         ctx.lineWidth = opts.lineWidth || this.lineWidth;
-        ctx.lineJoin = opts.lineJoing || this.lineJoin;
+        ctx.lineJoin = opts.lineJoin || this.lineJoin;
         ctx.lineCap = opts.lineCap || this.lineCap;
         ctx.strokeStyle = (opts.strokeStyle || opts.color) || this.strokeStyle;
         ctx.fillStyle = opts.fillStyle || this.fillStyle;
@@ -5412,11 +7216,11 @@
                 // skip to the first non-null point and move to it.
                 if (points[i][0] != null && points[i][1] != null) {
                     if (move) {
-                        ctx.moveTo(points[i][0], points[i][1]);
+                        ctxPattern.moveTo(points[i][0], points[i][1]);
                         move = false;
                     }
                     else {
-                        ctx.lineTo(points[i][0], points[i][1]);
+                        ctxPattern.lineTo(points[i][0], points[i][1]);
                     }
                 }
                 else {
@@ -5424,7 +7228,7 @@
                 }
             }
             if (closePath) {
-                ctx.closePath();
+                ctxPattern.closePath();
             }
             if (fill) {
                 ctx.fill();
@@ -5447,51 +7251,107 @@
     };
         
     $.jqplot.TableLegendRenderer.prototype.addrow = function (label, color, pad, reverse) {
-        var rs = (pad) ? this.rowSpacing : '0';
-        var tr,
-        	elem;
+        var rs = (pad) ? this.rowSpacing+'px' : '0px';
+        var tr;
+        var td;
+        var elem;
+        var div0;
+        var div1;
+        elem = document.createElement('tr');
+        tr = $(elem);
+        tr.addClass('jqplot-table-legend');
+        elem = null;
+
         if (reverse){
-            tr = $('<tr class="jqplot-table-legend"></tr>').prependTo(this._elem);
+            tr.prependTo(this._elem);
         }
+
         else{
-            tr = $('<tr class="jqplot-table-legend"></tr>').appendTo(this._elem);
+            tr.appendTo(this._elem);
         }
+
         if (this.showSwatches) {
-            $('<td class="jqplot-table-legend" style="text-align:center;padding-top:'+rs+';">'+
-            '<div><div class="jqplot-table-legend-swatch" style="background-color:'+color+';border-color:'+color+';"></div>'+
-            '</div></td>').appendTo(tr);
+            td = $(document.createElement('td'));
+            td.addClass('jqplot-table-legend jqplot-table-legend-swatch');
+            td.css({textAlign: 'center', paddingTop: rs});
+
+            div0 = $(document.createElement('div'));
+            div0.addClass('jqplot-table-legend-swatch-outline');
+            div1 = $(document.createElement('div'));
+            div1.addClass('jqplot-table-legend-swatch');
+            div1.css({backgroundColor: color, borderColor: color});
+
+            tr.append(td.append(div0.append(div1)));
+
+            // $('<td class="jqplot-table-legend" style="text-align:center;padding-top:'+rs+';">'+
+            // '<div><div class="jqplot-table-legend-swatch" style="background-color:'+color+';border-color:'+color+';"></div>'+
+            // '</div></td>').appendTo(tr);
         }
         if (this.showLabels) {
-            elem = $('<td class="jqplot-table-legend" style="padding-top:'+rs+';"></td>');
-            elem.appendTo(tr);
+            td = $(document.createElement('td'));
+            td.addClass('jqplot-table-legend jqplot-table-legend-label');
+            td.css('paddingTop', rs);
+            tr.append(td);
+
+            // elem = $('<td class="jqplot-table-legend" style="padding-top:'+rs+';"></td>');
+            // elem.appendTo(tr);
             if (this.escapeHtml) {
-                elem.text(label);
+                td.text(label);
             }
             else {
-                elem.html(label);
+                td.html(label);
             }
         }
+        td = null;
+        div0 = null;
+        div1 = null;
         tr = null;
         elem = null;
     };
     
     // called with scope of legend
     $.jqplot.TableLegendRenderer.prototype.draw = function() {
-        var legend = this;
+        if (this._elem) {
+            this._elem.emptyForce();
+            this._elem = null;
+        }
+
         if (this.show) {
             var series = this._series;
             // make a table.  one line label per row.
-            var ss = 'position:absolute;';
-            ss += (this.background) ? 'background:'+this.background+';' : '';
-            ss += (this.border) ? 'border:'+this.border+';' : '';
-            ss += (this.fontSize) ? 'font-size:'+this.fontSize+';' : '';
-            ss += (this.fontFamily) ? 'font-family:'+this.fontFamily+';' : '';
-            ss += (this.textColor) ? 'color:'+this.textColor+';' : '';
-            ss += (this.marginTop != null) ? 'margin-top:'+this.marginTop+';' : '';
-            ss += (this.marginBottom != null) ? 'margin-bottom:'+this.marginBottom+';' : '';
-            ss += (this.marginLeft != null) ? 'margin-left:'+this.marginLeft+';' : '';
-            ss += (this.marginRight != null) ? 'margin-right:'+this.marginRight+';' : '';
-            this._elem = $('<table class="jqplot-table-legend" style="'+ss+'"></table>');
+            var elem = document.createElement('table');
+            this._elem = $(elem);
+            this._elem.addClass('jqplot-table-legend');
+
+            var ss = {position:'absolute'};
+            if (this.background) {
+                ss['background'] = this.background;
+            }
+            if (this.border) {
+                ss['border'] = this.border;
+            }
+            if (this.fontSize) {
+                ss['fontSize'] = this.fontSize;
+            }
+            if (this.fontFamily) {
+                ss['fontFamily'] = this.fontFamily;
+            }
+            if (this.textColor) {
+                ss['textColor'] = this.textColor;
+            }
+            if (this.marginTop != null) {
+                ss['marginTop'] = this.marginTop;
+            }
+            if (this.marginBottom != null) {
+                ss['marginBottom'] = this.marginBottom;
+            }
+            if (this.marginLeft != null) {
+                ss['marginLeft'] = this.marginLeft;
+            }
+            if (this.marginRight != null) {
+                ss['marginRight'] = this.marginRight;
+            }
+            
         
             var pad = false, 
                 reverse = false,
@@ -5712,6 +7572,7 @@
      * >     series: [{
      * >         color: "#4bb2c5",
      * >         lineWidth: 2.5,
+     * >         linePattern: "solid",
      * >         shadow: true,
      * >         fillColor: "#4bb2c5",
      * >         showMarker: true,
@@ -6151,8 +8012,8 @@
                             plot.series[i].renderer.shapeRenderer.strokeStyle = val;
                             plot.series[i][n] = val;
                         }
-                        else if (n == 'lineWidth') {
-                            plot.series[i].renderer.shapeRenderer.lineWidth = val;
+                        else if ((n == 'lineWidth') || (n == 'linePattern')) {
+                            plot.series[i].renderer.shapeRenderer[n] = val;
                             plot.series[i][n] = val;
                         }
                         else if (n == 'markerOptions') {
@@ -6479,6 +8340,7 @@
     var LineSeriesProperties = function() {
         this.color=null;
         this.lineWidth=null;
+        this.linePattern=null;
         this.shadow=null;
         this.fillColor=null;
         this.showMarker=null;
@@ -6557,66 +8419,356 @@
 
 
 
-	/** 
-	 * @description
-	 * <p>Object with extended date parsing and formatting capabilities.
-	 * This library borrows many concepts and ideas from the Date Instance 
-	 * Methods by Ken Snyder along with some parts of Ken's actual code.</p>
-	 *
-	 * <p>jsDate takes a different approach by not extending the built-in 
-	 * Date Object, improving date parsing, allowing for multiple formatting 
-	 * syntaxes and multiple and more easily expandable localization.</p>
-	 * 
-	 * @author Chris Leonello
-	 * @date #date#
-	 * @version #VERSION#
-	 * @copyright (c) 2010 Chris Leonello
- 	 * jsDate is currently available for use in all personal or commercial projects 
-	 * under both the MIT and GPL version 2.0 licenses. This means that you can 
-	 * choose the license that best suits your project and use it accordingly.
-	 * 
-	 * <p>Ken's origianl Date Instance Methods and copyright notice:</p>
+    $.fn.jqplotChildText = function() {
+        return $(this).contents().filter(function() {
+            return this.nodeType == 3;  // Node.TEXT_NODE not defined in I7
+        }).text();
+    };
+
+    // Returns font style as abbreviation for "font" property.
+    $.fn.jqplotGetComputedFontStyle = function() {
+        var css = window.getComputedStyle ?  window.getComputedStyle(this[0]) : this[0].currentStyle;
+        var attrs = css['font-style'] ? ['font-style', 'font-weight', 'font-size', 'font-family'] : ['fontStyle', 'fontWeight', 'fontSize', 'fontFamily'];
+        var style = [];
+
+        for (var i=0 ; i < attrs.length; ++i) {
+            var attr = String(css[attrs[i]]);
+
+            if (attr && attr != 'normal') {
+                style.push(attr);
+            }
+        }
+        return style.join(' ');
+    };
+
+    /**
+     * Namespace: $.fn
+     * jQuery namespace to attach functions to jQuery elements.
+     *  
+     */
+
+    $.fn.jqplotToImageCanvas = function(options) {
+
+        options = options || {};
+        var x_offset = (options.x_offset == null) ? 0 : options.x_offset;
+        var y_offset = (options.y_offset == null) ? 0 : options.y_offset;
+        var backgroundColor = (options.backgroundColor == null) ? 'rgb(255,255,255)' : options.backgroundColor;
+
+        if ($(this).width() == 0 || $(this).height() == 0) {
+            return null;
+        }
+
+        // excanvas and hence IE < 9 do not support toDataURL and cannot export images.
+        if (!$.jqplot.support_canvas) {
+            return null;
+        }
+        
+        var newCanvas = document.createElement("canvas");
+        var h = $(this).outerHeight(true);
+        var w = $(this).outerWidth(true);
+        var offs = $(this).offset();
+        var plotleft = offs.left;
+        var plottop = offs.top;
+        var transx = 0, transy = 0;
+
+        // have to check if any elements are hanging outside of plot area before rendering,
+        // since changing width of canvas will erase canvas.
+
+        var clses = ['jqplot-table-legend', 'jqplot-xaxis-tick', 'jqplot-x2axis-tick', 'jqplot-yaxis-tick', 'jqplot-y2axis-tick', 'jqplot-y3axis-tick', 
+        'jqplot-y4axis-tick', 'jqplot-y5axis-tick', 'jqplot-y6axis-tick', 'jqplot-y7axis-tick', 'jqplot-y8axis-tick', 'jqplot-y9axis-tick',
+        'jqplot-xaxis-label', 'jqplot-x2axis-label', 'jqplot-yaxis-label', 'jqplot-y2axis-label', 'jqplot-y3axis-label', 'jqplot-y4axis-label', 
+        'jqplot-y5axis-label', 'jqplot-y6axis-label', 'jqplot-y7axis-label', 'jqplot-y8axis-label', 'jqplot-y9axis-label' ];
+
+        var temptop, templeft, tempbottom, tempright;
+
+        for (var i in clses) {
+            $(this).find('.'+clses[i]).each(function() {
+                temptop = $(this).offset().top - plottop;
+                templeft = $(this).offset().left - plotleft;
+                tempright = templeft + $(this).outerWidth(true) + transx;
+                tempbottom = temptop + $(this).outerHeight(true) + transy;
+                if (templeft < -transx) {
+                    w = w - transx - templeft;
+                    transx = -templeft;
+                }
+                if (temptop < -transy) {
+                    h = h - transy - temptop;
+                    transy = - temptop;
+                }
+                if (tempright > w) {
+                    w = tempright;
+                }
+                if (tempbottom > h) {
+                    h =  tempbottom;
+                }
+            });
+        }
+
+        newCanvas.width = w + Number(x_offset);
+        newCanvas.height = h + Number(y_offset);
+
+        var newContext = newCanvas.getContext("2d"); 
+
+        newContext.save();
+        newContext.fillStyle = backgroundColor;
+        newContext.fillRect(0,0, newCanvas.width, newCanvas.height);
+        newContext.restore();
+
+        newContext.translate(transx, transy);
+        newContext.textAlign = 'left';
+        newContext.textBaseline = 'top';
+
+        function getLineheight(el) {
+            var lineheight = parseInt($(el).css('line-height'));
+
+            if (isNaN(lineheight)) {
+                lineheight = parseInt($(el).css('font-size')) * 1.2;
+            }
+            return lineheight;
+        }
+
+        function writeWrappedText (el, context, text, left, top, canvasWidth) {
+            var lineheight = getLineheight(el);
+            var tagwidth = $(el).innerWidth();
+            var tagheight = $(el).innerHeight();
+            var words = text.split(/\s+/);
+            var wl = words.length;
+            var w = '';
+            var breaks = [];
+            var temptop = top;
+            var templeft = left;
+
+            for (var i=0; i<wl; i++) {
+                w += words[i];
+                if (context.measureText(w).width > tagwidth) {
+                    breaks.push(i);
+                    w = '';
+                }   
+            }
+            if (breaks.length === 0) {
+                // center text if necessary
+                if ($(el).css('textAlign') === 'center') {
+                    templeft = left + (canvasWidth - context.measureText(w).width)/2  - transx;
+                }
+                context.fillText(text, templeft, top);
+            }
+            else {
+                w = words.slice(0, breaks[0]).join(' ');
+                // center text if necessary
+                if ($(el).css('textAlign') === 'center') {
+                    templeft = left + (canvasWidth - context.measureText(w).width)/2  - transx;
+                }
+                context.fillText(w, templeft, temptop);
+                temptop += lineheight;
+                for (var i=1, l=breaks.length; i<l; i++) {
+                    w = words.slice(breaks[i-1], breaks[i]).join(' ');
+                    // center text if necessary
+                    if ($(el).css('textAlign') === 'center') {
+                        templeft = left + (canvasWidth - context.measureText(w).width)/2  - transx;
+                    }
+                    context.fillText(w, templeft, temptop);
+                    temptop += lineheight;
+                }
+                w = words.slice(breaks[i-1], words.length).join(' ');
+                // center text if necessary
+                if ($(el).css('textAlign') === 'center') {
+                    templeft = left + (canvasWidth - context.measureText(w).width)/2  - transx;
+                }
+                context.fillText(w, templeft, temptop);
+            }
+
+        }
+
+        function _jqpToImage(el, x_offset, y_offset) {
+            var tagname = el.tagName.toLowerCase();
+            var p = $(el).position();
+            var css = window.getComputedStyle ?  window.getComputedStyle(el) : el.currentStyle; // for IE < 9
+            var left = x_offset + p.left + parseInt(css.marginLeft) + parseInt(css.borderLeftWidth) + parseInt(css.paddingLeft);
+            var top = y_offset + p.top + parseInt(css.marginTop) + parseInt(css.borderTopWidth)+ parseInt(css.paddingTop);
+            var w = newCanvas.width;
+            // var left = x_offset + p.left + $(el).css('marginLeft') + $(el).css('borderLeftWidth') 
+
+            if ((tagname == 'div' || tagname == 'span') && !$(el).hasClass('jqplot-highlighter-tooltip')) {
+                $(el).children().each(function() {
+                    _jqpToImage(this, left, top);
+                });
+                var text = $(el).jqplotChildText();
+
+                if (text) {
+                    newContext.font = $(el).jqplotGetComputedFontStyle();
+                    newContext.fillStyle = $(el).css('color');
+
+                    writeWrappedText(el, newContext, text, left, top, w);
+                }
+            }
+
+            // handle the standard table legend
+
+            else if (tagname === 'table' && $(el).hasClass('jqplot-table-legend')) {
+                newContext.strokeStyle = $(el).css('border-top-color');
+                newContext.fillStyle = $(el).css('background-color');
+                newContext.fillRect(left, top, $(el).innerWidth(), $(el).innerHeight());
+                if (parseInt($(el).css('border-top-width')) > 0) {
+                    newContext.strokeRect(left, top, $(el).innerWidth(), $(el).innerHeight());
+                }
+
+                // find all the swatches
+                $(el).find('div.jqplot-table-legend-swatch-outline').each(function() {
+                    // get the first div and stroke it
+                    var elem = $(this);
+                    newContext.strokeStyle = elem.css('border-top-color');
+                    var l = left + elem.position().left;
+                    var t = top + elem.position().top;
+                    newContext.strokeRect(l, t, elem.innerWidth(), elem.innerHeight());
+
+                    // now fill the swatch
+                    
+                    l += parseInt(elem.css('padding-left'));
+                    t += parseInt(elem.css('padding-top'));
+                    var h = elem.innerHeight() - 2 * parseInt(elem.css('padding-top'));
+                    var w = elem.innerWidth() - 2 * parseInt(elem.css('padding-left'));
+
+                    var swatch = elem.children('div.jqplot-table-legend-swatch');
+                    newContext.fillStyle = swatch.css('background-color');
+                    newContext.fillRect(l, t, w, h);
+                });
+
+                // now add text
+
+                $(el).find('td.jqplot-table-legend-label').each(function(){
+                    var elem = $(this);
+                    var l = left + elem.position().left;
+                    var t = top + elem.position().top + parseInt(elem.css('padding-top'));
+                    newContext.font = elem.jqplotGetComputedFontStyle();
+                    newContext.fillStyle = elem.css('color');
+                    newContext.fillText(elem.text(), l, t);
+                });
+
+                var elem = null;
+            }
+
+            else if (tagname == 'canvas') {
+                newContext.drawImage(el, left, top);
+            }
+        }
+        $(this).children().each(function() {
+            _jqpToImage(this, x_offset, y_offset);
+        });
+        return newCanvas;
+    };
+
+    $.fn.jqplotToImageStr = function(options) {
+        var imgCanvas = $(this).jqplotToImageCanvas(options);
+        if (imgCanvas) {
+            return imgCanvas.toDataURL("image/png");
+        }
+        else {
+            return null;
+        }
+    };
+
+    // create an <img> element and return it.
+    // Should work on canvas supporting browsers.
+    $.fn.jqplotToImageElem = function(options) {
+        var elem = document.createElement("img");
+        var str = $(this).jqplotToImageStr(options);
+        elem.src = str;
+        return elem;
+    };
+
+    // create an <img> element and return it.
+    // Should work on canvas supporting browsers.
+    $.fn.jqplotToImageElemStr = function(options) {
+        var str = '<img src='+$(this).jqplotToImageStr(options)+' />';
+        return str;
+    };
+
+    // Not gauranteed to work, even on canvas supporting browsers due to 
+    // limitations with location.href and browser support.
+    $.fn.jqplotSaveImage = function() {
+        var imgData = $(this).jqplotToImageStr({});
+        if (imgData) {
+            window.location.href = imgData.replace("image/png", "image/octet-stream");
+        }
+
+    };
+
+    // Not gauranteed to work, even on canvas supporting browsers due to
+    // limitations with window.open and arbitrary data.
+    $.fn.jqplotViewImage = function() {
+        var imgStr = $(this).jqplotToImageElemStr({});
+        var imgData = $(this).jqplotToImageStr({});
+        if (imgStr) {
+            var w = window.open('');
+            w.document.open("image/png");
+            w.document.write(imgStr);
+            w.document.close();
+            w = null;
+        }
+    };
+    
+
+
+    /** 
+     * @description
+     * <p>Object with extended date parsing and formatting capabilities.
+     * This library borrows many concepts and ideas from the Date Instance 
+     * Methods by Ken Snyder along with some parts of Ken's actual code.</p>
+     *
+     * <p>jsDate takes a different approach by not extending the built-in 
+     * Date Object, improving date parsing, allowing for multiple formatting 
+     * syntaxes and multiple and more easily expandable localization.</p>
+     * 
+     * @author Chris Leonello
+     * @date #date#
+     * @version #VERSION#
+     * @copyright (c) 2010 Chris Leonello
+     * jsDate is currently available for use in all personal or commercial projects 
+     * under both the MIT and GPL version 2.0 licenses. This means that you can 
+     * choose the license that best suits your project and use it accordingly.
+     * 
+     * <p>Ken's origianl Date Instance Methods and copyright notice:</p>
      * <pre>
      * Ken Snyder (ken d snyder at gmail dot com)
      * 2008-09-10
      * version 2.0.2 (http://kendsnyder.com/sandbox/date/)     
      * Creative Commons Attribution License 3.0 (http://creativecommons.org/licenses/by/3.0/)
-	 * </pre>
-	 * 
-	 * @class
-	 * @name jsDate
-	 * @param  {String | Number | Array | Date&nbsp;Object | Options&nbsp;Object} arguments Optional arguments, either a parsable date/time string,
-	 * a JavaScript timestamp, an array of numbers of form [year, month, day, hours, minutes, seconds, milliseconds],
-	 * a Date object, or an options object of form {syntax: "perl", date:some Date} where all options are optional.
-	 */
-	 
+     * </pre>
+     * 
+     * @class
+     * @name jsDate
+     * @param  {String | Number | Array | Date&nbsp;Object | Options&nbsp;Object} arguments Optional arguments, either a parsable date/time string,
+     * a JavaScript timestamp, an array of numbers of form [year, month, day, hours, minutes, seconds, milliseconds],
+     * a Date object, or an options object of form {syntax: "perl", date:some Date} where all options are optional.
+     */
+     
     var jsDate = function () {
-	
-    	this.syntax = jsDate.config.syntax;
-		this._type = "jsDate";
+    
+        this.syntax = jsDate.config.syntax;
+        this._type = "jsDate";
         this.utcOffset = new Date().getTimezoneOffset * 60000;
         this.proxy = new Date();
-		this.options = {};
-		this.locale = jsDate.regional.getLocale();
-		this.formatString = '';
-		this.defaultCentury = jsDate.config.defaultCentury;
+        this.options = {};
+        this.locale = jsDate.regional.getLocale();
+        this.formatString = '';
+        this.defaultCentury = jsDate.config.defaultCentury;
 
         switch ( arguments.length ) {
             case 0:
                 break;
             case 1:
-				// other objects either won't have a _type property or,
-				// if they do, it shouldn't be set to "jsDate", so
-				// assume it is an options argument.
-				if (get_type(arguments[0]) == "[object Object]" && arguments[0]._type != "jsDate") {
-					var opts = this.options = arguments[0];
-					this.syntax = opts.syntax || this.syntax;
-					this.defaultCentury = opts.defaultCentury || this.defaultCentury;
-					this.proxy = jsDate.createDate(opts.date);
-				}
-				else {
-					this.proxy = jsDate.createDate(arguments[0]);
-				}
+                // other objects either won't have a _type property or,
+                // if they do, it shouldn't be set to "jsDate", so
+                // assume it is an options argument.
+                if (get_type(arguments[0]) == "[object Object]" && arguments[0]._type != "jsDate") {
+                    var opts = this.options = arguments[0];
+                    this.syntax = opts.syntax || this.syntax;
+                    this.defaultCentury = opts.defaultCentury || this.defaultCentury;
+                    this.proxy = jsDate.createDate(opts.date);
+                }
+                else {
+                    this.proxy = jsDate.createDate(arguments[0]);
+                }
                 break;
             default:
                 var a = [];
@@ -6631,406 +8783,406 @@
                 break;
         }
     };
-	
-	/**
-	 * @namespace Configuration options that will be used as defaults for all instances on the page.
-	 * @property {String} defaultLocale The default locale to use [en].
-	 * @property {String} syntax The default syntax to use [perl].
-	 */
-	jsDate.config = {
-		defaultLocale: 'en',
-		syntax: 'perl',
-		defaultCentury: 1900
-	};
-		
-	/**
-	 * Add an arbitrary amount to the currently stored date
-	 * 
-	 * @param {Number} number      
-	 * @param {String} unit
-	 * @returns {jsDate}       
-	 */
-	 
-	jsDate.prototype.add = function(number, unit) {
-		var factor = multipliers[unit] || multipliers.day;
-		if (typeof factor == 'number') {
-			this.proxy.setTime(this.proxy.getTime() + (factor * number));
-		} else {
-			factor.add(this, number);
-		}
-		return this;
-	};
-		
-	/**
-	 * Create a new jqplot.date object with the same date
-	 * 
-	 * @returns {jsDate}
-	 */  
-	 
-	jsDate.prototype.clone = function() {
-			return new jsDate(this.proxy.getTime());
-	};
+    
+    /**
+     * @namespace Configuration options that will be used as defaults for all instances on the page.
+     * @property {String} defaultLocale The default locale to use [en].
+     * @property {String} syntax The default syntax to use [perl].
+     */
+    jsDate.config = {
+        defaultLocale: 'en',
+        syntax: 'perl',
+        defaultCentury: 1900
+    };
+        
+    /**
+     * Add an arbitrary amount to the currently stored date
+     * 
+     * @param {Number} number      
+     * @param {String} unit
+     * @returns {jsDate}       
+     */
+     
+    jsDate.prototype.add = function(number, unit) {
+        var factor = multipliers[unit] || multipliers.day;
+        if (typeof factor == 'number') {
+            this.proxy.setTime(this.proxy.getTime() + (factor * number));
+        } else {
+            factor.add(this, number);
+        }
+        return this;
+    };
+        
+    /**
+     * Create a new jqplot.date object with the same date
+     * 
+     * @returns {jsDate}
+     */  
+     
+    jsDate.prototype.clone = function() {
+            return new jsDate(this.proxy.getTime());
+    };
 
-	/**
-	 * Find the difference between this jsDate and another date.
-	 * 
-	 * @param {String| Number| Array| jsDate&nbsp;Object| Date&nbsp;Object} dateObj
-	 * @param {String} unit
-	 * @param {Boolean} allowDecimal
-	 * @returns {Number} Number of units difference between dates.
-	 */
-	 
-	jsDate.prototype.diff = function(dateObj, unit, allowDecimal) {
-		// ensure we have a Date object
-		dateObj = new jsDate(dateObj);
-		if (dateObj === null) {
-			return null;
-		}
-		// get the multiplying factor integer or factor function
-		var factor = multipliers[unit] || multipliers.day;
-		if (typeof factor == 'number') {
-			// multiply
-			var unitDiff = (this.proxy.getTime() - dateObj.proxy.getTime()) / factor;
-		} else {
-			// run function
-			var unitDiff = factor.diff(this.proxy, dateObj.proxy);
-		}
-		// if decimals are not allowed, round toward zero
-		return (allowDecimal ? unitDiff : Math[unitDiff > 0 ? 'floor' : 'ceil'](unitDiff));          
-	};
-	
-	/**
-	 * Get the abbreviated name of the current week day
-	 * 
-	 * @returns {String}
-	 */   
-	 
-	jsDate.prototype.getAbbrDayName = function() {
-		return jsDate.regional[this.locale]["dayNamesShort"][this.proxy.getDay()];
-	};
-	
-	/**
-	 * Get the abbreviated name of the current month
-	 * 
-	 * @returns {String}
-	 */
-	 
-	jsDate.prototype.getAbbrMonthName = function() {
-		return jsDate.regional[this.locale]["monthNamesShort"][this.proxy.getMonth()];
-	};
-	
-	/**
-	 * Get UPPER CASE AM or PM for the current time
-	 * 
-	 * @returns {String}
-	 */
-	 
-	jsDate.prototype.getAMPM = function() {
-		return this.proxy.getHours() >= 12 ? 'PM' : 'AM';
-	};
-	
-	/**
-	 * Get lower case am or pm for the current time
-	 * 
-	 * @returns {String}
-	 */
-	 
-	jsDate.prototype.getAmPm = function() {
-		return this.proxy.getHours() >= 12 ? 'pm' : 'am';
-	};
-	
-	/**
-	 * Get the century (19 for 20th Century)
-	 *
-	 * @returns {Integer} Century (19 for 20th century).
-	 */
-	jsDate.prototype.getCentury = function() { 
-		return parseInt(this.proxy.getFullYear()/100, 10);
-	};
-	
-	/**
-	 * Implements Date functionality
-	 */
-	jsDate.prototype.getDate = function() {
-		return this.proxy.getDate();
-	};
-	
-	/**
-	 * Implements Date functionality
-	 */
-	jsDate.prototype.getDay = function() {
-		return this.proxy.getDay();
-	};
-	
-	/**
-	 * Get the Day of week 1 (Monday) thru 7 (Sunday)
-	 * 
-	 * @returns {Integer} Day of week 1 (Monday) thru 7 (Sunday)
-	 */
-	jsDate.prototype.getDayOfWeek = function() { 
-		var dow = this.proxy.getDay(); 
-		return dow===0?7:dow; 
-	};
-	
-	/**
-	 * Get the day of the year
-	 * 
-	 * @returns {Integer} 1 - 366, day of the year
-	 */
-	jsDate.prototype.getDayOfYear = function() {
-		var d = this.proxy;
-		var ms = d - new Date('' + d.getFullYear() + '/1/1 GMT');
-		ms += d.getTimezoneOffset()*60000;
-		d = null;
-		return parseInt(ms/60000/60/24, 10)+1;
-	};
-	
-	/**
-	 * Get the name of the current week day
-	 * 
-	 * @returns {String}
-	 */  
-	 
-	jsDate.prototype.getDayName = function() {
-		return jsDate.regional[this.locale]["dayNames"][this.proxy.getDay()];
-	};
-	
-	/**
-	 * Get the week number of the given year, starting with the first Sunday as the first week
-	 * @returns {Integer} Week number (13 for the 13th full week of the year).
-	 */
-	jsDate.prototype.getFullWeekOfYear = function() {
-		var d = this.proxy;
-		var doy = this.getDayOfYear();
-		var rdow = 6-d.getDay();
-		var woy = parseInt((doy+rdow)/7, 10);
-		return woy;
-	};
-	
-	/**
-	 * Implements Date functionality
-	 */
-	jsDate.prototype.getFullYear = function() {
-		return this.proxy.getFullYear();
-	};
-	
-	/**
-	 * Get the GMT offset in hours and minutes (e.g. +06:30)
-	 * 
-	 * @returns {String}
-	 */
-	 
-	jsDate.prototype.getGmtOffset = function() {
-		// divide the minutes offset by 60
-		var hours = this.proxy.getTimezoneOffset() / 60;
-		// decide if we are ahead of or behind GMT
-		var prefix = hours < 0 ? '+' : '-';
-		// remove the negative sign if any
-		hours = Math.abs(hours);
-		// add the +/- to the padded number of hours to : to the padded minutes
-		return prefix + addZeros(Math.floor(hours), 2) + ':' + addZeros((hours % 1) * 60, 2);
-	};
-	
-	/**
-	 * Implements Date functionality
-	 */
-	jsDate.prototype.getHours = function() {
-		return this.proxy.getHours();
-	};
-	
-	/**
-	 * Get the current hour on a 12-hour scheme
-	 * 
-	 * @returns {Integer}
-	 */
-	 
-	jsDate.prototype.getHours12  = function() {
-		var hours = this.proxy.getHours();
-		return hours > 12 ? hours - 12 : (hours == 0 ? 12 : hours);
-	};
-	
-	
-	jsDate.prototype.getIsoWeek = function() {
-		var d = this.proxy;
-		var woy = d.getWeekOfYear();
-		var dow1_1 = (new Date('' + d.getFullYear() + '/1/1')).getDay();
-		// First week is 01 and not 00 as in the case of %U and %W,
-		// so we add 1 to the final result except if day 1 of the year
-		// is a Monday (then %W returns 01).
-		// We also need to subtract 1 if the day 1 of the year is 
-		// Friday-Sunday, so the resulting equation becomes:
-		var idow = woy + (dow1_1 > 4 || dow1_1 <= 1 ? 0 : 1);
-		if(idow == 53 && (new Date('' + d.getFullYear() + '/12/31')).getDay() < 4)
-		{
-			idow = 1;
-		}
-		else if(idow === 0)
-		{
-			d = new jsDate(new Date('' + (d.getFullYear()-1) + '/12/31'));
-			idow = d.getIsoWeek();
-		}
-		d = null;
-		return idow;
-	};
-	
-	/**
-	 * Implements Date functionality
-	 */
-	jsDate.prototype.getMilliseconds = function() {
-		return this.proxy.getMilliseconds();
-	};
-	
-	/**
-	 * Implements Date functionality
-	 */
-	jsDate.prototype.getMinutes = function() {
-		return this.proxy.getMinutes();
-	};
-	
-	/**
-	 * Implements Date functionality
-	 */
-	jsDate.prototype.getMonth = function() {
-		return this.proxy.getMonth();
-	};
-	
-	/**
-	 * Get the name of the current month
-	 * 
-	 * @returns {String}
-	 */
-	 
-	jsDate.prototype.getMonthName = function() {
-		return jsDate.regional[this.locale]["monthNames"][this.proxy.getMonth()];
-	};
-	
-	/**
-	 * Get the number of the current month, 1-12
-	 * 
-	 * @returns {Integer}
-	 */
-	 
-	jsDate.prototype.getMonthNumber = function() {
-		return this.proxy.getMonth() + 1;
-	};
-	
-	/**
-	 * Implements Date functionality
-	 */
-	jsDate.prototype.getSeconds = function() {
-		return this.proxy.getSeconds();
-	};
-	
-	/**
-	 * Return a proper two-digit year integer
-	 * 
-	 * @returns {Integer}
-	 */
-	 
-	jsDate.prototype.getShortYear = function() {
-		return this.proxy.getYear() % 100;
-	};
-	
-	/**
-	 * Implements Date functionality
-	 */
-	jsDate.prototype.getTime = function() {
-		return this.proxy.getTime();
-	};
-	
-	/**
-	 * Get the timezone abbreviation
-	 *
-	 * @returns {String} Abbreviation for the timezone
-	 */
-	jsDate.prototype.getTimezoneAbbr = function() {
-		return this.proxy.toString().replace(/^.*\(([^)]+)\)$/, '$1'); 
-	};
-	
-	/**
-	 * Get the browser-reported name for the current timezone (e.g. MDT, Mountain Daylight Time)
-	 * 
-	 * @returns {String}
-	 */
-	jsDate.prototype.getTimezoneName = function() {
-		var match = /(?:\((.+)\)$| ([A-Z]{3}) )/.exec(this.toString());
-		return match[1] || match[2] || 'GMT' + this.getGmtOffset();
-	}; 
-	
-	/**
-	 * Implements Date functionality
-	 */
-	jsDate.prototype.getTimezoneOffset = function() {
-		return this.proxy.getTimezoneOffset();
-	};
-	
-	
-	/**
-	 * Get the week number of the given year, starting with the first Monday as the first week
-	 * @returns {Integer} Week number (13 for the 13th week of the year).
-	 */
-	jsDate.prototype.getWeekOfYear = function() {
-		var doy = this.getDayOfYear();
-		var rdow = 7 - this.getDayOfWeek();
-		var woy = parseInt((doy+rdow)/7, 10);
-		return woy;
-	};
-	
-	/**
-	 * Get the current date as a Unix timestamp
-	 * 
-	 * @returns {Integer}
-	 */
-	 
-	jsDate.prototype.getUnix = function() {
-		return Math.round(this.proxy.getTime() / 1000, 0);
-	}; 
-	
-	/**
-	 * Implements Date functionality
-	 */
-	jsDate.prototype.getYear = function() {
-		return this.proxy.getYear();
-	};
-	
-	/**
-	 * Return a date one day ahead (or any other unit)
-	 * 
-	 * @param {String} unit Optional, year | month | day | week | hour | minute | second | millisecond
-	 * @returns {jsDate}
-	 */
-	 
-	jsDate.prototype.next = function(unit) {
-		unit = unit || 'day';
-		return this.clone().add(1, unit);
-	};
-	
-	/**
-	 * Set the jsDate instance to a new date.
-	 *
-	 * @param  {String | Number | Array | Date Object | jsDate Object | Options Object} arguments Optional arguments, 
-	 * either a parsable date/time string,
-	 * a JavaScript timestamp, an array of numbers of form [year, month, day, hours, minutes, seconds, milliseconds],
-	 * a Date object, jsDate Object or an options object of form {syntax: "perl", date:some Date} where all options are optional.
-	 */
-	jsDate.prototype.set = function() {
+    /**
+     * Find the difference between this jsDate and another date.
+     * 
+     * @param {String| Number| Array| jsDate&nbsp;Object| Date&nbsp;Object} dateObj
+     * @param {String} unit
+     * @param {Boolean} allowDecimal
+     * @returns {Number} Number of units difference between dates.
+     */
+     
+    jsDate.prototype.diff = function(dateObj, unit, allowDecimal) {
+        // ensure we have a Date object
+        dateObj = new jsDate(dateObj);
+        if (dateObj === null) {
+            return null;
+        }
+        // get the multiplying factor integer or factor function
+        var factor = multipliers[unit] || multipliers.day;
+        if (typeof factor == 'number') {
+            // multiply
+            var unitDiff = (this.proxy.getTime() - dateObj.proxy.getTime()) / factor;
+        } else {
+            // run function
+            var unitDiff = factor.diff(this.proxy, dateObj.proxy);
+        }
+        // if decimals are not allowed, round toward zero
+        return (allowDecimal ? unitDiff : Math[unitDiff > 0 ? 'floor' : 'ceil'](unitDiff));          
+    };
+    
+    /**
+     * Get the abbreviated name of the current week day
+     * 
+     * @returns {String}
+     */   
+     
+    jsDate.prototype.getAbbrDayName = function() {
+        return jsDate.regional[this.locale]["dayNamesShort"][this.proxy.getDay()];
+    };
+    
+    /**
+     * Get the abbreviated name of the current month
+     * 
+     * @returns {String}
+     */
+     
+    jsDate.prototype.getAbbrMonthName = function() {
+        return jsDate.regional[this.locale]["monthNamesShort"][this.proxy.getMonth()];
+    };
+    
+    /**
+     * Get UPPER CASE AM or PM for the current time
+     * 
+     * @returns {String}
+     */
+     
+    jsDate.prototype.getAMPM = function() {
+        return this.proxy.getHours() >= 12 ? 'PM' : 'AM';
+    };
+    
+    /**
+     * Get lower case am or pm for the current time
+     * 
+     * @returns {String}
+     */
+     
+    jsDate.prototype.getAmPm = function() {
+        return this.proxy.getHours() >= 12 ? 'pm' : 'am';
+    };
+    
+    /**
+     * Get the century (19 for 20th Century)
+     *
+     * @returns {Integer} Century (19 for 20th century).
+     */
+    jsDate.prototype.getCentury = function() { 
+        return parseInt(this.proxy.getFullYear()/100, 10);
+    };
+    
+    /**
+     * Implements Date functionality
+     */
+    jsDate.prototype.getDate = function() {
+        return this.proxy.getDate();
+    };
+    
+    /**
+     * Implements Date functionality
+     */
+    jsDate.prototype.getDay = function() {
+        return this.proxy.getDay();
+    };
+    
+    /**
+     * Get the Day of week 1 (Monday) thru 7 (Sunday)
+     * 
+     * @returns {Integer} Day of week 1 (Monday) thru 7 (Sunday)
+     */
+    jsDate.prototype.getDayOfWeek = function() { 
+        var dow = this.proxy.getDay(); 
+        return dow===0?7:dow; 
+    };
+    
+    /**
+     * Get the day of the year
+     * 
+     * @returns {Integer} 1 - 366, day of the year
+     */
+    jsDate.prototype.getDayOfYear = function() {
+        var d = this.proxy;
+        var ms = d - new Date('' + d.getFullYear() + '/1/1 GMT');
+        ms += d.getTimezoneOffset()*60000;
+        d = null;
+        return parseInt(ms/60000/60/24, 10)+1;
+    };
+    
+    /**
+     * Get the name of the current week day
+     * 
+     * @returns {String}
+     */  
+     
+    jsDate.prototype.getDayName = function() {
+        return jsDate.regional[this.locale]["dayNames"][this.proxy.getDay()];
+    };
+    
+    /**
+     * Get the week number of the given year, starting with the first Sunday as the first week
+     * @returns {Integer} Week number (13 for the 13th full week of the year).
+     */
+    jsDate.prototype.getFullWeekOfYear = function() {
+        var d = this.proxy;
+        var doy = this.getDayOfYear();
+        var rdow = 6-d.getDay();
+        var woy = parseInt((doy+rdow)/7, 10);
+        return woy;
+    };
+    
+    /**
+     * Implements Date functionality
+     */
+    jsDate.prototype.getFullYear = function() {
+        return this.proxy.getFullYear();
+    };
+    
+    /**
+     * Get the GMT offset in hours and minutes (e.g. +06:30)
+     * 
+     * @returns {String}
+     */
+     
+    jsDate.prototype.getGmtOffset = function() {
+        // divide the minutes offset by 60
+        var hours = this.proxy.getTimezoneOffset() / 60;
+        // decide if we are ahead of or behind GMT
+        var prefix = hours < 0 ? '+' : '-';
+        // remove the negative sign if any
+        hours = Math.abs(hours);
+        // add the +/- to the padded number of hours to : to the padded minutes
+        return prefix + addZeros(Math.floor(hours), 2) + ':' + addZeros((hours % 1) * 60, 2);
+    };
+    
+    /**
+     * Implements Date functionality
+     */
+    jsDate.prototype.getHours = function() {
+        return this.proxy.getHours();
+    };
+    
+    /**
+     * Get the current hour on a 12-hour scheme
+     * 
+     * @returns {Integer}
+     */
+     
+    jsDate.prototype.getHours12  = function() {
+        var hours = this.proxy.getHours();
+        return hours > 12 ? hours - 12 : (hours == 0 ? 12 : hours);
+    };
+    
+    
+    jsDate.prototype.getIsoWeek = function() {
+        var d = this.proxy;
+        var woy = d.getWeekOfYear();
+        var dow1_1 = (new Date('' + d.getFullYear() + '/1/1')).getDay();
+        // First week is 01 and not 00 as in the case of %U and %W,
+        // so we add 1 to the final result except if day 1 of the year
+        // is a Monday (then %W returns 01).
+        // We also need to subtract 1 if the day 1 of the year is 
+        // Friday-Sunday, so the resulting equation becomes:
+        var idow = woy + (dow1_1 > 4 || dow1_1 <= 1 ? 0 : 1);
+        if(idow == 53 && (new Date('' + d.getFullYear() + '/12/31')).getDay() < 4)
+        {
+            idow = 1;
+        }
+        else if(idow === 0)
+        {
+            d = new jsDate(new Date('' + (d.getFullYear()-1) + '/12/31'));
+            idow = d.getIsoWeek();
+        }
+        d = null;
+        return idow;
+    };
+    
+    /**
+     * Implements Date functionality
+     */
+    jsDate.prototype.getMilliseconds = function() {
+        return this.proxy.getMilliseconds();
+    };
+    
+    /**
+     * Implements Date functionality
+     */
+    jsDate.prototype.getMinutes = function() {
+        return this.proxy.getMinutes();
+    };
+    
+    /**
+     * Implements Date functionality
+     */
+    jsDate.prototype.getMonth = function() {
+        return this.proxy.getMonth();
+    };
+    
+    /**
+     * Get the name of the current month
+     * 
+     * @returns {String}
+     */
+     
+    jsDate.prototype.getMonthName = function() {
+        return jsDate.regional[this.locale]["monthNames"][this.proxy.getMonth()];
+    };
+    
+    /**
+     * Get the number of the current month, 1-12
+     * 
+     * @returns {Integer}
+     */
+     
+    jsDate.prototype.getMonthNumber = function() {
+        return this.proxy.getMonth() + 1;
+    };
+    
+    /**
+     * Implements Date functionality
+     */
+    jsDate.prototype.getSeconds = function() {
+        return this.proxy.getSeconds();
+    };
+    
+    /**
+     * Return a proper two-digit year integer
+     * 
+     * @returns {Integer}
+     */
+     
+    jsDate.prototype.getShortYear = function() {
+        return this.proxy.getYear() % 100;
+    };
+    
+    /**
+     * Implements Date functionality
+     */
+    jsDate.prototype.getTime = function() {
+        return this.proxy.getTime();
+    };
+    
+    /**
+     * Get the timezone abbreviation
+     *
+     * @returns {String} Abbreviation for the timezone
+     */
+    jsDate.prototype.getTimezoneAbbr = function() {
+        return this.proxy.toString().replace(/^.*\(([^)]+)\)$/, '$1'); 
+    };
+    
+    /**
+     * Get the browser-reported name for the current timezone (e.g. MDT, Mountain Daylight Time)
+     * 
+     * @returns {String}
+     */
+    jsDate.prototype.getTimezoneName = function() {
+        var match = /(?:\((.+)\)$| ([A-Z]{3}) )/.exec(this.toString());
+        return match[1] || match[2] || 'GMT' + this.getGmtOffset();
+    }; 
+    
+    /**
+     * Implements Date functionality
+     */
+    jsDate.prototype.getTimezoneOffset = function() {
+        return this.proxy.getTimezoneOffset();
+    };
+    
+    
+    /**
+     * Get the week number of the given year, starting with the first Monday as the first week
+     * @returns {Integer} Week number (13 for the 13th week of the year).
+     */
+    jsDate.prototype.getWeekOfYear = function() {
+        var doy = this.getDayOfYear();
+        var rdow = 7 - this.getDayOfWeek();
+        var woy = parseInt((doy+rdow)/7, 10);
+        return woy;
+    };
+    
+    /**
+     * Get the current date as a Unix timestamp
+     * 
+     * @returns {Integer}
+     */
+     
+    jsDate.prototype.getUnix = function() {
+        return Math.round(this.proxy.getTime() / 1000, 0);
+    }; 
+    
+    /**
+     * Implements Date functionality
+     */
+    jsDate.prototype.getYear = function() {
+        return this.proxy.getYear();
+    };
+    
+    /**
+     * Return a date one day ahead (or any other unit)
+     * 
+     * @param {String} unit Optional, year | month | day | week | hour | minute | second | millisecond
+     * @returns {jsDate}
+     */
+     
+    jsDate.prototype.next = function(unit) {
+        unit = unit || 'day';
+        return this.clone().add(1, unit);
+    };
+    
+    /**
+     * Set the jsDate instance to a new date.
+     *
+     * @param  {String | Number | Array | Date Object | jsDate Object | Options Object} arguments Optional arguments, 
+     * either a parsable date/time string,
+     * a JavaScript timestamp, an array of numbers of form [year, month, day, hours, minutes, seconds, milliseconds],
+     * a Date object, jsDate Object or an options object of form {syntax: "perl", date:some Date} where all options are optional.
+     */
+    jsDate.prototype.set = function() {
         switch ( arguments.length ) {
             case 0:
                 this.proxy = new Date();
-				break;
+                break;
             case 1:
-				// other objects either won't have a _type property or,
-				// if they do, it shouldn't be set to "jsDate", so
-				// assume it is an options argument.
-				if (get_type(arguments[0]) == "[object Object]" && arguments[0]._type != "jsDate") {
-					var opts = this.options = arguments[0];
-					this.syntax = opts.syntax || this.syntax;
-					this.defaultCentury = opts.defaultCentury || this.defaultCentury;
-					this.proxy = jsDate.createDate(opts.date);
-				}
-				else {
-					this.proxy = jsDate.createDate(arguments[0]);
-				}
+                // other objects either won't have a _type property or,
+                // if they do, it shouldn't be set to "jsDate", so
+                // assume it is an options argument.
+                if (get_type(arguments[0]) == "[object Object]" && arguments[0]._type != "jsDate") {
+                    var opts = this.options = arguments[0];
+                    this.syntax = opts.syntax || this.syntax;
+                    this.defaultCentury = opts.defaultCentury || this.defaultCentury;
+                    this.proxy = jsDate.createDate(opts.date);
+                }
+                else {
+                    this.proxy = jsDate.createDate(arguments[0]);
+                }
                 break;
             default:
                 var a = [];
@@ -7044,237 +9196,237 @@
                 }
                 break;
         }
-	};
-	
-	/**
-	 * Sets the day of the month for a specified date according to local time.
-	 * @param {Integer} dayValue An integer from 1 to 31, representing the day of the month. 
-	 */
-	jsDate.prototype.setDate = function(n) {
-		return this.proxy.setDate(n);
-	};
-	
-	/**
-	 * Sets the full year for a specified date according to local time.
-	 * @param {Integer} yearValue The numeric value of the year, for example, 1995.  
-	 * @param {Integer} monthValue Optional, between 0 and 11 representing the months January through December.  
-	 * @param {Integer} dayValue Optional, between 1 and 31 representing the day of the month. If you specify the dayValue parameter, you must also specify the monthValue. 
-	 */
-	jsDate.prototype.setFullYear = function() {
-		return this.proxy.setFullYear.apply(this.proxy, arguments);
-	};
-	
-	/**
-	 * Sets the hours for a specified date according to local time.
-	 * 
-	 * @param {Integer} hoursValue An integer between 0 and 23, representing the hour.  
-	 * @param {Integer} minutesValue Optional, An integer between 0 and 59, representing the minutes.  
-	 * @param {Integer} secondsValue Optional, An integer between 0 and 59, representing the seconds. 
-	 * If you specify the secondsValue parameter, you must also specify the minutesValue.  
-	 * @param {Integer} msValue Optional, A number between 0 and 999, representing the milliseconds. 
-	 * If you specify the msValue parameter, you must also specify the minutesValue and secondsValue. 
-	 */
-	jsDate.prototype.setHours = function() {
-		return this.proxy.setHours.apply(this.proxy, arguments);
-	};
-	
-	/**
-	 * Implements Date functionality
-	 */	
-	jsDate.prototype.setMilliseconds = function(n) {
-		return this.proxy.setMilliseconds(n);
-	};
-	
-	/**
-	 * Implements Date functionality
-	 */	
-	jsDate.prototype.setMinutes = function() {
-		return this.proxy.setMinutes.apply(this.proxy, arguments);
-	};
-	
-	/**
-	 * Implements Date functionality
-	 */	
-	jsDate.prototype.setMonth = function() {
-		return this.proxy.setMonth.apply(this.proxy, arguments);
-	};
-	
-	/**
-	 * Implements Date functionality
-	 */	
-	jsDate.prototype.setSeconds = function() {
-		return this.proxy.setSeconds.apply(this.proxy, arguments);
-	};
-	
-	/**
-	 * Implements Date functionality
-	 */	
-	jsDate.prototype.setTime = function(n) {
-		return this.proxy.setTime(n);
-	};
-	
-	/**
-	 * Implements Date functionality
-	 */	
-	jsDate.prototype.setYear = function() {
-		return this.proxy.setYear.apply(this.proxy, arguments);
-	};
-	
-	/**
-	 * Provide a formatted string representation of this date.
-	 * 
-	 * @param {String} formatString A format string.  
-	 * See: {@link jsDate.formats}.
-	 * @returns {String} Date String.
-	 */
-			
-	jsDate.prototype.strftime = function(formatString) {
-		formatString = formatString || this.formatString || jsDate.regional[this.locale]['formatString'];
-		return jsDate.strftime(this, formatString, this.syntax);
-	};
+    };
+    
+    /**
+     * Sets the day of the month for a specified date according to local time.
+     * @param {Integer} dayValue An integer from 1 to 31, representing the day of the month. 
+     */
+    jsDate.prototype.setDate = function(n) {
+        return this.proxy.setDate(n);
+    };
+    
+    /**
+     * Sets the full year for a specified date according to local time.
+     * @param {Integer} yearValue The numeric value of the year, for example, 1995.  
+     * @param {Integer} monthValue Optional, between 0 and 11 representing the months January through December.  
+     * @param {Integer} dayValue Optional, between 1 and 31 representing the day of the month. If you specify the dayValue parameter, you must also specify the monthValue. 
+     */
+    jsDate.prototype.setFullYear = function() {
+        return this.proxy.setFullYear.apply(this.proxy, arguments);
+    };
+    
+    /**
+     * Sets the hours for a specified date according to local time.
+     * 
+     * @param {Integer} hoursValue An integer between 0 and 23, representing the hour.  
+     * @param {Integer} minutesValue Optional, An integer between 0 and 59, representing the minutes.  
+     * @param {Integer} secondsValue Optional, An integer between 0 and 59, representing the seconds. 
+     * If you specify the secondsValue parameter, you must also specify the minutesValue.  
+     * @param {Integer} msValue Optional, A number between 0 and 999, representing the milliseconds. 
+     * If you specify the msValue parameter, you must also specify the minutesValue and secondsValue. 
+     */
+    jsDate.prototype.setHours = function() {
+        return this.proxy.setHours.apply(this.proxy, arguments);
+    };
+    
+    /**
+     * Implements Date functionality
+     */ 
+    jsDate.prototype.setMilliseconds = function(n) {
+        return this.proxy.setMilliseconds(n);
+    };
+    
+    /**
+     * Implements Date functionality
+     */ 
+    jsDate.prototype.setMinutes = function() {
+        return this.proxy.setMinutes.apply(this.proxy, arguments);
+    };
+    
+    /**
+     * Implements Date functionality
+     */ 
+    jsDate.prototype.setMonth = function() {
+        return this.proxy.setMonth.apply(this.proxy, arguments);
+    };
+    
+    /**
+     * Implements Date functionality
+     */ 
+    jsDate.prototype.setSeconds = function() {
+        return this.proxy.setSeconds.apply(this.proxy, arguments);
+    };
+    
+    /**
+     * Implements Date functionality
+     */ 
+    jsDate.prototype.setTime = function(n) {
+        return this.proxy.setTime(n);
+    };
+    
+    /**
+     * Implements Date functionality
+     */ 
+    jsDate.prototype.setYear = function() {
+        return this.proxy.setYear.apply(this.proxy, arguments);
+    };
+    
+    /**
+     * Provide a formatted string representation of this date.
+     * 
+     * @param {String} formatString A format string.  
+     * See: {@link jsDate.formats}.
+     * @returns {String} Date String.
+     */
+            
+    jsDate.prototype.strftime = function(formatString) {
+        formatString = formatString || this.formatString || jsDate.regional[this.locale]['formatString'];
+        return jsDate.strftime(this, formatString, this.syntax);
+    };
         
-	/**
-	 * Return a String representation of this jsDate object.
-	 * @returns {String} Date string.
-	 */
-	
-	jsDate.prototype.toString = function() {
-		return this.proxy.toString();
-	};
-		
-	/**
-	 * Convert the current date to an 8-digit integer (%Y%m%d)
-	 * 
-	 * @returns {Integer}
-	 */
-	 
-	jsDate.prototype.toYmdInt = function() {
-		return (this.proxy.getFullYear() * 10000) + (this.getMonthNumber() * 100) + this.proxy.getDate();
-	};
-	
-	/**
-	 * @namespace Holds localizations for month/day names.
-	 * <p>jsDate attempts to detect locale when loaded and defaults to 'en'.
-	 * If a localization is detected which is not available, jsDate defaults to 'en'.
-	 * Additional localizations can be added after jsDate loads.  After adding a localization,
-	 * call the jsDate.regional.getLocale() method.  Currently, en, fr and de are defined.</p>
-	 * 
-	 * <p>Localizations must be an object and have the following properties defined:  monthNames, monthNamesShort, dayNames, dayNamesShort and Localizations are added like:</p>
-	 * <pre class="code">
-	 * jsDate.regional['en'] = {
-	 * monthNames      : 'January February March April May June July August September October November December'.split(' '),
-	 * monthNamesShort : 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' '),
-	 * dayNames        : 'Sunday Monday Tuesday Wednesday Thursday Friday Saturday'.split(' '),
-	 * dayNamesShort   : 'Sun Mon Tue Wed Thu Fri Sat'.split(' ')
-	 * };
-	 * </pre>
-	 * <p>After adding localizations, call <code>jsDate.regional.getLocale();</code> to update the locale setting with the
-	 * new localizations.</p>
-	 */
-	 
-	jsDate.regional = {
-		'en': {
-			monthNames: ['January','February','March','April','May','June','July','August','September','October','November','December'],
-			monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-			dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-			dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-			formatString: '%Y-%m-%d %H:%M:%S'
-		},
-		
-		'fr': {
-			monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'],
-			monthNamesShort: ['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc'],
-			dayNames: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
-			dayNamesShort: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],
-			formatString: '%Y-%m-%d %H:%M:%S'
-		},
-		
-		'de': {
-			monthNames: ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'],
-			monthNamesShort: ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'],
-			dayNames: ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'],
-			dayNamesShort: ['So','Mo','Di','Mi','Do','Fr','Sa'],
-			formatString: '%Y-%m-%d %H:%M:%S'
-		},
-		
-		'es': {
-			monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio', 'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
-			monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun', 'Jul','Ago','Sep','Oct','Nov','Dic'],
-			dayNames: ['Domingo','Lunes','Martes','Mi&eacute;rcoles','Jueves','Viernes','S&aacute;bado'],
-			dayNamesShort: ['Dom','Lun','Mar','Mi&eacute;','Juv','Vie','S&aacute;b'],
-			formatString: '%Y-%m-%d %H:%M:%S'
-		},
-		
-		'ru': {
-			monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
-			monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
-			dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
-			dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
-			formatString: '%Y-%m-%d %H:%M:%S'
-		},
-		
-		'ar': {
-			monthNames: ['كانون الثاني', 'شباط', 'آذار', 'نيسان', 'آذار', 'حزيران','تموز', 'آب', 'أيلول',	'تشرين الأول', 'تشرين الثاني', 'كانون الأول'],
-			monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
-			dayNames: ['السبت', 'الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة'],
-			dayNamesShort: ['سبت', 'أحد', 'اثنين', 'ثلاثاء', 'أربعاء', 'خميس', 'جمعة'],
-			formatString: '%Y-%m-%d %H:%M:%S'
-		},
-		
-		'pt': {
-			monthNames: ['Janeiro','Fevereiro','Mar&ccedil;o','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
-			monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
-			dayNames: ['Domingo','Segunda-feira','Ter&ccedil;a-feira','Quarta-feira','Quinta-feira','Sexta-feira','S&aacute;bado'],
-			dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','S&aacute;b'],
-			formatString: '%Y-%m-%d %H:%M:%S'	
-		},
-		
-		'pt-BR': {
-			monthNames: ['Janeiro','Fevereiro','Mar&ccedil;o','Abril','Maio','Junho', 'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
-			monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
-			dayNames: ['Domingo','Segunda-feira','Ter&ccedil;a-feira','Quarta-feira','Quinta-feira','Sexta-feira','S&aacute;bado'],
-			dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','S&aacute;b'],
-			formatString: '%Y-%m-%d %H:%M:%S'
-		}
-		
-	
-	};
-	
-	// Set english variants to 'en'
-	jsDate.regional['en-US'] = jsDate.regional['en-GB'] = jsDate.regional['en'];
-	
-	/**
-	 * Try to determine the users locale based on the lang attribute of the html page.  Defaults to 'en'
-	 * if it cannot figure out a locale of if the locale does not have a localization defined.
-	 * @returns {String} locale
-	 */
-	 
-	jsDate.regional.getLocale = function () {
-		var l = jsDate.config.defaultLocale;
-		
-		if ( document && document.getElementsByTagName('html') && document.getElementsByTagName('html')[0].lang ) {
-			l = document.getElementsByTagName('html')[0].lang;
-			if (!jsDate.regional.hasOwnProperty(l)) {
-				l = jsDate.config.defaultLocale;
-			}
-		}
-		
-		return l;
-	};
-	
-	// ms in day
+    /**
+     * Return a String representation of this jsDate object.
+     * @returns {String} Date string.
+     */
+    
+    jsDate.prototype.toString = function() {
+        return this.proxy.toString();
+    };
+        
+    /**
+     * Convert the current date to an 8-digit integer (%Y%m%d)
+     * 
+     * @returns {Integer}
+     */
+     
+    jsDate.prototype.toYmdInt = function() {
+        return (this.proxy.getFullYear() * 10000) + (this.getMonthNumber() * 100) + this.proxy.getDate();
+    };
+    
+    /**
+     * @namespace Holds localizations for month/day names.
+     * <p>jsDate attempts to detect locale when loaded and defaults to 'en'.
+     * If a localization is detected which is not available, jsDate defaults to 'en'.
+     * Additional localizations can be added after jsDate loads.  After adding a localization,
+     * call the jsDate.regional.getLocale() method.  Currently, en, fr and de are defined.</p>
+     * 
+     * <p>Localizations must be an object and have the following properties defined:  monthNames, monthNamesShort, dayNames, dayNamesShort and Localizations are added like:</p>
+     * <pre class="code">
+     * jsDate.regional['en'] = {
+     * monthNames      : 'January February March April May June July August September October November December'.split(' '),
+     * monthNamesShort : 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' '),
+     * dayNames        : 'Sunday Monday Tuesday Wednesday Thursday Friday Saturday'.split(' '),
+     * dayNamesShort   : 'Sun Mon Tue Wed Thu Fri Sat'.split(' ')
+     * };
+     * </pre>
+     * <p>After adding localizations, call <code>jsDate.regional.getLocale();</code> to update the locale setting with the
+     * new localizations.</p>
+     */
+     
+    jsDate.regional = {
+        'en': {
+            monthNames: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+            monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            formatString: '%Y-%m-%d %H:%M:%S'
+        },
+        
+        'fr': {
+            monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'],
+            monthNamesShort: ['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc'],
+            dayNames: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
+            dayNamesShort: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],
+            formatString: '%Y-%m-%d %H:%M:%S'
+        },
+        
+        'de': {
+            monthNames: ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'],
+            monthNamesShort: ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'],
+            dayNames: ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'],
+            dayNamesShort: ['So','Mo','Di','Mi','Do','Fr','Sa'],
+            formatString: '%Y-%m-%d %H:%M:%S'
+        },
+        
+        'es': {
+            monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio', 'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+            monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun', 'Jul','Ago','Sep','Oct','Nov','Dic'],
+            dayNames: ['Domingo','Lunes','Martes','Mi&eacute;rcoles','Jueves','Viernes','S&aacute;bado'],
+            dayNamesShort: ['Dom','Lun','Mar','Mi&eacute;','Juv','Vie','S&aacute;b'],
+            formatString: '%Y-%m-%d %H:%M:%S'
+        },
+        
+        'ru': {
+            monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+            monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+            dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+            dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+            formatString: '%Y-%m-%d %H:%M:%S'
+        },
+        
+        'ar': {
+            monthNames: ['كانون الثاني', 'شباط', 'آذار', 'نيسان', 'آذار', 'حزيران','تموز', 'آب', 'أيلول',   'تشرين الأول', 'تشرين الثاني', 'كانون الأول'],
+            monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+            dayNames: ['السبت', 'الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة'],
+            dayNamesShort: ['سبت', 'أحد', 'اثنين', 'ثلاثاء', 'أربعاء', 'خميس', 'جمعة'],
+            formatString: '%Y-%m-%d %H:%M:%S'
+        },
+        
+        'pt': {
+            monthNames: ['Janeiro','Fevereiro','Mar&ccedil;o','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+            monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+            dayNames: ['Domingo','Segunda-feira','Ter&ccedil;a-feira','Quarta-feira','Quinta-feira','Sexta-feira','S&aacute;bado'],
+            dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','S&aacute;b'],
+            formatString: '%Y-%m-%d %H:%M:%S'   
+        },
+        
+        'pt-BR': {
+            monthNames: ['Janeiro','Fevereiro','Mar&ccedil;o','Abril','Maio','Junho', 'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+            monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+            dayNames: ['Domingo','Segunda-feira','Ter&ccedil;a-feira','Quarta-feira','Quinta-feira','Sexta-feira','S&aacute;bado'],
+            dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','S&aacute;b'],
+            formatString: '%Y-%m-%d %H:%M:%S'
+        }
+        
+    
+    };
+    
+    // Set english variants to 'en'
+    jsDate.regional['en-US'] = jsDate.regional['en-GB'] = jsDate.regional['en'];
+    
+    /**
+     * Try to determine the users locale based on the lang attribute of the html page.  Defaults to 'en'
+     * if it cannot figure out a locale of if the locale does not have a localization defined.
+     * @returns {String} locale
+     */
+     
+    jsDate.regional.getLocale = function () {
+        var l = jsDate.config.defaultLocale;
+        
+        if ( document && document.getElementsByTagName('html') && document.getElementsByTagName('html')[0].lang ) {
+            l = document.getElementsByTagName('html')[0].lang;
+            if (!jsDate.regional.hasOwnProperty(l)) {
+                l = jsDate.config.defaultLocale;
+            }
+        }
+        
+        return l;
+    };
+    
+    // ms in day
     var day = 24 * 60 * 60 * 1000;
-	
+    
     // padd a number with zeros
     var addZeros = function(num, digits) {
         num = String(num);
-		var i = digits - num.length;
-		var s = String(Math.pow(10, i)).slice(1);
-		return s.concat(num);
+        var i = digits - num.length;
+        var s = String(Math.pow(10, i)).slice(1);
+        return s.concat(num);
     };
 
-	// representations used for calculating differences between dates.
-	// This borrows heavily from Ken Snyder's work.
+    // representations used for calculating differences between dates.
+    // This borrows heavily from Ken Snyder's work.
     var multipliers = {
         millisecond: 1,
         second: 1000,
@@ -7323,80 +9475,80 @@
     };
     //
     // Alias each multiplier with an 's' to allow 'year' and 'years' for example.
-	// This comes from Ken Snyders work.
+    // This comes from Ken Snyders work.
     //
     for (var unit in multipliers) {
         if (unit.substring(unit.length - 1) != 's') { // IE will iterate newly added properties :|
             multipliers[unit + 's'] = multipliers[unit];
         }
     }
-	
+    
     //
     // take a jsDate instance and a format code and return the formatted value.
-	// This is a somewhat modified version of Ken Snyder's method.
+    // This is a somewhat modified version of Ken Snyder's method.
     //
     var format = function(d, code, syntax) {
-		// if shorcut codes are used, recursively expand those.
-		if (jsDate.formats[syntax]["shortcuts"][code]) {
-			return jsDate.strftime(d, jsDate.formats[syntax]["shortcuts"][code], syntax);
-		} else {
-			// get the format code function and addZeros() argument
-			var getter = (jsDate.formats[syntax]["codes"][code] || '').split('.');
-			var nbr = d['get' + getter[0]] ? d['get' + getter[0]]() : '';
-			if (getter[1]) {
-				nbr = addZeros(nbr, getter[1]);
-			}
-			return nbr;
-		}       
+        // if shorcut codes are used, recursively expand those.
+        if (jsDate.formats[syntax]["shortcuts"][code]) {
+            return jsDate.strftime(d, jsDate.formats[syntax]["shortcuts"][code], syntax);
+        } else {
+            // get the format code function and addZeros() argument
+            var getter = (jsDate.formats[syntax]["codes"][code] || '').split('.');
+            var nbr = d['get' + getter[0]] ? d['get' + getter[0]]() : '';
+            if (getter[1]) {
+                nbr = addZeros(nbr, getter[1]);
+            }
+            return nbr;
+        }       
     };
     
     /**
-	 * @static
-	 * Static function for convert a date to a string according to a given format.  Also acts as namespace for strftime format codes.
-	 * <p>strftime formatting can be accomplished without creating a jsDate object by calling jsDate.strftime():</p>
-	 * <pre class="code">
-	 * var formattedDate = jsDate.strftime('Feb 8, 2006 8:48:32', '%Y-%m-%d %H:%M:%S');
-	 * </pre>
-	 * @param {String | Number | Array | jsDate&nbsp;Object | Date&nbsp;Object} date A parsable date string, JavaScript time stamp, Array of form [year, month, day, hours, minutes, seconds, milliseconds], jsDate Object or Date object.
-	 * @param {String} formatString String with embedded date formatting codes.  
-	 * See: {@link jsDate.formats}. 
-	 * @param {String} syntax Optional syntax to use [default perl].
-	 * @param {String} locale Optional locale to use.
-	 * @returns {String} Formatted representation of the date.
+     * @static
+     * Static function for convert a date to a string according to a given format.  Also acts as namespace for strftime format codes.
+     * <p>strftime formatting can be accomplished without creating a jsDate object by calling jsDate.strftime():</p>
+     * <pre class="code">
+     * var formattedDate = jsDate.strftime('Feb 8, 2006 8:48:32', '%Y-%m-%d %H:%M:%S');
+     * </pre>
+     * @param {String | Number | Array | jsDate&nbsp;Object | Date&nbsp;Object} date A parsable date string, JavaScript time stamp, Array of form [year, month, day, hours, minutes, seconds, milliseconds], jsDate Object or Date object.
+     * @param {String} formatString String with embedded date formatting codes.  
+     * See: {@link jsDate.formats}. 
+     * @param {String} syntax Optional syntax to use [default perl].
+     * @param {String} locale Optional locale to use.
+     * @returns {String} Formatted representation of the date.
     */
     //
-	// Logic as implemented here is very similar to Ken Snyder's Date Instance Methods.
-	//
+    // Logic as implemented here is very similar to Ken Snyder's Date Instance Methods.
+    //
     jsDate.strftime = function(d, formatString, syntax, locale) {
-		var syn = 'perl';
-		var loc = jsDate.regional.getLocale();
-		
-		// check if syntax and locale are available or reversed
-		if (syntax && jsDate.formats.hasOwnProperty(syntax)) {
-			syn = syntax;
-		}
-		else if (syntax && jsDate.regional.hasOwnProperty(syntax)) {
-			loc = syntax;
-		}
-		
-		if (locale && jsDate.formats.hasOwnProperty(locale)) {
-			syn = locale;
-		}
-		else if (locale && jsDate.regional.hasOwnProperty(locale)) {
-			loc = locale;
-		}
-		
+        var syn = 'perl';
+        var loc = jsDate.regional.getLocale();
+        
+        // check if syntax and locale are available or reversed
+        if (syntax && jsDate.formats.hasOwnProperty(syntax)) {
+            syn = syntax;
+        }
+        else if (syntax && jsDate.regional.hasOwnProperty(syntax)) {
+            loc = syntax;
+        }
+        
+        if (locale && jsDate.formats.hasOwnProperty(locale)) {
+            syn = locale;
+        }
+        else if (locale && jsDate.regional.hasOwnProperty(locale)) {
+            loc = locale;
+        }
+        
         if (get_type(d) != "[object Object]" || d._type != "jsDate") {
             d = new jsDate(d);
-			d.locale = loc;
+            d.locale = loc;
         }
-		if (!formatString) {
-			formatString = d.formatString || jsDate.regional[loc]['formatString'];
-		}
+        if (!formatString) {
+            formatString = d.formatString || jsDate.regional[loc]['formatString'];
+        }
         // default the format string to year-month-day
         var source = formatString || '%Y-%m-%d', 
-			result = '', 
-			match;
+            result = '', 
+            match;
         // replace each format code
         while (source.length > 0) {
             if (match = source.match(jsDate.formats[syn].codes.matcher)) {
@@ -7410,321 +9562,321 @@
         }
         return result;
     };
-	
-	/**
-	 * @namespace
-	 * Namespace to hold format codes and format shortcuts.  "perl" and "php" format codes 
-	 * and shortcuts are defined by default.  Additional codes and shortcuts can be
-	 * added like:
-	 * 
-	 * <pre class="code">
-	 * jsDate.formats["perl"] = {
-	 *     "codes": {
-	 *         matcher: /someregex/,
-	 *         Y: "fullYear",  // name of "get" method without the "get",
-	 *         ...,            // more codes
-	 *     },
-	 *     "shortcuts": {
-	 *         F: '%Y-%m-%d',
-	 *         ...,            // more shortcuts
-	 *     }
-	 * };
-	 * </pre>
-	 * 
-	 * <p>Additionally, ISO and SQL shortcuts are defined and can be accesses via:
-	 * <code>jsDate.formats.ISO</code> and <code>jsDate.formats.SQL</code>
-	 */
-	
-	jsDate.formats = {
-		ISO:'%Y-%m-%dT%H:%M:%S.%N%G',
-		SQL:'%Y-%m-%d %H:%M:%S'
-	};
-	
-	/**
-	 * Perl format codes and shortcuts for strftime.
-	 * 
-	 * A hash (object) of codes where each code must be an array where the first member is 
-	 * the name of a Date.prototype or jsDate.prototype function to call
-	 * and optionally a second member indicating the number to pass to addZeros()
-	 * 
-	 * <p>The following format codes are defined:</p>
-	 * 
-	 * <pre class="code">
-	 * Code    Result                    Description
-	 * == Years ==           
-	 * %Y      2008                      Four-digit year
-	 * %y      08                        Two-digit year
-	 * 
-	 * == Months ==          
-	 * %m      09                        Two-digit month
-	 * %#m     9                         One or two-digit month
-	 * %B      September                 Full month name
-	 * %b      Sep                       Abbreviated month name
-	 * 
-	 * == Days ==            
-	 * %d      05                        Two-digit day of month
-	 * %#d     5                         One or two-digit day of month
-	 * %e      5                         One or two-digit day of month
-	 * %A      Sunday                    Full name of the day of the week
-	 * %a      Sun                       Abbreviated name of the day of the week
-	 * %w      0                         Number of the day of the week (0 = Sunday, 6 = Saturday)
-	 * 
-	 * == Hours ==           
-	 * %H      23                        Hours in 24-hour format (two digits)
-	 * %#H     3                         Hours in 24-hour integer format (one or two digits)
-	 * %I      11                        Hours in 12-hour format (two digits)
-	 * %#I     3                         Hours in 12-hour integer format (one or two digits)
-	 * %p      PM                        AM or PM
-	 * 
-	 * == Minutes ==         
-	 * %M      09                        Minutes (two digits)
-	 * %#M     9                         Minutes (one or two digits)
-	 * 
-	 * == Seconds ==         
-	 * %S      02                        Seconds (two digits)
-	 * %#S     2                         Seconds (one or two digits)
-	 * %s      1206567625723             Unix timestamp (Seconds past 1970-01-01 00:00:00)
-	 * 
-	 * == Milliseconds ==    
-	 * %N      008                       Milliseconds (three digits)
-	 * %#N     8                         Milliseconds (one to three digits)
-	 * 
-	 * == Timezone ==        
-	 * %O      360                       difference in minutes between local time and GMT
-	 * %Z      Mountain Standard Time    Name of timezone as reported by browser
-	 * %G      06:00                     Hours and minutes between GMT
-	 * 
-	 * == Shortcuts ==       
-	 * %F      2008-03-26                %Y-%m-%d
-	 * %T      05:06:30                  %H:%M:%S
-	 * %X      05:06:30                  %H:%M:%S
-	 * %x      03/26/08                  %m/%d/%y
-	 * %D      03/26/08                  %m/%d/%y
-	 * %#c     Wed Mar 26 15:31:00 2008  %a %b %e %H:%M:%S %Y
-	 * %v      3-Sep-2008                %e-%b-%Y
-	 * %R      15:31                     %H:%M
-	 * %r      03:31:00 PM               %I:%M:%S %p
-	 * 
-	 * == Characters ==      
-	 * %n      \n                        Newline
-	 * %t      \t                        Tab
-	 * %%      %                         Percent Symbol
-	 * </pre>
-	 * 
-	 * <p>Formatting shortcuts that will be translated into their longer version.
-	 * Be sure that format shortcuts do not refer to themselves: this will cause an infinite loop.</p>
-	 * 
-	 * <p>Format codes and format shortcuts can be redefined after the jsDate
-	 * module is imported.</p>
-	 * 
-	 * <p>Note that if you redefine the whole hash (object), you must supply a "matcher"
-	 * regex for the parser.  The default matcher is:</p>
-	 * 
-	 * <code>/()%(#?(%|[a-z]))/i</code>
-	 * 
-	 * <p>which corresponds to the Perl syntax used by default.</p>
-	 * 
-	 * <p>By customizing the matcher and format codes, nearly any strftime functionality is possible.</p>
-	 */
-	 
-	jsDate.formats.perl = {
-		codes: {
-			//
-			// 2-part regex matcher for format codes
-			//
-			// first match must be the character before the code (to account for escaping)
-			// second match must be the format code character(s)
-			//
-			matcher: /()%(#?(%|[a-z]))/i,
-			// year
-			Y: 'FullYear',
-			y: 'ShortYear.2',
-			// month
-			m: 'MonthNumber.2',
-			'#m': 'MonthNumber',
-			B: 'MonthName',
-			b: 'AbbrMonthName',
-			// day
-			d: 'Date.2',
-			'#d': 'Date',
-			e: 'Date',
-			A: 'DayName',
-			a: 'AbbrDayName',
-			w: 'Day',
-			// hours
-			H: 'Hours.2',
-			'#H': 'Hours',
-			I: 'Hours12.2',
-			'#I': 'Hours12',
-			p: 'AMPM',
-			// minutes
-			M: 'Minutes.2',
-			'#M': 'Minutes',
-			// seconds
-			S: 'Seconds.2',
-			'#S': 'Seconds',
-			s: 'Unix',
-			// milliseconds
-			N: 'Milliseconds.3',
-			'#N': 'Milliseconds',
-			// timezone
-			O: 'TimezoneOffset',
-			Z: 'TimezoneName',
-			G: 'GmtOffset'  
-		},
-		
-		shortcuts: {
-			// date
-			F: '%Y-%m-%d',
-			// time
-			T: '%H:%M:%S',
-			X: '%H:%M:%S',
-			// local format date
-			x: '%m/%d/%y',
-			D: '%m/%d/%y',
-			// local format extended
-			'#c': '%a %b %e %H:%M:%S %Y',
-			// local format short
-			v: '%e-%b-%Y',
-			R: '%H:%M',
-			r: '%I:%M:%S %p',
-			// tab and newline
-			t: '\t',
-			n: '\n',
-			'%': '%'
-		}
-	};
-	
-	/**
-	 * PHP format codes and shortcuts for strftime.
-	 * 
-	 * A hash (object) of codes where each code must be an array where the first member is 
-	 * the name of a Date.prototype or jsDate.prototype function to call
-	 * and optionally a second member indicating the number to pass to addZeros()
-	 * 
-	 * <p>The following format codes are defined:</p>
-	 * 
-	 * <pre class="code">
-	 * Code    Result                    Description
-	 * === Days ===        
-	 * %a      Sun through Sat           An abbreviated textual representation of the day
-	 * %A      Sunday - Saturday         A full textual representation of the day
-	 * %d      01 to 31                  Two-digit day of the month (with leading zeros)
-	 * %e      1 to 31                   Day of the month, with a space preceding single digits.
-	 * %j      001 to 366                Day of the year, 3 digits with leading zeros
-	 * %u      1 - 7 (Mon - Sun)         ISO-8601 numeric representation of the day of the week
-	 * %w      0 - 6 (Sun - Sat)         Numeric representation of the day of the week
-	 *                                  
-	 * === Week ===                     
-	 * %U      13                        Full Week number, starting with the first Sunday as the first week
-	 * %V      01 through 53             ISO-8601:1988 week number, starting with the first week of the year 
-	 *                                   with at least 4 weekdays, with Monday being the start of the week
-	 * %W      46                        A numeric representation of the week of the year, 
-	 *                                   starting with the first Monday as the first week
-	 * === Month ===                    
-	 * %b      Jan through Dec           Abbreviated month name, based on the locale
-	 * %B      January - December        Full month name, based on the locale
-	 * %h      Jan through Dec           Abbreviated month name, based on the locale (an alias of %b)
-	 * %m      01 - 12 (Jan - Dec)       Two digit representation of the month
-	 * 
-	 * === Year ===                     
-	 * %C      19                        Two digit century (year/100, truncated to an integer)
-	 * %y      09 for 2009               Two digit year
-	 * %Y      2038                      Four digit year
-	 * 
-	 * === Time ===                     
-	 * %H      00 through 23             Two digit representation of the hour in 24-hour format
-	 * %I      01 through 12             Two digit representation of the hour in 12-hour format
-	 * %l      1 through 12              Hour in 12-hour format, with a space preceeding single digits
-	 * %M      00 through 59             Two digit representation of the minute
-	 * %p      AM/PM                     UPPER-CASE 'AM' or 'PM' based on the given time
-	 * %P      am/pm                     lower-case 'am' or 'pm' based on the given time
-	 * %r      09:34:17 PM               Same as %I:%M:%S %p
-	 * %R      00:35                     Same as %H:%M
-	 * %S      00 through 59             Two digit representation of the second
-	 * %T      21:34:17                  Same as %H:%M:%S
-	 * %X      03:59:16                  Preferred time representation based on locale, without the date
-	 * %z      -0500 or EST              Either the time zone offset from UTC or the abbreviation
-	 * %Z      -0500 or EST              The time zone offset/abbreviation option NOT given by %z
-	 * 
-	 * === Time and Date ===            
-	 * %D      02/05/09                  Same as %m/%d/%y
-	 * %F      2009-02-05                Same as %Y-%m-%d (commonly used in database datestamps)
-	 * %s      305815200                 Unix Epoch Time timestamp (same as the time() function)
-	 * %x      02/05/09                  Preferred date representation, without the time
-	 * 
-	 * === Miscellaneous ===            
-	 * %n        ---                     A newline character (\n)
-	 * %t        ---                     A Tab character (\t)
-	 * %%        ---                     A literal percentage character (%)
-	 * </pre>
-	 */
+    
+    /**
+     * @namespace
+     * Namespace to hold format codes and format shortcuts.  "perl" and "php" format codes 
+     * and shortcuts are defined by default.  Additional codes and shortcuts can be
+     * added like:
+     * 
+     * <pre class="code">
+     * jsDate.formats["perl"] = {
+     *     "codes": {
+     *         matcher: /someregex/,
+     *         Y: "fullYear",  // name of "get" method without the "get",
+     *         ...,            // more codes
+     *     },
+     *     "shortcuts": {
+     *         F: '%Y-%m-%d',
+     *         ...,            // more shortcuts
+     *     }
+     * };
+     * </pre>
+     * 
+     * <p>Additionally, ISO and SQL shortcuts are defined and can be accesses via:
+     * <code>jsDate.formats.ISO</code> and <code>jsDate.formats.SQL</code>
+     */
+    
+    jsDate.formats = {
+        ISO:'%Y-%m-%dT%H:%M:%S.%N%G',
+        SQL:'%Y-%m-%d %H:%M:%S'
+    };
+    
+    /**
+     * Perl format codes and shortcuts for strftime.
+     * 
+     * A hash (object) of codes where each code must be an array where the first member is 
+     * the name of a Date.prototype or jsDate.prototype function to call
+     * and optionally a second member indicating the number to pass to addZeros()
+     * 
+     * <p>The following format codes are defined:</p>
+     * 
+     * <pre class="code">
+     * Code    Result                    Description
+     * == Years ==           
+     * %Y      2008                      Four-digit year
+     * %y      08                        Two-digit year
+     * 
+     * == Months ==          
+     * %m      09                        Two-digit month
+     * %#m     9                         One or two-digit month
+     * %B      September                 Full month name
+     * %b      Sep                       Abbreviated month name
+     * 
+     * == Days ==            
+     * %d      05                        Two-digit day of month
+     * %#d     5                         One or two-digit day of month
+     * %e      5                         One or two-digit day of month
+     * %A      Sunday                    Full name of the day of the week
+     * %a      Sun                       Abbreviated name of the day of the week
+     * %w      0                         Number of the day of the week (0 = Sunday, 6 = Saturday)
+     * 
+     * == Hours ==           
+     * %H      23                        Hours in 24-hour format (two digits)
+     * %#H     3                         Hours in 24-hour integer format (one or two digits)
+     * %I      11                        Hours in 12-hour format (two digits)
+     * %#I     3                         Hours in 12-hour integer format (one or two digits)
+     * %p      PM                        AM or PM
+     * 
+     * == Minutes ==         
+     * %M      09                        Minutes (two digits)
+     * %#M     9                         Minutes (one or two digits)
+     * 
+     * == Seconds ==         
+     * %S      02                        Seconds (two digits)
+     * %#S     2                         Seconds (one or two digits)
+     * %s      1206567625723             Unix timestamp (Seconds past 1970-01-01 00:00:00)
+     * 
+     * == Milliseconds ==    
+     * %N      008                       Milliseconds (three digits)
+     * %#N     8                         Milliseconds (one to three digits)
+     * 
+     * == Timezone ==        
+     * %O      360                       difference in minutes between local time and GMT
+     * %Z      Mountain Standard Time    Name of timezone as reported by browser
+     * %G      06:00                     Hours and minutes between GMT
+     * 
+     * == Shortcuts ==       
+     * %F      2008-03-26                %Y-%m-%d
+     * %T      05:06:30                  %H:%M:%S
+     * %X      05:06:30                  %H:%M:%S
+     * %x      03/26/08                  %m/%d/%y
+     * %D      03/26/08                  %m/%d/%y
+     * %#c     Wed Mar 26 15:31:00 2008  %a %b %e %H:%M:%S %Y
+     * %v      3-Sep-2008                %e-%b-%Y
+     * %R      15:31                     %H:%M
+     * %r      03:31:00 PM               %I:%M:%S %p
+     * 
+     * == Characters ==      
+     * %n      \n                        Newline
+     * %t      \t                        Tab
+     * %%      %                         Percent Symbol
+     * </pre>
+     * 
+     * <p>Formatting shortcuts that will be translated into their longer version.
+     * Be sure that format shortcuts do not refer to themselves: this will cause an infinite loop.</p>
+     * 
+     * <p>Format codes and format shortcuts can be redefined after the jsDate
+     * module is imported.</p>
+     * 
+     * <p>Note that if you redefine the whole hash (object), you must supply a "matcher"
+     * regex for the parser.  The default matcher is:</p>
+     * 
+     * <code>/()%(#?(%|[a-z]))/i</code>
+     * 
+     * <p>which corresponds to the Perl syntax used by default.</p>
+     * 
+     * <p>By customizing the matcher and format codes, nearly any strftime functionality is possible.</p>
+     */
+     
+    jsDate.formats.perl = {
+        codes: {
+            //
+            // 2-part regex matcher for format codes
+            //
+            // first match must be the character before the code (to account for escaping)
+            // second match must be the format code character(s)
+            //
+            matcher: /()%(#?(%|[a-z]))/i,
+            // year
+            Y: 'FullYear',
+            y: 'ShortYear.2',
+            // month
+            m: 'MonthNumber.2',
+            '#m': 'MonthNumber',
+            B: 'MonthName',
+            b: 'AbbrMonthName',
+            // day
+            d: 'Date.2',
+            '#d': 'Date',
+            e: 'Date',
+            A: 'DayName',
+            a: 'AbbrDayName',
+            w: 'Day',
+            // hours
+            H: 'Hours.2',
+            '#H': 'Hours',
+            I: 'Hours12.2',
+            '#I': 'Hours12',
+            p: 'AMPM',
+            // minutes
+            M: 'Minutes.2',
+            '#M': 'Minutes',
+            // seconds
+            S: 'Seconds.2',
+            '#S': 'Seconds',
+            s: 'Unix',
+            // milliseconds
+            N: 'Milliseconds.3',
+            '#N': 'Milliseconds',
+            // timezone
+            O: 'TimezoneOffset',
+            Z: 'TimezoneName',
+            G: 'GmtOffset'  
+        },
+        
+        shortcuts: {
+            // date
+            F: '%Y-%m-%d',
+            // time
+            T: '%H:%M:%S',
+            X: '%H:%M:%S',
+            // local format date
+            x: '%m/%d/%y',
+            D: '%m/%d/%y',
+            // local format extended
+            '#c': '%a %b %e %H:%M:%S %Y',
+            // local format short
+            v: '%e-%b-%Y',
+            R: '%H:%M',
+            r: '%I:%M:%S %p',
+            // tab and newline
+            t: '\t',
+            n: '\n',
+            '%': '%'
+        }
+    };
+    
+    /**
+     * PHP format codes and shortcuts for strftime.
+     * 
+     * A hash (object) of codes where each code must be an array where the first member is 
+     * the name of a Date.prototype or jsDate.prototype function to call
+     * and optionally a second member indicating the number to pass to addZeros()
+     * 
+     * <p>The following format codes are defined:</p>
+     * 
+     * <pre class="code">
+     * Code    Result                    Description
+     * === Days ===        
+     * %a      Sun through Sat           An abbreviated textual representation of the day
+     * %A      Sunday - Saturday         A full textual representation of the day
+     * %d      01 to 31                  Two-digit day of the month (with leading zeros)
+     * %e      1 to 31                   Day of the month, with a space preceding single digits.
+     * %j      001 to 366                Day of the year, 3 digits with leading zeros
+     * %u      1 - 7 (Mon - Sun)         ISO-8601 numeric representation of the day of the week
+     * %w      0 - 6 (Sun - Sat)         Numeric representation of the day of the week
+     *                                  
+     * === Week ===                     
+     * %U      13                        Full Week number, starting with the first Sunday as the first week
+     * %V      01 through 53             ISO-8601:1988 week number, starting with the first week of the year 
+     *                                   with at least 4 weekdays, with Monday being the start of the week
+     * %W      46                        A numeric representation of the week of the year, 
+     *                                   starting with the first Monday as the first week
+     * === Month ===                    
+     * %b      Jan through Dec           Abbreviated month name, based on the locale
+     * %B      January - December        Full month name, based on the locale
+     * %h      Jan through Dec           Abbreviated month name, based on the locale (an alias of %b)
+     * %m      01 - 12 (Jan - Dec)       Two digit representation of the month
+     * 
+     * === Year ===                     
+     * %C      19                        Two digit century (year/100, truncated to an integer)
+     * %y      09 for 2009               Two digit year
+     * %Y      2038                      Four digit year
+     * 
+     * === Time ===                     
+     * %H      00 through 23             Two digit representation of the hour in 24-hour format
+     * %I      01 through 12             Two digit representation of the hour in 12-hour format
+     * %l      1 through 12              Hour in 12-hour format, with a space preceeding single digits
+     * %M      00 through 59             Two digit representation of the minute
+     * %p      AM/PM                     UPPER-CASE 'AM' or 'PM' based on the given time
+     * %P      am/pm                     lower-case 'am' or 'pm' based on the given time
+     * %r      09:34:17 PM               Same as %I:%M:%S %p
+     * %R      00:35                     Same as %H:%M
+     * %S      00 through 59             Two digit representation of the second
+     * %T      21:34:17                  Same as %H:%M:%S
+     * %X      03:59:16                  Preferred time representation based on locale, without the date
+     * %z      -0500 or EST              Either the time zone offset from UTC or the abbreviation
+     * %Z      -0500 or EST              The time zone offset/abbreviation option NOT given by %z
+     * 
+     * === Time and Date ===            
+     * %D      02/05/09                  Same as %m/%d/%y
+     * %F      2009-02-05                Same as %Y-%m-%d (commonly used in database datestamps)
+     * %s      305815200                 Unix Epoch Time timestamp (same as the time() function)
+     * %x      02/05/09                  Preferred date representation, without the time
+     * 
+     * === Miscellaneous ===            
+     * %n        ---                     A newline character (\n)
+     * %t        ---                     A Tab character (\t)
+     * %%        ---                     A literal percentage character (%)
+     * </pre>
+     */
  
-	jsDate.formats.php = {
-		codes: {
-			//
-			// 2-part regex matcher for format codes
-			//
-			// first match must be the character before the code (to account for escaping)
-			// second match must be the format code character(s)
-			//
-			matcher: /()%((%|[a-z]))/i,
-			// day
-			a: 'AbbrDayName',
-			A: 'DayName',
-			d: 'Date.2',
-			e: 'Date',
-			j: 'DayOfYear.3',
-			u: 'DayOfWeek',
-			w: 'Day',
-			// week
-			U: 'FullWeekOfYear.2',
-			V: 'IsoWeek.2',
-			W: 'WeekOfYear.2',
-			// month
-			b: 'AbbrMonthName',
-			B: 'MonthName',
-			m: 'MonthNumber.2',
-			h: 'AbbrMonthName',
-			// year
-			C: 'Century.2',
-			y: 'ShortYear.2',
-			Y: 'FullYear',
-			// time
-			H: 'Hours.2',
-			I: 'Hours12.2',
-			l: 'Hours12',
-			p: 'AMPM',
-			P: 'AmPm',
-			M: 'Minutes.2',
-			S: 'Seconds.2',
-			s: 'Unix',
-			O: 'TimezoneOffset',
-			z: 'GmtOffset',
-			Z: 'TimezoneAbbr'
-		},
-		
-		shortcuts: {
-			D: '%m/%d/%y',
-			F: '%Y-%m-%d',
-			T: '%H:%M:%S',
-			X: '%H:%M:%S',
-			x: '%m/%d/%y',
-			R: '%H:%M',
-			r: '%I:%M:%S %p',
-			t: '\t',
-			n: '\n',
-			'%': '%'
-		}
-	};   
-	//
-	// Conceptually, the logic implemented here is similar to Ken Snyder's Date Instance Methods.
-	// I use his idea of a set of parsers which can be regular expressions or functions,
-	// iterating through those, and then seeing if Date.parse() will create a date.
-	// The parser expressions and functions are a little different and some bugs have been
-	// worked out.  Also, a lot of "pre-parsing" is done to fix implementation
-	// variations of Date.parse() between browsers.
-	//
+    jsDate.formats.php = {
+        codes: {
+            //
+            // 2-part regex matcher for format codes
+            //
+            // first match must be the character before the code (to account for escaping)
+            // second match must be the format code character(s)
+            //
+            matcher: /()%((%|[a-z]))/i,
+            // day
+            a: 'AbbrDayName',
+            A: 'DayName',
+            d: 'Date.2',
+            e: 'Date',
+            j: 'DayOfYear.3',
+            u: 'DayOfWeek',
+            w: 'Day',
+            // week
+            U: 'FullWeekOfYear.2',
+            V: 'IsoWeek.2',
+            W: 'WeekOfYear.2',
+            // month
+            b: 'AbbrMonthName',
+            B: 'MonthName',
+            m: 'MonthNumber.2',
+            h: 'AbbrMonthName',
+            // year
+            C: 'Century.2',
+            y: 'ShortYear.2',
+            Y: 'FullYear',
+            // time
+            H: 'Hours.2',
+            I: 'Hours12.2',
+            l: 'Hours12',
+            p: 'AMPM',
+            P: 'AmPm',
+            M: 'Minutes.2',
+            S: 'Seconds.2',
+            s: 'Unix',
+            O: 'TimezoneOffset',
+            z: 'GmtOffset',
+            Z: 'TimezoneAbbr'
+        },
+        
+        shortcuts: {
+            D: '%m/%d/%y',
+            F: '%Y-%m-%d',
+            T: '%H:%M:%S',
+            X: '%H:%M:%S',
+            x: '%m/%d/%y',
+            R: '%H:%M',
+            r: '%I:%M:%S %p',
+            t: '\t',
+            n: '\n',
+            '%': '%'
+        }
+    };   
+    //
+    // Conceptually, the logic implemented here is similar to Ken Snyder's Date Instance Methods.
+    // I use his idea of a set of parsers which can be regular expressions or functions,
+    // iterating through those, and then seeing if Date.parse() will create a date.
+    // The parser expressions and functions are a little different and some bugs have been
+    // worked out.  Also, a lot of "pre-parsing" is done to fix implementation
+    // variations of Date.parse() between browsers.
+    //
     jsDate.createDate = function(date) {
         // if passing in multiple arguments, try Date constructor
         if (date == null) {
@@ -7740,13 +9892,13 @@
             return new Date(date);
         }
         
-		// Before passing strings into Date.parse(), have to normalize them for certain conditions.
-		// If strings are not formatted staccording to the EcmaScript spec, results from Date parse will be implementation dependent.  
-		// 
-		// For example: 
-		//  * FF and Opera assume 2 digit dates are pre y2k, Chome assumes <50 is pre y2k, 50+ is 21st century.  
-		//  * Chrome will correctly parse '1984-1-25' into localtime, FF and Opera will not parse.
-		//  * Both FF, Chrome and Opera will parse '1984/1/25' into localtime.
+        // Before passing strings into Date.parse(), have to normalize them for certain conditions.
+        // If strings are not formatted staccording to the EcmaScript spec, results from Date parse will be implementation dependent.  
+        // 
+        // For example: 
+        //  * FF and Opera assume 2 digit dates are pre y2k, Chome assumes <50 is pre y2k, 50+ is 21st century.  
+        //  * Chrome will correctly parse '1984-1-25' into localtime, FF and Opera will not parse.
+        //  * Both FF, Chrome and Opera will parse '1984/1/25' into localtime.
         
         // remove leading and trailing spaces
         var parsable = String(date).replace(/^\s*(.+)\s*$/g, '$1');
@@ -7823,8 +9975,9 @@
         var i = 0;
         var length = jsDate.matchers.length;
         var pattern,
-			ms,
-			current = parsable;
+            ms,
+            current = parsable,
+            obj;
         while (i < length) {
             ms = Date.parse(current);
             if (!isNaN(ms)) {
@@ -7832,7 +9985,7 @@
             }
             pattern = jsDate.matchers[i];
             if (typeof pattern == 'function') {
-                var obj = pattern.call(jsDate, current);
+                obj = pattern.call(jsDate, current);
                 if (obj instanceof Date) {
                     return obj;
                 }
@@ -7846,15 +9999,15 @@
     
 
     /**
-	 * @static
-	 * Handy static utility function to return the number of days in a given month.
-	 * @param {Integer} year Year
-	 * @param {Integer} month Month (1-12)
-	 * @returns {Integer} Number of days in the month.
+     * @static
+     * Handy static utility function to return the number of days in a given month.
+     * @param {Integer} year Year
+     * @param {Integer} month Month (1-12)
+     * @returns {Integer} Number of days in the month.
     */
-	//
-	// handy utility method Borrowed right from Ken Snyder's Date Instance Mehtods.
-	// 
+    //
+    // handy utility method Borrowed right from Ken Snyder's Date Instance Mehtods.
+    // 
     jsDate.daysInMonth = function(year, month) {
         if (month == 2) {
             return new Date(year, 1, 29).getDate() == 29 ? 29 : 28;
@@ -7863,16 +10016,16 @@
     };
 
 
-	//
-	// An Array of regular expressions or functions that will attempt to match the date string.
-	// Functions are called with scope of a jsDate instance.
+    //
+    // An Array of regular expressions or functions that will attempt to match the date string.
+    // Functions are called with scope of a jsDate instance.
     //
     jsDate.matchers = [
-		// convert dd.mmm.yyyy to mm/dd/yyyy (world date to US date).
+        // convert dd.mmm.yyyy to mm/dd/yyyy (world date to US date).
         [/(3[01]|[0-2]\d)\s*\.\s*(1[0-2]|0\d)\s*\.\s*([1-9]\d{3})/, '$2/$1/$3'],
-		// convert yyyy-mm-dd to mm/dd/yyyy (ISO date to US date).
+        // convert yyyy-mm-dd to mm/dd/yyyy (ISO date to US date).
         [/([1-9]\d{3})\s*-\s*(1[0-2]|0\d)\s*-\s*(3[01]|[0-2]\d)/, '$2/$3/$1'],
-		// Handle 12 hour or 24 hour time with milliseconds am/pm and optional date part.
+        // Handle 12 hour or 24 hour time with milliseconds am/pm and optional date part.
         function(str) { 
             var match = str.match(/^(?:(.+)\s+)?([012]?\d)(?:\s*\:\s*(\d\d))?(?:\s*\:\s*(\d\d(\.\d*)?))?\s*(am|pm)?\s*$/i);
             //                   opt. date      hour       opt. minute     opt. second       opt. msec   opt. am or pm
@@ -7897,7 +10050,7 @@
                 return str;
             }
         },
-		// Handle ISO timestamp with time zone.
+        // Handle ISO timestamp with time zone.
         function(str) {
             var match = str.match(/^(?:(.+))[T|\s+]([012]\d)(?:\:(\d\d))(?:\:(\d\d))(?:\.\d+)([\+\-]\d\d\:\d\d)$/i);
             if (match) {
@@ -7920,7 +10073,7 @@
         },
         // Try to match ambiguous strings like 12/8/22.
         // Use FF date assumption that 2 digit years are 20th century (i.e. 1900's).
-		// This may be redundant with pre processing of date already performed.
+        // This may be redundant with pre processing of date already performed.
         function(str) {
             var match = str.match(/^([0-3]?\d)\s*[-\/.\s]{1}\s*([a-zA-Z]{3,9})\s*[-\/.\s]{1}\s*([0-3]?\d)$/);
             if (match) {
@@ -7939,10 +10092,10 @@
                     ny = cent + m3;
                 }
                 
-                var nm = inArray(match[2], jsDate.regional[this.locale]["monthNamesShort"]);
+                var nm = inArray(match[2], jsDate.regional[jsDate.regional.getLocale()]["monthNamesShort"]);
                 
                 if (nm == -1) {
-                    nm = inArray(match[2], jsDate.regional[this.locale]["monthNames"]);
+                    nm = inArray(match[2], jsDate.regional[jsDate.regional.getLocale()]["monthNames"]);
                 }
             
                 d.setFullYear(ny, nm, nd);
@@ -7956,9 +10109,9 @@
         }      
     ];
 
-	//
-	// I think John Reisig published this method on his blog, ejohn.
-	//
+    //
+    // I think John Reisig published this method on his blog, ejohn.
+    //
     function inArray( elem, array ) {
         if ( array.indexOf ) {
             return array.indexOf( elem );
@@ -7972,16 +10125,16 @@
 
         return -1;
     }
-	
-	//
-	// Thanks to Kangax, Christian Sciberras and Stack Overflow for this method.
-	//
-	function get_type(thing){
-		if(thing===null) return "[object Null]"; // special case
-		return Object.prototype.toString.call(thing);
-	}
-	
-	$.jsDate = jsDate;
+    
+    //
+    // Thanks to Kangax, Christian Sciberras and Stack Overflow for this method.
+    //
+    function get_type(thing){
+        if(thing===null) return "[object Null]"; // special case
+        return Object.prototype.toString.call(thing);
+    }
+    
+    $.jsDate = jsDate;
 
       
     /**
@@ -8039,6 +10192,12 @@
       * Format: '%.4g', Input: 12.0, Output: 12.00
       * Format: '%.4p', Input: 4.321e-5, Output: 4.321e-5
       * Format: '%.4g', Input: 4.321e-5, Output: 4.3210e-5
+      * 
+      * Example:
+      * >>> $.jqplot.sprintf('%.2f, %d', 23.3452, 43.23)
+      * "23.35, 43"
+      * >>> $.jqplot.sprintf("no value: %n, decimal with thousands separator: %'d", 23.3452, 433524)
+      * "no value: , decimal with thousands separator: 433,524"
       */
     $.jqplot.sprintf = function() {
         function pad(str, len, chr, leftJustify) {
@@ -8047,13 +10206,13 @@
 
         }
 
-		function thousand_separate(value) {
-			var value_str = new String(value);
-			for (var i=10; i>0; i--) {
-				if (value_str == (value_str = value_str.replace(/^(\d+)(\d{3})/, "$1"+$.jqplot.sprintf.thousandsSeparator+"$2"))) break;
-			}
-			return value_str; 
-		}
+        function thousand_separate(value) {
+            var value_str = new String(value);
+            for (var i=10; i>0; i--) {
+                if (value_str == (value_str = value_str.replace(/^(\d+)(\d{3})/, "$1"+$.jqplot.sprintf.thousandsSeparator+"$2"))) break;
+            }
+            return value_str; 
+        }
 
         function justify(value, prefix, leftJustify, minWidth, zeroPad, htmlSpace) {
             var diff = minWidth - value.length;
@@ -8098,7 +10257,7 @@
                 case '0': zeroPad = true; break;
                 case '#': prefixBaseX = true; break;
                 case '&': htmlSpace = true; break;
-				case '\'': thousandSeparation = true; break;
+                case '\'': thousandSeparation = true; break;
             }
 
             // parameters may be null, undefined, empty-string or real valued
@@ -8163,7 +10322,7 @@
               }
               var prefix = number < 0 ? '-' : positivePrefix;
               var number_str = thousandSeparation ? thousand_separate(String(Math.abs(number))): String(Math.abs(number));
-			  value = prefix + pad(number_str, precision, '0', false);
+              value = prefix + pad(number_str, precision, '0', false);
               //value = prefix + pad(String(Math.abs(number)), precision, '0', false);
               return justify(value, prefix, leftJustify, minWidth, zeroPad, htmlSpace);
                   }
@@ -8174,7 +10333,7 @@
               }
               var prefix = number < 0 ? '-' : positivePrefix;
               var number_str = thousandSeparation ? thousand_separate(String(Math.abs(number))): String(Math.abs(number));
-			  value = prefix + pad(number_str, precision, '0', false);
+              value = prefix + pad(number_str, precision, '0', false);
               return justify(value, prefix, leftJustify, minWidth, zeroPad, htmlSpace);
                   }
             case 'e':
@@ -8236,8 +10395,28 @@
         });
     };
 
-	$.jqplot.sprintf.thousandsSeparator = ',';
+    $.jqplot.sprintf.thousandsSeparator = ',';
     
     $.jqplot.sprintf.regex = /%%|%(\d+\$)?([-+#0&\' ]*)(\*\d+\$|\*|\d+)?(\.(\*\d+\$|\*|\d+))?([nAscboxXuidfegpEGP])/g;
+
+    $.jqplot.getSignificantFigures = function(number) {
+        var parts = String(Number(Math.abs(number)).toExponential()).split(/e|E/);
+        // total significant digits
+        var sd = (parts[0].indexOf('.') != -1) ? parts[0].length - 1 : parts[0].length;
+        var zeros = (parts[1] < 0) ? -parts[1] - 1 : 0;
+        // exponent
+        var expn = parseInt(parts[1]);
+        // digits to the left of the decimal place
+        var dleft = (expn + 1 > 0) ? expn + 1 : 0;
+        // digits to the right of the decimal place
+        var dright = (sd <= dleft) ? 0 : sd - expn - 1;
+        return {significantDigits: sd, digitsLeft: dleft, digitsRight: dright, zeros: zeros, exponent: expn} ;
+    };
+
+    $.jqplot.getPrecision = function(number) {
+        var arr = $.jqplot.getSignificantFigures(number);
+        var p = arr[1] - 1 - parseInt(arr[0][1]);
+        return p;
+    };
 
 })(jQuery);  

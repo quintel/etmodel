@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r720
+ * Version: 1.0.0b2_r947
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -109,12 +109,7 @@
         }
         
         if (this.enableFontSupport) {
-            
-            function support_canvas_text() {
-                return !!(document.createElement('canvas').getContext && typeof document.createElement('canvas').getContext('2d').fillText == 'function');
-            }
-            
-            if (support_canvas_text()) {
+            if ($.jqplot.support_canvas_text()) {
                 this._textRenderer = new $.jqplot.CanvasFontRenderer(ropts);
             }
             
@@ -167,32 +162,40 @@
         return a;
     };
     
-    $.jqplot.CanvasAxisLabelRenderer.prototype.draw = function(ctx) {
+    $.jqplot.CanvasAxisLabelRenderer.prototype.draw = function(ctx, plot) {
+          // Memory Leaks patch
+          if (this._elem) {
+              if ($.jqplot.use_excanvas && window.G_vmlCanvasManager.uninitElement !== undefined) {
+                  window.G_vmlCanvasManager.uninitElement(this._elem.get(0));
+              }
+            
+              this._elem.emptyForce();
+              this._elem = null;
+          }
+
         // create a canvas here, but can't draw on it untill it is appended
         // to dom for IE compatability.
-        var domelem = document.createElement('canvas');
+        var elem = plot.canvasManager.getCanvas();
+
         this._textRenderer.setText(this.label, ctx);
         var w = this.getWidth(ctx);
         var h = this.getHeight(ctx);
-        domelem.width = w;
-        domelem.height = h;
-        domelem.style.width = w;
-        domelem.style.height = h;
-        // domelem.style.textAlign = 'center';
-        domelem.style.position = 'absolute';
-        this._domelem = domelem;
-        this._elem = $(domelem);
+        elem.width = w;
+        elem.height = h;
+        elem.style.width = w;
+        elem.style.height = h;
+        
+		elem = plot.canvasManager.initCanvas(elem);
+		
+        this._elem = $(elem);
+        this._elem.css({ position: 'absolute'});
         this._elem.addClass('jqplot-'+this.axis+'-label');
         
-        domelem = null;
+        elem = null;
         return this._elem;
     };
     
     $.jqplot.CanvasAxisLabelRenderer.prototype.pack = function() {
-        if ($.jqplot.use_excanvas) {
-            window.G_vmlCanvasManager.init_(document);
-            this._domelem = window.G_vmlCanvasManager.initElement(this._domelem);
-        }
         this._textRenderer.draw(this._elem.get(0).getContext("2d"), this.label);
     };
     

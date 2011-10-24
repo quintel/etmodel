@@ -1,13 +1,14 @@
-function InitializeMekko(id,series,unit,axis_values,colors,labels){  
-  var number_of_ticks = 6;
+function InitializeMekko(id,series,unit,axis_values,colors,labels,group_labels){  
+  // setup needed vars
   var series_default;
   var xaxis;
   var border_color = '#999999';
   var border_width = 0.1;
   var x2axis;
   var axis_defaults;
-  var legend_offset = 55;
-  font_size = "12px";
+  var legend_offset = 155;
+
+  // setup default axis settings
   axis_defaults = {
     renderer:$.jqplot.MekkoAxisRenderer,
     tickOptions:{
@@ -15,54 +16,42 @@ function InitializeMekko(id,series,unit,axis_values,colors,labels){
       markSize: 0
     }
   };
-  $.jqplot.config.enablePlugins = true;
-  x2axis = { // top axis
+  
+  // setup the top axis settings
+    // added a css rotate rule in jqplot.css to tilt the top labels
+  x2axis = {
     show: true,
-    tickMode: 'bar',
-    autoscale: true,
-    min: axis_values[0],
-    tickSpacing: (517 / axis_values[1]) * (axis_values[1] / 9),
-    numberTicks: 4,
-    // RD: 15-08-2011: the CanvasAxisTickRenderer doesn't work with version 720+ in combination with the mekko chart
-    tickRenderer: $.jqplot.CanvasAxisTickRenderer, 
-    tickOptions:{
-      formatString:'%.0f'+unit,
-      angle: 45,
-      markSize: 4,
-      fontSize: font_size
-    },
-    borderWidth: border_width,
-    borderColor: border_color
+    tickMode: 'bar'
   };
-
-  xaxis = { // bottom axis
-    barLabels: labels[1],
+  
+  // setup the bottom axis settings
+  xaxis = {
+    barLabels: group_labels,
     rendererOptions: {
-  	    barLabelOptions: {
-  	        fontSize: font_size,
-  	        angle: -45
-  	    },      // RD: 15-08-2011: the CanvasAxisTickRenderer doesn't work with version 720+ in combination with the mekko chart
-        barLabelRenderer: $.jqplot.CanvasAxisLabelRenderer
-  	},
+      barLabelOptions: {
+        fontSize: font_size,
+        angle: -45
+      },
+      barLabelRenderer: $.jqplot.CanvasAxisLabelRenderer
+    },
     tickOptions:{
-      formatString:'&nbsp;' // ugly but it works
+      formatString:'&nbsp;' // hide the ticks on this axis by formatting the value as a space
     }
   };
   
+  // setup default serie settings
   series_default = {
     renderer:$.jqplot.MekkoRenderer,
-    shadow:shadow,
-    pointLabels:{show:false},
     rendererOptions: {
-      showBorders: true,        // Note, true is the default
-      borderColor: '#4c4130'
+      borderColor: border_color
     }
-    
   };
   
+  
+  // call jqplot and apply the settingsgroups
   $.jqplot(id, series, {
     grid: default_grid,
-    legend: create_legend(3,'s',labels[0],legend_offset),
+    legend: create_legend(3,'s',labels,legend_offset),
     seriesDefaults: series_default,
     seriesColors: colors,
     axesDefaults: axis_defaults,
@@ -73,7 +62,7 @@ function InitializeMekko(id,series,unit,axis_values,colors,labels){
   });
   
   $(".jqplot-xaxis").css({"margin-left": -10,"margin-top":0});
-  $(".jqplot-table-legend").css({"top": 340});
+  // $(".jqplot-table-legend").css({"top": 340});
   
 
 }

@@ -62,7 +62,7 @@ function InitializeMekko(id,series,unit,axis_values,colors,labels,group_labels){
   });
   
   $(".jqplot-xaxis").css({"margin-left": -10,"margin-top":0});
-  // $(".jqplot-table-legend").css({"top": 340});
+  $(".jqplot-table-legend").css({"top": 340});
   
 
 }

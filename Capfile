@@ -4,6 +4,7 @@ Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
 load 'lib/capistrano/db_recipes'
 load 'lib/capistrano/memcached'
 load 'lib/capistrano/sphinx'
+load 'lib/capistrano/maintenance'
 
 load 'config/deploy' # remove this line to skip loading any of the default tasks
 

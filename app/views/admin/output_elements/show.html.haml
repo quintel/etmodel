@@ -6,6 +6,7 @@
       %th.tal id
       %th.tal label
       %th.tal color
+      %th Gquery
       %th.tal is_target_line
 
   %tbody
@@ -14,6 +15,7 @@
         %td= serie.id
         %td= link_to serie.label, admin_output_element_serie_path(serie)
         %td= serie.color
+        %td= serie.gquery
         %td= serie.is_target_line
 
 %p

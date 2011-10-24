@@ -41,7 +41,6 @@ function create_legend(columns,location,labels,offset) {
     renderer: $.jqplot.EnhancedLegendRenderer,
     show: true,
     location: location,
-    borderWidth: 0,
     fontSize: font_size,
     placement: "outside",
     labels: labels,

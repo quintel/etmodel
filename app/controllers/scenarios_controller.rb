@@ -3,7 +3,7 @@ class ScenariosController < ApplicationController
   helper :all
 
   before_filter :ensure_valid_browser
-  before_filter :find_scenario, :only => [:show]
+  before_filter :find_scenario, :only => [:show, :load]
   before_filter :require_user, :only => [:index, :new]
 
   # included here, so that we don't mess with the before_filter order
@@ -69,8 +69,10 @@ class ScenariosController < ApplicationController
     # => ANSWER: by setting api_session_id to nil (done in load_from_scenario)
     #            a new ETengine scenario session will be created, and Scenario is untouched.
     #
-    scenario = Api::Scenario.find(params[:id])
-    Current.setting = Setting.load_from_scenario(scenario);
+    if @scenario.nil?
+      redirect_to start_path, :notice => "Scenario not found" and return
+    end
+    Current.setting = Setting.load_from_scenario(@scenario)
     redirect_to start_path
   end
 
@@ -125,5 +127,7 @@ class ScenariosController < ApplicationController
     # Finds the scenario from id
     def find_scenario
       @scenario = Api::Scenario.find(params[:id])
+    rescue ActiveResource::ResourceNotFound
+      nil
     end  
 end

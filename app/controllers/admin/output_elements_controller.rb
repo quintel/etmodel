@@ -11,6 +11,7 @@ class OutputElementsController < BaseController
   def new
     @output_element = OutputElement.new
     @output_element.build_description
+    @output_element.build_area_dependency
   end
 
   def create
@@ -51,6 +52,7 @@ class OutputElementsController < BaseController
 
   def edit
     @output_element.build_description unless @output_element.description
+    @output_element.build_area_dependency unless @output_element.area_dependency
   end
 
   private

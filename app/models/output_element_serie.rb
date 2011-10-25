@@ -46,7 +46,7 @@ class OutputElementSerie < ActiveRecord::Base
   
   validates :gquery, :presence => true
   
-  accepts_nested_attributes_for :description
+  accepts_nested_attributes_for :description, :area_dependency
 
   # delegate :name, :to => :output_element, :prefix => 'output_element', :allow_nil => true
 

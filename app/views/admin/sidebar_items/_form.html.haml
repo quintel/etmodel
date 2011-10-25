@@ -7,6 +7,10 @@
     = f.input :nl_vimeo_id, :hint=>"This value should be the key of a vimeo video, it will be shown when the tutorial button is clicked"
     = f.input :en_vimeo_id, :hint=>"This value should be the key of a vimeo video, it will be shown when the tutorial button is clicked"
 
+
+    = f.simple_fields_for :area_dependency do |j|
+      = j.input :dependent_on, :as => :select, :collection => Api::Area::DEPENDABLE_ATTRIBUTES
+
     = f.simple_fields_for :description do |j|
       = j.input :short_content_en
       = j.input :short_content_nl

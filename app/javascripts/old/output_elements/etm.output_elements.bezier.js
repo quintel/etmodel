@@ -9,6 +9,7 @@ function InitializeBezier(id,series,growth,unit,axis_values,colors,labels){
     decimals = 1;
   }
 
+  // setup the y-axis
   y2_axis = {
     borderColor:'#CCCCCC', // color for the marks #cccccc is the same as the grid lines
     min: 0,
@@ -19,6 +20,14 @@ function InitializeBezier(id,series,growth,unit,axis_values,colors,labels){
     }
   };
 
+  // setup the xaxis
+  var xaxis = {
+    numberTicks: 2, // only show present and future year
+    tickOptions:{
+      showGridline: false
+    },
+    ticks: ticks
+  };
   series_default = {
     renderer:$.jqplot.BezierCurveRenderer,
     pointLabels:{show:false},
@@ -42,13 +51,7 @@ function InitializeBezier(id,series,growth,unit,axis_values,colors,labels){
 
     axesDefaults: stacked_line_axis_default,
     axes:{ 
-      xaxis: {
-        numberTicks: 2, // only show present and future year
-        tickOptions:{
-          showGridline: false
-        },
-        ticks: ticks
-      },
+      xaxis: xaxis,
       y2axis: y2_axis
     }
   });

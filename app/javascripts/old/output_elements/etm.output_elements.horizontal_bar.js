@@ -16,15 +16,14 @@ function InitializeHorizontalBar(id,series,show_point_label,unit,axis_values,col
     axes: {
       yaxis: {
         renderer: $.jqplot.CategoryAxisRenderer,
-        ticks: labels        
+        ticks: labels
       },
       xaxis: {
         min: axis_values[0],
         max: axis_values[1],
         numberTicks: 6,
         tickOptions: {
-          formatString: '%.1f'+unit,
-          fontSize: font_size
+          formatString: '%.1f'+unit
         }
       }
     }

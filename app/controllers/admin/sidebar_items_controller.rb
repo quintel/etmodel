@@ -9,6 +9,7 @@ module Admin
     def new
       @sidebar_item = SidebarItem.new
       @sidebar_item.build_description
+      @sidebar_item.build_area_dependency
     end
 
     def create
@@ -39,6 +40,7 @@ module Admin
 
     def edit
       @sidebar_item.build_description unless @sidebar_item.description
+      @sidebar_item.build_area_dependency unless @sidebar_item.area_dependency
     end
     
     private

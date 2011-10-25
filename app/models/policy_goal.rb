@@ -19,8 +19,10 @@
 class PolicyGoal < ActiveRecord::Base
   include AreaDependent
 
-  has_one :area_dependency, :as => :dependable
+  has_one :area_dependency, :as => :dependable, :dependent => :destroy
   has_paper_trail
+  
+  accepts_nested_attributes_for :area_dependency
 
   scope :gquery_contains, lambda{|search| where([
     "query LIKE :q OR start_value_query LIKE :q OR reached_query LIKE :q OR target_query LIKE :q OR user_value_query LIKE :q",

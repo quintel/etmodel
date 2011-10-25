@@ -10,6 +10,9 @@
     = f.input :unit, :required => true
     = f.input :command_type, :as => :select, :collection => ['growth_rate', 'value', 'efficiency_improvement'], :hint => "This is used by the backcasting module"
     = f.input :comments
+    
+    = f.simple_fields_for :area_dependency do |j|
+      = j.input :dependent_on, :as => :select, :collection => Api::Area::DEPENDABLE_ATTRIBUTES
 
     = f.simple_fields_for :description do |j|
       = j.input :content_en, :hint => "Extra info which shows up when the ? icon is clicked can be changed here!"

@@ -22,7 +22,7 @@ $(document).ready(function() {
 });
 
 // default settings for output elements
-var font_size = '12px';
+var font_size = '11px';
 var shadow = false;
 
 var default_grid = { 

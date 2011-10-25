@@ -19,12 +19,12 @@ class SidebarItem < ActiveRecord::Base
   
   has_paper_trail
   
-  has_one :area_dependency, :as => :dependable
-  validates :key, :presence => true, :uniqueness => true
-  
+  has_one :area_dependency, :as => :dependable, :dependent => :destroy  
   has_one :description, :as => :describable, :dependent => :destroy
-  accepts_nested_attributes_for :description
+  accepts_nested_attributes_for :description, :area_dependency
   
+  validates :key, :presence => true, :uniqueness => true
+
   scope :gquery_contains, lambda{|search| where("percentage_bar_query LIKE ?", "%#{search}%")}
 
   def parsed_key_for_admin

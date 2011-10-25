@@ -9,6 +9,7 @@ module Admin
 
     def new
       @input_element = InputElement.new
+      @input_element.build_area_dependency
       @input_element.build_description
     end
 
@@ -53,6 +54,7 @@ module Admin
 
     def edit
       @input_element.build_description unless @input_element.description
+      @input_element.build_area_dependency unless @input_element.area_dependency
     end
 
     private

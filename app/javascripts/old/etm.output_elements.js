@@ -21,6 +21,7 @@ $(document).ready(function() {
   });
 });
 
+// for available options check http://www.jqplot.com/docs/files/jqPlotOptions-txt.html
 // default settings for output elements
 var font_size = '11px';
 var shadow = false;

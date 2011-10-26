@@ -1,3 +1,5 @@
+// for available options check http://www.jqplot.com/docs/files/jqPlotOptions-txt.html
+
 function InitializeWaterfall(id,series,unit,axis_values,colors,labels,ticks){
   // setup needed vars
   var bar_width = 25;

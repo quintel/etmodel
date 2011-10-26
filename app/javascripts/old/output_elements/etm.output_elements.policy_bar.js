@@ -1,26 +1,53 @@
+// for available options check http://www.jqplot.com/docs/files/jqPlotOptions-txt.html
+
 function InitializePolicyBar(id,serie1,serie2,ticks,groups,unit,axis_values,colors,labels){
+  // setup needed vars
   var series_with_hack;
   var series_default;
   var serie_colors;
-  var axes_defaults;
-  var x_tick_options;
-  var y_tick_options;
-  var renderer_options;
+  var x_axis;
+  var y_axis;
+
   // this hack will push the labels for the top series off of the page so they don't appear.  
   series_with_hack = [{pointLabels:{ypadding: -15}},{pointLabels:{ypadding:9000}}];
-  renderer_options = {groups: groups,barWidth: 35};
-  
+
+  // setup the default serie settings
   series_default = {
     renderer: $.jqplot.BarRenderer,
-    rendererOptions: renderer_options,
-    pointLabels:{stackedValue: true},
+    rendererOptions: {
+      groups: groups,
+      barWidth: 35
+    },
+    pointLabels:{
+      stackedValue: true
+    },
     yaxis:'y2axis',
-    shadow: false
+    shadow: shadow
   };
+  
+  // set the colors for the serie and the 'remainder serie'
   serie_colors = [colors[0],"#CCCCCC"];
-  axes_defaults =  {tickOptions: {fontSize:font_size}};
-  x_tick_options = {showGridline:false,markSize:0,pad:3.00};
-  y_tick_options = {formatString:'%d\%'};
+  
+  // setup the x-axis settings
+  x_axis = {
+    ticks: ticks,
+    rendererOptions: {
+      groupLabels: labels
+    },
+    renderer: $.jqplot.CategoryAxisRenderer, 
+    tickOptions: {
+      showGridline:false,
+      pad:3.00
+    }
+  };
+
+  // setup the y-axis settings
+  y_axis = {
+    ticks: axis_values, 
+    tickOptions: {
+      formatString:'%d\%'
+    }
+  };
   
   $.jqplot(id, [serie1,serie2], {
     grid: default_grid,
@@ -28,21 +55,15 @@ function InitializePolicyBar(id,serie1,serie2,ticks,groups,unit,axis_values,colo
       seriesColors: serie_colors,
       seriesDefaults: series_default,
       series: series_with_hack,
-      axesDefaults: axes_defaults,
-      axes: {
-        xaxis:{
-          ticks: ticks,
-           rendererOptions: {
-             groupLabels: labels
-           },
-          renderer: $.jqplot.CategoryAxisRenderer, 
-          tickOptions: x_tick_options
-        },
-        y2axis:{
-          ticks: axis_values, 
-          tickOptions: y_tick_options
+      axesDefaults: {
+        tickOptions: {
+          fontSize:font_size
         }
+      },
+      axes: {
+        xaxis: x_axis,
+        y2axis: y_axis
       }
   });
-}
+};
 

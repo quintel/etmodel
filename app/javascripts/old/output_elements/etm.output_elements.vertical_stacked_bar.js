@@ -1,6 +1,9 @@
+// for available options check http://www.jqplot.com/docs/files/jqPlotOptions-txt.html
+
 function InitializeVerticalBar(id,series,ticks,serie_settings_filler,show_point_label,unit,axis_values,colors,labels){
   InitializeVerticalStackedBar(id,series,ticks,serie_settings_filler,show_point_label,unit,axis_values,colors,labels);
 }
+
 function InitializeVerticalStackedBar(id,series,ticks,serie_settings_filler,show_point_label,unit,axis_values,colors,labels){
   var min_value = axis_values[0];
   var max_value = axis_values[1];
@@ -8,7 +11,7 @@ function InitializeVerticalStackedBar(id,series,ticks,serie_settings_filler,show
   var legend_cols = 3;
 
   var decimals = 0;
-  
+  // use decimals when low values
   if (axis_values[1] < 10 && axis_values[1] != 5 && axis_values[1] > 0 ){
     decimals = 1;
   };

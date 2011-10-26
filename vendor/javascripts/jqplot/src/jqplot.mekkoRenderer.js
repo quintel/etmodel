@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r720
+ * Version: 1.0.0b2_r947
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -286,6 +286,10 @@
                         idx++;
                     }   
                 }
+
+                tr = null;
+                td1 = null;
+                td2 = null;
             }
         }
         return this._elem;

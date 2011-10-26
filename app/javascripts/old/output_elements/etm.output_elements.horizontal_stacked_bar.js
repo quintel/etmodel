@@ -1,3 +1,4 @@
+// for available options check http://www.jqplot.com/docs/files/jqPlotOptions-txt.html
 function InitializeHorizontalStackedBar(id,series,ticks,show_point_label,unit,axis_values,colors,labels){
 
   $.jqplot(id, series, {

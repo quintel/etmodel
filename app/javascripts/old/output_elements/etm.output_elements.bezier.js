@@ -4,20 +4,12 @@ var series_default;
 var y2_axis;
 
 
-function InitializeBezier(id,series,growth,unit,axis_values,colors,labels){
-  var decimals = 0;
-  if (axis_values[1] < 10 && axis_values[1] != 5 && axis_values[1] > 0 ){
-    decimals = 1;
-  }
-
+function InitializeBezier(id,series,growth,unit,colors,labels){
   // setup the y-axis settings
   y2_axis = {
     borderColor:'#CCCCCC', // color for the marks #cccccc is the same as the grid lines
-    min: 0,
-    max: axis_values[1],
-    numberTicks: 6,
     tickOptions:{
-      formatString: '%.'+decimals+'f'+unit
+      formatString: '%.0f'+unit
     }
   };
 

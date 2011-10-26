@@ -45,8 +45,8 @@ var Chart = Backbone.Model.extend({
       case 'policy_bar' :
         this.view = new PolicyBarChartView({model : this});
         break;
-      case 'policy_line' :
-        this.view = new PolicyLineChartView({model : this});
+      case 'line' :
+        this.view = new LineChartView({model : this});
         break;
       case 'block' :
         this.view = new BlockChartView({model : this});

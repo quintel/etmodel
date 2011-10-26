@@ -23,7 +23,8 @@ function InitializeWaterfall(id,series,unit,axis_values,colors,labels,ticks){
     tickRenderer: $.jqplot.CanvasAxisTickRenderer,
     tickOptions: {
       angle: -90,
-      showGridline: false
+      showGridline: false,
+      fontSize: font_size
     }
   };
   // setup the serie default settings

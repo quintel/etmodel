@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r720
+ * Version: 1.0.0b2_r947
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -92,6 +92,10 @@
         // They Will be set through call to zoomProxy method.
         this.zoomProxy = false;
         this.zoomTarget = false;
+        // prop: looseZoom
+        // Will expand zoom range to provide more rounded tick values.
+        // Works only with linear axes and date axes.
+        this.looseZoom = false;
         // prop: clickReset
         // Will reset plot zoom if single click on plot without drag.
         this.clickReset = false;
@@ -181,6 +185,12 @@
                 if (!c.zoomProxy) {
                     for (var ax in axes) {
                         axes[ax].reset();
+                        axes[ax]._ticks = [];
+                        // fake out tick creation algorithm to make sure original auto
+                        // computed format string is used if _overrideFormatString is true
+                        if (c._zoom.axes[ax] !== undefined) {
+                            axes[ax]._autoFormatString = c._zoom.axes[ax].tickFormatString;
+                        }
                     }
                     this.redraw();
                 }
@@ -207,16 +217,48 @@
     // called with context of plot
     $.jqplot.Cursor.postDraw = function() {
         var c = this.plugins.cursor;
-        // if (c.zoom) {
-        c.zoomCanvas = new $.jqplot.GenericCanvas();
-        this.eventCanvas._elem.before(c.zoomCanvas.createElement(this._gridPadding, 'jqplot-zoom-canvas', this._plotDimensions));
-        c.zoomCanvas.setContext();
-        // }
-        c._tooltipElem = $('<div class="jqplot-cursor-tooltip" style="position:absolute;display:none"></div>');
-        c.zoomCanvas._elem.before(c._tooltipElem);
+        
+        // Memory Leaks patch
+        if (c.zoomCanvas) {
+            c.zoomCanvas.resetCanvas();
+            c.zoomCanvas = null;
+        }
+        
+        if (c.cursorCanvas) {
+            c.cursorCanvas.resetCanvas();
+            c.cursorCanvas = null;
+        }
+        
+        if (c._tooltipElem) {
+            c._tooltipElem.emptyForce();
+            c._tooltipElem = null;
+        }
+
+        
+        if (c.zoom) {
+            c.zoomCanvas = new $.jqplot.GenericCanvas();
+            this.eventCanvas._elem.before(c.zoomCanvas.createElement(this._gridPadding, 'jqplot-zoom-canvas', this._plotDimensions, this));
+            c.zoomCanvas.setContext();
+        }
+
+        var elem = document.createElement('div');
+        c._tooltipElem = $(elem);
+        elem = null;
+        c._tooltipElem.addClass('jqplot-cursor-tooltip');
+        c._tooltipElem.css({position:'absolute', display:'none'});
+        
+        
+        if (c.zoomCanvas) {
+            c.zoomCanvas._elem.before(c._tooltipElem);
+        }
+
+        else {
+            this.eventCanvas._elem.before(c._tooltipElem);
+        }
+
         if (c.showVerticalLine || c.showHorizontalLine) {
             c.cursorCanvas = new $.jqplot.GenericCanvas();
-            this.eventCanvas._elem.before(c.cursorCanvas.createElement(this._gridPadding, 'jqplot-cursor-canvas', this._plotDimensions));
+            this.eventCanvas._elem.before(c.cursorCanvas.createElement(this._gridPadding, 'jqplot-cursor-canvas', this._plotDimensions, this));
             c.cursorCanvas.setContext();
         }
 
@@ -276,13 +318,18 @@
         var cax = cursor._zoom.axes;
         if (!plot.plugins.cursor.zoomProxy && cursor._zoom.isZoomed) {
             for (var ax in axes) {
+                // axes[ax]._ticks = [];
+                // axes[ax].min = cax[ax].min;
+                // axes[ax].max = cax[ax].max;
+                // axes[ax].numberTicks = cax[ax].numberTicks; 
+                // axes[ax].tickInterval = cax[ax].tickInterval;
+                // // for date axes
+                // axes[ax].daTickInterval = cax[ax].daTickInterval;
+                axes[ax].reset();
                 axes[ax]._ticks = [];
-                axes[ax].min = cax[ax].min;
-                axes[ax].max = cax[ax].max;
-                axes[ax].numberTicks = cax[ax].numberTicks; 
-                axes[ax].tickInterval = cax[ax].tickInterval;
-                // for date axes
-                axes[ax].daTickInterval = cax[ax].daTickInterval;
+                // fake out tick creation algorithm to make sure original auto
+                // computed format string is used if _overrideFormatString is true
+                axes[ax]._autoFormatString = cax[ax].tickFormatString;
             }
             plot.redraw();
             cursor._zoom.isZoomed = false;
@@ -307,7 +354,7 @@
         var end = zaxes.end;
         var min, max, dp, span;
         var ctx = plot.plugins.cursor.zoomCanvas._ctx;
-        // don't zoom is zoom area is too small (in pixels)
+        // don't zoom if zoom area is too small (in pixels)
         if ((c.constrainZoomTo == 'none' && Math.abs(gridpos.x - c._zoom.start[0]) > 6 && Math.abs(gridpos.y - c._zoom.start[1]) > 6) || (c.constrainZoomTo == 'x' && Math.abs(gridpos.x - c._zoom.start[0]) > 6) ||  (c.constrainZoomTo == 'y' && Math.abs(gridpos.y - c._zoom.start[1]) > 6)) {
             if (!plot.plugins.cursor.zoomProxy) {
                 for (var ax in datapos) {
@@ -320,22 +367,69 @@
                         c._zoom.axes[ax].daTickInterval = axes[ax].daTickInterval;
                         c._zoom.axes[ax].min = axes[ax].min;
                         c._zoom.axes[ax].max = axes[ax].max;
+                        c._zoom.axes[ax].tickFormatString = (axes[ax].tickOptions != null) ? axes[ax].tickOptions.formatString :  '';
                     }
+
+
                     if ((c.constrainZoomTo == 'none') || (c.constrainZoomTo == 'x' && ax.charAt(0) == 'x') || (c.constrainZoomTo == 'y' && ax.charAt(0) == 'y')) {   
                         dp = datapos[ax];
-                        if (dp != null) {           
+                        if (dp != null) {  
+                            var newmin, newmax;         
                             if (dp > start[ax]) { 
-                                axes[ax].min = start[ax];
-                                axes[ax].max = dp;
+                                newmin = start[ax];
+                                newmax = dp;
                             }
                             else {
                                 span = start[ax] - dp;
-                                axes[ax].max = start[ax];
-                                axes[ax].min = dp;
+                                newmin = dp;
+                                newmax = start[ax];
                             }
-                            axes[ax].tickInterval = null;
-                            // for date axes...
-                            axes[ax].daTickInterval = null;
+
+                            var curax = axes[ax];
+
+                            var _numberTicks = null;
+
+                            // if aligning this axis, use number of ticks from previous axis.
+                            // Do I need to reset somehow if alignTicks is changed and then graph is replotted??
+                            if (curax.alignTicks) {
+                                if (curax.name === 'x2axis' && plot.axes.xaxis.show) {
+                                    _numberTicks = plot.axes.xaxis.numberTicks;
+                                }
+                                else if (curax.name.charAt(0) === 'y' && curax.name !== 'yaxis' && curax.name !== 'yMidAxis' && plot.axes.yaxis.show) {
+                                    _numberTicks = plot.axes.yaxis.numberTicks;
+                                }
+                            }
+                            
+                            if (this.looseZoom && (axes[ax].renderer.constructor === $.jqplot.LinearAxisRenderer || axes[ax].renderer.constructor === $.jqplot.DateAxisRenderer)) {
+                                var ret = $.jqplot.LinearTickGenerator(newmin, newmax, curax._scalefact, _numberTicks);
+
+                                // if new minimum is less than "true" minimum of axis display, adjust it
+                                if (axes[ax].tickInset && ret[0] < axes[ax].min + axes[ax].tickInset * axes[ax].tickInterval) {
+                                    ret[0] += ret[4];
+                                    ret[2] -= 1;
+                                }
+
+                                // if new maximum is greater than "true" max of axis display, adjust it
+                                if (axes[ax].tickInset && ret[1] > axes[ax].max - axes[ax].tickInset * axes[ax].tickInterval) {
+                                    ret[1] -= ret[4];
+                                    ret[2] -= 1;
+                                }
+                                axes[ax].min = ret[0];
+                                axes[ax].max = ret[1];
+                                axes[ax]._autoFormatString = ret[3];
+                                axes[ax].numberTicks = ret[2];
+                                axes[ax].tickInterval = ret[4];
+                                // for date axes...
+                                axes[ax].daTickInterval = [ret[4]/1000, 'seconds'];
+                            }
+                            else {
+                                axes[ax].min = newmin;
+                                axes[ax].max = newmax;
+                                axes[ax].tickInterval = null;
+                                // for date axes...
+                                axes[ax].daTickInterval = null;
+                            }
+
                             axes[ax]._ticks = [];
                         }
                     }
@@ -702,7 +796,6 @@
     
     function handleMouseMove(ev, gridpos, datapos, neighbor, plot) {
         var c = plot.plugins.cursor;
-        var ctx = c.zoomCanvas._ctx;
         if (c.show) {
             if (c.showTooltip) {
                 updateTooltip(gridpos, datapos, plot);
@@ -714,15 +807,17 @@
                 moveLine(gridpos, plot);
             }
         }
-        ctx = null;
     }
             
     function getEventPosition(ev) {
         var plot = ev.data.plot;
         var go = plot.eventCanvas._elem.offset();
         var gridPos = {x:ev.pageX - go.left, y:ev.pageY - go.top};
-        var dataPos = {xaxis:null, yaxis:null, x2axis:null, y2axis:null, y3axis:null, y4axis:null, y5axis:null, y6axis:null, y7axis:null, y8axis:null, y9axis:null};
-        var an = ['xaxis', 'yaxis', 'x2axis', 'y2axis', 'y3axis', 'y4axis', 'y5axis', 'y6axis', 'y7axis', 'y8axis', 'y9axis'];
+        //////
+        // TO DO: handle yMidAxis
+        //////
+        var dataPos = {xaxis:null, yaxis:null, x2axis:null, y2axis:null, y3axis:null, y4axis:null, y5axis:null, y6axis:null, y7axis:null, y8axis:null, y9axis:null, yMidAxis:null};
+        var an = ['xaxis', 'yaxis', 'x2axis', 'y2axis', 'y3axis', 'y4axis', 'y5axis', 'y6axis', 'y7axis', 'y8axis', 'y9axis', 'yMidAxis'];
         var ax = plot.axes;
         var n, axis;
         for (n=11; n>0; n--) {
@@ -921,15 +1016,23 @@
     
     // called in context of a Legend
     $.jqplot.CursorLegendRenderer.prototype.draw = function() {
+        if (this._elem) {
+            this._elem.emptyForce();
+            this._elem = null;
+        }
         if (this.show) {
             var series = this._series, s;
             // make a table.  one line label per row.
-            this._elem = $('<table class="jqplot-legend jqplot-cursor-legend" style="position:absolute"></table>');
+            var elem = document.createElement('div');
+            this._elem = $(elem);
+            elem = null;
+            this._elem.addClass('jqplot-legend jqplot-cursor-legend');
+            this._elem.css('position', 'absolute');
         
             var pad = false;
             for (var i = 0; i< series.length; i++) {
                 s = series[i];
-                if (s.show) {
+                if (s.show && s.showLabel) {
                     var lt = $.jqplot.sprintf(this.formatString, s.label.toString());
                     if (lt) {
                         var color = s.color;
@@ -949,6 +1052,9 @@
                     }
                 }
             }
+            series = s = null;
+            delete series;
+            delete s;
         }
         
         function addrow(label, color, pad, idx) {

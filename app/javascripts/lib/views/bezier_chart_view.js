@@ -10,7 +10,6 @@ var BezierChartView = BaseChartView.extend({
       this.model.results(), 
       this.model.get("growth_chart"),
       this.parsed_unit(), 
-      this.axis_scale(), 
       this.model.colors(), 
       this.model.labels());
   }

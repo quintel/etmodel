@@ -57,16 +57,6 @@ function create_legend(columns,location,labels,offset) {
   return legend;
 }
 
-var line_x2axis = {
-  borderWidth:0,
-  borderColor:'#ffffff'
-};
-
-var line_yaxis = {
-  borderWidth: 0.5,
-  borderColor: '#999999'
-};
-
 var stacked_line_axis_default = {
   tickOptions: {
     formatString: '%d',

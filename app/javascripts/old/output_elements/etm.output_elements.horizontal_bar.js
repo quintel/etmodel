@@ -1,5 +1,5 @@
 // for available options check http://www.jqplot.com/docs/files/jqPlotOptions-txt.html
-function InitializeHorizontalBar(id,series,show_point_label,unit,axis_values,colors,labels){
+function InitializeHorizontalBar(id,series,show_point_label,unit,colors,labels){
   // setup needed vars
   var series_default;
   var xaxis;
@@ -20,8 +20,9 @@ function InitializeHorizontalBar(id,series,show_point_label,unit,axis_values,col
 
   // setup the xaxis settings
   xaxis = {
-    min: axis_values[0],
-    max: axis_values[1],
+    rendererOptions: { 
+      forceTickAt0: true // we always want a tick a 0  
+    },
     numberTicks: 6,
     tickOptions: {
       formatString: '%.1f'+unit

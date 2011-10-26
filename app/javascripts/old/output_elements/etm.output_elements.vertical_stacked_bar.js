@@ -1,30 +1,20 @@
 // for available options check http://www.jqplot.com/docs/files/jqPlotOptions-txt.html
 
-function InitializeVerticalBar(id,series,ticks,serie_settings_filler,show_point_label,unit,axis_values,colors,labels){
-  InitializeVerticalStackedBar(id,series,ticks,serie_settings_filler,show_point_label,unit,axis_values,colors,labels);
+function InitializeVerticalBar(id,series,ticks,serie_settings_filler,show_point_label,unit,colors,labels){
+  InitializeVerticalStackedBar(id,series,ticks,serie_settings_filler,show_point_label,unit,colors,labels);
 }
 
-function InitializeVerticalStackedBar(id,series,ticks,serie_settings_filler,show_point_label,unit,axis_values,colors,labels){
-  var min_value = axis_values[0];
-  var max_value = axis_values[1];
-
+function InitializeVerticalStackedBar(id,series,ticks,serie_settings_filler,show_point_label,unit,colors,labels){
   var legend_cols = 3;
-
-  var decimals = 0;
-  // use decimals when low values
-  if (axis_values[1] < 10 && axis_values[1] != 5 && axis_values[1] > 0 ){
-    decimals = 1;
-  };
-
 
   // setup the y-axis
   y2axis = {
     borderColor:'#cccccc', // color for the marks #cccccc is the same as the grid lines
-    min: min_value,
-    max: max_value,        
-    numberTicks: 6, // 6 is nice :)
+    rendererOptions: { 
+      forceTickAt0: true // we always want a tick a 0  
+    },
     tickOptions:{
-      formatString:'%.'+decimals+'f'+unit
+      formatString:'%.1f'+unit
     }
   };
   

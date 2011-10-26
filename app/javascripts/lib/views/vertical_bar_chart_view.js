@@ -1,4 +1,4 @@
-// This charttype is only used in the co2 dashbord
+// ATTENTION: This charttype is only used in the co2 dashbord and therefore quite custom
 // It containt some custom additions to the series showing a historic value 
 var VerticalBarChartView = BaseChartView.extend({
   initialize : function() {
@@ -14,7 +14,6 @@ var VerticalBarChartView = BaseChartView.extend({
       this.filler(),
       this.model.get('show_point_label'),
       'MT', // this.parsed_unit(),
-      this.axis_scale(),
       this.model.colors(),
       this.model.labels());
   },
@@ -44,9 +43,6 @@ var VerticalBarChartView = BaseChartView.extend({
   filler : function() {
     // add this filler to create a dummy value. This is needed because the target line must be added to the end of the serie
     return [{}];
-  },
-  axis_scale : function(){
-    return [0,this.axis_max_value( _.flatten(this.results()))];
   }
 });
 

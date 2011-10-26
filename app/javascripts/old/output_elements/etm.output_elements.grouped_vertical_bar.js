@@ -1,5 +1,5 @@
+// for available options check http://www.jqplot.com/docs/files/jqPlotOptions-txt.html
 function InitializeGroupedVerticalBar(id,series,ticks,groups,unit,axis_values,colors,labels){
-  console.log(ticks,groups,unit,axis_values,colors,labels);
   var series_with_hack;
   var series_default;
   var serie_colors;

@@ -1,3 +1,4 @@
+// for available options check http://www.jqplot.com/docs/files/jqPlotOptions-txt.html
 function InitializeMekko(id,series,unit,axis_values,colors,labels,group_labels){  
   // setup needed vars
   var series_default;

@@ -1,3 +1,4 @@
+// for available options check http://www.jqplot.com/docs/files/jqPlotOptions-txt.html
 function InitializeLine(id,series,unit,axis_values,colors,labels){
   // setup needed vars
   var legend_offset = 20;

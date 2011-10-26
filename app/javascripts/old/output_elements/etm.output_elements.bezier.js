@@ -1,3 +1,4 @@
+// for available options check http://www.jqplot.com/docs/files/jqPlotOptions-txt.html
 // setup needed vars
 var series_default;
 var y2_axis;
@@ -9,7 +10,7 @@ function InitializeBezier(id,series,growth,unit,axis_values,colors,labels){
     decimals = 1;
   }
 
-  // setup the y-axis
+  // setup the y-axis settings
   y2_axis = {
     borderColor:'#CCCCCC', // color for the marks #cccccc is the same as the grid lines
     min: 0,
@@ -20,7 +21,7 @@ function InitializeBezier(id,series,growth,unit,axis_values,colors,labels){
     }
   };
 
-  // setup the xaxis
+  // setup the xaxis settings
   var xaxis = {
     numberTicks: 2, // only show present and future year
     tickOptions:{

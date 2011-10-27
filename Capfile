@@ -10,10 +10,13 @@ load 'config/deploy' # remove this line to skip loading any of the default tasks
 
 namespace :deploy do
   task :copy_configuration_files do
-    run "cp #{config_files}/* #{release_path}/config/"
-    run "cd #{release_path}; chmod 777 public/images public/stylesheets tmp"
+    run "ln -s #{shared_path}/config/config.yml #{release_path}/config/"
+    run "ln -s #{shared_path}/config/database.yml #{release_path}/config/"
+    run "ln -s #{shared_path}/config/sphinx.yml #{release_path}/config/"
+    
     run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
     run "ln -nfs #{shared_path}/assets/pdf #{release_path}/public/pdf"
+
     run "cd #{release_path} && bundle install --without development test"
 
     memcached.flush
@@ -47,7 +50,6 @@ namespace :deploy do
 end
 
 after "deploy:update_code", "deploy:copy_configuration_files"
-# after "deploy", "deploy:migrate"
 # after "deploy", "deploy:cleanup" # why?
 after "deploy", "deploy:notify_airbrake"
 after "deploy:symlink", "sphinx:symlink_indexes"

@@ -1,6 +1,6 @@
 // for available options check http://www.jqplot.com/docs/files/jqPlotOptions-txt.html
 
-function InitializePolicyBar(id,serie1,serie2,ticks,groups,unit,axis_values,colors,labels){
+function InitializePolicyBar(id,serie1,serie2,ticks,groups,unit,colors,labels){
   // setup needed vars
   var series_with_hack;
   var series_default;
@@ -43,7 +43,7 @@ function InitializePolicyBar(id,serie1,serie2,ticks,groups,unit,axis_values,colo
 
   // setup the y-axis settings
   y_axis = {
-    ticks: axis_values,  // [0,100] because of percentage attr
+    ticks: [0,100], // this charts is alway a percentage
     tickOptions: {
       formatString:'%d\%'
     }

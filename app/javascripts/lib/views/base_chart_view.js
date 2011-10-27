@@ -13,61 +13,16 @@ var BaseChartView = Backbone.View.extend({
     this.model.container_node().empty();
   },
 
-  // was axis_values
-  axis_scale : function() {
-    var values_present = this.model.values_present();
-    var values_future = this.model.values_future();
-
-    if (this.model.get('percentage')) {
-      return [0, 100];
-    } 
-    var axis_total_values = [
+  max_value : function() {
+    var max_value = _.max($.merge([
       _.reduce(values_present, function(sum, v) { return sum + (v > 0 ? v : 0); }, 0),
-      _.reduce(values_future, function(sum, v) { return sum + (v > 0 ? v : 0); }, 0)
-    ];
-    
-    // if the target is higher then the total it should use the target for scaling so the must be added to the total_values array
-    axis_total_values = $.merge(this.model.target_results(),axis_total_values)
-    return [0,this.axis_max_value(axis_total_values)];
-  },
-
-  // was axis_scale in ruby.
-  // The axis value with which the chart should render.
-  // It is basically the highest number + a bit of empty space.
-  //
-  axis_max_value : function(values) {
-    var empty_space = 1.1;
-    var total = _.max(values) * empty_space;
-    var length = parseInt(Math.log(total) / Math.log(10), 10);
-    var tick_size = Math.pow(10, length) ;
-    var ratio = (total / 5) / tick_size;
-
-    var result;
-
-    if (ratio < 0.025) {
-      result = tick_size * 0.05;
-    } else if (ratio < 0.1) {
-      result = tick_size * 0.1;
-    } else if (ratio < 0.5) {
-      result = tick_size * 0.5;
-    } else if (ratio < 1) {
-      result = tick_size;
-    } else if (ratio < 1.5) {
-      result = tick_size * 1.5;
-    } else if (ratio < 2) {
-      result = tick_size * 2;
-    } else {
-      result
-    }
-
-    return result * 5;
+      _.reduce(values_future, function(sum, v) { return sum + (v > 0 ? v : 0); }, 0),
+      this.model.target_results()
+    ]))
   },
 
   parsed_unit : function() {
     var unit = this.model.get('unit');
-    //var min_value = _.min(this.model.values());
-    var max_value = this.axis_max_value(this.model.values());
-
-    return Metric.parsed_unit(max_value, unit);
+    return Metric.parsed_unit(this.max_value, unit);
   }
 });

@@ -13,7 +13,6 @@ var PolicyBarChartView = BaseChartView.extend({
       this.ticks(), 
       this.model.series.length, 
       this.parsed_unit(), 
-      this.axis_scale(),
       this.model.colors(), 
       this.model.labels());
   },

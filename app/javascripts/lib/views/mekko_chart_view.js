@@ -10,9 +10,9 @@ var MekkoChartView = BaseChartView.extend({
     InitializeMekko(this.model.get("container"), 
       this.results(), 
       this.parsed_unit(), 
-      this.axis_scale(), 
       this.colors(), 
-      this.labels());
+      this.labels(),
+      this.group_labels());
   },
 
 
@@ -21,6 +21,7 @@ var MekkoChartView = BaseChartView.extend({
     var series = {};
     var values = [];
 
+    // RD: push the serie results in the defined groups
     this.model.series.each(function(serie) {
       var group = serie.get('group');
       if (group) {
@@ -30,6 +31,7 @@ var MekkoChartView = BaseChartView.extend({
       }
     });
 
+    // RD: scale the values! (this should be refactored!)
     var smallest_scale = Metric.scaled_scale(_.sum(series), start_scale);
     var results = _.map(series, function(sector_values, sector) {
       return _.map(sector_values, function(value) {
@@ -45,9 +47,12 @@ var MekkoChartView = BaseChartView.extend({
   
   labels : function() {
     var labels = this.model.labels();
-    var groups = this.model.series.map(function(serie) {return serie.get('group_translated')});
     // TODO: the old model also has percentage per group. was ommited to simplify things.
-    return [_.uniq(labels), _.uniq(groups)];
-  }
+    return _.uniq(labels);
+  },
 
+  group_labels : function() {
+    var group_labels = this.model.series.map(function(serie) {return serie.get('group_translated')});
+    return _.uniq(group_labels);
+  }
 })

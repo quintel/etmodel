@@ -14,7 +14,10 @@
     = f.input :growth_chart, :hint => "Do you want your chart to be exponential? check this box. (only applies to bezier chart)"
     = f.input :min_axis_value, :hint => "When filled in this will override the generated axis values (only applies to horizontal stacked bar chart)"
     = f.input :max_axis_value, :hint => "When filled in this will override the generated axis values (only applies to horizontal stacked bar chart)"
-        
+    
+    = f.simple_fields_for :area_dependency do |j|
+      = j.input :dependent_on, :as => :select, :collection => Api::Area::DEPENDABLE_ATTRIBUTES
+    
     = f.simple_fields_for :description do |j|
       = j.input :short_content_en, :hint => "This is shown in the 'select chart' screen"
       = j.input :short_content_nl, :hint => "This is shown in the 'select chart' screen"

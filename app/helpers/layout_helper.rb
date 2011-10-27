@@ -1,44 +1,4 @@
 module LayoutHelper
-  
-  def title(str)
-    haml_tag :h2, str
-  end
-  
-  # splits the collection in two and adds a read more link if 
-  # the collection.length > limit
-  # takes a block that yields all elements of the collection
-  #
-  def readable_collection(collection, limit, &block)
-    first_half = collection[0..limit]
-    second_half = collection[limit..collection.length]
-    first_half.each do |item|
-      yield item
-    end
-    
-    unless second_half.blank?
-      # generate a unique id
-      collection_id = "readable_collection_" + (Kernel.rand * 100000).to_i.to_s 
-      haml_tag :a, t('show_more'), :href => "javascript:$('##{collection_id}').toggle()", :style => 'display:block'
-      haml_tag :div, :id => collection_id, :style => 'display:none' do
-        second_half.each do |item|
-          yield item
-        end
-      end
-    end
-  end
-  
-  # Cuts the text to the desired length and adds a js-enabled more link
-  def smart_truncate(text, opts = {})
-    return nil unless text
-    opts.reverse_merge!(:length => 80)
-    return text unless text.length > opts[:length]      
-    short = content_tag :span, truncate(text, :length => opts[:length]), :class => '_truncated'
-    long  = content_tag :span, text, :class => '_original', :style => 'display: none'
-    link  = link_to_function I18n.t('more_text'), '$(this).siblings("._original").show();$(this).siblings("._truncated").hide();$(this).hide()'
-    out   = short + link + long
-    out.html_safe
-  end
-
   # TODO move controller_name logic to Tab
   def tab(title, controller_name = title, action_name = nil)
     class_name = (controller.controller_name == controller_name) ? 'active' : nil
@@ -67,22 +27,7 @@ module LayoutHelper
       link_to t("back to model"), :controller => Current.setting.last_etm_controller_name, :action => session[:last_etm_action_name] 
     end
   end
-  
-  
-  def shadowbox(&block)
-    haml_tag :div, :id => "shadowbox-outer", :style => "width: 70%; margin: 10px 0px 40px 15%;" do
-      ['n', 'ne', 'e', 'se', 's', 'sw', 'w', 'nw'].each do |dir|
-        haml_tag :div, :id => "shadow-bg-%s" % dir, :class => "shadow-bg"
-      end
-      
-      haml_tag :div, :id => "shadowbox-inner" do
-        haml_tag :div, :id => "shadowbox-content", :style => "width: 100%; float:none;" do
-          yield
-        end
-      end
-    end
-  end
-  
+    
   def current_tutorial_movie
     SidebarItem.find_by_key(params[:id]).andand.send("#{I18n.locale}_vimeo_id")
   end

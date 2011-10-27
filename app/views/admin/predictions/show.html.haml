@@ -3,7 +3,7 @@
   #{@prediction.input_element.name} (#{@prediction.input_element.id}) 
   %small= link_to 'edit', edit_admin_prediction_path(@prediction)
 
-%table{table_defaults}
+%table.default
   %thead
     %tr
       %th year
@@ -15,7 +15,7 @@
         %td= entry.value
 
 %br
-%table{table_defaults}
+%table.default
   %thead
     %tr
       %th name

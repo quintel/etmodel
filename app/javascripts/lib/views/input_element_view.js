@@ -207,6 +207,12 @@
       this.valueSelector = new ValueSelector({ view: this });
       this.initialValue  = this.model.get('start_value');
 
+      // When the input minimum value is higher than the maximum,
+      // disable the element so the user can't do anything with it.
+      if (this.model.get('min_value') >= this.model.get('max_value')) {
+        this.model.set({ disabled: true }, { silent: true });
+      }
+
       // Keeps track of intervals used to repeat stepDown and stepUp
       // operations when the user holds down the mouse button.
       this.incrementInterval = null;

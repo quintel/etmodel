@@ -6,13 +6,12 @@ var GroupedVerticalBarChartView = BaseChartView.extend({
 
   render : function() {
     this.clear_container();
-
-    InitializeGroupedVerticalBar(this.model.get("container"),
+    InitializeGroupedVerticalBar(
+      this.model.get("container"),
       this.result_serie(),
       this.ticks(),
       this.model.series.length,
       this.parsed_unit(),
-      this.axis_scale(),
       this.model.colors(),
       this.model.labels());
   },
@@ -25,9 +24,8 @@ var GroupedVerticalBarChartView = BaseChartView.extend({
   ticks : function() {
     var ticks = [];
     this.model.series.each(function(serie) {
-      // RD: when updating jqplot to version 720+ the ticks should not be in an array!
-      ticks.push([ serie.result()[0][0] ]);
-      ticks.push([ serie.result()[1][0] ]);
+      ticks.push(serie.result()[0][0]);
+      ticks.push(serie.result()[1][0]);
     });
     return ticks;
   }

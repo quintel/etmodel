@@ -10,7 +10,6 @@ var MekkoChartView = BaseChartView.extend({
     InitializeMekko(this.model.get("container"), 
       this.results(), 
       this.parsed_unit(), 
-      this.axis_scale(), 
       this.colors(), 
       this.labels(),
       this.group_labels());

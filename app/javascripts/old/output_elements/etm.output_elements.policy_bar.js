@@ -43,7 +43,7 @@ function InitializePolicyBar(id,serie1,serie2,ticks,groups,unit,axis_values,colo
 
   // setup the y-axis settings
   y_axis = {
-    ticks: axis_values, 
+    ticks: axis_values,  // [0,100] because of percentage attr
     tickOptions: {
       formatString:'%d\%'
     }

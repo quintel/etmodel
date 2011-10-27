@@ -9,7 +9,6 @@ var LineChartView = BaseChartView.extend({
     InitializeLine(this.model.get("container"), 
       this.model.results(), 
       this.model.get('unit'), 
-      this.axis_scale(), 
       this.model.colors(), 
       this.model.labels());
   }

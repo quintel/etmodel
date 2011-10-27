@@ -14,7 +14,6 @@ var HorizontalBarChartView = BaseChartView.extend({
         this.results(),
         true,
         this.parsed_unit(),
-        this.axis_scale(),
         this.model.colors(),
         this.model.labels()
       );
@@ -36,13 +35,6 @@ var HorizontalBarChartView = BaseChartView.extend({
   
   clear_results_cache : function() {
     this.cached_results = null;
-  },
-  
-  axis_scale : function() {
-    var values = _.map(this.results(), function(i){ return i[0]});
-    var max = _.max(values);
-    if (max == 0) { max = 3 };
-    return [0, max * 1.1];
   }
 });
 

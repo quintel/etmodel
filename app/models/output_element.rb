@@ -30,13 +30,13 @@ class OutputElement < ActiveRecord::Base
   has_many :output_element_series, :order => "order_by", :dependent => :destroy
   belongs_to :output_element_type
   has_one :description, :as => :describable, :dependent => :destroy
-  has_one :area_dependency, :as => :dependable
+  has_one :area_dependency, :as => :dependable, :dependent => :destroy
 
   validates :key, :presence => true, :uniqueness => true
 
   delegate :html_table?, :to => :output_element_type
 
-  accepts_nested_attributes_for :description
+  accepts_nested_attributes_for :description, :area_dependency
 
   define_index do
     indexes name

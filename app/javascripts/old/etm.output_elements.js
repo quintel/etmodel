@@ -21,16 +21,20 @@ $(document).ready(function() {
   });
 });
 
+// for available options check http://www.jqplot.com/docs/files/jqPlotOptions-txt.html
 // default settings for output elements
-var font_size = '12px';
+var font_size = '11px';
 var shadow = false;
 
-var default_grid = { 
-  background: '#ffffff',
-   borderWidth: 0,
-   borderColor: '#ffffff',
-   shadow: shadow
-};
+
+var default_grid = {
+    drawGridLines: false,       // wether to draw lines across the grid or not.
+    gridLineColor: '#cccccc',    // Color of the grid lines.
+    background: '#ffffff',      // CSS color spec for background color of grid.
+    borderColor: '#cccccc',     // CSS color spec for border around grid.
+    borderWidth: 0.0,           // pixel width of border around grid.
+    shadow: shadow              // draw a shadow for grid.
+}
 
 function create_legend(columns,location,labels,offset) {
   var legend_offset = 25;
@@ -41,7 +45,6 @@ function create_legend(columns,location,labels,offset) {
     renderer: $.jqplot.EnhancedLegendRenderer,
     show: true,
     location: location,
-    borderWidth: 0,
     fontSize: font_size,
     placement: "outside",
     labels: labels,
@@ -54,16 +57,6 @@ function create_legend(columns,location,labels,offset) {
   
   return legend;
 }
-
-var line_x2axis = {
-  borderWidth:0,
-  borderColor:'#ffffff'
-};
-
-var line_yaxis = {
-  borderWidth: 0.5,
-  borderColor: '#999999'
-};
 
 var stacked_line_axis_default = {
   tickOptions: {

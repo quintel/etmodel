@@ -2,7 +2,7 @@
  * jqPlot
  * Pure JavaScript plotting plugin using jQuery
  *
- * Version: 1.0.0a_r720
+ * Version: 1.0.0b2_r947
  *
  * Copyright (c) 2009-2011 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -458,7 +458,7 @@
         var x = ctx.canvas.width/2;
         var y = ctx.canvas.height/2;
         ctx.save();
-        if (gradients && !$.browser.msie) {
+        if (gradients && !$.jqplot.use_excanvas) {
             r = r*1.04;
             var comps = $.jqplot.getColorComponents(color);
             var colorinner = 'rgba('+Math.round(comps[0]+0.8*(255-comps[0]))+', '+Math.round(comps[1]+0.8*(255-comps[1]))+', '+Math.round(comps[2]+0.8*(255-comps[2]))+', '+comps[3]+')';
@@ -699,6 +699,12 @@
     // create a canvas which we can draw on.
     // insert it before the eventCanvas, so eventCanvas will still capture events.
     function postPlotDraw() {
+        // Memory Leaks patch    
+        if (this.plugins.bubbleRenderer && this.plugins.bubbleRenderer.highlightCanvas) {
+            this.plugins.bubbleRenderer.highlightCanvas.resetCanvas();
+            this.plugins.bubbleRenderer.highlightCanvas = null;
+        }
+        
         this.plugins.bubbleRenderer = {highlightedSeriesIndex:null};
         this.plugins.bubbleRenderer.highlightCanvas = new $.jqplot.GenericCanvas();
         this.plugins.bubbleRenderer.highlightLabel = null;
@@ -709,7 +715,7 @@
         var height = this._plotDimensions.height - this._gridPadding.top - this._gridPadding.bottom;
         this.plugins.bubbleRenderer.highlightLabelCanvas.css({top:top, left:left, width:width+'px', height:height+'px'});
 
-        this.eventCanvas._elem.before(this.plugins.bubbleRenderer.highlightCanvas.createElement(this._gridPadding, 'jqplot-bubbleRenderer-highlight-canvas', this._plotDimensions));
+        this.eventCanvas._elem.before(this.plugins.bubbleRenderer.highlightCanvas.createElement(this._gridPadding, 'jqplot-bubbleRenderer-highlight-canvas', this._plotDimensions, this));
         this.eventCanvas._elem.before(this.plugins.bubbleRenderer.highlightLabelCanvas);
         
         var hctx = this.plugins.bubbleRenderer.highlightCanvas.setContext();

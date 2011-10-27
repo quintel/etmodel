@@ -1,105 +1,80 @@
-function InitializeVerticalBar(id,series,ticks,filler,show_point_label,unit,axis_values,colors,labels){
-  InitializeVerticalStackedBar(id,series,ticks,filler,show_point_label,unit,axis_values,colors,labels);
+// for available options check http://www.jqplot.com/docs/files/jqPlotOptions-txt.html
+
+function InitializeVerticalBar(id,series,ticks,serie_settings_filler,show_point_label,unit,colors,labels){
+  InitializeVerticalStackedBar(id,series,ticks,serie_settings_filler,show_point_label,unit,colors,labels);
 }
-function InitializeVerticalStackedBar(id,series,ticks,filler,show_point_label,unit,axis_values,colors,labels){
-  var max_value = axis_values[1];
-  var min_value = axis_values[0];
 
-  tick_number = 4;
-  if (max_value < 0 ){
-    var extra_ticks  = Math.ceil((min_value * -1) / (max_value / tick_number));
-    min_value = -100 - (max_value / tick_number * extra_ticks );
-    tick_number += (extra_ticks + 1);
-  }
-  else {
-    tick_number = 6;
-  }
+function InitializeVerticalStackedBar(id,series,ticks,serie_settings_filler,show_point_label,unit,colors,labels){
+  var legend_cols = 3;
 
-  var cols = 3;
-  var show_label = true;
-  var location = 's';
-  // var target_color = '#E07033';
-  var decimals = 0;
+  // setup the y-axis
+  y2axis = {
+    borderColor:'#cccccc', // color for the marks #cccccc is the same as the grid lines
+    rendererOptions: { 
+      forceTickAt0: true // we always want a tick a 0  
+    },
+    tickOptions:{
+      formatString:'%.1f'+unit
+    }
+  };
   
-  if (axis_values[1] < 10 && axis_values[1] != 5 && axis_values[1] > 0 ){
-    decimals = 1;
-  }
- 
-  if (filler.length > 0){
-    var fil_lines = [
-      {renderer:$.jqplot.LineRenderer, disableStack:true, lineWidth: 1.5, shadow:true, showMarker:false, showLabel:true},
-      {renderer:$.jqplot.LineRenderer, disableStack:true,lineWidth: 1.5, shadow:true, showMarker:false, showLabel:false}
-    ];
-    var fil = filler.concat(fil_lines);
-  }
-  else{
-    var fil = [];
-  }
+  // setup the x-axis
+  xaxis = {
+    renderer: $.jqplot.CategoryAxisRenderer,
+    ticks: ticks,
+    tickOptions:{
+      showMark: false, // no marks on the x axis
+      showGridline: false // no vertical gridlines
+    }
+  };
+
+  // setup the series defaults
+  series_defaults = {
+    shadow: shadow,
+    renderer: $.jqplot.BarRenderer,
+    rendererOptions: {
+      barPadding: 0 ,
+      barMargin: 110,
+      barWidth: 80
+    },
+    pointLabels:{ // a pointlabel is a value shown besides the serie inside the grid.
+      show: show_point_label, // want to show point labels?
+      stackedValue: true, // sum the values of all the series in one point label
+      formatString: '%.1f'
+    },
+    yaxis:'y2axis' // use the right side of the chart for the y-axis
+  };
+  
   $.jqplot(id, series, {
+    grid: default_grid,
+    legend: create_legend(legend_cols,'s',labels),
+
     stackSeries: true,
     seriesColors: colors,
-    grid: default_grid,
-    legend:{
-      renderer: $.jqplot.EnhancedLegendRenderer,
-      show:true,
-      location: location,
-      borderWidth: 0,
-      fontSize: font_size,
-      placement: "outside",
-      labels: labels,
-      yoffset: 25,
-      rendererOptions:{
-        numberColumns: cols,
-        seriesToggle: false
-      }
-    },
-    stackSeries:true,
-      // use the new fillToValue option to make filled series "hover" above the x axis.
-      seriesDefaults:{
-        lineWidth: 1.5,
-        shadow:shadow,
-        renderer: $.jqplot.BarRenderer,
-        rendererOptions: {
-            barPadding: 0 ,
-            barMargin: 110,
-            barWidth: 80
-        },
-        pointLabels:{
-          show: show_point_label,
-          stackedValue: true,
-          formatString: '%.1f'
-        },
+    seriesDefaults: series_defaults,
+    series: apply_target_line_serie_settings(serie_settings_filler),
 
-        yaxis:'y2axis'
-      },
-      series: fil,
-      axes: {
-          xaxis: {
-              renderer: $.jqplot.CategoryAxisRenderer,
-              ticks: ticks,
-              
-              tickOptions:{
-                  showGridline: false,
-                  showTickMarks:true, 
-                  showMarks:true, 
-                  markSize:0,
-                  fontSize:font_size
-              }
-          },
-         
-          y2axis: {
-            borderWidth:0,
-            borderColor:'#ffffff',
-            autoscale: false,
-            pad:1.00,
-            min: axis_values[0],
-            numberTicks: 6,
-            max: axis_values[1],        
-            tickOptions:{
-              formatString:'%.'+decimals+'f'+unit,
-              fontSize:font_size
-            }
-          }
-      }
+    axes: {
+      xaxis: xaxis,
+      y2axis: y2axis
+    }
   });
+}
+
+function apply_target_line_serie_settings(serie_settings_filler){
+  // add the target line settings to the series.
+  // when the target line is the 5th serie in the charts, the serie_settings_filler will look like this: [{},{},{},{}]
+  // this means that the settings of the first 4 series wont be changed.
+  var result;
+  if (serie_settings_filler.length > 0){
+    var target_serie_settings = [
+      {renderer:$.jqplot.LineRenderer, disableStack:true, lineWidth: 1.5, shadow:true, showMarker:false, showLabel:true},
+      {renderer:$.jqplot.LineRenderer, disableStack:true, lineWidth: 1.5, shadow:true, showMarker:false, showLabel:false}
+    ];
+    result = serie_settings_filler.concat(target_serie_settings);
+  }
+  else{
+    result = [];
+  }
+  return result;
 }

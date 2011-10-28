@@ -2,7 +2,7 @@ module Admin
 class OutputElementsController < BaseController
   before_filter :find_element, :only => [:show, :edit, :update, :destroy]
   
-  sortable_attributes :name,:group,:percentage,:unit,:output_element_type_id => "`output_element_type_id`"
+  sortable_attributes :key,:group,:percentage,:unit,:output_element_type_id => "`output_element_type_id`"
 
   def index
     @output_elements = OutputElement.all

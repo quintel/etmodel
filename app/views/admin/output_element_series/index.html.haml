@@ -22,7 +22,7 @@
       -if s.output_element
         %tr{cycles}
           %td= s.label
-          %td= s.output_element.name
+          %td= s.output_element.key
 
           %td= highlight s.gquery, params[:gquery]
           %td= link_to 'Show/Edit', edit_admin_output_element_serie_path(s)

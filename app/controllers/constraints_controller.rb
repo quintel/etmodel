@@ -1,9 +1,5 @@
 class ConstraintsController < ApplicationController
   def show    
-    @constraint = Constraint.find(params[:id])
-  end
-  
-  def iframe
     @api_client = Api::Client.new
     api_key = Current.setting.api_session_id rescue nil
   

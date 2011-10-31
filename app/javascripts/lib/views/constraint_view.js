@@ -4,14 +4,14 @@
 
 var ConstraintView = Backbone.View.extend({
   initialize : function() {
-    _.bindAll(this, 'render', 'open_popup', 'close_all_popups', 'render_total_cost_label');
+    _.bindAll(this, 'render', 'open_popup', 'render_total_cost_label');
     this.id = "constraint_"+this.model.get('id');
     this.dom_id = '#'+this.id;
     this.element = $(this.dom_id);
     this.arrow_element = $('.arrow', this.dom_id);
 
-    this.element.bind('click', this.open_popup);
-    $('.constraint_popup', this.element).live('click', this.close_all_popups);
+    this.element.bind('mousedown', this.open_popup);
+    // $('.constraint_popup', this.element).live('click', this.close_all_popups);
 
     this.model.bind('change:result', this.render);
     this.model.view = this;
@@ -39,27 +39,16 @@ var ConstraintView = Backbone.View.extend({
   open_popup : function() {
     var constraint = $(this.dom_id);
     var constraint_id = this.model.get('id');
-    this.close_all_popups();
-    // if the user clicks a second time on an open popup we hide it
-    if(window.dashboard.current_popup == constraint_id) {
-      window.dashboard.current_popup = null;
-      return;
-    } else {
-      // otherwise we load the new one
-      window.dashboard.current_popup = constraint_id;
-    }
-    $('.constraint_popup', constraint).css('bottom', '80px');
-    $('#shadowbox-outer', constraint).animate({opacity: 0.95}, 'slow');
-    $.get($(constraint).attr('rel')+"?t="+timestamp(), function(data) {
-      $('#shadowbox-body', constraint).html(data);
-    });      
+    var url = $(constraint).attr('href')+"?t="+timestamp();
+    $(constraint).fancybox({
+      'href' : url,
+      'type' : 'iframe',
+      height: 400,
+      width: 600,
+      padding: 0
+    });
   },
 
-  close_all_popups : function() {
-    // DEBT: is there any reason not to remove the element from the dom?
-    // PZ - Thu 23 Jun 2011 11:31:03 CEST
-    $('.constraint_popup').css('bottom', '8000px');
-  },
 
   // Formats the result of calculate_result() for the end-user
   format_result : function() {

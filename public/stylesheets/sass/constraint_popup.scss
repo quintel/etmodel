@@ -1,9 +1,34 @@
 body {
 
+  margin: 0px;
+  padding: 10px;
   overflow: hidden;
   font: 13px/20px Lucida Grande, Verdana, Arial, Helvetica, sans-serif;
-  background-color: #DBE4F2;
+  background-color: #ffffff;
   
+  h2 {
+    background-color: #63A1C9;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #FFFFFF;
+    padding: 7px 5px;
+    margin: 0px;
+    font-weight: normal;
+    float: left;
+    width: 570px;
+  }
+  
+  h3 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  
+  .constraint_box_content {
+    float: left;
+    background-color: #DBE4F2;
+    width: 570px;
+    height: 325px;
+    padding: 10px 5px;
+  }
+    
   table#policies {
     font-family: 13px/13px Lucida Grande, Verdana, Arial, Helvetica, sans-serif;
     margin: 0 auto;

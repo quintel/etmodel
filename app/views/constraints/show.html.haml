@@ -1,1 +1,2 @@
-%iframe.constraint_iframe{:src => iframe_constraint_path(:id => params[:id]) }
+%h2.shadowbox-title= t("output.#{@constraint.extended_title}").html_safe
+= render "/constraints/constraint_#{params[:id]}"

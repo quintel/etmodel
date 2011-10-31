@@ -5,16 +5,14 @@
         opts = {
           :id    => "constraint_#{c.id}",
           :class => (c.id == 1) ? 'first' : nil,
-          :rel   => "/constraints/#{c.id}"
+          :href   => "/constraints/#{c.id}"
         }
 
       .constraint{opts}
-        .arrow
         .header
           = raw I18n.t("dashboard.#{c.name}")
           %span.sub_header
         %strong
-        = render 'layouts/etm/constraint_box', :title => c.extended_title
     .clear
 
     %script

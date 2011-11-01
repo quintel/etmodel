@@ -1,0 +1,70 @@
+<script id="dashboard-changer-template" type="text/template">
+    <div id="dashboard-changer">
+        <h1>Choose your dashboard</h1>
+
+        <ul>
+            <li>
+                <h6>Energy use</h6>
+                <div class="options">
+                    <label><input type="radio" name="dash[energy]" checked="checked" /> Primary energy use</label>
+                    <label><input type="radio" name="dash[energy]" /> Option B</label>
+                </div>
+            </li>
+
+            <li>
+                <h6>CO<sup>2</sup></h6>
+                <div class="options">
+                    <label><input type="radio" name="dash[emissions]" checked="checked" /> CO<sup>2</sup> emissions</label>
+                    <label><input type="radio" name="dash[emissions]" /> Option B</label>
+                    <label><input type="radio" name="dash[emissions]" /> Option C</label>
+                </div>
+            </li>
+
+            <li>
+                <h6>Energy import</h6>
+                <div class="options">
+                    <label><input type="radio" name="dash[imports]" checked="checked" /> Net foreign energy imports</label>
+                    <label><input type="radio" name="dash[imports]" /> Option B</label>
+                </div>
+            </li>
+
+            <li>
+                <h6>Costs</h6>
+                <div class="options">
+                    <label><input type="radio" name="dash[costs]" checked="checked" /> National cost</label>
+                    <label><input type="radio" name="dash[costs]" /> Cost per household</label>
+                </div>
+            </li>
+
+            <li>
+                <h6>Bio-footprint</h6>
+                <div class="options">
+                    <label><input type="radio" name="dash[bio]" checked="checked" /> Footprint of biomass applications</label>
+                    <label><input type="radio" name="dash[bio]" /> Option B</label>
+                </div>
+            </li>
+
+            <li>
+                <h6>Renewables</h6>
+                <div class="options">
+                    <label><input type="radio" name="dash[renewables]" checked="checked" /> Total share of renewable energy</label>
+                    <label><input type="radio" name="dash[renewables]" /> Option B</label>
+                    <label><input type="radio" name="dash[renewables]" /> Option C</label>
+                </div>
+            </li>
+
+            <li>
+                <h6>Goals</h6>
+                <div class="options">
+                    <label><input type="radio" checked="checked" /> Goals met</label>
+                    <label><input type="radio" /> Option B</label>
+                </div>
+            </li>
+        </ul>
+
+        <div class="commit">
+            <button class="save">Save changes</button>
+            <button class="cancel">Cancel</button>
+        </div>
+    </div>
+</script>

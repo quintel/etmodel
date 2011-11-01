@@ -1,7 +1,14 @@
 (function (window) {
   'use strict';
 
-  var DashboardChangerView;
+  var DASHBOARD_CHANGER_T, DashboardChangerView;
+
+  // # Constants -------------------------------------------------------------
+
+  $(function () {
+    DASHBOARD_CHANGER_T = _.template(
+      $('#dashboard-changer-template').html() || '');
+  });
 
   // # DashboardChangerView --------------------------------------------------
 
@@ -25,9 +32,10 @@
      */
     show: function (event) {
       $(this.el).fancybox({
-        content: '<p>Hello world!</p>',
+        content: DASHBOARD_CHANGER_T({}),
 
         height:  400,
+        padding:   0,
         width:   600
       });
 

@@ -33,6 +33,15 @@ window.AppView = Backbone.View.extend({
 
   // At this point we have all the settings initialized.
   bootstrap : function() {
+    var dashChangeEl = $('#dashboard_change');
+
+    // If a "change dashboard" button is present, set up the DashboardChanger.
+    if (dashChangeEl.length > 0) {
+      this.dashboardChanger = new DashboardChangerView({
+        el: dashChangeEl.first()
+      });
+    }
+
     // DEBT Add check, so that boostrap is only called once.
     if (this.settings.get('country') == 'nl') {
       this.peak_load = new PeakLoad();

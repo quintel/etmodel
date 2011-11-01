@@ -2,6 +2,7 @@
 //= require <lib/views/legacy_views.js>
 
 //= require <lib/views/input_element_view.js>
+//= require <lib/views/dashboard_changer_view.js>
 
 //= require <lib/views/base_chart_view.js>
 //= require <lib/views/bezier_chart_view.js>

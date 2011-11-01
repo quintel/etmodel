@@ -34,12 +34,28 @@
       $(this.el).fancybox({
         content: DASHBOARD_CHANGER_T({}),
 
-        height:  400,
-        padding:   0,
-        width:   600
+        onComplete: _.bind(function () {
+          // Clicking on the "Cancel" button within the fancybox element
+          // should hide the changer view.
+          $('#dashboard-changer .commit .cancel').click(this.cancel);
+        }, this),
+
+        showCloseButton: false,
+        padding:         0
       });
 
       event.preventDefault();
+    },
+
+    /**
+     * Discards any changes made by the user and hides the overlay.
+     */
+    cancel: function (event) {
+      // TODO change this function to this.cancel.
+      $.fancybox.close();
+
+      // The cancel function may be used as a callback for a DOM event.
+      if (event) { event.preventDefault(); }
     }
 
   });

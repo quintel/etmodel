@@ -31,9 +31,11 @@ var PolicyGoal = Backbone.Model.extend({
   },
   
   // returns true if the user has set a goal
+  // I'm not happy with this implementation. See ETE GOAL_IS_SET issue
+  // PZ - Tue 1 Nov 2011 16:36:26 CET
   is_set : function() {
     var res = this.user_value_query.get("future_value");
-    return res != null;
+    return res != false && res != null;
   },
 
   // DEBT: we could use a BB view

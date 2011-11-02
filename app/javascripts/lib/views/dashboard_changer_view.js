@@ -38,6 +38,8 @@
           // Clicking on the "Cancel" button within the fancybox element
           // should hide the changer view.
           $('#dashboard-changer .commit .cancel').click(this.cancel);
+
+          $('#dashboard-changer .commit .save').click(this.commit);
         }, this),
 
         showCloseButton: false,
@@ -45,6 +47,33 @@
       });
 
       event.preventDefault();
+    },
+
+    /**
+     * Saves the changes made by the user, and then closes the FancyBox
+     * overlay.
+     */
+    commit: function (event) {
+      var checkedEls = $('#dashboard-changer input[name^=dash]:checked'),
+          checkedLen = checkedEls.length,
+          element;
+
+      while (checkedLen--) {
+        element = $(checkedEls[checkedLen]);
+        console.log(element.attr('name'), ' -> ', element.val());
+      }
+
+      $('#dashboard-changer .commit')
+        .children('.indicator')
+          .fadeIn('fast').end()
+        .children('button')
+          .animate({ opacity: 0.4 }, 'fast');
+
+      // Simulate a slightly delayed HTTP request.
+      window.setTimeout(function () { $.fancybox.close(); }, 2000);
+
+      // The commit function may be used as a callback for a DOM event.
+      if (event) { event.preventDefault(); }
     },
 
     /**

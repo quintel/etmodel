@@ -18,35 +18,44 @@
    * to change the constraints shown on the dash.
    */
   DashboardChangerView = Backbone.View.extend({
-    events: {
-      'click': 'show'
-    },
+    id: 'dashboard-changer',
 
-    initialize: function (options) {
-      _.bindAll(this, 'show');
+    events: {
+      'click button.save':   'commit',
+      'click button.cancel': 'cancel'
     },
 
     /**
-     * Shows the overlay allowing the user to select different constraints to
-     * be shown. Used as the onClick event for the "change" button.
+     * Creates a new DashboardChangerView. Expects that there be a "triggerEl"
+     * option in the "options" object, which should contain the "change
+     * dashboard" element.
      */
-    show: function (event) {
-      $(this.el).fancybox({
-        content: DASHBOARD_CHANGER_T({}),
+    initialize: function (options) {
+      _.bindAll(this, 'render', 'cancel', 'commit');
 
-        onComplete: _.bind(function () {
-          // Clicking on the "Cancel" button within the fancybox element
-          // should hide the changer view.
-          $('#dashboard-changer .commit .cancel').click(this.cancel);
+      $(options.triggerEl).fancybox({
+        // Rerender the view whenever the fancybox is shown, and use it's
+        // contents in the box.
+        content: this.render,
 
-          $('#dashboard-changer .commit .save').click(this.commit);
-        }, this),
-
+        // Misc styling.
         showCloseButton: false,
-        padding:         0
+        padding: 0
       });
+    },
 
-      event.preventDefault();
+    /**
+     * Renders the template by adding the template elements to the main
+     * element.
+     *
+     * Does not trigger showing the overlay; DashboardChangerView::show will
+     * do both, so use that instead.
+     */
+    render: function () {
+      $(this.el).html(DASHBOARD_CHANGER_T({}));
+      this.delegateEvents();
+
+      return this.el;
     },
 
     /**
@@ -54,7 +63,7 @@
      * overlay.
      */
     commit: function (event) {
-      var checkedEls = $('#dashboard-changer input[name^=dash]:checked'),
+      var checkedEls = this.$('input[name^=dash]:checked'),
           checkedLen = checkedEls.length,
           element;
 
@@ -63,11 +72,8 @@
         console.log(element.attr('name'), ' -> ', element.val());
       }
 
-      $('#dashboard-changer .commit')
-        .children('.indicator')
-          .fadeIn('fast').end()
-        .children('button')
-          .animate({ opacity: 0.4 }, 'fast');
+      this.$('.commit .indicator').fadeIn('fast');
+      this.$('.commit button').animate({ opacity: 0.4 });
 
       // Simulate a slightly delayed HTTP request.
       window.setTimeout(function () { $.fancybox.close(); }, 2000);

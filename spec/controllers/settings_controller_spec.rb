@@ -80,5 +80,14 @@ describe SettingsController do
 
     # ------------------------------------------------------------------------
 
+    context 'when given an invalid constraint ID' do
+      it 'should return a 400 Bad Request' do
+        put :dashboard, :dash => dash_settings.merge(:energy => 10)
+        response.status.should eql(400)
+      end
+    end
+
+    # ------------------------------------------------------------------------
+
   end
 end

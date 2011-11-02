@@ -43,15 +43,26 @@ class SettingsController < ApplicationController
   # PUT /settings/dashboard
   #
   def dashboard
-    dash = ( session[:dashboard] ||= {}.with_indifferent_access )
+    session[:dashboard] ||= {}.with_indifferent_access
+    incoming = params[:dash] and params[:dash].dup
 
-    if params.key?(:dash) and params[:dash].kind_of?(Hash)
-      DASHBOARD_KEYS.each do |key|
-        dash[key] = params[:dash].fetch(key, dash[key])
+    if incoming.kind_of?(Hash)
+      incoming.reject { |k, v| not DASHBOARD_KEYS.include?(k) or v.blank? }
+
+      constraint_ids = incoming.values
+      constraint_ids.uniq!
+
+      if Constraint.where(id: constraint_ids).count < constraint_ids.length
+        # Make sure that we were given valid constraint IDs (otherwise
+        # subsequent page loads will 404 due to the invalid ID).
+        render json: { error: 'Invalid constraint ID' }, status: :bad_request
+        return
       end
+
+      session[:dashboard].merge!(incoming)
     end
 
-    render :json => session[:dashboard], :status => :ok
+    render json: session[:dashboard], status: :ok
   end
 
 end

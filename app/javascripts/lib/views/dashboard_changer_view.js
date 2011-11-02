@@ -31,7 +31,15 @@
      * dashboard" element.
      */
     initialize: function (options) {
-      _.bindAll(this, 'render', 'cancel', 'commit', 'onComplete', 'onError');
+      _.bindAll(
+        this,
+        'render',
+        'cancel',
+        'commit',
+        'onDone',
+        'onError',
+        'onAlways'
+      );
 
       $(options.triggerEl).fancybox({
         // Rerender the view whenever the fancybox is shown, and use it's
@@ -70,6 +78,8 @@
 
           name, input, i;
 
+      this.isSending = true;
+
       for (i = 0; i < inputsLen; i++) {
         input = $(inputEls[i]);
         name  = input.attr('name').replace(/^dash\[(.*)\]$/, '$1');
@@ -90,17 +100,21 @@
         data:      data,
         dataType: 'json'
 
-      }).done(this.onComplete)
-        .error(this.onError);
+      }).done(this.onDone)
+        .error(this.onError)
+        .always(this.onAlways);
 
       this.$('.commit button').animate({ opacity: 0.4 });
+      this.$('input[name^=dash]:not(:checked)').attr('disabled', true);
 
       // The ajax indicator is shown after a short delay; this way it doesn't
       // begin fading in, only for the request to complete very quickly, and
       // the user wonder what suddenly popped up. This way it only appears if
       // the request seems to be lagging a bit.
       window.setTimeout(_.bind(function () {
-        this.$('.commit .indicator').fadeIn('fast');
+        if (this.isSending) {
+          this.$('.commit .indicator').fadeIn('slow');
+        }
       }, this), 500);
 
       // The commit function may be used as a callback for a DOM event.
@@ -123,7 +137,7 @@
     /**
      * Called upon successful completion of the XHR request.
      */
-    onComplete: function (data, textStatus, jqXHR) {
+    onDone: function (data, textStatus, jqXHR) {
       $.fancybox.close();
 
       console.log('done', data, textStatus, jqXHR);
@@ -134,6 +148,18 @@
      */
     onError: function (jqXHR, textStatus, error) {
       console.log('error', jqXHR, textStatus, error);
+
+      this.$('input[name^=dash]:not(:checked)').attr('disabled', false);
+      this.$('.commit button').animate({ opacity: 1.0 }, 'fast');
+      this.$('.commit .indicator').fadeOut('fast');
+    },
+
+    /**
+     * Called after an XHR request completed, both when it was successful and
+     * when it failed.
+     */
+    onAlways: function () {
+      this.isSending = false;
     }
 
   });

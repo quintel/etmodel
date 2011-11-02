@@ -12,50 +12,73 @@ describe SettingsController do
       'goals'      => 7
     } }
 
-    it 'should return 200 OK' do
-      put :dashboard, :dash => dash_settings
-      response.code.should eql('200')
+    # ------------------------------------------------------------------------
+
+    context 'when given a valid setting hash' do
+      it 'should return 200 OK' do
+        put :dashboard, :dash => dash_settings
+        response.code.should eql('200')
+      end
+
+      it 'should return a JSON version of the dashboard settings' do
+        put :dashboard, :dash => dash_settings
+
+        response.body.length.should_not eql(0)
+        JSON.parse(response.body).should eql(dash_settings)
+      end
+
+      it 'should set the preferences in the session' do
+        put :dashboard, :dash => dash_settings
+        session[:dashboard].should eql(dash_settings)
+      end
     end
 
-    it 'should return a JSON version of the dashboard settings' do
-      put :dashboard, :dash => dash_settings
+    # ------------------------------------------------------------------------
 
-      response.body.length.should_not eql(0)
-      JSON.parse(response.body).should eql(dash_settings)
+    context 'when no setting hash is provided' do
+      it 'should raise no error' do
+        expect { put :dashboard }.to_not raise_error
+      end
     end
 
-    it 'should set the preferences in the session' do
-      put :dashboard, :dash => dash_settings
-      session[:dashboard].should eql(dash_settings)
+    # ------------------------------------------------------------------------
+
+    context 'when the setting option is not a hash' do
+      it 'should make no changes' do
+        expect { put :dashboard, :dash => 'invalid' }.to_not raise_error
+        session[:dashboard].should be_empty
+      end
     end
 
-    it 'should do nothing when no settings are provided' do
-      expect { put :dashboard }.to_not raise_error
+    # ------------------------------------------------------------------------
+
+    context 'when given extra options' do
+      it 'should not set extra keys on the session' do
+        put :dashboard, :dash => dash_settings.merge(:another => 8)
+        session[:dashboard].should_not have_key('another')
+      end
     end
 
-    it 'should do nothing when settings is not a hash' do
-      expect { put :dashboard, :dash => 'invalid' }.to_not raise_error
-      session[:dashboard].should be_empty
+    # ------------------------------------------------------------------------
+
+    context 'when given only a subset of options' do
+      it 'should accept partial assignment' do
+        put :dashboard, :dash => dash_settings
+
+        new_settings = { 'energy' => 4, 'emissions' => 5 }
+        put :dashboard, :dash => new_settings
+
+        session[:dashboard][:energy].should     eql(4)
+        session[:dashboard][:emissions].should  eql(5)
+        session[:dashboard][:imports].should    eql(3)
+        session[:dashboard][:costs].should      eql(4)
+        session[:dashboard][:bio].should        eql(5)
+        session[:dashboard][:renewables].should eql(6)
+        session[:dashboard][:goals].should      eql(7)
+      end
     end
 
-    it 'should not set extra keys on the session' do
-      put :dashboard, :dash => dash_settings.merge(:another => 8)
-      session[:dashboard].should_not have_key('another')
-    end
+    # ------------------------------------------------------------------------
 
-    it 'should accept partial assignment' do
-      put :dashboard, :dash => dash_settings
-
-      new_settings = { 'energy' => 8, 'emissions' => 9 }
-      put :dashboard, :dash => new_settings
-
-      session[:dashboard][:energy].should     eql(8)
-      session[:dashboard][:emissions].should  eql(9)
-      session[:dashboard][:imports].should    eql(3)
-      session[:dashboard][:costs].should      eql(4)
-      session[:dashboard][:bio].should        eql(5)
-      session[:dashboard][:renewables].should eql(6)
-      session[:dashboard][:goals].should      eql(7)
-    end
   end
 end

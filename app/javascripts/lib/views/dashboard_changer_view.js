@@ -69,7 +69,9 @@
 
       while (checkedLen--) {
         element = $(checkedEls[checkedLen]);
-        console.log(element.attr('name'), ' -> ', element.val());
+
+        console.log(element.attr('name'), ' -> ', element.val(),
+                    element.parent('label').text());
       }
 
       this.$('.commit .indicator').fadeIn('fast');

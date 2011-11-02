@@ -38,7 +38,7 @@ window.AppView = Backbone.View.extend({
     // If a "change dashboard" button is present, set up the DashboardChanger.
     if (dashChangeEl.length > 0) {
       this.dashboardChanger = new DashboardChangerView({
-        el: dashChangeEl.first()
+        triggerEl: dashChangeEl.first()
       });
     }
 

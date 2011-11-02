@@ -38,6 +38,8 @@ class SettingsController < ApplicationController
   # session for now; we can move it to the DB later if permanently storing
   # them is preferable.
   #
+  # JSON only.
+  #
   # PUT /settings/dashboard
   #
   def dashboard
@@ -49,7 +51,7 @@ class SettingsController < ApplicationController
       end
     end
 
-    render :text => ''
+    render :json => session[:dashboard], :status => :ok
   end
 
 end

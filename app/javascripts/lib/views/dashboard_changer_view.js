@@ -21,7 +21,7 @@
     id: 'dashboard-changer',
 
     events: {
-      'click button.save':   'commit',
+      'submit form':         'commit',
       'click button.cancel': 'cancel'
     },
 

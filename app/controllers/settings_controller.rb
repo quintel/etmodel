@@ -43,31 +43,26 @@ class SettingsController < ApplicationController
   # PUT /settings/dashboard
   #
   def dashboard
-    session[:dashboard] ||= {}.with_indifferent_access
+    session[:dashboard] ||= []
     incoming = params[:dash] and params[:dash].dup
 
     if incoming.kind_of?(Hash)
-      incoming.reject { |k, v| not DASHBOARD_KEYS.include?(k) or v.blank? }
+      keys = DASHBOARD_KEYS.map { |key| incoming[key] }
 
-      if incoming.length != DASHBOARD_KEYS.length
-        render json: { error: 'Invalid constraints' }, status: :bad_request
-        return
-      end
+      # Assert that the keys are valid; exceptions are raised (and caught
+      # below) otherwise.
+      Constraint.for_dashboard(keys) # raises if keys aren't valid
 
-      constraint_ids = incoming.values
-      constraint_ids.uniq!
-
-      if Constraint.where(id: constraint_ids).count < constraint_ids.length
-        # Make sure that we were given valid constraint IDs (otherwise
-        # subsequent page loads will 404 due to the invalid ID).
-        render json: { error: 'Invalid constraint ID' }, status: :bad_request
-        return
-      end
-
-      session[:dashboard].merge!(incoming)
+      session[:dashboard] = keys
     end
 
     render json: session[:dashboard], status: :ok
+
+  rescue Constraint::IllegalConstraintKey
+    render json: { error: 'Invalid constraints' }, status: :bad_request
+
+  rescue Constraint::NoSuchConstraint => e
+    render json: { error: e.message }, status: :bad_request
   end
 
 end

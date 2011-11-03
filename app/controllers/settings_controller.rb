@@ -47,13 +47,27 @@ class SettingsController < ApplicationController
 
     session[:dashboard] = keys
 
-    render json: constraints, status: :ok
+    render status: :ok, json: {
+      constraints: constraints,
+      html:        constraint_html_as_json(constraints) }
 
   rescue Constraint::IllegalConstraintKey
     render json: { error: 'Invalid constraints' }, status: :bad_request
 
   rescue Constraint::NoSuchConstraint => e
     render json: { error: e.message }, status: :bad_request
+  end
+
+  #######
+  private
+  #######
+
+  # Renders the constraint items partial based on the newly selected
+  # constraints so that the Backbone View may re-render the dashboard.
+  #
+  def constraint_html_as_json(constraints)
+    render_to_string 'layouts/etm/_constraint_items.html.haml',
+      layout: false, locals: { constraints: constraints }
   end
 
 end

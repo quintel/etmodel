@@ -1,18 +1,6 @@
 #constraints_container
   #constraints
-    - @constraints.each do |c|
-      :ruby
-        opts = {
-          :id    => "constraint_#{c.id}",
-          :class => (c.id == 1) ? 'first' : nil,
-          :href   => "/constraints/#{c.id}"
-        }
-
-      .constraint{opts}
-        .header
-          = raw I18n.t("dashboard.#{c.name}")
-          %span.sub_header
-        %strong
+    = render :partial => 'layouts/etm/constraint_items', :locals => { :constraints => @constraints }
 
     <a href="#" id="dashboard_change">Change</a>
     .clear

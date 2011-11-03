@@ -1,0 +1,13 @@
+- constraints.each do |constraint|
+  :ruby
+    opts = {
+      :id    => "constraint_#{constraint.id}",
+      :class => (constraint.id == 1) ? 'first' : nil,
+      :href  => "/constraints/#{constraint.id}"
+    }
+
+  .constraint{opts}
+    .header
+      = raw I18n.t("dashboard.#{constraint.name}")
+      %span.sub_header
+    %strong

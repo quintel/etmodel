@@ -150,7 +150,27 @@
      * Called upon successful completion of the XHR request.
      */
     onDone: function (data, textStatus, jqXHR) {
+      var constraintsEl  = $('#constraints');
+
       $.fancybox.close();
+
+      // TEMPLATING
+
+      // Get rid of the existing constraint elements.
+      constraintsEl.find('.constraint').remove();
+      constraintsEl.prepend(data.html);
+
+      // BACKBONE MODELS
+
+      // TODO ET-Model is currently using Backbone 0.3. When we upgrade to
+      //      >= 0.5, change this to: window.dashboard.reset(data);
+      window.dashboard.refresh(data.constraints);
+
+      window.dashboard.each(function (constraint) {
+        constraint.update_values();
+      });
+
+      App.call_api();
 
       console.log('done', data, textStatus, jqXHR);
     },

@@ -63,4 +63,19 @@ module ApplicationHelper
       "translation missing, #{I18n.locale.to_s.split('-').first} #{key}"
     end
   end
+
+  # Returns the constraints which belong to the given `group`.
+  #
+  # This method will actually fetch and cache all constraints, assuming that
+  # you will eventually want the constraints for all the other groups anyway.
+  #
+  # Used in views/constraints/_changer.html
+  #
+  # @param  [String] group The name of the group.
+  # @return [Array(Constraint)]
+  #
+  def constraints_for_group(group)
+    @_grouped_constraints ||= Constraint.all.group_by(&:group)
+    @_grouped_constraints[group]
+  end
 end

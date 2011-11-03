@@ -62,7 +62,7 @@ class HouseSelectionsController < ApplicationController
     
     def run_gqueries
       @gql.queries = [
-        "present:DIVIDE(V(local_solar_pv_grid_connected_energy_energetic;output_of_electricity),Q(potential_roof_pv_production))",
+        "present:DIVIDE(V(local_solar_pv_grid_connected_energy_energetic;output_of_electricity),Q(potential_electricity_production_of_solar_roof_pv))",
         "future:V(heating_demand_with_current_insulation_households_energetic;demand)",
         "future:V(heating_new_houses_current_insulation_households_energetic;demand)",
         "future:AREA(number_of_existing_households)",
@@ -96,7 +96,7 @@ class HouseSelectionsController < ApplicationController
 
     #this method updates the solar pv
     def set_solar_pv_slider
-      query = "present:DIVIDE(V(local_solar_pv_grid_connected_energy_energetic;output_of_electricity),Q(potential_roof_pv_production))"
+      query = "present:DIVIDE(V(local_solar_pv_grid_connected_energy_energetic;output_of_electricity),Q(potential_electricity_production_of_solar_roof_pv))"
       current_pv = @gql.simple_query(query)
       existing_pv = (session['calculated_hst_sliders_existing']["47"] ? session['calculated_hst_sliders_existing']["47"] : current_pv) * percentage_of_existing_houses
       new_pv = (session['calculated_hst_sliders_new']["47"] ? session['calculated_hst_sliders_new']["47"] : current_pv) * percentage_of_new_houses

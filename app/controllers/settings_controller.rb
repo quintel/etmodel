@@ -34,18 +34,18 @@ class SettingsController < ApplicationController
   # PUT /settings/dashboard
   #
   def dashboard
-    session[:dashboard] ||= []
-    incoming = params[:dash] and params[:dash].dup
-
-    if incoming.kind_of?(Hash)
-      keys = Constraint::GROUPS.map { |key| incoming[key] }
-
-      # Assert that the keys are valid; exceptions are raised (and caught
-      # below) otherwise.
-      Constraint.for_dashboard(keys) # raises if keys aren't valid
-
-      session[:dashboard] = keys
+    unless params[:dash].kind_of?(Hash)
+      render json: { error: 'Invalid constraints hash' }, status: :bad_request
+      return
     end
+
+    keys = Constraint::GROUPS.map { |key| params[:dash][key] }
+
+    # Assert that the keys are valid; exceptions are raised (and caught
+    # below) otherwise.
+    Constraint.for_dashboard(keys)
+
+    session[:dashboard] = keys
 
     render json: session[:dashboard], status: :ok
 

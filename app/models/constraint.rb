@@ -70,9 +70,7 @@ class Constraint < ActiveRecord::Base
 
     constraints = Constraint.where(:key => keys.uniq)
 
-    # Make an array containing the constraints in the order in which they were
-    # given in the `keys` param. Also handles cases when a key is given more
-    # than once.
+    # Maps the given keys to the retrieved constraints.
     keys.to_enum.with_index.each_with_object([]) do |(key, index), ordered|
       if constraint = constraints.detect { |c| c.key == key }
         ordered[index] = constraint

@@ -24,11 +24,9 @@ describe SettingsController do
         response.code.should eql('200')
       end
 
-      it 'should return a JSON version of the dashboard settings' do
+      it 'should return the constraints as JSON' do
         put :dashboard, dash: dash_settings
-
-        response.body.length.should_not eql(0)
-        JSON.parse(response.body).should eql(dash_settings.values)
+        JSON.parse(response.body).should eql(constraints.map(&:as_json))
       end
 
       it 'should set the preferences in the session' do

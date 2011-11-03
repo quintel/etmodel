@@ -43,11 +43,11 @@ class SettingsController < ApplicationController
 
     # Assert that the keys are valid; exceptions are raised (and caught
     # below) otherwise.
-    Constraint.for_dashboard(keys)
+    constraints = Constraint.for_dashboard(keys)
 
     session[:dashboard] = keys
 
-    render json: session[:dashboard], status: :ok
+    render json: constraints, status: :ok
 
   rescue Constraint::IllegalConstraintKey
     render json: { error: 'Invalid constraints' }, status: :bad_request

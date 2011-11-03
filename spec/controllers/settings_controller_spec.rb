@@ -62,17 +62,11 @@ describe SettingsController do
     # ------------------------------------------------------------------------
 
     context 'when given only a subset of options' do
-      it 'should accept partial assignment' do
+      it 'should not accept partial assignment' do
         put :dashboard, :dash => dash_settings
         put :dashboard, :dash => { 'energy' => 4, 'emissions' => 5 }
 
-        session[:dashboard][:energy].should     eql(4)
-        session[:dashboard][:emissions].should  eql(5)
-        session[:dashboard][:imports].should    eql(3)
-        session[:dashboard][:costs].should      eql(4)
-        session[:dashboard][:bio].should        eql(5)
-        session[:dashboard][:renewables].should eql(6)
-        session[:dashboard][:goals].should      eql(7)
+        response.status.should eql(400)
       end
     end
 

@@ -49,6 +49,11 @@ class SettingsController < ApplicationController
     if incoming.kind_of?(Hash)
       incoming.reject { |k, v| not DASHBOARD_KEYS.include?(k) or v.blank? }
 
+      if incoming.length != DASHBOARD_KEYS.length
+        render json: { error: 'Invalid constraints' }, status: :bad_request
+        return
+      end
+
       constraint_ids = incoming.values
       constraint_ids.uniq!
 

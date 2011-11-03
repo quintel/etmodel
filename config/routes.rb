@@ -31,9 +31,10 @@ Etm::Application.routes.draw do
     get :iframe, :on => :member
   end
 
-  resource :settings, :only => [:edit, :update] do
-    put :dashboard
-  end
+  resource :settings, :only => [:edit, :update]
+
+  get '/settings/dashboard', :to => 'settings#dashboard'
+  put '/settings/dashboard', :to => 'settings#update_dashboard'
 
   resource :searches
 

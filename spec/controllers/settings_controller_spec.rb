@@ -20,12 +20,12 @@ describe SettingsController do
 
     context 'when given a valid setting hash' do
       it 'should return 200 OK' do
-        put :dashboard, dash: dash_settings
+        put :update_dashboard, dash: dash_settings
         response.code.should eql('200')
       end
 
       it 'should return the constraints as JSON' do
-        put :dashboard, dash: dash_settings
+        put :update_dashboard, dash: dash_settings
 
         parsed = JSON.parse(response.body)
         parsed.should have_key('constraints')
@@ -33,12 +33,12 @@ describe SettingsController do
       end
 
       it 'should return HTML with which to replace the dashboard' do
-        put :dashboard, dash: dash_settings
+        put :update_dashboard, dash: dash_settings
         JSON.parse(response.body).should have_key('html')
       end
 
       it 'should set the preferences in the session' do
-        put :dashboard, dash: dash_settings
+        put :update_dashboard, dash: dash_settings
         session[:dashboard].should eql(dash_settings.values)
       end
     end
@@ -47,7 +47,7 @@ describe SettingsController do
 
     context 'when no setting hash is provided' do
       it 'should return a 400 Bad Request' do
-        put :dashboard
+        put :update_dashboard
         response.status.should eql(400)
       end
     end
@@ -56,7 +56,7 @@ describe SettingsController do
 
     context 'when the setting option is not a hash' do
       it 'should return a 400 Bad Request' do
-        put :dashboard, dash: 'invalid'
+        put :update_dashboard, dash: 'invalid'
         response.status.should eql(400)
       end
     end
@@ -65,7 +65,9 @@ describe SettingsController do
 
     context 'when given extra options' do
       it 'should not set extra keys on the session' do
-        put :dashboard, dash: dash_settings.merge(another: constraints[0].key)
+        put :update_dashboard,
+          dash: dash_settings.merge(another: constraints[0].key)
+
         session[:dashboard].should eql(dash_settings.values)
       end
     end
@@ -74,7 +76,7 @@ describe SettingsController do
 
     context 'when given only a subset of options' do
       it 'should not accept partial assignment' do
-        put :dashboard, dash: {
+        put :update_dashboard, dash: {
           Constraint::GROUPS[0] => constraints[0].key,
           Constraint::GROUPS[1] => constraints[1].key
         }
@@ -87,7 +89,9 @@ describe SettingsController do
 
     context 'when given an invalid constraint ID' do
       it 'should return a 400 Bad Request' do
-        put :dashboard, dash: dash_settings.merge(Constraint::GROUPS[0] => 0)
+        put :update_dashboard,
+          dash: dash_settings.merge(Constraint::GROUPS[0] => 0)
+
         response.status.should eql(400)
       end
     end

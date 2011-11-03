@@ -1,14 +1,7 @@
 (function (window) {
   'use strict';
 
-  var DASHBOARD_CHANGER_T, DashboardChangerView;
-
-  // # Constants -------------------------------------------------------------
-
-  $(function () {
-    DASHBOARD_CHANGER_T = _.template(
-      $('#dashboard-changer-template').html() || '');
-  });
+  var DashboardChangerView;
 
   // # DashboardChangerView --------------------------------------------------
 
@@ -18,13 +11,6 @@
    * to change the constraints shown on the dash.
    */
   DashboardChangerView = Backbone.View.extend({
-    id: 'dashboard-changer',
-
-    events: {
-      'submit form':         'commit',
-      'click button.cancel': 'cancel'
-    },
-
     /**
      * Creates a new DashboardChangerView. Expects that there be a "triggerEl"
      * option in the "options" object, which should contain the "change
@@ -33,7 +19,7 @@
     initialize: function (options) {
       _.bindAll(
         this,
-        'render',
+        'initEvents',
         'cancel',
         'commit',
         'onDone',
@@ -42,9 +28,10 @@
       );
 
       $(options.triggerEl).fancybox({
-        // Rerender the view whenever the fancybox is shown, and use it's
-        // contents in the box.
-        content: this.render,
+        href: '/settings/dashboard',
+        type: 'ajax',
+
+        onComplete: this.initEvents,
 
         // Misc styling.
         showCloseButton: false,
@@ -52,30 +39,10 @@
       });
     },
 
-    /**
-     * Renders the template by adding the template elements to the main
-     * element.
-     *
-     * Does not trigger showing the overlay; DashboardChangerView::show will
-     * do both, so use that instead.
-     */
-    render: function () {
-      var checked = window.dashboard.invoke('get', 'key');
-
-      $(this.el).html(DASHBOARD_CHANGER_T({}));
-
-      // Set which radios are checked based on what is in the dashboard
-      // collection (argh globals!); this will break somewhat if the user has
-      // a constraint displayed twice, but the UI currently doesn't allow them
-      // to do this, so... meh.
-      this.$('[type=radio]').each(function () {
-        var radio = $(this);
-        radio.attr('checked', _.indexOf(checked, radio.val()) !== -1)
-      });
-
-      this.delegateEvents();
-
-      return this.el;
+    initEvents: function () {
+      $('#dashboard-changer')
+        .delegate('form',          'submit', this.commit)
+        .delegate('button.cancel', 'click',  this.cancel)
     },
 
     /**

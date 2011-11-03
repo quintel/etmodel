@@ -60,7 +60,19 @@
      * do both, so use that instead.
      */
     render: function () {
+      var checked = window.dashboard.invoke('get', 'key');
+
       $(this.el).html(DASHBOARD_CHANGER_T({}));
+
+      // Set which radios are checked based on what is in the dashboard
+      // collection (argh globals!); this will break somewhat if the user has
+      // a constraint displayed twice, but the UI currently doesn't allow them
+      // to do this, so... meh.
+      this.$('[type=radio]').each(function () {
+        var radio = $(this);
+        radio.attr('checked', _.indexOf(checked, radio.val()) !== -1)
+      });
+
       this.delegateEvents();
 
       return this.el;

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111103141558) do
+ActiveRecord::Schema.define(:version => 20111103154307) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"

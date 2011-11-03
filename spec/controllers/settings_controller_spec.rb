@@ -40,17 +40,18 @@ describe SettingsController do
     # ------------------------------------------------------------------------
 
     context 'when no setting hash is provided' do
-      it 'should raise no error' do
-        expect { put :dashboard }.to_not raise_error
+      it 'should return a 400 Bad Request' do
+        put :dashboard
+        response.status.should eql(400)
       end
     end
 
     # ------------------------------------------------------------------------
 
     context 'when the setting option is not a hash' do
-      it 'should make no changes' do
-        expect { put :dashboard, dash: 'invalid' }.to_not raise_error
-        session[:dashboard].should be_empty
+      it 'should return a 400 Bad Request' do
+        put :dashboard, dash: 'invalid'
+        response.status.should eql(400)
       end
     end
 

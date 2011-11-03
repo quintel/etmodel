@@ -1,13 +1,4 @@
 class SettingsController < ApplicationController
-
-  # Keys for each "constraint type" in the dashboard.
-  #
-  # @return [Array<String>]
-  #
-  DASHBOARD_KEYS = %w(
-    energy emissions imports costs bio renewables goals
-  ).freeze
-
   layout 'etm'
 
   before_filter :ensure_valid_browser
@@ -47,7 +38,7 @@ class SettingsController < ApplicationController
     incoming = params[:dash] and params[:dash].dup
 
     if incoming.kind_of?(Hash)
-      keys = DASHBOARD_KEYS.map { |key| incoming[key] }
+      keys = Constraint::GROUPS.map { |key| incoming[key] }
 
       # Assert that the keys are valid; exceptions are raised (and caught
       # below) otherwise.

@@ -2,14 +2,17 @@ require 'spec_helper'
 
 describe SettingsController do
   describe 'on PUT /settings/dashboard' do
-    let(:dash_settings) { {
-      'energy'     => 1,
-      'emissions'  => 2,
-      'imports'    => 3,
-      'costs'      => 4,
-      'bio'        => 5,
-      'renewables' => 6,
-      'goals'      => 7
+    let(:constraints) { Constraint.limit(7) }
+
+    let(:dash_settings) {
+      {
+      'energy'     => constraints[0].id,
+      'emissions'  => constraints[1].id,
+      'imports'    => constraints[2].id,
+      'costs'      => constraints[3].id,
+      'bio'        => constraints[4].id,
+      'renewables' => constraints[5].id,
+      'goals'      => constraints[6].id
     } }
 
     # ------------------------------------------------------------------------
@@ -54,7 +57,9 @@ describe SettingsController do
 
     context 'when given extra options' do
       it 'should not set extra keys on the session' do
-        put :dashboard, :dash => dash_settings.merge(:another => 8)
+        put :dashboard, :dash => dash_settings.merge(
+          :another => constraints[0].id)
+
         session[:dashboard].should_not have_key('another')
       end
     end
@@ -63,8 +68,10 @@ describe SettingsController do
 
     context 'when given only a subset of options' do
       it 'should not accept partial assignment' do
-        put :dashboard, :dash => dash_settings
-        put :dashboard, :dash => { 'energy' => 4, 'emissions' => 5 }
+        put :dashboard, :dash => {
+          'energy'    => constraints[0].id,
+          'emissions' => constraints[1].id
+        }
 
         response.status.should eql(400)
       end
@@ -74,7 +81,7 @@ describe SettingsController do
 
     context 'when given an invalid constraint ID' do
       it 'should return a 400 Bad Request' do
-        put :dashboard, :dash => dash_settings.merge(:energy => 10)
+        put :dashboard, :dash => dash_settings.merge(:energy => 0)
         response.status.should eql(400)
       end
     end

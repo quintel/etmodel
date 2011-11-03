@@ -49,7 +49,7 @@ class Constraint < ActiveRecord::Base
   scope :ordered, order('id')
   scope :gquery_contains, lambda{|search| where("`gquery_key` LIKE ?", "%#{search}%")}
 
-  # --------------------------------------------------------------------------
+  # CLASS METHODS ------------------------------------------------------------
 
 
   # Given an array of keys, returns the Constraints which match those keys.
@@ -78,6 +78,17 @@ class Constraint < ActiveRecord::Base
         raise NoSuchConstraint.new(key)
       end
     end
+  end
+
+  # INSTANCE METHODS ---------------------------------------------------------
+
+  # Creates a JSON representation of the Constraint. Contains only the id,
+  # key and Gquery key.
+  #
+  # @return [Hash{String => Object}]
+  #
+  def as_json(*)
+    super :only => [ :id, :key, :gquery_key ]
   end
 
 end

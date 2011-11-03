@@ -19,9 +19,8 @@
 
     %script
       - @constraints.each do |c|
-        dashboard.add(
-        = { :id => c.id, :key => c.key, :gquery_key => c.gquery_key }.to_json.html_safe
-        );
+        == dashboard.add(#{ c.as_json['constraint'].to_json.html_safe });
+
       - @goals.each do |goal|
         :ruby
           goal_opts = {

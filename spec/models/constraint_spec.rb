@@ -45,6 +45,21 @@ describe "output" do
 #
 end
 
+# ----------------------------------------------------------------------------
+
+describe Constraint do
+  it { should validate_presence_of(:group) }
+
+  Constraint::GROUPS.each do |group|
+    it { should allow_value(group).for(:group) }
+  end
+
+  it { should_not allow_value('').for(:group) }
+  it { should_not allow_value('invalid_group').for(:group) }
+end
+
+# ----------------------------------------------------------------------------
+
 describe Constraint, '.for_dashboard' do
   context 'when an array of keys' do
     let(:keys) { %w( total_primary_energy co2_reduction ) }

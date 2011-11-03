@@ -13,6 +13,18 @@
 
 class Constraint < ActiveRecord::Base
 
+  # Groups names to which a constraint must belong. Used both during
+  # Constraint validation, and within the dashboard views.
+  GROUPS = %w(
+    unnamed_group_one
+    unnamed_group_two
+    unnamed_group_three
+    costs
+    unnamed_group_five
+    unnamed_group_six
+    summary
+  ).freeze
+
   # Raised when given a blank key to Constraint.for_dashboard.
   class IllegalConstraintKey < StandardError
   end
@@ -28,12 +40,17 @@ class Constraint < ActiveRecord::Base
 
   has_paper_trail
 
+  validates :group, :presence => true, :inclusion => GROUPS
+
   has_one :description, :as => :describable, :dependent => :destroy
 
   accepts_nested_attributes_for :description
 
   scope :ordered, order('id')
   scope :gquery_contains, lambda{|search| where("`gquery_key` LIKE ?", "%#{search}%")}
+
+  # --------------------------------------------------------------------------
+
 
   # Given an array of keys, returns the Constraints which match those keys.
   #

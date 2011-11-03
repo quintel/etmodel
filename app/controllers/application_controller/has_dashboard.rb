@@ -9,7 +9,11 @@ module ApplicationController::HasDashboard
 
   module InstanceMethods
     def load_constraints
-      @constraints = Current.view.constraints
+      @constraints = if session[:dashboard].any?
+        Constraint.for_dashboard(session[:dashboard])
+      else
+        Current.view.constraints
+      end
     end
 
     def load_goals

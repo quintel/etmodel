@@ -25,6 +25,25 @@ class SettingsController < ApplicationController
     end
   end
 
+  # Renders an HTML string which is used by the Backbone View to show the
+  # dashboard changer.
+  #
+  # GET /settings/dashboard
+  #
+  def dashboard
+    dash = session[:dashboard]
+
+    constraints = if dash and dash.any?
+      Constraint.for_dashboard(dash)
+    else
+      Current.view.constraints
+    end
+
+    @checked = constraints.map(&:key)
+
+    render layout: false
+  end
+
   # Updates the user's dashboard preferences. Stores those preferences in the
   # session for now; we can move it to the DB later if permanently storing
   # them is preferable.
@@ -33,7 +52,7 @@ class SettingsController < ApplicationController
   #
   # PUT /settings/dashboard
   #
-  def dashboard
+  def update_dashboard
     unless params[:dash].kind_of?(Hash)
       render json: { error: 'Invalid constraints hash' }, status: :bad_request
       return

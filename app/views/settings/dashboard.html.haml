@@ -1,0 +1,19 @@
+#dashboard-changer
+  = form_tag '/settings/dashboard', method: 'put' do
+    %h1 Choose your dashboard
+
+    %dl
+      - Constraint::GROUPS.each do |group|
+        %dt= t(:"constraint_groups.#{group}")
+
+        - constraints_for_group(group).each do |constraint|
+          %dd
+            %label
+              = constraint_radio_tag constraint, @checked.include?(constraint.key)
+              = t(:"output.#{constraint.extended_title}").html_safe
+
+    .commit
+      .indicator
+
+      %button.save   Save Changes
+      %button.cancel Cancel

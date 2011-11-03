@@ -45,4 +45,69 @@ describe "output" do
 #
 end
 
+describe Constraint, '.for_dashboard' do
+  context 'when an array of keys' do
+    let(:keys) { %w( total_primary_energy co2_reduction ) }
+    subject { Constraint.for_dashboard(keys) }
+
+    it { should have(keys.length).constraints }
+    it { should be_a(Array) }
+
+    it 'should return the total_primary_energy constraint first' do
+      subject[0].should eql(Constraint.find_by_key(keys[0]))
+    end
+
+    it 'should return the co2_reduction constraint second' do
+      subject[1].should eql(Constraint.find_by_key(keys[1]))
+    end
+  end
+
+  context 'when given an array with a duplicate key' do
+    let(:keys) { %w( total_primary_energy co2_reduction total_primary_energy ) }
+    subject { Constraint.for_dashboard(keys) }
+
+    it { should have(keys.length).constraints }
+    it { should be_a(Array) }
+
+    it 'should return the total_primary_energy constraint first' do
+      subject[0].should eql(Constraint.find_by_key(keys[0]))
+    end
+
+    it 'should return the co2_reduction constraint second' do
+      subject[1].should eql(Constraint.find_by_key(keys[1]))
+    end
+
+    it 'should return the total_primary_energy constraint third' do
+      subject[2].should eql(Constraint.find_by_key(keys[2]))
+    end
+  end
+
+  context 'when given an array with an invalid key' do
+    let(:keys) { %w( total_primary_energy does_not_exist ) }
+
+    it 'should raise an error' do
+      expect { Constraint.for_dashboard(keys) }.to \
+        raise_error(Constraint::NoSuchConstraint, /does_not_exist/)
+    end
+  end
+
+  context 'when given an array with a blank key' do
+    let(:keys) { [ 'total_primary_energy', '' ] }
+
+    it 'should raise an error' do
+      expect { Constraint.for_dashboard(keys) }.to \
+        raise_error(Constraint::IllegalConstraintKey)
+    end
+  end
+
+  context 'when given an array with a nil key' do
+    let(:keys) { [ 'total_primary_energy', nil ] }
+
+    it 'should raise an error' do
+      expect { Constraint.for_dashboard(keys) }.to \
+        raise_error(Constraint::IllegalConstraintKey)
+    end
+  end
+
+end
 

@@ -12,6 +12,20 @@
 #
 
 class Constraint < ActiveRecord::Base
+
+  # Raised when given a blank key to Constraint.for_dashboard.
+  class IllegalConstraintKey < StandardError
+  end
+
+  # Raised when searching for a constraint in Constraint.for_dashboard, and
+  # the constraint does not exist.
+  class NoSuchConstraint < ActiveRecord::RecordNotFound
+    def initialize(key) ; @key = key end
+    def message ; "No such constraint: #{@key.inspect}" end
+  end
+
+  # --------------------------------------------------------------------------
+
   has_paper_trail
 
   has_one :description, :as => :describable, :dependent => :destroy
@@ -20,4 +34,35 @@ class Constraint < ActiveRecord::Base
 
   scope :ordered, order('id')
   scope :gquery_contains, lambda{|search| where("`gquery_key` LIKE ?", "%#{search}%")}
+
+  # Given an array of keys, returns the Constraints which match those keys.
+  #
+  # `for_dashboard` will return the constraints in the same order in which
+  # the keys were given.
+  #
+  # @param  [Array(String)] keys An array of Constraint keys.
+  # @return [Array(Constraint)]
+  #
+  # @raise [IllegalConstraintKey]
+  #   Raised if one of the given keys is blank.
+  # @raise [NoSuchConstraint]
+  #   Raised if one of the keys did not match a Constraint in the DB.
+  #
+  def self.for_dashboard(keys)
+    raise IllegalConstraintKey if keys.any?(&:blank?)
+
+    constraints = Constraint.where(:key => keys.uniq)
+
+    # Make an array containing the constraints in the order in which they were
+    # given in the `keys` param. Also handles cases when a key is given more
+    # than once.
+    keys.to_enum.with_index.each_with_object([]) do |(key, index), ordered|
+      if constraint = constraints.detect { |c| c.key == key }
+        ordered[index] = constraint
+      else
+        raise NoSuchConstraint.new(key)
+      end
+    end
+  end
+
 end

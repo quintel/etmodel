@@ -6,13 +6,13 @@ describe SettingsController do
 
     let(:dash_settings) {
       {
-      'energy'     => constraints[0].id,
-      'emissions'  => constraints[1].id,
-      'imports'    => constraints[2].id,
-      'costs'      => constraints[3].id,
-      'bio'        => constraints[4].id,
-      'renewables' => constraints[5].id,
-      'goals'      => constraints[6].id
+      'energy'     => constraints[0].key,
+      'emissions'  => constraints[1].key,
+      'imports'    => constraints[2].key,
+      'costs'      => constraints[3].key,
+      'bio'        => constraints[4].key,
+      'renewables' => constraints[5].key,
+      'goals'      => constraints[6].key
     } }
 
     # ------------------------------------------------------------------------
@@ -27,12 +27,12 @@ describe SettingsController do
         put :dashboard, :dash => dash_settings
 
         response.body.length.should_not eql(0)
-        JSON.parse(response.body).should eql(dash_settings)
+        JSON.parse(response.body).should eql(dash_settings.values)
       end
 
       it 'should set the preferences in the session' do
         put :dashboard, :dash => dash_settings
-        session[:dashboard].should eql(dash_settings)
+        session[:dashboard].should eql(dash_settings.values)
       end
     end
 
@@ -58,9 +58,9 @@ describe SettingsController do
     context 'when given extra options' do
       it 'should not set extra keys on the session' do
         put :dashboard, :dash => dash_settings.merge(
-          :another => constraints[0].id)
+          :another => constraints[0].key)
 
-        session[:dashboard].should_not have_key('another')
+        session[:dashboard].should eql(dash_settings.values)
       end
     end
 
@@ -69,8 +69,8 @@ describe SettingsController do
     context 'when given only a subset of options' do
       it 'should not accept partial assignment' do
         put :dashboard, :dash => {
-          'energy'    => constraints[0].id,
-          'emissions' => constraints[1].id
+          'energy'    => constraints[0].key,
+          'emissions' => constraints[1].key
         }
 
         response.status.should eql(400)

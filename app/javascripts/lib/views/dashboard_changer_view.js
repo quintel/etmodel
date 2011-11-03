@@ -145,16 +145,12 @@
       });
 
       App.call_api();
-
-      console.log('done', data, textStatus, jqXHR);
     },
 
     /**
      * Called if an error occurred during the XHR request.
      */
     onError: function (jqXHR, textStatus, error) {
-      console.log('error', jqXHR, textStatus, error);
-
       this.$('input[name^=dash]:not(:checked)').attr('disabled', false);
       this.$('.commit button').animate({ opacity: 1.0 }, 'fast');
       this.$('.commit .indicator').fadeOut('fast');

@@ -198,12 +198,27 @@ var Metric = {
     var scale     = Metric.power_of_thousand(x);
     var value     = abs_value / Math.pow(1000, scale);
     var suffix    = '';
-    
+    var rounded;
+
     if (unit_suffix) {
      suffix = I18n.t('units.currency.' + Metric.power_of_thousand_to_string(scale));
     }
-    
-    return prefix + '&euro;' + Metric.round_number(value, 1) + suffix;
+
+    rounded = Metric.round_number(value, 1).toString();
+
+    // If the number is < 1000, and has decimal places, make sure that the
+    // number isn't truncated to something like 5.4, but instead returns 5.40.
+    if (abs_value < 1000 && _.indexOf(rounded, '.') !== -1) {
+      rounded = rounded.split('.');
+
+      if (rounded[1] && rounded[1].length === 1) {
+        rounded[1] += '0';
+      }
+
+      rounded = rounded.join('.');
+    }
+
+    return prefix + '&euro;' + rounded + suffix;
   },
 
 

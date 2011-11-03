@@ -83,12 +83,16 @@ class Constraint < ActiveRecord::Base
   # INSTANCE METHODS ---------------------------------------------------------
 
   # Creates a JSON representation of the Constraint. Contains only the id,
-  # key and Gquery key.
+  # key and Gquery key. Removes the root namespace ('constraint').
   #
   # @return [Hash{String => Object}]
   #
   def as_json(*)
-    super :only => [ :id, :key, :gquery_key ]
+    json = super(:only => [ :id, :key, :gquery_key ])
+
+    if ActiveRecord::Base.include_root_in_json
+      json['constraint']
+    else json end
   end
 
 end

@@ -60,6 +60,20 @@ end
 
 # ----------------------------------------------------------------------------
 
+describe Constraint, '#as_json' do
+  subject { Constraint.first.as_json }
+
+  it 'should remove the "constraint" root' do
+    subject.should_not have_key('constraint')
+  end
+
+  it { should have_key('id') }
+  it { should have_key('key') }
+  it { should have_key('gquery_key') }
+end
+
+# ----------------------------------------------------------------------------
+
 describe Constraint, '.for_dashboard' do
   context 'when an array of keys' do
     let(:keys) { %w( total_primary_energy co2_reduction ) }

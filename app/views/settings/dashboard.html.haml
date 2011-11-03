@@ -1,6 +1,6 @@
 #dashboard-changer
   = form_tag '/settings/dashboard', method: 'put' do
-    %h1 Choose your dashboard
+    %h1= t(:'dashboard.changer.header')
 
     %dl
       - Constraint::GROUPS.each do |group|
@@ -15,5 +15,5 @@
     .commit
       .indicator
 
-      %button.save   Save Changes
-      %button.cancel Cancel
+      %button.save=   t(:'dashboard.changer.save')
+      %button.cancel= t(:'dashboard.changer.cancel')

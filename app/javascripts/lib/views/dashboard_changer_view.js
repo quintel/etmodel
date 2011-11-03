@@ -46,6 +46,13 @@
     },
 
     /**
+     * Temporary.
+     */
+    '$': function (selector) {
+      return $('#dashboard-changer ' + selector);
+    },
+
+    /**
      * Saves the changes made by the user, and then closes the FancyBox
      * overlay.
      */

@@ -11,7 +11,6 @@ var ConstraintView = Backbone.View.extend({
     this.arrow_element = $('.arrow', this.dom_id);
 
     this.element.bind('mousedown', this.open_popup);
-    // $('.constraint_popup', this.element).live('click', this.close_all_popups);
 
     this.model.bind('change:result', this.render);
     this.model.view = this;

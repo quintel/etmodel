@@ -2,18 +2,19 @@ require 'spec_helper'
 
 describe SettingsController do
   describe 'on PUT /settings/dashboard' do
-    let(:constraints) { Constraint.limit(7) }
+    let(:constraints) do
+      Constraint::GROUPS.each_with_object([]) do |group, c|
+        c.push Constraint.where(:group => group).first
+      end
+    end
 
-    let(:dash_settings) {
-      {
-      'energy'     => constraints[0].key,
-      'emissions'  => constraints[1].key,
-      'imports'    => constraints[2].key,
-      'costs'      => constraints[3].key,
-      'bio'        => constraints[4].key,
-      'renewables' => constraints[5].key,
-      'goals'      => constraints[6].key
-    } }
+    let(:dash_settings) do
+      enum = Constraint::GROUPS.to_enum
+
+      enum.with_index.each_with_object({}) do |(group, index), c|
+        c[ group ] = constraints[ index ].key
+      end
+    end
 
     # ------------------------------------------------------------------------
 
@@ -69,8 +70,8 @@ describe SettingsController do
     context 'when given only a subset of options' do
       it 'should not accept partial assignment' do
         put :dashboard, :dash => {
-          'energy'    => constraints[0].key,
-          'emissions' => constraints[1].key
+          Constraint::GROUPS[0] => constraints[0].key,
+          Constraint::GROUPS[1] => constraints[1].key
         }
 
         response.status.should eql(400)
@@ -81,7 +82,7 @@ describe SettingsController do
 
     context 'when given an invalid constraint ID' do
       it 'should return a 400 Bad Request' do
-        put :dashboard, :dash => dash_settings.merge(:energy => 0)
+        put :dashboard, :dash => dash_settings.merge(Constraint::GROUPS[0] => 0)
         response.status.should eql(400)
       end
     end

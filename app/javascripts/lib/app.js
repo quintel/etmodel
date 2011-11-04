@@ -37,9 +37,7 @@ window.AppView = Backbone.View.extend({
 
     // If a "change dashboard" button is present, set up the DashboardChanger.
     if (dashChangeEl.length > 0) {
-      this.dashboardChanger = new DashboardChangerView({
-        triggerEl: dashChangeEl.first()
-      });
+      new DashboardChangerView(dashChangeEl);
     }
 
     // DEBT Add check, so that boostrap is only called once.

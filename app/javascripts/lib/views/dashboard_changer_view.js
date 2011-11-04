@@ -8,7 +8,7 @@
    *
    * Not a Backbone view since we don't benefit from using a full view.
    */
-  function DashboardChangerView (triggerEl) {
+  function DashboardChangerView(triggerEl) {
     _.bindAll(this, 'initEvents', 'cancel', 'commit',
                     'onDone', 'onError', 'onAlways');
 
@@ -37,17 +37,18 @@
    */
   DashboardChangerView.prototype.commit = function (event) {
     var formEl    = this.el.find('form'),
-        inputEls  = this.el.find('input[name^=dash]:checked'),
-        inputsLen = inputEls.length,
-        data      = { dash: {} },
-
-        name, input, i;
+      inputEls    = this.el.find('input[name^=dash]:checked'),
+      inputsLen   = inputEls.length,
+      data        = { dash: {} },
+      name,
+      input,
+      i;
 
     this.isSending = true;
 
     for (i = 0; i < inputsLen; i++) {
       input = $(inputEls[i]);
-      name  = input.attr('name').replace(/^dash\[(.*)\]$/, '$1');
+      name  = input.attr('name').replace(/^dash\[([\w\d_]+)\]$/, '$1');
 
       // Remove the extra stuff from the name so that we are left with
       // only the name of the dashboard group. e.g. dash[costs] => costs

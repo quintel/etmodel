@@ -22,6 +22,7 @@
         #nav.nav-admin
           .nav-holder.nav-holder-inner{:style=>"float:left"}
             = tabs_tag do |tab|
+              = tab.main                   'Main', admin_root_path
               = tab.translations           'Translations', admin_translations_path
               = tab.interfaces             'Interfaces', admin_interfaces_path
               = tab.tabs                   'Tabs', admin_tabs_path

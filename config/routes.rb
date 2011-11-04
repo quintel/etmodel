@@ -36,7 +36,9 @@ Etm::Application.routes.draw do
   resource :searches
 
   namespace :admin do
-    root :to => 'translations#index'
+    root :to => 'pages#index'
+    
+    match 'clear_cache' => 'pages#clear_cache', :as => :clear_cache
     
     resources :expert_predictions,
               :predictions,

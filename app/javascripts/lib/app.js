@@ -169,10 +169,23 @@ window.AppView = Backbone.View.extend({
       $("#charts_wrapper").busyBox({
         spinner: '<img src="/images/layout/ajax-loader.gif" />'
       }).fadeIn('fast'); 
+
       $("#constraints").busyBox({
         classes: 'busybox ontop',
-        spinner: '<img src="/images/layout/ajax-loader.gif" />'
+        spinner: '<img src="/images/layout/ajax-loader.gif" />',
+        top:     '22px'
       }).fadeIn('fast');
+
+      // BusyBox doesn't account for elements which have position: fixed when the
+      // user has scrolled the window.
+      $.fn.busyBox.container.find('.busybox').each(function () {
+        var element = $(this), top;
+
+        if (element.css('position') === 'fixed') {
+            top = parseInt(element.css('top').match(/^\d+/)[0]);
+            element.css('top', top - $(window).scrollTop());
+        }
+      });
     }
   },
 

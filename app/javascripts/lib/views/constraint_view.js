@@ -58,7 +58,7 @@ var ConstraintView = Backbone.View.extend({
       case 'total_energy_cost' :
         return Metric.euros_to_string(result * 1000000000);
       case 'household_energy_cost':
-        return Metric.euros_to_string(result);
+        return '&euro;' + Math.round(result);
       case 'total_primary_energy':
         // show + prefix if needed
         return Metric.ratio_as_percentage(result, true);

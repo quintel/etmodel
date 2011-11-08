@@ -1,2 +1,2 @@
 %h2.shadowbox-title= t("output.#{@constraint.extended_title}").html_safe
-= render "/constraints/constraint_#{params[:id]}"
+= render :partial => @constraint.key

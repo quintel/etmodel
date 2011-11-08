@@ -33,8 +33,10 @@
 
   // Templates.
   $(function () {
-    INPUT_ELEMENT_T  = _.template($('#input-element-template').html());
-    VALUE_SELECTOR_T = _.template($('#value-selector-template').html());
+    if (document.getElementById('input-element-template')) {
+      INPUT_ELEMENT_T  = _.template($('#input-element-template').html());
+      VALUE_SELECTOR_T = _.template($('#value-selector-template').html());
+    }
   });
 
   /**

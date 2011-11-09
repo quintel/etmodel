@@ -32,7 +32,8 @@ describe Admin::OutputElementSeriesController do
 
     it "create action should redirect when model is valid" do
       post :create, :output_element_serie => Factory.attributes_for(:output_element_serie)
-      response.should redirect_to(admin_output_element_series_url)
+      new_serie = assigns(:output_element_serie)
+      response.should redirect_to(admin_output_element_serie_path(:id => new_serie.id))
     end
   end
 
@@ -51,7 +52,7 @@ describe Admin::OutputElementSeriesController do
     it "update action should redirect when model is valid" do
       @output_element_serie.stub!(:update_attributes).with(any_args).and_return(true)
       put :update, :id => @output_element_serie
-      response.should redirect_to(admin_output_element_series_url)
+      response.should redirect_to(admin_output_element_serie_path(:id => @output_element_serie.id))
     end
   end
 

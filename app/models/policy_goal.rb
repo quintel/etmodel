@@ -6,7 +6,6 @@
 #  key               :string(255)
 #  name              :string(255)
 #  query             :string(255)
-#  start_value_query :string(255)
 #  unit              :string(255)
 #  created_at        :datetime
 #  updated_at        :datetime
@@ -25,7 +24,7 @@ class PolicyGoal < ActiveRecord::Base
   accepts_nested_attributes_for :area_dependency
 
   scope :gquery_contains, lambda{|search| where([
-    "query LIKE :q OR start_value_query LIKE :q OR reached_query LIKE :q OR target_query LIKE :q OR user_value_query LIKE :q",
+    "query LIKE :q OR reached_query LIKE :q OR target_query LIKE :q OR user_value_query LIKE :q",
     {:q => "%#{search}%"}]
   )}
 end

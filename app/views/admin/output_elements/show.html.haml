@@ -8,6 +8,7 @@
       %th.tal color
       %th Gquery
       %th.tal is_target_line
+      %th
 
   %tbody
     -@output_element.output_element_series.each do |serie|
@@ -17,6 +18,7 @@
         %td= serie.color
         %td= serie.gquery
         %td= serie.is_target_line
+        %td= link_to 'edit', edit_admin_output_element_serie_path(:id => serie.id)
 
 %p
-  = link_to 'Create new serie', new_admin_output_element_serie_path
+  = link_to 'Create new serie', new_admin_output_element_serie_path(:output_element_id => @output_element.id)

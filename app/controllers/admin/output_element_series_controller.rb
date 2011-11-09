@@ -10,7 +10,7 @@ class OutputElementSeriesController  < BaseController
 
 
   def new
-    @output_element_serie = OutputElementSerie.new
+    @output_element_serie = OutputElementSerie.new(:output_element_id => params[:output_element_id])
     @output_element_serie.build_description
     @output_element_serie.build_area_dependency
   end
@@ -19,7 +19,7 @@ class OutputElementSeriesController  < BaseController
     @output_element_serie = OutputElementSerie.new(params[:output_element_serie])
     if @output_element_serie.save
       flash[:notice] = "OutputElementSerie saved"
-      redirect_to admin_output_element_series_url
+      redirect_to admin_output_element_series_path(@output_element_serie)
     else
       render :action => 'new'
     end
@@ -30,7 +30,7 @@ class OutputElementSeriesController  < BaseController
 
     if @output_element_serie.update_attributes(params[:output_element_serie])
       flash[:notice] = "OutputElementSerie updated"
-      redirect_to admin_output_element_series_url
+      redirect_to admin_output_element_series_path(@output_element_serie)
     else
       render :action => 'edit'
     end

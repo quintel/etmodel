@@ -2,4 +2,13 @@
   ==#{@output_element_serie.label}
   %small= link_to 'Edit', edit_admin_output_element_serie_path(@output_element_serie)
 
+%dl
+  %dt Chart
+  %dd
+    - if @output_element_serie.output_element
+      = link_to @output_element_serie.output_element.key, [:admin, @output_element_serie.output_element]
+    - else
+      No associated chart
+    
+
 = render '/admin/shared/revisions', :versioned => @output_element_serie

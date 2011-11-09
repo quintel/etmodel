@@ -7,6 +7,9 @@ var y2_axis;
 function InitializeBezier(id,series,growth,unit,colors,labels){
   // setup the y-axis settings
   y2_axis = {
+    rendererOptions: { 
+      forceTickAt0: true // we always want a tick a 0  
+    },
     borderColor:'#CCCCCC', // color for the marks #cccccc is the same as the grid lines
     tickOptions:{
       formatString: '%.0f'+unit

@@ -46,4 +46,9 @@ class Slide < ActiveRecord::Base
     "slidetitle.#{name}"
   end
 
+  # short name to use as url fragment
+  def fragment_url
+    name.downcase.gsub(' ', '_') rescue nil
+  end
+
 end

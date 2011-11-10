@@ -69,16 +69,40 @@ var Chart = Backbone.Model.extend({
   //   [[2010,20.4],2040,210.4]]
   // ]
   results : function(exclude_target) {
-    var series;
+    var series, out;
     if (exclude_target == undefined || exclude_target == null){
       series =  this.series.toArray();
     }
     else{
       series =  this.non_target_series();
     }
-    return _(series).map(function(serie) { return serie.result(); });  
-  },
+    out = _(series).map(function(serie) {
+      var res = serie.result(); 
+      return res;
+    });
 
+    
+    // policy goal charts show percentages but the gqueries return values
+    // in the [0,1] range. Let's take care of that
+    if (this.get('percentage')) {
+      out = _(out).map(function(serie){
+        var scaled = [
+          [
+            serie[0][0],
+            serie[0][1] * 100
+          ],
+          [
+            serie[1][0],
+            serie[1][1] * 100
+          ]
+        ];
+        return scaled;
+      });
+    }
+    
+    return out;
+  },
+  
   colors : function() {
     return this.series.map(function(serie) { return serie.get('color'); });
   },

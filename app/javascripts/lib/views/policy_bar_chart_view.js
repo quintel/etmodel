@@ -19,7 +19,6 @@ var PolicyBarChartView = BaseChartView.extend({
 
   result_serie1 : function() {
     out = _.flatten(this.model.value_pairs());
-    console.log(out);
     if (this.model.get("percentage")) {
       out = _(out).map(function(x){ return x * 100});
     }

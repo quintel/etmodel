@@ -18,13 +18,19 @@ var PolicyBarChartView = BaseChartView.extend({
   },
 
   result_serie1 : function() {
-    return _.flatten(this.model.value_pairs());
+    out = _.flatten(this.model.value_pairs());
+    console.log(out);
+    if (this.model.get("percentage")) {
+      out = _(out).map(function(x){ return x * 100});
+    }
+    return out;
   },
 
   result_serie2 : function() {
-    return _.map(this.result_serie1(), function(r) {
+    out = _.map(this.result_serie1(), function(r) {
       return 100 - r;
     });
+    return out;
   },
 
   ticks : function() {

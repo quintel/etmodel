@@ -7,9 +7,9 @@ Etm::Application.routes.draw do
   match '/demand/intro' => 'demand#intro'
 
   match '/demand(/:id(/:slide))' => 'demand#show', :defaults => {:id => 'households'}
-  match '/costs(/:id)' => 'costs#show', :defaults => {:id => 'combustion'}
-  match '/policy(/:id)' => 'policy#show', :defaults => {:id => 'sustainability'}
-  match '/supply(/:id)' => 'supply#show', :defaults => {:id => 'electricity'}
+  match '/costs(/:id(/:slide))'  => 'costs#show', :defaults => {:id => 'combustion'}
+  match '/policy(/:id(/:slide))' => 'policy#show', :defaults => {:id => 'sustainability'}
+  match '/supply(/:id(/:slide))' => 'supply#show', :defaults => {:id => 'electricity'}
 
   match '/descriptions/chart/:id'  => 'descriptions#show'
 

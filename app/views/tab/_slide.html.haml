@@ -1,9 +1,9 @@
 - type     = slide_type_in_collection(slide, @slides)
-- selected = 'selected' if (params[:slide] == slide.name or type == :first)
+- selected = 'selected' if (params[:slide] == slide.fragment_url || type == :first)
 %li.accordion_element{:class => selected}
   - default_output = Current.view.default_output_element_for_slide(slide)
   %span.headline{:id => "default_output_#{default_output.id}", :slide => slide.id}
-    %a.slide_header{:href => "/#{controller_name}/#{params[:id]}/#{slide.name.underscore}", :id => slide.name.underscore}
+    %a.slide_header{:href => "/#{controller_name}/#{params[:id]}/#{slide.fragment_url}", :id => slide.fragment_url}
       = raw t("slidetitle.#{slide.name}")
   .slide
     %p

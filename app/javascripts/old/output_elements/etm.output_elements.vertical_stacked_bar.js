@@ -40,7 +40,9 @@ function InitializeVerticalStackedBar(id,series,ticks,serie_settings_filler,show
     pointLabels:{ // a pointlabel is a value shown besides the serie inside the grid.
       show: show_point_label, // want to show point labels?
       stackedValue: true, // sum the values of all the series in one point label
-      formatString: '%.1f'
+      formatString: '%.1f',
+      edgeTolerance: -50,
+      ypadding: 0
     },
     yaxis:'y2axis' // use the right side of the chart for the y-axis
   };

@@ -1,18 +1,13 @@
 = link_to "back", admin_predictions_path
 %h2
-  #{@prediction.input_element.name} (#{@prediction.input_element.id}) 
-  %small= link_to 'edit', edit_admin_prediction_path(@prediction)
+  #{@prediction.input_element.key} - #{@prediction.title} - 
+  %small
+    = "By #{@prediction.user.name} (#{@prediction.user.company_school})"
+    = link_to 'edit', edit_admin_prediction_path(@prediction)
+%span
+  = @prediction.description
+%br
 
-%table.default
-  %thead
-    %tr
-      %th year
-      %th value
-  %tbody
-    - @prediction.values.each do |entry|
-      %tr{cycles}
-        %td= entry.year
-        %td= entry.value
 
 %br
 %table.default
@@ -36,3 +31,14 @@
         %td= entry.year_end
         %td= entry.actor
         %td= entry.description
+%br
+%table.default
+  %thead
+    %tr
+      %th year
+      %th value
+  %tbody
+    - @prediction.values.each do |entry|
+      %tr{cycles}
+        %td= entry.year
+        %td= entry.value

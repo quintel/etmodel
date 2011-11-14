@@ -26,7 +26,7 @@ gem 'yui-compressor'
 gem 'i18n-js'
 
 # supporting gems
-gem 'airbrake', '3.0.2'
+gem 'airbrake', '~> 3.0.5'
 gem 'newrelic_rpm'
 
 # system gems
@@ -36,7 +36,7 @@ gem 'memcache-client'
 gem 'mongrel', '1.2.0.pre2'
 
 group :development do
-  gem 'yard', '0.5.4'
+  gem 'yard'
   gem 'annotate', :require => false
   gem 'jslint_on_rails'
   gem 'active_reload'

@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   include LayoutHelper
   include SprocketsHelper
 
-  include ApplicationController::ExceptionHandling
   include SortableTable::App::Controllers::ApplicationController
   
   helper :all

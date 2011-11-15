@@ -1,11 +1,3 @@
-GIT
-  remote: git://github.com/japetheape/http_status_exceptions.git
-  revision: 99b37cbca57072be710da571d03e3e50483fbd6e
-  specs:
-    http_status_exceptions (0.2.1)
-      actionpack (>= 3)
-      rack (>= 1.2.1)
-
 GEM
   remote: http://rubygems.org/
   remote: http://gems.github.com/
@@ -201,7 +193,6 @@ DEPENDENCIES
   factory_girl_rails
   haml (~> 3.1.1)
   hirb
-  http_status_exceptions!
   httparty (~> 0.7.4)
   i18n-js
   jquery-rails

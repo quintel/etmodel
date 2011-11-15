@@ -9,7 +9,7 @@ class UserSessionsController < ApplicationController
   def new
     @user_session = UserSession.new
     @redirect_to = params[:redirect_to]
-    raise HTTPStatus::Forbidden if !@redirect_to.blank? && !valid_redirect?(@redirect_to)
+
     redirect_to @redirect_to and return if !current_user.nil? && !@redirect_to.blank?
 
     respond_to do |format|

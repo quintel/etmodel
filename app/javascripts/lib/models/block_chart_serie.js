@@ -1,7 +1,9 @@
 var BlockChartSerie = Backbone.Model.extend({
   initialize : function() {
-    var cost_gql_query = this.get('gquery_key') + "_cost";
-    var investment_gql_query = this.get('gquery_key')+"_investment";
+    // the block chart has a different behavious; its gqueries follow a naming
+    // convention
+    var cost_gql_query       = "costs_of_ "      + this.get('gquery_key') + "_in_overview_costs_of_electricity_production";
+    var investment_gql_query = "investment_for_" + this.get('gquery_key') + "_in_overview_costs_of_electricity_production";
 
     this.set({
       gquery_cost : new Gquery({key : cost_gql_query}),

@@ -67,6 +67,8 @@ var ConstraintView = Backbone.View.extend({
       case 'net_energy_import':
         // 1 point precision
         return Metric.ratio_as_percentage(result, false, 1);
+      case 'security_of_supply':
+        return Metric.round_number(result, 1);
       case 'renewable_percentage':
         return Metric.ratio_as_percentage(result);
       case 'not_shown':

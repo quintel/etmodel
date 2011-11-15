@@ -115,10 +115,11 @@ class ScenariosController < ApplicationController
   # GET /scenarios/:id/edit
   # GET /scenario/edit
   #  
-  # @tested 2010-12-22 jape
-  #
   def edit
-    raise HTTPStatus::Forbidden.new if (!current_user || @scenario.user.nil? || @scenario.user.id != current_user.id)
+    if (!current_user || @scenario.user.nil? || @scenario.user.id != current_user.id)
+      flash[:alert] = "Permission denied"
+      redirect_to_back
+    end
   end
 
   

@@ -31,7 +31,7 @@ task :staging do
   set :config_files, "/home/ubuntu/config_files/#{application_key}"
 
   set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
-  set :db_pass, "Energy2.0"
+  set :db_pass, "1is5sRJmehiULV"
   set :db_name, application_key
   set :db_user, application_key
 

@@ -38,12 +38,12 @@ group :development do
   gem 'yard'
   gem 'annotate', :require => false
   gem 'jslint_on_rails'
-  gem 'active_reload'
+  gem 'active_reload', '~> 0.6.1'
 end
 
 group :test, :development do
   # It needs to be in the :development group to expose generators and rake tasks without having to type RAILS_ENV=test.
-  gem "rspec-rails", "~> 2.6.1"
+  gem "rspec-rails", "~> 2.7.0"
   gem 'ruby-debug19'
   gem 'hirb'
   gem 'wirble'

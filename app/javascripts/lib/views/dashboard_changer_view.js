@@ -28,6 +28,7 @@
   DashboardChangerView.prototype.initEvents = function () {
     this.el = $('#dashboard-changer')
       .delegate('form',          'submit', this.commit)
+      .delegate('button.save',   'click',  this.commit)
       .delegate('button.cancel', 'click',  this.cancel);
   };
 

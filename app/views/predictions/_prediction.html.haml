@@ -53,7 +53,7 @@
               #{t 'prediction.actor'} 
             = m.actor || "-"
             %br
-            = t('prediction.table_footer')
+            = t('prediction.table_footer').html_safe
   - else
     %ul.measure
       %li= t('prediction.no_measures_available')

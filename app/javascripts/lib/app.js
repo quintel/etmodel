@@ -199,7 +199,12 @@ window.AppView = Backbone.View.extend({
       $("#constraints").busyBox('close');
       //loading.busyBox('close');
     }
+  },
+
+  etm_debug: function(t) {
+    if(window.etm_js_debug) console.log(t);
   }
+
 });
 
 

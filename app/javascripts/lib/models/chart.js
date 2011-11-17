@@ -170,6 +170,7 @@ var ChartList = Backbone.Collection.extend({
   },
 
   load : function(chart_id) {
+    App.etm_debug('Loading chart: #' + chart_id);
     if (this.current() == parseInt(chart_id)) {
       // if chart_id == currently shown chart, skip.
       return;

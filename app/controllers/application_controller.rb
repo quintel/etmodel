@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include SortableTable::App::Controllers::ApplicationController
   
   helper :all
-  helper_method :current_user_session, :current_user
+  helper_method :current_user_session, :current_user, :admin?
 
   # TODO refactor move the hooks and corresponding actions into a "concern"
   before_filter :initialize_current
@@ -101,8 +101,12 @@ protected
     session[:return_to] = request.request_uri
   end
 
+  def admin?
+    current_user.try :admin?
+  end
+
   def restrict_to_admin
-    if current_user.andand.admin?
+    if admin?
       true
     else
       permission_denied

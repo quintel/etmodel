@@ -7,35 +7,19 @@ Quintel Energy Transition Model
 * FIXED: The subquery mem_cache caching is probably flawed, when a subquery returns Converters.
   (it was only a theoretical problem) But I added a not_cacheable option to gqueries, that force it to not cache.
 
-# Sections #
-
-## Guides ##
-
-How to add new attributes to converter {ConverterData} (2010-12-28 seb)
-
-## For GQL Users ##
-
-* [GqlQuerySyntaxNode](/doc/Gql/GqlQuerySyntaxNode.html) for a list of available GQL Functions.
-* [ConverterApi](/doc/Qernel/ConverterApi.html) for converter-attributes that can be accessed using VALUE(..;...).
-* [Carrier](/doc/Qernel/Carrier.html) for carrier-attributes using VALUE(CARRIER(x);...).
-* [GraphApi](/doc/Qernel/GraphApi.html) for graph-attributes that can be accessed using GRAPH(...).
-* [Area](/doc/Qernel/Area.html) for Area-attributes that can be accessed using AREA(...).
-
-
 # Branches #
 
 ### master ###
 
-The production/online branch. Capistrano will download this branch to the server(s).
-
-### dev ###
-
-Working development version.
+Working branch. Please always commit to this branch and rebase from here.
 
 ### staging ###
 
-Branch for the staging server.
+Tracks deployment on the staging/beta server (http://beta.et-model.com)
 
+### production ###
+
+Branch for the production server (http://et-model.com)
 
 # Guides for Developers #
 
@@ -69,23 +53,23 @@ or
 
 ## Building/kickstarting on a new machine ##
 
-* Get Ruby 1.9.1 or higher running. (use rvm)
+* Get Ruby 1.9.2 or higher running. (use rvm)
 * Make sure you have installed on your machine:
   * memcached
   * sphinx
   * (for the graphs of the etm-graph also Graphviz and imagemagick)
 * Checkout our git repository
-* Install all the missing gems
+* Run 'bundle install'
 * Create local databases for test and development (eg: etm_dev, etm_test)
-* Get ssh access to staging server (ask dennis)
-* Clone the database from the staging server using cap staging2local
+* Get ssh access to staging server (ask Dennis)
+* Clone the database from the staging server using cap staging db2local
 
 
 ## Deploying ##
 
-By default capistrano works on staging:
+To deploy to staging:
 
-    `$: cap deploy` 
+    `$: cap staging deploy` 
 
 To make capistrano work on production server write *cap prod*:
 
@@ -140,11 +124,6 @@ To make capistrano work on production server write *cap prod*:
 
     `(master)$ gco dev`
 
-## Flow of data migration (mostly for jaap)
-Right now (10-10-10)we add the new data on the staging server. When we do a pull from github and, after a migration, the code breaks, then we copy the db from staging to local.
+# Deployments #
 
-To migrate to the production server we:
-- backup the production db
-- export the staging db without the tables: scenarios, users & press releases (right now by hand)
-- import the exported db into the production
-
+Paolo can write some nice prose here about the deployment procedure and what mighty scripts to use...

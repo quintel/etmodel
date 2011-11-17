@@ -65,18 +65,7 @@ var PolicyGoal = Backbone.Model.extend({
     
     switch(this.get('display_fmt')) {
       case 'percentage' :
-        // DEBT: this constraint should use a gquery that returns
-        // a delta, rather than absolute values. We already have
-        // the gquery to get the user scenario emissions delta, 
-        // it is called co2_emission_percent_change_from_1990_corrected_for_electricity_import,
-        // but we still need a new one to show the user goal as delta, ie
-        // GOAL(co2_emission_percent_change_from_1990_corrected_for_electricity_import)
-        if (this.get('unit') == 'co2_pct') {
-          out = "" + Metric.round_number(n, 2) + "MT";
-        } else {
-          // no +/- prefix, 2 point precision
-          out = Metric.ratio_as_percentage(n, false, 2);
-        }
+        out = Metric.ratio_as_percentage(n, false, 2);
         break;
       case 'number':
         out = Metric.round_number(n, 2);

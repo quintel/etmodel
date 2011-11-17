@@ -8,14 +8,9 @@ var PolicyGoal = Backbone.Model.extend({
     this.user_value_query = new Gquery({ key: this.get("user_value_query")});
   },
   
-  // shortcut to get the future result for a gquery object
-  future_value_for : function(gquery) {
-    return gquery.result()[1][1];
-  },
-  
   // goal achieved? true/false
   success_value : function() {
-    return this.future_value_for(this.success_query);
+    return this.success_query.get('future_value');;
   },
   
   successful : function() {
@@ -24,17 +19,17 @@ var PolicyGoal = Backbone.Model.extend({
 
   // numeric value
   current_value : function() {
-    return this.future_value_for(this.value_query);
+    return this.value_query.get('future_value');;
   },
   
   // goal, numeric value
   target_value : function() {
-    return this.future_value_for(this.target_query);
+    return this.target_query.get('future_value');;
   },
   
   // returns true if the user has set a goal
   is_set : function() {
-    return this.future_value_for(this.user_value_query);
+    return this.user_value_query.get('future_value');;
   },
   
   // DEBT: we could use a BB view

@@ -142,7 +142,6 @@ $(function(){
 
   // extra info links
   $(".measure").live('click', function(event){
-    event.preventDefault();
     $(this).find(".inline_description").toggle();
     $(this).toggleClass('active');
   });

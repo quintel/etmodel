@@ -8,10 +8,14 @@ var PolicyGoal = Backbone.Model.extend({
     this.user_value_query = new Gquery({ key: this.get("user_value_query")});
   },
   
+  // shortcut to get the future result for a gquery object
+  future_value_for : function(gquery) {
+    return gquery.result()[1][1];
+  },
+  
   // goal achieved? true/false
   success_value : function() {
-    var res = this.success_query.result()[1][1];
-    return res;
+    return this.future_value_for(this.success_query);
   },
   
   successful : function() {
@@ -20,24 +24,19 @@ var PolicyGoal = Backbone.Model.extend({
 
   // numeric value
   current_value : function() {
-    var res = this.value_query.result()[1][1];
-    return res;
+    return this.future_value_for(this.value_query);
   },
   
   // goal, numeric value
   target_value : function() {
-    var res = this.target_query.result()[1][1];
-    return res;
+    return this.future_value_for(this.target_query);
   },
   
   // returns true if the user has set a goal
-  // I'm not happy with this implementation. See ETE GOAL_IS_SET issue
-  // PZ - Tue 1 Nov 2011 16:36:26 CET
   is_set : function() {
-    var res = this.user_value_query.get("future_value");
-    return res != false && res != null;
+    return this.future_value_for(this.user_value_query);
   },
-
+  
   // DEBT: we could use a BB view
   update_view : function() {
     var success = this.successful();

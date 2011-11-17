@@ -78,4 +78,8 @@ module ApplicationHelper
     @_grouped_constraints ||= Constraint.all.group_by(&:group)
     @_grouped_constraints[group]
   end
+
+  def scenario_in_etengine_url
+    "#{APP_CONFIG[:api_url].gsub('api/v2', 'data')}/#{Current.setting.api_session_id}/#{Current.setting.region}"
+  end
 end

@@ -6,6 +6,7 @@ var InputElement = Backbone.Model.extend({
     this.dirty = false;
     this.ui_options = {'element' : $('#input_element_'+this.get('id'))};
     this.bind('change:user_value', this.markDirty);
+    this.bind('change:user_value', this.logUpdate);
   },
 
   set_min_value : function(result) {
@@ -29,6 +30,10 @@ var InputElement = Backbone.Model.extend({
       App.inputElementsController.addInputElement(this);
       this.already_init = true;
     }
+  },
+
+  logUpdate : function() {
+    App.etm_debug('Moved slider: #' + this.get('id'));
   },
 
   /**

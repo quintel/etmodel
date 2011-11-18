@@ -2,62 +2,40 @@ namespace :db do
   desc "Move production db to staging db, overwriting everything"
   task :prod2staging_all do    
     warning("You know what you're doing, right? You will overwrite the entire staging db!")
-    
-    puts "Loading production environment"
-      production
-    puts "Dumping database #{db_name} to /tmp"
-      file = dump_db_to_tmp
-    puts "Loading staging environment"
-      staging
-      puts "target database: #{db_name}"
-    puts "I should now be emptying staging"
-      db.empty
-    puts "And filling staging with production data"
-      load_sql_into_db(file)
+    production
+    file = dump_db_to_tmp
+    staging
+    db.empty
+    load_sql_into_db(file)
   end
   
   desc "Copy users, press_releases and saved_scenarios from production to staging"
   task :prod2staging_safe_tables do
     warning "users, press_releases and saved_scenarios tables on staging will be overwritten with production data"
-    puts "Loading production environment"
-      production
-    puts "Dumping tables #{db_name} to /tmp"
-      tables = %w{
-        users
-        press_releases
-        saved_scenarios
-      }
-      file = dump_db_to_tmp(tables)
-    puts "Loading staging environment"
-      staging
-      puts "target database: #{db_name}"
-    puts "And filling staging with production data"
-      load_sql_into_db(file)    
+    production
+    tables = %w{
+      users
+      press_releases
+      saved_scenarios
+    }
+    file = dump_db_to_tmp(tables)
+    staging
+    load_sql_into_db(file)    
   end  
 
   desc "Move staging db to production db, overwriting everything"
   task :staging2prod_all do    
     warning("You know what you're doing, right? You will overwrite the entire production db!")
-    
-    puts "Loading staging environment"
-      staging
-    puts "Dumping database #{db_name} to /tmp"
-      file = dump_db_to_tmp
-    puts "Loading production environment"
-      production
-      puts "target database: #{db_name}"
-    puts "I should now be emptying production"
-      db.empty
-    puts "And filling production with staging data"
-      load_sql_into_db(file)
+    staging
+    file = dump_db_to_tmp
+    production
+    db.empty
+    load_sql_into_db(file)
   end
   
   desc "Empty db - be sure you know what you're doing"
   task :empty do
     warning("You know what you're doing, right? This will drop the current db")
-    
-    puts "Dropping the remote db and recreating a new one!"
-    puts "I'll first make a backup on /tmp though"
     dump_db_to_tmp
     run "mysqladmin drop #{db_name}"
     run "mysqladmin create #{db_name} -u #{db_user} --password=#{db_pass}"
@@ -92,7 +70,7 @@ end
 # the optional tables parameter should be an array of string
 def dump_db_to_tmp(tables = [])
   file = "/tmp/#{db_name}.sql"
-  puts "Exporting db to sql file, filename: #{file}"
+  puts "Dumping database #{db_name} to /tmp"
   run "mysqldump -u #{db_user} --password=#{db_pass} --host=#{db_host} #{db_name} #{tables.join(' ')}> #{file}"
   file
 end

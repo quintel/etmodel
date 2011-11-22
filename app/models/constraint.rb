@@ -16,12 +16,12 @@ class Constraint < ActiveRecord::Base
   # Groups names to which a constraint must belong. Used both during
   # Constraint validation, and within the dashboard views.
   GROUPS = %w(
-    unnamed_group_one
-    unnamed_group_two
-    unnamed_group_three
+    energy_use
+    co2
+    import
     costs
-    unnamed_group_five
-    unnamed_group_six
+    footprint
+    renewable
     summary
   ).freeze
 

@@ -5,6 +5,9 @@
               <a href="/predictions?input_element_id=<%%= input_element_id %>&end_year=<%%= end_year %>" class="prediction"></a>
           <%% } %>
           <%%= name %>
+          <%% if ( location.search.match(/\bdebug/) ) { %>
+           (#<%%= input_element_id %>)
+          <%% } %>        
         </label>
 
         <%% if (sublabel) { %>

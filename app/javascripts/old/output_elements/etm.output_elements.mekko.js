@@ -22,7 +22,10 @@ function InitializeMekko(id,series,unit,colors,labels,group_labels){
     // added a css rotate rule in jqplot.css to tilt the top labels
   x2axis = {
     show: true,
-    tickMode: 'bar'
+    tickMode: 'bar',
+    tickOptions: {
+      formatString: '%d&nbsp;' + unit
+    }
   };
   
   // setup the bottom axis settings

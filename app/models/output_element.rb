@@ -32,11 +32,12 @@ class OutputElement < ActiveRecord::Base
   has_one :description, :as => :describable, :dependent => :destroy
   has_one :area_dependency, :as => :dependable, :dependent => :destroy
 
-  validates :key, :presence => true, :uniqueness => true
+  accepts_nested_attributes_for :description, :area_dependency
 
+  validates :key, :presence => true, :uniqueness => true
   delegate :html_table?, :to => :output_element_type
 
-  accepts_nested_attributes_for :description, :area_dependency
+  scope :not_hidden, where(:hidden => false)
 
   define_index do
     indexes name

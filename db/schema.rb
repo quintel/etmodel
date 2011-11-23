@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111115201553) do
+ActiveRecord::Schema.define(:version => 20111123105943) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -155,8 +155,10 @@ ActiveRecord::Schema.define(:version => 20111115201553) do
     t.string   "key"
     t.float    "max_axis_value"
     t.float    "min_axis_value"
+    t.boolean  "hidden",                 :default => false
   end
 
+  add_index "output_elements", ["hidden"], :name => "index_output_elements_on_hidden"
   add_index "output_elements", ["key"], :name => "index_output_elements_on_key"
 
   create_table "page_titles", :force => true do |t|

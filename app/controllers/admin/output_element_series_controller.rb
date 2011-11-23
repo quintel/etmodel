@@ -40,10 +40,10 @@ class OutputElementSeriesController  < BaseController
     @output_element_serie = OutputElementSerie.find(params[:id])
     if @output_element_serie.destroy
       flash[:notice] = "Successfully destroyed input_element."
-      redirect_to admin_output_element_series_url
+      redirect_to [:admin, @output_element_serie.output_element]
     else
       flash[:error] = "Error while deleting slider."
-      redirect_to admin_output_element_series_url
+      redirect_to [:admin, @output_element_serie.output_element]
     end
   end
 

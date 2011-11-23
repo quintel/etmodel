@@ -10,7 +10,7 @@
 
   #legend
     - OutputElement.find(47).output_element_series.each do |serie|
-      %div{:style=>"background-color:#{serie.converted_color}"}
+      %div{:style=>"background-color:#{serie.color}"}
       %span= t("serie.#{serie.label}")
 :javascript
   #{ js_for_output_element(47, 'output_element_47') }

@@ -52,4 +52,10 @@ module LayoutHelper
       end
     end
   end
+  
+  # Tries mapping a hex string to a human readable colour name
+  #
+  def color_to_string(hex)
+    Colors::COLORS.invert[hex] || hex
+  end
 end

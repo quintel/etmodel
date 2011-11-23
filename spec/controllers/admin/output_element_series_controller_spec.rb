@@ -65,7 +65,7 @@ describe Admin::OutputElementSeriesController do
   it "destroy action should destroy model and redirect to index action" do
     output_element_serie = Factory :output_element_serie
     delete :destroy, :id => output_element_serie.id
-    response.should redirect_to(admin_output_element_series_url)
+    response.should redirect_to([:admin, output_element_serie.output_element])
     OutputElementSerie.exists?(output_element_serie.id).should be_false
   end
 end

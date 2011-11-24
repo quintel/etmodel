@@ -2,7 +2,7 @@
 
 #charts_container
   = render "/output_elements/output_element_actions"
-  - if @output_element.under_construction || (params[:id] == "buildings" && Current.setting.country == "de")
+  - if @output_element.under_construction
     #chart_not_finished
 
   #current_chart.column-r-content

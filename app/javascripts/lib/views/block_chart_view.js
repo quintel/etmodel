@@ -1,4 +1,3 @@
-
 var BlockChartView = BaseChartView.extend({
   initialize : function() {
     this.initialize_defaults();

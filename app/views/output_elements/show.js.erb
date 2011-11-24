@@ -9,4 +9,5 @@ var output_element = new Chart(<%= @output_element.options_for_js.to_json.html_s
     <%= raw output_element_serie(serie) %>
   <% end %>
 <% end %>
+
 window.charts.change(output_element);

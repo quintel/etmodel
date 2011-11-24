@@ -3,14 +3,21 @@ module GqlHelper
   # if the id is missing, then return the key passed as parameter.
   # So we can store in the column both ids and gqueries
   def gquery_id(key)
-    gqueries = Rails.cache.fetch('engine_gqueries') do
-      h = {}
-      Api::Gquery.all.map do |g|
-        h[g.key] = g.id
-        h[g.deprecated_key] = g.id if g.deprecated_key 
+    gquery_map[key] || key
+  end
+  
+  def gquery_map
+    Rails.cache.fetch('engine_gqueries_map') do
+      Api::Gquery.all.each_with_object({}) do |gquery, hsh|
+        hsh[gquery.key] = hsh[gquery.deprecated_key] = gquery.id
       end
-      h
     end
-    id = gqueries[key] || key
+  end
+  
+  # DEBT!
+  def block_chart_gqueries_map
+    Rails.cache.fetch('block_chart_gqueries_map') do
+      gquery_map.select{|k,v| k =~ /in_overview_costs_of_electricity_production/ }
+    end
   end
 end

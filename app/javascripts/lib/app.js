@@ -74,12 +74,20 @@ window.AppView = Backbone.View.extend({
       url: url,
       data: params,
       success: this.handle_api_result,
-      error: function() {
-        console.log("Something went wrong"); 
+      error: function(xOptions, textStatus) {
+        console.log("Something went wrong: " + textStatus);
+        if (textStatus == 'timeout') self.handle_timeout();
         self.hideLoading();
-      }
+      },
+      timeout: 10000
     });
     this.register_api_call(jsonp);
+  },
+  
+  handle_timeout : function() {
+    var r = confirm("Your internet connection seems to be very slow. The ETM is still waiting to receive an update " +
+                    "from the server. Press OK to reload the page");
+    if (r) location.reload(true);
   },
 
   has_unfinished_api_calls : function() {

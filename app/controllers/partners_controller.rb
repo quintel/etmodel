@@ -3,7 +3,7 @@ class PartnersController < ApplicationController
 
   def show
     @partner = Partner.find_by_slug(params[:id])
-    render :template => 'public/404.html', :status => 404 if @partner.nil?
+    render :file => 'public/404.html', :status => 404 if @partner.nil?
   end
 
   def index

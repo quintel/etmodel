@@ -22,6 +22,8 @@ Etm::Application.routes.draw do
 
   match 'login'  => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
+  
+  match '/proxy/*url' => 'proxy#index'
 
   resources :user_sessions, :users, :descriptions
   

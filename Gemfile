@@ -55,4 +55,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'webrat'
   gem 'simplecov'
+  gem 'fakeweb'
 end

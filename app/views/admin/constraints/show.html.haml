@@ -10,6 +10,9 @@
   %dt Gquery
   %dd= @constraint.gquery_key
 
+
+= render "/admin/shared/revisions", :versioned => @constraint
+
 %p
   = link_to 'back', admin_constraints_path
   |

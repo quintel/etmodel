@@ -1,0 +1,23 @@
+%h2 Dashboard Items (Constraints)
+
+%table
+  %thead
+    %tr
+      %th Id
+      %th Key
+      %th Name
+      %th Group
+      %th
+  %tbody
+    - @constraints.each do |c|
+      %tr
+        %td= c.id
+        %td= link_to c.key, [:admin, c]
+        %td= c.name
+        %td= c.group
+        %td
+          = link_to 'edit', edit_admin_constraint_path(c)
+          = link_to 'delete', admin_constraint_path(c), :method => :delete, :confirm => 'Are you sure?'
+
+%p
+  = link_to 'new', new_admin_constraint_path

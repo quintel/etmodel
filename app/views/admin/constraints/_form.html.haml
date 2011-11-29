@@ -1,0 +1,12 @@
+= simple_form_for [:admin, @constraint] do |f|
+  = f.input :key
+  = f.input :name
+  = f.input :extended_title
+  = f.input :group, :as => :select, :collection => Constraint::GROUPS
+  = f.input :gquery_key
+  = f.simple_fields_for :description do |j|
+    = j.input :short_content_en
+    = j.input :short_content_nl
+    = j.input :content_en
+    = j.input :content_nl
+  = f.button :submit

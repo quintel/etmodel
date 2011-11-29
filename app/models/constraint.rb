@@ -11,6 +11,9 @@
 #  gquery_key     :string(255)
 #
 
+# TODO: this should be renamed, DashboardItem would be a better name
+# TODO: remove name and extended_title columns
+#
 class Constraint < ActiveRecord::Base
 
   # Groups names to which a constraint must belong. Used both during
@@ -50,7 +53,6 @@ class Constraint < ActiveRecord::Base
   scope :gquery_contains, lambda{|search| where("`gquery_key` LIKE ?", "%#{search}%")}
 
   # CLASS METHODS ------------------------------------------------------------
-
 
   # Given an array of keys, returns the Constraints which match those keys.
   #

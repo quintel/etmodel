@@ -4,7 +4,7 @@ describe SettingsController do
   describe 'on PUT /settings/dashboard' do
     let(:constraints) do
       Constraint::GROUPS.each_with_object([]) do |group, c|
-        c.push Constraint.where(:group => group).first
+        c.push FactoryGirl.create(:constraint, group: group)
       end
     end
 

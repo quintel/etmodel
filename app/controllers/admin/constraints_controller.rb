@@ -16,7 +16,7 @@ module Admin
 
       if @constraint.save
         flash[:notice] = "Constraint saved"
-        redirect_to admin_constraints_url
+        redirect_to admin_constraint_path(@constraint)
       else
         render :action => 'new'
       end
@@ -25,7 +25,7 @@ module Admin
     def update
       if @constraint.update_attributes(params[:constraint])
         flash[:notice] = "Constraint updated"
-        redirect_to admin_constraints_url
+        redirect_to admin_constraint_path(@constraint)
       else
         render :action => 'edit'
       end
@@ -50,14 +50,14 @@ module Admin
 
     private
 
-      def find_element
-        if params[:version_id]
-          @version = Version.find(params[:version_id])
-          @constraint = @version.reify
-          flash[:notice] = "Revision"
-        else
-          @constraint = Constraint.find(params[:id])
-        end
+    def find_element
+      if params[:version_id]
+        @version = Version.find(params[:version_id])
+        @constraint = @version.reify
+        flash[:notice] = "Revision"
+      else
+        @constraint = Constraint.find(params[:id])
       end
+    end
   end
 end

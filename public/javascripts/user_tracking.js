@@ -1,5 +1,7 @@
 // user tracking
 //
+// TODO : Tracking system use old slider instead of  quinn
+// Jesse Kerkhoven 10 nov 2011
 var tracking = {
   track: function(action, value) {
     $.ajax({

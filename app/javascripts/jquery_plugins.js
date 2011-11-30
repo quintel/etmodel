@@ -1,7 +1,6 @@
 //= require <jquery.ui.core>
 //= require <jquery.ui.widget>
 //= require <jquery.ui.accordion>
-//= require <jquery.slider>
 //= require <jquery.jqplot>
 //= require <jquery.cookie>
 //= require <jquery.effects.core>

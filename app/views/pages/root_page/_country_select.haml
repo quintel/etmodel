@@ -23,4 +23,5 @@
     = country_option 'tr', :test => true
     - if session[:show_all_countries]
       = country_option 'za', :test => true
+    - if session[:show_all_countries] || session[:show_flanders]
       = country_option 'be-vlg', :test => true

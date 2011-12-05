@@ -85,6 +85,11 @@ public
     redirect_to '/'
   end
   
+  def show_flanders
+    session[:show_flanders] = true
+    redirect_to root_path
+  end
+  
   ######################################
   # Browser Checks
   ######################################

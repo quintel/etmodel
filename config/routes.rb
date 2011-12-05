@@ -121,6 +121,7 @@ Etm::Application.routes.draw do
   match '/disclaimer'                      => 'pages#disclaimer'
   match '/privacy_statement'               => 'pages#privacy_statement'
   match '/show_all_countries'              => 'pages#show_all_countries'
+  match '/show_flanders'                   => 'pages#show_flanders'
   match '/show_all_views'                  => 'pages#show_all_views'
   match '/municipalities'                  => 'pages#municipalities'
 

@@ -9,6 +9,7 @@
     = f.input :step_value, :as => :float, :required => true
     = f.input :unit, :required => true
     = f.input :command_type, :as => :select, :collection => ['growth_rate', 'value', 'efficiency_improvement'], :hint => "This is used by the backcasting module"
+    = f.input :related_converter, :hint => 'Optional key of the related converter. Used to show slider info'
     = f.input :comments
     
     = f.simple_fields_for :area_dependency do |j|

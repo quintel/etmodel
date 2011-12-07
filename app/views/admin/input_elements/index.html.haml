@@ -8,6 +8,7 @@
       %th.tal id
       %th.tal Name
       %th.tal Key
+      %th.tal Converter
       %th.tal Comment      
       %th.tal 
 
@@ -17,5 +18,6 @@
         %td= input_element.id
         %td= input_element.name
         %td= input_element.key
+        %td= input_element.related_converter
         %td= truncate(input_element.comments, :length => 100)
         %td= link_to 'Edit', edit_admin_input_element_path(input_element)

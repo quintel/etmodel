@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111123140403) do
+ActiveRecord::Schema.define(:version => 20111207130122) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(:version => 20111123140403) do
     t.string   "interface_group"
     t.integer  "input_id"
     t.string   "command_type"
+    t.string   "related_converter"
   end
 
   add_index "input_elements", ["command_type"], :name => "index_input_elements_on_command_type"

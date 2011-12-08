@@ -76,8 +76,8 @@ var ConstraintView = Backbone.View.extend({
         return '' + Metric.round_number(result, 1) +'x'+ App.settings.get("country").toUpperCase();
       case 'targets_met':
         return null;
-      case 'blackout_hours':
-        return Metric.round_number(result, 0);
+      case 'blackout_risk':
+        return Metric.ratio_as_percentage(result, false, 1);
       case 'score':
         return parseInt(result,10);
       default:

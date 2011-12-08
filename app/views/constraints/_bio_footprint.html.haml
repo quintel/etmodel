@@ -1,14 +1,16 @@
+:ruby
+  # TODO: let js run this query
+  data = @api_client.simple_query("Q(policy_not_shown)") # ?!?!
+  now = data.values.first rescue 0
+  fut = data.values.last rescue 0
+  country = Current.setting.country
+  country = Current.setting.region if Current.setting.region == "ame"
+  map = "/images/layout/#{country}_map.png"
+  map_grey = "/images/layout/#{country}_map_gray.png"
+
 .constraint_box_content
   %p
     = @constraint.description.try :short_content
-
-  - data = @api_client.simple_query("Q(policy_not_shown)") # ?!?!
-  - now = data.values.first rescue 0
-  - fut = data.values.last rescue 0
-  - country = Current.setting.country
-  - country = Current.setting.region if Current.setting.region == "ame"
-  - map = "/images/layout/#{country}_map.png"
-  - map_grey = "/images/layout/#{country}_map_gray.png"
 
   %div.present{:style => "position: relative; background: url(#{map_grey}) repeat-x; height: 105px; width: 70px"}
     %h3.tal{:style => "position:absolute; left: 0; top: 0; margin: 0; padding: 0"}

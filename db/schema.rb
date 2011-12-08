@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111207130122) do
+ActiveRecord::Schema.define(:version => 20111208161659) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -40,11 +40,10 @@ ActiveRecord::Schema.define(:version => 20111207130122) do
   create_table "constraints", :force => true do |t|
     t.string   "key"
     t.string   "name"
-    t.string   "extended_title"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "gquery_key"
-    t.string   "group",          :limit => 25, :null => false
+    t.string   "group",      :limit => 25, :null => false
   end
 
   add_index "constraints", ["key"], :name => "index_constraints_on_key"

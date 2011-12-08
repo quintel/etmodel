@@ -10,7 +10,7 @@
           %dd
             %label
               = constraint_radio_tag constraint, @checked.include?(constraint.key)
-              = t(:"output.#{constraint.extended_title}").html_safe
+              = t(:"constraints.#{constraint.key}.title").html_safe
 
     .commit
       .indicator

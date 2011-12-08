@@ -5,14 +5,13 @@
 #  id             :integer(4)      not null, primary key
 #  key            :string(255)
 #  name           :string(255)
-#  extended_title :string(255)
 #  created_at     :datetime
 #  updated_at     :datetime
 #  gquery_key     :string(255)
 #
 
 # TODO: this should be renamed, DashboardItem would be a better name
-# TODO: remove name and extended_title columns
+# TODO: remove name column
 #
 class Constraint < ActiveRecord::Base
 

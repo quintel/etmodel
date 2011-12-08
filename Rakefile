@@ -5,7 +5,7 @@ Etm::Application.load_tasks
 
 require 'rake'
 require 'rake/testtask'
-require 'rake/rdoctask'
+require 'rdoc/task'
 
 desc "Runs annotate on all models"
 task :annotate do

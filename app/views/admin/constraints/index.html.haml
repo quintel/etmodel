@@ -5,7 +5,6 @@
     %tr
       %th Id
       %th Key
-      %th Name
       %th Group
       %th
   %tbody
@@ -13,7 +12,6 @@
       %tr
         %td= c.id
         %td= link_to c.key, [:admin, c]
-        %td= c.name
         %td= c.group
         %td
           = link_to 'edit', edit_admin_constraint_path(c)

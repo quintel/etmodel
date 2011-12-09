@@ -1,6 +1,5 @@
 = simple_form_for [:admin, @constraint] do |f|
   = f.input :key
-  = f.input :name
   = f.input :group, :as => :select, :collection => Constraint::GROUPS
   = f.input :gquery_key
   = f.simple_fields_for :description do |j|

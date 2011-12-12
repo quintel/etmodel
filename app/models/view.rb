@@ -13,10 +13,6 @@ class View
     @interface ||= Interface.find_by_key(setting_key)
   end
  
-  def tabs
-    interface.tabs rescue []
-  end
-
   def sidebar_items
     interface.sidebar_items_for(tab_key).reject(&:area_dependent) rescue []
   end

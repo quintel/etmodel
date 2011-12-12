@@ -2,6 +2,9 @@
   .nav-holder.nav-holder-inner
     %ul
       - if Current.view
-        - tab("Home",'')
-        - Current.view.tabs.each do |tab|
-          - tab(tab.key)
+        %li{:id => 'home'}= link_to I18n.t('Home'), root_path
+        - Current.view.interface.tabs.each do |tab|
+          - klass = 'active' if controller.controller_name == tab.key
+          - link  = url_for :controller => tab.key
+          %li{:id => tab.key.downcase, :class => klass}
+            = link_to I18n.t(tab.key.capitalize), link

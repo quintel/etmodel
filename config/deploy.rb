@@ -84,8 +84,6 @@ set :chmod755, "app config db lib public vendor script script/* public/disp*"  	
 ssh_options[:forward_agent] = true
 set :use_sudo,     false
 
-set :rvm_ruby_string, '1.9.2'
-
 set :local_db_name, 'etmodel_dev'
 
 # Useful, taken from the capistrano gem
@@ -96,3 +94,7 @@ def rake_on_current(*tasks)
     run "if [ -d #{release_path} ]; then cd #{release_path}; else cd #{current_path}; fi; #{rake} RAILS_ENV=#{rails_env} #{t}"
   end
 end
+
+$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
+require "rvm/capistrano"                  # Load RVM's capistrano plugin.
+set :rvm_ruby_string, '1.9.3@etmodel_nginx'        # Or whatever env you want it to run in.

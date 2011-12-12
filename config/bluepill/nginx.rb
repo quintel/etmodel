@@ -22,7 +22,7 @@ rails_root = ENV['RAILS_ROOT']   || "/home/ubuntu/apps/etmodel_nginx/current"
 
 log_file   = "#{rails_root}/log/bluepill.log"
 
-Bluepill.application('etmodel', log_file: log_file) do |app|
+Bluepill.application('etmodel_nginx', log_file: log_file) do |app|
   app.process('unicorn') do |process|
 
     # THE APPLICATION --------------------------------------------------------

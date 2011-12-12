@@ -20,7 +20,7 @@ namespace :deploy do
 
     run "cd #{release_path} && bundle install --without development test"
 
-    memcached.flush
+    # memcached.flush
   end
 
   # with mod_rails these are a no-op
@@ -29,7 +29,7 @@ namespace :deploy do
 
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-    memcached.restart
+    # memcached.restart
   end
 
   desc "Notify Airbrake of the deployment"

@@ -57,3 +57,8 @@ group :test do
   gem 'simplecov'
   gem 'fakeweb'
 end
+
+group :production do
+  gem 'unicorn'
+  gem 'bluepill', :require => false
+end

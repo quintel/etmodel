@@ -60,6 +60,20 @@ task :release do
 end
 
 
+task :nginx do
+  set :domain, "79.125.109.178"
+  set :branch, "nginx"
+
+  set :application_key, "#{application}_nginx"
+  set :deploy_to, "/home/ubuntu/apps/#{application_key}"  ## this is a copy of production, so serverconfig stays the same
+
+  set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
+  set :db_pass, "feboblokker"
+  set :db_name, application_key
+  set :db_user, application_key
+
+  server domain, :web, :app, :db, :primary => true # This is where Rails migrations will run
+end
 
 set :scm, :git
 set :repository,  "git@github.com:dennisschoenmakers/etmodel.git"

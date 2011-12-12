@@ -5,6 +5,7 @@ load 'lib/capistrano/db_recipes'
 load 'lib/capistrano/memcached'
 load 'lib/capistrano/sphinx'
 load 'lib/capistrano/maintenance'
+load 'lib/capistrano/bluepill'
 
 load 'config/deploy' # remove this line to skip loading any of the default tasks
 
@@ -53,6 +54,7 @@ after "deploy:update_code", "deploy:copy_configuration_files"
 # after "deploy", "deploy:cleanup" # why?
 after "deploy", "deploy:notify_airbrake"
 after "deploy:symlink", "sphinx:symlink_indexes"
+after 'deploy:restart',     'bluepill:restart_monitored'
 
 # Thinking sphinx keeps hanging on the stop phase.
 # If you migrate, run manually thinking_sphinx:rebuild

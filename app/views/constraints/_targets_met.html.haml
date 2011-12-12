@@ -10,13 +10,13 @@
       - Current.view.policy_goals.each do |goal|
         %tr{:id => "goal_#{goal.id}"}
           %td.check
-          %td.name= t("policies.#{goal.name.humanize}").html_safe
-          %td.target= t("policies.not_set")
+          %td.name= t("policy_goals.#{goal.key}").html_safe
+          %td.target= t("policy_goals.not_set")
           %td.you
         :javascript
           new PolicyGoal({
             goal_id          : #{goal.id},
-            name             : '#{escape_javascript t("policies.#{goal.name.humanize}")}',
+            name             : '#{escape_javascript t("policy_goals.#{goal.key}")}',
             success_query    : '#{gquery_id goal.reached_query}',
             value_query      : '#{gquery_id goal.query}',
             target_query     : '#{gquery_id goal.target_query}',

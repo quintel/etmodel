@@ -246,29 +246,8 @@ en:
   http_status:
     not_found: Not found
     forbidden: Forbidden
-    
-    
-  # ----------- Constraints ----------- # 
-  
-  policies:
-    Co2: CO<sub>2</sub>
-    Renewables: "Renewables"
-    Onshore land: "Onshore land"
-    Onshore coast: "Onshore coast"
-    Offshore: "Offshore"
-    Roofs for solar panels: "Roofs for solar panels"
-    Land for solar panels: "Land for solar panels"
-    Land for csp: "Land for CSP"
-    Dependence: "Energy imports"
-    Net electricity import: "Net electricity import"
-    Cost (bln): " Cost (bln.)"
-    Electricity cost: "Electricity Cost (EUR/MWh)"
-    not_set: "Not set"
-    Energy use: "Energy use"  
-    Land for biomass: "Land for biomass"
-  
+        
   grid_investment:
-
     header: "The electricity grid needs upgrading"
     more_information: "More information"
     stop_bugging: "Do not notify me anymore"

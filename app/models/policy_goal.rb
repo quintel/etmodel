@@ -4,7 +4,6 @@
 #
 #  id                :integer(4)      not null, primary key
 #  key               :string(255)
-#  name              :string(255)
 #  query             :string(255)
 #  unit              :string(255)
 #  created_at        :datetime

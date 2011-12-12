@@ -43,6 +43,8 @@ namespace :deploy do
       notify_command << " API_KEY=a736722b2610573160a2f015f036488b"
     elsif application_key == "etmodel_rc"
       notify_command << " API_KEY=8edae760000e07b30fb5099e9585701d"
+    elsif application_key == "etmodel_nginx"
+      notify_command << " API_KEY=3efb211b40651cf1f793f26731e5e3a6"
     end
     puts "Notifying Airbrake of Deploy of #{server_type} (#{notify_command})"
     run "cd #{release_path} && #{notify_command}"

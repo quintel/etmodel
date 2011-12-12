@@ -13,7 +13,7 @@
         :ruby
           goal_opts = {
             :goal_id          => goal.id,
-            :name             => t("policies.#{goal.name.humanize}"),
+            :name             => t("policy_goals.#{goal.key}"),
             :success_query    => gquery_id(goal.reached_query).to_s,
             :value_query      => gquery_id(goal.query).to_s,
             :target_query     => gquery_id(goal.target_query).to_s,

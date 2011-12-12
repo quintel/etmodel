@@ -15,7 +15,7 @@ timeout 30
 listen '/home/ubuntu/apps/etmodel_nginx/shared/pids/unicorn.sock', backlog: 64
 
 # File containing the Unicorn process ID.
-pid '/home/ubuntu/apps/etmodel/shared/pids/unicorn.pid'
+pid '/home/ubuntu/apps/etmodel_nginx/shared/pids/unicorn.pid'
 
 # Set the path of the log files inside the log folder of the testapp
 stderr_path '/home/ubuntu/apps/etmodel_nginx/shared/log/unicorn.log'

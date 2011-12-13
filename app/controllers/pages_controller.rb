@@ -13,8 +13,10 @@ class PagesController < ApplicationController
     end
   end
 
-  def refresh_gqueries
-    Rails.cache.delete('engine_gqueries')
+  # This page is called by the ETE after an ETSource import
+  # 
+  def refresh_gqueries    
+    Rails.cache.clear
     render :text => 'ok', :layout => false
   end
 

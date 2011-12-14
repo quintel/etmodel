@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :constraint do
-    key 'bar'
+    sequence(:key) {|n| "constraint_#{n}" }
     group Constraint::GROUPS.sample # pick a random group
   end
 end

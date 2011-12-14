@@ -1,11 +1,11 @@
-body 
+body
   margin: 0px
   padding: 10px
   overflow: hidden
   font: 13px/20px Lucida Grande, Verdana, Arial, Helvetica, sans-serif
   background-color: #ffffff
-  
-  h2 
+
+  h2
     background-color: #63A1C9
     font-family: Georgia, "Times New Roman", Times, serif
     color: #FFFFFF
@@ -14,48 +14,53 @@ body
     font-weight: normal
     float: left
     width: 570px
-  
-  h3 
+
+  h3
     font-family: Georgia, "Times New Roman", Times, serif
-  
-  .constraint_box_content 
+
+  .constraint_box_content
     float: left
     background-color: #DBE4F2
     width: 570px
     height: 325px
     padding: 10px 5px
-  
-    
-  table#policies 
+
+  table#policies
     font-family: 13px/13px Lucida Grande, Verdana, Arial, Helvetica, sans-serif
     margin: 0 auto
     line-height: 0.9em
-    
-    th 
+    border-collapse: collapse
+    th
       font-family: Lucida Grande, Verdana, Arial, Helvetica, sans-serif
       text-align: left
-    
-    
-    tr 
-      &.odd 
+      padding: 7px 12px
+    tr
+      &.even
+        background: #ffffff
+      &.odd
         background: none
-      
-      td 
-        padding: 3px 30px 3px 0
+      td
+        padding: 7px 12px
         margin: 0
-        &.name 
+        border: 0
+        &.name
           width: 250px
-        
-        &.check 
+        &.check
           padding-right: 0
-  
+        &.success
+          background: url('/images/icons/accept.png') center no-repeat
+        &.failure
+          background: url('/images/icons/cancel.png') center no-repeat
+        &.not_set
+          background: none
+
   .import_chart_title
     font-size: 11px
-    height: 12px 
+    height: 12px
     width: 255px
     float: left
     padding-left: 15px
-  
+
   #legend
     width: 540px
     float:left
@@ -65,12 +70,10 @@ body
       margin: 3px 5px 0 5px
       width: 15px
       height: 12px
-    
     span
       float: left
       font-size: 12px
-    
-  
+
   #charts_wrapper.wide
     width: 550px
     height: 210px
@@ -81,5 +84,3 @@ body
       height: 210px
       width: 270px
       float: left
-    
-  

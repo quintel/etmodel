@@ -1,8 +1,0 @@
-%h1
-  = h(@exception.message)
-%p 
-  HTTP status code
-  %small
-    = "%s : %s" % [@exception.status_code, @exception.status.to_s.humanize]
-  %br
-  = render 'shared/http_status/footer'

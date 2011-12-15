@@ -1,13 +1,10 @@
-
-%h3
-  = link_to  t("scenario.link"), new_scenario_path
+%h3= link_to  t("scenario.link"), new_scenario_path
 
 %br
-%h3=t("scenario.saved")
+%h3= t("scenario.saved")
 %table{table_defaults}
   %thead
     %tr
-      -#%th.tal{:width => 100}= t("scenario.author")
       %th.tal{:width => 450}= t("scenario.title")
       %th.tal{:width => 80}= t("scenario.end_year")
       %th.tal= t("scenario.created")
@@ -15,7 +12,6 @@
   %tbody
     - @scenarios.each do |scenario|
       %tr{cycles}
-        -#%td=h scenario.author
         %td= link_to scenario.title, "/scenarios/#{scenario.id}"
         %td= scenario.end_year
         %td= scenario.created_at.andand.strftime("%d %b %H:%M")
@@ -25,5 +21,4 @@
         %td{:colspan => 4}
           = link_to "Prev", scenarios_path(:page => @current_page - 1) if @current_page > 1
           = link_to "Next", scenarios_path(:page => @current_page + 1) unless @scenarios.empty?
-
 %br

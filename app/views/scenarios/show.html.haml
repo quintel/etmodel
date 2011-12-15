@@ -1,10 +1,9 @@
 = back_to_model_link
 
-%h3
-  == Scenario #{h @scenario.title}
+%h3 Scenario #{@scenario.title}
 %h3
   %small
-    = t("scenario.created") 
+    = t("scenario.created")
     == #{@scenario.created_at.strftime("%d/%m/%Y %H:%M")}
 
 
@@ -15,11 +14,7 @@
     = t("scenario.overwritten")
     = link_to t("scenario.save_first"), new_scenario_path
     = t("scenario.go_back")
-    == #{link_to t("scenario.overview"), scenarios_path})
+    )
+    = link_to t("scenario.overview"), scenarios_path
 %p
-  %pre=h @scenario.description
-
-
-     
-
-  
+  %pre= @scenario.description

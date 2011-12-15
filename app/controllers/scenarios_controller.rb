@@ -3,7 +3,7 @@ class ScenariosController < ApplicationController
   helper :all
 
   before_filter :ensure_valid_browser
-  before_filter :find_scenario, :only => [:show, :load]
+  before_filter :find_scenario, :only => [:show, :load, :edit]
   before_filter :require_user, :only => [:index, :new]
 
   # included here, so that we don't mess with the before_filter order
@@ -114,7 +114,9 @@ class ScenariosController < ApplicationController
   #
   # GET /scenarios/:id/edit
   # GET /scenario/edit
-  #  
+  # 
+  # Is this still used? The page seems broken
+  # - PZ Thu 15 Dec 2011 15:54:31 CET
   def edit
     if (!current_user || @scenario.user.nil? || @scenario.user.id != current_user.id)
       flash[:alert] = "Permission denied"

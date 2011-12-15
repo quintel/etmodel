@@ -2,11 +2,12 @@
 #
 # Table name: constraints
 #
-#  id             :integer(4)      not null, primary key
-#  key            :string(255)
-#  created_at     :datetime
-#  updated_at     :datetime
-#  gquery_key     :string(255)
+#  id         :integer(4)      not null, primary key
+#  key        :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#  gquery_key :string(255)
+#  group      :string(25)      not null
 #
 
 # TODO: this should be renamed, DashboardItem would be a better name

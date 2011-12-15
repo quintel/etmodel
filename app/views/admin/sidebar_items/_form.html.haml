@@ -1,12 +1,10 @@
 %div
   = simple_form_for [:admin, @sidebar_item] do |f|
-    = f.input :name
-    = f.input :key
+    = f.input :key, :hint => 'Be sure you have the corresponding translation in (en|nl)_sidebar_items.yml'
     = f.input :section, :hint=>"This is used by the tutorial button to determin which 'section' video should be showed"
     = f.input :percentage_bar_query, :hint=>"Underneath the name there is sometimes shown a small bar which displays the shares of energy use of a certain section"
     = f.input :nl_vimeo_id, :hint=>"This value should be the key of a vimeo video, it will be shown when the tutorial button is clicked"
     = f.input :en_vimeo_id, :hint=>"This value should be the key of a vimeo video, it will be shown when the tutorial button is clicked"
-
 
     = f.simple_fields_for :area_dependency do |j|
       = j.input :dependent_on, :as => :select, :collection => Api::Area::DEPENDABLE_ATTRIBUTES, :hint => "When you dont want to show the sidebar for areas which have a certain setting. E.g. dont wanna show Solar CSP in NL? Put this to 'has_solar_csp' and be sure that for NL this value is false in the area data."

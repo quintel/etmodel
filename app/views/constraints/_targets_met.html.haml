@@ -11,7 +11,7 @@
         %tr{:id => "goal_#{goal.id}", :class => cycle('even', 'odd')}
           %td.check
           %td.name= t("policy_goals.#{goal.key}").html_safe
-          %td.target= t("policy_goals.not_set")
+          %td.target Loading...
           %td.you Loading...
         :javascript
           new PolicyGoal({

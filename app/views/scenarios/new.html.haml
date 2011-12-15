@@ -1,10 +1,8 @@
 %h1= t("scenario.save")
 
-%p
-  = t("scenario.save_desc")
+%p= t("scenario.save_desc")
 
 %div{:style => "width: 600px"}
-
   = simple_form_for @saved_scenario, :url => scenarios_path do |f|
     %div{:style => "color: #c00; margin-bottom: 10px"}= error_messages_for :scenario
     = f.input :title

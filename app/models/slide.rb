@@ -37,9 +37,9 @@ class Slide < ActiveRecord::Base
   def parsed_name_for_admin
     "#{action_name.andand[0..30]} | #{name}"
   end
-  
+
   def image_path
-    "/images/layout/#{image}" if image.present? 
+    "/images/layout/#{image}" if image.present?
   end
 
   def title_for_description
@@ -50,5 +50,4 @@ class Slide < ActiveRecord::Base
   def fragment_url
     name.downcase.gsub(' ', '_') rescue nil
   end
-
 end

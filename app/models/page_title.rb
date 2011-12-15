@@ -31,6 +31,4 @@ class PageTitle < ActiveRecord::Base
     indexes description(:short_content_en), :as => :description_short_content_en
     indexes description(:short_content_nl), :as => :description_short_content_nl
   end
-
 end
-

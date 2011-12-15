@@ -41,10 +41,9 @@
     %h2 Slides
     %table
       - @slides.each do |result|
-        - slide = result
         %tr
           %td.img
-            - if path = slide.image_path
+            - if path = result.image_path
               %img.slide_icon{:src => path}
           %td.result
             %h4= result.search_result.title
@@ -54,7 +53,7 @@
               - if result.description
                 = link_to t('search.full_description'), result.description, :class => 'fancybox'
 
-#search_results_from_reference_mananager
+#search_results_from_reference_manager
   - if [@pages, @input_elements, @slides].flatten.empty?
     %p
       %strong= t('search.no_results_found_for')

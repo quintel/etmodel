@@ -18,6 +18,7 @@
 #  key                    :string(255)
 #  max_axis_value         :float
 #  min_axis_value         :float
+#  hidden                 :boolean(1)      default(FALSE)
 #
 
 class OutputElement < ActiveRecord::Base

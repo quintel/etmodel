@@ -2,16 +2,16 @@
 #
 # Table name: slides
 #
-#  id              :integer(4)      not null, primary key
-#  name            :string(255)
-#  image           :string(255)
-#  created_at      :datetime
-#  updated_at      :datetime
-#  sub_header      :string(255)
-#  sub_header2     :string(255)
-#  subheader_image :string(255)
-#  key             :string(255)
-#  house_selection :boolean(1)
+#  id                 :integer(4)      not null, primary key
+#  name               :string(255)
+#  image              :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  general_sub_header :string(255)
+#  group_sub_header   :string(255)
+#  subheader_image    :string(255)
+#  key                :string(255)
+#  house_selection    :boolean(1)
 #
 
 class Slide < ActiveRecord::Base

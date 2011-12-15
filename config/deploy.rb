@@ -4,42 +4,39 @@ set :application, "etmodel"
 set :stage, :production
 set :server_type, 'production'
 
+# Staging uses now nginx while production still uses apache.
+# There can be issues when you restart the web server, be sure to check the
+# capistrano output.
 task :production do
   set :branch, "production"
   set :domain, "46.137.109.15"
 
   set :application_key, "#{application}"
   set :deploy_to, "/home/ubuntu/apps/#{application_key}"
-  set :config_files, "/home/ubuntu/config_files/#{application_key}"
 
   set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
   set :db_pass, "Energy2.0"
   set :db_name, application_key
   set :db_user, application_key
 
-  role :web, domain # Your HTTP server, Apache/etc
-  role :app, domain # This may be the same as your `Web` server
-  role :db,  domain, :primary => true # This is where Rails migrations will run
+  server domain, :web, :app, :db, :primary => true
 end
 
 # This is the previous staging server. It is kept for safety reasons, it should
-# be dropped as soon as possible
+# be dropped as soon as possible.
 task :apache do
   set :domain, "79.125.109.178"
   set :branch, "apache"
 
   set :application_key, "#{application}_staging"
   set :deploy_to, "/home/ubuntu/apps/#{application_key}"
-  set :config_files, "/home/ubuntu/config_files/#{application_key}"
 
   set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
   set :db_pass, "1is5sRJmehiULV"
   set :db_name, application_key
   set :db_user, application_key
 
-  role :web, domain # Your HTTP server, Apache/etc
-  role :app, domain # This may be the same as your `Web` server
-  role :db,  domain, :primary => true # This is where Rails migrations will run
+  server domain, :web, :app, :db, :primary => true
 end
 
 # This is the new nginx-based beta
@@ -48,15 +45,15 @@ task :staging do
   set :domain, "46.137.123.187"
   set :branch, "staging"
 
-  set :application_key, "#{application}_nginx"
-  set :deploy_to, "/home/ubuntu/apps/#{application_key}"  ## this is a copy of production, so serverconfig stays the same
+  set :application_key, "#{application}_staging"
+  set :deploy_to, "/home/ubuntu/apps/etmodel_nginx"
 
   set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
   set :db_pass, "feboblokker"
   set :db_name, application_key
   set :db_user, application_key
 
-  server domain, :web, :app, :db, :primary => true # This is where Rails migrations will run
+  server domain, :web, :app, :db, :primary => true
 end
 
 set :scm, :git

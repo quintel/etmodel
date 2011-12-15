@@ -22,7 +22,9 @@ module LayoutHelper
   def country_option(code, opts = {})
     current = Current.setting.region == code
     selected = current ? "selected='true'" : nil
-    %Q{<option value="#{code}" #{selected}>#{I18n.t(code)} #{"(test)" if opts[:test]}</option>}.html_safe
+    label = I18n.t(code)
+    label += ' (test)' if opts[:test]
+    content_tag :option, label, :value => code, :selected => selected
   end
 
   def percentage_bar(item)

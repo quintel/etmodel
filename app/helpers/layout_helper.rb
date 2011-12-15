@@ -1,11 +1,8 @@
 module LayoutHelper
-  # TODO: clean up
   def search_result_description(result)
-    if d = result.andand.description
-      if d.content.present?
-        "#{strip_html d.content[0..160]}...".html_safe
-      end
-    end
+    truncate(strip_tags(result.description.content), :length => 160)
+  rescue
+    nil
   end
 
   def back_to_model_link

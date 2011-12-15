@@ -10,7 +10,7 @@ load 'lib/capistrano/bluepill'
 load 'config/deploy' # remove this line to skip loading any of the default tasks
 
 namespace :deploy do
-  task :copy_configuration_files do
+  task :link_configuration_files do
     run "ln -s #{shared_path}/config/config.yml #{release_path}/config/"
     run "ln -s #{shared_path}/config/database.yml #{release_path}/config/"
     run "ln -s #{shared_path}/config/sphinx.yml #{release_path}/config/"
@@ -41,8 +41,6 @@ namespace :deploy do
       notify_command << " API_KEY=aadd4cc40d52dabf842d4dce932e84a3"
     elsif application_key == "etmodel_staging"
       notify_command << " API_KEY=a736722b2610573160a2f015f036488b"
-    elsif application_key == "etmodel_rc"
-      notify_command << " API_KEY=8edae760000e07b30fb5099e9585701d"
     elsif application_key == "etmodel_nginx"
       notify_command << " API_KEY=3efb211b40651cf1f793f26731e5e3a6"
     end
@@ -52,11 +50,11 @@ namespace :deploy do
   end
 end
 
-after "deploy:update_code", "deploy:copy_configuration_files"
+after "deploy:update_code", "deploy:link_configuration_files"
 # after "deploy", "deploy:cleanup" # why?
 after "deploy", "deploy:notify_airbrake"
 after "deploy:symlink", "sphinx:symlink_indexes"
-after 'deploy:restart',     'bluepill:restart_monitored'
+after 'deploy:restart', 'bluepill:restart_monitored'
 
 # Thinking sphinx keeps hanging on the stop phase.
 # If you migrate, run manually thinking_sphinx:rebuild

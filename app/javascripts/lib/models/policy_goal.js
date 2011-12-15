@@ -37,10 +37,9 @@ var PolicyGoal = Backbone.Model.extend({
     var success = this.successful();
 
     if(this.is_set()) {
-      var template = $("<span>")
-      template.append(success ? 'V' : 'X');
-      template.css('color', success ? 'green' : 'red');
-      this.dom_element().find(".check").html(template);
+      var check_box = this.dom_element().find(".check");
+      check_box.removeClass('success failure not_set')
+      check_box.addClass(success ? 'success' : 'failure')
 
       var formatted = this.format_value(this.target_value());
       this.dom_element().find(".target").html(formatted);

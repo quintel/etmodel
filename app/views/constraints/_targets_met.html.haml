@@ -8,11 +8,11 @@
         %th.you Scenario
     %tbody
       - Current.view.policy_goals.each do |goal|
-        %tr{:id => "goal_#{goal.id}"}
+        %tr{:id => "goal_#{goal.id}", :class => cycle('even', 'odd')}
           %td.check
           %td.name= t("policy_goals.#{goal.key}").html_safe
           %td.target= t("policy_goals.not_set")
-          %td.you
+          %td.you Loading...
         :javascript
           new PolicyGoal({
             goal_id          : #{goal.id},

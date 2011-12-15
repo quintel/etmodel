@@ -1,11 +1,13 @@
 #search_results
-  %h2= t('search.Publications')
+  %h2= t('search.publications')
   %table
     %tr
       %td.img
         %img.slide_icon{:src => "http://refman.et-model.com/publications/1540/thumbnail/Agentschap%20NL_20100831_Rapport%20energiecijfers%20kantoren.png"}
       %td.result
-        = link_to t('search.refman_link', :query => params[:q]),"http://refman.et-model.com/publications?q=#{params[:q]}",:target=> "_blank"
+        = link_to t('search.refman_link', :query => params[:q]),     |
+          "http://refman.et-model.com/publications?q=#{params[:q]}", |
+          :target=> "_blank"                                         |
 
   - unless @pages.empty?
     %h2 Pages
@@ -19,7 +21,7 @@
             %p
               = search_result_description(result)
               %br
-              = link_to t('search.Jump to page'), :controller => result.controller, :action => result.action
+              = link_to t('search.jump_to_page'), :controller => result.controller, :action => result.action
 
   - unless @input_elements.empty?
     %h2 Sliders
@@ -33,8 +35,7 @@
               = search_result_description(result)
               %br
               - if result.description
-                = link_to t('search.Full description'), result.description, :class => 'fancybox'
-                |
+                = link_to t('search.full_description'), result.description, :class => 'fancybox'
 
   - unless @slides.empty?
     %h2 Slides
@@ -51,12 +52,10 @@
               = search_result_description(result)
               %br
               - if result.description
-                = link_to t('search.Full description'), result.description, :class => 'fancybox'
-                |
-
+                = link_to t('search.full_description'), result.description, :class => 'fancybox'
 
 #search_results_from_reference_mananager
   - if [@pages, @input_elements, @slides].flatten.empty?
     %p
-      %strong= t('search.No results found for:')
+      %strong= t('search.no_results_found_for')
       %em= @query

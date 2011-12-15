@@ -1,5 +1,5 @@
 module ApplicationHelper
-  include SortableTable::App::Helpers::ApplicationHelper  
+  include SortableTable::App::Helpers::ApplicationHelper
 
   def asset_cache_name(name)
     if Rails.env.development?
@@ -14,12 +14,6 @@ module ApplicationHelper
   def has_active_scenario?
     Current.setting.api_session_id.present?
   end
-
-  def strip_html(str)
-    # see: http://snippets.dzone.com/posts/show/4324
-    str.gsub(/<\/?[^>]*>/, "")
-  end
-
 
   # TODO: get rid of this, use CSS
   def table_defaults
@@ -50,7 +44,7 @@ module ApplicationHelper
   def last_etm_path(options = {})
     options[:include_action] = true unless options.has_key?(:include_action)
     if options[:include_action]
-     "#{Current.setting.last_etm_controller_name}/#{Current.setting.last_etm_controller_action}"
+      "#{Current.setting.last_etm_controller_name}/#{Current.setting.last_etm_controller_action}"
     else
       Current.setting.last_etm_controller_name
     end

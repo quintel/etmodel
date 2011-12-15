@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111212094813) do
+ActiveRecord::Schema.define(:version => 20111215132145) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -264,7 +264,6 @@ ActiveRecord::Schema.define(:version => 20111212094813) do
   add_index "saved_scenarios", ["user_id"], :name => "index_saved_scenarios_on_user_id"
 
   create_table "sidebar_items", :force => true do |t|
-    t.string "name"
     t.string "key"
     t.string "section"
     t.text   "percentage_bar_query"

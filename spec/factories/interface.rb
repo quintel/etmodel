@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :interface do
     sequence(:key) {|n| "interface_#{n}" }
-    
+
     factory :simple_interface do
       structure {
         {
@@ -33,7 +33,6 @@ FactoryGirl.define do
   end
 
   factory :sidebar_item do
-    name 'foo'
     sequence(:key) {|n| "sidebar_item_#{n}" }
   end
 end

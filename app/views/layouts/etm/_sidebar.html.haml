@@ -5,5 +5,5 @@
         %a{:class => "ico-#{item.key}", :href => url_for(:action => item.key)}
           %em &nbsp;
           %p
-            %span.title= raw t("sidebar_item.#{item.key}")
+            %span.title= raw t("sidebar_items.#{item.key}")
             - percentage_bar(item)

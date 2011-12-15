@@ -22,8 +22,8 @@ task :production do
   role :db,  domain, :primary => true # This is where Rails migrations will run
 end
 
-task :staging do
-  set :domain, "ec2-46-137-123-187.eu-west-1.compute.amazonaws.com"
+task :old_staging do
+  set :domain, "79.125.109.178"
   set :branch, "staging"
 
   set :application_key, "#{application}_staging"
@@ -61,7 +61,7 @@ end
 
 
 task :nginx do
-  set :domain, "79.125.109.178"
+  set :domain, "46.137.123.187"
   set :branch, "nginx"
 
   set :application_key, "#{application}_nginx"

@@ -43,6 +43,8 @@ var PolicyGoal = Backbone.Model.extend({
 
       var formatted = this.format_value(this.target_value());
       this.dom_element().find(".target").html(formatted);
+    } else {
+      this.dom_element().find(".target").html(I18n.t('policy_goals.not_set'));
     }
     
     var current_value = this.format_value(this.current_value());

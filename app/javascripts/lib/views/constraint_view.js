@@ -38,11 +38,14 @@ var ConstraintView = Backbone.View.extend({
   open_popup : function() {
     var constraint = $(this.dom_id);
     var constraint_id = this.model.get('id');
+    var key = this.model.get('key');
+    // TODO: define the popup height somewhere else or increase it for all popups
+    var popup_height = (key == 'blackout_risk' ? 445 : 400);
     var url = $(constraint).attr('href')+"?t="+timestamp();
     $(constraint).fancybox({
       'href' : url,
       'type' : 'iframe',
-      height: 400,
+      height: popup_height,
       width: 600,
       padding: 0
     });

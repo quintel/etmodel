@@ -14,12 +14,9 @@ namespace :deploy do
     run "ln -s #{shared_path}/config/config.yml #{release_path}/config/"
     run "ln -s #{shared_path}/config/database.yml #{release_path}/config/"
     run "ln -s #{shared_path}/config/sphinx.yml #{release_path}/config/"
-    
     run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
     run "ln -nfs #{shared_path}/assets/pdf #{release_path}/public/pdf"
-
     run "cd #{release_path} && bundle install --without development test"
-
     # memcached.flush
   end
 
@@ -36,13 +33,13 @@ namespace :deploy do
   task :notify_airbrake, :except => { :no_release => true } do
     rails_env = fetch(:airbrake_env, fetch(:rails_env, "production"))
     local_user = ENV['USER'] || ENV['USERNAME']
-    notify_command = "bundle exec rake RAILS_ENV=production airbrake:deploy TO=#{rails_env} REVISION=#{current_revision} REPO=#{repository} USER=#{local_user}"
+    notify_command = "bundle exec rake RAILS_ENV=production airbrake:deploy \
+      TO=#{rails_env} REVISION=#{current_revision} REPO=#{repository}       \
+      USER=#{local_user}"
     if application_key == "etmodel"
       notify_command << " API_KEY=aadd4cc40d52dabf842d4dce932e84a3"
     elsif application_key == "etmodel_staging"
       notify_command << " API_KEY=a736722b2610573160a2f015f036488b"
-    elsif application_key == "etmodel_nginx"
-      notify_command << " API_KEY=3efb211b40651cf1f793f26731e5e3a6"
     end
     puts "Notifying Airbrake of Deploy of #{server_type} (#{notify_command})"
     run "cd #{release_path} && #{notify_command}"

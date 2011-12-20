@@ -6,7 +6,7 @@ def run_bluepill(command)
   run "/usr/local/rvm/bin/193_bluepill #{command} --no-privileged"
 end
 
-# Bluepill is used to monitor the Unicorn processes.
+# Bluepill is used to monitor the Unicorn processes.
 namespace :bluepill do
   desc <<-DESC
     Loads Bluepill. Begins the processes it is expected to monitor (Unicorn) \

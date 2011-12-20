@@ -1,5 +1,5 @@
 worker_processes 2
-working_directory '/home/ubuntu/apps/etmodel_nginx/current'
+working_directory '/home/ubuntu/apps/etmodel/current'
 
 # This loads the application in the master process before forking worker
 # processes. Read more about it here:
@@ -12,14 +12,14 @@ timeout 30
 
 # This is where we specify the socket. We will point the upstream Nginx module
 # to this socket later on
-listen '/home/ubuntu/apps/etmodel_nginx/shared/pids/unicorn.sock', backlog: 64
+listen '/home/ubuntu/apps/etmodel/shared/pids/unicorn.sock', backlog: 64
 
 # File containing the Unicorn process ID.
-pid '/home/ubuntu/apps/etmodel_nginx/shared/pids/unicorn.pid'
+pid '/home/ubuntu/apps/etmodel/shared/pids/unicorn.pid'
 
 # Set the path of the log files inside the log folder of the testapp
-stderr_path '/home/ubuntu/apps/etmodel_nginx/shared/log/unicorn.log'
-stdout_path '/home/ubuntu/apps/etmodel_nginx/shared/log/unicorn.log'
+stderr_path '/home/ubuntu/apps/etmodel/shared/log/unicorn.log'
+stdout_path '/home/ubuntu/apps/etmodel/shared/log/unicorn.log'
 
 before_fork do |server, worker|
   # This option works in together with preload_app true setting. What is does
@@ -30,7 +30,7 @@ before_fork do |server, worker|
   # around until it is explicitly killed (so that it can be used if the new
   # master fails to start). Since we got as far as starting a new worker, we
   # end the old process...
-  old_pid = '/home/ubuntu/apps/etmodel_nginx/shared/pids/unicorn.pid.oldbin'
+  old_pid = '/home/ubuntu/apps/etmodel/shared/pids/unicorn.pid.oldbin'
 
   if File.exists?(old_pid) && server.pid != old_pid
     begin

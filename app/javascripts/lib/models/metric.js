@@ -151,6 +151,9 @@ var Metric = {
       case 'MJ' :
         out = x / Math.pow(1000, pow);
         suffix = I18n.t('units.joules.' + scale_string);
+      case 'MW' :
+        out = x / Math.pow(1000, pow);
+        suffix = I18n.t('units.watt.' + scale_string);
       case 'euro':
         out = value;
         prefix = "&euro;";

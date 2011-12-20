@@ -2,4 +2,7 @@
   %p.tal
     = @constraint.description.try :short_content
   #charts_wrapper
-    Nothing here yet.
+    %div{ :id => "output_element_48", :style => 'height:200px' }
+:javascript
+  #{ js_for_output_element(48, 'output_element_48') }
+  App.call_api();

@@ -193,7 +193,8 @@
       'mousedown .decrease':   'beginStepDown',
       'mousedown .increase':   'beginStepUp',
       'click     .show-info':  'toggleInfoBox',
-      'click     .output':     'showValueSelector'
+      'click     .output':     'showValueSelector',
+      'click     a.converter_detail': 'showConverterDetail'
     },
 
     initialize: function (options) {
@@ -547,6 +548,24 @@
       this.valueSelector.show();
       return false;
     },
+    
+    /**
+     * Loads the converter details in a fancybox popup
+     */
+     showConverterDetail: function (event) {
+       console.log(event);
+       event.preventDefault();
+       var url = $(event.target).attr('href');
+       console.log(url);
+       $.fancybox({
+         width   : 620,
+         height  : 450,
+         href    : url,
+         type    : 'iframe'
+       });
+       
+       return false;
+     },
 
     /**
      * Used as the Quinn onCommit callback. Updates the UI.

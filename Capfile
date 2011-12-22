@@ -1,3 +1,5 @@
+require 'bundler/capistrano'
+
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 require 'thinking_sphinx/deploy/capistrano'
 Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }

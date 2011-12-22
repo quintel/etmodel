@@ -1,4 +1,3 @@
-require 'bundler/capistrano'
 
 set :application, "etmodel"
 set :stage, :production
@@ -46,7 +45,7 @@ def rake_on_current(*tasks)
 end
 
 # RVM Stuff
-require "rvm/capistrano"
 # Add RVM's lib directory to the load path.
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+require "rvm/capistrano"
 set :rvm_ruby_string, '1.9.3@etmodel'

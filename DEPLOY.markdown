@@ -10,7 +10,9 @@ To reload the nginx configuration (a bunch of files in `/etc/nginx/`) the comman
 
     sudo killall -HUP nginx
 
-The file you will probably be editing is `/etc/nginx/conf.d/APP_NAME.conf`.
+The file you will probably be editing is `/etc/nginx/conf.d/APP_NAME.conf`. If the nginx daemon is not running at all you can start it with
+
+    sudo /etc/init.d/nginx start
 
 ## Upstart
 
@@ -41,7 +43,7 @@ In our setup the bluepill executable is `/usr/local/rvm/bin/193_bluepill`. We ca
 
 ## Unicorn
 
-You can find its configuration in `APP_ROOT/config/unicorn/production.rb`.
+You can find its configuration in `APP_ROOT/config/unicorn/production.rb`. Bluepill takes care of the unicorn daemon. If you want to manually kill it you can find its pid in `~/apps/etmodel/shared/pids/unicorn.pid`.
 
 ## Deploy in practice
 

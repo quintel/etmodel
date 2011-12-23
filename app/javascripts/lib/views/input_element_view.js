@@ -274,6 +274,8 @@
         disabledOpacity: (IS_IE_LTE_EIGHT ? 1.0 : 0.5)
       });
 
+      this.steppedInitialValue = this.quinn.__roundToStep(this.initialValue);
+
       // The group onChange needs to be bound before the InputElementView
       // onChange, or the displayed value may be updated even though the
       // actual value doesn't change.
@@ -320,7 +322,7 @@
         this.enableButton('increase');
       }
 
-      if (value === this.initialValue) {
+      if (value === this.steppedInitialValue) {
         this.disableButton('reset');
       } else {
         this.enableButton('reset');

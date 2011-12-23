@@ -164,6 +164,7 @@ window.AppView = Backbone.View.extend({
 
     var input_params = window.input_elements.api_update_params();
     window.input_elements.reset_dirty();
+
     window.App.call_api(input_params);
   },
 

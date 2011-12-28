@@ -26,5 +26,22 @@
           |
           = link_to 'delete', admin_output_element_serie_path(:id => serie.id), :method => :delete, :confirm => 'Are you sure?'
 
+
 %p
   = link_to 'Create new serie', new_admin_output_element_serie_path(:output_element_id => @output_element.id)
+
+#chart_preview
+  = content_tag_for :div, @output_element do
+    Chart
+
+- content_for :head do
+  = stylesheet_link_tag "vendor/jquery.jqplot"
+  = javascript_include_tag :defaults, :cache => true
+  = render "layouts/etm/javascript_globals"
+  = javascript_include_tag 'underscore.min', 'i18n', 'translations'
+  = sprocket_layout_init :etm
+  :javascript
+    App.settings = new Setting(#{Current.setting.to_json.html_safe});
+    #{ js_for_output_element(@output_element.id, "output_element_#{@output_element.id}") }
+    App.call_api();
+  

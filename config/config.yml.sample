@@ -8,6 +8,7 @@ development: &DEV
     root_page:
     enable_rdebug: false
     airbrake_api_key: '3ea5a72aad48a32d7bb486bc71ad4fd5'
+    converter_detail_url: http://beta.et-engine.com/converters
 production:
     <<: *DEV
     debug_qernel: false

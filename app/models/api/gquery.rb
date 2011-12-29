@@ -1,5 +1,5 @@
 class Api::Gquery < ActiveResource::Base
-  self.site = APP_CONFIG[:api_url]
+  self.site = APP_CONFIG[:active_resource_base] || APP_CONFIG[:api_url]
 
   # all only returns id,key for now
 end

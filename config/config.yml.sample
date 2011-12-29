@@ -1,5 +1,6 @@
 development: &DEV
     api_url: http://etengine.dev/api/v2
+    active_resource_base: false
     debug_qernel: true
     ga_tracker_code: 123456
     unselectable_text: false
@@ -9,9 +10,11 @@ development: &DEV
     enable_rdebug: false
     airbrake_api_key: '3ea5a72aad48a32d7bb486bc71ad4fd5'
     converter_detail_url: http://beta.et-engine.com/converters
+    rack_proxy_url: /ete_proxy
+    rack_remote_url: http://etengine.dev/api/v2
 production:
     <<: *DEV
     debug_qernel: false
-
+    rack_proxy_url: false
 test:
     <<: *DEV

@@ -14,7 +14,7 @@
 
 class Api::Client
   include HTTParty
-  base_uri APP_CONFIG[:api_url]
+  base_uri APP_CONFIG[:active_resource_base] || APP_CONFIG[:api_url]
 
   attr_accessor :queries, :api_session_id
 

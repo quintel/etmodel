@@ -7,5 +7,4 @@
 //= require <jquery.fancybox-1.3.1>
 //= require <jquery.easing-1.3>
 //= require <jquery.cycle>
-//= require <jquery.jsonp-2.1.4.min>
 //= require <jquery.busybox>

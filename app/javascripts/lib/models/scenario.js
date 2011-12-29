@@ -26,7 +26,7 @@ var Scenario = Backbone.Model.extend({
   // the api_session_id fetched by the tabs_controller filter
   new_session : function() {
     console.log('js fetching new_session', this.api_attributes());
-    var url = globals.api_url + "/api_scenarios/new.json?callback=?&";
+    var url = globals.api_url + "/api_scenarios/new.json";
     $.getJSON(url, {settings : this.api_attributes()},
       function(data) {
         App.settings.set({'api_session_id' : data.api_scenario.api_session_id});
@@ -36,12 +36,12 @@ var Scenario = Backbone.Model.extend({
   },
 
   user_values_url : function() {
-    return this.url_path()+"/user_values.json?callback=?&";
+    return this.url_path()+"/user_values.json";
   },
 
   query_url : function(input_params) {
     if (!input_params) input_params = '';
-    var url = this.url_path()+".json?callback=?&"+input_params;
+    var url = this.url_path()+".json?"+input_params;
     return url;
   },
   

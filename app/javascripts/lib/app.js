@@ -70,7 +70,7 @@ window.AppView = Backbone.View.extend({
 
     LockableFunction.setLock('call_api');
     this.showLoading();
-    var jsonp = $.jsonp({
+    $.ajax({
       url: url,
       data: params,
       success: this.handle_api_result,
@@ -81,7 +81,7 @@ window.AppView = Backbone.View.extend({
       },
       timeout: 10000
     });
-    this.register_api_call(jsonp);
+    this.register_api_call('call_api');
   },
   
   handle_timeout : function() {
@@ -107,15 +107,7 @@ window.AppView = Backbone.View.extend({
   // window.charts.first().trigger('change');
   // window.dashboard.trigger('change');
   handle_api_result : function(data) {
-    //#############################################
-    // 
-    // ATTENTION: This method is not called in the context of App
-    //            but in the context of the jsonp object. So 'this'
-    //            refers to the jsonp (that's how we get access to data)
-    //            and not the App object. 
-    // 
-    //#############################################
-    App.unregister_api_call(this);
+    App.unregister_api_call('call_api');
 
     LockableFunction.removeLock('call_api');
     loading.fadeIn('fast'); //show loading overlay

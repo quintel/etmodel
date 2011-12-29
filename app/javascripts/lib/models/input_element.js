@@ -78,7 +78,7 @@ var InputElementList = Backbone.Collection.extend({
 
   load_user_values : function() {
     _.bindAll(this, 'initialize_user_values');
-    $.jsonp({
+    $.ajax({
       url: App.scenario.user_values_url(),
       success : this.initialize_user_values,
       timeout: 15000

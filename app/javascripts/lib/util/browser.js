@@ -21,10 +21,14 @@ var Browser = {
          return -1;
        }
      }
+   },
+
+   hasProperCORSSupport: function() {
+     var ua = $.browser;
+     // At the moment we have some issues with FF
+     if (ua.webkit) { return true; }
+     return false;
    }
-  
 }
-
-
 
 Browser.makeSureArrayHasFunctionIndexOf();

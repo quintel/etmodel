@@ -11,8 +11,6 @@ _.extend(_, {
 });
 
 window.AppView = Backbone.View.extend({
-  API_URL : globals.api_url,
-
   initialize : function() {
     _.bindAll(this, 'api_result', 'handleInputElementsUpdate');
 
@@ -204,6 +202,11 @@ window.AppView = Backbone.View.extend({
 
   etm_debug: function(t) {
     if(window.etm_js_debug) console.log(t);
+  },
+  
+  // Use CORS when possible
+  api_base_url: function() {
+    return Browser.hasProperCORSSupport() ? globals.api_url : globals.api_proxy_url;
   }
 
 });

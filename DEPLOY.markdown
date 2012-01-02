@@ -8,7 +8,7 @@ Unicorn is started and kept alive by Bluepill. Bluepill is started and kept aliv
 
 To reload the nginx configuration (a bunch of files in `/etc/nginx/`) the command to run is:
 
-    sudo killall -HUP nginx
+    sudo service nginx restart
 
 The file you will probably be editing is `/etc/nginx/conf.d/APP_NAME.conf`. If the nginx daemon is not running at all you can start it with
 

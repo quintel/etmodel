@@ -20,7 +20,7 @@
         %td= output_element.id
         %td= output_element.key
         %td= output_element.description.andand.short_content
-        %td= output_element.output_element_type.name
+        %td= output_element.type
         %td= output_element.group
         %td= 'Hidden' if output_element.hidden?
         %td= link_to "Show", admin_output_element_path(output_element)

@@ -3,8 +3,7 @@
   %br
   %br
   - simple_form_for [:admin, @output_element] do |f|
-    = f.input :name
-    = f.input :key, :hint => "Should be uniq and recognizable! (yes, also for others) , check for conventions with WvL"
+    = f.input :key, :hint => "Should be unique and recognizable! (yes, also for others) , check for conventions with WvL"
 
     = f.association :output_element_type, :hint => "Check the <a href='http://wiki.quintel.nl/index.php/Charts' ' target='_blank'>wiki</a> for more info".html_safe
     = f.input :unit, :hint => "This will be used on the axis"

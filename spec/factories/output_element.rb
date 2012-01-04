@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :output_element do
-    name 'an_output_element'
     sequence(:key) {|n| "output_element_#{n}" }
   end
 

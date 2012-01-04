@@ -19,11 +19,10 @@
       %th
   %tbody
     - @output_element_series.each do |s|
-      -if s.output_element
+      - if s.output_element
         %tr{cycles}
           %td= s.label
           %td= s.output_element.key
-
           %td= highlight s.gquery, params[:gquery]
           %td= link_to 'Show/Edit', edit_admin_output_element_serie_path(s)
           %td= link_to "Destroy", [:admin, s], :confirm => 'Are you sure?', :method => :delete

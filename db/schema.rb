@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120104141918) do
+ActiveRecord::Schema.define(:version => 20120104145715) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -143,8 +143,6 @@ ActiveRecord::Schema.define(:version => 20120104141918) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "under_construction",     :default => false
-    t.integer  "legend_columns"
-    t.string   "legend_location"
     t.string   "unit"
     t.boolean  "percentage"
     t.string   "group"

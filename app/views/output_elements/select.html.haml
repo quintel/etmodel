@@ -6,8 +6,8 @@
     - OutputElement.not_hidden.select_by_group(group).each do |output_element|
       %div
         %a.pick_charts{:id =>"output_#{output_element.id}"}
-          %h2= t("output."+output_element.name).html_safe
+          %h2= t("output_elements.#{output_element.key}").html_safe
           %p   
             - desc = output_element.description
             = desc.blank? ? "" : desc.short_content
-            = image_tag "output_elements/#{output_element.output_element_type.name}.png", :size => "100x60"
+            = image_tag "output_elements/#{output_element.type}.png", :size => "100x60"

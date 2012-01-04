@@ -41,7 +41,6 @@ class OutputElement < ActiveRecord::Base
   scope :not_hidden, where(:hidden => false)
 
   define_index do
-    indexes name
     indexes description(:content_en), :as => :description_content_en
     indexes description(:content_nl), :as => :description_content_nl
     indexes description(:short_content_en), :as => :description_short_content_en
@@ -49,7 +48,7 @@ class OutputElement < ActiveRecord::Base
   end
 
   def title_for_description
-    "output.#{name}"
+    "output_element.#{key}"
   end
 
   def block_chart?
@@ -58,16 +57,16 @@ class OutputElement < ActiveRecord::Base
 
   def options_for_js
     {
-      'id'         => self.id,
-      'type'       => output_element_type.name,
-      'percentage' => percentage == true ,
-      'unit'       => unit,
-      'group'      => group,
-      'name'       => I18n.t("output.#{name}").html_safe,
+      'id'               => self.id,
+      'type'             => output_element_type.name,
+      'percentage'       => percentage == true ,
+      'unit'             => unit,
+      'group'            => group,
+      'name'             => I18n.t("output_elements.#{key}").html_safe,
       'show_point_label' => show_point_label,
-      'max_axis_value' => max_axis_value,
-      'min_axis_value' => min_axis_value,
-      'growth_chart' => growth_chart
+      'max_axis_value'   => max_axis_value,
+      'min_axis_value'   => min_axis_value,
+      'growth_chart'     => growth_chart
     }
   end
 
@@ -87,7 +86,7 @@ class OutputElement < ActiveRecord::Base
   end
 
   def parsed_name_for_admin
-    "#{group} | #{name} | #{description.andand.short_content}"
+    "#{group} | #{key} | #{description.andand.short_content}"
   end
 
   # returns the type of chart (bezier, html_table, ...)

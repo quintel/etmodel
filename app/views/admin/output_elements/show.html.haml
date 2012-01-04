@@ -1,4 +1,6 @@
-%h2= @output_element.name
+%h2
+  = t "output_elements.#{@output_element.key}"
+  (#{@output_element.key})
 
 = link_to 'edit', edit_admin_output_element_path(@output_element)
 

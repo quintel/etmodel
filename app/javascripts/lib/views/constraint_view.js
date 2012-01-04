@@ -80,6 +80,8 @@ var ConstraintView = Backbone.View.extend({
         return null;
       case 'blackout_risk':
         return Metric.ratio_as_percentage(result, false, 1);
+      case 'renewable_electricity_percentage':
+        return Metric.ratio_as_percentage(result);
       case 'score':
         return parseInt(result,10);
       default:

@@ -1,0 +1,9 @@
+.constraint_box_content
+  %p.tal
+    = @constraint.description.try :short_content
+  #charts_wrapper
+    #output_element_112{:style => 'height:230px;width:550px'}
+
+:javascript
+  #{ js_for_output_element(112, 'output_element_112') }
+  App.call_api();

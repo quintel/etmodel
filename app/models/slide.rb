@@ -3,7 +3,6 @@
 # Table name: slides
 #
 #  id                 :integer(4)      not null, primary key
-#  name               :string(255)
 #  image              :string(255)
 #  created_at         :datetime
 #  updated_at         :datetime
@@ -23,19 +22,15 @@ class Slide < ActiveRecord::Base
   accepts_nested_attributes_for :description
 
   def search_result
-    SearchResult.new(name, description)
+    SearchResult.new(key.humanize, description)
   end
 
   define_index do
-    indexes name
+    indexes key
     indexes description(:content_en), :as => :description_content_en
     indexes description(:content_nl), :as => :description_content_nl
     indexes description(:short_content_en), :as => :description_short_content_en
     indexes description(:short_content_nl), :as => :description_short_content_nl
-  end
-
-  def parsed_name_for_admin
-    "#{action_name.andand[0..30]} | #{name}"
   end
 
   def image_path
@@ -43,11 +38,6 @@ class Slide < ActiveRecord::Base
   end
 
   def title_for_description
-    "slidetitle.#{name}"
-  end
-
-  # short name to use as url fragment
-  def fragment_url
-    name.downcase.gsub(' ', '_') rescue nil
+    "slides.#{key}"
   end
 end

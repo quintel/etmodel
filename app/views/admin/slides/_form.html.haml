@@ -1,7 +1,6 @@
 %div{:style => "width: 60%"}
   = simple_form_for [:admin, @slide] do |f|
-    = f.input :name, :hint => "This will be used for translating and in the admin"
-    = f.input :key, :hint => "Should be uniq and recognizable! yes, also for others, check for conventions with WvL"
+    = f.input :key, :hint => "Should be unique and recognizable! yes, also for others, check for conventions with WvL"
     = f.input :image, :hint => "this is the image shown in the slide description"
     = f.input :general_sub_header, :hint => "This will be shown above the unit of all the sliders"
     = f.input :group_sub_header, :hint => "This will be shown above all the groups of sliders (if there are any)"

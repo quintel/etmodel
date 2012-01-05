@@ -2,14 +2,12 @@
   %thead
     %tr
       %th Id
-      %th Name
       %th Key
       %th
   %tbody
     - @slides.each do |s|
       %tr{cycles}
         %td= s.id
-        %td= s.name
         %td= s.key
         %td= link_to 'edit', edit_admin_slide_path(s.id)
 = link_to 'New slide' , new_admin_slide_path

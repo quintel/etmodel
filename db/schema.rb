@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120104145715) do
+ActiveRecord::Schema.define(:version => 20120105142759) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -271,7 +271,6 @@ ActiveRecord::Schema.define(:version => 20120104145715) do
   add_index "sidebar_items", ["key"], :name => "index_sidebar_items_on_key"
 
   create_table "slides", :force => true do |t|
-    t.string   "name"
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"

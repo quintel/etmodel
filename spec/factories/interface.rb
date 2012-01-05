@@ -28,7 +28,6 @@ FactoryGirl.define do
   end
 
   factory :slide do
-    name 'this is a slide'
     sequence(:key) {|n| "slide_#{n}" }
   end
 

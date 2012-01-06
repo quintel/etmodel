@@ -17,7 +17,7 @@
       %tr{cycles}
         %td= link_to prediction.id, admin_prediction_path(prediction)
         %td
-          = prediction.input_element.name
+          = prediction.input_element.key
           = link_to prediction.input_element.id, edit_admin_input_element_path(prediction.input_element)
         %td= prediction.area
         %td= prediction.user.try(:name)

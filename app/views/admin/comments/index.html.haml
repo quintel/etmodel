@@ -16,7 +16,7 @@
         %td= c.id
         %td
           = link_to [:admin, c.commentable] do
-            = c.commentable.input_element.name
+            = c.commentable.input_element.key
             \-
             = c.commentable.title
         %td= c.author_name

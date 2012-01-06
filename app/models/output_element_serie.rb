@@ -51,14 +51,14 @@ class OutputElementSerie < ActiveRecord::Base
   # delegate :name, :to => :output_element, :prefix => 'output_element', :allow_nil => true
 
   def title_for_description
-    "serie.#{self.label}"
+    "output_element_series.#{self.label}"
   end
 
   def title_translated
-    I18n.t("serie.#{self.label}")
+    I18n.t("output_element_series.#{self.label}")
   end
   
   def group_translated
-    I18n.t("serie.#{self.group}")
+    I18n.t("output_element_series.groups.#{self.group}")
   end
 end

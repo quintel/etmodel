@@ -35,9 +35,9 @@
 
             .block_container{:style => "bottom: 0%; left: 0%;", :class => show_or_not, :id => "block_container_#{block.id}"}
               .block{:id => "block_#{block.id}"}
-                .header{:class => block.group.downcase}= t("serie.#{block.label}")
+                .header{:class => block.group.downcase}= t("output_element_series.#{block.label}")
                 .content
-                  %h4= t("serie.#{block.label}")
+                  %h4= t("output_element_series.#{block.label}")
                   %p= block.description.short_content
                   = link_to t('pagetitle.readmore'), "/descriptions/#{block.description.andand.id}", :class => 'fancybox'
               .balloon-tip
@@ -53,8 +53,8 @@
                 - show_or_not ||= b.show_at_first ? 'visible' : 'invisible'
 
                 %a.show_hide_block{:href=>'#', :class => show_or_not, :id => "show_hide_block_#{b.id}"}
-                  = t("serie.#{b.label}")
-          = link_to t("serie.#{group}"), "#"
+                  = t("output_element_series.#{b.label}")
+          = link_to t("output_element_series.groups.#{group}"), "#"
 
 :javascript
   var gquery_map = #{block_chart_gqueries_map.to_json};

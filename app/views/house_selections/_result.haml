@@ -12,20 +12,20 @@
       %h2
         = t("house_selection.build_quality").html_safe
       %p
-        = "#{t("slider."+InputElement.find(336).name)} = #{session['calculated_hst_sliders']["336"]}".html_safe
+        = "#{t("input_elements."+InputElement.find(336).key)} = #{session['calculated_hst_sliders']["336"]}".html_safe
       %h2
         = t("house_selection.installations").html_safe
       %p
         - news = session['calculated_hst_sliders_existing']
         - news.each do |x|
           - unless x.last.blank? || x.last <= 0 || x.first == "47"
-            = "#{t("slider."+InputElement.find(x.first).name)} = #{x.last}%".html_safe
+            = "#{t("input_elements."+InputElement.find(x.first).key)} = #{x.last}%".html_safe
             %br
       - if news["47"]
         %h2
           = t("house_selection.solarpanels").html_safe
         %p
-          = "#{t("slider."+InputElement.find(47).name)} = #{news["47"]}%".html_safe
+          = "#{t("input_elements."+InputElement.find(47).key)} = #{news["47"]}%".html_safe
 
   .right_block
     %div
@@ -40,20 +40,20 @@
       %h2
         = t("house_selection.build_quality").html_safe
       %p
-        = "#{t("slider."+InputElement.find(337).name)} = #{session['calculated_hst_sliders']["337"]}".html_safe
+        = "#{t("input_elements."+InputElement.find(337).key)} = #{session['calculated_hst_sliders']["337"]}".html_safe
       %h2
         = t("house_selection.installations").html_safe
       %p
         - news = session['calculated_hst_sliders_new']
         - news.each do |x|
           - unless x.last.blank? || x.last <= 0 || x.first == "47"
-            = "#{t("slider."+InputElement.find(x.first).name)} = #{x.last}%".html_safe
+            = "#{t("input_elements."+InputElement.find(x.first).key)} = #{x.last}%".html_safe
             %br
       - if news["47"]
         %h2
           = t("house_selection.solarpanels").html_safe
         %p
-          = "#{t("slider."+InputElement.find(47).name)} = #{news["47"]}%"
+          = "#{t("input_elements."+InputElement.find(47).key)} = #{news["47"]}%"
   .bottom
     %h1{:style=>"clear:both;"}= t("house_selection.average.title").html_safe
     %p 
@@ -66,14 +66,14 @@
         - news = session['calculated_hst_sliders']
         - news.each do |x|
           - unless x.last.blank? || x.last <= 0 || x.first == "47" || x.first == "336" || x.first == "337"
-            = "#{t("slider."+InputElement.find(x.first).name)} = #{x.last.round(1)}%"
+            = "#{t("input_elements."+InputElement.find(x.first).key)} = #{x.last.round(1)}%"
             %br
     %div
       - if news["47"]
         %h2
           = t("house_selection.solarpanels").html_safe
         %p
-          = "#{t("slider."+InputElement.find(47).name)} = #{news["47"].round(1)}%".html_safe
+          = "#{t("input_elements."+InputElement.find(47).key)} = #{news["47"].round(1)}%".html_safe
   .new_button.button{:style=>"float:right"}
     = link_to t("house_selection.apply"), house_selection_apply_path, :remote => true
   .new_button.button

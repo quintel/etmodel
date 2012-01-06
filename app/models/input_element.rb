@@ -3,7 +3,6 @@
 # Table name: input_elements
 #
 #  id                :integer(4)      not null, primary key
-#  name              :string(255)
 #  key               :string(255)
 #  share_group       :string(255)
 #  step_value        :float
@@ -37,7 +36,7 @@ class InputElement < ActiveRecord::Base
 
 
   def title_for_description
-    "slider.#{name}"
+    "input_elements.#{key}"
   end
 
   def translated_name
@@ -45,11 +44,11 @@ class InputElement < ActiveRecord::Base
   end
 
   def search_result
-    SearchResult.new(name, description)
+    SearchResult.new(key, description)
   end
 
   define_index do
-    indexes name
+    indexes key
     indexes description(:content_en), :as => :description_content_en
     indexes description(:content_nl), :as => :description_content_nl
     indexes description(:short_content_en), :as => :description_short_content_en
@@ -100,7 +99,7 @@ class InputElement < ActiveRecord::Base
   #############################################
 
   def as_json(options = {})
-    super(:only => [:id, :input_id, :name, :unit, :share_group, :factor, :key, :related_converter],
+    super(:only => [:id, :input_id, :unit, :share_group, :factor, :key, :related_converter],
           :methods => [
             :step_value,
             :output, :user_value, :disabled, :translated_name, 
@@ -113,7 +112,7 @@ class InputElement < ActiveRecord::Base
   #
 
   def parsed_name_for_admin
-    "#{key} | #{name} | #{unit}"
+    "#{key} | #{unit}"
   end
 
   def has_flash_movie

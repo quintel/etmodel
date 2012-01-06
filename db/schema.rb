@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120106110754) do
+ActiveRecord::Schema.define(:version => 20120106131122) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -87,7 +87,6 @@ ActiveRecord::Schema.define(:version => 20120106110754) do
   end
 
   create_table "input_elements", :force => true do |t|
-    t.string   "name"
     t.string   "key"
     t.string   "share_group"
     t.float    "step_value"

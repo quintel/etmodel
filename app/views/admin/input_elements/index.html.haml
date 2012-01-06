@@ -6,17 +6,17 @@
   %thead
     %tr
       %th.tal id
-      %th.tal Name
+      %th.tal Name #{I18n.locale}
       %th.tal Key
       %th.tal Converter
-      %th.tal Comment      
+      %th.tal Comment
       %th.tal 
 
   %tbody
     - @input_elements.each do |input_element|
       %tr{cycles}
         %td= input_element.id
-        %td= input_element.name
+        %td= t "input_elements.#{input_element.key}"
         %td= input_element.key
         %td= input_element.related_converter
         %td= truncate(input_element.comments, :length => 100)

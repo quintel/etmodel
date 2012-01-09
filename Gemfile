@@ -43,7 +43,7 @@ end
 
 group :test, :development do
   # It needs to be in the :development group to expose generators and rake tasks without having to type RAILS_ENV=test.
-  gem "rspec-rails", "~> 2.7.0"
+  gem "rspec-rails", "~> 2.8.0"
   gem 'pry'
   gem 'watchr'
   gem 'spork'

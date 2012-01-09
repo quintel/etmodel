@@ -6,7 +6,6 @@ development: &DEV
     ga_tracker_code: 123456
     unselectable_text: false
     max_scenarios:
-    enable_rdebug: false
     airbrake_api_key: '3ea5a72aad48a32d7bb486bc71ad4fd5'
     converter_detail_url: http://beta.et-engine.com/converters
 production:

@@ -561,10 +561,9 @@
        console.log(event);
        event.preventDefault();
        var url = $(event.target).attr('href');
-       console.log(url);
        $.fancybox({
          width   : 620,
-         height  : 450,
+         height  : 490,
          href    : url,
          type    : 'iframe'
        });

@@ -106,6 +106,7 @@ Etm::Application.routes.draw do
     end
   end
 
+  match '/converters/:input_element_id'    => 'converters#show'  
   match '/select_movie/:id'                => 'pages#select_movie'
   match '/units'                           => 'pages#units'
   match '/about'                           => 'pages#about'
@@ -123,7 +124,6 @@ Etm::Application.routes.draw do
   match '/show_flanders'                   => 'pages#show_flanders'
   match '/show_all_views'                  => 'pages#show_all_views'
   match '/municipalities'                  => 'pages#municipalities'
-
   match '/home'                            => 'pages#home',        :as => :home
   match '/careers'                         => 'pages#careers',     :as => :careers
   match '/sitemap'                         => 'pages#sitemap',     :as => :sitemap

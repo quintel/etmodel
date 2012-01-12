@@ -189,7 +189,7 @@ window.AppView = Backbone.View.extend({
   },
 
   /*
-   * Closes the loading box. will only close if there's no api_calls 
+   * Closes the loading box. will only close if there's no api_calls
    * running at the moment
    */
   hideLoading : function() {
@@ -206,7 +206,11 @@ window.AppView = Backbone.View.extend({
   
   // Use CORS when possible
   api_base_url: function() {
-    return Browser.hasProperCORSSupport() ? globals.api_url : globals.api_proxy_url;
+    if (!globals.disable_cors && Browser.hasProperCORSSupport()) {
+      return globals.api_url;
+    } else {
+      return globals.api_proxy_url;
+    }
   }
 
 });

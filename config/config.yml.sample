@@ -8,6 +8,7 @@ development: &DEV
     max_scenarios:
     airbrake_api_key: '3ea5a72aad48a32d7bb486bc71ad4fd5'
     converter_detail_url: http://beta.et-engine.com/converters
+    disable_cors: false # offline instances might need this
 production:
     <<: *DEV
     local_proxy: false

@@ -22,7 +22,11 @@ The bluepill service is automatically started on boot and the command that actua
 
     exec su -s /bin/sh -c 'exec "$0" "$@"' ubuntu -- /usr/local/rvm/bin/193_bluepill load /home/ubuntu/apps/etmodel/current/config/bluepill/production.rb --no-privileged
 
-You may notice the rvm wrapper script.
+You may notice the rvm wrapper script. This kind of script allows you to run a ruby executable in the context of a gemset. You can create them like this
+
+    rvm wrapper ruby@gemset [scope] [binary-name]
+
+This will generate a script called `scope_binary-name` in the rvm's bin directory.
 
 ## Bluepill
 
@@ -44,6 +48,7 @@ In our setup the bluepill executable is `/usr/local/rvm/bin/193_bluepill`. We ca
 ## Unicorn
 
 You can find its configuration in `APP_ROOT/config/unicorn/production.rb`. Bluepill takes care of the unicorn daemon. If you want to manually kill it you can find its pid in `~/apps/etmodel/shared/pids/unicorn.pid`.
+I've added a separate unicorn configuration file for the laptops.
 
 ## Deploy in practice
 

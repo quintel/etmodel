@@ -32,7 +32,8 @@ gem 'newrelic_rpm'
 gem 'thinking-sphinx', '~> 2.0.10'
 gem 'mysql2', '~>0.2.6'
 gem 'memcache-client'
-gem 'mongrel', '1.2.0.pre2'
+gem 'mongrel', '1.2.0.pre2' # Why?
+gem 'pry'
 
 group :development do
   gem 'yard'
@@ -42,9 +43,7 @@ group :development do
 end
 
 group :test, :development do
-  # It needs to be in the :development group to expose generators and rake tasks without having to type RAILS_ENV=test.
-  gem "rspec-rails", "~> 2.8.0"
-  gem 'pry'
+  gem 'rspec-rails', "~> 2.8.0"
   gem 'watchr'
   gem 'spork'
 end

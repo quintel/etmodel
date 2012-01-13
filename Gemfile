@@ -29,7 +29,7 @@ gem 'airbrake', '~> 3.0.5'
 gem 'newrelic_rpm'
 
 # system gems
-gem 'thinking-sphinx', '>=2.0.1'
+gem 'thinking-sphinx', '~> 2.0.10'
 gem 'mysql2', '~>0.2.6'
 gem 'memcache-client'
 gem 'mongrel', '1.2.0.pre2'

@@ -41,7 +41,9 @@ module Admin
     def destroy
       @input_element = InputElement.find(params[:id])
       if @input_element.destroy
-        flash[:notice] = "Successfully destroyed input_element."
+        dependent = Interface.with_input_element(@input_element.key).map(&:key) rescue nil
+        flash[:notice] = "Input element deleted. "
+        flash[:notice] += "Please update these interfaces: #{dependent.join(' ,')}" if dependent
         redirect_to admin_input_elements_url
       else
         flash[:error] = "Error while deleting slider."

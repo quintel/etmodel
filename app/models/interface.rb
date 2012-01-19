@@ -17,7 +17,9 @@ class Interface < ActiveRecord::Base
   validates :key, :uniqueness => true
   
   attr_accessible :key, :enabled, :structure
-  
+
+  scope :with_input_element, lambda {|q| where('structure LIKE ?', "%#{q}%")}
+
   def tabs
     tree[:tabs].keys.map{|k| Tab.find_by_key(k)} rescue []
   end
@@ -25,7 +27,8 @@ class Interface < ActiveRecord::Base
   def tree
     @tree ||= YAML.load(structure)
   end
-  
+
+  # DEBT - refactor all these methods
   def sidebar_items_for(tab_key)
     tree[:tabs][tab_key].keys.map{|k| SidebarItem.find_by_key(k)}.
     reject(&:area_dependent) rescue []
@@ -38,7 +41,7 @@ class Interface < ActiveRecord::Base
   
   def input_elements_for(tab_key, sidebar_item_key, slide_key)
     tree[:tabs][tab_key][sidebar_item_key][slide_key][:input_elements].map{|k| InputElement.find_by_key(k)}.
-      reject(&:area_dependent) rescue []
+      compact.reject(&:area_dependent) rescue []
   end
   
   def output_elements_for(tab_key, sidebar_item_key, slide_key)

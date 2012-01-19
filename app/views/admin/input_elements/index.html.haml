@@ -20,4 +20,6 @@
         %td= input_element.key
         %td= input_element.related_converter
         %td= truncate(input_element.comments, :length => 100)
-        %td= link_to 'Edit', edit_admin_input_element_path(input_element)
+        %td
+          = link_to 'Edit', edit_admin_input_element_path(input_element)
+          = link_to 'Delete', [:admin, input_element], :method => :delete, :confirm => 'Are you sure?'

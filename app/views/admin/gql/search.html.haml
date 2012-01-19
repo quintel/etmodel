@@ -60,12 +60,10 @@
     %tr
       %th Id
       %th Key
-      %th Name
       %th Query
   %tbody
     - @sidebar_items.each do |s|
       %tr
         %td= s.id
         %td= link_to s.key, edit_admin_sidebar_item_path(s)
-        %td= s.name
         %td= highlight s.percentage_bar_query, @q

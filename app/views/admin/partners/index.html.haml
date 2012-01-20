@@ -5,6 +5,7 @@
     %tr
       %th Id
       %th Name
+      %th Type
       %th URL
       %th Country
       %th Place
@@ -14,6 +15,7 @@
       %tr{cycles}
         %td= p.id
         %td= link_to p.name, [:admin, p]
+        %td= p.partner_type
         %td= p.url
         %td= p.country
         %td= p.place

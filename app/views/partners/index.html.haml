@@ -1,13 +1,24 @@
-#log
-#log3
-#log2
-%h1= t("partners.Partners of the Energy Transition Model")
-#partners
+- if @partner_types.size > 1
+  #nav.nav-inner{:style=>'height:50px; background-position: 0 8px;'}
+    .nav-holder.nav-holder-inner{:style=>'margin: 0 0 0 0; width: inherit;'}
+      %ul{:style => "margin: 0 0 0 0;"}
+        - @partner_types.each do |partner_type|
+          %li{:class => (partner_type == @active_partner_type ? 'active' : '') , :style=>'width:300px;'}
+            = link_to t("partners.#{partner_type}"), :partner_type => partner_type
+
+  %br
+- else
+
+  %h1= t("partners.Partners of the Energy Transition Model")
+
+#partners{:style => 'width: 100%;'}
   - @partners.each do |p|
     .partner_container
       %a.partner_link{:id => "partner_#{p.id}", :href => p.link }
         .header
           = image_tag p.logo
+
+  .clear
 
   - @partners.each do |p|
     .content{:id => "partner_#{p.id}_content"}
@@ -17,3 +28,4 @@
         = t("partners.Click here to go to the website of") + "#{p.name_or_long_name}."
   
   .clear
+  

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120106131122) do
+ActiveRecord::Schema.define(:version => 20120120125624) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -175,6 +175,7 @@ ActiveRecord::Schema.define(:version => 20120106131122) do
     t.datetime "updated_at"
     t.string   "place",            :default => "right"
     t.string   "long_name"
+    t.string   "partner_type",     :default => "general"
   end
 
   create_table "policy_goals", :force => true do |t|
@@ -301,17 +302,17 @@ ActiveRecord::Schema.define(:version => 20120106131122) do
   add_index "translations", ["key"], :name => "index_translations_on_key"
 
   create_table "users", :force => true do |t|
-    t.string   "name",                                 :null => false
-    t.string   "email",                                :null => false
+    t.string   "name",                                  :null => false
+    t.string   "email",                                 :null => false
     t.string   "company_school"
     t.boolean  "allow_news",         :default => true
     t.string   "heared_first_at",    :default => ".."
     t.string   "crypted_password"
     t.string   "password_salt"
-    t.string   "persistence_token",                    :null => false
-    t.string   "perishable_token",                     :null => false
-    t.integer  "login_count",        :default => 0,    :null => false
-    t.integer  "failed_login_count", :default => 0,    :null => false
+    t.string   "persistence_token",                     :null => false
+    t.string   "perishable_token",                      :null => false
+    t.integer  "login_count",        :default => 0,     :null => false
+    t.integer  "failed_login_count", :default => 0,     :null => false
     t.datetime "last_request_at"
     t.datetime "current_login_at"
     t.datetime "last_login_at"
@@ -322,9 +323,13 @@ ActiveRecord::Schema.define(:version => 20120106131122) do
     t.datetime "updated_at"
     t.string   "phone_number"
     t.string   "group"
+    t.string   "trackable",          :default => "0"
+    t.boolean  "send_score",         :default => false
+    t.boolean  "new_round"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["trackable"], :name => "index_users_on_trackable"
 
   create_table "versions", :force => true do |t|
     t.string   "item_type",  :null => false

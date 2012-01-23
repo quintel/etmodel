@@ -86,7 +86,7 @@ class Setting
       :country                        => 'nl',
       :region                         => nil,
       :start_year                     => 2010,
-      :end_year                       => 2040,
+      :end_year                       => 2050,
       :use_fce                        => false,
       :already_shown                  => []
     }

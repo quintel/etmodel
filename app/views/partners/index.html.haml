@@ -3,7 +3,7 @@
     .nav-holder.nav-holder-inner{:style=>'margin: 0 0 0 0; width: inherit;'}
       %ul{:style => "margin: 0 0 0 0;"}
         - @partner_types.each do |partner_type|
-          %li{:class => (partner_type == @active_partner_type ? 'active' : '') , :style=>'width:300px;'}
+          %li{:class => (partner_type == @active_partner_type ? 'active' : '') , :style => partner_type == 'general' ? 'width:400px;' : 'width:300px;'}
             = link_to t("partners.#{partner_type}"), :partner_type => partner_type
 
   %br

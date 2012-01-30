@@ -22,15 +22,6 @@ namespace :deploy do
     # memcached.flush
   end
 
-  # with mod_rails these are a no-op
-  task :start do ; end
-  task :stop do ; end
-
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-    # memcached.restart
-  end
-
   desc "Notify Airbrake of the deployment"
   task :notify_airbrake, :except => { :no_release => true } do
     rails_env = fetch(:airbrake_env, fetch(:rails_env, "production"))

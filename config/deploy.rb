@@ -23,6 +23,7 @@ task :production do
   set :db_pass, "Energy2.0"
   set :db_name, application_key
   set :db_user, application_key
+  set :airbrake_key, "aadd4cc40d52dabf842d4dce932e84a3"
   server domain, :web, :app, :db, :primary => true
 end
 
@@ -33,6 +34,7 @@ task :staging do
   set :db_pass, "feboblokker"
   set :db_name, application_key
   set :db_user, application_key
+  set :airbrake_key, "a736722b2610573160a2f015f036488b"
   server domain, :web, :app, :db, :primary => true
 end
 

@@ -28,12 +28,7 @@ namespace :deploy do
     local_user = ENV['USER'] || ENV['USERNAME']
     notify_command = "bundle exec rake RAILS_ENV=production airbrake:deploy \
       TO=#{rails_env} REVISION=#{current_revision} REPO=#{repository}       \
-      USER=#{local_user}"
-    if application_key == "etmodel"
-      notify_command << " API_KEY=aadd4cc40d52dabf842d4dce932e84a3"
-    elsif application_key == "etmodel_staging"
-      notify_command << " API_KEY=a736722b2610573160a2f015f036488b"
-    end
+      USER=#{local_user} API_KEY=#{airbrake_key}"
     puts "Notifying Airbrake of Deploy of #{server_type} (#{notify_command})"
     run "cd #{release_path} && #{notify_command}"
     puts "Airbrake Notification Complete."

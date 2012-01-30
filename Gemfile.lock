@@ -46,14 +46,7 @@ GEM
     authlogic (3.0.3)
       activerecord (>= 3.0.7)
       activerecord (>= 3.0.7)
-    blankslate (2.1.2.4)
     bluecloth (2.1.0)
-    bluepill (0.0.46)
-      activesupport (>= 2.3.4)
-      blankslate (>= 2.1.2.2)
-      daemons (>= 1.0.9)
-      i18n (>= 0.5.0)
-      state_machine (>= 0.8.0, <= 0.9.4)
     builder (2.1.2)
     capistrano (2.9.0)
       highline
@@ -179,7 +172,6 @@ GEM
     sprockets (1.0.2)
     sprockets-rails (0.0.1)
       sprockets (>= 1.0.2)
-    state_machine (0.9.4)
     tabs_on_rails (2.0.2)
     thinking-sphinx (2.0.11)
       activerecord (>= 3.0.3)
@@ -215,7 +207,6 @@ DEPENDENCIES
   annotate
   authlogic
   bluecloth
-  bluepill
   capistrano
   default_value_for
   factory_girl_rails

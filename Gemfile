@@ -58,7 +58,6 @@ end
 
 group :production do
   gem 'unicorn'
-  gem 'bluepill', :require => false
 end
 
 gem 'capistrano'

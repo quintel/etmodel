@@ -50,5 +50,5 @@ end
 # RVM Stuff
 # Add RVM's lib directory to the load path.
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-require "rvm/capistrano"
+require "rvm/capistrano" if ENV['rvm_path']
 set :rvm_ruby_string, '1.9.3@etmodel'

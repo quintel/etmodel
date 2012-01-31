@@ -5,7 +5,7 @@
   = f.input :country, :as => :select, :collection => Api::Area.all.map(&:country)
   = f.input :time
   = f.input :repeat_any_other
-  = f.input :subheader
+  = f.input :subheader, :as => :select, :collection => ['footer.sponsor', 'footer.main_sponsor', 'footer.consulting_partner_nl', 'footer.consulting_partner_eu'], :include_blank => false, :hint => 'Label translation (check en_etm.nl)'
   = f.input :place, :as => :select, :collection => ['left', 'right']
   = f.input :long_name
   

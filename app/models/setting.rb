@@ -11,7 +11,7 @@ class Setting
     :use_fce
   ]
 
-  # 2011-09 seb: The (empty) arrays in DEFAULT_ATTRIBUTES caused bug. see regression test. 
+  # 2011-09 seb: The (empty) arrays in DEFAULT_ATTRIBUTES caused bug. see regression test.
   # DEFAULT_ATTRIBUTES = {
 
   LEVELS = {
@@ -24,7 +24,7 @@ class Setting
     7 => 'ameland_advanced',
     8 => 'network',
     9 => 'nl_noord'
-    
+
   }.freeze
 
   attr_accessor :last_etm_controller_name,
@@ -38,10 +38,10 @@ class Setting
   ##
   # @tested 2010-12-06 seb
   #
-  def initialize(attributes = {}) 
+  def initialize(attributes = {})
     attributes = self.class.default_attributes.merge(attributes)
-    attributes.each do |name, value|  
-      self.send("#{name}=", value)  
+    attributes.each do |name, value|
+      self.send("#{name}=", value)
     end
   end
 
@@ -116,7 +116,7 @@ class Setting
     end
   end
 
-  # When a user resets a scenario to it's start value, 
+  # When a user resets a scenario to it's start value,
   #
   def reset_scenario
     # RD: used self. here otherwise an other settings object was reset
@@ -131,7 +131,7 @@ class Setting
   # ------ Complexities -------------------------------------------------------
 
   # @untested 2011-01-24 robbert
-  # 
+  #
   def all_levels
     LEVELS
   end
@@ -148,7 +148,7 @@ class Setting
   def medium?;    self.complexity == 2; end
   def advanced?;  self.complexity == 3; end
 
-  
+
   # ------ Years --------------------------------------------------------------
 
   def end_year=(end_year)
@@ -186,14 +186,14 @@ class Setting
 
   ##
   # @tested 2010-11-30 seb
-  # 
+  #
   def set_country_and_region(country, region)
     self.country = country
     self.region = if region.blank? then nil
-      elsif region.is_a?(Hash) 
-        if region.has_key?(country) 
+      elsif region.is_a?(Hash)
+        if region.has_key?(country)
           region[country]  # You may want to set the province here and override country settings (maybe add a country prefix?)
-        else 
+        else
           nil
         end
       else region
@@ -208,11 +208,11 @@ class Setting
     Api::Area.find_by_country_memoized(region)
   end
 
-  # Do not memoize area in setting, because it gets stored in session and 
+  # Do not memoize area in setting, because it gets stored in session and
   # backbone settings.
   #
   # @tested 2010-11-30 seb
-  # 
+  #
   def area
     Api::Area.find_by_country_memoized(region_or_country)
   end

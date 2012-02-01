@@ -2,4 +2,4 @@
 
 #converter_details
   %h1= t "input_elements.#{@input_element.key}"
-  %iframe{:src => "#{APP_CONFIG[:converter_detail_url]}/#{@key}"}
+  %iframe{:src => "#{APP_CONFIG[:converter_detail_url]}/#{@key}?api_scenario_id=#{@api_session_id}"}

@@ -5,10 +5,4 @@
     page == "how" ? 15663129 : 15660970
   end
 
-%video#video_home{:class => 'video-js vsj-default-skin', :width => 510, :height => 290, :controls => true}
-  %source{:src => '/videos/1.mp4', :type => 'video/mp4'}
-  %source{:src => '/videos/1.ogv', :type => 'video/ogg'}
-
-- content_for :head do
-  = stylesheet_link_tag '/video-js/video-js.min.css'
-  = javascript_include_tag '/video-js/video.min.js'
+= local_video_player 1

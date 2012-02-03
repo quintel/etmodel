@@ -5,4 +5,10 @@
     page == "how" ? 15663129 : 15660970
   end
 
-%iframe{:frameborder => "0", :height => "290", :src => "http://player.vimeo.com/video/#{movie_id}", :width => "510"}
+%video#video_home{:class => 'video-js vsj-default-skin', :width => 510, :height => 290, :controls => true}
+  %source{:src => '/videos/1.mp4', :type => 'video/mp4'}
+  %source{:src => '/videos/1.ogv', :type => 'video/ogg'}
+
+- content_for :head do
+  = stylesheet_link_tag '/video-js/video-js.min.css'
+  = javascript_include_tag '/video-js/video.min.js'

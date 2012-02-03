@@ -14,8 +14,8 @@ class PagesController < ApplicationController
   end
 
   # This page is called by the ETE after an ETSource import
-  # 
-  def refresh_gqueries    
+  #
+  def refresh_gqueries
     Rails.cache.clear
     render :text => 'ok', :layout => false
   end
@@ -38,7 +38,7 @@ protected
     @scenarios = Api::Scenario.all(:from => :homepage)
   end
 
-  def assign_settings_and_redirect    
+  def assign_settings_and_redirect
     Current.setting = Setting.default
     Current.setting.complexity = params[:complexity]
     Current.setting.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
@@ -69,14 +69,14 @@ public
   def update_footer
     render :partial => "layouts/etm/footer"
   end
-  
+
   def select_movie
     render :update do |page|
       page["#movie_content"].html(render 'movie', :page => params[:id])
       page.call('set_active_tab', params[:id])
     end
   end
-  
+
   def show_all_countries
     session[:show_all_countries] = true
     redirect_to '/'
@@ -86,12 +86,12 @@ public
     session[:show_all_views] = true
     redirect_to '/'
   end
-  
+
   def show_flanders
     session[:show_flanders] = true
     redirect_to root_path
   end
-  
+
   ######################################
   # Browser Checks
   ######################################
@@ -115,8 +115,8 @@ public
       if /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i.match(params[:feedback][:email])
         @options = params[:feedback]
         spawn do #use spawn to create a bg process for sending mail
-          Notifier.feedback_mail(@options).deliver 
-          Notifier.feedback_mail_to_sender(@options).deliver 
+          Notifier.feedback_mail(@options).deliver
+          Notifier.feedback_mail_to_sender(@options).deliver
         end
 
         render :update do |page|
@@ -132,7 +132,7 @@ public
       render :layout => false
     end
   end
-  
+
   def tutorial
     @section = params[:section]
     @vimeo_id_for_section =  Tab.find_by_key(@section).send("#{I18n.locale}_vimeo_id")
@@ -140,11 +140,11 @@ public
     @vimeo_id_for_category = SidebarItem.find_by_key(@category).send("#{I18n.locale}_vimeo_id")
     render :layout => false
   end
-  
+
 private
 
   def defaults
     @render_tabs = false
   end
-  
+
 end

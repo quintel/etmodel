@@ -1,4 +1,4 @@
-$(document).ready(function() {  
+$(document).ready(function() {
   $(".valuees a.label, a.fancybox").live('click', function() {
     $(this).fancybox({
       padding  : 20,
@@ -6,23 +6,23 @@ $(document).ready(function() {
       ajax : {
         type  : "GET"
       },
-      onComplete: function() { 
+      onComplete: function() {
         setTimeout(function(){
           $.fancybox.resize();
         },100);
-       $("#fancybox-inner").css({'overflow-x':'hidden'}); 
+       $("#fancybox-inner").css({'overflow-x':'hidden'});
       }
     });
-    
+
     $(this).trigger('click');
     return false;
   });
-  
-  
+
+
   $("a.tutorial_button").live('click', function() {
 
     $(this).fancybox({
-      width    : 940,    
+      width    : 940,
       titleShow: false,
       padding  : 0,
       opacity: false,
@@ -30,13 +30,13 @@ $(document).ready(function() {
       ajax : {
         type  : "GET"
       },
-      onComplete: function() { 
-       $("#fancybox-outer").css({'background':'transparent'}); 
-       $(".fancy-bg").css({'display':'none'}); 
+      onComplete: function() {
+       $("#fancybox-outer").css({'background':'transparent'});
+       $(".fancy-bg").css({'display':'none'});
       },
-      onClosed:function() { 
-       $("#fancybox-outer").css({'background':'white'}); 
-       $(".fancy-bg").css({'display':'true'}); 
+      onClosed:function() {
+       $("#fancybox-outer").css({'background':'white'});
+       $(".fancy-bg").css({'display':'true'});
       }
     });
 
@@ -44,19 +44,19 @@ $(document).ready(function() {
     // alert('hit');
     return false;
   });
-  
+
   $("a.house_selection_tool").live('click', function() {
 
     $(this).fancybox({
-      width    : 960,  
-      height   : 680,  
+      width    : 960,
+      height   : 680,
       titleShow: false,
       padding  : 0,
       ajax : {
         type  : "GET"
       },
-      onComplete: function() { 
-       $("#fancybox-inner").css({'overflow-x':'hidden'}); 
+      onComplete: function() {
+       $("#fancybox-inner").css({'overflow-x':'hidden'});
       }
     });
 
@@ -67,15 +67,15 @@ $(document).ready(function() {
   $("a.select_chart").live('click', function() {
 
     $(this).fancybox({
-      width    : 960,    
-      height   : 600,    
+      width    : 960,
+      height   : 600,
       titleShow: false,
       padding  : 0,
       ajax : {
         type  : "GET"
       },
-      onComplete: function() { 
-        $("#fancybox-inner").css({'overflow-x':'hidden'}); 
+      onComplete: function() {
+        $("#fancybox-inner").css({'overflow-x':'hidden'});
       }
     });
 
@@ -86,7 +86,7 @@ $(document).ready(function() {
   $("a.expert_header").live('click', function() {
 
     $(this).fancybox({
-      width    : 970,    
+      width    : 970,
       height   : 650,
       titleShow: false,
       padding  : 0,
@@ -103,7 +103,7 @@ $(document).ready(function() {
   $("a.prediction").live('click', function() {
 
     $(this).fancybox({
-      width    : 960,    
+      width    : 960,
       height   : 650,
       titleShow: false,
       padding  : 0,
@@ -111,13 +111,13 @@ $(document).ready(function() {
       ajax : {
         type  : "GET"
       }
-      
+
     });
 
     $(this).trigger('click');
     return false;
   });
-  
+
   $(".energy_mixer").live('click', function() {
 
     $(this).fancybox({
@@ -136,7 +136,7 @@ $(document).ready(function() {
     // alert('hit');
     return false;
   });
-  
+
 
   $('#overlay_container a').live('click', function(i,el) {
     if (!$(this).hasClass('no_target')){

@@ -1,7 +1,7 @@
 #tutorial_wrapper
   .left_movie
-    %iframe{:frameborder => "0", :height => "260", :src => "http://player.vimeo.com/video/#{@vimeo_id_for_section}?title=0&amp;byline=0&amp;portrait=0", :width => "450"}
+    = local_video_player @vimeo_id_for_section, :height => 260, :width => 450, :id => 'left_video'
     %h3=raw t("#{@section.capitalize}")
   .right_movie  
-    %iframe{:frameborder => "0", :height => "260", :src => "http://player.vimeo.com/video/#{@vimeo_id_for_category}", :width => "450"}
+    = local_video_player @vimeo_id_for_category, :height => 260, :width => 450, :id => 'right_video'
     %h3=raw t("sidebar_item.#{@category}")

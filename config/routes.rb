@@ -1,4 +1,4 @@
-Etm::Application.routes.draw do  
+Etm::Application.routes.draw do
 
   get "gql/search"
 
@@ -22,11 +22,11 @@ Etm::Application.routes.draw do
 
   match 'login'  => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
-  
+
   resources :user_sessions, :users, :descriptions
-  
+
   resources :partners, :only => [:show, :index]
-  
+
   resources :constraints, :only => :show do
     get :iframe, :on => :member
   end
@@ -40,19 +40,19 @@ Etm::Application.routes.draw do
 
   namespace :admin do
     root :to => 'pages#index'
-    
+
     match 'clear_cache' => 'pages#clear_cache', :as => :clear_cache
-    
+
     resources :expert_predictions,
               :predictions,
-              :input_elements, 
-              :year_values, 
-              :tabs, 
-              :slides, 
-              :sidebar_items, 
-              :translations, 
-              :output_elements, 
-              :output_element_series, 
+              :input_elements,
+              :year_values,
+              :tabs,
+              :slides,
+              :sidebar_items,
+              :translations,
+              :output_elements,
+              :output_element_series,
               :converter_positions,
               :interfaces,
               :general_user_notifications,
@@ -79,7 +79,7 @@ Etm::Application.routes.draw do
     get :reset_to_preset
     put :change_complexity
   end
-  
+
   resources :scenarios do
     member do
       get :load
@@ -91,14 +91,14 @@ Etm::Application.routes.draw do
       get :select
     end
   end
-  
+
   resources :expert_predictions, :only => :index do
     collection do
       get :set
       get :reset
     end
   end
-  
+
   resources :predictions, :only => [:index, :show] do
     member do
       post :comment
@@ -106,13 +106,13 @@ Etm::Application.routes.draw do
     end
   end
 
-  match '/converters/:input_element_id'    => 'converters#show'  
+  match '/converters/:input_element_id'    => 'converters#show'
   match '/select_movie/:id'                => 'pages#select_movie'
   match '/units'                           => 'pages#units'
   match '/about'                           => 'pages#about'
   match '/feedback'                        => 'pages#feedback'
-  match '/tutorial/(:section)(/:category)' => 'pages#tutorial'  
-  match '/education'                       => 'pages#education'  
+  match '/tutorial/(:section)(/:category)' => 'pages#tutorial'
+  match '/education'                       => 'pages#education'
   match '/pages/intro'                     => 'pages#intro', :as => :start
   match '/testimonials'                    => 'pages#testimonials'
   match '/recommendations'                 => 'pages#recommendations'

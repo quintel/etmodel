@@ -531,16 +531,20 @@
         height:  ['toggle', 'easeOutCubic'],
         opacity: ['toggle', 'easeOutQuad']
       }, 'fast');
-      
+
       this.initFlowplayer();
       return false;
     },
-    
+
     /**
-    * Loads the flowplayer when the desciption of the input element contains a flash movie
+    * Loads the flowplayer when the description of the input element contains a flash movie
+    * The global standalone parameter disables this embedded player.
     */
     initFlowplayer : function() {
-      if (this.model.get('has_flash_movie')) {
+      if(!this.model.get('has_flash_movie')) return;
+      if (globals.standalone) {
+        $("a.player").hide();
+      } else {
         flowplayer('a.player', '/flash/flowplayer-3.2.6.swf');
       }
     },
@@ -553,7 +557,7 @@
       this.valueSelector.show();
       return false;
     },
-    
+
     /**
      * Loads the converter details in a fancybox popup
      */
@@ -567,7 +571,7 @@
          href    : url,
          type    : 'iframe'
        });
-       
+
        return false;
      },
 

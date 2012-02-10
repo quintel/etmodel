@@ -1,15 +1,14 @@
-%h1 
+%h1
   %span= "#{distance_of_time_in_words(Time.now, @prediction.created_at)} #{t 'ago'} "
   %strong= @prediction.title
-  #{t 'prediction.by'}
-  = @prediction.user.try(:name)
+  #{t 'prediction.by'} #{@prediction.user.try(:name)}
   = parenthesize @prediction.user.try(:company_school)
 
 - if user_scenario_available?
   .buttons.right
     #share_box
       %label Link:
-      %input{:id=>'share_link', :size=>"50",:value => "http://#{request.host}#{share_prediction_path(@prediction)}"}
+      %input{:id=>'share_link', :size=>"50",:value => share_prediction_url(@prediction)}
     = button_to_function t('prediction.share_prediction'), "#", :class => 'share_prediction', :href => share_prediction_path(@prediction)
   .buttons
     = button_to_function t('prediction.use_prediction'), "return false", :class => 'apply_prediction'
@@ -24,7 +23,7 @@
 
 .measures
   %i= t('prediction.measures_header')
-  
+
   - if @prediction.measures.any?
     - @prediction.measures.each do |m|
       %ul.measure{:class => cycle('even', 'odd')}
@@ -35,22 +34,21 @@
             \- #{m.year_end}
         %li.name
           = m.name
-        
         - if m.description.present?
           %li.inline_description
             = m.description.html_safe
             %br
             %br
             %strong
-              #{t 'prediction.impact'} 
+              #{t 'prediction.impact'}
             #{PredictionMeasure::IMPACT[m.impact]}
             %br
             %strong
-              #{t 'prediction.cost'} 
+              #{t 'prediction.cost'}
             #{PredictionMeasure::COST[m.cost]}
             %br
             %strong
-              #{t 'prediction.actor'} 
+              #{t 'prediction.actor'}
             = m.actor || "-"
             %br
             = t('prediction.table_footer').html_safe
@@ -65,7 +63,7 @@
   %h3= t('prediction.comments')
   #comments_container
     = render @prediction.comments
-  
+
   = simple_form_for @comment, :url => comment_prediction_path(@prediction), :remote => true do |f|
     %h4= t('prediction.new_comment')
     - unless current_user

@@ -124,6 +124,26 @@ QUnit.specify('', function () {
                 assert(onCommitRun).isFalse();
             });
         });
+
+        describe('when using a range-based slider', function () {
+            before(function () {
+                slider = new $.Quinn(wrapper, { value: [25, 75] });
+            });
+
+            it('should return the original value', function () {
+                var originalValue = _.clone(slider.value),
+                    equality = _.isEqual(slider.stepUp(), originalValue);
+
+                assert(equality).isTrue();
+            });
+
+            it('should not change the value', function () {
+                var originalValue = _.clone(slider.value);
+
+                slider.stepUp()
+                assert(_.isEqual(slider.value, originalValue)).isTrue();
+            });
+        });
     });
 
     describe('stepDown', function () {
@@ -247,6 +267,26 @@ QUnit.specify('', function () {
             it('should not run onCommit', function () {
                 slider.stepDown();
                 assert(onCommitRun).isFalse();
+            });
+        });
+
+        describe('when using a range-based slider', function () {
+            before(function () {
+                slider = new $.Quinn(wrapper, { value: [25, 75] });
+            });
+
+            it('should return the original value', function () {
+                var originalValue = _.clone(slider.value),
+                    equality = _.isEqual(slider.stepDown(), originalValue);
+
+                assert(equality).isTrue();
+            });
+
+            it('should not change the value', function () {
+                var originalValue = _.clone(slider.value);
+
+                slider.stepDown()
+                assert(_.isEqual(slider.value, originalValue)).isTrue();
             });
         });
     });

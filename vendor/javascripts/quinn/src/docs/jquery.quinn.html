@@ -40,13 +40,13 @@
         <span class="nx">DRAG_END_E</span>       <span class="o">=</span> <span class="s1">&#39;mouseup&#39;</span><span class="p">,</span>
         <span class="nx">IS_TOUCH_ENABLED</span> <span class="o">=</span>  <span class="kc">false</span><span class="p">;</span>
 
-    <span class="k">try</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;ontouchstart&#39;</span> <span class="k">in</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">)</span> <span class="p">{</span>
         <span class="nb">document</span><span class="p">.</span><span class="nx">createEvent</span><span class="p">(</span><span class="s2">&quot;TouchEvent&quot;</span><span class="p">);</span>
         <span class="nx">DRAG_E</span>           <span class="o">=</span> <span class="s1">&#39;touchmove&#39;</span><span class="p">;</span>
         <span class="nx">DRAG_START_E</span>     <span class="o">=</span> <span class="s1">&#39;touchstart&#39;</span><span class="p">;</span>
         <span class="nx">DRAG_END_E</span>       <span class="o">=</span> <span class="s1">&#39;touchend&#39;</span><span class="p">;</span>
         <span class="nx">IS_TOUCH_ENABLED</span> <span class="o">=</span>  <span class="kc">true</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{}</span></pre></div>
+    <span class="p">}</span></pre></div>
       </td>
     </tr>
     <tr id='section-Quinn'>
@@ -69,9 +69,12 @@ width, padding etc.</p>
 
         <span class="nx">_</span><span class="p">.</span><span class="nx">bindAll</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;clickBar&#39;</span><span class="p">,</span> <span class="s1">&#39;enableDrag&#39;</span><span class="p">,</span> <span class="s1">&#39;disableDrag&#39;</span><span class="p">,</span> <span class="s1">&#39;drag&#39;</span><span class="p">);</span>
 
-        <span class="k">this</span><span class="p">.</span><span class="nx">wrapper</span>    <span class="o">=</span> <span class="nx">wrapper</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">options</span>    <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},</span> <span class="nx">Quinn</span><span class="p">.</span><span class="nx">defaults</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">isDisabled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">wrapper</span>        <span class="o">=</span> <span class="nx">wrapper</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">options</span>        <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},</span> <span class="nx">Quinn</span><span class="p">.</span><span class="nx">defaults</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">isDisabled</span>     <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">isRange</span>        <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">activeHandle</span>   <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">handles</span>        <span class="o">=</span> <span class="p">[];</span>
 
         <span class="k">this</span><span class="p">.</span><span class="nx">previousValues</span> <span class="o">=</span> <span class="p">[];</span>
 
@@ -81,7 +84,11 @@ width, padding etc.</p>
             <span class="nx">change</span><span class="o">:</span> <span class="p">[],</span>
             <span class="nx">commit</span><span class="o">:</span> <span class="p">[],</span>
             <span class="nx">abort</span><span class="o">:</span>  <span class="p">[]</span>
-        <span class="p">};</span></pre></div>
+        <span class="p">};</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">value</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">isRange</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span></pre></div>
       </td>
     </tr>
     <tr id='section-4'>
@@ -176,7 +183,7 @@ by developers later.</p>
         <p>The current Quinn version.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">VERSION</span> <span class="o">=</span> <span class="s1">&#39;0.3.7&#39;</span><span class="p">;</span></pre></div>
+        <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">VERSION</span> <span class="o">=</span> <span class="s1">&#39;0.4.2&#39;</span><span class="p">;</span></pre></div>
       </td>
     </tr>
     <tr id='section-Rendering'>
@@ -205,8 +212,8 @@ but should be called again if the slider is resized.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">render</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">barWidth</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">wrapper</span><span class="p">.</span><span class="nx">width</span><span class="p">(),</span>
-            <span class="nx">movableRange</span><span class="p">,</span> <span class="nx">handleWidth</span><span class="p">,</span> <span class="nx">handleDangle</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">barWidth</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">width</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">wrapper</span><span class="p">.</span><span class="nx">width</span><span class="p">(),</span>
+            <span class="nx">movableRange</span><span class="p">,</span> <span class="nx">handleWidth</span><span class="p">,</span> <span class="nx">handleDangle</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">length</span><span class="p">;</span>
 
         <span class="kd">function</span> <span class="nx">addRoundingElements</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;left&quot; /&gt;&#39;</span><span class="p">));</span>
@@ -216,7 +223,24 @@ but should be called again if the slider is resized.</p>
 
         <span class="k">this</span><span class="p">.</span><span class="nx">bar</span>       <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;bar&quot; /&gt;&#39;</span><span class="p">);</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">activeBar</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;active-bar&quot; /&gt;&#39;</span><span class="p">);</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">handle</span>    <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;span class=&quot;handle&quot; /&gt;&#39;</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">isRange</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">wrapper</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;range&#39;</span><span class="p">);</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">length</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">handles</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+                    <span class="nx">value</span><span class="o">:</span>   <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">value</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span>
+                    <span class="nx">index</span><span class="o">:</span>   <span class="nx">i</span><span class="p">,</span>
+                    <span class="nx">element</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;span class=&quot;handle&quot; /&gt;&#39;</span><span class="p">)</span>
+                <span class="p">});</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">handles</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+                <span class="nx">value</span><span class="o">:</span>   <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+                <span class="nx">index</span><span class="o">:</span>   <span class="mi">0</span><span class="p">,</span>
+                <span class="nx">element</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;span class=&quot;handle&quot; /&gt;&#39;</span><span class="p">)</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
 
         <span class="nx">addRoundingElements</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">bar</span><span class="p">);</span>
         <span class="nx">addRoundingElements</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">activeBar</span><span class="p">);</span>
@@ -227,7 +251,7 @@ but should be called again if the slider is resized.</p>
         <span class="k">this</span><span class="p">.</span><span class="nx">wrapper</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">bar</span><span class="p">);</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">wrapper</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;quinn&#39;</span><span class="p">);</span>
 
-        <span class="k">this</span><span class="p">.</span><span class="nx">wrapper</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">movableRange</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">handle</span><span class="p">));</span></pre></div>
+        <span class="k">this</span><span class="p">.</span><span class="nx">wrapper</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">movableRange</span><span class="p">);</span></pre></div>
       </td>
     </tr>
     <tr id='section-12'>
@@ -235,18 +259,34 @@ but should be called again if the slider is resized.</p>
         <div class="pilwrap">
           <a class="pilcrow" href="#section-12">&#182;</a>
         </div>
-        <p>The slider depends on some absolute positioning, so  adjust the
-elements widths and positions as necessary &hellip;</p>
+        <p>Add each of the handles to the bar, and bind the click events.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>        <span class="k">this</span><span class="p">.</span><span class="nx">bar</span><span class="p">.</span><span class="nx">css</span><span class="p">({</span> <span class="nx">width</span><span class="o">:</span> <span class="nx">barWidth</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span> <span class="p">});</span>
-        <span class="nx">handleWidth</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handle</span><span class="p">.</span><span class="nx">width</span><span class="p">();</span></pre></div>
+        <div class='highlight'><pre>        <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">length</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handles</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">handles</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">element</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">DRAG_START_E</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">enableDrag</span><span class="p">);</span>
+            <span class="nx">movableRange</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">handles</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">element</span><span class="p">);</span>
+        <span class="p">}</span></pre></div>
       </td>
     </tr>
     <tr id='section-13'>
       <td class=docs>
         <div class="pilwrap">
           <a class="pilcrow" href="#section-13">&#182;</a>
+        </div>
+        <p>The slider depends on some absolute positioning, so  adjust the
+elements widths and positions as necessary &hellip;</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>        <span class="k">this</span><span class="p">.</span><span class="nx">bar</span><span class="p">.</span><span class="nx">css</span><span class="p">({</span> <span class="nx">width</span><span class="o">:</span> <span class="nx">barWidth</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span> <span class="p">});</span>
+
+        <span class="nx">handleWidth</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">handleWidth</span> <span class="o">||</span>
+                      <span class="k">this</span><span class="p">.</span><span class="nx">handles</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">element</span><span class="p">.</span><span class="nx">width</span><span class="p">();</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-14'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-14">&#182;</a>
         </div>
         <p>The &ldquo;dangle&rdquo; allows the handle to appear slightly to the left of
 the slider bar.</p>
@@ -264,23 +304,22 @@ the slider bar.</p>
         <span class="p">});</span></pre></div>
       </td>
     </tr>
-    <tr id='section-14'>
+    <tr id='section-15'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-14">&#182;</a>
+          <a class="pilcrow" href="#section-15">&#182;</a>
         </div>
         <p>Finally, these events are triggered when the user seeks to
 update the slider.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>        <span class="k">this</span><span class="p">.</span><span class="nx">bar</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s1">&#39;mousedown&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">clickBar</span><span class="p">);</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">handle</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">DRAG_START_E</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">enableDrag</span><span class="p">);</span></pre></div>
+        <div class='highlight'><pre>        <span class="k">this</span><span class="p">.</span><span class="nx">bar</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s1">&#39;mousedown&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">clickBar</span><span class="p">);</span></pre></div>
       </td>
     </tr>
-    <tr id='section-15'>
+    <tr id='section-16'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-15">&#182;</a>
+          <a class="pilcrow" href="#section-16">&#182;</a>
         </div>
         <p>IE7/8 isn&rsquo;t triggering when clicking on the bar, but only on
 the movable-range. I&rsquo;m not yet sure why.</p>
@@ -304,40 +343,61 @@ they accurately represent the value of the slider.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">rePosition</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">animate</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">opts</span>       <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">,</span>
-            <span class="nx">delta</span>      <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-            <span class="nx">percent</span>    <span class="o">=</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="nx">delta</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
-            <span class="nx">percentStr</span> <span class="o">=</span> <span class="nx">percent</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">opts</span>   <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">,</span>
+            <span class="nx">delta</span>  <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 
-        <span class="k">this</span><span class="p">.</span><span class="nx">handle</span><span class="p">.</span><span class="nx">stop</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">activeBar</span><span class="p">.</span><span class="nx">stop</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="nx">animate</span> <span class="o">&amp;&amp;</span> <span class="nx">opts</span><span class="p">.</span><span class="nx">effects</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">handle</span><span class="p">.</span><span class="nx">animate</span><span class="p">({</span> <span class="nx">left</span><span class="o">:</span> <span class="nx">percentStr</span> <span class="p">},</span> <span class="p">{</span>
-                <span class="nx">duration</span><span class="o">:</span> <span class="nx">opts</span><span class="p">.</span><span class="nx">effectSpeed</span><span class="p">,</span>
-                <span class="nx">step</span><span class="o">:</span> <span class="nx">_</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">now</span><span class="p">)</span> <span class="p">{</span></pre></div>
+        <span class="nx">_</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">handles</span><span class="p">,</span> <span class="nx">_</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">handle</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">percent</span><span class="p">,</span> <span class="nx">percentStr</span><span class="p">;</span>
+
+            <span class="nx">percent</span>    <span class="o">=</span> <span class="p">(</span><span class="nx">handle</span><span class="p">.</span><span class="nx">value</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="nx">delta</span> <span class="o">*</span> <span class="mi">100</span><span class="p">;</span>
+            <span class="nx">percentStr</span> <span class="o">=</span> <span class="nx">percent</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">;</span>
+
+            <span class="nx">handle</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">stop</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="nx">animate</span> <span class="o">&amp;&amp;</span> <span class="nx">opts</span><span class="p">.</span><span class="nx">effects</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">handle</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">animate</span><span class="p">({</span> <span class="nx">left</span><span class="o">:</span> <span class="nx">percentStr</span> <span class="p">},</span> <span class="p">{</span>
+                    <span class="nx">duration</span><span class="o">:</span> <span class="nx">opts</span><span class="p">.</span><span class="nx">effectSpeed</span><span class="p">,</span>
+                    <span class="nx">step</span><span class="o">:</span> <span class="nx">_</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">now</span><span class="p">)</span> <span class="p">{</span></pre></div>
       </td>
     </tr>
-    <tr id='section-17'>
+    <tr id='section-18'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-17">&#182;</a>
+          <a class="pilcrow" href="#section-18">&#182;</a>
         </div>
         <p>&ldquo;now&rdquo; is the current &ldquo;left&rdquo; position of the handle.
-Convert that to the equivalent value. For example, if
-the slider is 0->200, and now is 20, the equivalent
-value is 40.</p>
+Convert that to the equivalent value. For example,
+if the slider is 0->200, and now is 20, the
+equivalent value is 40.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>                    <span class="k">this</span><span class="p">.</span><span class="nx">__positionActiveBar</span><span class="p">((</span><span class="nx">now</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span> <span class="o">*</span>
-                        <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-                <span class="p">},</span> <span class="k">this</span><span class="p">)</span>
-            <span class="p">});</span>
+        <div class='highlight'><pre>                        <span class="k">this</span><span class="p">.</span><span class="nx">__positionActiveBar</span><span class="p">((</span><span class="nx">now</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span> <span class="o">*</span>
+                            <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">range</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                            <span class="nx">handle</span><span class="p">);</span>
 
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">handle</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="nx">percentStr</span><span class="p">);</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">__positionActiveBar</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-        <span class="p">}</span>
+                        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+                    <span class="p">},</span> <span class="k">this</span><span class="p">)</span>
+                <span class="p">});</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-19'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-19">&#182;</a>
+        </div>
+        <p>TODO being in the loop results in an unnecessary</p>
+
+<pre><code> additional call to positionActiveBar
+</code></pre>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>                <span class="nx">handle</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="nx">percentStr</span><span class="p">);</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">__positionActiveBar</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">},</span> <span class="k">this</span><span class="p">));</span>
     <span class="p">};</span></pre></div>
       </td>
     </tr>
@@ -353,16 +413,27 @@ the value 0 is. Accepts a <code>value</code> argument so that it may be used
 within a <code>step</code> callback in a jQuery <code>animate</code> call.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">__positionActiveBar</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">leftPosition</span><span class="p">,</span> <span class="nx">rightPosition</span><span class="p">;</span>
+        <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">__positionActiveBar</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">handle</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">leftPosition</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">rightPosition</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span></pre></div>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">isRange</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">handle</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">handle</span><span class="p">.</span><span class="nx">index</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">leftPosition</span>  <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">__positionForValue</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nx">rightPosition</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">__positionForValue</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">leftPosition</span>  <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">__positionForValue</span><span class="p">(</span><span class="nx">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+                <span class="nx">rightPosition</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">__positionForValue</span><span class="p">(</span><span class="nx">value</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span></pre></div>
       </td>
     </tr>
-    <tr id='section-19'>
+    <tr id='section-21'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-19">&#182;</a>
+          <a class="pilcrow" href="#section-21">&#182;</a>
         </div>
         <p>position with the left edge underneath the handle, and the
 right edge at 0</p>
@@ -373,10 +444,10 @@ right edge at 0</p>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span></pre></div>
       </td>
     </tr>
-    <tr id='section-20'>
+    <tr id='section-22'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-20">&#182;</a>
+          <a class="pilcrow" href="#section-22">&#182;</a>
         </div>
         <p>position with the right edge underneath the handle, and the
 left edge at 0</p>
@@ -388,8 +459,13 @@ left edge at 0</p>
 
         <span class="nx">rightPosition</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">bar</span><span class="p">.</span><span class="nx">width</span><span class="p">()</span> <span class="o">-</span> <span class="nx">rightPosition</span><span class="p">;</span>
 
-        <span class="k">this</span><span class="p">.</span><span class="nx">activeBar</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="nx">leftPosition</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">);</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">activeBar</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="nx">rightPosition</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">leftPosition</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">activeBar</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="nx">leftPosition</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">rightPosition</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">activeBar</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="nx">rightPosition</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
     <span class="p">};</span></pre></div>
       </td>
     </tr>
@@ -451,6 +527,20 @@ by which to increase the value.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">stepUp</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">count</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">isRange</span><span class="p">)</span> <span class="p">{</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-26'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-26">&#182;</a>
+        </div>
+        <p>Cannot step a range-based slider.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+        <span class="p">}</span>
+
         <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">step</span> <span class="o">*</span> <span class="p">(</span><span class="nx">count</span> <span class="o">||</span> <span class="mi">1</span><span class="p">));</span>
     <span class="p">};</span></pre></div>
       </td>
@@ -543,10 +633,10 @@ the Quinn instance permitting chaining.</p>
             <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">===</span> <span class="s1">&#39;on&#39;</span><span class="p">)</span> <span class="p">{</span></pre></div>
       </td>
     </tr>
-    <tr id='section-29'>
+    <tr id='section-32'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-29">&#182;</a>
+          <a class="pilcrow" href="#section-32">&#182;</a>
         </div>
         <p>In case the user gave the longer form &lsquo;onChange&rsquo;, etc.</p>
       </td>
@@ -606,10 +696,10 @@ to instantly change the value.</p>
         <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">clickBar</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span></pre></div>
       </td>
     </tr>
-    <tr id='section-32'>
+    <tr id='section-35'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-32">&#182;</a>
+          <a class="pilcrow" href="#section-35">&#182;</a>
         </div>
         <p>Ignore the click if the left mouse button wasn&rsquo;t used.</p>
       </td>
@@ -619,13 +709,14 @@ to instantly change the value.</p>
         <span class="p">}</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">__willChange</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">__activateHandleWithEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">__setValue</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">__valueFromMouse</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">pageX</span><span class="p">),</span> <span class="kc">true</span><span class="p">);</span></pre></div>
       </td>
     </tr>
-    <tr id='section-33'>
+    <tr id='section-36'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-33">&#182;</a>
+          <a class="pilcrow" href="#section-36">&#182;</a>
         </div>
         <p>Allow user to further refine the slider value by dragging
 without releasing the mouse button. <code>disableDrag</code> will take
@@ -659,13 +750,14 @@ order to adjust the slider value.</p>
 (see <code>clickBar</code>).</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">enableDrag</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">skipPreamble</span><span class="p">)</span> <span class="p">{</span></pre></div>
+        <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">enableDrag</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">skipPreamble</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">handle</span><span class="p">;</span></pre></div>
       </td>
     </tr>
-    <tr id='section-35'>
+    <tr id='section-38'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-35">&#182;</a>
+          <a class="pilcrow" href="#section-38">&#182;</a>
         </div>
         <p>Only enable dragging when the left mouse button is used.</p>
       </td>
@@ -678,13 +770,13 @@ order to adjust the slider value.</p>
             <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
         <span class="p">}</span>
 
-        <span class="k">this</span><span class="p">.</span><span class="nx">handle</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span></pre></div>
+        <span class="k">this</span><span class="p">.</span><span class="nx">__activateHandleWithEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span></pre></div>
       </td>
     </tr>
-    <tr id='section-36'>
+    <tr id='section-39'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-36">&#182;</a>
+          <a class="pilcrow" href="#section-39">&#182;</a>
         </div>
         <p>These events are bound for the duration of the drag operation and
 keep track of the value changes made, with the events being removed
@@ -696,10 +788,10 @@ when the mouse button is released.</p>
             <span class="nx">bind</span><span class="p">(</span><span class="nx">DRAG_E</span>     <span class="o">+</span> <span class="s1">&#39;.quinn&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">drag</span><span class="p">).</span></pre></div>
       </td>
     </tr>
-    <tr id='section-37'>
+    <tr id='section-40'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-37">&#182;</a>
+          <a class="pilcrow" href="#section-40">&#182;</a>
         </div>
         <p>The mouse may leave the window while dragging, and the mouse
 button released. Watch for the mouse re-entering, and see what
@@ -725,10 +817,10 @@ the button is doing.</p>
         <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">disableDrag</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span></pre></div>
       </td>
     </tr>
-    <tr id='section-39'>
+    <tr id='section-42'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-39">&#182;</a>
+          <a class="pilcrow" href="#section-42">&#182;</a>
         </div>
         <p>Remove the events which were bound in <code>enableDrag</code>.</p>
       </td>
@@ -738,7 +830,7 @@ the button is doing.</p>
             <span class="nx">unbind</span><span class="p">(</span><span class="nx">DRAG_E</span> <span class="o">+</span> <span class="s1">&#39;.quinn&#39;</span><span class="p">).</span>
             <span class="nx">unbind</span><span class="p">(</span><span class="s1">&#39;mouseenter.quinn&#39;</span><span class="p">);</span>
 
-        <span class="k">this</span><span class="p">.</span><span class="nx">handle</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">activeHandle</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">__hasChanged</span><span class="p">();</span>
 
         <span class="k">return</span> <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
@@ -757,7 +849,7 @@ contiues to hold the left mouse button.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">drag</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">pageX</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">pageX</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">pageX</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">pageX</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">;</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="s1">&#39;touchmove&#39;</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">pageX</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">originalEvent</span><span class="p">.</span><span class="nx">targetTouches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">pageX</span><span class="p">;</span>
@@ -778,6 +870,36 @@ contiues to hold the left mouse button.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-45'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-45">&#182;</a>
+        </div>
+        <p>Given a click or drag event, determines the closest handle and
+activates it. Does nothing if a handle is already active.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">__activateHandleWithEvent</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">pageX</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">pageX</span><span class="p">,</span> <span class="nx">value</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">activeHandle</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="s1">&#39;touchmove&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">pageX</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">originalEvent</span><span class="p">.</span><span class="nx">targetTouches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">pageX</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nx">value</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">__valueFromMouse</span><span class="p">(</span><span class="nx">pageX</span><span class="p">);</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">activeHandle</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">handles</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">handle</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">handle</span><span class="p">.</span><span class="nx">value</span> <span class="o">-</span> <span class="nx">value</span><span class="p">);</span>
+        <span class="p">});</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">activeHandle</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
+    <span class="p">};</span></pre></div>
       </td>
     </tr>
     <tr id='section-__valueFromMouse'>
@@ -819,10 +941,10 @@ the bar&rsquo;s width.</p>
         <span class="k">if</span> <span class="p">(</span><span class="nx">mousePosition</span> <span class="o">&lt;</span> <span class="nx">maxLeft</span><span class="p">)</span> <span class="p">{</span></pre></div>
       </td>
     </tr>
-    <tr id='section-44'>
+    <tr id='section-48'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-44">&#182;</a>
+          <a class="pilcrow" href="#section-48">&#182;</a>
         </div>
         <p>Mouse is to the left of the bar.</p>
       </td>
@@ -831,10 +953,10 @@ the bar&rsquo;s width.</p>
         <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">mousePosition</span> <span class="o">&gt;</span> <span class="nx">maxRight</span><span class="p">)</span> <span class="p">{</span></pre></div>
       </td>
     </tr>
-    <tr id='section-45'>
+    <tr id='section-49'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-45">&#182;</a>
+          <a class="pilcrow" href="#section-49">&#182;</a>
         </div>
         <p>Mouse is to the right of the bar.</p>
       </td>
@@ -909,6 +1031,30 @@ maximum range options.</p>
     <span class="p">};</span></pre></div>
       </td>
     </tr>
+    <tr id='section-__sanitizeValue'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-__sanitizeValue">&#182;</a>
+        </div>
+        <h4>__sanitizeValue</h4>
+
+<p>Given a numberic value, snaps it to the nearest step, and ensures that
+it is within the selectable minima and maxima.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">__sanitizeValue</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">value</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">__roundToStep</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">selectable</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">selectable</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">selectable</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">selectable</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
+    <span class="p">};</span></pre></div>
+      </td>
+    </tr>
     <tr id='section-__willChange'>
       <td class=docs>
         <div class="pilwrap">
@@ -942,13 +1088,14 @@ __willChange &mdash; if false, no changes are permitted to the slider.</p>
 changes to the slider.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">__hasChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span></pre></div>
+        <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">__hasChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">activeHandle</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span></pre></div>
       </td>
     </tr>
-    <tr id='section-50'>
+    <tr id='section-55'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-50">&#182;</a>
+          <a class="pilcrow" href="#section-55">&#182;</a>
         </div>
         <p>Run the onCommit callback; if the callback returns false then we
 revert the slider change, and restore everything to how it was
@@ -966,10 +1113,10 @@ event when the value is reverted.</p>
         <span class="k">if</span> <span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">head</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">previousValues</span><span class="p">)</span> <span class="o">===</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span></pre></div>
       </td>
     </tr>
-    <tr id='section-51'>
+    <tr id='section-56'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-51">&#182;</a>
+          <a class="pilcrow" href="#section-56">&#182;</a>
         </div>
         <p>The user reset the slider back to where it was.</p>
       </td>
@@ -990,7 +1137,9 @@ event when the value is reverted.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">__abortChange</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">activeHandle</span>   <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">previousValues</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">tail</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">previousValues</span><span class="p">);</span>
+
         <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;abort&#39;</span><span class="p">);</span>
     <span class="p">};</span></pre></div>
       </td>
@@ -1006,48 +1155,185 @@ event when the value is reverted.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">__setValue</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">newValue</span><span class="p">,</span> <span class="nx">animate</span><span class="p">,</span> <span class="nx">doCallback</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">isNumber</span><span class="p">(</span><span class="nx">newValue</span><span class="p">))</span> <span class="p">{</span>
-            <span class="nx">newValue</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">__roundToStep</span><span class="p">(</span><span class="nx">newValue</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">originalValue</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="nx">numberValue</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">length</span><span class="p">,</span> <span class="nx">handle</span><span class="p">;</span>
 
-            <span class="k">if</span> <span class="p">(</span><span class="nx">newValue</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">selectable</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
-                <span class="nx">newValue</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">selectable</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">newValue</span> <span class="o">&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">selectable</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
-                <span class="nx">newValue</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">selectable</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">isRange</span><span class="p">)</span> <span class="p">{</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-59'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-59">&#182;</a>
+        </div>
+        <p>RANGE-BASED SLIDERS</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>            <span class="k">if</span> <span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">newValue</span><span class="p">))</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">originalValue</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">clone</span><span class="p">(</span><span class="nx">originalValue</span><span class="p">);</span>
+
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">newValue</span><span class="p">.</span><span class="nx">length</span> <span class="o">!=</span> <span class="nx">originalValue</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-60'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-60">&#182;</a>
+        </div>
+        <p>Value is uninitialized when called for the first time.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>                    <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="p">[];</span>
+                <span class="p">}</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-61'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-61">&#182;</a>
+        </div>
+        <p>Don&rsquo;t mutate the original array.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>                <span class="nx">newValue</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">clone</span><span class="p">(</span><span class="nx">newValue</span><span class="p">);</span>
+
+                <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">length</span> <span class="o">=</span> <span class="nx">newValue</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">newValue</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">__sanitizeValue</span><span class="p">(</span><span class="nx">newValue</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">isNumber</span><span class="p">(</span><span class="nx">newValue</span><span class="p">))</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="k">this</span><span class="p">.</span><span class="nx">activeHandle</span><span class="p">)</span> <span class="p">{</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-62'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-62">&#182;</a>
+        </div>
+        <p>Number values are only accepted during drag events,
+when the activeHandle has been set.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>                    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="nx">newValue</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">__sanitizeValue</span><span class="p">(</span><span class="nx">newValue</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">activeHandle</span><span class="p">.</span><span class="nx">index</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">newValue</span> <span class="o">&lt;=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handles</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">newValue</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handles</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">value</span> <span class="o">+</span>
+                            <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">step</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">newValue</span> <span class="o">&gt;=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handles</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">newValue</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handles</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">value</span> <span class="o">-</span>
+                            <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">step</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+
+                <span class="nx">numberValue</span> <span class="o">=</span> <span class="nx">newValue</span><span class="p">;</span>
+
+                <span class="nx">newValue</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">clone</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+                <span class="nx">newValue</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">activeHandle</span><span class="p">.</span><span class="nx">index</span><span class="p">]</span> <span class="o">=</span> <span class="nx">numberValue</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-63'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-63">&#182;</a>
+        </div>
+        <p>The default slider value when initialized is &ldquo;null&rdquo;, so
+default to setting the range to the slider minimum and
+maximum permitted value.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>                <span class="nx">newValue</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">clone</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">selectable</span><span class="p">);</span>
             <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">isEqual</span><span class="p">(</span><span class="nx">originalValue</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">))</span> <span class="p">{</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-64'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-64">&#182;</a>
+        </div>
+        <p>No values were changed.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">newValue</span><span class="p">;</span>
+
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span></pre></div>
       </td>
     </tr>
-    <tr id='section-54'>
+    <tr id='section-65'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-54">&#182;</a>
+          <a class="pilcrow" href="#section-65">&#182;</a>
         </div>
-        <p>The default slider value when initialized is &ldquo;null&rdquo;, so default
-to setting the instance to the lowest available value.</p>
+        <p>SINGLE VALUE SLIDERS</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>            <span class="nx">newValue</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">selectable</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-        <span class="p">}</span>
+        <div class='highlight'><pre>            <span class="k">if</span> <span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">isNumber</span><span class="p">(</span><span class="nx">newValue</span><span class="p">))</span> <span class="p">{</span>
+                <span class="nx">newValue</span> <span class="o">=</span> <span class="p">[</span> <span class="k">this</span><span class="p">.</span><span class="nx">__sanitizeValue</span><span class="p">(</span><span class="nx">newValue</span><span class="p">)</span> <span class="p">];</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-66'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-66">&#182;</a>
+        </div>
+        <p>The default slider value when initialized is &ldquo;null&rdquo;, so
+default to setting the range to the slider minimum
+permitted value.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>                <span class="nx">newValue</span> <span class="o">=</span> <span class="p">[</span> <span class="k">this</span><span class="p">.</span><span class="nx">selectable</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">];</span>
+            <span class="p">}</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="nx">newValue</span> <span class="o">===</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">originalValue</span> <span class="o">===</span> <span class="nx">newValue</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-67'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-67">&#182;</a>
+        </div>
+        <p>No values were changed.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">newValue</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
         <span class="p">}</span></pre></div>
       </td>
     </tr>
-    <tr id='section-55'>
+    <tr id='section-68'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-55">&#182;</a>
+          <a class="pilcrow" href="#section-68">&#182;</a>
         </div>
         <p>Run the onChange callback; if the callback returns false then stop
 immediately and do not change the value.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="k">this</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">))</span> <span class="p">{</span>
+        <div class='highlight'><pre>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="k">this</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">originalValue</span><span class="p">;</span>
             <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
         <span class="p">}</span>
 
-        <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">newValue</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">length</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handles</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">handles</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">newValue</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+        <span class="p">}</span>
+
         <span class="k">this</span><span class="p">.</span><span class="nx">rePosition</span><span class="p">(</span><span class="nx">animate</span><span class="p">);</span>
 
         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
@@ -1068,10 +1354,10 @@ provide them.</p>
         <div class='highlight'><pre>    <span class="nx">Quinn</span><span class="p">.</span><span class="nx">defaults</span> <span class="o">=</span> <span class="p">{</span></pre></div>
       </td>
     </tr>
-    <tr id='section-57'>
+    <tr id='section-70'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-57">&#182;</a>
+          <a class="pilcrow" href="#section-70">&#182;</a>
         </div>
         <p>An array with the lowest and highest values represented by the
 slider.</p>
@@ -1080,10 +1366,10 @@ slider.</p>
         <div class='highlight'><pre>        <span class="nx">range</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span></pre></div>
       </td>
     </tr>
-    <tr id='section-58'>
+    <tr id='section-71'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-58">&#182;</a>
+          <a class="pilcrow" href="#section-71">&#182;</a>
         </div>
         <p>The range of values which can be selected by the user. Normally
 this would be the same as &ldquo;range&rdquo;, however this option allows you
@@ -1093,10 +1379,10 @@ to make only a portion of the slider selectable.</p>
         <div class='highlight'><pre>        <span class="nx">selectable</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span></pre></div>
       </td>
     </tr>
-    <tr id='section-59'>
+    <tr id='section-72'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-59">&#182;</a>
+          <a class="pilcrow" href="#section-72">&#182;</a>
         </div>
         <p>The &ldquo;steps&rdquo; by which the selectable value increases. For example,
 when set to 2, the default slider will increase in steps from 0, 2,
@@ -1106,10 +1392,10 @@ when set to 2, the default slider will increase in steps from 0, 2,
         <div class='highlight'><pre>        <span class="nx">step</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span></pre></div>
       </td>
     </tr>
-    <tr id='section-60'>
+    <tr id='section-73'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-60">&#182;</a>
+          <a class="pilcrow" href="#section-73">&#182;</a>
         </div>
         <p>The initial value of the slider. null = the lowest value in the
 range option.</p>
@@ -1118,10 +1404,10 @@ range option.</p>
         <div class='highlight'><pre>        <span class="nx">value</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span></pre></div>
       </td>
     </tr>
-    <tr id='section-61'>
+    <tr id='section-74'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-61">&#182;</a>
+          <a class="pilcrow" href="#section-74">&#182;</a>
         </div>
         <p>Restrics the values which may be chosen to those listed in the
 <code>only</code> array.</p>
@@ -1130,10 +1416,10 @@ range option.</p>
         <div class='highlight'><pre>        <span class="nx">only</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span></pre></div>
       </td>
     </tr>
-    <tr id='section-62'>
+    <tr id='section-75'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-62">&#182;</a>
+          <a class="pilcrow" href="#section-75">&#182;</a>
         </div>
         <p>Disables the slider when initialized so that a user may not change
 it&rsquo;s value.</p>
@@ -1142,10 +1428,10 @@ it&rsquo;s value.</p>
         <div class='highlight'><pre>        <span class="nx">disable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span></pre></div>
       </td>
     </tr>
-    <tr id='section-63'>
+    <tr id='section-76'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-63">&#182;</a>
+          <a class="pilcrow" href="#section-76">&#182;</a>
         </div>
         <p>By default, Quinn fades the opacity of the slider to 50% when
 disabled, however this may not work perfectly with older Internet
@@ -1156,10 +1442,36 @@ will tell Quinn not to fade the slider when disabled.</p>
         <div class='highlight'><pre>        <span class="nx">disabledOpacity</span><span class="o">:</span> <span class="mf">0.5</span><span class="p">,</span></pre></div>
       </td>
     </tr>
-    <tr id='section-64'>
+    <tr id='section-77'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-64">&#182;</a>
+          <a class="pilcrow" href="#section-77">&#182;</a>
+        </div>
+        <p>If using Quinn on an element which isn&rsquo;t attached to the DOM, the
+library won&rsquo;t be able to determine it&rsquo;s width; supply it as a
+number (in pixels).</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>        <span class="nx">width</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-78'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-78">&#182;</a>
+        </div>
+        <p>If using Quinn on an element which isn&rsquo;t attached to the DOM, the
+library won&rsquo;t be able to determine the width of the handle; suppl
+it as a number (in pixels).</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>        <span class="nx">handleWidth</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-79'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-79">&#182;</a>
         </div>
         <p>A callback which is run when changing the slider value. Additional
 callbacks may be added with Quinn#bind(&lsquo;change&rsquo;).</p>
@@ -1172,10 +1484,10 @@ callbacks may be added with Quinn#bind(&lsquo;change&rsquo;).</p>
         <div class='highlight'><pre>        <span class="nx">onChange</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span></pre></div>
       </td>
     </tr>
-    <tr id='section-65'>
+    <tr id='section-80'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-65">&#182;</a>
+          <a class="pilcrow" href="#section-80">&#182;</a>
         </div>
         <p>Run after the user has finished making a change.</p>
 
@@ -1187,10 +1499,10 @@ callbacks may be added with Quinn#bind(&lsquo;change&rsquo;).</p>
         <div class='highlight'><pre>        <span class="nx">onCommit</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span></pre></div>
       </td>
     </tr>
-    <tr id='section-66'>
+    <tr id='section-81'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-66">&#182;</a>
+          <a class="pilcrow" href="#section-81">&#182;</a>
         </div>
         <p>Run once after the slider has been constructed.</p>
 
@@ -1202,10 +1514,10 @@ callbacks may be added with Quinn#bind(&lsquo;change&rsquo;).</p>
         <div class='highlight'><pre>        <span class="nx">onSetup</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span></pre></div>
       </td>
     </tr>
-    <tr id='section-67'>
+    <tr id='section-82'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-67">&#182;</a>
+          <a class="pilcrow" href="#section-82">&#182;</a>
         </div>
         <p>When using animations (such as clicking on the bar), how long
 should the duration be? Any jQuery effect duration value is
@@ -1215,10 +1527,10 @@ permitted.</p>
         <div class='highlight'><pre>        <span class="nx">effectSpeed</span><span class="o">:</span> <span class="s1">&#39;fast&#39;</span><span class="p">,</span></pre></div>
       </td>
     </tr>
-    <tr id='section-68'>
+    <tr id='section-83'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-68">&#182;</a>
+          <a class="pilcrow" href="#section-83">&#182;</a>
         </div>
         <p>Set to false to disable all animation on the slider.</p>
       </td>
@@ -1227,10 +1539,10 @@ permitted.</p>
     <span class="p">};</span></pre></div>
       </td>
     </tr>
-    <tr id='section-69'>
+    <tr id='section-84'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-69">&#182;</a>
+          <a class="pilcrow" href="#section-84">&#182;</a>
         </div>
         <hr />
       </td>
@@ -1238,10 +1550,10 @@ permitted.</p>
         <div class='highlight'><pre></pre></div>
       </td>
     </tr>
-    <tr id='section-70'>
+    <tr id='section-85'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-70">&#182;</a>
+          <a class="pilcrow" href="#section-85">&#182;</a>
         </div>
         <p>The jQuery helper function. Permits $(&hellip;).quinn();</p>
       </td>
@@ -1251,10 +1563,10 @@ permitted.</p>
     <span class="p">};</span></pre></div>
       </td>
     </tr>
-    <tr id='section-71'>
+    <tr id='section-86'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-71">&#182;</a>
+          <a class="pilcrow" href="#section-86">&#182;</a>
         </div>
         <p>Expose Quinn to the world on $.Quinn.</p>
 

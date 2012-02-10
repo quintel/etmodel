@@ -195,5 +195,21 @@ QUnit.specify('', function () {
                 assert(slider.value).equals(50);
             });
         }); // when using the only option
+
+        describe('when using a range-based slider', function () {
+            before(function () {
+                slider = new $.Quinn(wrapper, { value: [25, 75] });
+            });
+
+            it('should set the new values', function () {
+                slider.setValue([10, 90]);
+                assert(_.isEqual([10, 90], slider.value)).isTrue();
+            });
+
+            it('should not permit an integer value', function () {
+                assert(_.isEqual(slider.setValue(10), [25, 75])).isTrue();
+                assert(_.isEqual([25, 75], slider.value)).isTrue();
+            });
+        });
     });
 });

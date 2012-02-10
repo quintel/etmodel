@@ -31,7 +31,16 @@
             }
 
             var precision = determinePrecision(slider.options.step),
-                text      = newValue.toFixed(precision);
+                text;
+
+            if (_.isArray(newValue)) {
+                text = newValue[0].toFixed(precision) + ' - ' +
+                       newValue[1].toFixed(precision);
+            } else if (newValue != null) {
+                text = newValue.toFixed(precision);
+            } else {
+                text = '???';
+            }
 
             if (slider.range[1] === 1.21) {
                 text += ' GW';

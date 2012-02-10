@@ -17,7 +17,7 @@ end
 
 desc 'Builds the annotated source code docs'
 task :annotated do
-  `rocco jquery.quinn.js`
+  `bundle exec rocco jquery.quinn.js`
   FileUtils.mv('jquery.quinn.html', 'docs/jquery.quinn.html')
 end
 

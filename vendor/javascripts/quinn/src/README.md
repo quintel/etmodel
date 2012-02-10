@@ -31,14 +31,14 @@ open-sourced with their kind permission. Quinn is released under the
 Downloads
 ---------
 
-[Everything (0.3.7)][tarball]
+[Everything (0.4.2)][tarball]
 :   Tarball containing JS, CSS, and images
 
-[Development Version (0.3.7)][development-js]
-:   13.3kb, JS only, Uncompressed with comments
+[Development Version (0.4.2)][development-js]
+:   28.4kb, JS only, Uncompressed with comments
 
-[Production Version (0.3.7)][production-js]
-:   1.54kb, JS only, Minified and Gzipped
+[Production Version (0.4.2)][production-js]
+:   2.4kb, JS only, Minified and Gzipped
 
 Table of Contents
 -----------------
@@ -46,7 +46,8 @@ Table of Contents
 #### Options
 
 [Minima and Maxima][range], [Initial Values][value],
-[Steps][step], [Selectable Ranges][selectable], [Effects][effects],
+[Steps][step], [Selectable Ranges][selectable],
+[Multiple Values][values], [Effects][effects],
 [Specific Values][only], [Disabling the Slider][disable]
 
 #### Callbacks
@@ -55,6 +56,8 @@ Table of Contents
 [onCommit][oncommit], [onAbort][onabort]
 
 #### [Theming][theming]
+
+#### [History][history]
 
 Options
 -------
@@ -129,6 +132,14 @@ lower value is instead rounded to 20 (not 0 since this is outside the
 selectable range supplied and might break your data validation later).
 
     $('.slider').quinn({ selectable: [5, 80], step: 20 });
+
+### Multiple Values `value: [value, value]` {#values}
+
+Instead of a Quinn slider having a single value, it may instead be used
+to represent a range of values, with a lower and upper value. Simply
+supply an array with two numeric values.
+
+    $('.slider').quinn({ value: [25, 75] });
 
 ### Effects `effects: bool` `effectSpeed: number` {#effects}
 
@@ -328,6 +339,35 @@ need to alter the CSS. For example:
 History
 -------
 
+#### 0.4.2 _February 10th, 2012_
+
+Changed the way touch-support was detected to fix clicking on the handle
+not working correctly in Chrome 17.
+
+#### 0.4.1 _January 20th, 2012_
+
+Fix for an occasional error when clicking on the bar of sliders when
+animation is enabled.
+
+#### 0.4.0 _December 8th, 2011_
+
+Quinn ranges may now also represent a [range of values][values] by
+providing a two-element array as the value option. Note that this
+will be the last major Quinn release which will use the current
+"change" and "commit" callback names; 0.5 will change these to
+"drag" and "change" respectively.
+
+#### 0.3.9 _October 4th, 2011_
+
+During `onChange` callbacks, `quinn.value` will now be the new value of
+the slider, and not the previous value.
+
+#### 0.3.8 _September 29th, 2011_
+
+Added `width` and `handleWidth` to manually set the width of these
+elements. Useful when using Quinn on a wrapper element which hasn't
+yet been added to the DOM.
+
 #### 0.3.7 _August 18th, 2011_
 
 Fix a bug with Firefox 6 where elements positioned absolutely with
@@ -415,7 +455,7 @@ Opera and Internet Explorer are not yet complete.
 [us]:             http://documentcloud.github.com/underscore
 [easing]:         http://gsgd.co.uk/sandbox/jquery/easing
 
-[tarball]:        https://github.com/antw/quinn/tarball/v0.3.7
+[tarball]:        https://github.com/antw/quinn/tarball/v0.4.2
 [development-js]: http://antw.github.com/quinn/jquery.quinn.js
 [production-js]:  http://antw.github.com/quinn/jquery.quinn.min.js
 
@@ -426,6 +466,7 @@ Opera and Internet Explorer are not yet complete.
 [value]:          #value
 [step]:           #step
 [selectable]:     #selectable
+[values]:         #values
 [effects]:        #effects
 [only]:           #only
 [disable]:        #disable
@@ -435,3 +476,4 @@ Opera and Internet Explorer are not yet complete.
 [oncommit]:       #oncommit
 [onabort]:        #onbort
 [theming]:        #theming
+[history]:        #history

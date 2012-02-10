@@ -49,12 +49,12 @@ open-sourced with their kind permission. Quinn is released under the
 <h2 id="downloads">Downloads</h2>
 
 <dl>
-  <dt><a href="https://github.com/antw/quinn/tarball/v0.3.7">Everything (0.3.7)</a></dt>
+  <dt><a href="https://github.com/antw/quinn/tarball/v0.4.2">Everything (0.4.2)</a></dt>
   <dd>Tarball containing JS, CSS, and images</dd>
-  <dt><a href="http://antw.github.com/quinn/jquery.quinn.js">Development Version (0.3.7)</a></dt>
-  <dd>13.3kb, JS only, Uncompressed with comments</dd>
-  <dt><a href="http://antw.github.com/quinn/jquery.quinn.min.js">Production Version (0.3.7)</a></dt>
-  <dd>1.54kb, JS only, Minified and Gzipped</dd>
+  <dt><a href="http://antw.github.com/quinn/jquery.quinn.js">Development Version (0.4.2)</a></dt>
+  <dd>28.4kb, JS only, Uncompressed with comments</dd>
+  <dt><a href="http://antw.github.com/quinn/jquery.quinn.min.js">Production Version (0.4.2)</a></dt>
+  <dd>2.4kb, JS only, Minified and Gzipped</dd>
 </dl>
 
 <h2 id="table-of-contents">Table of Contents</h2>
@@ -62,7 +62,8 @@ open-sourced with their kind permission. Quinn is released under the
 <h4 id="options">Options</h4>
 
 <p><a href="#range">Minima and Maxima</a>, <a href="#value">Initial Values</a>,
-<a href="#step">Steps</a>, <a href="#selectable">Selectable Ranges</a>, <a href="#effects">Effects</a>,
+<a href="#step">Steps</a>, <a href="#selectable">Selectable Ranges</a>,
+<a href="#values">Multiple Values</a>, <a href="#effects">Effects</a>,
 <a href="#only">Specific Values</a>, <a href="#disable">Disabling the Slider</a></p>
 
 <h4 id="callbacks">Callbacks</h4>
@@ -71,6 +72,8 @@ open-sourced with their kind permission. Quinn is released under the
 <a href="#oncommit">onCommit</a>, <a href="#onbort">onAbort</a></p>
 
 <h4 id="themingtheming"><a href="#theming">Theming</a></h4>
+
+<h4 id="historyhistory"><a href="#history">History</a></h4>
 
 <h2 id="options-1">Options</h2>
 
@@ -150,6 +153,15 @@ lower value is instead rounded to 20 (not 0 since this is outside the
 selectable range supplied and might break your data validation later).</p>
 
 <pre><code>$('.slider').quinn({ selectable: [5, 80], step: 20 });
+</code></pre>
+
+<h3 id="values">Multiple Values <code>value: [value, value]</code></h3>
+
+<p>Instead of a Quinn slider having a single value, it may instead be used
+to represent a range of values, with a lower and upper value. Simply
+supply an array with two numeric values.</p>
+
+<pre><code>$('.slider').quinn({ value: [25, 75] });
 </code></pre>
 
 <h3 id="effects">Effects <code>effects: bool</code> <code>effectSpeed: number</code></h3>
@@ -355,6 +367,35 @@ $('.slider').quinn({
 
 <h2 id="history">History</h2>
 
+<h4 id="february-10th-2012">0.4.2 <em>February 10th, 2012</em></h4>
+
+<p>Changed the way touch-support was detected to fix clicking on the handle
+not working correctly in Chrome 17.</p>
+
+<h4 id="january-20th-2012">0.4.1 <em>January 20th, 2012</em></h4>
+
+<p>Fix for an occasional error when clicking on the bar of sliders when
+animation is enabled.</p>
+
+<h4 id="december-8th-2011">0.4.0 <em>December 8th, 2011</em></h4>
+
+<p>Quinn ranges may now also represent a <a href="#values">range of values</a> by
+providing a two-element array as the value option. Note that this
+will be the last major Quinn release which will use the current
+“change” and “commit” callback names; 0.5 will change these to
+“drag” and “change” respectively.</p>
+
+<h4 id="october-4th-2011">0.3.9 <em>October 4th, 2011</em></h4>
+
+<p>During <code>onChange</code> callbacks, <code>quinn.value</code> will now be the new value of
+the slider, and not the previous value.</p>
+
+<h4 id="september-29th-2011">0.3.8 <em>September 29th, 2011</em></h4>
+
+<p>Added <code>width</code> and <code>handleWidth</code> to manually set the width of these
+elements. Useful when using Quinn on a wrapper element which hasn’t
+yet been added to the DOM.</p>
+
 <h4 id="august-18th-2011">0.3.7 <em>August 18th, 2011</em></h4>
 
 <p>Fix a bug with Firefox 6 where elements positioned absolutely with
@@ -434,9 +475,9 @@ Opera and Internet Explorer are not yet complete.</p>
     <!-- end README -->
     </div>
 
-    <script type="text/javascript" src="vendor/jquery-1.6.1.js"></script>
+    <script type="text/javascript" src="vendor/jquery-1.7.1.js"></script>
     <script type="text/javascript" src="vendor/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="vendor/underscore-1.1.6.js"></script>
+    <script type="text/javascript" src="vendor/underscore-1.3.0.js"></script>
     <script type="text/javascript" src="jquery.quinn.js"></script>
     <script type="text/javascript" src="vendor/highlight.pack.js"></script>
     <script type="text/javascript" src="vendor/examples.js"></script>

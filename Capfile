@@ -35,7 +35,7 @@ namespace :deploy do
 end
 
 after "deploy:update_code", "deploy:link_configuration_files"
-# after "deploy", "deploy:cleanup" # why?
+after "deploy", "deploy:cleanup"
 after "deploy", "deploy:notify_airbrake"
 after "deploy:symlink", "sphinx:symlink_indexes"
 

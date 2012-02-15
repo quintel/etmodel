@@ -2,7 +2,7 @@
 set :application, "etmodel"
 set :stage, :production
 set :server_type, 'production'
-set :deploy_to, "/home/ubuntu/apps/etmodel"
+set :deploy_to, "/u/apps/etmodel"
 set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
 set :scm, :git
 set :repository,  "git@github.com:dennisschoenmakers/etmodel.git"
@@ -13,7 +13,6 @@ set :chmod755, "app config db lib public vendor script script/* public/disp*"
 ssh_options[:forward_agent] = true
 set :use_sudo, false
 set :bundle_flags, '--deployment --quiet --binstubs --shebang ruby-local-exec'
-set :bundle_cmd, '/usr/local/rvm/bin/etmodel_bundle'
 set :local_db_name, 'etmodel_dev'
 
 task :production do
@@ -27,9 +26,9 @@ task :production do
   server domain, :web, :app, :db, :primary => true
 end
 
-task :staging do
-  set :domain, "46.137.123.187"
-  set :branch, "staging"
+task :beta do
+  set :domain, "ec2-46-137-34-140.eu-west-1.compute.amazonaws.com"
+  set :branch, "staging_rc"
   set :application_key, "#{application}_staging"
   set :db_pass, "feboblokker"
   set :db_name, application_key
@@ -47,8 +46,3 @@ def rake_on_current(*tasks)
   end
 end
 
-# RVM Stuff
-# Add RVM's lib directory to the load path.
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-require "rvm/capistrano" if ENV['rvm_path']
-set :rvm_ruby_string, '1.9.3@etmodel'

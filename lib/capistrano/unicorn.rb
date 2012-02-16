@@ -1,7 +1,7 @@
 set :rails_env, :production
-set(:unicorn_binary) {"/usr/local/rvm/bin/#{application_name}_unicorn"}
-set(:unicorn_config) {"#{current_path}/config/unicorn/#{application_name}.rb"}
-set(:unicorn_pid) {"#{shared_path}/pids/unicorn.pid"}
+set(:unicorn_binary) {"#{current_path}/bin/unicorn"}
+set(:unicorn_config) {"#{current_path}/config/unicorn/production.rb"}
+set(:unicorn_pid)    {"#{shared_path}/pids/unicorn.pid"}
 
 namespace :deploy do
   task :start, :roles => :app, :except => { :no_release => true } do

@@ -27,8 +27,8 @@ task :production do
 end
 
 task :beta do
-  set :domain, "ec2-46-137-34-140.eu-west-1.compute.amazonaws.com"
-  set :branch, "staging_rc"
+  set :domain, "beta.et-model.com"
+  set :branch, "staging"
   set :application_key, "#{application}_staging"
   set :db_pass, "feboblokker"
   set :db_name, application_key

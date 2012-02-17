@@ -33,6 +33,7 @@ window.AppView = Backbone.View.extend({
   bootstrap : function() {
     var dashChangeEl = $('#dashboard_change');
 
+    window.sidebar.bootstrap();
     // If a "change dashboard" button is present, set up the DashboardChanger.
     if (dashChangeEl.length > 0) {
       new DashboardChangerView(dashChangeEl);
@@ -119,6 +120,7 @@ window.AppView = Backbone.View.extend({
     window.charts.each(function(chart) { chart.trigger('change'); });
     window.policy_goals.invoke('update_view');
     window.policy_goals.update_totals();
+    window.sidebar.update_bars();
 
     if (App.peak_load != null) { 
       App.peak_load.trigger('change'); 

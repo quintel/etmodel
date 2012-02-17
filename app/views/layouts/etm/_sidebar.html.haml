@@ -1,9 +1,13 @@
 #sidebar
   %ul
     - Current.view.sidebar_items.each do |item|
-      %li{:id => item.key, :class => (params[:id] == item.key) ? 'active' : nil}
+      %li{:id => item.key,
+          :class => (params[:id] == item.key) ? 'active' : nil,
+          :'data-gquery' => item.percentage_bar_query}
         %a{:class => "ico-#{item.key}", :href => url_for(:action => item.key)}
           %em &nbsp;
           %p
             %span.title= raw t("sidebar_items.#{item.key}")
-            - percentage_bar(item)
+            - unless item.percentage_bar_query.blank?
+              %span.bar{:alt => t('sidebar_items.alt'), :style => "width: 0px"}
+              %span.value

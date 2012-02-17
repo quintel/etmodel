@@ -27,23 +27,6 @@ module LayoutHelper
     content_tag :option, label, :value => code, :selected => selected
   end
 
-  def percentage_bar(item)
-    return if item.percentage_bar_query.blank?
-    # need client for showing % bars
-    if client ||= Api::Client.new
-      client.api_session_id = Current.setting.api_session_id
-    end
-    val = client.simple_query(item.percentage_bar_query)
-    # multiplied by 90 because of interface limits, there should be some space left for the value
-    haml_tag :span, :class =>'bar',
-                    :style => "width: #{(val * 90).round(2)}%",
-                    :alt => I18n.t('sidebar_items.alt')
-    haml_tag :span, :class =>'value',
-                    :style => "left: #{(val * 90).round(2)}%" do
-      haml_concat "#{(val * 100).round}%"
-    end
-  end
-
   # Tries mapping a hex string to a human readable colour name
   #
   def color_to_string(hex)

@@ -1,14 +1,42 @@
 development: &DEV
-    api_url: http://etengine.dev/api/v2
+    # base url for active resource requests
     active_resource_base: http://etengine.dev/api/v2
-    api_proxy_url: /ete_proxy
-    local_proxy: false
-    ga_tracker_code: 123456
-    unselectable_text: false
-    max_scenarios:
     airbrake_api_key: '3ea5a72aad48a32d7bb486bc71ad4fd5'
+
+    # base url for api requests. This is used when CORS is enabled
+    # (which is the default) or when the rails application runs a
+    # local rack-based AJAX proxy
+    api_url: http://etengine.dev/api/v2
+
+    # This sets the url we use as API proxy. The proxying is handled
+    # by nginx or a local rack-based proxy
+    api_proxy_url: /ete_proxy
+
+    # google analytics key
+    ga_tracker_code: 123456
+
+    # set to true if you want to enable a rack-based proxy. Nginx instances
+    # don't need it. The proxy root will be `api_proxy_url` and will forward
+    # requests to `api_url`
+    local_proxy: false
+
+    # is this still used?
+    max_scenarios:
+
+    # is this still used?
+    unselectable_text: false
+
+    # URL that shows the converter details when you click on
+    # the converter info detail. The converter key will be added to the URL
     converter_detail_url: http://beta.et-engine.com/converters
+
+    # CORS is enabled by default. Offline instances such as the laptop should
+    # use the proxy only, though, and you should disable CORS
     disable_cors: false # offline instances might need this
+
+    #  standalone instances are those such as the laptop. If set to true
+    # the remote links and scripts will be disabled and the videos will
+    # be played with a local player rather than vimeo/youtube
     standalone: false
 production:
     <<: *DEV

@@ -25,7 +25,7 @@ gem 'yui-compressor'
 gem 'i18n-js'
 
 # supporting gems
-gem 'airbrake', '~> 3.0.5'
+gem 'airbrake', '~> 3.0.9'
 gem 'newrelic_rpm'
 
 # system gems

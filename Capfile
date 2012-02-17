@@ -1,4 +1,5 @@
 require 'bundler/capistrano'
+require 'airbrake/capistrano'
 
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 require 'thinking_sphinx/deploy/capistrano'
@@ -21,23 +22,10 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/assets/videos #{release_path}/public/videos"
     # memcached.flush
   end
-
-  desc "Notify Airbrake of the deployment"
-  task :notify_airbrake, :except => { :no_release => true } do
-    rails_env = fetch(:airbrake_env, fetch(:rails_env, "production"))
-    local_user = ENV['USER'] || ENV['USERNAME']
-    notify_command = "bundle exec rake RAILS_ENV=production airbrake:deploy \
-      TO=#{rails_env} REVISION=#{current_revision} REPO=#{repository}       \
-      USER=#{local_user} API_KEY=#{airbrake_key}"
-    puts "Notifying Airbrake of Deploy of #{server_type} (#{notify_command})"
-    run "cd #{release_path} && #{notify_command}"
-    puts "Airbrake Notification Complete."
-  end
 end
 
 after "deploy:update_code", "deploy:link_configuration_files"
 after "deploy", "deploy:cleanup"
-after "deploy", "deploy:notify_airbrake"
 after "deploy:symlink", "sphinx:symlink_indexes"
 
 # Thinking sphinx keeps hanging on the stop phase.

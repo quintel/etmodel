@@ -2,7 +2,8 @@ class PartnersController < ApplicationController
   layout 'pages'
 
   def show
-    @partner = Partner.find_by_slug(params[:id])
+    country = Current.setting.country rescue nil
+    @partner = Partner.find_by_slug_localized(params[:id], country)
     render :file => 'public/404.html', :status => 404 if @partner.nil?
   end
 

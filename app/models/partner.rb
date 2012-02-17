@@ -24,7 +24,7 @@ class Partner < ActiveRecord::Base
   scope :right, where(:place => "right")
   scope :unique, group("name")
   scope :include_descriptions, includes(:description)
-  
+
   accepts_nested_attributes_for :description
 
   ##
@@ -36,6 +36,11 @@ class Partner < ActiveRecord::Base
     find_by_name(name.to_s.downcase)
   end
 
+  # If available will return the country specific partner item
+  def self.find_by_slug_localized(name, country = nil)
+    where(:name => name.downcase, :country => country).first || find_by_slug(name)
+  end
+
   def description?
     self.description
   end
@@ -43,15 +48,15 @@ class Partner < ActiveRecord::Base
   def name_or_long_name
     self.long_name ? self.long_name : self.name
   end
-  
+
   def logo
     "/images/partners/#{name.downcase.gsub(' ', '_')}.png"
   end
-  
+
   def footer_logo
     "/images/layout/ico-#{name.downcase.gsub(' ', '_')}-inner.png"
   end
-  
+
   def link
     description && !description.content.blank? ? "/partners/#{name.downcase}" : url
   end

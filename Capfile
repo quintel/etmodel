@@ -18,9 +18,7 @@ namespace :deploy do
     run "ln -s #{shared_path}/config/database.yml #{release_path}/config/"
     run "ln -s #{shared_path}/config/sphinx.yml #{release_path}/config/"
     run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
-    run "ln -nfs #{shared_path}/assets/pdf #{release_path}/public/pdf"
     run "ln -nfs #{shared_path}/assets/videos #{release_path}/public/videos"
-    # memcached.flush
   end
 end
 

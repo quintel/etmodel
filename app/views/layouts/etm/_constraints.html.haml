@@ -7,18 +7,7 @@
 
     %script
       - @constraints.each do |c|
-        == dashboard.add(#{ c.to_json.html_safe });
+        dashboard.add(#{ c.to_json.html_safe });
 
       - @goals.each do |goal|
-        :ruby
-          goal_opts = {
-            :goal_id          => goal.id,
-            :name             => t("policy_goals.#{goal.key}"),
-            :success_query    => gquery_id(goal.reached_query).to_s,
-            :value_query      => gquery_id(goal.query).to_s,
-            :target_query     => gquery_id(goal.target_query).to_s,
-            :user_value_query => gquery_id(goal.user_value_query).to_s,
-            :unit             => goal.unit,
-            :display_fmt      => goal.display_format
-          }
-        new PolicyGoal(#{goal_opts.to_json.html_safe});
+        new PolicyGoal(#{goal.js_attributes.to_json.html_safe});

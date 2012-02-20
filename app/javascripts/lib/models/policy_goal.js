@@ -54,6 +54,9 @@ var PolicyGoal = Backbone.Model.extend({
     var current_value = this.format_value(this.current_value());
     this.dom_element().find(".you").html(current_value);
     console.log("Score for " + this.get('key') + ': ' + this.score());
+
+    // update score box if present
+    $("#" + this.get('key') + "-score").html(this.score());
   },
 
   dom_element : function() {
@@ -93,7 +96,7 @@ var PolicyGoal = Backbone.Model.extend({
    
     if((t < -0.5 * a) || (t > 1.5 * a)){ score = -100; }
 
-    return score;
+    return parseInt(score, 10);
  
   }
 

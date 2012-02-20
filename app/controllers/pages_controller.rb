@@ -92,6 +92,13 @@ public
     redirect_to root_path
   end
 
+  # Use this action to temporarily enable wattnu features
+  # (score, round, etc)
+  def wattnu
+    session[:wattnu] = true
+    redirect_to root_path
+  end
+
   ######################################
   # Browser Checks
   ######################################

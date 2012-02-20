@@ -33,7 +33,8 @@ class Setting
                 :selected_output_element,
                 :scenario_type,
                 :scenario_id,
-                :api_session_id
+                :api_session_id,
+                :current_round
 
   ##
   # @tested 2010-12-06 seb

@@ -38,6 +38,9 @@ development: &DEV
     # the remote links and scripts will be disabled and the videos will
     # be played with a local player rather than vimeo/youtube
     standalone: false
+
+    # enables the game features
+    wattnu: false
 production:
     <<: *DEV
     local_proxy: false

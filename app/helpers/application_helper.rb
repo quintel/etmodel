@@ -76,4 +76,10 @@ module ApplicationHelper
   def scenario_in_etengine_url
     "#{APP_CONFIG[:api_url].gsub('api/v2', 'data')}/#{Current.setting.api_session_id}/#{Current.setting.region}"
   end
+
+  # Used to enable the watt-nu specific layouts and features
+  #
+  def wattnu?
+    APP_CONFIG[:wattnu] || session[:wattnu]
+  end
 end

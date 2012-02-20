@@ -23,7 +23,6 @@ var ConstraintView = Backbone.View.extend({
     var formatted_value = this.format_result();
     $('strong', this.dom_id).empty().append(formatted_value);
     this.updateArrows();
-    this.updatePartialScore();
     return this;
   },
   
@@ -111,27 +110,6 @@ var ConstraintView = Backbone.View.extend({
     Util.cancelableAction("updateArrows" + this.model.get('id'), $.proxy(function() {
       arrow_element.animate({opacity: 0.0}, 1000);
     }, this), {'sleepTime': 30000});
-  },
-
-  updatePartialScore: function() {
-    var result = this.model.get('result');
-    var key    = this.model.get('key');
-    var score  = 0;
-    switch(key) {
-      case 'total_energy_cost' :
-        score = result;
-      case 'co2_reduction':
-        score = result;
-      case 'renewable_percentage':
-        score = result;
-      case 'targets_met':
-        score = result;
-      case 'renewable_electricity_percentage':
-        score = result;
-      case 'score':
-        score = result;
-    }
-    $(".watt-nu", this.dom_id).html(parseInt(score,10));
   },
 
   /**

@@ -32,6 +32,7 @@
       #header
         = render "layouts/etm/header", :info_box => true
         = render "layouts/etm/tabs"
+        = render "layouts/etm/wattnu" if wattnu?
       #footer
         = render "layouts/etm/constraints"
         = render "input_elements/input_element"

@@ -4,6 +4,7 @@ var Setting = Backbone.Model.extend({
     this.bind('change:complexity', this.save);
     this.bind('change:track_peak_load', this.save);
     this.bind('change:use_fce', this.save);
+    this.bind('change:current_round', this.save);
   },
 
   url : function() {
@@ -40,4 +41,8 @@ var Setting = Backbone.Model.extend({
 
 $(document).ready(function(){
   $("input[name*=use_fce\\[settings\\]]").attr('checked', App.settings.get('use_fce'));
+  $("#round-selector input").change(function(){
+    console.log($(this).val());
+    App.settings.set({current_round: $(this).val()})
+  });
 });

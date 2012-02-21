@@ -42,8 +42,8 @@ var PolicyGoal = Backbone.Model.extend({
 
     if(this.is_set()) {
       var check_box = this.dom_element().find(".check");
-      check_box.removeClass('success failure not_set')
-      check_box.addClass(success ? 'success' : 'failure')
+      check_box.removeClass('success failure not_set');
+      check_box.addClass(success ? 'success' : 'failure');
 
       var formatted = this.format_value(this.target_value());
       this.dom_element().find(".target").html(formatted);
@@ -53,10 +53,31 @@ var PolicyGoal = Backbone.Model.extend({
 
     var current_value = this.format_value(this.current_value());
     this.dom_element().find(".you").html(current_value);
+    this.update_score_box();
+  },
+
+  // the score calculation is generic. For the tv show we're using only
+  // some goals, so we need a way to filter them. Adding an extra db column
+  // would be overkill. Let's keep them here for the moment. DEBT
+  used_by_wattnu: function() {
+    switch(this.get('key')) {
+      case 'co2_emission':
+      case 'total_energy_cost':
+      case 'renewable_percentage':
+        return true;
+      default:
+        return false;
+    }
+  },
+
+  update_score_box: function() {
+    var key = this.get('key');
     console.log("Score for " + this.get('key') + ': ' + this.score());
 
     // update score box if present
-    $("#" + this.get('key') + "-score").html(this.score());
+    // policy goal keys and constraint key sometimes don't match. DEBT
+    if (key == 'co2_emission') { key = 'co2_reduction'; }
+    $("#" + key + "-score").html(this.score());
   },
 
   dom_element : function() {
@@ -82,7 +103,7 @@ var PolicyGoal = Backbone.Model.extend({
     return out;
   },
 
-  score: function() {a
+  score: function() {
     if (!this.is_set()) return false;
     var base = this.start_value();
     var current = this.current_value();
@@ -93,11 +114,9 @@ var PolicyGoal = Backbone.Model.extend({
     var score = 2 * ampl * Math.abs( (t / a) - Math.floor( (t / a) + 0.5));
     
     if(t > a || t < 0){ score *= -1; }
-   
     if((t < -0.5 * a) || (t > 1.5 * a)){ score = -100; }
 
     return parseInt(score, 10);
- 
   }
 
 });
@@ -107,12 +126,12 @@ var PolicyGoalList = Backbone.Collection.extend({
 
   // returns the number of user set goals
   goals_set : function() {
-    return this.select(function(g){ return g.is_set()}).length;
+    return this.select(function(g){ return g.is_set();}).length;
   },
 
   // returns the number of goals achieved
   goals_achieved : function() {
-    return this.select(function(g){ return g.is_set() && g.successful()}).length;
+    return this.select(function(g){ return g.is_set() && g.successful();}).length;
   },
 
   update_totals : function() {
@@ -120,6 +139,16 @@ var PolicyGoalList = Backbone.Collection.extend({
     var achieved = this.goals_achieved();
     var string   = "" + achieved + "/" + set;
     $("#constraint_7 strong").html(string);
+    this.update_total_score();
+  },
+
+  // used by watt-nu. Sums the partial scores
+  update_total_score: function() {
+    var items = this.select( function(g){ return g.used_by_wattnu() && g.is_set(); });
+    var total = 0;
+    _.each(items, function(g){ total += g.score();});
+    $("#targets_met-score").html(total);
+    return total;
   }
 });
 

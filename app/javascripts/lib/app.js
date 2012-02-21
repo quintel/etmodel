@@ -14,7 +14,7 @@ window.AppView = Backbone.View.extend({
   initialize : function() {
     _.bindAll(this, 'api_result', 'handleInputElementsUpdate');
 
-    // this at the moment used for the loading box. to figure out 
+    // this at the moment used for the loading box. to figure out
     // if there are still api calls happening.
     this.api_call_stack = [];
 
@@ -82,7 +82,7 @@ window.AppView = Backbone.View.extend({
     });
     this.register_api_call('call_api');
   },
-  
+
   handle_timeout : function() {
     var r = confirm("Your internet connection seems to be very slow. The ETM is still waiting to receive an update " +
                     "from the server. Press OK to reload the page");
@@ -112,7 +112,7 @@ window.AppView = Backbone.View.extend({
     loading.fadeIn('fast'); //show loading overlay
     var result   = data.result;   // Results of this request for every "result[]" parameter
 
-    $.each(result, function(gquery_key, value_arr) { 
+    $.each(result, function(gquery_key, value_arr) {
       $.each(window.gqueries.with_key(gquery_key), function(i, gquery) {
         gquery.handle_api_result(value_arr);
       });
@@ -122,8 +122,8 @@ window.AppView = Backbone.View.extend({
     window.policy_goals.update_totals();
     window.sidebar.update_bars();
 
-    if (App.peak_load != null) { 
-      App.peak_load.trigger('change'); 
+    if (App.peak_load != null) {
+      App.peak_load.trigger('change');
     }
 
     $("body").trigger("dashboardUpdate");
@@ -133,19 +133,19 @@ window.AppView = Backbone.View.extend({
 
 
   /**
-   * Set the update in a cancelable action. When you 
+   * Set the update in a cancelable action. When you
    * pull a slider A this method is called. It will call doUpdateRequest
    * after 500ms. When a slider is pulled again, that call will be canceled
    * (so that we don't flood the server). doUpdateRequest will get the dirty
-   * sliders, reset all dirtyiness and make an API call. 
+   * sliders, reset all dirtyiness and make an API call.
    */
   handleInputElementsUpdate:function() {
     var func = $.proxy(this.doUpdateRequest, this);
     var lockable_function = function() { LockableFunction.deferExecutionIfLocked('update', func); };
     Util.cancelableAction('update',  lockable_function, {'sleepTime': 100});
   },
-  
-  
+
+
   /**
    * Get the value of all changed sliders. Get the chart. Sends those values to the server.
    */
@@ -169,7 +169,7 @@ window.AppView = Backbone.View.extend({
     if (this.has_unfinished_api_calls()) {
       $("#charts_wrapper").busyBox({
         spinner: '<img src="/images/layout/ajax-loader.gif" />'
-      }).fadeIn('fast'); 
+      }).fadeIn('fast');
 
       $("#constraints").busyBox({
         classes: 'busybox ontop',
@@ -196,7 +196,7 @@ window.AppView = Backbone.View.extend({
    */
   hideLoading : function() {
     if (this.has_unfinished_api_calls()) {
-      $("#charts_wrapper").busyBox('close'); 
+      $("#charts_wrapper").busyBox('close');
       $("#constraints").busyBox('close');
       //loading.busyBox('close');
     }
@@ -205,7 +205,7 @@ window.AppView = Backbone.View.extend({
   etm_debug: function(t) {
     if(window.etm_js_debug) console.log(t);
   },
-  
+
   // Use CORS when possible
   api_base_url: function() {
     if (!globals.disable_cors && Browser.hasProperCORSSupport()) {

@@ -25,7 +25,7 @@ var ConstraintView = Backbone.View.extend({
     this.updateArrows();
     return this;
   },
-  
+
   // different behaviour unfortunately
   render_total_cost_label : function() {
     var value = this.model.get('result') * 1000000000;
@@ -88,7 +88,7 @@ var ConstraintView = Backbone.View.extend({
         return result;
     }
   },
-  
+
   /**
    * Updates the arrows, if the difference is negative .
    * @param diff - the difference of old_value and new_value.
@@ -99,10 +99,10 @@ var ConstraintView = Backbone.View.extend({
     var arrow_element = $('.arrow', this.dom_id);
     this.cleanArrows();
     var newClass;
-    if (diff > 0) { newClass = 'arrow_up';} 
+    if (diff > 0) { newClass = 'arrow_up';}
     else if(diff < 0) { newClass = 'arrow_down'; }
     else { newClass = 'arrow_neutral'; }
-    
+
     arrow_element.addClass(newClass);
     arrow_element.css('opacity', 1.0);
 
@@ -121,6 +121,6 @@ var ConstraintView = Backbone.View.extend({
     arrow_element.removeClass('arrow_down');
     arrow_element.removeClass('arrow_up');
   }
-  
+
 
 });

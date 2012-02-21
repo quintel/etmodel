@@ -16,7 +16,6 @@
 
 class PolicyGoal < ActiveRecord::Base
   include AreaDependent
-  include GqlHelper
 
   has_one :area_dependency, :as => :dependable, :dependent => :destroy
   has_paper_trail
@@ -33,10 +32,10 @@ class PolicyGoal < ActiveRecord::Base
     {
       :goal_id          => id,
       :name             => I18n.t("policy_goals.#{key}"),
-      :success_query    => gquery_id(reached_query).to_s,
-      :value_query      => gquery_id(query).to_s,
-      :target_query     => gquery_id(target_query).to_s,
-      :user_value_query => gquery_id(user_value_query).to_s,
+      :success_query    => reached_query,
+      :value_query      => query,
+      :target_query     => target_query,
+      :user_value_query => user_value_query,
       :unit             => unit,
       :display_fmt      => display_format,
       :key              => key

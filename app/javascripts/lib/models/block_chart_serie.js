@@ -6,15 +6,11 @@ var BlockChartSerie = Backbone.Model.extend({
     var investment_gql_query = "investment_for_" + this.get('gquery_key') + "_in_overview_costs_of_electricity_production";
 
     this.set({
-      gquery_cost :       new Gquery({key : this.map_gquery_key_to_id(cost_gql_query)}),
-      gquery_investment : new Gquery({key : this.map_gquery_key_to_id(investment_gql_query)})
+      gquery_cost :       new Gquery({key : cost_gql_query}),
+      gquery_investment : new Gquery({key : investment_gql_query})
     });
   },
   
-  map_gquery_key_to_id : function(k) {
-    return '' + gquery_map[k];
-  },
-
   result : function() {
     return [
       this.get('id'), 

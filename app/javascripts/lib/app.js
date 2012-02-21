@@ -72,6 +72,7 @@ window.AppView = Backbone.View.extend({
     $.ajax({
       url: url,
       data: params,
+      type: 'PUT',
       success: this.handle_api_result,
       error: function(xOptions, textStatus) {
         console.log("Something went wrong: " + textStatus);

@@ -26,7 +26,7 @@ task :production do
   server domain, :web, :app, :db, :primary => true
 end
 
-task :beta do
+task :staging do
   set :domain, "beta.et-model.com"
   set :branch, "staging"
   set :application_key, "#{application}_staging"
@@ -35,6 +35,10 @@ task :beta do
   set :db_user, application_key
   set :airbrake_key, "a736722b2610573160a2f015f036488b"
   server domain, :web, :app, :db, :primary => true
+end
+
+task :beta do
+  staging
 end
 
 # Useful, taken from the capistrano gem

@@ -44,5 +44,6 @@ $(document).ready(function(){
   // store the current round (watt-nu)
   $("#round-selector input").change(function(){
     App.settings.set({current_round: $(this).val()});
+    policy_goals.update_total_score();
   });
 });

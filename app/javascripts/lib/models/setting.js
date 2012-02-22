@@ -41,8 +41,8 @@ var Setting = Backbone.Model.extend({
 
 $(document).ready(function(){
   $("input[name*=use_fce\\[settings\\]]").attr('checked', App.settings.get('use_fce'));
+  // store the current round (watt-nu)
   $("#round-selector input").change(function(){
-    console.log($(this).val());
-    App.settings.set({current_round: $(this).val()})
+    App.settings.set({current_round: $(this).val()});
   });
 });

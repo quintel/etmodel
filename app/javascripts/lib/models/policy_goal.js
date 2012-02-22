@@ -56,23 +56,8 @@ var PolicyGoal = Backbone.Model.extend({
     this.update_score_box();
   },
 
-  // the score calculation is generic. For the tv show we're using only
-  // some goals, so we need a way to filter them. Adding an extra db column
-  // would be overkill. Let's keep them here for the moment. DEBT
-  used_by_wattnu: function() {
-    switch(this.get('key')) {
-      case 'co2_emission':
-      case 'total_energy_cost':
-      case 'renewable_percentage':
-        return true;
-      default:
-        return false;
-    }
-  },
-
   update_score_box: function() {
     var key = this.get('key');
-    console.log("Score for " + this.get('key') + ': ' + this.score());
 
     // update score box if present
     // policy goal keys and constraint key sometimes don't match. DEBT
@@ -144,7 +129,20 @@ var PolicyGoalList = Backbone.Collection.extend({
 
   // used by watt-nu. Sums the partial scores
   update_total_score: function() {
-    var items = this.select( function(g){ return g.used_by_wattnu() && g.is_set(); });
+    var els = [];
+    switch(App.settings.get('current_round')) {
+      case '1':
+        els = ['co2_emission'];
+        break;
+      case '2':
+        els = ['co2_emission', 'total_energy_cost'];
+        break;
+      case '3':
+        els = ['co2_emission', 'total_energy_cost', 'renewable_percentage'];
+        break;
+    }
+
+    var items = this.select( function(g){ return g.is_set() && _.include(els, g.get('key')); });
     var total = 0;
     _.each(items, function(g){ total += g.score();});
     $("#targets_met-score").html(total);

@@ -17,21 +17,26 @@
 
      // initial trigger
      update_score_badges(#{Current.setting.current_round});
-  
+     App.settings.set({current_round: #{Current.setting.current_round}});
   });
 
   function update_score_badges(round) {
     $(".watt-nu").hide();
+    var total = 0;
+    var items = [];
     if (round == 1) {
-      $("#co2_reduction-score").show();
-      $("#targets_met-score").show();
+      items = ["#co2_reduction-score"];
     } else if (round == 2) {
-      $("#co2_reduction-score, #total_energy_cost-score").show();
-      $("#targets_met-score").show();
+      items = ["#co2_reduction-score", "#total_energy_cost-score"];
     } else if (round == 3) {
-      $("#co2_reduction-score, #total_energy_cost-score, #renewable_percentage-score").show();
-      $("#targets_met-score").show();
-    } else {
+      items = ["#co2_reduction-score", "#total_energy_cost-score", "#renewable_percentage-score"];
+    }
     
+    if (round) {
+      _.each(items, function(i){
+        el = $(i);
+        el.show();
+      })
+      $("#targets_met-score").show();
     }
   }

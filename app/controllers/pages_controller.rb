@@ -35,7 +35,9 @@ protected
     else
       all_views[0..2]
     end
-    @scenarios = Api::Scenario.all(:from => :homepage)
+    @scenarios = Rails.cache.fetch 'predefined_scenarios' do
+      Api::Scenario.all(:from => :homepage)
+    end
   end
 
   def assign_settings_and_redirect

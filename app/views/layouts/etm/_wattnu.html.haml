@@ -7,3 +7,31 @@
   %br
   = radio_button_tag :current_round, 3, Current.setting.current_round.to_i == 3
   Ronde 3
+
+:javascript
+  $(function(){
+     $("#round-selector input").change(function(){
+      var round = $(this).val();
+      update_score_badges(round);
+     });
+
+     // initial trigger
+     update_score_badges(#{Current.setting.current_round});
+  
+  });
+
+  function update_score_badges(round) {
+    $(".watt-nu").hide();
+    if (round == 1) {
+      $("#co2_reduction-score").show();
+      $("#targets_met-score").show();
+    } else if (round == 2) {
+      $("#co2_reduction-score, #total_energy_cost-score").show();
+      $("#targets_met-score").show();
+    } else if (round == 3) {
+      $("#co2_reduction-score, #total_energy_cost-score, #renewable_percentage-score").show();
+      $("#targets_met-score").show();
+    } else {
+    
+    }
+  }

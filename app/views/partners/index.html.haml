@@ -12,9 +12,8 @@
 
 #partners{:style => 'width: 100%;'}
   - @partners.each do |p|
-    - link = p.link =~ /http/ ? p.link : "#{p.link}?tab=#{@active_partner_type}"
     .partner_container
-      %a.partner_link{:id => "partner_#{p.id}", :href => link }
+      %a.partner_link{:id => "partner_#{p.id}", :href => p.link }
         .header= image_tag p.logo
   .clear
 

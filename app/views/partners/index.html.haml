@@ -3,21 +3,19 @@
     .nav-holder.nav-holder-inner{:style=>'margin: 0 0 0 0; width: inherit;'}
       %ul{:style => "margin: 0 0 0 0;"}
         - @partner_types.each do |partner_type|
-          %li{:class => (partner_type == @active_partner_type ? 'active' : '') , :style => partner_type == 'general' ? 'width:400px;' : 'width:300px;'}
+          %li{:class => (partner_type == @active_partner_type ? 'active' : ''),
+              :style => partner_type == 'general' ? 'width:400px;' : 'width:300px;'}
             = link_to t("partners.#{partner_type}"), :partner_type => partner_type
-
   %br
 - else
-
   %h1= t("partners.Partners of the Energy Transition Model")
 
 #partners{:style => 'width: 100%;'}
   - @partners.each do |p|
+    - link = p.link =~ /http/ ? p.link : "#{p.link}?tab=#{@active_partner_type}"
     .partner_container
-      %a.partner_link{:id => "partner_#{p.id}", :href => p.link }
-        .header
-          = image_tag p.logo
-
+      %a.partner_link{:id => "partner_#{p.id}", :href => link }
+        .header= image_tag p.logo
   .clear
 
   - @partners.each do |p|
@@ -26,6 +24,4 @@
         = p.description.short_content
       - else
         = t("partners.Click here to go to the website of") + "#{p.name_or_long_name}."
-  
   .clear
-  

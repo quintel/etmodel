@@ -1,4 +1,4 @@
 #partner
   .header= image_tag @partner.logo
-  = link_to "<< Back to overview", partners_path
+  = link_to "<< #{t 'partners.back_to_overview'}", partners_path(:partner_type => params[:tab])
   = @partner.description.try(:content)

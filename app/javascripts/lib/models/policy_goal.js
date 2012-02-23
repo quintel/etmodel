@@ -95,7 +95,7 @@ var PolicyGoal = Backbone.Model.extend({
     var current = this.current_value();
     var target = this.target_value();
     var ampl = 100;
-    var t = current - base;
+    var t = current - start;
 
     if (target < start) { t = -t; }
 

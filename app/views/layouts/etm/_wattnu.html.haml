@@ -17,7 +17,7 @@
 
      // initial trigger
      update_score_badges(#{Current.setting.current_round});
-     App.settings.set({current_round: #{Current.setting.current_round}});
+     App.settings.set({current_round: #{(Current.setting.current_round || nil).to_json}});
   });
 
   function update_score_badges(round) {

@@ -84,6 +84,7 @@ var PolicyGoal = Backbone.Model.extend({
         break;
       default:
         out = n;
+        break;
     }
     return out;
   },
@@ -98,9 +99,11 @@ var PolicyGoal = Backbone.Model.extend({
     var a = 2 * Math.abs(base - target);
     var score = 2 * ampl * Math.abs( (t / a) - Math.floor( (t / a) + 0.5));
     
-    if(t > a || t < 0){ score *= -1; }
-    if((t < -0.5 * a) || (t > 1.5 * a)){ score = -100; }
-
+    if(t > a || t < 0) { score = -score; }
+    if((t < -0.5 * a) || (t > 1.5 * a)) { score = -100; }
+  
+    // co2 emissions goal works in the opposite direction
+    if (this.get('key') == 'co2_emission') { score = -score; }
     return parseInt(score, 10);
   }
 
@@ -129,7 +132,7 @@ var PolicyGoalList = Backbone.Collection.extend({
 
   // used by watt-nu. Sums the partial scores
   update_total_score: function() {
-    var els = [];
+    var els;
     switch(App.settings.get('current_round')) {
       case '1':
         els = ['co2_emission'];
@@ -139,6 +142,9 @@ var PolicyGoalList = Backbone.Collection.extend({
         break;
       case '3':
         els = ['co2_emission', 'total_energy_cost', 'renewable_percentage'];
+        break;
+      default:
+        els = [];
         break;
     }
 

@@ -91,20 +91,21 @@ var PolicyGoal = Backbone.Model.extend({
 
   score: function() {
     if (!this.is_set()) return false;
-    var base = this.start_value();
+    var start = this.start_value();
     var current = this.current_value();
     var target = this.target_value();
     var ampl = 100;
     var t = current - base;
-    var a = 2 * Math.abs(base - target);
+
+    if (target < start) { t = -t; }
+
+    var a = 2 * Math.abs(start - target);
     var score = 2 * ampl * Math.abs( (t / a) - Math.floor( (t / a) + 0.5));
     
     if(t > a || t < 0) { score = -score; }
     if((t < -0.5 * a) || (t > 1.5 * a)) { score = -100; }
   
-    // co2 emissions goal works in the opposite direction
-    if (this.get('key') == 'co2_emission') { score = -score; }
-    return parseInt(score, 10);
+    return Math.round(score);
   }
 
 });
@@ -148,11 +149,14 @@ var PolicyGoalList = Backbone.Collection.extend({
         break;
     }
 
-    var items = this.select( function(g){ return g.is_set() && _.include(els, g.get('key')); });
     var total = 0;
-    _.each(items, function(g){ total += g.score();});
+    _.each(els, function(key){ var g = this.find_by_key(key); total += g.score();});
     $("#targets_met-score").html(total);
     return total;
+  },
+
+  find_by_key: function(key) {
+    return this.filter(function(g){ return g.get('key') == key;})[0];
   }
 });
 

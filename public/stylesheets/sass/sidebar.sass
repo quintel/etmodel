@@ -8,20 +8,6 @@
     padding: 0
     list-style: none
   
-    li.active a
-      background: url(../images/layout/bg-sidebar-a-hover.gif) no-repeat
-      color: #fff      
-      em
-        background-position: 0px -25px
-      span
-        background: #fff
-      span.bar
-        background: #fff
-      span.value
-        background: transparent none
-        color: #fff
-
-
     li
       padding: 0 0 0px
       height: 1%
@@ -29,7 +15,7 @@
       vertical-align: top
       position: relative
 
-      a:hover
+      a:hover, &.active a
         background: url(../images/layout/bg-sidebar-a-hover.gif) no-repeat
         color: #fff
         em
@@ -108,7 +94,6 @@
         background: url(../images/layout/bg-sidebar-a.gif) no-repeat
         color: #333
         text-decoration: none
-        // margin: 16px 0 0 0
         padding: 8px 0 0 8px
         em
           float: left
@@ -129,7 +114,7 @@
           float: left
           height: 5px
           background: #63a1c9
-          margin: 5px 0 0 
+          margin: 5px 0 0 0
           overflow: hidden
         span.value
           position: absolute
@@ -150,9 +135,3 @@
           overflow: visible
           line-height: 120%
           height: 16px
-
-        small
-          float: left
-          font-size: 10px
-          line-height: 16px
-          margin-left: 5px

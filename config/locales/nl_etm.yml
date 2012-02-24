@@ -53,43 +53,6 @@ nl:
   use this: "Pas deze voorspelling toe"
   nevermind: "Niet gebruiken"
 
-  units:
-    nounit:
-      unit: ""
-      thousands: "thousand"
-      millions: "million"
-      billions: "billion"
-      trillions: "trillions"
-      quadrillions: "quadrillions"
-      quintillions: "quintillions"
-    currency:
-      unit: ""
-      thousands: "k"
-      millions: "mln"
-      billions: "mlrd"
-      trillions: "tlrd"
-    joules:
-      unit: "MJ"
-      thousands: "GJ"
-      millions: "TJ"
-      billions: "PJ"
-      trillions: "EJ"  
-      quadrillions: "ZJ"
-      quintillions: "YJ"
-    ton:
-      unit: "T"
-      thousands: "kT"
-      millions: "MT"
-      billions: "GT"
-      trillions: "TT"
-    watt:
-      # This units should be checked with Chris Laumans when the units are refactored!
-      unit: "MW"
-      thousands: "MW"
-      millions: "MW"
-      billions: "MW"
-      trillions: "MW"
-      
   feedback_text: "Heeft u ideeën, vragen en/of opmerkingen over het Energietransitiemodel? Wij willen deze graag van u horen!"
   feedback_confirm: "Bedankt voor u bericht! We zullen zo spoedig mogelijk reageren!"
   feedback_error: "U heeft niet alle velden ingevult of het email adres is niet correct."
@@ -135,7 +98,6 @@ nl:
     check: "Gebruik ketenanalyse"
     notice: "Je gebruikt ketenanalyse. Meer informatie kan je vinden op de <a href='/supply/fce/'>ketenanalyse pagina</a> "
     description: "Wanneer ketenanalyse wordt gebruikt zal het model de broeikasgassen, die worden uitgestoten bij de extractie, behandeling en transport van energiedragers, ook meenemen in de berekeningen"  
-  # ---------------------------- #
   # ----------- Menu ----------- #
   # ----------- Demand ----------- #
   Households: "Huishoudens"

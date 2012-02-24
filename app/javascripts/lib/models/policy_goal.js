@@ -150,7 +150,11 @@ var PolicyGoalList = Backbone.Collection.extend({
     }
 
     var total = 0;
-    _.each(els, function(key){ var g = this.find_by_key(key); total += g.score();});
+    var goals = this;
+    _.each(els, function(key){
+      var g = goals.find_by_key(key);
+      total += g.score();
+    });
     $("#targets_met-score").html(total);
     return total;
   },

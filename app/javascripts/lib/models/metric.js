@@ -1,29 +1,15 @@
 var Metric = {
-  
-  /* testing stuff */
-  
-  test_parsed_unit : function(value, unit, expected_result) {
-    var result = Metric.parsed_unit(value, unit);
-    var failed_string = (expected_result == result) ? "" : 'FAILED: '
-    console.log(failed_string+""+value+" "+unit+" => "+ result +"(expected: "+expected_result+")")
-  },
-
-  suite_parsed_unit : function() {
-    this.test_parsed_unit(     1, 'PJ', 'PJ') ;
-    this.test_parsed_unit(   100, 'PJ', 'PJ') ;
-    this.test_parsed_unit(  1000, 'PJ', 'PJ') ;
-    this.test_parsed_unit(  5000, 'PJ', 'PJ') ;
-    this.test_parsed_unit( 10000, 'PJ', 'PJ') ;
-    this.test_parsed_unit(100000, 'PJ', 'PJ') ;
-  },
-
-  /* previous stuff */
+  /* previous stuff, to be refactored. Charts still make use of this */
   
   parsed_unit : function(value, unit) {
     var start_scale; 
 
     if (unit == "MT") {
       start_scale = 2;
+    } else if (unit == "euro") {
+      // quick ugly fix
+      unit == "EUR";
+      start_scale = 0; 
     } else {
       start_scale = 3;
     }
@@ -49,8 +35,8 @@ var Metric = {
   scaled : function(value, start_scale, target_scale, max_scale) {
     var scale = start_scale || 0;
     var target = target_scale || null;
-    var max_scale = max_scale || 100;
     var min_scale = 0;
+    max_scale = max_scale || 100;
     
     if (!target) {
       while (value >= 0 && scale < max_scale) {
@@ -135,7 +121,7 @@ var Metric = {
   // av(1234)    => 1234
   autoscale_value : function(x, unit, precision) {
     precision  = precision || 0;
-    var pow    = Metric.power_of_thousand(x)
+    var pow    = Metric.power_of_thousand(x);
     var value  = x / Math.pow(1000, pow);
     value = Metric.round_number(value, precision);
     var scale_string = Metric.power_of_thousand_to_string(pow);
@@ -151,9 +137,11 @@ var Metric = {
       case 'MJ' :
         out = x / Math.pow(1000, pow);
         suffix = I18n.t('units.joules.' + scale_string);
+        break;
       case 'MW' :
         out = x / Math.pow(1000, pow);
         suffix = I18n.t('units.watt.' + scale_string);
+        break;
       case 'euro':
         out = value;
         prefix = "&euro;";
@@ -163,7 +151,6 @@ var Metric = {
     }
 
     output = prefix + out + suffix;
-    // console.log('' + x + unit + ' -> ' + output);
     return output;
   },
 
@@ -249,6 +236,8 @@ var Metric = {
         return 'quadrillions';
       case 6:
         return 'quintillions';
+      default:
+        return null;
     }
   }
 }

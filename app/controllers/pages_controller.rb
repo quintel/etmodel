@@ -35,9 +35,6 @@ protected
     else
       all_views[0..2]
     end
-    @scenarios = Rails.cache.fetch 'predefined_scenarios' do
-      Api::Scenario.all(:from => :homepage)
-    end
   end
 
   def assign_settings_and_redirect
@@ -97,8 +94,8 @@ public
   # Use this action to temporarily enable wattnu features
   # (score, round, etc)
   def wattnu
-    session[:wattnu] = true
-    redirect_to root_path
+    session[:wattnu] = !session[:wattnu]
+    redirect_to root_path, :notice => "Watt Nu score feature is now set to #{session[:wattnu]}"
   end
 
   ######################################

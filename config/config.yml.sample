@@ -41,6 +41,10 @@ development: &DEV
 
     # enables the game features
     wattnu: false
+
+    # URL that shows the gquery details (used on the charts admin page)
+    # the gquery key is appended to the url
+    gquery_detail_url: http://et-engine.com/data/latest/gqueries/key/
 production:
     <<: *DEV
     local_proxy: false

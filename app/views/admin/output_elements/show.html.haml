@@ -21,7 +21,7 @@
         %td= serie.id
         %td= link_to serie.label, admin_output_element_serie_path(serie)
         %td{:style => "background: #{serie.color}"}= color_to_string(serie.color)
-        %td= serie.gquery
+        %td= link_to serie.gquery, "#{APP_CONFIG[:gquery_detail_url]}#{serie.gquery}", :class => :external
         %td= serie.is_target_line
         %td
           = link_to 'edit', edit_admin_output_element_serie_path(:id => serie.id)

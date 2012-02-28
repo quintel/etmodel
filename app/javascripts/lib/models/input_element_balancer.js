@@ -20,7 +20,7 @@
    *       that the group remains balanced.
    */
   function Balancer (options) {
-    _.bindAll(this, 'onBegin', 'onChange', 'onCommit', 'onAbort');
+    _.bindAll(this, 'begin', 'drag', 'change', 'abort');
 
     this.options   = _.clone(options || {});
     this.max       = this.__getMax();
@@ -67,10 +67,10 @@
 
     quinn.balanceId = _.uniqueId('balance_');
 
-    quinn.bind('begin',  this.onBegin);
-    quinn.bind('change', this.onChange);
-    quinn.bind('commit', this.onCommit);
-    quinn.bind('abort',  this.onAbort);
+    quinn.on('begin',  this.begin);
+    quinn.on('drag',   this.drag);
+    quinn.on('change', this.change);
+    quinn.on('abort',  this.abort);
 
     this.views.push(inputView);
     this.quinns.push(inputView.quinn);
@@ -125,11 +125,11 @@
       slider    = this.subordinates[i];
       prevValue = this.oValues.value(slider);
 
-      slider.__setValue(prevValue + flex);
+      slider.setTentativeValue(prevValue + flex);
 
       // Reduce the flex by the amount by which the slider was changed,
       // ready for the next slider.
-      flex = this.snapValue(flex - (slider.value - prevValue));
+      flex = this.snapValue(flex - (slider.model.value - prevValue));
     }
 
     if (flex !== 0) {
@@ -172,7 +172,7 @@
 
   // ## Event-Handling -------------------------------------------------------
 
-  Balancer.prototype.onBegin = function (value, quinn) {
+  Balancer.prototype.begin = function (value, quinn) {
     if (this.isDisabled) {
       return true;
     }
@@ -184,16 +184,16 @@
       this.subordinates = this.__getSubordinates();
       this.oValues      = new OriginalValues(this.quinns);
 
-      this.__runOnSubordinates('__willChange');
+      this.__runOnSubordinates('start');
 
       this.trigger('begin');
     }
 
-    // Otherwise is is an onBegin event being fired when a subordinate
-    // slider is being balanced; ignore it.
+    // Otherwise is is an begin event being fired when a subordinate slider is
+    // being balanced; ignore it.
   };
 
-  Balancer.prototype.onChange = function (value, quinn) {
+  Balancer.prototype.drag = function (value, quinn) {
     // Fired when a slider value is changed. We only care about changes to the
     // master slider, and subordinates are ignored.
     if (this.isMaster(quinn)) {
@@ -202,21 +202,21 @@
         return false;
       }
 
-      this.trigger('change');
+      this.trigger('drag');
     }
   };
 
-  Balancer.prototype.onCommit = function (value, quinn) {
+  Balancer.prototype.change = function (value, quinn) {
     if (this.isMaster(quinn)) {
       this.__sliderUsed(quinn);
-      this.__finish('__hasChanged');
+      this.__finish('resolve');
       this.trigger('commit');
     }
   };
 
-  Balancer.prototype.onAbort = function (value, quinn) {
+  Balancer.prototype.abort = function (value, quinn) {
     if (this.isMaster(quinn)) {
-      this.__finish('__abortChange');
+      this.__finish('reject');
       this.trigger('abort');
     }
   };
@@ -325,7 +325,7 @@
     this.values = {};
 
     for (i = 0; i < this.length; i++) {
-      this.values[quinns[i].balanceId] = quinns[i].value;
+      this.values[quinns[i].balanceId] = quinns[i].model.value;
     }
   }
 
@@ -358,7 +358,9 @@
     var i;
 
     for (i = 0; i < this.length; i++) {
-      this.quinns[i].__setValue(this.values[ this.quinns[i].balanceId ]);
+      this.quinns[i].setTentativeValue(
+        this.values[ this.quinns[i].balanceId ]
+      );
     }
   };
 

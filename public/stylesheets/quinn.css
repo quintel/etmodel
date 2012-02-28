@@ -8,22 +8,29 @@
 /* Elements with sprited backgrounds. */
 
 .quinn .bar .left, .quinn .bar .main, .quinn .bar .right,
-.quinn .active-bar .left, .quinn .active-bar .main, .quinn
-.active-bar .right, .quinn .handle,
+.quinn .delta-bar .left, .quinn .delta-bar .main, .quinn
+.delta-bar .right, .quinn .handle,
 .quinn .reset, .quinn .minus, .quinn .plus, .quinn .help {
   background-image: url(/images/slider/quinn-default.png);
   background-repeat: no-repeat;
 }
 
 /* Slider height */
-.quinn, .quinn .bar, .quinn .active-bar, .quinn .movable-range {
-  height: 18px;
+.quinn, .quinn .bar, .quinn .delta-bar {
+  height: 5px;
 }
 
 /* Float clearing */
 
 .quinn {
-  overflow: hidden;
+  padding: 10px 5px 10px 0;
+  zoom: 1;
+}
+
+.quinn:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /**
@@ -39,74 +46,77 @@
  * is all the way to the left or right.
  */
 
-.quinn .bar, .quinn .active-bar {
+.quinn .bar, .quinn .delta-bar {
   float: left;
   position: absolute;
-  width: auto;
+}
+
+.quinn .bar {
+  width: 100%;
 }
 
 .quinn .bar .left, .quinn .bar .main, .quinn .bar .right,
-.quinn .active-bar .left, .quinn .active-bar .main,
-.quinn .active-bar .right {
-  height: 18px;
+.quinn .delta-bar .left, .quinn .delta-bar .main,
+.quinn .delta-bar .right {
+  height: 5px;
   position: absolute;
   z-index: 1;
 }
 
 .quinn .bar .left, .quinn .bar .right,
-.quinn .active-bar .left, .quinn .active-bar .right {
-  height: 18px;
+.quinn .delta-bar .left, .quinn .delta-bar .right {
+  height: 5px;
   width: 4px
 }
 
-.quinn .bar .left, .quinn .active-bar .left {
-  background-position: -50px -17px;
+.quinn .bar .left, .quinn .delta-bar .left {
+  background-position: -50px -25px;
   left: 0;
 }
 
-.quinn .bar .main, .quinn .active-bar .main {
-  background-position: 0 -142px;
+.quinn .bar .main, .quinn .delta-bar .main {
+  background-position: 0 -150px;
   background-repeat: repeat-x;
   left: 4px;
   right: 4px;
 }
 
-.quinn .bar .right, .quinn .active-bar .right {
-  background-position: -56px -17px;
+.quinn .bar .right, .quinn .delta-bar .right {
+  background-position: -56px -25px;
   right: 0px;
 }
 
 /**
- * Active slider
- * -------------
+ * Delta bar
+ * ---------
  *
- * The active slider is a style applied to the area to the bar on the
- * left of the handle.
+ * The delta bar is a style applied to the area to the bar on the left
+ * of the handle.
  */
 
-.quinn .active-bar {
+.quinn .delta-bar {
   overflow: hidden;
   width: auto;
   z-index: 5;
 }
 
-.quinn .active-bar .left,
-.quinn .active-bar .main,
-.quinn .active-bar .right {
+.quinn .delta-bar .left,
+.quinn .delta-bar .main,
+.quinn .delta-bar .right {
   z-index: 2;
 }
 
-.quinn .active-bar .left {
-  background-position: -70px -17px;
+.quinn .delta-bar .left {
+  background-position: -70px -25px;
 }
 
-.quinn .active-bar .main {
-  background-position: 0 -192px;
+.quinn .delta-bar .main {
+  background-position: 0 -200px;
   right: 4px;
 }
 
-.quinn .active-bar .right {
-  background-position: -76px -17px;
+.quinn .delta-bar .right {
+  background-position: -76px -25px;
   right: 0px;
 }
 
@@ -118,19 +128,15 @@
  * drag in order to adjust the slider value.
  */
 
-.quinn .movable-range {
-  float: left;
-  position: absolute;
-}
-
 .quinn .handle {
   background-position: 0 0;
   cursor: default;
-  height: 22px;
+  height: 21px;
   left: 0%;
+  margin: -8px 0 0 0;
   outline: none;
   position: absolute;
-  width: 22px;
+  width: 21px;
   z-index: 5;
 }
 
@@ -144,4 +150,27 @@
 
 .quinn .handle:focus {
   background-position: 0 -60px;
+}
+
+/**
+ * Multiple-value sliders
+ * ----------------------
+ *
+ * Styles specific to sliders which instead of having a single value,
+ * represent a range by having two values (a minimum and maximum).
+ */
+
+.quinn.multiple .handle {
+  background-position: -100px 0;
+  height: 26px;
+  margin-top: -9px;
+  width: 19px;
+}
+
+.quinn.multple .handle.active {
+  background-position: -100px -30px;
+}
+
+.quinn.multiple .handle:focus {
+  background-position: -100px -60px;
 }

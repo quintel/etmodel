@@ -22,7 +22,7 @@ end
 
 guard 'guard' do
   watch('jquery.quinn.js') { `rake minified`  ; say 'Minified library'
-                             `rake annotated` ; say 'Build annotated docs' }
+                             `rake annotated` ; say 'Built annotated docs' }
 
   watch('README.md')       { `rake readme`    ; say 'Built index.html' }
 end

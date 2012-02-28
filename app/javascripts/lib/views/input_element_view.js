@@ -259,8 +259,8 @@
       // new $.Quinn is an alternative to $(...).quinn(), and allows us to
       // easily keep hold of the Quinn instance.
       this.quinn = new $.Quinn(this.$('.quinn'), {
-        range:    [ this.model.get('min_value'),
-                    this.model.get('max_value') ],
+        min:        this.model.get('min_value'),
+        max:        this.model.get('max_value'),
 
         value:      this.model.get('user_value'),
         step:       this.model.get('step_value'),
@@ -274,7 +274,8 @@
         disabledOpacity: (IS_IE_LTE_EIGHT ? 1.0 : 0.5)
       });
 
-      this.steppedInitialValue = this.quinn.__roundToStep(this.initialValue);
+      this.steppedInitialValue =
+        this.quinn.model.sanitizeValue(this.initialValue);
 
       // The group onChange needs to be bound before the InputElementView
       // onChange, or the displayed value may be updated even though the
@@ -285,11 +286,11 @@
           add(this);
       }
 
-      this.quinn.bind('change', this.quinnOnChange);
-      this.quinn.bind('commit', this.quinnOnCommit);
+      this.quinn.on('drag',   this.quinnOnChange);
+      this.quinn.on('change', this.quinnOnCommit);
 
       // Need to do this manually, since it needs this.quinn to be set.
-      this.quinnOnChange(this.quinn.value, this.quinn);
+      this.quinnOnChange(this.quinn.model.value, this.quinn);
 
       // Disable buttons?
       if (this.model.get('disabled')) {
@@ -309,12 +310,12 @@
      * the original value.
      */
     refreshButtons: function () {
-      var value = this.quinn.value;
+      var value = this.quinn.model.value;
 
-      if (value === this.quinn.selectable[0]) {
+      if (value === this.quinn.model.minimum) {
         this.disableButton('decrease');
         this.enableButton('increase');
-      } else if (value === this.quinn.selectable[1]) {
+      } else if (value === this.quinn.model.maximum) {
         this.disableButton('increase');
         this.enableButton('decrease');
       } else {
@@ -416,7 +417,7 @@
      * the button.
      */
     beginStepDown: function () {
-      this.performStepping(this.quinn.selectable[0]);
+      this.performStepping(this.quinn.model.minimum);
     },
 
     /**
@@ -427,7 +428,7 @@
      * the button.
      */
     beginStepUp: function () {
-      this.performStepping(this.quinn.selectable[1]);
+      this.performStepping(this.quinn.model.maximum);
     },
 
     /**
@@ -436,29 +437,29 @@
      * adjusted so long as they hold the mouse button.
      */
     performStepping: function (targetValue) {
-      var initialValue   = this.quinn.value,
+      var initialValue   = this.quinn.model.value,
           duration       = HOLD_DURATION / (1000 / HOLD_FPS),
           isIncreasing   = (targetValue > initialValue),
           stepIterations = 0,
 
-          delta          = this.quinn.selectable[1] -
-                           this.quinn.selectable[0],
+          delta          = this.quinn.model.maximum -
+                           this.quinn.model.minimum,
 
           progress, timeoutId, intervalId, intervalFunc, onFinish;
 
       // --
 
-      if (targetValue === initialValue || ! this.quinn.__willChange()) {
+      if (targetValue === initialValue || ! this.quinn.start()) {
         return false;
       }
 
       if (isIncreasing) {
-        this.quinn.__setValue(initialValue + this.quinn.options.step);
+        this.quinn.setTentativeValue(initialValue + this.quinn.model.step);
       } else {
-        this.quinn.__setValue(initialValue - this.quinn.options.step);
+        this.quinn.setTentativeValue(initialValue - this.quinn.model.step);
       }
 
-      initialValue = this.quinn.value;
+      initialValue = this.quinn.model.value;
 
       // Reduce how long it takes to move the slider to the target value by
       // how close it is. For example, if moving from 0% to 100%, the movement
@@ -476,10 +477,10 @@
           duration          // total number of iterations
         );
 
-        this.quinn.__setValue(
+        this.quinn.setTentativeValue(
           initialValue + ((targetValue - initialValue) * progress));
 
-        if (this.quinn.value === targetValue) {
+        if (this.quinn.model.value === targetValue) {
           // We've reached the target value, so stop trying to move further.
           window.clearInterval(intervalId);
         }
@@ -493,9 +494,9 @@
 
       // Executed when the user lifts the mouse button; commits the new value.
       onFinish = _.bind(function () {
-        $('body').unbind('mouseup.stepaccel');
+        $('body').off('mouseup.stepaccel');
 
-        this.quinn.__hasChanged();
+        this.quinn.resolve();
 
         window.clearTimeout(timeoutId);
         window.clearInterval(intervalId);
@@ -504,7 +505,7 @@
         intervalId = null;
       }, this);
 
-      $('body').bind('mouseup.stepaccel', onFinish);
+      $('body').on('mouseup.stepaccel', onFinish);
     },
 
     /**
@@ -632,6 +633,8 @@
     render: function () {
       var $el = $(this.el);
 
+      this.model = this.view.quinn.model;
+
       $el.append( VALUE_SELECTOR_T({ conversions: this.conversions }) );
       $el.attr('id', this.uid);
 
@@ -695,7 +698,7 @@
       ACTIVE_VALUE_SELECTOR   = this.uid;
       this.selectedConversion = this.view.conversion;
 
-      this.inputEl.val(this.selectedConversion.format(this.view.quinn.value));
+      this.inputEl.val(this.selectedConversion.format(this.model.value));
       this.unitEl.val(this.selectedConversion.uid);
       this.unitNameEl.text(this.selectedConversion.unit);
 
@@ -749,7 +752,7 @@
         return conv.uid === uid;
       });
 
-      this.inputEl.val(this.selectedConversion.format(this.view.quinn.value));
+      this.inputEl.val(this.selectedConversion.format(this.model.value));
       this.unitNameEl.text(this.selectedConversion.unit);
 
       if (! this.inputEl.attr('disabled')) {
@@ -765,7 +768,7 @@
      * step up and down the slider values.
      */
     inputKeypress: function (event) {
-      var step = this.view.quinn.options.step,
+      var step = this.model.step,
           newValue;
 
       // Don't change value if shift is held (commonly used on OS X to select
@@ -779,8 +782,8 @@
       }
 
       // If an acceptable new value was calculated, set it.
-      if (newValue <= this.view.quinn.selectable[1] &&
-          newValue >= this.view.quinn.selectable[0]) {
+      if (newValue <= this.model.maximum &&
+          newValue >= this.model.minimum) {
 
         this.inputEl.val(this.selectedConversion.format(newValue)).select();
         return false;

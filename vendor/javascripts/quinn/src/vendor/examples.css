@@ -259,8 +259,32 @@ h4 em:before {
     content: " — ";
 }
 
-h4 + p {
+h4 + p, h4 + ul {
     padding-left: 24px;
+}
+
+h4 + ul li {
+    margin-bottom: 10px;
+}
+
+h4 + ul li:before {
+    color: #747d84;
+    content: "✻";
+    float: left;
+    font-size: 12px;
+    text-indent: -1.3em;
+}
+
+h4 + ul li p, h4 + ul li pre {
+    margin: 10px 0;
+}
+
+h4 + ul li pre {
+    margin-bottom: 14px;
+}
+
+h4 + ul li pre code {
+    font-size: 13px;
 }
 
 h4 + p a {
@@ -300,12 +324,12 @@ dt, dd {
 }
 
 dt {
-    width: 42%;
+    width: 45%;
 }
 
 dd {
     font-style: italic;
-    width: 58%;
+    width: 55%;
 }
 
 ol {
@@ -321,8 +345,12 @@ body, h3 code + code:before {
 
 /* "Quiet" */
 
-p code, pre code, h3 code, h4 em {
+p code, li code, pre code, h3 code, h4 em {
     color: #5f676c;
+}
+
+li code, p code {
+  font-size: 14px;
 }
 
 /* Example Widgets */
@@ -341,21 +369,26 @@ p code, pre code, h3 code, h4 em {
   /* width is 487px */
 }
 
-.example .slider {
+.example .widget {
   border-right: 1px solid #d9e0e4;
   float: left;
   margin: -24px 0;
-  padding: 24px 24px 24px 0;
-  width: 375px;
+  padding: 22px 24px 19px 5px;
+  width: 370px;
+}
+
+.example .widget .slider {
+  height: 5px;
 }
 
 .example .value {
   font: bold 15px/1 "Helvetica Neue", Arial, Helvetica, sans-serif;
   float: left;
+  margin-right: -20px;
   min-height: 40px;
-  padding: 2px 0 0 25px;
+  padding: 2px 0 0 5px;
   text-align: center;
-  width: 73px;
+  width: 113px;
 }
 
 .example pre {
@@ -383,7 +416,7 @@ p code, pre code, h3 code, h4 em {
 
 .example .slider .bar {
     /* reduces page "jumping" while the images load. */
-    min-height: 18px;
+    min-height: 5px;
 }
 
 .example.hide-code pre {
@@ -405,6 +438,14 @@ ul.yes li:before {
 
 /* Rainbow theme adjustment. */
 
+.example.rainbow .widget {
+  padding-bottom: 20px;
+}
+
 .example.rainbow .slider {
-    padding-top: 23px;
+  margin-top: -1px;
+}
+
+.example.rainbow .slider .handle {
+  margin-left: -9px;
 }

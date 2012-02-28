@@ -12,7 +12,7 @@ _.extend(_, {
 
 window.AppView = Backbone.View.extend({
   initialize : function() {
-    _.bindAll(this, 'api_result', 'handleInputElementsUpdate');
+    _.bindAll(this, 'handleInputElementsUpdate');
 
     // this at the moment used for the loading box. to figure out
     // if there are still api calls happening.

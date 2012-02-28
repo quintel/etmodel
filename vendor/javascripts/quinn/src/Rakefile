@@ -37,3 +37,32 @@ task :readme do
 
   File.open('index.html', 'w') { |f| f.puts index }
 end
+
+desc 'Show the library filesize, including when Gzipped'
+task :filesizes do
+  require 'zlib'
+  require 'stringio'
+
+  development = File.size('jquery.quinn.js')
+  minified    = File.size('jquery.quinn.min.js')
+
+  output = StringIO.new
+  output.set_encoding 'BINARY'
+
+  gz = Zlib::GzipWriter.new(output)
+  gz.write(File.read('jquery.quinn.min.js'))
+  gz.close
+
+  gzipped = output.string.bytesize
+
+  puts <<-INFO
+
+    Quinn library filesizes
+    -----------------------
+
+    Development:  #{(development.to_f / 1024).round(1)}kb
+    Minified:     #{(minified.to_f / 1024).round(1)}kb
+    Gzipped:      #{(gzipped.to_f / 1024).round(1)}kb
+
+  INFO
+end

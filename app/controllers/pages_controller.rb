@@ -14,8 +14,8 @@ class PagesController < ApplicationController
   end
 
   # This page is called by the ETE after an ETSource import
-  #
-  def refresh_gqueries
+  # DEBT: find a safer way
+  def flush_cache
     Rails.cache.clear
     render :text => 'ok', :layout => false
   end

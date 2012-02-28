@@ -130,7 +130,7 @@ Etm::Application.routes.draw do
   match '/sitemap'                         => 'pages#sitemap',     :as => :sitemap
   match '/information'                     => 'pages#information', :as => :information
 
-  match '/pages/refresh_gqueries'       => 'pages#refresh_gqueries'
+  match '/pages/flush_cache' => 'pages#flush_cache'
 
   # we should remove the catch-all route
   match '/:controller(/:action(/:id))'

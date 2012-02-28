@@ -2,7 +2,7 @@
 
 var InputElement = Backbone.Model.extend({
   initialize:function() {
-    _.bindAll(this, 'markDirty', 'update_min_value', 'update_max_value', 'update_start_value');
+    _.bindAll(this, 'markDirty');
     this.dirty = false;
     this.ui_options = {'element' : $('#input_element_'+this.get('id'))};
     this.bind('change:user_value', this.markDirty);

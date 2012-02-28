@@ -225,7 +225,9 @@
         this.setTransientValue(this.model.get('user_value'));
       }, this));
 
-      this.render();
+      // Hold off rendering until the document is ready (and the templates
+      // have been parsed).
+      $(_.bind(function () { this.render(); }, this));
     },
 
     // ## Rendering ----------------------------------------------------------

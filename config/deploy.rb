@@ -1,4 +1,3 @@
-
 set :application, "etmodel"
 set :stage, :production
 set :server_type, 'production'
@@ -17,8 +16,8 @@ set :local_db_name, 'etmodel_dev'
 
 task :production do
   set :branch, "production"
-  set :domain, "46.137.109.15"
-  set :application_key, "#{application}"
+  set :domain, "et-model.com"
+  set :application_key, "etmodel"
   set :db_pass, "Energy2.0"
   set :db_name, application_key
   set :db_user, application_key

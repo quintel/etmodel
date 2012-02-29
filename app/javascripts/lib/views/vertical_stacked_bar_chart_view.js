@@ -26,6 +26,8 @@ var VerticalStackedBarChartView = BaseChartView.extend({
 
       results = _.map(results, function(x) {
         return _.map(x, function(value) {
+          // DEBT DEBT DEBT UGLY UGLY UGLY rewrite Metric.js!!!
+          if (value < 1 && smallest_scale === 0) return value;
           return Metric.scaled_value(value, 3, smallest_scale);
         });
       });

@@ -21,22 +21,15 @@ var VerticalStackedBarChartView = BaseChartView.extend({
     var smallest_scale = null; 
 
     if (!this.model.get('percentage')) {
-      var smallest_value = _.min(this.model.values());
-      smallest_scale = Metric.scaled_scale(smallest_value, 3);
-
       results = _.map(results, function(x) {
         return _.map(x, function(value) {
-          // DEBT DEBT DEBT UGLY UGLY UGLY rewrite Metric.js!!!
-          if (value < 1 && smallest_scale === 0) return value;
-          return Metric.scaled_value(value, 3, smallest_scale);
+          return value;
         });
       });
     }
 
     _.each(this.model.target_series(), function(serie) {
       var result = serie.result()[0][1]; // target_series has only present or future value
-      if (smallest_scale)
-        result = Metric.scaled_value(result, 3, smallest_scale);
       var x = parseFloat(serie.get('target_line_position'));
       results.push([[x - 0.4, result], [x + 0.4, result]]);
     });

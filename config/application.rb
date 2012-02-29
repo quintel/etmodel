@@ -58,5 +58,5 @@ module Etm
   Date::DATE_FORMATS[:default] = "%d-%m-%Y"
 end
 
-ALLOWED_BROWSERS = %w[firefox ie9 ie8 ie7 chrome safari]
+ALLOWED_BROWSERS = %w[firefox ie10 ie9 ie8 ie7 chrome safari]
 GC_DISABLING_HACK_ENABLED = true

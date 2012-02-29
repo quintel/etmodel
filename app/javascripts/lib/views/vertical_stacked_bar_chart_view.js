@@ -21,7 +21,7 @@ var VerticalStackedBarChartView = BaseChartView.extend({
     var smallest_scale = null; 
 
     if (!this.model.get('percentage')) {
-      var smallest_value = _.min(this.model.values);
+      var smallest_value = _.min(this.model.values());
       smallest_scale = Metric.scaled_scale(smallest_value, 3);
 
       results = _.map(results, function(x) {

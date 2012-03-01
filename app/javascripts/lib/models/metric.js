@@ -1,35 +1,26 @@
-/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 11:48:43 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 13:43:16 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/metric.coffee
  */
 
 (function() {
 
   this.Metric = {
-    parsed_unit: function(value, unit) {
-      var scale, start_scale;
-      if (unit === "MT") {
-        start_scale = 2;
-      } else if (unit === "euro") {
-        unit === "EUR";
-        start_scale = 0;
-      } else {
-        start_scale = 3;
+    scale_unit: function(value, unit) {
+      var power, u, unit_label;
+      power = this.power_of_thousand(value);
+      console.log(power);
+      switch (unit) {
+        case "PJ":
+          u = "joules";
+          break;
+        default:
+          u = unit;
       }
-      scale = this.scaled_scale(value, start_scale);
-      if (unit === 'PJ') {
-        if (scale >= 3 && scale < 5) scale = 3;
-        return this.scaling_in_words(scale, 'joules');
-      } else if (unit === 'MT') {
-        return this.scaling_in_words(scale, 'ton');
-      } else if (unit === 'EUR') {
-        return this.scaling_in_words(scale, 'currency');
-      } else if (unit === 'MW') {
-        return this.scaling_in_words(scale, 'watt');
-      } else if (unit === '%') {
-        return '%';
-      } else {
-        return this.scaling_in_words(scale, unit);
-      }
+      unit_label = this.scaling_in_words(power, u);
+      return unit_label;
+    },
+    scale_value: function(value, scale) {
+      return value / Math.pow(1000, scale);
     },
     scaled: function(value, start_scale, target_scale, max_scale) {
       var diff, i, min_scale, scale, target;

@@ -1,11 +1,11 @@
-@VerticalStackedBarChartView = BaseChartView.extend
-  initialize: -> 
+class @VerticalStackedBarChartView extends BaseChartView
+  initialize: ->
     @initialize_defaults()
 
-  render: -> 
+  render: =>
     @clear_container()
-    InitializeVerticalStackedBar(@model.get("container"), 
-      @results(), 
+    InitializeVerticalStackedBar(@model.get("container"),
+      @results(),
       @ticks(),
       @filler(),
       @model.get('show_point_label'),
@@ -30,7 +30,7 @@
     return results
 
   results_without_targets: ->
-    return _.map @model.non_target_series(), (serie) -> 
+    return _.map @model.non_target_series(), (serie) ->
       return serie.result_pairs()
 
   filler: ->

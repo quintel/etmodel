@@ -23,6 +23,8 @@ gem 'sprockets-rails' # CHECK
 gem 'rack-sprockets' # CHECK
 gem 'yui-compressor'
 gem 'i18n-js'
+gem 'barista'
+gem 'therubyracer'
 
 # supporting gems
 gem 'airbrake', '~> 3.0.9'

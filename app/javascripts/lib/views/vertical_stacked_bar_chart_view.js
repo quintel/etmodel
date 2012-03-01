@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 14:16:07 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 14:20:34 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/vertical_stacked_bar_chart_view.coffee
  */
 

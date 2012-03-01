@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 11:41:54 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 11:48:43 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/metric.coffee
  */
 
@@ -15,20 +15,20 @@
       } else {
         start_scale = 3;
       }
-      scale = Metric.scaled_scale(value, start_scale);
+      scale = this.scaled_scale(value, start_scale);
       if (unit === 'PJ') {
         if (scale >= 3 && scale < 5) scale = 3;
-        return Metric.scaling_in_words(scale, 'joules');
+        return this.scaling_in_words(scale, 'joules');
       } else if (unit === 'MT') {
-        return Metric.scaling_in_words(scale, 'ton');
+        return this.scaling_in_words(scale, 'ton');
       } else if (unit === 'EUR') {
-        return Metric.scaling_in_words(scale, 'currency');
+        return this.scaling_in_words(scale, 'currency');
       } else if (unit === 'MW') {
-        return Metric.scaling_in_words(scale, 'watt');
+        return this.scaling_in_words(scale, 'watt');
       } else if (unit === '%') {
         return '%';
       } else {
-        return Metric.scaling_in_words(scale, unit);
+        return this.scaling_in_words(scale, unit);
       }
     },
     scaled: function(value, start_scale, target_scale, max_scale) {
@@ -94,16 +94,16 @@
     autoscale_value: function(x, unit, precision) {
       var out, output, pow, prefix, scale_string, suffix, value;
       precision = precision || 0;
-      pow = Metric.power_of_thousand(x);
+      pow = this.power_of_thousand(x);
       value = x / Math.pow(1000, pow);
-      value = Metric.round_number(value, precision);
-      scale_string = Metric.power_of_thousand_to_string(pow);
+      value = this.round_number(value, precision);
+      scale_string = this.power_of_thousand_to_string(pow);
       prefix = '';
       out = '';
       suffix = '';
       switch (unit) {
         case '%':
-          out = Metric.percentage_to_string(x);
+          out = this.percentage_to_string(x);
           break;
         case 'MJ':
           out = x / Math.pow(1000, pow);
@@ -127,24 +127,24 @@
       var value;
       precision = precision || 1;
       prefix = prefix || false;
-      value = Metric.round_number(x, precision);
+      value = this.round_number(x, precision);
       if (prefix && value > 0.0) value = "+" + value;
-      return '' + value + '%';
+      return "" + value + "%";
     },
     ratio_as_percentage: function(x, prefix, precision) {
-      return Metric.percentage_to_string(x * 100, prefix, precision);
+      return this.percentage_to_string(x * 100, prefix, precision);
     },
     euros_to_string: function(x, unit_suffix) {
       var abs_value, prefix, rounded, scale, suffix, value;
       prefix = x < 0 ? "-" : "";
       abs_value = Math.abs(x);
-      scale = Metric.power_of_thousand(x);
+      scale = this.power_of_thousand(x);
       value = abs_value / Math.pow(1000, scale);
       suffix = '';
       if (unit_suffix) {
-        suffix = I18n.t('units.currency.' + Metric.power_of_thousand_to_string(scale));
+        suffix = I18n.t('units.currency.' + this.power_of_thousand_to_string(scale));
       }
-      rounded = Metric.round_number(value, 1).toString();
+      rounded = this.round_number(value, 1).toString();
       if (abs_value < 1000 && _.indexOf(rounded, '.') !== -1) {
         rounded = rounded.split('.');
         if (rounded[1] && rounded[1].length === 1) rounded[1] += '0';

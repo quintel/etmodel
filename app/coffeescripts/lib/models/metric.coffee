@@ -10,21 +10,21 @@
     else
       start_scale = 3
 
-    scale = Metric.scaled_scale(value, start_scale);
+    scale = @scaled_scale(value, start_scale);
 
     if (unit == 'PJ')
       if (scale >= 3 && scale < 5) then scale = 3
-      return Metric.scaling_in_words(scale, 'joules')
+      return @scaling_in_words(scale, 'joules')
     else if (unit == 'MT')
-      return Metric.scaling_in_words(scale, 'ton')
+      return @scaling_in_words(scale, 'ton')
     else if (unit == 'EUR')
-      return Metric.scaling_in_words(scale, 'currency')
+      return @scaling_in_words(scale, 'currency')
     else if (unit == 'MW')
-      return Metric.scaling_in_words(scale, 'watt')
+      return @scaling_in_words(scale, 'watt')
     else if (unit == '%')
       return '%'
     else
-      return Metric.scaling_in_words(scale, unit)
+      return @scaling_in_words(scale, unit)
 
   scaled: (value, start_scale, target_scale, max_scale) ->
     scale = start_scale || 0
@@ -53,10 +53,10 @@
     return [parseInt(scale), value]
 
   scaled_scale: (value, start_scale, target_scale, max_scale) ->
-    return this.scaled(value, start_scale, target_scale, max_scale)[0]
+    return @scaled(value, start_scale, target_scale, max_scale)[0]
 
   scaled_value: (value, start_scale, target_scale, max_scale) ->
-    return this.scaled(value, start_scale, target_scale, max_scale)[1]
+    return @scaled(value, start_scale, target_scale, max_scale)[1]
 
   # Translates a scale to a words:
   #  1000 ^ 1 = thousands
@@ -96,10 +96,10 @@
   # av(1234)    => 1234
   autoscale_value: (x, unit, precision) ->
     precision  = precision || 0
-    pow    = Metric.power_of_thousand(x)
+    pow    = @power_of_thousand(x)
     value  = x / Math.pow(1000, pow)
-    value = Metric.round_number(value, precision)
-    scale_string = Metric.power_of_thousand_to_string(pow)
+    value = @round_number(value, precision)
+    scale_string = @power_of_thousand_to_string(pow)
 
     prefix = ''
     out    = ''
@@ -107,7 +107,7 @@
 
     switch unit
       when '%'
-        out = Metric.percentage_to_string(x)
+        out = @percentage_to_string(x)
       when 'MJ'
         out = x / Math.pow(1000, pow)
         suffix = I18n.t('units.joules.' + scale_string)
@@ -134,13 +134,13 @@
   percentage_to_string: (x, prefix, precision) ->
     precision = precision || 1
     prefix = prefix || false
-    value = Metric.round_number(x, precision)
-    value = "+" + value if prefix && value > 0.0
-    return '' + value + '%'
+    value = @round_number(x, precision)
+    value = "+#{value}" if prefix && value > 0.0
+    "#{value}%"
 
   # as format_percentage, but multiplying the value * 100
   ratio_as_percentage: (x, prefix, precision)->
-    return Metric.percentage_to_string(x * 100, prefix, precision)
+    return @percentage_to_string(x * 100, prefix, precision)
 
   #   very specific I'm keeping it separated from autoscale_value.
   #   1_000_000     => &euro;1mln
@@ -150,14 +150,14 @@
   euros_to_string: (x, unit_suffix) ->
     prefix = if x < 0 then "-" else ""
     abs_value = Math.abs(x)
-    scale     = Metric.power_of_thousand(x)
+    scale     = @power_of_thousand(x)
     value     = abs_value / Math.pow(1000, scale)
     suffix    = ''
 
     if unit_suffix
-     suffix = I18n.t('units.currency.' + Metric.power_of_thousand_to_string(scale))
+     suffix = I18n.t('units.currency.' + @power_of_thousand_to_string(scale))
 
-    rounded = Metric.round_number(value, 1).toString()
+    rounded = @round_number(value, 1).toString()
 
     # If the number is < 1000, and has decimal places, make sure that the
     # number isn't truncated to something like 5.4, but instead returns 5.40.

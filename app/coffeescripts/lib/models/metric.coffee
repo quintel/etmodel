@@ -2,7 +2,6 @@
   # returns the appropriate unit
   scale_unit : (value, unit) ->
     power = @power_of_thousand(value)
-    console.log power
     switch unit
       when "PJ" then u = "joules"
       else u = unit

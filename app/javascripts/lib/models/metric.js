@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 13:43:16 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 14:09:26 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/metric.coffee
  */
 
@@ -8,7 +8,6 @@
     scale_unit: function(value, unit) {
       var power, u, unit_label;
       power = this.power_of_thousand(value);
-      console.log(power);
       switch (unit) {
         case "PJ":
           u = "joules";

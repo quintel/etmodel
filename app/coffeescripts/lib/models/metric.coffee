@@ -1,30 +1,17 @@
 @Metric =
-  parsed_unit : (value, unit) ->
+  # returns the appropriate unit
+  scale_unit : (value, unit) ->
+    power = @power_of_thousand(value)
+    console.log power
+    switch unit
+      when "PJ" then u = "joules"
+      else u = unit
+    unit_label = @scaling_in_words(power, u)
+    return unit_label
 
-    if (unit == "MT")
-      start_scale = 2
-    else if (unit == "euro")
-      # quick ugly fix
-      unit == "EUR"
-      start_scale = 0
-    else
-      start_scale = 3
-
-    scale = @scaled_scale(value, start_scale);
-
-    if (unit == 'PJ')
-      if (scale >= 3 && scale < 5) then scale = 3
-      return @scaling_in_words(scale, 'joules')
-    else if (unit == 'MT')
-      return @scaling_in_words(scale, 'ton')
-    else if (unit == 'EUR')
-      return @scaling_in_words(scale, 'currency')
-    else if (unit == 'MW')
-      return @scaling_in_words(scale, 'watt')
-    else if (unit == '%')
-      return '%'
-    else
-      return @scaling_in_words(scale, unit)
+  # scale is the power of thousand
+  scale_value: (value, scale) ->
+    value / Math.pow(1000, scale)
 
   scaled: (value, start_scale, target_scale, max_scale) ->
     scale = start_scale || 0
@@ -153,12 +140,9 @@
     scale     = @power_of_thousand(x)
     value     = abs_value / Math.pow(1000, scale)
     suffix    = ''
-
     if unit_suffix
      suffix = I18n.t('units.currency.' + @power_of_thousand_to_string(scale))
-
     rounded = @round_number(value, 1).toString()
-
     # If the number is < 1000, and has decimal places, make sure that the
     # number isn't truncated to something like 5.4, but instead returns 5.40.
     if (abs_value < 1000 && _.indexOf(rounded, '.') != -1)
@@ -166,9 +150,7 @@
       if (rounded[1] && rounded[1].length == 1)
         rounded[1] += '0'
       rounded = rounded.join('.')
-
-    return "#{prefix}&euro;#{rounded}#{suffix}"
-
+    "#{prefix}&euro;#{rounded}#{suffix}"
 
   # utility methods
 

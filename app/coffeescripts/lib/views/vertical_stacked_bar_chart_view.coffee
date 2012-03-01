@@ -15,15 +15,16 @@
 
   results : () ->
     results = @results_without_targets()
-    smallest_scale = null; 
+    scale = @data_scale()
 
     if !@model.get('percentage')
       results = _.map results, (x) ->
         return _.map x, (value) ->
-          return value
+          return Metric.scale_value(value, scale)
 
     for serie in @model.target_series()
       result = serie.result()[0][1]; # target_series has only present or future value
+      result = Metric.scale_value(result, scale)
       x = parseFloat(serie.get('target_line_position'))
       results.push([[x - 0.4, result], [x + 0.4, result]])
     return results

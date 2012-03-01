@@ -1,119 +1,96 @@
-/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 09:38:32 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 11:41:54 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/metric.coffee
  */
 
 (function() {
-  var Metric;
 
-  Metric = {
-    /*
-      parsed_unit : function(value, unit) {
-        var start_scale; 
-    
-        if (unit == "MT") {
-          start_scale = 2;
-        } else if (unit == "euro") {
-          // quick ugly fix
-          unit == "EUR";
-          start_scale = 0; 
-        } else {
-          start_scale = 3;
+  this.Metric = {
+    parsed_unit: function(value, unit) {
+      var scale, start_scale;
+      if (unit === "MT") {
+        start_scale = 2;
+      } else if (unit === "euro") {
+        unit === "EUR";
+        start_scale = 0;
+      } else {
+        start_scale = 3;
+      }
+      scale = Metric.scaled_scale(value, start_scale);
+      if (unit === 'PJ') {
+        if (scale >= 3 && scale < 5) scale = 3;
+        return Metric.scaling_in_words(scale, 'joules');
+      } else if (unit === 'MT') {
+        return Metric.scaling_in_words(scale, 'ton');
+      } else if (unit === 'EUR') {
+        return Metric.scaling_in_words(scale, 'currency');
+      } else if (unit === 'MW') {
+        return Metric.scaling_in_words(scale, 'watt');
+      } else if (unit === '%') {
+        return '%';
+      } else {
+        return Metric.scaling_in_words(scale, unit);
+      }
+    },
+    scaled: function(value, start_scale, target_scale, max_scale) {
+      var diff, i, min_scale, scale, target;
+      scale = start_scale || 0;
+      target = target_scale || null;
+      min_scale = 0;
+      max_scale = max_scale || 100;
+      if (!target) {
+        while (value >= 0 && scale < max_scale) {
+          value = value / 1000;
+          scale = scale + 1;
         }
-    
-        var scale = Metric.scaled_scale(value, start_scale);
-    
-        if (unit == 'PJ') {
-          if (scale >= 3 && scale < 5) scale = 3;
-          return Metric.scaling_in_words(scale, 'joules');
-        } else if (unit == 'MT') {
-          return Metric.scaling_in_words(scale, 'ton');
-        } else if (unit == 'EUR') {
-          return Metric.scaling_in_words(scale, 'currency');
-        } else if (unit == 'MW') {
-          return Metric.scaling_in_words(scale, 'watt');
-        } else if (unit == '%') {
-          return '%';
-        } else {
-          return Metric.scaling_in_words(scale, unit);
+        while (value < 1 && scale > min_scale) {
+          value = value * 1000;
+          scale = scale - 1;
         }
-      },
-    
-      scaled : function(value, start_scale, target_scale, max_scale) {
-        var scale = start_scale || 0;
-        var target = target_scale || null;
-        var min_scale = 0;
-        max_scale = max_scale || 100;
-        
-        if (!target) {
-          while (value >= 0 && scale < max_scale) {
+      } else {
+        diff = target - scale;
+        i = Math.abs(diff);
+        while (i > 0) {
+          if (diff < 0) {
+            value = value * 1000;
+            scale = scale - 1;
+          } else {
             value = value / 1000;
             scale = scale + 1;
           }
-          while (value < 1 && scale > min_scale) {
-            value = value * 1000;
-            scale = scale - 1;
-          }
-        } else {
-          var diff = target - scale;
-          for (var i = Math.abs(diff); i > 0; i -= 1) {
-            if (diff < 0) {
-              value = value * 1000;
-              scale = scale - 1;
-            } else {
-              value = value / 1000;
-              scale = scale + 1;
-            }
-          }
+          i--;
         }
-        return [parseInt(scale), value];
-      },
-    
-      scaled_scale : function(value, start_scale, target_scale, max_scale) {
-        return this.scaled(value, start_scale, target_scale, max_scale)[0];
-      },
-      
-      scaled_value : function(value, start_scale, target_scale, max_scale) {
-        return this.scaled(value, start_scale, target_scale, max_scale)[1];
-      },
-    
-      // Doesn't add trailing zeros. Let's use sprintf.js in case
-      round_number : function(value, precision) {
-        var rounded = Math.pow(10, precision);
-        return Math.round(value * (rounded)) / rounded;
-      },
-    
-      calculate_performance : function(now, fut) {
-        if (now != null || fut != null) {
-          var performance = (fut / now) - 1;
-          return performance;
-        } else {
-        return null;
-        }
-      },
-    
-       * Translates a scale to a words:
-       * 1000 ^ 1 = thousands
-       * 1000 ^ 2 = millions
-       * etc.
-       *
-       * @param scale [Float] The scale that must be translated into a word
-       * @param unit [String] The unit - currently {currency|joules|nounit|ton}
-       * Add other units on config/locales/{en|nl}.yml
-      scaling_in_words : function(scale, unit) {
-        var scale_symbols = {
-          "0" : 'unit',
-          "1" : 'thousands',
-          "2" : 'millions',
-          "3" : 'billions',
-          "4" : 'trillions',
-          "5" : 'quadrillions',
-          "6" : 'quintillions'
-        };
-        var symbol = scale_symbols["" + scale];
-    
-        return I18n.t("units." + unit + "." + symbol);
-      },
-    */
+      }
+      return [parseInt(scale), value];
+    },
+    scaled_scale: function(value, start_scale, target_scale, max_scale) {
+      return this.scaled(value, start_scale, target_scale, max_scale)[0];
+    },
+    scaled_value: function(value, start_scale, target_scale, max_scale) {
+      return this.scaled(value, start_scale, target_scale, max_scale)[1];
+    },
+    scaling_in_words: function(scale, unit) {
+      var scale_symbols, symbol;
+      scale_symbols = {
+        "0": 'unit',
+        "1": 'thousands',
+        "2": 'millions',
+        "3": 'billions',
+        "4": 'trillions',
+        "5": 'quadrillions',
+        "6": 'quintillions'
+      };
+      symbol = scale_symbols["" + scale];
+      return I18n.t("units." + unit + "." + symbol);
+    },
+    round_number: function(value, precision) {
+      var rounded;
+      rounded = Math.pow(10, precision);
+      return Math.round(value * rounded) / rounded;
+    },
+    calculate_performance: function(now, fut) {
+      if (now === null || fut === null || fut === 0) return null;
+      return fut / now - 1;
+    },
     autoscale_value: function(x, unit, precision) {
       var out, output, pow, prefix, scale_string, suffix, value;
       precision = precision || 0;
@@ -157,19 +134,9 @@
     ratio_as_percentage: function(x, prefix, precision) {
       return Metric.percentage_to_string(x * 100, prefix, precision);
     },
-    /*
-    
-         very specific I'm keeping it separated from autoscale_value.
-         1_000_000     => &euro;1mln
-         -1_000_000    => -&euro;1mln
-         1_000_000_000 => &euro;1bln
-         The unit_suffix parameters adds a translated mln/bln suffix
-    */
     euros_to_string: function(x, unit_suffix) {
-      var abs_value, prefix, rounded, scale, suffix, value, _ref;
-      prefix = (_ref = x < 0) != null ? _ref : {
-        '-': ''
-      };
+      var abs_value, prefix, rounded, scale, suffix, value;
+      prefix = x < 0 ? "-" : "";
       abs_value = Math.abs(x);
       scale = Metric.power_of_thousand(x);
       value = abs_value / Math.pow(1000, scale);
@@ -183,7 +150,7 @@
         if (rounded[1] && rounded[1].length === 1) rounded[1] += '0';
         rounded = rounded.join('.');
       }
-      return prefix + '&euro;' + rounded + suffix;
+      return "" + prefix + "&euro;" + rounded + suffix;
     },
     power_of_thousand: function(x) {
       return parseInt(Math.log(Math.abs(x)) / Math.log(1000));

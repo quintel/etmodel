@@ -1,114 +1,92 @@
-Metric =
-  ###
-  parsed_unit : function(value, unit) {
-    var start_scale; 
+@Metric =
+  parsed_unit : (value, unit) ->
 
-    if (unit == "MT") {
-      start_scale = 2;
-    } else if (unit == "euro") {
-      // quick ugly fix
-      unit == "EUR";
-      start_scale = 0; 
-    } else {
-      start_scale = 3;
-    }
+    if (unit == "MT")
+      start_scale = 2
+    else if (unit == "euro")
+      # quick ugly fix
+      unit == "EUR"
+      start_scale = 0
+    else
+      start_scale = 3
 
-    var scale = Metric.scaled_scale(value, start_scale);
+    scale = Metric.scaled_scale(value, start_scale);
 
-    if (unit == 'PJ') {
-      if (scale >= 3 && scale < 5) scale = 3;
-      return Metric.scaling_in_words(scale, 'joules');
-    } else if (unit == 'MT') {
-      return Metric.scaling_in_words(scale, 'ton');
-    } else if (unit == 'EUR') {
-      return Metric.scaling_in_words(scale, 'currency');
-    } else if (unit == 'MW') {
-      return Metric.scaling_in_words(scale, 'watt');
-    } else if (unit == '%') {
-      return '%';
-    } else {
-      return Metric.scaling_in_words(scale, unit);
-    }
-  },
+    if (unit == 'PJ')
+      if (scale >= 3 && scale < 5) then scale = 3
+      return Metric.scaling_in_words(scale, 'joules')
+    else if (unit == 'MT')
+      return Metric.scaling_in_words(scale, 'ton')
+    else if (unit == 'EUR')
+      return Metric.scaling_in_words(scale, 'currency')
+    else if (unit == 'MW')
+      return Metric.scaling_in_words(scale, 'watt')
+    else if (unit == '%')
+      return '%'
+    else
+      return Metric.scaling_in_words(scale, unit)
 
-  scaled : function(value, start_scale, target_scale, max_scale) {
-    var scale = start_scale || 0;
-    var target = target_scale || null;
-    var min_scale = 0;
+  scaled: (value, start_scale, target_scale, max_scale) ->
+    scale = start_scale || 0
+    target = target_scale || null
+    min_scale = 0
     max_scale = max_scale || 100;
-    
-    if (!target) {
-      while (value >= 0 && scale < max_scale) {
-        value = value / 1000;
-        scale = scale + 1;
-      }
-      while (value < 1 && scale > min_scale) {
-        value = value * 1000;
-        scale = scale - 1;
-      }
-    } else {
-      var diff = target - scale;
-      for (var i = Math.abs(diff); i > 0; i -= 1) {
-        if (diff < 0) {
-          value = value * 1000;
-          scale = scale - 1;
-        } else {
-          value = value / 1000;
-          scale = scale + 1;
-        }
-      }
-    }
-    return [parseInt(scale), value];
-  },
 
-  scaled_scale : function(value, start_scale, target_scale, max_scale) {
-    return this.scaled(value, start_scale, target_scale, max_scale)[0];
-  },
-  
-  scaled_value : function(value, start_scale, target_scale, max_scale) {
-    return this.scaled(value, start_scale, target_scale, max_scale)[1];
-  },
+    if (!target)
+      while (value >= 0 && scale < max_scale)
+        value = value / 1000
+        scale = scale + 1
+      while (value < 1 && scale > min_scale)
+        value = value * 1000
+        scale = scale - 1
+    else
+      diff = target - scale
+      i = Math.abs(diff)
+      while i > 0
+        if (diff < 0)
+          value = value * 1000
+          scale = scale - 1
+        else
+          value = value / 1000
+          scale = scale + 1
+        i--
+    return [parseInt(scale), value]
 
-  // Doesn't add trailing zeros. Let's use sprintf.js in case
-  round_number : function(value, precision) {
-    var rounded = Math.pow(10, precision);
-    return Math.round(value * (rounded)) / rounded;
-  },
+  scaled_scale: (value, start_scale, target_scale, max_scale) ->
+    return this.scaled(value, start_scale, target_scale, max_scale)[0]
 
-  calculate_performance : function(now, fut) {
-    if (now != null || fut != null) {
-      var performance = (fut / now) - 1;
-      return performance;
-    } else {
-    return null;
-    }
-  },
+  scaled_value: (value, start_scale, target_scale, max_scale) ->
+    return this.scaled(value, start_scale, target_scale, max_scale)[1]
 
-   * Translates a scale to a words:
-   * 1000 ^ 1 = thousands
-   * 1000 ^ 2 = millions
-   * etc.
-   *
-   * @param scale [Float] The scale that must be translated into a word
-   * @param unit [String] The unit - currently {currency|joules|nounit|ton}
-   * Add other units on config/locales/{en|nl}.yml
-  scaling_in_words : function(scale, unit) {
-    var scale_symbols = {
-      "0" : 'unit',
-      "1" : 'thousands',
-      "2" : 'millions',
-      "3" : 'billions',
-      "4" : 'trillions',
-      "5" : 'quadrillions',
+  # Translates a scale to a words:
+  #  1000 ^ 1 = thousands
+  #  1000 ^ 2 = millions
+  #  etc.
+  #
+  # @param scale [Float] The scale that must be translated into a word
+  # @param unit [String] The unit - currently {currency|joules|nounit|ton}
+  # Add other units on config/locales/{en|nl}.yml
+  scaling_in_words: (scale, unit) ->
+    scale_symbols =
+      "0" : 'unit'
+      "1" : 'thousands'
+      "2" : 'millions'
+      "3" : 'billions'
+      "4" : 'trillions'
+      "5" : 'quadrillions'
       "6" : 'quintillions'
-    };
-    var symbol = scale_symbols["" + scale];
+    symbol = scale_symbols["" + scale]
+    return I18n.t("units." + unit + "." + symbol)
 
-    return I18n.t("units." + unit + "." + symbol);
-  },
-  ###
-  
-  
+  # Doesn't add trailing zeros. Let's use sprintf.js in case
+  round_number : (value, precision) ->
+    rounded = Math.pow(10, precision)
+    Math.round(value * rounded) / rounded
+
+  calculate_performance : (now, fut) ->
+    return null if now == null || fut == null || fut == 0
+    return fut / now - 1
+
   #  given a value and a unit, returns a translated string
   # uses i18n.js, so be sure the required translation keys
   # are available.
@@ -145,7 +123,7 @@ Metric =
     output = prefix + out + suffix
     return output
 
-  # formatters 
+  # formatters
 
   # x: the value - no transformations on it
   # prefix: if true, add a leading + on positive values
@@ -161,19 +139,16 @@ Metric =
     return '' + value + '%'
 
   # as format_percentage, but multiplying the value * 100
-  ratio_as_percentage: (x, prefix, precision)-> 
+  ratio_as_percentage: (x, prefix, precision)->
     return Metric.percentage_to_string(x * 100, prefix, precision)
 
-  ###
-
-     very specific I'm keeping it separated from autoscale_value.
-     1_000_000     => &euro;1mln
-     -1_000_000    => -&euro;1mln
-     1_000_000_000 => &euro;1bln
-     The unit_suffix parameters adds a translated mln/bln suffix
-  ###
+  #   very specific I'm keeping it separated from autoscale_value.
+  #   1_000_000     => &euro;1mln
+  #   -1_000_000    => -&euro;1mln
+  #   1_000_000_000 => &euro;1bln
+  #   The unit_suffix parameters adds a translated mln/bln suffix
   euros_to_string: (x, unit_suffix) ->
-    prefix    = x < 0 ? '-' : ''
+    prefix = if x < 0 then "-" else ""
     abs_value = Math.abs(x)
     scale     = Metric.power_of_thousand(x)
     value     = abs_value / Math.pow(1000, scale)
@@ -192,7 +167,7 @@ Metric =
         rounded[1] += '0'
       rounded = rounded.join('.')
 
-    return prefix + '&euro;' + rounded + suffix
+    return "#{prefix}&euro;#{rounded}#{suffix}"
 
 
   # utility methods

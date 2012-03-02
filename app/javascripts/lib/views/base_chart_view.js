@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 14:07:53 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 09:06:25 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/base_chart_view.coffee
  */
 
@@ -19,7 +19,7 @@
     };
 
     BaseChartView.prototype.clear_container = function() {
-      return this.model.container_node().empty();
+      return this.container_node().empty();
     };
 
     BaseChartView.prototype.max_value = function() {
@@ -48,6 +48,18 @@
 
     BaseChartView.prototype.data_scale = function() {
       return Metric.power_of_thousand(this.max_value());
+    };
+
+    BaseChartView.prototype.container_node = function() {
+      return $("#" + this.model.get("container"));
+    };
+
+    BaseChartView.prototype.title_node = function() {
+      return $("#charts_holder h3");
+    };
+
+    BaseChartView.prototype.update_title = function() {
+      return this.title_node().html(this.model.get("name"));
     };
 
     return BaseChartView;

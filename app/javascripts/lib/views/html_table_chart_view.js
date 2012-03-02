@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 16:21:31 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 09:06:25 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/html_table_chart_view.coffee
  */
 
@@ -22,12 +22,11 @@
 
     HtmlTableChartView.prototype.render = function() {
       this.clear_container();
-      this.model.container_node().html(window.table_content);
+      this.container_node().html(window.table_content);
       return this.fill_cells();
     };
 
     HtmlTableChartView.prototype.fill_cells = function() {
-      console.log("Filling cells");
       return this.dynamic_cells().each(function() {
         var gqid, gquery, raw_value, value;
         gqid = $(this).data('gquery_id');
@@ -40,7 +39,7 @@
     };
 
     HtmlTableChartView.prototype.dynamic_cells = function() {
-      return this.model.container_node().find("td");
+      return this.container_node().find("td");
     };
 
     return HtmlTableChartView;

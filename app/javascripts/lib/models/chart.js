@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 08:53:35 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 09:06:25 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/chart.coffee
  */
 
@@ -24,14 +24,6 @@
       this.series = this.get('type') === 'block' ? new BlockChartSeries() : new ChartSeries();
       this.bind('change:type', this.render);
       return this.render();
-    };
-
-    Chart.prototype.container_node = function() {
-      return $("#" + this.get("container"));
-    };
-
-    Chart.prototype.title_node = function() {
-      return $("#charts_holder h3");
     };
 
     Chart.prototype.render = function() {
@@ -103,7 +95,7 @@
             model: this
           });
       }
-      this.title_node().html(this.get("name"));
+      this.view.update_title();
       return this.view;
     };
 

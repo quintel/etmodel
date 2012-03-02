@@ -3,7 +3,7 @@ class @BaseChartView extends Backbone.View
     @model.bind('change', this.render)
 
   clear_container: ->
-    @model.container_node().empty()
+    @container_node().empty()
 
   max_value: ->
     sum_present = _.reduce @model.values_present(), (sum, v) -> return sum + (v > 0 ? v : 0)
@@ -19,3 +19,12 @@ class @BaseChartView extends Backbone.View
   # this is used to scale the values around the chart
   data_scale: ->
     Metric.power_of_thousand @max_value()
+
+  container_node : ->
+    $("#" + @model.get("container"))
+
+  title_node : ->
+    $("#charts_holder h3")
+
+  update_title: ->
+    @title_node().html(@model.get("name"))

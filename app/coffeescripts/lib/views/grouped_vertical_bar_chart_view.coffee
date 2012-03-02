@@ -1,4 +1,4 @@
-GroupedVerticalBarChartView extends BaseChartView
+class @GroupedVerticalBarChartView extends BaseChartView
   initialize : ->
     @initialize_defaults()
 

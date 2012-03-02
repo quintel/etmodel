@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 08:23:53 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 10:07:12 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/metric.coffee
  */
 
@@ -11,6 +11,17 @@
       switch (unit) {
         case "PJ":
           u = "joules";
+          break;
+        case "EUR":
+          u = "euro";
+          break;
+        case "%":
+          return "%";
+        case "MW":
+          u = "watt";
+          break;
+        case "MT":
+          u = "ton";
           break;
         default:
           u = unit;

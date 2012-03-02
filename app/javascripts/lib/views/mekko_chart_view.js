@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 15:34:25 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 10:03:46 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/mekko_chart_view.coffee
  */
 
@@ -26,8 +26,8 @@
     };
 
     MekkoChartView.prototype.results = function() {
-      var results, series, smallest_scale, start_scale, values;
-      start_scale = 3;
+      var results, scale, series, values;
+      scale = this.data_scale();
       series = {};
       values = [];
       this.model.series.each(function(serie) {
@@ -39,10 +39,9 @@
           return values.push(serie.result_pairs()[0]);
         }
       });
-      smallest_scale = Metric.scaled_scale(_.sum(series), start_scale);
       results = _.map(series, function(sector_values, sector) {
         return _.map(sector_values, function(value) {
-          return Metric.scaled_value(value, start_scale, smallest_scale);
+          return Metric.scale_value(value, scale);
         });
       });
       return results;

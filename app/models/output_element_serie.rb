@@ -40,12 +40,13 @@ class OutputElementSerie < ActiveRecord::Base
 
   scope :gquery_contains, lambda {|q| where("gquery LIKE ?", "%#{q}%")}
   scope :ordered_for_admin, order("output_elements.`key`").includes('output_element')
-  scope :block_charts, where(:output_element_id => OutputElement::BLOCK_CHART_ID)
+  # Hmmm ugly
+  scope :block_charts, where(:output_element_id => OutputElementType::BLOCK_CHART_ID)
 
   scope :contains, lambda{|search| where("`key` LIKE ?", "%#{search}%")}
-  
+
   validates :gquery, :presence => true
-  
+
   accepts_nested_attributes_for :description, :area_dependency
 
   # delegate :name, :to => :output_element, :prefix => 'output_element', :allow_nil => true
@@ -57,7 +58,7 @@ class OutputElementSerie < ActiveRecord::Base
   def title_translated
     I18n.t("output_element_series.#{self.label}")
   end
-  
+
   def group_translated
     I18n.t("output_element_series.groups.#{self.group}")
   end

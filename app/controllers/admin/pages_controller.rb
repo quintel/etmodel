@@ -10,8 +10,8 @@ module Admin
 
     def wattnu_log
       send_file Rails.root.join("log/tracking.log"),
-        :filename => 'log.txt',
-        :type => 'text/plain',
+        :filename => 'log.csv',
+        :type => 'text/csv',
         :disposition => 'inline'
     end
 

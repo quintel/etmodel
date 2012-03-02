@@ -8,7 +8,18 @@ class Tracker
 
   def track(data, user = nil)
     user_string = user ? user.name : nil
-    logger.info "#{Time.new}: #{user_string} #{data.to_json}"
+    line = [
+      Time.new,
+      user_string,
+      data[:tab],
+      data[:sidebar],
+      data[:slide],
+      data[:slider],
+      data[:new_value],
+      data[:score]
+    ].join(',')
+
+    logger.info line
   end
 
   def clear_log

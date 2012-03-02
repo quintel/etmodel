@@ -2,6 +2,7 @@
   # returns the appropriate unit
   scale_unit : (value, unit) ->
     power = @power_of_thousand(value)
+    # charts sometimes use custom units. Let's normalize them
     switch unit
       when "PJ" then u = "joules"
       else u = unit
@@ -11,38 +12,6 @@
   # scale is the power of thousand
   scale_value: (value, scale) ->
     value / Math.pow(1000, scale)
-
-  scaled: (value, start_scale, target_scale, max_scale) ->
-    scale = start_scale || 0
-    target = target_scale || null
-    min_scale = 0
-    max_scale = max_scale || 100;
-
-    if (!target)
-      while (value >= 0 && scale < max_scale)
-        value = value / 1000
-        scale = scale + 1
-      while (value < 1 && scale > min_scale)
-        value = value * 1000
-        scale = scale - 1
-    else
-      diff = target - scale
-      i = Math.abs(diff)
-      while i > 0
-        if (diff < 0)
-          value = value * 1000
-          scale = scale - 1
-        else
-          value = value / 1000
-          scale = scale + 1
-        i--
-    return [parseInt(scale), value]
-
-  scaled_scale: (value, start_scale, target_scale, max_scale) ->
-    return @scaled(value, start_scale, target_scale, max_scale)[0]
-
-  scaled_value: (value, start_scale, target_scale, max_scale) ->
-    return @scaled(value, start_scale, target_scale, max_scale)[1]
 
   # Translates a scale to a words:
   #  1000 ^ 1 = thousands
@@ -61,8 +30,8 @@
       "4" : 'trillions'
       "5" : 'quadrillions'
       "6" : 'quintillions'
-    symbol = scale_symbols["" + scale]
-    return I18n.t("units." + unit + "." + symbol)
+    symbol = scale_symbols["#{scale}"]
+    return I18n.t("units.#{unit}.#{symbol}")
 
   # Doesn't add trailing zeros. Let's use sprintf.js in case
   round_number : (value, precision) ->

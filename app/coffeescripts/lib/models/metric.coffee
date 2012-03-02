@@ -5,6 +5,10 @@
     # charts sometimes use custom units. Let's normalize them
     switch unit
       when "PJ" then u = "joules"
+      when "EUR" then u = "euro"
+      when "%" then return "%"
+      when "MW" then u = "watt"
+      when "MT" then u = "ton"
       else u = unit
     unit_label = @scaling_in_words(power, u)
     return unit_label

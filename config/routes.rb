@@ -51,7 +51,6 @@ Etm::Application.routes.draw do
               :slides,
               :sidebar_items,
               :translations,
-              :output_elements,
               :output_element_series,
               :converter_positions,
               :interfaces,
@@ -71,6 +70,9 @@ Etm::Application.routes.draw do
       collection do
         post :upload
       end
+    end
+    resources :output_elements do
+      get :all, :on => :collection
     end
   end
 

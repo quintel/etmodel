@@ -1,19 +1,21 @@
 %h2 Charts
 
-%p= link_to 'Create new output_element', new_admin_output_element_path
-
+%p
+  = link_to 'Create new output_element', new_admin_output_element_path
+  |
+  = link_to "Show all", all_admin_output_elements_path
 %table.default
   %thead
     %tr
       %th.tal id
       %th.tal Key
       %th.tal Desc
-      %th.tal type
-      %th.tal group
+      %th.tal Type
+      %th.tal Unit
+      %th.tal Group
       %th Hidden
       %th
       %th
-      
   %tbody
     - @output_elements.each do |output_element|
       %tr{cycles}
@@ -21,8 +23,8 @@
         %td= output_element.key
         %td= output_element.description.andand.short_content
         %td= output_element.type
+        %td= output_element.unit
         %td= output_element.group
         %td= 'Hidden' if output_element.hidden?
         %td= link_to "Show", admin_output_element_path(output_element)
         %td= link_to "Edit", edit_admin_output_element_path(output_element)
-        

@@ -1,200 +1,240 @@
+/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 09:06:25 GMT from
+ * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/chart.coffee
+ */
 
-var Chart = Backbone.Model.extend({
-  defaults : {
-    'container' : 'current_chart'
-  },
-  
-  initialize : function() {
-    this.series = (this.get('type') == 'block') ? new BlockChartSeries() : new ChartSeries();
-    this.bind('change:type', this.render);
-    this.render();
-  },
-  
-  container_node : function() {
-    return $("#" + this.get("container"));
-  },
-  
-  title_node : function() {
-    return $("#charts_holder h3");
-  },
-  
-  render : function() {
-    var type = this.get('type');
-    switch (type) {
-      case 'bezier' :
-        this.view = new BezierChartView({model : this});
-        break;
-      case 'horizontal_bar' :
-        this.view = new HorizontalBarChartView({model : this});
-        break;
-      case 'horizontal_stacked_bar' :
-        this.view = new HorizontalStackedBarChartView({model : this});
-        break;
-      case 'mekko' :
-        this.view = new MekkoChartView({model : this});
-        break;
-      case 'waterfall' :
-        this.view = new WaterfallChartView({model : this});
-        break;
-      case 'vertical_stacked_bar' :
-        this.view = new VerticalStackedBarChartView({model : this});
-        break;
-      case 'grouped_vertical_bar' :
-        this.view = new GroupedVerticalBarChartView({model : this});
-        break;
-      case 'policy_bar' :
-        this.view = new PolicyBarChartView({model : this});
-        break;
-      case 'line' :
-        this.view = new LineChartView({model : this});
-        break;
-      case 'block' :
-        this.view = new BlockChartView({model : this});
-        break;
-      case 'vertical_bar' :
-        this.view = new VerticalBarChartView({model : this});
-        break;
-      case 'html_table' :
-        this.view = new HtmlTableChartView({model : this});
-        break;
-      default:
-        this.view = new HtmlTableChartView({model : this});
+(function() {
+  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+    __hasProp = Object.prototype.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
+
+  this.Chart = (function(_super) {
+
+    __extends(Chart, _super);
+
+    function Chart() {
+      this.render = __bind(this.render, this);
+      Chart.__super__.constructor.apply(this, arguments);
     }
-    this.title_node().html(this.get("name"));
-    return this.view;
-  },
 
-  // @return [ApiResultArray] = [
-  //   [[2010,0.4],[2040,0.6]],
-  //   [[2010,20.4],2040,210.4]]
-  // ]
-  results : function(exclude_target) {
-    var series, out;
-    if (exclude_target == undefined || exclude_target == null){
-      series =  this.series.toArray();
-    }
-    else{
-      series =  this.non_target_series();
-    }
-    out = _(series).map(function(serie) {
-      var res = serie.result(); 
-      return res;
-    });
+    Chart.prototype.defaults = {
+      'container': 'current_chart'
+    };
 
-    
-    // policy goal charts show percentages but the gqueries return values
-    // in the [0,1] range. Let's take care of that
-    if (this.get('percentage')) {
-      out = _(out).map(function(serie){
-        var scaled = [
-          [
-            serie[0][0],
-            serie[0][1] * 100
-          ],
-          [
-            serie[1][0],
-            serie[1][1] * 100
-          ]
-        ];
-        return scaled;
-      });
-    }
-    
-    return out;
-  },
-  
-  colors : function() {
-    return this.series.map(function(serie) { return serie.get('color'); });
-  },
-  labels : function() {
-    return this.series.map(function(serie) { return serie.get('label'); });
-  },
-  // @return [Float] Only values of the present
-  values_present : function() {
-    var exclude_target_series = true
-    return _.map(this.results(exclude_target_series), function(result) { return result[0][1]; });
-  },
-  // @return [Float] Only values of the future
-  values_future : function() {
-    var exclude_target_series = true
-    return _.map(this.results(exclude_target_series), function(result) { return result[1][1]; });
-  },
-  // @return [Float] All possible values. Helpful to determine min/max values
-  values : function() {
-    return _.flatten([this.values_present(), this.values_future()]);
-  },
-  // @return [[Float,Float]] Array of present/future values [Float,Float]
-  value_pairs : function() {
-    return this.series.map(function(serie) { return serie.result_pairs(); });
-  },
-  non_target_series : function() {
-    return this.series.reject(function(serie) { return serie.get('is_target_line'); });
-  },
-  target_series : function() {
-    return this.series.select(function(serie) { return serie.get('is_target_line'); });
-  },
-  // @return Array of present and future target
-  target_results : function() {
-    return _.flatten(_.map(this.target_series(), function(serie) { return serie.result()[1][1]; })); 
-  },
-  // @return Array of hashes {label, present_value, future_value}
-  series_hash : function() {
-    return this.series.map(function(serie) {
-      var res = serie.result();
-      var out = {
-        label : serie.get('label'),
-        present_value : res[0][1],
-        future_value : res[1][1]
-      };
-      return out; 
-    });
-  }
-});
+    Chart.prototype.initialize = function() {
+      this.series = this.get('type') === 'block' ? new BlockChartSeries() : new ChartSeries();
+      this.bind('change:type', this.render);
+      return this.render();
+    };
 
-
-
-var ChartList = Backbone.Collection.extend({
-  model : Chart,
-
-  initialize : function() {
-    //_.bindAll(this, 'change_chart');
-    //this.bind('add', this.change_chart);
-  },
-
-  change : function(chart) {
-    var old_chart = this.first();
-    if (old_chart !== undefined) {
-      this.remove(old_chart);
-    }
-    this.add(chart);
-  },
-
-  load : function(chart_id) {
-    App.etm_debug('Loading chart: #' + chart_id);
-    if (this.current() == parseInt(chart_id)) {
-      // if chart_id == currently shown chart, skip.
-      return;
-    }
-    var url = '/output_elements/'+chart_id+'.js?'+timestamp();
-    $.getScript(url, function() { 
-      App.call_api('');
-      // show/hide default chart button
-      if(chart_id != charts.current_default_chart) {
-        $("a.default_charts").show();
-      } else {
-        $("a.default_charts").hide();
+    Chart.prototype.render = function() {
+      var type;
+      type = this.get('type');
+      switch (type) {
+        case 'bezier':
+          this.view = new BezierChartView({
+            model: this
+          });
+          break;
+        case 'horizontal_bar':
+          this.view = new HorizontalBarChartView({
+            model: this
+          });
+          break;
+        case 'horizontal_stacked_bar':
+          this.view = new HorizontalStackedBarChartView({
+            model: this
+          });
+          break;
+        case 'mekko':
+          this.view = new MekkoChartView({
+            model: this
+          });
+          break;
+        case 'waterfall':
+          this.view = new WaterfallChartView({
+            model: this
+          });
+          break;
+        case 'vertical_stacked_bar':
+          this.view = new VerticalStackedBarChartView({
+            model: this
+          });
+          break;
+        case 'grouped_vertical_bar':
+          this.view = new GroupedVerticalBarChartView({
+            model: this
+          });
+          break;
+        case 'policy_bar':
+          this.view = new PolicyBarChartView({
+            model: this
+          });
+          break;
+        case 'line':
+          this.view = new LineChartView({
+            model: this
+          });
+          break;
+        case 'block':
+          this.view = new BlockChartView({
+            model: this
+          });
+          break;
+        case 'vertical_bar':
+          this.view = new VerticalBarChartView({
+            model: this
+          });
+          break;
+        case 'html_table':
+          this.view = new HtmlTableChartView({
+            model: this
+          });
+          break;
+        default:
+          this.view = new HtmlTableChartView({
+            model: this
+          });
       }
-      // update chart information link
-      $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/" + chart_id);
-      // update the position of the output_element_actions
-      $("#output_element_actions").removeClass();
-      $("#output_element_actions").addClass(charts.first().get("type"));
-    });
-  },
-  
-  // returns the current chart id
-  current : function() {
-    return parseInt(this.first().get('id'));
-  }
-});
-window.charts = new ChartList();
+      this.view.update_title();
+      return this.view;
+    };
+
+    Chart.prototype.results = function(exclude_target) {
+      var out, series;
+      if (exclude_target === void 0 || exclude_target === null) {
+        series = this.series.toArray();
+      } else {
+        series = this.non_target_series();
+      }
+      out = _(series).map(function(serie) {
+        return serie.result();
+      });
+      if (this.get('percentage')) {
+        out = _(out).map(function(serie) {
+          var scaled;
+          scaled = [[serie[0][0], serie[0][1] * 100], [serie[1][0], serie[1][1] * 100]];
+          return scaled;
+        });
+      }
+      return out;
+    };
+
+    Chart.prototype.colors = function() {
+      return this.series.map(function(serie) {
+        return serie.get('color');
+      });
+    };
+
+    Chart.prototype.labels = function() {
+      return this.series.map(function(serie) {
+        return serie.get('label');
+      });
+    };
+
+    Chart.prototype.values_present = function() {
+      var exclude_target_series;
+      exclude_target_series = true;
+      return _.map(this.results(exclude_target_series), function(result) {
+        return result[0][1];
+      });
+    };
+
+    Chart.prototype.values_future = function() {
+      var exclude_target_series;
+      exclude_target_series = true;
+      return _.map(this.results(exclude_target_series), function(result) {
+        return result[1][1];
+      });
+    };
+
+    Chart.prototype.values = function() {
+      return _.flatten([this.values_present(), this.values_future()]);
+    };
+
+    Chart.prototype.value_pairs = function() {
+      return this.series.map(function(serie) {
+        return serie.result_pairs();
+      });
+    };
+
+    Chart.prototype.non_target_series = function() {
+      return this.series.reject(function(serie) {
+        return serie.get('is_target_line');
+      });
+    };
+
+    Chart.prototype.target_series = function() {
+      return this.series.select(function(serie) {
+        return serie.get('is_target_line');
+      });
+    };
+
+    Chart.prototype.target_results = function() {
+      return _.flatten(_.map(this.target_series(), function(serie) {
+        return serie.result()[1][1];
+      }));
+    };
+
+    Chart.prototype.series_hash = function() {
+      return this.series.map(function(serie) {
+        var out, res;
+        res = serie.result();
+        out = {
+          label: serie.get('label'),
+          present_value: res[0][1],
+          future_value: res[1][1]
+        };
+        return out;
+      });
+    };
+
+    return Chart;
+
+  })(Backbone.Model);
+
+  this.ChartList = (function(_super) {
+
+    __extends(ChartList, _super);
+
+    function ChartList() {
+      ChartList.__super__.constructor.apply(this, arguments);
+    }
+
+    ChartList.prototype.model = Chart;
+
+    ChartList.prototype.change = function(chart) {
+      var old_chart;
+      old_chart = this.first();
+      if (old_chart !== void 0) this.remove(old_chart);
+      return this.add(chart);
+    };
+
+    ChartList.prototype.load = function(chart_id) {
+      var url;
+      App.etm_debug('Loading chart: #' + chart_id);
+      if (this.current() === parseInt(chart_id)) return;
+      url = '/output_elements/' + chart_id + '.js?' + timestamp();
+      return $.getScript(url, function() {
+        App.call_api('');
+        if (chart_id !== charts.current_default_chart) {
+          $("a.default_charts").show();
+        } else {
+          $("a.default_charts").hide();
+        }
+        $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/" + chart_id);
+        $("#output_element_actions").removeClass();
+        return $("#output_element_actions").addClass(charts.first().get("type"));
+      });
+    };
+
+    ChartList.prototype.current = function() {
+      return parseInt(this.first().get('id'));
+    };
+
+    return ChartList;
+
+  })(Backbone.Collection);
+
+  window.charts = new ChartList();
+
+}).call(this);

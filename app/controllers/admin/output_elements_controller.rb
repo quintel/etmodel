@@ -6,6 +6,10 @@ class OutputElementsController < BaseController
     @output_elements = OutputElement.all
   end
 
+  def all
+    @output_elements = OutputElement.all
+  end
+
   def new
     @output_element = OutputElement.new
     @output_element.build_description
@@ -54,7 +58,7 @@ class OutputElementsController < BaseController
   end
 
   private
-  
+
     def find_element
       if params[:version_id]
         @version = Version.find(params[:version_id])

@@ -1,0 +1,22 @@
+%h1 All output elements
+
+- @output_elements.each do |o|
+  .chart
+    %h3= o.key
+    = content_tag_for :div, o do
+      Loading
+    :javascript
+      #{ js_for_output_element(o.id, "output_element_#{o.id}") }
+
+
+- content_for :head do
+  = stylesheet_link_tag "vendor/jquery.jqplot"
+  = javascript_include_tag :defaults, :cache => true
+  = render "layouts/etm/javascript_globals"
+  = javascript_include_tag 'underscore.min', 'i18n', 'translations'
+  = sprocket_layout_init :etm
+- content_for :footer do
+  :javascript
+    App.settings = new Setting(#{Current.setting.to_json.html_safe});
+    App.call_api();
+  

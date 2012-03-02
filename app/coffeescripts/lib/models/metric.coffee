@@ -4,7 +4,9 @@
     power = @power_of_thousand(value)
     # charts sometimes use custom units. Let's normalize them
     switch unit
-      when "PJ" then u = "joules"
+      when "PJ"
+        u = "joules"
+        power += 3
       when "EUR" then u = "euro"
       when "%" then return "%"
       when "MW" then u = "watt"
@@ -34,6 +36,7 @@
       "4" : 'trillions'
       "5" : 'quadrillions'
       "6" : 'quintillions'
+    scale = 0 if _.isNaN(scale)
     symbol = scale_symbols["#{scale}"]
     return I18n.t("units.#{unit}.#{symbol}")
 

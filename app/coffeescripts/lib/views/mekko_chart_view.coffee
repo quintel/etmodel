@@ -5,7 +5,7 @@ class @MekkoChartView extends BaseChartView
   render: =>
     @clear_container()
 
-    InitializeMekko(@model.get("container"), 
+    InitializeMekko(@model.get("container"),
       @results(),
       @parsed_unit(),
       @colors(),
@@ -16,7 +16,6 @@ class @MekkoChartView extends BaseChartView
     scale = @data_scale()
     series = {}
     values = []
-    # RD: push the serie results in the defined groups
     @model.series.each (serie) ->
       group = serie.get('group')
       if group

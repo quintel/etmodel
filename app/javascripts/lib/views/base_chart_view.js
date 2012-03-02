@@ -1,28 +1,69 @@
+/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 09:06:25 GMT from
+ * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/base_chart_view.coffee
+ */
 
+(function() {
+  var __hasProp = Object.prototype.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
 
+  this.BaseChartView = (function(_super) {
 
-var BaseChartView = Backbone.View.extend({
-  initialize_defaults : function() {
-    _.bindAll(this, 'render');
-    this.model.bind('change', this.render);
-  },
-  
-  // SEB: maybe needs a better way to remove jqplot objects.
-  //      => possible js memory leak  
-  clear_container : function() {
-    this.model.container_node().empty();
-  },
+    __extends(BaseChartView, _super);
 
-  max_value : function() {
-    var max_value = _.max($.merge([
-      _.reduce(values_present, function(sum, v) { return sum + (v > 0 ? v : 0); }, 0),
-      _.reduce(values_future, function(sum, v) { return sum + (v > 0 ? v : 0); }, 0),
-      this.model.target_results()
-    ]))
-  },
+    function BaseChartView() {
+      BaseChartView.__super__.constructor.apply(this, arguments);
+    }
 
-  parsed_unit : function() {
-    var unit = this.model.get('unit');
-    return Metric.parsed_unit(this.max_value, unit);
-  }
-});
+    BaseChartView.prototype.initialize_defaults = function() {
+      return this.model.bind('change', this.render);
+    };
+
+    BaseChartView.prototype.clear_container = function() {
+      return this.container_node().empty();
+    };
+
+    BaseChartView.prototype.max_value = function() {
+      var max_value, sum_future, sum_present, target_results;
+      sum_present = _.reduce(this.model.values_present(), function(sum, v) {
+        var _ref;
+        return sum + ((_ref = v > 0) != null ? _ref : {
+          v: 0
+        });
+      });
+      sum_future = _.reduce(this.model.values_future(), function(sum, v) {
+        var _ref;
+        return sum + ((_ref = v > 0) != null ? _ref : {
+          v: 0
+        });
+      });
+      target_results = _.flatten(this.model.target_results());
+      return max_value = _.max($.merge([sum_present, sum_future], target_results));
+    };
+
+    BaseChartView.prototype.parsed_unit = function() {
+      var unit;
+      unit = this.model.get('unit');
+      return Metric.scale_unit(this.max_value(), unit);
+    };
+
+    BaseChartView.prototype.data_scale = function() {
+      return Metric.power_of_thousand(this.max_value());
+    };
+
+    BaseChartView.prototype.container_node = function() {
+      return $("#" + this.model.get("container"));
+    };
+
+    BaseChartView.prototype.title_node = function() {
+      return $("#charts_holder h3");
+    };
+
+    BaseChartView.prototype.update_title = function() {
+      return this.title_node().html(this.model.get("name"));
+    };
+
+    return BaseChartView;
+
+  })(Backbone.View);
+
+}).call(this);

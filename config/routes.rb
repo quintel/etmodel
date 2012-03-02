@@ -42,6 +42,8 @@ Etm::Application.routes.draw do
 
   namespace :admin do
     root :to => 'pages#index'
+    match 'wattnu_log', :to => 'pages#wattnu_log'
+    match 'clear_wattnu_log', :to => 'pages#clear_wattnu_log'
 
     match 'clear_cache' => 'pages#clear_cache', :as => :clear_cache
 

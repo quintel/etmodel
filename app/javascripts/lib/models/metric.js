@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 14:09:26 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 08:23:53 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/metric.coffee
  */
 
@@ -20,43 +20,6 @@
     },
     scale_value: function(value, scale) {
       return value / Math.pow(1000, scale);
-    },
-    scaled: function(value, start_scale, target_scale, max_scale) {
-      var diff, i, min_scale, scale, target;
-      scale = start_scale || 0;
-      target = target_scale || null;
-      min_scale = 0;
-      max_scale = max_scale || 100;
-      if (!target) {
-        while (value >= 0 && scale < max_scale) {
-          value = value / 1000;
-          scale = scale + 1;
-        }
-        while (value < 1 && scale > min_scale) {
-          value = value * 1000;
-          scale = scale - 1;
-        }
-      } else {
-        diff = target - scale;
-        i = Math.abs(diff);
-        while (i > 0) {
-          if (diff < 0) {
-            value = value * 1000;
-            scale = scale - 1;
-          } else {
-            value = value / 1000;
-            scale = scale + 1;
-          }
-          i--;
-        }
-      }
-      return [parseInt(scale), value];
-    },
-    scaled_scale: function(value, start_scale, target_scale, max_scale) {
-      return this.scaled(value, start_scale, target_scale, max_scale)[0];
-    },
-    scaled_value: function(value, start_scale, target_scale, max_scale) {
-      return this.scaled(value, start_scale, target_scale, max_scale)[1];
     },
     scaling_in_words: function(scale, unit) {
       var scale_symbols, symbol;

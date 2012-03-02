@@ -23,6 +23,8 @@ Etm::Application.routes.draw do
   match 'login'  => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
 
+  match 'track' => 'track#track', :as => :path
+
   resources :user_sessions, :users, :descriptions
 
   resources :partners, :only => [:show, :index]

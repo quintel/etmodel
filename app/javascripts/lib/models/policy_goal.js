@@ -131,8 +131,8 @@ var PolicyGoalList = Backbone.Collection.extend({
     this.update_total_score();
   },
 
-  // used by watt-nu. Sums the partial scores
-  update_total_score: function() {
+  total_score: function() {
+    var total = 0;
     var els;
     switch(App.settings.get('current_round')) {
       case '1':
@@ -148,15 +148,19 @@ var PolicyGoalList = Backbone.Collection.extend({
         els = [];
         break;
     }
-
-    var total = 0;
     var goals = this;
     _.each(els, function(key){
       var g = goals.find_by_key(key);
       total += g.score();
     });
+    return total;
+  },
+
+  // used by watt-nu. Sums the partial scores
+  update_total_score: function() {
+    var total = this.total_score(); 
     $("#targets_met-score").html(total);
-    Tracker.track({score: total});
+    Tracker.delayed_track({score: total});
     return total;
   },
 

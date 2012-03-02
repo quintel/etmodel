@@ -13,11 +13,13 @@
      $("#round-selector input").change(function(){
       var round = $(this).val();
       update_score_badges(round);
+      App.settings.set({current_round: round});
      });
 
      // initial trigger
-     update_score_badges(#{Current.setting.current_round});
-     App.settings.set({current_round: #{(Current.setting.current_round || nil).to_json}});
+     var current_round = #{Current.setting.current_round.to_json};
+     update_score_badges(current_round);
+     App.settings.set({current_round: current_round});
   });
 
   function update_score_badges(round) {

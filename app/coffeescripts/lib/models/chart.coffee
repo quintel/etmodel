@@ -7,12 +7,6 @@ class @Chart extends Backbone.Model
     @bind('change:type', @render)
     @render()
 
-  container_node : ->
-    $("#" + @get("container"))
-
-  title_node : ->
-    $("#charts_holder h3")
-
   render : =>
     type = @get('type')
     switch (type)
@@ -29,7 +23,7 @@ class @Chart extends Backbone.Model
       when 'vertical_bar'           then @view = new VerticalBarChartView({model : this})
       when 'html_table'             then @view = new HtmlTableChartView({model : this})
       else @view = new HtmlTableChartView({model : this})
-    @title_node().html(@get("name"))
+    @view.update_title()
     @view
 
   # @return [ApiResultArray] = [

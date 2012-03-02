@@ -6,5 +6,9 @@ var Tracker = {
       data: {data: payload}
     });
     return true;
+  },
+
+  delayed_track: function(payload) {
+    setTimeout(function(){Tracker.track(payload)}, 150);
   }
 };

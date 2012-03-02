@@ -34,6 +34,10 @@ var InputElement = Backbone.Model.extend({
 
   logUpdate : function() {
     App.etm_debug('Moved slider: #' + this.get('id') + ' - ' + this.get('key'));
+    Tracker.track({
+      slider: this.get('translated_name'),
+      new_value: this.get('user_value')
+    });
   },
 
   /**

@@ -156,6 +156,7 @@ var PolicyGoalList = Backbone.Collection.extend({
       total += g.score();
     });
     $("#targets_met-score").html(total);
+    Tracker.track({score: total});
     return total;
   },
 

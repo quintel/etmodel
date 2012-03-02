@@ -23,3 +23,4 @@
 //= require <lib/models/scenario.js>
 //= require <lib/models/policy_goal.js>
 //= require <lib/models/setting.js>
+//= require <lib/models/tracker.js>

@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 10:07:12 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 10:18:32 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/metric.coffee
  */
 
@@ -11,6 +11,7 @@
       switch (unit) {
         case "PJ":
           u = "joules";
+          power += 3;
           break;
         case "EUR":
           u = "euro";
@@ -43,6 +44,7 @@
         "5": 'quadrillions',
         "6": 'quintillions'
       };
+      if (_.isNaN(scale)) scale = 0;
       symbol = scale_symbols["" + scale];
       return I18n.t("units." + unit + "." + symbol);
     },

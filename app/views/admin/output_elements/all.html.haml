@@ -2,7 +2,9 @@
 
 - @output_elements.each do |o|
   .chart
-    %h3= o.key
+    %h3
+      = o.key
+      = link_to 'show', [:admin, o]
     = content_tag_for :div, o do
       Loading
     :javascript

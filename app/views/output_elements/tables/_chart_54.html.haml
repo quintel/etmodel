@@ -1,3 +1,4 @@
+-# Power plants
 %table#supply_output_table{table_defaults}
   %thead
     %tr
@@ -25,7 +26,7 @@
     - 0.upto(rows) do |row|
       %tr{cycles}
         -# use the Label of the first column
-        %th= columns[1][row].label rescue '-'
+        %th= t "output_element_series.#{columns[1][row].label}" rescue '-'
         %td.tar.border-rgt{:data => {:gquery_id => columns[1][row].gquery}} -
         %td.tar{:data => {:gquery_id => columns[2][row].gquery}} -
         %td.tar{:data => {:gquery_id => columns[3][row].gquery}} -

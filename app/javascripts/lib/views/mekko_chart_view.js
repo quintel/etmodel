@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 11:13:26 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 12:54:06 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/mekko_chart_view.coffee
  */
 
@@ -28,17 +28,16 @@
     };
 
     MekkoChartView.prototype.results = function() {
-      var results, scale, series, values;
+      var results, scale, series;
       scale = this.data_scale();
       series = {};
-      values = [];
       this.model.series.each(function(serie) {
-        var group;
+        var group, val;
         group = serie.get('group');
         if (group) {
           if (!series[group]) series[group] = [];
-          series[group].push(serie.result_pairs()[0]);
-          return values.push(serie.result_pairs()[0]);
+          val = serie.result_pairs()[0];
+          return series[group].push(val);
         }
       });
       results = _.map(series, function(sector_values, sector) {
@@ -73,9 +72,10 @@
         "margin-left": -10,
         "margin-top": 0
       });
-      return $(".jqplot-table-legend").css({
+      $(".jqplot-table-legend").css({
         "top": 340
       });
+      return $(".jqplot-point-label").html(null);
     };
 
     MekkoChartView.prototype.chart_opts = function() {
@@ -116,6 +116,11 @@
             tickMode: 'bar',
             tickOptions: {
               formatString: '%d&nbsp;' + this.parsed_unit()
+            },
+            rendererOptions: {
+              barLabelOptions: {
+                angle: 90
+              }
             }
           }
         }

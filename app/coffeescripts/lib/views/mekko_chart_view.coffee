@@ -9,13 +9,12 @@ class @MekkoChartView extends BaseChartView
   results: ->
     scale = @data_scale()
     series = {}
-    values = []
     @model.series.each (serie) ->
       group = serie.get('group')
       if group
         if (!series[group]) then series[group] = []
-        series[group].push(serie.result_pairs()[0])
-        values.push(serie.result_pairs()[0])
+        val = serie.result_pairs()[0]
+        series[group].push(val)
     results = _.map series, (sector_values, sector) ->
       return _.map sector_values, (value) ->
         return Metric.scale_value(value, scale)
@@ -37,6 +36,9 @@ class @MekkoChartView extends BaseChartView
     $.jqplot @model.get("container"), @results(), @chart_opts()
     $(".jqplot-xaxis").css({"margin-left": -10,"margin-top":0})
     $(".jqplot-table-legend").css({"top": 340})
+    # this hides the labels appearing in the middle of the charts. Looks like a jqplot bug
+    # See https://github.com/dennisschoenmakers/etmodel/issues/639
+    $(".jqplot-point-label").html(null)
 
   chart_opts: =>
     out =
@@ -67,4 +69,7 @@ class @MekkoChartView extends BaseChartView
           tickMode: 'bar'
           tickOptions:
             formatString: '%d&nbsp;' + @parsed_unit()
+          rendererOptions:
+            barLabelOptions:
+              angle: 90
     out

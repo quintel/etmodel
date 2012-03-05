@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 08:26:03 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 15:00:10 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/grouped_vertical_bar_chart_view.coffee
  */
 
@@ -12,6 +12,8 @@
     __extends(GroupedVerticalBarChartView, _super);
 
     function GroupedVerticalBarChartView() {
+      this.chart_opts = __bind(this.chart_opts, this);
+      this.render_chart = __bind(this.render_chart, this);
       this.render = __bind(this.render, this);
       GroupedVerticalBarChartView.__super__.constructor.apply(this, arguments);
     }
@@ -22,7 +24,7 @@
 
     GroupedVerticalBarChartView.prototype.render = function() {
       this.clear_container();
-      return InitializeGroupedVerticalBar(this.model.get("container"), this.result_serie(), this.ticks(), this.model.series.length, this.parsed_unit(), this.model.colors(), this.model.labels());
+      return this.render_chart();
     };
 
     GroupedVerticalBarChartView.prototype.result_serie = function() {
@@ -37,6 +39,61 @@
         return ticks.push(serie.result()[1][0]);
       });
       return ticks;
+    };
+
+    GroupedVerticalBarChartView.prototype.results = function() {
+      return [this.result_serie()];
+    };
+
+    GroupedVerticalBarChartView.prototype.render_chart = function() {
+      return this.jqplot(this.container_id(), this.results(), this.chart_opts());
+    };
+
+    GroupedVerticalBarChartView.prototype.chart_opts = function() {
+      var out;
+      out = {
+        grid: default_grid,
+        stackSeries: true,
+        seriesColors: this.model.colors(),
+        seriesDefaults: {
+          renderer: $.jqplot.BarRenderer,
+          rendererOptions: {
+            groups: this.model.series.length,
+            barWidth: 20
+          },
+          pointLabels: {
+            show: false
+          },
+          yaxis: 'y2axis',
+          shadow: shadow
+        },
+        axesDefaults: {
+          tickOptions: {
+            fontSize: font_size
+          }
+        },
+        axes: {
+          xaxis: {
+            ticks: this.ticks()({
+              rendererOptions: {
+                groupLabels: this.model.labels()
+              }
+            }),
+            renderer: $.jqplot.CategoryAxisRenderer,
+            tickOptions: {
+              showGridline: false,
+              markSize: 0,
+              pad: 1.00
+            }
+          },
+          y2axis: {
+            tickOptions: {
+              formatString: "%d&nbsp;" + (this.parsed_unit())
+            }
+          }
+        }
+      };
+      return out;
     };
 
     return GroupedVerticalBarChartView;

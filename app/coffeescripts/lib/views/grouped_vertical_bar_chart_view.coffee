@@ -4,14 +4,7 @@ class @GroupedVerticalBarChartView extends BaseChartView
 
   render : =>
     @clear_container()
-    InitializeGroupedVerticalBar(
-      @model.get("container"),
-      @result_serie(),
-      @ticks(),
-      @model.series.length,
-      @parsed_unit(),
-      @model.colors(),
-      @model.labels())
+    @render_chart()
 
   result_serie : ->
     _.flatten(@model.value_pairs())
@@ -23,3 +16,42 @@ class @GroupedVerticalBarChartView extends BaseChartView
       ticks.push(serie.result()[0][0])
       ticks.push(serie.result()[1][0])
     ticks
+
+  results: ->
+    [@result_serie()]
+
+  render_chart: =>
+    @.jqplot @container_id(), @results(), @chart_opts()
+
+  chart_opts: =>
+    out =
+      grid: default_grid
+      stackSeries: true
+      seriesColors: @model.colors()
+      seriesDefaults:
+        renderer: $.jqplot.BarRenderer
+        rendererOptions:
+          groups: @model.series.length
+          barWidth: 20
+        pointLabels:
+          show: false
+        yaxis:'y2axis'
+        shadow: shadow
+      axesDefaults:
+        tickOptions:
+          fontSize: font_size
+      axes:
+        xaxis:
+          ticks: @ticks()
+           rendererOptions:
+             groupLabels: @model.labels()
+          renderer: $.jqplot.CategoryAxisRenderer
+          tickOptions:
+            showGridline: false
+            markSize: 0
+            pad: 1.00
+        y2axis:
+          tickOptions:
+            formatString: "%d&nbsp;#{@parsed_unit()}"
+
+    out

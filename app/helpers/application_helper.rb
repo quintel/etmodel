@@ -82,4 +82,10 @@ module ApplicationHelper
   def wattnu?
     APP_CONFIG[:wattnu] || session[:wattnu]
   end
+
+  # Used to show a notice in the admin section
+  #
+  def live_server?
+    APP_CONFIG[:live_server]
+  end
 end

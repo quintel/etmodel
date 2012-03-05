@@ -7,15 +7,7 @@ class @HorizontalStackedBarChartView extends BaseChartView
   render: =>
     @clear_results_cache()
     @clear_container()
-    InitializeHorizontalStackedBar(
-      @model.get("container"),
-      @results(),
-      @ticks(),
-      @model.get('show_point_label'),
-      @model.get('unit'),
-      @axis_scale(),
-      @colors(),
-      @labels())
+    @render_chart()
 
   # the horizontal stacked graph expects data in this format:
   # [[value1, 1], [value1, 2]],[[value2, 1], [value2, 2]] ...
@@ -48,3 +40,34 @@ class @HorizontalStackedBarChartView extends BaseChartView
   labels: ->
     _.uniq(@model.labels())
 
+  render_chart: =>
+    $.jqplot @container_id(), @results(), @chart_opts()
+
+  chart_opts: =>
+    out =
+      stackSeries: true
+      seriesColors: @colors()
+      grid: default_grid
+      legend: create_legend(6,'s',@ticks())
+      seriesDefaults:
+        renderer: $.jqplot.BarRenderer
+        pointLabels:
+          show: @model.get('show_point_label')
+        rendererOptions:
+          barDirection: 'horizontal'
+          varyBarColor: true
+          barPadding: 8
+          barMargin: 30
+          shadow: shadow
+      axes:
+        yaxis:
+          renderer: $.jqplot.CategoryAxisRenderer
+          ticks: @labels()
+        xaxis:
+          min: @axis_scale()[0] # axis values are still used in this chart type because of the ability to set them in the database.
+          max: @axis_scale()[1]
+          numberTicks: 5,
+          tickOptions:
+            formatString: "%.2f#{@model.get('unit')}"
+            fontSize: '10px'
+    out

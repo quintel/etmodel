@@ -151,6 +151,7 @@ var PolicyGoalList = Backbone.Collection.extend({
     var goals = this;
     _.each(els, function(key){
       var g = goals.find_by_key(key);
+      if (!g) return;
       total += g.score();
     });
     return total;

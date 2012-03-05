@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 10:18:32 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 08:47:41 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/metric.coffee
  */
 
@@ -20,6 +20,7 @@
           return "%";
         case "MW":
           u = "watt";
+          power += 2;
           break;
         case "MT":
           u = "ton";

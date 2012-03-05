@@ -3,13 +3,16 @@
   scale_unit : (value, unit) ->
     power = @power_of_thousand(value)
     # charts sometimes use custom units. Let's normalize them
+    # check en/nl_units.yml to see the corresponding labels
     switch unit
       when "PJ"
         u = "joules"
         power += 3
       when "EUR" then u = "euro"
       when "%" then return "%"
-      when "MW" then u = "watt"
+      when "MW"
+        u = "watt"
+        power += 2
       when "MT" then u = "ton"
       else u = unit
     unit_label = @scaling_in_words(power, u)

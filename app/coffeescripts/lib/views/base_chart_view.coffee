@@ -20,8 +20,11 @@ class @BaseChartView extends Backbone.View
   data_scale: ->
     Metric.power_of_thousand @max_value()
 
+  container_id: ->
+    @model.get("container")
+
   container_node : ->
-    $("#" + @model.get("container"))
+    $("##{@container_id()}")
 
   title_node : ->
     $("#charts_holder h3")

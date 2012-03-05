@@ -24,7 +24,7 @@ module LayoutHelper
     selected = current ? "selected='true'" : nil
     label = I18n.t(code)
     label += ' (test)' if opts[:test]
-    content_tag :option, label, :value => code, :selected => selected
+    content_tag :option, label.html_safe, :value => code, :selected => selected
   end
 
   # Tries mapping a hex string to a human readable colour name

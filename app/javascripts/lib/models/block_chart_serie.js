@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 13:56:03 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 16:32:14 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/block_chart_serie.coffee
  */
 

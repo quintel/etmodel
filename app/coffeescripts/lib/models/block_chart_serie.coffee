@@ -7,8 +7,8 @@ class @BlockChartSerie extends Backbone.Model
     investment_gql_query = "investment_for_#{key}_in_overview_costs_of_electricity_production"
 
     @set
-      gquery_cost :       new Gquery({key : cost_gql_query}),
-      gquery_investment : new Gquery({key : investment_gql_query})
+      gquery_cost:       new Gquery({key : cost_gql_query}),
+      gquery_investment: new Gquery({key : investment_gql_query})
 
   result : ->
     return [

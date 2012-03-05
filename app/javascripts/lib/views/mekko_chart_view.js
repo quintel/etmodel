@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 10:20:50 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 11:13:26 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/mekko_chart_view.coffee
  */
 
@@ -12,6 +12,8 @@
     __extends(MekkoChartView, _super);
 
     function MekkoChartView() {
+      this.chart_opts = __bind(this.chart_opts, this);
+      this.render_mekko = __bind(this.render_mekko, this);
       this.render = __bind(this.render, this);
       MekkoChartView.__super__.constructor.apply(this, arguments);
     }
@@ -22,7 +24,7 @@
 
     MekkoChartView.prototype.render = function() {
       this.clear_container();
-      return InitializeMekko(this.model.get("container"), this.results(), this.parsed_unit(), this.colors(), this.labels(), this.group_labels());
+      return this.render_mekko();
     };
 
     MekkoChartView.prototype.results = function() {
@@ -63,6 +65,62 @@
         return serie.get('group_translated');
       });
       return _.uniq(group_labels);
+    };
+
+    MekkoChartView.prototype.render_mekko = function() {
+      $.jqplot(this.model.get("container"), this.results(), this.chart_opts());
+      $(".jqplot-xaxis").css({
+        "margin-left": -10,
+        "margin-top": 0
+      });
+      return $(".jqplot-table-legend").css({
+        "top": 340
+      });
+    };
+
+    MekkoChartView.prototype.chart_opts = function() {
+      var out;
+      out = {
+        grid: default_grid,
+        legend: create_legend(3, 's', this.labels(), 155),
+        seriesDefaults: {
+          renderer: $.jqplot.MekkoRenderer,
+          rendererOptions: {
+            borderColor: "#999999"
+          }
+        },
+        seriesColors: this.colors(),
+        axesDefaults: {
+          renderer: $.jqplot.MekkoAxisRenderer,
+          tickOptions: {
+            fontSize: font_size,
+            markSize: 0
+          }
+        },
+        axes: {
+          xaxis: {
+            barLabels: this.group_labels(),
+            rendererOptions: {
+              barLabelOptions: {
+                fontSize: font_size,
+                angle: -45
+              },
+              barLabelRenderer: $.jqplot.CanvasAxisLabelRenderer
+            },
+            tickOptions: {
+              formatString: '&nbsp;'
+            }
+          },
+          x2axis: {
+            show: true,
+            tickMode: 'bar',
+            tickOptions: {
+              formatString: '%d&nbsp;' + this.parsed_unit()
+            }
+          }
+        }
+      };
+      return out;
     };
 
     return MekkoChartView;

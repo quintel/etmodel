@@ -10,5 +10,11 @@ class @ChartSerie extends Backbone.Model
     result = @result()
     [result[0][1],result[1][1]]
 
+  future_value: ->
+    @result()[1][1]
+
+  present_value: ->
+    @result()[0][1]
+
 class @ChartSeries extends Backbone.Collection
   model : ChartSerie

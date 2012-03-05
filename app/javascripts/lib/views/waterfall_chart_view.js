@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 16:07:55 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 13:37:34 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/waterfall_chart_view.coffee
  */
 
@@ -12,6 +12,8 @@
     __extends(WaterfallChartView, _super);
 
     function WaterfallChartView() {
+      this.chart_opts = __bind(this.chart_opts, this);
+      this.render_waterfall = __bind(this.render_waterfall, this);
       this.render = __bind(this.render, this);
       WaterfallChartView.__super__.constructor.apply(this, arguments);
     }
@@ -23,7 +25,7 @@
 
     WaterfallChartView.prototype.render = function() {
       this.clear_container();
-      return InitializeWaterfall(this.model.get("container"), this.results(), this.model.get('unit'), this.colors(), this.labels());
+      return this.render_waterfall();
     };
 
     WaterfallChartView.prototype.colors = function() {
@@ -42,18 +44,66 @@
     };
 
     WaterfallChartView.prototype.results = function() {
-      var series;
+      var scale, series;
+      scale = this.data_scale();
       series = this.model.series.map(function(serie) {
         var future, present;
-        present = serie.result_pairs()[0];
-        future = serie.result_pairs()[1];
+        present = serie.present_value();
+        future = serie.future_value();
         if (serie.get('group') === 'value') {
           return present;
         } else {
-          return future - present;
+          return future;
         }
       });
-      return series;
+      return [series];
+    };
+
+    WaterfallChartView.prototype.render_waterfall = function() {
+      return $.jqplot(this.model.get("container"), this.results(), this.chart_opts());
+    };
+
+    WaterfallChartView.prototype.chart_opts = function() {
+      var out;
+      return out = {
+        seriesVColors: this.colors(),
+        grid: default_grid,
+        seriesDefaults: {
+          shadow: shadow,
+          renderer: $.jqplot.BarRenderer,
+          rendererOptions: {
+            waterfall: true,
+            varyBarColor: true,
+            useNegativeColors: false,
+            barWidth: 25
+          },
+          pointLabels: {
+            ypadding: -5,
+            formatString: '%.0f'
+          },
+          yaxis: 'y2axis'
+        },
+        axes: {
+          xaxis: {
+            renderer: $.jqplot.CategoryAxisRenderer,
+            ticks: this.labels(),
+            tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+            tickOptions: {
+              angle: -90,
+              showGridline: false,
+              fontSize: font_size
+            }
+          },
+          y2axis: {
+            rendererOptions: {
+              forceTickAt0: true
+            },
+            tickOptions: {
+              formatString: "%.1f&nbsp;" + (this.model.get('unit'))
+            }
+          }
+        }
+      };
     };
 
     return WaterfallChartView;

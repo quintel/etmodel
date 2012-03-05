@@ -5,11 +5,7 @@ class @WaterfallChartView extends BaseChartView
 
   render: =>
     @clear_container()
-    InitializeWaterfall(@model.get("container"),
-      @results(),
-      @model.get('unit'),
-      @colors(),
-      @labels())
+    @render_waterfall()
 
   colors: ->
     colors = @model.colors()
@@ -24,12 +20,48 @@ class @WaterfallChartView extends BaseChartView
     labels
 
   results: ->
+    scale = @data_scale()
     series = @model.series.map (serie) ->
-      present = serie.result_pairs()[0]
-      future = serie.result_pairs()[1]
+      present = serie.present_value()
+      future = serie.future_value()
       if serie.get('group') == 'value'
-        return present # Take only the present value, as group == value queries only future/present
+        # Take only the present value, as group == value queries only future/present
+        # ?! - PZ
+        return present
       else
-        return future - present
-    # TODO: Add scaling!
-    series
+        return future
+    [series]
+
+  render_waterfall: =>
+    $.jqplot @model.get("container"), @results(), @chart_opts()
+
+  chart_opts: =>
+    out =
+      seriesVColors: @colors()
+      grid: default_grid
+      seriesDefaults:
+        shadow: shadow
+        renderer: $.jqplot.BarRenderer
+        rendererOptions:
+          waterfall: true
+          varyBarColor: true
+          useNegativeColors: false
+          barWidth: 25
+        pointLabels:
+          ypadding: -5
+          formatString: '%.0f'
+        yaxis:'y2axis'
+      axes:
+        xaxis:
+          renderer: $.jqplot.CategoryAxisRenderer
+          ticks: @labels()
+          tickRenderer: $.jqplot.CanvasAxisTickRenderer
+          tickOptions:
+            angle: -90
+            showGridline: false
+            fontSize: font_size
+        y2axis:
+          rendererOptions:
+            forceTickAt0: true # we always want a tick a 0
+          tickOptions:
+            formatString: "%.1f&nbsp;#{@model.get('unit')}"

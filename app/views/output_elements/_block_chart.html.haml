@@ -56,6 +56,4 @@
                   = t("output_element_series.#{b.label}")
           = link_to t("output_element_series.groups.#{group}"), "#"
 
-:javascript
-  var gquery_map = #{block_chart_gqueries_map.to_json};
 = javascript_include_tag output_element_path(:id => @output_element, :format => 'js')

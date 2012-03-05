@@ -18,6 +18,8 @@
 
       #header
         = render "layouts/etm/header"
+        - if live_server?
+          .live_server_notice This is the production server!
         #nav.nav-admin
           .nav-holder.nav-holder-inner{:style=>"float:left"}
             = tabs_tag do |tab|

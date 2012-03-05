@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 09:06:25 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 14:26:50 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/base_chart_view.coffee
  */
 
@@ -50,8 +50,12 @@
       return Metric.power_of_thousand(this.max_value());
     };
 
+    BaseChartView.prototype.container_id = function() {
+      return this.model.get("container");
+    };
+
     BaseChartView.prototype.container_node = function() {
-      return $("#" + this.model.get("container"));
+      return $("#" + (this.container_id()));
     };
 
     BaseChartView.prototype.title_node = function() {

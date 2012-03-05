@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 15:47:45 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 14:27:22 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/line_chart_view.coffee
  */
 
@@ -12,6 +12,8 @@
     __extends(LineChartView, _super);
 
     function LineChartView() {
+      this.chart_opts = __bind(this.chart_opts, this);
+      this.render_line_chart = __bind(this.render_line_chart, this);
       this.render = __bind(this.render, this);
       LineChartView.__super__.constructor.apply(this, arguments);
     }
@@ -22,7 +24,43 @@
 
     LineChartView.prototype.render = function() {
       this.clear_container();
-      return InitializeLine(this.model.get("container"), this.model.results(), this.model.get('unit'), this.model.colors(), this.model.labels());
+      return this.render_line_chart();
+    };
+
+    LineChartView.prototype.render_line_chart = function() {
+      return $.jqplot(this.container_id(), this.model.results(), this.chart_opts());
+    };
+
+    LineChartView.prototype.chart_opts = function() {
+      var out;
+      out = {
+        seriesColors: this.model.colors(),
+        grid: default_grid,
+        legend: create_legend(2, 's', this.model.labels(), 20),
+        seriesDefaults: {
+          lineWidth: 1.5,
+          showMarker: false,
+          yaxis: 'y2axis'
+        },
+        axes: {
+          xaxis: {
+            numberTicks: 2,
+            tickOptions: {
+              fontSize: font_size,
+              showGridline: false
+            }
+          },
+          y2axis: {
+            rendererOptions: {
+              forceTickAt0: true
+            },
+            tickOptions: {
+              formatString: "%.0f&nbsp;" + (this.model.get('unit'))
+            }
+          }
+        }
+      };
+      return out;
     };
 
     return LineChartView;

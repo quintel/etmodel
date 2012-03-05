@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 16:30:59 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 14:39:15 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/horizontal_stacked_bar_chart_view.coffee
  */
 
@@ -12,6 +12,8 @@
     __extends(HorizontalStackedBarChartView, _super);
 
     function HorizontalStackedBarChartView() {
+      this.chart_opts = __bind(this.chart_opts, this);
+      this.render_chart = __bind(this.render_chart, this);
       this.render = __bind(this.render, this);
       HorizontalStackedBarChartView.__super__.constructor.apply(this, arguments);
     }
@@ -25,7 +27,7 @@
     HorizontalStackedBarChartView.prototype.render = function() {
       this.clear_results_cache();
       this.clear_container();
-      return InitializeHorizontalStackedBar(this.model.get("container"), this.results(), this.ticks(), this.model.get('show_point_label'), this.model.get('unit'), this.axis_scale(), this.colors(), this.labels());
+      return this.render_chart();
     };
 
     HorizontalStackedBarChartView.prototype.results = function() {
@@ -69,6 +71,49 @@
 
     HorizontalStackedBarChartView.prototype.labels = function() {
       return _.uniq(this.model.labels());
+    };
+
+    HorizontalStackedBarChartView.prototype.render_chart = function() {
+      return $.jqplot(this.container_id(), this.results(), this.chart_opts());
+    };
+
+    HorizontalStackedBarChartView.prototype.chart_opts = function() {
+      var out;
+      out = {
+        stackSeries: true,
+        seriesColors: this.colors(),
+        grid: default_grid,
+        legend: create_legend(6, 's', this.ticks()),
+        seriesDefaults: {
+          renderer: $.jqplot.BarRenderer,
+          pointLabels: {
+            show: this.model.get('show_point_label')
+          },
+          rendererOptions: {
+            barDirection: 'horizontal',
+            varyBarColor: true,
+            barPadding: 8,
+            barMargin: 30,
+            shadow: shadow
+          }
+        },
+        axes: {
+          yaxis: {
+            renderer: $.jqplot.CategoryAxisRenderer,
+            ticks: this.labels()
+          },
+          xaxis: {
+            min: this.axis_scale()[0],
+            max: this.axis_scale()[1],
+            numberTicks: 5,
+            tickOptions: {
+              formatString: "%.2f" + (this.model.get('unit')),
+              fontSize: '10px'
+            }
+          }
+        }
+      };
+      return out;
     };
 
     return HorizontalStackedBarChartView;

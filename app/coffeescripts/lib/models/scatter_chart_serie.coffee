@@ -11,7 +11,6 @@ class @ScatterChartSerie extends Backbone.Model
 
   result : ->
     return [
-      @get('id'),
       @get('gquery_x').get('future_value'),
       @get('gquery_y').get('future_value')
     ]

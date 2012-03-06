@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:18:43 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 11:02:48 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/chart.coffee
  */
 
@@ -21,7 +21,16 @@
     };
 
     Chart.prototype.initialize = function() {
-      this.series = this.get('type') === 'block' ? new BlockChartSeries() : new ChartSeries();
+      this.series = (function() {
+        switch (this.get('type')) {
+          case 'block':
+            return new BlockChartSeries();
+          case 'scatter':
+            return new ScatterChartSeries();
+          default:
+            return new ChartSeries();
+        }
+      }).call(this);
       this.bind('change:type', this.render);
       return this.render();
     };
@@ -29,77 +38,66 @@
     Chart.prototype.render = function() {
       var type;
       type = this.get('type');
-      switch (type) {
-        case 'bezier':
-          this.view = new BezierChartView({
-            model: this
-          });
-          break;
-        case 'horizontal_bar':
-          this.view = new HorizontalBarChartView({
-            model: this
-          });
-          break;
-        case 'horizontal_stacked_bar':
-          this.view = new HorizontalStackedBarChartView({
-            model: this
-          });
-          break;
-        case 'mekko':
-          this.view = new MekkoChartView({
-            model: this
-          });
-          break;
-        case 'waterfall':
-          this.view = new WaterfallChartView({
-            model: this
-          });
-          break;
-        case 'vertical_stacked_bar':
-          this.view = new VerticalStackedBarChartView({
-            model: this
-          });
-          break;
-        case 'grouped_vertical_bar':
-          this.view = new GroupedVerticalBarChartView({
-            model: this
-          });
-          break;
-        case 'policy_bar':
-          this.view = new PolicyBarChartView({
-            model: this
-          });
-          break;
-        case 'line':
-          this.view = new LineChartView({
-            model: this
-          });
-          break;
-        case 'block':
-          this.view = new BlockChartView({
-            model: this
-          });
-          break;
-        case 'vertical_bar':
-          this.view = new VerticalBarChartView({
-            model: this
-          });
-          break;
-        case 'html_table':
-          this.view = new HtmlTableChartView({
-            model: this
-          });
-          break;
-        case 'scatter':
-          this.view = new ScatterChartView({
-            model: this
-          });
-          break;
-        default:
-          this.view = new HtmlTableChartView({
-            model: this
-          });
-      }
+      this.view = (function() {
+        switch (type) {
+          case 'bezier':
+            return new BezierChartView({
+              model: this
+            });
+          case 'horizontal_bar':
+            return new HorizontalBarChartView({
+              model: this
+            });
+          case 'horizontal_stacked_bar':
+            return new HorizontalStackedBarChartView({
+              model: this
+            });
+          case 'mekko':
+            return new MekkoChartView({
+              model: this
+            });
+          case 'waterfall':
+            return new WaterfallChartView({
+              model: this
+            });
+          case 'vertical_stacked_bar':
+            return new VerticalStackedBarChartView({
+              model: this
+            });
+          case 'grouped_vertical_bar':
+            return new GroupedVerticalBarChartView({
+              model: this
+            });
+          case 'policy_bar':
+            return new PolicyBarChartView({
+              model: this
+            });
+          case 'line':
+            return new LineChartView({
+              model: this
+            });
+          case 'block':
+            return new BlockChartView({
+              model: this
+            });
+          case 'vertical_bar':
+            return new VerticalBarChartView({
+              model: this
+            });
+          case 'html_table':
+            return new HtmlTableChartView({
+              model: this
+            });
+          case 'scatter':
+            return new ScatterChartView({
+              model: this
+            });
+          default:
+            return new HtmlTableChartView({
+              model: this
+            });
+        }
+      }).call(this);
       this.view.update_title();
       return this.view;
     };

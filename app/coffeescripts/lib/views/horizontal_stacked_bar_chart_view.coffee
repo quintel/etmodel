@@ -47,7 +47,7 @@ class @HorizontalStackedBarChartView extends BaseChartView
     out =
       stackSeries: true
       seriesColors: @colors()
-      grid: default_grid
+      grid: @defaults.grid
       legend: create_legend(6,'s',@ticks())
       seriesDefaults:
         renderer: $.jqplot.BarRenderer
@@ -58,7 +58,7 @@ class @HorizontalStackedBarChartView extends BaseChartView
           varyBarColor: true
           barPadding: 8
           barMargin: 30
-          shadow: shadow
+          shadow: @defaults.shadow
       axes:
         yaxis:
           renderer: $.jqplot.CategoryAxisRenderer

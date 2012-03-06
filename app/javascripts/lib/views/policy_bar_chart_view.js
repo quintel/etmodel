@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 09:49:09 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 09:59:36 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/policy_bar_chart_view.coffee
  */
 
@@ -66,7 +66,7 @@
     PolicyBarChartView.prototype.chart_opts = function() {
       var out;
       out = {
-        grid: default_grid,
+        grid: this.defaults.grid,
         stackSeries: true,
         seriesColors: [this.model.colors()[0], "#CCCCCC"],
         seriesDefaults: {
@@ -79,7 +79,7 @@
             stackedValue: true
           },
           yaxis: 'y2axis',
-          shadow: shadow
+          shadow: this.defaults.shadow
         },
         series: [
           {

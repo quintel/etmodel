@@ -30,7 +30,7 @@ class @PolicyBarChartView extends BaseChartView
 
   chart_opts: =>
     out =
-      grid: default_grid
+      grid: @defaults.grid
       stackSeries: true
       seriesColors: [@model.colors()[0], "#CCCCCC"]
       seriesDefaults:
@@ -41,7 +41,7 @@ class @PolicyBarChartView extends BaseChartView
         pointLabels:
           stackedValue: true
         yaxis:'y2axis',
-        shadow: shadow
+        shadow: @defaults.shadow
       series:
         [{pointLabels: {ypadding: -15}}, {pointLabels: {ypadding: 9000}}] # this hack will push the labels for the top series off of the page so they don't appear
       axesDefaults:

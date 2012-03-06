@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 13:37:34 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:12:24 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/waterfall_chart_view.coffee
  */
 
@@ -67,7 +67,7 @@
       var out;
       return out = {
         seriesVColors: this.colors(),
-        grid: default_grid,
+        grid: this.defaults.grid,
         seriesDefaults: {
           shadow: shadow,
           renderer: $.jqplot.BarRenderer,
@@ -91,7 +91,7 @@
             tickOptions: {
               angle: -90,
               showGridline: false,
-              fontSize: font_size
+              fontSize: this.defaults.font_size
             }
           },
           y2axis: {

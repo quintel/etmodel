@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 15:00:10 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:12:24 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/grouped_vertical_bar_chart_view.coffee
  */
 
@@ -52,7 +52,7 @@
     GroupedVerticalBarChartView.prototype.chart_opts = function() {
       var out;
       out = {
-        grid: default_grid,
+        grid: this.defaults.grid,
         stackSeries: true,
         seriesColors: this.model.colors(),
         seriesDefaults: {
@@ -65,11 +65,11 @@
             show: false
           },
           yaxis: 'y2axis',
-          shadow: shadow
+          shadow: this.defaults.shadow
         },
         axesDefaults: {
           tickOptions: {
-            fontSize: font_size
+            fontSize: this.defaults.font_size
           }
         },
         axes: {

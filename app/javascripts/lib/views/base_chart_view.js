@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 14:26:50 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 09:59:01 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/base_chart_view.coffee
  */
 
@@ -64,6 +64,25 @@
 
     BaseChartView.prototype.update_title = function() {
       return this.title_node().html(this.model.get("name"));
+    };
+
+    BaseChartView.prototype.defaults = {
+      shadow: false,
+      font_size: '11px',
+      grid: {
+        drawGridLines: false,
+        gridLineColor: '#cccccc',
+        background: '#ffffff',
+        borderColor: '#cccccc',
+        borderWidth: 0.0,
+        shadow: false
+      },
+      stacked_line_axis_default: {
+        tickOptions: {
+          formatString: '%d',
+          fontSize: '11px'
+        }
+      }
     };
 
     return BaseChartView;

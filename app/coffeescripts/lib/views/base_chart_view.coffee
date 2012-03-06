@@ -31,3 +31,18 @@ class @BaseChartView extends Backbone.View
 
   update_title: ->
     @title_node().html(@model.get("name"))
+
+  defaults:
+    shadow: false
+    font_size: '11px'
+    grid:
+      drawGridLines: false     # wether to draw lines across the grid or not.
+      gridLineColor: '#cccccc' # Color of the grid lines.
+      background: '#ffffff'    # CSS color spec for background color of grid.
+      borderColor: '#cccccc'   # CSS color spec for border around grid.
+      borderWidth: 0.0         # pixel width of border around grid.
+      shadow: false            # draw a shadow for grid.
+    stacked_line_axis_default:
+      tickOptions:
+        formatString: '%d'
+        fontSize: '11px'

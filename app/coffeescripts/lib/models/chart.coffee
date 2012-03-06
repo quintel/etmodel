@@ -109,22 +109,21 @@ class @ChartList extends Backbone.Collection
 
   load : (chart_id) ->
     App.etm_debug('Loading chart: #' + chart_id)
-    if (@current() == parseInt(chart_id))
-      # if chart_id == currently shown chart, skip.
-      return
-    url = '/output_elements/'+chart_id+'.js?'+timestamp()
+    # if chart_id == currently shown chart, skip.
+    return if @current() == parseInt(chart_id)
+    url = "/output_elements/#{chart_id}.js?#{timestamp()}"
     $.getScript url, ->
-      App.call_api('')
       # show/hide default chart button
       if chart_id != charts.current_default_chart
         $("a.default_charts").show()
       else
         $("a.default_charts").hide()
       # update chart information link
-      $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/" + chart_id)
+      $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/#{chart_id}")
       # update the position of the output_element_actions
       $("#output_element_actions").removeClass()
       $("#output_element_actions").addClass(charts.first().get("type"))
+      App.call_api()
 
   # returns the current chart id
   current : ->

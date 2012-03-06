@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:12:24 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 16:30:04 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/waterfall_chart_view.coffee
  */
 
@@ -69,7 +69,7 @@
         seriesVColors: this.colors(),
         grid: this.defaults.grid,
         seriesDefaults: {
-          shadow: shadow,
+          shadow: this.defaults.shadow,
           renderer: $.jqplot.BarRenderer,
           rendererOptions: {
             waterfall: true,

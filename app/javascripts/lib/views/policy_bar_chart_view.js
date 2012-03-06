@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 09:59:36 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 16:30:04 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/policy_bar_chart_view.coffee
  */
 
@@ -94,7 +94,7 @@
         ],
         axesDefaults: {
           tickOptions: {
-            fontSize: font_size
+            fontSize: this.defaults.font_size
           }
         },
         axes: {

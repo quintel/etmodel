@@ -48,7 +48,7 @@ class @HorizontalStackedBarChartView extends BaseChartView
       stackSeries: true
       seriesColors: @colors()
       grid: @defaults.grid
-      legend: create_legend(6,'s',@ticks())
+      legend: @create_legend({num_columns: 6, labels: @ticks()})
       seriesDefaults:
         renderer: $.jqplot.BarRenderer
         pointLabels:

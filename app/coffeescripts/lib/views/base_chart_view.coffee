@@ -38,7 +38,7 @@ class @BaseChartView extends Backbone.View
     location: opts.location || 's'
     fontSize: @defaults.font_size
     placement: "outside"
-    labels: @model.labels()
+    labels: opts.labels || @model.labels()
     yoffset: opts.offset || 25
     rendererOptions:
        numberColumns: opts.num_columns

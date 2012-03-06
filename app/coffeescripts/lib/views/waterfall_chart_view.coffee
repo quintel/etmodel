@@ -40,7 +40,7 @@ class @WaterfallChartView extends BaseChartView
       seriesVColors: @colors()
       grid: @defaults.grid
       seriesDefaults:
-        shadow: shadow
+        shadow: @defaults.shadow
         renderer: $.jqplot.BarRenderer
         rendererOptions:
           waterfall: true

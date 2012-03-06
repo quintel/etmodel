@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:12:24 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 16:28:55 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/mekko_chart_view.coffee
  */
 
@@ -53,9 +53,7 @@
     };
 
     MekkoChartView.prototype.labels = function() {
-      var labels;
-      labels = this.model.labels();
-      return _.uniq(labels);
+      return _.uniq(this.model.labels());
     };
 
     MekkoChartView.prototype.group_labels = function() {
@@ -82,7 +80,11 @@
       var out;
       out = {
         grid: this.defaults.grid,
-        legend: create_legend(3, 's', this.labels(), 155),
+        legend: this.create_legend({
+          num_columns: 3,
+          labels: this.labels(),
+          offset: 155
+        }),
         seriesDefaults: {
           renderer: $.jqplot.MekkoRenderer,
           rendererOptions: {

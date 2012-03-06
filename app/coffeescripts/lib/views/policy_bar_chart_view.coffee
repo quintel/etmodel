@@ -46,7 +46,7 @@ class @PolicyBarChartView extends BaseChartView
         [{pointLabels: {ypadding: -15}}, {pointLabels: {ypadding: 9000}}] # this hack will push the labels for the top series off of the page so they don't appear
       axesDefaults:
         tickOptions:
-          fontSize: font_size
+          fontSize: @defaults.font_size
       axes:
         xaxis:
           ticks: @ticks()

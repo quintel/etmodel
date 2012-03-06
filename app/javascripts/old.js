@@ -10,4 +10,5 @@
 //= require <old/etm.logos.js>
 //= require <old/etm.page_title>
 //= require <old/etm.partners>
+//= require <old/etm.output_elements>
 

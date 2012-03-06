@@ -6,7 +6,7 @@ class @VerticalStackedBarChartView extends BaseChartView
     @clear_container()
     @render_chart()
 
-  results : () ->
+  results: ->
     results = @results_without_targets()
     scale = @data_scale()
 

@@ -25,7 +25,7 @@ class @GroupedVerticalBarChartView extends BaseChartView
 
   chart_opts: =>
     out =
-      grid: default_grid
+      grid: @defaults.grid
       stackSeries: true
       seriesColors: @model.colors()
       seriesDefaults:
@@ -36,10 +36,10 @@ class @GroupedVerticalBarChartView extends BaseChartView
         pointLabels:
           show: false
         yaxis:'y2axis'
-        shadow: shadow
+        shadow: @defaults.shadow
       axesDefaults:
         tickOptions:
-          fontSize: font_size
+          fontSize: @defaults.font_size
       axes:
         xaxis:
           ticks: @ticks()

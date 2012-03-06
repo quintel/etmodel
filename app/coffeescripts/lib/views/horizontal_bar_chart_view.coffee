@@ -33,7 +33,7 @@ class @HorizontalBarChartView extends BaseChartView
   chart_opts: =>
     out =
       seriesColors: @model.colors()
-      grid: default_grid
+      grid: @defaults.grid
       seriesDefaults:
         renderer: $.jqplot.BarRenderer
         pointLabels:
@@ -43,7 +43,7 @@ class @HorizontalBarChartView extends BaseChartView
           varyBarColor: true
           barPadding: 6
           barMargin: 100
-          shadow: shadow
+          shadow: @defaults.shadow
       axes:
         yaxis:
           renderer: $.jqplot.CategoryAxisRenderer

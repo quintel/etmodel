@@ -12,7 +12,7 @@ class @LineChartView extends BaseChartView
   chart_opts: =>
     out =
       seriesColors: @model.colors()
-      grid: default_grid
+      grid: @defaults.grid
       legend: create_legend(2,'s', @model.labels(), 20)
       seriesDefaults:
         lineWidth: 1.5
@@ -22,7 +22,7 @@ class @LineChartView extends BaseChartView
         xaxis:
           numberTicks:2
           tickOptions:
-            fontSize: font_size
+            fontSize: @defaults.font_size
             showGridline: false
         y2axis:
           rendererOptions:

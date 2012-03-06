@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 08:30:28 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:18:43 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/chart.coffee
  */
 
@@ -87,6 +87,11 @@
           break;
         case 'html_table':
           this.view = new HtmlTableChartView({
+            model: this
+          });
+          break;
+        case 'scatter':
+          this.view = new ScatterChartView({
             model: this
           });
           break;

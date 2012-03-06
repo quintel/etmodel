@@ -14,4 +14,5 @@
 //= require <lib/views/vertical_stacked_bar_chart_view.js>
 //= require <lib/views/waterfall_chart_view.js>
 //= require <lib/views/html_table_chart_view.js>
+//= require <lib/views/scatter_chart_view.js>
 //= require <lib/views/sidebar_view.js>

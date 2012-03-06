@@ -24,9 +24,8 @@ class @MekkoChartView extends BaseChartView
     _.uniq(@model.colors())
 
   labels: ->
-    labels = @model.labels()
     # TODO: the old model also has percentage per group. was ommited to simplify things.
-    return _.uniq(labels)
+    return _.uniq(@model.labels())
 
   group_labels:->
     group_labels = @model.series.map (serie) -> serie.get('group_translated')
@@ -43,7 +42,7 @@ class @MekkoChartView extends BaseChartView
   chart_opts: =>
     out =
       grid: @defaults.grid
-      legend: create_legend(3,'s', @labels(), 155)
+      legend: @create_legend({num_columns: 3, labels: @labels(), offset: 155})
       seriesDefaults:
         renderer: $.jqplot.MekkoRenderer
         rendererOptions:

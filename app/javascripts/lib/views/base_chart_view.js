@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 12:07:04 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 16:27:06 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/base_chart_view.coffee
  */
 
@@ -73,7 +73,7 @@
         location: opts.location || 's',
         fontSize: this.defaults.font_size,
         placement: "outside",
-        labels: this.model.labels(),
+        labels: opts.labels || this.model.labels(),
         yoffset: opts.offset || 25,
         rendererOptions: {
           numberColumns: opts.num_columns,

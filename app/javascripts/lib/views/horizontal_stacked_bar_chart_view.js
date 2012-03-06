@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:12:24 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 16:27:06 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/horizontal_stacked_bar_chart_view.coffee
  */
 
@@ -83,7 +83,10 @@
         stackSeries: true,
         seriesColors: this.colors(),
         grid: this.defaults.grid,
-        legend: create_legend(6, 's', this.ticks()),
+        legend: this.create_legend({
+          num_columns: 6,
+          labels: this.ticks()
+        }),
         seriesDefaults: {
           renderer: $.jqplot.BarRenderer,
           pointLabels: {

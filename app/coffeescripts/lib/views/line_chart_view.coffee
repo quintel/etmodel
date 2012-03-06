@@ -13,11 +13,13 @@ class @LineChartView extends BaseChartView
     out =
       seriesColors: @model.colors()
       grid: @defaults.grid
-      legend: create_legend(2,'s', @model.labels(), 20)
+      legend: @create_legend({num_columns: 2, offset: 20})
       seriesDefaults:
         lineWidth: 1.5
         showMarker: false
         yaxis:'y2axis'
+        pointLabels:
+          show: false
       axes:
         xaxis:
           numberTicks:2

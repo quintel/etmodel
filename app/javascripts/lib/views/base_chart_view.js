@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 09:59:01 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 12:07:04 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/base_chart_view.coffee
  */
 
@@ -64,6 +64,22 @@
 
     BaseChartView.prototype.update_title = function() {
       return this.title_node().html(this.model.get("name"));
+    };
+
+    BaseChartView.prototype.create_legend = function(opts) {
+      return {
+        renderer: $.jqplot.EnhancedLegendRenderer,
+        show: true,
+        location: opts.location || 's',
+        fontSize: this.defaults.font_size,
+        placement: "outside",
+        labels: this.model.labels(),
+        yoffset: opts.offset || 25,
+        rendererOptions: {
+          numberColumns: opts.num_columns,
+          seriesToggle: false
+        }
+      };
     };
 
     BaseChartView.prototype.defaults = {

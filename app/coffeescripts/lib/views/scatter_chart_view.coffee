@@ -7,11 +7,7 @@ class @ScatterChartView extends BaseChartView
     @render_chart()
 
   results: =>
-    [
-      [[3,4]],
-      [[7,9]],
-      [[2,6]]
-    ]
+    @model.series.map (serie) -> [serie.result()]
 
   render_chart: =>
     $.jqplot @container_id(), @results(), @chart_opts()
@@ -23,10 +19,10 @@ class @ScatterChartView extends BaseChartView
     @model.get('unit').split(';')[1]
 
   chart_opts: =>
-
     out =
       seriesColors: @model.colors()
       grid: @defaults.grid
+      legend: @create_legend({num_columns: 1})
       seriesDefaults:
         lineWidth: 1.5
         showMarker: true

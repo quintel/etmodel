@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:55:50 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 12:05:46 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/scatter_chart_view.coffee
  */
 
@@ -31,7 +31,9 @@
     };
 
     ScatterChartView.prototype.results = function() {
-      return [[[3, 4]], [[7, 9]], [[2, 6]]];
+      return this.model.series.map(function(serie) {
+        return [serie.result()];
+      });
     };
 
     ScatterChartView.prototype.render_chart = function() {
@@ -51,6 +53,9 @@
       out = {
         seriesColors: this.model.colors(),
         grid: this.defaults.grid,
+        legend: this.create_legend({
+          num_columns: 1
+        }),
         seriesDefaults: {
           lineWidth: 1.5,
           showMarker: true,

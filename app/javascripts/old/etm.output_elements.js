@@ -28,7 +28,6 @@ $(document).ready(function() {
 var font_size = '11px';
 var shadow = false;
 
-
 var default_grid = {
     drawGridLines: false,       // wether to draw lines across the grid or not.
     gridLineColor: '#cccccc',    // Color of the grid lines.

@@ -6,7 +6,7 @@ module OutputElementsHelper
       :color      => serie.color,
       :label      => serie.title_translated,
       :group      => serie.group, #used to group series
-      :group_translated      => serie.group_translated, # used to display groups in mekkos's & horizontal_stacked_bar
+      :group_translated => serie.group_translated, # used to display groups in mekkos's & horizontal_stacked_bar
       :is_target_line  => serie.is_target_line,
       :target_line_position   => serie.target_line_position
     }

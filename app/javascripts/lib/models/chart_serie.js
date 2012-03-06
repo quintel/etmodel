@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 13:24:05 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:55:50 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/chart_serie.coffee
  */
 
@@ -29,9 +29,7 @@
     };
 
     ChartSerie.prototype.result_pairs = function() {
-      var result;
-      result = this.result();
-      return [result[0][1], result[1][1]];
+      return [this.present_value(), this.future_value()];
     };
 
     ChartSerie.prototype.future_value = function() {

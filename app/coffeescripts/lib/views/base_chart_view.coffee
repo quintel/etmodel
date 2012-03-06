@@ -32,6 +32,18 @@ class @BaseChartView extends Backbone.View
   update_title: ->
     @title_node().html(@model.get("name"))
 
+  create_legend: (opts) ->
+    renderer: $.jqplot.EnhancedLegendRenderer
+    show: true
+    location: opts.location || 's'
+    fontSize: @defaults.font_size
+    placement: "outside"
+    labels: @model.labels()
+    yoffset: opts.offset || 25
+    rendererOptions:
+       numberColumns: opts.num_columns
+       seriesToggle: false
+
   defaults:
     shadow: false
     font_size: '11px'

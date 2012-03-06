@@ -15,6 +15,7 @@
 //= require <lib/models/chart.js>
 //= require <lib/models/chart_serie.js>
 //= require <lib/models/block_chart_serie.js>
+//= require <lib/models/scatter_chart_serie.js>
 //= require <lib/models/input_element.js>
 //= require <lib/models/input_element_balancer.js>
 //= require <lib/models/metric.js>

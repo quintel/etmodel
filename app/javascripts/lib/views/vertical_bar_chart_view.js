@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 16:01:20 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 15:47:28 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/vertical_bar_chart_view.coffee
  */
 
@@ -16,13 +16,9 @@
       VerticalBarChartView.__super__.constructor.apply(this, arguments);
     }
 
-    VerticalBarChartView.prototype.initialize = function() {
-      return this.initialize_defaults();
-    };
-
     VerticalBarChartView.prototype.render = function() {
       this.clear_container();
-      return InitializeVerticalBar(this.model.get("container"), this.results(), this.ticks(), this.serie_settings_filler(), this.model.get('show_point_label'), 'MT', this.model.colors(), this.model.labels());
+      return this.render_chart();
     };
 
     VerticalBarChartView.prototype.results = function() {
@@ -45,12 +41,16 @@
       return [1990, App.settings.get("start_year"), App.settings.get("end_year")];
     };
 
-    VerticalBarChartView.prototype.serie_settings_filler = function() {
+    VerticalBarChartView.prototype.filler = function() {
       return [{}];
+    };
+
+    VerticalBarChartView.prototype.parsed_unit = function() {
+      return 'MT';
     };
 
     return VerticalBarChartView;
 
-  })(BaseChartView);
+  })(VerticalStackedBarChartView);
 
 }).call(this);

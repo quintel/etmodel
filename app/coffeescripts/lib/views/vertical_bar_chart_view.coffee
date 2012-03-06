@@ -1,20 +1,9 @@
 # ATTENTION: This chart type is only used in the co2 dashbord and therefore quite custom
 # It containt some custom additions to the series showing a historic value
-class @VerticalBarChartView extends BaseChartView
-  initialize:->
-    @initialize_defaults()
-
+class @VerticalBarChartView extends VerticalStackedBarChartView
   render: =>
     @clear_container()
-
-    InitializeVerticalBar(@model.get("container"),
-      @results(),
-      @ticks(),
-      @serie_settings_filler(),
-      @model.get('show_point_label'),
-      'MT',
-      @model.colors(),
-      @model.labels())
+    @render_chart()
 
   results: ->
     results = @results_with_1990()
@@ -34,6 +23,8 @@ class @VerticalBarChartView extends BaseChartView
     # added 1990 in the code here, this is the only charts that uses @
     [1990,App.settings.get("start_year"), App.settings.get("end_year")]
 
-  serie_settings_filler: ->
+  filler: ->
     # add this filler to create a dummy value. This is needed because the target line must be added to the end of the serie
     [{}]
+
+  parsed_unit: -> 'MT'

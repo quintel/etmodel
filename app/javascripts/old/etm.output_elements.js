@@ -35,7 +35,7 @@ var default_grid = {
     borderColor: '#cccccc',     // CSS color spec for border around grid.
     borderWidth: 0.0,           // pixel width of border around grid.
     shadow: shadow              // draw a shadow for grid.
-}
+};
 
 function create_legend(columns,location,labels,offset) {
   var legend_offset = 25;

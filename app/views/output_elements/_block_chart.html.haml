@@ -1,5 +1,6 @@
 - vertical_grid_lines = 5
 - horizontal_grid_lines = 5
+- blocks = @output_element.allowed_output_element_series
 
 %h3=" #{I18n.t("output_elements.#{@output_element.key}").html_safe}"
 
@@ -29,10 +30,9 @@
           #y-axis-label{:style => "background-image: url(/images/layout/euro_per_mwh_#{I18n.locale}.gif)"} EUR/MWhe
           #x-axis-label= t("output_elements.block_chart.total_investment_cost_of_production")
 
-          - @blocks.each do |block|
+          - blocks.each do |block|
             - show_or_not = session["block_#{block.id}"]
             - show_or_not ||= block.show_at_first ? 'visible' : 'invisible'
-
             .block_container{:style => "bottom: 0%; left: 0%;", :class => show_or_not, :id => "block_container_#{block.id}"}
               .block{:id => "block_#{block.id}"}
                 .header{:class => block.group.downcase}= t("output_element_series.#{block.label}")
@@ -43,7 +43,7 @@
               .balloon-tip
 
     %ul#block_list
-      - @blocks.group_by(&:group).each do |group, blocks|
+      - blocks.group_by(&:group).each do |group, blocks|
         %li.group
           %input.block_list_checkbox{:type => "checkbox", :id => "block_list_checkbox_#{group}"}
           %ul.group{:id => group}
@@ -56,6 +56,4 @@
                   = t("output_element_series.#{b.label}")
           = link_to t("output_element_series.groups.#{group}"), "#"
 
-:javascript
-  var gquery_map = #{block_chart_gqueries_map.to_json};
 = javascript_include_tag output_element_path(:id => @output_element, :format => 'js')

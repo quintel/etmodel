@@ -21,6 +21,8 @@ $(document).ready(function() {
   });
 });
 
+// PZ: This globals have been copied to BaseChartView
+// they can be removed when all the charts will be converted
 // for available options check http://www.jqplot.com/docs/files/jqPlotOptions-txt.html
 // default settings for output elements
 var font_size = '11px';

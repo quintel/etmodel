@@ -19,8 +19,6 @@
 #
 
 class OutputElement < ActiveRecord::Base
-  BLOCK_CHART_ID = 32
-
   include AreaDependent
 
   has_paper_trail
@@ -49,7 +47,7 @@ class OutputElement < ActiveRecord::Base
   end
 
   def block_chart?
-    id == BLOCK_CHART_ID
+    type == 'block'
   end
 
   def options_for_js
@@ -67,23 +65,12 @@ class OutputElement < ActiveRecord::Base
     }
   end
 
-  # DEBT
-  def under_construction(opts = {})
-    return true if opts[:country] == "de" && opts[:id] == "buildings"
-    return true if self[:under_construction]
-    return false
-  end
-
   def self.select_by_group(group)
     where("`group` = '#{group}'").reject(&:area_dependent)
   end
 
   def allowed_output_element_series
     output_element_series.includes(:area_dependency).reject(&:area_dependent)
-  end
-
-  def parsed_name_for_admin
-    "#{group} | #{key} | #{description.andand.short_content}"
   end
 
   # returns the type of chart (bezier, html_table, ...)

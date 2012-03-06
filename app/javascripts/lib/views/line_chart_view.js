@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 14:28:40 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:12:24 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/line_chart_view.coffee
  */
 
@@ -35,7 +35,7 @@
       var out;
       out = {
         seriesColors: this.model.colors(),
-        grid: default_grid,
+        grid: this.defaults.grid,
         legend: create_legend(2, 's', this.model.labels(), 20),
         seriesDefaults: {
           lineWidth: 1.5,
@@ -46,7 +46,7 @@
           xaxis: {
             numberTicks: 2,
             tickOptions: {
-              fontSize: font_size,
+              fontSize: this.defaults.font_size,
               showGridline: false
             }
           },

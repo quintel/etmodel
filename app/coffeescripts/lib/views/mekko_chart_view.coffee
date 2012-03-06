@@ -42,7 +42,7 @@ class @MekkoChartView extends BaseChartView
 
   chart_opts: =>
     out =
-      grid: default_grid
+      grid: @defaults.grid
       legend: create_legend(3,'s', @labels(), 155)
       seriesDefaults:
         renderer: $.jqplot.MekkoRenderer
@@ -52,14 +52,14 @@ class @MekkoChartView extends BaseChartView
       axesDefaults:
         renderer:$.jqplot.MekkoAxisRenderer
         tickOptions:
-          fontSize: font_size
+          fontSize: @defaults.font_size
           markSize: 0
       axes:
         xaxis:
           barLabels: @group_labels()
           rendererOptions:
             barLabelOptions:
-              fontSize: font_size
+              fontSize: @defaults.font_size
               angle: -45
             barLabelRenderer: $.jqplot.CanvasAxisLabelRenderer
           tickOptions:

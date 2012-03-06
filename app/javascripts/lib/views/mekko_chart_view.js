@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 12:54:06 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:12:24 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/mekko_chart_view.coffee
  */
 
@@ -81,7 +81,7 @@
     MekkoChartView.prototype.chart_opts = function() {
       var out;
       out = {
-        grid: default_grid,
+        grid: this.defaults.grid,
         legend: create_legend(3, 's', this.labels(), 155),
         seriesDefaults: {
           renderer: $.jqplot.MekkoRenderer,
@@ -93,7 +93,7 @@
         axesDefaults: {
           renderer: $.jqplot.MekkoAxisRenderer,
           tickOptions: {
-            fontSize: font_size,
+            fontSize: this.defaults.font_size,
             markSize: 0
           }
         },
@@ -102,7 +102,7 @@
             barLabels: this.group_labels(),
             rendererOptions: {
               barLabelOptions: {
-                fontSize: font_size,
+                fontSize: this.defaults.font_size,
                 angle: -45
               },
               barLabelRenderer: $.jqplot.CanvasAxisLabelRenderer

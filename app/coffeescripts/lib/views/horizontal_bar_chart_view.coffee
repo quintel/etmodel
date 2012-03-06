@@ -7,14 +7,7 @@ class @HorizontalBarChartView extends BaseChartView
   render: =>
     @clear_results_cache()
     @clear_container()
-    InitializeHorizontalBar(
-      @model.get("container"),
-      @results(),
-      true,
-      @parsed_unit(),
-      @model.colors(),
-      @model.labels()
-    )
+    @render_chart()
 
   # the horizontal graph expects data in this format:
   # [value, 1], [value, 2], ...
@@ -24,13 +17,42 @@ class @HorizontalBarChartView extends BaseChartView
     model_results = @model.results()
     scale = @data_scale()
     out = []
-    for i in [0..model_results.length-1]
+    for i in [0...model_results.length]
       value = model_results[i][0][1]
       scaled = Metric.scale_value(value, scale)
       out.push([scaled, parseInt(i)+1])
     @cached_results = out
-    out
+    [out]
 
   clear_results_cache: ->
     @cached_results = null
+
+  render_chart: =>
+    $.jqplot @container_id(), @results(), @chart_opts()
+
+  chart_opts: =>
+    out =
+      seriesColors: @model.colors()
+      grid: @defaults.grid
+      seriesDefaults:
+        renderer: $.jqplot.BarRenderer
+        pointLabels:
+          show: true
+        rendererOptions:
+          barDirection: 'horizontal'
+          varyBarColor: true
+          barPadding: 6
+          barMargin: 100
+          shadow: @defaults.shadow
+      axes:
+        yaxis:
+          renderer: $.jqplot.CategoryAxisRenderer
+          ticks: @model.labels()
+        xaxis:
+          rendererOptions:
+            forceTickAt0: true # we always want a tick a 0
+          numberTicks: 6
+          tickOptions:
+            formatString: "%.1f#{@parsed_unit()}"
+    out
 

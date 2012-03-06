@@ -38,7 +38,7 @@ class @WaterfallChartView extends BaseChartView
   chart_opts: =>
     out =
       seriesVColors: @colors()
-      grid: default_grid
+      grid: @defaults.grid
       seriesDefaults:
         shadow: shadow
         renderer: $.jqplot.BarRenderer
@@ -59,7 +59,7 @@ class @WaterfallChartView extends BaseChartView
           tickOptions:
             angle: -90
             showGridline: false
-            fontSize: font_size
+            fontSize: @defaults.font_size
         y2axis:
           rendererOptions:
             forceTickAt0: true # we always want a tick a 0

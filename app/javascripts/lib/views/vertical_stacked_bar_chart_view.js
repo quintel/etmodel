@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 14:20:34 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 15:35:25 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/vertical_stacked_bar_chart_view.coffee
  */
 
@@ -12,6 +12,8 @@
     __extends(VerticalStackedBarChartView, _super);
 
     function VerticalStackedBarChartView() {
+      this.chart_opts = __bind(this.chart_opts, this);
+      this.render_chart = __bind(this.render_chart, this);
       this.render = __bind(this.render, this);
       VerticalStackedBarChartView.__super__.constructor.apply(this, arguments);
     }
@@ -22,7 +24,7 @@
 
     VerticalStackedBarChartView.prototype.render = function() {
       this.clear_container();
-      return InitializeVerticalStackedBar(this.model.get("container"), this.results(), this.ticks(), this.filler(), this.model.get('show_point_label'), this.parsed_unit(), this.model.colors(), this.model.labels());
+      return this.render_chart();
     };
 
     VerticalStackedBarChartView.prototype.results = function() {
@@ -61,6 +63,84 @@
 
     VerticalStackedBarChartView.prototype.ticks = function() {
       return [App.settings.get("start_year"), App.settings.get("end_year")];
+    };
+
+    VerticalStackedBarChartView.prototype.render_chart = function() {
+      return $.jqplot(this.container_id(), this.results(), this.chart_opts());
+    };
+
+    VerticalStackedBarChartView.prototype.chart_opts = function() {
+      return {
+        grid: this.defaults.grid,
+        legend: this.create_legend({
+          num_columns: 3
+        }),
+        stackSeries: true,
+        seriesColors: this.model.colors(),
+        seriesDefaults: {
+          shadow: this.defaults.shadow,
+          renderer: $.jqplot.BarRenderer,
+          rendererOptions: {
+            barPadding: 0,
+            barMargin: 110,
+            barWidth: 80
+          },
+          pointLabels: {
+            show: this.model.get('show_point_label'),
+            stackedValue: true,
+            formatString: '%.1f',
+            edgeTolerance: -50,
+            ypadding: 0
+          },
+          yaxis: 'y2axis'
+        },
+        series: this.apply_target_line_serie_settings(this.filler()),
+        axes: {
+          xaxis: {
+            renderer: $.jqplot.CategoryAxisRenderer,
+            ticks: this.ticks(),
+            tickOptions: {
+              showMark: false,
+              showGridline: false
+            }
+          },
+          y2axis: {
+            borderColor: '#cccccc',
+            rendererOptions: {
+              forceTickAt0: true
+            },
+            tickOptions: {
+              formatString: '%.1f' + this.parsed_unit()
+            }
+          }
+        }
+      };
+    };
+
+    VerticalStackedBarChartView.prototype.apply_target_line_serie_settings = function(serie_settings_filler) {
+      var target_serie_settings;
+      if (serie_settings_filler.length > 0) {
+        target_serie_settings = [
+          {
+            renderer: $.jqplot.LineRenderer,
+            disableStack: true,
+            lineWidth: 1.5,
+            shadow: true,
+            showMarker: false,
+            showLabel: true
+          }, {
+            renderer: $.jqplot.LineRenderer,
+            disableStack: true,
+            lineWidth: 1.5,
+            shadow: true,
+            showMarker: false,
+            showLabel: false
+          }
+        ];
+        return serie_settings_filler.concat(target_serie_settings);
+      } else {
+        return [];
+      }
     };
 
     return VerticalStackedBarChartView;

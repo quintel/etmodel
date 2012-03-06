@@ -7,8 +7,7 @@ class @ChartSerie extends Backbone.Model
     @get('gquery').result()
 
   result_pairs: ->
-    result = @result()
-    [result[0][1],result[1][1]]
+    [@present_value(), @future_value()]
 
   future_value: ->
     @result()[1][1]

@@ -27,7 +27,6 @@ class @ScatterChartView extends BaseChartView
     out =
       seriesColors: @model.colors()
       grid: @defaults.grid
-      legend: "CIAO"
       seriesDefaults:
         lineWidth: 1.5
         showMarker: true

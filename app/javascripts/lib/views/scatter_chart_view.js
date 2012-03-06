@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:46:32 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:55:50 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/scatter_chart_view.coffee
  */
 
@@ -51,7 +51,6 @@
       out = {
         seriesColors: this.model.colors(),
         grid: this.defaults.grid,
-        legend: "CIAO",
         seriesDefaults: {
           lineWidth: 1.5,
           showMarker: true,

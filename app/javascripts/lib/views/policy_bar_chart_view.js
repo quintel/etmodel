@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 01 Mar 2012 15:55:33 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 09:49:09 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/policy_bar_chart_view.coffee
  */
 
@@ -12,6 +12,9 @@
     __extends(PolicyBarChartView, _super);
 
     function PolicyBarChartView() {
+      this.chart_opts = __bind(this.chart_opts, this);
+      this.render_chart = __bind(this.render_chart, this);
+      this.results = __bind(this.results, this);
       this.render = __bind(this.render, this);
       PolicyBarChartView.__super__.constructor.apply(this, arguments);
     }
@@ -22,7 +25,7 @@
 
     PolicyBarChartView.prototype.render = function() {
       this.clear_container();
-      return InitializePolicyBar(this.model.get("container"), this.result_serie1(), this.result_serie2(), this.ticks(), this.model.series.length, this.parsed_unit(), this.model.colors(), this.model.labels());
+      return this.render_chart();
     };
 
     PolicyBarChartView.prototype.result_serie1 = function() {
@@ -42,6 +45,10 @@
       });
     };
 
+    PolicyBarChartView.prototype.results = function() {
+      return [this.result_serie1(), this.result_serie1()];
+    };
+
     PolicyBarChartView.prototype.ticks = function() {
       var ticks;
       ticks = [];
@@ -50,6 +57,67 @@
         return ticks.push(serie.result()[1][0]);
       });
       return ticks;
+    };
+
+    PolicyBarChartView.prototype.render_chart = function() {
+      return $.jqplot(this.container_id(), this.results(), this.chart_opts());
+    };
+
+    PolicyBarChartView.prototype.chart_opts = function() {
+      var out;
+      out = {
+        grid: default_grid,
+        stackSeries: true,
+        seriesColors: [this.model.colors()[0], "#CCCCCC"],
+        seriesDefaults: {
+          renderer: $.jqplot.BarRenderer,
+          rendererOptions: {
+            groups: this.model.series.length,
+            barWidth: 35
+          },
+          pointLabels: {
+            stackedValue: true
+          },
+          yaxis: 'y2axis',
+          shadow: shadow
+        },
+        series: [
+          {
+            pointLabels: {
+              ypadding: -15
+            }
+          }, {
+            pointLabels: {
+              ypadding: 9000
+            }
+          }
+        ],
+        axesDefaults: {
+          tickOptions: {
+            fontSize: font_size
+          }
+        },
+        axes: {
+          xaxis: {
+            ticks: this.ticks(),
+            rendererOptions: {
+              groupLabels: this.model.labels()
+            },
+            renderer: $.jqplot.CategoryAxisRenderer,
+            tickOptions: {
+              showGridline: false,
+              pad: 3.00
+            }
+          },
+          y2axis: {
+            ticks: [0, 100],
+            tickOptions: {
+              formatString: '%d\%'
+            }
+          }
+        }
+      };
+      return out;
     };
 
     return PolicyBarChartView;

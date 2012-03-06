@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:12:24 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 16:23:49 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/line_chart_view.coffee
  */
 
@@ -36,11 +36,17 @@
       out = {
         seriesColors: this.model.colors(),
         grid: this.defaults.grid,
-        legend: create_legend(2, 's', this.model.labels(), 20),
+        legend: this.create_legend({
+          num_columns: 2,
+          offset: 20
+        }),
         seriesDefaults: {
           lineWidth: 1.5,
           showMarker: false,
-          yaxis: 'y2axis'
+          yaxis: 'y2axis',
+          pointLabels: {
+            show: false
+          }
         },
         axes: {
           xaxis: {

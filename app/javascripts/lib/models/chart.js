@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 09:06:25 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 08:30:28 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/chart.coffee
  */
 
@@ -213,9 +213,8 @@
       var url;
       App.etm_debug('Loading chart: #' + chart_id);
       if (this.current() === parseInt(chart_id)) return;
-      url = '/output_elements/' + chart_id + '.js?' + timestamp();
+      url = "/output_elements/" + chart_id + ".js?" + (timestamp());
       return $.getScript(url, function() {
-        App.call_api('');
         if (chart_id !== charts.current_default_chart) {
           $("a.default_charts").show();
         } else {
@@ -223,7 +222,8 @@
         }
         $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/" + chart_id);
         $("#output_element_actions").removeClass();
-        return $("#output_element_actions").addClass(charts.first().get("type"));
+        $("#output_element_actions").addClass(charts.first().get("type"));
+        return App.call_api();
       });
     };
 

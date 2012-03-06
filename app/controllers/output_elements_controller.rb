@@ -3,7 +3,7 @@ class OutputElementsController < ApplicationController
 
   def show
     if @output_element.html_table?
-      @gquery_ids = @output_element.allowed_output_element_series.map(&:gquery)
+      @gqueries = @output_element.allowed_output_element_series.map(&:gquery)
     end
 
     respond_to do |format|
@@ -16,12 +16,12 @@ class OutputElementsController < ApplicationController
 
   def select_chart
     Current.setting.selected_output_element = @output_element.id
-    render_chart(@output_element.id)
+    render_chart(@output_element)
   end
 
   def default_chart
     Current.setting.selected_output_element = nil
-    render_chart(@output_element.id)
+    render_chart(@output_element)
   end
 
   def invisible

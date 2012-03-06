@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:55:50 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 11:15:39 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/scatter_chart_serie.coffee
  */
 
@@ -30,6 +30,7 @@
     };
 
     ScatterChartSerie.prototype.result = function() {
+      return [Math.random() * 100, Math.random() * 100];
       return [this.get('gquery_x').get('future_value'), this.get('gquery_y').get('future_value')];
     };
 

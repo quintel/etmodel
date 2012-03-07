@@ -35,28 +35,21 @@ class @Chart extends Backbone.Model
   #   [[2010,20.4],2040,210.4]]
   # ]
   results : (exclude_target) ->
-    if (exclude_target == undefined || exclude_target == null)
-      series =  @series.toArray()
+    if exclude_target
+      series = @non_target_series()
     else
-      series =  @non_target_series()
-    out = _(series).map (serie) ->
-      serie.result()
+      series = @series.toArray()
+
+    out = _(series).map (serie) -> serie.result()
 
     # policy goal charts show percentages but the gqueries return values
     # in the [0,1] range. Let's take care of that
     if @get('percentage')
       out = _(out).map (serie) ->
-        scaled = [
-          [
-            serie[0][0],
-            serie[0][1] * 100
-          ],
-          [
-            serie[1][0],
-            serie[1][1] * 100
-          ]
+        [
+          [ serie[0][0], serie[0][1] * 100 ],
+          [ serie[1][0], serie[1][1] * 100 ]
         ]
-        return scaled
     out
 
   colors : ->
@@ -91,7 +84,7 @@ class @Chart extends Backbone.Model
 
   # @return Array of present and future target
   target_results : ->
-    _.flatten _.map(@target_series(), (serie) -> serie.result()[1][1])
+    _.flatten _.map(@target_series(), (serie) -> serie.future_value())
 
   # @return Array of hashes {label, present_value, future_value}
   series_hash : ->

@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 11:28:10 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 12:15:34 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/base_chart_view.coffee
  */
 
@@ -123,7 +123,7 @@
       table_data = {
         start_year: App.settings.get('start_year'),
         end_year: App.settings.get('end_year'),
-        series: this.model.series_hash()
+        series: this.model.formatted_series_hash()
       };
       tmpl = $("#chart-table-template").html();
       table = _.template(tmpl, table_data);

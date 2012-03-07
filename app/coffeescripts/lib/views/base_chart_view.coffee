@@ -74,7 +74,7 @@ class @BaseChartView extends Backbone.View
     table_data =
       start_year: App.settings.get('start_year')
       end_year: App.settings.get('end_year')
-      series: @model.series_hash()
+      series: @model.formatted_series_hash()
     tmpl = $("#chart-table-template").html()
     table = _.template(tmpl, table_data)
     @container_node().html(table)

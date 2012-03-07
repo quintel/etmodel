@@ -70,6 +70,11 @@ class @BaseChartView extends Backbone.View
   can_be_shown_as_table: -> true
 
   render_as_table: =>
-    console.log "Hi! I'm a table"
     @clear_container()
-    console.log @model.series_hash()
+    table_data =
+      start_year: App.settings.get('start_year')
+      end_year: App.settings.get('end_year')
+      series: @model.series_hash()
+    tmpl = $("#chart-table-template").html()
+    table = _.template(tmpl, table_data)
+    @container_node().html(table)

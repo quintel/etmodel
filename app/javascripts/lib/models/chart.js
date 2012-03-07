@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 12:27:44 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 14:14:00 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/chart.coffee
  */
 
@@ -104,19 +104,17 @@
 
     Chart.prototype.results = function(exclude_target) {
       var out, series;
-      if (exclude_target === void 0 || exclude_target === null) {
-        series = this.series.toArray();
-      } else {
+      if (exclude_target) {
         series = this.non_target_series();
+      } else {
+        series = this.series.toArray();
       }
       out = _(series).map(function(serie) {
         return serie.result();
       });
       if (this.get('percentage')) {
         out = _(out).map(function(serie) {
-          var scaled;
-          scaled = [[serie[0][0], serie[0][1] * 100], [serie[1][0], serie[1][1] * 100]];
-          return scaled;
+          return [[serie[0][0], serie[0][1] * 100], [serie[1][0], serie[1][1] * 100]];
         });
       }
       return out;
@@ -174,7 +172,7 @@
 
     Chart.prototype.target_results = function() {
       return _.flatten(_.map(this.target_series(), function(serie) {
-        return serie.result()[1][1];
+        return serie.future_value();
       }));
     };
 

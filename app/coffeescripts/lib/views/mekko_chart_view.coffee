@@ -31,6 +31,8 @@ class @MekkoChartView extends BaseChartView
     group_labels = @model.series.map (serie) -> serie.get('group_translated')
     return _.uniq(group_labels)
 
+  can_be_shown_as_table: -> false
+
   render_mekko: =>
     $.jqplot @model.get("container"), @results(), @chart_opts()
     $(".jqplot-xaxis").css({"margin-left": -10,"margin-top":0})

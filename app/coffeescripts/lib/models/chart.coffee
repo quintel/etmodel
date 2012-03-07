@@ -96,12 +96,9 @@ class @Chart extends Backbone.Model
   # @return Array of hashes {label, present_value, future_value}
   series_hash : ->
     @series.map (serie) ->
-      res = serie.result()
-      out =
-        label : serie.get('label'),
-        present_value : res[0][1],
-        future_value : res[1][1]
-      out
+      label : serie.get('label')
+      present_value : serie.present_value()
+      future_value : serie.future_value()
 
 class @ChartList extends Backbone.Collection
   model : Chart
@@ -162,5 +159,6 @@ class @ChartList extends Backbone.Collection
 
     $("a.toggle_chart_format").live 'click', =>
       @current().view.toggle_format()
+      false
 
 window.charts = new ChartList()

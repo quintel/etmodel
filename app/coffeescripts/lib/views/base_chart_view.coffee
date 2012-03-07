@@ -62,5 +62,14 @@ class @BaseChartView extends Backbone.View
   toggle_format: ->
     @display_as_table = !@display_as_table
     console.log @display_as_table
+    if @can_be_shown_as_table() && @display_as_table
+      @render_as_table()
+    else
+      @render()
 
   can_be_shown_as_table: -> true
+
+  render_as_table: =>
+    console.log "Hi! I'm a table"
+    @clear_container()
+    console.log @model.series_hash()

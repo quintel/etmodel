@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 16:27:06 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 10:15:03 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/base_chart_view.coffee
  */
 
@@ -99,6 +99,15 @@
           fontSize: '11px'
         }
       }
+    };
+
+    BaseChartView.prototype.toggle_format = function() {
+      this.display_as_table = !this.display_as_table;
+      return console.log(this.display_as_table);
+    };
+
+    BaseChartView.prototype.can_be_shown_as_table = function() {
+      return true;
     };
 
     return BaseChartView;

@@ -118,7 +118,7 @@ class @ChartList extends Backbone.Collection
   load : (chart_id) ->
     App.etm_debug('Loading chart: #' + chart_id)
     # if chart_id == currently shown chart, skip.
-    return if @current() == parseInt(chart_id)
+    return if @current_id() == parseInt(chart_id)
     url = "/output_elements/#{chart_id}.js?#{timestamp()}"
     $.getScript url, =>
       # show/hide default chart button
@@ -126,6 +126,11 @@ class @ChartList extends Backbone.Collection
         $("a.default_charts").show()
       else
         $("a.default_charts").hide()
+      # show/hide format toggle button
+      if @current().view.can_be_shown_as_table()
+        $("a.toggle_chart_format").show()
+      else
+        $("a.toggle_chart_format").hide()
       # update chart information link
       $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/#{chart_id}")
       # update the position of the output_element_actions
@@ -134,8 +139,10 @@ class @ChartList extends Backbone.Collection
       App.call_api()
 
   # returns the current chart id
-  current : ->
+  current_id : ->
     parseInt(@first().get('id'))
+
+  current: -> @first()
 
   setup_callbacks: ->
     $("a.default_charts").live 'click', =>
@@ -152,5 +159,8 @@ class @ChartList extends Backbone.Collection
         method: 'get'
         beforeSend: ->
           close_fancybox()
+
+    $("a.toggle_chart_format").live 'click', =>
+      @current().view.toggle_format()
 
 window.charts = new ChartList()

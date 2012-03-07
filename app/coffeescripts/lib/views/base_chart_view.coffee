@@ -58,3 +58,9 @@ class @BaseChartView extends Backbone.View
       tickOptions:
         formatString: '%d'
         fontSize: '11px'
+
+  toggle_format: ->
+    @display_as_table = !@display_as_table
+    console.log @display_as_table
+
+  can_be_shown_as_table: -> true

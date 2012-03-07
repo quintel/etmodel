@@ -67,22 +67,30 @@
       top: -10px
     #output_element_actions.mekko
       left: 40px
-  
 
 #supply_output_table
   width: 100%
   th
     text-align: left
-
   th.unit
     font-weight: normal
     text-align: center
     font-size: 10px
   .border-rgt
     border-right: 1px solid #999
-  
   tfoot#total
     td
       border-top: 1px solid #999
       border-bottom: 3px double #999
       font-weight: bold
+
+table.chart_as_table
+  border-collapse: collapse
+  td, th
+    font-size: 10px
+    border: 1px solid #ccc
+  tr:nth-child(2n+1)
+    background-color: #ddd
+  tbody
+    th
+      text-align: right

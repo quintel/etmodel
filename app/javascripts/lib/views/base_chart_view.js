@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 11:01:42 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 11:28:10 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/base_chart_view.coffee
  */
 
@@ -119,7 +119,6 @@
 
     BaseChartView.prototype.render_as_table = function() {
       var table, table_data, tmpl;
-      console.log("Hi! I'm a table");
       this.clear_container();
       table_data = {
         start_year: App.settings.get('start_year'),

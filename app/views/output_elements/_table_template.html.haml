@@ -1,19 +1,21 @@
 :plain
   <script type="text/template" id="chart-table-template">
-    <table>
-      <tr>
-        <td>header</td>
-        <td><%= start_year %></td>
-        <td><%= end_year %></td>
-      </tr>
-    <% _.each(series, function(serie){
-      %>
+    <table class="chart_as_table">
+      <thead>
         <tr>
-          <td><%= serie.label %></td>
-          <td><%= serie.present_value %></td>
-          <td><%= serie.future_value %></td>
+          <th></td>
+          <th><%= start_year %></th>
+          <th><%= end_year %></th>
         </tr>
-      <%
-      }) %>
+      </thead>
+      <tbody>
+        <% _.each(series, function(serie){ %>
+          <tr>
+            <th><%= serie.label %></th>
+            <td><%= serie.present_value %></td>
+            <td><%= serie.future_value %></td>
+          </tr>
+        <% }) %>
+      </tbody>
     </table>
   </script>

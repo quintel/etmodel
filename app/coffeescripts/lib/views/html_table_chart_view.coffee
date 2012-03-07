@@ -19,3 +19,5 @@ class @HtmlTableChartView extends BaseChartView
   # returns a jQuery collection of cells to be dynamically filled
   dynamic_cells : ->
     @container_node().find("td")
+
+  can_be_shown_as_table: -> false

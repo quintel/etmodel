@@ -100,6 +100,12 @@ class @Chart extends Backbone.Model
       present_value : serie.present_value()
       future_value : serie.future_value()
 
+  formatted_series_hash : ->
+    @series.map (serie) =>
+        label: serie.get('label')
+        present_value: Metric.autoscale_value(serie.present_value(), @get('unit'), 2)
+        future_value: Metric.autoscale_value(serie.future_value(), @get('unit'), 2)
+
 class @ChartList extends Backbone.Collection
   model : Chart
 

@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 05 Mar 2012 08:47:41 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 12:31:55 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/metric.coffee
  */
 
@@ -74,6 +74,11 @@
           break;
         case 'MJ':
           out = x / Math.pow(1000, pow);
+          suffix = I18n.t('units.joules.' + scale_string);
+          break;
+        case 'PJ':
+          out = value;
+          scale_string = this.power_of_thousand_to_string(pow + 3);
           suffix = I18n.t('units.joules.' + scale_string);
           break;
         case 'MW':

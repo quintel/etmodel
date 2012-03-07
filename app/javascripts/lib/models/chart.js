@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 11:02:48 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 09:37:37 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/chart.coffee
  */
 
@@ -205,6 +205,11 @@
 
     ChartList.prototype.model = Chart;
 
+    ChartList.prototype.initialize = function() {
+      $.jqplot.config.enablePlugins = true;
+      return this.setup_callbacks();
+    };
+
     ChartList.prototype.change = function(chart) {
       var old_chart;
       old_chart = this.first();
@@ -213,25 +218,48 @@
     };
 
     ChartList.prototype.load = function(chart_id) {
-      var url;
+      var url,
+        _this = this;
       App.etm_debug('Loading chart: #' + chart_id);
       if (this.current() === parseInt(chart_id)) return;
       url = "/output_elements/" + chart_id + ".js?" + (timestamp());
       return $.getScript(url, function() {
-        if (chart_id !== charts.current_default_chart) {
+        if (chart_id !== _this.current_default_chart) {
           $("a.default_charts").show();
         } else {
           $("a.default_charts").hide();
         }
         $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/" + chart_id);
         $("#output_element_actions").removeClass();
-        $("#output_element_actions").addClass(charts.first().get("type"));
+        $("#output_element_actions").addClass(_this.first().get("type"));
         return App.call_api();
       });
     };
 
     ChartList.prototype.current = function() {
       return parseInt(this.first().get('id'));
+    };
+
+    ChartList.prototype.setup_callbacks = function() {
+      var _this = this;
+      $("a.default_charts").live('click', function() {
+        _this.user_selected_chart = null;
+        _this.load(_this.current_default_chart);
+        return false;
+      });
+      return $("a.pick_charts").live('click', function(e) {
+        var chart_id, url;
+        chart_id = $(e.target).parents('a').data('chart_id');
+        _this.user_selected_chart = chart_id;
+        url = "/output_elements/select_chart/" + chart_id + "?" + (timestamp());
+        return $.ajax({
+          url: url,
+          method: 'get',
+          beforeSend: function() {
+            return close_fancybox();
+          }
+        });
+      });
     };
 
     return ChartList;

@@ -5,7 +5,7 @@
     %h1= t(group)
     - OutputElement.not_hidden.select_by_group(group).each do |output_element|
       %div
-        %a.pick_charts{:id =>"output_#{output_element.id}"}
+        %a.pick_charts{:id =>"output_#{output_element.id}", :data => {:chart_id => output_element.id}}
           %h2= t("output_elements.#{output_element.key}").html_safe
           %p   
             - desc = output_element.description

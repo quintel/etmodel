@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 10:41:44 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 11:01:42 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/base_chart_view.coffee
  */
 
@@ -118,9 +118,17 @@
     };
 
     BaseChartView.prototype.render_as_table = function() {
+      var table, table_data, tmpl;
       console.log("Hi! I'm a table");
       this.clear_container();
-      return console.log(this.model.series_hash());
+      table_data = {
+        start_year: App.settings.get('start_year'),
+        end_year: App.settings.get('end_year'),
+        series: this.model.series_hash()
+      };
+      tmpl = $("#chart-table-template").html();
+      table = _.template(tmpl, table_data);
+      return this.container_node().html(table);
     };
 
     return BaseChartView;

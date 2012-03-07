@@ -106,6 +106,10 @@ class @Chart extends Backbone.Model
 class @ChartList extends Backbone.Collection
   model : Chart
 
+  initialize: ->
+    $.jqplot.config.enablePlugins = true
+    @setup_callbacks()
+
   change : (chart) ->
     old_chart = @first()
     @remove(old_chart) if old_chart != undefined
@@ -116,9 +120,9 @@ class @ChartList extends Backbone.Collection
     # if chart_id == currently shown chart, skip.
     return if @current() == parseInt(chart_id)
     url = "/output_elements/#{chart_id}.js?#{timestamp()}"
-    $.getScript url, ->
+    $.getScript url, =>
       # show/hide default chart button
-      if chart_id != charts.current_default_chart
+      if chart_id != @current_default_chart
         $("a.default_charts").show()
       else
         $("a.default_charts").hide()
@@ -126,11 +130,27 @@ class @ChartList extends Backbone.Collection
       $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/#{chart_id}")
       # update the position of the output_element_actions
       $("#output_element_actions").removeClass()
-      $("#output_element_actions").addClass(charts.first().get("type"))
+      $("#output_element_actions").addClass(@first().get("type"))
       App.call_api()
 
   # returns the current chart id
   current : ->
     parseInt(@first().get('id'))
+
+  setup_callbacks: ->
+    $("a.default_charts").live 'click', =>
+      @user_selected_chart = null
+      @load(@current_default_chart)
+      false
+
+    $("a.pick_charts").live 'click', (e) =>
+      chart_id = $(e.target).parents('a').data('chart_id')
+      @user_selected_chart = chart_id
+      url = "/output_elements/select_chart/#{chart_id}?#{timestamp()}"
+      $.ajax
+        url: url
+        method: 'get'
+        beforeSend: ->
+          close_fancybox()
 
 window.charts = new ChartList()

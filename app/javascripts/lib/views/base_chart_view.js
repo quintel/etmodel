@@ -1,9 +1,10 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 16:27:06 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 12:15:34 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/base_chart_view.coffee
  */
 
 (function() {
-  var __hasProp = Object.prototype.hasOwnProperty,
+  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+    __hasProp = Object.prototype.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
 
   this.BaseChartView = (function(_super) {
@@ -11,6 +12,7 @@
     __extends(BaseChartView, _super);
 
     function BaseChartView() {
+      this.render_as_table = __bind(this.render_as_table, this);
       BaseChartView.__super__.constructor.apply(this, arguments);
     }
 
@@ -99,6 +101,33 @@
           fontSize: '11px'
         }
       }
+    };
+
+    BaseChartView.prototype.toggle_format = function() {
+      this.display_as_table = !this.display_as_table;
+      console.log(this.display_as_table);
+      if (this.can_be_shown_as_table() && this.display_as_table) {
+        return this.render_as_table();
+      } else {
+        return this.render();
+      }
+    };
+
+    BaseChartView.prototype.can_be_shown_as_table = function() {
+      return true;
+    };
+
+    BaseChartView.prototype.render_as_table = function() {
+      var table, table_data, tmpl;
+      this.clear_container();
+      table_data = {
+        start_year: App.settings.get('start_year'),
+        end_year: App.settings.get('end_year'),
+        series: this.model.formatted_series_hash()
+      };
+      tmpl = $("#chart-table-template").html();
+      table = _.template(tmpl, table_data);
+      return this.container_node().html(table);
     };
 
     return BaseChartView;

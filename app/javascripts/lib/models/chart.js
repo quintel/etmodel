@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 09:37:37 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 12:27:44 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/chart.coffee
  */
 
@@ -180,14 +180,22 @@
 
     Chart.prototype.series_hash = function() {
       return this.series.map(function(serie) {
-        var out, res;
-        res = serie.result();
-        out = {
+        return {
           label: serie.get('label'),
-          present_value: res[0][1],
-          future_value: res[1][1]
+          present_value: serie.present_value(),
+          future_value: serie.future_value()
         };
-        return out;
+      });
+    };
+
+    Chart.prototype.formatted_series_hash = function() {
+      var _this = this;
+      return this.series.map(function(serie) {
+        return {
+          label: serie.get('label'),
+          present_value: Metric.autoscale_value(serie.present_value(), _this.get('unit'), 2),
+          future_value: Metric.autoscale_value(serie.future_value(), _this.get('unit'), 2)
+        };
       });
     };
 
@@ -221,13 +229,18 @@
       var url,
         _this = this;
       App.etm_debug('Loading chart: #' + chart_id);
-      if (this.current() === parseInt(chart_id)) return;
+      if (this.current_id() === parseInt(chart_id)) return;
       url = "/output_elements/" + chart_id + ".js?" + (timestamp());
       return $.getScript(url, function() {
         if (chart_id !== _this.current_default_chart) {
           $("a.default_charts").show();
         } else {
           $("a.default_charts").hide();
+        }
+        if (_this.current().view.can_be_shown_as_table()) {
+          $("a.toggle_chart_format").show();
+        } else {
+          $("a.toggle_chart_format").hide();
         }
         $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/" + chart_id);
         $("#output_element_actions").removeClass();
@@ -236,8 +249,12 @@
       });
     };
 
-    ChartList.prototype.current = function() {
+    ChartList.prototype.current_id = function() {
       return parseInt(this.first().get('id'));
+    };
+
+    ChartList.prototype.current = function() {
+      return this.first();
     };
 
     ChartList.prototype.setup_callbacks = function() {
@@ -247,7 +264,7 @@
         _this.load(_this.current_default_chart);
         return false;
       });
-      return $("a.pick_charts").live('click', function(e) {
+      $("a.pick_charts").live('click', function(e) {
         var chart_id, url;
         chart_id = $(e.target).parents('a').data('chart_id');
         _this.user_selected_chart = chart_id;
@@ -259,6 +276,10 @@
             return close_fancybox();
           }
         });
+      });
+      return $("a.toggle_chart_format").live('click', function() {
+        _this.current().view.toggle_format();
+        return false;
       });
     };
 

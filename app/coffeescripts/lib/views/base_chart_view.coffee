@@ -58,3 +58,23 @@ class @BaseChartView extends Backbone.View
       tickOptions:
         formatString: '%d'
         fontSize: '11px'
+
+  toggle_format: ->
+    @display_as_table = !@display_as_table
+    console.log @display_as_table
+    if @can_be_shown_as_table() && @display_as_table
+      @render_as_table()
+    else
+      @render()
+
+  can_be_shown_as_table: -> true
+
+  render_as_table: =>
+    @clear_container()
+    table_data =
+      start_year: App.settings.get('start_year')
+      end_year: App.settings.get('end_year')
+      series: @model.formatted_series_hash()
+    tmpl = $("#chart-table-template").html()
+    table = _.template(tmpl, table_data)
+    @container_node().html(table)

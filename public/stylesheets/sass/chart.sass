@@ -27,7 +27,7 @@
     height: 450px
     #output_element_actions
       height: 13px
-      width: 200px
+      width: 250px
       position: absolute
       left: 20px
       top: 273px
@@ -36,15 +36,19 @@
         float: left
         height: 13px
         margin-right: 5px
-      .chart_info
-        width: 15px
-        background: url("../images/slider/slider-down-button.png") no-repeat  -2px -4px
-      .select_chart
-        width: 65px
-        background: url("../images/layout/change_chart_button.png") no-repeat
-      .default_charts
-        width: 60px
-        background: url("../images/layout/default_chart_button.png") no-repeat
+        &.chart_info
+          width: 15px
+          background: url("../images/slider/slider-down-button.png") no-repeat  -2px -4px
+        &.select_chart
+          width: 65px
+          background: url("../images/layout/change_chart_button.png") no-repeat
+        &.default_charts
+          width: 60px
+          background: url("../images/layout/default_chart_button.png") no-repeat
+          display: none
+        &.toggle_chart_format
+          width: 60px
+          background: url("../images/layout/toggle_chart_button.png") no-repeat
     #chart_not_finished
       position: absolute
       top: -5px
@@ -53,36 +57,45 @@
       right: -5px
       z-index: 3
       background: url(/images/layout/still_to_do.png) no-repeat
-    #output_element_actions.waterfall
-      top: -5px
-    #output_element_actions.html_table
-      top: -10px
-    #output_element_actions.grouped_vertical_bar
-      top: -10px
-    #output_element_actions.policy_bar
-      top: -10px
-    #output_element_actions.horizontal_bar
-      top: -10px
-    #output_element_actions.horizontal_stacked_bar
-      top: -10px
-    #output_element_actions.mekko
-      left: 40px
-  
+    #output_element_actions
+      &.waterfall
+        top: -5px
+      &.html_table
+        top: -10px
+      &.grouped_vertical_bar
+        top: -10px
+      &.policy_bar
+        top: -10px
+      &.horizontal_bar
+        top: -10px
+      &.horizontal_stacked_bar
+        top: -10px
+      &.mekko
+        left: 40px
 
 #supply_output_table
   width: 100%
   th
     text-align: left
-
   th.unit
     font-weight: normal
     text-align: center
     font-size: 10px
   .border-rgt
     border-right: 1px solid #999
-  
   tfoot#total
     td
       border-top: 1px solid #999
       border-bottom: 3px double #999
       font-weight: bold
+
+table.chart_as_table
+  border-collapse: collapse
+  td, th
+    font-size: 10px
+    border: 1px solid #ccc
+  tr:nth-child(2n+1)
+    background-color: #ddd
+  tbody
+    th
+      text-align: right

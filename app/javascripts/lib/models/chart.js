@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 10:15:03 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 10:40:48 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/chart.coffee
  */
 
@@ -180,14 +180,11 @@
 
     Chart.prototype.series_hash = function() {
       return this.series.map(function(serie) {
-        var out, res;
-        res = serie.result();
-        out = {
+        return {
           label: serie.get('label'),
-          present_value: res[0][1],
-          future_value: res[1][1]
+          present_value: serie.present_value(),
+          future_value: serie.future_value()
         };
-        return out;
       });
     };
 
@@ -270,7 +267,8 @@
         });
       });
       return $("a.toggle_chart_format").live('click', function() {
-        return _this.current().view.toggle_format();
+        _this.current().view.toggle_format();
+        return false;
       });
     };
 

@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 02 Mar 2012 09:06:25 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 10:15:43 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/html_table_chart_view.coffee
  */
 
@@ -40,6 +40,10 @@
 
     HtmlTableChartView.prototype.dynamic_cells = function() {
       return this.container_node().find("td");
+    };
+
+    HtmlTableChartView.prototype.can_be_shown_as_table = function() {
+      return false;
     };
 
     return HtmlTableChartView;

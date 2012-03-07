@@ -76,6 +76,10 @@
       when 'MJ'
         out = x / Math.pow(1000, pow)
         suffix = I18n.t('units.joules.' + scale_string)
+      when 'PJ'
+        out = value
+        scale_string = @power_of_thousand_to_string(pow + 3)
+        suffix = I18n.t('units.joules.' + scale_string)
       when 'MW'
         out = x / Math.pow(1000, pow)
         suffix = I18n.t('units.watt.' + scale_string)

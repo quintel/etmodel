@@ -10,7 +10,6 @@ class @ScatterChartSerie extends Backbone.Model
       gquery_y: new Gquery({key : query_y})
 
   result : ->
-    return [Math.random() * 100, Math.random() * 100]
     return [
       @get('gquery_x').get('future_value'),
       @get('gquery_y').get('future_value')

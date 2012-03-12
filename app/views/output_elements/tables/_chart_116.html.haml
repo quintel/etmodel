@@ -1,0 +1,94 @@
+-# merit order table
+%table#supply_output_table{table_defaults}
+  %thead
+    %tr
+      %th Technology
+      %th Merit order position
+      %th Operating costs
+      %th Available capacity
+      %th Full load hours
+    %tr
+      %th
+      %th
+      %th EUR/MWh
+      %th MW
+      %th Hr
+  %tbody
+    %tr
+      %th Nuclear 3rd Gen.
+      %td{:data => {:gquery_id => 'merit_order_nuclear_iii_position_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_nuclear_iii_operating_costs_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_nuclear_iii_capacity_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_nuclear_iii_full_load_hours_in_merit_order_table'}}
+    %tr
+      %th Coal IGCC
+      %td{:data => {:gquery_id => 'merit_order_coal_igcc_position_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_igcc_operating_costs_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_igcc_capacity_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_igcc_full_load_hours_in_merit_order_table'}}
+    %tr
+      %th Coal ultra supercritical
+      %td{:data => {:gquery_id => 'merit_order_coal_pwd_position_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_pwd_operating_costs_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_pwd_capacity_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_pwd_full_load_hours_in_merit_order_table'}}
+    %tr
+      %th Coal ultra supercritical CHP
+      %td{:data => {:gquery_id => 'merit_order_coal_chp_position_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_chp_operating_costs_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_chp_capacity_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_chp_full_load_hours_in_merit_order_table'}}
+    %tr
+      %th Coal conventional
+      %td{:data => {:gquery_id => 'merit_order_coal_conv_position_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_conv_operating_costs_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_conv_capacity_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_conv_full_load_hours_in_merit_order_table'}}
+    %tr
+      %th Coal ultra supercritical CCS
+      %td{:data => {:gquery_id => 'merit_order_coal_pwd_ccs_position_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_pwd_ccs_operating_costs_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_pwd_ccs_capacity_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_pwd_ccs_full_load_hours_in_merit_order_table'}}
+    %tr
+      %th Coal IGCC CCS
+      %td{:data => {:gquery_id => 'merit_order_coal_igcc_ccs_position_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_igcc_ccs_operating_costs_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_igcc_ccs_capacity_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_coal_igcc_ccs_full_load_hours_in_merit_order_table'}}
+    %tr
+      %th Gas CCGT
+      %td{:data => {:gquery_id => 'merit_order_gas_ccgt_position_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_gas_ccgt_operating_costs_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_gas_ccgt_capacity_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_gas_ccgt_full_load_hours_in_merit_order_table'}}
+    %tr
+      %th Gas CCGT CCS
+      %td{:data => {:gquery_id => 'merit_order_gas_ccgt_ccs_position_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_gas_ccgt_ccs_operating_costs_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_gas_ccgt_ccs_capacity_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_gas_ccgt_ccs_full_load_hours_in_merit_order_table'}}
+    %tr
+      %th Gas, CCGT CHP
+      %td{:data => {:gquery_id => 'merit_order_central_gas_chp_position_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_central_gas_chp_operating_costs_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_central_gas_chp_capacity_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_central_gas_chp_full_load_hours_in_merit_order_table'}}
+    %tr
+      %th Gas conventional
+      %td{:data => {:gquery_id => 'merit_order_gas_conv_position_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_gas_conv_operating_costs_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_gas_conv_capacity_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_gas_conv_full_load_hours_in_merit_order_table'}}
+    %tr
+      %th Gas turbine
+      %td{:data => {:gquery_id => 'merit_order_gas_turbine_position_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_gas_turbine_operating_costs_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_gas_turbine_capacity_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_gas_turbine_full_load_hours_in_merit_order_table'}}
+    %tr
+      %th Oil plant
+      %td{:data => {:gquery_id => 'merit_order_oil_plant_position_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_oil_plant_operating_costs_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_oil_plant_capacity_in_merit_order_table'}}
+      %td{:data => {:gquery_id => 'merit_order_oil_plant_full_load_hours_in_merit_order_table'}}

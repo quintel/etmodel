@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 12:31:55 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 15:45:16 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/metric.coffee
  */
 
@@ -59,41 +59,30 @@
       return fut / now - 1;
     },
     autoscale_value: function(x, unit, precision) {
-      var out, output, pow, prefix, scale_string, suffix, value;
-      precision = precision || 0;
-      pow = this.power_of_thousand(x);
-      value = x / Math.pow(1000, pow);
-      value = this.round_number(value, precision);
-      scale_string = this.power_of_thousand_to_string(pow);
-      prefix = '';
-      out = '';
-      suffix = '';
+      var pow, value;
+      if (precision == null) precision = 0;
+      if (x === 0) {
+        pow = 0;
+        value = 0;
+      } else {
+        pow = this.power_of_thousand(x);
+        value = x / Math.pow(1000, pow);
+        value = this.round_number(value, precision);
+      }
       switch (unit) {
         case '%':
-          out = this.percentage_to_string(x);
-          break;
+          return this.percentage_to_string(x);
         case 'MJ':
-          out = x / Math.pow(1000, pow);
-          suffix = I18n.t('units.joules.' + scale_string);
-          break;
+          return "" + value + (this.scaling_in_words(pow, 'joules'));
         case 'PJ':
-          out = value;
-          scale_string = this.power_of_thousand_to_string(pow + 3);
-          suffix = I18n.t('units.joules.' + scale_string);
-          break;
+          return "" + value + (this.scaling_in_words(pow + 3, 'joules'));
         case 'MW':
-          out = x / Math.pow(1000, pow);
-          suffix = I18n.t('units.watt.' + scale_string);
-          break;
+          return "" + value + (this.scaling_in_words(pow, 'watt'));
         case 'euro':
-          out = value;
-          prefix = "&euro;";
-          break;
+          return "&euro;#value";
         default:
-          out = x;
+          return x;
       }
-      output = prefix + out + suffix;
-      return output;
     },
     percentage_to_string: function(x, prefix, precision) {
       var value;

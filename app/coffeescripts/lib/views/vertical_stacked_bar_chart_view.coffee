@@ -38,6 +38,7 @@ class @VerticalStackedBarChartView extends BaseChartView
 
   chart_opts: =>
     grid: @defaults.grid
+    highlighter: @defaults.highlighter
     legend: @create_legend({num_columns: 3})
     stackSeries: true,
     seriesColors: @model.colors()

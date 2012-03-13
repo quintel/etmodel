@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 16:30:04 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 15:15:18 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/waterfall_chart_view.coffee
  */
 
@@ -67,6 +67,7 @@
       var out;
       return out = {
         seriesVColors: this.colors(),
+        highlighter: this.defaults.highlighter,
         grid: this.defaults.grid,
         seriesDefaults: {
           shadow: this.defaults.shadow,

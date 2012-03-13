@@ -21,6 +21,7 @@ class @BezierChartView extends BaseChartView
 
   chart_opts: =>
     grid: @defaults.grid,
+    highlighter: @defaults.highlighter
     legend: @create_legend({num_columns: 2})
     stackSeries: false # this must be false! The series are stacked by summing the y-values
     seriesDefaults:

@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 12:15:34 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 15:11:35 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/base_chart_view.coffee
  */
 
@@ -100,6 +100,9 @@
           formatString: '%d',
           fontSize: '11px'
         }
+      },
+      highlighter: {
+        show: false
       }
     };
 

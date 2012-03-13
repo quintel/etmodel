@@ -31,6 +31,7 @@ class @PolicyBarChartView extends BaseChartView
   chart_opts: =>
     out =
       grid: @defaults.grid
+      highlighter: @defaults.highlighter
       stackSeries: true
       seriesColors: [@model.colors()[0], "#CCCCCC"]
       seriesDefaults:

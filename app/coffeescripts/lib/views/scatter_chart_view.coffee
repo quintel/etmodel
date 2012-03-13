@@ -12,6 +12,9 @@ class @ScatterChartView extends BaseChartView
   render_chart: =>
     $.jqplot @container_id(), @results(), @chart_opts()
 
+  # This chart isn't actually scaling the values, so
+  # we're packing the labels in the unit column
+
   x_axis_unit: =>
     @model.get('unit').split(';')[0]
 
@@ -32,28 +35,21 @@ class @ScatterChartView extends BaseChartView
         yaxis:'yaxis'
         pointLabels:
           show: false
+      axesDefaults:
+        labelRenderer: $.jqplot.CanvasAxisLabelRenderer
+        labelOptions:
+          fontSize: '13px'
+          textColor: "#000000"
+        rendererOptions:
+          forceTickAt0: true # we always want a tick at 0
+        numberTicks: 5
+        tickOptions:
+          fontSize: @defaults.font_size
+          showGridline: true
+          formatString: "%.1f"
       axes:
         xaxis:
           label: @x_axis_unit()
-          labelRenderer: $.jqplot.CanvasAxisLabelRenderer
-          labelOptions:
-            fontSize: '10px'
-            textColor: "#000000"
-          rendererOptions:
-            forceTickAt0: true # we always want a tick at 0
-          numberTicks: 5
-          tickOptions:
-            fontSize: @defaults.font_size
-            showGridline: true
-            formatString: "%.1f"
         yaxis:
           label: @y_axis_unit()
-          labelRenderer: $.jqplot.CanvasAxisLabelRenderer
-          labelOptions:
-            fontSize: '10px'
-            textColor: "#000000"
-          rendererOptions:
-            forceTickAt0: true # we always want a tick at 0
-          tickOptions:
-            formatString: "%.1f"
     out

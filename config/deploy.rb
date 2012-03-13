@@ -18,7 +18,7 @@ task :production do
   set :branch, "production"
   set :domain, "et-model.com"
   set :application_key, "etmodel"
-  set :db_pass, "Energy2.0"
+  set :db_pass, "HaLjXwRWmu60DK"
   set :db_name, application_key
   set :db_user, application_key
   set :airbrake_key, "aadd4cc40d52dabf842d4dce932e84a3"
@@ -28,8 +28,8 @@ end
 task :staging do
   set :domain, "beta.et-model.com"
   set :branch, "staging"
-  set :application_key, "#{application}_staging"
-  set :db_pass, "feboblokker"
+  set :application_key, "etmodel_staging"
+  set :db_pass, "1is5sRJmehiULV"
   set :db_name, application_key
   set :db_user, application_key
   set :airbrake_key, "a736722b2610573160a2f015f036488b"

@@ -43,7 +43,7 @@ class OutputElement < ActiveRecord::Base
   end
 
   def title_for_description
-    "output_element.#{key}"
+    "output_elements.#{key}"
   end
 
   def block_chart?

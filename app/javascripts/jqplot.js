@@ -12,3 +12,4 @@
 //= require <jqplot.blockRenderer>
 //= require <jqplot.enhancedLegendRenderer>
 //= require <jqplot.BezierCurveRenderer>
+//= require <jqplot.highlighter>

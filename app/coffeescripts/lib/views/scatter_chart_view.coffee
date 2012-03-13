@@ -7,14 +7,17 @@ class @ScatterChartView extends BaseChartView
     @render_chart()
 
   results: =>
-    @model.series.map (serie) -> [serie.result()]
+    @model.series.map (serie) ->
+      pres = serie.result()[0]
+      future = serie.result()[1]
+      label = serie.get('label')
+      [[pres, future, label]] #[serie.result()]
 
   render_chart: =>
     $.jqplot @container_id(), @results(), @chart_opts()
 
   # This chart isn't actually scaling the values, so
   # we're packing the labels in the unit column
-
   x_axis_unit: =>
     @model.get('unit').split(';')[0]
 
@@ -52,4 +55,10 @@ class @ScatterChartView extends BaseChartView
           label: @x_axis_unit()
         yaxis:
           label: @y_axis_unit()
+      highlighter:
+        show: true
+        sizeAdjust: 7.5
+        yvalues: 3
+        formatString: '(%s, %s) %s'
+        tooltipLocation: 'ne'
     out

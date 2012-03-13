@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 09:24:48 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 09:46:59 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/scatter_chart_view.coffee
  */
 
@@ -32,7 +32,11 @@
 
     ScatterChartView.prototype.results = function() {
       return this.model.series.map(function(serie) {
-        return [serie.result()];
+        var future, label, pres;
+        pres = serie.result()[0];
+        future = serie.result()[1];
+        label = serie.get('label');
+        return [[pres, future, label]];
       });
     };
 
@@ -92,6 +96,13 @@
           yaxis: {
             label: this.y_axis_unit()
           }
+        },
+        highlighter: {
+          show: true,
+          sizeAdjust: 7.5,
+          yvalues: 3,
+          formatString: '(%s, %s) %s',
+          tooltipLocation: 'ne'
         }
       };
       return out;

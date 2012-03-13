@@ -59,38 +59,28 @@
   #
   # av(20, '%') => 20%
   # av(1234)    => 1234
-  autoscale_value: (x, unit, precision) ->
-    precision  = precision || 0
-    pow    = @power_of_thousand(x)
-    value  = x / Math.pow(1000, pow)
-    value = @round_number(value, precision)
-    scale_string = @power_of_thousand_to_string(pow)
-
-    prefix = ''
-    out    = ''
-    suffix = ''
+  autoscale_value: (x, unit, precision = 0) ->
+    if x == 0
+      pow = 0
+      value = 0
+    else
+      pow = @power_of_thousand(x)
+      value = x / Math.pow(1000, pow)
+      value = @round_number(value, precision)
 
     switch unit
       when '%'
-        out = @percentage_to_string(x)
+        return @percentage_to_string(x)
       when 'MJ'
-        out = x / Math.pow(1000, pow)
-        suffix = I18n.t('units.joules.' + scale_string)
+        return "#{value}#{@scaling_in_words(pow, 'joules')}"
       when 'PJ'
-        out = value
-        scale_string = @power_of_thousand_to_string(pow + 3)
-        suffix = I18n.t('units.joules.' + scale_string)
+        return "#{value}#{@scaling_in_words(pow + 3, 'joules')}"
       when 'MW'
-        out = x / Math.pow(1000, pow)
-        suffix = I18n.t('units.watt.' + scale_string)
+        return "#{value}#{@scaling_in_words(pow, 'watt')}"
       when 'euro'
-        out = value
-        prefix = "&euro;"
+        return "&euro;#value"
       else
-        out = x
-
-    output = prefix + out + suffix
-    return output
+        return x
 
   # formatters
 

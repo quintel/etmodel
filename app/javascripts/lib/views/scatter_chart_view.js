@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 08:45:18 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 09:24:48 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/scatter_chart_view.coffee
  */
 
@@ -69,37 +69,28 @@
             show: false
           }
         },
+        axesDefaults: {
+          labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
+          labelOptions: {
+            fontSize: '13px',
+            textColor: "#000000"
+          },
+          rendererOptions: {
+            forceTickAt0: true
+          },
+          numberTicks: 5,
+          tickOptions: {
+            fontSize: this.defaults.font_size,
+            showGridline: true,
+            formatString: "%.1f"
+          }
+        },
         axes: {
           xaxis: {
-            label: this.x_axis_unit(),
-            labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
-            labelOptions: {
-              fontSize: '10px',
-              textColor: "#000000"
-            },
-            rendererOptions: {
-              forceTickAt0: true
-            },
-            numberTicks: 5,
-            tickOptions: {
-              fontSize: this.defaults.font_size,
-              showGridline: true,
-              formatString: "%.1f"
-            }
+            label: this.x_axis_unit()
           },
           yaxis: {
-            label: this.y_axis_unit(),
-            labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
-            labelOptions: {
-              fontSize: '10px',
-              textColor: "#000000"
-            },
-            rendererOptions: {
-              forceTickAt0: true
-            },
-            tickOptions: {
-              formatString: "%.1f"
-            }
+            label: this.y_axis_unit()
           }
         }
       };

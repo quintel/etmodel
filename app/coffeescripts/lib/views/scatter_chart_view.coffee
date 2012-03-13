@@ -22,23 +22,38 @@ class @ScatterChartView extends BaseChartView
     out =
       seriesColors: @model.colors()
       grid: @defaults.grid
-      legend: @create_legend({num_columns: 1})
+      legend: @create_legend({num_columns: 3, offset: 60})
       seriesDefaults:
         lineWidth: 1.5
         showMarker: true
+        markerOptions:
+          size: 15.0
+          style: 'filledCircle'
         yaxis:'yaxis'
+        pointLabels:
+          show: false
       axes:
         xaxis:
+          label: @x_axis_unit()
+          labelRenderer: $.jqplot.CanvasAxisLabelRenderer
+          labelOptions:
+            fontSize: '10px'
+            textColor: "#000000"
           rendererOptions:
             forceTickAt0: true # we always want a tick at 0
           numberTicks: 5
           tickOptions:
             fontSize: @defaults.font_size
             showGridline: true
-            formatString: "%.1f&nbsp;#{@x_axis_unit()}"
+            formatString: "%.1f"
         yaxis:
+          label: @y_axis_unit()
+          labelRenderer: $.jqplot.CanvasAxisLabelRenderer
+          labelOptions:
+            fontSize: '10px'
+            textColor: "#000000"
           rendererOptions:
             forceTickAt0: true # we always want a tick at 0
           tickOptions:
-            formatString: "%.1f&nbsp;#{@y_axis_unit()}"
+            formatString: "%.1f"
     out

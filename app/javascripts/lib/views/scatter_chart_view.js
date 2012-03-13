@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 08:31:37 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 08:45:18 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/scatter_chart_view.coffee
  */
 
@@ -54,15 +54,29 @@
         seriesColors: this.model.colors(),
         grid: this.defaults.grid,
         legend: this.create_legend({
-          num_columns: 1
+          num_columns: 3,
+          offset: 60
         }),
         seriesDefaults: {
           lineWidth: 1.5,
           showMarker: true,
-          yaxis: 'yaxis'
+          markerOptions: {
+            size: 15.0,
+            style: 'filledCircle'
+          },
+          yaxis: 'yaxis',
+          pointLabels: {
+            show: false
+          }
         },
         axes: {
           xaxis: {
+            label: this.x_axis_unit(),
+            labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
+            labelOptions: {
+              fontSize: '10px',
+              textColor: "#000000"
+            },
             rendererOptions: {
               forceTickAt0: true
             },
@@ -70,15 +84,21 @@
             tickOptions: {
               fontSize: this.defaults.font_size,
               showGridline: true,
-              formatString: "%.1f&nbsp;" + (this.x_axis_unit())
+              formatString: "%.1f"
             }
           },
           yaxis: {
+            label: this.y_axis_unit(),
+            labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
+            labelOptions: {
+              fontSize: '10px',
+              textColor: "#000000"
+            },
             rendererOptions: {
               forceTickAt0: true
             },
             tickOptions: {
-              formatString: "%.1f&nbsp;" + (this.y_axis_unit())
+              formatString: "%.1f"
             }
           }
         }

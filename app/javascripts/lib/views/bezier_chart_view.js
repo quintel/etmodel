@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 10:40:48 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 15:15:18 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/bezier_chart_view.coffee
  */
 
@@ -48,6 +48,7 @@
     BezierChartView.prototype.chart_opts = function() {
       return {
         grid: this.defaults.grid,
+        highlighter: this.defaults.highlighter,
         legend: this.create_legend({
           num_columns: 2
         }),

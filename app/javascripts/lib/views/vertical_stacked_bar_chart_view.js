@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 15:43:14 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 15:13:41 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/vertical_stacked_bar_chart_view.coffee
  */
 
@@ -72,6 +72,7 @@
     VerticalStackedBarChartView.prototype.chart_opts = function() {
       return {
         grid: this.defaults.grid,
+        highlighter: this.defaults.highlighter,
         legend: this.create_legend({
           num_columns: 3
         }),

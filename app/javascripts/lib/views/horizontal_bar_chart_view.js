@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:12:24 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 15:15:18 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/horizontal_bar_chart_view.coffee
  */
 
@@ -57,6 +57,7 @@
       var out;
       out = {
         seriesColors: this.model.colors(),
+        highlighter: this.defaults.highlighter,
         grid: this.defaults.grid,
         seriesDefaults: {
           renderer: $.jqplot.BarRenderer,

@@ -12,6 +12,7 @@ class @LineChartView extends BaseChartView
   chart_opts: =>
     out =
       seriesColors: @model.colors()
+      highlighter: @defaults.highlighter
       grid: @defaults.grid
       legend: @create_legend({num_columns: 2, offset: 20})
       seriesDefaults:

@@ -46,6 +46,7 @@ class @HorizontalStackedBarChartView extends BaseChartView
   chart_opts: =>
     out =
       stackSeries: true
+      highlighter: @defaults.highlighter
       seriesColors: @colors()
       grid: @defaults.grid
       legend: @create_legend({num_columns: 6, labels: @ticks()})

@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 16:27:06 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 15:15:18 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/horizontal_stacked_bar_chart_view.coffee
  */
 
@@ -81,6 +81,7 @@
       var out;
       out = {
         stackSeries: true,
+        highlighter: this.defaults.highlighter,
         seriesColors: this.colors(),
         grid: this.defaults.grid,
         legend: this.create_legend({

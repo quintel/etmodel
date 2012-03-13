@@ -33,6 +33,7 @@ class @HorizontalBarChartView extends BaseChartView
   chart_opts: =>
     out =
       seriesColors: @model.colors()
+      highlighter: @defaults.highlighter
       grid: @defaults.grid
       seriesDefaults:
         renderer: $.jqplot.BarRenderer

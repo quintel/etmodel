@@ -78,7 +78,9 @@
       when 'MW'
         return "#{value}#{@scaling_in_words(pow, 'watt')}"
       when 'euro'
-        return "&euro;#value"
+        return "&euro;#{value}"
+      when 'man_years'
+        return x
       else
         return x
 

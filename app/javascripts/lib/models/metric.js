@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 15:45:16 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 14 Mar 2012 10:10:21 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/metric.coffee
  */
 
@@ -79,7 +79,9 @@
         case 'MW':
           return "" + value + (this.scaling_in_words(pow, 'watt'));
         case 'euro':
-          return "&euro;#value";
+          return "&euro;" + value;
+        case 'man_years':
+          return x;
         default:
           return x;
       }

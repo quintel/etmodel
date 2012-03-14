@@ -159,6 +159,7 @@ var PolicyGoalList = Backbone.Collection.extend({
 
   // used by watt-nu. Sums the partial scores
   update_total_score: function() {
+    this.update_score_badges();
     var total = this.total_score(); 
     $("#targets_met-score").html(total);
     Tracker.delayed_track({score: total});
@@ -167,6 +168,28 @@ var PolicyGoalList = Backbone.Collection.extend({
 
   find_by_key: function(key) {
     return this.filter(function(g){ return g.get('key') == key;})[0];
+  },
+
+  update_score_badges: function() {
+    var round = App.settings.get('current_round');
+    $(".watt-nu").hide();
+    var total = 0;
+    var items = [];
+    if (round == 1) {
+      items = ["#co2_reduction-score"];
+    } else if (round == 2) {
+      items = ["#co2_reduction-score", "#total_energy_cost-score"];
+    } else if (round == 3) {
+      items = ["#co2_reduction-score", "#total_energy_cost-score", "#renewable_percentage-score"];
+    }
+
+    if (round) {
+      _.each(items, function(i){
+        el = $(i);
+        el.show();
+      });
+      $("#targets_met-score").show();
+    }
   }
 });
 

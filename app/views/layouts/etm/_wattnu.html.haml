@@ -12,33 +12,13 @@
   $(function(){
      $("#round-selector input").change(function(){
       var round = $(this).val();
-      update_score_badges(round);
       App.settings.set({current_round: round});
+      policy_goals.update_score_badges();
      });
 
      // initial trigger
      var current_round = #{Current.setting.current_round.to_json};
-     update_score_badges(current_round);
      App.settings.set({current_round: current_round});
+     policy_goals.update_score_badges();
   });
 
-  function update_score_badges(round) {
-    $(".watt-nu").hide();
-    var total = 0;
-    var items = [];
-    if (round == 1) {
-      items = ["#co2_reduction-score"];
-    } else if (round == 2) {
-      items = ["#co2_reduction-score", "#total_energy_cost-score"];
-    } else if (round == 3) {
-      items = ["#co2_reduction-score", "#total_energy_cost-score", "#renewable_percentage-score"];
-    }
-    
-    if (round) {
-      _.each(items, function(i){
-        el = $(i);
-        el.show();
-      })
-      $("#targets_met-score").show();
-    }
-  }

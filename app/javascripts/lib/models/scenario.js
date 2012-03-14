@@ -29,7 +29,7 @@ var Scenario = Backbone.Model.extend({
     var url = App.api_base_url() + "/api_scenarios/new.json";
     $.getJSON(url, {settings : this.api_attributes()},
       function(data) {
-        App.settings.set({'api_session_id' : data.api_scenario.api_session_id});
+        App.settings.set({'api_session_id' : data.api_scenario.id});
         App.bootstrap();
       }
     );

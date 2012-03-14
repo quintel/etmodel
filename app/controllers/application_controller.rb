@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   include SprocketsHelper
 
   include SortableTable::App::Controllers::ApplicationController
-  
+
   helper :all
   helper_method :current_user_session, :current_user, :admin?
 
@@ -72,7 +72,7 @@ protected
   def setting
     Current.setting
   end
-  
+
   def store_last_etm_page
     setting.last_etm_controller_name = params[:controller]
     setting.last_etm_controller_action = params[:action]
@@ -87,7 +87,7 @@ protected
   def load_view_settings
     Current.view = View.new(Current.setting.complexity_key, params[:controller], params[:id])
   end
-  
+
   def require_user
     unless current_user
       store_location
@@ -96,7 +96,7 @@ protected
       return false
     end
   end
-  
+
   def store_location
     session[:return_to] = request.request_uri
   end
@@ -113,7 +113,11 @@ protected
       false
     end
   end
-  
+
+  def wattnu?
+    session[:wattnu]
+  end
+
   # redirect_to :back fails fairly often. This is safer
   def redirect_to_back(default_url = root_path)
     redirect_to :back

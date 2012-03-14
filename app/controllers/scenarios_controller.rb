@@ -21,13 +21,13 @@ class ScenariosController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   def show
-    
+
   end
-  
+
   def new
     @saved_scenario = SavedScenario.new(
       :api_session_id => Current.setting.api_session_id
@@ -40,8 +40,8 @@ class ScenariosController < ApplicationController
   end
 
   ##
-  # Creates a scenario and saves the current settings into it. 
-  # 
+  # Creates a scenario and saves the current settings into it.
+  #
   # POST /scenarios/
   #
   # @tested 2010-12-22 jape
@@ -53,8 +53,8 @@ class ScenariosController < ApplicationController
     redirect_to scenarios_url
   end
 
-  # Loads a scenario from a id. 
-  # 
+  # Loads a scenario from a id.
+  #
   # GET /scenarios/:id/load
   #
   # @tested 2010-12-22 jape
@@ -73,6 +73,7 @@ class ScenariosController < ApplicationController
       redirect_to start_path, :notice => "Scenario not found" and return
     end
     Current.setting = Setting.load_from_scenario(@scenario)
+    Current.setting.current_round = 3 if wattnu?
     redirect_to start_path
   end
 
@@ -87,11 +88,11 @@ class ScenariosController < ApplicationController
   # Mixed resource methods
   # These methods can be used for both a singular as well as a plural resource.
   ##############################
-  
-  
+
+
   ##
   # Update is used for Current.scenario as well as params[:id].
-  # 
+  #
   # PUT /scenarios/:id
   # PUT /scenario
   #
@@ -107,14 +108,14 @@ class ScenariosController < ApplicationController
       redirect_to_back
     end
   end
-  
-  
+
+
   ##
   # Edit the current scenario.
   #
   # GET /scenarios/:id/edit
   # GET /scenario/edit
-  # 
+  #
   # Is this still used? The page seems broken
   # - PZ Thu 15 Dec 2011 15:54:31 CET
   def edit
@@ -124,7 +125,7 @@ class ScenariosController < ApplicationController
     end
   end
 
-  
+
   private
 
     # Finds the scenario from id
@@ -132,5 +133,5 @@ class ScenariosController < ApplicationController
       @scenario = Api::Scenario.find(params[:id])
     rescue ActiveResource::ResourceNotFound
       nil
-    end  
+    end
 end

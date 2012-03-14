@@ -84,6 +84,8 @@ var ConstraintView = Backbone.View.extend({
         return Metric.ratio_as_percentage(result);
       case 'score':
         return parseInt(result,10);
+      case 'employment':
+        return Metric.autoscale_value(result, 'man_years', 0); 
       default:
         return result;
     }

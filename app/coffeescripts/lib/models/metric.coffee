@@ -80,7 +80,7 @@
       when 'euro'
         return "&euro;#{value}"
       when 'man_years'
-        return x
+        return "#{@round_number x, 0}#{@scaling_in_words(0, 'man_years')}"
       else
         return x
 

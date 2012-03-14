@@ -1,9 +1,10 @@
 #select_charts
   %h1 
     = t("output.available")
-  - %w[Overview Dashboard Policy Supply Demand ].each do |group|
+  - %w[Overview Dashboard Policy Supply Demand Cost].each do |group|
     %h1= t(group)
     - OutputElement.not_hidden.select_by_group(group).each do |output_element|
+      - next if output_element.block_chart?
       %div
         %a.pick_charts{:id =>"output_#{output_element.id}", :data => {:chart_id => output_element.id}}
           %h2= t("output_elements.#{output_element.key}").html_safe

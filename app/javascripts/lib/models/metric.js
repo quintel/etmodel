@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 14 Mar 2012 10:10:21 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 14 Mar 2012 10:47:15 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/metric.coffee
  */
 
@@ -81,7 +81,7 @@
         case 'euro':
           return "&euro;" + value;
         case 'man_years':
-          return x;
+          return "" + (this.round_number(x, 0)) + (this.scaling_in_words(0, 'man_years'));
         default:
           return x;
       }

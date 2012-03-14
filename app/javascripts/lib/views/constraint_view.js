@@ -63,9 +63,9 @@ var ConstraintView = Backbone.View.extend({
       case 'household_energy_cost':
         return I18n.toCurrency(result, { precision: 0, unit: '&euro;' });
       case 'total_primary_energy':
-        // show + prefix if needed
-        return Metric.ratio_as_percentage(result, true);
       case 'co2_reduction':
+      case 'employment':
+        // show + prefix if needed
         return Metric.ratio_as_percentage(result, true);
       case 'net_energy_import':
         // 1 point precision
@@ -84,8 +84,6 @@ var ConstraintView = Backbone.View.extend({
         return Metric.ratio_as_percentage(result);
       case 'score':
         return parseInt(result,10);
-      case 'employment':
-        return Metric.autoscale_value(result, 'man_years', 0); 
       default:
         return result;
     }

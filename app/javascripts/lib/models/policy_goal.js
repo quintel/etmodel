@@ -128,20 +128,20 @@ var PolicyGoalList = Backbone.Collection.extend({
     var achieved = this.goals_achieved();
     var string   = "" + achieved + "/" + set;
     $("#constraint_7 strong").html(string);
-    this.update_total_score();
   },
 
   total_score: function() {
     var total = 0;
     var els;
-    switch(App.settings.get('current_round')) {
-      case '1':
+    var current_round = parseInt(App.settings.get('current_round'));
+    switch(current_round) {
+      case 1:
         els = ['co2_emission'];
         break;
-      case '2':
+      case 2:
         els = ['co2_emission', 'total_energy_cost'];
         break;
-      case '3':
+      case 3:
         els = ['co2_emission', 'total_energy_cost', 'renewable_percentage'];
         break;
       default:

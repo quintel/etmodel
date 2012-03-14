@@ -129,6 +129,7 @@ window.AppView = Backbone.View.extend({
     if (window.policy_goals) {
       window.policy_goals.invoke('update_view');
       window.policy_goals.update_totals();
+      window.policy_goals.update_total_score();
     }
     window.sidebar.update_bars();
 

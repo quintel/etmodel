@@ -57,6 +57,13 @@ window.AppView = Backbone.View.extend({
     this.inputElementsController.load_user_values();
   },
 
+  ensure_scenario_id: function() {
+    if (this.scenario.api_session_id() == null) {
+      console.log("No scenario!");
+      this.scenario.new_session();
+    }
+  },
+
   call_api : function(input_params) {
     var self = this;
     var url = this.scenario.query_url(input_params);

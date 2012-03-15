@@ -43,6 +43,8 @@ class @HorizontalStackedBarChartView extends BaseChartView
   render_chart: =>
     $.jqplot @container_id(), @results(), @chart_opts()
 
+  can_be_shown_as_table: -> false
+
   chart_opts: =>
     out =
       stackSeries: true

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include SortableTable::App::Controllers::ApplicationController
 
   helper :all
-  helper_method :current_user_session, :current_user, :admin?
+  helper_method :current_user_session, :current_user, :admin?, :wattnu?
 
   # TODO refactor move the hooks and corresponding actions into a "concern"
   before_filter :initialize_current

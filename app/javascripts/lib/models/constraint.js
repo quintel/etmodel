@@ -27,11 +27,13 @@ var Constraint = Backbone.Model.extend({
     var fut = this.gquery.get('future_value');
     var now = this.gquery.get('present_value');
 
-    if (this.get('key') == 'total_primary_energy' ) {
-      return Metric.calculate_performance(now, fut); }
-    else { 
-      return fut; 
-    } 
+    switch(this.get('key')) {
+      case 'total_primary_energy':
+      case 'employment':
+        return Metric.calculate_performance(now, fut);
+      default:
+        return fut;
+    }
   },
 
   // Update the result and previous result, based on new gquery result

@@ -63,8 +63,8 @@ var ConstraintView = Backbone.View.extend({
       case 'household_energy_cost':
         return I18n.toCurrency(result, { precision: 0, unit: '&euro;' });
       case 'total_primary_energy':
-      case 'co2_reduction':
       case 'employment':
+      case 'co2_reduction':
         // show + prefix if needed
         return Metric.ratio_as_percentage(result, true);
       case 'net_energy_import':

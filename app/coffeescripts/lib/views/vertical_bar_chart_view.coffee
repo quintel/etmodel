@@ -28,3 +28,5 @@ class @VerticalBarChartView extends VerticalStackedBarChartView
     [{}]
 
   parsed_unit: -> 'MT'
+
+  can_be_shown_as_table: -> false

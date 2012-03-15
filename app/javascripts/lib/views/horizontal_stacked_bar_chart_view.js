@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 15:15:18 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 15 Mar 2012 14:16:21 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/horizontal_stacked_bar_chart_view.coffee
  */
 
@@ -75,6 +75,10 @@
 
     HorizontalStackedBarChartView.prototype.render_chart = function() {
       return $.jqplot(this.container_id(), this.results(), this.chart_opts());
+    };
+
+    HorizontalStackedBarChartView.prototype.can_be_shown_as_table = function() {
+      return false;
     };
 
     HorizontalStackedBarChartView.prototype.chart_opts = function() {

@@ -19,8 +19,8 @@ window.AppView = Backbone.View.extend({
     this.api_call_stack = [];
 
     // Jaap MVC legacy
-    this.inputElementsController = window.input_elements;
-    this.inputElementsController.bind("change", this.handleInputElementsUpdate);
+    this.input_elements = window.input_elements;
+    this.input_elements.bind("change", this.handleInputElementsUpdate);
 
     this.settings = new Setting(); // At this point settings is empty!!
     // let's get the ruby-fetched api_session_id
@@ -54,7 +54,7 @@ window.AppView = Backbone.View.extend({
 
   // Load User values for Sliders
   load_user_values : function() {
-    this.inputElementsController.load_user_values();
+    this.input_elements.load_user_values();
   },
 
   ensure_scenario_id: function() {
@@ -163,7 +163,7 @@ window.AppView = Backbone.View.extend({
   doUpdateRequest:function() {
     var dirtyInputElements = window.input_elements.dirty();
 
-    if (dirtyInputElements.length == 0) { return; }
+    if (dirtyInputElements.length === 0) { return; }
 
     var input_params = window.input_elements.api_update_params();
     window.input_elements.reset_dirty();

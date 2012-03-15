@@ -27,7 +27,7 @@ var InputElement = Backbone.Model.extend({
 
   init_legacy_controller : function() {
     if (this.already_init != true) {
-      App.inputElementsController.addInputElement(this);
+      App.input_elements.addInputElement(this);
       this.already_init = true;
     }
   },
@@ -118,7 +118,7 @@ var InputElementList = Backbone.Collection.extend({
   },
 
   reset_dirty : function() {
-    _.each(this.dirty(), function(el) { el.setDirty(false); })
+    _.each(this.dirty(), function(el) { el.setDirty(false); });
   },
 
   /**
@@ -134,7 +134,6 @@ var InputElementList = Backbone.Collection.extend({
     inputElementView.bind("change", $.proxy(this.handleUpdate, this));
 
     return true;
-    this.initShareGroup(inputElement);
   },
 
   

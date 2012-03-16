@@ -6,6 +6,8 @@ class @HtmlTableChartView extends BaseChartView
     @clear_container()
     @container_node().html(window.table_content)
     @fill_cells()
+    # sort rows on merit order chart
+    @sort() if @model.get("id") == 116
 
   fill_cells : ->
     @dynamic_cells().each ->
@@ -21,3 +23,10 @@ class @HtmlTableChartView extends BaseChartView
     @container_node().find("td")
 
   can_be_shown_as_table: -> false
+
+  sort: =>
+    rows = _.sortBy $("##{@container_id()} tbody tr"), @sortMethod
+    @container_node().find("tbody").html(rows)
+
+  sortMethod: (item) ->
+    parseInt($(item).find("td:first").text())

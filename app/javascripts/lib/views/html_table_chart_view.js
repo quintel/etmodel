@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 10:15:43 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 16 Mar 2012 10:57:12 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/html_table_chart_view.coffee
  */
 
@@ -12,6 +12,7 @@
     __extends(HtmlTableChartView, _super);
 
     function HtmlTableChartView() {
+      this.sort = __bind(this.sort, this);
       this.render = __bind(this.render, this);
       HtmlTableChartView.__super__.constructor.apply(this, arguments);
     }
@@ -23,7 +24,8 @@
     HtmlTableChartView.prototype.render = function() {
       this.clear_container();
       this.container_node().html(window.table_content);
-      return this.fill_cells();
+      this.fill_cells();
+      if (this.model.get("id") === 116) return this.sort();
     };
 
     HtmlTableChartView.prototype.fill_cells = function() {
@@ -44,6 +46,16 @@
 
     HtmlTableChartView.prototype.can_be_shown_as_table = function() {
       return false;
+    };
+
+    HtmlTableChartView.prototype.sort = function() {
+      var rows;
+      rows = _.sortBy($("#" + (this.container_id()) + " tbody tr"), this.sortMethod);
+      return this.container_node().find("tbody").html(rows);
+    };
+
+    HtmlTableChartView.prototype.sortMethod = function(item) {
+      return parseInt($(item).find("td:first").text());
     };
 
     return HtmlTableChartView;

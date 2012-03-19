@@ -1,4 +1,3 @@
-//= require <old/etm.accordion.js>
 //= require <old/etm.blockchart.js>
 //= require <old/etm.fancybox.js>
 //= require <old/etm.flash.js>

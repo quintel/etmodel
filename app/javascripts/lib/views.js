@@ -16,3 +16,4 @@
 //= require <lib/views/html_table_chart_view.js>
 //= require <lib/views/scatter_chart_view.js>
 //= require <lib/views/sidebar_view.js>
+//= require <lib/views/accordion.js>

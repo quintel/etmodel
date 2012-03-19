@@ -21,9 +21,9 @@
       %tr{cycles}
         -# use the Label of the first column
         %th= t "output_element_series.#{columns[1][row].label}" rescue '-'
-        %td.tar{:data => {:gquery_id => columns[1][row].gquery}} -
-        %td.tar{:data => {:gquery_id => columns[2][row].gquery}} -
-        %td.tar{:data => {:gquery_id => columns[3][row].gquery}} -
-        %td.tar{:data => {:gquery_id => columns[4][row].gquery}} -
-        %td.tar{:data => {:gquery_id => columns[5][row].gquery}} -
-        %td.tar{:data => {:gquery_id => columns[6][row].gquery}} -
+        %td.tar{:data => {:gquery => columns[1][row].gquery}} -
+        %td.tar{:data => {:gquery => columns[2][row].gquery}} -
+        %td.tar{:data => {:gquery => columns[3][row].gquery}} -
+        %td.tar{:data => {:gquery => columns[4][row].gquery}} -
+        %td.tar{:data => {:gquery => columns[5][row].gquery}} -
+        %td.tar{:data => {:gquery => columns[6][row].gquery}} -

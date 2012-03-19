@@ -121,8 +121,8 @@ window.AppView = Backbone.View.extend({
     var result   = data.result;   // Results of this request for every "result[]" parameter
 
     $.each(result, function(gquery_key, value_arr) {
-      var gquery = window.gqueries.with_key(gquery_key);
-      if(gquery) { gquery.handle_api_result(value_arr); }
+      var gqueries = window.gqueries.with_key(gquery_key);
+      _.each(gqueries, function(g){g.handle_api_result(value_arr)});
     });
     window.charts.each(function(chart) { chart.trigger('change'); });
     if (window.policy_goals) {

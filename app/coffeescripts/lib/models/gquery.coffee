@@ -39,8 +39,9 @@ class @Gquery extends Backbone.Model
 class GqueryList extends Backbone.Collection
   model : Gquery
 
+  # TODO: use find and prevent gquery duplication
   with_key : (gquery_key) ->
-    @find (gquery) => gquery.get('key') == gquery_key
+    @filter (gquery) => gquery.get('key') == gquery_key
 
   keys : ->
     keys = window.gqueries.map (gquery) -> gquery.get('key')

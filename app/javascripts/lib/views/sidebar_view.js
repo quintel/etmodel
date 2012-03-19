@@ -15,7 +15,7 @@ var SidebarView = Backbone.View.extend({
       $("#sidebar ul li"), function(item){
         var key = $(item).attr('data-gquery');
         if(key) {
-          var gquery = gqueries.with_key(key);
+          var gquery = gqueries.with_key(key)[0];
           if (!gquery) return;
           var result = gquery.get('future_value');
           var percentage = "" + Math.round(result * 100) + "%";

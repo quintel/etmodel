@@ -1,11 +1,11 @@
-/* DO NOT MODIFY. This file was compiled Mon, 19 Mar 2012 15:09:17 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 19 Mar 2012 17:01:30 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/accordion.coffee
  */
 
 (function() {
 
   $(document).ready(function() {
-    var accordion, e, i, open_slide_index, _i, _len, _ref;
+    var accordion, e, i, open_slide_index, slide, slide_index, slide_key, slide_keys, _i, _len, _ref;
     accordion = $('.accordion').accordion({
       header: '.headline',
       collapsible: true,
@@ -13,6 +13,7 @@
       autoHeight: false,
       active: false
     });
+    slide_keys = [];
     i = 0;
     _ref = $('li.accordion_element', this);
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -20,10 +21,20 @@
       if ($(e).is('.selected')) open_slide_index = i;
       $(e).show();
       i += 1;
+      slide_key = $(".headline", e).data('slide');
+      slide_keys.push("#" + slide_key);
     }
-    $('.ui-accordion').accordion("activate", open_slide_index);
+    if (slide = window.location.hash) {
+      slide_index = slide_keys.indexOf(slide);
+      if (slide_index === -1) slide_index = open_slide_index;
+    } else {
+      slide_index = open_slide_index;
+    }
+    $('.ui-accordion').accordion("activate", slide_index);
     $('.ui-accordion').bind('accordionchange', function(ev, ui) {
       var output_element_id, slide_title;
+      slide_key = ui.newHeader.data('slide');
+      window.location.hash = slide_key;
       slide_title = $.trim(ui.newHeader.text());
       Tracker.track({
         slide: slide_title

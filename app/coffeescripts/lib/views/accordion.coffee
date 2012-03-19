@@ -7,16 +7,37 @@ $(document).ready ->
     active: false
   })
 
+  # Setup slides and open the right one. The default slide can be set in two
+  # ways:
+  # - by passing the optional :slide parameter to the controller (to be refactored!)
+  # - by passing a fragment url (http://ETM/costs#slide_key)
+  # Otherwise the first slide will be open by default.
+  #
+  slide_keys = []
   i = 0
   for e in $('li.accordion_element', this)
     open_slide_index = i if ($(e).is('.selected'))
     $(e).show()
     i += 1
+    # Store the slide keys in an array. We need this to get the index
+    # of the slide we'd like to open
+    slide_key = $(".headline", e).data('slide')
+    slide_keys.push "##{slide_key}"
+
   # open default/requested slide
-  $('.ui-accordion').accordion("activate", open_slide_index)
+  if slide = window.location.hash
+    slide_index = slide_keys.indexOf(slide)
+    # deal with bad names
+    slide_index = open_slide_index if slide_index == -1
+  else
+    slide_index = open_slide_index
+  $('.ui-accordion').accordion("activate", slide_index)
 
   # Here we load the new default chart
-  $('.ui-accordion').bind 'accordionchange', (ev,ui) ->
+  $('.ui-accordion').bind 'accordionchange', (ev, ui) ->
+    slide_key = ui.newHeader.data('slide')
+    window.location.hash = slide_key
+
     slide_title = $.trim(ui.newHeader.text())
     Tracker.track({slide: slide_title})
     if (ui.newHeader.length > 0)

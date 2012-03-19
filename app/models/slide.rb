@@ -40,4 +40,8 @@ class Slide < ActiveRecord::Base
   def title_for_description
     "slides.#{key}"
   end
+
+  def short_name
+    I18n.t("slides.#{key}").parameterize
+  end
 end

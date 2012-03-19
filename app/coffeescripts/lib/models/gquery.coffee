@@ -7,7 +7,7 @@ class @Gquery extends Backbone.Model
     future_value = @get('future_value')
 
     if !@is_acceptable_value(present_value) && !@is_acceptable_value(future_value)
-      console.warn "Gquery #{@get('key')} has undefined/null values. #{present_value}/#{future_value} reset to 0"
+      console.warn "Gquery #{@get('key')}: #{present_value}/#{future_value}, reset to 0"
       present_value = 0
       future_value  = 0
 
@@ -40,7 +40,7 @@ class GqueryList extends Backbone.Collection
   model : Gquery
 
   with_key : (gquery_key) ->
-    @filter (gquery) -> gquery.get('key') == gquery_key
+    @find (gquery) => gquery.get('key') == gquery_key
 
   keys : ->
     keys = window.gqueries.map (gquery) -> gquery.get('key')

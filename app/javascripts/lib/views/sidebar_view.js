@@ -9,13 +9,15 @@ var SidebarView = Backbone.View.extend({
       }
     );
   },
-  
+
   update_bars: function() {
     _.each(
       $("#sidebar ul li"), function(item){
-        var gquery = $(item).attr('data-gquery'); 
-        if(gquery) {
-          var result = gqueries.with_key(gquery)[0].get('future_value');
+        var key = $(item).attr('data-gquery');
+        if(key) {
+          var gquery = gqueries.with_key(key);
+          if (!gquery) return;
+          var result = gquery.get('future_value');
           var percentage = "" + Math.round(result * 100) + "%";
           var padded_percentage = "" + Math.round(result * 90) + "%";
           $(item).find(".bar").css('width', padded_percentage);

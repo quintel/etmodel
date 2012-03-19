@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 19 Mar 2012 10:41:15 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 19 Mar 2012 11:09:09 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/gquery.coffee
  */
 
@@ -24,7 +24,7 @@
       present_value = this.get('present_value');
       future_value = this.get('future_value');
       if (!this.is_acceptable_value(present_value) && !this.is_acceptable_value(future_value)) {
-        console.warn("Gquery " + (this.get('key')) + " has undefined/null values. " + present_value + "/" + future_value + " reset to 0");
+        console.warn("Gquery " + (this.get('key')) + ": " + present_value + "/" + future_value + ", reset to 0");
         present_value = 0;
         future_value = 0;
       }
@@ -80,7 +80,8 @@
     GqueryList.prototype.model = Gquery;
 
     GqueryList.prototype.with_key = function(gquery_key) {
-      return this.filter(function(gquery) {
+      var _this = this;
+      return this.find(function(gquery) {
         return gquery.get('key') === gquery_key;
       });
     };

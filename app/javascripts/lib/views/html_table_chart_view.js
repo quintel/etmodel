@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 19 Mar 2012 10:45:12 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 19 Mar 2012 10:56:07 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/html_table_chart_view.coffee
  */
 
@@ -32,7 +32,7 @@
       return this.dynamic_cells().each(function() {
         var gqid, gquery, raw_value, value;
         gqid = $(this).data('gquery');
-        gquery = window.gqueries.with_key(gqid)[0];
+        gquery = window.gqueries.with_key(gqid);
         if (!gquery) return;
         raw_value = gquery.future_value();
         value = Metric.round_number(raw_value, 1);

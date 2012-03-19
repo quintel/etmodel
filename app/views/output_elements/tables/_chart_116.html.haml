@@ -19,9 +19,9 @@
         :nuclear_iii => "Nuclear 3rd Gen",
         :coal_igcc => "Coal IGCC",
         :coal_pwd => "Coal ultra supercritical",
-        :coal_chp => "Coal ultra supercritical CHP",
+        :coal_chp => "Coal&nbsp;ultra supercritical&nbsp;CHP",
         :coal_conv => "Coal conventional",
-        :coal_pwd_ccs => "Coal ultra supercritical CCS",
+        :coal_pwd_ccs => "Coal&nbsp;ultra supercritical&nbsp;CCS",
         :coal_igcc_ccs => "Coal IGCC CCS",
         :gas_ccgt => "Gas CCGT",
         :gas_ccgt_ccs => "Gas CCGT CCS",
@@ -33,7 +33,7 @@
       }
     - items.each_pair do |key, label|
       %tr
-        %th= label
+        %th= raw label
         %td{:data => {:gquery => "merit_order_#{key}_position_in_merit_order_table"}}
         %td{:data => {:gquery => "merit_order_#{key}_operating_costs_in_merit_order_table"}}
         %td{:data => {:gquery => "merit_order_#{key}_capacity_in_merit_order_table"}}

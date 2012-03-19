@@ -7,7 +7,7 @@ class @HtmlTableChartView extends BaseChartView
     @container_node().html(window.table_content)
     @fill_cells()
     # sort rows on merit order chart
-    @sort() if @model.get("id") == 116
+    @merit_order_sort() if @model.get("id") == 116
 
   fill_cells : ->
     @dynamic_cells().each ->
@@ -24,9 +24,14 @@ class @HtmlTableChartView extends BaseChartView
 
   can_be_shown_as_table: -> false
 
-  sort: =>
-    rows = _.sortBy $("##{@container_id()} tbody tr"), @sortMethod
+  merit_order_sort: =>
+    rows = _.sortBy $("##{@container_id()} tbody tr"), @merit_order_position
+    # get rid of rows with merit order of 1000. See ETE#193.
+    # Ugly solution until we use better gqueries
+    rows = _.reject rows, (item) => @merit_order_position(item) == 1000
     @container_node().find("tbody").html(rows)
 
-  sortMethod: (item) ->
+  # custom method to sort merit order table
+  # DEBT: this should be resolved at gquery level
+  merit_order_position: (item) ->
     parseInt($(item).find("td:first").text())

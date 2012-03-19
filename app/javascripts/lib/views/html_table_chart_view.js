@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 16 Mar 2012 10:57:12 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 19 Mar 2012 10:13:47 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/html_table_chart_view.coffee
  */
 
@@ -12,7 +12,7 @@
     __extends(HtmlTableChartView, _super);
 
     function HtmlTableChartView() {
-      this.sort = __bind(this.sort, this);
+      this.merit_order_sort = __bind(this.merit_order_sort, this);
       this.render = __bind(this.render, this);
       HtmlTableChartView.__super__.constructor.apply(this, arguments);
     }
@@ -25,7 +25,7 @@
       this.clear_container();
       this.container_node().html(window.table_content);
       this.fill_cells();
-      if (this.model.get("id") === 116) return this.sort();
+      if (this.model.get("id") === 116) return this.merit_order_sort();
     };
 
     HtmlTableChartView.prototype.fill_cells = function() {
@@ -48,13 +48,17 @@
       return false;
     };
 
-    HtmlTableChartView.prototype.sort = function() {
-      var rows;
-      rows = _.sortBy($("#" + (this.container_id()) + " tbody tr"), this.sortMethod);
+    HtmlTableChartView.prototype.merit_order_sort = function() {
+      var rows,
+        _this = this;
+      rows = _.sortBy($("#" + (this.container_id()) + " tbody tr"), this.merit_order_position);
+      rows = _.reject(rows, function(item) {
+        return _this.merit_order_position(item) === 1000;
+      });
       return this.container_node().find("tbody").html(rows);
     };
 
-    HtmlTableChartView.prototype.sortMethod = function(item) {
+    HtmlTableChartView.prototype.merit_order_position = function(item) {
       return parseInt($(item).find("td:first").text());
     };
 

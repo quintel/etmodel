@@ -2,16 +2,15 @@
 %table#supply_output_table{table_defaults}
   %thead
     %tr
-      %th Emissions 
+      %th Emissions
       %th
       %th
       %th
     %tr
       %th
       %th including exported electricity
-      %th exported electricity 
+      %th exported electricity
       %th inland final consumption
-
 
   - columns = @output_element.allowed_output_element_series.group_by{|serie| (serie.order_by / 100).to_i }
   -# columns = {1 => [<Serie>,<Serie>], 2 => [...], 3 => [...]}
@@ -21,6 +20,6 @@
       %tr{cycles}
         -# use the Label of the first column
         %th= t "output_element_series.#{columns[1][row].label}" rescue '-'
-        %td.tar{:data => {:gquery_id => columns[1][row].gquery}} -
-        %td.tar{:data => {:gquery_id => columns[2][row].gquery}} -
-        %td.tar{:data => {:gquery_id => columns[3][row].gquery}} -
+        %td.tar{:data => {:gquery => columns[1][row].gquery}} -
+        %td.tar{:data => {:gquery => columns[2][row].gquery}} -
+        %td.tar{:data => {:gquery => columns[3][row].gquery}} -

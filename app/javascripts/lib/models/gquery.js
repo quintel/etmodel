@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 19 Mar 2012 11:09:09 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 19 Mar 2012 14:30:00 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/gquery.coffee
  */
 
@@ -81,7 +81,7 @@
 
     GqueryList.prototype.with_key = function(gquery_key) {
       var _this = this;
-      return this.find(function(gquery) {
+      return this.filter(function(gquery) {
         return gquery.get('key') === gquery_key;
       });
     };

@@ -12,7 +12,7 @@ class @HtmlTableChartView extends BaseChartView
   fill_cells : ->
     @dynamic_cells().each ->
       gqid = $(this).data('gquery')
-      gquery = window.gqueries.with_key(gqid)
+      gquery = window.gqueries.with_key(gqid)[0]
       return unless gquery
       raw_value = gquery.future_value()
       value = Metric.round_number(raw_value, 1)

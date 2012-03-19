@@ -45,7 +45,7 @@ end
 
 group :test, :development do
   gem 'pry'
-  gem 'rspec-rails', "~> 2.8.0"
+  gem 'rspec-rails', "~> 2.9.0"
   gem 'watchr'
   gem 'spork'
 end

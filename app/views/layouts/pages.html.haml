@@ -26,10 +26,11 @@
       #footer
         = render "layouts/etm/footer"
       %a{:id =>'epn_module',:href=>'/pages/education',:class => "side_tabs #{I18n.locale}"}
-    = render "layouts/etm/ga"
-    %a{:id =>'feedback-tab',:href=>'/feedback',:class => "select_chart side_tabs #{I18n.locale}"}
-    %a{:id =>'refman-tab',:href=>'http://refman.et-model.com',:class => "side_tabs #{I18n.locale}",:target=>"_blank"}
-    %a{:id =>'wiki-tab',:href=>'http://wiki.quintel.com',:class => "side_tabs #{I18n.locale}",:target=>"_blank"}
+    = render "layouts/etm/ga" unless APP_CONFIG[:standalone]
+    - unless APP_CONFIG[:standalone]
+      %a{:id =>'feedback-tab',:href=>'/feedback',:class => "select_chart side_tabs #{I18n.locale}"}
+      %a{:id =>'refman-tab',:href=>'http://refman.et-model.com',:class => "side_tabs #{I18n.locale}",:target=>"_blank"}
+      %a{:id =>'wiki-tab',:href=>'http://wiki.quintel.com',:class => "side_tabs #{I18n.locale}",:target=>"_blank"}
     %script
       if (_.include(['iPad', 'iPhone', 'iPod'], navigator.platform)) { $("#footer").css("position", "static"); };
 

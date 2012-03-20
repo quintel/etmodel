@@ -42,10 +42,12 @@
       #loading{:style => 'display: none'} Loading...
 
     %a#feedback-tab.side_tabs.select_chart{:href => '/feedback', :class => I18n.locale}
-    %a#refman-tab.side_tabs{:href => 'http://refman.et-model.com', :class => I18n.locale, :target => "_blank" }
+    - unless APP_CONFIG[:standalone]
+      %a#refman-tab.side_tabs{:href => 'http://refman.et-model.com', :class => I18n.locale, :target => "_blank" }
     %a#epn_module.side_tabs{:href => '/pages/education', :class => I18n.locale}
-    %a#wiki-tab.side_tabs{:href=>'http://wiki.quintel.com',:class => " #{I18n.locale}",:target=>"_blank"}
-    = render "layouts/etm/ga" if Rails.env.production? && !APP_CONFIG[:standalone]
+    - unless APP_CONFIG[:standalone]
+      %a#wiki-tab.side_tabs{:href=>'http://wiki.quintel.com',:class => " #{I18n.locale}",:target=>"_blank"}
+      = render "layouts/etm/ga" if Rails.env.production?
 
     -# stick the footer at the bottom of the page if we're on an iPad/iPhone due to viewport/page bugs in mobile webkit
     %script

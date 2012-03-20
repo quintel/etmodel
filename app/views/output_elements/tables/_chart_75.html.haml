@@ -1,5 +1,5 @@
 -# Changes to electricity grid
-%table#supply_output_table{table_defaults}
+%table.chart
   %thead
     %tr
       %th
@@ -18,7 +18,7 @@
   - rows = columns.values.map(&:length).max - 1 rescue 0
   %tbody
     - 0.upto(rows) do |row|
-      %tr{cycles}
+      %tr{:class => cycle('even', 'odd')}
         -# use the Label of the first column
         %th= t "output_element_series.#{columns[1][row].label}" rescue '-'
         %td.tar{:data => {:gquery => columns[1][row].gquery}} -

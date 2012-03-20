@@ -16,11 +16,6 @@ module ApplicationHelper
   end
 
   # TODO: get rid of this, use CSS
-  def table_defaults
-    {:cellspacing => 0, :cellpadding => 0, :border => 0, :class => 'default'}
-  end
-
-  # TODO: get rid of this, use CSS
   def cycles(html_attrs = {})
     class_name = cycle('odd', 'even')
     html_attrs[:class] = "#{html_attrs[:class]} #{class_name}"

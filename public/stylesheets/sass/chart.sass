@@ -73,21 +73,39 @@
       &.mekko
         left: 40px
 
-#supply_output_table
-  width: 100%
-  th
-    text-align: left
+table#power_plants
   th.unit
     font-weight: normal
     text-align: center
-    font-size: 10px
   .border-rgt
     border-right: 1px solid #999
-  tfoot#total
-    td
+  tfoot
+    tr
       border-top: 1px solid #999
       border-bottom: 3px double #999
+    td, th
+      border: 1px solid #eee
+    td
       font-weight: bold
+
+table.chart
+  width: 100%
+  border-collapse: collapse
+  thead
+    tr
+      background: #528FBD
+    th
+      border: 1px solid #D9E2F0
+  tr
+    &.even
+      background-color: #eee
+  td, th
+    font-size: 10px
+  td
+    text-align: right
+  tbody
+    tr, td
+      border: 1px solid #ddd
 
 table.chart_as_table
   border-collapse: collapse

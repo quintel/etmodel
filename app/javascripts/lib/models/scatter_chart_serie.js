@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 08:35:16 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 20 Mar 2012 15:38:48 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/scatter_chart_serie.coffee
  */
 
@@ -17,8 +17,8 @@
     ScatterChartSerie.prototype.initialize = function() {
       var key, query_x, query_y;
       key = this.get('gquery_key');
-      query_x = "" + key + "_costs";
-      query_y = "" + key + "_emissions";
+      query_y = "" + key + "_costs";
+      query_x = "" + key + "_emissions";
       return this.set({
         gquery_x: new Gquery({
           key: query_x

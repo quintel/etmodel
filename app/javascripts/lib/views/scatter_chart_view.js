@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 09:46:59 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 20 Mar 2012 15:36:58 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/scatter_chart_view.coffee
  */
 
@@ -65,7 +65,7 @@
           lineWidth: 1.5,
           showMarker: true,
           markerOptions: {
-            size: 15.0,
+            size: 12.0,
             style: 'filledCircle'
           },
           yaxis: 'yaxis',

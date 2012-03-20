@@ -33,7 +33,7 @@ class @ScatterChartView extends BaseChartView
         lineWidth: 1.5
         showMarker: true
         markerOptions:
-          size: 15.0
+          size: 12.0
           style: 'filledCircle'
         yaxis:'yaxis'
         pointLabels:

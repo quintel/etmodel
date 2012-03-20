@@ -129,7 +129,8 @@ Etm::Application.routes.draw do
   match '/show_all_countries'              => 'pages#show_all_countries'
   match '/show_flanders'                   => 'pages#show_flanders'
   match '/show_all_views'                  => 'pages#show_all_views'
-  match '/wattnu'                          => 'pages#wattnu'
+  match '/wattnu_on'                       => 'pages#wattnu_on'
+  match '/wattnu_off'                      => 'pages#wattnu_off'
   match '/municipalities'                  => 'pages#municipalities'
   match '/home'                            => 'pages#home',        :as => :home
   match '/careers'                         => 'pages#careers',     :as => :careers

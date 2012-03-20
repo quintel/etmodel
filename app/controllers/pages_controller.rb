@@ -93,8 +93,13 @@ public
 
   # Use this action to toggle wattnu features
   # (score, round, etc)
-  def wattnu
-    session[:wattnu] = !session[:wattnu]
+  def wattnu_on
+    session[:wattnu] = true
+    redirect_to root_path, :notice => "Watt Nu score feature is now set to #{session[:wattnu]}"
+  end
+
+  def wattnu_off
+    session[:wattnu] = false
     redirect_to root_path, :notice => "Watt Nu score feature is now set to #{session[:wattnu]}"
   end
 

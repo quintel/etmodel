@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 19 Mar 2012 17:01:30 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 20 Mar 2012 08:53:45 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/accordion.coffee
  */
 

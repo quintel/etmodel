@@ -1,4 +1,4 @@
-- selected = 'selected' if (params[:slide] == slide.key || @slides.first == slide)
+- selected = 'selected' if @slides.first == slide
 %li.accordion_element{:class => selected}
   - default_output = Current.view.default_output_element_for_slide(slide)
   %span.headline{:id => "default_output_#{default_output.id}", :data => {:slide => slide.short_name}}
@@ -10,17 +10,14 @@
       = raw slide.description.try(:content)
       - if slide.house_selection
         = link_to t("accordion.help me choose"), house_selection_tool_path, :class => 'house_selection_tool'
-    
     %ul.valuees
       - unless slide.general_sub_header.blank?
         %div.sub_header{:id => "sub_header_#{slide.id}"}
           %span.subheader_arrow= t("subheaders.#{slide.general_sub_header}")
           - unless slide.subheader_image.blank?
             %img.subheader_image{:src => "/images/layout/#{slide.subheader_image}"}
-      
       - Current.view.ungrouped_input_elements_for(slide).each do |input_element|
         = render :partial => 'input_elements/slider', :object => input_element
-  
       - Current.view.interface_groups_with_input_elements_for(slide).each do |group|
         - title = slide.group_sub_header
         %div.interface_group

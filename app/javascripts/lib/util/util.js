@@ -32,14 +32,6 @@ var Util = {
     return (new Date()).getTime();
   },
   
-  /**
-   * Is significant with some delta?
-   */
-  isSignificant:function(oldValue, newValue, delta) {
-    var diff = Math.abs(newValue - oldValue);
-    return diff > delta;
-  },
-  
   makeUnselectable:function(el) {
     el.bind('selectstart', function() {
       return false;

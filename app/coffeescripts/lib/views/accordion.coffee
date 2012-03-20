@@ -7,10 +7,8 @@ $(document).ready ->
     active: false
   })
 
-  # Setup slides and open the right one. The default slide can be set in two
-  # ways:
-  # - by passing the optional :slide parameter to the controller (to be refactored!)
-  # - by passing a fragment url (http://ETM/costs#slide_key)
+  # Setup slides and open the right one. The default slide can be set
+  # by passing a fragment url (http://ETM/costs#slide_key)
   # Otherwise the first slide will be open by default.
   #
   slide_keys = []

@@ -5,7 +5,7 @@ var output_element = new Chart(<%= @output_element.options_for_js.to_json.html_s
 <% end %>
 
 <% if @output_element.html_table? %>
-  var table_content = "<%= escape_javascript(render "output_elements/tables/chart_#{@output_element.id}")%>";
+  window.charts.tables_html[<%=@output_element.id%>] = "<%= js_render_html_table(@output_element)%>";
 <% end %>
 
 window.charts.change(output_element);

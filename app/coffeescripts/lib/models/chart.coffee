@@ -106,6 +106,12 @@ class @ChartList extends Backbone.Collection
     $.jqplot.config.enablePlugins = true
     @setup_callbacks()
 
+  # table charts are HTML-based. Their HTML is returned bu the Rails app
+  # and the Backbone app takes care of inserting it into the DOM adding
+  # the gqueries result values. This hash stores the HTML for the tables
+  # using the chart_id as key.
+  tables_html: {}
+
   change : (chart) ->
     old_chart = @first()
     @remove(old_chart) if old_chart != undefined

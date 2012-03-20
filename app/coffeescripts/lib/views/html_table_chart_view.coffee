@@ -4,10 +4,15 @@ class @HtmlTableChartView extends BaseChartView
 
   render : =>
     @clear_container()
-    @container_node().html(window.table_content)
+    @container_node().html(@table_html())
     @fill_cells()
     # sort rows on merit order chart
     @merit_order_sort() if @model.get("id") == 116
+
+  # The table HTML is provided by the rails app. It is stored in the
+  # window.charts object
+  table_html: ->
+    charts.tables_html[@model.get("id")]
 
   fill_cells : ->
     for cell in @dynamic_cells()

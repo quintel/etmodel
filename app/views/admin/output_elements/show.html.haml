@@ -17,7 +17,7 @@
 
   %tbody
     -@output_element.output_element_series.each do |serie|
-      %tr{cycles}
+      %tr{:class => cycle('even', 'odd')}
         %td= serie.id
         %td= link_to serie.label, admin_output_element_serie_path(serie)
         %td{:style => "background: #{serie.color}"}= color_to_string(serie.color)
@@ -44,7 +44,8 @@
   = sprocket_layout_init :etm
   :javascript
     App.settings = new Setting(#{Current.setting.to_json.html_safe});
+    charts.tables_html[#{@output_element.id}] = '#{js_render_html_table(@output_element) if @output_element.html_table?}'
     #{ js_for_output_element(@output_element.id, "output_element_#{@output_element.id}") }
     App.ensure_scenario_id();
     App.call_api();
-  
+

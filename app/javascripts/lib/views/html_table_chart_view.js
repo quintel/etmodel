@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 20 Mar 2012 11:37:28 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 08:14:56 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/html_table_chart_view.coffee
  */
 
@@ -23,9 +23,13 @@
 
     HtmlTableChartView.prototype.render = function() {
       this.clear_container();
-      this.container_node().html(window.table_content);
+      this.container_node().html(this.table_html());
       this.fill_cells();
       if (this.model.get("id") === 116) return this.merit_order_sort();
+    };
+
+    HtmlTableChartView.prototype.table_html = function() {
+      return charts.tables_html[this.model.get("id")];
     };
 
     HtmlTableChartView.prototype.fill_cells = function() {

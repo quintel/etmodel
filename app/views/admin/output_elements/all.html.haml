@@ -9,6 +9,10 @@
       Loading
     :javascript
       #{ js_for_output_element(o.id, "output_element_#{o.id}") }
+    - if o.html_table?
+      - @output_element = o
+      :javascript
+        charts.tables_html[#{o.id}] = '#{js_render_html_table(o)}';
 
 
 - content_for :head do
@@ -21,4 +25,3 @@
   :javascript
     App.settings = new Setting(#{Current.setting.to_json.html_safe});
     App.call_api();
-  

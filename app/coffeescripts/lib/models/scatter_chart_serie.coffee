@@ -2,8 +2,8 @@ class @ScatterChartSerie extends Backbone.Model
   initialize : ->
     # the name composition should be defined somewhere else
     key = @get 'gquery_key'
-    query_x = "#{key}_costs"
-    query_y = "#{key}_emissions"
+    query_x = "#{key}_emissions"
+    query_y = "#{key}_costs"
 
     @set
       gquery_x: new Gquery({key : query_x}),

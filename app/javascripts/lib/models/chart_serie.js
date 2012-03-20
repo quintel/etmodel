@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 06 Mar 2012 10:55:50 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 20 Mar 2012 11:35:40 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/chart_serie.coffee
  */
 
@@ -53,6 +53,12 @@
     }
 
     ChartSeries.prototype.model = ChartSerie;
+
+    ChartSeries.prototype.with_gquery = function(gquery) {
+      return this.find(function(s) {
+        return s.get('gquery').get('key') === gquery;
+      });
+    };
 
     return ChartSeries;
 

@@ -10,13 +10,13 @@ class @HtmlTableChartView extends BaseChartView
     @merit_order_sort() if @model.get("id") == 116
 
   fill_cells : ->
-    @dynamic_cells().each ->
-      gqid = $(this).data('gquery')
-      gquery = window.gqueries.with_key(gqid)[0]
-      return unless gquery
-      raw_value = gquery.future_value()
+    for cell in @dynamic_cells()
+      gqid = $(cell).data('gquery')
+      serie = @model.series.with_gquery(gqid)
+      return unless serie
+      raw_value = serie.future_value()
       value = Metric.round_number(raw_value, 1)
-      $(this).html(value)
+      $(cell).html(value)
 
   # returns a jQuery collection of cells to be dynamically filled
   dynamic_cells : ->

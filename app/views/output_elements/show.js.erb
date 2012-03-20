@@ -1,13 +1,11 @@
 var output_element = new Chart(<%= @output_element.options_for_js.to_json.html_safe %>);
-<%- if @output_element.html_table? -%>
+
+<% @output_element.allowed_output_element_series.each do |serie| %>
+  <%= raw output_element_serie(serie) %>
+<% end %>
+
+<% if @output_element.html_table? %>
   var table_content = "<%= escape_javascript(render "output_elements/tables/chart_#{@output_element.id}")%>";
-  <%- @gqueries.each do |key| %>
-    new Gquery({key: '<%= key %>'});
-  <% end -%>
-<% else %>
-  <% @output_element.allowed_output_element_series.each do |serie| %>
-    <%= raw output_element_serie(serie) %>
-  <% end %>
 <% end %>
 
 window.charts.change(output_element);

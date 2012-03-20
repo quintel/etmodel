@@ -2,10 +2,6 @@ class OutputElementsController < ApplicationController
   before_filter :find_output_element, :only => [:show, :select_chart, :default_chart]
 
   def show
-    if @output_element.html_table?
-      @gqueries = @output_element.allowed_output_element_series.map(&:gquery)
-    end
-
     respond_to do |format|
       format.js { render }
     end

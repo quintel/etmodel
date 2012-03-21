@@ -1,12 +1,12 @@
 
-%fieldset{:id => "signin_menu", :class => "topnav header_menu"} 
+%fieldset{:id => "signin_menu", :class => "topnav header_menu"}
   - @user_session = UserSession.new
   = form_for(@user_session) do |f|
     = f.error_messages
     %p
-      = f.label :email, t("user.email") 
-      %br 
-      = f.text_field :email 
+      = f.label :email, t("user.email")
+      %br
+      = f.text_field :email
 
     %p
       = f.label :password, t("user.password")
@@ -16,11 +16,11 @@
       = f.label :remember_me, t("user.remember")
       %br
       = f.check_box :remember_me, :checked => "checked"
-    
-    
+
+
     = f.submit 'Login'
   %a{:href => new_user_path}= "#{t("or")} #{t("header.create account")}"
-  
+
 #settings_menu.header_menu.topnav
   %li
     #flag
@@ -33,18 +33,18 @@
     = t("header.Current end year")+":"
 
   %li
-    = t("header.Current level")+":" 
-    
+    = t("header.Current level")+":"
+
     = form_tag "/scenario/change_complexity", :method => :put do
       - options = options_for_select [[t("Easy").downcase,1],[t("Medium").downcase,2],[t("Advanced").downcase,3]], Current.setting.complexity
       = select_tag("scenario[complexity]", options, { :index => nil, :onchange => 'this.form.submit()'})
 
 
   %li
-    = t("header.Current language")+":" 
+    = t("header.Current language")+":"
     = form_tag "/application/set_locale" do
       = select_tag("locale", options_for_select(["en", "nl"], I18n.locale.to_s), { :index => nil, :onchange => 'this.form.submit()'})
- 
+
 
   %li
     %a{:href => new_scenario_path}= t("header.Save scenario")
@@ -59,25 +59,28 @@
       %li
         = check_box :use_fce, :settings, :onchange => 'App.settings.toggle_fce()', :checked => Current.setting.use_fce
         %label{:for => :use_fce_settings}= t('fce.check')
+    %li
+      = check_box :use_merit_order, :settings, :onchange => 'App.settings.toggle_merit_order()', :checked => Current.setting.use_merit_order
+      %label{:for => :use_merit_order}= t('header.toggle_merit_order')
 
 #information_menu.header_menu.topnav
   %li
     %a{:href => "/about"}= t("header.About QI")
-  %li  
+  %li
     %a{:href => partners_path}= t("header.Partners")
-  %li  
+  %li
     %a{:href => "/education"}= t("header.Education")
 
-  %li  
+  %li
     %a{:href => "/testimonials"}= t("header.Testimonials")
-  %li  
+  %li
     %a{:href => "/recommendations"}= t("header.Recommendations")
-  %li  
+  %li
     %a{:href => "/press_releases"}= t("header.Press releases")
-  %li  
+  %li
     %a{:href => "/units"}= t("header.Units used")
-  %li  
+  %li
     %a{:href => "/privacy_statement"}= t("header.Privacy statement")
-  %li  
+  %li
     %a{:href => "/disclaimer"}= t("header.disclaimer")
 

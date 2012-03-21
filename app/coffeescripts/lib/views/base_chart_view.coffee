@@ -2,9 +2,6 @@ class @BaseChartView extends Backbone.View
   initialize_defaults: ->
     @model.bind('change', this.render)
 
-  clear_container: ->
-    @container_node().empty()
-
   max_value: ->
     sum_present = _.reduce @model.values_present(), (sum, v) -> return sum + (v > 0 ? v : 0)
     sum_future = _.reduce @model.values_future(), (sum, v) -> return sum + (v > 0 ? v : 0)
@@ -17,20 +14,17 @@ class @BaseChartView extends Backbone.View
 
   # returns the power of thousand of the largest value shown in the chart
   # this is used to scale the values around the chart
-  data_scale: ->
-    Metric.power_of_thousand @max_value()
+  data_scale: -> Metric.power_of_thousand @max_value()
 
-  container_id: ->
-    @model.get("container")
+  container_id: -> @model.get("container")
 
-  container_node : ->
-    $("##{@container_id()}")
+  container_node : -> $("##{@container_id()}")
 
-  title_node : ->
-    $("#charts_holder h3")
+  clear_container: -> @container_node().empty()
 
-  update_title: ->
-    @title_node().html(@model.get("name"))
+  title_node : -> $("#charts_holder h3")
+
+  update_title: -> @title_node().html(@model.get("name"))
 
   create_legend: (opts) ->
     renderer: $.jqplot.EnhancedLegendRenderer
@@ -63,7 +57,6 @@ class @BaseChartView extends Backbone.View
 
   toggle_format: ->
     @display_as_table = !@display_as_table
-    console.log @display_as_table
     if @can_be_shown_as_table() && @display_as_table
       @render_as_table()
     else

@@ -18,11 +18,9 @@ class @ScatterChartView extends BaseChartView
 
   # This chart isn't actually scaling the values, so
   # we're packing the labels in the unit column
-  x_axis_unit: =>
-    @model.get('unit').split(';')[0]
+  x_axis_unit: => @model.get('unit').split(';')[0]
 
-  y_axis_unit: =>
-    @model.get('unit').split(';')[1]
+  y_axis_unit: => @model.get('unit').split(';')[1]
 
   can_be_shown_as_table: -> false
 

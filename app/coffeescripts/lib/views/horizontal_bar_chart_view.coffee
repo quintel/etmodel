@@ -24,8 +24,7 @@ class @HorizontalBarChartView extends BaseChartView
     @cached_results = out
     [out]
 
-  clear_results_cache: ->
-    @cached_results = null
+  clear_results_cache: -> @cached_results = null
 
   render_chart: =>
     $.jqplot @container_id(), @results(), @chart_opts()

@@ -6,9 +6,7 @@ class @GroupedVerticalBarChartView extends BaseChartView
     @clear_container()
     @render_chart()
 
-  result_serie : ->
-    _.flatten(@model.value_pairs())
-
+  result_serie : -> _.flatten(@model.value_pairs())
 
   ticks: ->
     ticks = []
@@ -17,8 +15,7 @@ class @GroupedVerticalBarChartView extends BaseChartView
       ticks.push(serie.result()[1][0])
     ticks
 
-  results: ->
-    [@result_serie()]
+  results: -> [@result_serie()]
 
   render_chart: =>
     @.jqplot @container_id(), @results(), @chart_opts()

@@ -21,7 +21,7 @@ class @VerticalBarChartView extends VerticalStackedBarChartView
 
   ticks: ->
     # added 1990 in the code here, this is the only charts that uses @
-    [1990,App.settings.get("start_year"), App.settings.get("end_year")]
+    [1990, App.settings.get("start_year"), App.settings.get("end_year")]
 
   filler: ->
     # add this filler to create a dummy value. This is needed because the target line must be added to the end of the serie

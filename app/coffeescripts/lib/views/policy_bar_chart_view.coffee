@@ -15,8 +15,7 @@ class @PolicyBarChartView extends BaseChartView
   result_serie2: ->
     _.map @result_serie1(), (r) -> 100 - r
 
-  results: =>
-    [@result_serie1(), @result_serie1()]
+  results: => [@result_serie1(), @result_serie1()]
 
   ticks: ->
     ticks = []

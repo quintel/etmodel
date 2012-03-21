@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 09:33:27 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 15:01:41 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/scatter_chart_view.coffee
  */
 

@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 15:15:18 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 15:55:30 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/bezier_chart_view.coffee
  */
 
@@ -76,7 +76,7 @@
             },
             borderColor: '#CCCCCC',
             tickOptions: {
-              formatString: "%.0f" + (this.parsed_unit())
+              formatString: "%." + (this.significant_digits()) + "f&nbsp;" + (this.parsed_unit())
             }
           }
         }

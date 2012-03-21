@@ -69,7 +69,7 @@ class @VerticalStackedBarChartView extends BaseChartView
         rendererOptions:
           forceTickAt0: true
         tickOptions:
-          formatString:'%.1f'+ @parsed_unit()
+          formatString: "%.#{@significant_digits()}f&nbsp;#{@parsed_unit()}"
 
   apply_target_line_serie_settings: (serie_settings_filler) ->
     # add the target line settings to the series.

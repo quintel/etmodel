@@ -42,7 +42,7 @@ class @BezierChartView extends BaseChartView
           forceTickAt0: true # we always want a tick a 0
         borderColor: '#CCCCCC' # color for the marks #cccccc is the same as the grid lines
         tickOptions:
-          formatString: "%.0f#{@parsed_unit()}"
+          formatString: "%.#{@significant_digits()}f&nbsp;#{@parsed_unit()}"
 
   # Bezier-realted stuff
   # RD: check http://alecjacobson.com/programs/bezieVr-curve/ for a nice bezier drawing tool!

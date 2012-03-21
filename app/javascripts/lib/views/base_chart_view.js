@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 13 Mar 2012 15:11:35 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 15:57:33 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/base_chart_view.coffee
  */
 
@@ -13,6 +13,7 @@
 
     function BaseChartView() {
       this.render_as_table = __bind(this.render_as_table, this);
+      this.significant_digits = __bind(this.significant_digits, this);
       BaseChartView.__super__.constructor.apply(this, arguments);
     }
 
@@ -20,26 +21,26 @@
       return this.model.bind('change', this.render);
     };
 
-    BaseChartView.prototype.clear_container = function() {
-      return this.container_node().empty();
-    };
-
     BaseChartView.prototype.max_value = function() {
       var max_value, sum_future, sum_present, target_results;
-      sum_present = _.reduce(this.model.values_present(), function(sum, v) {
-        var _ref;
-        return sum + ((_ref = v > 0) != null ? _ref : {
-          v: 0
-        });
-      });
-      sum_future = _.reduce(this.model.values_future(), function(sum, v) {
-        var _ref;
-        return sum + ((_ref = v > 0) != null ? _ref : {
-          v: 0
-        });
-      });
+      sum_present = _.reduce(this.model.values_present(), this.smart_sum);
+      sum_future = _.reduce(this.model.values_future(), this.smart_sum);
       target_results = _.flatten(this.model.target_results());
       return max_value = _.max($.merge([sum_present, sum_future], target_results));
+    };
+
+    BaseChartView.prototype.smart_sum = function(sum, x) {
+      var y;
+      y = x > 0 ? x : 0;
+      return sum + y;
+    };
+
+    BaseChartView.prototype.significant_digits = function() {
+      var max;
+      max = this.max_value() / Math.pow(1000, this.data_scale());
+      if (max >= 100) return 0;
+      if (max >= 10) return 1;
+      return 2;
     };
 
     BaseChartView.prototype.parsed_unit = function() {
@@ -58,6 +59,10 @@
 
     BaseChartView.prototype.container_node = function() {
       return $("#" + (this.container_id()));
+    };
+
+    BaseChartView.prototype.clear_container = function() {
+      return this.container_node().empty();
     };
 
     BaseChartView.prototype.title_node = function() {
@@ -108,7 +113,6 @@
 
     BaseChartView.prototype.toggle_format = function() {
       this.display_as_table = !this.display_as_table;
-      console.log(this.display_as_table);
       if (this.can_be_shown_as_table() && this.display_as_table) {
         return this.render_as_table();
       } else {

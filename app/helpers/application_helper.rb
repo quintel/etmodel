@@ -1,16 +1,6 @@
 module ApplicationHelper
   include SortableTable::App::Helpers::ApplicationHelper
 
-  def asset_cache_name(name)
-    if Rails.env.development?
-      # we set config.perform_caching to true in development (to cache the Graph-qernel)
-      # so we have to return false, otherwise changes won't be dodated
-      false
-    else
-      "cache_#{name}"
-    end
-  end
-
   def has_active_scenario?
     Current.setting.api_session_id.present?
   end

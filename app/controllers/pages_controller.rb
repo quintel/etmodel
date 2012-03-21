@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   skip_before_filter :show_intro_screens_only_once, :only => [:intro]
 
   def root
-    if params[:end_year]
+    if request.post?
       assign_settings_and_redirect
     else
       show_root_page

@@ -19,46 +19,20 @@
     return unit_label
 
   # scale is the power of thousand
-  scale_value: (value, scale) ->
-    value / Math.pow(1000, scale)
+  scale_value: (value, scale) -> value / Math.pow(1000, scale)
 
-  # Translates a scale to a words:
-  #  1000 ^ 1 = thousands
-  #  1000 ^ 2 = millions
-  #  etc.
-  #
-  # @param scale [Float] The scale that must be translated into a word
-  # @param unit [String] The unit - currently {currency|joules|nounit|ton}
-  # Add other units on config/locales/{en|nl}.yml
-  scaling_in_words: (scale, unit) ->
-    scale_symbols =
-      "0" : 'unit'
-      "1" : 'thousands'
-      "2" : 'millions'
-      "3" : 'billions'
-      "4" : 'trillions'
-      "5" : 'quadrillions'
-      "6" : 'quintillions'
-    scale = 0 if _.isNaN(scale)
-    symbol = scale_symbols["#{scale}"]
-    return I18n.t("units.#{unit}.#{symbol}")
-
-  # Doesn't add trailing zeros. Let's use sprintf.js in case
-  round_number : (value, precision) ->
-    rounded = Math.pow(10, precision)
-    Math.round(value * rounded) / rounded
 
   calculate_performance : (now, fut) ->
     return null if now == null || fut == null || fut == 0
     return fut / now - 1
 
-  #  given a value and a unit, returns a translated string
+  # given a value and a unit, returns a translated string
   # uses i18n.js, so be sure the required translation keys
   # are available.
-  # The available units are:
   #
-  # av(20, '%') => 20%
-  # av(1234)    => 1234
+  # autoscale_value(20, '%') => 20%
+  # autoscale_value(1234)    => 1234
+  #
   autoscale_value: (x, unit, precision = 0) ->
     if x == 0
       pow = 0
@@ -128,20 +102,37 @@
       rounded = rounded.join('.')
     "#{prefix}&euro;#{rounded}#{suffix}"
 
-  # utility methods
+  # support methods
+  #
 
   # 0-999: 0, 1000-999999: 1, ...
   power_of_thousand: (x) ->
     return parseInt(Math.log(Math.abs(x)) / Math.log(1000))
 
   # Returns the string currently used on the i18n file
-  power_of_thousand_to_string: (x)->
-    switch x
-      when 0 then return 'unit'
-      when 1 then return 'thousands'
-      when 2 then return 'millions'
-      when 3 then return 'billions'
-      when 4 then return 'trillions'
-      when 5 then return 'quadrillions'
-      when 6 then return 'quintillions'
-      else return null
+  power_of_thousand_to_string: (x) -> @scale_label["#{x}"]
+
+  # Translates a scale to a words:
+  #  1000 ^ 1 = thousands
+  #  1000 ^ 2 = millions
+  #  etc.
+  #
+  # @param scale [Float] The scale that must be translated into a word
+  # @param unit [String] The unit - currently {currency|joules|nounit|ton}
+  # Add other units on config/locales/{en|nl}.yml
+  scaling_in_words: (scale, unit) ->
+    scale = 0 if _.isNaN(scale)
+    symbol = @scale_label["#{scale}"]
+    return I18n.t("units.#{unit}.#{symbol}")
+
+  scale_label:
+    "0" : 'unit'
+    "1" : 'thousands'
+    "2" : 'millions'
+    "3" : 'billions'
+    "4" : 'trillions'
+    "5" : 'quadrillions'
+    "6" : 'quintillions'
+
+  round_number : (value, precision) -> value.toFixed(precision)
+

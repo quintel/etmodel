@@ -24,7 +24,6 @@ class Setting
     7 => 'ameland_advanced',
     8 => 'network',
     9 => 'nl_noord'
-
   }.freeze
 
   attr_accessor :last_etm_controller_name,
@@ -89,6 +88,7 @@ class Setting
       :start_year                     => 2010,
       :end_year                       => 2050,
       :use_fce                        => false,
+      :use_merit_order                => false,
       :already_shown                  => []
     }
   end
@@ -100,7 +100,8 @@ class Setting
       :region   => region,
       :end_year => end_year,
       :scenario_id => scenario_id,
-      :use_fce => use_fce
+      :use_fce => use_fce,
+      :use_merit_order => use_merit_order
     }
   end
 
@@ -124,7 +125,7 @@ class Setting
     self.api_session_id = nil
     self.scenario_id = nil # to go back to a blank slate scenario
 
-    [:use_fce, :network_parts_affected, :already_shown].each do |key|
+    [:use_fce, :network_parts_affected, :already_shown, :use_merit_order].each do |key|
       self.reset_attribute key
     end
   end
@@ -224,11 +225,9 @@ class Setting
     Api::Area.find_by_country_memoized(country)
   end
 
-
   # ------ View ---------------------------------------------------------------
 
   def current_view
     all_levels[complexity.to_i]
   end
-
 end

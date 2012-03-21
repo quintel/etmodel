@@ -7,7 +7,7 @@ class @SidebarView extends Backbone.View
   update_bars: ->
     for item in $("#sidebar ul li")
       key = $(item).attr('data-gquery')
-      next unless key
+      continue unless key
       gquery = gqueries.with_key(key)[0]
       return unless gquery
       result = gquery.get('future_value')

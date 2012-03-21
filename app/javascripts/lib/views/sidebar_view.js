@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 20 Mar 2012 14:27:01 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 08:24:57 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/sidebar_view.coffee
  */
 
@@ -38,7 +38,7 @@
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         item = _ref[_i];
         key = $(item).attr('data-gquery');
-        if (!key) next;
+        if (!key) continue;
         gquery = gqueries.with_key(key)[0];
         if (!gquery) return;
         result = gquery.get('future_value');

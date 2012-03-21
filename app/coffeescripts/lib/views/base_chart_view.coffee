@@ -3,10 +3,21 @@ class @BaseChartView extends Backbone.View
     @model.bind('change', this.render)
 
   max_value: ->
-    sum_present = _.reduce @model.values_present(), (sum, v) -> return sum + (v > 0 ? v : 0)
-    sum_future = _.reduce @model.values_future(), (sum, v) -> return sum + (v > 0 ? v : 0)
+    sum_present = _.reduce @model.values_present(), @smart_sum
+    sum_future = _.reduce @model.values_future(), @smart_sum
     target_results = _.flatten(@model.target_results())
     max_value = _.max($.merge([sum_present, sum_future], target_results))
+
+  smart_sum: (sum, x) ->
+    y = if x > 0 then x else 0
+    sum + y
+
+  # used when drawing the tick options on some chart types
+  significant_digits: =>
+    max = @max_value() / Math.pow(1000, @data_scale())
+    return 0 if max >= 100
+    return 1 if max >= 10
+    return 2
 
   parsed_unit: ->
     unit = @model.get('unit')

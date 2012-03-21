@@ -31,5 +31,5 @@ class @LineChartView extends BaseChartView
           rendererOptions:
             forceTickAt0: true # we always want a tick at 0
           tickOptions:
-            formatString: "%.0f&nbsp;#{@model.get('unit')}"
+            formatString: "%.#{@significant_digits()}f&nbsp;#{@model.get('unit')}"
     out

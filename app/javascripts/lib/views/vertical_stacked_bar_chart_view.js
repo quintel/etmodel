@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 14 Mar 2012 10:18:14 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 15:20:52 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/vertical_stacked_bar_chart_view.coffee
  */
 
@@ -111,7 +111,7 @@
               forceTickAt0: true
             },
             tickOptions: {
-              formatString: '%.1f' + this.parsed_unit()
+              formatString: "%." + (this.significant_digits()) + "f&nbsp;" + (this.parsed_unit())
             }
           }
         }

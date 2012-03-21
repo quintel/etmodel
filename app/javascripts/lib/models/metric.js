@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 08:49:29 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 14:58:01 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/metric.coffee
  */
 
@@ -33,26 +33,6 @@
     },
     scale_value: function(value, scale) {
       return value / Math.pow(1000, scale);
-    },
-    scaling_in_words: function(scale, unit) {
-      var scale_symbols, symbol;
-      scale_symbols = {
-        "0": 'unit',
-        "1": 'thousands',
-        "2": 'millions',
-        "3": 'billions',
-        "4": 'trillions',
-        "5": 'quadrillions',
-        "6": 'quintillions'
-      };
-      if (_.isNaN(scale)) scale = 0;
-      symbol = scale_symbols["" + scale];
-      return I18n.t("units." + unit + "." + symbol);
-    },
-    round_number: function(value, precision) {
-      var rounded;
-      rounded = Math.pow(10, precision);
-      return Math.round(value * rounded) / rounded;
     },
     calculate_performance: function(now, fut) {
       if (now === null || fut === null || fut === 0) return null;
@@ -121,24 +101,25 @@
       return parseInt(Math.log(Math.abs(x)) / Math.log(1000));
     },
     power_of_thousand_to_string: function(x) {
-      switch (x) {
-        case 0:
-          return 'unit';
-        case 1:
-          return 'thousands';
-        case 2:
-          return 'millions';
-        case 3:
-          return 'billions';
-        case 4:
-          return 'trillions';
-        case 5:
-          return 'quadrillions';
-        case 6:
-          return 'quintillions';
-        default:
-          return null;
-      }
+      return this.scale_label["" + x];
+    },
+    scaling_in_words: function(scale, unit) {
+      var symbol;
+      if (_.isNaN(scale)) scale = 0;
+      symbol = this.scale_label["" + scale];
+      return I18n.t("units." + unit + "." + symbol);
+    },
+    scale_label: {
+      "0": 'unit',
+      "1": 'thousands',
+      "2": 'millions',
+      "3": 'billions',
+      "4": 'trillions',
+      "5": 'quadrillions',
+      "6": 'quintillions'
+    },
+    round_number: function(value, precision) {
+      return value.toFixed(precision);
     }
   };
 

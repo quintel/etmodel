@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 20 Mar 2012 15:36:58 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 09:33:27 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/scatter_chart_view.coffee
  */
 
@@ -50,6 +50,10 @@
 
     ScatterChartView.prototype.y_axis_unit = function() {
       return this.model.get('unit').split(';')[1];
+    };
+
+    ScatterChartView.prototype.can_be_shown_as_table = function() {
+      return false;
     };
 
     ScatterChartView.prototype.chart_opts = function() {

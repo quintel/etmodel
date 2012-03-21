@@ -14,7 +14,7 @@ class @HtmlTableChartView extends BaseChartView
   table_html: ->
     charts.tables_html[@model.get("id")]
 
-  fill_cells : ->
+  fill_cells: ->
     for cell in @dynamic_cells()
       gqid = $(cell).data('gquery')
       serie = @model.series.with_gquery(gqid)
@@ -24,7 +24,7 @@ class @HtmlTableChartView extends BaseChartView
       $(cell).html(value)
 
   # returns a jQuery collection of cells to be dynamically filled
-  dynamic_cells : ->
+  dynamic_cells: ->
     @container_node().find("td[data-gquery]")
 
   can_be_shown_as_table: -> false

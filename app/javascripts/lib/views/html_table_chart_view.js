@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 08:14:56 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 09:33:27 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/html_table_chart_view.coffee
  */
 

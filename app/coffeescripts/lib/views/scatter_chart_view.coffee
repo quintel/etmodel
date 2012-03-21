@@ -24,6 +24,8 @@ class @ScatterChartView extends BaseChartView
   y_axis_unit: =>
     @model.get('unit').split(';')[1]
 
+  can_be_shown_as_table: -> false
+
   chart_opts: =>
     out =
       seriesColors: @model.colors()

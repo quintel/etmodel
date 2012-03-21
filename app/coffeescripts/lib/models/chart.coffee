@@ -93,11 +93,16 @@ class @Chart extends Backbone.Model
       present_value : serie.present_value()
       future_value : serie.future_value()
 
+  # This is used to show a chart as a table
+  # See base_chart_view#render_as_table
   formatted_series_hash : ->
-    @series.map (serie) =>
+    items = @non_target_series().map (serie) =>
         label: serie.get('label')
         present_value: Metric.autoscale_value(serie.present_value(), @get('unit'), 2)
         future_value: Metric.autoscale_value(serie.future_value(), @get('unit'), 2)
+    # some charts draw series bottom to top. Let's flip the array
+    return items.reverse() if @get('type') in ['vertical_stacked_bar', 'bezier']
+    items
 
 class @ChartList extends Backbone.Collection
   model : Chart

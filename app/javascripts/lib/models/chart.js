@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 08:14:56 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 09:33:27 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/chart.coffee
  */
 
@@ -187,14 +187,19 @@
     };
 
     Chart.prototype.formatted_series_hash = function() {
-      var _this = this;
-      return this.series.map(function(serie) {
+      var items, _ref,
+        _this = this;
+      items = this.non_target_series().map(function(serie) {
         return {
           label: serie.get('label'),
           present_value: Metric.autoscale_value(serie.present_value(), _this.get('unit'), 2),
           future_value: Metric.autoscale_value(serie.future_value(), _this.get('unit'), 2)
         };
       });
+      if ((_ref = this.get('type')) === 'vertical_stacked_bar' || _ref === 'bezier') {
+        return items.reverse();
+      }
+      return items;
     };
 
     return Chart;

@@ -20,7 +20,7 @@ class Slide < ActiveRecord::Base
 
   has_one :description, :as => :describable
   has_many :input_elements, :dependent => :nullify
-  has_one :output_element # default output element
+  belongs_to :output_element # default output element
   validates :key, :presence => true, :uniqueness => true
   scope :controller, lambda {|controller| where(:controller_name => controller) }
   scope :ordered, order('position')
@@ -48,5 +48,24 @@ class Slide < ActiveRecord::Base
 
   def short_name
     I18n.t("slides.#{key}").parameterize
+  end
+
+  # See Current.view
+  # Some sliders cannot be used on some areas. Let's filter them out
+  def safe_input_elements
+    input_elements.reject(&:area_dependent)
+  end
+
+  # Gets a interface groups hash with an array of input elements.
+  #
+  # @return [Hash] interface_group => [InputElement]
+  def grouped_input_elements
+    interface_groups = {}
+    items = safe_input_elements.reject{|i| i.interface_group.blank? }
+    items.each do |i|
+      interface_groups[i.interface_group] ||= []
+      interface_groups[i.interface_group] << i
+    end
+    interface_groups
   end
 end

@@ -227,7 +227,5 @@ window.AppView = Backbone.View.extend({
 
 });
 
-
-
 window.App = App = new AppView();
 

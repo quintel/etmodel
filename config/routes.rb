@@ -82,7 +82,6 @@ Etm::Application.routes.draw do
   resource :scenario, :except => [:edit, :update] do
     get :reset
     get :reset_to_preset
-    put :change_complexity
   end
 
   resources :scenarios, :except => [:edit, :update] do
@@ -127,7 +126,6 @@ Etm::Application.routes.draw do
   match '/privacy_statement'               => 'pages#privacy_statement'
   match '/show_all_countries'              => 'pages#show_all_countries'
   match '/show_flanders'                   => 'pages#show_flanders'
-  match '/show_all_views'                  => 'pages#show_all_views'
   match '/wattnu_on'                       => 'pages#wattnu_on'
   match '/wattnu_off'                      => 'pages#wattnu_off'
   match '/municipalities'                  => 'pages#municipalities'

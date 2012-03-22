@@ -66,36 +66,7 @@ describe Setting do
       end
     end
   end
-  
-  
-  describe "#complexities" do
-    context "simple" do
-      subject { Setting.new(:complexity => 1) }
-      its(:simple?) { should be_true}
-      its(:medium?) { should be_false}
-      its(:advanced?) { should be_false}
-    end
-    context "medium" do
-      subject { Setting.new(:complexity => 2) }
-      its(:simple?) { should be_false }
-      its(:medium?) { should be_true }
-      its(:advanced?) { should be_false }
-    end
-    context "advanced" do
-      subject { Setting.new(:complexity => 3) }
-      its(:simple?) { should be_false }
-      its(:medium?) { should be_false }
-      its(:advanced?) { should be_true }
-    end
-    describe "#complexity = " do
-      before { 
-        @setting = Setting.new
-        @setting.complexity = "1"
-      }
-      specify { @setting.complexity.should == 1}
-    end
-  end
-  
+
   describe "#reset!" do
     before do
       @random_attributes = Setting.default_attributes.clone
@@ -175,18 +146,10 @@ describe Setting do
   end
 
   describe "#use_peak_load" do
-    context "Setting != advanced" do
-      before  { @setting.stub!(:advanced?).and_return(false)}
-      specify { @setting.use_peak_load.should be_false}
-    end
-
-    context "Setting is advanced" do
-      before { Current.setting.stub!(:advanced?).and_return(true)}
-      [true, false].each do |flag|
-        context "use_network_calculations? = #{flag}" do
-          before  { @setting.stub!(:use_network_calculations?).and_return(flag) }
-          specify { @setting.use_peak_load.should == flag}
-        end
+    [true, false].each do |flag|
+      context "use_network_calculations? = #{flag}" do
+        before  { @setting.stub!(:use_network_calculations?).and_return(flag) }
+        specify { @setting.use_peak_load.should == flag}
       end
     end
   end
@@ -210,12 +173,11 @@ describe Setting do
     describe "DEFAULT_ATTRIBUTES" do
       it "should not persist default values that are objects, e.g. Array" do
         # BUG: Storing default_attributes in constant DEFAULT_ATTRIBUTES
-        #      messes with arrays as default_attributes. 
+        #      messes with arrays as default_attributes.
         s1 = Setting.default
         s1.network_parts_affected << :network
         Setting.default_attributes[:network_parts_affected].should be_empty
       end
     end
   end
-
 end

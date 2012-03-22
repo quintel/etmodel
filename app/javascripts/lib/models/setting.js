@@ -1,7 +1,6 @@
 var Setting = Backbone.Model.extend({
   initialize : function() {
     this.bind('change:api_session_id', this.save);
-    this.bind('change:complexity', this.save);
     this.bind('change:track_peak_load', this.save);
     this.bind('change:use_fce', this.save);
     this.bind('change:current_round', this.save);

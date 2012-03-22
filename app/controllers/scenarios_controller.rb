@@ -56,12 +56,6 @@ class ScenariosController < ApplicationController
     redirect_to start_path
   end
 
-  def change_complexity
-    # DEBT: Remove. Should be in settings controller, in the standard update action
-    Current.setting.complexity = params[:scenario][:complexity]
-    redirect_to_back
-  end
-
   private
 
     # Finds the scenario from id

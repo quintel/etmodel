@@ -1,37 +1,16 @@
 FactoryGirl.define do
-  factory :interface do
-    sequence(:key) {|n| "interface_#{n}" }
-
-    factory :simple_interface do
-      structure {
-        {
-          :dashboard => [],
-          :policy_goals => [],
-          :tabs => {
-            #::FactoryGirl.create(:tab).key => {
-            'cost' => {
-              ::FactoryGirl.create(:sidebar_item).key => {
-                ::FactoryGirl.create(:slide).key => {
-                  :input_elements => [ ::FactoryGirl.create(:input_element).key ],
-                  :output_elements => [ ::FactoryGirl.create(:output_element).key ]
-                }
-              }
-            }
-          }
-        }.to_yaml
-      }
-    end
-  end
-
   factory :tab do
     sequence(:key) {|n| "tab_#{n}" }
   end
 
-  factory :slide do
-    sequence(:key) {|n| "slide_#{n}" }
-  end
-
   factory :sidebar_item do
     sequence(:key) {|n| "sidebar_item_#{n}" }
+    association :tab, :factory => :tab
+  end
+
+  factory :slide do
+    sequence(:key) {|n| "slide_#{n}" }
+    association :sidebar_item, :factory => :sidebar_item
+    association :output_element, :factory => :output_element
   end
 end

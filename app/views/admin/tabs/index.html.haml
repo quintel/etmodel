@@ -2,15 +2,15 @@
 %table.default
   %thead
     %tr
-      -@column_names.each do |column_name|
-        %th.tal=column_name.humanize
-
+      %th Id
+      %th Key
+      %th Ordering
+      %th Sidebar items
   %tbody
-    -@tabs.each do |tab|
-      %tr{cycles}
-        -@column_names.each do |column_name|
-          %td
-            %a{:href => edit_admin_tab_path(tab.id), :style => "color: #000; text-decoration: none;"}
-              =tab.send(column_name)
-%a{:href => new_admin_tab_path}
-  new tab
+    - @tabs.each do |tab|
+      %tr{:class => cycle('even', 'odd')}
+        %td= tab.id
+        %td= link_to tab.key, edit_admin_tab_path(tab.id)
+        %td= tab.position
+        %td= link_to tab.sidebar_items.count,  admin_tab_sidebar_items_path(tab)
+%a{:href => new_admin_tab_path} new tab

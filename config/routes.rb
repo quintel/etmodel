@@ -51,7 +51,6 @@ Etm::Application.routes.draw do
               :predictions,
               :input_elements,
               :year_values,
-              :tabs,
               :slides,
               :sidebar_items,
               :translations,
@@ -64,6 +63,19 @@ Etm::Application.routes.draw do
               :partners
     resources :comments, :except => [:new, :create]
     resources :areas, :only => [:index, :show]
+
+    resources :tabs, :except => :show do
+      resources :sidebar_items
+    end
+
+    resources :sidebar_items do
+      resources :slides
+    end
+
+    resources :slides do
+      resources :input_elements
+    end
+
     resources :gql do
       collection do
         get :search

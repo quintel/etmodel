@@ -4,6 +4,7 @@
       %th Id
       %th key
       %th Section
+      %th Slides
       %th
   %tbody
     - @sidebar_items.each do |s|
@@ -11,6 +12,7 @@
         %td= s.id
         %td= s.key
         %td= s.section
+        %td= link_to s.slides.count, admin_sidebar_item_slides_path(s)
         %td= link_to 'edit', edit_admin_sidebar_item_path(s)
 
 = link_to 'New sidebar item', new_admin_sidebar_item_path

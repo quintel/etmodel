@@ -1,9 +1,14 @@
 module Admin
   class SidebarItemsController < BaseController
     before_filter :find_model, :only => [:show, :edit]
-    
+
     def index
-      @sidebar_items = SidebarItem.all
+      if params[:tab_id]
+        @tab = Tab.find params[:tab_id]
+        @sidebar_items = @tab.sidebar_items
+      else
+        @sidebar_items = SidebarItem.all
+      end
     end
 
     def new
@@ -42,7 +47,7 @@ module Admin
       @sidebar_item.build_description unless @sidebar_item.description
       @sidebar_item.build_area_dependency unless @sidebar_item.area_dependency
     end
-    
+
     private
 
       def find_model

@@ -31,4 +31,8 @@ class SidebarItem < ActiveRecord::Base
   def parsed_key_for_admin
     "#{section.andand} | #{key}"
   end
+
+  def short_name
+    "#{tab.try :key} : #{key}"
+  end
 end

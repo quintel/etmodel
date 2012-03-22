@@ -68,4 +68,8 @@ class Slide < ActiveRecord::Base
     end
     interface_groups
   end
+
+  def short_name_for_admin
+    "#{sidebar_item.try :key} : #{key}"
+  end
 end

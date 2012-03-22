@@ -14,7 +14,7 @@ class TabController < ApplicationController
   before_filter :check_valid_sidebar_item, :only => :show
 
   def show
-    @active_sidebar = Current.view.sidebar_items.select{|item| params[:id] == item.key}.first
+    @active_sidebar = Current.view.sidebar
     @slides = Current.view.slides
 
     Current.setting.selected_output_element = nil
@@ -26,7 +26,7 @@ class TabController < ApplicationController
   protected
 
     def load_output_element
-      @output_element = Current.view.default_output_element_for_current_sidebar_item
+      @output_element = Current.view.default_chart
     end
 
     def fetch_api_session_id

@@ -4,7 +4,7 @@ module ApplicationController::HasDashboard
   extend ActiveSupport::Concern
 
   included do
-    before_filter :load_constraints, :load_goals
+    before_filter :load_constraints
   end
 
   module InstanceMethods
@@ -16,10 +16,6 @@ module ApplicationController::HasDashboard
       else
         Current.view.constraints
       end
-    end
-
-    def load_goals
-      @goals = Current.view.policy_goals
     end
   end
 end

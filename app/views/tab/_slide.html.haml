@@ -1,7 +1,6 @@
 - selected = 'selected' if @slides.first == slide
 %li.accordion_element{:class => selected}
-  - default_output = Current.view.default_output_element_for_slide(slide)
-  %span.headline{:id => "default_output_#{default_output.id}", :data => {:slide => slide.short_name}}
+  %span.headline{:id => "default_output_#{slide.output_element_id}", :data => {:slide => slide.short_name}}
     %a.slide_header{:href => "/#{controller_name}/#{params[:id]}##{slide.short_name}", :id => slide.key}
       = raw t("slides.#{slide.key}")
   .slide
@@ -16,20 +15,20 @@
           %span.subheader_arrow= t("subheaders.#{slide.general_sub_header}")
           - unless slide.subheader_image.blank?
             %img.subheader_image{:src => "/images/layout/#{slide.subheader_image}"}
-      - Current.view.ungrouped_input_elements_for(slide).each do |input_element|
+      - slide.safe_input_elements.each do |input_element|
         = render :partial => 'input_elements/slider', :object => input_element
-      - Current.view.interface_groups_with_input_elements_for(slide).each do |group|
+      - slide.grouped_input_elements.each do |group, sliders|
         - title = slide.group_sub_header
         %div.interface_group
-          %span{:style =>"float:left"}= t("accordion.#{group[0]}")
+          %span{:style =>"float:left"}= t("accordion.#{group}")
           - unless title.blank?
             %span.subheader_arrow= t("subheaders.#{title}")
-        - group.last.each do |input_element|
+        - sliders.each do |input_element|
           = render :partial => 'input_elements/slider', :object => input_element
 
     - unless @slides.last == slide
       %a.btn-done.next{:href => '#'}= I18n.t("go to next")
 
 %script
-  - Current.view.input_elements_for(slide).each do |i|
+  - slide.safe_input_elements.each do |i|
     window.input_elements.add(#{i.to_json.html_safe}.input_element);

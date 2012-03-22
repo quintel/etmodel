@@ -1,9 +1,0 @@
-= back_to_model_link
-%h1= t("scenario.save")
-%p
-  = t("scenario.save_desc_asmany") unless APP_CONFIG[:max_scenarios] == 1
-  = t("scenario.save_desc")
-
-%div{:style => "width: 600px"}
-  = simple_form_for @scenario, :html => {:multipart => true} do |f|
-    = render :partial => 'form', :object => f

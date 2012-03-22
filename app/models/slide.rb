@@ -16,9 +16,14 @@
 class Slide < ActiveRecord::Base
   has_paper_trail
 
+  belongs_to :sidebar_item
+
   has_one :description, :as => :describable
+  has_many :input_elements, :dependent => :nullify
+  has_one :output_element # default output element
   validates :key, :presence => true, :uniqueness => true
   scope :controller, lambda {|controller| where(:controller_name => controller) }
+  scope :ordered, order('position')
   accepts_nested_attributes_for :description
 
   def search_result

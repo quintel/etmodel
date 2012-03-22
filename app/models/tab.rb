@@ -10,6 +10,10 @@
 
 class Tab < ActiveRecord::Base
   has_paper_trail
-  
+
   validates :key, :presence => true, :uniqueness => true
+
+  has_many :sidebar_items, :dependent => :nullify
+
+  scope :ordered, order('position')
 end

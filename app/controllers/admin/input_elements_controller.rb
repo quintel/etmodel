@@ -3,7 +3,12 @@ module Admin
     before_filter :find_model, :only => [:show, :edit]
 
     def index
-      @input_elements = InputElement.all
+      if params[:slide_id]
+        @slide = Slide.find params[:slide_id]
+        @input_elements = @slide.input_elements.ordered
+      else
+        @input_elements = InputElement.all
+      end
     end
 
 

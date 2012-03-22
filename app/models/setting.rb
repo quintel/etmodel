@@ -11,21 +11,6 @@ class Setting
     :use_fce
   ]
 
-  # 2011-09 seb: The (empty) arrays in DEFAULT_ATTRIBUTES caused bug. see regression test.
-  # DEFAULT_ATTRIBUTES = {
-
-  LEVELS = {
-    1 => 'simple',
-    2 => 'medium',
-    3 => 'advanced',
-    4 => 'municipalities',
-    5 => 'watt_nu',
-    6 => 'new_municipality_view',
-    7 => 'ameland_advanced',
-    8 => 'network',
-    9 => 'nl_noord'
-  }.freeze
-
   attr_accessor :last_etm_controller_name,
                 :last_etm_controller_action,
                 :displayed_output_element,
@@ -82,7 +67,6 @@ class Setting
       :hide_unadaptable_sliders       => false,
       :network_parts_affected         => [],
       :track_peak_load                => false,
-      :complexity                     => 3,
       :country                        => 'nl',
       :region                         => nil,
       :start_year                     => 2010,
@@ -130,27 +114,6 @@ class Setting
     end
   end
 
-  # ------ Complexities -------------------------------------------------------
-
-  # @untested 2011-01-24 robbert
-  #
-  def all_levels
-    LEVELS
-  end
-
-  def complexity=(param)
-    @complexity = param.andand.to_i
-  end
-
-  def complexity_key
-    LEVELS[self.complexity.to_i]
-  end
-
-  def simple?;    self.complexity == 1; end
-  def medium?;    self.complexity == 2; end
-  def advanced?;  self.complexity == 3; end
-
-
   # ------ Years --------------------------------------------------------------
 
   def end_year=(end_year)
@@ -164,7 +127,7 @@ class Setting
   end
 
   def use_peak_load
-    advanced? && use_network_calculations?
+    use_network_calculations?
   end
 
   def use_network_calculations?
@@ -174,7 +137,7 @@ class Setting
   # ------ FCE ----------------------------------------------------------------
 
   def allow_fce?
-    advanced? && area.try(:has_fce)
+    area.try(:has_fce)
   end
 
   # ------ Area ---------------------------------------------------------------
@@ -223,11 +186,5 @@ class Setting
   #
   def area_country
     Api::Area.find_by_country_memoized(country)
-  end
-
-  # ------ View ---------------------------------------------------------------
-
-  def current_view
-    all_levels[complexity.to_i]
   end
 end

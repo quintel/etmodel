@@ -6,7 +6,6 @@
       %h1= t("Start right away")
       %p.nodownloads= t("No downloads")
 
- 
     - if has_active_scenario?
       %a#continue_scenario_button.style_button{:href => last_etm_path(:include_action => false),:alt=>"continue",:title=>"continue"}
         .button_left
@@ -22,10 +21,6 @@
       = form_tag root_path do
         = render "pages/root_page/country_select"
         = render "pages/root_page/year_select"
-        %li
-          %h3= t("Choose level")
-          = select_tag :complexity, options_for_select(@scenario_levels,3), :style => "width:142px"
-
         = render 'pages/root_page/start_button'
     %a#existing_scenario_button.style_button{:href =>"#",:alt=>"continue",:title=>"continue"}
       .button_left
@@ -39,10 +34,10 @@
         .button_left
         .button_center
           %span= t('energy_mixer').capitalize
-        .button_right      
+        .button_right
       %ul#energy_mixer_desc
         = render 'pages/root_page/energy_mixer_desc'
-          
+
   =render 'pages/root_page/movies'
-    
+
 .clear

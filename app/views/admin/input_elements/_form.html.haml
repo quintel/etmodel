@@ -1,18 +1,32 @@
 %div{:style => "width: 60%"}
   = simple_form_for [:admin, @input_element] do |f|
-    = f.input :key, :hint => "Should be unique and recognizable! It is used as translation key, too. Check for conventions with WvL"
-    = f.input :input_id, :required => true, :hint => "This is the link to the input_id on the engine, which contains the update command. Check the inputs over there"
-    = f.input :fixed, :hint => "When you want to disable a slider, but still show it, this is your friend"
-    = f.input :share_group, :hint => "Sliders with the same share_group will be connected and sum up to 100%"
-    = f.input :interface_group, :hint => "Sliders with the same interface_group will be shown as a group inside the slide, divided by a line and sub_header"
+    = f.input :key,
+      :hint => "Should be unique and recognizable! It is used as translation key, too. Check for conventions with WvL"
+    = f.input :input_id, :required => true,
+      :hint => "This is the link to the input_id on the engine, which contains the update command. Check the inputs over there"
+    = f.input :fixed,
+      :hint => "When you want to disable a slider, but still show it, this is your friend"
+    = f.input :share_group,
+      :hint => "Sliders with the same share_group will be connected and sum up to 100%"
+    = f.input :interface_group,
+      :hint => "Sliders with the same interface_group will be shown as a group inside the slide, divided by a line and sub_header"
     = f.input :step_value, :as => :float, :required => true
     = f.input :unit, :required => true
-    = f.input :command_type, :as => :select, :collection => ['growth_rate', 'value', 'efficiency_improvement'], :hint => "This is used by the backcasting module"
-    = f.input :related_converter, :hint => 'Optional key of the related converter. Used to show slider info'
+    = f.input :command_type, :as => :select,
+      :collection => ['growth_rate', 'value', 'efficiency_improvement'],
+      :hint => "This is used by the backcasting module"
+    = f.input :related_converter,
+      :hint => 'Optional key of the related converter. Used to show slider info'
+    = f.input :position,
+      :hint => "Position the slider should be shown on the page"
+    = f.association :slide,
+      :collection => Slide.all.map{|s| [s.short_name_for_admin, s.id]}
     = f.input :comments
     
     = f.simple_fields_for :area_dependency do |j|
-      = j.input :dependent_on, :as => :select, :collection => Api::Area::DEPENDABLE_ATTRIBUTES, :hint => "When you dont want to show the input_element for areas which have a certain setting. E.g. dont wanna show Solar CSP in NL? Put this to 'has_solar_csp' and be sure that for NL this value is false in the area data."
+      = j.input :dependent_on, :as => :select,
+        :collection => Api::Area::DEPENDABLE_ATTRIBUTES,
+        :hint => "When you dont want to show the input_element for areas which have a certain setting. E.g. dont wanna show Solar CSP in NL? Put this to 'has_solar_csp' and be sure that for NL this value is false in the area data."
 
     = f.simple_fields_for :description do |j|
       = j.input :content_en, :hint => "Extra info which shows up when the ? icon is clicked can be changed here!"

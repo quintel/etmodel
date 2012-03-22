@@ -6,20 +6,24 @@
   %thead
     %tr
       %th.tal id
+      %th Slide
       %th.tal Name #{I18n.locale}
       %th.tal Key
       %th.tal Converter
       %th.tal Comment
-      %th.tal 
+      %th Ordering
+      %th
 
   %tbody
-    - @input_elements.each do |input_element|
+    - @input_elements.each do |i|
       %tr{cycles}
-        %td= input_element.id
-        %td= t "input_elements.#{input_element.key}"
-        %td= input_element.key
-        %td= input_element.related_converter
-        %td= truncate(input_element.comments, :length => 100)
+        %td= i.id
+        %td= i.slide.try :short_name
+        %td= t "input_elements.#{i.key}"
+        %td= i.key
+        %td= i.related_converter
+        %td= truncate(i.comments, :length => 100)
+        %td= i.position
         %td
-          = link_to 'Edit', edit_admin_input_element_path(input_element)
-          = link_to 'Delete', [:admin, input_element], :method => :delete, :confirm => 'Are you sure?'
+          = link_to 'Edit', edit_admin_input_element_path(i)
+          = link_to 'Delete', [:admin, i], :method => :delete, :confirm => 'Are you sure?'

@@ -1,13 +1,21 @@
 %table.default
   %thead
     %tr
+      %th Sidebar Item
       %th Id
       %th Key
+      %th Default chart
+      %th Position
+      %th Sliders
       %th
   %tbody
     - @slides.each do |s|
-      %tr{cycles}
+      %tr{:class => cycle('even', 'odd')}
+        %td= s.sidebar_item.try :short_name
         %td= s.id
         %td= s.key
+        %td= s.output_element.try :key
+        %td= s.position
+        %td= link_to s.input_elements.count, admin_slide_input_elements_path(s)
         %td= link_to 'edit', edit_admin_slide_path(s.id)
 = link_to 'New slide' , new_admin_slide_path

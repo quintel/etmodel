@@ -15,7 +15,7 @@
           %span.subheader_arrow= t("subheaders.#{slide.general_sub_header}")
           - unless slide.subheader_image.blank?
             %img.subheader_image{:src => "/images/layout/#{slide.subheader_image}"}
-      - slide.safe_input_elements.each do |input_element|
+      - slide.input_elements_not_belonging_to_a_group.each do |input_element|
         = render :partial => 'input_elements/slider', :object => input_element
       - slide.grouped_input_elements.each do |group, sliders|
         - title = slide.group_sub_header

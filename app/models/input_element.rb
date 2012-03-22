@@ -57,6 +57,9 @@ class InputElement < ActiveRecord::Base
     indexes description(:short_content_nl), :as => :description_short_content_nl
   end
 
+  def belongs_to_a_group?
+    !interface_group.blank?
+  end
 
   def cache_conditions_key
     [self.class.name, self.id, Current.setting.area.id].join('_')

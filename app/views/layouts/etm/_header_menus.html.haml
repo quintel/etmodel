@@ -33,18 +33,9 @@
     = t("header.Current end year")+":"
 
   %li
-    = t("header.Current level")+":"
-
-    = form_tag "/scenario/change_complexity", :method => :put do
-      - options = options_for_select [[t("Easy").downcase,1],[t("Medium").downcase,2],[t("Advanced").downcase,3]], Current.setting.complexity
-      = select_tag("scenario[complexity]", options, { :index => nil, :onchange => 'this.form.submit()'})
-
-
-  %li
     = t("header.Current language")+":"
     = form_tag "/application/set_locale" do
       = select_tag("locale", options_for_select(["en", "nl"], I18n.locale.to_s), { :index => nil, :onchange => 'this.form.submit()'})
-
 
   %li
     %a{:href => new_scenario_path}= t("header.Save scenario")
@@ -70,7 +61,6 @@
     %a{:href => partners_path}= t("header.Partners")
   %li
     %a{:href => "/education"}= t("header.Education")
-
   %li
     %a{:href => "/testimonials"}= t("header.Testimonials")
   %li

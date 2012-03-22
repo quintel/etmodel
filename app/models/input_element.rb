@@ -26,12 +26,14 @@ class InputElement < ActiveRecord::Base
   has_one :description, :as => :describable, :dependent => :destroy
   has_one :area_dependency, :as => :dependable, :dependent => :destroy
   has_many :predictions
+  belongs_to :slide
+
 
   validates :key, :presence => true, :uniqueness => true
   validates :input_id, :presence => true
 
   scope :households_heating_sliders, where(:share_group => 'heating_households')
-
+  scope :ordered, order('position')
   accepts_nested_attributes_for :description, :area_dependency
 
 
@@ -55,6 +57,9 @@ class InputElement < ActiveRecord::Base
     indexes description(:short_content_nl), :as => :description_short_content_nl
   end
 
+  def belongs_to_a_group?
+    !interface_group.blank?
+  end
 
   def cache_conditions_key
     [self.class.name, self.id, Current.setting.area.id].join('_')
@@ -102,7 +107,7 @@ class InputElement < ActiveRecord::Base
     super(:only => [:id, :input_id, :unit, :share_group, :factor, :key, :related_converter],
           :methods => [
             :step_value,
-            :output, :user_value, :disabled, :translated_name, 
+            :output, :user_value, :disabled, :translated_name,
             :parsed_description,:has_predictions,
             :fixed, :has_flash_movie])
   end

@@ -85,7 +85,7 @@ protected
   end
 
   def load_view_settings
-    Current.view = View.new(Current.setting.complexity_key, params[:controller], params[:id])
+    Current.view = View.new(params[:controller], params[:id])
   end
 
   def require_user

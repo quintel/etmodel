@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120120125624) do
+ActiveRecord::Schema.define(:version => 20120322145930) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -43,9 +43,11 @@ ActiveRecord::Schema.define(:version => 20120120125624) do
     t.datetime "updated_at"
     t.string   "gquery_key"
     t.string   "group",      :limit => 25, :null => false
+    t.integer  "position"
   end
 
   add_index "constraints", ["key"], :name => "index_constraints_on_key"
+  add_index "constraints", ["position"], :name => "index_constraints_on_position"
 
   create_table "descriptions", :force => true do |t|
     t.text     "content_en"
@@ -99,21 +101,14 @@ ActiveRecord::Schema.define(:version => 20120120125624) do
     t.integer  "input_id"
     t.string   "command_type"
     t.string   "related_converter"
+    t.integer  "position"
+    t.integer  "slide_id"
   end
 
   add_index "input_elements", ["command_type"], :name => "index_input_elements_on_command_type"
   add_index "input_elements", ["key"], :name => "unique api key", :unique => true
-
-  create_table "interfaces", :force => true do |t|
-    t.string   "key"
-    t.text     "structure"
-    t.boolean  "enabled"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "interfaces", ["enabled"], :name => "index_interfaces_on_enabled"
-  add_index "interfaces", ["key"], :name => "index_interfaces_on_key"
+  add_index "input_elements", ["position"], :name => "index_input_elements_on_position"
+  add_index "input_elements", ["slide_id"], :name => "index_input_elements_on_slide_id"
 
   create_table "output_element_series", :force => true do |t|
     t.integer  "output_element_id"
@@ -261,14 +256,18 @@ ActiveRecord::Schema.define(:version => 20120120125624) do
   add_index "saved_scenarios", ["user_id"], :name => "index_saved_scenarios_on_user_id"
 
   create_table "sidebar_items", :force => true do |t|
-    t.string "key"
-    t.string "section"
-    t.text   "percentage_bar_query"
-    t.string "nl_vimeo_id"
-    t.string "en_vimeo_id"
+    t.string  "key"
+    t.string  "section"
+    t.text    "percentage_bar_query"
+    t.string  "nl_vimeo_id"
+    t.string  "en_vimeo_id"
+    t.integer "tab_id"
+    t.integer "position"
   end
 
   add_index "sidebar_items", ["key"], :name => "index_sidebar_items_on_key"
+  add_index "sidebar_items", ["position"], :name => "index_sidebar_items_on_position"
+  add_index "sidebar_items", ["tab_id"], :name => "index_sidebar_items_on_tab_id"
 
   create_table "slides", :force => true do |t|
     t.string   "image"
@@ -279,17 +278,24 @@ ActiveRecord::Schema.define(:version => 20120120125624) do
     t.string   "subheader_image"
     t.string   "key"
     t.boolean  "house_selection"
+    t.integer  "position"
+    t.integer  "sidebar_item_id"
+    t.integer  "output_element_id"
   end
 
   add_index "slides", ["key"], :name => "index_slides_on_key"
+  add_index "slides", ["position"], :name => "index_slides_on_position"
+  add_index "slides", ["sidebar_item_id"], :name => "index_slides_on_sidebar_item_id"
 
   create_table "tabs", :force => true do |t|
-    t.string "key"
-    t.string "nl_vimeo_id"
-    t.string "en_vimeo_id"
+    t.string  "key"
+    t.string  "nl_vimeo_id"
+    t.string  "en_vimeo_id"
+    t.integer "position"
   end
 
   add_index "tabs", ["key"], :name => "index_tabs_on_key"
+  add_index "tabs", ["position"], :name => "index_tabs_on_position"
 
   create_table "translations", :force => true do |t|
     t.string   "key"

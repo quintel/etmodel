@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     if request.post?
       assign_settings_and_redirect
     else
-      show_root_page
+      setup_countries_and_regions
     end
   end
 
@@ -27,22 +27,10 @@ protected
     @show_german_provinces = (current_user.try(:email) == "brandenburg@et-model.com" || session[:show_all_countries])
   end
 
-  def show_root_page
-    setup_countries_and_regions
-    all_views = Current.setting.all_levels.map{|id, name| [t("views.#{name}"), id]}
-    @scenario_levels = if Rails.env.development? || Rails.env.test?
-      all_views
-    else
-      all_views[0..2]
-    end
-  end
-
   def assign_settings_and_redirect
     Current.setting = Setting.default
-    Current.setting.complexity = params[:complexity]
     Current.setting.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
     Current.setting.set_country_and_region_from_param(params[:region]) # we need the full region code here
-
     redirect_to :controller => 'pages', :action => 'intro' and return
   end
 
@@ -78,11 +66,6 @@ public
 
   def show_all_countries
     session[:show_all_countries] = true
-    redirect_to '/'
-  end
-
-  def show_all_views
-    session[:show_all_views] = true
     redirect_to '/'
   end
 
@@ -154,8 +137,8 @@ public
 
 private
 
+  # ?? - PZ
   def defaults
     @render_tabs = false
   end
-
 end

@@ -3,7 +3,12 @@ class SlidesController < BaseController
   before_filter :find_model, :only => [:edit, :show]
 
   def index
-    @slides = Slide.all
+    if params[:sidebar_item_id]
+      @sidebar_item = SidebarItem.find params[:sidebar_item_id]
+      @slides = @sidebar_item.slides
+    else
+      @slides = Slide.all
+    end
   end
 
   def new
@@ -40,7 +45,7 @@ class SlidesController < BaseController
   def edit
     @slide.build_description unless @slide.description
   end
-  
+
   private
 
     def find_model

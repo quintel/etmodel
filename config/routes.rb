@@ -44,20 +44,18 @@ Etm::Application.routes.draw do
     root :to => 'pages#index'
     match 'wattnu_log', :to => 'pages#wattnu_log'
     match 'clear_wattnu_log', :to => 'pages#clear_wattnu_log'
-
+    match 'map', :to => 'pages#map', :as => :map
     match 'clear_cache' => 'pages#clear_cache', :as => :clear_cache
 
     resources :expert_predictions,
               :predictions,
               :input_elements,
               :year_values,
-              :tabs,
               :slides,
               :sidebar_items,
               :translations,
               :output_element_series,
               :converter_positions,
-              :interfaces,
               :general_user_notifications,
               :constraints,
               :descriptions,
@@ -65,6 +63,19 @@ Etm::Application.routes.draw do
               :partners
     resources :comments, :except => [:new, :create]
     resources :areas, :only => [:index, :show]
+
+    resources :tabs, :except => :show do
+      resources :sidebar_items
+    end
+
+    resources :sidebar_items do
+      resources :slides
+    end
+
+    resources :slides do
+      resources :input_elements
+    end
+
     resources :gql do
       collection do
         get :search
@@ -83,7 +94,6 @@ Etm::Application.routes.draw do
   resource :scenario, :except => [:edit, :update] do
     get :reset
     get :reset_to_preset
-    put :change_complexity
   end
 
   resources :scenarios, :except => [:edit, :update] do
@@ -128,7 +138,6 @@ Etm::Application.routes.draw do
   match '/privacy_statement'               => 'pages#privacy_statement'
   match '/show_all_countries'              => 'pages#show_all_countries'
   match '/show_flanders'                   => 'pages#show_flanders'
-  match '/show_all_views'                  => 'pages#show_all_views'
   match '/wattnu_on'                       => 'pages#wattnu_on'
   match '/wattnu_off'                      => 'pages#wattnu_off'
   match '/municipalities'                  => 'pages#municipalities'

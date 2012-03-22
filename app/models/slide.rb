@@ -16,9 +16,14 @@
 class Slide < ActiveRecord::Base
   has_paper_trail
 
+  belongs_to :sidebar_item
+
   has_one :description, :as => :describable
+  has_many :input_elements, :dependent => :nullify
+  belongs_to :output_element # default output element
   validates :key, :presence => true, :uniqueness => true
   scope :controller, lambda {|controller| where(:controller_name => controller) }
+  scope :ordered, order('position')
   accepts_nested_attributes_for :description
 
   def search_result
@@ -43,5 +48,33 @@ class Slide < ActiveRecord::Base
 
   def short_name
     I18n.t("slides.#{key}").parameterize
+  end
+
+  # See Current.view
+  # Some sliders cannot be used on some areas. Let's filter them out
+  def safe_input_elements
+    @safe_input_elements ||= input_elements.ordered.reject(&:area_dependent)
+  end
+
+  # Complementary to grouped_input_elements
+  def input_elements_not_belonging_to_a_group
+    safe_input_elements.reject &:belongs_to_a_group?
+  end
+
+  # Gets a interface groups hash with an array of input elements.
+  #
+  # @return [Hash] interface_group => [InputElement]
+  def grouped_input_elements
+    interface_groups = {}
+    items = safe_input_elements.select &:belongs_to_a_group?
+    items.each do |i|
+      interface_groups[i.interface_group] ||= []
+      interface_groups[i.interface_group] << i
+    end
+    interface_groups
+  end
+
+  def short_name_for_admin
+    "#{sidebar_item.try :key} : #{key}"
   end
 end

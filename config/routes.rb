@@ -57,7 +57,6 @@ Etm::Application.routes.draw do
               :translations,
               :output_element_series,
               :converter_positions,
-              :interfaces,
               :general_user_notifications,
               :constraints,
               :descriptions,

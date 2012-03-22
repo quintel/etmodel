@@ -44,7 +44,7 @@ Etm::Application.routes.draw do
     root :to => 'pages#index'
     match 'wattnu_log', :to => 'pages#wattnu_log'
     match 'clear_wattnu_log', :to => 'pages#clear_wattnu_log'
-
+    match 'map', :to => 'pages#map', :as => :map
     match 'clear_cache' => 'pages#clear_cache', :as => :clear_cache
 
     resources :expert_predictions,

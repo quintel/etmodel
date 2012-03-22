@@ -1,0 +1,21 @@
+%h2 Interface map
+
+= link_to_function 'toggle slides', '$("ul.slides").toggle()'
+= link_to_function 'toggle sliders', '$("ul.sliders").toggle()'
+
+%ul#interface_map
+  - Tab.ordered.each do |tab|
+    %li
+      = link_to tab.key, edit_admin_tab_path(tab)
+      %ul
+        - tab.sidebar_items.ordered.each do |sidebar_item|
+          %li
+            = link_to sidebar_item.key, edit_admin_sidebar_item_path(sidebar_item)
+            %ul.slides
+              - sidebar_item.slides.ordered.each do |slide|
+                %li
+                  = link_to slide.key, edit_admin_slide_path(slide)
+                  %ul.sliders
+                    - slide.input_elements.ordered.each do |slider|
+                      %li= link_to slider.key, edit_admin_input_element_path(slider)
+

@@ -1,3 +1,5 @@
+class Interface < ActiveRecord::Base
+end
 class UseSingleInterface < ActiveRecord::Migration
   def self.up
     add_column :tabs, :position, :integer

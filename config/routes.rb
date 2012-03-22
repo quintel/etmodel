@@ -80,13 +80,13 @@ Etm::Application.routes.draw do
     end
   end
 
-  resource :scenario do
+  resource :scenario, :except => [:edit, :update] do
     get :reset
     get :reset_to_preset
     put :change_complexity
   end
 
-  resources :scenarios do
+  resources :scenarios, :except => [:edit, :update] do
     member do
       get :load
     end

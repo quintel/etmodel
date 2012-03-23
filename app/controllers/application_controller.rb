@@ -2,8 +2,6 @@ class ApplicationController < ActionController::Base
   include LayoutHelper
   include SprocketsHelper
 
-  include SortableTable::App::Controllers::ApplicationController
-
   helper :all
   helper_method :current_user_session, :current_user, :admin?, :wattnu?
 

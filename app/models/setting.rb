@@ -65,8 +65,7 @@ class Setting
       :hide_unadaptable_sliders       => false,
       :network_parts_affected         => [],
       :track_peak_load                => false,
-      :country                        => 'nl',
-      :region                         => nil,
+      :area_code                      => 'nl',
       :start_year                     => 2010,
       :end_year                       => 2050,
       :use_fce                        => false,
@@ -76,14 +75,14 @@ class Setting
   end
   attr_accessor *default_attributes.keys
 
+  # Used by API Client to create the scenario
   def new_settings_hash
     {
       :country  => country,
       :region   => region,
       :end_year => end_year,
       :scenario_id => scenario_id,
-      :use_fce => use_fce,
-      :use_merit_order => use_merit_order
+      :use_fce => use_fce
     }
   end
 
@@ -92,8 +91,6 @@ class Setting
     self.send("#{key}=", default_value)
   end
 
-  # @tested 2010-12-06 seb
-  #
   def reset!
     self.class.default_attributes.each do |key, value|
       self.reset_attribute key
@@ -103,7 +100,6 @@ class Setting
   # When a user resets a scenario to it's start value,
   #
   def reset_scenario
-    # RD: used self. here otherwise an other settings object was reset
     self.api_session_id = nil
     self.scenario_id = nil # to go back to a blank slate scenario
 

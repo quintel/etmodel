@@ -6,12 +6,14 @@
       %th Merit order position
       %th Operating costs
       %th Available capacity
-      %th Full load hours
+      %th Full load hours, future
+      %th Full load hours, present
     %tr
       %th
       %th
       %th EUR/MWh
       %th MW
+      %th Hr
       %th Hr
   %tbody
     :ruby
@@ -41,3 +43,4 @@
         %td{:data => {:gquery => "merit_order_#{key}_operating_costs_in_merit_order_table"}}
         %td{:data => {:gquery => "merit_order_#{key}_capacity_in_merit_order_table"}}
         %td{:data => {:gquery => "merit_order_#{key}_full_load_hours_in_merit_order_table"}}
+        %td{:data => {:gquery => "merit_order_#{key}_present_full_load_hours_in_merit_order_table"}}

@@ -18,11 +18,9 @@ class Setting
                 :scenario_type,
                 :scenario_id,
                 :api_session_id,
-                :current_round
+                :current_round,
+                :area_code
 
-  ##
-  # @tested 2010-12-06 seb
-  #
   def initialize(attributes = {})
     attributes = self.class.default_attributes.merge(attributes)
     attributes.each do |name, value|
@@ -67,8 +65,7 @@ class Setting
       :hide_unadaptable_sliders       => false,
       :network_parts_affected         => [],
       :track_peak_load                => false,
-      :country                        => 'nl',
-      :region                         => nil,
+      :area_code                      => 'nl',
       :start_year                     => 2010,
       :end_year                       => 2050,
       :use_fce                        => false,
@@ -78,14 +75,16 @@ class Setting
   end
   attr_accessor *default_attributes.keys
 
+  # Used by API Client to create the scenario
+  # The country/region parameters should rather use the area code, but that
+  # requires changes on the ETE side. Wait for API v3
   def new_settings_hash
     {
       :country  => country,
-      :region   => region,
+      :region   => area_code, # UGLY!
       :end_year => end_year,
       :scenario_id => scenario_id,
-      :use_fce => use_fce,
-      :use_merit_order => use_merit_order
+      :use_fce => use_fce
     }
   end
 
@@ -94,8 +93,6 @@ class Setting
     self.send("#{key}=", default_value)
   end
 
-  # @tested 2010-12-06 seb
-  #
   def reset!
     self.class.default_attributes.each do |key, value|
       self.reset_attribute key
@@ -105,7 +102,6 @@ class Setting
   # When a user resets a scenario to it's start value,
   #
   def reset_scenario
-    # RD: used self. here otherwise an other settings object was reset
     self.api_session_id = nil
     self.scenario_id = nil # to go back to a blank slate scenario
 
@@ -140,51 +136,18 @@ class Setting
     area.try(:has_fce)
   end
 
-  # ------ Area ---------------------------------------------------------------
-
-  attr_writer :area
-
-  def set_country_and_region_from_param(param)
-    country = param.split("-").first
-    set_country_and_region(country, param)
-  end
-
-  ##
-  # @tested 2010-11-30 seb
-  #
-  def set_country_and_region(country, region)
-    self.country = country
-    self.region = if region.blank? then nil
-      elsif region.is_a?(Hash)
-        if region.has_key?(country)
-          region[country]  # You may want to set the province here and override country settings (maybe add a country prefix?)
-        else
-          nil
-        end
-      else region
-    end
-  end
-
-  def region_or_country
-    region || country
-  end
-
-  def area_region
-    Api::Area.find_by_country_memoized(region)
-  end
-
-  # Do not memoize area in setting, because it gets stored in session and
-  # backbone settings.
-  #
-  # @tested 2010-11-30 seb
-  #
+  # Returns the ActiveResource object
   def area
-    Api::Area.find_by_country_memoized(region_or_country)
+    Api::Area.find_by_country_memoized(area_code)
   end
 
-  # @tested 2010-12-06 seb
-  #
-  def area_country
-    Api::Area.find_by_country_memoized(country)
+  # LEGACY: we should use area_code only
+  def country
+    area_code.split('-')[0] rescue nil
+  end
+
+  # LEGACY: we should use area_code only
+  def region
+    area_code.split('-', 2)[1] rescue nil
   end
 end

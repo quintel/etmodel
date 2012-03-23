@@ -2,7 +2,7 @@
 
 The new web server setup uses Nginx + Unicorn. What you should know: files are served by nginx; nginx passes requests to the rails application to unicorn through a unix socket. 
 
-Unicorn is started and kept alive by Bluepill. Bluepill is started and kept alive by Upstart. The nginx daemon is started by the init `/etc/init.d/nginx` script. (For consistency we should better have upstart manage nginx).
+Unicorn is started and kept alive by monit. Monit is started and kept alive by Upstart. The nginx daemon is started by the init `/etc/init.d/nginx` script. (For consistency we should better have upstart manage nginx).
 
 ## Nginx
 
@@ -18,42 +18,14 @@ The file you will probably be editing is `/etc/nginx/conf.d/APP_NAME.conf`. If t
 
 A few words about upstart, the Ubuntu init daemon, to make things more understandable: upstart defines daemons as jobs. Every job has its own configuration file in `/etc/init` and the file name is `{service}.conf`.
 You can check a process status by running `status {service}`. To start or stop a service you use the same syntax: `{start|stop} {service}`.
-The bluepill service is automatically started on boot and the command that actually starts bluepill is
-
-    exec su -s /bin/sh -c 'exec "$0" "$@"' ubuntu -- /usr/local/rvm/bin/193_bluepill load /home/ubuntu/apps/etmodel/current/config/bluepill/production.rb --no-privileged
-
-You may notice the rvm wrapper script. This kind of script allows you to run a ruby executable in the context of a gemset. You can create them like this
-
-    rvm wrapper ruby@gemset [scope] [binary-name]
-
-This will generate a script called `scope_binary-name` in the rvm's bin directory.
-
-## Bluepill
-
-Bluepill is a process monitoring tool written in ruby. Once you have a configuration file (ours is `APP_ROOT/config/bluepill/nginx.rb`) you can load it running:
-
-    sudo bluepill load {configuration file}
-
-To check its status run
-
-    sudo bluepill status
-
-To start or stop a service run
-
-    sudo bluepill [process name] {start|stop|restart} 
-
-The process name is defined in the configuration file. In our case it is called `unicorn`. If you omit the process name then the command will be applied to all processes.
-In our setup the bluepill executable is `/usr/local/rvm/bin/193_bluepill`. We can think about adding it to $PATH.
+The monit service is automatically started on boot.
 
 ## Unicorn
 
-You can find its configuration in `APP_ROOT/config/unicorn/production.rb`. Bluepill takes care of the unicorn daemon. If you want to manually kill it you can find its pid in `~/apps/etmodel/shared/pids/unicorn.pid`.
+You can find its configuration in `APP_ROOT/config/unicorn/production.rb`. Monit takes care of the unicorn daemon. If you want to manually kill it you can find its pid in `~/apps/etmodel/shared/pids/unicorn.pid`.
 I've added a separate unicorn configuration file for the laptops.
 
 ## Deploy in practice
 
-We rarely need to restart nginx. We will more likely restart unicorn. The capistrano recipe `bluepill:restart_monitored` takes care of this and is aumotically called at the end of `cap [environment] deploy`, so there should be no need to call it manually.
+We rarely need to restart nginx. We will more likely restart unicorn.
 
-## Links
-
-* https://github.com/arya/bluepill/blob/master/README.md

@@ -1,1 +1,0 @@
-require "sortable_table"

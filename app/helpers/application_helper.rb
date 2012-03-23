@@ -1,6 +1,4 @@
 module ApplicationHelper
-  include SortableTable::App::Helpers::ApplicationHelper
-
   def has_active_scenario?
     Current.setting.api_session_id.present?
   end

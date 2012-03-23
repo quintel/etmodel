@@ -34,10 +34,6 @@ function timed_event(ev) {
   }, 300);
 }
 
-function hide_forever(id) {
-  $.cookie("hide_"+id, true);$("#"+id).fadeOut(250);
-}
-
 function set_movies(){
   flowplayer("a.movies", "/flash/flowplayer-3.2.6.swf", {
 

@@ -75,7 +75,7 @@ var ConstraintView = Backbone.View.extend({
       case 'renewable_percentage':
         return Metric.ratio_as_percentage(result);
       case 'bio_footprint':
-        return '' + Metric.round_number(result, 1) +'x'+ App.settings.get("country").toUpperCase();
+        return '' + Metric.round_number(result, 1) +'x'+ App.settings.country().toUpperCase();
       case 'targets_met':
         return null;
       case 'loss_of_load':

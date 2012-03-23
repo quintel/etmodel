@@ -43,7 +43,12 @@ var Setting = Backbone.Model.extend({
     App.settings.set({'use_merit_order' : enabled});
     // UGLY
     App.call_api("input[900]=" + (enabled ? 1.0 : 0.0));
+  },
+
+  country: function(){
+    return this.get('area_code').split('-')[0];
   }
+
 });
 
 $(document).ready(function(){

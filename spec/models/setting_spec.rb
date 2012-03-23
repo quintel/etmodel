@@ -91,56 +91,14 @@ describe Setting do
       end
     end
 
-    describe "set_country_and_region" do
-      before { @setting = Setting.new }
-      context "region = nil" do
-        before { @setting.set_country_and_region('nl', nil)}
-        subject { @setting }
-        its(:country) { should == 'nl' }
-        its(:region) { should == nil }
-        its(:region_or_country) { should == 'nl' }
-      end
-      context "region = ''" do
-        before { @setting.set_country_and_region('nl', '')}
-        subject { @setting }
-        its(:country) { should == 'nl' }
-        its(:region) { should == nil }
-        its(:region_or_country) { should == 'nl' }
-      end
-      context "region = 'flevaland'" do
-        before { @setting.set_country_and_region('nl', 'flevaland')}
-        subject { @setting }
-        its(:region) { should == 'flevaland' }
-        its(:region_or_country) { should == 'flevaland' }
-      end
-    end
-
     describe "#area" do
       before {
         @setting = Setting.default
         @area = Api::Area.new
-        Api::Area.should_receive(:find_by_country_memoized).with(@setting.region_or_country).and_return(@area)
+        Api::Area.should_receive(:find_by_country_memoized).with(@setting.area_code).and_return(@area)
       }
       it "should return area" do
         @setting.area.should == @area
-      end
-    end
-
-    describe "#area_region" do
-      before { @setting = Setting.default }
-      it "should return area" do
-        Api::Area.should_receive(:find_by_country).with(@setting.region)
-        @setting.area_region
-      end
-    end
-
-    describe "#area_country" do
-      before do
-        @setting = Setting.default
-      end
-      it "should return area" do
-        Api::Area.should_receive(:find_by_country_memoized).with(@setting.country)
-        @setting.area_country
       end
     end
   end

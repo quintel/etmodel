@@ -76,10 +76,12 @@ class Setting
   attr_accessor *default_attributes.keys
 
   # Used by API Client to create the scenario
+  # The country/region parameters should rather use the area code, but that
+  # requires changes on the ETE side. Wait for API v3
   def new_settings_hash
     {
       :country  => country,
-      :region   => region,
+      :region   => area_code, # UGLY!
       :end_year => end_year,
       :scenario_id => scenario_id,
       :use_fce => use_fce
@@ -146,6 +148,6 @@ class Setting
 
   # LEGACY: we should use area_code only
   def region
-    area_code.split('-')[1] rescue nil
+    area_code.split('-', 2)[1] rescue nil
   end
 end

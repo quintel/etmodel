@@ -8,6 +8,7 @@
 #  updated_at :datetime
 #  gquery_key :string(255)
 #  group      :string(25)      not null
+#  position   :integer(4)
 #
 
 # TODO: this should be renamed, DashboardItem would be a better name

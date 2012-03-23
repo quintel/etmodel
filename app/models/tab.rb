@@ -6,6 +6,7 @@
 #  key         :string(255)
 #  nl_vimeo_id :string(255)
 #  en_vimeo_id :string(255)
+#  position    :integer(4)
 #
 
 class Tab < ActiveRecord::Base

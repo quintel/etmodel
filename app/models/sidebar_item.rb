@@ -8,6 +8,8 @@
 #  percentage_bar_query :text
 #  nl_vimeo_id          :string(255)
 #  en_vimeo_id          :string(255)
+#  tab_id               :integer(4)
+#  position             :integer(4)
 #
 
 class SidebarItem < ActiveRecord::Base

@@ -11,6 +11,9 @@
 #  subheader_image    :string(255)
 #  key                :string(255)
 #  house_selection    :boolean(1)
+#  position           :integer(4)
+#  sidebar_item_id    :integer(4)
+#  output_element_id  :integer(4)
 #
 
 class Slide < ActiveRecord::Base

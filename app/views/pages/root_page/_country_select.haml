@@ -1,14 +1,13 @@
-:ruby
-  @nl_regions = %w[nl-drenthe nl-flevoland nl-friesland nl-gelderland nl-groningen nl-limburg nl-noord-brabant nl-noord-holland nl-overijssel nl-utrecht nl-zeeland nl-zuid-holland]
-  @nl_regions << "nl-noord" if @show_all
-  
+-  nl_regions = %w[nl-drenthe nl-flevoland nl-friesland nl-gelderland nl-groningen nl-limburg nl-noord-brabant nl-noord-holland nl-overijssel nl-utrecht nl-zeeland nl-zuid-holland]
+
 %li
   %h3= t("Choose country")
-  %select{:name => "region"}
+  %select{:name => "area_code"}
     = country_option 'nl'
     %optgroup{:label => "Provinces of the Netherlands"}
-      - @nl_regions.each do |code|
+      - nl_regions.each do |code|
         = country_option code
+      = country_option 'nl-noord' if @show_all
     %optgroup{:label => "Municipalities of the Netherlands"}
       = country_option 'ame'
       = country_option 'ams', :test => true
@@ -21,7 +20,6 @@
     = country_option 'ro', :test => true
     = country_option 'pl', :test => true
     = country_option 'tr', :test => true
-    - if session[:show_all_countries]
-      = country_option 'za', :test => true
+    = country_option 'za', :test => true if session[:show_all_countries]
     - if session[:show_all_countries] || session[:show_flanders]
       = country_option 'be-vlg', :test => true

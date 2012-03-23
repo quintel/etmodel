@@ -31,6 +31,8 @@ gem 'thinking-sphinx', '~> 2.0.10'
 gem 'mysql2', '~>0.2.6'
 gem 'memcache-client'
 
+gem 'dynamic_form'
+
 group :development do
   gem 'yard'
   gem 'annotate', :require => false

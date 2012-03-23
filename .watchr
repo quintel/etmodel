@@ -1,5 +1,3 @@
-require 'jslint'
-
 # This usually sits at the root of the project and is called ".watchr"
 @spec_cmd = "rspec --drb"
 @cuc_cmd  = "cucumber"

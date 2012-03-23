@@ -13,6 +13,7 @@
 #  updated_at       :datetime
 #  place            :string(255)     default("right")
 #  long_name        :string(255)
+#  partner_type     :string(255)     default("general")
 #
 
 class Partner < ActiveRecord::Base

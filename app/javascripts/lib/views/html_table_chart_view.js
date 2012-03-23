@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 09:33:27 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 23 Mar 2012 13:58:17 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/html_table_chart_view.coffee
  */
 
@@ -39,7 +39,10 @@
         cell = _ref[_i];
         gqid = $(cell).data('gquery');
         serie = this.model.series.with_gquery(gqid);
-        if (!serie) return;
+        if (!serie) {
+          console.warn("Missing gquery: " + gqid);
+          return;
+        }
         raw_value = serie.future_value();
         value = Metric.round_number(raw_value, 1);
         $(cell).html(value);

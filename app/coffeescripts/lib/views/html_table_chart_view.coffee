@@ -18,7 +18,9 @@ class @HtmlTableChartView extends BaseChartView
     for cell in @dynamic_cells()
       gqid = $(cell).data('gquery')
       serie = @model.series.with_gquery(gqid)
-      return unless serie
+      if !serie
+        console.warn "Missing gquery: #{gqid}"
+        return
       raw_value = serie.future_value()
       value = Metric.round_number(raw_value, 1)
       $(cell).html(value)

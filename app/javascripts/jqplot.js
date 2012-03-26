@@ -1,5 +1,5 @@
 //= require <excanvas>
-//= require <jquery.jqplot.js>
+//= require <jquery.jqplot.min>
 //= require <jqplot.categoryAxisRenderer>
 //= require <jqplot.canvasAxisTickRenderer>
 //= require <jqplot.canvasAxisLabelRenderer>

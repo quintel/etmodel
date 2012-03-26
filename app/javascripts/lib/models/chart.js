@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 09:33:27 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 26 Mar 2012 09:58:42 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/chart.coffee
  */
 
@@ -250,6 +250,9 @@
         $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/" + chart_id);
         $("#output_element_actions").removeClass();
         $("#output_element_actions").addClass(_this.first().get("type"));
+        if (_this.current().get('type') === 'html_table') {
+          _this.current().view.build_gqueries();
+        }
         return App.call_api();
       });
     };

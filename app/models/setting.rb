@@ -4,13 +4,6 @@
 class Setting
   extend ActiveModel::Naming
 
-  SCENARIO_ATTRIBUTES = [
-    :country,
-    :region,
-    :end_year,
-    :use_fce
-  ]
-
   attr_accessor :last_etm_controller_name,
                 :last_etm_controller_action,
                 :displayed_output_element,
@@ -44,12 +37,13 @@ class Setting
   # return [Setting] setting object loaded with the country/end_year/etc from scenario
   #
   def self.load_from_scenario(scenario)
-    settings = SCENARIO_ATTRIBUTES.inject({}) {|hsh,key| hsh.merge key => scenario.send(key) }
-    # By removing api_session_id we force backbone to create a new ApiScenario
-    #   based on :scenario_id
-    settings.delete(:api_session_id)
-    settings[:scenario_id] = scenario.id
-    new(settings)
+    attrs = {
+      :scenario_id => scenario.id,
+      :use_fce => scenario.use_fce,
+      :end_year => scenario.end_year,
+      :area_code => scenario.region.nil? ? scenario.country : scenario.region
+    }
+    new(attrs)
   end
 
   # ------ Defaults and Resetting ---------------------------------------------

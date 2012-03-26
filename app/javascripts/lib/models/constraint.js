@@ -45,6 +45,14 @@ var Constraint = Backbone.Model.extend({
       previous_result : previous_result,
       result : result
     });
+  },
+
+  result: function() {
+    return this.get('result');
+  },
+
+  error: function() {
+    return (this.result() == 'debug' || this.result() == 'airbrake')
   }
 });
 

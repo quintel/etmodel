@@ -19,6 +19,10 @@ class PagesController < ApplicationController
     Rails.cache.clear
     render :text => 'ok', :layout => false
   end
+  
+  def choose
+    render layout: 'refreshed'
+  end
 
 protected
 

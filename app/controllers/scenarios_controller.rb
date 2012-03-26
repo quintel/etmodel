@@ -53,6 +53,7 @@ class ScenariosController < ApplicationController
     # more logic could be added here, such as setting the round only if the
     # scenario name contains the "wattnu" string or something like that
     Current.setting.current_round = 3 if wattnu?
+    session[:wattnu] = true if params[:wattnu]
     redirect_to start_path
   end
 

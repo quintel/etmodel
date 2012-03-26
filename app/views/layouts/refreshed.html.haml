@@ -1,0 +1,10 @@
+!!! 5
+%html
+  %head
+    %title= t("meta.title").force_encoding("UTF-8")
+
+    = stylesheet_link_tag 'normalize', 'refreshed'
+    = javascript_include_tag 'html5shiv','jquery.min.js'
+
+  %body
+    = yield

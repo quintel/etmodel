@@ -10,10 +10,27 @@ class @HtmlTableChartView extends BaseChartView
     @merit_order_sort() if @model.get("id") == 116
 
   # The table HTML is provided by the rails app. It is stored in the
-  # window.charts object
+  # window.charts object, a hash that contains the markup of the table.
+  # Being stored in a hash, we can save the markup of multiple tables
+  # and eventually show multiple tables at the same time
+  #
   table_html: ->
     charts.tables_html[@model.get("id")]
 
+  # normal charts have their series added when the /output_element/X.js
+  # action is called. Tables have the gqueries defined in the markup instead.
+  # This method will parse the HTML and create the gqueries as needed.
+  # See charts#load to see this method in action.
+  #
+  build_gqueries: =>
+    html = $(@table_html())
+    for cell in html.find("td[data-gquery]")
+      gquery = $(cell).data('gquery')
+      @model.series.add({gquery_key: gquery})
+
+  # The table is already in the DOM; let's find the cells whose content
+  # is the result of a gquery and write the output
+  #
   fill_cells: ->
     for cell in @dynamic_cells()
       gqid = $(cell).data('gquery')

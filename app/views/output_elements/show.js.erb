@@ -1,11 +1,11 @@
 var output_element = new Chart(<%= @output_element.options_for_js.to_json.html_safe %>);
 
-<% @output_element.allowed_output_element_series.each do |serie| %>
-  <%= raw output_element_serie(serie) %>
-<% end %>
-
 <% if @output_element.html_table? %>
   window.charts.tables_html[<%=@output_element.id%>] = "<%= js_render_html_table(@output_element)%>";
+<% else %>
+  <% @output_element.allowed_output_element_series.each do |serie| %>
+    <%= raw output_element_serie(serie) %>
+  <% end %>
 <% end %>
 
 window.charts.change(output_element);

@@ -47,8 +47,7 @@ Etm::Application.routes.draw do
     match 'map', :to => 'pages#map', :as => :map
     match 'clear_cache' => 'pages#clear_cache', :as => :clear_cache
 
-    resources :expert_predictions,
-              :predictions,
+    resources :predictions,
               :input_elements,
               :year_values,
               :slides,
@@ -105,13 +104,6 @@ Etm::Application.routes.draw do
   resources :output_elements do
     collection do
       get :select
-    end
-  end
-
-  resources :expert_predictions, :only => :index do
-    collection do
-      get :set
-      get :reset
     end
   end
 

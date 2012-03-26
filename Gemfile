@@ -34,7 +34,8 @@ gem 'memcache-client'
 gem 'dynamic_form'
 
 group :development do
-  gem 'yard'
+  gem 'tomdoc'
+  gem 'yard-tomdoc'
   gem 'annotate', :require => false
   gem 'active_reload', '~> 0.6.1'
 end

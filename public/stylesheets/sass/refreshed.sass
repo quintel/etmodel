@@ -1,0 +1,198 @@
+html
+  background: url("/images/layout/titles.png")
+  
+body
+  font-family: Gill Sans, Lucida Grande, Verdana, Arial, Helvetica, sans-serif
+  text-rendering: optimizelegibility
+  line-height: 1.7em
+  font-weight: 200
+  background: url("/images/layout/sky_and_sea.png") center 305px repeat-x
+  
+  strong
+    font-weight: 400
+
+  a
+    text-decoration: none
+    color: #4287BB
+    font-weight: 400
+    cursor: pointer
+
+  a:hover
+    text-decoration: underline
+
+  a:visited
+    color: #4287BB
+
+#wattnu
+  position: absolute
+  right: 0
+  top: 0
+  background: url("/images/wattnu.png") top right no-repeat
+  height: 250px
+  width: 300px
+  display: block
+  text-indent: -9999px
+
+header
+
+  padding: 10px 0
+
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4287BB), color-stop(100%, #66A2CA))
+  background: -webkit-linear-gradient(#66A2CA,#4287BB)
+  background: -moz-linear-gradient(#4287BB,#66A2CA)
+  background: -o-linear-gradient(#4287BB,#66A2CA)
+  background: -ms-linear-gradient(#4287BB,#66A2CA)
+  background: linear-gradient(#4287BB,#66A2CA)
+  
+  -moz-box-shadow: 0 0 5px rgba(10, 10, 10, 0.4)
+  -webkit-box-shadow: 0 0 5px rgba(10, 10, 10, 0.4)
+  -box-shadow: 0 0 5px rgba(10, 10, 10, 0.4)
+  min-width: 960px
+  position: relative
+
+  h3
+    text-indent: -9999px
+    margin: 0 auto
+    background: url("/images/layout/bg-logo3.png") center left no-repeat
+    height: 75px
+    width: 960px
+
+#main
+  width: 960px
+  margin: 0 auto
+
+  #screenshots
+    background: url("/images/layout/showcase.png") bottom center no-repeat
+    height: 317px
+    width: 1500px
+    position: relative
+    left: -270px
+
+    .screenshot
+      position: absolute
+    
+    .screenshot:hover, .active-screenshot
+      opacity: 0.8
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"
+      filter: alpha(opacity=80)
+  
+    #etmodel
+      width: 298px
+      height: 187px
+      background: url("/images/layout/screenshot_etm.png") left top no-repeat
+      top: 94px
+      left: 602px
+
+    #etmodel:active
+      top: 95px
+
+    #etflex
+      width: 310px
+      height: 203px
+      background: url("/images/layout/screenshot_etflex.png") left top no-repeat
+      top: 87px
+      left: 274px
+
+    #etflex:active
+      top: 88px
+
+    #mixer
+      width: 300px
+      height: 202px
+      background: url("/images/layout/screenshot_mixer.png") left top no-repeat
+      top: 87px
+      left: 917px
+
+    #mixer:active
+      top: 88px
+
+  h1
+    font-size: 48px
+    margin: 55px 0
+    font-family: 'Georgia', Times New Roman
+    font-weight: normal
+    line-height: 1.2em
+
+  h2
+    font-size: 32px
+    border-bottom: 1px solid #333
+    margin-top: 20px
+    padding-bottom: 15px
+    font-family: "Georgia"
+    font-weight: normal
+    line-height: 1.2em  
+
+  
+  #products
+    list-style-type: none
+    float: left
+    padding: 0 0 0 0
+
+    h2
+      font-size: 22px
+      text-align: center
+      margin-bottom: 5px
+
+    .product
+      float: left
+      position: relative
+      
+    .product > a
+      width: 290px
+      color: inherit
+      padding: 10px 15px 30px
+      text-decoration: none
+      font-weight: 200
+      float: left
+
+    .product:hover, .active-product
+      background: rgba(255, 255, 255, 0.65)
+      border-radius: 4px
+      
+    .product:active
+      top: 1px
+      
+    ul.specs
+      list-style-type: none
+      margin: 0 0 0 0
+      margin-bottom: 15px
+      padding: 0 0 0 0
+      font-style: italic
+      
+      li
+        margin-left: 80px
+        padding: 10px 0 3px 40px
+        line-height: 2em
+        
+      .time
+        background: url("/images/layout/clock.png") left center no-repeat
+        
+      .options
+        background: url("/images/layout/options.png") left center no-repeat
+
+footer
+  color: #fff
+  text-align: center
+  min-height: 100px
+  margin-top: 100px
+  padding: 50px 0
+  border-top: 1px solid #333
+  background: url("/images/layout/dark_titles.png")
+
+  -moz-box-shadow: 0 0 5px rgba(10, 10, 10, 0.5)
+  -webkit-box-shadow: 0 0 5px rgba(10, 10, 10, 0.5)
+  -box-shadow: 0 0 5px rgba(10, 10, 10, 0.5)
+  
+  p
+    width: 960px
+    margin:  0 auto
+
+  a, a:visited
+    color: inherit
+    font-weight: inherit
+    text-decoration: underline
+  a:hover
+    text-decoration: none
+
+.clear
+  clear: both

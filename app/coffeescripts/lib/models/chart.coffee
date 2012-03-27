@@ -121,6 +121,9 @@ class @ChartList extends Backbone.Collection
     old_chart = @first()
     @remove(old_chart) if old_chart != undefined
     @add(chart)
+    # HTML Table charts create gquery objects parsing the HTML
+    if @current().get('type') == 'html_table'
+      @current().view.build_gqueries()
 
   load : (chart_id) ->
     App.etm_debug('Loading chart: #' + chart_id)
@@ -143,9 +146,6 @@ class @ChartList extends Backbone.Collection
       # update the position of the output_element_actions
       $("#output_element_actions").removeClass()
       $("#output_element_actions").addClass(@first().get("type"))
-      # HTML Table charts create gquery objects parsing the HTML
-      if @current().get('type') == 'html_table'
-        @current().view.build_gqueries()
       App.call_api()
 
   # returns the current chart id

@@ -52,7 +52,8 @@ var Constraint = Backbone.Model.extend({
   },
 
   error: function() {
-    return (this.result() == 'debug' || this.result() == 'airbrake')
+    var x = this.result();
+    return (x == 'debug' || x == 'airbrake' || _.isNaN(x));
   }
 });
 

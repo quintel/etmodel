@@ -1,8 +1,7 @@
 #constraints_container
   #constraints
-    = render :partial => 'layouts/etm/constraint_items', :locals => { :constraints => @constraints }
-
-    <a href="#" id="dashboard_change">Change</a>
+    = render 'layouts/etm/constraint_items', :constraints => @constraints
+    = link_to 'Change', '#', :id => 'dashboard_change'
     .clear
 
     %script

@@ -44,7 +44,7 @@ class @ConstraintView extends Backbone.View
   format_result: () =>
     result = @model.result()
     key    = @model.get('key')
-    return '-' if @model.error();
+    return '' if @model.error()
 
     out = switch key
       when 'total_energy_cost'

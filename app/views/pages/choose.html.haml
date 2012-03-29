@@ -4,6 +4,10 @@
     %h3= t 'meta.name'
     %a#wattnu{href:"http://wattnu.nl", target:"_new"}= t 'landing_page.go_to_wattnu'
 
+  %nav#language
+    - other_locale = ( I18n.locale == :en ? "nl" : "en" )
+    = link_to (t 'landing_page.other_language') + "?", { locale: other_locale }, { class: other_locale }
+
   %section#main
 
     %h1= raw t 'landing_page.title'
@@ -12,7 +16,7 @@
     %aside#screenshots
 
       %a.screenshot#etflex{href:'http://light.energytransitionmodel.com'}
-      %a.screenshot#etmodel{href:'/'}
+      %a.screenshot#etmodel{href:'/pro'}
       %a.screenshot#mixer{href:'http://mixer.et-model.com'}
 
     %section#products
@@ -21,17 +25,17 @@
         %a{href:"http://light.energytransitionmodel.com"}
           %h2= raw t 'landing_page.etflex.title'
           %ul.specs
-            %li.time{title:"time required"}         ~ 5 minutes
-            %li.options{title:"number of options"}  12 sliders
-            %li                                     Free!
+            %li.time{title:"time required"}=         "~ 5 #{t 'landing_page.minutes'}"
+            %li.options{title:"number of options"}=  "12 #{t 'landing_page.sliders'}"
+            %li                                      Free!
           %p= raw t 'landing_page.etflex.explanation'
 
       %article.product#etmodel
-        %a{href:"/"}
+        %a{href:"/pro"}
           %h2= raw t 'landing_page.etmodel.title'
           %ul.specs
-            %li.time{title:"time required"}         > 30 minutes
-            %li.options{title:"number of options"}  > 250 sliders
+            %li.time{title:"time required"}=        "> 30 #{t 'landing_page.minutes'}"
+            %li.options{title:"number of options"}= "> 250 #{t 'landing_page.sliders'}"
             %li                                     Free!
           %p= raw t 'landing_page.etmodel.explanation'
 
@@ -39,8 +43,8 @@
         %a{href:"http://mixer.et-model.com"}
           %h2= raw t 'landing_page.mixer.title'
           %ul.specs
-            %li.time{title:"time required"}         ~ 10 minutes
-            %li.options{title:"number of options"}  9 questions
+            %li.time{title:"time required"}=        "~ 10 #{t 'landing_page.minutes'}"
+            %li.options{title:"number of options"}= "9 #{t 'landing_page.questions'}"
             %li                                     Free!
           %p= raw t 'landing_page.mixer.explanation'
 

@@ -22,6 +22,7 @@ class PagesController < ApplicationController
   
   def choose
     render layout: 'refreshed'
+    @other_locale = ( I18n.locale == :en ? "nl" : "en" )
   end
 
 protected

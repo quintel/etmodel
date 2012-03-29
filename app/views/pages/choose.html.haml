@@ -1,61 +1,63 @@
-%header
-  %h3= t 'meta.name'
-  %a#wattnu{href:"http://wattnu.nl", target:"_new"}= t 'landing_page.go_to_wattnu'
+#root
 
-%section#main
+  %header
+    %h3= t 'meta.name'
+    %a#wattnu{href:"http://wattnu.nl", target:"_new"}= t 'landing_page.go_to_wattnu'
 
-  %h1= raw t 'landing_page.title'
-  %p=  raw t 'landing_page.explanation'
+  %section#main
 
-  %aside#screenshots
-  
-    %a.screenshot#etflex{href:'http://light.energytransitionmodel.com'}
-    %a.screenshot#etmodel{href:'/'}
-    %a.screenshot#mixer{href:'http://mixer.et-model.com'}
+    %h1= raw t 'landing_page.title'
+    %p=  raw t 'landing_page.explanation'
 
-  %section#products
-  
-    %article.product#etflex
-      %a{href:"http://light.energytransitionmodel.com"}
-        %h2= raw t 'landing_page.etflex.title'
-        %ul.specs
-          %li.time{title:"time required"}         ~ 5 minutes
-          %li.options{title:"number of options"}  12 sliders
-          %li                                     Free!
-        %p= raw t 'landing_page.etflex.explanation'
+    %aside#screenshots
 
-    %article.product#etmodel
-      %a{href:"/"}
-        %h2= raw t 'landing_page.etmodel.title'
-        %ul.specs
-          %li.time{title:"time required"}         > 30 minutes
-          %li.options{title:"number of options"}  > 250 sliders
-          %li                                     Free!
-        %p= raw t 'landing_page.etmodel.explanation'
+      %a.screenshot#etflex{href:'http://light.energytransitionmodel.com'}
+      %a.screenshot#etmodel{href:'/'}
+      %a.screenshot#mixer{href:'http://mixer.et-model.com'}
 
-    %article.product#mixer
-      %a{href:"http://mixer.et-model.com"}
-        %h2= raw t 'landing_page.mixer.title'
-        %ul.specs
-          %li.time{title:"time required"}         ~ 10 minutes
-          %li.options{title:"number of options"}  9 questions
-          %li                                     Free!
-        %p= raw t 'landing_page.mixer.explanation'
+    %section#products
 
-  .clear
+      %article.product#etflex
+        %a{href:"http://light.energytransitionmodel.com"}
+          %h2= raw t 'landing_page.etflex.title'
+          %ul.specs
+            %li.time{title:"time required"}         ~ 5 minutes
+            %li.options{title:"number of options"}  12 sliders
+            %li                                     Free!
+          %p= raw t 'landing_page.etflex.explanation'
 
-%footer
-  %p= raw t 'landing_page.footer.quintel'
-    
-:javascript
-  $(".screenshot, .product").hover(function(){
-    var this_id = $(this).attr('id');
-    $("#products #" + this_id).addClass('active-product');
-    $("#screenshots #" + this_id).addClass('active-screenshot');
-  },
-  function(){
-    var this_id = $(this).attr('id');
-    $("#products #" + this_id).removeClass('active-product');
-    $("#screenshots #" + this_id).removeClass('active-screenshot');
-  }
-  );
+      %article.product#etmodel
+        %a{href:"/"}
+          %h2= raw t 'landing_page.etmodel.title'
+          %ul.specs
+            %li.time{title:"time required"}         > 30 minutes
+            %li.options{title:"number of options"}  > 250 sliders
+            %li                                     Free!
+          %p= raw t 'landing_page.etmodel.explanation'
+
+      %article.product#mixer
+        %a{href:"http://mixer.et-model.com"}
+          %h2= raw t 'landing_page.mixer.title'
+          %ul.specs
+            %li.time{title:"time required"}         ~ 10 minutes
+            %li.options{title:"number of options"}  9 questions
+            %li                                     Free!
+          %p= raw t 'landing_page.mixer.explanation'
+
+    .clear
+
+  %footer
+    %p= raw t 'landing_page.footer.quintel'
+
+  :javascript
+    $(".screenshot, .product").hover(function(){
+      var this_id = $(this).attr('id');
+      $("#products #" + this_id).addClass('active-product');
+      $("#screenshots #" + this_id).addClass('active-screenshot');
+    },
+    function(){
+      var this_id = $(this).attr('id');
+      $("#products #" + this_id).removeClass('active-product');
+      $("#screenshots #" + this_id).removeClass('active-screenshot');
+    }
+    );

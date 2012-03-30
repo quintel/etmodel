@@ -21,8 +21,12 @@ class PagesController < ApplicationController
   end
   
   def choose
-    render layout: 'refreshed'
-    @other_locale = ( I18n.locale == :en ? "nl" : "en" )
+    if request.post?
+      assign_settings_and_redirect
+    else
+      render layout: 'refreshed'
+      @other_locale = ( I18n.locale == :en ? "nl" : "en" )
+    end
   end
 
 protected

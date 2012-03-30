@@ -1,12 +1,12 @@
 #root
 
   %header
-    %h3= t 'meta.name'
-    %a#wattnu{href:"http://wattnu.nl", target:"_new"}= t 'landing_page.go_to_wattnu'
-
-  %nav#language
-    - other_locale = ( I18n.locale == :en ? "nl" : "en" )
-    = link_to (t 'landing_page.other_language') + "?", { locale: other_locale }, { class: other_locale }
+    %a{href:"http://wattnu.nl", target:"_new", id: "wattnu_#{I18n.locale}"}= t 'landing_page.go_to_wattnu'
+    #header_inside
+      %nav#language
+        - other_locale = ( I18n.locale == :en ? "nl" : "en" )
+        = link_to (t 'landing_page.other_language'), { locale: other_locale }, { class: other_locale }
+      %h3= t 'meta.name'
 
   %section#main
 
@@ -27,7 +27,7 @@
           %ul.specs
             %li.time{title:"time required"}=         "~ 5 #{t 'landing_page.minutes'}"
             %li.options{title:"number of options"}=  "12 #{t 'landing_page.sliders'}"
-            %li                                      Free!
+            %li=                                     "#{t 'landing_page.free'}!"
           %p= raw t 'landing_page.etflex.explanation'
 
       %article.product#etmodel
@@ -36,7 +36,7 @@
           %ul.specs
             %li.time{title:"time required"}=        "> 30 #{t 'landing_page.minutes'}"
             %li.options{title:"number of options"}= "> 250 #{t 'landing_page.sliders'}"
-            %li                                     Free!
+            %li=                                    "#{t 'landing_page.free'}!"
           %p= raw t 'landing_page.etmodel.explanation'
 
       %article.product#mixer
@@ -45,7 +45,7 @@
           %ul.specs
             %li.time{title:"time required"}=        "~ 10 #{t 'landing_page.minutes'}"
             %li.options{title:"number of options"}= "9 #{t 'landing_page.questions'}"
-            %li                                     Free!
+            %li=                                    "#{t 'landing_page.free'}!"
           %p= raw t 'landing_page.mixer.explanation'
 
     .clear

@@ -30,17 +30,22 @@ body
   min-height: 100%
   min-width: 980px
   overflow: hidden
-
-#wattnu
+  
+#wattnu_en, #wattnu_nl
   position: absolute
   right: 0
   top: 0
-  background: url("/images/wattnu.png") top right no-repeat
   height: 250px
   width: 300px
   display: block
   text-indent: -9999px
   z-index: 11
+
+#wattnu_en
+  background: url("/images/wattnu_en.png") top right no-repeat
+
+#wattnu_nl
+  background: url("/images/wattnu_nl.png") top right no-repeat
 
 header
 
@@ -55,37 +60,41 @@ header
   background: -ms-linear-gradient(#4287BB,#66A2CA)
   background: linear-gradient(#4287BB,#66A2CA)
   
-  -moz-box-shadow: 0 10px 10px rgba(10, 10, 10, 0.4)
+  -moz-box-shadow: 0 1px 2px rgba(10, 10, 10, 0.25)
   -webkit-box-shadow: 0 1px 2px rgba(10, 10, 10, 0.25)
-  -box-shadow: 0 0 5px rgba(10, 10, 10, 0.4)
+  -box-shadow: 0 1px 2px rgba(10, 10, 10, 0.25)
 
   min-width: 960px
   position: relative
-
-  h3
-    text-indent: -9999px
-    margin: 0 auto
-    background: url("/images/layout/bg-logo3.png") center left no-repeat
-    height: 75px
+  
+  #header_inside
     width: 960px
+    margin: 0 auto
+    position: relative
+
+    h3
+      text-indent: -9999px
+      background: url("/images/layout/bg-logo3.png") center left no-repeat
+      height: 75px
+      width: 500px
+      margin: 0 0 0 0
     
-nav#language
-  width: 960px
-  margin: 5px auto 0
-  font-size: small
-  position: relative
-  a
-    margin-left: 0px
-    padding-left: 20px
-  a.en
-    background: url("/images/icons/gb.png") left center no-repeat
-  a.nl
-    background: url("/images/icons/nl.png") left center no-repeat
+    nav#language
+      position: absolute
+      right: 210px
+      top: 27px
+      z-index: 21
+      a
+        padding-left: 20px
+      a.en
+        background: url("/images/icons/gb.png") left center no-repeat
+      a.nl
+        background: url("/images/icons/nl.png") left center no-repeat
 
 #main
   width: 960px
   margin: 0 auto
-
+  
   #screenshots
     background: url("/images/layout/showcase.png") bottom center no-repeat
     height: 317px
@@ -133,7 +142,7 @@ nav#language
 
   h1
     font-size: 48px
-    margin: 30px 0 55px 
+    margin: 55px 0
     font-family: 'Georgia', Times New Roman
     font-weight: normal
     line-height: 1.2em
@@ -154,9 +163,9 @@ nav#language
     padding: 0 0 0 0
 
     h2
-      font-size: 22px
+      font-size: 28px
       text-align: center
-      margin-bottom: 5px
+      margin-bottom: 10px
 
     .product
       float: left
@@ -198,7 +207,6 @@ nav#language
 footer
   color: #fff
   text-align: center
-  min-height: 100px
   margin-top: 100px
   padding: 50px 0
   border-top: 1px solid #333

@@ -8,3 +8,5 @@
 
   %body
     = yield
+
+    = render "layouts/etm/ga" if Rails.env.production? && !APP_CONFIG[:standalone]

@@ -133,4 +133,9 @@ class InputElement < ActiveRecord::Base
   def parsed_description
     (description.andand.content.andand.gsub('id="player"','class="player"') || "").html_safe
   end
+
+  # Use by admin and search page
+  def url
+    slide.url
+  end
 end

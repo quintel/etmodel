@@ -95,7 +95,9 @@ var InputElementList = Backbone.Collection.extend({
       input_element.set_min_value(values.min_value);
       input_element.set_max_value(values.max_value);
       input_element.set_start_value(values.start_value);
-      input_element.set_label(values.full_label); 
+      input_element.set_label(values.full_label);
+      input_element.set({ disabled: values.disabled });
+
       var user_value = values.user_value;
       var default_value = (_.isUndefined(user_value) || _.isNaN(user_value) || _.isNull(user_value)) ? values.start_value : user_value;
       input_element.set({user_value : default_value}, {silent : true});

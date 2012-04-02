@@ -38,6 +38,7 @@ window.AppView = Backbone.View.extend({
     if (dashChangeEl.length > 0) {
       new DashboardChangerView(dashChangeEl);
     }
+    this.setup_fce();
 
     // DEBT Add check, so that boostrap is only called once.
     if (this.settings.get('country') == 'nl') {
@@ -50,6 +51,13 @@ window.AppView = Backbone.View.extend({
       this.load_user_values();
       this.call_api();
     }
+  },
+
+  setup_fce: function(){
+    // update the use_fce checkbox inside descriptions as needed on page load
+    $(".inline_use_fce").attr('checked', App.settings.get('use_fce'));
+    // IE doesn't bubble onChange until the checkbox loses focus
+    $(".inline_use_fce, #settings_use_fce").click(App.settings.toggle_fce);
   },
 
   // Load User values for Sliders

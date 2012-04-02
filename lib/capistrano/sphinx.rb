@@ -1,8 +1,8 @@
+require 'thinking_sphinx/deploy/capistrano'
 namespace :sphinx do
   desc "Link up Sphinx's indexes."
   task :symlink_stuff, :roles => [:app] do
     run "ln -nfs #{shared_path}/db/sphinx #{release_path}/db/sphinx"
-    run "ln -s #{shared_path}/config/sphinx.yml #{release_path}/config/"
   end
 
   desc "Rebuild and restart"
@@ -21,4 +21,9 @@ namespace :sphinx do
       puts "ThinkingSphinx is not running. No stop required."
     end
   end
+end
+
+after "deploy:symlink", :roles => [:app] do
+  sphinx.symlink_stuff
+  sphinx.rebuild_and_restart
 end

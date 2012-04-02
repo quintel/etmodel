@@ -7,7 +7,6 @@ class @MekkoChartView extends BaseChartView
     @render_mekko()
 
   results: ->
-    scale = @data_scale()
     series = {}
     @model.series.each (serie) ->
       group = serie.get('group')
@@ -17,7 +16,7 @@ class @MekkoChartView extends BaseChartView
         series[group].push(val)
     results = _.map series, (sector_values, sector) ->
       return _.map sector_values, (value) ->
-        return Metric.scale_value(value, scale)
+        return value
     results
 
   colors: ->
@@ -69,7 +68,7 @@ class @MekkoChartView extends BaseChartView
           show: true
           tickMode: 'bar'
           tickOptions:
-            formatString: '%d&nbsp;' + @parsed_unit()
+            formatString: '%d&nbsp;' + @model.get('unit')
           rendererOptions:
             barLabelOptions:
               angle: 90

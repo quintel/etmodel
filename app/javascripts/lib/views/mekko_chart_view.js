@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 07 Mar 2012 12:33:47 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 02 Apr 2012 09:08:04 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/mekko_chart_view.coffee
  */
 
@@ -28,8 +28,7 @@
     };
 
     MekkoChartView.prototype.results = function() {
-      var results, scale, series;
-      scale = this.data_scale();
+      var results, series;
       series = {};
       this.model.series.each(function(serie) {
         var group, val;
@@ -42,7 +41,7 @@
       });
       results = _.map(series, function(sector_values, sector) {
         return _.map(sector_values, function(value) {
-          return Metric.scale_value(value, scale);
+          return value;
         });
       });
       return results;
@@ -121,7 +120,7 @@
             show: true,
             tickMode: 'bar',
             tickOptions: {
-              formatString: '%d&nbsp;' + this.parsed_unit()
+              formatString: '%d&nbsp;' + this.model.get('unit')
             },
             rendererOptions: {
               barLabelOptions: {

@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 26 Mar 2012 13:27:33 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 02 Apr 2012 08:37:02 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/constraint_view.coffee
  */
 
@@ -73,7 +73,7 @@
       var key, out, result;
       result = this.model.result();
       key = this.model.get('key');
-      if (this.model.error()) return '-';
+      if (this.model.error()) return '';
       out = (function() {
         switch (key) {
           case 'total_energy_cost':

@@ -80,4 +80,8 @@ class Slide < ActiveRecord::Base
   def short_name_for_admin
     "#{sidebar_item.try :key} : #{key}"
   end
+
+  def url
+    "/#{sidebar_item.tab.key}/#{sidebar_item.key}##{short_name}" rescue nil
+  end
 end

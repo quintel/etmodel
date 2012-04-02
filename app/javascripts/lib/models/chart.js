@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 27 Mar 2012 07:31:08 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 02 Apr 2012 09:35:49 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/chart.coffee
  */
 
@@ -190,8 +190,13 @@
       var items, _ref,
         _this = this;
       items = this.non_target_series().map(function(serie) {
-        return {
-          label: serie.get('label'),
+        var label, out;
+        label = serie.get('label');
+        if (_this.get('type') === 'mekko') {
+          label = "" + label + " - " + (serie.get('group'));
+        }
+        return out = {
+          label: label,
           present_value: Metric.autoscale_value(serie.present_value(), _this.get('unit'), 2),
           future_value: Metric.autoscale_value(serie.future_value(), _this.get('unit'), 2)
         };

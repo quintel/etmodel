@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 02 Apr 2012 09:08:04 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 02 Apr 2012 09:30:54 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/mekko_chart_view.coffee
  */
 
@@ -61,10 +61,6 @@
         return serie.get('group_translated');
       });
       return _.uniq(group_labels);
-    };
-
-    MekkoChartView.prototype.can_be_shown_as_table = function() {
-      return false;
     };
 
     MekkoChartView.prototype.render_mekko = function() {

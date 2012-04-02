@@ -97,7 +97,10 @@ class @Chart extends Backbone.Model
   # See base_chart_view#render_as_table
   formatted_series_hash : ->
     items = @non_target_series().map (serie) =>
-        label: serie.get('label')
+      label = serie.get 'label'
+      label = "#{label} - #{serie.get('group')}" if @get('type') == 'mekko'
+      out =
+        label: label
         present_value: Metric.autoscale_value(serie.present_value(), @get('unit'), 2)
         future_value: Metric.autoscale_value(serie.future_value(), @get('unit'), 2)
     # some charts draw series bottom to top. Let's flip the array

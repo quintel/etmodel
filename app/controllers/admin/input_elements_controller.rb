@@ -5,7 +5,7 @@ module Admin
     def index
       if params[:slide_id]
         @slide = Slide.find params[:slide_id]
-        @input_elements = @slide.input_elements.ordered
+        @input_elements = @slide.sliders
       else
         @input_elements = InputElement.all
       end

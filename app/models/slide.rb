@@ -22,12 +22,16 @@ class Slide < ActiveRecord::Base
   belongs_to :sidebar_item
 
   has_one :description, :as => :describable
-  has_many :input_elements, :dependent => :nullify
+  has_many :sliders, :through => :slider_positions
+  has_many :slider_positions, :dependent => :destroy, :order => 'slider_positions.position'
   belongs_to :output_element # default output element
   validates :key, :presence => true, :uniqueness => true
   scope :controller, lambda {|controller| where(:controller_name => controller) }
   scope :ordered, order('position')
   accepts_nested_attributes_for :description
+  accepts_nested_attributes_for :slider_positions,
+    :allow_destroy => true,
+    :reject_if => proc {|attributes| attributes['slider_id'].blank? }
 
   def search_result
     SearchResult.new(key.humanize, description)
@@ -56,7 +60,7 @@ class Slide < ActiveRecord::Base
   # See Current.view
   # Some sliders cannot be used on some areas. Let's filter them out
   def safe_input_elements
-    @safe_input_elements ||= input_elements.ordered.reject(&:area_dependent)
+    @safe_input_elements ||= sliders.ordered.reject(&:area_dependent)
   end
 
   # Complementary to grouped_input_elements

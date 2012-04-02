@@ -1,4 +1,4 @@
-%div{:style => "width: 60%"}
+%div
   = simple_form_for [:admin, @slide] do |f|
     = f.input :key,
       :hint => "Should be unique and recognizable! yes, also for others, check for conventions with WvL"
@@ -23,6 +23,10 @@
     = f.simple_fields_for :description do |j|
       = j.input :content_en
       = j.input :content_nl
+    = f.simple_fields_for :slider_positions do |s|
+      = s.association :slider, :collection => InputElement.order('`key`').map{|s| [s.key, s.id]}
+      = s.input :position
+      = s.input :_destroy, :as => :boolean
     = f.button :submit
-  
+
   = link_to "back", admin_slides_path

@@ -2,7 +2,6 @@ require 'bundler/capistrano'
 require 'airbrake/capistrano'
 
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
-require 'thinking_sphinx/deploy/capistrano'
 Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
 load 'lib/capistrano/db_recipes'
 load 'lib/capistrano/memcached'
@@ -23,5 +22,4 @@ end
 
 after "deploy:update_code", "deploy:link_configuration_files"
 after "deploy", "deploy:cleanup"
-after "deploy:symlink", "sphinx:symlink_stuff"
 

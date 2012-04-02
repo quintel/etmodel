@@ -25,5 +25,5 @@ end
 
 after "deploy:symlink", :roles => [:app] do
   sphinx.symlink_stuff
-  sphinx.rebuild_and_restart
+  # rake_on_current "thinking_sphinx:rebuild"
 end

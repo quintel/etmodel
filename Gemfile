@@ -24,7 +24,6 @@ gem 'therubyracer'
 
 # supporting gems
 gem 'airbrake', '~> 3.0.9'
-gem 'newrelic_rpm'
 
 # system gems
 gem 'thinking-sphinx', '~> 2.0.10'

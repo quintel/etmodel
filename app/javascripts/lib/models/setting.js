@@ -19,9 +19,8 @@ var Setting = Backbone.Model.extend({
   toggle_fce: function(){
     // there are 2 checkboxes!
     var use_fce = !!$(this).attr('checked');
-    console.log("FCE: " + use_fce);
     // update the other one
-    $("#inline_use_fce, #settings_use_fce").attr('checked', use_fce);
+    $(".inline_use_fce, #settings_use_fce").attr('checked', use_fce);
     App.settings.set({'use_fce' : use_fce});
     $('.fce_notice').toggle(use_fce);
     App.call_api();
@@ -45,13 +44,10 @@ var Setting = Backbone.Model.extend({
 });
 
 $(document).ready(function(){
+  // TODO: move somewhere else
   // store the current round (watt-nu)
   $("#round-selector input").change(function(){
     App.settings.set({current_round: $(this).val()});
     policy_goals.update_total_score();
   });
-  // update the use_fce checkbox inside descriptions as needed on page load
-  $("#inline_use_fce").attr('checked', App.settings.get('use_fce'));
-  // IE doesn't bubble onChange until the checkbox loses focus
-  $("#inline_use_fce, #settings_use_fce").click(App.settings.toggle_fce);
 });

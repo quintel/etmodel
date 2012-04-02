@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120322145930) do
+ActiveRecord::Schema.define(:version => 20120402122556) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -101,14 +101,10 @@ ActiveRecord::Schema.define(:version => 20120322145930) do
     t.integer  "input_id"
     t.string   "command_type"
     t.string   "related_converter"
-    t.integer  "position"
-    t.integer  "slide_id"
   end
 
   add_index "input_elements", ["command_type"], :name => "index_input_elements_on_command_type"
   add_index "input_elements", ["key"], :name => "unique api key", :unique => true
-  add_index "input_elements", ["position"], :name => "index_input_elements_on_position"
-  add_index "input_elements", ["slide_id"], :name => "index_input_elements_on_slide_id"
 
   create_table "output_element_series", :force => true do |t|
     t.integer  "output_element_id"
@@ -268,6 +264,15 @@ ActiveRecord::Schema.define(:version => 20120322145930) do
   add_index "sidebar_items", ["key"], :name => "index_sidebar_items_on_key"
   add_index "sidebar_items", ["position"], :name => "index_sidebar_items_on_position"
   add_index "sidebar_items", ["tab_id"], :name => "index_sidebar_items_on_tab_id"
+
+  create_table "slider_positions", :force => true do |t|
+    t.integer "slide_id"
+    t.integer "slider_id"
+    t.integer "position"
+  end
+
+  add_index "slider_positions", ["slide_id"], :name => "index_slider_positions_on_slide_id"
+  add_index "slider_positions", ["slider_id"], :name => "index_slider_positions_on_slider_id"
 
   create_table "slides", :force => true do |t|
     t.string   "image"

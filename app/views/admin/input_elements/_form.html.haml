@@ -17,10 +17,6 @@
       :hint => "This is used by the backcasting module"
     = f.input :related_converter,
       :hint => 'Optional key of the related converter. Used to show slider info'
-    = f.input :position,
-      :hint => "Position the slider should be shown on the page"
-    = f.association :slide,
-      :collection => Slide.all.map{|s| [s.short_name_for_admin, s.id]}
     = f.input :comments
     
     = f.simple_fields_for :area_dependency do |j|

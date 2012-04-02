@@ -5,15 +5,16 @@ class SlidesController < BaseController
   def index
     if params[:sidebar_item_id]
       @sidebar_item = SidebarItem.find params[:sidebar_item_id]
-      @slides = @sidebar_item.slides
+      @slides = @sidebar_item.slides.ordered
     else
-      @slides = Slide.all
+      @slides = Slide.order('sidebar_item_id, position')
     end
   end
 
   def new
     @slide = Slide.new
     @slide.build_description
+    @slide.slider_positions.build
   end
 
   def create
@@ -44,6 +45,7 @@ class SlidesController < BaseController
 
   def edit
     @slide.build_description unless @slide.description
+    @slide.slider_positions.build
   end
 
   private

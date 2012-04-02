@@ -11,7 +11,6 @@
       %th.tal Key
       %th.tal Converter
       %th.tal Comment
-      %th Ordering
       %th
 
   %tbody
@@ -23,7 +22,6 @@
         %td= i.key
         %td= i.related_converter
         %td= truncate(i.comments, :length => 100)
-        %td= i.position
         %td
           = link_to 'Edit', edit_admin_input_element_path(i)
           = link_to 'Delete', [:admin, i], :method => :delete, :confirm => 'Are you sure?'

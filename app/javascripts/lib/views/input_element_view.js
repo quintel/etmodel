@@ -214,18 +214,6 @@
       // element so the user can't do anything with it.
       if (this.model.get('min_value') >= this.model.get('max_value')) {
         this.model.set({ disabled: true }, { silent: true });
-
-        // Hack around ET-Engine using min and max at both "0" to indicate
-        // that the input is disabled in the current area. Quinn strictly
-        // enforces that the value *must* be between min and max, otherwise it
-        // falls back to setting a value of "0". We make sure that the value
-        // can be set by altering the min/max to equal the user value.
-        if (this.model.get('min_value') === 0 &&
-                this.model.get('max_value') === 0) {
-
-          this.model.set({ min_value: this.model.get('user_value') });
-          this.model.set({ max_value: this.model.get('user_value') });
-        }
       }
 
       // Keeps track of intervals used to repeat stepDown and stepUp

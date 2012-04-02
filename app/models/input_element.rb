@@ -20,8 +20,6 @@
 #
 
 class InputElement < ActiveRecord::Base
-  CONVERSIONS = YAML.load(Rails.root.join('db', 'unit_conversions.yml'))
-
   include AreaDependent
   has_paper_trail
 
@@ -80,15 +78,6 @@ class InputElement < ActiveRecord::Base
 
   def disabled
     fixed
-  end
-
-  # Retrieves an array of suitable unit conversions for the element. Allows
-  # the user to swap between different unit types in the UI.
-  #
-  # @return [Array(Hash)]
-  #
-  def conversions
-    CONVERSIONS[key] || Array.new
   end
 
   def available_predictions(area = nil)

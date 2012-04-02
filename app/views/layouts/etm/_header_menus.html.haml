@@ -48,10 +48,10 @@
         %label{:for => :track_peak_load_settings}= t('header.notify_of_grid_investments')
     - if Current.setting.allow_fce?
       %li
-        = check_box :use_fce, :settings, :onchange => 'App.settings.toggle_fce()', :checked => Current.setting.use_fce
+        = check_box :settings, :use_fce, :checked => Current.setting.use_fce
         %label{:for => :use_fce_settings}= t('fce.check')
     %li
-      = check_box :use_merit_order, :settings, :onchange => 'App.settings.toggle_merit_order()', :checked => Current.setting.use_merit_order
+      = check_box :settings, :use_merit_order, :onchange => 'App.settings.toggle_merit_order()', :checked => Current.setting.use_merit_order
       %label{:for => :use_merit_order}= t('header.toggle_merit_order')
 
 #information_menu.header_menu.topnav

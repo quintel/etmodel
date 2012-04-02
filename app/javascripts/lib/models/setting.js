@@ -16,22 +16,15 @@ var Setting = Backbone.Model.extend({
     return false;
   },
 
-  toggle_fce: function(param){
-    var use_fce;
-    if (param == undefined){
-      // if no parameter is send it should toggle
-      use_fce = !(App.settings.get('use_fce'));
-    } else {
-      use_fce = param;
-    }
-
-    if (use_fce != App.settings.get('use_fce')){
-      // only apply changes when the setting needs to change
-      App.settings.set({'use_fce' : use_fce});
-      $("input[name*=use_fce\\[settings\\]]").attr('checked', use_fce);
-      App.call_api();
-      $('.fce_notice').toggle(use_fce);
-    }
+  toggle_fce: function(){
+    // there are 2 checkboxes!
+    var use_fce = !!$(this).attr('checked');
+    console.log("FCE: " + use_fce);
+    // update the other one
+    $("#inline_use_fce, #settings_use_fce").attr('checked', use_fce);
+    App.settings.set({'use_fce' : use_fce});
+    $('.fce_notice').toggle(use_fce);
+    App.call_api();
   },
 
   toggle_peak_load_tracking: function(){
@@ -52,10 +45,13 @@ var Setting = Backbone.Model.extend({
 });
 
 $(document).ready(function(){
-  $("input[name*=use_fce\\[settings\\]]").attr('checked', App.settings.get('use_fce'));
   // store the current round (watt-nu)
   $("#round-selector input").change(function(){
     App.settings.set({current_round: $(this).val()});
     policy_goals.update_total_score();
   });
+  // update the use_fce checkbox inside descriptions as needed on page load
+  $("#inline_use_fce").attr('checked', App.settings.get('use_fce'));
+  // IE doesn't bubble onChange until the checkbox loses focus
+  $("#inline_use_fce, #settings_use_fce").click(App.settings.toggle_fce);
 });

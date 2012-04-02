@@ -8,6 +8,7 @@
       %th Position
       %th Sliders
       %th
+      %th
   %tbody
     - @slides.each do |s|
       %tr{:class => cycle('even', 'odd')}
@@ -18,4 +19,5 @@
         %td= s.position
         %td= link_to s.input_elements.count, admin_slide_input_elements_path(s)
         %td= link_to 'edit', edit_admin_slide_path(s.id)
+        %td= link_to 'open', s.url if s.url
 = link_to 'New slide' , new_admin_slide_path

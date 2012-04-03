@@ -9,6 +9,9 @@
         u = "joules"
         power += 3
       when "EUR" then u = "euro"
+      when "mln_euro"
+        u = "euro"
+        power += 2
       when "%" then return "%"
       when "MW"
         u = "watt"

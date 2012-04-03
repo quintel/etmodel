@@ -27,9 +27,9 @@ class @WaterfallChartView extends BaseChartView
       if serie.get('group') == 'value'
         # Take only the present value, as group == value queries only future/present
         # ?! - PZ
-        return present
+        return Metric.scale_value present, scale
       else
-        return future
+        return Metric.scale_value future, scale
     [series]
 
   render_waterfall: =>
@@ -65,4 +65,4 @@ class @WaterfallChartView extends BaseChartView
           rendererOptions:
             forceTickAt0: true # we always want a tick a 0
           tickOptions:
-            formatString: "%.0f&nbsp;#{@model.get('unit')}"
+            formatString: "%.#{@significant_digits()}f&nbsp;#{@parsed_unit()}"

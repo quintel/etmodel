@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 15:52:54 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 03 Apr 2012 13:51:04 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/waterfall_chart_view.coffee
  */
 
@@ -51,9 +51,9 @@
         present = serie.present_value();
         future = serie.future_value();
         if (serie.get('group') === 'value') {
-          return present;
+          return Metric.scale_value(present, scale);
         } else {
-          return future;
+          return Metric.scale_value(future, scale);
         }
       });
       return [series];
@@ -100,7 +100,7 @@
               forceTickAt0: true
             },
             tickOptions: {
-              formatString: "%.0f&nbsp;" + (this.model.get('unit'))
+              formatString: "%." + (this.significant_digits()) + "f&nbsp;" + (this.parsed_unit())
             }
           }
         }

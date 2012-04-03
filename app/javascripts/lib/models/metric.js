@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 14:58:01 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 03 Apr 2012 13:56:19 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/metric.coffee
  */
 
@@ -15,6 +15,10 @@
           break;
         case "EUR":
           u = "euro";
+          break;
+        case "mln_euro":
+          u = "euro";
+          power += 2;
           break;
         case "%":
           return "%";

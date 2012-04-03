@@ -4,4 +4,8 @@ class Api::Scenario < ActiveResource::Base
   def country
     attributes[:country].present? ? attributes[:country] : region.split("-").first
   end
+
+  def wattnu?
+    title && title =~ /Watt Nu/
+  end
 end

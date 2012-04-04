@@ -1,4 +1,3 @@
-//= require <old/etm.blockchart.js>
 //= require <old/etm.fancybox.js>
 //= require <old/etm.flash.js>
 //= require <old/etm.header_menu.js>

@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 04 Apr 2012 12:58:00 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 04 Apr 2012 13:29:13 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/block_chart_view.coffee
  */
 
@@ -17,12 +17,14 @@
     }
 
     BlockChartView.prototype.initialize = function() {
-      return this.initialize_defaults();
+      this.initialize_defaults();
+      return this.setup_callbacks();
     };
 
     BlockChartView.prototype.render = function() {
       $("a.select_chart").hide();
       $("a.toggle_chart_format").hide();
+      this.setup_checkboxes();
       return update_block_charts(this.model.series.map(function(serie) {
         return serie.result();
       }));
@@ -32,6 +34,32 @@
       return false;
     };
 
+    BlockChartView.prototype.setup_callbacks = function() {
+      bind_hovers();
+      return $('.show_hide_block').click(function() {
+        var block_id;
+        block_id = $(this).attr('data-block_id');
+        toggle_block(block_id);
+        align_checkbox(block_id);
+        return false;
+      });
+    };
+
+    BlockChartView.prototype.setup_checkboxes = function() {
+      var item, _i, _len, _ref, _results;
+      _ref = $(".block_list_checkbox");
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        item = _ref[_i];
+        if ($(item).parent().find('.visible').length > 0) {
+          _results.push($(item).attr('checked', true));
+        } else {
+          _results.push(void 0);
+        }
+      }
+      return _results;
+    };
+
     
   
 //global variables
@@ -39,40 +67,22 @@
 var current_z_index = 5;
 var global_data_array = [];
 
-
 $(document).ready(function(){
-
-  bind_hovers();
-  
-  $('.show_hide_block').click(function(){
-     //substract nummer from element id
-     var block_id = $(this).attr('id').substring(16,999);
-     toggle_block(block_id);
-     align_checkbox(block_id);
-     return false;
-  });
 
   $('.block_list_checkbox').click(function(){
     if( $(this).is(':checked') ){
       $(this).parent().find('.show_hide_block').each(function(){
-        var block_id = $(this).attr('id').substring(16,999);
+        var block_id = $(this).attr('data-block_id');
         show_block(block_id);
       });
     }
     else{
       $(this).parent().find('.show_hide_block').each(function(){
-        var block_id = $(this).attr('id').substring(16,999);
+        var block_id = $(this).attr('data-block_id');
         hide_block(block_id);
       });
     }
   })
-  //determine by children whether it should be checked when page is loaded
-  .each(function(){ 
-    if( $(this).parent().find('.visible').length > 0 ){
-      $(this).attr('checked', true);
-    }
-  });
-
 });
 
 

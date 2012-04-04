@@ -1,14 +1,29 @@
 class @BlockChartView extends BaseChartView
   initialize: ->
     @initialize_defaults()
+    @setup_callbacks()
 
   render: =>
     $("a.select_chart").hide()
     $("a.toggle_chart_format").hide()
+    @setup_checkboxes()
     update_block_charts(@model.series.map (serie) -> serie.result())
 
   can_be_shown_as_table: -> false
 
+  setup_callbacks: ->
+    bind_hovers()
+    $('.show_hide_block').click ->
+      block_id = $(this).attr('data-block_id')
+      toggle_block(block_id)
+      align_checkbox(block_id)
+      false
+
+
+  setup_checkboxes: ->
+    for item in $(".block_list_checkbox")
+      if $(item).parent().find('.visible').length > 0
+        $(item).attr('checked', true)
 
   `
   
@@ -17,40 +32,22 @@ class @BlockChartView extends BaseChartView
 var current_z_index = 5;
 var global_data_array = [];
 
-
 $(document).ready(function(){
-
-  bind_hovers();
-  
-  $('.show_hide_block').click(function(){
-     //substract nummer from element id
-     var block_id = $(this).attr('id').substring(16,999);
-     toggle_block(block_id);
-     align_checkbox(block_id);
-     return false;
-  });
 
   $('.block_list_checkbox').click(function(){
     if( $(this).is(':checked') ){
       $(this).parent().find('.show_hide_block').each(function(){
-        var block_id = $(this).attr('id').substring(16,999);
+        var block_id = $(this).attr('data-block_id');
         show_block(block_id);
       });
     }
     else{
       $(this).parent().find('.show_hide_block').each(function(){
-        var block_id = $(this).attr('id').substring(16,999);
+        var block_id = $(this).attr('data-block_id');
         hide_block(block_id);
       });
     }
   })
-  //determine by children whether it should be checked when page is loaded
-  .each(function(){ 
-    if( $(this).parent().find('.visible').length > 0 ){
-      $(this).attr('checked', true);
-    }
-  });
-
 });
 
 

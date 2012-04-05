@@ -15,7 +15,7 @@ class @HtmlTableChartView extends BaseChartView
   # and eventually show multiple tables at the same time
   #
   table_html: ->
-    charts.tables_html[@model.get("id")]
+    charts.html[@model.get("id")]
 
   # normal charts have their series added when the /output_element/X.js
   # action is called. Tables have the gqueries defined in the markup instead.

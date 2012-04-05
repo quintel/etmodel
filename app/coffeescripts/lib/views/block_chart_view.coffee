@@ -1,14 +1,21 @@
 class @BlockChartView extends BaseChartView
   initialize: ->
-    @current_z_index = 5
     @initialize_defaults()
-    @setup_callbacks()
+    @current_z_index = 5
 
   render: =>
-    $("a.select_chart").hide()
-    $("a.toggle_chart_format").hide()
-    @setup_checkboxes()
+    unless @already_on_screen()
+      @clear_container()
+      @container_node().html(@html())
+      @setup_checkboxes()
+      @setup_callbacks()
+      @hide_format_toggler()
     @update_block_charts()
+
+  already_on_screen: =>
+    @container_node().find("#blockchart").length == 1
+
+  html: => charts.html[@model.get('id')]
 
   results: =>
     @model.series.map (serie) -> serie.result()
@@ -71,7 +78,6 @@ class @BlockChartView extends BaseChartView
         $("#tooltip").stop()
       )
 
-
   show_block: (block_id) =>
     $('#canvas').find('#block_container_'+block_id).removeClass('invisible').addClass('visible').css({'z-index':@current_z_index})
     $('#block_list #show_hide_block_'+block_id).addClass('visible').removeClass('invisible')
@@ -88,7 +94,7 @@ class @BlockChartView extends BaseChartView
       url: "/output_elements/invisible/block_"+block_id
       method: 'post'
     @update_block_charts()
-  
+
   update_block_charts: =>
     data_array = @results()
     # max values check

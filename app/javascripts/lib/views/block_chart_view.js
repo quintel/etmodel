@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 04 Apr 2012 14:23:44 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 05 Apr 2012 09:44:15 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/block_chart_view.coffee
  */
 
@@ -17,21 +17,34 @@
       this.show_block = __bind(this.show_block, this);
       this.setup_callbacks = __bind(this.setup_callbacks, this);
       this.results = __bind(this.results, this);
+      this.html = __bind(this.html, this);
+      this.already_on_screen = __bind(this.already_on_screen, this);
       this.render = __bind(this.render, this);
       BlockChartView.__super__.constructor.apply(this, arguments);
     }
 
     BlockChartView.prototype.initialize = function() {
-      this.current_z_index = 5;
       this.initialize_defaults();
-      return this.setup_callbacks();
+      return this.current_z_index = 5;
     };
 
     BlockChartView.prototype.render = function() {
-      $("a.select_chart").hide();
-      $("a.toggle_chart_format").hide();
-      this.setup_checkboxes();
+      if (!this.already_on_screen()) {
+        this.clear_container();
+        this.container_node().html(this.html());
+        this.setup_checkboxes();
+        this.setup_callbacks();
+        this.hide_format_toggler();
+      }
       return this.update_block_charts();
+    };
+
+    BlockChartView.prototype.already_on_screen = function() {
+      return this.container_node().find("#blockchart").length === 1;
+    };
+
+    BlockChartView.prototype.html = function() {
+      return charts.html[this.model.get('id')];
     };
 
     BlockChartView.prototype.results = function() {

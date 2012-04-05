@@ -32,12 +32,16 @@ EOJS
     out.html_safe
   end
 
-  # JS needs the html of the table. This method returns it
+  # Some charts need custom HTML. This method returns it
   # as a JS-safe string
   # See app/views/admin/output_elements/show.html.haml
   # app/views/output_elements/show.js.erb
-  def js_render_html_table(chart)
-    html = render "output_elements/tables/chart_#{chart.id}"
-    escape_javascript(html)
+  def js_render_chart(chart)
+    template = if chart.html_table?
+      "output_elements/tables/chart_#{chart.id}"
+    else
+      "output_elements/block_chart"
+    end
+    escape_javascript(render template)
   end
 end

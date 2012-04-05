@@ -13,9 +13,9 @@ class @PolicyBarChartView extends BaseChartView
     out
 
   result_serie2: ->
-    _.map @result_serie1(), (r) -> 100 - r
+    _.map @result_serie1(), (r) -> (100 - r)
 
-  results: => [@result_serie1(), @result_serie1()]
+  results: => [@result_serie1(), @result_serie2()]
 
   ticks: ->
     ticks = []
@@ -43,7 +43,7 @@ class @PolicyBarChartView extends BaseChartView
         yaxis:'y2axis',
         shadow: @defaults.shadow
       series:
-        [{pointLabels: {ypadding: -15}}, {pointLabels: {ypadding: 9000}}] # this hack will push the labels for the top series off of the page so they don't appear
+        [{pointLabels: {ypadding: -18}}, {pointLabels: {ypadding: 9000}}] # this hack will push the labels for the top series off of the page so they don't appear
       axesDefaults:
         tickOptions:
           fontSize: @defaults.font_size

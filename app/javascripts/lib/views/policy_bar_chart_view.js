@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 15:01:41 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 05 Apr 2012 10:01:31 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/policy_bar_chart_view.coffee
  */
 
@@ -46,7 +46,7 @@
     };
 
     PolicyBarChartView.prototype.results = function() {
-      return [this.result_serie1(), this.result_serie1()];
+      return [this.result_serie1(), this.result_serie2()];
     };
 
     PolicyBarChartView.prototype.ticks = function() {
@@ -85,7 +85,7 @@
         series: [
           {
             pointLabels: {
-              ypadding: -15
+              ypadding: -18
             }
           }, {
             pointLabels: {

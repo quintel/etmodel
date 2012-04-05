@@ -1,5 +1,5 @@
-/* DO NOT MODIFY. This file was compiled Thu, 05 Apr 2012 08:59:13 GMT from
- * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/chart.coffee
+/* DO NOT MODIFY. This file was compiled Thu, 05 Apr 2012 12:14:52 GMT from
+ * /Users/paozac/Sites/etmodel/app/assets/coffeescripts/lib/models/chart.coffee
  */
 
 (function() {

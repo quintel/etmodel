@@ -1,5 +1,5 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 15:01:41 GMT from
- * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/scatter_chart_view.coffee
+/* DO NOT MODIFY. This file was compiled Thu, 05 Apr 2012 12:14:52 GMT from
+ * /Users/paozac/Sites/etmodel/app/assets/coffeescripts/lib/views/scatter_chart_view.coffee
  */
 
 (function() {

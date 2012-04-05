@@ -1,5 +1,5 @@
-/* DO NOT MODIFY. This file was compiled Tue, 03 Apr 2012 13:51:04 GMT from
- * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/waterfall_chart_view.coffee
+/* DO NOT MODIFY. This file was compiled Thu, 05 Apr 2012 12:14:52 GMT from
+ * /Users/paozac/Sites/etmodel/app/assets/coffeescripts/lib/views/waterfall_chart_view.coffee
  */
 
 (function() {

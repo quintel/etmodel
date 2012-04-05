@@ -1,5 +1,5 @@
-/* DO NOT MODIFY. This file was compiled Mon, 19 Mar 2012 14:35:29 GMT from
- * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/gquery.coffee
+/* DO NOT MODIFY. This file was compiled Thu, 05 Apr 2012 12:14:52 GMT from
+ * /Users/paozac/Sites/etmodel/app/assets/coffeescripts/lib/models/gquery.coffee
  */
 
 (function() {

@@ -2,7 +2,10 @@ require 'rack/sprockets'
 
 
 Rails.application.config.middleware.use Rack::Sprockets,
-                      :load_path => ["app/assets/javascripts/", "app/assets/javascripts/generated", "vendor/javascripts/**/src"],
+                      :load_path => ["app/assets/javascripts",
+                        "app/assets/javascripts/generated",
+                        "app/vendor/javascripts",
+                        "vendor/javascripts/**/src"],
                       :source => ['app/assets/javascripts/init'],
                       :hosted_at => '/sprockets'
 

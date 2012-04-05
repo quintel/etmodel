@@ -1,5 +1,5 @@
-/* DO NOT MODIFY. This file was compiled Mon, 02 Apr 2012 08:37:02 GMT from
- * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/constraint_view.coffee
+/* DO NOT MODIFY. This file was compiled Thu, 05 Apr 2012 12:14:52 GMT from
+ * /Users/paozac/Sites/etmodel/app/assets/coffeescripts/lib/views/constraint_view.coffee
  */
 
 (function() {

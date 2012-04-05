@@ -1,5 +1,5 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 08:24:57 GMT from
- * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/sidebar_view.coffee
+/* DO NOT MODIFY. This file was compiled Thu, 05 Apr 2012 12:14:52 GMT from
+ * /Users/paozac/Sites/etmodel/app/assets/coffeescripts/lib/views/sidebar_view.coffee
  */
 
 (function() {

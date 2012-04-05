@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-  layout 'pages'
   include ApplicationHelper
   before_filter :ensure_valid_browser, :except => [:browser_support, :disable_browser_check]
   before_filter :defaults
@@ -19,7 +18,7 @@ class PagesController < ApplicationController
     Rails.cache.clear
     render :text => 'ok', :layout => false
   end
-  
+
   def choose
     if request.post?
       assign_settings_and_redirect
@@ -51,7 +50,6 @@ public
 
   def intro
     @render_tabs = true
-    render :layout => 'pages'
   end
 
   def press_releases
@@ -100,7 +98,6 @@ public
   ######################################
 
   def browser_support
-    render :layout => 'pages'
   end
 
   def disable_browser_check

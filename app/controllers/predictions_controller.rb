@@ -23,7 +23,7 @@ class PredictionsController < ApplicationController
     @comment = Comment.new
     @comment.commentable = @prediction
     @end_year = 2050
-    render :layout => 'pages', :action => 'index'
+    render :action => 'index'
   end
 
   def show

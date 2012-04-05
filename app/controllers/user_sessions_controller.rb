@@ -1,5 +1,4 @@
 class UserSessionsController < ApplicationController
-  layout 'pages'
   def index
     @user_session = UserSession.new
     render :action=>"new"
@@ -57,9 +56,9 @@ class UserSessionsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
-  private 
-  
+
+  private
+
   # TODO better check for invalid data
   def valid_redirect?(redirect)
     !redirect.blank? && !redirect.include?('http://')

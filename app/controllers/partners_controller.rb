@@ -1,6 +1,4 @@
 class PartnersController < ApplicationController
-  layout 'pages'
-
   def show
     country = Current.setting.country rescue nil
     @partner = Partner.find_by_slug_localized(params[:id], country)

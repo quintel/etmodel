@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  layout 'pages'
-  
   def index
     @user = User.new
     render :action=>"new"

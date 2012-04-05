@@ -1,6 +1,4 @@
 class ScenariosController < ApplicationController
-  layout 'pages'
-
   before_filter :ensure_valid_browser
   before_filter :find_scenario, :only => [:show, :load]
   before_filter :require_user, :only => [:index, :new]

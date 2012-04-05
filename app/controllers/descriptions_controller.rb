@@ -1,5 +1,4 @@
 class DescriptionsController < ApplicationController
-
   def show
     @description = Description.find(params[:id]) rescue nil
     if @description.nil? || @description.title.blank?

@@ -1,4 +1,5 @@
 class OutputElementsController < ApplicationController
+  layout false
   before_filter :find_output_element, :only => [:show, :select_chart, :default_chart]
 
   def show

@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 26 Mar 2012 10:04:57 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 05 Apr 2012 08:57:05 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/html_table_chart_view.coffee
  */
 
@@ -30,7 +30,7 @@
     };
 
     HtmlTableChartView.prototype.table_html = function() {
-      return charts.tables_html[this.model.get("id")];
+      return charts.html[this.model.get("id")];
     };
 
     HtmlTableChartView.prototype.build_gqueries = function() {

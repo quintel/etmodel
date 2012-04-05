@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 02 Apr 2012 09:35:49 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 05 Apr 2012 08:59:13 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/models/chart.coffee
  */
 
@@ -226,7 +226,7 @@
       return this.setup_callbacks();
     };
 
-    ChartList.prototype.tables_html = {};
+    ChartList.prototype.html = {};
 
     ChartList.prototype.change = function(chart) {
       var old_chart;

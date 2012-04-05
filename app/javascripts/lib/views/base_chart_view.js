@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Mar 2012 15:57:33 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 05 Apr 2012 09:44:15 GMT from
  * /Users/paozac/Sites/etmodel/app/coffeescripts/lib/views/base_chart_view.coffee
  */
 
@@ -13,6 +13,7 @@
 
     function BaseChartView() {
       this.render_as_table = __bind(this.render_as_table, this);
+      this.hide_format_toggler = __bind(this.hide_format_toggler, this);
       this.significant_digits = __bind(this.significant_digits, this);
       BaseChartView.__super__.constructor.apply(this, arguments);
     }
@@ -118,6 +119,10 @@
       } else {
         return this.render();
       }
+    };
+
+    BaseChartView.prototype.hide_format_toggler = function() {
+      return $("a.toggle_chart_format").hide();
     };
 
     BaseChartView.prototype.can_be_shown_as_table = function() {

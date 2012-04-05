@@ -73,6 +73,8 @@ class @BaseChartView extends Backbone.View
     else
       @render()
 
+  hide_format_toggler: => $("a.toggle_chart_format").hide()
+
   can_be_shown_as_table: -> true
 
   render_as_table: =>

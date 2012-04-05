@@ -6,4 +6,4 @@
 //= require <old/etm.intro.js>
 //= require <old/etm.logos.js>
 //= require <old/etm.page_title>
-//= require <old/etm.partners>
+//= require <partners>

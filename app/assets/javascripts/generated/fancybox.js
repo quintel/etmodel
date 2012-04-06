@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 06 Apr 2012 13:32:03 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 06 Apr 2012 13:39:48 GMT from
  * /Users/paozac/Sites/etmodel/app/assets/coffeescripts/fancybox.coffee
  */
 
@@ -88,21 +88,6 @@
         return $("#fancybox-inner").css({
           'overflow-x': 'hidden'
         });
-      }
-    });
-    $(this).trigger('click');
-    return false;
-  });
-
-  $("a.expert_header").live('click', function() {
-    $(this).fancybox({
-      width: 970,
-      height: 650,
-      titleShow: false,
-      padding: 0,
-      scrolling: 'no',
-      ajax: {
-        type: "GET"
       }
     });
     $(this).trigger('click');

@@ -55,18 +55,6 @@ $ ->
     $(this).trigger('click')
     return false
 
-  $("a.expert_header").live 'click', ->
-    $(this).fancybox
-      width    : 970
-      height   : 650
-      titleShow: false
-      padding  : 0
-      scrolling: 'no'
-      ajax:
-        type: "GET"
-    $(this).trigger('click')
-    return false
-
   $("a.prediction").live 'click', ->
     $(this).fancybox
       width    : 960

@@ -6,4 +6,4 @@
 //= require <old>
 //= require <intro>
 //= require <lib/util/util>
-
+//= require <fancybox>

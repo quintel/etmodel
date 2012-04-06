@@ -10,3 +10,4 @@
 //= require <lib/models.js>
 //= require <lib/app.js>
 //= require <intro>
+//= require <fancybox>

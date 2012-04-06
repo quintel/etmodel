@@ -1,15 +1,9 @@
-= sprocket_page_init :testimonials
+- content_for :head do
+  = sprocket_include_tag :testimonials
 
-
-<!-- configure entries inside playlist using standard HTML --> 
 = back_to_model_link
 #page_wrapper{:style=>"margin-top:120px"}
-  
   %h1 Testimonials
-
   = t_db("testimonials")
 %div{:style=>"clear:both"}
   = back_to_model_link
-%script
-  <!-- this will install flowplayer inside previous A- tag. -->
-  

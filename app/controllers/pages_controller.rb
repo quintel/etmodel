@@ -114,10 +114,8 @@ public
     if params[:feedback]
       if /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i.match(params[:feedback][:email])
         @options = params[:feedback]
-        spawn do #use spawn to create a bg process for sending mail
-          Notifier.feedback_mail(@options).deliver
-          Notifier.feedback_mail_to_sender(@options).deliver
-        end
+        Notifier.feedback_mail(@options).deliver
+        Notifier.feedback_mail_to_sender(@options).deliver
 
         render :update do |page|
           page.call "$.fancybox.close"

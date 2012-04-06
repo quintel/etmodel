@@ -9,3 +9,4 @@
 //= require <lib/views.js>
 //= require <lib/models.js>
 //= require <lib/app.js>
+//= require <intro>

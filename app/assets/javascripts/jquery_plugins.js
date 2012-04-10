@@ -6,3 +6,4 @@
 //= require jquery.easing-1.3
 //= require jquery.cycle
 //= require jquery.busybox
+//= require jquery.hoverIntent.min

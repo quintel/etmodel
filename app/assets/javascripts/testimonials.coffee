@@ -1,4 +1,5 @@
 $ ->
+  return if $("#player1").length == 0
   # setup player without "internal" playlists
   $f("player1", "/flash/flowplayer-3.2.6.swf", {
     clip: {

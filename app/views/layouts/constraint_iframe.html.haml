@@ -4,11 +4,10 @@
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
     %meta{ :name => "robots", :content => "noindex"}
     %title API
-    = stylesheet_link_tag "application"
-    = javascript_include_tag 'application'
     = render "layouts/etm/javascript_globals"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag 'etm'
     :javascript
       App.settings = new Setting(#{Current.setting.to_json.html_safe});
   %body
     = yield
-    

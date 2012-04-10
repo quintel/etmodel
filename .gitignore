@@ -8,22 +8,18 @@ config/config.yml
 doc/*
 public/tmp/*
 public/packages/*
-public/javascripts/all.js
-public/javascripts/cache_*.js
-public/stylesheets/*.css
+public/assets/*
 public/system/*
 public/flowplayer/*
 public/videos/*
 tmp/*
 public/images/converter_12*
 import/*
-public/assets
 public/.DS_Store
 etm*.sql
 public/doc
 vendor/bundle
 .bundle
-public/sprockets
 *.tmproj
 .powrc
 .tmtags
@@ -34,7 +30,3 @@ coverage/*
 spec/controllers/coverage/*
 spec/models/coverage/*
 .sass-cache/*
-
-# Quinn stylesheet needs to be tracked, at least until Rails 3.1 when it
-# can be used straight from vendor/
-!public/stylesheets/quinn.css

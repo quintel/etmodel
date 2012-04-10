@@ -5,7 +5,7 @@ require ::File.expand_path('../config/environment',  __FILE__)
 # In production the proxying is handled directly by nginx.
 # 
 if APP_CONFIG[:local_proxy] 
-  require 'lib/rack_proxy'
+  require "#{Rails.root}/lib/rack_proxy"
   proxy_url = APP_CONFIG[:api_proxy_url]
 
   use Rack::Proxy do |req|

@@ -7,7 +7,6 @@
     = stylesheet_link_tag "application"
     = javascript_include_tag 'application'
     = render "layouts/etm/javascript_globals"
-    = sprocket_layout_init :etm
     :javascript
       App.settings = new Setting(#{Current.setting.to_json.html_safe});
   %body

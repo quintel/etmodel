@@ -15,3 +15,4 @@
 //= require flowplayer.playlist-3.0.8.min
 //= require fancybox
 //= require testimonials
+//= require admin

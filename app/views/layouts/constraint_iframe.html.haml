@@ -9,5 +9,5 @@
     = javascript_include_tag 'etm'
     :javascript
       App.settings = new Setting(#{Current.setting.to_json.html_safe});
-  %body
+  %body.constraint_popup
     = yield

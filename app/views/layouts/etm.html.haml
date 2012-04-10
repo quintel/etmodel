@@ -7,13 +7,9 @@
     %meta{:'http-equiv'=>"X-UA-Compatible", :content=>"IE=7"}
     = csrf_meta_tag
     %title= t("meta.title").force_encoding("UTF-8")
-    = stylesheet_link_tag 'all',"vendor/jquery.fancybox-1.3.1","vendor/jquery.jqplot", 'quinn', :cache => 'cache_all'
-    = javascript_include_tag :defaults, :cache => true
+    = stylesheet_link_tag 'application'
     = render "layouts/etm/javascript_globals"
-    = javascript_include_tag 'underscore.min'
-    = sprocket_layout_init :etm
-    = javascript_include_tag 'i18n'
-    = javascript_include_tag 'translations'
+    = javascript_include_tag 'etm'
 
     /[if lte IE 8]
       %link(rel="stylesheet" type="text/css" href="/stylesheets/ie7.css")

@@ -51,11 +51,11 @@ class Partner < ActiveRecord::Base
   end
 
   def logo
-    "/images/partners/#{name.downcase.gsub(' ', '_')}.png"
+    "/assets/partners/#{name.downcase.gsub(' ', '_')}.png"
   end
 
   def footer_logo
-    "/images/layout/ico-#{name.downcase.gsub(' ', '_')}-inner.png"
+    "/assets/layout/ico-#{name.downcase.gsub(' ', '_')}-inner.png"
   end
 
   def link

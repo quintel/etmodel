@@ -46,6 +46,8 @@ module Etm
       g.template_engine :haml
       g.test_framework  :rspec, :fixture => false
     end
+
+    config.assets.enabled = true
   end
 
   LOCALES_DIRECTORY = "#{Rails.root}/config/locales"

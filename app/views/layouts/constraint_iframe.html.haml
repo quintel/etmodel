@@ -4,11 +4,9 @@
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
     %meta{ :name => "robots", :content => "noindex"}
     %title API
-    = stylesheet_link_tag "vendor/jquery.jqplot"
-    = stylesheet_link_tag "constraint_popup"
-    = javascript_include_tag :defaults, :cache => true
+    = stylesheet_link_tag "application"
+    = javascript_include_tag 'application'
     = render "layouts/etm/javascript_globals"
-    = javascript_include_tag 'underscore.min', 'i18n', 'translations'
     = sprocket_layout_init :etm
     :javascript
       App.settings = new Setting(#{Current.setting.to_json.html_safe});

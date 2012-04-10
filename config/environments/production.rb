@@ -33,4 +33,10 @@ Etm::Application.configure do
   # Make Haml faster in production mode
   Haml::Template::options[:ugly] = true
 
+  config.serve_static_assets = false
+  config.assets.compress = true
+  config.assets.digest = true
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
+
+  config.i18n.fallbacks = true
 end

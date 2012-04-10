@@ -15,8 +15,8 @@ namespace :deploy do
   task :link_configuration_files do
     run "ln -s #{shared_path}/config/config.yml #{release_path}/config/"
     run "ln -s #{shared_path}/config/database.yml #{release_path}/config/"
-    run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
-    run "ln -nfs #{shared_path}/assets/videos #{release_path}/public/videos"
+    run "ln -nfs #{shared_path}/media #{release_path}/public/media"
+    run "ln -nfs #{shared_path}/media/videos #{release_path}/public/videos"
   end
 end
 

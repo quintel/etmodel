@@ -51,6 +51,7 @@ module Etm
     config.assets.precompile += ['etm.js', 'refreshed.js', 'refreshed.css', 'admin.css']
     config.assets.css_compressor = :yui
     config.assets.js_compressor = :uglifier
+    config.assets.compress = true
   end
 
   LOCALES_DIRECTORY = "#{Rails.root}/config/locales"

@@ -46,7 +46,7 @@ class Slide < ActiveRecord::Base
   end
 
   def image_path
-    "/images/layout/#{image}" if image.present?
+    "/assets/layout/#{image}" if image.present?
   end
 
   def title_for_description

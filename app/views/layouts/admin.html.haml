@@ -4,7 +4,7 @@
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
     %title
       EnergyTransitionModel
-    = stylesheet_link_tag 'admin'
+    = stylesheet_link_tag 'application', 'admin'
     = javascript_include_tag 'admin'
     = yield :head
   %body#model{:class => "#{controller_name}_#{controller.action_name}"}

@@ -65,10 +65,8 @@ public
   end
 
   def select_movie
-    render :update do |page|
-      page["#movie_content"].html(render 'movie', :page => params[:id])
-      page.call('set_active_tab', params[:id])
-    end
+    request.format = 'js'
+    # check view
   end
 
   def show_all_countries

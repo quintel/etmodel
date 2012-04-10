@@ -54,13 +54,7 @@ module Etm
     config.assets.compress = true
   end
 
-  LOCALES_DIRECTORY = "#{Rails.root}/config/locales"
-  LOCALES_AVAILABLE = Dir["#{LOCALES_DIRECTORY}/*.{rb,yml}"].collect do |locale_file|
-    I18n.load_path << locale_file
-    File.basename(File.basename(locale_file, ".rb"), ".yml")
-  end
   Date::DATE_FORMATS[:default] = "%d-%m-%Y"
 end
 
 ALLOWED_BROWSERS = %w[firefox ie10 ie9 ie8 ie7 chrome safari]
-GC_DISABLING_HACK_ENABLED = true

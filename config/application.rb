@@ -48,7 +48,7 @@ module Etm
     end
 
     config.assets.enabled = true
-    config.assets.precompile += ['etm.js']
+    config.assets.precompile += ['etm.js', 'refreshed.js', 'refreshed.css', 'admin.css']
     config.assets.css_compressor = :yui
     config.assets.js_compressor = :uglifier
   end

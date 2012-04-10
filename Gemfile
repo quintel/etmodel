@@ -14,8 +14,6 @@ gem 'acts_as_commentable'
 
 # javascript
 gem 'i18n-js'
-gem 'barista'
-gem 'therubyracer'
 
 # supporting gems
 gem 'airbrake', '~> 3.0.9'

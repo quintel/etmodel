@@ -1,6 +1,7 @@
 class OutputElementsController < ApplicationController
   layout false
   before_filter :find_output_element, :only => [:show, :select_chart, :default_chart]
+  before_filter :default_format_js, :only => [:default_chart, :select_chart]
 
   def show
     respond_to do |format|
@@ -13,24 +14,22 @@ class OutputElementsController < ApplicationController
 
   def select_chart
     Current.setting.selected_output_element = @output_element.id
-    render_chart(@output_element)
+    render 'load'
   end
 
   def default_chart
     Current.setting.selected_output_element = nil
-    render_chart(@output_element)
+    render 'load'
   end
 
   def invisible
     session[params[:id]] = 'invisible'
-    render :update do |page|
-    end
+    render :js => ""
   end
 
   def visible
     session[params[:id]] = 'visible'
-    render :update do |page|
-    end
+    render :js => ""
   end
 
   private
@@ -39,9 +38,8 @@ class OutputElementsController < ApplicationController
     @output_element = OutputElement.find(params[:id])
   end
 
-  def render_chart(output_element)
-    render :update do |page|
-      page.call("window.charts.load", output_element.id) unless output_element.block_chart?
-    end
+  # otherwise rails won't render the js.erb views
+  def default_format_js
+    request.format = "js" unless params[:format]
   end
 end

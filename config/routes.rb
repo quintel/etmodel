@@ -3,7 +3,7 @@ Etm::Application.routes.draw do
   get "gql/search"
 
   root :to => 'pages#choose'
-  
+
   match '/choose' => 'pages#choose'
   match '/pro' => 'pages#root'
 
@@ -21,7 +21,9 @@ Etm::Application.routes.draw do
   match 'house_selections/tool'  => 'house_selections#tool',  :as => :house_selection_tool
   match 'house_selections/set'   => 'house_selections#set',   :as => :house_selection_set
   match 'house_selections/apply' => 'house_selections#apply', :as => :house_selection_apply
+
   match 'house_selections/clear' => 'house_selections#clear', :as => :house_selection_clear
+
 
   match 'login'  => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout

@@ -1,0 +1,9 @@
+<% if @labels_ready %>
+  $("#house_selection").html(<%= escape_javascript render("house_selections/result")%>);
+<% else %>
+  <% if @house_type == 'new' %>
+    show_existing_houses_tab();
+  <% else %>
+    show_new_houses_tab();
+  <% end %>
+<% end %>

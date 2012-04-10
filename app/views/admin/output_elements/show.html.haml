@@ -39,11 +39,8 @@
     Chart
 
 - content_for :head do
-  = stylesheet_link_tag "vendor/jquery.jqplot"
-  = javascript_include_tag :defaults, :cache => true
   = render "layouts/etm/javascript_globals"
-  = javascript_include_tag 'underscore.min', 'i18n', 'translations'
-  = sprocket_layout_init :etm
+  = javascript_include_tag 'etm'
   :javascript
     App.settings = new Setting(#{Current.setting.to_json.html_safe});
     charts.tables_html[#{@output_element.id}] = '#{js_render_html_table(@output_element) if @output_element.html_table?}'

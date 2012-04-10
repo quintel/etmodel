@@ -48,6 +48,7 @@ module Etm
     end
 
     config.assets.enabled = true
+    config.assets.precompile += ['etm.js']
   end
 
   LOCALES_DIRECTORY = "#{Rails.root}/config/locales"

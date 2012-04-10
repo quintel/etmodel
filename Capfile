@@ -14,8 +14,8 @@ load 'config/deploy' # remove this line to skip loading any of the default tasks
 
 namespace :deploy do
   task :link_configuration_files do
-    run "ln -s #{shared_path}/config/config.yml #{release_path}/config/"
-    run "ln -s #{shared_path}/config/database.yml #{release_path}/config/"
+    run "ln -sf #{shared_path}/config/config.yml #{release_path}/config/"
+    run "ln -sf #{shared_path}/config/database.yml #{release_path}/config/"
     run "ln -nfs #{shared_path}/media #{release_path}/public/media"
     run "ln -nfs #{shared_path}/media/videos #{release_path}/public/videos"
   end

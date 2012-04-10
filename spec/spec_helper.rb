@@ -3,14 +3,14 @@ if ENV["COVERAGE"]
   SimpleCov.start do
     add_group "Models", "app/models"
     add_group "Controllers", "app/controllers"
-  end  
+  end
 end
 
 require 'rubygems'
 require 'spork'
 
 Spork.prefork do
-  # Loading more in this block will cause your tests to run faster. However, 
+  # Loading more in this block will cause your tests to run faster. However,
   # if you change any configuration or code from libraries loaded here, you'll
   # need to restart spork for it take effect.
   ENV["RAILS_ENV"] ||= 'test'
@@ -42,12 +42,11 @@ Spork.prefork do
 
     config.include(CustomMatchers)
     config.include(EtmHelper)
-    config.include(EtmFixtures)
     config.include(Webrat::Matchers)
     config.include(EtmAuthHelper)
     config.include(Authlogic::TestCase)
   end
-  
+
 end
 
 Spork.each_run do

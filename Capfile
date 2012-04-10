@@ -8,6 +8,7 @@ load 'lib/capistrano/memcached'
 load 'lib/capistrano/sphinx'
 load 'lib/capistrano/maintenance'
 load 'lib/capistrano/unicorn'
+load 'deploy/assets'
 
 load 'config/deploy' # remove this line to skip loading any of the default tasks
 

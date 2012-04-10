@@ -1,11 +1,9 @@
 require 'spec_helper'
 
 describe Admin::InputElementsController do
-  before(:all) { InputElement.new().save(false) }
-
   before(:each) do
     controller.class.skip_before_filter :restrict_to_admin
-    @input_element = InputElement.new().save(false)
+    @input_element = Factory :input_element
   end
 
   render_views
@@ -27,7 +25,7 @@ describe Admin::InputElementsController do
 
   describe "create" do
     before do
-      @input_element = InputElement.new 
+      @input_element = InputElement.new
       InputElement.should_receive(:new).with(any_args).and_return(@input_element)
     end
 
@@ -54,7 +52,7 @@ describe Admin::InputElementsController do
       @input_element = InputElement.first.reload
       InputElement.should_receive(:find).with(any_args).and_return(@input_element)
     end
-    
+
     it "update action should render edit template when model is invalid" do
       @input_element.stub!(:update_attributes).with(any_args).and_return(false)
       put :update, :id => @input_element

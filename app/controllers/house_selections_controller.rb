@@ -1,55 +1,45 @@
 class HouseSelectionsController < ApplicationController
+  before_filter :default_format_js, :except => :tool
+
   def tool
     clear_session
     render :layout => false
   end
-  
+
   def set
     @gql = Api::Client.new
     @gql.api_session_id = Current.setting.api_session_id
-    house_type  = params[:type]
+    @house_type  = params[:type]
     house_label = params[:label]
     session['calculated_hst_sliders']  ||= {}
-    session["house_label_#{house_type}"] = house_label
+    session["house_label_#{@house_type}"] = house_label
     if labels_ready_to_calculate?
+      @labels_ready = true
       run_gqueries
       set_insulation_slider(session["house_label_new"],"new")
       set_insulation_slider(session["house_label_existing"],"existing")
       update_installation_sliders
       @perc_new_houses      = (percentage_of_new_houses * 100).round(1)
       @perc_existing_houses = (percentage_of_existing_houses * 100).round(1)
-
-      render :update do |page|
-        page["#house_selection"].html(render "house_selections/result")
-      end
-    else
-      render :update do |page|
-        if house_type == 'new'
-          page.call "show_existing_houses_tab"
-        else
-          page.call "show_new_houses_tab"
-        end
-      end
     end
+    # check js view
   end
-  
+
   def apply
-    render :update do |page|
-      page.call "close_fancybox"
-      session['calculated_hst_sliders'].each_with_index do |slider,i|
-        page << "input_elements.inputElements[#{slider[0]}].set({ user_value : #{slider[1]} });"
-      end
-    end
+    # Check js view
   end
 
   def clear
     clear_session
-    render :update do |page|
-      page['#house_selection'].html( render "select")
-    end
+    # Check js view
   end
 
   private
+
+    # otherwise rails won't render the js.erb views
+    def default_format_js
+      request.format = "js" unless params[:format]
+    end
 
     def clear_session
       session["house_label_new"] = nil
@@ -59,7 +49,7 @@ class HouseSelectionsController < ApplicationController
     def labels_ready_to_calculate?
       session["house_label_new"] && session["house_label_existing"]
     end
-    
+
     def run_gqueries
       @gql.queries = [
         "present:DIVIDE(V(local_solar_pv_grid_connected_energy_energetic;output_of_electricity),Q(potential_electricity_production_of_solar_roof_pv))",
@@ -77,7 +67,7 @@ class HouseSelectionsController < ApplicationController
       set_new_installations
       calculate_average_installation_sliders
     end
-  
+
     def calculate_average_installation_sliders
       existing_percent = percentage_of_heat_existing_houses
       new_percent      = percentage_of_heat_new_houses
@@ -92,7 +82,7 @@ class HouseSelectionsController < ApplicationController
         session['calculated_hst_sliders'][slider.first.to_s] = average_share
       end
     end
-  
+
 
     #this method updates the solar pv
     def set_solar_pv_slider
@@ -100,10 +90,10 @@ class HouseSelectionsController < ApplicationController
       current_pv = @gql.simple_query(query)
       existing_pv = (session['calculated_hst_sliders_existing']["47"] ? session['calculated_hst_sliders_existing']["47"] : current_pv) * percentage_of_existing_houses
       new_pv = (session['calculated_hst_sliders_new']["47"] ? session['calculated_hst_sliders_new']["47"] : current_pv) * percentage_of_new_houses
-    
+
       return existing_pv + new_pv
     end
-  
+
     # this method updates the insulation sliders
     def set_insulation_slider(lbl,house_type)
       if house_type == 'new'
@@ -126,9 +116,9 @@ class HouseSelectionsController < ApplicationController
       slider_id = (house_type == "existing" ? 336 : 337)
       session['calculated_hst_sliders'][slider_id.to_s] = value
     end
-  
+
     ####### HELPER METHODS #########
-  
+
     def set_existing_installations
       case session["house_label_existing"]
         when "a"
@@ -149,7 +139,7 @@ class HouseSelectionsController < ApplicationController
           session['calculated_hst_sliders_existing']["333"] = 100
       end
     end
-  
+
     def set_new_installations
       case session["house_label_new"]
         when "aaa"
@@ -168,7 +158,7 @@ class HouseSelectionsController < ApplicationController
           session['calculated_hst_sliders_new']["333"] = 100
       end
     end
-  
+
     def percentage_of_heat_existing_houses
       query = "future:V(heating_demand_with_current_insulation_households_energetic;demand)"
       heat_demand_existing_houses = @gql.simple_query(query)
@@ -196,7 +186,7 @@ class HouseSelectionsController < ApplicationController
 
     def initialize_installations_sliders(house_type)
       session["calculated_hst_sliders_#{house_type}"] = {}
-      ## TODO: refactor households_heating_sliders 
+      ## TODO: refactor households_heating_sliders
       InputElement.households_heating_sliders.each do |slider|
         session["calculated_hst_sliders_#{house_type}"][slider.id.to_s] = 0
         session["calculated_hst_sliders_#{house_type}"]["47"] = false # remove solar pv if exists

@@ -1,5 +1,5 @@
 //loading overlay vars:
-var loading = $("#content").busyBox({spinner: '<img src="/images/layout/ajax-loader.gif" />'} );
+var loading = $("#content").busyBox({spinner: '<img src="/assets/layout/ajax-loader.gif" />'} );
 
 _.extend(_, {
   sum: function (arr) {
@@ -186,12 +186,12 @@ window.AppView = Backbone.View.extend({
   showLoading : function () {
     if (this.has_unfinished_api_calls()) {
       $("#charts_wrapper").busyBox({
-        spinner: '<img src="/images/layout/ajax-loader.gif" />'
+        spinner: '<img src="/assets/layout/ajax-loader.gif" />'
       }).fadeIn('fast');
 
       $("#constraints").busyBox({
         classes: 'busybox ontop',
-        spinner: '<img src="/images/layout/ajax-loader.gif" />',
+        spinner: '<img src="/assets/layout/ajax-loader.gif" />',
         top:     '22px'
       }).fadeIn('fast');
 

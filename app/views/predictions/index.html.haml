@@ -3,9 +3,6 @@
   series = @predictions.map{|p| p.values_to_a}
   series_options = series.map{|x| {}}
 - content_for :head do
-  = stylesheet_link_tag 'prediction'
-  = sprocket_include_tag 'backcasting'
-  = javascript_include_tag 'backcasting'
   :javascript
     var chart_data = {
       series: #{series.to_json},

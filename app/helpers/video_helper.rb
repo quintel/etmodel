@@ -35,7 +35,7 @@ module VideoHelper
       :class    => 'video-js vsj-default-skin',
       :controls => true,
       :preload  => false,
-      :poster   => '/images/video_poster_image.png'
+      :poster   => '/assets/video_poster_image.png'
     }
     include_video_js_files
     content_tag :video, defaults.merge(opts) do

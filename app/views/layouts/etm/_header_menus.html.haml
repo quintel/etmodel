@@ -24,7 +24,7 @@
 #settings_menu.header_menu.topnav
   %li
     #flag
-      %img{:src => "/images/icons/#{Current.setting.country}.png"}
+      %img{:src => "/assets/icons/#{Current.setting.country}.png"}
       = Current.setting.region if Current.setting.region != "nl"
     = t("header.Current country")+":"
   %li

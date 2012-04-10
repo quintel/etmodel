@@ -10,7 +10,7 @@ describe HouseSelectionsController do
     controller.stub!(:percentage_of_existing_houses).and_return(0.14)
     session[:default_output_element] = "1"
   end
-  
+
   describe "tool" do
     it "should clear the label sessions when opening the tool " do
       post :tool
@@ -18,33 +18,33 @@ describe HouseSelectionsController do
       session["house_label_new"].should eql(nil)
     end
   end
-  
+
   describe "selecting a label" do
     it "should initialize the calculated sliders session" do
       post :tool
       post :set, :label => 'a', :type => 'new'
       session['calculated_hst_sliders'].should_not eql(nil)
     end
-    
-    %w[aaa aa a b c].each do |lbl|      
+
+    %w[aaa aa a b c].each do |lbl|
       it "should set house label new session be '#{lbl}' when this label is chosen" do
         post :tool
         post :set, :label => lbl, :type => 'new'
         session["house_label_new"].should eql(lbl)
       end
     end
-    
-    %w[a b c d c].each do |lbl|      
+
+    %w[a b c d c].each do |lbl|
       it "should set house label existing session be '#{lbl}' when this label is chosen" do
         post :tool
         post :set, :label => lbl, :type => 'existing'
         session["house_label_existing"].should eql(lbl)
       end
     end
-    
+
     it "should only calculate when both labels are chosen" do
       controller.stub!(:render)
-      
+
       controller.stub!(:update_installation_sliders)
       get :tool
       controller.send(:labels_ready_to_calculate?).should be_false
@@ -54,7 +54,7 @@ describe HouseSelectionsController do
       controller.send(:labels_ready_to_calculate?).should be_true
     end
   end
-  
+
   describe "calculating the insulation sliders" do
     before(:each) do
       controller.stub!(:render)

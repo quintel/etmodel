@@ -6,9 +6,9 @@
       %a= t("house_selection.new houses")
 
 #existing_house_content.content
-  %img{:src => "/images/layout/existing_house.gif",:style=>"float:right"}
-  %h1= t("house_selection.existing houses")+ " in #{Current.setting.end_year}" 
-  
+  %img{:src => "/assets/layout/existing_house.gif",:style=>"float:right"}
+  %h1= t("house_selection.existing houses")+ " in #{Current.setting.end_year}"
+
   = t("house_selection.old_houses_description")
 
   .pick_label
@@ -36,12 +36,12 @@
 
           #new_button.button
             = link_to t("house_selection.existing.button"), house_selection_set_path(:type => 'existing', :label => lbl), :remote => true
-      
+
 #new_house_content.content{:style=>'display:none'}
-  %img{:src => "/images/layout/new_house.gif",:style=>"float:right"}
-  %h1= t("house_selection.new houses")+ " in #{Current.setting.end_year}" 
+  %img{:src => "/assets/layout/new_house.gif",:style=>"float:right"}
+  %h1= t("house_selection.new houses")+ " in #{Current.setting.end_year}"
   = t("house_selection.new_houses_description")
-  
+
   .pick_label
     - new_lanels = %w[aaa aa a b c]
     - new_lanels.each do |lbl|
@@ -49,7 +49,7 @@
         - l = 'a<small>++</small>' if lbl == "aaa"
         - l = 'a<small>+</small>'  if lbl == "aa"
         = raw (l || lbl).capitalize
-  
+
     .label_description_wrapper
       - new_lanels.each do |lbl|
         .label_description{:class=>"label_#{lbl}",:style=>"display:none"}

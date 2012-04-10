@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   include LayoutHelper
-  include SprocketsHelper
 
   helper :all
   helper_method :current_user_session, :current_user, :admin?, :wattnu?

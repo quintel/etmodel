@@ -565,7 +565,6 @@
      * Loads the converter details in a fancybox popup
      */
      showConverterDetail: function (event) {
-       console.log(event);
        event.preventDefault();
        var url = $(event.target).attr('href');
        $.fancybox({

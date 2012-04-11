@@ -1,6 +1,6 @@
 var Util = {
-  /* 
-   * This function invokes a function after a timeout. If in the mean time this is invoked 
+  /*
+   * This function invokes a function after a timeout. If in the mean time this is invoked
    * with other functions, the last functions will be invoked
    */
   cancelableAction: function(key, func, options) {
@@ -10,13 +10,13 @@ var Util = {
     } else if(this.timeOuts[key]) {
       clearTimeout(this.timeOuts[key]);
     }
-    
+
     this.timeOuts[key] = setTimeout($.proxy(function() {
       func.apply();
       clearTimeout(this.timeOuts[key]);
     }, this), sleepTime);
   },
-  
+
   /**
    * Creates a console if no console exists.
    */
@@ -27,18 +27,19 @@ var Util = {
     console.error = console.error || function(){};
     console.info = console.info || function(){};
   },
-  
+
   timestamp:function() {
     return (new Date()).getTime();
   },
-  
+
   makeUnselectable:function(el) {
     el.bind('selectstart', function() {
       return false;
-    });    
+    });
   }
 }
 
 
+Util.makeSureConsoleExists();
 
 

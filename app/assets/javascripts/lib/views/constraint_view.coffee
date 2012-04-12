@@ -31,7 +31,7 @@ class @ConstraintView extends Backbone.View
     key = @model.get('key')
     # TODO: define the popup height somewhere else or increase it for all popups
     popup_height = if key == 'loss_of_load' then 435 else 400
-    url = $(constraint).attr('href')+"?t="+timestamp()
+    url = $(constraint).attr('href')
     $(constraint).fancybox
       href: url
       type: 'iframe'

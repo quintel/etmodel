@@ -111,19 +111,13 @@ public
   def feedback
     if params[:feedback]
       if /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i.match(params[:feedback][:email])
+        request.format = 'js' # to render the js.erb template
         @options = params[:feedback]
         Notifier.feedback_mail(@options).deliver
         Notifier.feedback_mail_to_sender(@options).deliver
-
-        render :update do |page|
-          page.call "$.fancybox.close"
-          page.call "flash_notice", t("feedback_confirm")
-        end
       else
-        render :update do |page|
-           page['#errors'].html(t("feedback_error"))
-         end
-       end
+        @errors = true
+      end
     else
       render :layout => false
     end

@@ -45,6 +45,17 @@ $ ->
 
   $("#disable_peak_load_tracking").live 'click', -> disable_peak_load_tracking()
 
+  # Is this thing still used?
+  $("input[name='area_code']").change ->
+    country = $("input[name='country']:checked").val()
+    url = "/pages/update_footer/?country="+country
+    $.ajax
+      url: url
+      method: 'get'
+      success: (data) ->
+        $("#logos").replaceWith(data)
+        Interface.call_the_cyclists()
+  Interface.call_the_cyclists()
 # This class holds all the methods that were previously in the global scope
 #
 class @AppInterface
@@ -60,5 +71,21 @@ class @AppInterface
       $('#other_year').show()
     else
       $('#other_year').hide()
+
+  call_the_cyclists: ->
+    if $("#logos ul.left li").length > 1
+      $("#logos ul.left").cycle
+        speed: 500
+        timeoutFn: (curr,next,opts,fwd) ->
+          timeout = $(this).attr('timeout');
+          parseInt(timeout,10);
+    if $("#logos ul.right li").length > 1
+      $("#logos ul.right").cycle
+        speed: 500
+        random: 1
+        notRandomFirst: 0 #my own addition to the Cycle plugin! DS
+        timeoutFn: (curr,next,opts,fwd) ->
+          timeout = $(this).attr('timeout')
+          parseInt(timeout,10)
 
 window.Interface = new AppInterface()

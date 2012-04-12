@@ -1,16 +1,3 @@
-//TODO: rename this file to a better suited name DS // file split up into etm.accordion/page_title/header_menu.js
-var update_slide_pids = {};
-
-// simply returns #<class_name>_<id>
-// should be extended to converter class_name to snailcase
-function dom_id(class_name, id, add_hash) {
-  if (add_hash == false) {
-    return class_name+"_"+id;
-  } else {
-    return '#'+class_name+"_"+id;
-  }
-}
-
 function timestamp() {
   return new Date().getTime();
 }

@@ -2,8 +2,8 @@ $(document).ready(function(){
   $("input[name='country']").change(function(){
     var country = $("input[name='country']:checked").val(); //param for country
     var url = "/pages/update_footer/?country="+country;
-    $.ajax({ 
-      url: url+"&"+timestamp(), // appending now() prevents the browser from caching the request
+    $.ajax({
+      url: url, // appending now() prevents the browser from caching the request
       method: 'get', // use GET requests. otherwise chrome and safari cause problems.
       success: function(data){
         $("#logos").replaceWith(data);//update html

@@ -132,7 +132,7 @@ class @ChartList extends Backbone.Collection
     App.etm_debug('Loading chart: #' + chart_id)
     # if chart_id == currently shown chart, skip.
     return if @current_id() == parseInt(chart_id)
-    url = "/output_elements/#{chart_id}.js?#{timestamp()}"
+    url = "/output_elements/#{chart_id}.js"
     $.getScript url, =>
       # show/hide default chart button
       if chart_id != @current_default_chart
@@ -166,7 +166,7 @@ class @ChartList extends Backbone.Collection
     $("a.pick_charts").live 'click', (e) =>
       chart_id = $(e.target).parents('a').data('chart_id')
       @user_selected_chart = chart_id
-      url = "/output_elements/select_chart/#{chart_id}?#{timestamp()}"
+      url = "/output_elements/select_chart/#{chart_id}"
       $.ajax
         url: url
         method: 'get'

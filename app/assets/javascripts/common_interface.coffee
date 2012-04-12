@@ -45,4 +45,20 @@ $ ->
 
   $("#disable_peak_load_tracking").live 'click', -> disable_peak_load_tracking()
 
+# This class holds all the methods that were previously in the global scope
+#
+class @AppInterface
+  set_active_tab: (page) ->
+    $(".tabs li").removeClass('active')
+    $(".tabs li#"+page).addClass('active')
 
+  # Checks the select tag to show custom year field select when
+  # other is clicked.
+  check_year_radio_buttons: ->
+    elements = $('#end_year option:selected')
+    if elements.text() == 'other'
+      $('#other_year').show()
+    else
+      $('#other_year').hide()
+
+window.Interface = new AppInterface()

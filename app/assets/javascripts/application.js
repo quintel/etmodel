@@ -15,3 +15,4 @@
 //= require fancybox
 //= require testimonials
 //= require admin
+//= require common_interface

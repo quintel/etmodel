@@ -33,4 +33,8 @@
   = render "layouts/etm/header_menus"
 
   - if defined?(info_box) && info_box
-    = render "layouts/etm/info_box"
+    #info_box
+      #flag
+        %img{:src => "/assets/icons/#{Current.setting.country}.png"}
+        = Current.setting.region if Current.setting.region != "nl"
+      #year= Current.setting.end_year

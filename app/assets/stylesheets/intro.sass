@@ -1,0 +1,49 @@
+.diamond_container
+  width: 800px
+  height: 420px
+  margin: 0px auto 40px auto
+  z-index: 3
+  @include box-shadow(#eeeeee 3px 3px 10px 10px)
+  padding: 20px
+  .text
+    height: 350px
+    width: 60%
+    float: left
+  .diamonds
+    position: relative
+    float: left
+    height: 300px
+    width: 23%
+    position: relative
+    margin-top: 50px
+    .diamond
+      width: 97px
+      height: 103px
+      position: absolute
+      background: url(/assets/layout/diamond_white.png) no-repeat
+      text-align: center
+      a
+        padding-top: 37px
+        height: 100%
+        display: block
+        color: #000
+        text-decoration: none
+      a:hover
+        color: #fff
+    .active
+      a
+        color: #fff
+    #policy
+      left: 52px
+    #demand
+      top: 52px
+    #supply
+      top: 52px
+      left: 104px
+    #costs
+      top: 104px
+      left: 52px
+    .active
+      background: url(/assets/layout/diamond_blue.png) no-repeat
+      color: #fff
+

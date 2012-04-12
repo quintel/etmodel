@@ -1,20 +1,13 @@
 $ ->
-  $('#textrepository #home').html($('#text').html())
-  $('#diamond-container a#home').hide()
-  $('.diamond, a#home').hover ->
+  $('.diamond').hover ->
       id_name = $(this).attr('id')
       # clean up actives
-      $('#diamonds .active').removeClass('active')
+      $('.diamonds .active').removeClass('active')
       # update diamond
-      $('#diamonds #'+id_name).addClass('active')
+      $('.diamonds #'+id_name).addClass('active')
       # change text
       new_html = $('#textrepository_'+id_name).html()
-      $('#text').html(new_html)
-      # show zoom out button
-      if id_name != 'home'
-        $('#diamond-container a#home').show()
-      else
-        $('#diamond-container a#home').hide()
+      $('.diamond_container .text').html(new_html)
 
   # used in root form
   $("#scenarios_select").change ->

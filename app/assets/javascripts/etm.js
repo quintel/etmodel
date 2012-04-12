@@ -7,7 +7,6 @@
 //= require backbone-0.3.3.min
 
 //= require_tree ./lib/util
-//= require iepngfix_tilebg
 //= require flowplayer-3.2.6.min
 //= require jquery.busybox
 //= require jqplot

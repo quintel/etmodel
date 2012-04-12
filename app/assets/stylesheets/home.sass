@@ -85,17 +85,23 @@
       float: left
       margin: 10px
       v-align: top
+
   .style_button
-    .button_left
-      width: 9px
     float: left
     clear: both
     margin: 15px 0 0 10px
-    .button_center
-      span
-        width: 250px
-  #existing_scenario_button,#new_scenario_button,#continue_scenario_button,#energy_mixer_button
     width: 313px
+    color: black
+    text-decoration: none
+    border: 1px solid #ddd
+    display: block
+    padding: 8px
+    @include border-radius(4px)
+    border-bottom: 4px solid #ddd
+    @include background(image-url("/assets/layout/home_button_arrows.png"))
+    background-repeat: no-repeat
+    background-position: right center
+
 #information
   float: right
   width: 60%

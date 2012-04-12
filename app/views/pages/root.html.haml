@@ -8,33 +8,21 @@
 
     - if has_active_scenario?
       %a#continue_scenario_button.style_button{:href => last_etm_path(:include_action => false),:alt=>"continue",:title=>"continue"}
-        .button_left
-        .button_center
-          %span= t('continue with current scenario').capitalize
-        .button_right
+        = t('continue with current scenario').capitalize
     %a#new_scenario_button.style_button{:href =>"#",:alt=>"new scenario",:title=>"new scenario"}
-      .button_left
-      .button_center
-        %span= t('Start a new scenario').capitalize
-      .button_right
+      = t('Start a new scenario').capitalize
     %ul#new_scenario_form
       = form_tag root_path do
         = render "pages/root_page/country_select"
         = render "pages/root_page/year_select"
         = render 'pages/root_page/start_button'
     %a#existing_scenario_button.style_button{:href =>"#",:alt=>"continue",:title=>"continue"}
-      .button_left
-      .button_center
-        %span= t('load a scenario').capitalize
-      .button_right
+      = t('load a scenario').capitalize
     %ul#existing_scenario_form
       = render 'pages/root_page/scenario_select_form'
     - if I18n.locale.to_s == "nl"
       %a#energy_mixer_button.style_button{:href => "#", :alt=>"energy mixer", :title=>"energy mixer"}
-        .button_left
-        .button_center
-          %span= t('energy_mixer').capitalize
-        .button_right
+        = t('energy_mixer').capitalize
       %ul#energy_mixer_desc
         = render 'pages/root_page/energy_mixer_desc'
 

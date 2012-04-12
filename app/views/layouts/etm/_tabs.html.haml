@@ -2,7 +2,7 @@
   .nav-holder.nav-holder-inner
     %ul
       - if Current.view
-        %li{:id => 'home'}= link_to I18n.t('Home'), root_path
+        %li{:id => 'home'}= link_to I18n.t('Home'), home_path
         - Current.view.tabs.each do |tab|
           - klass = 'active' if controller.controller_name == tab.key
           - link  = url_for :controller => tab.key

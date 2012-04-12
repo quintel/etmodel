@@ -5,10 +5,9 @@ Etm::Application.routes.draw do
   root :to => 'pages#choose'
 
   match '/choose' => 'pages#choose'
-  match '/pro' => 'pages#root'
+  match '/pro' => 'pages#root', :as => :home
 
   match '/demand/intro' => 'demand#intro'
-
   match '/demand(/:id)' => 'demand#show', :defaults => {:id => 'households'}
   match '/costs(/:id)'  => 'costs#show', :defaults => {:id => 'combustion'}
   match '/policy(/:id)' => 'policy#show', :defaults => {:id => 'sustainability'}
@@ -21,9 +20,7 @@ Etm::Application.routes.draw do
   match 'house_selections/tool'  => 'house_selections#tool',  :as => :house_selection_tool
   match 'house_selections/set'   => 'house_selections#set',   :as => :house_selection_set
   match 'house_selections/apply' => 'house_selections#apply', :as => :house_selection_apply
-
   match 'house_selections/clear' => 'house_selections#clear', :as => :house_selection_clear
-
 
   match 'login'  => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
@@ -138,7 +135,6 @@ Etm::Application.routes.draw do
   match '/wattnu_on'                       => 'pages#wattnu_on'
   match '/wattnu_off'                      => 'pages#wattnu_off'
   match '/municipalities'                  => 'pages#municipalities'
-  match '/home'                            => 'pages#home',        :as => :home
   match '/careers'                         => 'pages#careers',     :as => :careers
   match '/sitemap'                         => 'pages#sitemap',     :as => :sitemap
   match '/information'                     => 'pages#information', :as => :information

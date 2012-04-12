@@ -123,7 +123,7 @@ Etm::Application.routes.draw do
   match '/select_movie/:id'                => 'pages#select_movie'
   match '/units'                           => 'pages#units'
   match '/about'                           => 'pages#about'
-  match '/feedback'                        => 'pages#feedback'
+  match '/feedback'                        => 'pages#feedback', :as => :feedback
   match '/tutorial/(:section)(/:category)' => 'pages#tutorial'
   match '/education'                       => 'pages#education'
   match '/pages/intro'                     => 'pages#intro', :as => :start

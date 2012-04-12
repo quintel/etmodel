@@ -1,13 +1,11 @@
 #feedback_form
   %h1 Feedback
-  %p 
-    = t("feedback_text")
+  %p= t("feedback_text")
   %p{:id=>"errors",:class=>"errors"}
-  - form_for(:feedback,:url =>{:controller => 'pages', :action => 'feedback'},:remote => true) do |f|
+  = form_for :feedback, :url => feedback_path, :remote => true do |f|
     %p
       %label= t("user.message")
       = f.text_area :msg
-
     %p
       %label= t("user.name")
       = f.text_field :name

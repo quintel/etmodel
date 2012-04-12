@@ -1,13 +1,11 @@
 #information
-  %h1{:style=>"padding-bottom:20px"}= t("Introduction")
+  %h1= t("Introduction")
   %div.tabs
     %ul
       %li#what.active
-        %a#what
-          =t("What is this?")
+        = link_to t('What is this?'), "/select_movie/what", :remote => true
       %li#how
-        %a#how
-          =t("How does this work?")
+        = link_to t('How does this work?'), "/select_movie/how", :remote => true
   /
     [if lt IE 8]><style>#information .tabs {height: 50px} </style><![endif]
   #movie_content

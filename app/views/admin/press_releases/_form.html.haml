@@ -1,5 +1,5 @@
 %div
-  - simple_form_for [:admin, @press_release] do |f|
+  = simple_form_for [:admin, @press_release] do |f|
     = f.error_messages
     = f.input :title
     = f.input :medium
@@ -8,12 +8,11 @@
     = f.input :link,  :input_html => { :value => (session[:link] ? session[:link] : '')}
     = f.button :submit
 
-%div  
+%div
   %h2 Upload file
-  - form_tag '/admin/press_releases/upload', :multipart => true do 
-
+  = form_tag '/admin/press_releases/upload', :multipart => true do
     %p
-      file will be uploaded to /assets/filename 
+      file will be uploaded to /media/filename
       %br
       = file_field_tag :press_file
     %p= submit_tag 'upload'

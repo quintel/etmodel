@@ -14,11 +14,11 @@
 
 class PressRelease < ActiveRecord::Base
   # has_one :description, :as => :describable
-  
+
   # TODO: why don't we use paperclip? PZ Mon 8 Aug 2011 14:31:18 CEST
   def self.upload_file(upload)
     name =  upload.original_filename
-    directory = "public/assets"
+    directory = "public/media"
     # create the file path
     path = File.join(directory, name)
     # write the file

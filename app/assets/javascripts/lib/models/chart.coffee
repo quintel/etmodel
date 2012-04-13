@@ -130,6 +130,7 @@ class @ChartList extends Backbone.Collection
 
   load : (chart_id) ->
     App.etm_debug('Loading chart: #' + chart_id)
+    App.etm_debug "#{window.location.origin}/admin/output_elements/#{chart_id}"
     # if chart_id == currently shown chart, skip.
     return if @current_id() == parseInt(chart_id)
     url = "/output_elements/#{chart_id}.js"

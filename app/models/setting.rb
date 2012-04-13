@@ -8,7 +8,6 @@ class Setting
                 :last_etm_controller_action,
                 :displayed_output_element,
                 :selected_output_element,
-                :scenario_type,
                 :scenario_id,
                 :api_session_id,
                 :current_round,

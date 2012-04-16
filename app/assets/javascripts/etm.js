@@ -24,6 +24,6 @@
 //= require fancybox
 
 //= require i18n
-//= require translations
+//= require i18n/translations
 //= require lib/app
 //= require common_interface

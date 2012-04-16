@@ -16,3 +16,5 @@
 //= require testimonials
 //= require admin
 //= require common_interface
+//= require i18n
+//= require i18n/translations

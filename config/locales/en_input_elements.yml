@@ -1,278 +1,280 @@
 en:
-    input_elements:
-      agriculture_electricity_demand: Electricity
-      agriculture_heat_demand: Heat
-      agriculture_heating_biomass_fired_heater_share: Biomass-fired heater
-      agriculture_heating_combined_heat_power_share: "Combined heat & power"
-      agriculture_heating_gas_fired_heater_share: Gas-fired heater
-      agriculture_heating_geothermal_share: Geothermal
-      agriculture_heating_heat_pump_with_ts_share: Heat pump with TS
-      agriculture_heating_oil_fired_heater_share: Oil-fired heater
-      agriculture_number_of_small_gas_chp: Gas CHP
-      buildings_appliances_efficiency: Appliances efficiency
-      buildings_cooling_airconditioning_share: Airconditioning
-      buildings_cooling_cooling_network_share: Cooling network
-      buildings_cooling_gas_fired_heat_pump_share: Gas-fired heat pump
-      buildings_cooling_heat_pump_with_ts_share: Heat pump with TS
-      buildings_cooling_per_student_employee: Cooling per building
-      buildings_electricity_per_student_employee: Electricity per building
-      buildings_heat_per_employee_student: Heat per building
-      buildings_heating_biomass_chp_share: Biomass CHP
-      buildings_heating_biomass_fired_heater_share: Biomass-fired heater
-      buildings_heating_district_heating_network_share: District heating
-      buildings_heating_electric_heater_share: Electric heater
-      buildings_heating_gas_fired_heat_pump_share: Gas-fired heat pump
-      buildings_heating_gas_fired_heater_share: Gas-fired heater
-      buildings_heating_geothermal_share: Geothermal
-      buildings_heating_heat_network_share: Centralized district heating
-      buildings_heating_heat_pump_with_ts_share: Heat pump with TS
-      buildings_heating_oil_fired_heater_share: Oil-fired heater
-      buildings_heating_small_gas_chp_share: Gas CHP
-      buildings_heating_solar_thermal_panels_share: Solar thermal panels
-      buildings_insulation_level: "Insulation level buildings <small>scale 1-4</small>"
-      buildings_lighting_daylight_dependent_control: Daylight-dependent control
-      buildings_lighting_fluorescent_tube_conventional_share: Fluorescent tube
-      buildings_lighting_fluorescent_tube_high_performance_share: High-performance fl. tube
-      buildings_lighting_led_tube_share: LED-tube
-      buildings_lighting_motion_detection: Motion detection
-      buildings_market_penetration_solar_panels: Solar panels
-      buildings_number_of_buildings: Number of buildings
-      buildings_recirculation: Recirculation
-      buildings_ventilation_rate: Ventilation rate
-      buildings_waste_heat_recovery: Heat recovery
-      coal_from_australia_share: Australia
-      coal_from_east_asia_share: East Asia
-      coal_from_eastern_europe_share: Eastern Europe
-      coal_from_north_america_share: North America
-      coal_from_russia_share: Russia
-      coal_from_south_africa_share: South Africa
-      coal_from_south_america_share: South America
-      costs_biomass: Biomass
-      costs_co2: CO<sub>2</sub> price
-      costs_co2_free_allocation: Free allocation
-      costs_coal: Coal
-      costs_gas: Natural gas
-      costs_oil: Oil
-      costs_uranium: Uranium
-      electricity_bio_oil_share_in_gas_production: Bio-oil
-      electricity_natural_gas_share: Gas from gas network
-      electricity_oil_share_in_gas_production: Oil
-      employment_fraction_production: Production share
-      employment_local_fraction: Local production labor
-      economic_multiplier: Economic multiplier
-      gas_from_algeria_share: Algeria
-      gas_from_middle_east_share: Middle East
-      gas_from_nederlands_share: Netherlands
-      gas_from_norway_share: Norway
-      gas_from_russia_share: Russia
-      green_gas_total_share: Green gas
-      households_behavior_close_windows_turn_off_heating: Turn down heating
-      households_behavior_standby_killer_turn_off_appliances: Turn off appliances
-      households_behavior_turn_off_the_light: Turn off the light
-      households_cooking_biomass_share: Biomass
-      households_cooking_electric_share: Electric
-      households_cooking_gas_share: Gas
-      households_cooking_halogen_share: Halogen
-      households_cooking_induction_share: Induction
-      households_cooling_airconditioning_share: Airconditioning
-      households_cooling_demand_per_person: Cooling per person
-      households_cooling_gas_fired_heat_pump_share: Gas-fired heat pump
-      households_cooling_heat_pump_ground_share: Heat pump (ground)
-      households_cooling_heat_pump_with_ts_share: Heat pump with TS
-      households_efficiency_computer_media: Computer / Media
-      households_efficiency_dish_washer: Dish washer
-      households_efficiency_dryer: Dryer
-      households_efficiency_fridge_freezer: Fridge / Freezer
-      households_efficiency_low_temperature_washing: Low-temperature washing
-      households_efficiency_other: Other
-      households_efficiency_television: Television
-      households_efficiency_vacuum_cleaner: Vacuum cleaner
-      households_efficiency_washing_machine: Washing machine
-      households_electricity_demand_per_person: Electricity per person
-      households_heat_demand_per_person: Heat per person
-      households_heating_biomass_chp_share: Biomass CHP
-      households_heating_coal_fired_heater_share: Coal-fired heater
-      households_heating_district_heating_network_share: District heating
-      households_heating_electric_heater_share: Electric heater
-      households_heating_gas_combi_heater_share: Condensing combi boiler
-      households_heating_gas_fired_heat_pump_share: Gas-fired heat pump
-      households_heating_gas_fired_heater_share: Gas-fired heater
-      households_heating_geothermal_share: Geothermal
-      households_heating_heat_network_share: Centralized district heating
-      households_heating_heat_pump_add_on_share: Heat pump (add-on)
-      households_heating_heat_pump_ground_share: Heat pump (ground)
-      households_heating_heat_pump_with_ts_share: Heat pump with TS
-      households_heating_micro_chp_share: Micro-CHP
-      households_heating_oil_fired_heater_share: Oil-fired heater
-      households_heating_pellet_stove_share: Wood pellet stove
-      households_heating_small_gas_chp_share: Gas CHP
-      households_heating_solar_thermal_panels_share: Solar thermal panels
-      households_hot_water_biomass_heater_share: Wood pellet stove
-      households_hot_water_coal_fired_heater_hotwater_share: Coal-fired heater
-      households_hot_water_demand_per_person: Hot water per person
-      households_hot_water_electric_boiler_share: Electric boiler
-      households_hot_water_fuel_cell_share: Fuel cell
-      households_hot_water_gas_fired_heater_share: Condensing combi boiler
-      households_hot_water_gas_water_heater_share: Gas water heater
-      households_hot_water_heat_network_share: District heating
-      households_hot_water_heat_pump_ground_share: Heat pump (ground)
-      households_hot_water_micro_chp_share: Micro-CHP
-      households_hot_water_oil_fired_heater_share: Oil-fired heater
-      households_hot_water_solar_water_heater_share: Solar water heater
-      households_insulation_level_new_houses: "Insulation level new houses <small>scale 2.5-6</small>"
-      households_insulation_level_old_houses: "Insulation level old houses <small>scale 1-3</small>"
-      households_lighting_incandescent_share: Incandescent
-      households_lighting_light_emitting_diode_share: Light Emitting Diode
-      households_lighting_low_energy_light_bulb_share: Low-energy light bulb
-      households_market_penetration_solar_panels: Solar panels
-      households_number_of_inhabitants: Population
-      households_replacement_of_existing_houses: Replacement of existing houses
-      industry_efficiency_electricity: Electricity
-      industry_electricity_demand: Electricity
-      industry_heat_demand: Heat
-      industry_heat_from_fuels: Heat from fuels
-      industry_heating_biomass_fired_heater_share: Biomass-fired heater
-      industry_heating_coal_fired_heater_share: Coal-fired heater
-      industry_heating_combined_heat_power_share: "Combined heat & power"
-      industry_heating_gas_fired_heater_share: Gas-fired heater
-      industry_heating_oil_fired_heater_share: Oil-fired heater
-      industry_non_energetic_oil_demand: Non-energetic oil
-      industry_non_energetic_other_demand: Non-energetic other
-      industry_number_of_biomass_chp: Biomass CHP
-      industry_number_of_gas_chp: Gas CHP
-      investment_costs_co2_ccs: CCS Investment
-      investment_costs_combustion_biomass_plant: Biomass plant
-      investment_costs_combustion_coal_plant: Coal plant
-      investment_costs_combustion_gas_plant: Gas plant
-      investment_costs_combustion_oil_plant: Oil plant
-      investment_costs_combustion_waste_incinerator: Waste incinerator
-      investment_costs_earth_geothermal_electricity: Geothermal electricity
-      investment_costs_nuclear_nuclear_plant: Nuclear plant
-      investment_costs_solar_solar_panels: Solar panels
-      investment_costs_water_blue_energy: Blue Energy
-      investment_costs_water_mountains: Mountains
-      investment_costs_water_river: River
-      investment_costs_wind_offshore: Offshore
-      investment_costs_wind_onshore: Onshore
-      natural_gas_total_share: Natural gas
-      number_of_backup_burner_fixed: Heat network remainder
-      number_of_bio_oil_chp_fixed: Bio-oil CHP
-      number_of_biomass_chp_fixed: Biomass CHP
-      number_of_biomass_fired_heater_district: Central biomass-fired heater
-      number_of_biomass_fired_heater_fixed: Biomass-fired heater
-      number_of_blue_energy: Blue energy
-      number_of_central_coal_chp: Central coal CHP
-      number_of_central_coal_chp_fixed: Central coal CHP
-      number_of_co_firing_coal: Co-firing wood pellets
-      number_of_coal_conventional: Coal conventional
-      number_of_coal_fired_heater_district: Central coal-fired heater
-      number_of_coal_fired_heaterv: Coal-fired heater
-      number_of_coal_igcc_ccs: Coal IGCC CCS
-      number_of_coal_iggc: Coal IGCC
-      number_of_coal_lignite: Coal Lignite
-      number_of_coal_oxyfuel_ccs: Coal oxyfuel CCS
-      number_of_concentrated_solar_power: Concentrated Solar power
-      number_of_diesel_generators: Diesel generator
-      number_of_electric_heat_pump_fixed: Electric heat pump
-      number_of_gas_ccgt: Gas CCGT
-      number_of_gas_ccgt_ccs: Gas CCGT CCS
-      number_of_gas_conventional: Gas conventional
-      number_of_gas_fired_heat_pump_fixed: Gas-fired heat pump
-      number_of_gas_fired_heater_district: Central gas-fired heater
-      number_of_gas_fired_heater_fixed: Gas-fired heater
-      number_of_gas_turbines: Gas turbine
-      number_of_geothermal_electric: Geothermal electric
-      number_of_geothermal_fixed: Geothermal
-      number_of_hydro_mountain: Mountain
-      number_of_hydro_river: River
-      number_of_large_gas_chp: Central gas CHP
-      number_of_large_gas_chp_fixed: Central gas CHP
-      number_of_lignite_chp: Lignite CHP
-      number_of_lignite_chp_fixed: Lignite CHP
-      number_of_micro_chp_fixed: Micro-CHP
-      number_of_nuclear_3rd_gen: Nuclear 3rd Gen
-      number_of_nuclear_conventional: Nuclear conventional
-      number_of_oil_fired_heater_fixed: Oil-fired heater
-      number_of_oil_fired_plant: Oil-fired
-      number_of_pulverized_coal: Pulverized coal
-      number_of_pulverized_coal_ccs: Pulverized coal CCS
-      number_of_small_chp_fixed: Gas CHP
-      number_of_small_gas_chp_fixed: Gas CHP
-      number_of_solar_pv_plants: Solar PV plants
-      number_of_solar_pv_roofs_fixed: Solar PV roofs
-      number_of_solar_water_heater_fixed: Solar water heater
-      number_of_waste_fired_heater_district: Central waste-fired heater
-      number_of_waste_incinerator: Waste incinerator
-      number_of_wind_offshore: Offshore
-      number_of_wind_onshore_coast: Onshore coast
-      number_of_wind_onshore_land: Onshore inland
-      om_costs_co2_ccs: "CCS Operational & Maintenance"
-      om_costs_combustion_biomass_plant: Biomass plant
-      om_costs_combustion_coal_plant: Coal plant
-      om_costs_combustion_gas_plant: Gas plant
-      om_costs_combustion_oil_plant: Oil plant
-      om_costs_combustion_waste_incinerator: Waste incinerator
-      om_costs_earth_geothermal_electricity: Geothermal electricity
-      om_costs_nuclear_nuclear_plant: Nuclear plant
-      om_costs_water_blue_energy: Blue Energy
-      om_costs_water_mountains: Mountains
-      om_costs_water_river: River
-      om_costs_wind_offshore: Offshore
-      om_costs_wind_onshore: Onshore
-      other_electricity_demand: Electricity
-      other_heat_demand: Heat
-      other_number_of_small_gas_chp: Gas CHP
-      pj_of_heat_import: Imported heat
-      policy_area_land_for_csp: Land for CSP
-      policy_area_land_for_solar_panels: Land for solar panels
-      policy_area_offshore: Offshore
-      policy_area_onshore_coast: Onshore coast
-      policy_area_onshore_land: Onshore inland
-      policy_area_roofs_for_solar_panels: Roofs for solar panels
-      policy_cost_electricity_cost: Electricity cost
-      policy_cost_total_energy_cost: Total energy cost
-      policy_dependence_max_dependence: Max energy imports
-      policy_dependence_max_electricity_dependence: Max electricity imports
-      policy_sustainability_co2_emissions: "CO<sub>2</sub> emissions"
-      policy_sustainability_renewable_percentage: Renewable percentage
-      share_biocoal_co_firing_coal: Biocoal
-      share_coal_co_firing_coal: Coal
-      transport_bio_ethanol_share: Bio-ethanol
-      transport_biodiesel_share: Biodiesel
-      transport_cars: Cars
-      transport_cars_compressed_gas_share: Compressed gas
-      transport_cars_diesel_share: Diesel
-      transport_cars_electric_share: Electric
-      transport_cars_gasoline_share: Gasoline
-      transport_cars_lpg_share: LPG
-      transport_diesel_share: Diesel
-      transport_domestic_flights: Domestic flights
-      transport_efficiency_airplanes: Airplanes
-      transport_efficiency_combustion_engine_cars: Combustion engine cars
-      transport_efficiency_combustion_engine_trucks: Combustion engine trucks
-      transport_efficiency_electric_vehicles: Electric vehicles
-      transport_efficiency_ships: Ships
-      transport_efficiency_trains: Trains
-      transport_gasoline_share: Gasoline
-      transport_inland_navigation: Inland navigation
-      transport_rail_diesel_mix_biodiesel_share: Biodiesel
-      transport_rail_diesel_mix_diesel_share: Diesel
-      transport_planes_gasoline_share: Gasoline
-      transport_planes_kerosene_share: Kerosene
-      transport_planes_bio_ethanol_share: Bio-ethanol
-      transport_ships_heavy_fuel_oil_share: Heavy fuel oil
-      transport_ships_bio_diesel_share: Biodiesel
-      transport_ships_diesel_share: Diesel
-      transport_trains: Trains
-      transport_trains_coal_share: Coal
-      transport_trains_biodiesel_share: Biodiesel
-      transport_trains_diesel_share: Diesel
-      transport_trains_electric_share: Electric
-      transport_trucks: Trucks
-      transport_trucks_compressed_gas_share: Compressed gas
-      transport_trucks_diesel_share: Diesel
-      transport_trucks_electric_share: Electric
-      transport_trucks_gasoline_share: Gasoline
-      uranium_from_australia_share: Australia
-      uranium_from_canada_share: Canada
-      uranium_from_kazachstan_share: Kazakhstan
+  input_elements:
+    agriculture_electricity_demand: Electricity
+    agriculture_heat_demand: Heat
+    agriculture_heating_biomass_fired_heater_share: Biomass-fired heater
+    agriculture_heating_combined_heat_power_share: "Combined heat & power"
+    agriculture_heating_gas_fired_heater_share: Gas-fired heater
+    agriculture_heating_geothermal_share: Geothermal
+    agriculture_heating_heat_pump_with_ts_share: Heat pump with TS
+    agriculture_heating_oil_fired_heater_share: Oil-fired heater
+    agriculture_number_of_small_gas_chp: Gas CHP
+    buildings_appliances_efficiency: Appliances efficiency
+    buildings_cooling_airconditioning_share: Airconditioning
+    buildings_cooling_cooling_network_share: Cooling network
+    buildings_cooling_gas_fired_heat_pump_share: Gas-fired heat pump
+    buildings_cooling_heat_pump_with_ts_share: Heat pump with TS
+    buildings_cooling_per_student_employee: Cooling per building
+    buildings_electricity_per_student_employee: Electricity per building
+    buildings_heat_per_employee_student: Heat per building
+    buildings_heating_biomass_chp_share: Biomass CHP
+    buildings_heating_biomass_fired_heater_share: Biomass-fired heater
+    buildings_heating_district_heating_network_share: District heating
+    buildings_heating_electric_heater_share: Electric heater
+    buildings_heating_gas_fired_heat_pump_share: Gas-fired heat pump
+    buildings_heating_gas_fired_heater_share: Gas-fired heater
+    buildings_heating_geothermal_share: Geothermal
+    buildings_heating_heat_network_share: Centralized district heating
+    buildings_heating_heat_pump_with_ts_share: Heat pump with TS
+    buildings_heating_oil_fired_heater_share: Oil-fired heater
+    buildings_heating_small_gas_chp_share: Gas CHP
+    buildings_heating_solar_thermal_panels_share: Solar thermal panels
+    buildings_insulation_level: "Insulation level buildings <small>scale 1-4</small>"
+    buildings_lighting_daylight_dependent_control: Daylight-dependent control
+    buildings_lighting_fluorescent_tube_conventional_share: Fluorescent tube
+    buildings_lighting_fluorescent_tube_high_performance_share: High-performance fl. tube
+    buildings_lighting_led_tube_share: LED-tube
+    buildings_lighting_motion_detection: Motion detection
+    buildings_market_penetration_solar_panels: Solar panels
+    buildings_number_of_buildings: Number of buildings
+    buildings_recirculation: Recirculation
+    buildings_ventilation_rate: Ventilation rate
+    buildings_waste_heat_recovery: Heat recovery
+    coal_from_australia_share: Australia
+    coal_from_east_asia_share: East Asia
+    coal_from_eastern_europe_share: Eastern Europe
+    coal_from_north_america_share: North America
+    coal_from_russia_share: Russia
+    coal_from_south_africa_share: South Africa
+    coal_from_south_america_share: South America
+    common:
+      info_link: Converter details
+    costs_biomass: Biomass
+    costs_co2: CO<sub>2</sub> price
+    costs_co2_free_allocation: Free allocation
+    costs_coal: Coal
+    costs_gas: Natural gas
+    costs_oil: Oil
+    costs_uranium: Uranium
+    electricity_bio_oil_share_in_gas_production: Bio-oil
+    electricity_natural_gas_share: Gas from gas network
+    electricity_oil_share_in_gas_production: Oil
+    employment_fraction_production: Production share
+    employment_local_fraction: Local production labor
+    economic_multiplier: Economic multiplier
+    gas_from_algeria_share: Algeria
+    gas_from_middle_east_share: Middle East
+    gas_from_nederlands_share: Netherlands
+    gas_from_norway_share: Norway
+    gas_from_russia_share: Russia
+    green_gas_total_share: Green gas
+    households_behavior_close_windows_turn_off_heating: Turn down heating
+    households_behavior_standby_killer_turn_off_appliances: Turn off appliances
+    households_behavior_turn_off_the_light: Turn off the light
+    households_cooking_biomass_share: Biomass
+    households_cooking_electric_share: Electric
+    households_cooking_gas_share: Gas
+    households_cooking_halogen_share: Halogen
+    households_cooking_induction_share: Induction
+    households_cooling_airconditioning_share: Airconditioning
+    households_cooling_demand_per_person: Cooling per person
+    households_cooling_gas_fired_heat_pump_share: Gas-fired heat pump
+    households_cooling_heat_pump_ground_share: Heat pump (ground)
+    households_cooling_heat_pump_with_ts_share: Heat pump with TS
+    households_efficiency_computer_media: Computer / Media
+    households_efficiency_dish_washer: Dish washer
+    households_efficiency_dryer: Dryer
+    households_efficiency_fridge_freezer: Fridge / Freezer
+    households_efficiency_low_temperature_washing: Low-temperature washing
+    households_efficiency_other: Other
+    households_efficiency_television: Television
+    households_efficiency_vacuum_cleaner: Vacuum cleaner
+    households_efficiency_washing_machine: Washing machine
+    households_electricity_demand_per_person: Electricity per person
+    households_heat_demand_per_person: Heat per person
+    households_heating_biomass_chp_share: Biomass CHP
+    households_heating_coal_fired_heater_share: Coal-fired heater
+    households_heating_district_heating_network_share: District heating
+    households_heating_electric_heater_share: Electric heater
+    households_heating_gas_combi_heater_share: Condensing combi boiler
+    households_heating_gas_fired_heat_pump_share: Gas-fired heat pump
+    households_heating_gas_fired_heater_share: Gas-fired heater
+    households_heating_geothermal_share: Geothermal
+    households_heating_heat_network_share: Centralized district heating
+    households_heating_heat_pump_add_on_share: Heat pump (add-on)
+    households_heating_heat_pump_ground_share: Heat pump (ground)
+    households_heating_heat_pump_with_ts_share: Heat pump with TS
+    households_heating_micro_chp_share: Micro-CHP
+    households_heating_oil_fired_heater_share: Oil-fired heater
+    households_heating_pellet_stove_share: Wood pellet stove
+    households_heating_small_gas_chp_share: Gas CHP
+    households_heating_solar_thermal_panels_share: Solar thermal panels
+    households_hot_water_biomass_heater_share: Wood pellet stove
+    households_hot_water_coal_fired_heater_hotwater_share: Coal-fired heater
+    households_hot_water_demand_per_person: Hot water per person
+    households_hot_water_electric_boiler_share: Electric boiler
+    households_hot_water_fuel_cell_share: Fuel cell
+    households_hot_water_gas_fired_heater_share: Condensing combi boiler
+    households_hot_water_gas_water_heater_share: Gas water heater
+    households_hot_water_heat_network_share: District heating
+    households_hot_water_heat_pump_ground_share: Heat pump (ground)
+    households_hot_water_micro_chp_share: Micro-CHP
+    households_hot_water_oil_fired_heater_share: Oil-fired heater
+    households_hot_water_solar_water_heater_share: Solar water heater
+    households_insulation_level_new_houses: "Insulation level new houses <small>scale 2.5-6</small>"
+    households_insulation_level_old_houses: "Insulation level old houses <small>scale 1-3</small>"
+    households_lighting_incandescent_share: Incandescent
+    households_lighting_light_emitting_diode_share: Light Emitting Diode
+    households_lighting_low_energy_light_bulb_share: Low-energy light bulb
+    households_market_penetration_solar_panels: Solar panels
+    households_number_of_inhabitants: Population
+    households_replacement_of_existing_houses: Replacement of existing houses
+    industry_efficiency_electricity: Electricity
+    industry_electricity_demand: Electricity
+    industry_heat_demand: Heat
+    industry_heat_from_fuels: Heat from fuels
+    industry_heating_biomass_fired_heater_share: Biomass-fired heater
+    industry_heating_coal_fired_heater_share: Coal-fired heater
+    industry_heating_combined_heat_power_share: "Combined heat & power"
+    industry_heating_gas_fired_heater_share: Gas-fired heater
+    industry_heating_oil_fired_heater_share: Oil-fired heater
+    industry_non_energetic_oil_demand: Non-energetic oil
+    industry_non_energetic_other_demand: Non-energetic other
+    industry_number_of_biomass_chp: Biomass CHP
+    industry_number_of_gas_chp: Gas CHP
+    investment_costs_co2_ccs: CCS Investment
+    investment_costs_combustion_biomass_plant: Biomass plant
+    investment_costs_combustion_coal_plant: Coal plant
+    investment_costs_combustion_gas_plant: Gas plant
+    investment_costs_combustion_oil_plant: Oil plant
+    investment_costs_combustion_waste_incinerator: Waste incinerator
+    investment_costs_earth_geothermal_electricity: Geothermal electricity
+    investment_costs_nuclear_nuclear_plant: Nuclear plant
+    investment_costs_solar_solar_panels: Solar panels
+    investment_costs_water_blue_energy: Blue Energy
+    investment_costs_water_mountains: Mountains
+    investment_costs_water_river: River
+    investment_costs_wind_offshore: Offshore
+    investment_costs_wind_onshore: Onshore
+    natural_gas_total_share: Natural gas
+    number_of_backup_burner_fixed: Heat network remainder
+    number_of_bio_oil_chp_fixed: Bio-oil CHP
+    number_of_biomass_chp_fixed: Biomass CHP
+    number_of_biomass_fired_heater_district: Central biomass-fired heater
+    number_of_biomass_fired_heater_fixed: Biomass-fired heater
+    number_of_blue_energy: Blue energy
+    number_of_central_coal_chp: Central coal CHP
+    number_of_central_coal_chp_fixed: Central coal CHP
+    number_of_co_firing_coal: Co-firing wood pellets
+    number_of_coal_conventional: Coal conventional
+    number_of_coal_fired_heater_district: Central coal-fired heater
+    number_of_coal_fired_heaterv: Coal-fired heater
+    number_of_coal_igcc_ccs: Coal IGCC CCS
+    number_of_coal_iggc: Coal IGCC
+    number_of_coal_lignite: Coal Lignite
+    number_of_coal_oxyfuel_ccs: Coal oxyfuel CCS
+    number_of_concentrated_solar_power: Concentrated Solar power
+    number_of_diesel_generators: Diesel generator
+    number_of_electric_heat_pump_fixed: Electric heat pump
+    number_of_gas_ccgt: Gas CCGT
+    number_of_gas_ccgt_ccs: Gas CCGT CCS
+    number_of_gas_conventional: Gas conventional
+    number_of_gas_fired_heat_pump_fixed: Gas-fired heat pump
+    number_of_gas_fired_heater_district: Central gas-fired heater
+    number_of_gas_fired_heater_fixed: Gas-fired heater
+    number_of_gas_turbines: Gas turbine
+    number_of_geothermal_electric: Geothermal electric
+    number_of_geothermal_fixed: Geothermal
+    number_of_hydro_mountain: Mountain
+    number_of_hydro_river: River
+    number_of_large_gas_chp: Central gas CHP
+    number_of_large_gas_chp_fixed: Central gas CHP
+    number_of_lignite_chp: Lignite CHP
+    number_of_lignite_chp_fixed: Lignite CHP
+    number_of_micro_chp_fixed: Micro-CHP
+    number_of_nuclear_3rd_gen: Nuclear 3rd Gen
+    number_of_nuclear_conventional: Nuclear conventional
+    number_of_oil_fired_heater_fixed: Oil-fired heater
+    number_of_oil_fired_plant: Oil-fired
+    number_of_pulverized_coal: Pulverized coal
+    number_of_pulverized_coal_ccs: Pulverized coal CCS
+    number_of_small_chp_fixed: Gas CHP
+    number_of_small_gas_chp_fixed: Gas CHP
+    number_of_solar_pv_plants: Solar PV plants
+    number_of_solar_pv_roofs_fixed: Solar PV roofs
+    number_of_solar_water_heater_fixed: Solar water heater
+    number_of_waste_fired_heater_district: Central waste-fired heater
+    number_of_waste_incinerator: Waste incinerator
+    number_of_wind_offshore: Offshore
+    number_of_wind_onshore_coast: Onshore coast
+    number_of_wind_onshore_land: Onshore inland
+    om_costs_co2_ccs: "CCS Operational & Maintenance"
+    om_costs_combustion_biomass_plant: Biomass plant
+    om_costs_combustion_coal_plant: Coal plant
+    om_costs_combustion_gas_plant: Gas plant
+    om_costs_combustion_oil_plant: Oil plant
+    om_costs_combustion_waste_incinerator: Waste incinerator
+    om_costs_earth_geothermal_electricity: Geothermal electricity
+    om_costs_nuclear_nuclear_plant: Nuclear plant
+    om_costs_water_blue_energy: Blue Energy
+    om_costs_water_mountains: Mountains
+    om_costs_water_river: River
+    om_costs_wind_offshore: Offshore
+    om_costs_wind_onshore: Onshore
+    other_electricity_demand: Electricity
+    other_heat_demand: Heat
+    other_number_of_small_gas_chp: Gas CHP
+    pj_of_heat_import: Imported heat
+    policy_area_land_for_csp: Land for CSP
+    policy_area_land_for_solar_panels: Land for solar panels
+    policy_area_offshore: Offshore
+    policy_area_onshore_coast: Onshore coast
+    policy_area_onshore_land: Onshore inland
+    policy_area_roofs_for_solar_panels: Roofs for solar panels
+    policy_cost_electricity_cost: Electricity cost
+    policy_cost_total_energy_cost: Total energy cost
+    policy_dependence_max_dependence: Max energy imports
+    policy_dependence_max_electricity_dependence: Max electricity imports
+    policy_sustainability_co2_emissions: "CO<sub>2</sub> emissions"
+    policy_sustainability_renewable_percentage: Renewable percentage
+    share_biocoal_co_firing_coal: Biocoal
+    share_coal_co_firing_coal: Coal
+    transport_bio_ethanol_share: Bio-ethanol
+    transport_biodiesel_share: Biodiesel
+    transport_cars: Cars
+    transport_cars_compressed_gas_share: Compressed gas
+    transport_cars_diesel_share: Diesel
+    transport_cars_electric_share: Electric
+    transport_cars_gasoline_share: Gasoline
+    transport_cars_lpg_share: LPG
+    transport_diesel_share: Diesel
+    transport_domestic_flights: Domestic flights
+    transport_efficiency_airplanes: Airplanes
+    transport_efficiency_combustion_engine_cars: Combustion engine cars
+    transport_efficiency_combustion_engine_trucks: Combustion engine trucks
+    transport_efficiency_electric_vehicles: Electric vehicles
+    transport_efficiency_ships: Ships
+    transport_efficiency_trains: Trains
+    transport_gasoline_share: Gasoline
+    transport_inland_navigation: Inland navigation
+    transport_rail_diesel_mix_biodiesel_share: Biodiesel
+    transport_rail_diesel_mix_diesel_share: Diesel
+    transport_planes_gasoline_share: Gasoline
+    transport_planes_kerosene_share: Kerosene
+    transport_planes_bio_ethanol_share: Bio-ethanol
+    transport_ships_heavy_fuel_oil_share: Heavy fuel oil
+    transport_ships_bio_diesel_share: Biodiesel
+    transport_ships_diesel_share: Diesel
+    transport_trains: Trains
+    transport_trains_coal_share: Coal
+    transport_trains_biodiesel_share: Biodiesel
+    transport_trains_diesel_share: Diesel
+    transport_trains_electric_share: Electric
+    transport_trucks: Trucks
+    transport_trucks_compressed_gas_share: Compressed gas
+    transport_trucks_diesel_share: Diesel
+    transport_trucks_electric_share: Electric
+    transport_trucks_gasoline_share: Gasoline
+    uranium_from_australia_share: Australia
+    uranium_from_canada_share: Canada
+    uranium_from_kazachstan_share: Kazakhstan

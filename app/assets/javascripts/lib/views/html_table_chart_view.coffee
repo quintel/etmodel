@@ -1,3 +1,10 @@
+# This kind of chart has a different behaviour. It will read the gqueries from
+# the markup (see app/views/output_elements/tables/_chart_*.html.haml). The cell
+# data attributes will contain the key of the gquery and an optional :on_zero
+# value, that will be used if the gquery returns zero.
+# Old table charts still use gqueries defined in the db and arrange them in rows
+# using the `order_by` attribute. Those should be converted.
+#
 class @HtmlTableChartView extends BaseChartView
   initialize : ->
     @initialize_defaults()
@@ -40,6 +47,10 @@ class @HtmlTableChartView extends BaseChartView
         return
       raw_value = serie.future_value()
       value = Metric.round_number(raw_value, 1)
+      # some gqueries need a special treatment if they're 0
+      on_zero = $(cell).data('on_zero')
+      if raw_value == 0 and on_zero
+        value = on_zero
       $(cell).html(value)
 
   # returns a jQuery collection of cells to be dynamically filled

@@ -15,8 +15,6 @@
 #  input_id          :integer(4)
 #  command_type      :string(255)
 #  related_converter :string(255)
-#  position          :integer(4)
-#  slide_id          :integer(4)
 #
 
 class InputElement < ActiveRecord::Base

@@ -7,8 +7,6 @@
     %p
       = image_tag(slide.image_path) if slide.image.present?
       = raw slide.description.try(:content)
-      - if slide.house_selection
-        = link_to t("accordion.help me choose"), house_selection_tool_path, :class => 'house_selection_tool'
     %ul.valuees
       - unless slide.general_sub_header.blank?
         %div.sub_header{:id => "sub_header_#{slide.id}"}

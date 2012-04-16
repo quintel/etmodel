@@ -12,7 +12,6 @@
 //= require jqplot
 //= require jquery.quinn.min
 //= require jquery_plugins
-//= require_tree ./old
 
 // silly sprockets...
 //= require lib/views/base_chart_view

@@ -9,7 +9,6 @@
 //= require_tree ./lib/util
 //= require flowplayer-3.2.6.min
 //= require jquery_plugins
-//= require_tree ./old
 //= require intro
 //= require flowplayer.playlist-3.0.8.min
 //= require fancybox

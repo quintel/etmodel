@@ -1,8 +1,4 @@
-- simple_form_for [:admin, @translation] do |form|
-  English
+= simple_form_for [:admin, @translation] do |form|
   = form.input :content_en
-
-  Dutch
   = form.input :content_nl
-
   = form.button :submit

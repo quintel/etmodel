@@ -3,15 +3,15 @@
   %thead
     %tr
       %th
-      %th Netvlak
+      %th Network component
     %tr
       %th
-      %th LS net
-      %th MS-LS trafo
-      %th MS Distributienet
-      %th MS Transportnet
-      %th HS-MS trafo
-      %th HS net
+      %th LV Distribution net
+      %th MV-LV transformer
+      %th MV Distribution net
+      %th MV Transport net
+      %th HV-MV transformer
+      %th HV Transport net
 
   - columns = @output_element.allowed_output_element_series.group_by{|serie| (serie.order_by / 100).to_i }
   -# columns = {1 => [<Serie>,<Serie>], 2 => [...], 3 => [...]}
@@ -26,4 +26,4 @@
         %td.tar{:data => {:gquery => columns[3][row].gquery}} -
         %td.tar{:data => {:gquery => columns[4][row].gquery}} -
         %td.tar{:data => {:gquery => columns[5][row].gquery}} -
-        %td.tar{:data => {:gquery => columns[6][row].gquery, :on_zero => 'nvt'}} -
+        %td.tar{:data => {:gquery => columns[6][row].gquery, :on_zero => 'n.a.'}} -

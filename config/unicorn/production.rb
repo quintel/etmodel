@@ -48,3 +48,9 @@ after_fork do |server, worker|
   child_pid = server.config[:pid].sub('.pid', ".#{worker.nr}.pid")
   system("echo #{Process.pid} > #{child_pid}")
 end
+
+# Without this Unicorn ignores USR2. See
+# http://qxjit.com/blog/headachenewunicorn-capistrano-bundler-usr2
+before_exec do |server|
+  ENV["BUNDLE_GEMFILE"] = "/u/apps/etmodel/current/Gemfile"
+end

@@ -41,7 +41,7 @@ window.AppView = Backbone.View.extend({
     this.setup_fce();
 
     // DEBT Add check, so that boostrap is only called once.
-    if (this.settings.get('country') == 'nl') {
+    if (this.settings.get('area_code') == 'nl') {
       this.peak_load = new PeakLoad();
     }
     if (this.scenario.api_session_id() == null) {
@@ -140,7 +140,7 @@ window.AppView = Backbone.View.extend({
     }
     window.sidebar.update_bars();
 
-    if (App.peak_load != null) {
+    if (App.settings.get('track_peak_load') && App.peak_load) {
       App.peak_load.trigger('change');
     }
 

@@ -50,6 +50,10 @@ class OutputElement < ActiveRecord::Base
     type == 'block'
   end
 
+  def jqplot_based?
+    !block_chart? && !html_table?
+  end
+
   def options_for_js
     {
       'id'               => self.id,

@@ -32,11 +32,13 @@ EOJS
     out.html_safe
   end
 
-  # Some charts need custom HTML. This method returns it
-  # as a JS-safe string
+  # Some charts need custom HTML. Jqplot-base charts just need a container div.
+  # This method returns the required HTML for the non-jqplot charts. The output
+  # is encoded as a JS-safe string.
   # See app/views/admin/output_elements/show.html.haml
   # app/views/output_elements/show.js.erb
   def js_render_chart(chart)
+    return nil if chart.jqplot_based?
     template = if chart.html_table?
       "output_elements/tables/chart_#{chart.id}"
     else

@@ -43,7 +43,7 @@
   = javascript_include_tag 'etm'
   :javascript
     App.settings = new Setting(#{Current.setting.to_json.html_safe});
-    charts.tables_html[#{@output_element.id}] = '#{js_render_html_table(@output_element) if @output_element.html_table?}'
+    charts.html[#{@output_element.id}] = '#{js_render_chart(@output_element)}'
     #{ js_for_output_element(@output_element.id, "output_element_#{@output_element.id}") }
     App.ensure_scenario_id();
     App.call_api();

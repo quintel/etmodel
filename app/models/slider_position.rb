@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: slider_positions
+#
+#  id        :integer(4)      not null, primary key
+#  slide_id  :integer(4)
+#  slider_id :integer(4)
+#  position  :integer(4)
+#
+
 # has_many :through intermediate object
 #
 class SliderPosition < ActiveRecord::Base

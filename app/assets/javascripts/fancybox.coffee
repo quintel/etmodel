@@ -29,19 +29,6 @@ $ ->
     $(this).trigger('click')
     return false
 
-  $("a.house_selection_tool").live 'click', ->
-    $(this).fancybox
-      width    : 960
-      height   : 680
-      titleShow: false
-      padding  : 0
-      ajax:
-        type: "GET"
-      onComplete: ->
-       $("#fancybox-inner").css({'overflow-x':'hidden'})
-    $(this).trigger('click')
-    return false
-
   $("a.select_chart").live 'click', ->
     $(this).fancybox
       width    : 960

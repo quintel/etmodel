@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120402122556) do
+ActiveRecord::Schema.define(:version => 20120416124608) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -282,7 +282,6 @@ ActiveRecord::Schema.define(:version => 20120402122556) do
     t.string   "group_sub_header"
     t.string   "subheader_image"
     t.string   "key"
-    t.boolean  "house_selection"
     t.integer  "position"
     t.integer  "sidebar_item_id"
     t.integer  "output_element_id"

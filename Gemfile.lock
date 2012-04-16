@@ -124,6 +124,8 @@ GEM
       method_source (~> 0.6.7)
       ruby_parser (>= 2.3.1)
       slop (~> 2.1.0)
+    pry-rails (0.1.6)
+      pry
     pry-remote (0.1.0)
       pry (~> 0.9.6)
       slop (~> 2.1)
@@ -246,7 +248,7 @@ DEPENDENCIES
   memcache-client
   mysql2 (~> 0.3.11)
   paper_trail (~> 2.2.4)
-  pry
+  pry-rails
   pry-remote
   rails (= 3.2.3)
   rspec-rails (~> 2.9.0)

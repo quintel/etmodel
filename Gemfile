@@ -32,7 +32,7 @@ group :development do
 end
 
 group :test, :development do
-  gem 'pry'
+  gem 'pry-rails'
   gem 'pry-remote'
   gem 'rspec-rails', "~> 2.9.0"
   gem 'watchr'

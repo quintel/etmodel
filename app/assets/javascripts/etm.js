@@ -26,3 +26,4 @@
 //= require i18n
 //= require translations
 //= require lib/app
+//= require common_interface

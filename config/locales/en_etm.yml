@@ -1,5 +1,4 @@
 en:
-  # ----------- Meta tags ------------ #
   meta:
     name: "Energy Transition Model"
     title: "Energy Transition Model - Your free, independent, comprehensive, fact-based scenario builder."
@@ -15,7 +14,7 @@ en:
   Local_demand: "Local demand"
   National_supply: "National supply"
   Demographics: "Demographics"
-  
+
   #------- Admin -------#
   Graphs: "Graphs"
   Views: "Views"
@@ -23,8 +22,6 @@ en:
   Gqueries: "Gqueries"
   Areas: "Areas"
   Tables: "Tables"
-  Blackboxes: "Blackboxes"
-  Bb scenarios: "BB Scenarios"
   Descriptions: "Descriptions"
   Charts: "Charts"
   Sliders: "Sliders"
@@ -37,9 +34,9 @@ en:
   Expert: "Expert predictions"
   Predictions: "Predictions"
   Press: "Press"
-  back: "Back"  
+  back: "Back"
 
-  # ----------- Header ----------- #  
+  # ----------- Header ----------- #
   Save your settings: "Save your settings"
   reset: "Reset all the sliders to the default values of this scenario."
   search the website: "search the website"
@@ -57,7 +54,7 @@ en:
   see results: "See results"
   use this: "Apply this prediction"
   nevermind: "Never mind"
-  
+
   feedback_text: "Do you have any ideas, questions and/or comments about the Energy Transition Model? We would like to hear those from you!"
   feedback_confirm: "Thank you for your message! We will reply as soon as possible."
   feedback_error: "You didn't fill in all the fields or used an incorrect E-mail."
@@ -104,7 +101,6 @@ en:
     check: "Use fuel chain emissions"
     description: "If you start using fuel chain emissions, the ETM will also include greenhouse gases emitted during the extraction, treatment and transportation of the energycarrier. These numbers are normally not included, because they often occur in other countries"
     notice: "You are using fuel chain emissions. More information can be found at the <a href='/supply/fce/'>fuel chain emissions page</a>"
-  # ----------- Menu ----------- #
   # ----------- Demand ----------- #
   Households: "Households"
   Transportation: "Transportation"
@@ -115,7 +111,7 @@ en:
   Agriculture: "Agriculture"
   Other: "Other users"
 
-  # ----------- Costs ----------- #  
+  # ----------- Costs ----------- #
   Combustion plants: "Combustion plants"
   Nuclear plants: "Nuclear plants"
   Wind turbines: "Wind turbines"
@@ -124,13 +120,12 @@ en:
   Geothermal: "Geothermal"
   CO2 emissions: "CO2 emissions"
   CO2 emission: "CO2 emissions"
-  Infrastructure: "Infrastructure"  
+  Infrastructure: "Infrastructure"
   # ----------- Policy ----------- #
   Sustainability targets: "Sustainability targets"
   Area use: "Area use"
   Dependence: "Energy imports"
   Cost: "Cost"
-  
   # ----------- Supply ----------- #
   Electricity: "Electricity"
   Renewable electricity: "Renewable electr./gas"
@@ -144,9 +139,7 @@ en:
   #-----------SLECT CHART ------------ #
   Overview: "Overview"
   Dashboard: "Dashboard"
-  
-  # ---------------------------- #  
-  # ----------- Intro ----------- # 
+  # ----------- Intro ----------- #
   Welcome back: "Welcome back"
   Continue with your scenario: "Continue with your scenario"
   Start a new scenario: "Start a new scenario"
@@ -181,19 +174,19 @@ en:
 
   options: "options"
   other_year: "Other"
-  
+
   start with costs: "start with costs"
-  start with demand: "start with demand"  
+  start with demand: "start with demand"
   start with supply: "start with supply"
-  start with policy: "start with goals"  
-  
+  start with policy: "start with goals"
+
   show_more: "Show more"
   go_back: "Go back"
   login: "login"
 
   Goals: "Goals"
   Who uses most energy?: "Who uses most energy?"
-  
+
   intro:
     results: "Results of your scenario can be found here"
     section: "Choose your section of interest here"
@@ -201,10 +194,10 @@ en:
     supply: "Where will our energy come from in"
     policy: "How will government policy targets affect the energy system in"
     costs: "How much will energy cost in"
-    
+
   "or": "or"
   "go": "go"
-  
+
   grid_investment:
     header: "The electricity grid needs upgrading"
     more_information: "More information"
@@ -219,26 +212,25 @@ en:
     renewable:           "Renewables"
     summary:             "Summary"
 
-  # ----------- Dashbord titles ----------- # 
-
+  # ----------- Dashbord titles ----------- #
   dashboard:
     changer:
       save: "Save Changes"
       cancel: "Cancel"
       header: "Choose your dashboard (still in Beta, more options soon.)"
-  
-  # ----------- General ----------- # 
-    
+
+  # ----------- General ----------- #
+
   go to next: "go to next"
-  
-  # ----------- Subheader ----------- # 
+
+  # ----------- Subheader ----------- #
   subheaders:
     number: "number"
     change: "change"
     % of total: "% of total"
     %/year: "%/year"
     share: "share"
-    market penetration: "market penetration" 
+    market penetration: "market penetration"
     maximum: "maximum"
     maximum increase: "maximum increase"
     max surface: "max surface"
@@ -263,19 +255,6 @@ en:
     overview: "overview"
     provide_title: "Please provide a titel for the scenario."
     reset_to_preset_confirmation: "Are you sure you want to reset this scenario to it's preset"
-    
-  municipality:
-    title: "The %{title} model"
-    subtitle: "Please select the national scenario that you wish to use with the model"
-    public_presets: "Use one of the public preset scenarios:"
-    saved_scenarios: "Or use one of your own saved scenarios for the Netherlands:"
-    create_a_new_one: "Create a new scenario"
-    login: "%{login} to see your scenarios"
-    areyousure: "Red sliders are part of the public scenario. A municipality has no influence on these settings normally. Are you sure you want to override these values?"    
-    private_presets: "Or use one of your saved scenarios"
-    private_presets_and_login: "Or %{login} to use one of your saved scenarios"
-    hide_unadaptable_sliders: "Some of the inputs cannot be adapted on municipalitylevel. Do you want to hide the loaded values?"
-    
   flash:
     not_allowed: "Sorry, you are not allowed to access that page."
     reset: "Scenario is reset to default values."
@@ -300,7 +279,7 @@ en:
     energietransitiemodel: "Click here for the full version of the ETM"
   accordion:
     expert predictions available: "expert predictions available"
-    collective: "collective"  
+    collective: "collective"
     appliances without label: "appliances without label"
     intelligent control: "intelligent control"
     insulation level: "insulation level"

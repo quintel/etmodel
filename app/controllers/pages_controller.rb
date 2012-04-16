@@ -91,6 +91,10 @@ public
     redirect_to root_path, :notice => "Watt Nu score feature is now set to #{session[:wattnu]}"
   end
 
+  def bugs
+    @translation = Translation.find_or_create_by_key('bugs')
+  end
+
   ######################################
   # Browser Checks
   ######################################

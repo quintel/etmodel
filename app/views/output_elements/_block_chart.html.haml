@@ -24,7 +24,7 @@
       - blocks.each do |block|
         - show_or_not = session["block_#{block.id}"]
         - show_or_not ||= block.show_at_first ? 'visible' : 'invisible'
-        .block_container{:style => "bottom: 0%; left: 0%;", :class => show_or_not, :id => "block_container_#{block.id}", :data => {:block_id => block.id}}
+        .block_container{:class => show_or_not, :id => "block_container_#{block.id}", :data => {:block_id => block.id}}
           .block{:id => "block_#{block.id}"}
             .header{:class => block.group.downcase}= t("output_element_series.#{block.label}")
             .content

@@ -22,12 +22,13 @@ class @BlockChartView extends BaseChartView
 
   can_be_shown_as_table: -> false
 
+  # for some reason the standard backbone views events don't work
+  # as expected
   setup_callbacks: =>
-    @bind_hovers()
-    $('#block_list li').hover(
-      -> $(this).find("ul").show(1),
-      -> $(this).find("ul").hide(1)
-    )
+    $('#block_list li').mouseenter -> $(this).find("ul").show(1)
+    $('#block_list li').mouseleave -> $(this).find("ul").hide(1)
+    $('.block_container').mouseenter @expand_block
+    $('.block_container').mouseleave @collapse_block
     $('.show_hide_block').click (e) =>
       block_id = $(e.target).attr('data-block_id')
       @toggle_block(block_id)
@@ -63,21 +64,26 @@ class @BlockChartView extends BaseChartView
       $(this).parent().find(':checkbox').attr('checked', false)
       checkbox.attr('checked', false)
 
-  bind_hovers: ->
-    $('.block_container').hover(
-      (e) ->
-        $(e.target).addClass("hover").css({"z-index": @current_z_index}).find(".content").stop().animate({width: '150px', height: '100px'})
-        $(e.target).find(".header").stop().animate({width: '150px'})
-        $(".block_container").stop().not(".hover")
-        $("#tooltip").stop()
-        @current_z_index++
-      , ->
-        $(this).removeClass("hover").find('.content').stop().animate({width:'75px', height: '0px'})
-        $(this).find('.header').stop().animate({width:'75px'})
-        $(".block_container").stop()
-        $("#tooltip").stop()
-      )
+  # on mouseover, expands the block
+  expand_block: (e) =>
+    item = $(e.target).parent('.block_container')
+    item.addClass('hover')
+    item.css({"z-index": @current_z_index}).find(".content").stop().animate({width: '150px', height: '100px'})
+    item.find(".header").stop().animate({width: '150px'})
+    $(".block_container").stop().not(".hover")
+    $("#tooltip").stop()
+    @current_z_index++
 
+  # when the mouse leaves a block
+  collapse_block: (e) ->
+    item = $(e.target).parent('.block_container')
+    item.removeClass('hover')
+    item.find('.content').stop().animate({width:'75px', height: '0px'})
+    item.find('.header').stop().animate({width:'75px'})
+    $(".block_container").stop()
+    $("#tooltip").stop()
+
+  # when the user selects a checkbox
   show_block: (block_id) =>
     $('#canvas').find('#block_container_'+block_id).removeClass('invisible').addClass('visible').css({'z-index':@current_z_index})
     $('#block_list #show_hide_block_'+block_id).addClass('visible').removeClass('invisible')
@@ -87,6 +93,7 @@ class @BlockChartView extends BaseChartView
     @current_z_index++
     @update_block_charts()
 
+  # when the user deselects a checkbox
   hide_block: (block_id) =>
     $('#canvas').find('#block_container_'+block_id).removeClass('visible').addClass('invisible')
     $('#block_list #show_hide_block_'+block_id).addClass('invisible').removeClass('visible')
@@ -97,19 +104,16 @@ class @BlockChartView extends BaseChartView
 
   update_block_charts: =>
     data_array = @results()
-    # max values check
     max_cost = 0
     max_invest = 0
-    $.each data_array, (index, block) ->
+    for block in data_array
       if ($('#block_container_'+block[0]).hasClass('visible'))
         max_cost = block[1] if max_cost < block[1]
         max_invest = block[2] if max_invest < block[2]
-    # minimal value check
     max_cost = 200 if max_cost < 200
     max_invest = 5 if max_invest < 5
     # update x axis
     ticks = $('#x-axis li')
-    value = null
     ticks.each (index,tick) ->
       value = (max_invest / 5) * (index + 1)
       $('#'+tick.id).text(Math.round(value))
@@ -119,7 +123,7 @@ class @BlockChartView extends BaseChartView
       value = (max_cost / 5) * (5 - index)
       $('#'+tick.id).text(Math.round(value))
     # update blocks
-    $.each data_array, (index, block) ->
+    for block in data_array
       block_bottom = block[1] * 100 / max_cost
       block_left = block[2] * 100 / max_invest
       $('#block_container_'+block[0]).animate({'bottom': block_bottom + "%",'left': block_left + "%"})

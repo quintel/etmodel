@@ -549,7 +549,10 @@
       if (globals.standalone) {
         $("a.player").hide();
       } else {
-        flowplayer('a.player', '/flash/flowplayer-3.2.6.swf');
+        flowplayer('a.player', {
+          src: '/flash/flowplayer-3.2.6.swf',
+          wmode: 'opaque'
+        });
       }
     },
 

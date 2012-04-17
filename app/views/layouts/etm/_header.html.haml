@@ -1,7 +1,7 @@
-// DEBT We're using twice the same id.
-#notice_bar.fce_notice{ :class => Current.setting.use_fce ? nil : 'hidden' }= t("fce.notice").html_safe
-- if user_notification = GeneralUserNotification.active.first
-  #notice_bar= raw user_notification.text
+#notice_bar
+  - GeneralUserNotification.active.each do |n|
+    .general_notice= raw n.text
+  .fce_notice{:class => Current.setting.use_fce ? nil : 'hidden'}= raw t("fce.notice")
 .frame{:style => "position: relative;"}
   %ul.sub-nav
     %li

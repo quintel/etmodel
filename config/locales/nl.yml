@@ -183,9 +183,9 @@ nl:
       prompt: "Selecteer"
 
     submit:
-      create: '%{model} toevoegen'
-      update: '%{model} bewaren'
-      submit: '%{model} opslaan'
+      create: "%{model} toevoegen"
+      update: "%{model} bewaren"
+      submit: "%{model} opslaan"
 
   errors:
     format: "%{attribute} %{message}"

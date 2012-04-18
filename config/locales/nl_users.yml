@@ -1,49 +1,49 @@
 nl:
   authlogic:
     error_messages:
-      login_blank: kan niet leeg zijn
-      login_not_found: is niet geldig
-      login_invalid: should use only letters, numbers, spaces, and .-_@ please.
-      consecutive_failed_logins_limit_exceeded: Consecutive failed logins limit exceeded, account is disabled.
-      email_invalid: is niet geldig
-      email_to_short: is te kort
-      password_blank: kan niet leeg zijn
-      password_invalid: is niet geldig
-      not_active: Your account is not active
-      not_confirmed: Your account is not confirmed
-      not_approved: Your account is not approved
-      no_authentication_details: U heeft geen details ingevoerd.
+      login_blank: "kan niet leeg zijn"
+      login_not_found: "is niet geldig"
+      login_invalid: "should use only letters, numbers, spaces, and .-_@ please."
+      consecutive_failed_logins_limit_exceeded: "Consecutive failed logins limit exceeded, account is disabled."
+      email_invalid: "is niet geldig"
+      email_to_short: "is te kort"
+      password_blank: "kan niet leeg zijn"
+      password_invalid: "is niet geldig"
+      not_active: "Your account is not active"
+      not_confirmed: "Your account is not confirmed"
+      not_approved: "Your account is not approved"
+      no_authentication_details: "U heeft geen details ingevoerd."
   activerecord:
     errors:
       messages:
-        greater_than_or_equal_to: moet groter of gelijk zijn aan %{count}
-        less_than_or_equal_to: moet minder of gelijk zijn aan %{count}
-        confirmation: komt niet met de bevestiging overeen
-        blank: moet opgegeven zijn
-        exclusion: is niet beschikbaar
-        invalid: is ongeldig
-        record_invalid: is ongeldig
-        odd: moet oneven zijn
-        too_short: is te kort (niet minder dan %{count} tekens)
-        wrong_length: heeft niet de juiste lengte (moet %{count} tekens lang zijn)
-        empty: moet opgegeven zijn
-        even: moet even zijn
-        less_than: moet minder zijn dan %{count}
-        equal_to: moet gelijk zijn aan %{count}
-        greater_than: moet groter zijn dan %{count}
-        accepted: moet worden geaccepteerd
-        too_long: is te lang (niet meer dan %{count} tekens)
-        taken: is niet beschikbaar
-        inclusion: is niet in de lijst opgenomen
-        not_a_number: is geen getal
+        greater_than_or_equal_to: "moet groter of gelijk zijn aan %{count}"
+        less_than_or_equal_to: "moet minder of gelijk zijn aan %{count}"
+        confirmation: "komt niet met de bevestiging overeen"
+        blank: "moet opgegeven zijn"
+        exclusion: "is niet beschikbaar"
+        invalid: "is ongeldig"
+        record_invalid: "is ongeldig"
+        odd: "moet oneven zijn"
+        too_short: "is te kort (niet minder dan %{count} tekens)"
+        wrong_length: "heeft niet de juiste lengte (moet %{count} tekens lang zijn)"
+        empty: "moet opgegeven zijn"
+        even: "moet even zijn"
+        less_than: "moet minder zijn dan %{count}"
+        equal_to: "moet gelijk zijn aan %{count}"
+        greater_than: "moet groter zijn dan %{count}"
+        accepted: "moet worden geaccepteerd"
+        too_long: "is te lang (niet meer dan %{count} tekens)"
+        taken: "is niet beschikbaar"
+        inclusion: "is niet in de lijst opgenomen"
+        not_a_number: "is geen getal"
     attributes:
       user:
-        password: Wachtwoord
+        password: "Wachtwoord"
         password_confirmation: "Wachtwoord bevestiging"
-        phone_number: Telefoon nummer
-        name: Naam
+        phone_number: "Telefoon nummer"
+        name: "Naam"
       user_session:
-        password: Wachtwoord
+        password: "Wachtwoord"
         
   user:
     username: "Naam"

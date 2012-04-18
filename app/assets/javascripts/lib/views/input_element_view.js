@@ -390,7 +390,7 @@
         newValue = this.quinn.setValue(newValue);
       }
 
-      this.valueElement.text(this.conversion.formatWithUnit(newValue));
+      this.valueElement.html(this.conversion.formatWithUnit(newValue));
 
       return newValue;
     },

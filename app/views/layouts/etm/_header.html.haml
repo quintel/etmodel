@@ -35,6 +35,6 @@
   - if defined?(info_box) && info_box
     #info_box
       #flag
-        %img{:src => "/assets/icons/#{Current.setting.country}.png"}
-        = Current.setting.region if Current.setting.region != "nl"
+        %img{:src => "/assets/icons/#{Current.setting.area_code}.png"}
+        = Current.setting.area_code if Current.setting.area_code != "nl"
       #year= Current.setting.end_year

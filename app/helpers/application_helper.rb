@@ -57,7 +57,7 @@ module ApplicationHelper
   end
 
   def scenario_in_etengine_url
-    "#{APP_CONFIG[:api_url].gsub('api/v2', 'data')}/#{Current.setting.api_session_id}/#{Current.setting.region}"
+    "#{APP_CONFIG[:api_url].gsub('api/v2', 'data')}/#{Current.setting.api_session_id}/#{Current.setting.area_code}"
   end
 
   # Used to show a notice in the admin section

@@ -24,8 +24,8 @@
 #settings_menu.header_menu.topnav
   %li
     #flag
-      %img{:src => "/assets/icons/#{Current.setting.country}.png"}
-      = Current.setting.region if Current.setting.region != "nl"
+      %img{:src => "/assets/icons/#{Current.setting.area_code}.png"}
+      = Current.setting.area_code if Current.setting.area_code != "nl"
     = t("header.Current country")+":"
   %li
     #year

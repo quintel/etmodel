@@ -27,30 +27,8 @@ describe PagesController do
 
       specify { response.should redirect_to(:action => 'intro') }
       specify { assigns(:current).setting.end_year.should eql(year.to_i) }
-      specify { assigns(:current).setting.country.should eql(country) }
+      specify { assigns(:current).setting.area_code.should eql(country) }
     end
-  end
-
-  describe "selected a country and a region" do
-    before do
-      post :root, "area_code" => "nl-flevoland", "end_year" => "2010"
-    end
-
-    specify { response.should redirect_to(:action => 'intro')}
-    it "should assign the right country and region" do
-      assigns(:current).setting.region.should  == 'flevoland'
-      assigns(:current).setting.country.should == 'nl'
-    end
-  end
-
-  describe "selected a country without region" do
-    before do
-      post :root, :area_code => "ch", :end_year => "2010"
-    end
-
-    specify { response.should redirect_to(:action => 'intro')}
-    specify { assigns(:current).setting.country.should eql('ch') }
-    specify { assigns(:current).setting.region.should be_nil }
   end
 
   context "setting custom year values" do

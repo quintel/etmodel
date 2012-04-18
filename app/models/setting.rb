@@ -73,8 +73,7 @@ class Setting
   # requires changes on the ETE side. Wait for API v3
   def new_settings_hash
     {
-      :country  => country,
-      :region   => area_code, # UGLY!
+      :area_code => area_code,
       :end_year => end_year,
       :scenario_id => scenario_id,
       :use_fce => use_fce
@@ -132,15 +131,5 @@ class Setting
   # Returns the ActiveResource object
   def area
     Api::Area.find_by_country_memoized(area_code)
-  end
-
-  # LEGACY: we should use area_code only
-  def country
-    area_code.split('-')[0] rescue nil
-  end
-
-  # LEGACY: we should use area_code only
-  def region
-    area_code.split('-', 2)[1] rescue nil
   end
 end

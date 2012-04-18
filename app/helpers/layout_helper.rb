@@ -20,7 +20,7 @@ module LayoutHelper
   end
 
   def country_option(code, opts = {})
-    current = Current.setting.region == code
+    current = Current.setting.area_code == code
     selected = current ? "selected='true'" : nil
     label = I18n.t(code)
     label += ' (test)' if opts[:test]

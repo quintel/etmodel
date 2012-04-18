@@ -29,6 +29,7 @@ class @Setting extends Backbone.Model
     # UGLY
     App.call_api("input[900]=" + (enabled ? 1.0 : 0.0))
 
+  # Used by the bio-footprint dashboard item
   country: => @get('area_code').split('-')[0]
 
 $ ->

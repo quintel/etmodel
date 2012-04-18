@@ -6,8 +6,7 @@ class @Scenario extends Backbone.Model
   api_attributes: =>
     s = App.settings
     data =
-      country: s.get('country')
-      region: s.get('region')
+      area_code: s.get('area_code')
       end_year: s.get('end_year')
       scenario_id: s.get('scenario_id')
       use_fce: s.get('use_fce')

@@ -40,7 +40,7 @@ class Setting
       :scenario_id => scenario.id,
       :use_fce => scenario.use_fce,
       :end_year => scenario.end_year,
-      :area_code => scenario.region.nil? ? scenario.country : scenario.region
+      :area_code => scenario.area_code ? scenario.area_code : scenario.country || scenario.region
     }
     new(attrs)
   end

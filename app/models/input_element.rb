@@ -79,12 +79,12 @@ class InputElement < ActiveRecord::Base
   end
 
   def available_predictions(area = nil)
-    predictions.for_area(area || Current.setting.region || Current.setting.country)
+    predictions.for_area(area || Current.setting.area_code)
   end
 
   def has_predictions?
     return false unless Current.backcasting_enabled
-    available_predictions(Current.setting.region).any?
+    available_predictions(Current.setting.area_code).any?
   end
   alias_method :has_predictions, :has_predictions?
 

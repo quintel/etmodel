@@ -107,10 +107,8 @@ $slider-box-height: 22px
     line-height: 18px
     margin: 5px 0 20px
     padding: 12px 15px
-
-    -webkit-border-radius: 5px
-    -moz-border-radius: 5px
-    border-radius: 5px
+    @include border-radius(5px)
+    
     a.player
       z-index: 1
 
@@ -152,9 +150,7 @@ $slider-box-height: 22px
     position: absolute
     z-index: 5000
 
-    -webkit-border-radius: 7px
-    -moz-border-radius: 7px
-    border-radius: 7px
+    @include border-radius(7px)
 
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2)
     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2)
@@ -163,9 +159,7 @@ $slider-box-height: 22px
     form
       background: white
 
-      -moz-border-radius: 3px
-      -webkit-border-radius: 3px
-      border-radius: 3px
+      @include border-top-right-radius(3px)
 
       border: 1px solid #ccc
       border-top-color: #bbb
@@ -231,12 +225,8 @@ $slider-box-height: 22px
       border: 1px solid #4a7b9e
       border-bottom-color: #3c6582
 
-      -moz-border-top-right-radius: 3px
-      -moz-border-bottom-right-radius: 3px
-      -webkit-border-top-right-radius: 3px
-      -webkit-border-bottom-right-radius: 3px
-      border-top-right-radius: 3px
-      border-bottom-right-radius: 3px
+      @include border-top-right-radius(3px)
+      @include border-bottom-right-radius(3px)
 
       background: #649ec6
       background: -webkit-linear-gradient(#7eb9e0, #518ab4)

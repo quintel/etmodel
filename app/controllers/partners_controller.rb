@@ -1,12 +1,12 @@
 class PartnersController < ApplicationController
   def show
-    country = Current.setting.country rescue nil
+    country = Current.setting.area_code rescue nil
     @partner = Partner.find_by_slug_localized(params[:id], country)
     render :file => 'public/404.html', :status => 404 if @partner.nil?
   end
 
   def index
-    @country = Current.setting.country
+    @country = Current.setting.area_code
     @all_partners = Partner.country(@country).unique.sort_by{Kernel.rand}
     @partner_types = ['general']
     @partner_types << 'knowledge' if @all_partners.map(&:partner_type).include?('knowledge')

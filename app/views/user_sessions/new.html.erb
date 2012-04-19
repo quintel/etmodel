@@ -1,6 +1,6 @@
 <% if current_user%>
-<%= link_to t("header.Sign out"), "/logout" %> 
-<%= link_to "Home", root_path %> 
+<%= link_to t("header.sign_out"), "/logout" %> 
+<%= link_to I18n.t('home'), home_path %> 
 <% else %>
 <h1>Login</h1>
 
@@ -25,6 +25,6 @@
     <%= f.submit 'Login' %>
   </p>
   
-  <%= link_to t("header.create account"), new_user_path %>
+  <%= link_to t("header.create_account"), new_user_path %>
 <% end %>
 <% end %>

@@ -8,7 +8,7 @@
         .button_center
           %span= t("tutorial.button")
         .button_right
-    %h2= raw I18n.t("pagetitle.#{title.title}")
+    %h2= raw I18n.t("pagetitle.#{to_yml_syntax(title.title)}")
     %p#content_short.visible
       %span= raw description.try(:short_content)
       %a#read_more{:href => '#'}= I18n.t("pagetitle.readmore")

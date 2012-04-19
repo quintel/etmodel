@@ -6,25 +6,25 @@
   %ul.sub-nav
     %li
       %a.information{:href=>"#"}
-        %span=t("header.Information")
+        %span=t("header.information")
     %li
       %a.settings{:href=>"#"}
-        %span=t("header.Settings")
+        %span=t("header.settings")
     - if current_user
       %li
         %a.signout{:href=>"/logout"}
-          %span=t("header.Sign out")
+          %span=t("header.sign_out")
     - else
       %li
         %a.signin{:href=>"#"}
-          %span=t("header.Sign in")
+          %span=t("header.sign_in")
 
     %li{:style=>'width: 160px'}
       %form#searchform{ :action => "/search", :method => :get }
         %fieldset
           %input.btn-search{ :type => "submit", :value => "" }
           %span.text
-            %input{ :name => 'q', :type => "text", :value => "#{t("search the website")}", :onclick => "$(this).val('');" }
+            %input{ :name => 'q', :type => "text", :value => "#{t("search_the_website")}", :onclick => "$(this).val('');" }
 
   %strong
     %a{ :href => "/" }

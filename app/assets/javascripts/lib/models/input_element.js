@@ -93,7 +93,8 @@ var InputElementList = Backbone.Collection.extend({
     this.each(function(input_element) {
       var values = user_value_hash['' + input_element.get('input_id')];
       if (!values) {
-        console.warn("Missing slider information! " + input_element.get('key'));
+        console.warn("Missing slider information! " + input_element.get('key') +
+          " #" + input_element.get('id'));
         return false;
       }
       input_element.set_min_value(values.min_value);

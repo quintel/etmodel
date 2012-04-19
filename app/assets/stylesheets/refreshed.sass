@@ -1,5 +1,6 @@
 @import 'normalize'
 @import compass/css3/border-radius
+@import compass/css3/images
 @import compass/css3/box-shadow
 
 
@@ -58,12 +59,7 @@ header
 
   background-color: #66A2CA
 
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4287BB), color-stop(100%, #66A2CA))
-  background: -webkit-linear-gradient(#66A2CA,#4287BB)
-  background: -moz-linear-gradient(#4287BB,#66A2CA)
-  background: -o-linear-gradient(#4287BB,#66A2CA)
-  background: -ms-linear-gradient(#4287BB,#66A2CA)
-  background: linear-gradient(#4287BB,#66A2CA)
+  @include background(linear-gradient(top,#66A2CA, #4287BB))
 
   @include box-shadow(0 1px 2px rgba(10, 10, 10, 0.25))
 

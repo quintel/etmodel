@@ -1,4 +1,4 @@
-%h3= t('select a scenario')
+%h3= t('select_a_scenario')
 - cache "scenario_select_#{I18n.locale}" do
   - @scenarios = Api::Scenario.all(:from => :homepage)
   = form_tag url_for(:controller => 'scenarios', :action => 'load') do

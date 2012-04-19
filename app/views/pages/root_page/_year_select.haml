@@ -1,6 +1,6 @@
 %li
   %h3
-    = t("Choose year")
+    = t("choose_year")
   - preset_years = [2020, 2030, 2040, 2050, "other"]
   - other_year_selected = !preset_years.include?(Current.setting.end_year)
   = select_tag :end_year, options_for_select(preset_years, other_year_selected ? "other" : (Current.setting.end_year || 2050)),{:onchange => "Interface.check_year_radio_buttons();", :style=>"width:78px"}

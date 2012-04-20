@@ -14,6 +14,9 @@ class ScenariosController < ApplicationController
   end
 
   def show
+    if(@scenario.nil?)
+      redirect_to home_path, :notice => "Scenario not found" and return
+    end
   end
 
   def new

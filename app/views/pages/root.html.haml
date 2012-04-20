@@ -1,23 +1,23 @@
 #home
   #start
     - if has_active_scenario?
-      %h1= t("Welcome back")
+      %h1= t("welcome_back")
     - else
-      %h1= t("Start right away")
-      %p.nodownloads= t("No downloads")
+      %h1= t("start_right_away")
+      %p.nodownloads= t("no_downloads")
 
     - if has_active_scenario?
       %a#continue_scenario_button.style_button{:href => last_etm_path(:include_action => false),:alt=>"continue",:title=>"continue"}
-        = t('continue with current scenario').capitalize
+        = t('continue_with_current_scenario').capitalize
     %a#new_scenario_button.style_button{:href =>"#",:alt=>"new scenario",:title=>"new scenario"}
-      = t('Start a new scenario').capitalize
+      = t('start_a_new_scenario').capitalize
     %ul#new_scenario_form
       = form_tag root_path do
         = render "pages/root_page/country_select"
         = render "pages/root_page/year_select"
         = render 'pages/root_page/start_button'
     %a#existing_scenario_button.style_button{:href =>"#",:alt=>"continue",:title=>"continue"}
-      = t('load a scenario').capitalize
+      = t('load_a_scenario').capitalize
     %ul#existing_scenario_form
       = render 'pages/root_page/scenario_select_form'
     - if I18n.locale.to_s == "nl"

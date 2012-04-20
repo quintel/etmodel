@@ -8,9 +8,9 @@ module LayoutHelper
   def back_to_model_link
     last_etm_controller_name = Current.setting.last_etm_controller_name
     if last_etm_controller_name.blank?
-      link_to t("Home"), root_path
+      link_to t("home"), root_path
     else
-      link_to t("back to model"), :controller => last_etm_controller_name,
+      link_to t("back_to_model"), :controller => last_etm_controller_name,
                                   :action => session[:last_etm_action_name]
     end
   end

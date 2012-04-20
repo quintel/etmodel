@@ -8,7 +8,7 @@
             = link_to t("partners.#{partner_type}"), :partner_type => partner_type
   %br
 - else
-  %h1= t("partners.Partners of the Energy Transition Model")
+  %h1= t("partners.partners_of_the_energy_transition_model")
 
 #partners{:style => 'width: 100%;'}
   - @partners.each do |p|
@@ -22,5 +22,5 @@
       - if p.description
         = p.description.short_content
       - else
-        = t("partners.Click here to go to the website of") + "#{p.name_or_long_name}."
+        = t("partners.click_here_to_go_to_the_website_of") + "#{p.name_or_long_name}."
   .clear

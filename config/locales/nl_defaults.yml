@@ -9,18 +9,18 @@ nl:
     format: 
       separator: ","
       precision: 2
-      delimiter: .
+      delimiter: "."
     human: 
       storage_units: 
         format: "%n %u"
         units: 
-          kb: KB
-          tb: TB
-          gb: GB
+          kb: "KB"
+          tb: "TB"
+          gb: "GB"
           byte: 
-            one: Byte
-            other: Bytes
-          mb: MB
+            one: "Byte"
+            other: "Bytes"
+          mb: "MB"
     currency: 
       format: 
         format: "%u %n"
@@ -29,7 +29,7 @@ nl:
 
         separator: ","
         precision: 2
-        delimiter: .
+        delimiter: "."
   errors: 
     template: 
       body: "Controleer alstublieft de volgende velden:"
@@ -112,41 +112,41 @@ nl:
     format: 
       default: "%Y-%m-%dT%H:%M:%S%Z"
     prompts: 
-      minute: minuut
-      second: seconden
-      month: maand
-      hour: uur
-      day: dag
-      year: jaar
+      minute: "minuut"
+      second: "seconden"
+      month: "maand"
+      hour: "uur"
+      day: "dag"
+      year: "jaar"
     distance_in_words: 
       less_than_x_minutes: 
         one: "minder dan \xC3\xA9\xC3\xA9n minuut"
-        other: minder dan %{count} minuten
+        other: "minder dan %{count} minuten"
       x_days: 
-        one: 1 dag
+        one: "1 dag"
         other: "%{count} dagen"
       x_seconds: 
-        one: 1 seconde
+        one: "1 seconde"
         other: "%{count} seconden"
       about_x_hours: 
         one: "ongeveer \xC3\xA9\xC3\xA9n uur"
-        other: ongeveer %{count} uur
+        other: "ongeveer %{count} uur"
       less_than_x_seconds: 
         one: "minder dan \xC3\xA9\xC3\xA9n seconde"
-        other: minder dan %{count} seconden
+        other: "minder dan %{count} seconden"
       x_months: 
-        one: 1 maand
+        one: "1 maand"
         other: "%{count} maanden"
       x_minutes: 
-        one: 1 minuut
+        one: "1 minuut"
         other: "%{count} minuten"
       about_x_years: 
         one: "ongeveer \xC3\xA9\xC3\xA9n jaar"
-        other: ongeveer %{count} jaren
+        other: "ongeveer %{count} jaren"
       about_x_months: 
         one: "ongeveer \xC3\xA9\xC3\xA9n maand"
-        other: ongeveer %{count} maanden
+        other: "ongeveer %{count} maanden"
       over_x_years: 
         one: "langer dan \xC3\xA9\xC3\xA9n jaar"
-        other: langer %{count} jaar
-      half_a_minute: halve minuut
+        other: "langer %{count} jaar"
+      half_a_minute: "halve minuut"

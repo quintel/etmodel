@@ -54,19 +54,6 @@ $ ->
     $(this).trigger('click')
     return false
 
-  $(".energy_mixer").live 'click', ->
-    $(this).fancybox
-      width    : 890
-      height   : "80%"
-      titleShow: false
-      padding  : 0
-      scrolling: 'auto'
-      type     : 'iframe'
-      ajax:
-        type: "GET"
-    $(this).trigger('click')
-    return false
-
   $('#overlay_container a').live 'click', (i,el) ->
     if !$(this).hasClass('no_target')
       window.open($(this).attr('href'), '_blank')

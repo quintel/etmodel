@@ -1,7 +1,4 @@
 class SearchController < ApplicationController
-  layout 'pages'
-
-  include ApplicationController::HasDashboard
 
   def index
     @query = params[:q]

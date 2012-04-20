@@ -20,11 +20,6 @@
       = t('load_a_scenario').capitalize
     %ul#existing_scenario_form
       = render 'pages/root_page/scenario_select_form'
-    - if I18n.locale.to_s == "nl"
-      %a#energy_mixer_button.style_button{:href => "#", :alt=>"energy mixer", :title=>"energy mixer"}
-        = t('energy_mixer').capitalize
-      %ul#energy_mixer_desc
-        = render 'pages/root_page/energy_mixer_desc'
 
   =render 'pages/root_page/movies'
 

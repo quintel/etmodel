@@ -1,4 +1,4 @@
-<h1><%= t("header.create account").capitalize %></h1>
+<h1><%= t("header.create_account") %></h1>
 
 <%= form_for(@user) do |f| %>
   <%= error_messages_for :user, :header_message => t("user.error_header"),:message=> t("user.error_message") %>
@@ -35,7 +35,7 @@
     <%= f.password_field :password_confirmation %>
   </p>
   <p>
-    <%= f.submit t('Create') %>
+    <%= f.submit t('create') %>
   </p>
 
 <% end %>

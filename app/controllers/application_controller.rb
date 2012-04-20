@@ -95,7 +95,7 @@ protected
   end
 
   def store_location
-    session[:return_to] = request.full_path
+    session[:return_to] = request.fullpath
   end
 
   def admin?

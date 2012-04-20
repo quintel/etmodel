@@ -1,20 +1,35 @@
 = back_to_model_link
-
-%h3 Scenario #{@scenario.title}
-%h3
-  %small
-    = t("scenario.created")
+#page_wrapper
+  %h3 Scenario #{@scenario.title}
+  %p
+    %b= t("scenario.created")
     == #{@scenario.created_at.strftime("%d/%m/%Y %H:%M")}
+  %p
+    %b= t("scenario.area_code")
+    = t("#{@scenario.area_code}")
+  %p
+    %b= t("scenario.end_year")
+    = t("#{@scenario.end_year}")  
+  %p
+    %b= t("scenario.do_it_use_fce")
+    -if(@scenario.use_fce)
+      = t("scenario.yes")
+    -else
+      = t("scenario.no")
+  -unless(@scenario.description.nil?)
+    %p
+      %b= t("scenario.description")
+      %br/ 
+      == #{@scenario.description} 
 
-
-%h2
-  = link_to t("scenario.load"), load_scenario_path(@scenario)
-  %small{:style => "font-size: 12px; font-weight: normal"}
-    (
-    = t("scenario.overwritten")
-    = link_to t("scenario.save_first"), new_scenario_path
-    = t("scenario.go_back")
-    )
-    = link_to t("scenario.overview"), scenarios_path
-%p
-  %pre= @scenario.description
+  %h3
+    = link_to t("scenario.load"), load_scenario_path(@scenario)
+    %small{:style => "font-size: 12px; font-weight: normal"}
+      (
+      = t("scenario.overwritten")
+      = link_to t("scenario.save_first"), new_scenario_path
+      = t("scenario.go_back")
+      = link_to t("scenario.overview"), scenarios_path
+      )
+    
+= back_to_model_link

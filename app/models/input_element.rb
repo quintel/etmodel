@@ -24,7 +24,8 @@ class InputElement < ActiveRecord::Base
   has_one :description, :as => :describable, :dependent => :destroy
   has_one :area_dependency, :as => :dependable, :dependent => :destroy
   has_many :predictions
-  belongs_to :slide
+  has_many :slider_positions, :foreign_key => :slider_id
+  has_many :slides, :through => :slider_positions
 
 
   validates :key, :presence => true, :uniqueness => true
@@ -121,5 +122,8 @@ class InputElement < ActiveRecord::Base
     (description.andand.content.andand.gsub('id="player"','class="player"') || "").html_safe
   end
 
-  
+  # Use by admin and search page
+  def url
+    slides.first.try :url
+  end
 end

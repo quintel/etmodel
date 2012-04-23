@@ -1,9 +1,8 @@
-%div{:style => "width: 60%"}
-  - simple_form_for [:admin, @tab] do |form|
-    = form.input :key
-    = form.input :nl_vimeo_id, :hint=>"This value should be the key of a vimeo video, it will be shown when the tutorial button is clicked"
-    = form.input :en_vimeo_id, :hint=>"This value should be the key of a vimeo video, it will be shown when the tutorial button is clicked"
-    = form.input :position
-    = form.button :submit
-  
-  = link_to "back", admin_tabs_path
+= simple_form_for [:admin, @tab] do |form|
+  = form.input :key
+  = form.input :nl_vimeo_id, :hint=>"This value should be the key of a vimeo video, it will be shown when the tutorial button is clicked"
+  = form.input :en_vimeo_id, :hint=>"This value should be the key of a vimeo video, it will be shown when the tutorial button is clicked"
+  = form.input :position
+  = form.button :submit
+
+= link_to "back", admin_tabs_path

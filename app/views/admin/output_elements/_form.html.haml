@@ -1,29 +1,27 @@
-%div{:style => "width: 60%"}
-  = "Check the <a href='http://wiki.quintel.nl/index.php/Charts' ' target='_blank'>wiki</a> for more info".html_safe
-  %br
-  %br
-  - simple_form_for [:admin, @output_element] do |f|
-    = f.input :key, :hint => "Should be unique and recognizable! (yes, also for others) , check for conventions with WvL"
+= "Check the <a href='http://wiki.quintel.nl/index.php/Charts' ' target='_blank'>wiki</a> for more info".html_safe
+%br
+= simple_form_for [:admin, @output_element] do |f|
+  = f.input :key, :hint => "Should be unique and recognizable! (yes, also for others) , check for conventions with WvL"
 
-    = f.association :output_element_type, :hint => "Check the <a href='http://wiki.quintel.nl/index.php/Charts' ' target='_blank'>wiki</a> for more info".html_safe
-    = f.input :unit, :hint => "This will be used on the axis"
-    = f.input :percentage, :hint => "Some chart_types (in policy) are showing percentages. Check this box if your charts should go from 0% to 100%"
-    = f.input :group, :as => :select, :collection => ['Overview', 'Dashboard', 'Demand', 'Supply', 'Policy', 'Cost'],  :hint => "In which section do you want to put your charts in the 'select chart' screen?"
-    = f.input :show_point_label, :hint => "Do you want the values of the series to show up inside the chart? This doesnt apply to all the charts"
-    = f.input :growth_chart, :hint => "Do you want your chart to be exponential? check this box. (only applies to bezier chart)"
-    = f.input :min_axis_value, :hint => "When filled in this will override the generated axis values (only applies to horizontal stacked bar chart)"
-    = f.input :max_axis_value, :hint => "When filled in this will override the generated axis values (only applies to horizontal stacked bar chart)"
-    
-    = f.simple_fields_for :area_dependency do |j|
-      = j.input :dependent_on, :as => :select, :collection => Api::Area::DEPENDABLE_ATTRIBUTES, :hint => "When you dont want to show the chart for areas which have a certain setting. E.g. dont wanna show Solar CSP in NL? Put this to 'has_solar_csp' and be sure that for NL this value is false in the area data."
-    
-    = f.simple_fields_for :description do |j|
-      = j.input :short_content_en, :hint => "This is shown in the 'select chart' screen. Do not make it too long!"
-      = j.input :short_content_nl, :hint => "This is shown in the 'select chart' screen. Do not make it too long!"
-      = j.input :content_en, :hint => "This is shown when the user clicks the question mark (?)"
-      = j.input :content_nl, :hint => "This is shown when the user clicks the question mark (?)"
-    = f.input :under_construction, :hint => "Do you want a 'Under construction' label on top of your chart?"
-    = f.input :hidden, :hint => "Should it be shown on the list?"
-    = f.button :submit
-  
-  = link_to "back", :back
+  = f.association :output_element_type, :hint => "Check the <a href='http://wiki.quintel.nl/index.php/Charts' ' target='_blank'>wiki</a> for more info".html_safe
+  = f.input :unit, :hint => "This will be used on the axis"
+  = f.input :percentage, :hint => "Some chart_types (in policy) are showing percentages. Check this box if your charts should go from 0% to 100%"
+  = f.input :group, :as => :select, :collection => ['Overview', 'Dashboard', 'Demand', 'Supply', 'Policy', 'Cost'],  :hint => "In which section do you want to put your charts in the 'select chart' screen?"
+  = f.input :show_point_label, :hint => "Do you want the values of the series to show up inside the chart? This doesnt apply to all the charts"
+  = f.input :growth_chart, :hint => "Do you want your chart to be exponential? check this box. (only applies to bezier chart)"
+  = f.input :min_axis_value, :hint => "When filled in this will override the generated axis values (only applies to horizontal stacked bar chart)"
+  = f.input :max_axis_value, :hint => "When filled in this will override the generated axis values (only applies to horizontal stacked bar chart)"
+
+  = f.simple_fields_for :area_dependency do |j|
+    = j.input :dependent_on, :as => :select, :collection => Api::Area::DEPENDABLE_ATTRIBUTES, :hint => "When you dont want to show the chart for areas which have a certain setting. E.g. dont wanna show Solar CSP in NL? Put this to 'has_solar_csp' and be sure that for NL this value is false in the area data."
+
+  = f.simple_fields_for :description do |j|
+    = j.input :short_content_en, :hint => "This is shown in the 'select chart' screen. Do not make it too long!"
+    = j.input :short_content_nl, :hint => "This is shown in the 'select chart' screen. Do not make it too long!"
+    = j.input :content_en, :hint => "This is shown when the user clicks the question mark (?)"
+    = j.input :content_nl, :hint => "This is shown when the user clicks the question mark (?)"
+  = f.input :under_construction, :hint => "Do you want a 'Under construction' label on top of your chart?"
+  = f.input :hidden, :hint => "Should it be shown on the list?"
+  = f.button :submit
+
+= link_to "back", :back

@@ -36,6 +36,8 @@
               %br
               - if result.description
                 = link_to t('search.full_description'), result.description, :class => 'fancybox'
+                |
+              = link_to t('search.jump_to_page'), result.url
 
   - unless @slides.empty?
     %h2 Slides

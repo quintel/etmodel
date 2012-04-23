@@ -1,26 +1,23 @@
 en:
   authlogic:
-  error_messages:
-    login_blank: "can not be blank"
-    login_not_found: "is not valid"
-    login_invalid: "should use only letters, numbers, spaces, and .-_@ please."
-    consecutive_failed_logins_limit_exceeded: "Consecutive failed logins limit exceeded, account is disabled."
-    email_invalid: "should look like an email address."
-    password_blank: "can not be blank"
-    password_invalid: "is not valid"
-    not_active: "Your account is not active"
-    not_confirmed: "Your account is not confirmed"
-    not_approved: "Your account is not approved"
-    no_authentication_details: "You did not provide any details for authentication."
-  models:
-    user_session: "UserSession"
+    error_messages:
+      login_blank: "can not be blank"
+      login_not_found: "is not valid"
+      login_invalid: "should use only letters, numbers, spaces, and .-_@ please."
+      consecutive_failed_logins_limit_exceeded: "Consecutive failed logins limit exceeded, account is disabled."
+      email_invalid: "should look like an email address."
+      password_blank: "can not be blank"
+      password_invalid: "is not valid"
+      not_active: "Your account is not active"
+      not_confirmed: "Your account is not confirmed"
+      not_approved: "Your account is not approved"
+      no_authentication_details: "You did not provide any details for authentication."
   attributes:
     user_session:
       login: "login"
       email: "email"
       password: "password"
       remember_me: "remember me"
-      
   user:
     username: "Name"
     email: "E-mail"
@@ -33,7 +30,7 @@ en:
     password_confirmation: "Password confirmation"
     error_header: "Please try again"
     error_message: "We had some problems saving your information"
-    email_invalid: "should look like an email address"   
-    group: "Group <small>(optional)</small>" 
+    email_invalid: "should look like an email address"
+    group: "Group <small>(optional)</small>"
     message: "Message"
     remember: "Remember"

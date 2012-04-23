@@ -21,7 +21,7 @@
       end_year: #{@end_year.to_i},
       available: #{user_scenario_available?}
     }
-
+  = javascript_include_tag 'backcasting'
 .prediction
   %h1
     = (t('prediction.page_title.prefix') + "&nbsp;" + t('prediction.page_title.' + @input_element.key)).html_safe

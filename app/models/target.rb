@@ -1,9 +1,9 @@
 # == Schema Information
 #
-# Table name: policy_goals
+# Table name: targets
 #
 #  id               :integer(4)      not null, primary key
-#  key              :string(255)
+#  code             :string(255)
 #  query            :string(255)
 #  unit             :string(255)
 #  created_at       :datetime
@@ -14,7 +14,7 @@
 #  user_value_query :string(255)
 #
 
-class PolicyGoal < ActiveRecord::Base
+class Target < ActiveRecord::Base
   include AreaDependent
 
   has_one :area_dependency, :as => :dependable, :dependent => :destroy
@@ -31,14 +31,14 @@ class PolicyGoal < ActiveRecord::Base
   def js_attributes
     {
       :goal_id          => id,
-      :name             => I18n.t("policy_goals.#{key}"),
+      :name             => I18n.t("targets.#{code}"),
       :success_query    => reached_query,
       :value_query      => query,
       :target_query     => target_query,
       :user_value_query => user_value_query,
       :unit             => unit,
       :display_fmt      => display_format,
-      :key              => key
+      :code             => code
     }
   end
 end

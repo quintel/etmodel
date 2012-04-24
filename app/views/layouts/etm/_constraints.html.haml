@@ -8,5 +8,5 @@
       - @constraints.each do |c|
         dashboard.add(#{ c.to_json.html_safe });
 
-      - Current.view.policy_goals.each do |goal|
-        new PolicyGoal(#{goal.js_attributes.to_json.html_safe});
+      - Current.view.targets.each do |t|
+        new Target(#{t.js_attributes.to_json.html_safe});

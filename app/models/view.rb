@@ -36,7 +36,7 @@ class View
     Constraint.default.ordered
   end
 
-  def policy_goals
-    PolicyGoal.all.reject(&:area_dependent)
+  def targets
+    Target.all.reject(&:area_dependent)
   end
 end

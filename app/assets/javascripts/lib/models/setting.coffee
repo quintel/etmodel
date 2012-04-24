@@ -37,4 +37,4 @@ $ ->
   # store the current round (watt-nu)
   $("#round-selector input").change ->
     App.settings.set({current_round: $(this).val()})
-    policy_goals.update_total_score()
+    targets.update_total_score()

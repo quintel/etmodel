@@ -32,7 +32,7 @@
       %td= link_to o.id, edit_admin_output_element_serie_path(o)
       %td= highlight o.gquery, @q
 
-%h2 Policy Goals
+%h2 Targets
 
 %table
   %thead
@@ -44,7 +44,7 @@
       %th Target Query
       %th User Value Query
   %tbody
-  - @policy_goals.each do |p|
+  - @targets.each do |p|
     %tr
       %td= p.id
       %td= p.key

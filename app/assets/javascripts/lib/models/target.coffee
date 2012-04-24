@@ -1,6 +1,6 @@
-class @PolicyGoal extends Backbone.Model
+class @Target extends Backbone.Model
   initialize : ->
-    window.policy_goals.add(this)
+    window.targets.add(this)
     @success_query    = new Gquery({ key: @get("success_query")})
     @value_query      = new Gquery({ key: @get("value_query")})
     @target_query     = new Gquery({ key: @get("target_query")})
@@ -31,7 +31,7 @@ class @PolicyGoal extends Backbone.Model
       formatted = @format_value(@target_value())
       @dom_element().find(".target").html(formatted)
     else
-      @dom_element().find(".target").html(I18n.t('policy_goals.not_set'))
+      @dom_element().find(".target").html(I18n.t('targets.not_set'))
     current_value = @format_value(@current_value())
     @dom_element().find(".you").html(current_value)
     @update_score_box()
@@ -71,17 +71,17 @@ class @PolicyGoal extends Backbone.Model
     score = -100 if ((t < -0.5 * a) || (t > 1.5 * a))
     Math.round(score)
 
-class @PolicyGoalList extends Backbone.Collection
-  model : PolicyGoal
+class @TargetList extends Backbone.Collection
+  model : Target
 
   # returns the number of user set goals
-  goals_set: => (@select (g) -> g.is_set()).length
+  targets_set: => (@select (g) -> g.is_set()).length
 
   # returns the number of goals achieved
-  goals_achieved: => (@select (g) -> g.is_set() && g.successful()).length
+  targets_achieved: => (@select (g) -> g.is_set() && g.successful()).length
 
   update_totals: =>
-    string = "#{@goals_achieved()}/#{@goals_set()}"
+    string = "#{@targets_achieved()}/#{@targets_set()}"
     $("#constraint_7 strong").html(string)
 
   total_score: =>
@@ -131,4 +131,4 @@ class @PolicyGoalList extends Backbone.Collection
         el.show()
       $("#targets_met-score").show()
 
-window.policy_goals = new PolicyGoalList()
+window.targets= new TargetList()

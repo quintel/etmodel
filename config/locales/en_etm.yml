@@ -5,11 +5,12 @@ en:
     description: "Create your own independent, comprehensive, fact-based energy scenario for 2020 - 2050. Online and for free!"
 
   # ----------- Tabs ----------- #
-  home: "Home"
-  demand: "Demand"
-  supply: "Supply"
-  costs: "Costs"
-  policy: "Goals"
+  tabs:
+    home: "Home"
+    demand: "Demand"
+    supply: "Supply"
+    costs: "Costs"
+    targets: "Targets"
 
   # ----------- Header ----------- #
   reset: "Reset all the sliders to the default values of this scenario."
@@ -89,7 +90,7 @@ en:
   start_with_costs: "start with costs"
   start_with_demand: "start with demand"
   start_with_supply: "start with supply"
-  start_with_policy: "start with goals"
+  start_with_targets: "start with targets"
 
   intro:
     demand: "How much energy will society use in"

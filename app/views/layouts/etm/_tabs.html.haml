@@ -2,9 +2,8 @@
   .nav-holder.nav-holder-inner
     %ul
       - if Current.view
-        %li{:id => 'home'}= link_to I18n.t('home'), home_path
+        %li{:id => 'home'}= link_to I18n.t('tabs.home'), home_path
         - Current.view.tabs.each do |tab|
           - klass = 'active' if controller.controller_name == tab.key
-          - link  = url_for :controller => tab.key
           %li{:id => tab.key.downcase, :class => klass}
-            = link_to I18n.t(to_yml_syntax(tab.key)), link
+            = link_to t("tabs.#{tab.key}"), url_for(:controller => tab.key)

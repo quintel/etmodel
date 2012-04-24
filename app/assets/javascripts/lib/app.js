@@ -133,10 +133,10 @@ window.AppView = Backbone.View.extend({
       _.each(gqueries, function(g){g.handle_api_result(value_arr)});
     });
     window.charts.each(function(chart) { chart.trigger('change'); });
-    if (window.policy_goals) {
-      window.policy_goals.invoke('update_view');
-      window.policy_goals.update_totals();
-      window.policy_goals.update_total_score();
+    if (window.targets) {
+      window.targets.invoke('update_view');
+      window.targets.update_totals();
+      window.targets.update_total_score();
     }
     window.sidebar.update_bars();
 

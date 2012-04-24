@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120420081045) do
+ActiveRecord::Schema.define(:version => 20120424085618) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -169,20 +169,6 @@ ActiveRecord::Schema.define(:version => 20120420081045) do
     t.string   "partner_type",     :default => "general"
   end
 
-  create_table "policy_goals", :force => true do |t|
-    t.string   "key"
-    t.string   "query"
-    t.string   "unit"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "display_format"
-    t.string   "reached_query"
-    t.string   "target_query"
-    t.string   "user_value_query"
-  end
-
-  add_index "policy_goals", ["key"], :name => "index_policy_goals_on_key"
-
   create_table "prediction_measures", :force => true do |t|
     t.integer  "prediction_id"
     t.string   "name"
@@ -300,6 +286,20 @@ ActiveRecord::Schema.define(:version => 20120420081045) do
 
   add_index "tabs", ["key"], :name => "index_tabs_on_key"
   add_index "tabs", ["position"], :name => "index_tabs_on_position"
+
+  create_table "targets", :force => true do |t|
+    t.string   "code"
+    t.string   "query"
+    t.string   "unit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "display_format"
+    t.string   "reached_query"
+    t.string   "target_query"
+    t.string   "user_value_query"
+  end
+
+  add_index "targets", ["code"], :name => "index_policy_goals_on_key"
 
   create_table "translations", :force => true do |t|
     t.string   "key"

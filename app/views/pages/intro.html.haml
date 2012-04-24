@@ -2,12 +2,12 @@
   .text
     .intro_text= t_db("intro_pages")
     %p.button
-      %a.button{:href=>"/policy"}= I18n.t("start_with_policy")
+      %a.button{:href=>"/targets"}= I18n.t("start_with_targets")
   .diamonds
-    #policy.diamond= link_to t("policy"), '/policy'
-    #demand.diamond= link_to t("demand"), '/demand'
-    #supply.diamond= link_to t("supply"), '/supply'
-    #costs.diamond= link_to t("costs"), '/costs'
+    #policy.diamond= link_to t("tabs.targets"), '/targets'
+    #demand.diamond= link_to t("tabs.demand"), '/demand'
+    #supply.diamond= link_to t("tabs.supply"), '/supply'
+    #costs.diamond= link_to t("tabs.costs"), '/costs'
     %div{:style=>'clear:both'}
   %div{:style=>'clear:both'}
 
@@ -33,10 +33,10 @@
 
 #textrepository_policy{:style => "display: none;"}
   .intro_text
-    %h1= t("intro.policy").html_safe + " #{Current.setting.end_year}?".html_safe
+    %h1= t("intro.targets").html_safe + " #{Current.setting.end_year}?".html_safe
     = t_db("intro_page_policy").html_safe
   %p.button
-    %a.button{:href=>"/policy"}= I18n.t("start_with_policy")
+    %a.button{:href=>"/targets"}= I18n.t("start_with_targets")
 
 #textrepository_costs{:style => "display: none;"}
   .intro_text

@@ -45,9 +45,14 @@ class Api::Client
     else
       response = self.class.get("/api_scenarios/new.json")
     end
-    
-    result = response["api_scenario"]["id"] rescue nil
-    
+
+    result = if response["scenario"]
+      response["scenario"]["id"]
+    else
+      # legacy
+      response["api_scenario"]["id"] rescue nil
+    end
+
     if result
       self.api_session_id = result
       Rails.logger.debug("Got api_session_id: #{result}")

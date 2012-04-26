@@ -42,6 +42,8 @@
       value = 0
     else
       pow = @power_of_thousand(x)
+      # in future we should downscale, too
+      pow = 0 if pow < 0
       value = x / Math.pow(1000, pow)
       value = @round_number(value, precision)
 
@@ -124,7 +126,7 @@
   # @param unit [String] The unit - currently {currency|joules|nounit|ton}
   # Add other units on config/locales/{en|nl}.yml
   scaling_in_words: (scale, unit) ->
-    scale = 0 if _.isNaN(scale)
+    scale = 0 if _.isNaN(scale) || scale < 0
     symbol = @scale_label["#{scale}"]
     return I18n.t("units.#{unit}.#{symbol}")
 

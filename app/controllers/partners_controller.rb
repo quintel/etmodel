@@ -2,7 +2,7 @@ class PartnersController < ApplicationController
   def show
     country = Current.setting.area_code rescue nil
     @partner = Partner.find_by_slug_localized(params[:id], country)
-    render :file => 'public/404.html', :status => 404 if @partner.nil?
+    raise ActiveRecord::RecordNotFound if @partner.nil?
   end
 
   def index

@@ -137,6 +137,9 @@ Etm::Application.routes.draw do
 
   match '/pages/flush_cache' => 'pages#flush_cache'
 
+  match "/404", :to => "pages#404"
+  match "/500", :to => "pages#500"
+  
   # we should remove the catch-all route
   match '/:controller(/:action(/:id))'
 end

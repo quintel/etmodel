@@ -5,12 +5,18 @@
   %a.select_chart{:href => "/output_elements/select",
     :alt   => t("output_elements.common.change_chart"),
     :title => t("output_elements.common.change_chart")}
+    .text
+      = t "output_elements.common.change_chart"
   %a.default_charts{:href => "#",
     :alt   => t("output_elements.common.back_to_default"),
     :title => t("output_elements.common.back_to_default")}
+    .text
+      = t "output_elements.common.back_to_default"
   %a.toggle_chart_format{:href => '#',
     :alt   => t("output_elements.common.toggle_chart"),
     :title => t("output_elements.common.toggle_chart")}
+    .text
+      = t "output_elements.common.toggle_chart"
 
 :javascript
   // DEBT: I'd gladly move this somewhere else

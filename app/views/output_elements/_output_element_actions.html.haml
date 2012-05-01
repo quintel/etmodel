@@ -12,11 +12,16 @@
     :title => t("output_elements.common.back_to_default")}
     .text
       = t "output_elements.common.back_to_default"
-  %a.toggle_chart_format{:href => '#',
-    :alt   => t("output_elements.common.toggle_chart"),
-    :title => t("output_elements.common.toggle_chart")}
+  %a.table_format{:href => '#',
+    :alt   => t("output_elements.common.table"),
+    :title => t("output_elements.common.table")}
     .text
-      = t "output_elements.common.toggle_chart"
+      = t "output_elements.common.table"
+  %a.chart_format{:href => '#',
+    :alt   => t("output_elements.common.chart"),
+    :title => t("output_elements.common.chart")}
+    .text
+      = t "output_elements.common.chart"
 
 :javascript
   // DEBT: I'd gladly move this somewhere else

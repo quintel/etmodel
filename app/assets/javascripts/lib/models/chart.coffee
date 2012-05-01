@@ -142,9 +142,9 @@ class @ChartList extends Backbone.Collection
         $("a.default_charts").hide()
       # show/hide format toggle button
       if @current().view.can_be_shown_as_table()
-        $("a.toggle_chart_format").show()
+        $("a.table_format").show()
       else
-        $("a.toggle_chart_format").hide()
+        $("a.table_format").hide()
       # update chart information link
       $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/#{chart_id}")
       # update the position of the output_element_actions
@@ -174,8 +174,16 @@ class @ChartList extends Backbone.Collection
         beforeSend: ->
           close_fancybox()
 
-    $("a.toggle_chart_format").live 'click', =>
+    $("a.table_format").live 'click', =>
+      $("a.table_format").hide()
+      $("a.chart_format").show()
       @current().view.toggle_format()
       false
+
+     $("a.chart_format").live 'click', =>
+        $("a.chart_format").hide()
+        $("a.table_format").show()
+        @current().view.toggle_format()
+        false
 
 window.charts = new ChartList()

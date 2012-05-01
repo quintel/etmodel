@@ -11,6 +11,7 @@ gem 'tabs_on_rails', '~>2.1.1'
 gem 'kaminari', '~> 0.13.0'
 gem 'simple_form'
 gem 'acts_as_commentable'
+gem 'nokogiri'
 
 # javascript
 gem 'i18n-js'

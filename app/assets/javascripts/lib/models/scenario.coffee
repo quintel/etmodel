@@ -10,6 +10,7 @@ class @Scenario extends Backbone.Model
       end_year: s.get('end_year')
       scenario_id: s.get('scenario_id')
       use_fce: s.get('use_fce')
+      source: 'ETM'
 
   # this method shouldn't be called as long as we keep using
   # the api_session_id fetched by the tabs_controller filter

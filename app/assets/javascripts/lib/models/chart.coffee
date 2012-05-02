@@ -143,8 +143,10 @@ class @ChartList extends Backbone.Collection
       # show/hide format toggle button
       if @current().view.can_be_shown_as_table()
         $("a.table_format").show()
+        $("a.chart_format").show()
       else
         $("a.table_format").hide()
+        $("a.chart_format").hide()
       # update chart information link
       $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/#{chart_id}")
       # update the position of the output_element_actions

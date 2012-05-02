@@ -18,7 +18,7 @@ class @Scenario extends Backbone.Model
     $.getJSON(url,
       {settings : this.api_attributes()},
       (data) ->
-        App.settings.set({'api_session_id' : data.api_scenario.id})
+        App.settings.set({'api_session_id' : data.scenario.id})
         App.bootstrap()
     )
 

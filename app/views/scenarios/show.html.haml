@@ -18,18 +18,11 @@
     %li
       %strong= t('scenario.end_year') + ':'
       = t @scenario.end_year
-    %li
-      %strong= t('scenario.do_it_use_fce') + ':'
-      - if @scenario.use_fce
-        = t 'yes'
-      - else
-        = t 'no'
 
   = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button", style: "margin: 40px;"
 
   %p
     %small{:style => "font-size: 12px; font-weight: normal"}
-      P.S.
       = t("scenario.overwritten")
       = link_to t("scenario.save_first"), new_scenario_path
       = t("scenario.go_back")

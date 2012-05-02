@@ -35,7 +35,7 @@ var InputElement = Backbone.Model.extend({
   logUpdate : function() {
     procent = Math.round(100-((this.get('max_value')-this.get('user_value'))/((this.get('max_value')-this.get('min_value'))/100)));
     App.etm_debug('Moved slider: #' + this.get('id') + ' - ' + this.get('key') + ' procent:'+procent);
-    EventTracker.event_track('Slider','Changed',this.get('key'),procent);
+    Tracker.event_track('Slider','Changed',this.get('key'),procent);
     Tracker.track({
       slider: this.get('translated_name'),
       new_value: this.get('user_value')

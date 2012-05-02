@@ -3,8 +3,7 @@ class TabController < ApplicationController
 
   before_filter :ensure_valid_browser,
                 :store_last_etm_page,
-                :load_output_element,
-                :fetch_api_session_id
+                :load_output_element
 
   before_filter :track_user, :if => lambda{ APP_CONFIG[:wattnu] || session[:wattnu] }
 
@@ -27,11 +26,6 @@ class TabController < ApplicationController
 
     def load_output_element
       @output_element = Current.view.default_chart
-    end
-
-    def fetch_api_session_id
-      Current.setting.api_session_id ||= Api::Client.new.fetch_session_id
-      # TODO: add graceful degradation if the request fails
     end
 
     # Some sidebar items are area dependent. Let's redirect the user who crafted an invalid URL

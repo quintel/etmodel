@@ -68,18 +68,6 @@ class Setting
   end
   attr_accessor *default_attributes.keys
 
-  # Used by API Client to create the scenario
-  # The country/region parameters should rather use the area code, but that
-  # requires changes on the ETE side. Wait for API v3
-  def new_settings_hash
-    {
-      :area_code => area_code,
-      :end_year => end_year,
-      :scenario_id => scenario_id,
-      :use_fce => use_fce
-    }
-  end
-
   def reset_attribute(key)
     default_value = self.class.default_attributes[key.to_sym]
     self.send("#{key}=", default_value)

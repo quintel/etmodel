@@ -60,4 +60,6 @@ group :assets do
   gem 'yui-compressor'
   gem 'compass-rails'
 end
+
 gem 'capistrano'
+gem 'hipchat'

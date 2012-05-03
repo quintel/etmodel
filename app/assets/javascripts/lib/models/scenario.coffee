@@ -1,7 +1,7 @@
 class @Scenario extends Backbone.Model
   api_session_id: =>
     key = App.settings.get('api_session_id')
-    return if _.isPresent(key) then key else null
+    return if key? then key else null
 
   api_attributes: =>
     s = App.settings

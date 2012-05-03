@@ -7,6 +7,8 @@
   %br
   = radio_button_tag :current_round, 3, Current.setting.current_round.to_i == 3
   Ronde 3
+  %br
+  = link_to 'disable', '/wattnu_off'
 
 :javascript
   $(function(){

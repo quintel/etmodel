@@ -20,4 +20,5 @@ Etm::Application.configure do
   #config.cache_store = :memory_store
   config.cache_store = :mem_cache_store
   #config.cache_store = :file_store, '/tmp/cache'
+  config.assets.debug = true
 end

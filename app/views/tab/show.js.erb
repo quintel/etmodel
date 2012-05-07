@@ -1,5 +1,8 @@
 location.hash = '';
 $("#content").html('<%= escape_javascript render("show")%>');
+// update tabs
+$("#nav li").removeClass('active');
+$("#nav #<%= controller.controller_name %>").addClass('active');
 var acc = new Accordion();
 acc.setup();
 window.input_elements.setup_input_elements();

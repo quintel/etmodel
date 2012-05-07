@@ -1,11 +1,13 @@
 $ ->
-  $("#read_more").click (e) ->
+  # Expandable description below tabs title
+  #
+  $(document).on 'click', ".read_more", (e) ->
     e.preventDefault()
     $("#content_short").hide()
     $("#content_long").show("fast")
     $("#read_more").hide()
 
-  $("#read_less, #con").click (e) ->
+  $(document).on 'click', ".read_less, #con", (e) ->
     e.preventDefault()
     $("#content_long").hide("fast")
     $("#content_short").show()

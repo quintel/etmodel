@@ -19,7 +19,10 @@ class TabController < ApplicationController
     Current.setting.selected_output_element = nil
     Current.setting.displayed_output_element = @output_element.id if @output_element
 
-    render :template => 'tab/show'
+    respond_to do |format|
+      format.html { render :template => 'tab/show'}
+      format.js
+    end
   end
 
   protected

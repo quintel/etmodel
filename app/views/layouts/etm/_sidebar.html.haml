@@ -4,7 +4,9 @@
       %li{:id => item.key,
           :class => (params[:id] == item.key) ? 'active' : nil,
           :'data-gquery' => item.percentage_bar_query}
-        %a{:class => "ico-#{item.key}", :href => url_for(:action => item.key)}
+        = link_to url_for(:action => item.key),
+          :class => "ico-#{item.key}",
+          :remote => true do
           %em &nbsp;
           %p
             %span.title= raw t("sidebar_items.#{item.key}")

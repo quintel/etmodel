@@ -18,8 +18,6 @@
   %body#model
     #wrapper
       #content
-        = render "layouts/etm/sidebar" if Current.view
-        = render "layouts/etm/title"
         - flash_message
         = yield
         .clear

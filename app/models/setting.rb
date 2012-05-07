@@ -62,7 +62,6 @@ class Setting
       :start_year                     => 2010,
       :end_year                       => 2050,
       :use_fce                        => false,
-      :use_merit_order                => false,
       :already_shown                  => []
     }
   end
@@ -85,7 +84,7 @@ class Setting
     self.api_session_id = nil
     self.scenario_id = nil # to go back to a blank slate scenario
 
-    [:use_fce, :network_parts_affected, :already_shown, :use_merit_order].each do |key|
+    [:use_fce, :network_parts_affected, :already_shown].each do |key|
       self.reset_attribute key
     end
   end

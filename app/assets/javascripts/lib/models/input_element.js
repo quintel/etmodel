@@ -115,15 +115,6 @@ var InputElementList = Backbone.Collection.extend({
 
       input_element.init_legacy_controller();
     });
-    // UGLY: merit_order is enabled with the settings checkbox, that will trigger an API
-    // request setting an input with id of 900. This will update the js settings object,
-    // that will update the Current.setting ruby object.
-    try {
-      var merit_order_enabled = (user_value_hash[900].user_value == 1);
-      App.settings.set({'use_merit_order' : merit_order_enabled});
-    } catch(e) {
-      console.log("Missing Merit order input");
-    }
   },
 
   /**

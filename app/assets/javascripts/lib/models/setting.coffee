@@ -4,7 +4,6 @@ class @Setting extends Backbone.Model
     @bind('change:track_peak_load', @save)
     @bind('change:use_fce', @save)
     @bind('change:current_round', @save)
-    @bind('change:use_merit_order', @save)
 
   url: -> '/settings'
 
@@ -22,12 +21,6 @@ class @Setting extends Backbone.Model
 
   toggle_peak_load_tracking: ->
     App.settings.set({'track_peak_load' : $("#track_peak_load_settings").is(':checked')})
-
-  toggle_merit_order: ->
-    enabled = $("#use_merit_order_settings").is(':checked')
-    App.settings.set({'use_merit_order' : enabled})
-    # UGLY
-    App.call_api("input[900]=" + (enabled ? 1.0 : 0.0))
 
   # Used by the bio-footprint dashboard item
   country: => @get('area_code').split('-')[0]

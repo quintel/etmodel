@@ -17,14 +17,14 @@
     = yield :head
   %body#model
     #wrapper
-      #content
-        - flash_message
-        = yield
-        .clear
       #header
         = render "layouts/etm/header", :info_box => true
         = render "layouts/etm/tabs"
         = render "layouts/etm/wattnu" if wattnu?
+      #content
+        - flash_message
+        = yield
+        .clear
       #footer
         = render "layouts/etm/constraints"
         = render "input_elements/input_element"

@@ -6,4 +6,5 @@
         - Current.view.tabs.each do |tab|
           - klass = 'active' if controller.controller_name == tab.key
           %li{:id => tab.key.downcase, :class => klass}
-            = link_to t("tabs.#{tab.key}"), url_for(:controller => tab.key)
+            = link_to t("tabs.#{tab.key}"), url_for(:controller => tab.key),
+              :remote => true

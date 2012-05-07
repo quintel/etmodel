@@ -236,7 +236,6 @@
      * Creates the HTML elements used to display the slider.
      */
     render: function () {
-
       // TEMPLATING.
 
       this.el.addClass('new-input-slider').html(

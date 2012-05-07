@@ -1,13 +1,1 @@
-#charts_wrapper
-  #charts_holder
-    = render "output_elements/chart"
-#accordion_wrapper
-  - if @slides.any?
-    %ul.accordion
-      = render :partial => 'tab/slide', :collection => @slides
-  - else
-    = t("not_available")
-
--  if Current.current_slide
-  %script
-    active_slide = '#{Current.current_slide}'
+= render 'show'

@@ -7,6 +7,7 @@ var InputElement = Backbone.Model.extend({
     this.ui_options = {'element' : $('#input_element_'+this.get('id'))};
     this.bind('change:user_value', this.markDirty);
     this.bind('change:user_value', this.logUpdate);
+    this.bind('change:user_value', this.update_collection);
   },
 
   set_min_value : function(result) {
@@ -40,6 +41,12 @@ var InputElement = Backbone.Model.extend({
       slider: this.get('translated_name'),
       new_value: this.get('user_value')
     });
+  },
+
+  // if we're caching the user_values hash then we have to store locally the
+  // user_values, without querying the engine
+  update_collection: function() {
+    input_elements.user_values[this.get('id')]['user_value'] = this.get('user_value')
   },
 
   /**
@@ -91,9 +98,15 @@ var InputElementList = Backbone.Collection.extend({
     });
   },
 
-  initialize_user_values : function(user_value_hash) {
+  initialize_user_values: function(data) {
+    this.user_values = data;
+    this.setup_input_elements();
+  },
+
+  setup_input_elements : function() {
+    user_values = this.user_values;
     this.each(function(input_element) {
-      var values = user_value_hash['' + input_element.get('input_id')];
+      var values = user_values['' + input_element.get('input_id')];
       if (!values) {
         console.warn("Missing slider information! " + input_element.get('key') +
           " #" + input_element.get('id'));

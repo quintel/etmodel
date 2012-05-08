@@ -6,7 +6,3 @@ $("#nav #<%= controller.controller_name %>").addClass('active');
 var acc = new Accordion();
 acc.setup();
 window.input_elements.setup_input_elements();
-if (history.pushState) {
-  var stateObj = {url: "<%= request.fullpath %>"};
-  history.pushState(stateObj, "ETM: <%= controller.controller_name %>", "<%= request.fullpath %>");
-}

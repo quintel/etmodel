@@ -13,6 +13,19 @@ $ ->
     $("#content_short").show()
     $("#read_more").show()
 
+  # AJAX-based navigation
+  #
+  if Browser.hasProperPushStateSupport()
+    # hijack sidebar and tab links
+    $(document).on 'click', "a[data-nav=true]", (e) ->
+      e.preventDefault()
+      url = $(e.target).attr('href') ||
+            $(e.target).parents('a').attr('href')
+      $.ajax
+        url: url
+        dataType: 'script'
+      history.pushState({url: url}, url, url)
+
   # login menu
   $("a.signin").click (e) ->
     e.preventDefault()
@@ -79,8 +92,8 @@ class @AppInterface
       $("#logos ul.left").cycle
         speed: 500
         timeoutFn: (curr,next,opts,fwd) ->
-          timeout = $(this).attr('timeout');
-          parseInt(timeout,10);
+          timeout = $(this).attr('timeout')
+          parseInt(timeout,10)
     if $("#logos ul.right li").length > 1
       $("#logos ul.right").cycle
         speed: 500

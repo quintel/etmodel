@@ -28,7 +28,12 @@ var Browser = {
      // At the moment we have some issues with FF
      if (ua.webkit) { return true; }
      return false;
-   }
+   },
+
+  hasProperPushStateSupport: function() {
+    var ua = $.browser;
+    if (ua.webkit) { return true; }
+  }
 }
 
 Browser.makeSureArrayHasFunctionIndexOf();

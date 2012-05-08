@@ -6,7 +6,7 @@
           :'data-gquery' => item.percentage_bar_query}
         = link_to url_for(:action => item.key),
           :class => "ico-#{item.key}",
-          :remote => true do
+          :'data-nav' => true do
           %em &nbsp;
           %p
             %span.title= raw t("sidebar_items.#{item.key}")

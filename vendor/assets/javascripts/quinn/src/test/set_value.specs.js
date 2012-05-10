@@ -187,6 +187,42 @@ QUnit.specify('', function () {
             });
         }); // when the value is unchanged
 
+        describe('when a drag callback returns false during a drag operation', function () {
+            var dragRunCount, lastDragValue;
+
+            before(function () {
+                slider = new $.Quinn(wrapper, {
+                    drag: function (newValue) {
+                        lastDragValue = newValue;
+                        dragRunCount++;
+
+                        if (newValue === 50) {
+                            return false;
+                        }
+                    }
+                });
+
+                dragRunCount  = 0;
+                lastDragValue = null;
+
+                slider.start();
+                slider.setTentativeValue(50);
+                slider.resolve();
+            });
+
+            it('should run the drag callback twice', function () {
+                assert(dragRunCount).equals(2);
+            });
+
+            it('should run the drag callback with the previous good value', function () {
+                assert(lastDragValue).equals(0);
+            });
+
+            it('should resolve with the previous good value', function () {
+                assert(slider.model.value).equals(0);
+            });
+        });
+
         describe('when using the only option', function () {
             before(function () {
                 slider = new $.Quinn(wrapper, { value: 40, only: [10, 20, 50] });

@@ -1,15 +1,17 @@
-#sidebar
-  %ul
-    - Current.view.sidebar_items.each do |item|
-      %li{:id => item.key,
-          :class => (params[:id] == item.key) ? 'active' : nil,
-          :'data-gquery' => item.percentage_bar_query}
-        = link_to url_for(:action => item.key),
-          :class => "ico-#{item.key}",
-          :'data-nav' => true do
-          %em &nbsp;
-          %p
-            %span.title= raw t("sidebar_items.#{item.key}")
-            - unless item.percentage_bar_query.blank?
-              %span.bar{:alt => t('sidebar_items.alt'), :style => "width: 0px"}
-              %span.value
+-# DEBT: TO BE REPLACED WITH nav#sidebar
+#sidebar 
+  - Current.view.tabs.each do |tab|
+    %h4.headline= I18n.t "tabs." + tab.key
+    %ul{style: ("display: none;" unless controller.controller_name == tab.key )}
+      - tab.sidebar_items.each do |item|
+        %li{:id => item.key,
+            :class => (params[:id] == item.key) ? 'active' : nil,
+            :'data-gquery' => item.percentage_bar_query}
+          = link_to url_for(:controller => tab.key, :action => item.key),
+            :class => "ico-#{item.key} icon",
+            :'data-nav' => true do
+            %p
+              %span.title= raw t("sidebar_items.#{item.key}")
+              - unless item.percentage_bar_query.blank?
+                %span.bar{:alt => t('sidebar_items.alt'), :style => "width: 0px"}
+                %span.value

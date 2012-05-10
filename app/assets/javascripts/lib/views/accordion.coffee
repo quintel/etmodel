@@ -69,6 +69,8 @@ $(document).ready ->
   acc = new Accordion()
   acc.setup()
 
+  accordion = $('#sidebar h4').bind 'click', () ->
+    $(this).next('ul').toggle()
 
 
 

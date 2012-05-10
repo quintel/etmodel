@@ -34,13 +34,13 @@ Quinn was developed by [~antw][antw] as part of Quintel Intelligence's
 Downloads
 ---------
 
-[Everything (1.0.0.rc2)][tarball]
+[Everything (1.0.1)][tarball]
 :   Tarball containing JS, CSS, and images
 
-[Development Version (1.0.0.rc2)][development-js]
-:   30.9kb, JS only, Uncompressed with comments
+[Development Version (1.0.1)][development-js]
+:   31.8kb, JS only, Uncompressed with comments
 
-[Production Version (1.0.0.rc2)][production-js]
+[Production Version (1.0.1)][production-js]
 :   2.6kb, JS only, Minified and Gzipped
 
 Table of Contents
@@ -102,7 +102,8 @@ example, a step of 10 only 0, 10, 20, 30, ..., n, to be chosen.
 If you supply an initial value which can't be used as it doesn't "fit" with
 the step, the value will be rounded to the nearest acceptable point on the
 slider. For example, an step of 10, and an initial value of 17 will result in
-the slider being initialized with a value of 20 instead.
+the slider being initialized with a value of 20 instead. This behaviour can
+be disabled *for the initial value* by also supplying `strict: false`.
 
 Combining the **step** option with [**min** and **max**][extrema] options
 permits the creation of sliders with arbitrary values:
@@ -338,17 +339,12 @@ all it takes. In some cases, you may need to alter the CSS. For example:
 History
 -------
 
-#### 1.0.0.rc2 _February 20th, 2012_
+#### 1.0.1 _May 10th, 2012_
 
-* A couple of fixes to touchevents; Quinn will behave better on smartphones
-  and tablets.
+* Added a `strict` option which prevents the initial value being snapped
+  to the `step` value.
 
-* Better positioning of the slider handles. The positioning of each handle is
-  determined based on its radius, and the height of the slider bar to which it
-  belongs. This results in better handling of custom CSS which has large
-  handles.
-
-#### 1.0.0.rc1 _February 17th, 2012_
+#### 1.0.0 _April 14th, 2012_
 
 * **This release contains changes which are not backwards-compatible with
   previous versions.** You should only need to make small changes, but this
@@ -404,6 +400,14 @@ History
   have been renamed to `start`, `resolve`, and `reject` to more closely match
   the jQuery.Deferred API. Note that $.Quinn is *not* a jQuery.Deferred
   object; other Deferred methods are not provided.
+
+* A couple of fixes to touchevents; Quinn will behave better on smartphones
+  and tablets.
+
+* Better positioning of the slider handles. The positioning of each handle is
+  determined based on its radius, and the height of the slider bar to which it
+  belongs. This results in better handling of custom CSS which has large
+  handles.
 
 #### 0.4.2 _February 10th, 2012_
 
@@ -521,7 +525,7 @@ and Internet Explorer are not yet complete.
 [easing]:         http://gsgd.co.uk/sandbox/jquery/easing
 [style-change]:   https://github.com/antw/quinn/commit/ea29f2f
 
-[tarball]:        https://github.com/antw/quinn/tarball/v1.0.0.rc2
+[tarball]:        https://github.com/antw/quinn/tarball/v1.0.1
 [development-js]: http://antw.github.com/quinn/jquery.quinn.js
 [production-js]:  http://antw.github.com/quinn/jquery.quinn.min.js
 

@@ -6,12 +6,12 @@
   h4
     margin: 0 0 0 0
     border-bottom: 1px solid #ddd
-    padding: 10px 0
-    width: 190px
+    padding: 10px 10px
+    width: 170px
     cursor: pointer
   ul
-    margin: 0
-    padding: 0
+    margin: 5px 0 0 0
+    padding: 0 0 5px 0
     list-style: none
     border-bottom: 1px solid #ddd
 
@@ -25,10 +25,8 @@
         background: #63A1C9
         +border-radius(4px)
         color: #fff
-        em
+        span.title
           background-position: 0px -25px
-        span
-          background: #fff
         span.bar
           background: #fff
         span.value
@@ -52,8 +50,9 @@
           float: left
           height: 5px
           background: #63a1c9
-          margin: 5px 0 5px 0
+          margin: 2px 0 3px 0
           overflow: hidden
+
         span.value
           position: absolute
           top: 13px
@@ -62,14 +61,15 @@
           height: 10px
           width: 20px
           padding-left: 3px
-          background: transparent none
+          font-style: italic
 
         span.title
           position: relative
           float: left
-          width: 180px
-          background: transparent none
-          margin: 0px
+          padding-left: 25px
+          background:
+            repeat: no-repeat
+            position: 0 0
           overflow: visible
-          line-height: 120%
-          height: 16px
+          line-height: 150%
+          height: 20px

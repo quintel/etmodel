@@ -8,10 +8,10 @@
             :class => (params[:id] == item.key) ? 'active' : nil,
             :'data-gquery' => item.percentage_bar_query}
           = link_to url_for(:controller => tab.key, :action => item.key),
-            :class => "ico-#{item.key} icon",
-            :'data-nav' => true do
+            :'data-nav' => false do
             %p
-              %span.title= raw t("sidebar_items.#{item.key}")
+              %span.title{:class => "ico-#{item.key} icon"}
+                = raw t("sidebar_items.#{item.key}")
               - unless item.percentage_bar_query.blank?
                 %span.bar{:alt => t('sidebar_items.alt'), :style => "width: 0px"}
                 %span.value

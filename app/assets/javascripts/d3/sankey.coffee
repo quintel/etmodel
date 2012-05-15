@@ -1,12 +1,12 @@
 data =
   nodes: [
-    {id: 'industry', value: 20, column: 0, row: 0},
-    {id: 'other', value: 20, column: 0, row: 1},
-    {id: 'households', value: 20, column: 0, row: 2},
-    {id: 'agriculture', value: 20, column: 0, row: 3},
-    {id: 'buildings', value: 20, column: 0, row: 4},
-    {id: 'transport', value: 20, column: 0, row: 5},
-    {id: 'el_production', value: 100, column: 1, row: 1},
+    {id: 'industry', value: 20, column: 0, row: 0, gquery: 'final_demand_from_industry_and_energy_sector'},
+    {id: 'other', value: 20, column: 0, row: 1, gquery: 'final_demand_from_other_sector'},
+    {id: 'households', value: 20, column: 0, row: 2, gquery: 'final_demand_from_households'},
+    {id: 'agriculture', value: 20, column: 0, row: 3, gquery: 'final_demand_from_agriculture'},
+    {id: 'buildings', value: 20, column: 0, row: 4, gquery: 'final_demand_from_buildings'},
+    {id: 'transport', value: 20, column: 0, row: 5, gquery: 'final_demand_from_transport'},
+    {id: 'el_production', value: 20, column: 1, row: 1, gquery: 'total_electricity_production'},
     {id: 'coal', value: 30, column: 2, row: 0},
     {id: 'nuclear', value: 30, column: 2, row: 1},
     {id: 'gas', value: 30, column: 2, row: 2},
@@ -41,6 +41,17 @@ class Node extends Backbone.Model
   x_offset: => @get('column') * Node.horizontal_spacing + 20
   x_center: => @x_offset() + Node.width / 2
   y_center: => @y_offset() + @get("value") / 2
+
+  value: =>
+    if @gquery
+      @gquery.get('future_value') / 20000000000
+    else
+      @get 'value'
+
+  initialize: =>
+    if @get('gquery')
+      @gquery = new Gquery({key: @get('gquery')})
+
 
 class NodeList extends Backbone.Collection
   model: Node
@@ -119,7 +130,7 @@ class D3.sankey extends D3ChartView
       attr("x", (d) => @x(Node.horizontal_spacing * d.get('column') + 20)).
       attr("y", (d) => @y(100 * d.get ('row'))).
       attr("width", @x Node.width).
-      attr("height", (datum) => @y datum.get('value')).
+      attr("height", (d) => @y d.value()).
       attr("stroke", "gray").
       attr("fill", (datum, i) -> colors(i))
 
@@ -138,7 +149,7 @@ class D3.sankey extends D3ChartView
     console.log "Refreshing"
     @nodes.data(nodes.models, (d) -> d.get('id')).
       transition().duration(500).
-      attr("height", (datum) => @y datum.get('value'))
+      attr("height", (d) => @y d.value())
 
     @labels.data(nodes.models, (d) -> d.get('id')).
       transition().duration(500).

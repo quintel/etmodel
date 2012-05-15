@@ -26,6 +26,7 @@ class @Chart extends Backbone.Model
       when 'vertical_bar'           then new VerticalBarChartView({model : this})
       when 'html_table'             then new HtmlTableChartView({model : this})
       when 'scatter'                then new ScatterChartView({model : this})
+      when 'd3'                     then new D3ChartView({model : this})
       else new HtmlTableChartView({model : this})
     @view.update_title()
     @view

@@ -50,8 +50,25 @@ class OutputElement < ActiveRecord::Base
     type == 'block'
   end
 
+  # some charts need custom html. Others (jqplot and d3) just need a container
+  # div
+  def custom_html?
+    block_chart? || html_table?
+  end
+
+  def d3_chart?
+    type == 'd3'
+  end
+
   def jqplot_based?
-    !block_chart? && !html_table?
+    !block_chart? && !html_table? && !d3_chart?
+  end
+
+  # some charts don't have their series defined in the database. This method
+  # makes view code simpler
+  #
+  def has_series_in_db?
+    !(html_table? || d3_chart?)
   end
 
   def options_for_js

@@ -26,10 +26,19 @@ class @Chart extends Backbone.Model
       when 'vertical_bar'           then new VerticalBarChartView({model : this})
       when 'html_table'             then new HtmlTableChartView({model : this})
       when 'scatter'                then new ScatterChartView({model : this})
-      when 'd3'                     then new D3ChartView({model : this})
+      when 'd3'                     then @d3_view_factory()
       else new HtmlTableChartView({model : this})
     @view.update_title()
     @view
+
+  # D3 charts have their own class. Let's make an instance of the right one
+  # D3 is a pseudo-namespace. See d3_chart_view.coffee
+  d3_view_factory: =>
+    key = @.get 'key'
+    if D3[key]
+      new D3[key]({model: this})
+    else
+      false
 
   # @return [ApiResultArray] = [
   #   [[2010,0.4],[2040,0.6]],
@@ -152,6 +161,7 @@ class @ChartList extends Backbone.Collection
       $("#output_element_actions").removeClass()
       $("#output_element_actions").addClass(@first().get("type"))
       App.call_api()
+    return true
 
   # returns the current chart id
   current_id : ->

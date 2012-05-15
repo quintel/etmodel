@@ -26,3 +26,6 @@
 //= require i18n/translations
 //= require lib/app
 //= require common_interface
+
+//= require d3.v2.min
+//= require d3/sankey

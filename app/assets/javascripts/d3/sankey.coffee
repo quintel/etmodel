@@ -6,7 +6,7 @@ data =
     {id: 'agriculture', value: 20, column: 0, row: 3, gquery: 'final_demand_from_agriculture'},
     {id: 'buildings', value: 20, column: 0, row: 4, gquery: 'final_demand_from_buildings'},
     {id: 'transport', value: 20, column: 0, row: 5, gquery: 'final_demand_from_transport'},
-    {id: 'el_production', value: 20, column: 1, row: 1, gquery: 'total_electricity_production'},
+    {id: 'el_production', value: 20, column: 1, row: 1, gquery: 'total_electricity_produced'},
     {id: 'coal', value: 30, column: 2, row: 0},
     {id: 'nuclear', value: 30, column: 2, row: 1},
     {id: 'gas', value: 30, column: 2, row: 2},
@@ -21,13 +21,13 @@ data =
     {left: 'agriculture', right: 'el_production', value: 10},
     {left: 'buildings', right: 'el_production', value: 10},
     {left: 'transport', right: 'el_production', value: 10},
-    {left: 'el_production', right: 'coal', value: 5},
-    {left: 'el_production', right: 'nuclear', value: 5},
-    {left: 'el_production', right: 'gas', value: 5},
-    {left: 'el_production', right: 'oil', value: 5},
-    {left: 'el_production', right: 'renewables', value: 5}
-    {left: 'transport', right: 'oil', value: 5}
-    {left: 'agriculture', right: 'oil', value: 5}
+    {left: 'el_production', right: 'coal', value: 5, gquery: 'electricity_produced_from_coal'},
+    {left: 'el_production', right: 'nuclear', value: 5, gquery: 'electricity_produced_from_uranium'},
+    {left: 'el_production', right: 'gas', value: 5, gquery: 'electricity_produced_from_natural_gas'},
+    {left: 'el_production', right: 'oil', value: 5, gquery: 'electricity_produced_from_oil'},
+    {left: 'el_production', right: 'renewables', value: 5, gquery: 'electricity_produced_from_solar'}
+    {left: 'transport', right: 'oil', value: 5, gquery: 'primary_demand_of_crude_oil_from_transport'}
+    {left: 'agriculture', right: 'oil', value: 5, gquery: 'primary_demand_of_crude_oil_from_agriculture'}
     {left: 'households', right: 'gas', value: 5}
     {left: 'buildings', right: 'gas', value: 5}
   ]
@@ -60,6 +60,8 @@ class Link extends Backbone.Model
   initialize: =>
     @left = nodes.get @get('left')
     @right = nodes.get @get('right')
+    if @get('gquery')
+      @gquery = new Gquery({key: @get('gquery')})
 
   path_points: =>
     [
@@ -75,6 +77,12 @@ class Link extends Backbone.Model
         x: @right.x_center() - Node.width / 2
         y: @right.y_center()
     ]
+
+  value: =>
+    if @gquery
+      @gquery.get('future_value') / 20000000000
+    else
+      @get 'value'
 
 class LinkList extends Backbone.Collection
   model: Link
@@ -111,7 +119,7 @@ class D3.sankey extends D3ChartView
       enter().
       append("svg:path").
       attr("class", "link").
-      style("stroke-width", (link) -> link.get('value')).
+      style("stroke-width", (link) -> link.value()).
       style("stroke", "steelblue").
       style("fill", "none").
       style("opacity", 0.8).
@@ -146,7 +154,6 @@ class D3.sankey extends D3ChartView
       style("color", "black")
 
   refresh: =>
-    console.log "Refreshing"
     @nodes.data(nodes.models, (d) -> d.get('id')).
       transition().duration(500).
       attr("height", (d) => @y d.value())
@@ -158,7 +165,7 @@ class D3.sankey extends D3ChartView
     @links.data(links.models, (d) -> d.cid).
       transition().duration(500).
       attr("d", (link) => @link_line link.path_points()).
-      style("stroke-width", (link) => @y(link.get('value')))
+      style("stroke-width", (link) => @y(link.value()))
 
   initialize: ->
     # TODO: remove from global namespace

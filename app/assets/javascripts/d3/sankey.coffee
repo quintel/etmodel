@@ -26,6 +26,10 @@ data =
     {left: 'el_production', right: 'gas', value: 5},
     {left: 'el_production', right: 'oil', value: 5},
     {left: 'el_production', right: 'renewables', value: 5}
+    {left: 'transport', right: 'oil', value: 5}
+    {left: 'agriculture', right: 'oil', value: 5}
+    {left: 'households', right: 'gas', value: 5}
+    {left: 'buildings', right: 'gas', value: 5}
   ]
 
 
@@ -112,6 +116,12 @@ class Sankey extends Backbone.View
       style("stroke", "steelblue").
       style("fill", "none").
       style("opacity", 0.8).
+      on('mouseover', ->
+        d3.select(this).transition().duration(900).style("stroke", "red")
+      ).
+      on('mouseout', ->
+        d3.select(this).transition().duration(200).style("stroke", "steelblue")
+      ).
       attr("d", (link) -> link.svg_path())
 
     @nodes = @svg.selectAll("rect").

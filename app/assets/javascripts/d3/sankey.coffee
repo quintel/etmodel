@@ -32,7 +32,8 @@ data =
     {left: 'buildings', right: 'gas', value: 5}
   ]
 
-
+# Helper classes
+#
 class Node extends Backbone.Model
   @width: 100
   @horizontal_spacing: 400
@@ -64,16 +65,6 @@ class Link extends Backbone.Model
         y: @right.y_center()
     ]
 
-  # this is the link function we'll be using
-  link_line: d3.svg.line().
-    interpolate("basis").
-    x((d) -> d.x).
-    y((d) -> d.y)
-
-  # returns the path points in the svg format
-  svg_path: =>
-    @link_line @path_points()
-
 class LinkList extends Backbone.Collection
   model: Link
 
@@ -81,15 +72,12 @@ class LinkList extends Backbone.Collection
   path_points: =>
     @map (link) -> link.path_points()
 
-class Sankey extends Backbone.View
+# This is the main chart class
+#
+class D3.sankey extends D3ChartView
   el: "body"
 
-  events:
-    "click a#random": "randomize"
-
-  randomize: (e) =>
-    e.preventDefault()
-    updates = []
+  randomize: =>
     nodes.each (node) ->
       node.set
         value: 100 * Math.random()
@@ -99,11 +87,11 @@ class Sankey extends Backbone.View
         value: min * Math.random()
     @refresh()
 
-  render: =>
-    @svg = d3.select("#container").
+  draw: =>
+    @svg = d3.select("#d3_container").
       append("svg:svg").
-      attr("height", "700").
-      attr("width", "1000")
+      attr("height", @height).
+      attr("width", @width)
 
     colors = d3.scale.category20()
 
@@ -122,16 +110,16 @@ class Sankey extends Backbone.View
       on('mouseout', ->
         d3.select(this).transition().duration(200).style("stroke", "steelblue")
       ).
-      attr("d", (link) -> link.svg_path())
+      attr("d", (link) => @link_line link.path_points())
 
     @nodes = @svg.selectAll("rect").
       data(nodes.models, (d) -> d.get('id')).
       enter().
       append("rect").
-      attr("x", (datum) -> Node.horizontal_spacing * datum.get('column') + 20).
-      attr("y", (datum) -> 100 * datum.get ('row')).
-      attr("width", Node.width).
-      attr("height", (datum) -> datum.get('value')).
+      attr("x", (d) => @x(Node.horizontal_spacing * d.get('column') + 20)).
+      attr("y", (d) => @y(100 * d.get ('row'))).
+      attr("width", @x Node.width).
+      attr("height", (datum) => @y datum.get('value')).
       attr("stroke", "gray").
       attr("fill", (datum, i) -> colors(i))
 
@@ -140,33 +128,42 @@ class Sankey extends Backbone.View
       enter().
       append("svg:text").
       attr("class", "label").
-      attr("x", (datum) -> datum.x_offset()).
-      attr("y", (datum) -> datum.y_center() + 5).
+      attr("x", (d) => @x d.x_offset()).
+      attr("y", (d) => @y(d.y_center() + 5)).
       attr("dx", 10).
-      text((datum) -> datum.get('id')).
+      text((d) -> d.get('id')).
       style("color", "black")
 
-  link_line: d3.svg.line().
-    interpolate("basis").
-    x((d) -> d.x).
-    y((d) -> d.y)
-
   refresh: =>
+    console.log "Refreshing"
     @nodes.data(nodes.models, (d) -> d.get('id')).
       transition().duration(500).
-      attr("height", (datum) -> datum.get('value'))
+      attr("height", (datum) => @y datum.get('value'))
 
     @labels.data(nodes.models, (d) -> d.get('id')).
       transition().duration(500).
-      attr("y", (datum) -> datum.y_center() + 5)
+      attr("y", (datum) => @y(datum.y_center() + 5))
 
     @links.data(links.models, (d) -> d.cid).
       transition().duration(500).
-      attr("d", (link) -> link.svg_path()).
-      style("stroke-width", (link) -> link.get('value'))
+      attr("d", (link) => @link_line link.path_points()).
+      style("stroke-width", (link) => @y(link.get('value')))
 
-$ ->
-  window.nodes = new NodeList(data.nodes)
-  window.links = new LinkList(data.links)
-  window.chart = new Sankey()
-  chart.render()
+  initialize: ->
+    # TODO: remove from global namespace
+    window.nodes = new NodeList(data.nodes)
+    window.links = new LinkList(data.links)
+    @initialize_defaults()
+    @x = d3.scale.linear().
+      domain([0, 1000]).
+      range([0, @width])
+
+    @y = d3.scale.linear().
+      domain([0, 700]).
+      range([0, @height])
+
+    @link_line = d3.svg.line().
+      interpolate("basis").
+      x((d) -> @x(d.x)).
+      y((d) -> @y(d.y))
+

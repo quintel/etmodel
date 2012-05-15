@@ -82,7 +82,8 @@ class OutputElement < ActiveRecord::Base
       'show_point_label' => show_point_label,
       'max_axis_value'   => max_axis_value,
       'min_axis_value'   => min_axis_value,
-      'growth_chart'     => growth_chart
+      'growth_chart'     => growth_chart,
+      :key               => key
     }
   end
 

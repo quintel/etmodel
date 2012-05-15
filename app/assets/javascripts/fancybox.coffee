@@ -7,7 +7,7 @@ $ ->
         type: "GET"
       onComplete: ->
         setTimeout((-> $.fancybox.resize()) , 100)
-       $("#fancybox-inner").css({'overflow-x':'hidden'})
+        $("#fancybox-inner").css({'overflow-x':'hidden'})
     $(this).trigger('click')
     return false
 

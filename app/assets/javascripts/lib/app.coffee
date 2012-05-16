@@ -43,11 +43,14 @@ class @AppView extends Backbone.View
       @load_user_values()
       @call_api()
 
-  setup_fce: ->
-    # update the use_fce checkbox inside descriptions as needed on page load
-    $(".inline_use_fce").attr('checked', App.settings.get('use_fce'))
+  setup_fce: =>
+    @update_fce_checkboxes()
     # IE doesn't bubble onChange until the checkbox loses focus
-    $(".inline_use_fce, #settings_use_fce").click(App.settings.toggle_fce)
+    $(document).on 'click', ".inline_use_fce, #settings_use_fce", @settings.toggle_fce
+
+  update_fce_checkboxes: ->
+    # update the use_fce checkbox inside descriptions as needed on page load
+    $(".inline_use_fce").attr('checked', @settings.get('use_fce'))
 
   # Load User values for Sliders
   load_user_values: => @input_elements.load_user_values()

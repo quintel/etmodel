@@ -1,6 +1,6 @@
 class @BaseChartView extends Backbone.View
-  initialize_defaults: ->
-    @model.bind('change', this.render)
+  initialize_defaults: =>
+    @model.bind('change', @render)
 
   max_value: ->
     sum_present = _.reduce @model.values_present(), @smart_sum

@@ -4,6 +4,7 @@ class DescriptionsController < ApplicationController
     if @description.nil? || @description.title.blank?
       render :text => 'Description is not yet available.'
     end
+    render :layout => false if request.xhr?
   end
 
   ##

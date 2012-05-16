@@ -35,8 +35,8 @@ class @Chart extends Backbone.Model
   # D3 is a pseudo-namespace. See d3_chart_view.coffee
   d3_view_factory: =>
     key = @.get 'key'
-    if D3[key]
-      new D3[key]({model: this})
+    if D3[key] && D3[key].view
+      new D3[key].view({model: this})
     else
       false
 

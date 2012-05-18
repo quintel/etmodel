@@ -1,7 +1,16 @@
 #tutorial_wrapper
-  .left_movie
-    = smart_video_player @vimeo_id_for_section, :height => 260, :width => 450, :id => 'left_video'
-    %h3=raw t("#{to_yml_syntax(@section)}")
-  .right_movie  
-    = smart_video_player @vimeo_id_for_category, :height => 260, :width => 450, :id => 'right_video'
-    %h3=raw t("sidebar_item.#{to_yml_syntax(@category)}") 
+  -# a table makes things simpler with fancybox
+  %table
+    %tr
+      - if @vimeo_id_for_section.present?
+        %td
+          .movie
+            = smart_video_player @vimeo_id_for_section, :height => 260,
+              :width => 450, :id => 'left_video'
+            %h3=raw t("#{to_yml_syntax(@section)}")
+      - if @vimeo_id_for_category.present?
+        %td
+          .movie
+            = smart_video_player @vimeo_id_for_category, :height => 260,
+              :width => 450, :id => 'right_video'
+            %h3=raw t("sidebar_item.#{to_yml_syntax(@category)}")

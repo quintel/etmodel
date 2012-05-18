@@ -61,6 +61,7 @@ class @AppView extends Backbone.View
       @scenario.new_session()
 
   call_api: (input_params) =>
+    return false unless @scenario.api_session_id()
     url = @scenario.query_url(input_params)
     keys = window.gqueries.keys()
     keys_ids = _.select(keys, (key) -> !key.match(/\(/))

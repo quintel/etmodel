@@ -182,8 +182,7 @@ class @ChartList extends Backbone.Collection
       $.ajax
         url: url
         method: 'get'
-        beforeSend: ->
-          close_fancybox()
+        beforeSend: -> close_fancybox()
 
     $("a.table_format").live 'click', =>
       $("a.table_format").hide()
@@ -191,10 +190,10 @@ class @ChartList extends Backbone.Collection
       @current().view.toggle_format()
       false
 
-     $("a.chart_format").live 'click', =>
-        $("a.chart_format").hide()
-        $("a.table_format").show()
-        @current().view.toggle_format()
-        false
+    $("a.chart_format").live 'click', =>
+      $("a.chart_format").hide()
+      $("a.table_format").show()
+      @current().view.toggle_format()
+      false
 
 window.charts = new ChartList()

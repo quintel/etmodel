@@ -7,3 +7,4 @@
 //= require jquery.cycle
 //= require jquery.busybox
 //= require jquery.hoverIntent.min
+//= require jquery.ajaxQueue

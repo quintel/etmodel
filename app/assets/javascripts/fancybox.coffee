@@ -1,6 +1,6 @@
 $ ->
   $.fancybox.defaults.helpers.overlay.opacity = 0.4
-  
+
   $(".valuees a.label, a.fancybox").live 'click', (e) ->
     e.preventDefault()
     $.fancybox.open
@@ -13,10 +13,9 @@ $ ->
     $.fancybox.open
       type: 'ajax'
       href: $(this).attr('href')
-      width    : 940
-      padding  : 0
-      opacity: false
+      padding  : 5
       scrolling: 'no'
+      autoSize: true
 
   $("a.select_chart").live 'click', (e) ->
     e.preventDefault()

@@ -1,8 +1,21 @@
 location.hash = '';
+
+// update main content area
 $("#content").html('<%= escape_javascript render("show")%>');
+
 // update tabs
 $("#nav li").removeClass('active');
 $("#nav #<%= controller.controller_name %>").addClass('active');
+
+// setup slides
 var acc = new Accordion();
 acc.setup();
+// setup sidebar as needed
+sidebar.bootstrap()
+// setup slider values, defaults etc
 window.input_elements.setup_input_elements();
+
+// take care of FCE checkboxes in the description area
+App.update_fce_checkboxes()
+
+App.call_api();

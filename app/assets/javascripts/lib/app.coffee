@@ -71,9 +71,8 @@ class @AppView extends Backbone.View
       'result' : keys_string
       'use_fce' : App.settings.get('use_fce')
 
-    LockableFunction.setLock('call_api')
     @showLoading()
-    $.ajax
+    $.ajaxQueue
       url: url
       data: params
       type: 'PUT'
@@ -104,7 +103,6 @@ class @AppView extends Backbone.View
   # window.dashboard.trigger('change')
   handle_api_result: (data) ->
     App.unregister_api_call('call_api')
-    LockableFunction.removeLock('call_api')
     loading.fadeIn('fast') #show loading overlay
     for own key, values of data.result
       gqueries = window.gqueries.with_key(key)

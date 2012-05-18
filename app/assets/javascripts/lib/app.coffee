@@ -77,7 +77,7 @@ class @AppView extends Backbone.View
       data: params
       type: 'PUT'
       success: @handle_api_result
-      error: (xOptions, textStatus) ->
+      error: (xOptions, textStatus) =>
         console.log("Something went wrong: " + textStatus)
         @handle_timeout() if textStatus == 'timeout'
         @hideLoading()

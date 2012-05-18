@@ -43,11 +43,14 @@ class @AppView extends Backbone.View
       @load_user_values()
       @call_api()
 
-  setup_fce: ->
-    # update the use_fce checkbox inside descriptions as needed on page load
-    $(".inline_use_fce").attr('checked', App.settings.get('use_fce'))
+  setup_fce: =>
+    @update_fce_checkboxes()
     # IE doesn't bubble onChange until the checkbox loses focus
-    $(".inline_use_fce, #settings_use_fce").click(App.settings.toggle_fce)
+    $(document).on 'click', ".inline_use_fce, #settings_use_fce", @settings.toggle_fce
+
+  update_fce_checkboxes: ->
+    # update the use_fce checkbox inside descriptions as needed on page load
+    $(".inline_use_fce").attr('checked', @settings.get('use_fce'))
 
   # Load User values for Sliders
   load_user_values: => @input_elements.load_user_values()
@@ -58,6 +61,7 @@ class @AppView extends Backbone.View
       @scenario.new_session()
 
   call_api: (input_params) =>
+    return false unless @scenario.api_session_id()
     url = @scenario.query_url(input_params)
     keys = window.gqueries.keys()
     keys_ids = _.select(keys, (key) -> !key.match(/\(/))
@@ -67,14 +71,13 @@ class @AppView extends Backbone.View
       'result' : keys_string
       'use_fce' : App.settings.get('use_fce')
 
-    LockableFunction.setLock('call_api')
     @showLoading()
-    $.ajax
+    $.ajaxQueue
       url: url
       data: params
       type: 'PUT'
       success: @handle_api_result
-      error: (xOptions, textStatus) ->
+      error: (xOptions, textStatus) =>
         console.log("Something went wrong: " + textStatus)
         @handle_timeout() if textStatus == 'timeout'
         @hideLoading()
@@ -100,7 +103,6 @@ class @AppView extends Backbone.View
   # window.dashboard.trigger('change')
   handle_api_result: (data) ->
     App.unregister_api_call('call_api')
-    LockableFunction.removeLock('call_api')
     loading.fadeIn('fast') #show loading overlay
     for own key, values of data.result
       gqueries = window.gqueries.with_key(key)

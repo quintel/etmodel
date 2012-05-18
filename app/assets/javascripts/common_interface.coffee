@@ -38,23 +38,26 @@ $ ->
       $(".signin").removeClass("menu-open")
       $("fieldset#signin_menu").hide()
 
-  # setting menu
+  # settings menu
+  #
   $("a.settings").click (e) ->
     e.preventDefault()
     $("#settings_menu").toggle()
     $(".settings").toggleClass("menu-open")
   $(document).mouseup (e) ->
-    if $(e.target).parents("a.settings").length == 0
+    if $(e.target).parents("#settings_menu").length == 0
       $(".settings").removeClass("menu-open")
       $("#settings_menu").hide()
 
-  # setting menu
+  # information menu
+  #
   $("a.information").click (e) ->
     e.preventDefault()
     $("#information_menu").toggle()
     $(".information").toggleClass("menu-open")
+  # close when the user clicks outside the popup
   $(document).mouseup (e) ->
-    if $(e.target).parents("a.information").length == 0
+    if $(e.target).parents("#information_menu").length == 0
       $(".information").removeClass("menu-open")
       $("#information_menu").hide()
 

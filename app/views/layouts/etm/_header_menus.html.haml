@@ -35,7 +35,8 @@
   %li
     = t("header.current_language")+":"
     = form_tag "/application/set_locale" do
-      = select_tag("locale", options_for_select(["en", "nl"], I18n.locale.to_s), { :index => nil, :onchange => 'this.form.submit()'})
+      = select_tag("locale", options_for_select(["en", "nl"], I18n.locale.to_s), |
+        { :index => nil, :onchange => 'this.form.submit()'})                     |
 
   %li
     %a{:href => new_scenario_path}= t("header.save_scenario")
@@ -44,12 +45,15 @@
   - if controller_name != 'pages'
     - if Current.setting.use_peak_load
       %li
-        = check_box :track_peak_load, :settings, :onchange => 'App.settings.toggle_peak_load_tracking()', :checked => Current.setting.track_peak_load
-        %label{:for => :track_peak_load_settings}= t('header.notify_of_grid_investments')
+        = check_box :track_peak_load, :settings,
+          :onchange => 'App.settings.toggle_peak_load_tracking()',
+          :checked => Current.setting.track_peak_load
+        %label{:for => "track_peak_load_settings"}
+          = t 'header.notify_of_grid_investments'
     - if Current.setting.allow_fce?
       %li
         = check_box :settings, :use_fce, :checked => Current.setting.use_fce
-        %label{:for => :use_fce_settings}= t('fce.check')
+        %label{:for => "settings_use_fce"}= t('fce.check')
 
 #information_menu.header_menu.topnav
   %li

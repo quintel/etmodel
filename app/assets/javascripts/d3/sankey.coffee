@@ -61,7 +61,15 @@ D3.sankey =
   Node: class extends Backbone.Model
     @width: 170
     @horizontal_spacing: 400
-    y_offset: => @get('row') * 100
+    
+    y_offset: =>
+      offset = 0
+      margin = 35
+      for n in @siblings()
+        break if n == this
+        offset += n.height() + margin
+      offset
+
     x_offset: => @get('column') * D3.sankey.Node.horizontal_spacing + 20
     x_center: => @x_offset() + D3.sankey.Node.width / 2
     y_center: => @y_offset() + @value() / 2
@@ -73,12 +81,18 @@ D3.sankey =
       ])
 
     initialize: =>
+      @module = D3.sankey
       if @get('gquery')
         @gquery = new Gquery({key: @get('gquery')})
       @right_links = []
       @left_links = []
 
     height: => @value()
+
+    siblings: =>
+      items = _.groupBy(@module.nodes.models, (node) -> node.get('column'))
+      items[@get 'column']
+
 
   Link: class extends Backbone.Model
     initialize: =>
@@ -129,7 +143,7 @@ D3.sankey =
 
     value: =>
       if @gquery
-        @gquery.get('future_value') / 10
+        @gquery.get('future_value') / 8
       else
         10
 
@@ -202,7 +216,8 @@ D3.sankey =
     refresh: =>
       @nodes.data(@module.nodes.models, (d) -> d.get('id')).
         transition().duration(500).
-        attr("height", (d) => @y d.height())
+        attr("height", (d) => @y d.height()).
+        attr("y", (d) => @y d.y_offset())
 
       @labels.data(@module.nodes.models, (d) -> d.get('id')).
         transition().duration(500).

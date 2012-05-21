@@ -73,17 +73,18 @@ class OutputElement < ActiveRecord::Base
 
   def options_for_js
     {
-      'id'               => self.id,
-      'type'             => output_element_type.name,
-      'percentage'       => percentage == true ,
-      'unit'             => unit,
-      'group'            => group,
-      'name'             => I18n.t("output_elements.#{key}").html_safe,
-      'show_point_label' => show_point_label,
-      'max_axis_value'   => max_axis_value,
-      'min_axis_value'   => min_axis_value,
-      'growth_chart'     => growth_chart,
-      :key               => key
+      :id                 => id,
+      :type               => output_element_type.name,
+      :percentage         => percentage == true,
+      :unit               => unit,
+      :group              => group,
+      :name               => I18n.t("output_elements.#{key}").html_safe,
+      :show_point_label   => show_point_label,
+      :max_axis_value     => max_axis_value,
+      :min_axis_value     => min_axis_value,
+      :growth_chart       => growth_chart,
+      :key                => key,
+      :under_construction => under_construction
     }
   end
 

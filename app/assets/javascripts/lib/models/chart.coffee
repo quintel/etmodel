@@ -147,24 +147,28 @@ class @ChartList extends Backbone.Collection
     url = "/output_elements/#{chart_id}.js"
     $.getScript url, =>
       # show/hide default chart button
-      if chart_id != @current_default_chart
-        $("a.default_charts").show()
-      else
-        $("a.default_charts").hide()
+      #
+      $("a.default_charts").toggle(chart_id != @current_default_chart)
+
       # show/hide format toggle button
-      if @current().view.can_be_shown_as_table()
-        $("a.table_format").show()
-        $("a.chart_format").hide()
-      else
-        $("a.table_format").hide()
-        $("a.chart_format").hide()
+      #
+      $("a.table_format").toggle( @current().view.can_be_shown_as_table() )
+      $("a.chart_format").hide()
+
       # update chart information link
+      #
       $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/#{chart_id}")
+
       # update the position of the output_element_actions
+      #
       $("#output_element_actions").removeClass()
       $("#output_element_actions").addClass(@first().get("type"))
+
+      # show.hide the under_construction notice
+      #
+      $("#chart_not_finished").toggle @first().get("under_construction")
       App.call_api()
-    return true
+      @first()
 
   # returns the current chart id
   current_id : ->

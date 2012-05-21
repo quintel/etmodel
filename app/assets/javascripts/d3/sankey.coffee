@@ -57,7 +57,6 @@ D3.sankey =
 
     height: => @value()
 
-
   Link: class extends Backbone.Model
     initialize: =>
       @module = D3.sankey
@@ -68,9 +67,19 @@ D3.sankey =
       @left.right_links.push this
       @right.left_links.push this
 
-    left_y: => @left.y_center()
-    right_y: => @right.y_center()
-    left_x: => @left.x_center() + @module.Node.width / 2
+    left_y:  =>
+      offset = 0
+      for link in @left.right_links
+        break if link == this
+        offset += link.height()
+      @left.y_center() + offset
+    right_y:  =>
+      offset = 0
+      for link in @right.left_links
+        break if link == this
+        offset += link.height()
+      @right.y_center() + offset
+    left_x:  => @left.x_center() + @module.Node.width / 2
     right_x: => @right.x_center() - @module.Node.width / 2
 
     path_points: =>
@@ -93,6 +102,8 @@ D3.sankey =
         @gquery.get('future_value') / 20000000000
       else
         @get 'value'
+
+    height: => @value()
 
   # This is the main chart class
   #

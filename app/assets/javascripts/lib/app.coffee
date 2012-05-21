@@ -144,9 +144,10 @@ class @AppView extends Backbone.View
   # that you call the showLoading before adding the jsonp to api_call_stack.
   showLoading: =>
     if @has_unfinished_api_calls()
-      $("#charts_wrapper").busyBox({
-        spinner: '<img src="/assets/layout/ajax-loader.gif" />'
-      }).fadeIn('fast')
+      if charts.current().get('type') != 'd3'
+        $("#charts_wrapper").busyBox({
+          spinner: '<img src="/assets/layout/ajax-loader.gif" />'
+        }).fadeIn('fast')
 
       $("#constraints").busyBox({
         classes: 'busybox ontop'

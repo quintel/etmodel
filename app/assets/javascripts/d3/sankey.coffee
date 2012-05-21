@@ -1,36 +1,39 @@
 D3.sankey =
   data :
     nodes: [
-      {id: 'industry', value: 20, column: 0, row: 0, gquery: 'final_demand_from_industry_and_energy_sector'},
-      {id: 'other', value: 20, column: 0, row: 1, gquery: 'final_demand_from_other_sector'},
-      {id: 'households', value: 20, column: 0, row: 2, gquery: 'final_demand_from_households'},
-      {id: 'agriculture', value: 20, column: 0, row: 3, gquery: 'final_demand_from_agriculture'},
-      {id: 'buildings', value: 20, column: 0, row: 4, gquery: 'final_demand_from_buildings'},
-      {id: 'transport', value: 20, column: 0, row: 5, gquery: 'final_demand_from_transport'},
-      {id: 'el_production', value: 20, column: 1, row: 1, gquery: 'total_electricity_produced'},
-      {id: 'coal', value: 30, column: 2, row: 0},
-      {id: 'nuclear', value: 30, column: 2, row: 1},
-      {id: 'gas', value: 30, column: 2, row: 2},
-      {id: 'oil', value: 30, column: 2, row: 3},
-      {id: 'renewables', value: 30, column: 2, row: 4}
+      {id: 'industry',    column: 0, row: 0, gquery: 'final_demand_from_industry_and_energy_sector'},
+      {id: 'other',       column: 0, row: 1, gquery: 'final_demand_from_other_sector'},
+      {id: 'households',  column: 0, row: 2, gquery: 'final_demand_from_households'},
+      {id: 'agriculture', column: 0, row: 3, gquery: 'final_demand_from_agriculture'},
+      {id: 'buildings',   column: 0, row: 4, gquery: 'final_demand_from_buildings'},
+      {id: 'transport',   column: 0, row: 5, gquery: 'final_demand_from_transport'},
+
+      {id: 'el_production',      column: 1, row: 1, gquery: 'total_electricity_produced'},
+      {id: 'heating_production', column: 1, row: 3, gquery: 'total_electricity_produced'},
+
+      {id: 'coal',       column: 2, row: 0},
+      {id: 'nuclear',    column: 2, row: 1},
+      {id: 'gas',        column: 2, row: 2},
+      {id: 'oil',        column: 2, row: 3},
+      {id: 'renewables', column: 2, row: 4}
     ]
     links: [
-      {left: 'industry', right: 'coal', value: 10},
-      {left: 'industry', right: 'el_production', value: 10},
-      {left: 'other', right: 'el_production', value: 10},
-      {left: 'households', right: 'el_production', value: 10},
-      {left: 'agriculture', right: 'el_production', value: 10},
-      {left: 'buildings', right: 'el_production', value: 10},
-      {left: 'transport', right: 'el_production', value: 10},
-      {left: 'el_production', right: 'coal', value: 5, gquery: 'electricity_produced_from_coal'},
-      {left: 'el_production', right: 'nuclear', value: 5, gquery: 'electricity_produced_from_uranium'},
-      {left: 'el_production', right: 'gas', value: 5, gquery: 'electricity_produced_from_natural_gas'},
-      {left: 'el_production', right: 'oil', value: 5, gquery: 'electricity_produced_from_oil'},
-      {left: 'el_production', right: 'renewables', value: 5, gquery: 'electricity_produced_from_solar'}
-      {left: 'transport', right: 'oil', value: 5, gquery: 'primary_demand_of_crude_oil_from_transport'}
-      {left: 'agriculture', right: 'oil', value: 5, gquery: 'primary_demand_of_crude_oil_from_agriculture'}
-      {left: 'households', right: 'gas', value: 5}
-      {left: 'buildings', right: 'gas', value: 5}
+      {left: 'industry',      right: 'coal'        },
+      {left: 'industry',      right: 'el_production'},
+      {left: 'other',         right: 'el_production'},
+      {left: 'households',    right: 'el_production'},
+      {left: 'agriculture',   right: 'el_production'},
+      {left: 'buildings',     right: 'el_production'},
+      {left: 'transport',     right: 'el_production'},
+      {left: 'el_production', right: 'coal',       gquery: 'electricity_produced_from_coal'},
+      {left: 'el_production', right: 'nuclear',    gquery: 'electricity_produced_from_uranium'},
+      {left: 'el_production', right: 'gas',        gquery: 'electricity_produced_from_natural_gas'},
+      {left: 'el_production', right: 'oil',        gquery: 'electricity_produced_from_oil'},
+      {left: 'el_production', right: 'renewables', gquery: 'electricity_produced_from_solar'}
+      {left: 'transport',     right: 'oil',        gquery: 'primary_demand_of_crude_oil_from_transport'}
+      {left: 'agriculture',   right: 'oil',        gquery: 'primary_demand_of_crude_oil_from_agriculture'}
+      {left: 'households',    right: 'gas'}
+      {left: 'buildings',     right: 'gas'}
     ]
 
   # Helper classes
@@ -41,13 +44,13 @@ D3.sankey =
     y_offset: => @get('row') * 100
     x_offset: => @get('column') * D3.sankey.Node.horizontal_spacing + 20
     x_center: => @x_offset() + D3.sankey.Node.width / 2
-    y_center: => @y_offset() + @get("value") / 2
+    y_center: => @y_offset() + @value() / 2
 
     value: =>
       if @gquery
         @gquery.get('future_value') / 20000000000
       else
-        @get 'value'
+        10
 
     initialize: =>
       if @get('gquery')
@@ -73,13 +76,16 @@ D3.sankey =
         break if link == this
         offset += link.height()
       @left.y_center() + offset
+    
     right_y:  =>
       offset = 0
       for link in @right.left_links
         break if link == this
         offset += link.height()
       @right.y_center() + offset
+    
     left_x:  => @left.x_center() + @module.Node.width / 2
+    
     right_x: => @right.x_center() - @module.Node.width / 2
 
     path_points: =>
@@ -101,7 +107,7 @@ D3.sankey =
       if @gquery
         @gquery.get('future_value') / 20000000000
       else
-        @get 'value'
+        10
 
     height: => @value()
 
@@ -115,7 +121,7 @@ D3.sankey =
         node.set
           value: 100 * Math.random()
       @module.links.each (link) ->
-        min = _.min [link.left.get('value'), link.right.get('value')]
+        min = _.min [link.left.value(), link.right.value()]
         link.set
           value: min * Math.random()
       @refresh()

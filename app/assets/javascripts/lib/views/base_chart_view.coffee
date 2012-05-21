@@ -86,3 +86,6 @@ class @BaseChartView extends Backbone.View
     tmpl = $("#chart-table-template").html()
     table = _.template(tmpl, table_data)
     @container_node().html(table)
+
+  # D3 charts override this method
+  supported_in_current_browser: -> true

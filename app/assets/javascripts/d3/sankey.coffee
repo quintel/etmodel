@@ -52,6 +52,10 @@ D3.sankey =
     initialize: =>
       if @get('gquery')
         @gquery = new Gquery({key: @get('gquery')})
+      @right_links = []
+      @left_links = []
+
+    height: => @value()
 
 
   Link: class extends Backbone.Model
@@ -61,20 +65,27 @@ D3.sankey =
       @right = @module.nodes.get @get('right')
       if @get('gquery')
         @gquery = new Gquery({key: @get('gquery')})
+      @left.right_links.push this
+      @right.left_links.push this
+
+    left_y: => @left.y_center()
+    right_y: => @right.y_center()
+    left_x: => @left.x_center() + @module.Node.width / 2
+    right_x: => @right.x_center() - @module.Node.width / 2
 
     path_points: =>
       [
-          x: @left.x_center() + @module.Node.width / 2
-          y: @left.y_center()
+          x: @left_x()
+          y: @left_y()
         ,
-          x: @left.x_center() + @module.Node.width / 2 + 80
-          y: @left.y_center()
+          x: @left_x() + 80
+          y: @left_y()
         ,
-          x: @right.x_center() - 80 - @module.Node.width / 2
-          y: @right.y_center()
+          x: @right_x() - 80
+          y: @right_y()
         ,
-          x: @right.x_center() - @module.Node.width / 2
-          y: @right.y_center()
+          x: @right_x()
+          y: @right_y()
       ]
 
     value: =>

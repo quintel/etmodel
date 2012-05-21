@@ -1,47 +1,65 @@
 D3.sankey =
   data :
     nodes: [
-      {id: 'industry',    column: 0, row: 0, gquery: 'final_demand_from_industry_and_energy_sector'},
-      {id: 'other',       column: 0, row: 1, gquery: 'final_demand_from_other_sector'},
-      {id: 'households',  column: 0, row: 2, gquery: 'final_demand_from_households'},
-      {id: 'agriculture', column: 0, row: 3, gquery: 'final_demand_from_agriculture'},
-      {id: 'buildings',   column: 0, row: 4, gquery: 'final_demand_from_buildings'},
-      {id: 'transport',   column: 0, row: 5, gquery: 'final_demand_from_transport'},
-      {id: 'loss',        column: 0, row: 6, gquery: 'final_demand_from_transport'},
+      {id: 'industry',    column: 0, row: 0},
+      {id: 'other',       column: 0, row: 1},
+      {id: 'households',  column: 0, row: 2},
+      {id: 'agriculture', column: 0, row: 3},
+      {id: 'buildings',   column: 0, row: 4},
+      {id: 'transport',   column: 0, row: 5},
+      {id: 'loss',        column: 0, row: 6},
 
-      {id: 'el_production',      column: 1, row: 1, gquery: 'total_electricity_produced'},
-      {id: 'heating_production', column: 1, row: 3, gquery: 'total_electricity_produced'},
+      {id: 'el_production',      column: 1, row: 1},
+      {id: 'heating_production', column: 1, row: 3},
 
       {id: 'coal',       column: 2, row: 0},
       {id: 'nuclear',    column: 2, row: 1},
       {id: 'gas',        column: 2, row: 2},
       {id: 'oil',        column: 2, row: 3},
-      {id: 'renewables', column: 2, row: 4}
+      {id: 'biomass',    column: 2, row: 4},
+      {id: 'wind',       column: 2, row: 5},
+      {id: 'hydro',      column: 2, row: 6},
+      {id: 'solar',      column: 2, row: 7},
+      {id: 'waste',      column: 2, row: 8}
+
     ]
     links: [
-      {left: 'industry',      right: 'coal'        },
-      {left: 'industry',      right: 'el_production'},
-      {left: 'other',         right: 'el_production'},
-      {left: 'households',    right: 'el_production'},
-      {left: 'agriculture',   right: 'el_production'},
-      {left: 'buildings',     right: 'el_production'},
-      {left: 'transport',     right: 'el_production'},
-      {left: 'el_production', right: 'coal',       gquery: 'electricity_produced_from_coal'},
-      {left: 'el_production', right: 'nuclear',    gquery: 'electricity_produced_from_uranium'},
-      {left: 'el_production', right: 'gas',        gquery: 'electricity_produced_from_natural_gas'},
-      {left: 'el_production', right: 'oil',        gquery: 'electricity_produced_from_oil'},
-      {left: 'el_production', right: 'renewables', gquery: 'electricity_produced_from_solar'}
-      {left: 'transport',     right: 'oil',        gquery: 'primary_demand_of_crude_oil_from_transport'}
-      {left: 'agriculture',   right: 'oil',        gquery: 'primary_demand_of_crude_oil_from_agriculture'}
-      {left: 'households',    right: 'gas'}
-      {left: 'buildings',     right: 'gas'},
-      {left: 'loss',          right: 'el_production', color: 'grey'}
+      {left: 'industry',      right: 'el_production', gquery: 'electricity_industry_in_mekko_of_final_demand'},
+      {left: 'other',         right: 'el_production', gquery: 'electricity_other_in_mekko_of_final_demand'},
+      {left: 'households',    right: 'el_production', gquery: 'electricity_households_in_mekko_of_final_demand'},
+      {left: 'agriculture',   right: 'el_production', gquery: 'electricity_agriculture_in_mekko_of_final_demand'},
+      {left: 'buildings',     right: 'el_production', gquery: 'electricity_buildings_in_mekko_of_final_demand'},
+      {left: 'transport',     right: 'el_production', gquery: 'electricity_transport_in_mekko_of_final_demand'},
+      {left: 'industry',      right: 'heating_production', gquery: 'hot_water_industry_in_mekko_of_final_demand'},
+      {left: 'other',         right: 'heating_production', gquery: 'hot_water_other_in_mekko_of_final_demand'},
+      {left: 'households',    right: 'heating_production', gquery: 'hot_water_households_in_mekko_of_final_demand'},
+      {left: 'agriculture',   right: 'heating_production', gquery: 'hot_water_agriculture_in_mekko_of_final_demand'},
+      {left: 'buildings',     right: 'heating_production', gquery: 'hot_water_buildings_in_mekko_of_final_demand'},
+      {left: 'transport',     right: 'heating_production', gquery: 'hot_water_transport_in_mekko_of_final_demand'},
+      {left: 'el_production', right: 'coal',       gquery: 'coal_in_source_of_electricity_production'},
+      {left: 'el_production', right: 'nuclear',    gquery: 'nuclear_in_source_of_electricity_production'},
+      {left: 'el_production', right: 'gas',        gquery: 'gas_in_source_of_electricity_production'},
+      {left: 'el_production', right: 'oil',        gquery: 'oil_in_source_of_electricity_production'},
+      {left: 'el_production', right: 'biomass', gquery: 'biomass_in_source_of_electricity_production'},
+      {left: 'el_production', right: 'wind', gquery: 'wind_in_source_of_electricity_production'},
+      {left: 'el_production', right: 'hydro', gquery: 'hydro_in_source_of_electricity_production'},
+      {left: 'el_production', right: 'solar', gquery: 'solar_in_source_of_electricity_production'},
+      {left: 'el_production', right: 'waste', gquery: 'waste_in_source_of_electricity_production'},
+      {left: 'heating_production', right: 'coal',       gquery: 'coal_in_source_of_electricity_production'},
+      {left: 'heating_production', right: 'nuclear',    gquery: 'nuclear_in_source_of_electricity_production'},
+      {left: 'heating_production', right: 'gas',        gquery: 'gas_in_source_of_electricity_production'},
+      {left: 'heating_production', right: 'oil',        gquery: 'oil_in_source_of_electricity_production'},
+      {left: 'heating_production', right: 'biomass', gquery: 'biomass_in_source_of_electricity_production'},
+      {left: 'heating_production', right: 'wind', gquery: 'wind_in_source_of_electricity_production'},
+      {left: 'heating_production', right: 'hydro', gquery: 'hydro_in_source_of_electricity_production'},
+      {left: 'heating_production', right: 'solar', gquery: 'solar_in_source_of_electricity_production'},
+      {left: 'heating_production', right: 'waste', gquery: 'waste_in_source_of_electricity_production'}
     ]
 
   # Helper classes
   #
   Node: class extends Backbone.Model
-    @width: 150
+    @width: 170
     @horizontal_spacing: 400
     y_offset: => @get('row') * 100
     x_offset: => @get('column') * D3.sankey.Node.horizontal_spacing + 20
@@ -49,10 +67,10 @@ D3.sankey =
     y_center: => @y_offset() + @value() / 2
 
     value: =>
-      if @gquery
-        @gquery.get('future_value') / 20000000000
-      else
-        10
+      _.max([
+        _.inject(@left_links, ((memo, i) -> memo + i.height()), 0),
+        _.inject(@right_links,((memo, i) -> memo + i.height()), 0)
+      ])
 
     initialize: =>
       if @get('gquery')
@@ -75,16 +93,20 @@ D3.sankey =
     left_y:  =>
       offset = 0
       for link in @left.right_links
+        # push down the first link
+        offset += link.height() / 2 if offset == 0
         break if link == this
         offset += link.height()
-      @left.y_center() + offset
+      @left.y_offset() + offset
     
     right_y:  =>
       offset = 0
       for link in @right.left_links
+        # push down the first link
+        offset += link.height() / 2 if offset == 0
         break if link == this
         offset += link.height()
-      @right.y_center() + offset
+      @right.y_offset() + offset
     
     left_x:  => @left.x_center() + @module.Node.width / 2
     
@@ -107,7 +129,7 @@ D3.sankey =
 
     value: =>
       if @gquery
-        @gquery.get('future_value') / 20000000000
+        @gquery.get('future_value') / 10
       else
         10
 
@@ -162,7 +184,7 @@ D3.sankey =
         attr("x", (d) => @x(@module.Node.horizontal_spacing * d.get('column') + 20)).
         attr("y", (d) => @y(100 * d.get ('row'))).
         attr("width", @x @module.Node.width).
-        attr("height", (d) => @y d.value()).
+        attr("height", (d) => @y d.height()).
         attr("stroke", "gray").
         attr("fill", (datum, i) -> colors(i))
 
@@ -180,7 +202,7 @@ D3.sankey =
     refresh: =>
       @nodes.data(@module.nodes.models, (d) -> d.get('id')).
         transition().duration(500).
-        attr("height", (d) => @y d.value())
+        attr("height", (d) => @y d.height())
 
       @labels.data(@module.nodes.models, (d) -> d.get('id')).
         transition().duration(500).

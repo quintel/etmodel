@@ -131,6 +131,9 @@ class @ChartList extends Backbone.Collection
   html: {}
 
   change : (chart) ->
+    unless chart.view.supported_in_current_browser()
+      alert "sorry, chart not supported by your browser"
+      return false
     old_chart = @first()
     @remove(old_chart) if old_chart != undefined
     @add(chart)

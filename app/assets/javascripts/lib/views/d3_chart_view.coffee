@@ -24,3 +24,10 @@ class @D3ChartView extends BaseChartView
   html: "<div id='d3_container'></div>"
 
   can_be_shown_as_table: -> false
+
+  supported_in_current_browser: ->
+    if $.browser.msie && $.browser.version < 9
+      false
+    else
+      true
+

@@ -7,6 +7,7 @@ D3.sankey =
       {id: 'agriculture', column: 0, row: 3, gquery: 'final_demand_from_agriculture'},
       {id: 'buildings',   column: 0, row: 4, gquery: 'final_demand_from_buildings'},
       {id: 'transport',   column: 0, row: 5, gquery: 'final_demand_from_transport'},
+      {id: 'loss',        column: 0, row: 6, gquery: 'final_demand_from_transport'},
 
       {id: 'el_production',      column: 1, row: 1, gquery: 'total_electricity_produced'},
       {id: 'heating_production', column: 1, row: 3, gquery: 'total_electricity_produced'},
@@ -33,13 +34,14 @@ D3.sankey =
       {left: 'transport',     right: 'oil',        gquery: 'primary_demand_of_crude_oil_from_transport'}
       {left: 'agriculture',   right: 'oil',        gquery: 'primary_demand_of_crude_oil_from_agriculture'}
       {left: 'households',    right: 'gas'}
-      {left: 'buildings',     right: 'gas'}
+      {left: 'buildings',     right: 'gas'},
+      {left: 'loss',          right: 'el_production', color: 'grey'}
     ]
 
   # Helper classes
   #
   Node: class extends Backbone.Model
-    @width: 100
+    @width: 150
     @horizontal_spacing: 400
     y_offset: => @get('row') * 100
     x_offset: => @get('column') * D3.sankey.Node.horizontal_spacing + 20
@@ -111,6 +113,8 @@ D3.sankey =
 
     height: => @value()
 
+    color: => @get('color') || "steelblue"
+
   # This is the main chart class
   #
   View: class extends D3ChartView
@@ -140,7 +144,7 @@ D3.sankey =
         append("svg:path").
         attr("class", "link").
         style("stroke-width", (link) -> link.value()).
-        style("stroke", "steelblue").
+        style("stroke", (link) -> link.color()).
         style("fill", "none").
         style("opacity", 0.8).
         on('mouseover', ->
@@ -169,7 +173,7 @@ D3.sankey =
         attr("class", "label").
         attr("x", (d) => @x d.x_offset()).
         attr("y", (d) => @y(d.y_center() + 5)).
-        attr("dx", 10).
+        attr("dx", 5).
         text((d) -> d.get('id')).
         style("color", "black")
 

@@ -13,11 +13,11 @@
                     'onDone', 'onError', 'onAlways');
 
     $(triggerEl).fancybox({
-      href:           '/settings/dashboard',
-      type:           'ajax',
-      onComplete:      this.initEvents,
-      showCloseButton: false,
-      padding:         0
+      href:      '/settings/dashboard',
+      type:      'ajax',
+      afterShow: this.initEvents,
+      closeBtn:  false,
+      padding:   0
     });
   }
 

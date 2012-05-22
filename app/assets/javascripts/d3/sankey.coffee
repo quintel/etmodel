@@ -24,36 +24,47 @@ D3.sankey =
 
     ]
     links: [
-      {left: 'industry',    right: 'el_prod',   gquery: 'electricity_industry_in_mekko_of_final_demand'},
-      {left: 'other',       right: 'el_prod',   gquery: 'electricity_other_in_mekko_of_final_demand'},
+      #Direct links between carrier and sector
+	    {left: 'households',  right: 'coal',   gquery: 'coal_households_in_mekko_of_final_demand', color: 'black'},
+      {left: 'households',  right: 'gas',   gquery: 'gas_households_in_mekko_of_final_demand'},
+      {left: 'households',  right: 'oil',   gquery: 'oil_households_in_mekko_of_final_demand', color: 'brown'},
+      {left: 'households',  right: 'biomass',   gquery: 'biomass_households_in_mekko_of_final_demand', color: 'green'},
+      {left: 'households',  right: 'waste',   gquery: 'waste_households_in_mekko_of_final_demand', color: 'dark_green'}
+      # Sector to electricity
       {left: 'households',  right: 'el_prod',   gquery: 'electricity_households_in_mekko_of_final_demand'},
-      {left: 'agriculture', right: 'el_prod',   gquery: 'electricity_agriculture_in_mekko_of_final_demand'},
       {left: 'buildings',   right: 'el_prod',   gquery: 'electricity_buildings_in_mekko_of_final_demand'},
       {left: 'transport',   right: 'el_prod',   gquery: 'electricity_transport_in_mekko_of_final_demand'},
-      {left: 'industry',    right: 'heat_prod', gquery: 'hot_water_industry_in_mekko_of_final_demand'},
-      {left: 'other',       right: 'heat_prod', gquery: 'hot_water_other_in_mekko_of_final_demand'},
-      {left: 'households',  right: 'heat_prod', gquery: 'hot_water_households_in_mekko_of_final_demand'},
-      {left: 'agriculture', right: 'heat_prod', gquery: 'hot_water_agriculture_in_mekko_of_final_demand'},
-      {left: 'buildings',   right: 'heat_prod', gquery: 'hot_water_buildings_in_mekko_of_final_demand'},
-      {left: 'transport',   right: 'heat_prod', gquery: 'hot_water_transport_in_mekko_of_final_demand'},
-      {left: 'el_prod',     right: 'coal',      gquery: 'coal_in_source_of_electricity_production'},
-      {left: 'el_prod',     right: 'nuclear',   gquery: 'nuclear_in_source_of_electricity_production'},
+      {left: 'industry',    right: 'el_prod',   gquery: 'electricity_industry_in_mekko_of_final_demand'},
+      {left: 'agriculture', right: 'el_prod',   gquery: 'electricity_agriculture_in_mekko_of_final_demand'},
+      {left: 'other',       right: 'el_prod',   gquery: 'electricity_other_in_mekko_of_final_demand'},
+
+      {left: 'households',  right: 'heat_prod', gquery: 'hot_water_households_in_mekko_of_final_demand', color: 'red'},
+      {left: 'buildings',   right: 'heat_prod', gquery: 'hot_water_buildings_in_mekko_of_final_demand', color: 'red'},
+      {left: 'transport',   right: 'heat_prod', gquery: 'hot_water_transport_in_mekko_of_final_demand', color: 'red'},
+      {left: 'industry',    right: 'heat_prod', gquery: 'hot_water_industry_in_mekko_of_final_demand', color: 'red'},
+      {left: 'agriculture', right: 'heat_prod', gquery: 'hot_water_agriculture_in_mekko_of_final_demand', color: 'red'},
+      {left: 'other',       right: 'heat_prod', gquery: 'hot_water_other_in_mekko_of_final_demand', color: 'red'},
+
+      {left: 'el_prod',     right: 'coal',      gquery: 'coal_in_source_of_electricity_production', color: 'black'},
+      {left: 'el_prod',     right: 'nuclear',   gquery: 'nuclear_in_source_of_electricity_production', color: 'red'},
       {left: 'el_prod',     right: 'gas',       gquery: 'gas_in_source_of_electricity_production'},
-      {left: 'el_prod',     right: 'oil',       gquery: 'oil_in_source_of_electricity_production'},
-      {left: 'el_prod',     right: 'biomass',   gquery: 'biomass_in_source_of_electricity_production'},
+      {left: 'el_prod',     right: 'oil',       gquery: 'oil_in_source_of_electricity_production', color: 'brown'},
+      {left: 'el_prod',     right: 'biomass',   gquery: 'biomass_in_source_of_electricity_production', color: 'green'},
       {left: 'el_prod',     right: 'wind',      gquery: 'wind_in_source_of_electricity_production'},
       {left: 'el_prod',     right: 'hydro',     gquery: 'hydro_in_source_of_electricity_production'},
       {left: 'el_prod',     right: 'solar',     gquery: 'solar_in_source_of_electricity_production'},
       {left: 'el_prod',     right: 'waste',     gquery: 'waste_in_source_of_electricity_production'},
-      {left: 'heat_prod',   right: 'coal',      gquery: 'coal_in_source_of_electricity_production'},
-      {left: 'heat_prod',   right: 'nuclear',   gquery: 'nuclear_in_source_of_electricity_production'},
+      {left: 'heat_prod',   right: 'coal',      gquery: 'coal_in_source_of_electricity_production', color: 'black'},
+      {left: 'heat_prod',   right: 'nuclear',   gquery: 'nuclear_in_source_of_electricity_production', color: 'red'},
       {left: 'heat_prod',   right: 'gas',       gquery: 'gas_in_source_of_electricity_production'},
-      {left: 'heat_prod',   right: 'oil',       gquery: 'oil_in_source_of_electricity_production'},
-      {left: 'heat_prod',   right: 'biomass',   gquery: 'biomass_in_source_of_electricity_production'},
+      {left: 'heat_prod',   right: 'oil',       gquery: 'oil_in_source_of_electricity_production', color: 'brown'},
+      {left: 'heat_prod',   right: 'biomass',   gquery: 'biomass_in_source_of_electricity_production', color: 'green'},
       {left: 'heat_prod',   right: 'wind',      gquery: 'wind_in_source_of_electricity_production'},
       {left: 'heat_prod',   right: 'hydro',     gquery: 'hydro_in_source_of_electricity_production'},
       {left: 'heat_prod',   right: 'solar',     gquery: 'solar_in_source_of_electricity_production'},
       {left: 'heat_prod',   right: 'waste',     gquery: 'waste_in_source_of_electricity_production'}
+
+
     ]
 
   # Helper classes
@@ -199,8 +210,8 @@ D3.sankey =
         append("svg:path").
         attr("class", "link").
         style("stroke-width", (link) -> link.value()).
-        #style("stroke", (link, i) -> link.color()).
-        style("stroke", (link, i) -> link_color(i)).
+        style("stroke", (link, i) -> link.color()).
+        #style("stroke", (link, i) -> link_color(i)).
         style("fill", "none").
         style("opacity", 0.8).
         attr("d", (link) => @link_line link.path_points())

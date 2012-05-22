@@ -1,26 +1,26 @@
 D3.sankey =
   data :
     nodes: [
-      {id: 'households',  column: 0, row: 0},
-      {id: 'buildings',   column: 0, row: 1},
-      {id: 'transport',   column: 0, row: 2},
-      {id: 'industry',    column: 0, row: 3},
-      {id: 'agriculture', column: 0, row: 4},
-      {id: 'other',       column: 0, row: 5},
-      {id: 'loss',        column: 0, row: 6},
+      {id: 'households',  column: 0},
+      {id: 'buildings',   column: 0},
+      {id: 'transport',   column: 0},
+      {id: 'industry',    column: 0},
+      {id: 'agriculture', column: 0},
+      {id: 'other',       column: 0},
+      {id: 'loss',        column: 0},
 
-      {id: 'el_prod',     column: 1, row: 1, label: "electricity production"},
-      {id: 'heat_prod',   column: 1, row: 3, label: "heating production"},
+      {id: 'el_prod',     column: 1, label: "electricity production"},
+      {id: 'heat_prod',   column: 1, label: "heating production"},
 
-      {id: 'coal',        column: 2, row: 0},
-      {id: 'nuclear',     column: 2, row: 1},
-      {id: 'gas',         column: 2, row: 2},
-      {id: 'oil',         column: 2, row: 3},
-      {id: 'biomass',     column: 2, row: 4},
-      {id: 'wind',        column: 2, row: 5},
-      {id: 'hydro',       column: 2, row: 6},
-      {id: 'solar',       column: 2, row: 7},
-      {id: 'waste',       column: 2, row: 8}
+      {id: 'coal',        column: 2},
+      {id: 'nuclear',     column: 2},
+      {id: 'gas',         column: 2},
+      {id: 'oil',         column: 2},
+      {id: 'biomass',     column: 2},
+      {id: 'wind',        column: 2},
+      {id: 'hydro',       column: 2},
+      {id: 'solar',       column: 2},
+      {id: 'waste',       column: 2}
 
     ]
     links: [
@@ -203,12 +203,6 @@ D3.sankey =
         style("stroke", (link, i) -> link_color(i)).
         style("fill", "none").
         style("opacity", 0.8).
-        on('mouseover', ->
-          d3.select(this).transition().duration(900).style("stroke", "red")
-        ).
-        on('mouseout', ->
-          d3.select(this).transition().duration(200).style("stroke", "steelblue")
-        ).
         attr("d", (link) => @link_line link.path_points())
 
       @nodes = @svg.selectAll("rect").

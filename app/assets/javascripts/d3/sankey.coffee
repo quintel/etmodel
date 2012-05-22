@@ -230,8 +230,7 @@ D3.sankey =
         attr("x", (d) => @x d.x_offset()).
         attr("y", (d) => @y(d.y_center() + 5)).
         attr("dx", 5).
-        text((d) -> d.label()).
-        style("color", "black")
+        text((d) -> d.label())
 
     refresh: =>
       @nodes.data(@module.nodes.models, (d) -> d.get('id')).

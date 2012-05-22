@@ -1,12 +1,12 @@
 D3.sankey =
   data :
     nodes: [
-      {id: 'industry',    column: 0, row: 0},
-      {id: 'other',       column: 0, row: 1},
-      {id: 'households',  column: 0, row: 2},
-      {id: 'agriculture', column: 0, row: 3},
-      {id: 'buildings',   column: 0, row: 4},
-      {id: 'transport',   column: 0, row: 5},
+      {id: 'households',  column: 0, row: 0},
+      {id: 'buildings',   column: 0, row: 1},
+      {id: 'transport',   column: 0, row: 2},
+      {id: 'industry',    column: 0, row: 3},
+      {id: 'agriculture', column: 0, row: 4},
+      {id: 'other',       column: 0, row: 5},
       {id: 'loss',        column: 0, row: 6},
 
       {id: 'el_prod',     column: 1, row: 1, label: "electricity production"},

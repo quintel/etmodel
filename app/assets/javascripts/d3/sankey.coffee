@@ -211,41 +211,39 @@ D3.sankey =
         attr("class", "link").
         style("stroke-width", (link) -> link.value()).
         style("stroke", (link, i) -> link.color()).
-        #style("stroke", (link, i) -> link_color(i)).
         style("fill", "none").
         style("opacity", 0.8).
         attr("d", (link) => @link_line link.path_points())
 
-      @nodes = @svg.selectAll("rect").
+      @nodes = @svg.selectAll("svg.node").
         data(@module.nodes.models, (d) -> d.get('id')).
         enter().
-        append("rect").
+        append("svg").
+        attr("class", "node").
         attr("x", (d) => @x(@module.Node.horizontal_spacing * d.get('column') + 20)).
-        attr("y", (d) => @y(d.y_offset())).
-        attr("width", @x @module.Node.width).
-        attr("height", (d) => @y d.value()).
-        attr("stroke", "gray").
-        attr("fill", (datum, i) -> colors(i))
+        attr("y", (d) => @y(d.y_offset()))
 
-      @labels = @svg.selectAll("text.label").
-        data(@module.nodes.models, (d) -> d.get('id')).
-        enter().
-        append("svg:text").
+      @nodes.append("svg:rect").
+        attr("stroke", "gray").
+        attr("fill", (datum, i) -> colors(i)).
+        attr("width", @x @module.Node.width).
+        attr("height", (d) => @y d.value())
+
+      @nodes.append("svg:text").
         attr("class", "label").
-        attr("x", (d) => @x d.x_offset()).
-        attr("y", (d) => @y(d.y_center() + 5)).
-        attr("dx", 5).
+        attr("x", 5).
+        attr("y", 10).
         text((d) -> d.label())
 
     refresh: =>
       @nodes.data(@module.nodes.models, (d) -> d.get('id')).
         transition().duration(500).
-        attr("height", (d) => @y d.value()).
         attr("y", (d) => @y d.y_offset())
 
-      @labels.data(@module.nodes.models, (d) -> d.get('id')).
+      @nodes.data(@module.nodes.models, (d) -> d.get('id')).
+        selectAll("rect").
         transition().duration(500).
-        attr("y", (d) => @y(d.y_center() + 5))
+        attr("height", (d) => @y d.value())
 
       @links.data(@module.links.models, (d) -> d.cid).
         transition().duration(500).

@@ -7,7 +7,7 @@
 # rendering and the refresh() for the later updates.
 # They should also call @initialize_defaults() in their initialize method
 class @D3ChartView extends BaseChartView
-  width: 430
+  width: 490
 
   height: 502
 

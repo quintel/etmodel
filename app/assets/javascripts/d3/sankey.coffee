@@ -115,24 +115,39 @@ D3.sankey =
 
     # returns the absolute y coordinate of the left anchor point
     #
+    # This method should definitely be simplifiwed
     left_y:  =>
-      offset = 0
+      offset = null
       for link in @left.right_links
         # push down the first link
-        offset += link.value() / 2 if offset == 0
-        break if link == this
-        offset += link.value()
+        if offset == null
+          offset = link.value() / 2
+          break if link == this
+          offset = link.value()
+        else
+          if link == this
+            offset += link.value() / 2
+            break
+          else
+            offset += link.value()
       @left.y_offset() + offset
 
     # see above
     #
     right_y:  =>
-      offset = 0
+      offset = null
       for link in @right.left_links
         # push down the first link
-        offset += link.value() / 2 if offset == 0
-        break if link == this
-        offset += link.value()
+        if offset == null
+          offset = link.value() / 2
+          break if link == this
+          offset = link.value()
+        else
+          if link == this
+            offset += link.value() / 2
+            break
+          else
+            offset += link.value()
       @right.y_offset() + offset
 
     left_x:  => @left.x_center() + @module.Node.width / 2
@@ -158,7 +173,7 @@ D3.sankey =
 
     value: =>
       if @gquery
-        @gquery.get('future_value') / 8
+        @gquery.get('future_value') / 4
       else
         10
 
@@ -176,6 +191,7 @@ D3.sankey =
         attr("width", @width)
 
       colors = d3.scale.category20()
+      link_color = d3.scale.category20()
 
       @links = @svg.selectAll('path.link').
         data(@module.links.models, (d) -> d.cid).
@@ -183,7 +199,8 @@ D3.sankey =
         append("svg:path").
         attr("class", "link").
         style("stroke-width", (link) -> link.value()).
-        style("stroke", (link) -> link.color()).
+        #style("stroke", (link, i) -> link.color()).
+        style("stroke", (link, i) -> link_color(i)).
         style("fill", "none").
         style("opacity", 0.8).
         on('mouseover', ->
@@ -199,7 +216,7 @@ D3.sankey =
         enter().
         append("rect").
         attr("x", (d) => @x(@module.Node.horizontal_spacing * d.get('column') + 20)).
-        attr("y", (d) => @y(100 * d.get ('row'))).
+        attr("y", (d) => @y(d.y_offset())).
         attr("width", @x @module.Node.width).
         attr("height", (d) => @y d.value()).
         attr("stroke", "gray").
@@ -244,6 +261,8 @@ D3.sankey =
         domain([0, 700]).
         range([0, @height])
 
+      # This is the function that will take care of drawing the links once we've
+      # set the base points
       @link_line = d3.svg.line().
         interpolate("basis").
         x((d) -> @x(d.x)).

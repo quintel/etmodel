@@ -162,7 +162,6 @@ D3.sankey =
       @right.y_offset() + offset
 
     left_x:  => @left.x_center() + @module.Node.width / 2
-
     right_x: => @right.x_center() - @module.Node.width / 2
 
     # Use 4 points and let D3 interpolate a smooth curve
@@ -207,14 +206,19 @@ D3.sankey =
 
       colors = d3.scale.category20()
 
-      @links = @svg.selectAll('path.link').
+      # links are treated as a group made of a link path and label text element
+      #
+      @links = @svg.selectAll('g.link').
         data(@module.links.models, (d) -> d.cid).
         enter().
-        append("svg:path").
+        append("svg:g").
         attr("class", (link) ->
           "link #{link.left.get('id')} #{link.right.get('id')}"
         ).
-        attr("data-cid", (d) -> d.cid). # unique identifier
+        attr("data-cid", (d) -> d.cid) # unique identifier
+      # link path
+      #
+      @links.append("svg:path").
         style("stroke-width", (link) -> link.value()).
         style("stroke", (link, i) -> link.color()).
         style("fill", "none").
@@ -222,6 +226,16 @@ D3.sankey =
         attr("d", (link) => @link_line link.path_points()).
         on("mouseover", @link_mouseover).
         on("mouseout", @node_mouseout)
+      # link labels
+      #
+      @links.append("svg:text").
+      attr("class", "link_label").
+      attr("x", (d) => @x d.left_x()).
+      attr("y", (d) => @y d.left_y()).
+      attr("dx", 5).
+      attr("dy", 3).
+      style("opacity", 0).
+      text((d) => @format_value d.value())
 
       # Node elements are grouped inside an svg element, so we can use relative
       # coordinates
@@ -277,6 +291,11 @@ D3.sankey =
         text(line)
         y += 10
 
+    # formats the value shown in the link labels
+    #
+    format_value: (x) ->
+      "#{x.toFixed(2)} PJ"
+
     # callbacks
     #
     node_mouseover: ->
@@ -295,17 +314,24 @@ D3.sankey =
       d3.selectAll(".link").
         transition().
         duration(200).
-        style("opacity", 0.8)
+        style("opacity", 0.8).
+        selectAll(".link_label").
+        transition().
+        style("opacity", 0)
 
     link_mouseover: ->
-      current_id = $(this).attr("data-cid")
+      current_id = $(this).parent().attr("data-cid")
       d3.selectAll(".link").
         each((d) ->
-          return if d.cid == current_id
-          d3.select(this).
-            transition().
-            duration(200).
-            style("opacity", 0.2)
+          item = d3.select(this)
+          if d.cid == current_id
+            item.selectAll(".link_label").
+              transition().
+              style("opacity", 1)
+          else
+            item.transition().
+              duration(200).
+              style("opacity", 0.2)
         )
 
 
@@ -329,8 +355,17 @@ D3.sankey =
       #
       @links.data(@module.links.models, (d) -> d.cid).
         transition().duration(500).
+        selectAll("path").
         attr("d", (link) => @link_line link.path_points()).
         style("stroke-width", (link) => @y(link.value()))
+
+      # then move the labels and update their value
+      #
+      @links.data(@module.links.models, (d) -> d.cid).
+        transition().duration(500).
+        selectAll("text.link_label").
+        attr("y", (link) => @y link.left_y()).
+        text((d) => @format_value d.value())
 
     initialize: ->
       @module = D3.sankey # shortcut

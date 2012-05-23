@@ -11,8 +11,8 @@ D3.sankey =
       {id: 'solar',       column: 0},
       {id: 'waste',       column: 0}
 
-      {id: 'el_prod',     column: 1, label: "electricity production"},
-      {id: 'heat_prod',   column: 1, label: "heating production"},
+      {id: 'el_prod',     column: 1, label: "electricity\nproduction"},
+      {id: 'heat_prod',   column: 1, label: "heating\nproduction"},
 
       {id: 'households',  column: 2},
       {id: 'buildings',   column: 2},
@@ -126,7 +126,7 @@ D3.sankey =
 
     # returns the absolute y coordinate of the left anchor point
     #
-    # This method should definitely be simplifiwed
+    # This method should definitely be simplified
     left_y:  =>
       offset = null
       for link in @left.right_links
@@ -195,6 +195,8 @@ D3.sankey =
   View: class extends D3ChartView
     el: "body"
 
+    # this method is called when we first render the chart
+    #
     draw: =>
       @svg = d3.select("#d3_container").
         append("svg:svg").
@@ -202,7 +204,6 @@ D3.sankey =
         attr("width", @width)
 
       colors = d3.scale.category20()
-      link_color = d3.scale.category20()
 
       @links = @svg.selectAll('path.link').
         data(@module.links.models, (d) -> d.cid).
@@ -215,6 +216,11 @@ D3.sankey =
         style("opacity", 0.8).
         attr("d", (link) => @link_line link.path_points())
 
+      # Node elements are grouped inside an svg element, so we can use relative
+      # coordinates
+      #
+      # The container just stores the x and y coordinates
+      #
       @nodes = @svg.selectAll("svg.node").
         data(@module.nodes.models, (d) -> d.get('id')).
         enter().
@@ -223,38 +229,75 @@ D3.sankey =
         attr("x", (d) => @x(@module.Node.horizontal_spacing * d.get('column') + 20)).
         attr("y", (d) => @y(d.y_offset()))
 
+      # The rectangle just cares about its size and color
+      #
       @nodes.append("svg:rect").
         attr("stroke", "gray").
         attr("fill", (datum, i) -> colors(i)).
         attr("width", @x @module.Node.width).
         attr("height", (d) => @y d.value())
 
+      # And here we have the label. We use a +svg:text+ element that will then
+      # hold a +tspan+ element for each line
+      #
       @nodes.append("svg:text").
         attr("class", "label").
         attr("x", 5).
         attr("y", 10).
-        text((d) -> d.label())
+        each(@add_label) # call() passes the entire collection
 
+    # adding multiline labels is harder than you would expect, let's move this
+    # logic to a separate method.
+    #
+    # Some info here:
+    # https://groups.google.com/group/d3-js/browse_thread/thread/5662ff1f312abb9d
+    #
+    add_label: (item) ->
+      # this method is called by the previous each() call. The parameter is the
+      # joint data model, while +this+ is the associated DOM element, _not_
+      # wrapped by D3 though!
+      #
+      lines = item.label().split("\n")
+      y = 10
+      for line in lines
+        d3.select(this). # wrap it, so we can use the +append+ method
+        append("tspan").
+        attr("x", 5).
+        attr("y", y).
+        text(line)
+        y += 10
+
+    # this method is called every time we're updating the chart
+    #
     refresh: =>
+      # start by translating the container to the final position
+      #
       @nodes.data(@module.nodes.models, (d) -> d.get('id')).
         transition().duration(500).
         attr("y", (d) => @y d.y_offset())
 
+      # then resize the rectangles
+      #
       @nodes.data(@module.nodes.models, (d) -> d.get('id')).
         selectAll("rect").
         transition().duration(500).
         attr("height", (d) => @y d.value())
 
+      # then transform the links
+      #
       @links.data(@module.links.models, (d) -> d.cid).
         transition().duration(500).
         attr("d", (link) => @link_line link.path_points()).
         style("stroke-width", (link) => @y(link.value()))
 
     initialize: ->
-      @module = D3.sankey
+      @module = D3.sankey # shortcut
       @module.nodes = new @module.NodeList(@module.data.nodes)
       @module.links = new @module.LinkList(@module.data.links)
       @initialize_defaults()
+
+      # set up the scaling methods
+      #
       @x = d3.scale.linear().
         domain([0, 1000]).
         range([0, @width])

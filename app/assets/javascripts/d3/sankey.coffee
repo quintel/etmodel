@@ -183,7 +183,7 @@ D3.sankey =
 
     value: =>
       if @gquery
-        @gquery.get('future_value') / 4
+        @gquery.get('future_value')
       else
         10
 
@@ -203,12 +203,38 @@ D3.sankey =
         append("svg:svg").
         attr("height", @height).
         attr("width", @width)
+      @links = @draw_links()
+      @nodes = @draw_nodes()
+      @units = @draw_units()
 
-      colors = d3.scale.category20()
+    draw_units: =>
+      units = @svg.selectAll('g.unit').
+        data(@unit_blocks, (d) -> d.id).
+        enter().
+        append("svg:g").
+        attr("class", "unit")
 
+      units.append("svg:rect").
+        style("stroke", "none").
+        style("fill", "grey").
+        attr("x", 310).
+        attr("y", (d,i) -> 350 + 20 * i).
+        attr("height", (d) => @y d.value).
+        attr("width", 40).
+        style("opacity", 0.5)
+
+      units.append("svg:text").
+        attr("x", 330).
+        attr("y", (d,i) -> 350 + 20 * i + 5).
+        attr("text-anchor", "middle").
+        text((d) -> d.value)
+
+      return units
+
+    draw_links: =>
       # links are treated as a group made of a link path and label text element
       #
-      @links = @svg.selectAll('g.link').
+      links = @svg.selectAll('g.link').
         data(@module.links.models, (d) -> d.cid).
         enter().
         append("svg:g").
@@ -218,7 +244,7 @@ D3.sankey =
         attr("data-cid", (d) -> d.cid) # unique identifier
       # link path
       #
-      @links.append("svg:path").
+      links.append("svg:path").
         style("stroke-width", (link) -> link.value()).
         style("stroke", (link, i) -> link.color()).
         style("fill", "none").
@@ -228,7 +254,7 @@ D3.sankey =
         on("mouseout", @node_mouseout)
       # link labels
       #
-      @links.append("svg:text").
+      links.append("svg:text").
       attr("class", "link_label").
       attr("x", (d) => @x d.left_x()).
       attr("y", (d) => @y d.left_y()).
@@ -237,12 +263,15 @@ D3.sankey =
       style("opacity", 0).
       text((d) => @format_value d.value())
 
+      return links
+
+    draw_nodes: =>
       # Node elements are grouped inside an svg element, so we can use relative
       # coordinates
       #
       # The container just stores the x and y coordinates
       #
-      @nodes = @svg.selectAll("svg.node").
+      nodes = @svg.selectAll("svg.node").
         data(@module.nodes.models, (d) -> d.get('id')).
         enter().
         append("svg").
@@ -253,7 +282,9 @@ D3.sankey =
 
       # The rectangle just cares about its size and color
       #
-      @nodes.append("svg:rect").
+      colors = d3.scale.category20()
+
+      nodes.append("svg:rect").
         attr("stroke", "gray").
         attr("fill", (datum, i) -> colors(i)).
         attr("width", @x @module.Node.width).
@@ -264,11 +295,13 @@ D3.sankey =
       # And here we have the label. We use a +svg:text+ element that will then
       # hold a +tspan+ element for each line
       #
-      @nodes.append("svg:text").
+      nodes.append("svg:text").
         attr("class", "label").
         attr("x", 5).
         attr("y", 10).
         each(@add_label) # call() passes the entire collection
+
+      return nodes
 
     # adding multiline labels is harder than you would expect, let's move this
     # logic to a separate method.
@@ -338,6 +371,25 @@ D3.sankey =
     # this method is called every time we're updating the chart
     #
     refresh: =>
+      max_height = @module.nodes.max_column_value()
+
+      # update the scaling function
+      #
+      @y = d3.scale.linear().
+        domain([0, max_height * 1.2]).
+        range([0, @height * .9])
+
+      # refresh the unit squares
+      #
+      @units.data(@unit_blocks, (d) -> d.id).
+        selectAll("rect").
+        transition().duration(500).
+        attr("height", (d) => @y d.value)
+      @units.data(@unit_blocks, (d) -> d.id).
+        selectAll("text").
+        transition().duration(500).
+        attr("dy", (d) => @y(d.value / 2))
+
       # start by translating the container to the final position
       #
       @nodes.data(@module.nodes.models, (d) -> d.get('id')).
@@ -373,6 +425,12 @@ D3.sankey =
       @module.links = new @module.LinkList(@module.data.links)
       @initialize_defaults()
 
+      @unit_blocks = [
+        {id: 1, value: 1},
+        {id: 10, value: 10},
+        {id: 100, value: 100}
+      ]
+
       # set up the scaling methods
       #
       @x = d3.scale.linear().
@@ -380,7 +438,7 @@ D3.sankey =
         range([0, @width])
 
       @y = d3.scale.linear().
-        domain([0, 700]).
+        domain([0, 5000]).
         range([0, @height])
 
       # This is the function that will take care of drawing the links once we've
@@ -392,6 +450,16 @@ D3.sankey =
 
 class D3.sankey.NodeList extends Backbone.Collection
   model: D3.sankey.Node
+
+  # returns the maximum sum of the column values
+  #
+  max_column_value: =>
+    sums = {}
+    @each (n) ->
+      column = n.get 'column'
+      sums[column] = sums[column] || 0
+      sums[column] += n.value()
+    _.max _.values(sums)
 
 class D3.sankey.LinkList extends Backbone.Collection
   model: D3.sankey.Link

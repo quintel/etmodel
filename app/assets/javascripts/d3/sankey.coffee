@@ -214,11 +214,14 @@ D3.sankey =
         attr("class", (link) ->
           "link #{link.left.get('id')} #{link.right.get('id')}"
         ).
+        attr("data-cid", (d) -> d.cid). # unique identifier
         style("stroke-width", (link) -> link.value()).
         style("stroke", (link, i) -> link.color()).
         style("fill", "none").
         style("opacity", 0.8).
-        attr("d", (link) => @link_line link.path_points())
+        attr("d", (link) => @link_line link.path_points()).
+        on("mouseover", @link_mouseover).
+        on("mouseout", @node_mouseout)
 
       # Node elements are grouped inside an svg element, so we can use relative
       # coordinates
@@ -287,11 +290,24 @@ D3.sankey =
             style("opacity", 0.2)
         )
 
+    # this is use ased link_mouseout, too
     node_mouseout: ->
       d3.selectAll(".link").
         transition().
-        duration(100).
+        duration(200).
         style("opacity", 0.8)
+
+    link_mouseover: ->
+      current_id = $(this).attr("data-cid")
+      d3.selectAll(".link").
+        each((d) ->
+          return if d.cid == current_id
+          d3.select(this).
+            transition().
+            duration(200).
+            style("opacity", 0.2)
+        )
+
 
     # this method is called every time we're updating the chart
     #

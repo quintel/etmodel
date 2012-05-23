@@ -190,6 +190,8 @@ D3.sankey =
 
     color: => @get('color') || "steelblue"
 
+    connects: (id) => @get('left') == id || @get('right') == id
+
   # This is the main chart class
   #
   View: class extends D3ChartView
@@ -209,7 +211,9 @@ D3.sankey =
         data(@module.links.models, (d) -> d.cid).
         enter().
         append("svg:path").
-        attr("class", "link").
+        attr("class", (link) ->
+          "link #{link.left.get('id')} #{link.right.get('id')}"
+        ).
         style("stroke-width", (link) -> link.value()).
         style("stroke", (link, i) -> link.color()).
         style("fill", "none").
@@ -225,7 +229,8 @@ D3.sankey =
         data(@module.nodes.models, (d) -> d.get('id')).
         enter().
         append("svg").
-        attr("class", "node").
+        attr("class", (d) -> "node").
+        attr("data-id", (d) -> d.get('id')).
         attr("x", (d) => @x(@module.Node.horizontal_spacing * d.get('column') + 20)).
         attr("y", (d) => @y(d.y_offset()))
 
@@ -235,7 +240,9 @@ D3.sankey =
         attr("stroke", "gray").
         attr("fill", (datum, i) -> colors(i)).
         attr("width", @x @module.Node.width).
-        attr("height", (d) => @y d.value())
+        attr("height", (d) => @y d.value()).
+        on("mouseover", @node_mouseover).
+        on("mouseout", @node_mouseout)
 
       # And here we have the label. We use a +svg:text+ element that will then
       # hold a +tspan+ element for each line
@@ -266,6 +273,25 @@ D3.sankey =
         attr("y", y).
         text(line)
         y += 10
+
+    # callbacks
+    #
+    node_mouseover: ->
+      klass = $(this).parent().attr('data-id')
+      d3.selectAll(".link").
+        each((d) ->
+          return if d.connects(klass)
+          d3.select(this).
+            transition().
+            duration(200).
+            style("opacity", 0.2)
+        )
+
+    node_mouseout: ->
+      d3.selectAll(".link").
+        transition().
+        duration(100).
+        style("opacity", 0.8)
 
     # this method is called every time we're updating the chart
     #

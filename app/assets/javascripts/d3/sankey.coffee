@@ -1,68 +1,68 @@
 D3.sankey =
   data :
     nodes: [
-      {id: 'households',  column: 0},
-      {id: 'buildings',   column: 0},
-      {id: 'transport',   column: 0},
-      {id: 'industry',    column: 0},
-      {id: 'agriculture', column: 0},
-      {id: 'other',       column: 0},
-      {id: 'loss',        column: 0},
+      {id: 'coal',        column: 0},
+      {id: 'nuclear',     column: 0},
+      {id: 'gas',         column: 0},
+      {id: 'oil',         column: 0},
+      {id: 'biomass',     column: 0},
+      {id: 'wind',        column: 0},
+      {id: 'hydro',       column: 0},
+      {id: 'solar',       column: 0},
+      {id: 'waste',       column: 0}
 
       {id: 'el_prod',     column: 1, label: "electricity production"},
       {id: 'heat_prod',   column: 1, label: "heating production"},
 
-      {id: 'coal',        column: 2},
-      {id: 'nuclear',     column: 2},
-      {id: 'gas',         column: 2},
-      {id: 'oil',         column: 2},
-      {id: 'biomass',     column: 2},
-      {id: 'wind',        column: 2},
-      {id: 'hydro',       column: 2},
-      {id: 'solar',       column: 2},
-      {id: 'waste',       column: 2}
+      {id: 'households',  column: 2},
+      {id: 'buildings',   column: 2},
+      {id: 'transport',   column: 2},
+      {id: 'industry',    column: 2},
+      {id: 'agriculture', column: 2},
+      {id: 'other',       column: 2},
+      {id: 'loss',        column: 2},
 
     ]
     links: [
       #Direct links between carrier and sector
-	    {left: 'households',  right: 'coal',   gquery: 'coal_households_in_mekko_of_final_demand', color: 'black'},
-      {left: 'households',  right: 'gas',   gquery: 'gas_households_in_mekko_of_final_demand'},
-      {left: 'households',  right: 'oil',   gquery: 'oil_households_in_mekko_of_final_demand', color: 'brown'},
-      {left: 'households',  right: 'biomass',   gquery: 'biomass_households_in_mekko_of_final_demand', color: 'green'},
-      {left: 'households',  right: 'waste',   gquery: 'waste_households_in_mekko_of_final_demand', color: 'dark_green'}
-      # Sector to electricity
-      {left: 'households',  right: 'el_prod',   gquery: 'electricity_households_in_mekko_of_final_demand'},
-      {left: 'buildings',   right: 'el_prod',   gquery: 'electricity_buildings_in_mekko_of_final_demand'},
-      {left: 'transport',   right: 'el_prod',   gquery: 'electricity_transport_in_mekko_of_final_demand'},
-      {left: 'industry',    right: 'el_prod',   gquery: 'electricity_industry_in_mekko_of_final_demand'},
-      {left: 'agriculture', right: 'el_prod',   gquery: 'electricity_agriculture_in_mekko_of_final_demand'},
-      {left: 'other',       right: 'el_prod',   gquery: 'electricity_other_in_mekko_of_final_demand'},
-
-      {left: 'households',  right: 'heat_prod', gquery: 'hot_water_households_in_mekko_of_final_demand', color: 'red'},
-      {left: 'buildings',   right: 'heat_prod', gquery: 'hot_water_buildings_in_mekko_of_final_demand', color: 'red'},
-      {left: 'transport',   right: 'heat_prod', gquery: 'hot_water_transport_in_mekko_of_final_demand', color: 'red'},
-      {left: 'industry',    right: 'heat_prod', gquery: 'hot_water_industry_in_mekko_of_final_demand', color: 'red'},
-      {left: 'agriculture', right: 'heat_prod', gquery: 'hot_water_agriculture_in_mekko_of_final_demand', color: 'red'},
-      {left: 'other',       right: 'heat_prod', gquery: 'hot_water_other_in_mekko_of_final_demand', color: 'red'},
-
-      {left: 'el_prod',     right: 'coal',      gquery: 'coal_in_source_of_electricity_production', color: 'black'},
-      {left: 'el_prod',     right: 'nuclear',   gquery: 'nuclear_in_source_of_electricity_production', color: 'red'},
-      {left: 'el_prod',     right: 'gas',       gquery: 'gas_in_source_of_electricity_production'},
-      {left: 'el_prod',     right: 'oil',       gquery: 'oil_in_source_of_electricity_production', color: 'brown'},
-      {left: 'el_prod',     right: 'biomass',   gquery: 'biomass_in_source_of_electricity_production', color: 'green'},
-      {left: 'el_prod',     right: 'wind',      gquery: 'wind_in_source_of_electricity_production'},
-      {left: 'el_prod',     right: 'hydro',     gquery: 'hydro_in_source_of_electricity_production'},
-      {left: 'el_prod',     right: 'solar',     gquery: 'solar_in_source_of_electricity_production'},
-      {left: 'el_prod',     right: 'waste',     gquery: 'waste_in_source_of_electricity_production'},
-      {left: 'heat_prod',   right: 'coal',      gquery: 'coal_in_source_of_electricity_production', color: 'black'},
-      {left: 'heat_prod',   right: 'nuclear',   gquery: 'nuclear_in_source_of_electricity_production', color: 'red'},
-      {left: 'heat_prod',   right: 'gas',       gquery: 'gas_in_source_of_electricity_production'},
-      {left: 'heat_prod',   right: 'oil',       gquery: 'oil_in_source_of_electricity_production', color: 'brown'},
-      {left: 'heat_prod',   right: 'biomass',   gquery: 'biomass_in_source_of_electricity_production', color: 'green'},
-      {left: 'heat_prod',   right: 'wind',      gquery: 'wind_in_source_of_electricity_production'},
-      {left: 'heat_prod',   right: 'hydro',     gquery: 'hydro_in_source_of_electricity_production'},
-      {left: 'heat_prod',   right: 'solar',     gquery: 'solar_in_source_of_electricity_production'},
-      {left: 'heat_prod',   right: 'waste',     gquery: 'waste_in_source_of_electricity_production'}
+	    {left: 'coal',      right: 'households', gquery: 'coal_households_in_mekko_of_final_demand', color: 'black'},
+      {left: 'gas',       right: 'households', gquery: 'gas_households_in_mekko_of_final_demand'},
+      {left: 'oil',       right: 'households', gquery: 'oil_households_in_mekko_of_final_demand', color: 'brown'},
+      {left: 'biomass',   right: 'households',  gquery: 'biomass_households_in_mekko_of_final_demand', color: 'green'},
+      {left: 'waste',     right: 'households', gquery: 'waste_households_in_mekko_of_final_demand', color: 'dark_green'}
+      # Electricity to sectors
+      {left: 'el_prod',   right: 'households',  gquery: 'electricity_households_in_mekko_of_final_demand'},
+      {left: 'el_prod',   right: 'buildings',   gquery: 'electricity_buildings_in_mekko_of_final_demand'},
+      {left: 'el_prod',   right: 'transport',   gquery: 'electricity_transport_in_mekko_of_final_demand'},
+      {left: 'el_prod',   right: 'industry',    gquery: 'electricity_industry_in_mekko_of_final_demand'},
+      {left: 'el_prod',   right: 'agriculture', gquery: 'electricity_agriculture_in_mekko_of_final_demand'},
+      {left: 'el_prod',   right: 'other',       gquery: 'electricity_other_in_mekko_of_final_demand'},
+                                               
+      {left: 'heat_prod', right: 'households',  gquery: 'hot_water_households_in_mekko_of_final_demand', color: 'red'},
+      {left: 'heat_prod', right: 'buildings',   gquery: 'hot_water_buildings_in_mekko_of_final_demand', color: 'red'},
+      {left: 'heat_prod', right: 'transport',   gquery: 'hot_water_transport_in_mekko_of_final_demand', color: 'red'},
+      {left: 'heat_prod', right: 'industry',    gquery: 'hot_water_industry_in_mekko_of_final_demand', color: 'red'},
+      {left: 'heat_prod', right: 'agriculture', gquery: 'hot_water_agriculture_in_mekko_of_final_demand', color: 'red'},
+      {left: 'heat_prod', right: 'other',       gquery: 'hot_water_other_in_mekko_of_final_demand', color: 'red'},
+                                               
+      {left: 'coal',      right: 'el_prod',     gquery: 'coal_in_source_of_electricity_production', color: 'black'},
+      {left: 'nuclear',   right: 'el_prod',     gquery: 'nuclear_in_source_of_electricity_production', color: 'red'},
+      {left: 'gas',       right: 'el_prod',     gquery: 'gas_in_source_of_electricity_production'},
+      {left: 'oil',       right: 'el_prod',     gquery: 'oil_in_source_of_electricity_production', color: 'brown'},
+      {left: 'biomass',   right: 'el_prod',     gquery: 'biomass_in_source_of_electricity_production', color: 'green'},
+      {left: 'wind',      right: 'el_prod',     gquery: 'wind_in_source_of_electricity_production'},
+      {left: 'hydro',     right: 'el_prod',     gquery: 'hydro_in_source_of_electricity_production'},
+      {left: 'solar',     right: 'el_prod',     gquery: 'solar_in_source_of_electricity_production'},
+      {left: 'waste',     right: 'el_prod',     gquery: 'waste_in_source_of_electricity_production'},
+      {left: 'coal',      right: 'heat_prod',   gquery: 'coal_in_source_of_electricity_production', color: 'black'},
+      {left: 'nuclear',   right: 'heat_prod',   gquery: 'nuclear_in_source_of_electricity_production', color: 'red'},
+      {left: 'gas',       right: 'heat_prod',   gquery: 'gas_in_source_of_electricity_production'},
+      {left: 'oil',       right: 'heat_prod',   gquery: 'oil_in_source_of_electricity_production', color: 'brown'},
+      {left: 'biomass',   right: 'heat_prod',   gquery: 'biomass_in_source_of_electricity_production', color: 'green'},
+      {left: 'wind',      right: 'heat_prod',   gquery: 'wind_in_source_of_electricity_production'},
+      {left: 'hydro',     right: 'heat_prod',   gquery: 'hydro_in_source_of_electricity_production'},
+      {left: 'solar',     right: 'heat_prod',   gquery: 'solar_in_source_of_electricity_production'},
+      {left: 'waste',     right: 'heat_prod',   gquery: 'waste_in_source_of_electricity_production'}
 
 
     ]

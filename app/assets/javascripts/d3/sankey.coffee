@@ -203,12 +203,13 @@ D3.sankey =
         append("svg:svg").
         attr("height", @height).
         attr("width", @width)
+      @links = @draw_links()
+      @nodes = @draw_nodes()
 
-      colors = d3.scale.category20()
-
+    draw_links: =>
       # links are treated as a group made of a link path and label text element
       #
-      @links = @svg.selectAll('g.link').
+      links = @svg.selectAll('g.link').
         data(@module.links.models, (d) -> d.cid).
         enter().
         append("svg:g").
@@ -218,7 +219,7 @@ D3.sankey =
         attr("data-cid", (d) -> d.cid) # unique identifier
       # link path
       #
-      @links.append("svg:path").
+      links.append("svg:path").
         style("stroke-width", (link) -> link.value()).
         style("stroke", (link, i) -> link.color()).
         style("fill", "none").
@@ -228,7 +229,7 @@ D3.sankey =
         on("mouseout", @node_mouseout)
       # link labels
       #
-      @links.append("svg:text").
+      links.append("svg:text").
       attr("class", "link_label").
       attr("x", (d) => @x d.left_x()).
       attr("y", (d) => @y d.left_y()).
@@ -237,12 +238,15 @@ D3.sankey =
       style("opacity", 0).
       text((d) => @format_value d.value())
 
+      return links
+
+    draw_nodes: =>
       # Node elements are grouped inside an svg element, so we can use relative
       # coordinates
       #
       # The container just stores the x and y coordinates
       #
-      @nodes = @svg.selectAll("svg.node").
+      nodes = @svg.selectAll("svg.node").
         data(@module.nodes.models, (d) -> d.get('id')).
         enter().
         append("svg").
@@ -253,7 +257,9 @@ D3.sankey =
 
       # The rectangle just cares about its size and color
       #
-      @nodes.append("svg:rect").
+      colors = d3.scale.category20()
+
+      nodes.append("svg:rect").
         attr("stroke", "gray").
         attr("fill", (datum, i) -> colors(i)).
         attr("width", @x @module.Node.width).
@@ -264,11 +270,13 @@ D3.sankey =
       # And here we have the label. We use a +svg:text+ element that will then
       # hold a +tspan+ element for each line
       #
-      @nodes.append("svg:text").
+      nodes.append("svg:text").
         attr("class", "label").
         attr("x", 5).
         attr("y", 10).
         each(@add_label) # call() passes the entire collection
+
+      return nodes
 
     # adding multiline labels is harder than you would expect, let's move this
     # logic to a separate method.

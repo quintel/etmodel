@@ -183,7 +183,7 @@ D3.sankey =
 
     value: =>
       if @gquery
-        @gquery.get('future_value') / 4
+        @gquery.get('future_value')
       else
         10
 
@@ -205,6 +205,31 @@ D3.sankey =
         attr("width", @width)
       @links = @draw_links()
       @nodes = @draw_nodes()
+      @units = @draw_units()
+
+    draw_units: =>
+      units = @svg.selectAll('g.unit').
+        data(@unit_blocks, (d) -> d.id).
+        enter().
+        append("svg:g").
+        attr("class", "unit")
+
+      units.append("svg:rect").
+        style("stroke", "none").
+        style("fill", "grey").
+        attr("x", 310).
+        attr("y", (d,i) -> 350 + 20 * i).
+        attr("height", (d) => @y d.value).
+        attr("width", 40).
+        style("opacity", 0.5)
+
+      units.append("svg:text").
+        attr("x", 330).
+        attr("y", (d,i) -> 350 + 20 * i + 5).
+        attr("text-anchor", "middle").
+        text((d) -> d.value)
+
+      return units
 
     draw_links: =>
       # links are treated as a group made of a link path and label text element
@@ -346,6 +371,25 @@ D3.sankey =
     # this method is called every time we're updating the chart
     #
     refresh: =>
+      max_height = @module.nodes.max_column_value()
+
+      # update the scaling function
+      #
+      @y = d3.scale.linear().
+        domain([0, max_height * 1.2]).
+        range([0, @height * .9])
+
+      # refresh the unit squares
+      #
+      @units.data(@unit_blocks, (d) -> d.id).
+        selectAll("rect").
+        transition().duration(500).
+        attr("height", (d) => @y d.value)
+      @units.data(@unit_blocks, (d) -> d.id).
+        selectAll("text").
+        transition().duration(500).
+        attr("dy", (d) => @y(d.value / 2))
+
       # start by translating the container to the final position
       #
       @nodes.data(@module.nodes.models, (d) -> d.get('id')).
@@ -381,6 +425,12 @@ D3.sankey =
       @module.links = new @module.LinkList(@module.data.links)
       @initialize_defaults()
 
+      @unit_blocks = [
+        {id: 1, value: 1},
+        {id: 10, value: 10},
+        {id: 100, value: 100}
+      ]
+
       # set up the scaling methods
       #
       @x = d3.scale.linear().
@@ -388,7 +438,7 @@ D3.sankey =
         range([0, @width])
 
       @y = d3.scale.linear().
-        domain([0, 700]).
+        domain([0, 5000]).
         range([0, @height])
 
       # This is the function that will take care of drawing the links once we've
@@ -400,6 +450,16 @@ D3.sankey =
 
 class D3.sankey.NodeList extends Backbone.Collection
   model: D3.sankey.Node
+
+  # returns the maximum sum of the column values
+  #
+  max_column_value: =>
+    sums = {}
+    @each (n) ->
+      column = n.get 'column'
+      sums[column] = sums[column] || 0
+      sums[column] += n.value()
+    _.max _.values(sums)
 
 class D3.sankey.LinkList extends Backbone.Collection
   model: D3.sankey.Link

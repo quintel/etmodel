@@ -70,8 +70,8 @@ D3.sankey =
   # Helper classes
   #
   Node: class extends Backbone.Model
-    @width: 145
-    @horizontal_spacing: 420
+    @width: 40
+    @horizontal_spacing: 400
 
     initialize: =>
       # shortcut to access the collection objects
@@ -83,7 +83,7 @@ D3.sankey =
     #
     y_offset: =>
       offset = 0
-      margin = 35
+      margin = 50
       for n in @siblings()
         break if n == this
         offset += n.value() + margin
@@ -109,9 +109,8 @@ D3.sankey =
     siblings: =>
       items = _.groupBy(@module.nodes.models, (node) -> node.get('column'))
       items[@get 'column']
-    
-    label: => @get('label') || @get('id')
 
+    label: => @get('label') || @get('id')
 
   Link: class extends Backbone.Model
     initialize: =>
@@ -231,6 +230,7 @@ D3.sankey =
       @units = @draw_units()
 
     draw_units: =>
+      x_position = 280
       units = @svg.selectAll('g.unit').
         data(@unit_blocks, (d) -> d.id).
         enter().
@@ -240,14 +240,14 @@ D3.sankey =
       units.append("svg:rect").
         style("stroke", "none").
         style("fill", "grey").
-        attr("x", 310).
+        attr("x", x_position).
         attr("y", (d,i) -> 350 + 20 * i).
         attr("height", (d) => @y d.value).
         attr("width", 40).
         style("opacity", 0.5)
 
       units.append("svg:text").
-        attr("x", 330).
+        attr("x", x_position + 20).
         attr("y", (d,i) -> 350 + 20 * i + 5).
         attr("text-anchor", "middle").
         text((d) -> "#{d.value}PJ")
@@ -279,9 +279,9 @@ D3.sankey =
       #
       links.append("svg:text").
       attr("class", "link_label").
-      attr("x", (d) => @x d.left_x()).
-      attr("y", (d) => @y d.left_y()).
-      attr("dx", 5).
+      attr("x", (d) => @x d.right_x()).
+      attr("y", (d) => @y d.right_y()).
+      attr("dx", -55).
       attr("dy", 3).
       style("opacity", 0).
       text((d) => @format_value d.value())
@@ -320,8 +320,8 @@ D3.sankey =
       #
       nodes.append("svg:text").
         attr("class", "label").
-        attr("x", 5).
-        attr("y", 10).
+        attr("x", 25).
+        attr("y", 9).
         each(@add_label) # call() passes the entire collection
 
       return nodes
@@ -338,12 +338,12 @@ D3.sankey =
       # wrapped by D3 though!
       #
       lines = item.label().split("\n")
-      y = 10
+      y = 0 #item.value() / 2
       for line in lines
         d3.select(this). # wrap it, so we can use the +append+ method
         append("tspan").
-        attr("x", 5).
-        attr("y", y).
+        attr("x", 25).
+        attr("dy", y).
         text(line)
         y += 10
 
@@ -395,8 +395,8 @@ D3.sankey =
       # update the scaling function
       #
       @y = d3.scale.linear().
-        domain([0, max_height * 1.2]).
-        range([0, @height * .9])
+        domain([0, max_height * 1.25]).
+        range([0, @height * .90])
 
       # refresh the unit squares
       #
@@ -414,7 +414,7 @@ D3.sankey =
       #
       @nodes.data(@module.nodes.models, (d) -> d.get('id')).
         transition().duration(500).
-        attr("y", (d) => @y d.y_offset())
+        attr("y", (d) => @y(d.y_offset()))
 
       # then resize the rectangles
       #
@@ -422,6 +422,13 @@ D3.sankey =
         selectAll("rect").
         transition().duration(500).
         attr("height", (d) => @y d.value())
+
+      # then move the label
+      #
+      @nodes.data(@module.nodes.models, (d) -> d.get('id')).
+        selectAll("text.label").
+        transition().duration(500).
+        attr("dy", (d) => @y(d.value() / 2))
 
       # then transform the links
       #
@@ -436,7 +443,7 @@ D3.sankey =
       @links.data(@module.links.models, (d) -> d.cid).
         transition().duration(500).
         selectAll("text.link_label").
-        attr("y", (link) => @y link.left_y()).
+        attr("y", (link) => @y link.right_y()).
         text((d) => @format_value d.value())
 
 

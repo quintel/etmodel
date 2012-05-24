@@ -73,6 +73,12 @@ D3.sankey =
     @width: 170
     @horizontal_spacing: 400
 
+    initialize: =>
+      # shortcut to access the collection objects
+      @module = D3.sankey
+      @right_links = []
+      @left_links = []
+
     # vertical position of the node. Adds some margin between nodes
     #
     y_offset: =>
@@ -96,12 +102,6 @@ D3.sankey =
         _.inject(@left_links, ((memo, i) -> memo + i.value()), 0),
         _.inject(@right_links,((memo, i) -> memo + i.value()), 0)
       ])
-
-    initialize: =>
-      # shortcut to access the collection objects
-      @module = D3.sankey
-      @right_links = []
-      @left_links = []
 
     # returns an array of the other nodes that belong to the same column. This
     # is used by the +y_offset+ method to calculate the right node position
@@ -168,17 +168,10 @@ D3.sankey =
     #
     path_points: =>
       [
-          x: @left_x()
-          y: @left_y()
-        ,
-          x: @left_x() + 80
-          y: @left_y()
-        ,
-          x: @right_x() - 80
-          y: @right_y()
-        ,
-          x: @right_x()
-          y: @right_y()
+        {x: @left_x(),       y: @left_y()},
+        {x: @left_x() + 80,  y: @left_y()},
+        {x: @right_x() - 80, y: @right_y()},
+        {x: @right_x(),      y: @right_y()}
       ]
 
     value: =>
@@ -195,6 +188,36 @@ D3.sankey =
   #
   View: class extends D3ChartView
     el: "body"
+
+    initialize: ->
+      @module = D3.sankey # shortcut
+      @module.nodes = new @module.NodeList(@module.data.nodes)
+      @module.links = new @module.LinkList(@module.data.links)
+      @initialize_defaults()
+
+      @unit_blocks = [
+        {id: 1, value: 1},
+        {id: 10, value: 10},
+        {id: 100, value: 100}
+      ]
+
+      # set up the scaling methods
+      #
+      @x = d3.scale.linear().
+        domain([0, 1000]).
+        range([0, @width])
+
+      # this one will be changed dynamically later on
+      @y = d3.scale.linear().
+        domain([0, 5000]).
+        range([0, @height])
+
+      # This is the function that will take care of drawing the links once we've
+      # set the base points
+      @link_line = d3.svg.line().
+        interpolate("basis").
+        x((d) -> @x(d.x)).
+        y((d) -> @y(d.y))
 
     # this method is called when we first render the chart
     #
@@ -326,21 +349,17 @@ D3.sankey =
 
     # formats the value shown in the link labels
     #
-    format_value: (x) ->
-      "#{x.toFixed(2)} PJ"
+    format_value: (x) -> "#{x.toFixed(2)} PJ"
 
     # callbacks
     #
     node_mouseover: ->
       klass = $(this).parent().attr('data-id')
       d3.selectAll(".link").
-        each((d) ->
-          return if d.connects(klass)
-          d3.select(this).
-            transition().
-            duration(200).
-            style("opacity", 0.2)
-        )
+        filter((d) -> !d.connects(klass)).
+        transition().
+        duration(200).
+        style("opacity", 0.2)
 
     # this is use ased link_mouseout, too
     node_mouseout: ->
@@ -385,6 +404,7 @@ D3.sankey =
         selectAll("rect").
         transition().duration(500).
         attr("height", (d) => @y d.value)
+      # update label height
       @units.data(@unit_blocks, (d) -> d.id).
         selectAll("text").
         transition().duration(500).
@@ -419,39 +439,11 @@ D3.sankey =
         attr("y", (link) => @y link.left_y()).
         text((d) => @format_value d.value())
 
-    initialize: ->
-      @module = D3.sankey # shortcut
-      @module.nodes = new @module.NodeList(@module.data.nodes)
-      @module.links = new @module.LinkList(@module.data.links)
-      @initialize_defaults()
-
-      @unit_blocks = [
-        {id: 1, value: 1},
-        {id: 10, value: 10},
-        {id: 100, value: 100}
-      ]
-
-      # set up the scaling methods
-      #
-      @x = d3.scale.linear().
-        domain([0, 1000]).
-        range([0, @width])
-
-      @y = d3.scale.linear().
-        domain([0, 5000]).
-        range([0, @height])
-
-      # This is the function that will take care of drawing the links once we've
-      # set the base points
-      @link_line = d3.svg.line().
-        interpolate("basis").
-        x((d) -> @x(d.x)).
-        y((d) -> @y(d.y))
 
 class D3.sankey.NodeList extends Backbone.Collection
   model: D3.sankey.Node
 
-  # returns the maximum sum of the column values
+  # returns the height of the tallest column
   #
   max_column_value: =>
     sums = {}

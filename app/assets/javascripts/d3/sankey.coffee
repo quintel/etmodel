@@ -70,8 +70,8 @@ D3.sankey =
   # Helper classes
   #
   Node: class extends Backbone.Model
-    @width: 170
-    @horizontal_spacing: 400
+    @width: 145
+    @horizontal_spacing: 420
 
     initialize: =>
       # shortcut to access the collection objects
@@ -250,7 +250,7 @@ D3.sankey =
         attr("x", 330).
         attr("y", (d,i) -> 350 + 20 * i + 5).
         attr("text-anchor", "middle").
-        text((d) -> d.value)
+        text((d) -> "#{d.value}PJ")
 
       return units
 

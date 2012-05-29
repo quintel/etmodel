@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
   include ApplicationHelper
   before_filter :ensure_valid_browser, :except => [:browser_support, :disable_browser_check]
-  before_filter :defaults
   skip_before_filter :show_intro_screens_only_once, :only => [:intro]
 
   def root
@@ -49,7 +48,6 @@ public
   end
 
   def intro
-    @render_tabs = true
   end
 
   def press_releases
@@ -133,12 +131,5 @@ public
     @category = params[:category]
     @vimeo_id_for_category = SidebarItem.find_by_key(@category).send("#{I18n.locale}_vimeo_id")
     render :layout => false
-  end
-
-private
-
-  # ?? - PZ
-  def defaults
-    @render_tabs = false
   end
 end

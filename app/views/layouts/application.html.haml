@@ -15,13 +15,11 @@
     = yield :head
   %body#outside-model
     #wrapper
+      %header#main= render "layouts/etm/header"
       #content
         - flash_message
         = yield
-      #header
-        = render "layouts/etm/header"
-      #footer
-        = render "layouts/etm/footer"
+      %footer= render "layouts/etm/footer"
     = render "layouts/etm/ga" unless APP_CONFIG[:standalone]
     %script
       if (_.include(['iPad', 'iPhone', 'iPod'], navigator.platform)) { $("#footer").css("position", "static"); };

@@ -1,6 +1,6 @@
 class OutputElementsController < ApplicationController
   layout false
-  before_filter :find_output_element, :only => [:show, :select_chart, :default_chart]
+  before_filter :find_output_element, :only => [:show, :select_chart]
   before_filter :default_format_js, :only => [:default_chart, :select_chart]
 
   def show
@@ -13,12 +13,6 @@ class OutputElementsController < ApplicationController
   end
 
   def select_chart
-    Current.setting.selected_output_element = @output_element.id
-    render 'load'
-  end
-
-  def default_chart
-    Current.setting.selected_output_element = nil
     render 'load'
   end
 

@@ -41,28 +41,18 @@ class @Accordion
       Tracker.track({slide: slide_title})
       if (ui.newHeader.length > 0)
         output_element_id = parseInt(ui.newHeader.attr('id').match(/\d+$/))
-
-        return if output_element_id == 32
-
         window.charts.current_default_chart = output_element_id
-        # if the user has selected a chart then we keep showing it
-        if !!window.charts.user_selected_chart
-          # if the user selected chart is the default chart for the slide then
-          # let's go back to the standard behaviour, ie show the default chart
-          # whenever we click on a new slide
-          if window.charts.user_selected_chart == output_element_id
-            window.charts.user_selected_chart = null
-            $("a.default_charts").hide()
-          return
-        else
-          # otherwise the chart has to be shown
-          window.charts.load(output_element_id)
-          $("a.default_charts").hide()
+        $("a.default_charts").hide() if charts.current_id() == output_element_id
+        window.charts.load(output_element_id)
 
     $(".slide").each (i, slide) ->
       $("a.btn-done", slide).filter(".next, .previous").click () ->
         accordion.accordion("activate",i + ($(this).is(".next") ? 1 : -1))
         return false
+
+  reset: =>
+    $(".accordion").accordion("destroy")
+    @setup()
 
 
 $(document).ready ->

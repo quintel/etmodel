@@ -9,7 +9,3 @@
       = render :partial => 'tab/slide', :collection => @slides
   - else
     = t("not_available")
-
--  if Current.current_slide
-  %script
-    active_slide = '#{Current.current_slide}'

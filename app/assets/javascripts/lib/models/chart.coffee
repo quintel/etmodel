@@ -142,6 +142,7 @@ class @ChartList extends Backbone.Collection
       @current().view.build_gqueries()
 
   load : (chart_id) ->
+    return false if @pinned_chart
     App.etm_debug('Loading chart: #' + chart_id)
     App.etm_debug "#{window.location.origin}/admin/output_elements/#{chart_id}"
     url = "/output_elements/#{chart_id}.js"
@@ -178,13 +179,15 @@ class @ChartList extends Backbone.Collection
 
   setup_callbacks: ->
     $("a.default_charts").live 'click', =>
-      @user_selected_chart = null
+      @pinned_chart = false
+      $("a.pin_chart").removeClass("active")
       @load(@current_default_chart)
       false
 
     $("a.pick_charts").live 'click', (e) =>
+      @pinned_chart = false
+      $("a.pin_chart").removeClass("active")
       chart_id = $(e.target).parents('a').data('chart_id')
-      @user_selected_chart = chart_id
       url = "/output_elements/select_chart/#{chart_id}"
       $.ajax
         url: url
@@ -202,5 +205,10 @@ class @ChartList extends Backbone.Collection
       $("a.table_format").show()
       @current().view.toggle_format()
       false
+
+    $(document).on 'click', "a.pin_chart", (e) =>
+      e.preventDefault()
+      $(e.target).parents("a").toggleClass("active")
+      @pinned_chart = !@pinned_chart
 
 window.charts = new ChartList()

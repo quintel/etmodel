@@ -70,8 +70,8 @@ D3.sankey =
   # Helper classes
   #
   Node: class extends Backbone.Model
-    @width: 40
-    @horizontal_spacing: 400
+    @width: 15
+    @horizontal_spacing: 184
 
     initialize: =>
       # shortcut to access the collection objects
@@ -201,10 +201,7 @@ D3.sankey =
 
       # set up the scaling methods
       #
-      @x = d3.scale.linear().
-        domain([0, 1000]).
-        range([0, @width])
-
+      
       # this one will be changed dynamically later on
       @y = d3.scale.linear().
         domain([0, 5000]).
@@ -214,7 +211,7 @@ D3.sankey =
       # set the base points
       @link_line = d3.svg.line().
         interpolate("basis").
-        x((d) -> @x(d.x)).
+        x((d) -> d.x).
         y((d) -> @y(d.y))
 
     # this method is called when we first render the chart
@@ -278,7 +275,7 @@ D3.sankey =
       #
       links.append("svg:text").
       attr("class", "link_label").
-      attr("x", (d) => @x d.right_x()).
+      attr("x", (d) => d.right_x()).
       attr("y", (d) => @y d.right_y()).
       attr("dx", -55).
       attr("dy", 3).
@@ -299,7 +296,7 @@ D3.sankey =
         append("svg").
         attr("class", (d) -> "node").
         attr("data-id", (d) -> d.get('id')).
-        attr("x", (d) => @x(@module.Node.horizontal_spacing * d.get('column') + 20)).
+        attr("x", (d) => @module.Node.horizontal_spacing * d.get('column') + 20).
         attr("y", (d) => @y(d.y_offset()))
 
       # The rectangle just cares about its size and color
@@ -307,9 +304,9 @@ D3.sankey =
       colors = d3.scale.category20()
 
       nodes.append("svg:rect").
-        attr("stroke", "gray").
         attr("fill", (datum, i) -> colors(i)).
-        attr("width", @x @module.Node.width).
+        attr("stroke", (d, i) -> d3.rgb(colors(i)).darker(2)).
+        attr("width", @module.Node.width).
         attr("height", (d) => @y d.value()).
         on("mouseover", @node_mouseover).
         on("mouseout", @node_mouseout)

@@ -130,17 +130,6 @@ class @ChartList extends Backbone.Collection
   # using the chart_id as key.
   html: {}
 
-  change : (chart) ->
-    unless chart.view.supported_in_current_browser()
-      alert "sorry, chart not supported by your browser"
-      return false
-    old_chart = @first()
-    @remove(old_chart) if old_chart != undefined
-    @add(chart)
-    # HTML Table charts create gquery objects parsing the HTML
-    if @current().get('type') == 'html_table'
-      @current().view.build_gqueries()
-
   load : (chart_id) ->
     return false if @pinned_chart
     App.etm_debug('Loading chart: #' + chart_id)

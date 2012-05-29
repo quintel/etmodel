@@ -10,4 +10,10 @@ var output_element = new Chart(<%= @output_element.options_for_js.to_json.html_s
   <% end %>
 <% end %>
 
-window.charts.change(output_element);
+var old_chart = charts.current();
+charts.remove(old_chart);
+charts.add(output_element);
+
+if (output_element.get('type') === 'html_table') {
+  output_element.view.build_gqueries()
+}

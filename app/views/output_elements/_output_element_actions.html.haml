@@ -2,30 +2,27 @@
   %a.chart_info.fancybox{:href => "/descriptions/charts/#{@output_element.id}",
     :alt   => "info",
     :title => "info"}
-    .text
-      ?
+    .text ?
   %a.select_chart{:href => "/output_elements/select",
     :alt   => t("output_elements.common.change_chart"),
     :title => t("output_elements.common.change_chart")}
-    .text
-      = t "output_elements.common.change_chart"
+    .text= t "output_elements.common.change_chart"
   %a.default_charts{:href => "#",
     :alt   => t("output_elements.common.back_to_default"),
     :title => t("output_elements.common.back_to_default")}
-    .text
-      = t "output_elements.common.back_to_default"
+    .text= t "output_elements.common.back_to_default"
   %a.table_format{:href => '#',
     :alt   => t("output_elements.common.table"),
     :title => t("output_elements.common.table")}
-    .text
-      = t "output_elements.common.table"
+    .text= t "output_elements.common.table"
   %a.chart_format{:href => '#',
     :alt   => t("output_elements.common.chart"),
     :title => t("output_elements.common.chart")}
-    .text
-      = t "output_elements.common.chart"
+    .text= t "output_elements.common.chart"
+  %a.pin_chart{:href => '#',
+    :alt   => t("output_elements.common.pin"),
+    :title => t("output_elements.common.pin")}
+    .text= t "output_elements.common.pin"
 
 :javascript
-  // DEBT: I'd gladly move this somewhere else
-  charts.user_selected_chart = null;
   charts.current_default_chart = #{@output_element.id};

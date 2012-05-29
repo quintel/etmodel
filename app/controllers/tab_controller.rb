@@ -16,9 +16,6 @@ class TabController < ApplicationController
     @active_sidebar = Current.view.sidebar
     @slides = Current.view.slides
 
-    Current.setting.selected_output_element = nil
-    Current.setting.displayed_output_element = @output_element.id if @output_element
-
     respond_to do |format|
       format.html { render :template => 'tab/show'}
       format.js

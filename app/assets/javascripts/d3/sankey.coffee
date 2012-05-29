@@ -175,9 +175,8 @@ D3.sankey =
 
     value: =>
       if @gquery
-        @gquery.get('future_value')
-      else
-        10
+        x = @gquery.get('future_value')
+      if _.isNumber(x) then x else 0
 
     color: => @get('color') || "steelblue"
 

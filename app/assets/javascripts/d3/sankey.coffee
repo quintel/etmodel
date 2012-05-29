@@ -399,15 +399,16 @@ D3.sankey =
 
       # refresh the unit squares
       #
-      @units.data(@unit_blocks, (d) -> d.id).
-        selectAll("rect").
-        transition().duration(500).
-        attr("height", (d) => @y d.value)
-      # update label height
-      @units.data(@unit_blocks, (d) -> d.id).
-        selectAll("text").
-        transition().duration(500).
-        attr("dy", (d) => @y(d.value / 2))
+      if @units
+        @units.data(@unit_blocks, (d) -> d.id).
+          selectAll("rect").
+          transition().duration(500).
+          attr("height", (d) => @y d.value)
+        # update label height
+        @units.data(@unit_blocks, (d) -> d.id).
+          selectAll("text").
+          transition().duration(500).
+          attr("dy", (d) => @y(d.value / 2))
 
       # start by translating the container to the final position
       #

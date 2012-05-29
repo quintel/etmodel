@@ -16,7 +16,7 @@
     = yield :head
   %body#model
     #wrapper
-      #header
+      %header#main
         = render "layouts/etm/header", :info_box => true
         = render "layouts/etm/tabs"
         = render "layouts/etm/wattnu" if wattnu?
@@ -24,7 +24,7 @@
         - flash_message
         = yield
         .clear
-      #footer
+      %footer
         = render "layouts/etm/constraints"
         = render "input_elements/input_element"
         = render "input_elements/value_selector"

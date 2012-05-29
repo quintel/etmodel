@@ -7,7 +7,6 @@
       = f.label :email, t("user.email")
       %br
       = f.text_field :email
-
     %p
       = f.label :password, t("user.password")
       %br
@@ -16,8 +15,6 @@
       = f.label :remember_me, t("user.remember")
       %br
       = f.check_box :remember_me, :checked => "checked"
-
-
     = f.submit 'Login'
   %a{:href => new_user_path}= "#{t("or")} #{t("header.create_account")}"
 
@@ -35,8 +32,8 @@
   %li
     = t("header.current_language")+":"
     = form_tag "/application/set_locale" do
-      = select_tag("locale", options_for_select(["en", "nl"], I18n.locale.to_s), |
-        { :index => nil, :onchange => 'this.form.submit()'})                     |
+      = select_tag "locale", options_for_select(["en", "nl"], I18n.locale.to_s), |
+        :index => nil, :onchange => 'this.form.submit()'                         |
 
   %li
     %a{:href => new_scenario_path}= t("header.save_scenario")
@@ -58,8 +55,7 @@
 #information_menu.header_menu.topnav
   %li
     %a{:href => "/about"}= t("header.about_qi")
-  %li
-    %a{:href => partners_path}= t("header.partners")
+  %li= link_to t("header.partners"), partners_path
   %li
     %a{:href => "/education"}= t("header.education")
   %li
@@ -75,4 +71,8 @@
   %li
     %a{:href => "/disclaimer"}= t("header.disclaimer")
   %li= link_to t('header.bugs'), bugs_path
+  - unless APP_CONFIG[:standalone]
+    %li= link_to "Wiki", "http://wiki.quintel.com", :target => "_blank"
+    %li= link_to t('header.publications'), "http://refman.et-model.com", :target => "_blank"
+    %li= link_to t('header.feedback'), "/feedback", :class => "fancybox"
 

@@ -8,12 +8,7 @@
     = yield :head
   %body#model{:class => "#{controller_name}_#{controller.action_name}"}
     #wrapper
-      #content
-        - flash_message
-        = yield
-        .clear
-
-      #header
+      %header#main
         = render "layouts/etm/header"
         - if live_server?
           .live_server_notice This is the production server!
@@ -35,5 +30,9 @@
               = tab.partners               'Partners', admin_partners_path
               = tab.gql_search             'GQL Search', search_admin_gql_index_path
               = tab.users                  'Users', admin_users_path
-    #footer
+      #content
+        - flash_message
+        = yield
+        .clear
+    %footer
       = yield :footer

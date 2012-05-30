@@ -1,20 +1,13 @@
 location.hash = '';
 
 // update main content area
-$("#sidebar").replaceWith('<%= escape_javascript render("layouts/etm/sidebar")%>');
 $("#title").replaceWith('<%= escape_javascript render("layouts/etm/title")%>');
 $("ul.accordion").html('<%= escape_javascript render(:partial => "tab/slide", :collection => @slides)%>');
-
-// update tabs
-$("#nav li").removeClass('active');
-$("#nav #<%= controller.controller_name %>").addClass('active');
-
 
 // setup slides
 var acc = new Accordion();
 acc.reset();
-// setup sidebar as needed
-sidebar.bootstrap()
+
 // setup slider values, defaults etc
 window.input_elements.setup_input_elements();
 

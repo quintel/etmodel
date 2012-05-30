@@ -4,6 +4,10 @@
   = link_to 'Create new output_element', new_admin_output_element_path
   |
   = link_to "Show all", all_admin_output_elements_path
+  |
+  = select_tag 'type',
+    options_from_collection_for_select(@types, :id, :name, params[:type]),
+    :include_blank => true, :id => 'select_by_type'
 %table.default
   %thead
     %tr
@@ -28,3 +32,13 @@
         %td= 'Hidden' if output_element.hidden?
         %td= link_to "Show", admin_output_element_path(output_element)
         %td= link_to "Edit", edit_admin_output_element_path(output_element)
+
+- content_for :head do
+  :javascript
+    $(function(){
+      $("#select_by_type").change(function(){
+        var t = $(this).val();
+        location.href = '/admin/output_elements?type=' + t;
+      });
+
+    });

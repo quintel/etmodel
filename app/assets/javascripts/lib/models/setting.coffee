@@ -4,6 +4,7 @@ class @Setting extends Backbone.Model
     @bind('change:track_peak_load', @save)
     @bind('change:use_fce', @save)
     @bind('change:current_round', @save)
+    @bind('change:pinned_chart', @save)
 
   url: -> '/settings'
 

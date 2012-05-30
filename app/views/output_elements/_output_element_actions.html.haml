@@ -21,7 +21,8 @@
     .text= t "output_elements.common.chart"
   %a.pin_chart{:href => '#',
     :alt   => t("output_elements.common.pin"),
-    :title => t("output_elements.common.pin")}
+    :title => t("output_elements.common.pin"),
+    :class => @output_element.id == Current.setting.pinned_chart && 'active'}
     .text= t "output_elements.common.pin"
 
 :javascript

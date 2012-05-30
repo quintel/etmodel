@@ -1,21 +1,19 @@
 class OutputElementsController < ApplicationController
   layout false
-  before_filter :find_output_element, :only => [:show, :select_chart]
-  before_filter :default_format_js, :only => [:default_chart, :select_chart]
+  before_filter :default_format_js
 
   def show
+    @output_element = OutputElement.find(params[:id])
     respond_to do |format|
       format.js { render }
     end
   end
 
-  def select
+  def index
   end
 
-  def select_chart
-    render 'load'
-  end
-
+  # legacy actions used by the block charts
+  #
   def invisible
     session[params[:id]] = 'invisible'
     render :js => ""
@@ -27,10 +25,6 @@ class OutputElementsController < ApplicationController
   end
 
   private
-
-  def find_output_element
-    @output_element = OutputElement.find(params[:id])
-  end
 
   # otherwise rails won't render the js.erb views
   def default_format_js

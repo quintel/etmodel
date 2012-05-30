@@ -177,11 +177,8 @@ class @ChartList extends Backbone.Collection
       @pinned_chart = false
       $("a.pin_chart").removeClass("active")
       chart_id = $(e.target).parents('a').data('chart_id')
-      url = "/output_elements/select_chart/#{chart_id}"
-      $.ajax
-        url: url
-        method: 'get'
-        beforeSend: -> close_fancybox()
+      @load chart_id
+      close_fancybox()
 
     $("a.table_format").live 'click', =>
       $("a.table_format").hide()

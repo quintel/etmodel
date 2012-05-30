@@ -98,9 +98,10 @@ Etm::Application.routes.draw do
     end
   end
 
-  resources :output_elements do
+  resources :output_elements, :only => [:index, :show] do
     collection do
-      get :select
+      get :visible
+      get :invisible
     end
   end
 
@@ -137,9 +138,12 @@ Etm::Application.routes.draw do
 
   match '/pages/flush_cache' => 'pages#flush_cache'
 
+  match '/charts/topology' => 'charts#topology'
+  match '/charts/sankey' => 'charts#sankey'
+
   match "/404", :to => "pages#404"
   match "/500", :to => "pages#500"
-  
+
   # we should remove the catch-all route
   match '/:controller(/:action(/:id))'
 end

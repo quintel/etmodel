@@ -70,7 +70,7 @@
         this.previousValue  = null;
         this.drawTo         = drawToOpts(opts.drawTo, opts.min, opts.max);
 
-        this.model          = new Model(this);
+        this.model          = new Model(this, this.options.strict);
         this.renderer       = new this.options.renderer(this);
 
         this.wrapperWidth   = 0;
@@ -95,7 +95,7 @@
     }
 
     // The current Quinn version.
-    Quinn.VERSION = '1.0.0.rc2';
+    Quinn.VERSION = '1.0.1';
 
     // ### Event Handling
 
@@ -245,6 +245,11 @@
                 (! silent && ! this.trigger('drag', newValue))) {
 
             this.model.setValue(preDragValue);
+
+            // If the drag callback failed, we need to send another drag
+            // event so that the developer has the chance to respond.
+            (newValue !== false && this.trigger('drag', preDragValue));
+
             return false;
         }
 
@@ -522,7 +527,7 @@
      * Holds the current Quinn value, ensures that the value set is valid
      * (within the `range` bounds, one of the `only` values, etc).
      */
-    function Model (quinn) {
+    function Model (quinn, initiallyStrict) {
         var opts, initialValue, length, i;
 
         this.options = opts = quinn.options;
@@ -571,7 +576,7 @@
             this.values[i] = null;
         }
 
-        this.setValue(initialValue);
+        this.setValue(initialValue, initiallyStrict);
     }
 
     /**
@@ -588,7 +593,7 @@
      * within the minimum / maximum range). The method will return false if
      * the value you set resulted in no changes.
      */
-    Model.prototype.setValue = function (newValue) {
+    Model.prototype.setValue = function (newValue, strict) {
         var originalValue = this.values, length, i;
 
         if (! _.isArray(newValue)) {
@@ -599,7 +604,7 @@
         }
 
         for (i = 0, length = newValue.length; i < length; i++) {
-            newValue[i] = this.sanitizeValue(newValue[i]);
+            newValue[i] = this.sanitizeValue(newValue[i], strict);
         }
 
         if (_.isEqual(newValue, originalValue)) {
@@ -651,8 +656,10 @@
      * Given a numberic value, snaps it to the nearest step, and ensures that
      * it is within the selectable minima and maxima.
      */
-    Model.prototype.sanitizeValue = function (value) {
-        value = this.roundToStep(value);
+    Model.prototype.sanitizeValue = function (value, strict) {
+        if (strict !== false) {
+            value = this.roundToStep(value);
+        }
 
         if (value > this.maximum) {
             return this.maximum;
@@ -944,6 +951,19 @@
         // The initial value of the slider. null = use the lowest permitted
         // value.
         value: null,
+
+        // Snaps the initial value to fit with the given "step" value. For
+        // example, given a step of 0.1 and an initial value of 1.05, the
+        // value will be changes to fit the step, and rounded to 1.1.
+        //
+        // Notes:
+        //
+        //  * Even with `strict` disabled, initial values which are outside
+        //    the given `min` and `max` will still be changed to fit within
+        //    the permitted range.
+        //
+        //  * The `strict` setting affects the *initial value only*.
+        strict: true,
 
         // Restrics the values which may be chosen to those listed in the
         // `only` array.

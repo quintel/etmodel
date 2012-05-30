@@ -50,22 +50,41 @@ class OutputElement < ActiveRecord::Base
     type == 'block'
   end
 
+  # some charts need custom html. Others (jqplot and d3) just need a container
+  # div
+  def custom_html?
+    block_chart? || html_table?
+  end
+
+  def d3_chart?
+    type == 'd3'
+  end
+
   def jqplot_based?
-    !block_chart? && !html_table?
+    !block_chart? && !html_table? && !d3_chart?
+  end
+
+  # some charts don't have their series defined in the database. This method
+  # makes view code simpler
+  #
+  def has_series_in_db?
+    !(html_table? || d3_chart?)
   end
 
   def options_for_js
     {
-      'id'               => self.id,
-      'type'             => output_element_type.name,
-      'percentage'       => percentage == true ,
-      'unit'             => unit,
-      'group'            => group,
-      'name'             => I18n.t("output_elements.#{key}").html_safe,
-      'show_point_label' => show_point_label,
-      'max_axis_value'   => max_axis_value,
-      'min_axis_value'   => min_axis_value,
-      'growth_chart'     => growth_chart
+      :id                 => id,
+      :type               => output_element_type.name,
+      :percentage         => percentage == true,
+      :unit               => unit,
+      :group              => group,
+      :name               => I18n.t("output_elements.#{key}").html_safe,
+      :show_point_label   => show_point_label,
+      :max_axis_value     => max_axis_value,
+      :min_axis_value     => min_axis_value,
+      :growth_chart       => growth_chart,
+      :key                => key,
+      :under_construction => under_construction
     }
   end
 

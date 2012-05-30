@@ -39,7 +39,4 @@ var Util = {
   }
 }
 
-
 Util.makeSureConsoleExists();
-
-

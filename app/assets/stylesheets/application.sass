@@ -18,9 +18,7 @@ img
   border-style: none
 a
   color: #63A0C9
-  &:hover
-    //text-decoration: none
-
+  
 input.button
   cursor: pointer
 
@@ -52,20 +50,13 @@ body#outside-model #wrapper
   height: 100%
   overflow: visible
 
-//separate model from pages
-body#model #content
-  padding: 120px 0px 160px 35px
-  z-index: 1
-
-body#outside-model #content
-  padding: 130px 0px 150px 35px
-  z-index: 0
-
 #content
+  padding: 0px 0px 150px 35px
   position: relative
   min-width: 965px
   max-width: 1230px
   margin: 0 auto
+  overflow: auto
 
   #flash
     position: absolute
@@ -138,48 +129,6 @@ table.default
   .nl
     display: none
 
-.side_tabs
-  position: fixed
-  left: 0
-  top: 15%
-  border-width: 0
-  height: 118px !important
-  width: 27px !important
-  cursor: pointer
-  z-index: 2000
-
-
-#feedback-tab.nl
-  background: url("/assets/layout/feedback_button_nl.png") no-repeat scroll 0 0 #FFFFFF
-  height: 97px !important
-#feedback-tab.en
-  background: url("/assets/layout/feedback_button.gif") no-repeat scroll 0 0 #FFFFFF
-
-#epn_module.nl
-  margin-top: 107px
-  background: url("/assets/layout/education_button_nl.gif") no-repeat scroll 0 0 #FFFFFF
-#epn_module.en
-  margin-top: 127px
-  background: url("/assets/layout/education_button.gif") no-repeat scroll 0 0 #FFFFFF
-
-#refman-tab.en
-  background: url("/assets/layout/publications_button.png") no-repeat scroll 0 0 #FFFFFF
-  height: 129px !important
-  margin-top: 249px
-#refman-tab.nl
-  background: url("/assets/layout/publications_button_nl.png") no-repeat scroll 0 0 #FFFFFF
-  height: 114px !important
-  margin-top: 229px
-
-#wiki-tab
-  background: url("/assets/layout/wiki_button_nl.png") no-repeat scroll 0 0 #FFFFFF
-  height: 81px !important
-#wiki-tab.en
-  margin-top: 388px
-#wiki-tab.nl
-  margin-top: 352px
-
-
 .locator
   position: absolute
 
@@ -240,5 +189,6 @@ table.default
 @import intro
 @import prediction
 @import quinn
-@import jquery.fancybox-1.3.1
+@import jquery.fancybox
 @import jquery.jqplot
+@import topology

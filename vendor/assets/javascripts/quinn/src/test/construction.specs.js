@@ -166,7 +166,40 @@ QUnit.specify('', function () {
                 // 100 isn't divisible by the step.
                 assert(slider.model.maximum).equals(90);
             });
-        }); // With selectable: [20, 40]
+        }); // With step: 15
+
+        describe('With step: 10, strict: false', function () {
+          function steppedSlider (value) {
+            return new $.Quinn(wrapper, {
+              value: value, step: 10, strict: false
+            });
+          }
+
+          it('should permit a starting value of 0', function () {
+              var slider = steppedSlider(0);
+              assert(slider.model.value).equals(0);
+          });
+
+          it('should permit a starting value of 5.5', function () {
+              var slider = steppedSlider(5.5);
+              assert(slider.model.value).equals(5.5);
+          });
+
+          it('should permit a starting value of 10', function () {
+              var slider = steppedSlider(10);
+              assert(slider.model.value).equals(10);
+          });
+
+          it('should not permit a starting value of -1', function () {
+              var slider = steppedSlider(-1);
+              assert(slider.model.value).equals(0);
+          });
+
+          it('should not permit a starting value of 101', function () {
+              var slider = steppedSlider(101);
+              assert(slider.model.value).equals(100);
+          });
+        }); // With step: 10, strict: false
 
         describe('With value: 50', function () {
             before(function () {

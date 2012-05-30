@@ -13,7 +13,7 @@ class @SidebarView extends Backbone.View
       result = gquery.get('future_value')
       percentage = "#{Math.round(result * 100)}%"
       padded_percentage = "#{Math.round(result * 90)}%"
-      $(item).find(".bar").animate({width: padded_percentage})
+      $(item).find(".bar").animate({width: padded_percentage}, 1000)
       $(item).find(".value").html(percentage).animate({left: padded_percentage})
 
 window.sidebar = new SidebarView()

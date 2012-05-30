@@ -11,7 +11,8 @@ class SettingsController < ApplicationController
       :network_parts_affected,
       :track_peak_load,
       :use_fce,
-      :current_round].each do |setting|
+      :current_round,
+      :pinned_chart].each do |setting|
       Current.setting.send("#{setting}=", params[setting]) unless params[setting].nil?
     end
 
@@ -89,7 +90,7 @@ class SettingsController < ApplicationController
   # constraints so that the Backbone View may re-render the dashboard.
   #
   def constraint_html_as_json(constraints)
-    render_to_string 'layouts/etm/_constraint_items.html.haml',
+    render_to_string 'layouts/etm/_constraint_items',
       layout: false, locals: { constraints: constraints }
   end
 

@@ -7,17 +7,17 @@
 * html#content .col2 .accordion .headline a
   :zoom 1
   
-#footer ul
+footer ul
   :margin-left expression(this.parentNode.offsetWidth > this.offsetWidth ? ((this.parentNode.offsetWidth-this.offsetWidth)/2 + "px") : "0")
 
-#footer ul li
+footer ul li
   :background-image expression((this===this.parentNode.childNodes[0]) ? "none" : "auto")
 
 .logo2
   background-position: -9999px -9999px
   // :filter progid:dximagetransform.microsoft.alphaimageloader(src='assets/bg-logo2.png', sizingmethod='crop');
 
-#header .frame
+header#main .frame
   // :width expression(document.documentElement.clientWidth < 960 ? "960px" : "auto"&&document.documentElement.clientWidth > 1259 ? "1259px" : "auto");
 
 #nav .nav-holder-inner

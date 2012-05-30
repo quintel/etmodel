@@ -209,11 +209,7 @@ class @ChartList extends Backbone.Collection
       resize_callback = setTimeout(@chart_resize, 100)
 
   chart_resize: =>
-    chart = @current()
-    if chart.get('type') == 'd3'
-      chart.view.resize()
-    else
-      # jqplot needs a full render
-      chart.view.render()
+    # the true parameter is used by D3 charts only, jqPlot ignores it
+    chart = @current().view.render(true)
 
 window.charts = new ChartList()

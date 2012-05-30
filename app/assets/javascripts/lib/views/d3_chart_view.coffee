@@ -2,15 +2,11 @@
 @D3 = {}
 
 # This is mostly an abstract class
-# 
+#
 # The derived classes should implement the draw() method for the initial
 # rendering and the refresh() for the later updates.
 # They should also call @initialize_defaults() in their initialize method
 class @D3ChartView extends BaseChartView
-  width: 490
-
-  height: 502
-
   render: =>
     unless @already_on_screen()
       @clear_container()

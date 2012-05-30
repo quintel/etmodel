@@ -223,11 +223,11 @@ D3.sankey =
     # this method is called when we first render the chart
     #
     draw: =>
-
       @svg = d3.select("#d3_container").
         append("svg:svg").
-        attr("height", @height).
-        attr("width", @width)
+        attr("viewBox", "0 0 #{@width} #{@height}").
+        attr("height", "100%").
+        attr("width", "100%")
       @links = @draw_links()
       @nodes = @draw_nodes()
       @units = @draw_units()
@@ -450,6 +450,10 @@ D3.sankey =
         attr("y", (link) => @y link.right_y()).
         text((d) => @format_value d.value())
 
+    resize: =>
+      width = @container_node().width()
+      @svg.attr("width", width).
+        attr("preserveAspectRatio", "none")
 
 class D3.sankey.NodeList extends Backbone.Collection
   model: D3.sankey.Node

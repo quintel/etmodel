@@ -98,9 +98,10 @@ Etm::Application.routes.draw do
     end
   end
 
-  resources :output_elements do
+  resources :output_elements, :only => [:index, :show] do
     collection do
-      get :select
+      get :visible
+      get :invisible
     end
   end
 

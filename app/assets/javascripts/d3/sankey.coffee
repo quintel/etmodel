@@ -188,9 +188,6 @@ D3.sankey =
     el: "body"
 
     initialize: ->
-      @width = @container_node().width() || 490
-      @height = @container_node().height() || 502
-
       @module = D3.sankey # shortcut
       @module.nodes = new @module.NodeList(@module.data.nodes)
       @module.links = new @module.LinkList(@module.data.links)
@@ -201,6 +198,13 @@ D3.sankey =
         {id: 10, value: 10},
         {id: 100, value: 100}
       ]
+
+    # this method is called when we first render the chart. It is called if we
+    # want a full chart refresh when the user resizes the browser window, too
+    #
+    draw: =>
+      @width = @container_node().width() || 490
+      @height = @container_node().height() || 502
 
       # set up the scaling methods
       #
@@ -220,14 +224,10 @@ D3.sankey =
         x((d) -> @x(d.x)).
         y((d) -> @y(d.y))
 
-    # this method is called when we first render the chart
-    #
-    draw: =>
       @svg = d3.select("#d3_container").
         append("svg:svg").
-        attr("viewBox", "0 0 #{@width} #{@height}").
-        attr("height", "100%").
-        attr("width", "100%")
+        attr("height", @height).
+        attr("width", @width)
       @links = @draw_links()
       @nodes = @draw_nodes()
       @units = @draw_units()
@@ -449,11 +449,6 @@ D3.sankey =
         selectAll("text.link_label").
         attr("y", (link) => @y link.right_y()).
         text((d) => @format_value d.value())
-
-    resize: =>
-      width = @container_node().width()
-      @svg.attr("width", width).
-        attr("preserveAspectRatio", "none")
 
 class D3.sankey.NodeList extends Backbone.Collection
   model: D3.sankey.Node

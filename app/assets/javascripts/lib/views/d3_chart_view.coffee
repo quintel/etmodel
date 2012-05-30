@@ -7,9 +7,9 @@
 # rendering and the refresh() for the later updates.
 # They should also call @initialize_defaults() in their initialize method
 class @D3ChartView extends BaseChartView
-  render: =>
-    unless @already_on_screen()
-      @clear_container()
+  render: (force_redraw) =>
+    if force_redraw || !@already_on_screen()
+      $("#d3_container").empty()
       @container_node().html(@html)
       @draw()
     @refresh()

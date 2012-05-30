@@ -1,12 +1,11 @@
 class @Accordion
   setup: ->
-    accordion = $('.accordion').accordion({
+    accordion = $('.accordion').accordion
       header: '.headline',
       collapsible: true,
       fillSpace: false,
       autoHeight: false,
       active: false
-    })
 
     # Setup slides and open the right one. The default slide can be set
     # by passing a fragment url (http://ETM/costs#slide_key)
@@ -39,7 +38,7 @@ class @Accordion
 
       slide_title = $.trim(ui.newHeader.text())
       Tracker.track({slide: slide_title})
-      if (ui.newHeader.length > 0)
+      if ui.newHeader.length > 0
         output_element_id = parseInt(ui.newHeader.attr('id').match(/\d+$/))
         window.charts.current_default_chart = output_element_id
         $("a.default_charts").hide() if charts.current_id() == output_element_id

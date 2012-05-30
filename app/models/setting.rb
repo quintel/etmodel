@@ -10,7 +10,7 @@ class Setting
                 :api_session_id,
                 :current_round,
                 :area_code,
-                :pinned_chart
+                :pinned_chart  # id of the chart we want to keep across requests
 
   def initialize(attributes = {})
     attributes = self.class.default_attributes.merge(attributes)
@@ -46,22 +46,20 @@ class Setting
 
   # ------ Defaults and Resetting ---------------------------------------------
 
-  # @tested 2010-12-06 seb
-  #
   def self.default
     new(default_attributes)
   end
 
   def self.default_attributes
     {
-      :hide_unadaptable_sliders       => false,
-      :network_parts_affected         => [],
-      :track_peak_load                => false,
-      :area_code                      => 'nl',
-      :start_year                     => 2010,
-      :end_year                       => 2050,
-      :use_fce                        => false,
-      :already_shown                  => []
+      :hide_unadaptable_sliders => false,
+      :network_parts_affected   => [],
+      :track_peak_load          => false,
+      :area_code                => 'nl',
+      :start_year               => 2010,
+      :end_year                 => 2050,
+      :use_fce                  => false,
+      :already_shown            => []
     }
   end
   attr_accessor *default_attributes.keys
@@ -77,7 +75,7 @@ class Setting
     end
   end
 
-  # When a user resets a scenario to it's start value,
+  # When a user resets a scenario to its start value
   #
   def reset_scenario
     self.api_session_id = nil

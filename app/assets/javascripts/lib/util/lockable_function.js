@@ -1,32 +1,32 @@
 /**
  * LockableFunction
- * Sometimes we need to put the lock the execution of certain functions. 
+ * Sometimes we need to put the lock the execution of certain functions.
  * LockableFunction can be used to lock a function on a key. If the lock is
  * removed it will execute this function.
  *
  * Example:
  *
  * This immediately executes the function:
- *  
+ *
  *   LockableFunction.deferActionIfLocked("update", function() {alert('hee!')})
- *   
- * 
+ *
+ *
  * This only executes the second function after 10 seconds:
- * 
+ *
  *   LockableFunction.setLock("update")
  *   LockableFunction.deferActionIfLocked("update", function() {alert('I am function A!')})
  *   setTimeOut(function() {
  *    LockableFunction.removeLock("update")
  *   }, 10000)
  *   LockableFunction.deferActionIfLocked("update", function() {alert('I am function B')})
- * 
+ *
  * @responsible: Jaap
- * 
+ *
  */
 var LockableFunction = {
-  
-  /* 
-   * This function defers the execution of 
+
+  /*
+   * This function defers the execution of
    */
   deferExecutionIfLocked: function(key, fun, options) {
     if(!this.functions)
@@ -39,7 +39,7 @@ var LockableFunction = {
       fun.apply();
     }
   },
-  
+
   /**
    * Sets a lock on a specific key.
    */
@@ -49,7 +49,7 @@ var LockableFunction = {
     if(this.locks.indexOf(key) == -1)
       this.locks.push(key);
   },
-  
+
   /**
    * Checks if this key is locked
    */
@@ -58,7 +58,7 @@ var LockableFunction = {
       return false;
     return this.locks.indexOf(key) != -1;
   },
-  
+
   /**
    * Remove this lock.
    */
@@ -69,5 +69,5 @@ var LockableFunction = {
       this.locks.splice(this.locks.indexOf(key), 1);
     }
   }
-  
+
 }

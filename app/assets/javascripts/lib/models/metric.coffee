@@ -139,5 +139,7 @@
     "5" : 'quadrillions'
     "6" : 'quintillions'
 
-  round_number : (value, precision) -> value.toFixed(precision)
+  round_number : (value, precision) ->
+    return false unless value?
+    value.toFixed(precision)
 

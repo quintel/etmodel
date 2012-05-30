@@ -1,5 +1,5 @@
 -# DEBT: TO BE REPLACED WITH nav#sidebar
-#sidebar 
+#sidebar
   - Current.view.tabs.each do |tab|
     %h4.headline= I18n.t "tabs." + tab.key
     %ul{style: ("display: none;" unless controller.controller_name == tab.key )}
@@ -8,7 +8,7 @@
             :class => (params[:id] == item.key) ? 'active' : nil,
             :'data-gquery' => item.percentage_bar_query}
           = link_to url_for(:controller => tab.key, :action => item.key),
-            :'data-nav' => false do
+            :'data-nav' => true do
             %p
               %span.title{:class => "ico-#{item.key} icon"}
                 = raw t("sidebar_items.#{item.key}")

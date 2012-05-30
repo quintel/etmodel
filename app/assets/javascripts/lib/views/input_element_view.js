@@ -268,6 +268,9 @@
         step:       this.model.get('step_value'),
         disable:    this.model.get('disabled'),
 
+        // Don't round initial values which don't fit the step.
+        strict:     false,
+
         // Disable effects on sliders which are part of a group, since the
         // animation can look a little jarring.
         effects:  ! this.model.get('share_group'),

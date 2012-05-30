@@ -1,5 +1,5 @@
-!!! Strict
-%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
+!!! 5
+%html
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
     %meta{:description => "#{t('meta.description')}" }
@@ -15,19 +15,12 @@
     = yield :head
   %body#outside-model
     #wrapper
+      %header#main= render "layouts/etm/header"
       #content
         - flash_message
         = yield
-      #header{:style => ("height: 150px" if @render_tabs)}
-        = render "layouts/etm/header"
-      #footer
-        = render "layouts/etm/footer"
-      %a{:id =>'epn_module',:href=>'/pages/education',:class => "side_tabs #{I18n.locale}"}
+      %footer= render "layouts/etm/footer"
     = render "layouts/etm/ga" unless APP_CONFIG[:standalone]
-    - unless APP_CONFIG[:standalone]
-      %a{:id =>'feedback-tab',:href=>'/feedback',:class => "select_chart side_tabs #{I18n.locale}"}
-      %a{:id =>'refman-tab',:href=>'http://refman.et-model.com',:class => "side_tabs #{I18n.locale}",:target=>"_blank"}
-      %a{:id =>'wiki-tab',:href=>'http://wiki.quintel.com',:class => "side_tabs #{I18n.locale}",:target=>"_blank"}
     %script
       if (_.include(['iPad', 'iPhone', 'iPod'], navigator.platform)) { $("#footer").css("position", "static"); };
 

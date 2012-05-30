@@ -26,9 +26,19 @@ class @Chart extends Backbone.Model
       when 'vertical_bar'           then new VerticalBarChartView({model : this})
       when 'html_table'             then new HtmlTableChartView({model : this})
       when 'scatter'                then new ScatterChartView({model : this})
+      when 'd3'                     then @d3_view_factory()
       else new HtmlTableChartView({model : this})
     @view.update_title()
     @view
+
+  # D3 charts have their own class. Let's make an instance of the right one
+  # D3 is a pseudo-namespace. See d3_chart_view.coffee
+  d3_view_factory: =>
+    key = @.get 'key'
+    if D3[key] && D3[key].View
+      new D3[key].View({model: this})
+    else
+      false
 
   # @return [ApiResultArray] = [
   #   [[2010,0.4],[2040,0.6]],
@@ -120,37 +130,35 @@ class @ChartList extends Backbone.Collection
   # using the chart_id as key.
   html: {}
 
-  change : (chart) ->
-    old_chart = @first()
-    @remove(old_chart) if old_chart != undefined
-    @add(chart)
-    # HTML Table charts create gquery objects parsing the HTML
-    if @current().get('type') == 'html_table'
-      @current().view.build_gqueries()
-
   load : (chart_id) ->
+    return false if App.settings.get('pinned_chart')
     App.etm_debug('Loading chart: #' + chart_id)
     App.etm_debug "#{window.location.origin}/admin/output_elements/#{chart_id}"
     url = "/output_elements/#{chart_id}.js"
     $.getScript url, =>
       # show/hide default chart button
-      if chart_id != @current_default_chart
-        $("a.default_charts").show()
-      else
-        $("a.default_charts").hide()
+      #
+      $("a.default_charts").toggle(chart_id != @current_default_chart)
+
       # show/hide format toggle button
-      if @current().view.can_be_shown_as_table()
-        $("a.table_format").show()
-        $("a.chart_format").hide()
-      else
-        $("a.table_format").hide()
-        $("a.chart_format").hide()
+      #
+      $("a.table_format").toggle( @current().view.can_be_shown_as_table() )
+      $("a.chart_format").hide()
+
       # update chart information link
+      #
       $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/#{chart_id}")
+
       # update the position of the output_element_actions
+      #
       $("#output_element_actions").removeClass()
       $("#output_element_actions").addClass(@first().get("type"))
+
+      # show.hide the under_construction notice
+      #
+      $("#chart_not_finished").toggle @first().get("under_construction")
       App.call_api()
+      @first()
 
   # returns the current chart id
   current_id : ->
@@ -160,19 +168,17 @@ class @ChartList extends Backbone.Collection
 
   setup_callbacks: ->
     $("a.default_charts").live 'click', =>
-      @user_selected_chart = null
+      App.settings.set({pinned_chart: false})
+      $("a.pin_chart").removeClass("active")
       @load(@current_default_chart)
       false
 
     $("a.pick_charts").live 'click', (e) =>
+      App.settings.set({pinned_chart: false})
+      $("a.pin_chart").removeClass("active")
       chart_id = $(e.target).parents('a').data('chart_id')
-      @user_selected_chart = chart_id
-      url = "/output_elements/select_chart/#{chart_id}"
-      $.ajax
-        url: url
-        method: 'get'
-        beforeSend: ->
-          close_fancybox()
+      @load chart_id
+      close_fancybox()
 
     $("a.table_format").live 'click', =>
       $("a.table_format").hide()
@@ -180,10 +186,18 @@ class @ChartList extends Backbone.Collection
       @current().view.toggle_format()
       false
 
-     $("a.chart_format").live 'click', =>
-        $("a.chart_format").hide()
-        $("a.table_format").show()
-        @current().view.toggle_format()
-        false
+    $("a.chart_format").live 'click', =>
+      $("a.chart_format").hide()
+      $("a.table_format").show()
+      @current().view.toggle_format()
+      false
+
+    $(document).on 'click', "a.pin_chart", (e) =>
+      e.preventDefault()
+      $(e.target).parents("a").toggleClass("active")
+      if App.settings.get('pinned_chart')
+        App.settings.set({pinned_chart: false})
+      else
+        App.settings.set({pinned_chart: @current_id()})
 
 window.charts = new ChartList()

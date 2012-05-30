@@ -5,6 +5,7 @@
 //= require jquery_ujs
 //= require underscore.min
 //= require backbone-0.3.3.min
+//= require modernizr.custom
 //
 //= require_tree ./lib/util
 //= require flowplayer-3.2.6.min

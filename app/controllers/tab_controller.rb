@@ -16,9 +16,6 @@ class TabController < ApplicationController
     @active_sidebar = Current.view.sidebar
     @slides = Current.view.slides
 
-    Current.setting.selected_output_element = nil
-    Current.setting.displayed_output_element = @output_element.id if @output_element
-
     respond_to do |format|
       format.html { render :template => 'tab/show'}
       format.js
@@ -28,7 +25,11 @@ class TabController < ApplicationController
   protected
 
     def load_output_element
-      @output_element = Current.view.default_chart
+      @output_element = if Current.setting.pinned_chart
+        OutputElement.find Current.setting.pinned_chart
+      else
+        Current.view.default_chart
+      end
     end
 
     # Some sidebar items are area dependent. Let's redirect the user who crafted an invalid URL

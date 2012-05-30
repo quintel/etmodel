@@ -1,6 +1,6 @@
 class @BaseChartView extends Backbone.View
-  initialize_defaults: ->
-    @model.bind('change', this.render)
+  initialize_defaults: =>
+    @model.bind('change', @render)
 
   max_value: ->
     sum_present = _.reduce @model.values_present(), @smart_sum
@@ -86,3 +86,6 @@ class @BaseChartView extends Backbone.View
     tmpl = $("#chart-table-template").html()
     table = _.template(tmpl, table_data)
     @container_node().html(table)
+
+  # D3 charts override this method
+  supported_in_current_browser: -> true

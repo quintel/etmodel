@@ -1,12 +1,19 @@
 var output_element = new Chart(<%= @output_element.options_for_js.to_json.html_safe %>);
 
-<% if @output_element.html_table? || @output_element.block_chart? %>
+<% if @output_element.custom_html? %>
   window.charts.html[<%=@output_element.id%>] = "<%= js_render_chart(@output_element)%>";
 <% end %>
-<% unless @output_element.html_table? %>
+
+<% if @output_element.has_series_in_db? %>
   <% @output_element.allowed_output_element_series.each do |serie| %>
     <%= raw output_element_serie(serie) %>
   <% end %>
 <% end %>
 
-window.charts.change(output_element);
+var old_chart = charts.current();
+charts.remove(old_chart);
+charts.add(output_element);
+
+if (output_element.get('type') === 'html_table') {
+  output_element.view.build_gqueries()
+}

@@ -51,11 +51,11 @@ aka. track bars) for HTML applications. The project is hosted on
 <h2 id="downloads">Downloads</h2>
 
 <dl>
-  <dt><a href="https://github.com/antw/quinn/tarball/v1.0.0.rc2">Everything (1.0.0.rc2)</a></dt>
+  <dt><a href="https://github.com/antw/quinn/tarball/v1.0.1">Everything (1.0.1)</a></dt>
   <dd>Tarball containing JS, CSS, and images</dd>
-  <dt><a href="http://antw.github.com/quinn/jquery.quinn.js">Development Version (1.0.0.rc2)</a></dt>
-  <dd>30.9kb, JS only, Uncompressed with comments</dd>
-  <dt><a href="http://antw.github.com/quinn/jquery.quinn.min.js">Production Version (1.0.0.rc2)</a></dt>
+  <dt><a href="http://antw.github.com/quinn/jquery.quinn.js">Development Version (1.0.1)</a></dt>
+  <dd>31.8kb, JS only, Uncompressed with comments</dd>
+  <dt><a href="http://antw.github.com/quinn/jquery.quinn.min.js">Production Version (1.0.1)</a></dt>
   <dd>2.6kb, JS only, Minified and Gzipped</dd>
 </dl>
 
@@ -120,7 +120,8 @@ example, a step of 10 only 0, 10, 20, 30, …, n, to be chosen.</p>
 <p>If you supply an initial value which can’t be used as it doesn’t “fit” with
 the step, the value will be rounded to the nearest acceptable point on the
 slider. For example, an step of 10, and an initial value of 17 will result in
-the slider being initialized with a value of 20 instead.</p>
+the slider being initialized with a value of 20 instead. This behaviour can
+be disabled <em>for the initial value</em> by also supplying <code>strict: false</code>.</p>
 
 <p>Combining the <strong>step</strong> option with <a href="#extrema"><strong>min</strong> and <strong>max</strong></a> options
 permits the creation of sliders with arbitrary values:</p>
@@ -366,22 +367,14 @@ $('.slider').quinn({
 
 <h2 id="history">History</h2>
 
-<h4 id="rc2-february-20th-2012">1.0.0.rc2 <em>February 20th, 2012</em></h4>
+<h4 id="may-10th-2012">1.0.1 <em>May 10th, 2012</em></h4>
 
 <ul>
-  <li>
-    <p>A couple of fixes to touchevents; Quinn will behave better on smartphones
-and tablets.</p>
-  </li>
-  <li>
-    <p>Better positioning of the slider handles. The positioning of each handle is
-determined based on its radius, and the height of the slider bar to which it
-belongs. This results in better handling of custom CSS which has large
-handles.</p>
-  </li>
+  <li>Added a <code>strict</code> option which prevents the initial value being snapped
+to the <code>step</code> value.</li>
 </ul>
 
-<h4 id="rc1-february-17th-2012">1.0.0.rc1 <em>February 17th, 2012</em></h4>
+<h4 id="april-14th-2012">1.0.0 <em>April 14th, 2012</em></h4>
 
 <ul>
   <li>
@@ -449,6 +442,16 @@ quinn.on('abort',  function () { /* ... */ });
 have been renamed to <code>start</code>, <code>resolve</code>, and <code>reject</code> to more closely match
 the jQuery.Deferred API. Note that $.Quinn is <em>not</em> a jQuery.Deferred
 object; other Deferred methods are not provided.</p>
+  </li>
+  <li>
+    <p>A couple of fixes to touchevents; Quinn will behave better on smartphones
+and tablets.</p>
+  </li>
+  <li>
+    <p>Better positioning of the slider handles. The positioning of each handle is
+determined based on its radius, and the height of the slider bar to which it
+belongs. This results in better handling of custom CSS which has large
+handles.</p>
   </li>
 </ul>
 

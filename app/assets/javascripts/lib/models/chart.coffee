@@ -200,4 +200,12 @@ class @ChartList extends Backbone.Collection
       else
         App.settings.set({pinned_chart: @current_id()})
 
+    # This callback tries throttling the resize event, which is fired
+    # continuously while the user resizes the window. Once the resize is over
+    # the chart will be rendered again
+    resize_callback = null
+    $(window).on 'resize', =>
+      clearTimeout(resize_callback)
+      resize_callback = setTimeout(@current().view.render, 100)
+
 window.charts = new ChartList()

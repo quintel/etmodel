@@ -31,62 +31,6 @@ form, fieldset
   padding: 0
   border: none
 
-//separate model from pages
-body#model #wrapper
-  min-height: 100%
-
-body#outside-model #wrapper
-  min-height: 100%
-  height: auto !important
-  height: 100%
-  margin: 0 auto -160px
-
-#wrapper
-  min-width: 965px
-  width: 100%
-  position: relative
-//separate model from pages
-* html body#model #wrapper
-  height: 100%
-  overflow: visible
-
-#content
-  padding: 0px 0px 150px 35px
-  position: relative
-  min-width: 965px
-  max-width: 1230px
-  margin: 0 auto
-  overflow: auto
-
-  #flash
-    position: absolute
-    left: 50%
-    top: 150px
-    background: #FFF1A8
-    width: 400px
-    margin-left:  -200px
-    @include border-radius(8px)
-
-    &.error
-      background: #ff9999
-    &.error a
-      color: white
-    p
-      padding: 1px 10px
-      margin: 0
-
-#loading
-  position: fixed
-  top: 0px
-  background-color: red
-  padding: 5px 20px
-  left: 48%
-  z-index: 999
-
-body#outside-model #flash
-  top: 95px
-
-
 table.default
   border: 0
   border-collapse: collapse
@@ -165,6 +109,8 @@ table.default
 .clear
   clear: both
 
+@import general_layout
+@import flash
 @import title
 @import accordion
 @import chart

@@ -1,11 +1,12 @@
-= render "layouts/etm/sidebar" if Current.view
-= render "layouts/etm/title"
-#charts_wrapper
-  #charts_holder
-    = render "output_elements/chart"
-#accordion_wrapper
-  - if @slides.any?
-    %ul.accordion
-      = render :partial => 'tab/slide', :collection => @slides
-  - else
-    = t("not_available")
+#active-content
+  = render "layouts/etm/title"
+  #accordion_wrapper
+    - if @slides.any?
+      %ul.accordion
+        = render :partial => 'tab/slide', :collection => @slides
+    - else
+      = t("not_available")
+
+  #charts_wrapper
+    #charts_holder
+      = render "output_elements/chart"

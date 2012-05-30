@@ -131,7 +131,7 @@ class @ChartList extends Backbone.Collection
   html: {}
 
   load : (chart_id) ->
-    return false if @pinned_chart
+    return false if App.settings.get('pinned_chart')
     App.etm_debug('Loading chart: #' + chart_id)
     App.etm_debug "#{window.location.origin}/admin/output_elements/#{chart_id}"
     url = "/output_elements/#{chart_id}.js"
@@ -168,13 +168,13 @@ class @ChartList extends Backbone.Collection
 
   setup_callbacks: ->
     $("a.default_charts").live 'click', =>
-      @pinned_chart = false
+      App.settings.set({pinned_chart: false})
       $("a.pin_chart").removeClass("active")
       @load(@current_default_chart)
       false
 
     $("a.pick_charts").live 'click', (e) =>
-      @pinned_chart = false
+      App.settings.set({pinned_chart: false})
       $("a.pin_chart").removeClass("active")
       chart_id = $(e.target).parents('a').data('chart_id')
       @load chart_id
@@ -195,6 +195,9 @@ class @ChartList extends Backbone.Collection
     $(document).on 'click', "a.pin_chart", (e) =>
       e.preventDefault()
       $(e.target).parents("a").toggleClass("active")
-      @pinned_chart = !@pinned_chart
+      if App.settings.get('pinned_chart')
+        App.settings.set({pinned_chart: false})
+      else
+        App.settings.set({pinned_chart: @current_id()})
 
 window.charts = new ChartList()

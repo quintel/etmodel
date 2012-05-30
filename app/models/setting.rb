@@ -9,7 +9,8 @@ class Setting
                 :scenario_id,
                 :api_session_id,
                 :current_round,
-                :area_code
+                :area_code,
+                :pinned_chart
 
   def initialize(attributes = {})
     attributes = self.class.default_attributes.merge(attributes)

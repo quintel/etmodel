@@ -25,7 +25,11 @@ class TabController < ApplicationController
   protected
 
     def load_output_element
-      @output_element = Current.view.default_chart
+      @output_element = if Current.setting.pinned_chart
+        OutputElement.find Current.setting.pinned_chart
+      else
+        Current.view.default_chart
+      end
     end
 
     # Some sidebar items are area dependent. Let's redirect the user who crafted an invalid URL

@@ -3,7 +3,11 @@ class OutputElementsController < BaseController
   before_filter :find_element, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @output_elements = OutputElement.all
+    t = params[:type]
+    scope = OutputElement.scoped
+    scope = scope.where(:output_element_type_id => t) if t.present?
+    @output_elements = scope.all
+    @types = OutputElementType.all
   end
 
   def all

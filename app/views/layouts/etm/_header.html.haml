@@ -2,7 +2,7 @@
   - GeneralUserNotification.active.each do |n|
     .general_notice= raw n.text
   .fce_notice{:class => Current.setting.use_fce ? nil : 'hidden'}= raw t("fce.notice")
-.frame{:style => "position: relative;"}
+#header_inside{:style => "position: relative;"}
   %ul.sub-nav
     %li
       %a.information{:href=>"#"}
@@ -26,9 +26,7 @@
           %span.text
             %input{ :name => 'q', :type => "text", :value => "#{t("search_the_website")}", :onclick => "$(this).val('');" }
 
-  %strong
-    %a{ :href => "/" }
-      %img.header_logo{:src => "/assets/layout/bg-logo3.png"}
+  %h3 Energy Transition Model
 
   = render "layouts/etm/header_menus"
 

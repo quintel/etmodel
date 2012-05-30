@@ -16,7 +16,7 @@
     = yield :head
   %body#model
     #wrapper
-      %header#main
+      %header
         = render "layouts/etm/header", :info_box => true
         = render "layouts/etm/wattnu" if wattnu?
       #content

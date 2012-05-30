@@ -37,14 +37,14 @@ D3.sankey =
       {left: 'el_prod',   right: 'industry',    gquery: 'electricity_industry_in_mekko_of_final_demand'},
       {left: 'el_prod',   right: 'agriculture', gquery: 'electricity_agriculture_in_mekko_of_final_demand'},
       {left: 'el_prod',   right: 'other',       gquery: 'electricity_other_in_mekko_of_final_demand'},
-                                               
+
       {left: 'heat_prod', right: 'households',  gquery: 'hot_water_households_in_mekko_of_final_demand', color: 'red'},
       {left: 'heat_prod', right: 'buildings',   gquery: 'hot_water_buildings_in_mekko_of_final_demand', color: 'red'},
       {left: 'heat_prod', right: 'transport',   gquery: 'hot_water_transport_in_mekko_of_final_demand', color: 'red'},
       {left: 'heat_prod', right: 'industry',    gquery: 'hot_water_industry_in_mekko_of_final_demand', color: 'red'},
       {left: 'heat_prod', right: 'agriculture', gquery: 'hot_water_agriculture_in_mekko_of_final_demand', color: 'red'},
       {left: 'heat_prod', right: 'other',       gquery: 'hot_water_other_in_mekko_of_final_demand', color: 'red'},
-                                               
+
       {left: 'coal',      right: 'el_prod',     gquery: 'coal_in_source_of_electricity_production', color: 'black'},
       {left: 'nuclear',   right: 'el_prod',     gquery: 'nuclear_in_source_of_electricity_production', color: 'red'},
       {left: 'gas',       right: 'el_prod',     gquery: 'gas_in_source_of_electricity_production'},
@@ -168,7 +168,7 @@ D3.sankey =
     path_points: =>
       [
         {x: @left_x(),       y: @left_y()},
-        {x: @left_x() + 80,  y: @left_y()},
+        {x: @left_x()  + 80, y: @left_y()},
         {x: @right_x() - 80, y: @right_y()},
         {x: @right_x(),      y: @right_y()}
       ]
@@ -188,6 +188,9 @@ D3.sankey =
     el: "body"
 
     initialize: ->
+      @width = @container_node().width() || 490
+      @height = @container_node().height() || 502
+
       @module = D3.sankey # shortcut
       @module.nodes = new @module.NodeList(@module.data.nodes)
       @module.links = new @module.LinkList(@module.data.links)
@@ -201,7 +204,10 @@ D3.sankey =
 
       # set up the scaling methods
       #
-      
+      @x = d3.scale.linear().
+        domain([0, 490]).
+        range([0, @width])
+
       # this one will be changed dynamically later on
       @y = d3.scale.linear().
         domain([0, 5000]).
@@ -211,12 +217,13 @@ D3.sankey =
       # set the base points
       @link_line = d3.svg.line().
         interpolate("basis").
-        x((d) -> d.x).
+        x((d) -> @x(d.x)).
         y((d) -> @y(d.y))
 
     # this method is called when we first render the chart
     #
     draw: =>
+
       @svg = d3.select("#d3_container").
         append("svg:svg").
         attr("height", @height).
@@ -239,7 +246,7 @@ D3.sankey =
         attr("x", x_position).
         attr("y", (d,i) -> 350 + 20 * i).
         attr("height", (d) => @y d.value).
-        attr("width", 40).
+        attr("width", (d) => @x(40)).
         style("opacity", 0.5)
 
       units.append("svg:text").
@@ -275,7 +282,7 @@ D3.sankey =
       #
       links.append("svg:text").
       attr("class", "link_label").
-      attr("x", (d) => d.right_x()).
+      attr("x", (d) => @x d.right_x()).
       attr("y", (d) => @y d.right_y()).
       attr("dx", -55).
       attr("dy", 3).
@@ -296,7 +303,7 @@ D3.sankey =
         append("svg").
         attr("class", (d) -> "node").
         attr("data-id", (d) -> d.get('id')).
-        attr("x", (d) => @module.Node.horizontal_spacing * d.get('column') + 20).
+        attr("x", (d) => @x(@module.Node.horizontal_spacing * d.get('column') + 20)).
         attr("y", (d) => @y(d.y_offset()))
 
       # The rectangle just cares about its size and color
@@ -306,7 +313,7 @@ D3.sankey =
       nodes.append("svg:rect").
         attr("fill", (datum, i) -> colors(i)).
         attr("stroke", (d, i) -> d3.rgb(colors(i)).darker(2)).
-        attr("width", @module.Node.width).
+        attr("width", (d) => @x @module.Node.width).
         attr("height", (d) => @y d.value()).
         on("mouseover", @node_mouseover).
         on("mouseout", @node_mouseout)
@@ -316,7 +323,7 @@ D3.sankey =
       #
       nodes.append("svg:text").
         attr("class", "label").
-        attr("x", 25).
+        attr("x", 30).
         attr("y", 9).
         each(@add_label) # call() passes the entire collection
 

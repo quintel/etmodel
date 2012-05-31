@@ -149,11 +149,6 @@ class @ChartList extends Backbone.Collection
       #
       $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/#{chart_id}")
 
-      # update the position of the output_element_actions
-      #
-      $("#output_element_actions").removeClass()
-      $("#output_element_actions").addClass(@first().get("type"))
-
       # show.hide the under_construction notice
       #
       $("#chart_not_finished").toggle @first().get("under_construction")
@@ -194,7 +189,7 @@ class @ChartList extends Backbone.Collection
 
     $(document).on 'click', "a.pin_chart", (e) =>
       e.preventDefault()
-      $(e.target).parents("a").toggleClass("active")
+      $(e.target).toggleClass("active")
       if App.settings.get('pinned_chart')
         App.settings.set({pinned_chart: false})
       else

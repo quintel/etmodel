@@ -1,6 +1,6 @@
 #charts_wrapper
   h3
-    margin: 0 0 22px
+    margin: 0 0 3px 0
     font: 16px/30px Georgia, "Times New Roman", Times, serif
     color: #224368
     height: 30px
@@ -17,46 +17,22 @@
     letter-spacing: -1px
   a:hover
     text-decoration: underline
+  #output_element_actions
+    background-color: #f4f9ff
+    padding: 2px 8px 2px 31px
+    a
+      margin-right: 5px
+      color: #578ec2
+      text-decoration: none
+      font-size: .9em
+      &:hover
+        color: #333333
+      &.active
+        color: red
+        font-weight: bold
   #charts_container
     position: relative
     height: 400px
-    #output_element_actions
-      height: 13px
-      width: 250px
-      position: absolute
-      left: 20px
-      top: 273px
-      z-index: 2
-      a
-        float: left
-        height: 13px
-        margin-right: 5px
-        @include border-radius(5px)
-        color: white
-        background-color: #5E5E5E
-        text-decoration: none
-        &:hover
-          background-color: #333333
-        &.chart_info
-          width: 15px
-        &.select_chart
-          width: 65px
-        &.default_charts
-          width: 75px
-          display: none
-        &.table_format
-          width: 60px
-        &.chart_format
-          width: 60px
-          display: none
-        &.pin_chart
-          width: 40px
-        &.active
-          background-color: #f88057
-        .text
-          position: relative
-          top: -4px
-          text-align: center
     #chart_not_finished
       display: none
       position: absolute
@@ -66,24 +42,6 @@
       right: -5px
       z-index: 3
       background: url(/assets/layout/still_to_do.png) no-repeat
-    #output_element_actions
-      &.waterfall
-        top: -5px
-      &.html_table
-        top: -10px
-      &.grouped_vertical_bar
-        top: -10px
-      &.policy_bar
-        top: -10px
-      &.horizontal_bar
-        top: -10px
-      &.horizontal_stacked_bar
-        top: -10px
-      &.mekko
-        top: -20px
-      &.d3
-        top: 430px
-        left: 170px
 
 table#power_plants
   th.unit

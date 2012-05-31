@@ -30,3 +30,4 @@
 
 //= require d3.v2.min
 //= require d3/sankey
+//= require d3/mekko

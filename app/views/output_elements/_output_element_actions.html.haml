@@ -1,26 +1,21 @@
 #output_element_actions{:class => @output_element.type}
-  %a.chart_info.fancybox{:href => "/descriptions/charts/#{@output_element.id}",
+  %a.chart_info.tooltip.fancybox{:href => "/descriptions/charts/#{@output_element.id}",
     :alt   => "info",
     :title => "info"}
     ?
-  %a.select_chart{:href => "/output_elements",
-    :alt   => t("output_elements.common.change_chart"),
+  %a.select_chart.tooltip{:href => "/output_elements",
     :title => t("output_elements.common.change_chart")}
     = t "output_elements.common.change_chart"
-  %a.default_charts{:href => "#",
-    :alt   => t("output_elements.common.back_to_default"),
+  %a.default_charts.tooltip{:href => "#",
     :title => t("output_elements.common.back_to_default")}
     = t "output_elements.common.back_to_default"
-  %a.table_format{:href => '#',
-    :alt   => t("output_elements.common.table"),
+  %a.table_format.tooltip{:href => '#',
     :title => t("output_elements.common.table")}
     = t "output_elements.common.table"
-  %a.chart_format{:href => '#',
-    :alt   => t("output_elements.common.chart"),
+  %a.chart_format.tooltip{:href => '#',
     :title => t("output_elements.common.chart")}
     = t "output_elements.common.chart"
-  %a.pin_chart{:href => '#',
-    :alt   => t("output_elements.common.pin"),
+  %a.pin_chart.tooltip{:href => '#',
     :title => t("output_elements.common.pin"),
     :class => @output_element.id == Current.setting.pinned_chart && 'active'}
     = t "output_elements.common.pin"

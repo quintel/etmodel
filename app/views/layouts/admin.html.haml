@@ -6,30 +6,29 @@
     = stylesheet_link_tag 'application', 'admin'
     = javascript_include_tag 'application'
     = yield :head
-  %body#model{:class => "#{controller_name}_#{controller.action_name}"}
+  %body{:class => "#{controller_name}_#{controller.action_name}"}
     #wrapper
       %header#main
         = render "layouts/etm/header"
         - if live_server?
           .live_server_notice This is the production server!
-        #nav.nav-admin
-          .nav-holder.nav-holder-inner{:style=>"float:left"}
-            = tabs_tag do |tab|
-              = tab.main                   'Main', admin_root_path
-              = tab.translations           'Translations', admin_translations_path
-              = tab.tabs                   'Tabs', admin_tabs_path
-              = tab.sidebar_items          'Sidebar', admin_sidebar_items_path
-              = tab.slides                 'Slides', admin_slides_path
-              = tab.input_elements         'Sliders', admin_input_elements_path
-              = tab.output_elements        'Charts', admin_output_elements_path
-              = tab.output_elements_series 'Series', admin_output_element_series_path
-              = tab.dashboard_items        'Dashboard', admin_constraints_path
-              = tab.predictions            'Backcasting', admin_predictions_path
-              = tab.press_releases         'Press Releases', admin_press_releases_path
-              = tab.notifications          'Notifications', admin_general_user_notifications_path
-              = tab.partners               'Partners', admin_partners_path
-              = tab.gql_search             'GQL Search', search_admin_gql_index_path
-              = tab.users                  'Users', admin_users_path
+      %nav#admin
+        = tabs_tag do |tab|
+          = tab.main                   'Main', admin_root_path
+          = tab.translations           'Translations', admin_translations_path
+          = tab.tabs                   'Tabs', admin_tabs_path
+          = tab.sidebar_items          'Sidebar', admin_sidebar_items_path
+          = tab.slides                 'Slides', admin_slides_path
+          = tab.input_elements         'Sliders', admin_input_elements_path
+          = tab.output_elements        'Charts', admin_output_elements_path
+          = tab.output_elements_series 'Series', admin_output_element_series_path
+          = tab.dashboard_items        'Dashboard', admin_constraints_path
+          = tab.predictions            'Backcasting', admin_predictions_path
+          = tab.press_releases         'Press Releases', admin_press_releases_path
+          = tab.notifications          'Notifications', admin_general_user_notifications_path
+          = tab.partners               'Partners', admin_partners_path
+          = tab.gql_search             'GQL Search', search_admin_gql_index_path
+          = tab.users                  'Users', admin_users_path
       #content
         - flash_message
         = yield

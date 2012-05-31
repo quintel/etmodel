@@ -78,6 +78,11 @@ $ ->
         $("#logos").replaceWith(data)
         Interface.call_the_cyclists()
   Interface.call_the_cyclists()
+
+  # Tipsy
+  $("a.tooltip").tipsy
+    live: true
+
 # This class holds all the methods that were previously in the global scope
 #
 class @AppInterface

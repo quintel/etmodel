@@ -1,7 +1,7 @@
 %h3= raw t("output_elements.#{@output_element.key}")
+= render "output_elements/output_element_actions"
 #charts_container
-  = render "output_elements/output_element_actions"
   #chart_not_finished
-  #current_chart.column-r-content
+  #current_chart
 = javascript_include_tag output_element_path(:id => @output_element, :format => 'js')
 = render 'output_elements/table_template'

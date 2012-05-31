@@ -4,9 +4,17 @@ a
   &.new:after
     content: url("/assets/icons/new.gif")
 
-#nav
-  .nav-holder
-    width: 100%
+nav#admin
+  ul
+    list-style-type: none
+    position: relative
+    li
+      display: block
+      float: left
+      padding: 5px
+      border: 1px solid #ccc
+      a
+        text-decoration: none
 
 .simple_form
   div.input
@@ -43,37 +51,37 @@ a
   input[type=text]
     width: 500px
 
-div.boolean, .simple_form input[type='submit']
-  margin-left: 220px
+  div.boolean, .simple_form input[type='submit']
+    margin-left: 220px
 
-div.boolean .hint
-  margin-left: 0px
+  div.boolean .hint
+    margin-left: 0px
 
-div.boolean label, label.collection_radio
-  float: none
-  margin: 0
+  div.boolean label, label.collection_radio
+    float: none
+    margin: 0
 
-label.collection_radio
-  margin-right: 10px
-  vertical-align: -2px
-  margin-left:   2px
+  label.collection_radio
+    margin-right: 10px
+    vertical-align: -2px
+    margin-left:   2px
 
-.field_with_errors
-  background-color: #ff3333
+  .field_with_errors
+    background-color: #ff3333
 
-input.radio
-  margin-right: 5px
-  vertical-align: -3px
+  input.radio
+    margin-right: 5px
+    vertical-align: -3px
 
-input.check_boxes
-  margin-left: 3px
-  vertical-align: -3px
+  input.check_boxes
+    margin-left: 3px
+    vertical-align: -3px
 
-label.collection_check_boxes
-  float: none
-  margin: 0
-  vertical-align: -2px
-  margin-left: 2px
+  label.collection_check_boxes
+    float: none
+    margin: 0
+    vertical-align: -2px
+    margin-left: 2px
 
 // page-specific CSS
 body.output_elements_show

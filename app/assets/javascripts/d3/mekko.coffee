@@ -9,28 +9,28 @@ D3.mekko =
       {gquery: 'biomass_agriculture_in_mekko_of_final_demand'}
     ],
     oil: [
-      {gquery: 'oil_industry_in_mekko_of_final_demand'},
-      {gquery: 'oil_households_in_mekko_of_final_demand'},
-      {gquery: 'oil_buildings_in_mekko_of_final_demand'},
-      {gquery: 'oil_transport_in_mekko_of_final_demand'},
-      {gquery: 'oil_other_in_mekko_of_final_demand'},
-      {gquery: 'oil_agriculture_in_mekko_of_final_demand'}
+      {gquery: 'oil_industry_in_mekko_of_final_demand',    label: 'oil industry', color: '#888'},
+      {gquery: 'oil_households_in_mekko_of_final_demand',  label: 'oil households', color: '#777'},
+      {gquery: 'oil_buildings_in_mekko_of_final_demand',   label: 'oil buildings', color: '#666'},
+      {gquery: 'oil_transport_in_mekko_of_final_demand',   label: 'oil transport', color: '#555'},
+      {gquery: 'oil_other_in_mekko_of_final_demand',       label: 'oil other', color: '#444'},
+      {gquery: 'oil_agriculture_in_mekko_of_final_demand', label: 'oil agriculture', color: '#333'}
     ],
     gas: [
-      {gquery: 'gas_industry_in_mekko_of_final_demand'},
-      {gquery: 'gas_households_in_mekko_of_final_demand'},
-      {gquery: 'gas_buildings_in_mekko_of_final_demand'},
-      {gquery: 'gas_transport_in_mekko_of_final_demand'},
-      {gquery: 'gas_other_in_mekko_of_final_demand'},
-      {gquery: 'gas_agriculture_in_mekko_of_final_demand'}
+      {gquery: 'gas_industry_in_mekko_of_final_demand',    label: 'gas industry'},
+      {gquery: 'gas_households_in_mekko_of_final_demand',  label: 'gas households'},
+      {gquery: 'gas_buildings_in_mekko_of_final_demand',   label: 'gas buildings'},
+      {gquery: 'gas_transport_in_mekko_of_final_demand',   label: 'gas transport'},
+      {gquery: 'gas_other_in_mekko_of_final_demand',       label: 'gas other'},
+      {gquery: 'gas_agriculture_in_mekko_of_final_demand', label: 'gas agriculture'}
     ],
     coal: [
-      {gquery: 'coal_industry_in_mekko_of_final_demand'},
-      {gquery: 'coal_households_in_mekko_of_final_demand'},
-      {gquery: 'coal_buildings_in_mekko_of_final_demand'},
-      {gquery: 'coal_transport_in_mekko_of_final_demand'},
-      {gquery: 'coal_other_in_mekko_of_final_demand'},
-      {gquery: 'coal_agriculture_in_mekko_of_final_demand'}
+      {gquery: 'coal_industry_in_mekko_of_final_demand',    label: 'coal industry'},
+      {gquery: 'coal_households_in_mekko_of_final_demand',  label: 'coal households'},
+      {gquery: 'coal_buildings_in_mekko_of_final_demand',   label: 'coal buildings'},
+      {gquery: 'coal_transport_in_mekko_of_final_demand',   label: 'coal transport'},
+      {gquery: 'coal_other_in_mekko_of_final_demand',       label: 'coal other'},
+      {gquery: 'coal_agriculture_in_mekko_of_final_demand', label: 'coal agriculture'}
     ],
     waste: [
       {gquery: 'waste_industry_in_mekko_of_final_demand'},
@@ -57,12 +57,12 @@ D3.mekko =
       {gquery: 'electricity_agriculture_in_mekko_of_final_demand'}
     ],
     hot_water: [
-      {gquery: 'hot_water_industry_in_mekko_of_final_demand'},
-      {gquery: 'hot_water_households_in_mekko_of_final_demand'},
-      {gquery: 'hot_water_buildings_in_mekko_of_final_demand'},
-      {gquery: 'hot_water_transport_in_mekko_of_final_demand'},
-      {gquery: 'hot_water_other_in_mekko_of_final_demand'},
-      {gquery: 'hot_water_agriculture_in_mekko_of_final_demand'}
+      {gquery: 'hot_water_industry_in_mekko_of_final_demand',    label: 'hot water industry'},
+      {gquery: 'hot_water_households_in_mekko_of_final_demand',  label: 'hot water households'},
+      {gquery: 'hot_water_buildings_in_mekko_of_final_demand',   label: 'hot water buildings'},
+      {gquery: 'hot_water_transport_in_mekko_of_final_demand',   label: 'hot water transport'},
+      {gquery: 'hot_water_other_in_mekko_of_final_demand',       label: 'hot water other'},
+      {gquery: 'hot_water_agriculture_in_mekko_of_final_demand', label: 'hot water agriculture'}
     ],
   }
 
@@ -74,12 +74,15 @@ D3.mekko =
     val: =>
       @gquery.get('future_value')
 
+    label: => @get('label') || @get('gquery')
+
   View: class extends D3ChartView
     el: "body"
 
     initialize: ->
       @initialize_defaults()
       @color = d3.scale.category20c()
+      @prepare_data()
 
     # D3 layouts expect data in a precise format
     prepare_data: =>
@@ -102,7 +105,7 @@ D3.mekko =
       @treemap = d3.layout.treemap()
         .size([@width, @height])
         .sticky(true)
-        .value((d) -> 1);
+        .value((d) -> d.val())
       @svg = d3.select("#d3_container").
         append("div").
         style("position", "relative").
@@ -113,8 +116,12 @@ D3.mekko =
         enter().
         append("div").
         attr("class", "cell").
-        style("background", (d, i) => @color(i)).
-        text((d) -> if d.children then null else d.get('gquery')).
+        style("background", (d, i) =>
+          if d.children
+            null
+          else
+            d.get('color') || @color(i)).
+        text((d) -> if d.children then null else d.label()).
         call(@cell)
 
     refresh: =>

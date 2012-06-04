@@ -57,6 +57,8 @@ D3.merit_order =
         attr("width", @width + 2 * @margin).
         append("svg:g").
         attr("transform", "translate(#{@margin}, #{@margin})")
+
+      # axis
       @svg.append("svg:g").
         attr("class", "x axis").
         attr("transform", "translate(0, #{@height})").
@@ -64,7 +66,23 @@ D3.merit_order =
       @svg.append("svg:g").
         attr("class", "y axis").
         call(@yAxis)
+      @svg.append("svg:text").
+        text('Operating Costs [EUR/MWh]').
+        attr("x", @height / -2).
+        attr("y", -35).
+        attr("text-anchor", "middle").
+        attr("class", "axis_label").
+        attr("transform", "rotate(270)")
 
+      @svg.append("svg:text").
+              text('Installed Capacity [GW]').
+              attr("x", @width / 2).
+              attr("y", @height + 30).
+              attr("text-anchor", "middle").
+              attr("class", "axis_label")
+
+
+      # nodes
       @svg.selectAll('rect.merit_order_node').
         data(@nodes.models, (d) -> d.get('key')).
         enter().

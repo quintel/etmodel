@@ -72,11 +72,31 @@ D3.merit_order =
         attr("data-rel", (d) -> d.get('key')).
         attr("class", "merit_order_node").
         attr("fill", (d, i) => @color(i)).
-        attr("stroke", (d, i) => d3.rgb(@color(i)).darker(2)).
+        attr("stroke", (d, i) => d3.rgb(@color(i)).darker(1)).
         attr("y", (d) => @height - @y(d.value_y()) - .5).
         attr("x", (d, i) -> i * 30).
         attr("height", (d) => @y d.value_y()).
         attr("width", (d) => @x d.value_x())
+
+      # add legend
+      legends = @svg.selectAll("svg.legend").
+        data(@nodes.models, (d) -> d.get('key')).
+        enter().
+        append("svg:svg").
+        attr("class", "legend").
+        attr("x", (d, i) -> 100 * (Math.floor(i / 4)) + 10).
+        attr("y", (d, i) -> 18 * (i % 4)).
+        attr("height", 30).
+        attr("width", 90)
+
+      legends.append("svg:rect").
+        attr("width", 10).
+        attr("height", 10).
+        attr("fill", (d, i) => @color(i))
+      legends.append("svg:text").
+        text((d) -> d.get('key')).
+        attr("x", 15).
+        attr("y", 8)
 
     refresh: =>
       @y          = d3.scale.linear().domain([0, @nodes.max_height()]).range([0, @height])

@@ -1,8 +1,6 @@
-#output_element_actions{:class => @output_element.type}
+.output_element_actions{:class => @output_element.type}
   %a.chart_info.tooltip.fancybox{:href => "/descriptions/charts/#{@output_element.id}",
-    :alt   => "info",
-    :title => "info"}
-    ?
+    :title => "info"} ?
   %a.select_chart.tooltip{:href => "/output_elements",
     :title => t("output_elements.common.change_chart")}
     = t "output_elements.common.change_chart"

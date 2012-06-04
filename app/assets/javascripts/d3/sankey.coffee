@@ -224,7 +224,7 @@ D3.sankey =
         x((d) -> @x(d.x)).
         y((d) -> @y(d.y))
 
-      @svg = d3.select("#d3_container").
+      @svg = d3.select("#d3_container_sankey").
         append("svg:svg").
         attr("height", @height).
         attr("width", @width)

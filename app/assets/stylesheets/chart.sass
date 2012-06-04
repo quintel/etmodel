@@ -17,7 +17,7 @@
     letter-spacing: -1px
   a:hover
     text-decoration: underline
-  #output_element_actions
+  .output_element_actions
     background-color: #f4f9ff
     padding: 2px 8px 2px 31px
     a
@@ -30,10 +30,10 @@
       &.active
         color: red
         font-weight: bold
-  #charts_container
+  .charts_container
     position: relative
     height: 400px
-    #chart_not_finished
+    .chart_not_finished
       display: none
       position: absolute
       top: -5px
@@ -81,7 +81,7 @@ table.autostripe
   tbody tr:nth-child(2n+1)
     background-color: #ddd
 
-#d3_container
+#d3_container_sankey
   text.label
     font-family: Helvetica, Arial, sans-serif
     text-transform: uppercase
@@ -96,6 +96,8 @@ table.autostripe
   g.unit
     text
       font-size: 9px
+
+#d3_container_mekko
   div.cell
     border: 1px solid white
     overflow: hidden
@@ -103,6 +105,8 @@ table.autostripe
     font: 9px sans-serif
     line-height: 12px
     text-indent: 2px
+
+#d3_container_merit_order
   rect.merit_order_node
     fill-opacity: .80
   .x.axis, .y.axis

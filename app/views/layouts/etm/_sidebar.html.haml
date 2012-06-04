@@ -8,7 +8,7 @@
             :class => (params[:id] == item.key) ? 'active' : nil,
             :'data-gquery' => item.percentage_bar_query}
           = link_to url_for(:controller => tab.key, :action => item.key),
-            :'data-nav' => true do
+            :'data-nav' => false do
             %p
               %span.title{:class => "ico-#{item.key} icon"}
                 = raw t("sidebar_items.#{item.key}")

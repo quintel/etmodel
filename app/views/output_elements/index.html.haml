@@ -11,4 +11,4 @@
           %p
             - desc = output_element.description
             = desc.blank? ? "" : desc.short_content
-            = image_tag "output_elements/#{output_element.type}.png", :size => "100x60"
+            = image_tag "output_elements/#{output_element.icon}", :size => "100x60"

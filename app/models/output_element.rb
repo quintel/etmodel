@@ -100,4 +100,13 @@ class OutputElement < ActiveRecord::Base
   def type
     output_element_type.try(:name)
   end
+  
+  # Icon shown on the select chart popup
+  def icon
+    if d3_chart?
+      "#{key}.png"
+    else
+      "#{type}.png"
+    end
+  end
 end

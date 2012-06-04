@@ -51,7 +51,7 @@ D3.merit_order =
       @yAxisScale = d3.scale.linear().domain([0, 100]).range([@height, 0])
       @xAxis = d3.svg.axis().scale(@x).ticks(4).orient("bottom")
       @yAxis = d3.svg.axis().scale(@yAxisScale).ticks(4).orient("left")
-      @svg = d3.select("#d3_container").
+      @svg = d3.select("#d3_container_merit_order").
         append("svg:svg").
         attr("height", @height + 2 * @margin).
         attr("width", @width + 2 * @margin).

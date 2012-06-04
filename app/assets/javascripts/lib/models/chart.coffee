@@ -12,31 +12,38 @@ class @Chart extends Backbone.Model
 
   render : =>
     type = @get('type')
-    @view = switch (type)
-      when 'bezier'                 then new BezierChartView({model : this})
-      when 'horizontal_bar'         then new HorizontalBarChartView({model : this})
-      when 'horizontal_stacked_bar' then new HorizontalStackedBarChartView({model : this})
-      when 'mekko'                  then new MekkoChartView({model : this})
-      when 'waterfall'              then new WaterfallChartView({model : this})
-      when 'vertical_stacked_bar'   then new VerticalStackedBarChartView({model : this})
-      when 'grouped_vertical_bar'   then new GroupedVerticalBarChartView({model : this})
-      when 'policy_bar'             then new PolicyBarChartView({model : this})
-      when 'line'                   then new LineChartView({model : this})
-      when 'block'                  then new BlockChartView({model : this})
-      when 'vertical_bar'           then new VerticalBarChartView({model : this})
-      when 'html_table'             then new HtmlTableChartView({model : this})
-      when 'scatter'                then new ScatterChartView({model : this})
+    view_class = switch type
+      when 'bezier'                 then BezierChartView
+      when 'horizontal_bar'         then HorizontalBarChartView
+      when 'horizontal_stacked_bar' then HorizontalStackedBarChartView
+      when 'mekko'                  then MekkoChartView
+      when 'waterfall'              then WaterfallChartView
+      when 'vertical_stacked_bar'   then VerticalStackedBarChartView
+      when 'grouped_vertical_bar'   then GroupedVerticalBarChartView
+      when 'policy_bar'             then PolicyBarChartView
+      when 'line'                   then LineChartView
+      when 'block'                  then BlockChartView
+      when 'vertical_bar'           then VerticalBarChartView
+      when 'html_table'             then HtmlTableChartView
+      when 'scatter'                then ScatterChartView
       when 'd3'                     then @d3_view_factory()
-      else new HtmlTableChartView({model : this})
+      else HtmlTableChartView
+    @view = new view_class
+      model: this
+      el: @outer_container()
     @view.update_title()
     @view
+  
+  # the container just holds the chart, the outer container has the chart
+  # action links, title, etc.
+  outer_container: => $('#' + @get('container'))
 
   # D3 charts have their own class. Let's make an instance of the right one
   # D3 is a pseudo-namespace. See d3_chart_view.coffee
   d3_view_factory: =>
     key = @.get 'key'
     if D3[key] && D3[key].View
-      new D3[key].View({model: this})
+      D3[key].View
     else
       false
 

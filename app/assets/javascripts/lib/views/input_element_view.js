@@ -238,7 +238,7 @@
     render: function () {
       // TEMPLATING.
 
-      $(this.el).addClass('new-input-slider').html(
+      this.$el.addClass('new-input-slider').html(
         INPUT_ELEMENT_T({
           name:             this.model.get('translated_name'),
           info:             this.model.get('parsed_description'),
@@ -532,7 +532,7 @@
         ACTIVE_INFO_BOX = this;
       }
 
-      this.el.toggleClass('info-box-visible');
+      this.$el.toggleClass('info-box-visible');
       infoBox.animate({
         height:  ['toggle', 'easeOutCubic'],
         opacity: ['toggle', 'easeOutQuad']
@@ -638,7 +638,7 @@
      * parent element.
      */
     render: function () {
-      var $el = $(this.el);
+      var $el = this.$el;
 
       this.model = this.view.quinn.model;
 
@@ -649,7 +649,7 @@
       this.unitEl     = this.$('select');
       this.unitNameEl = this.$('.unit');
 
-      this.view.el.append($el);
+      this.view.$el.append($el);
 
       if (this.view.model.get('disabled')) {
         this.inputEl.attr('disabled', true);
@@ -709,14 +709,14 @@
       this.unitEl.val(this.selectedConversion.uid);
       this.unitNameEl.text(this.selectedConversion.unit);
 
-      $(this.el).fadeIn('fast');
+      this.$el.fadeIn('fast');
 
       if (! this.inputEl.attr('disabled')) {
         this.inputEl.focus().select();
       }
 
       // IE.
-      this.view.el.css('z-index', 4000);
+      this.view.$el.css('z-index', 4000);
 
       return false;
     },
@@ -736,9 +736,9 @@
 
       this.view.conversion = this.selectedConversion;
       this.view.setTransientValue(this.inputValue());
-      $(this.el).fadeOut('fast');
+      this.$el.fadeOut('fast');
 
-      this.view.el.css('z-index', 10);
+      this.view.$el.css('z-index', 10);
 
       ACTIVE_VALUE_SELECTOR = null;
 

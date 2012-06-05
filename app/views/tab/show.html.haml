@@ -8,5 +8,10 @@
       = t("not_available")
 
   #charts_wrapper
-    #charts_holder
-      = render "output_elements/chart"
+    = render :partial => "output_elements/chart",
+      :locals => {:chart => @output_element, :dom_id => 'current_chart'}
+    =# render :partial => "output_elements/chart",
+      :locals => {:chart => nil, :dom_id => 'alternate_chart'}
+
+- content_for :footer do
+  = render 'output_elements/table_template'

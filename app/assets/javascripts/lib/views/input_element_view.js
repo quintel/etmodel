@@ -238,7 +238,7 @@
     render: function () {
       // TEMPLATING.
 
-      this.el.addClass('new-input-slider').html(
+      $(this.el).addClass('new-input-slider').html(
         INPUT_ELEMENT_T({
           name:             this.model.get('translated_name'),
           info:             this.model.get('parsed_description'),

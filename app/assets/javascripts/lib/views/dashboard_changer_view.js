@@ -111,9 +111,7 @@
     constraintsEl.find('.constraint').remove();
     constraintsEl.prepend(data.html);
 
-    // TODO ET-Model is currently using Backbone 0.3. When we upgrade to
-    //      >= 0.5 change this to: window.dashboard.reset(data);
-    window.dashboard.refresh(data.constraints);
+    window.dashboard.reset(data.constraints);
 
     window.dashboard.each(function (constraint) {
       constraint.update_values();

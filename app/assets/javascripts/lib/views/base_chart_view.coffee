@@ -29,11 +29,13 @@ class @BaseChartView extends Backbone.View
 
   container_id: -> @model.get("container")
 
+  # This is the dom element that will be filled with the chart. jqPlot expects
+  # an id
   container_node : -> $("##{@container_id()}")
 
   clear_container: -> @container_node().empty()
 
-  title_node : -> $("#charts_holder h3")
+  title_node : -> @container_node().parents(".chart_holder").find('h3')
 
   update_title: -> @title_node().html(@model.get("name"))
 

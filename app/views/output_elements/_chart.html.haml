@@ -1,7 +1,8 @@
-%h3= raw t("output_elements.#{@output_element.key}")
-= render "output_elements/output_element_actions"
-#charts_container
-  #chart_not_finished
-  #current_chart
-= javascript_include_tag output_element_path(:id => @output_element, :format => 'js')
-= render 'output_elements/table_template'
+.chart_holder
+  %h3= raw t("output_elements.#{chart.key}") if chart
+  = render "output_elements/output_element_actions"
+  .charts_container
+    .chart_not_finished
+    %div{:id => dom_id}
+  - if chart
+    = javascript_include_tag output_element_path(:id => chart, :format => 'js')

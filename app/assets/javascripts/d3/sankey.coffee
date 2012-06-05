@@ -11,8 +11,8 @@ D3.sankey =
       {id: 'solar',       column: 0},
       {id: 'waste',       column: 0}
 
-      {id: 'el_prod',     column: 1, label: "electricity\nproduction"},
-      {id: 'heat_prod',   column: 1, label: "heating\nproduction"},
+      {id: 'el_prod',     column: 1, label: "electricity production"},
+      {id: 'heat_prod',   column: 1, label: "heating production"},
 
       {id: 'households',  column: 2},
       {id: 'buildings',   column: 2},
@@ -70,8 +70,8 @@ D3.sankey =
   # Helper classes
   #
   Node: class extends Backbone.Model
-    @width: 15
-    @horizontal_spacing: 184
+    @width: 25
+    @horizontal_spacing: 250
 
     initialize: =>
       # shortcut to access the collection objects
@@ -89,7 +89,7 @@ D3.sankey =
         offset += n.value() + margin
       offset
 
-    x_offset: => @get('column') * D3.sankey.Node.horizontal_spacing + 20
+    x_offset: => @get('column') * D3.sankey.Node.horizontal_spacing
     x_center: => @x_offset() + D3.sankey.Node.width / 2
     y_center: => @y_offset() + @value() / 2
 
@@ -203,19 +203,15 @@ D3.sankey =
     # want a full chart refresh when the user resizes the browser window, too
     #
     draw: =>
-      @width = @container_node().width() || 490
-      @height = @container_node().height() || 502
+      @margin = 50
+      @width = (@container_node().width()   || 490) - 2 * @margin
+      @height = (@container_node().height() || 402) - 2 * @margin
 
       # set up the scaling methods
-      #
-      @x = d3.scale.linear().
-        domain([0, 490]).
-        range([0, @width])
+      @x = d3.scale.linear().domain([0, 600]).range([0, @width])
 
       # this one will be changed dynamically later on
-      @y = d3.scale.linear().
-        domain([0, 5000]).
-        range([0, @height])
+      @y = d3.scale.linear().domain([0, 5000]).range([0, @height])
 
       # This is the function that will take care of drawing the links once we've
       # set the base points
@@ -224,38 +220,22 @@ D3.sankey =
         x((d) -> @x(d.x)).
         y((d) -> @y(d.y))
 
-      @svg = d3.select("#d3_container").
+      @svg = d3.select("#d3_container_sankey").
         append("svg:svg").
-        attr("height", @height).
-        attr("width", @width)
+        attr("height", @height + 2 * @margin).
+        attr("width", @width + 2 * @margin).
+        append("svg:g").
+        attr("transform", "translate(#{@margin}, #{@margin})")
       @links = @draw_links()
       @nodes = @draw_nodes()
-      @units = @draw_units()
+      @axis = @draw_axis()
 
-    draw_units: =>
-      x_position = 280
-      units = @svg.selectAll('g.unit').
-        data(@unit_blocks, (d) -> d.id).
-        enter().
-        append("svg:g").
-        attr("class", "unit")
-
-      units.append("svg:rect").
-        style("stroke", "none").
-        style("fill", "grey").
-        attr("x", x_position).
-        attr("y", (d,i) -> 350 + 20 * i).
-        attr("height", (d) => @y d.value).
-        attr("width", (d) => @x(40)).
-        style("opacity", 0.5)
-
-      units.append("svg:text").
-        attr("x", x_position + 20).
-        attr("y", (d,i) -> 350 + 20 * i + 5).
-        attr("text-anchor", "middle").
-        text((d) -> "#{d.value}PJ")
-
-      return units
+    draw_axis: =>
+      @y_axis = d3.svg.axis().scale(@y).ticks(4).orient("left")
+      @svg.append("svg:g").
+        attr("class", "y axis").
+        attr("transform", "translate(-10, 0)").
+        call(@y_axis)
 
     draw_links: =>
       # links are treated as a group made of a link path and label text element
@@ -303,7 +283,7 @@ D3.sankey =
         append("svg").
         attr("class", (d) -> "node").
         attr("data-id", (d) -> d.get('id')).
-        attr("x", (d) => @x(@module.Node.horizontal_spacing * d.get('column') + 20)).
+        attr("x", (d) => @x(@module.Node.horizontal_spacing * d.get('column'))).
         attr("y", (d) => @y(d.y_offset()))
 
       # The rectangle just cares about its size and color
@@ -323,32 +303,11 @@ D3.sankey =
       #
       nodes.append("svg:text").
         attr("class", "label").
-        attr("x", 30).
+        attr("x", @x 30).
         attr("y", 9).
-        each(@add_label) # call() passes the entire collection
+        text((d) -> d.label())
 
       return nodes
-
-    # adding multiline labels is harder than you would expect, let's move this
-    # logic to a separate method.
-    #
-    # Some info here:
-    # https://groups.google.com/group/d3-js/browse_thread/thread/5662ff1f312abb9d
-    #
-    add_label: (item) ->
-      # this method is called by the previous each() call. The parameter is the
-      # joint data model, while +this+ is the associated DOM element, _not_
-      # wrapped by D3 though!
-      #
-      lines = item.label().split("\n")
-      y = 0 #item.value() / 2
-      for line in lines
-        d3.select(this). # wrap it, so we can use the +append+ method
-        append("tspan").
-        attr("x", 25).
-        attr("dy", y).
-        text(line)
-        y += 10
 
     # formats the value shown in the link labels
     #
@@ -401,18 +360,8 @@ D3.sankey =
         domain([0, max_height * 1.25]).
         range([0, @height * .90])
 
-      # refresh the unit squares
-      #
-      if @units
-        @units.data(@unit_blocks, (d) -> d.id).
-          selectAll("rect").
-          transition().duration(500).
-          attr("height", (d) => @y d.value)
-        # update label height
-        @units.data(@unit_blocks, (d) -> d.id).
-          selectAll("text").
-          transition().duration(500).
-          attr("dy", (d) => @y(d.value / 2))
+      # refresh the axis
+      @svg.selectAll(".y").transition().duration(500).call(@y_axis.scale(@y))
 
       # start by translating the container to the final position
       #

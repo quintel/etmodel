@@ -1,6 +1,4 @@
 #select_charts
-  %h1
-    = t("output.available")
   - %w[Overview Dashboard Policy Supply Demand Cost].each do |group|
     %h1= t(group)
     - OutputElement.not_hidden.select_by_group(group).each do |output_element|
@@ -11,4 +9,4 @@
           %p
             - desc = output_element.description
             = desc.blank? ? "" : desc.short_content
-            = image_tag "output_elements/#{output_element.type}.png", :size => "100x60"
+          = image_tag "output_elements/#{output_element.icon}", :size => "100x60"

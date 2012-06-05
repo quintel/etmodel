@@ -26,9 +26,11 @@
           %span.text
             %input{ :name => 'q', :type => "text", :value => "#{t("search_the_website")}", :onclick => "$(this).val('');" }
 
-  %h3 
-    Energy Transition Model
-    %em PRO
+  
+  = link_to home_path do
+    %h3
+      Energy Transition Model
+      %em PRO
 
   = render "layouts/etm/header_menus"
 

@@ -106,7 +106,7 @@ D3.mekko =
         .size([@width, @height])
         .sticky(true)
         .value((d) -> d.val())
-      @svg = d3.select("#d3_container").
+      @svg = d3.select("#d3_container_mekko").
         append("div").
         style("position", "relative").
         style("height", "#{@height}px").

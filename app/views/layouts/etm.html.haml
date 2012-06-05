@@ -35,6 +35,7 @@
     - unless APP_CONFIG[:standalone]
       = render "layouts/etm/ga" if Rails.env.production?
 
+  #scripts
     -# stick the footer at the bottom of the page if we're on an iPad/iPhone due to viewport/page bugs in mobile webkit
     %script
       if (_.include(['iPad', 'iPhone', 'iPod'], navigator.platform)) { $("#footer").css("position", "static"); };
@@ -48,3 +49,4 @@
       - if admin?
         etm_js_debug = true;
         console.log('Scenario URL: #{scenario_in_etengine_url}');
+    = yield :scripts

@@ -1,7 +1,7 @@
 class @ChartSerie extends Backbone.Model
   initialize : ->
-    gquery = new Gquery({key : this.get('gquery_key')})
-    @set({gquery : gquery})
+    gquery = gqueries.find_or_create_by_key @get('gquery_key')
+    @set {gquery : gquery}
 
   result: -> @get('gquery').result()
 

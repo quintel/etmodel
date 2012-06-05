@@ -118,7 +118,7 @@ D3.sankey =
       @left = @module.nodes.get @get('left')
       @right = @module.nodes.get @get('right')
       if @get('gquery')
-        @gquery = new Gquery({key: @get('gquery')})
+        @gquery = gqueries.find_or_create_by_key @get('gquery')
       # let the nodes know about me
       @left.right_links.push this
       @right.left_links.push this

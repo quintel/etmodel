@@ -68,7 +68,7 @@ D3.mekko =
 
   Node: class extends Backbone.Model
     initialize: ->
-      @gquery = new Gquery({key: @get('gquery')})
+      @gquery = gqueries.find_or_create_by_key @get('gquery')
 
     # value is apparently a reserved name
     val: =>

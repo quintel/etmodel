@@ -105,14 +105,13 @@ class @AppView extends Backbone.View
     App.unregister_api_call('call_api')
     loading.fadeIn('fast') #show loading overlay
     for own key, values of data.result
-      gqueries = window.gqueries.with_key(key)
-      for g in gqueries
-        g.handle_api_result(values)
+      gquery = window.gqueries.with_key(key)
+      gquery.handle_api_result(values)
     window.charts.invoke 'trigger', 'change'
-    if window.targets
-      window.targets.invoke('update_view')
-      window.targets.update_totals()
-      window.targets.update_total_score()
+    if t = window.targets
+      t.invoke('update_view')
+      t.update_totals()
+      t.update_total_score()
     window.sidebar.update_bars()
 
     if App.settings.get('track_peak_load') && App.peak_load

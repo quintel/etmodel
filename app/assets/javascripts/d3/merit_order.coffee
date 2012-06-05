@@ -23,10 +23,8 @@ D3.merit_order =
   Node: class extends Backbone.Model
     initialize: ->
       k = @get 'key'
-      @gquery_x = new Gquery
-        key: "merit_order_#{k}_capacity_in_merit_order_table"
-      @gquery_y = new Gquery
-        key: "merit_order_#{k}_operating_costs_in_merit_order_table"
+      @gquery_x = gqueries.find_or_create_by_key "merit_order_#{k}_capacity_in_merit_order_table"
+      @gquery_y = gqueries.find_or_create_by_key "merit_order_#{k}_operating_costs_in_merit_order_table"
 
     value_x: => @gquery_x.get('future_value')
     value_y: => @gquery_y.get('future_value')

@@ -21,15 +21,16 @@ class @Gquery extends Backbone.Model
    # - Array: normal GQL Queries
   handle_api_result : (api_result) ->
     if !(api_result instanceof Array)
-      @set({
-        present_value : api_result, future_value : api_result,
-        value : api_result, result_type : 'scalar'})
+      @set
+        present_value : api_result
+        future_value : api_result
+        value : api_result
+        result_type : 'scalar'
     else
-      @set({
-        present_year  : api_result[0][0], present_value : api_result[0][1],
-        future_year   : api_result[1][0], future_value  : api_result[1][1],
+      @set
+        present_year: api_result[0][0], present_value : api_result[0][1]
+        future_year : api_result[1][0], future_value  : api_result[1][1]
         result_type : 'array'
-      })
 
   is_acceptable_value : (n) ->
     return true if _.isBoolean(n)
@@ -39,12 +40,15 @@ class @Gquery extends Backbone.Model
 class GqueryList extends Backbone.Collection
   model : Gquery
 
-  # TODO: use find and prevent gquery duplication
-  with_key : (gquery_key) ->
-    @filter (gquery) => gquery.get('key') == gquery_key
+  with_key: (key) => @find (g) -> g.get('key') == key
 
-  keys : ->
-    keys = window.gqueries.map (gquery) -> gquery.get('key')
-    _.compact(keys)
+  keys: => _.compact(@pluck('key'))
+
+  find_or_create_by_key: (key) =>
+    if g = @with_key key
+      return g
+    else
+      return new Gquery
+        key: key
 
 window.gqueries = new GqueryList

@@ -1,14 +1,14 @@
 class @BlockChartSerie extends Backbone.Model
   initialize : ->
-    # the block chart has a different behavious; its gqueries follow a naming
+    # the block chart has a different behaviour; its gqueries follow a naming
     # convention
     key = @get 'gquery_key'
     cost_gql_query = "costs_of_#{key}_in_overview_costs_of_electricity_production"
     investment_gql_query = "investment_for_#{key}_in_overview_costs_of_electricity_production"
 
     @set
-      gquery_cost:       new Gquery({key : cost_gql_query}),
-      gquery_investment: new Gquery({key : investment_gql_query})
+      gquery_cost:       gqueries.find_or_create_by_key(cost_gql_query)
+      gquery_investment: gqueries.find_or_create_by_key(investment_gql_query)
 
   result : ->
     return [

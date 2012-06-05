@@ -5,4 +5,5 @@
     .chart_not_finished
     %div{:id => dom_id}
   - if chart
-    = javascript_include_tag output_element_path(:id => chart, :format => 'js')
+    :javascript
+      charts.load(#{chart.id})

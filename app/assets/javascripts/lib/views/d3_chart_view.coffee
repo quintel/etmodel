@@ -9,16 +9,15 @@
 class @D3ChartView extends BaseChartView
   render: (force_redraw) =>
     if force_redraw || !@already_on_screen()
-      $('#' + @chart_container_id()).empty()
       @container_node().html(@html())
       @draw()
     @refresh()
 
   already_on_screen: =>
-    @container_node().find('#' + @chart_container_id()).length == 1
+    $('#' + @chart_container_id()).length == 1
 
   html: => "<div id='#{@chart_container_id()}'></div>"
-  
+
   chart_container_id: => "d3_container_#{@model.get 'key'}"
 
   can_be_shown_as_table: -> false

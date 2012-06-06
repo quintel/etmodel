@@ -35,9 +35,9 @@ class @BaseChartView extends Backbone.View
 
   clear_container: -> @container_node().empty()
 
-  title_node : -> @container_node().parents(".chart_holder").find('h3')
-
-  update_title: -> @title_node().html(@model.get("name"))
+  update_title: ->
+    @$el.find('h3').html(@model.get("name"))
+    @$el.data('chart_id', @model.get('id'))
 
   create_legend: (opts) ->
     renderer: $.jqplot.EnhancedLegendRenderer

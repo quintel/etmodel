@@ -142,7 +142,10 @@ class @ChartList extends Backbone.Collection
   # - wait: if true an api_call won't be fired immediately. Useful when we want
   # to show multiple charts on the same page
   load : (chart_id, container_id = false, wait = false) ->
-    return false if App.settings.get('pinned_chart')
+    # this check is quite ugly, the charts and holders mapping should be defined
+    # better
+    if App.settings.get('pinned_chart') && container_id != 'current_chart'
+      return false
     App.etm_debug('Loading chart: #' + chart_id)
     App.etm_debug "#{window.location.origin}/admin/output_elements/#{chart_id}"
     url = "/output_elements/#{chart_id}"
@@ -183,8 +186,12 @@ class @ChartList extends Backbone.Collection
   current_id : ->
     parseInt(@first().get('id'))
 
+  # TODO: remove, we'll soon be having multiple charts per page
+  #
   current: -> @first()
 
+  # TODO: This stuff should be moved to a backbone view
+  #
   setup_callbacks: ->
     $("a.default_charts").live 'click', =>
       App.settings.set({pinned_chart: false})
@@ -196,7 +203,8 @@ class @ChartList extends Backbone.Collection
       App.settings.set({pinned_chart: false})
       $("a.pin_chart").removeClass("active")
       chart_id = $(e.target).parents('a').data('chart_id')
-      @load chart_id
+      chart_holder = $(e.target).parents('a').data('chart_holder') || 'current_chart'
+      @load chart_id, chart_holder
       close_fancybox()
 
     $("a.table_format").live 'click', =>

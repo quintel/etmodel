@@ -13,6 +13,6 @@
       %div{:style=>"background-color:#{serie.color}"}
       %span= t("output_element_series.#{serie.label}")
 :javascript
-  #{ js_for_output_element(47, 'output_element_47') }
-  #{ js_for_output_element(76, 'output_element_76') }
-  App.call_api();
+  // TODO: remove double request
+  charts.load(47, 'output_element_47')
+  charts.load(76, 'output_element_76')

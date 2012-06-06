@@ -100,13 +100,24 @@ class OutputElement < ActiveRecord::Base
   def type
     output_element_type.try(:name)
   end
-  
+
   # Icon shown on the select chart popup
   def icon
     if d3_chart?
       "#{key}.png"
     else
       "#{type}.png"
+    end
+  end
+
+  # Some charts require custom HTML. This method returns the appropriate
+  # template
+  def template
+    return nil if jqplot_based? || d3_chart?
+    template = if html_table?
+      "output_elements/tables/chart_#{id}"
+    else
+      "output_elements/block_chart"
     end
   end
 end

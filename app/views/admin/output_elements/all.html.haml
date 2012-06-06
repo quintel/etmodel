@@ -1,25 +1,23 @@
 %h1 All output elements
 
-- @output_elements.each do |o|
-  .chart
-    %h3
-      = o.key
-      = link_to 'show', [:admin, o]
-    = content_tag_for :div, o do
-      Loading
-    :javascript
-      #{ js_for_output_element(o.id, "output_element_#{o.id}") }
-    - if o.html_table?
-      - @output_element = o
+%h2 Temporarily disabled
+
+-#
+  - @output_elements.each do |o|
+    .chart
+      %h3
+        = o.key
+        = link_to 'show', [:admin, o]
+      = content_tag_for :div, o do
+        Loading
       :javascript
-        charts.html[#{o.id}] = '#{js_render_chart(o)}';
+        charts.load(#{o.id}, "output_element_#{o.id}", true);
 
-
-- content_for :head do
-  = render "layouts/etm/javascript_globals"
-  = javascript_include_tag 'etm'
-- content_for :footer do
-  :javascript
-    App.settings = new Setting(#{Current.setting.to_json.html_safe});
-    App.ensure_scenario_id();
-    App.call_api();
+  - content_for :head do
+    = render "layouts/etm/javascript_globals"
+    = javascript_include_tag 'etm'
+  - content_for :footer do
+    :javascript
+      App.settings = new Setting(#{Current.setting.to_json.html_safe});
+      App.ensure_scenario_id();
+      App.call_api()

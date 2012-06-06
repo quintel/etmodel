@@ -4,5 +4,4 @@
   #charts_wrapper
     %div{ :id => "output_element_46", :style=>'height:230px;width:550px'}
 :javascript
-  #{ js_for_output_element(46, 'output_element_46') }
-  App.call_api();
+  charts.load(46, "output_element_46")

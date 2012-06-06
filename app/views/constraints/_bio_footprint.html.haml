@@ -18,7 +18,7 @@
       = Current.setting.end_year
     .overlay{:style => "background: url(#{map}) repeat-x; height: 105px;"} &nbsp;
 :javascript
-  var q = new Gquery({key: 'bio_footprint'});
+  var q = gqueries.find_or_create_by_key('bio_footprint');
   App.call_api();
   $("body").bind("dashboardUpdate", function(){
     var present = q.get('present_value');

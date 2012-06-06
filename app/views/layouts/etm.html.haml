@@ -30,7 +30,6 @@
         = render "input_elements/value_selector"
         = render "layouts/etm/footer"
       .clear
-      #loading{:style => 'display: none'} Loading...
 
     - unless APP_CONFIG[:standalone]
       = render "layouts/etm/ga" if Rails.env.production?

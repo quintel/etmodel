@@ -10,8 +10,8 @@
           = link_to url_for(:controller => tab.key, :action => item.key),
             :'data-nav' => false do
             %p
-              %span.title{:class => "ico-#{item.key} icon"}
+              %span.title
                 = raw t("sidebar_items.#{item.key}")
-              - unless item.percentage_bar_query.blank?
+              - if item.percentage_bar_query.present?
                 %span.bar{:alt => t('sidebar_items.alt'), :style => "width: 0px"}
                 %span.value

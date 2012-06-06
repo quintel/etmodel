@@ -59,6 +59,7 @@ group :assets do
   gem 'uglifier'
   gem 'yui-compressor'
   gem 'compass-rails'
+  gem 'oily_png' # Faster sprite compilation.
 end
 
 gem 'capistrano'

@@ -1,62 +1,71 @@
-.ico-households
-  background-image: url(/assets/layout/ico-households.gif)
-.ico-buildings
-  background-image: url(/assets/layout/ico-offices_schools.gif)
-.ico-industry
-  background-image: url(/assets/layout/ico-industry.gif)
-.ico-agriculture
-  background-image: url(/assets/layout/ico-agriculture.gif)
-.ico-transport
-  background-image: url(/assets/layout/ico-transport.gif)
-.ico-transport_fuels
-  background-image: url(/assets/layout/ico-transport.gif)
-.ico-other
-  background-image: url(/assets/layout/ico-other.gif)
-.ico-combustion
-  background-image: url(/assets/layout/ico-combustion.gif)
-.ico-nuclear
-  background-image: url(/assets/layout/ico-nuclear.gif)
-.ico-wind
-  background-image: url(/assets/layout/ico-wind.gif)
-.ico-water
-  background-image: url(/assets/layout/ico-water.gif)
-.ico-solar
-  background-image: url(/assets/layout/ico-solar.gif)
-.ico-co2
-  background-image: url(/assets/layout/ico-co2.gif)
-.ico-earth
-  background-image: url(/assets/layout/ico-earth.gif)
-.ico-sustainability
-  background-image: url(/assets/layout/ico-target.gif)
-.ico-area
-  background-image: url(/assets/layout/ico-area.gif)
-.ico-dependence
-  background-image: url(/assets/layout/ico-dependence.gif)
-.ico-cost
-  background-image: url(/assets/layout/ico-cost.gif)
-.ico-grid
-  background-image: url(/assets/layout/ico-grid.gif)
-.ico-fossil
-  background-image: url(/assets/layout/ico-fossil.gif)
-.ico-electricity
-  background-image: url(/assets/layout/ico-electricity.gif)
-.ico-electricity_renewable
-  background-image: url(/assets/layout/ico-electricity_renewable.gif)
-.ico-fossil_heat
-  background-image: url(/assets/layout/ico-fossil.gif)
-.ico-renewable_heat
-  background-image: url(/assets/layout/ico-renew_heat.gif)
-.ico-fuels
-  background-image: url(/assets/layout/ico-fuels.gif)
-.ico-infrastructure
-  background-image: url(/assets/layout/ico-infrastructure.gif)
-.ico-other_fuels
-  background-image: url(/assets/layout/ico-fuels.gif)
-.ico-fce
-  background-image: url(/assets/layout/ico-fce.gif)
-.ico-merit_order
-  background-image: url(/assets/layout/ico-merit_order.gif)
-.ico-electricity_backup
-  background-image: url(/assets/layout/ico-electricity_backup.gif)
-.ico-employment
-  background-image: url(/assets/layout/ico-employment.gif)
+@import "layout/sidebar/*.png"
+
+=sidebar-icon($name)
+  span.title
+    +sidebar-sprite($name)
+  &.active span.title, a:hover span.title
+    +sidebar-sprite-position($name, 0, -25px)
+
+#sidebar
+  #households
+    +sidebar-icon(households)
+  #buildings
+    +sidebar-icon(offices_schools)
+  #industry
+    +sidebar-icon(industry)
+  #agriculture
+    +sidebar-icon(agriculture)
+  #transport
+    +sidebar-icon(transport)
+  #transport_fuels
+    +sidebar-icon(transport)
+  #other
+    +sidebar-icon(other)
+  #combustion
+    +sidebar-icon(combustion)
+  #nuclear
+    +sidebar-icon(nuclear)
+  #wind
+    +sidebar-icon(wind)
+  #water
+    +sidebar-icon(water)
+  #solar
+    +sidebar-icon(solar)
+  #co2
+    +sidebar-icon(co2)
+  #earth
+    +sidebar-icon(earth)
+  #sustainability
+    +sidebar-icon(target)
+  #area
+    +sidebar-icon(area)
+  #dependence
+    +sidebar-icon(dependence)
+  #cost
+    +sidebar-icon(cost)
+  #grid
+    +sidebar-icon(grid)
+  #fossil
+    +sidebar-icon(fossil)
+  #electricity
+    +sidebar-icon(electricity)
+  #electricity_renewable
+    +sidebar-icon(electricity_renewable)
+  #fossil_heat
+    +sidebar-icon(fossil)
+  #renewable_heat
+    +sidebar-icon(renew_heat)
+  #fuels
+    +sidebar-icon(fuels)
+  #infrastructure
+    +sidebar-icon(infrastructure)
+  #other_fuels
+    +sidebar-icon(fuels)
+  #fce
+    +sidebar-icon(fce)
+  #merit_order
+    +sidebar-icon(merit_order)
+  #electricity_backup
+    +sidebar-icon(electricity_backup)
+  #employment
+    +sidebar-icon(employment)

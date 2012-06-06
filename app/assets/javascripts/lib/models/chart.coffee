@@ -33,7 +33,7 @@ class @Chart extends Backbone.Model
       el: @outer_container()
     @view.update_title()
     @view
-  
+
   # the container just holds the chart, the outer container has the chart
   # action links, title, etc.
   outer_container: => $('#' + @get('container'))
@@ -141,26 +141,36 @@ class @ChartList extends Backbone.Collection
     return false if App.settings.get('pinned_chart')
     App.etm_debug('Loading chart: #' + chart_id)
     App.etm_debug "#{window.location.origin}/admin/output_elements/#{chart_id}"
-    url = "/output_elements/#{chart_id}.js"
-    $.getScript url, =>
-      # show/hide default chart button
-      #
-      $("a.default_charts").toggle(chart_id != @current_default_chart)
+    url = "/output_elements/#{chart_id}"
+    $.ajax
+      url: url
+      success: (data) =>
+        @html[chart_id] = data.html
+        old_chart = @current()
+        new_chart = new Chart(data.attributes)
+        @remove old_chart
+        @add new_chart
+        for s in data.series
+          new_chart.series.add s
 
-      # show/hide format toggle button
-      #
-      $("a.table_format").toggle( @current().view.can_be_shown_as_table() )
-      $("a.chart_format").hide()
+        # show/hide default chart button
+        #
+        $("a.default_charts").toggle(chart_id != @current_default_chart)
 
-      # update chart information link
-      #
-      $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/#{chart_id}")
+        # show/hide format toggle button
+        #
+        $("a.table_format").toggle( @current().view.can_be_shown_as_table() )
+        $("a.chart_format").hide()
 
-      # show.hide the under_construction notice
-      #
-      $("#chart_not_finished").toggle @first().get("under_construction")
-      App.call_api()
-      @first()
+        # update chart information link
+        #
+        $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/#{chart_id}")
+
+        # show.hide the under_construction notice
+        #
+        $("#chart_not_finished").toggle @first().get("under_construction")
+        App.call_api()
+    @first()
 
   # returns the current chart id
   current_id : ->

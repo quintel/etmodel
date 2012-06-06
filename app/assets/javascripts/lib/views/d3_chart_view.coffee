@@ -9,7 +9,7 @@
 class @D3ChartView extends BaseChartView
   render: (force_redraw) =>
     if force_redraw || !@already_on_screen()
-      @container_node().html(@html())
+      @$el.find(".chart_canvas").empty().html(@html())
       @draw()
     @refresh()
 

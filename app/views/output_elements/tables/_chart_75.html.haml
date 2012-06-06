@@ -13,7 +13,7 @@
       %th HV-MV transformer
       %th HV Transport net
 
-  - columns = @output_element.allowed_output_element_series.group_by{|serie| (serie.order_by / 100).to_i }
+  - columns = output_element.allowed_output_element_series.group_by{|serie| (serie.order_by / 100).to_i }
   -# columns = {1 => [<Serie>,<Serie>], 2 => [...], 3 => [...]}
   - rows = columns.values.map(&:length).max - 1 rescue 0
   %tbody

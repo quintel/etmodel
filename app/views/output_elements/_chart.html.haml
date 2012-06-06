@@ -3,7 +3,7 @@
   = render "output_elements/output_element_actions"
   .charts_container
     .chart_not_finished
-    %div{:id => dom_id}
+    .chart_canvas{:id => dom_id}
   - if chart
     :javascript
       charts.load(#{chart.id})

@@ -137,14 +137,19 @@ class @ChartList extends Backbone.Collection
   # using the chart_id as key.
   html: {}
 
+  # We can have multiple charts. This hash keeps track ok which chart holders
+  # are being used
+  chart_holders: {}
+
   # Loads a chart. Parameters:
   # - container_id: id of the dom element that will hold the chart
   # - wait: if true an api_call won't be fired immediately. Useful when we want
   # to show multiple charts on the same page
-  load : (chart_id, container_id = false, wait = false) ->
+  load : (chart_id, container_id = 'current_chart', wait = false) ->
     # this check is quite ugly, the charts and holders mapping should be defined
-    # better
-    if App.settings.get('pinned_chart') && container_id != 'current_chart'
+    # better. Right now the pin works only for the main chart. Will be added to
+    # secondary charts later
+    if App.settings.get('pinned_chart') && container_id == 'current_chart'
       return false
     App.etm_debug('Loading chart: #' + chart_id)
     App.etm_debug "#{window.location.origin}/admin/output_elements/#{chart_id}"
@@ -153,13 +158,11 @@ class @ChartList extends Backbone.Collection
       url: url
       success: (data) =>
         @html[chart_id] = data.html
-        old_chart = @current()
-        # optional container id
-        if container_id != false
-          data.attributes.container = container_id
+        data.attributes.container = container_id
+        old_chart = @chart_holders[container_id]
         new_chart = new Chart(data.attributes)
-        if @current() && @current().get('container_id') == container_id
-          @remove old_chart
+        @chart_holders[container_id] = new_chart
+        @remove old_chart
         @add new_chart
         new_chart.series.add(data.series)
 
@@ -183,12 +186,11 @@ class @ChartList extends Backbone.Collection
     @first()
 
   # returns the current chart id
-  current_id : ->
-    parseInt(@first().get('id'))
+  current_id : => @current().get('id')
 
   # TODO: remove, we'll soon be having multiple charts per page
   #
-  current: -> @first()
+  current: -> @last() #chart_holders['current_chart']
 
   # TODO: This stuff should be moved to a backbone view
   #

@@ -137,7 +137,11 @@ class @ChartList extends Backbone.Collection
   # using the chart_id as key.
   html: {}
 
-  load : (chart_id) ->
+  # Loads a chart. Parameters:
+  # - container_id: id of the dom element that will hold the chart
+  # - wait: if true an api_call won't be fired immediately. Useful when we want
+  # to show multiple charts on the same page
+  load : (chart_id, container_id = false, wait = false) ->
     return false if App.settings.get('pinned_chart')
     App.etm_debug('Loading chart: #' + chart_id)
     App.etm_debug "#{window.location.origin}/admin/output_elements/#{chart_id}"
@@ -147,11 +151,14 @@ class @ChartList extends Backbone.Collection
       success: (data) =>
         @html[chart_id] = data.html
         old_chart = @current()
+        # optional container id
+        if container_id != false
+          data.attributes.container = container_id
         new_chart = new Chart(data.attributes)
-        @remove old_chart
+        if @current() && @current().get('container_id') == container_id
+          @remove old_chart
         @add new_chart
-        for s in data.series
-          new_chart.series.add s
+        new_chart.series.add(data.series)
 
         # show/hide default chart button
         #
@@ -169,7 +176,7 @@ class @ChartList extends Backbone.Collection
         # show.hide the under_construction notice
         #
         $("#chart_not_finished").toggle @first().get("under_construction")
-        App.call_api()
+        App.call_api() unless wait
     @first()
 
   # returns the current chart id

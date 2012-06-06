@@ -1,71 +1,71 @@
 @import "layout/sidebar/*.png"
 
-=sidebar-icon($name)
+@mixin sidebar-icon($name)
   span.title
-    +sidebar-sprite($name)
+    @include sidebar-sprite($name)
   &.active span.title, a:hover span.title
-    +sidebar-sprite-position($name, 0, -25px)
+    @include sidebar-sprite-position($name, 0, -25px)
 
 #sidebar
   #households
-    +sidebar-icon(households)
+    @include sidebar-icon(households)
   #buildings
-    +sidebar-icon(offices_schools)
+    @include sidebar-icon(offices_schools)
   #industry
-    +sidebar-icon(industry)
+    @include sidebar-icon(industry)
   #agriculture
-    +sidebar-icon(agriculture)
+    @include sidebar-icon(agriculture)
   #transport
-    +sidebar-icon(transport)
+    @include sidebar-icon(transport)
   #transport_fuels
-    +sidebar-icon(transport)
+    @include sidebar-icon(transport)
   #other
-    +sidebar-icon(other)
+    @include sidebar-icon(other)
   #combustion
-    +sidebar-icon(combustion)
+    @include sidebar-icon(combustion)
   #nuclear
-    +sidebar-icon(nuclear)
+    @include sidebar-icon(nuclear)
   #wind
-    +sidebar-icon(wind)
+    @include sidebar-icon(wind)
   #water
-    +sidebar-icon(water)
+    @include sidebar-icon(water)
   #solar
-    +sidebar-icon(solar)
+    @include sidebar-icon(solar)
   #co2
-    +sidebar-icon(co2)
+    @include sidebar-icon(co2)
   #earth
-    +sidebar-icon(earth)
+    @include sidebar-icon(earth)
   #sustainability
-    +sidebar-icon(target)
+    @include sidebar-icon(target)
   #area
-    +sidebar-icon(area)
+    @include sidebar-icon(area)
   #dependence
-    +sidebar-icon(dependence)
+    @include sidebar-icon(dependence)
   #cost
-    +sidebar-icon(cost)
+    @include sidebar-icon(cost)
   #grid
-    +sidebar-icon(grid)
+    @include sidebar-icon(grid)
   #fossil
-    +sidebar-icon(fossil)
+    @include sidebar-icon(fossil)
   #electricity
-    +sidebar-icon(electricity)
+    @include sidebar-icon(electricity)
   #electricity_renewable
-    +sidebar-icon(electricity_renewable)
+    @include sidebar-icon(electricity_renewable)
   #fossil_heat
-    +sidebar-icon(fossil)
+    @include sidebar-icon(fossil)
   #renewable_heat
-    +sidebar-icon(renew_heat)
+    @include sidebar-icon(renew_heat)
   #fuels
-    +sidebar-icon(fuels)
+    @include sidebar-icon(fuels)
   #infrastructure
-    +sidebar-icon(infrastructure)
+    @include sidebar-icon(infrastructure)
   #other_fuels
-    +sidebar-icon(fuels)
+    @include sidebar-icon(fuels)
   #fce
-    +sidebar-icon(fce)
+    @include sidebar-icon(fce)
   #merit_order
-    +sidebar-icon(merit_order)
+    @include sidebar-icon(merit_order)
   #electricity_backup
-    +sidebar-icon(electricity_backup)
+    @include sidebar-icon(electricity_backup)
   #employment
-    +sidebar-icon(employment)
+    @include sidebar-icon(employment)

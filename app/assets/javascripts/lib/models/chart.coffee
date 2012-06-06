@@ -33,7 +33,7 @@ class @Chart extends Backbone.Model
       el: @outer_container()
     @view.update_title()
     @view
-  
+
   # the container just holds the chart, the outer container has the chart
   # action links, title, etc.
   outer_container: => $('#' + @get('container'))
@@ -137,30 +137,47 @@ class @ChartList extends Backbone.Collection
   # using the chart_id as key.
   html: {}
 
-  load : (chart_id) ->
+  # Loads a chart. Parameters:
+  # - container_id: id of the dom element that will hold the chart
+  # - wait: if true an api_call won't be fired immediately. Useful when we want
+  # to show multiple charts on the same page
+  load : (chart_id, container_id = false, wait = false) ->
     return false if App.settings.get('pinned_chart')
     App.etm_debug('Loading chart: #' + chart_id)
     App.etm_debug "#{window.location.origin}/admin/output_elements/#{chart_id}"
-    url = "/output_elements/#{chart_id}.js"
-    $.getScript url, =>
-      # show/hide default chart button
-      #
-      $("a.default_charts").toggle(chart_id != @current_default_chart)
+    url = "/output_elements/#{chart_id}"
+    $.ajax
+      url: url
+      success: (data) =>
+        @html[chart_id] = data.html
+        old_chart = @current()
+        # optional container id
+        if container_id != false
+          data.attributes.container = container_id
+        new_chart = new Chart(data.attributes)
+        if @current() && @current().get('container_id') == container_id
+          @remove old_chart
+        @add new_chart
+        new_chart.series.add(data.series)
 
-      # show/hide format toggle button
-      #
-      $("a.table_format").toggle( @current().view.can_be_shown_as_table() )
-      $("a.chart_format").hide()
+        # show/hide default chart button
+        #
+        $("a.default_charts").toggle(chart_id != @current_default_chart)
 
-      # update chart information link
-      #
-      $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/#{chart_id}")
+        # show/hide format toggle button
+        #
+        $("a.table_format").toggle( @current().view.can_be_shown_as_table() )
+        $("a.chart_format").hide()
 
-      # show.hide the under_construction notice
-      #
-      $("#chart_not_finished").toggle @first().get("under_construction")
-      App.call_api()
-      @first()
+        # update chart information link
+        #
+        $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/#{chart_id}")
+
+        # show.hide the under_construction notice
+        #
+        $("#chart_not_finished").toggle @first().get("under_construction")
+        App.call_api() unless wait
+    @first()
 
   # returns the current chart id
   current_id : ->

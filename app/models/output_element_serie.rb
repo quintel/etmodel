@@ -62,4 +62,18 @@ class OutputElementSerie < ActiveRecord::Base
   def group_translated
     I18n.t("output_element_series.groups.#{group}") unless group.blank?
   end
+
+  # Attributes used by the js application
+  def options_for_js
+    {
+      :id => id, # needed for block charts
+      :gquery_key => gquery,
+      :color => color,
+      :label => title_translated,
+      :group => group, #used to group series
+      :group_translated => group_translated, # used to display groups in mekkos's & horizontal_stacked_bar
+      :is_target_line => is_target_line,
+      :target_line_position => target_line_position
+    }
+  end
 end

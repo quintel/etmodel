@@ -4,6 +4,5 @@
   #charts_wrapper
     %div{ :id => "output_element_118", :style=>'height:230px;width:550px'}
 :javascript
-  #{ js_for_output_element(118, 'output_element_118') }
+  charts.load(118, 'output_element_118')
   I18n.locale = #{I18n.locale.to_json};
-  App.call_api();

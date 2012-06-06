@@ -1,12 +1,20 @@
 class OutputElementsController < ApplicationController
   layout false
-  before_filter :default_format_js
 
+  # Returns all the data required to show a chart.
+  # JSON only
   def show
-    @output_element = OutputElement.find(params[:id])
-    respond_to do |format|
-      format.js { render }
-    end
+    chart = OutputElement.find(params[:id])
+    template = if tmpl = chart.template
+      render_to_string(:partial => tmpl, :locals => {:output_element => chart})
+    else
+     nil
+   end
+    render :status => :ok, :json => {
+      :attributes => chart.options_for_js,
+      :series => chart.allowed_output_element_series.map(&:options_for_js),
+      :html => template
+    }
   end
 
   def index
@@ -22,12 +30,5 @@ class OutputElementsController < ApplicationController
   def visible
     session[params[:id]] = 'visible'
     render :js => ""
-  end
-
-  private
-
-  # otherwise rails won't render the js.erb views
-  def default_format_js
-    request.format = "js" unless params[:format]
   end
 end

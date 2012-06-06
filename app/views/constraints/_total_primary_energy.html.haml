@@ -1,8 +1,7 @@
 .constraint_box_content
-  %p.tal 
+  %p.tal
     = @constraint.description.try :short_content
   #charts_wrapper
     %div{ :id => "output_element_45",:style=>'height:250px'}
 :javascript
-  #{ js_for_output_element(45, 'output_element_45') }
-  App.call_api();
+  charts.load(45, 'output_element_45')

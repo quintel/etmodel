@@ -1,6 +1,3 @@
-window.loading = $("#content").busyBox
-  spinner: '<img src="/assets/layout/ajax-loader.gif" />'
-
 _.extend(_, {
   sum: (arr) =>
     _.reduce(arr, ((sum, v) -> sum + v), 0)
@@ -102,7 +99,6 @@ class @AppView extends Backbone.View
   # window.dashboard.trigger('change')
   handle_api_result: (data) ->
     App.unregister_api_call('call_api')
-    loading.fadeIn('fast') #show loading overlay
     for own key, values of data.result
       gquery = window.gqueries.with_key(key)
       gquery.handle_api_result(values)

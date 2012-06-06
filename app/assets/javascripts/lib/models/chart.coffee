@@ -36,7 +36,7 @@ class @Chart extends Backbone.Model
 
   # the container just holds the chart, the outer container has the chart
   # action links, title, etc.
-  outer_container: => $('#' + @get('container'))
+  outer_container: => $('#' + @get('container')).parents(".chart_holder")
 
   # D3 charts have their own class. Let's make an instance of the right one
   # D3 is a pseudo-namespace. See d3_chart_view.coffee
@@ -217,7 +217,8 @@ class @ChartList extends Backbone.Collection
       if App.settings.get('pinned_chart')
         App.settings.set({pinned_chart: false})
       else
-        App.settings.set({pinned_chart: @current_id()})
+        chart_id = $(e.target).parents(".chart_holder").data('chart_id')
+        App.settings.set({pinned_chart: chart_id})
 
     # This callback tries throttling the resize event, which is fired
     # continuously while the user resizes the window. Once the resize is over

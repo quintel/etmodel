@@ -4,7 +4,10 @@
     - OutputElement.not_hidden.select_by_group(group).each do |output_element|
       - next if output_element.block_chart?
       %div
-        %a.pick_charts{:id =>"output_#{output_element.id}", :data => {:chart_id => output_element.id}}
+        %a.pick_charts{:id =>"output_#{output_element.id}", |
+                       :data => {                           |
+                         :chart_id => output_element.id,    |
+                         :chart_holder => @chart_holder}}   |
           %h2= t("output_elements.#{output_element.key}").html_safe
           %p
             - desc = output_element.description

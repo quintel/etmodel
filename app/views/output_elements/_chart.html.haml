@@ -1,8 +1,12 @@
-.chart_holder{:data => {:holder_id => dom_id}}
-  %h3= raw t("output_elements.#{chart.key}")
+:ruby
+  holder_class = chart ? nil : 'hidden'
+  info_url = chart ? "/descriptions/charts/#{chart.id}" : "#"
+  pin_class = chart.try(:id) == Current.setting.send(dom_id) ? 'active' : nil
+
+.chart_holder{:data => {:holder_id => dom_id}, :class => holder_class}
+  %h3= raw t("output_elements.#{chart.key}") if chart
   .output_element_actions
-    %a.chart_info.tooltip.fancybox{:href  => "/descriptions/charts/#{chart.id}",
-      :title => "info"} ?
+    %a.chart_info.tooltip.fancybox{:href  => info_url, :title => "info"} ?
 
     %a.select_chart.tooltip{:href => "/output_elements?holder=#{dom_id}",
       :title => t("output_elements.common.change_chart")}
@@ -23,8 +27,12 @@
 
     %a.pin_chart.tooltip{:href => '#',
       :title => t("output_elements.common.pin"),
-      :class => chart.id == Current.setting.send(dom_id) && 'active'}
+      :class => pin_class}
       = t "output_elements.common.pin"
+
+    - if main && !@secondary_output_element # ugly
+      %a.add_chart.tooltip{:href => '#',
+        :title => "Add another chart"} add
   .charts_container
     .chart_not_finished
     .chart_canvas{:id => dom_id}

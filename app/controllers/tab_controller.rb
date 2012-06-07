@@ -25,10 +25,15 @@ class TabController < ApplicationController
   protected
 
     def load_output_element
-      @output_element = if Current.setting.pinned_chart
-        OutputElement.find Current.setting.pinned_chart
+      @output_element = if Current.setting.main_chart
+        OutputElement.find Current.setting.main_chart
       else
         Current.view.default_chart
+      end
+      @secondary_output_element = if Current.setting.secondary_chart
+        OutputElement.find Current.setting.secondary_chart
+      else
+        OutputElement.last()
       end
     end
 

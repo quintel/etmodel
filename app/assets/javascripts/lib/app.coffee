@@ -14,7 +14,9 @@ class @AppView extends Backbone.View
     @input_elements.bind("change", @handleInputElementsUpdate)
 
     @settings = new Setting() # At this point settings is empty!!
-    @settings.set({'api_session_id' : globals.api_session_id})
+    @settings.set
+      api_session_id: globals.api_session_id
+
     @scenario = new Scenario()
     # initialize later in bootstrap, because we need to know what country it is
     @peak_load = null

@@ -9,9 +9,15 @@
 
   #charts_wrapper
     = render :partial => "output_elements/chart",
-      :locals => {:chart => @output_element, :dom_id => 'current_chart'}
-    =# render :partial => "output_elements/chart",
-      :locals => {:chart => nil, :dom_id => 'alternate_chart'}
+      :locals => {:chart => @output_element,
+                  :dom_id => 'main_chart',
+                  :main => true}
+    = render :partial => "output_elements/chart",
+      :locals => {:chart => @secondary_output_element,
+                  :dom_id => 'secondary_chart',
+                  :main => false}
 
 - content_for :scripts do
   = render 'output_elements/table_template'
+  :javascript
+    charts.current_default_chart = #{@output_element.id};

@@ -12,7 +12,8 @@ class SettingsController < ApplicationController
       :track_peak_load,
       :use_fce,
       :current_round,
-      :pinned_chart].each do |setting|
+      :main_chart,
+      :secondary_chart].each do |setting|
       Current.setting.send("#{setting}=", params[setting]) unless params[setting].nil?
     end
 

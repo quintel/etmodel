@@ -17,7 +17,7 @@
   %body#model
     #wrapper
       %header
-        = render "layouts/etm/header", :info_box => true
+        = render "layouts/etm/header"
         = render "layouts/etm/wattnu" if wattnu?
       #content
         = render "layouts/etm/sidebar" if Current.view

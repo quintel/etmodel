@@ -18,6 +18,8 @@ class OutputElementsController < ApplicationController
   end
 
   def index
+    # id of the element the chart will be placed in
+    @chart_holder = params[:holder]
   end
 
   # legacy actions used by the block charts

@@ -42,7 +42,7 @@ class @Accordion
         output_element_id = parseInt(ui.newHeader.attr('id').match(/\d+$/))
         window.charts.current_default_chart = output_element_id
         $("a.default_charts").hide() if charts.current_id() == output_element_id
-        window.charts.load(output_element_id, 'current_chart')
+        window.charts.load(output_element_id, 'main_chart')
 
     $(".slide").each (i, slide) ->
       $("a.btn-done", slide).filter(".next, .previous").click () ->

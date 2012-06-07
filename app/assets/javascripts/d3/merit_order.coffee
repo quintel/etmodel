@@ -13,7 +13,7 @@ D3.merit_order =
       {key: 'gas_ccgt_ccs'},
       {key: 'gas_conv'},
       {key: 'gas_turbine'},
-      {key: 'must_run'}
+      # {key: 'must_run'}, # something's broken here
       {key: 'nuclear_iii'},
       {key: 'oil_plant'},
       {key: 'solar_pv'},

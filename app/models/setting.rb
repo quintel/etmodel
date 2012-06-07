@@ -10,7 +10,8 @@ class Setting
                 :api_session_id,
                 :current_round,
                 :area_code,
-                :pinned_chart  # id of the chart we want to keep across requests
+                :main_chart       # pinned chart (optional)
+                :secondary_chart  # pinned chart (optional)
 
   def initialize(attributes = {})
     attributes = self.class.default_attributes.merge(attributes)
@@ -59,7 +60,9 @@ class Setting
       :start_year               => 2010,
       :end_year                 => 2050,
       :use_fce                  => false,
-      :already_shown            => []
+      :already_shown            => [],
+      :main_chart               => false,
+      :secondary_chart          => false
     }
   end
   attr_accessor *default_attributes.keys

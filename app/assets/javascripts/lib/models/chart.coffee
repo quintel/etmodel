@@ -1,6 +1,6 @@
 class @Chart extends Backbone.Model
   defaults:
-    'container': 'current_chart'
+    'container': 'main_chart'
 
   initialize : ->
     @series = switch @get('type')
@@ -145,67 +145,73 @@ class @ChartList extends Backbone.Collection
   # - container_id: id of the dom element that will hold the chart
   # - wait: if true an api_call won't be fired immediately. Useful when we want
   # to show multiple charts on the same page
-  load : (chart_id, container_id = 'current_chart', wait = false) ->
+  load : (chart_id, container_id = 'main_chart', wait = false) ->
     # this check is quite ugly, the charts and holders mapping should be defined
     # better. Right now the pin works only for the main chart. Will be added to
     # secondary charts later
-    if App.settings.get('pinned_chart') && container_id == 'current_chart'
-      return false
+    return false if App.settings.get(container_id) # chart is pinned
     App.etm_debug('Loading chart: #' + chart_id)
     App.etm_debug "#{window.location.origin}/admin/output_elements/#{chart_id}"
     url = "/output_elements/#{chart_id}"
     $.ajax
       url: url
       success: (data) =>
+        # store the chart HTML (tables and block chart)
         @html[chart_id] = data.html
+        # Add to the Chart constructor options the id of the container element
         data.attributes.container = container_id
+        # Remember what we were showing in that position
         old_chart = @chart_holders[container_id]
+        # Create the new Chart
         new_chart = new Chart(data.attributes)
+        # Remember where the chart is
         @chart_holders[container_id] = new_chart
+        # Deal with the collection object
         @remove old_chart
         @add new_chart
+        # Pass the gqueries to the chart
         new_chart.series.add(data.series)
 
+        # Now it's time to upate the buttons and links for the chart
+        root = $('#' + container_id).parents('.chart_holder')
         # show/hide default chart button
-        #
-        $("a.default_charts").toggle(chart_id != @current_default_chart)
-
+        root.find("a.default_charts").toggle(chart_id != @current_default_chart)
         # show/hide format toggle button
-        #
-        $("a.table_format").toggle( @current().view.can_be_shown_as_table() )
-        $("a.chart_format").hide()
-
+        root.find("a.table_format").toggle( new_chart.view.can_be_shown_as_table() )
+        root.find("a.chart_format").hide()
         # update chart information link
-        #
-        $("#output_element_actions a.chart_info").attr("href", "/descriptions/charts/#{chart_id}")
-
+        root.find(".output_element_actions a.chart_info").attr(
+          "href", "/descriptions/charts/#{chart_id}")
         # show.hide the under_construction notice
-        #
-        $("#chart_not_finished").toggle @first().get("under_construction")
+        root.find(".chart_not_finished").toggle new_chart.get("under_construction")
         App.call_api() unless wait
-    @first()
+    @last()
 
   # returns the current chart id
   current_id : => @current().get('id')
 
-  # TODO: remove, we'll soon be having multiple charts per page
-  #
-  current: -> @last() #chart_holders['current_chart']
+  # returns the main chart
+  current: -> @chart_holders['main_chart']
+
+  remove_pin: (holder_id) =>
+    App.settings.set holder_id, false
+    holder = $('#' + holder_id).parents('.chart_holder')
+    holder.find("a.pin_chart").removeClass("active")
 
   # TODO: This stuff should be moved to a backbone view
   #
   setup_callbacks: ->
     $("a.default_charts").live 'click', =>
-      App.settings.set({pinned_chart: false})
-      $("a.pin_chart").removeClass("active")
-      @load(@current_default_chart)
+      holder_id = $(e.target).parents(".chart_holder").data('holder_id')
+      @remove_pin holder_id
+      @load(@current_default_chart, holder_id)
       false
 
-    $("a.pick_charts").live 'click', (e) =>
-      App.settings.set({pinned_chart: false})
-      $("a.pin_chart").removeClass("active")
+    # chart selection pop-up
+    $(document).on "click", "a.pick_charts", (e) =>
+      chart_holder = $(e.target).parents('a').data('chart_holder')
       chart_id = $(e.target).parents('a').data('chart_id')
-      chart_holder = $(e.target).parents('a').data('chart_holder') || 'current_chart'
+      @remove_pin(chart_holder)
       @load chart_id, chart_holder
       close_fancybox()
 
@@ -223,12 +229,16 @@ class @ChartList extends Backbone.Collection
 
     $(document).on 'click', "a.pin_chart", (e) =>
       e.preventDefault()
-      $(e.target).toggleClass("active")
-      if App.settings.get('pinned_chart')
-        App.settings.set({pinned_chart: false})
+      # which chart are we talking about?
+      holder_id = $(e.target).parents(".chart_holder").data('holder_id')
+      chart_id = @chart_holders[holder_id].get('id')
+
+      if current = App.settings.get(holder_id)
+        value = false
       else
-        chart_id = $(e.target).parents(".chart_holder").data('chart_id')
-        App.settings.set({pinned_chart: chart_id})
+        value = chart_id
+      App.settings.set(holder_id, value)
+      $(e.target).toggleClass("active", !!value)
 
     # This callback tries throttling the resize event, which is fired
     # continuously while the user resizes the window. Once the resize is over

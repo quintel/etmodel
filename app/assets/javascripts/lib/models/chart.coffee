@@ -244,6 +244,13 @@ class @ChartList extends Backbone.Collection
       App.settings.set(holder_id, value)
       $(e.target).toggleClass("active", !!value)
 
+    $(document).on 'click', 'a.add_chart', (e) =>
+      e.preventDefault()
+      $(".chart_holder.hidden").show()
+      @load(2, 'secondary_chart')
+      $(e.target).tipsy("hide")
+      $(e.target).remove()
+
     # This callback tries throttling the resize event, which is fired
     # continuously while the user resizes the window. Once the resize is over
     # the chart will be rendered again

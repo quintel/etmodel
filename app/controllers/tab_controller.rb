@@ -30,10 +30,8 @@ class TabController < ApplicationController
       else
         Current.view.default_chart
       end
-      @secondary_output_element = if Current.setting.secondary_chart
-        OutputElement.find Current.setting.secondary_chart
-      else
-        OutputElement.last()
+      if other = Current.setting.secondary_chart
+        @secondary_output_element = OutputElement.find(other)
       end
     end
 

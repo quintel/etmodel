@@ -53,7 +53,7 @@
         %label{:for => "settings_use_fce"}= t('fce.check')
     - if params[:debug]
       %li
-        %form{:action => 'http://localhost:3000/mechanical_turk/factory', :method => 'post', :target => '_blank', :id => 'turkit'}
+        %form{:action => 'http://beta.et-engine.com/mechanical_turk/factory', :method => 'post', :target => '_blank', :id => 'turkit'}
           %input#last_api_response{:type => 'hidden', :name => 'json_data'}
           = submit_tag "Turk it"
       

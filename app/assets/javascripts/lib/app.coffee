@@ -99,8 +99,12 @@ class @AppView extends Backbone.View
   # e.g. el.set({ api_result : value_arr })
   # window.charts.first().trigger('change')
   # window.dashboard.trigger('change')
-  handle_api_result: (data) ->
+  handle_api_result: (data, textStatus, jqXHR) ->
     App.unregister_api_call('call_api')
+    # store the last response from api for the turk it debugging tool
+    # it is activated by passing ?debug=1 and can be found in the settings
+    # menu.
+    $("#last_api_response").val(jqXHR.responseText)
     for own key, values of data.result
       gquery = window.gqueries.with_key(key)
       gquery.handle_api_result(values)

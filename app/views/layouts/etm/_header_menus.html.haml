@@ -51,7 +51,12 @@
       %li
         = check_box :settings, :use_fce, :checked => Current.setting.use_fce
         %label{:for => "settings_use_fce"}= t('fce.check')
-
+    - if params[:debug]
+      %li
+        %form{:action => 'http://localhost:3000/mechanical_turk/factory', :method => 'post', :target => '_blank', :id => 'turkit'}
+          %input#last_api_response{:type => 'hidden', :name => 'json_data'}
+          = submit_tag "Turk it"
+      
 #information_menu.header_menu.topnav
   %li
     %a{:href => "/about"}= t("header.about_qi")

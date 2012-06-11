@@ -18,10 +18,11 @@
       %li
         %a.signin{:href=>"#"}
           %span=t("header.sign_in")
-    %li.flag
-      %img{:src => "/assets/icons/#{Current.setting.area_code}.png"}
-      = Current.setting.area_code if Current.setting.area_code != "nl"
-    %li.year= Current.setting.end_year
+    - if has_active_scenario?
+      %li.flag
+        %img{:src => "/assets/icons/#{Current.setting.area_code}.png"}
+        = Current.setting.area_code if Current.setting.area_code != "nl"
+      %li.year= Current.setting.end_year
 
     %li{:style=>'width: 160px'}
       %form#searchform{ :action => "/search", :method => :get }

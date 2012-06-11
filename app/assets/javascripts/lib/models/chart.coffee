@@ -180,7 +180,7 @@ class @ChartList extends Backbone.Collection
         root.find("a.table_format").toggle( new_chart.view.can_be_shown_as_table() )
         root.find("a.chart_format").hide()
         # update chart information link
-        root.find(".output_element_actions a.chart_info").attr(
+        root.find(".actions a.chart_info").attr(
           "href", "/descriptions/charts/#{chart_id}")
         # show.hide the under_construction notice
         root.find(".chart_not_finished").toggle new_chart.get("under_construction")

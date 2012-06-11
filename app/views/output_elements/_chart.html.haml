@@ -4,32 +4,32 @@
   pin_class = chart.try(:id) == Current.setting.send(dom_id) ? 'icon-lock' : 'icon-unlock'
 
 .chart_holder{:data => {:holder_id => dom_id}, :class => holder_class}
-  %h3= raw t("output_elements.#{chart.key}") if chart
-  .actions
-    %a.chart_info.tooltip.fancybox.icon-question-sign{:href  => info_url,
-      :title => t("output_elements.tooltips.info")}
+  %header
+    %h3= raw t("output_elements.#{chart.key}") if chart
+    .actions
+      %a.chart_info.tooltip.fancybox.icon-question-sign{:href  => info_url,
+        :title => t("output_elements.tooltips.info")}
 
-    %a.select_chart.tooltip.icon-cogs{:href => "/output_elements?holder=#{dom_id}",
-      :title => t("output_elements.tooltips.change")}
+      %a.select_chart.tooltip.icon-cogs{:href => "/output_elements?holder=#{dom_id}",
+        :title => t("output_elements.tooltips.change")}
 
-    - if main # secondary chart doesn't need this
-      %a.default_charts.tooltip{:href => "#",
-        :title => t("output_elements.tooltips.default")}
-        = t "output_elements.common.back_to_default"
+      - if main # secondary chart doesn't need this
+        %a.default_charts.tooltip.icon-home{:href => "#",
+          :title => t("output_elements.tooltips.default")}
 
-    %a.table_format.tooltip.icon-table{:href => '#',
-      :title => t("output_elements.tooltips.table")}
+      %a.table_format.tooltip.icon-table{:href => '#',
+        :title => t("output_elements.tooltips.table")}
 
-    %a.chart_format.tooltip.icon-bar-chart{:href => '#',
-      :title => t("output_elements.tooltips.chart")}
+      %a.chart_format.tooltip.icon-bar-chart{:href => '#',
+        :title => t("output_elements.tooltips.chart")}
 
-    %a.pin_chart.tooltip{:href => '#',
-      :title => t("output_elements.tooltips.pin"),
-      :class => pin_class}
+      %a.pin_chart.tooltip{:href => '#',
+        :title => t("output_elements.tooltips.pin"),
+        :class => pin_class}
 
-    - if main && !@secondary_output_element # ugly
-      %a.add_secondary_chart.select_chart.tooltip.icon-plus{:href => "/output_elements?holder=secondary_chart",
-        :title => t("output_elements.tooltips.add")}
+      - if main && !@secondary_output_element # ugly
+        %a.add_secondary_chart.select_chart.tooltip.icon-plus{:href => "/output_elements?holder=secondary_chart",
+          :title => t("output_elements.tooltips.add")}
   .charts_container
     .chart_not_finished
     .chart_canvas{:id => dom_id}

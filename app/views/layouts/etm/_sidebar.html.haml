@@ -1,8 +1,3 @@
-#info_box
-  #flag
-    %img{:src => "/assets/icons/#{Current.setting.area_code}.png"}
-    = Current.setting.area_code if Current.setting.area_code != "nl"
-  #year= Current.setting.end_year
 -# DEBT: TO BE REPLACED WITH nav#sidebar
 #sidebar
   - Current.view.tabs.each do |tab|

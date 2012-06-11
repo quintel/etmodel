@@ -17,9 +17,6 @@ header
       height: 75px
       width: 500px
       margin: 0 0 0 10px
-      
-      em
-        
 
     nav#language
       position: absolute
@@ -32,7 +29,6 @@ header
         background: url("/assets/icons/gb.png") left center no-repeat
       a.nl
         background: url("/assets/icons/nl.png") left center no-repeat
-
 
   #notice_bar
     position: absolute
@@ -56,7 +52,6 @@ header
     margin: 28px 0 0 0
     padding: 0
     overflow: hidden
-    width: 445px
     li
       float: left
       background: url(/assets/layout/separator-01.gif) no-repeat 0 3px
@@ -64,13 +59,14 @@ header
       font-weight: normal
       padding: 0
       margin: 0 0 0 -2px
-
       a
         color: #fff
         text-decoration: none
-
         &:hover
           text-decoration: underline
+      &.year, &.flag
+        color: #fff
+        padding: 0px 10px
   .header_logo
     overflow: hidden
     float: left

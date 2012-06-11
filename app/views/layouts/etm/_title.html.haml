@@ -2,7 +2,12 @@
   - if @title
     %h2
       = raw I18n.t("page_titles.#{to_yml_syntax(@title.title)}")
+      %a.button{:href => "/information"}
+        %span.icon-info-sign
+        Information
       - if current_tutorial_movie
-        %a.icon-film{:href => "/tutorial/#{params[:controller]}/#{params[:id]}",
+        %a.button{:href => "/tutorial/#{params[:controller]}/#{params[:id]}",
           :alt => "Tutorial", :title => "Tutorial"}
-        %a.icon-info-sign{:href => "/information"}
+          %span.icon-film
+          Tutorial
+        

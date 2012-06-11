@@ -1,11 +1,10 @@
--# DEBT ugly
-- if title = PageTitle.for_page(controller.controller_name, params[:id]).first
-  - description = @active_sidebar.try(:description) || title.description
-  #title
-    - if current_tutorial_movie
-      %a.tutorial_button{ :href => "/tutorial/#{params[:controller]}/#{params[:id]}",:alt=>"Tutorial",:title=>"Tutorial"}
-        .button_left_movie
-        .button_center
-          %span= t("tutorial.button")
-        .button_right
-    %h2= raw I18n.t("pagetitle.#{to_yml_syntax(title.title)}")
+#title
+  - if current_tutorial_movie
+    %a.tutorial_button{:href => "/tutorial/#{params[:controller]}/#{params[:id]}",
+      :alt => "Tutorial", :title => "Tutorial"}
+      .button_left_movie
+      .button_center
+        %span= t("tutorial.button")
+      .button_right
+  - if @title
+    %h2= raw I18n.t("page_titles.#{to_yml_syntax(@title.title)}")

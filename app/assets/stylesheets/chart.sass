@@ -27,13 +27,21 @@
       font-size: .9em
       &:hover
         color: #333333
-      &.active
-        color: red
-        font-weight: bold
+      &.icon
+        width: 16px
+        height: 16px
+        display: inline-block
+      &.unpinned
+        +common-sprite(padlock_open)
+      &.pinned
+        +common-sprite(padlock_closed)
+
+
   .chart_holder
     width: 600px
     float: left
     margin-right: 3px
+    max-height: 400px
   .charts_container
     position: relative
     height: 400px

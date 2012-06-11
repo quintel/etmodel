@@ -242,7 +242,8 @@ class @ChartList extends Backbone.Collection
       else
         value = chart_id
       App.settings.set(holder_id, value)
-      $(e.target).toggleClass("active", !!value)
+      $(e.target).toggleClass("pinned", !!value)
+      $(e.target).toggleClass("unpinned", !!!value)
 
     # link to open the secondary chart
     # The busybox setup will open the chart selection popup (see fancybox.coffee)

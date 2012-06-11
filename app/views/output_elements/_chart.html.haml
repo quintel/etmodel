@@ -1,7 +1,7 @@
 :ruby
   holder_class = chart ? nil : 'hidden'
   info_url = chart ? "/descriptions/charts/#{chart.id}" : "#"
-  pin_class = chart.try(:id) == Current.setting.send(dom_id) ? 'active' : nil
+  pin_class = chart.try(:id) == Current.setting.send(dom_id) ? 'pinned' : 'unpinned'
 
 .chart_holder{:data => {:holder_id => dom_id}, :class => holder_class}
   %h3= raw t("output_elements.#{chart.key}") if chart
@@ -26,10 +26,9 @@
       :title => t("output_elements.tooltips.chart")}
       = t "output_elements.common.chart"
 
-    %a.pin_chart.tooltip{:href => '#',
+    %a.pin_chart.icon.tooltip{:href => '#',
       :title => t("output_elements.tooltips.pin"),
       :class => pin_class}
-      = t "output_elements.common.pin"
 
     - if main && !@secondary_output_element # ugly
       %a.add_secondary_chart.select_chart.tooltip{:href => "/output_elements?holder=secondary_chart",

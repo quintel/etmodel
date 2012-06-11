@@ -22,10 +22,8 @@
 //     |+--------------++--------------------------------------------------------------+|
 //     +--------------------------------------------------------------------------------+
 
-
-//separate model from pages
-body#model #wrapper
-  min-height: 100%
+html, body, #main, #wrapper, #content
+  height: 100%
 
 body#outside-model #wrapper
   min-height: 100%
@@ -43,11 +41,12 @@ body#outside-model #wrapper
   overflow: visible
 
 #content
-  padding: 20px 0px 150px 0px
+  padding: 0xp 0px 150px 0px
   position: relative
   min-width: 1000px
   margin: 0 auto
   overflow: auto
+  height: 100%
 
   #flash
     position: absolute
@@ -58,9 +57,8 @@ body#outside-model #wrapper
 
   #sidebar
     float: left
-    margin-right: 20px
-    margin-left: 10px
-    border-top: 1px solid #ddd
+    margin-right: 30px
+    height: 100%
 
   #active-content
     margin-left: 200px
@@ -72,11 +70,10 @@ body#outside-model #wrapper
 
     #accordion_wrapper
       float: left
-      margin: 0 1% 0 0%
       width: 470px
 
     #charts_wrapper
-      margin: 0 10px 0 520px
+      margin: 0 10px 0 590px
       height: 480px
 
 body#outside-model #flash

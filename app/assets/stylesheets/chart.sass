@@ -1,37 +1,26 @@
 #charts_wrapper
-  h3
-    margin: 0 0 3px 0
-    font: 16px/30px Georgia, "Times New Roman", Times, serif
-    color: #224368
-    height: 30px
-    background: #dfe8f3
-    padding: 0 0 0 31px
-  img.block
-    display: block
-  a.right
-    font-size: 13px
-    text-decoration: none
-    color: #63a0c9
-    float: right
-    margin: 0 1px 0 0
-    letter-spacing: -1px
-  a:hover
-    text-decoration: underline
-  .output_element_actions
-    background-color: #f4f9ff
-    padding: 2px 8px 2px 31px
-    a
-      margin-right: 5px
-      color: #578ec2
-      text-decoration: none
-      &:hover
-        color: #333333
-
   .chart_holder
-    width: 600px
+    width: 500px
     float: left
     margin-right: 3px
     max-height: 400px
+    h3
+      margin: 0 0 3px 0
+      font: 16px/30px Georgia, "Times New Roman", Times, serif
+      color: #224368
+      height: 30px
+      background: #dfe8f3
+      padding: 0 0 0 31px
+    .actions
+      background-color: #f4f9ff
+      padding: 2px 8px 2px 31px
+      a
+        margin-right: 5px
+        color: #578ec2
+        text-decoration: none
+        &:hover
+          color: #333333
+
   .charts_container
     position: relative
     height: 400px
@@ -83,6 +72,8 @@ table.autostripe
   tbody tr:nth-child(2n+1)
     background-color: #ddd
 
+// D3-specific charts
+//
 #d3_container_sankey
   text.label
     font-family: Helvetica, Arial, sans-serif

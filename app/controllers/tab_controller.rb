@@ -15,6 +15,7 @@ class TabController < ApplicationController
   def show
     @active_sidebar = Current.view.sidebar
     @slides = Current.view.slides
+    @title = PageTitle.for_page(params[:controller], params[:id]).first
 
     respond_to do |format|
       format.html { render :template => 'tab/show'}

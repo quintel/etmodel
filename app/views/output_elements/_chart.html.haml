@@ -6,33 +6,34 @@
 .chart_holder{:data => {:holder_id => dom_id}, :class => holder_class}
   %h3= raw t("output_elements.#{chart.key}") if chart
   .output_element_actions
-    %a.chart_info.tooltip.fancybox{:href  => info_url, :title => "info"} ?
+    %a.chart_info.tooltip.fancybox{:href  => info_url,
+      :title => t("output_elements.tooltips.info")} ?
 
     %a.select_chart.tooltip{:href => "/output_elements?holder=#{dom_id}",
-      :title => t("output_elements.common.change_chart")}
+      :title => t("output_elements.tooltips.change")}
       = t "output_elements.common.change_chart"
 
     - if main # secondary chart doesn't need this
       %a.default_charts.tooltip{:href => "#",
-        :title => t("output_elements.common.back_to_default")}
+        :title => t("output_elements.tooltips.default")}
         = t "output_elements.common.back_to_default"
 
     %a.table_format.tooltip{:href => '#',
-      :title => t("output_elements.common.table")}
+      :title => t("output_elements.tooltips.table")}
       = t "output_elements.common.table"
 
     %a.chart_format.tooltip{:href => '#',
-      :title => t("output_elements.common.chart")}
+      :title => t("output_elements.tooltips.chart")}
       = t "output_elements.common.chart"
 
     %a.pin_chart.tooltip{:href => '#',
-      :title => t("output_elements.common.pin"),
+      :title => t("output_elements.tooltips.pin"),
       :class => pin_class}
       = t "output_elements.common.pin"
 
     - if main && !@secondary_output_element # ugly
       %a.add_secondary_chart.select_chart.tooltip{:href => "/output_elements?holder=secondary_chart",
-        :title => "Add another chart"} add
+        :title => t("output_elements.tooltips.add")}= t "output_elements.common.add"
   .charts_container
     .chart_not_finished
     .chart_canvas{:id => dom_id}

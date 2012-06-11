@@ -1,11 +1,20 @@
 en:
   output_elements:
     common:
+      add: "add"
       back_to_default: "default"
       change_chart: "change"
       chart: "chart"
       pin: "pin"
       table: "table"
+    tooltips:
+      add: "Add another chart"
+      change: "Change Chart"
+      chart: "Switch to chart view"
+      default: "Back to default chart"
+      info: "Chart info"
+      pin: "Lock chart"
+      table: "Switch to table view"
     block_chart:
       total_investment_cost_of_production: "Investment costs (Eur/MWe)"
     additional_infrastructure_investments: "Required additional infrastructure investments"
@@ -36,8 +45,10 @@ en:
     gas_use_for_electricity_production: "Energy use for electricity production"
     gas_versus_other_primary_energy: "Gas versus other primary energy"
     impact_on_electricity_grid: "Changes to electricity grid"
+    mekko: "D3-Mekko"
     mekko_of_final_demand: "Final energy demand"
     mekko_of_primary_demand: "Primary energy use"
+    merit_order: "Merit order"
     merit_order_table: "Merit order"
     number_of_residences: "Number of residences"
     overview_costs_of_electricity_production: "Total cost of electricity production"
@@ -47,6 +58,7 @@ en:
     renewable_electricity: "Percent renewable electricity"
     required_capacity_lv_network: "Required capacity LV Network"
     required_network_capacity: "Required electricity network capacity"
+    sankey: "Sankey"
     security_of_supply: "Security of supply"
     source_of_cooking_in_households: "Final energy demand"
     source_of_cooling_in_buildings: "Cooling demand"

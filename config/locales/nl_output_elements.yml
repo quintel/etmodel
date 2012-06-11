@@ -1,11 +1,20 @@
 nl:
   output_elements:
     common:
+      add: "toevoegen"
       back_to_default: "standaard"
       change_chart: "wijzig"
       chart: "grafiek"
       pin: "pin"
       table: "tabel"
+    tooltips:
+      add: "Add another chart"
+      change: "Change Chart"
+      chart: "Switch to chart view"
+      default: "Back to default chart"
+      info: "Chart info"
+      pin: "Lock chart"
+      table: "Switch to table view"
     block_chart:
       total_investment_cost_of_production: "Investeringskosten (Eur/MWe)"
     additional_infrastructure_investments: "Benodigde meerinvestering infrastructuur"
@@ -36,8 +45,10 @@ nl:
     gas_use_for_electricity_production: "Energiegebruik voor elektriciteitsproductie"
     gas_versus_other_primary_energy: "Gas vs overig primair verbruik"
     impact_on_electricity_grid: "Veranderingen elektriciteitsnet"
+    mekko: "D3-Mekko"
     mekko_of_final_demand: "Eindgebruik energie"
     mekko_of_primary_demand: "Primair energieverbruik"
+    merit_order: "Merit order"
     merit_order_table: "Merit order"
     number_of_residences: "Aantal woningen"
     overview_costs_of_electricity_production: "Totale kosten elektriciteitsproductie"
@@ -47,6 +58,7 @@ nl:
     renewable_electricity: "Procent hernieuwbare elektriciteit"
     required_capacity_lv_network: "Benodigde capaciteit LV netwerk"
     required_network_capacity: "Benodigde elektriciteit capaciteitnetwerk"
+    sankey: "Sankey"
     security_of_supply: "Leveringszekerheid"
     source_of_cooking_in_households: "Eindgebruik energie"
     source_of_cooling_in_buildings: "Koeling vraag"

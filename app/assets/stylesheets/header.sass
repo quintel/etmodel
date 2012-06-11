@@ -1,4 +1,4 @@
-header
+header#top
   padding: 10px 0
   background-color: #66A2CA
   @include background(linear-gradient(top,#66A2CA, #4287BB))
@@ -59,14 +59,16 @@ header
       font-weight: normal
       padding: 0
       margin: 0 0 0 -2px
+      &.expandable
+        background-image: url("/assets/header/toggle_down_light.png")
+        background-repeat: no-repeat
+        background-position: 93% 45%
+        padding: 4px 16px 6px 0
       a
         color: #fff
         text-decoration: none
         &:hover
           text-decoration: underline
-      &.year, &.flag
-        color: #fff
-        padding: 0px 10px
   .header_logo
     overflow: hidden
     float: left

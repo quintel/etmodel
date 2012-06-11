@@ -4,25 +4,23 @@
   .fce_notice{:class => Current.setting.use_fce ? nil : 'hidden'}= raw t("fce.notice")
 #header_inside{:style => "position: relative;"}
   %ul.sub-nav
-    %li
+    %li.expandable
       %a.information{:href=>"#"}
-        %span=t("header.information")
-    %li
+        = t("header.information")
+    %li.expandable
       %a.settings{:href=>"#"}
-        %span=t("header.settings")
-    - if current_user
-      %li
+        = t("header.settings")
+        - if has_active_scenario?
+          %img{:src => "/assets/icons/#{Current.setting.area_code}.png"}
+          = Current.setting.area_code if Current.setting.area_code != "nl"
+          = Current.setting.end_year
+    %li.expandable
+      - if current_user
         %a.signout{:href=>"/logout"}
-          %span=t("header.sign_out")
-    - else
-      %li
+          = t("header.sign_out")
+      - else
         %a.signin{:href=>"#"}
-          %span=t("header.sign_in")
-    - if has_active_scenario?
-      %li.flag
-        %img{:src => "/assets/icons/#{Current.setting.area_code}.png"}
-        = Current.setting.area_code if Current.setting.area_code != "nl"
-      %li.year= Current.setting.end_year
+          = t("header.sign_in")
 
     %li{:style=>'width: 160px'}
       %form#searchform{ :action => "/search", :method => :get }

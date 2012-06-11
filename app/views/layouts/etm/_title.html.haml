@@ -1,10 +1,8 @@
 #title
-  - if current_tutorial_movie
-    %a.tutorial_button{:href => "/tutorial/#{params[:controller]}/#{params[:id]}",
-      :alt => "Tutorial", :title => "Tutorial"}
-      .button_left_movie
-      .button_center
-        %span= t("tutorial.button")
-      .button_right
   - if @title
-    %h2= raw I18n.t("page_titles.#{to_yml_syntax(@title.title)}")
+    %h2
+      = raw I18n.t("page_titles.#{to_yml_syntax(@title.title)}")
+      - if current_tutorial_movie
+        %a.icon-film{:href => "/tutorial/#{params[:controller]}/#{params[:id]}",
+          :alt => "Tutorial", :title => "Tutorial"}
+        %a.icon-info-sign{:href => "/information"}

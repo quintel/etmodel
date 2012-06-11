@@ -56,7 +56,7 @@
         %form{:action => 'http://beta.et-engine.com/mechanical_turk/factory', :method => 'post', :target => '_blank', :id => 'turkit'}
           %input#last_api_response{:type => 'hidden', :name => 'json_data'}
           = submit_tag "Turk it"
-      
+
 #information_menu.header_menu.topnav
   %li
     %a{:href => "/about"}= t("header.about_qi")
@@ -80,4 +80,3 @@
     %li= link_to "Wiki", "http://wiki.quintel.com", :target => "_blank"
     %li= link_to t('header.publications'), "http://refman.et-model.com", :target => "_blank"
     %li= link_to t('header.feedback'), "/feedback", :class => "fancybox"
-

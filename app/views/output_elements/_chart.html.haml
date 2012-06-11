@@ -31,7 +31,7 @@
       = t "output_elements.common.pin"
 
     - if main && !@secondary_output_element # ugly
-      %a.add_chart.tooltip{:href => '#',
+      %a.add_secondary_chart.select_chart.tooltip{:href => "/output_elements?holder=secondary_chart",
         :title => "Add another chart"} add
   .charts_container
     .chart_not_finished

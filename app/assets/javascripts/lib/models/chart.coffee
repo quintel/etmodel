@@ -244,10 +244,12 @@ class @ChartList extends Backbone.Collection
       App.settings.set(holder_id, value)
       $(e.target).toggleClass("active", !!value)
 
-    $(document).on 'click', 'a.add_chart', (e) =>
+    # link to open the secondary chart
+    # The busybox setup will open the chart selection popup (see fancybox.coffee)
+    $(document).on 'click', 'a.add_secondary_chart', (e) =>
       e.preventDefault()
+      # Just show the chart holder
       $(".chart_holder.hidden").show()
-      @load(2, 'secondary_chart')
       $(e.target).tipsy("hide")
       $(e.target).remove()
 

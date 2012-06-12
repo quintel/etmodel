@@ -116,6 +116,7 @@ D3.mekko =
         enter().
         append("div").
         attr("class", "cell").
+        attr("title", (d) -> d.label() unless d.children).
         style("background", (d, i) =>
           if d.children
             null
@@ -137,11 +138,20 @@ D3.mekko =
         ).
         call(@cell)
 
+        $("div.cell").tipsy
+          html: true
+
     refresh: =>
       @svg.selectAll("div").
         data(@treemap.value( (d) ->
           d.val()
         )).
+        attr("title", (d) ->
+          # used by tipsy
+          return if d.children
+          val = d.val().toFixed(2)
+          "#{d.label()}<br/>#{val}PJ"
+          ).
         transition().
         duration(500).
         call(@cell)

@@ -62,7 +62,7 @@ class @AppView extends Backbone.View
     return false unless @scenario.api_session_id()
     url = @scenario.query_url(input_params)
     keys = window.gqueries.keys()
-    console.log "Gqueries count: #{keys.length}"
+    # console.log "Gqueries count: #{keys.length}"
     keys_ids = _.select(keys, (key) -> !key.match(/\(/))
     keys_string = _.select(keys, (key) -> key.match(/\(/))
     params =
@@ -71,6 +71,7 @@ class @AppView extends Backbone.View
       use_fce: App.settings.get('use_fce')
 
     @showLoading()
+    @api_call_stack.push('call_api')
     $.ajaxQueue
       url: url
       data: params
@@ -81,7 +82,6 @@ class @AppView extends Backbone.View
         @handle_timeout() if textStatus == 'timeout'
         @hideLoading()
       timeout: 10000
-    @register_api_call('call_api')
 
   handle_timeout: ->
     r = confirm "Your internet connection seems to be very slow. The ETM is
@@ -89,26 +89,19 @@ class @AppView extends Backbone.View
       the page"
     location.reload(true) if (r)
 
-  has_unfinished_api_calls: => _.isEmpty(@api_call_stack)
-
-  register_api_call: (api_call) => @api_call_stack.push(api_call)
-
-  unregister_api_call: (api_call) =>
-    @api_call_stack = _.without(@api_call_stack, api_call)
-
   # The following method could need some refactoring
   # e.g. el.set({ api_result : value_arr })
   # window.charts.first().trigger('change')
   # window.dashboard.trigger('change')
-  handle_api_result: (data, textStatus, jqXHR) ->
-    App.unregister_api_call('call_api')
+  handle_api_result: (data, textStatus, jqXHR) =>
+    @api_call_stack.pop()
     # store the last response from api for the turk it debugging tool
     # it is activated by passing ?debug=1 and can be found in the settings
     # menu.
     $("#last_api_response").val(jqXHR.responseText)
     for own key, values of data.result
-      gquery = window.gqueries.with_key(key)
-      gquery.handle_api_result(values)
+      if gquery = window.gqueries.with_key(key)
+        gquery.handle_api_result(values)
     window.charts.invoke 'trigger', 'change'
     if t = window.targets
       t.invoke('update_view')
@@ -120,7 +113,7 @@ class @AppView extends Backbone.View
       App.peak_load.trigger('change')
 
     $("body").trigger("dashboardUpdate")
-    App.hideLoading()
+    @hideLoading()
 
   # Set the update in a cancelable action. When you
   # pull a slider A this method is called. It will call doUpdateRequest
@@ -144,32 +137,16 @@ class @AppView extends Backbone.View
   # Shows a busy box. Only if api_call_stack is empty. Make sure
   # that you call the showLoading before adding the jsonp to api_call_stack.
   showLoading: =>
-    if @has_unfinished_api_calls()
-      if charts.current() && charts.current().get('type') != 'd3'
-        $("#charts_wrapper").busyBox({
-          spinner: '<img src="/assets/layout/ajax-loader.gif" />'
-        }).fadeIn('fast')
+    # TODO: deal with secondary d3 charts!
+    if charts.current() && charts.current().get('type') != 'd3'
+      $(".chart_holder:visible").busyBox
+        spinner: "<em>Loading</em>"
+    $("#constraints").busyBox
+      spinner: "<em>Loading</em>"
 
-      $("#constraints").busyBox({
-        classes: 'busybox ontop'
-        spinner: '<img src="/assets/layout/ajax-loader.gif" />'
-        top:     '22px'
-      }).fadeIn('fast')
-
-      # BusyBox doesn't account for elements which have position: fixed when the
-      # user has scrolled the window.
-      $.fn.busyBox.container.find('.busybox').each ->
-        element = $(this)
-        if element.css('position') == 'fixed'
-          top = parseInt(element.css('top').match(/^\d+/)[0])
-          element.css('top', top - $(window).scrollTop())
-
-  # Closes the loading box. will only close if there's no api_calls
-  # running at the moment
   hideLoading: =>
-    if @has_unfinished_api_calls()
-      $("#charts_wrapper").busyBox('close')
-      $("#constraints").busyBox('close')
+    if @api_call_stack.length == 0
+      $(".chart_holder, #constraints").busyBox('close')
 
   etm_debug: (t) -> console.log(t) if window.etm_js_debug
 

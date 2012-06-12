@@ -1,6 +1,7 @@
 class @Gquery extends Backbone.Model
   initialize : ->
     window.gqueries.add(this)
+    @references = 1
 
   result : ->
     present_value = @get('present_value')
@@ -37,6 +38,10 @@ class @Gquery extends Backbone.Model
     x = parseInt(n, 10)
     _.isNumber(x) && !_.isNaN(x)
 
+  # cocoa retain-release clone
+  retain: => @references += 1
+  release: => @references -= 1
+
 class GqueryList extends Backbone.Collection
   model : Gquery
 
@@ -44,11 +49,16 @@ class GqueryList extends Backbone.Collection
 
   keys: => _.compact(@pluck('key'))
 
-  find_or_create_by_key: (key) =>
+  find_or_create_by_key: (key, owner) =>
     if g = @with_key key
+      g.retain()
       return g
     else
       return new Gquery
         key: key
+
+  cleanup: =>
+    @each (g) =>
+      @remove g if g.references == 0
 
 window.gqueries = new GqueryList

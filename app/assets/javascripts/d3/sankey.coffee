@@ -115,10 +115,13 @@ D3.sankey =
   Link: class extends Backbone.Model
     initialize: =>
       @module = D3.sankey
+      @series = @module.series
       @left = @module.nodes.get @get('left')
       @right = @module.nodes.get @get('right')
       if @get('gquery')
-        @gquery = gqueries.find_or_create_by_key @get('gquery')
+        @gquery = new ChartSerie
+          gquery_key: @get('gquery')
+        @series.push(@gquery)
       # let the nodes know about me
       @left.right_links.push this
       @right.left_links.push this
@@ -175,7 +178,7 @@ D3.sankey =
 
     value: =>
       if @gquery
-        x = @gquery.get('future_value')
+        x = @gquery.future_value()
       if _.isNumber(x) then x else 0
 
     color: => @get('color') || "steelblue"
@@ -189,6 +192,7 @@ D3.sankey =
 
     initialize: ->
       @module = D3.sankey # shortcut
+      @module.series = @model.series
       @module.nodes = new @module.NodeList(@module.data.nodes)
       @module.links = new @module.LinkList(@module.data.links)
       @initialize_defaults()

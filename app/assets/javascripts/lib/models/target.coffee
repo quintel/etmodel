@@ -1,10 +1,10 @@
 class @Target extends Backbone.Model
   initialize : ->
     window.targets.add(this)
-    @success_query    = new Gquery({ key: @get("success_query")})
-    @value_query      = new Gquery({ key: @get("value_query")})
-    @target_query     = new Gquery({ key: @get("target_query")})
-    @user_value_query = new Gquery({ key: @get("user_value_query")})
+    @success_query    = gqueries.find_or_create_by_key @get("success_query")
+    @value_query      = gqueries.find_or_create_by_key @get("value_query")
+    @target_query     = gqueries.find_or_create_by_key @get("target_query")
+    @user_value_query = gqueries.find_or_create_by_key @get("user_value_query")
 
   # goal achieved? true/false
   success_value: => @success_query.get('future_value')

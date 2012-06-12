@@ -3,6 +3,8 @@ class @Chart extends Backbone.Model
     'container': 'main_chart'
 
   initialize : ->
+    # every chart has a series (=~ gqueries) collection. This helps us handling
+    # them
     @series = switch @get('type')
       when 'block' then new BlockChartSeries()
       when 'scatter' then new ScatterChartSeries()
@@ -124,6 +126,18 @@ class @Chart extends Backbone.Model
     return items.reverse() if @get('type') in ['vertical_stacked_bar', 'bezier']
     items
 
+  # raw array of the associated gqueries. Delegates to the collection object
+  #
+  gqueries: => @series.gqueries()
+
+  # let's get rid of the gqueries we don't need anymore. This is called when we
+  # remove a chart and don't want stale gqueries lying around.
+  #
+  delete_gqueries: =>
+    for g in @gqueries()
+      g.release()
+    gqueries.cleanup()
+
 class @ChartList extends Backbone.Collection
   model : Chart
 
@@ -167,10 +181,13 @@ class @ChartList extends Backbone.Collection
         # Remember where the chart is
         @chart_holders[container_id] = new_chart
         # Deal with the collection object
+        old_chart.delete_gqueries() if old_chart
         @remove old_chart
         @add new_chart
         # Pass the gqueries to the chart
-        new_chart.series.add(data.series)
+        for s in data.series
+          s.owner = container_id
+          new_chart.series.add(s)
 
         # Now it's time to upate the buttons and links for the chart
         root = $('#' + container_id).parents('.chart_holder')
@@ -188,7 +205,7 @@ class @ChartList extends Backbone.Collection
     @last()
 
   # returns the current chart id
-  current_id : => @current().get('id')
+  current_id : => @current().get('id') if @current()
 
   # returns the main chart
   current: -> @chart_holders['main_chart']

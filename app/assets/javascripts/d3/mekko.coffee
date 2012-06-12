@@ -1,12 +1,12 @@
 D3.mekko =
   data: {
     biomass: [
-      {gquery: 'biomass_industry_in_mekko_of_final_demand'},
-      {gquery: 'biomass_households_in_mekko_of_final_demand'},
-      {gquery: 'biomass_buildings_in_mekko_of_final_demand'},
-      {gquery: 'biomass_transport_in_mekko_of_final_demand'},
-      {gquery: 'biomass_other_in_mekko_of_final_demand'},
-      {gquery: 'biomass_agriculture_in_mekko_of_final_demand'}
+      {gquery: 'biomass_industry_in_mekko_of_final_demand',    label: 'biomass industry'},
+      {gquery: 'biomass_households_in_mekko_of_final_demand',  label: 'biomass households'},
+      {gquery: 'biomass_buildings_in_mekko_of_final_demand',   label: 'biomass buildings'},
+      {gquery: 'biomass_transport_in_mekko_of_final_demand',   label: 'biomass transport'},
+      {gquery: 'biomass_other_in_mekko_of_final_demand',       label: 'biomass other'},
+      {gquery: 'biomass_agriculture_in_mekko_of_final_demand', label: 'biomass agriculture'}
     ],
     oil: [
       {gquery: 'oil_industry_in_mekko_of_final_demand',    label: 'oil industry', color: '#888'},
@@ -33,28 +33,28 @@ D3.mekko =
       {gquery: 'coal_agriculture_in_mekko_of_final_demand', label: 'coal agriculture'}
     ],
     waste: [
-      {gquery: 'waste_industry_in_mekko_of_final_demand'},
-      {gquery: 'waste_households_in_mekko_of_final_demand'},
-      {gquery: 'waste_buildings_in_mekko_of_final_demand'},
-      {gquery: 'waste_transport_in_mekko_of_final_demand'},
-      {gquery: 'waste_other_in_mekko_of_final_demand'},
-      {gquery: 'waste_agriculture_in_mekko_of_final_demand'}
+      {gquery: 'waste_industry_in_mekko_of_final_demand'   , label: 'waste industry'},
+      {gquery: 'waste_households_in_mekko_of_final_demand' , label: 'waste households'},
+      {gquery: 'waste_buildings_in_mekko_of_final_demand'  , label: 'waste buildings'},
+      {gquery: 'waste_transport_in_mekko_of_final_demand'  , label: 'waste transport'},
+      {gquery: 'waste_other_in_mekko_of_final_demand'      , label: 'waste other'},
+      {gquery: 'waste_agriculture_in_mekko_of_final_demand', label: 'waste agriculture'}
     ],
     biofuels: [
-      {gquery: 'bio_fuels_industry_in_mekko_of_final_demand'},
-      {gquery: 'bio_fuels_households_in_mekko_of_final_demand'},
-      {gquery: 'bio_fuels_buildings_in_mekko_of_final_demand'},
-      {gquery: 'bio_fuels_transport_in_mekko_of_final_demand'},
-      {gquery: 'bio_fuels_other_in_mekko_of_final_demand'},
-      {gquery: 'bio_fuels_agriculture_in_mekko_of_final_demand'}
+      {gquery: 'bio_fuels_industry_in_mekko_of_final_demand',    label: 'biofuels industry'},
+      {gquery: 'bio_fuels_households_in_mekko_of_final_demand',  label: 'biofuels households'},
+      {gquery: 'bio_fuels_buildings_in_mekko_of_final_demand',   label: 'biofuels buildings'},
+      {gquery: 'bio_fuels_transport_in_mekko_of_final_demand',   label: 'biofuels transport'},
+      {gquery: 'bio_fuels_other_in_mekko_of_final_demand',       label: 'biofuels other'},
+      {gquery: 'bio_fuels_agriculture_in_mekko_of_final_demand', label: 'biofuels agriculture'}
     ],
     electricity: [
-      {gquery: 'electricity_industry_in_mekko_of_final_demand'},
-      {gquery: 'electricity_households_in_mekko_of_final_demand'},
-      {gquery: 'electricity_buildings_in_mekko_of_final_demand'},
-      {gquery: 'electricity_transport_in_mekko_of_final_demand'},
-      {gquery: 'electricity_other_in_mekko_of_final_demand'},
-      {gquery: 'electricity_agriculture_in_mekko_of_final_demand'}
+      {gquery: 'electricity_industry_in_mekko_of_final_demand',    label: 'electricity industry'},
+      {gquery: 'electricity_households_in_mekko_of_final_demand',  label: 'electricity households'},
+      {gquery: 'electricity_buildings_in_mekko_of_final_demand',   label: 'electricity buildings'},
+      {gquery: 'electricity_transport_in_mekko_of_final_demand',   label: 'electricity transport'},
+      {gquery: 'electricity_other_in_mekko_of_final_demand',       label: 'electricity other'},
+      {gquery: 'electricity_agriculture_in_mekko_of_final_demand', label: 'electricity agriculture'}
     ],
     hot_water: [
       {gquery: 'hot_water_industry_in_mekko_of_final_demand',    label: 'hot water industry'},
@@ -122,6 +122,19 @@ D3.mekko =
           else
             d.get('color') || @color(i)).
         text((d) -> if d.children then null else d.label()).
+        on('mouseover', ->
+          item = d3.select(this)
+          old_color = item.style("background")
+          # TODO: figure out if there's a better way to save the old value
+          item.attr("data-old_color", old_color)
+          item.transition().
+          style("background", "red")
+        ).
+        on('mouseout', ->
+          item = d3.select(this)
+          item.transition().
+          style("background", item.attr('data-old_color'))
+        ).
         call(@cell)
 
     refresh: =>
@@ -138,5 +151,6 @@ D3.mekko =
       @style 'top', (d) -> "#{d.y}px"
       @style 'width', (d) -> Math.max(0, d.dx - 1) + "px"
       @style 'height', (d) -> Math.max(0, d.dy - 1) + "px"
+
 
 

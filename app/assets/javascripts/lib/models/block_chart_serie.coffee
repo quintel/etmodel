@@ -19,3 +19,10 @@ class @BlockChartSerie extends Backbone.Model
 
 class @BlockChartSeries extends Backbone.Collection
   model : BlockChartSerie
+
+  gqueries: =>
+    out = []
+    @each (s) ->
+      out.push s.get('gquery_cost')
+      out.push s.get('gquery_investment')
+    out

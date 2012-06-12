@@ -62,12 +62,13 @@ class @AppView extends Backbone.View
     return false unless @scenario.api_session_id()
     url = @scenario.query_url(input_params)
     keys = window.gqueries.keys()
+    console.log "Gqueries count: #{keys.length}"
     keys_ids = _.select(keys, (key) -> !key.match(/\(/))
     keys_string = _.select(keys, (key) -> key.match(/\(/))
     params =
-      'r' : keys_ids.join(';')
-      'result' : keys_string
-      'use_fce' : App.settings.get('use_fce')
+      r: keys_ids.join(';')
+      result: keys_string
+      use_fce: App.settings.get('use_fce')
 
     @showLoading()
     $.ajaxQueue

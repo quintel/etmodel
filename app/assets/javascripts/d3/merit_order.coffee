@@ -23,11 +23,15 @@ D3.merit_order =
   Node: class extends Backbone.Model
     initialize: ->
       k = @get 'key'
-      @gquery_x = gqueries.find_or_create_by_key "merit_order_#{k}_capacity_in_merit_order_table"
-      @gquery_y = gqueries.find_or_create_by_key "merit_order_#{k}_operating_costs_in_merit_order_table"
+      @gquery_x = new ChartSerie
+        gquery_key: "merit_order_#{k}_capacity_in_merit_order_table"
+      D3.merit_order.series.push @gquery_x
+      @gquery_y = new ChartSerie
+        gquery_key: "merit_order_#{k}_operating_costs_in_merit_order_table"
+      D3.merit_order.series.push @gquery_y
 
-    value_x: => @gquery_x.get('future_value')
-    value_y: => @gquery_y.get('future_value')
+    value_x: => @gquery_x.future_value()
+    value_y: => @gquery_y.future_value()
 
     label: => @get('label') || @get('key')
 
@@ -36,6 +40,7 @@ D3.merit_order =
 
     initialize: ->
       @color = d3.scale.category20c()
+      D3.merit_order.series = @model.series
       @nodes = new D3.merit_order.NodeList(D3.merit_order.data)
       @initialize_defaults()
 

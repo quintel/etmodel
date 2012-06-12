@@ -17,3 +17,10 @@ class @ScatterChartSerie extends Backbone.Model
 
 class @ScatterChartSeries extends Backbone.Collection
   model : ScatterChartSerie
+
+  gqueries: =>
+    out = []
+    @each (s) ->
+      out.push s.get('gquery_x')
+      out.push s.get('gquery_y')
+    out

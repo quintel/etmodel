@@ -10,12 +10,12 @@ class @PeakLoad extends Backbone.Model
   initialize : ->
     @bind('change', @check_results)
     @gqueries =
-      'lv' :    new Gquery({key : 'peak_load_check_lv'})
-      'mv-lv' : new Gquery({key : 'peak_load_check_mv_lv'})
-      'mv'    : new Gquery({key : 'peak_load_check_mv'})
-      'hv-mv' : new Gquery({key : 'peak_load_check_hv_mv'})
-      'hv'    : new Gquery({key : 'peak_load_check_hv'})
-    @grid_investment_needed_gquery = new Gquery({key : 'peak_load_check_total'})
+      'lv':    gqueries.find_or_create_by_key 'peak_load_check_lv'
+      'mv-lv': gqueries.find_or_create_by_key 'peak_load_check_mv_lv'
+      'mv':    gqueries.find_or_create_by_key 'peak_load_check_mv'
+      'hv-mv': gqueries.find_or_create_by_key 'peak_load_check_hv_mv'
+      'hv':    gqueries.find_or_create_by_key 'peak_load_check_hv'
+    @grid_investment_needed_gquery = gqueries.find_or_create_by_key 'peak_load_check_total'
 
   check_results: =>
     if @grid_investment_needed()

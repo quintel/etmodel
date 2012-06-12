@@ -1,6 +1,6 @@
 class Constraint extends Backbone.Model
   initialize: ->
-    @gquery = new Gquery({key : @get('gquery_key')})
+    @gquery = gqueries.find_or_create_by_key @get('gquery_key')
     # let gquery notify the constraint, when it has changed.
     @gquery.bind('change', @update_values )
     # @update_values() will change attributes previous_result and result

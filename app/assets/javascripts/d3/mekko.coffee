@@ -68,11 +68,13 @@ D3.mekko =
 
   Node: class extends Backbone.Model
     initialize: ->
-      @gquery = gqueries.find_or_create_by_key @get('gquery')
+      @gquery = new ChartSerie
+        gquery_key: @get('gquery')
+      D3.mekko.series.push @gquery
 
     # value is apparently a reserved name
     val: =>
-      @gquery.get('future_value')
+      @gquery.future_value()
 
     label: => @get('label') || @get('gquery')
 
@@ -82,6 +84,7 @@ D3.mekko =
     initialize: ->
       @initialize_defaults()
       @color = d3.scale.category20c()
+      D3.mekko.series = @model.series
       @prepare_data()
 
     # D3 layouts expect data in a precise format

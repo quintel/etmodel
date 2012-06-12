@@ -3,7 +3,7 @@ class TabController < ApplicationController
 
   before_filter :ensure_valid_browser,
                 :store_last_etm_page,
-                :load_output_element
+                :load_output_element, :only => :show
 
   before_filter :track_user, :if => lambda{ APP_CONFIG[:wattnu] || session[:wattnu] }
 
@@ -21,6 +21,14 @@ class TabController < ApplicationController
       format.html { render :template => 'tab/show'}
       format.js
     end
+  end
+
+  # popup with the text description
+  def info
+    @title = PageTitle.for_page(params[:ctrl], params[:act]).first
+    sidebar = SidebarItem.where(:section => params[:ctrl], :key => params[:act]).first
+    @description = sidebar.try :description || @title.description
+    render :layout => false
   end
 
   protected

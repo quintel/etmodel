@@ -12,6 +12,7 @@ Etm::Application.routes.draw do
   match '/costs(/:id)'  => 'costs#show', :defaults => {:id => 'combustion'}
   match '/targets(/:id)' => 'targets#show', :defaults => {:id => 'sustainability'}
   match '/supply(/:id)' => 'supply#show', :defaults => {:id => 'electricity'}
+  match '/info/:ctrl/:act' => "tab#info", :as => :tab_info
 
   match '/descriptions/chart/:id'  => 'descriptions#show'
 

@@ -3,9 +3,10 @@
   info_url = chart ? "/descriptions/charts/#{chart.id}" : "#"
   pin_class = chart.try(:id) == Current.setting.send(dom_id) ? 'icon-lock' : 'icon-unlock'
 
-.chart_holder{:data => {:holder_id => dom_id}, :class => holder_class}
+.chart_holder{:data => {:holder_id => dom_id, :block_ui_on_refresh => "true"},
+  :class => holder_class}
   %header
-    %h3= raw t("output_elements.#{chart.key}") if chart
+    %h3 Loading
     .actions
       %a.chart_info.tooltip.fancybox.icon-question-sign{:href  => info_url,
         :title => t("output_elements.tooltips.info")}

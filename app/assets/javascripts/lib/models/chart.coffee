@@ -267,7 +267,7 @@ class @ChartList extends Backbone.Collection
     $(document).on 'click', 'a.add_secondary_chart', (e) =>
       e.preventDefault()
       # Just show the chart holder
-      $(".chart_holder.hidden").show()
+      $(".chart_holder.hidden").removeClass('.hidden').show()
       $(e.target).tipsy("hide")
       $(e.target).remove()
 

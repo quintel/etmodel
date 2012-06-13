@@ -22,6 +22,8 @@ class @D3ChartView extends BaseChartView
 
   can_be_shown_as_table: -> false
 
+  block_ui_on_refresh: -> false
+
   supported_in_current_browser: ->
     if $.browser.msie && $.browser.version < 9
       false

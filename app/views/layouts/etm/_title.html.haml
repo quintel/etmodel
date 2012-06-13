@@ -2,7 +2,7 @@
   %h2
     = raw @title
     = link_to tab_info_path(:ctrl => params[:controller], :act => params[:id]),
-      :class => [:button, :fancybox] do
+      :class => [:button, :fancybox_narrow] do
       %span.icon-info-sign
       Information
     - if current_tutorial_movie

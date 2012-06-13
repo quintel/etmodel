@@ -8,6 +8,12 @@ $ ->
       href: $(this).attr('href')
       autoSize: true
 
+  $("a.fancybox_narrow").fancybox
+      type: 'ajax'
+      href: $(this).attr('href')
+      width: 500
+      autoSize: false
+
   $("a.select_chart").live 'click', (e) ->
     e.preventDefault()
     $.fancybox.open

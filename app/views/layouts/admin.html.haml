@@ -8,14 +8,14 @@
     = yield :head
   %body{:class => "#{controller_name}_#{controller.action_name}"}
     #wrapper
-      %header#main
+      %header#top
         = render "layouts/etm/header"
         - if live_server?
           .live_server_notice This is the production server!
       %nav#admin
         = tabs_tag do |tab|
           = tab.main                   'Main', admin_root_path
-          = tab.texts                  'texts', admin_texts_path
+          = tab.texts                  'Texts', admin_texts_path
           = tab.tabs                   'Tabs', admin_tabs_path
           = tab.sidebar_items          'Sidebar', admin_sidebar_items_path
           = tab.slides                 'Slides', admin_slides_path

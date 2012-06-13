@@ -1,9 +1,11 @@
 = simple_form_for [:admin, @text] do |f|
+  = f.input :key
   = f.input :title_en
   = f.input :title_nl
   = f.input :short_content_en
   = f.input :short_content_nl
   = f.input :content_en
   = f.input :content_nl
-  = f.input :searchable
+  = f.input :searchable,
+    :hint => 'Check if you want the page to appear on the search page results'
   = f.button :submit

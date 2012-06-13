@@ -15,7 +15,7 @@ class TabController < ApplicationController
   def show
     @active_sidebar = Current.view.sidebar
     @slides = Current.view.slides
-    @title = PageTitle.for_page(params[:controller], params[:id]).first
+    @title = Text.where(:key => "#{params[:controller]}_#{params[:id]}").first
 
     respond_to do |format|
       format.html { render :template => 'tab/show'}
@@ -25,7 +25,7 @@ class TabController < ApplicationController
 
   # popup with the text description
   def info
-    @title = PageTitle.for_page(params[:ctrl], params[:act]).first
+    @title = Text.where(:key => "#{params[:controller]}_#{params[:id]}").first
     sidebar = SidebarItem.where(:section => params[:ctrl], :key => params[:act]).first
     @description = sidebar.try :description || @title.description
     render :layout => false

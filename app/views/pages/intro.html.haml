@@ -15,28 +15,28 @@
 #textrepository_demand{:style => "display: none;"}
   .intro_text
     %h1= t("intro.demand").html_safe + " #{Current.setting.end_year}?".html_safe
-    = t_db("intro_page_demand").html_safe
+    = t_db("intro_page_demand")
   %p.button
     %a.button{:href=>"/demand"}= I18n.t("start_with_demand")
 
 #textrepository_supply{:style => "display: none;"}
   .intro_text
     %h1= t("intro.supply").html_safe + " #{Current.setting.end_year}?".html_safe
-    = t_db("intro_page_supply").html_safe
+    = t_db("intro_page_supply")
   %p.button
     %a.button{:href=>"/supply"}= I18n.t("start_with_supply")
 
 #textrepository_policy{:style => "display: none;"}
   .intro_text
     %h1= t("intro.targets").html_safe + " #{Current.setting.end_year}?".html_safe
-    = t_db("intro_page_policy").html_safe
+    = t_db("intro_page_policy")
   %p.button
     %a.button{:href=>"/targets"}= I18n.t("start_with_targets")
 
 #textrepository_costs{:style => "display: none;"}
   .intro_text
     %h1= t("intro.costs").html_safe + " #{Current.setting.end_year}?".html_safe
-    = t_db("intro_page_cost").html_safe
+    = t_db("intro_page_cost")
   %p.button
     %a.button{:href=>"/costs"}= I18n.t("start_with_costs")
 

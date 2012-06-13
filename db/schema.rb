@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120516122629) do
+ActiveRecord::Schema.define(:version => 20120613085902) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -146,14 +146,6 @@ ActiveRecord::Schema.define(:version => 20120516122629) do
 
   add_index "output_elements", ["hidden"], :name => "index_output_elements_on_hidden"
   add_index "output_elements", ["key"], :name => "index_output_elements_on_key"
-
-  create_table "page_titles", :force => true do |t|
-    t.string   "controller"
-    t.string   "action"
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "partners", :force => true do |t|
     t.string   "name"
@@ -301,15 +293,20 @@ ActiveRecord::Schema.define(:version => 20120516122629) do
 
   add_index "targets", ["code"], :name => "index_policy_goals_on_key"
 
-  create_table "translations", :force => true do |t|
+  create_table "texts", :force => true do |t|
     t.string   "key"
     t.text     "content_en"
     t.text     "content_nl"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title_en"
+    t.string   "title_nl"
+    t.text     "short_content_en"
+    t.text     "short_content_nl"
+    t.boolean  "searchable",       :default => false
   end
 
-  add_index "translations", ["key"], :name => "index_translations_on_key"
+  add_index "texts", ["key"], :name => "index_translations_on_key"
 
   create_table "users", :force => true do |t|
     t.string   "name",                                 :null => false

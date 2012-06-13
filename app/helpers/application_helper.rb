@@ -35,7 +35,7 @@ module ApplicationHelper
 
   def t_db(key)
     begin
-      Translation.find_by_key(key).content.html_safe
+      Text.find_by_key(key).content.html_safe
     rescue
       "translation missing, #{I18n.locale.to_s.split('-').first} #{key}"
     end
@@ -65,7 +65,7 @@ module ApplicationHelper
   def live_server?
     APP_CONFIG[:live_server]
   end
-  
+
   def to_yml_syntax(title)
     title.parameterize.underscore.to_sym
   end

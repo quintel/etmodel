@@ -232,22 +232,6 @@ class @ChartList extends Backbone.Collection
       @load chart_id, chart_holder
       close_fancybox()
 
-    $(document).on "click", "a.table_format", (e) =>
-      holder_id = $(e.target).parents(".chart_holder").data('holder_id')
-      root = $('#' + holder_id).parents('.chart_holder')
-      root.find("a.table_format").hide()
-      root.find("a.chart_format").show()
-      @chart_holders[holder_id].view.toggle_format()
-      false
-
-    $(document).on "click", "a.chart_format", (e) =>
-      holder_id = $(e.target).parents(".chart_holder").data('holder_id')
-      root = $('#' + holder_id).parents('.chart_holder')
-      root.find("a.chart_format").hide()
-      root.find("a.table_format").show()
-      @chart_holders[holder_id].view.toggle_format()
-      false
-
     $(document).on 'click', "a.pin_chart", (e) =>
       e.preventDefault()
       # which chart are we talking about?

@@ -9,19 +9,20 @@
           "http://refman.et-model.com/publications?q=#{params[:q]}", |
           :target=> "_blank"                                         |
 
-  - unless @pages.empty?
+  - unless @sidebar_items.empty?
+    -# TODO: add static pages search and rename pages to sidebar/categories or similar
     %h2 Pages
     %table
-      - @pages.each do |result|
+      - @sidebar_items.each do |result|
         %tr
           %td.img
-            %img.slide_icon{:src => "/assets/layout/diamond_#{result.controller}.gif"}
+            %img.slide_icon{:src => "/assets/layout/diamond_#{result.tab.key}.gif"}
           %td.result
-            %h4= result.search_result.title
+            %h4= t "sidebar_items.#{result.key}"
             %p
               = search_result_description(result)
               %br
-              = link_to t('search.jump_to_page'), :controller => result.controller, :action => result.action
+              = link_to t('search.jump_to_page'), :controller => result.tab.key, :action => result.key
 
   - unless @input_elements.empty?
     %h2 Sliders

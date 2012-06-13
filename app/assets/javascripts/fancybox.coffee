@@ -1,36 +1,30 @@
 $ ->
   $.fancybox.defaults.helpers.overlay.opacity = 0.4
 
-  $(".valuees a.label, a.fancybox").live 'click', (e) ->
-    e.preventDefault()
-    $.fancybox.open
-      type: 'ajax'
-      href: $(this).attr('href')
-      autoSize: true
+  $(".valuees a.label, a.fancybox").fancybox
+    type: 'ajax'
+    href: $(this).attr('href')
+    autoSize: true
 
   $("a.fancybox_narrow").fancybox
-      type: 'ajax'
-      href: $(this).attr('href')
-      width: 500
-      autoSize: false
+    type: 'ajax'
+    href: $(this).attr('href')
+    width: 500
+    autoSize: false
 
-  $("a.select_chart").live 'click', (e) ->
-    e.preventDefault()
-    $.fancybox.open
-      href: $(this).attr('href')
-      type: 'ajax'
-      width    : 960
-      height   : 600
-      padding: 0
+  $("a.select_chart").fancybox
+    href: $(this).attr('href')
+    type: 'ajax'
+    width    : 960
+    height   : 600
+    padding: 0
 
-  $("a.prediction").live 'click', (e) ->
-    e.preventDefault()
-    $.fancybox.open
-      href: $(this).attr('href')
-      width    : 960
-      height   : 650
-      padding  : 0
-      type     : 'iframe'
+  $("a.prediction").fancybox
+    href: $(this).attr('href')
+    width    : 960
+    height   : 650
+    padding  : 0
+    type     : 'iframe'
 
   $('#overlay_container a').live 'click', (i,el) ->
     if !$(this).hasClass('no_target')

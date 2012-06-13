@@ -1,4 +1,8 @@
 class @BaseChartView extends Backbone.View
+  events:
+    "click a.table_format": "toggle_format"
+    "click a.chart_format": "toggle_format"
+
   initialize_defaults: =>
     @model.bind('change', @render)
 
@@ -69,12 +73,14 @@ class @BaseChartView extends Backbone.View
     highlighter:
       show: false
 
-  toggle_format: ->
+  toggle_format: =>
     @display_as_table = !@display_as_table
     if @can_be_shown_as_table() && @display_as_table
       @render_as_table()
     else
       @render()
+    @$el.find("a.table_format").toggle(!@display_as_table)
+    @$el.find("a.chart_format").toggle(@display_as_table)
 
   hide_format_toggler: => $("a.toggle_chart_format").hide()
 

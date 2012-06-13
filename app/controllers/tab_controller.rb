@@ -13,9 +13,8 @@ class TabController < ApplicationController
   before_filter :check_valid_sidebar_item, :only => :show
 
   def show
-    @active_sidebar = Current.view.sidebar
     @slides = Current.view.slides
-    @title = Text.where(:key => "#{params[:controller]}_#{params[:id]}").first
+    @title = Text.find_by_key("#{params[:controller]}_#{params[:id]}").try :title
 
     respond_to do |format|
       format.html { render :template => 'tab/show'}
@@ -25,9 +24,11 @@ class TabController < ApplicationController
 
   # popup with the text description
   def info
-    @title = Text.where(:key => "#{params[:controller]}_#{params[:id]}").first
-    sidebar = SidebarItem.where(:section => params[:ctrl], :key => params[:act]).first
-    @description = sidebar.try :description || @title.description
+    # The title is stored in an object
+    @title = Text.find_by_key("#{params[:ctrl]}_#{params[:act]}").try :title
+    # The description belongs to a sidebar item. Ugly!
+    s = SidebarItem.find_by_section_and_key(params[:ctrl], params[:act])
+    @description = s.description.try(:content) if s
     render :layout => false
   end
 

@@ -1,13 +1,12 @@
 #title
-  - if @title
-    %h2
-      = raw @title.title
-      = link_to tab_info_path(:ctrl => params[:controller], :act => params[:id]),
-        :class => [:button, :fancybox] do
-        %span.icon-info-sign
-        Information
-      - if current_tutorial_movie
-        %a.button{:href => "/tutorial/#{params[:controller]}/#{params[:id]}",
-          :alt => "Tutorial", :title => "Tutorial"}
-          %span.icon-film
-          Tutorial
+  %h2
+    = raw @title
+    = link_to tab_info_path(:ctrl => params[:controller], :act => params[:id]),
+      :class => [:button, :fancybox] do
+      %span.icon-info-sign
+      Information
+    - if current_tutorial_movie
+      %a.button{:href => "/tutorial/#{params[:controller]}/#{params[:id]}",
+        :alt => "Tutorial", :title => "Tutorial"}
+        %span.icon-film
+        Tutorial

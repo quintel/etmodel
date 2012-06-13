@@ -30,6 +30,14 @@ class SidebarItem < ActiveRecord::Base
 
   scope :ordered, order('position')
 
+  define_index do
+    indexes key
+    indexes description(:content_en), :as => :description_content_en
+    indexes description(:content_nl), :as => :description_content_nl
+    indexes description(:short_content_en), :as => :description_short_content_en
+    indexes description(:short_content_nl), :as => :description_short_content_nl
+  end
+
   def parsed_key_for_admin
     "#{section.andand} | #{key}"
   end

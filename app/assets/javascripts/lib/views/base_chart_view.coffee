@@ -38,6 +38,7 @@ class @BaseChartView extends Backbone.View
   update_title: ->
     @$el.find('h3').html(@model.get("name"))
     @$el.data('chart_id', @model.get('id'))
+    @$el.attr('data-block_ui_on_refresh', @block_ui_on_refresh())
 
   create_legend: (opts) ->
     renderer: $.jqplot.EnhancedLegendRenderer
@@ -78,6 +79,7 @@ class @BaseChartView extends Backbone.View
   hide_format_toggler: => $("a.toggle_chart_format").hide()
 
   can_be_shown_as_table: -> true
+  block_ui_on_refresh: -> true
 
   render_as_table: =>
     @clear_container()

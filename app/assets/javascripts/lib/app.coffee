@@ -134,13 +134,10 @@ class @AppView extends Backbone.View
     window.input_elements.reset_dirty()
     window.App.call_api(input_params)
 
-  # Shows a busy box. Only if api_call_stack is empty. Make sure
-  # that you call the showLoading before adding the jsonp to api_call_stack.
   showLoading: =>
-    # TODO: deal with secondary d3 charts!
-    if charts.current() && charts.current().get('type') != 'd3'
-      $(".chart_holder:visible").busyBox
-        spinner: "<em>Loading</em>"
+    # D3 charts shouldn't be blocked, only jqPlot ones
+    $(".chart_holder[data-block_ui_on_refresh=true]:visible").busyBox
+      spinner: "<em>Loading</em>"
     $("#constraints").busyBox
       spinner: "<em>Loading</em>"
 

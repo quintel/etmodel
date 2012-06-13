@@ -16,7 +16,7 @@ Etm::Application.routes.draw do
 
   match '/descriptions/chart/:id'  => 'descriptions#show'
 
-  match '/translations/:id' => 'translations#show'
+  match '/texts/:id' => 'texts#show'
 
   match 'login'  => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
@@ -50,7 +50,7 @@ Etm::Application.routes.draw do
               :year_values,
               :slides,
               :sidebar_items,
-              :translations,
+              :texts,
               :output_element_series,
               :converter_positions,
               :general_user_notifications,

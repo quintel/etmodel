@@ -1,7 +1,7 @@
 #title
   - if @title
     %h2
-      = raw I18n.t("page_titles.#{to_yml_syntax(@title.title)}")
+      = raw @title.title
       = link_to tab_info_path(:ctrl => params[:controller], :act => params[:id]),
         :class => [:button, :fancybox] do
         %span.icon-info-sign

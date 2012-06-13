@@ -90,7 +90,7 @@ public
   end
 
   def bugs
-    @translation = Translation.find_or_create_by_key('bugs')
+    @text = Text.find_or_create_by_key('bugs')
   end
 
   ######################################

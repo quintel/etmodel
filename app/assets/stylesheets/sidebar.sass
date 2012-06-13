@@ -22,13 +22,13 @@
       overflow: hidden
       vertical-align: top
       position: relative
-
+      &.active
+        background: #ebebeb
+      &:hover
+        background: #fff
       a:hover, &.active a
-        font-weight: bold
-        +border-radius(4px)
         span.value
           background: transparent none
-
       a
         float: left
         width: 180px

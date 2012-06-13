@@ -8,15 +8,6 @@ $ ->
       href: $(this).attr('href')
       autoSize: true
 
-  $("a.tutorial_button").live 'click', (e) ->
-    e.preventDefault()
-    $.fancybox.open
-      type: 'ajax'
-      href: $(this).attr('href')
-      padding  : 5
-      scrolling: 'no'
-      autoSize: true
-
   $("a.select_chart").live 'click', (e) ->
     e.preventDefault()
     $.fancybox.open

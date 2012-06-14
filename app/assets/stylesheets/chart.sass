@@ -79,16 +79,19 @@ table.autostripe
 // D3-specific charts
 //
 #d3_container_sankey
-  text.label
-    font-family: Helvetica, Arial, sans-serif
-    font-size: 9px
   text.link_label
     font-family: Helvetica, Arial, sans-serif
     font-size: 9px
     font-weight: bold
-  .node rect
-    shape-rendering: crispEdges
-    fill-opacity: .85
+  g.node
+    rect
+      shape-rendering: crispEdges
+      fill-opacity: .85
+    text.label
+      font-family: Helvetica, Arial, sans-serif
+      font-size: 9px
+      text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff, 0 0 5px #fff
+
   .y.axis
     line, path
       fill: none

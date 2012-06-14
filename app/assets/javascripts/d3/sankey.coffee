@@ -71,7 +71,9 @@ D3.sankey =
   #
   Node: class extends Backbone.Model
     @width: 25
-    @horizontal_spacing: 250
+    @horizontal_spacing: 280
+
+    vertical_margin: 8
 
     initialize: =>
       # shortcut to access the collection objects
@@ -83,7 +85,7 @@ D3.sankey =
     #
     y_offset: =>
       offset = 0
-      margin = 50
+      margin = @module.y.invert(@vertical_margin)
       for n in @siblings()
         break if n == this
         offset += n.value() + margin
@@ -197,12 +199,6 @@ D3.sankey =
       @module.links = new @module.LinkList(@module.data.links)
       @initialize_defaults()
 
-      @unit_blocks = [
-        {id: 1, value: 1},
-        {id: 10, value: 10},
-        {id: 100, value: 100}
-      ]
-
     # this method is called when we first render the chart. It is called if we
     # want a full chart refresh when the user resizes the browser window, too
     #
@@ -216,6 +212,9 @@ D3.sankey =
 
       # this one will be changed dynamically later on
       @y = d3.scale.linear().domain([0, 5000]).range([0, @height])
+      # we need the scale somewhere else, too. This code is indeed ugly and should
+      # be refactored ASAP, removing all the @module calls.
+      @module.y = @y
 
       # This is the function that will take care of drawing the links once we've
       # set the base points
@@ -243,7 +242,6 @@ D3.sankey =
 
     draw_links: =>
       # links are treated as a group made of a link path and label text element
-      #
       links = @svg.selectAll('g.link').
         data(@module.links.models, (d) -> d.cid).
         enter().
@@ -253,7 +251,6 @@ D3.sankey =
         ).
         attr("data-cid", (d) -> d.cid) # unique identifier
       # link path
-      #
       links.append("svg:path").
         style("stroke-width", (link) -> link.value()).
         style("stroke", (link, i) -> link.color()).
@@ -263,7 +260,6 @@ D3.sankey =
         on("mouseover", @link_mouseover).
         on("mouseout", @node_mouseout)
       # link labels
-      #
       links.append("svg:text").
       attr("class", "link_label").
       attr("x", (d) => @x d.right_x()).
@@ -276,25 +272,18 @@ D3.sankey =
       return links
 
     draw_nodes: =>
-      # Node elements are grouped inside an svg element, so we can use relative
-      # coordinates
-      #
-      # The container just stores the x and y coordinates
-      #
-      nodes = @svg.selectAll("svg.node").
+      nodes = @svg.selectAll("g.node").
         data(@module.nodes.models, (d) -> d.get('id')).
         enter().
-        append("svg").
-        attr("class", (d) -> "node").
-        attr("data-id", (d) -> d.get('id')).
-        attr("x", (d) => @x(@module.Node.horizontal_spacing * d.get('column'))).
-        attr("y", (d) => @y(d.y_offset()))
+        append("g").
+        attr("class", "node").
+        attr("data-id", (d) -> d.get('id'))
 
-      # The rectangle just cares about its size and color
-      #
       colors = d3.scale.category20()
 
       nodes.append("svg:rect").
+        attr("x", (d) => @x(@module.Node.horizontal_spacing * d.get('column'))).
+        attr("y", (d) => @y(d.y_offset())).
         attr("fill", (datum, i) -> colors(i)).
         attr("stroke", (d, i) -> d3.rgb(colors(i)).darker(2)).
         attr("width", (d) => @x @module.Node.width).
@@ -302,13 +291,13 @@ D3.sankey =
         on("mouseover", @node_mouseover).
         on("mouseout", @node_mouseout)
 
-      # And here we have the label. We use a +svg:text+ element that will then
-      # hold a +tspan+ element for each line
-      #
+      # And here we have the label
       nodes.append("svg:text").
         attr("class", "label").
-        attr("x", @x 30).
-        attr("y", 9).
+        attr("x", (d) => @x d.x_offset()).
+        attr("dx", 20).
+        attr("dy", 3).
+        attr("y", (d) => @y(d.y_offset() + d.value() / 2) ).
         text((d) -> d.label())
 
       return nodes
@@ -363,29 +352,24 @@ D3.sankey =
       @y = d3.scale.linear().
         domain([0, max_height * 1.25]).
         range([0, @height * .90])
+      @module.y = @y
 
       # refresh the axis
       @svg.selectAll(".y").transition().duration(500).call(@y_axis.scale(@y))
 
-      # start by translating the container to the final position
-      #
-      @nodes.data(@module.nodes.models, (d) -> d.get('id')).
-        transition().duration(500).
-        attr("y", (d) => @y(d.y_offset()))
-
-      # then resize the rectangles
-      #
+      # move the rectangles
       @nodes.data(@module.nodes.models, (d) -> d.get('id')).
         selectAll("rect").
         transition().duration(500).
-        attr("height", (d) => @y d.value())
+        attr("height", (d) => @y d.value()).
+        attr("y", (d) => @y(d.y_offset()))
 
       # then move the label
       #
       @nodes.data(@module.nodes.models, (d) -> d.get('id')).
         selectAll("text.label").
         transition().duration(500).
-        attr("dy", (d) => @y(d.value() / 2))
+        attr("y", (d) => @y(d.y_offset() + d.value() / 2) )
 
       # then transform the links
       #

@@ -67,59 +67,58 @@ D3.sankey =
 
     ]
 
-  # Helper classes
-  #
+  # In this chart most positioning is calculated by us. The D3 sankey plugin is
+  # cool but not flexible enough
   Node: class extends Backbone.Model
     @width: 25
     @horizontal_spacing: 280
-
     vertical_margin: 8
 
     initialize: =>
-      # shortcut to access the collection objects
-      @module = D3.sankey
+      @view = D3.sankey.view
       @right_links = []
       @left_links = []
 
-    # vertical position of the node. Adds some margin between nodes
-    #
+    # vertical position of the top left corner of the node. Adds some margin
+    # between nodes
     y_offset: =>
       offset = 0
-      margin = @module.y.invert(@vertical_margin)
+      # since the value's going to be scaled, let's invert it to have always the
+      # same margin in absolute (=pixel) values
+      margin = @view.y.invert(@vertical_margin)
       for n in @siblings()
         break if n == this
         offset += n.value() + margin
       offset
 
     x_offset: => @get('column') * D3.sankey.Node.horizontal_spacing
+
+    # center point of the node. We use it as link anchor point
     x_center: => @x_offset() + D3.sankey.Node.width / 2
-    y_center: => @y_offset() + @value() / 2
 
     # The height of the node is the sum of the height of its link. Since links
     # are both inbound and outbound, let's use the max size. Ideally the values
     # should match
-    #
     value: =>
-      _.max([
+      _.max [
         _.inject(@left_links, ((memo, i) -> memo + i.value()), 0),
         _.inject(@right_links,((memo, i) -> memo + i.value()), 0)
-      ])
+      ]
 
     # returns an array of the other nodes that belong to the same column. This
     # is used by the +y_offset+ method to calculate the right node position
-    #
     siblings: =>
-      items = _.groupBy(@module.nodes.models, (node) -> node.get('column'))
+      items = _.groupBy(@view.node_list.models, (node) -> node.get('column'))
       items[@get 'column']
 
     label: => @get('label') || @get('id')
 
   Link: class extends Backbone.Model
     initialize: =>
-      @module = D3.sankey
-      @series = @module.series
-      @left = @module.nodes.get @get('left')
-      @right = @module.nodes.get @get('right')
+      @view = D3.sankey.view
+      @series = @view.series
+      @left = @view.node_list.get @get('left')
+      @right = @view.node_list.get @get('right')
       if @get('gquery')
         @gquery = new ChartSerie
           gquery_key: @get('gquery')
@@ -128,9 +127,9 @@ D3.sankey =
       @left.right_links.push this
       @right.left_links.push this
 
-    # returns the absolute y coordinate of the left anchor point
-    #
-    # This method should definitely be simplified
+    # returns the absolute y coordinate of the left anchor point. SVG wants the
+    # anchor point of the line middle, so we must take into account the stroke
+    # width. This method is ugly and should definitely be simplified
     left_y:  =>
       offset = null
       for link in @left.right_links
@@ -147,12 +146,9 @@ D3.sankey =
             offset += link.value()
       @left.y_offset() + offset
 
-    # see above
-    #
     right_y:  =>
       offset = null
       for link in @right.left_links
-        # push down the first link
         if offset == null
           offset = link.value() / 2
           break if link == this
@@ -165,8 +161,8 @@ D3.sankey =
             offset += link.value()
       @right.y_offset() + offset
 
-    left_x:  => @left.x_center() + @module.Node.width / 2
-    right_x: => @right.x_center() - @module.Node.width / 2
+    left_x:  => @left.x_center()  + D3.sankey.Node.width / 2
+    right_x: => @right.x_center() - D3.sankey.Node.width / 2
 
     # Use 4 points and let D3 interpolate a smooth curve
     #
@@ -190,18 +186,16 @@ D3.sankey =
   # This is the main chart class
   #
   View: class extends D3ChartView
-    el: "body"
-
     initialize: ->
-      @module = D3.sankey # shortcut
-      @module.series = @model.series
-      @module.nodes = new @module.NodeList(@module.data.nodes)
-      @module.links = new @module.LinkList(@module.data.links)
+      namespace = D3.sankey
+      namespace.view = this
+      @series = @model.series
+      @node_list = new namespace.NodeList(namespace.data.nodes)
+      @link_list = new namespace.LinkList(namespace.data.links)
       @initialize_defaults()
 
     # this method is called when we first render the chart. It is called if we
     # want a full chart refresh when the user resizes the browser window, too
-    #
     draw: =>
       @margin = 50
       @width = (@container_node().width()   || 490) - 2 * @margin
@@ -212,9 +206,6 @@ D3.sankey =
 
       # this one will be changed dynamically later on
       @y = d3.scale.linear().domain([0, 5000]).range([0, @height])
-      # we need the scale somewhere else, too. This code is indeed ugly and should
-      # be refactored ASAP, removing all the @module calls.
-      @module.y = @y
 
       # This is the function that will take care of drawing the links once we've
       # set the base points
@@ -243,12 +234,10 @@ D3.sankey =
     draw_links: =>
       # links are treated as a group made of a link path and label text element
       links = @svg.selectAll('g.link').
-        data(@module.links.models, (d) -> d.cid).
+        data(@link_list.models, (d) -> d.cid).
         enter().
         append("svg:g").
-        attr("class", (link) ->
-          "link #{link.left.get('id')} #{link.right.get('id')}"
-        ).
+        attr("class", (l) -> "link #{l.left.get('id')} #{l.right.get('id')}").
         attr("data-cid", (d) -> d.cid) # unique identifier
       # link path
       links.append("svg:path").
@@ -272,26 +261,26 @@ D3.sankey =
       return links
 
     draw_nodes: =>
+      horizontal_spacing = D3.sankey.Node.horizontal_spacing
+      width = D3.sankey.Node.width
+      colors = d3.scale.category20()
       nodes = @svg.selectAll("g.node").
-        data(@module.nodes.models, (d) -> d.get('id')).
+        data(@node_list.models, (d) -> d.get('id')).
         enter().
         append("g").
         attr("class", "node").
         attr("data-id", (d) -> d.get('id'))
 
-      colors = d3.scale.category20()
-
       nodes.append("svg:rect").
-        attr("x", (d) => @x(@module.Node.horizontal_spacing * d.get('column'))).
+        attr("x", (d) => @x(horizontal_spacing * d.get('column'))).
         attr("y", (d) => @y(d.y_offset())).
         attr("fill", (datum, i) -> colors(i)).
         attr("stroke", (d, i) -> d3.rgb(colors(i)).darker(2)).
-        attr("width", (d) => @x @module.Node.width).
+        attr("width", (d) => @x width).
         attr("height", (d) => @y d.value()).
         on("mouseover", @node_mouseover).
         on("mouseout", @node_mouseout)
 
-      # And here we have the label
       nodes.append("svg:text").
         attr("class", "label").
         attr("x", (d) => @x d.x_offset()).
@@ -303,7 +292,6 @@ D3.sankey =
       return nodes
 
     # formats the value shown in the link labels
-    #
     format_value: (x) -> "#{x.toFixed(2)} PJ"
 
     # callbacks
@@ -316,7 +304,7 @@ D3.sankey =
         duration(200).
         style("opacity", 0.2)
 
-    # this is use ased link_mouseout, too
+    # this is used as link_mouseout, too
     node_mouseout: ->
       d3.selectAll(".link").
         transition().
@@ -329,59 +317,47 @@ D3.sankey =
     link_mouseover: ->
       current_id = $(this).parent().attr("data-cid")
       d3.selectAll(".link").
-        each((d) ->
+        each (d) ->
           item = d3.select(this)
           if d.cid == current_id
-            item.selectAll(".link_label").
-              transition().
-              style("opacity", 1)
+            item.selectAll(".link_label").transition().style("opacity", 1)
           else
-            item.transition().
-              duration(200).
-              style("opacity", 0.2)
-        )
-
+            item.transition().duration(200).style("opacity", 0.2)
 
     # this method is called every time we're updating the chart
-    #
     refresh: =>
-      max_height = @module.nodes.max_column_value()
+      max_height = @node_list.max_column_value()
 
       # update the scaling function
-      #
       @y = d3.scale.linear().
         domain([0, max_height * 1.25]).
         range([0, @height * .90])
-      @module.y = @y
 
       # refresh the axis
       @svg.selectAll(".y").transition().duration(500).call(@y_axis.scale(@y))
 
       # move the rectangles
-      @nodes.data(@module.nodes.models, (d) -> d.get('id')).
+      @nodes.data(@node_list.models, (d) -> d.get('id')).
         selectAll("rect").
         transition().duration(500).
         attr("height", (d) => @y d.value()).
         attr("y", (d) => @y(d.y_offset()))
 
-      # then move the label
-      #
-      @nodes.data(@module.nodes.models, (d) -> d.get('id')).
+      # then move the node label
+      @nodes.data(@node_list.models, (d) -> d.get('id')).
         selectAll("text.label").
         transition().duration(500).
         attr("y", (d) => @y(d.y_offset() + d.value() / 2) )
 
       # then transform the links
-      #
-      @links.data(@module.links.models, (d) -> d.cid).
+      @links.data(@link_list.models, (d) -> d.cid).
         transition().duration(500).
         selectAll("path").
         attr("d", (link) => @link_line link.path_points()).
         style("stroke-width", (link) => @y(link.value()))
 
-      # then move the labels and update their value
-      #
-      @links.data(@module.links.models, (d) -> d.cid).
+      # then move the link labels and update their value
+      @links.data(@link_list.models, (d) -> d.cid).
         transition().duration(500).
         selectAll("text.link_label").
         attr("y", (link) => @y link.right_y()).
@@ -391,7 +367,6 @@ class D3.sankey.NodeList extends Backbone.Collection
   model: D3.sankey.Node
 
   # returns the height of the tallest column
-  #
   max_column_value: =>
     sums = {}
     @each (n) ->
@@ -402,4 +377,3 @@ class D3.sankey.NodeList extends Backbone.Collection
 
 class D3.sankey.LinkList extends Backbone.Collection
   model: D3.sankey.Link
-

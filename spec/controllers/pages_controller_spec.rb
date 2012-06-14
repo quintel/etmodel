@@ -49,4 +49,11 @@ describe PagesController do
       assigns(:current).setting.end_year.should == 2036
     end
   end
+
+  describe "bugs page" do
+    it "should work" do
+      get :bugs
+      response.should be_success
+    end
+  end
 end

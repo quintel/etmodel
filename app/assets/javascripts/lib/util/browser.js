@@ -4,7 +4,7 @@ var Browser = {
            // if we can make touch events return true
            document.createEvent("TouchEvent");
            return true;
-       } catch(e) { 
+       } catch(e) {
 
            return false;
        }
@@ -34,6 +34,14 @@ var Browser = {
   hasProperPushStateSupport: function() {
     var ua = $.browser;
     if (ua.webkit) { return true; }
+  },
+
+  hasD3Support: function() {
+    var ua = $.browser;
+    if (ua.msie && ua.version < 9)
+      return false;
+    else
+      return true;
   }
 }
 

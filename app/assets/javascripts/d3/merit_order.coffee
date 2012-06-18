@@ -39,9 +39,13 @@ D3.merit_order =
     el: "body"
 
     initialize: ->
-      @color = d3.scale.category20c()
-      D3.merit_order.series = @model.series
-      @nodes = new D3.merit_order.NodeList(D3.merit_order.data)
+      # the initalizer is wrapped in a try to prevent IE8 errors. The d3.scale()
+      # method raises (on IE8) an exception before we have a chance to notify
+      # the user that something went wrong.
+      try
+        @color = d3.scale.category20c()
+        D3.merit_order.series = @model.series
+        @nodes = new D3.merit_order.NodeList(D3.merit_order.data)
       @initialize_defaults()
 
     draw: =>

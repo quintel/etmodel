@@ -213,7 +213,7 @@ class @ChartList extends Backbone.Collection
   remove_pin: (holder_id) =>
     App.settings.set holder_id, false
     holder = $('#' + holder_id).parents('.chart_holder')
-    holder.find("a.pin_chart").removeClass("active")
+    holder.find("a.pin_chart").removeClass("icon-lock").addClass("icon-unlock")
 
   # TODO: This stuff should be moved to a backbone view
   #

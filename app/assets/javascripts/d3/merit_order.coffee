@@ -93,11 +93,23 @@ D3.merit_order =
         attr("data-rel", (d) -> d.get('key')).
         attr("class", "merit_order_node").
         attr("fill", (d, i) => @color(i)).
+        attr("data-original-color", (d, i) => @color(i)).
         attr("stroke", (d, i) => d3.rgb(@color(i)).darker(1)).
         attr("y", (d) => @height - @y(d.value_y()) - .5).
         attr("x", (d, i) -> i * 30).
         attr("height", (d) => @y d.value_y()).
-        attr("width", (d) => @x d.value_x())
+        attr("width", (d) => @x d.value_x()).
+        on("mouseover", ->
+          item = d3.select(this)
+          key = item.attr("data-rel")
+          $("svg.legend text.#{key}").css("text-decoration", "underline")
+          item.transition().attr("fill", -> d3.rgb(item.attr("data-original-color")).brighter(1))
+        ).
+        on("mouseout", ->
+          $("svg.legend text").css("text-decoration", "none")
+          item = d3.select(this)
+          item.transition().attr("fill", -> item.attr("data-original-color"))
+        )
 
       # add legend
       legends = @svg.selectAll("svg.legend").
@@ -115,9 +127,10 @@ D3.merit_order =
         attr("height", 10).
         attr("fill", (d, i) => @color(i))
       legends.append("svg:text").
-        text((d) -> d.get('key')).
+        text((d) -> I18n.t "output_element_series.#{d.get('key')}").
         attr("x", 15).
-        attr("y", 8)
+        attr("y", 8).
+        attr("class", (d) -> d.get 'key')
 
     refresh: =>
       @y          = d3.scale.linear().domain([0, @nodes.max_height()]).range([0, @height])

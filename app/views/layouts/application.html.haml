@@ -19,7 +19,7 @@
       #content
         - flash_message
         = yield
-      %footer= render "layouts/etm/footer"
+      %footer.fixed= render "layouts/etm/footer"
     = render "layouts/etm/ga" unless APP_CONFIG[:standalone]
     %script
       if (_.include(['iPad', 'iPhone', 'iPod'], navigator.platform)) { $("#footer").css("position", "static"); };

@@ -1,26 +1,40 @@
-a
-  &.external:after
-    content: url("/assets/icons/external-link.png")
-  &.new:after
-    content: url("/assets/icons/new.gif")
+body#admin_section
+  .live_server_notice
+    background: red
+    text-align: center
+    color: white
 
-nav#admin
-  height: 30px
-  border-bottom: 1px solid #ccc
-  ul
-    list-style-type: none
-    position: relative
-    li
-      display: block
-      float: left
-      padding: 5px
-      border: 1px solid #ccc
-      border-bottom: 0
-      margin-right: 2px
-      &:hover
-        background: #eee
-      a
-        text-decoration: none
+  table.admin
+    span.not_too_wide
+      display: inline-block
+      width: 220px
+      overflow: hidden
+
+  a
+    &.external:after
+      content: url("/assets/icons/external-link.png")
+    &.new:after
+      content: url("/assets/icons/new.gif")
+
+  nav#admin
+    height: 30px
+    border-bottom: 1px solid #ccc
+    ul
+      list-style-type: none
+      position: relative
+      li
+        display: block
+        float: left
+        padding: 5px
+        border: 1px solid #ccc
+        border-bottom: 0
+        margin-right: 2px
+        &:hover
+          background: #eee
+        a
+          text-decoration: none
+  #content
+    padding: 20px
 
 .simple_form
   div.input
@@ -111,13 +125,3 @@ body.pages_map
     ul.sliders, ul.slides
       display: none
 
-.live_server_notice
-  background: red
-  text-align: center
-  color: white
-
-table.admin
-  span.not_too_wide
-    display: inline-block
-    width: 220px
-    overflow: hidden

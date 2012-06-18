@@ -135,9 +135,14 @@ class @Chart extends Backbone.Model
   # remove a chart and don't want stale gqueries lying around.
   #
   delete_gqueries: =>
-    for g in @gqueries()
-      g.release()
+    g.release() for g in @gqueries()
     gqueries.cleanup()
+
+  supported_by_current_browser: =>
+    if @get('type') == 'd3' && !Browser.hasD3Support()
+      false
+    else
+      true
 
 class @ChartList extends Backbone.Collection
   model : Chart
@@ -161,10 +166,8 @@ class @ChartList extends Backbone.Collection
   # - wait: if true an api_call won't be fired immediately. Useful when we want
   # to show multiple charts on the same page
   load : (chart_id, container_id = 'main_chart', wait = false) ->
-    # this check is quite ugly, the charts and holders mapping should be defined
-    # better. Right now the pin works only for the main chart. Will be added to
-    # secondary charts later
     return false if App.settings.get(container_id) # chart is pinned
+
     App.etm_debug('Loading chart: #' + chart_id)
     App.etm_debug "#{window.location.origin}/admin/output_elements/#{chart_id}"
     url = "/output_elements/#{chart_id}"
@@ -179,6 +182,10 @@ class @ChartList extends Backbone.Collection
         old_chart = @chart_holders[container_id]
         # Create the new Chart
         new_chart = new Chart(data.attributes)
+        if !new_chart.supported_by_current_browser()
+          alert "Sorry! This chart type is not supported by your browser :("
+          return false
+
         # Remember where the chart is
         @chart_holders[container_id] = new_chart
         # Deal with the collection object

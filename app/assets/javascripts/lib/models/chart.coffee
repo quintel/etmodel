@@ -115,7 +115,8 @@ class @Chart extends Backbone.Model
   # This is used to show a chart as a table
   # See base_chart_view#render_as_table
   formatted_series_hash : ->
-    items = @non_target_series().map (serie) =>
+    # the @non_target_series() array is wrapped in underscore to fix an IE8 bug
+    items = _(@non_target_series()).map (serie) =>
       label = serie.get 'label'
       label = "#{label} - #{serie.get('group')}" if @get('type') == 'mekko'
       out =

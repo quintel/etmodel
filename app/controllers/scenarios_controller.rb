@@ -5,10 +5,10 @@ class ScenariosController < ApplicationController
 
   def index
     if current_user.admin?
-      @current_page = (params[:page] || 1).to_i
-      @scenarios = Api::Scenario.all(:params => { :page => @current_page})
+      @saved_scenarios = SavedScenario.page(params[:page]).per(15)
+      @scenarios = @saved_scenarios.map{|s| s.scenario rescue nil}.compact
     else
-      @scenarios = current_user.saved_scenarios.order("created_at DESC")
+      @saved_scenarios = current_user.saved_scenarios.order("created_at DESC")
       @scenarios = @scenarios.map(&:scenario).compact
     end
   end

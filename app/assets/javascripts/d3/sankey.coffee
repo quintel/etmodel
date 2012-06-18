@@ -29,7 +29,7 @@ D3.sankey =
       {left: 'gas',       right: 'households', gquery: 'gas_households_in_mekko_of_final_demand'},
       {left: 'oil',       right: 'households', gquery: 'oil_households_in_mekko_of_final_demand', color: 'brown'},
       {left: 'biomass',   right: 'households',  gquery: 'biomass_households_in_mekko_of_final_demand', color: 'green'},
-      {left: 'waste',     right: 'households', gquery: 'waste_households_in_mekko_of_final_demand', color: 'dark_green'}
+      {left: 'waste',     right: 'households', gquery: 'waste_households_in_mekko_of_final_demand', color: 'darkgreen'}
       # Electricity to sectors
       {left: 'el_prod',   right: 'households',  gquery: 'electricity_households_in_mekko_of_final_demand'},
       {left: 'el_prod',   right: 'buildings',   gquery: 'electricity_buildings_in_mekko_of_final_demand'},

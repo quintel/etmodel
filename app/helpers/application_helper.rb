@@ -1,6 +1,6 @@
 module ApplicationHelper
   def has_active_scenario?
-    Current.setting.api_session_id.present?
+    Current.setting.api_session_id.present? || @active_scenario
   end
 
   # TODO: get rid of this, use CSS

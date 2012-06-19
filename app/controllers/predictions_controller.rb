@@ -63,8 +63,4 @@ class PredictionsController < ApplicationController
     def find_prediction
       @prediction = Prediction.find(params[:id])
     end
-
-    def has_active_scenario?
-      Current.setting.api_session_id.present? rescue false
-    end
 end

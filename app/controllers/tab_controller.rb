@@ -60,6 +60,10 @@ class TabController < ApplicationController
       end
 
       @targets = Target.all.reject(&:area_dependent)
+
+      # The JS app will take care of fetching a scenario id, in the meanwhile we
+      # use this variable to show all the items in the top menu
+      @active_scenario = true
     end
 
     def track_user

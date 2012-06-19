@@ -19,15 +19,16 @@
   %a{:href => new_user_path}= "#{t("or")} #{t("header.create_account")}"
 
 #settings_menu.header_menu.topnav
-  %li
-    #flag
-      %img{:src => "/assets/icons/#{Current.setting.area_code}.png"}
-      = Current.setting.area_code if Current.setting.area_code != "nl"
-    = t("header.current_country")+":"
-  %li
-    #year
-      = Current.setting.end_year
-    = t("header.current_end_year")+":"
+  - if has_active_scenario?
+    %li
+      #flag
+        %img{:src => "/assets/icons/#{Current.setting.area_code}.png"}
+        = Current.setting.area_code if Current.setting.area_code != "nl"
+      = t("header.current_country")+":"
+    %li
+      #year
+        = Current.setting.end_year
+      = t("header.current_end_year")+":"
 
   %li
     = t("header.current_language")+":"
@@ -36,10 +37,12 @@
         :index => nil, :onchange => 'this.form.submit()'                         |
 
   %li
-    %a{:href => new_scenario_path}= t("header.save_scenario")
+    - if has_active_scenario?
+      %a{:href => new_scenario_path}= t("header.save_scenario")
     %a{:href => scenarios_path}= t("header.load_scenario")
-    %a{:href => reset_scenario_path}= t("header.reset_scenario")
-  - if controller_name != 'pages'
+    - if has_active_scenario?
+      %a{:href => reset_scenario_path}= t("header.reset_scenario")
+  - if controller_name != 'pages' && has_active_scenario?
     - if Current.setting.use_peak_load
       %li
         = check_box :track_peak_load, :settings,

@@ -7,7 +7,7 @@
         %th.target= t("goals")
         %th.you Scenario
     %tbody
-      - Current.view.targets.each do |target|
+      - Target.all.reject(&:area_dependent).each do |target|
         %tr{:id => "goal_#{target.id}", :class => cycle('even', 'odd')}
           %td.check
           %td.name= t("targets.#{target.code}").html_safe
@@ -15,6 +15,6 @@
           %td.you Loading...
         :javascript
           new Target(#{target.js_attributes.to_json.html_safe});
-    
+
 :javascript
   App.call_api();

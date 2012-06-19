@@ -1,10 +1,10 @@
 #sidebar
   - @tabs.each do |tab|
     %h4.headline= I18n.t "tabs." + tab.key
-    %ul{style: ("display: none;" unless controller.controller_name == tab.key )}
+    %ul{style: ("display: none;" unless params[:tab] == tab.key )}
       - tab.sidebar_items.each do |item|
         %li{:id => item.key,
-            :class => (params[:id] == item.key) ? 'active' : nil,
+            :class => (params[:sidebar] == item.key) ? 'active' : nil,
             :'data-gquery' => item.percentage_bar_query}
           = link_to url_for(:controller => tab.key, :action => item.key),
             :'data-nav' => false do

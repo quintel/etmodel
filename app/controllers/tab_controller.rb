@@ -30,8 +30,8 @@ class TabController < ApplicationController
   protected
 
     def load_interface
-      tab_key = params[:controller]
-      sidebar_key = params[:id]
+      tab_key = params[:tab]
+      sidebar_key = params[:sidebar]
 
       @tabs = Tab.ordered
       @current_tab = Tab.find_by_key tab_key
@@ -67,8 +67,8 @@ class TabController < ApplicationController
     end
 
     def track_user
-      controller = I18n.t(params[:controller].capitalize) rescue nil
-      sidebar = I18n.t('sidebar_items.' + params[:id]) rescue nil
+      controller = I18n.t(params[:tab].capitalize) rescue nil
+      sidebar = I18n.t('sidebar_items.' + params[:sidebar]) rescue nil
       Tracker.instance.track({:tab => controller, :sidebar => sidebar}, current_user)
     end
 end

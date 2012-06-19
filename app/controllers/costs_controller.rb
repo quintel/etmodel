@@ -1,2 +1,0 @@
-class CostsController < TabController
-end

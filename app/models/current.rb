@@ -1,28 +1,28 @@
 ##
 # Wrapper for (user-) variables of a request that are accessible to all models.
 #
-# I created a new Setting class, which holds all the settings specific for a user session. Such as :backcasting_enabled and so on. 
-# 
+# I created a new Setting class, which holds all the settings specific for a user session. Such as :backcasting_enabled and so on.
+#
 # == Current.setting
-# 
-# Holds all the settings specific for a user session. Such as :backcasting_enabled and so on. 
+#
+# Holds all the settings specific for a user session. Such as :backcasting_enabled and so on.
 # Attributes in Setting are meant for front-end and similar things. And cannot influence the GQL.
-# 
+#
 #   Current.setting.backcasting_enabled
 #   Current.setting.backcasting_enabled = false
-# 
+#
 # At any point if you want to reset settings:
 #
 #   Current.setting.reset!
 #   # which does more less the same as:
 #   Current.setting = Setting.default
-# 
+#
 # The setting object will be persisted in the session.
 #
 #
 # == Implementation details
 #
-# Current is a Singleton. Because it is used often throughout the model (and 
+# Current is a Singleton. Because it is used often throughout the model (and
 # because of legacy-reasons), Current is also the shortcut for Current.instance.
 # This is implemented by generating class methods calling the singleton methods.
 #
@@ -33,9 +33,8 @@
 #
 #
 class Current
-  
-  attr_accessor :graph_id, :view
 
+  attr_accessor :graph_id
 
   def session
     @session ||= {}
@@ -60,16 +59,16 @@ class Current
   def current_slide
     session[:current_slide]
   end
- 
+
   def subdomain
     session[:subdomain]
   end
-  
+
   # This is loaded in application_controller.
   def subdomain=(subdomain)
     session[:subdomain] = subdomain
   end
-  
+
   def backcasting_enabled
     I18n.locale.to_s == 'nl'
   end
@@ -96,7 +95,7 @@ class Current
   ##
   # Forward methods to the (singleton)-instance methods.
   # So that we can type Current.foo instead of Current.instance.foo
-  # 
+  #
   class << self
     def method_missing(name, *args)
       self.instance.send(name, *args)

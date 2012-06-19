@@ -42,7 +42,7 @@ class SettingsController < ApplicationController
     constraints = if dash and dash.any?
       Constraint.for_dashboard(dash)
     else
-      Current.view.constraints
+      Constraint.default.ordered
     end
 
     @checked = constraints.map(&:key)

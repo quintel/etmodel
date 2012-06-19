@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   # TODO refactor move the hooks and corresponding actions into a "concern"
   before_filter :initialize_current
   before_filter :locale
-  before_filter :load_view_settings
 
   if Rails.env.test?
     after_filter :assign_current_for_inspection_in_tests
@@ -79,10 +78,6 @@ protected
     flash[:error] = I18n.t("flash.not_allowed")
     session[:return_to] = url_for :overwrite_params => {}
     redirect_to login_path
-  end
-
-  def load_view_settings
-    Current.view = View.new(params[:controller], params[:id])
   end
 
   def require_user

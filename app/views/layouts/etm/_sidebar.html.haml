@@ -1,5 +1,5 @@
 #sidebar
-  - Current.view.tabs.each do |tab|
+  - @tabs.each do |tab|
     %h4.headline= I18n.t "tabs." + tab.key
     %ul{style: ("display: none;" unless controller.controller_name == tab.key )}
       - tab.sidebar_items.each do |item|

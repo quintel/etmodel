@@ -56,7 +56,6 @@ class Slide < ActiveRecord::Base
     I18n.t("slides.#{key}").parameterize
   end
 
-  # See Current.view
   def input_elements
     @safe_input_elements ||= sliders.ordered
   end

@@ -1,2 +1,0 @@
-class SupplyController < TabController
-end

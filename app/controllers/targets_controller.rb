@@ -1,2 +1,0 @@
-class TargetsController < TabController
-end

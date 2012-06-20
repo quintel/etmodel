@@ -143,6 +143,8 @@ D3.merit_order =
       @svg.selectAll(".x").transition().call(@xAxis.scale(@x))
       @svg.selectAll(".y").transition().call(@yAxis.scale(@yAxisScale))
 
+      @min_node_height = 2
+
       # let's calculate the x-offset
       offset = 0
       sorted = @nodes.sortBy((d) -> d.value_y()).map (d) ->
@@ -153,9 +155,19 @@ D3.merit_order =
       @svg.selectAll('rect.merit_order_node').
         data(@nodes.models, (d) -> d.get('key')).
         transition().duration(500).
-        attr("height", (d) => @y(d.value_y())).
+        attr("height", (d) =>
+          if (h = @y(d.value_y())) < @min_node_height
+            @min_node_height
+          else
+            h
+        ).
         attr("width", (d) => @x(d.value_x())).
-        attr("y", (d) => @height - @y(d.value_y())).
+        attr("y", (d) =>
+          if (h = @y(d.value_y())) < @min_node_height
+            @height - @min_node_height
+          else
+            @height - h
+        ).
         attr("x", (d) => @x(d.get 'x_offset'))
 
 class D3.merit_order.NodeList extends Backbone.Collection

@@ -24,15 +24,6 @@ module ApplicationHelper
     end
   end
 
-  def last_etm_path(options = {})
-    options[:include_action] = true unless options.has_key?(:include_action)
-    if options[:include_action]
-      "#{Current.setting.last_etm_controller_name}/#{Current.setting.last_etm_controller_action}"
-    else
-      Current.setting.last_etm_controller_name
-    end
-  end
-
   def t_db(key)
     begin
       Text.find_by_key(key).content.html_safe

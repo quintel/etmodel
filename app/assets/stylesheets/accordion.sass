@@ -1,5 +1,9 @@
 #accordion_wrapper
   color: #333
+  a
+    text-decoration: none
+    color: #63a0c9
+    font: 13px $body_font_family
 
   .accordion_element
     position: relative
@@ -31,18 +35,6 @@
         background: #dfe8f3 url(/assets/layout/bg-column-c-a-hover.gif) no-repeat
       .ui-state-active a
         background: #dfe8f3 url(/assets/layout/bg-column-c-a-hover.gif) no-repeat
-
-      #accordion_wrapper a
-        text-decoration: none
-        color: #63a0c9
-        float: right
-        background: none
-        font: 13px $body_font_family
-        word-spacing: -1px
-        letter-spacing: -1px
-        &:hover
-          text-decoration: underline
-          background: none
 
   .accordion
     float: left
@@ -81,24 +73,6 @@
     width: 100%
     overflow: hidden
     margin: 26px 0 0
-
-    .plot_container
-      width: 430px
-      height: 320px
-
-    .plot
-      float: right
-      width: 420px
-      height: 220px
-
-    .img-holder
-      float: left
-      margin: 10px 24px 10px 0
-      display: inline
-
-      img
-        display: block
-
     p
       color: #474747
       margin: 19px 0 0
@@ -151,42 +125,7 @@
             color: #999
             font-size: smaller
             font-style: normal
-          .question_mark
-            position: absolute
-            display: none
-            right: 10px
-            top: 2px
-            width: 16px
-            height: 16px
-            background: url(/assets/layout/ico-questionmark.gif) no-repeat top right
 
-      .graph-box
-        position: relative
-        width: 32%
-        height: 14px
-        float: left
-        margin: 0 0 0 0
-        input
-          position: absolute
-          top: 3px
-          right: -55%
-          width: 55px
-          border: none
-          padding: 0
-          text-align: right
-          margin: 0
-        span.suffix
-          position: absolute
-          top: 4px
-          right: -69%
-          width: 18px
-          border: none
-          padding: 0
-          text-align: right
-          color: #333
-          margin: 0
-          font: 100% arial,sans-serif
-          vertical-align: middle
       .value
         float: left
         text-align: right

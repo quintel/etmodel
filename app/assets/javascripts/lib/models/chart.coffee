@@ -223,15 +223,14 @@ class @ChartList extends Backbone.Collection
     holder = $('#' + holder_id).parents('.chart_holder')
     holder.find("a.pin_chart").removeClass("icon-lock").addClass("icon-unlock")
 
-  # TODO: This stuff should be moved to a backbone view
+  # The default is defined for the main chart only
+  load_default: =>
+    @remove_pin 'main_chart'
+    @load(@current_default_chart, 'main_chart')
+
+  # TODO: Most of this stuff should be moved to a backbone view
   #
   setup_callbacks: ->
-    $("a.default_charts").live 'click', =>
-      holder_id = $(e.target).parents(".chart_holder").data('holder_id')
-      @remove_pin holder_id
-      @load(@current_default_chart, holder_id)
-      false
-
     # chart selection pop-up
     $(document).on "click", "a.pick_charts", (e) =>
       chart_holder = $(e.target).parents('a').data('chart_holder')

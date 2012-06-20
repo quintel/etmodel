@@ -1,6 +1,6 @@
 @import "blueprint/buttons"
 
-a.button
+a.button, input.button
   @include anchor-button
   @include button-colors
   @include background-image(linear-gradient(white, #e6e6e6))
@@ -14,6 +14,5 @@ a.button
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75)
   &:hover
     @include background-image(linear-gradient(white,#d7d7d7))
-
   span
     font-size: 16px

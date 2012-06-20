@@ -112,7 +112,7 @@ class Setting
   # ------ FCE ----------------------------------------------------------------
 
   def allow_fce?
-    area.try(:has_fce)
+    area.attributes[:has_fce]
   end
 
   # Returns the ActiveResource object

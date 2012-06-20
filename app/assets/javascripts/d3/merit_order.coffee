@@ -82,7 +82,7 @@ D3.merit_order =
         attr("transform", "rotate(270)")
 
       @svg.append("svg:text").
-              text('Installed Capacity [GW]').
+              text('Installed Capacity [MW]').
               attr("x", @width / 2).
               attr("y", @height + 30).
               attr("text-anchor", "middle").
@@ -105,15 +105,16 @@ D3.merit_order =
         attr("width", (d) => @x d.value_x()).
         on("mouseover", ->
           item = d3.select(this)
-          key = item.attr("data-rel")
-          $("svg.legend text.#{key}").css("text-decoration", "underline")
           item.transition().attr("fill", -> d3.rgb(item.attr("data-original-color")).brighter(1))
         ).
         on("mouseout", ->
-          $("svg.legend text").css("text-decoration", "none")
           item = d3.select(this)
           item.transition().attr("fill", -> item.attr("data-original-color"))
         )
+
+      $('rect.merit_order_node').tipsy
+        gravity: 'se'
+        html: true
 
       # add legend
       legends = @svg.selectAll("svg.legend").
@@ -168,7 +169,16 @@ D3.merit_order =
           else
             @height - h
         ).
-        attr("x", (d) => @x(d.get 'x_offset'))
+        attr("x", (d) => @x(d.get 'x_offset')).
+        attr("title", (d) ->
+          html = I18n.t "output_element_series.#{d.get('key')}"
+          html += "<br/>"
+          html += "Installed capacity: #{Metric.autoscale_value(d.value_x() * 1000000, 'MW', 2)}"
+          html += "<br/>"
+          html += "Operating costs: #{Metric.autoscale_value d.value_y(), 'euro', 2}"
+          html
+        )
+
 
 class D3.merit_order.NodeList extends Backbone.Collection
   model: D3.merit_order.Node

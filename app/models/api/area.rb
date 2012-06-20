@@ -27,7 +27,7 @@ class Api::Area < ActiveResource::Base
   end
 
   def self.find_by_country(country)
-    first(:params => { :country => country })
+    find country
   end
 
   def number_of_existing_households

@@ -1,7 +1,6 @@
 #start, #information
+  padding: 10px
   h1
-    margin: 0
-    padding: 20px 10px
     font: $title_font
 
 #start
@@ -98,6 +97,20 @@
     background-repeat: no-repeat
     background-position: right center
 
+  ul#new_scenario_form, ul#existing_scenario_form
+    clear: both
+    float: left
+    display: none
+    width: 304px
+    margin-left: 20px
+    margin-top: 15px
+
+    h3
+      width: 100%
+    select
+      margin-top: 5px
+
+
 #information
   float: right
   width: 60%
@@ -116,12 +129,10 @@
       margin: 0px auto 0 auto
       width: 512px
       list-style: none outside none
-
       li
         float: left
         padding-bottom: 8px
         margin-right: 15px
-
         height: 28px
         a
           float: left
@@ -131,10 +142,9 @@
           padding: 4px 10px 4px 10px
           background: #dfe8f3
           text-decoration: none
-        a:hover
-          background: #fff
-          margin: 0
-
+          &:hover
+            background: #fff
+            margin: 0
       li:hover
         cursor: pointer
       li.active
@@ -192,9 +202,6 @@
   color: #EE8833
   font-size: 14px
 
-.clear
-  clear: both
-
 a.button, input.button
   border: 1px solid #000
   padding: 5px 10px
@@ -226,15 +233,3 @@ $height_multi: 5px
   a
     padding: 0 10px 5px 10px
 
-#start ul#new_scenario_form, #start ul#existing_scenario_form
-  clear: both
-  float: left
-  display: none
-  width: 304px
-  margin-left: 20px
-  margin-top: 15px
-
-  h3
-    width: 100%
-  select
-    margin-top: 5px

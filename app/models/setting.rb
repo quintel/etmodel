@@ -4,8 +4,7 @@
 class Setting
   extend ActiveModel::Naming
 
-  attr_accessor :last_etm_controller_name,
-                :last_etm_controller_action,
+  attr_accessor :last_etm_page,
                 :scenario_id,
                 :api_session_id,
                 :current_round,

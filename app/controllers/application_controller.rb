@@ -62,18 +62,6 @@ protected
     Current.teardown_after_request!
   end
 
-  ##
-  # Shortcut for Current.setting
-  #
-  def setting
-    Current.setting
-  end
-
-  def store_last_etm_page
-    setting.last_etm_controller_name = params[:controller]
-    setting.last_etm_controller_action = params[:action]
-  end
-
   def permission_denied
     flash[:error] = I18n.t("flash.not_allowed")
     session[:return_to] = url_for :overwrite_params => {}

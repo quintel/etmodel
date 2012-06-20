@@ -71,4 +71,8 @@ class TabController < ApplicationController
       sidebar = I18n.t('sidebar_items.' + params[:sidebar]) rescue nil
       Tracker.instance.track({:tab => controller, :sidebar => sidebar}, current_user)
     end
+
+    def store_last_etm_page
+      Current.setting.last_etm_page = request.fullpath
+    end
 end

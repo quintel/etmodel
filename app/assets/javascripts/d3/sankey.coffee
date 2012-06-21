@@ -227,7 +227,7 @@ D3.sankey =
     draw_axis: =>
       @y_axis = d3.svg.axis().scale(@y).ticks(4).orient("left")
       @svg.append("svg:g").
-        attr("class", "y axis").
+        attr("class", "y_axis").
         attr("transform", "translate(-10, 0)").
         call(@y_axis)
 
@@ -334,7 +334,7 @@ D3.sankey =
         range([0, @height * .90])
 
       # refresh the axis
-      @svg.selectAll(".y").transition().duration(500).call(@y_axis.scale(@y))
+      @svg.selectAll(".y_axis").transition().duration(500).call(@y_axis.scale(@y))
 
       # move the rectangles
       @nodes.data(@node_list.models, (d) -> d.get('id')).

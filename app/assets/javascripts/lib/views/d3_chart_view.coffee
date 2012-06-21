@@ -16,7 +16,7 @@ class @D3ChartView extends BaseChartView
   already_on_screen: =>
     $('#' + @chart_container_id()).length == 1
 
-  html: => "<div id='#{@chart_container_id()}'></div>"
+  html: => "<div id='#{@chart_container_id()}' class='d3_container'></div>"
 
   chart_container_id: => "d3_container_#{@model.get 'key'}"
 

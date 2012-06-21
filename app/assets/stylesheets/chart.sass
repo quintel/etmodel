@@ -77,8 +77,20 @@ table.autostripe
   tbody tr:nth-child(2n+1)
     background-color: #ddd
 
+//
 // D3-specific charts
 //
+
+div.d3_container
+  .x_axis, .y_axis
+    line, path
+      fill: none
+      stroke: #000
+    .minor
+      stroke-opacity: 0.5
+    text
+      font-size: 9px
+
 #d3_container_sankey
   text.link_label
     font-family: Helvetica, Arial, sans-serif
@@ -92,14 +104,6 @@ table.autostripe
       font-family: Helvetica, Arial, sans-serif
       font-size: 9px
       text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff, 0 0 5px #fff
-  .y.axis
-    line, path
-      fill: none
-      stroke: #000
-    .minor
-      stroke-opacity: 0.5
-    text
-      font-size: 9px
 
 #d3_container_treemap
   div.cell
@@ -113,14 +117,6 @@ table.autostripe
 #d3_container_merit_order
   rect.merit_order_node
     fill-opacity: .80
-  .x.axis, .y.axis
-    line, path
-      fill: none
-      stroke: #000
-    .minor
-      stroke-opacity: 0.5
-    text
-      font-size: 9px
   svg.legend
     text
       font-family: Helvetica, Arial, sans-serif
@@ -133,11 +129,3 @@ table.autostripe
     shape-rendering: crispEdges
   rect.carrier
     stroke: #000
-  .d3_x_axis, .d3_y_axis
-    line, path
-      fill: none
-      stroke: #000
-    .minor
-      stroke-opacity: 0.5
-    text
-      font-size: 9px

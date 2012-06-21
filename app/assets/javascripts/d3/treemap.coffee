@@ -1,4 +1,4 @@
-D3.mekko =
+D3.treemap =
   data: {
     biomass: [
       {gquery: 'biomass_industry_in_mekko_of_final_demand',    label: 'biomass industry'},
@@ -70,7 +70,7 @@ D3.mekko =
     initialize: ->
       @gquery = new ChartSerie
         gquery_key: @get('gquery')
-      D3.mekko.series.push @gquery
+      D3.treemap.series.push @gquery
 
     # value is apparently a reserved name
     val: =>
@@ -84,21 +84,21 @@ D3.mekko =
     initialize: ->
       @initialize_defaults()
       @color = d3.scale.category20c()
-      D3.mekko.series = @model.series
+      D3.treemap.series = @model.series
       @prepare_data()
 
     # D3 layouts expect data in a precise format
     prepare_data: =>
       return @out if @out
       out =
-        name: "mekko"
+        name: "treemap"
         children: []
-      for own key, values of D3.mekko.data
+      for own key, values of D3.treemap.data
         group =
           name: key
           children: []
         for item in values
-          group.children.push(new D3.mekko.Node(item))
+          group.children.push(new D3.treemap.Node(item))
         out.children.push group
       @out = out
 
@@ -109,7 +109,7 @@ D3.mekko =
         .size([@width, @height])
         .sticky(true)
         .value((d) -> d.val())
-      @svg = d3.select("#d3_container_mekko").
+      @svg = d3.select("#d3_container_treemap").
         append("div").
         style("position", "relative").
         style("height", "#{@height}px").

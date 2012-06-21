@@ -28,14 +28,14 @@ gem 'dynamic_form'
 
 group :development do
   gem 'tomdoc'
-  gem 'yard-tomdoc'
+  gem 'yard-tomdoc', "~> 0.4.0"
   gem 'annotate', :require => false
 end
 
 group :test, :development do
   gem 'pry-rails'
   gem 'pry-remote'
-  gem 'rspec-rails', "~> 2.9.0"
+  gem 'rspec-rails', "~> 2.10.0"
   gem 'watchr'
   gem 'spork'
 end

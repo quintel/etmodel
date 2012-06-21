@@ -19,4 +19,8 @@ class Tab < ActiveRecord::Base
   scope :ordered, order('position')
 
   attr_accessible :key, :nl_vimeo_id, :en_vimeo_id, :position
+
+  def allowed_sidebar_items
+    sidebar_items.reject(&:area_dependent)
+  end
 end

@@ -1,11 +1,30 @@
-#nav.partners
-  min-width: 1125px
+nav#partners_tabs
+  border-bottom: 2px solid #d9e2f0
+  height: 52px
+  ul
+    min-width: 1000px
+    position: relative
+    li
+      position: relative
+      list-style-type: none
+      float: left
+      border: 2px solid #d9e2f0
+      margin: 0px 6px
+      padding: 5px 8px
+      background: #d9e2f0
+      height: 40px
+      width: 300px
+      &.active
+        background: #fff
+        border-bottom: 2px solid #fff
+      a
+        text-decoration: none
+        color: #000
 #partners
   margin-top: 30px
   position: relative
-  float: left
   padding-bottom: 90px
-  .content
+  .content // hover tooltips
     display: none
     position: absolute
     padding: 0 10px
@@ -48,8 +67,6 @@
     a:hover
       background-color: #75ABC7
 
-
-
 #partner
   ul.links
     float: right
@@ -83,7 +100,8 @@
       height: 100px
 
 //used for both
-#partner .header
-  text-align: center
-  background: url(/assets/layout/partner_logo_bg.png) no-repeat bottom center
-  padding-bottom: 2px
+#partner, #partners
+  .header
+    text-align: center
+    background: url(/assets/layout/partner_logo_bg.png) no-repeat bottom center
+    padding-bottom: 2px

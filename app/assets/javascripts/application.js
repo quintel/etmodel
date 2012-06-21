@@ -14,6 +14,7 @@
 //= require flowplayer.playlist-3.0.8.min
 //= require fancybox
 //= require testimonials
+//= require partners
 //= require admin
 //= require common_interface
 //= require i18n

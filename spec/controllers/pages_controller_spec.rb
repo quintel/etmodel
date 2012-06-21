@@ -50,10 +50,14 @@ describe PagesController do
     end
   end
 
-  describe "bugs page" do
-    it "should work" do
-      get :bugs
-      response.should be_success
+  context :static_pages do
+    [:bugs, :education].each do |page|
+      describe "#{page} page" do
+        it "should work" do
+          get page
+          response.should be_success
+        end
+      end
     end
   end
 end

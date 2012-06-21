@@ -73,11 +73,11 @@ D3.mekko =
       @y_axis = d3.svg.axis().scale(y_scale).ticks(4).orient("left")
       # axis
       @svg.append("svg:g").
-        attr("class", "d3_x_axis").
+        attr("class", "x_axis").
         attr("transform", "translate(0, #{@height})").
         call(@x_axis)
       @svg.append("svg:g").
-        attr("class", "d3_y_axis").
+        attr("class", "y_axis").
         call(@y_axis)
 
       # Every sector is assigned a group element

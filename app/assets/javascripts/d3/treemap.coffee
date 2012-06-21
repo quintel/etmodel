@@ -1,5 +1,5 @@
 D3.treemap =
-  data: {
+  data:
     biomass: [
       {gquery: 'biomass_industry_in_mekko_of_final_demand',    label: 'biomass industry'},
       {gquery: 'biomass_households_in_mekko_of_final_demand',  label: 'biomass households'},
@@ -63,8 +63,7 @@ D3.treemap =
       {gquery: 'hot_water_transport_in_mekko_of_final_demand',   label: 'hot water transport'},
       {gquery: 'hot_water_other_in_mekko_of_final_demand',       label: 'hot water other'},
       {gquery: 'hot_water_agriculture_in_mekko_of_final_demand', label: 'hot water agriculture'}
-    ],
-  }
+    ]
 
   Node: class extends Backbone.Model
     initialize: ->

@@ -18,6 +18,9 @@ D3.mekko =
     val:   => @gquery.future_value()
     label: => @get('label') || @get('gquery')
     key:   => "#{@get 'carrier'}_#{@get 'sector'}"
+    tooltip_text: =>
+      "#{@get 'carrier'} #{@get 'sector'}<br/>" +
+      Metric.autoscale_value @val(), 'MJ', 2
 
   NodeGroup: class extends Backbone.Model
       initialize: ->
@@ -59,9 +62,23 @@ D3.mekko =
       @height = (@container_node().height() || 402) - 2 * @margin
       @svg = d3.select("#d3_container_mekko").
         append("svg:svg").
-        style("height", "#{@height}px").
-        style("width", "#{@width}px")
+        attr("height", @height + 2 * @margin).
+        attr("width", @width + 2 * @margin).
+        append("svg:g").
+        attr("transform", "translate(#{@margin}, #{@margin})")
 
+      x_scale = d3.scale.linear().domain([0,100]).range([0, @width])
+      y_scale = d3.scale.linear().domain([100,0]).range([0, @height])
+      @x_axis = d3.svg.axis().scale(x_scale).ticks(4).orient("bottom")
+      @y_axis = d3.svg.axis().scale(y_scale).ticks(4).orient("left")
+      # axis
+      @svg.append("svg:g").
+        attr("class", "d3_x_axis").
+        attr("transform", "translate(0, #{@height})").
+        call(@x_axis)
+      @svg.append("svg:g").
+        attr("class", "d3_y_axis").
+        call(@y_axis)
 
       # Every sector is assigned a group element
       @sectors = @svg.selectAll("g.sector").
@@ -82,6 +99,10 @@ D3.mekko =
         attr("y", 10).
         attr("x", 0).
         attr("data-rel", (d) -> d.key())
+
+      $("rect.carrier").tipsy
+        gravity: 's'
+        html: true
 
     refresh: =>
       total_value = @node_list.grand_total()
@@ -108,12 +129,13 @@ D3.mekko =
         data(@node_list.models, (d) -> d.key()).
         transition().duration(500).
         attr("width", (d) => @x d.sector.total_value() ).
-        attr("height", (d) => d.val() / d.sector.total_value() * @height).
+        attr("height", (d) => d.val() / d.sector.total_value() * @height ).
         attr("y", (d) =>
           old = offsets[d.get 'sector']
           offsets[d.get 'sector'] += d.val() / d.sector.total_value() * @height
           old
-        )
+        ).
+        attr("title", (d) -> d.tooltip_text())
 
 class D3.mekko.SectorList extends Backbone.Collection
   model: D3.mekko.NodeGroup

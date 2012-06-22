@@ -220,6 +220,12 @@
       // operations when the user holds down the mouse button.
       this.incrementInterval = null;
 
+      // When the user rapidly clicks the "step up" and "step down" buttons,
+      // we delay setting the value on the model until we think they have
+      // finished. This holds the timeout ID.
+      this.resolveTimeout = null;
+      this.lastStepClick  = null;
+
       this.model.bind('change', this.updateFromModel);
       this.model.bind('change:user_value', _.bind(function () {
         this.setTransientValue(this.model.get('user_value'));
@@ -442,10 +448,12 @@
      * adjusted so long as they hold the mouse button.
      */
     performStepping: function (targetValue) {
-      var initialValue   = this.quinn.model.value,
+      var self           = this,
+          initialValue   = this.quinn.model.value,
           duration       = HOLD_DURATION / (1000 / HOLD_FPS),
           isIncreasing   = (targetValue > initialValue),
           stepIterations = 0,
+          wasHeld        = false,
 
           delta          = this.quinn.model.maximum -
                            this.quinn.model.minimum,
@@ -456,6 +464,10 @@
 
       if (targetValue === initialValue || ! this.quinn.start()) {
         return false;
+      }
+
+      if (this.resolveTimeout) {
+        window.clearTimeout(this.resolveTimeout);
       }
 
       if (isIncreasing) {
@@ -474,7 +486,7 @@
 
       // Interval function is what happens every 10 ms, where the slider value
       // is changed while the user continues to hold their mouse-button.
-      intervalFunc = _.bind(function () {
+      intervalFunc = function () {
         progress = $.easing.easeInCubic(
           null,
           stepIterations++, // current time
@@ -482,33 +494,51 @@
           duration          // total number of iterations
         );
 
-        this.quinn.setTentativeValue(
+        self.quinn.setTentativeValue(
           initialValue + ((targetValue - initialValue) * progress));
 
-        if (this.quinn.model.value === targetValue) {
+        if (self.quinn.model.value === targetValue) {
           // We've reached the target value, so stop trying to move further.
           window.clearInterval(intervalId);
         }
-      }, this);
+      };
 
       // Set a timeout so that after HOLD_DELAY seconds, the slider value will
       // continue to be changed so long as the user holds the mouse button.
-      timeoutId = window.setTimeout(_.bind(function () {
+      timeoutId = window.setTimeout(function () {
         intervalId = window.setInterval(intervalFunc, 1000 / HOLD_FPS);
-      }, this), HOLD_DELAY);
+        wasHeld    = true;
+      }, HOLD_DELAY);
 
       // Executed when the user lifts the mouse button; commits the new value.
-      onFinish = _.bind(function () {
-        $('body').off('mouseup.stepaccel');
+      onFinish = function () {
+        var exec = function () {
+          self.quinn.resolve();
+          wasHeld = self.resolveTimeout = null;
+        };
 
-        this.quinn.resolve();
+        $('body').off('mouseup.stepaccel');
 
         window.clearTimeout(timeoutId);
         window.clearInterval(intervalId);
 
         timeoutId  = null;
         intervalId = null;
-      }, this);
+
+        if (wasHeld === true || ! self.lastStepClick ||
+              (new Date() - self.lastStepClick) > 1000) {
+          exec();
+        } else {
+          // When the user quickly clicked the button, we wait a bit just in
+          // case they tap-tap-tap to make further changes.
+          self.resolveTimeout = window.setTimeout(exec, 500);
+        }
+
+        // Log when the user lifted their mouse button; used so that single
+        // clicks immediately update ETengine, while subsequent clicks will
+        // wait until the user has finished.
+        self.lastStepClick = new Date;
+      };
 
       $('body').on('mouseup.stepaccel', onFinish);
     },

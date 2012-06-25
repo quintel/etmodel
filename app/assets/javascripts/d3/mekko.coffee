@@ -40,7 +40,7 @@ D3.mekko =
       @carrier_list = namespace.carrier_list = new D3.mekko.GroupCollection()
       @node_list = namespace.node_list = new D3.mekko.NodeList()
       @initialize_defaults()
-      @color = d3.scale.category20c()
+      @color = d3.scale.category20()
       namespace.series = @model.series
       @prepare_data()
 
@@ -57,7 +57,7 @@ D3.mekko =
 
     draw: =>
       margins =
-        top: 20
+        top: 40
         bottom: 100
         left: 30
         right: 30
@@ -98,6 +98,28 @@ D3.mekko =
         attr("x", 0).
         attr("data-rel", (d) -> d.key())
 
+
+
+      # add legend
+      legend = @svg.selectAll("svg.legend").
+        data(D3.mekko.data.carriers).
+        enter().
+        append("svg:svg").
+        attr("class", "legend").
+        attr("x", (d, i) -> 100 * (i % 4) + 10).
+        attr("y", (d, i) -> 18 * Math.floor(i / 4) - 36).
+        attr("height", 30).
+        attr("width", 90)
+
+      legend.append("svg:rect").
+        attr("width", 10).
+        attr("height", 10).
+        attr("fill", (d, i) => @color(i))
+      legend.append("svg:text").
+        text((d) -> I18n.t "output_element_series.#{d}").
+        attr("x", 15).
+        attr("y", 8)
+
       # vertical sector label
       @sectors.append("svg:text")
         .text((d) -> d.get 'key')
@@ -106,9 +128,8 @@ D3.mekko =
         .attr("transform", "rotate(270)")
         .attr("text-anchor", "end")
 
-
       $("rect.carrier").tipsy
-        gravity: 's'
+        gravity: 'sw'
         html: true
 
     refresh: =>

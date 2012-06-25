@@ -1,20 +1,31 @@
 .diamond_container
   width: 750px
-  margin: 20px auto 40px auto
+  margin: 40px auto
   z-index: 3
-  @include box-shadow(#eeeeee 3px 3px 10px 10px)
-  padding: 20px 45px
+  @include box-shadow(#ccc 0 3px 20px)
+  border: 1px solid #d9d9d9
+  border-top-color: #dfdfdf
+  border-bottom-color: #cdcdcd
+  padding: 25px 45px
+  border-radius: 5px
   h1
-    font: $title_font
+    border-bottom: 1px solid #ddd
+    font-size: 20px
+    font-weight: bold
+    padding-bottom: 13px
+    line-height: 24px
   .text
-    height: 350px
-    padding-right: 50px
+    padding: 0 50px 5px 0
     width: 500px
     float: left
+    .intro_text
+      height: 275px
+    sub
+      line-height: 1
   .diamonds
     position: relative
     float: left
-    height: 340px
+    height: 200px
     width: 150px
     position: relative
     margin-top: 50px
@@ -25,7 +36,7 @@
       background: url(/assets/layout/diamond_white.png) no-repeat
       text-align: center
       a
-        padding-top: 37px
+        padding-top: 39px
         height: 100%
         display: block
         color: #000

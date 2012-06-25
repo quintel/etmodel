@@ -66,15 +66,9 @@ D3.mekko =
         append("svg:g").
         attr("transform", "translate(#{@margin}, #{@margin})")
 
-      x_scale = d3.scale.linear().domain([0,100]).range([0, @width])
       y_scale = d3.scale.linear().domain([100,0]).range([0, @height])
-      @x_axis = d3.svg.axis().scale(x_scale).ticks(4).orient("bottom")
       @y_axis = d3.svg.axis().scale(y_scale).ticks(4).orient("left")
       # axis
-      @svg.append("svg:g").
-        attr("class", "x_axis").
-        attr("transform", "translate(0, #{@height})").
-        call(@x_axis)
       @svg.append("svg:g").
         attr("class", "y_axis").
         call(@y_axis)
@@ -99,6 +93,15 @@ D3.mekko =
         attr("x", 0).
         attr("data-rel", (d) -> d.key())
 
+      # vertical sector label
+      @sectors.append("svg:text")
+        .text((d) -> d.get 'key')
+        .attr("class", "sector_label")
+        .attr("x", - @height - 5)
+        .attr("transform", "rotate(270)")
+        .attr("text-anchor", "end")
+
+
       $("rect.carrier").tipsy
         gravity: 's'
         html: true
@@ -118,6 +121,13 @@ D3.mekko =
           @sector_offset += @x d.total_value()
           "translate(#{old})"
         )
+
+      @label_offset = 0
+      @svg.selectAll("text.sector_label").
+        data(@sector_list.models, (d) -> d.get 'key' ).
+        transition().duration(500).
+        attr("dy", (d) => @y(d.total_value() / 2) + 5 ).
+        text((d) -> "#{d.get 'key'} #{Metric.autoscale_value d.total_value(), 'MJ', 2}")
 
       # we need to track the offset for every sector
       offsets = {}

@@ -1,8 +1,7 @@
 .diamond_container
   .text
     .intro_text= t_db("intro_pages")
-    %p.button
-      %a.button.primary{:href=>"/targets"}= I18n.t("start_with_targets")
+    %a.button.primary{:href=>"/targets"}= I18n.t("start_with_targets")
   .diamonds
     #policy.diamond= link_to t("tabs.targets"), '/targets'
     #demand.diamond= link_to t("tabs.demand"), '/demand'

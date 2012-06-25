@@ -56,15 +56,20 @@ D3.mekko =
             carrier: carrier
 
     draw: =>
-      @margin = 50
-      @width = (@container_node().width()   || 490) - 2 * @margin
-      @height = (@container_node().height() || 402) - 2 * @margin
+      margins =
+        top: 20
+        bottom: 100
+        left: 30
+        right: 30
+
+      @width = (@container_node().width()   || 490) - (margins.left + margins.right)
+      @height = (@container_node().height() || 402) - (margins.top + margins.bottom)
       @svg = d3.select("#d3_container_mekko").
         append("svg:svg").
-        attr("height", @height + 2 * @margin).
-        attr("width", @width + 2 * @margin).
+        attr("height", @height + margins.top + margins.bottom).
+        attr("width", @width + margins.left + margins.right).
         append("svg:g").
-        attr("transform", "translate(#{@margin}, #{@margin})")
+        attr("transform", "translate(#{margins.left}, #{margins.top})")
 
       y_scale = d3.scale.linear().domain([100,0]).range([0, @height])
       @y_axis = d3.svg.axis().scale(y_scale).ticks(4).orient("left")
@@ -126,7 +131,7 @@ D3.mekko =
       @svg.selectAll("text.sector_label").
         data(@sector_list.models, (d) -> d.get 'key' ).
         transition().duration(500).
-        attr("dy", (d) => @y(d.total_value() / 2) + 5 ).
+        attr("dy", (d) => @x(d.total_value() / 2) + 5 ).
         text((d) -> "#{d.get 'key'} #{Metric.autoscale_value d.total_value(), 'MJ', 2}")
 
       # we need to track the offset for every sector

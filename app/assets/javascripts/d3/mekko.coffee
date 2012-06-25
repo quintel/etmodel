@@ -26,7 +26,6 @@ D3.mekko =
       initialize: ->
         @nodes = []
 
-      offset: -> 30
       total_value: =>
         total = 0
         total += n.val() for n in @nodes
@@ -37,9 +36,9 @@ D3.mekko =
 
     initialize: ->
       namespace = D3.mekko
-      @sector_list = namespace.sector_list = new D3.mekko.SectorList()
+      @sector_list = namespace.sector_list = new D3.mekko.GroupCollection()
+      @carrier_list = namespace.carrier_list = new D3.mekko.GroupCollection()
       @node_list = namespace.node_list = new D3.mekko.NodeList()
-      @carrier_list = namespace.carrier_list = new D3.mekko.CarrierList()
       @initialize_defaults()
       @color = d3.scale.category20c()
       namespace.series = @model.series
@@ -85,7 +84,7 @@ D3.mekko =
         data(@sector_list.models, (d) -> d.get 'key' ).
         enter().append("svg:g").
         attr("class", "sector").
-        attr("transform", (d) -> "translate(#{d.offset()})").
+        attr("transform", (d) -> "translate(30)").
         attr("data-rel", (d) -> d.get 'key')
 
       # Create items inside the group
@@ -137,15 +136,8 @@ D3.mekko =
         ).
         attr("title", (d) -> d.tooltip_text())
 
-class D3.mekko.SectorList extends Backbone.Collection
+class D3.mekko.GroupCollection extends Backbone.Collection
   model: D3.mekko.NodeGroup
-  max_value: =>
-    _.max @map((d) -> d.total_value())
-
-class D3.mekko.CarrierList extends Backbone.Collection
-  model: D3.mekko.NodeGroup
-  max_value: =>
-    _.max @map((d) -> d.total_value())
 
 class D3.mekko.NodeList extends Backbone.Collection
   model: D3.mekko.Node

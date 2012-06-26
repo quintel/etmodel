@@ -1,6 +1,6 @@
 set :rails_env, :production
 set(:unicorn_binary) {"#{current_path}/bin/unicorn"}
-set(:unicorn_config) {"#{current_path}/config/unicorn/production.rb"}
+set(:unicorn_config) {"#{current_path}/config/unicorn/#{rails_env}.rb"}
 set(:unicorn_pid)    {"#{shared_path}/pids/unicorn.pid"}
 
 namespace :deploy do

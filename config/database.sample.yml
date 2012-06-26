@@ -1,4 +1,4 @@
-development:  
+development:
     adapter: mysql2
     database: etm_dev
     host: 127.0.0.1
@@ -17,7 +17,7 @@ test:
     timeout: 5000
     pool: 5
 
-production:
+production: &PRODUCTION
     adapter: mysql2
     database: quintel
     host: 127.0.0.1
@@ -26,3 +26,6 @@ production:
     encoding: utf8
     timeout: 5000
     pool: 5
+
+staging:
+    <<: *PRODUCTION

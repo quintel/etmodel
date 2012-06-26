@@ -60,4 +60,12 @@ describe PagesController do
       end
     end
   end
+
+  context "setting locale" do
+    it "should set the locale and redirect" do
+      post :set_locale, :locale => 'nl'
+      response.should be_redirect
+      I18n.locale.should == :nl
+    end
+  end
 end

@@ -14,11 +14,6 @@ class ApplicationController < ActionController::Base
   after_filter :teardown_current
   before_filter :export_i18n_messages
 
-  def set_locale
-    locale
-    redirect_to_back
-  end
-
   def locale
     # update session if passed
     session[:locale] = params[:locale] if params[:locale]

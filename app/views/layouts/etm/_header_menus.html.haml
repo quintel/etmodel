@@ -32,7 +32,7 @@
 
   %li
     = t("header.current_language")+":"
-    = form_tag "/application/set_locale" do
+    = form_tag set_locale_path do
       = select_tag "locale", options_for_select(["en", "nl"], I18n.locale.to_s), |
         :index => nil, :onchange => 'this.form.submit()'                         |
 

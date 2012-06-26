@@ -128,4 +128,9 @@ public
     @vimeo_id_for_category = SidebarItem.find_by_key(@category).send("#{I18n.locale}_vimeo_id")
     render :layout => false
   end
+
+  def set_locale
+    locale
+    redirect_to_back
+  end
 end

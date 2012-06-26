@@ -46,6 +46,7 @@ class @Target extends Backbone.Model
   dom_element: => $("#goal_" + @get("goal_id"))
 
   format_value: (n) =>
+    return null unless _.isNumber(n)
     switch @get('display_fmt')
       when 'percentage'
         return Metric.ratio_as_percentage(n, false, 2)

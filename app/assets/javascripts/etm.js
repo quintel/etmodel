@@ -33,3 +33,4 @@
 //= require d3/treemap
 //= require d3/merit_order
 //= require d3/mekko
+//= require d3/targets

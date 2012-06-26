@@ -119,7 +119,6 @@ Etm::Application.routes.draw do
   match '/about'                           => 'pages#about'
   match '/feedback'                        => 'pages#feedback', :as => :feedback
   match '/tutorial/(:section)(/:category)' => 'pages#tutorial'
-  match '/education'                       => 'pages#education'
   match '/pages/intro'                     => 'pages#intro', :as => :start
   match '/testimonials'                    => 'pages#testimonials'
   match '/recommendations'                 => 'pages#recommendations'

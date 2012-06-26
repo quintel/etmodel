@@ -54,10 +54,6 @@ public
     @releases = PressRelease.order("release_date desc")
   end
 
-  def education
-    @ie_detected = browser =~ /^ie/
-  end
-
   def update_footer
     render :partial => "layouts/etm/footer"
   end

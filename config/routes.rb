@@ -13,6 +13,7 @@ Etm::Application.routes.draw do
   match '/targets(/:sidebar)' => 'tab#show', :defaults => {:sidebar => 'sustainability', :tab => 'targets'}
   match '/supply(/:sidebar)'  => 'tab#show', :defaults => {:sidebar => 'electricity',    :tab => 'supply'}
   match '/info/:ctrl/:act' => "tab#info", :as => :tab_info
+  match "/:tab(/:sidebar)" => 'tab#show', :as => :tab, :constraints => {:tab => /(targets|demand|costs|supply)/}
 
   match '/descriptions/chart/:id'  => 'descriptions#show'
 
@@ -94,9 +95,8 @@ Etm::Application.routes.draw do
   end
 
   resources :scenarios, :except => [:edit, :update] do
-    member do
-      get :load
-    end
+    post :load, :on => :collection
+    get :load, :on => :member
   end
 
   resources :output_elements, :only => [:index, :show] do
@@ -144,6 +144,4 @@ Etm::Application.routes.draw do
   match "/404", :to => "pages#404"
   match "/500", :to => "pages#500"
 
-  # we should remove the catch-all route
-  match '/:controller(/:action(/:id))'
 end

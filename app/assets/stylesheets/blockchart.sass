@@ -6,57 +6,45 @@
     padding: 1px
     position: relative
     width: 90%
-    ul#x-grid
+    ul#x-grid, ul#y-grid, ul#x-axis, ul#y-axis
       position: absolute
       list-style-type: none
-      left: 0
-      width: 100%
-      height: 100%
-      margin: 0 0 0 0
-      padding: 0 0 0 0
-      li
-        float: left
+      margin: 0
+      padding: 0
+    ul
+      &#x-grid
+        left: 0
+        width: 100%
         height: 100%
-        text-align: right
-        background: url(/assets/layout/vertical-border.gif) repeat-y right top
-    ul#y-grid
-      width: 100%
-      list-style-type: none
-      margin: 0 0 0 0
-      padding: 0 0 0 0
-      position: absolute
-      bottom: 0
-      left: 0
-      height: 100%
-      li
+        li
+          float: left
+          height: 100%
+          text-align: right
+          background: url(/assets/layout/vertical-border.gif) repeat-y right top
+      &#y-grid
         width: 100%
-        background: url(/assets/layout/horizontal-border.gif) repeat-x left top
-        text-align: right
-
-    ul#x-axis
-      position: absolute
-      list-style-type: none
-      left: 0px
-      bottom: -20px
-      width: 100%
-      margin: 0 0 0 0
-      padding: 0 0 0 0
-      li
-        float: left
-        height: 20px
-        text-align: right
-
-    ul#y-axis
-      list-style-type: none
-      margin: 0 0 0 0
-      padding: 0 0 0 0
-      position: absolute
-      bottom: 10px
-      left: -30px
-      height: 100%
-      li
+        bottom: 0
+        left: 0
+        height: 100%
+        li
+          width: 100%
+          background: url(/assets/layout/horizontal-border.gif) repeat-x left top
+          text-align: right
+      &#x-axis
+        left: 0px
+        bottom: -20px
         width: 100%
-        text-align: right
+        li
+          float: left
+          height: 20px
+          text-align: right
+      &#y-axis
+        bottom: 10px
+        left: -30px
+        height: 100%
+        li
+          width: 100%
+          text-align: right
     #y-axis-label
       position: absolute
       top: 0
@@ -71,7 +59,6 @@
       position: absolute
       bottom: -2px
       right: 0
-
 
     #canvas
       position: relative

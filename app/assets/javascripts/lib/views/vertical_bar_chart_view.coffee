@@ -7,6 +7,12 @@ class @VerticalBarChartView extends VerticalStackedBarChartView
 
   results: ->
     results = @results_with_1990()
+    target_serie = @model.target_series()[0]
+    result = target_serie.result()[1][1] # target_series has only present or future value
+
+    x = parseFloat(target_serie.get('target_line_position'))
+    results.push([[x - 0.4, result], [x + 0.4, result]])
+    results
 
   # custom function for showing 1990
   results_with_1990: ->

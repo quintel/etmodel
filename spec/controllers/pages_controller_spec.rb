@@ -51,7 +51,7 @@ describe PagesController do
   end
 
   context :static_pages do
-    [:bugs, :education].each do |page|
+    [:bugs].each do |page|
       describe "#{page} page" do
         it "should work" do
           get page

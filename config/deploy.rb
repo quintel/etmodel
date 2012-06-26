@@ -1,5 +1,4 @@
 set :application, "etmodel"
-set :stage, :production
 set :server_type, 'production'
 set :deploy_to, "/u/apps/etmodel"
 set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
@@ -17,6 +16,7 @@ set :local_db_name, 'etmodel_dev'
 task :production do
   set :branch, "production"
   set :domain, "et-model.com"
+  set :rails_env, "staging"
   set :application_key, "etmodel"
   set :db_pass, "HaLjXwRWmu60DK"
   set :db_name, application_key
@@ -28,6 +28,7 @@ end
 task :staging do
   set :domain, "beta.et-model.com"
   set :branch, "staging"
+  set :rails_env, "staging"
   set :application_key, "etmodel_staging"
   set :db_pass, "1is5sRJmehiULV"
   set :db_name, application_key
@@ -36,13 +37,9 @@ task :staging do
   server domain, :web, :app, :db, :primary => true
 end
 
-task :beta do
-  staging
-end
-
 # Useful, taken from the capistrano gem
 def rake_on_current(*tasks)
-  rails_env = fetch(:rails_env, "production")
+  rails_env = fetch(:rails_env, rails_env)
   rake = fetch(:rake, "rake")
   tasks.each do |t|
     run "if [ -d #{release_path} ]; then cd #{release_path}; else cd #{current_path}; fi; #{rake} RAILS_ENV=#{rails_env} #{t}"

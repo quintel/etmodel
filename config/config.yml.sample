@@ -48,8 +48,10 @@ development: &DEV
 
     # set to true if you want a "production server" warning in the admin section
     live_server: false
-production:
+production: &PRODUCTION
     <<: *DEV
     local_proxy: false
 test:
     <<: *DEV
+staging:
+    <<: *PRODUCTION

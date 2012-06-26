@@ -6,7 +6,7 @@
         %li{:id => item.key,
             :class => (params[:sidebar] == item.key) ? 'active' : nil,
             :'data-gquery' => item.percentage_bar_query}
-          = link_to url_for(:controller => tab.key, :action => item.key),
+          = link_to tab_path(:tab => tab.key, :sidebar => item.key),
             :'data-nav' => false do
             %p
               %span.title

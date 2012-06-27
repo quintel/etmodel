@@ -9,12 +9,15 @@ $ ->
       new_html = $('#textrepository_'+id_name).html()
       $('.diamond_container .text').html(new_html)
 
-  # used in root form
+  # used in root form to show the predefined scenarios descriptions
   $("#scenarios_select").change ->
-    # show description
     $('.description').hide(50)
-    scenario_id = $(this).find("option:selected").attr('value')
-    $("#description_"+scenario_id).show(100)
+    locale = $(this).data 'locale'
+    scenario_id = $(this).val()
+    # the scenario description record has two spans en/nl for the localized text
+    # Using html tags in the db records should better be avoided
+    $("#description_#{scenario_id}").show(100)
+      .find("span.#{locale}").show()
     if scenario_id > 0
       $('#go_button').show(50)
 

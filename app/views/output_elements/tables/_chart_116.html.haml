@@ -39,8 +39,8 @@
     - items.each_pair do |key, label|
       %tr
         %th= raw label
-        %td{:data => {:gquery => "merit_order_#{key}_position_in_merit_order_table"}}
-        %td{:data => {:gquery => "merit_order_#{key}_operating_costs_in_merit_order_table"}}
-        %td{:data => {:gquery => "merit_order_#{key}_capacity_in_merit_order_table"}}
-        %td{:data => {:gquery => "merit_order_#{key}_full_load_hours_in_merit_order_table"}}
-        %td{:data => {:gquery => "merit_order_#{key}_present_full_load_hours_in_merit_order_table"}}
+        %td{:data => {:decimals => 0, :gquery => "merit_order_#{key}_position_in_merit_order_table"}}
+        %td{:data => {:decimals => 0, :gquery => "merit_order_#{key}_operating_costs_in_merit_order_table"}}
+        %td{:data => {:decimals => 0, :gquery => "merit_order_#{key}_capacity_in_merit_order_table"}}
+        %td{:data => {:decimals => 0, :gquery => "merit_order_#{key}_full_load_hours_in_merit_order_table"}}
+        %td{:data => {:decimals => 0, :gquery => "merit_order_#{key}_present_full_load_hours_in_merit_order_table"}}

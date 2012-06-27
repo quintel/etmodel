@@ -36,7 +36,7 @@ D3.targets =
         max = x if (x = query.present_value()) > max
       max
 
-    update_scale: => @scale = @scale.domain([0, @max_value()]).range([80, @namespace.width])
+    update_scale: => @scale = @scale.domain([0, @max_value()]).range([0, @namespace.width - 80])
 
     axis_builder: => @axis.scale(@scale)
 
@@ -79,41 +79,40 @@ D3.targets =
 
       # labels first
       @items.append("svg:text")
-        .text((d) -> d.get 'key')
+        .text((d) -> I18n.t "targets.#{d.get 'key'}")
         .attr('class', 'target_label')
         .attr('text-anchor', 'end')
-        .attr('x', 60)
+        .attr('x', 75)
 
-      @current_values = @items.append("svg:rect")
+      # now bars and axis
+      @blocks = @items.append("svg:g")
+        .attr("transform", "translate(80)")
+
+      @current_values = @blocks.append("svg:rect")
         .attr('class', 'current_value')
-        .attr('x', 80)
         .attr('y', -10)
         .attr('height', 10)
-        .attr('width', 50)
+        .attr('width', 0)
         .attr('fill', '#66ccff')
 
-      @future_values = @items.append("svg:rect")
+      @future_values = @blocks.append("svg:rect")
         .attr('class', 'future_value')
-        .attr('x', 80)
         .attr('y', 0)
         .attr('height', 10)
-        .attr('width', 60)
+        .attr('width', 0)
         .attr('fill', '#0080ff')
 
-      @user_targets = @items.append("svg:rect")
+      @user_targets = @blocks.append("svg:rect")
         .attr('class', 'target_value')
-        .attr('x', 80)
         .attr('y', -15)
-        .attr('width', 1)
+        .attr('width', 2)
         .attr('height', 30)
         .attr('fill', '#ff0000')
+        .style("opacity", 0.7)
 
-      scale = d3.scale.linear().domain([0,100]).range([80, @width])
-      axis_builder = d3.svg.axis().scale(scale).ticks(4)
-      @axis = @items.append('svg:g')
+      @axis = @blocks.append('svg:g')
         .attr("class", 'x_axis')
-        .attr('transform', 'translate(0,10)')
-        .call(axis_builder)
+        .attr('transform', 'translate(0.5,10.5)')
 
     refresh: =>
       t.update_scale() for t in @targets
@@ -130,15 +129,15 @@ D3.targets =
 
       targets.selectAll('rect.current_value')
         .transition()
-        .attr('width', (d) -> d.scale(d.value_query.present_value()) - 80)
+        .attr('width', (d) -> d.scale(d.value_query.present_value()) )
 
       targets.selectAll('rect.future_value')
         .transition()
-        .attr('width', (d) -> d.scale(d.value_query.future_value()) - 80)
+        .attr('width', (d) -> d.scale(d.value_query.future_value()) )
 
       targets.selectAll('rect.target_value')
         .transition()
-        .attr('x', (d) -> 80 + d.scale(d.target_query.future_value()))
+        .attr('x', (d) -> d.scale(d.target_query.future_value()) - 1)
 
 
 

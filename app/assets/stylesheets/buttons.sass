@@ -32,7 +32,31 @@ a.button, input.button, button.button
     margin: 0px 2px -1px 0
     vertical-align: middle
 
-h2 a.button
+// Small buttons.
+
+a.button.small
+  padding: 5px 9px 5px
+
+input.button.small, button.button.small
+  padding: 5px 9px 5px
+
+  &[type]
+    // <input type="button" ... />
+    padding: 3px 9px 4px
+  *:first-child + html &[type]
+    // IE
+    padding: 8px 9px 5px
+
+a.button.small, input.button.small, button.button.small
+  font-size: 11px
+
+  span
+    // display: none
+    margin: -3px 2px -1px 0
+
+// Buttons in page headers.
+
+h2 a.button, h2 input.button, h2 button.button
   margin: 0 10px 0 0
   vertical-align: text-top
 

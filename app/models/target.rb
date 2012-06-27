@@ -2,16 +2,15 @@
 #
 # Table name: targets
 #
-#  id               :integer(4)      not null, primary key
-#  code             :string(255)
-#  query            :string(255)
-#  unit             :string(255)
-#  created_at       :datetime
-#  updated_at       :datetime
-#  display_format   :string(255)
-#  reached_query    :string(255)
-#  target_query     :string(255)
-#  user_value_query :string(255)
+#  id             :integer(4)      not null, primary key
+#  code           :string(255)
+#  query          :string(255)
+#  unit           :string(255)
+#  created_at     :datetime
+#  updated_at     :datetime
+#  display_format :string(255)
+#  reached_query  :string(255)
+#  target_query   :string(255)
 #
 
 class Target < ActiveRecord::Base
@@ -23,7 +22,7 @@ class Target < ActiveRecord::Base
   accepts_nested_attributes_for :area_dependency
 
   scope :gquery_contains, lambda{|search| where([
-    "query LIKE :q OR reached_query LIKE :q OR target_query LIKE :q OR user_value_query LIKE :q",
+    "query LIKE :q OR reached_query LIKE :q OR target_query LIKE :q",
     {:q => "%#{search}%"}]
   )}
 
@@ -35,7 +34,6 @@ class Target < ActiveRecord::Base
       :success_query    => reached_query,
       :value_query      => query,
       :target_query     => target_query,
-      :user_value_query => user_value_query,
       :unit             => unit,
       :display_fmt      => display_format,
       :code             => code

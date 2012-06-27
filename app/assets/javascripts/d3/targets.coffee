@@ -4,8 +4,8 @@ D3.targets =
       {key: 'co2_emissions',          unit: '%'},
       {key: 'net_energy_import',      unit: '%'},
       {key: 'net_electricity_import', unit: '%'},
-      {key: 'total_energy_cost',      unit: 'Bln euro'},
-      {key: 'electricity_cost',       unit: 'euro'},
+      {key: 'total_energy_costs',      unit: 'Bln euro'},
+      {key: 'electricity_costs',       unit: 'euro'},
       {key: 'renewable_percentage',   unit: '%'},
       {key: 'onshore_land',           unit: 'km2'},
       {key: 'onshore_coast',          unit: 'km2'},
@@ -19,15 +19,14 @@ D3.targets =
       @success_query    = new ChartSerie({gquery_key: "policy_goal_#{@get 'key'}_reached"})
       @value_query      = new ChartSerie({gquery_key: "policy_goal_#{@get 'key'}_value"})
       @target_query     = new ChartSerie({gquery_key: "policy_goal_#{@get 'key'}_target_value"})
-      @user_value_query = new ChartSerie({gquery_key: "policy_goal_#{@get 'key'}_user_value"})
-      @namespace.series.push @success_query, @value_query, @target_query, @user_value_query
+      @namespace.series.push @success_query, @value_query, @target_query
 
       @scale = d3.scale.linear()
       @axis = d3.svg.axis().ticks(4).orient('bottom')
 
     max_value: =>
       max = 0
-      for query in [@success_query, @value_query, @target_query, @user_value_query]
+      for query in [@success_query, @value_query, @target_query]
         max = x if (x = query.future_value()) > max
         max = x if (x = query.present_value()) > max
       max

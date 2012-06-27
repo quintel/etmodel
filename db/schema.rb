@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613085902) do
+ActiveRecord::Schema.define(:version => 20120627144510) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -288,7 +288,6 @@ ActiveRecord::Schema.define(:version => 20120613085902) do
     t.string   "display_format"
     t.string   "reached_query"
     t.string   "target_query"
-    t.string   "user_value_query"
   end
 
   add_index "targets", ["code"], :name => "index_policy_goals_on_key"

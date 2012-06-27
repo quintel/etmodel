@@ -1,26 +1,25 @@
 class @Target extends Backbone.Model
   initialize : ->
     window.targets.add(this)
-    @success_query    = gqueries.find_or_create_by_key @get("success_query")
-    @value_query      = gqueries.find_or_create_by_key @get("value_query")
-    @target_query     = gqueries.find_or_create_by_key @get("target_query")
-    @user_value_query = gqueries.find_or_create_by_key @get("user_value_query")
+    @success_query = gqueries.find_or_create_by_key @get("success_query")
+    @value_query   = gqueries.find_or_create_by_key @get("value_query")
+    @target_query  = gqueries.find_or_create_by_key @get("target_query")
 
   # goal achieved? true/false
-  success_value: => @success_query.get('future_value')
+  success_value: => @success_query.future_value()
 
   successful: => @success_value() == true
 
   # numeric value
-  current_value: => @value_query.get('future_value')
+  current_value: => @value_query.future_value()
 
-  start_value: => @value_query.get('present_value')
+  start_value: => @value_query.future_value()
 
   # goal, numeric value
-  target_value: => @target_query.get('future_value')
+  target_value: => @target_query.future_value()
 
   # returns true if the user has set a goal
-  is_set: => @user_value_query.get('future_value')
+  is_set: => @target_value() != null
 
   # DEBT: we could use a BB view
   update_view: =>

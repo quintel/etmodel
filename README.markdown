@@ -27,14 +27,14 @@ Branch for the production server (http://et-model.com)
 
 ### Converter attributes ###
 
-Attributes are country-specific fixed numbers. E.g presetdemand, typical_capacity, etc. Some people call them inputs (Alexander). 
+Attributes are country-specific fixed numbers. E.g presetdemand, typical_capacity, etc. Some people call them inputs (Alexander).
 
 Assuming you want to add a new attribute "foobar" to converter:
 
-* create a migration 
+* create a migration
     script/generate migration add_foobar_to_converters foobar:float
 * migrate
-* in Qernel::ConverterApi add :foobar to the ATTRIBUTES_USED array. 
+* in Qernel::ConverterApi add :foobar to the ATTRIBUTES_USED array.
 
 Finished. In the next import of a graph, the attributes will be stored. Make sure that the csv export from wouters excel has the correct attribute name.
 
@@ -46,9 +46,9 @@ Basically works the same for Area data, except that the actual numbers are not a
 
 * create migration
 in the according Qernel Class
-* add an attr_accessor 
+* add an attr_accessor
 * update the constructor initialize
-or 
+or
 * update the to_qernel method in the corresponding ActiveRecord model.
 
 ## Building/kickstarting on a new machine ##
@@ -69,18 +69,18 @@ or
 
 To deploy to staging:
 
-    `$: cap staging deploy` 
+    `$: cap staging deploy`
 
 To make capistrano work on production server write *cap prod*:
 
-    `$: cap prod deploy` 
+    `$: cap production deploy`
 
 
 1. Make sure everything works. Run the tests.
 
     `(dev)$: rake spec`
 
-2. Commit and push all the changes 
+2. Commit and push all the changes
 
     `(dev)$ git push origin dev`
 
@@ -92,7 +92,7 @@ To make capistrano work on production server write *cap prod*:
 
     `(master)$ git merge dev`
 
-5. If merge errors, clean up and commit. 
+5. If merge errors, clean up and commit.
 
 6. Push master branch online
 
@@ -100,8 +100,8 @@ To make capistrano work on production server write *cap prod*:
 
 7. If you have commited any changes (while in the master branch), merge back into dev
 
-    `(master)$ git checkout dev`  
-    `(dev)$ git merge master`  
+    `(master)$ git checkout dev`
+    `(dev)$ git merge master`
     `(dev)$ git checkout master`
 
 8. Now deploy to the *staging* server
@@ -113,7 +113,7 @@ To make capistrano work on production server write *cap prod*:
 
     `(master)$ cap deploy:seed`
 
-10. Test *staging* 
+10. Test *staging*
 
 11. Deploy to the *production* server
 
@@ -127,3 +127,15 @@ To make capistrano work on production server write *cap prod*:
 # Deployments #
 
 Paolo can write some nice prose here about the deployment procedure and what mighty scripts to use...
+
+# Search
+
+If the full-text search doesn't work then probably thinking sphinx isn't running. You can start it with
+
+    `cap staging sphinx:rebuild_and_restart`
+
+Or, if the index has already been built
+
+    `cap staging thinking_sphinx:start`
+
+

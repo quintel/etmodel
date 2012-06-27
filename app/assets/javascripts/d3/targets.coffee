@@ -1,15 +1,15 @@
 D3.targets =
   data:
     targets: [
-      'co2_emissions',
-      'net_energy_import',
-      'net_electricity_import',
-      'total_energy_cost',
-      'electricity_cost',
-      'renewable_percentage',
-      'onshore_land',
-      'onshore_coast',
-      'offshore'
+      {key: 'co2_emissions',          unit: '%'},
+      {key: 'net_energy_import',      unit: '%'},
+      {key: 'net_electricity_import', unit: '%'},
+      {key: 'total_energy_cost',      unit: 'Bln euro'},
+      {key: 'electricity_cost',       unit: 'euro'},
+      {key: 'renewable_percentage',   unit: '%'},
+      {key: 'onshore_land',           unit: 'km2'},
+      {key: 'onshore_coast',          unit: 'km2'},
+      {key: 'offshore',               unit: 'km2'}
     ]
 
   # This represents a carrier within a sector
@@ -20,14 +20,10 @@ D3.targets =
       @value_query      = new ChartSerie({gquery_key: "policy_goal_#{@get 'key'}_value"})
       @target_query     = new ChartSerie({gquery_key: "policy_goal_#{@get 'key'}_target_value"})
       @user_value_query = new ChartSerie({gquery_key: "policy_goal_#{@get 'key'}_user_value"})
+      @namespace.series.push @success_query, @value_query, @target_query, @user_value_query
 
-      @namespace.series.push @success_query
-      @namespace.series.push @value_query
-      @namespace.series.push @target_query
-      @namespace.series.push @user_value_query
-
-      @scale = d3.scale.linear().domain([0,100])
-      @axis = d3.svg.axis().scale(@scale).ticks(4).orient('bottom')
+      @scale = d3.scale.linear()
+      @axis = d3.svg.axis().ticks(4).orient('bottom')
 
     max_value: =>
       max = 0
@@ -49,8 +45,7 @@ D3.targets =
       @namespace = D3.targets
       @namespace.series = @model.series
       @targets = []
-      for t in @namespace.data.targets
-        @targets.push(new D3.targets.Target({key: t}))
+      @targets.push(new D3.targets.Target(t)) for t in @namespace.data.targets
 
       @initialize_defaults()
 
@@ -85,6 +80,13 @@ D3.targets =
         .attr('class', 'target_label')
         .attr('text-anchor', 'end')
         .attr('x', 75)
+
+      @items.append("svg:text")
+        .text((d) -> d.get 'unit')
+        .attr('class', 'target_unit')
+        .attr('text-anchor', 'end')
+        .attr('x', 75)
+        .attr('y', 10)
 
       # now bars and axis
       @blocks = @items.append("svg:g")

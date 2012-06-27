@@ -40,6 +40,8 @@ D3.targets =
 
     axis_builder: => @axis.scale(@scale)
 
+    successful: => @success_query.future_value()
+
   View: class extends D3ChartView
     el: "body"
 
@@ -135,9 +137,14 @@ D3.targets =
         .transition()
         .attr('width', (d) -> d.scale(d.value_query.future_value()) )
 
+      targets.selectAll('text.target_label')
+        .transition()
+        .style('stroke', (d) -> if d.successful() then '#00ff00' else '#000000')
+
       targets.selectAll('rect.target_value')
         .transition()
         .attr('x', (d) -> d.scale(d.target_query.future_value()) - 1)
+        .attr('fill', (d) -> if d.successful() then '#008040' else '#ff0000')
 
 
 

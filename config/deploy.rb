@@ -16,7 +16,7 @@ set :local_db_name, 'etmodel_dev'
 task :production do
   set :branch, "production"
   set :domain, "et-model.com"
-  set :rails_env, "staging"
+  set :rails_env, "production"
   set :application_key, "etmodel"
   set :db_pass, "HaLjXwRWmu60DK"
   set :db_name, application_key

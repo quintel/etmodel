@@ -2,7 +2,7 @@ D3.merit_order =
   data:
     [
       {key: 'central_gas_chp'},
-      {key: 'co_firing_coal'},
+      # {key: 'co_firing_coal'},
       {key: 'coal_chp'},
       {key: 'coal_conv'},
       {key: 'coal_igcc'},
@@ -13,7 +13,7 @@ D3.merit_order =
       {key: 'gas_ccgt_ccs'},
       {key: 'gas_conv'},
       {key: 'gas_turbine'},
-      # {key: 'must_run'}, # something's broken here
+      {key: 'must_run'}, # something's broken here
       {key: 'nuclear_iii'},
       {key: 'oil_plant'},
       {key: 'solar_pv'},
@@ -31,7 +31,13 @@ D3.merit_order =
       D3.merit_order.series.push @gquery_y
 
     value_x: => @gquery_x.future_value()
-    value_y: => @gquery_y.future_value()
+    value_y: =>
+      if @get('key') == 'must_run'
+        1
+      else
+        @original_y_value()
+
+    original_y_value: => @gquery_y.future_value()
 
     label: => @get('label') || @get('key')
 
@@ -141,8 +147,8 @@ D3.merit_order =
       @y          = d3.scale.linear().domain([0, @nodes.max_height()]).range([0, @height])
       @yAxisScale = d3.scale.linear().domain([0, @nodes.max_height()]).range([@height, 0])
       @x = d3.scale.linear().domain([0, @nodes.total_width()]).range([0, @width])
-      @svg.selectAll(".x").transition().call(@xAxis.scale(@x))
-      @svg.selectAll(".y").transition().call(@yAxis.scale(@yAxisScale))
+      @svg.selectAll(".x_axis").transition().call(@xAxis.scale(@x))
+      @svg.selectAll(".y_axis").transition().call(@yAxis.scale(@yAxisScale))
 
       @min_node_height = 2
 
@@ -175,7 +181,7 @@ D3.merit_order =
           html += "<br/>"
           html += "Installed capacity: #{Metric.autoscale_value(d.value_x() * 1000000, 'MW', 2)}"
           html += "<br/>"
-          html += "Operating costs: #{Metric.autoscale_value d.value_y(), 'euro', 2}"
+          html += "Operating costs: #{Metric.autoscale_value d.original_y_value(), 'euro', 2}"
           html
         )
 

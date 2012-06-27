@@ -41,12 +41,14 @@ class @HtmlTableChartView extends BaseChartView
   fill_cells: ->
     for cell in @dynamic_cells()
       gqid = $(cell).data('gquery')
+      decimals = $(cell).data('decimals')
+      decimals = 1 unless _.isNumber(decimals)
       serie = @model.series.with_gquery(gqid)
       if !serie
         console.warn "Missing gquery: #{gqid}"
         return
       raw_value = serie.future_value()
-      value = Metric.round_number(raw_value, 1)
+      value = Metric.round_number(raw_value, decimals)
       # some gqueries need a special treatment if they're 0
       on_zero = $(cell).data('on_zero')
       if raw_value == 0 and on_zero

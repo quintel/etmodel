@@ -37,7 +37,7 @@ Etm::Application.routes.draw do
   get '/settings/dashboard', :to => 'settings#dashboard'
   put '/settings/dashboard', :to => 'settings#update_dashboard'
 
-  resource :searches
+  match '/search' => 'search#index', :as => :search
 
   namespace :admin do
     root :to => 'pages#index'

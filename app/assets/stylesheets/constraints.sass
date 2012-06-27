@@ -6,9 +6,9 @@
       image: url(/assets/layout/divider-01.gif)
       color: #fff
       repeat: repeat-x
-    min-width: 960px
     padding-left: 35px
     margin: 0 auto
+    min-width: 715px
     list-style: none
     z-index: 1051
     .constraint
@@ -34,6 +34,10 @@
       .arrow_up
         background-position: 0 -100px
 
+      &:nth-of-type(7) .arrow
+        // last-of-type isn't working correctly...
+        right: 18px
+
       img.questionmark
         position: absolute
         right: 5px
@@ -46,8 +50,7 @@
         display: block
         color: #214367
         font-size: 14px
-        width: 110px
-        padding: 8px 0 4px 12px
+        padding: 10px 0 1px 12px
         margin: 0
         height: 25px
       strong
@@ -56,7 +59,7 @@
         display: block
         font-weight: normal
         color: #000
-        padding: 0 0 10px 12px
+        padding: 0 0 11px 12px
         font-size: 24px
         // height: 26px
         width: 120px
@@ -84,6 +87,35 @@
       background-color: #478dc3
     &:active
       background-color: #3c81bb
+
+@media screen and (max-width: 960px)
+  #constraints_container #constraints .constraint
+    .header
+      font-family: $body_font_family
+      font-size: 12px
+      height: 18px
+      line-height: 11px
+      padding: 18px 0 0 12px
+
+    strong
+      font-size: 17px
+      padding-bottom: 11px
+
+    .arrow_down, .arrow_up, .arrow_neutral
+      background-position: 0 -400px
+      top: 38px
+      width: 15px
+
+    .arrow_down
+      background-position: 0 -300px
+    .arrow_up
+      background-position: 0 -400px
+    .arrow_neutral
+      background-position: 0 -500px
+
+@media screen and (max-width: 840px)
+  #constraints_container #constraints .constraint .header
+    font-size: 10px
 
 #dashboard-changer
   padding: 40px 50px

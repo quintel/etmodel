@@ -2,17 +2,18 @@
 #
 # Table name: slides
 #
-#  id                 :integer(4)      not null, primary key
-#  image              :string(255)
-#  created_at         :datetime
-#  updated_at         :datetime
-#  general_sub_header :string(255)
-#  group_sub_header   :string(255)
-#  subheader_image    :string(255)
-#  key                :string(255)
-#  position           :integer(4)
-#  sidebar_item_id    :integer(4)
-#  output_element_id  :integer(4)
+#  id                    :integer(4)      not null, primary key
+#  image                 :string(255)
+#  created_at            :datetime
+#  updated_at            :datetime
+#  general_sub_header    :string(255)
+#  group_sub_header      :string(255)
+#  subheader_image       :string(255)
+#  key                   :string(255)
+#  position              :integer(4)
+#  sidebar_item_id       :integer(4)
+#  output_element_id     :integer(4)
+#  alt_output_element_id :integer(4)
 #
 
 class Slide < ActiveRecord::Base
@@ -23,7 +24,8 @@ class Slide < ActiveRecord::Base
   has_one :description, :as => :describable
   has_many :sliders, :through => :slider_positions
   has_many :slider_positions, :dependent => :destroy, :order => 'slider_positions.position'
-  belongs_to :output_element # default output element
+  belongs_to :output_element # default chart
+  belongs_to :alt_output_element, :class_name => 'OutputElement' # secondary chart
   validates :key, :presence => true, :uniqueness => true
   scope :controller, lambda {|controller| where(:controller_name => controller) }
   scope :ordered, order('position')

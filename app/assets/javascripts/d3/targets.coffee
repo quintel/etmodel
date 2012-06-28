@@ -22,7 +22,7 @@ D3.targets =
       @namespace.series.push @success_query, @value_query, @target_query
 
       @scale = d3.scale.linear()
-      @axis = d3.svg.axis().ticks(4).orient('bottom')
+      @axis = d3.svg.axis().tickSize(2, 0).ticks(4).orient('bottom')
 
     max_value: =>
       max = 0
@@ -52,10 +52,10 @@ D3.targets =
 
     draw: =>
       margins =
-        top: 40
-        bottom: 100
-        left: 30
-        right: 30
+        top: 15
+        bottom: 5
+        left: 20
+        right: 20
 
       @width = (@container_node().width()   || 490) - (margins.left + margins.right)
       @height = (@container_node().height() || 402) - (margins.top + margins.bottom)
@@ -73,7 +73,7 @@ D3.targets =
         .enter()
         .append('svg:g')
         .attr('class', 'target')
-        .attr('transform', (d, i) -> "translate(0, #{i * 40})")
+        .attr('transform', (d, i) -> "translate(0, #{i * 33})")
 
       # labels first
       @items.append("svg:text")
@@ -96,14 +96,14 @@ D3.targets =
       @current_values = @blocks.append("svg:rect")
         .attr('class', 'current_value')
         .attr('y', -10)
-        .attr('height', 10)
+        .attr('height', 8)
         .attr('width', 0)
         .attr('fill', '#66ccff')
 
       @future_values = @blocks.append("svg:rect")
         .attr('class', 'future_value')
-        .attr('y', 0)
-        .attr('height', 10)
+        .attr('y', -1)
+        .attr('height', 8)
         .attr('width', 0)
         .attr('fill', '#0080ff')
 
@@ -117,7 +117,7 @@ D3.targets =
 
       @axis = @blocks.append('svg:g')
         .attr("class", 'x_axis')
-        .attr('transform', 'translate(0.5,10.5)')
+        .attr('transform', 'translate(0.5, 7.5)')
 
     refresh: =>
       t.update_scale() for t in @targets

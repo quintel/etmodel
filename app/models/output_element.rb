@@ -71,6 +71,10 @@ class OutputElement < ActiveRecord::Base
     !(html_table? || d3_chart?)
   end
 
+  def has_description?
+    description.present?
+  end
+
   def options_for_js
     {
       :id                 => id,
@@ -84,7 +88,8 @@ class OutputElement < ActiveRecord::Base
       :min_axis_value     => min_axis_value,
       :growth_chart       => growth_chart,
       :key                => key,
-      :under_construction => under_construction
+      :under_construction => under_construction,
+      :has_description    => has_description?
     }
   end
 

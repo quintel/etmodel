@@ -15,16 +15,17 @@ Etm::Application.routes.draw do
   match '/info/:ctrl/:act' => "tab#info", :as => :tab_info
   match "/:tab(/:sidebar)" => 'tab#show', :as => :tab, :constraints => {:tab => /(targets|demand|costs|supply)/}
 
-  match '/descriptions/chart/:id'  => 'descriptions#show'
-
   match '/texts/:id' => 'texts#show'
 
   match 'login'  => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
 
+  resources :descriptions, :only => :show
+  match '/descriptions/charts/:id'  => 'descriptions#charts'
+
   match 'track' => 'track#track', :as => :path
 
-  resources :user_sessions, :users, :descriptions
+  resources :user_sessions, :users
 
   resources :partners, :only => [:show, :index]
 

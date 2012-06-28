@@ -44,6 +44,7 @@ class @BaseChartView extends Backbone.View
     @$el.find('h3').html(@model.get("name"))
     @$el.data('chart_id', @model.get('id'))
     @$el.attr('data-block_ui_on_refresh', @block_ui_on_refresh())
+    @$el.find('a.chart_info').toggle(@model.get('has_description'))
 
   create_legend: (opts) ->
     renderer: $.jqplot.EnhancedLegendRenderer

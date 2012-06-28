@@ -7,10 +7,11 @@ class DescriptionsController < ApplicationController
     render :layout => false if request.xhr?
   end
 
-  ##
-  # This is used in the '?'- button for output elements. It gets the description using the outputelement id
+  # This is used in the '?'- button for output elements. It gets the description
+  # using the outputelement id
   def charts
-    @description = Description.where(:describable_id => params[:id], :describable_type => 'OutputElement').first
+    chart = OutputElement.find params[:id]
+    @description = chart.try :description
     render :show, :layout => false
   end
 end

@@ -11,6 +11,7 @@ D3.sankey =
       {id: 'biomass_products',       column: 0, label: "biomass"},
       #{id: 'mixed_flows',       column: 0, label: "mixed flows"},
       {id: 'electricity',       column: 0, label: "renewable electricity"},
+      {id: 'imported_electricity',       column: 0, label: "imported electricity"},
 
       {id: 'households',  column: 1},
       {id: 'buildings',   column: 1},
@@ -18,76 +19,58 @@ D3.sankey =
       {id: 'transport',   column: 1},
       {id: 'industry',    column: 1},
       {id: 'other',       column: 1},
+      {id: 'exported_electricity',       column: 1},
 
       {id: 'useful_demand_electric',     column: 2, label: "electricity"},
       {id: 'useful_demand_heat_cold',   column: 2, label: "heat/cold"},
       {id: 'useful_demand_transport',   column: 2, label: "transport"},
       {id: 'useful_demand_non_energetic',   column: 2, label: "non-energetic"},
 
-
     ]
     links: [
       #Direct links between carrier and sector
       {left: 'coal_and_derivatives',      right: 'households', gquery: 'coal_and_derivatives_to_households_in_sankey_ufp', color: 'black'},
       {left: 'oil_and_derivatives',      right: 'households', gquery: 'oil_and_derivatives_to_households_in_sankey_ufp', color: 'brown'},
-      #{left: 'useful_demand',      right: 'households', gquery: 'useful_demand_to_households_in_sankey_ufp', color: 'black'},
-      #{left: 'non_renewable_waste',      right: 'households', gquery: 'non_renewable_waste_to_households_in_sankey_ufp', color: 'black'},
-      #{left: 'geo_solar_wind_water_ambient',      right: 'households', gquery: 'geo_solar_wind_water_ambient_to_households_in_sankey_ufp', color: 'black'},
       {left: 'natural_gas',      right: 'households', gquery: 'natural_gas_to_households_in_sankey_ufp', color: 'steelblue'},
       {left: 'nuclear',      right: 'households', gquery: 'nuclear_to_households_in_sankey_ufp', color: 'black'},
       {left: 'biomass_products',      right: 'households', gquery: 'biomass_products_to_households_in_sankey_ufp', color: 'green'},
-      #{left: 'mixed_flows',      right: 'households', gquery: 'mixed_flows_to_households_in_sankey_ufp', color: 'steelblue'},
-      {left: 'electricity',      right: 'households', gquery: 'electricity_to_households_in_sankey_ufp', color: 'green'},
+      {left: 'imported_electricity',      right: 'households', gquery: 'imported_electricity_to_households_in_sankey_ufp', color: 'blue'},
+      {left: 'electricity',      right: 'households', gquery: 'electricity_to_households_in_sankey_ufp', color: 'black'},
       {left: 'coal_and_derivatives',      right: 'buildings', gquery: 'coal_and_derivatives_to_buildings_in_sankey_ufp', color: 'black'},
       {left: 'oil_and_derivatives',      right: 'buildings', gquery: 'oil_and_derivatives_to_buildings_in_sankey_ufp', color: 'brown'},
-      #{left: 'useful_demand',      right: 'buildings', gquery: 'useful_demand_to_buildings_in_sankey_ufp', color: 'black'},
-      #{left: 'non_renewable_waste',      right: 'buildings', gquery: 'non_renewable_waste_to_buildings_in_sankey_ufp', color: 'black'},
-      #{left: 'geo_solar_wind_water_ambient',      right: 'buildings', gquery: 'geo_solar_wind_water_ambient_to_buildings_in_sankey_ufp', color: 'black'},
       {left: 'natural_gas',      right: 'buildings', gquery: 'natural_gas_to_buildings_in_sankey_ufp', color: 'steelblue'},
       {left: 'nuclear',      right: 'buildings', gquery: 'nuclear_to_buildings_in_sankey_ufp', color: 'black'},
       {left: 'biomass_products',      right: 'buildings', gquery: 'biomass_products_to_buildings_in_sankey_ufp', color: 'green'},
-      #{left: 'mixed_flows',      right: 'buildings', gquery: 'mixed_flows_to_buildings_in_sankey_ufp', color: 'steelblue'},
-      {left: 'electricity',      right: 'buildings', gquery: 'electricity_to_buildings_in_sankey_ufp', color: 'green'},
+      {left: 'imported_electricity',      right: 'buildings', gquery: 'imported_electricity_to_buildings_in_sankey_ufp', color: 'blue'},
+      {left: 'electricity',      right: 'buildings', gquery: 'electricity_to_buildings_in_sankey_ufp', color: 'black'},
       {left: 'coal_and_derivatives',      right: 'agriculture', gquery: 'coal_and_derivatives_to_agriculture_in_sankey_ufp', color: 'black'},
       {left: 'oil_and_derivatives',      right: 'agriculture', gquery: 'oil_and_derivatives_to_agriculture_in_sankey_ufp', color: 'brown'},
-      #{left: 'useful_demand',      right: 'agriculture', gquery: 'useful_demand_to_agriculture_in_sankey_ufp', color: 'black'},
-      #{left: 'non_renewable_waste',      right: 'agriculture', gquery: 'non_renewable_waste_to_agriculture_in_sankey_ufp', color: 'black'},
-      #{left: 'geo_solar_wind_water_ambient',      right: 'agriculture', gquery: 'geo_solar_wind_water_ambient_to_agriculture_in_sankey_ufp', color: 'black'},
       {left: 'natural_gas',      right: 'agriculture', gquery: 'natural_gas_to_agriculture_in_sankey_ufp', color: 'steelblue'},
       {left: 'nuclear',      right: 'agriculture', gquery: 'nuclear_to_agriculture_in_sankey_ufp', color: 'black'},
       {left: 'biomass_products',      right: 'agriculture', gquery: 'biomass_products_to_agriculture_in_sankey_ufp', color: 'green'},
-      #{left: 'mixed_flows',      right: 'agriculture', gquery: 'mixed_flows_to_agriculture_in_sankey_ufp', color: 'steelblue'},
-      {left: 'electricity',      right: 'agriculture', gquery: 'electricity_to_agriculture_in_sankey_ufp', color: 'green'},
+      {left: 'imported_electricity',      right: 'agriculture', gquery: 'imported_electricity_to_agriculture_in_sankey_ufp', color: 'blue'},
+      {left: 'electricity',      right: 'agriculture', gquery: 'electricity_to_agriculture_in_sankey_ufp', color: 'black'},
       {left: 'coal_and_derivatives',      right: 'transport', gquery: 'coal_and_derivatives_to_transport_in_sankey_ufp', color: 'black'},
       {left: 'oil_and_derivatives',      right: 'transport', gquery: 'oil_and_derivatives_to_transport_in_sankey_ufp', color: 'brown'},
-      #{left: 'useful_demand',      right: 'transport', gquery: 'useful_demand_to_transport_in_sankey_ufp', color: 'black'},
-      #{left: 'non_renewable_waste',      right: 'transport', gquery: 'non_renewable_waste_to_transport_in_sankey_ufp', color: 'black'},
-      #{left: 'geo_solar_wind_water_ambient',      right: 'transport', gquery: 'geo_solar_wind_water_ambient_to_transport_in_sankey_ufp', color: 'black'},
       {left: 'natural_gas',      right: 'transport', gquery: 'natural_gas_to_transport_in_sankey_ufp', color: 'steelblue'},
       {left: 'nuclear',      right: 'transport', gquery: 'nuclear_to_transport_in_sankey_ufp', color: 'black'},
       {left: 'biomass_products',      right: 'transport', gquery: 'biomass_products_to_transport_in_sankey_ufp', color: 'green'},
-      #{left: 'mixed_flows',      right: 'transport', gquery: 'mixed_flows_to_transport_in_sankey_ufp', color: 'steelblue'},
-      {left: 'electricity',      right: 'transport', gquery: 'electricity_to_transport_in_sankey_ufp', color: 'green'},
+      {left: 'imported_electricity',      right: 'transport', gquery: 'imported_electricity_to_transport_in_sankey_ufp', color: 'blue'},
+      {left: 'electricity',      right: 'transport', gquery: 'electricity_to_transport_in_sankey_ufp', color: 'black'},
       {left: 'coal_and_derivatives',      right: 'industry', gquery: 'coal_and_derivatives_to_industry_in_sankey_ufp', color: 'black'},
       {left: 'oil_and_derivatives',      right: 'industry', gquery: 'oil_and_derivatives_to_industry_in_sankey_ufp', color: 'brown'},
-      #{left: 'useful_demand',      right: 'industry', gquery: 'useful_demand_to_industry_in_sankey_ufp', color: 'black'},
-      #{left: 'non_renewable_waste',      right: 'industry', gquery: 'non_renewable_waste_to_industry_in_sankey_ufp', color: 'black'},
-      #{left: 'geo_solar_wind_water_ambient',      right: 'industry', gquery: 'geo_solar_wind_water_ambient_to_industry_in_sankey_ufp', color: 'black'},
       {left: 'natural_gas',      right: 'industry', gquery: 'natural_gas_to_industry_in_sankey_ufp', color: 'steelblue'},
       {left: 'nuclear',      right: 'industry', gquery: 'nuclear_to_industry_in_sankey_ufp', color: 'black'},
       {left: 'biomass_products',      right: 'industry', gquery: 'biomass_products_to_industry_in_sankey_ufp', color: 'green'},
-      #{left: 'mixed_flows',      right: 'industry', gquery: 'mixed_flows_to_industry_in_sankey_ufp', color: 'steelblue'},
-      {left: 'electricity',      right: 'industry', gquery: 'electricity_to_industry_in_sankey_ufp', color: 'green'},
+      {left: 'imported_electricity',      right: 'industry', gquery: 'imported_electricity_to_industry_in_sankey_ufp', color: 'blue'},
+      {left: 'electricity',      right: 'industry', gquery: 'electricity_to_industry_in_sankey_ufp', color: 'black'},
       {left: 'coal_and_derivatives',      right: 'other', gquery: 'coal_and_derivatives_to_other_in_sankey_ufp', color: 'black'},
       {left: 'oil_and_derivatives',      right: 'other', gquery: 'oil_and_derivatives_to_other_in_sankey_ufp', color: 'brown'},
-      #{left: 'useful_demand',      right: 'other', gquery: 'useful_demand_to_other_in_sankey_ufp', color: 'black'},
-      #{left: 'non_renewable_waste',      right: 'other', gquery: 'non_renewable_waste_to_other_in_sankey_ufp', color: 'black'},
-      #{left: 'geo_solar_wind_water_ambient',      right: 'other', gquery: 'geo_solar_wind_water_ambient_to_other_in_sankey_ufp', color: 'black'},
       {left: 'natural_gas',      right: 'other', gquery: 'natural_gas_to_other_in_sankey_ufp', color: 'steelblue'},
       {left: 'nuclear',      right: 'other', gquery: 'nuclear_to_other_in_sankey_ufp', color: 'black'},
       {left: 'biomass_products',      right: 'other', gquery: 'biomass_products_to_other_in_sankey_ufp', color: 'green'},
-      #{left: 'mixed_flows',      right: 'other', gquery: 'mixed_flows_to_other_in_sankey_ufp', color: 'steelblue'},
-      {left: 'electricity',      right: 'other', gquery: 'electricity_to_other_in_sankey_ufp', color: 'green'},
+      {left: 'imported_electricity',      right: 'other', gquery: 'imported_electricity_to_other_in_sankey_ufp', color: 'blue'},
+      {left: 'electricity',      right: 'other', gquery: 'electricity_to_other_in_sankey_ufp', color: 'black'},
       {left: 'households',      right: 'useful_demand_electric', gquery: 'households_to_useful_demand_electric_in_sankey_ufp', color: 'blue'},
       {left: 'households',      right: 'useful_demand_heat_cold', gquery: 'households_to_useful_demand_heat_cold_in_sankey_ufp', color: 'red'},
       {left: 'households',      right: 'useful_demand_transport', gquery: 'households_to_useful_demand_transport_in_sankey_ufp', color: 'green'},
@@ -112,15 +95,22 @@ D3.sankey =
       {left: 'other',      right: 'useful_demand_heat_cold', gquery: 'other_to_useful_demand_heat_cold_in_sankey_ufp', color: 'red'},
       {left: 'other',      right: 'useful_demand_transport', gquery: 'other_to_useful_demand_transport_in_sankey_ufp', color: 'green'},
       {left: 'other',      right: 'useful_demand_non_energetic', gquery: 'other_to_useful_demand_non_energetic_in_sankey_ufp', color: 'black'},
+      {left: 'coal_and_derivatives',      right: 'exported_electricity', gquery: 'coal_and_derivatives_to_exported_electricity_in_sankey_ufp', color: 'black'},
+      {left: 'oil_and_derivatives',      right: 'exported_electricity', gquery: 'oil_and_derivatives_to_exported_electricity_in_sankey_ufp', color: 'brown'},
+      {left: 'natural_gas',      right: 'exported_electricity', gquery: 'natural_gas_to_exported_electricity_in_sankey_ufp', color: 'steelblue'},
+      {left: 'nuclear',      right: 'exported_electricity', gquery: 'nuclear_to_exported_electricity_in_sankey_ufp', color: 'black'},
+      {left: 'biomass_products',      right: 'exported_electricity', gquery: 'biomass_products_to_exported_electricity_in_sankey_ufp', color: 'green'},
+      {left: 'imported_electricity',      right: 'exported_electricity', gquery: 'imported_electricity_to_exported_electricity_in_sankey_ufp', color: 'blue'},
+      {left: 'electricity',      right: 'exported_electricity', gquery: 'electricity_to_exported_electricity_in_sankey_ufp', color: 'black'},
     ]
 
 
   # In this chart most positioning is calculated by us. The D3 sankey plugin is
   # cool but not flexible enough
   Node: class extends Backbone.Model
-    @width: 25
+    @width: 100
     @horizontal_spacing: 280
-    vertical_margin: 8
+    vertical_margin: 0
 
     initialize: =>
       @view = D3.sankey.view

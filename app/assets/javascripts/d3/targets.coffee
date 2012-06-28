@@ -73,7 +73,7 @@ D3.targets =
         .enter()
         .append('svg:g')
         .attr('class', 'target')
-        .attr('transform', (d, i) -> "translate(0, #{i * 33})")
+        .attr('transform', (d, i) -> "translate(0, #{i * 36})")
 
       # labels first
       @items.append("svg:text")
@@ -81,13 +81,14 @@ D3.targets =
         .attr('class', 'target_label')
         .attr('text-anchor', 'end')
         .attr('x', 75)
+        .attr('y', -2)
 
       @items.append("svg:text")
         .text((d) -> d.get 'unit')
         .attr('class', 'target_unit')
         .attr('text-anchor', 'end')
         .attr('x', 75)
-        .attr('y', 10)
+        .attr('y', 8)
 
       # now bars and axis
       @blocks = @items.append("svg:g")
@@ -96,9 +97,10 @@ D3.targets =
       current_values = @blocks.append("svg:rect")
         .attr('class', 'current_value')
         .attr('y', -10)
-        .attr('height', 8)
+        .attr('height', 9)
         .attr('width', 0)
         .attr('fill', '#66ccff')
+
       @blocks.append("svg:text")
         .text(App.settings.get("start_year"))
         .attr('class', 'year_label')
@@ -107,14 +109,15 @@ D3.targets =
 
       future_values = @blocks.append("svg:rect")
         .attr('class', 'future_value')
-        .attr('y', -1)
-        .attr('height', 8)
+        .attr('y', 1)
+        .attr('height', 9)
         .attr('width', 0)
         .attr('fill', '#0080ff')
+
       @blocks.append("svg:text")
         .text(App.settings.get("end_year"))
         .attr('class', 'year_label')
-        .attr('y', 7)
+        .attr('y', 9)
         .attr('x', 2)
 
       user_targets = @blocks.append("svg:rect")
@@ -127,7 +130,7 @@ D3.targets =
 
       @axis = @blocks.append('svg:g')
         .attr("class", 'x_axis')
-        .attr('transform', 'translate(0.5, 7.5)')
+        .attr('transform', 'translate(0.5, 10.5)')
 
     refresh: =>
       t.update_scale() for t in @targets
@@ -152,7 +155,7 @@ D3.targets =
 
       targets.selectAll('text.target_label')
         .transition()
-        .style('stroke', (d) -> if d.successful() then '#00ff00' else '#000000')
+        .style('fill', (d) -> if d.successful() then '#00ff00' else '#000000')
 
       targets.selectAll('rect.target_value')
         .transition()

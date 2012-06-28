@@ -109,7 +109,7 @@ D3.sankey =
   # cool but not flexible enough
   Node: class extends Backbone.Model
     @width: 100
-    @horizontal_spacing: 280
+    @horizontal_spacing: 250
     vertical_margin: 10
 
     initialize: =>
@@ -235,9 +235,13 @@ D3.sankey =
     # this method is called when we first render the chart. It is called if we
     # want a full chart refresh when the user resizes the browser window, too
     draw: =>
-      @margin = 50
-      @width = (@container_node().width()   || 490) - 2 * @margin
-      @height = (@container_node().height() || 402) - 2 * @margin
+      @margin =
+        top: 10
+        left: 45
+        bottom: 10
+        right: 10
+      @width = (@container_node().width()   || 490) - (@margin.left + @margin.right)
+      @height = (@container_node().height() || 452) - (@margin.top + @margin.bottom)
 
       # set up the scaling methods
       @x = d3.scale.linear().domain([0, 600]).range([0, @width])
@@ -254,10 +258,10 @@ D3.sankey =
 
       @svg = d3.select("#d3_container_sankey").
         append("svg:svg").
-        attr("height", @height + 2 * @margin).
-        attr("width", @width + 2 * @margin).
+        attr("height", @height + @margin.top + @margin.bottom).
+        attr("width", @width + @margin.left + @margin.right).
         append("svg:g").
-        attr("transform", "translate(#{@margin}, #{@margin})")
+        attr("transform", "translate(#{@margin.left}, #{@margin.top})")
       @links = @draw_links()
       @nodes = @draw_nodes()
       @axis = @draw_axis()
@@ -282,7 +286,7 @@ D3.sankey =
         style("stroke-width", (link) -> link.value()).
         style("stroke", (link, i) -> link.color()).
         style("fill", "none").
-        style("opacity", 0.7).
+        style("opacity", 0.6).
         attr("d", (link) => @link_line link.path_points()).
         on("mouseover", @link_mouseover).
         on("mouseout", @node_mouseout)
@@ -347,7 +351,7 @@ D3.sankey =
       d3.selectAll(".link").
         transition().
         duration(200).
-        style("opacity", 0.7).
+        style("opacity", 0.6).
         selectAll(".link_label").
         transition().
         style("opacity", 0)

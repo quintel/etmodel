@@ -39,8 +39,10 @@ class @Accordion
       slide_title = $.trim(ui.newHeader.text())
       Tracker.track({slide: slide_title})
       if ui.newHeader.length > 0
-        output_element_id = parseInt(ui.newHeader.attr('id').match(/\d+$/))
+        output_element_id = ui.newHeader.data('default_chart')
+        alt_output_element_id = ui.newHeader.data('alt_chart')
         window.charts.current_default_chart = output_element_id
+        window.charts.current_alt_chart = alt_output_element_id
         $("a.default_charts").hide() if charts.current_id() == output_element_id
         window.charts.load(output_element_id, 'main_chart')
 

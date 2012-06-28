@@ -1,6 +1,8 @@
 - selected = 'selected' if @slides.first == slide
 %li.accordion_element{:class => selected}
-  %span.headline{:id => "default_output_#{slide.output_element_id}", :data => {:slide => slide.short_name}}
+  %span.headline{:data => {:slide => slide.short_name,
+                           :default_chart => slide.output_element_id,
+                           :alt_chart => slide.alt_output_element_id}}
     %a.slide_header{:href => "/#{controller_name}/#{params[:id]}##{slide.short_name}", :id => slide.key}
       = raw t("slides.#{slide.key}")
   .slide

@@ -110,7 +110,7 @@ D3.sankey =
   Node: class extends Backbone.Model
     @width: 100
     @horizontal_spacing: 280
-    vertical_margin: 0
+    vertical_margin: 10
 
     initialize: =>
       @view = D3.sankey.view
@@ -282,7 +282,7 @@ D3.sankey =
         style("stroke-width", (link) -> link.value()).
         style("stroke", (link, i) -> link.color()).
         style("fill", "none").
-        style("opacity", 0.8).
+        style("opacity", 0.7).
         attr("d", (link) => @link_line link.path_points()).
         on("mouseover", @link_mouseover).
         on("mouseout", @node_mouseout)
@@ -292,7 +292,7 @@ D3.sankey =
       attr("x", (d) => @x d.right_x()).
       attr("y", (d) => @y d.right_y()).
       attr("dx", -55).
-      attr("dy", 3).
+      attr("dy", 2).
       style("opacity", 0).
       text((d) => @format_value d.value())
 
@@ -322,7 +322,7 @@ D3.sankey =
       nodes.append("svg:text").
         attr("class", "label").
         attr("x", (d) => @x d.x_offset()).
-        attr("dx", 20).
+        attr("dx", 5).
         attr("dy", 3).
         attr("y", (d) => @y(d.y_offset() + d.value() / 2) ).
         text((d) -> d.label())
@@ -347,7 +347,7 @@ D3.sankey =
       d3.selectAll(".link").
         transition().
         duration(200).
-        style("opacity", 0.8).
+        style("opacity", 0.7).
         selectAll(".link_label").
         transition().
         style("opacity", 0)

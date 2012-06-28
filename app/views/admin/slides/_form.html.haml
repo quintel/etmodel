@@ -15,6 +15,9 @@
     = f.association :output_element,
       :collection => OutputElement.all.map{|c| ["##{c.id} #{c.key}", c.id]},
       :hint => "Default chart to be shown when the user clicks on the slide title"
+    = f.association :alt_output_element,
+      :collection => OutputElement.all.map{|c| ["##{c.id} #{c.key}", c.id]},
+      :hint => "Secondary / legacy chart"
     = f.association :sidebar_item,
       :collection => SidebarItem.all.map{|s| [s.short_name, s.id]},
       :hint => "Where should this slide be shown?"

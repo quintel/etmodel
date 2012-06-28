@@ -1,12 +1,12 @@
 D3.targets =
   data:
     targets: [
-      {key: 'co2_emissions',          unit: '%'},
-      {key: 'net_energy_import',      unit: '%'},
-      {key: 'net_electricity_import', unit: '%'},
-      {key: 'total_energy_costs',      unit: 'Bln euro'},
-      {key: 'electricity_costs',       unit: 'euro'},
-      {key: 'renewable_percentage',   unit: '%'},
+      {key: 'co2_emissions',          unit: 'MT'},
+      {key: 'net_energy_import',      unit: '%', min: 0, max: 100},
+      {key: 'net_electricity_import', unit: '%', min: 0, max: 100},
+      {key: 'total_energy_costs',     unit: 'Bln euro'},
+      {key: 'electricity_costs',      unit: 'Euro/MWh'},
+      {key: 'renewable_percentage',   unit: '%', min: 0, max: 100},
       {key: 'onshore_land',           unit: 'km2'},
       {key: 'onshore_coast',          unit: 'km2'},
       {key: 'offshore',               unit: 'km2'}
@@ -15,29 +15,42 @@ D3.targets =
   # This represents a carrier within a sector
   Target: class extends Backbone.Model
     initialize: =>
+      key = @get 'key'
       @namespace = D3.targets
-      @success_query    = new ChartSerie({gquery_key: "policy_goal_#{@get 'key'}_reached"})
-      @value_query      = new ChartSerie({gquery_key: "policy_goal_#{@get 'key'}_value"})
-      @target_query     = new ChartSerie({gquery_key: "policy_goal_#{@get 'key'}_target_value"})
+      @success_query = new ChartSerie({gquery_key: "policy_goal_#{key}_reached"})
+      @value_query   = new ChartSerie({gquery_key: "policy_goal_#{key}_value"})
+      @target_query  = new ChartSerie({gquery_key: "policy_goal_#{key}_target_value"})
       @namespace.series.push @success_query, @value_query, @target_query
-
       @scale = d3.scale.linear()
       @axis = d3.svg.axis().tickSize(2, 0).ticks(4).orient('bottom')
 
     max_value: =>
+      return m if m = @get('max')
       max = 0
       for query in [@success_query, @value_query, @target_query]
         max = x if (x = query.future_value()) > max
         max = x if (x = query.present_value()) > max
       max
 
-    update_scale: => @scale = @scale.domain([0, @max_value()]).range([0, @namespace.width - 80])
+    min_value: => if (m = @get('min')) then m else 0
+
+    update_scale: => @scale = @scale.domain([@min_value(), @max_value()]).range([0, @namespace.width - 80])
 
     axis_builder: => @axis.scale(@scale)
 
     successful: => @success_query.future_value()
 
     is_set: => @target_query.raw_future_value()?
+
+    format_value: (x) =>
+      switch @get 'key'
+        when 'net_electricity_import', 'renewable_percentage', 'net_energy_import'
+          x * 100
+        else x
+
+    present_value: => @format_value @value_query.present_value()
+    future_value: =>  @format_value @value_query.future_value()
+    target_value: =>  @format_value @target_query.future_value()
 
   View: class extends D3ChartView
     el: "body"
@@ -147,19 +160,19 @@ D3.targets =
 
       targets.selectAll('rect.current_value')
         .transition()
-        .attr('width', (d) -> d.scale(d.value_query.present_value()) )
+        .attr('width', (d) -> d.scale(d.present_value()) )
 
       targets.selectAll('rect.future_value')
         .transition()
-        .attr('width', (d) -> d.scale(d.value_query.future_value()) )
+        .attr('width', (d) -> d.scale(d.future_value()) )
 
       targets.selectAll('text.target_label')
         .transition()
-        .style('fill', (d) -> if d.successful() then '#00ff00' else '#000000')
+        .style('fill', (d) -> if d.successful() then '#008040' else '#000000')
 
       targets.selectAll('rect.target_value')
         .transition()
-        .attr('x', (d) -> d.scale(d.target_query.future_value()) - 1)
+        .attr('x', (d) -> d.scale(d.target_value()) - 1)
         .attr('fill', (d) -> if d.successful() then '#008040' else '#ff0000')
         .style('opacity', (d) -> if d.is_set() then 0.7 else 0.0)
 

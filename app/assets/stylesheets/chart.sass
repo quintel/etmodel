@@ -82,22 +82,23 @@ table.autostripe
 //
 
 div.d3_container
+  svg
+    shape-rendering: crispEdges
+  text
+    font-family: Helvetica, Arial, sans-serif
+    font-size: 9px
   .x_axis, .y_axis
     line, path
       fill: none
       stroke: #000
     .minor
       stroke-opacity: 0.5
-    text
-      font-size: 9px
   svg.legend
     text
-      font-family: Helvetica, Arial, sans-serif
       font-size: 9px
 
 #d3_container_sankey
   text.link_label
-    font-family: Helvetica, Arial, sans-serif
     font-size: 9px
     font-weight: bold
   g.node
@@ -105,8 +106,6 @@ div.d3_container
       shape-rendering: crispEdges
       fill-opacity: .85
     text.label
-      font-family: Helvetica, Arial, sans-serif
-      font-size: 9px
       text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff, 0 0 5px #fff
 
 #d3_container_treemap
@@ -121,30 +120,18 @@ div.d3_container
 #d3_container_merit_order
   rect.merit_order_node
     fill-opacity: .80
-  .axis_label:
-    font-size: 9px
 
 #d3_container_mekko
-  svg
-    shape-rendering: crispEdges
   rect.carrier
     stroke: #000
-  text.sector_label
-    font-family: Helvetica, Arial, sans-serif
-    font-size: 9px
 
 #d3_container_targets
-  text.target_label, text.target_unit
-    font-family: Helvetica, Arial, sans-serif
-    stroke-width: 0.3px
   text.target_label
-    font-size: 9px
+    font-weight: bold
   text.target_unit
     font-size: 8px
   text.year_label
-    font-family: Helvetica, Arial, sans-serif
     fill: #fff
-    font-size: 9px
   .x_axis
     line, path
       stroke-opacity: 0.4

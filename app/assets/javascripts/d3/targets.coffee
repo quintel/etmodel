@@ -37,6 +37,8 @@ D3.targets =
 
     successful: => @success_query.future_value()
 
+    is_set: => @target_query.raw_future_value()?
+
   View: class extends D3ChartView
     el: "body"
 
@@ -146,7 +148,7 @@ D3.targets =
         .transition()
         .attr('x', (d) -> d.scale(d.target_query.future_value()) - 1)
         .attr('fill', (d) -> if d.successful() then '#008040' else '#ff0000')
-
+        .style('opacity', (d) -> if d.is_set() then 0.7 else 0.0)
 
 
 

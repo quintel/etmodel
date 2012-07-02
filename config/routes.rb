@@ -114,27 +114,27 @@ Etm::Application.routes.draw do
     end
   end
 
-  match '/converters/:input_element_id'    => 'converters#show'
-  match '/select_movie/:id'                => 'pages#select_movie'
-  match '/units'                           => 'pages#units'
-  match '/about'                           => 'pages#about'
-  match '/feedback'                        => 'pages#feedback', :as => :feedback
-  match '/tutorial/(:section)(/:category)' => 'pages#tutorial'
-  match '/pages/intro'                     => 'pages#intro', :as => :start
-  match '/testimonials'                    => 'pages#testimonials'
-  match '/recommendations'                 => 'pages#recommendations'
-  match '/press_releases'                  => 'pages#press_releases'
-  match '/optimize'                        => 'pages#optimize'
-  match '/disclaimer'                      => 'pages#disclaimer'
-  match '/privacy_statement'               => 'pages#privacy_statement'
-  match '/show_all_countries'              => 'pages#show_all_countries'
-  match '/show_flanders'                   => 'pages#show_flanders'
-  match '/wattnu_on'                       => 'pages#wattnu_on'
-  match '/wattnu_off'                      => 'pages#wattnu_off'
-  match '/municipalities'                  => 'pages#municipalities'
-  match '/careers'                         => 'pages#careers',     :as => :careers
-  match '/sitemap'                         => 'pages#sitemap',     :as => :sitemap
-  match '/information'                     => 'pages#information', :as => :information
+  match '/converters/:input_element_id' => 'converters#show'
+  match '/select_movie/:id'             => 'pages#select_movie'
+  match '/units'                        => 'pages#units'
+  match '/about'                        => 'pages#about'
+  match '/feedback'                     => 'pages#feedback', :as => :feedback
+  match '/tutorial/(:tab)(/:sidebar)'   => 'pages#tutorial', :as => :tutorial
+  match '/pages/intro'                  => 'pages#intro', :as => :start
+  match '/testimonials'                 => 'pages#testimonials'
+  match '/recommendations'              => 'pages#recommendations'
+  match '/press_releases'               => 'pages#press_releases'
+  match '/optimize'                     => 'pages#optimize'
+  match '/disclaimer'                   => 'pages#disclaimer'
+  match '/privacy_statement'            => 'pages#privacy_statement'
+  match '/show_all_countries'           => 'pages#show_all_countries'
+  match '/show_flanders'                => 'pages#show_flanders'
+  match '/wattnu_on'                    => 'pages#wattnu_on'
+  match '/wattnu_off'                   => 'pages#wattnu_off'
+  match '/municipalities'               => 'pages#municipalities'
+  match '/careers'                      => 'pages#careers',     :as => :careers
+  match '/sitemap'                      => 'pages#sitemap',     :as => :sitemap
+  match '/information'                  => 'pages#information', :as => :information
   match '/bugs' => 'pages#bugs', :as => :bugs
   match '/set_locale(/:locale)' => 'pages#set_locale', :as => :set_locale
 

@@ -264,6 +264,9 @@ D3.sankey =
         attr("transform", "translate(#{@margin.left}, #{@margin.top})")
       @links = @draw_links()
       @nodes = @draw_nodes()
+      $("g.node rect").tipsy
+        gravity: 'sw'
+
 
     draw_links: =>
       # links are treated as a group made of a link path and label text element
@@ -289,9 +292,7 @@ D3.sankey =
       attr("y", (d) => @y d.right_y()).
       attr("dx", -55).
       attr("dy", 2).
-      style("opacity", 0).
-      text((d) => @format_value d.value())
-
+      style("opacity", 0)
       return links
 
     draw_nodes: =>
@@ -324,9 +325,6 @@ D3.sankey =
         text((d) -> d.label())
 
       return nodes
-
-    # formats the value shown in the link labels
-    format_value: (x) -> "#{x.toFixed(2)} PJ"
 
     # callbacks
     #
@@ -372,6 +370,7 @@ D3.sankey =
         selectAll("rect").
         transition().duration(500).
         attr("height", (d) => @y d.value()).
+        attr("title", (d) => Metric.autoscale_value d.value(), 'PJ', 2).
         attr("y", (d) => @y(d.y_offset()))
 
       # then move the node label
@@ -392,7 +391,7 @@ D3.sankey =
         transition().duration(500).
         selectAll("text.link_label").
         attr("y", (link) => @y link.right_y()).
-        text((d) => @format_value d.value())
+        text((d) => Metric.autoscale_value d.value(), 'PJ', 2)
 
 class D3.sankey.NodeList extends Backbone.Collection
   model: D3.sankey.Node

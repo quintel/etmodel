@@ -33,10 +33,12 @@ class @MekkoChartView extends BaseChartView
   render_mekko: =>
     $.jqplot @model.get("container"), @results(), @chart_opts()
     $(".jqplot-xaxis").css({"margin-left": -10,"margin-top":0})
-    $(".jqplot-table-legend").css({"top": 340})
+    $(".jqplot-table-legend").css({"top": 320})
     # this hides the labels appearing in the middle of the charts. Looks like a jqplot bug
     # See https://github.com/dennisschoenmakers/etmodel/issues/639
     $(".jqplot-point-label").html(null)
+    # prevent the legend from overlapping the secondary chart
+    @container_node().parent().css('height', 480)
 
   chart_opts: =>
     out =

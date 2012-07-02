@@ -108,7 +108,7 @@ D3.sankey =
   # In this chart most positioning is calculated by us. The D3 sankey plugin is
   # cool but not flexible enough
   Node: class extends Backbone.Model
-    @width: 100
+    @width: 110
     @horizontal_spacing: 250
     vertical_margin: 10
 
@@ -236,9 +236,9 @@ D3.sankey =
     # want a full chart refresh when the user resizes the browser window, too
     draw: =>
       @margin =
-        top: 10
-        left: 45
-        bottom: 10
+        top: 5
+        left: 5
+        bottom: 5
         right: 10
       @width = (@container_node().width()   || 490) - (@margin.left + @margin.right)
       @height = (@container_node().height() || 452) - (@margin.top + @margin.bottom)
@@ -264,14 +264,6 @@ D3.sankey =
         attr("transform", "translate(#{@margin.left}, #{@margin.top})")
       @links = @draw_links()
       @nodes = @draw_nodes()
-      @axis = @draw_axis()
-
-    draw_axis: =>
-      @y_axis = d3.svg.axis().scale(@y).ticks(4).orient("left")
-      @svg.append("svg:g").
-        attr("class", "y_axis").
-        attr("transform", "translate(-10, 0)").
-        call(@y_axis)
 
     draw_links: =>
       # links are treated as a group made of a link path and label text element
@@ -374,9 +366,6 @@ D3.sankey =
       @y = d3.scale.linear().
         domain([0, max_height * 1.25]).
         range([0, @height * .90])
-
-      # refresh the axis
-      @svg.selectAll(".y_axis").transition().duration(500).call(@y_axis.scale(@y))
 
       # move the rectangles
       @nodes.data(@node_list.models, (d) -> d.get('id')).

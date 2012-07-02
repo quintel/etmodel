@@ -30,6 +30,30 @@ $ ->
         dataType: 'script'
       history.pushState({url: url}, url, url)
 
+  # Adds "Search" to the search field for browsers which do not support the
+  # "placeholder" attribute.
+  unless Modernizr.placeholder
+    search      = $("#header_inside input[name=q]")
+    placeholder = search.attr('placeholder')
+
+    console.log(placeholder)
+
+    if search.val().length is 0
+      search.val(placeholder)
+
+    search.focus ->
+      # Remove the search field value only if it matches the placeholder;
+      # we do not want to erase the users search text.
+      search.val('') if search.val() is placeholder
+
+    search.blur ->
+      value = search.val()
+
+      # Similarly, only add the placeholder back if the user did not enter
+      # a value.
+      if value.length is 0 or value is placeholder or not value.match(/\S/)
+        search.val(placeholder)
+
   # login menu
   $("a.signin").click (e) ->
     e.preventDefault()

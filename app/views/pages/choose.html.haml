@@ -12,14 +12,12 @@
 
     %h1= raw t 'landing_page.title'
     %p=  raw t 'landing_page.explanation'
-  
-    - mixer_link = ( I18n.locale == :nl ? "http://mixer.et-model.com?locale=nl" : "http://gasmixer.et-model.com?locale=en" )
-    
+
     %aside#screenshots
 
       %a.screenshot#etflex{href:'http://light.energytransitionmodel.com'}
       %a.screenshot#etmodel{href:'/pro'}
-      %a.screenshot#mixer{href: mixer_link}
+      %a.screenshot#mixer{href: "http://gasmixer.et-model.com?locale=#{I18n.locale}"}
 
     %section#products
 
@@ -42,7 +40,7 @@
           %p= raw t 'landing_page.etmodel.explanation'
 
       %article.product#mixer
-        %a{href: mixer_link}
+        %a{href: "http://gasmixer.et-model.com?locale=#{I18n.locale}"}
           %h2= raw t 'landing_page.mixer.title'
           %ul.specs
             %li.time{title:"time required"}=        "~ 10 #{t 'landing_page.minutes'}"

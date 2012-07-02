@@ -13,7 +13,7 @@
         - if has_active_scenario?
           %span.scenario_info
             %img{:src => "/assets/icons/#{Current.setting.area_code}.png", :width => 16}
-            = Current.setting.area_code if Current.setting.area_code != "nl"
+            = Current.setting.area_code.upcase if Current.setting.area_code != "nl"
             = Current.setting.end_year
     - if current_user
       %li

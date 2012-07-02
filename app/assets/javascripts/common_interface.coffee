@@ -32,7 +32,7 @@ $ ->
 
   # Adds "Search" to the search field for browsers which do not support the
   # "placeholder" attribute.
-  unless Modernizr.placeholder
+  unless Modernizr.input.placeholder
     search      = $("#header_inside input[name=q]")
     placeholder = search.attr('placeholder')
 

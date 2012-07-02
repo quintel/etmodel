@@ -1,7 +1,9 @@
 header#top
-  padding: 10px 0
+  padding: 9px 0
   background-color: #66A2CA
-  @include background(linear-gradient(top,#66A2CA, #4287BB))
+  border-top: 1px solid #89b2d3
+  border-bottom: 1px solid #416d96
+  @include background(linear-gradient(top, #71a3cb, #4e87bd))
   @include box-shadow(0 1px 2px rgba(10, 10, 10, 0.25))
   min-width: 960px
   position: relative
@@ -58,16 +60,37 @@ header#top
       font-weight: normal
       padding: 0
       margin: 0 0 0 -2px
-      &.expandable
-        background-image: url("/assets/header/toggle_down_light.png")
-        background-repeat: no-repeat
-        background-position: 93% 45%
-        padding: 4px 16px 6px 0
       a
-        color: #fff
+        display: block
+        color: #dbe9f3
         text-decoration: none
+        font-weight: bold
+        text-shadow: 0 1px 0 #2d6aac
+        margin-right: 5px
         &:hover
-          text-decoration: underline
+          color: white
+      &.expandable a
+        background: url("/assets/header/toggle_down.png") right 6px no-repeat
+        padding-right: 18px
+        &:hover
+          background-position: right -44px
+        &.menu-open
+          background-position: right -94px
+          color: white
+  .scenario_info
+    font-size: 11px
+    font-weight: normal
+    &:before
+      content: "("
+      color: #aacfea
+      margin-right: -0.1em
+    &:after
+      content: ")"
+      color: #aacfea
+      margin-left: -0.2em
+    img
+      margin-bottom: -1px
+
   .header_logo
     overflow: hidden
     float: left

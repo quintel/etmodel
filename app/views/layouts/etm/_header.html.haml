@@ -11,18 +11,20 @@
       %a.settings{:href=>"#"}
         = t("header.settings")
         - if has_active_scenario?
-          %img{:src => "/assets/icons/#{Current.setting.area_code}.png"}
-          = Current.setting.area_code if Current.setting.area_code != "nl"
-          = Current.setting.end_year
-    %li.expandable
-      - if current_user
+          %span.scenario_info
+            %img{:src => "/assets/icons/#{Current.setting.area_code}.png", :width => 16}
+            = Current.setting.area_code if Current.setting.area_code != "nl"
+            = Current.setting.end_year
+    - if current_user
+      %li
         %a.signout{:href=>"/logout"}
           = t("header.sign_out")
-      - else
+    - else
+      %li.expandable
         %a.signin{:href=>"#"}
           = t("header.sign_in")
 
-    %li{:style=>'width: 170px'}
+    %li{:style=>'width: 190px'}
       %form#searchform{ :action => "/search", :method => :get }
         %fieldset
           %input.btn-search{ :type => "submit", :value => "" }

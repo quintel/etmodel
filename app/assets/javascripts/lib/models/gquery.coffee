@@ -7,11 +7,6 @@ class @Gquery extends Backbone.Model
     present_value = @get('present_value')
     future_value = @get('future_value')
 
-    if !@is_acceptable_value(present_value) && !@is_acceptable_value(future_value)
-      console.warn "Gquery #{@get('key')}: #{present_value}/#{future_value}, reset to 0"
-      present_value = 0
-      future_value  = 0
-
     [ [@get('present_year'), present_value], [@get('future_year'), future_value] ]
 
   future_value: -> @get 'future_value'

@@ -29,7 +29,7 @@
         %fieldset
           %input.btn-search{ :type => "submit", :value => "" }
           %span.text
-            %input{ :name => 'q', :type => "text", :value => "#{t("search_the_website")}", :onclick => "$(this).val('');" }
+            %input{ :name => 'q', :type => "text", :placeholder => "#{t("search_the_website")}" }
 
   %a.root_link{ href: home_path }
     %h3

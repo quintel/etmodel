@@ -329,7 +329,7 @@ D3.sankey =
     # callbacks
     #
     node_mouseover: ->
-      klass = $(this).parent().attr('data-id')
+      klass = $(this).attr('data-id')
       d3.selectAll(".link").
         filter((d) -> !d.connects(klass)).
         transition().
@@ -370,15 +370,13 @@ D3.sankey =
         attr("title", (d) => Metric.autoscale_value d.value(), 'PJ', 2)
 
       # move the rectangles
-      @nodes.data(@node_list.models, (d) -> d.get('id')).
-        selectAll("rect").
+      @nodes.selectAll("rect").
         transition().duration(500).
         attr("height", (d) => @y d.value()).
         attr("y", (d) => @y(d.y_offset()))
 
       # then move the node label
-      @nodes.data(@node_list.models, (d) -> d.get('id')).
-        selectAll("text.label").
+      @nodes.selectAll("text.label").
         transition().duration(500).
         attr("y", (d) => @y(d.y_offset() + d.value() / 2) )
 
@@ -390,8 +388,7 @@ D3.sankey =
         style("stroke-width", (link) => @y(link.value()))
 
       # then move the link labels and update their value
-      @links.data(@link_list.models, (d) -> d.cid).
-        transition().duration(500).
+      @links.transition().duration(500).
         selectAll("text.link_label").
         attr("y", (link) => @y link.right_y()).
         text((d) => Metric.autoscale_value d.value(), 'PJ', 2)

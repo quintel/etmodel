@@ -27,9 +27,9 @@ class @WaterfallChartView extends BaseChartView
       if serie.get('group') == 'value'
         # Take only the present value, as group == value queries only future/present
         # ?! - PZ
-        return Metric.scale_value present, scale
+        return present # Metric.scale_value present, scale
       else
-        return Metric.scale_value future, scale
+        return future # Metric.scale_value future, scale
     [series]
 
   render_waterfall: =>

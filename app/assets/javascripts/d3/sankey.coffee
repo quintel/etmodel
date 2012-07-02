@@ -1,7 +1,7 @@
 D3.sankey =
   data :
     nodes: [
-      {id: 'coal_and_derivatives',     column: 0, label: "coal"},
+      {id: 'coal_and_derivatives',     column: 0, label: "coal", color: 'yellow'},
       {id: 'oil_and_derivatives',        column: 0, label: "oil"},
       #{id: 'useful_demand',         column: 0},
       #{id: 'non_renewable_waste',         column: 0},
@@ -316,8 +316,8 @@ D3.sankey =
       nodes.append("svg:rect").
         attr("x", (d) => @x(horizontal_spacing * d.get('column'))).
         attr("y", (d) => @y(d.y_offset())).
-        attr("fill", (datum, i) -> colors(i)).
-        attr("stroke", (d, i) -> d3.rgb(colors(i)).darker(2)).
+        attr("fill", (d, i) -> d.get('color') || colors(i)).
+        attr("stroke", (d, i) -> d3.rgb(d.get('color') || colors(i)).darker(2)).
         attr("width", (d) => @x width).
         attr("height", (d) => @y d.value()).
         on("mouseover", @node_mouseover).

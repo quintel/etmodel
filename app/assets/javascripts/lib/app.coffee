@@ -40,6 +40,7 @@ class @AppView extends Backbone.View
       # thus continue the else part
     else
       @load_user_values()
+      @call_api()
 
   setup_fce: =>
     @update_fce_checkboxes()

@@ -1,5 +1,11 @@
 - if has_active_scenario?
-  = submit_tag "Start", :class => 'button primary', :confirm => t('newscenario')
+  %button.button.primary(data-confirm="#{ t('newscenario') }")
+    Start
+    %span.right-icon
+
 - else
-  = submit_tag "Start", :class => 'button primary'
+  %button.button.primary
+    Start
+    %span.right-icon
+
   = hidden_field_tag :reset, '1'

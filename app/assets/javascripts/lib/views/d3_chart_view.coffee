@@ -9,7 +9,7 @@
 class @D3ChartView extends BaseChartView
   render: (force_redraw) =>
     if force_redraw || !@already_on_screen()
-      @$el.find(".chart_canvas").empty().html(@html())
+      @$el.find(".chart_canvas").empty().html(@html()).css('height', @height())
       @draw()
     @refresh()
 
@@ -29,4 +29,7 @@ class @D3ChartView extends BaseChartView
       false
     else
       true
+
+  # override in derived class as needed
+  height: -> 300
 

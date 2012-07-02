@@ -22,8 +22,8 @@
   - if has_active_scenario?
     %li
       #flag
-        %img{:src => "/assets/icons/#{Current.setting.area_code}.png"}
-        = Current.setting.area_code if Current.setting.area_code != "nl"
+        %img{src: icon_for_area_code(Current.setting.area_code), title: I18n.t(Current.setting.area_code), width: 16 }
+        = I18n.t(Current.setting.area_code) unless Current.setting.area_code.length == 2
       = t("header.current_country")+":"
     %li
       #year

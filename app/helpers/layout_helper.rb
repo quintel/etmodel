@@ -35,4 +35,10 @@ module LayoutHelper
   def color_to_string(hex)
     Colors::COLORS.invert[hex] || hex
   end
+
+  # Returns a URL to the image for the current area code.
+  def icon_for_area_code(code)
+    "/assets/icons/#{ code.split('-').first }.png"
+  end
+
 end

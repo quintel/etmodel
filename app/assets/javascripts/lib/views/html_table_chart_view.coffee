@@ -48,6 +48,7 @@ class @HtmlTableChartView extends BaseChartView
         console.warn "Missing gquery: #{gqid}"
         return
       raw_value = serie.future_value()
+      raw_value = 0 unless _.isNumber(raw_value)
       value = Metric.round_number(raw_value, decimals)
       # some gqueries need a special treatment if they're 0
       on_zero = $(cell).data('on_zero')

@@ -65,20 +65,26 @@ h2 a.button, h2 input.button, h2 button.button
 
 // Info / Tutorial Buttons
 
-h2 a.button span
-  &.info-icon
-    @include button-icons-sprite(files, 1px)
-    display: inline-block
-    margin: -3px 2px -1px 0
-    height: 16px
-    width: 16px
-
-  &.tutorial-icon
-    @include button-icons-sprite(video, 1px)
+.button
+  span.right-icon, span.info-icon, span.tutorial-icon
     display: inline-block
     height: 11px
     margin-right: 2px
     width: 16px
+
+  span.right-icon
+    @include button-icons-sprite(arrow-right-primary, 1px)
+    margin-left: 1px
+    margin-right: 0px
+
+a.button span
+  &.info-icon
+    @include button-icons-sprite(files, 1px)
+    margin: -3px 2px -1px 0
+    height: 16px
+
+  &.tutorial-icon
+    @include button-icons-sprite(video, 1px)
 
 // Colours -------------------------------------------------------------------
 

@@ -2,11 +2,11 @@
   %h2
     = raw @title
     %a.button.fancybox_narrow{ href: tab_info_path(ctrl: params[:tab], act: params[:sidebar]) }<>
-      %span.icon-info-sign
+      %span.info-icon
       Information
 
     - if current_tutorial_movie
       %a.button.fancybox{:href => tutorial_path(:tab => params[:tab], :sidebar => params[:sidebar]),
         :alt => "Tutorial", :title => "Tutorial"}<>
-        %span.icon-film
+        %span.tutorial-icon
         Tutorial

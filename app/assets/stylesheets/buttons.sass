@@ -1,4 +1,5 @@
 @import "blueprint/buttons"
+@import "layout/button-icons/*.png"
 
 // Sizing --------------------------------------------------------------------
 
@@ -18,13 +19,15 @@ input.button, button.button
   &[type]
     // <input type="button" ... />
     padding: 6px 11px 5px
+    line-height: 16px
   *:first-child + html &[type]
     // IE
     padding: 9px 11px 6px
 
 a.button, input.button, button.button
   @include border-radius(3px)
-  font-size: 13px
+  font-size: 12px
+  line-height: 15px
 
   span
     font-size: 16px
@@ -59,6 +62,23 @@ a.button.small, input.button.small, button.button.small
 h2 a.button, h2 input.button, h2 button.button
   margin: 0 10px 0 0
   vertical-align: text-top
+
+// Info / Tutorial Buttons
+
+h2 a.button span
+  &.info-icon
+    @include button-icons-sprite(files, 1px)
+    display: inline-block
+    margin: -3px 2px -1px 0
+    height: 16px
+    width: 16px
+
+  &.tutorial-icon
+    @include button-icons-sprite(video, 1px)
+    display: inline-block
+    height: 11px
+    margin-right: 2px
+    width: 16px
 
 // Colours -------------------------------------------------------------------
 

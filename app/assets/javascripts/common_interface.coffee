@@ -36,8 +36,6 @@ $ ->
     search      = $("#header_inside input[name=q]")
     placeholder = search.attr('placeholder')
 
-    console.log(placeholder)
-
     if search.val().length is 0
       search.val(placeholder)
 

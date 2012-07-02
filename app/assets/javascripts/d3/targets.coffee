@@ -63,6 +63,8 @@ D3.targets =
 
       @initialize_defaults()
 
+    height: -> 430
+
     draw: =>
       margins =
         top: 15
@@ -70,13 +72,13 @@ D3.targets =
         left: 20
         right: 20
 
-      @width = (@container_node().width()   || 490) - (margins.left + margins.right)
-      @height = (@container_node().height() || 402) - (margins.top + margins.bottom)
+      @width = (@container_node().width() || 490) - (margins.left + margins.right)
+      height = @height() - (margins.top + margins.bottom)
       @namespace.width = @width
       t.scale.range([80, @width]) for t in @targets
       @svg = d3.select("#d3_container_targets").
         append("svg:svg").
-        attr("height", @height + margins.top + margins.bottom).
+        attr("height", height + margins.top + margins.bottom).
         attr("width", @width + margins.left + margins.right).
         append("svg:g").
         attr("transform", "translate(#{margins.left}, #{margins.top})")
@@ -168,7 +170,13 @@ D3.targets =
 
       targets.selectAll('text.target_label')
         .transition()
-        .style('fill', (d) -> if d.successful() then '#008040' else '#000000')
+        .style('fill', (d) ->
+          if !d.is_set()
+            '#000000'
+          else if d.successful()
+            '#008040'
+          else
+            '#800040')
 
       targets.selectAll('rect.target_value')
         .transition()

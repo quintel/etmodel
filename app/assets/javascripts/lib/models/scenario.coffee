@@ -12,8 +12,6 @@ class @Scenario extends Backbone.Model
       use_fce: s.get('use_fce')
       source: 'ETM'
 
-  # this method shouldn't be called as long as we keep using
-  # the api_session_id fetched by the tabs_controller filter
   new_session: ->
     url = App.api_base_url() + "/api_scenarios/new.json"
     $.ajax

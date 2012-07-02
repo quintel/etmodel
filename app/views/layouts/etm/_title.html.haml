@@ -6,7 +6,7 @@
       Information
 
     - if current_tutorial_movie
-      %a.button.fancybox{:href => "/tutorial/#{params[:tab]}/#{params[:sidebar]}",
+      %a.button.fancybox{:href => tutorial_path(:tab => params[:tab], :sidebar => params[:sidebar]),
         :alt => "Tutorial", :title => "Tutorial"}<>
         %span.icon-film
         Tutorial

@@ -2,15 +2,15 @@
   -# a table makes things simpler with fancybox
   %table
     %tr
-      - if @vimeo_id_for_section.present?
+      - if @vimeo_id_for_tab.present?
         %td
           .movie
-            = smart_video_player @vimeo_id_for_section, :height => 260,
+            = smart_video_player @vimeo_id_for_tab, :height => 260,
               :width => 450, :id => 'left_video'
-            %h3=raw t("sidebar_items.#{to_yml_syntax(@section)}")
-      - if @vimeo_id_for_category.present?
+            %h3=raw t("tabs.#{@tab}")
+      - if @vimeo_id_for_sidebar.present?
         %td
           .movie
-            = smart_video_player @vimeo_id_for_category, :height => 260,
+            = smart_video_player @vimeo_id_for_sidebar, :height => 260,
               :width => 450, :id => 'right_video'
-            %h3=raw t("sidebar_items.#{to_yml_syntax(@category)}")
+            %h3=raw t("sidebar_items.#{@sidebar}")

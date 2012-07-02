@@ -122,10 +122,10 @@ public
   end
 
   def tutorial
-    @section = params[:section]
-    @vimeo_id_for_section =  Tab.find_by_key(@section).send("#{I18n.locale}_vimeo_id")
-    @category = params[:category]
-    @vimeo_id_for_category = SidebarItem.find_by_key(@category).send("#{I18n.locale}_vimeo_id")
+    @tab = params[:tab]
+    @vimeo_id_for_tab =  Tab.find_by_key(@tab).send("#{I18n.locale}_vimeo_id")
+    @sidebar = params[:sidebar]
+    @vimeo_id_for_sidebar = SidebarItem.find_by_key(@sidebar).send("#{I18n.locale}_vimeo_id")
     render :layout => false
   end
 

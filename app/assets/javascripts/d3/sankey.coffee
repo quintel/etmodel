@@ -264,7 +264,7 @@ D3.sankey =
         attr("transform", "translate(#{@margin.left}, #{@margin.top})")
       @links = @draw_links()
       @nodes = @draw_nodes()
-      $("g.node rect").tipsy
+      $("g.node").tipsy
         gravity: 'sw'
 
 
@@ -304,7 +304,9 @@ D3.sankey =
         enter().
         append("g").
         attr("class", "node").
-        attr("data-id", (d) -> d.get('id'))
+        attr("data-id", (d) -> d.get('id')).
+        on("mouseover", @node_mouseover).
+        on("mouseout", @node_mouseout)
 
       nodes.append("svg:rect").
         attr("x", (d) => @x(horizontal_spacing * d.get('column'))).
@@ -312,9 +314,7 @@ D3.sankey =
         attr("fill", (d, i) -> d.get('color') || colors(i)).
         attr("stroke", (d, i) -> d3.rgb(d.get('color') || colors(i)).darker(2)).
         attr("width", (d) => @x width).
-        attr("height", (d) => @y d.value()).
-        on("mouseover", @node_mouseover).
-        on("mouseout", @node_mouseout)
+        attr("height", (d) => @y d.value())
 
       nodes.append("svg:text").
         attr("class", "label").
@@ -365,12 +365,15 @@ D3.sankey =
         domain([0, max_height * 1.25]).
         range([0, @height * .90])
 
+      # update the node label
+      @nodes.data(@node_list.models, (d) -> d.get('id')).
+        attr("title", (d) => Metric.autoscale_value d.value(), 'PJ', 2)
+
       # move the rectangles
       @nodes.data(@node_list.models, (d) -> d.get('id')).
         selectAll("rect").
         transition().duration(500).
         attr("height", (d) => @y d.value()).
-        attr("title", (d) => Metric.autoscale_value d.value(), 'PJ', 2).
         attr("y", (d) => @y(d.y_offset()))
 
       # then move the node label

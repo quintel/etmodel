@@ -1,7 +1,7 @@
 D3.sankey =
   data :
     nodes: [
-  
+
       {id: 'coal_and_derivatives',     column: 0, label: 'coal', color: 'black'},
       {id: 'oil_and_derivatives',        column: 0, label: 'oil', color: '#8c564b'},
       #{id: 'useful_demand',         column: 0},
@@ -320,7 +320,8 @@ D3.sankey =
         attr("x", (d) => @x(horizontal_spacing * d.get('column'))).
         attr("y", (d) => @y(d.y_offset())).
         attr("fill", (d, i) -> d.get('color') || colors(i)).
-        attr("stroke", (d, i) -> d3.rgb(d.get('color') || colors(i)).darker(2)).
+        style("stroke", (d, i) -> d3.rgb(d.get('color') || colors(i)).darker(2)).
+        style('stroke-width', 1).
         attr("width", (d) => @x width).
         attr("height", (d) => @y d.value())
 

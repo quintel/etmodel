@@ -280,6 +280,6 @@ class @ChartList extends Backbone.Collection
 
   chart_resize: =>
     # the true parameter is used by D3 charts only, jqPlot ignores it
-    chart = @current().view.render(true)
+    chart = @current().view.render(true) if @current()
 
 window.charts = new ChartList()

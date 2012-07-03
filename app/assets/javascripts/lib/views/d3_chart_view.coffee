@@ -8,6 +8,7 @@
 # They should also call @initialize_defaults() in their initialize method
 class @D3ChartView extends BaseChartView
   render: (force_redraw) =>
+    return false unless @model.supported_by_current_browser()
     if force_redraw || !@already_on_screen()
       @$el.find(".chart_canvas").empty().html(@html()).css('height', @height())
       @draw()

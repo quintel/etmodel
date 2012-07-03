@@ -270,16 +270,4 @@ class @ChartList extends Backbone.Collection
       $(e.target).tipsy("hide")
       $(e.target).remove()
 
-    # This callback tries throttling the resize event, which is fired
-    # continuously while the user resizes the window. Once the resize is over
-    # the chart will be rendered again
-    resize_callback = null
-    $(window).on 'resize', =>
-      clearTimeout(resize_callback)
-      resize_callback = setTimeout(@chart_resize, 100)
-
-  chart_resize: =>
-    # the true parameter is used by D3 charts only, jqPlot ignores it
-    chart = @current().view.render(true) if @current()
-
 window.charts = new ChartList()

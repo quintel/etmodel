@@ -3,8 +3,9 @@
   %span.headline{:data => {:slide => slide.short_name,
                            :default_chart => slide.output_element_id,
                            :alt_chart => slide.alt_output_element_id}}
-    %a.slide_header{:href => "/#{controller_name}/#{params[:id]}##{slide.short_name}", :id => slide.key}
-      = raw t("slides.#{slide.key}")
+    = link_to t("slides.#{slide.key}"),
+      tab_path(params[:tab], params[:sidebar], :anchor => slide.short_name),
+      :class => 'slide_header', :id => slide.key
   .slide
     %p
       = image_tag(slide.image_path) if slide.image.present?

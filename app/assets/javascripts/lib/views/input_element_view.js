@@ -695,7 +695,10 @@
      * representation used by Quinn.
      */
     inputValue: function () {
-      var newValue = this.inputEl.val();
+      var newValue = '' + this.inputEl.val();
+
+      // Some users may enter a comma for decimal places.
+      newValue = newValue.replace(/,/, '.');
 
       if (newValue.length > 0 &&
               ((newValue = parseFloat(newValue)) || newValue === 0)) {

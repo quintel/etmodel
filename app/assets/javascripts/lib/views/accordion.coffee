@@ -44,7 +44,7 @@ class @Accordion
         window.charts.current_default_chart = output_element_id
         window.charts.current_alt_chart = alt_output_element_id
         $("a.default_charts").hide() if charts.current_id() == output_element_id
-        window.charts.load(output_element_id, 'main_chart')
+        window.charts.load(output_element_id, 'main_chart', {alternate: alt_output_element_id})
 
     $(".slide").each (i, slide) ->
       $("a.btn-done", slide).filter(".next, .previous").click () ->

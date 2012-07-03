@@ -163,9 +163,14 @@ class @ChartList extends Backbone.Collection
 
   # Loads a chart. Parameters:
   # - container_id: id of the dom element that will hold the chart
-  # - wait: if true an api_call won't be fired immediately. Useful when we want
-  # to show multiple charts on the same page
-  load : (chart_id, container_id = 'main_chart', wait = false) ->
+  # - options: hash with these keys:
+  #  - wait: if true an api_call won't be fired immediately. Useful when we want
+  #    to show multiple charts on the same page
+  #  - alternate: id of the chart to load if the first one fails. Watch out for
+  #    loops!
+  load : (chart_id, container_id = 'main_chart', options = {}) ->
+    wait = options.wait || false
+    alternate = options.alternate || false
     return false if App.settings.get(container_id) # chart is pinned
 
     App.etm_debug('Loading chart: #' + chart_id)
@@ -183,7 +188,10 @@ class @ChartList extends Backbone.Collection
         # Create the new Chart
         new_chart = new Chart(data.attributes)
         if !new_chart.supported_by_current_browser()
-          alert "Sorry! This chart type is not supported by your browser :("
+          if alternate
+            @load alternate, container_id
+          else
+            alert "Sorry! This chart type is not supported by your browser :("
           return false
 
         # Remember where the chart is

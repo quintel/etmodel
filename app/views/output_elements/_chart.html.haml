@@ -34,6 +34,6 @@
   .charts_container
     .chart_not_finished
     .chart_canvas{:id => dom_id}
-  - if chart
+  - if chart && Current.setting.send(dom_id)
     :javascript
       charts.load(#{chart.id}, "#{dom_id}")

@@ -1,3 +1,4 @@
+//= require jquery
 //= require jqplot
 
 $ ->
@@ -75,10 +76,10 @@ $ ->
         build_user_value_chart_serie(user_value)
         unit = get_slider().get('unit')
         $('#user_value').prepend(user_value+unit)
-    add_reference_bar();
+    add_reference_bar()
 
     # Let's plot the chart
-    $.jqplot "backcasting", chart_data.series,
+    $.jqplot "backcasting", chart_data.series, {
         grid:
           background: '#ffffff'
           borderWidth: 0
@@ -101,6 +102,7 @@ $ ->
           markerOptions:
             show: false
           yaxis:'y2axis'
+      }
 
   plot_chart()
 

@@ -8,8 +8,8 @@
   .buttons.right
     #share_box
       %label Link:
-      %input{:id=>'share_link', :size=>"50",:value => share_prediction_url(@prediction)}
-    = button_to_function t('prediction.share_prediction'), "#", :class => 'share_prediction', :href => share_prediction_path(@prediction)
+      %input#share_link{:size=>"50", :value => share_prediction_url(@prediction)}
+    = button_tag t('prediction.share_prediction'), :class => 'share_prediction', :type => 'button'
   .buttons
     = button_to_function t('prediction.use_prediction'), "return false", :class => 'apply_prediction'
 - else

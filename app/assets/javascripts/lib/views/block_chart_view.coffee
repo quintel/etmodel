@@ -115,8 +115,12 @@ class @BlockChartView extends BaseChartView
       if ($('#block_container_'+block[0]).hasClass('visible'))
         max_cost = block[1] if max_cost < block[1]
         max_invest = block[2] if max_invest < block[2]
-    max_cost = 200 if max_cost < 200
-    max_invest = 5 if max_invest < 5
+
+    # Allow for some extra room at the top and right of the chart, otherwise
+    # the labels for the most extreme values appear outside.
+    max_cost   = if max_cost < 200 then 200 else max_cost * 1.15
+    max_invest = if max_invest < 5 then 5 else max_invest * 1.15
+
     # update x axis
     ticks = $('#x-axis li')
     ticks.each (index,tick) ->

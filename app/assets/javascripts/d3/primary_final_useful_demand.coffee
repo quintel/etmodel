@@ -1,6 +1,7 @@
 D3.sankey =
   data :
     nodes: [
+
       {id: 'coal_and_derivatives',     column: 0, label: "coal", color: 'yellow'},
       {id: 'oil_and_derivatives',        column: 0, label: "oil"},
       #{id: 'useful_demand',         column: 0},
@@ -103,7 +104,6 @@ D3.sankey =
       {left: 'imported_electricity',      right: 'exported_electricity', gquery: 'imported_electricity_to_exported_electricity_in_sankey_ufp', color: 'blue'},
       {left: 'electricity',      right: 'exported_electricity', gquery: 'electricity_to_exported_electricity_in_sankey_ufp', color: 'black'},
     ]
-
 
   # In this chart most positioning is calculated by us. The D3 sankey plugin is
   # cool but not flexible enough
@@ -264,8 +264,13 @@ D3.sankey =
         attr("transform", "translate(#{@margin.left}, #{@margin.top})")
       @links = @draw_links()
       @nodes = @draw_nodes()
-      $("g.node").tipsy
-        gravity: 'sw'
+      $("g.node").qtip
+        content:
+          text: -> $(this).attr('title')
+        show:
+          event: 'mouseover' # silly IE
+        hide:
+          event: 'mouseout'  # silly IE
 
 
     draw_links: =>
@@ -281,7 +286,7 @@ D3.sankey =
         style("stroke-width", (link) -> link.value()).
         style("stroke", (link, i) -> link.color()).
         style("fill", "none").
-        style("opacity", 0.6).
+        style("opacity", selectedLinkOpacity).
         attr("d", (link) => @link_line link.path_points()).
         on("mouseover", @link_mouseover).
         on("mouseout", @node_mouseout)
@@ -312,7 +317,8 @@ D3.sankey =
         attr("x", (d) => @x(horizontal_spacing * d.get('column'))).
         attr("y", (d) => @y(d.y_offset())).
         attr("fill", (d, i) -> d.get('color') || colors(i)).
-        attr("stroke", (d, i) -> d3.rgb(d.get('color') || colors(i)).darker(2)).
+        style("stroke", (d, i) -> d3.rgb(d.get('color') || colors(i)).darker(2)).
+        style('stroke-width', 1).
         attr("width", (d) => @x width).
         attr("height", (d) => @y d.value())
 
@@ -328,23 +334,26 @@ D3.sankey =
 
     # callbacks
     #
+    unselectedLinkOpacity = 0.1
+    selectedLinkOpacity = 0.8
+
     node_mouseover: ->
       klass = $(this).attr('data-id')
       d3.selectAll(".link").
         filter((d) -> !d.connects(klass)).
         transition().
         duration(200).
-        style("opacity", 0.2)
+        style("opacity", unselectedLinkOpacity)
 
     # this is used as link_mouseout, too
     node_mouseout: ->
       d3.selectAll(".link").
         transition().
         duration(200).
-        style("opacity", 0.6).
+        style("opacity", selectedLinkOpacity).
         selectAll(".link_label").
         transition().
-        style("opacity", 0)
+        style("opacity", 0) # labels
 
     link_mouseover: ->
       current_id = $(this).parent().attr("data-cid")
@@ -354,7 +363,7 @@ D3.sankey =
           if d.cid == current_id
             item.selectAll(".link_label").transition().style("opacity", 1)
           else
-            item.transition().duration(200).style("opacity", 0.2)
+            item.transition().duration(200).style("opacity", unselectedLinkOpacity)
 
     # this method is called every time we're updating the chart
     refresh: =>

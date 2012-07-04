@@ -1,4 +1,9 @@
 $ ->
+  if $.browser.msie
+    # A 1px increase fixes some bad aliasing when resizing the image down
+    # to non-HiDPI resolutions.
+    $('#header_inside img[src$="@2x.png"]').attr(width: '401')
+
   # Expandable description below tabs title
   #
   $(document).on 'click', ".read_more", (e) ->

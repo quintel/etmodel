@@ -6,7 +6,7 @@
       %nav#language
         - other_locale = ( I18n.locale == :en ? "nl" : "en" )
         = link_to (t 'landing_page.other_language'), { locale: other_locale }, { class: other_locale }
-      %h3= t 'meta.name'
+      %img(src="/assets/layout/logo400@2x.png" width="400" height="49" alt="#{ t(:'meta.name') }")
 
   %section#main
 

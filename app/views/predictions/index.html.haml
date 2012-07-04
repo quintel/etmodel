@@ -36,7 +36,7 @@
             %span
               - radio_button_tag :prediction_id, ''
               = t 'prediction.your_scenario'
-            %span#user_value.right_align 
+            %span#user_value.right_align
               #{describe_user_value(@input_element)}
             .colour{:style => "border-bottom: solid 4px #{cycle(*colours)}"}
         - @predictions.each do |p|
@@ -48,13 +48,14 @@
               %i= p.title
             %span.right_align
               - if current_user.try(:admin?)
-                = link_to 'edit', edit_admin_prediction_path(p), :target => '_new'
+                = link_to '', edit_admin_prediction_path(p),
+                  :target => '_new', :class => 'edit icon-pencil'
               #{describe_prediction(p)}
             .colour{:style => "border-bottom: solid 4px #{cycle(*colours)}"}
 
     %h2.chart_title= t('prediction.chart_title.' + @input_element.key)
     .chart#backcasting
-    
+
   .prediction_details
     = render @prediction if @prediction
 - unless user_scenario_available?

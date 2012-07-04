@@ -244,3 +244,9 @@ $slider-box-height: 22px
         border-color: #3e6189
         @include background(linear-gradient(#74aadc, #4b7fb0))
         @include box-shadow(inset 0 3px 6px #4c76a1)
+
+// Disabled slider image for IE.
+html.no-opacity .quinn.disabled
+  .bar .left, .bar .main, .bar .right, .delta-bar .left, .delta-bar .main,
+  .delta-bar .right, .handle, .reset, .minus, .plus, .help
+    background-image: url(/assets/slider/ie-disabled.png)

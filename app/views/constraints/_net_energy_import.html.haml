@@ -8,10 +8,6 @@
     #output_element_47.half
     #output_element_76.half
 
-  #legend
-    - OutputElement.find(47).output_element_series.each do |serie|
-      %div{:style=>"background-color:#{serie.color}"}
-      %span= t("output_element_series.#{serie.label}")
 :javascript
   // TODO: remove double request
   charts.load(47, 'output_element_47')

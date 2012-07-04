@@ -139,12 +139,12 @@ class @AppView extends Backbone.View
     # D3 charts shouldn't be blocked, only jqPlot ones
     $(".chart_holder[data-block_ui_on_refresh=true]:visible").busyBox
       spinner: "<em>Loading</em>"
-    $("#constraints").busyBox
-      spinner: "<em>Loading</em>"
+    $("#constraints .loading").show()
 
   hideLoading: =>
     if @api_call_stack.length == 0
-      $(".chart_holder, #constraints").busyBox('close')
+      $(".chart_holder").busyBox('close')
+      $("#constraints .loading").hide()
 
   etm_debug: (t) -> console.log(t) if window.etm_js_debug
 

@@ -36,7 +36,7 @@ $ ->
     search      = $("#header_inside input[name=q]")
     placeholder = search.attr('placeholder')
 
-    if search.val().length is 0
+    if search.val()?.length is 0
       search.val(placeholder)
 
     search.focus ->
@@ -45,7 +45,7 @@ $ ->
       search.val('') if search.val() is placeholder
 
     search.blur ->
-      value = search.val()
+      value = search.val() or ''
 
       # Similarly, only add the placeholder back if the user did not enter
       # a value.

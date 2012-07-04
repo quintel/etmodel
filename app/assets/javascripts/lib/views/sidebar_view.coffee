@@ -11,9 +11,12 @@ class @SidebarView extends Backbone.View
       gquery = gqueries.with_key(key)
       return unless gquery
       result = gquery.future_value()
-      percentage = "#{Math.round(result * 100)}%"
-      padded_percentage = "#{Math.round(result * 90)}%"
-      $(item).find(".bar").animate({width: padded_percentage}, 1000)
-      $(item).find(".value").html(percentage).animate({left: padded_percentage})
+
+      $item      = $(item)
+      percentage = Math.round(result * 100)
+      pixels     = "#{ percentage }px"
+
+      $item.find('.bar').animate(width: pixels, 1000)
+      $item.find('.value').html("#{ percentage }%").animate(left: pixels, 1000)
 
 window.sidebar = new SidebarView()

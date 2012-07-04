@@ -1,6 +1,7 @@
 #sidebar
   - @tabs.each do |tab|
-    %h4.headline= I18n.t "tabs." + tab.key
+    - klass = 'active' if params[:tab] == tab.key
+    %h4{class: klass}= I18n.t "tabs." + tab.key
     %ul{style: ("display: none;" unless params[:tab] == tab.key )}
       - tab.allowed_sidebar_items.each do |item|
         %li{:id => item.key,

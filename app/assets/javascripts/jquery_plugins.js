@@ -8,5 +8,4 @@
 //= require jquery.busybox
 //= require jquery.hoverIntent.min
 //= require jquery.ajaxQueue
-//= require jquery.tipsy
 //= require jquery.qtip

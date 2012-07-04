@@ -267,7 +267,6 @@ class @ChartList extends Backbone.Collection
       e.preventDefault()
       # Just show the chart holder
       $(".chart_holder.hidden").removeClass('.hidden').show()
-      $(e.target).tipsy("hide")
       $(e.target).remove()
 
 window.charts = new ChartList()

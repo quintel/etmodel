@@ -59,7 +59,7 @@ D3.treemap =
         enter().
         append("div").
         attr("class", "cell").
-        attr("title", (d) -> d.label() unless d.children).
+        attr("data-label", (d) -> d.label() unless d.children).
         style("background", (d, i) =>
           if d.children
             null
@@ -81,19 +81,23 @@ D3.treemap =
         ).
         call(@cell)
 
-        $("div.cell").tipsy
-          html: true
+        $("div.cell").qtip
+          content:
+            text: -> $(this).attr('data-label')
+          position:
+            my: 'top right'
+            at: 'bottom right'
 
     refresh: =>
       @svg.selectAll("div").
         data(@treemap.value( (d) ->
           d.val()
         )).
-        attr("title", (d) ->
+        attr("data-label", (d) ->
           # used by tipsy
           return if d.children
           val = d.val().toFixed(2)
-          "#{d.label()}<br/>#{val}PJ"
+          "#{d.label()}: #{val}PJ"
           ).
         transition().
         duration(500).

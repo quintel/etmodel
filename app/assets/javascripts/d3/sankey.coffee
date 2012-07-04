@@ -272,8 +272,13 @@ D3.sankey =
         attr("transform", "translate(#{@margin.left}, #{@margin.top})")
       @links = @draw_links()
       @nodes = @draw_nodes()
-      $("g.node").tipsy
-        gravity: 'sw'
+      $("g.node").qtip
+        content:
+          text: -> $(this).attr('title')
+        show:
+          event: 'mouseover' # silly IE
+        hide:
+          event: 'mouseout'  # silly IE
 
 
     draw_links: =>

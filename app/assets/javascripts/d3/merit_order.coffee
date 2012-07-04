@@ -104,7 +104,7 @@ D3.merit_order =
         attr("class", "merit_order_node").
         attr("fill", (d, i) => @color(i)).
         attr("data-original-color", (d, i) => @color(i)).
-        attr("stroke", (d, i) => d3.rgb(@color(i)).darker(1)).
+        style("stroke", (d, i) => d3.rgb(@color(i)).darker(1)).
         attr("y", (d) => @height - @y(d.value_y()) - .5).
         attr("x", (d, i) -> i * 30).
         attr("height", (d) => @y d.value_y()).
@@ -118,9 +118,15 @@ D3.merit_order =
           item.transition().attr("fill", -> item.attr("data-original-color"))
         )
 
-      $('rect.merit_order_node').tipsy
-        gravity: 'se'
-        html: true
+      $('rect.merit_order_node').qtip
+        content: -> $(this).attr('title')
+        show:
+          event: 'mouseover' # silly IE
+        hide:
+          event: 'mouseout'  # silly IE
+        position:
+          my: 'bottom right'
+          at: 'top right'
 
       # add legend
       legends = @svg.selectAll("svg.legend").

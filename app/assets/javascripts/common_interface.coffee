@@ -101,9 +101,9 @@ $ ->
         Interface.call_the_cyclists()
   Interface.call_the_cyclists()
 
-  # Tipsy
-  $("a.tooltip").tipsy
-    live: true
+  # Tooltips
+  $("a.tooltip").qtip
+    content: -> $(this).attr('title')
 
 # This class holds all the methods that were previously in the global scope
 #

@@ -115,6 +115,8 @@ $ ->
     position:
       my: 'bottom right'
       at: 'top center'
+    style:
+      classes: "ui-tooltip-tipsy"
 
 # This class holds all the methods that were previously in the global scope
 #

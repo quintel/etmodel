@@ -3,7 +3,7 @@
   %span.headline{:data => {:slide => slide.short_name,
                            :default_chart => slide.output_element_id,
                            :alt_chart => slide.alt_output_element_id}}
-    = link_to t("slides.#{slide.key}"),
+    = link_to t("slides.#{slide.key}").html_safe,
       tab_path(params[:tab], params[:sidebar], :anchor => slide.short_name),
       :class => 'slide_header', :id => slide.key
   .slide

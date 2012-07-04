@@ -106,6 +106,11 @@ class @BlockChartView extends BaseChartView
     data_array = @results()
     max_cost = 0
     max_invest = 0
+
+    canvas = @container_node().find('#canvas')
+    canvas_width  = canvas.width()
+    canvas_height = canvas.height()
+
     for block in data_array
       if ($('#block_container_'+block[0]).hasClass('visible'))
         max_cost = block[1] if max_cost < block[1]
@@ -124,6 +129,10 @@ class @BlockChartView extends BaseChartView
       $('#'+tick.id).text(Math.round(value))
     # update blocks
     for block in data_array
-      block_bottom = block[1] * 100 / max_cost
-      block_left = block[2] * 100 / max_invest
-      $('#block_container_'+block[0]).animate({'bottom': block_bottom + "%",'left': block_left + "%"})
+      block_bottom = ((block[1] / max_cost)   * canvas_height) || 0
+      block_left   = ((block[2] / max_invest) * canvas_width)  || 0
+
+      # IE doesn't like animating from "auto" to a percentage.
+      $("#block_container_#{ block[0] }").animate
+        bottom: "#{ block_bottom }px"
+        left:   "#{ block_left }px"

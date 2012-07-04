@@ -13,6 +13,7 @@ class @Chart extends Backbone.Model
     @render()
 
   render : =>
+    return false unless @supported_by_current_browser()
     type = @get('type')
     view_class = switch type
       when 'bezier'                 then BezierChartView

@@ -37,7 +37,7 @@ class @WaterfallChartView extends BaseChartView
 
   chart_opts: =>
     out =
-      seriesVColors: @colors()
+      seriesColors: @colors()
       highlighter: @defaults.highlighter
       grid: @defaults.grid
       seriesDefaults:

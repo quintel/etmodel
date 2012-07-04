@@ -128,9 +128,15 @@ D3.mekko =
         .attr("transform", "rotate(270)")
         .attr("text-anchor", "end")
 
-      $("rect.carrier").tipsy
-        gravity: 'sw'
-        html: true
+      $('rect.carrier').qtip
+        content: -> $(this).attr('title')
+        show:
+          event: 'mouseover' # silly IE
+        hide:
+          event: 'mouseout'  # silly IE
+        position:
+          my: 'bottom right'
+          at: 'top right'
 
     refresh: =>
       total_value = @node_list.grand_total()

@@ -373,6 +373,8 @@ D3.sankey =
         position:
           my: 'bottom right'
           at: 'top center'
+        style:
+          classes: "ui-tooltip-rounded"
 
 
     draw_links: =>

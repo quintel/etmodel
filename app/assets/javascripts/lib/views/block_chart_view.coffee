@@ -56,6 +56,10 @@ class @BlockChartView extends BaseChartView
       position:
         my: 'bottom center'
         at: 'top center'
+      style:
+        classes: "ui-tooltip-rounded"
+        tip:
+          corner: false
 
   setup_checkboxes: ->
     for item in $(".block_list_checkbox")

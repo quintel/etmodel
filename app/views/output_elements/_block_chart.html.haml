@@ -30,7 +30,8 @@
             .content
               %h4= t("output_element_series.#{block.label}")
               %p= block.description.short_content
-              = link_to t('page_titles.readmore'), "/descriptions/#{block.description.andand.id}", :class => 'fancybox'
+              = link_to t('output_elements.block_chart.read_more'),
+                "/descriptions/#{block.description.andand.id}", :class => 'fancybox'
           .balloon-tip
 
 %ul#block_list

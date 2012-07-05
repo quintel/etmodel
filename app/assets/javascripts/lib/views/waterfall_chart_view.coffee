@@ -65,4 +65,4 @@ class @WaterfallChartView extends BaseChartView
           rendererOptions:
             forceTickAt0: true # we always want a tick a 0
           tickOptions:
-            formatString: "%.#{@significant_digits()}f&nbsp;#{@parsed_unit()}"
+            formatString: "%.#{@significant_digits()}f&nbsp;#{@model.get('unit')}"

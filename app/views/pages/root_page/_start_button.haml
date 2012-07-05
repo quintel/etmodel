@@ -1,10 +1,10 @@
 - if has_active_scenario?
-  %button.button.primary(data-confirm="#{ t('newscenario') }")
+  %button.button.primary(type="submit" data-confirm="#{ t('newscenario') }")
     Start
     %span.right-icon
 
 - else
-  %button.button.primary
+  %button.button.primary(type="submit")
     Start
     %span.right-icon
 

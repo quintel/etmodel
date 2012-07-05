@@ -6,6 +6,7 @@
 //= require underscore-min
 //= require backbone-min
 //= require modernizr.custom
+//= require ie-d3-shims
 
 //= require_tree ./lib/util
 //= require flowplayer-3.2.6.min

@@ -6,6 +6,7 @@
 //= require underscore-min
 //= require backbone-min
 //= require modernizr.custom
+//= require ie-d3-shims
 
 //= require_tree ./lib/util
 //= require flowplayer-3.2.6.min
@@ -34,3 +35,4 @@
 //= require d3/merit_order
 //= require d3/mekko
 //= require d3/targets
+//= require d3/primary_final_useful_demand

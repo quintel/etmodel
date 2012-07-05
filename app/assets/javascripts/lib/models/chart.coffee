@@ -48,7 +48,7 @@ class @Chart extends Backbone.Model
     if D3[key] && D3[key].View
       D3[key].View
     else
-      false
+      throw "No such D3 chart: #{ key }"
 
   # @return [ApiResultArray] = [
   #   [[2010,0.4],[2040,0.6]],

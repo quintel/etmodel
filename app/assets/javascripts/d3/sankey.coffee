@@ -13,7 +13,6 @@ D3.sankey =
       {id: 'import',       column: 0, label: "electricity import", color: '#1f77b4'},
 
       {id: 'electricity_prod',     column: 1, label: "electricity production", color: '#1f77b4'},
-      {id: 'heat',   column: 1, label: "heat network", color: '#d62728'},
       {id: 'chps',   column: 1, label: "CHPs", color: '#9467bd'},
 
       {id: 'households',  column: 2},
@@ -27,19 +26,12 @@ D3.sankey =
 
     ]
     links: [
-      #Direct links between carrier and sector
       {left: 'coal_and_derivatives',      right: 'electricity_prod', gquery: 'coal_and_derivatives_to_electricity_prod_in_sankey', color: 'black'},
       {left: 'oil_and_derivatives',      right: 'electricity_prod', gquery: 'oil_and_derivatives_to_electricity_prod_in_sankey', color: '#8c564b'},
       {left: 'geo_solar_wind_water_ambient',      right: 'electricity_prod', gquery: 'geo_solar_wind_water_ambient_to_electricity_prod_in_sankey', color: '#2ca02c'},
       {left: 'natural_gas',      right: 'electricity_prod', gquery: 'natural_gas_to_electricity_prod_in_sankey', color: '#7f7f7f'},
       {left: 'nuclear',      right: 'electricity_prod', gquery: 'nuclear_to_electricity_prod_in_sankey', color: '#ff7f0e'},
       {left: 'biomass_products',      right: 'electricity_prod', gquery: 'biomass_products_to_electricity_prod_in_sankey', color: '#2ca02c'},
-      {left: 'coal_and_derivatives',      right: 'heat', gquery: 'coal_and_derivatives_to_heat_in_sankey', color: 'black'},
-      {left: 'oil_and_derivatives',      right: 'heat', gquery: 'oil_and_derivatives_to_heat_in_sankey', color: '#8c564b'},
-      {left: 'geo_solar_wind_water_ambient',      right: 'heat', gquery: 'geo_solar_wind_water_ambient_to_heat_in_sankey', color: '#2ca02c'},
-      {left: 'natural_gas',      right: 'heat', gquery: 'natural_gas_to_heat_in_sankey', color: '#7f7f7f'},
-      {left: 'nuclear',      right: 'heat', gquery: 'nuclear_to_heat_in_sankey', color: '#ff7f0e'},
-      {left: 'biomass_products',      right: 'heat', gquery: 'biomass_products_to_heat_in_sankey', color: '#2ca02c'},
       {left: 'coal_and_derivatives',      right: 'chps', gquery: 'coal_and_derivatives_to_chps_prod_in_sankey', color: 'black'},
       {left: 'oil_and_derivatives',      right: 'chps', gquery: 'oil_and_derivatives_to_chps_prod_in_sankey', color: '#8c564b'},
       {left: 'geo_solar_wind_water_ambient',      right: 'chps', gquery: 'geo_solar_wind_water_ambient_to_chps_prod_in_sankey', color: '#2ca02c'},
@@ -83,12 +75,6 @@ D3.sankey =
       {left: 'biomass_products',      right: 'agriculture', gquery: 'biomass_products_to_agriculture_in_sankey', color: '#2ca02c'},
       {left: 'biomass_products',      right: 'other', gquery: 'biomass_products_to_other_in_sankey', color: '#2ca02c'},
       {left: 'import',      right: 'electricity_prod', gquery: 'import_to_electricity_prod_in_sankey', color: '#1f77b4'},
-      {left: 'heat',      right: 'households', gquery: 'heat_to_households_in_sankey', color: '#d62728'},
-      {left: 'heat',      right: 'buildings', gquery: 'heat_to_buildings_in_sankey', color: '#d62728'},
-      {left: 'heat',      right: 'transport', gquery: 'heat_to_transport_in_sankey', color: '#d62728'},
-      {left: 'heat',      right: 'industry', gquery: 'heat_to_industry_in_sankey', color: '#d62728'},
-      {left: 'heat',      right: 'agriculture', gquery: 'heat_to_agriculture_in_sankey', color: '#d62728'},
-      {left: 'heat',      right: 'other', gquery: 'heat_to_other_in_sankey', color: '#d62728'},
       {left: 'chps',      right: 'households', gquery: 'chps_to_households_in_sankey', color: '#d62728'},
       {left: 'chps',      right: 'buildings', gquery: 'chps_to_buildings_in_sankey', color: '#d62728'},
       {left: 'chps',      right: 'transport', gquery: 'chps_to_transport_in_sankey', color: '#d62728'},
@@ -108,7 +94,6 @@ D3.sankey =
       {left: 'chps',      right: 'agriculture', gquery: 'chps_e_to_agriculture_in_sankey', color: '#1f77b4'},
       {left: 'chps',      right: 'other', gquery: 'chps_e_to_other_in_sankey', color: '#1f77b4'},
       {left: 'electricity_prod',      right: 'loss', gquery: 'electricity_prod_to_loss_in_sankey', color: '#7f7f7f'},
-      {left: 'heat',      right: 'loss', gquery: 'heat_to_loss_in_sankey', color: '#7f7f7f'},
       {left: 'chps',      right: 'loss', gquery: 'chps_to_loss_in_sankey', color: '#7f7f7f'},
       {left: 'electricity_prod',      right: 'exported_electricity', gquery: 'electricity_production_to_export_in_sankey', color: '#1f77b4'},
     ]

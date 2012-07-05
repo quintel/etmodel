@@ -44,8 +44,6 @@ Etm::Application.routes.draw do
 
   namespace :admin do
     root :to => 'pages#index'
-    match 'wattnu_log', :to => 'pages#wattnu_log'
-    match 'clear_wattnu_log', :to => 'pages#clear_wattnu_log'
     match 'map', :to => 'pages#map', :as => :map
     match 'clear_cache' => 'pages#clear_cache', :as => :clear_cache
 
@@ -131,8 +129,6 @@ Etm::Application.routes.draw do
   match '/privacy_statement'            => 'pages#privacy_statement'
   match '/show_all_countries'           => 'pages#show_all_countries'
   match '/show_flanders'                => 'pages#show_flanders'
-  match '/wattnu_on'                    => 'pages#wattnu_on'
-  match '/wattnu_off'                   => 'pages#wattnu_off'
   match '/municipalities'               => 'pages#municipalities'
   match '/careers'                      => 'pages#careers',     :as => :careers
   match '/sitemap'                      => 'pages#sitemap',     :as => :sitemap

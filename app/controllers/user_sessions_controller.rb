@@ -7,9 +7,9 @@ class UserSessionsController < ApplicationController
   # GET /user_sessions/new.xml
   def new
     @user_session = UserSession.new
-    @redirect_to = params[:redirect_to]
+    @redirect_to = params[:return_to]
 
-    redirect_to @redirect_to and return if !current_user.nil? && !@redirect_to.blank?
+    redirect_to @redirect_to and return if current_user && !@redirect_to.blank?
 
     respond_to do |format|
       format.html # new.html.erb
@@ -24,16 +24,13 @@ class UserSessionsController < ApplicationController
     @user_session.save do |result|
        if result
         flash[:notice] = I18n.t("flash.login")
-        if valid_redirect?(params[:redirect_to])
-            redirect_to params[:redirect_to]
+        if url = session[:return_to]
+          session[:return_to] = nil
+          redirect_to url
         elsif UserSession.find.user.role.andand.name == "admin"
           redirect_to "/admin"
         else
-          begin
-            redirect_to_back
-          rescue ActionController::RedirectBackError => e
-            redirect_to(root_url)
-          end
+          redirect_to_back(home_path)
         end
       else
         respond_to do |format|
@@ -52,15 +49,8 @@ class UserSessionsController < ApplicationController
 
     respond_to do |format|
       flash[:notice] = I18n.t("flash.logout")
-      format.html { redirect_to(root_url) }
+      format.html { redirect_to(home_path) }
       format.xml  { head :ok }
     end
-  end
-
-  private
-
-  # TODO better check for invalid data
-  def valid_redirect?(redirect)
-    !redirect.blank? && !redirect.include?('http://')
   end
 end

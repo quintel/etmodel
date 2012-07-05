@@ -59,7 +59,7 @@ protected
 
   def permission_denied
     flash[:error] = I18n.t("flash.not_allowed")
-    session[:return_to] = url_for :overwrite_params => {}
+    store_location
     redirect_to login_path
   end
 
@@ -103,11 +103,6 @@ protected
 private
   def assign_current_for_inspection_in_tests
     @current = Current
-  end
-
-  def redirect_back_or_default(default)
-    redirect_to(session[:return_to] || default)
-    session[:return_to] = nil
   end
 
   def current_user_session

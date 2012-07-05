@@ -3,7 +3,6 @@ class @Setting extends Backbone.Model
     @bind('change:api_session_id', @save)
     @bind('change:track_peak_load', @save)
     @bind('change:use_fce', @save)
-    @bind('change:current_round', @save)
     @bind('change:main_chart', @save)
     @bind('change:secondary_chart', @save)
 
@@ -26,10 +25,3 @@ class @Setting extends Backbone.Model
 
   # Used by the bio-footprint dashboard item
   country: => @get('area_code').split('-')[0]
-
-$ ->
-  # TODO: move somewhere else
-  # store the current round (watt-nu)
-  $("#round-selector input").change ->
-    App.settings.set({current_round: $(this).val()})
-    targets.update_total_score()

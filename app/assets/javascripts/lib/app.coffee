@@ -107,7 +107,6 @@ class @AppView extends Backbone.View
     if t = window.targets
       t.invoke('update_view')
       t.update_totals()
-      t.update_total_score()
     window.sidebar.update_bars()
 
     if App.settings.get('track_peak_load') && App.peak_load

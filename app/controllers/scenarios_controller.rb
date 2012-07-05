@@ -54,12 +54,6 @@ class ScenariosController < ApplicationController
       redirect_to start_path, :notice => "Scenario not found" and return
     end
     Current.setting = Setting.load_from_scenario(@scenario)
-    # more logic could be added here, such as setting the round only if the
-    # scenario name contains the "wattnu" string or something like that
-    if wattnu? || @scenario.wattnu?
-      Current.setting.current_round = 3
-      session[:wattnu] = true
-    end
     redirect_to start_path
   end
 

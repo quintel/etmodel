@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   include LayoutHelper
 
   helper :all
-  helper_method :current_user_session, :current_user, :admin?, :wattnu?
+  helper_method :current_user_session, :current_user, :admin?
 
   # TODO refactor move the hooks and corresponding actions into a "concern"
   before_filter :initialize_current
@@ -87,10 +87,6 @@ protected
       permission_denied
       false
     end
-  end
-
-  def wattnu?
-    session[:wattnu]
   end
 
   # redirect_to :back fails fairly often. This is safer

@@ -1,4 +1,4 @@
-D3.sankey =
+D3.primary_final_useful_demand =
   data :
     nodes: [
 
@@ -113,7 +113,7 @@ D3.sankey =
     vertical_margin: 10
 
     initialize: =>
-      @view = D3.sankey.view
+      @view = D3.primary_final_useful_dem.view
       @right_links = []
       @left_links = []
 
@@ -129,10 +129,10 @@ D3.sankey =
         offset += n.value() + margin
       offset
 
-    x_offset: => @get('column') * D3.sankey.Node.horizontal_spacing
+    x_offset: => @get('column') * D3.primary_final_useful_dem.Node.horizontal_spacing
 
     # center point of the node. We use it as link anchor point
-    x_center: => @x_offset() + D3.sankey.Node.width / 2
+    x_center: => @x_offset() + D3.primary_final_useful_dem.Node.width / 2
 
     # The height of the node is the sum of the height of its link. Since links
     # are both inbound and outbound, let's use the max size. Ideally the values
@@ -153,7 +153,7 @@ D3.sankey =
 
   Link: class extends Backbone.Model
     initialize: =>
-      @view = D3.sankey.view
+      @view = D3.primary_final_useful_dem.view
       @series = @view.series
       @left = @view.node_list.get @get('left')
       @right = @view.node_list.get @get('right')
@@ -199,8 +199,8 @@ D3.sankey =
             offset += link.value()
       @right.y_offset() + offset
 
-    left_x:  => @left.x_center()  + D3.sankey.Node.width / 2
-    right_x: => @right.x_center() - D3.sankey.Node.width / 2
+    left_x:  => @left.x_center()  + D3.primary_final_useful_dem.Node.width / 2
+    right_x: => @right.x_center() - D3.primary_final_useful_dem.Node.width / 2
 
     # Use 4 points and let D3 interpolate a smooth curve
     #
@@ -225,7 +225,7 @@ D3.sankey =
   #
   View: class extends D3ChartView
     initialize: ->
-      namespace = D3.sankey
+      namespace = D3.primary_final_useful_dem
       namespace.view = this
       @series = @model.series
       @node_list = new namespace.NodeList(namespace.data.nodes)
@@ -301,8 +301,8 @@ D3.sankey =
       return links
 
     draw_nodes: =>
-      horizontal_spacing = D3.sankey.Node.horizontal_spacing
-      width = D3.sankey.Node.width
+      horizontal_spacing = D3.primary_final_useful_dem.Node.horizontal_spacing
+      width = D3.primary_final_useful_dem.Node.width
       colors = d3.scale.category20()
       nodes = @svg.selectAll("g.node").
         data(@node_list.models, (d) -> d.get('id')).
@@ -402,8 +402,8 @@ D3.sankey =
         attr("y", (link) => @y link.right_y()).
         text((d) => Metric.autoscale_value d.value(), 'PJ', 2)
 
-class D3.sankey.NodeList extends Backbone.Collection
-  model: D3.sankey.Node
+class D3.primary_final_useful_dem.NodeList extends Backbone.Collection
+  model: D3.primary_final_useful_dem.Node
 
   # returns the height of the tallest column
   max_column_value: =>
@@ -414,5 +414,5 @@ class D3.sankey.NodeList extends Backbone.Collection
       sums[column] += n.value()
     _.max _.values(sums)
 
-class D3.sankey.LinkList extends Backbone.Collection
-  model: D3.sankey.Link
+class D3.primary_final_useful_dem.LinkList extends Backbone.Collection
+  model: D3.primary_final_useful_dem.Link

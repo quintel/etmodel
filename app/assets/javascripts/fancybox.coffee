@@ -6,6 +6,9 @@ $ ->
     href: $(this).attr('href')
     autoSize: true
 
+  $("a.fancybox_image").fancybox
+    type: 'image'
+
   $("a.fancybox_narrow").fancybox
     type: 'ajax'
     href: $(this).attr('href')

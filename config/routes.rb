@@ -123,8 +123,7 @@ Etm::Application.routes.draw do
   match '/feedback'                     => 'pages#feedback', :as => :feedback
   match '/tutorial/(:tab)(/:sidebar)'   => 'pages#tutorial', :as => :tutorial
   match '/pages/intro'                  => 'pages#intro', :as => :start
-  match '/testimonials'                 => 'pages#testimonials'
-  match '/recommendations'              => 'pages#recommendations'
+  match '/famous_users'                 => 'pages#famous_users'
   match '/press_releases'               => 'pages#press_releases'
   match '/optimize'                     => 'pages#optimize'
   match '/disclaimer'                   => 'pages#disclaimer'

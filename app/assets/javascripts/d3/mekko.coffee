@@ -19,8 +19,7 @@ D3.mekko =
     label: => @get('label') || @get('gquery')
     key:   => "#{@get 'carrier'}_#{@get 'sector'}"
     tooltip_text: =>
-      "#{@get 'carrier'} #{@get 'sector'}<br/>" +
-      Metric.autoscale_value @val(), 'MJ', 2
+      "#{@get 'carrier'} #{@get 'sector'}<br/>#{parseInt @val()}PJ"
 
   NodeGroup: class extends Backbone.Model
       initialize: ->
@@ -136,7 +135,7 @@ D3.mekko =
           event: 'mouseout'  # silly IE
         position:
           my: 'bottom right'
-          at: 'top right'
+          at: 'top center'
 
     refresh: =>
       total_value = @node_list.grand_total()
@@ -159,7 +158,7 @@ D3.mekko =
         data(@sector_list.models, (d) -> d.get 'key' ).
         transition().duration(500).
         attr("dy", (d) => @x(d.total_value() / 2) + 5 ).
-        text((d) -> "#{d.get 'key'} #{Metric.autoscale_value d.total_value(), 'MJ', 2}")
+        text((d) -> "#{d.get 'key'} #{parseInt d.total_value()}PJ")
 
       # we need to track the offset for every sector
       offsets = {}

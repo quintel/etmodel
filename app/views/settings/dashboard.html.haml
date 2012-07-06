@@ -6,7 +6,7 @@
       - Constraint::GROUPS.each do |group|
         %dt= t(:"constraint_groups.#{group}")
 
-        - constraints_for_group(group).each do |constraint|
+        - constraints_for_group(group).reject(&:not_allowed_in_this_area).each do |constraint|
           %dd
             %label
               = constraint_radio_tag constraint, @checked.include?(constraint.key)

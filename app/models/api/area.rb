@@ -18,7 +18,8 @@ class Api::Area < ActiveResource::Base
     :has_heat_import,
     :has_industry,
     :has_other,
-    :has_fce
+    :has_fce,
+    :has_employment
   ]
 
   def self.find_by_country_memoized(region_or_country)

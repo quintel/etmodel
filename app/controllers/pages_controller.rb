@@ -73,18 +73,6 @@ public
     redirect_to root_path
   end
 
-  # Use this action to toggle wattnu features
-  # (score, round, etc)
-  def wattnu_on
-    session[:wattnu] = true
-    redirect_to home_path, :notice => "Watt Nu score feature is now set to #{session[:wattnu]}"
-  end
-
-  def wattnu_off
-    session[:wattnu] = false
-    redirect_to home_path, :notice => "Watt Nu score feature is now set to #{session[:wattnu]}"
-  end
-
   def bugs
     @text = Text.find_or_create_by_key('bugs')
   end
@@ -126,10 +114,11 @@ public
   end
 
   def tutorial
+    loc = I18n.locale
     @tab = params[:tab]
-    @vimeo_id_for_tab =  Tab.find_by_key(@tab).send("#{I18n.locale}_vimeo_id")
+    @vimeo_id_for_tab =  Tab.find_by_key(@tab).try("#{loc}_vimeo_id")
     @sidebar = params[:sidebar]
-    @vimeo_id_for_sidebar = SidebarItem.find_by_key(@sidebar).send("#{I18n.locale}_vimeo_id")
+    @vimeo_id_for_sidebar = SidebarItem.find_by_key(@sidebar).try("#{loc}_vimeo_id")
     render :layout => false
   end
 

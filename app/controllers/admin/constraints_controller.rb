@@ -9,6 +9,7 @@ module Admin
     def new
       @constraint = Constraint.new
       @constraint.build_description
+      @constraint.build_area_dependency
     end
 
     def create
@@ -46,6 +47,7 @@ module Admin
 
     def edit
       @constraint.build_description unless @constraint.description
+      @constraint.build_area_dependency unless @constraint.area_dependency
     end
 
     private

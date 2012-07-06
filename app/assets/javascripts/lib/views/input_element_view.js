@@ -210,6 +210,10 @@
       this.valueSelector = new ValueSelector({ view: this });
       this.initialValue  = this.model.get('start_value');
 
+      if (this.initialValue == null) {
+        this.initialValue = this.model.get('min_value');
+      }
+
       // When the input minimum value is higher than the maximum, disable the
       // element so the user can't do anything with it.
       if (this.model.get('min_value') >= this.model.get('max_value')) {

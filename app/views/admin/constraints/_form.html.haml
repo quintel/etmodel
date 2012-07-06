@@ -7,4 +7,8 @@
     = j.input :short_content_nl
     = j.input :content_en
     = j.input :content_nl
+  = f.simple_fields_for :area_dependency do |j|
+    = j.input :dependent_on, :as => :select,
+      :collection => Api::Area::DEPENDABLE_ATTRIBUTES
+
   = f.button :submit

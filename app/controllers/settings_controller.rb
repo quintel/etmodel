@@ -43,7 +43,7 @@ class SettingsController < ApplicationController
       Constraint.for_dashboard(dash)
     else
       Constraint.default.ordered
-    end
+    end.reject(&:not_allowed_in_this_area)
 
     @checked = constraints.map(&:key)
 
@@ -68,7 +68,7 @@ class SettingsController < ApplicationController
 
     # Assert that the keys are valid; exceptions are raised (and caught
     # below) otherwise.
-    constraints = Constraint.for_dashboard(keys)
+    constraints = Constraint.for_dashboard(keys).reject(&:not_allowed_in_this_area)
 
     session[:dashboard] = keys
 

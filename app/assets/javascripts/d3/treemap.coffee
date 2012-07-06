@@ -59,34 +59,17 @@ D3.treemap =
         enter().
         append("div").
         attr("class", "cell").
-        attr("data-label", (d) -> d.label() unless d.children).
-        style("background", (d, i) =>
-          if d.children
-            null
-          else
-            d.get('color') || @color(i)).
-        text((d) -> if d.children then null else d.label()).
-        on('mouseover', ->
-          item = d3.select(this)
-          old_color = item.style("background")
-          # TODO: figure out if there's a better way to save the old value
-          item.attr("data-old_color", old_color)
-          item.transition().
-          style("background", "red")
-        ).
-        on('mouseout', ->
-          item = d3.select(this)
-          item.transition().
-          style("background", item.attr('data-old_color'))
-        ).
-        call(@cell)
+        filter((d) -> !d.children).
+        attr("data-label", (d) -> d.label()).
+        style("background", (d, i) => d.get('color') || @color(i)).
+        text((d) -> d.label()).call(@cell)
 
         $("div.cell").qtip
           content:
             text: -> $(this).attr('data-label')
           position:
-            my: 'top right'
-            at: 'bottom right'
+            my: 'bottom center'
+            at: 'top center'
 
     refresh: =>
       @svg.selectAll("div").

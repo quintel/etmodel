@@ -5,14 +5,14 @@ module Admin
     end
 
     def edit
-      @text = Text.find_by_id(params[:id])
+      @text = Text.find(params[:id])
     end
 
     def update
       @text = Text.find(params[:id])
       if @text.update_attributes(params[:text])
         flash[:notice] = "Successfully updated text."
-        redirect_to admin_translations_url
+        redirect_to admin_texts_path
       else
         render :action => 'edit'
       end
@@ -26,7 +26,7 @@ module Admin
       @text = Text.new(params[:text])
       if @text.save
         flash[:notice] = "Successfully created a new text."
-        redirect_to admin_translations_url
+        redirect_to admin_texts_path
       else
         render :new
       end

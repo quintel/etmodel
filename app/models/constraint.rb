@@ -14,6 +14,7 @@
 # TODO: this should be renamed, DashboardItem would be a better name
 #
 class Constraint < ActiveRecord::Base
+  include AreaDependent
 
   # Groups names to which a constraint must belong. Used both during
   # Constraint validation, and within the dashboard views.
@@ -45,8 +46,9 @@ class Constraint < ActiveRecord::Base
   validates :group, :presence => true, :inclusion => GROUPS
 
   has_one :description, :as => :describable, :dependent => :destroy
+  has_one :area_dependency, :as => :dependable, :dependent => :destroy
 
-  accepts_nested_attributes_for :description
+  accepts_nested_attributes_for :description, :area_dependency
 
   scope :ordered, order('position')
   scope :default, where('position IS NOT NULL')

@@ -7,7 +7,6 @@ class Setting
   attr_accessor :last_etm_page,
                 :scenario_id,
                 :api_session_id,
-                :current_round,
                 :area_code,
                 :main_chart       # pinned chart (optional)
                 :secondary_chart  # pinned chart (optional)

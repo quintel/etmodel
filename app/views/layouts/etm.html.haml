@@ -18,7 +18,6 @@
     #wrapper
       %header#top
         = render "layouts/etm/header"
-        = render "layouts/etm/wattnu" if wattnu?
       #content
         = render "layouts/etm/sidebar" if @current_sidebar_item
         - flash_message

@@ -7,17 +7,5 @@ module Admin
       Rails.cache.clear
       redirect_to admin_root_path, :notice => 'Cache cleared'
     end
-
-    def wattnu_log
-      send_file Rails.root.join("log/tracking.log"),
-        :filename => 'log.csv',
-        :type => 'text/csv',
-        :disposition => 'inline'
-    end
-
-    def clear_wattnu_log
-      Tracker.instance.clear_log
-      render :text => "log clear"
-    end
   end
 end

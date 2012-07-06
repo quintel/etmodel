@@ -5,8 +5,6 @@ class TabController < ApplicationController
                 :store_last_etm_page,
                 :load_interface, :only => :show
 
-  before_filter :track_user, :if => lambda{ APP_CONFIG[:wattnu] || session[:wattnu] }
-
   # included here, so that we don't mess with the before_filter order
   include ApplicationController::HasDashboard
 
@@ -64,12 +62,6 @@ class TabController < ApplicationController
       # The JS app will take care of fetching a scenario id, in the meanwhile we
       # use this variable to show all the items in the top menu
       @active_scenario = true
-    end
-
-    def track_user
-      controller = I18n.t(params[:tab].capitalize) rescue nil
-      sidebar = I18n.t('sidebar_items.' + params[:sidebar]) rescue nil
-      Tracker.instance.track({:tab => controller, :sidebar => sidebar}, current_user)
     end
 
     def store_last_etm_page

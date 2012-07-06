@@ -2,7 +2,7 @@
   - %w[Overview Dashboard Policy Supply Demand Cost].each do |group|
     %h1= t(group)
     - OutputElement.not_hidden.select_by_group(group).each do |output_element|
-      - next if output_element.block_chart?
+      - next if output_element.block_chart? || output_element.not_allowed_in_this_area
       %div
         %a.pick_charts{:id =>"output_#{output_element.id}", |
                        :data => {                           |

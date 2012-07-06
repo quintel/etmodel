@@ -106,6 +106,10 @@ public
     redirect_to '/'
   end
 
+  def famous_users
+    @users = YAML::load_file('config/famous_users.yml').sort_by{rand()}
+  end
+
   def feedback
     if params[:feedback]
       if /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i.match(params[:feedback][:email])

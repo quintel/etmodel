@@ -23,13 +23,9 @@ class Api::Area < ActiveResource::Base
     :has_merit_order
   ]
 
-  def self.find_by_country_memoized(region_or_country)
+  def self.find_by_country_memoized(area_code)
     @areas_by_country ||= {}.with_indifferent_access
-    @areas_by_country[region_or_country] ||= self.find_by_country(region_or_country)
-  end
-
-  def self.find_by_country(country)
-    find country
+    @areas_by_country[area_code] ||= self.find(area_code)
   end
 
   def number_of_existing_households

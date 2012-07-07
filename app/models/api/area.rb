@@ -7,7 +7,7 @@ class Api::Area < ActiveResource::Base
   #
   DEPENDABLE_ATTRIBUTES = [
     :has_mountains,
-    :has_coastlines,
+    :has_coastline,
     :use_network_calculations,
     :has_buildings,
     :has_agriculture,

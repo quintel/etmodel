@@ -189,7 +189,7 @@ D3.merit_order =
           html += "<br/>"
           html += "Operating costs: #{Metric.autoscale_value d.original_y_value(), 'euro', 2}"
           if d.get('key') == 'must_run'
-            html += '*<br/>* Does not participate in merit order'
+            html += '*<br/>* Must run plants do not participate in merit order'
           html
         )
 

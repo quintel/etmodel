@@ -19,7 +19,8 @@ class Api::Area < ActiveResource::Base
     :has_industry,
     :has_other,
     :has_fce,
-    :has_employment
+    :has_employment,
+    :has_merit_order
   ]
 
   def self.find_by_country_memoized(region_or_country)

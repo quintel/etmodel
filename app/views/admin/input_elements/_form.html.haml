@@ -18,10 +18,15 @@
     = f.input :related_converter,
       :hint => 'Optional key of the related converter. Used to show slider info'
     = f.input :comments
+    
+    = f.simple_fields_for :area_dependency do |j|
+      = j.input :dependent_on, :as => :select,
+        :collection => Api::Area::DEPENDABLE_ATTRIBUTES,
+        :hint => "When you dont want to show the input_element for areas which have a certain setting. E.g. dont wanna show Solar CSP in NL? Put this to 'has_solar_csp' and be sure that for NL this value is false in the area data."
 
     = f.simple_fields_for :description do |j|
       = j.input :content_en, :hint => "Extra info which shows up when the ? icon is clicked can be changed here!"
       = j.input :content_nl
     = f.button :submit
-
+  
   = link_to "back", admin_input_elements_path

@@ -31,5 +31,5 @@
       %a.btn-done.next{:href => '#'}= I18n.t("go_to_next")
 
 %script
-  - slide.input_elements.each do |i|
+  - slide.safe_input_elements.each do |i|
     window.input_elements.add(#{i.to_json.html_safe}.input_element);

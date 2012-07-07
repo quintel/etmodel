@@ -59,8 +59,8 @@ class Setting
       :end_year                 => 2050,
       :use_fce                  => false,
       :already_shown            => [],
-      :main_chart               => false,
-      :secondary_chart          => false
+      :main_chart               => nil,
+      :secondary_chart          => nil
     }
   end
   attr_accessor *default_attributes.keys
@@ -82,7 +82,8 @@ class Setting
     self.api_session_id = nil
     self.scenario_id = nil # to go back to a blank slate scenario
 
-    [:use_fce, :network_parts_affected, :already_shown].each do |key|
+    [ :use_fce, :network_parts_affected, :already_shown, :main_chart,
+      :secondary_chart].each do |key|
       self.reset_attribute key
     end
   end

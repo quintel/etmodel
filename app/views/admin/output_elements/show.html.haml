@@ -3,6 +3,9 @@
   (#{@output_element.key})
 
 = link_to 'edit', edit_admin_output_element_path(@output_element)
+|
+= link_to 'delete', [:admin, @output_element], :method => :delete,
+  :confirm => 'Are you sure?'
 
 %h3 Series
 %table.default

@@ -60,7 +60,7 @@ class @WaterfallChartView extends BaseChartView
           tickOptions:
             angle: -90
             showGridline: false
-            fontSize: @defaults.font_size
+            fontSize: '10px'
         y2axis:
           rendererOptions:
             forceTickAt0: true # we always want a tick a 0

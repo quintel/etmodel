@@ -1,10 +1,10 @@
 #page_wrapper
-  %h1
-    = @scenario.title.nil? ? t('scenario.no_title') : @scenario.title
+  %h1= @scenario.title.nil? ? t('scenario.no_title') : @scenario.title
 
-  - unless(@scenario.description.nil?)
-    %em
-      = raw @scenario.description_for_locale(I18n.locale) || @scenario.description
+  - if @scenario.description
+    - localized = @scenario.description_for_locale(I18n.locale)
+    - text = localized.present? ? localized : @scenario.description
+    %em= raw text
 
   %ul
     - if @scenario.created_at

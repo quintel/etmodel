@@ -1,5 +1,6 @@
 :ruby
   country  = Current.setting.area_code
+  country  = country.split('-')[0] if country.include?('-')
   map      = "/assets/layout/#{country}_map.png"
   map_grey = "/assets/layout/#{country}_map_gray.png"
 

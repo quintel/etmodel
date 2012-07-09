@@ -38,3 +38,8 @@ class @Scenario extends Backbone.Model
   url_path: =>
     base_url = App.api_base_url()
     base_url + "/api_scenarios/" + @api_session_id()
+
+  reset: =>
+    @new_session()
+    # Take it easy. TODO: use deferred objects and refactor the js app events
+    setTimeout(App.load_user_values, 1000)

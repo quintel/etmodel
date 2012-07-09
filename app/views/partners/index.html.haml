@@ -12,7 +12,8 @@
 #partners
   - @partners.each do |p|
     .partner_container
-      %a.partner_link{:rel => "partner_#{p.id}", :href => p.link }
+      %a.partner_link{:rel => "partner_#{p.id}", :href => p.link,
+        :target => p.has_local_page? ? nil : '_blank' }
         .header= image_tag p.logo
   .clear
 

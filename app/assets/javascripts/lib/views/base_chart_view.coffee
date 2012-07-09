@@ -5,7 +5,13 @@ class @BaseChartView extends Backbone.View
     "click a.default_chart": "load_default"
 
   initialize_defaults: =>
-    @model.bind('change', @render)
+    @model.bind('change', @render_as_needed)
+
+  render_as_needed: =>
+    if @display_as_table
+      @render_as_table()
+    else
+      @render()
 
   max_value: ->
     sum_present = _.reduce @model.values_present(), @smart_sum

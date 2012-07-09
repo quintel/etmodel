@@ -12,8 +12,7 @@ class @MekkoChartView extends BaseChartView
       group = serie.get('group')
       if group
         if (!series[group]) then series[group] = []
-        val = serie.result_pairs()[0]
-        series[group].push(val)
+        series[group].push(serie.future_value())
     results = _.map series, (sector_values, sector) ->
       return _.map sector_values, (value) ->
         return value

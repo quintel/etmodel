@@ -27,7 +27,9 @@ Etm::Application.routes.draw do
 
   match 'track' => 'track#track', :as => :path
 
-  resources :user_sessions, :users
+  resources :user_sessions
+  resources :users, :except => [:index, :show, :destroy]
+  resource :user, :only => [:edit, :update]
 
   resources :partners, :only => [:show, :index]
 

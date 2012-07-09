@@ -1,6 +1,4 @@
-
 #page_wrapper
-
   %h1
     = @scenario.title.nil? ? t('scenario.no_title') : @scenario.title
 
@@ -9,15 +7,21 @@
       = raw @scenario.description_for_locale(I18n.locale)
 
   %ul
+    - if @scenario.created_at
+      %li
+        %strong #{t('scenario.created')}:
+        = I18n.localize(@scenario.created_at, :format => :long)
     %li
-      %strong= t('scenario.created') + ':'
-      = I18n.localize(@scenario.created_at, :format => :long)
-    %li
-      %strong= t('scenario.area_code') + ':'
+      %strong #{t('scenario.area_code')}:
       = t @scenario.area_code
     %li
-      %strong= t('scenario.end_year') + ':'
-      = t @scenario.end_year
+      %strong #{t('scenario.end_year')}:
+      = @scenario.end_year
+    - if @scenario.description
+      %li
+        %strong #{t 'scenario.description'}:
+        = raw @scenario.description
+
 
   = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button", style: "margin: 40px;"
 

@@ -100,6 +100,7 @@ Etm::Application.routes.draw do
   resources :scenarios, :except => [:edit, :update] do
     post :load, :on => :collection
     get :load, :on => :member
+    get :grid_investment_needed, :on => :collection
   end
 
   resources :output_elements, :only => [:index, :show] do

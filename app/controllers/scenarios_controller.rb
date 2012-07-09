@@ -57,6 +57,11 @@ class ScenariosController < ApplicationController
     redirect_to start_path
   end
 
+  # GET /scenarios/grid_investment_needed
+  def grid_investment_needed
+    render :layout => false
+  end
+
   private
 
     # Finds the scenario from id

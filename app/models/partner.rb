@@ -59,6 +59,11 @@ class Partner < ActiveRecord::Base
   end
 
   def link
-    description && !description.content.blank? ? "/partners/#{name.downcase}" : url
+    has_local_page? ? "/partners/#{name.downcase}" : url
+  end
+
+  # Returns true if we have a local page about the partner
+  def has_local_page?
+    description && description.content.present?
   end
 end

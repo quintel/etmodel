@@ -4,7 +4,7 @@
 
   - unless(@scenario.description.nil?)
     %em
-      = raw @scenario.description_for_locale(I18n.locale)
+      = raw @scenario.description_for_locale(I18n.locale) || @scenario.description
 
   %ul
     - if @scenario.created_at
@@ -17,10 +17,6 @@
     %li
       %strong #{t('scenario.end_year')}:
       = @scenario.end_year
-    - if @scenario.description
-      %li
-        %strong #{t 'scenario.description'}:
-        = raw @scenario.description
 
 
   = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button", style: "margin: 40px;"

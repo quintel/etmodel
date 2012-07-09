@@ -1,0 +1,13 @@
+- parts = params[:parts] ? params[:parts].split(",") : []
+
+#grid_investment_needed_container
+  %h1= t 'grid_investment.header'
+  #image_holder
+    %img{ :src => "/assets/popups/img_elec_network_#{I18n.locale}.jpg" }
+      - parts.each do |part|
+        .locator{:id => "locator_#{part}"}
+          %img{:src => "/assets/popups/network_investment_needed_locator_#{I18n.locale}.png"}
+  = link_to t('grid_investment.more_information'),
+    tab_path(tab: 'costs', sidebar: 'infrastructure'), class: 'no_target'
+  %br
+  %a#disable_peak_load_tracking.no_target{:href => "#"}= t('grid_investment.stop_bugging')

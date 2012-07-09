@@ -43,10 +43,6 @@ protected
 
 public
 
-  def grid_investment_needed
-    render :layout => false
-  end
-
   def intro
   end
 

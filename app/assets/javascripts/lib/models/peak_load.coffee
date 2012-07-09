@@ -46,7 +46,7 @@ class @PeakLoad extends Backbone.Model
     $.fancybox
       width   : 960
       padding : 30
-      href    : '/pages/grid_investment_needed?parts=' + parts
+      href    : '/scenarios/grid_investment_needed?parts=' + parts
       type    : 'ajax'
       onComplete: -> $.fancybox.resize()
 

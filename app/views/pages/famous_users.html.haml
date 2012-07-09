@@ -1,6 +1,6 @@
 = back_to_model_link
 #page_wrapper
-  %h1 t("header.famous_users_of_etm")
+  %h1= t("header.famous_users_of_etm")
   %article#famous_users
     - @users.each do |key, user|
       - title = I18n.locale == :nl ? user["organization"]["function_nl"] : user["organization"]["function_en"]

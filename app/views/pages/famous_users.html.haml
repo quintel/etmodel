@@ -3,11 +3,13 @@
   %h1 t("header.famous_users_of_etm")
   %article#famous_users
     - @users.each do |key, user|
+      - title = I18n.locale == :nl ? user["organization"]["function_nl"] : user["organization"]["function_en"]
       %div.user{id: key}
         %div.user_shot
           = link_to image_tag("famous_users/#{key}.jpg"),
             scenario_path(user['scenario_id']) if user['scenario_id']
-        %h3 
+        %h3
           %a.name{href:'#'}= user["name"]
+          %a.title{href: '#'}= title
           %a.organization{href:'#'}= user["organization"]["name"]
 = back_to_model_link

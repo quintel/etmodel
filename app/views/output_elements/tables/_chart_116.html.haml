@@ -6,7 +6,7 @@
       %th Merit order position
       %th Operating costs
       %th Available capacity
-      %th Full load hours, future
+      %th Full load hours, future*
       %th Full load hours, present
     %tr
       %th
@@ -15,6 +15,9 @@
       %th MW
       %th Hr
       %th Hr
+  %tfoot
+    %tr
+      %td{:colspan => 6} * Calculated full load hour values not used in model
   %tbody
     :ruby
       items = {
@@ -31,10 +34,9 @@
         :gas_conv => "Gas conventional",
         :gas_turbine => "Gas turbine",
         :oil_plant => "Oil plant",
-        :co_firing_coal => "Co-firing coal plant",
-        :wind_turbines => "Wind turbines",
+        :must_run => "Must run CHPs",
         :solar_pv => "Solar PV panels",
-        :must_run => "Must run CHPs"
+        :wind_turbines => "Wind turbines"
       }
     - items.each_pair do |key, label|
       %tr

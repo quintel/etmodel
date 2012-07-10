@@ -1,14 +1,12 @@
 class @BaseChartView extends Backbone.View
   events:
-    "click a.table_format" : "toggle_format"
-    "click a.chart_format" : "toggle_format"
     "click a.default_chart": "load_default"
 
   initialize_defaults: =>
     @model.bind('change', @render_as_needed)
 
   render_as_needed: =>
-    if @display_as_table
+    if @display_as_table && @can_be_shown_as_table()
       @render_as_table()
     else
       @render()
@@ -83,10 +81,7 @@ class @BaseChartView extends Backbone.View
 
   toggle_format: =>
     @display_as_table = !@display_as_table
-    if @can_be_shown_as_table() && @display_as_table
-      @render_as_table()
-    else
-      @render()
+    @render_as_needed()
     @$el.find("a.table_format").toggle(!@display_as_table)
     @$el.find("a.chart_format").toggle(@display_as_table)
 
@@ -109,3 +104,6 @@ class @BaseChartView extends Backbone.View
 
   # D3 charts override this method
   supported_in_current_browser: -> true
+
+  # Override as needed
+  height: => 300

@@ -145,6 +145,10 @@ class @Chart extends Backbone.Model
     else
       true
 
+  delete: =>
+    @view.unbind()
+    @delete_gqueries()
+
 class @ChartList extends Backbone.Collection
   model : Chart
 
@@ -197,8 +201,8 @@ class @ChartList extends Backbone.Collection
 
         # Remember where the chart is
         @chart_holders[container_id] = new_chart
+        old_chart.delete() if old_chart
         # Deal with the collection object
-        old_chart.delete_gqueries() if old_chart
         @remove old_chart
         @add new_chart
         # Pass the gqueries to the chart
@@ -237,8 +241,9 @@ class @ChartList extends Backbone.Collection
     @remove_pin 'main_chart'
     @load(@current_default_chart, 'main_chart')
 
-  # TODO: Most of this stuff should be moved to a backbone view
-  #
+  # TODO: Most of this stuff should be moved to a backbone view. Unfortunately
+  # there are some issues with the event bindings leaving zombies around:
+  # http://lostechies.com/derickbailey/2011/09/15/zombies-run-managing-page-transitions-in-backbone-apps/
   setup_callbacks: ->
     # chart selection pop-up
     $(document).on "click", "a.pick_charts", (e) =>
@@ -269,5 +274,10 @@ class @ChartList extends Backbone.Collection
       # Just show the chart holder
       $(".chart_holder.hidden").removeClass('.hidden').show()
       $(e.target).remove()
+
+    $(document).on 'click', 'a.table_format, a.chart_format', (e) =>
+      e.preventDefault()
+      holder_id = $(e.target).parents(".chart_holder").data('holder_id')
+      @chart_holders[holder_id].view.toggle_format()
 
 window.charts = new ChartList()

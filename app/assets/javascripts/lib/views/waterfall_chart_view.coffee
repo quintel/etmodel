@@ -1,7 +1,6 @@
 class @WaterfallChartView extends BaseChartView
   initialize: ->
     @initialize_defaults()
-    @HEIGHT = '460px'
 
   render: =>
     @clear_container()

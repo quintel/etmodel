@@ -8,7 +8,7 @@ D3.sankey =
       #{id: 'non_renewable_waste',         column: 0},
       {id: 'geo_solar_wind_water_ambient', column: 0,  label: "renewable", color: '#2ca02c'},
       {id: 'natural_gas',                  column: 0, label: "gas", color: '#7f7f7f'},
-      {id: 'nuclear',                      column: 0, color: '#ff7f0e'},
+      {id: 'nuclear',                      column: 0, label: "uranium", color: '#ff7f0e'},
       {id: 'biomass_products',             column: 0, label: "biomass", color: '#2ca02c'},
       {id: 'import',                       column: 0, label: "electricity import", color: '#1f77b4'},
 

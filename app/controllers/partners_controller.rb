@@ -6,8 +6,9 @@ class PartnersController < ApplicationController
   end
 
   def index
-    @country = Current.setting.area_code
-    @all_partners = Partner.country(@country).unique.sort_by{Kernel.rand}
+    # regions should use country partners
+    country = Current.setting.country
+    @all_partners = Partner.country(country).unique.sort_by{Kernel.rand}
     @partner_types = ['general']
     @partner_types << 'knowledge' if @all_partners.map(&:partner_type).include?('knowledge')
     @partner_types << 'education' if @all_partners.map(&:partner_type).include?('education')

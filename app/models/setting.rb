@@ -38,7 +38,7 @@ class Setting
       :scenario_id => scenario.id,
       :use_fce => scenario.use_fce,
       :end_year => scenario.end_year,
-      :area_code => scenario.area_code ? scenario.area_code : scenario.country || scenario.region
+      :area_code => scenario.area_code
     }
     new(attrs)
   end
@@ -117,5 +117,13 @@ class Setting
   # Returns the ActiveResource object
   def area
     Api::Area.find_by_country_memoized(area_code)
+  end
+
+  # returns the country part of the area_code
+  # nl     => nl
+  # nl-bar => nl
+  def country
+    return nil unless area_code
+    area_code.split('-')[0]
   end
 end

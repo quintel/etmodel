@@ -25,13 +25,11 @@
         - show_or_not = session["block_#{block.id}"]
         - show_or_not ||= block.show_at_first ? 'visible' : 'invisible'
         .block_container{:class => show_or_not, :id => "block_container_#{block.id}", :data => {:block_id => block.id}}
-          .block{:id => "block_#{block.id}"}
+          .block{:id => "block_#{block.id}",
+            :data => {:title => t("output_element_series.#{block.label}"),
+              :description => block.description.short_content,
+              :description_id => block.description.andand.id}}
             .header{:class => block.group.downcase}= t("output_element_series.#{block.label}")
-            .content
-              %h4= t("output_element_series.#{block.label}")
-              %p= block.description.short_content
-              = link_to t('output_elements.block_chart.read_more'),
-                "/descriptions/#{block.description.andand.id}", :class => 'fancybox'
           .balloon-tip
 
 %ul#block_list

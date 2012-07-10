@@ -196,7 +196,7 @@ class @ChartList extends Backbone.Collection
           if alternate
             @load alternate, container_id
           else
-            alert "Sorry! This chart type is not supported by your browser :("
+            alert I18n.t('output_elements.common.old_browser')
           return false
 
         # Remember where the chart is

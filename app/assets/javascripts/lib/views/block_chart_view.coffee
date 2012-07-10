@@ -137,6 +137,7 @@ class @BlockChartView extends BaseChartView
       block_left   = ((block[2] / max_invest) * canvas_width)  || 0
 
       # IE doesn't like animating from "auto" to a percentage.
+      # remove a few pixels: the balloon tip has an offset
       $("#block_container_#{ block[0] }").animate
-        bottom: "#{ block_bottom }px"
-        left:   "#{ block_left }px"
+        bottom: "#{ block_bottom - 6}px"
+        left:   "#{ block_left - 6}px"

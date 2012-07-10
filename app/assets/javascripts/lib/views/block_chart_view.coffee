@@ -49,7 +49,7 @@ class @BlockChartView extends BaseChartView
           url = "/descriptions/#{item.attr('data-description_id')}"
           "#{item.attr('data-description')}
           <br/><br/>
-          <a href='#{url}' class='fancybox'>#{I18n.t 'input_elements.common.read_more'}</a>"
+          <a href='#{url}' class='fancybox'>#{I18n.t 'output_elements.common.read_more'}</a>"
       hide:
         fixed: true
         delay: 300

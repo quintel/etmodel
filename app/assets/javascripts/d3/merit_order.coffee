@@ -1,23 +1,23 @@
 D3.merit_order =
   data:
     [
-      {key: 'central_gas_chp'},
+      {key: 'central_gas_chp', color: '#d9d9d9'},
       # {key: 'co_firing_coal'},
-      {key: 'coal_chp'},
-      {key: 'coal_conv'},
-      {key: 'coal_igcc'},
-      {key: 'coal_igcc_ccs'},
-      {key: 'coal_pwd'},
-      {key: 'coal_pwd_ccs'},
-      {key: 'gas_ccgt'},
-      {key: 'gas_ccgt_ccs'},
-      {key: 'gas_conv'},
-      {key: 'gas_turbine'},
-      {key: 'must_run'}, # something's broken here
-      {key: 'nuclear_iii'},
-      {key: 'oil_plant'},
-      {key: 'solar_pv'},
-      {key: 'wind_turbines'},
+      {key: 'coal_chp',        color: '#737373'},
+      {key: 'coal_conv',       color: '#000000'},
+      {key: 'coal_igcc',       color: '#525252'},
+      {key: 'coal_igcc_ccs',   color: '#9ebcda'},
+      {key: 'coal_pwd',        color: '#252525'},
+      {key: 'coal_pwd_ccs',    color: '#8c96c6'},
+      {key: 'gas_ccgt',        color: '#f0f0f0'},
+      {key: 'gas_ccgt_ccs',    color: '#bfd3e6'},
+      {key: 'gas_conv',        color: '#969696'},
+      {key: 'gas_turbine',     color: '#bdbdbd'},
+      {key: 'must_run',        color: '#a1d99b'},
+      {key: 'nuclear_iii',     color: '#fd8d3c'},
+      {key: 'oil_plant',       color: '#7f2704'},
+      {key: 'solar_pv',        color: '#fed976'},
+      {key: 'wind_turbines',   color: '#4292c6'}
     ]
 
   Node: class extends Backbone.Model
@@ -49,7 +49,6 @@ D3.merit_order =
       # method raises (on IE8) an exception before we have a chance to notify
       # the user that something went wrong.
       try
-        @color = d3.scale.category20c()
         D3.merit_order.series = @model.series
         @nodes = new D3.merit_order.NodeList(D3.merit_order.data)
       @initialize_defaults()
@@ -94,7 +93,6 @@ D3.merit_order =
               attr("text-anchor", "middle").
               attr("class", "axis_label")
 
-
       # nodes
       @svg.selectAll('rect.merit_order_node').
         data(@nodes.models, (d) -> d.get('key')).
@@ -102,20 +100,19 @@ D3.merit_order =
         append("svg:rect").
         attr("data-rel", (d) -> d.get('key')).
         attr("class", "merit_order_node").
-        attr("fill", (d, i) => @color(i)).
-        attr("data-original-color", (d, i) => @color(i)).
-        style("stroke", (d, i) => d3.rgb(@color(i)).darker(1)).
+        attr("fill", (d) => d.get 'color').
+        style("stroke", (d) => d3.rgb(d.get 'color').darker(1)).
         attr("y", (d) => @height - @y(d.value_y()) - .5).
         attr("x", (d, i) -> i * 30).
         attr("height", (d) => @y d.value_y()).
         attr("width", (d) => @x d.value_x()).
         on("mouseover", ->
           item = d3.select(this)
-          item.transition().attr("fill", -> d3.rgb(item.attr("data-original-color")).brighter(1))
+          item.transition().attr("fill", (d) -> d3.rgb(d.get("color")).brighter(1))
         ).
         on("mouseout", ->
           item = d3.select(this)
-          item.transition().attr("fill", -> item.attr("data-original-color"))
+          item.transition().attr("fill", (d) -> d.get("color"))
         )
 
       $('rect.merit_order_node').qtip
@@ -126,7 +123,7 @@ D3.merit_order =
           event: 'mouseout'  # silly IE
         position:
           my: 'bottom right'
-          at: 'top right'
+          at: 'top center'
 
       # add legend
       legends = @svg.selectAll("svg.legend").
@@ -142,7 +139,7 @@ D3.merit_order =
       legends.append("svg:rect").
         attr("width", 10).
         attr("height", 10).
-        attr("fill", (d, i) => @color(i))
+        attr("fill", (d) => d.get 'color')
       legends.append("svg:text").
         text((d) -> I18n.t "output_element_series.#{d.get('key')}").
         attr("x", 15).

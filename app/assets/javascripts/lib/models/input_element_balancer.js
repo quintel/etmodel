@@ -1,6 +1,9 @@
 (function (window) {
   'use strict';
 
+  // Input groups which require all the sliders to be sent to ETengine.
+  var SEND_ENTIRE_GROUP = [ 'coal_lce', 'gas_lce', 'nuclear_lce' ];
+
   /**
    * Creates a balancer instance.
    *
@@ -293,7 +296,17 @@
    * this.subordinates, and calling 'method' on the subordinates.
    */
   Balancer.prototype.__finish = function (method) {
+    var groupName = this.views[0].model.get('share_group'),
+        i, length;
+
     this.__runOnSubordinates(method);
+
+    if (method === 'resolve' && _.include(SEND_ENTIRE_GROUP, groupName)) {
+      // ETengine wants the whole group to be marked dirty.
+      for (i = 0, length = this.views.length; i < length; i++) {
+        this.views[i].model.markDirty();
+      }
+    }
 
     this.masterId     = null;
     this.subordinates = null;

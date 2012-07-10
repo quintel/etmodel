@@ -6,7 +6,7 @@
       %th Merit order position
       %th Operating costs
       %th Available capacity
-      %th Full load hours, future*
+      %th Full load hours, future *
       %th Full load hours, present
     %tr
       %th
@@ -17,25 +17,28 @@
       %th Hr
   %tfoot
     %tr
-      %td{:colspan => 6} * Calculated full load hour values not used in model
+      %td{:colspan => 6}
+        * Calculated full load hour values not used in model
+        %br
+        ** Coal ultra supercritical possibly includes wood pellets co-firing and biocoal
   %tbody
     :ruby
       items = {
         :nuclear_iii => "Nuclear 3rd Gen",
         :coal_igcc => "Coal IGCC",
-        :coal_pwd => "Coal ultra supercritical",
+        :coal_pwd => "Coal ultra supercritical **",
         :coal_chp => "Coal&nbsp;ultra supercritical&nbsp;CHP",
-        :coal_conv => "Coal conventional",
+        :coal_conv => "Coal supercritical",
         :coal_pwd_ccs => "Coal&nbsp;ultra supercritical&nbsp;CCS",
         :coal_igcc_ccs => "Coal IGCC CCS",
         :gas_ccgt => "Gas CCGT",
         :gas_ccgt_ccs => "Gas CCGT CCS",
         :central_gas_chp => "Gas CCGT CHP",
-        :gas_conv => "Gas conventional",
+        :gas_conv => "Gas steam",
         :gas_turbine => "Gas turbine",
-        :oil_plant => "Oil plant",
+        :oil_plant => "Oil ultra supercritical",
         :must_run => "Must run CHPs",
-        :solar_pv => "Solar PV panels",
+        :solar_pv => "Solar PV",
         :wind_turbines => "Wind turbines"
       }
     - items.each_pair do |key, label|

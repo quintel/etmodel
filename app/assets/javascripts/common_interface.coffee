@@ -117,6 +117,9 @@ $ ->
   # Tooltips
   $("a.tooltip").qtip
     content: -> $(this).attr('title')
+    position:
+      my: 'bottom right'
+      at: 'top center'
 
 # This class holds all the methods that were previously in the global scope
 #

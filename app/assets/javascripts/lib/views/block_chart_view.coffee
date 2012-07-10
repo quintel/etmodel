@@ -1,7 +1,6 @@
 class @BlockChartView extends BaseChartView
   initialize: ->
     @initialize_defaults()
-    @current_z_index = 5
 
   render: =>
     unless @already_on_screen()
@@ -27,8 +26,6 @@ class @BlockChartView extends BaseChartView
   setup_callbacks: =>
     $('#block_list li').mouseenter -> $(this).find("ul").show(1)
     $('#block_list li').mouseleave -> $(this).find("ul").hide(1)
-    $('.block_container').mouseenter @expand_block
-    $('.block_container').mouseleave @collapse_block
     $('.show_hide_block').click (e) =>
       block_id = $(e.target).attr('data-block_id')
       @toggle_block(block_id)
@@ -43,6 +40,22 @@ class @BlockChartView extends BaseChartView
         for item in $(e.target).parent().find('.show_hide_block')
           block_id = $(item).attr('data-block_id')
           @hide_block(block_id)
+    $(".block").qtip
+      content:
+        title: ->
+          $(this).attr('data-title')
+        text: ->
+          item = $(this)
+          url = "/descriptions/#{item.attr('data-description_id')}"
+          "#{item.attr('data-description')}
+          <br/><br/>
+          <a href='#{url}' class='fancybox'>#{I18n.t 'input_elements.common.read_more'}</a>"
+      hide:
+        fixed: true
+        delay: 300
+      position:
+        my: 'bottom center'
+        at: 'top center'
 
   setup_checkboxes: ->
     for item in $(".block_list_checkbox")
@@ -64,25 +77,6 @@ class @BlockChartView extends BaseChartView
       $(this).parent().find(':checkbox').attr('checked', false)
       checkbox.attr('checked', false)
 
-  # on mouseover, expands the block
-  expand_block: (e) =>
-    item = $(e.target).parent('.block_container')
-    item.addClass('hover')
-    item.css({"z-index": @current_z_index}).find(".content").stop().animate({width: '150px', height: '100px'})
-    item.find(".header").stop().animate({width: '150px'})
-    $(".block_container").stop().not(".hover")
-    $("#tooltip").stop()
-    @current_z_index++
-
-  # when the mouse leaves a block
-  collapse_block: (e) ->
-    item = $(e.target).parent('.block_container')
-    item.removeClass('hover')
-    item.find('.content').stop().animate({width:'75px', height: '0px'})
-    item.find('.header').stop().animate({width:'75px'})
-    $(".block_container").stop()
-    $("#tooltip").stop()
-
   # when the user selects a checkbox
   show_block: (block_id) =>
     $('#canvas').find('#block_container_'+block_id).removeClass('invisible').addClass('visible').css({'z-index':@current_z_index})
@@ -90,7 +84,6 @@ class @BlockChartView extends BaseChartView
     $.ajax
        url: "/output_elements/visible/block_"+block_id
        method: 'post'
-    @current_z_index++
     @update_block_charts()
 
   # when the user deselects a checkbox

@@ -36,6 +36,8 @@
   #scripts
     -# stick the footer at the bottom of the page if we're on an iPad/iPhone due to viewport/page bugs in mobile webkit
     %script
+      - if admin?
+        etm_js_debug = true;
       if (_.include(['iPad', 'iPhone', 'iPod'], navigator.platform)) { $("#footer").css("position", "static"); };
 
       I18n.defaultLocale = "#{I18n.default_locale}";
@@ -44,7 +46,5 @@
       App.settings.set(#{Current.setting.to_json.html_safe}, {silent : true});
       App.bootstrap();
 
-      - if admin?
-        etm_js_debug = true;
-        console.log('Scenario URL: #{scenario_in_etengine_url}');
+
     = yield :scripts

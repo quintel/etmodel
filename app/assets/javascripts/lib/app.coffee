@@ -39,8 +39,12 @@ class @AppView extends Backbone.View
       # after completing new_session() App.bootstrap is called again and will
       # thus continue the else part
     else
+      @etm_debug "Scenario URL: #{@scenario_url()}"
       @load_user_values()
       @call_api()
+
+  scenario_url: =>
+    "#{globals.api_url.replace('api/v2', 'scenarios')}/#{@scenario.api_session_id()}"
 
   setup_fce: =>
     @update_fce_checkboxes()
@@ -145,7 +149,8 @@ class @AppView extends Backbone.View
       $(".chart_holder").busyBox('close')
       $("#constraints .loading").hide()
 
-  etm_debug: (t) -> console.log(t) if window.etm_js_debug
+  etm_debug: (t) ->
+    console.log(t) if window.etm_js_debug
 
   # Use CORS when possible
   api_base_url: ->

@@ -12,22 +12,6 @@ class @Scenario extends Backbone.Model
       use_fce: s.get('use_fce')
       source: 'ETM'
 
-  new_session: ->
-    url = App.api_base_url() + "/api_scenarios/new.json"
-    $.ajax
-      url: url
-      dataType: 'json'
-      data:
-        settings : this.api_attributes()
-      success: (data) ->
-        App.settings.set({'api_session_id' : data.scenario.id})
-        App.bootstrap()
-      error: (jqxhr, status, error) =>
-        if confirm "Something went wrong while creating the session. Try again?"
-          @new_session()
-        else
-          window.location.href = '/'
-
   user_values_url: =>
     @url_path() + "/user_values.json"
 

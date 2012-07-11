@@ -46,6 +46,5 @@
   = javascript_include_tag 'etm'
   :javascript
     App.settings = new Setting(#{Current.setting.to_json.html_safe});
-    App.ensure_scenario_id();
     charts.load(#{@output_element.id}, "output_element_#{@output_element.id}")
 

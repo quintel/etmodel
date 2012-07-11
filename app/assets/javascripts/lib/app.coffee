@@ -34,14 +34,35 @@ class @AppView extends Backbone.View
     # DEBT Add check, so that boostrap is only called once.
     if @settings.get('area_code') == 'nl'
       @peak_load = new PeakLoad()
-    if @scenario.api_session_id() == null
-      @scenario.new_session()
-      # after completing new_session() App.bootstrap is called again and will
-      # thus continue the else part
-    else
+    if @scenario.api_session_id()
       @etm_debug "Scenario URL: #{@scenario_url()}"
       @load_user_values()
       @call_api()
+
+  # deferred-based scenario_id request. Returns a deferred object
+  scenario_id: =>
+    return @deferred_scenario_id if @deferred_scenario_id
+    # scenario_id available?
+    if id = App.settings.get('api_session_id')
+      # encapsulate in a deferred object, so we can attach callbacks
+      @deferred_scenario_id = $.Deferred().resolve(id)
+      return @deferred_scenario_id
+
+    # or fetch a new one?
+    @deferred_scenario_id = $.ajax(
+      url: "#{@api_base_url()}/api_scenarios/new.json"
+      dataType: 'json'
+      data:
+        settings : @scenario.api_attributes()
+      ).pipe (d) -> d.scenario.id
+    # When we first get the scenario id let's save it locally
+    @deferred_scenario_id.done (id) =>
+      @settings.set
+        api_session_id: id
+      # And bootstrap the rest of the application
+      @bootstrap()
+    # return the deferred object, so we can attach callbacks as needed
+    @deferred_scenario_id
 
   scenario_url: =>
     "#{globals.api_url.replace('api/v2', 'scenarios')}/#{@scenario.api_session_id()}"
@@ -55,38 +76,36 @@ class @AppView extends Backbone.View
     # update the use_fce checkbox inside descriptions as needed on page load
     $(".inline_use_fce").attr('checked', @settings.get('use_fce'))
 
-  # Load User values for Sliders
-  load_user_values: => @input_elements.load_user_values()
-
-  ensure_scenario_id: =>
-    if @scenario.api_session_id() == null
-      console.log("No scenario!")
-      @scenario.new_session()
+  # Load User values for Sliders. We need a scenario id first!
+  load_user_values: =>
+    @scenario_id().done =>
+      @input_elements.load_user_values()
 
   call_api: (input_params) =>
-    return false unless @scenario.api_session_id()
-    url = @scenario.query_url(input_params)
-    keys = window.gqueries.keys()
-    # console.log "Gqueries count: #{keys.length}"
-    keys_ids = _.select(keys, (key) -> !key.match(/\(/))
-    keys_string = _.select(keys, (key) -> key.match(/\(/))
-    params =
-      r: keys_ids.join(';')
-      result: keys_string
-      use_fce: App.settings.get('use_fce')
+    # wait for a scenario_id
+    @scenario_id().done =>
+      url = @scenario.query_url(input_params)
+      keys = window.gqueries.keys()
+      # console.log "Gqueries count: #{keys.length}"
+      keys_ids = _.select(keys, (key) -> !key.match(/\(/))
+      keys_string = _.select(keys, (key) -> key.match(/\(/))
+      params =
+        r: keys_ids.join(';')
+        result: keys_string
+        use_fce: App.settings.get('use_fce')
 
-    @showLoading()
-    @api_call_stack.push('call_api')
-    $.ajaxQueue
-      url: url
-      data: params
-      type: 'PUT'
-      success: @handle_api_result
-      error: (xOptions, textStatus) =>
-        console.log("Something went wrong: " + textStatus)
-        @handle_timeout() if textStatus == 'timeout'
-        @hideLoading()
-      timeout: 10000
+      @showLoading()
+      @api_call_stack.push('call_api')
+      $.ajaxQueue
+        url: url
+        data: params
+        type: 'PUT'
+        success: @handle_api_result
+        error: (xOptions, textStatus) =>
+          console.log("Something went wrong: " + textStatus)
+          @handle_timeout() if textStatus == 'timeout'
+          @hideLoading()
+        timeout: 10000
 
   handle_timeout: ->
     r = confirm "Your internet connection seems to be very slow. The ETM is

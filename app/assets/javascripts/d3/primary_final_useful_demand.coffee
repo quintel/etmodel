@@ -3,7 +3,7 @@ D3.primary_final_useful_demand =
     nodes: [
 
       {id: 'coal_and_derivatives',          column: 0, label: "coal", color: 'black'},
-      {id: 'oil_and_derivatives',           column: 0, label: "#8c564b"},
+      {id: 'oil_and_derivatives',           column: 0, label: "oil",  color: "#8c564b"},
       #{id: 'useful_demand',                column: 0},
       #{id: 'non_renewable_waste',          column: 0},
       #{id: 'geo_solar_wind_water_ambient', column: 0, color: '#2ca02c'},
@@ -265,11 +265,14 @@ D3.primary_final_useful_demand =
       @nodes = @draw_nodes()
       $("g.node").qtip
         content:
-          text: -> $(this).attr('title')
+          text: -> $(this).attr('data-tooltip')
         show:
           event: 'mouseover' # silly IE
         hide:
           event: 'mouseout'  # silly IE
+        position:
+          my: 'bottom right'
+          at: 'top center'
 
 
     draw_links: =>
@@ -375,7 +378,7 @@ D3.primary_final_useful_demand =
 
       # update the node label
       @nodes.data(@node_list.models, (d) -> d.get('id')).
-        attr("title", (d) => Metric.autoscale_value d.value(), 'PJ', 2)
+        attr("data-tooltip", (d) => Metric.autoscale_value d.value(), 'PJ', 2)
 
       # move the rectangles
       @nodes.selectAll("rect").

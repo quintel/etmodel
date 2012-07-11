@@ -1,5 +1,6 @@
 //= require underscore
 //= require jquery
+//= require jquery_ujs
 //= require jquery.busybox
 //= require jqplot
 

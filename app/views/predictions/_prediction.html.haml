@@ -64,7 +64,9 @@
   #comments_container
     = render @prediction.comments
 
-  = simple_form_for @comment, :url => comment_prediction_path(@prediction), :remote => true do |f|
+  = simple_form_for @comment,
+    :url => comment_prediction_path(@prediction),
+    :remote => true do |f|
     %h4= t('prediction.new_comment')
     - unless current_user
       = f.input :email

@@ -246,7 +246,16 @@ $slider-box-height: 22px
         @include box-shadow(inset 0 3px 6px #4c76a1)
 
 // Disabled slider image for IE.
+
 html.no-opacity .quinn.disabled
   .bar .left, .bar .main, .bar .right, .delta-bar .left, .delta-bar .main,
   .delta-bar .right, .handle, .reset, .minus, .plus, .help
     background-image: url(/assets/slider/ie-disabled.png)
+
+// HiDPI slider buttons.
+
+@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)
+  .new-input-slider
+    .reset, .decrease, .increase, .show-info
+      background-image: url(/assets/slider/buttons-hidpi.png)
+      background-size: 139px 108px

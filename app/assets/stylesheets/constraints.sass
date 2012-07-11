@@ -94,6 +94,22 @@
     &:active
       background-color: #5586bc
 
+@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)
+  #constraints_container #constraints
+    background-image: url(/assets/layout/divider-01-hidpi.png)
+    background-size: 13px 5px
+
+    .constraint
+      background-image: url(/assets/layout/separator-02-hidpi.png)
+      background-size: 5px 10px
+
+      &.first
+        background: none
+
+    #dashboard_change
+      background-image: url(/assets/layout/change_dashboard_button-hidpi.png)
+      background-size: 28px 45px
+
 @media screen and (max-width: 960px)
   #constraints_container #constraints .constraint
     .header

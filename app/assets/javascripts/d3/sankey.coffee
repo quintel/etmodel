@@ -259,11 +259,14 @@ D3.sankey =
       @nodes = @draw_nodes()
       $("g.node").qtip
         content:
-          text: -> $(this).attr('title')
+          text: -> $(this).attr('data-tooltip')
         show:
           event: 'mouseover' # silly IE
         hide:
           event: 'mouseout'  # silly IE
+        position:
+          my: 'bottom right'
+          at: 'top center'
 
 
     draw_links: =>
@@ -369,7 +372,7 @@ D3.sankey =
 
       # update the node label
       @nodes.data(@node_list.models, (d) -> d.get('id')).
-        attr("title", (d) => Metric.autoscale_value d.value(), 'PJ', 2)
+        attr("data-tooltip", (d) => Metric.autoscale_value d.value(), 'PJ', 2)
 
       # move the rectangles
       @nodes.selectAll("rect").

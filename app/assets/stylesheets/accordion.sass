@@ -29,12 +29,7 @@
         overflow: hidden
         height: 1%
 
-      a.slide_header:hover
-        background: #dfe8f3 url(/assets/layout/bg-column-c-a-hover.gif) no-repeat
-
-      .selected a
-        background: #dfe8f3 url(/assets/layout/bg-column-c-a-hover.gif) no-repeat
-      .ui-state-active a
+      a.slide_header:hover, .selected a, .ui-state-active a
         background: #dfe8f3 url(/assets/layout/bg-column-c-a-hover.gif) no-repeat
 
   .accordion
@@ -156,3 +151,19 @@
       a.icon
         background-image : url(/assets/layout/ico-reset.gif)
 
+// HiDPI Accordion Images.
+
+@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)
+  #accordion_wrapper
+    .valuees span.subheader_arrow
+      background-image: url(/assets/layout/grey_triangle_down-hidpi.png)
+      background-size: 30px 6px
+
+    li
+      a.slide_header
+        background-image: url(/assets/layout/bg-column-c-a-hidpi.png)
+        background-size: 23px 30px
+
+      a.slide_header:hover, .selected a, .ui-state-active a
+        background-image: url(/assets/layout/bg-column-c-a-hover-hidpi.png)
+        background-size: 23px 30px

@@ -11,6 +11,8 @@
 .quinn .delta-bar .left, .quinn .delta-bar .main, .quinn
 .delta-bar .right, .quinn .handle,
 .quinn .reset, .quinn .minus, .quinn .plus, .quinn .help {
+  /* If you change the image URL, be sure to also change the URL for the
+   * HiDPI sprite at the bottom of this CSS file. */
   background-image: url(images/default.png);
   background-repeat: no-repeat;
 }
@@ -173,4 +175,25 @@
 
 .quinn.multiple .handle:focus {
   background-position: -100px -60px;
+}
+
+/**
+ * HiDPI sprite
+ * ------------
+ */
+
+@media only screen and (-moz-min-device-pixel-ratio: 1.5),
+       only screen and (-o-min-device-pixel-ratio: 3/2),
+       only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-devicepixel-ratio: 1.5),
+       only screen and (min-resolution: 1.5dppx) {
+
+  .quinn .bar .left, .quinn .bar .main, .quinn .bar .right,
+  .quinn .delta-bar .left, .quinn .delta-bar .main, .quinn
+  .delta-bar .right, .quinn .handle,
+  .quinn .reset, .quinn .minus, .quinn .plus, .quinn .help {
+    background-image: url(images/default-hidpi.png);
+    background-size: 130px 250px;
+  }
+
 }

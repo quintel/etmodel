@@ -34,13 +34,13 @@ Quinn was developed by [~antw][antw] as part of Quintel Intelligence's
 Downloads
 ---------
 
-[Everything (1.0.1)][tarball]
+[Everything (1.0.2)][tarball]
 :   Tarball containing JS, CSS, and images
 
-[Development Version (1.0.1)][development-js]
+[Development Version (1.0.2)][development-js]
 :   31.8kb, JS only, Uncompressed with comments
 
-[Production Version (1.0.1)][production-js]
+[Production Version (1.0.2)][production-js]
 :   2.6kb, JS only, Minified and Gzipped
 
 Table of Contents
@@ -339,6 +339,12 @@ all it takes. In some cases, you may need to alter the CSS. For example:
 History
 -------
 
+#### 1.0.2 _July 11th, 2012_
+
+* Added a HiDPI "Retina" sprite. If you wish to use it, be sure to update
+  not only your copy of the Quinn JS, but also the CSS file and new image
+  from the "images" directory.
+
 #### 1.0.1 _May 10th, 2012_
 
 * Added a `strict` option which prevents the initial value being snapped
@@ -525,7 +531,7 @@ and Internet Explorer are not yet complete.
 [easing]:         http://gsgd.co.uk/sandbox/jquery/easing
 [style-change]:   https://github.com/antw/quinn/commit/ea29f2f
 
-[tarball]:        https://github.com/antw/quinn/tarball/v1.0.1
+[tarball]:        https://github.com/antw/quinn/tarball/v1.0.2
 [development-js]: http://antw.github.com/quinn/jquery.quinn.js
 [production-js]:  http://antw.github.com/quinn/jquery.quinn.min.js
 

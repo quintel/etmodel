@@ -5,3 +5,6 @@ if Rails.env.development?
     :port    => 2525
   }
 end
+
+# Postfix fails on production without this
+ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false

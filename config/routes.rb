@@ -135,7 +135,7 @@ Etm::Application.routes.draw do
   match '/careers'                      => 'pages#careers',     :as => :careers
   match '/sitemap'                      => 'pages#sitemap',     :as => :sitemap
   match '/information'                  => 'pages#information', :as => :information
-  match '/bugs' => 'pages#bugs', :as => :bugs
+  match '/known_issues'                 => 'pages#bugs',        :as => :bugs
   match '/set_locale(/:locale)' => 'pages#set_locale', :as => :set_locale
 
   match '/pages/flush_cache' => 'pages#flush_cache'

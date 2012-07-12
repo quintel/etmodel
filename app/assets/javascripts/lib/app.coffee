@@ -14,12 +14,11 @@ class @AppView extends Backbone.View
     @input_elements.bind("change", @handleInputElementsUpdate)
 
     @settings = new Setting() # At this point settings is empty!!
-    @settings.set
+    @settings.set({
       api_session_id: globals.api_session_id
+      }, {silent: true})
 
     @scenario = new Scenario()
-    # initialize later in bootstrap, because we need to know what country it is
-    @peak_load = null
 
   # At this point we have all the settings initialized.
   bootstrap: =>
@@ -34,16 +33,14 @@ class @AppView extends Backbone.View
     # DEBT Add check, so that boostrap is only called once.
     if @settings.get('area_code') == 'nl'
       @peak_load = new PeakLoad()
-    if @scenario.api_session_id()
-      @etm_debug "Scenario URL: #{@scenario_url()}"
-      @load_user_values()
-      @call_api()
+    @load_user_values()
 
   # deferred-based scenario_id request. Returns a deferred object
   scenario_id: =>
     return @deferred_scenario_id if @deferred_scenario_id
     # scenario_id available?
     if id = App.settings.get('api_session_id')
+      @etm_debug "Scenario URL: #{@scenario_url()}"
       # encapsulate in a deferred object, so we can attach callbacks
       @deferred_scenario_id = $.Deferred().resolve(id)
       return @deferred_scenario_id
@@ -59,10 +56,20 @@ class @AppView extends Backbone.View
     @deferred_scenario_id.done (id) =>
       @settings.set
         api_session_id: id
+      @etm_debug "Scenario URL: #{@scenario_url()}"
       # And bootstrap the rest of the application
       @bootstrap()
     # return the deferred object, so we can attach callbacks as needed
     @deferred_scenario_id
+
+  reset_scenario: =>
+    @settings.set({
+      api_session_id: null,
+      scenario_id: null,
+      network_parts_affected: []
+      }, {silent: true})
+    @deferred_scenario_id = null
+    @load_user_values()
 
   scenario_url: =>
     "#{globals.api_url.replace('api/v2', 'scenarios')}/#{@scenario.api_session_id()}"

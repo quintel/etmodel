@@ -24,10 +24,4 @@ class @Scenario extends Backbone.Model
     base_url + "/api_scenarios/" + @api_session_id()
 
   reset: =>
-    App.settings.set({
-      scenario_id: null,
-      network_parts_affected: []
-      }, {silent: true})
-    @new_session()
-    # Take it easy. TODO: use deferred objects and refactor the js app events
-    setTimeout(App.load_user_values, 1200)
+    App.reset_scenario()

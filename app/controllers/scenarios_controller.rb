@@ -4,13 +4,13 @@ class ScenariosController < ApplicationController
   before_filter :require_user, :only => [:index, :new]
 
   def index
-    if current_user.admin?
-      @saved_scenarios = SavedScenario.page(params[:page]).per(15)
-      @scenarios = @saved_scenarios.map{|s| s.scenario rescue nil}.compact
+    items = if current_user.admin?
+      SavedScenario.scoped
     else
-      @saved_scenarios = current_user.saved_scenarios.order("created_at DESC")
-      @scenarios = @scenarios.map(&:scenario).compact
+      current_user.saved_scenarios
     end
+    @saved_scenarios = items.order("created_at DESC").page(params[:page]).per(15)
+    @scenarios = @saved_scenarios.map{|s| s.scenario rescue nil}.compact
   end
 
   def show

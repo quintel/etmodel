@@ -22,7 +22,7 @@
             %p
               = search_result_description(result)
               %br
-              = link_to t('search.jump_to_page'), :controller => result.tab.key, :action => result.key
+              = link_to t('search.jump_to_page'), tab_path(:tab => result.tab.key, :sidebar => result.key)
 
   - unless @input_elements.empty?
     %h2 Sliders

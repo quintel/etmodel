@@ -69,6 +69,7 @@ class @AppView extends Backbone.View
       network_parts_affected: []
       }, {silent: true})
     @deferred_scenario_id = null
+    i.set({user_value: null}, {silent: true}) for i in @input_elements.models
     @load_user_values()
 
   scenario_url: =>

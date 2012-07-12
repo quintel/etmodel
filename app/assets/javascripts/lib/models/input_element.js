@@ -11,7 +11,7 @@ var InputElement = Backbone.Model.extend({
   },
 
   set_min_value : function(result) {
-    var factor = this.get('factor');    
+    var factor = this.get('factor');
     this.set({'min_value' : result});
   },
   set_max_value : function(result) {
@@ -116,6 +116,7 @@ var InputElementList = Backbone.Collection.extend({
       input_element.set_max_value(values.max_value);
       input_element.set_start_value(values.start_value);
       input_element.set_label(values.full_label);
+      input_element.set({user_value: values.user_value}, {silent: true});
 
       var user_value = values.user_value;
       var default_value = (_.isUndefined(user_value) || _.isNaN(user_value) || _.isNull(user_value)) ? values.start_value : user_value;
@@ -132,7 +133,7 @@ var InputElementList = Backbone.Collection.extend({
 
   /**
    * Get the string which contains the update values for all dirty input elements.
-   */  
+   */
   api_update_params:function() {
     return _.map(this.dirty(), function(el) {
       return ("input["+el.get('input_id')+"]=" + el.get("user_value"));
@@ -155,15 +156,15 @@ var InputElementList = Backbone.Collection.extend({
     var options = inputElement.ui_options;
     this.inputElements[inputElement.id] = inputElement;
     var inputElementView = new InputElementView({model : inputElement, el : options.element});
-    
+
     this.inputElementViews[inputElement.id] = inputElementView;
     inputElementView.bind("change", $.proxy(this.handleUpdate, this));
 
     return true;
   },
 
-  
-  
+
+
   /**
    * Initialize a share group for an input element if it has one.
    */
@@ -185,9 +186,9 @@ var InputElementList = Backbone.Collection.extend({
    */
   getOrCreateShareGroup:function(shareGroup) {
 
-    if(!this.shareGroups[shareGroup]) 
+    if(!this.shareGroups[shareGroup])
       this.shareGroups[shareGroup] = new SliderGroup({'total_value':100}); // add group if not created yet
-    
+
     return this.shareGroups[shareGroup];
   },
 
@@ -201,7 +202,7 @@ var InputElementList = Backbone.Collection.extend({
 
   /**
    * Does a update request to update the values.
-   */  
+   */
   handleUpdate:function() {
     this.trigger("change");
   }

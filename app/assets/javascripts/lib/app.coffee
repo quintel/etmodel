@@ -57,8 +57,6 @@ class @AppView extends Backbone.View
       @settings.set
         api_session_id: id
       @etm_debug "Scenario URL: #{@scenario_url()}"
-      # And bootstrap the rest of the application
-      @bootstrap()
     # return the deferred object, so we can attach callbacks as needed
     @deferred_scenario_id
 

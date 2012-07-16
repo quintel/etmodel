@@ -14,7 +14,7 @@ class ScenariosController < ApplicationController
   end
 
   def show
-    if(@scenario.nil?)
+    if @scenario.nil?
       redirect_to home_path, :notice => "Scenario not found" and return
     end
   end
@@ -30,7 +30,6 @@ class ScenariosController < ApplicationController
     redirect_to_back
   end
 
-  ##
   # Creates a scenario and saves the current settings into it.
   #
   # POST /scenarios/
@@ -39,10 +38,16 @@ class ScenariosController < ApplicationController
   # and the right user_id
   def create
     attrs = params[:saved_scenario].merge(:protected => true)
-    @scenario = Api::Scenario.create(attrs)
-    attributes = {:scenario_id => @scenario.id}
-    @saved_scenario = current_user.saved_scenarios.create!(attributes)
-    redirect_to scenarios_path
+    begin
+      @scenario = Api::Scenario.create(attrs)
+      @saved_scenario = current_user.saved_scenarios.create!({:scenario_id => @scenario.id})
+      redirect_to scenarios_path
+    rescue
+      @saved_scenario = SavedScenario.new(
+        :api_session_id => Current.setting.api_session_id
+      )
+      render :new
+    end
   end
 
   # Loads a scenario from a id.

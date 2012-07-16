@@ -4,7 +4,6 @@
 
 %div{:style => "width: 600px"}
   = simple_form_for @saved_scenario, :url => scenarios_path do |f|
-    %div{:style => "color: #c00; margin-bottom: 10px"}= error_messages_for :scenario
     = f.input :title
     = f.input :description, :as => :text
     = f.hidden_field :api_session_id

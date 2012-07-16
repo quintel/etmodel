@@ -25,17 +25,18 @@
         %td= serie.id
         %td= link_to serie.label, admin_output_element_serie_path(serie)
         %td{:style => "background: #{serie.color}"}= color_to_string(serie.color)
-        %td= link_to serie.gquery, "#{APP_CONFIG[:gquery_detail_url]}#{serie.gquery}", :class => :external
+        %td= link_to serie.gquery, serie.url_in_etengine, :class => :external, :target => '_blank'
         %td= serie.is_target_line
         %td= serie.order_by
         %td
           = link_to 'edit', edit_admin_output_element_serie_path(:id => serie.id)
           |
-          = link_to 'delete', admin_output_element_serie_path(:id => serie.id), :method => :delete, :confirm => 'Are you sure?'
+          = link_to 'delete', admin_output_element_serie_path(:id => serie.id),
+            :method => :delete, :confirm => 'Are you sure?'
 
 
-%p
-  = link_to 'Create new serie', new_admin_output_element_serie_path(:output_element_id => @output_element.id)
+%p= link_to 'Create new serie',
+    new_admin_output_element_serie_path(:output_element_id => @output_element.id)
 
 #chart_preview
   = content_tag_for :div, @output_element do
@@ -46,6 +47,5 @@
   = javascript_include_tag 'etm'
   :javascript
     App.settings = new Setting(#{Current.setting.to_json.html_safe});
-    App.ensure_scenario_id();
     charts.load(#{@output_element.id}, "output_element_#{@output_element.id}")
 

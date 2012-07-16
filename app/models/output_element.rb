@@ -57,11 +57,15 @@ class OutputElement < ActiveRecord::Base
   end
 
   def d3_chart?
-    type == 'd3'
+    ['d3', 'sankey'].include?(type)
   end
 
   def jqplot_based?
     !block_chart? && !html_table? && !d3_chart?
+  end
+
+  def sankey?
+    type == 'sankey'
   end
 
   # some charts don't have their series defined in the database. This method
@@ -108,7 +112,7 @@ class OutputElement < ActiveRecord::Base
 
   # Icon shown on the select chart popup
   def icon
-    if d3_chart?
+    if d3_chart? && !sankey?
       "#{key}.png"
     else
       "#{type}.png"

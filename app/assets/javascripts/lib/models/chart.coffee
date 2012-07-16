@@ -30,6 +30,7 @@ class @Chart extends Backbone.Model
       when 'html_table'             then HtmlTableChartView
       when 'scatter'                then ScatterChartView
       when 'd3'                     then @d3_view_factory()
+      when 'sankey'                 then D3.sankey.View
       else HtmlTableChartView
     @view = new view_class
       model: this

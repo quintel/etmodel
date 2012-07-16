@@ -94,11 +94,6 @@ $ ->
 
   # Menu items
   #
-  $("a#reset_scenario").on 'click', (e) ->
-    e.preventDefault()
-    App.scenario.reset()
-    $(".settings").removeClass("menu-open")
-    $("#settings_menu").hide()
 
   $("#disable_peak_load_tracking").live 'click', -> disable_peak_load_tracking()
 

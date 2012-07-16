@@ -37,10 +37,13 @@ class ScenariosController < ApplicationController
   # Set the protected flag to true. With API v3 we'll set the client app id
   # and the right user_id
   def create
-    attrs = params[:saved_scenario].merge(:protected => true)
+    attrs = params[:saved_scenario].merge(:protected => true, :source => 'ETM')
     begin
       @scenario = Api::Scenario.create(attrs)
-      @saved_scenario = current_user.saved_scenarios.create!({:scenario_id => @scenario.id})
+      # Setting a fake title because the object validates its presence - the
+      # engine scenarios table actually saves it
+      @saved_scenario = current_user.saved_scenarios.create!(
+        {:scenario_id => @scenario.id, :title => '_'})
       redirect_to scenarios_path
     rescue
       @saved_scenario = SavedScenario.new(

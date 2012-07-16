@@ -19,5 +19,4 @@
   - content_for :footer do
     :javascript
       App.settings = new Setting(#{Current.setting.to_json.html_safe});
-      App.ensure_scenario_id();
       App.call_api()

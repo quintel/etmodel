@@ -12,6 +12,9 @@
       when "mln_euro"
         u = "euro"
         power += 2
+      when "bln_euro"
+        u = "euro"
+        power += 3
       when "%" then return "%"
       when "MW"
         u = "watt"

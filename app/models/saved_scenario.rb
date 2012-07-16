@@ -15,7 +15,9 @@ class SavedScenario < ActiveRecord::Base
 
   attr_accessor :title, :description, :api_session_id
 
-  # validates :title, :presence => true
+  validates :user_id,     :presence => true
+  validates :scenario_id, :presence => true
+  validates :title,       :presence => true
 
   def scenario
     @scenario ||= Api::Scenario.find(scenario_id)

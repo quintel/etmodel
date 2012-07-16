@@ -300,7 +300,10 @@ D3.sankey =
 
     value: =>
       if @gquery
-        x = @gquery.future_value()
+        x = if @view.use_present
+          @gquery.present_value()
+        else
+          @gquery.future_value()
       if _.isNumber(x) then x else 0
 
     color: => @get('color') || "steelblue"
@@ -314,10 +317,18 @@ D3.sankey =
       namespace = D3.sankey
       namespace.view = this
       @series = @model.series
-      # console.log @model
       @key = @model.get('key')
-      @node_list = new namespace.NodeList(namespace.charts[@key].data.nodes)
-      @link_list = new namespace.LinkList(namespace.charts[@key].data.links)
+      # ugly but simple and effective. If the chart key name ends with _2010
+      # then the chart will be identical to the corresponding 2050 chart but
+      # will be using the present values. Otherwise we can add an extra db
+      # column.
+      if @key.match(/_2010/)
+        k = @key.replace /_2010/, ''
+        @use_present = true
+      else
+        k = @key
+      @node_list = new namespace.NodeList(namespace.charts[k].data.nodes)
+      @link_list = new namespace.LinkList(namespace.charts[k].data.links)
       @initialize_defaults()
 
     # this method is called when we first render the chart. It is called if we

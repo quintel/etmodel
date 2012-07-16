@@ -76,4 +76,8 @@ class OutputElementSerie < ActiveRecord::Base
       :target_line_position => target_line_position
     }
   end
+
+  def url_in_etengine
+    "#{APP_CONFIG[:gquery_detail_url]}#{gquery}"
+  end
 end

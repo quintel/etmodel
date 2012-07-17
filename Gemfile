@@ -20,7 +20,6 @@ gem 'i18n-js'
 gem 'airbrake', '~> 3.0.9'
 
 # system gems
-gem 'thinking-sphinx', '~> 2.0.10'
 gem 'mysql2', '~>0.3.11'
 gem 'memcache-client'
 

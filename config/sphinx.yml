@@ -1,5 +1,0 @@
-production: &PRODUCTION
-  pid_file: /u/apps/etmodel/shared/pids/searchd.pid
-  searchd_file_path: /u/apps/etmodel/shared/db/sphinx
-staging:
-  <<: *PRODUCTION

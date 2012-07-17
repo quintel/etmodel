@@ -48,12 +48,20 @@ class InputElement < ActiveRecord::Base
     SearchResult.new(key, description)
   end
 
-  define_index do
-    indexes key
-    indexes description(:content_en), :as => :description_content_en
-    indexes description(:content_nl), :as => :description_content_nl
-    indexes description(:short_content_en), :as => :description_short_content_en
-    indexes description(:short_content_nl), :as => :description_short_content_nl
+  searchable do
+    string :key
+    text :content_en do
+      description.try :content_en
+    end
+    text :content_nl do
+      description.try :content_nl
+    end
+    text :short_content_en do
+      description.try :short_content_en
+    end
+    text :short_content_nl do
+      description.try :short_content_nl
+    end
   end
 
   def belongs_to_a_group?

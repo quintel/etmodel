@@ -44,12 +44,14 @@ class InputElement < ActiveRecord::Base
     I18n.t(title_for_description)
   end
 
-  def search_result
-    SearchResult.new(key, description)
-  end
-
   searchable do
     string :key
+    text :name_en, :boost => 5 do
+      I18n.t("input_elements.#{key}", :locale => :en)
+    end
+    text :name_nl, :boost => 5 do
+      I18n.t("input_elements.#{key}", :locale => :nl)
+    end
     text :content_en do
       description.try :content_en
     end

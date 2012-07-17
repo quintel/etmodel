@@ -9,12 +9,6 @@ $ ->
   $("a.fancybox_image").fancybox
     type: 'image'
 
-  $("a.fancybox_narrow").fancybox
-    type: 'ajax'
-    href: $(this).attr('href')
-    width: 500
-    autoSize: false
-
   $("a.select_chart").fancybox
     href: $(this).attr('href')
     type: 'ajax'

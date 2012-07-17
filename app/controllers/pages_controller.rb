@@ -120,4 +120,7 @@ public
     locale
     redirect_to_back
   end
+
+  def sitemap
+  end
 end

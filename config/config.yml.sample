@@ -1,12 +1,12 @@
 development: &DEV
     # base url for active resource requests
-    active_resource_base: http://etengine.dev/api/v2
+    active_resource_base: http://beta.et-engine.com/api/v2
     airbrake_api_key: '3ea5a72aad48a32d7bb486bc71ad4fd5'
 
     # base url for api requests. This is used when CORS is enabled
     # (which is the default) or when the rails application runs a
     # local rack-based AJAX proxy
-    api_url: http://etengine.dev/api/v2
+    api_url: http://beta.et-engine.com/api/v2
 
     # This sets the url we use as API proxy. The proxying is handled
     # by nginx or a local rack-based proxy

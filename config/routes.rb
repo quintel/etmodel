@@ -118,7 +118,7 @@ Etm::Application.routes.draw do
   end
 
   match '/converters/:input_element_id' => 'converters#show'
-  match '/select_movie/:id'             => 'pages#select_movie'
+  match '/select_movie/:id'             => 'pages#select_movie', :defaults => {:format => :js}
   match '/units'                        => 'pages#units'
   match '/about'                        => 'pages#about'
   match '/feedback'                     => 'pages#feedback', :as => :feedback

@@ -22,7 +22,7 @@ class @InputElement extends Backbone.Model
 
   init_legacy_controller: =>
     if @already_init != true
-      App.input_elements.addInputElement(this);
+      App.input_elements.addInputElement(this)
       @already_init = true
 
   logUpdate: =>
@@ -30,7 +30,7 @@ class @InputElement extends Backbone.Model
       ((@get('max_value') - @get('user_value')) /
       ((@get('max_value') - @get('min_value')) / 100))
     percent = Math.round percent
-    App.etm_debug "Moved slider: ##{@get 'id'} - #{@get 'key'} percent: #{percent}"
+    App.debug "Moved slider ##{@get 'id'} - #{@get 'key'} percent: #{percent}"
     Tracker.event_track('Slider','Changed',@get('key'), percent)
     Tracker.track
       slider: @get('translated_name')
@@ -42,18 +42,11 @@ class @InputElement extends Backbone.Model
     input_elements.user_values[@get('id')]['user_value'] = @get('user_value')
 
   # Returns if this is dirty, meaning a attribute has changed.
-  isDirty: =>
-    if @get('fixed') == true
-      false;
-    else
-      @dirty;
+  isDirty: => if @get('fixed') == true then false else @dirty
 
-  markDirty: =>
-    @dirty = true
+  markDirty: => @dirty = true
 
-  setDirty: (dirty) =>
-    @dirty = dirty
-
+  setDirty: (dirty) => @dirty = dirty
 
 class @InputElementList extends Backbone.Collection
   model: InputElement
@@ -61,7 +54,6 @@ class @InputElementList extends Backbone.Collection
   initialize: ->
     @inputElements     = {}
     @inputElementViews = {}
-
     @shareGroups = {}
     @balancers   = {}
 
@@ -91,7 +83,7 @@ class @InputElementList extends Backbone.Collection
       i.set_label(values.full_label)
       i.set({user_value: values.user_value}, {silent: true})
 
-      v = values.user_value;
+      v = values.user_value
       def = if (v? && !_.isNaN(v)) then v else values.start_value
 
       i.set({
@@ -102,7 +94,7 @@ class @InputElementList extends Backbone.Collection
 
       i.init_legacy_controller()
 
-  # Get the string which contains the update values for all dirty input elements.
+  # Get the string which contains the update values for all dirty input elements
   api_update_params: =>
     _.map(@dirty(), (el) ->
       "input[#{el.get('input_id')}=#{el.get("user_value")}"

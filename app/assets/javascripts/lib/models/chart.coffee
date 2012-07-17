@@ -179,8 +179,8 @@ class @ChartList extends Backbone.Collection
     alternate = options.alternate || false
     return false if App.settings.get(container_id) # chart is pinned
 
-    App.etm_debug('Loading chart: #' + chart_id)
-    App.etm_debug "#{window.location.origin}/admin/output_elements/#{chart_id}"
+    App.debug('Loading chart: #' + chart_id)
+    App.debug "#{window.location.origin}/admin/output_elements/#{chart_id}"
     url = "/output_elements/#{chart_id}"
     $.ajax
       url: url

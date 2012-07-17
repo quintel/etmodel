@@ -40,7 +40,7 @@ class @AppView extends Backbone.View
     return @deferred_scenario_id if @deferred_scenario_id
     # scenario_id available?
     if id = App.settings.get('api_session_id')
-      @etm_debug "Scenario URL: #{@scenario_url()}"
+      @debug "Scenario URL: #{@scenario_url()}"
       # encapsulate in a deferred object, so we can attach callbacks
       @deferred_scenario_id = $.Deferred().resolve(id)
       return @deferred_scenario_id
@@ -56,7 +56,7 @@ class @AppView extends Backbone.View
     @deferred_scenario_id.done (id) =>
       @settings.set
         api_session_id: id
-      @etm_debug "Scenario URL: #{@scenario_url()}"
+      @debug "Scenario URL: #{@scenario_url()}"
     # return the deferred object, so we can attach callbacks as needed
     @deferred_scenario_id
 
@@ -174,7 +174,7 @@ class @AppView extends Backbone.View
       $(".chart_holder").busyBox('close')
       $("#constraints .loading").hide()
 
-  etm_debug: (t) ->
+  debug: (t) ->
     console.log(t) if window.etm_js_debug
 
   # Use CORS when possible

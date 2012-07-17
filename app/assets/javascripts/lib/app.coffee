@@ -74,13 +74,8 @@ class @AppView extends Backbone.View
     "#{globals.api_url.replace('api/v2', 'scenarios')}/#{@scenario.api_session_id()}"
 
   setup_fce: =>
-    @update_fce_checkboxes()
     # IE doesn't bubble onChange until the checkbox loses focus
-    $(document).on 'click', ".inline_use_fce, #settings_use_fce", @settings.toggle_fce
-
-  update_fce_checkboxes: ->
-    # update the use_fce checkbox inside descriptions as needed on page load
-    $(".inline_use_fce").attr('checked', @settings.get('use_fce'))
+    $(document).on 'click', "#settings_use_fce", @settings.toggle_fce
 
   # Load User values for Sliders. We need a scenario id first!
   load_user_values: =>

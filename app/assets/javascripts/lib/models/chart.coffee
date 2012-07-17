@@ -15,13 +15,18 @@ class @Chart extends Backbone.Model
   render : =>
     return false unless @supported_by_current_browser()
     type = @get('type')
+    d3_support = Browser.hasD3Support()
     view_class = switch type
       when 'bezier'                 then BezierChartView
       when 'horizontal_bar'         then HorizontalBarChartView
       when 'horizontal_stacked_bar' then HorizontalStackedBarChartView
       when 'mekko'                  then MekkoChartView
       when 'waterfall'              then WaterfallChartView
-      when 'vertical_stacked_bar'   then VerticalStackedBarChartView
+      when 'vertical_stacked_bar'
+        if d3_support
+          D3.stacked_bar.View
+        else
+          VerticalStackedBarChartView
       when 'grouped_vertical_bar'   then GroupedVerticalBarChartView
       when 'policy_bar'             then PolicyBarChartView
       when 'line'                   then LineChartView

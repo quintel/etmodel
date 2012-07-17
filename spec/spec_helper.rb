@@ -45,6 +45,8 @@ Spork.prefork do
     config.include(Webrat::Matchers)
     config.include(EtmAuthHelper)
     config.include(Authlogic::TestCase)
+
+    Sunspot.session = Sunspot::Rails::StubSessionProxy.new(Sunspot.session)
   end
 
 end

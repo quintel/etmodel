@@ -34,16 +34,27 @@ class Slide < ActiveRecord::Base
     :allow_destroy => true,
     :reject_if => proc {|attributes| attributes['slider_id'].blank? }
 
-  def search_result
-    SearchResult.new(key.humanize, description)
-  end
+  searchable do
+    string :key
+    text :name_en, :boost => 5 do
+      I18n.t("slides.#{key}", :locale => :en)
+    end
+    text :name_nl, :boost => 5 do
+      I18n.t("slides.#{key}", :locale => :nl)
+    end
 
-  define_index do
-    indexes key
-    indexes description(:content_en), :as => :description_content_en
-    indexes description(:content_nl), :as => :description_content_nl
-    indexes description(:short_content_en), :as => :description_short_content_en
-    indexes description(:short_content_nl), :as => :description_short_content_nl
+    text :content_en do
+      description.try :content_en
+    end
+    text :content_nl do
+      description.try :content_nl
+    end
+    text :short_content_en do
+      description.try :short_content_en
+    end
+    text :short_content_nl do
+      description.try :short_content_nl
+    end
   end
 
   def image_path

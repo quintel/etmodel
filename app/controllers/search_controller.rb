@@ -1,11 +1,8 @@
 class SearchController < ApplicationController
   def index
     @query = params[:q]
-
-    # the rescue clauses are used to hide Riddle::ConnectionError
-    # exceptions from the user
-    @sidebar_items  = SidebarItem.search(@query).compact rescue []
-    @input_elements = InputElement.search(@query).compact rescue []
-    @slides         = Slide.search(@query).compact rescue []
+    @sidebar_items  = SidebarItem.search{|s| s.fulltext @query}.results
+    @input_elements = InputElement.search{|s| s.fulltext @query}.results
+    @slides         = Slide.search{|s| s.fulltext @query}.results
   end
 end

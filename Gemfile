@@ -20,16 +20,17 @@ gem 'i18n-js'
 gem 'airbrake', '~> 3.0.9'
 
 # system gems
-gem 'thinking-sphinx', '~> 2.0.10'
 gem 'mysql2', '~>0.3.11'
 gem 'memcache-client'
 
 gem 'dynamic_form'
+gem 'sunspot_rails'
 
 group :development do
   gem 'tomdoc'
   gem 'yard-tomdoc', "~> 0.4.0"
   gem 'annotate', :require => false
+  gem 'sunspot_solr'
 end
 
 group :test, :development do

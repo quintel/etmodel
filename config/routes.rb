@@ -133,7 +133,7 @@ Etm::Application.routes.draw do
   match '/show_flanders'                => 'pages#show_flanders'
   match '/municipalities'               => 'pages#municipalities'
   match '/careers'                      => 'pages#careers',     :as => :careers
-  match '/sitemap'                      => 'pages#sitemap',     :as => :sitemap
+  match '/sitemap(.:format)'            => 'pages#sitemap', :defaults => {:format => :xml}
   match '/information'                  => 'pages#information', :as => :information
   match '/known_issues'                 => 'pages#bugs',        :as => :bugs
   match '/set_locale(/:locale)' => 'pages#set_locale', :as => :set_locale

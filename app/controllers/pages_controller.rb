@@ -55,8 +55,6 @@ public
   end
 
   def select_movie
-    request.format = 'js'
-    # check view
   end
 
   def show_all_countries

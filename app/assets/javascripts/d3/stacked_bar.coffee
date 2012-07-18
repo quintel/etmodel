@@ -56,7 +56,7 @@ D3.stacked_bar =
         .enter().append('svg:text')
         .attr('class', 'year')
         .text((d) -> d)
-        .attr('x', (d) => @x(d))
+        .attr('x', (d) => @x(d) + 10)
         .attr('y', 175)
         .attr('dx', 45)
 
@@ -73,10 +73,14 @@ D3.stacked_bar =
         .style('fill', (d) => d.color)
 
       # draw a nice axis
-      @y_axis = d3.svg.axis().scale(@inverted_y).ticks(4).orient("right")
+      @y_axis = d3.svg.axis()
+        .scale(@inverted_y)
+        .ticks(4)
+        .tickSize(-420, 10, 0)
+        .orient("right")
         .tickFormat((x) => Metric.autoscale_value x, @model.get('unit'))
       @svg.append("svg:g")
-        .attr("class", "y_axis")
+        .attr("class", "y_axis inner_grid")
         .attr("transform", "translate(#{@width - 25}, 0)")
         .call(@y_axis)
 
@@ -97,7 +101,7 @@ D3.stacked_bar =
             'start_year'
           else
             'end_year'
-          @x(App.settings.get column) - 15)
+          @x(App.settings.get column) - 5)
         .attr('y', 0)
 
     refresh: =>
@@ -114,12 +118,18 @@ D3.stacked_bar =
       # animate the y-axis
       @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@inverted_y))
 
+      # and its grid
+      @svg.selectAll('g.rule')
+        .data(@y.ticks())
+        .transition()
+        .attr('transform', (d) => "translate(0, #{@inverted_y(d)})")
+
       # let the stack method filter the data again, adding the offsets as needed
       stacked_data = _.flatten @stack_method(@prepare_data())
       @svg.selectAll('rect.serie')
         .data(stacked_data, (s) -> s.id)
         .transition()
-        .attr('x', (d) => @x(d.x))
+        .attr('x', (d) => @x(d.x) + 10)
         .attr('y', (d) => @height - @y(d.y0 + d.y))
         .attr('height', (d) => @y(d.y))
 
@@ -128,6 +138,8 @@ D3.stacked_bar =
         .data(@model.target_series(), (d) -> d.get 'gquery_key')
         .transition()
         .attr('y', (d) => @height - @y(d.future_value()))
+
+      # draw grid
 
     # the stack layout method expects data to be in a precise format. We could
     # force the values() method but this way is simpler and cleaner.

@@ -2,6 +2,7 @@
   %p.tal
     = @constraint.description.try :short_content
   #charts_wrapper
-    %div{ :id => "output_element_45",:style=>'height:250px'}
+    .chart_holder
+      .chart_canvas#output_element_45
 :javascript
   charts.load(45, 'output_element_45')

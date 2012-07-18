@@ -5,6 +5,8 @@ D3.stacked_bar =
       @key = @model.get 'key'
       @initialize_defaults()
 
+    can_be_shown_as_table: -> true
+
     draw: =>
       margins =
         top: 40

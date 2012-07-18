@@ -72,6 +72,16 @@ D3.stacked_bar =
         .attr('y', 0)
         .style('fill', (d) => d.color)
 
+      $('rect.serie').qtip
+        content: -> $(this).attr('data-tooltip')
+        show:
+          event: 'mouseover' # silly IE
+        hide:
+          event: 'mouseout'  # silly IE
+        position:
+          my: 'bottom center'
+          at: 'top center'
+
       # draw a nice axis
       @y_axis = d3.svg.axis()
         .scale(@inverted_y)
@@ -132,6 +142,13 @@ D3.stacked_bar =
         .attr('x', (d) => @x(d.x) + 10)
         .attr('y', (d) => @height - @y(d.y0 + d.y))
         .attr('height', (d) => @y(d.y))
+        .attr("data-tooltip", (d) =>
+          html = d.label
+          html += "<br/>"
+          html += Metric.autoscale_value d.y, @model.get('unit')
+        )
+
+      # update the tex
 
       # move the target lines
       @svg.selectAll('rect.target_line')
@@ -151,11 +168,13 @@ D3.stacked_bar =
             y: s.present_value()
             id: "#{s.get 'gquery_key'}_present"
             color: s.get('color')
+            label: s.get('label')
           },
           {
             x: App.settings.get('end_year')
             y: s.future_value()
             id: "#{s.get 'gquery_key'}_future"
             color: s.get('color')
+            label: s.get('label')
           }
         ]

@@ -25,11 +25,12 @@ D3.stacked_bar =
       legend = @svg.append('svg:g')
         .attr("transform", "translate(0,200)")
         .selectAll("svg.legend")
-        .data(@model.non_target_series())
+        .data(@model.series.models)
         .enter()
         .append("svg:g")
         .attr("class", "legend")
-        .attr("transform", (d, i) -> "translate(#{100 * (i % 4) + 10}, #{Math.floor(i / 4) * 30})")
+        .attr("transform", (d, i) ->
+          "translate(#{100 * (i % 4) + 10}, #{Math.floor(i / 4) * 20})")
         .attr("height", 30)
         .attr("width", 90)
       legend.append("svg:rect")
@@ -41,6 +42,8 @@ D3.stacked_bar =
         .attr("x", 15)
         .attr("y", 8)
 
+      # the stack method will filter the data and calculate the offset for every
+      # item
       @stack_method = d3.layout.stack().offset('zero')
       stacked_data = _.flatten @stack_method(@prepare_data())
 
@@ -58,7 +61,9 @@ D3.stacked_bar =
         .attr('y', 0)
         .style('fill', (d) => d.color)
 
+      # draw a nice axis
       @y_axis = d3.svg.axis().scale(@inverted_y).ticks(4).orient("right")
+        .tickFormat((x) => Metric.autoscale_value x, @model.get('unit'))
       @svg.append("svg:g")
         .attr("class", "y_axis")
         .attr("transform", "translate(#{@width - 25}, 0)")
@@ -70,11 +75,14 @@ D3.stacked_bar =
         _.sum(@model.values_future()),
         _.sum(@model.values_present())
       )
+      # update the scales as needed
       @y = @y.domain([0, tallest])
       @inverted_y = @inverted_y.domain([0, tallest])
+
+      # animate the y-axis
       @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@inverted_y))
 
-
+      # let the stack method filter the data again, adding the offsets as needed
       stacked_data = _.flatten @stack_method(@prepare_data())
       @svg.selectAll('rect.serie')
         .data(stacked_data, (s) -> s.id)
@@ -83,10 +91,21 @@ D3.stacked_bar =
         .attr('y', (d) => @height - @y(d.y0 + d.y))
         .attr('height', (d) => @y(d.y))
 
-    # the stack layout method expects data to be in a precise format
+    # the stack layout method expects data to be in a precise format. We could
+    # force the values() method but this way is simpler and cleaner.
     prepare_data: =>
       @model.non_target_series().map (s) ->
         [
-          {x: App.settings.get('start_year'), y: s.present_value(), id: "#{s.get 'gquery_key'}_present", color: s.get('color')},
-          {x: App.settings.get('end_year'),  y: s.future_value(),  id: "#{s.get 'gquery_key'}_future", color: s.get('color')}
+          {
+            x: App.settings.get('start_year')
+            y: s.present_value()
+            id: "#{s.get 'gquery_key'}_present"
+            color: s.get('color')
+          },
+          {
+            x: App.settings.get('end_year')
+            y: s.future_value()
+            id: "#{s.get 'gquery_key'}_future"
+            color: s.get('color')
+          }
         ]

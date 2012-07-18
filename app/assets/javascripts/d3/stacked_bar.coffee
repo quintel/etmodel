@@ -49,6 +49,17 @@ D3.stacked_bar =
 
       @x = d3.scale.ordinal().rangeRoundBands([0, @width])
         .domain([App.settings.get('start_year'), App.settings.get('end_year')])
+
+      # show years
+      @svg.selectAll('text.year')
+        .data([App.settings.get('start_year'), App.settings.get('end_year')])
+        .enter().append('svg:text')
+        .attr('class', 'year')
+        .text((d) -> d)
+        .attr('x', (d) => @x(d))
+        .attr('y', 175)
+        .attr('dx', 45)
+
       @y = d3.scale.linear().range([0, @height]).domain([0, 7])
       @inverted_y = d3.scale.linear().range([@height, 0]).domain([0, 7])
 
@@ -69,11 +80,32 @@ D3.stacked_bar =
         .attr("transform", "translate(#{@width - 25}, 0)")
         .call(@y_axis)
 
+      # target lines
+      # An ugly thing in the target lines is the extra attribute called "target
+      # line position". If set to 1 then the target line must be shown on the
+      # first column only, if 2 only on the 2nd. The CO2 chart is different, too
+      @svg.selectAll('rect.target_line')
+        .data(@model.target_series(), (d) -> d.get 'gquery_key')
+        .enter()
+        .append('svg:rect')
+        .attr('class', 'target_line')
+        .style('fill', (d) -> d.get 'color')
+        .attr('height', 2)
+        .attr('width', 136)
+        .attr('x', (s) =>
+          column = if s.get('target_line_position') == '1' # Brrrrr
+            'start_year'
+          else
+            'end_year'
+          @x(App.settings.get column) - 15)
+        .attr('y', 0)
+
     refresh: =>
       # calculate tallest column
       tallest = Math.max(
         _.sum(@model.values_future()),
-        _.sum(@model.values_present())
+        _.sum(@model.values_present()),
+        _.max(@model.target_results()) || 0
       )
       # update the scales as needed
       @y = @y.domain([0, tallest])
@@ -90,6 +122,12 @@ D3.stacked_bar =
         .attr('x', (d) => @x(d.x))
         .attr('y', (d) => @height - @y(d.y0 + d.y))
         .attr('height', (d) => @y(d.y))
+
+      # move the target lines
+      @svg.selectAll('rect.target_line')
+        .data(@model.target_series(), (d) -> d.get 'gquery_key')
+        .transition()
+        .attr('y', (d) => @height - @y(d.future_value()))
 
     # the stack layout method expects data to be in a precise format. We could
     # force the values() method but this way is simpler and cleaner.

@@ -24,6 +24,8 @@ D3.stacked_bar =
         .attr("transform", "translate(#{margins.left}, #{margins.top})")
 
       # add legend
+      legend_columns = 2
+      legend_margin = @width / legend_columns
       legend = @svg.append('svg:g')
         .attr("transform", "translate(0,200)")
         .selectAll("svg.legend")
@@ -32,7 +34,9 @@ D3.stacked_bar =
         .append("svg:g")
         .attr("class", "legend")
         .attr("transform", (d, i) ->
-          "translate(#{100 * (i % 4) + 10}, #{Math.floor(i / 4) * 20})")
+          x = legend_margin * (i % legend_columns)
+          y = Math.floor(i / legend_columns) * 20
+          "translate(#{x}, #{y})")
         .attr("height", 30)
         .attr("width", 90)
       legend.append("svg:rect")
@@ -40,9 +44,10 @@ D3.stacked_bar =
         .attr("height", 10)
         .attr("fill", (d) => d.get 'color')
       legend.append("svg:text")
-        .text((d) -> d.get 'label')
         .attr("x", 15)
         .attr("y", 8)
+        .text((d) -> d.get 'label')
+
 
       # the stack method will filter the data and calculate the offset for every
       # item

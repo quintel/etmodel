@@ -9,7 +9,8 @@ class @BaseChartView extends Backbone.View
     if @display_as_table && @can_be_shown_as_table()
       @render_as_table()
     else
-      @render()
+      # set force parameter to true, so D3 will redraw everything
+      @render(true)
 
   max_value: ->
     sum_present = _.reduce @model.values_present(), @smart_sum

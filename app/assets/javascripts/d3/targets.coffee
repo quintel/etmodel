@@ -63,7 +63,7 @@ D3.targets =
 
       @initialize_defaults()
 
-    height: -> 430
+    outer_height: -> 430
 
     draw: =>
       margins =
@@ -73,12 +73,12 @@ D3.targets =
         right: 20
 
       @width = (@container_node().width() || 490) - (margins.left + margins.right)
-      height = @height() - (margins.top + margins.bottom)
+      @height = (@outer_height() || 402)- (margins.top + margins.bottom)
       @namespace.width = @width
       t.scale.range([80, @width]) for t in @targets
       @svg = d3.select("#d3_container_targets").
         append("svg:svg").
-        attr("height", height + margins.top + margins.bottom).
+        attr("height", @height + margins.top + margins.bottom).
         attr("width", @width + margins.left + margins.right).
         append("svg:g").
         attr("transform", "translate(#{margins.left}, #{margins.top})")

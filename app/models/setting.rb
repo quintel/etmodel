@@ -8,8 +8,7 @@ class Setting
                 :scenario_id,
                 :api_session_id,
                 :area_code,
-                :main_chart       # pinned chart (optional)
-                :secondary_chart  # pinned chart (optional)
+                :charts
 
   def initialize(attributes = {})
     attributes = self.class.default_attributes.merge(attributes)
@@ -50,6 +49,11 @@ class Setting
   end
 
   def self.default_attributes
+    charts = {
+      :main_chart      => {:chart_id => nil, :format => nil},
+      :secondary_chart => {:chart_id => nil, :format => nil}
+    }.with_indifferent_access
+
     {
       :hide_unadaptable_sliders => false,
       :network_parts_affected   => [],
@@ -59,8 +63,7 @@ class Setting
       :end_year                 => 2050,
       :use_fce                  => false,
       :already_shown            => [],
-      :main_chart               => nil,
-      :secondary_chart          => nil
+      :charts                   => charts
     }
   end
   attr_accessor *default_attributes.keys
@@ -82,8 +85,7 @@ class Setting
     self.api_session_id = nil
     self.scenario_id = nil # to go back to a blank slate scenario
 
-    [ :use_fce, :network_parts_affected, :already_shown, :main_chart,
-      :secondary_chart].each do |key|
+    [:use_fce, :network_parts_affected, :already_shown, :charts].each do |key|
       self.reset_attribute key
     end
   end

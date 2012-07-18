@@ -3,12 +3,11 @@ class @Setting extends Backbone.Model
     @bind('change:api_session_id', @save)
     @bind('change:track_peak_load', @save)
     @bind('change:use_fce', @save)
-    @bind('change:main_chart', @save)
-    @bind('change:secondary_chart', @save)
+    @bind('change:charts', @save)
 
   url: -> '/settings'
 
-  # RD: This is still needed, otherwise when loading a new page the stored settings are not there anymore
+  # Always use PUT requests
   isNew : -> false
 
   toggle_fce: ->

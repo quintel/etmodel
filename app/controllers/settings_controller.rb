@@ -11,9 +11,7 @@ class SettingsController < ApplicationController
       :network_parts_affected,
       :track_peak_load,
       :use_fce,
-      :current_round,
-      :main_chart,
-      :secondary_chart].each do |setting|
+      :charts].each do |setting|
       Current.setting.send("#{setting}=", params[setting]) unless params[setting].nil?
     end
 
@@ -26,7 +24,6 @@ class SettingsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to_back }
-      format.js { render :text => '', :status => 200}
       format.json { render :json => Current.setting }
     end
   end

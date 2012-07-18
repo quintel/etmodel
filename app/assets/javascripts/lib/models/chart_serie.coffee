@@ -7,7 +7,7 @@ class @ChartSerie extends Backbone.Model
   # to 0
   result: -> @get('gquery').result()
   result_pairs: -> [@present_value(), @future_value()]
-  future_value: -> @result()[1][1]
+  future_value:  -> @result()[1][1]
   present_value: -> @result()[0][1]
   # Some charts, though, use nil values and therefore will rather have the raw
   # result. If the target_query is null then this means that the goal has not

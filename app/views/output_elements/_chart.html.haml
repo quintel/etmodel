@@ -1,7 +1,7 @@
 :ruby
   holder_class = chart ? nil : 'hidden'
   info_url = chart ? "/descriptions/charts/#{chart.id}" : "#"
-  pin_class = chart.try(:id) == Current.setting.charts[dom_id] ? 'icon-lock' : 'icon-unlock'
+  pin_class = chart.try(:id) == Current.setting.charts[dom_id]["chart_id"] ? 'icon-lock' : 'icon-unlock'
 
 .chart_holder{:data => {:holder_id => dom_id, :block_ui_on_refresh => "true"},
   :class => holder_class}

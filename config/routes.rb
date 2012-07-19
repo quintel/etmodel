@@ -50,7 +50,6 @@ Etm::Application.routes.draw do
     match 'clear_cache' => 'pages#clear_cache', :as => :clear_cache
 
     resources :predictions,
-              :input_elements,
               :year_values,
               :slides,
               :sidebar_items,
@@ -90,6 +89,8 @@ Etm::Application.routes.draw do
     resources :output_elements do
       get :all, :on => :collection
     end
+
+    resources :input_elements, :except => :show
   end
 
   resource :scenario, :except => [:edit, :update] do

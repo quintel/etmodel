@@ -1,6 +1,6 @@
 module Admin
   class InputElementsController < BaseController
-    before_filter :find_model, :only => [:show, :edit]
+    before_filter :find_model, :only => :edit
 
     def index
       if params[:slide_id]
@@ -54,9 +54,6 @@ module Admin
         flash[:error] = "Error while deleting slider."
         redirect_to admin_input_elements_url
       end
-    end
-
-    def show
     end
 
     def edit

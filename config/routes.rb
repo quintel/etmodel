@@ -65,7 +65,7 @@ Etm::Application.routes.draw do
     resources :comments, :except => [:new, :create]
     resources :areas, :only => [:index, :show]
 
-    resources :tabs, :except => :show do
+    resources :tabs do
       resources :sidebar_items
     end
 

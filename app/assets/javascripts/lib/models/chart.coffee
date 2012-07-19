@@ -20,7 +20,11 @@ class @Chart extends Backbone.Model
       when 'bezier'                 then BezierChartView
       when 'horizontal_bar'         then HorizontalBarChartView
       when 'horizontal_stacked_bar' then HorizontalStackedBarChartView
-      when 'mekko'                  then MekkoChartView
+      when 'mekko'
+        if d3_support
+          D3.mekko.View
+        else
+          MekkoChartView
       when 'waterfall'              then WaterfallChartView
       when 'vertical_stacked_bar'
         if d3_support

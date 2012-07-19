@@ -11,7 +11,7 @@ D3.mekko =
     label: => @get('label') || @get('gquery')
     key:   => "#{@get 'carrier'}_#{@get 'sector'}"
     tooltip_text: =>
-      "#{@get 'carrier'} #{@get 'sector'}<br/>#{parseInt @val()}PJ"
+      "#{@get 'carrier'} #{@get 'sector'}<br/>#{parseInt @val()} PJ"
 
   NodeGroup: class extends Backbone.Model
       initialize: ->
@@ -64,10 +64,10 @@ D3.mekko =
     draw: =>
       @prepare_data()
       margins =
-        top: 40
+        top: 10
         bottom: 100
         left: 30
-        right: 30
+        right: 10
 
       @width = (@container_node().width()   || 490) - (margins.left + margins.right)
       @height = (@container_node().height() || 402) - (margins.top + margins.bottom)
@@ -80,6 +80,7 @@ D3.mekko =
 
       y_scale = d3.scale.linear().domain([100,0]).range([0, @height])
       @y_axis = d3.svg.axis().scale(y_scale).ticks(4).orient("left")
+        .tickFormat((x) -> "#{x}%")
       # axis
       @svg.append("svg:g").
         attr("class", "y_axis").
@@ -114,7 +115,7 @@ D3.mekko =
         .attr("text-anchor", "end")
 
       $('rect.carrier').qtip
-        content: -> $(this).attr('title')
+        content: -> $(this).attr('data-tooltip')
         show:
           event: 'mouseover' # silly IE
         hide:
@@ -144,7 +145,7 @@ D3.mekko =
         data(@sector_list.models, (d) -> d.get 'key' ).
         transition().duration(500).
         attr("dy", (d) => @x(d.total_value() / 2) + 5 ).
-        text((d) -> "#{d.get 'key'} #{parseInt d.total_value()}PJ")
+        text((d) -> "#{d.get 'key'} #{parseInt d.total_value()} PJ")
 
       # we need to track the offset for every sector
       offsets = {}
@@ -161,7 +162,7 @@ D3.mekko =
           offsets[d.get 'sector'] += d.val() / d.sector.total_value() * @height
           old
         ).
-        attr("title", (d) -> d.tooltip_text())
+        attr("data-tooltip", (d) -> d.tooltip_text())
 
 class D3.mekko.GroupCollection extends Backbone.Collection
   model: D3.mekko.NodeGroup

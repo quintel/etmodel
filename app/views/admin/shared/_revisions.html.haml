@@ -1,36 +1,23 @@
-%h3 Revisions
-
-%table
-  %tr
-    %td
-      %small 
-        %strong Updated by
-    %td
-      - if @version
-        current
-      - else
-        %strong current
-    %td
-      %small 
-        %strong Updated @
-
-    %td    
-      = link_to('show', :action => :show, :id => versioned)
-      = link_to('edit', :action => :edit, :id => versioned)
-    
-  - versioned.versions.reverse.each do |version|
-    - author = User.find(version.whodunnit).name if version.whodunnit rescue nil
+%table.versions
+  %thead
     %tr
+      %th{:colspan => 4} Revisions
+    %tr
+      %th Who
+      %th What
+      %th When
+      %th
+  %tbody
+    %tr{:class => @version ? nil : 'current'}
       %td
-        %small= author
-        
+      %td Current
       %td
-        - if version == @version
-          %strong= version.event
-        - else
-          = version.event
-      %td
-        %small= l version.created_at, :format => :long
-      %td
-        = link_to 'show', :action => :show, :id => versioned, :version_id => version.id
-        = link_to 'edit', :action => :edit, :id => versioned, :version_id => version.id
+      %td= link_to('show/edit', :action => :edit, :id => versioned)
+    - versioned.versions.reverse.each do |version|
+      - author = User.find(version.whodunnit).name if version.whodunnit rescue nil
+      %tr{:class => version == @version ? 'current' : nil}
+        %td= author
+        %td= version.event
+        %td= l version.created_at, :format => :long
+        %td
+          = link_to 'show/edit', :action => :edit, :id => versioned, :version_id => version.id

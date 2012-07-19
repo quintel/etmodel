@@ -34,7 +34,7 @@ class TabController < ApplicationController
       @tabs = Tab.ordered
       @current_tab = Tab.find_by_key tab_key
 
-      @sidebar_items = @current_tab.sidebar_items.reject(&:area_dependent)
+      @sidebar_items = @current_tab.sidebar_items.ordered.reject(&:area_dependent)
       @current_sidebar_item = SidebarItem.find_by_key sidebar_key
 
       # check valid sidebar item

@@ -41,10 +41,14 @@ class @Accordion
       if ui.newHeader.length > 0
         output_element_id = ui.newHeader.data('default_chart')
         alt_output_element_id = ui.newHeader.data('alt_chart')
-        window.charts.current_default_chart = output_element_id
-        window.charts.current_alt_chart = alt_output_element_id
+
+        chart_settings = App.settings.get('charts')
+        chart_settings.main_chart.default = output_element_id
+        App.settings.set 'charts', chart_settings
+
         $("a.default_charts").hide() if charts.current_id() == output_element_id
-        window.charts.load(output_element_id, 'main_chart', {alternate: alt_output_element_id})
+        unless chart_settings.main_chart.chart_id
+          window.charts.load(output_element_id, 'main_chart', {alternate: alt_output_element_id})
 
     $(".slide").each (i, slide) ->
       $("a.btn-done", slide).filter(".next, .previous").click () ->

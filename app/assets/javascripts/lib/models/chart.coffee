@@ -218,9 +218,11 @@ class @ChartList extends Backbone.Collection
 
         # Now it's time to upate the buttons and links for the chart
         root = $('#' + container_id).parents('.chart_holder')
-        # show/hide default chart button
-        default_chart_for_holder = App.settings.get('charts')[container_id].default
-        root.find("a.default_chart").toggle(chart_id != default_chart_for_holder)
+        # show/hide default chart button - only for the chart holders that
+        # actually define a default chart. The dashboard popups charts don't.
+        if container_info = App.settings.get('charts')[container_id]
+          default_chart_for_holder = container_info.default
+          root.find("a.default_chart").toggle(chart_id != default_chart_for_holder)
         # show/hide format toggle button
         root.find("a.table_format").toggle( new_chart.view.can_be_shown_as_table() )
         root.find("a.chart_format").hide()
@@ -248,7 +250,7 @@ class @ChartList extends Backbone.Collection
   # The default is defined for the main chart only
   load_default: =>
     @remove_pin 'main_chart'
-    @load(@current_default_chart, 'main_chart')
+    @load(App.settings.get('charts').main_chart.default, 'main_chart')
 
   # TODO: Most of this stuff should be moved to a backbone view. Unfortunately
   # there are some issues with the event bindings leaving zombies around:

@@ -105,26 +105,6 @@ D3.mekko =
         attr("x", 0).
         attr("data-rel", (d) -> d.key())
 
-      # add legend
-      legend = @svg.selectAll("svg.legend").
-        data(@carrier_list.models).
-        enter().
-        append("svg:svg").
-        attr("class", "legend").
-        attr("x", (d, i) -> 100 * (i % 4) + 10).
-        attr("y", (d, i) -> 18 * Math.floor(i / 4) - 36).
-        attr("height", 30).
-        attr("width", 90)
-
-      legend.append("svg:rect").
-        attr("width", 10).
-        attr("height", 10).
-        attr("fill", (d) -> d.get 'color')
-      legend.append("svg:text").
-        text((d) -> d.get 'key').
-        attr("x", 15).
-        attr("y", 8)
-
       # vertical sector label
       @sectors.append("svg:text")
         .text((d) -> d.get 'key')

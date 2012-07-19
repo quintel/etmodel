@@ -14,9 +14,7 @@ class @AppView extends Backbone.View
     @input_elements.bind("change", @handleInputElementsUpdate)
 
     @settings = new Setting() # At this point settings is empty!!
-    @settings.set({
-      api_session_id: globals.api_session_id
-      }, {silent: true})
+    @settings.set({api_session_id: globals.api_session_id})
 
     @scenario = new Scenario()
 
@@ -54,7 +52,7 @@ class @AppView extends Backbone.View
       ).pipe (d) -> d.scenario.id
     # When we first get the scenario id let's save it locally
     @deferred_scenario_id.done (id) =>
-      @settings.set
+      @settings.save
         api_session_id: id
       @debug "Scenario URL: #{@scenario_url()}"
     # return the deferred object, so we can attach callbacks as needed

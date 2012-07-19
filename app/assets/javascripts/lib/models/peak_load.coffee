@@ -25,8 +25,7 @@ class @PeakLoad extends Backbone.Model
     if @SHOW_EVERY_TIME_PEAK_LOAD_IS_TRIGGERED then @save_state_in_session()
 
   save_state_in_session: =>
-    App.settings.set({'network_parts_affected' : @parts_affected() })
-    App.settings.save()
+    App.settings.save({network_parts_affected: @parts_affected() })
 
   grid_investment_needed: =>
     @grid_investment_needed_gquery.result()[0][1]

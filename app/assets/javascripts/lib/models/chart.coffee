@@ -240,7 +240,7 @@ class @ChartList extends Backbone.Collection
   remove_pin: (holder_id) =>
     chart_settings = App.settings.get('charts')
     chart_settings[holder_id].chart_id = false
-    App.settings.set 'charts', chart_settings
+    App.settings.save({charts: chart_settings})
     holder = $('#' + holder_id).parents('.chart_holder')
     holder.find("a.pin_chart").removeClass("icon-lock").addClass("icon-unlock")
 
@@ -273,9 +273,7 @@ class @ChartList extends Backbone.Collection
       else
         value = chart_id
       chart_settings[holder_id].chart_id = value
-      # console.log JSON.stringify(chart_settings)
-      App.settings.set({charts: chart_settings}, {silent: true})
-      App.settings.trigger('change:charts')
+      App.settings.save({charts: chart_settings})
 
       $(e.target).toggleClass("icon-lock", !!value)
       $(e.target).toggleClass("icon-unlock", !!!value)

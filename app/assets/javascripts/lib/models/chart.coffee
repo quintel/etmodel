@@ -219,7 +219,8 @@ class @ChartList extends Backbone.Collection
         # Now it's time to upate the buttons and links for the chart
         root = $('#' + container_id).parents('.chart_holder')
         # show/hide default chart button
-        root.find("a.default_charts").toggle(chart_id != @current_default_chart)
+        default_chart_for_holder = App.settings.get('charts')[container_id].default
+        root.find("a.default_chart").toggle(chart_id != default_chart_for_holder)
         # show/hide format toggle button
         root.find("a.table_format").toggle( new_chart.view.can_be_shown_as_table() )
         root.find("a.chart_format").hide()

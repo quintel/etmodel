@@ -50,8 +50,8 @@ class Setting
 
   def self.default_attributes
     charts = {
-      :main_chart      => {:chart_id => nil, :format => nil},
-      :secondary_chart => {:chart_id => nil, :format => nil}
+      :main_chart      => {:chart_id => nil, :format => nil, :default => nil},
+      :secondary_chart => {:chart_id => nil, :format => nil, :default => nil}
     }.with_indifferent_access
 
     {

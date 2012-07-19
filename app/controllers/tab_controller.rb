@@ -47,10 +47,13 @@ class TabController < ApplicationController
 
       @title = Text.find_by_key("#{tab_key}_#{sidebar_key}").try :title
 
+      default_chart = @current_slide.output_element
+      Current.setting.charts[:main_chart][:default] = default_chart.id
+
       @output_element = if Current.setting.charts[:main_chart][:chart_id]
         OutputElement.find Current.setting.charts[:main_chart][:chart_id]
       else
-        @current_slide.output_element
+        default_chart
       end
 
       if other = Current.setting.charts[:secondary_chart][:chart_id]

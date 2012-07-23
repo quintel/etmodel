@@ -4,7 +4,7 @@
     %a{href:"http://wattnu.nl", target:"_new", id: "wattnu_#{I18n.locale}"}= t 'landing_page.go_to_wattnu'
     #header_inside
       %nav#language
-        - other_locale = ( I18n.locale == :en ? "nl" : "en" )
+        - other_locale = english? ? "nl" : "en"
         = link_to (t 'landing_page.other_language'), { locale: other_locale }, { class: other_locale }
       %img(src="/assets/layout/logo400@2x.png" width="400" height="49" alt="#{ t(:'meta.name') }")
 

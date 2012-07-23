@@ -38,7 +38,7 @@ module LayoutHelper
 
   # Returns a URL to the image for the current area code.
   def icon_for_area_code(code)
-    "/assets/icons/#{ code.split('-').first }.png"
+    "/assets/icons/areas/#{ code.split('-').first }.png"
   end
 
   def dutch?

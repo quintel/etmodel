@@ -7,10 +7,12 @@ D3.stacked_bar =
 
     can_be_shown_as_table: -> true
 
+    outer_height: -> 410
+
     draw: =>
       margins =
-        top: 40
-        bottom: 100
+        top: 20
+        bottom: 200
         left: 30
         right: 30
 
@@ -27,7 +29,7 @@ D3.stacked_bar =
       legend_columns = 2
       legend_margin = @width / legend_columns
       legend = @svg.append('svg:g')
-        .attr("transform", "translate(0,200)")
+        .attr("transform", "translate(10,210)")
         .selectAll("svg.legend")
         .data(@model.series.models)
         .enter()
@@ -35,7 +37,7 @@ D3.stacked_bar =
         .attr("class", "legend")
         .attr("transform", (d, i) ->
           x = legend_margin * (i % legend_columns)
-          y = Math.floor(i / legend_columns) * 20
+          y = Math.floor(i / legend_columns) * 15
           "translate(#{x}, #{y})")
         .attr("height", 30)
         .attr("width", 90)
@@ -64,7 +66,7 @@ D3.stacked_bar =
         .attr('class', 'year')
         .text((d) -> d)
         .attr('x', (d) => @x(d) + 10)
-        .attr('y', 175)
+        .attr('y', 205)
         .attr('dx', 45)
 
       @y = d3.scale.linear().range([0, @height]).domain([0, 7])
@@ -75,8 +77,11 @@ D3.stacked_bar =
         .enter().append('svg:rect')
         .attr('class', 'serie')
         .attr("width", @x.rangeBand() * 0.5)
-        .attr('x', 0)
-        .attr('y', 0)
+        .attr('x', (d, i) =>
+          year = if i == 0 then 'start_year' else 'end_year'
+          @x(App.settings.get(year)) + 10
+          )
+        .attr('y', @height)
         .style('fill', (d) => d.color)
 
       $('rect.serie').qtip
@@ -146,7 +151,6 @@ D3.stacked_bar =
       @svg.selectAll('rect.serie')
         .data(stacked_data, (s) -> s.id)
         .transition()
-        .attr('x', (d) => @x(d.x) + 10)
         .attr('y', (d) => @height - @y(d.y0 + d.y))
         .attr('height', (d) => @y(d.y))
         .attr("data-tooltip", (d) =>

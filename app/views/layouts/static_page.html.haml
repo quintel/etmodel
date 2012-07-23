@@ -1,0 +1,7 @@
+-# Nested layout that will add padding and back_to_model links
+- content_for :content do
+  .information_page
+    = back_to_model_link
+    = yield
+    = back_to_model_link
+= render template: 'layouts/application'

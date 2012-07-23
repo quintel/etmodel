@@ -18,7 +18,7 @@
       %header#top= render "layouts/etm/header"
       #content
         - flash_message
-        = yield
+        = content_for?(:content) ? yield(:content) : yield
       %footer.fixed= render "layouts/etm/footer"
     = render "layouts/etm/ga" unless APP_CONFIG[:standalone]
     %script

@@ -29,7 +29,8 @@ class ApplicationController < ActionController::Base
   def ensure_valid_browser
     unless ALLOWED_BROWSERS.include?(browser)
       #TODO: put text in translation files and translate!
-      flash[:notice] = "Your browser is not completely supported. <small><a href='/pages/browser_support/'>more information</a></small>"
+      flash[:notice] = "Your browser is not completely supported." +
+        "<small><a href='/browser_support'>more information</a></small>"
     end
   end
 

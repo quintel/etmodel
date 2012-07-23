@@ -138,6 +138,7 @@ Etm::Application.routes.draw do
   match '/information'                  => 'pages#information', :as => :information
   match '/known_issues'                 => 'pages#bugs',        :as => :bugs
   match '/set_locale(/:locale)' => 'pages#set_locale', :as => :set_locale
+  match '/browser_support' => 'pages#browser_support'
 
   match '/pages/flush_cache' => 'pages#flush_cache'
 

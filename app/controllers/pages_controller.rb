@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   include ApplicationHelper
   before_filter :ensure_valid_browser, :except => [:browser_support, :disable_browser_check]
   skip_before_filter :show_intro_screens_only_once, :only => [:intro]
-  layout 'static_page', :only => [:about, :units]
+  layout 'static_page', :only => [:about, :units, :browser_support]
 
   def root
     if request.post?
@@ -70,13 +70,6 @@ public
 
   def bugs
     @text = Text.find_or_create_by_key('bugs')
-  end
-
-  ######################################
-  # Browser Checks
-  ######################################
-
-  def browser_support
   end
 
   def disable_browser_check

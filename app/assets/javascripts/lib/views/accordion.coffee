@@ -39,16 +39,16 @@ class @Accordion
       slide_title = $.trim(ui.newHeader.text())
       Tracker.track({slide: slide_title})
       if ui.newHeader.length > 0
-        output_element_id = ui.newHeader.data('default_chart')
-        alt_output_element_id = ui.newHeader.data('alt_chart')
-
+        default_chart = ui.newHeader.data('default_chart')
+        alternate_chart = ui.newHeader.data('alt_chart')
         chart_settings = App.settings.get('charts')
-        chart_settings.main_chart.default = output_element_id
+        chart_settings.main_chart.default = default_chart
         App.settings.set 'charts', chart_settings
 
-        $("a.default_charts").hide() if charts.current_id() == output_element_id
-        unless chart_settings.main_chart.chart_id
-          window.charts.load(output_element_id, 'main_chart', {alternate: alt_output_element_id})
+        $("a.default_chart").toggle(charts.current_chart_in('main_chart') != default_chart)
+        # don't load if a chart is pinned
+        unless charts.pinned_chart_in('main_chart')
+          charts.load(default_chart, 'main_chart', {alternate: alternate_chart})
 
     $(".slide").each (i, slide) ->
       $("a.btn-done", slide).filter(".next, .previous").click () ->

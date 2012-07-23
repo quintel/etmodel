@@ -16,7 +16,7 @@
   .buttons
 
 .expert_avatar
-  = image_tag("/assets/layout/prediction_#{@prediction.user.try(:name).gsub(' ','_').downcase}.png")
+  = image_tag("/assets/backcasting/prediction_#{@prediction.user.try(:name).gsub(' ','_').downcase}.png")
 .description
   = @prediction.description.html_safe
 .connector

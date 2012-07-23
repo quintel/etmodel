@@ -34,24 +34,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  ##
-  # Shortcut for benchmarking of controller stuff.
-  #
-  # (is public, so we can call it within a render block)
-  #
-  # @param log_message [String]
-  # @param log_level
-  #
-  def benchmark(log_message, log_level = Logger::INFO,  &block)
-    self.class.benchmark(log_message) do
-      yield
-    end
-  end
-
 protected
+
   def initialize_current
     Current.session = session
-    Current.subdomain = request.subdomains.first
   end
 
   def teardown_current
@@ -128,5 +114,4 @@ private
   def export_i18n_messages
     SimplesIdeias::I18n.export! if Rails.env.development?
   end
-
 end

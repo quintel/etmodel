@@ -127,7 +127,6 @@ Etm::Application.routes.draw do
   match '/pages/intro'                  => 'pages#intro', :as => :start
   match '/famous_users'                 => 'pages#famous_users'
   match '/press_releases'               => 'pages#press_releases'
-  match '/optimize'                     => 'pages#optimize'
   match '/disclaimer'                   => 'pages#disclaimer'
   match '/privacy_statement'            => 'pages#privacy_statement'
   match '/show_all_countries'           => 'pages#show_all_countries'

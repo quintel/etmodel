@@ -30,8 +30,6 @@
 # actually be able to reset the Current by setting the @@instance to nil. Singleton
 # module won't let you do this.
 #
-#
-#
 class Current
 
   attr_accessor :graph_id
@@ -60,22 +58,9 @@ class Current
     session[:current_slide]
   end
 
-  def subdomain
-    session[:subdomain]
-  end
-
-  # This is loaded in application_controller.
-  def subdomain=(subdomain)
-    session[:subdomain] = subdomain
-  end
-
   def backcasting_enabled
     dutch?
   end
-
-  ##############################
-  # Resetting
-  ##############################
 
   ##
   # Singleton instance
@@ -101,5 +86,4 @@ class Current
       self.instance.send(name, *args)
     end
   end
-
 end

@@ -59,7 +59,7 @@ class Current
   end
 
   def backcasting_enabled
-    dutch?
+    I18n.locale.to_s == 'nl'
   end
 
   ##

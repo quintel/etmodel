@@ -51,11 +51,12 @@ describe PagesController do
   end
 
   context :static_pages do
-    [:bugs].each do |page|
+    [:bugs, :about].each do |page|
       describe "#{page} page" do
         it "should work" do
           get page
           response.should be_success
+          response.should render_template(page)
         end
       end
     end

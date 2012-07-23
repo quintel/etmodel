@@ -1,46 +1,45 @@
 .diamond_container
   .text
-    .intro_text= t_db("intro_pages")
-    %a.button.primary{:href=>"/targets"}
-      = I18n.t("start_with_targets")
+    .intro_text= raw t 'intro.main_text'
+    %a.button.primary{:href => "/targets"}
+      = t 'intro.start_with_targets'
       %span.right-icon
   .diamonds
     #policy.diamond= link_to t("tabs.targets"), '/targets'
     #demand.diamond= link_to t("tabs.demand"), '/demand'
     #supply.diamond= link_to t("tabs.supply"), '/supply'
     #costs.diamond= link_to t("tabs.costs"), '/costs'
-    %div{:style=>'clear:both'}
-  %div{:style=>'clear:both'}
-
+    .clear
+  .clear
 
 #textrepository_demand{:style => "display: none;"}
   .intro_text
-    %h1= t("intro.demand").html_safe + " #{Current.setting.end_year}?".html_safe
-    = t_db("intro_page_demand")
-  %a.button.primary{:href=>"/demand"}
-    = I18n.t("start_with_demand")
+    %h1 #{raw t("intro.demand")} #{Current.setting.end_year}?
+    = raw t 'intro.demand_text'
+  %a.button.primary{:href => "/demand"}
+    = t 'intro.start_with_demand'
     %span.right-icon
 
 #textrepository_supply{:style => "display: none;"}
   .intro_text
-    %h1= t("intro.supply").html_safe + " #{Current.setting.end_year}?".html_safe
-    = t_db("intro_page_supply")
-  %a.button.primary{:href=>"/supply"}
-    = I18n.t("start_with_supply")
+    %h1 #{raw t "intro.supply"} #{Current.setting.end_year}?
+    = raw t 'intro.supply_text'
+  %a.button.primary{:href => "/supply"}
+    = t 'intro.start_with_supply'
     %span.right-icon
 
 #textrepository_policy{:style => "display: none;"}
   .intro_text
-    %h1= t("intro.targets").html_safe + " #{Current.setting.end_year}?".html_safe
-    = t_db("intro_page_policy")
-  %a.button.primary{:href=>"/targets"}
-    = I18n.t("start_with_targets")
+    %h1 #{raw t 'intro.targets'} #{Current.setting.end_year}?
+    = raw t 'intro.targets_text'
+  %a.button.primary{:href => "/targets"}
+    = t 'intro.start_with_targets'
     %span.right-icon
 
 #textrepository_costs{:style => "display: none;"}
   .intro_text
-    %h1= t("intro.costs").html_safe + " #{Current.setting.end_year}?".html_safe
-    = t_db("intro_page_cost")
-  %a.button.primary{:href=>"/costs"}
-    = I18n.t("start_with_costs")
+    %h1 #{raw t "intro.costs"} #{Current.setting.end_year}?
+    = raw t 'intro.cost_text'
+  %a.button.primary{:href => "/costs"}
+    = t 'intro.start_with_costs'
     %span.right-icon

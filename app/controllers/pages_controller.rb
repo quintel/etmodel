@@ -44,18 +44,12 @@ protected
 
 public
 
-  def intro
-  end
-
   def press_releases
     @releases = PressRelease.order("release_date desc")
   end
 
   def update_footer
     render :partial => "layouts/etm/footer"
-  end
-
-  def select_movie
   end
 
   def show_all_countries
@@ -113,8 +107,5 @@ public
   def set_locale
     locale
     redirect_to_back
-  end
-
-  def sitemap
   end
 end

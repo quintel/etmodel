@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   before_filter :ensure_valid_browser, :except => [:browser_support, :disable_browser_check]
   skip_before_filter :show_intro_screens_only_once, :only => [:intro]
   layout 'static_page', :only => [:about, :units, :browser_support, :bugs,
-    :disclaimer]
+    :disclaimer, :privacy_statement]
 
   def root
     if request.post?

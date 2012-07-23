@@ -177,16 +177,18 @@ class @ChartList extends Backbone.Collection
   chart_holders: {}
 
   # Loads a chart. Parameters:
-  # - container_id: id of the dom element that will hold the chart
+  # - holder_id: id of the dom element that will hold the chart
   # - options: hash with these keys:
   #  - wait: if true an api_call won't be fired immediately. Useful when we want
   #    to show multiple charts on the same page
   #  - alternate: id of the chart to load if the first one fails. Watch out for
   #    loops!
-  load : (chart_id, container_id = 'main_chart', options = {}) ->
+  load : (chart_id, holder_id = 'main_chart', options = {}) =>
+    if @pinned_chart_in(holder_id) || @current_chart_in(holder_id) == chart_id
+      return false
+
     wait = options.wait || false
     alternate = options.alternate || false
-    return false if App.settings.get(container_id) # chart is pinned
 
     App.debug('Loading chart: #' + chart_id)
     App.debug "#{window.location.origin}/admin/output_elements/#{chart_id}"
@@ -197,34 +199,34 @@ class @ChartList extends Backbone.Collection
         # store the chart HTML (tables and block chart)
         @html[chart_id] = data.html
         # Add to the Chart constructor options the id of the container element
-        data.attributes.container = container_id
+        data.attributes.container = holder_id
         # Remember what we were showing in that position
-        old_chart = @chart_holders[container_id]
+        old_chart = @chart_holders[holder_id]
         # Create the new Chart
         new_chart = new Chart(data.attributes)
         if !new_chart.supported_by_current_browser()
           if alternate
-            @load alternate, container_id
+            @load alternate, holder_id
           else
             alert I18n.t('output_elements.common.old_browser')
           return false
 
         # Remember where the chart is
-        @chart_holders[container_id] = new_chart
+        @chart_holders[holder_id] = new_chart
         old_chart.delete() if old_chart
         # Deal with the collection object
         @remove old_chart
         @add new_chart
         # Pass the gqueries to the chart
         for s in data.series
-          s.owner = container_id
+          s.owner = holder_id
           new_chart.series.add(s)
 
         # Now it's time to upate the buttons and links for the chart
-        root = $('#' + container_id).parents('.chart_holder')
+        root = $('#' + holder_id).parents('.chart_holder')
         # show/hide default chart button - only for the chart holders that
         # actually define a default chart. The dashboard popups charts don't.
-        if container_info = App.settings.get('charts')[container_id]
+        if container_info = App.settings.get('charts')[holder_id]
           default_chart_for_holder = container_info.default
           root.find("a.default_chart").toggle(chart_id != default_chart_for_holder)
         # show/hide format toggle button
@@ -250,6 +252,21 @@ class @ChartList extends Backbone.Collection
     App.settings.save({charts: chart_settings})
     holder = $('#' + holder_id).parents('.chart_holder')
     holder.find("a.pin_chart").removeClass("icon-lock").addClass("icon-unlock")
+
+  # returns the id of the chart pinned in a holder - or null
+  pinned_chart_in: (holder_id) =>
+    try
+      App.settings.get('charts')[holder_id].chart_id
+    catch e
+      null
+
+  # returns the id of the chart currently shown in a holder
+  current_chart_in: (holder_id) =>
+    try
+      @chart_holders[holder_id].get 'id'
+    catch e
+      null
+
 
   # The default is defined for the main chart only
   load_default: =>

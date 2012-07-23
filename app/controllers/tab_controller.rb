@@ -45,8 +45,6 @@ class TabController < ApplicationController
       @slides = @current_sidebar_item.slides.ordered
       @current_slide = @slides.first
 
-      @title = Text.find_by_key("#{tab_key}_#{sidebar_key}").try :title
-
       default_chart = @current_slide.output_element
       Current.setting.charts[:main_chart][:default] = default_chart.id
 

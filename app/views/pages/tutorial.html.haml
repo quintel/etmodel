@@ -13,4 +13,4 @@
           .movie
             = smart_video_player @vimeo_id_for_sidebar, :height => 260,
               :width => 450, :id => 'right_video'
-            %h3=raw t("sidebar_items.#{@sidebar}")
+            %h3=raw t("sidebar_items.#{@sidebar}.short_name")

@@ -72,15 +72,13 @@ D3.stacked_bar =
       @y = d3.scale.linear().range([0, @height]).domain([0, 7])
       @inverted_y = d3.scale.linear().range([@height, 0]).domain([0, 7])
 
+      # there we go
       rect = @svg.selectAll('rect.serie')
         .data(stacked_data, (s) -> s.id)
         .enter().append('svg:rect')
         .attr('class', 'serie')
         .attr("width", @x.rangeBand() * 0.5)
-        .attr('x', (d, i) =>
-          year = if i == 0 then 'start_year' else 'end_year'
-          @x(App.settings.get(year)) + 10
-          )
+        .attr('x', (s) => @x(s.x) + 10)
         .attr('y', @height)
         .style('fill', (d) => d.color)
 

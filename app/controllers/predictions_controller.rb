@@ -14,7 +14,7 @@ class PredictionsController < ApplicationController
 
   def share
     # Set the locale to nl untill en translations are available
-    if I18n.locale.to_s == 'en'
+    if english?
       I18n.locale = 'nl'
       flash[:notice] = 'Sorry, this page is only available in dutch'
     end

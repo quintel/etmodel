@@ -41,4 +41,11 @@ module LayoutHelper
     "/assets/icons/#{ code.split('-').first }.png"
   end
 
+  def dutch?
+    I18n.locale.to_s == 'nl'
+  end
+
+  def english?
+    I18n.locale.to_s == 'en'
+  end
 end

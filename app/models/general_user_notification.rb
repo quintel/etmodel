@@ -13,8 +13,8 @@
 
 class GeneralUserNotification < ActiveRecord::Base
   scope :active, where(:active => true)
-  
+
   def text
-    I18n.locale.to_sym == :en ? notification_en : notification_nl
+    english? ? notification_en : notification_nl
   end
 end

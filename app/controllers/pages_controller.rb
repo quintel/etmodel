@@ -23,7 +23,7 @@ class PagesController < ApplicationController
       assign_settings_and_redirect
     else
       render layout: 'refreshed'
-      @other_locale = ( I18n.locale == :en ? "nl" : "en" )
+      @other_locale = english? ? "nl" : "en"
     end
   end
 

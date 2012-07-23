@@ -3,7 +3,7 @@
   %h1= t("header.famous_users_of_etm")
   %article#famous_users
     - @users.each do |key, user|
-      - title = I18n.locale == :nl ? user["organization"]["function_nl"] : user["organization"]["function_en"]
+      - title = dutch? ? user["organization"]["function_nl"] : user["organization"]["function_en"]
       - url = url_for(controller: 'scenarios', action: 'show', id: user['scenario_id'])
       %div.user{id: key}
         %div.user_shot

@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   include ApplicationHelper
   before_filter :ensure_valid_browser, :except => [:browser_support, :disable_browser_check]
   skip_before_filter :show_intro_screens_only_once, :only => [:intro]
-  layout 'static_page', :only => [:about]
+  layout 'static_page', :only => [:about, :units]
 
   def root
     if request.post?

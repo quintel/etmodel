@@ -1,6 +1,6 @@
 #title
   %h2
-    = raw @title
+    = raw t("sidebar_items.#{@current_sidebar_item.key}.long_name")
     %a.button.fancybox{ href: tab_info_path(ctrl: params[:tab], act: params[:sidebar]) }<>
       %span.info-icon
       Information

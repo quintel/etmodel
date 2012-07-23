@@ -1,35 +1,101 @@
 nl:
   sidebar_items:
-    agriculture: "Landbouw"
-    alt: "Deel van totaal finaal energie gebruik"
-    area: "Gebruik landoppervlak"
-    buildings: "Gebouwen"
-    co2: "CO<sub>2</sub> uitstoot"
-    combustion: "Verbrandings-centrales"
-    cost: "Kosten"
-    dependence: "Energie import"
-    earth: "Geothermie"
-    electricity: "Elektriciteit"
-    electricity_renewable: "Hernieuwbare elektriciteit"
-    electricity_backup: "Elektriciteit backup"
-    employment: "Werkgelegenheid"
-    fce: "Ketenanalyse"
-    fossil_heat: "Fossiele warmte"
-    fuels: "(Transport) brandstoffen"
-    fuel_costs: "Brandstofprijzen"
-    heating_technologies: "Verwarmingstechnologieën"
-    households: "Huishoudens"
-    industry: "Industrie"
-    infrastructure: "Elektriciteitsnet"
-    merit_order: "Merit order"
-    nuclear: "Kerncentrales"
-    other: "Overig"
-    other_fuels: "Alternatieve brandstoffen"
-    renewable_heat: "Hernieuwbare warmte"
-    solar: "Zonnestroom"
-    sustainability: "Hernieuwbaarheid"
-    targets: "Doelen"
-    transport: "Transport"
-    transport_fuels: "Transport brandstoffen"
-    water: "Waterkracht"
-    wind: "Windmolens"
+    agriculture:
+      short_name: "Landbouw"
+      long_name: "Energievraag Landbouw"
+    alt:
+      short_name: "Deel van totaal finaal energie gebruik"
+      long_name: ""
+    area:
+      short_name: "Gebruik landoppervlak"
+      long_name: "Doelen landgebruik"
+    buildings:
+      short_name: "Gebouwen"
+      long_name: "Energievraag Gebouwen"
+    co2:
+      short_name: "CO<sub>2</sub> uitstoot"
+      long_name: "Kosten CO<sub>2</sub> uitstoot"
+    combustion:
+      short_name: "Verbrandings-centrales"
+      long_name: "Kosten verbrandingscentrales"
+    cost:
+      short_name: "Kosten"
+      long_name: "Doelen kosten"
+    dependence:
+      short_name: "Energie import"
+      long_name: "Doelen energie import"
+    earth:
+      short_name: "Geothermie"
+      long_name: "Kosten geothermie"
+    electricity:
+      short_name: "Elektriciteit"
+      long_name: "Elektriciteit"
+    electricity_renewable:
+      short_name: "Hernieuwbare elektriciteit"
+      long_name: "Hernieuwbare elektriciteit"
+    electricity_backup:
+      short_name: "Elektriciteit backup"
+      long_name: "Backup elektriciteit"
+    employment:
+      short_name: "Werkgelegenheid"
+      long_name: "Werkgelegenheid"
+    fce:
+      short_name: "Ketenanalyse"
+      long_name: "Ketenanalyse"
+    fossil_heat:
+      short_name: "Fossiele warmte"
+      long_name: "Fossiele warmte"
+    fuels:
+      short_name: "(Transport) brandstoffen"
+      long_name: "Brandstoffen"
+    fuel_costs:
+      short_name: "Brandstofprijzen"
+      long_name: "Brandstofprijzen"
+    heating_technologies:
+      short_name: "Verwarmingstechnologieën"
+      long_name: "Verwarmingstechnologieën"
+    households:
+      short_name: "Huishoudens"
+      long_name: "Energievraag Huishoudens"
+    industry:
+      short_name: "Industrie"
+      long_name: "Energievraag Industrie"
+    infrastructure:
+      short_name: "Elektriciteitsnet"
+      long_name: "Kosten infrastructuur"
+    merit_order:
+      short_name: "Merit order"
+      long_name: "Merit order"
+    nuclear:
+      short_name: "Kerncentrales"
+      long_name: "Kosten kerncentrales"
+    other:
+      short_name: "Overig"
+      long_name: "Energievraag Overige Gebruikers"
+    other_fuels:
+      short_name: "Alternatieve brandstoffen"
+      long_name: "Alternatieve brandstoffen"
+    renewable_heat:
+      short_name: "Hernieuwbare warmte"
+      long_name: "Hernieuwbare warmte"
+    solar:
+      short_name: "Zonnestroom"
+      long_name: "Kosten zonnestroom"
+    sustainability:
+      short_name: "Hernieuwbaarheid"
+      long_name: "Doelen hernieuwbaar"
+    targets:
+      short_name: "Doelen"
+      long_name: "Doelen"
+    transport:
+      short_name: "Transport"
+      long_name: "Energievraag Transport"
+    transport_fuels:
+      short_name: "Transport brandstoffen"
+      long_name: "Transportbrandstoffen"
+    water:
+      short_name: "Waterkracht"
+      long_name: "Kosten waterkracht"
+    wind:
+      short_name: "Windmolens"
+      long_name: "Kosten windstroom"

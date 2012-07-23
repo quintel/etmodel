@@ -1,35 +1,101 @@
 en:
   sidebar_items:
-    agriculture: "Agriculture"
-    alt: "Share of total final energy demand"
-    area: "Area use"
-    buildings: "Buildings"
-    co2: "CO<sub>2</sub> emissions"
-    combustion: "Combustion plants"
-    cost: "Cost"
-    dependence: "Dependence"
-    earth: "Geothermal"
-    electricity: "Electricity"
-    electricity_backup: "Electricity backup"
-    electricity_renewable: "Renewable electricity"
-    employment: "Employment"
-    fce: "Fuel chain emissions"
-    fossil_heat: "Fossil heat"
-    fuels: "Fuels"
-    fuel_costs: "Fuel prices"
-    heating_technologies: "Heating technologies"
-    households: "Households"
-    industry: "Industry"
-    infrastructure: "Infrastructure"
-    merit_order: "Merit order"
-    nuclear: "Nuclear plants"
-    other: "Other"
-    other_fuels: "Alternative fuels"
-    renewable_heat: "Renewable heat"
-    solar: "Solar power"
-    sustainability: "Renewability"
-    targets: "Targets"
-    transport: "Transportation"
-    transport_fuels: "Transport fuels"
-    water: "Hydro electric"
-    wind: "Wind turbines"
+    agriculture:
+      short_name: "Agriculture"
+      long_name: "Agriculture energy demand"
+    alt:
+      short_name: "Share of total final energy demand"
+      long_name: ""
+    area:
+      short_name: "Area use"
+      long_name: "Area use policies"
+    buildings:
+      short_name: "Buildings"
+      long_name: "Energy demand non-residential buildings"
+    co2:
+      short_name: "CO<sub>2</sub> emissions"
+      long_name: "CO<sub>2</sub> emissions costs"
+    combustion:
+      short_name: "Combustion plants"
+      long_name: "Combustion plants costs"
+    cost:
+      short_name: "Cost"
+      long_name: "Cost policies"
+    dependence:
+      short_name: "Dependence"
+      long_name: "Import policies"
+    earth:
+      short_name: "Geothermal"
+      long_name: "Geothermal costs"
+    electricity:
+      short_name: "Electricity"
+      long_name: "Electricity"
+    electricity_backup:
+      short_name: "Electricity backup"
+      long_name: "Electricity backup"
+    electricity_renewable:
+      short_name: "Renewable electricity"
+      long_name: "Renewable electricity"
+    employment:
+      short_name: "Employment"
+      long_name: "Employment"
+    fce:
+      short_name: "Fuel chain emissions"
+      long_name: "Fuel chain emissions"
+    fossil_heat:
+      short_name: "Fossil heat"
+      long_name: "Fossil heat"
+    fuels:
+      short_name: "Fuels"
+      long_name: "Fuels"
+    fuel_costs:
+      short_name: "Fuel prices"
+      long_name: "Fuel prices"
+    heating_technologies:
+      short_name: "Heating technologies"
+      long_name: "Heating technologies"
+    households:
+      short_name: "Households"
+      long_name: "Household energy demand"
+    industry:
+      short_name: "Industry"
+      long_name: "Industry energy demand"
+    infrastructure:
+      short_name: "Infrastructure"
+      long_name: "Infrastructure costs"
+    merit_order:
+      short_name: "Merit order"
+      long_name: "Merit order"
+    nuclear:
+      short_name: "Nuclear plants"
+      long_name: "Nuclear plants costs"
+    other:
+      short_name: "Other"
+      long_name: "Energy demand other users"
+    other_fuels:
+      short_name: "Alternative fuels"
+      long_name: "Alternative fuels"
+    renewable_heat:
+      short_name: "Renewable heat"
+      long_name: "Renewable heat"
+    solar:
+      short_name: "Solar power"
+      long_name: "Solar power costs"
+    sustainability:
+      short_name: "Renewability"
+      long_name: "Sustainability target policies"
+    targets:
+      short_name: "Targets"
+      long_name: "Targets"
+    transport:
+      short_name: "Transportation"
+      long_name: "Transport energy demand"
+    transport_fuels:
+      short_name: "Transport fuels"
+      long_name: "Transport Fuels"
+    water:
+      short_name: "Hydro electric"
+      long_name: "Water power costs"
+    wind:
+      short_name: "Wind turbines"
+      long_name: "Wind power costs"

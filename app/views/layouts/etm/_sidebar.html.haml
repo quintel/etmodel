@@ -11,7 +11,7 @@
             :'data-nav' => false do
             %p
               %span.title
-                = raw t("sidebar_items.#{item.key}")
+                = raw t("sidebar_items.#{item.key}.short_name")
               - if item.percentage_bar_query.present?
                 %span.bar{:alt => t('sidebar_items.alt'), :style => "width: 0px"}
                 %span.value

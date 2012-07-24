@@ -18,7 +18,6 @@ class @Chart extends Backbone.Model
     d3_support = Browser.hasD3Support()
     view_class = switch type
       when 'bezier'                 then BezierChartView
-      when 'horizontal_bar'         then HorizontalBarChartView
       when 'horizontal_stacked_bar' then HorizontalStackedBarChartView
       when 'mekko'
         if d3_support

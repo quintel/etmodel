@@ -36,3 +36,4 @@
 //= require d3/mekko
 //= require d3/targets
 //= require d3/stacked_bar
+//= require d3/bezier

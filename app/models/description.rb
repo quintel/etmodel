@@ -20,18 +20,26 @@ class Description < ActiveRecord::Base
 
   # REFACTOR: Validators
 
+  searchable do
+    text :content_en
+    text :content_nl
+    text :short_content_en
+    text :short_content_nl
+  end
+
   def short_content
-    t(:short_content)
+    t :short_content
   end
 
   def content
-    t(:content)
+    t :content
   end
 
   def t(attr_name)
-    send("#{attr_name}_#{I18n.locale.to_s.split('-').first}").andand.html_safe
+    lang = I18n.locale.to_s.split('-').first
+    send("#{attr_name}_#{lang}").andand.html_safe
   end
-  
+
   def title
     s = if describable.respond_to?(:title_for_description)
       describable.title_for_description
@@ -41,7 +49,7 @@ class Description < ActiveRecord::Base
       nil
     end
   end
-  
+
   def embeds_player?
     content.andand.include?("player")  || content.andand.include?("object")
   end

@@ -16,8 +16,6 @@ Etm::Application.routes.draw do
   match "/:tab(/:sidebar)" => 'tab#show', :as => :tab, :constraints => {:tab => /(targets|demand|costs|supply)/}
 
   match '/texts/:id' => 'texts#show'
-  # remove after updating hard coded urls in db
-  match '/translations/:id' => 'texts#show'
 
   match 'login'  => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout

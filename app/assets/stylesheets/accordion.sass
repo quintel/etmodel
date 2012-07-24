@@ -22,7 +22,7 @@
       a.slide_header
         display: block
         padding: 0 0 0 31px
-        background: #dfe8f3 url(/assets/accordion/triangle.gif) no-repeat
+        background: #dfe8f3 image-url("slides/triangle.gif") no-repeat
         font: normal 16px/30px $title_font_family
         text-decoration: none
         text-align: left
@@ -30,7 +30,7 @@
         height: 1%
 
       a.slide_header:hover, .selected a, .ui-state-active a
-        background: #dfe8f3 url(/assets/accordion/triangle-hover.gif) no-repeat
+        background: #dfe8f3 image-url("slides/triangle-hover.gif") no-repeat
 
   .accordion
     float: left
@@ -145,11 +145,7 @@
       height: 26px
       width: 123px
       text-align: right
-      background: #fff url('/assets/layout/grey_triangle_down.gif') no-repeat scroll right bottom
-
-    li:hover
-      a.icon
-        background-image : url(/assets/layout/ico-reset.gif)
+      background: #fff image-url('slides/grey_triangle_down.gif') no-repeat scroll right bottom
 
 // HiDPI Accordion Images.
 

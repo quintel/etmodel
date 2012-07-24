@@ -18,7 +18,7 @@
         - vertical_grid_lines.times do |int|
           %li{:id => "ytick_#{int}", :style => "height: #{(100.0/vertical_grid_lines).round(1)}%"}
 
-      #y-axis-label{:style => "background-image: url(/assets/layout/euro_per_mwh_#{I18n.locale}.gif)"} EUR/MWhe
+      #y-axis-label{:style => "background-image: url(/assets/charts/euro_per_mwh_#{I18n.locale}.gif)"} EUR/MWhe
       #x-axis-label= t("output_elements.block_chart.total_investment_cost_of_production")
 
       - blocks.each do |block|

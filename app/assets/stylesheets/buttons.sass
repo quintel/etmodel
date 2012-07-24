@@ -1,5 +1,5 @@
 @import "blueprint/buttons"
-@import "layout/button-icons/*.png"
+@import "icons/*.png"
 
 // Sizing --------------------------------------------------------------------
 
@@ -73,18 +73,18 @@ h2 a.button, h2 input.button, h2 button.button
     width: 16px
 
   span.right-icon
-    @include button-icons-sprite('arrow-right-primary', 1px)
+    @include icons-sprite('arrow-right-primary', 1px)
     margin-left: 1px
     margin-right: 0px
 
 .button span
   &.info-icon
-    @include button-icons-sprite('files', 1px)
+    @include icons-sprite('files', 1px)
     margin: -3px 2px -1px 0
     height: 16px
 
   &.tutorial-icon
-    @include button-icons-sprite('video', 1px)
+    @include icons-sprite('video', 1px)
 
 // HiDPI Buttons.
 
@@ -93,7 +93,7 @@ h2 a.button, h2 input.button, h2 button.button
 @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)
   .button span
     &.right-icon, &.info-icon, &.tutorial-icon
-      background: image-url('layout/button-icons-hidpi.png') no-repeat
+      background: image-url('button-icons-hidpi.png') no-repeat
       background-size: 15px 66px
 
     &.right-icon

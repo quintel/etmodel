@@ -12,6 +12,6 @@
     #description_container
       - @scenarios.each do |scenario|
         .description{:id => "description_#{scenario.id}"}
-          = image_tag 'layout/ico_info_big.png'
+          = image_tag 'pages/home/ico_info_big.png'
           = scenario.description.html_safe
     %input#go_button.button{:type => 'submit', :value => t('scenario.load')}

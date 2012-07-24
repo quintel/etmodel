@@ -1,26 +1,25 @@
-%div{:style => "width: 60%"}
-  = "Check the <a href='http://wiki.quintel.nl/index.php/Charts' target='_blank'>wiki</a> for more info".html_safe
-  %br
-  %br
-  = simple_form_for [:admin, @output_element_serie] do |f|
-    = f.association :output_element, :collection => OutputElement.all(:order => "`output_elements`.key   ASC").map{|o| [o.key, o.id]}
-    = f.input :label, :hint => "The translations of the label should be available! *Please use an identifier_like_this (no capital letters or spaces)*. Check the <a href='http://wiki.quintel.nl/index.php/Charts' target='_blank'>wiki</a> for more info".html_safe
-    = f.input :gquery, :hint => "This should be the key of your fantastic gquery! These can be found on the engine!"
-    = f.input :color, :collection => OutputElementSerie::COLORS.to_a,:hint => "<span class='color_hint'></span><br/>".html_safe
-    = f.input :order_by, :hint => "Which serie should be first, second, etc .. ?"
-    = f.input :group, :hint => "This is only used for mekko's, waterfalls and horizontal stacked bars. This groups series with the same group. e.g.: the series query the carrier, the group defines the sector. Check the <a href='http://wiki.quintel.nl/index.php/Charts#Mekko' target='_blank'>wiki</a> for more info".html_safe
-    = f.input :show_at_first, :hint => "Should the serie shown as default in the cost/block chart?"
-    = f.input :is_target_line, :hint => "This sets a serie to be a target line and should be the last one of the series!! (a target line is the horizontal red line mostly used on barcharts )" 
-    = f.input :target_line_position, :hint => "This should be filled in when is_target_line is true, should be 1 if you want it placed on top of the 1st serie, 2 for the 2nd, etc.. See <a href='http://wiki.quintel.nl/index.php/Charts#Vertical_Stacked_Bar' target='_blank'>wiki</a> for more info".html_safe
-    
-    = f.simple_fields_for :area_dependency do |j|
-      = j.input :dependent_on, :as => :select, :collection => Api::Area::DEPENDABLE_ATTRIBUTES, :hint => "When you dont want to show the serie for areas which have a certain setting. E.g. dont wanna show Solar CSP in NL? Put this to 'has_solar_csp' and be sure that for NL this value is false in the area data."
-    
-    = f.simple_fields_for :description do |j|
-      = j.input :short_content_en, :hint => "This is only used on the cost/block chart!"
-      = j.input :short_content_nl, :hint => "This is only used on the cost/block chart!"
-      = j.input :content_en, :hint => "This is only used on the cost/block chart!"
-      = j.input :content_nl, :hint => "This is only used on the cost/block chart!"
-    = f.button :submit
-  
-  = link_to "back", admin_output_element_series_path
+Check the <a href='http://wiki.quintel.nl/index.php/Charts' target='_blank'>wiki</a> for more info
+%br
+%br
+= simple_form_for [:admin, @output_element_serie] do |f|
+  = f.association :output_element, :collection => OutputElement.all(:order => "`output_elements`.key   ASC").map{|o| [o.key, o.id]}
+  = f.input :label, :hint => "The translations of the label should be available! *Please use an identifier_like_this (no capital letters or spaces)*. Check the <a href='http://wiki.quintel.nl/index.php/Charts' target='_blank'>wiki</a> for more info".html_safe
+  = f.input :gquery, :hint => "This should be the key of your fantastic gquery! These can be found on the engine!"
+  = f.input :color, :collection => OutputElementSerie::COLORS.to_a,:hint => "<span class='color_hint'></span><br/>".html_safe
+  = f.input :order_by, :hint => "Which serie should be first, second, etc .. ?"
+  = f.input :group, :hint => "This is only used for mekko's, waterfalls and horizontal stacked bars. This groups series with the same group. e.g.: the series query the carrier, the group defines the sector. Check the <a href='http://wiki.quintel.nl/index.php/Charts#Mekko' target='_blank'>wiki</a> for more info".html_safe
+  = f.input :show_at_first, :hint => "Should the serie shown as default in the cost/block chart?"
+  = f.input :is_target_line, :hint => "This sets a serie to be a target line and should be the last one of the series!! (a target line is the horizontal red line mostly used on barcharts )"
+  = f.input :target_line_position, :hint => "This should be filled in when is_target_line is true, should be 1 if you want it placed on top of the 1st serie, 2 for the 2nd, etc.. See <a href='http://wiki.quintel.nl/index.php/Charts#Vertical_Stacked_Bar' target='_blank'>wiki</a> for more info".html_safe
+
+  = f.simple_fields_for :area_dependency do |j|
+    = j.input :dependent_on, :as => :select, :collection => Api::Area::DEPENDABLE_ATTRIBUTES, :hint => "When you dont want to show the serie for areas which have a certain setting. E.g. dont wanna show Solar CSP in NL? Put this to 'has_solar_csp' and be sure that for NL this value is false in the area data."
+
+  = f.simple_fields_for :description do |j|
+    = j.input :short_content_en, :hint => "This is only used on the cost/block chart!"
+    = j.input :short_content_nl, :hint => "This is only used on the cost/block chart!"
+    = j.input :content_en, :hint => "This is only used on the cost/block chart!"
+    = j.input :content_nl, :hint => "This is only used on the cost/block chart!"
+  = f.button :submit
+
+= link_to "back", admin_output_element_series_path

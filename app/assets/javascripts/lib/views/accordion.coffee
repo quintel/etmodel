@@ -1,16 +1,19 @@
 class @Accordion
   setup: ->
-    accordion = $('.accordion').accordion
+    @accordion = $('.accordion').accordion
       header: '.headline',
       collapsible: true,
       fillSpace: false,
       autoHeight: false,
       active: false
+    @open_right_tab()
+    @setup_callbacks()
 
     # Setup slides and open the right one. The default slide can be set
     # by passing a fragment url (http://ETM/costs#slide_key)
     # Otherwise the first slide will be open by default.
     #
+  open_right_tab: ->
     slide_keys = []
     i = 0
     for e in $('li.accordion_element')
@@ -31,29 +34,43 @@ class @Accordion
       slide_index = open_slide_index
     $('.ui-accordion').accordion("activate", slide_index)
 
+  setup_callbacks: =>
     # Here we load the new default chart
-    $('.ui-accordion').bind 'accordionchange', (ev, ui) ->
-      slide_key = ui.newHeader.data('slide')
+    $('.ui-accordion').bind 'accordionchange', (e, ui) ->
+      element = ui.newHeader
+
+      # update url fragment
+      slide_key = element.data('slide')
       window.location.hash = slide_key
 
-      slide_title = $.trim(ui.newHeader.text())
+      # track event
+      slide_title = $.trim(element.text())
       Tracker.track({slide: slide_title})
-      if ui.newHeader.length > 0
-        default_chart = ui.newHeader.data('default_chart')
-        alternate_chart = ui.newHeader.data('alt_chart')
+
+      # load default chart as needed
+      if element.length > 0
+        default_chart = element.data('default_chart')
+        alternate_chart = element.data('alt_chart')
+        # store the default chart for this slide
         chart_settings = App.settings.get('charts')
         chart_settings.main_chart.default = default_chart
         App.settings.set 'charts', chart_settings
 
-        $("a.default_chart").toggle(charts.current_chart_in('main_chart') != default_chart)
-        # don't load if a chart is pinned
+        # show/hide the default chart button
+        showing_default = charts.current_chart_in('main_chart') == default_chart
+        $("a.default_chart").toggle(!showing_default)
+
+        # load chart
         unless charts.pinned_chart_in('main_chart')
           charts.load(default_chart, 'main_chart', {alternate: alternate_chart})
 
-    $(".slide").each (i, slide) ->
-      $("a.btn-done", slide).filter(".next, .previous").click () ->
-        accordion.accordion("activate",i + ($(this).is(".next") ? 1 : -1))
-        return false
+    # next button
+    i = 1
+    for slide in $('.slide')
+      $('a.next_slide', slide).click (e) =>
+        e.preventDefault()
+        @accordion.accordion "activate", i
+        i += 1
 
   reset: =>
     $(".accordion").accordion("destroy")

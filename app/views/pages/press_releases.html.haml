@@ -6,7 +6,7 @@
 
   - @releases.each do |release|
     %div
-      =image_tag("layout/#{(release.release_type == 'radio' ? "speaker.jpeg" : "pdf_icon.gif")}", :class =>"left", :size=>"35x40",:style =>"padding-right:10px")
+      =image_tag("icons/#{(release.release_type == 'radio' ? "speaker.jpeg" : "pdf.gif")}", :class =>"left", :size=>"35x40",:style =>"padding-right:10px")
     %strong= release.medium
     %small= l release.release_date, :format => :date_only
     %br

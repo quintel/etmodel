@@ -7,7 +7,7 @@
       - url = url_for(controller: 'scenarios', action: 'show', id: user['scenario_id'])
       %div.user{id: key}
         %div.user_shot
-          = link_to_if user['scenario_id'], image_tag("famous_users/#{key}.jpg"), url
+          = link_to_if user['scenario_id'], image_tag("pages/famous_users/#{key}.jpg"), url
         %h3
           %a.name{href:'#'}= user["name"]
           %a.title{href: '#'}= title

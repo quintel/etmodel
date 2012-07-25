@@ -5,15 +5,14 @@
     = label_tag :gquery, "Filter by gquery"
     = text_field_tag :gquery, params[:gquery]
     = submit_tag "Search"
-  
+
   = link_to 'Create new serie', new_admin_output_element_serie_path
 
 %table.default
   %thead
     %tr
       %th.tal Label
-      %th.tal Output_element
-
+      %th.tal output element
       %th.tal Gquery
       %th
       %th
@@ -22,7 +21,8 @@
       - if s.output_element
         %tr{cycles}
           %td= s.label
-          %td= s.output_element.key
+          %td= link_to s.output_element.key, [:admin, s.output_element]
           %td= highlight s.gquery, params[:gquery]
           %td= link_to 'Show/Edit', edit_admin_output_element_serie_path(s)
-          %td= link_to "Destroy", [:admin, s], :confirm => 'Are you sure?', :method => :delete
+          %td= link_to "Destroy", [:admin, s],
+            :data => {:confirm => 'Are you sure?'}, :method => :delete

@@ -233,7 +233,11 @@ class @ChartList extends Backbone.Collection
           new_chart.series.add(s)
 
         # if the chart was pinned as table let's set the instance variable
-        show_as_table = App.settings.get('charts')[holder_id].format == 'table'
+        show_as_table = try
+          App.settings.get('charts')[holder_id].format == 'table'
+        catch e
+          null
+
         if show_as_table
           new_chart.view.display_as_table = true
 
@@ -267,9 +271,11 @@ class @ChartList extends Backbone.Collection
   # returns the main chart
   current: -> @chart_holders['main_chart']
 
+  # ugly
   remove_pin: (holder_id) =>
     chart_settings = App.settings.get('charts')
     chart_settings[holder_id].chart_id = false
+    chart_settings[holder_id].format = null
     App.settings.save({charts: chart_settings})
     holder = $('#' + holder_id).parents('.chart_holder')
     holder.find("a.pin_chart").removeClass("icon-lock").addClass("icon-unlock")
@@ -287,7 +293,6 @@ class @ChartList extends Backbone.Collection
       @chart_holders[holder_id].get 'id'
     catch e
       null
-
 
   # The default is defined for the main chart only
   load_default: =>
@@ -327,6 +332,7 @@ class @ChartList extends Backbone.Collection
         format = null
       else
         value = chart_id
+
       chart_settings[holder_id].chart_id = value
       chart_settings[holder_id].format = format
       App.settings.save({charts: chart_settings})

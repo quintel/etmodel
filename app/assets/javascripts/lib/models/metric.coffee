@@ -59,7 +59,7 @@
       when 'MW'
         return "#{value}#{@scaling_in_words(pow, 'watt')}"
       when 'euro'
-        return "&euro;#{value}"
+        return "€#{value}"
       when 'man_years'
         return "#{@round_number x, 0}#{@scaling_in_words(0, 'man_years')}"
       when 'FTE'

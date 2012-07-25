@@ -20,16 +20,20 @@ class @WaterfallChartView extends BaseChartView
 
   results: ->
     scale = @data_scale()
-    series = @model.series.map (serie) ->
+    series = @model.series.map (serie) =>
       present = serie.present_value()
       future = serie.future_value()
       if serie.get('group') == 'value'
         # Take only the present value, as group == value queries only future/present
         # ?! - PZ
-        return present # Metric.scale_value present, scale
+        if @scale_units() then Metric.scale_value(present, scale) else present
       else
-        return future # Metric.scale_value future, scale
+        if @scale_units() then Metric.scale_value(future, scale) else future
     [series]
+
+  scale_units: => @model.get('unit') != 'PJ'
+
+  tick_unit: => if @scale_units() then @parsed_unit() else @model.get('unit')
 
   render_waterfall: =>
     $.jqplot @model.get("container"), @results(), @chart_opts()
@@ -64,4 +68,4 @@ class @WaterfallChartView extends BaseChartView
           rendererOptions:
             forceTickAt0: true # we always want a tick a 0
           tickOptions:
-            formatString: "%.#{@significant_digits()}f&nbsp;#{@model.get('unit')}"
+            formatString: "%.#{@significant_digits()}f&nbsp;#{@tick_unit()}"

@@ -43,7 +43,7 @@ D3.treemap =
       @out = out
 
     draw: =>
-      @width = @container_node().width()   || 490
+      @width = 494
       @height = @container_node().height() || 502
       @treemap = d3.layout.treemap()
         .size([@width, @height])

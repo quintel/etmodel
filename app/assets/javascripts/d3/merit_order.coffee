@@ -55,7 +55,7 @@ D3.merit_order =
 
     draw: =>
       @margin = 50
-      @width = (@container_node().width()   || 490) - 2 * @margin
+      @width = 494 - 2 * @margin
       @height = (@container_node().height() || 402) - 2 * @margin
       @x = d3.scale.linear().domain([0, 100]).range([0, @width])
       @y = d3.scale.linear().domain([0, 100]).range([0, @height])

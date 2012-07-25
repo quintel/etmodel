@@ -69,7 +69,7 @@ D3.mekko =
         left: 30
         right: 10
 
-      @width = (@container_node().width()   || 490) - (margins.left + margins.right)
+      @width = 494 - (margins.left + margins.right)
       @height = (@container_node().height() || 402) - (margins.top + margins.bottom)
       @svg = d3.select("#d3_container_#{@model.get 'key'}").
         append("svg:svg").

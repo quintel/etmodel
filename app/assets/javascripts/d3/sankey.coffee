@@ -339,7 +339,7 @@ D3.sankey =
         left: 5
         bottom: 5
         right: 10
-      @width = (@container_node().width()   || 490) - (@margin.left + @margin.right)
+      @width = 494 - (@margin.left + @margin.right)
       @height = (@container_node().height() || 452) - (@margin.top + @margin.bottom)
 
       # set up the scaling methods

@@ -29,7 +29,7 @@ D3.bezier =
         left: 20
         right: 20
 
-      @width = (@container_node().width()   || 490) - (margins.left + margins.right)
+      @width = 494 - (margins.left + margins.right)
       @height = (@container_node().height() || 402) - (margins.top + margins.bottom)
       @svg = d3.select("#d3_container_#{@key}")
         .append("svg:svg")

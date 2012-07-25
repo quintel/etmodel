@@ -72,7 +72,7 @@ D3.targets =
         left: 20
         right: 20
 
-      @width = (@container_node().width() || 490) - (margins.left + margins.right)
+      @width = 494 - (margins.left + margins.right)
       @height = (@outer_height() || 402)- (margins.top + margins.bottom)
       @namespace.width = @width
       t.scale.range([80, @width]) for t in @targets

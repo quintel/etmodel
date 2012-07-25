@@ -15,7 +15,7 @@ class @Chart extends Backbone.Model
   render : =>
     return false unless @supported_by_current_browser()
     type = @get('type')
-    d3_support = Browser.hasD3Support()
+    d3_support = Browser.hasD3Support() && !window.disable_d3
     view_class = switch type
       when 'bezier'
         if d3_support

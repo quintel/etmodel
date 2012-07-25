@@ -164,6 +164,8 @@ class @Chart extends Backbone.Model
 
   shown_as_table: => @view.display_as_table
 
+  can_be_shown_as_table: => @view.can_be_shown_as_table()
+
 class @ChartList extends Backbone.Collection
   model : Chart
 
@@ -188,6 +190,9 @@ class @ChartList extends Backbone.Collection
   #    to show multiple charts on the same page
   #  - alternate: id of the chart to load if the first one fails. Watch out for
   #    loops!
+  #
+  # TODO: refactor, too much stuff is happening here!
+  #
   load : (chart_id, holder_id = 'main_chart', options = {}) =>
     if @pinned_chart_in(holder_id) || @current_chart_in(holder_id) == chart_id
       return false
@@ -227,16 +232,27 @@ class @ChartList extends Backbone.Collection
           s.owner = holder_id
           new_chart.series.add(s)
 
+        # if the chart was pinned as table let's set the instance variable
+        show_as_table = App.settings.get('charts')[holder_id].format == 'table'
+        if show_as_table
+          new_chart.view.display_as_table = true
+
         # Now it's time to upate the buttons and links for the chart
         root = $('#' + holder_id).parents('.chart_holder')
+
         # show/hide default chart button - only for the chart holders that
         # actually define a default chart. The dashboard popups charts don't.
         if container_info = App.settings.get('charts')[holder_id]
           default_chart_for_holder = container_info.default
           root.find("a.default_chart").toggle(chart_id != default_chart_for_holder)
+
         # show/hide format toggle button
-        root.find("a.table_format").toggle( new_chart.view.can_be_shown_as_table() )
-        root.find("a.chart_format").hide()
+        root.find("a.chart_format, a.table_format").hide()
+        if show_as_table && new_chart.can_be_shown_as_table()
+          root.find("a.chart_format").show()
+        if new_chart.can_be_shown_as_table() && !show_as_table
+          root.find("a.table_format").show()
+
         # update chart information link
         root.find(".actions a.chart_info").attr(
           "href", "/descriptions/charts/#{chart_id}")
@@ -282,12 +298,18 @@ class @ChartList extends Backbone.Collection
   # there are some issues with the event bindings leaving zombies around:
   # http://lostechies.com/derickbailey/2011/09/15/zombies-run-managing-page-transitions-in-backbone-apps/
   setup_callbacks: ->
-    # chart selection pop-up
+    # chart selection pop-up. Drops pinned chart for that holder and resets the
+    # chart format
     $(document).on "click", "a.pick_charts", (e) =>
-      chart_holder = $(e.target).parents('a').data('chart_holder')
+      holder_id = $(e.target).parents('a').data('chart_holder')
       chart_id = $(e.target).parents('a').data('chart_id')
-      @remove_pin(chart_holder)
-      @load chart_id, chart_holder
+
+      chart_settings = App.settings.get('charts')
+      chart_settings[holder_id].chart_id = null
+      chart_settings[holder_id].format = null
+      App.settings.save({charts: chart_settings})
+
+      @load chart_id, holder_id
       close_fancybox()
 
     $(document).on 'click', "a.pin_chart", (e) =>

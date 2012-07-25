@@ -5,12 +5,12 @@ class CleanupSeriesLabels < ActiveRecord::Migration
         new_label = s.label.parameterize.gsub('-', '_')
         s.update_attribute :label, new_label
       end
-      
+
       unless s.group.blank?
         new_group = s.group.parameterize.gsub('-', '_')
         s.update_attribute :group, new_group
       end
-      
+
     end
   end
 

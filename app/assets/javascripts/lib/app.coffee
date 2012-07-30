@@ -49,7 +49,9 @@ class @AppView extends Backbone.View
       dataType: 'json'
       data:
         settings : @scenario.api_attributes()
-      ).pipe (d) -> d.scenario.id
+      timeout: 10000
+      error: @handle_ajax_error
+    ).pipe (d) -> d.scenario.id
     # When we first get the scenario id let's save it locally
     @deferred_scenario_id.done (id) =>
       @settings.save
@@ -85,7 +87,6 @@ class @AppView extends Backbone.View
     @scenario_id().done =>
       url = @scenario.query_url(input_params)
       keys = window.gqueries.keys()
-      # console.log "Gqueries count: #{keys.length}"
       keys_ids = _.select(keys, (key) -> !key.match(/\(/))
       keys_string = _.select(keys, (key) -> key.match(/\(/))
       params =
@@ -100,17 +101,17 @@ class @AppView extends Backbone.View
         data: params
         type: 'PUT'
         success: @handle_api_result
-        error: (xOptions, textStatus) =>
-          console.log("Something went wrong: " + textStatus)
-          @handle_timeout() if textStatus == 'timeout'
-          @hideLoading()
+        error: @handle_ajax_error
         timeout: 10000
 
-  handle_timeout: ->
-    r = confirm "Your internet connection seems to be very slow. The ETM is
+  handle_ajax_error: (jqXHR, textStatus) ->
+    console.log("Something went wrong: " + textStatus)
+    if textStatus == 'timeout'
+      r = confirm "Your internet connection seems to be very slow. The ETM is
       still waiting to receive an update from the server. Press OK to reload
       the page"
-    location.reload(true) if (r)
+      location.reload(true) if (r)
+    @hideLoading()
 
   # The following method could need some refactoring
   # e.g. el.set({ api_result : value_arr })

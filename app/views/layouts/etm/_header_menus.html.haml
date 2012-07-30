@@ -24,17 +24,14 @@
       #flag
         %img{src: icon_for_area_code(Current.setting.area_code), title: I18n.t(Current.setting.area_code), width: 16 }
         = I18n.t(Current.setting.area_code) unless Current.setting.area_code.length == 2
-      = t("header.current_country")+":"
+      #{t "header.current_country"}:
     %li
-      #year
-        = Current.setting.end_year
-      = t("header.current_end_year")+":"
+      #year= Current.setting.end_year
+      #{t "header.current_end_year"}:
 
   %li
-    = t("header.current_language")+":"
-    = form_tag set_locale_path do
-      = hidden_field_tag :slide_key
-      = select_tag "locale", options_for_select(["en", "nl"], I18n.locale.to_s)
+    #{t "header.current_language"}:
+    = select_tag "locale", options_for_select([:en, :nl], I18n.locale)
 
   %li
     - if has_active_scenario?

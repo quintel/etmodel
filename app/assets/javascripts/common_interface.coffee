@@ -98,7 +98,13 @@ $ ->
   $("#disable_peak_load_tracking").live 'click', -> disable_peak_load_tracking()
 
   # locale select box
-  $("select#locale").change -> $(this).parents('form').submit()
+  $("select#locale").change ->
+    $.ajax
+      url: "/set_locale"
+      method: "PUT"
+      data:
+        locale: $(this).val()
+      success: -> window.location.reload()
 
   # Is this thing still used?
   $("input[name='area_code']").change ->

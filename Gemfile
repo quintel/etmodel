@@ -54,7 +54,8 @@ group :production do
 end
 
 group :assets do
-  gem 'therubyracer'
+  gem 'therubyracer', '0.11.0beta5'
+  gem 'libv8', '~> 3.11.8'
   gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier'

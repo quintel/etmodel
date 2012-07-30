@@ -1,4 +1,4 @@
-- country = params[:country] || Current.setting.area_code
+- country = params[:country] || Current.setting.country
 
 #logos
   #all_container
@@ -15,7 +15,8 @@
             %li{:timeout => company.time }
               - href = (company.description? ? partner_path(company.name.downcase) : company.url)
 
-              %a{ :href => href, :id=> company.name.downcase, :style => "background-image: url('#{company.footer_logo}');" }
+              %a{:href => href, :id=> company.name.downcase,
+                 :style => "background-image: url('#{company.footer_logo}');" }
                 = company.name
 
               .clear

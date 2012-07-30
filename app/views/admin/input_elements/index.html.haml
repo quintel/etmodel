@@ -18,7 +18,7 @@
     - @input_elements.each do |i|
       %tr{cycles}
         %td= i.id
-        %td= i.slides.map(&:short_name).join(', ')
+        %td= i.slide.try :short_name
         %td= t "input_elements.#{i.key}"
         %td= i.key
         %td

@@ -350,17 +350,17 @@ D3.sankey =
 
       # This is the function that will take care of drawing the links once we've
       # set the base points
-      @link_line = d3.svg.line().
-        interpolate("basis").
-        x((d) -> @x(d.x)).
-        y((d) -> @y(d.y))
+      @link_line = d3.svg.line()
+        .interpolate("basis")
+        .x((d) -> @x(d.x))
+        .y((d) -> @y(d.y))
 
-      @svg = d3.select("#d3_container_#{@key}").
-        append("svg:svg").
-        attr("height", @height + @margin.top + @margin.bottom).
-        attr("width", @width + @margin.left + @margin.right).
-        append("svg:g").
-        attr("transform", "translate(#{@margin.left}, #{@margin.top})")
+      @svg = d3.select("#d3_container_#{@key}")
+        .append("svg:svg")
+        .attr("height", @height + @margin.top + @margin.bottom)
+        .attr("width", @width + @margin.left + @margin.right)
+        .append("svg:g")
+        .attr("transform", "translate(#{@margin.left}, #{@margin.top})")
       @links = @draw_links()
       @nodes = @draw_nodes()
       $("g.node").qtip
@@ -379,60 +379,60 @@ D3.sankey =
 
     draw_links: =>
       # links are treated as a group made of a link path and label text element
-      links = @svg.selectAll('g.link').
-        data(@link_list.models, (d) -> d.cid).
-        enter().
-        append("svg:g").
-        attr("class", (l) -> "link #{l.left.get('id')} #{l.right.get('id')}").
-        attr("data-cid", (d) -> d.cid) # unique identifier
+      links = @svg.selectAll('g.link')
+        .data(@link_list.models, (d) -> d.cid)
+        .enter()
+        .append("svg:g")
+        .attr("class", (l) -> "link #{l.left.get('id')} #{l.right.get('id')}")
+        .attr("data-cid", (d) -> d.cid) # unique identifier
       # link path
-      links.append("svg:path").
-        style("stroke-width", (link) -> link.value()).
-        style("stroke", (link, i) -> link.color()).
-        style("fill", "none").
-        style("opacity", selectedLinkOpacity).
-        attr("d", (link) => @link_line link.path_points()).
-        on("mouseover", @link_mouseover).
-        on("mouseout", @node_mouseout)
+      links.append("svg:path")
+        .style("stroke-width", (link) -> link.value())
+        .style("stroke", (link, i) -> link.color())
+        .style("fill", "none")
+        .style("opacity", selectedLinkOpacity)
+        .attr("d", (link) => @link_line link.path_points())
+        .on("mouseover", @link_mouseover)
+        .on("mouseout", @node_mouseout)
       # link labels
-      links.append("svg:text").
-      attr("class", "link_label").
-      attr("x", (d) => @x d.right_x()).
-      attr("y", (d) => @y d.right_y()).
-      attr("dx", -55).
-      attr("dy", 2).
-      style("opacity", 0)
+      links.append("svg:text")
+        .attr("class", "link_label")
+        .attr("x", (d) => @x d.right_x())
+        .attr("y", (d) => @y d.right_y())
+        .attr("dx", -55)
+        .attr("dy", 2)
+        .style("opacity", 0)
       return links
 
     draw_nodes: =>
       horizontal_spacing = D3.sankey.Node.horizontal_spacing
       width = D3.sankey.Node.width
       colors = d3.scale.category20()
-      nodes = @svg.selectAll("g.node").
-        data(@node_list.models, (d) -> d.get('id')).
-        enter().
-        append("g").
-        attr("class", "node").
-        attr("data-id", (d) -> d.get('id')).
-        on("mouseover", @node_mouseover).
-        on("mouseout", @node_mouseout)
+      nodes = @svg.selectAll("g.node")
+        .data(@node_list.models, (d) -> d.get('id'))
+        .enter()
+        .append("g")
+        .attr("class", "node")
+        .attr("data-id", (d) -> d.get('id'))
+        .on("mouseover", @node_mouseover)
+        .on("mouseout", @node_mouseout)
 
-      nodes.append("svg:rect").
-        attr("x", (d) => @x(horizontal_spacing * d.get('column'))).
-        attr("y", (d) => @y(d.y_offset())).
-        attr("fill", (d, i) -> d.get('color') || colors(i)).
-        style("stroke", (d, i) -> d3.rgb(d.get('color') || colors(i)).darker(2)).
-        style('stroke-width', 1).
-        attr("width", (d) => @x width).
-        attr("height", (d) => @y d.value())
+      nodes.append("svg:rect")
+        .attr("x", (d) => @x(horizontal_spacing * d.get('column')))
+        .attr("y", (d) => @y(d.y_offset()))
+        .attr("fill", (d, i) -> d.get('color') || colors(i))
+        .style("stroke", (d, i) -> d3.rgb(d.get('color') || colors(i)).darker(2))
+        .style('stroke-width', 1)
+        .attr("width", (d) => @x width)
+        .attr("height", (d) => @y d.value())
 
-      nodes.append("svg:text").
-        attr("class", "label").
-        attr("x", (d) => @x d.x_offset()).
-        attr("dx", 5).
-        attr("dy", 3).
-        attr("y", (d) => @y(d.y_offset() + d.value() / 2) ).
-        text((d) -> d.label())
+      nodes.append("svg:text")
+        .attr("class", "label")
+        .attr("x", (d) => @x d.x_offset())
+        .attr("dx", 5)
+        .attr("dy", 3)
+        .attr("y", (d) => @y(d.y_offset() + d.value() / 2) )
+        .text((d) -> d.label())
 
       return nodes
 
@@ -443,21 +443,21 @@ D3.sankey =
 
     node_mouseover: ->
       klass = $(this).attr('data-id')
-      d3.selectAll(".link").
-        filter((d) -> !d.connects(klass)).
-        transition().
-        duration(200).
-        style("opacity", unselectedLinkOpacity)
+      d3.selectAll(".link")
+        .filter((d) -> !d.connects(klass))
+        .transition()
+        .duration(200)
+        .style("opacity", unselectedLinkOpacity)
 
     # this is used as link_mouseout, too
     node_mouseout: ->
-      d3.selectAll(".link").
-        transition().
-        duration(200).
-        style("opacity", selectedLinkOpacity).
-        selectAll(".link_label").
-        transition().
-        style("opacity", 0) # labels
+      d3.selectAll(".link")
+        .transition()
+        .duration(200)
+        .style("opacity", selectedLinkOpacity)
+        .selectAll(".link_label")
+        .transition()
+        .style("opacity", 0) # labels
 
     link_mouseover: ->
       current_id = $(this).parent().attr("data-cid")
@@ -474,37 +474,37 @@ D3.sankey =
       max_height = @node_list.max_column_value()
 
       # update the scaling function
-      @y = d3.scale.linear().
-        domain([0, max_height * 1.25]).
-        range([0, @height * .90])
+      @y = d3.scale.linear()
+        .domain([0, max_height * 1.25])
+        .range([0, @height * .90])
 
       # update the node label
-      @nodes.data(@node_list.models, (d) -> d.get('id')).
-        attr("data-tooltip", (d) => Metric.autoscale_value d.value(), 'PJ', 2)
+      @nodes.data(@node_list.models, (d) -> d.get('id'))
+        .attr("data-tooltip", (d) => Metric.autoscale_value d.value(), 'PJ', 2)
 
       # move the rectangles
-      @nodes.selectAll("rect").
-        transition().duration(500).
-        attr("height", (d) => @y d.value()).
-        attr("y", (d) => @y(d.y_offset()))
+      @nodes.selectAll("rect")
+        .transition().duration(500)
+        .attr("height", (d) => @y d.value())
+        .attr("y", (d) => @y(d.y_offset()))
 
       # then move the node label
-      @nodes.selectAll("text.label").
-        transition().duration(500).
-        attr("y", (d) => @y(d.y_offset() + d.value() / 2) )
+      @nodes.selectAll("text.label")
+        .transition().duration(500)
+        .attr("y", (d) => @y(d.y_offset() + d.value() / 2) )
 
       # then transform the links
-      @links.data(@link_list.models, (d) -> d.cid).
-        transition().duration(500).
-        selectAll("path").
-        attr("d", (link) => @link_line link.path_points()).
-        style("stroke-width", (link) => @y(link.value()))
+      @links.data(@link_list.models, (d) -> d.cid)
+        .transition().duration(500)
+        .selectAll("path")
+        .attr("d", (link) => @link_line link.path_points())
+        .style("stroke-width", (link) => @y(link.value()))
 
       # then move the link labels and update their value
-      @links.transition().duration(500).
-        selectAll("text.link_label").
-        attr("y", (link) => @y link.right_y()).
-        text((d) => Metric.autoscale_value d.value(), 'PJ', 2)
+      @links.transition().duration(500)
+        .selectAll("text.link_label")
+        .attr("y", (link) => @y link.right_y())
+        .text((d) => Metric.autoscale_value d.value(), 'PJ', 2)
 
 class D3.sankey.NodeList extends Backbone.Collection
   model: D3.sankey.Node

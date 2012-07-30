@@ -66,7 +66,7 @@ class Slide < ActiveRecord::Base
   end
 
   def short_name
-    I18n.t("slides.#{key}").parameterize
+    I18n.t("slides.#{key}", :locale => :en).parameterize
   end
 
   # See Current.view

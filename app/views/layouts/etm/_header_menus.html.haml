@@ -33,8 +33,8 @@
   %li
     = t("header.current_language")+":"
     = form_tag set_locale_path do
-      = select_tag "locale", options_for_select(["en", "nl"], I18n.locale.to_s), |
-        :index => nil, :onchange => 'this.form.submit()'                         |
+      = hidden_field_tag :slide_key
+      = select_tag "locale", options_for_select(["en", "nl"], I18n.locale.to_s)
 
   %li
     - if has_active_scenario?

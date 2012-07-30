@@ -18,7 +18,10 @@
     = f.input :related_converter,
       :hint => 'Optional key of the related converter. Used to show slider info'
     = f.input :comments
-    
+
+    = f.association :slide, :collection => Slide.all(:order => "`slides`.key   ASC").map{|o| [o.key, o.id]}
+    = f.input :position
+
     = f.simple_fields_for :area_dependency do |j|
       = j.input :dependent_on, :as => :select,
         :collection => Api::Area::DEPENDABLE_ATTRIBUTES,
@@ -28,5 +31,5 @@
       = j.input :content_en, :hint => "Extra info which shows up when the ? icon is clicked can be changed here!"
       = j.input :content_nl
     = f.button :submit
-  
+
   = link_to "back", admin_input_elements_path

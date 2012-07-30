@@ -14,7 +14,6 @@ class SlidesController < BaseController
   def new
     @slide = Slide.new
     @slide.build_description
-    @slide.slider_positions.build
   end
 
   def create
@@ -45,7 +44,6 @@ class SlidesController < BaseController
 
   def edit
     @slide.build_description unless @slide.description
-    @slide.slider_positions.build
   end
 
   private

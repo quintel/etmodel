@@ -15,6 +15,8 @@
 #  input_id          :integer(4)
 #  command_type      :string(255)
 #  related_converter :string(255)
+#  slide_id          :integer(4)
+#  position          :integer(4)
 #
 
 class InputElement < ActiveRecord::Base
@@ -24,8 +26,7 @@ class InputElement < ActiveRecord::Base
   has_one :description, :as => :describable, :dependent => :destroy
   has_one :area_dependency, :as => :dependable, :dependent => :destroy
   has_many :predictions
-  has_many :slider_positions, :foreign_key => :slider_id
-  has_many :slides, :through => :slider_positions
+  belongs_to :slide
 
 
   validates :key, :presence => true, :uniqueness => true

@@ -22,17 +22,13 @@ class Slide < ActiveRecord::Base
   belongs_to :sidebar_item
 
   has_one :description, :as => :describable
-  has_many :sliders, :through => :slider_positions
-  has_many :slider_positions, :dependent => :destroy, :order => 'slider_positions.position'
+  has_many :sliders, :dependent => :nullify, :class_name => 'InputElement'
   belongs_to :output_element # default chart
   belongs_to :alt_output_element, :class_name => 'OutputElement' # secondary chart
   validates :key, :presence => true, :uniqueness => true
   scope :controller, lambda {|controller| where(:controller_name => controller) }
   scope :ordered, order('position')
   accepts_nested_attributes_for :description
-  accepts_nested_attributes_for :slider_positions,
-    :allow_destroy => true,
-    :reject_if => proc {|attributes| attributes['slider_id'].blank? }
 
   searchable do
     string :key

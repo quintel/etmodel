@@ -149,34 +149,56 @@ D3.bezier =
     # area function. To do this let's format the data as an array. An
     # interpolated mid-point is added to generate a S-curve.
     prepare_data: =>
+      left_stack  = 0
+      mid_stack   = 0
+      right_stack = 0
+      # The mid point should be between the left and side value, which are
+      # stacked
       series = @model.non_target_series().map (s) =>
-        mid_point = if s.present_value() < s.future_value()
+        # let's calculate the mid point boundaries
+        min_value = Math.min(left_stack + s.present_value(), right_stack + s.future_value())
+        max_value = Math.max(left_stack + s.present_value(), right_stack + s.future_value())
+
+        mid_point = if s.future_value() > s.present_value()
           s.present_value()
         else
           s.future_value()
+
+        mid_point += mid_stack
+
+        mid_point = if mid_point < min_value
+          min_value
+        else if mid_point > max_value
+          max_value
+        else
+          mid_point
+        # the stacking function wants the non-stacked values
+        mid_point -= mid_stack
+
+        mid_stack += mid_point
+        left_stack += s.present_value()
+        right_stack += s.future_value()
+
         mid_year = (@start_year + @end_year) / 2
 
-        [
+        out = [
           {
             x: @start_year
             y: s.present_value()
             id: "#{s.get 'gquery_key'}"
             color: s.get('color')
-            label: s.get('label')
           },
           {
             x: mid_year
             y: mid_point
             id: "#{s.get 'gquery_key'}"
             color: s.get('color')
-            label: s.get('label')
           },
           {
             x: @end_year
             y: s.future_value()
             id: "#{s.get 'gquery_key'}"
             color: s.get('color')
-            label: s.get('label')
           }
         ]
       _.flatten series

@@ -138,4 +138,8 @@ class OutputElement < ActiveRecord::Base
       "output_elements/block_chart"
     end
   end
+
+  def slides
+    Slide.where(:output_element_id => id)
+  end
 end

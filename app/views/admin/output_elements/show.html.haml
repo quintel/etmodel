@@ -38,6 +38,11 @@
 %p= link_to 'Create new serie',
     new_admin_output_element_serie_path(:output_element_id => @output_element.id)
 
+%h3 Used in these slides
+%ul
+  - @output_element.slides.each do |s|
+    %li= link_to s.key, edit_admin_slide_path(s)
+
 #chart_preview
   = content_tag_for :div, @output_element do
     Chart

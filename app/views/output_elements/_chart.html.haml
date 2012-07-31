@@ -40,6 +40,9 @@
           :href => output_elements_path(:holder => target), |
           :title => t("output_elements.tooltips.add"),      |
           :'data-target' => target}                         |
+      - if chart_index != 0
+        %a.remove_chart.tooltip.icon-remove{              |
+          :title => t('output_elements.tooltips.remove')} |
   .charts_container
     .chart_not_finished
     .chart_canvas{:id => dom_id}

@@ -181,6 +181,16 @@ class @ChartList extends Backbone.Collection
       $(".chart_holder[data-holder_id=#{target}]").removeClass('.hidden').show()
       $(e.target).remove()
 
+    $(document).on 'click', 'a.remove_chart', (e) =>
+      e.preventDefault()
+      holder_id = $(e.target).parents(".chart_holder").data('holder_id')
+      $(".chart_holder[data-holder_id=#{holder_id}]").hide()
+      @remove_pin holder_id
+      chart = @chart_holders[holder_id]
+      if chart
+        chart.delete()
+        @remove chart
+
     $(document).on 'click', 'a.table_format, a.chart_format', (e) =>
       e.preventDefault()
       holder_id = $(e.target).parents(".chart_holder").data('holder_id')

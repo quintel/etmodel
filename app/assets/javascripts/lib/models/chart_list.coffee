@@ -25,7 +25,7 @@ class @ChartList extends Backbone.Collection
   #
   # TODO: refactor, too much stuff is happening here!
   #
-  load : (chart_id, holder_id = 'main_chart', options = {}) =>
+  load : (chart_id, holder_id = 'chart_0', options = {}) =>
     if @pinned_chart_in(holder_id) || @current_chart_in(holder_id) == chart_id
       return false
 
@@ -128,8 +128,8 @@ class @ChartList extends Backbone.Collection
 
   # The default is defined for the main chart only
   load_default: =>
-    @remove_pin 'main_chart'
-    @load(App.settings.get('charts').main_chart.default, 'main_chart')
+    @remove_pin 'chart_0'
+    @load(App.settings.get('charts').chart_0.default)
 
   # TODO: Most of this stuff should be moved to a backbone view. Unfortunately
   # there are some issues with the event bindings leaving zombies around:
@@ -174,10 +174,11 @@ class @ChartList extends Backbone.Collection
 
     # link to open the secondary chart
     # The busybox setup will open the chart selection popup (see fancybox.coffee)
-    $(document).on 'click', 'a.add_secondary_chart', (e) =>
+    $(document).on 'click', 'a.add_chart', (e) =>
       e.preventDefault()
+      target = $(e.target).data('target')
       # Just show the chart holder
-      $(".chart_holder.hidden").removeClass('.hidden').show()
+      $(".chart_holder[data-holder_id=#{target}]").removeClass('.hidden').show()
       $(e.target).remove()
 
     $(document).on 'click', 'a.table_format, a.chart_format', (e) =>

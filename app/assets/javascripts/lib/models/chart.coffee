@@ -73,17 +73,12 @@ class @Chart extends Backbone.Model
     else
       series = @series.toArray()
 
-    out = _(series).map (serie) -> serie.result()
-
-    # policy goal charts show percentages but the gqueries return values
-    # in the [0,1] range. Let's take care of that
-    if @get('percentage')
-      out = _(out).map (serie) ->
-        [
-          [ serie[0][0], serie[0][1] * 100 ],
-          [ serie[1][0], serie[1][1] * 100 ]
-        ]
-    out
+    _(series).map (s) =>
+      factor = if @get('precentage') then 100 else 1
+      [
+        [App.settings.get('start_year'), s.safe_present_value() * factor],
+        [App.settings.get('end_year'), s.safe_future_value() * factor]
+      ]
 
   colors : ->
     @series.map (serie) -> serie.get('color')
@@ -107,7 +102,7 @@ class @Chart extends Backbone.Model
 
   # @return [[Float,Float]] Array of present/future values [Float,Float]
   value_pairs :->
-    @series.map (serie) -> serie.result_pairs()
+    @series.map (s) -> [s.safe_present_value(), s.safe_future_value()]
 
   non_target_series : ->
     @series.reject (serie) -> serie.get('is_target_line')
@@ -135,8 +130,8 @@ class @Chart extends Backbone.Model
       label = "#{label} - #{serie.get('group')}" if @get('type') == 'mekko'
       out =
         label: label
-        present_value: Metric.autoscale_value(serie.present_value(), @get('unit'), 2)
-        future_value: Metric.autoscale_value(serie.future_value(), @get('unit'), 2)
+        present_value: Metric.autoscale_value(serie.safe_present_value(), @get('unit'), 2)
+        future_value:  Metric.autoscale_value(serie.safe_future_value(),  @get('unit'), 2)
     # some charts draw series bottom to top. Let's flip the array
     return items.reverse() if @get('type') in ['vertical_stacked_bar', 'bezier']
     items

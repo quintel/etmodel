@@ -23,8 +23,8 @@ class @VerticalStackedBarChartView extends BaseChartView
     return results
 
   results_without_targets: ->
-    return _.map @model.non_target_series(), (serie) ->
-      return serie.result_pairs()
+    _.map @model.non_target_series(), (s) ->
+      [s.safe_present_value(), s.safe_future_value()]
 
   filler: ->
     return _.map @model.non_target_series(), (serie) ->

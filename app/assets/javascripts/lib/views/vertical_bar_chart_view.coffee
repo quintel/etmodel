@@ -1,5 +1,5 @@
 # ATTENTION: This chart type is only used in the co2 dashbord and therefore quite custom
-# It containt some custom additions to the series showing a historic value
+# It contains some custom additions to the series showing a historic value
 class @VerticalBarChartView extends VerticalStackedBarChartView
   render: =>
     @clear_container()
@@ -8,7 +8,7 @@ class @VerticalBarChartView extends VerticalStackedBarChartView
   results: ->
     results = @results_with_1990()
     target_serie = @model.target_series()[0]
-    result = target_serie.result()[1][1] # target_series has only present or future value
+    result = target_serie.safe_future_value()
 
     x = parseFloat(target_serie.get('target_line_position'))
     results.push([[x - 0.4, result], [x + 0.4, result]])
@@ -24,7 +24,8 @@ class @VerticalBarChartView extends VerticalStackedBarChartView
     [1990, App.settings.get("start_year"), App.settings.get("end_year")]
 
   filler: ->
-    # add this filler to create a dummy value. This is needed because the target line must be added to the end of the serie
+    # add this filler to create a dummy value. This is needed because the target
+    # line must be added to the end of the serie
     [{}]
 
   parsed_unit: -> 'MT'

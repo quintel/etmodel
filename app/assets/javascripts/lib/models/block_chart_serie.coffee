@@ -13,7 +13,7 @@ class @BlockChartSerie extends Backbone.Model
   result : ->
     return [
       @get('id'),
-      @get('gquery_cost').safe_present_value(),
+      @get('gquery_cost').safe_future_value(),
       @get('gquery_investment').safe_future_value()
     ]
 

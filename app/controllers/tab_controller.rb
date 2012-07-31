@@ -45,17 +45,15 @@ class TabController < ApplicationController
       @slides = @current_sidebar_item.slides.ordered
       @current_slide = @slides.first
 
+      # Deal with the charts
+      chart_settings = Current.setting.charts
       default_chart = @current_slide.output_element
-      Current.setting.charts[:main_chart][:default] = default_chart.id
+      chart_settings[:chart_0][:default] = default_chart.id
 
-      @output_element = if Current.setting.charts[:main_chart][:chart_id]
-        OutputElement.find Current.setting.charts[:main_chart][:chart_id]
-      else
-        default_chart
-      end
-
-      if other = Current.setting.charts[:secondary_chart][:chart_id]
-        @secondary_output_element = OutputElement.find(other)
+      # make an array of the charts to show
+      @charts = chart_settings.keys.map do |holder_id|
+        chart_id = chart_settings[holder_id][:chart_id] || chart_settings[holder_id][:default]
+        OutputElement.find_by_id(chart_id)
       end
 
       @targets = Target.all.reject(&:area_dependent)

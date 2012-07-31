@@ -48,21 +48,22 @@ class @Accordion
       Tracker.track({slide: slide_title})
 
       # load default chart as needed
+      chart_holder = 'chart_0'
       if element.length > 0
         default_chart = element.data('default_chart')
         alternate_chart = element.data('alt_chart')
         # store the default chart for this slide
         chart_settings = App.settings.get('charts')
-        chart_settings.main_chart.default = default_chart
+        chart_settings[chart_holder].default = default_chart
         App.settings.set 'charts', chart_settings
 
         # show/hide the default chart button
-        showing_default = charts.current_chart_in('main_chart') == default_chart
+        showing_default = charts.current_chart_in(chart_holder) == default_chart
         $("a.default_chart").toggle(!showing_default)
 
         # load chart
-        unless charts.pinned_chart_in('main_chart')
-          charts.load(default_chart, 'main_chart', {alternate: alternate_chart})
+        unless charts.pinned_chart_in(chart_holder)
+          charts.load(default_chart, chart_holder, {alternate: alternate_chart})
 
     # next button
     i = 1

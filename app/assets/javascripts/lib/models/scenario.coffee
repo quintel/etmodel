@@ -13,15 +13,11 @@ class @Scenario extends Backbone.Model
       source: 'ETM'
 
   user_values_url: =>
-    @url_path() + "/user_values.json"
-
-  query_url: (input_params) =>
-    input_params = '' if !input_params
-    this.url_path() + ".json?" + input_params
+    @url_path() + "/inputs.json"
 
   url_path: =>
     base_url = App.api_base_url()
-    base_url + "/api_scenarios/" + @api_session_id()
+    base_url + "/scenarios/" + @api_session_id()
 
   reset: =>
     App.reset_scenario()

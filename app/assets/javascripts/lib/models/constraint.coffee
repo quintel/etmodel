@@ -17,8 +17,8 @@ class Constraint extends Backbone.Model
   # Apply any last-minute fixes to the result.
   # Uses the future_value as default
   calculate_result: =>
-    fut = @gquery.get('future_value')
-    now = @gquery.get('present_value')
+    fut = @gquery.get('future')
+    now = @gquery.get('present')
     switch @get('key')
       when 'total_primary_energy', 'employment'
         return Metric.calculate_performance(now, fut)

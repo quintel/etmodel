@@ -45,13 +45,13 @@ class @AppView extends Backbone.View
 
     # or fetch a new one?
     @deferred_scenario_id = $.ajax(
-      url: "#{@api_base_url()}/api_scenarios/new.json"
-      dataType: 'json'
+      url: "#{@api_base_url()}/scenarios"
+      type: 'POST'
       data:
-        settings : @scenario.api_attributes()
+        scenario : @scenario.api_attributes()
       timeout: 10000
       error: @handle_ajax_error
-    ).pipe (d) -> d.scenario.id
+    ).pipe (d) -> d.id
     # When we first get the scenario id let's save it locally
     @deferred_scenario_id.done (id) =>
       @settings.save
@@ -71,7 +71,7 @@ class @AppView extends Backbone.View
     @load_user_values()
 
   scenario_url: =>
-    "#{globals.api_url.replace('api/v2', 'scenarios')}/#{@scenario.api_session_id()}"
+    "#{globals.api_url.replace('api/v3', 'scenarios')}/#{@scenario.api_session_id()}"
 
   setup_fce: =>
     # IE doesn't bubble onChange until the checkbox loses focus
@@ -85,19 +85,17 @@ class @AppView extends Backbone.View
   call_api: (input_params) =>
     # wait for a scenario_id
     @scenario_id().done =>
-      url = @scenario.query_url(input_params)
       keys = window.gqueries.keys()
-      keys_ids = _.select(keys, (key) -> !key.match(/\(/))
-      keys_string = _.select(keys, (key) -> key.match(/\(/))
       params =
-        r: keys_ids.join(';')
-        result: keys_string
+        gqueries: keys
         use_fce: App.settings.get('use_fce')
+        scenario:
+          user_values: input_params
 
       @showLoading()
       @api_call_stack.push('call_api')
       $.ajaxQueue
-        url: url
+        url: @scenario.url_path()
         data: params
         type: 'PUT'
         success: @handle_api_result
@@ -123,7 +121,7 @@ class @AppView extends Backbone.View
     # it is activated by passing ?debug=1 and can be found in the settings
     # menu.
     $("#last_api_response").val(jqXHR.responseText)
-    for own key, values of data.result
+    for own key, values of data.gqueries
       if gquery = window.gqueries.with_key(key)
         gquery.handle_api_result(values)
     window.charts.invoke 'trigger', 'change'

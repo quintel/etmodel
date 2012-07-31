@@ -18,20 +18,22 @@
       %th.tal Unit
       %th.tal Group
       %th Hidden
+      %th Used
       %th
       %th
   %tbody
-    - @output_elements.each do |output_element|
+    - @output_elements.each do |o|
       %tr{cycles}
-        %td= output_element.id
-        %td= output_element.key
-        %td= output_element.description.andand.short_content
-        %td= output_element.type
-        %td= output_element.unit
-        %td= output_element.group
-        %td= 'Hidden' if output_element.hidden?
-        %td= link_to "Show", admin_output_element_path(output_element)
-        %td= link_to "Edit", edit_admin_output_element_path(output_element)
+        %td= o.id
+        %td= o.key
+        %td= o.description.andand.short_content
+        %td= o.type
+        %td= o.unit
+        %td= o.group
+        %td= 'Hidden' if o.hidden?
+        %td= o.slides.count
+        %td= link_to "Show", admin_output_element_path(o)
+        %td= link_to "Edit", edit_admin_output_element_path(o)
 
 - content_for :head do
   :javascript

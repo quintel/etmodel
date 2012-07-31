@@ -30,8 +30,8 @@ class @InputElement extends Backbone.Model
       ((@get('max_value') - @get('user_value')) /
       ((@get('max_value') - @get('min_value')) / 100))
     percent = Math.round percent
-    App.debug "Moved slider ##{@get 'id'} - #{@get 'key'} percent: #{percent}"
-    Tracker.event_track('Slider','Changed',@get('key'), percent)
+    App.debug "Moved slider #{@get 'key'} percent: #{percent}"
+    Tracker.event_track('Slider','Changed', @get('key'), percent)
     Tracker.track
       slider: @get('translated_name')
       new_value: @get('user_value')
@@ -39,7 +39,7 @@ class @InputElement extends Backbone.Model
   # if we're caching the user_values hash then we have to store locally the
   # user_values, without querying the engine
   update_collection: =>
-    input_elements.user_values[@get('id')]['user_value'] = @get('user_value')
+    input_elements.user_values[@get('key')]['user_value'] = @get('user_value')
 
   # Returns if this is dirty, meaning a attribute has changed.
   isDirty: => if @get('fixed') == true then false else @dirty
@@ -73,18 +73,17 @@ class @InputElementList extends Backbone.Collection
   setup_input_elements: =>
     user_values = @user_values
     @each (i) ->
-      values = user_values['' + i.get('input_id')];
+      values = user_values[i.get('key')];
       if !values
-        console.warn "Missing slider information! #{i.get 'key'} ##{i.get 'id'}"
+        console.warn "Missing slider information! #{i.get 'key'}"
         return false;
-      i.set_min_value(values.min_value)
-      i.set_max_value(values.max_value)
-      i.set_start_value(values.start_value)
-      i.set_label(values.full_label)
-      i.set({user_value: values.user_value}, {silent: true})
+      i.set_min_value(values.min)
+      i.set_max_value(values.max)
+      i.set_start_value(values.default)
+      i.set_label(values.label)
 
-      v = values.user_value
-      def = if (v? && !_.isNaN(v)) then v else values.start_value
+      v = +values.user
+      def = if (v? && !_.isNaN(v)) then v else values.default
 
       i.set({
         user_value: def
@@ -96,9 +95,10 @@ class @InputElementList extends Backbone.Collection
 
   # Get the string which contains the update values for all dirty input elements
   api_update_params: =>
-    _.map(@dirty(), (el) ->
-      "input[#{el.get('input_id')}=#{el.get("user_value")}"
-    ).join("&")
+    out = {}
+    for s in @dirty()
+      out[s.get 'key'] = s.get 'user_value'
+    out
 
   dirty: =>
     @select (el) -> el.isDirty()

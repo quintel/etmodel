@@ -31,6 +31,7 @@ group :development do
   gem 'yard-tomdoc', "~> 0.4.0"
   gem 'annotate', :require => false
   gem 'sunspot_solr'
+  gem 'quiet_assets'
 end
 
 group :test, :development do

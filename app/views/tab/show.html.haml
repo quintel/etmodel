@@ -8,14 +8,9 @@
       = t("not_available")
 
   #charts_wrapper
-    = render :partial => "output_elements/chart",
-      :locals => {:chart => @output_element,
-                  :dom_id => 'main_chart',
-                  :main => true}
-    = render :partial => "output_elements/chart",
-      :locals => {:chart => @secondary_output_element,
-                  :dom_id => 'secondary_chart',
-                  :main => false}
+    - Current.setting.charts.each_pair do |holder_id, data|
+      = render :partial => "output_elements/chart",
+        :locals => {:dom_id => holder_id, :data => data}
 
   .clear
 

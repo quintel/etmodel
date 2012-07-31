@@ -1,20 +1,26 @@
 :ruby
-  holder_class = chart ? nil : 'hidden'
+  chart_index = data[:index]
+  chart = @charts[chart_index]
   info_url = chart ? "/descriptions/charts/#{chart.id}" : "#"
-  pin_class = chart.try(:id) == Current.setting.charts[dom_id]["chart_id"] ? 'icon-lock' : 'icon-unlock'
+  pin_class = if chart && (chart.id == Current.setting.charts[dom_id]["chart_id"])
+    'icon-lock'
+  else
+    'icon-unlock'
+  end
 
 .chart_holder{:data => {:holder_id => dom_id, :block_ui_on_refresh => "true"},
-  :class => holder_class}
+  :class => (chart ? nil : 'hidden')}
   %header
     %h3 Loading
     .actions
-      %a.chart_info.tooltip.fancybox.icon-question-sign{:href  => info_url,
+      %a.chart_info.tooltip.fancybox.icon-question-sign{:href => info_url,
         :title => t("output_elements.tooltips.info")}
 
-      %a.select_chart.tooltip.icon-cogs{:href => "/output_elements?holder=#{dom_id}",
-        :title => t("output_elements.tooltips.change")}
+      %a.select_chart.tooltip.icon-cogs{                  |
+        :href => output_elements_path(:holder => dom_id), |
+        :title => t("output_elements.tooltips.change")}   |
 
-      - if main # secondary chart doesn't need this
+      - if chart_index == 0
         %a.default_chart.tooltip.icon-home{:href => "#",
           :title => t("output_elements.tooltips.default")}
 
@@ -28,12 +34,18 @@
         :title => t("output_elements.tooltips.pin"),
         :class => pin_class}
 
-      - if main && !@secondary_output_element # ugly
-        %a.add_secondary_chart.select_chart.tooltip.icon-plus{:href => "/output_elements?holder=secondary_chart",
-          :title => t("output_elements.tooltips.add")}
+      - if chart_index != 3 && !@charts[chart_index + 1]
+        - target = "chart_#{chart_index + 1}"
+        %a.add_chart.select_chart.tooltip.icon-plus{        |
+          :href => output_elements_path(:holder => target), |
+          :title => t("output_elements.tooltips.add"),      |
+          :'data-target' => target}                         |
+      - if chart_index != 0
+        %a.remove_chart.tooltip.icon-remove{              |
+          :title => t('output_elements.tooltips.remove')} |
   .charts_container
     .chart_not_finished
     .chart_canvas{:id => dom_id}
-  - if chart && Current.setting.charts[dom_id]
+  - if chart && Current.setting.charts[dom_id][:chart_id]
     :javascript
       charts.load(#{chart.id}, "#{dom_id}")

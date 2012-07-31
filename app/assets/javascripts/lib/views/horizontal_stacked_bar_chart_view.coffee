@@ -14,11 +14,11 @@ class @HorizontalStackedBarChartView extends BaseChartView
   results: ->
     series = {}
     # parse all the results into a hash by group and add the serie number to it
-    @model.series.each (serie) ->
-      group = serie.get('group')
+    @model.series.each (s) ->
+      group = s.get('group')
       if (group)
-        series[group] = [] unless series[group]
-        series[group].push([serie.result_pairs()[0],(series[group].length + 1)])
+        s[group] = [] unless series[group]
+        s[group].push([s.safe_present_value(),(series[group].length + 1)])
     #jqplot needs and array so we create this by mapping the hash
     _.map series, (values, group) -> values
 

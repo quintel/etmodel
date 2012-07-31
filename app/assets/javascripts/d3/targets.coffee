@@ -40,7 +40,7 @@ D3.targets =
 
     successful: => @success_query.future_value()
 
-    is_set: => @target_query.raw_future_value()?
+    is_set: => @target_query.future_value()?
 
     format_value: (x) =>
       switch @get 'key'

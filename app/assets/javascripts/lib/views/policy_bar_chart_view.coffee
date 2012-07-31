@@ -8,7 +8,7 @@ class @PolicyBarChartView extends BaseChartView
 
   result_serie1: ->
     out = _.flatten(@model.value_pairs())
-    if (@model.get("percentage"))
+    if @model.get("percentage")
       out = _(out).map (x) -> x * 100
     out
 
@@ -19,9 +19,9 @@ class @PolicyBarChartView extends BaseChartView
 
   ticks: ->
     ticks = []
-    @model.series.each (serie) ->
-      ticks.push(serie.result()[0][0])
-      ticks.push(serie.result()[1][0])
+    @model.series.each (s) ->
+      ticks.push App.settings.get('start_year')
+      ticks.push App.settings.get('end_year')
     ticks
 
   render_chart: =>

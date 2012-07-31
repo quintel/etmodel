@@ -157,13 +157,11 @@ D3.stacked_bar =
           html += Metric.autoscale_value d.y, @model.get('unit')
         )
 
-      # update the tex
-
       # move the target lines
       @svg.selectAll('rect.target_line')
         .data(@model.target_series(), (d) -> d.get 'gquery_key')
         .transition()
-        .attr('y', (d) => @height - @y(d.future_value()))
+        .attr('y', (d) => @height - @y(d.safe_future_value()))
 
       # draw grid
 
@@ -174,14 +172,14 @@ D3.stacked_bar =
         [
           {
             x: App.settings.get('start_year')
-            y: s.present_value()
+            y: s.safe_present_value()
             id: "#{s.get 'gquery_key'}_present"
             color: s.get('color')
             label: s.get('label')
           },
           {
             x: App.settings.get('end_year')
-            y: s.future_value()
+            y: s.safe_future_value()
             id: "#{s.get 'gquery_key'}_future"
             color: s.get('color')
             label: s.get('label')

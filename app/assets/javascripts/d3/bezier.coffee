@@ -159,10 +159,10 @@ D3.bezier =
         min_value = Math.min(left_stack + s.present_value(), right_stack + s.future_value())
         max_value = Math.max(left_stack + s.present_value(), right_stack + s.future_value())
 
-        mid_point = if s.future_value() > s.present_value()
-          s.present_value()
+        mid_point = if s.safe_future_value() > s.safe_present_value()
+          s.safe_present_value()
         else
-          s.future_value()
+          s.safe_future_value()
 
         mid_point += mid_stack
 
@@ -176,15 +176,15 @@ D3.bezier =
         mid_point -= mid_stack
 
         mid_stack += mid_point
-        left_stack += s.present_value()
-        right_stack += s.future_value()
+        left_stack += s.safe_present_value()
+        right_stack += s.safe_future_value()
 
         mid_year = (@start_year + @end_year) / 2
 
         out = [
           {
             x: @start_year
-            y: s.present_value()
+            y: s.safe_present_value()
             id: "#{s.get 'gquery_key'}"
             color: s.get('color')
           },
@@ -196,7 +196,7 @@ D3.bezier =
           },
           {
             x: @end_year
-            y: s.future_value()
+            y: s.safe_future_value()
             id: "#{s.get 'gquery_key'}"
             color: s.get('color')
           }

@@ -7,7 +7,7 @@ D3.mekko =
       @sector.nodes.push this
       @carrier.nodes.push this
 
-    val:   => @get('gquery').future_value()
+    val:   => @get('gquery').safe_future_value()
     label: => @get('label') || @get('gquery')
     key:   => "#{@get 'carrier'}_#{@get 'sector'}"
     tooltip_text: =>
@@ -156,10 +156,15 @@ D3.mekko =
         data(@node_list.models, (d) -> d.key()).
         transition().duration(500).
         attr("width", (d) => @x d.sector.total_value() ).
-        attr("height", (d) => d.val() / d.sector.total_value() * @height ).
+        attr("height", (d) =>
+          x = d.val() / d.sector.total_value() * @height
+          if _.isNaN(x) then 0 else x
+        ).
         attr("y", (d) =>
           old = offsets[d.get 'sector']
-          offsets[d.get 'sector'] += d.val() / d.sector.total_value() * @height
+          x = d.val() / d.sector.total_value() * @height
+          if _.isNaN(x) then x = 0
+          offsets[d.get 'sector'] += x
           old
         ).
         attr("data-tooltip", (d) -> d.tooltip_text())

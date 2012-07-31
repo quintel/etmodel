@@ -3,17 +3,6 @@ class @Gquery extends Backbone.Model
     window.gqueries.add(this)
     @references = 1
 
-  result : ->
-    present = @get('present')
-    future = @get('future')
-
-    if !@is_acceptable_value(present) && !@is_acceptable_value(future)
-      present_value = 0
-      future_value  = 0
-
-    [ [App.settings.get('present_year'), present],
-      [App.settings.get('future_year'), future] ]
-
   future_value: -> @get 'future'
   present_value: -> @get 'present'
 

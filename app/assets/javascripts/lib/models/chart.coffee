@@ -52,7 +52,7 @@ class @Chart extends Backbone.Model
 
   # the container just holds the chart, the outer container has the chart
   # action links, title, etc.
-  outer_container: => $('#' + @get('container')).parents(".chart_holder")
+  outer_container: => $("##{@get 'container'}").parents(".chart_holder")
 
   # D3 charts have their own class. Let's make an instance of the right one
   # D3 is a pseudo-namespace. See d3_chart_view.coffee
@@ -80,46 +80,24 @@ class @Chart extends Backbone.Model
         [App.settings.get('end_year'), s.safe_future_value() * factor]
       ]
 
-  colors : ->
-    @series.map (serie) -> serie.get('color')
+  colors : -> @series.map (s) -> s.get('color')
 
-  labels : ->
-    @series.map (serie) -> serie.get('label')
-
-  # @return [Float] Only values of the present
-  values_present: ->
-    exclude_target_series = true
-    _.map @results(exclude_target_series), (result) ->  result[0][1]
-
-  # @return [Float] Only values of the future
-  values_future : ->
-    exclude_target_series = true
-    _.map @results(exclude_target_series), (result) -> result[1][1]
+  labels : -> @series.map (s) -> s.get('label')
 
   # @return [Float] All possible values. Helpful to determine min/max values
-  values : ->
-    _.flatten([@values_present(), @values_future()])
+  values : => _.flatten @value_pairs()
+
+  values_present: => _.map @non_target_series(), (s) -> s.safe_present_value()
+  values_future: =>  _.map @non_target_series(), (s) -> s.safe_future_value()
+  values_targets: => _.map @target_series(), (s) -> s.safe_future_value()
 
   # @return [[Float,Float]] Array of present/future values [Float,Float]
   value_pairs :->
     @series.map (s) -> [s.safe_present_value(), s.safe_future_value()]
 
-  non_target_series : ->
-    @series.reject (serie) -> serie.get('is_target_line')
+  non_target_series : -> @series.reject (s) -> s.get('is_target_line')
 
-  target_series : ->
-    @series.select (serie) -> serie.get('is_target_line')
-
-  # @return Array of present and future target
-  target_results : ->
-    _.flatten _.map(@target_series(), (serie) -> serie.future_value())
-
-  # @return Array of hashes {label, present_value, future_value}
-  series_hash : ->
-    @series.map (serie) ->
-      label : serie.get('label')
-      present_value : serie.present_value()
-      future_value : serie.future_value()
+  target_series : -> @series.select (s) -> s.get('is_target_line')
 
   # This is used to show a chart as a table
   # See base_chart_view#render_as_table

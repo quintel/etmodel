@@ -121,8 +121,8 @@ D3.bezier =
     refresh: =>
       # calculate tallest column
       tallest = Math.max(
-        _.sum(@model.values_future()),
-        _.sum(@model.values_present())
+        _.sum(@model.values_present()),
+        _.sum(@model.values_future())
       )
       # update the scales as needed
       @y = @y.domain([0, tallest])

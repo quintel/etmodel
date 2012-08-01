@@ -12,26 +12,24 @@ class @VerticalStackedBarChartView extends BaseChartView
 
     if !@model.get('percentage')
       results = _.map results, (x) ->
-        return _.map x, (value) ->
-          return Metric.scale_value(value, scale)
+        _.map x, (value) ->
+          Metric.scale_value(value, scale)
 
-    for serie in @model.target_series()
-      result = serie.result()[0][1]; # target_series has only present or future value
-      result = Metric.scale_value(result, scale)
-      x = parseFloat(serie.get('target_line_position'))
+    for s in @model.target_series()
+      result = Metric.scale_value(s.safe_future_value(), scale)
+      x = parseFloat(s.get('target_line_position'))
       results.push([[x - 0.4, result], [x + 0.4, result]])
-    return results
+    results
 
   results_without_targets: ->
     _.map @model.non_target_series(), (s) ->
       [s.safe_present_value(), s.safe_future_value()]
 
   filler: ->
-    return _.map @model.non_target_series(), (serie) ->
-      return {}
+    _.map @model.non_target_series(), (s) -> {}
 
   ticks: ->
-    return [App.settings.get("start_year"), App.settings.get("end_year")]
+    [App.settings.get("start_year"), App.settings.get("end_year")]
 
   render_chart: =>
     $.jqplot @container_id(), @results(), @chart_opts()
@@ -82,6 +80,6 @@ class @VerticalStackedBarChartView extends BaseChartView
         {renderer:$.jqplot.LineRenderer, disableStack:true, lineWidth: 1.5, shadow:true, showMarker:false, showLabel:true},
         {renderer:$.jqplot.LineRenderer, disableStack:true, lineWidth: 1.5, shadow:true, showMarker:false, showLabel:false}
       ]
-      return serie_settings_filler.concat(target_serie_settings);
+      serie_settings_filler.concat(target_serie_settings)
     else
-      return []
+      []

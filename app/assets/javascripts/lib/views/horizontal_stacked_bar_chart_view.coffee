@@ -11,34 +11,28 @@ class @HorizontalStackedBarChartView extends BaseChartView
 
   # the horizontal stacked graph expects data in this format:
   # [[value1, 1], [value1, 2]],[[value2, 1], [value2, 2]] ...
-  results: ->
+  results: =>
     series = {}
     # parse all the results into a hash by group and add the serie number to it
     @model.series.each (s) ->
       group = s.get('group')
-      if (group)
-        s[group] = [] unless series[group]
-        s[group].push([s.safe_present_value(),(series[group].length + 1)])
+      if group
+        series[group] = [] unless series[group]
+        series[group].push [s.safe_future_value(), (series[group].length + 1)]
     #jqplot needs and array so we create this by mapping the hash
     _.map series, (values, group) -> values
 
-  clear_results_cache: ->
-    @cached_results = null
+  clear_results_cache: -> @cached_results = null
 
-  axis_scale: ->
-    min = @model.get('min_axis_value')
-    max = @model.get('max_axis_value')
-    [min, max]
+  axis_scale: -> [@model.get('min_axis_value'), @model.get('max_axis_value')]
 
   ticks: ->
     groups = @model.series.map (serie) -> serie.get('group_translated')
     _.uniq(groups)
 
-  colors: ->
-    _.uniq(@model.colors())
+  colors: -> _.uniq(@model.colors())
 
-  labels: ->
-    _.uniq(@model.labels())
+  labels: -> _.uniq(@model.labels())
 
   render_chart: =>
     $.jqplot @container_id(), @results(), @chart_opts()

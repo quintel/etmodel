@@ -129,7 +129,7 @@ D3.stacked_bar =
       tallest = Math.max(
         _.sum(@model.values_future()),
         _.sum(@model.values_present()),
-        _.max(@model.target_results()) || 0
+        _.max(@model.values_targets()) || 0
       )
       # update the scales as needed
       @y = @y.domain([0, tallest])

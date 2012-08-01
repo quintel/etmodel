@@ -11,11 +11,7 @@ class @BaseChartView extends Backbone.View
     else
       @render()
 
-  max_value: ->
-    sum_present = _.reduce @model.values_present(), @smart_sum
-    sum_future = _.reduce @model.values_future(), @smart_sum
-    target_results = _.flatten(@model.target_results())
-    max_value = _.max($.merge([sum_present, sum_future], target_results))
+  max_value: -> _.max @model.values()
 
   smart_sum: (sum, x) ->
     y = if x > 0 then x else 0

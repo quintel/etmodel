@@ -74,7 +74,7 @@ class ScenariosController < ApplicationController
 
     # Finds the scenario from id
     def find_scenario
-      @scenario = Api::Scenario.find(params[:id])
+      @scenario = Api::Scenario.find(params[:id], :params => {:detailed => true})
     rescue ActiveResource::ResourceNotFound
       nil
     end

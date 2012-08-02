@@ -10,7 +10,7 @@
     - if @scenario.created_at
       %li
         %strong #{t('scenario.created')}:
-        = I18n.localize(@scenario.created_at, :format => :long)
+        = I18n.localize(@scenario.parsed_created_at, :format => :long)
     %li
       %strong #{t('scenario.area_code')}:
       = t @scenario.area_code

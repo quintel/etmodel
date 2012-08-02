@@ -14,7 +14,7 @@
       %tr{:class => cycle('even', 'odd')}
         %td= link_to scenario.title, "/scenarios/#{scenario.id}"
         %td= scenario.end_year
-        %td= scenario.created_at.andand.strftime("%d %b %H:%M")
+        %td= scenario.parsed_created_at.andand.strftime("%d %b %H:%M")
         %td= link_to t('scenario.load'), load_scenario_path(scenario)
     %tr
       %td{:colspan => 4}= paginate @saved_scenarios

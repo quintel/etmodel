@@ -4,22 +4,22 @@ describe Admin::PredictionsController do
   render_views
   let(:input_element) { Factory.create :input_element }
   let!(:prediction)   { Factory.create :prediction }
-  
+
   before do
     controller.class.skip_before_filter :restrict_to_admin
-    
+
     ActiveResource::HttpMock.respond_to do |mock|
-      area = [{ :id => 1, :country => 'nl', :use_network_calculations => false}].to_xml(:root => "area")
-      mock.get "/api/v2/areas.xml?country=nl", { "Accept" => "application/xml" }, area
-      mock.get "/api/v2/areas.xml", { "Accept" => "application/xml" }, area
+      area = [{ :id => 1, :country => 'nl', :use_network_calculations => false}].to_json(:root => "area")
+      mock.get "/api/v3/areas.json?country=nl", { "Accept" => "application/json" }, area
+      mock.get "/api/v3/areas.json", { "Accept" => "application/json" }, area
     end
   end
-  
+
   describe "GET index" do
     before do
       get :index
     end
-    
+
     it { should respond_with(:success)}
     it { should render_template :index}
   end
@@ -28,18 +28,18 @@ describe Admin::PredictionsController do
     before do
       get :new
     end
-    
+
     it { should respond_with(:success)}
     it { should render_template :new}
   end
-  
+
   describe "POST create" do
     before do
       @old_prediction_count = Prediction.count
       attributes = Factory.attributes_for(:prediction).merge({:input_element_id => input_element.id})
       post :create, :prediction => attributes
     end
-        
+
     it "should create a new prediction" do
       Prediction.count.should == @old_prediction_count + 1
     end
@@ -51,7 +51,7 @@ describe Admin::PredictionsController do
     before do
       get :show, :id => prediction.id
     end
-    
+
     it { should respond_with(:success)}
     it { should render_template :show}
   end
@@ -60,7 +60,7 @@ describe Admin::PredictionsController do
     before do
       get :edit, :id => prediction.id
     end
-    
+
     it { should respond_with(:success)}
     it { should render_template :edit}
   end
@@ -70,7 +70,7 @@ describe Admin::PredictionsController do
       @prediction = Factory.create :prediction
       put :update, :id => @prediction.id, :prediction => { :description => 'this is a other description'}
     end
-    
+
     it { should redirect_to(admin_predictions_path) }
   end
 
@@ -80,7 +80,7 @@ describe Admin::PredictionsController do
       @old_prediction_count = Prediction.count
       delete :destroy, :id => @prediction.id
     end
-    
+
     it "should delete the prediction" do
       Prediction.count.should == @old_prediction_count - 1
     end

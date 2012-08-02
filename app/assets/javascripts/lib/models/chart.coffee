@@ -103,7 +103,7 @@ class @Chart extends Backbone.Model
         present_value: Metric.autoscale_value(s.safe_present_value(), unit, 2)
         future_value:  Metric.autoscale_value(s.safe_future_value(),  unit, 2)
     # some charts draw series bottom to top. Let's flip the array
-    return items.reverse() if type in ['vertical_stacked_bar', 'bezier']
+    return items.reverse() if @get('type') in ['vertical_stacked_bar', 'bezier']
     items
 
   # raw array of the associated gqueries. Delegates to the collection object

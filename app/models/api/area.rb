@@ -1,6 +1,5 @@
 class Api::Area < ActiveResource::Base
-  self.site = APP_CONFIG[:active_resource_base] || APP_CONFIG[:api_url]
-  self.format = :xml
+  self.site = APP_CONFIG[:api_url]
 
   # This list of attributes is used in the forms where you can set the
   # area dependencies for an object, such as the input_elements

@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.7'
 gem 'jquery-rails', "~> 2.0.2"
 gem 'haml', '~>3.1.4'
 gem 'authlogic'
@@ -17,7 +17,7 @@ gem 'nokogiri'
 gem 'i18n-js'
 
 # supporting gems
-gem 'airbrake', '~> 3.0.9'
+gem 'airbrake', '~> 3.1.2'
 
 # system gems
 gem 'mysql2', '~>0.3.11'
@@ -37,13 +37,13 @@ end
 group :test, :development do
   gem 'pry-rails'
   gem 'pry-remote'
-  gem 'rspec-rails', "~> 2.10.0"
+  gem 'rspec-rails', "~> 2.11.0"
   gem 'watchr'
   gem 'spork'
 end
 
 group :test do
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '~> 3.0'
   gem 'shoulda-matchers'
   gem 'webrat'
   gem 'simplecov'
@@ -55,7 +55,7 @@ group :production do
 end
 
 group :assets do
-  gem 'therubyracer', '0.11.0beta5'
+  gem 'therubyracer', '0.11.0beta6'
   gem 'libv8', '~> 3.11.8'
   gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

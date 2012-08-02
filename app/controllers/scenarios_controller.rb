@@ -30,14 +30,22 @@ class ScenariosController < ApplicationController
     redirect_to_back
   end
 
-  # Creates a scenario and saves the current settings into it.
+  # Saves a scenario. This implies two db records: a saved_scenario in the ETM
+  # and a proper scenario in the ETE. The ETM just stores the user_id and
+  # scenario_id.
   #
   # POST /scenarios/
   #
-  # Set the protected flag to true. With API v3 we'll set the client app id
-  # and the right user_id
+  # Set the protected flag to true. The scenario_id parameter is critical: it
+  # tells ETE to create a *copy* of the current scenario. Check in the engine
+  # the Scenario#scenario_id= method to see what's going on.
   def create
-    attrs = params[:saved_scenario].merge(:protected => true, :source => 'ETM')
+    scenario_id = params[:saved_scenario].delete(:api_session_id)
+    attrs = params[:saved_scenario].merge(
+      :protected => true,
+      :source => 'ETM',
+      :scenario_id => scenario_id
+    )
     begin
       @scenario = Api::Scenario.create(attrs)
       # Setting a fake title because the object validates its presence - the
@@ -47,7 +55,7 @@ class ScenariosController < ApplicationController
       redirect_to scenarios_path
     rescue
       @saved_scenario = SavedScenario.new(
-        :api_session_id => Current.setting.api_session_id
+        :api_session_id => scenario_id
       )
       render :new
     end

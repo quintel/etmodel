@@ -10,8 +10,10 @@ class ApplicationController < ActionController::Base
 
   if Rails.env.test?
     after_filter :assign_current_for_inspection_in_tests
+  else
+    after_filter :teardown_current
   end
-  after_filter :teardown_current
+
   before_filter :export_i18n_messages
 
   def locale

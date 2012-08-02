@@ -5,7 +5,6 @@ describe PagesController do
 
   before do
     ApplicationController.stub!(:ensure_valid_browser)
-    Current.stub!(:teardown_after_request!)
     Api::Scenario.stub(:all).and_return([])
 
     ActiveResource::HttpMock.respond_to do |mock|

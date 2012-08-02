@@ -1,6 +1,6 @@
 %h3= t('select_a_scenario')
 - cache "scenario_select_#{I18n.locale}" do
-  - @scenarios = Api::Scenario.all(:from => :homepage)
+  - @scenarios = Api::Scenario.all(:from => :templates)
   = form_tag url_for(:controller => 'scenarios', :action => 'load') do
     #select_container
       %select#scenarios_select{:name => "id", :data => {:locale => I18n.locale}}

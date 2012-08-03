@@ -5,6 +5,9 @@
     @include sidebar-sprite($name)
 
 #sidebar
+
+  // Demand
+
   #households
     @include sidebar-icon(households)
   #buildings
@@ -19,6 +22,11 @@
     @include sidebar-icon(transport)
   #other
     @include sidebar-icon(other)
+
+  // Costs
+
+  #fuel_costs
+    @include sidebar-icon(fuel_costs)
   #combustion
     @include sidebar-icon(combustion)
   #nuclear
@@ -31,8 +39,20 @@
     @include sidebar-icon(solar)
   #co2
     @include sidebar-icon(co2)
+  #infrastructure
+    @include sidebar-icon(infrastructure)
   #earth
     @include sidebar-icon(earth)
+  #merit_order
+    @include sidebar-icon(merit_order)
+  #employment
+    @include sidebar-icon(employment)
+  #heating_technologies
+    @include sidebar-icon(renew_heat)
+
+
+  // Targets
+
   #sustainability
     @include sidebar-icon(target)
   #area
@@ -41,8 +61,9 @@
     @include sidebar-icon(dependence)
   #cost
     @include sidebar-icon(cost)
-  #grid
-    @include sidebar-icon(grid)
+
+  // Supply
+
   #fossil
     @include sidebar-icon(fossil)
   #electricity
@@ -55,17 +76,9 @@
     @include sidebar-icon(renew_heat)
   #fuels
     @include sidebar-icon(fuels)
-  #infrastructure
-    @include sidebar-icon(infrastructure)
   #other_fuels
     @include sidebar-icon(fuels)
   #fce
     @include sidebar-icon(fce)
-  #merit_order
-    @include sidebar-icon(merit_order)
   #electricity_backup
     @include sidebar-icon(electricity_backup)
-  #employment
-    @include sidebar-icon(employment)
-  #heating_technologies
-    @include sidebar-icon(renew_heat)

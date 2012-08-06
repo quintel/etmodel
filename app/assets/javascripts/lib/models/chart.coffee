@@ -25,7 +25,6 @@ class @Chart extends Backbone.Model
       when 'waterfall'              then WaterfallChartView
       when 'horizontal_stacked_bar' then HorizontalStackedBarChartView
       when 'grouped_vertical_bar'   then GroupedVerticalBarChartView
-      when 'policy_bar'             then PolicyBarChartView
       when 'line'                   then LineChartView
       when 'block'                  then BlockChartView
       when 'vertical_bar'           then VerticalBarChartView

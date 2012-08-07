@@ -1,13 +1,24 @@
 !!! 5
 %html
   %head
-    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
-    %meta{ :name => "robots", :content => "noindex"}
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
+    %meta{:name => "robots", :content => "noindex"}
     %title API
     = render "layouts/etm/javascript_globals"
     = stylesheet_link_tag "application"
     = javascript_include_tag 'etm'
-    :javascript
-      App.settings = new Setting(#{Current.setting.to_json.html_safe});
   %body.constraint_popup{:class => @constraint.key}
     = yield
+
+    :javascript
+      $(document).ready(function(){
+        App = new AppView();
+        App.settings = new Setting(globals.settings);
+        charts = new ChartList();
+        $(".constraint_box_content .chart_canvas").each(function(i, c){
+          var chart_id = $(c).data('chart_id');
+          var holder = $(c).attr('id');
+          charts.load(chart_id, holder);
+        });
+        App.call_api();
+      });

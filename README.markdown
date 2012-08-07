@@ -19,14 +19,17 @@ Branch for the production server (http://et-model.com)
 
 ## Building/kickstarting on a new machine ##
 
-* Get Ruby 1.9.2 or higher running. (use rvm)
+* Get Ruby 1.9.2 or higher running. (use rbenv)
 * Make sure you have installed on your machine:
   * memcached
-* Checkout our git repository
-* Run 'bundle install'
-* Create local databases for test and development (eg: etmodel_dev, etmodel_test)
+* Pull this repository with `git clone git@github.com:dennisschoenmakers/etmodel.git`
+* Create your own `database.yml` and `config.yml` from the samples in `config/`
+* Run `bundle install`
+* Run `memcached -d`
+* Run `rake sunspot:solr:run`
+* Create local databases for test and development (eg: `etmodel_dev`, `etmodel_test`)
 * Get ssh access to staging server (ask Dennis)
-* Clone the database from the staging server using cap staging db2local
+* Clone the database from the staging server using `cap staging db2local`
 
 ## Deploying ##
 

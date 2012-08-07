@@ -3,9 +3,7 @@
 ## Branches
 
 * **master**: Working branch. Please always commit to this branch and rebase from here.
-
 * **staging**: Tracks [the beta server](http://beta.et-model.com)
-
 * **production**: Tracks [the production server](http://et-model.com)
 
 ## Installing

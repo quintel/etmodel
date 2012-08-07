@@ -180,5 +180,7 @@ $ ->
   window.App = App = new AppView()
   App.settings.set(globals.settings, {silent : true});
   App.bootstrap()
+  window.charts = new ChartList()
+  charts.load_pinned_charts()
   acc = new Accordion()
   acc.setup()

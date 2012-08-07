@@ -7,6 +7,7 @@
   else
     'icon-unlock'
   end
+  pinned_chart_to_load = chart && Current.setting.charts[dom_id][:chart_id] ? chart.id : nil
 
 .chart_holder{:data => {:holder_id => dom_id, :block_ui_on_refresh => "true"},
   :class => (chart ? nil : 'hidden')}
@@ -45,7 +46,4 @@
           :title => t('output_elements.tooltips.remove')} |
   .charts_container
     .chart_not_finished
-    .chart_canvas{:id => dom_id}
-  - if chart && Current.setting.charts[dom_id][:chart_id]
-    :javascript
-      charts.load(#{chart.id}, "#{dom_id}")
+    .chart_canvas{:id => dom_id, :'data-pinned_chart' => pinned_chart_to_load}

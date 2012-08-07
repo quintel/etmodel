@@ -1,7 +1,6 @@
-Quintel Energy Transition Model
-===============================
+# Quintel Energy Transition Model
 
-# Branches #
+## Branches
 
 * **master**: Working branch. Please always commit to this branch and rebase from here.
 
@@ -9,7 +8,7 @@ Quintel Energy Transition Model
 
 * **production**: Tracks [the production server](http://et-model.com)
 
-# Installing #
+## Installing
 
 * Get Ruby 1.9.2 or higher running. (use rbenv)
 * Make sure you have installed on your machine:
@@ -23,21 +22,20 @@ Quintel Energy Transition Model
 * Get ssh access to staging server (ask Dennis)
 * Clone the database from the staging server using `cap staging db2local`
 
-## Deploying ##
-
-To deploy to staging:
-
-    $> cap staging deploy
-
-To deploy to production server:
-
-    $> cap production deploy
+## Deploying
 
 Make sure everything works. Run the tests.
 
     $> rake spec
 
-# Search
+To deploy to staging:
+
+    $> cap staging deploy
+
+Do not deploy directly to production, unless you know what you're doing.
+
+
+## Search
 
 The old thinking sphinx has been replaced with SOLR. Things you should know:
 

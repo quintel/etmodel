@@ -9,6 +9,8 @@ class @AppView extends Backbone.View
     # if there are still api calls happening.
     @api_call_stack = []
 
+    window.input_elements = new InputElementList()
+
     # Jaap MVC legacy
     @input_elements = window.input_elements
     @input_elements.bind("change", @handleInputElementsUpdate)
@@ -176,4 +178,10 @@ class @AppView extends Backbone.View
     else
       globals.api_proxy_url
 
-window.App = App = new AppView()
+$ ->
+
+  window.App = App = new AppView()
+  App.settings.set(globals.settings, {silent : true});
+  App.bootstrap()
+  acc = new Accordion()
+  acc.setup()

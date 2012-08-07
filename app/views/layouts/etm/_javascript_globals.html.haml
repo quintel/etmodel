@@ -4,5 +4,6 @@
     api_proxy_url: #{APP_CONFIG[:api_proxy_url].to_json},
     api_session_id: #{Current.setting.api_session_id.to_json},
     disable_cors: #{APP_CONFIG[:disable_cors].to_json},
-    standalone: #{APP_CONFIG[:standalone].to_json}
+    standalone: #{APP_CONFIG[:standalone].to_json},
+    settings: #{Current.setting.to_json.html_safe}
   }

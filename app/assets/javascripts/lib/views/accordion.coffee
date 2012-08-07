@@ -76,8 +76,3 @@ class @Accordion
   reset: =>
     $(".accordion").accordion("destroy")
     @setup()
-
-
-$(document).ready ->
-  acc = new Accordion()
-  acc.setup()

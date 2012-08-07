@@ -29,7 +29,3 @@
 
     - unless @slides.last == slide
       %a.next_slide{:href => '#'}= I18n.t("go_to_next")
-
-%script
-  - slide.safe_input_elements.each do |i|
-    window.input_elements.add(#{i.to_json.html_safe}.input_element);

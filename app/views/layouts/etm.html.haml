@@ -43,8 +43,5 @@
       I18n.defaultLocale = "#{I18n.default_locale}";
       I18n.locale = "#{I18n.locale}";
 
-      App.settings.set(#{Current.setting.to_json.html_safe}, {silent : true});
-      App.bootstrap();
-
 
     = yield :scripts

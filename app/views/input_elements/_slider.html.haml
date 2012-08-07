@@ -1,8 +1,7 @@
-%div{:id => "slider-group-#{slider.share_group}-#{slider.id}", :class=>'slider'}
-  %div{:id => "input_element_#{slider.id}", :'data-key' => slider.key}
+.slider{:id => "slider-group-#{slider.share_group}-#{slider.id}", :'data-attrs' => slider.to_json}
+  %div{:id => "input_element_#{slider.id}"}
     .name
-      .text
-        = raw slider.translated_name
+      .text= raw slider.translated_name
       .label
     .info-box{:style => 'display: none'}
       .text= slider.parsed_description

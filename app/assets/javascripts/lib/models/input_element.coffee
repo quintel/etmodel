@@ -56,6 +56,8 @@ class @InputElementList extends Backbone.Collection
     @inputElementViews = {}
     @shareGroups = {}
     @balancers   = {}
+    for s in $(".slider")
+      @add $(s).data('attrs').input_element
 
   init_legacy_controller: =>
     @each (input_element) -> input_element.init_legacy_controller()
@@ -143,5 +145,3 @@ class @InputElementList extends Backbone.Collection
 
   # Does a update request to update the values.
   handleUpdate: => @trigger("change")
-
-window.input_elements = new InputElementList()

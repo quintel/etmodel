@@ -88,8 +88,8 @@ class @AppView extends Backbone.View
       keys = window.gqueries.keys()
       params =
         gqueries: keys
-        use_fce: App.settings.get('use_fce')
         scenario:
+          use_fce: App.settings.get('use_fce')
           user_values: input_params
 
       @showLoading()

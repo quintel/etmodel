@@ -3,21 +3,13 @@ Quintel Energy Transition Model
 
 # Branches #
 
-### master ###
+* **master**: Working branch. Please always commit to this branch and rebase from here.
 
-Working branch. Please always commit to this branch and rebase from here.
+* **staging**: Tracks [the beta server](http://beta.et-model.com)
 
-### staging ###
+* **production**: Tracks [the production server](http://et-model.com)
 
-Tracks deployment on the staging/beta server (http://beta.et-model.com)
-
-### production ###
-
-Branch for the production server (http://et-model.com)
-
-# Guides for Developers #
-
-## Building/kickstarting on a new machine ##
+# Installing #
 
 * Get Ruby 1.9.2 or higher running. (use rbenv)
 * Make sure you have installed on your machine:
@@ -35,60 +27,15 @@ Branch for the production server (http://et-model.com)
 
 To deploy to staging:
 
-    `$: cap staging deploy`
+    $> cap staging deploy
 
-To make capistrano work on production server write *cap prod*:
+To deploy to production server:
 
-    `$: cap production deploy`
+    $> cap production deploy
 
+Make sure everything works. Run the tests.
 
-1. Make sure everything works. Run the tests.
-
-    `(dev)$: rake spec`
-
-2. Commit and push all the changes
-
-    `(dev)$ git push origin dev`
-
-3. Switch to master branch
-
-    `(dev)$ git checkout master`
-
-4.  Merge dev branch
-
-    `(master)$ git merge dev`
-
-5. If merge errors, clean up and commit.
-
-6. Push master branch online
-
-    `(master)$ git push`
-
-7. If you have commited any changes (while in the master branch), merge back into dev
-
-    `(master)$ git checkout dev`
-    `(dev)$ git merge master`
-    `(dev)$ git checkout master`
-
-8. Now deploy to the *staging* server
-
-    `(master)$ cap staging deploy`
-    `(master)$ cap staging deploy:migrations (if migrations exist)`
-
-9. Test *staging*
-
-10. Deploy to the *production* server
-
-    `(master)$ cap prod deploy`
-    `etc.`
-
-11. Switch back to dev branch
-
-    `(master)$ gco dev`
-
-# Deployments #
-
-Paolo can write some nice prose here about the deployment procedure and what mighty scripts to use...
+    $> rake spec
 
 # Search
 

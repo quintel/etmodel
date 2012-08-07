@@ -39,7 +39,7 @@ class @InputElement extends Backbone.Model
   # if we're caching the user_values hash then we have to store locally the
   # user_values, without querying the engine
   update_collection: =>
-    input_elements.user_values[@get('key')]['user_value'] = @get('user_value')
+    App.input_elements.user_values[@get('key')]['user_value'] = @get('user_value')
 
   # Returns if this is dirty, meaning a attribute has changed.
   isDirty: => if @get('fixed') == true then false else @dirty

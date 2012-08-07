@@ -18,5 +18,3 @@ class @SidebarView extends Backbone.View
 
       $item.find('.bar').animate(width: pixels, 1000)
       $item.find('.value').html("#{ percentage }%").animate(left: pixels, 1000)
-
-window.sidebar = new SidebarView()

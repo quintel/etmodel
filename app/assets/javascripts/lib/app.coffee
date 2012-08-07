@@ -15,13 +15,14 @@ class @AppView extends Backbone.View
     @settings = new Setting() # At this point settings is empty!!
     @settings.set({api_session_id: globals.api_session_id})
 
+    @sidebar = new SidebarView()
     @scenario = new Scenario()
 
   # At this point we have all the settings initialized.
   bootstrap: =>
     dashChangeEl = $('#dashboard_change')
 
-    window.sidebar.bootstrap()
+    @sidebar.bootstrap()
     # If a "change dashboard" button is present, set up the DashboardChanger.
     if dashChangeEl.length > 0
       new DashboardChangerView(dashChangeEl)
@@ -127,7 +128,7 @@ class @AppView extends Backbone.View
     if t = window.targets
       t.invoke('update_view')
       t.update_totals()
-    window.sidebar.update_bars()
+    @sidebar.update_bars()
 
     if App.settings.get('track_peak_load') && App.peak_load
       App.peak_load.trigger('change')
@@ -176,7 +177,6 @@ class @AppView extends Backbone.View
       globals.api_proxy_url
 
 $ ->
-
   window.App = App = new AppView()
   App.settings.set(globals.settings, {silent : true});
   App.bootstrap()
@@ -184,3 +184,5 @@ $ ->
   charts.load_pinned_charts()
   acc = new Accordion()
   acc.setup()
+
+

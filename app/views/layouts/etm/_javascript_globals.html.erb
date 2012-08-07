@@ -1,0 +1,10 @@
+<script>
+  var globals = <%= Jbuilder.encode do |json|
+        json.api_url        APP_CONFIG[:api_url]
+        json.api_proxy_url  APP_CONFIG[:api_proxy_url]
+        json.api_session_id Current.setting.api_session_id
+        json.disable_cors   APP_CONFIG[:disable_cors]
+        json.standalone     APP_CONFIG[:standalone]
+        json.settings       Current.setting
+      end.html_safe %>;
+</script>

@@ -9,10 +9,7 @@ class @AppView extends Backbone.View
     # if there are still api calls happening.
     @api_call_stack = []
 
-    window.input_elements = new InputElementList()
-
-    # Jaap MVC legacy
-    @input_elements = window.input_elements
+    @input_elements = new InputElementList()
     @input_elements.bind("change", @handleInputElementsUpdate)
 
     @settings = new Setting() # At this point settings is empty!!
@@ -150,12 +147,12 @@ class @AppView extends Backbone.View
 
   # Get the value of all changed sliders. Get the chart. Sends those values to
   # the server.
-  doUpdateRequest: ->
-    dirtyInputElements = window.input_elements.dirty()
+  doUpdateRequest: =>
+    dirtyInputElements = @input_elements.dirty()
     return if dirtyInputElements.length == 0
-    input_params = window.input_elements.api_update_params()
-    window.input_elements.reset_dirty()
-    window.App.call_api(input_params)
+    input_params = @input_elements.api_update_params()
+    @input_elements.reset_dirty()
+    @call_api(input_params)
 
   showLoading: =>
     # D3 charts shouldn't be blocked, only jqPlot ones

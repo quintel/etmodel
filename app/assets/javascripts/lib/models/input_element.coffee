@@ -57,7 +57,7 @@ class @InputElementList extends Backbone.Collection
     @shareGroups = {}
     @balancers   = {}
     for s in $(".slider")
-      @add $(s).data('attrs').input_element
+      @add $(s).data('attrs')
 
   init_legacy_controller: =>
     @each (input_element) -> input_element.init_legacy_controller()

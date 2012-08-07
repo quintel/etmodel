@@ -15,6 +15,7 @@ gem 'nokogiri'
 
 # javascript
 gem 'i18n-js'
+gem 'jbuilder'
 
 # supporting gems
 gem 'airbrake', '~> 3.1.2'

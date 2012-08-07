@@ -1,4 +1,4 @@
-.slider{:id => "slider-group-#{slider.share_group}-#{slider.id}", :'data-attrs' => slider.to_json}
+.slider{:id => "slider-group-#{slider.share_group}-#{slider.id}", :'data-attrs' => slider.json_attributes}
   %div{:id => "input_element_#{slider.id}"}
     .name
       .text= raw slider.translated_name

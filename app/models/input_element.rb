@@ -100,17 +100,13 @@ class InputElement < ActiveRecord::Base
   end
   alias_method :has_predictions, :has_predictions?
 
-  #############################################
-  # Methods that interact with a users values
-  #############################################
-
-  def as_json(options = {})
-    super(:only => [:id, :input_id, :unit, :share_group, :factor, :key, :related_converter],
-          :methods => [
-            :step_value,
-            :output, :user_value, :disabled, :translated_name,
-            :parsed_description,:has_predictions,
-            :fixed, :has_flash_movie])
+  # Used by the interface to setup quinn
+  def json_attributes
+    Jbuilder.encode do |json|
+      json.(self, :id, :input_id, :unit, :share_group, :key, :related_converter, :step_value,
+            :disabled, :translated_name, :parsed_description,:has_predictions,
+            :fixed, :has_flash_movie)
+    end
   end
 
   ##

@@ -3,7 +3,4 @@
     = @constraint.description.try :short_content
   #charts_wrapper
     .chart_holder
-      .chart_canvas#output_element_118
-:javascript
-  charts.load(118, 'output_element_118')
-  I18n.locale = #{I18n.locale.to_json};
+      .chart_canvas#output_element_118{:'data-chart_id' => 18}

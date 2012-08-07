@@ -1,14 +1,13 @@
 .constraint_box_content
   %p.tal
     = @constraint.description.try :short_content
-  .import_chart_title= Current.setting.start_year
-  .import_chart_title= Current.setting.end_year
 
-  #charts_wrapper.wide
-    #output_element_47.half
-    #output_element_76.half
-
-:javascript
-  // TODO: remove double request
-  charts.load(47, 'output_element_47')
-  charts.load(76, 'output_element_76')
+  %table.energy_imports
+    %tr
+      %th= Current.setting.start_year
+      %th= Current.setting.end_year
+    %tr
+      %td
+        .chart_canvas#output_element_47.half{:'data-chart_id' => 47}
+      %td
+        .chart_canvas#output_element_76.half{:'data-chart_id' => 76}

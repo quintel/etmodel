@@ -22,11 +22,12 @@ class @ChartList extends Backbone.Collection
   #    to show multiple charts on the same page
   #  - alternate: id of the chart to load if the first one fails. Watch out for
   #    loops!
+  #  - force: (re)load the chart entirely
   #
   # TODO: refactor, too much stuff is happening here!
   #
   load : (chart_id, holder_id = 'chart_0', options = {}) =>
-    if @pinned_chart_in(holder_id) || @current_chart_in(holder_id) == chart_id
+    if !options.force && (@pinned_chart_in(holder_id) || @current_chart_in(holder_id) == chart_id)
       return false
 
     wait = options.wait || false
@@ -131,6 +132,16 @@ class @ChartList extends Backbone.Collection
     @remove_pin 'chart_0'
     @load(App.settings.get('charts').chart_0.default)
 
+  # This is called right after the app bootstrap. The rails app takes care of
+  # filling the chart_canvas attributes
+  load_pinned_charts: =>
+    for c in $(".chart_canvas")
+      chart_id = $(c).data('pinned_chart')
+      if chart_id
+        # the force parameter makes the loader skip the pinned charts check,
+        # since this is the first time it is drawn
+        @load chart_id, $(c).attr('id'), {force: true}
+
   # TODO: Most of this stuff should be moved to a backbone view. Unfortunately
   # there are some issues with the event bindings leaving zombies around:
   # http://lostechies.com/derickbailey/2011/09/15/zombies-run-managing-page-transitions-in-backbone-apps/
@@ -196,4 +207,3 @@ class @ChartList extends Backbone.Collection
       holder_id = $(e.target).parents(".chart_holder").data('holder_id')
       @chart_holders[holder_id].view.toggle_format()
 
-window.charts = new ChartList()

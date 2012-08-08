@@ -167,7 +167,7 @@ class @AppView extends Backbone.View
       $("#constraints .loading").hide()
 
   debug: (t) ->
-    console.log(t) if window.etm_js_debug
+    console.log(t) if globals.debug_js
 
   # Use CORS when possible
   api_base_url: ->

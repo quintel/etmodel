@@ -194,8 +194,8 @@ D3.sankey =
   # In this chart most positioning is calculated by us. The D3 sankey plugin is
   # cool but not flexible enough
   Node: class extends Backbone.Model
-    @width: 110
-    @horizontal_spacing: 250
+    @width: 95
+    @horizontal_spacing: 100
     vertical_margin: 10
 
     initialize: =>
@@ -215,7 +215,7 @@ D3.sankey =
         offset += n.value() + margin
       offset
 
-    x_offset: => @get('column') * D3.sankey.Node.horizontal_spacing
+    x_offset: => @get('column') * (D3.sankey.Node.width + D3.sankey.Node.horizontal_spacing)
 
     # center point of the node. We use it as link anchor point
     x_center: => @x_offset() + D3.sankey.Node.width / 2
@@ -289,12 +289,11 @@ D3.sankey =
     right_x: => @right.x_center() - D3.sankey.Node.width / 2
 
     # Use 4 points and let D3 interpolate a smooth curve
-    #
     path_points: =>
       [
         {x: @left_x(),       y: @left_y()},
-        {x: @left_x()  + 80, y: @left_y()},
-        {x: @right_x() - 80, y: @right_y()},
+        {x: @left_x()  + 50, y: @left_y()},
+        {x: @right_x() - 50, y: @right_y()},
         {x: @right_x(),      y: @right_y()}
       ]
 
@@ -342,17 +341,14 @@ D3.sankey =
       @width = 494 - (@margin.left + @margin.right)
       @height = 300 - (@margin.top + @margin.bottom)
 
-      # set up the scaling methods
-      @x = d3.scale.linear().domain([0, 600]).range([0, @width])
-
-      # this one will be changed dynamically later on
+      # scaling method taht will be changed dynamically
       @y = d3.scale.linear().domain([0, 5000]).range([0, @height])
 
       # This is the function that will take care of drawing the links once we've
       # set the base points
       @link_line = d3.svg.line()
         .interpolate("basis")
-        .x((d) -> @x(d.x))
+        .x((d) -> d.x)
         .y((d) -> @y(d.y))
 
       @svg = d3.select("#d3_container_#{@key}")
@@ -398,7 +394,7 @@ D3.sankey =
       # link labels
       links.append("svg:text")
         .attr("class", "link_label")
-        .attr("x", (d) => @x d.right_x())
+        .attr("x", (d) => d.right_x())
         .attr("y", (d) => @y d.right_y())
         .attr("dx", -55)
         .attr("dy", 2)
@@ -406,8 +402,6 @@ D3.sankey =
       return links
 
     draw_nodes: =>
-      horizontal_spacing = D3.sankey.Node.horizontal_spacing
-      width = D3.sankey.Node.width
       colors = d3.scale.category20()
       nodes = @svg.selectAll("g.node")
         .data(@node_list.models, (d) -> d.get('id'))
@@ -419,17 +413,17 @@ D3.sankey =
         .on("mouseout", @node_mouseout)
 
       nodes.append("svg:rect")
-        .attr("x", (d) => @x(horizontal_spacing * d.get('column')))
+        .attr("x", (d) => d.x_offset())
         .attr("y", (d) => @y(d.y_offset()))
         .attr("fill", (d, i) -> d.get('color') || colors(i))
         .style("stroke", (d, i) -> d3.rgb(d.get('color') || colors(i)).darker(2))
         .style('stroke-width', 1)
-        .attr("width", (d) => @x width)
+        .attr("width", D3.sankey.Node.width)
         .attr("height", (d) => @y d.value())
 
       nodes.append("svg:text")
         .attr("class", "label")
-        .attr("x", (d) => @x d.x_offset())
+        .attr("x", (d) => d.x_offset())
         .attr("dx", 5)
         .attr("dy", 3)
         .attr("y", (d) => @y(d.y_offset() + d.value() / 2) )

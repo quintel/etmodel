@@ -6,9 +6,9 @@
     %meta{:name=>"google-site-verification", :content=>"ILDmdAxQTYxcPyy969IJXq7YlXKzhGFfGCHqFi8fiWA"}
     = csrf_meta_tag
     %title= t("meta.title").force_encoding("UTF-8")
-    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'application', debug: Rails.env.development?
     = render "layouts/etm/javascript_globals"
-    = javascript_include_tag 'etm'
+    = javascript_include_tag 'etm', debug: Rails.env.development?
 
     /[if lte IE 8]
       %link(rel="stylesheet" type="text/css" href="/stylesheets/ie7.css")

@@ -1,14 +1,13 @@
 #select_charts
   - %w[Overview Dashboard Policy Supply Demand Cost].each do |group|
     %h1= t(group)
-    - OutputElement.not_hidden.select_by_group(group).each do |output_element|
-      - next if output_element.block_chart? || output_element.not_allowed_in_this_area
+    - OutputElement.not_hidden.select_by_group(group).sort_by{|c| t("output_elements.#{c.key}")}.each do |chart|
+      - next if chart.block_chart? || chart.not_allowed_in_this_area
       %div
-        %a.pick_charts{:id =>"output_#{output_element.id}", |
+        %a.pick_charts{:id =>"output_#{chart.id}", |
                        :data => {                           |
-                         :chart_id => output_element.id,    |
+                         :chart_id => chart.id,    |
                          :chart_holder => @chart_holder}}   |
-          = image_tag "output_elements/#{output_element.icon}", :size => "100x60"
-          %h2= t("output_elements.#{output_element.key}").html_safe
-          %p= output_element.description.try :short_content
+          = image_tag "output_elements/#{chart.icon}", :size => "100x60"
+          %h2= t("output_elements.#{chart.key}").html_safe
 

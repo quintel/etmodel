@@ -7,7 +7,7 @@ D3.stacked_bar =
 
     can_be_shown_as_table: -> true
 
-    outer_height: -> 410
+    outer_height: => @height + 10
 
     draw: =>
       margins =
@@ -17,7 +17,8 @@ D3.stacked_bar =
         right: 30
 
       @width = 494 - (margins.left + margins.right)
-      @height = (@container_node().height() || 402) - (margins.top + margins.bottom)
+      @series_height = 190
+      @height = @series_height + (margins.top + margins.bottom) + (@model.series.models.length / 2 * 15)
       @svg = d3.select("#d3_container_#{@key}")
         .append("svg:svg")
         .attr("height", @height + margins.top + margins.bottom)
@@ -29,7 +30,7 @@ D3.stacked_bar =
       legend_columns = 2
       legend_margin = @width / legend_columns
       legend = @svg.append('svg:g')
-        .attr("transform", "translate(10,210)")
+        .attr("transform", "translate(10,#{@series_height + 15})")
         .selectAll("svg.legend")
         .data(@model.series.models)
         .enter()
@@ -66,11 +67,11 @@ D3.stacked_bar =
         .attr('class', 'year')
         .text((d) -> d)
         .attr('x', (d) => @x(d) + 10)
-        .attr('y', 205)
+        .attr('y', @series_height + 10)
         .attr('dx', 45)
 
-      @y = d3.scale.linear().range([0, @height]).domain([0, 7])
-      @inverted_y = d3.scale.linear().range([@height, 0]).domain([0, 7])
+      @y = d3.scale.linear().range([0, @series_height]).domain([0, 7])
+      @inverted_y = d3.scale.linear().range([@series_height, 0]).domain([0, 7])
 
       # there we go
       rect = @svg.selectAll('rect.serie')
@@ -79,7 +80,7 @@ D3.stacked_bar =
         .attr('class', 'serie')
         .attr("width", @x.rangeBand() * 0.5)
         .attr('x', (s) => @x(s.x) + 10)
-        .attr('y', @height)
+        .attr('y', @series_height)
         .style('fill', (d) => d.color)
 
       $('rect.serie').qtip
@@ -149,7 +150,7 @@ D3.stacked_bar =
       @svg.selectAll('rect.serie')
         .data(stacked_data, (s) -> s.id)
         .transition()
-        .attr('y', (d) => @height - @y(d.y0 + d.y))
+        .attr('y', (d) => @series_height - @y(d.y0 + d.y))
         .attr('height', (d) => @y(d.y))
         .attr("data-tooltip", (d) =>
           html = d.label
@@ -161,7 +162,7 @@ D3.stacked_bar =
       @svg.selectAll('rect.target_line')
         .data(@model.target_series(), (d) -> d.get 'gquery_key')
         .transition()
-        .attr('y', (d) => @height - @y(d.safe_future_value()))
+        .attr('y', (d) => @series_height - @y(d.safe_future_value()))
 
       # draw grid
 

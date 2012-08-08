@@ -23,7 +23,13 @@ class @ConstraintView extends Backbone.View
     scale = Metric.power_of_thousand(value)
     unit  = I18n.t('units.currency.' + Metric.power_of_thousand_to_string(scale))
     label = "(#{unit})"
-    $('.header .sub_header', @dom_id).html(label)
+    @update_subheader label
+
+  update_header: (title) =>
+    $('.header', @dom_id).html(title)
+
+  update_subheader: (title) =>
+    $('.header .sub_header', @dom_id).html(title)
 
   open_popup: () =>
     constraint = $(@dom_id)

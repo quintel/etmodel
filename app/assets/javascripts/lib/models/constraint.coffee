@@ -44,4 +44,6 @@ class Constraint extends Backbone.Model
 class Dashboard extends Backbone.Collection
   model : Constraint
 
+  find_by_key: (key) => @find (g) -> g.get('key') == key
+
 window.dashboard = new Dashboard()

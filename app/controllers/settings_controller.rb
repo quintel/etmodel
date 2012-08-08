@@ -88,7 +88,7 @@ class SettingsController < ApplicationController
   # constraints so that the Backbone View may re-render the dashboard.
   #
   def constraint_html_as_json(constraints)
-    render_to_string 'layouts/etm/_constraint_items',
+    render_to_string 'layouts/etm/_dashboard_items',
       layout: false, locals: { constraints: constraints }
   end
 

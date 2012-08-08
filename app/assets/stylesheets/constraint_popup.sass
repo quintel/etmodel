@@ -1,4 +1,4 @@
-body.constraint_popup
+body#constraint_popup
   margin: 0px
   padding: 10px
   overflow: hidden
@@ -23,15 +23,20 @@ body.constraint_popup
     float: left
     background-color: #DBE4F2
     width: 570px
-    height: 366px
     padding: 10px 5px
+    height: 368px
     #charts_wrapper
       text-align: center
-      width: 540px
-      .chart_canvas
-        width: 500px
-        margin: 0 40px
+      width: 560px
+      .chart_holder
         background: #fff
+        width: 100%
+        margin: 5px
+        min-height: 100px
+        max-height: 252px
+        .chart_canvas
+          min-height: 250px
+          width: 100%
 
   table#policies
     font-family: 13px/13px $body_font_family

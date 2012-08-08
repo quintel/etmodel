@@ -10,7 +10,7 @@ D3.treemap =
       D3.treemap.series.push @gquery
 
     # value is apparently a reserved name
-    val: => @gquery.future_value()
+    val: => @gquery.safe_future_value()
 
     label: => "#{@get('sector')} #{@get('carrier')}"
 
@@ -44,7 +44,7 @@ D3.treemap =
 
     draw: =>
       @width = 494
-      @height = @container_node().height() || 502
+      @height = 350
       @treemap = d3.layout.treemap()
         .size([@width, @height])
         .sticky(true)

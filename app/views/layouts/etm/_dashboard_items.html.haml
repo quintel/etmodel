@@ -5,10 +5,15 @@
       :class => (constraint.id == 1) ? 'first' : nil,
       :href  => "/constraints/#{constraint.id}"
     }
+    key = if constraint.key == 'co2_reduction'
+      Current.setting.use_fce ? 'greenhouse_gas' : 'co2_reduction'
+    else
+      constraint.key
+    end
 
   .constraint{opts}
     .header
-      = raw I18n.t("constraints.#{constraint.key}.label")
+      = raw I18n.t("constraints.#{key}.label")
       %span.sub_header
     .arrow
     %strong &nbsp;

@@ -30,7 +30,9 @@ D3.bezier =
         right: 20
 
       @width = 494 - (margins.left + margins.right)
-      @height = (@container_node().height() || 402) - (margins.top + margins.bottom)
+      @height = 300 - (margins.top + margins.bottom)
+      # height of the series section
+      @series_height = 190
       @svg = d3.select("#d3_container_#{@key}")
         .append("svg:svg")
         .attr("height", @height + margins.top + margins.bottom)
@@ -43,7 +45,7 @@ D3.bezier =
       legend_columns = 2
       legend_margin = @width / legend_columns
       legend = @svg.append('svg:g')
-        .attr("transform", "translate(10,210)")
+        .attr("transform", "translate(10,#{@series_height + 20})")
         .selectAll("svg.legend")
         .data(@model.series.models)
         .enter()
@@ -63,7 +65,6 @@ D3.bezier =
         .attr("x", 15)
         .attr("y", 8)
         .text((d) -> d.get 'label')
-
 
       # the stack method will filter the data and calculate the offset for every
       # item. The values function tells this method that the values it will
@@ -85,10 +86,10 @@ D3.bezier =
         .attr('class', 'year')
         .text((d) -> d)
         .attr('x', (d, i) => if i == 0 then -10 else 430)
-        .attr('y', 205)
+        .attr('y', @series_height + 15)
 
-      @y = d3.scale.linear().range([0, @height]).domain([0, 7])
-      @inverted_y = d3.scale.linear().range([@height, 0]).domain([0, 7])
+      @y = d3.scale.linear().range([0, @series_height]).domain([0, 7])
+      @inverted_y = d3.scale.linear().range([@series_height, 0]).domain([0, 7])
 
       # This method will return the SVG area attributes. The values it receives
       # should be already stacked

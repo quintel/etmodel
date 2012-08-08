@@ -70,7 +70,8 @@ D3.mekko =
         right: 10
 
       @width = 494 - (margins.left + margins.right)
-      @height = (@container_node().height() || 402) - (margins.top + margins.bottom)
+      @height = 310 - (margins.top + margins.bottom)
+      @series_height = 190 # the rest of the height will be taken by the legend
       @svg = d3.select("#d3_container_#{@model.get 'key'}").
         append("svg:svg").
         attr("height", @height + margins.top + margins.bottom).
@@ -78,7 +79,7 @@ D3.mekko =
         append("svg:g").
         attr("transform", "translate(#{margins.left}, #{margins.top})")
 
-      y_scale = d3.scale.linear().domain([100,0]).range([0, @height])
+      y_scale = d3.scale.linear().domain([100,0]).range([0, @series_height])
       @y_axis = d3.svg.axis().scale(y_scale).ticks(4).orient("left")
         .tickFormat((x) -> "#{x}%")
       # axis

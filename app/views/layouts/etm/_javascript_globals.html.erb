@@ -6,5 +6,6 @@
         json.disable_cors   APP_CONFIG[:disable_cors]
         json.standalone     APP_CONFIG[:standalone]
         json.settings       Current.setting
+        json.debug_js       admin?
       end.html_safe %>;
 </script>

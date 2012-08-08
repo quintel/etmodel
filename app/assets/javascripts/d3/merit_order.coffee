@@ -54,21 +54,27 @@ D3.merit_order =
       @initialize_defaults()
 
     draw: =>
+      margins =
+        top: 10
+        bottom: 40
+        left: 40
+        right: 10
       @margin = 50
-      @width = 494 - 2 * @margin
-      @height = (@container_node().height() || 402) - 2 * @margin
+      @width = 494 - (margins.left + margins.right)
+      @height = 310 - (margins.top + margins.bottom)
+      @series_height = 280
       @x = d3.scale.linear().domain([0, 100]).range([0, @width])
-      @y = d3.scale.linear().domain([0, 100]).range([0, @height])
+      @y = d3.scale.linear().domain([0, 100]).range([0, @series_height])
       # inverted scale used by the y-axis
-      @yAxisScale = d3.scale.linear().domain([0, 100]).range([@height, 0])
+      @yAxisScale = d3.scale.linear().domain([0, 100]).range([@series_height, 0])
       @xAxis = d3.svg.axis().scale(@x).ticks(4).orient("bottom")
       @yAxis = d3.svg.axis().scale(@yAxisScale).ticks(4).orient("left")
       @svg = d3.select("#d3_container_merit_order").
         append("svg:svg").
-        attr("height", @height + 2 * @margin).
-        attr("width", @width + 2 * @margin).
+        attr("height", @height + margins.top + margins.bottom).
+        attr("width", @width + margins.left + margins.right).
         append("svg:g").
-        attr("transform", "translate(#{@margin}, #{@margin})")
+        attr("transform", "translate(#{margins.left}, #{margins.top})")
 
       # axis
       @svg.append("svg:g").
@@ -81,17 +87,17 @@ D3.merit_order =
       @svg.append("svg:text").
         text('Operating Costs [EUR/MWh]').
         attr("x", @height / -2).
-        attr("y", -35).
+        attr("y", -25).
         attr("text-anchor", "middle").
         attr("class", "axis_label").
         attr("transform", "rotate(270)")
 
-      @svg.append("svg:text").
-              text('Installed Capacity [MW]').
-              attr("x", @width / 2).
-              attr("y", @height + 30).
-              attr("text-anchor", "middle").
-              attr("class", "axis_label")
+      @svg.append("svg:text")
+        .text('Installed Capacity [MW]')
+        .attr("x", @width / 2)
+        .attr("y", @series_height + 10)
+        .attr("text-anchor", "middle")
+        .attr("class", "axis_label")
 
       # nodes
       @svg.selectAll('rect.merit_order_node').
@@ -116,12 +122,13 @@ D3.merit_order =
         )
 
       $('rect.merit_order_node').qtip
-        content: -> $(this).attr('title')
+        content: -> $(this).attr('data-tooltip')
         show:
           event: 'mouseover' # silly IE
         hide:
           event: 'mouseout'  # silly IE
         position:
+          target: 'mouse'
           my: 'bottom right'
           at: 'top center'
 
@@ -179,7 +186,7 @@ D3.merit_order =
             @height - h
         ).
         attr("x", (d) => @x(d.get 'x_offset')).
-        attr("title", (d) ->
+        attr("data-tooltip", (d) ->
           html = I18n.t "output_element_series.#{d.get('key')}"
           html += "<br/>"
           html += "Installed capacity: #{Metric.autoscale_value(d.value_x() * 1000000, 'MW', 2)}"

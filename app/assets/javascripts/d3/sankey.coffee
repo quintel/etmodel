@@ -340,7 +340,7 @@ D3.sankey =
         bottom: 5
         right: 10
       @width = 494 - (@margin.left + @margin.right)
-      @height = (@container_node().height() || 452) - (@margin.top + @margin.bottom)
+      @height = 300 - (@margin.top + @margin.bottom)
 
       # set up the scaling methods
       @x = d3.scale.linear().domain([0, 600]).range([0, @width])
@@ -371,6 +371,7 @@ D3.sankey =
         hide:
           event: 'mouseout'  # silly IE
         position:
+          target: 'mouse'
           my: 'bottom right'
           at: 'top center'
         style:

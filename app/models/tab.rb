@@ -21,6 +21,6 @@ class Tab < ActiveRecord::Base
   attr_accessible :key, :nl_vimeo_id, :en_vimeo_id, :position
 
   def allowed_sidebar_items
-    sidebar_items.ordered.reject(&:area_dependent)
+    sidebar_items.includes(:area_dependency).ordered.reject(&:area_dependent)
   end
 end

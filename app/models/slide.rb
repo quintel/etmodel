@@ -68,7 +68,7 @@ class Slide < ActiveRecord::Base
   # See Current.view
   # Some sliders cannot be used on some areas. Let's filter them out
   def safe_input_elements
-    @safe_input_elements ||= sliders.ordered.reject(&:area_dependent)
+    @safe_input_elements ||= sliders.includes(:area_dependency).includes(:description).ordered.reject(&:area_dependent)
   end
 
   # Complementary to grouped_input_elements

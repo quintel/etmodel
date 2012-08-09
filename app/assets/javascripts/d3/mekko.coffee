@@ -14,8 +14,7 @@ D3.mekko =
       "#{@get 'carrier'} #{@get 'sector'}<br/>#{parseInt @val()} PJ"
 
   NodeGroup: class extends Backbone.Model
-      initialize: ->
-        @nodes = []
+      initialize: -> @nodes = []
 
       total_value: =>
         total = 0
@@ -72,40 +71,40 @@ D3.mekko =
       @width = 494 - (margins.left + margins.right)
       @height = 310 - (margins.top + margins.bottom)
       @series_height = 190 # the rest of the height will be taken by the legend
-      @svg = d3.select("#d3_container_#{@model.get 'key'}").
-        append("svg:svg").
-        attr("height", @height + margins.top + margins.bottom).
-        attr("width", @width + margins.left + margins.right).
-        append("svg:g").
-        attr("transform", "translate(#{margins.left}, #{margins.top})")
+      @svg = d3.select("#d3_container_#{@model.get 'key'}")
+        .append("svg:svg")
+        .attr("height", @height + margins.top + margins.bottom)
+        .attr("width", @width + margins.left + margins.right)
+        .append("svg:g")
+        .attr("transform", "translate(#{margins.left}, #{margins.top})")
 
       y_scale = d3.scale.linear().domain([100,0]).range([0, @series_height])
-      @y_axis = d3.svg.axis().scale(y_scale).ticks(4).orient("left")
-        .tickFormat((x) -> "#{x}%")
+
       # axis
-      @svg.append("svg:g").
-        attr("class", "y_axis").
-        call(@y_axis)
+      @y_axis = d3.svg.axis().scale(y_scale).ticks(4).orient("left") .tickFormat((x) -> "#{x}%")
+      @svg.append("svg:g")
+        .attr("transform", "translate(0, 0.5)") # for nice, crisp lines
+        .attr("class", "y_axis").call(@y_axis)
 
       # Every sector is assigned a group element
-      @sectors = @svg.selectAll("g.sector").
-        data(@sector_list.models, (d) -> d.get 'key' ).
-        enter().append("svg:g").
-        attr("class", "sector").
-        attr("transform", (d) -> "translate(30)").
-        attr("data-rel", (d) -> d.get 'key')
+      @sectors = @svg.selectAll("g.sector")
+        .data(@sector_list.models, (d) -> d.get 'key' )
+        .enter().append("svg:g")
+        .attr("class", "sector")
+        .attr("transform", (d) -> "translate(30)")
+        .attr("data-rel", (d) -> d.get 'key')
 
       # Create items inside the group
-      @sectors.selectAll(".carrier").
-        data( ((d) -> d.nodes) , ((d) -> d.key()) ).
-        enter().append("svg:rect").
-        attr("class", "carrier").
-        attr("height", 10).
-        attr("width", 10).
-        style("fill", (d) -> d.get 'color').
-        attr("y", 10).
-        attr("x", 0).
-        attr("data-rel", (d) -> d.key())
+      @sectors.selectAll(".carrier")
+        .data( ((d) -> d.nodes) , ((d) -> d.key()) )
+        .enter().append("svg:rect")
+        .attr("class", "carrier")
+        .attr("height", 10)
+        .attr("width", 10)
+        .style("fill", (d) -> d.get 'color')
+        .attr("y", 10)
+        .attr("x", 0)
+        .attr("data-rel", (d) -> d.key())
 
       # vertical sector label
       @sectors.append("svg:text")
@@ -128,25 +127,25 @@ D3.mekko =
     refresh: =>
       total_value = @node_list.grand_total()
       @x = d3.scale.linear().domain([0, total_value]).range([0, @width])
-      @y = d3.scale.linear().domain([0, total_value]).range([0, @height])
+      @y = d3.scale.linear().domain([0, total_value]).range([0, @series_height])
 
       @sector_offset = 0
 
-      @svg.selectAll("g.sector").
-        data(@sector_list.models, (d) -> d.get 'key' ).
-        transition().duration(500).
-        attr("transform", (d) =>
+      @svg.selectAll("g.sector")
+        .data(@sector_list.models, (d) -> d.get 'key' )
+        .transition().duration(500)
+        .attr("transform", (d) =>
           old = @sector_offset
           @sector_offset += @x d.total_value()
           "translate(#{old})"
         )
 
       @label_offset = 0
-      @svg.selectAll("text.sector_label").
-        data(@sector_list.models, (d) -> d.get 'key' ).
-        transition().duration(500).
-        attr("dy", (d) => @x(d.total_value() / 2) + 5 ).
-        text((d) -> "#{d.get 'key'} #{parseInt d.total_value()} PJ")
+      @svg.selectAll("text.sector_label")
+        .data(@sector_list.models, (d) -> d.get 'key' )
+        .transition().duration(500)
+        .attr("dy", (d) => @x(d.total_value() / 2) + 5 )
+        .text((d) -> "#{d.get 'key'} #{parseInt d.total_value()} PJ")
 
       # we need to track the offset for every sector
       offsets = {}
@@ -158,12 +157,12 @@ D3.mekko =
         transition().duration(500).
         attr("width", (d) => @x d.sector.total_value() ).
         attr("height", (d) =>
-          x = d.val() / d.sector.total_value() * @height
+          x = d.val() / d.sector.total_value() * @series_height
           if _.isNaN(x) then 0 else x
         ).
         attr("y", (d) =>
           old = offsets[d.get 'sector']
-          x = d.val() / d.sector.total_value() * @height
+          x = d.val() / d.sector.total_value() * @series_height
           if _.isNaN(x) then x = 0
           offsets[d.get 'sector'] += x
           old

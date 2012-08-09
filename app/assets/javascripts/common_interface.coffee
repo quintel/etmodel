@@ -4,20 +4,6 @@ $ ->
     # to non-HiDPI resolutions.
     $('#header_inside img[src$="@2x.png"]').attr(width: '401')
 
-  # Expandable description below tabs title
-  #
-  $(document).on 'click', ".read_more", (e) ->
-    e.preventDefault()
-    $("#content_short").hide()
-    $("#content_long").show("fast")
-    $("#read_more").hide()
-
-  $(document).on 'click', ".read_less, #con", (e) ->
-    e.preventDefault()
-    $("#content_long").hide("fast")
-    $("#content_short").show()
-    $("#read_more").show()
-
   # AJAX-based navigation
   #
   if Browser.hasProperPushStateSupport()
@@ -127,12 +113,10 @@ $ ->
     style:
       classes: "ui-tooltip-tipsy"
 
-# This class holds all the methods that were previously in the global scope
-#
 class @AppInterface
-  set_active_tab: (page) ->
-    $(".tabs li").removeClass('active')
-    $(".tabs li#"+page).addClass('active')
+  set_active_movie_tab: (page) ->
+    $(".movie_tabs li").removeClass 'active'
+    $(".movie_tabs li##{page}").addClass 'active'
 
   # Checks the select tag to show custom year field select when
   # other is clicked.

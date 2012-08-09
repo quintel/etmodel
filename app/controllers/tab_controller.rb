@@ -34,7 +34,7 @@ class TabController < ApplicationController
       @tabs = Tab.ordered
       @current_tab = Tab.find_by_key tab_key
 
-      @sidebar_items = @current_tab.sidebar_items.ordered.reject(&:area_dependent)
+      @sidebar_items = @current_tab.sidebar_items.ordered.includes(:area_dependency).reject(&:area_dependent)
       @current_sidebar_item = SidebarItem.find_by_key sidebar_key
 
       # check valid sidebar item
@@ -42,7 +42,7 @@ class TabController < ApplicationController
         redirect_to controller: 'pages', action: 'intro' and return
       end
 
-      @slides = @current_sidebar_item.slides.ordered
+      @slides = @current_sidebar_item.slides.includes(:description).ordered
       @current_slide = @slides.first
 
       # Deal with the charts
@@ -56,7 +56,7 @@ class TabController < ApplicationController
         OutputElement.find_by_id(chart_id)
       end
 
-      @targets = Target.all.reject(&:area_dependent)
+      @targets = Target.includes(:area_dependency).reject(&:area_dependent)
 
       # The JS app will take care of fetching a scenario id, in the meanwhile we
       # use this variable to show all the items in the top menu

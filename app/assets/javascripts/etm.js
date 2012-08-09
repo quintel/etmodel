@@ -21,7 +21,6 @@
 //= require_tree ./lib/views
 //= require_tree ./lib/models
 //= require intro
-//= require jquery.hoverIntent.min
 //= require fancybox
 
 //= require i18n

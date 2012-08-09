@@ -1,79 +1,56 @@
 class @Accordion
-  setup: ->
-    @accordion = $('.accordion').accordion
-      header: 'h3',
-      collapsible: true,
-      fillSpace: false,
-      autoHeight: false,
-      active: false
-    @open_right_tab()
+  setup: =>
     @setup_callbacks()
+    @open_right_tab()
 
-    # Setup slides and open the right one. The default slide can be set
-    # by passing a fragment url (http://ETM/costs#slide_key)
-    # Otherwise the first slide will be open by default.
-    #
-  open_right_tab: ->
-    slide_keys = []
-    i = 0
-    for e in $('li.accordion_element h3')
-      open_slide_index = i if ($(e).is('.selected'))
-      $(e).show()
-      i += 1
-      # Store the slide keys in an array. We need this to get the index
-      # of the slide we'd like to open
-      slide_key = $(e).data('slide')
-      slide_keys.push "##{slide_key}"
+  setup_callbacks: ->
+    $(document).on 'click', ".accordion_element h3", (e) ->
+      e.preventDefault()
+      header = $(e.target).closest('h3')
 
-    # open default/requested slide
-    if slide = window.location.hash
-      slide_index = slide_keys.indexOf(slide)
-      # deal with bad names
-      slide_index = open_slide_index if slide_index == -1
-    else
-      slide_index = open_slide_index
-    $('.ui-accordion').accordion("activate", slide_index)
+      # close all slides
+      ul = header.parents("ul.accordion")
+      ul.find("li.accordion_element h3").removeClass('selected')
+      ul.find("li.accordion_element .slide").slideUp('fast')
 
-  setup_callbacks: =>
-    # Here we load the new default chart
-    $('.ui-accordion').bind 'accordionchange', (e, ui) ->
-      $("li.accordion_element").removeClass('selected')
-      element = ui.newHeader
+      # open the right one
+      current = header.parents("li.accordion_element")
+      current.find('h3').addClass('selected')
+      current.find(".slide").slideToggle('fast')
 
-      # update url fragment
-      slide_key = element.data('slide')
-      window.location.hash = slide_key
+      # update the fragment url
+      key = header.data('slide')
+      window.location.hash = key
 
-      # track event
-      slide_title = $.trim(element.text())
+      # Track event (legacy, can we remove this?)
+      slide_title = $.trim(header.text())
       Tracker.track({slide: slide_title})
 
-      # load default chart as needed
+      # request the default chart
       chart_holder = 'chart_0'
-      if element.length > 0
-        default_chart = element.data('default_chart')
-        alternate_chart = element.data('alt_chart')
-        # store the default chart for this slide
-        chart_settings = App.settings.get('charts')
-        chart_settings[chart_holder].default = default_chart
-        App.settings.set 'charts', chart_settings
+      default_chart = header.data('default_chart')
+      alternate_chart = header.data('alt_chart')
+      # store the default chart for this slide
+      chart_settings = App.settings.get('charts')
+      chart_settings[chart_holder].default = default_chart
+      App.settings.set 'charts', chart_settings
 
-        # show/hide the default chart button
-        showing_default = charts.current_chart_in(chart_holder) == default_chart
-        $("a.default_chart").toggle(!showing_default)
+      # show/hide the default chart button
+      showing_default = charts.current_chart_in(chart_holder) == default_chart
+      $("a.default_chart").toggle(!showing_default)
 
-        # load chart
-        unless charts.pinned_chart_in(chart_holder)
-          charts.load(default_chart, chart_holder, {alternate: alternate_chart})
+      # load chart
+      unless charts.pinned_chart_in(chart_holder)
+        charts.load(default_chart, chart_holder, {alternate: alternate_chart})
 
-    # next button
-    i = 1
-    for slide in $('.slide')
-      $('a.next_slide', slide).click (e) =>
-        e.preventDefault()
-        @accordion.accordion "activate", i
-        i += 1
-
-  reset: =>
-    $(".accordion").accordion("destroy")
-    @setup()
+  # Setup slides and open the right one. The default slide can be set
+  # by passing a fragment url (http://ETM/costs#slide_key)
+  # Otherwise the first slide will be open by default.
+  #
+  open_right_tab: ->
+    slide = window.location.hash.replace('#', '')
+    item = if slide != ''
+      $ "li.accordion_element h3[data-slide=#{slide}]"
+    else
+      $ 'li.accordion_element h3.selected'
+    item.trigger 'click'

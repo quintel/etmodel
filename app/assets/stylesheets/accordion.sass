@@ -5,45 +5,25 @@
     color: #63a0c9
     font: 13px $body_font_family
 
-  .accordion_element
-    position: relative
-    display: none
-
-  ul
+  ul.accordion
+    float: left
+    width: 100%
     margin: 0
     padding: 0
     list-style: none
     overflow: hidden
-
-    li
+    li.accordion_element
       overflow: hidden
       vertical-align: top
       padding: 0 0 3px
-      a.slide_header
-        display: block
-        padding: 0 0 0 31px
-        background: #dfe8f3 image-url("slides/triangle.gif") no-repeat
-        font: normal 16px/30px $title_font_family
-        text-decoration: none
-        text-align: left
-        overflow: hidden
-        height: 1%
-
-      a.slide_header:hover, .selected a, .ui-state-active a
-        background: #dfe8f3 image-url("slides/triangle-hover.gif") no-repeat
-
-  .accordion
-    float: left
-    width: 100%
-    li div p img
-      float: left
-      padding: 0 20px 0 0
-    li.accordion_element
-      .headline
-        position: relative
+      h3.ui-state-active a
+        background: image-url("slides/triangle-hover.gif") no-repeat left center
+      div p img
+        float: left
+        padding: 0 20px 0 0
+      h3
+        margin: 0
         background: #dfe8f3
-        display: block
-        width: 100%
         height: 30px
         outline: none
         a
@@ -52,106 +32,60 @@
           margin: 0 0 2px
           color: #224368
           text-decoration: none
-
-    .slide
-      p
-        margin: 13px 0
-      a.next_slide
-        background: #fff
-        height: 20px
-        text-align: center
-        text-decoration: none
-        float: right
-        &:hover
-          text-decoration: underline
-
-  .container
-    width: 100%
-    overflow: hidden
-    margin: 26px 0 0
-    p
-      color: #474747
-      margin: 19px 0 0
-      line-height: 17px
-
-  .valuees
-    float: left
-    clear: both
-    width: 100%
-    list-style: none
-    overflow: visible
-    padding: 0
-
-    img.subheader_image
-      float: right
-      margin-right: 0px
-      width: 115px
-      height: 40px
-    span.slider
-      float: left
-      width: 45%
-      line-height: 18px
-
-    li
-      width: 100%
-      overflow: hidden
-      padding: 0 0 1px
-      position: relative
-
-      span
-        a
-          float: left
-          text-decoration: none
-          position: relative
-        a.icon
-          display: inline
-          width: 15%
+          padding: 0 0 0 31px
+          background: image-url("slides/triangle.gif") no-repeat left center
+          text-align: left
           overflow: hidden
-          background: none center center no-repeat
-          display: none
-
-        a.label
-          margin: 0 0 0 0px
-          width: 85%
-          display: inline
-          outline: none
-          color: #333
+          &:hover
+            background: image-url("slides/triangle-hover.gif") no-repeat left center
+      .slide
+        p
+          margin: 13px 0
+        a.next_slide
           background: #fff
-          em.price
-            color: #999
-            font-size: smaller
-            font-style: normal
-
-      .value
-        float: left
-        text-align: right
-        color: #4c6d7f
-        text-decoration: none
-    div.sub_header
-      text-align: right
-      color: #aaa
-      overflow: auto
-    div.interface_group
-      width: 100%
-      text-align: left
-      color: #aaa
-      border-top: 1px solid #aaa
-      margin-top: 5px
-      overflow: hidden
-
-    span.subheader_arrow
-      float: right
-      margin-right: 4px
-      height: 26px
-      width: 123px
-      text-align: right
-      background: #fff image-url('slides/grey_triangle_down.gif') no-repeat scroll right bottom
+          height: 20px
+          text-align: center
+          text-decoration: none
+          float: right
+          &:hover
+            text-decoration: underline
+        .items
+          float: left
+          clear: both
+          width: 100%
+          list-style: none
+          overflow: visible
+          padding: 0
+          img.sub_header_image
+            float: right
+            margin-right: 0px
+            width: 115px
+            height: 40px
+          div.sub_header
+            text-align: right
+            color: #aaa
+            overflow: auto
+            background: #fff
+          div.interface_group
+            width: 100%
+            text-align: left
+            color: #aaa
+            border-top: 1px solid #aaa
+            margin-top: 5px
+            overflow: hidden
+          span.sub_header_arrow
+            float: right
+            margin-right: 4px
+            height: 26px
+            width: 123px
+            text-align: right
+            background: #fff image-url('slides/grey_triangle_down.gif') no-repeat scroll right bottom
 
 // HiDPI Accordion Images.
 
 @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)
   #accordion_wrapper
-    .valuees span.subheader_arrow
+    .items span.sub_header_arrow
       background-image: url(/assets/layout/grey_triangle_down-hidpi.png)
       background-size: 30px 6px
 

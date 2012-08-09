@@ -1,7 +1,7 @@
 class @Accordion
   setup: ->
     @accordion = $('.accordion').accordion
-      header: '.headline',
+      header: 'h3',
       collapsible: true,
       fillSpace: false,
       autoHeight: false,
@@ -16,13 +16,13 @@ class @Accordion
   open_right_tab: ->
     slide_keys = []
     i = 0
-    for e in $('li.accordion_element')
+    for e in $('li.accordion_element h3')
       open_slide_index = i if ($(e).is('.selected'))
       $(e).show()
       i += 1
       # Store the slide keys in an array. We need this to get the index
       # of the slide we'd like to open
-      slide_key = $(".headline", e).data('slide')
+      slide_key = $(e).data('slide')
       slide_keys.push "##{slide_key}"
 
     # open default/requested slide
@@ -37,6 +37,7 @@ class @Accordion
   setup_callbacks: =>
     # Here we load the new default chart
     $('.ui-accordion').bind 'accordionchange', (e, ui) ->
+      $("li.accordion_element").removeClass('selected')
       element = ui.newHeader
 
       # update url fragment

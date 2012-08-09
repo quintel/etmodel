@@ -1,29 +1,28 @@
-- selected = 'selected' if @slides.first == slide
-%li.accordion_element{:class => selected}
-  %span.headline{:data => {:slide => slide.short_name,
+- title_class = 'selected' if @slides.first == slide
+%li.accordion_element
+  %h3{:class => title_class, :data => {:slide => slide.short_name,
                            :default_chart => slide.output_element_id,
                            :alt_chart => slide.alt_output_element_id}}
     = link_to t("slides.#{slide.key}").html_safe,
       tab_path(params[:tab], params[:sidebar], :anchor => slide.short_name),
-      :class => 'slide_header', :id => slide.key
+      :id => slide.key
   .slide
     %p
       = image_tag(slide.image_path) if slide.image.present?
       = raw slide.description.try(:content)
-    %ul.valuees
+    .items
       - unless slide.general_sub_header.blank?
-        %div.sub_header{:id => "sub_header_#{slide.id}"}
-          %span.subheader_arrow= t("subheaders.#{to_yml_syntax(slide.general_sub_header)}")
+        .sub_header{:id => "sub_header_#{slide.id}"}
+          %span.sub_header_arrow= t("subheaders.#{to_yml_syntax(slide.general_sub_header)}")
           - unless slide.subheader_image.blank?
-            %img.subheader_image{:src => "/assets/slides/#{slide.subheader_image}"}
+            %img.sub_header_image{:src => "/assets/slides/#{slide.subheader_image}"}
       - slide.input_elements_not_belonging_to_a_group.each do |input_element|
         = render :partial => 'input_elements/slider', :object => input_element
       - slide.grouped_input_elements.each do |group, sliders|
-        - title = slide.group_sub_header
-        %div.interface_group
+        .interface_group
           %span{:style =>"float:left"}= t("accordion.#{to_yml_syntax(group)}")
-          - unless title.blank?
-            %span.subheader_arrow= t("subheaders.#{to_yml_syntax(title)}")
+          - unless slide.group_sub_header.blank?
+            %span.sub_header_arrow= t("subheaders.#{to_yml_syntax(slide.group_sub_header)}")
         - sliders.each do |input_element|
           = render :partial => 'input_elements/slider', :object => input_element
 

@@ -25,6 +25,3 @@
             %span.sub_header_arrow= t("subheaders.#{to_yml_syntax(slide.group_sub_header)}")
         - sliders.each do |input_element|
           = render :partial => 'input_elements/slider', :object => input_element
-
-    - unless @slides.last == slide
-      %a.next_slide{:href => '#'}= I18n.t("go_to_next")

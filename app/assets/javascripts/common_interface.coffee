@@ -4,6 +4,10 @@ $ ->
     # to non-HiDPI resolutions.
     $('#header_inside img[src$="@2x.png"]').attr(width: '401')
 
+  # Sidebar accordion
+  $('#sidebar h4').on 'click', ->
+    $(this).next('ul').slideToggle('fast')
+
   # AJAX-based navigation
   #
   if Browser.hasProperPushStateSupport()

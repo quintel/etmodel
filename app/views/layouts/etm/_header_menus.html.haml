@@ -34,10 +34,9 @@
     = select_tag "locale", options_for_select([:en, :nl], I18n.locale)
 
   %li
-    - if has_active_scenario?
-      %a{:href => new_scenario_path}= t("header.save_scenario")
     %a{:href => scenarios_path}= t("header.load_scenario")
     - if has_active_scenario?
+      %a{:href => new_scenario_path}= t("header.save_scenario")
       %a#reset_scenario{:href => reset_scenario_path}= t("header.reset_scenario")
   - if controller_name != 'pages' && has_active_scenario?
     - if Current.setting.use_peak_load
@@ -58,23 +57,5 @@
           = submit_tag "Turk it"
 
 #information_menu.header_menu.topnav
-  %li
-    %a{:href => "/about"}= t("header.about_qi")
-  %li= link_to t("header.partners"), partners_path
-  %li
-    %a{:href => "http://onderwijs.quintel.nl/", :target => '_new'}= t("header.education")
-  %li
-    %a{:href => "/famous_users"}= t("header.famous_users")
-  %li
-    %a{:href => "/press_releases"}= t("header.press_releases")
-  %li
-    %a{:href => "/units"}= t("header.units_used")
-  %li
-    %a{:href => "/privacy_statement"}= t("header.privacy_statement")
-  %li
-    %a{:href => "/disclaimer"}= t("header.disclaimer")
-  %li= link_to t('header.bugs'), bugs_path
-  - unless APP_CONFIG[:standalone]
-    %li= link_to "Wiki", "http://wiki.quintel.com", :target => "_blank"
-    %li= link_to t('header.publications'), "http://refman.et-model.com", :target => "_blank"
-    %li= link_to t('header.feedback'), "/feedback", :class => "fancybox"
+  - information_links.each do |link|
+    %li= link_to link["text"], link["link"], :target => link["target"], :class => link["class"]

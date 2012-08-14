@@ -59,21 +59,21 @@ module ApplicationHelper
 
   def information_links
     links = []
-    links.push({ "text" => t("header.partners") , "link" => partners_path, "target" => nil , "class" => nil})
-    links.push({ "text" => t("header.about_qi") , "link" => about_path, "target" => nil , "class" => nil})
-    links.push({ "text" => t("header.education") , "link" => "http://onderwijs.quintel.nl/", "target" => "_new" , "class" => nil})
-    links.push({ "text" => t("header.famous_users") , "link" => famous_users_path, "target" => nil , "class" => nil})
-    links.push({ "text" => t("header.press_releases") , "link" => press_releases_path, "target" => nil , "class" => nil})
-    links.push({ "text" => t("header.units_used") , "link" => units_path, "target" => nil , "class" => nil})
-    links.push({ "text" => t("header.privacy_statement") , "link" => privacy_statement_path, "target" => nil , "class" => nil})
-    links.push({ "text" => t("header.disclaimer") , "link" => disclaimer_path, "target" => nil , "class" => nil})
-    links.push({ "text" => t("header.bugs") , "link" => bugs_path, "target" => nil , "class" => nil})
+    links.push text: t("header.partners") ,           url: partners_path
+    links.push text: t("header.about_qi") ,           url: about_path
+    links.push text: t("header.education") ,          url: "http://onderwijs.quintel.nl/", target: "_new"
+    links.push text: t("header.famous_users") ,       url: famous_users_path
+    links.push text: t("header.press_releases") ,     url: press_releases_path
+    links.push text: t("header.units_used") ,         url: units_path
+    links.push text: t("header.privacy_statement") ,  url: privacy_statement_path
+    links.push text: t("header.disclaimer") ,         url: disclaimer_path
+    links.push text: t("header.bugs") ,               url: bugs_path
     unless APP_CONFIG[:standalone]
-      links.push({ "text" => "Wiki" , "link" => "http://wiki.quintel.com", "target" => "_blank" , "class" => nil})
-      links.push({ "text" => t("header.publications") , "link" => "http://refman.et-model.com", "target" => "_blank" , "class" => nil})
-      links.push({ "text" => t("header.feedback") , "link" => feedback_path, "target" => nil , "class" => "fancybox"})
+      links.push text: "Wiki" ,                       url: "http://wiki.quintel.com", target: "_blank"
+      links.push text: t("header.publications") ,     url: "http://refman.et-model.com", target: "_blank"
+      links.push text: t("header.feedback") ,         url: feedback_path, class: "fancybox"
     end
-    links.sort! {|x,y| x["text"] <=> y["text"] }
+    links.sort! {|x,y| x[:text] <=> y[:text] }
   end
 
 end

@@ -58,4 +58,4 @@
 
 #information_menu.header_menu.topnav
   - information_links.each do |link|
-    %li= link_to link["text"], link["link"], :target => link["target"], :class => link["class"]
+    %li= link_to link[:text], link[:url], :target => link[:target], :class => link[:class]

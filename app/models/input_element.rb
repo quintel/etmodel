@@ -131,6 +131,6 @@ class InputElement < ActiveRecord::Base
 
   # Use by admin and search page
   def url
-    slides.first.try :url
+    slide.try :url
   end
 end

@@ -285,6 +285,10 @@
         // animation can look a little jarring.
         effects:  ! this.model.get('share_group'),
 
+        // Keyboard events have a 300ms delay so that repeat keypresses don't
+        // flood ETengine.
+        keyFloodWait: 300,
+
         // No opacity for IE <= 8.
         disabledOpacity: (IS_IE_LTE_EIGHT ? 1.0 : 0.5)
       });

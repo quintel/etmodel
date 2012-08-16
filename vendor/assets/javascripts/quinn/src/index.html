@@ -51,12 +51,12 @@ aka. track bars) for HTML applications. The project is hosted on
 <h2 id="downloads">Downloads</h2>
 
 <dl>
-  <dt><a href="https://github.com/antw/quinn/tarball/v1.0.2">Everything (1.0.2)</a></dt>
+  <dt><a href="https://github.com/antw/quinn/tarball/v1.0.5">Everything (1.0.5)</a></dt>
   <dd>Tarball containing JS, CSS, and images</dd>
-  <dt><a href="http://antw.github.com/quinn/jquery.quinn.js">Development Version (1.0.2)</a></dt>
-  <dd>31.8kb, JS only, Uncompressed with comments</dd>
-  <dt><a href="http://antw.github.com/quinn/jquery.quinn.min.js">Production Version (1.0.2)</a></dt>
-  <dd>2.6kb, JS only, Minified and Gzipped</dd>
+  <dt><a href="http://antw.github.com/quinn/jquery.quinn.js">Development Version (1.0.5)</a></dt>
+  <dd>33.6kb, JS only, Uncompressed with comments</dd>
+  <dt><a href="http://antw.github.com/quinn/jquery.quinn.min.js">Production Version (1.0.5)</a></dt>
+  <dd>2.8kb, JS only, Minified and Gzipped</dd>
 </dl>
 
 <h2 id="table-of-contents">Table of Contents</h2>
@@ -366,6 +366,22 @@ $('.slider').quinn({
 </code></pre>
 
 <h2 id="history">History</h2>
+
+<h4 id="august-16th-2012">1.0.5 <em>August 16th, 2012</em></h4>
+
+<ul>
+  <li>
+    <p>Added support for changing the value with the keyboard arrow keys, page
+up and down. Alt+Left and Alt+Right will instantly set the minimum and
+maximum values respectively.</p>
+
+    <p>A new option, <code>keyFloodWait</code>, will impose a delay after the user lifts a
+key, to wait and see if they repeatedly press the key to further alter
+the value. This is disabled by default, but may be useful if you trigger
+an expensive action (e.g. XmlHttpRequest) whenever the slider value
+changes.</p>
+  </li>
+</ul>
 
 <h4 id="july-11th-2012">1.0.2 <em>July 11th, 2012</em></h4>
 

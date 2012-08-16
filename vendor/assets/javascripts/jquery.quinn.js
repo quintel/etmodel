@@ -579,18 +579,18 @@
                 this.stepDown(10, false, true); break;
             case 37: // Left arrow.
             case 40: // Down arrow.
-                if (event.altKey) {
+                if (event.metaKey) {
                     this.setTentativeValue(this.model.minimum, false);
                 } else {
-                    this.stepDown(event.shiftKey ? 10 : 1, false, true);
+                    this.stepDown(event.altKey ? 10 : 1, false, true);
                 }
                 break;
             case 39: // Right arrow.
             case 38: // Up arrow.
-                if (event.altKey) {
+                if (event.metaKey) {
                     this.setTentativeValue(this.model.maximum, false);
                 } else {
-                    this.stepUp(event.shiftKey ? 10 : 1, false, true);
+                    this.stepUp(event.altKey ? 10 : 1, false, true);
                 }
                 break;
             default:

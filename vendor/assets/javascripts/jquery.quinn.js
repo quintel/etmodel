@@ -570,6 +570,8 @@
                     this.resolve();
                 }
             }
+
+            return true;
         }
 
         switch (event.which) {

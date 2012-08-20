@@ -1,8 +1,7 @@
-%li
-  %h3
-    = t("choose_year")
-  - preset_years = [2020, 2030, 2040, 2050, "other"]
-  - other_year_selected = !preset_years.include?(Current.setting.end_year)
-  = select_tag :end_year, options_for_select(preset_years, other_year_selected ? "other" : (Current.setting.end_year || 2050)),{:onchange => "Interface.check_year_radio_buttons();", :style=>"width:78px"}
-  - custom_years = (2011..2050).to_a.map {|i| [i,i]}
-  = select_tag :other_year, options_for_select(custom_years, other_year_selected ? {:selected => Current.setting.end_year} : {}), {}.merge(other_year_selected ? {:style=>"width:60px"} : {:style => 'display:none;width:60px'})
+%p= t("choose_year")
+- preset_years = [2020, 2030, 2040, 2050, "other"]
+- other_year_selected = !preset_years.include?(Current.setting.end_year)
+= select_tag :end_year, options_for_select(preset_years, other_year_selected ? "other" : (Current.setting.end_year || 2050)),{:onchange => "Interface.check_year_radio_buttons();", :style=>"width:78px"}
+- custom_years = (2011..2050).to_a.map {|i| [i,i]}
+= select_tag :other_year, options_for_select(custom_years, other_year_selected ? {:selected => Current.setting.end_year} : {}), {}.merge(other_year_selected ? {:style=>"width:60px"} : {:style => 'display:none;width:60px'})
+

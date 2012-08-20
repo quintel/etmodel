@@ -1,24 +1,9 @@
--  nl_regions = %w[nl-drenthe nl-flevoland nl-friesland nl-gelderland nl-groningen nl-limburg nl-noord-brabant nl-noord-holland nl-overijssel nl-utrecht nl-zeeland nl-zuid-holland]
-
-%li
-  %h3= t("choose_country")
-  %select{:name => "area_code"}
-    = country_option 'nl'
-    %optgroup{:label => "Provinces of the Netherlands"}
-      - nl_regions.each do |code|
-        = country_option code
-      = country_option 'nl-noord' if @show_all
-    %optgroup{:label => "Municipalities of the Netherlands"}
-      = country_option 'ams', :test => true
-      = country_option 'grs', :test => true
-    = country_option 'de'
-    - if @show_german_provinces
-      %optgroup{:label => "Provinces of Germany"}
-        = country_option 'br', :test => true
-    = country_option 'uk', :test => true
-    = country_option 'ro', :test => true
-    = country_option 'pl', :test => true
-    = country_option 'tr', :test => true
-    = country_option 'za', :test => true if session[:show_all_countries]
-    - if session[:show_all_countries] || session[:show_flanders]
-      = country_option 'be-vlg', :test => true
+%p= t("choose_country")
+%select{:name => "area_code"}
+  - area_links.each do |area_code|
+    - if area_code[:data]
+      %optgroup{:label => area_code[:text]}
+        - area_code[:data].each do |sub_area_code|
+          = country_option sub_area_code[:area_code], :test => sub_area_code[:test]
+    - else
+      = country_option area_code[:area_code], :test => area_code[:test]

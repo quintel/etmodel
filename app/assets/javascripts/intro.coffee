@@ -1,32 +1,26 @@
 $ ->
-  $('.diamond').hover ->
-      id_name = $(this).attr('id')
-      # clean up actives
-      $('.diamonds .active').removeClass('active')
-      # update diamond
-      $('.diamonds #'+id_name).addClass('active')
-      # change text
-      new_html = $('#textrepository_'+id_name).html()
-      $('.diamond_container .text').html(new_html)
-
-  # used in root form to show the predefined scenarios descriptions
-  $("#scenarios_select").change ->
-    $('.description').hide(50)
-    locale = $(this).data 'locale'
-    scenario_id = $(this).val()
-    # the scenario description record has two spans en/nl for the localized text
-    # Using html tags in the db records should better be avoided
-    $("#description_#{scenario_id}").show(100)
-      .find("span.#{locale}").show()
-    if scenario_id > 0
-      $('#go_button').show(50)
-
   $("#new_scenario_button").click (e) ->
     e.preventDefault()
-    $("#new_scenario_form").slideToggle()
-    $("#existing_scenario_form").hide()
+    $("#new_scenario_button").addClass('active')
+    $("#existing_scenario_button").removeClass('active')
+    $("#new_scenario").slideToggle().addClass('active')
+    $("#existing_scenario").hide()
+    $("#load_exsisting_scenario").hide()
 
   $("#existing_scenario_button").click (e) ->
     e.preventDefault()
-    $("#existing_scenario_form").slideToggle()
-    $("#new_scenario_form").hide()
+    $("#existing_scenario_button").addClass('active')
+    $("#new_scenario_button").removeClass('active')
+    $("#existing_scenario").slideToggle().addClass('active')
+    $("#new_scenario").hide().removeClass('active')
+
+  $('#existing_scenario li').hover ->
+    $("#existing_scenario li").removeClass('active')
+    $(this).addClass('active')
+    $("#load_exsisting_scenario  #description  #text").html($(this).data 'description')
+    $("#load_exsisting_scenario input#id").val($(this).data 'scenario-id')
+    $("#load_exsisting_scenario").show()
+
+  $("#existing_scenario li").click (e) ->
+    e.preventDefault()
+    $("#load_exsisting_scenario form").submit()

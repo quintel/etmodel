@@ -6,8 +6,6 @@ Etm::Application.routes.draw do
 
   match '/choose' => 'pages#choose'
   match '/pro' => 'pages#root', :as => :home
-
-  match '/demand/intro'       => 'tab#intro'
   match '/demand(/:sidebar)'  => 'tab#show', :defaults => {:sidebar => 'households',     :tab => 'demand'}
   match '/costs(/:sidebar)'   => 'tab#show', :defaults => {:sidebar => 'combustion',     :tab => 'costs'}
   match '/targets(/:sidebar)' => 'tab#show', :defaults => {:sidebar => 'sustainability', :tab => 'targets'}
@@ -122,7 +120,6 @@ Etm::Application.routes.draw do
   match '/about'                        => 'pages#about'
   match '/feedback'                     => 'pages#feedback', :as => :feedback
   match '/tutorial/(:tab)(/:sidebar)'   => 'pages#tutorial', :as => :tutorial
-  match '/pages/intro'                  => 'pages#intro', :as => :start
   match '/famous_users'                 => 'pages#famous_users'
   match '/press_releases'               => 'pages#press_releases'
   match '/disclaimer'                   => 'pages#disclaimer'

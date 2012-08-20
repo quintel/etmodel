@@ -1,5 +1,6 @@
-#information
+#introduction
   %h1= t 'intro.introduction'
+  %p= t 'intro.root_text'
   .movie_tabs
     %ul
       %li#what.active
@@ -11,4 +12,3 @@
   #movie_content
     = render 'pages/movie', :page => "what"
   .movie_shadow
-  %p= t 'intro.root_text'

@@ -147,7 +147,7 @@
    *    u.format(2) # => "4.2"
    */
   UnitConversion.prototype.format = function (value) {
-    return (value * (this.multiplier || 1)).toFixed(this.precision);
+    return (value * this.multiplier).toFixed(this.precision);
   };
 
   /**

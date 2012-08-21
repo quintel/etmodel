@@ -39,7 +39,7 @@ class TabController < ApplicationController
 
       # check valid sidebar item
       if sidebar_key && !@sidebar_items.map(&:key).include?(sidebar_key)
-        redirect_to '/targets' and return
+        redirect_to '/demand' and return
       end
 
       @slides = @current_sidebar_item.slides.includes(:description).ordered

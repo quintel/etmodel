@@ -39,7 +39,7 @@ protected
     Current.setting = Setting.default
     Current.setting.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
     Current.setting.area_code = params[:area_code]
-    redirect_to '/targets' and return
+    redirect_to '/demand' and return
   end
 
 public

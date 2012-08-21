@@ -69,7 +69,6 @@ h2 a.button, h2 input.button, h2 button.button
   span.right-icon, span.info-icon, span.tutorial-icon
     display: inline-block
     height: 11px
-    margin-right: 2px
     width: 16px
 
   span.right-icon
@@ -80,11 +79,12 @@ h2 a.button, h2 input.button, h2 button.button
 .button span
   &.info-icon
     @include icons-sprite('files', 1px)
-    margin: -3px 2px -1px 0
+    margin: -3px 5px -1px 0
     height: 16px
 
   &.tutorial-icon
     @include icons-sprite('video', 1px)
+    margin-right: 5px
 
 // HiDPI Buttons.
 

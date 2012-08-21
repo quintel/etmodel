@@ -23,7 +23,7 @@ describe PagesController do
         post :root, :area_code => country.dup, :end_year => year.dup
       end
 
-      specify { response.should redirect_to('/targets') }
+      specify { response.should redirect_to('/demand') }
       specify { assigns(:current).setting.end_year.should eql(year.to_i) }
       specify { assigns(:current).setting.area_code.should eql(country) }
     end

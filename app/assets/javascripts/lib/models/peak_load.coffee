@@ -28,13 +28,13 @@ class @PeakLoad extends Backbone.Model
     App.settings.save({network_parts_affected: @parts_affected() })
 
   grid_investment_needed: =>
-    @grid_investment_needed_gquery.result()[0][1]
+    @grid_investment_needed_gquery.future_value()
 
   # @return Array [lv, mv-lv, mv, hv-mv, hv]
   parts_affected: =>
     _.compact(
       _.map @gqueries, (gquery, part_affected) ->
-        if gquery.result()[0][1] then part_affected else null
+        if gquery.future_value() then part_affected else null
     )
 
   unknown_parts_affected: =>

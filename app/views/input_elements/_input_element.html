@@ -11,7 +11,10 @@
         </label>
 
         <%% if (sublabel) { %>
-            <div class="sublabel"><%%= sublabel %></div>
+            <div class="sublabel">
+              <%%= sublabel.value %>
+              <%%= sublabel.suffix %>
+            </div>
         <%% } %>
 
         <div class="slider-controls">

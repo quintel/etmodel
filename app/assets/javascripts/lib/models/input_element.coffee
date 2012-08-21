@@ -14,7 +14,7 @@ class @InputElement extends Backbone.Model
     @set({'max_value' : result})
 
   set_label: (label) =>
-    return unless _.isString(label)
+    return unless _.isObject(label)
     @set({'label' : label})
 
   set_start_value: (result) =>

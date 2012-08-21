@@ -130,10 +130,12 @@
 
   function UnitConversion (data, originalPrecision) {
     this.name       = data.name;
-    this.multiplier = data.multiplier;
+    this.multiplier = data.multiplier == null ? 1 : data.multiplier;
     this.unit       = data.unit;
-    this.precision  = originalPrecision + floatPrecision(this.multiplier);
     this.uid        = _.uniqueId('uconv_');
+
+    this.precision  = data.precision ||
+        originalPrecision + floatPrecision(this.multiplier);
   }
 
   /**
@@ -310,6 +312,7 @@
 
       // Need to do this manually, since it needs this.quinn to be set.
       this.quinnOnChange(this.quinn.model.value, this.quinn);
+      this.updateSublabel(this.quinn.model.value);
 
       // Disable buttons?
       if (this.model.get('disabled')) {
@@ -409,6 +412,32 @@
       this.valueElement.html(this.conversion.formatWithUnit(newValue));
 
       return newValue;
+    },
+
+    /**
+     * Updates the value in the sublabel element to reflect changes made to the
+     * input value by the user.
+     */
+    updateSublabel: function (value) {
+      if (this.model.get('unit') !== '%') {
+        // Can't change label values for other units without more radical
+        // changes in ETengine.
+        return true;
+      }
+
+      var label = this.model.get('label'), conversion;
+
+      if (label) {
+        conversion = new UnitConversion({
+          multiplier: value / 100.0 + 1.0,
+          unit:       label.suffix,
+          precision:  2
+        });
+
+        this.$el.find('.sublabel').html(
+          conversion.formatWithUnit(label.value)
+        );
+      }
     },
 
     /**
@@ -643,6 +672,7 @@
       }
 
       this.setTransientValue(newValue, true);
+      this.updateSublabel(newValue);
       this.model.set({ user_value: newValue });
       this.trigger('change');
     }

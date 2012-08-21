@@ -2,11 +2,10 @@
   %h2
     = raw t("sidebar_items.#{@current_sidebar_item.key}.long_name")
     %a.button.fancybox{ href: tab_info_path(ctrl: params[:tab], act: params[:sidebar]) }<>
-      %span.info-icon
+      %span.info-icon<>
       = raw t("header.information")
 
     - if current_tutorial_movie
-      %a.button.fancybox{:href => tutorial_path(:tab => params[:tab], :sidebar => params[:sidebar]),
-        :alt => "Tutorial", :title => "Tutorial"}<>
-        %span.tutorial-icon
+      %a.button.fancybox{:href => tutorial_path(:tab => params[:tab], :sidebar => params[:sidebar]), :title => "Tutorial"}<>
+        %span.tutorial-icon<>
         Tutorial

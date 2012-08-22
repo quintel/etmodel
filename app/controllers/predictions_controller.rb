@@ -7,7 +7,6 @@ class PredictionsController < ApplicationController
     @prediction  = @predictions.find(params[:prediction_id]) rescue @predictions.first
     @comment = Comment.new
     @comment.commentable = @prediction
-    @end_year = params[:end_year]
 
     render :layout => 'iframe'
   end

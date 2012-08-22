@@ -18,8 +18,8 @@
 
     var scenario = {
       start_year: 2010,
-      end_year: #{@end_year.to_i},
-      available: #{user_scenario_available?}
+      end_year: #{Current.setting.end_year.to_i},
+      available: #{has_active_scenario?}
     }
   = javascript_include_tag 'backcasting'
 .prediction
@@ -31,7 +31,7 @@
   .upper_block
     .available_predictions
       %ul
-        - if user_scenario_available?
+        - if has_active_scenario?
           %li.clickable_prediction.user_prediction
             %span
               - radio_button_tag :prediction_id, ''
@@ -58,5 +58,5 @@
 
   .prediction_details
     = render @prediction if @prediction
-- unless user_scenario_available?
+- unless has_active_scenario?
   .footer_spacer

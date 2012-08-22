@@ -20,10 +20,6 @@ module BackcastingHelper
     end
   end
   
-  def user_scenario_available?
-    params[:end_year].present?
-  end
-  
   def parenthesize( string )
     return '' if string.blank?
     "(#{string})" 

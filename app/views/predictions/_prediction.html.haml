@@ -4,7 +4,7 @@
   #{t 'prediction.by'} #{@prediction.user.try(:name)}
   = parenthesize @prediction.user.try(:company_school)
 
-- if user_scenario_available?
+- if has_active_scenario?
   .buttons.right
     #share_box
       %label Link:

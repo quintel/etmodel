@@ -55,7 +55,7 @@ $ ->
         show: false
 
   slider_is_available = ->
-    parent && parent.input_elements
+    parent && parent.App.input_elements
 
   set_slider_value = (x) ->
     return false unless slider_is_available()
@@ -69,7 +69,7 @@ $ ->
   get_slider = ->
     if !slider_is_available()
       return false
-    parent.input_elements.get(input_element.id)
+    parent.App.input_elements.get(input_element.id)
 
   plot_chart = ->
     # let's get the current slider value

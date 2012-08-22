@@ -451,9 +451,13 @@
         InputElement.Balancer.get(this.model.get('share_group')).resetAll();
       } else {
         this.quinn.setValue(this.initialValue);
+
         // Quinn will round the value to the nearest step; to truely reset to
         // the original, we set the model to the initialValue.
         this.model.set({ user_value: this.initialValue }, { silent: true });
+
+        // Ensure that the initial value of untouched inputs are also sent.
+        this.model.markDirty()
       }
     },
 

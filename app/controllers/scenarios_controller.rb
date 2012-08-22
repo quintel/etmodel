@@ -1,7 +1,7 @@
 class ScenariosController < ApplicationController
   before_filter :ensure_valid_browser
   before_filter :find_scenario, :only => [:show, :load]
-  before_filter :require_user, :only => [:index, :new]
+  before_filter :require_user, :only => [:index, :new]  
 
   def index
     items = if current_user.admin?
@@ -69,6 +69,7 @@ class ScenariosController < ApplicationController
     if @scenario.nil?
       redirect_to start_path, :notice => "Scenario not found" and return
     end
+    session[:dashboard] = nil
     Current.setting = Setting.load_from_scenario(@scenario)
     redirect_to start_path
   end
@@ -86,4 +87,5 @@ class ScenariosController < ApplicationController
     rescue ActiveResource::ResourceNotFound
       nil
     end
+      
 end

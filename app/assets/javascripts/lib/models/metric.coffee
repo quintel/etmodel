@@ -54,10 +54,9 @@
         # present in the number.
         #
         # .split('.')[1] => the decimal places
-        # .split(/0/)[0] => decimal places minus trailing zeros
         #
         str_value  = "#{ value }"
-        precision = str_value.split('.', 2)[1]?.split(/0/, 1)[0].length || 0
+        precision = str_value.split('.', 2)[1]?.length || 0
 
       value = @round_number(value, precision)
 

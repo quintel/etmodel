@@ -38,15 +38,27 @@
   # autoscale_value(20, '%') => 20%
   # autoscale_value(1234)    => 1234
   #
-  autoscale_value: (x, unit, precision = 0) ->
+  autoscale_value: (x, unit, precision = 'auto') ->
     if x == 0
       pow = 0
       value = 0
+      precision = 0
     else
       pow = @power_of_thousand(x)
       # in future we should downscale, too
       pow = 0 if pow < 0
       value = x / Math.pow(1000, pow)
+
+      if precision is 'auto'
+        # Automatically determine how many significant decimal places are
+        # present in the number.
+        #
+        # .split('.')[1] => the decimal places
+        # .split(/0/)[0] => decimal places minus trailing zeros
+        #
+        str_value  = "#{ value }"
+        precision = str_value.split('.', 2)[1]?.split(/0/, 1)[0].length || 0
+
       value = @round_number(value, precision)
 
     switch unit

@@ -45,11 +45,17 @@
    * toFixed().
    */
   floatPrecision = function (value) {
-    var precision = 0;
+    var precision = 0, asString;
 
     if (_.isNumber(value)) {
-      precision = value.toString().split('.');
-      precision = precision[1] ? precision[1].length : 0;
+      asString  = value.toString();
+
+      if (asString.match(/e/)) {
+        precision = parseInt(asString.split(/e[-+]/)[1] , 10);
+      } else {
+        precision = value.toString().split('.');
+        precision = precision[1] ? precision[1].length : 0;
+      }
     }
 
     return precision;

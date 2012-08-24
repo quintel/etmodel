@@ -99,6 +99,10 @@ $slider-box-height: 22px
     display: none
     margin: -1px
     overflow: auto
+    -webkit-user-select: none
+    -moz-user-select: none
+    user-select: none
+    
 
   .info
     background: #eee
@@ -118,6 +122,10 @@ $slider-box-height: 22px
   &.info-box-visible
     .show-info
       @include input-slider-button(120px)
+      -webkit-user-select: none
+      -moz-user-select: none
+      user-select: none
+      
 
   // Adjustment to vertical alignment of label and value text.
   label, .output

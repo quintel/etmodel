@@ -1,22 +1,32 @@
 class @Setting extends Backbone.Model
+  constructor: ->
+    super
+    @on 'change:use_fce', @on_fce_status_change
+
   url: -> '/settings'
 
   # Always use PUT requests
   isNew : -> false
 
-  toggle_fce: ->
-    use_fce = !!$(this).attr('checked')
-    App.settings.save
-      use_fce: use_fce
+  toggle_fce: (event) =>
+    @set(use_fce: !! $(event.target).attr('checked'))
+
+  on_fce_status_change: (setting, use_fce) =>
+    # Status change may be triggered by things other than the checkbox.
+    $('#settings_use_fce').attr('checked', use_fce)
+
     $('.fce_notice').toggle(use_fce)
+
+    App.settings.save use_fce: use_fce
     App.call_api()
+
     # update dashboard item text
     if item = dashboard.find_by_key('co2_reduction')
-      title = if use_fce
-        I18n.t 'constraints.greenhouse_gas.label'
-      else
-        I18n.t 'constraints.co2_reduction.label'
-      item.view.update_header title
+      item.view.update_header(
+        if use_fce
+          I18n.t 'constraints.greenhouse_gas.label'
+        else
+          I18n.t 'constraints.co2_reduction.label' )
 
   toggle_peak_load_tracking: ->
     App.settings.save

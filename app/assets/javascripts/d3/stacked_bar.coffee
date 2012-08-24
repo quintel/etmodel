@@ -162,7 +162,13 @@ D3.stacked_bar =
       @svg.selectAll('rect.target_line')
         .data(@model.target_series(), (d) -> d.get 'gquery_key')
         .transition()
-        .attr('y', (d) => @series_height - @y(d.safe_future_value()))
+        .attr 'y', (d) =>
+          value = if d.get('target_line_position') is '1'
+            d.safe_present_value()
+          else
+            d.safe_future_value()
+
+          @series_height - @y(value)
 
       # draw grid
 

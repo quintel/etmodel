@@ -32,6 +32,11 @@ class @AppView extends Backbone.View
     if @settings.get('area_code') == 'nl'
       @peak_load = new PeakLoad()
     @load_user_values()
+    @setup_fce_toggle()
+
+  setup_fce_toggle: ->
+    if element = $('.slide .fce-toggle')
+      (new FCEToggle(el: element, model: App.settings)).render()
 
   # deferred-based scenario_id request. Returns a deferred object
   scenario_id: =>

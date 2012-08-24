@@ -1,3 +1,5 @@
+@import "compass/utilities/general/clearfix"
+
 @mixin input-slider-button($position)
   background-position: -$position 2px
 
@@ -260,6 +262,75 @@ html.no-opacity .quinn.disabled
   .delta-bar .right, .handle, .reset, .minus, .plus, .help
     background-image: url(/assets/slider/ie-disabled.png)
 
+// FCE settings toggle.
+
+.fce-toggle
+  border-top: 1px solid white
+  height: 26px
+  position: relative
+  margin: 20px 0
+
+  .off, .widget, .on
+    display: block
+    float: left
+    // Absolute positioning required because IE8 is crap.
+    position: absolute
+    top: 0px
+
+  .off, .on
+    color: #999
+    cursor: pointer
+    font-size: 16px
+    height: 26px
+    margin-top: 3px
+    text-transform: uppercase
+
+  .off
+    left: 0px
+    text-align: right
+    width: 170px
+
+    &.active
+      color: #666
+
+  .on
+    left: 280px
+    width: 100px
+
+    &.active
+      color: #4282d0
+
+  .widget
+    left: 180px
+    margin: 0 20px
+    overflow: visible
+    padding-top: 0
+    padding-bottom: 0
+    width: 54px
+
+    .bar, .delta-bar, .handle
+      background-image: url(/assets/slider/toggle.png)
+      height: 26px
+
+    .delta-bar
+      background-position: 0 -40px
+
+    .handle
+      background-position: -100px -4px
+      height: 26px
+      margin: 0
+      width: 44px
+
+      &:focus
+        background-position: -100px -4px
+
+      &.active, &:active
+        background-position: -100px -84px
+
+    .bar, .delta-bar, .handle
+      .left, .main, .right
+        background: none
+
 // HiDPI slider buttons.
 
 @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)
@@ -267,3 +338,8 @@ html.no-opacity .quinn.disabled
     .reset, .decrease, .increase, .show-info
       background-image: url(/assets/slider/buttons-hidpi.png)
       background-size: 139px 108px
+
+  .fce-toggle .widget
+    .bar, .delta-bar, .handle
+      background-image: url(/assets/slider/toggle-hidpi.png)
+      background-size: 144px 114px

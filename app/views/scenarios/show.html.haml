@@ -18,9 +18,11 @@
       %strong #{t('scenario.end_year')}:
       = @scenario.end_year
 
-
-  = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button", style: "margin: 40px;"
-
+  - if @scenario.created_at.to_date < Date.parse("2012-8-28")  
+    = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button", style: "margin: 40px;", :confirm => t("scenario.waring_old")
+  - else
+    = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button", style: "margin: 40px;"
+    
   %p
     %small{:style => "font-size: 12px; font-weight: normal"}
       = t("scenario.overwritten")

@@ -15,6 +15,9 @@
         %td= link_to scenario.title, "/scenarios/#{scenario.id}"
         %td= scenario.end_year
         %td= scenario.parsed_created_at.andand.strftime("%d %b %H:%M")
-        %td= link_to t('scenario.load'), load_scenario_path(scenario)
+        - if scenario.created_at.to_date < Date.parse("2012-8-28")
+          %td= link_to t('scenario.load'), load_scenario_path(scenario), :confirm => t("scenario.waring_old")
+        - else
+          %td= link_to t('scenario.load'), load_scenario_path(scenario)
     %tr
       %td{:colspan => 4}= paginate @saved_scenarios

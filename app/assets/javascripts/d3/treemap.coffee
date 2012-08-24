@@ -1,7 +1,7 @@
 D3.treemap =
   data:
     sectors: ['industry', 'households', 'buildings', 'transport', 'agriculture', 'other']
-    carriers: ['biomass', 'oil', 'gas', 'coal', 'waste', 'biofuels', 'electricity', 'hot_water']
+    carriers: ['biomass', 'oil', 'gas', 'coal', 'waste', 'bio_fuels', 'electricity', 'hot_water']
 
   Node: class extends Backbone.Model
     initialize: ->

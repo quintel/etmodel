@@ -59,6 +59,11 @@
     return Balancer.balancers[name];
   };
 
+  // Bits of extra precision used when storing and manipulating grouped
+  // inputs. This is internal only; numbers are still displayed to the user
+  // rounded to the input "step" value.
+  Balancer.EXTRA_PRECISION = 6;
+
   // ## Instance-Level Stuff -------------------------------------------------
 
   /**
@@ -287,7 +292,10 @@
    */
   Balancer.prototype.__getPrecision = function () {
     return _.max(_.map(this.views, function (view) {
-      return view.conversion.precision;
+      // Inputs in groups may have rounding errors (etmodel#1023) if
+      // insufficient precision is used. So, we add extra bits of precision
+      // in hope that this is enough to keep the group balancing.
+      return view.conversion.precision + Balancer.EXTRA_PRECISION;
     })) || 0;
   };
 

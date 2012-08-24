@@ -254,6 +254,15 @@
      * Creates the HTML elements used to display the slider.
      */
     render: function () {
+      var quinnStep = this.model.get('step_value');
+
+      if (this.model.get('share_group')) {
+        // Inputs in groups may have rounding errors (etmodel#1023) if
+        // insufficient precision is used. So, we add extra bits of precision
+        // in hope that this is enough to keep the group balancing.
+        quinnStep /= Math.pow(10, InputElement.Balancer.EXTRA_PRECISION);
+      }
+
       // TEMPLATING.
 
       this.$el.addClass('new-input-slider').html(
@@ -283,7 +292,7 @@
         max:        this.model.get('max_value'),
 
         value:      this.model.get('user_value'),
-        step:       this.model.get('step_value'),
+        step:       quinnStep,
         disable:    this.model.get('disabled'),
 
         // Don't round initial values which don't fit the step.

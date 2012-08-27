@@ -70,7 +70,9 @@
       when 'MW'
         return "#{value}#{@scaling_in_words(pow, 'watt')}"
       when 'euro'
-        return "€#{value}"
+        return @euros_to_string x, true
+      when 'bln_euro'
+        return @euros_to_string x * 1000000000, true
       when 'man_years'
         return "#{@round_number x, 0} #{@scaling_in_words(0, 'man_years')}"
       when 'FTE'
@@ -108,8 +110,8 @@
     scale     = @power_of_thousand(x)
     value     = abs_value / Math.pow(1000, scale)
     suffix    = ''
-    if unit_suffix
-     suffix = I18n.t('units.currency.' + @power_of_thousand_to_string(scale))
+    if unit_suffix and abs_value >= 1000
+      suffix = I18n.t('units.currency.' + @power_of_thousand_to_string(scale))
     rounded = @round_number(value, 1).toString()
     # If the number is < 1000, and has decimal places, make sure that the
     # number isn't truncated to something like 5.4, but instead returns 5.40.
@@ -118,7 +120,7 @@
       if (rounded[1] && rounded[1].length == 1)
         rounded[1] += '0'
       rounded = rounded.join('.')
-    "#{prefix}&euro;#{rounded}#{suffix}"
+    "#{prefix}€#{rounded} #{suffix}"
 
   # support methods
   #

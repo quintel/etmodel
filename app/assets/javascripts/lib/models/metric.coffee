@@ -69,6 +69,8 @@
         return "#{value}#{@scaling_in_words(pow + 3, 'joules')}"
       when 'MW'
         return "#{value}#{@scaling_in_words(pow, 'watt')}"
+      when 'MT'
+        return "#{value}#{@scaling_in_words(pow + 2, 'ton')}"
       when 'euro'
         return @euros_to_string x, true
       when 'bln_euro'

@@ -2,8 +2,6 @@
   = simple_form_for [:admin, @input_element] do |f|
     = f.input :key,
       :hint => "Should be unique and recognizable! It is used as translation key, too. Check for conventions with WvL"
-    = f.input :input_id, :required => true,
-      :hint => "This is the link to the input_id on the engine, which contains the update command. Check the inputs over there"
     = f.input :fixed,
       :hint => "When you want to disable a slider, but still show it, this is your friend"
     = f.input :share_group,

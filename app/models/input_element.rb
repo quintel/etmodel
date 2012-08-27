@@ -12,7 +12,6 @@
 #  fixed             :boolean(1)
 #  comments          :text
 #  interface_group   :string(255)
-#  input_id          :integer(4)
 #  command_type      :string(255)
 #  related_converter :string(255)
 #  slide_id          :integer(4)
@@ -30,7 +29,6 @@ class InputElement < ActiveRecord::Base
 
 
   validates :key, :presence => true, :uniqueness => true
-  validates :input_id, :presence => true
 
   scope :households_heating_sliders, where(:share_group => 'heating_households')
   scope :ordered, order('position')
@@ -103,7 +101,7 @@ class InputElement < ActiveRecord::Base
   # Used by the interface to setup quinn
   def json_attributes
     Jbuilder.encode do |json|
-      json.(self, :id, :input_id, :unit, :share_group, :key, :related_converter, :step_value,
+      json.(self, :id, :unit, :share_group, :key, :related_converter, :step_value,
             :disabled, :translated_name, :parsed_description,:has_predictions,
             :fixed, :has_flash_movie)
     end

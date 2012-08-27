@@ -73,16 +73,24 @@ class Renderer extends jQuery.Quinn.Renderer
   render: ->
     super
 
-    @bar.css('marginLeft',  '-20px')
-    @bar.css('paddingRight', '31px')
+    [ onEvent, offEvent ] =
+      if 'ontouchstart' of document.documentElement
+        [ 'touchstart', 'touchend' ]
+      else
+        [ 'mousedown', 'mouseup' ]
 
-    @handles[0].
-      css('marginLeft', '-4px').
-      on('mousedown',  @handleDown).
-      on('touchstart', @handleDown).
-      on('mouseup',    @handleUp).
-      on('touchend',   @handleUp).
-      on('click', -> console.log('click'))
+    # Style adjustments.
+    @bar.css('marginLeft', '-20px')
+    @bar.css('paddingRight', '31px')
+    @handles[0].css('marginLeft', '-4px')
+
+    # "Fast" click events.
+    @handles[0].on(onEvent, @handleDown)
+    @bar.on(onEvent, @handleDown).on(offEvent, @handleUp)
+
+    # Remove the default Quinn events.
+    @wrapper.off('mousedown',  @quinn.clickBar)
+    @wrapper.off('touchstart', @quinn.clickBar)
 
   handleDown: =>
     @timeOfClick = new Date

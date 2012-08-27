@@ -55,8 +55,8 @@
         #
         # .split('.')[1] => the decimal places
         #
-        str_value  = "#{ value }"
-        precision = str_value.split('.', 2)[1]?.length || 0
+        str_value = "#{ value }"
+        precision = _.min([str_value.split('.', 2)[1]?.length || 0, 2])
 
       value = @round_number(value, precision)
 

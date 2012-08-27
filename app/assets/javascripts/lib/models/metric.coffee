@@ -112,16 +112,18 @@
     scale     = @power_of_thousand(x)
     value     = abs_value / Math.pow(1000, scale)
     suffix    = ''
+    rounded   = @round_number(value, 2).toString()
+
     if unit_suffix and abs_value >= 1000
       suffix = I18n.t('units.currency.' + @power_of_thousand_to_string(scale))
-    rounded = @round_number(value, 1).toString()
+
     # If the number is < 1000, and has decimal places, make sure that the
     # number isn't truncated to something like 5.4, but instead returns 5.40.
-    if abs_value < 1000 && rounded.match(/\./)
-      rounded = rounded.split('.')
-      if (rounded[1] && rounded[1].length == 1)
-        rounded[1] += '0'
-      rounded = rounded.join('.')
+    if abs_value >= 1000 && rounded.match(/\./)
+      # Trim unnecessary decimal places.
+      rounded = rounded.replace(/0+$/, '')
+      rounded = rounded[0..-2] if rounded.slice(-1) is '.'
+
     "#{prefix}€#{rounded} #{suffix}"
 
   # support methods

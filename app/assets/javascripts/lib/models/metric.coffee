@@ -113,7 +113,7 @@
     rounded = @round_number(value, 1).toString()
     # If the number is < 1000, and has decimal places, make sure that the
     # number isn't truncated to something like 5.4, but instead returns 5.40.
-    if (abs_value < 1000 && _.indexOf(rounded, '.') != -1)
+    if abs_value < 1000 && rounded.match(/\./)
       rounded = rounded.split('.')
       if (rounded[1] && rounded[1].length == 1)
         rounded[1] += '0'

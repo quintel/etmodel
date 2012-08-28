@@ -27,12 +27,28 @@ D3.stacked_bar =
         .attr("transform", "translate(#{margins.left}, #{margins.top})")
 
       # add legend
+      # remove duplicate target series. Required for backwards compatibility.
+      # When we'll drop the old charts we should use a single serie as target
+      # rather than two
+      target_lines = []
+      series_for_legend = []
+      for s in @model.series.models
+        label = s.get 'label'
+        if s.get 'is_target_line'
+          if _.indexOf(target_lines, label) == -1
+            target_lines.push label
+            series_for_legend.push s
+          # otherwise the target line has already been added
+        else
+          series_for_legend.push s
+
       legend_columns = 2
       legend_margin = @width / legend_columns
+
       legend = @svg.append('svg:g')
         .attr("transform", "translate(10,#{@series_height + 15})")
         .selectAll("svg.legend")
-        .data(@model.series.models)
+        .data(series_for_legend)
         .enter()
         .append("svg:g")
         .attr("class", "legend")

@@ -12,7 +12,7 @@ D3.stacked_bar =
     draw: =>
       margins =
         top: 20
-        bottom: 200
+        bottom: 20
         left: 30
         right: 30
 

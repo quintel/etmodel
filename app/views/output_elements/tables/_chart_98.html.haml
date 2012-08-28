@@ -11,15 +11,19 @@
       %th including exported electricity
       %th exported electricity
       %th inland final consumption
-
-  - columns = output_element.allowed_output_element_series.group_by{|serie| (serie.order_by / 100).to_i }
-  -# columns = {1 => [<Serie>,<Serie>], 2 => [...], 3 => [...]}
-  - rows = columns.values.map(&:length).max - 1 rescue 0
   %tbody
-    - 0.upto(rows) do |row|
-      %tr{:class => cycle('even', 'odd')}
-        -# use the Label of the first column
-        %th= t "output_element_series.#{columns[1][row].label}" rescue '-'
-        %td.tar{:data => {:gquery => columns[1][row].gquery}} -
-        %td.tar{:data => {:gquery => columns[2][row].gquery}} -
-        %td.tar{:data => {:gquery => columns[3][row].gquery}} -
+    %tr.even
+      %th= t "output_element_series.actual_1990"
+      %td.tar{:data => {:gquery => 'actual_1990_in_co2_emissions_table'}}
+      %td.tar{:data => {:gquery => 'diff_1990_in_co2_emissions_table'}}
+      %td.tar{:data => {:gquery => 'with_im_export_1990_in_co2_emissions_table'}}
+    %tr.odd
+      %th= t "output_element_series.actual_2010"
+      %td.tar{:data => {:gquery => 'actual_2010_in_co2_emissions_table',         :graph => :present}}
+      %td.tar{:data => {:gquery => 'diff_2010_in_co2_emissions_table',           :graph => :present}}
+      %td.tar{:data => {:gquery => 'with_im_export_2010_in_co2_emissions_table', :graph => :present}}
+    %tr.even
+      %th= t "output_element_series.actual_20xx"
+      %td.tar{:data => {:gquery => 'actual_20xx_in_co2_emissions_table'}}
+      %td.tar{:data => {:gquery => 'diff_20xx_in_co2_emissions_table'}}
+      %td.tar{:data => {:gquery => 'with_im_export_20xx_in_co2_emissions_table'}}

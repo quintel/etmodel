@@ -43,11 +43,14 @@ class @HtmlTableChartView extends BaseChartView
       gqid = $(cell).data('gquery')
       decimals = $(cell).data('decimals')
       decimals = 1 unless _.isNumber(decimals)
+      graph = $(cell).data('graph') || 'future'
       serie = @model.series.with_gquery(gqid)
       if !serie
         console.warn "Missing gquery: #{gqid}"
         return
-      raw_value = serie.future_value()
+
+      raw_value = if graph == 'future' then serie.future_value() else serie.present_value()
+
       raw_value = 0 unless _.isNumber(raw_value)
       value = Metric.round_number(raw_value, decimals)
       # some gqueries need a special treatment if they're 0

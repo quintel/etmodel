@@ -1,31 +1,28 @@
-#home
-  #start
-    - if has_active_scenario?
-      %h1= t("welcome_back")
-    - else
-      %h1= t("start_right_away")
-      %p.nodownloads= t("no_downloads")
-
-    - if has_active_scenario?
-      %a#continue_scenario_button.style_button{                               |
+#startbar
+  - if has_active_scenario?
+    %h4#continue_current_scenario
+      %a{                                                                     |
         :href => Current.setting.last_etm_page,                               |
         :alt => "continue",                                                   |
         :title => "continue"}= t('continue_with_current_scenario').capitalize
-    %a#new_scenario_button.style_button{                              |
-      :href =>"#",                                                    |
-      :alt => "new scenario",                                         |
-      :title => "new scenario"}= t('start_a_new_scenario').capitalize
-    %ul#new_scenario_form
-      = form_tag root_path do
-        = render "pages/root_page/country_select"
-        = render "pages/root_page/year_select"
-        = render 'pages/root_page/start_button'
-    %a#existing_scenario_button.style_button{:href =>"#",
-      :alt  => "continue",
-      :title => "continue"}= t('load_a_scenario').capitalize
-    %ul#existing_scenario_form
-      = render 'pages/root_page/scenario_select_form'
 
+  %h4#new_scenario_button
+    = t('start_a_new_scenario').capitalize
+  #new_scenario{style: "display: none;"}
+    = form_tag root_path do
+      = render "pages/root_page/country_select"
+      = render "pages/root_page/year_select"
+      #submit
+        = render "pages/root_page/start_button"
+  .clear
+  %h4#existing_scenario_button
+    = t('load_a_scenario').capitalize
+  #existing_scenario{style: "display: none;"}
+    = render 'pages/root_page/exsisting_scenario'
+
+#information
   = render 'pages/root_page/movies'
-
+  #load_exsisting_scenario{style: "display: none;"}
+    = render 'pages/root_page/load_exsisting_scenario'
+  .clear
 .clear

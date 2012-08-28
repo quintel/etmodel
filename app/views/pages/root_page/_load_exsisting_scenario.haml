@@ -1,0 +1,7 @@
+#description
+  #info 
+    = image_tag 'pages/home/ico_info_big.png'
+  #text
+= form_tag url_for(:controller => 'scenarios', :action => 'load') do
+  = hidden_field_tag 'id', 0
+  %input#open_scenario_button.button{:type => 'submit', :value => t('scenario.load')}

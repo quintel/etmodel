@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
   include ApplicationHelper
   before_filter :ensure_valid_browser, :except => [:browser_support, :disable_browser_check]
-  skip_before_filter :show_intro_screens_only_once, :only => [:intro]
   layout 'static_page', :only => [:about, :units, :browser_support, :bugs,
     :disclaimer, :privacy_statement]
 
@@ -41,7 +40,7 @@ protected
     Current.setting = Setting.default
     Current.setting.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
     Current.setting.area_code = params[:area_code]
-    redirect_to :controller => 'pages', :action => 'intro' and return
+    redirect_to '/demand' and return
   end
 
 public

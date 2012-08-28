@@ -23,7 +23,7 @@ describe PagesController do
         post :root, :area_code => country.dup, :end_year => year.dup
       end
 
-      specify { response.should redirect_to(:action => 'intro') }
+      specify { response.should redirect_to('/demand') }
       specify { assigns(:current).setting.end_year.should eql(year.to_i) }
       specify { assigns(:current).setting.area_code.should eql(country) }
     end
@@ -49,7 +49,7 @@ describe PagesController do
   end
 
   context :static_pages do
-    [ :bugs, :about, :units, :browser_support, :intro, :disclaimer,
+    [ :bugs, :about, :units, :browser_support, :disclaimer,
       :privacy_statement].each do |page|
       describe "#{page} page" do
         it "should work" do

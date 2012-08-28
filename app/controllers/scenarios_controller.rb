@@ -67,11 +67,11 @@ class ScenariosController < ApplicationController
   #
   def load
     if @scenario.nil?
-      redirect_to start_path, :notice => "Scenario not found" and return
+      redirect_to '/demand', :notice => "Scenario not found" and return
     end
     session[:dashboard] = nil
     Current.setting = Setting.load_from_scenario(@scenario)
-    redirect_to start_path
+    redirect_to '/demand'
   end
 
   # GET /scenarios/grid_investment_needed

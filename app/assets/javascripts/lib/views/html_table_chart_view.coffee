@@ -8,6 +8,7 @@
 class @HtmlTableChartView extends BaseChartView
   initialize : ->
     @initialize_defaults()
+    @build_gqueries()
 
   render : =>
     @clear_container()
@@ -21,19 +22,19 @@ class @HtmlTableChartView extends BaseChartView
   # Being stored in a hash, we can save the markup of multiple tables
   # and eventually show multiple tables at the same time
   #
-  table_html: ->
-    charts.html[@model.get("id")]
+  table_html: => charts.html[@model.get("id")]
 
   # normal charts have their series added when the /output_element/X.js
   # action is called. Tables have the gqueries defined in the markup instead.
   # This method will parse the HTML and create the gqueries as needed.
-  # See charts#load to see this method in action.
   #
   build_gqueries: =>
+    return if @gqueries_built
     html = $(@table_html())
     for cell in html.find("td[data-gquery]")
       gquery = $(cell).data('gquery')
       @model.series.add({gquery_key: gquery})
+    @gqueries_built = true
 
   # The table is already in the DOM; let's find the cells whose content
   # is the result of a gquery and write the output

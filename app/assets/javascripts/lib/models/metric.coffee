@@ -73,6 +73,8 @@
         return "#{value} #{@scaling_in_words(pow + 2, 'ton')}"
       when 'euro'
         return @euros_to_string x, true
+      when 'mln_euro'
+        return @euros_to_string x * 1000000, true
       when 'bln_euro'
         return @euros_to_string x * 1000000000, true
       when 'man_years'

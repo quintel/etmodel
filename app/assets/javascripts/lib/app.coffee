@@ -18,6 +18,17 @@ class @AppView extends Backbone.View
     @sidebar = new SidebarView()
     @scenario = new Scenario()
 
+    @api = new ApiGateway
+      scenario_id:   globals.api_session_id
+      beforeLoading: @showLoading
+      afterLoading:  @hideLoading
+
+    # Store the scenario id
+    @api.ensure_id().done (id) =>
+      @settings.save
+        api_session_id: id
+
+
   # At this point we have all the settings initialized.
   bootstrap: =>
     dashChangeEl = $('#dashboard_change')
@@ -31,39 +42,13 @@ class @AppView extends Backbone.View
     # DEBT Add check, so that boostrap is only called once.
     if @settings.get('area_code') == 'nl'
       @peak_load = new PeakLoad()
+
     @load_user_values()
     @setup_fce_toggle()
 
   setup_fce_toggle: ->
     if element = $('.slide .fce-toggle')
       (new FCEToggle(el: element, model: App.settings)).render()
-
-  # deferred-based scenario_id request. Returns a deferred object
-  scenario_id: =>
-    return @deferred_scenario_id if @deferred_scenario_id
-    # scenario_id available?
-    if id = App.settings.get('api_session_id')
-      @debug "Scenario URL: #{@scenario_url()}"
-      # encapsulate in a deferred object, so we can attach callbacks
-      @deferred_scenario_id = $.Deferred().resolve(id)
-      return @deferred_scenario_id
-
-    # or fetch a new one?
-    @deferred_scenario_id = $.ajax(
-      url: "#{@api_base_url()}/scenarios"
-      type: 'POST'
-      data:
-        scenario : @scenario.api_attributes()
-      timeout: 10000
-      error: @handle_ajax_error
-    ).pipe (d) -> d.id
-    # When we first get the scenario id let's save it locally
-    @deferred_scenario_id.done (id) =>
-      @settings.save
-        api_session_id: id
-      @debug "Scenario URL: #{@scenario_url()}"
-    # return the deferred object, so we can attach callbacks as needed
-    @deferred_scenario_id
 
   reset_scenario: =>
     @settings.set({
@@ -84,51 +69,41 @@ class @AppView extends Backbone.View
 
   # Load User values for Sliders. We need a scenario id first!
   load_user_values: =>
-    @scenario_id().done =>
-      @input_elements.load_user_values()
+    @api.user_values
+      success: @input_elements.initialize_user_values
+      error:   @handle_ajax_error
 
   call_api: (input_params) =>
-    # wait for a scenario_id
-    @scenario_id().done =>
-      keys = window.gqueries.keys()
-      params =
-        gqueries: keys
-        scenario:
-          use_fce: App.settings.get('use_fce')
-          user_values: input_params
+    @api.update({
+      queries: window.gqueries.keys(),
+      inputs:  input_params,
+      # callbacks
+      success: @handle_api_result
+      error:   @handle_ajax_error
+    })
 
-      @showLoading()
-      @api_call_stack.push('call_api')
-      $.ajaxQueue
-        url: @scenario.url_path()
-        data: params
-        type: 'PUT'
-        success: @handle_api_result
-        error: @handle_ajax_error
-        timeout: 10000
-
-  handle_ajax_error: (jqXHR, textStatus) ->
+  handle_ajax_error: (jqXHR, textStatus, error) ->
     console.log("Something went wrong: " + textStatus)
     if textStatus == 'timeout'
       r = confirm "Your internet connection seems to be very slow. The ETM is
       still waiting to receive an update from the server. Press OK to reload
       the page"
       location.reload(true) if (r)
-    @hideLoading()
 
   # The following method could need some refactoring
   # e.g. el.set({ api_result : value_arr })
   # window.charts.first().trigger('change')
   # window.dashboard.trigger('change')
-  handle_api_result: (data, textStatus, jqXHR) =>
+  handle_api_result: ({results, settings, inputs}, data, textStatus, jqXHR) =>
     @api_call_stack.pop()
     # store the last response from api for the turk it debugging tool
     # it is activated by passing ?debug=1 and can be found in the settings
     # menu.
     $("#last_api_response").val(jqXHR.responseText)
-    for own key, values of data.gqueries
+    for own key, values of results
       if gquery = window.gqueries.with_key(key)
         gquery.handle_api_result(values)
+
     window.charts.invoke 'trigger', 'change'
     if t = window.targets
       t.invoke('update_view')
@@ -139,7 +114,6 @@ class @AppView extends Backbone.View
       App.peak_load.trigger('change')
 
     $("body").trigger("dashboardUpdate")
-    @hideLoading()
 
   # Set the update in a cancelable action. When you
   # pull a slider A this method is called. It will call doUpdateRequest
@@ -160,16 +134,15 @@ class @AppView extends Backbone.View
     @input_elements.reset_dirty()
     @call_api(input_params)
 
-  showLoading: =>
+  showLoading: ->
     # D3 charts shouldn't be blocked, only jqPlot ones
     $(".chart_holder[data-block_ui_on_refresh=true]:visible").busyBox
       spinner: "<em>Loading</em>"
     $("#constraints .loading").show()
 
-  hideLoading: =>
-    if @api_call_stack.length == 0
-      $(".chart_holder").busyBox('close')
-      $("#constraints .loading").hide()
+  hideLoading: ->
+    $(".chart_holder").busyBox('close')
+    $("#constraints .loading").hide()
 
   debug: (t) ->
     console.log(t) if globals.debug_js

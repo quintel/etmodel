@@ -7,18 +7,18 @@
       %th{:colspan => 4, :style => "text-align: center"}= Current.setting.end_year
     %tr
       %th Types
-      %th.tac.border-rgt Prod.
-      %th.tac Plants
-      %th.tac Prod.
-      %th.tac Capacity
-      %th.tac Investment
+      %th.border-rgt Prod.
+      %th Plants
+      %th Prod.
+      %th Capacity
+      %th Investment
     %tr
       %th
-      %th.unit.border-rgt PJ
-      %th.unit #
-      %th.unit PJ
-      %th.unit GW
-      %th.unit M EUR
+      %th.border-rgt PJ
+      %th #
+      %th PJ
+      %th GW
+      %th M EUR
   - columns = output_element.allowed_output_element_series.group_by{|serie| (serie.order_by / 100).to_i }
   - rows = columns.values.map(&:length).max - 1 rescue 0
   - rows -= 1
@@ -27,7 +27,7 @@
       %tr{:class => cycle('even', 'odd')}
         -# use the Label of the first column
         %th= t "output_element_series.#{columns[1][row].label}" rescue '-'
-        %td.border-rgt{:data => {:gquery => columns[1][row].gquery}} -
+        %td.border-rgt{:data => {:gquery => columns[1][row].gquery, :graph => :present}} -
         %td{:data => {:gquery => columns[2][row].gquery}} -
         %td{:data => {:gquery => columns[3][row].gquery}} -
         %td{:data => {:gquery => columns[4][row].gquery}} -
@@ -36,9 +36,8 @@
     %tr
       %th
         %strong Total
-      - row = rows + 1
-      %td.border-rgt{:data => {:gquery => columns[1][row].gquery}} -
-      %td{:data => {:gquery => columns[2][row].gquery}} -
-      %td{:data => {:gquery => columns[3][row].gquery}} -
-      %td{:data => {:gquery => columns[4][row].gquery}} -
-      %td{:data => {:gquery => columns[5][row].gquery}} -
+      %td.border-rgt{:data => {:gquery => 'total_plants_prod_present_in_power_plant_properties', :graph => :present}} -
+      %td{:data => {:gquery => 'power_plants_plants_in_power_plant_properties'}} -
+      %td{:data => {:gquery => 'total_plants_prod_future_in_power_plant_properties'}} -
+      %td{:data => {:gquery => 'all_plants_capacity_in_power_plant_properties'}} -
+      %td{:data => {:gquery => 'total_plants_investm_in_power_plant_properties'}} -

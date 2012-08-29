@@ -19,6 +19,7 @@ class @AppView extends Backbone.View
     @scenario = new Scenario()
 
     @api = new ApiGateway
+      api_path:      globals.api_url
       scenario_id:   globals.api_session_id
       beforeLoading: @showLoading
       afterLoading:  @hideLoading

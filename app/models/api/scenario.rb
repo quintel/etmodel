@@ -13,4 +13,9 @@ class Api::Scenario < ActiveResource::Base
   def parsed_created_at
     DateTime.parse(created_at)
   end
+
+  def days_old
+    (Time.now - parsed_created_at) / 60 / 60 / 24
+  end
+
 end

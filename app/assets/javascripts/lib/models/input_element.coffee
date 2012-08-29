@@ -62,12 +62,6 @@ class @InputElementList extends Backbone.Collection
   init_legacy_controller: =>
     @each (input_element) -> input_element.init_legacy_controller()
 
-  load_user_values: =>
-    $.ajax
-      url: App.scenario.user_values_url()
-      success : @initialize_user_values
-      timeout: 15000
-
   initialize_user_values: (data) =>
     @user_values = data
     @setup_input_elements()

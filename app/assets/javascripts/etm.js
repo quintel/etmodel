@@ -23,6 +23,9 @@
 //= require intro
 //= require fancybox
 
+// vendored in jquery-etmodel-rails gem
+//= require jquery.etmodel
+
 //= require i18n
 //= require i18n/translations
 //= require lib/app

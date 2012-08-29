@@ -1,5 +1,5 @@
 class Api::Scenario < ActiveResource::Base
-  self.site = APP_CONFIG[:api_url]
+  self.site = "#{APP_CONFIG[:api_url]}/api/v3"
 
   # description for a locale is enclosed in
   # <span class='en'>

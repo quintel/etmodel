@@ -1,7 +1,7 @@
 D3.targets =
   data:
     targets: [
-      {key: 'co2_emissions',          unit: 'MT'},
+      {key: 'co2_emissions',          unit: 'MTon'},
       {key: 'net_energy_import',      unit: '%', min: 0, max: 100},
       {key: 'net_electricity_import', unit: '%', min: 0, max: 100},
       {key: 'total_energy_costs',     unit: 'Bln euro'},
@@ -63,17 +63,17 @@ D3.targets =
 
       @initialize_defaults()
 
-    outer_height: -> 350
+    outer_height: -> 360
 
     draw: =>
       margins =
         top: 15
         bottom: 5
-        left: 20
+        left: 28
         right: 20
 
       @width = 494 - (margins.left + margins.right)
-      @height = 350 - (margins.top + margins.bottom)
+      @height = 360 - (margins.top + margins.bottom)
       @namespace.width = @width
       t.scale.range([80, @width]) for t in @targets
       @svg = d3.select("#d3_container_targets").
@@ -88,7 +88,7 @@ D3.targets =
         .enter()
         .append('svg:g')
         .attr('class', 'target')
-        .attr('transform', (d, i) -> "translate(0, #{i * 36})")
+        .attr('transform', (d, i) -> "translate(0, #{i * 40})")
 
       # labels first
       @items.append("svg:text")
@@ -96,14 +96,14 @@ D3.targets =
         .attr('class', 'target_label')
         .attr('text-anchor', 'end')
         .attr('x', 75)
-        .attr('y', -2)
+        .attr('y', -1)
 
       @items.append("svg:text")
         .text((d) -> d.get 'unit')
         .attr('class', 'target_unit')
         .attr('text-anchor', 'end')
         .attr('x', 75)
-        .attr('y', 8)
+        .attr('y', 10)
 
       # now bars and axis
       @blocks = @items.append("svg:g")
@@ -112,40 +112,40 @@ D3.targets =
       current_values = @blocks.append("svg:rect")
         .attr('class', 'current_value')
         .attr('y', -10)
-        .attr('height', 9)
+        .attr('height', 11)
         .attr('width', 0)
         .attr('fill', '#66ccff')
 
       @blocks.append("svg:text")
         .text(App.settings.get("start_year"))
         .attr('class', 'year_label')
-        .attr('y', -2)
+        .attr('y', -1)
         .attr('x', 2)
 
       future_values = @blocks.append("svg:rect")
         .attr('class', 'future_value')
-        .attr('y', 1)
-        .attr('height', 9)
+        .attr('y', 2)
+        .attr('height', 11)
         .attr('width', 0)
         .attr('fill', '#0080ff')
 
       @blocks.append("svg:text")
         .text(App.settings.get("end_year"))
         .attr('class', 'year_label')
-        .attr('y', 9)
+        .attr('y', 10)
         .attr('x', 2)
 
       user_targets = @blocks.append("svg:rect")
         .attr('class', 'target_value')
         .attr('y', -15)
         .attr('width', 2)
-        .attr('height', 30)
+        .attr('height', 35)
         .attr('fill', '#ff0000')
         .style("opacity", 0.7)
 
       @axis = @blocks.append('svg:g')
         .attr("class", 'x_axis')
-        .attr('transform', 'translate(0.5, 10.5)')
+        .attr('transform', 'translate(0.5, 14.5)')
 
     refresh: =>
       t.update_scale() for t in @targets

@@ -14,7 +14,7 @@ class @Setting extends Backbone.Model
   on_fce_status_change: (setting, use_fce) =>
     # Old scenarios may provide "null" instead of true/false, and this causes
     # the FCE warning to toggle on.
-    use_fce = false unless fce is true
+    use_fce = false unless use_fce is true
 
     # Status change may be triggered by things other than the checkbox.
     $('#settings_use_fce').attr('checked', use_fce)

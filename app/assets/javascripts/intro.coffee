@@ -5,7 +5,7 @@ $ ->
     $("#existing_scenario_button").removeClass('active')
     $("#new_scenario").slideToggle().addClass('active')
     $("#existing_scenario").hide()
-    $("#load_exsisting_scenario").hide()
+    $("#load_existing_scenario").hide()
 
   $("#existing_scenario_button").click (e) ->
     e.preventDefault()
@@ -17,10 +17,10 @@ $ ->
   $('#existing_scenario li').hover ->
     $("#existing_scenario li").removeClass('active')
     $(this).addClass('active')
-    $("#load_exsisting_scenario  #description  #text").html($(this).data 'description')
-    $("#load_exsisting_scenario input#id").val($(this).data 'scenario-id')
-    $("#load_exsisting_scenario").show()
+    $("#load_existing_scenario  #description  #text").html($(this).data 'description')
+    $("#load_existing_scenario input#id").val($(this).data 'scenario-id')
+    $("#load_existing_scenario").show()
 
   $("#existing_scenario li").click (e) ->
     e.preventDefault()
-    $("#load_exsisting_scenario form").submit()
+    $("#load_existing_scenario form").submit()

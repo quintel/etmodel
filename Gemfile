@@ -43,6 +43,8 @@ end
 group :test, :development do
   gem 'pry-rails'
   gem 'pry-remote'
+  gem 'pry-stack_explorer'
+  gem 'pry-debugger'
   gem 'rspec-rails', "~> 2.11.0"
   gem 'watchr'
   gem 'spork'

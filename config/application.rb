@@ -53,11 +53,10 @@ module Etm
     config.assets.css_compressor = :yui
     config.assets.js_compressor = :uglifier
     config.assets.compress = true
-    
+
     #custom 404 and 500 page
     config.exceptions_app = self.routes
-    
-    
+
   end
 
   Date::DATE_FORMATS[:default] = "%d-%m-%Y"

@@ -19,7 +19,7 @@ class @Target extends Backbone.Model
   target_value: => @target_query.future_value()
 
   # returns true if the user has set a goal
-  is_set: => @target_value() != null
+  is_set: => _.isNumber @target_value()
 
   # DEBT: we could use a BB view
   update_view: =>

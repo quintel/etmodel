@@ -141,7 +141,7 @@ D3.merit_order =
         attr("x", (d, i) -> 115 * (Math.floor(i / 4)) + 10).
         attr("y", (d, i) -> 18 * (i % 4)).
         attr("height", 30).
-        attr("width", 90)
+        attr("width", 110)
 
       legends.append("svg:rect").
         attr("width", 10).

@@ -19,19 +19,56 @@
       %th PJ
       %th GW
       %th M EUR
-  - columns = output_element.allowed_output_element_series.group_by{|serie| (serie.order_by / 100).to_i }
-  - rows = columns.values.map(&:length).max - 1 rescue 0
-  - rows -= 1
   %tbody
-    - 0.upto(rows) do |row|
-      %tr{:class => cycle('even', 'odd')}
-        -# use the Label of the first column
-        %th= t "output_element_series.#{columns[1][row].label}" rescue '-'
-        %td.border-rgt{:data => {:gquery => columns[1][row].gquery, :graph => :present}} -
-        %td{:data => {:gquery => columns[2][row].gquery}} -
-        %td{:data => {:gquery => columns[3][row].gquery}} -
-        %td{:data => {:gquery => columns[4][row].gquery}} -
-        %td{:data => {:gquery => columns[5][row].gquery}} -
+    %tr.odd
+      %th= t "output_element_series.coal_power_plants"
+      %td.border-rgt{:data => {:gquery => "coal_power_plants_in_power_plant_properties", :graph => :present}}
+      %td{:data => {:gquery => "coal_power_plants_number_of_plants_in_power_plant_properties"}}
+      %td{:data => {:gquery => "coal_power_plants_prod_in_power_plant_properties"}}
+      %td{:data => {:gquery => "coal_power_plants_capacity_in_power_plant_properties"}}
+      %td{:data => {:gquery => "coal_power_plants_investment_in_power_plant_properties"}}
+    %tr.even
+      %th= t "output_element_series.oil_power_plants"
+      %td.border-rgt{:data => {:gquery => "oil_power_plants_in_power_plant_properties", :graph => :present}}
+      %td{:data => {:gquery => "oil_power_plants_plants_in_power_plant_properties"}}
+      %td{:data => {:gquery => "oil_power_plants_prod_in_power_plant_properties"}}
+      %td{:data => {:gquery => "oil_power_plants_capacity_in_power_plant_properties"}}
+      %td{:data => {:gquery => "oil_power_plants_investment_in_power_plant_properties"}}
+    %tr.odd
+      %th= t "output_element_series.gas_plants"
+      %td.border-rgt{:data => {:gquery => "gas_plants_in_power_plant_properties", :graph => :present}}
+      %td{:data => {:gquery => "gas_power_plants_plants_in_power_plant_properties"}}
+      %td{:data => {:gquery => "gas_plants_prod_in_power_plant_properties"}}
+      %td{:data => {:gquery => "gas_plants_capacity_in_power_plant_properties"}}
+      %td{:data => {:gquery => "gas_plants_investm_in_power_plant_properties"}}
+    %tr.even
+      %th= t "output_element_series.nuclear_plants"
+      %td.border-rgt{:data => {:gquery => "nuclear_plants_in_power_plant_properties", :graph => :present}}
+      %td{:data => {:gquery => "nuclear_plants_plants_in_power_plant_properties"}}
+      %td{:data => {:gquery => "nuclear_plants_prod_in_power_plant_properties"}}
+      %td{:data => {:gquery => "nuclear_plants_capacity_in_power_plant_properties"}}
+      %td{:data => {:gquery => "nuclear_plants_investm_in_power_plant_properties"}}
+    %tr.odd
+      %th= t "output_element_series.wind_farms"
+      %td.border-rgt{:data => {:gquery => "wind_farms_in_power_plant_properties", :graph => :present}}
+      %td{:data => {:gquery => "wind_farms_plants_in_power_plant_properties"}}
+      %td{:data => {:gquery => "wind_farms_prod_in_power_plant_properties"}}
+      %td{:data => {:gquery => "wind_farms_capacity_in_power_plant_properties"}}
+      %td{:data => {:gquery => "wind_farms_investm_in_power_plant_properties"}}
+    %tr.even
+      %th= t "output_element_series.biomass_plants"
+      %td.border-rgt{:data => {:gquery => "biomass_plants_in_power_plant_properties", :graph => :present}}
+      %td{:data => {:gquery => "biomass_plants_plants_in_power_plant_properties"}}
+      %td{:data => {:gquery => "biomass_plants_prod_in_power_plant_properties"}}
+      %td{:data => {:gquery => "biomass_plants_capacity_in_power_plant_properties"}}
+      %td{:data => {:gquery => "biomass_plants_investm_in_power_plant_properties"}}
+    %tr.odd
+      %th= t "output_element_series.other_plants"
+      %td.border-rgt{:data => {:gquery => "other_plants_in_power_plant_properties", :graph => :present}}
+      %td{:data => {:gquery => "other_plants_plants_in_power_plant_properties"}}
+      %td{:data => {:gquery => "other_plants_prod_in_power_plant_properties"}}
+      %td{:data => {:gquery => "other_plants_capacity_in_power_plant_properties"}}
+      %td{:data => {:gquery => "other_plants_investm_in_power_plant_properties"}}
   %tfoot
     %tr
       %th

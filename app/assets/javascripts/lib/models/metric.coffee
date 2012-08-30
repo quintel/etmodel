@@ -18,14 +18,15 @@
       when "MW"
         u = "watt"
         power += 2
-      when "MT" then u = "ton"
+      when "MT"
+        u = "ton"
+        power += 2
       else u = unit
     unit_label = @scaling_in_words(power, u)
     return unit_label
 
   # scale is the power of thousand
   scale_value: (value, scale) -> value / Math.pow(1000, scale)
-
 
   calculate_performance : (now, fut) ->
     return null if now == null || fut == null || fut == 0

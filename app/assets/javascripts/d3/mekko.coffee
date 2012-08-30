@@ -65,7 +65,7 @@ D3.mekko =
       margins =
         top: 10
         bottom: 100
-        left: 30
+        left: 33
         right: 10
 
       @width = 494 - (margins.left + margins.right)

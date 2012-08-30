@@ -69,8 +69,8 @@ D3.targets =
       margins =
         top: 15
         bottom: 5
-        left: 28
-        right: 20
+        left: 35
+        right: 18
 
       @width = 494 - (margins.left + margins.right)
       @height = 360 - (margins.top + margins.bottom)

@@ -151,12 +151,7 @@ class @ChartList extends Backbone.Collection
     $(document).on "click", "a.pick_charts", (e) =>
       holder_id = $(e.target).parents('a').data('chart_holder')
       chart_id = $(e.target).parents('a').data('chart_id')
-
-      chart_settings = App.settings.get('charts')
-      chart_settings[holder_id].chart_id = null
-      chart_settings[holder_id].format = null
-      App.settings.save({charts: chart_settings})
-
+      @remove_pin holder_id
       @load chart_id, holder_id
       close_fancybox()
 

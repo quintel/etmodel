@@ -6,12 +6,12 @@
       %th.border-rgt= Current.setting.start_year
       %th{:colspan => 4, :style => "text-align: center"}= Current.setting.end_year
     %tr
-      %th Types
-      %th.border-rgt Prod.
-      %th Plants
-      %th Prod.
-      %th Capacity
-      %th Investment
+      %th= t 'output_elements.power_plants.types'
+      %th.border-rgt= t 'output_elements.power_plants.production'
+      %th= t 'output_elements.power_plants.plants'
+      %th= t 'output_elements.power_plants.production'
+      %th= t 'output_elements.power_plants.capacity'
+      %th= t 'output_elements.power_plants.investment'
     %tr
       %th
       %th.border-rgt PJ

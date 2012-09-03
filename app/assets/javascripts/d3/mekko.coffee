@@ -109,12 +109,13 @@ D3.mekko =
         .attr("data-rel", (d) -> d.key())
 
       # vertical sector label
-      @sectors.append("svg:text")
+      @sectors
+        .append("svg:text")
+        .attr('class', 'sector_label')
         .text((d) -> d.get 'key')
-        .attr("class", "sector_label")
-        .attr("x", -195)
-        .attr("transform", "rotate(270)")
-        .attr("text-anchor", "end")
+        .attr("transform", "rotate(90)")
+        .attr("text-anchor", "start")
+        .attr('x', 200)
 
       @draw_legend
         svg: @svg
@@ -153,7 +154,7 @@ D3.mekko =
       @svg.selectAll("text.sector_label")
         .data(@sector_list.models, (d) -> d.get 'key' )
         .transition().duration(500)
-        .attr("dy", (d) => @x(d.total_value() / 2) + 5 )
+        .attr("dy", (d) => -@x(d.total_value() / 2))
         .text((d) -> "#{d.get 'key'} #{parseInt d.total_value()} PJ")
 
       # we need to track the offset for every sector

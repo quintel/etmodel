@@ -31,6 +31,7 @@ D3.mekko =
       @node_list = namespace.node_list = new D3.mekko.NodeList()
       @initialize_defaults()
 
+    outer_height: -> 410
     # lots of ugly transformations to adapt the current conventions
     prepare_data: =>
       sectors  = []
@@ -49,6 +50,7 @@ D3.mekko =
       for carrier in carriers
         @carrier_list.add
           key: carrier.label
+          label: carrier.label # used by the legend
           color: carrier.color
 
       for s in @model.series.models
@@ -65,11 +67,11 @@ D3.mekko =
       margins =
         top: 10
         bottom: 100
-        left: 33
+        left: 35
         right: 10
 
       @width = 494 - (margins.left + margins.right)
-      @height = 310 - (margins.top + margins.bottom)
+      @height = 410 - (margins.top + margins.bottom)
       @series_height = 190 # the rest of the height will be taken by the legend
       @svg = d3.select("#d3_container_#{@model.get 'key'}")
         .append("svg:svg")
@@ -110,9 +112,16 @@ D3.mekko =
       @sectors.append("svg:text")
         .text((d) -> d.get 'key')
         .attr("class", "sector_label")
-        .attr("x", - @height - 5)
+        .attr("x", -195)
         .attr("transform", "rotate(270)")
         .attr("text-anchor", "end")
+
+      @draw_legend
+        svg: @svg
+        series: @carrier_list.models
+        width: @width
+        vertical_offset: @series_height + 120
+        columns: 2
 
       $('rect.carrier').qtip
         content: -> $(this).attr('data-tooltip')

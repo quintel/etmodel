@@ -36,3 +36,28 @@ class @D3ChartView extends BaseChartView
   # override in derived class as needed
   outer_height: -> 300
 
+  draw_legend: (opts = {}) =>
+    opts.columns = opts.columns || 1
+    legend_margin = opts.width / opts.columns
+    legend = opts.svg.append('svg:g')
+      .attr("transform", "translate(10,#{opts.vertical_offset})")
+      .selectAll("svg.legend")
+      .data(opts.series)
+      .enter()
+      .append("svg:g")
+      .attr("class", "legend")
+      .attr("transform", (d, i) ->
+        x = legend_margin * (i % opts.columns)
+        y = Math.floor(i / opts.columns) * 16
+        "translate(#{x}, #{y})")
+      .attr("height", 30)
+      .attr("width", 90)
+    legend.append("svg:rect")
+      .attr("width", 10)
+      .attr("height", 10)
+      .attr("fill", (d) => d.get 'color')
+    legend.append("svg:text")
+      .attr("x", 15)
+      .attr("y", 10)
+      .text((d) -> d.get 'label')
+

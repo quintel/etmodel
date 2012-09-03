@@ -42,31 +42,11 @@ D3.stacked_bar =
         else
           series_for_legend.push s
 
-      legend_columns = 2
-      legend_margin = @width / legend_columns
-
-      legend = @svg.append('svg:g')
-        .attr("transform", "translate(10,#{@series_height + 15})")
-        .selectAll("svg.legend")
-        .data(series_for_legend)
-        .enter()
-        .append("svg:g")
-        .attr("class", "legend")
-        .attr("transform", (d, i) ->
-          x = legend_margin * (i % legend_columns)
-          y = Math.floor(i / legend_columns) * 15
-          "translate(#{x}, #{y})")
-        .attr("height", 30)
-        .attr("width", 90)
-      legend.append("svg:rect")
-        .attr("width", 10)
-        .attr("height", 10)
-        .attr("fill", (d) => d.get 'color')
-      legend.append("svg:text")
-        .attr("x", 15)
-        .attr("y", 8)
-        .text((d) -> d.get 'label')
-
+      @draw_legend
+        svg: @svg
+        series: series_for_legend
+        width: @width
+        vertical_offset: @series_height + 20
 
       # the stack method will filter the data and calculate the offset for every
       # item

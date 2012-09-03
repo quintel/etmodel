@@ -40,31 +40,11 @@ D3.bezier =
         .append("svg:g")
         .attr("transform", "translate(#{margins.left}, #{margins.top})")
 
-      # add legend. This is identical to the one of the vertical bar chart, so
-      # this should be factored out to the common d3_base_chart_view
-      legend_columns = 2
-      legend_margin = @width / legend_columns
-      legend = @svg.append('svg:g')
-        .attr("transform", "translate(10,#{@series_height + 20})")
-        .selectAll("svg.legend")
-        .data(@model.series.models)
-        .enter()
-        .append("svg:g")
-        .attr("class", "legend")
-        .attr("transform", (d, i) ->
-          x = legend_margin * (i % legend_columns)
-          y = Math.floor(i / legend_columns) * 15
-          "translate(#{x}, #{y})")
-        .attr("height", 30)
-        .attr("width", 90)
-      legend.append("svg:rect")
-        .attr("width", 10)
-        .attr("height", 10)
-        .attr("fill", (d) => d.get 'color')
-      legend.append("svg:text")
-        .attr("x", 15)
-        .attr("y", 8)
-        .text((d) -> d.get 'label')
+      @draw_legend
+        svg: @svg
+        series: @model.series.models
+        width: @width
+        vertical_offset: @series_height + 20
 
       # the stack method will filter the data and calculate the offset for every
       # item. The values function tells this method that the values it will

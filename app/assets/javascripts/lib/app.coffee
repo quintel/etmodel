@@ -19,10 +19,12 @@ class @AppView extends Backbone.View
     @scenario = new Scenario()
 
     @api = new ApiGateway
-      api_path:      globals.api_url
-      scenario_id:   globals.api_session_id
-      beforeLoading: @showLoading
-      afterLoading:  @hideLoading
+      api_path:           globals.api_url
+      scenario_id:        globals.api_session_id
+      beforeLoading:      @showLoading
+      afterLoading:       @hideLoading
+      source:             'ETM'
+      preset_scenario_id: globals.settings.preset_scenario_id
 
     # Store the scenario id
     @api.ensure_id().done (id) =>
@@ -54,7 +56,7 @@ class @AppView extends Backbone.View
   reset_scenario: =>
     @settings.set({
       api_session_id: null,
-      scenario_id: null,
+      preset_scenario_id: null,
       network_parts_affected: []
       }, {silent: true})
     @deferred_scenario_id = null

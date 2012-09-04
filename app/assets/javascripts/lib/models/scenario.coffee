@@ -8,7 +8,7 @@ class @Scenario extends Backbone.Model
     data =
       area_code: s.get('area_code')
       end_year: s.get('end_year')
-      scenario_id: s.get('scenario_id')
+      preset_scenario_id: s.get('preset_scenario_id')
       use_fce: s.get('use_fce')
       source: 'ETM'
 

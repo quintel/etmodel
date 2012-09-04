@@ -5,7 +5,7 @@ class Setting
   extend ActiveModel::Naming
 
   attr_accessor :last_etm_page,
-                :scenario_id,
+                :preset_scenario_id,
                 :api_session_id,
                 :area_code,
                 :charts
@@ -34,7 +34,7 @@ class Setting
   #
   def self.load_from_scenario(scenario)
     attrs = {
-      :scenario_id => scenario.id,
+      :preset_scenario_id => scenario.id,
       :use_fce => scenario.use_fce,
       :end_year => scenario.end_year,
       :area_code => scenario.area_code

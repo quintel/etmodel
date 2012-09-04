@@ -5,4 +5,4 @@
       - localized = scenario.description_for_locale(I18n.locale)
       - text = localized.present? ? localized : scenario.description
       %li{:"data-scenario-id" => "#{scenario.id}", :"data-description" => text.html_safe}
-        = truncate(scenario.title, :length => 40).html_safe
+        = link_to truncate(scenario.title, :length => 40).html_safe, '#'

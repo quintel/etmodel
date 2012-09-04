@@ -56,6 +56,9 @@ group :test do
   gem 'webrat'
   gem 'simplecov'
   gem 'fakeweb'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'launchy'
 end
 
 group :production do

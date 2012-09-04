@@ -1,13 +1,12 @@
 #startbar
   - if has_active_scenario?
     %h4#continue_current_scenario
-      %a{                                                                     |
-        :href => Current.setting.last_etm_page,                               |
-        :alt => "continue",                                                   |
-        :title => "continue"}= t('continue_with_current_scenario').capitalize
+      %a{:href => Current.setting.last_etm_page,
+         :alt => "continue",
+         :title => "continue"}= t('intro.continue_with_current_scenario')
 
   %h4#new_scenario_button
-    = t('start_a_new_scenario').capitalize
+    %a{href: '#top'}= t 'intro.start_a_new_scenario'
   #new_scenario{style: "display: none;"}
     = form_tag root_path do
       = render "pages/root_page/country_select"
@@ -16,7 +15,7 @@
         = render "pages/root_page/start_button"
   .clear
   %h4#existing_scenario_button
-    = t('load_a_scenario').capitalize
+    %a{href: '#top'}= t 'intro.load_a_scenario'
   #existing_scenario{style: "display: none;"}
     = render 'pages/root_page/existing_scenario'
 

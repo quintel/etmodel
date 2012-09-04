@@ -8,6 +8,9 @@ end
 
 require 'rubygems'
 require 'spork'
+require 'capybara/rspec'
+# require 'capybara/rails'
+require 'capybara-webkit'
 
 Spork.prefork do
   # Loading more in this block will cause your tests to run faster. However,
@@ -24,6 +27,8 @@ Spork.prefork do
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+
+  Capybara.javascript_driver = :webkit
 
   RSpec.configure do |config|
     # == Mock Framework
@@ -48,6 +53,7 @@ Spork.prefork do
     config.include(Webrat::Matchers)
     config.include(EtmAuthHelper)
     config.include(Authlogic::TestCase)
+    config.include Capybara::DSL
 
     Sunspot.session = Sunspot::Rails::StubSessionProxy.new(Sunspot.session)
   end

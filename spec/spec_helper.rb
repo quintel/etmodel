@@ -9,7 +9,6 @@ end
 require 'rubygems'
 require 'spork'
 require 'capybara/rspec'
-# require 'capybara/rails'
 require 'capybara-webkit'
 
 Spork.prefork do
@@ -48,11 +47,10 @@ Spork.prefork do
     # instead of true.
     config.use_transactional_fixtures = false
 
-    config.include(CustomMatchers)
-    config.include(EtmHelper)
-    config.include(Webrat::Matchers)
-    config.include(EtmAuthHelper)
-    config.include(Authlogic::TestCase)
+    config.include CustomMatchers
+    config.include Webrat::Matchers
+    config.include EtmAuthHelper
+    config.include Authlogic::TestCase
     config.include Capybara::DSL
     config.include Capybara::RSpecMatchers
 

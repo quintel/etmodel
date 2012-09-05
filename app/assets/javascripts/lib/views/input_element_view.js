@@ -656,17 +656,30 @@
     /**
      * Loads the converter details in a fancybox popup
      */
-     showConverterDetail: function (event) {
-       event.preventDefault();
-       var url = $(event.target).attr('href');
-       $.fancybox({
-         width   : 620,
-         height  : 490,
-         href    : url,
-         type    : 'iframe'
-       });
+     showConverterDetail: function (e) {
+        e.preventDefault();
+        var title = $(e.target).data('title');
+        var converter = $(e.target).data('converter');
+        var url = globals.api_url + "/api/v3/converters/" + converter;
 
-       return false;
+        $.ajax({
+          url: url,
+          dataType: 'json',
+          success: function(data) {
+            var tmpl = _.template($('#converter-details-template').html());
+            var content = tmpl({
+              title: title,
+              attributes: data.attributes,
+              uses_coal_and_wood_pellets: data.uses_coal_and_wood_pellets
+            });
+            $.fancybox({
+              afterLoad: function(){
+                this.content = content;
+              }
+            });
+          }
+        });
+
      },
 
     /**

@@ -8,7 +8,7 @@ describe "Loading a preset scenario", :js => true do
     slide = FactoryGirl.create :slide, :key => 'foobar', :sidebar_item_id => sidebar_item.id
   end
 
-  it "should create a new scenario from a preset" do
+  pending "should create a new scenario from a preset" do
     visit home_path
     click_link "Start an existing scenario"
     # scenario_id = 1

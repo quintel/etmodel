@@ -84,7 +84,7 @@ class Setting
   #
   def reset_scenario
     self.api_session_id = nil
-    self.scenario_id = nil # to go back to a blank slate scenario
+    self.preset_scenario_id = nil # to go back to a blank slate scenario
 
     [:use_fce, :network_parts_affected, :already_shown, :charts].each do |key|
       self.reset_attribute key

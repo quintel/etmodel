@@ -3,14 +3,17 @@ require 'spec_helper'
 describe ScenariosController do
   render_views
 
-    before do
-      scenario_mock = double("api_scenario")
-      scenario_mock.stub(:id){"123"}
-      scenario_mock.stub(:title){"title"}
-      scenario_mock.stub(:end_year){"2050"}
-      scenario_mock.stub(:parsed_created_at){ Time.now }
-      scenario_mock.stub(:created_at){ Time.now }
+    let(:scenario_mock) {
+      mock = double("api_scenario")
+      mock.stub(:id){"123"}
+      mock.stub(:title){"title"}
+      mock.stub(:end_year){"2050"}
+      mock.stub(:parsed_created_at){ Time.now }
+      mock.stub(:created_at){ Time.now }
+      mock
+    }
 
+    before do
       Api::Scenario.stub!(:find).and_return scenario_mock
     end
 
@@ -38,6 +41,38 @@ describe ScenariosController do
           get :index
           response.should be_success
           assigns(:saved_scenarios).should == [user_scenario]
+        end
+      end
+
+      context "with an active scenario" do
+        before do
+          session[:setting] = Setting.new(:api_session_id => 12345)
+        end
+
+        describe "#new" do
+          it "should show a form to save the scenario" do
+            get :new
+            response.should be_success
+            assigns(:saved_scenario).api_session_id.should == 12345
+          end
+        end
+
+        describe "#create" do
+          it "should save a scenario" do
+            Api::Scenario.stub!(:create).and_return scenario_mock
+            lambda {
+              post :create, :saved_scenario => {:api_session_id => 12345}
+              response.should redirect_to(scenarios_path)
+            }.should change(SavedScenario, :count)
+          end
+        end
+
+        describe "#reset" do
+          it "should reset a scenario" do
+            get :reset
+            session[:setting].api_session_id.should be_nil
+            response.should be_redirect
+          end
         end
       end
     end
@@ -145,20 +180,4 @@ describe ScenariosController do
 #      it "should set Current.scenario after get"
 #    end
 #
-#
-#    describe "#post" do
-#
-#      before(:each) do
-#        log_in(@user)
-#      end
-#
-#      it "should create a scenario" do
-#        expect {
-#          post :create, {:scenario => {:title => "Nice scenario"}}
-#        }.to change(Scenario, :count).by(1)
-#        response.should be_redirect
-#      end
-#    end
-#
-#  end
 end

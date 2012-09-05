@@ -34,7 +34,9 @@
             <%%= info %>
             <%% if (converter) { %>
               <br/>
-              <a href="/converters/<%%= input_element_id%>" class="converter_detail"><%%= info_link %></a>
+              <a href="#" class="converter_detail"
+                 data-converter="<%%= converter %>"
+                 data-title="<%%= name %>"><%%= info_link %></a>
             <%% } %>
         </div>
     </div>

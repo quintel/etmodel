@@ -8,12 +8,12 @@ describe PagesController do
     Api::Scenario.stub(:all).and_return([])
 
     ActiveResource::HttpMock.respond_to do |mock|
-      ["de", "nl", "nl-flevoland", "ch"].each do |code|
-        area = [{ :id => 1, :country => code, :use_network_calculations => false, :entity => nil}].to_xml(:root => "area")
-        mock.get "/api/v2/areas.xml?country=#{code}", { "Accept" => "application/xml" }, area
+      ["de", "nl", "nl-flevoland"].each do |code|
+        area = {:area =>
+          { :id => 1, :country => code, :use_network_calculations => false}
+        }.to_json
+        mock.get "/api/v3/areas/#{code}.json", {"Accept"=>"application/json"}, area
       end
-      area = [{ :id => 1, :country => 'nl', :use_network_calculations => false}].to_xml(:root => "area")
-      mock.get "/api/v2/areas.xml", { "Accept" => "application/xml" }, area
     end
   end
 

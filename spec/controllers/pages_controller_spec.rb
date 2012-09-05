@@ -17,15 +17,15 @@ describe PagesController do
     end
   end
 
-  {'nl' => '2030', 'de' => '2050'}.each do |country, year|
+  {'nl' => 2030, 'de' => 2050}.each do |country, year|
     describe "selecting #{country} #{year}" do
       before do
-        post :root, :area_code => country.dup, :end_year => year.dup
+        post :root, :area_code => country, :end_year => year
       end
 
       specify { response.should redirect_to('/demand') }
-      specify { assigns(:current).setting.end_year.should eql(year.to_i) }
-      specify { assigns(:current).setting.area_code.should eql(country) }
+      specify { session[:setting].end_year.should == year }
+      specify { session[:setting].area_code.should == country }
     end
   end
 
@@ -39,12 +39,12 @@ describe PagesController do
 
     it "should not select custom year values if it's not selected" do
       post :root, :area_code => "nl", :other_year => '2034'
-      Current.setting.end_year.should_not == 2034
+      session[:setting].end_year.should_not == 2034
     end
 
     it "should not select other field" do
       post :root, :area_code => "nl", :end_year => 'other', :other_year => '2036'
-      assigns(:current).setting.end_year.should == 2036
+      session[:setting].end_year.should == 2036
     end
   end
 

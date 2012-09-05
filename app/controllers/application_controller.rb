@@ -8,11 +8,7 @@ class ApplicationController < ActionController::Base
   before_filter :initialize_current
   before_filter :locale
 
-  if Rails.env.test?
-    after_filter :assign_current_for_inspection_in_tests
-  else
-    after_filter :teardown_current
-  end
+  after_filter :teardown_current
 
   before_filter :export_i18n_messages
 
@@ -86,9 +82,6 @@ protected
   end
 
 private
-  def assign_current_for_inspection_in_tests
-    @current = Current
-  end
 
   def current_user_session
     return @current_user_session if defined?(@current_user_session)

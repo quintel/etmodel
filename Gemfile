@@ -48,7 +48,6 @@ group :test, :development do
   gem 'rspec-rails', "~> 2.11.0"
   gem 'watchr'
   gem 'spork'
-  gem 'database_cleaner'
 end
 
 group :test do

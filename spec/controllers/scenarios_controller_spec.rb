@@ -1,21 +1,67 @@
 require 'spec_helper'
 
 describe ScenariosController do
-#  render_views
-#  
-#  before(:each) do
-#    stub_etm_layout_methods!  
-#    @scenario      = Factory(:scenario)
-#    @user          = Factory(:user)
-#    @scenario.user = @user
-#    @scenario.save
-#  end
-#  
+  render_views
+
+    before do
+      scenario_mock = double("api_scenario")
+      scenario_mock.stub(:id){"123"}
+      scenario_mock.stub(:title){"title"}
+      scenario_mock.stub(:end_year){"2050"}
+      scenario_mock.stub(:parsed_created_at){ Time.now }
+      scenario_mock.stub(:created_at){ Time.now }
+
+      Api::Scenario.stub!(:find).and_return scenario_mock
+    end
+
+    let(:user) { FactoryGirl.create :user }
+    let(:admin) { FactoryGirl.create :admin }
+    let!(:user_scenario) { FactoryGirl.create :saved_scenario, :user => user }
+    let!(:admin_scenario) { FactoryGirl.create :saved_scenario, :user => admin }
+
+    context "a guest" do
+      describe "#index" do
+        it "should be redirected" do
+          get :index
+          response.should redirect_to(login_url)
+        end
+      end
+    end
+
+    context "a regular user" do
+      before do
+        login_as user
+      end
+
+      describe "#index" do
+        it "should get a list of his saved scenarios" do
+          get :index
+          response.should be_success
+          assigns(:saved_scenarios).should == [user_scenario]
+        end
+      end
+    end
+
+    context "an admin" do
+      before do
+        login_as admin
+      end
+
+      describe "#index" do
+        it "should get a list of all saved scenarios" do
+          get :index
+          response.should be_success
+          assigns(:saved_scenarios).should == [user_scenario, admin_scenario]
+        end
+      end
+    end
+
+#
 #  context "User has loaded a scenario" do
 #    before(:each) do
 #      Current.stub!(:scenario).and_return(@scenario)
 #    end
-#    
+#
 #    describe "#reset_to_preset" do
 #      context "Scenario has a preset" do
 #        before(:each) do
@@ -27,7 +73,7 @@ describe ScenariosController do
 #          @scenario.save
 #          request.env["HTTP_REFERER"] = '/'
 #        end
-#      
+#
 #        it "should be able to do a post to a public preset if it has set one" do
 #          @scenario.user_values.should == {1 => 2}
 #          @scenario.preset_scenario.user_values.should == {3 => 4}
@@ -36,8 +82,8 @@ describe ScenariosController do
 #          , :use_peak_load => true.user_values.should == {3 => 4}
 #        end
 #      end
-#    
-#    
+#
+#
 #      context "Scenario has no preset" do
 #        before(:each) do
 #          request.env["HTTP_REFERER"] = '/'
@@ -49,7 +95,7 @@ describe ScenariosController do
 #        end
 #      end
 #    end
-#    
+#
 #    describe "#edit" do
 #      context "not logged in" do
 #        it "should not display the edit form" do
@@ -57,12 +103,12 @@ describe ScenariosController do
 #          response.status.should == 403
 #        end
 #      end
-#      
+#
 #      context "logged in" do
 #        before(:each) do
 #          log_in(@user)
 #        end
-#        
+#
 #        it "should just get edit" do
 #          get :edit
 #          response.should be_success
@@ -81,31 +127,31 @@ describe ScenariosController do
 #      end
 #    end
 #  end
-#  
-#  
+#
+#
 #  context "user has not loaded a scenario" do
 #    before(:each) do
 #      @scenario = Factory(:scenario)
 #      @scenario.user_values = {'2' => '3'}
 #      @scenario.save
 #    end
-#    
+#
 #    describe "#load" do
 #      it "should redirect after get" do
 #        get :load, {:id => @scenario.id}
 #        response.should be_redirect
 #      end
-#      
+#
 #      it "should set Current.scenario after get"
 #    end
-#  
-#  
+#
+#
 #    describe "#post" do
-#        
+#
 #      before(:each) do
 #        log_in(@user)
 #      end
-#  
+#
 #      it "should create a scenario" do
 #        expect {
 #          post :create, {:scenario => {:title => "Nice scenario"}}
@@ -113,6 +159,6 @@ describe ScenariosController do
 #        response.should be_redirect
 #      end
 #    end
-#  
+#
 #  end
 end

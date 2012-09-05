@@ -1,7 +1,7 @@
 class ScenariosController < ApplicationController
   before_filter :ensure_valid_browser
   before_filter :find_scenario, :only => [:show, :load]
-  before_filter :require_user, :only => [:index, :new]  
+  before_filter :require_user, :only => [:index, :new]
 
   def index
     items = if current_user.admin?
@@ -87,5 +87,5 @@ class ScenariosController < ApplicationController
     rescue ActiveResource::ResourceNotFound
       nil
     end
-      
+
 end

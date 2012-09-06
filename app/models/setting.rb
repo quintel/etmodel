@@ -91,13 +91,9 @@ class Setting
     end
   end
 
-  # ------ Years --------------------------------------------------------------
-
   def end_year=(end_year)
     @end_year = end_year.to_i
   end
-
-  # ------ Peak load ----------------------------------------------------------
 
   def track_peak_load?
     use_peak_load && track_peak_load
@@ -108,10 +104,8 @@ class Setting
   end
 
   def use_network_calculations?
-    area.try(:use_network_calculations)
+    area.try(:use_network_calculations?)
   end
-
-  # ------ FCE ----------------------------------------------------------------
 
   def allow_fce?
     area.attributes[:has_fce]

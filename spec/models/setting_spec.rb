@@ -114,7 +114,7 @@ describe Setting do
 
   describe "#use_network_calculations?" do
     {
-      :use_network_calculations? => :use_network_calculations
+      :use_network_calculations? => :use_network_calculations?
     }.each do |setting_method_name, area_method_name|
       describe "##{setting_method_name} should be true if area##{area_method_name} is true" do
         before { @setting.stub!(:area).and_return(mock_model(Api::Area, area_method_name => true))}

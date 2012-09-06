@@ -30,4 +30,8 @@ class Api::Area < ActiveResource::Base
   def number_of_existing_households
     number_households * (1 - (percentage_of_new_houses/100))
   end
+
+  def use_network_calculations?
+    !!attributes[:use_network_calculations]
+  end
 end

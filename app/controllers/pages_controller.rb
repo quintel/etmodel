@@ -12,13 +12,6 @@ class PagesController < ApplicationController
     end
   end
 
-  # This page is called by the ETE after an ETSource import
-  # DEBT: find a safer way
-  def flush_cache
-    Rails.cache.clear
-    render :text => 'ok', :layout => false
-  end
-
   def choose
     if request.post?
       assign_settings_and_redirect

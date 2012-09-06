@@ -131,8 +131,6 @@ Etm::Application.routes.draw do
   match '/set_locale(/:locale)' => 'pages#set_locale', :as => :set_locale
   match '/browser_support' => 'pages#browser_support'
 
-  match '/pages/flush_cache' => 'pages#flush_cache'
-
   match "/404", :to => "pages#404"
   match "/500", :to => "pages#500"
 

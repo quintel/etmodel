@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dennisschoenmakers/etplugin
-  revision: 749e9f4075ea77292300ca63db2f56b1987ea2af
+  revision: 8ab4e09b4399439e3104a94127a66de7dfdc6d3d
   specs:
     jquery-etmodel-rails (0.2.2)
       railties (>= 3.1)
@@ -275,6 +275,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    vcr (2.2.4)
     watchr (0.7)
     webrat (0.7.3)
       nokogiri (>= 1.2.0)
@@ -338,6 +339,7 @@ DEPENDENCIES
   tomdoc
   uglifier
   unicorn
+  vcr
   watchr
   webrat
   yard-tomdoc (~> 0.4.0)

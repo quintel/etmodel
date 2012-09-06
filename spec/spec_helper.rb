@@ -16,12 +16,22 @@ require 'rspec/rails'
 require 'authlogic/test_case'
 require 'factory_girl'
 require 'shoulda/matchers'
+require 'vcr'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 Capybara.javascript_driver = :webkit
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/cassettes'
+  c.hook_into :fakeweb
+  c.configure_rspec_metadata!
+  c.ignore_localhost = true
+  c.default_cassette_options = {:match_requests_on => [:uri, :method, :body]}
+  c.debug_logger = File.open Rails.root.join("log/vcr.log"), 'w'
+end
 
 RSpec.configure do |config|
   # == Mock Framework
@@ -47,6 +57,7 @@ RSpec.configure do |config|
   config.include Authlogic::TestCase
   config.include Capybara::DSL
   config.include Capybara::RSpecMatchers
+  config.extend VCR::RSpec::Macros
 
   Sunspot.session = Sunspot::Rails::StubSessionProxy.new(Sunspot.session)
 end

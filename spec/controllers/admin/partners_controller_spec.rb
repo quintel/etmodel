@@ -8,9 +8,9 @@ describe Admin::PartnersController do
     controller.class.skip_before_filter :restrict_to_admin
 
     ActiveResource::HttpMock.respond_to do |mock|
-      area = [{ :id => 1, :country => 'nl', :use_network_calculations => false}].to_json(:root => "area")
-      mock.get "/api/v3/areas.json?country=nl", { "Accept" => "application/json" }, area
-      mock.get "/api/v3/areas.json", { "Accept" => "application/json" }, area
+      area = { :id => 1, :area => 'nl', :use_network_calculations => false, :country => 'nl'}
+      mock.get "/api/v3/areas/nl.json", { "Accept" => "application/json" }, area.to_json
+      mock.get "/api/v3/areas.json", { "Accept" => "application/json" }, [area].to_json
     end
   end
 

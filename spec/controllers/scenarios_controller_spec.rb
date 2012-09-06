@@ -86,7 +86,7 @@ describe ScenariosController do
         it "should get a list of all saved scenarios" do
           get :index
           response.should be_success
-          assigns(:saved_scenarios).should == [user_scenario, admin_scenario]
+          assigns(:saved_scenarios).to_set.should == [user_scenario, admin_scenario].to_set
         end
       end
     end

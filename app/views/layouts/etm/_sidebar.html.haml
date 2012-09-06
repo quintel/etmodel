@@ -1,11 +1,11 @@
 #sidebar
-  - @tabs.each do |tab|
-    - klass = 'active' if params[:tab] == tab.key
-    %h4{class: klass}= I18n.t "tabs." + tab.key
-    %ul{style: ("display: none;" unless params[:tab] == tab.key )}
+  - @interface.tabs.each do |tab|
+    - klass = 'active' if @interface.current_tab == tab
+    %h4{class: klass}= I18n.t "tabs.#{tab.key}"
+    %ul{style: ("display: none;" unless @interface.current_tab == tab)}
       - tab.allowed_sidebar_items.each do |item|
         %li{:id => item.key,
-            :class => (params[:sidebar] == item.key) ? 'active' : nil,
+            :class => (@interface.current_sidebar_item == item) ? 'active' : nil,
             :'data-gquery' => item.percentage_bar_query}
           = link_to tab_path(:tab => tab.key, :sidebar => item.key),
             :'data-nav' => false do

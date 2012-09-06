@@ -7,7 +7,7 @@
       %th Ordering
       %th Sidebar items
   %tbody
-    - @tabs.each do |tab|
+    - @interface.tabs.each do |tab|
       %tr{:class => cycle('even', 'odd')}
         %td= tab.id
         %td= link_to tab.key, edit_admin_tab_path(tab.id)

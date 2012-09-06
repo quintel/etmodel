@@ -1,4 +1,4 @@
-- title_class = 'selected' if @slides.first == slide
+- title_class = 'selected' if @interface.slides.first == slide
 %li.accordion_element
   %h3{:class => title_class, :data => {:slide => slide.short_name,
                            :default_chart => slide.output_element_id,

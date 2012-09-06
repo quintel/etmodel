@@ -28,43 +28,17 @@ class TabController < ApplicationController
   protected
 
     def load_interface
-      tab_key = params[:tab]
-      sidebar_key = params[:sidebar]
-
-      @tabs = Tab.ordered
-      @current_tab = Tab.find_by_key tab_key
-
-      @sidebar_items = @current_tab.sidebar_items.ordered.
-        includes(:area_dependency).reject(&:area_dependent)
-
-      @current_sidebar_item = if sidebar_key
-        SidebarItem.find_by_key(sidebar_key)
-      else
-        first_sidebar = @sidebar_items.first
-        params[:sidebar] = first_sidebar.key
-        first_sidebar
-      end
-
-      # check valid sidebar item
-      if sidebar_key && !@sidebar_items.map(&:key).include?(sidebar_key)
-        redirect_to '/demand' and return
-      end
-
-      @slides = @current_sidebar_item.slides.includes(:description).ordered
-      @current_slide = @slides.first
+      @interface = Interface.new(params[:tab], params[:sidebar])
 
       # Deal with the charts
       chart_settings = Current.setting.charts
-      default_chart = @current_slide.output_element
-      chart_settings[:chart_0][:default] = default_chart.id
+      chart_settings[:chart_0][:default] = @interface.default_chart.id
 
       # make an array of the charts to show
       @charts = chart_settings.keys.map do |holder_id|
         chart_id = chart_settings[holder_id][:chart_id] || chart_settings[holder_id][:default]
         OutputElement.find_by_id(chart_id)
       end
-
-      @targets = Target.includes(:area_dependency).reject(&:area_dependent)
 
       # The JS app will take care of fetching a scenario id, in the meanwhile we
       # use this variable to show all the items in the top menu

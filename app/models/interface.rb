@@ -37,4 +37,17 @@ class Interface
   def targets
     @targets ||= Target.includes(:area_dependency).reject(&:area_dependent)
   end
+
+  def current_tutorial_movie
+    current_sidebar_item.send "#{I18n.locale}_vimeo_id"
+  end
+
+  def tutorial_movie_path
+    Rails.application.routes.url_helpers.tutorial_path tab: current_tab.key,
+      sidebar: current_sidebar_item.key
+  end
+  def tab_info_path
+    Rails.application.routes.url_helpers.tab_info_path ctrl: current_tab.key,
+      act: current_sidebar_item.key
+  end
 end

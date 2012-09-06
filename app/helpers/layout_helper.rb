@@ -14,14 +14,6 @@ module LayoutHelper
     end
   end
 
-  def current_tutorial_movie
-    SidebarItem.find_by_key(params[:sidebar]).andand.send("#{I18n.locale}_vimeo_id")
-  end
-
-  def current_description
-
-  end
-
   def country_option(code, opts = {})
       current = Current.setting.area_code == code
       selected = current ? "selected='true'" : nil

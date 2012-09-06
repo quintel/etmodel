@@ -29,7 +29,7 @@ gem 'sunspot_rails'
 
 # jquery-etmodel-rails contains the jquery.etmodel.js plugin
 # When working on the plugin, use :path => '/path/to/etplugin'
-# gem "jquery-etmodel-rails", :path => "~/quintel/etplugin"
+# gem "jquery-etmodel-rails", :path => "~/Sites/etplugin"
 gem "jquery-etmodel-rails", '~> 0.2.2', :git  => "git://github.com/dennisschoenmakers/etplugin"
 
 group :development do
@@ -58,6 +58,7 @@ group :test do
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'launchy'
+  gem 'vcr'
 end
 
 group :production do

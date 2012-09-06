@@ -1,14 +1,9 @@
 require 'spec_helper'
 
-describe "Loading a preset scenario", :js => true do
-  before do
-    ActiveResource::HttpMock.reset!
-    tab = FactoryGirl.create :tab, :key => 'demand'
-    sidebar_item = FactoryGirl.create :sidebar_item, :key => 'households', :tab_id => tab.id
-    slide = FactoryGirl.create :slide, :key => 'foobar', :sidebar_item_id => sidebar_item.id
-  end
+describe "loading a preset scenario", :js => true, :vcr => true do
+  fixtures :tabs, :sidebar_items, :slides, :output_elements, :output_element_types
 
-  pending "should create a new scenario from a preset" do
+  it "should create a new scenario from a preset" do
     visit home_path
     click_link "Start an existing scenario"
     # scenario_id = 1

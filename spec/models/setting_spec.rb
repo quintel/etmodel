@@ -86,8 +86,8 @@ describe Setting do
   describe "ActiveResource-based area" do
     before do
       ActiveResource::HttpMock.respond_to do |mock|
-        area = [{ :id => 1, :country => 'nl'}].to_xml(:root => "area")
-        mock.get "/api/v2/areas.xml?country=", { "Accept" => "application/xml" }, area
+        area = {:id => 1, :country => 'nl'}
+        mock.get "/api/v3/areas/nl.json", { "Accept" => "application/json" }, area.to_json
       end
     end
 

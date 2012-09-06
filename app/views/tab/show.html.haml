@@ -1,9 +1,9 @@
 #active-content
   = render "layouts/etm/title"
   #accordion_wrapper
-    - if @slides.any?
+    - if @interface.slides.any?
       %ul.accordion
-        = render :partial => 'tab/slide', :collection => @slides
+        = render :partial => 'tab/slide', :collection => @interface.slides
     - else
       = t("not_available")
 

@@ -2,7 +2,8 @@ location.hash = '';
 
 // update main content area
 $("#title").replaceWith('<%= escape_javascript render("layouts/etm/title")%>');
-$("ul.accordion").html('<%= escape_javascript render(:partial => "tab/slide", :collection => @slides)%>');
+$("ul.accordion").html('<%= escape_javascript
+  render(:partial => "tab/slide", :collection => @interface.slides)%>');
 $("ul.accordion, #title").busyBox('close')
 
 // setup slides

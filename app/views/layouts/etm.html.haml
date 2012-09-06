@@ -19,7 +19,7 @@
       %header#top
         = render "layouts/etm/header"
       #content
-        = render "layouts/etm/sidebar" if @current_sidebar_item
+        = render "layouts/etm/sidebar" if @interface.try :current_sidebar_item
         - flash_message
         = yield
         .clear

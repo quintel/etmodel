@@ -34,8 +34,16 @@ class TabController < ApplicationController
       @tabs = Tab.ordered
       @current_tab = Tab.find_by_key tab_key
 
-      @sidebar_items = @current_tab.sidebar_items.ordered.includes(:area_dependency).reject(&:area_dependent)
-      @current_sidebar_item = SidebarItem.find_by_key sidebar_key
+      @sidebar_items = @current_tab.sidebar_items.ordered.
+        includes(:area_dependency).reject(&:area_dependent)
+
+      @current_sidebar_item = if sidebar_key
+        SidebarItem.find_by_key(sidebar_key)
+      else
+        first_sidebar = @sidebar_items.first
+        params[:sidebar] = first_sidebar.key
+        first_sidebar
+      end
 
       # check valid sidebar item
       if sidebar_key && !@sidebar_items.map(&:key).include?(sidebar_key)

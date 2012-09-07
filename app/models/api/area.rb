@@ -5,21 +5,22 @@ class Api::Area < ActiveResource::Base
   # area dependencies for an object, such as the input_elements
   #
   DEPENDABLE_ATTRIBUTES = [
-    :has_mountains,
-    :has_coastline,
-    :use_network_calculations,
-    :has_buildings,
     :has_agriculture,
-    :has_lignite,
-    :has_solar_csp,
-    :has_old_technologies,
+    :has_buildings,
+    :has_coastline,
     :has_cold_network,
+    :has_detailed_industry,
+    :has_employment,
+    :has_fce,
     :has_heat_import,
     :has_industry,
+    :has_lignite,
+    :has_merit_order,
+    :has_mountains,
+    :has_old_technologies,
     :has_other,
-    :has_fce,
-    :has_employment,
-    :has_merit_order
+    :has_solar_csp,
+    :use_network_calculations
   ]
 
   def self.find_by_country_memoized(area_code)

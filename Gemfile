@@ -47,6 +47,7 @@ group :test, :development do
   gem 'pry-debugger'
   gem 'rspec-rails', "~> 2.11.0"
   gem 'watchr'
+  gem 'rack-reverse-proxy', :require => 'rack/reverse_proxy'
 end
 
 group :test do

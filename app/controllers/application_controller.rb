@@ -1,16 +1,14 @@
 class ApplicationController < ActionController::Base
   include LayoutHelper
+  include Browser
 
   helper :all
   helper_method :current_user_session, :current_user, :admin?
 
-  # TODO refactor move the hooks and corresponding actions into a "concern"
   before_filter :initialize_current
   before_filter :locale
-
-  after_filter :teardown_current
-
   before_filter :export_i18n_messages
+  after_filter :teardown_current
 
   def locale
     # update session if passed
@@ -25,11 +23,8 @@ class ApplicationController < ActionController::Base
   end
 
   def ensure_valid_browser
-    unless ALLOWED_BROWSERS.include?(browser)
-      #TODO: put text in translation files and translate!
-      flash[:notice] = "Your browser is not completely supported." +
-        "<small><a href='/browser_support'>more information</a></small>"
-    end
+    # check lib/browser.rb
+    flash[:notice] = I18n.t 'flash.unsupported_browser' unless supported_browser?
   end
 
 protected
@@ -91,19 +86,6 @@ private
   def current_user
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.user
-  end
-
-  # TODO refactor into lib/browser.rb (seb 2010-10-11)
-  def browser
-    user_agent = request.env['HTTP_USER_AGENT']
-    return 'firefox' if user_agent =~ /Firefox/
-    return 'chrome' if user_agent =~ /Chrome/
-    return 'safari' if user_agent =~ /Safari/
-    return 'opera' if user_agent =~ /Opera/
-    return 'ie9' if user_agent =~ /MSIE 9/
-    return 'ie8' if user_agent =~ /MSIE 8/
-    return 'ie7' if user_agent =~ /MSIE 7/
-    return 'ie6' if user_agent =~ /MSIE 6/
   end
 
   def export_i18n_messages

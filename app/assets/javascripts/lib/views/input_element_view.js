@@ -669,8 +669,7 @@
             var tmpl = _.template($('#converter-details-template').html());
             var content = tmpl({
               title: title,
-              attributes: data.attributes,
-              calculations: data.calculations,
+              data: data.data,
               uses_coal_and_wood_pellets: data.uses_coal_and_wood_pellets
             });
             $.fancybox({

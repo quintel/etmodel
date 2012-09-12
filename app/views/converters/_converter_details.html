@@ -31,7 +31,7 @@
         </tr>
       </tfoot>
       <tbody>
-        <%% _.each( attributes, function(items, group) { %>
+        <%% _.each( data, function(items, group) { %>
           <tr>
             <th colspan="3"><%%= group %></th>
           </tr>
@@ -41,21 +41,6 @@
               <td><%%= data.desc %></td>
               <td><%%= data.future %></td>
               <td><%%= data.unit %></td>
-            <tr>
-          <%% }) %>
-
-        <%% }) %>
-        <th colspan="3">Calculations</th>
-        <%% _.each( calculations, function(items, group) { %>
-          <tr>
-            <th colspan="3"><%%= group %></th>
-          </tr>
-
-          <%% _.each( items, function(data, attr) { %>
-            <tr>
-              <td><%%= attr %></td>
-              <td><%%= data.future %></td>
-              <td><%%= data.unit || '' %></td>
             <tr>
           <%% }) %>
 

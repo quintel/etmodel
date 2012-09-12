@@ -670,6 +670,7 @@
             var content = tmpl({
               title: title,
               attributes: data.attributes,
+              calculations: data.calculations,
               uses_coal_and_wood_pellets: data.uses_coal_and_wood_pellets
             });
             $.fancybox({

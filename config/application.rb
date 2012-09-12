@@ -33,6 +33,7 @@ module Etm
     # that belong together but where it didn't make sense to
     # put them in a module.
     config.autoload_paths += Dir["#{Rails.root}/app/controllers/application_controller"]
+    config.autoload_paths += Dir["#{Rails.root}/lib"]
 
     config.active_support.deprecation = :log
     config.time_zone = 'Amsterdam'
@@ -61,5 +62,3 @@ module Etm
 
   Date::DATE_FORMATS[:default] = "%d-%m-%Y"
 end
-
-ALLOWED_BROWSERS = %w[firefox ie10 ie9 ie8 ie7 chrome safari]

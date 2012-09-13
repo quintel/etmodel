@@ -93,7 +93,7 @@ class @Chart extends Backbone.Model
   formatted_series_hash : ->
     # the @non_target_series() array is wrapped in underscore to fix an IE8 bug
     items = _(@non_target_series()).map (s) =>
-      type = s.get 'type'
+      type = @get 'type'
       label = s.get 'label'
       label = "#{label} - #{s.get('group')}" if type == 'mekko'
       unit = @get 'unit'

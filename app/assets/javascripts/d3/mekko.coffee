@@ -25,15 +25,17 @@ D3.mekko =
     el: "body"
 
     initialize: ->
-      namespace = D3.mekko
-      @sector_list = namespace.sector_list = new D3.mekko.GroupCollection()
-      @carrier_list = namespace.carrier_list = new D3.mekko.GroupCollection()
-      @node_list = namespace.node_list = new D3.mekko.NodeList()
       @initialize_defaults()
+
+    can_be_shown_as_table: -> true
 
     outer_height: -> 410
     # lots of ugly transformations to adapt the current conventions
     prepare_data: =>
+      @sector_list = D3.mekko.sector_list = new D3.mekko.GroupCollection()
+      @carrier_list = D3.mekko.carrier_list = new D3.mekko.GroupCollection()
+      @node_list = D3.mekko.node_list = new D3.mekko.NodeList()
+
       sectors  = []
       carriers = []
       for s in @model.series.models
@@ -121,7 +123,7 @@ D3.mekko =
         svg: @svg
         series: @carrier_list.models
         width: @width
-        vertical_offset: @series_height + 120
+        vertical_offset: @series_height + 130
         columns: 2
 
       $('rect.carrier').qtip

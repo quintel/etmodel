@@ -83,7 +83,7 @@
       when 'FTE'
         return "#{@round_number x, 0} #{@scaling_in_words(0, 'FTE')}"
       else
-        return x
+        return value
 
   # formatters
 

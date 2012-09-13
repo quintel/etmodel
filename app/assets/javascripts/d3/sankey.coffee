@@ -375,7 +375,7 @@ D3.sankey =
 
 
     draw_links: =>
-      # links are treated as a group made of a link path and label text element
+      # links are treated as a group
       links = @svg.selectAll('g.link')
         .data(@link_list.models, (d) -> d.cid)
         .enter()
@@ -391,14 +391,18 @@ D3.sankey =
         .attr("d", (link) => @link_line link.path_points())
         .on("mouseover", @link_mouseover)
         .on("mouseout", @node_mouseout)
-      # link labels
-      links.append("svg:text")
-        .attr("class", "link_label")
-        .attr("x", (d) => d.right_x())
-        .attr("y", (d) => @y d.right_y())
-        .attr("dx", -55)
-        .attr("dy", 2)
-        .style("opacity", 0)
+
+      $('g.link path').qtip
+        content: -> $(this).attr('data-tooltip')
+        show:
+          event: 'mouseover' # silly IE
+        hide:
+          event: 'mouseout'  # silly IE
+        position:
+          target: 'mouse'
+          my: 'bottom right'
+          at: 'top center'
+
       return links
 
     draw_nodes: =>
@@ -450,18 +454,13 @@ D3.sankey =
         .transition()
         .duration(200)
         .style("opacity", selectedLinkOpacity)
-        .selectAll(".link_label")
-        .transition()
-        .style("opacity", 0) # labels
 
     link_mouseover: ->
       current_id = $(this).parent().attr("data-cid")
       d3.selectAll(".link").
         each (d) ->
           item = d3.select(this)
-          if d.cid == current_id
-            item.selectAll(".link_label").transition().style("opacity", 1)
-          else
+          unless d.cid == current_id
             item.transition().duration(200).style("opacity", unselectedLinkOpacity)
 
     # this method is called every time we're updating the chart
@@ -499,10 +498,11 @@ D3.sankey =
         .style("stroke-width", (link) => @y(link.value()))
 
       # then move the link labels and update their value
-      @links.transition().duration(500)
-        .selectAll("text.link_label")
-        .attr("y", (link) => @y link.right_y())
-        .text((d) => Metric.autoscale_value d.value(), 'PJ', 2)
+      @links.selectAll("path")
+        .attr('data-tooltip', (d) =>
+          html = "#{d.left.label()} -> #{d.right.label()}"
+          html += "<br/>"
+          html += Metric.autoscale_value d.value(), 'PJ', 2)
 
 class D3.sankey.NodeList extends Backbone.Collection
   model: D3.sankey.Node

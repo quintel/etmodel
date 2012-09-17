@@ -4,9 +4,10 @@
     <table class="converter-detail">
       <thead>
         <tr>
-          <th>
+          <th></th>
           <th>Value*</th>
           <th>Unit</th>
+        </tr>
       </thead>
       <tfoot>
         <tr>
@@ -41,7 +42,7 @@
               <td><%%= data.desc %></td>
               <td><%%= Metric.autoscale_value(data.future, false, 'auto' )%></td>
               <td><%%= data.unit %></td>
-            <tr>
+            </tr>
           <%% }) %>
 
         <%% }) %>

@@ -673,9 +673,8 @@
               uses_coal_and_wood_pellets: data.uses_coal_and_wood_pellets
             });
             $.fancybox({
-              afterLoad: function(){
-                this.content = content;
-              }
+              type: 'html',
+              content: content
             });
           }
         });

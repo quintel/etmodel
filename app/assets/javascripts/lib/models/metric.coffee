@@ -164,3 +164,7 @@
     return false unless value?
     value.toFixed(precision)
 
+  converter_detail_format: (x, unit) ->
+    x *= 100.0 if unit == '%'
+    @round_number x, 2
+

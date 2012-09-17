@@ -40,7 +40,7 @@
           <%% _.each( items, function(data, attr) { %>
             <tr>
               <td><%%= data.desc %></td>
-              <td><%%= Metric.autoscale_value(data.future, false, 'auto' )%></td>
+              <td><%%= Metric.converter_detail_format(data.future, data.unit)%></td>
               <td><%%= data.unit %></td>
             </tr>
           <%% }) %>

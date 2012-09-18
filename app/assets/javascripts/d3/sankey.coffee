@@ -389,20 +389,6 @@ D3.sankey =
         .style("fill", "none")
         .style("opacity", selectedLinkOpacity)
         .attr("d", (link) => @link_line link.path_points())
-        .on("mouseover", @link_mouseover)
-        .on("mouseout", @node_mouseout)
-
-      $('g.link path').qtip
-        content: -> $(this).attr('data-tooltip')
-        show:
-          event: 'mouseover' # silly IE
-        hide:
-          event: 'mouseout'  # silly IE
-        position:
-          target: 'mouse'
-          my: 'bottom right'
-          at: 'top center'
-
       return links
 
     draw_nodes: =>
@@ -455,14 +441,6 @@ D3.sankey =
         .duration(200)
         .style("opacity", selectedLinkOpacity)
 
-    link_mouseover: ->
-      current_id = $(this).parent().attr("data-cid")
-      d3.selectAll(".link").
-        each (d) ->
-          item = d3.select(this)
-          unless d.cid == current_id
-            item.transition().duration(200).style("opacity", unselectedLinkOpacity)
-
     # this method is called every time we're updating the chart
     refresh: =>
       max_height = @node_list.max_column_value()
@@ -505,14 +483,6 @@ D3.sankey =
         .attr("display", (link) ->
           if link.value() == 0.0 then 'none' else 'inline'
         )
-
-
-      # then move the link labels and update their value
-      @links.selectAll("path")
-        .attr('data-tooltip', (d) =>
-          html = "#{d.left.label()} -> #{d.right.label()}"
-          html += "<br/>"
-          html += Metric.autoscale_value d.value(), 'PJ', 2)
 
 class D3.sankey.NodeList extends Backbone.Collection
   model: D3.sankey.Node

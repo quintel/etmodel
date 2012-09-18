@@ -475,9 +475,15 @@ D3.sankey =
       # update the node label
       @nodes.data(@node_list.models, (d) -> d.get('id'))
         .attr("data-tooltip", (d) =>
-          html = d.label()
-          html += '<br/>'
-          html += Metric.autoscale_value d.value(), 'PJ', 2)
+          h = "<strong>
+            #{d.label()}: #{Metric.autoscale_value d.value(), 'PJ', 2}
+          </strong><br/>"
+          for l in d.right_links
+            h += "-&gt; #{l.right.label()}: #{Metric.autoscale_value l.value(), 'PJ', 2}<br/>"
+          for l in d.left_links
+            h += "#{l.left.label()} &lt;-: #{Metric.autoscale_value l.value(), 'PJ', 2}<br/>"
+          h
+          )
 
       # move the rectangles
       @nodes.selectAll("rect")

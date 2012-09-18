@@ -303,7 +303,7 @@ D3.sankey =
           @gquery.present_value()
         else
           @gquery.future_value()
-      if _.isNumber(x) then x else 0
+      if _.isNumber(x) then x else 0.0
 
     color: => @get('color') || "steelblue"
 
@@ -496,6 +496,10 @@ D3.sankey =
         .selectAll("path")
         .attr("d", (link) => @link_line link.path_points())
         .style("stroke-width", (link) => @y(link.value()))
+        .attr("display", (link) ->
+          if link.value() == 0.0 then 'none' else 'inline'
+        )
+
 
       # then move the link labels and update their value
       @links.selectAll("path")

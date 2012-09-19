@@ -1,18 +1,12 @@
 require 'spec_helper'
 
-describe Admin::PredictionsController do
+describe Admin::PredictionsController, :vcr => true do
   render_views
   let(:input_element) { Factory.create :input_element }
   let!(:prediction)   { Factory.create :prediction }
 
   before do
     controller.class.skip_before_filter :restrict_to_admin
-
-    ActiveResource::HttpMock.respond_to do |mock|
-      area = [{ :id => 1, :country => 'nl', :use_network_calculations => false}].to_json(:root => "area")
-      mock.get "/api/v3/areas.json?country=nl", { "Accept" => "application/json" }, area
-      mock.get "/api/v3/areas.json", { "Accept" => "application/json" }, area
-    end
   end
 
   describe "GET index" do

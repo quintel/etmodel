@@ -1,20 +1,10 @@
 require 'spec_helper'
 
-describe PagesController do
+describe PagesController, :vcr => true do
   render_views
 
   before do
     ApplicationController.stub!(:ensure_valid_browser)
-    Api::Scenario.stub(:all).and_return([])
-
-    ActiveResource::HttpMock.respond_to do |mock|
-      ["de", "nl", "nl-flevoland"].each do |code|
-        area = {:area =>
-          { :id => 1, :country => code, :use_network_calculations => false}
-        }.to_json
-        mock.get "/api/v3/areas/#{code}.json", {"Accept"=>"application/json"}, area
-      end
-    end
   end
 
   {'nl' => 2030, 'de' => 2050}.each do |country, year|

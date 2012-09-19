@@ -32,11 +32,12 @@ class TabController < ApplicationController
 
       # Deal with the charts
       chart_settings = Current.setting.charts
-      chart_settings[:chart_0][:default] = @interface.default_chart.id
+      chart_settings['chart_0']['default'] = @interface.default_chart.id
 
       # make an array of the charts to show
       @charts = chart_settings.keys.map do |holder_id|
-        chart_id = chart_settings[holder_id][:chart_id] || chart_settings[holder_id][:default]
+        chart_id = chart_settings[holder_id]['chart_id'] ||
+          chart_settings[holder_id]['default']
         OutputElement.find_by_id(chart_id)
       end
 

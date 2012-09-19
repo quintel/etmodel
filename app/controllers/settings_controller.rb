@@ -2,6 +2,7 @@ class SettingsController < ApplicationController
   layout 'etm'
 
   before_filter :ensure_valid_browser
+  skip_before_filter :verify_authenticity_token, :only => :update
 
   def edit
   end

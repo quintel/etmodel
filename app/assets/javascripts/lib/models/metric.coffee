@@ -168,7 +168,7 @@
   converter_detail_format: (x, unit) ->
     x *= 100.0 if unit == '%'
     if _.isNumber(x)
-      @round_number x, 2
+      @format_number x, 2
     else
       x
 
@@ -178,5 +178,7 @@
       @round_number x, 0
     else if x >= 1
       @round_number x, 2
+    else if x == 0
+      0
     else
       @round_number x, 3

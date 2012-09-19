@@ -1,6 +1,32 @@
 require 'spec_helper'
 
 describe SettingsController do
+  describe 'on PUT /settings' do
+    it "should update individual settings" do
+      put :update, :format => :json, :use_fce => 1
+      response.should be_success
+      session[:setting][:use_fce].should == 1
+    end
+
+    it "should update individual settings passed as strings" do
+      put :update, :format => :json, "track_peak_load" => 1
+      response.should be_success
+      session[:setting][:track_peak_load].should == 1
+    end
+
+    it "should update the charts hash" do
+      put :update, :format => :json, :charts => {:chart_0 => {:chart_id => 123}}
+      response.should be_success
+      session[:setting][:charts][:chart_0][:chart_id].should == 123
+    end
+
+    it "should update the charts hash" do
+      put :update, :format => :json, :charts => {:chart_0 => {:chart_id => false}}
+      response.should be_success
+      session[:setting][:charts][:chart_0][:chart_id].should be_false
+    end
+  end
+
   describe 'on PUT /settings/dashboard' do
     let(:constraints) do
       Constraint::GROUPS.each_with_object([]) do |group, c|

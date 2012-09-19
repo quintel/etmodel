@@ -1,13 +1,13 @@
 :ruby
-  chart_index = data[:index]
+  chart_index = data['index']
   chart = @charts[chart_index]
   info_url = chart ? "/descriptions/charts/#{chart.id}" : "#"
-  pin_class = if chart && (chart.id == Current.setting.charts[dom_id]["chart_id"])
+  pin_class = if chart && (chart.id == Current.setting.charts[dom_id]['chart_id'])
     'icon-lock'
   else
     'icon-unlock'
   end
-  pinned_chart_to_load = chart && Current.setting.charts[dom_id][:chart_id] ? chart.id : nil
+  pinned_chart_to_load = chart && Current.setting.charts[dom_id]['chart_id'] ? chart.id : nil
 
 .chart_holder{:data => {:holder_id => dom_id, :block_ui_on_refresh => "true"},
   :class => (chart ? nil : 'hidden')}

@@ -52,7 +52,7 @@ class Setting
     charts = {}
     0.upto(3).each do |i|
       charts["chart_#{i}"] = {
-        :chart_id => nil, :format => nil, :default => nil, :index => i}
+        'chart_id' => nil, 'format' => nil, 'default' => nil, 'index' => i}
     end
 
     {
@@ -64,7 +64,7 @@ class Setting
       :end_year                 => 2050,
       :use_fce                  => false,
       :already_shown            => [],
-      :charts                   => charts.with_indifferent_access
+      :charts                   => charts
     }
   end
   attr_accessor *default_attributes.keys

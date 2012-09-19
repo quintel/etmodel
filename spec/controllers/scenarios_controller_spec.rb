@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ScenariosController do
+describe ScenariosController, :vcr => true do
   render_views
 
   let(:scenario_mock) {

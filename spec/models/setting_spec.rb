@@ -84,13 +84,6 @@ describe Setting do
   end
 
   describe "ActiveResource-based area" do
-    before do
-      ActiveResource::HttpMock.respond_to do |mock|
-        area = {:id => 1, :country => 'nl'}
-        mock.get "/api/v3/areas/nl.json", { "Accept" => "application/json" }, area.to_json
-      end
-    end
-
     describe "#area" do
       before {
         @setting = Setting.default

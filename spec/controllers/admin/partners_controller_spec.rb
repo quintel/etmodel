@@ -1,17 +1,11 @@
 require 'spec_helper'
 
-describe Admin::PartnersController do
+describe Admin::PartnersController, :vcr => true do
   render_views
   let!(:partner)   { Factory.create :partner }
 
   before do
     controller.class.skip_before_filter :restrict_to_admin
-
-    ActiveResource::HttpMock.respond_to do |mock|
-      area = { :id => 1, :area => 'nl', :use_network_calculations => false, :country => 'nl'}
-      mock.get "/api/v3/areas/nl.json", { "Accept" => "application/json" }, area.to_json
-      mock.get "/api/v3/areas.json", { "Accept" => "application/json" }, [area].to_json
-    end
   end
 
   describe "GET index" do

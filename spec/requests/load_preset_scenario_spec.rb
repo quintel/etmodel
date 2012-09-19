@@ -5,6 +5,7 @@ describe "loading a preset scenario", :js => true, :vcr => true do
 
   it "should create a new scenario from a preset" do
     visit home_path
+    # save_and_open_page
     click_link "Start an existing scenario"
     # scenario_id = 1
     click_link "Referentiescenario 2030 gebaseerd op ..."

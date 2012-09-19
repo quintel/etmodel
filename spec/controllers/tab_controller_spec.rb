@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe TabController do
+describe TabController, :vcr => true do
   render_views
 
   describe "demand page" do

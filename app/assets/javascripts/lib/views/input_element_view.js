@@ -527,9 +527,11 @@
       }
 
       if (isIncreasing) {
-        this.quinn.setTentativeValue(initialValue + this.quinn.model.step);
+        this.quinn.setTentativeValue(
+          initialValue + this.model.get('step_value'));
       } else {
-        this.quinn.setTentativeValue(initialValue - this.quinn.model.step);
+        this.quinn.setTentativeValue(
+          initialValue - this.model.get('step_value'));
       }
 
       initialValue = this.quinn.model.value;

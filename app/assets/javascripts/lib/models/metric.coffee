@@ -172,3 +172,11 @@
     else
       x
 
+  # sets the right number of decimal digits
+  format_number: (x) ->
+    if x >= 1000
+      @round_number x, 0
+    else if x >= 1
+      @round_number x, 2
+    else
+      @round_number x, 3

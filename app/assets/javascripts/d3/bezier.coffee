@@ -41,7 +41,6 @@ D3.bezier =
         .attr("transform", "translate(#{margins.left}, #{margins.top})")
 
       legend_columns = if @model.series.length > 6 then 2 else 1
-      console.log legend_columns
       @draw_legend
         svg: @svg
         series: @model.series.models

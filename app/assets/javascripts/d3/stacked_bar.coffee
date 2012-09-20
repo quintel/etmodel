@@ -42,11 +42,13 @@ D3.stacked_bar =
         else
           series_for_legend.push s
 
+      legend_columns = if series_for_legend.length > 6 then 2 else 1
       @draw_legend
         svg: @svg
         series: series_for_legend
         width: @width
         vertical_offset: @series_height + 20
+        columns: legend_columns
 
       # the stack method will filter the data and calculate the offset for every
       # item

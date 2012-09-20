@@ -303,7 +303,7 @@ D3.sankey =
           @gquery.present_value()
         else
           @gquery.future_value()
-      if _.isNumber(x) then x else 0
+      if _.isNumber(x) then x else 0.0
 
     color: => @get('color') || "steelblue"
 
@@ -375,7 +375,7 @@ D3.sankey =
 
 
     draw_links: =>
-      # links are treated as a group made of a link path and label text element
+      # links are treated as a group
       links = @svg.selectAll('g.link')
         .data(@link_list.models, (d) -> d.cid)
         .enter()
@@ -389,16 +389,6 @@ D3.sankey =
         .style("fill", "none")
         .style("opacity", selectedLinkOpacity)
         .attr("d", (link) => @link_line link.path_points())
-        .on("mouseover", @link_mouseover)
-        .on("mouseout", @node_mouseout)
-      # link labels
-      links.append("svg:text")
-        .attr("class", "link_label")
-        .attr("x", (d) => d.right_x())
-        .attr("y", (d) => @y d.right_y())
-        .attr("dx", -55)
-        .attr("dy", 2)
-        .style("opacity", 0)
       return links
 
     draw_nodes: =>
@@ -450,19 +440,6 @@ D3.sankey =
         .transition()
         .duration(200)
         .style("opacity", selectedLinkOpacity)
-        .selectAll(".link_label")
-        .transition()
-        .style("opacity", 0) # labels
-
-    link_mouseover: ->
-      current_id = $(this).parent().attr("data-cid")
-      d3.selectAll(".link").
-        each (d) ->
-          item = d3.select(this)
-          if d.cid == current_id
-            item.selectAll(".link_label").transition().style("opacity", 1)
-          else
-            item.transition().duration(200).style("opacity", unselectedLinkOpacity)
 
     # this method is called every time we're updating the chart
     refresh: =>
@@ -475,7 +452,16 @@ D3.sankey =
 
       # update the node label
       @nodes.data(@node_list.models, (d) -> d.get('id'))
-        .attr("data-tooltip", (d) => Metric.autoscale_value d.value(), 'PJ', 2)
+        .attr("data-tooltip", (d) =>
+          h = "<strong>
+            #{d.label()}: #{Metric.autoscale_value d.value(), 'PJ', 2}
+          </strong><br/>"
+          for l in d.right_links
+            h += "-&gt; #{l.right.label()}: #{Metric.autoscale_value l.value(), 'PJ', 2}<br/>"
+          for l in d.left_links
+            h += "#{l.left.label()} &lt;-: #{Metric.autoscale_value l.value(), 'PJ', 2}<br/>"
+          h
+          )
 
       # move the rectangles
       @nodes.selectAll("rect")
@@ -494,12 +480,9 @@ D3.sankey =
         .selectAll("path")
         .attr("d", (link) => @link_line link.path_points())
         .style("stroke-width", (link) => @y(link.value()))
-
-      # then move the link labels and update their value
-      @links.transition().duration(500)
-        .selectAll("text.link_label")
-        .attr("y", (link) => @y link.right_y())
-        .text((d) => Metric.autoscale_value d.value(), 'PJ', 2)
+        .attr("display", (link) ->
+          if link.value() == 0.0 then 'none' else 'inline'
+        )
 
 class D3.sankey.NodeList extends Backbone.Collection
   model: D3.sankey.Node

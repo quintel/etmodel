@@ -2,13 +2,13 @@ location.hash = '';
 
 // update main content area
 $("#title").replaceWith('<%= escape_javascript render("layouts/etm/title")%>');
-$("ul.accordion").html('<%= escape_javascript
-  render(:partial => "tab/slide", :collection => @interface.slides)%>');
+
+
+$("ul.accordion").html('<%= escape_javascript render(:partial => "tab/slide", :collection => @interface.slides)%>');
 $("ul.accordion, #title").busyBox('close')
 
 // setup slides
-var acc = new Accordion();
-acc.reset();
+$(".accordion_element h3:first").trigger('click');
 
 // setup slider values, defaults etc
 App.input_elements.setup_input_elements();

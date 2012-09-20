@@ -527,9 +527,11 @@
       }
 
       if (isIncreasing) {
-        this.quinn.setTentativeValue(initialValue + this.quinn.model.step);
+        this.quinn.setTentativeValue(
+          initialValue + this.model.get('step_value'));
       } else {
-        this.quinn.setTentativeValue(initialValue - this.quinn.model.step);
+        this.quinn.setTentativeValue(
+          initialValue - this.model.get('step_value'));
       }
 
       initialValue = this.quinn.model.value;
@@ -673,9 +675,8 @@
               uses_coal_and_wood_pellets: data.uses_coal_and_wood_pellets
             });
             $.fancybox({
-              afterLoad: function(){
-                this.content = content;
-              }
+              type: 'html',
+              content: content
             });
           }
         });

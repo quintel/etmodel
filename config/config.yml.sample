@@ -19,10 +19,6 @@ development: &DEV
     # is this still used?
     unselectable_text: false
 
-    # URL that shows the converter details when you click on
-    # the converter info detail. The converter key will be added to the URL
-    converter_detail_url: http://beta.et-engine.com/converters
-
     # CORS is enabled by default. Offline instances such as the laptop should
     # use the proxy only, though, and you should disable CORS
     disable_cors: false # offline instances might need this

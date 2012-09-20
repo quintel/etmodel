@@ -47,6 +47,7 @@ group :test, :development do
   gem 'pry-debugger'
   gem 'rspec-rails', "~> 2.11.0"
   gem 'watchr'
+  gem 'jasminerice'
 end
 
 group :test do
@@ -66,7 +67,7 @@ group :production do
 end
 
 group :assets do
-  gem 'therubyracer', '0.11.0beta6'
+  gem 'therubyracer', '0.11.0beta8'
   gem 'libv8', '~> 3.11.8'
   gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

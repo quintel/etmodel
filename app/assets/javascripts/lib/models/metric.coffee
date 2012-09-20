@@ -83,7 +83,7 @@
       when 'FTE'
         return "#{@round_number x, 0} #{@scaling_in_words(0, 'FTE')}"
       else
-        return x
+        return value
 
   # formatters
 
@@ -164,3 +164,21 @@
     return false unless value?
     value.toFixed(precision)
 
+  # This is used only in the converter info popup
+  converter_detail_format: (x, unit) ->
+    x *= 100.0 if unit == '%'
+    if _.isNumber(x)
+      @format_number x, 2
+    else
+      x
+
+  # sets the right number of decimal digits
+  format_number: (x) ->
+    if x >= 1000
+      @round_number x, 0
+    else if x >= 1
+      @round_number x, 2
+    else if x == 0
+      0
+    else
+      @round_number x, 3

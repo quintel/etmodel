@@ -119,6 +119,9 @@ GEM
     i18n (0.6.1)
     i18n-js (2.1.2)
       i18n
+    jasminerice (0.0.9)
+      coffee-rails
+      haml
     jbuilder (0.4.3)
       activesupport (>= 3.0.0)
       blankslate (>= 2.1.2.4)
@@ -255,7 +258,7 @@ GEM
       sunspot (= 1.3.3)
     sunspot_solr (1.3.3)
     tabs_on_rails (2.1.1)
-    therubyracer (0.11.0beta6)
+    therubyracer (0.11.0beta8)
       ref
     thor (0.16.0)
     tilt (1.3.3)
@@ -311,6 +314,7 @@ DEPENDENCIES
   hipchat
   httparty (~> 0.7.4)
   i18n-js
+  jasminerice
   jbuilder
   jquery-etmodel-rails (~> 0.2.2)!
   jquery-rails (~> 2.0.2)
@@ -336,7 +340,7 @@ DEPENDENCIES
   sunspot_rails
   sunspot_solr
   tabs_on_rails (~> 2.1.1)
-  therubyracer (= 0.11.0beta6)
+  therubyracer (= 0.11.0beta8)
   tomdoc
   uglifier
   unicorn

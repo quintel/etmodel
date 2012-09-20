@@ -4,9 +4,10 @@
     <table class="converter-detail">
       <thead>
         <tr>
-          <th>
+          <th></th>
           <th>Value*</th>
           <th>Unit</th>
+        </tr>
       </thead>
       <tfoot>
         <tr>
@@ -39,9 +40,9 @@
           <%% _.each( items, function(data, attr) { %>
             <tr>
               <td><%%= data.desc %></td>
-              <td><%%= data.future %></td>
+              <td><%%= Metric.converter_detail_format(data.future, data.unit)%></td>
               <td><%%= data.unit %></td>
-            <tr>
+            </tr>
           <%% }) %>
 
         <%% }) %>

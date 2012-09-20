@@ -40,11 +40,14 @@ D3.bezier =
         .append("svg:g")
         .attr("transform", "translate(#{margins.left}, #{margins.top})")
 
+      legend_columns = if @model.series.length > 6 then 2 else 1
+      console.log legend_columns
       @draw_legend
         svg: @svg
         series: @model.series.models
         width: @width
         vertical_offset: @series_height + 20
+        columns: legend_columns
 
       # the stack method will filter the data and calculate the offset for every
       # item. The values function tells this method that the values it will

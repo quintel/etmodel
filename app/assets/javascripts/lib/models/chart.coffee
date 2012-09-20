@@ -127,3 +127,24 @@ class @Chart extends Backbone.Model
   shown_as_table: => @view.display_as_table
 
   can_be_shown_as_table: => @view.can_be_shown_as_table()
+
+  lock: =>
+    @view.$el.find('a.pin_chart').removeClass('icon-unlock').addClass('icon-lock')
+    @update_settings
+      chart_id: @get 'id'
+      format: if @shown_as_table() then 'table' else 'chart'
+
+  unlock: =>
+    @view.$el.find('a.pin_chart').removeClass('icon-lock').addClass('icon-unlock')
+    @update_settings
+      chart_id: false
+      format: null
+
+  update_settings: (opts) =>
+    s = App.settings.get 'charts'
+    holder = @get 'container'
+    s[holder].format = opts.format
+    s[holder].chart_id = opts.chart_id
+    App.settings.save charts: s
+
+

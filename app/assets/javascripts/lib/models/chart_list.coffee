@@ -160,23 +160,10 @@ class @ChartList extends Backbone.Collection
       # which chart are we talking about?
       holder_id = $(e.target).parents(".chart_holder").data('holder_id')
       chart = @chart_holders[holder_id]
-      chart_id = chart.get('id')
-      format = if chart.shown_as_table() then 'table' else 'chart'
-
-      chart_settings = App.settings.get('charts')
       if @pinned_chart_in(holder_id)
-        # the pin is being removed
-        value = false
-        format = null
+        chart.unlock()
       else
-        value = chart_id
-
-      chart_settings[holder_id].chart_id = value
-      chart_settings[holder_id].format = format
-      App.settings.save({charts: chart_settings})
-
-      $(e.target).toggleClass("icon-lock", !!value)
-      $(e.target).toggleClass("icon-unlock", !!!value)
+        chart.lock()
 
     # link to open the secondary chart
     # The busybox setup will open the chart selection popup (see fancybox.coffee)

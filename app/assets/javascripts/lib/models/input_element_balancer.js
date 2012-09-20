@@ -144,6 +144,54 @@
       valuesBeforeBalancing.revert();
       return false;
     }
+
+    return true;
+  };
+
+  /**
+   * When balancing fails with the user-given value, this function will find
+   * the closest value which works, while also adjusting the subordinate
+   * inputs to keep the group balancing. For example:
+   *
+   *             Min             Max - Start
+   *    Input A:  0 |O---------|  20 -   0
+   *    Input B:  0 |O---------|  20 -   0
+   *    Input C:  0 |---------O| 100 - 100
+   *
+   * In this example, the lowest possible value for C is "60", because neither
+   * inputs A nor B can be increased higher than "20". If the user rapidly
+   * decreases the value of C, trying to set a value less than 60, it will
+   * often get stuck at a value close to -- but not exactly -- 60. There
+   * aren't enough pixels on the screen to represent the "60" value precisely.
+   *
+   * In these cases, the balancer will invoke `balanceToClosestEquilibrium` to
+   * find the closest acceptable value.
+   */
+  Balancer.prototype.balanceToClosestEquilibrium = function (quinn, target) {
+    var isIncreasing = (target > quinn.previousValue),
+        lower        = (isIncreasing ? quinn.previousValue : target),
+        upper        = (isIncreasing ? target : quinn.previousValue),
+        midPoint, knownGood, previous;
+
+    while (true) {
+      midPoint = this.snapValue((lower + upper) / 2);
+
+      if (midPoint === previous) {
+        // We have run out of values to test.
+        return (knownGood != null) ? knownGood : false;
+      }
+
+      if (this.doBalance(midPoint, quinn)) {
+        knownGood = midPoint;
+        isIncreasing ? (lower = midPoint) : (upper = midPoint);
+      } else {
+        isIncreasing ? (upper = midPoint) : (lower = midPoint);
+      }
+
+      // Pass this iterations midPoint to the next iteration; if it's
+      // midPoint is identical (which can happen due to rounding), we stop.
+      previous = midPoint;
+    }
   };
 
   /**
@@ -206,8 +254,15 @@
     // master slider, and subordinates are ignored.
     if (this.isMaster(quinn)) {
       if (this.doBalance(value, quinn) === false) {
-        // Can't do the balance, so we prevent the slider movement.
-        return false;
+        // Can't do the balance with the user's value, try to find the closest
+        // acceptable value.
+        var fallback = this.balanceToClosestEquilibrium(quinn, value);
+
+        if (fallback === false) {
+          return false;
+        } else {
+          quinn.setTentativeValue(fallback, false, false);
+        }
       }
 
       this.trigger('drag');

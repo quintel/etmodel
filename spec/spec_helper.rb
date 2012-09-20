@@ -29,7 +29,10 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.configure_rspec_metadata!
   c.ignore_localhost = true
-  c.default_cassette_options = {:match_requests_on => [:uri, :method, :body]}
+  c.default_cassette_options = {
+    :match_requests_on => [:uri, :method, :body],
+    :record => :new_episodes
+  }
   c.debug_logger = File.open Rails.root.join("log/vcr.log"), 'w'
 end
 

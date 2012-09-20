@@ -13,11 +13,6 @@ development: &DEV
     # google analytics key
     ga_tracker_code: 123456
 
-    # set to true if you want to enable a rack-based proxy. Nginx instances
-    # don't need it. The proxy root will be `api_proxy_url` and will forward
-    # requests to `api_url`
-    local_proxy: false
-
     # is this still used?
     max_scenarios:
 
@@ -45,8 +40,9 @@ development: &DEV
     live_server: false
 production: &PRODUCTION
     <<: *DEV
-    local_proxy: false
 test:
     <<: *DEV
+    # set to true to pipe requests through the local proxy
+    disable_cors: true
 staging:
     <<: *PRODUCTION

@@ -25,6 +25,8 @@ class @AppView extends Backbone.View
       afterLoading:       @hideLoading
       source:             'ETM'
       preset_scenario_id: globals.settings.preset_scenario_id
+      area_code:          globals.settings.area_code
+      end_year:           globals.settings.end_year
 
     # Store the scenario id
     @api.ensure_id().done (id) =>

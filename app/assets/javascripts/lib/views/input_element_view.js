@@ -692,7 +692,10 @@
      * should be. onChange is also fired once when the is initialized.
      */
     quinnOnChange: function (newValue, quinn) {
-      this.setTransientValue(newValue, true);
+      // Note that we use quinn.model.value, AND NOT newValue. Grouped inputs
+      // may have their values changed during balancing, and this change isn't
+      // reflected in the newValue parameter.
+      this.setTransientValue(quinn.model.value, true);
     },
 
     /**

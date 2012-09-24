@@ -40,8 +40,8 @@ module LayoutHelper
       links_nl.push area_code: "nl-noord"                       if @show_all
     links.push text: "Provinces of the Netherlands" ,           data: links_nl
     links_municipalities = []
-      links_municipalities.push area_code: "nl-zeeland" ,       test: true
-      links_municipalities.push area_code: "nl-zuid-holland" ,  test: true
+      links_municipalities.push area_code: "ams",               test: true
+      links_municipalities.push area_code: "grs",               test: true
     links.push text: "Municipalities of the Netherlands" ,      data: links_municipalities
     links.push area_code: "de"
    if @show_german_provinces

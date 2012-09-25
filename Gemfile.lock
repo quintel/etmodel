@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/dennisschoenmakers/etplugin
-  revision: 8ab4e09b4399439e3104a94127a66de7dfdc6d3d
+  revision: a96f0d840d07542cbfe11fdae28208abb652b868
   specs:
-    jquery-etmodel-rails (0.2.2)
+    jquery-etmodel-rails (0.2.3)
       railties (>= 3.1)
 
 GEM
@@ -67,9 +67,6 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
-    capybara-webkit (0.12.1)
-      capybara (>= 1.0.0, < 1.2)
-      json
     childprocess (0.3.5)
       ffi (~> 1.0, >= 1.0.6)
     chunky_png (1.2.6)
@@ -305,7 +302,6 @@ DEPENDENCIES
   authlogic
   capistrano
   capybara
-  capybara-webkit
   coffee-rails (~> 3.2.1)
   compass-rails
   dynamic_form
@@ -316,7 +312,7 @@ DEPENDENCIES
   i18n-js
   jasminerice
   jbuilder
-  jquery-etmodel-rails (~> 0.2.2)!
+  jquery-etmodel-rails (~> 0.2.3)!
   jquery-rails (~> 2.0.2)
   kaminari (~> 0.13.0)
   launchy

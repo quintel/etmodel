@@ -5,10 +5,6 @@ _.extend(_, {
 
 class @AppView extends Backbone.View
   initialize: ->
-    # this at the moment used for the loading box. to figure out
-    # if there are still api calls happening.
-    @api_call_stack = []
-
     @input_elements = new InputElementList()
     @input_elements.bind("change", @handleInputElementsUpdate)
 
@@ -60,7 +56,7 @@ class @AppView extends Backbone.View
       api_session_id: null,
       preset_scenario_id: null,
       network_parts_affected: []
-      }, {silent: true})
+      }, { silent: true } )
     @deferred_scenario_id = null
     i.set({user_value: null}, {silent: true}) for i in @input_elements.models
     @load_user_values()
@@ -80,17 +76,18 @@ class @AppView extends Backbone.View
 
   call_api: (input_params) =>
     @api.update({
-      queries: window.gqueries.keys(),
-      inputs:  input_params,
-      # callbacks
-      success: @handle_api_result
-      error:   @handle_ajax_error
+      queries:  window.gqueries.keys(),
+      inputs:   input_params,
+      settings:
+        use_fce: App.settings.get('use_fce')
+      success:  @handle_api_result
+      error:    @handle_ajax_error
     })
 
   handle_ajax_error: (jqXHR, textStatus, error) ->
     console.log("Something went wrong: " + textStatus)
     if textStatus == 'timeout'
-      r = confirm "Your internet connection seems to be very slow. The ETM is
+      r = confirm "Your internet connection seems to be slow. The ETM is
       still waiting to receive an update from the server. Press OK to reload
       the page"
       location.reload(true) if (r)
@@ -100,7 +97,6 @@ class @AppView extends Backbone.View
   # window.charts.first().trigger('change')
   # window.dashboard.trigger('change')
   handle_api_result: ({results, settings, inputs}, data, textStatus, jqXHR) =>
-    @api_call_stack.pop()
     # store the last response from api for the turk it debugging tool
     # it is activated by passing ?debug=1 and can be found in the settings
     # menu.

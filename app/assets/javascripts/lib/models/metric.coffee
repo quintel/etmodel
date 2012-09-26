@@ -174,11 +174,14 @@
 
   # sets the right number of decimal digits
   format_number: (x) ->
-    if x >= 1000
+    abs = Math.abs(x)
+    if abs >= 1000
       @round_number x, 0
-    else if x >= 1
+    else if abs >= 1
       @round_number x, 2
-    else if x == 0
+    else if abs > 0 && abs <= 0.001
+      @round_number x, 5
+    else if abs == 0
       0
     else
       @round_number x, 3

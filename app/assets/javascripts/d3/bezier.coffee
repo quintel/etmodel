@@ -27,7 +27,7 @@ D3.bezier =
         top: 20
         bottom: 200
         left: 20
-        right: 20
+        right: 30
 
       @width = 494 - (margins.left + margins.right)
       @height = 360 - (margins.top + margins.bottom)

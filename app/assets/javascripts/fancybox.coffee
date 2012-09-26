@@ -5,7 +5,7 @@ $ ->
     type: 'ajax'
     href: $(this).attr('href')
     autoSize: true
-    maxWidth: 800
+    maxWidth: 960
 
   $("a.fancybox_image").fancybox
     type: 'image'

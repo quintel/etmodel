@@ -64,4 +64,5 @@ Once it is running you can index everything from the console with
 
 
 ## Links
+
 https://github.com/sunspot/sunspot/wiki/Configure-Solr-on-Ubuntu%2C-the-quickest-way

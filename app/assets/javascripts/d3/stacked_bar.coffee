@@ -94,7 +94,7 @@ D3.stacked_bar =
       # draw a nice axis
       @y_axis = d3.svg.axis()
         .scale(@inverted_y)
-        .ticks(4)
+        .ticks(5)
         .tickSize(-420, 10, 0)
         .orient("right")
         .tickFormat((x) => Metric.autoscale_value x, @model.get('unit'))
@@ -129,10 +129,10 @@ D3.stacked_bar =
         _.sum(@model.values_future()),
         _.sum(@model.values_present()),
         _.max(@model.values_targets()) || 0
-      )
+      ) * 1.05
       # update the scales as needed
-      @y = @y.domain([0, tallest])
-      @inverted_y = @inverted_y.domain([0, tallest])
+      @y = @y.domain([0, tallest]).nice()
+      @inverted_y = @inverted_y.domain([0, tallest]).nice()
 
       # animate the y-axis
       @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@inverted_y))

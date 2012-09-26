@@ -30,14 +30,14 @@ D3.merit_order =
         gquery_key: "merit_order_#{k}_operating_costs_in_merit_order_table"
       D3.merit_order.series.push @gquery_y
 
-    value_x: => @gquery_x.future_value()
+    value_x: => @gquery_x.future_value() || 0
     value_y: =>
       if @get('key') == 'must_run'
         1
       else
         @original_y_value()
 
-    original_y_value: => @gquery_y.future_value()
+    original_y_value: => @gquery_y.future_value() || 0
 
     label: => @get('label') || @get('key')
 
@@ -108,10 +108,6 @@ D3.merit_order =
         attr("class", "merit_order_node").
         attr("fill", (d) => d.get 'color').
         style("stroke", (d) => d3.rgb(d.get 'color').darker(1)).
-        attr("y", (d) => @height - @y(d.value_y()) - .5).
-        attr("x", (d, i) -> i * 30).
-        attr("height", (d) => @y d.value_y()).
-        attr("width", (d) => @x d.value_x()).
         on("mouseover", ->
           item = d3.select(this)
           item.transition().attr("fill", (d) -> d3.rgb(d.get("color")).brighter(1))

@@ -677,7 +677,8 @@
             });
             $.fancybox({
               type: 'html',
-              content: content
+              content: content,
+              width: 770
             });
           }
         });

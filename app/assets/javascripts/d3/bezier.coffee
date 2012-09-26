@@ -10,7 +10,7 @@ D3.bezier =
 
     can_be_shown_as_table: -> true
 
-    outer_height: -> 410
+    outer_height: -> 400
 
     # This chart rendering is fairly complex. Here is the big picture:
     # this bezier chart is basically a stacked area chart. D3 provides some
@@ -30,7 +30,7 @@ D3.bezier =
         right: 20
 
       @width = 494 - (margins.left + margins.right)
-      @height = 300 - (margins.top + margins.bottom)
+      @height = 360 - (margins.top + margins.bottom)
       # height of the series section
       @series_height = 190
       @svg = d3.select("#d3_container_#{@key}")

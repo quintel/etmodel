@@ -14,7 +14,7 @@ D3.stacked_bar =
         top: 20
         bottom: 20
         left: 30
-        right: 30
+        right: 40
 
       @width = 494 - (margins.left + margins.right)
       @series_height = 190

@@ -40,7 +40,7 @@ class @ConstraintView extends Backbone.View
       href: url
       type: 'iframe'
       width: 600
-      height: 550
+      height: 570
       padding: 0
 
 

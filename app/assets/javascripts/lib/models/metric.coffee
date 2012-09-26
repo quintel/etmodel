@@ -98,6 +98,7 @@
     prefix = prefix || false
     value = @round_number(x, precision)
     value = "+#{value}" if prefix && value > 0.0
+    value = "0.0" if value == "+0.0" || value == "-0.0"
     "#{value}%"
 
   # as format_percentage, but multiplying the value * 100

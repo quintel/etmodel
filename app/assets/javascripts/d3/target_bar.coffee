@@ -1,12 +1,19 @@
-D3.targets =
+D3.target_bar =
   data:
-    targets: [
+    # The key must match the chart key
+    renewability_targets: [
       {key: 'co2_emissions',          unit: 'MTon'},
+      {key: 'renewable_percentage',   unit: '%', min: 0, max: 100}
+    ],
+    dependence_targets: [
       {key: 'net_energy_import',      unit: '%', min: 0, max: 100},
-      {key: 'net_electricity_import', unit: '%', min: 0, max: 100},
+      {key: 'net_electricity_import', unit: '%', min: 0, max: 100}
+    ],
+    cost_targets: [
       {key: 'total_energy_costs',     unit: 'Bln euro'},
-      {key: 'electricity_costs',      unit: 'Euro/MWh'},
-      {key: 'renewable_percentage',   unit: '%', min: 0, max: 100},
+      {key: 'electricity_costs',      unit: 'Euro/MWh'}
+    ],
+    area_targets: [
       {key: 'onshore_land',           unit: 'km2'},
       {key: 'onshore_coast',          unit: 'km2'},
       {key: 'offshore',               unit: 'km2'}
@@ -16,7 +23,7 @@ D3.targets =
   Target: class extends Backbone.Model
     initialize: =>
       key = @get 'key'
-      @namespace = D3.targets
+      @namespace = D3.target_bar
       @success_query = new ChartSerie({gquery_key: "policy_goal_#{key}_reached"})
       @value_query   = new ChartSerie({gquery_key: "policy_goal_#{key}_value"})
       @target_query  = new ChartSerie({gquery_key: "policy_goal_#{key}_target_value"})
@@ -56,10 +63,11 @@ D3.targets =
     el: "body"
 
     initialize: ->
-      @namespace = D3.targets
+      @key = @model.get 'key'
+      @namespace = D3.target_bar
       @namespace.series = @model.series
       @targets = []
-      @targets.push(new D3.targets.Target(t)) for t in @namespace.data.targets
+      @targets.push(new @namespace.Target(t)) for t in @namespace.data[@key]
 
       @initialize_defaults()
 
@@ -76,7 +84,7 @@ D3.targets =
       @height = 360 - (margins.top + margins.bottom)
       @namespace.width = @width
       t.scale.range([80, @width]) for t in @targets
-      @svg = d3.select("#d3_container_targets").
+      @svg = d3.select("#d3_container_#{@key}").
         append("svg:svg").
         attr("height", @height + margins.top + margins.bottom).
         attr("width", @width + margins.left + margins.right).

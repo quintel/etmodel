@@ -56,14 +56,12 @@ class Setting
     end
 
     {
-      :hide_unadaptable_sliders => false,
       :network_parts_affected   => [],
       :track_peak_load          => false,
       :area_code                => 'nl',
       :start_year               => 2010,
       :end_year                 => 2050,
       :use_fce                  => false,
-      :already_shown            => [],
       :charts                   => charts
     }
   end
@@ -86,7 +84,7 @@ class Setting
     self.api_session_id = nil
     self.preset_scenario_id = nil # to go back to a blank slate scenario
 
-    [:use_fce, :network_parts_affected, :already_shown, :charts].each do |key|
+    [:use_fce, :network_parts_affected, :charts].each do |key|
       self.reset_attribute key
     end
   end

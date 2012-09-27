@@ -12,6 +12,7 @@ class @Accordion
       ul = header.parents("ul.accordion")
       ul.find("li.accordion_element h3").removeClass('selected')
       ul.find("li.accordion_element .slide").slideUp('fast')
+      App.input_elements.close_all_info_boxes()
 
       # open the right one
       current = header.parents("li.accordion_element")

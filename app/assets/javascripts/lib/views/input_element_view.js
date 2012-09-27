@@ -663,7 +663,7 @@
         var title = $(e.target).data('title');
         var converter = $(e.target).data('converter');
         var url = globals.api_url + "/api/v3/scenarios/"
-          + globals.api_session_id + "/converters/" + converter;
+          + App.settings.get('api_session_id') + "/converters/" + converter;
 
         $.ajax({
           url: url,

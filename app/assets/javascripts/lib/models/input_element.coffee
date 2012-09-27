@@ -139,3 +139,6 @@ class @InputElementList extends Backbone.Collection
 
   # Does a update request to update the values.
   handleUpdate: => @trigger("change")
+
+  close_all_info_boxes: =>
+    v.closeInfoBox() for v in _.values(@inputElementViews)

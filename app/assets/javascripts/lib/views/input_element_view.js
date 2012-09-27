@@ -631,6 +631,23 @@
     },
 
     /**
+     * Closes the box (if open). Used by the collection to force close all info
+     * boxes at the same time
+     */
+    closeInfoBox: function() {
+      var infoBox = this.$('.info-wrap');
+      if (infoBox.is(':visible')) {
+        ACTIVE_INFO_BOX = null;
+        this.$el.toggleClass('info-box-visible');
+        infoBox.animate({
+          height:  ['toggle', 'easeOutCubic'],
+          opacity: ['toggle', 'easeOutQuad']
+        }, 'fast');
+      }
+      return false;
+    },
+
+    /**
     * Loads the flowplayer when the description of the input element contains a flash movie
     * The global standalone parameter disables this embedded player.
     */

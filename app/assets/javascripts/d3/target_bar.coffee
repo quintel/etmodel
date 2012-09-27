@@ -187,6 +187,15 @@ D3.target_bar =
             '#008040'
           else
             '#800040')
+        .text((d) ->
+          t = I18n.t "targets.#{d.get 'key'}"
+          if !d.is_set()
+            t
+          else if d.successful()
+            "#{t} :)"
+          else
+            "#{t} :("
+        )
 
       targets.selectAll('rect.target_value')
         .transition()

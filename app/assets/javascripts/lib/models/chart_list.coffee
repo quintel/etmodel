@@ -15,22 +15,20 @@ class @ChartList extends Backbone.Collection
   # are being used
   chart_holders: {}
 
-  # Loads a chart. Parameters:
-  # - holder_id: id of the dom element that will hold the chart
-  # - options: hash with these keys:
-  #  - wait: if true an api_call won't be fired immediately. Useful when we want
-  #    to show multiple charts on the same page
-  #  - alternate: id of the chart to load if the first one fails. Watch out for
-  #    loops!
-  #  - force: (re)load the chart entirely
+  # Loads a chart into a DOM element making an AJAX request
   #
-  # TODO: refactor, too much stuff is happening here!
+  # chart_id  - id of the chart
+  # holder_id - id of the dom element that will hold the chart (default: 'chart_0')
+  # options   - hash with some options (default: {})
+  #             alternate - id of the chart to load if the first one fails.
+  #                         Watch out for loops!
+  #             force     - (re)load the chart entirely
   #
-  load : (chart_id, holder_id = 'chart_0', options = {}) =>
+  # Returns the newly created chart object or false if something went wrong
+  load: (chart_id, holder_id = 'chart_0', options = {}) =>
     if !options.force && (@pinned_chart_in(holder_id) || @current_chart_in(holder_id) == chart_id)
       return false
 
-    wait = options.wait || false
     alternate = options.alternate || false
 
     App.debug('Loading chart: #' + chart_id)
@@ -43,8 +41,6 @@ class @ChartList extends Backbone.Collection
         @html[chart_id] = data.html
         # Add to the Chart constructor options the id of the container element
         data.attributes.container = holder_id
-        # Remember what we were showing in that position
-        old_chart = @chart_holders[holder_id]
         # Create the new Chart
         new_chart = new Chart(data.attributes)
         if !new_chart.supported_by_current_browser()
@@ -54,11 +50,12 @@ class @ChartList extends Backbone.Collection
             alert I18n.t('output_elements.common.old_browser')
           return false
 
-        # Remember where the chart is
+        # Remember what we were showing in that position
+        if old_chart = @chart_holders[holder_id]
+          old_chart.delete()
+          @remove old_chart
+
         @chart_holders[holder_id] = new_chart
-        old_chart.delete() if old_chart
-        # Deal with the collection object
-        @remove old_chart
         @add new_chart
         # Pass the gqueries to the chart
         for s in data.series
@@ -95,7 +92,7 @@ class @ChartList extends Backbone.Collection
           "href", "/descriptions/charts/#{chart_id}")
         # show.hide the under_construction notice
         root.find(".chart_not_finished").toggle new_chart.get("under_construction")
-        App.call_api() unless wait
+        App.call_api()
     @last()
 
   # returns the current chart id

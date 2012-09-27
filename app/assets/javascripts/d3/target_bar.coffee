@@ -37,7 +37,8 @@ D3.target_bar =
       for query in [@success_query, @value_query, @target_query]
         max = x if (x = query.future_value()) > max
         max = x if (x = query.present_value()) > max
-      max
+      # Let's add some padding
+      max * 1.05
 
     min_value: => if (m = @get('min')) then m else 0
 

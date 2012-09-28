@@ -5,9 +5,6 @@ _.extend(_, {
 
 class @AppView extends Backbone.View
   initialize: ->
-    @input_elements = new InputElementList()
-    @input_elements.bind("change", @handleInputElementsUpdate)
-
     @settings = new Setting() # At this point settings is empty!!
     @settings.set({api_session_id: globals.api_session_id})
 
@@ -28,7 +25,19 @@ class @AppView extends Backbone.View
     @api.ensure_id().done (id) =>
       @settings.save
         api_session_id: id
+      @setup_sliders()
 
+  # (Re)builds the list of sliders and renders them
+  #
+  setup_sliders: =>
+    if @input_elements
+      @input_elements.off "change"
+      @input_elements.reset()
+    @input_elements = new InputElementList()
+    @input_elements.on "change", @handleInputElementsUpdate
+    @api.user_values
+      success: @input_elements.initialize_user_values
+      error:   @handle_ajax_error
 
   # At this point we have all the settings initialized.
   bootstrap: =>
@@ -44,7 +53,6 @@ class @AppView extends Backbone.View
     if @settings.get('area_code') == 'nl'
       @peak_load = new PeakLoad()
 
-    @load_user_values()
     @setup_fce_toggle()
 
   setup_fce_toggle: ->
@@ -59,7 +67,7 @@ class @AppView extends Backbone.View
       }, { silent: true } )
     @deferred_scenario_id = null
     i.set({user_value: null}, {silent: true}) for i in @input_elements.models
-    @load_user_values()
+    @setup_sliders()
 
   scenario_url: =>
     "#{globals.api_url.replace('api/v3', 'scenarios')}/#{@scenario.api_session_id()}"
@@ -67,12 +75,6 @@ class @AppView extends Backbone.View
   setup_fce: =>
     # IE doesn't bubble onChange until the checkbox loses focus
     $(document).on 'click', "#settings_use_fce", @settings.toggle_fce
-
-  # Load User values for Sliders. We need a scenario id first!
-  load_user_values: =>
-    @api.user_values
-      success: @input_elements.initialize_user_values
-      error:   @handle_ajax_error
 
   call_api: (input_params) =>
     @api.update({

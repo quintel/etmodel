@@ -8,19 +8,6 @@ class @InputElement extends Backbone.Model
     @bind('change:user_value', @logUpdate)
     @bind('change:user_value', @update_collection)
 
-  set_min_value: (result) =>
-    @set({'min_value' : result})
-
-  set_max_value: (result) =>
-    @set({'max_value' : result})
-
-  set_label: (label) =>
-    return unless _.isObject(label)
-    @set({'label' : label})
-
-  set_start_value: (result) =>
-    @set({'start_value' : result})
-
   logUpdate: =>
     percent = 100 -
       ((@get('max_value') - @get('user_value')) /
@@ -63,10 +50,11 @@ class @InputElementList extends Backbone.Collection
       if !values
         console.warn "Missing slider information! #{i.get 'key'}"
         return false
-      i.set_min_value(values.min)
-      i.set_max_value(values.max)
-      i.set_start_value(values.default)
-      i.set_label(values.label)
+      i.set
+        min_value: values.min
+        max_value: values.max
+        start_value: values.default
+        label: if _.isObject(values.label) then values.label else null
 
       v = +values.user
       def = if (v? && !_.isNaN(v)) then v else values.default
@@ -106,7 +94,7 @@ class @InputElementList extends Backbone.Collection
     inputElement.onscreen = true
     true
 
-  # Does a update request to update the values.
+  # Triggers a new API request on AppView
   handleUpdate: => @trigger("change")
 
   close_all_info_boxes: =>

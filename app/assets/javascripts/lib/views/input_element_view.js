@@ -2,7 +2,7 @@
   'use strict';
 
   var BODY_HIDE_EVENT, ACTIVE_VALUE_SELECTOR,
-      INPUT_ELEMENT_T, VALUE_SELECTOR_T,
+      INPUT_ELEMENT_T, VALUE_SELECTOR_T, CONVERTER_INFO_T,
       HOLD_DELAY, HOLD_DURATION, HOLD_FPS,
       IS_IE_LTE_EIGHT, ACTIVE_INFO_BOX,
 
@@ -37,6 +37,7 @@
       INPUT_ELEMENT_T  = _.template($('#input-element-template').html());
       VALUE_SELECTOR_T = _.template($('#value-selector-template').html());
     }
+    CONVERTER_INFO_T = _.template($('#converter-details-template').html());
   });
 
   /**
@@ -686,8 +687,7 @@
           url: url,
           dataType: 'json',
           success: function(data) {
-            var tmpl = _.template($('#converter-details-template').html());
-            var content = tmpl({
+            var content = CONVERTER_INFO_T({
               title: title,
               data: data.data,
               uses_coal_and_wood_pellets: data.uses_coal_and_wood_pellets

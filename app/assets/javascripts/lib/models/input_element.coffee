@@ -1,6 +1,7 @@
 class @InputElement extends Backbone.Model
   initialize: ->
     @dirty = false
+    @on_screen = false
     @ui_options =
       element: $("#input_element_#{@get('id')}")
     @bind('change:user_value', @markDirty)
@@ -19,11 +20,6 @@ class @InputElement extends Backbone.Model
 
   set_start_value: (result) =>
     @set({'start_value' : result})
-
-  init_legacy_controller: =>
-    if @already_init != true
-      App.input_elements.addInputElement(this)
-      @already_init = true
 
   logUpdate: =>
     percent = 100 -
@@ -54,11 +50,7 @@ class @InputElementList extends Backbone.Collection
   initialize: ->
     @inputElements     = {}
     @inputElementViews = {}
-    for s in $(".slider")
-      @add $(s).data('attrs')
-
-  init_legacy_controller: =>
-    @each (input_element) -> input_element.init_legacy_controller()
+    @add $(s).data('attrs') for s in $(".slider")
 
   initialize_user_values: (data) =>
     @user_values = data
@@ -66,11 +58,11 @@ class @InputElementList extends Backbone.Collection
 
   setup_input_elements: =>
     user_values = @user_values
-    @each (i) ->
-      values = user_values[i.get('key')];
+    @each (i) =>
+      values = user_values[i.get('key')]
       if !values
         console.warn "Missing slider information! #{i.get 'key'}"
-        return false;
+        return false
       i.set_min_value(values.min)
       i.set_max_value(values.max)
       i.set_start_value(values.default)
@@ -85,7 +77,7 @@ class @InputElementList extends Backbone.Collection
         disabled: i.get('disabled') || values.disabled
       }, { silent: true })
 
-      i.init_legacy_controller()
+      @addInputElement(i)
 
   # Get the string which contains the update values for all dirty input elements
   api_update_params: =>
@@ -100,14 +92,18 @@ class @InputElementList extends Backbone.Collection
   reset_dirty: =>
     _.each(@dirty(), (el) -> el.setDirty(false))
 
-  # Add a constraint to the constraints.
-  # @param options - must contain an element item
-  addInputElement: (inputElement, options) =>
+  # Creates the slider view unless the item is already on screen
+  #
+  # inputElement - an input_element backbone object
+  #
+  addInputElement: (inputElement) =>
+    return if inputElement.onscreen
     options = inputElement.ui_options
     @inputElements[inputElement.id] = inputElement
     view = new InputElementView({model : inputElement, el : options.element})
     @inputElementViews[inputElement.id] = view
     view.bind "change", @handleUpdate
+    inputElement.onscreen = true
     true
 
   # Does a update request to update the values.

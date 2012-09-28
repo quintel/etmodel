@@ -679,7 +679,7 @@
         e.preventDefault();
         var title = $(e.target).data('title');
         var converter = $(e.target).data('converter');
-        var url = globals.api_url + "/api/v3/scenarios/"
+        var url = App.api_base_url() + "/api/v3/scenarios/"
           + App.settings.get('api_session_id') + "/converters/" + converter;
 
         $.ajax({

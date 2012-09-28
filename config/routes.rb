@@ -114,6 +114,7 @@ Etm::Application.routes.draw do
     end
   end
 
+  match '/ete(/*url)' => 'api_proxy#default'
   match '/ete_proxy(/*url)' => 'api_proxy#default'
 
   match '/select_movie/:id'             => 'pages#select_movie', :defaults => {:format => :js}

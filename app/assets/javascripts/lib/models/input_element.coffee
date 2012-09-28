@@ -54,8 +54,6 @@ class @InputElementList extends Backbone.Collection
   initialize: ->
     @inputElements     = {}
     @inputElementViews = {}
-    @shareGroups = {}
-    @balancers   = {}
     for s in $(".slider")
       @add $(s).data('attrs')
 
@@ -111,31 +109,6 @@ class @InputElementList extends Backbone.Collection
     @inputElementViews[inputElement.id] = view
     view.bind "change", @handleUpdate
     true
-
-  # Initialize a share group for an input element if it has one.
-  initShareGroup: (inputElement) =>
-    inputElementView = @inputElementViews[inputElement.id]
-    shareGroupKey = inputElement.get("share_group")
-    if shareGroupKey && shareGroupKey.length
-      shareGroup = @getOrCreateShareGroup(shareGroupKey)
-      shareGroup.bind "slider_updated", inputElement.markDirty
-      # set all sliders from same sharegroup to dirty when one is touched
-      shareGroup.addSlider(inputElementView.sliderView.sliderVO)
-
-      balancer = @getOrCreateBalancer(shareGroupKey)
-      balancer.add(inputElementView)
-
-  # Finds or creates the share group.
-  getOrCreateShareGroup: (shareGroup) =>
-    if(!@shareGroups[shareGroup])
-      @shareGroups[shareGroup] = new SliderGroup({'total_value':100})
-      # add group if not created yet
-    @shareGroups[shareGroup]
-
-  getOrCreateBalancer: (name) =>
-    if !@balancers.hasOwnProperty(name)
-      @balancers[name] = new InputElementGroup({ max: 100 })
-    @balancers[name]
 
   # Does a update request to update the values.
   handleUpdate: => @trigger("change")

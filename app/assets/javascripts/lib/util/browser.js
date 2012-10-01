@@ -24,13 +24,6 @@ var Browser = {
     }
   },
 
-  hasProperCORSSupport: function() {
-    var ua = $.browser;
-    // At the moment we have some issues with FF
-    if (ua.webkit || ua.mozilla) { return true; }
-    return false;
-  },
-
   hasProperPushStateSupport: function() {
     var ua = $.browser;
     if (ua.webkit) { return true; }

@@ -680,8 +680,7 @@
         e.preventDefault();
         var title = $(e.target).data('title');
         var converter = $(e.target).data('converter');
-        var url = App.api_base_url() + "/api/v3/scenarios/"
-          + App.settings.get('api_session_id') + "/converters/" + converter;
+        var url = App.scenario.url_path() + "/converters/" + converter;
 
         $.ajax({
           url: url,

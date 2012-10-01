@@ -12,12 +12,7 @@ class @Scenario extends Backbone.Model
       use_fce: s.get('use_fce')
       source: 'ETM'
 
-  user_values_url: =>
-    @url_path() + "/inputs.json"
+  # Returns the base scenario URL, taking into account CORS support
+  url_path: => App.api.path "/scenarios/#{@api_session_id()}"
 
-  url_path: =>
-    base_url = App.api_base_url()
-    base_url + "/scenarios/" + @api_session_id()
-
-  reset: =>
-    App.reset_scenario()
+  reset: => App.reset_scenario()

@@ -12,7 +12,9 @@ class @AppView extends Backbone.View
     @scenario = new Scenario()
 
     @api = new ApiGateway
-      api_path:           @api_base_url()
+      api_path:           globals.api_url
+      api_proxy_path:     globals.api_proxy_url
+      offline:            globals.standalone
       scenario_id:        globals.api_session_id
       beforeLoading:      @showLoading
       afterLoading:       @hideLoading
@@ -149,13 +151,6 @@ class @AppView extends Backbone.View
 
   debug: (t) ->
     console.log(t) if globals.debug_js
-
-  # Use CORS when possible
-  api_base_url: ->
-    if !globals.disable_cors && Browser.hasProperCORSSupport()
-      globals.api_url
-    else
-      globals.api_proxy_url
 
 $ ->
   window.App = App = new AppView()

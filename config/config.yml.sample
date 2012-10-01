@@ -19,13 +19,10 @@ development: &DEV
     # is this still used?
     unselectable_text: false
 
-    # CORS is enabled by default. Offline instances such as the laptop should
-    # use the proxy only, though, and you should disable CORS
-    disable_cors: false # offline instances might need this
-
     #  standalone instances are those such as the laptop. If set to true
     # the remote links and scripts will be disabled and the videos will
-    # be played with a local player rather than vimeo/youtube
+    # be played with a local player rather than vimeo/youtube. CORS will be
+    # disabled, too
     standalone: false
 
     # URL that shows the gquery details (used on the charts admin page)

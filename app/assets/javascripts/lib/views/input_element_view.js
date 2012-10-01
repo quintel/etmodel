@@ -37,7 +37,9 @@
       INPUT_ELEMENT_T  = _.template($('#input-element-template').html());
       VALUE_SELECTOR_T = _.template($('#value-selector-template').html());
     }
-    CONVERTER_INFO_T = _.template($('#converter-details-template').html());
+    if (document.getElementById('converter-details-template')) {
+      CONVERTER_INFO_T = _.template($('#converter-details-template').html());
+    }
   });
 
   /**

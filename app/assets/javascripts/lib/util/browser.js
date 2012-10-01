@@ -26,7 +26,7 @@ var Browser = {
 
   hasProperPushStateSupport: function() {
     var ua = $.browser;
-    if (ua.webkit) { return true; }
+    if (ua.webkit || ua.mozilla) { return true; }
   },
 
   hasD3Support: function() {

@@ -1,15 +1,4 @@
 var Browser = {
-  doesTouch:function() {
-       try {
-           // if we can make touch events return true
-           document.createEvent("TouchEvent");
-           return true;
-       } catch(e) {
-
-           return false;
-       }
-   },
-
   // Only IE8 needs this
   makeSureArrayHasFunctionIndexOf:function() {
     if (!Array.indexOf) {
@@ -24,6 +13,7 @@ var Browser = {
     }
   },
 
+  // The browsers that return true will be ajax-navigation enabled
   hasProperPushStateSupport: function() {
     var ua = $.browser;
     if (ua.webkit || ua.mozilla) { return true; }

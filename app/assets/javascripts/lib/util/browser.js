@@ -27,7 +27,7 @@ var Browser = {
   hasProperCORSSupport: function() {
     var ua = $.browser;
     // At the moment we have some issues with FF
-    if (ua.webkit) { return true; }
+    if (ua.webkit || ua.mozilla) { return true; }
     return false;
   },
 

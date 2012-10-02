@@ -14,8 +14,9 @@ class @SidebarView extends Backbone.View
       # hijack sidebar links
       $(document).on 'click', "a[data-nav=true]", (e) ->
         e.preventDefault()
-        $("ul.accordion, #title").busyBox
+        $("#title").busyBox
           spinner: "<em>Loading</em>"
+        $("ul.accordion").fadeOut(100)
         $("#sidebar li").removeClass("active")
         $(e.target).parents("li").addClass("active")
         url = $(e.target).attr('href') ||

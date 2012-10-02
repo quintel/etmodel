@@ -4,27 +4,6 @@ $ ->
     # to non-HiDPI resolutions.
     $('#header_inside img[src$="@2x.png"]').attr(width: '401')
 
-  # Sidebar accordion
-  $('#sidebar h4').on 'click', ->
-    $(this).next('ul').slideToggle('fast')
-
-  # AJAX-based navigation
-  #
-  if Browser.hasProperPushStateSupport()
-    # hijack sidebar links
-    $(document).on 'click', "a[data-nav=true]", (e) ->
-      e.preventDefault()
-      $("ul.accordion, #title").busyBox
-        spinner: "<em>Loading</em>"
-      $("#sidebar li").removeClass("active")
-      $(e.target).parents("li").addClass("active")
-      url = $(e.target).attr('href') ||
-            $(e.target).parents('a').attr('href')
-      $.ajax
-        url: url
-        dataType: 'script'
-      history.pushState({url: url}, url, url)
-
   # Adds "Search" to the search field for browsers which do not support the
   # "placeholder" attribute.
   unless Modernizr.input.placeholder

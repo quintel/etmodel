@@ -1,8 +1,30 @@
 class @SidebarView extends Backbone.View
   bootstrap: ->
+    # setup accordion
+    $('#sidebar h4').on 'click', ->
+      $(this).next('ul').slideToggle('fast')
+
+    # Create gqueries for the inline bars
     for item in $("#sidebar ul li")
       gquery = $(item).attr('data-gquery')
       gqueries.find_or_create_by_key(gquery) if gquery
+
+    # AJAX-based navigation
+    if Browser.hasProperPushStateSupport()
+      # hijack sidebar links
+      $(document).on 'click', "a[data-nav=true]", (e) ->
+        e.preventDefault()
+        $("ul.accordion, #title").busyBox
+          spinner: "<em>Loading</em>"
+        $("#sidebar li").removeClass("active")
+        $(e.target).parents("li").addClass("active")
+        url = $(e.target).attr('href') ||
+              $(e.target).parents('a').attr('href')
+        $.ajax
+          url: url
+          dataType: 'script'
+        history.pushState({url: url}, url, url)
+
 
   update_bars: ->
     for item in $("#sidebar ul li")

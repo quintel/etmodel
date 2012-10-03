@@ -15,7 +15,7 @@ D3.target_bar =
     ],
     area_targets: [
       {key: 'onshore_land',           unit: 'km2'},
-      {key: 'onshore_coast',          unit: 'km2'},
+      {key: 'onshore_coast',          unit: 'km'},
       {key: 'offshore',               unit: 'km2'}
     ]
 

@@ -137,12 +137,6 @@ D3.stacked_bar =
       # animate the y-axis
       @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@inverted_y))
 
-      # and its grid
-      @svg.selectAll('g.rule')
-        .data(@y.ticks())
-        .transition()
-        .attr('transform', (d) => "translate(0, #{@inverted_y(d)})")
-
       # let the stack method filter the data again, adding the offsets as needed
       stacked_data = _.flatten @stack_method(@prepare_data())
       @svg.selectAll('rect.serie')

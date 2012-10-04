@@ -69,21 +69,6 @@ class InputElement < ActiveRecord::Base
     !interface_group.blank?
   end
 
-  def cache_conditions_key
-    [self.class.name, self.id, Current.setting.area.id].join('_')
-  end
-
-  # Cache
-  def cache(method, options = {}, &block)
-    if options[:cache] == false
-      yield
-    else
-      Rails.cache.fetch("%s-%s" % [cache_conditions_key, method.to_s]) do
-        yield
-      end
-    end
-  end
-
   def disabled
     fixed
   end

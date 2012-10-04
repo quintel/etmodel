@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers: 
       Date: 
-      - Wed, 26 Sep 2012 09:38:55 GMT
+      - Thu, 04 Oct 2012 11:54:40 GMT
       Content-Type: 
       - application/json; charset=utf-8
       X-Ua-Compatible: 
@@ -29,9 +29,9 @@ http_interactions:
       Cache-Control: 
       - max-age=0, private, must-revalidate
       X-Request-Id: 
-      - 4b06a011aae62949e865692ea04f6580
+      - fb9645a4d68b58515d37494a2e64f493
       X-Runtime: 
-      - "0.016647"
+      - "0.014303"
       X-Rack-Cache: 
       - miss
       Transfer-Encoding: 
@@ -40,5 +40,5 @@ http_interactions:
       encoding: US-ASCII
       string: "{\"co2_price\":0.00805,\"man_hours_per_man_year\":1800.0,\"man_year_per_mj_insulation_per_year\":1.22916e-08,\"annual_infrastructure_cost_electricity\":1810.0,\"annual_infrastructure_cost_gas\":1452.0,\"areable_land\":19175.4889,\"available_land\":19175.4889,\"capacity_buffer_decentral_in_mj_s\":20000.0,\"capacity_buffer_in_mj_s\":1600.0,\"co2_emission_1990\":151.2,\"co2_emission_2009\":165.1,\"co2_emission_electricity_1990\":39.92,\"co2_percentage_free\":0.85,\"coast_line\":451.0,\"country\":\"nl\",\"created_at\":\"2010-05-18T14:09:51Z\",\"current_electricity_demand_in_mj\":403061950508,\"economic_multiplier\":1.0,\"el_export_capacity\":16200000.0,\"employment_fraction_production\":0.5,\"employment_local_fraction\":0.2,\"entity\":\"\",\"export_electricity_primary_demand_factor\":1.0,\"has_agriculture\":true,\"has_buildings\":true,\"has_coastline\":true,\"has_cold_network\":false,\"has_employment\":true,\"has_fce\":true,\"has_industry\":true,\"has_lignite\":false,\"has_merit_order\":true,\"has_mountains\":false,\"has_old_technologies\":false,\"has_other\":true,\"has_solar_csp\":false,\"heat_recovery\":0.2,\"id\":1,\"import_electricity_primary_demand_factor\":1.82,\"insulation_level_existing_houses\":1.0,\"insulation_level_new_houses\":2.5,\"insulation_level_buildings\":1.0,\"km_per_car\":17452.1,\"km_per_truck\":319729.0,\"land_available_for_solar\":19175.4889,\"market_share_daylight_control\":0.205,\"market_share_motion_detection\":0.265,\"number_households\":7349500.0,\"number_inhabitants\":16530388.0,\"offshore_suitable_for_wind\":16000.0,\"onshore_suitable_for_wind\":11379.0,\"parent_id\":1,\"percentage_of_new_houses\":14.0,\"recirculation\":0.1,\"roof_surface_available_pv\":266.667,\"roof_surface_available_pv_buildings\":133.33,\"updated_at\":\"2011-10-03T07:20:12Z\",\"use_network_calculations\":true,\"ventilation_rate\":2.5,\"area\":\"nl\",\"number_of_existing_households\":6228292.0}"
     http_version: 
-  recorded_at: Wed, 26 Sep 2012 09:38:55 GMT
+  recorded_at: Thu, 04 Oct 2012 11:54:40 GMT
 recorded_with: VCR 2.2.4

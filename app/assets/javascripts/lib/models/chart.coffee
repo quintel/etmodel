@@ -96,7 +96,7 @@ class @Chart extends Backbone.Model
     items = _(@non_target_series()).map (s) =>
       type = @get 'type'
       label = s.get 'label'
-      if type == 'mekko' || type = 'horizontal_stacked_bar'
+      if (type == 'mekko') || (type == 'horizontal_stacked_bar')
         label = "#{label} - #{s.get('group')}"
       unit = @get 'unit'
       out =

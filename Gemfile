@@ -30,7 +30,7 @@ gem 'sunspot_rails'
 # jquery-etmodel-rails contains the jquery.etmodel.js plugin
 # When working on the plugin, use :path => '/path/to/etplugin'
 # gem "jquery-etmodel-rails", :path => "~/Sites/etplugin"
-gem "jquery-etmodel-rails", '~> 0.2.4', :git  => "git://github.com/dennisschoenmakers/etplugin"
+gem "jquery-etmodel-rails", '~> 0.3', :git  => "git://github.com/dennisschoenmakers/etplugin"
 
 group :development do
   gem 'tomdoc'

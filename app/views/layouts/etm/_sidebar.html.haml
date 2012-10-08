@@ -21,5 +21,6 @@
             = link_to tab_path(:tab => tab.key, :sidebar => child.key),
               :'data-nav' => true do
               %p
+                %span.bullet.icon-chevron-right
                 %span.title
                   = raw t("sidebar_items.#{child.key}.short_name")

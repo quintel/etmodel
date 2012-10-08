@@ -2,24 +2,24 @@
 #
 # Table name: users
 #
-#  id                 :integer(4)      not null, primary key
-#  name               :string(255)     not null
-#  email              :string(255)     not null
+#  id                 :integer          not null, primary key
+#  name               :string(255)      not null
+#  email              :string(255)      not null
 #  company_school     :string(255)
-#  allow_news         :boolean(1)      default(TRUE)
-#  heared_first_at    :string(255)     default("..")
+#  allow_news         :boolean          default(TRUE)
+#  heared_first_at    :string(255)      default("..")
 #  crypted_password   :string(255)
 #  password_salt      :string(255)
-#  persistence_token  :string(255)     not null
-#  perishable_token   :string(255)     not null
-#  login_count        :integer(4)      default(0), not null
-#  failed_login_count :integer(4)      default(0), not null
+#  persistence_token  :string(255)      not null
+#  perishable_token   :string(255)      not null
+#  login_count        :integer          default(0), not null
+#  failed_login_count :integer          default(0), not null
 #  last_request_at    :datetime
 #  current_login_at   :datetime
 #  last_login_at      :datetime
 #  current_login_ip   :string(255)
 #  last_login_ip      :string(255)
-#  role_id            :integer(4)
+#  role_id            :integer
 #  created_at         :datetime
 #  updated_at         :datetime
 #  phone_number       :string(255)

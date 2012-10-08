@@ -2,7 +2,7 @@
 #
 # Table name: targets
 #
-#  id             :integer(4)      not null, primary key
+#  id             :integer          not null, primary key
 #  code           :string(255)
 #  query          :string(255)
 #  unit           :string(255)

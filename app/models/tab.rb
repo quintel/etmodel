@@ -2,11 +2,11 @@
 #
 # Table name: tabs
 #
-#  id          :integer(4)      not null, primary key
+#  id          :integer          not null, primary key
 #  key         :string(255)
 #  nl_vimeo_id :string(255)
 #  en_vimeo_id :string(255)
-#  position    :integer(4)
+#  position    :integer
 #
 
 class Tab < ActiveRecord::Base
@@ -21,6 +21,6 @@ class Tab < ActiveRecord::Base
   attr_accessible :key, :nl_vimeo_id, :en_vimeo_id, :position
 
   def allowed_sidebar_items
-    sidebar_items.includes(:area_dependency).ordered.reject(&:area_dependent)
+    sidebar_items.roots.includes(:area_dependency).ordered.reject(&:area_dependent)
   end
 end

@@ -2,18 +2,18 @@
 #
 # Table name: output_element_series
 #
-#  id                   :integer(4)      not null, primary key
-#  output_element_id    :integer(4)
+#  id                   :integer          not null, primary key
+#  output_element_id    :integer
 #  label                :string(255)
 #  color                :string(255)
-#  order_by             :integer(4)
+#  order_by             :integer
 #  group                :string(255)
 #  created_at           :datetime
 #  updated_at           :datetime
-#  show_at_first        :boolean(1)
-#  is_target_line       :boolean(1)
+#  show_at_first        :boolean
+#  is_target_line       :boolean
 #  target_line_position :string(255)
-#  gquery               :string(255)     not null
+#  gquery               :string(255)      not null
 #
 
 

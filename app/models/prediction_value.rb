@@ -2,10 +2,10 @@
 #
 # Table name: prediction_values
 #
-#  id            :integer(4)      not null, primary key
-#  prediction_id :integer(4)
+#  id            :integer          not null, primary key
+#  prediction_id :integer
 #  value         :float
-#  year          :integer(4)
+#  year          :integer
 #  created_at    :datetime
 #  updated_at    :datetime
 #

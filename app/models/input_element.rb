@@ -2,20 +2,20 @@
 #
 # Table name: input_elements
 #
-#  id                :integer(4)      not null, primary key
+#  id                :integer          not null, primary key
 #  key               :string(255)
 #  share_group       :string(255)
 #  step_value        :float
 #  created_at        :datetime
 #  updated_at        :datetime
 #  unit              :string(255)
-#  fixed             :boolean(1)
+#  fixed             :boolean
 #  comments          :text
 #  interface_group   :string(255)
 #  command_type      :string(255)
 #  related_converter :string(255)
-#  slide_id          :integer(4)
-#  position          :integer(4)
+#  slide_id          :integer
+#  position          :integer
 #
 
 class InputElement < ActiveRecord::Base

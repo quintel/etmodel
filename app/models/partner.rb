@@ -2,18 +2,18 @@
 #
 # Table name: partners
 #
-#  id               :integer(4)      not null, primary key
+#  id               :integer          not null, primary key
 #  name             :string(255)
 #  url              :string(255)
 #  country          :string(255)
-#  time             :integer(4)
-#  repeat_any_other :boolean(1)      default(FALSE)
+#  time             :integer
+#  repeat_any_other :boolean          default(FALSE)
 #  subheader        :string(255)
 #  created_at       :datetime
 #  updated_at       :datetime
-#  place            :string(255)     default("right")
+#  place            :string(255)      default("right")
 #  long_name        :string(255)
-#  partner_type     :string(255)     default("general")
+#  partner_type     :string(255)      default("general")
 #
 
 class Partner < ActiveRecord::Base

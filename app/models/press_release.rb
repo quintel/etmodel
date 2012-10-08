@@ -2,7 +2,7 @@
 #
 # Table name: press_releases
 #
-#  id           :integer(4)      not null, primary key
+#  id           :integer          not null, primary key
 #  medium       :string(255)
 #  release_type :string(255)
 #  release_date :datetime

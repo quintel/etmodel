@@ -2,7 +2,7 @@
 #
 # Table name: texts
 #
-#  id               :integer(4)      not null, primary key
+#  id               :integer          not null, primary key
 #  key              :string(255)
 #  content_en       :text
 #  content_nl       :text
@@ -12,7 +12,7 @@
 #  title_nl         :string(255)
 #  short_content_en :text
 #  short_content_nl :text
-#  searchable       :boolean(1)      default(FALSE)
+#  searchable       :boolean          default(FALSE)
 #
 
 class Text < ActiveRecord::Base

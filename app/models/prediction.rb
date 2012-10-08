@@ -2,10 +2,10 @@
 #
 # Table name: predictions
 #
-#  id               :integer(4)      not null, primary key
-#  input_element_id :integer(4)
-#  user_id          :integer(4)
-#  expert           :boolean(1)
+#  id               :integer          not null, primary key
+#  input_element_id :integer
+#  user_id          :integer
+#  expert           :boolean
 #  created_at       :datetime
 #  updated_at       :datetime
 #  description      :text

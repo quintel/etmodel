@@ -2,20 +2,20 @@
 #
 # Table name: output_elements
 #
-#  id                     :integer(4)      not null, primary key
-#  output_element_type_id :integer(4)
+#  id                     :integer          not null, primary key
+#  output_element_type_id :integer
 #  created_at             :datetime
 #  updated_at             :datetime
-#  under_construction     :boolean(1)      default(FALSE)
+#  under_construction     :boolean          default(FALSE)
 #  unit                   :string(255)
-#  percentage             :boolean(1)
+#  percentage             :boolean
 #  group                  :string(255)
-#  show_point_label       :boolean(1)
-#  growth_chart           :boolean(1)
+#  show_point_label       :boolean
+#  growth_chart           :boolean
 #  key                    :string(255)
 #  max_axis_value         :float
 #  min_axis_value         :float
-#  hidden                 :boolean(1)      default(FALSE)
+#  hidden                 :boolean          default(FALSE)
 #
 
 class OutputElement < ActiveRecord::Base

@@ -2,17 +2,17 @@
 #
 # Table name: prediction_measures
 #
-#  id            :integer(4)      not null, primary key
-#  prediction_id :integer(4)
+#  id            :integer          not null, primary key
+#  prediction_id :integer
 #  name          :string(255)
-#  impact        :integer(4)
-#  cost          :integer(4)
-#  year_start    :integer(4)
+#  impact        :integer
+#  cost          :integer
+#  year_start    :integer
 #  actor         :string(255)
 #  description   :text
 #  created_at    :datetime
 #  updated_at    :datetime
-#  year_end      :integer(4)
+#  year_end      :integer
 #
 
 class PredictionMeasure < ActiveRecord::Base

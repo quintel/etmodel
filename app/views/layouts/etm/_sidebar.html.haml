@@ -15,3 +15,11 @@
               - if item.percentage_bar_query.present?
                 %span.bar{:alt => t('sidebar_items.alt'), :style => "width: 0px"}
                 %span.value
+        - item.children.includes(:area_dependency).reject(&:area_dependent).each do |child|
+          %li.child{:id => child.key,
+            :class => (@interface.current_sidebar_item == child) ? 'active' : nil}
+            = link_to tab_path(:tab => tab.key, :sidebar => child.key),
+              :'data-nav' => true do
+              %p
+                %span.title
+                  = raw t("sidebar_items.#{child.key}.short_name")

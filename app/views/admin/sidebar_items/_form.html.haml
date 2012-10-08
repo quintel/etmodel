@@ -1,6 +1,7 @@
 %div
   = simple_form_for [:admin, @sidebar_item] do |f|
     = f.association :tab, :collection => Tab.all.map{|t| [t.key, t.id]}
+    = f.association :parent, :collection => SidebarItem.all.map{|t| [t.key, t.id]}
     = f.input :key, :hint => 'Be sure you have the corresponding translation in (en|nl)_sidebar_items.yml'
     = f.input :section, :hint=>"This is used by the tutorial button to determin which 'section' video should be showed"
     = f.input :percentage_bar_query, :hint=>"Underneath the name there is sometimes shown a small bar which displays the shares of energy use of a certain section"

@@ -2,9 +2,9 @@
 #
 # Table name: saved_scenarios
 #
-#  id          :integer(4)      not null, primary key
-#  user_id     :integer(4)      not null
-#  scenario_id :integer(4)      not null
+#  id          :integer          not null, primary key
+#  user_id     :integer          not null
+#  scenario_id :integer          not null
 #  settings    :text
 #  created_at  :datetime
 #  updated_at  :datetime

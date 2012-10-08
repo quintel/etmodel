@@ -2,10 +2,10 @@
 #
 # Table name: descriptions
 #
-#  id               :integer(4)      not null, primary key
+#  id               :integer          not null, primary key
 #  content_en       :text
 #  short_content_en :text
-#  describable_id   :integer(4)
+#  describable_id   :integer
 #  describable_type :string(255)
 #  created_at       :datetime
 #  updated_at       :datetime

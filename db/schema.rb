@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120919100037) do
+ActiveRecord::Schema.define(:version => 20121008100433) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -250,9 +250,11 @@ ActiveRecord::Schema.define(:version => 20120919100037) do
     t.string  "en_vimeo_id"
     t.integer "tab_id"
     t.integer "position"
+    t.integer "parent_id"
   end
 
   add_index "sidebar_items", ["key"], :name => "index_sidebar_items_on_key"
+  add_index "sidebar_items", ["parent_id"], :name => "index_sidebar_items_on_parent_id"
   add_index "sidebar_items", ["position"], :name => "index_sidebar_items_on_position"
   add_index "sidebar_items", ["tab_id"], :name => "index_sidebar_items_on_tab_id"
 

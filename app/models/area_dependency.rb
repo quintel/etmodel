@@ -2,10 +2,10 @@
 #
 # Table name: area_dependencies
 #
-#  id              :integer(4)      not null, primary key
+#  id              :integer          not null, primary key
 #  dependent_on    :string(255)
 #  description     :text
-#  dependable_id   :integer(4)
+#  dependable_id   :integer
 #  dependable_type :string(255)
 #
 

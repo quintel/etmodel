@@ -2,11 +2,11 @@
 #
 # Table name: general_user_notifications
 #
-#  id              :integer(4)      not null, primary key
+#  id              :integer          not null, primary key
 #  key             :string(255)
 #  notification_nl :string(255)
 #  notification_en :string(255)
-#  active          :boolean(1)
+#  active          :boolean
 #  created_at      :datetime
 #  updated_at      :datetime
 #

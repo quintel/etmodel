@@ -2,7 +2,7 @@
 #
 # Table name: slides
 #
-#  id                    :integer(4)      not null, primary key
+#  id                    :integer          not null, primary key
 #  image                 :string(255)
 #  created_at            :datetime
 #  updated_at            :datetime
@@ -10,10 +10,10 @@
 #  group_sub_header      :string(255)
 #  subheader_image       :string(255)
 #  key                   :string(255)
-#  position              :integer(4)
-#  sidebar_item_id       :integer(4)
-#  output_element_id     :integer(4)
-#  alt_output_element_id :integer(4)
+#  position              :integer
+#  sidebar_item_id       :integer
+#  output_element_id     :integer
+#  alt_output_element_id :integer
 #
 
 class Slide < ActiveRecord::Base

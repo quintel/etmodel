@@ -24,7 +24,7 @@ class Topology
       .attr('transform', (d) => "translate(#{@x d.x},#{@y d.y})")
 
     @nodes.append('svg:rect')
-      .attr('width', @x 100)
+      .attr('width', @x 70)
       .attr('height', @y 50)
       .attr('fill', (d, i) => @colors i)
       .attr('data-tooltip', (d) -> d.key)
@@ -37,6 +37,27 @@ class Topology
       style:
         classes: "ui-tooltip-tipsy"
 
+  zoom_in: => @zoom(0.5)
+
+  zoom_out: => @zoom(2)
+
+  zoom: (x) =>
+    old = @x.domain()
+    @x.domain([old[0], old[1] * x])
+    old = @y.domain()
+    @y.domain([old[0], old[1] * x])
+    @redraw()
+
+
+  redraw: =>
+    @svg.selectAll('g.node').transition()
+      .attr('transform', (d) => "translate(#{@x d.x},#{@y d.y})")
+
+    @svg.selectAll('rect')
+      .transition()
+      .attr('width', @x 70)
+      .attr('height', @y 50)
+
 
 $ ->
-  new Topology()
+  window.chart = new Topology()

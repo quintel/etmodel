@@ -11,7 +11,7 @@ class Topology
   render: (data) =>
     @items = []
     @items_map = {}
-    for d in data
+    for d in data.converters
       i = new Node(d)
       @items.push i
       @items_map[i.key] = i

@@ -1,23 +1,35 @@
+class Node
+  constructor: (attrs) ->
+    @x = attrs.x
+    @y = attrs.y
+    @key = attrs.key
+
 class Topology
   constructor: ->
-    console.log 'hi'
     d3.json 'http://etengine.dev/api/v3/converters/topology', @render
 
   render: (data) =>
+    @items = []
+    @items_map = {}
+    for d in data
+      i = new Node(d)
+      @items.push i
+      @items_map[i.key] = i
+
     @svg = d3.selectAll('#topology')
       .append('svg:svg')
       .attr('height', 700)
       .attr('width', 1000)
 
-    max_x = d3.max(data, (d) -> d.x) + 50
-    max_y = d3.max(data, (d) -> d.y) + 50
+    max_x = d3.max(@items, (d) -> d.x) + 50
+    max_y = d3.max(@items, (d) -> d.y) + 50
     @x = d3.scale.linear().domain([0, max_x]).range([0, 1000])
     @y = d3.scale.linear().domain([0, max_y]).range([0, 700])
 
     @colors = d3.scale.category20c()
 
     @nodes = @svg.selectAll('g.node')
-      .data(data, (d) -> d.key)
+      .data(@items, (d) -> d.key)
       .enter()
       .append('g')
       .attr('class', 'node')

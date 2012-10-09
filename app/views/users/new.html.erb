@@ -17,6 +17,10 @@
     <%= f.text_field :company_school %>
   </p>
   <p>
+    <%= f.label :phone_number, t("user.phone_number").html_safe %><br />
+    <%= f.text_field :phone_number %>
+  </p>
+  <p>
     <%= f.label :heared_first_at, t("user.heared_first_at") %><br />
     <%= f.select :heared_first_at, ["..","tv","internet","radio"], :checked => 'none' %>
   </p>

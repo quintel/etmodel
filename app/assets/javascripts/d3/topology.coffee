@@ -4,6 +4,12 @@ class Node
     @y = attrs.y
     @key = attrs.key
 
+  # returns true if the node hasn't good coordinates
+  bad_node: =>
+    return true unless @x? && @y?
+    return true if @x == 0 && @y == 0
+    false
+
 class Link
   constructor: (left, right) ->
     @left = left
@@ -30,6 +36,7 @@ class Topology
     @nodes_map = {}
     for d in data.converters
       i = new Node(d)
+      continue if i.bad_node()
       @nodes.push i
       @nodes_map[i.key] = i
 
@@ -37,7 +44,7 @@ class Topology
     for l in data.links
       left = @nodes_map[l.left]
       right = @nodes_map[l.right]
-      @links.push new Link(left, right)
+      @links.push new Link(left, right) if left && right
 
     @svg = d3.select('#topology')
       .append('svg')
@@ -93,7 +100,6 @@ class Topology
         classes: "ui-tooltip-tipsy"
 
   rescale: =>
-    console.log "Rescaling"
     trans = d3.event.translate
     scale = d3.event.scale
     @svg.attr("transform", "translate(#{trans}) scale(#{scale})")

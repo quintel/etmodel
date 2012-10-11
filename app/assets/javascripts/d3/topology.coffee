@@ -5,6 +5,9 @@ class Node
     @key = attrs.key
     @fill_color = attrs.fill_color
     @stroke_color = attrs.stroke_color
+    @sector = attrs.sector
+    @use = attrs.use
+    @group = attrs.group
 
   # returns true if the node hasn't good coordinates
   bad_node: =>
@@ -97,7 +100,12 @@ class Topology
     $('g.node').qtip
         content:
           title: -> $(this).attr('data-key')
-          text: -> $(this).attr('data-key')
+          text: (item) =>
+            key = $(item.target).closest('g').attr('data-key')
+            i = @nodes_map[key]
+            "Sector: #{i.sector}<br/>" +
+            "Use: #{i.use}<br/>" +
+            "Group: #{i.group}"
         position:
           my: 'bottom center'
           at: 'top center'

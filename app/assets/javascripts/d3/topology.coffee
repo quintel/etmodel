@@ -17,6 +17,7 @@ class Link
     @left = opts.left
     @right = opts.right
     @color = opts.color
+    @type = opts.type
 
   path_points: =>
     left_x  = @left.x + 100
@@ -31,6 +32,14 @@ class Link
       {x: right_x - distance / 4, y: right_y}
       {x: right_x, y: right_y}
     ]
+
+  # returns the parameter for dasharray property
+  style: =>
+    switch @type
+      when 'flexible' then '1, 1'
+      when 'share' then '3, 1'
+      when 'constant' then ''
+      when 'dependent' then '2, 1, 2'
 
 class Topology
   constructor: ->
@@ -54,7 +63,7 @@ class Topology
       left = @nodes_map[l.left]
       right = @nodes_map[l.right]
       if left && right
-        @links.push new Link({left: left, right: right, color: l.color})
+        @links.push new Link({left: left, right: right, color: l.color, type: l.type})
 
     @svg = d3.select('#topology')
       .append('svg')
@@ -112,6 +121,7 @@ class Topology
       .append('path')
       .attr('class', 'link')
       .style('stroke', (d) -> d.color)
+      .style('stroke-dasharray', (d) -> d.style())
       .attr('d', (link) => @make_line link.path_points())
 
     @rendered = true

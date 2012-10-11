@@ -1,17 +1,15 @@
 @import jquery.qtip
 
-body#topology, body#sankey
-  position: relative
-  #container
-    width: 100%
-    height: 100%
-  #actions
-    height: 30px
-    background-color: #eeeeff
-    position: fixed
-    bottom: 0
-    left: 0
-body#sankey
-  text.label
-    font-family: Helvetica, Arial
-    font-weight: bold
+#topology
+  border: 1px solid black
+
+  g.node
+    rect
+      stroke-width: 0.1
+    text
+      font-family: Helvetica, Arial
+      font-size: 0.7
+
+  path.link
+    stroke-width: 0.1
+    fill: none

@@ -3,6 +3,8 @@ class Node
     @x = attrs.x
     @y = attrs.y
     @key = attrs.key
+    @fill_color = attrs.fill_color
+    @stroke_color = attrs.stroke_color
 
   # returns true if the node hasn't good coordinates
   bad_node: =>
@@ -65,8 +67,6 @@ class Topology
     @x = d3.scale.linear().domain([0, max_x]).range([0, @width])
     @y = d3.scale.linear().domain([0, max_y]).range([0, @height])
 
-    @colors = d3.scale.category20c()
-
     @nodes = @svg.selectAll('g.node')
       .data(@nodes, (d) -> d.key)
       .enter()
@@ -77,7 +77,9 @@ class Topology
     @nodes.append('svg:rect')
       .attr('width', @x 70)
       .attr('height', @y 50)
-      .attr('fill', (d, i) => @colors i)
+      .attr('fill', (d) -> d.fill_color)
+      .attr('stroke', (d) -> d.stroke_color)
+      .style('stroke-width', 0.1)
       .attr('data-tooltip', (d) -> d.key)
 
     @make_line = d3.svg.line()

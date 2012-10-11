@@ -16,17 +16,23 @@ class Link
     @right = right
 
   path_points: =>
+    left_x  = @left.x + 70
+    right_x = @right.x
+    left_y  = @left.y + 25
+    right_y = @right.y + 25
+    distance = right_x - left_x
+
     [
-      {x: @left.x + 70,  y: @left.y + 25},
-      {x: @left.x + 270,  y: @left.y + 25},
-      {x: @right.x - 200, y: @right.y + 25}
-      {x: @right.x, y: @right.y + 25}
+      {x: left_x,  y: left_y},
+      {x: left_x + distance / 4,  y: left_y},
+      {x: right_x - distance / 4, y: right_y}
+      {x: right_x, y: right_y}
     ]
 
 class Topology
   constructor: ->
-    @width = 800
-    @height = 500
+    @width = 1000
+    @height = 600
     d3.json 'http://etengine.dev/api/v3/converters/topology', @render
 
   render: (data) =>

@@ -75,6 +75,7 @@ class Topology
       .append('g')
       .attr('class', 'node')
       .attr('transform', (d) => "translate(#{@x d.x},#{@y d.y})")
+      .attr('data-key', (d) -> d.key)
     @nodes.append('svg:rect')
       .attr('width', @x 100)
       .attr('height', @y 50)
@@ -83,6 +84,22 @@ class Topology
     @nodes.append('svg:text')
       .text((d) -> d.key)
       .attr('dy', 1.5)
+
+    $('g.node').qtip
+        content:
+          title: -> $(this).attr('data-key')
+          text: -> $(this).attr('data-key')
+        position:
+          my: 'bottom center'
+          at: 'top center'
+        hide:
+          fixed: true
+          delay: 300
+        style:
+          classes: "ui-tooltip-rounded"
+          tip:
+            corner: false
+
 
     @make_line = d3.svg.line()
         .interpolate("basis")

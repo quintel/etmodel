@@ -13,9 +13,10 @@ class Node
     false
 
 class Link
-  constructor: (left, right) ->
-    @left = left
-    @right = right
+  constructor: (opts) ->
+    @left = opts.left
+    @right = opts.right
+    @color = opts.color
 
   path_points: =>
     left_x  = @left.x + 100
@@ -52,7 +53,8 @@ class Topology
     for l in data.links
       left = @nodes_map[l.left]
       right = @nodes_map[l.right]
-      @links.push new Link(left, right) if left && right
+      if left && right
+        @links.push new Link({left: left, right: right, color: l.color})
 
     @svg = d3.select('#topology')
       .append('svg')
@@ -92,7 +94,7 @@ class Topology
       .enter()
       .append('path')
       .attr('class', 'link')
-      .style('stroke', '#000000')
+      .style('stroke', (d) -> d.color)
       .attr('d', (link) => @make_line link.path_points())
 
     @rendered = true

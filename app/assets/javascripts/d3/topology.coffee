@@ -18,7 +18,7 @@ class Link
     @right = right
 
   path_points: =>
-    left_x  = @left.x + 70
+    left_x  = @left.x + 140
     right_x = @right.x
     left_y  = @left.y + 25
     right_y = @right.y + 25
@@ -73,14 +73,16 @@ class Topology
       .append('g')
       .attr('class', 'node')
       .attr('transform', (d) => "translate(#{@x d.x},#{@y d.y})")
-
     @nodes.append('svg:rect')
-      .attr('width', @x 70)
+      .attr('width', @x 140)
       .attr('height', @y 50)
       .attr('fill', (d) -> d.fill_color)
       .attr('stroke', (d) -> d.stroke_color)
       .style('stroke-width', 0.1)
-      .attr('data-tooltip', (d) -> d.key)
+    @nodes.append('svg:text')
+      .text((d) -> d.key)
+      .attr('font-size', 0.7)
+      .attr('dy', 1.5)
 
     @make_line = d3.svg.line()
         .interpolate("basis")
@@ -98,14 +100,6 @@ class Topology
       .attr('d', (link) => @make_line link.path_points())
 
     @rendered = true
-
-    $('rect').qtip
-      content: -> $(this).attr('data-tooltip')
-      position:
-        my: 'bottom left'
-        at: 'top center'
-      style:
-        classes: "ui-tooltip-tipsy"
 
   rescale: =>
     trans = d3.event.translate

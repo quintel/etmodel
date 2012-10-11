@@ -46,8 +46,9 @@ class Link
 
 class Topology
   constructor: ->
-    @width = 1000
-    @height = 600
+    @el = $("#topology")
+    @width = @el.width()
+    @height = @el.height()
     d3.json 'http://etengine.dev/api/v3/converters/topology', @render
 
   render: (data) =>

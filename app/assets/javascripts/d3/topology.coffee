@@ -18,7 +18,7 @@ class Link
     @right = right
 
   path_points: =>
-    left_x  = @left.x + 140
+    left_x  = @left.x + 100
     right_x = @right.x
     left_y  = @left.y + 25
     right_y = @right.y + 25
@@ -74,14 +74,12 @@ class Topology
       .attr('class', 'node')
       .attr('transform', (d) => "translate(#{@x d.x},#{@y d.y})")
     @nodes.append('svg:rect')
-      .attr('width', @x 140)
+      .attr('width', @x 100)
       .attr('height', @y 50)
       .attr('fill', (d) -> d.fill_color)
       .attr('stroke', (d) -> d.stroke_color)
-      .style('stroke-width', 0.1)
     @nodes.append('svg:text')
       .text((d) -> d.key)
-      .attr('font-size', 0.7)
       .attr('dy', 1.5)
 
     @make_line = d3.svg.line()
@@ -94,9 +92,7 @@ class Topology
       .enter()
       .append('path')
       .attr('class', 'link')
-      .style('stroke-width', 0.2)
       .style('stroke', '#000000')
-      .style("fill", "none")
       .attr('d', (link) => @make_line link.path_points())
 
     @rendered = true

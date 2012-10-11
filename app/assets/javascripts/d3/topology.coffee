@@ -36,14 +36,6 @@ class Link
       {x: right_x, y: right_y}
     ]
 
-  # returns the parameter for dasharray property
-  style: =>
-    switch @type
-      when 'flexible' then '1, 1'
-      when 'share' then '3, 1'
-      when 'constant' then ''
-      when 'dependent' then '2, 1, 2'
-
 class Topology
   constructor: ->
     @el = $("#topology")
@@ -130,7 +122,6 @@ class Topology
       .append('path')
       .attr('class', 'link')
       .style('stroke', (d) -> d.color)
-      .style('stroke-dasharray', (d) -> d.style())
       .attr('d', (link) => @make_line link.path_points())
 
     @rendered = true

@@ -1,4 +1,8 @@
 - content_for :head do
   = javascript_include_tag 'topology'
   = stylesheet_link_tag 'topology'
+
 #topology
+
+- content_for :footer do
+  = render 'converters/converter_details'

@@ -90,7 +90,8 @@ class Topology
       .text((d) -> d.key)
       .attr('dy', 1.5)
 
-    @node_tooltip_template = $("#converter-tooltip-template").html()
+    @converter_tooltip_template = _.template $("#converter-tooltip-template").html()
+    @converter_details_template = _.template $("#converter-details-template").html()
 
     $('g.node').qtip
         content:
@@ -98,11 +99,11 @@ class Topology
           text: (item) =>
             key = $(item.target).closest('g').attr('data-key')
             i = @nodes_map[key]
-            _.template @node_tooltip_template, {
+            @converter_tooltip_template
+              key: key
               sector: i.sector
               use: i.use
               group: i.group
-            }
         position:
           my: 'bottom center'
           at: 'top center'
@@ -113,6 +114,23 @@ class Topology
           classes: "ui-tooltip-rounded"
           tip:
             corner: false
+    # show extra converter info
+    $(document).on "click", ".converter_tooltip a", (e) =>
+      e.preventDefault()
+      url = $(e.target).attr('href')
+      console.log "Loading #{url}"
+      $.ajax
+        url: url
+        dataType: 'json'
+        success: (data) =>
+          html = if _.keys(data.data).length > 0
+            @converter_details_template
+              data: data.data
+              uses_coal_and_wood_pellets: data.uses_coal_and_wood_pellets
+              title: ''
+          else
+            'No extra info available'
+          $(e.target).parent().html(html)
 
 
     @make_line = d3.svg.line()

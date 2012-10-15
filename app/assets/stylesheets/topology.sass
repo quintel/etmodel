@@ -1,15 +1,36 @@
-body#topology, body#sankey
-  position: relative
-  #container
-    width: 100%
-    height: 100%
-  #actions
-    height: 30px
-    background-color: #eeeeff
-    position: fixed
-    bottom: 0
-    left: 0
-body#sankey
-  text.label
+@import jquery.qtip
+
+#topology
+  border: 1px solid black
+  width: 95%
+  height: 95%
+  margin: 5px auto
+
+  g.node
+    rect
+      stroke-width: 0.1
+    text
+      font-family: Helvetica, Arial
+      font-size: 0.7
+
+  path.link
+    stroke-width: 0.1
+    fill: none
+    opacity: 0.8
+
+.converter_tooltip
+  a, td, th
     font-family: Helvetica, Arial
-    font-weight: bold
+    font-size: 11px
+  table
+    border-collapse: collapse
+    th
+      text-align: right
+    &.converter-detail
+      th
+        text-align: center
+      td, th
+        border: 1px solid #999
+      th
+        background-color: #333
+        color: #fff

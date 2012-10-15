@@ -50,7 +50,7 @@ module Etm
 
     config.assets.enabled = true
     config.assets.precompile += ['etm.js', 'refreshed.js', 'refreshed.css', 'admin.css', 'ie.css']
-    config.assets.precompile += ['backcasting.js']
+    config.assets.precompile += ['backcasting.js', 'topology.js', 'topology.css']
     config.assets.css_compressor = :yui
     config.assets.js_compressor = :uglifier
     config.assets.compress = true

@@ -112,13 +112,13 @@ class Topology
           delay: 300
         style:
           classes: "ui-tooltip-rounded"
+          width: 300
           tip:
             corner: false
     # show extra converter info
     $(document).on "click", ".converter_tooltip a", (e) =>
       e.preventDefault()
       url = $(e.target).attr('href')
-      console.log "Loading #{url}"
       $.ajax
         url: url
         dataType: 'json'

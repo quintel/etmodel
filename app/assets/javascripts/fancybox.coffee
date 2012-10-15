@@ -29,5 +29,18 @@ $ ->
       window.open($(this).attr('href'), '_blank')
     return null
 
+  $("a.overview").fancybox
+    content: '
+      <div class="chart_holder">
+        <div id="overview_chart" class="chart_canvas"></div>
+      </div>
+    '
+    width: 500
+    height: 340
+    autoSize: false
+    afterShow: ->
+      charts.load(123, 'overview_chart', {force: true})
+      true
+
 window.close_fancybox = ->
   $.fancybox.close()

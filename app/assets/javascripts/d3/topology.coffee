@@ -66,7 +66,7 @@ class Topology
       .attr('width', @width)
       .attr('height', @height)
       .attr("pointer-events", "all")
-      .call(d3.behavior.zoom().on("zoom", @rescale))
+      .call(d3.behavior.zoom().scaleExtent([0.9,15]).on("zoom", @rescale))
       .append('g')
 
     max_x = d3.max(@nodes, (d) -> d.x) + 50

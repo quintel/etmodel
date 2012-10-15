@@ -41,7 +41,7 @@ class Topology
     @el = $("#topology")
     @width = @el.width()
     @height = @el.height()
-    d3.json 'http://etengine.dev/api/v3/converters/topology', @render
+    d3.json globals.api_url + '/api/v3/converters/topology', @render
 
   render: (data) =>
     return if @rendered

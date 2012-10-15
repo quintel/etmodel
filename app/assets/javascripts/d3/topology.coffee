@@ -90,15 +90,19 @@ class Topology
       .text((d) -> d.key)
       .attr('dy', 1.5)
 
+    @node_tooltip_template = $("#converter-tooltip-template").html()
+
     $('g.node').qtip
         content:
           title: -> $(this).attr('data-key')
           text: (item) =>
             key = $(item.target).closest('g').attr('data-key')
             i = @nodes_map[key]
-            "Sector: #{i.sector}<br/>" +
-            "Use: #{i.use}<br/>" +
-            "Group: #{i.group}"
+            _.template @node_tooltip_template, {
+              sector: i.sector
+              use: i.use
+              group: i.group
+            }
         position:
           my: 'bottom center'
           at: 'top center'

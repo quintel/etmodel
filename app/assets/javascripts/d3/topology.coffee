@@ -109,10 +109,10 @@ class Topology
           at: 'top center'
         hide:
           fixed: true
-          delay: 300
+          delay: 400
         style:
-          classes: "ui-tooltip-rounded"
-          width: 300
+          classes: "ui-tooltip-blue"
+          width: 360
           tip:
             corner: false
     # show extra converter info

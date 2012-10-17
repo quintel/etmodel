@@ -8,6 +8,7 @@ class Node
     @sector = attrs.sector
     @use = attrs.use
     @group = attrs.group
+    @summary_available = attrs.summary_available
 
   # returns true if the node hasn't good coordinates
   bad_node: =>
@@ -104,6 +105,7 @@ class Topology
               sector: i.sector
               use: i.use
               group: i.group
+              summary_available: i.summary_available
         position:
           my: 'bottom center'
           at: 'top center'

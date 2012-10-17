@@ -14,8 +14,10 @@
         <td><%%= group %></td>
       </tr>
     </table>
-    <div class="info">
-      <a href="http://etengine.dev/api/v3/converters/<%%= key %>">More info</a>
-    </div>
+    <%% if (summary_available) { %>
+      <div class="info">
+        <a href="http://etengine.dev/api/v3/converters/<%%= key %>">More info</a>
+      </div>
+    <%% } %>
   <div>
 </script>

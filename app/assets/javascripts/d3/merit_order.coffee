@@ -127,6 +127,8 @@ D3.merit_order =
           target: 'mouse'
           my: 'bottom right'
           at: 'top center'
+        style:
+          classes: "ui-tooltip-bootstrap"
 
       # add legend
       legends = @svg.selectAll("svg.legend").

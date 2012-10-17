@@ -57,7 +57,7 @@ class @BlockChartView extends BaseChartView
         my: 'bottom center'
         at: 'top center'
       style:
-        classes: "ui-tooltip-rounded"
+        classes: "ui-tooltip-bootstrap"
         tip:
           corner: false
 

@@ -88,6 +88,7 @@ D3.bezier =
         .attr('class', 'serie')
         .attr('d', (d) => @area d.values)
         .style('fill', (d) => d.values[0].color)
+        .attr('data-title', (d) -> d.values[0].label)
 
       # draw a nice axis
       @y_axis = d3.svg.axis()
@@ -100,6 +101,22 @@ D3.bezier =
         .attr("class", "y_axis inner_grid")
         .attr("transform", "translate(#{@width - 15}, 0)")
         .call(@y_axis)
+
+      # series tooltips
+      $('path.serie').qtip
+        content:
+          title: -> $(this).attr('data-title')
+          text: -> $(this).attr('data-tooltip')
+        show:
+          event: 'mouseover' # silly IE
+        hide:
+          event: 'mouseout'  # silly IE
+        position:
+          target: 'mouse'
+          my: 'bottom right'
+          at: 'top center'
+        style:
+          classes: "ui-tooltip-bootstrap"
 
     refresh: =>
       # calculate tallest column
@@ -127,6 +144,10 @@ D3.bezier =
         .data(stacked_data, (s) -> s.key)
         .transition()
         .attr('d', (d) => @area d.values)
+        .attr('data-tooltip', (d) => "
+          #{@start_year}: #{Metric.autoscale_value d.values[0].y, @model.get 'unit'}</br>
+          #{@end_year}: #{Metric.autoscale_value d.values[2].y, @model.get 'unit'}
+        ")
 
     # We need to pass the chart series through the stacking function and the SVG
     # area function. To do this let's format the data as an array. An
@@ -162,25 +183,28 @@ D3.bezier =
         left_stack += s.safe_present_value()
         right_stack += s.safe_future_value()
 
+        gquery = s.get 'gquery_key'
+
         mid_year = (@start_year + @end_year) / 2
 
         out = [
           {
             x: @start_year
             y: s.safe_present_value()
-            id: "#{s.get 'gquery_key'}"
+            id: gquery
             color: s.get('color')
+            label: s.get('label')
           },
           {
             x: mid_year
             y: mid_point
-            id: "#{s.get 'gquery_key'}"
+            id: gquery
             color: s.get('color')
           },
           {
             x: @end_year
             y: s.safe_future_value()
-            id: "#{s.get 'gquery_key'}"
+            id: gquery
             color: s.get('color')
           }
         ]

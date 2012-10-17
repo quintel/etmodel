@@ -135,6 +135,8 @@ D3.mekko =
         position:
           my: 'bottom right'
           at: 'top center'
+        style:
+          classes: "ui-tooltip-bootstrap"
 
     refresh: =>
       total_value = @node_list.grand_total()

@@ -70,6 +70,8 @@ D3.treemap =
           position:
             my: 'bottom center'
             at: 'top center'
+          style:
+            classes: "ui-tooltip-bootstrap"
 
     refresh: =>
       @svg.selectAll("div").

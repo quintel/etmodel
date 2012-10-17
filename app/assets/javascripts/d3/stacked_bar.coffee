@@ -90,6 +90,8 @@ D3.stacked_bar =
         position:
           my: 'bottom center'
           at: 'top center'
+        style:
+          classes: "ui-tooltip-bootstrap"
 
       # draw a nice axis
       @y_axis = d3.svg.axis()

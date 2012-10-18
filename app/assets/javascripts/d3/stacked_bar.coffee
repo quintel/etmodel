@@ -83,15 +83,9 @@ D3.stacked_bar =
 
       $('rect.serie').qtip
         content: -> $(this).attr('data-tooltip')
-        show:
-          event: 'mouseover' # silly IE
-        hide:
-          event: 'mouseout'  # silly IE
         position:
           my: 'bottom center'
           at: 'top center'
-        style:
-          classes: "ui-tooltip-bootstrap"
 
       # draw a nice axis
       @y_axis = d3.svg.axis()

@@ -107,16 +107,10 @@ D3.bezier =
         content:
           title: -> $(this).attr('data-title')
           text: -> $(this).attr('data-tooltip')
-        show:
-          event: 'mouseover' # silly IE
-        hide:
-          event: 'mouseout'  # silly IE
         position:
           target: 'mouse'
           my: 'bottom right'
           at: 'top center'
-        style:
-          classes: "ui-tooltip-bootstrap"
 
     refresh: =>
       # calculate tallest column

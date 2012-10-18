@@ -119,16 +119,10 @@ D3.merit_order =
 
       $('rect.merit_order_node').qtip
         content: -> $(this).attr('data-tooltip')
-        show:
-          event: 'mouseover' # silly IE
-        hide:
-          event: 'mouseout'  # silly IE
         position:
           target: 'mouse'
           my: 'bottom right'
           at: 'top center'
-        style:
-          classes: "ui-tooltip-bootstrap"
 
       # add legend
       legends = @svg.selectAll("svg.legend").

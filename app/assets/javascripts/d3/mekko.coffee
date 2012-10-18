@@ -128,15 +128,9 @@ D3.mekko =
 
       $('rect.carrier').qtip
         content: -> $(this).attr('data-tooltip')
-        show:
-          event: 'mouseover' # silly IE
-        hide:
-          event: 'mouseout'  # silly IE
         position:
           my: 'bottom right'
           at: 'top center'
-        style:
-          classes: "ui-tooltip-bootstrap"
 
     refresh: =>
       total_value = @node_list.grand_total()

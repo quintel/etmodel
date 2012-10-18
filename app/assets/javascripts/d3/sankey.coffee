@@ -194,8 +194,8 @@ D3.sankey =
   # In this chart most positioning is calculated by us. The D3 sankey plugin is
   # cool but not flexible enough
   Node: class extends Backbone.Model
-    @width: 95
-    @horizontal_spacing: 100
+    @width: 20
+    @horizontal_spacing: 170
     vertical_margin: 10
 
     initialize: =>
@@ -375,6 +375,8 @@ D3.sankey =
         .style("fill", "none")
         .style("opacity", selectedLinkOpacity)
         .attr("d", (link) => @link_line link.path_points())
+      links.on('mouseover', @link_mouseover)
+        .on('mouseout', @node_mouseout)
       return links
 
     draw_nodes: =>
@@ -400,7 +402,7 @@ D3.sankey =
       nodes.append("svg:text")
         .attr("class", "label")
         .attr("x", (d) => d.x_offset())
-        .attr("dx", 5)
+        .attr("dx", 25)
         .attr("dy", 3)
         .attr("y", (d) => @y(d.y_offset() + d.value() / 2) )
         .text((d) -> d.label())
@@ -419,7 +421,8 @@ D3.sankey =
     # callbacks
     #
     unselectedLinkOpacity = 0.1
-    selectedLinkOpacity = 0.8
+    selectedLinkOpacity = 0.5
+    hoverLinkOpacity = 0.9
 
     node_mouseover: ->
       klass = $(this).attr('data-id')
@@ -428,6 +431,12 @@ D3.sankey =
         .transition()
         .duration(200)
         .style("opacity", unselectedLinkOpacity)
+
+    link_mouseover: ->
+      d3.select(this)
+        .transition()
+        .duration(200)
+        .style("opacity", hoverLinkOpacity)
 
     # this is used as link_mouseout, too
     node_mouseout: ->

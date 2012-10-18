@@ -359,20 +359,6 @@ D3.sankey =
         .attr("transform", "translate(#{@margin.left}, #{@margin.top})")
       @links = @draw_links()
       @nodes = @draw_nodes()
-      $("g.node").qtip
-        content:
-          text: -> $(this).attr('data-tooltip')
-        show:
-          event: 'mouseover' # silly IE
-        hide:
-          event: 'mouseout'  # silly IE
-        position:
-          target: 'mouse'
-          my: 'bottom right'
-          at: 'top center'
-        style:
-          classes: "ui-tooltip-bootstrap"
-
 
     draw_links: =>
       # links are treated as a group
@@ -418,8 +404,23 @@ D3.sankey =
         .attr("dy", 3)
         .attr("y", (d) => @y(d.y_offset() + d.value() / 2) )
         .text((d) -> d.label())
-
+      @setup_tooltips()
       return nodes
+
+    setup_tooltips: ->
+        $("g.node").qtip
+          content:
+            text: -> $(this).attr('data-tooltip')
+          show:
+            event: 'mouseover' # silly IE
+          hide:
+            event: 'mouseout'  # silly IE
+          position:
+            target: 'mouse'
+            my: 'bottom right'
+            at: 'top center'
+          style:
+            classes: "ui-tooltip-bootstrap"
 
     # callbacks
     #

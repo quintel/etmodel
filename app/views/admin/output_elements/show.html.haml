@@ -44,13 +44,15 @@
     %li= link_to s.key, edit_admin_slide_path(s)
 
 #chart_preview
-  = content_tag_for :div, @output_element do
-    Chart
+  .chart_holder
+    = content_tag_for :div, @output_element, :class => 'chart_canvas' do
+      Chart
 
 - content_for :head do
   = render "layouts/etm/javascript_globals"
   = javascript_include_tag 'etm'
   :javascript
-    App.settings = new Setting(#{Current.setting.to_json.html_safe});
-    charts.load(#{@output_element.id}, "output_element_#{@output_element.id}")
+    $(function(){
+      charts.load(#{@output_element.id}, "output_element_#{@output_element.id}")
+    })
 

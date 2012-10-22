@@ -327,7 +327,7 @@ D3.sankey =
       else
         k = @key
       @node_list = new namespace.NodeList(namespace.charts[k].data.nodes)
-      @link_list = new namespace.LinkList(namespace.charts[k].data.links)
+      @link_list = _.map namespace.charts[k].data.links, (l) -> new D3.sankey.Link(l)
       @initialize_defaults()
 
     # this method is called when we first render the chart. It is called if we
@@ -363,7 +363,7 @@ D3.sankey =
     draw_links: =>
       # links are treated as a group
       links = @svg.selectAll('g.link')
-        .data(@link_list.models, (d) -> d.cid)
+        .data(@link_list, (d) -> d.cid)
         .enter()
         .append("svg:g")
         .attr("class", (l) -> "link #{l.left.get('id')} #{l.right.get('id')}")
@@ -478,7 +478,7 @@ D3.sankey =
         .attr("y", (d) => @y(d.y_offset() + d.value() / 2) )
 
       # then transform the links
-      @links.data(@link_list.models, (d) -> d.cid)
+      @links.data(@link_list, (d) -> d.cid)
         .transition().duration(500)
         .selectAll("path")
         .attr("d", (link) => @link_line link.path_points())
@@ -498,6 +498,3 @@ class D3.sankey.NodeList extends Backbone.Collection
       sums[column] = sums[column] || 0
       sums[column] += n.value()
     _.max _.values(sums)
-
-class D3.sankey.LinkList extends Backbone.Collection
-  model: D3.sankey.Link

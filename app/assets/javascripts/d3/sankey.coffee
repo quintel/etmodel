@@ -232,7 +232,7 @@ D3.sankey =
     # returns an array of the other nodes that belong to the same column. This
     # is used by the +y_offset+ method to calculate the right node position
     siblings: =>
-      items = _.groupBy(@view.node_list.models, (node) -> node.get('column'))
+      items = _.groupBy(@view.node_list, (node) -> node.get('column'))
       items[@get 'column']
 
     label: => @get('label') || @get('id')
@@ -241,8 +241,8 @@ D3.sankey =
     initialize: =>
       @view = D3.sankey.view
       @series = @view.series
-      @left = @view.node_list.get @get('left')
-      @right = @view.node_list.get @get('right')
+      @left  = @view.node_map[@get('left')]
+      @right = @view.node_map[@get('right')]
       if @get('gquery')
         @gquery = new ChartSerie
           gquery_key: @get('gquery')
@@ -326,7 +326,11 @@ D3.sankey =
         @use_present = true
       else
         k = @key
-      @node_list = new namespace.NodeList(namespace.charts[k].data.nodes)
+      @node_map = {}
+      @node_list = _.map namespace.charts[k].data.nodes, (n) =>
+        node = new D3.sankey.Node(n)
+        @node_map[n.id] = node
+        node
       @link_list = _.map namespace.charts[k].data.links, (l) -> new D3.sankey.Link(l)
       @initialize_defaults()
 
@@ -382,7 +386,7 @@ D3.sankey =
     draw_nodes: =>
       colors = d3.scale.category20()
       nodes = @svg.selectAll("g.node")
-        .data(@node_list.models, (d) -> d.get('id'))
+        .data(@node_list, (d) -> d.get('id'))
         .enter()
         .append("g")
         .attr("class", "node")
@@ -447,14 +451,14 @@ D3.sankey =
 
     # this method is called every time we're updating the chart
     refresh: =>
-      max_height = @node_list.max_column_value()
+      max_height = @max_column_value()
 
       # update the scaling function
       @y.domain([0, max_height * 1.25])
         .range([0, @height * .90])
 
       # update the node label
-      @nodes.data(@node_list.models, (d) -> d.get('id'))
+      @nodes.data(@node_list, (d) -> d.get('id'))
         .attr("data-tooltip", (d) =>
           h = "<strong>
             #{d.label()}: #{Metric.autoscale_value d.value(), 'PJ', 2}
@@ -487,14 +491,11 @@ D3.sankey =
           if link.value() == 0.0 then 'none' else 'inline'
         )
 
-class D3.sankey.NodeList extends Backbone.Collection
-  model: D3.sankey.Node
-
-  # returns the height of the tallest column
-  max_column_value: =>
-    sums = {}
-    @each (n) ->
-      column = n.get 'column'
-      sums[column] = sums[column] || 0
-      sums[column] += n.value()
-    _.max _.values(sums)
+    # returns the height of the tallest column
+    max_column_value: =>
+      sums = {}
+      for n in @node_list
+        column = n.get 'column'
+        sums[column] = sums[column] || 0
+        sums[column] += n.value()
+      _.max _.values(sums)

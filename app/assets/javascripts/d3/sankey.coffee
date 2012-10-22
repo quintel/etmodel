@@ -194,8 +194,8 @@ D3.sankey =
   # In this chart most positioning is calculated by us. The D3 sankey plugin is
   # cool but not flexible enough
   Node: class extends Backbone.Model
-    @width: 20
-    @horizontal_spacing: 170
+    width: 20
+    horizontal_spacing: 170
     vertical_margin: 10
 
     initialize: =>
@@ -215,10 +215,10 @@ D3.sankey =
         offset += n.value() + margin
       offset
 
-    x_offset: => @get('column') * (D3.sankey.Node.width + D3.sankey.Node.horizontal_spacing)
+    x_offset: => @get('column') * (@width + @horizontal_spacing)
 
     # center point of the node. We use it as link anchor point
-    x_center: => @x_offset() + D3.sankey.Node.width / 2
+    x_center: => @x_offset() + @width / 2
 
     # The height of the node is the sum of the height of its link. Since links
     # are both inbound and outbound, let's use the max size. Ideally the values
@@ -285,8 +285,8 @@ D3.sankey =
             offset += link.value()
       @right.y_offset() + offset
 
-    left_x:  => @left.x_center()  + D3.sankey.Node.width / 2
-    right_x: => @right.x_center() - D3.sankey.Node.width / 2
+    left_x:  => @left.x_center()  + @left.width / 2
+    right_x: => @right.x_center() - @right.width / 2
 
     # Use 4 points and let D3 interpolate a smooth curve
     path_points: =>
@@ -396,7 +396,7 @@ D3.sankey =
         .attr("fill", (d, i) -> d.get('color') || colors(i))
         .style("stroke", (d, i) -> d3.rgb(d.get('color') || colors(i)).darker(2))
         .style('stroke-width', 1)
-        .attr("width", D3.sankey.Node.width)
+        .attr("width", (d) -> d.width)
         .attr("height", (d) => @y d.value())
 
       nodes.append("svg:text")
@@ -450,8 +450,7 @@ D3.sankey =
       max_height = @node_list.max_column_value()
 
       # update the scaling function
-      @y = d3.scale.linear()
-        .domain([0, max_height * 1.25])
+      @y.domain([0, max_height * 1.25])
         .range([0, @height * .90])
 
       # update the node label

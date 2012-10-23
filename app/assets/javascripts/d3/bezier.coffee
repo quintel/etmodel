@@ -66,9 +66,10 @@ D3.bezier =
         .data([App.settings.get('start_year'), App.settings.get('end_year')])
         .enter().append('svg:text')
         .attr('class', 'year')
+        .attr("text-anchor", "middle")
         .text((d) -> d)
-        .attr('x', (d, i) => if i == 0 then -10 else 430)
-        .attr('y', @series_height + 15)
+        .attr('x', (d, i) => if i == 0 then 0 else 430)
+        .attr('y', @series_height + 16)
 
       @y = d3.scale.linear().range([0, @series_height]).domain([0, 7])
       @inverted_y = d3.scale.linear().range([@series_height, 0]).domain([0, 7])
@@ -81,6 +82,18 @@ D3.bezier =
         .y0((d) => @inverted_y d.y0)
         .y1((d) => @inverted_y(d.y0 + d.y))
 
+      # draw a nice axis
+      @y_axis = d3.svg.axis()
+        .scale(@inverted_y)
+        .ticks(4)
+        .tickSize(-429, 10, 0)
+        .orient("right")
+        .tickFormat((x) => Metric.autoscale_value x, @model.get('unit'))
+      @svg.append("svg:g")
+        .attr("class", "y_axis inner_grid")
+        .attr("transform", "translate(#{@width - 15}, 0)")
+        .call(@y_axis)
+
       # there we go
       series = @svg.selectAll('path.serie')
         .data(stacked_data, (s) -> s.key)
@@ -91,17 +104,6 @@ D3.bezier =
         .style('opacity', 0.8)
         .attr('data-title', (d) -> d.values[0].label)
 
-      # draw a nice axis
-      @y_axis = d3.svg.axis()
-        .scale(@inverted_y)
-        .ticks(4)
-        .tickSize(-440, 10, 0)
-        .orient("right")
-        .tickFormat((x) => Metric.autoscale_value x, @model.get('unit'))
-      @svg.append("svg:g")
-        .attr("class", "y_axis inner_grid")
-        .attr("transform", "translate(#{@width - 15}, 0)")
-        .call(@y_axis)
 
       # series tooltips
       $('path.serie').qtip

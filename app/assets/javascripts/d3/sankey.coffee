@@ -363,6 +363,16 @@ D3.sankey =
       @links = @draw_links()
       @nodes = @draw_nodes()
 
+      # Let's create a gradient
+      defs = @svg.append('svg:defs')
+      defs.append('svg:linearGradient')
+        .attr('x1', "0%").attr('y1', "0%").attr('x2', "100%").attr('y2', "0%")
+        .attr('id', 'loss_gradient').call(
+          (g) ->
+            g.append('svg:stop').attr('offset', '0%').attr('style', 'stop-color:rgb(250,0,0);stop-opacity:1')
+            g.append('svg:stop').attr('offset', '100%').attr('style', 'stop-color:rgb(250,0,0);stop-opacity:0.1')
+      )
+
     draw_links: =>
       # links are treated as a group
       links = @svg.selectAll('g.link')
@@ -373,7 +383,9 @@ D3.sankey =
       # link path
       links.append("svg:path")
         .style("stroke-width", (link) -> link.value())
-        .style("stroke", (link, i) -> link.color())
+        .style("stroke", (link) ->
+          if link.connects('loss') then "url('#loss_gradient')" else link.color()
+        )
         .style("fill", "none")
         .style("opacity", selectedLinkOpacity)
         .attr("d", (link) => @link_line link.path_points())

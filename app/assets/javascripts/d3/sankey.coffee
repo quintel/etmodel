@@ -199,9 +199,9 @@ D3.sankey =
     vertical_margin: 10
 
     initialize: =>
-      @view = D3.sankey.view
       @right_links = []
       @left_links = []
+      @view = @get 'view'
 
     # vertical position of the top left corner of the node. Adds some margin
     # between nodes
@@ -239,7 +239,7 @@ D3.sankey =
 
   Link: class extends Backbone.Model
     initialize: =>
-      @view = D3.sankey.view
+      @view = @get 'view'
       @series = @view.series
       @left  = @view.node_map[@get('left')]
       @right = @view.node_map[@get('right')]
@@ -313,8 +313,6 @@ D3.sankey =
   #
   View: class extends D3ChartView
     initialize: ->
-      namespace = D3.sankey
-      namespace.view = this
       @series = @model.series
       @key = @model.get('key')
       # ugly but simple and effective. If the chart key name ends with _2010
@@ -327,11 +325,12 @@ D3.sankey =
       else
         k = @key
       @node_map = {}
-      @node_list = _.map namespace.charts[k].data.nodes, (n) =>
-        node = new D3.sankey.Node(n)
+      @node_list = _.map D3.sankey.charts[k].data.nodes, (n) =>
+        node = new D3.sankey.Node(_.extend n, view: this)
         @node_map[n.id] = node
         node
-      @link_list = _.map namespace.charts[k].data.links, (l) -> new D3.sankey.Link(l)
+      @link_list = _.map D3.sankey.charts[k].data.links, (l) =>
+        new D3.sankey.Link(_.extend l, view: this)
       @initialize_defaults()
 
     # this method is called when we first render the chart. It is called if we
@@ -371,7 +370,6 @@ D3.sankey =
         .enter()
         .append("svg:g")
         .attr("class", (l) -> "link #{l.left.get('id')} #{l.right.get('id')}")
-        .attr("data-cid", (d) -> d.cid) # unique identifier
       # link path
       links.append("svg:path")
         .style("stroke-width", (link) -> link.value())
@@ -390,7 +388,6 @@ D3.sankey =
         .enter()
         .append("g")
         .attr("class", "node")
-        .attr("data-id", (d) -> d.get('id'))
         .on("mouseover", @node_mouseover)
         .on("mouseout", @node_mouseout)
 
@@ -428,10 +425,9 @@ D3.sankey =
     selectedLinkOpacity = 0.5
     hoverLinkOpacity = 0.9
 
-    node_mouseover: ->
-      klass = $(this).attr('data-id')
-      d3.selectAll(".link")
-        .filter((d) -> !d.connects(klass))
+    node_mouseover: (e) =>
+      @svg.selectAll(".link")
+        .filter((d) -> !d.connects(e.get 'id'))
         .transition()
         .duration(200)
         .style("opacity", unselectedLinkOpacity)

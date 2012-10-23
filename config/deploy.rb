@@ -3,7 +3,7 @@ set :server_type, 'production'
 set :deploy_to, "/u/apps/etmodel"
 set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
 set :scm, :git
-set :repository,  "git@github.com:dennisschoenmakers/etmodel.git"
+set :repository,  "git@github.com:quintel/etmodel.git"
 set :user, 'ubuntu'
 set :deploy_via, :remote_cache
 # Some files that will need proper permissions set

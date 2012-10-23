@@ -88,6 +88,7 @@ D3.bezier =
         .attr('class', 'serie')
         .attr('d', (d) => @area d.values)
         .style('fill', (d) => d.values[0].color)
+        .style('opacity', 0.8)
         .attr('data-title', (d) -> d.values[0].label)
 
       # draw a nice axis

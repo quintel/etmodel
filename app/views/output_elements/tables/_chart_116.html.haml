@@ -2,12 +2,12 @@
 %table.chart
   %thead
     %tr
-      %th Technology
-      %th Merit order position
-      %th Operating costs
-      %th Available capacity
-      %th Full load hours, future *
-      %th Full load hours, present
+      %th= t 'output_elements.tables.merit_order.technology'
+      %th= t 'output_elements.tables.merit_order.position'
+      %th= t 'output_elements.tables.merit_order.operating_costs'
+      %th= t 'output_elements.tables.merit_order.available_capacity'
+      %th= t 'output_elements.tables.merit_order.flh_future'
+      %th= t 'output_elements.tables.merit_order.flh_present'
     %tr
       %th
       %th
@@ -18,32 +18,32 @@
   %tfoot
     %tr
       %td{:colspan => 6}
-        * Calculated full load hour values not yet used in model
+        = t 'output_elements.tables.merit_order.flh_note'
         %br
-        ** Wood pellet and biocoal co-firing takes place in Coal USC power plants
+        = t 'output_elements.tables.merit_order.wood_pellet_note'
   %tbody
     :ruby
-      items = {
-        :nuclear_iii => "Nuclear 3rd Gen",
-        :coal_igcc => "Coal IGCC",
-        :coal_pwd => "Coal ultra supercritical **",
-        :coal_chp => "Coal&nbsp;ultra supercritical&nbsp;CHP",
-        :coal_conv => "Coal supercritical",
-        :coal_pwd_ccs => "Coal&nbsp;ultra supercritical&nbsp;CCS",
-        :coal_igcc_ccs => "Coal IGCC CCS",
-        :gas_ccgt => "Gas CCGT",
-        :gas_ccgt_ccs => "Gas CCGT CCS",
-        :central_gas_chp => "Gas CCGT CHP",
-        :gas_conv => "Gas steam",
-        :gas_turbine => "Gas turbine",
-        :oil_plant => "Oil ultra supercritical",
-        :must_run => "Must run CHPs",
-        :solar_pv => "Solar PV",
-        :wind_turbines => "Wind turbines"
-      }
-    - items.each_pair do |key, label|
+      items = [
+        'nuclear_iii',
+        'coal_igcc',
+        'coal_pwd',
+        'coal_chp',
+        'coal_conv',
+        'coal_pwd_ccs',
+        'coal_igcc_ccs',
+        'gas_ccgt',
+        'gas_ccgt_ccs',
+        'central_gas_chp',
+        'gas_conv',
+        'gas_turbine',
+        'oil_plant',
+        'must_run',
+        'solar_pv',
+        'wind_turbines'
+      ]
+    - items.each do |key|
       %tr
-        %th= raw label
+        %th= raw t "output_elements.tables.merit_order.#{key}"
         %td{:data => {:decimals => 0, :gquery => "merit_order_#{key}_position_in_merit_order_table"}}
         %td{:data => {:decimals => 0, :gquery => "merit_order_#{key}_operating_costs_in_merit_order_table"}}
         %td{:data => {:decimals => 0, :gquery => "merit_order_#{key}_capacity_in_merit_order_table"}}

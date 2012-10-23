@@ -224,10 +224,10 @@ D3.sankey =
     # are both inbound and outbound, let's use the max size. Ideally the values
     # should match
     value: =>
-      _.max [
-        _.inject(@left_links, ((memo, i) -> memo + i.value()), 0),
-        _.inject(@right_links,((memo, i) -> memo + i.value()), 0)
-      ]
+      Math.max(
+        d3.sum(@left_links,  (d) -> d.value()),
+        d3.sum(@right_links, (d) -> d.value())
+      )
 
     # returns an array of the other nodes that belong to the same column. This
     # is used by the +y_offset+ method to calculate the right node position
@@ -379,7 +379,7 @@ D3.sankey =
         .attr("d", (link) => @link_line link.path_points())
       links.on('mouseover', @link_mouseover)
         .on('mouseout', @node_mouseout)
-      return links
+      links
 
     draw_nodes: =>
       colors = d3.scale.category20()
@@ -408,7 +408,7 @@ D3.sankey =
         .attr("y", (d) => @y(d.y_offset() + d.value() / 2) )
         .text((d) -> d.label())
       @setup_tooltips()
-      return nodes
+      nodes
 
     setup_tooltips: ->
         $("g.node").qtip

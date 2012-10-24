@@ -119,7 +119,8 @@ class @Chart extends Backbone.Model
     gqueries.cleanup()
 
   supported_by_current_browser: =>
-    @get('type') != 'd3' || Browser.hasD3Support()
+    return true if Browser.hasD3Support()
+    _.indexOf(['d3', 'sankey', 'target_bar'], @get 'type') == -1
 
   delete: =>
     @view.unbind()

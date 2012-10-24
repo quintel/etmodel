@@ -59,7 +59,7 @@ class @AppView extends Backbone.View
 
   setup_fce_toggle: ->
     if element = $('.slide .fce-toggle')
-      (new FCEToggle(el: element, model: App.settings)).render()
+      (new FCEToggleView(el: element, model: App.settings)).render()
 
   reset_scenario: =>
     @settings.set({

@@ -32,15 +32,19 @@ $ ->
   $("a.overview").fancybox
     content: '
       <div class="chart_holder">
-        <div id="overview_chart" class="chart_canvas"></div>
+        <div id="overview_chart" class="chart_canvas">Loading...</div>
       </div>
     '
     width: 500
     height: 340
     autoSize: false
     afterShow: ->
-      charts.load(123, 'overview_chart', {force: true})
-      true
+      if Browser.hasD3Support()
+        charts.load(123, 'overview_chart', {force: true})
+        true
+      else
+        $("#overview_chart").html I18n.t('output_elements.common.old_browser')
+        false
 
 window.close_fancybox = ->
   $.fancybox.close()

@@ -40,7 +40,7 @@ class InputElement < ActiveRecord::Base
   end
 
   def translated_name
-    I18n.t(title_for_description)
+    I18n.t(title_for_description).gsub("'", '&#39;') # IE8 must die
   end
 
   searchable do

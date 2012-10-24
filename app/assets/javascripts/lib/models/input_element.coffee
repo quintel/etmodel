@@ -88,7 +88,12 @@ class @InputElementList extends Backbone.Collection
     return if inputElement.onscreen
     options = inputElement.ui_options
     @inputElements[inputElement.id] = inputElement
-    view = new InputElementView({model : inputElement, el : options.element})
+
+    if inputElement.get('unit') is 'boolean'
+      view = new BooleanElementView({model : inputElement, el : options.element})
+    else
+      view = new InputElementView({model : inputElement, el : options.element})
+
     @inputElementViews[inputElement.id] = view
     view.bind "change", @handleUpdate
     inputElement.onscreen = true

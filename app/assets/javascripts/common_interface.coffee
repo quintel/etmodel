@@ -61,11 +61,6 @@ $ ->
       $(".information").removeClass("menu-open")
       $("#information_menu").hide()
 
-  # sticky items
-  #
-  $('#charts_wrapper').sticky({topSpacing: 10})
-
-
   # Menu items
   #
 

@@ -4,7 +4,6 @@
 //= require jquery.busybox
 //= require jquery.ajaxQueue
 //= require jquery.qtip
-//= require jquery.sticky
 
 $.fn.qtip.defaults.style.classes = "ui-tooltip-bootstrap"
 

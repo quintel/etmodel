@@ -343,6 +343,9 @@ D3.sankey =
 
       @link_list = _.map D3.sankey.charts[k].data.links, (l) =>
         new D3.sankey.Link(_.extend l, view: this)
+
+      @value_formatter = (x) -> Metric.autoscale_value x, 'PJ', 2
+
       @initialize_defaults()
 
     # this method is called when we first render the chart. It is called if we
@@ -437,6 +440,7 @@ D3.sankey =
     setup_tooltips: ->
         $("g.node").qtip
           content:
+            title: -> $(this).attr('data-tooltip-title')
             text: -> $(this).attr('data-tooltip')
           position:
             target: 'mouse'
@@ -480,15 +484,15 @@ D3.sankey =
       # update the node label
       @nodes.data(@node_list, (d) -> d.get('id'))
         .attr("data-tooltip", (d) =>
-          h = "<strong>
-            #{d.label()}: #{Metric.autoscale_value d.value(), 'PJ', 2}
-          </strong><br/>"
+          h = ""
           for l in d.right_links
-            h += "-&gt; #{l.right.label()}: #{Metric.autoscale_value l.value(), 'PJ', 2}<br/>"
+            h += "-&gt; #{l.right.label()}: #{@value_formatter l.value()}<br/>"
           for l in d.left_links
-            h += "#{l.left.label()} &lt;-: #{Metric.autoscale_value l.value(), 'PJ', 2}<br/>"
+            h += "&lt;- #{l.left.label()}: #{@value_formatter l.value()}<br/>"
           h
           )
+        .attr("data-tooltip-title", (d) =>
+          "#{d.label()}: #{@value_formatter d.value()}")
 
       # move the rectangles
       @nodes.selectAll("rect")

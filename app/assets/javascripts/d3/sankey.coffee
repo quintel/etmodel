@@ -195,13 +195,24 @@ D3.sankey =
   # cool but not flexible enough
   Node: class extends Backbone.Model
     width: 20
-    horizontal_spacing: 170
     vertical_margin: 10
 
     initialize: =>
       @right_links = []
       @left_links = []
       @view = @get 'view'
+
+    # Returns an appropriate spacing given the number of columns. Some values
+    # are manually set to squeeze every single pixel
+    #
+    horizontal_spacing: =>
+      return @__horizontal_spacing if @__horizontal_spacing?
+      cols = @view.number_of_columns()
+      @__horizontal_spacing = switch cols
+        when 3 then 170
+        when 4 then 120
+        else @view.width / cols
+      @__horizontal_spacing
 
     # vertical position of the top left corner of the node. Adds some margin
     # between nodes
@@ -215,7 +226,7 @@ D3.sankey =
         offset += n.value() + margin
       offset
 
-    x_offset: => @get('column') * (@width + @horizontal_spacing)
+    x_offset: => @get('column') * (@width + @horizontal_spacing())
 
     # center point of the node. We use it as link anchor point
     x_center: => @x_offset() + @width / 2
@@ -329,6 +340,7 @@ D3.sankey =
         node = new D3.sankey.Node(_.extend n, view: this)
         @node_map[n.id] = node
         node
+
       @link_list = _.map D3.sankey.charts[k].data.links, (l) =>
         new D3.sankey.Link(_.extend l, view: this)
       @initialize_defaults()
@@ -507,3 +519,6 @@ D3.sankey =
         sums[column] = sums[column] || 0
         sums[column] += n.value()
       _.max _.values(sums)
+
+    number_of_columns: =>
+      @__column_number ?= d3.max(@node_list, (n) -> n.get 'column') + 1

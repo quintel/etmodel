@@ -1,26 +1,34 @@
 !!! 5
 %html
   %head
+    %title= t("meta.title")
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
     %meta{:description => "#{t('meta.description')}" }
-    %title= t("meta.title")
-    /[if lt IE 8]
-      = stylesheet_link_tag 'ie'
+    %meta{:name=>"google-site-verification", :content=>"ILDmdAxQTYxcPyy969IJXq7YlXKzhGFfGCHqFi8fiWA"}
+    = csrf_meta_tag
+
+    /[if lte IE 8]
+      = stylesheet_link_tag 'ie', 'ie7'
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
-
     = render "layouts/etm/javascript_unselectable"
-
-    %meta{:name=>"google-site-verification", :content=>"ILDmdAxQTYxcPyy969IJXq7YlXKzhGFfGCHqFi8fiWA"}
     = yield :head
-  %body#outside-model
+  %body{id: defined?(body_id) ? body_id : 'outside-model'}
     #wrapper
-      %header#top= render "layouts/etm/header"
+      %header#top
+        = render "layouts/etm/header"
       #content
         - flash_message
         = content_for?(:content) ? yield(:content) : yield
-      %footer.fixed= render "layouts/etm/footer"
-    = render "layouts/etm/ga" unless APP_CONFIG[:standalone]
-    %script
-      if (_.include(['iPad', 'iPhone', 'iPod'], navigator.platform)) { $("#footer").css("position", "static"); };
-
+      %footer.fixed
+        = yield :footer
+        = render "layouts/etm/footer"
+    :javascript
+      if (_.include(['iPad', 'iPhone', 'iPod'], navigator.platform)) {
+        $("#footer").css("position", "static");
+      };
+      I18n.defaultLocale = "#{I18n.default_locale}";
+      I18n.locale = "#{I18n.locale}";
+    = yield :scripts
+    - if Rails.env.production?
+      = render "layouts/etm/ga" unless APP_CONFIG[:standalone]

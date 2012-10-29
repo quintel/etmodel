@@ -38,8 +38,10 @@ class @AppView extends Backbone.View
     @input_elements = new InputElementList()
     @input_elements.on "change", @handleInputElementsUpdate
     @api.user_values
-      success: @input_elements.initialize_user_values
-      error:   @handle_ajax_error
+      success: (args...) =>
+        @input_elements.initialize_user_values(args...)
+        @setup_fce_toggle()
+      error: @handle_ajax_error
 
   # At this point we have all the settings initialized.
   bootstrap: =>
@@ -54,8 +56,6 @@ class @AppView extends Backbone.View
     # DEBT Add check, so that boostrap is only called once.
     if @settings.get('area_code') == 'nl'
       @peak_load = new PeakLoad()
-
-    @setup_fce_toggle()
 
   setup_fce_toggle: ->
     if element = $('.slide .fce-toggle')

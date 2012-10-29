@@ -1,45 +1,14 @@
-!!! 5
-%html
-  %head
-    %meta{:charset => "utf-8"}
-    %meta{:description => "#{t('meta.description')}" }
-    %meta{:name=>"google-site-verification", :content=>"ILDmdAxQTYxcPyy969IJXq7YlXKzhGFfGCHqFi8fiWA"}
-    = csrf_meta_tag
-    %title= t("meta.title").force_encoding("UTF-8")
-    = stylesheet_link_tag 'application'
-    = render "layouts/etm/javascript_globals"
-    = javascript_include_tag 'etm'
+- content_for :head do
+  = render "layouts/etm/javascript_globals"
+  = javascript_include_tag 'etm'
 
-    /[if lte IE 8]
-      %link(rel="stylesheet" type="text/css" href="/stylesheets/ie7.css")
-    = render "layouts/etm/javascript_unselectable"
-    = yield :head
-  %body#model
-    #wrapper
-      %header#top
-        = render "layouts/etm/header"
-      #content
-        = render "layouts/etm/sidebar" if @interface.try :current_sidebar_item
-        - flash_message
-        = yield
-        .clear
-      %footer.fixed
-        = render "layouts/etm/dashboard"
-        = render "input_elements/input_element"
-        = render "input_elements/value_selector"
-        = render "converters/converter_details"
-        = render "layouts/etm/footer"
-      .clear
+- content_for :content do
+  = render "layouts/etm/sidebar" if @interface.try :current_sidebar_item
+  = yield
 
-    - unless APP_CONFIG[:standalone]
-      = render "layouts/etm/ga" if Rails.env.production?
-
-  #scripts
-    -# stick the footer at the bottom of the page if we're on an iPad/iPhone due to viewport/page bugs in mobile webkit
-    %script
-      if (_.include(['iPad', 'iPhone', 'iPod'], navigator.platform)) { $("#footer").css("position", "static"); };
-
-      I18n.defaultLocale = "#{I18n.default_locale}";
-      I18n.locale = "#{I18n.locale}";
-
-    = yield :scripts
+- content_for :footer do
+  = render "layouts/etm/dashboard"
+  = render "input_elements/input_element"
+  = render "input_elements/value_selector"
+  = render "converters/converter_details"
+= render template: 'layouts/application', locals: {body_id: 'model'}

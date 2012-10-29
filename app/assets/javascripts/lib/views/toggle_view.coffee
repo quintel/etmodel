@@ -9,6 +9,9 @@
 #            "on" / "off" labels and the Quinn widget.
 #
 class ToggleView extends Backbone.View
+  onValue:  on
+  offValue: off
+
   # Renders the toggle element itself into the given element. This includes
   # the "on" / "off" labels, and the Quinn widget.
   renderWidget: (into) ->
@@ -28,8 +31,8 @@ class ToggleView extends Backbone.View
 
     @setLabelActiveStates(@model.get(@attr))
 
-    @onEl.on  'click', => @setValue(on)
-    @offEl.on 'click', => @setValue(off)
+    @onEl.on  'click', => @setValue(@onValue)
+    @offEl.on 'click', => @setValue(@offValue)
 
     # Changes elsewhere should update the toggle switch.
     @model.on "change:#{ @attr }", (model, status) =>
@@ -39,10 +42,10 @@ class ToggleView extends Backbone.View
   onQuinnChange: (value, quinn) =>
     if value < quinn.model.maximum / 2
       correctedValue = quinn.model.minimum
-      boolValue      = off
+      boolValue      = @offValue
     else
       correctedValue = quinn.model.maximum
-      boolValue      = on
+      boolValue      = @onValue
 
     if value isnt correctedValue
       # User didn't move the handle all the way.
@@ -71,6 +74,9 @@ class ToggleView extends Backbone.View
 # ordinary slider, with a true / false value sent back to ETengine.
 class @BooleanElementView extends ToggleView
   attr: 'user_value'
+
+  offValue: 0
+  onValue:  1
 
   # For compatibility with InputElementView, the boolean element is
   # immediately rendered when initialized.

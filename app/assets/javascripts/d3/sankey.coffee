@@ -208,10 +208,8 @@ D3.sankey =
     horizontal_spacing: =>
       return @__horizontal_spacing if @__horizontal_spacing?
       cols = @view.number_of_columns()
-      @__horizontal_spacing = switch cols
-        when 3 then 170
-        when 4 then 120
-        else @view.width / cols
+      # this should leave enough room for the node labels
+      @__horizontal_spacing = (@view.width - 150) / (cols - 1)
       @__horizontal_spacing
 
     # vertical position of the top left corner of the node. Adds some margin

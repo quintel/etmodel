@@ -43,7 +43,7 @@ D3.treemap =
       @out = out
 
     draw: =>
-      @width = 494
+      @width = @available_width()
       @height = 350
       @treemap = d3.layout.treemap()
         .size([@width, @height])

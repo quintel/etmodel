@@ -17,7 +17,7 @@ D3.stacked_bar =
         left: 30
         right: 40
 
-      @width = 494 - (margins.left + margins.right)
+      @width = @available_width() - (margins.left + margins.right)
       @series_height = 190
       @height = @series_height + (margins.top + margins.bottom) + (@series.length / 2 * 15)
       @svg = d3.select("#d3_container_#{@key}")
@@ -93,7 +93,7 @@ D3.stacked_bar =
       @y_axis = d3.svg.axis()
         .scale(@inverted_y)
         .ticks(5)
-        .tickSize(-420, 10, 0)
+        .tickSize(-@width, 10, 0)
         .orient("right")
         .tickFormat((x) => Metric.autoscale_value x, @model.get('unit'))
       @svg.append("svg:g")

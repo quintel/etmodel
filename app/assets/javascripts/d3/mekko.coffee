@@ -73,7 +73,7 @@ D3.mekko =
         left: 35
         right: 10
 
-      @width = 494 - (margins.left + margins.right)
+      @width = @available_width() - (margins.left + margins.right)
       @height = 410 - (margins.top + margins.bottom)
       @series_height = 190 # the rest of the height will be taken by the legend
       @svg = d3.select("#d3_container_#{@model.get 'key'}")

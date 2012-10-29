@@ -81,7 +81,7 @@ D3.target_bar =
         left: 35
         right: 18
 
-      @width = 494 - (margins.left + margins.right)
+      @width = @available_width() - (margins.left + margins.right)
       @height = @outer_height() - (margins.top + margins.bottom)
       @namespace.width = @width
       t.scale.range([80, @width]) for t in @targets

@@ -6,6 +6,7 @@
     %title API
     = render "layouts/etm/javascript_globals"
     = stylesheet_link_tag "application"
+    = javascript_include_tag 'application'
     = javascript_include_tag 'etm'
   %body#constraint_popup{:class => @constraint.key}
     .wrapper

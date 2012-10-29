@@ -61,7 +61,7 @@ D3.merit_order =
         left: 40
         right: 10
       @margin = 50
-      @width = 494 - (margins.left + margins.right)
+      @width = @available_width() - (margins.left + margins.right)
       @height = 310 - (margins.top + margins.bottom)
       @series_height = 280
       @x = d3.scale.linear().domain([0, 100]).range([0, @width])

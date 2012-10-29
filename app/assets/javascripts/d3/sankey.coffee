@@ -356,7 +356,7 @@ D3.sankey =
         left: 5
         bottom: 5
         right: 10
-      @width = 494 - (@margin.left + @margin.right)
+      @width = @available_width() - (@margin.left + @margin.right)
       @height = 300 - (@margin.top + @margin.bottom)
 
       # scaling method taht will be changed dynamically

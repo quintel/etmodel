@@ -29,7 +29,7 @@ D3.bezier =
         left: 20
         right: 30
 
-      @width = 494 - (margins.left + margins.right)
+      @width = @available_width() - (margins.left + margins.right)
       @height = 360 - (margins.top + margins.bottom)
       # height of the series section
       @series_height = 190
@@ -68,7 +68,7 @@ D3.bezier =
         .attr('class', 'year')
         .attr("text-anchor", "middle")
         .text((d) -> d)
-        .attr('x', (d, i) => if i == 0 then 0 else 430)
+        .attr('x', (d, i) => if i == 0 then 0 else @width)
         .attr('y', @series_height + 16)
 
       @y = d3.scale.linear().range([0, @series_height]).domain([0, 7])
@@ -86,7 +86,7 @@ D3.bezier =
       @y_axis = d3.svg.axis()
         .scale(@inverted_y)
         .ticks(4)
-        .tickSize(-429, 10, 0)
+        .tickSize(-@width, 10, 0)
         .orient("right")
         .tickFormat((x) => Metric.autoscale_value x, @model.get('unit'))
       @svg.append("svg:g")

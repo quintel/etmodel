@@ -8,7 +8,7 @@ D3.stacked_bar =
 
     can_be_shown_as_table: -> true
 
-    outer_height: => @height + 10
+    outer_height: => @height + 50
 
     draw: =>
       margins =

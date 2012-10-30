@@ -4,6 +4,7 @@ class @ScatterChartView extends BaseChartView
 
   render: =>
     @clear_container()
+    @$el.css('height', 470)
     @render_chart()
 
   results: =>
@@ -28,7 +29,7 @@ class @ScatterChartView extends BaseChartView
     out =
       seriesColors: @model.colors()
       grid: @defaults.grid
-      legend: @create_legend({num_columns: 3, offset: 60})
+      legend: @create_legend({num_columns: 4, offset: 60})
       seriesDefaults:
         lineWidth: 1.5
         showMarker: true

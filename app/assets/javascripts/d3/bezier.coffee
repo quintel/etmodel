@@ -10,7 +10,7 @@ D3.bezier =
 
     can_be_shown_as_table: -> true
 
-    outer_height: -> 400
+    outer_height: -> 360
 
     # This chart rendering is fairly complex. Here is the big picture:
     # this bezier chart is basically a stacked area chart. D3 provides some

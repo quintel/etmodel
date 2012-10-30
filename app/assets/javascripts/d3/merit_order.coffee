@@ -54,6 +54,8 @@ D3.merit_order =
         @nodes = new D3.merit_order.NodeList(D3.merit_order.data)
       @initialize_defaults()
 
+    outer_height: => @height + 60
+
     draw: =>
       margins =
         top: 10

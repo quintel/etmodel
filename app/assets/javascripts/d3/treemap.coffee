@@ -23,6 +23,8 @@ D3.treemap =
       D3.treemap.series = @model.series
       @prepare_data()
 
+    outer_height: => @height + 20
+
     # D3 layouts expect data in a precise format
     prepare_data: =>
       return @out if @out

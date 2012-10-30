@@ -442,7 +442,7 @@ D3.sankey =
             text: -> $(this).attr('data-tooltip')
           position:
             target: 'mouse'
-            my: 'bottom right'
+            my: 'right center'
             at: 'top center'
 
     # callbacks

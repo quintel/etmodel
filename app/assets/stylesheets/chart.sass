@@ -36,47 +36,47 @@
       right: -5px
       z-index: 3
       background: url(/assets/layout/still_to_do.png) no-repeat
-table#power_plants
-  th.unit
-    font-weight: normal
-    text-align: center
-  .border-rgt
-    border-right: 1px solid #999
-  tfoot
+
+// ======== Tables ===========================================================
+
+table
+  &.chart
+    width: 100%
+    border-collapse: collapse
+    thead
+      tr
+        background: #528FBD
+      th
+        border: 1px solid #D9E2F0
     tr
-      border-top: 1px solid #999
-      border-bottom: 3px double #999
+      &.even
+        background-color: #eee
     td, th
-      border: 1px solid #eee
+      font-size: 10px
     td
-      font-weight: bold
+      text-align: right
+    tbody
+      tr, td
+        border: 1px solid #ddd
+  &#power_plants
+    th.unit
+      font-weight: normal
+      text-align: center
+    .border-rgt
+      border-right: 1px solid #999
+    tfoot
+      tr
+        border-top: 1px solid #999
+        border-bottom: 3px double #999
+      td, th
+        border: 1px solid #eee
+      td
+        font-weight: bold
+  &.autostripe
+    tbody tr:nth-child(2n+1)
+      background-color: #ddd
 
-table.chart
-  width: 100%
-  border-collapse: collapse
-  thead
-    tr
-      background: #528FBD
-    th
-      border: 1px solid #D9E2F0
-  tr
-    &.even
-      background-color: #eee
-  td, th
-    font-size: 10px
-  td
-    text-align: right
-  tbody
-    tr, td
-      border: 1px solid #ddd
-
-table.autostripe
-  tbody tr:nth-child(2n+1)
-    background-color: #ddd
-
-//
-// D3-specific charts
-//
+// =========  D3 charts ======================================================
 
 div.d3_container
   text
@@ -96,14 +96,40 @@ div.d3_container
     text
       font-size: 12px
 
-.d3_container.sankey
-  g.node
-    rect
-      shape-rendering: crispEdges
-      fill-opacity: .75
-    text.label
-      text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff, 0 0 5px #fff
-      font-size: 11px
+// -------- generic charts  --------------------------------------------------
+
+.d3_container
+  &.sankey
+    g.node
+      rect
+        shape-rendering: crispEdges
+        fill-opacity: .75
+      text.label
+        text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff, 0 0 5px #fff
+        font-size: 11px
+  &.mekko
+    rect.carrier
+      stroke: #333
+      stroke-width: 0.5px
+    .y_axis
+      text
+        font-size: 10px
+  &.target_bar
+    text.target_label
+      font-weight: bold
+      font-size: 10px
+    text.target_unit
+      font-size: 9px
+    text.year_label
+      fill: #777
+      font-size: 9px
+    .x_axis
+      line, path
+        stroke-opacity: 0.4
+      text
+        font-size: 9px
+
+// -------- specific charts  -------------------------------------------------
 
 #d3_container_treemap
   div.cell
@@ -119,26 +145,3 @@ div.d3_container
     fill-opacity: .80
   .legend text
     font-size: 11px
-
-.d3_container.mekko
-  rect.carrier
-    stroke: #333
-    stroke-width: 0.5px
-  .y_axis
-    text
-      font-size: 10px
-
-.d3_container.target_bar
-  text.target_label
-    font-weight: bold
-    font-size: 10px
-  text.target_unit
-    font-size: 9px
-  text.year_label
-    fill: #777
-    font-size: 9px
-  .x_axis
-    line, path
-      stroke-opacity: 0.4
-    text
-      font-size: 9px

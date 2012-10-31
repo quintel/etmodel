@@ -82,6 +82,8 @@
         return "#{@round_number x, 0} #{@scaling_in_words(0, 'man_years')}"
       when 'FTE'
         return "#{@round_number x, 0} #{@scaling_in_words(0, 'FTE')}"
+      when 'Eur/Mwh'
+        return "#{@round_number x, 0} €/Mwh"
       else
         return value
 

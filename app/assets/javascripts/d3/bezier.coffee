@@ -33,6 +33,7 @@ D3.bezier =
       @height = 360 - (margins.top + margins.bottom)
       # height of the series section
       @series_height = 190
+      @series_width = @width - 15
       @svg = d3.select("#d3_container_#{@key}")
         .append("svg:svg")
         .attr("height", @height + margins.top + margins.bottom)
@@ -58,7 +59,7 @@ D3.bezier =
       # Run the stack method on the nested entries
       stacked_data = @stack_method(@nest.entries @prepare_data())
 
-      @x = d3.scale.linear().range([0, @width - 15])
+      @x = d3.scale.linear().range([0, @series_width])
         .domain([@start_year, @end_year])
 
       # show years at the corners
@@ -86,7 +87,7 @@ D3.bezier =
       @y_axis = d3.svg.axis()
         .scale(@inverted_y)
         .ticks(4)
-        .tickSize(-@width, 10, 0)
+        .tickSize(-@series_width, 10, 0)
         .orient("right")
         .tickFormat((x) => Metric.autoscale_value x, @model.get('unit'))
       @svg.append("svg:g")

@@ -39,3 +39,4 @@
 //= require d3/target_bar
 //= require d3/stacked_bar
 //= require d3/bezier
+//= require d3/line

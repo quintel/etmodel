@@ -17,7 +17,7 @@ D3.waterfall =
         left: 20
         right: 40
 
-      @width = 494 - (margins.left + margins.right)
+      @width = @$el.width() - (margins.left + margins.right)
       @height = 360 - (margins.top + margins.bottom)
       # height of the series section
       @series_height = 190

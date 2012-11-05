@@ -86,12 +86,6 @@ D3.line =
       # animate the y-axis
       @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@inverted_y))
 
-      # and its grid
-      @svg.selectAll('g.rule')
-        .data(@y.ticks())
-        .transition()
-        .attr('transform', (d) => "translate(0, #{@inverted_y(d)})")
-
       @svg.selectAll('path.serie')
         .data(@prepare_data(), (d) -> d.key)
         .transition()

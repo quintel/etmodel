@@ -24,10 +24,15 @@ class @WaterfallChartView extends BaseChartView
       present = serie.present_value()
       future = serie.future_value()
       # There is a conflict between code and documentation. If the serie's
-      # group is set to 'value' then we're interested in the gquery value,
-      # otherwise in the difference future-present
-      val = if serie.get('group') == 'value'
+      # group is set to 'value' then we're interested in the present value, if
+      # 'future' we want the future value, otherwise in the difference
+      # future-present. If I got it right.
+      #
+      g = serie.get('group')
+      val = if g == 'future'
         future
+      else if g == 'value' # ?! TODO: rename!
+        present
       else
         future - present
       if @scale_units() then Metric.scale_value(val, scale) else val

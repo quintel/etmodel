@@ -21,7 +21,7 @@ D3.waterfall =
       @height = 360 - (margins.top + margins.bottom)
       # height of the series section
       @series_height = 190
-      @column_width = (@width - 15) / (@series.length + 1) * 0.8
+      @column_width = (@width - 15) / (@series.length + 1) * 0.6
       @svg = d3.select("#d3_container_#{@key}")
         .append("svg:svg")
         .attr("height", @height + margins.top + margins.bottom)
@@ -57,6 +57,12 @@ D3.waterfall =
         .attr("class", "x_axis inner_grid")
         .attr("transform", "translate(0, #{@series_height})")
         .call(@x_axis)
+
+      # let's rotate the labels
+      @svg.selectAll('.x_axis text')
+        .attr('text-anchor', 'end')
+        .attr('transform', 'rotate(-90) translate(-10, -15)')
+
 
       @svg.selectAll('rect.serie')
         .data(@prepare_data(), (d) -> d.key)

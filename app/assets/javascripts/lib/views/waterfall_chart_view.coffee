@@ -23,12 +23,14 @@ class @WaterfallChartView extends BaseChartView
     series = @model.series.map (serie) =>
       present = serie.present_value()
       future = serie.future_value()
-      if serie.get('group') == 'value'
-        # Take only the present value, as group == value queries only future/present
-        # ?! - PZ
-        if @scale_units() then Metric.scale_value(present, scale) else present
+      # There is a conflict between code and documentation. If the serie's
+      # group is set to 'value' then we're interested in the gquery value,
+      # otherwise in the difference future-present
+      val = if serie.get('group') == 'value'
+        future
       else
-        if @scale_units() then Metric.scale_value(future, scale) else future
+        future - present
+      if @scale_units() then Metric.scale_value(val, scale) else val
     [series]
 
   scale_units: => @model.get('unit') != 'PJ'

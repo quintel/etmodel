@@ -5,6 +5,7 @@ D3.line =
       @key = @model.get 'key'
       @start_year = App.settings.get('start_year')
       @end_year = App.settings.get('end_year')
+      @series = @model.series.models
       @initialize_defaults()
 
     can_be_shown_as_table: -> true
@@ -31,7 +32,7 @@ D3.line =
 
       @draw_legend
         svg: @svg
-        series: @model.series.models
+        series: @series
         width: @width
         vertical_offset: @series_height + 20
         columns: 2
@@ -96,7 +97,7 @@ D3.line =
       d3.max(_.flatten @model.value_pairs())
 
     prepare_data: =>
-      _.map @model.series.models, (s) =>
+      _.map @series, (s) =>
         key: s.get 'gquery_key'
         color: s.get 'color'
         disabled: (s.get('is_target_line') && (s.future_value() == null))

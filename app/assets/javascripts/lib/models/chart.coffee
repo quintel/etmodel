@@ -24,7 +24,8 @@ class @Chart extends Backbone.Model
         if d3_support then D3.stacked_bar.View else VerticalStackedBarChartView
       when 'line'
         if d3_support then D3.line.View else LineChartView
-      when 'waterfall'              then WaterfallChartView
+      when 'waterfall'
+        if d3_support then D3.waterfall.View else WaterfallChartView
       when 'horizontal_stacked_bar' then HorizontalStackedBarChartView
       when 'grouped_vertical_bar'   then GroupedVerticalBarChartView
       when 'block'                  then BlockChartView

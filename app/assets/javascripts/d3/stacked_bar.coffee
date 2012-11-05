@@ -3,6 +3,7 @@ D3.stacked_bar =
     el: 'body'
     initialize: ->
       @key = @model.get 'key'
+      @series = @model.series.models
       @initialize_defaults()
 
     can_be_shown_as_table: -> true
@@ -18,7 +19,7 @@ D3.stacked_bar =
 
       @width = 494 - (margins.left + margins.right)
       @series_height = 190
-      @height = @series_height + (margins.top + margins.bottom) + (@model.series.models.length / 2 * 15)
+      @height = @series_height + (margins.top + margins.bottom) + (@series.length / 2 * 15)
       @svg = d3.select("#d3_container_#{@key}")
         .append("svg:svg")
         .attr("height", @height + margins.top + margins.bottom)
@@ -32,7 +33,7 @@ D3.stacked_bar =
       # rather than two
       target_lines = []
       series_for_legend = []
-      for s in @model.series.models
+      for s in @series
         label = s.get 'label'
         if s.get 'is_target_line'
           if _.indexOf(target_lines, label) == -1

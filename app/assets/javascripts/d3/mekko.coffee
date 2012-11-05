@@ -25,6 +25,7 @@ D3.mekko =
     el: "body"
 
     initialize: ->
+      @series = @model.series.models
       @initialize_defaults()
 
     can_be_shown_as_table: -> true
@@ -38,7 +39,7 @@ D3.mekko =
 
       sectors  = []
       carriers = []
-      for s in @model.series.models
+      for s in @series
         sectors.push s.get('group_translated')
         carriers.push
           label: s.get('label')
@@ -55,7 +56,7 @@ D3.mekko =
           label: carrier.label # used by the legend
           color: carrier.color
 
-      for s in @model.series.models
+      for s in @series
         sector  = s.get('group_translated')
         carrier = s.get('label')
         @node_list.add

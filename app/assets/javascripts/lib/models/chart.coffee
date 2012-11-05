@@ -30,7 +30,8 @@ class @Chart extends Backbone.Model
       when 'block'                  then BlockChartView
       when 'vertical_bar'           then VerticalBarChartView
       when 'html_table'             then HtmlTableChartView
-      when 'scatter'                then ScatterChartView
+      when 'scatter'
+        if d3_support then D3.scatter.View else ScatterChartView
       when 'sankey'                 then D3.sankey.View
       when 'target_bar'             then D3.target_bar.View
       when 'd3'                     then @d3_view_factory()

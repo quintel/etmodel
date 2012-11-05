@@ -68,6 +68,16 @@ D3.waterfall =
         .attr('height', 10)
         .attr('y', 50)
         .attr('x', (d) => @x d.key)
+        .attr('data-tooltip-title', (d) -> d.key)
+
+      $('rect.serie').qtip
+        content:
+          title: -> $(this).attr('data-tooltip-title')
+          text: -> $(this).attr('data-tooltip-text')
+        position:
+          my: 'bottom center'
+          at: 'top center'
+          follow: 'mouse'
 
     refresh: =>
       data = @prepare_data()
@@ -84,6 +94,7 @@ D3.waterfall =
         .transition()
         .attr('y', (d) => @inverted_y d.offset)
         .attr('height', (d) => @y d.value)
+        .attr('data-tooltip-text', (d) => Metric.autoscale_value d.value, @model.get('unit'))
 
     # The final label is not defined in the chart attributes, so we must add
     # add it manually. This is ugly!

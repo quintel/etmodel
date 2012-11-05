@@ -9,11 +9,10 @@ class @ScatterChartSerie extends Backbone.Model
       gquery_x: gqueries.find_or_create_by_key query_x
       gquery_y: gqueries.find_or_create_by_key query_y
 
-  result : ->
-    return [
-      @get('gquery_x').future_value(),
-      @get('gquery_y').future_value()
-    ]
+  result : -> [@safe_x(), @safe_y()]
+
+  safe_x: => @get('gquery_x').safe_future_value()
+  safe_y: => @get('gquery_y').safe_future_value()
 
 class @ScatterChartSeries extends Backbone.Collection
   model : ScatterChartSerie

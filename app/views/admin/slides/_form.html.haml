@@ -21,6 +21,9 @@
     = f.association :sidebar_item,
       :collection => SidebarItem.all.map{|s| [s.short_name, s.id]},
       :hint => "Where should this slide be shown?"
+    = f.simple_fields_for :area_dependency do |j|
+      = j.input :dependent_on, :as => :select, :collection => Api::Area::DEPENDABLE_ATTRIBUTES, :hint => "When you don't want to show the slide for areas without a certain setting. E.g. dont wanna show Solar CSP in NL? Put this to 'has_solar_csp' and be sure that for NL this value is false in the area data."
+
     = f.simple_fields_for :description do |j|
       = j.input :content_en
       = j.input :content_nl

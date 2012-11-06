@@ -17,18 +17,23 @@
 #
 
 class Slide < ActiveRecord::Base
+  include AreaDependent
+
   has_paper_trail
 
   belongs_to :sidebar_item
-
   has_one :description, :as => :describable
   has_many :sliders, :dependent => :nullify, :class_name => 'InputElement'
   belongs_to :output_element # default chart
   belongs_to :alt_output_element, :class_name => 'OutputElement' # secondary chart
+  has_one :area_dependency, :as => :dependable, :dependent => :destroy
+
   validates :key, :presence => true, :uniqueness => true
+
   scope :controller, lambda {|controller| where(:controller_name => controller) }
   scope :ordered, order('position')
-  accepts_nested_attributes_for :description
+
+  accepts_nested_attributes_for :description, :area_dependency
 
   searchable do
     string :key

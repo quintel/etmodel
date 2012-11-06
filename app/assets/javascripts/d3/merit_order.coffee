@@ -30,14 +30,15 @@ D3.merit_order =
         gquery_key: "merit_order_#{k}_operating_costs_in_merit_order_table"
       D3.merit_order.series.push @gquery_y
 
-    value_x: => @gquery_x.future_value() || 0
+    value_x: => @gquery_x.safe_future_value()
+
     value_y: =>
       if @get('key') == 'must_run'
         1
       else
         @original_y_value()
 
-    original_y_value: => @gquery_y.future_value() || 0
+    original_y_value: => @gquery_y.safe_future_value()
 
     label: => @get('label') || @get('key')
 
@@ -65,32 +66,31 @@ D3.merit_order =
       @series_height = 280
       @x = d3.scale.linear().domain([0, 100]).range([0, @width])
       @y = d3.scale.linear().domain([0, 100]).range([0, @series_height])
-      # inverted scale used by the y-axis
-      @yAxisScale = d3.scale.linear().domain([0, 100]).range([@series_height, 0])
-      @xAxis = d3.svg.axis().scale(@x).ticks(4).orient("bottom")
-      @yAxis = d3.svg.axis().scale(@yAxisScale).ticks(4).orient("left")
-      @svg = d3.select("#d3_container_merit_order").
-        append("svg:svg").
-        attr("height", @height + margins.top + margins.bottom).
-        attr("width", @width + margins.left + margins.right).
-        append("svg:g").
-        attr("transform", "translate(#{margins.left}, #{margins.top})")
+      @inverted_y = @y.copy().range([@series_height, 0])
+      @x_axis = d3.svg.axis().scale(@x).ticks(4).orient("bottom")
+      @y_axis = d3.svg.axis().scale(@inverted_y).ticks(4).orient("left")
+      @svg = d3.select("#d3_container_merit_order")
+        .append("svg:svg")
+        .attr("height", @height + margins.top + margins.bottom)
+        .attr("width", @width + margins.left + margins.right)
+        .append("svg:g")
+        .attr("transform", "translate(#{margins.left}, #{margins.top})")
 
       # axis
-      @svg.append("svg:g").
-        attr("class", "x_axis").
-        attr("transform", "translate(0, #{@height})").
-        call(@xAxis)
-      @svg.append("svg:g").
-        attr("class", "y_axis").
-        call(@yAxis)
-      @svg.append("svg:text").
-        text('Operating Costs [EUR/MWh]').
-        attr("x", @height / -2).
-        attr("y", -25).
-        attr("text-anchor", "middle").
-        attr("class", "axis_label").
-        attr("transform", "rotate(270)")
+      @svg.append("svg:g")
+        .attr("class", "x_axis")
+        .attr("transform", "translate(0, #{@height})")
+        .call(@x_axis)
+      @svg.append("svg:g")
+        .attr("class", "y_axis")
+        .call(@y_axis)
+      @svg.append("svg:text")
+        .text('Operating Costs [EUR/MWh]')
+        .attr("x", @height / -2)
+        .attr("y", -25)
+        .attr("text-anchor", "middle")
+        .attr("class", "axis_label")
+        .attr("transform", "rotate(270)")
 
       @svg.append("svg:text")
         .text('Installed Capacity [MW]')
@@ -100,19 +100,19 @@ D3.merit_order =
         .attr("class", "axis_label")
 
       # nodes
-      @svg.selectAll('rect.merit_order_node').
-        data(@nodes.models, (d) -> d.get('key')).
-        enter().
-        append("svg:rect").
-        attr("data-rel", (d) -> d.get('key')).
-        attr("class", "merit_order_node").
-        attr("fill", (d) => d.get 'color').
-        style("stroke", (d) => d3.rgb(d.get 'color').darker(1)).
-        on("mouseover", ->
+      @svg.selectAll('rect.merit_order_node')
+        .data(@nodes.models, (d) -> d.get('key'))
+        .enter()
+        .append("svg:rect")
+        .attr("data-rel", (d) -> d.get('key'))
+        .attr("class", "merit_order_node")
+        .attr("fill", (d) => d.get 'color')
+        .style("stroke", (d) => d3.rgb(d.get 'color').darker(1))
+        .on("mouseover", ->
           item = d3.select(this)
           item.transition().attr("fill", (d) -> d3.rgb(d.get("color")).brighter(1))
-        ).
-        on("mouseout", ->
+        )
+        .on("mouseout", ->
           item = d3.select(this)
           item.transition().attr("fill", (d) -> d.get("color"))
         )
@@ -136,11 +136,12 @@ D3.merit_order =
         left_margin: 15
 
     refresh: =>
-      @y          = d3.scale.linear().domain([0, @nodes.max_height()]).range([0, @height])
-      @yAxisScale = d3.scale.linear().domain([0, @nodes.max_height()]).range([@height, 0])
-      @x = d3.scale.linear().domain([0, @nodes.total_width()]).range([0, @width])
-      @svg.selectAll(".x_axis").transition().call(@xAxis.scale(@x))
-      @svg.selectAll(".y_axis").transition().call(@yAxis.scale(@yAxisScale))
+      max_height = @nodes.max_height()
+      @y.domain([0, max_height])
+      @inverted_y.domain([0, max_height])
+      @x.domain([0, @nodes.total_width()])
+      @svg.selectAll(".x_axis").transition().call(@x_axis.scale(@x))
+      @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@inverted_y))
 
       @min_node_height = 2
 
@@ -151,24 +152,24 @@ D3.merit_order =
         offset += d.value_x()
         d.set {x_offset: value}
 
-      @svg.selectAll('rect.merit_order_node').
-        data(@nodes.models, (d) -> d.get('key')).
-        transition().duration(500).
-        attr("height", (d) =>
+      @svg.selectAll('rect.merit_order_node')
+        .data(@nodes.models, (d) -> d.get('key'))
+        .transition()
+        .attr("height", (d) =>
           if (h = @y(d.value_y())) < @min_node_height
             @min_node_height
           else
             h
-        ).
-        attr("width", (d) => @x(d.value_x())).
-        attr("y", (d) =>
+        )
+        .attr("width", (d) => @x(d.value_x()))
+        .attr("y", (d) =>
           if (h = @y(d.value_y())) < @min_node_height
             @height - @min_node_height
           else
             @height - h
-        ).
-        attr("x", (d) => @x(d.get 'x_offset')).
-        attr("data-tooltip-text", (d) ->
+        )
+        .attr("x", (d) => @x(d.get 'x_offset'))
+        .attr("data-tooltip-text", (d) ->
           html = "Installed capacity: #{Metric.autoscale_value(d.value_x() * 1000000, 'MW', 2)}"
           html += "<br/>"
           html += "Operating costs: #{Metric.autoscale_value d.original_y_value(), 'euro', 2}"

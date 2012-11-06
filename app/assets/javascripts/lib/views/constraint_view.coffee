@@ -36,11 +36,16 @@ class @ConstraintView extends Backbone.View
     constraint_id = @model.get('id')
     key = @model.get('key')
     url = $(constraint).attr('href')
-    $(constraint).fancybox
+    height = switch key
+      when 'net_energy_import' then 485
+      when 'targets_met' then 430
+      else 450
+    $.fancybox.open
+      autoSize: false
       href: url
       type: 'iframe'
       width: 600
-      height: 570
+      height: height
       padding: 0
 
 

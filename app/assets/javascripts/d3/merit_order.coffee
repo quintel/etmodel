@@ -116,9 +116,12 @@ D3.merit_order =
           item = d3.select(this)
           item.transition().attr("fill", (d) -> d.get("color"))
         )
+        .attr('data-tooltip-title', (d) -> I18n.t "output_element_series.#{d.get('key')}")
 
       $('rect.merit_order_node').qtip
-        content: -> $(this).attr('data-tooltip')
+        content:
+          title: -> $(this).attr('data-tooltip-title')
+          text:  -> $(this).attr('data-tooltip-text')
         position:
           target: 'mouse'
           my: 'bottom right'
@@ -178,10 +181,8 @@ D3.merit_order =
             @height - h
         ).
         attr("x", (d) => @x(d.get 'x_offset')).
-        attr("data-tooltip", (d) ->
-          html = I18n.t "output_element_series.#{d.get('key')}"
-          html += "<br/>"
-          html += "Installed capacity: #{Metric.autoscale_value(d.value_x() * 1000000, 'MW', 2)}"
+        attr("data-tooltip-text", (d) ->
+          html = "Installed capacity: #{Metric.autoscale_value(d.value_x() * 1000000, 'MW', 2)}"
           html += "<br/>"
           html += "Operating costs: #{Metric.autoscale_value d.original_y_value(), 'euro', 2}"
           if d.get('key') == 'must_run'

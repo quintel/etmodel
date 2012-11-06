@@ -14,6 +14,7 @@ class SlidesController < BaseController
   def new
     @slide = Slide.new
     @slide.build_description
+    @slide.build_area_dependency
   end
 
   def create
@@ -44,6 +45,7 @@ class SlidesController < BaseController
 
   def edit
     @slide.build_description unless @slide.description
+    @slide.build_area_dependency unless @slide.area_dependency
   end
 
   private

@@ -128,25 +128,12 @@ D3.merit_order =
           at: 'top center'
 
       # add legend
-      legends = @svg.selectAll("svg.legend").
-        data(@nodes.models, (d) -> d.get('key')).
-        enter().
-        append("svg:svg").
-        attr("class", "legend").
-        attr("x", (d, i) -> 115 * (Math.floor(i / 4)) + 10).
-        attr("y", (d, i) -> 18 * (i % 4)).
-        attr("height", 30).
-        attr("width", 110)
-
-      legends.append("svg:rect").
-        attr("width", 10).
-        attr("height", 10).
-        attr("fill", (d) => d.get 'color')
-      legends.append("svg:text").
-        text((d) -> I18n.t "output_element_series.#{d.get('key')}").
-        attr("x", 15).
-        attr("y", 8).
-        attr("class", (d) -> d.get 'key')
+      @draw_legend
+        svg: @svg
+        columns: 4
+        width: @width
+        series: @nodes.models
+        left_margin: 15
 
     refresh: =>
       @y          = d3.scale.linear().domain([0, @nodes.max_height()]).range([0, @height])

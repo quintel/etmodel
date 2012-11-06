@@ -36,11 +36,21 @@ class @D3ChartView extends BaseChartView
   # override in derived class as needed
   outer_height: -> 300
 
+  # Builds a standard legend. Options hash:
+  # - svg: SVG container (required)
+  # - series: array of series. The label might be its 'label' attribute or its
+  #           'key' attribute, which is translated with I18n.js
+  # - columns: number of columns (default: 1)
+  # - left_margin: (default: 10)
+  # - vertical_offset: equivalent to top margin (default: 0)
+  #
   draw_legend: (opts = {}) =>
     opts.columns = opts.columns || 1
+    opts.left_margin = opts.left_margin || 10
+    opts.vertical_offset = opts.vertical_offset || 0
     legend_margin = opts.width / opts.columns
     legend = opts.svg.append('svg:g')
-      .attr("transform", "translate(10,#{opts.vertical_offset})")
+      .attr("transform", "translate(#{opts.left_margin},#{opts.vertical_offset})")
       .selectAll("svg.legend")
       .data(opts.series)
       .enter()
@@ -59,5 +69,7 @@ class @D3ChartView extends BaseChartView
     legend.append("svg:text")
       .attr("x", 15)
       .attr("y", 10)
-      .text((d) -> d.get 'label')
+      .text((d) ->
+        d.get('label') || I18n.t("output_element_series.#{d.get('key')}")
+      )
 

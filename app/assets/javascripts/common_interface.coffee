@@ -1,4 +1,8 @@
 $ ->
+  # TODO: check if this is still needed, was added for an old bug - PZ
+  if _.include(['iPad', 'iPhone', 'iPod'], navigator.platform)
+    $("#footer").css("position", "static")
+
   if $.browser.msie
     # A 1px increase fixes some bad aliasing when resizing the image down
     # to non-HiDPI resolutions.
@@ -27,6 +31,7 @@ $ ->
         search.val(placeholder)
 
   # login menu
+  #
   $("a.signin").click (e) ->
     e.preventDefault()
     $("fieldset#signin_menu").toggle()

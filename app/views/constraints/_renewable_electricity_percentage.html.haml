@@ -1,7 +1,5 @@
-.constraint_box_content
-  %p.tal
-    = @constraint.description.try :short_content
-  #charts_wrapper
-    .chart_holder
-      .chart_canvas#output_element_112{:'data-chart_id' => 112}
+.description= @constraint.description.try :short_content
+#charts_wrapper
+  .chart_holder
+    .chart_canvas#output_element_112{:'data-chart_id' => 112}
 

@@ -36,10 +36,6 @@ class @ConstraintView extends Backbone.View
     constraint_id = @model.get('id')
     key = @model.get('key')
     url = $(constraint).attr('href')
-    height = switch key
-      when 'net_energy_import' then 485
-      when 'targets_met' then 430
-      else 450
     $.fancybox.open
       autoSize: false
       href: url
@@ -47,7 +43,6 @@ class @ConstraintView extends Backbone.View
       width: 600
       height: 480
       padding: 0
-
 
   # Formats the result of calculate_result() for the end-user
   format_result: () =>

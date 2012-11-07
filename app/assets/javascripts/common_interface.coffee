@@ -76,9 +76,9 @@ $ ->
       success: -> window.location.reload()
 
   # Is this thing still used?
-  $("input[name='area_code']").change ->
-    country = $("input[name='country']:checked").val()
-    url = "/pages/update_footer/?country="+country
+  $("select[name='area_code']").change ->
+    country = $(this).val()
+    url = "/update_footer/?country=" + country
     $.ajax
       url: url
       method: 'get'

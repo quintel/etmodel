@@ -135,6 +135,7 @@ Etm::Application.routes.draw do
   match '/known_issues'                 => 'pages#bugs',        :as => :bugs
   match '/set_locale(/:locale)' => 'pages#set_locale', :as => :set_locale
   match '/browser_support' => 'pages#browser_support'
+  match '/update_footer'   => 'pages#update_footer'
 
   match "/404", :to => "pages#404"
   match "/500", :to => "pages#500"

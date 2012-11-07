@@ -1,6 +1,4 @@
-.constraint_box_content
-  %p.tal
-    = @constraint.description.try :short_content
-  #charts_wrapper
-    .chart_holder{:style => 'height: 310px'}
-      .chart_canvas#output_element_48{:'data-chart_id' => 48}
+.description= @constraint.description.try :short_content
+#charts_wrapper
+  .chart_holder{:style => 'height: 310px'}
+    .chart_canvas#output_element_48{:'data-chart_id' => 48}

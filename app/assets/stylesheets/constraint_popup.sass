@@ -1,59 +1,57 @@
 body#constraint_popup
   margin: 0px
   padding: 10px
+  width: 580px
+  height: 460px
   overflow: hidden
   font: 13px/20px $body_font_family
   background-color: #ffffff
-
-  h2
-    background-color: #63A1C9
-    font-family: $title_font_family
-    color: #FFFFFF
-    padding: 7px 5px
-    margin: 0px
-    font-weight: normal
-    float: left
-    width: 570px
-
-  h3
-    font-family: $title_font_family
-
-  .constraint_box_content
-    float: left
+  .wrapper
     background-color: #DBE4F2
-    width: 570px
-    padding: 10px 5px
-    height: 84%
-    margin-bottom: 10px
+    height: 460px
+    h2
+      background-color: #63A1C9
+      font-family: $title_font_family
+      color: #FFFFFF
+      padding: 7px 5px
+      margin: 0px
+      font-weight: normal
+    h3
+      font-family: $title_font_family
+    .description
+      text-align: left
+      padding: 7px
     #charts_wrapper
       text-align: center
-      width: 560px
+      margin: 0 auto
       .chart_holder
-        background: #fff
-        width: 100%
-        margin: 5px
+        float: none
+        background: #ffffff
         min-height: 260px
         max-height: 400px
+        margin: 5px auto
         .chart_canvas
           min-height: 250px
           width: 100%
+    .clear
+      clear: both
 
   table#policies
     font-family: 13px/13px $body_font_family
-    margin: 0 auto
     line-height: 0.9em
     border-collapse: collapse
+    width: 100%
+    td, th
+      padding: 10px 12px
     th
       font-family: $body_font_family
       text-align: left
-      padding: 7px 12px
     tr
       &.even
-        background: #ffffff
+        background: #fff
       &.odd
         background: none
       td
-        padding: 7px 12px
         margin: 0
         border: 0
         &.name
@@ -69,8 +67,13 @@ body#constraint_popup
 
   table.energy_imports
     td
-      .chart_canvas
-        width: 280px
-        height: 210px
+      background-color: #fff
+      .chart_holder
+        width: 285px
+        height: 300px
 
-
+body#constraint_popup.bio_footprint
+  .present, .future
+    margin-left: 10px
+  .present
+    margin-top: 20px

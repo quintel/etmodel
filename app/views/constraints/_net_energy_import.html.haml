@@ -1,15 +1,15 @@
-.constraint_box_content
-  %p.tal
-    = @constraint.description.try :short_content
+.description= @constraint.description.try :short_content
 
-  %table.energy_imports
+%table.energy_imports
+  %thead
     %tr
       %th= Current.setting.start_year
       %th= Current.setting.end_year
+  %tbody
     %tr
       %td
-        .chart_holder{:style => 'width: 280px; height: 300px'}
-          .chart_canvas#output_element_47.half{:'data-chart_id' => 47}
+        .chart_holder
+          .chart_canvas#output_element_47{:'data-chart_id' => 47}
       %td
-        .chart_holder{:style => 'width: 280px; height: 300px'}
-          .chart_canvas#output_element_76.half{:'data-chart_id' => 76}
+        .chart_holder
+          .chart_canvas#output_element_76{:'data-chart_id' => 76}

@@ -4,20 +4,20 @@
   map      = "/assets/maps/#{country}_map.png"
   map_grey = "/assets/maps/#{country}_map_gray.png"
 
-.constraint_box_content
-  %p= @constraint.description.try :short_content
+.description= @constraint.description.try :short_content
 
-  .present{:style => "position: relative; background: url(#{map_grey}) repeat-x; height: 105px; width: 70px"}
-    %h3.tal{:style => "position:absolute; left: 0; top: 0; margin: 0; padding: 0"}
-      = Current.setting.start_year
-    .overlay{:style => "background: url(#{map}) repeat-x; height: 105px;"} &nbsp;
+.present{:style => "position: relative; background: url(#{map_grey}) repeat-x; height: 105px; width: 70px"}
+  %h3.tal{:style => "position:absolute; left: 0; top: 0; margin: 0; padding: 0"}
+    = Current.setting.start_year
+  .overlay{:style => "background: url(#{map}) repeat-x; height: 105px;"} &nbsp;
 
-  %br
+%br
 
-  .future{:style => "position: relative; background: url(#{map_grey}) repeat-x; height: 105px; width: 70px"}
-    %h3.tal{:style => "position:absolute; left: 0; top: 0; margin: 0; padding: 0"}
-      = Current.setting.end_year
-    .overlay{:style => "background: url(#{map}) repeat-x; height: 105px;"} &nbsp;
+.future{:style => "position: relative; background: url(#{map_grey}) repeat-x; height: 105px; width: 70px"}
+  %h3.tal{:style => "position:absolute; left: 0; top: 0; margin: 0; padding: 0"}
+    = Current.setting.end_year
+  .overlay{:style => "background: url(#{map}) repeat-x; height: 105px;"} &nbsp;
+
 :javascript
   var q = gqueries.find_or_create_by_key('bio_footprint');
   $("body").bind("dashboardUpdate", function(){

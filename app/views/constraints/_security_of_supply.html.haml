@@ -1,5 +1,3 @@
-.constraint_box_content
-  %p.tal
-    = @constraint.description.try :short_content
-  #charts_wrapper
-    Nothing here yet.
+.description= @constraint.description.try :short_content
+#charts_wrapper
+  Nothing here yet.

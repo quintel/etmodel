@@ -29,7 +29,7 @@ class @Chart extends Backbone.Model
       when 'horizontal_stacked_bar' then HorizontalStackedBarChartView
       when 'grouped_vertical_bar'   then GroupedVerticalBarChartView
       when 'block'                  then BlockChartView
-      when 'vertical_bar'           then VerticalBarChartView
+      when 'co2_emissions'          then CO2EmissionsChartView
       when 'html_table'             then HtmlTableChartView
       when 'scatter'
         if d3_support then D3.scatter.View else ScatterChartView

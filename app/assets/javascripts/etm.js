@@ -32,13 +32,4 @@
 //= require common_interface
 
 //= require d3.v2.min
-//= require d3/sankey
-//= require d3/treemap
-//= require d3/merit_order
-//= require d3/mekko
-//= require d3/target_bar
-//= require d3/stacked_bar
-//= require d3/bezier
-//= require d3/line
-//= require d3/scatter
-//= require d3/waterfall
+//= require_tree ./d3

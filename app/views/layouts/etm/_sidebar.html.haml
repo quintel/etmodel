@@ -8,7 +8,7 @@
             :class => (@interface.current_sidebar_item == item) ? 'active' : nil,
             :'data-gquery' => item.percentage_bar_query}
           = link_to tab_path(:tab => tab.key, :sidebar => item.key),
-            :'data-nav' => false do
+            :'data-nav' => true do
             %p
               %span.title
                 = raw t("sidebar_items.#{item.key}.short_name")
@@ -19,7 +19,7 @@
           %li.child{:id => child.key,
             :class => (@interface.current_sidebar_item == child) ? 'active' : nil}
             = link_to tab_path(:tab => tab.key, :sidebar => child.key),
-              :'data-nav' => false do
+              :'data-nav' => true do
               %p
                 %span.bullet.icon-chevron-right
                 %span.title

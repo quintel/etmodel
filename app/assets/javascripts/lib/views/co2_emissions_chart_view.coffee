@@ -1,6 +1,6 @@
 # ATTENTION: This chart type is only used in the co2 dashbord and therefore quite custom
 # It contains some custom additions to the series showing a historic value
-class @VerticalBarChartView extends VerticalStackedBarChartView
+class @CO2EmissionsChartView extends VerticalStackedBarChartView
   render: =>
     @clear_container()
     @render_chart()

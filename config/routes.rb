@@ -114,8 +114,6 @@ Etm::Application.routes.draw do
     end
   end
 
-  match '/charts/topology' => 'charts#topology'
-
   match '/ete(/*url)' => 'api_proxy#default'
   match '/ete_proxy(/*url)' => 'api_proxy#default'
 

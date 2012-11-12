@@ -9,11 +9,9 @@
       = t("not_available")
 
   #charts_wrapper
-    - Current.setting.charts.each_pair do |holder_id, data|
-      = render :partial => "output_elements/chart",
-        :locals => {:dom_id => holder_id, :data => data}
 
   .clear
 
 - content_for :scripts do
   = render 'output_elements/table_template'
+  = render 'output_elements/chart_template'

@@ -57,6 +57,15 @@ class @AppView extends Backbone.View
     if @settings.get('area_code') == 'nl'
       @peak_load = new PeakLoad()
 
+    window.charts = @charts = new ChartList()
+
+    @accordion = new Accordion()
+    @accordion.setup()
+
+    # initial charts render, takes care of locked charts
+    @charts.load_charts()
+
+
   setup_fce_toggle: ->
     if element = $('.slide .fce-toggle')
       (new FCEToggleView(el: element, model: App.settings)).render()
@@ -156,9 +165,6 @@ $ ->
   window.App = App = new AppView()
   App.settings.set(globals.settings, {silent : true});
   App.bootstrap()
-  window.charts = new ChartList()
-  charts.load_pinned_charts()
-  acc = new Accordion()
-  acc.setup()
+
 
 

@@ -12,6 +12,8 @@
     .wrapper
       = yield
       .clear
+    #scripts
+      = render 'output_elements/chart_template'
 
     :javascript
       $(document).ready(function(){
@@ -21,6 +23,6 @@
         $("body#constraint_popup .chart_canvas").each(function(i, c){
           var chart_id = $(c).data('chart_id');
           var holder = $(c).attr('id');
-          charts.load(chart_id, holder);
+          charts.load(chart_id, holder, {header: false});
         });
       });

@@ -30,17 +30,6 @@ class TabController < ApplicationController
     def load_interface
       @interface = Interface.new(params[:tab], params[:sidebar])
 
-      # Deal with the charts
-      chart_settings = Current.setting.charts
-      chart_settings['chart_0']['default'] = @interface.default_chart.id
-
-      # make an array of the charts to show
-      @charts = chart_settings.keys.map do |holder_id|
-        chart_id = chart_settings[holder_id]['chart_id'] ||
-          chart_settings[holder_id]['default']
-        OutputElement.find_by_id(chart_id)
-      end
-
       # The JS app will take care of fetching a scenario id, in the meanwhile we
       # use this variable to show all the items in the top menu
       @active_scenario = true

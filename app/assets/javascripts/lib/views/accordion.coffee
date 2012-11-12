@@ -1,10 +1,12 @@
 class @Accordion
   setup: =>
+    @bootstrapped = false
     @setup_callbacks()
     @open_right_tab()
+    @bootstrapped = true
 
   setup_callbacks: ->
-    $(document).on 'click', ".accordion_element h3", (e) ->
+    $(document).on 'click', ".accordion_element h3", (e) =>
       e.preventDefault()
       header = $(e.target).closest('h3')
 
@@ -28,21 +30,21 @@ class @Accordion
       Tracker.track({slide: slide_title})
 
       # request the default chart
-      chart_holder = 'chart_0'
+      chart_holder = 'holder_0'
       default_chart = header.data('default_chart')
       alternate_chart = header.data('alt_chart')
       # store the default chart for this slide
-      chart_settings = App.settings.get('charts')
-      chart_settings[chart_holder].default = default_chart
-      App.settings.set 'charts', chart_settings
+      App.charts.default_chart_id = default_chart
 
       # show/hide the default chart button
-      showing_default = charts.current_chart_in(chart_holder) == default_chart
+      showing_default = charts.chart_holders[chart_holder] == default_chart
       $("a.default_chart").toggle(!showing_default)
 
-      # load chart
-      unless charts.pinned_chart_in(chart_holder)
-        charts.load(default_chart, chart_holder, {alternate: alternate_chart})
+      # load chart. On application's bootstrap the chart is loaded using the
+      # settings hash (to restore properly the locked charts); after that the
+      # charts are loaded according to the accordion events
+      if @bootstrapped
+        charts.load(default_chart, chart_holder, alternate: alternate_chart)
 
   # Setup slides and open the right one. The default slide can be set
   # by passing a fragment url (http://ETM/costs#slide_key)

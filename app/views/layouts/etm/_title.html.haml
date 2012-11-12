@@ -10,4 +10,9 @@
         %span.tutorial-icon<>
         Tutorial
 
-    %a.button.overview{:href => '#'}= t 'header.overview'
+    %a.button.overview{:href => '#'}
+      %span.icon-sitemap
+      = t 'header.overview'
+    %a.button.add_chart.fancybox{:href => output_elements_path}
+      %span.icon-signal
+      = t 'header.add_chart'

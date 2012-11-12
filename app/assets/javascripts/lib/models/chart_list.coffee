@@ -37,6 +37,7 @@ class @ChartList extends Backbone.Collection
     $.ajax
       url: url
       success: (data) =>
+
         # Create the new Chart
         new_chart = new Chart(_.extend data.attributes, {
             container: holder_id
@@ -62,35 +63,13 @@ class @ChartList extends Backbone.Collection
           new_chart.series.add(s)
 
         # if the chart was pinned as table let's set the instance variable
-        show_as_table = try
-          App.settings.get('charts')[holder_id].format == 'table'
+        try
+          show_as_table = App.settings.get('charts')[holder_id].format == 'table'
+          new_chart.view.display_as_table = show_as_table
         catch e
           null
 
-        if show_as_table
-          new_chart.view.display_as_table = true
-
-        # Now it's time to upate the buttons and links for the chart
-        root = $('#' + holder_id).parents('.chart_holder')
-
-        # show/hide default chart button - only for the chart holders that
-        # actually define a default chart. The dashboard popups charts don't.
-        if container_info = App.settings.get('charts')[holder_id]
-          default_chart_for_holder = container_info.default
-          root.find("a.default_chart").toggle(chart_id != default_chart_for_holder)
-
-        # show/hide format toggle button
-        root.find("a.chart_format, a.table_format").hide()
-        if show_as_table && new_chart.can_be_shown_as_table()
-          root.find("a.chart_format").show()
-        if new_chart.can_be_shown_as_table() && !show_as_table
-          root.find("a.table_format").show()
-
-        # update chart information link
-        root.find(".actions a.chart_info").attr(
-          "href", "/descriptions/charts/#{chart_id}")
-        # show.hide the under_construction notice
-        root.find(".chart_not_finished").toggle new_chart.get("under_construction")
+        new_chart.update_buttons()
         App.call_api()
     @last()
 

@@ -48,6 +48,33 @@ class @Chart extends Backbone.Model
   # action links, title, etc.
   outer_container: => $("##{@get 'container'}").parents(".chart_holder")
 
+
+  # takes care of the header links
+  #
+  update_buttons: =>
+    r = @outer_container()
+
+    # format links
+    r.find("a.chart_format, a.table_format").hide()
+    if @can_be_shown_as_table()
+      if @view.display_as_table
+        r.find("a.chart_format").show()
+      else
+        r.find("a.table_format").show()
+
+    # update chart information link
+    r.find(".actions a.chart_info").attr "href", "/descriptions/charts/#{@get 'id'}"
+    # show.hide the under_construction notice
+    r.find(".chart_not_finished").toggle @get("under_construction")
+
+    # is this the default chart?
+    try
+      is_default = App.settings.get('charts')[holder_id].default == @get('id')
+      r.find("a.default_chart").toggle(!is_default)
+    catch e
+      r.find("a.default_chart").hide()
+
+
   # D3 charts have their own class. Let's make an instance of the right one
   # D3 is a pseudo-namespace. See d3_chart_view.coffee
   d3_view_factory: =>
@@ -152,5 +179,3 @@ class @Chart extends Backbone.Model
     s[holder].format = opts.format
     s[holder].chart_id = opts.chart_id
     App.settings.save charts: s
-
-

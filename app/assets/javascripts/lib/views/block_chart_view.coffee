@@ -14,7 +14,7 @@ class @BlockChartView extends BaseChartView
   already_on_screen: =>
     @container_node().find("#blockchart").length == 1
 
-  html: => charts.html[@model.get('id')]
+  html: => @model.get 'html'
 
   results: =>
     @model.series.map (serie) -> serie.result()

@@ -17,12 +17,9 @@ class @HtmlTableChartView extends BaseChartView
     # sort rows on merit order chart
     @merit_order_sort() if @model.get("id") == 116
 
-  # The table HTML is provided by the rails app. It is stored in the
-  # window.charts object, a hash that contains the markup of the table.
-  # Being stored in a hash, we can save the markup of multiple tables
-  # and eventually show multiple tables at the same time
+  # The table HTML is provided by the rails app.
   #
-  table_html: => charts.html[@model.get("id")]
+  table_html: => @model.get 'html'
 
   # normal charts have their series added when the /output_element/X.js
   # action is called. Tables have the gqueries defined in the markup instead.

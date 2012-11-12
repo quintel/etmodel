@@ -37,12 +37,11 @@ class @ChartList extends Backbone.Collection
     $.ajax
       url: url
       success: (data) =>
-        # store the chart HTML (tables and block chart)
-        @html[chart_id] = data.html
-        # Add to the Chart constructor options the id of the container element
-        data.attributes.container = holder_id
         # Create the new Chart
-        new_chart = new Chart(data.attributes)
+        new_chart = new Chart(_.extend data.attributes, {
+            container: holder_id
+            html: data.html # tables and block chart
+          })
         if !new_chart.supported_by_current_browser()
           if alternate
             @load alternate, holder_id

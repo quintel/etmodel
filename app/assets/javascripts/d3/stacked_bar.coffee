@@ -112,13 +112,13 @@ D3.stacked_bar =
         .attr('class', 'target_line')
         .style('fill', (d) -> d.get 'color')
         .attr('height', 2)
-        .attr('width', 136)
+        .attr('width', @x.rangeBand() * .6)
         .attr('x', (s) =>
           column = if s.get('target_line_position') == '1' # Brrrrr
             'start_year'
           else
             'end_year'
-          @x(App.settings.get column) - 5)
+          @x(App.settings.get column) - (@x.rangeBand() * .02))
         .attr('y', 0)
 
     refresh: =>

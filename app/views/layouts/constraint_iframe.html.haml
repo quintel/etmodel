@@ -18,8 +18,9 @@
     :javascript
       $(document).ready(function(){
         App = new AppView();
-        App.settings = new Setting(globals.settings);
-        charts = new ChartList();
+        var settings = _.extend({}, globals.settings);
+        settings.locked_charts = {};
+        App.settings = new Setting(settings);
         $("body#constraint_popup .chart_canvas").each(function(i, c){
           var chart_id = $(c).data('chart_id');
           var holder = $(c).attr('id');

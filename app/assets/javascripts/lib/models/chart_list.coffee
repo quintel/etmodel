@@ -18,16 +18,17 @@ class @ChartList extends Backbone.Collection
   # holder_id - id of the dom element that will hold the chart. If null then a
   #             new chart holder will be created
   # options   - hash with some options (default: {})
-  #             alternate - id of the chart to load if the first one fails.
-  #                         Watch out for loops!
-  #             force     - (re)load the chart entirely
-  #             header    - show or hide the chart header (default: true)
-  #             locked    - flag the chart as locked (default: false)
-  #             as_table  - render the chart as a table (default: false). Only
-  #                         some chart types have this feature!
+  #             alternate   - id of the chart to load if the first one fails.
+  #                           Watch out for loops!
+  #             force       - (re)load the chart entirely
+  #             header      - show or hide the chart header (default: true)
+  #             locked      - flag the chart as locked (default: false)
+  #             as_table    - render the chart as a table (default: false). Only
+  #                           some chart types have this feature!
   #             ignore_lock - don't overwrite the lock flag. This might be
   #                           needed on the initial render, where we want to
   #                           plot the charts and preserve the locks
+  #             wait        - don't fire the API request immediately
   #
   # Returns the newly created chart object or false if something went wrong
   load: (chart_id, holder_id = null, options = {}) =>
@@ -82,7 +83,7 @@ class @ChartList extends Backbone.Collection
           new_chart.series.add(s)
 
         new_chart.update_buttons()
-        App.call_api()
+        App.call_api() unless options.wait
     @last()
 
   # Returns the chart held in a holder. This assumes a chart can be shown only
@@ -132,9 +133,13 @@ class @ChartList extends Backbone.Collection
         @load(id, holder, {
           locked: locked,
           as_table: (format == 'T'),
-          ignore_lock: true # the initial render should ignore the lock check:
-        })                  # render the charts but don't remove the locks,
-                            # which is what `force: true` would do
+          # the initial render should ignore the lock check: render the charts
+          # but don't remove the locks, which is what `force: true` would do
+          ignore_lock: true,
+          # Load all of them before triggering the api request
+          wait: true
+        })
+    App.call_api()
 
   # adds a chart container, unless it is already in the DOM. Returns the
   # holder_id

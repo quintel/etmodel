@@ -113,7 +113,8 @@ class @ChartList extends Backbone.Collection
     # is the default chart locked?
     unless default_chart_locked = settings.holder_0
       # if not then use the default chart
-      charts_to_load.holder_0 = @default_chart_id
+      if @default_chart_id
+        charts_to_load.holder_0 = @default_chart_id
 
     ordered_charts = _.keys(charts_to_load).sort()
     for holder in ordered_charts
@@ -129,7 +130,7 @@ class @ChartList extends Backbone.Collection
       else
         default_chart_locked
 
-      if id
+      if id && holder
         @load(id, holder, {
           locked: locked,
           as_table: (format == 'T'),

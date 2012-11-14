@@ -15,15 +15,15 @@ describe SettingsController do
     end
 
     it "should update the charts hash" do
-      put :update, :format => :json, :charts => {:chart_0 => {:chart_id => 123}}
+      put :update, :format => :json, :locked_charts => {'holder_0' => 123}
       response.should be_success
-      session[:setting][:charts][:chart_0][:chart_id].should == 123
+      expect(session[:setting][:locked_charts]).to eql({'holder_0' => 123})
     end
 
     it "should update the charts hash" do
-      put :update, :format => :json, :charts => {:chart_0 => {:chart_id => false}}
+      put :update, :format => :json, :locked_charts => {}
       response.should be_success
-      session[:setting][:charts][:chart_0][:chart_id].should be_false
+      expect(session[:setting][:locked_charts]).to eql({})
     end
   end
 

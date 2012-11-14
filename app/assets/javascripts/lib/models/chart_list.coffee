@@ -137,10 +137,8 @@ class @ChartList extends Backbone.Collection
           # the initial render should ignore the lock check: render the charts
           # but don't remove the locks, which is what `force: true` would do
           ignore_lock: true,
-          # Load all of them before triggering the api request
-          wait: true
+          wait: false
         })
-    App.call_api()
 
   # adds a chart container, unless it is already in the DOM. Returns the
   # holder_id

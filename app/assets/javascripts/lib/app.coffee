@@ -160,11 +160,3 @@ class @AppView extends Backbone.View
 
   debug: (t) ->
     console.log(t) if globals.debug_js
-
-$ ->
-  window.App = App = new AppView()
-  App.settings.set(globals.settings, {silent : true});
-  App.bootstrap()
-
-
-

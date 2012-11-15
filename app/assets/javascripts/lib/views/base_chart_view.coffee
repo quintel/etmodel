@@ -37,11 +37,16 @@ class @BaseChartView extends Backbone.View
 
   clear_container: -> @container_node().empty()
 
-  update_title: ->
+  # updates the header items as needed, returns the videw itself to allow some
+  # method chaining. Some of these updates should be moved to the underscore
+  # templating
+  #
+  update_title: =>
     @$el.find('h3').html(@model.get("name"))
     @$el.data('chart_id', @model.get('id'))
     @$el.attr('data-block_ui_on_refresh', @block_ui_on_refresh())
     @$el.find('a.chart_info').toggle(@model.get('has_description'))
+    this
 
   create_legend: (opts) ->
     renderer: $.jqplot.EnhancedLegendRenderer
@@ -84,6 +89,10 @@ class @BaseChartView extends Backbone.View
   #
   can_be_shown_as_table: -> true
 
+  # D3 charts set this to false because they support animations. jqplot charts
+  # don't, so while waiting for the data the chart container is blocked by a
+  # busybox
+  #
   block_ui_on_refresh: -> true
 
   render_as_table: =>

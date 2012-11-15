@@ -41,12 +41,30 @@ class @BaseChartView extends Backbone.View
   # method chaining. Some of these updates should be moved to the underscore
   # templating
   #
-  update_title: =>
+  update_header: =>
+    id = @model.get 'id'
+    @$el.data('chart_id', id)
     @$el.find('h3').html(@model.get("name"))
-    @$el.data('chart_id', @model.get('id'))
     @$el.attr('data-block_ui_on_refresh', @block_ui_on_refresh())
     @$el.find('a.chart_info').toggle(@model.get('has_description'))
+    @$el.find(".actions a.chart_info").attr "href", "/descriptions/charts/#{id}"
+    @$el.find("a.chart_format, a.table_format").hide()
+    if @model.can_be_shown_as_table()
+      if @model.get 'as_table'
+        @$el.find("a.chart_format").show()
+      else
+        @$el.find("a.table_format").show()
+    @$el.find(".chart_not_finished").toggle @model.get("under_construction")
+    @$el.find("a.default_chart").toggle @model.wants_default_button()
+    @update_lock_icon()
     this
+
+  update_lock_icon: =>
+    icon = @$el.find('a.lock_chart')
+    if @model.get 'locked'
+      icon.removeClass('icon-unlock').addClass('icon-lock')
+    else
+      icon.removeClass('icon-lock').addClass('icon-unlock')
 
   create_legend: (opts) ->
     renderer: $.jqplot.EnhancedLegendRenderer

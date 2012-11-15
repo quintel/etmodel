@@ -22,7 +22,7 @@ class @Chart extends Backbone.Model
       el: @outer_container()
     )
 
-    @view.update_title()
+    @view.update_header()
 
   # -- view class detection --------------------------------------------------
 
@@ -67,34 +67,6 @@ class @Chart extends Backbone.Model
   # the container just holds the chart, the outer container has the chart
   # action links, title, etc.
   outer_container: => $("##{@get 'container'}").parents(".chart_holder")
-
-  # takes care of the header links. This stuff should be moved to the view
-  #
-  update_buttons: =>
-    r = @outer_container()
-
-    # format links
-    #
-    r.find("a.chart_format, a.table_format").hide()
-    if @can_be_shown_as_table()
-      if @get 'as_table'
-        r.find("a.chart_format").show()
-      else
-        r.find("a.table_format").show()
-
-    # update chart information link
-    #
-    r.find(".actions a.chart_info").attr "href", "/descriptions/charts/#{@get 'id'}"
-
-    # show.hide the under_construction notice
-    #
-    r.find(".chart_not_finished").toggle @get("under_construction")
-
-    # update default chart button
-    #
-    r.find("a.default_chart").toggle(@wants_default_button())
-
-    @update_lock_icon()
 
   # -- browser support -------------------------------------------------------
 
@@ -200,21 +172,13 @@ class @Chart extends Backbone.Model
     value = !@get('locked') if value == null
     @set 'locked', value
     @update_lock_settings()
-    @update_lock_icon()
-
-  update_lock_icon: =>
-    icon = @view.$el.find('a.lock_chart')
-    if @get 'locked'
-      icon.removeClass('icon-unlock').addClass('icon-lock')
-    else
-      icon.removeClass('icon-lock').addClass('icon-unlock')
+    @view.update_lock_icon()
 
   # updates the settings hash and pushes the changes to the rails app
   #
   update_lock_settings: =>
     s = App.settings.get 'locked_charts'
     holder_id = @get 'container'
-    console.log "updating settings: #{holder_id}"
 
     if @get 'locked'
       tbl_string = if @get('as_table') then 'T' else 'C'
@@ -224,7 +188,8 @@ class @Chart extends Backbone.Model
 
     App.settings.save locked_charts: s
 
-  # should the default button bw shown?
+  # should the default button be shown?
   #
   wants_default_button: =>
-    @get('container') == 'holder_0' && @get('id') != @collection.default_chart_id
+    (@get('container') == 'holder_0') &&
+    (@get('id') != App.charts.default_chart_id)

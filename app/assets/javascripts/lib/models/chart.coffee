@@ -1,6 +1,21 @@
 # The big picture: the chart object renders a chart that can be based on
 # jqPlot (IE<9) or D3 (newer browsers). The chart will be rendered inside a
-# holder element and might have a header with some buttons.
+# holder element:
+#
+#     #charts_wrapper
+#       .chart_holder
+#         header           - optional
+#         .chart_canvas#id - where the chart is actually rendered
+#       .chart_holder      - the wrapper can hold multiple charts
+#         ...
+#
+# The holder element is created dynamically using underscore templates; we can
+# specify the element that will contain it; the default is #charts_wrapper,
+# but popup elements might use something else
+#
+# TODO: the chart constructor immediately triggers the render method, although
+# we could still be waiting for the API response. The event chain should be
+# refactored.
 #
 class @Chart extends Backbone.Model
   initialize : ->
@@ -11,6 +26,8 @@ class @Chart extends Backbone.Model
       when 'scatter' then new ScatterChartSeries()
       else new ChartSeries()
     @bind('change:type', @render)
+    # this should be called later! It's still here for backwards compatibility
+    # with the old jqplot charts. See ETPlugin charts for a better approach.
     @render()
 
   render : =>

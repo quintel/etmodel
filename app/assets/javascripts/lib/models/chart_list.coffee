@@ -82,7 +82,6 @@ class @ChartList extends Backbone.Collection
           s.owner = holder_id
           new_chart.series.add(s)
 
-        new_chart.update_buttons()
         App.call_api() unless options.wait
     @last()
 

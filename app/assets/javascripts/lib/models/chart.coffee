@@ -1,3 +1,7 @@
+# The big picture: the chart object renders a chart that can be based on
+# jqPlot (IE<9) or D3 (newer browsers). The chart will be rendered inside a
+# holder element and might have a header with some buttons.
+#
 class @Chart extends Backbone.Model
   initialize : ->
     # every chart has a series (=~ gqueries) collection. This helps us handling
@@ -11,8 +15,20 @@ class @Chart extends Backbone.Model
 
   render : =>
     return false unless @supported_by_current_browser()
+
+    klass = @find_view_class()
+    @view = new klass(
+      model: this
+      el: @outer_container()
+    )
+
+    @view.update_title()
+
+  # -- view class detection --------------------------------------------------
+
+  find_view_class: =>
     d3_support = Browser.hasD3Support() && !window.disable_d3
-    view_class = switch @get('type')
+    switch @get('type')
       when 'bezier'
         if d3_support then D3.bezier.View else BezierChartView
       when 'mekko'
@@ -35,15 +51,10 @@ class @Chart extends Backbone.Model
       when 'target_bar'             then D3.target_bar.View
       when 'd3'                     then @d3_view_factory()
       else HtmlTableChartView
-    @view = new view_class
-      model: this
-      el: @outer_container()
-    @view.update_title()
-    @view
-
 
   # D3 charts have their own class. Let's make an instance of the right one
   # D3 is a pseudo-namespace. See d3_chart_view.coffee
+  #
   d3_view_factory: =>
     key = @get 'key'
     if D3[key] && D3[key].View

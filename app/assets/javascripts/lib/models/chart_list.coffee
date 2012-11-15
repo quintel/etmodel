@@ -70,6 +70,8 @@ class @ChartList extends Backbone.Collection
           else
             # sorry, no chart to load...
             alert I18n.t('output_elements.common.old_browser')
+            # delete holder if empty
+            @delete_container(holder_id) unless @chart_holders[holder_id]
           return false
 
         # Remember what we were showing in that position
@@ -164,12 +166,18 @@ class @ChartList extends Backbone.Collection
 
     if $container.find("##{holder_id}").length == 0
       new_chart = @template(
-        title: 'foo'
+        title: 'Loading'
         chart_id: 0
         holder_id: holder_id
         header: options.header)
       $container.append new_chart
     holder_id
+
+  # This might be called if the chart loading fails and we don't want to leave
+  # an empty holder
+  #
+  delete_container: (holder_id) =>
+    $(".chart_holder[data-holder_id=#{holder_id}]").remove()
 
   # This stuff could be moved to the view, but a document-scoped event binding
   # prevents memory leaks and will be called just once.

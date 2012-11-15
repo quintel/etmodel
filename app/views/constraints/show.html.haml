@@ -1,7 +1,7 @@
-%h2= t("constraints.#{@constraint.key}.title").html_safe
-= render :partial => @constraint.key
+#dashboard_popup
+  %h2= t("constraints.#{@constraint.key}.title").html_safe
+  = render :partial => @constraint.key
 
-- content_for :scripts do
   = render 'output_elements/chart_template'
   :javascript
     #{render 'js_init'}

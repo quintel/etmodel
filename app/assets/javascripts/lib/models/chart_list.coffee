@@ -9,6 +9,7 @@ class @ChartList extends Backbone.Collection
     # We can have multiple charts. This hash keeps track ok which chart holders
     # are being used
     @chart_holders = {}
+
     @setup_callbacks()
 
   # Loads a chart into a DOM element making an AJAX request. Will create the
@@ -31,6 +32,8 @@ class @ChartList extends Backbone.Collection
   #             wait        - don't fire the API request immediately
   #             wrapper     - selector for the wrapper that will contain the
   #                           chart holder
+  #             prunable    - if true then the chart should be garbage
+  #                           collected using the collection's prune() method
   #
   # Returns the newly created chart object or false if something went wrong
   load: (chart_id, holder_id = null, options = {}) =>
@@ -60,6 +63,7 @@ class @ChartList extends Backbone.Collection
             html: data.html # tables and block chart
             locked: options.locked
             as_table: options.as_table
+            prunable: options.prunable
           }
         new_chart = new Chart settings
 
@@ -178,6 +182,17 @@ class @ChartList extends Backbone.Collection
   #
   delete_container: (holder_id) =>
     $(".chart_holder[data-holder_id=#{holder_id}]").remove()
+
+  # Deleted all the prunable charts, ie the charts that are loaded through the
+  # dashboard popups and that should be removed when the user closes the popup
+  #
+  prune: =>
+    prunables = @where prunable: true
+
+    for chart in prunables
+      chart.delete()
+      @remove chart
+
 
   # This stuff could be moved to the view, but a document-scoped event binding
   # prevents memory leaks and will be called just once.

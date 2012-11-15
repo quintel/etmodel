@@ -193,6 +193,12 @@ class @ChartList extends Backbone.Collection
       chart.delete()
       @remove chart
 
+  # returns the chart itself or false
+  #
+  chart_already_on_screen: (chart_id) =>
+    for holder, chart of @chart_holders
+      return chart if chart.id == chart_id
+    false
 
   # This stuff could be moved to the view, but a document-scoped event binding
   # prevents memory leaks and will be called just once.
@@ -203,7 +209,10 @@ class @ChartList extends Backbone.Collection
     $(document).on "click", "a.pick_charts", (e) =>
       holder_id = $(e.target).parents('a').data('chart_holder')
       chart_id = $(e.target).parents('a').data('chart_id')
-      @load chart_id, holder_id
+      if c = @chart_already_on_screen(chart_id)
+        c.highlight()
+      else
+        @load chart_id, holder_id
       close_fancybox()
 
     # Toggle chart lock

@@ -13,17 +13,4 @@
       = yield
       .clear
     #scripts
-      = render 'output_elements/chart_template'
-
-    :javascript
-      $(document).ready(function(){
-        App = new AppView();
-        var settings = _.extend({}, globals.settings);
-        settings.locked_charts = {};
-        App.settings = new Setting(settings);
-        $("body#constraint_popup .chart_canvas").each(function(i, c){
-          var chart_id = $(c).data('chart_id');
-          var holder = $(c).attr('id');
-          charts.load(chart_id, holder, {header: false});
-        });
-      });
+      = yield :scripts

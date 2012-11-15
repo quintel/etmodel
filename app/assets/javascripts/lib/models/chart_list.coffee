@@ -29,6 +29,8 @@ class @ChartList extends Backbone.Collection
   #                           needed on the initial render, where we want to
   #                           plot the charts and preserve the locks
   #             wait        - don't fire the API request immediately
+  #             wrapper     - selector for the wrapper that will contain the
+  #                           chart holder
   #
   # Returns the newly created chart object or false if something went wrong
   load: (chart_id, holder_id = null, options = {}) =>
@@ -143,22 +145,30 @@ class @ChartList extends Backbone.Collection
   # holder_id
   #
   # holder_id - id of the container to add. If null it will be generated
-  # header    - boolean to show or hide the header bar. Usually passed by the
-  #             load() method above. Dashboard popups set it to false, regular
-  #             charts to true
+  # options   - hash of optional parameters
+  #             header    - boolean to show or hide the header bar. Usually
+  #                         passed by the load() method above. Dashboard
+  #                         popups set it to false, regular charts to true
+  #             wrapper   - the DOM element where the container will be
+  #                         appended. The default is '#charts_wrapper'
   #
   add_container_if_needed: (holder_id = null, options = {}) =>
     if !holder_id
       timestamp = (new Date()).getTime()
       holder_id = "holder_#{timestamp}"
 
-    if @container.find("##{holder_id}").length == 0
+    $container = if options.wrapper
+      $(options.wrapper)
+    else
+      @container
+
+    if $container.find("##{holder_id}").length == 0
       new_chart = @template(
         title: 'foo'
         chart_id: 0
         holder_id: holder_id
         header: options.header)
-      @container.append new_chart
+      $container.append new_chart
     holder_id
 
   # This stuff could be moved to the view, but a document-scoped event binding

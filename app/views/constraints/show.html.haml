@@ -3,16 +3,6 @@
 
 - content_for :scripts do
   = render 'output_elements/chart_template'
-
   :javascript
-    $(document).ready(function(){
-      App = new AppView();
-      var settings = _.extend({}, globals.settings);
-      settings.locked_charts = {};
-      App.settings = new Setting(settings);
-      $("body#constraint_popup .chart").each(function(i, c){
-        var chart_id = $(c).data('chart_id');
-        var wrapper = $(c).data('wrapper') || '#charts';
-        charts.load(chart_id, null, {header: false, wrapper: wrapper});
-      });
-    });
+    #{render 'js_init'}
+

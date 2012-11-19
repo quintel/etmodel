@@ -28,9 +28,12 @@
              href="#"
              title="<%= t 'output_elements.tooltips.lock' %>"></a>
 
+          <%% if (holder_id != 'holder_0') { %>
           <a class="remove_chart tooltip icon-remove"
              href="#"
              title="<%= t 'output_elements.tooltips.remove' %>"></a>
+          <%% } %>
+
         </div>
       </header>
     <%% } %>

@@ -199,7 +199,7 @@ class @Chart extends Backbone.Model
 
     if @get 'locked'
       tbl_string = if @get('as_table') then 'T' else 'C'
-      s[holder_id] = "#{@get 'id'}-#{tbl_string}"
+      s[holder_id] = "#{@get 'chart_id'}-#{tbl_string}"
     else
       delete s[holder_id]
 
@@ -209,7 +209,7 @@ class @Chart extends Backbone.Model
   #
   wants_default_button: =>
     (@get('container') == 'holder_0') &&
-    (@get('id') != App.charts.default_chart_id)
+    (@get('chart_id') != App.charts.default_chart_id)
 
   # TODO: move to view and remove jquery-ui dependency
   #

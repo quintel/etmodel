@@ -136,7 +136,7 @@ class @ChartList extends Backbone.Collection
       # a table
       [id, format] = "#{chart}".split '-'
 
-      locked = if (holder != 0)
+      locked = if (holder != 'holder_0')
         true
       else
         default_chart_locked

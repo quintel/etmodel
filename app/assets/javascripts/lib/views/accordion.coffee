@@ -36,10 +36,6 @@ class @Accordion
       # store the default chart for this slide
       App.charts.default_chart_id = default_chart
 
-      # show/hide the default chart button
-      showing_default = charts.chart_holders[chart_holder] == default_chart
-      $("a.default_chart").toggle(!showing_default)
-
       # load chart. On application's bootstrap the chart is loaded using the
       # settings hash (to restore properly the locked charts); after that the
       # charts are loaded according to the accordion events

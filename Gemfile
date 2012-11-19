@@ -22,6 +22,7 @@ gem 'airbrake', '~> 3.1.2'
 
 # system gems
 gem 'mysql2', '~>0.3.11'
+gem 'dalli'
 gem 'memcache-client'
 
 gem 'dynamic_form'

@@ -90,6 +90,7 @@ GEM
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
     crack (0.1.8)
+    dalli (2.2.1)
     debugger (1.1.4)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.1.1)
@@ -308,6 +309,7 @@ DEPENDENCIES
   capybara-webkit
   coffee-rails (~> 3.2.1)
   compass-rails
+  dalli
   dynamic_form
   factory_girl_rails (~> 3.0)
   haml (~> 3.1.4)

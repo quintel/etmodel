@@ -38,14 +38,15 @@ class @ChartList extends Backbone.Collection
   # Returns the newly created chart object or false if something went wrong
   load: (chart_id, holder_id = null, options = {}) =>
     # if the chart is already there...
-    if ((@chart_holders[holder_id] == chart_id) && !options.force)
+    current = @chart_in_holder holder_id
+    if ((current && current.get('holder_id') == chart_id) && !options.force)
       return false
 
     # if we want to replace a locked chart...
     locked_charts = App.settings.get 'locked_charts'
-    if existing = locked_charts[holder_id]
+    if locked_charts[holder_id]
       if options.force
-        @get('existing').toggle_lock(false)
+        @chart_in_holder(holder_id).toggle_lock(false)
       else
         return false unless options.ignore_lock
 
@@ -57,8 +58,13 @@ class @ChartList extends Backbone.Collection
       success: (data) =>
         holder_id = @add_container_if_needed(holder_id, options)
 
-        # Create the new Chart
+        # Create the new Chart. The id attribute is concatenated to the
+        # holder_id because backbone collections make items unique by id. We
+        # want to be able to show the same chart more than once
+        #
         settings = _.extend {}, data.attributes, {
+            id: "#{data.attributes.id}-#{holder_id}"
+            chart_id: data.attributes.id
             container: holder_id
             html: data.html # tables and block chart
             locked: options.locked
@@ -79,7 +85,7 @@ class @ChartList extends Backbone.Collection
           return false
 
         # Remember what we were showing in that position
-        if old_chart = @chart_holders[holder_id]
+        if old_chart = @chart_in_holder holder_id
           old_chart.delete()
           @remove old_chart
 
@@ -93,11 +99,9 @@ class @ChartList extends Backbone.Collection
         App.call_api() unless options.wait
     @last()
 
-  # Returns the chart held in a holder. This assumes a chart can be shown only
-  # once. I guesss this is the desired behaviour
+  # Returns the chart held in a holder
   #
-  chart_in_holder: (holder_id) =>
-    @get @chart_holders[holder_id]
+  chart_in_holder: (holder_id) => @chart_holders[holder_id]
 
   # restores the default chart for the current slide
   #
@@ -143,8 +147,7 @@ class @ChartList extends Backbone.Collection
           as_table: (format == 'T'),
           # the initial render should ignore the lock check: render the charts
           # but don't remove the locks, which is what `force: true` would do
-          ignore_lock: true,
-          wait: false
+          ignore_lock: true
         })
 
   # adds a chart container, unless it is already in the DOM. Returns the
@@ -230,8 +233,7 @@ class @ChartList extends Backbone.Collection
       e.preventDefault()
       holder_id = $(e.target).parents(".chart_holder").data('holder_id')
       $(".chart_holder[data-holder_id=#{holder_id}]").remove()
-      chart = @get @chart_holders[holder_id]
-      if chart
+      if chart = @chart_in_holder holder_id
         chart.delete()
         @remove chart
 

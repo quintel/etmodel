@@ -26,7 +26,7 @@ D3.co2_emissions =
       @width = 494 - (margins.left + margins.right)
       @series_height = 190
       @height = @series_height + (margins.top + margins.bottom)
-      @svg = d3.select("#d3_container_#{@key}")
+      @svg = d3.select(@container_selector())
         .append("svg:svg")
         .attr("height", @height + margins.top + margins.bottom)
         .attr("width", @width + margins.left + margins.right)

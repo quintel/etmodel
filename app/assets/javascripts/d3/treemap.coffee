@@ -51,7 +51,7 @@ D3.treemap =
         .size([@width, @height])
         .sticky(true)
         .value((d) -> d.val())
-      @svg = d3.select("#d3_container_treemap").
+      @svg = d3.select(@container_selector()).
         append("div").
         style("position", "relative").
         style("height", "#{@height}px").

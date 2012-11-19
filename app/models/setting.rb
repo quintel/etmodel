@@ -1,5 +1,14 @@
-##
 # Class for all user settings that should persist over a session.
+#
+# A word about locked charts:
+# To preserve state across requests and page reloads I save the locked charts
+# in a hash made like this:
+#
+# {'holder_0' => '25', 'holder_1' => '12-T'}
+#
+# The "T" means that the chart must be shown as a table. The previous
+# implementation was using a nested hash but it was a pain to maintain and
+# Rails had crazy issues saving the object in memcached-based sessions.
 #
 class Setting
   extend ActiveModel::Naming
@@ -8,7 +17,7 @@ class Setting
                 :preset_scenario_id,
                 :api_session_id,
                 :area_code,
-                :charts
+                :locked_charts
 
   def initialize(attributes = {})
     attributes = self.class.default_attributes.merge(attributes)
@@ -49,20 +58,14 @@ class Setting
   end
 
   def self.default_attributes
-    charts = {}
-    0.upto(3).each do |i|
-      charts["chart_#{i}"] = {
-        'chart_id' => nil, 'format' => nil, 'default' => nil, 'index' => i}
-    end
-
     {
-      :network_parts_affected   => [],
-      :track_peak_load          => false,
-      :area_code                => 'nl',
-      :start_year               => 2010,
-      :end_year                 => 2050,
-      :use_fce                  => false,
-      :charts                   => charts
+      :network_parts_affected => [],
+      :track_peak_load        => false,
+      :area_code              => 'nl',
+      :start_year             => 2010,
+      :end_year               => 2050,
+      :use_fce                => false,
+      :locked_charts          => {}
     }
   end
   attr_accessor *default_attributes.keys
@@ -84,7 +87,7 @@ class Setting
     self.api_session_id = nil
     self.preset_scenario_id = nil # to go back to a blank slate scenario
 
-    [:use_fce, :network_parts_affected, :charts].each do |key|
+    [:use_fce, :network_parts_affected, :locked_charts].each do |key|
       self.reset_attribute key
     end
   end

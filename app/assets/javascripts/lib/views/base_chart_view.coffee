@@ -1,12 +1,9 @@
 class @BaseChartView extends Backbone.View
-  events:
-    "click a.default_chart": "load_default"
-
   initialize_defaults: =>
     @model.bind('change', @render_as_needed)
 
   render_as_needed: =>
-    if @display_as_table && @can_be_shown_as_table()
+    if @model.get('as_table') && @can_be_shown_as_table()
       @render_as_table()
     else
       @render()
@@ -40,11 +37,34 @@ class @BaseChartView extends Backbone.View
 
   clear_container: -> @container_node().empty()
 
-  update_title: ->
+  # updates the header items as needed, returns the videw itself to allow some
+  # method chaining. Some of these updates should be moved to the underscore
+  # templating
+  #
+  update_header: =>
+    id = @model.get 'chart_id'
+    @$el.data('chart_id', id)
     @$el.find('h3').html(@model.get("name"))
-    @$el.data('chart_id', @model.get('id'))
     @$el.attr('data-block_ui_on_refresh', @block_ui_on_refresh())
     @$el.find('a.chart_info').toggle(@model.get('has_description'))
+    @$el.find(".actions a.chart_info").attr "href", "/descriptions/charts/#{id}"
+    @$el.find("a.chart_format, a.table_format").hide()
+    if @model.can_be_shown_as_table()
+      if @model.get 'as_table'
+        @$el.find("a.chart_format").show()
+      else
+        @$el.find("a.table_format").show()
+    @$el.find(".chart_not_finished").toggle @model.get("under_construction")
+    @$el.find("a.default_chart").toggle @model.wants_default_button()
+    @update_lock_icon()
+    this
+
+  update_lock_icon: =>
+    icon = @$el.find('a.lock_chart')
+    if @model.get 'locked'
+      icon.removeClass('icon-unlock').addClass('icon-lock')
+    else
+      icon.removeClass('icon-lock').addClass('icon-unlock')
 
   create_legend: (opts) ->
     renderer: $.jqplot.EnhancedLegendRenderer
@@ -76,14 +96,21 @@ class @BaseChartView extends Backbone.View
       show: false
 
   toggle_format: =>
-    @display_as_table = !@display_as_table
+    tbl = @model.get 'as_table'
     @render_as_needed()
-    @$el.find("a.table_format").toggle(!@display_as_table)
-    @$el.find("a.chart_format").toggle(@display_as_table)
+    @$el.find("a.table_format").toggle(!tbl)
+    @$el.find("a.chart_format").toggle(tbl)
 
   hide_format_toggler: => $("a.toggle_chart_format").hide()
 
+  # Derived classes can override this
+  #
   can_be_shown_as_table: -> true
+
+  # D3 charts set this to false because they support animations. jqplot charts
+  # don't, so while waiting for the data the chart container is blocked by a
+  # busybox
+  #
   block_ui_on_refresh: -> true
 
   render_as_table: =>
@@ -95,8 +122,6 @@ class @BaseChartView extends Backbone.View
     tmpl = $("#chart-table-template").html()
     table = _.template(tmpl, table_data)
     @container_node().html(table)
-
-  load_default: -> charts.load_default()
 
   # D3 charts override this method
   supported_in_current_browser: -> true

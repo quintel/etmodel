@@ -85,7 +85,7 @@ D3.target_bar =
       @height = @outer_height() - (margins.top + margins.bottom)
       @namespace.width = @width
       t.scale.range([80, @width]) for t in @targets
-      @svg = d3.select("#d3_container_#{@key}").
+      @svg = d3.select(@container_selector()).
         append("svg:svg").
         attr("height", @height + margins.top + margins.bottom).
         attr("width", @width + margins.left + margins.right).

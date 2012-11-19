@@ -7,10 +7,10 @@
       %th.you Scenario
   %tbody
     - Target.all.reject(&:area_dependent).each do |target|
-      %tr{:id => "goal_#{target.id}", :class => cycle('even', 'odd')}
+      %tr{:id => "goal_#{target.id}",
+          :class => cycle('even', 'odd'),
+          :'data-attrs' => target.js_attributes.to_json}
         %td.check
         %td.name= t("targets.#{target.code}").html_safe
         %td.target Loading...
         %td.you Loading...
-      :javascript
-        new Target(#{target.js_attributes.to_json.html_safe});

@@ -1,40 +1,38 @@
-body#constraint_popup
+#dashboard_popup
   margin: 0px
   padding: 10px
   width: 580px
   height: 460px
   overflow: hidden
   font: 13px/20px $body_font_family
-  background-color: #ffffff
-  .wrapper
-    background-color: #DBE4F2
-    height: 460px
-    h2
-      background-color: #63A1C9
-      font-family: $title_font_family
-      color: #FFFFFF
-      padding: 7px 5px
-      margin: 0px
-      font-weight: normal
-    h3
-      font-family: $title_font_family
-    .description
-      text-align: left
-      padding: 7px
-    #charts_wrapper
-      text-align: center
-      margin: 0 auto
-      .chart_holder
-        float: none
-        background: #ffffff
-        min-height: 260px
-        max-height: 400px
-        margin: 5px auto
-        .chart_canvas
-          min-height: 250px
-          width: 100%
-    .clear
-      clear: both
+  background-color: #DBE4F2
+  h2
+    background-color: #63A1C9
+    font-family: $title_font_family
+    color: #FFFFFF
+    padding: 7px 5px
+    margin: 0px
+    font-weight: normal
+  h3
+    font-family: $title_font_family
+  .description
+    text-align: left
+    padding: 7px
+  #charts
+    text-align: center
+    margin: 0 auto
+    .chart_holder
+      float: none
+      background: #ffffff
+      min-height: 260px
+      max-height: 400px
+      max-width: 560px
+      margin: 5px auto
+      .chart_canvas
+        min-height: 250px
+        width: 100%
+  .clear
+    clear: both
 
   table#policies
     font-family: 13px/13px $body_font_family
@@ -72,7 +70,7 @@ body#constraint_popup
         width: 285px
         height: 300px
 
-body#constraint_popup.bio_footprint
+#dashboard_popup.bio_footprint
   .present, .future
     margin-left: 10px
   .present

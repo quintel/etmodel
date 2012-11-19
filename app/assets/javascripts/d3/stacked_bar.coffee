@@ -20,7 +20,7 @@ D3.stacked_bar =
       @width = @available_width() - (margins.left + margins.right)
       @series_height = 190
       @height = @series_height + (margins.top + margins.bottom) + (@series.length / 2 * 15)
-      @svg = d3.select("#d3_container_#{@key}")
+      @svg = d3.select(@container_selector())
         .append("svg:svg")
         .attr("height", @height + margins.top + margins.bottom)
         .attr("width", @width + margins.left + margins.right)

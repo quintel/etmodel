@@ -34,7 +34,7 @@ D3.bezier =
       # height of the series section
       @series_height = 190
       @series_width = @width - 15
-      @svg = d3.select("#d3_container_#{@key}")
+      @svg = d3.select(@container_selector())
         .append("svg:svg")
         .attr("height", @height + margins.top + margins.bottom)
         .attr("width", @width + margins.left + margins.right)

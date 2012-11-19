@@ -17,11 +17,13 @@ class @D3ChartView extends BaseChartView
     @refresh()
 
   already_on_screen: =>
-    $('#' + @chart_container_id()).length == 1
+    $(@container_selector()).length == 1
 
   html: => "<div id='#{@chart_container_id()}' class='d3_container #{@model.get 'type'}'></div>"
 
-  chart_container_id: => "d3_container_#{@model.get 'key'}"
+  chart_container_id: => "d3_#{@model.get 'key'}_#{@model.get 'container'}"
+
+  container_selector: => "##{@chart_container_id()}"
 
   can_be_shown_as_table: -> false
 

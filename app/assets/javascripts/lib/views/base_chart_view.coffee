@@ -42,7 +42,7 @@ class @BaseChartView extends Backbone.View
   # templating
   #
   update_header: =>
-    id = @model.get 'id'
+    id = @model.get 'chart_id'
     @$el.data('chart_id', id)
     @$el.find('h3').html(@model.get("name"))
     @$el.attr('data-block_ui_on_refresh', @block_ui_on_refresh())

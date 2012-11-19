@@ -12,7 +12,7 @@ class SettingsController < ApplicationController
       :network_parts_affected,
       :track_peak_load,
       :use_fce,
-      :charts].each do |setting|
+      :locked_charts].each do |setting|
       Current.setting.send("#{setting}=", params[setting]) unless params[setting].nil?
     end
 

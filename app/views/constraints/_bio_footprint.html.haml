@@ -17,12 +17,3 @@
   %h3.tal{:style => "position:absolute; left: 0; top: 0; margin: 0; padding: 0"}
     = Current.setting.end_year
   .overlay{:style => "background: url(#{map}) repeat-x; height: 105px;"} &nbsp;
-
-:javascript
-  var q = gqueries.find_or_create_by_key('bio_footprint');
-  $("body").bind("dashboardUpdate", function(){
-    var present = q.safe_present_value();
-    var future  = q.safe_future_value();
-    $("div.present .overlay").css('width', '' + 70 * present + 'px')
-    $("div.future .overlay").css('width', '' + 70 * future +'px')
-  });

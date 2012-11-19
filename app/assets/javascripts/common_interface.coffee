@@ -92,14 +92,21 @@ $ ->
         Interface.call_the_cyclists()
   Interface.call_the_cyclists()
 
-  # Tooltips
-  $("a.tooltip").qtip
-    content: -> $(this).attr('title')
-    position:
-      my: 'bottom right'
-      at: 'top center'
-    style:
-      classes: "ui-tooltip-tipsy"
+  # Tooltips. Works with AJAX-injected content, too
+  #
+  $(document).on 'mouseover', 'a.tooltip', (e) ->
+    $(this).qtip {
+      overwrite: false
+      content: -> $(this).attr('title')
+      show:
+        event: e.type
+        ready: true
+      position:
+        my: 'bottom right'
+        at: 'top center'
+      style:
+        classes: "ui-tooltip-tipsy"
+      }, e
 
 class @AppInterface
   set_active_movie_tab: (page) ->

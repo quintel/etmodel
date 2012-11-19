@@ -367,7 +367,7 @@ D3.sankey =
         .x((d) -> d.x)
         .y((d) -> @y(d.y))
 
-      @svg = d3.select("#d3_container_#{@key}")
+      @svg = d3.select(@container_selector())
         .append("svg:svg")
         .attr("height", @height + @margin.top + @margin.bottom)
         .attr("width", @width + @margin.left + @margin.right)

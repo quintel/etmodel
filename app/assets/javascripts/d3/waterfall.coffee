@@ -22,7 +22,7 @@ D3.waterfall =
       # height of the series section
       @series_height = 190
       @column_width = (@width - 15) / (@series.length + 1) * 0.6
-      @svg = d3.select("#d3_container_#{@key}")
+      @svg = d3.select(@container_selector())
         .append("svg:svg")
         .attr("height", @height + margins.top + margins.bottom)
         .attr("width", @width + margins.left + margins.right)

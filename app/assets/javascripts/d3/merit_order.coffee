@@ -71,7 +71,7 @@ D3.merit_order =
       @inverted_y = @y.copy().range([@series_height, 0])
       @x_axis = d3.svg.axis().scale(@x).ticks(4).orient("bottom")
       @y_axis = d3.svg.axis().scale(@inverted_y).ticks(4).orient("left")
-      @svg = d3.select("#d3_container_merit_order")
+      @svg = d3.select(@container_selector())
         .append("svg:svg")
         .attr("height", @height + margins.top + margins.bottom)
         .attr("width", @width + margins.left + margins.right)

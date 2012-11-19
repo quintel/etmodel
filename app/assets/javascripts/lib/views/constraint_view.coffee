@@ -31,7 +31,8 @@ class @ConstraintView extends Backbone.View
   update_subheader: (title) =>
     $('.header .sub_header', @dom_id).html(title)
 
-  open_popup: () =>
+  open_popup: (e) =>
+    e.preventDefault()
     constraint = $(@dom_id)
     constraint_id = @model.get('id')
     key = @model.get('key')
@@ -39,10 +40,13 @@ class @ConstraintView extends Backbone.View
     $.fancybox.open
       autoSize: false
       href: url
-      type: 'iframe'
+      type: 'ajax'
       width: 600
       height: 480
       padding: 0
+      beforeClose: ->
+        # don't leave stale charts around!
+        charts.prune()
 
   # Formats the result of calculate_result() for the end-user
   format_result: () =>

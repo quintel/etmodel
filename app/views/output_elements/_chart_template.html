@@ -1,0 +1,45 @@
+<script type="text/template" id="chart-holder-template">
+  <div class="chart_holder" data-holder_id="<%%= holder_id %>">
+    <%% if (header !== false) { %>
+      <header>
+        <h3><%%= title %></h3>
+        <div class="actions">
+          <a class="chart_info tooltip fancybox icon-question-sign"
+             href="/descriptions/charts/<%%= chart_id %>"
+             title="<%= t 'output_elements.tooltips.info' %>"></a>
+
+          <a class="select_chart tooltip icon-cogs"
+             href="<%= output_elements_path %>?holder=<%%= holder_id %>"
+             title="<%= t 'output_elements.tooltips.change' %>"></a>
+
+          <a class="default_chart tooltip icon-home"
+             href="#"
+             title="<%= t 'output_elements.tooltips.default' %>"></a>
+
+          <a class="table_format tooltip icon-table"
+             href="#"
+             title="<%= t 'output_elements.tooltips.table' %>"></a>
+
+          <a class="chart_format tooltip icon-bar-chart"
+             href="#"
+             title="<%= t 'output_elements.tooltips.chart' %>"></a>
+
+          <a class="lock_chart tooltip"
+             href="#"
+             title="<%= t 'output_elements.tooltips.lock' %>"></a>
+
+          <%% if (holder_id != 'holder_0') { %>
+          <a class="remove_chart tooltip icon-remove"
+             href="#"
+             title="<%= t 'output_elements.tooltips.remove' %>"></a>
+          <%% } %>
+
+        </div>
+      </header>
+    <%% } %>
+    <div class="charts_container">
+      <div class="chart_not_finished"></div>
+      <div class="chart_canvas" id="<%%= holder_id %>"></div>
+    </div>
+  </div>
+</script>

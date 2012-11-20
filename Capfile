@@ -1,10 +1,5 @@
 require 'bundler/capistrano'
 require 'airbrake/capistrano'
-require 'hipchat/capistrano'
-
-set :hipchat_token, "49f40059d2d3f285235c32f1488a15"
-set :hipchat_room_name, "Quintel Intelligence test room"
-set :hipchat_announce, false
 
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }

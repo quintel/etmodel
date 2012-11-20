@@ -2,7 +2,9 @@ class @SidebarView extends Backbone.View
   bootstrap: ->
     # setup accordion
     $('#sidebar h4').on 'click', ->
-      $(this).next('ul').slideToggle('fast')
+      target = $(this).next('ul')
+      target.slideToggle('fast')
+      $("#sidebar ul").not(target).slideUp('fast')
 
     # Create gqueries for the inline bars
     for item in $("#sidebar ul li")

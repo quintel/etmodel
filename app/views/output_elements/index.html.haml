@@ -3,11 +3,8 @@
     %h1= t(group)
     - OutputElement.not_hidden.select_by_group(group).sort_by{|c| t("output_elements.#{c.key}")}.each do |chart|
       - next if chart.block_chart? || chart.not_allowed_in_this_area
-      %div
-        %a.pick_charts{:id =>"output_#{chart.id}",        |
-                       :data => {                         |
-                         :chart_id => chart.id,           |
-                         :chart_holder => @chart_holder}} |
+      %div.pick_chart{:data => { :chart_id => chart.id, :chart_holder => @chart_holder}}
+        %a
           = image_tag "output_elements/#{chart.icon}", :size => "50x30"
           %h2= t("output_elements.#{chart.key}").html_safe
 

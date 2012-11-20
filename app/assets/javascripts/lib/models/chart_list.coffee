@@ -209,9 +209,11 @@ class @ChartList extends Backbone.Collection
   setup_callbacks: ->
     # Pick a chart from the chart picker popup
     #
-    $(document).on "click", "a.pick_charts", (e) =>
-      holder_id = $(e.target).parents('a').data('chart_holder')
-      chart_id = $(e.target).parents('a').data('chart_id')
+    $(document).on "click", "div.pick_chart", (e) =>
+      e.preventDefault()
+      data_holder = $(e.target).closest('div.pick_chart')
+      holder_id = data_holder.data('chart_holder')
+      chart_id  = data_holder.data('chart_id')
       if c = @chart_already_on_screen(chart_id)
         c.highlight()
       else

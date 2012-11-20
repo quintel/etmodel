@@ -15,7 +15,7 @@ class @HtmlTableChartView extends BaseChartView
     @container_node().html(@table_html())
     @fill_cells()
     # sort rows on merit order chart
-    @merit_order_sort() if @model.get("id") == 116
+    @merit_order_sort() if @model.get("key") == 'merit_order_table'
 
   # The table HTML is provided by the rails app.
   #
@@ -64,7 +64,7 @@ class @HtmlTableChartView extends BaseChartView
   can_be_shown_as_table: -> false
 
   merit_order_sort: =>
-    rows = _.sortBy $("##{@container_id()} tbody tr"), @merit_order_position
+    rows = _.sortBy @container_node().find("tbody tr"), @merit_order_position
     # get rid of rows with merit order of 1000. See ETE#193.
     # Ugly solution until we use better gqueries
     rows = _.reject rows, (item) => @merit_order_position(item) == 1000

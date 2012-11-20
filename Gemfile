@@ -79,4 +79,3 @@ group :assets do
 end
 
 gem 'capistrano'
-gem 'hipchat'

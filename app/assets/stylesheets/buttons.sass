@@ -66,7 +66,7 @@ h2 a.button, h2 input.button, h2 button.button
 // Info / Tutorial Buttons
 
 .button
-  span.right-icon, span.info-icon, span.tutorial-icon
+  span.right-icon
     display: inline-block
     height: 11px
     width: 16px
@@ -76,40 +76,19 @@ h2 a.button, h2 input.button, h2 button.button
     margin-left: 1px
     margin-right: 0px
 
-.button span
-  &.info-icon
-    @include icons-sprite('files', 1px)
-    margin: -3px 5px -1px 0
-    height: 16px
-
-  &.tutorial-icon
-    @include icons-sprite('video', 1px)
-    margin-right: 5px
-
 // HiDPI Buttons.
 
 // TODO: When upgraded to Sass 3.2, use a "mixin block".
 //       http://iain.nl/sass-3-2-blocks
 @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)
   .button span
-    &.right-icon, &.info-icon, &.tutorial-icon
+    &.right-icon
       background: image-url('button-icons-hidpi.png') no-repeat
       background-size: 15px 66px
 
     &.right-icon
       background-position: 0 -52px
       height: 11px
-      width: 16px
-
-    &.info-icon
-      margin: -4px 1px -1px 0
-      height: 16px
-      width: 16px
-
-    &.tutorial-icon
-      background-position: 0 -27px
-      height: 12px
-      margin: -1px 2px 0 0
       width: 16px
 
 // Colours -------------------------------------------------------------------

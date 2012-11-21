@@ -38,6 +38,7 @@ D3.target_bar =
         max = x if (x = query.future_value()) > max
         max = x if (x = query.present_value()) > max
       # Let's add some padding
+      max = 0 if max < 0
       max * 1.05
 
     min_value: => if (m = @get('min')) then m else 0
@@ -50,11 +51,15 @@ D3.target_bar =
 
     is_set: => _.isNumber @target_query.future_value()
 
+    # negative values aren't allowed
+    #
     format_value: (x) =>
-      switch @get 'key'
+      v = switch @get 'key'
         when 'net_electricity_import', 'renewable_percentage', 'net_energy_import'
           x * 100
         else x
+      if v < 0 then v = 0
+      v
 
     present_value: => @format_value @value_query.present_value()
     future_value: =>  @format_value @value_query.future_value()

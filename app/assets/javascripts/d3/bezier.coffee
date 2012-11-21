@@ -3,7 +3,6 @@ D3.bezier =
     el: 'body'
     initialize: ->
       @key = @model.get 'key'
-
       @start_year = App.settings.get('start_year')
       @end_year = App.settings.get('end_year')
       @initialize_defaults()
@@ -64,7 +63,7 @@ D3.bezier =
 
       # show years at the corners
       @svg.selectAll('text.year')
-        .data([App.settings.get('start_year'), App.settings.get('end_year')])
+        .data([@start_year, @end_year])
         .enter().append('svg:text')
         .attr('class', 'year')
         .attr("text-anchor", "middle")
@@ -105,7 +104,6 @@ D3.bezier =
         .style('opacity', 0.8)
         .attr('data-title', (d) -> d.values[0].label)
 
-
       # series tooltips
       $('path.serie').qtip
         content:
@@ -123,7 +121,7 @@ D3.bezier =
         _.sum(@model.values_future())
       )
       # update the scales as needed
-      @y = @y.domain([0, tallest])
+      @y.domain([0, tallest])
       @inverted_y = @inverted_y.domain([0, tallest])
 
       # animate the y-axis

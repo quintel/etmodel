@@ -39,8 +39,8 @@ class @ChartList extends Backbone.Collection
   load: (chart_id, holder_id = null, options = {}) =>
     # if the chart is already there...
     current = @chart_in_holder holder_id
-    if ((current && current.get('holder_id') == chart_id) && !options.force)
-      return false
+    if current && current.get('chart_id') == chart_id
+      return false unless options.force
 
     # if we want to replace a locked chart...
     locked_charts = App.settings.get 'locked_charts'

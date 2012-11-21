@@ -64,13 +64,15 @@ class @HtmlTableChartView extends BaseChartView
   can_be_shown_as_table: -> false
 
   merit_order_sort: =>
-    rows = _.sortBy @container_node().find("tbody tr"), @merit_order_position
-    # get rid of rows with merit order of 1000. See ETE#193.
-    # Ugly solution until we use better gqueries
-    rows = _.reject rows, (item) => @merit_order_position(item) == 1000
+    # get rid of rows with -1 merit order position
+    rows = @container_node().find("tbody tr")
+    rows = _.reject rows, (item) => @merit_order_position(item) == -1
+    rows = _.sortBy rows, @merit_order_position
     @container_node().find("tbody").html(rows)
 
   # custom method to sort merit order table
   # DEBT: this should be resolved at gquery level
   merit_order_position: (item) ->
-    parseInt($(item).find("td:first").text())
+    val = $(item).find("td:first").text()
+    val = 0 if val == '-'
+    +val

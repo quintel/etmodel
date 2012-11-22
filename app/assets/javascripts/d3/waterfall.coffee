@@ -21,7 +21,8 @@ D3.waterfall =
       @height = 360 - (margins.top + margins.bottom)
       # height of the series section
       @series_height = 190
-      @column_width = (@width - 15) / (@series.length + 1) * 0.6
+      @series_width = @width - 15
+      @column_width = @series_width / (@series.length + 1) * 0.6
       @svg = d3.select(@container_selector())
         .append("svg:svg")
         .attr("height", @height + margins.top + margins.bottom)
@@ -29,28 +30,27 @@ D3.waterfall =
         .append("svg:g")
         .attr("transform", "translate(#{margins.left}, #{margins.top})")
 
-      @x = d3.scale.ordinal().rangeRoundBands([0, @width - 15])
-        .domain(@labels())
-
       @y = d3.scale.linear().range([0, @series_height]).domain([0, 1])
       @inverted_y = d3.scale.linear().range([@series_height, 0]).domain([0, 1])
 
       @y_axis = d3.svg.axis()
         .scale(@inverted_y)
         .ticks(4)
-        .tickSize(-429, 10, 0)
+        .tickSize(-@series_width, 10, 0)
         .orient("right")
         .tickFormat((x) => Metric.autoscale_value x, @model.get('unit'))
 
+      @x = d3.scale.ordinal().rangeRoundBands([0, @series_width])
+        .domain(@labels())
+
       @x_axis = d3.svg.axis()
         .scale(@x)
-        .ticks(4)
-        .tickSize(2, 2, 0)
+        .tickSize(0, 0, 0)
         .orient("bottom")
 
       @svg.append("svg:g")
         .attr("class", "y_axis inner_grid")
-        .attr("transform", "translate(#{@width - 15}, 0)")
+        .attr("transform", "translate(#{@series_width}, 0)")
         .call(@y_axis)
 
       @svg.append("svg:g")
@@ -59,10 +59,10 @@ D3.waterfall =
         .call(@x_axis)
 
       # let's rotate the labels
+      offset = @column_width / 2
       @svg.selectAll('.x_axis text')
         .attr('text-anchor', 'end')
-        .attr('transform', 'rotate(-90) translate(-10, -15)')
-
+        .attr('transform', "rotate(-90) translate(-10, #{-offset})")
 
       @svg.selectAll('rect.serie')
         .data(@prepare_data(), (d) -> d.key)
@@ -89,8 +89,8 @@ D3.waterfall =
       data = @prepare_data()
       # update the scales as needed
       max_value = d3.max(data, (d) -> d.offset)
-      @y = @y.domain([0, max_value])
-      @inverted_y = @inverted_y.domain([0, max_value])
+      @y.domain([0, max_value])
+      @inverted_y.domain([0, max_value])
 
       # animate the y-axis
       @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@inverted_y))
@@ -111,7 +111,10 @@ D3.waterfall =
       @_labels = labels
 
     last_column: =>
-      if @model.get('id') == 51 then App.settings.get("end_year") else 'Total'
+      if @model.get('key') == 'future_energy_imports'
+        App.settings.get("end_year")
+      else
+       'Total'
 
     prepare_data: =>
       out = []

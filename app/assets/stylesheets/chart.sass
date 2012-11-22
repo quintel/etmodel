@@ -88,7 +88,9 @@ div.d3_container
   .x_axis, .y_axis
     line, path
       fill: none
-      stroke: #000
+      stroke: #333
+    path.domain
+      shape-rendering: crispEdges
     .minor
       stroke-opacity: 0.5
   .y_axis.inner_grid, .x_axis.inner_grid

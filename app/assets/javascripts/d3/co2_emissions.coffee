@@ -83,7 +83,7 @@ D3.co2_emissions =
         .style('fill', '#333')
         .style('opacity', 0.8)
 
-      $('rect.serie').qtip
+      $("#{@container_selector()} rect.serie").qtip
         content: -> $(this).attr('data-tooltip')
         position:
           my: 'bottom center'

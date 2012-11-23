@@ -436,7 +436,7 @@ D3.sankey =
       nodes
 
     setup_tooltips: ->
-        $("g.node").qtip
+        $("#{@container_selector()} g.node").qtip
           content:
             title: -> $(this).attr('data-tooltip-title')
             text: -> $(this).attr('data-tooltip')

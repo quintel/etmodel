@@ -105,7 +105,7 @@ D3.bezier =
         .attr('data-title', (d) -> d.values[0].label)
 
       # series tooltips
-      $('path.serie').qtip
+      $("#{@container_selector()} path.serie").qtip
         content:
           title: -> $(this).attr('data-title')
           text: -> $(this).attr('data-tooltip')

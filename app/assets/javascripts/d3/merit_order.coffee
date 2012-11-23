@@ -120,7 +120,7 @@ D3.merit_order =
         )
         .attr('data-tooltip-title', (d) -> I18n.t "output_element_series.#{d.get('key')}")
 
-      $('rect.merit_order_node').qtip
+      $("#{@container_selector()} rect.merit_order_node").qtip
         content:
           title: -> $(this).attr('data-tooltip-title')
           text:  -> $(this).attr('data-tooltip-text')

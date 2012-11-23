@@ -66,7 +66,7 @@ D3.treemap =
         style("background", (d, i) => d.get('color') || @color(i)).
         text((d) -> d.label()).call(@cell)
 
-        $("div.cell").qtip
+        $("#{@container_selector()} div.cell").qtip
           content:
             text: -> $(this).attr('data-label')
           position:

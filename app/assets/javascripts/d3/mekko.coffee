@@ -127,7 +127,7 @@ D3.mekko =
         vertical_offset: @series_height + 130
         columns: 2
 
-      $('rect.carrier').qtip
+      $("#{@container_selector()} rect.carrier").qtip
         content: -> $(this).attr('data-tooltip')
         position:
           my: 'bottom right'

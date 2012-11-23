@@ -76,7 +76,7 @@ D3.waterfall =
         .attr('x', (d) => @x d.key)
         .attr('data-tooltip-title', (d) -> d.key)
 
-      $('rect.serie').qtip
+      $("#{@container_selector()} rect.serie").qtip
         content:
           title: -> $(this).attr('data-tooltip-title')
           text: -> $(this).attr('data-tooltip-text')

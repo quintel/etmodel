@@ -87,7 +87,7 @@ D3.scatter =
         .style('fill', (d) -> d.get('color') || 'steelblue')
         .attr('data-tooltip-title', (d) -> d.get 'label')
 
-      $('circle.serie').qtip
+      $("#{@container_selector()} circle.serie").qtip
         content:
           title: -> $(this).attr('data-tooltip-title')
           text: -> $(this).attr('data-tooltip-text')

@@ -79,12 +79,15 @@ D3.stacked_bar =
         .attr('class', 'serie')
         .attr("width", @x.rangeBand() * 0.5)
         .attr('x', (s) => @x(s.x) + 10)
+        .attr('data-tooltip-title', (s) => s.label)
         .attr('y', @series_height)
         .style('fill', (d) => d.color)
         .style('opacity', 0.8)
 
       $('rect.serie').qtip
-        content: -> $(this).attr('data-tooltip')
+        content:
+          title: -> $(this).attr('data-tooltip-title')
+          text: -> $(this).attr('data-tooltip-text')
         position:
           my: 'bottom center'
           at: 'top center'
@@ -142,10 +145,8 @@ D3.stacked_bar =
         .transition()
         .attr('y', (d) => @series_height - @y(d.y0 + d.y))
         .attr('height', (d) => @y(d.y))
-        .attr("data-tooltip", (d) =>
-          html = d.label
-          html += "<br/>"
-          html += Metric.autoscale_value d.y, @model.get('unit')
+        .attr("data-tooltip-text", (d) =>
+          Metric.autoscale_value d.y, @model.get('unit')
         )
 
       # move the target lines

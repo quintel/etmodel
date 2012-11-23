@@ -40,7 +40,7 @@ class InputElement < ActiveRecord::Base
   end
 
   def translated_name
-    I18n.t(title_for_description).gsub("'", '&#39;') # IE8 must die
+    ie8_sanitize I18n.t(title_for_description)
   end
 
   searchable do
@@ -109,11 +109,16 @@ class InputElement < ActiveRecord::Base
   # added the andand check and html_safe to clean up the helper
   #
   def parsed_description
-    (description.andand.content.andand.gsub('id="player"','class="player"') || "").html_safe
+    ie8_sanitize(description.andand.content.andand.gsub('id="player"','class="player"') || "").html_safe
   end
 
   # Use by admin and search page
   def url
     slide.try :url
+  end
+
+  # Silly IE8 doesn't understand &apos; entity which is added in views
+  def ie8_sanitize(s)
+    s.gsub("'", '&#39;')
   end
 end

@@ -25,7 +25,6 @@ class @Chart extends Backbone.Model
       when 'block' then new BlockChartSeries()
       when 'scatter' then new ScatterChartSeries()
       else new ChartSeries()
-    @bind('change:type', @render)
     # this should be called later! It's still here for backwards compatibility
     # with the old jqplot charts. See ETPlugin charts for a better approach.
     @render()

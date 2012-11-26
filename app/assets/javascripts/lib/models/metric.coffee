@@ -69,7 +69,7 @@
       when 'PJ'
         return "#{value} #{@scaling_in_words(pow + 3, 'joules')}"
       when 'MW'
-        return "#{value} #{@scaling_in_words(pow, 'watt')}"
+        return "#{value} #{@scaling_in_words(pow + 2, 'watt')}"
       when 'MT'
         return "#{value} #{@scaling_in_words(pow + 2, 'ton')}"
       when 'euro'

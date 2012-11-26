@@ -1,10 +1,10 @@
 #select_charts
-  - %w[Overview Policy Supply Demand Cost].each do |group|
-    %h1= t(group)
-    - OutputElement.not_hidden.select_by_group(group).sort_by{|c| t("output_elements.#{c.key}")}.each do |chart|
-      - next if chart.block_chart? || chart.not_allowed_in_this_area
-      %div.pick_chart{:data => { :chart_id => chart.id, :chart_holder => @chart_holder}}
-        %a
-          = image_tag "output_elements/#{chart.icon}", :size => "50x30"
-          %h2= t("output_elements.#{chart.key}").html_safe
+  - @groups.each_pair do |group, charts|
+    - if charts.any?
+      %h1= t(group)
+      - charts.each do |chart|
+        %div.pick_chart{:data => { :chart_id => chart.id, :chart_holder => @chart_holder}}
+          %a
+            = image_tag "output_elements/#{chart.icon}", :size => "50x30"
+            %h2= t("output_elements.#{chart.key}").html_safe
 

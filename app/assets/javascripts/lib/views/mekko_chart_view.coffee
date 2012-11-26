@@ -1,4 +1,4 @@
-class @MekkoChartView extends BaseChartView
+class @MekkoChartView extends JQPlotChartView
   initialize: ->
     @initialize_defaults()
 

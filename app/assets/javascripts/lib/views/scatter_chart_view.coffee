@@ -1,4 +1,4 @@
-class @ScatterChartView extends BaseChartView
+class @ScatterChartView extends JQPlotChartView
   initialize: ->
     this.initialize_defaults()
 

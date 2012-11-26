@@ -1,4 +1,4 @@
-class @WaterfallChartView extends BaseChartView
+class @WaterfallChartView extends JQPlotChartView
   initialize: ->
     @initialize_defaults()
 

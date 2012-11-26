@@ -1,4 +1,4 @@
-class @LineChartView extends BaseChartView
+class @LineChartView extends JQPlotChartView
   initialize: ->
     this.initialize_defaults()
 

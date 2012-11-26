@@ -35,6 +35,7 @@ class @AppView extends Backbone.View
     if @input_elements
       @input_elements.off "change"
       @input_elements.reset()
+      InputElement.Balancer.balancers = {}
     @input_elements = new InputElementList()
     @input_elements.on "change", @handleInputElementsUpdate
     @api.user_values

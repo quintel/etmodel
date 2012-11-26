@@ -74,7 +74,7 @@ D3.mekko =
         right: 10
 
       @width = @available_width() - (margins.left + margins.right)
-      @height = 410 - (margins.top + margins.bottom)
+      @height = @outer_height() - (margins.top + margins.bottom)
       @series_height = 190 # the rest of the height will be taken by the legend
       @svg = d3.select(@container_selector())
         .append("svg:svg")
@@ -125,7 +125,7 @@ D3.mekko =
         series: @carrier_list.models
         width: @width
         vertical_offset: @series_height + 130
-        columns: 2
+        columns: if @carrier_list.length > 9 then 3 else 2
 
       $("#{@container_selector()} rect.carrier").qtip
         content: -> $(this).attr('data-tooltip')

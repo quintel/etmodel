@@ -138,8 +138,12 @@ class @Chart extends Backbone.Model
   # This is used to show a chart as a table
   # See base_chart_view#render_as_table
   formatted_series_hash : ->
-    # the @non_target_series() array is wrapped in underscore to fix an IE8 bug
-    items = _(@non_target_series()).map (s) =>
+    # Legacy code duplicates target series. See stacked_bar.coffee#draw
+    targets_without_duplicates = _.uniq @target_series(), false, (s) -> s.get 'label'
+    series = _.union @non_target_series(), targets_without_duplicates
+
+    # the series array is wrapped in underscore to fix an IE8 bug
+    items = _(series).map (s) =>
       type = @get 'type'
       label = s.get 'label'
       if (type == 'mekko') || (type == 'horizontal_stacked_bar')
@@ -149,6 +153,7 @@ class @Chart extends Backbone.Model
         label: label
         present_value: Metric.autoscale_value(s.safe_present_value(), unit, 2)
         future_value:  Metric.autoscale_value(s.safe_future_value(),  unit, 2)
+
     # some charts draw series bottom to top. Let's flip the array
     return items.reverse() if @get('type') in ['vertical_stacked_bar', 'bezier']
     items

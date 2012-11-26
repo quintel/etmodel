@@ -1,4 +1,4 @@
-class @GroupedVerticalBarChartView extends BaseChartView
+class @GroupedVerticalBarChartView extends JQPlotChartView
   initialize : ->
     @initialize_defaults()
 

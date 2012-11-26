@@ -1,4 +1,4 @@
-class @BezierChartView extends BaseChartView
+class @BezierChartView extends JQPlotChartView
   initialize : ->
     @initialize_defaults()
 

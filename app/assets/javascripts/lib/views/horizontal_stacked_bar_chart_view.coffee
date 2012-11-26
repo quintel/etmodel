@@ -1,4 +1,4 @@
-class @HorizontalStackedBarChartView extends BaseChartView
+class @HorizontalStackedBarChartView extends JQPlotChartView
   cached_results : null
 
   initialize: ->

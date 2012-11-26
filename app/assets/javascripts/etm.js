@@ -7,6 +7,7 @@
 
 // silly sprockets...
 //= require lib/views/base_chart_view
+//= require lib/views/jqplot_chart_view
 //= require lib/views/vertical_stacked_bar_chart_view
 //= require_tree ./lib/views
 //= require_tree ./lib/models

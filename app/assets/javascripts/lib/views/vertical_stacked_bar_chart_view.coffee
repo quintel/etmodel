@@ -1,4 +1,4 @@
-class @VerticalStackedBarChartView extends BaseChartView
+class @VerticalStackedBarChartView extends JQPlotChartView
   initialize: ->
     @initialize_defaults()
 

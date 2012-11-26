@@ -76,6 +76,17 @@ D3.waterfall =
         .attr('x', (d) => @x d.key)
         .attr('data-tooltip-title', (d) -> d.key)
 
+      @svg.selectAll('text.serie')
+        .data(@prepare_data(), (d) -> d.key)
+        .enter()
+        .append('text')
+        .attr('class', 'serie')
+        .attr('y', 0)
+        .attr('dy', -5)
+        .attr('x', (d) => @x(d.key) + @column_width / 2)
+        .attr("text-anchor", "middle")
+        .text(123)
+
       $("#{@container_selector()} rect.serie").qtip
         content:
           title: -> $(this).attr('data-tooltip-title')
@@ -99,8 +110,14 @@ D3.waterfall =
         .data(data, (d) -> d.key)
         .transition()
         .attr('y', (d) => @inverted_y d.offset)
-        .attr('height', (d) => @y d.value)
+        .attr('height', (d) => @y Math.abs d.value)
         .attr('data-tooltip-text', (d) => Metric.autoscale_value d.value, @model.get('unit'))
+
+      @svg.selectAll('text.serie')
+        .data(data, (d) -> d.key)
+        .transition()
+        .attr('y', (d) => @inverted_y d.offset)
+        .text((d) => +(d.value).toFixed(0))
 
     # The final label is not defined in the chart attributes, so we must add
     # add it manually. This is ugly!
@@ -137,7 +154,7 @@ D3.waterfall =
 
         out.push
           key: s.get 'label'
-          value: Math.abs val
+          value: val
           offset: new_offset
           color: s.get 'color'
 

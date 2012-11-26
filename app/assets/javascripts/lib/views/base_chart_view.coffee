@@ -1,6 +1,6 @@
 class @BaseChartView extends Backbone.View
   initialize_defaults: =>
-    @model.bind('change', @render_as_needed)
+    @model.bind('refresh', @render_as_needed)
 
   render_as_needed: =>
     if @model.get('as_table') && @can_be_shown_as_table()

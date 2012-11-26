@@ -107,7 +107,6 @@ class @AppView extends Backbone.View
 
   # The following method could need some refactoring
   # e.g. el.set({ api_result : value_arr })
-  # window.charts.first().trigger('change')
   # window.dashboard.trigger('change')
   handle_api_result: ({results, settings, inputs}, data, textStatus, jqXHR) =>
     # store the last response from api for the turk it debugging tool
@@ -118,7 +117,7 @@ class @AppView extends Backbone.View
       if gquery = window.gqueries.with_key(key)
         gquery.handle_api_result(values)
 
-    window.charts.invoke 'trigger', 'change'
+    window.charts.invoke 'trigger', 'refresh'
     if t = window.targets
       t.invoke('update_view')
       t.update_totals()

@@ -3,9 +3,10 @@ class @BlockChartView extends BaseChartView
     @initialize_defaults()
 
   render: =>
-    unless @already_on_screen()
+    unless @drawn
       @clear_container()
       @container_node().html(@html())
+      @drawn = true
       @setup_checkboxes()
       @setup_callbacks()
       @hide_format_toggler()

@@ -1,7 +1,7 @@
-#constraints_container
+#dashboard_container
   width: 100%
   background-color: #fff
-  #constraints
+  #dashboard
     background:
       image: url(/assets/layout/divider-01.gif)
       color: #fff
@@ -77,7 +77,7 @@
       font-family: $title_font_family
       font-weight: normal
 
-#constraints
+#dashboard
   position: relative
 
   #dashboard_change
@@ -95,7 +95,7 @@
       background-color: #5586bc
 
 @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)
-  #constraints_container #constraints
+  #dashboard_container #dashboard
     background-image: url(/assets/layout/divider-01-hidpi.png)
     background-size: 13px 5px
 
@@ -111,7 +111,7 @@
       background-size: 28px 45px
 
 @media screen and (max-width: 960px)
-  #constraints_container #constraints .constraint
+  #dashboard_container #dashboard .constraint
     .header
       font-family: $body_font_family
       font-size: 12px
@@ -136,7 +136,7 @@
       background-position: 0 -500px
 
 @media screen and (max-width: 840px)
-  #constraints_container #constraints .constraint .header
+  #dashboard_container #dashboard .constraint .header
     font-size: 10px
 
 #dashboard-changer
@@ -188,9 +188,3 @@
       float: left
       margin: 5px 21px 0 -45px
       width: 24px
-
-iframe.constraint_iframe
-  width: 590px
-  height: 350px
-  border: 0
-  overflow: hidden

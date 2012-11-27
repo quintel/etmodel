@@ -41,7 +41,7 @@ class @ConstraintView extends Backbone.View
       autoSize: false
       href: url
       type: 'ajax'
-      width: 600
+      width: 700
       height: 480
       padding: 0
       beforeClose: ->

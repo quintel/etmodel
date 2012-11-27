@@ -8,14 +8,20 @@ D3.co2_emissions =
       @end_year = App.settings.get('end_year')
       @initialize_defaults()
 
-    can_be_shown_as_table: -> false
+    can_be_shown_as_table: -> true
 
     outer_height: => @height + 10
 
-    draw: =>
+    # This method is called right before rendering because the series are
+    # added when the JSON request is complete, ie after the initialize method
+    #
+    setup_series: =>
       @serie_1990   = @series[0]
       @serie_value  = @series[1]
       @serie_target = @series[2]
+
+    draw: =>
+      @setup_series()
 
       margins =
         top: 20
@@ -141,3 +147,38 @@ D3.co2_emissions =
         {id: 'co2_present', x: @start_year, y: @serie_value.safe_present_value()},
         {id: 'co2_future',  x: @end_year,   y: @serie_value.safe_future_value()}
       ]
+
+    # This chart has to override the standard render_as_table method
+    #
+    render_as_table: =>
+      # return false
+      @clear_container()
+      @setup_series()
+
+      unit = @model.get('unit')
+      raw_target = @serie_target.future_value()
+      target = if raw_target?
+        target = Metric.autoscale_value raw_target, unit
+      else
+        '-'
+      html = "
+        <table class='chart'>
+          <thead>
+            <tr>
+              <td>1990</td>
+              <td>#{@start_year}</td>
+              <td>#{@end_year}</td>
+              <td>Target</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#{Metric.autoscale_value @serie_1990.safe_future_value(), unit}</td>
+              <td>#{Metric.autoscale_value @serie_value.safe_present_value(), unit}</td>
+              <td>#{Metric.autoscale_value @serie_value.safe_future_value(), unit}</td>
+              <td>#{target}</td>
+            </tr>
+          </tbody>
+        </table>
+      "
+      @container_node().html(html)

@@ -120,7 +120,7 @@ D3.waterfall =
           else
             @y(d.bottom) + 10
         )
-        .text((d) => +(d.value).toFixed(0))
+        .text((d) => Metric.autoscale_value d.value, @model.get('unit'))
 
     # The final label is not defined in the chart attributes, so we must add
     # add it manually. This is ugly!

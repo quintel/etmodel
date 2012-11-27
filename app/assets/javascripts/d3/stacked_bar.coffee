@@ -4,6 +4,8 @@ D3.stacked_bar =
     initialize: ->
       @key = @model.get 'key'
       @series = @model.series.models
+      @start_year = App.settings.get('start_year')
+      @end_year = App.settings.get('end_year')
       @initialize_defaults()
 
     can_be_shown_as_table: -> true
@@ -57,17 +59,20 @@ D3.stacked_bar =
       stacked_data = _.flatten @stack_method(@prepare_data())
 
       @x = d3.scale.ordinal().rangeRoundBands([0, @width])
-        .domain([App.settings.get('start_year'), App.settings.get('end_year')])
+        .domain([@start_year, @end_year])
+
+      @bar_width = @x.rangeBand() * 0.5
 
       # show years
       @svg.selectAll('text.year')
-        .data([App.settings.get('start_year'), App.settings.get('end_year')])
+        .data([@start_year, @end_year])
         .enter().append('svg:text')
         .attr('class', 'year')
         .text((d) -> d)
-        .attr('x', (d) => @x(d) + 10)
-        .attr('y', @series_height + 10)
-        .attr('dx', 45)
+        .attr('x', (d) => @x(d))
+        .attr('dx', @bar_width / 2)
+        .attr('y', @series_height + 15)
+        .attr('text-anchor', 'middle')
 
       @y = d3.scale.linear().range([0, @series_height]).domain([0, 7])
       @inverted_y = d3.scale.linear().range([@series_height, 0]).domain([0, 7])
@@ -77,7 +82,7 @@ D3.stacked_bar =
         .data(stacked_data, (s) -> s.id)
         .enter().append('svg:rect')
         .attr('class', 'serie')
-        .attr("width", @x.rangeBand() * 0.5)
+        .attr("width", @bar_width)
         .attr('x', (s) => @x(s.x) + 10)
         .attr('data-tooltip-title', (s) => s.label)
         .attr('y', @series_height)

@@ -1,6 +1,5 @@
 D3.waterfall =
   View: class extends D3ChartView
-    el: 'body'
     initialize: ->
       @key = @model.get 'key'
       @initialize_defaults()
@@ -30,11 +29,10 @@ D3.waterfall =
         .append("svg:g")
         .attr("transform", "translate(#{margins.left}, #{margins.top})")
 
-      @y = d3.scale.linear().range([0, @series_height]).domain([0, 1])
-      @inverted_y = d3.scale.linear().range([@series_height, 0]).domain([0, 1])
+      @y = d3.scale.linear().range([@series_height, 0]).domain([-10, 10])
 
       @y_axis = d3.svg.axis()
-        .scale(@inverted_y)
+        .scale(@y)
         .ticks(4)
         .tickSize(-@series_width, 10, 0)
         .orient("right")
@@ -82,10 +80,8 @@ D3.waterfall =
         .append('text')
         .attr('class', 'serie')
         .attr('y', 0)
-        .attr('dy', -5)
         .attr('x', (d) => @x(d.key) + @column_width / 2)
         .attr("text-anchor", "middle")
-        .text(123)
 
       $("#{@container_selector()} rect.serie").qtip
         content:
@@ -99,24 +95,31 @@ D3.waterfall =
     refresh: =>
       data = @prepare_data()
       # update the scales as needed
-      max_value = d3.max(data, (d) -> d.offset)
-      @y.domain([0, max_value])
-      @inverted_y.domain([0, max_value])
+      max_value = d3.max(data, (d) -> d.top) * 1.2
+      min_value = d3.min(data, (d) -> d.bottom) * 1.1
+      min_value = 0 if min_value > 0
+
+      @y.domain([min_value, max_value])
 
       # animate the y-axis
-      @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@inverted_y))
+      @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@y))
 
       @svg.selectAll('rect.serie')
         .data(data, (d) -> d.key)
         .transition()
-        .attr('y', (d) => @inverted_y d.offset)
-        .attr('height', (d) => @y Math.abs d.value)
+        .attr('y', (d) => @y d.top)
+        .attr('height', (d) => @y(d.bottom) - @y(d.top))
         .attr('data-tooltip-text', (d) => Metric.autoscale_value d.value, @model.get('unit'))
 
       @svg.selectAll('text.serie')
         .data(data, (d) -> d.key)
         .transition()
-        .attr('y', (d) => @inverted_y d.offset)
+        .attr('y', (d) =>
+          if d.value >= 0
+            @y(d.top) - 5
+          else
+            @y(d.bottom) + 10
+        )
         .text((d) => +(d.value).toFixed(0))
 
     # The final label is not defined in the chart attributes, so we must add
@@ -135,34 +138,41 @@ D3.waterfall =
 
     prepare_data: =>
       out = []
-      offset = 0
+      previous_top = 0
+
       for s in @series
         # serious ugliness here
         #
         g = s.get('group')
-        val = if g == 'future'
+        value = if g == 'future'
           s.safe_future_value()
         else if g == 'value' # ?! TODO: rename!
           s.safe_present_value()
         else
           s.safe_future_value() - s.safe_present_value()
 
-        new_offset = if val >= 0
-          offset + val
+        if value >= 0
+          bottom = previous_top
+          top = previous_top + value
         else
-          offset
+          top = previous_top
+          bottom = top + value
 
         out.push
           key: s.get 'label'
-          value: val
-          offset: new_offset
+          value: value
+          top: top
+          bottom: bottom
           color: s.get 'color'
 
-        offset = offset + val
+        previous_top = if value < 0 then bottom else top
+        previous_bottom = bottom
+
       # The last item is calculated using the other columns
       out.push
         key: @last_column()
         color: out[0].color
-        value: offset
-        offset: offset
+        top: if previous_top > 0 then previous_top else 0
+        bottom: if previous_top > 0 then 0 else previous_top
+        value: if previous_top >= 0 then previous_top else previous_bottom
       out

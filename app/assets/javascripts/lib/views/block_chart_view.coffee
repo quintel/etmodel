@@ -46,9 +46,14 @@ class @BlockChartView extends BaseChartView
           $(this).attr('data-title')
         text: ->
           item = $(this)
+          cost =   Metric.autoscale_value item.parent().data('cost'), 'Eur/MWhe'
+          invest = Metric.autoscale_value item.parent().data('invest'), 'Eur/MWe'
           url = "/descriptions/#{item.attr('data-description_id')}"
           "#{item.attr('data-description')}
           <br/><br/>
+          #{I18n.t 'output_elements.block_chart.costs'}: #{cost}<br/>
+          #{I18n.t 'output_elements.block_chart.investment_costs'}: #{invest}
+          <br/><br>
           <a href='#{url}' class='fancybox'>#{I18n.t 'output_elements.common.read_more'}</a>"
       hide:
         fixed: true
@@ -129,11 +134,16 @@ class @BlockChartView extends BaseChartView
       $('#'+tick.id).text(Math.round(value))
     # update blocks
     for block in data_array
-      block_bottom = ((block[1] / max_cost)   * canvas_height) || 0
-      block_left   = ((block[2] / max_invest) * canvas_width)  || 0
+      cost = block[1]
+      invest = block[2]
+      block_bottom = ((cost / max_cost)   * canvas_height) || 0
+      block_left   = ((invest / max_invest) * canvas_width)  || 0
 
+      $item = $("#block_container_#{ block[0] }")
       # IE doesn't like animating from "auto" to a percentage.
       # remove a few pixels: the balloon tip has an offset
-      $("#block_container_#{ block[0] }").animate
+      $item.animate
         bottom: "#{ block_bottom - 6}px"
         left:   "#{ block_left - 6}px"
+      $item.attr('data-cost', cost)
+      $item.attr('data-invest', invest)

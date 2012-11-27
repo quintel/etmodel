@@ -84,6 +84,10 @@
         return "#{@round_number x, 0} #{@scaling_in_words(0, 'FTE')}"
       when 'Eur/Mwh'
         return "#{@round_number x, 0} €/Mwh"
+      when 'Eur/MWhe'
+        return "#{@round_number x, 0} €/MWhe"
+      when 'Eur/MWe'
+        return "#{@round_number x, 2} €/MWe"
       else
         return value
 

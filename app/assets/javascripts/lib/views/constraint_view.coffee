@@ -107,6 +107,4 @@ class @ConstraintView extends Backbone.View
 
   cleanArrows:() =>
     arrow_element = $('.arrow', @dom_id)
-    arrow_element.removeClass('arrow_neutral')
-    arrow_element.removeClass('arrow_down')
-    arrow_element.removeClass('arrow_up')
+    arrow_element.removeClass('arrow_neutral arrow_down arrow_up')

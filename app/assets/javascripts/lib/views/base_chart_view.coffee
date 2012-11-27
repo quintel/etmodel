@@ -35,7 +35,9 @@ class @BaseChartView extends Backbone.View
   # an id
   container_node : -> $ "##{@container_id()}"
 
-  clear_container: -> @container_node().empty()
+  clear_container: =>
+    @container_node().empty()
+    @drawn = false
 
   # updates the header items as needed, returns the videw itself to allow some
   # method chaining. Some of these updates should be moved to the underscore

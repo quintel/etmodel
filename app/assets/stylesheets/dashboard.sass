@@ -2,10 +2,7 @@
   width: 100%
   background-color: #fff
   #dashboard
-    background:
-      image: url(/assets/layout/divider-01.gif)
-      color: #fff
-      repeat: repeat-x
+    // border-top: 1px solid #d7e3ef
     padding-left: 35px
     margin: 0 auto
     min-width: 715px
@@ -14,14 +11,15 @@
     .loading
       background: #fff
       position: absolute
-      height: 67px
+      height: 68px
       width: 100%
-      @include opacity(0.9)
+      @include opacity(0.8)
       z-index: 2000
     .constraint
       float: left
       cursor: pointer
-      background: url(/assets/layout/separator-02.gif) repeat-y
+      border-top: 1px dashed #d7e3ef
+      border-right: 1px dashed #d7e3ef
       width: 14%
       position: relative
 
@@ -83,7 +81,7 @@
   #dashboard_change
     background: #71a2cf url(/assets/layout/change_dashboard_button.png) center center no-repeat
     display: block
-    height: 67px
+    height: 68px
     position: absolute
     right: 0
     text-indent: -10000px
@@ -96,16 +94,6 @@
 
 @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)
   #dashboard_container #dashboard
-    background-image: url(/assets/layout/divider-01-hidpi.png)
-    background-size: 13px 5px
-
-    .constraint
-      background-image: url(/assets/layout/separator-02-hidpi.png)
-      background-size: 5px 10px
-
-      &.first
-        background: none
-
     #dashboard_change
       background-image: url(/assets/layout/change_dashboard_button-hidpi.png)
       background-size: 28px 45px

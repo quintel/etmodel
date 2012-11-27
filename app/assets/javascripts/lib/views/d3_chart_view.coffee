@@ -17,7 +17,10 @@ class @D3ChartView extends BaseChartView
       canvas.css('height', @outer_height())
     @refresh()
 
-  html: => "<div id='#{@chart_container_id()}' class='d3_container #{@model.get 'type'}'></div>"
+  html: =>
+    type = @model.get 'type'
+    if type == 'd3' then type = @model.get('key')
+    "<div id='#{@chart_container_id()}' class='d3_container #{type}'></div>"
 
   chart_container_id: => "d3_#{@model.get 'key'}_#{@model.get 'container'}"
 

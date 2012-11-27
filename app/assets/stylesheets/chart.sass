@@ -136,20 +136,16 @@ div.d3_container
   &.waterfall
     text.serie
       font-size: 9px
-
-// -------- specific charts  -------------------------------------------------
-
-#d3_container_treemap
-  div.cell
-    border: 1px solid white
-    overflow: hidden
-    position: absolute
-    font: 9px sans-serif
-    line-height: 12px
-    text-indent: 2px
-
-#d3_container_merit_order
-  rect.merit_order_node
-    fill-opacity: .80
-  .legend text
-    font-size: 11px
+  &.merit_order
+    rect.merit_order_node
+      fill-opacity: .80
+    .legend text
+      font-size: 11px
+  &.treemap
+    div.cell
+      border: 1px solid white
+      overflow: hidden
+      position: absolute
+      font: 9px sans-serif
+      line-height: 12px
+      text-indent: 2px

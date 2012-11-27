@@ -18,7 +18,7 @@ Etm::Application.configure do
 
   config.action_controller.perform_caching = false
   #config.cache_store = :memory_store
-  config.cache_store = :mem_cache_store
+  config.cache_store = :dalli_store
   #config.cache_store = :file_store, '/tmp/cache'
   config.assets.debug = true
 end

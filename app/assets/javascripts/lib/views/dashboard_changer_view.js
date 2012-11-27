@@ -103,7 +103,7 @@
    * Called upon successful completion of the XHR request.
    */
   DashboardChangerView.prototype.onDone = function (data, status, jqXHR) {
-    var constraintsEl  = $('#constraints');
+    var constraintsEl  = $('#dashboard');
 
     $.fancybox.close();
 

@@ -72,9 +72,10 @@ D3.treemap =
           position:
             my: 'bottom center'
             at: 'top center'
+            target: 'mouse'
 
     refresh: =>
-      @svg.selectAll("div").
+      @svg.selectAll("div.cell").
         data(@treemap.value( (d) ->
           d.val()
         )).

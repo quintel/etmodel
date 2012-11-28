@@ -33,10 +33,7 @@ D3.merit_order =
     value_x: => @gquery_x.safe_future_value()
 
     value_y: =>
-      if @get('key') == 'must_run'
-        1
-      else
-        @original_y_value()
+      if @get('key') == 'must_run' then 1 else @original_y_value()
 
     original_y_value: => @gquery_y.safe_future_value()
 
@@ -60,16 +57,17 @@ D3.merit_order =
       margins =
         top: 10
         bottom: 40
-        left: 40
+        left: 50
         right: 10
       @margin = 50
       @width = @available_width() - (margins.left + margins.right)
       @height = 310 - (margins.top + margins.bottom)
-      @series_height = 280
+      @series_height = 260
       @x = d3.scale.linear().domain([0, 100]).range([0, @width])
       @y = d3.scale.linear().domain([0, 100]).range([0, @series_height])
       @inverted_y = @y.copy().range([@series_height, 0])
       @x_axis = d3.svg.axis().scale(@x).ticks(4).orient("bottom")
+        .tickFormat((x) => Metric.autoscale_value x, 'MW')
       @y_axis = d3.svg.axis().scale(@inverted_y).ticks(4).orient("left")
       @svg = d3.select(@container_selector())
         .append("svg:svg")
@@ -81,7 +79,7 @@ D3.merit_order =
       # axis
       @svg.append("svg:g")
         .attr("class", "x_axis")
-        .attr("transform", "translate(0, #{@height})")
+        .attr("transform", "translate(0, #{@series_height})")
         .call(@x_axis)
       @svg.append("svg:g")
         .attr("class", "y_axis")
@@ -89,15 +87,15 @@ D3.merit_order =
       @svg.append("svg:text")
         .text('Operating Costs [EUR/MWh]')
         .attr("x", @height / -2)
-        .attr("y", -25)
+        .attr("y", -35)
         .attr("text-anchor", "middle")
         .attr("class", "axis_label")
         .attr("transform", "rotate(270)")
 
       @svg.append("svg:text")
-        .text('Installed Capacity [MW]')
+        .text('Installed Capacity')
         .attr("x", @width / 2)
-        .attr("y", @series_height + 10)
+        .attr("y", @series_height + 30)
         .attr("text-anchor", "middle")
         .attr("class", "axis_label")
 
@@ -172,9 +170,9 @@ D3.merit_order =
         )
         .attr("x", (d) => @x(d.get 'x_offset'))
         .attr("data-tooltip-text", (d) ->
-          html = "Installed capacity: #{Metric.autoscale_value(d.value_x() * 1000000, 'MW', 2)}"
-          html += "<br/>"
-          html += "Operating costs: #{Metric.autoscale_value d.original_y_value(), 'euro', 2}"
+          html = "Installed capacity: #{Metric.autoscale_value(d.value_x() * 1000000, 'MW', 2)}
+                  <br/>
+                  Operating costs: #{Metric.autoscale_value d.original_y_value(), 'euro', 2}"
           if d.get('key') == 'must_run'
             html += '*<br/>* Must run plants do not participate in merit order'
           html
@@ -185,9 +183,7 @@ class D3.merit_order.NodeList extends Backbone.Collection
   model: D3.merit_order.Node
 
   max_height: =>
-    _.max(@map (i) -> i.value_y())
+    d3.max @models, (i) -> i.value_y()
 
   total_width: =>
-    tot = 0
-    @each (i) -> tot += i.value_x()
-    tot
+    d3.sum @models, (n) -> n.value_x()

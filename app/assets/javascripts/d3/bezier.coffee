@@ -9,7 +9,7 @@ D3.bezier =
 
     can_be_shown_as_table: -> true
 
-    outer_height: -> 360
+    outer_height: => @height + 20
 
     # This chart rendering is fairly complex. Here is the big picture:
     # this bezier chart is basically a stacked area chart. D3 provides some
@@ -24,14 +24,21 @@ D3.bezier =
     draw: =>
       margins =
         top: 20
-        bottom: 200
+        bottom: 20
         left: 20
         right: 30
 
       @width = @available_width() - (margins.left + margins.right)
-      @height = 360 - (margins.top + margins.bottom)
       # height of the series section
       @series_height = 190
+
+      legend_columns = if @model.series.length > 6 then 2 else 1
+      legend_rows = @model.series.length / legend_columns
+
+      estimated_legend_height = legend_rows * 15
+
+      @height = @series_height + margins.top + margins.bottom + 20 + estimated_legend_height
+
       @series_width = @width - 15
       @svg = d3.select(@container_selector())
         .append("svg:svg")
@@ -40,7 +47,6 @@ D3.bezier =
         .append("svg:g")
         .attr("transform", "translate(#{margins.left}, #{margins.top})")
 
-      legend_columns = if @model.series.length > 6 then 2 else 1
       @draw_legend
         svg: @svg
         series: @model.series.models

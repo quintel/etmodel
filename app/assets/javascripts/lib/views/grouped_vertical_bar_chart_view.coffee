@@ -3,7 +3,7 @@ class @GroupedVerticalBarChartView extends JQPlotChartView
     @initialize_defaults()
 
   render : =>
-    @clear_container()
+    @pre_render()
     @render_chart()
 
   result_serie : -> _.flatten(@model.value_pairs())

@@ -3,9 +3,10 @@ class @ScatterChartView extends JQPlotChartView
     this.initialize_defaults()
 
   render: =>
-    @clear_container()
-    @$el.css('height', 470)
+    @pre_render()
     @render_chart()
+
+  outer_height: -> 470
 
   results: =>
     @model.series.map (serie) ->

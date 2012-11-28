@@ -3,7 +3,7 @@ class @LineChartView extends JQPlotChartView
     this.initialize_defaults()
 
   render: =>
-    @clear_container()
+    @pre_render()
     @render_line_chart()
 
   render_line_chart: =>

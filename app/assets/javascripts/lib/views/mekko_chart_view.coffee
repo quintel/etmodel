@@ -3,7 +3,7 @@ class @MekkoChartView extends JQPlotChartView
     @initialize_defaults()
 
   render: =>
-    @clear_container()
+    @pre_render()
     @render_mekko()
 
   results: ->
@@ -37,7 +37,6 @@ class @MekkoChartView extends JQPlotChartView
     # See https://github.com/dennisschoenmakers/etmodel/issues/639
     $(".jqplot-point-label").html(null)
     # prevent the legend from overlapping the secondary chart
-    @container_node().parent().css('height', 480)
 
   chart_opts: =>
     out =

@@ -3,7 +3,7 @@ class @VerticalStackedBarChartView extends JQPlotChartView
     @initialize_defaults()
 
   render: =>
-    @clear_container()
+    @pre_render()
     @render_chart()
 
   results: ->

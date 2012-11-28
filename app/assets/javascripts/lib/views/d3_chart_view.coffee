@@ -14,7 +14,7 @@ class @D3ChartView extends BaseChartView
       @container_node().html(@html())
       @draw()
       @drawn = true
-      @set_container_height @outer_height()
+      @resize_container()
     @refresh()
 
   html: =>

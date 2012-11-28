@@ -27,3 +27,7 @@ class @JQPlotChartView extends BaseChartView
         fontSize: '11px'
     highlighter:
       show: false
+
+  pre_render: =>
+    @clear_container()
+    @resize_container()

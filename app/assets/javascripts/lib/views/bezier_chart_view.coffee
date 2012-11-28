@@ -3,7 +3,7 @@ class @BezierChartView extends JQPlotChartView
     @initialize_defaults()
 
   render: =>
-    @clear_container()
+    @pre_render()
     @render_chart()
 
   # if we scale the label we've got to scale the values, too

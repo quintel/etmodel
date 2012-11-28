@@ -2,7 +2,7 @@
 # It contains some custom additions to the series showing a historic value
 class @CO2EmissionsChartView extends VerticalStackedBarChartView
   render: =>
-    @clear_container()
+    @pre_render()
     @render_chart()
 
   results: ->

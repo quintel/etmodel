@@ -104,10 +104,14 @@ class @BaseChartView extends Backbone.View
   # D3 charts override this method
   supported_in_current_browser: -> true
 
-  # Override as needed
-  height: -> 300
+  # Override as needed, this is the height that the container will be set to
+  #
+  outer_height: -> 300
 
   # Resizes the chart canvas. We need this when the user toggles chart and
   # table format
   set_container_height: (h) =>
     @container_node().height(h)
+
+  resize_container: =>
+    @set_container_height @outer_height()

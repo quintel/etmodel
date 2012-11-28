@@ -3,7 +3,7 @@ class @WaterfallChartView extends JQPlotChartView
     @initialize_defaults()
 
   render: =>
-    @clear_container()
+    @pre_render()
     @render_waterfall()
 
   colors: ->

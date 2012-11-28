@@ -6,7 +6,7 @@ class @HorizontalStackedBarChartView extends JQPlotChartView
 
   render: =>
     @clear_results_cache()
-    @clear_container()
+    @pre_render()
     @render_chart()
 
   # the horizontal stacked graph expects data in this format:

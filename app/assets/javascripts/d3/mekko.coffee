@@ -2,8 +2,9 @@ D3.mekko =
   # This represents a carrier within a sector
   Node: class extends Backbone.Model
     initialize: =>
-      @sector = D3.mekko.sector_list.find((s) => s.get('key') == @get('sector'))
-      @carrier = D3.mekko.carrier_list.find((s) => s.get('key') == @get('carrier'))
+      @view = @get 'view'
+      @sector  = @view.sector_list.find((s) => s.get('key') == @get('sector'))
+      @carrier = @view.carrier_list.find((s) => s.get('key') == @get('carrier'))
       @sector.nodes.push this
       @carrier.nodes.push this
 
@@ -15,11 +16,7 @@ D3.mekko =
 
   NodeGroup: class extends Backbone.Model
       initialize: -> @nodes = []
-
-      total_value: =>
-        total = 0
-        total += n.val() for n in @nodes
-        total
+      total_value: => d3.sum @nodes, (n) -> n.val()
 
   View: class extends D3ChartView
     el: "body"
@@ -33,9 +30,9 @@ D3.mekko =
     outer_height: -> 410
     # lots of ugly transformations to adapt the current conventions
     prepare_data: =>
-      @sector_list = D3.mekko.sector_list = new D3.mekko.GroupCollection()
-      @carrier_list = D3.mekko.carrier_list = new D3.mekko.GroupCollection()
-      @node_list = D3.mekko.node_list = new D3.mekko.NodeList()
+      @sector_list  = new D3.mekko.GroupCollection()
+      @carrier_list = new D3.mekko.GroupCollection()
+      @node_list    = new D3.mekko.NodeList()
 
       sectors  = []
       carriers = []
@@ -44,17 +41,20 @@ D3.mekko =
         carriers.push
           label: s.get('label')
           color: s.get('color')
+          view: this
       sectors  = _.uniq sectors
       carriers = _.uniq(carriers, false, (c) -> c.label)
 
       for sector in sectors
         @sector_list.add
           key: sector
+          view: this
       for carrier in carriers
         @carrier_list.add
           key: carrier.label
           label: carrier.label # used by the legend
           color: carrier.color
+          view: this
 
       for s in @series
         sector  = s.get('group_translated')
@@ -64,6 +64,7 @@ D3.mekko =
           carrier: carrier
           gquery: s.get('gquery')
           color: s.get('color')
+          view: this
 
     draw: =>
       @prepare_data()
@@ -82,6 +83,9 @@ D3.mekko =
         .attr("width", @width + margins.left + margins.right)
         .append("svg:g")
         .attr("transform", "translate(#{margins.left}, #{margins.top})")
+
+      @x = d3.scale.linear().range([0, @width])
+      @y = d3.scale.linear().range([0, @series_height])
 
       y_scale = d3.scale.linear().domain([100,0]).range([0, @series_height])
 
@@ -132,11 +136,12 @@ D3.mekko =
         position:
           my: 'bottom right'
           at: 'top center'
+          follow: 'mouse'
 
     refresh: =>
       total_value = @node_list.grand_total()
-      @x = d3.scale.linear().domain([0, total_value]).range([0, @width])
-      @y = d3.scale.linear().domain([0, total_value]).range([0, @series_height])
+      @x.domain([0, total_value])
+      @y.domain([0, total_value])
 
       @sector_offset = 0
 
@@ -161,29 +166,26 @@ D3.mekko =
       for sector in @sector_list.pluck('key')
         offsets[sector] = 0
 
-      @svg.selectAll(".carrier").
-        data(@node_list.models, (d) -> d.key()).
-        transition().duration(500).
-        attr("width", (d) => @x d.sector.total_value() ).
-        attr("height", (d) =>
+      @svg.selectAll(".carrier")
+        .data(@node_list.models, (d) -> d.key())
+        .transition().duration(500)
+        .attr("width", (d) => @x d.sector.total_value() )
+        .attr("height", (d) =>
           x = d.val() / d.sector.total_value() * @series_height
           if _.isNaN(x) then 0 else x
-        ).
-        attr("y", (d) =>
+        )
+        .attr("y", (d) =>
           old = offsets[d.get 'sector']
           x = d.val() / d.sector.total_value() * @series_height
           if _.isNaN(x) then x = 0
           offsets[d.get 'sector'] += x
           old
-        ).
-        attr("data-tooltip", (d) -> d.tooltip_text())
+        )
+        .attr("data-tooltip", (d) -> d.tooltip_text())
 
 class D3.mekko.GroupCollection extends Backbone.Collection
   model: D3.mekko.NodeGroup
 
 class D3.mekko.NodeList extends Backbone.Collection
   model: D3.mekko.Node
-  grand_total: =>
-    t = 0
-    t += n.val() for n in @models
-    t
+  grand_total: => d3.sum @models, (n) -> n.val()

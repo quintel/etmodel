@@ -182,3 +182,5 @@ D3.co2_emissions =
         </table>
       "
       @container_node().html(html)
+      new_height = @container_node().find('table').height()
+      @set_container_height new_height

@@ -2,6 +2,8 @@ class @SidebarView extends Backbone.View
   bootstrap: ->
     # setup accordion
     $('#sidebar h4').on 'click', ->
+      $("#sidebar h4").removeClass("active")
+      $(this).addClass('active')
       target = $(this).next('ul')
       target.slideToggle('fast')
       $("#sidebar ul").not(target).slideUp('fast')

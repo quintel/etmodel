@@ -11,16 +11,12 @@ D3.mekko =
     val:   => @get('gquery').safe_future_value()
     label: => @get('label') || @get('gquery')
     key:   => "#{@get 'carrier'}_#{@get 'sector'}"
-    tooltip_text: =>
-      "#{@get 'carrier'} #{@get 'sector'}<br/>#{parseInt @val()} PJ"
 
   NodeGroup: class extends Backbone.Model
       initialize: -> @nodes = []
       total_value: => d3.sum @nodes, (n) -> n.val()
 
   View: class extends D3ChartView
-    el: "body"
-
     initialize: ->
       @series = @model.series.models
       @initialize_defaults()
@@ -90,7 +86,8 @@ D3.mekko =
       y_scale = d3.scale.linear().domain([100,0]).range([0, @series_height])
 
       # axis
-      @y_axis = d3.svg.axis().scale(y_scale).ticks(4).orient("left") .tickFormat((x) -> "#{x}%")
+      @y_axis = d3.svg.axis().scale(y_scale).ticks(4).orient("left")
+        .tickFormat((x) -> "#{x}%")
       @svg.append("svg:g")
         .attr("transform", "translate(0, 0.5)") # for nice, crisp lines
         .attr("class", "y_axis").call(@y_axis)
@@ -100,7 +97,7 @@ D3.mekko =
         .data(@sector_list.models, (d) -> d.get 'key' )
         .enter().append("svg:g")
         .attr("class", "sector")
-        .attr("transform", (d) -> "translate(30)")
+        .attr("transform", "translate(30)")
         .attr("data-rel", (d) -> d.get 'key')
 
       # Create items inside the group
@@ -114,6 +111,7 @@ D3.mekko =
         .attr("y", 10)
         .attr("x", 0)
         .attr("data-rel", (d) -> d.key())
+        .attr('data-tooltip-title', (n) -> "#{n.get 'carrier'} #{n.get 'sector'}")
 
       # vertical sector label
       @sectors
@@ -132,7 +130,9 @@ D3.mekko =
         columns: if @carrier_list.length > 9 then 3 else 2
 
       $("#{@container_selector()} rect.carrier").qtip
-        content: -> $(this).attr('data-tooltip')
+        content:
+          title: -> $(this).attr('data-tooltip-title')
+          text: -> $(this).attr('data-tooltip-text')
         position:
           my: 'bottom right'
           at: 'top center'
@@ -181,7 +181,7 @@ D3.mekko =
           offsets[d.get 'sector'] += x
           old
         )
-        .attr("data-tooltip", (d) -> d.tooltip_text())
+        .attr("data-tooltip-text", (d) -> Metric.autoscale_value d.val(), 'PJ')
 
 class D3.mekko.GroupCollection extends Backbone.Collection
   model: D3.mekko.NodeGroup

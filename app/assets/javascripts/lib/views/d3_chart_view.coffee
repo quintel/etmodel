@@ -10,11 +10,11 @@ class @D3ChartView extends BaseChartView
   render: (force_redraw) =>
     return false unless @model.supported_by_current_browser()
     if force_redraw || !@drawn
-      canvas = @$el.find(".chart_canvas")
-      canvas.empty().html(@html())
+      @clear_container()
+      @container_node().html(@html())
       @draw()
       @drawn = true
-      canvas.css('height', @outer_height())
+      @set_container_height @outer_height()
     @refresh()
 
   html: =>

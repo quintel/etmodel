@@ -170,7 +170,7 @@ D3.merit_order =
         )
         .attr("x", (d) => @x(d.get 'x_offset'))
         .attr("data-tooltip-text", (d) ->
-          html = "Installed capacity: #{Metric.autoscale_value(d.value_x() * 1000000, 'MW', 2)}
+          html = "Installed capacity: #{Metric.autoscale_value(d.value_x(), 'MW', 2)}
                   <br/>
                   Operating costs: #{Metric.autoscale_value d.original_y_value(), 'euro', 2}"
           if d.get('key') == 'must_run'

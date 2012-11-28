@@ -86,6 +86,9 @@ class @BaseChartView extends Backbone.View
   #
   block_ui_on_refresh: -> true
 
+  # Replaces the chart with a table. The CO2 Emissions chart overrides this
+  # method because it has a different format
+  #
   render_as_table: =>
     @clear_container()
     table_data =
@@ -100,4 +103,9 @@ class @BaseChartView extends Backbone.View
   supported_in_current_browser: -> true
 
   # Override as needed
-  height: => 300
+  height: -> 300
+
+  # Resizes the chart canvas. We need this when the user toggles chart and
+  # table format
+  set_container_height: (h) =>
+    @container_node().height(h)

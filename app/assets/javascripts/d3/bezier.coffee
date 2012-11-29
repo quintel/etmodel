@@ -1,6 +1,5 @@
 D3.bezier =
   View: class extends D3ChartView
-    el: 'body'
     initialize: ->
       @key = @model.get 'key'
       @start_year = App.settings.get('start_year')

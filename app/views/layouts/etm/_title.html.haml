@@ -1,6 +1,8 @@
 #title
   %h2
     = raw t("sidebar_items.#{@interface.current_sidebar_item.key}.long_name")
+
+  .buttons
     %a.button.fancybox{ href: @interface.tab_info_path }
       %span.icon-info-sign
       = raw t("header.information")

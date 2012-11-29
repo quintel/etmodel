@@ -1,6 +1,5 @@
 D3.line =
   View: class extends D3ChartView
-    el: 'body'
     initialize: ->
       @key = @model.get 'key'
       @start_year = App.settings.get('start_year')
@@ -10,19 +9,19 @@ D3.line =
 
     can_be_shown_as_table: -> true
 
-    outer_height: -> 400
+    outer_height: -> @height + 20
 
     draw: =>
       margins =
         top: 20
-        bottom: 200
+        bottom: 50
         left: 20
-        right: 40
+        right: 50
 
-      @width = 494 - (margins.left + margins.right)
-      @height = 360 - (margins.top + margins.bottom)
+      @width = @available_width() - (margins.left + margins.right)
       # height of the series section
       @series_height = 190
+      @height = @series_height + margins.top + margins.bottom + 20 + (@series.length / 2 * 15)
       @svg = d3.select(@container_selector())
         .append("svg:svg")
         .attr("height", @height + margins.top + margins.bottom)
@@ -34,20 +33,20 @@ D3.line =
         svg: @svg
         series: @series
         width: @width
-        vertical_offset: @series_height + 20
+        vertical_offset: @series_height + 25
         columns: 2
 
-      @x = d3.scale.linear().range([0, @width - 15])
+      @x = d3.scale.linear().range([0, @width])
         .domain([@start_year, @end_year])
 
       # show years at the corners
       @svg.selectAll('text.year')
-        .data([App.settings.get('start_year'), App.settings.get('end_year')])
+        .data([@start_year, @end_year])
         .enter().append('svg:text')
         .attr('class', 'year')
         .attr("text-anchor", "middle")
         .text((d) -> d)
-        .attr('x', (d, i) => if i == 0 then 0 else 430)
+        .attr('x', (d, i) => if i == 0 then 0 else @width)
         .attr('y', @series_height + 16)
 
       @y = d3.scale.linear().range([0, @series_height]).domain([0, 1])
@@ -57,12 +56,12 @@ D3.line =
       @y_axis = d3.svg.axis()
         .scale(@inverted_y)
         .ticks(4)
-        .tickSize(-429, 10, 0)
+        .tickSize(-@width, 10, 0)
         .orient("right")
         .tickFormat((x) => Metric.autoscale_value x, @model.get('unit'))
       @svg.append("svg:g")
         .attr("class", "y_axis inner_grid")
-        .attr("transform", "translate(#{@width - 15}, 0)")
+        .attr("transform", "translate(#{@width}, 0)")
         .call(@y_axis)
 
       # draw lines

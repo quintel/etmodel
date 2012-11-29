@@ -73,6 +73,7 @@ D3.mekko =
       @width = @available_width() - (margins.left + margins.right)
       @height = @outer_height() - (margins.top + margins.bottom)
       @series_height = 190 # the rest of the height will be taken by the legend
+      @label_offset = @series_height + 10
       @svg = d3.select(@container_selector())
         .append("svg:svg")
         .attr("height", @height + margins.top + margins.bottom)
@@ -115,18 +116,18 @@ D3.mekko =
 
       # vertical sector label
       @sectors
-        .append("svg:text")
+        .append('g')
         .attr('class', 'sector_label')
-        .text((d) -> d.get 'key')
-        .attr("transform", "rotate(90)")
-        .attr("text-anchor", "start")
-        .attr('x', 200)
+        .attr('transform', "translate(0, #{@label_offset})")
+        .append("svg:text")
+        .attr("text-anchor", "end")
+        .attr("transform", "rotate(-70)")
 
       @draw_legend
         svg: @svg
         series: @carrier_list.models
         width: @width
-        vertical_offset: @series_height + 130
+        vertical_offset: @series_height + 120
         columns: if @carrier_list.length > 9 then 3 else 2
 
       $("#{@container_selector()} rect.carrier").qtip
@@ -154,11 +155,11 @@ D3.mekko =
           "translate(#{old})"
         )
 
-      @label_offset = 0
-      @svg.selectAll("text.sector_label")
+      @svg.selectAll("g.sector_label")
         .data(@sector_list.models, (d) -> d.get 'key' )
         .transition().duration(500)
-        .attr("dy", (d) => -@x(d.total_value() / 2))
+        .attr('transform', (d) => "translate(#{@x(d.total_value() / 2)}, #{@label_offset})")
+        .select('text')
         .text((d) -> "#{d.get 'key'} #{parseInt d.total_value()} PJ")
 
       # we need to track the offset for every sector

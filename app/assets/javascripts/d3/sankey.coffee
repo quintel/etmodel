@@ -339,6 +339,8 @@ D3.sankey =
         @node_map[n.id] = node
         node
 
+      @nodes_excluding_loss = _.reject @node_list, (n) -> n.id == 'loss'
+
       @link_list = _.map D3.sankey.charts[k].data.links, (l) =>
         new D3.sankey.Link(_.extend l, view: this)
 
@@ -383,7 +385,7 @@ D3.sankey =
         .attr('id', 'loss_gradient').call(
           (g) ->
             g.append('svg:stop').attr('offset', '0%').attr('style', 'stop-color:rgb(250,0,0);stop-opacity:1')
-            g.append('svg:stop').attr('offset', '100%').attr('style', 'stop-color:rgb(250,0,0);stop-opacity:0.1')
+            g.append('svg:stop').attr('offset', '100%').attr('style', 'stop-color:rgb(250,0,0);stop-opacity:0.0')
       )
 
     draw_links: =>
@@ -409,7 +411,7 @@ D3.sankey =
     draw_nodes: =>
       colors = d3.scale.category20()
       nodes = @svg.selectAll("g.node")
-        .data(@node_list, (d) -> d.get('id'))
+        .data(@nodes_excluding_loss, (d) -> d.get('id'))
         .enter()
         .append("g")
         .attr("class", "node")
@@ -480,7 +482,7 @@ D3.sankey =
         .range([0, @height * .90])
 
       # update the node label
-      @nodes.data(@node_list, (d) -> d.get('id'))
+      @nodes.data(@nodes_excluding_loss, (d) -> d.get('id'))
         .attr("data-tooltip", (d) =>
           h = ""
           for l in d.right_links
@@ -516,11 +518,11 @@ D3.sankey =
     # returns the height of the tallest column
     max_column_value: =>
       sums = {}
-      for n in @node_list
+      for n in @nodes_excluding_loss
         column = n.get 'column'
         sums[column] = sums[column] || 0
         sums[column] += n.value()
       _.max _.values(sums)
 
     number_of_columns: =>
-      @__column_number ?= d3.max(@node_list, (n) -> n.get 'column') + 1
+      @__column_number ?= d3.max(@nodes_excluding_loss, (n) -> n.get 'column') + 1

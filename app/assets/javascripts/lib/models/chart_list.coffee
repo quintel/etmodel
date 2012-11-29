@@ -214,10 +214,7 @@ class @ChartList extends Backbone.Collection
       data_holder = $(e.target).closest('div.pick_chart')
       holder_id = data_holder.data('chart_holder')
       chart_id  = data_holder.data('chart_id')
-      if c = @chart_already_on_screen(chart_id)
-        c.highlight()
-      else
-        @load chart_id, holder_id, force: true
+      @load chart_id, holder_id, force: true
       close_fancybox()
 
     # Toggle chart lock

@@ -214,8 +214,3 @@ class @Chart extends Backbone.Model
   wants_default_button: =>
     (@get('container') == 'holder_0') &&
     (@get('chart_id') != App.charts.default_chart_id)
-
-  # TODO: move to view and remove jquery-ui dependency
-  #
-  highlight: =>
-    @view.$el.effect('highlight', {color: '#ff0000'}, 2000)

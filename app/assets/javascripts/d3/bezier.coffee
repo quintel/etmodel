@@ -73,7 +73,7 @@ D3.bezier =
         .attr('class', 'year')
         .attr("text-anchor", "middle")
         .text((d) -> d)
-        .attr('x', (d, i) => if i == 0 then 0 else @width)
+        .attr('x', (d, i) => if i == 0 then 0 else @series_width)
         .attr('y', @series_height + 16)
 
       @y = d3.scale.linear().range([0, @series_height]).domain([0, 7])
@@ -96,7 +96,7 @@ D3.bezier =
         .tickFormat((x) => Metric.autoscale_value x, @model.get('unit'))
       @svg.append("svg:g")
         .attr("class", "y_axis inner_grid")
-        .attr("transform", "translate(#{@width - 15}, 0)")
+        .attr("transform", "translate(#{@series_width}, 0)")
         .call(@y_axis)
 
       # there we go
@@ -107,13 +107,13 @@ D3.bezier =
         .attr('d', (d) => @area d.values)
         .style('fill', (d) => d.values[0].color)
         .style('opacity', 0.8)
-        .attr('data-title', (d) -> d.values[0].label)
+        .attr('data-tooltip-title', (d) -> d.values[0].label)
 
       # series tooltips
       $("#{@container_selector()} path.serie").qtip
         content:
-          title: -> $(this).attr('data-title')
-          text: -> $(this).attr('data-tooltip')
+          title: -> $(this).attr('data-tooltip-title')
+          text: -> $(this).attr('data-tooltip-text')
         position:
           target: 'mouse'
           my: 'bottom right'
@@ -139,7 +139,7 @@ D3.bezier =
         .data(stacked_data, (s) -> s.key)
         .transition()
         .attr('d', (d) => @area d.values)
-        .attr('data-tooltip', (d) => "
+        .attr('data-tooltip-text', (d) => "
           #{@start_year}: #{Metric.autoscale_value d.values[0].y, @model.get 'unit'}</br>
           #{@end_year}: #{Metric.autoscale_value d.values[2].y, @model.get 'unit'}
         ")

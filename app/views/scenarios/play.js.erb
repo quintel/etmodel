@@ -4,7 +4,7 @@ location.hash = '';
 $("#title").replaceWith('<%= escape_javascript render("layouts/etm/title")%>');
 
 
-$("ul.accordion").html('<%= escape_javascript render(:partial => "tab/slide", :collection => @interface.slides)%>');
+$("ul.accordion").html('<%= escape_javascript render(:partial => "slide", :collection => @interface.slides)%>');
 $("ul.accordion").fadeIn(100);
 $("#title").busyBox('close')
 

@@ -58,7 +58,9 @@ $ ->
   #
   $("a.information").click (e) ->
     e.preventDefault()
-    $("#information_menu").toggle()
+    $link = $(e.target)
+    left = $link.offset().left + 20
+    $("#information_menu").toggle().css('left', left)
     $(".information").toggleClass("menu-open")
   # close when the user clicks outside the popup
   $(document).mouseup (e) ->

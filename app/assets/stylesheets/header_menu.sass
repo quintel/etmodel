@@ -39,7 +39,14 @@ a.signin, a.settings, a.information
   margin-right:  0px
   *margin-right:  -1px
   font-size: 13px
-  overflow: hidden
+  .arrow
+    z-index: 3000
+    height: 0
+    position: absolute
+    top: -20px
+    width: 0
+    border: 10px solid transparent
+    border-bottom-color: #fff
 
   li
     list-style-type: none
@@ -62,9 +69,14 @@ a.signin, a.settings, a.information
     float: right
   form#toggle_track_peak_load
     float: left
+  .arrow
+    left: 116px
+
 
 #information_menu
   right:  306px
+  .arrow
+    left: 79px
 
 #signin_menu
   right:  25px
@@ -86,3 +98,6 @@ a.signin, a.settings, a.information
 
     label
       font-weight: normal
+  .arrow
+    left: 40px
+

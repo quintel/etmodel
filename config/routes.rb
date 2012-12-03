@@ -10,8 +10,7 @@ Etm::Application.routes.draw do
   match '/costs(/:sidebar)'   => 'tab#show', :defaults => {:sidebar => 'combustion',     :tab => 'costs'}
   match '/targets(/:sidebar)' => 'tab#show', :defaults => {:sidebar => 'sustainability', :tab => 'targets'}
   match '/supply(/:sidebar)'  => 'tab#show', :defaults => {:sidebar => 'electricity',    :tab => 'supply'}
-  match '/info/:ctrl/:act' => "tab#info", :as => :tab_info
-  match "/:tab(/:sidebar)" => 'tab#show', :as => :tab, :constraints => {:tab => /(targets|demand|costs|supply)/}
+  match '/info/:ctrl/:act' => "pages#info", :as => :tab_info
 
   match '/texts/:id' => 'texts#show'
 

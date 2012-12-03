@@ -29,9 +29,7 @@ Etm::Application.routes.draw do
 
   resources :partners, :only => [:show, :index]
 
-  resources :constraints, :only => :show do
-    get :iframe, :on => :member
-  end
+  resources :constraints, :only => :show
 
   resource :settings, :only => [:edit, :update]
 
@@ -91,7 +89,6 @@ Etm::Application.routes.draw do
 
   resource :scenario, :except => [:edit, :update] do
     get :reset
-    get :reset_to_preset
   end
 
   resources :scenarios, :except => [:edit, :update] do

@@ -1,4 +1,5 @@
 %fieldset#signin_menu.topnav.header_menu
+  .arrow
   - @user_session = UserSession.new
   = form_for(@user_session) do |f|
     = f.error_messages
@@ -18,6 +19,7 @@
   %a{:href => new_user_path}= "#{t("or")} #{t("header.create_account")}"
 
 #settings_menu.header_menu.topnav
+  .arrow
   - if has_active_scenario?
     %li
       #flag
@@ -56,5 +58,6 @@
           = submit_tag "Turk it"
 
 #information_menu.header_menu.topnav
+  .arrow
   - information_links.each do |link|
     %li= link_to link[:text], link[:url], :target => link[:target], :class => link[:class]

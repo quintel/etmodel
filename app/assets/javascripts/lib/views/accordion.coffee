@@ -22,8 +22,8 @@ class @Accordion
       current.find(".slide").slideToggle('fast')
 
       # update the fragment url
-      key = header.data('slide')
-      App.router.navigate(key)
+      url = header.find('a').attr('href')
+      App.router.navigate(url)
 
       # Track event (legacy, can we remove this?)
       slide_title = $.trim(header.text())

@@ -29,7 +29,6 @@ class @SidebarView extends Backbone.View
         $.ajax
           url: url
           dataType: 'script'
-        history.pushState({url: url}, url, url)
 
 
   update_bars: ->

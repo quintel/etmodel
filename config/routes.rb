@@ -87,15 +87,17 @@ Etm::Application.routes.draw do
     resources :input_elements, :except => :show
   end
 
-  resource :scenario, :except => [:edit, :update] do
-    get :reset
-  end
-
+  # CRUD operations
+  #
   resources :scenarios, :except => [:edit, :update] do
     post :load, :on => :collection
     get :load, :on => :member
-    get :grid_investment_needed, :on => :collection
   end
+
+  match '/scenario/reset' => 'scenarios#reset'
+  match '/scenario/grid_investment_needed' => 'scenarios#grid_investment_needed'
+  # This is the main action
+  match '/scenario(/:tab(/:sidebar(/:slide)))' => 'scenarios#play'
 
   resources :output_elements, :only => [:index, :show] do
     collection do

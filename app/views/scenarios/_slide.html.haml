@@ -1,0 +1,27 @@
+- title_class = 'selected' if @interface.slides.first == slide
+%li.accordion_element
+  %h3{:class => title_class, :data => {:slide => slide.short_name,
+                           :default_chart => slide.output_element_id,
+                           :alt_chart => slide.alt_output_element_id}}
+    = link_to t("slides.#{slide.key}").html_safe,
+      tab_path(params[:tab], params[:sidebar], :anchor => slide.short_name),
+      :id => slide.key
+  .slide
+    %p
+      = image_tag(slide.image_path) if slide.image.present?
+      = raw slide.description.try(:content)
+    .items
+      - unless slide.general_sub_header.blank?
+        .sub_header{:id => "sub_header_#{slide.id}"}
+          %span.sub_header_arrow= t("subheaders.#{to_yml_syntax(slide.general_sub_header)}")
+          - unless slide.subheader_image.blank?
+            %img.sub_header_image{:src => "/assets/slides/#{slide.subheader_image}"}
+      - slide.input_elements_not_belonging_to_a_group.each do |input_element|
+        = render :partial => 'input_elements/slider', :object => input_element
+      - slide.grouped_input_elements.each do |group, sliders|
+        .interface_group
+          %span{:style =>"float:left"}= t("accordion.#{to_yml_syntax(group)}")
+          - unless slide.group_sub_header.blank?
+            %span.sub_header_arrow= t("subheaders.#{to_yml_syntax(slide.group_sub_header)}")
+        - sliders.each do |input_element|
+          = render :partial => 'input_elements/slider', :object => input_element

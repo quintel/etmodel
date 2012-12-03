@@ -7,7 +7,7 @@
         %li{:id => item.key,
             :class => (@interface.current_sidebar_item == item) ? 'active' : nil,
             :'data-gquery' => item.percentage_bar_query}
-          = link_to tab_path(:tab => tab.key, :sidebar => item.key),
+          = link_to play_path(:tab => tab.key, :sidebar => item.key),
             :'data-nav' => true do
             %p
               %span.title
@@ -18,7 +18,7 @@
         - item.children.includes(:area_dependency).reject(&:area_dependent).each do |child|
           %li.child{:id => child.key,
             :class => (@interface.current_sidebar_item == child) ? 'active' : nil}
-            = link_to tab_path(:tab => tab.key, :sidebar => child.key),
+            = link_to play_path(:tab => tab.key, :sidebar => child.key),
               :'data-nav' => true do
               %p
                 %span.bullet.icon-chevron-right

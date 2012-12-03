@@ -97,7 +97,7 @@ Etm::Application.routes.draw do
   match '/scenario/reset' => 'scenarios#reset'
   match '/scenario/grid_investment_needed' => 'scenarios#grid_investment_needed'
   # This is the main action
-  match '/scenario(/:tab(/:sidebar(/:slide)))' => 'scenarios#play'
+  match '/scenario(/:tab(/:sidebar(/:slide)))' => 'scenarios#play', :as => :play
 
   resources :output_elements, :only => [:index, :show] do
     collection do

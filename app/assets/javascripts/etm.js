@@ -16,6 +16,7 @@
 // vendored in jquery-etmodel-rails gem
 //= require jquery.etmodel
 
+//= require lib/router
 //= require lib/app
 
 //= require d3.v2.min

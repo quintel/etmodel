@@ -23,7 +23,7 @@ class @Accordion
 
       # update the fragment url
       key = header.data('slide')
-      window.location.hash = key
+      App.router.navigate(key)
 
       # Track event (legacy, can we remove this?)
       slide_title = $.trim(header.text())
@@ -47,7 +47,7 @@ class @Accordion
   # Otherwise the first slide will be open by default.
   #
   open_right_tab: ->
-    slide = window.location.hash.replace('#', '')
+    slide = Backbone.history.getFragment()
     item = if slide != ''
       $ "li.accordion_element h3[data-slide=#{slide}]"
     else

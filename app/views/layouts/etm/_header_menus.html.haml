@@ -1,5 +1,4 @@
-
-%fieldset{:id => "signin_menu", :class => "topnav header_menu"}
+%fieldset#signin_menu.topnav.header_menu
   - @user_session = UserSession.new
   = form_for(@user_session) do |f|
     = f.error_messages

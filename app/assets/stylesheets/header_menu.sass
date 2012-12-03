@@ -26,7 +26,7 @@ a.signin, a.settings, a.information
 
 .header_menu
   position: absolute
-  @include border-radius(5px)
+  @include border-radius(2px)
   display: none
   background-color: #ffffff
   width: 210px
@@ -56,39 +56,33 @@ a.signin, a.settings, a.information
     a:hover
       text-decoration: underline
 
-#signin_menu
-  right:  30px
-  input[type=text], #signin_menu input[type=password]
-    display: block
-
 #settings_menu
-  right:  135px
+  right:  184px
   div, form
     float: right
   form#toggle_track_peak_load
     float: left
+
 #information_menu
-  right:  240px
+  right:  306px
 
-#signin_menu input[type=text], #signin_menu input[type=password]
-  display: block
-  @include border-radius(4px)
-  border: 1px solid #ACE
-  font-size: 13px
-  margin: 0 0 5px
-  padding: 5px
-  width: 203px
-  p
-    margin: 0
-    .remember
-      padding: 10px 0
-    .forgot,.complete
-      clear: both
-      margin: 5px 0
-    a
-      color: #27B!important
-  a
-    color: #6AC
+#signin_menu
+  right:  25px
+  input[type=text], input[type=password]
+    display: block
+    @include border-radius(4px)
+    border: 1px solid #ACE
+    font-size: 13px
+    margin: 0 0 5px
+    padding: 5px
+    width: 203px
+    p
+      margin: 0
+      .remember
+        padding: 10px 0
+      .forgot,.complete
+        clear: both
+        margin: 5px 0
 
-  label
-    font-weight: normal
+    label
+      font-weight: normal

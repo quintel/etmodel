@@ -1,10 +1,15 @@
 #active-content
   = render "layouts/etm/title"
   #accordion_wrapper
-    %ul.accordion
-      %li Loading
+    - slides = @interface.slides.reject(&:not_allowed_in_this_area)
+    - if slides.any?
+      %ul.accordion
+        = render :partial => 'slide', :collection => slides
+    - else
+      = t("not_available")
+
   #charts_wrapper
-    Loading
+
   .clear
 
 - content_for :scripts do

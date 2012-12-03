@@ -21,6 +21,16 @@ class PagesController < ApplicationController
     end
   end
 
+  # popup with the text description
+  def info
+    # The title is stored in an object
+    @title = Text.find_by_key("#{params[:ctrl]}_#{params[:act]}").try :title
+    # The description belongs to a sidebar item. Ugly!
+    s = SidebarItem.find_by_section_and_key(params[:ctrl], params[:act])
+    @description = s.description.try(:content) if s
+    render :layout => false
+  end
+
 protected
 
   def setup_countries_and_regions

@@ -103,7 +103,8 @@ class ScenariosController < ApplicationController
     end
 
     def load_interface
-      @interface = Interface.new(params[:tab], params[:sidebar])
+      tab = params[:tab] || 'demand'
+      @interface = Interface.new(tab, params[:sidebar])
 
       # The JS app will take care of fetching a scenario id, in the meanwhile we
       # use this variable to show all the items in the top menu

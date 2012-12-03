@@ -1,10 +1,3 @@
-.topnav
-  font-size: 11px
-  line-height: 23px
-  text-align: right
-  position: absolute
-  z-index: 2001
-
 a.signin, a.settings, a.information, a.signout
   padding: 2px 10px 2px 20px
 
@@ -12,33 +5,26 @@ a.signin, a.settings, a.information
   position: relative
   margin-left: 1px
 
-.topnav a.menu-open
-  background: #ddeef6!important
-  color: #666!important
-  outline: none
-
-#small_signup
-  display: inline
-  float: none
-  line-height: 23px
-  margin: 25px 0 0
-  width: 170px
-
 .header_menu
-  position: absolute
   @include border-radius(2px)
-  display: none
+  a.menu-open
   background-color: #ffffff
+  border: 1px solid #dfe8f3
+  display: none
+  font-size: 13px
+  line-height: 23px
+  margin-right:  0px
+  margin-top: 5px
+  padding: 12px
+  position: absolute
+  text-align: left
+  top:  44px
   width: 210px
   z-index: 2002
-  border: 1px solid #dfe8f3
-  text-align: left
-  padding: 12px
-  top:  44px
-  margin-top: 5px
-  margin-right:  0px
-  *margin-right:  -1px
-  font-size: 13px
+    background: #ddeef6!important
+    color: #666!important
+    outline: none
+
   .arrow
     z-index: 3000
     height: 0
@@ -72,7 +58,6 @@ a.signin, a.settings, a.information
   .arrow
     left: 116px
 
-
 #information_menu
   right:  306px
   .arrow
@@ -100,4 +85,3 @@ a.signin, a.settings, a.information
       font-weight: normal
   .arrow
     left: 40px
-

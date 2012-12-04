@@ -1,9 +1,9 @@
 - title_class = 'selected' if @interface.slides.first == slide
 %li.accordion_element
-  %h3{:class => title_class, :data => {:slide => slide.short_name,
+  %h3{:class => title_class, :data => {:slide => slide.url,
                            :default_chart => slide.output_element_id,
                            :alt_chart => slide.alt_output_element_id}}
-    = link_to t("slides.#{slide.key}").html_safe, "#{@interface.current_tab.key}/#{@interface.current_sidebar_item.key}/#{slide.short_name}"
+    = link_to t("slides.#{slide.key}").html_safe, slide.url
   .slide
     %p
       = image_tag(slide.image_path) if slide.image.present?

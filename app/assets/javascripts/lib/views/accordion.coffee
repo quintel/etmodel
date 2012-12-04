@@ -49,7 +49,7 @@ class @Accordion
   open_right_tab: ->
     slide = Backbone.history.getFragment()
     item = if slide != ''
-      $ "li.accordion_element h3[data-slide=#{slide}]"
+      $ "li.accordion_element h3[data-slide='#{slide}']"
     else
       $ 'li.accordion_element h3.selected'
     item.trigger 'click'

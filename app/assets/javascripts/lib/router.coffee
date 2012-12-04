@@ -4,20 +4,21 @@ class @Router extends Backbone.Router
     "costs/:sidebar"  : "costs"
     "targets/:sidebar": "targets"
     "supply/:sidebar" : "supply"
-    "pippo": "pippo"
 
-  demand:  (sidebar, slide = null) => @_sidebar('demand', sidebar, slide)
-  costs:   (sidebar, slide = null) => @_sidebar('costs', sidebar, slide)
-  targets: (sidebar, slide = null) => @_sidebar('targets', sidebar, slide)
-  supply:  (sidebar, slide = null) => @_sidebar('supply', sidebar, slide)
+  demand:  (sidebar, slide = null) => @load_slides('demand', sidebar, slide)
+  costs:   (sidebar, slide = null) => @load_slides('costs', sidebar, slide)
+  targets: (sidebar, slide = null) => @load_slides('targets', sidebar, slide)
+  supply:  (sidebar, slide = null) => @load_slides('supply', sidebar, slide)
 
-  _sidebar: (tab, sidebar, slide = null) ->
-    console.log "Opening #{tab}/#{sidebar}/#{slide}"
-    url = "/scenario/#{tab}/#{sidebar}"
+  load_slides: (tab, sidebar, slide = null) ->
+    url = "/scenario/#{tab}/#{sidebar}/#{slide}"
     $.ajax
       url: url
       dataType: 'script'
 
+  load_default_slides: =>
+    key = Backbone.history.getFragment() || 'demand/households'
+    tokens = key.split('/')
+    @load_slides tokens[0], tokens[1], tokens[2]
 
-  pippo: => console.log 'pippo'
 

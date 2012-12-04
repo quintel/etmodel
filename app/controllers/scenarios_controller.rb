@@ -87,6 +87,7 @@ class ScenariosController < ApplicationController
   # This is the main scenario action
   #
   def play
+    @selected_slide_key = params[:slide] || @interface.current_slide.short_name
     respond_to do |format|
       format.html { render :layout => 'etm'}
       format.js

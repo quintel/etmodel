@@ -42,14 +42,5 @@ class @Accordion
       if @bootstrapped
         charts.load(default_chart, chart_holder, alternate: alternate_chart)
 
-  # Setup slides and open the right one. The default slide can be set
-  # by passing a fragment url (http://ETM/costs#slide_key)
-  # Otherwise the first slide will be open by default.
-  #
   open_right_tab: ->
-    slide = Backbone.history.getFragment()
-    item = if slide != ''
-      $ "li.accordion_element h3[data-slide='#{slide}']"
-    else
-      $ 'li.accordion_element h3.selected'
-    item.trigger 'click'
+    $('li.accordion_element h3.selected').trigger 'click'

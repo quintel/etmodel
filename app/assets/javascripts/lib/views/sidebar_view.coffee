@@ -24,11 +24,8 @@ class @SidebarView extends Backbone.View
       $("#sidebar li, #sidebar h4").removeClass("active")
       target.parents("li").addClass("active")
       target.parents('ul').prev("h4").addClass("active")
-      url = target.attr('href') || target.parents('a').attr('href')
-      $.ajax
-        url: url
-        dataType: 'script'
-
+      key = target.attr('data-key') || target.parents('a').attr('data-key')
+      App.router.navigate(key, { trigger: true })
 
   update_bars: ->
     for item in $("#sidebar ul li")

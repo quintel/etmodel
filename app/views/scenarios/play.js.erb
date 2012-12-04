@@ -1,5 +1,5 @@
 // update main content area
-$("#title").replaceWith('<%= escape_javascript render("layouts/etm/title")%>');
+$("#title").html('<%= escape_javascript render("layouts/etm/title")%>');
 
 $("ul.accordion").html('<%= escape_javascript render(:partial => "slide", :collection => @interface.slides)%>');
 $("ul.accordion").fadeIn(100);

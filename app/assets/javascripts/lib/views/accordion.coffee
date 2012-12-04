@@ -23,7 +23,7 @@ class @Accordion
 
       # update the fragment url
       url = header.find('a').attr('href')
-      App.router.navigate(url, {replace: true})
+      App.router.navigate(url)
 
       # Track event (legacy, can we remove this?)
       slide_title = $.trim(header.text())

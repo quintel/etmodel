@@ -13,7 +13,7 @@ describe PagesController, :vcr => true do
         post :root, :area_code => country, :end_year => year
       end
 
-      specify { response.should redirect_to('/demand') }
+      specify { response.should redirect_to(play_path) }
       specify { session[:setting].end_year.should == year }
       specify { session[:setting].area_code.should == country }
     end

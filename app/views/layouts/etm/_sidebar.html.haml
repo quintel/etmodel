@@ -19,7 +19,7 @@
           %li.child{:id => child.key,
             :class => (@interface.current_sidebar_item == child) ? 'active' : nil}
             = link_to play_path(:tab => tab.key, :sidebar => child.key),
-              :'data-nav' => true do
+              :'data-nav' => true, 'data-key' => "#{tab.key}/#{child.key}" do
               %p
                 %span.bullet.icon-chevron-right
                 %span.title

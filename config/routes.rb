@@ -6,10 +6,6 @@ Etm::Application.routes.draw do
 
   match '/choose' => 'pages#choose'
   match '/pro' => 'pages#root', :as => :home
-  match '/demand(/:sidebar)'  => 'tab#show', :defaults => {:sidebar => 'households',     :tab => 'demand'}
-  match '/costs(/:sidebar)'   => 'tab#show', :defaults => {:sidebar => 'combustion',     :tab => 'costs'}
-  match '/targets(/:sidebar)' => 'tab#show', :defaults => {:sidebar => 'sustainability', :tab => 'targets'}
-  match '/supply(/:sidebar)'  => 'tab#show', :defaults => {:sidebar => 'electricity',    :tab => 'supply'}
   match '/info/:ctrl/:act' => "pages#info", :as => :tab_info
 
   match '/texts/:id' => 'texts#show'

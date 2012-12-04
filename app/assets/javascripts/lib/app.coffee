@@ -12,6 +12,8 @@ class @AppView extends Backbone.View
     @scenario = new Scenario()
     @router = new Router()
     Backbone.history.start()
+    @router.load_default_slides()
+
 
     @api = new ApiGateway
       api_path:           globals.api_url
@@ -55,9 +57,6 @@ class @AppView extends Backbone.View
     if dashChangeEl.length > 0
       new DashboardChangerView(dashChangeEl)
     @setup_fce()
-
-    @load_initial_slides()
-
 
     # DEBT Add check, so that boostrap is only called once.
     if @settings.get('area_code') == 'nl'
@@ -165,11 +164,3 @@ class @AppView extends Backbone.View
 
   debug: (t) ->
     console.log(t) if globals.debug_js
-
-  load_initial_slides: =>
-    key = Backbone.history.getFragment() || 'demand/households'
-    tokens = key.split('/')
-    url = "#{tokens[0]}/#{tokens[1]}"
-    console.log url
-    $("#sidebar a[data-key='#{url}']").click()
-

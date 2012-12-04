@@ -12,8 +12,6 @@ class @AppView extends Backbone.View
     @scenario = new Scenario()
     @router = new Router()
     Backbone.history.start()
-      #root: '/scenario/'
-      #)
 
     @api = new ApiGateway
       api_path:           globals.api_url

@@ -56,6 +56,9 @@ class @AppView extends Backbone.View
       new DashboardChangerView(dashChangeEl)
     @setup_fce()
 
+    @load_initial_slides()
+
+
     # DEBT Add check, so that boostrap is only called once.
     if @settings.get('area_code') == 'nl'
       @peak_load = new PeakLoad()
@@ -162,3 +165,11 @@ class @AppView extends Backbone.View
 
   debug: (t) ->
     console.log(t) if globals.debug_js
+
+  load_initial_slides: =>
+    key = Backbone.history.getFragment() || 'demand/households'
+    tokens = key.split('/')
+    url = "#{tokens[0]}/#{tokens[1]}"
+    console.log url
+    $("#sidebar a[data-key='#{url}']").click()
+

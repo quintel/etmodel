@@ -271,7 +271,7 @@
       this.$el.addClass('new-input-slider').html(
         INPUT_ELEMENT_T({
           name:             this.model.get('translated_name'),
-          info:             this.model.get('parsed_description'),
+          info:             this.model.get('sanitized_description'),
           sublabel:         this.model.get('label'),
           predictions:      this.model.get('has_predictions'),
           converter:        this.model.get('related_converter'),

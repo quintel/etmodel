@@ -14,12 +14,16 @@ class @HtmlTableChartView extends BaseChartView
     @clear_container()
     @container_node().html(@table_html())
     @fill_cells()
+    @resize_container()
     # sort rows on merit order chart
     @merit_order_sort() if @model.get("key") == 'merit_order_table'
 
   # The table HTML is provided by the rails app.
   #
   table_html: => @model.get 'html'
+
+  outer_height: =>
+    @container_node().find('table').height()
 
   # normal charts have their series added when the /output_element/X.js
   # action is called. Tables have the gqueries defined in the markup instead.

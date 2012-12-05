@@ -1,0 +1,39 @@
+#settings_menu.header_menu
+  .arrow
+  %ul
+    - if has_active_scenario?
+      %li
+        #flag
+          %img{src: icon_for_area_code(Current.setting.area_code), title: I18n.t(Current.setting.area_code), width: 16 }
+          = I18n.t(Current.setting.area_code) unless Current.setting.area_code.length == 2
+        #{t "header.current_country"}:
+      %li
+        #year= Current.setting.end_year
+        #{t "header.current_end_year"}:
+
+    %li
+      #{t "header.current_language"}:
+      = select_tag "locale", options_for_select([:en, :nl], I18n.locale)
+
+    %li
+      %a{:href => scenarios_path}= t("header.load_scenario")
+      - if has_active_scenario?
+        %a{:href => new_scenario_path}= t("header.save_scenario")
+        %a#reset_scenario{:href => reset_scenario_path}= t("header.reset_scenario")
+    - if controller_name != 'pages' && has_active_scenario?
+      - if Current.setting.use_peak_load
+        %li
+          = check_box :track_peak_load, :settings,
+            :onchange => 'App.settings.toggle_peak_load_tracking()',
+            :checked => Current.setting.track_peak_load
+          %label{:for => "track_peak_load_settings"}
+            = t 'header.notify_of_grid_investments'
+      - if Current.setting.allow_fce?
+        %li
+          = check_box :settings, :use_fce, :checked => Current.setting.use_fce
+          %label{:for => "settings_use_fce"}= t('fce.check')
+      - if params[:debug]
+        %li
+          %form{:action => 'http://beta.et-engine.com/mechanical_turk/factory', :method => 'post', :target => '_blank', :id => 'turkit'}
+            %input#last_api_response{:type => 'hidden', :name => 'json_data'}
+            = submit_tag "Turk it"

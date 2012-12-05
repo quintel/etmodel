@@ -1,0 +1,5 @@
+#information_menu.header_menu
+  .arrow
+  %ul
+    - information_links.each do |link|
+      %li= link_to link[:text], link[:url], :target => link[:target], :class => link[:class]

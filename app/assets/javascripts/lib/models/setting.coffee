@@ -38,3 +38,8 @@ class @Setting extends Backbone.Model
 
   # Used by the bio-footprint dashboard item
   country: => @get('area_code').split('-')[0]
+
+  # Is MO enabled?
+  merit_order_enabled: ->
+    values = App.input_elements.user_values.settings_enable_merit_order
+    values? && values.user == 1

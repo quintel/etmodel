@@ -99,6 +99,6 @@ class Slide < ActiveRecord::Base
   end
 
   def url
-    "/#{sidebar_item.tab.key}/#{sidebar_item.key}##{short_name}" rescue nil
+    "#{sidebar_item.tab.key}/#{sidebar_item.key}/#{short_name}" rescue nil
   end
 end

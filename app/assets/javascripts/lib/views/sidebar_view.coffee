@@ -14,23 +14,18 @@ class @SidebarView extends Backbone.View
       gqueries.find_or_create_by_key(gquery) if gquery
 
     # AJAX-based navigation
-    if Browser.hasProperPushStateSupport()
-      # hijack sidebar links
-      $(document).on 'click', "a[data-nav=true]", (e) ->
-        e.preventDefault()
-        target = $(e.target)
-        $("#title").busyBox
-          spinner: "<em>Loading</em>"
-        $("ul.accordion").fadeOut(100)
-        $("#sidebar li, #sidebar h4").removeClass("active")
-        target.parents("li").addClass("active")
-        target.parents('ul').prev("h4").addClass("active")
-        url = target.attr('href') || target.parents('a').attr('href')
-        $.ajax
-          url: url
-          dataType: 'script'
-        history.pushState({url: url}, url, url)
-
+    # hijack sidebar links
+    $(document).on 'click', "a[data-nav=true]", (e) ->
+      e.preventDefault()
+      target = $(e.target)
+      $("#title").busyBox
+        spinner: "<em>Loading</em>"
+      $("ul.accordion").fadeOut(100)
+      $("#sidebar li, #sidebar h4").removeClass("active")
+      target.parents("li").addClass("active")
+      target.parents('ul').prev("h4").addClass("active")
+      key = target.attr('data-key') || target.parents('a').attr('data-key')
+      App.router.navigate(key, { trigger: true })
 
   update_bars: ->
     for item in $("#sidebar ul li")

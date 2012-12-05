@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.9'
 gem 'jquery-rails', "~> 2.0.2"
 gem 'haml', '~>3.1.4'
 gem 'authlogic'
@@ -51,12 +51,12 @@ group :test, :development do
 end
 
 group :test do
-  gem 'factory_girl_rails', '~> 3.0'
+  gem 'factory_girl_rails', '~> 4.1.0'
   gem 'shoulda-matchers'
   gem 'webrat'
   gem 'simplecov'
   gem 'webmock'
-  gem 'capybara'
+  # gem 'capybara', '~> 2.0.1'
   gem 'capybara-webkit'
   gem 'launchy'
   gem 'vcr'
@@ -67,7 +67,7 @@ group :production do
 end
 
 group :assets do
-  gem 'therubyracer', '0.11.0beta8'
+  gem 'therubyracer', '~> 0.11.0'
   gem 'libv8', '~> 3.11.8'
   gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

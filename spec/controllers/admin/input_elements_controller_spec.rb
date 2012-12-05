@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Admin::InputElementsController do
   before(:each) do
     controller.class.skip_before_filter :restrict_to_admin
-    @input_element = Factory :input_element
+    @input_element = FactoryGirl.create :input_element
   end
 
   render_views

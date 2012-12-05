@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Admin::PartnersController, :vcr => true do
   render_views
-  let!(:partner)   { Factory.create :partner }
+  let!(:partner)   { FactoryGirl.create :partner }
 
   before do
     controller.class.skip_before_filter :restrict_to_admin
@@ -29,7 +29,7 @@ describe Admin::PartnersController, :vcr => true do
   describe "POST create" do
     before do
       @old_partner_count = Partner.count
-      post :create, :partner => Factory.attributes_for(:partner)
+      post :create, :partner => FactoryGirl.attributes_for(:partner)
     end
 
     it "should create a new partner" do
@@ -59,7 +59,7 @@ describe Admin::PartnersController, :vcr => true do
 
   describe "PUT update" do
     before do
-      @partner = Factory.create :partner
+      @partner = FactoryGirl.create :partner
       put :update, :id => @partner.id, :partner => { :name => "McDonald's"}
     end
 
@@ -68,7 +68,7 @@ describe Admin::PartnersController, :vcr => true do
 
   describe "DELETE destroy" do
     before do
-      @partner = Factory.create :partner
+      @partner = FactoryGirl.create :partner
       @old_partner_count = Partner.count
       delete :destroy, :id => @partner.id
     end

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Admin::OutputElementSeriesController do
-  let!(:serie) { Factory :output_element_serie }
+  let!(:serie) { FactoryGirl.create :output_element_serie }
 
    before(:each) do
      controller.class.skip_before_filter :restrict_to_admin
@@ -31,7 +31,7 @@ describe Admin::OutputElementSeriesController do
     end
 
     it "create action should redirect when model is valid" do
-      post :create, :output_element_serie => Factory.attributes_for(:output_element_serie)
+      post :create, :output_element_serie => FactoryGirl.attributes_for(:output_element_serie)
       new_serie = assigns(:output_element_serie)
       response.should redirect_to(admin_output_element_serie_path(:id => new_serie.id))
     end
@@ -39,7 +39,7 @@ describe Admin::OutputElementSeriesController do
 
   describe "update" do
     before do
-      @output_element_serie = OutputElementSerie.first 
+      @output_element_serie = OutputElementSerie.first
       OutputElementSerie.should_receive(:find).with(any_args).and_return(@output_element_serie)
     end
 
@@ -63,7 +63,7 @@ describe Admin::OutputElementSeriesController do
 
 
   it "destroy action should destroy model and redirect to index action" do
-    output_element_serie = Factory :output_element_serie
+    output_element_serie = FactoryGirl.create :output_element_serie
     delete :destroy, :id => output_element_serie.id
     response.should redirect_to([:admin, output_element_serie.output_element])
     OutputElementSerie.exists?(output_element_serie.id).should be_false

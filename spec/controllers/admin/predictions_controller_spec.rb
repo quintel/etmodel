@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Admin::PredictionsController, :vcr => true do
   render_views
-  let(:input_element) { Factory.create :input_element }
-  let!(:prediction)   { Factory.create :prediction }
+  let(:input_element) { FactoryGirl.create :input_element }
+  let!(:prediction)   { FactoryGirl.create :prediction }
 
   before do
     controller.class.skip_before_filter :restrict_to_admin
@@ -30,7 +30,7 @@ describe Admin::PredictionsController, :vcr => true do
   describe "POST create" do
     before do
       @old_prediction_count = Prediction.count
-      attributes = Factory.attributes_for(:prediction).merge({:input_element_id => input_element.id})
+      attributes = FactoryGirl.attributes_for(:prediction).merge({:input_element_id => input_element.id})
       post :create, :prediction => attributes
     end
 
@@ -61,7 +61,7 @@ describe Admin::PredictionsController, :vcr => true do
 
   describe "PUT update" do
     before do
-      @prediction = Factory.create :prediction
+      @prediction = FactoryGirl.create :prediction
       put :update, :id => @prediction.id, :prediction => { :description => 'this is a other description'}
     end
 
@@ -70,7 +70,7 @@ describe Admin::PredictionsController, :vcr => true do
 
   describe "DELETE destroy" do
     before do
-      @prediction = Factory.create :prediction
+      @prediction = FactoryGirl.create :prediction
       @old_prediction_count = Prediction.count
       delete :destroy, :id => @prediction.id
     end

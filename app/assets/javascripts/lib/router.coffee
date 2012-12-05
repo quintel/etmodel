@@ -18,7 +18,9 @@ class @Router extends Backbone.Router
 
   load_default_slides: =>
     key = Backbone.history.getFragment() || 'demand/households'
-    tokens = key.split('/')
-    @load_slides tokens[0], tokens[1], tokens[2]
+    [tab, sidebar, slide] = key.split('/')
+    @load_slides tab, sidebar, slide
+    $("#sidebar h4[data-key=#{tab}]").click()
+    $("#sidebar li##{sidebar}").addClass 'active'
 
 

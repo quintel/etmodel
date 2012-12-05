@@ -1,16 +1,11 @@
 #sidebar
   - @interface.tabs.each do |tab|
-    - is_current_tab = (@interface.current_tab == tab)
-    - klass = 'active' if is_current_tab
+    %h4{:data => {:key => tab.key}}= I18n.t "tabs.#{tab.key}"
 
-    %h4{class: klass}= I18n.t "tabs.#{tab.key}"
-
-    %ul{style: ("display: none;" unless is_current_tab)}
+    %ul{style: "display: none;"}
 
       - tab.allowed_sidebar_items.each do |item|
-        - is_current_sidebar = @interface.current_sidebar_item == item
-        %li{:id => item.key, :class => (is_current_sidebar ? 'active' : nil),
-            :data => {:gquery => item.percentage_bar_query}}
+        %li{:id => item.key, :data => {:gquery => item.percentage_bar_query}}
 
           = link_to play_path(:tab => tab.key, :sidebar => item.key),
             :data => {:nav => true, :key => "#{tab.key}/#{item.key}"} do
@@ -22,8 +17,7 @@
                 %span.value
 
         - item.children.includes(:area_dependency).reject(&:area_dependent).each do |child|
-          - is_current_sidebar = @interface.current_sidebar_item == item
-          %li.child{:id => child.key, :class => is_current_sidebar ? 'active' : nil}
+          %li.child{:id => child.key}
 
             = link_to play_path(:tab => tab.key, :sidebar => child.key),
               :data => {:nav => true, :key => "#{tab.key}/#{child.key}" } do

@@ -20,6 +20,7 @@ class @ConstraintView extends Backbone.View
   render_total_cost_label: () =>
     return '' if @model.error()
     value = @model.result() * 1000000000
+    return if _.isNaN(value)
     scale = Metric.power_of_thousand(value)
     unit  = I18n.t('units.currency.' + Metric.power_of_thousand_to_string(scale))
     label = "(#{unit})"

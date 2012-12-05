@@ -1,0 +1,20 @@
+%fieldset#signin_menu.header_menu
+  .arrow
+  - @user_session = UserSession.new
+  = form_for(@user_session) do |f|
+    = f.error_messages
+    %p
+      = f.label :email, t("user.email")
+      %br
+      = f.text_field :email
+    %p
+      = f.label :password, t("user.password")
+      %br
+      = f.password_field :password
+    %p
+      = f.label :remember_me, t("user.remember")
+      %br
+      = f.check_box :remember_me, :checked => "checked"
+    = f.submit 'Login'
+  %a{:href => new_user_path}= "#{t("or")} #{t("header.create_account")}"
+

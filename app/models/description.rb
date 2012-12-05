@@ -50,8 +50,16 @@ class Description < ActiveRecord::Base
     end
   end
 
+  # Ugly!
+  #
   def embeds_player?
     content.andand.include?("player")  || content.andand.include?("object")
+  end
+
+  # For loading multiple flowplayers classname is needed instead of id
+  #
+  def sanitize_embedded_player
+    content.andand.gsub %(id="player"), %(class="player")
   end
 end
 

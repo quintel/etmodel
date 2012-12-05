@@ -87,7 +87,7 @@ class InputElement < ActiveRecord::Base
   def json_attributes
     Jbuilder.encode do |json|
       json.(self, :id, :unit, :share_group, :key, :related_converter, :step_value,
-            :disabled, :translated_name, :parsed_description,:has_predictions,
+            :disabled, :translated_name, :sanitized_description, :has_predictions,
             :fixed, :has_flash_movie)
     end
   end
@@ -101,24 +101,26 @@ class InputElement < ActiveRecord::Base
   end
 
   def has_flash_movie
-    description.andand.content.andand.include?("player")  || description.andand.content.andand.include?("object")
+    description.try :embeds_player?
   end
 
-  ##
   # For loading multiple flowplayers classname is needed instead of id
   # added the andand check and html_safe to clean up the helper
   #
-  def parsed_description
-    ie8_sanitize(description.andand.content.andand.gsub('id="player"','class="player"') || "").html_safe
+  def sanitized_description
+    ie8_sanitize(
+      description.try(:sanitize_embedded_player)
+    ).html_safe
   end
 
-  # Use by admin and search page
+  # Used by admin and search page
   def url
     slide.try :url
   end
 
   # Silly IE8 doesn't understand &apos; entity which is added in views
   def ie8_sanitize(s)
-    s.gsub("'", '&#39;')
+    return '' if s.blank?
+    s.gsub("'", '&#39;').html_safe
   end
 end

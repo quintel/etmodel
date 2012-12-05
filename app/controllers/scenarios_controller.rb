@@ -2,6 +2,11 @@ class ScenariosController < ApplicationController
   before_filter :ensure_valid_browser
   before_filter :find_scenario, :only => [:show, :load]
   before_filter :require_user, :only => [:index, :new]
+  before_filter :store_last_etm_page,
+                :load_interface, :only => :play
+
+  # TODO: refactor, we need this only in the play action
+  include ApplicationController::HasDashboard
 
   def index
     items = if current_user.admin?
@@ -67,16 +72,26 @@ class ScenariosController < ApplicationController
   #
   def load
     if @scenario.nil?
-      redirect_to '/demand', :notice => "Scenario not found" and return
+      redirect_to play_path, :notice => "Scenario not found" and return
     end
     session[:dashboard] = nil
     Current.setting = Setting.load_from_scenario(@scenario)
-    redirect_to '/demand'
+    redirect_to play_path
   end
 
   # GET /scenarios/grid_investment_needed
   def grid_investment_needed
     render :layout => false
+  end
+
+  # This is the main scenario action
+  #
+  def play
+    @selected_slide_key = params[:slide] || @interface.current_slide.short_name
+    respond_to do |format|
+      format.html { render :layout => 'etm'}
+      format.js
+    end
   end
 
   private
@@ -86,6 +101,19 @@ class ScenariosController < ApplicationController
       @scenario = Api::Scenario.find(params[:id], :params => {:detailed => true})
     rescue ActiveResource::ResourceNotFound
       nil
+    end
+
+    def load_interface
+      tab = params[:tab] || 'demand'
+      @interface = Interface.new(tab, params[:sidebar])
+
+      # The JS app will take care of fetching a scenario id, in the meanwhile we
+      # use this variable to show all the items in the top menu
+      @active_scenario = true
+    end
+
+    def store_last_etm_page
+      Current.setting.last_etm_page = request.fullpath
     end
 
 end

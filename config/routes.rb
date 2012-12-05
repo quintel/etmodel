@@ -6,12 +6,7 @@ Etm::Application.routes.draw do
 
   match '/choose' => 'pages#choose'
   match '/pro' => 'pages#root', :as => :home
-  match '/demand(/:sidebar)'  => 'tab#show', :defaults => {:sidebar => 'households',     :tab => 'demand'}
-  match '/costs(/:sidebar)'   => 'tab#show', :defaults => {:sidebar => 'combustion',     :tab => 'costs'}
-  match '/targets(/:sidebar)' => 'tab#show', :defaults => {:sidebar => 'sustainability', :tab => 'targets'}
-  match '/supply(/:sidebar)'  => 'tab#show', :defaults => {:sidebar => 'electricity',    :tab => 'supply'}
-  match '/info/:ctrl/:act' => "tab#info", :as => :tab_info
-  match "/:tab(/:sidebar)" => 'tab#show', :as => :tab, :constraints => {:tab => /(targets|demand|costs|supply)/}
+  match '/info/:ctrl/:act' => "pages#info", :as => :tab_info
 
   match '/texts/:id' => 'texts#show'
 
@@ -87,15 +82,17 @@ Etm::Application.routes.draw do
     resources :input_elements, :except => :show
   end
 
-  resource :scenario, :except => [:edit, :update] do
-    get :reset
-  end
-
+  # CRUD operations
+  #
   resources :scenarios, :except => [:edit, :update] do
     post :load, :on => :collection
     get :load, :on => :member
-    get :grid_investment_needed, :on => :collection
   end
+
+  match '/scenario/reset' => 'scenarios#reset'
+  match '/scenario/grid_investment_needed' => 'scenarios#grid_investment_needed'
+  # This is the main action
+  match '/scenario(/:tab(/:sidebar(/:slide)))' => 'scenarios#play', :as => :play
 
   resources :output_elements, :only => [:index, :show] do
     collection do

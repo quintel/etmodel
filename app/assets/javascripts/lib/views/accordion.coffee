@@ -22,8 +22,8 @@ class @Accordion
       current.find(".slide").slideToggle('fast')
 
       # update the fragment url
-      key = header.data('slide')
-      window.location.hash = key
+      url = header.find('a').attr('href')
+      App.router.navigate(url)
 
       # Track event (legacy, can we remove this?)
       slide_title = $.trim(header.text())
@@ -42,14 +42,5 @@ class @Accordion
       if @bootstrapped
         charts.load(default_chart, chart_holder, alternate: alternate_chart)
 
-  # Setup slides and open the right one. The default slide can be set
-  # by passing a fragment url (http://ETM/costs#slide_key)
-  # Otherwise the first slide will be open by default.
-  #
   open_right_tab: ->
-    slide = window.location.hash.replace('#', '')
-    item = if slide != ''
-      $ "li.accordion_element h3[data-slide=#{slide}]"
-    else
-      $ 'li.accordion_element h3.selected'
-    item.trigger 'click'
+    $('li.accordion_element h3.selected').trigger 'click'

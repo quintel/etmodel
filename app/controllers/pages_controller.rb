@@ -21,6 +21,16 @@ class PagesController < ApplicationController
     end
   end
 
+  # popup with the text description
+  def info
+    # The title is stored in an object
+    @title = Text.find_by_key("#{params[:ctrl]}_#{params[:act]}").try :title
+    # The description belongs to a sidebar item. Ugly!
+    s = SidebarItem.find_by_section_and_key(params[:ctrl], params[:act])
+    @description = s.description.try(:content) if s
+    render :layout => false
+  end
+
 protected
 
   def setup_countries_and_regions
@@ -33,7 +43,7 @@ protected
     Current.setting = Setting.default
     Current.setting.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
     Current.setting.area_code = params[:area_code]
-    redirect_to '/demand' and return
+    redirect_to play_path and return
   end
 
 public
@@ -48,22 +58,22 @@ public
 
   def show_all_countries
     session[:show_all_countries] = true
-    redirect_to '/'
+    redirect_to home_path
   end
 
   def show_flanders
     session[:show_flanders] = true
-    redirect_to root_path
+    redirect_to home_path
   end
 
   def disable_browser_check
     session[:disable_browser_check] = true
-    redirect_to '/'
+    redirect_to home_path
   end
 
   def enable_browser_check
     session[:disable_browser_check] = false
-    redirect_to '/'
+    redirect_to home_path
   end
 
   def famous_users

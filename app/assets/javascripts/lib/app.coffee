@@ -10,6 +10,8 @@ class @AppView extends Backbone.View
 
     @sidebar = new SidebarView()
     @scenario = new Scenario()
+    @router = new Router()
+    Backbone.history.start()
 
     @api = new ApiGateway
       api_path:           globals.api_url
@@ -50,6 +52,9 @@ class @AppView extends Backbone.View
 
     @sidebar.bootstrap()
     # If a "change dashboard" button is present, set up the DashboardChanger.
+
+    @router.load_default_slides()
+
     if dashChangeEl.length > 0
       new DashboardChangerView(dashChangeEl)
     @setup_fce()

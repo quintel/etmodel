@@ -1,25 +1,27 @@
 #sidebar
   - @interface.tabs.each do |tab|
-    - klass = 'active' if @interface.current_tab == tab
-    %h4{class: klass}= I18n.t "tabs.#{tab.key}"
-    %ul{style: ("display: none;" unless @interface.current_tab == tab)}
+    %h4{:data => {:key => tab.key}}= I18n.t "tabs.#{tab.key}"
+
+    %ul{style: "display: none;"}
+
       - tab.allowed_sidebar_items.each do |item|
-        %li{:id => item.key,
-            :class => (@interface.current_sidebar_item == item) ? 'active' : nil,
-            :'data-gquery' => item.percentage_bar_query}
-          = link_to tab_path(:tab => tab.key, :sidebar => item.key),
-            :'data-nav' => true do
+        %li{:id => item.key, :data => {:gquery => item.percentage_bar_query}}
+
+          = link_to play_path(:tab => tab.key, :sidebar => item.key),
+            :data => {:nav => true, :key => "#{tab.key}/#{item.key}"} do
             %p
               %span.title
                 = raw t("sidebar_items.#{item.key}.short_name")
               - if item.percentage_bar_query.present?
                 %span.bar{:alt => t('sidebar_items.alt'), :style => "width: 0px"}
                 %span.value
+
         - item.children.includes(:area_dependency).reject(&:area_dependent).each do |child|
-          %li.child{:id => child.key,
-            :class => (@interface.current_sidebar_item == child) ? 'active' : nil}
-            = link_to tab_path(:tab => tab.key, :sidebar => child.key),
-              :'data-nav' => true do
+          %li.child{:id => child.key}
+
+            = link_to play_path(:tab => tab.key, :sidebar => child.key),
+              :data => {:nav => true, :key => "#{tab.key}/#{child.key}" } do
+
               %p
                 %span.bullet.icon-chevron-right
                 %span.title

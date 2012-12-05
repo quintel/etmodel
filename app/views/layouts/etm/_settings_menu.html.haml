@@ -19,7 +19,7 @@
       %a{:href => scenarios_path}= t("header.load_scenario")
       - if has_active_scenario?
         %a{:href => new_scenario_path}= t("header.save_scenario")
-        %a#reset_scenario{:href => reset_scenario_path}= t("header.reset_scenario")
+        %a#reset_scenario{:href => scenario_reset_path}= t("header.reset_scenario")
     - if controller_name != 'pages' && has_active_scenario?
       - if Current.setting.use_peak_load
         %li

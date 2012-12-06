@@ -70,23 +70,12 @@ h2 a.button, h2 input.button, h2 button.button
     display: inline-block
     height: 11px
     width: 16px
-
-  span.right-icon
     @include icons-sprite('arrow-right-primary', 1px)
     margin-left: 1px
     margin-right: 0px
-
-// HiDPI Buttons.
-
-// TODO: When upgraded to Sass 3.2, use a "mixin block".
-//       http://iain.nl/sass-3-2-blocks
-@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)
-  .button span
-    &.right-icon
+    @include hidpi
       background: image-url('button-icons-hidpi.png') no-repeat
       background-size: 15px 66px
-
-    &.right-icon
       background-position: 0 -52px
       height: 11px
       width: 16px

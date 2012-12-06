@@ -10,6 +10,8 @@
       list-style-type: none
       margin: 0
       padding: 0
+      li
+        text-align: right
     ul
       &#x-grid
         left: 0
@@ -18,7 +20,6 @@
         li
           float: left
           height: 100%
-          text-align: right
           background: url(/assets/charts/vertical-border.gif) repeat-y right top
       &#y-grid
         width: 100%
@@ -28,7 +29,6 @@
         li
           width: 100%
           background: url(/assets/charts/horizontal-border.gif) repeat-x left top
-          text-align: right
       &#x-axis
         left: 0px
         bottom: -20px
@@ -36,14 +36,12 @@
         li
           float: left
           height: 20px
-          text-align: right
       &#y-axis
         bottom: 10px
         left: -30px
         height: 100%
         li
           width: 100%
-          text-align: right
     #y-axis-label
       position: absolute
       top: 0

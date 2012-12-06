@@ -7,7 +7,6 @@ a.signin, a.settings, a.information
 
 .header_menu
   @include border-radius(2px)
-  a.menu-open
   background-color: #ffffff
   border: 1px solid #dfe8f3
   display: none
@@ -18,12 +17,11 @@ a.signin, a.settings, a.information
   padding: 12px
   position: absolute
   text-align: left
-  top:  44px
+  top: 26px
+  left: 21px
   width: 210px
-  z-index: 2002
-    background: #ddeef6!important
-    color: #666!important
-    outline: none
+  z-index: 3000
+  color: #666
 
   .arrow
     z-index: 3000
@@ -51,22 +49,19 @@ a.signin, a.settings, a.information
       a:hover
         text-decoration: underline
 
+#information_menu
+  .arrow
+    left: 79px
+
 #settings_menu
-  right:  184px
   div, form
     float: right
   form#toggle_track_peak_load
     float: left
   .arrow
-    left: 116px
-
-#information_menu
-  right:  306px
-  .arrow
-    left: 79px
+    left: 117px
 
 #signin_menu
-  right:  25px
   input[type=text], input[type=password]
     display: block
     @include border-radius(4px)
@@ -86,4 +81,4 @@ a.signin, a.settings, a.information
     label
       font-weight: normal
   .arrow
-    left: 40px
+    left: 41px

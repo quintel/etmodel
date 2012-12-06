@@ -30,47 +30,29 @@ $ ->
       if value.length is 0 or value is placeholder or not value.match(/\S/)
         search.val(placeholder)
 
-  # login menu
-  #
-  $("a.signin").click (e) ->
-    e.preventDefault()
-    $("fieldset#signin_menu").toggle()
-    $(".signin").toggleClass("menu-open")
-  $("fieldset#signin_menu").mouseup (e)-> e.preventDefault()
-  # close login popup if the user clicks somewhere else
-  $(document).mouseup (e) ->
-    if $(e.target).parents("#signin_menu").length == 0
-      $(".signin").removeClass("menu-open")
-      $("fieldset#signin_menu").hide()
+  close_all_menus = ->
+    $('li.expandable > a').removeClass('menu-open')
+    $('.header_menu').hide()
 
-  # settings menu
+  # Expand menus
   #
-  $("a.settings").click (e) ->
+  $("li.expandable > a").click (e) ->
     e.preventDefault()
-    $("#settings_menu").toggle()
-    $(".settings").toggleClass("menu-open")
-  $(document).mouseup (e) ->
-    if $(e.target).parents("#settings_menu").length == 0
-      $(".settings").removeClass("menu-open")
-      $("#settings_menu").hide()
+    $t = $(e.target)
+    is_open = $t.hasClass('menu-open')
+    close_all_menus()
+    if !is_open
+      $t.addClass('menu-open')
+      $t.parent().find('.header_menu').show()
 
-  # information menu
+  # Close menus when clicking outside them
   #
-  $("a.information").click (e) ->
-    e.preventDefault()
-    $link = $(e.target)
-    left = $link.offset().left + 20
-    $("#information_menu").toggle().css('left', left)
-    $(".information").toggleClass("menu-open")
-  # close when the user clicks outside the popup
   $(document).mouseup (e) ->
-    if $(e.target).parents("#information_menu").length == 0
-      $(".information").removeClass("menu-open")
-      $("#information_menu").hide()
+    if $(e.target).parents(".header_menu").length == 0
+      close_all_menus()
 
   # Menu items
   #
-
   $("#disable_peak_load_tracking").live 'click', -> disable_peak_load_tracking()
 
   # locale select box

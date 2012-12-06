@@ -75,8 +75,8 @@ class @HtmlTableChartView extends BaseChartView
     @container_node().find("tbody").html(rows)
 
   # custom method to sort merit order table
-  # DEBT: this should be resolved at gquery level
   merit_order_position: (item) ->
-    val = $(item).find("td:first").text()
+    klass = if App.settings.merit_order_enabled() then 'position' else 'cost'
+    val = $(item).find("td.#{klass}").text()
     val = 0 if val == '-'
     +val

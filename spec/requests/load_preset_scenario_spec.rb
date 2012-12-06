@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "loading a preset scenario", :js => true, :vcr => true do
   fixtures :tabs, :sidebar_items, :slides, :output_elements, :output_element_types
 
-  pending "should create a new scenario from a preset" do
+  it "should create a new scenario from a preset" do
     visit home_path
     # save_and_open_page
     click_link "Start an existing scenario"

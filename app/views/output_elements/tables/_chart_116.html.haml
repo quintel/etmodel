@@ -44,8 +44,8 @@
     - items.each do |key|
       %tr
         %th= raw t "output_elements.tables.merit_order.#{key}"
-        %td{:data => {:decimals => 0, :gquery => "merit_order_#{key}_position_in_merit_order_table", :on_zero => '-'}}
-        %td{:data => {:decimals => 0, :gquery => "merit_order_#{key}_operating_costs_in_merit_order_table"}}
+        %td.position{:data => {:decimals => 0, :gquery => "merit_order_#{key}_position_in_merit_order_table", :on_zero => '-'}}
+        %td.cost{:data => {:decimals => 0, :gquery => "merit_order_#{key}_operating_costs_in_merit_order_table"}}
         %td{:data => {:decimals => 0, :gquery => "merit_order_#{key}_capacity_in_merit_order_table"}}
         %td{:data => {:decimals => 0, :gquery => "merit_order_#{key}_full_load_hours_in_merit_order_table"}}
         %td{:data => {:decimals => 0, :gquery => "merit_order_#{key}_full_load_hours_in_merit_order_table", :graph => :present}}

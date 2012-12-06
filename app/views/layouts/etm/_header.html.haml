@@ -5,8 +5,9 @@
 #header_inside{:style => "position: relative;"}
   %ul.sub-nav
     %li.expandable
-      %a.information{:href=>"#"}
-        = t("header.information")
+      %a.information{:href=>"#"}= t("header.information")
+      = render "layouts/etm/information_menu"
+
     %li.expandable
       %a.settings{:href=>"#"}
         = t("header.settings")
@@ -15,14 +16,15 @@
             %img{src: icon_for_area_code(Current.setting.area_code), title: I18n.t(Current.setting.area_code), width: 16 }
             = I18n.t(Current.setting.area_code) unless Current.setting.area_code.length == 2
             = Current.setting.end_year
+      = render "layouts/etm/settings_menu"
+
     - if current_user
       %li
-        %a.signout{:href=>"/logout"}
-          = t("header.sign_out")
+        %a.signout{:href=>"/logout"}= t("header.sign_out")
     - else
       %li.expandable
-        %a.signin{:href=>"#"}
-          = t("header.sign_in")
+        %a.signin{:href=>"#"}= t("header.sign_in")
+        = render "layouts/etm/signin_menu"
 
     %li{:style=>'width: 190px'}
       %form#searchform{ :action => "/search", :method => :get }
@@ -33,7 +35,3 @@
 
   %a.root_link{ href: home_path }
     %img(src="/assets/header/logo400@2x.png" width="400" height="49" alt="Energy Transition Model")
-
-  = render "layouts/etm/signin_menu"
-  = render "layouts/etm/information_menu"
-  = render "layouts/etm/settings_menu"

@@ -64,13 +64,13 @@ header#top
     margin: 14px 0 0 0
     padding: 0
     overflow: hidden
-    li
+    > li
       float: left
       font-size: 13px
       font-weight: normal
       padding: 0
       margin: 0 0 0 -2px
-      a
+      > a
         display: block
         color: #dbe9f3
         text-decoration: none
@@ -79,7 +79,7 @@ header#top
         margin-right: 5px
         &:hover
           color: white
-      &.expandable a
+      &.expandable > a
         background: url("/assets/header/toggle_down.png") right 6px no-repeat
         padding-right: 18px
         &:hover
@@ -112,7 +112,7 @@ header#top
 // TODO: When upgraded to Sass 3.2, use a "mixin block".
 //       http://iain.nl/sass-3-2-blocks
 @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)
-  header#top .sub-nav li.expandable a
+  header#top .sub-nav li.expandable > a
     background-size: 12px 139px
     background-position: right -69px
 

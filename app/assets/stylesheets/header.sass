@@ -63,7 +63,6 @@ header#top
     list-style: none
     margin: 14px 0 0 0
     padding: 0
-    //overflow: hidden
     > li
       float: left
       font-size: 13px
@@ -88,6 +87,14 @@ header#top
         &.menu-open
           background-position: right -94px
           color: white
+        @include hidpi
+          background-size: 12px 139px
+          background-position: right -69px
+          &:hover
+            background-position: right -94px
+          &.menu-open
+            background-position: right -119px
+
   .scenario_info
     font-size: 11px
     font-weight: normal
@@ -107,23 +114,6 @@ header#top
     float: left
     margin-top: 7px
     margin-left: 20px
-
-// HiDPI Menu Toggles.
-
-// TODO: When upgraded to Sass 3.2, use a "mixin block".
-//       http://iain.nl/sass-3-2-blocks
-@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)
-  header#top .sub-nav li.expandable > a
-    background-size: 12px 139px
-    background-position: right -69px
-
-    &:hover
-      background-position: right -94px
-
-    &.menu-open
-      background-position: right -119px
-
-// Search Form.
 
 #searchform
   float: right
@@ -149,6 +139,9 @@ header#top
     background: url(/assets/header/search.png) no-repeat right
     width: 131px
     height: 25px
+    @include hidpi
+      background-image: url(/assets/layout/search-hidpi.png)
+      background-size: 300px 25px
 
     input
       background: none
@@ -166,13 +159,3 @@ header#top
         color: #cbe2f3
       &:-moz-placeholder
         color: #cbe2f3
-
-// HiDPI Search Field.
-
-// TODO: When upgraded to Sass 3.2, use a "mixin block".
-//       http://iain.nl/sass-3-2-blocks
-@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)
-  #searchform
-    .btn-search, .text
-      background-image: url(/assets/layout/search-hidpi.png)
-      background-size: 300px 25px

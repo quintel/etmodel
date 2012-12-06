@@ -73,20 +73,14 @@
             width: 123px
             text-align: right
             background: #fff image-url('slides/grey_triangle_down.gif') no-repeat scroll right bottom
+            @include hidpi
+              background-image: url(/assets/layout/grey_triangle_down-hidpi.png)
+              background-size: 30px 6px
+      @include hidpi
+        a.slide_header
+          background-image: url(/assets/accordion/triangle-hidpi.png)
+          background-size: 23px 30px
 
-// HiDPI Accordion Images.
-
-@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)
-  #accordion_wrapper
-    .items span.sub_header_arrow
-      background-image: url(/assets/layout/grey_triangle_down-hidpi.png)
-      background-size: 30px 6px
-
-    li
-      a.slide_header
-        background-image: url(/assets/accordion/triangle-hidpi.png)
-        background-size: 23px 30px
-
-      a.slide_header:hover, .selected a, .ui-state-active a
-        background-image: url(/assets/accordion/triangle-hover-hidpi.png)
-        background-size: 23px 30px
+        a.slide_header:hover, .selected a, .ui-state-active a
+          background-image: url(/assets/accordion/triangle-hover-hidpi.png)
+          background-size: 23px 30px

@@ -63,7 +63,6 @@
         color: #000
         padding: 0 0 11px 12px
         font-size: 24px
-        // height: 26px
         width: 120px
     .first
       background: none
@@ -89,9 +88,7 @@
     &:active
       background-color: #5586bc
 
-@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)
-  #dashboard_container #dashboard
-    #dashboard_change
+    @include hidpi
       background-image: url(/assets/layout/change_dashboard_button-hidpi.png)
       background-size: 28px 45px
 

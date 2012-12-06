@@ -23,10 +23,13 @@ class PagesController < ApplicationController
 
   # popup with the text description
   def info
-    # The title is stored in an object
-    @title = Text.find_by_key("#{params[:ctrl]}_#{params[:act]}").try :title
     # The description belongs to a sidebar item. Ugly!
     s = SidebarItem.find_by_section_and_key(params[:ctrl], params[:act])
+
+    # The title is stored in an object
+    @title = Text.find_by_key("#{params[:ctrl]}_#{params[:act]}").try(:title) ||
+      t("sidebar_items.#{s.key}.long_name")
+
     @description = s.description.try(:content) if s
     render :layout => false
   end

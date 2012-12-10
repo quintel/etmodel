@@ -13,12 +13,12 @@ class PagesController < ApplicationController
   end
 
   def choose
-    if request.post?
-      assign_settings_and_redirect
-    else
-      render layout: 'refreshed'
-      @other_locale = english? ? "nl" : "en"
-    end
+    @mixer_url = (APP_CONFIG[:mixer_url] || "http://mixer.et-model.com") +
+      "?locale=#{I18n.locale}"
+    @etflex_url = APP_CONFIG[:etflex_url] || "http://light.energytransitionmodel.com"
+
+    render layout: 'refreshed'
+    @other_locale = english? ? "nl" : "en"
   end
 
   # popup with the text description

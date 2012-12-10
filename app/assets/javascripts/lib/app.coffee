@@ -11,6 +11,7 @@ class @AppView extends Backbone.View
     @sidebar = new SidebarView()
     @scenario = new Scenario()
     @router = new Router()
+    @merit_order = new MeritOrder(this)
     Backbone.history.start()
 
     @api = new ApiGateway

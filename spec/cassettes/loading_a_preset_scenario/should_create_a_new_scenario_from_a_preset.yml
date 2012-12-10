@@ -416,4 +416,148 @@ http_interactions:
       string: "{\"scenario\":{\"id\":131303,\"title\":\"API\",\"area_code\":\"nl\",\"end_year\":2030,\"url\":\"http://etengine.dev/api/v3/scenarios/131303\",\"source\":\"ETM\",\"template\":1,\"created_at\":\"2012-12-06T12:08:37+01:00\"},\"gqueries\":{\"share_of_households_in_final_demand\":{\"present\":0.1634941854915839,\"future\":0.12380501735484199,\"unit\":\"factor\"},\"peak_load_check_lv\":{\"present\":false,\"future\":false,\"unit\":\"boolean\"},\"peak_load_check_mv_lv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_mv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_hv_mv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_hv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_total\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"}}}"
     http_version: 
   recorded_at: Thu, 06 Dec 2012 11:22:27 GMT
+- request: 
+    method: put
+    uri: http://etengine.dev/api/v3/scenarios/131303
+    body: 
+      encoding: US-ASCII
+      string: autobalance=true&scenario[use_fce]=false&gqueries[]=dashboard_merit_order&gqueries[]=share_of_households_in_final_demand&gqueries[]=peak_load_check_lv&gqueries[]=peak_load_check_mv_lv&gqueries[]=peak_load_check_mv&gqueries[]=peak_load_check_hv_mv&gqueries[]=peak_load_check_hv&gqueries[]=peak_load_check_total
+    headers: {}
+
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      Date: 
+      - Mon, 10 Dec 2012 15:36:36 GMT
+      Content-Type: 
+      - application/json; charset=utf-8
+      X-Ua-Compatible: 
+      - IE=Edge,chrome=1
+      Etag: 
+      - "\"72874600834e9e0e7ea223e61361d4fa\""
+      Cache-Control: 
+      - max-age=0, private, must-revalidate
+      X-Request-Id: 
+      - 6e74abe99358e4852c097c44aebe10c4
+      X-Runtime: 
+      - "0.503638"
+      X-Rack-Cache: 
+      - invalidate, pass
+      Transfer-Encoding: 
+      - chunked
+    body: 
+      encoding: US-ASCII
+      string: "{\"scenario\":{\"id\":131303,\"title\":\"API\",\"area_code\":\"nl\",\"end_year\":2030,\"url\":\"http://etengine.dev/api/v3/scenarios/131303\",\"source\":\"ETM\",\"template\":1,\"created_at\":\"2012-12-06T12:08:37+01:00\"},\"gqueries\":{\"dashboard_merit_order\":{\"present\":{\"energy_chp_combined_cycle_network_gas\":{\"profitable\":null},\"energy_chp_ultra_supercritical_coal\":{\"profitable\":null},\"energy_chp_ultra_supercritical_crude_oil\":{\"profitable\":null},\"energy_chp_ultra_supercritical_lignite\":{\"profitable\":null},\"energy_chp_ultra_supercritical_wood_pellets\":{\"profitable\":null},\"energy_power_combined_cycle_ccs_coal\":{\"profitable\":null},\"energy_power_combined_cycle_ccs_network_gas\":{\"profitable\":null},\"energy_power_combined_cycle_coal\":{\"profitable\":null},\"energy_power_combined_cycle_network_gas\":{\"profitable\":null},\"energy_power_engine_diesel\":{\"profitable\":null},\"energy_power_nuclear_gen2_uranium_oxide\":{\"profitable\":null},\"energy_power_nuclear_gen3_uranium_oxide\":{\"profitable\":null},\"energy_power_supercritical_coal\":{\"profitable\":null},\"energy_power_turbine_network_gas\":{\"profitable\":null},\"energy_power_ultra_supercritical_ccs_coal\":{\"profitable\":null},\"energy_power_ultra_supercritical_coal\":{\"profitable\":null},\"energy_power_ultra_supercritical_crude_oil\":{\"profitable\":null},\"energy_power_ultra_supercritical_lignite\":{\"profitable\":null},\"energy_power_ultra_supercritical_network_gas\":{\"profitable\":null},\"energy_power_ultra_supercritical_oxyfuel_ccs_lignite\":{\"profitable\":null}},\"future\":{\"energy_chp_combined_cycle_network_gas\":{\"profitable\":null},\"energy_chp_ultra_supercritical_coal\":{\"profitable\":null},\"energy_chp_ultra_supercritical_crude_oil\":{\"profitable\":null},\"energy_chp_ultra_supercritical_lignite\":{\"profitable\":null},\"energy_chp_ultra_supercritical_wood_pellets\":{\"profitable\":null},\"energy_power_combined_cycle_ccs_coal\":{\"profitable\":null},\"energy_power_combined_cycle_ccs_network_gas\":{\"profitable\":null},\"energy_power_combined_cycle_coal\":{\"profitable\":null},\"energy_power_combined_cycle_network_gas\":{\"profitable\":null},\"energy_power_engine_diesel\":{\"profitable\":null},\"energy_power_nuclear_gen2_uranium_oxide\":{\"profitable\":null},\"energy_power_nuclear_gen3_uranium_oxide\":{\"profitable\":null},\"energy_power_supercritical_coal\":{\"profitable\":null},\"energy_power_turbine_network_gas\":{\"profitable\":null},\"energy_power_ultra_supercritical_ccs_coal\":{\"profitable\":null},\"energy_power_ultra_supercritical_coal\":{\"profitable\":null},\"energy_power_ultra_supercritical_crude_oil\":{\"profitable\":null},\"energy_power_ultra_supercritical_lignite\":{\"profitable\":null},\"energy_power_ultra_supercritical_network_gas\":{\"profitable\":null},\"energy_power_ultra_supercritical_oxyfuel_ccs_lignite\":{\"profitable\":null}},\"unit\":\"hash\"},\"share_of_households_in_final_demand\":{\"present\":0.1634941854915839,\"future\":0.12380501735484199,\"unit\":\"factor\"},\"peak_load_check_lv\":{\"present\":false,\"future\":false,\"unit\":\"boolean\"},\"peak_load_check_mv_lv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_mv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_hv_mv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_hv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_total\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"}}}"
+    http_version: 
+  recorded_at: Mon, 10 Dec 2012 15:36:36 GMT
+- request: 
+    method: put
+    uri: http://etengine.dev/api/v3/scenarios/131303
+    body: 
+      encoding: US-ASCII
+      string: autobalance=true&scenario[use_fce]=false&gqueries[]=dashboard_merit_order&gqueries[]=share_of_households_in_final_demand&gqueries[]=peak_load_check_lv&gqueries[]=peak_load_check_mv_lv&gqueries[]=peak_load_check_mv&gqueries[]=peak_load_check_hv_mv&gqueries[]=peak_load_check_hv&gqueries[]=peak_load_check_total
+    headers: {}
+
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      Date: 
+      - Mon, 10 Dec 2012 15:36:37 GMT
+      Content-Type: 
+      - application/json; charset=utf-8
+      X-Ua-Compatible: 
+      - IE=Edge,chrome=1
+      Etag: 
+      - "\"72874600834e9e0e7ea223e61361d4fa\""
+      Cache-Control: 
+      - max-age=0, private, must-revalidate
+      X-Request-Id: 
+      - 9c2ef6e64e1c74af92d471a7de1c094e
+      X-Runtime: 
+      - "0.491512"
+      X-Rack-Cache: 
+      - invalidate, pass
+      Transfer-Encoding: 
+      - chunked
+    body: 
+      encoding: US-ASCII
+      string: "{\"scenario\":{\"id\":131303,\"title\":\"API\",\"area_code\":\"nl\",\"end_year\":2030,\"url\":\"http://etengine.dev/api/v3/scenarios/131303\",\"source\":\"ETM\",\"template\":1,\"created_at\":\"2012-12-06T12:08:37+01:00\"},\"gqueries\":{\"dashboard_merit_order\":{\"present\":{\"energy_chp_combined_cycle_network_gas\":{\"profitable\":null},\"energy_chp_ultra_supercritical_coal\":{\"profitable\":null},\"energy_chp_ultra_supercritical_crude_oil\":{\"profitable\":null},\"energy_chp_ultra_supercritical_lignite\":{\"profitable\":null},\"energy_chp_ultra_supercritical_wood_pellets\":{\"profitable\":null},\"energy_power_combined_cycle_ccs_coal\":{\"profitable\":null},\"energy_power_combined_cycle_ccs_network_gas\":{\"profitable\":null},\"energy_power_combined_cycle_coal\":{\"profitable\":null},\"energy_power_combined_cycle_network_gas\":{\"profitable\":null},\"energy_power_engine_diesel\":{\"profitable\":null},\"energy_power_nuclear_gen2_uranium_oxide\":{\"profitable\":null},\"energy_power_nuclear_gen3_uranium_oxide\":{\"profitable\":null},\"energy_power_supercritical_coal\":{\"profitable\":null},\"energy_power_turbine_network_gas\":{\"profitable\":null},\"energy_power_ultra_supercritical_ccs_coal\":{\"profitable\":null},\"energy_power_ultra_supercritical_coal\":{\"profitable\":null},\"energy_power_ultra_supercritical_crude_oil\":{\"profitable\":null},\"energy_power_ultra_supercritical_lignite\":{\"profitable\":null},\"energy_power_ultra_supercritical_network_gas\":{\"profitable\":null},\"energy_power_ultra_supercritical_oxyfuel_ccs_lignite\":{\"profitable\":null}},\"future\":{\"energy_chp_combined_cycle_network_gas\":{\"profitable\":null},\"energy_chp_ultra_supercritical_coal\":{\"profitable\":null},\"energy_chp_ultra_supercritical_crude_oil\":{\"profitable\":null},\"energy_chp_ultra_supercritical_lignite\":{\"profitable\":null},\"energy_chp_ultra_supercritical_wood_pellets\":{\"profitable\":null},\"energy_power_combined_cycle_ccs_coal\":{\"profitable\":null},\"energy_power_combined_cycle_ccs_network_gas\":{\"profitable\":null},\"energy_power_combined_cycle_coal\":{\"profitable\":null},\"energy_power_combined_cycle_network_gas\":{\"profitable\":null},\"energy_power_engine_diesel\":{\"profitable\":null},\"energy_power_nuclear_gen2_uranium_oxide\":{\"profitable\":null},\"energy_power_nuclear_gen3_uranium_oxide\":{\"profitable\":null},\"energy_power_supercritical_coal\":{\"profitable\":null},\"energy_power_turbine_network_gas\":{\"profitable\":null},\"energy_power_ultra_supercritical_ccs_coal\":{\"profitable\":null},\"energy_power_ultra_supercritical_coal\":{\"profitable\":null},\"energy_power_ultra_supercritical_crude_oil\":{\"profitable\":null},\"energy_power_ultra_supercritical_lignite\":{\"profitable\":null},\"energy_power_ultra_supercritical_network_gas\":{\"profitable\":null},\"energy_power_ultra_supercritical_oxyfuel_ccs_lignite\":{\"profitable\":null}},\"unit\":\"hash\"},\"share_of_households_in_final_demand\":{\"present\":0.1634941854915839,\"future\":0.12380501735484199,\"unit\":\"factor\"},\"peak_load_check_lv\":{\"present\":false,\"future\":false,\"unit\":\"boolean\"},\"peak_load_check_mv_lv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_mv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_hv_mv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_hv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_total\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"}}}"
+    http_version: 
+  recorded_at: Mon, 10 Dec 2012 15:36:37 GMT
+- request: 
+    method: put
+    uri: http://etengine.dev/api/v3/scenarios/131303
+    body: 
+      encoding: US-ASCII
+      string: autobalance=true&scenario[use_fce]=false&gqueries[]=dashboard_merit_order&gqueries[]=share_of_households_in_final_demand&gqueries[]=peak_load_check_lv&gqueries[]=peak_load_check_mv_lv&gqueries[]=peak_load_check_mv&gqueries[]=peak_load_check_hv_mv&gqueries[]=peak_load_check_hv&gqueries[]=peak_load_check_total
+    headers: {}
+
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      Date: 
+      - Mon, 10 Dec 2012 15:36:38 GMT
+      Content-Type: 
+      - application/json; charset=utf-8
+      X-Ua-Compatible: 
+      - IE=Edge,chrome=1
+      Etag: 
+      - "\"72874600834e9e0e7ea223e61361d4fa\""
+      Cache-Control: 
+      - max-age=0, private, must-revalidate
+      X-Request-Id: 
+      - 046b572c9d95c57ef44016b1fb3f87e8
+      X-Runtime: 
+      - "0.476363"
+      X-Rack-Cache: 
+      - invalidate, pass
+      Transfer-Encoding: 
+      - chunked
+    body: 
+      encoding: US-ASCII
+      string: "{\"scenario\":{\"id\":131303,\"title\":\"API\",\"area_code\":\"nl\",\"end_year\":2030,\"url\":\"http://etengine.dev/api/v3/scenarios/131303\",\"source\":\"ETM\",\"template\":1,\"created_at\":\"2012-12-06T12:08:37+01:00\"},\"gqueries\":{\"dashboard_merit_order\":{\"present\":{\"energy_chp_combined_cycle_network_gas\":{\"profitable\":null},\"energy_chp_ultra_supercritical_coal\":{\"profitable\":null},\"energy_chp_ultra_supercritical_crude_oil\":{\"profitable\":null},\"energy_chp_ultra_supercritical_lignite\":{\"profitable\":null},\"energy_chp_ultra_supercritical_wood_pellets\":{\"profitable\":null},\"energy_power_combined_cycle_ccs_coal\":{\"profitable\":null},\"energy_power_combined_cycle_ccs_network_gas\":{\"profitable\":null},\"energy_power_combined_cycle_coal\":{\"profitable\":null},\"energy_power_combined_cycle_network_gas\":{\"profitable\":null},\"energy_power_engine_diesel\":{\"profitable\":null},\"energy_power_nuclear_gen2_uranium_oxide\":{\"profitable\":null},\"energy_power_nuclear_gen3_uranium_oxide\":{\"profitable\":null},\"energy_power_supercritical_coal\":{\"profitable\":null},\"energy_power_turbine_network_gas\":{\"profitable\":null},\"energy_power_ultra_supercritical_ccs_coal\":{\"profitable\":null},\"energy_power_ultra_supercritical_coal\":{\"profitable\":null},\"energy_power_ultra_supercritical_crude_oil\":{\"profitable\":null},\"energy_power_ultra_supercritical_lignite\":{\"profitable\":null},\"energy_power_ultra_supercritical_network_gas\":{\"profitable\":null},\"energy_power_ultra_supercritical_oxyfuel_ccs_lignite\":{\"profitable\":null}},\"future\":{\"energy_chp_combined_cycle_network_gas\":{\"profitable\":null},\"energy_chp_ultra_supercritical_coal\":{\"profitable\":null},\"energy_chp_ultra_supercritical_crude_oil\":{\"profitable\":null},\"energy_chp_ultra_supercritical_lignite\":{\"profitable\":null},\"energy_chp_ultra_supercritical_wood_pellets\":{\"profitable\":null},\"energy_power_combined_cycle_ccs_coal\":{\"profitable\":null},\"energy_power_combined_cycle_ccs_network_gas\":{\"profitable\":null},\"energy_power_combined_cycle_coal\":{\"profitable\":null},\"energy_power_combined_cycle_network_gas\":{\"profitable\":null},\"energy_power_engine_diesel\":{\"profitable\":null},\"energy_power_nuclear_gen2_uranium_oxide\":{\"profitable\":null},\"energy_power_nuclear_gen3_uranium_oxide\":{\"profitable\":null},\"energy_power_supercritical_coal\":{\"profitable\":null},\"energy_power_turbine_network_gas\":{\"profitable\":null},\"energy_power_ultra_supercritical_ccs_coal\":{\"profitable\":null},\"energy_power_ultra_supercritical_coal\":{\"profitable\":null},\"energy_power_ultra_supercritical_crude_oil\":{\"profitable\":null},\"energy_power_ultra_supercritical_lignite\":{\"profitable\":null},\"energy_power_ultra_supercritical_network_gas\":{\"profitable\":null},\"energy_power_ultra_supercritical_oxyfuel_ccs_lignite\":{\"profitable\":null}},\"unit\":\"hash\"},\"share_of_households_in_final_demand\":{\"present\":0.1634941854915839,\"future\":0.12380501735484199,\"unit\":\"factor\"},\"peak_load_check_lv\":{\"present\":false,\"future\":false,\"unit\":\"boolean\"},\"peak_load_check_mv_lv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_mv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_hv_mv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_hv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_total\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"}}}"
+    http_version: 
+  recorded_at: Mon, 10 Dec 2012 15:36:38 GMT
+- request: 
+    method: put
+    uri: http://etengine.dev/api/v3/scenarios/131303
+    body: 
+      encoding: US-ASCII
+      string: autobalance=true&scenario[use_fce]=null&gqueries[]=dashboard_merit_order&gqueries[]=share_of_households_in_final_demand&gqueries[]=peak_load_check_lv&gqueries[]=peak_load_check_mv_lv&gqueries[]=peak_load_check_mv&gqueries[]=peak_load_check_hv_mv&gqueries[]=peak_load_check_hv&gqueries[]=peak_load_check_total
+    headers: {}
+
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      Date: 
+      - Mon, 10 Dec 2012 15:57:17 GMT
+      Content-Type: 
+      - application/json; charset=utf-8
+      X-Ua-Compatible: 
+      - IE=Edge,chrome=1
+      Etag: 
+      - "\"72874600834e9e0e7ea223e61361d4fa\""
+      Cache-Control: 
+      - max-age=0, private, must-revalidate
+      X-Request-Id: 
+      - 03509bbf6f3440100117396c0688c0d6
+      X-Runtime: 
+      - "0.562126"
+      X-Rack-Cache: 
+      - invalidate, pass
+      Transfer-Encoding: 
+      - chunked
+    body: 
+      encoding: US-ASCII
+      string: "{\"scenario\":{\"id\":131303,\"title\":\"API\",\"area_code\":\"nl\",\"end_year\":2030,\"url\":\"http://etengine.dev/api/v3/scenarios/131303\",\"source\":\"ETM\",\"template\":1,\"created_at\":\"2012-12-06T12:08:37+01:00\"},\"gqueries\":{\"dashboard_merit_order\":{\"present\":{\"energy_chp_combined_cycle_network_gas\":{\"profitable\":null},\"energy_chp_ultra_supercritical_coal\":{\"profitable\":null},\"energy_chp_ultra_supercritical_crude_oil\":{\"profitable\":null},\"energy_chp_ultra_supercritical_lignite\":{\"profitable\":null},\"energy_chp_ultra_supercritical_wood_pellets\":{\"profitable\":null},\"energy_power_combined_cycle_ccs_coal\":{\"profitable\":null},\"energy_power_combined_cycle_ccs_network_gas\":{\"profitable\":null},\"energy_power_combined_cycle_coal\":{\"profitable\":null},\"energy_power_combined_cycle_network_gas\":{\"profitable\":null},\"energy_power_engine_diesel\":{\"profitable\":null},\"energy_power_nuclear_gen2_uranium_oxide\":{\"profitable\":null},\"energy_power_nuclear_gen3_uranium_oxide\":{\"profitable\":null},\"energy_power_supercritical_coal\":{\"profitable\":null},\"energy_power_turbine_network_gas\":{\"profitable\":null},\"energy_power_ultra_supercritical_ccs_coal\":{\"profitable\":null},\"energy_power_ultra_supercritical_coal\":{\"profitable\":null},\"energy_power_ultra_supercritical_crude_oil\":{\"profitable\":null},\"energy_power_ultra_supercritical_lignite\":{\"profitable\":null},\"energy_power_ultra_supercritical_network_gas\":{\"profitable\":null},\"energy_power_ultra_supercritical_oxyfuel_ccs_lignite\":{\"profitable\":null}},\"future\":{\"energy_chp_combined_cycle_network_gas\":{\"profitable\":null},\"energy_chp_ultra_supercritical_coal\":{\"profitable\":null},\"energy_chp_ultra_supercritical_crude_oil\":{\"profitable\":null},\"energy_chp_ultra_supercritical_lignite\":{\"profitable\":null},\"energy_chp_ultra_supercritical_wood_pellets\":{\"profitable\":null},\"energy_power_combined_cycle_ccs_coal\":{\"profitable\":null},\"energy_power_combined_cycle_ccs_network_gas\":{\"profitable\":null},\"energy_power_combined_cycle_coal\":{\"profitable\":null},\"energy_power_combined_cycle_network_gas\":{\"profitable\":null},\"energy_power_engine_diesel\":{\"profitable\":null},\"energy_power_nuclear_gen2_uranium_oxide\":{\"profitable\":null},\"energy_power_nuclear_gen3_uranium_oxide\":{\"profitable\":null},\"energy_power_supercritical_coal\":{\"profitable\":null},\"energy_power_turbine_network_gas\":{\"profitable\":null},\"energy_power_ultra_supercritical_ccs_coal\":{\"profitable\":null},\"energy_power_ultra_supercritical_coal\":{\"profitable\":null},\"energy_power_ultra_supercritical_crude_oil\":{\"profitable\":null},\"energy_power_ultra_supercritical_lignite\":{\"profitable\":null},\"energy_power_ultra_supercritical_network_gas\":{\"profitable\":null},\"energy_power_ultra_supercritical_oxyfuel_ccs_lignite\":{\"profitable\":null}},\"unit\":\"hash\"},\"share_of_households_in_final_demand\":{\"present\":0.1634941854915839,\"future\":0.12380501735484199,\"unit\":\"factor\"},\"peak_load_check_lv\":{\"present\":false,\"future\":false,\"unit\":\"boolean\"},\"peak_load_check_mv_lv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_mv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_hv_mv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_hv\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"},\"peak_load_check_total\":{\"present\":false,\"future\":true,\"unit\":\"boolean\"}}}"
+    http_version: 
+  recorded_at: Mon, 10 Dec 2012 15:57:17 GMT
 recorded_with: VCR 2.3.0

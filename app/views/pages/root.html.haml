@@ -8,7 +8,7 @@
   %h4#new_scenario_button
     %a{href: '#top'}= t 'intro.start_a_new_scenario'
   #new_scenario{style: "display: none;"}
-    = form_tag root_path do
+    = form_tag home_path do
       = render "pages/root_page/country_select"
       = render "pages/root_page/year_select"
       #submit

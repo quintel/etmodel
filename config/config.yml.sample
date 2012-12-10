@@ -31,6 +31,10 @@ development: &DEV
 
     # set to true if you want a "production server" warning in the admin section
     live_server: false
+
+    # optional URL overrides for the splash screen links
+    # mixer_url: http://mixer.et-model.com
+    # etflex_url: http://light.et-model.com
 production: &PRODUCTION
     <<: *DEV
 test:

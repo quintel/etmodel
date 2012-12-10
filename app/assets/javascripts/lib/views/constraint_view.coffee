@@ -63,7 +63,7 @@ class @ConstraintView extends Backbone.View
       when 'total_primary_energy', 'employment', 'co2_reduction'
         # show + prefix if needed
         Metric.ratio_as_percentage(result, true)
-      when 'net_energy_import'
+      when 'net_energy_import', 'merit_order'
         # 1 point precision
         Metric.ratio_as_percentage(result, false, 1)
       when 'security_of_supply'
@@ -72,7 +72,7 @@ class @ConstraintView extends Backbone.View
         Metric.ratio_as_percentage(result)
       when 'bio_footprint'
         "#{Metric.round_number(result, 1)}x#{App.settings.country().toUpperCase()}"
-      when 'targets_met', 'merit_order'
+      when 'targets_met'
         null
       when 'loss_of_load'
         Metric.ratio_as_percentage(result, false, 1)
@@ -86,7 +86,6 @@ class @ConstraintView extends Backbone.View
   # Updates the arrows, if the difference is negative .
   # @param diff - the difference of old_value and new_value.
   updateArrows: () =>
-    return if @model.get('key') == 'merit_order'
     diff = @model.calculate_diff @model.get('result'), @model.get('previous_result')
     return false if (diff == undefined || diff == null)
     arrow_element = $('.arrow', @dom_id)

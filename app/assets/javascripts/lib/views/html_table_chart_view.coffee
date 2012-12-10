@@ -71,6 +71,9 @@ class @HtmlTableChartView extends BaseChartView
     # get rid of rows with -1 merit order position
     rows = @container_node().find("tbody tr")
     rows = _.reject rows, (item) => @merit_order_position(item) == -1
+    unless App.settings.merit_order_enabled()
+      # hide items with 0 capacity
+      rows = _.reject rows, (item) -> +$(item).find('td.capacity').text() == 0
     rows = _.sortBy rows, @merit_order_position
     @container_node().find("tbody").html(rows)
 

@@ -3,10 +3,8 @@ class ScenariosController < ApplicationController
   before_filter :find_scenario, :only => [:show, :load]
   before_filter :require_user, :only => [:index, :new]
   before_filter :store_last_etm_page,
-                :load_interface, :only => :play
-
-  # TODO: refactor, we need this only in the play action
-  include ApplicationController::HasDashboard
+                :load_interface,
+                :load_constraints, :only => :play
 
   def index
     items = if current_user.admin?
@@ -116,4 +114,13 @@ class ScenariosController < ApplicationController
       Current.setting.last_etm_page = request.fullpath
     end
 
+    def load_constraints
+      dash = session[:dashboard]
+
+      @constraints = if dash and dash.any?
+        Constraint.for_dashboard(dash)
+      else
+        Constraint.default.ordered
+      end
+    end
 end

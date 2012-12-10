@@ -14,8 +14,7 @@ class @MeritOrder
     q = @gquery.future_value()
     profitables = _.select(_.values(q), (v) -> v.profitable ).length
     tot = _.keys(q).length
-
-    out = "#{profitables}/#{tot}"
+    Metric.ratio_as_percentage(profitables/tot)
 
   format_table: =>
     tmpl = _.template $('#merit-order-table-template').html()

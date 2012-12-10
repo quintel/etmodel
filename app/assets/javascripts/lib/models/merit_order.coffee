@@ -11,10 +11,13 @@ class @MeritOrder
       $el.html('-')
 
   dashboard_string: =>
+    Metric.ratio_as_percentage @dashboard_value()
+
+  dashboard_value: =>
     q = @gquery.future_value()
     profitables = _.select(_.values(q), (v) -> v.profitable ).length
     tot = _.keys(q).length
-    Metric.ratio_as_percentage(profitables/tot)
+    profitables/tot
 
   format_table: =>
     tmpl = _.template $('#merit-order-table-template').html()

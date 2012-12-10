@@ -129,7 +129,6 @@ class @AppView extends Backbone.View
       t.invoke('update_view')
       t.update_totals()
     @sidebar.update_bars()
-    @merit_order.update_dashboard_item()
 
     if App.settings.get('track_peak_load') && App.peak_load
       App.peak_load.trigger('change')

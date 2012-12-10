@@ -11,6 +11,7 @@ class @AppView extends Backbone.View
     @sidebar = new SidebarView()
     @scenario = new Scenario()
     @router = new Router()
+    @merit_order = new MeritOrder(this)
     Backbone.history.start()
 
     @api = new ApiGateway
@@ -128,6 +129,7 @@ class @AppView extends Backbone.View
       t.invoke('update_view')
       t.update_totals()
     @sidebar.update_bars()
+    @merit_order.update_dashboard_item()
 
     if App.settings.get('track_peak_load') && App.peak_load
       App.peak_load.trigger('change')

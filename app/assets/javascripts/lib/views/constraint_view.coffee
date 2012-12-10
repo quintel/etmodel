@@ -86,6 +86,7 @@ class @ConstraintView extends Backbone.View
   # Updates the arrows, if the difference is negative .
   # @param diff - the difference of old_value and new_value.
   updateArrows: () =>
+    return if @model.get('key') == 'merit_order'
     diff = @model.calculate_diff @model.get('result'), @model.get('previous_result')
     return false if (diff == undefined || diff == null)
     arrow_element = $('.arrow', @dom_id)

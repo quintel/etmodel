@@ -38,6 +38,7 @@ group :development do
   gem 'annotate', :require => false
   gem 'sunspot_solr'
   gem 'quiet_assets'
+  gem 'better_errors'
 end
 
 group :test, :development do

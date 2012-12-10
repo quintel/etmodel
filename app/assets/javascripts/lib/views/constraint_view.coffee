@@ -63,7 +63,7 @@ class @ConstraintView extends Backbone.View
       when 'total_primary_energy', 'employment', 'co2_reduction'
         # show + prefix if needed
         Metric.ratio_as_percentage(result, true)
-      when 'net_energy_import'
+      when 'net_energy_import', 'merit_order'
         # 1 point precision
         Metric.ratio_as_percentage(result, false, 1)
       when 'security_of_supply'

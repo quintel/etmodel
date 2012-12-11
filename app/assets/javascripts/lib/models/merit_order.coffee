@@ -6,7 +6,7 @@ class @MeritOrder
   dashboard_value: =>
     return null unless @app.settings.merit_order_enabled()
     q = @gquery.future_value()
-    profitables = _.select(_.values(q), (v) -> v.profitable ).length
+    profitables = _.select(_.values(q), (v) -> v.profitable == 'profitable' ).length
     tot = _.keys(q).length
     profitables/tot
 
@@ -19,8 +19,13 @@ class @MeritOrder
       else
         'N/A'
       items.push
-        key: key
         profitable: value
+        key: key
+        position: values.position
+        capacity: values.capacity
+        full_load_hours: values.full_load_hours
+        profits: values.profits
+
 
     data = {series: items}
 

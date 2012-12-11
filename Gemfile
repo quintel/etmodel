@@ -56,7 +56,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'webrat'
   gem 'simplecov'
-  gem 'webmock'
+  gem 'webmock', '~> 1.8.0'
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'launchy'

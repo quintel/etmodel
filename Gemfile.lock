@@ -291,7 +291,7 @@ GEM
       raindrops (~> 0.7)
     vcr (2.3.0)
     watchr (0.7)
-    webmock (1.9.0)
+    webmock (1.8.9)
       addressable (>= 2.2.7)
       crack (>= 0.1.7)
     webrat (0.7.3)
@@ -359,7 +359,7 @@ DEPENDENCIES
   unicorn
   vcr
   watchr
-  webmock
+  webmock (~> 1.8.0)
   webrat
   yard-tomdoc (~> 0.4.0)
   yui-compressor

@@ -8,7 +8,7 @@
         <th>Merit Order Position</th>
         <th>Available Capacity</th>
         <th>FLH (Future)</th>
-        <th>Profits (MEUR per unit)</th>
+        <th>Profits (EUR per unit)</th>
         <th></th>
       </tr>
     </thead>
@@ -17,9 +17,9 @@
         <tr>
           <td class="<%%= serie.profitable %>"><%%= serie.key %></th>
           <td><%%= serie.position %></td>
-          <td><%%= Metric.round_number(serie.capacity, 0) %></td>
+          <td><%%= Metric.autoscale_value(serie.capacity, 'MW') %></td>
           <td><%%= Metric.round_number(serie.full_load_hours, 0) %></td>
-          <td><%%= Metric.round_number(serie.profits, 0) %></td>
+          <td><%%= Metric.autoscale_value(serie.profits, 'euro') %></td>
         </tr>
       <%% }) %>
     </tbody>

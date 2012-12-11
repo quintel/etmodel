@@ -18,6 +18,7 @@ class @MeritOrder
         values.profitable
       else
         'N/A'
+      continue if values.capacity == 0
       items.push
         profitable: value
         key: key
@@ -27,9 +28,31 @@ class @MeritOrder
         profits: values.profits
 
 
-    data = {series: items}
+    sorted_items = items.sort(@sorting_function)
+
+    data = {series: sorted_items}
 
     $('#merit-order-table').html tmpl(data)
     true
 
+  sorting_function: (a,b) =>
+    pa = @profitability_index a
+    pb = @profitability_index b
+    ca = a.profits
+    cb = b.profits
+    # sort by profitability (profitability < c.p < unprofitable)
+    if pa != pb
+      return -1 if pa < pb
+      return 1 if pa > pb
+      return 0
+    # sort by descending profits
+    return -1 if ca > cb
+    return 1 if ca < cb
+    return 0
+
+  profitability_index: (x) ->
+    switch x.profitable
+      when 'profitable' then 0
+      when 'conditionally_profitable' then 1
+      when 'unprofitable' then 2
 

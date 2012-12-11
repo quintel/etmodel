@@ -1,18 +1,25 @@
 <div id="merit-order-table"></div>
 
 <script type="text/template" id="merit-order-table-template">
-  <table class="autostripe condensed">
+  <table class="autostripe condensed merit_order">
     <thead>
       <tr>
-        <th>Producer</th>
-        <th>Profitable</th>
+        <th>Technology</th>
+        <th>Merit Order Position</th>
+        <th>Available Capacity</th>
+        <th>FLH (Future)</th>
+        <th>Profits (MEUR per unit)</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <%% _.each(series, function(serie){ %>
         <tr>
-          <td><%%= serie.key %></th>
-          <td><%%= serie.profitable %></td>
+          <td class="<%%= serie.profitable %>"><%%= serie.key %></th>
+          <td><%%= serie.position %></td>
+          <td><%%= Metric.round_number(serie.capacity, 0) %></td>
+          <td><%%= Metric.round_number(serie.full_load_hours, 0) %></td>
+          <td><%%= Metric.round_number(serie.profits, 0) %></td>
         </tr>
       <%% }) %>
     </tbody>

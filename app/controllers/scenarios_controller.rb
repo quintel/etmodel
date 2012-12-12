@@ -2,8 +2,8 @@ class ScenariosController < ApplicationController
   before_filter :ensure_valid_browser
   before_filter :find_scenario, :only => [:show, :load]
   before_filter :require_user, :only => [:index, :new]
-  before_filter :store_last_etm_page,
-                :load_interface,
+  before_filter :load_interface,
+                :store_last_etm_page,
                 :load_constraints, :only => :play
 
   def index
@@ -111,7 +111,11 @@ class ScenariosController < ApplicationController
     end
 
     def store_last_etm_page
-      Current.setting.last_etm_page = request.fullpath
+      tab_key = @interface.current_tab.key
+      sidebar_key = @interface.current_sidebar_item.key
+      Current.setting.last_etm_page = url_for(controller: 'scenarios',
+                                              action: 'play',
+                                              anchor: "#{tab_key}/#{sidebar_key}")
     end
 
     def load_constraints

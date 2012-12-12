@@ -104,3 +104,6 @@ class @InputElementList extends Backbone.Collection
 
   close_all_info_boxes: =>
     v.closeInfoBox() for v in _.values(@inputElementViews)
+
+  find_by_key: (k) =>
+    @find (i) -> i.get('key') == k

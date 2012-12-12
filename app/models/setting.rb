@@ -108,6 +108,10 @@ class Setting
     area.try(:use_network_calculations?)
   end
 
+  def allow_merit_order?
+    area.attributes[:has_merit_order]
+  end
+
   def allow_fce?
     area.attributes[:has_fce]
   end

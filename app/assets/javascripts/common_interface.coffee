@@ -30,31 +30,6 @@ $ ->
       if value.length is 0 or value is placeholder or not value.match(/\S/)
         search.val(placeholder)
 
-  close_all_menus = ->
-    $('li.expandable > a').removeClass('menu-open')
-    $('.header_menu').hide()
-
-  # Expand menus
-  #
-  $("li.expandable > a").click (e) ->
-    e.preventDefault()
-    $t = $(e.target)
-    is_open = $t.hasClass('menu-open')
-    close_all_menus()
-    if !is_open
-      $t.addClass('menu-open')
-      $t.parent().find('.header_menu').show()
-
-  # Close menus when clicking outside them
-  #
-  $(document).mouseup (e) ->
-    if $(e.target).parents(".header_menu").length == 0
-      close_all_menus()
-
-  # Menu items
-  #
-  $("#disable_peak_load_tracking").live 'click', -> disable_peak_load_tracking()
-
   # locale select box
   $("select#locale").change ->
     $.ajax
@@ -74,7 +49,6 @@ $ ->
       success: (data) ->
         $("#logos").replaceWith(data)
         Interface.call_the_cyclists()
-  Interface.call_the_cyclists()
 
   # Tooltips. Works with AJAX-injected content, too
   #
@@ -93,6 +67,9 @@ $ ->
       }, e
 
 class @AppInterface
+  constructor: ->
+    @setup_menus()
+
   set_active_movie_tab: (page) ->
     $(".movie_tabs li").removeClass 'active'
     $(".movie_tabs li##{page}").addClass 'active'
@@ -122,4 +99,33 @@ class @AppInterface
           timeout = $(this).attr('timeout')
           parseInt(timeout,10)
 
-window.Interface = new AppInterface()
+  setup_menus: =>
+    # Expand menus
+    #
+    $("li.expandable > a").click (e) =>
+      e.preventDefault()
+      $t = $(e.target)
+      is_open = $t.hasClass('menu-open')
+      @close_all_menus()
+      if !is_open
+        $t.addClass('menu-open')
+        $t.parent().find('.header_menu').show()
+
+    # Close menus when clicking outside them
+    #
+    $(document).mouseup (e) =>
+      if $(e.target).parents(".header_menu").length == 0
+        @close_all_menus()
+
+    # Menu items
+    #
+    $("#disable_peak_load_tracking").live 'click', -> disable_peak_load_tracking()
+
+  close_all_menus: ->
+    $('li.expandable > a').removeClass('menu-open')
+    $('.header_menu').hide()
+
+
+$ ->
+  window.Interface = new AppInterface()
+  Interface.call_the_cyclists()

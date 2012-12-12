@@ -43,3 +43,12 @@ class @Setting extends Backbone.Model
   merit_order_enabled: ->
     values = App.input_elements.user_values.settings_enable_merit_order
     values? && values.user == 1
+
+  toggle_merit_order: ->
+    item = App.input_elements.user_values.settings_enable_merit_order
+    if item?
+      new_val = !item.user
+      item.user = if new_val then 1 else 0
+      App.call_api
+        settings_enable_merit_order: item.user
+      Interface.close_all_menus()

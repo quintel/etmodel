@@ -28,10 +28,17 @@
             :checked => Current.setting.track_peak_load
           %label{:for => "track_peak_load_settings"}
             = t 'header.notify_of_grid_investments'
+
       - if Current.setting.allow_fce?
         %li
           = check_box :settings, :use_fce, :checked => Current.setting.use_fce
           %label{:for => "settings_use_fce"}= t('fce.check')
+
+      - if Current.setting.allow_merit_order?
+        %li
+          = check_box :settings, :use_merit_order
+          %label{:for => "settings_use_merit_order"}= t('header.merit_order_check')
+
       - if params[:debug]
         %li
           %form{:action => 'http://beta.et-engine.com/mechanical_turk/factory', :method => 'post', :target => '_blank', :id => 'turkit'}

@@ -25,7 +25,7 @@ class @MeritOrder
         position: values.position
         capacity: values.capacity
         full_load_hours: values.full_load_hours
-        profits: values.profits
+        profits_per_unit: values.profits_per_unit
         label: @series_labels[key] || key
 
 

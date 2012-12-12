@@ -33,7 +33,7 @@ D3.merit_order =
     value_x: => @gquery_x.safe_future_value()
 
     value_y: =>
-      if @get('key') == 'must_run' then 1 else @original_y_value()
+      if @get('key') == 'must_run' then 0 else @original_y_value()
 
     original_y_value: => @gquery_y.safe_future_value()
 

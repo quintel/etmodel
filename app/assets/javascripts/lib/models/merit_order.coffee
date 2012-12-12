@@ -5,10 +5,9 @@ class @MeritOrder
 
   dashboard_value: =>
     return null unless @app.settings.merit_order_enabled()
-    q = @gquery.future_value()
-    profitables = _.select(_.values(q), (v) -> v.profitable == 'profitable' ).length
-    tot = _.keys(q).length
-    profitables/tot
+    total = @total_available_capacity()
+    return null if total == 0
+    @profitable_capacity() / @total_available_capacity()
 
   format_table: =>
     tmpl = _.template $('#merit-order-table-template').html()
@@ -28,14 +27,12 @@ class @MeritOrder
         profits_per_unit: values.profits_per_unit
         label: @series_labels[key] || key
 
-
     sorted_items = items.sort(@sorting_function)
-
-    data = {series: sorted_items}
-
-    $('#merit-order-table').html tmpl(data)
+    $('#merit-order-table').html tmpl({series: sorted_items})
     true
 
+  # Sort by two fields
+  #
   sorting_function: (a,b) =>
     pa = @profitability_index a
     pb = @profitability_index b
@@ -45,18 +42,22 @@ class @MeritOrder
     if pa != pb
       return -1 if pa < pb
       return 1 if pa > pb
-      return 0
     # sort by descending profits
     return -1 if ca > cb
     return 1 if ca < cb
     return 0
 
+  # Index used for sorting
+  #
   profitability_index: (x) ->
     switch x.profitable
       when 'profitable' then 0
       when 'conditionally_profitable' then 1
       when 'unprofitable' then 2
 
+  # This hash maps dispatchable keys to the chart series labels used by the
+  # other merit order table
+  #
   series_labels:
     energy_chp_combined_cycle_network_gas: 'central_gas_chp'
     energy_chp_ultra_supercritical_coal: 'coal_chp'
@@ -75,3 +76,21 @@ class @MeritOrder
     energy_power_ultra_supercritical_coal: 'coal_pwd'
     energy_power_ultra_supercritical_crude_oil: 'oil_plant'
     energy_power_ultra_supercritical_network_gas: 'gas_conv'
+
+  # Sum of the [conditionally_]profitable dispatchable capacities
+  #
+  profitable_capacity: =>
+    sum = 0
+    q = @gquery.future_value()
+    for c in _.select(_.values(q), (v) ->
+      v.profitable == 'profitable' ||
+      v.profitable == 'conditionally_profitable' )
+      sum += c.capacity
+    sum
+
+  total_available_capacity: =>
+    sum = 0
+    q = @gquery.future_value()
+    for c in _.values(q)
+      sum += c.capacity
+    sum

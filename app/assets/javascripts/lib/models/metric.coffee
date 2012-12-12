@@ -63,33 +63,36 @@
 
     switch unit
       when '%'
-        return @percentage_to_string(x)
+         @percentage_to_string(x)
       when 'MJ'
-        return "#{value} #{@scaling_in_words(pow, 'joules')}"
+         "#{value} #{@scaling_in_words(pow, 'joules')}"
       when 'PJ'
-        return "#{value} #{@scaling_in_words(pow + 3, 'joules')}"
+         "#{value} #{@scaling_in_words(pow + 3, 'joules')}"
       when 'MW'
-        return "#{value} #{@scaling_in_words(pow + 2, 'watt')}"
+         "#{value} #{@scaling_in_words(pow + 2, 'watt')}"
       when 'MT'
-        return "#{value} #{@scaling_in_words(pow + 2, 'ton')}"
+         "#{value} #{@scaling_in_words(pow + 2, 'ton')}"
       when 'euro'
-        return @euros_to_string x, true
+        if _.isNull(x)
+          '-'
+        else
+          @euros_to_string x, true
       when 'mln_euro'
-        return @euros_to_string x * 1000000, true
+        @euros_to_string x * 1000000, true
       when 'bln_euro'
-        return @euros_to_string x * 1000000000, true
+        @euros_to_string x * 1000000000, true
       when 'man_years'
-        return "#{@round_number x, 0} #{@scaling_in_words(0, 'man_years')}"
+        "#{@round_number x, 0} #{@scaling_in_words(0, 'man_years')}"
       when 'FTE'
-        return "#{@round_number x, 0} #{@scaling_in_words(0, 'FTE')}"
+        "#{@round_number x, 0} #{@scaling_in_words(0, 'FTE')}"
       when 'Eur/Mwh'
-        return "#{@round_number x, 0} €/Mwh"
+        "#{@round_number x, 0} €/Mwh"
       when 'Eur/MWhe'
-        return "#{@round_number x, 0} €/MWhe"
+        "#{@round_number x, 0} €/MWhe"
       when 'Eur/MWe'
-        return "#{@round_number x, 2} €/MWe"
+        "#{@round_number x, 2} €/MWe"
       else
-        return value
+        value
 
   # formatters
 

@@ -4,20 +4,24 @@
   <table class="autostripe condensed merit_order">
     <thead>
       <tr>
-        <th><%= I18n.t("output_elements.tables.merit_order.technology") %></th>
-        <th><%= I18n.t("output_elements.tables.merit_order.position") %></th>
-        <th><%= I18n.t("output_elements.tables.merit_order.available_capacity") %></th>
-        <th><%= I18n.t("output_elements.tables.merit_order.flh_future") %></th>
-        <th><%= I18n.t("output_elements.tables.merit_order.profits_per_unit") %></th>
+        <th><%= t("output_elements.tables.merit_order.technology") %></th>
+        <th><%= t("output_elements.tables.merit_order.position") %></th>
+        <th><%= t("output_elements.tables.merit_order.available_capacity") %></th>
+        <th><%= t("output_elements.tables.merit_order.flh_future") %></th>
+        <th><%= t("output_elements.tables.merit_order.profits_per_unit") %></th>
         <th></th>
       </tr>
     </thead>
+    <tfoot>
+      <tr><td colspan="6"><%= t 'output_elements.tables.merit_order.flh_note' %></td></tr>
+      <tr><td colspan="6"><%= t 'output_elements.tables.merit_order.wood_pellet_note' %></td></tr>
+    </tfoot>
     <tbody>
       <%% _.each(series, function(serie){ %>
-        <tr>
-          <th class="<%%= serie.profitable %>">
+        <tr class="<%%= serie.profitable %>">
+          <td>
             <%%= I18n.t("output_elements.tables.merit_order." + serie.label) %>
-          </th>
+          </td>
           <td><%%= serie.position %></td>
           <td><%%= Metric.autoscale_value(serie.capacity, 'MW') %></td>
           <td><%%= Metric.round_number(serie.full_load_hours, 0) %></td>

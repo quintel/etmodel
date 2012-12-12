@@ -25,7 +25,7 @@
           <td><%%= serie.position || '-' %></td>
           <td><%%= Metric.autoscale_value(serie.capacity, 'MW') %></td>
           <td><%%= Metric.round_number(serie.full_load_hours, 0) %></td>
-          <td><%%= Metric.autoscale_value(serie.profits, 'euro') %></td>
+          <td><%%= Metric.autoscale_value(serie.profits_per_unit, 'euro') %></td>
         </tr>
       <%% }) %>
     </tbody>

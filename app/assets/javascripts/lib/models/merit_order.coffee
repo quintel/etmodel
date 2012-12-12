@@ -26,6 +26,7 @@ class @MeritOrder
         capacity: values.capacity
         full_load_hours: values.full_load_hours
         profits: values.profits
+        label: @series_labels[key] || key
 
 
     sorted_items = items.sort(@sorting_function)
@@ -56,3 +57,21 @@ class @MeritOrder
       when 'conditionally_profitable' then 1
       when 'unprofitable' then 2
 
+  series_labels:
+    energy_chp_combined_cycle_network_gas: 'central_gas_chp'
+    energy_chp_ultra_supercritical_coal: 'coal_chp'
+    energy_chp_ultra_supercritical_wood_pellets: 'wood_pellets_chp'
+    energy_chp_ultra_supercritical_crude_oil: 'oil_chp'
+    energy_power_combined_cycle_ccs_coal: 'coal_igcc_ccs'
+    energy_power_combined_cycle_ccs_network_gas: 'gas_ccgt_ccs'
+    energy_power_combined_cycle_coal: 'coal_igcc'
+    energy_power_combined_cycle_network_gas: 'gas_ccgt'
+    energy_power_engine_diesel: 'diesel_engine'
+    energy_power_nuclear_gen2_uranium_oxide: 'nuclear_ii'
+    energy_power_nuclear_gen3_uranium_oxide: 'nuclear_iii'
+    energy_power_supercritical_coal: 'coal_conv'
+    energy_power_turbine_network_gas: 'gas_turbine'
+    energy_power_ultra_supercritical_ccs_coal: 'coal_pwd_ccs'
+    energy_power_ultra_supercritical_coal: 'coal_pwd'
+    energy_power_ultra_supercritical_crude_oil: 'oil_plant'
+    energy_power_ultra_supercritical_network_gas: 'gas_conv'

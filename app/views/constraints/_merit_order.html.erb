@@ -4,18 +4,20 @@
   <table class="autostripe condensed merit_order">
     <thead>
       <tr>
-        <th>Technology</th>
-        <th>Merit Order Position</th>
-        <th>Available Capacity</th>
-        <th>FLH (Future)</th>
-        <th>Profits (EUR per unit)</th>
+        <th><%= I18n.t("output_elements.tables.merit_order.technology") %></th>
+        <th><%= I18n.t("output_elements.tables.merit_order.position") %></th>
+        <th><%= I18n.t("output_elements.tables.merit_order.available_capacity") %></th>
+        <th><%= I18n.t("output_elements.tables.merit_order.flh_future") %></th>
+        <th><%= I18n.t("output_elements.tables.merit_order.profits_per_unit") %></th>
         <th></th>
       </tr>
     </thead>
     <tbody>
       <%% _.each(series, function(serie){ %>
         <tr>
-          <td class="<%%= serie.profitable %>"><%%= serie.key %></th>
+          <th class="<%%= serie.profitable %>">
+            <%%= I18n.t("output_elements.tables.merit_order." + serie.label) %>
+          </th>
           <td><%%= serie.position %></td>
           <td><%%= Metric.autoscale_value(serie.capacity, 'MW') %></td>
           <td><%%= Metric.round_number(serie.full_load_hours, 0) %></td>

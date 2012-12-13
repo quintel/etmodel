@@ -93,9 +93,9 @@ class @AppView extends Backbone.View
   setup_checkboxes: =>
     # Prevent double event bindings
     return if @checkboxes_initialized
+    @update_merit_order_checkbox()
     # IE doesn't bubble onChange until the checkbox loses focus
     $(document).on 'click', "#settings_use_fce", @settings.toggle_fce
-    $("#settings_use_merit_order").attr('checked', @settings.merit_order_enabled())
     $(document).on 'click', "#settings_use_merit_order", @settings.toggle_merit_order
     @checkboxes_initialized = true
 
@@ -171,3 +171,9 @@ class @AppView extends Backbone.View
 
   debug: (t) ->
     console.log(t) if globals.debug_js
+
+  # TODO: Move this interface methods to a separate Interface class
+  #
+  update_merit_order_checkbox: =>
+    $("#settings_use_merit_order").attr('checked', @settings.merit_order_enabled())
+

@@ -8,7 +8,7 @@
         <th><%= t("output_elements.tables.merit_order.position") %></th>
         <th><%= t("output_elements.tables.merit_order.available_capacity") %></th>
         <th><%= t("output_elements.tables.merit_order.flh_future") %></th>
-        <th><%= t("output_elements.tables.merit_order.profits_per_unit") %></th>
+        <th><%= t("output_elements.tables.merit_order.profits_per_mwh_electricity") %></th>
         <th></th>
       </tr>
     </thead>
@@ -24,7 +24,7 @@
           <td><%%= serie.position || '-' %></td>
           <td><%%= Metric.autoscale_value(serie.capacity, 'MW') %></td>
           <td><%%= Metric.round_number(serie.full_load_hours, 0) %></td>
-          <td><%%= Metric.autoscale_value(serie.profits_per_unit, 'euro') %></td>
+          <td><%%= Metric.autoscale_value(serie.profits_per_mwh_electricity, 'euro') %></td>
         </tr>
       <%% }) %>
     </tbody>

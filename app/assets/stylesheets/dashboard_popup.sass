@@ -75,7 +75,7 @@
     width: 100%
     margin: 10px auto
     td, th
-      padding: 5px
+      padding: 3px
       font-size: 12px
     tr
       &.profitable
@@ -84,8 +84,19 @@
         color: orange
       &.unprofitable
         color: red
-    tfoot td
-      text-align: right
+    tfoot
+      td
+        text-align: right
+        span.legend_block
+          float: left
+          display: block
+          width: 10px
+          height: 10px
+          margin: 4px 5px 0 10px
+        span.legend_label
+          float: left
+          display: block
+
 
 
 #dashboard_popup.bio_footprint

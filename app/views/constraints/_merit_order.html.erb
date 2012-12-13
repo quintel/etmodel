@@ -1,3 +1,5 @@
+<div class="description"><%= @constraint.description.try :content %></div>
+
 <div id="merit-order-table"></div>
 
 <script type="text/template" id="merit-order-table-template">
@@ -13,6 +15,16 @@
       </tr>
     </thead>
     <tfoot>
+      <tr>
+        <td colspan="6">
+          <span class="legend_block" style="background: green"></span>
+          <span class="legend_label"><%= t 'output_elements.tables.merit_order.profitable' %></span>
+          <span class="legend_block" style="background: orange"></span>
+          <span class="legend_label"><%= t 'output_elements.tables.merit_order.conditionally_profitable' %></span>
+          <span class="legend_block" style="background: red"></span>
+          <span class="legend_label"><%= t 'output_elements.tables.merit_order.unprofitable' %></span>
+        </td>
+      </tr>
       <tr><td colspan="6"><%= t 'output_elements.tables.merit_order.wood_pellet_note' %></td></tr>
     </tfoot>
     <tbody>

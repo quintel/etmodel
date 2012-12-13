@@ -5,11 +5,11 @@
 #header_inside{:style => "position: relative;"}
   %ul.sub-nav
     %li.expandable
-      %a.information{:href=>"#"}= t("header.information")
+      %a.menu_toggler.information{:href=>"#"}= t("header.information")
       = render "layouts/etm/information_menu"
 
     %li.expandable
-      %a.settings{:href=>"#"}
+      %a.menu_toggler.settings{:href=>"#"}
         = t("header.settings")
         - if has_active_scenario?
           %span.scenario_info
@@ -23,7 +23,7 @@
         %a.signout{:href=>"/logout"}= t("header.sign_out")
     - else
       %li.expandable
-        %a.signin{:href=>"#"}= t("header.sign_in")
+        %a.menu_toggler.signin{:href=>"#"}= t("header.sign_in")
         = render "layouts/etm/signin_menu"
 
     %li{:style=>'width: 190px'}

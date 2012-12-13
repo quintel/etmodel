@@ -102,7 +102,7 @@ class @AppInterface
   setup_menus: =>
     # Expand menus
     #
-    $("li.expandable > a").click (e) =>
+    $("a.menu_toggler").click (e) =>
       e.preventDefault()
       $t = $(e.target)
       is_open = $t.hasClass('menu-open')
@@ -113,8 +113,10 @@ class @AppInterface
 
     # Close menus when clicking outside them
     #
-    $(document).mouseup (e) =>
-      if $(e.target).parents(".header_menu").length == 0
+    $('body').mouseup (e) =>
+      $t = $(e.target)
+      if $t.closest(".header_menu").length == 0 &&
+         !$t.is('a.menu_toggler')
         @close_all_menus()
 
     # Menu items
@@ -122,7 +124,7 @@ class @AppInterface
     $("#disable_peak_load_tracking").live 'click', -> disable_peak_load_tracking()
 
   close_all_menus: ->
-    $('li.expandable > a').removeClass('menu-open')
+    $('a.menu_toggler').removeClass('menu-open')
     $('.header_menu').hide()
 
 

@@ -34,18 +34,18 @@ class @MeritOrder
   # Sort by two fields
   #
   sorting_function: (a,b) =>
-    pa = @profitability_index a
-    pb = @profitability_index b
-    ca = a.profits
-    cb = b.profits
+    profitability_a = @profitability_index a
+    profitability_b = @profitability_index b
+    profits_a = a.profits_per_mwh_electricity
+    profits_b = b.profits_per_mwh_electricity
     # sort by profitability (profitability < c.p < unprofitable)
-    if pa != pb
-      return -1 if pa < pb
-      return 1 if pa > pb
+    if profitability_a != profitability_b
+      return -1 if profitability_a < profitability_b
+      return  1 if profitability_a > profitability_b
     # sort by descending profits
-    return -1 if ca > cb
-    return 1 if ca < cb
-    return 0
+    return -1 if profits_a > profits_b
+    return  1 if profits_a < profits_b
+    return  0
 
   # Index used for sorting
   #

@@ -7,6 +7,7 @@ class @InputElement extends Backbone.Model
     @bind('change:user_value', @markDirty)
     @bind('change:user_value', @logUpdate)
     @bind('change:user_value', @update_collection)
+    @bind('change:user_value', @additional_callbacks)
 
   logUpdate: =>
     percent = 100 -
@@ -30,6 +31,13 @@ class @InputElement extends Backbone.Model
   markDirty: => @dirty = true
 
   setDirty: (dirty) => @dirty = dirty
+
+  # Extra event callbacks. We could also use an event-based strategy, ie
+  # triggering, when a slider is touched, a 'slider_key:changed' event.
+  #
+  additional_callbacks: ->
+    if @get('key') == 'settings_enable_merit_order'
+      App.update_merit_order_checkbox()
 
 class @InputElementList extends Backbone.Collection
   model: InputElement

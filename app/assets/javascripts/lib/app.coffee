@@ -30,9 +30,9 @@ class @AppView extends Backbone.View
     @api.ensure_id().done (id) =>
       @settings.save
         api_session_id: id
-      @setup_sliders()
 
-  # (Re)builds the list of sliders and renders them
+  # (Re)builds the list of sliders and renders them. This is usually called by
+  # play.js.erb
   #
   setup_sliders: =>
     if @input_elements
@@ -45,6 +45,7 @@ class @AppView extends Backbone.View
       success: (args...) =>
         @input_elements.initialize_user_values(args...)
         @setup_fce_toggle()
+        @setup_checkboxes()
       error: @handle_ajax_error
 
   # At this point we have all the settings initialized.
@@ -58,7 +59,6 @@ class @AppView extends Backbone.View
 
     if dashChangeEl.length > 0
       new DashboardChangerView(dashChangeEl)
-    @setup_fce()
 
     # DEBT Add check, so that boostrap is only called once.
     if @settings.get('area_code') == 'nl'
@@ -90,9 +90,14 @@ class @AppView extends Backbone.View
   scenario_url: =>
     "#{globals.api_url.replace('api/v3', 'scenarios')}/#{@scenario.api_session_id()}"
 
-  setup_fce: =>
+  setup_checkboxes: =>
+    # Prevent double event bindings
+    return if @checkboxes_initialized
+    @update_merit_order_checkbox()
     # IE doesn't bubble onChange until the checkbox loses focus
     $(document).on 'click', "#settings_use_fce", @settings.toggle_fce
+    $(document).on 'click', "#settings_use_merit_order", @settings.toggle_merit_order
+    @checkboxes_initialized = true
 
   call_api: (input_params) =>
     @api.update({
@@ -166,3 +171,9 @@ class @AppView extends Backbone.View
 
   debug: (t) ->
     console.log(t) if globals.debug_js
+
+  # TODO: Move this interface methods to a separate Interface class
+  #
+  update_merit_order_checkbox: =>
+    $("#settings_use_merit_order").attr('checked', @settings.merit_order_enabled())
+

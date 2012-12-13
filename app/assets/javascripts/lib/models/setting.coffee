@@ -43,3 +43,16 @@ class @Setting extends Backbone.Model
   merit_order_enabled: ->
     values = App.input_elements.user_values.settings_enable_merit_order
     values? && values.user == 1
+
+  toggle_merit_order: =>
+    new_value = if @merit_order_enabled() then 0 else 1
+    # if the slider is already on screen
+    if slider = App.input_elements.find_by_key 'settings_enable_merit_order'
+      slider.set 'user_value', new_value
+    # Otherwise let's update the user_values hash and fire an API request
+    else
+      App.input_elements.user_values.settings_enable_merit_order.user = new_value
+      App.call_api
+        settings_enable_merit_order: new_value
+
+    Interface.close_all_menus()

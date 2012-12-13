@@ -24,7 +24,7 @@ class @MeritOrder
         position: values.position
         capacity: values.capacity
         full_load_hours: values.full_load_hours
-        profits_per_unit: values.profits_per_unit
+        profits_per_mwh_electricity: values.profits_per_mwh_electricity
         label: @series_labels[key] || key
 
     sorted_items = items.sort(@sorting_function)

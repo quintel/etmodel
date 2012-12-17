@@ -13,13 +13,13 @@ class @MeritOrder
     tmpl = _.template $('#merit-order-table-template').html()
     items = []
     for key, values of @gquery.future_value()
-      value = if @app.settings.merit_order_enabled()
-        values.profitable
+      profitability = if @app.settings.merit_order_enabled()
+        values.profitability
       else
         'N/A'
       continue if values.capacity == 0
       items.push
-        profitable: value
+        profitability: profitability
         key: key
         position: values.position
         capacity: values.capacity
@@ -50,7 +50,7 @@ class @MeritOrder
   # Index used for sorting
   #
   profitability_index: (x) ->
-    switch x.profitable
+    switch x.profitability
       when 'profitable' then 0
       when 'conditionally_profitable' then 1
       when 'unprofitable' then 2

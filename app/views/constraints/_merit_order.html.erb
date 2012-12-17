@@ -29,7 +29,7 @@
     </tfoot>
     <tbody>
       <%% _.each(series, function(serie){ %>
-        <tr class="<%%= serie.profitable %>">
+        <tr class="<%%= serie.profitability %>">
           <td>
             <%%= I18n.t("output_elements.tables.merit_order." + serie.label) %>
           </td>

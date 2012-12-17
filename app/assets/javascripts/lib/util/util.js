@@ -40,3 +40,11 @@ var Util = {
 }
 
 Util.makeSureConsoleExists();
+
+_.extend(_, {
+  sum: function(arr) {
+    return _.reduce(arr,
+                    function(sum, v) {return sum + v;},
+                    0);
+  }
+});

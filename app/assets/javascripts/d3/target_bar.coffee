@@ -197,9 +197,9 @@ D3.target_bar =
           if !d.is_set()
             t
           else if d.successful()
-            "#{t} :)"
+            "#{t} +"
           else
-            "#{t} :("
+            "#{t} -"
         )
 
       targets.selectAll('rect.target_value')

@@ -1,8 +1,3 @@
-_.extend(_, {
-  sum: (arr) =>
-    _.reduce(arr, ((sum, v) -> sum + v), 0)
-})
-
 class @AppView extends Backbone.View
   initialize: ->
     @settings = new Setting() # At this point settings is empty!!

@@ -22,7 +22,7 @@ class Constraint extends Backbone.Model
     switch @get('key')
       when 'total_primary_energy', 'employment'
         return Metric.calculate_performance(now, fut)
-      when 'merit_order'
+      when 'profitability'
         App.merit_order.dashboard_value()
       else
         return fut
@@ -38,7 +38,7 @@ class Constraint extends Backbone.Model
     })
 
   result: ->
-    if @get('key') == 'merit_order'
+    if @get('key') == 'profitability'
       App.merit_order.dashboard_value()
     else
       @get('result')

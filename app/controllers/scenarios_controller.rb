@@ -88,7 +88,14 @@ class ScenariosController < ApplicationController
   def play
     @selected_slide_key = params[:slide] || @interface.current_slide.short_name
     respond_to do |format|
-      format.html { render :layout => 'etm'}
+      format.html {
+        # redirect user to hash-based URL
+        if params[:tab]
+          redirect_to_hash_url and return
+        else
+          render :layout => 'etm'
+        end
+      }
       format.js
     end
   end
@@ -129,10 +136,15 @@ class ScenariosController < ApplicationController
       end
     end
 
-
     def prevent_browser_cache
       response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
       response.headers["Pragma"] = "no-cache"
       response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+    end
+
+    def redirect_to_hash_url
+      tab_key = @interface.current_tab.key
+      sidebar_key = @interface.current_sidebar_item.key
+      redirect_to play_path(anchor: "#{tab_key}/#{sidebar_key}")
     end
 end

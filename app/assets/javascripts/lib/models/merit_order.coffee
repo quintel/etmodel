@@ -1,7 +1,7 @@
 class @MeritOrder
   constructor: (app) ->
     @app = app
-    @gquery = gqueries.find_or_create_by_key 'dashboard_merit_order'
+    @gquery = gqueries.find_or_create_by_key 'dashboard_profitability'
 
   dashboard_value: =>
     return null unless @app.settings.merit_order_enabled()

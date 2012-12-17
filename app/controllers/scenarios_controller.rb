@@ -4,7 +4,8 @@ class ScenariosController < ApplicationController
   before_filter :require_user, :only => [:index, :new]
   before_filter :load_interface,
                 :store_last_etm_page,
-                :load_constraints, :only => :play
+                :load_constraints,
+                :prevent_browser_cache, :only => :play
 
   def index
     items = if current_user.admin?
@@ -126,5 +127,12 @@ class ScenariosController < ApplicationController
       else
         Constraint.default.ordered
       end
+    end
+
+
+    def prevent_browser_cache
+      response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
+      response.headers["Pragma"] = "no-cache"
+      response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
     end
 end

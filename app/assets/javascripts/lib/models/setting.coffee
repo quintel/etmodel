@@ -54,5 +54,3 @@ class @Setting extends Backbone.Model
       App.input_elements.user_values.settings_enable_merit_order.user = new_value
       App.call_api
         settings_enable_merit_order: new_value
-
-    Interface.close_all_menus()

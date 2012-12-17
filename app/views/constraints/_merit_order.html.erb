@@ -36,7 +36,7 @@
           <td><%%= serie.position || '-' %></td>
           <td><%%= Metric.autoscale_value(serie.capacity, 'MW') %></td>
           <td><%%= Metric.round_number(serie.full_load_hours, 0) %></td>
-          <td><%%= Metric.autoscale_value(serie.profits_per_mwh_electricity, 'euro') %></td>
+          <td><%%= Metric.autoscale_value(serie.profit_per_mwh_electricity, 'euro') %></td>
         </tr>
       <%% }) %>
     </tbody>

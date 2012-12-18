@@ -22,7 +22,7 @@
             %p
               = search_result_description(result)
               %br
-              = link_to t('search.jump_to_page'), tab_path(:tab => result.tab.key, :sidebar => result.key)
+              = link_to t('search.jump_to_page'), play_path(:tab => result.tab.key, :sidebar => result.key)
 
   - unless @input_elements.empty?
     %h2 Sliders
@@ -38,7 +38,7 @@
               - if result.description
                 = link_to t('search.full_description'), result.description, :class => 'fancybox'
                 |
-              = link_to t('search.jump_to_page'), result.url
+              = link_to t('search.jump_to_page'), play_path(:tab => result.slide.sidebar_item.tab.key, :sidebar => result.slide.sidebar_item.key)
 
   - unless @slides.empty?
     %h2 Slides
@@ -56,7 +56,7 @@
               - if result.description
                 = link_to t('search.full_description'), result.description, :class => 'fancybox'
                 |
-              = link_to t('search.jump_to_page'), result.url
+              = link_to t('search.jump_to_page'), play_path(:tab => result.sidebar_item.tab.key, :sidebar => result.sidebar_item.key)
 
 #search_results_from_reference_manager
   - if [@pages, @input_elements, @slides].flatten.empty?

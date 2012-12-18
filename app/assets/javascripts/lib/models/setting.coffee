@@ -41,8 +41,13 @@ class @Setting extends Backbone.Model
 
   # Is MO enabled?
   merit_order_enabled: ->
-    values = App.input_elements.user_values.settings_enable_merit_order
-    values? && values.user == 1
+    try
+      values = App.input_elements.user_values.settings_enable_merit_order
+      values? && values.user == 1
+    catch error
+      # handles uninitialized user values hash.
+      # TODO: use deferred object
+      false
 
   toggle_merit_order: =>
     new_value = if @merit_order_enabled() then 0 else 1

@@ -121,7 +121,9 @@ class @AppInterface
 
     # Menu items
     #
-    $("#disable_peak_load_tracking").live 'click', -> disable_peak_load_tracking()
+    $("#disable_peak_load_tracking").live 'click', ->
+      if App.peak_load
+        App.peak_load.disable_peak_load_tracking()
 
   close_all_menus: ->
     $('a.menu_toggler').removeClass('menu-open')

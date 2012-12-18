@@ -1,74 +1,21 @@
-$ ->
-  # TODO: check if this is still needed, was added for an old bug - PZ
-  if _.include(['iPad', 'iPhone', 'iPod'], navigator.platform)
-    $("#footer").css("position", "static")
-
-  if $.browser.msie
-    # A 1px increase fixes some bad aliasing when resizing the image down
-    # to non-HiDPI resolutions.
-    $('#header_inside img[src$="@2x.png"]').attr(width: '401')
-
-  # Adds "Search" to the search field for browsers which do not support the
-  # "placeholder" attribute.
-  unless Modernizr.input.placeholder
-    search      = $("#header_inside input[name=q]")
-    placeholder = search.attr('placeholder')
-
-    if search.val()?.length is 0
-      search.val(placeholder)
-
-    search.focus ->
-      # Remove the search field value only if it matches the placeholder;
-      # we do not want to erase the users search text.
-      search.val('') if search.val() is placeholder
-
-    search.blur ->
-      value = search.val() or ''
-
-      # Similarly, only add the placeholder back if the user did not enter
-      # a value.
-      if value.length is 0 or value is placeholder or not value.match(/\S/)
-        search.val(placeholder)
-
-  # locale select box
-  $("select#locale").change ->
-    $.ajax
-      url: "/set_locale"
-      method: "PUT"
-      data:
-        locale: $(this).val()
-      success: -> window.location.reload()
-
-  # Is this thing still used?
-  $("select[name='area_code']").change ->
-    country = $(this).val()
-    url = "/update_footer/?country=" + country
-    $.ajax
-      url: url
-      method: 'get'
-      success: (data) ->
-        $("#logos").replaceWith(data)
-        Interface.call_the_cyclists()
-
-  # Tooltips. Works with AJAX-injected content, too
-  #
-  $(document).on 'mouseover', 'a.tooltip', (e) ->
-    $(this).qtip {
-      overwrite: false
-      content: -> $(this).attr('title')
-      show:
-        event: e.type
-        ready: true
-      position:
-        my: 'bottom right'
-        at: 'top center'
-      style:
-        classes: "ui-tooltip-tipsy"
-      }, e
-
-class @AppInterface
+class @CommonInterface
   constructor: ->
     @setup_menus()
+    @setup_home_menu()
+    @setup_tooltips()
+    @setup_browser_tweaks()
+    @call_the_cyclists()
+
+  setup_home_menu: ->
+    $("select[name='area_code']").change ->
+      country = $(this).val()
+      url = "/update_footer/?country=" + country
+      $.ajax
+        url: url
+        method: 'get'
+        success: (data) ->
+          $("#logos").replaceWith(data)
+          Interface.call_the_cyclists()
 
   set_active_movie_tab: (page) ->
     $(".movie_tabs li").removeClass 'active'
@@ -83,6 +30,8 @@ class @AppInterface
     else
       $('#other_year').hide()
 
+  # footer logos rotation
+  #
   call_the_cyclists: ->
     if $("#logos ul.left li").length > 1
       $("#logos ul.left").cycle
@@ -125,11 +74,67 @@ class @AppInterface
       if App.peak_load
         App.peak_load.disable_peak_load_tracking()
 
+    $("select#locale").change ->
+      $.ajax
+        url: "/set_locale"
+        method: "PUT"
+        data:
+          locale: $(this).val()
+        success: -> window.location.reload()
+
+
   close_all_menus: ->
     $('a.menu_toggler').removeClass('menu-open')
     $('.header_menu').hide()
 
+  # Tooltips. Works with AJAX-injected content, too
+  #
+  setup_tooltips: ->
+    $(document).on 'mouseover', 'a.tooltip', (e) ->
+      $(this).qtip {
+        overwrite: false
+        content: -> $(this).attr('title')
+        show:
+          event: e.type
+          ready: true
+        position:
+          my: 'bottom right'
+          at: 'top center'
+        style:
+          classes: "ui-tooltip-tipsy"
+        }, e
+
+  setup_browser_tweaks: ->
+    # TODO: check if this is still needed, was added for an old bug - PZ
+    if _.include(['iPad', 'iPhone', 'iPod'], navigator.platform)
+      $("#footer").css("position", "static")
+
+    if $.browser.msie
+      # A 1px increase fixes some bad aliasing when resizing the image down
+      # to non-HiDPI resolutions.
+      $('#header_inside img[src$="@2x.png"]').attr(width: '401')
+
+    # Adds "Search" to the search field for browsers which do not support the
+    # "placeholder" attribute.
+    unless Modernizr.input.placeholder
+      search      = $("#header_inside input[name=q]")
+      placeholder = search.attr('placeholder')
+
+      if search.val()?.length is 0
+        search.val(placeholder)
+
+      search.focus ->
+        # Remove the search field value only if it matches the placeholder;
+        # we do not want to erase the users search text.
+        search.val('') if search.val() is placeholder
+
+      search.blur ->
+        value = search.val() or ''
+
+        # Similarly, only add the placeholder back if the user did not enter
+        # a value.
+        if value.length is 0 or value is placeholder or not value.match(/\S/)
+          search.val(placeholder)
 
 $ ->
-  window.Interface = new AppInterface()
-  Interface.call_the_cyclists()
+  window.Interface = new CommonInterface()

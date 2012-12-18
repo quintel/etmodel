@@ -36,12 +36,23 @@ class @AppView extends Backbone.View
       InputElement.Balancer.balancers = {}
     @input_elements = new InputElementList()
     @input_elements.on "change", @handleInputElementsUpdate
-    @api.user_values
-      success: (args...) =>
+    @user_values()
+      .done (args...) =>
         @input_elements.initialize_user_values(args...)
         @setup_fce_toggle()
         @setup_checkboxes()
-      error: @handle_ajax_error
+      .fail @handle_ajax_error
+
+  # Returns a deferred object on which the .done() method can be called
+  #
+  user_values: =>
+    return @_user_values_dfd if @_user_values_dfd
+    @_user_values_dfd = $.Deferred (dfd) =>
+      @api.user_values
+        success: (args...) ->
+          dfd.resolve(args...)
+        fail: @handle_ajax_error
+    @_user_values_dfd
 
   # At this point we have all the settings initialized.
   bootstrap: =>

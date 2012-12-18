@@ -78,7 +78,7 @@ class ScenariosController < ApplicationController
     redirect_to play_path
   end
 
-  # GET /scenarios/grid_investment_needed
+  # GET /scenario/grid_investment_needed
   def grid_investment_needed
     render :layout => false
   end

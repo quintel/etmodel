@@ -36,8 +36,8 @@ class @MeritOrder
   sorting_function: (a,b) =>
     profitability_a = @profitability_index a
     profitability_b = @profitability_index b
-    profits_a = a.profits_per_mwh_electricity
-    profits_b = b.profits_per_mwh_electricity
+    profits_a = a.profit_per_mwh_electricity
+    profits_b = b.profit_per_mwh_electricity
     # sort by profitability (profitability < c.p < unprofitable)
     if profitability_a != profitability_b
       return -1 if profitability_a < profitability_b

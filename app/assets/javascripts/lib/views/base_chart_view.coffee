@@ -50,6 +50,7 @@ class @BaseChartView extends Backbone.View
     @$el.attr('data-block_ui_on_refresh', @block_ui_on_refresh())
     @$el.find('a.chart_info').toggle(@model.get('has_description'))
     @$el.find(".actions a.chart_info").attr "href", "/descriptions/charts/#{id}"
+    @$el.find(".actions a.zoom_chart").attr "href", "/output_elements/#{id}/zoom"
     @$el.find("a.chart_format, a.table_format").hide()
     if @model.can_be_shown_as_table()
       if @model.get 'as_table'

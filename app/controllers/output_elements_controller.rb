@@ -1,18 +1,19 @@
 class OutputElementsController < ApplicationController
   layout false
 
+  before_filter :find_output_element, :only => [:show, :zoom]
+
   # Returns all the data required to show a chart.
   # JSON only
   def show
-    chart = OutputElement.find(params[:id])
-    template = if tmpl = chart.template
-      render_to_string(:partial => tmpl, :locals => {:output_element => chart})
+    template = if tmpl = @chart.template
+      render_to_string(:partial => tmpl, :locals => {:output_element => @chart})
     else
      nil
    end
     render :status => :ok, :json => {
-      :attributes => chart.options_for_js,
-      :series => chart.allowed_output_element_series.map(&:options_for_js),
+      :attributes => @chart.options_for_js,
+      :series => @chart.allowed_output_element_series.map(&:options_for_js),
       :html => template
     }
   end
@@ -40,5 +41,15 @@ class OutputElementsController < ApplicationController
   def visible
     session[params[:id]] = 'visible'
     render :js => ""
+  end
+
+  def zoom
+  end
+
+  private
+
+  def find_output_element
+    @as_table = params[:format] == 'table'
+    @chart = OutputElement.find(params[:id])
   end
 end

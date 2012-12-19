@@ -1,6 +1,6 @@
 # This table is very different from the other ones, so the class has to
 # override the render method
-class @PlantsProfitabilityTableView extends HtmlTableChartView
+class @PlantProfitabilityTableView extends HtmlTableChartView
   initialize: ->
     @initialize_defaults()
     @gquery = gqueries.find_or_create_by_key 'dashboard_profitability'

@@ -54,7 +54,6 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
-  config.include CustomMatchers
   config.include Webrat::Matchers
   config.include EtmAuthHelper
   config.include Authlogic::TestCase

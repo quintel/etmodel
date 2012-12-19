@@ -17,6 +17,7 @@ $ ->
   q = gqueries.find_or_create_by_key('dashboard_bio_footprint')
   present = q.safe_present_value()
   future  = q.safe_future_value()
-  $("div.present .overlay").css('width', "#{70 * present}px")
-  $("div.future  .overlay").css('width', "#{70 * future }px")
+  $("div.present .overlay").width(70 * present)
+  $("div.future  .overlay").width(70 * future )
+  true
 

@@ -258,8 +258,8 @@ class @ChartList extends Backbone.Collection
         autoSize: false
         href: url
         type: 'ajax'
-        width: 900
-        height: 480
+        width: 1100
+        height: 680
         padding: 0
         beforeClose: ->
           # don't leave stale charts around!

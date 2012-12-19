@@ -15,8 +15,7 @@ class @HtmlTableChartView extends BaseChartView
     @container_node().html(@table_html())
     @fill_cells()
     @resize_container()
-    # sort rows on merit order chart
-    @merit_order_sort() if @model.get("key") == 'merit_order_table'
+    @after_render()
 
   # The table HTML is provided by the rails app.
   #
@@ -67,19 +66,6 @@ class @HtmlTableChartView extends BaseChartView
 
   can_be_shown_as_table: -> false
 
-  merit_order_sort: =>
-    # get rid of rows with -1 merit order position
-    rows = @container_node().find("tbody tr")
-    rows = _.reject rows, (item) => @merit_order_position(item) == -1
-    unless App.settings.merit_order_enabled()
-      # hide items with 0 capacity
-      rows = _.reject rows, (item) -> +$(item).find('td.capacity').text() == 0
-    rows = _.sortBy rows, @merit_order_position
-    @container_node().find("tbody").html(rows)
+  # Derived classes can override this
+  after_render: => true
 
-  # custom method to sort merit order table
-  merit_order_position: (item) ->
-    klass = if App.settings.merit_order_enabled() then 'position' else 'cost'
-    val = $(item).find("td.#{klass}").text()
-    val = 0 if val == '-'
-    +val

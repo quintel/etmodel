@@ -248,3 +248,20 @@ class @ChartList extends Backbone.Collection
     $(document).on 'click', 'a.default_chart', (e) =>
       e.preventDefault()
       @load_default()
+
+    # Zoom chart
+    #
+    $(document).on 'click', 'a.zoom_chart', (e) =>
+      e.preventDefault()
+      url = $(e.target).attr('href')
+      $.fancybox.open
+        autoSize: false
+        href: url
+        type: 'ajax'
+        width: 900
+        height: 480
+        padding: 0
+        beforeClose: ->
+          # don't leave stale charts around!
+          charts.prune()
+

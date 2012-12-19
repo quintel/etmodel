@@ -99,6 +99,7 @@ Etm::Application.routes.draw do
       get :visible
       get :invisible
     end
+    get :zoom, :on => :member
   end
 
   resources :predictions, :only => [:index, :show] do

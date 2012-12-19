@@ -253,7 +253,10 @@ class @ChartList extends Backbone.Collection
     #
     $(document).on 'click', 'a.zoom_chart', (e) =>
       e.preventDefault()
-      url = $(e.target).attr('href')
+      holder_id = $(e.target).parents(".chart_holder").data('holder_id')
+      chart = @chart_in_holder holder_id
+      format = if chart.get('as_table') == true then 'table' else 'chart'
+      url = "#{$(e.target).attr('href')}?format=#{format}"
       $.fancybox.open
         autoSize: false
         href: url

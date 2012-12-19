@@ -1,0 +1,1 @@
+class @MeritOrderTableView extends HtmlTableChartView

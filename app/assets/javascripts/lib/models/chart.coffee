@@ -60,13 +60,13 @@ class @Chart extends Backbone.Model
       when 'block'                  then BlockChartView
       when 'co2_emissions'
         if d3_support then D3.co2_emissions.View else CO2EmissionsChartView
-      when 'html_table'             then HtmlTableChartView
+      when 'html_table'             then @table_view_factory()
       when 'scatter'
         if d3_support then D3.scatter.View else ScatterChartView
       when 'sankey'                 then D3.sankey.View
       when 'target_bar'             then D3.target_bar.View
       when 'd3'                     then @d3_view_factory()
-      else HtmlTableChartView
+      else throw "Chart type not available"
 
   # D3 charts have their own class. Let's make an instance of the right one
   # D3 is a pseudo-namespace. See d3_chart_view.coffee
@@ -77,6 +77,12 @@ class @Chart extends Backbone.Model
       D3[key].View
     else
       throw "No such D3 chart: #{ key }"
+
+  # Some tables have a different behaviour and inherit from the common class
+  table_view_factory: =>
+    switch @get('key')
+      when 'merit_order_table' then MeritOrderTableView
+      else HtmlTableChartView
 
   # -- DOM and interface -----------------------------------------------------
 

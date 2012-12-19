@@ -1,20 +1,13 @@
 #dashboard_popup
   margin: 0px
-  padding: 10px
-  width: 680px
   height: 460px
   overflow: hidden
-  font: 13px/20px $body_font_family
-  background-color: #DBE4F2
+  background-color: #fff
   h2
-    background-color: #63A1C9
-    font-family: $title_font_family
-    color: #FFFFFF
-    padding: 7px 5px
-    margin: 0px
-    font-weight: normal
-  h3
-    font-family: $title_font_family
+    background-color: #dfe8f3
+    color: #224368
+    padding: 10px
+    margin: 0
   .description
     text-align: left
     padding: 7px
@@ -54,9 +47,7 @@
       text-align: left
     tr
       &.even
-        background: #fff
-      &.odd
-        background: none
+        background: #eee
       td
         margin: 0
         border: 0
@@ -80,8 +71,8 @@
 
   table.profitability
     background: white
-    width: 100%
-    margin: 10px auto
+    width: 685px
+    margin: 10px
     td, th
       padding: 1px 2px
       font-size: 11px
@@ -105,10 +96,21 @@
           float: left
           display: block
 
-
-
 #dashboard_popup.bio_footprint
-  .present, .future
-    margin-left: 10px
+  .item
+    margin-left: 30px
+    position: relative
+    .present, .future
+      position: relative
+      height: 105px
+      width: 70px
+      .overlay
+        height: 105px
+    h3
+      position: absolute
+      left: 0
+      top: 0
+      margin: 0
+      padding: 0
   .present
     margin-top: 20px

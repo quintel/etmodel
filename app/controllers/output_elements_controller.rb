@@ -49,6 +49,7 @@ class OutputElementsController < ApplicationController
   private
 
   def find_output_element
+    @as_table = params[:format] == 'table'
     @chart = OutputElement.find(params[:id])
   end
 end

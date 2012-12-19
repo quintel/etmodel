@@ -662,4 +662,38 @@ http_interactions:
       string: "{\"errors\":[\"Scenario not found\"]}"
     http_version: 
   recorded_at: Tue, 18 Dec 2012 14:22:53 GMT
+- request: 
+    method: put
+    uri: http://etengine.dev/api/v3/scenarios/131303
+    body: 
+      encoding: US-ASCII
+      string: autobalance=true&scenario[use_fce]=null&gqueries[]=dashboard_profitability&gqueries[]=share_of_households_in_final_demand&gqueries[]=peak_load_check_lv&gqueries[]=peak_load_check_mv_lv&gqueries[]=peak_load_check_mv&gqueries[]=peak_load_check_hv_mv&gqueries[]=peak_load_check_hv&gqueries[]=peak_load_check_total
+    headers: {}
+
+  response: 
+    status: 
+      code: 404
+      message: Not Found
+    headers: 
+      Content-Type: 
+      - application/json; charset=utf-8
+      X-Ua-Compatible: 
+      - IE=Edge,chrome=1
+      Cache-Control: 
+      - no-cache
+      X-Request-Id: 
+      - e46cfe183c3e639bc3b511148fc9ee06
+      X-Runtime: 
+      - "0.020540"
+      Date: 
+      - Wed, 19 Dec 2012 14:51:46 GMT
+      X-Rack-Cache: 
+      - invalidate, pass
+      Connection: 
+      - close
+    body: 
+      encoding: US-ASCII
+      string: "{\"errors\":[\"Scenario not found\"]}"
+    http_version: 
+  recorded_at: Wed, 19 Dec 2012 14:51:46 GMT
 recorded_with: VCR 2.3.0

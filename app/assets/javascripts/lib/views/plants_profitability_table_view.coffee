@@ -1,3 +1,5 @@
+# This table is very different from the other ones, so the class has to
+# override the render method
 class @PlantsProfitabilityTableView extends HtmlTableChartView
   initialize: ->
     @initialize_defaults()

@@ -5,6 +5,9 @@
 # Old table charts still use gqueries defined in the db and arrange them in rows
 # using the `order_by` attribute. Those should be converted.
 #
+# Some items require custom adaptations; to keep things clean they will
+# be a subclass of this one
+#
 class @HtmlTableChartView extends BaseChartView
   initialize : ->
     @initialize_defaults()

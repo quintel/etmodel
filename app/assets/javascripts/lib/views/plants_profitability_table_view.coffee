@@ -1,0 +1,1 @@
+class @PlantsProfitabilityTableView extends HtmlTableChartView

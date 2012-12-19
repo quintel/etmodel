@@ -1,0 +1,13 @@
+#zoomed_chart
+  %h2= t "output_elements.#{@chart.key}"
+
+  #zoomed_chart_wrapper
+
+  :javascript
+    $(function(){
+      App.charts.load(#{@chart.id}, null, {
+        wrapper: '#zoomed_chart_wrapper',
+        prunable: true,
+        header: false
+      });
+    });

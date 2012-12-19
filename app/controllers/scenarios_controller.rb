@@ -119,8 +119,8 @@ class ScenariosController < ApplicationController
     end
 
     def store_last_etm_page
-      tab_key = @interface.current_tab.key
-      sidebar_key = @interface.current_sidebar_item.key
+      tab_key     = @interface.current_tab.key rescue nil
+      sidebar_key = @interface.current_sidebar_item.key rescue nil
       Current.setting.last_etm_page = url_for(controller: 'scenarios',
                                               action: 'play',
                                               anchor: "#{tab_key}/#{sidebar_key}")

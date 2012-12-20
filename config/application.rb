@@ -32,7 +32,6 @@ module Etm
     # so we need to load them here. This is only for classes
     # that belong together but where it didn't make sense to
     # put them in a module.
-    config.autoload_paths += Dir["#{Rails.root}/app/controllers/application_controller"]
     config.autoload_paths += Dir["#{Rails.root}/lib"]
 
     config.active_support.deprecation = :log

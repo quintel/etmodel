@@ -164,9 +164,9 @@ D3.merit_order =
         .attr("width", (d) => @x(d.value_x()))
         .attr("y", (d) =>
           if (h = @y(d.value_y())) < @min_node_height
-            @height - @min_node_height
+            @series_height - @min_node_height
           else
-            @height - h
+            @series_height - h
         )
         .attr("x", (d) => @x(d.get 'x_offset'))
         .attr("data-tooltip-text", (d) ->

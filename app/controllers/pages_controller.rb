@@ -21,14 +21,19 @@ class PagesController < ApplicationController
     @other_locale = english? ? "nl" : "en"
   end
 
-  # popup with the text description
+  # Popup with the text description. This is confusing because the title can
+  # be defined in a Text object or in the standard translation files, while
+  # the description is a normal description object.
+  #
   def info
+    ctrl = params[:ctrl]
+    act  = params[:act]
     # The description belongs to a sidebar item. Ugly!
-    s = SidebarItem.find_by_section_and_key(params[:ctrl], params[:act])
+    s = SidebarItem.find_by_section_and_key(ctrl, act)
 
     # The title is stored in an object
-    @title = Text.find_by_key("#{params[:ctrl]}_#{params[:act]}").try(:title) ||
-      t("sidebar_items.#{s.key}.long_name")
+    @title = Text.find_by_key("#{ctrl}_#{act}").try(:title) ||
+      t("sidebar_items.#{s.key}.long_name") rescue nil
 
     @description = s.description.try(:content) if s
     render :layout => false

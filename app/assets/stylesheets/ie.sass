@@ -1,12 +1,6 @@
 * html body
   :width expression(document.documentElement.clientWidth < 980 ? "980px" : "auto")
 
-* html #content .col2 .accordion .slide
-  :zoom 1
-
-* html#content .col2 .accordion .headline a
-  :zoom 1
-
 footer ul
   :margin-left expression(this.parentNode.offsetWidth > this.offsetWidth ? ((this.parentNode.offsetWidth-this.offsetWidth)/2 + "px") : "0")
 
@@ -19,3 +13,21 @@ header#main .frame
 #content.content-inner
   // :width expression(document.documentElement.clientWidth < 960 ? "960px" : "auto"&&document.documentElement.clientWidth > 1259 ? "1259px" : "auto");
 
+// IE7 - Are we still supporting this?
+
+.new-input-slider .value-selector
+  input
+    padding: 9px 12px 3px 5px
+  button
+    padding: 6px 10px 4px
+  .conversion
+    padding: 6px 12px 4px 0
+
+
+.quinn.disabled .bar .left, .quinn.disabled .bar .main,
+.quinn.disabled .bar .right, .quinn.disabled .active-bar .left,
+.quinn.disabled .active-bar .main, .quinn.disabled .active-bar .right,
+.quinn.disabled .handle, .quinn.disabled .reset, .quinn.disabled .minus,
+.quinn.disabled .plus, .quinn.disabled .help
+  background-image: url(/assets/slider/quinn-ie-disabled.png)
+  background-repeat: no-repeat

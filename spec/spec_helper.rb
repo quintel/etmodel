@@ -3,8 +3,13 @@ ENV["RAILS_ENV"] = 'test'
 if ENV["COVERAGE"]
   require 'simplecov'
   SimpleCov.start do
+    add_filter 'spec/'
     add_group "Models", "app/models"
-    add_group "Controllers", "app/controllers"
+    add_group "Controllers" do |src|
+      src.filename.include?('app/controllers') and
+      not src.filename.include?('app/controllers/admin')
+    end
+    add_group "Admin Controllers", "app/controllers/admin"
   end
 end
 

@@ -207,6 +207,19 @@ class @ChartList extends Backbone.Collection
   # prevents memory leaks and will be called just once.
   #
   setup_callbacks: ->
+    # Launch the chart picker popup
+    #
+    $(document).on "click", "a.select_chart, a.add_chart", (e) ->
+      e.preventDefault()
+      url = $(this).attr('href')
+      $.fancybox.open
+        autoSize: false
+        href: url
+        type: 'ajax'
+        width: 1150
+        height: 700
+        padding: 0
+
     # Pick a chart from the chart picker popup
     #
     $(document).on "click", "div.pick_chart", (e) =>

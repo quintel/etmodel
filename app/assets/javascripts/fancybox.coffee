@@ -10,13 +10,6 @@ $ ->
   $("a.fancybox_image").fancybox
     type: 'image'
 
-  $("a.select_chart").fancybox
-    href: $(this).attr('href')
-    type: 'ajax'
-    width    : 960
-    height   : 600
-    padding: 0
-
   $("a.prediction").fancybox
     href: $(this).attr('href')
     width    : 960

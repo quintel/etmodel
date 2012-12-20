@@ -58,4 +58,28 @@ describe PagesController, :vcr => true do
       I18n.locale.should == :nl
     end
   end
+
+  describe "#choose" do
+    it "should render correctly" do
+      get :choose
+      expect(response).to be_success
+      expect(response).to render_template(:choose)
+    end
+  end
+
+  describe "#famous_users" do
+    it "should render correctly" do
+      get :famous_users
+      expect(response).to be_success
+      expect(response).to render_template(:famous_users)
+    end
+  end
+
+  describe "#press_releases" do
+    it "should render correctly" do
+      get :press_releases
+      expect(response).to be_success
+      expect(response).to render_template(:press_releases)
+    end
+  end
 end

@@ -15,13 +15,10 @@ class @Setting extends Backbone.Model
     # Old scenarios may provide "null" instead of true/false, and this causes
     # the FCE warning to toggle on.
     use_fce = false unless use_fce is true
-
-    # Status change may be triggered by things other than the checkbox.
     $('#settings_use_fce').attr('checked', use_fce)
-
     $('.fce_notice').toggle(use_fce)
 
-    App.settings.save use_fce: use_fce
+    @save use_fce: use_fce
     App.call_api()
 
     # update dashboard item text
@@ -32,9 +29,8 @@ class @Setting extends Backbone.Model
         else
           I18n.t 'constraints.co2_reduction.label' )
 
-  toggle_peak_load_tracking: ->
-    App.settings.save
-      track_peak_load: $("#track_peak_load_settings").is(':checked')
+  toggle_peak_load_tracking: =>
+    @save track_peak_load: $("#track_peak_load_settings").is(':checked')
 
   # Used by the bio-footprint dashboard item
   country: => @get('area_code').split('-')[0]

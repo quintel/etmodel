@@ -89,6 +89,7 @@ Etm::Application.routes.draw do
     get :load, :on => :member
   end
 
+  match '/scenario/new' => 'scenarios#new'
   match '/scenario/reset' => 'scenarios#reset'
   match '/scenario/grid_investment_needed' => 'scenarios#grid_investment_needed'
   # This is the main action

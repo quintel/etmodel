@@ -1,11 +1,9 @@
 class @AppView extends Backbone.View
   initialize: ->
-    @settings = new Setting() # At this point settings is empty!!
-    @settings.set({api_session_id: globals.api_session_id})
-
-    @sidebar = new SidebarView()
-    @scenario = new Scenario()
-    @router = new Router()
+    @settings    = new Setting({api_session_id: globals.api_session_id})
+    @sidebar     = new SidebarView()
+    @scenario    = new Scenario()
+    @router      = new Router()
     @merit_order = new MeritOrder(this)
     Backbone.history.start()
 
@@ -56,13 +54,12 @@ class @AppView extends Backbone.View
 
   # At this point we have all the settings initialized.
   bootstrap: =>
-    dashChangeEl = $('#dashboard_change')
-
     @sidebar.bootstrap()
     # If a "change dashboard" button is present, set up the DashboardChanger.
 
     @router.load_default_slides()
 
+    dashChangeEl = $('#dashboard_change')
     if dashChangeEl.length > 0
       new DashboardChangerView(dashChangeEl)
 
@@ -77,7 +74,6 @@ class @AppView extends Backbone.View
 
     # initial charts render, takes care of locked charts
     @charts.load_charts()
-
 
   setup_fce_toggle: ->
     if element = $('.slide .fce-toggle')
@@ -106,14 +102,13 @@ class @AppView extends Backbone.View
     @checkboxes_initialized = true
 
   call_api: (input_params) =>
-    @api.update({
+    @api.update
       queries:  window.gqueries.keys(),
       inputs:   input_params,
       settings:
         use_fce: App.settings.get('use_fce')
       success:  @handle_api_result
       error:    @handle_ajax_error
-    })
 
   handle_ajax_error: (jqXHR, textStatus, error) ->
     console.log("Something went wrong: " + textStatus)
@@ -135,7 +130,7 @@ class @AppView extends Backbone.View
       if gquery = window.gqueries.with_key(key)
         gquery.handle_api_result(values)
 
-    window.charts.invoke 'trigger', 'refresh'
+    @charts.invoke 'trigger', 'refresh'
     if t = window.targets
       t.invoke('update_view')
       t.update_totals()
@@ -182,4 +177,3 @@ class @AppView extends Backbone.View
   #
   update_merit_order_checkbox: =>
     $("#settings_use_merit_order").attr('checked', @settings.merit_order_enabled())
-

@@ -60,7 +60,7 @@ group :test do
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'launchy'
-  gem 'vcr'
+  gem 'vcr', '~> 2.4.0'
 end
 
 group :production do

@@ -289,7 +289,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    vcr (2.3.0)
+    vcr (2.4.0)
     watchr (0.7)
     webmock (1.8.9)
       addressable (>= 2.2.7)
@@ -357,7 +357,7 @@ DEPENDENCIES
   tomdoc
   uglifier
   unicorn
-  vcr
+  vcr (~> 2.4.0)
   watchr
   webmock (~> 1.8.0)
   webrat

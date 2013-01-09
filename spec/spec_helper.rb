@@ -64,7 +64,6 @@ RSpec.configure do |config|
   config.include Authlogic::TestCase
   config.include Capybara::DSL
   config.include Capybara::RSpecMatchers
-  config.extend VCR::RSpec::Macros
 
   Sunspot.session = Sunspot::Rails::StubSessionProxy.new(Sunspot.session)
 end

@@ -42,6 +42,7 @@ Etm::Application.routes.draw do
               :slides,
               :sidebar_items,
               :texts,
+              :output_elements,
               :output_element_series,
               :general_user_notifications,
               :constraints,
@@ -72,9 +73,6 @@ Etm::Application.routes.draw do
       collection do
         post :upload
       end
-    end
-    resources :output_elements do
-      get :all, :on => :collection
     end
 
     resources :input_elements, :except => :show

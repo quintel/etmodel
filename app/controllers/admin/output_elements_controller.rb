@@ -10,10 +10,6 @@ class OutputElementsController < BaseController
     @types = OutputElementType.all
   end
 
-  def all
-    @output_elements = OutputElement.all
-  end
-
   def new
     @output_element = OutputElement.new
     @output_element.build_description

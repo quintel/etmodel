@@ -5,7 +5,6 @@ require 'uri'
 #
 class ApiProxyController < ApplicationController
   def default
-    Rails.logger.debug "*** #{params}"
     uri = "/#{params[:url]}"
     uri += ".#{params[:format]}" if params[:format]
     parameters = params.except('controller', 'action', 'url', 'format')

@@ -43,7 +43,6 @@ Etm::Application.routes.draw do
               :sidebar_items,
               :texts,
               :output_element_series,
-              :converter_positions,
               :general_user_notifications,
               :constraints,
               :descriptions,
@@ -123,7 +122,6 @@ Etm::Application.routes.draw do
   match '/privacy_statement'            => 'pages#privacy_statement'
   match '/show_all_countries'           => 'pages#show_all_countries'
   match '/show_flanders'                => 'pages#show_flanders'
-  match '/municipalities'               => 'pages#municipalities'
   match '/sitemap(.:format)'            => 'pages#sitemap', :defaults => {:format => :xml}
   match '/known_issues'                 => 'pages#bugs',        :as => :bugs
   match '/set_locale(/:locale)' => 'pages#set_locale', :as => :set_locale
@@ -132,5 +130,4 @@ Etm::Application.routes.draw do
 
   match "/404", :to => "pages#404"
   match "/500", :to => "pages#500"
-
 end

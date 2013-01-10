@@ -2,7 +2,7 @@
 
 %p= link_to 'Create new slider', new_admin_input_element_path
 
-%table.default.admin
+%table.default.admin.autostripe
   %thead
     %tr
       %th.tal id
@@ -16,7 +16,7 @@
 
   %tbody
     - @input_elements.each do |i|
-      %tr{cycles}
+      %tr
         %td= i.id
         %td= i.slide.try :short_name
         %td= t "input_elements.#{i.key}"

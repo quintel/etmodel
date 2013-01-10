@@ -1,4 +1,4 @@
-%table.default
+%table.default.autostripe
   %thead
     %tr
       %th Id
@@ -8,7 +8,7 @@
       %th
   %tbody
     - @sidebar_items.each do |s|
-      %tr{cycles}
+      %tr
         %td= s.id
         %td= s.key
         %td= s.section

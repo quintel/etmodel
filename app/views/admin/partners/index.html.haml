@@ -1,6 +1,6 @@
 %h2 Partners Index
 
-%table.default
+%table.default.autostripe
   %thead
     %tr
       %th Id
@@ -12,7 +12,7 @@
       %th
   %tbody
     - @partners.each do |p|
-      %tr{cycles}
+      %tr
         %td= p.id
         %td= link_to p.name, [:admin, p]
         %td= p.partner_type

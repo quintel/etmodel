@@ -3,13 +3,6 @@ module ApplicationHelper
     Current.setting.api_session_id.present? || @active_scenario
   end
 
-  # TODO: get rid of this, use CSS
-  def cycles(html_attrs = {})
-    class_name = cycle('odd', 'even')
-    html_attrs[:class] = "#{html_attrs[:class]} #{class_name}"
-    html_attrs
-  end
-
   def flash_message(type = nil)
     if type.nil?
       flash_message(:notice) if flash[:notice]

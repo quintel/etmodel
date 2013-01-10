@@ -8,7 +8,7 @@
 
   = link_to 'Create new serie', new_admin_output_element_serie_path
 
-%table.default
+%table.default.autostripe
   %thead
     %tr
       %th.tal Label
@@ -19,7 +19,7 @@
   %tbody
     - @output_element_series.each do |s|
       - if s.output_element
-        %tr{cycles}
+        %tr
           %td= s.label
           %td= link_to s.output_element.key, [:admin, s.output_element]
           %td= highlight s.gquery, params[:gquery]

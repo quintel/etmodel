@@ -1,7 +1,7 @@
 %h2 Expert predictions
 
 
-%table.default
+%table.default.autostripe
   %thead
     %tr
       %th.tal id
@@ -9,12 +9,12 @@
       %th.tal Area
       %th.tal User
       %th.tal Title
-      %th.tal 
+      %th.tal
 
 
   %tbody
     - @predictions.each do |prediction|
-      %tr{cycles}
+      %tr
         %td= link_to prediction.id, admin_prediction_path(prediction)
         %td
           = prediction.input_element.key

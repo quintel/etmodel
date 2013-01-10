@@ -6,7 +6,7 @@
   = select_tag 'type',
     options_from_collection_for_select(@types, :id, :name, params[:type]),
     :include_blank => true, :id => 'select_by_type'
-%table.default
+%table.default.autostripe
   %thead
     %tr
       %th.tal id
@@ -21,7 +21,7 @@
       %th
   %tbody
     - @output_elements.each do |o|
-      %tr{cycles}
+      %tr
         %td= o.id
         %td= o.key
         %td= o.description.andand.short_content

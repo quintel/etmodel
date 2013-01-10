@@ -1,6 +1,6 @@
 = link_to "back", admin_predictions_path
 %h2
-  #{@prediction.input_element.key} - #{@prediction.title} - 
+  #{@prediction.input_element.key} - #{@prediction.title} -
   %small
     = "By #{@prediction.user.name} (#{@prediction.user.company_school})"
     = link_to 'edit', edit_admin_prediction_path(@prediction)
@@ -10,7 +10,7 @@
 
 
 %br
-%table.default
+%table.default.autostripe
   %thead
     %tr
       %th name
@@ -20,10 +20,10 @@
       %th year_end
       %th actor
       %th description
-      %th 
+      %th
   %tbody
     - @prediction.measures.each do |entry|
-      %tr{cycles}
+      %tr
         %td= entry.name
         %td= entry.impact
         %td= entry.cost
@@ -32,13 +32,13 @@
         %td= entry.actor
         %td= entry.description
 %br
-%table.default
+%table.default.autostripe
   %thead
     %tr
       %th year
       %th value
   %tbody
     - @prediction.values.each do |entry|
-      %tr{cycles}
+      %tr
         %td= entry.year
         %td= entry.value

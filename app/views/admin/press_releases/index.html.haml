@@ -2,18 +2,18 @@
 
 %p= link_to "New Press release", new_admin_press_release_path
 
-%table.default
+%table.default.autostripe
   %thead
     %tr
       %th.tal Date
       %th.tal Title
       %th.tal Medium
-      %th.tal 
-      %th.tal 
+      %th.tal
+      %th.tal
 
   %tbody
     - @releases.each do |release|
-      %tr{cycles}
+      %tr
         %td= release.release_date.strftime("%d-%m-%Y")
         %td= release.title
         %td= release.medium

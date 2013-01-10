@@ -1,6 +1,6 @@
 %h2 Comment Index
 
-%table.default
+%table.default.autostripe
   %thead
     %tr
       %th Id
@@ -12,7 +12,7 @@
       %th
   %tbody
     - @comments.each do |c|
-      %tr{cycles}
+      %tr
         %td= c.id
         %td
           = link_to [:admin, c.commentable] do

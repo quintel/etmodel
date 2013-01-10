@@ -39,7 +39,6 @@ Etm::Application.routes.draw do
     match 'clear_cache' => 'pages#clear_cache', :as => :clear_cache
 
     resources :predictions,
-              :slides,
               :sidebar_items,
               :texts,
               :output_elements,
@@ -60,7 +59,7 @@ Etm::Application.routes.draw do
       resources :slides
     end
 
-    resources :slides do
+    resources :slides, :except => :show do
       resources :input_elements
     end
 

@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Admin::ConstraintsController do
   render_views
 
-  let!(:constraint) { Factory :constraint }
-  let!(:admin) { Factory :admin }
+  let!(:constraint) { FactoryGirl.create :constraint }
+  let!(:admin) { FactoryGirl.create :admin }
 
   before do
     login_as(admin)
@@ -31,7 +31,7 @@ describe Admin::ConstraintsController do
   describe "POST create" do
     before do
       @old_constraint_count = Constraint.count
-      post :create, :constraint => Factory.attributes_for(:constraint)
+      post :create, :constraint => FactoryGirl.attributes_for(:constraint)
     end
 
     it "should create a new constraint" do
@@ -61,7 +61,7 @@ describe Admin::ConstraintsController do
 
   describe "PUT update" do
     before do
-      @constraint = Factory :constraint
+      @constraint = FactoryGirl.create :constraint
       put :update, :id => @constraint.id, :constraint => { :key => 'yo'}
     end
 
@@ -70,7 +70,7 @@ describe Admin::ConstraintsController do
 
   describe "DELETE destroy" do
     before do
-      @constraint = Factory :constraint
+      @constraint = FactoryGirl.create :constraint
       @old_constraint_count = Constraint.count
       delete :destroy, :id => @constraint.id
     end

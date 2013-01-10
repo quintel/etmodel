@@ -4,6 +4,7 @@ if ENV["COVERAGE"]
   require 'simplecov'
   SimpleCov.start do
     add_filter 'spec/'
+    add_filter 'config/'
     add_group "Models", "app/models"
     add_group "Controllers" do |src|
       src.filename.include?('app/controllers') and

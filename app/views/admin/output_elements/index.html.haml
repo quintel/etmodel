@@ -3,8 +3,6 @@
 %p
   = link_to 'Create new output_element', new_admin_output_element_path
   |
-  = link_to "Show all", all_admin_output_elements_path
-  |
   = select_tag 'type',
     options_from_collection_for_select(@types, :id, :name, params[:type]),
     :include_blank => true, :id => 'select_by_type'

@@ -3,21 +3,16 @@
 %h2 Compare scenarios
 
 %table.compare_scenarios
-  %thead
-    %tr
-      %th{:colspan => 5}
-      - @scenarios.each do |s|
-        %th{:width => 80}= s.title
-    %tr
-      %th
-      %th Min
-      %th Avg
-      %th Max
-      %th #
-      - @scenarios.each do |s|
-        %th #{s.area_code} - #{s.end_year}
   %tbody
     - Tab.ordered.each do |tab|
+      %tr.header
+        %th
+        %th Min
+        %th Avg
+        %th Max
+        %th #
+        - @scenarios.each do |s|
+          %th{:width => '90'} #{s.title} (#{s.area_code} - #{s.end_year})
       %tr
         %th.tab= t "tabs.#{tab.key}"
         %td.cell
@@ -49,11 +44,11 @@
             %tr
               %th.slider= raw t "input_elements.#{slider.key}"
               - values = @scenarios.map{|s| s.user_values.attributes[slider.key]}.compact
-              %td.cell= values.min
-              %td.cell= (values.sum / values.compact.size).round(3) rescue '-'
-              %td.cell= values.max
-              %td.cell #{values.compact.size} / #{size}
+              %td.cell= values.min.round(1) rescue '-'
+              %td.cell= (values.sum / values.compact.size).round(1) rescue '-'
+              %td.cell= values.max.round(1) rescue '-'
+              %td.cell #{values.compact.size}/#{size}
 
               - @scenarios.each do |s|
-                %td.cell= s.user_values.attributes[slider.key] || '-'
+                %td.cell= s.user_values.attributes[slider.key].round(1) rescue '-'
 

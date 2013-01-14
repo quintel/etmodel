@@ -4,64 +4,79 @@
   = text_field_tag :q, @q
   = submit_tag
 
-%h2 Constraints
-
-%table
-  %thead
-    %tr
-      %th Id
-      %th Key
-      %th GQuery
-  %tbody
-  - @constraints.each do |c|
-    %tr
-      %td= link_to c.id, admin_constraint_path(c)
-      %td= c.key
-      %td= highlight c.gquery_key, @q
-
-%h2 OutputElementSerie
-
-%table
-  %thead
-    %tr
-      %th Id
-      %th GQuery
-  %tbody
-  - @output_element_series.each do |o|
-    %tr
-      %td= link_to o.id, edit_admin_output_element_serie_path(o)
-      %td= highlight o.gquery, @q
-
-%h2 Targets
-
-%table
-  %thead
-    %tr
-      %th Id
-      %th Code
-      %th Query
-      %th Reached Query
-      %th Target Query
-  %tbody
-  - @targets.each do |p|
-    %tr
-      %td= p.id
-      %td= p.code
-      %td= highlight p.query, @q
-      %td= highlight p.reached_query, @q
-      %td= highlight p.target_query, @q
-
-%h2 Sidebar Items
-
-%table
-  %thead
-    %tr
-      %th Id
-      %th Key
-      %th Query
-  %tbody
-    - @sidebar_items.each do |s|
+- if @constraints.any?
+  %h2 Constraints
+  %table.autostripe
+    %thead
       %tr
-        %td= s.id
-        %td= link_to s.key, edit_admin_sidebar_item_path(s)
-        %td= highlight s.percentage_bar_query, @q
+        %th Id
+        %th Key
+        %th GQuery
+    %tbody
+    - @constraints.each do |c|
+      %tr
+        %td= link_to c.id, admin_constraint_path(c)
+        %td= c.key
+        %td= highlight c.gquery_key, @q
+
+- if @output_element_series.any?
+  %h2 OutputElementSerie
+  %table.autostripe
+    %thead
+      %tr
+        %th Id
+        %th GQuery
+    %tbody
+    - @output_element_series.each do |o|
+      %tr
+        %td= link_to o.id, edit_admin_output_element_serie_path(o)
+        %td= highlight o.gquery, @q
+
+- if @targets.any?
+  %h2 Targets
+  %table.autostripe
+    %thead
+      %tr
+        %th Id
+        %th Code
+        %th Query
+        %th Reached Query
+        %th Target Query
+    %tbody
+    - @targets.each do |p|
+      %tr
+        %td= p.id
+        %td= p.code
+        %td= highlight p.query, @q
+        %td= highlight p.reached_query, @q
+        %td= highlight p.target_query, @q
+
+- if @sidebar_items.any?
+  %h2 Sidebar Items
+  %table.autostripe
+    %thead
+      %tr
+        %th Id
+        %th Key
+        %th Query
+    %tbody
+      - @sidebar_items.each do |s|
+        %tr
+          %td= s.id
+          %td= link_to s.key, edit_admin_sidebar_item_path(s)
+          %td= highlight s.percentage_bar_query, @q
+
+- if @sliders.any?
+  %h2 Sliders
+  %table.autostripe
+    %thead
+      %tr
+        %th Id
+        %th Key
+        %th Related converter
+    %tbody
+      - @sliders.each do |s|
+        %tr
+          %td= s.id
+          %td= link_to s.key, edit_admin_input_element_path(s)
+          %td= highlight s.related_converter, @q

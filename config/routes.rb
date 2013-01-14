@@ -81,6 +81,7 @@ Etm::Application.routes.draw do
   #
   resources :scenarios, :except => [:edit, :update] do
     post :load, :on => :collection
+    get :compare, :on => :collection
     get :load, :on => :member
   end
 

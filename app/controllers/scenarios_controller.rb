@@ -13,7 +13,7 @@ class ScenariosController < ApplicationController
     else
       current_user.saved_scenarios
     end
-    @saved_scenarios = items.order("created_at DESC").page(params[:page]).per(15)
+    @saved_scenarios = items.order("created_at DESC").page(params[:page]).per(50)
     @scenarios = @saved_scenarios.map{|s| s.scenario rescue nil}.compact
   end
 
@@ -98,6 +98,11 @@ class ScenariosController < ApplicationController
       }
       format.js
     end
+  end
+
+  def compare
+    scenario_ids = params[:scenario_ids] || []
+    @scenarios = scenario_ids.map{|id| Api::Scenario.find id, params: {detailed: true}}
   end
 
   private

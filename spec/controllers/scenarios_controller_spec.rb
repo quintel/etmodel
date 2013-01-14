@@ -8,6 +8,7 @@ describe ScenariosController, :vcr => true do
     mock.stub(:id){"123"}
     mock.stub(:title){"title"}
     mock.stub(:end_year){"2050"}
+    mock.stub(:area_code){"nl"}
     mock.stub(:parsed_created_at){ Time.now }
     mock.stub(:created_at){ Time.now }
     mock
@@ -72,6 +73,16 @@ describe ScenariosController, :vcr => true do
           get :reset
           session[:setting].api_session_id.should be_nil
           response.should be_redirect
+        end
+      end
+
+      describe "#compare" do
+        it "should compare them" do
+          s1 = FactoryGirl.create :saved_scenario
+          s2 = FactoryGirl.create :saved_scenario
+          get :compare, :scenario_ids => [s1.id, s2.id]
+          expect(response).to be_success
+          expect(response).to render_template(:compare)
         end
       end
     end

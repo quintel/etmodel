@@ -15,7 +15,7 @@
     %tbody
       - @scenarios.each do |scenario|
         %tr{:class => cycle('even', 'odd')}
-          %td= check_box_tag 'scenario_ids[]'
+          %td= check_box_tag 'scenario_ids[]', scenario.id
           %td= link_to scenario.title, "/scenarios/#{scenario.id}"
           %td= scenario.end_year
           %td= scenario.parsed_created_at.andand.strftime("%d %b %H:%M")

@@ -74,6 +74,16 @@ describe ScenariosController, :vcr => true do
           response.should be_redirect
         end
       end
+
+      describe "#compare" do
+        it "should compare them" do
+          s1 = FactoryGirl.create :saved_scenario
+          s2 = FactoryGirl.create :saved_scenario
+          get :compare, :scenario_ids => [s1.id, s2.id]
+          expect(response).to be_success
+          expect(response).to render_template(:compare)
+        end
+      end
     end
   end
 

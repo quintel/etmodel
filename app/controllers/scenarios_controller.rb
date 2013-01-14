@@ -100,6 +100,10 @@ class ScenariosController < ApplicationController
     end
   end
 
+  def compare
+    @scenarios = SavedScenario.find params[:scenario_ids]
+  end
+
   private
 
     # Finds the scenario from id

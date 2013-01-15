@@ -8,8 +8,6 @@ D3.scatter =
 
     can_be_shown_as_table: -> false
 
-    outer_height: -> 400
-
     draw: =>
       margins =
         top: 20

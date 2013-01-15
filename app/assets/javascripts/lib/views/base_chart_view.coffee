@@ -111,7 +111,3 @@ class @BaseChartView extends Backbone.View
 
   # D3 charts override this method
   supported_in_current_browser: -> true
-
-  # Override as needed, this is the height that the container will be set to
-  #
-  outer_height: -> 300

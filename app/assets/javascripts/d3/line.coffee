@@ -9,8 +9,6 @@ D3.line =
 
     can_be_shown_as_table: -> true
 
-    outer_height: -> @height + 20
-
     draw: =>
       margins =
         top: 20

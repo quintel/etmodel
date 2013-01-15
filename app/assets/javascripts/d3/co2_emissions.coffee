@@ -10,8 +10,6 @@ D3.co2_emissions =
 
     can_be_shown_as_table: -> true
 
-    outer_height: => @height + 10
-
     # This method is called right before rendering because the series are
     # added when the JSON request is complete, ie after the initialize method
     #

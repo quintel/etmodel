@@ -35,10 +35,8 @@ class @D3ChartView extends BaseChartView
     else
       true
 
-  # override in derived class as needed
-  outer_height: -> 300
-
   available_width: -> @$el.width()
+  available_height: -> @$el.height()
 
   # Builds a standard legend. Options hash:
   # - svg: SVG container (required)

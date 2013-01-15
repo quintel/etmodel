@@ -23,9 +23,6 @@ class @HtmlTableChartView extends BaseChartView
   #
   table_html: => @model.get 'html'
 
-  outer_height: =>
-    @container_node().find('table').height()
-
   # normal charts have their series added when the /output_element/X.js
   # action is called. Tables have the gqueries defined in the markup instead.
   # This method will parse the HTML and create the gqueries as needed.

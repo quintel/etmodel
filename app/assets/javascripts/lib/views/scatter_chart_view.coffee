@@ -6,8 +6,6 @@ class @ScatterChartView extends JQPlotChartView
     @pre_render()
     @render_chart()
 
-  outer_height: -> 470
-
   results: =>
     @model.series.map (serie) ->
       pres = serie.result()[0]

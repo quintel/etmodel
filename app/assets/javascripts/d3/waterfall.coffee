@@ -7,8 +7,6 @@ D3.waterfall =
 
     can_be_shown_as_table: -> true
 
-    outer_height: -> 400
-
     draw: =>
       margins =
         top: 20

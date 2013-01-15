@@ -16,17 +16,19 @@
       %th.tal color
       %th Gquery
       %th.tal is_target_line
+      %th Group
       %th Order
       %th
 
   %tbody
-    -@output_element.output_element_series.each do |serie|
+    - @output_element.output_element_series.each do |serie|
       %tr{:class => cycle('even', 'odd')}
         %td= serie.id
         %td= link_to serie.label, admin_output_element_serie_path(serie)
         %td{:style => "background: #{serie.color}"}= color_to_string(serie.color)
-        %td= link_to serie.gquery, serie.url_in_etengine, :class => :external, :target => '_blank'
+        %td= link_to serie.gquery, serie.url_in_etengine, :target => '_blank'
         %td= serie.is_target_line
+        %td= serie.group
         %td= serie.order_by
         %td
           = link_to 'edit', edit_admin_output_element_serie_path(:id => serie.id)
@@ -42,17 +44,3 @@
 %ul
   - @output_element.slides.each do |s|
     %li= link_to s.key, edit_admin_slide_path(s)
-
-#chart_preview
-  .chart_holder
-    = content_tag_for :div, @output_element, :class => 'chart_canvas' do
-      Chart
-
-- content_for :head do
-  = render "layouts/etm/javascript_globals"
-  = javascript_include_tag 'etm'
-  :javascript
-    $(function(){
-      charts.load(#{@output_element.id}, "output_element_#{@output_element.id}")
-    })
-

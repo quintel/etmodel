@@ -141,12 +141,13 @@ D3.waterfall =
       previous_top = 0
 
       for s in @series
-        # serious ugliness here
-        #
+        # The group attributes set which value we're looking for:
+        # present / future / (future-present)
+        # (future-present) is the default
         g = s.get('group')
         value = if g == 'future'
           s.safe_future_value()
-        else if g == 'value' # ?! TODO: rename!
+        else if g == 'present'
           s.safe_present_value()
         else
           s.safe_future_value() - s.safe_present_value()

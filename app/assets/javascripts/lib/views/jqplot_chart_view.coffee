@@ -30,4 +30,3 @@ class @JQPlotChartView extends BaseChartView
 
   pre_render: =>
     @clear_container()
-    @resize_container()

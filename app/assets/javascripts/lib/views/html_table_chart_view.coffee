@@ -17,7 +17,6 @@ class @HtmlTableChartView extends BaseChartView
     @clear_container()
     @container_node().html(@table_html())
     @fill_cells()
-    @resize_container()
     @after_render()
 
   # The table HTML is provided by the rails app.

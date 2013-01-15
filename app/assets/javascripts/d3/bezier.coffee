@@ -8,7 +8,11 @@ D3.bezier =
 
     can_be_shown_as_table: -> true
 
-    outer_height: => @height + 60
+    margins:
+      top: 20
+      bottom: 20
+      left: 20
+      right: 30
 
     # This chart rendering is fairly complex. Here is the big picture:
     # this bezier chart is basically a stacked area chart. D3 provides some
@@ -21,13 +25,8 @@ D3.bezier =
     # required to draw the paths (and add some nice interpolations)
     #
     draw: =>
-      margins =
-        top: 20
-        bottom: 20
-        left: 20
-        right: 30
+      @width = @available_width() - (@margins.left + @margins.right)
 
-      @width = @available_width() - (margins.left + margins.right)
       # height of the series section
       @series_height = 190
 
@@ -36,15 +35,15 @@ D3.bezier =
 
       estimated_legend_height = legend_rows * 15
 
-      @height = @series_height + margins.top + margins.bottom + 20 + estimated_legend_height
+      @height = @series_height + @margins.top + @margins.bottom + 20 + estimated_legend_height
 
       @series_width = @width - 15
       @svg = d3.select(@container_selector())
         .append("svg:svg")
-        .attr("height", @height + margins.top + margins.bottom)
-        .attr("width", @width + margins.left + margins.right)
+        .attr("height", @height + @margins.top + @margins.bottom)
+        .attr("width", @width + @margins.left + @margins.right)
         .append("svg:g")
-        .attr("transform", "translate(#{margins.left}, #{margins.top})")
+        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
 
       @draw_legend
         svg: @svg

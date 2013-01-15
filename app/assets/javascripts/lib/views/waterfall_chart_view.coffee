@@ -23,15 +23,13 @@ class @WaterfallChartView extends JQPlotChartView
     series = @model.series.map (serie) =>
       present = serie.present_value()
       future = serie.future_value()
-      # There is a conflict between code and documentation. If the serie's
-      # group is set to 'value' then we're interested in the present value, if
-      # 'future' we want the future value, otherwise in the difference
-      # future-present. If I got it right.
-      #
+      # The group attributes set which value we're looking for:
+      # present / future / (future-present)
+      # (future-present) is the default
       g = serie.get('group')
       val = if g == 'future'
         future
-      else if g == 'value' # ?! TODO: rename!
+      else if g == 'present'
         present
       else
         future - present

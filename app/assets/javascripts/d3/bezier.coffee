@@ -1,10 +1,7 @@
 D3.bezier =
   View: class extends D3ChartView
     initialize: ->
-      @key = @model.get 'key'
-      @start_year = App.settings.get('start_year')
-      @end_year = App.settings.get('end_year')
-      @initialize_defaults()
+      D3ChartView.prototype.initialize.call(this)
 
     can_be_shown_as_table: -> true
 

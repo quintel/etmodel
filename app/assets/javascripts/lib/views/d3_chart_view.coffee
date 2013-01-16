@@ -7,6 +7,12 @@
 # rendering and the refresh() for the later updates.
 # They should also call @initialize_defaults() in their initialize method
 class @D3ChartView extends BaseChartView
+  initialize: ->
+    @key = @model.get 'key'
+    @start_year = App.settings.get('start_year')
+    @end_year = App.settings.get('end_year')
+    @initialize_defaults()
+
   render: (force_redraw) =>
     return false unless @model.supported_by_current_browser()
     if force_redraw || !@drawn

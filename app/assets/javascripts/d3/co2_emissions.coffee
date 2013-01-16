@@ -2,11 +2,8 @@ D3.co2_emissions =
   View: class extends D3ChartView
     el: 'body'
     initialize: ->
-      @key = @model.get 'key'
+      D3ChartView.prototype.initialize.call(this)
       @series = @model.series.models
-      @start_year = App.settings.get('start_year')
-      @end_year = App.settings.get('end_year')
-      @initialize_defaults()
 
     can_be_shown_as_table: -> true
 

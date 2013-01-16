@@ -7,25 +7,28 @@ D3.waterfall =
 
     can_be_shown_as_table: -> true
 
-    draw: =>
-      margins =
-        top: 20
-        bottom: 80
-        left: 20
-        right: 40
+    margins:
+      top: 20
+      bottom: 20
+      left: 20
+      right: 40
 
-      @width = @$el.width() - (margins.left + margins.right)
-      @height = 360 - (margins.top + margins.bottom)
-      # height of the series section
-      @series_height = 190
+    draw: =>
+      @width  = @available_width()  - (@margins.left + @margins.right)
+      @height = @available_height() - (@margins.top + @margins.bottom)
+
+      labels_height = 90
+      labels_margin = 15
+      @series_height = @height - labels_height - labels_margin
       @series_width = @width - 15
+
       @column_width = @series_width / (@series.length + 1) * 0.6
       @svg = d3.select(@container_selector())
         .append("svg:svg")
-        .attr("height", @height + margins.top + margins.bottom)
-        .attr("width", @width + margins.left + margins.right)
+        .attr("height", @height + @margins.top + @margins.bottom)
+        .attr("width", @width + @margins.left + @margins.right)
         .append("svg:g")
-        .attr("transform", "translate(#{margins.left}, #{margins.top})")
+        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
 
       @y = d3.scale.linear().range([@series_height, 0]).domain([-10, 10])
 
@@ -58,7 +61,7 @@ D3.waterfall =
       offset = @column_width / 2
       @svg.selectAll('.x_axis text')
         .attr('text-anchor', 'end')
-        .attr('transform', "rotate(-90) translate(-10, #{-offset})")
+        .attr('transform', "rotate(-90) translate(#{-labels_margin}, #{-offset})")
 
       @svg.selectAll('rect.serie')
         .data(@prepare_data(), (d) -> d.key)

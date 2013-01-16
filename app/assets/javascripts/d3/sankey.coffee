@@ -348,16 +348,17 @@ D3.sankey =
 
       @initialize_defaults()
 
+    margins:
+      top: 5
+      left: 5
+      bottom: 5
+      right: 10
+
     # this method is called when we first render the chart. It is called if we
     # want a full chart refresh when the user resizes the browser window, too
     draw: =>
-      @margin =
-        top: 5
-        left: 5
-        bottom: 5
-        right: 10
-      @width = @available_width() - (@margin.left + @margin.right)
-      @height = 300 - (@margin.top + @margin.bottom)
+      @width = @available_width() - (@margins.left + @margins.right)
+      @height = @available_height() - (@margins.top + @margins.bottom)
 
       # scaling method taht will be changed dynamically
       @y = d3.scale.linear().domain([0, 5000]).range([0, @height])
@@ -371,10 +372,10 @@ D3.sankey =
 
       @svg = d3.select(@container_selector())
         .append("svg:svg")
-        .attr("height", @height + @margin.top + @margin.bottom)
-        .attr("width", @width + @margin.left + @margin.right)
+        .attr("height", @height + @margins.top + @margins.bottom)
+        .attr("width", @width + @margins.left + @margins.right)
         .append("svg:g")
-        .attr("transform", "translate(#{@margin.left}, #{@margin.top})")
+        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
       @links = @draw_links()
       @nodes = @draw_nodes()
 

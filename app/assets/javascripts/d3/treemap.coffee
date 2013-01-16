@@ -23,8 +23,6 @@ D3.treemap =
       D3.treemap.series = @model.series
       @prepare_data()
 
-    outer_height: => @height + 20
-
     # D3 layouts expect data in a precise format
     prepare_data: =>
       return @out if @out
@@ -46,7 +44,7 @@ D3.treemap =
 
     draw: =>
       @width = @available_width()
-      @height = 350
+      @height = @available_height()
       @treemap = d3.layout.treemap()
         .size([@width, @height])
         .sticky(true)

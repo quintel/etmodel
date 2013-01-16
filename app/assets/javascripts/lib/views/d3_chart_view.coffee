@@ -14,7 +14,6 @@ class @D3ChartView extends BaseChartView
       @container_node().html(@html())
       @draw()
       @drawn = true
-      @resize_container()
     @refresh()
 
   html: =>
@@ -36,10 +35,11 @@ class @D3ChartView extends BaseChartView
     else
       true
 
-  # override in derived class as needed
-  outer_height: -> 300
+  canvas: => @$el.find('.chart_canvas')
 
-  available_width: -> @$el.width()
+  available_width: -> @canvas().width()
+
+  available_height: -> @canvas().height()
 
   # Builds a standard legend. Options hash:
   # - svg: SVG container (required)
@@ -61,9 +61,9 @@ class @D3ChartView extends BaseChartView
       .enter()
       .append("svg:g")
       .attr("class", "legend")
-      .attr("transform", (d, i) ->
+      .attr("transform", (d, i) =>
         x = legend_margin * (i % opts.columns)
-        y = Math.floor(i / opts.columns) * 16
+        y = Math.floor(i / opts.columns) * @legend_cell_height
         "translate(#{x}, #{y})")
       .attr("height", 30)
       .attr("width", 90)
@@ -78,3 +78,5 @@ class @D3ChartView extends BaseChartView
         d.get('label') || I18n.t("output_element_series.#{d.get('key')}")
       )
 
+  # height of the legend item
+  legend_cell_height: 15

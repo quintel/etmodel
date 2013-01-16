@@ -10,7 +10,11 @@ D3.co2_emissions =
 
     can_be_shown_as_table: -> true
 
-    outer_height: => @height + 10
+    margins:
+      top: 20
+      bottom: 35
+      left: 30
+      right: 40
 
     # This method is called right before rendering because the series are
     # added when the JSON request is complete, ie after the initialize method
@@ -23,21 +27,19 @@ D3.co2_emissions =
     draw: =>
       @setup_series()
 
-      margins =
-        top: 20
-        bottom: 35
-        left: 30
-        right: 40
+      @width  = @available_width()  - (@margins.left + @margins.right)
+      @height = @available_height() - (@margins.top + @margins.bottom)
 
-      @width = 494 - (margins.left + margins.right)
-      @series_height = 190
-      @height = @series_height + (margins.top + margins.bottom)
+      legend_height = @legend_cell_height
+      legend_margin = 20
+      @series_height = @height - legend_height - legend_margin
+
       @svg = d3.select(@container_selector())
         .append("svg:svg")
-        .attr("height", @height + margins.top + margins.bottom)
-        .attr("width", @width + margins.left + margins.right)
+        .attr("height", @height + @margins.top + @margins.bottom)
+        .attr("width", @width + @margins.left + @margins.right)
         .append("svg:g")
-        .attr("transform", "translate(#{margins.left}, #{margins.top})")
+        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
 
       # Ugly stuff. Check the db to see which series have been defined.
       # Since this chart is very specific the series could actually be
@@ -48,7 +50,7 @@ D3.co2_emissions =
         svg: @svg
         series: series_for_legend
         width: @width
-        vertical_offset: @series_height + 20
+        vertical_offset: @series_height + legend_margin
         columns: 2
 
       @x = d3.scale.ordinal().rangeRoundBands([0, @width - 25])
@@ -182,5 +184,3 @@ D3.co2_emissions =
         </table>
       "
       @container_node().html(html)
-      new_height = @container_node().find('table').height()
-      @set_container_height new_height

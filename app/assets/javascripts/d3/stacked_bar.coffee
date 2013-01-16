@@ -10,26 +10,17 @@ D3.stacked_bar =
 
     can_be_shown_as_table: -> true
 
-    outer_height: => @height + 50
+    margins:
+      top: 20
+      bottom: 20
+      left: 30
+      right: 40
 
     draw: =>
-      margins =
-        top: 20
-        bottom: 20
-        left: 30
-        right: 40
+      @width  = @available_width() - (@margins.left + @margins.right)
+      @height = @available_height() - (@margins.top + @margins.bottom)
 
-      @width = @available_width() - (margins.left + margins.right)
-      @series_height = 190
-      @height = @series_height + (margins.top + margins.bottom) + (@series.length / 2 * 15)
-      @svg = d3.select(@container_selector())
-        .append("svg:svg")
-        .attr("height", @height + margins.top + margins.bottom)
-        .attr("width", @width + margins.left + margins.right)
-        .append("svg:g")
-        .attr("transform", "translate(#{margins.left}, #{margins.top})")
-
-      # add legend
+      # prepare legend
       # remove duplicate target series. Required for backwards compatibility.
       # When we'll drop the old charts we should use a single serie as target
       # rather than two
@@ -46,11 +37,24 @@ D3.stacked_bar =
           series_for_legend.push s
 
       legend_columns = if series_for_legend.length > 6 then 2 else 1
+      legend_rows = series_for_legend.length / legend_columns
+      legend_height = legend_rows * @legend_cell_height
+      legend_margin = 20
+
+      @series_height = @height - legend_height - legend_margin
+
+      @svg = d3.select(@container_selector())
+        .append("svg:svg")
+        .attr("height", @height + @margins.top + @margins.bottom)
+        .attr("width", @width + @margins.left + @margins.right)
+        .append("svg:g")
+        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
+
       @draw_legend
         svg: @svg
         series: series_for_legend
         width: @width
-        vertical_offset: @series_height + 20
+        vertical_offset: @series_height + legend_margin
         columns: legend_columns
 
       # the stack method will filter the data and calculate the offset for every
@@ -92,7 +96,7 @@ D3.stacked_bar =
       $("#{@container_selector()} rect.serie").qtip
         content:
           title: -> $(this).attr('data-tooltip-title')
-          text: -> $(this).attr('data-tooltip-text')
+          text:  -> $(this).attr('data-tooltip-text')
         position:
           my: 'bottom center'
           at: 'top center'

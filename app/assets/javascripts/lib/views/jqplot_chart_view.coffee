@@ -4,12 +4,12 @@ class @JQPlotChartView extends BaseChartView
     show: true
     location: opts.location || 's'
     fontSize: @defaults.font_size
-    placement: "outside"
+    placement: "outside" # This makes the legend overflow the plot container! Bad!
     labels: opts.labels || @model.labels()
     yoffset: opts.offset || 25
     rendererOptions:
-       numberColumns: opts.num_columns
-       seriesToggle: false
+      numberColumns: opts.num_columns
+      seriesToggle: false
 
   defaults:
     shadow: false
@@ -30,4 +30,3 @@ class @JQPlotChartView extends BaseChartView
 
   pre_render: =>
     @clear_container()
-    @resize_container()

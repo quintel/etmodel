@@ -26,6 +26,13 @@
   .charts_container
     position: relative
     padding: 3px
+    .chart_canvas
+      // zoomed charts and dashboard popups redefine the height
+      height: 350px
+      background-color: #fff
+    .table_canvas
+      // free to expand as needed
+      background-color: #fff
     .chart_not_finished
       display: none
       position: absolute
@@ -189,6 +196,8 @@ div.d3_container
     color: #224368
   #zoomed_chart_wrapper
     padding: 10px
+    .chart_canvas
+      height: 480px
 
   table.chart
     td, th

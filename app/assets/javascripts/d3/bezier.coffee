@@ -8,7 +8,11 @@ D3.bezier =
 
     can_be_shown_as_table: -> true
 
-    outer_height: => @height + 60
+    margins:
+      top: 20
+      bottom: 20
+      left: 20
+      right: 30
 
     # This chart rendering is fairly complex. Here is the big picture:
     # this bezier chart is basically a stacked area chart. D3 provides some
@@ -21,36 +25,30 @@ D3.bezier =
     # required to draw the paths (and add some nice interpolations)
     #
     draw: =>
-      margins =
-        top: 20
-        bottom: 20
-        left: 20
-        right: 30
-
-      @width = @available_width() - (margins.left + margins.right)
-      # height of the series section
-      @series_height = 190
+      @width  = @available_width()  - (@margins.left + @margins.right)
+      @height = @available_height() - (@margins.top + @margins.bottom)
 
       legend_columns = if @model.series.length > 6 then 2 else 1
       legend_rows = @model.series.length / legend_columns
+      legend_height = legend_rows * @legend_cell_height
+      legend_margin = 20
 
-      estimated_legend_height = legend_rows * 15
+      # dimensions of the chart body
+      @series_height = @height - legend_height - legend_margin
+      @series_width  = @width - 15
 
-      @height = @series_height + margins.top + margins.bottom + 20 + estimated_legend_height
-
-      @series_width = @width - 15
       @svg = d3.select(@container_selector())
         .append("svg:svg")
-        .attr("height", @height + margins.top + margins.bottom)
-        .attr("width", @width + margins.left + margins.right)
+        .attr("height", @height + @margins.top + @margins.bottom)
+        .attr("width", @width + @margins.left + @margins.right)
         .append("svg:g")
-        .attr("transform", "translate(#{margins.left}, #{margins.top})")
+        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
 
       @draw_legend
         svg: @svg
         series: @model.series.models
         width: @width
-        vertical_offset: @series_height + 20
+        vertical_offset: @series_height + legend_margin
         columns: legend_columns
 
       # the stack method will filter the data and calculate the offset for every
@@ -63,8 +61,7 @@ D3.bezier =
       # Run the stack method on the nested entries
       stacked_data = @stack_method(@nest.entries @prepare_data())
 
-      @x = d3.scale.linear().range([0, @series_width])
-        .domain([@start_year, @end_year])
+      @x = d3.scale.linear().range([0, @series_width]) .domain([@start_year, @end_year])
 
       # show years at the corners
       @svg.selectAll('text.year')
@@ -113,7 +110,7 @@ D3.bezier =
       $("#{@container_selector()} path.serie").qtip
         content:
           title: -> $(this).attr('data-tooltip-title')
-          text: -> $(this).attr('data-tooltip-text')
+          text:  -> $(this).attr('data-tooltip-text')
         position:
           target: 'mouse'
           my: 'bottom right'

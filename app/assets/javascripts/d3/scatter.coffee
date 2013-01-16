@@ -8,32 +8,36 @@ D3.scatter =
 
     can_be_shown_as_table: -> false
 
-    outer_height: -> 400
+    margins:
+      top: 20
+      bottom: 20
+      left: 40
+      right: 10
 
     draw: =>
-      margins =
-        top: 20
-        bottom: 200
-        left: 40
-        right: 10
+      @width  = @available_width()  - (@margins.left + @margins.right)
+      @height = @available_height() - (@margins.top + @margins.bottom)
 
-      @width = 494 - (margins.left + margins.right)
-      @height = 360 - (margins.top + margins.bottom)
-      # height of the series section
-      @series_height = 190
+      legend_columns = 2
+      legend_rows = @series.length / legend_columns
+      legend_height = legend_rows * @legend_cell_height
+      legend_margin = 30
+
+      @series_height = @height - legend_height - legend_margin
+
       @svg = d3.select(@container_selector())
         .append("svg:svg")
-        .attr("height", @height + margins.top + margins.bottom)
-        .attr("width", @width + margins.left + margins.right)
+        .attr("height", @height + @margins.top + @margins.bottom)
+        .attr("width", @width + @margins.left + @margins.right)
         .append("svg:g")
-        .attr("transform", "translate(#{margins.left}, #{margins.top})")
+        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
 
       @draw_legend
         svg: @svg
         series: @series
         width: @width
-        vertical_offset: @series_height + 35
-        columns: 2
+        vertical_offset: @series_height + legend_margin
+        columns: legend_columns
 
       @x = d3.scale.linear().range([0, @width - 15])
         .domain([0, 100])

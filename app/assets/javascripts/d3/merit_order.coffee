@@ -51,30 +51,31 @@ D3.merit_order =
         @nodes = new D3.merit_order.NodeList(D3.merit_order.data)
       @initialize_defaults()
 
-    outer_height: => @height + 60
+    margins:
+      top: 10
+      bottom: 40
+      left: 50
+      right: 10
 
     draw: =>
-      margins =
-        top: 10
-        bottom: 40
-        left: 50
-        right: 10
-      @margin = 50
-      @width = @available_width() - (margins.left + margins.right)
-      @height = 310 - (margins.top + margins.bottom)
-      @series_height = 260
+      @width  = @available_width()  - (@margins.left + @margins.right)
+      @height = @available_height() - (@margins.top + @margins.bottom)
+      @series_height = @height
+
+      @svg = d3.select(@container_selector())
+        .append("svg:svg")
+        .attr("height", @height + @margins.top + @margins.bottom)
+        .attr("width", @width + @margins.left + @margins.right)
+        .append("svg:g")
+        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
+
       @x = d3.scale.linear().domain([0, 100]).range([0, @width])
       @y = d3.scale.linear().domain([0, 100]).range([0, @series_height])
       @inverted_y = @y.copy().range([@series_height, 0])
       @x_axis = d3.svg.axis().scale(@x).ticks(4).orient("bottom")
         .tickFormat((x) => Metric.autoscale_value x, 'MW')
       @y_axis = d3.svg.axis().scale(@inverted_y).ticks(4).orient("left")
-      @svg = d3.select(@container_selector())
-        .append("svg:svg")
-        .attr("height", @height + margins.top + margins.bottom)
-        .attr("width", @width + margins.left + margins.right)
-        .append("svg:g")
-        .attr("transform", "translate(#{margins.left}, #{margins.top})")
+
 
       # axis
       @svg.append("svg:g")

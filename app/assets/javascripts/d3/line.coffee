@@ -9,30 +9,36 @@ D3.line =
 
     can_be_shown_as_table: -> true
 
-    draw: =>
-      margins =
-        top: 20
-        bottom: 50
-        left: 20
-        right: 50
+    margins :
+      top: 20
+      bottom: 50
+      left: 20
+      right: 70
 
-      @width = @available_width() - (margins.left + margins.right)
-      # height of the series section
-      @series_height = 190
-      @height = @series_height + margins.top + margins.bottom + 20 + (@series.length / 2 * 15)
+    draw: =>
+      @width = @available_width() - (@margins.left + @margins.right)
+      @height = @available_height() - (@margins.top + @margins.bottom)
+
+      legend_columns = 2
+      legend_rows = @model.series.length / legend_columns
+      legend_height = legend_rows * @legend_cell_height
+      legend_margin = 20
+
+      @series_height = @height - legend_height - legend_margin
+
       @svg = d3.select(@container_selector())
         .append("svg:svg")
-        .attr("height", @height + margins.top + margins.bottom)
-        .attr("width", @width + margins.left + margins.right)
+        .attr("height", @height + @margins.top + @margins.bottom)
+        .attr("width", @width + @margins.left + @margins.right)
         .append("svg:g")
-        .attr("transform", "translate(#{margins.left}, #{margins.top})")
+        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
 
       @draw_legend
         svg: @svg
         series: @series
         width: @width
-        vertical_offset: @series_height + 25
-        columns: 2
+        vertical_offset: @series_height + legend_margin
+        columns: legend_columns
 
       @x = d3.scale.linear().range([0, @width])
         .domain([@start_year, @end_year])

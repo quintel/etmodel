@@ -61,12 +61,7 @@ D3.merit_order =
       [@width, @height] = @available_size()
       @series_height = @height
 
-      @svg = d3.select(@container_selector())
-        .append("svg:svg")
-        .attr("height", @height + @margins.top + @margins.bottom)
-        .attr("width", @width + @margins.left + @margins.right)
-        .append("svg:g")
-        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
+      @svg = @create_svg_container @width, @height, @margins
 
       @x = d3.scale.linear().domain([0, 100]).range([0, @width])
       @y = d3.scale.linear().domain([0, 100]).range([0, @series_height])

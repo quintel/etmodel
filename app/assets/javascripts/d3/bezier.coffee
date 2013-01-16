@@ -33,12 +33,7 @@ D3.bezier =
       @series_height = @height - legend_height - legend_margin
       @series_width  = @width - 15
 
-      @svg = d3.select(@container_selector())
-        .append("svg:svg")
-        .attr("height", @height + @margins.top + @margins.bottom)
-        .attr("width", @width + @margins.left + @margins.right)
-        .append("svg:g")
-        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
+      @svg = @create_svg_container @width, @height, @margins
 
       @draw_legend
         svg: @svg

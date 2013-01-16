@@ -60,6 +60,17 @@ class @D3ChartView extends BaseChartView
     @available_height() - (@margins.top + @margins.bottom)
   ]
 
+  # Returns a D3-selected SVG container
+  #
+  create_svg_container: (width, height, margins) =>
+    d3.select(@container_selector())
+      .append("svg:svg")
+      .attr("height", height + margins.top + margins.bottom)
+      .attr("width", width + margins.left + margins.right)
+      .append("svg:g")
+      .attr("transform", "translate(#{margins.left}, #{margins.top})")
+
+
   # Builds a standard legend. Options hash:
   # - svg: SVG container (required)
   # - series: array of series. The label might be its 'label' attribute or its

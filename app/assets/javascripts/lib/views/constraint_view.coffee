@@ -9,17 +9,19 @@ class @ConstraintView extends Backbone.View
     @model.view = this
 
   render: () =>
-    if(@model.get("key") == 'total_energy_cost')
-      @render_total_cost_label()
+    key = @model.get 'key'
+    if key == 'total_energy_cost' || key == 'costs_fte'
+      @render_costs_label()
     formatted_value = @format_result()
     $('strong', @dom_id).empty().append(formatted_value)
     @updateArrows()
     this
 
   # different behaviour unfortunately
-  render_total_cost_label: () =>
+  render_costs_label: () =>
     return '' if @model.error()
-    value = @model.result() * 1000000000
+    value = @model.result()
+    value *= 1000000000 if @model.get('key') == 'total_energy_cost'
     return if _.isNaN(value)
     scale = Metric.power_of_thousand(value)
     unit  = I18n.t('units.currency.' + Metric.power_of_thousand_to_string(scale))
@@ -58,6 +60,8 @@ class @ConstraintView extends Backbone.View
     out = switch key
       when 'total_energy_cost'
         Metric.euros_to_string(result * 1000000000)
+      when 'costs_fte'
+        Metric.euros_to_string(result)
       when 'household_energy_cost'
         I18n.toCurrency(result, { precision: 0, unit: '&euro;' })
       when 'total_primary_energy', 'employment', 'co2_reduction'

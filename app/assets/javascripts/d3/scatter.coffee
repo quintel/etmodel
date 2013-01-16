@@ -2,9 +2,8 @@ D3.scatter =
   View: class extends D3ChartView
     el: 'body'
     initialize: ->
-      @key = @model.get 'key'
+      D3ChartView.prototype.initialize.call(this)
       @series = @model.series.models
-      @initialize_defaults()
 
     can_be_shown_as_table: -> false
 

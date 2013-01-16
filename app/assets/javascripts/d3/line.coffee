@@ -1,11 +1,8 @@
 D3.line =
   View: class extends D3ChartView
     initialize: ->
-      @key = @model.get 'key'
-      @start_year = App.settings.get('start_year')
-      @end_year = App.settings.get('end_year')
+      D3ChartView.prototype.initialize.call(this)
       @series = @model.series.models
-      @initialize_defaults()
 
     can_be_shown_as_table: -> true
 

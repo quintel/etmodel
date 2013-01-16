@@ -35,9 +35,11 @@ class @D3ChartView extends BaseChartView
     else
       true
 
-  available_width: -> @$el.width()
+  canvas: => @$el.find('.chart_canvas')
 
-  available_height: -> @$el.height()
+  available_width: -> @canvas().width()
+
+  available_height: -> @canvas().height()
 
   # Builds a standard legend. Options hash:
   # - svg: SVG container (required)

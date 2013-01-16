@@ -12,7 +12,7 @@ class @BaseChartView extends Backbone.View
   # the chart_canvas class has a predefined height, while the table_canvas
   # expands to fit content
   setup_holder_class: =>
-    if @model.get('as_table') || @model.get('type' == 'html_table')
+    if @model.get('as_table') || @model.get('type') == 'html_table'
       @container_node().removeClass('chart_canvas').addClass('table_canvas')
     else
       @container_node().addClass('chart_canvas').removeClass('table_canvas')

@@ -369,12 +369,8 @@ D3.sankey =
         .x((d) -> d.x)
         .y((d) -> @y(d.y))
 
-      @svg = d3.select(@container_selector())
-        .append("svg:svg")
-        .attr("height", @height + @margins.top + @margins.bottom)
-        .attr("width", @width + @margins.left + @margins.right)
-        .append("svg:g")
-        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
+      @svg = @create_svg_container @width, @height, @margins
+
       @links = @draw_links()
       @nodes = @draw_nodes()
 

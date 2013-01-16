@@ -81,12 +81,7 @@ D3.mekko =
       @series_height = @height - legend_height - label_height - label_margin
       @label_offset = @series_height + label_margin
 
-      @svg = d3.select(@container_selector())
-        .append("svg:svg")
-        .attr("height", @height + @margins.top + @margins.bottom)
-        .attr("width", @width + @margins.left + @margins.right)
-        .append("svg:g")
-        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
+      @svg = @create_svg_container @width, @height, @margins
 
       @draw_legend
         svg: @svg

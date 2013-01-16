@@ -70,8 +70,7 @@ D3.mekko =
 
     draw: =>
       @prepare_data()
-      @width  = @available_width()  - (@margins.left + @margins.right)
-      @height = @available_height() - (@margins.top + @margins.bottom)
+      [@width, @height] = @available_size()
 
       legend_columns = if @carrier_list.length > 9 then 3 else 2
       legend_rows = @carrier_list.length / legend_columns

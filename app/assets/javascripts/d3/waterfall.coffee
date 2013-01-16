@@ -14,8 +14,7 @@ D3.waterfall =
       right: 40
 
     draw: =>
-      @width  = @available_width()  - (@margins.left + @margins.right)
-      @height = @available_height() - (@margins.top + @margins.bottom)
+      [@width, @height] = @available_size()
 
       labels_height = 90
       labels_margin = 15

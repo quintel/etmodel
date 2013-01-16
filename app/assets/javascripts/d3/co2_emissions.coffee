@@ -24,8 +24,7 @@ D3.co2_emissions =
     draw: =>
       @setup_series()
 
-      @width  = @available_width()  - (@margins.left + @margins.right)
-      @height = @available_height() - (@margins.top + @margins.bottom)
+      [@width, @height] = @available_size()
 
       legend_height = @legend_cell_height
       legend_margin = 20

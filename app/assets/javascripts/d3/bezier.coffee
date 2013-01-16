@@ -22,8 +22,7 @@ D3.bezier =
     # required to draw the paths (and add some nice interpolations)
     #
     draw: =>
-      @width  = @available_width()  - (@margins.left + @margins.right)
-      @height = @available_height() - (@margins.top + @margins.bottom)
+      [@width, @height] = @available_size()
 
       legend_columns = if @model.series.length > 6 then 2 else 1
       legend_rows = @model.series.length / legend_columns

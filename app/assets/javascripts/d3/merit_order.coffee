@@ -58,8 +58,7 @@ D3.merit_order =
       right: 10
 
     draw: =>
-      @width  = @available_width()  - (@margins.left + @margins.right)
-      @height = @available_height() - (@margins.top + @margins.bottom)
+      [@width, @height] = @available_size()
       @series_height = @height
 
       @svg = d3.select(@container_selector())

@@ -13,8 +13,7 @@ D3.line =
       right: 70
 
     draw: =>
-      @width = @available_width() - (@margins.left + @margins.right)
-      @height = @available_height() - (@margins.top + @margins.bottom)
+      [@width, @height] = @available_size()
 
       legend_columns = 2
       legend_rows = @model.series.length / legend_columns

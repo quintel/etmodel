@@ -47,6 +47,19 @@ class @D3ChartView extends BaseChartView
 
   available_height: -> @canvas().height()
 
+  # Default values, derived class might have different values
+  margins:
+    top: 20
+    bottom: 20
+    left: 20
+    right: 30
+
+  # Returns a [width, height] array
+  available_size: => [
+    @available_width() - (@margins.left + @margins.right),
+    @available_height() - (@margins.top + @margins.bottom)
+  ]
+
   # Builds a standard legend. Options hash:
   # - svg: SVG container (required)
   # - series: array of series. The label might be its 'label' attribute or its

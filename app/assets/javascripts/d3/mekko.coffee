@@ -62,24 +62,39 @@ D3.mekko =
           color: s.get('color')
           view: this
 
+    margins:
+      top: 10
+      bottom: 10
+      left: 35
+      right: 10
+
     draw: =>
       @prepare_data()
-      margins =
-        top: 10
-        bottom: 100
-        left: 35
-        right: 10
+      @width  = @available_width()  - (@margins.left + @margins.right)
+      @height = @available_height() - (@margins.top + @margins.bottom)
 
-      @width = @available_width() - (margins.left + margins.right)
-      @height = @outer_height() - (margins.top + margins.bottom)
-      @series_height = 190 # the rest of the height will be taken by the legend
-      @label_offset = @series_height + 10
+      legend_columns = if @carrier_list.length > 9 then 3 else 2
+      legend_rows = @carrier_list.length / legend_columns
+      legend_height = legend_rows * @legend_cell_height
+      label_height = 120 # rotated labels
+      label_margin = 5
+
+      @series_height = @height - legend_height - label_height - label_margin
+      @label_offset = @series_height + label_margin
+
       @svg = d3.select(@container_selector())
         .append("svg:svg")
-        .attr("height", @height + margins.top + margins.bottom)
-        .attr("width", @width + margins.left + margins.right)
+        .attr("height", @height + @margins.top + @margins.bottom)
+        .attr("width", @width + @margins.left + @margins.right)
         .append("svg:g")
-        .attr("transform", "translate(#{margins.left}, #{margins.top})")
+        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
+
+      @draw_legend
+        svg: @svg
+        series: @carrier_list.models
+        width: @width
+        vertical_offset: @series_height + label_height
+        columns: legend_columns
 
       @x = d3.scale.linear().range([0, @width])
       @y = d3.scale.linear().range([0, @series_height])
@@ -122,13 +137,6 @@ D3.mekko =
         .append("svg:text")
         .attr("text-anchor", "end")
         .attr("transform", "rotate(-70)")
-
-      @draw_legend
-        svg: @svg
-        series: @carrier_list.models
-        width: @width
-        vertical_offset: @series_height + 120
-        columns: if @carrier_list.length > 9 then 3 else 2
 
       $("#{@container_selector()} rect.carrier").qtip
         content:

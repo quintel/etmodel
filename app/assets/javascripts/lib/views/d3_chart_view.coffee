@@ -36,6 +36,7 @@ class @D3ChartView extends BaseChartView
       true
 
   available_width: -> @$el.width()
+
   available_height: -> @$el.height()
 
   # Builds a standard legend. Options hash:
@@ -58,9 +59,9 @@ class @D3ChartView extends BaseChartView
       .enter()
       .append("svg:g")
       .attr("class", "legend")
-      .attr("transform", (d, i) ->
+      .attr("transform", (d, i) =>
         x = legend_margin * (i % opts.columns)
-        y = Math.floor(i / opts.columns) * 16
+        y = Math.floor(i / opts.columns) * @legend_cell_height
         "translate(#{x}, #{y})")
       .attr("height", 30)
       .attr("width", 90)
@@ -75,3 +76,5 @@ class @D3ChartView extends BaseChartView
         d.get('label') || I18n.t("output_element_series.#{d.get('key')}")
       )
 
+  # height of the legend item
+  legend_cell_height: 15

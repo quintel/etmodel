@@ -1,4 +1,6 @@
 class UserSessionsController < ApplicationController
+  layout 'static_page'
+
   def index
     @user_session = UserSession.new
     render :action=>"new"

@@ -1,8 +1,9 @@
-%h1= t("scenario.save")
-%p= t("scenario.save_desc")
+.scenario_wrapper
+  %h1= t("scenario.save")
+  %p= t("scenario.save_desc")
 
-= simple_form_for @saved_scenario, :url => scenarios_path do |f|
-  = f.input :title
-  = f.input :description, :as => :text
-  = f.hidden_field :api_session_id
-  = f.button :submit
+  = simple_form_for @saved_scenario, :url => scenarios_path do |f|
+    = f.input :title
+    = f.input :description, :as => :text
+    = f.hidden_field :api_session_id
+    = f.button :submit

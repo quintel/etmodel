@@ -13,12 +13,6 @@ var Browser = {
     }
   },
 
-  // The browsers that return true will be ajax-navigation enabled
-  hasProperPushStateSupport: function() {
-    var ua = $.browser;
-    if (ua.webkit || ua.mozilla) { return true; }
-  },
-
   hasD3Support: function() {
     var ua = $.browser;
     if (ua.msie && ua.version < 9)

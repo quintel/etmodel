@@ -44,7 +44,7 @@ class @Target extends Backbone.Model
       when 'number'
         return Metric.round_number(n, 2)
       when 'number_with_unit'
-        return "" + Metric.round_number(n, 2) + " " + @get('unit')
+        return "#{Metric.round_number(n, 2)} #{@get('unit')}"
       else
         return n
 
@@ -64,4 +64,4 @@ class @TargetList extends Backbone.Collection
   find_by_key: (key) =>
     @filter((g) -> g.get('key') == key)[0]
 
-window.targets= new TargetList()
+window.targets = new TargetList()

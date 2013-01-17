@@ -1,27 +1,26 @@
-%h3= link_to  t("scenario.link"), new_scenario_path
-
-%br
-= form_tag compare_scenarios_path, method: 'get' do
-  %h3= t("scenario.saved")
-  = submit_tag t('scenario.compare')
-  %table.default
-    %thead
-      %tr
-        %th= t 'scenario.compare'
-        %th.tal{:width => 450}= t("scenario.title")
-        %th.tal{:width => 80}= t("scenario.end_year")
-        %th.tal= t("scenario.created")
-        %th
-    %tbody
-      - @scenarios.each do |scenario|
-        %tr{:class => cycle('even', 'odd')}
-          %td= check_box_tag 'scenario_ids[]', scenario.id
-          %td= link_to scenario.title, "/scenarios/#{scenario.id}"
-          %td= scenario.end_year
-          %td= scenario.parsed_created_at.andand.strftime("%d %b %H:%M")
-          - if scenario.created_at.to_date < Date.parse("2012-8-28")
-            %td= link_to t('scenario.load'), load_scenario_path(scenario), :confirm => t("scenario.warning")
-          - else
-            %td= link_to t('scenario.load'), load_scenario_path(scenario)
-      %tr
-        %td{:colspan => 5}= paginate @saved_scenarios
+.scenario_wrapper
+  %h3= link_to  t("scenario.link"), new_scenario_path
+  = form_tag compare_scenarios_path, method: 'get' do
+    %h3= t("scenario.saved")
+    = submit_tag t('scenario.compare')
+    %table.default
+      %thead
+        %tr
+          %th= t 'scenario.compare'
+          %th.tal{:width => 450}= t("scenario.title")
+          %th.tal{:width => 80}= t("scenario.end_year")
+          %th.tal= t("scenario.created")
+          %th
+      %tbody
+        - @scenarios.each do |scenario|
+          %tr{:class => cycle('even', 'odd')}
+            %td= check_box_tag 'scenario_ids[]', scenario.id
+            %td= link_to scenario.title, "/scenarios/#{scenario.id}"
+            %td= scenario.end_year
+            %td= scenario.parsed_created_at.andand.strftime("%d %b %H:%M")
+            - if scenario.created_at.to_date < Date.parse("2012-8-28")
+              %td= link_to t('scenario.load'), load_scenario_path(scenario), :confirm => t("scenario.warning")
+            - else
+              %td= link_to t('scenario.load'), load_scenario_path(scenario)
+        %tr
+          %td{:colspan => 5}= paginate @saved_scenarios

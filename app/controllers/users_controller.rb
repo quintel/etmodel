@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  layout 'static_page'
+
   def new
     @user = User.new
   end

@@ -1,54 +1,54 @@
 - size = @scenarios.size
+.scenario_wrapper
+  %h2 Compare scenarios
 
-%h2 Compare scenarios
-
-%table.compare_scenarios
-  %tbody
-    - Tab.ordered.each do |tab|
-      %tr.header
-        %th
-        %th Min
-        %th Avg
-        %th Max
-        %th #
-        - @scenarios.each do |s|
-          %th{:width => '90'} #{s.title} (#{s.area_code} - #{s.end_year})
-      %tr
-        %th.tab= t "tabs.#{tab.key}"
-        %td.cell
-        %td.cell
-        %td.cell
-        %td.cell
-        - size.times do
-          %td.cell
-      - tab.sidebar_items.each do |sidebar|
+  %table.compare_scenarios
+    %tbody
+      - Tab.ordered.each do |tab|
+        %tr.header
+          %th
+          %th Min
+          %th Avg
+          %th Max
+          %th #
+          - @scenarios.each do |s|
+            %th{:width => '90'} #{s.title} (#{s.area_code} - #{s.end_year})
         %tr
-          %th.sidebar_item= t "sidebar_items.#{sidebar.key}.short_name"
+          %th.tab= t "tabs.#{tab.key}"
           %td.cell
           %td.cell
           %td.cell
           %td.cell
           - size.times do
             %td.cell
-        - sidebar.slides.each do |slide|
+        - tab.sidebar_items.each do |sidebar|
           %tr
-            %th.slide= raw t "slides.#{slide.key}"
+            %th.sidebar_item= t "sidebar_items.#{sidebar.key}.short_name"
             %td.cell
             %td.cell
             %td.cell
             %td.cell
             - size.times do
               %td.cell
-
-          - slide.sliders.each do |slider|
+          - sidebar.slides.each do |slide|
             %tr
-              %th.slider= raw t "input_elements.#{slider.key}"
-              - values = @scenarios.map{|s| s.user_values.attributes[slider.key]}.compact
-              %td.cell= values.min.round(1) rescue '-'
-              %td.cell= (values.sum / values.compact.size).round(1) rescue '-'
-              %td.cell= values.max.round(1) rescue '-'
-              %td.cell #{values.compact.size}/#{size}
+              %th.slide= raw t "slides.#{slide.key}"
+              %td.cell
+              %td.cell
+              %td.cell
+              %td.cell
+              - size.times do
+                %td.cell
 
-              - @scenarios.each do |s|
-                %td.cell= s.user_values.attributes[slider.key].round(1) rescue '-'
+            - slide.sliders.each do |slider|
+              %tr
+                %th.slider= raw t "input_elements.#{slider.key}"
+                - values = @scenarios.map{|s| s.user_values.attributes[slider.key]}.compact
+                %td.cell= values.min.round(1) rescue '-'
+                %td.cell= (values.sum / values.compact.size).round(1) rescue '-'
+                %td.cell= values.max.round(1) rescue '-'
+                %td.cell #{values.compact.size}/#{size}
+
+                - @scenarios.each do |s|
+                  %td.cell= s.user_values.attributes[slider.key].round(1) rescue '-'
 

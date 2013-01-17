@@ -1,11 +1,8 @@
 D3.line =
   View: class extends D3ChartView
     initialize: ->
-      @key = @model.get 'key'
-      @start_year = App.settings.get('start_year')
-      @end_year = App.settings.get('end_year')
+      D3ChartView.prototype.initialize.call(this)
       @series = @model.series.models
-      @initialize_defaults()
 
     can_be_shown_as_table: -> true
 
@@ -16,8 +13,7 @@ D3.line =
       right: 70
 
     draw: =>
-      @width = @available_width() - (@margins.left + @margins.right)
-      @height = @available_height() - (@margins.top + @margins.bottom)
+      [@width, @height] = @available_size()
 
       legend_columns = 2
       legend_rows = @model.series.length / legend_columns
@@ -26,12 +22,7 @@ D3.line =
 
       @series_height = @height - legend_height - legend_margin
 
-      @svg = d3.select(@container_selector())
-        .append("svg:svg")
-        .attr("height", @height + @margins.top + @margins.bottom)
-        .attr("width", @width + @margins.left + @margins.right)
-        .append("svg:g")
-        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
+      @svg = @create_svg_container @width, @height, @margins
 
       @draw_legend
         svg: @svg

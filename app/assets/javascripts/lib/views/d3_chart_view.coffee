@@ -7,6 +7,12 @@
 # rendering and the refresh() for the later updates.
 # They should also call @initialize_defaults() in their initialize method
 class @D3ChartView extends BaseChartView
+  initialize: ->
+    @key = @model.get 'key'
+    @start_year = App.settings.get('start_year')
+    @end_year = App.settings.get('end_year')
+    @initialize_defaults()
+
   render: (force_redraw) =>
     return false unless @model.supported_by_current_browser()
     if force_redraw || !@drawn
@@ -40,6 +46,30 @@ class @D3ChartView extends BaseChartView
   available_width: -> @canvas().width()
 
   available_height: -> @canvas().height()
+
+  # Default values, derived class might have different values
+  margins:
+    top: 20
+    bottom: 20
+    left: 20
+    right: 30
+
+  # Returns a [width, height] array
+  available_size: => [
+    @available_width() - (@margins.left + @margins.right),
+    @available_height() - (@margins.top + @margins.bottom)
+  ]
+
+  # Returns a D3-selected SVG container
+  #
+  create_svg_container: (width, height, margins) =>
+    d3.select(@container_selector())
+      .append("svg:svg")
+      .attr("height", height + margins.top + margins.bottom)
+      .attr("width", width + margins.left + margins.right)
+      .append("svg:g")
+      .attr("transform", "translate(#{margins.left}, #{margins.top})")
+
 
   # Builds a standard legend. Options hash:
   # - svg: SVG container (required)

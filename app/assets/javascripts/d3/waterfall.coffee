@@ -14,8 +14,7 @@ D3.waterfall =
       right: 40
 
     draw: =>
-      @width  = @available_width()  - (@margins.left + @margins.right)
-      @height = @available_height() - (@margins.top + @margins.bottom)
+      [@width, @height] = @available_size()
 
       labels_height = 90
       labels_margin = 15
@@ -23,12 +22,7 @@ D3.waterfall =
       @series_width = @width - 15
 
       @column_width = @series_width / (@series.length + 1) * 0.6
-      @svg = d3.select(@container_selector())
-        .append("svg:svg")
-        .attr("height", @height + @margins.top + @margins.bottom)
-        .attr("width", @width + @margins.left + @margins.right)
-        .append("svg:g")
-        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
+      @svg = @create_svg_container @width, @height, @margins
 
       @y = d3.scale.linear().range([@series_height, 0]).domain([-10, 10])
 

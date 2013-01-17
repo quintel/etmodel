@@ -2,11 +2,8 @@ D3.co2_emissions =
   View: class extends D3ChartView
     el: 'body'
     initialize: ->
-      @key = @model.get 'key'
+      D3ChartView.prototype.initialize.call(this)
       @series = @model.series.models
-      @start_year = App.settings.get('start_year')
-      @end_year = App.settings.get('end_year')
-      @initialize_defaults()
 
     can_be_shown_as_table: -> true
 
@@ -27,19 +24,13 @@ D3.co2_emissions =
     draw: =>
       @setup_series()
 
-      @width  = @available_width()  - (@margins.left + @margins.right)
-      @height = @available_height() - (@margins.top + @margins.bottom)
+      [@width, @height] = @available_size()
 
       legend_height = @legend_cell_height
       legend_margin = 20
       @series_height = @height - legend_height - legend_margin
 
-      @svg = d3.select(@container_selector())
-        .append("svg:svg")
-        .attr("height", @height + @margins.top + @margins.bottom)
-        .attr("width", @width + @margins.left + @margins.right)
-        .append("svg:g")
-        .attr("transform", "translate(#{@margins.left}, #{@margins.top})")
+      @svg = @create_svg_container @width, @height, @margins
 
       # Ugly stuff. Check the db to see which series have been defined.
       # Since this chart is very specific the series could actually be

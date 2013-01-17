@@ -55,24 +55,19 @@ class @AppView extends Backbone.View
   # At this point we have all the settings initialized.
   bootstrap: =>
     @sidebar.bootstrap()
-    # If a "change dashboard" button is present, set up the DashboardChanger.
-
     @router.load_default_slides()
 
+    # If a "change dashboard" button is present, set up the DashboardChanger.
     dashChangeEl = $('#dashboard_change')
     if dashChangeEl.length > 0
       new DashboardChangerView(dashChangeEl)
 
-    # DEBT Add check, so that boostrap is only called once.
     if @settings.get('area_code') == 'nl'
       @peak_load = new PeakLoad()
 
     window.charts = @charts = new ChartList()
-
     @accordion = new Accordion()
     @accordion.setup()
-
-    # initial charts render, takes care of locked charts
     @charts.load_charts()
 
   setup_fce_toggle: ->
@@ -89,9 +84,11 @@ class @AppView extends Backbone.View
     i.set({user_value: null}, {silent: true}) for i in @input_elements.models
     @setup_sliders()
 
+  # Used on the console for debugging
   scenario_url: =>
     "#{globals.api_url.replace('api/v3', 'scenarios')}/#{@scenario.api_session_id()}"
 
+  # Prepares the Merit Order abd FCE checkboxes
   setup_checkboxes: =>
     # Prevent double event bindings
     return if @checkboxes_initialized
@@ -118,9 +115,6 @@ class @AppView extends Backbone.View
       the page"
       location.reload(true) if (r)
 
-  # The following method could need some refactoring
-  # e.g. el.set({ api_result : value_arr })
-  # window.dashboard.trigger('change')
   handle_api_result: ({results, settings, inputs}, data, textStatus, jqXHR) =>
     # store the last response from api for the turk it debugging tool
     # it is activated by passing ?debug=1 and can be found in the settings
@@ -139,6 +133,7 @@ class @AppView extends Backbone.View
     if App.settings.get('track_peak_load') && App.peak_load
       App.peak_load.trigger('change')
 
+    # This is used by the tracker script only
     $("body").trigger("dashboardUpdate")
 
   # Set the update in a cancelable action. When you

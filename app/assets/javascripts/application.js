@@ -15,5 +15,6 @@
 //= require partners
 //= require admin
 //= require common_interface
+//= require fancybox
 //= require i18n
 //= require i18n/translations

@@ -11,7 +11,6 @@
 //= require lib/views/vertical_stacked_bar_chart_view
 //= require_tree ./lib/views
 //= require_tree ./lib/models
-//= require fancybox
 
 // vendored in jquery-etmodel-rails gem
 //= require jquery.etmodel

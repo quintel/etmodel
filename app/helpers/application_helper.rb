@@ -36,7 +36,7 @@ module ApplicationHelper
   # @return [Array(Constraint)]
   #
   def constraints_for_group(group)
-    @_grouped_constraints ||= Constraint.all.group_by(&:group)
+    @_grouped_constraints ||= Constraint.enabled.group_by(&:group)
     @_grouped_constraints[group]
   end
 

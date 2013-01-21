@@ -2,6 +2,7 @@
   = f.input :key
   = f.input :group, :as => :select, :collection => Constraint::GROUPS
   = f.input :gquery_key
+  = f.input :disabled
   = f.simple_fields_for :description do |j|
     = j.input :short_content_en
     = j.input :short_content_nl

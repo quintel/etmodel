@@ -1,7 +1,10 @@
+# All charts inherit from this base class.
+#
 class @BaseChartView extends Backbone.View
   initialize_defaults: =>
     @model.bind('refresh', @render_as_needed)
 
+  # Separate chart and table rendering
   render_as_needed: =>
     @setup_holder_class()
     if @model.get('as_table') && @can_be_shown_as_table()
@@ -18,25 +21,6 @@ class @BaseChartView extends Backbone.View
       @container_node().addClass('chart_canvas').removeClass('table_canvas')
 
   max_value: -> _.max @model.values()
-
-  smart_sum: (sum, x) ->
-    y = if x > 0 then x else 0
-    sum + y
-
-  # used when drawing the tick options on some chart types
-  significant_digits: =>
-    max = @max_value() / Math.pow(1000, @data_scale())
-    return 0 if max >= 100
-    return 1 if max >= 10
-    return 2
-
-  parsed_unit: ->
-    unit = @model.get('unit')
-    Metric.scale_unit(@max_value(), unit)
-
-  # returns the power of thousand of the largest value shown in the chart
-  # this is used to scale the values around the chart
-  data_scale: -> Metric.power_of_thousand @max_value()
 
   container_id: -> @model.get("container")
 

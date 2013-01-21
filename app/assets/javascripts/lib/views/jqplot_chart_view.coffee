@@ -1,3 +1,5 @@
+# Old code that should be dropped when IE8 support and jqPlot will be dropped
+#
 class @JQPlotChartView extends BaseChartView
   create_legend: (opts) ->
     renderer: $.jqplot.EnhancedLegendRenderer
@@ -30,3 +32,19 @@ class @JQPlotChartView extends BaseChartView
 
   pre_render: =>
     @clear_container()
+
+  parsed_unit: ->
+    unit = @model.get('unit')
+    Metric.scale_unit(@max_value(), unit)
+
+  # used when drawing the tick options on some chart types
+  significant_digits: =>
+    max = @max_value() / Math.pow(1000, @data_scale())
+    return 0 if max >= 100
+    return 1 if max >= 10
+    return 2
+
+  # returns the power of thousand of the largest value shown in the chart
+  # this is used to scale the values around the chart
+  data_scale: -> Metric.power_of_thousand @max_value()
+

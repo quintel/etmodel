@@ -101,4 +101,8 @@ class Slide < ActiveRecord::Base
   def url
     "#{sidebar_item.tab.key}/#{sidebar_item.key}/#{short_name}" rescue nil
   end
+
+  def removed_from_interface?
+    sidebar_item.nil? || sidebar_item.tab.nil?
+  end
 end

@@ -40,7 +40,7 @@ class SettingsController < ApplicationController
     constraints = if dash and dash.any?
       Constraint.for_dashboard(dash)
     else
-      Constraint.default.ordered
+      Constraint.enabled.default.ordered
     end.reject(&:not_allowed_in_this_area)
 
     @checked = constraints.map(&:key)

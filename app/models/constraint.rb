@@ -53,6 +53,7 @@ class Constraint < ActiveRecord::Base
   scope :ordered, order('position')
   scope :default, where('position IS NOT NULL')
   scope :gquery_contains, lambda{|search| where("`gquery_key` LIKE ?", "%#{search}%")}
+  scope :enabled, where(:disabled => false)
 
   # CLASS METHODS ------------------------------------------------------------
 
@@ -72,7 +73,7 @@ class Constraint < ActiveRecord::Base
   def self.for_dashboard(keys)
     raise IllegalConstraintKey if keys.any?(&:blank?)
 
-    constraints = Constraint.where(:key => keys.uniq)
+    constraints = Constraint.enabled.where(:key => keys.uniq)
 
     # Maps the given keys to the retrieved constraints.
     keys.to_enum.with_index.each_with_object([]) do |(key, index), ordered|

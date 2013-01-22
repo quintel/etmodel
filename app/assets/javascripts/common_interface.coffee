@@ -70,7 +70,7 @@ class @CommonInterface
 
     # Menu items
     #
-    $("#disable_peak_load_tracking").live 'click', ->
+    $(document).on 'click', '#disable_peak_load_tracking', ->
       if App.peak_load
         App.peak_load.disable_peak_load_tracking()
 

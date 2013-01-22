@@ -17,7 +17,7 @@ $ ->
     padding  : 0
     type     : 'iframe'
 
-  $('#overlay_container a').live 'click', (i,el) ->
+  $('document').on 'click', '#overlay_container a', (i,el) ->
     if !$(this).hasClass('no_target')
       window.open($(this).attr('href'), '_blank')
     return null

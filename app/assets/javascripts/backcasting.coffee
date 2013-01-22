@@ -134,17 +134,17 @@ $ ->
       $(".prediction").busyBox('close')
 
   # extra info links
-  $(".measure").live 'click', (event) ->
+  $("#predictions_index").on 'click', ".measure", (event) ->
     $(this).find(".inline_description").toggle()
     $(this).toggleClass('active')
 
   # apply prediction
-  $("input.apply_prediction").live 'click', ->
+  $("#predictions_index").on 'click', "input.apply_prediction", ->
     update_input_element()
     parent.$.fancybox.close()
 
   # share prediction
-  $("button.share_prediction").live 'click', ->
+  $("#predictions_index").on 'click', "button.share_prediction", ->
     $(this).hide()
     $('#share_box').fadeIn('slow')
     $('#share_link').focus().select()

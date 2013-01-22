@@ -1,5 +1,6 @@
 D3.mekko =
-  # This represents a carrier within a sector
+  # This represents a carrier within a sector, ie a chart rectangle
+  #
   Node: class extends Backbone.Model
     initialize: =>
       @view = @get 'view'
@@ -12,10 +13,6 @@ D3.mekko =
     label: => @get('label') || @get('gquery')
     key:   => "#{@get 'carrier'}_#{@get 'sector'}"
 
-  NodeGroup: class extends Backbone.Model
-      initialize: -> @nodes = []
-      total_value: => d3.sum @nodes, (n) -> n.val()
-
   View: class extends D3ChartView
     initialize: ->
       @series = @model.series.models
@@ -23,13 +20,19 @@ D3.mekko =
 
     can_be_shown_as_table: -> true
 
-    outer_height: -> 410
-    # lots of ugly transformations to adapt the current conventions
+    # To render the mekko we need three collections:
+    # - sectors  (~= the column, if you want to see it this way)
+    # - carriers (used for legend only)
+    # - nodes    (all the rectangles of the chart)
+    # This methods builds them using the chart series.
+    #
     prepare_data: =>
       @sector_list  = new D3.mekko.GroupCollection()
       @carrier_list = new D3.mekko.GroupCollection()
       @node_list    = new D3.mekko.NodeList()
 
+      # Intermediate objects we use later to build the Backbone collections
+      #
       sectors  = []
       carriers = []
       for s in @series
@@ -38,13 +41,16 @@ D3.mekko =
           label: s.get('label')
           color: s.get('color')
           view: this
-      sectors  = _.uniq sectors
-      carriers = _.uniq(carriers, false, (c) -> c.label)
 
+      # Build sector and carrier collections
+      #
+      sectors = _.uniq sectors
       for sector in sectors
         @sector_list.add
           key: sector
           view: this
+
+      carriers = _.uniq(carriers, false, (c) -> c.label)
       for carrier in carriers
         @carrier_list.add
           key: carrier.label
@@ -52,12 +58,12 @@ D3.mekko =
           color: carrier.color
           view: this
 
+      # Add all nodes to the global collection
+      #
       for s in @series
-        sector  = s.get('group_translated')
-        carrier = s.get('label')
         @node_list.add
-          sector: sector
-          carrier: carrier
+          sector: s.get('group_translated')
+          carrier: s.get('label')
           gquery: s.get('gquery')
           color: s.get('color')
           view: this
@@ -102,7 +108,8 @@ D3.mekko =
         .attr("transform", "translate(0, 0.5)") # for nice, crisp lines
         .attr("class", "y_axis").call(@y_axis)
 
-      # Every sector is assigned a group element
+      # Every sector is assigned a group element (~= a column)
+      #
       @sectors = @svg.selectAll("g.sector")
         .data(@sector_list.models, (d) -> d.get 'key' )
         .enter().append("svg:g")
@@ -110,7 +117,8 @@ D3.mekko =
         .attr("transform", "translate(30)")
         .attr("data-rel", (d) -> d.get 'key')
 
-      # Create items inside the group
+      # Then inside every column we create the carrier items
+      #
       @sectors.selectAll(".carrier")
         .data( ((d) -> d.nodes) , ((d) -> d.key()) )
         .enter().append("svg:rect")
@@ -123,7 +131,8 @@ D3.mekko =
         .attr("data-rel", (d) -> d.key())
         .attr('data-tooltip-title', (n) -> "#{n.get 'carrier'} #{n.get 'sector'}")
 
-      # vertical sector label
+      # Let's append a vertical sector label
+      #
       @sectors
         .append('g')
         .attr('class', 'sector_label')
@@ -148,6 +157,9 @@ D3.mekko =
 
       @sector_offset = 0
 
+      # Let's first move the entire columns, building the offset up. Since
+      # they're actually groups, the column content will be moved as well.
+      #
       @svg.selectAll("g.sector")
         .data(@sector_list.models, (d) -> d.get 'key' )
         .transition().duration(500)
@@ -157,6 +169,8 @@ D3.mekko =
           "translate(#{old})"
         )
 
+      # Move and update the vertical label
+      #
       @svg.selectAll("g.sector_label")
         .data(@sector_list.models, (d) -> d.get 'key' )
         .transition().duration(500)
@@ -164,11 +178,12 @@ D3.mekko =
         .select('text')
         .text((d) -> "#{d.get 'key'} #{parseInt d.total_value()} PJ")
 
-      # we need to track the offset for every sector
+      # let's track the vertical offset for every sector
       offsets = {}
-      for sector in @sector_list.pluck('key')
-        offsets[sector] = 0
+      offsets[sector] = 0 for sector in @sector_list.pluck('key')
 
+      # Update the rectangles
+      #
       @svg.selectAll(".carrier")
         .data(@node_list.models, (d) -> d.key())
         .transition().duration(500)
@@ -186,9 +201,19 @@ D3.mekko =
         )
         .attr("data-tooltip-text", (d) -> Metric.autoscale_value d.val(), 'PJ')
 
+# Pseudo-collection of nodes
+#
+class D3.mekko.NodeGroup extends Backbone.Model
+  initialize: -> @nodes = []
+  total_value: => d3.sum @nodes, (n) -> n.val()
+
+# Collection of NodeGroups
+#
 class D3.mekko.GroupCollection extends Backbone.Collection
   model: D3.mekko.NodeGroup
 
+# This collection holds all the nodes
+#
 class D3.mekko.NodeList extends Backbone.Collection
   model: D3.mekko.Node
   grand_total: => d3.sum @models, (n) -> n.val()

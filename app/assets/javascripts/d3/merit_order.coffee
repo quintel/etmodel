@@ -131,6 +131,8 @@ D3.merit_order =
         left_margin: 15
 
     refresh: =>
+      # updated scales and axis
+      #
       max_height = @nodes.max_height()
       @y.domain([0, max_height])
       @inverted_y.domain([0, max_height])
@@ -140,7 +142,7 @@ D3.merit_order =
 
       @min_node_height = 2
 
-      # let's calculate the x-offset
+      # let's calculate the x-offset of the blocks
       offset = 0
       sorted = @nodes.sortBy((d) -> d.value_y()).map (d) ->
         value = offset
@@ -173,12 +175,11 @@ D3.merit_order =
           html
         )
 
-
+# Node collection added to simplify some calculations
+#
 class D3.merit_order.NodeList extends Backbone.Collection
   model: D3.merit_order.Node
 
-  max_height: =>
-    d3.max @models, (i) -> i.value_y()
+  max_height: => d3.max @models, (i) -> i.value_y()
 
-  total_width: =>
-    d3.sum @models, (n) -> n.value_x()
+  total_width: => d3.sum @models, (n) -> n.value_x()

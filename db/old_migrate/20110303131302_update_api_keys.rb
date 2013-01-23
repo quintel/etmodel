@@ -184,7 +184,7 @@ class UpdateApiKeys < ActiveRecord::Migration
     execute "UPDATE input_elements SET `key` = 'households_behavior_standby_killer_turn_off_appliances' WHERE `id` = 366;"
     execute "UPDATE input_elements SET `key` = 'households_behavior_turn_off_the_light' WHERE `id` = 368;"
     execute "UPDATE input_elements SET `key` = 'households_behavior_close_windows_turn_off_heating' WHERE `id` = 370;"
-    execute "UPDATE input_elements SET `key` = 'households_efficiency_low_temperature_washing' WHERE `id` = 371;"
+    execute "UPDATE input_elements SET `key` = 'households_behavior_low_temperature_washing' WHERE `id` = 371;"
     execute "UPDATE input_elements SET `key` = 'households_heat_demand_per_person' WHERE `id` = 372;"
     execute "UPDATE input_elements SET `key` = 'households_hot_water_demand_per_person' WHERE `id` = 373;"
     execute "UPDATE input_elements SET `key` = 'households_cooling_heat_pump_with_ts_share' WHERE `id` = 374;"

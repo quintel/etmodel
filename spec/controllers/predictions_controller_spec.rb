@@ -4,6 +4,10 @@ describe PredictionsController do
   render_views
   let(:prediction) { FactoryGirl.create :prediction}
 
+  before do
+    Setting.any_instance.stub(:area_code).and_return('nl')
+  end
+
   describe "GET index" do
     before do
       xhr :get, :index, :input_element_id => prediction.input_element.id

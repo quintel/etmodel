@@ -44,7 +44,6 @@ Etm::Application.routes.draw do
               :output_element_series,
               :general_user_notifications,
               :constraints,
-              :descriptions,
               :users,
               :partners
 

@@ -4,6 +4,7 @@ FactoryGirl.define do
     association :input_element, :factory => :input_element
     expert true
     description 'This is a nice test discriprion'
+    area 'nl'
     association :user, :factory => :user
   end
 

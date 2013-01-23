@@ -40,7 +40,6 @@ Etm::Application.routes.draw do
 
     resources :predictions,
               :sidebar_items,
-              :texts,
               :output_elements,
               :output_element_series,
               :general_user_notifications,
@@ -48,7 +47,9 @@ Etm::Application.routes.draw do
               :descriptions,
               :users,
               :partners
+
     resources :comments, :except => [:new, :create]
+    resources :texts, :except => [:show]
     resources :areas, :only => [:index, :show]
 
     resources :tabs do

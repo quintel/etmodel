@@ -1,15 +1,14 @@
 module Admin
   class TextsController < BaseController
+    before_filter :find_text, :only => [:edit, :update, :destroy]
     def index
       @texts = Text.all
     end
 
     def edit
-      @text = Text.find(params[:id])
     end
 
     def update
-      @text = Text.find(params[:id])
       if @text.update_attributes(params[:text])
         flash[:notice] = "Successfully updated text."
         redirect_to admin_texts_path
@@ -19,7 +18,7 @@ module Admin
     end
 
     def new
-      @text = Text.new()
+      @text = Text.new
     end
 
     def create
@@ -30,6 +29,17 @@ module Admin
       else
         render :new
       end
+    end
+
+    def destroy
+      @text.destroy
+      redirect_to admin_texts_path
+    end
+
+    private
+
+    def find_text
+      @text = Text.find params[:id]
     end
   end
 end

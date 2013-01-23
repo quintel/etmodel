@@ -16,6 +16,8 @@
 #
 
 class Text < ActiveRecord::Base
+  validates :key, :presence => true
+
   def title
     t :title
   end

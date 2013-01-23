@@ -37,18 +37,18 @@ module Admin
       redirect_to admin_press_releases_url
     end
 
-    def show
-    end
-
     def edit
     end
 
+    # Ugly and deprecated. Press releases should soon be moved to the new
+    # et-model.com app.
+    #
     def upload
       PressRelease.upload_file(params[:press_file])
       flash[:notice] = "File has been uploaded successfully. use as link: /assets/#{params[:press_file].original_filename}"
       session[:link] = "/media/#{params[:press_file].original_filename}"
 
-      redirect_to request.referer
+      redirect_to admin_press_releases_url
     end
 
     private

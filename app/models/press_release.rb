@@ -13,9 +13,10 @@
 #
 
 class PressRelease < ActiveRecord::Base
-  # has_one :description, :as => :describable
+  validates :title, :presence => true
 
-  # TODO: why don't we use paperclip? PZ Mon 8 Aug 2011 14:31:18 CEST
+  # Ugly and deprecated. The press releases will soon be extracted to a separate
+  # app.
   def self.upload_file(upload)
     name =  upload.original_filename
     directory = "public/media"

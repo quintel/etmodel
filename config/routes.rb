@@ -68,7 +68,7 @@ Etm::Application.routes.draw do
         get :search
       end
     end
-    resources :press_releases do
+    resources :press_releases, :except => :show do
       collection do
         post :upload
       end

@@ -16,8 +16,7 @@
 #  gquery               :string(255)      not null
 #
 
-
-## For html_table output_element:
+# Old tables use the order_by attribute to specify the cell position:
 # order_by = column_number * 100 + row_number
 # e.g.:
 # -------------------
@@ -50,12 +49,6 @@ class OutputElementSerie < ActiveRecord::Base
   accepts_nested_attributes_for :description, :reject_if => :all_blank
   accepts_nested_attributes_for :area_dependency, :reject_if => :all_blank
 
-  # delegate :name, :to => :output_element, :prefix => 'output_element', :allow_nil => true
-
-  def title_for_description
-    "output_element_series.#{label}" unless label.blank?
-  end
-
   def title_translated
     I18n.t("output_element_series.#{label}") unless label.blank?
   end
@@ -64,8 +57,7 @@ class OutputElementSerie < ActiveRecord::Base
     I18n.t("output_element_series.groups.#{group}") unless group.blank?
   end
 
-  # Attributes used by the js application
-  def options_for_js
+  def json_attributes
     {
       :id => id, # needed for block charts
       :gquery_key => gquery,

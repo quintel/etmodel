@@ -16,8 +16,6 @@ Etm::Application.routes.draw do
   resources :descriptions, :only => :show
   match '/descriptions/charts/:id'  => 'descriptions#charts'
 
-  match 'track' => 'track#track', :as => :path
-
   resources :user_sessions
   resources :users, :except => [:index, :show, :destroy]
   resource :user, :only => [:edit, :update]

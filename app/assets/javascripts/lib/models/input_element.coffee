@@ -10,15 +10,7 @@ class @InputElement extends Backbone.Model
     @bind('change:user_value', @additional_callbacks)
 
   logUpdate: =>
-    percent = 100 -
-      ((@get('max_value') - @get('user_value')) /
-      ((@get('max_value') - @get('min_value')) / 100))
-    percent = Math.round percent
-    App.debug "Moved slider #{@get 'key'} percent: #{percent}"
-    Tracker.event_track('Slider','Changed', @get('key'), percent)
-    Tracker.track
-      slider: @get('translated_name')
-      new_value: @get('user_value')
+    App.debug "Slider #{@get 'key'}: #{@get('user_value')}"
 
   # if we're caching the user_values hash then we have to store locally the
   # user_values, without querying the engine

@@ -133,9 +133,6 @@ class @AppView extends Backbone.View
     if App.settings.get('track_peak_load') && App.peak_load
       App.peak_load.trigger('change')
 
-    # This is used by the tracker script only
-    $("body").trigger("dashboardUpdate")
-
   # Set the update in a cancelable action. When you
   # pull a slider A this method is called. It will call doUpdateRequest
   # after 500ms. When a slider is pulled again, that call will be canceled

@@ -12,8 +12,8 @@ class OutputElementsController < ApplicationController
      nil
    end
     render :status => :ok, :json => {
-      :attributes => @chart.options_for_js,
-      :series => @chart.allowed_output_element_series.map(&:options_for_js),
+      :attributes => @chart.json_attributes,
+      :series => @chart.allowed_output_element_series.map(&:json_attributes),
       :html => template
     }
   end

@@ -88,7 +88,7 @@ class OutputElement < ActiveRecord::Base
     description.present?
   end
 
-  def options_for_js
+  def json_attributes
     {
       :id                 => id,
       :type               => output_element_type.name,

@@ -40,13 +40,13 @@ class PredictionsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        Notifier.comment_mail(@comment).deliver
-
-        format.html { redirect_to predictions_path(:input_element_id => @prediction.input_element_id, :prediction_id => @prediction.id),
+        format.html { redirect_to predictions_path(:input_element_id => @prediction.input_element_id,
+                                                   :prediction_id => @prediction.id),
                         :notice => "Your comment has been added"}
         format.js { }
       else
-        format.html { redirect_to predictions_path(:input_element_id => @prediction.input_element_id, :prediction_id => @prediction.id),
+        format.html { redirect_to predictions_path(:input_element_id => @prediction.input_element_id,
+                                                   :prediction_id => @prediction.id),
                         :error => "Error saving the comment"}
         format.js { page.alert("Error saving the comment! Please try again") }
       end

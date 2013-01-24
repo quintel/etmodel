@@ -94,4 +94,42 @@ describe PagesController, :vcr => true do
       end
     end
   end
+
+  describe "#info" do
+    it "should render title and description" do
+      s = FactoryGirl.create :sidebar_item, :section => 'foo', :key => 'bar'
+      t = FactoryGirl.create :text, :key => 'foo_bar'
+
+      get :info, :ctrl => 'foo', :act => 'bar'
+      expect(response).to be_success
+      expect(response).to render_template(:info)
+    end
+  end
+
+  describe "#feedback" do
+    it "should render the form" do
+      xhr :get, :feedback
+      expect(response).to be_success
+      expect(response).to render_template(:feedback)
+    end
+
+    it "should let the user post some feedback and send a couple emails" do
+      ActionMailer::Base.deliveries = []
+      xhr :post, :feedback, :feedback => {
+        :name => 'Schwarzenegger',
+        :email => 'arnold@quintel.com',
+        :msg => "I'll be back"
+      }, :format => :js
+      expect(response).to be_success
+      expect(response).to render_template(:feedback)
+      emails = ActionMailer::Base.deliveries
+      expect(emails.size).to eql(2)
+
+      quintel = emails.first
+      user = emails.last
+      expect(quintel.to[0]).to eql("john.kerkhoven@quintel.com")
+      expect(quintel.to[1]).to eql("dennis.schoenmakers@quintel.com")
+      expect(user.to[0]).to eql('arnold@quintel.com')
+    end
+  end
 end

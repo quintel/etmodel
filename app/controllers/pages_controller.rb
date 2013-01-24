@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   include ApplicationHelper
-  before_filter :ensure_valid_browser, :except => [:browser_support, :disable_browser_check]
+  before_filter :ensure_valid_browser, :except => [:browser_support]
   layout 'static_page', :only => [:about, :units, :browser_support, :bugs,
     :disclaimer, :privacy_statement, :press_releases]
 
@@ -71,16 +71,6 @@ public
 
   def show_flanders
     session[:show_flanders] = true
-    redirect_to home_path
-  end
-
-  def disable_browser_check
-    session[:disable_browser_check] = true
-    redirect_to home_path
-  end
-
-  def enable_browser_check
-    session[:disable_browser_check] = false
     redirect_to home_path
   end
 

@@ -80,7 +80,7 @@ D3.merit_order =
         .attr("class", "y_axis")
         .call(@y_axis)
       @svg.append("svg:text")
-        .text('Operating Costs [EUR/MWh]')
+        .text('Marginal Costs [EUR/MWh]')
         .attr("x", @height / -2)
         .attr("y", -35)
         .attr("text-anchor", "middle")

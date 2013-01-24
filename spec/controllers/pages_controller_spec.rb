@@ -82,4 +82,16 @@ describe PagesController, :vcr => true do
       expect(response).to render_template(:press_releases)
     end
   end
+
+  context "hidden setting pages" do
+    [:show_all_countries, :show_flanders].each do |p|
+      describe "pages##{p}" do
+        it "should update the session variable and redirect to home page" do
+          get p
+          expect(session[p]). to be_true
+          expect(response).to redirect_to(home_path)
+        end
+      end
+    end
+  end
 end

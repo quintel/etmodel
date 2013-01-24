@@ -36,7 +36,7 @@ module Admin
       else
         flash[:error] = "Error while deleting notification."
       end
-      redirect_to admin_general_user_notifications_url      
+      redirect_to admin_general_user_notifications_url
     end
 
 
@@ -45,9 +45,9 @@ module Admin
 
     def edit
     end
-    
+
     private
-    
+
       def find_notification
         @notification = GeneralUserNotification.find params[:id]
       end

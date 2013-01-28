@@ -47,8 +47,8 @@ class @BlockChartView extends BaseChartView
           $(this).attr('data-title')
         text: ->
           item = $(this)
-          cost =   Metric.autoscale_value item.parent().data('cost'), 'Eur/MWhe'
-          invest = Metric.autoscale_value item.parent().data('invest'), 'Eur/MWe'
+          cost =   Metric.autoscale_value +item.parent().attr('data-cost'), 'Eur/MWhe'
+          invest = Metric.autoscale_value +item.parent().attr('data-invest'), 'Eur/MWe'
           url = "/descriptions/#{item.attr('data-description_id')}"
           "#{item.attr('data-description')}
           <br/><br/>

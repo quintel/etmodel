@@ -25,10 +25,11 @@ D3.merit_order =
       k = @get 'key'
       @gquery_x = new ChartSerie
         gquery_key: "merit_order_#{k}_capacity_in_merit_order_table"
-      D3.merit_order.series.push @gquery_x
       @gquery_y = new ChartSerie
         gquery_key: "merit_order_#{k}_operating_costs_in_merit_order_table"
-      D3.merit_order.series.push @gquery_y
+      @gquery_availability = new ChartSerie
+        gquery_key: "merit_order_#{k}_availability_in_merit_order_table"
+      D3.merit_order.series.push @gquery_x, @gquery_y, @gquery_availability
 
     value_x: => @gquery_x.safe_future_value()
 
@@ -36,6 +37,8 @@ D3.merit_order =
       if @get('key') == 'must_run' then 0 else @original_y_value()
 
     original_y_value: => @gquery_y.safe_future_value()
+
+    availability_value: -> Metric.ratio_as_percentage @gquery_availability.safe_future_value()
 
     label: => @get('label') || @get('key')
 
@@ -169,7 +172,10 @@ D3.merit_order =
         .attr("data-tooltip-text", (d) ->
           html = "Installed capacity: #{Metric.autoscale_value(d.value_x(), 'MW', 2)}
                   <br/>
-                  Operating costs: #{Metric.autoscale_value d.original_y_value(), 'euro', 2}"
+                  Operating costs: #{Metric.autoscale_value d.original_y_value(), 'euro', 2}
+                  <br/>
+                  Availability: #{d.availability_value()}
+                  "
           if d.get('key') == 'must_run'
             html += '*<br/>* Must run plants do not participate in merit order'
           html

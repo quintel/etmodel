@@ -31,6 +31,7 @@ class @Setting extends Backbone.Model
 
   toggle_peak_load_tracking: =>
     @save track_peak_load: $("#track_peak_load_settings").is(':checked')
+    App.call_api()
 
   # Used by the bio-footprint dashboard item
   country: => @get('area_code').split('-')[0]

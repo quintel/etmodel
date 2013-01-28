@@ -1,4 +1,10 @@
 namespace :maintenance do
+  desc "Clean up old ActiveRecord sessions"
+  task :cleanup_sessions => :environment do
+    ActiveRecord::SessionStore::Session.delete_all( ['updated_at < ?', 3.days.ago] )
+  end
+
+
   desc "cleanup output element series table"
   task :cleanup_output_element_series => :environment do
     OutputElementSerie.find_each do |s|

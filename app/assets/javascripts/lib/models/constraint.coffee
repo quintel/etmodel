@@ -1,3 +1,5 @@
+# DashboardItem would be a better name
+#
 class Constraint extends Backbone.Model
   initialize: ->
     @gquery = gqueries.find_or_create_by_key @get('gquery_key')
@@ -29,7 +31,7 @@ class Constraint extends Backbone.Model
 
   # Update the result and previous result, based on new gquery result
   update_values : =>
-    #set the result to previous result before calculating the new one
+    # set the result to previous result before calculating the new one
     previous_result = @get('result')
     result = @calculate_result()
     @set({
@@ -37,6 +39,8 @@ class Constraint extends Backbone.Model
       result : result
     })
 
+  # All dashboard items show the value of the gquery they've been assigned.
+  # But there's one exception...
   result: ->
     if @get('key') == 'profitability'
       App.merit_order.dashboard_value()

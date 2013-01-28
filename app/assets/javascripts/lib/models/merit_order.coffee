@@ -1,3 +1,7 @@
+# The MO calculation is very specific, so it makes sense to keep it separated.
+# This could be refactored creating a MODashboardItem that inherits from
+# DashboardItem.
+#
 class @MeritOrder
   constructor: (app) ->
     @app = app

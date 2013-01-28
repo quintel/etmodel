@@ -33,7 +33,8 @@ class @ChartList extends Backbone.Collection
   #             wrapper     - selector for the wrapper that will contain the
   #                           chart holder
   #             prunable    - if true then the chart should be garbage
-  #                           collected using the collection's prune() method
+  #                           collected using the collection's prune() method.
+  #                           Zoomed-in and dashboard charts use this option
   #
   # Returns the newly created chart object or false if something went wrong
   load: (chart_id, holder_id = null, options = {}) =>
@@ -133,7 +134,13 @@ class @ChartList extends Backbone.Collection
       # The chart string has this format:
       #     XXX-YYY
       # XXX is the chart id, while YYY is 'T' if the chart must be shown as
-      # a table
+      # a table.
+      # Historical note: this "chart string" used to be a nested hash, but it
+      # turned out to be very painful to handle. This is why ETM uses
+      # active-record sessions, too: hashes weren't saved properly in
+      # memcached/dalli stores. Weird active support bug that I've not
+      # bothered fixing since Rails 4 rewrites most of it.
+      # PZ
       [id, format] = "#{chart}".split '-'
 
       locked = if (holder != 'holder_0')
@@ -203,8 +210,8 @@ class @ChartList extends Backbone.Collection
       return chart if chart.id == chart_id
     false
 
-  # This stuff could be moved to the view, but a document-scoped event binding
-  # prevents memory leaks and will be called just once.
+  # This stuff could be handled by a Backbone view, but a document-scoped
+  # event binding prevents memory/event leaks and will be called just once.
   #
   setup_callbacks: ->
     # Launch the chart picker popup

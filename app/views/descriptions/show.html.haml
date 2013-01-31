@@ -1,5 +1,6 @@
 #overlay_container
-  %h1= raw t(@description.title)
+  - if @description.title
+    %h1= raw t(@description.title)
 
   %p
     - if @description.content

@@ -18,4 +18,8 @@ class Api::Scenario < ActiveResource::Base
     (Time.now - parsed_created_at) / 60 / 60 / 24
   end
 
+  # Returns an HTTParty::Reponse object with a hash of the scenario user_values
+  def all_inputs
+    HTTParty.get("#{APP_CONFIG[:api_url]}/api/v3/scenarios/#{id}/inputs")
+  end
 end

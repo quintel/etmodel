@@ -11,6 +11,7 @@ describe ScenariosController, :vcr => true do
     mock.stub(:area_code){"nl"}
     mock.stub(:parsed_created_at){ Time.now }
     mock.stub(:created_at){ Time.now }
+    mock.stub(:all_inputs){ {} }
     mock
   }
 

@@ -91,6 +91,8 @@
         "#{@round_number x, 0} €/MWhe"
       when 'Eur/MWe'
         "#{@round_number x, 2} €/MWe"
+      when 'MEur/MWe'
+        "#{@round_number x, 2} M€/MWe"
       else
         value
 

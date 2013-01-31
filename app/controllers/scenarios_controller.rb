@@ -108,6 +108,7 @@ class ScenariosController < ApplicationController
   def compare
     scenario_ids = params[:scenario_ids] || []
     @scenarios = scenario_ids.map{|id| Api::Scenario.find id, params: {detailed: true}}
+    @default_values = @scenarios.first.all_inputs
   end
 
   private

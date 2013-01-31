@@ -7,14 +7,16 @@
       - Tab.ordered.each do |tab|
         %tr.header
           %th
-          %th Min
-          %th Avg
-          %th Max
+          %th Defaults Min/Default/Max
+          %th Values Min
+          %th Values Avg
+          %th Values Max
           %th #
           - @scenarios.each do |s|
             %th{:width => '90'} #{s.title} (#{s.area_code} - #{s.end_year})
         %tr
           %th.tab= t "tabs.#{tab.key}"
+          %td.cell
           %td.cell
           %td.cell
           %td.cell
@@ -37,13 +39,16 @@
               %td.cell
               %td.cell
               %td.cell
+              %td.cell
               - size.times do
                 %td.cell
 
             - slide.sliders.each do |slider|
+              - attrs = @default_values[slider.key] || {"min" => 0, "max" => 0, "default" => 0}
+              - values = @scenarios.map{|s| s.user_values.attributes[slider.key]}.compact
               %tr
                 %th.slider= raw t "input_elements.#{slider.key}"
-                - values = @scenarios.map{|s| s.user_values.attributes[slider.key]}.compact
+                %td.cell #{attrs["min"].round(1)}/#{attrs["default"].round(1)}/#{attrs["max"].round(1)}
                 %td.cell= values.min.round(1) rescue '-'
                 %td.cell= (values.sum / values.compact.size).round(1) rescue '-'
                 %td.cell= values.max.round(1) rescue '-'

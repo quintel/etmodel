@@ -15,6 +15,11 @@ class ScenariosController < ApplicationController
     end
     @saved_scenarios = items.order("created_at DESC").page(params[:page]).per(50)
     @scenarios = @saved_scenarios.map{|s| s.scenario rescue nil}.compact
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show

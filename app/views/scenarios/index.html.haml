@@ -12,15 +12,4 @@
           %th.tal= t("scenario.created")
           %th
       %tbody
-        - @scenarios.each do |scenario|
-          %tr{:class => cycle('even', 'odd')}
-            %td= check_box_tag 'scenario_ids[]', scenario.id
-            %td= link_to scenario.title, "/scenarios/#{scenario.id}"
-            %td= scenario.end_year
-            %td= scenario.parsed_created_at.andand.strftime("%d %b %H:%M")
-            - if scenario.created_at.to_date < Date.parse("2012-8-28")
-              %td= link_to t('scenario.load'), load_scenario_path(scenario), :confirm => t("scenario.warning")
-            - else
-              %td= link_to t('scenario.load'), load_scenario_path(scenario)
-        %tr
-          %td{:colspan => 5}= paginate @saved_scenarios
+        = render 'scenarios_slice'

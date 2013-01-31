@@ -1,7 +1,7 @@
 class DescriptionsController < ApplicationController
   def show
     @description = Description.find(params[:id]) rescue nil
-    if @description.nil? || @description.title.blank?
+    if @description.nil?
       render :text => 'Description is not yet available.'
     end
     render :layout => false if request.xhr?

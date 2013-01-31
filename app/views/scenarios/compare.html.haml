@@ -2,58 +2,63 @@
 .scenario_wrapper
   %h2 Compare scenarios
 
-  %table.compare_scenarios
-    %tbody
-      - Tab.ordered.each do |tab|
-        %tr.header
-          %th
-          %th Defaults Min/Default/Max
-          %th Values Min
-          %th Values Avg
-          %th Values Max
-          %th #
-          - @scenarios.each do |s|
-            %th{:width => '90'} #{s.title} (#{s.area_code} - #{s.end_year})
-        %tr
-          %th.tab= t "tabs.#{tab.key}"
-          %td.cell
-          %td.cell
-          %td.cell
-          %td.cell
-          %td.cell
-          - size.times do
-            %td.cell
-        - tab.sidebar_items.each do |sidebar|
+  = form_tag merge_scenarios_path, :method => :post do
+    %table.compare_scenarios
+      %tbody
+        - Tab.ordered.each do |tab|
+          %tr.header
+            %th
+            %th Defaults Min/Default/Max
+            %th Values Min
+            %th Values Avg
+            %th Values Max
+            %th #
+            - @scenarios.each do |s|
+              %th{:width => '90'} #{s.title} (#{s.area_code} - #{s.end_year})
           %tr
-            %th.sidebar_item= t "sidebar_items.#{sidebar.key}.short_name"
+            %th.tab= t "tabs.#{tab.key}"
+            %td.cell
             %td.cell
             %td.cell
             %td.cell
             %td.cell
             - size.times do
               %td.cell
-          - sidebar.slides.each do |slide|
+          - tab.sidebar_items.each do |sidebar|
             %tr
-              %th.slide= raw t "slides.#{slide.key}"
-              %td.cell
+              %th.sidebar_item= t "sidebar_items.#{sidebar.key}.short_name"
               %td.cell
               %td.cell
               %td.cell
               %td.cell
               - size.times do
                 %td.cell
-
-            - slide.sliders.each do |slider|
-              - attrs = @default_values[slider.key] || {"min" => 0, "max" => 0, "default" => 0}
-              - values = @scenarios.map{|s| s.user_values.attributes[slider.key]}.compact
+            - sidebar.slides.each do |slide|
               %tr
-                %th.slider= raw t "input_elements.#{slider.key}"
-                %td.cell #{attrs["min"].round(1)}/#{attrs["default"].round(1)}/#{attrs["max"].round(1)}
-                %td.cell= values.min.round(1) rescue '-'
-                %td.cell= (values.sum / values.compact.size).round(1) rescue '-'
-                %td.cell= values.max.round(1) rescue '-'
-                %td.cell #{values.compact.size}/#{size}
+                %th.slide= raw t "slides.#{slide.key}"
+                %td.cell
+                %td.cell
+                %td.cell
+                %td.cell
+                %td.cell
+                - size.times do
+                  %td.cell
 
-                - @scenarios.each do |s|
-                  %td.cell= s.user_values.attributes[slider.key].round(1) rescue '-'
+              - slide.sliders.each do |slider|
+                - attrs = @default_values[slider.key] || {"min" => 0, "max" => 0, "default" => 0}
+                - values = @scenarios.map{|s| s.user_values.attributes[slider.key]}.compact
+                - avg = (values.sum / values.compact.size).round(1) rescue nil
+                %tr
+                  %th.slider= raw t "input_elements.#{slider.key}"
+                  %td.cell #{attrs["min"].round(1)}/#{attrs["default"].round(1)}/#{attrs["max"].round(1)}
+                  %td.cell= values.min.round(1) rescue '-'
+                  %td.cell
+                    = avg
+                    = hidden_field_tag "inputs[#{slider.key}]", avg
+                  %td.cell= values.max.round(1) rescue '-'
+                  %td.cell #{values.compact.size}/#{size}
 
+                  - @scenarios.each do |s|
+                    %td.cell= s.user_values.attributes[slider.key].round(1) rescue '-'
+
+    = submit_tag "Create a scenario using the average values"

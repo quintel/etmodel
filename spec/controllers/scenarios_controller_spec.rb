@@ -86,6 +86,13 @@ describe ScenariosController, :vcr => true do
           expect(response).to render_template(:compare)
         end
       end
+
+      describe "#merge" do
+        it "should create a remote scenario with the average values" do
+          post :merge
+            expect(response).to be_success
+        end
+      end
     end
   end
 

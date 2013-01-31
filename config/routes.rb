@@ -75,11 +75,12 @@ Etm::Application.routes.draw do
     resources :input_elements, :except => :show
   end
 
-  # CRUD operations
-  #
   resources :scenarios, :except => [:edit, :update] do
-    post :load, :on => :collection
-    get :compare, :on => :collection
+    collection do
+      post :load
+      get :compare
+      post :merge
+    end
     get :load, :on => :member
   end
 

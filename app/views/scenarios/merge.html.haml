@@ -1,0 +1,13 @@
+.scenario_wrapper
+  %h2 Create scenario with average values
+
+  %table
+    %tr
+      %th Key
+      %th Value
+    - @inputs.each_pair do |key, value|
+      %tr
+        %td= key
+        %td= value
+
+  = link_to "Load scenario", load_scenario_path(:id => @scenario.id)

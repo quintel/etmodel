@@ -443,6 +443,13 @@ D3.sankey =
             my: 'right center'
             at: 'top center'
 
+        $("#{@container_selector()} g.link path").qtip
+          content: -> $(this).attr('data-tooltip')
+          position:
+            target: 'mouse'
+          style:
+            classes: "ui-tooltip-tipsy"
+
     # callbacks
     #
     unselectedLinkOpacity = 0.1
@@ -510,6 +517,7 @@ D3.sankey =
         .attr("display", (link) ->
           if link.value() == 0.0 then 'none' else 'inline'
         )
+        .attr("data-tooltip", (d) => @value_formatter d.value())
 
     # returns the height of the tallest column
     max_column_value: =>

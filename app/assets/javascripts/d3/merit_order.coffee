@@ -27,9 +27,9 @@ D3.merit_order =
         gquery_key: "merit_order_#{k}_capacity_in_merit_order_table"
       @gquery_y = new ChartSerie
         gquery_key: "merit_order_#{k}_operating_costs_in_merit_order_table"
-      @gquery_availability = new ChartSerie
-        gquery_key: "merit_order_#{k}_availability_in_merit_order_table"
-      D3.merit_order.series.push @gquery_x, @gquery_y, @gquery_availability
+      @gquery_load_factor = new ChartSerie
+        gquery_key: "merit_order_#{k}_load_factor_in_merit_order_table"
+      D3.merit_order.series.push @gquery_x, @gquery_y, @gquery_load_factor
 
     value_x: => @gquery_x.safe_future_value()
 
@@ -38,7 +38,7 @@ D3.merit_order =
 
     original_y_value: => @gquery_y.safe_future_value()
 
-    availability_value: -> Metric.ratio_as_percentage @gquery_availability.safe_future_value()
+    load_factor_value: -> Metric.ratio_as_percentage @gquery_load_factor.safe_future_value()
 
     label: => @get('label') || @get('key')
 
@@ -174,7 +174,7 @@ D3.merit_order =
                   <br/>
                   Operating costs: #{Metric.autoscale_value d.original_y_value(), 'euro', 2}
                   <br/>
-                  Availability: #{d.availability_value()}
+                  Load factor: #{d.load_factor_value()}
                   "
           if d.get('key') == 'must_run'
             html += '*<br/>* Must run plants do not participate in merit order'

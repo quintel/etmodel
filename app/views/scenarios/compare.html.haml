@@ -51,21 +51,26 @@
                   %td.cell
 
               - slide.sliders.each do |slider|
-                - attrs = @default_values[slider.key] || {"min" => 0, "max" => 0, "default" => 0}
-                - values = @scenarios.map{|s| s.user_values.attributes[slider.key]}.compact
-                - user_avg = (values.sum / values.compact.size).round(1) rescue '-'
-                - total_avg = (@scenarios.map{|s| s.user_values.attributes[slider.key] || attrs["default"]}.sum / @scenarios.size).round(1)
+                :ruby
+                  key = slider.key
+                  attrs = @default_values[key] || {"min" => 0, "max" => 0, "default" => 0}
+                  values = @scenarios.map{|s| s.user_values.attributes[key]}.compact
+                  user_avg = (values.sum / values.compact.size).round(1) rescue '-'
+                  total_avg = (@scenarios.map{|s| s.user_values.attributes[key] || attrs["default"]}.sum / @scenarios.size).round(1)
+                  @average_values[key] = user_avg
                 %tr
                   %th.slider= raw t "input_elements.#{slider.key}"
                   %td.cell #{attrs["min"].round(1)}/#{attrs["default"].round(1)}/#{attrs["max"].round(1)}
                   %td.cell= values.min.round(1) rescue '-'
-                  %td.cell
-                    #{user_avg} (#{total_avg})
-                    = hidden_field_tag "inputs[#{slider.key}]", user_avg
+                  %td.cell #{user_avg} (#{total_avg})
                   %td.cell= values.max.round(1) rescue '-'
                   %td.cell #{values.compact.size}/#{size}
 
                   - @scenarios.each do |s|
                     %td.cell= s.user_values.attributes[slider.key].round(1) rescue '-'
-    = submit_tag "Create a scenario using the average values"
+
+    %p
+      = text_area_tag :inputs, @average_values.to_yaml, :size => "85x20"
+    %p
+      = submit_tag "Create a scenario using the average values"
 

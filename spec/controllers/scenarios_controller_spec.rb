@@ -89,7 +89,7 @@ describe ScenariosController, :vcr => true do
 
       describe "#merge" do
         it "should create a remote scenario with the average values" do
-          post :merge
+          post :merge, :inputs => {:households_number_of_inhabitants => 1.0}
             expect(response).to be_success
         end
       end

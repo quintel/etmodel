@@ -8,9 +8,15 @@
         - Tab.ordered.each do |tab|
           %tr.header
             %th
-            %th Defaults Min/Default/Max
+            %th
+              Defaults
+              %br
+              Min/Default/Max
             %th Values Min
-            %th Values Avg
+            %th
+              Values Avg
+              %br
+              (using default value)
             %th Values Max
             %th #
             - @scenarios.each do |s|
@@ -47,18 +53,19 @@
               - slide.sliders.each do |slider|
                 - attrs = @default_values[slider.key] || {"min" => 0, "max" => 0, "default" => 0}
                 - values = @scenarios.map{|s| s.user_values.attributes[slider.key]}.compact
-                - avg = (values.sum / values.compact.size).round(1) rescue nil
+                - user_avg = (values.sum / values.compact.size).round(1) rescue '-'
+                - total_avg = (@scenarios.map{|s| s.user_values.attributes[slider.key] || attrs["default"]}.sum / @scenarios.size).round(1)
                 %tr
                   %th.slider= raw t "input_elements.#{slider.key}"
                   %td.cell #{attrs["min"].round(1)}/#{attrs["default"].round(1)}/#{attrs["max"].round(1)}
                   %td.cell= values.min.round(1) rescue '-'
                   %td.cell
-                    = avg
-                    = hidden_field_tag "inputs[#{slider.key}]", avg
+                    #{user_avg} (#{total_avg})
+                    = hidden_field_tag "inputs[#{slider.key}]", user_avg
                   %td.cell= values.max.round(1) rescue '-'
                   %td.cell #{values.compact.size}/#{size}
 
                   - @scenarios.each do |s|
                     %td.cell= s.user_values.attributes[slider.key].round(1) rescue '-'
-
     = submit_tag "Create a scenario using the average values"
+

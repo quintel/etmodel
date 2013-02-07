@@ -110,10 +110,12 @@ class ScenariosController < ApplicationController
     @scenarios = scenario_ids.map{|id| Api::Scenario.find id, params: {detailed: true}}
     @default_values = @scenarios.first.all_inputs
     @average_values = {}
+    @average_values_using_defaults = {}
   end
 
   def merge
-    @inputs = YAML.load params[:inputs]
+    inputs = params[:inputs] == 'average' ? params[:inputs_avg] : params[:inputs_def]
+    @inputs = YAML.load inputs
     @scenario = Api::Scenario.create(
       :source => 'ETM',
       :user_values => @inputs,

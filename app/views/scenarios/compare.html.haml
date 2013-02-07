@@ -15,14 +15,15 @@
             %th Values Min
             %th
               Values Avg
-              %br
-              (using default value)
+            %th
+              Avg w/defaults
             %th Values Max
             %th #
             - @scenarios.each do |s|
               %th{:width => '90'} #{s.title} (#{s.area_code} - #{s.end_year})
           %tr
             %th.tab= t "tabs.#{tab.key}"
+            %td.cell
             %td.cell
             %td.cell
             %td.cell
@@ -37,11 +38,13 @@
               %td.cell
               %td.cell
               %td.cell
+              %td.cell
               - size.times do
                 %td.cell
             - sidebar.slides.each do |slide|
               %tr
                 %th.slide= raw t "slides.#{slide.key}"
+                %td.cell
                 %td.cell
                 %td.cell
                 %td.cell
@@ -58,11 +61,13 @@
                   user_avg = (values.sum / values.compact.size).round(1) rescue '-'
                   total_avg = (@scenarios.map{|s| s.user_values.attributes[key] || attrs["default"]}.sum / @scenarios.size).round(1)
                   @average_values[key] = user_avg
+                  @average_values_using_defaults[key] = total_avg
                 %tr
                   %th.slider= raw t "input_elements.#{slider.key}"
                   %td.cell #{attrs["min"].round(1)}/#{attrs["default"].round(1)}/#{attrs["max"].round(1)}
                   %td.cell= values.min.round(1) rescue '-'
-                  %td.cell #{user_avg} (#{total_avg})
+                  %td.cell= user_avg
+                  %td.cell= total_avg
                   %td.cell= values.max.round(1) rescue '-'
                   %td.cell #{values.compact.size}/#{size}
 
@@ -70,7 +75,19 @@
                     %td.cell= s.user_values.attributes[slider.key].round(1) rescue '-'
 
     %p
-      = text_area_tag :inputs, @average_values.to_yaml, :size => "85x20"
-    %p
+      %table
+        %tr
+          %th Average
+          %th Average w/defaults
+        %tr
+          %td= text_area_tag :inputs_avg, @average_values.to_yaml, :size => "85x20"
+          %td= text_area_tag :inputs_def, @average_values_using_defaults.to_yaml, :size => "85x20"
+        %tr
+          %td
+            Use This
+            = radio_button_tag :inputs, :average, true
+          %td
+            Use This
+            = radio_button_tag :inputs, :defaults
       = submit_tag "Create a scenario using the average values"
 

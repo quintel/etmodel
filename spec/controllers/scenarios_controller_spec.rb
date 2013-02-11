@@ -91,7 +91,8 @@ describe ScenariosController, :vcr => true do
         it "should create a remote scenario with the average values" do
           post :merge,
             :inputs => 'average',
-            :inputs_avg => {:households_number_of_inhabitants => 1.0}.to_yaml
+            :inputs_avg => {:households_number_of_inhabitants => 1.0}.to_yaml,
+            :inputs_def => {:households_number_of_inhabitants => 1.0}.to_yaml
             expect(response).to be_success
         end
       end

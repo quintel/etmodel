@@ -114,7 +114,8 @@ class ScenariosController < ApplicationController
   end
 
   def merge
-    inputs = params[:inputs] == 'average' ? params[:inputs_avg] : params[:inputs_def]
+    # inputs = params[:inputs] == 'average' ? params[:inputs_avg] : params[:inputs_def]
+    inputs = params[:inputs_def]
     @inputs = YAML.load inputs
     @scenario = Api::Scenario.create(
       :source => 'ETM',

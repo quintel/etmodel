@@ -59,7 +59,7 @@
                   key = slider.key
                   attrs = @default_values[key] || {"min" => 0, "max" => 0, "default" => 0}
                   values = @scenarios.map{|s| s.user_values.attributes[key]}.compact
-                  user_avg = (values.sum / values.compact.size).round(1) rescue '-'
+                  user_avg = (values.sum / values.compact.size).round(1) rescue nil
                   total_avg = (@scenarios.map{|s| s.user_values.attributes[key] || attrs["default"]}.sum / @scenarios.size).round(1)
                   @average_values[key] = user_avg
                   @average_values_using_defaults[key] = total_avg

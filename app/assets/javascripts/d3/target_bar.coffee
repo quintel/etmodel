@@ -19,15 +19,14 @@ D3.target_bar =
       {key: 'offshore',               unit: 'km2'}
     ]
 
-  # This represents a carrier within a sector
   Target: class extends Backbone.Model
     initialize: =>
       key = @get 'key'
-      @namespace = D3.target_bar
-      @success_query = new ChartSerie({gquery_key: "policy_goal_#{key}_reached"})
-      @value_query   = new ChartSerie({gquery_key: "policy_goal_#{key}_value"})
-      @target_query  = new ChartSerie({gquery_key: "policy_goal_#{key}_target_value"})
-      @namespace.series.push @success_query, @value_query, @target_query
+      @view = @get 'view'
+      @success_query = new ChartSerie(gquery_key: "policy_goal_#{key}_reached")
+      @value_query   = new ChartSerie(gquery_key: "policy_goal_#{key}_value")
+      @target_query  = new ChartSerie(gquery_key: "policy_goal_#{key}_target_value")
+      @view.series.push @success_query, @value_query, @target_query
       @scale = d3.scale.linear()
       @axis = d3.svg.axis().tickSize(2, 0).ticks(4).orient('bottom')
 
@@ -37,13 +36,13 @@ D3.target_bar =
       for query in [@success_query, @value_query, @target_query]
         max = x if (x = query.future_value()) > max
         max = x if (x = query.present_value()) > max
-      # Let's add some padding
       max = 0 if max < 0
+      # Let's add some padding
       max * 1.05
 
     min_value: => if (m = @get('min')) then m else 0
 
-    update_scale: => @scale = @scale.domain([@min_value(), @max_value()]).range([0, @namespace.width - 80])
+    update_scale: => @scale.domain([@min_value(), @max_value()])
 
     axis_builder: => @axis.scale(@scale)
 
@@ -70,26 +69,29 @@ D3.target_bar =
 
     initialize: ->
       @key = @model.get 'key'
-      @namespace = D3.target_bar
-      @namespace.series = @model.series
+      @series = @model.series
       @targets = []
-      @targets.push(new @namespace.Target(t)) for t in @namespace.data[@key]
-
+      for item in D3.target_bar.data[@key]
+        item.view = this
+        t = new D3.target_bar.Target(item)
+        @targets.push t
       @initialize_defaults()
 
-    outer_height: -> 250
+    margins:
+      top: 25
+      bottom: 10
+      left: 20
+      right: 18
+
+    label_width: 100
+
+    # margin between label and horizontal bars
+    label_margin: 5
 
     draw: =>
-      margins =
-        top: 25
-        bottom: 10
-        left: 35
-        right: 18
-
-      @width = @available_width() - (margins.left + margins.right)
-      @height = @outer_height() - (margins.top + margins.bottom)
-      @namespace.width = @width
-      t.scale.range([80, @width]) for t in @targets
+      [@width, @height] = @available_size()
+      for t in @targets
+        t.scale.range([0, @width - @label_width - @label_margin])
       @svg = @create_svg_container @width, @height, @margins
 
       # Every target belongs to a group which is translated altogether
@@ -105,19 +107,20 @@ D3.target_bar =
         .text((d) -> I18n.t "targets.#{d.get 'key'}")
         .attr('class', 'target_label')
         .attr('text-anchor', 'end')
-        .attr('x', 75)
+        .attr('x', @label_width)
         .attr('y', 1)
 
       @items.append("svg:text")
         .text((d) -> d.get 'unit')
         .attr('class', 'target_unit')
         .attr('text-anchor', 'end')
-        .attr('x', 75)
+        .attr('x', @label_width)
         .attr('y', 15)
 
       # now bars and axis
+      # This group contains bars, target lines and x-axis
       @blocks = @items.append("svg:g")
-        .attr("transform", "translate(80)")
+        .attr("transform", "translate(#{@label_width + @label_margin})")
 
       current_values = @blocks.append("svg:rect")
         .attr('class', 'current_value')
@@ -202,6 +205,3 @@ D3.target_bar =
         .attr('x', (d) -> d.scale(d.target_value()) - 1)
         .attr('fill', (d) -> if d.successful() then '#008040' else '#ff0000')
         .style('opacity', (d) -> if d.is_set() then 0.7 else 0.0)
-
-
-

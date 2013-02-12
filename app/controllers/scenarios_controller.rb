@@ -108,6 +108,10 @@ class ScenariosController < ApplicationController
   def compare
     scenario_ids = params[:scenario_ids] || []
     @scenarios = scenario_ids.map{|id| Api::Scenario.find id, params: {detailed: true}}
+    if @scenarios.empty?
+      flash[:error] = "Please select one or more scenarios"
+      redirect_to scenarios_path and return
+    end
     @default_values = @scenarios.first.all_inputs
     @average_values = {}
     @average_values_using_defaults = {}

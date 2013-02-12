@@ -18,9 +18,7 @@ class @MeritOrder
   profitable_capacity: =>
     sum = 0
     q = @gquery.future_value()
-    for c in _.select(_.values(q), (v) ->
-      v.profitability == 'profitable' ||
-      v.profitability == 'conditionally_profitable' )
+    for c in _.select(_.values(q), (v) -> v.profitability == 'profitable')
       sum += c.capacity
     sum
 

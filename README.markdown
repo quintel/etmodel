@@ -1,5 +1,13 @@
 # Quintel Energy Transition Model
 
+## Build Status
+
+### Master
+![Master branch](https://semaphoreapp.com/api/v1/projects/4c715d68deace497255af08727d617d510d3e01d/8647/badge.png)
+
+### Tutorial
+![Tutorial branch](https://semaphoreapp.com/api/v1/projects/4c715d68deace497255af08727d617d510d3e01d/18439/badge.png)
+
 ## Branches
 
 * **master**: Working branch. Please always commit to this branch and rebase from here.

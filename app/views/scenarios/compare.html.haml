@@ -84,7 +84,7 @@
           %td= text_area_tag :inputs_avg, @average_values.to_yaml, :size => "85x20"
           %td= text_area_tag :inputs_def, @average_values_using_defaults.to_yaml, :size => "85x20"
       End Year:
-      = text_field_tag :year_end, @scenarios.first.end_year
+      = text_field_tag :end_year, @scenarios.first.end_year
       Area Code:
       %select{:name => "area_code"}
         - area_links.each do |area_code|

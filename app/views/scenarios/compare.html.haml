@@ -83,5 +83,17 @@
         %tr
           %td= text_area_tag :inputs_avg, @average_values.to_yaml, :size => "85x20"
           %td= text_area_tag :inputs_def, @average_values_using_defaults.to_yaml, :size => "85x20"
+      End Year:
+      = text_field_tag :year_end, @scenarios.first.end_year
+      Area Code:
+      %select{:name => "area_code"}
+        - area_links.each do |area_code|
+          - if area_code[:data]
+            %optgroup{:label => area_code[:text]}
+              - area_code[:data].each do |sub_area_code|
+                = country_option sub_area_code[:area_code], :test => sub_area_code[:test]
+          - else
+            = country_option area_code[:area_code], :test => area_code[:test]
+
       = submit_tag "Create a scenario using the average (with defaults) values"
 

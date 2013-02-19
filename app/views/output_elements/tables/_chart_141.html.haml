@@ -1,0 +1,130 @@
+-# CHPs
+%table#chps.chart
+  %thead
+    %tr
+      %th
+      %th{:colspan => 4, :style => "text-align: center"}= Current.setting.end_year
+    %tr
+      %th= t 'output_elements.tables.chps.types'
+      %th= t 'output_elements.tables.chps.plants'
+      %th= t 'output_elements.tables.chps.production_e'
+      %th= t 'output_elements.tables.chps.production_h'
+      %th= t 'output_elements.tables.chps.capacity'
+    %tr
+      %th
+      %th #
+      %th PJ
+      %th PJ
+      %th GW
+  %tbody
+  %tr.even
+    %th= t "output_elements.tables.chps.agriculture_chp_engine_natural_gas"
+    %td{:data => {:gquery => "agriculture_chp_engine_natural_gas_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "agriculture_chp_engine_natural_gas_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "agriculture_chp_engine_natural_gas_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "agriculture_chp_engine_natural_gas_capacity_in_chp_properties"}}
+  %tr.odd
+    %th= t "output_elements.tables.chps.buildings_collective_chp_natural_gas"
+    %td{:data => {:gquery => "buildings_collective_chp_natural_gas_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "buildings_collective_chp_natural_gas_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "buildings_collective_chp_natural_gas_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "buildings_collective_chp_natural_gas_capacity_in_chp_properties"}}
+  %tr.even
+    %th= t "output_elements.tables.chps.buildings_collective_chp_wood_pellets"
+    %td{:data => {:gquery => "buildings_collective_chp_wood_pellets_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "buildings_collective_chp_wood_pellets_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "buildings_collective_chp_wood_pellets_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "buildings_collective_chp_wood_pellets_capacity_in_chp_properties"}}
+  %tr.odd
+    %th= t "output_elements.tables.chps.energy_chp_ultra_supercritical_coal"
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_coal_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_coal_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_coal_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_coal_capacity_in_chp_properties"}}
+  %tr.even
+    %th= t "output_elements.tables.chps.energy_chp_combined_cycle_network_gas"
+    %td{:data => {:gquery => "energy_chp_combined_cycle_network_gas_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "energy_chp_combined_cycle_network_gas_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "energy_chp_combined_cycle_network_gas_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "energy_chp_combined_cycle_network_gas_capacity_in_chp_properties"}}
+  %tr.odd
+    %th= t "output_elements.tables.chps.energy_chp_ultra_supercritical_lignite"
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_lignite_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_lignite_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_lignite_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_lignite_capacity_in_chp_properties"}}
+  %tr.even
+    %th= t "output_elements.tables.chps.energy_chp_ultra_supercritical_crude_oil"
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_crude_oil_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_crude_oil_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_crude_oil_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_crude_oil_capacity_in_chp_properties"}}
+  %tr.odd
+    %th= t "output_elements.tables.chps.energy_chp_ultra_supercritical_wood_pellets"
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_wood_pellets_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_wood_pellets_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_wood_pellets_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_wood_pellets_capacity_in_chp_properties"}}
+  %tr.even
+    %th= t "output_elements.tables.chps.households_collective_chp_network_gas"
+    %td{:data => {:gquery => "households_collective_chp_network_gas_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "households_collective_chp_network_gas_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "households_collective_chp_network_gas_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "households_collective_chp_network_gas_capacity_in_chp_properties"}}
+  %tr.odd
+    %th= t "output_elements.tables.chps.households_water_heater_fuel_cell_chp_network_gas"
+    %td{:data => {:gquery => "households_water_heater_fuel_cell_chp_network_gas_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "households_water_heater_fuel_cell_chp_network_gas_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "households_water_heater_fuel_cell_chp_network_gas_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "households_water_heater_fuel_cell_chp_network_gas_capacity_in_chp_properties"}}
+  %tr.even
+    %th= t "output_elements.tables.chps.households_water_heater_micro_chp_network_gas"
+    %td{:data => {:gquery => "households_water_heater_micro_chp_network_gas_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "households_water_heater_micro_chp_network_gas_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "households_water_heater_micro_chp_network_gas_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "households_water_heater_micro_chp_network_gas_capacity_in_chp_properties"}}
+  %tr.odd
+    %th= t "output_elements.tables.chps.households_space_heater_micro_chp_network_gas"
+    %td{:data => {:gquery => "households_space_heater_micro_chp_network_gas_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "households_space_heater_micro_chp_network_gas_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "households_space_heater_micro_chp_network_gas_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "households_space_heater_micro_chp_network_gas_capacity_in_chp_properties"}}
+  %tr.even
+    %th= t "output_elements.tables.chps.households_collective_chp_wood_pellets"
+    %td{:data => {:gquery => "households_collective_chp_wood_pellets_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "households_collective_chp_wood_pellets_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "households_collective_chp_wood_pellets_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "households_collective_chp_wood_pellets_capacity_in_chp_properties"}}
+  %tr.odd
+    %th= t "output_elements.tables.chps.industry_chp_ultra_supercritical_coal"
+    %td{:data => {:gquery => "industry_chp_ultra_supercritical_coal_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "industry_chp_ultra_supercritical_coal_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "industry_chp_ultra_supercritical_coal_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "industry_chp_ultra_supercritical_coal_capacity_in_chp_properties"}}
+  %tr.even
+    %th= t "output_elements.tables.chps.industry_chp_combined_cycle_gas_power_fuelmix"
+    %td{:data => {:gquery => "industry_chp_combined_cycle_gas_power_fuelmix_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "industry_chp_combined_cycle_gas_power_fuelmix_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "industry_chp_combined_cycle_gas_power_fuelmix_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "industry_chp_combined_cycle_gas_power_fuelmix_capacity_in_chp_properties"}}
+  %tr.odd
+    %th= t "output_elements.tables.chps.industry_chp_supercritical_wood_pellets"
+    %td{:data => {:gquery => "industry_chp_supercritical_wood_pellets_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "industry_chp_supercritical_wood_pellets_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "industry_chp_supercritical_wood_pellets_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "industry_chp_supercritical_wood_pellets_capacity_in_chp_properties"}}
+  %tr.even
+    %th= t "output_elements.tables.chps.other_chp_engine_network_gas"
+    %td{:data => {:gquery => "other_chp_engine_network_gas_number_of_units_in_chp_properties"}}
+    %td{:data => {:gquery => "other_chp_engine_network_gas_electricity_production_in_chp_properties"}}
+    %td{:data => {:gquery => "other_chp_engine_network_gas_heat_production_in_chp_properties"}}
+    %td{:data => {:gquery => "other_chp_engine_network_gas_capacity_in_chp_properties"}}
+  %tfoot
+    %tr
+      %th.bordered
+        %strong Total
+      %td.bordered{:data => {:gquery => 'total_plants_number_in_chp_properties'}} -
+      %td.bordered{:data => {:gquery => 'total_plants_electricity_prod_in_chp_properties'}} -
+      %td.bordered{:data => {:gquery => 'total_plants_heat_prod_in_chp_properties'}} -
+      %td.bordered{:data => {:gquery => 'total_plants_capacity_in_chp_properties'}} -
+

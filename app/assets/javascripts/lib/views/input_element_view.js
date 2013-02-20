@@ -662,6 +662,8 @@
         flowplayer('a.player', {
           src: '/flash/flowplayer-3.2.6.swf',
           wmode: 'opaque'
+        },{
+          clip: {autoPlay: false}
         });
       }
     },

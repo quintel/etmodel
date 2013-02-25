@@ -448,7 +448,7 @@ D3.sankey =
           position:
             target: 'mouse'
           style:
-            classes: "ui-tooltip-tipsy"
+            classes: "qtip-tipsy"
 
     # callbacks
     #

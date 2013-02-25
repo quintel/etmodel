@@ -5,7 +5,7 @@
 //= require jquery.ajaxQueue
 //= require jquery.qtip
 
-$.fn.qtip.defaults.style.classes = "ui-tooltip-bootstrap"
+$.fn.qtip.defaults.style.classes = "qtip-bootstrap"
 
 // these have been added for IE, that has issues with events on SVG elements
 $.fn.qtip.defaults.show.event = "mouseover"

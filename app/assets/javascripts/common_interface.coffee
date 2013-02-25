@@ -101,7 +101,7 @@ class @CommonInterface
           my: 'bottom right'
           at: 'top center'
         style:
-          classes: "ui-tooltip-tipsy"
+          classes: "qtip-tipsy"
         }, e
 
   setup_browser_tweaks: ->

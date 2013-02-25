@@ -89,6 +89,7 @@ D3.stacked_bar =
           title: -> $(this).attr('data-tooltip-title')
           text:  -> $(this).attr('data-tooltip-text')
         position:
+          target: 'mouse'
           my: 'bottom center'
           at: 'top center'
 

@@ -31,6 +31,7 @@ gem 'sunspot_rails'
 # When working on the plugin, use :path => '/path/to/etplugin'
 # gem "jquery-etmodel-rails", :path => "~/Sites/etplugin"
 gem "jquery-etmodel-rails", '~> 0.3', :git  => "https://github.com/quintel/etplugin.git"
+gem 'jquery-qtip2-rails'
 
 group :development do
   gem 'tomdoc'

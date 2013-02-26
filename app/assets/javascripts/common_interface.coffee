@@ -59,6 +59,13 @@ class @CommonInterface
       if !is_open
         $t.addClass('menu-open')
         $t.parent().find('.header_menu').show()
+        # The arrow position must be set with JS. It used to be set via CSS,
+        # but the settings menu width is variable and this turned out to be
+        # the only working solution across all browsers. - PZ
+        container = $t.parents('li.expandable')
+        offset = container.width() - 44
+        arrow = container.find('.arrow')
+        arrow.css('left', offset)
 
     # Close menus when clicking outside them
     #

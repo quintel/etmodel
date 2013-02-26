@@ -91,6 +91,8 @@ class ScenariosController < ApplicationController
   # This is the main scenario action
   #
   def play
+    # Deal with JS types
+    params[:slide] = nil if params[:slide] == 'null'
     @selected_slide_key = params[:slide] || @interface.current_slide.short_name
     respond_to do |format|
       format.html {
@@ -177,6 +179,7 @@ class ScenariosController < ApplicationController
     def redirect_to_hash_url
       tab_key = @interface.current_tab.key
       sidebar_key = @interface.current_sidebar_item.key
-      redirect_to play_path(anchor: "#{tab_key}/#{sidebar_key}")
+      slide_key = params[:slide] || @interface.current_slide.short_name
+      redirect_to play_path(anchor: "#{tab_key}/#{sidebar_key}/#{slide_key}")
     end
 end

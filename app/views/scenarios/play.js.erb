@@ -5,8 +5,6 @@ $("ul.accordion").html('<%= escape_javascript render(:partial => "slide", :colle
 $("ul.accordion").fadeIn(100);
 $("#title").busyBox('close')
 
-// setup slides
-$(".accordion_element h3:first").trigger('click');
-
 // setup slider values, defaults etc
 App.setup_sliders();
+App.accordion.open_right_tab();

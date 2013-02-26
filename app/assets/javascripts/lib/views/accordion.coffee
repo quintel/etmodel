@@ -43,4 +43,4 @@ class @Accordion
         charts.load(default_chart, chart_holder, alternate: alternate_chart)
 
   open_right_tab: ->
-    $('li.accordion_element h3.selected').trigger 'click'
+    $("h3.selected").trigger 'click'

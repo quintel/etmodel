@@ -1,6 +1,6 @@
-- title_class = 'current' if slide.short_name == @selected_slide_key
+- item_class = 'selected' if slide.short_name == @selected_slide_key
 %li.accordion_element
-  %h3{:class => title_class,
+  %h3{:class => item_class,
       :data => {:slide => slide.url,
         :default_chart => slide.output_element_id,
         :alt_chart => slide.alt_output_element_id}}

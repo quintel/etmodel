@@ -1,9 +1,11 @@
 class Interface
-  def initialize(tab = 'demand', sidebar = 'households')
+  def initialize(tab = 'demand', sidebar = nil, slide = nil)
     @tab = tab
     @sidebar = sidebar
+    @slide = slide
   end
 
+  # Returns the available tabs (AR object)
   def tabs
     @tabs ||= Tab.ordered
   end
@@ -19,7 +21,7 @@ class Interface
 
   def current_sidebar_item
     @current_sidebar_item ||=
-      (SidebarItem.find_by_key(@sidebar) || sidebar_items.first)
+      (sidebar_items.find{|s| s.key == @sidebar} || sidebar_items.first)
   end
 
   def slides
@@ -27,7 +29,8 @@ class Interface
   end
 
   def current_slide
-    @current_slide ||= slides.first
+    @current_slide ||=
+      (current_sidebar_item.slides.find{|s| s.short_name == @slide} || slides.first)
   end
 
   def default_chart
@@ -46,6 +49,7 @@ class Interface
     Rails.application.routes.url_helpers.tutorial_path tab: current_tab.key,
       sidebar: current_sidebar_item.key
   end
+
   def tab_info_path
     Rails.application.routes.url_helpers.tab_info_path ctrl: current_tab.key,
       act: current_sidebar_item.key

@@ -24,11 +24,7 @@ class Api::Scenario < ActiveResource::Base
   end
 
   # The value which is used for sorting. Used on the preset scenario list
-  def sorting_token
-    if respond_to?(:ordering)
-      ordering
-    else
-      id
-    end
+  def sorting_value
+    respond_to?(:ordering) ? ordering : 0
   end
 end

@@ -22,4 +22,13 @@ class Api::Scenario < ActiveResource::Base
   def all_inputs
     HTTParty.get("#{APP_CONFIG[:api_url]}/api/v3/scenarios/#{id}/inputs")
   end
+
+  # The value which is used for sorting. Used on the preset scenario list
+  def sorting_token
+    if respond_to?(:ordering)
+      ordering
+    else
+      id
+    end
+  end
 end

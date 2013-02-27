@@ -5,7 +5,7 @@ class @AppView extends Backbone.View
     @scenario    = new Scenario()
     @router      = new Router()
     @merit_order = new MeritOrder(this)
-    Backbone.history.start()
+    Backbone.history.start({pushState: true, root: '/scenario'})
 
     @api = new ApiGateway
       api_path:           globals.api_url

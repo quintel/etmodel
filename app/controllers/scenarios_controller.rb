@@ -91,18 +91,9 @@ class ScenariosController < ApplicationController
   # This is the main scenario action
   #
   def play
-    # Deal with JS types
-    params[:slide] = nil if params[:slide] == 'null'
-    @selected_slide_key = params[:slide] || @interface.current_slide.short_name
+    @selected_slide_key = @interface.current_slide.short_name
     respond_to do |format|
-      format.html {
-        # redirect user to hash-based URL
-        if params[:tab]
-          redirect_to_hash_url and return
-        else
-          render :layout => 'etm'
-        end
-      }
+      format.html {render :layout => 'etm'}
       format.js
     end
   end
@@ -145,7 +136,7 @@ class ScenariosController < ApplicationController
 
     def load_interface
       tab = params[:tab] || 'demand'
-      @interface = Interface.new(tab, params[:sidebar])
+      @interface = Interface.new(tab, params[:sidebar], params[:slide])
 
       # The JS app will take care of fetching a scenario id, in the meanwhile we
       # use this variable to show all the items in the top menu
@@ -174,12 +165,5 @@ class ScenariosController < ApplicationController
       response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
       response.headers["Pragma"] = "no-cache"
       response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
-    end
-
-    def redirect_to_hash_url
-      tab_key = @interface.current_tab.key
-      sidebar_key = @interface.current_sidebar_item.key
-      slide_key = params[:slide] || @interface.current_slide.short_name
-      redirect_to play_path(anchor: "#{tab_key}/#{sidebar_key}/#{slide_key}")
     end
 end

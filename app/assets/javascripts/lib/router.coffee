@@ -1,16 +1,16 @@
 class @Router extends Backbone.Router
   routes:
-    "demand/:sidebar" : "demand"
-    "costs/:sidebar"  : "costs"
-    "targets/:sidebar": "targets"
-    "supply/:sidebar" : "supply"
+    "demand/:sidebar(/:slide)" : "demand"
+    "costs/:sidebar(/:slide)"  : "costs"
+    "targets/:sidebar(/:slide)": "targets"
+    "supply/:sidebar(/:slide)" : "supply"
 
-  demand:  (sidebar, slide = null) => @load_slides('demand', sidebar, slide)
-  costs:   (sidebar, slide = null) => @load_slides('costs', sidebar, slide)
-  targets: (sidebar, slide = null) => @load_slides('targets', sidebar, slide)
-  supply:  (sidebar, slide = null) => @load_slides('supply', sidebar, slide)
+  demand:  (sidebar, slide) => @load_slides('demand', sidebar, slide)
+  costs:   (sidebar, slide) => @load_slides('costs', sidebar, slide)
+  targets: (sidebar, slide) => @load_slides('targets', sidebar, slide)
+  supply:  (sidebar, slide) => @load_slides('supply', sidebar, slide)
 
-  load_slides: (tab, sidebar, slide = null) ->
+  load_slides: (tab, sidebar, slide) ->
     url = "/scenario/#{tab}/#{sidebar}/#{slide}"
     $.ajax
       url: url

@@ -30,7 +30,7 @@ class Interface
 
   def current_slide
     @current_slide ||=
-      (current_sidebar_item.slides.find{|s| s.short_name == @slide} || slides.first)
+      (current_sidebar_item.slides.find{|s| s.short_name == @slide} || slides.ordered.first)
   end
 
   def default_chart

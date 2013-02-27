@@ -1,3 +1,12 @@
+# Check router.coffee to see the app callbacks.
+# TODO: refactor the DOM elements class handling, the router should not
+# contain this logic. The callbacks should be enclosed in a single method.
+# This would prevent this ugliness you can find in router.coffee:
+#
+#    $("#sidebar h4[data-key=#{tab}]").click()
+#
+# MAYBE: the sidebar events could be handled by the standard backbone events
+# hash
 class @SidebarView extends Backbone.View
   bootstrap: ->
     # setup accordion
@@ -5,7 +14,7 @@ class @SidebarView extends Backbone.View
       $("#sidebar h4").removeClass("active")
       $(this).addClass('active')
       target = $(this).next('ul')
-      target.slideToggle('fast')
+      target.slideDown('fast')
       $("#sidebar ul").not(target).slideUp('fast')
 
     # Create gqueries for the inline bars

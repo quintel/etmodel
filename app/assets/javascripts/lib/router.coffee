@@ -15,12 +15,19 @@ class @Router extends Backbone.Router
     $.ajax
       url: url
       dataType: 'script'
+    @update_sidebar tab, sidebar
+
+  update_sidebar: (tab, sidebar) ->
+    if $("#sidebar h4.active").data('key') != tab
+      $("#sidebar h4").removeClass 'active'
+      $("#sidebar h4[data-key=#{tab}]").trigger 'click'
+    $("#sidebar li").removeClass 'active'
+    $("#sidebar li##{sidebar}").addClass 'active'
 
   load_default_slides: =>
     key = Backbone.history.getFragment() || 'demand/households'
     [tab, sidebar, slide] = key.split('/')
     @load_slides tab, sidebar, slide
     $("#sidebar h4[data-key=#{tab}]").click()
-    $("#sidebar li##{sidebar}").addClass 'active'
 
 

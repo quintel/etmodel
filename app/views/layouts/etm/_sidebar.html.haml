@@ -5,7 +5,7 @@
     %ul{style: "display: none;"}
 
       - tab.allowed_sidebar_items.each do |item|
-        - slide_key = item.slides.first.short_name
+        - slide_key = item.slides.ordered.first.short_name
         %li{:id => item.key, :data => {:gquery => item.percentage_bar_query}}
 
           = link_to play_path(tab.key, item.key, slide_key),
@@ -18,7 +18,7 @@
                 %span.value
 
         - item.children.includes(:area_dependency).reject(&:area_dependent).each do |child|
-          - slide_key = child.slides.first.short_name
+          - slide_key = child.slides.ordered.first.short_name
           %li.child{:id => child.key}
             = link_to play_path(tab.key, child.key, slide_key),
               :data => {:nav => true, :key => "#{tab.key}/#{child.key}/#{slide_key}" } do

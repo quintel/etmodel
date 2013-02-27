@@ -1,6 +1,6 @@
 %ul
   - cache "scenario_select_#{I18n.locale}" do
-    - @scenarios = Api::Scenario.all(:from => :templates).sort_by(&:sorting_token).reverse
+    - @scenarios = Api::Scenario.all(:from => :templates).sort_by(&:sorting_value).reverse
     - @scenarios.each do |scenario|
       - localized = scenario.description_for_locale(I18n.locale)
       - text = localized.present? ? localized : scenario.description

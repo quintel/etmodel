@@ -146,9 +146,8 @@ class ScenariosController < ApplicationController
     def store_last_etm_page
       tab_key     = @interface.current_tab.key rescue nil
       sidebar_key = @interface.current_sidebar_item.key rescue nil
-      Current.setting.last_etm_page = url_for(controller: 'scenarios',
-                                              action: 'play',
-                                              anchor: "#{tab_key}/#{sidebar_key}")
+      slide_key   = @interface.current_slide.short_name rescue nil
+      Current.setting.last_etm_page = play_url(tab_key, sidebar_key, slide_key)
     end
 
     def load_constraints

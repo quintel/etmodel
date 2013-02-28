@@ -27,6 +27,8 @@ class @SidebarView extends Backbone.View
     $(document).on 'click', "a[data-nav=true]", (e) ->
       e.preventDefault()
       target = $(e.target)
+      # Don't do anything if it's already active
+      return if target.parents("li").hasClass("active")
       $("#title").busyBox
         spinner: "<em>Loading</em>"
       $("ul.accordion").fadeOut(100)

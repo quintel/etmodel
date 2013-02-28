@@ -16,13 +16,30 @@
       - @sidebar_items.select{|s| s.tab_id.present?}.each do |result|
         %tr
           %td.img
-            %img.slide_icon{:src => "/assets/layout/diamond_#{result.tab.key}.gif"}
+            %i.icon-file
           %td.result
-            %h4= t "sidebar_items.#{result.key}.short_name"
+            %h4= raw t "sidebar_items.#{result.key}.short_name"
             %p
               = search_result_description(result)
               %br
               = link_to t('search.jump_to_page'), play_path(:tab => result.tab.key, :sidebar => result.key)
+
+  - unless @slides.empty?
+    %h2 Slides
+    %table
+      - @slides.each do |result|
+        %tr
+          %td.img
+            %i.icon-list
+          %td.result
+            %h4= t "slides.#{result.key}"
+            %p
+              = search_result_description(result)
+              %br
+              - if result.description
+                = link_to t('search.full_description'), result.description, :class => 'fancybox'
+                |
+              = link_to t('search.jump_to_page'), play_path(:tab => result.sidebar_item.tab.key, :sidebar => result.sidebar_item.key)
 
   - unless @input_elements.empty?
     %h2 Sliders
@@ -30,6 +47,7 @@
       - @input_elements.each do |result|
         %tr
           %td.img
+            %i.icon-exchange
           %td.result
             %h4= t "input_elements.#{result.key}"
             %p
@@ -40,23 +58,6 @@
                 |
               = link_to t('search.jump_to_page'), play_path(:tab => result.slide.sidebar_item.tab.key, :sidebar => result.slide.sidebar_item.key)
 
-  - unless @slides.empty?
-    %h2 Slides
-    %table
-      - @slides.each do |result|
-        %tr
-          %td.img
-            - if path = result.image_path
-              %img.slide_icon{:src => path}
-          %td.result
-            %h4= t "slides.#{result.key}"
-            %p
-              = search_result_description(result)
-              %br
-              - if result.description
-                = link_to t('search.full_description'), result.description, :class => 'fancybox'
-                |
-              = link_to t('search.jump_to_page'), play_path(:tab => result.sidebar_item.tab.key, :sidebar => result.sidebar_item.key)
 
 #search_results_from_reference_manager
   - if [@pages, @input_elements, @slides].flatten.empty?

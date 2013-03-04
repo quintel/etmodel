@@ -11,12 +11,13 @@ D3.bezier =
       left: 20
       right: 30
 
-    # This chart rendering is fairly complex. Here is the big picture:
-    # this bezier chart is basically a stacked area chart. D3 provides some
+    # This chart rendering is fairly complex. Here is the big picture: the
+    # chart is basically a stacked area chart. D3 provides some
     # utility methods that calculate the offset for stacked data. It expects
     # data to be given in a specific format and then it will add the
-    # calculated attributes in place. Check the y0 attribute for instance.
-    #
+    # calculated attributes in place, ie it will add new attributes (such as
+    # y0) to the array/hash we're passing as parameter.
+
     # Once we have the stacked data, grouped by serie key, we can pass the array
     # of values to the SVG area method, that will create the SVG attributes
     # required to draw the paths (and add some nice interpolations)
@@ -52,7 +53,7 @@ D3.bezier =
       # Run the stack method on the nested entries
       stacked_data = @stack_method(@nest.entries @prepare_data())
 
-      @x = d3.scale.linear().range([0, @series_width]) .domain([@start_year, @end_year])
+      @x = d3.scale.linear().range([0, @series_width]).domain([@start_year, @end_year])
 
       # show years at the corners
       @svg.selectAll('text.year')
@@ -64,8 +65,8 @@ D3.bezier =
         .attr('x', (d, i) => if i == 0 then 0 else @series_width)
         .attr('y', @series_height + 16)
 
-      @y = d3.scale.linear().range([0, @series_height]).domain([0, 7])
-      @inverted_y = d3.scale.linear().range([@series_height, 0]).domain([0, 7])
+      @y = d3.scale.linear().range([0, @series_height]).domain([0, 1])
+      @inverted_y = d3.scale.linear().range([@series_height, 0]).domain([0, 1])
 
       # This method will return the SVG area attributes. The values it receives
       # should be already stacked
@@ -113,7 +114,7 @@ D3.bezier =
         _.sum(@model.values_present()),
         _.sum(@model.values_future())
       )
-      # update the scales as needed
+      # update the scales
       @y.domain([0, tallest])
       @inverted_y = @inverted_y.domain([0, tallest])
 

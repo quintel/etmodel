@@ -1,3 +1,5 @@
+# this represents a node in the costs/block chart
+#
 class @BlockChartSerie extends Backbone.Model
   initialize : ->
     # the block chart has a different behaviour; its gqueries follow a naming

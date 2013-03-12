@@ -1,0 +1,545 @@
+-# CHPs
+%table#investments.chart
+  %thead
+    %tr
+      %th
+      %th{:colspan => 4, :style => "text-align: center"}= Current.setting.end_year
+    %tr
+      %th= t 'output_elements.tables.investments.types'
+      %th= t 'output_elements.tables.investments.present'
+      %th= t 'output_elements.tables.investments.future'
+      %th= t 'output_elements.tables.investments.delta'
+    %tr
+      %th
+      %th BLN. EUR
+      %th BLN. EUR
+      %th BLN. EUR
+  %tbody
+  %tr.even
+    %th= t "output_element_series.agriculture_burner_crude_oil"
+    %td.border-rgt{:data => {:gquery => "agriculture_burner_crude_oil_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "agriculture_burner_crude_oil_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "agriculture_burner_crude_oil_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.agriculture_burner_network_gas"
+    %td.border-rgt{:data => {:gquery => "agriculture_burner_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "agriculture_burner_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "agriculture_burner_network_gas_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.agriculture_burner_wood_pellets"
+    %td.border-rgt{:data => {:gquery => "agriculture_burner_wood_pellets_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "agriculture_burner_wood_pellets_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "agriculture_burner_wood_pellets_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.agriculture_chp_engine_natural_gas"
+    %td.border-rgt{:data => {:gquery => "agriculture_chp_engine_natural_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "agriculture_chp_engine_natural_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "agriculture_chp_engine_natural_gas_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.agriculture_geothermal"
+    %td.border-rgt{:data => {:gquery => "agriculture_geothermal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "agriculture_geothermal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "agriculture_geothermal_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.agriculture_heatpump_water_water_ts_electricity"
+    %td.border-rgt{:data => {:gquery => "agriculture_heatpump_water_water_ts_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "agriculture_heatpump_water_water_ts_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "agriculture_heatpump_water_water_ts_electricity_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.buildings_collective_chp_natural_gas"
+    %td.border-rgt{:data => {:gquery => "buildings_collective_chp_natural_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_collective_chp_natural_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_collective_chp_natural_gas_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.buildings_collective_chp_wood_pellets"
+    %td.border-rgt{:data => {:gquery => "buildings_collective_chp_wood_pellets_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_collective_chp_wood_pellets_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_collective_chp_wood_pellets_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.buildings_cooling_airconditioning_electricity"
+    %td.border-rgt{:data => {:gquery => "buildings_cooling_airconditioning_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_cooling_airconditioning_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_cooling_airconditioning_electricity_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.buildings_cooling_collective_heatpump_water_water_ts_electricity"
+    %td.border-rgt{:data => {:gquery => "buildings_cooling_collective_heatpump_water_water_ts_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_cooling_collective_heatpump_water_water_ts_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_cooling_collective_heatpump_water_water_ts_electricity_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.buildings_cooling_heatpump_air_water_network_gas"
+    %td.border-rgt{:data => {:gquery => "buildings_cooling_heatpump_air_water_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_cooling_heatpump_air_water_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_cooling_heatpump_air_water_network_gas_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.buildings_heat_network_connection_steam_hot_water"
+    %td.border-rgt{:data => {:gquery => "buildings_heat_network_connection_steam_hot_water_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_heat_network_connection_steam_hot_water_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_heat_network_connection_steam_hot_water_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.buildings_solar_pv_solar_radiation"
+    %td.border-rgt{:data => {:gquery => "buildings_solar_pv_solar_radiation_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_solar_pv_solar_radiation_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_solar_pv_solar_radiation_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.buildings_space_heater_coal"
+    %td.border-rgt{:data => {:gquery => "buildings_space_heater_coal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_space_heater_coal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_space_heater_coal_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.buildings_space_heater_collective_heatpump_water_water_ts_electricity"
+    %td.border-rgt{:data => {:gquery => "buildings_space_heater_collective_heatpump_water_water_ts_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_space_heater_collective_heatpump_water_water_ts_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_space_heater_collective_heatpump_water_water_ts_electricity_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.buildings_space_heater_crude_oil"
+    %td.border-rgt{:data => {:gquery => "buildings_space_heater_crude_oil_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_space_heater_crude_oil_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_space_heater_crude_oil_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.buildings_space_heater_district_heating_steam_hot_water"
+    %td.border-rgt{:data => {:gquery => "buildings_space_heater_district_heating_steam_hot_water_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_space_heater_district_heating_steam_hot_water_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_space_heater_district_heating_steam_hot_water_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.buildings_space_heater_electricity"
+    %td.border-rgt{:data => {:gquery => "buildings_space_heater_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_space_heater_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_space_heater_electricity_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.buildings_space_heater_heatpump_air_water_network_gas"
+    %td.border-rgt{:data => {:gquery => "buildings_space_heater_heatpump_air_water_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_space_heater_heatpump_air_water_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_space_heater_heatpump_air_water_network_gas_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.buildings_space_heater_network_gas"
+    %td.border-rgt{:data => {:gquery => "buildings_space_heater_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_space_heater_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_space_heater_network_gas_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.buildings_space_heater_solar_thermal"
+    %td.border-rgt{:data => {:gquery => "buildings_space_heater_solar_thermal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_space_heater_solar_thermal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_space_heater_solar_thermal_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.buildings_space_heater_wood_pellets"
+    %td.border-rgt{:data => {:gquery => "buildings_space_heater_wood_pellets_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_space_heater_wood_pellets_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_space_heater_wood_pellets_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_chp_combined_cycle_network_gas"
+    %td.border-rgt{:data => {:gquery => "energy_chp_combined_cycle_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_chp_combined_cycle_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_chp_combined_cycle_network_gas_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_chp_ultra_supercritical_coal"
+    %td.border-rgt{:data => {:gquery => "energy_chp_ultra_supercritical_coal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_coal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_coal_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_chp_ultra_supercritical_crude_oil"
+    %td.border-rgt{:data => {:gquery => "energy_chp_ultra_supercritical_crude_oil_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_crude_oil_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_crude_oil_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_chp_ultra_supercritical_lignite"
+    %td.border-rgt{:data => {:gquery => "energy_chp_ultra_supercritical_lignite_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_lignite_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_lignite_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_chp_ultra_supercritical_wood_pellets"
+    %td.border-rgt{:data => {:gquery => "energy_chp_ultra_supercritical_wood_pellets_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_wood_pellets_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_chp_ultra_supercritical_wood_pellets_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_heat_network_backup_heater_network_gas"
+    %td.border-rgt{:data => {:gquery => "energy_heat_network_backup_heater_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_heat_network_backup_heater_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_heat_network_backup_heater_network_gas_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_heater_for_heat_network_coal"
+    %td.border-rgt{:data => {:gquery => "energy_heater_for_heat_network_coal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_heater_for_heat_network_coal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_heater_for_heat_network_coal_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_heater_for_heat_network_crude_oil"
+    %td.border-rgt{:data => {:gquery => "energy_heater_for_heat_network_crude_oil_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_heater_for_heat_network_crude_oil_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_heater_for_heat_network_crude_oil_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_heater_for_heat_network_geothermal"
+    %td.border-rgt{:data => {:gquery => "energy_heater_for_heat_network_geothermal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_heater_for_heat_network_geothermal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_heater_for_heat_network_geothermal_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_heater_for_heat_network_lignite"
+    %td.border-rgt{:data => {:gquery => "energy_heater_for_heat_network_lignite_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_heater_for_heat_network_lignite_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_heater_for_heat_network_lignite_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_heater_for_heat_network_network_gas"
+    %td.border-rgt{:data => {:gquery => "energy_heater_for_heat_network_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_heater_for_heat_network_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_heater_for_heat_network_network_gas_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_heater_for_heat_network_waste_mix"
+    %td.border-rgt{:data => {:gquery => "energy_heater_for_heat_network_waste_mix_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_heater_for_heat_network_waste_mix_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_heater_for_heat_network_waste_mix_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_heater_for_heat_network_wood_pellets"
+    %td.border-rgt{:data => {:gquery => "energy_heater_for_heat_network_wood_pellets_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_heater_for_heat_network_wood_pellets_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_heater_for_heat_network_wood_pellets_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_power_combined_cycle_ccs_coal"
+    %td.border-rgt{:data => {:gquery => "energy_power_combined_cycle_ccs_coal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_combined_cycle_ccs_coal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_combined_cycle_ccs_coal_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_power_combined_cycle_ccs_network_gas"
+    %td.border-rgt{:data => {:gquery => "energy_power_combined_cycle_ccs_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_combined_cycle_ccs_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_combined_cycle_ccs_network_gas_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_power_combined_cycle_coal"
+    %td.border-rgt{:data => {:gquery => "energy_power_combined_cycle_coal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_combined_cycle_coal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_combined_cycle_coal_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_power_combined_cycle_network_gas"
+    %td.border-rgt{:data => {:gquery => "energy_power_combined_cycle_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_combined_cycle_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_combined_cycle_network_gas_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_power_engine_diesel"
+    %td.border-rgt{:data => {:gquery => "energy_power_engine_diesel_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_engine_diesel_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_engine_diesel_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_power_geothermal"
+    %td.border-rgt{:data => {:gquery => "energy_power_geothermal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_geothermal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_geothermal_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_power_hydro_mountain"
+    %td.border-rgt{:data => {:gquery => "energy_power_hydro_mountain_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_hydro_mountain_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_hydro_mountain_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_power_hydro_river"
+    %td.border-rgt{:data => {:gquery => "energy_power_hydro_river_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_hydro_river_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_hydro_river_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_power_nuclear_gen2_uranium_oxide"
+    %td.border-rgt{:data => {:gquery => "energy_power_nuclear_gen2_uranium_oxide_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_nuclear_gen2_uranium_oxide_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_nuclear_gen2_uranium_oxide_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_power_nuclear_gen3_uranium_oxide"
+    %td.border-rgt{:data => {:gquery => "energy_power_nuclear_gen3_uranium_oxide_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_nuclear_gen3_uranium_oxide_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_nuclear_gen3_uranium_oxide_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_power_solar_csp_solar_radiation"
+    %td.border-rgt{:data => {:gquery => "energy_power_solar_csp_solar_radiation_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_solar_csp_solar_radiation_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_solar_csp_solar_radiation_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_power_solar_pv_solar_radiation"
+    %td.border-rgt{:data => {:gquery => "energy_power_solar_pv_solar_radiation_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_solar_pv_solar_radiation_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_solar_pv_solar_radiation_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_power_supercritical_coal"
+    %td.border-rgt{:data => {:gquery => "energy_power_supercritical_coal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_supercritical_coal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_supercritical_coal_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_power_supercritical_waste_mix"
+    %td.border-rgt{:data => {:gquery => "energy_power_supercritical_waste_mix_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_supercritical_waste_mix_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_supercritical_waste_mix_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_power_turbine_network_gas"
+    %td.border-rgt{:data => {:gquery => "energy_power_turbine_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_turbine_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_turbine_network_gas_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_power_ultra_supercritical_ccs_coal"
+    %td.border-rgt{:data => {:gquery => "energy_power_ultra_supercritical_ccs_coal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_ultra_supercritical_ccs_coal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_ultra_supercritical_ccs_coal_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_power_ultra_supercritical_coal"
+    %td.border-rgt{:data => {:gquery => "energy_power_ultra_supercritical_coal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_ultra_supercritical_coal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_ultra_supercritical_coal_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_power_ultra_supercritical_cofiring_wood_pellets"
+    %td.border-rgt{:data => {:gquery => "energy_power_ultra_supercritical_cofiring_wood_pellets_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_ultra_supercritical_cofiring_wood_pellets_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_ultra_supercritical_cofiring_wood_pellets_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_power_ultra_supercritical_crude_oil"
+    %td.border-rgt{:data => {:gquery => "energy_power_ultra_supercritical_crude_oil_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_ultra_supercritical_crude_oil_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_ultra_supercritical_crude_oil_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_power_ultra_supercritical_lignite"
+    %td.border-rgt{:data => {:gquery => "energy_power_ultra_supercritical_lignite_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_ultra_supercritical_lignite_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_ultra_supercritical_lignite_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_power_ultra_supercritical_network_gas"
+    %td.border-rgt{:data => {:gquery => "energy_power_ultra_supercritical_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_ultra_supercritical_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_ultra_supercritical_network_gas_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_power_ultra_supercritical_oxyfuel_ccs_lignite"
+    %td.border-rgt{:data => {:gquery => "energy_power_ultra_supercritical_oxyfuel_ccs_lignite_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_ultra_supercritical_oxyfuel_ccs_lignite_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_ultra_supercritical_oxyfuel_ccs_lignite_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_power_wind_turbine_coastal"
+    %td.border-rgt{:data => {:gquery => "energy_power_wind_turbine_coastal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_wind_turbine_coastal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_wind_turbine_coastal_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.energy_power_wind_turbine_inland"
+    %td.border-rgt{:data => {:gquery => "energy_power_wind_turbine_inland_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_wind_turbine_inland_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_wind_turbine_inland_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.energy_power_wind_turbine_offshore"
+    %td.border-rgt{:data => {:gquery => "energy_power_wind_turbine_offshore_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_power_wind_turbine_offshore_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_power_wind_turbine_offshore_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.households_collective_chp_network_gas"
+    %td.border-rgt{:data => {:gquery => "households_collective_chp_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_collective_chp_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_collective_chp_network_gas_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.households_collective_chp_wood_pellets"
+    %td.border-rgt{:data => {:gquery => "households_collective_chp_wood_pellets_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_collective_chp_wood_pellets_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_collective_chp_wood_pellets_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.households_collective_geothermal"
+    %td.border-rgt{:data => {:gquery => "households_collective_geothermal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_collective_geothermal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_collective_geothermal_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.households_cooling_airconditioning_electricity"
+    %td.border-rgt{:data => {:gquery => "households_cooling_airconditioning_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_cooling_airconditioning_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_cooling_airconditioning_electricity_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.households_cooling_heatpump_air_water_electricity"
+    %td.border-rgt{:data => {:gquery => "households_cooling_heatpump_air_water_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_cooling_heatpump_air_water_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_cooling_heatpump_air_water_electricity_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.households_cooling_heatpump_ground_water_electricity"
+    %td.border-rgt{:data => {:gquery => "households_cooling_heatpump_ground_water_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_cooling_heatpump_ground_water_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_cooling_heatpump_ground_water_electricity_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.households_heat_network_connection_steam_hot_water"
+    %td.border-rgt{:data => {:gquery => "households_heat_network_connection_steam_hot_water_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_heat_network_connection_steam_hot_water_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_heat_network_connection_steam_hot_water_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.households_solar_pv_solar_radiation"
+    %td.border-rgt{:data => {:gquery => "households_solar_pv_solar_radiation_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_solar_pv_solar_radiation_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_solar_pv_solar_radiation_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.households_space_heater_coal"
+    %td.border-rgt{:data => {:gquery => "households_space_heater_coal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_space_heater_coal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_space_heater_coal_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.households_space_heater_combined_network_gas"
+    %td.border-rgt{:data => {:gquery => "households_space_heater_combined_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_space_heater_combined_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_space_heater_combined_network_gas_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.households_space_heater_crude_oil"
+    %td.border-rgt{:data => {:gquery => "households_space_heater_crude_oil_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_space_heater_crude_oil_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_space_heater_crude_oil_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.households_space_heater_district_heating_steam_hot_water"
+    %td.border-rgt{:data => {:gquery => "households_space_heater_district_heating_steam_hot_water_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_space_heater_district_heating_steam_hot_water_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_space_heater_district_heating_steam_hot_water_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.households_space_heater_electricity"
+    %td.border-rgt{:data => {:gquery => "households_space_heater_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_space_heater_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_space_heater_electricity_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.households_space_heater_heatpump_add_on_electricity"
+    %td.border-rgt{:data => {:gquery => "households_space_heater_heatpump_add_on_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_space_heater_heatpump_add_on_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_space_heater_heatpump_add_on_electricity_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.households_space_heater_heatpump_air_water_electricity"
+    %td.border-rgt{:data => {:gquery => "households_space_heater_heatpump_air_water_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_space_heater_heatpump_air_water_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_space_heater_heatpump_air_water_electricity_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.households_space_heater_heatpump_ground_water_electricity"
+    %td.border-rgt{:data => {:gquery => "households_space_heater_heatpump_ground_water_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_space_heater_heatpump_ground_water_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_space_heater_heatpump_ground_water_electricity_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.households_space_heater_micro_chp_network_gas"
+    %td.border-rgt{:data => {:gquery => "households_space_heater_micro_chp_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_space_heater_micro_chp_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_space_heater_micro_chp_network_gas_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.households_space_heater_network_gas"
+    %td.border-rgt{:data => {:gquery => "households_space_heater_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_space_heater_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_space_heater_network_gas_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.households_space_heater_wood_pellets"
+    %td.border-rgt{:data => {:gquery => "households_space_heater_wood_pellets_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_space_heater_wood_pellets_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_space_heater_wood_pellets_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.households_water_heater_combined_network_gas"
+    %td.border-rgt{:data => {:gquery => "households_water_heater_combined_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_water_heater_combined_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_water_heater_combined_network_gas_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.households_water_heater_district_heating_steam_hot_water"
+    %td.border-rgt{:data => {:gquery => "households_water_heater_district_heating_steam_hot_water_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_water_heater_district_heating_steam_hot_water_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_water_heater_district_heating_steam_hot_water_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.households_water_heater_fuel_cell_chp_network_gas"
+    %td.border-rgt{:data => {:gquery => "households_water_heater_fuel_cell_chp_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_water_heater_fuel_cell_chp_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_water_heater_fuel_cell_chp_network_gas_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.households_water_heater_heatpump_air_water_electricity"
+    %td.border-rgt{:data => {:gquery => "households_water_heater_heatpump_air_water_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_water_heater_heatpump_air_water_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_water_heater_heatpump_air_water_electricity_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.households_water_heater_heatpump_ground_water_electricity"
+    %td.border-rgt{:data => {:gquery => "households_water_heater_heatpump_ground_water_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_water_heater_heatpump_ground_water_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_water_heater_heatpump_ground_water_electricity_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.households_water_heater_micro_chp_network_gas"
+    %td.border-rgt{:data => {:gquery => "households_water_heater_micro_chp_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_water_heater_micro_chp_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_water_heater_micro_chp_network_gas_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.households_water_heater_network_gas"
+    %td.border-rgt{:data => {:gquery => "households_water_heater_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_water_heater_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_water_heater_network_gas_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.households_water_heater_resistive_electricity"
+    %td.border-rgt{:data => {:gquery => "households_water_heater_resistive_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_water_heater_resistive_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_water_heater_resistive_electricity_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.households_water_heater_solar_thermal"
+    %td.border-rgt{:data => {:gquery => "households_water_heater_solar_thermal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_water_heater_solar_thermal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_water_heater_solar_thermal_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.industry_aluminium_burner_network_gas"
+    %td.border-rgt{:data => {:gquery => "industry_aluminium_burner_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_aluminium_burner_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_aluminium_burner_network_gas_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.industry_burner_coal"
+    %td.border-rgt{:data => {:gquery => "industry_burner_coal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_burner_coal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_burner_coal_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.industry_burner_crude_oil"
+    %td.border-rgt{:data => {:gquery => "industry_burner_crude_oil_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_burner_crude_oil_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_burner_crude_oil_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.industry_burner_network_gas"
+    %td.border-rgt{:data => {:gquery => "industry_burner_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_burner_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_burner_network_gas_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.industry_burner_wood_pellets"
+    %td.border-rgt{:data => {:gquery => "industry_burner_wood_pellets_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_burner_wood_pellets_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_burner_wood_pellets_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.industry_chp_combined_cycle_gas_power_fuelmix"
+    %td.border-rgt{:data => {:gquery => "industry_chp_combined_cycle_gas_power_fuelmix_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_chp_combined_cycle_gas_power_fuelmix_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_chp_combined_cycle_gas_power_fuelmix_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.industry_chp_supercritical_wood_pellets"
+    %td.border-rgt{:data => {:gquery => "industry_chp_supercritical_wood_pellets_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_chp_supercritical_wood_pellets_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_chp_supercritical_wood_pellets_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.industry_chp_ultra_supercritical_coal"
+    %td.border-rgt{:data => {:gquery => "industry_chp_ultra_supercritical_coal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_chp_ultra_supercritical_coal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_chp_ultra_supercritical_coal_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.industry_other_metals_burner_network_gas"
+    %td.border-rgt{:data => {:gquery => "industry_other_metals_burner_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_other_metals_burner_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_other_metals_burner_network_gas_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.industry_steel_blastfurnace_burner_coal_gas"
+    %td.border-rgt{:data => {:gquery => "industry_steel_blastfurnace_burner_coal_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_steel_blastfurnace_burner_coal_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_steel_blastfurnace_burner_coal_gas_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.industry_steel_electricfurnace_burner_network_gas"
+    %td.border-rgt{:data => {:gquery => "industry_steel_electricfurnace_burner_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_steel_electricfurnace_burner_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_steel_electricfurnace_burner_network_gas_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.other_burner_coal"
+    %td.border-rgt{:data => {:gquery => "other_burner_coal_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "other_burner_coal_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "other_burner_coal_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.other_burner_crude_oil"
+    %td.border-rgt{:data => {:gquery => "other_burner_crude_oil_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "other_burner_crude_oil_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "other_burner_crude_oil_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.other_burner_network_gas"
+    %td.border-rgt{:data => {:gquery => "other_burner_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "other_burner_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "other_burner_network_gas_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "output_element_series.other_burner_wood_pellets"
+    %td.border-rgt{:data => {:gquery => "other_burner_wood_pellets_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "other_burner_wood_pellets_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "other_burner_wood_pellets_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "output_element_series.other_chp_engine_network_gas"
+    %td.border-rgt{:data => {:gquery => "other_chp_engine_network_gas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "other_chp_engine_network_gas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "other_chp_engine_network_gas_delta_in_investment_cost_table"}}
+  %tfoot
+    %tr
+      %th.bordered
+        %strong Total
+      %td.bordered{:data => {:gquery => 'total_present_in_investment_cost_table'}} -
+      %td.bordered{:data => {:gquery => 'total_future_in_investment_cost_table'}} -
+      %td.bordered{:data => {:gquery => 'total_delta_in_investment_cost_table'}} -
+

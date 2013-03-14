@@ -172,7 +172,7 @@ D3.merit_order =
         .attr("data-tooltip-text", (d) ->
           html = "Installed capacity: #{Metric.autoscale_value(d.value_x(), 'MW', 2)}
                   <br/>
-                  Operating costs: #{Metric.autoscale_value d.original_y_value(), 'euro', 2}
+                  Operating costs: #{Metric.autoscale_value d.original_y_value(), 'Eur/Mwh', 2}
                   <br/>
                   Load factor: #{d.load_factor_value()}
                   "

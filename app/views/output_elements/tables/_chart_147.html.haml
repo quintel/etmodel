@@ -3,12 +3,14 @@
   %thead
     %tr
       %th
-      %th{:colspan => 4, :style => "text-align: center"}= Current.setting.end_year
+      %th.border-rgt= Current.setting.start_year
+      %th{:colspan => 1, :style => "text-align: center"}= Current.setting.end_year
+      %th
     %tr
-      %th= t 'output_elements.tables.investments.types'
-      %th= t 'output_elements.tables.investments.present'
-      %th= t 'output_elements.tables.investments.future'
-      %th= t 'output_elements.tables.investments.delta'
+      %th= t 'output_elements.tables.investments.technology'
+      %th= t 'output_elements.tables.investments.investment'
+      %th= t 'output_elements.tables.investments.investment'
+      %th= t 'output_elements.tables.investments.difference'
     %tr
       %th
       %th BLN. EUR

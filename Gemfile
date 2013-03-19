@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.13'
 gem 'jquery-rails', "~> 2.0.2"
 gem 'haml', '~>3.1.4'
 gem 'authlogic'

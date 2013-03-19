@@ -14,7 +14,9 @@ gem 'acts_as_commentable'
 gem 'nokogiri'
 
 # javascript
-gem 'i18n-js'
+# Change back to RubyGems once Invalid Byte Sequence error is fixed:
+#   https://github.com/fnando/i18n-js/pull/139
+gem 'i18n-js', :github => 'fnando/i18n-js'
 gem 'jbuilder'
 
 # supporting gems
@@ -54,7 +56,7 @@ end
 
 group :test do
   gem 'factory_girl_rails', '~> 4.1.0'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', require: false
   gem 'webrat'
   gem 'simplecov'
   gem 'webmock', '~> 1.8.0'

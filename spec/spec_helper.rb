@@ -14,11 +14,9 @@ if ENV["COVERAGE"]
   end
 end
 
-require 'rubygems'
-require 'capybara/rspec'
-require 'capybara-webkit'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'capybara-webkit'
 require 'authlogic/test_case'
 require 'factory_girl'
 require 'shoulda/matchers'

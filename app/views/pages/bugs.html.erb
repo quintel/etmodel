@@ -11,7 +11,7 @@
 <ul>
   <li>Geothermal heat, ambient heat (air and ground heat pumps), and solar thermal energy are not included in the primary energy calculation. The effect is that technologies using these reduce the amount of energy used. We plan to include those primary renewable carriers in the renewability calculation in order to match the international energy statistics.</li>
   <li>Primary demand of carriers can differ between Sankey and overall Primary and Final energy use charts by small amounts. These discrepancies will be resolved in the next version of the ETM.</li>
-  <li>Currently the only power plant that can run on bio-coal or can be used for co-firing of wood_pellets is the ultra-supercritical pulverized coal power plant (Pulverized coal). In the near future we plan to also include the equivalent CHP plant (Central Coal CHP) in the group of plants that can do this. </li>
+  <li>Currently the only power plants that can be used for co-firing of wood_pellets is the ultra-supercritical pulverized coal power plant (Pulverized coal) and the equivalent CHP plant (Central Coal CHP). </li>
 </ul>
 <br/>
 
@@ -27,10 +27,9 @@
 <ul>
   <li>Industry and agriculture are excluded from the employment calculation.</li>
   <li>At present, geothermal heating in Households and Buildings uses employment figures from geothermal electricity production (scaled to match the capacity). This is due to the lack of literature on geothermal heating projects in the Netherlands.</li>
-  <li>Some heat pumps may have incorrect capacities in the Households and Buildings sectors, the number of units the ETM uses for these technologies may be incorrect. A thorough validation of these technologies is underway.</li>
   <li>Employment effects of district heating do not take the construction of a heat network into account. The extent and properties of such a network are too dependent on the specifics of each project, to conclude what impact the network has on employment.</li>
   <li>The 'Replacement of existing houses' slider does not take into account that heating or cooling technologies need to be installed for each new house. The effect of this slider on employment is therefore unrealistically small.</li>
-  <li>  To assess the employment impact of CCS technologies we have added 30% to the impact of the 'planning', 'production', 'placement' and 'removal' stages and 70% to 'maintenance' compared to the reference non-CCS technologies.</li>
+  <li>To assess the employment impact of CCS technologies we have added 30% to the impact of the 'planning', 'production', 'placement' and 'removal' stages and 70% to 'maintenance' compared to the reference non-CCS technologies.</li>
   <li>The employment impact of maintenance for offshore wind turbines has been taken from onshore wind research.</li>
   <li>The following technologies are not included in the employment calculation:</li>
     <ul>
@@ -39,4 +38,11 @@
       <li>Appliances (washing machines, stereos etc.)</li>
       <li>Ventilation, recirculation en heat recovery</li>
     </ul>
+</ul>
+<br/>
+
+<h2>Merit order module</h2>
+<ul>
+  <li>The merit order calculation does not take import or export of electricity into account. This means that plants experience no competition from cheap electricity from abroad. In reality, North Western Europe's electricity market is coupled and such competition does exist. As a result of this simplification, the profitability of most plants is significantly overestimated. In order to see how cheap renewables or coal from e.g. Germany affect profitability, the user may consider to increase installed capacity of such plants in the Netherlands.</li>
+  <li>The power plants in the ETM include both state-of-the-art and more conventional technologies, whose properties are chosen such as to reproduce the national energy balance correctly (both production of electricity and transformation losses). These plant types are a simplification of the real production park installed in the Netherlands. Profitability figures of the plants in the ETM should, therefore, not be translated one-on-one to plants currently exisiting in the Netherlands.</li>
 </ul>

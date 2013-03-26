@@ -53,7 +53,7 @@ module ApplicationHelper
   def information_links
     links = []
     links.push text: t("header.partners") ,           url: partners_path
-    links.push text: t("header.about_qi") ,           url: about_path
+    links.push text: t("header.about_qi") ,           url: "http://quintel.com", target: "_new"
     links.push text: t("header.education") ,          url: "http://onderwijs.quintel.nl/", target: "_new"
     links.push text: t("header.famous_users") ,       url: famous_users_path
     links.push text: t("header.press_releases") ,     url: press_releases_path

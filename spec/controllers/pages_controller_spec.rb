@@ -39,7 +39,7 @@ describe PagesController, :vcr => true do
   end
 
   context :static_pages do
-    [ :bugs, :about, :units, :browser_support, :disclaimer,
+    [ :bugs, :units, :browser_support, :disclaimer,
       :privacy_statement].each do |page|
       describe "#{page} page" do
         it "should work" do

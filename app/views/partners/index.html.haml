@@ -2,6 +2,9 @@
   %h1= t("partners.partners_of_the_energy_transition_model")
   %nav#partners_tabs
     %ul
+      - if @info
+        %li{:class => (@active_partner_type == 'info' ? 'active' : '')}
+          = link_to @info.t(:title), :partner_type => 'info'
       - @partner_types.each do |partner_type|
         %li{:class => (partner_type == @active_partner_type ? 'active' : '')}
           = link_to t("partners.#{partner_type}"), :partner_type => partner_type
@@ -9,18 +12,22 @@
 - else
   %h1= t("partners.partners_of_the_energy_transition_model")
 
-#partners
-  - @partners.each do |p|
-    .partner_container
-      %a.partner_link{:rel => "partner_#{p.id}", :href => p.link,
-        :target => p.has_local_page? ? nil : '_blank' }
-        .header= image_tag p.logo
-  .clear
+- if @active_partner_type != 'info'
+  #partners
+    - @partners.each do |p|
+      .partner_container
+        %a.partner_link{:rel => "partner_#{p.id}", :href => p.link,
+          :target => p.has_local_page? ? nil : '_blank' }
+          .header= image_tag p.logo
+    .clear
 
-  - @partners.each do |p|
-    .content{:id => "partner_#{p.id}_content"}
-      - if p.description
-        = p.description.short_content
-      - else
-        = t("partners.click_here_to_go_to_the_website_of") + "#{p.name_or_long_name}."
-  .clear
+    - @partners.each do |p|
+      .content{:id => "partner_#{p.id}_content"}
+        - if p.description
+          = p.description.short_content
+        - else
+          = t("partners.click_here_to_go_to_the_website_of") + "#{p.name_or_long_name}."
+    .clear
+- else
+  #partner_info
+    = @info.t :content

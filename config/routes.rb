@@ -121,6 +121,7 @@ Etm::Application.routes.draw do
   match '/show_flanders'                => 'pages#show_flanders'
   match '/sitemap(.:format)'            => 'pages#sitemap', :defaults => {:format => :xml}
   match '/known_issues'                 => 'pages#bugs',        :as => :bugs
+  match '/quality_control'              => 'pages#quality', :as => :quality
   match '/set_locale(/:locale)' => 'pages#set_locale', :as => :set_locale
   match '/browser_support' => 'pages#browser_support'
   match '/update_footer'   => 'pages#update_footer'

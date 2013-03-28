@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   include ApplicationHelper
   before_filter :ensure_valid_browser, :except => [:browser_support]
   layout 'static_page', :only => [:about, :units, :browser_support, :bugs,
-    :disclaimer, :privacy_statement, :press_releases]
+    :disclaimer, :privacy_statement, :press_releases, :quality]
 
   def root
     if request.post?
@@ -76,6 +76,10 @@ public
 
   def famous_users
     @users = YAML::load_file('config/famous_users.yml').sort_by{rand()}
+  end
+
+  def quality
+    @quality = Text.where(key: :quality_control).first
   end
 
   def feedback

@@ -57,6 +57,7 @@ module ApplicationHelper
     links.push text: t("header.education") ,          url: "http://onderwijs.quintel.nl/", target: "_new"
     links.push text: t("header.famous_users") ,       url: famous_users_path
     links.push text: t("header.press_releases") ,     url: press_releases_path
+    links.push text: t("header.quality_control") ,    url: quality_path
     links.push text: t("header.units_used") ,         url: units_path
     links.push text: t("header.privacy_statement") ,  url: privacy_statement_path
     links.push text: t("header.disclaimer") ,         url: disclaimer_path

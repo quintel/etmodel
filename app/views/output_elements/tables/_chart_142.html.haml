@@ -40,11 +40,16 @@
     %td{:data => {:gquery => "agriculture_chp_engine_natural_gas_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "agriculture_chp_engine_natural_gas_delta_in_investment_cost_table"}}
   %tr.even
+    %th= t "input_elements.number_of_agriculture_chp_engine_biogas"
+    %td.border-rgt{:data => {:gquery => "agriculture_chp_engine_biogas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "agriculture_chp_engine_biogas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "agriculture_chp_engine_biogas_delta_in_investment_cost_table"}}
+  %tr.odd
     %th= t "input_elements.agriculture_heating_geothermal_share"
     %td.border-rgt{:data => {:gquery => "agriculture_geothermal_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "agriculture_geothermal_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "agriculture_geothermal_delta_in_investment_cost_table"}}
-  %tr.odd
+  %tr.even
     %th= t "input_elements.agriculture_heating_heat_pump_with_ts_share"
     %td.border-rgt{:data => {:gquery => "agriculture_heatpump_water_water_ts_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "agriculture_heatpump_water_water_ts_electricity_future_in_investment_cost_table"}}
@@ -432,6 +437,16 @@
     %td.border-rgt{:data => {:gquery => "industry_chp_combined_cycle_gas_power_fuelmix_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "industry_chp_combined_cycle_gas_power_fuelmix_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "industry_chp_combined_cycle_gas_power_fuelmix_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "input_elements.number_of_industry_chp_engine_gas_power_fuelmix"
+    %td.border-rgt{:data => {:gquery => "industry_chp_engine_gas_power_fuelmix_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_chp_engine_gas_power_fuelmix_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_chp_engine_gas_power_fuelmix_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "input_elements.number_of_industry_chp_turbine_gas_power_fuelmix"
+    %td.border-rgt{:data => {:gquery => "industry_chp_turbine_gas_power_fuelmix_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_chp_turbine_gas_power_fuelmix_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_chp_turbine_gas_power_fuelmix_delta_in_investment_cost_table"}}
   %tr.odd
     %th= t "input_elements.industry_number_of_biomass_chp"
     %td.border-rgt{:data => {:gquery => "industry_chp_supercritical_wood_pellets_present_in_investment_cost_table", :graph => :present}}

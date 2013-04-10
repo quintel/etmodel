@@ -17,7 +17,8 @@ D3.merit_order =
       {key: 'nuclear_iii',     color: '#fd8d3c'},
       {key: 'oil_plant',       color: '#7f2704'},
       {key: 'solar_pv',        color: '#fed976'},
-      {key: 'wind_turbines',   color: '#4292c6'}
+      {key: 'wind_turbines',   color: '#4292c6'},
+      {key: 'hydro_river',     color: '#0066ff'}
     ]
 
   Node: class extends Backbone.Model

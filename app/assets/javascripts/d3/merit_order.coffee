@@ -84,7 +84,7 @@ D3.merit_order =
         .attr("class", "y_axis")
         .call(@y_axis)
       @svg.append("svg:text")
-        .text('Marginal Costs [EUR/MWh]')
+        .text("#{I18n.t('output_elements.merit_order_chart.operating_costs')} [EUR/MWh]")
         .attr("x", @height / -2)
         .attr("y", -35)
         .attr("text-anchor", "middle")
@@ -92,7 +92,7 @@ D3.merit_order =
         .attr("transform", "rotate(270)")
 
       @svg.append("svg:text")
-        .text('Installed Capacity')
+        .text("#{I18n.t('output_elements.merit_order_chart.installed_capacity')}")
         .attr("x", @width / 2)
         .attr("y", @series_height + 30)
         .attr("text-anchor", "middle")
@@ -171,9 +171,9 @@ D3.merit_order =
         )
         .attr("x", (d) => @x(d.get 'x_offset'))
         .attr("data-tooltip-text", (d) ->
-          html = "Installed capacity: #{Metric.autoscale_value(d.value_x(), 'MW', 2)}
+          html = "#{I18n.t('output_elements.merit_order_chart.installed_capacity')}: #{Metric.autoscale_value(d.value_x(), 'MW', 2)}
                   <br/>
-                  Operating costs: #{Metric.autoscale_value d.original_y_value(), 'Eur/Mwh', 2}
+                  #{I18n.t('output_elements.merit_order_chart.operating_costs')}: #{Metric.autoscale_value d.original_y_value(), 'Eur/Mwh', 2}
                   <br/>
                   Load factor: #{d.load_factor_value()}
                   "

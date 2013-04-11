@@ -447,6 +447,8 @@ D3.sankey =
           content: -> $(this).attr('data-tooltip')
           position:
             target: 'mouse'
+            my: 'bottom right'
+            at: 'top left'
           style:
             classes: "qtip-tipsy"
 

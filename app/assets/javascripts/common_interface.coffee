@@ -104,6 +104,8 @@ class @CommonInterface
         show:
           event: e.type
           ready: true
+        hide:
+          event: 'click mouseleave'
         position:
           my: 'bottom right'
           at: 'top center'

@@ -17,9 +17,12 @@ en:
       costs: "Cost of power production"
       investment_costs: "Investment costs"
       total_investment_cost_of_production: "Investment costs (MEur/MWe)"
+    merit_order_chart:
+      installed_capacity: "Installed capacity"
+      operating_costs: "Marginal costs"
     tables:
       merit_order:
-        Availablee_capacity: "Available capacity"
+        available_capacity: "Available capacity"
         installed_capacity: "Installed capacity"
         central_gas_chp: "Gas plant for district heat"
         coal_chp: "Coal plant for district heat"
@@ -62,7 +65,8 @@ en:
         production_e: "Electricty prod."
         production_h: "Heat prod."
         capacity: "Installed el. capacity"
-        agriculture_chp_engine_network_gas: "Agricultural gas CHP"
+        agriculture_chp_engine_network_gas: "Agriculture gas CHP"
+        agriculture_chp_engine_biogas: "Agriculture biogas CHP"
         buildings_collective_chp_natural_gas: "Buildings gas CHP"
         buildings_collective_chp_wood_pellets: "Buildings wood-pellet CHP"
         energy_chp_combined_cycle_network_gas: "Energy gas CHP"

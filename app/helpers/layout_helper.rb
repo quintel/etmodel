@@ -15,47 +15,73 @@ module LayoutHelper
   end
 
   def country_option(code, opts = {})
-      current = Current.setting.area_code == code
-      selected = current ? "selected='true'" : nil
-      label = I18n.t(code)
-      label += ' (test)' if opts[:test]
-      content_tag :option, label.html_safe, :value => code, :selected => selected
-    end
+    current = Current.setting.area_code == code
+    selected = current ? "selected='true'" : nil
+    label = I18n.t(code)
+    label += ' (test)' if opts[:test]
+    content_tag :option, label.html_safe, :value => code, :selected => selected
+  end
 
   def area_links
     links = []
-    links.push area_code: "nl"
+    add_area_choice links, "nl"
+
+    # Provinces of the Netherlands
+
     links_nl = []
-      links_nl.push area_code: "nl-drenthe"
-      links_nl.push area_code: "nl-flevoland"
-      links_nl.push area_code: "nl-friesland"
-      links_nl.push area_code: "nl-gelderland"
-      links_nl.push area_code: "nl-limburg"
-      links_nl.push area_code: "nl-noord-brabant"
-      links_nl.push area_code: "nl-noord-holland"
-      links_nl.push area_code: "nl-overijssel"
-      links_nl.push area_code: "nl-utrecht"
-      links_nl.push area_code: "nl-zeeland"
-      links_nl.push area_code: "nl-zuid-holland"
-      links_nl.push area_code: "nl-noord"                       if @show_all
-    links.push text: "Provinces of the Netherlands" ,           data: links_nl
+
+    add_area_choice links_nl, "nl-drenthe"
+    add_area_choice links_nl, "nl-flevoland"
+    add_area_choice links_nl, "nl-friesland"
+    add_area_choice links_nl, "nl-gelderland"
+    add_area_choice links_nl, "nl-limburg"
+    add_area_choice links_nl, "nl-noord-brabant"
+    add_area_choice links_nl, "nl-noord-holland"
+    add_area_choice links_nl, "nl-overijssel"
+    add_area_choice links_nl, "nl-utrecht"
+    add_area_choice links_nl, "nl-zeeland"
+    add_area_choice links_nl, "nl-zuid-holland"
+    add_area_choice links_nl, "nl-noord"                       if @show_all
+
+    links.push text: "Provinces of the Netherlands" ,          data: links_nl
+
+    # Municipalities of the Netherlands
+
     links_municipalities = []
-      links_municipalities.push area_code: "ams",               test: true
-      links_municipalities.push area_code: "grs",               test: true
-    links.push text: "Municipalities of the Netherlands" ,      data: links_municipalities
+
+    add_area_choice links_municipalities, "ams",               true
+    add_area_choice links_municipalities, "grs",               true
+
+    links.push text: "Municipalities of the Netherlands" ,     data: links_municipalities
+
+    # Germany
+
     links.push area_code: "de"
-   if @show_german_provinces
-     links_de = []
-       links_de.push area_code: "br" ,                          test: true
-     links.push text: "Provinces of Germany" ,                  data: links_de
-   end
-   links.push area_code: "uk" ,                                 test: true
-   links.push area_code: "ro" ,                                 test: true
-   links.push area_code: "pl" ,                                 test: true
-   links.push area_code: "tr" ,                                 test: true
-   links.push area_code: "za" ,                                 test: true if session[:show_all_countries]
-   links.push area_code: "be-vlg" ,                             test: true if session[:show_all_countries] || session[:show_flanders]
-   return links
+
+    if @show_german_provinces
+      links_de = []
+      add_area_choice links_de, "br",                          true
+
+      links.push text: "Provinces of Germany",                 data: links_de
+    end
+
+    # Other countries
+
+    add_area_choice links, "uk",                               true
+    add_area_choice links, "ro",                               true
+    add_area_choice links, "pl",                               true
+    add_area_choice links, "tr",                               true
+    add_area_choice links, "za",                               true if session[:show_all_countries]
+    add_area_choice links, "be-vlg",                           true if session[:show_all_countries] || session[:show_flanders]
+    return links
+  end
+
+  def add_area_choice(collection, area_code, test = false)
+    if area = Api::Area.find_by_country_memoized(area_code)
+      if area.useable? || admin?
+        collection.push(area_code: area_code, test: test)
+      end
+    end
   end
 
   # Tries mapping a hex string to a human readable colour name

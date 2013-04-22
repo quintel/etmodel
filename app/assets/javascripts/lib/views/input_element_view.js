@@ -156,7 +156,14 @@
    *    u.format(2) # => "4.2"
    */
   UnitConversion.prototype.format = function (value) {
-    return (value * this.multiplier).toFixed(this.precision);
+    var formatted = (value * this.multiplier).toFixed(this.precision);
+
+    if (parseFloat(formatted) === 0.0) {
+      // Reformat, to ensure that we don't display "-0.0".
+      return (0.0).toFixed(this.precision)
+    }
+
+    return formatted;
   };
 
   /**

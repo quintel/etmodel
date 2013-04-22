@@ -27,6 +27,8 @@ class @PlantProfitabilityTableView extends HtmlTableChartView
         label: @series_labels[key] || key
 
     sorted_items = items.sort(@sorting_function)
+    sorted_items = _(sorted_items).map (item) -> forSet(item)
+
     @container_node().html tmpl({series: sorted_items})
     true
 

@@ -76,11 +76,11 @@
         if _.isNull(x)
           '-'
         else
-          @euros_to_string x, true
+          @euros_to_string x, true, precision
       when 'mln_euro'
-        @euros_to_string x * 1000000, true
+        @euros_to_string x * 1000000, true, precision
       when 'bln_euro'
-        @euros_to_string x * 1000000000, true
+        @euros_to_string x * 1000000000, true, precision
       when 'man_years'
         "#{@round_number x, 0} #{@scaling_in_words(0, 'man_years')}"
       when 'FTE'
@@ -122,14 +122,15 @@
   #   -1_000_000    => -&euro;1mln
   #   1_000_000_000 => &euro;1bln
   #   The unit_suffix parameters adds a translated mln/bln suffix
-  euros_to_string: (x, unit_suffix) ->
+  euros_to_string: (x, unit_suffix, precision) ->
+    precision = 2 if precision == 'auto'
     return '-' if (_.isNaN(x) || x == 'null')
     prefix = if x < 0 then "-" else ""
     abs_value = Math.abs(x)
     scale     = @power_of_thousand(x)
     value     = abs_value / Math.pow(1000, scale)
     suffix    = ''
-    rounded   = @round_number(value, 2).toString()
+    rounded   = @round_number(value, precision).toString()
 
     if unit_suffix and abs_value >= 1000
       suffix = I18n.t('units.currency.' + @power_of_thousand_to_string(scale))

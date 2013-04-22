@@ -25,8 +25,13 @@ class Api::Area < ActiveResource::Base
   ]
 
   def self.find_by_country_memoized(area_code)
-    @areas_by_country ||= {}.with_indifferent_access
-    @areas_by_country[area_code] ||= self.find(area_code)
+    if @areas_by_country.nil?
+      @areas_by_country ||= all.each_with_object({}) do |area, store|
+        store[area.area] = area
+      end.with_indifferent_access
+    end
+
+    @areas_by_country[area_code]
   end
 
   def number_of_existing_households

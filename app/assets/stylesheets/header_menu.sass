@@ -46,8 +46,13 @@ a.signin, a.settings, a.information
         display: block
         width: 100%
         text-decoration: none
-      a:hover
-        text-decoration: underline
+        &:hover
+          text-decoration: underline
+        &.wait
+          color: #e3eef4
+          cursor: wait
+          &:hover
+            text-decoration: none
 
 #information_menu
 

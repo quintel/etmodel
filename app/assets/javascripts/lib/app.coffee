@@ -1,5 +1,12 @@
+# This is used to disable the save/reset scenario menu items while awaiting
+# a scenario ID from ETEngine. See quintel/etengine#542. We need to hold on to
+# the function so that the event can be unbound once the ID is available.
+disabledSetting = (event) -> false
+
 class @AppView extends Backbone.View
   initialize: ->
+    @disableIdDependantSettings()
+
     @settings    = new Setting({api_session_id: globals.api_session_id})
     @sidebar     = new SidebarView()
     @scenario    = new Scenario()
@@ -21,8 +28,8 @@ class @AppView extends Backbone.View
 
     # Store the scenario id
     @api.ensure_id().done (id) =>
-      @settings.save
-        api_session_id: id
+      @settings.save { api_session_id: id },
+        success: @enableIdDependantSettings
 
   # (Re)builds the list of sliders and renders them. This is usually called by
   # play.js.erb
@@ -164,6 +171,14 @@ class @AppView extends Backbone.View
 
   debug: (t) ->
     console.log(t) if globals.debug_js
+
+  disableIdDependantSettings: ->
+    $('#settings_menu a.save, #settings_menu a#reset_scenario').
+      addClass('wait').on('click', disabledSetting)
+
+  enableIdDependantSettings: (args...) ->
+    $('#settings_menu a.save, #settings_menu a#reset_scenario').
+      removeClass('wait').off('click', disabledSetting)
 
   # TODO: Move this interface methods to a separate Interface class
   #

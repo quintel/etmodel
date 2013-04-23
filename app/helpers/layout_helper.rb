@@ -56,7 +56,7 @@ module LayoutHelper
 
     # Germany
 
-    links.push area_code: "de"
+    add_area_choice links, "de"
 
     if @show_german_provinces
       links_de = []

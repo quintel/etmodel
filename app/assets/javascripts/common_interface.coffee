@@ -51,9 +51,9 @@ class @CommonInterface
   setup_menus: =>
     # Expand menus
     #
-    $("a.menu_toggler").click (e) =>
-      e.preventDefault()
-      $t = $(e.target)
+    $("a.menu_toggler").on 'click', (e) =>
+      console.log e
+      $t = $(e.currentTarget)
       is_open = $t.hasClass('menu-open')
       @close_all_menus()
       if !is_open
@@ -66,6 +66,7 @@ class @CommonInterface
         offset = container.width() - 44
         arrow = container.find('.arrow')
         arrow.css('left', offset)
+      e.preventDefault()
 
     # Close menus when clicking outside them
     #

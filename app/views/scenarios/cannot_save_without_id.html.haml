@@ -1,0 +1,5 @@
+.scenario_wrapper
+  %h1= t("scenario.save")
+
+  %p(style="max-width:600px")
+    = t('no_scenario_id_error_html', previous_path: Current.setting.last_etm_page || root_path, feedback_path: feedback_path)

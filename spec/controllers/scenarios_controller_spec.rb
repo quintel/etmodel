@@ -57,6 +57,15 @@ describe ScenariosController, :vcr => true do
           response.should be_success
           assigns(:saved_scenario).api_session_id.should == 12345
         end
+
+        it "raises an error if no scenario is in progress" do
+          session[:setting] = Setting.default
+
+          get :new
+
+          expect(response).to_not be_success
+          expect(response).to render_template(:cannot_save_without_id)
+        end
       end
 
       describe "#create" do
@@ -66,6 +75,17 @@ describe ScenariosController, :vcr => true do
             post :create, :saved_scenario => {:api_session_id => 12345}
             response.should redirect_to(scenarios_path)
           }.should change(SavedScenario, :count)
+        end
+
+        it "does not save if no scenario is in progress" do
+          Api::Scenario.should_not_receive(:create)
+
+          expect {
+            post :create, :saved_scenario => {:api_session_id => ''}
+          }.to_not change(SavedScenario, :count)
+
+          expect(response).to_not be_success
+          expect(response).to render_template(:cannot_save_without_id)
         end
       end
 

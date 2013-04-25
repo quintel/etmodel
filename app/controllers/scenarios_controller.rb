@@ -7,6 +7,19 @@ class ScenariosController < ApplicationController
                 :load_constraints,
                 :prevent_browser_cache, :only => :play
 
+  # Raised when trying to save a scenario, but the user does not have a
+  # scenario in progress. See quintel/etengine#542.
+  class NoScenarioIdError < RuntimeError
+    def initialize(controller)
+      "Cannot save ETM scenario with settings: #{ Current.setting.inspect }"
+    end
+  end
+
+  rescue_from NoScenarioIdError do |ex|
+    render :cannot_save_without_id, status: :bad_request
+    notify_airbrake(ex)
+  end
+
   def index
     items = if current_user.admin?
       SavedScenario.scoped
@@ -29,6 +42,10 @@ class ScenariosController < ApplicationController
   end
 
   def new
+    if Current.setting.api_session_id.blank?
+      raise NoScenarioIdError.new(self)
+    end
+
     @saved_scenario = SavedScenario.new(
       :api_session_id => Current.setting.api_session_id
     )
@@ -50,6 +67,11 @@ class ScenariosController < ApplicationController
   # the Scenario#scenario_id= method to see what's going on.
   def create
     scenario_id = params[:saved_scenario].delete(:api_session_id)
+
+    if scenario_id.blank?
+      raise NoScenarioIdError.new(self)
+    end
+
     attrs = params[:saved_scenario].merge(
       :protected => true,
       :source => 'ETM',

@@ -16,19 +16,6 @@
     <%= f.label :company_school, t("user.company_school").html_safe %><br />
     <%= f.text_field :company_school %>
   </p>
-  <p>
-    <%= f.label :phone_number, t("user.phone_number").html_safe %><br />
-    <%= f.text_field :phone_number %>
-  </p>
-  <p>
-    <%= f.label :heared_first_at, t("user.heared_first_at") %><br />
-    <%= f.select :heared_first_at, ["..","tv","internet","radio"], :checked => 'none' %>
-  </p>
-
-  <p>
-    <%= f.label :allow_news, t("user.allow_news") %><br />
-    <%= f.check_box :allow_news %>
-  </p>
 
   <p>
     <%= f.label :password, t("user.password") %><br />
@@ -37,6 +24,10 @@
   <p>
     <%= f.label :password_confirmation, t("user.password_confirmation") %><br />
     <%= f.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= f.check_box :allow_news %>
+    <%= f.label :allow_news, t("user.allow_news") %><br />
   </p>
   <p>
     <%= f.submit t('create') %>

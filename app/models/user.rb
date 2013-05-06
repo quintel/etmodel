@@ -27,9 +27,13 @@
 #
 
 class User < ActiveRecord::Base
-  has_many :saved_scenarios, :dependent => :destroy
-  has_many :predictions
+  has_many   :saved_scenarios, :dependent => :destroy
+  has_many   :predictions
   belongs_to :role
+
+  belongs_to :teacher,  class_name: 'User'
+  has_many   :students, class_name: 'User', foreign_key: 'teacher_id'
+
   attr_protected :role_id #To refrain Hackers from using mass assignment when creating new account
 
   validates_format_of :phone_number,
@@ -50,4 +54,5 @@ class User < ActiveRecord::Base
   def backend_label
     "#{name} - #{email}"
   end
+
 end

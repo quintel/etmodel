@@ -18,6 +18,11 @@
   </p>
 
   <p>
+    <%= label_tag :teacher_email, t("user.teacher_email").html_safe %><br />
+    <%= text_field_tag :teacher_email %>
+  </p>
+
+  <p>
     <%= f.label :password, t("user.password") %><br />
     <%= f.password_field :password %>
   </p>

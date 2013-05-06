@@ -19,9 +19,9 @@
       = @scenario.end_year
 
   - if @scenario.created_at && @scenario.days_old > 31
-    = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button", style: "margin: 40px;", :confirm => t("scenario.warning")
+    = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button primary", style: "margin: 40px;", :confirm => t("scenario.warning")
   - else
-    = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button", style: "margin: 40px;"
+    = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button primary", style: "margin: 40px;"
 
   %p
     %small{:style => "font-size: 12px; font-weight: normal"}

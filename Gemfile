@@ -45,6 +45,7 @@ group :development do
   gem 'sunspot_solr'
   gem 'quiet_assets'
   gem 'better_errors'
+  gem 'xray-rails'
 end
 
 group :test, :development do

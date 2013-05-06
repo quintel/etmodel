@@ -21,13 +21,16 @@ class ScenariosController < ApplicationController
   end
 
   def index
+    @student_ids = current_user.try(:students) ? current_user.students.pluck(:id) : []
     items = if current_user.admin?
       SavedScenario.scoped
+    elsif current_user.students.present?
+      user_ids =  @student_ids << current_user.id
+      SavedScenario.includes(:user).where(user_id: user_ids)
     else
       current_user.saved_scenarios
     end
-    @saved_scenarios = items.order("created_at DESC").page(params[:page]).per(50)
-    @scenarios = @saved_scenarios.map{|s| s.scenario rescue nil}.compact
+    @saved_scenarios = items.order('created_at DESC').page(params[:page]).per(50)
 
     respond_to do |format|
       format.html

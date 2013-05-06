@@ -1,12 +1,18 @@
-- @scenarios.each do |scenario|
-  %tr{:class => cycle('even', 'odd')}
-    %td= check_box_tag 'scenario_ids[]', scenario.id
-    %td= link_to scenario.title, "/scenarios/#{scenario.id}"
-    %td= scenario.end_year
-    %td= scenario.parsed_created_at.andand.strftime("%d %b %H:%M")
-    - if scenario.created_at.to_date < Date.parse("2012-8-28")
-      %td= link_to t('scenario.load'), load_scenario_path(scenario), :confirm => t("scenario.warning")
-    - else
-      %td= link_to t('scenario.load'), load_scenario_path(scenario)
+- @saved_scenarios.each do |ss|
+  - if ss.scenario
+    %tr{class: cycle('even', 'odd') + (' highlight' if @student_ids.include?(ss.user_id)).to_s}
+      %td= check_box_tag 'scenario_ids[]', ss.scenario.id
+      %td= link_to ss.scenario.title, "/scenarios/#{ss.scenario.id}"
+      %td= ss.scenario.end_year
+      %td= ss.scenario.parsed_created_at.andand.strftime("%d %b %H:%M")
+      %td= ss.user.name + ' ( ' + ss.user.email + ' )'
+  - elsif current_user.admin?
+    %tr{class: cycle('even', 'odd')}
+      -# DEBT: use I18n here.
+      %td= "#{ss.scenario_id}"
+      %td= "does not exist anymore on the server."
+      %td= ""
+      %td= ss.created_at.to_datetime.andand.strftime("%d %b %Y")
+      %td= ss.user.email
 %tr#scenario_paginator
-  %td{:colspan => 5}= link_to_next_page @saved_scenarios, 'More...', :remote => true
+  %td{colspan: 5}= link_to_next_page @saved_scenarios, 'More...', remote: true

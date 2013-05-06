@@ -20,10 +20,15 @@ class SavedScenario < ActiveRecord::Base
   validates :title,       :presence => true
 
   def scenario
-    @scenario ||= Api::Scenario.find(scenario_id)
+    begin
+      Api::Scenario.find(scenario_id)
+    rescue ActiveResource::ResourceNotFound
+      nil
+    end
   end
 
   def scenario=(x)
     self.scenario_id = x.id unless x.nil?
   end
+
 end

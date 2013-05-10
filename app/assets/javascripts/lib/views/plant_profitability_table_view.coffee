@@ -46,7 +46,6 @@ class @PlantProfitabilityTableView extends HtmlTableChartView
   series_labels:
     energy_chp_combined_cycle_network_gas: 'central_gas_chp'
     energy_chp_ultra_supercritical_coal: 'coal_chp'
-    energy_chp_ultra_supercritical_crude_oil: 'oil_chp'
     energy_power_combined_cycle_ccs_coal: 'coal_igcc_ccs'
     energy_power_combined_cycle_ccs_network_gas: 'gas_ccgt_ccs'
     energy_power_combined_cycle_coal: 'coal_igcc'

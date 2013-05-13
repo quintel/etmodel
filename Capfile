@@ -24,4 +24,4 @@ end
 before "deploy:assets:precompile", "deploy:link_configuration_files"
 after "deploy:update_code", "deploy:link_configuration_files"
 after "deploy", "deploy:cleanup"
-
+after "deploy", "memcached:flush"

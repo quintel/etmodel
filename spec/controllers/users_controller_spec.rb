@@ -54,7 +54,7 @@ describe UsersController do
         end
       end
       context "and it is not valid" do
-        before( :all ) do
+        before(:each) do
           @teacher = FactoryGirl.create(:user)
         end
 

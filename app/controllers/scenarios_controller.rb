@@ -21,7 +21,7 @@ class ScenariosController < ApplicationController
   end
 
   def index
-    @student_ids = current_user.try(:students) ? current_user.students.pluck(:id) : []
+    @student_ids = current_user.students.pluck(:id)
     items = if current_user.admin?
       SavedScenario.scoped
     elsif current_user.students.present?

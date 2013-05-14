@@ -132,4 +132,22 @@ describe ScenariosController, :vcr => true do
       end
     end
   end
+
+  context "a teacher" do
+    before(:each) do
+      login_as user
+      student= FactoryGirl.create(:user, teacher_id: user.id)
+      @student_scenario = FactoryGirl.create(:saved_scenario, user: student)
+    end
+
+    describe "#index" do
+      it "gets a list of teacher's and students' scenarios" do
+        get :index
+        expect(response).to be_success
+        expect(assigns(:saved_scenarios)).to_not include(admin_scenario)
+        expect(assigns(:saved_scenarios)).to eq [user_scenario, @student_scenario]
+      end
+    end
+  end
+
 end

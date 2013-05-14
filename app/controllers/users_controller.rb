@@ -11,6 +11,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+
+    unless params[:teacher_email].blank?
+      teacher = User.where(email: params[:teacher_email]).first
+      if teacher
+        @user.teacher_id = teacher.id
+      else
+        @user.errors.add(:teacher_email, t(:teacher_email))
+      end
+    end
+
     if @user.save
       redirect_to home_path, :notice => I18n.t("flash.register")
     else

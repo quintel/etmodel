@@ -33,5 +33,46 @@ describe UsersController do
         expect(response).to render_template(:new)
       }.to_not change{ User.count }
     end
+    describe "when teacher email is provided" do
+      context "and it is valid" do
+        before(:each) do
+          @teacher = FactoryGirl.create(:user)
+        end
+
+        it "assigns a correct teacher_id to the user" do
+          expect {
+            post :create, { user: {
+              name: 'Student one',
+              email: 'stu@quintel.com',
+              password: '12345',
+              password_confirmation: '12345'
+            },
+              teacher_email: @teacher.email
+            }
+          }.to change{ User.count }
+          expect(User.last.teacher_id).to eql @teacher.id
+        end
+      end
+      context "and it is not valid" do
+        before(:each) do
+          @teacher = FactoryGirl.create(:user)
+        end
+
+        it "does not assign a teacher_id to the new user" do
+          expect {
+            post :create, { user: {
+              name: 'Student one',
+              email: 'stu@quintel.com',
+              password: '12345',
+              password_confirmation: '12345'
+            },
+              teacher_email: ''
+            }
+          }.to change{ User.count }
+          expect(User.last.teacher_id).to be_nil
+        end
+      end
+
+    end
   end
 end

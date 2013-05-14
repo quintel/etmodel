@@ -1,49 +1,39 @@
-desc "Renames model attributes as specified in CSV file"
+require 'csv'
+
+desc "Rename InputElement#key using CSV file specified by path=path/to/file."
 task :rename => [:environment] do
 
-  model_name = ENV['model'].to_s.classify
-  attribute  = ENV['attribute']
-  file_name  = ENV['file']
-  force      = ENV['force'] && ENV['force'].upcase == 'TRUE'
-  revert     = ENV['revert'] && ENV['revert'].upcase == 'TRUE'
+  file_path = ENV['path']
+  force   = ENV['force']
 
-  unless defined?(model_name)
-    raise "Invalid model: #{ model_name }"
+  unless file_path
+    raise ArgumentError.new("ArgumentError: You should specify which `path`")
   end
 
-  unless model_name.constantize.new.respond_to?(attribute)
-    raise "Invalid attribute: #{ model_name } doesn't have #{ attribute } attribute"
-  end
+  raise "#{ file_path } does not exist" unless File.exists?(file_path)
 
-  raise "No such file: #{ file_name }" unless File.exists?(file_name)
-
-  puts "Bulk update has started" if force
-
-  changed = 0
-  CSV.foreach(file_name) do |line|
-    old_value, new_value = line
-
-    old_value, new_value = new_value, old_value if revert
-
-    if old_value != new_value
-      changed += 1
-      if force
-        instance = model_name.constantize.where(attribute.to_sym => old_value).first
-        if instance
-          instance.send("#{ attribute }=", new_value)
-          instance.save!
-          print '.'
-        else
-          print 'x'
-        end
-      end
-    end
-  end
-
-  unless force
-    puts "#{ changed } out of #{ CSV.read(file_name).count } listed instances of #{ model_name } will be changed"
+  if force
+    puts "For real buddy..."
   else
-    puts "\n\nThe #{ attribute } attribute of #{ changed } instances of #{ model_name } has been updated"
+    puts "Dry run... append force=true for the real thing."
   end
 
+  CSV.foreach(file_path) do |line|
+
+  old_value = line.first
+  new_value = line.last
+
+  ie = InputElement.find_by_key(old_value)
+
+  if ie
+    ie.key = new_value
+    ie.save! if force
+    puts "SUCCESS: Renamed InputElement from `#{ old_value }` to `#{ new_value }`"
+  else
+    puts "WARNING: No InputElement found with name `#{ old_value }`!"
+  end
+
+  end
+
+  puts "Done!"
 end

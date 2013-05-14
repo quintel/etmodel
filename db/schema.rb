@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130121162617) do
+ActiveRecord::Schema.define(:version => 20130506110832) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -321,6 +321,8 @@ ActiveRecord::Schema.define(:version => 20130121162617) do
     t.datetime "updated_at"
     t.string   "phone_number"
     t.string   "group"
+    t.integer  "teacher_id"
+    t.integer  "student_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

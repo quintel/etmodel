@@ -3,6 +3,8 @@ require 'spec_helper'
 describe UsersController do
   render_views
 
+  let(:user) { FactoryGirl.create(:user) }
+
   describe "#new" do
     it "should show the signup form" do
       get :new
@@ -44,35 +46,60 @@ describe UsersController do
             post :create, { user: {
               name: 'Student one',
               email: 'stu@quintel.com',
+              teacher_id: @teacher.id,
               password: '12345',
               password_confirmation: '12345'
-            },
-              teacher_email: @teacher.email
+            }
             }
           }.to change{ User.count }
           expect(User.last.teacher_id).to eql @teacher.id
         end
       end
-      context "and it is not valid" do
-        before(:each) do
-          @teacher = FactoryGirl.create(:user)
-        end
+    end
+  end
 
-        it "does not assign a teacher_id to the new user" do
-          expect {
-            post :create, { user: {
-              name: 'Student one',
-              email: 'stu@quintel.com',
-              password: '12345',
-              password_confirmation: '12345'
-            },
-              teacher_email: ''
-            }
-          }.to change{ User.count }
-          expect(User.last.teacher_id).to be_nil
-        end
+  describe "#edit" do
+    context "when user wants to edit his own profile" do
+      before(:each) do
+        login_as user
       end
 
+      it "the system finds a correct user" do
+        get :edit, id: user
+        expect(response).to be_success
+        expect(assigns(:user)).to eql user
+      end
+    end
+
+    context "when user wants to edit another user's account" do
+      it "he is redirected to the home page" do
+        get :edit, id: user
+        expect(response).to redirect_to(:home)
+      end
+    end
+  end
+
+  describe "#update" do
+    before(:each) do
+      login_as user
+    end
+
+    context "with valid parameters" do
+      it "updates user's account" do
+        user.name = 'Shiny'
+        post :update, id: user, user: user.attributes
+        expect(response).to redirect_to(edit_user_path(user))
+      end
+    end
+
+    context "with invalid parameters" do
+      it "does not update user's account" do
+        user.name = ''
+        post :update, id: user, user: user.attributes
+        expect(response).to render_template(:edit)
+        expect(response).to have_selector("input#user_name", content: user.name)
+        expect(response).to have_selector("span.error", content: "can't be blank")
+      end
     end
   end
 end

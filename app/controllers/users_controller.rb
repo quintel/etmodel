@@ -6,20 +6,15 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    if current_user
+      @user = User.find(params[:id])
+    else
+      redirect_to :home
+    end
   end
 
   def create
     @user = User.new(params[:user])
-
-    unless params[:teacher_email].blank?
-      teacher = User.where(email: params[:teacher_email]).first
-      if teacher
-        @user.teacher_id = teacher.id
-      else
-        @user.errors.add(:teacher_email, t(:teacher_email))
-      end
-    end
 
     if @user.save
       redirect_to home_path, :notice => I18n.t("flash.register")

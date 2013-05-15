@@ -80,9 +80,10 @@ group :assets do
   gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier'
-  gem 'yui-compressor'
+  gem 'yui-compressor', github: 'sstephenson/ruby-yui-compressor'
   gem 'compass-rails'
   gem 'oily_png' # Faster sprite compilation.
+  gem 'chosen-rails'
 end
 
 gem 'capistrano'

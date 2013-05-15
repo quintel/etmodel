@@ -15,6 +15,10 @@
       #{t "header.current_language"}:
       = select_tag "locale", options_for_select([:en, :nl], I18n.locale)
 
+    - if current_user
+      %li
+        = link_to t("header.my_profile"), edit_user_path(current_user)
+
     %li
       %a.load{:href => scenarios_path}= t("header.load_scenario")
       - if has_active_scenario?

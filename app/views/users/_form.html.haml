@@ -1,0 +1,11 @@
+= simple_form_for @user do |f|
+  = f.input :name
+  = f.input :email
+  = f.input :company_school
+  = f.association :teacher, collection: User.pluck(:email), include_blank: true,
+    input_html: { class: 'chosen-select' }
+  = f.input :password
+  = f.input :password_confirmation
+  = f.input :allow_news
+
+  = f.button :submit

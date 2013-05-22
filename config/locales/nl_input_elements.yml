@@ -231,7 +231,7 @@ nl:
     number_of_energy_power_ultra_supercritical_crude_oil: "Oliecentrale"
     number_of_other_chp_engine_biogas: "Biogas WKK"
     number_of_energy_power_ultra_supercritical_coal: "Poederkolen"
-    number_of_energy_power_ultra_supercritical_coal_ccs: "Poederkolen CCS"
+    number_of_energy_power_ultra_supercritical_ccs_coal: "Poederkolen CCS"
     number_of_small_chp_fixed: "Gas WKK"
     number_of_small_gas_chp_fixed: "Gas WKK"
     number_of_energy_power_solar_pv_solar_radiation: "Zonnecentrales PV"
@@ -277,11 +277,14 @@ nl:
     transport_road_mixer_gasoline_ethanol_share: "Bio-ethanol"
     transport_road_mixer_diesel_biodiesel_share: "Biodiesel"
     transport_useful_demand_car_kms: "Auto's"
-    transport_useful_demand_car_kms_compressed_gas_share: "Gas onder druk"
-    transport_useful_demand_car_kms_diesel_share: "Diesel"
-    transport_useful_demand_car_kms_electric_share: "Elektrisch"
-    transport_useful_demand_car_kms_gasoline_share: "Benzine"
-    transport_useful_demand_car_kms_lpg_share: "LPG"
+    transport_car_using_compressed_natural_gas_share
+: "Gas onder druk"
+    transport_car_using_diesel_mix_share: "Diesel"
+    transport_car_using_electricity_share: "Elektrisch"
+    transport_car_using_diesel_mix_share
+: "Benzine"
+    transport_car_using_lpg_share
+: "LPG"
     transport_road_mixer_diesel_diesel_share: "Diesel"
     transport_useful_demand_planes: "Binnenlandse vluchten"
     transport_useful_demand_planes_efficiency: "Vliegtuigen"

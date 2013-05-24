@@ -5,7 +5,7 @@ task :rename => [:environment] do
   attribute  = ENV['attribute']
   file_name  = ENV['file']
   force      = ENV['force'] && ENV['force'].upcase == 'TRUE'
-  revert    = ENV['revert'] && ENV['reverse'].upcase == 'TRUE'
+  revert     = ENV['revert'] && ENV['revert'].upcase == 'TRUE'
 
   unless defined?(model_name)
     raise "Invalid model: #{ model_name }"
@@ -17,33 +17,33 @@ task :rename => [:environment] do
 
   raise "No such file: #{ file_name }" unless File.exists?(file_name)
 
+  puts "Bulk update has started" if force
+
   changed = 0
   CSV.foreach(file_name) do |line|
     old_value, new_value = line
-    changed += 1 unless old_value == new_value
+
+    old_value, new_value = new_value, old_value if revert
+
+    if old_value != new_value
+      changed += 1
+      if force
+        instance = model_name.constantize.where(attribute.to_sym => old_value).first
+        if instance
+          instance.send("#{ attribute }=", new_value)
+          instance.save!
+          print '.'
+        else
+          print 'x'
+        end
+      end
+    end
   end
 
   unless force
     puts "#{ changed } out of #{ CSV.read(file_name).count } listed instances of #{ model_name } will be changed"
-    exit
+  else
+    puts "\n\nThe #{ attribute } attribute of #{ changed } instances of #{ model_name } has been updated"
   end
-  
-  puts "Bulk update has started"
-  updated = 0
-  CSV.foreach(file_name) do |line|
-    old_value, new_value = line
-    
-    old_value, new_value = new_value, old_value if rever
-    
-    if old_value != new_value
-      instance = model_name.constantize.where(attribute.to_sym => old_value).first
-      if instance
-        instance.send("#{ attribute }=", new_value)
-        instance.save!
-        updated += 1
-      end
-      print '.'
-    end
-  end
-  puts "\n\nThe #{ attribute } attribute of #{ updated } instances of #{ model_name } has been updated"
+
 end

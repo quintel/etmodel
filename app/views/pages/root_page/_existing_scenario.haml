@@ -1,8 +1,15 @@
 %ul
   - cache "scenario_select_#{I18n.locale}" do
     - @scenarios = Api::Scenario.all(:from => :templates).sort_by(&:sorting_value).reverse
-    - @scenarios.each do |scenario|
-      - localized = scenario.description_for_locale(I18n.locale)
-      - text = localized.present? ? localized : scenario.description
+    - display_groups = @scenarios.collect { |scen| scen.display_group }.uniq
+    - grouped_scenarios = {}
+    - display_groups.each { |group| grouped_scenarios[group] = @scenarios.select { |scen| scen.display_group == group } }
+    - grouped_scenarios.each do |group,scenarios|
       %li
-        = link_to truncate(scenario.title, :length => 40).html_safe, scenario_path(scenario)
+        %strong #{ %w{ overig other }.include?(group.downcase) ? t('scenario.general_display_group') : group }
+      - scenarios.sort! { |x,y| x.title <=> y.title }
+      - scenarios.each do |scenario|
+        - localized = scenario.description_for_locale(I18n.locale)
+        - text = localized.present? ? localized : scenario.description
+        %li
+          = link_to truncate(scenario.title, :length => 40).html_safe, scenario_path(scenario)

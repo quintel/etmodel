@@ -1,0 +1,5 @@
+%li
+  %strong #{ %w{ overig other }.include?(group.downcase) ? t('scenario.general_display_group') : group }
+- scenarios.each do |scenario|
+  %li
+    = link_to truncate(scenario.title, :length => 40).html_safe, scenario_path(scenario)

@@ -1,6 +1,8 @@
 %ul
   - cache "scenario_select_#{I18n.locale}" do
     - @grouped_scenarios.each do |group,scenarios|
-      - unless %w{ overig other }.include?(group.downcase)
+      - if %w{ overig other }.include?(group.downcase)
+        - @last_group = group
+      - else
         = render partial: 'pages/root_page/scenario_group', locals: { group: group, scenarios: scenarios }
-    = render partial: 'pages/root_page/scenario_group', locals: { group: 'Overig', scenarios: @grouped_scenarios['Overig'] }
+    = render partial: 'pages/root_page/scenario_group', locals: { group: @last_group, scenarios: @grouped_scenarios[@last_group] }

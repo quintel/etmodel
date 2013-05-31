@@ -10,6 +10,15 @@ class PagesController < ApplicationController
     else
       setup_countries_and_regions
     end
+    scenarios = Api::Scenario.all(:from => :templates).sort_by(&:sorting_value).reverse
+    display_groups = scenarios.collect { |scen| scen.display_group }.uniq
+    display_groups.each do |group| 
+      @grouped_scenarios ||= {}
+      @grouped_scenarios[group] = scenarios.select { |scen| scen.display_group == group }
+    end
+    @grouped_scenarios.each do |group, g_scenarios|
+      @grouped_scenarios[group] = g_scenarios.sort! { |x,y| x.title <=> y.title }
+    end
   end
 
   def choose

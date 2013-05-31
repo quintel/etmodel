@@ -1,8 +1,6 @@
 %ul
   - cache "scenario_select_#{I18n.locale}" do
     - @grouped_scenarios.each do |group,scenarios|
-      %li
-        %strong #{ %w{ overig other }.include?(group.downcase) ? t('scenario.general_display_group') : group }
-      - scenarios.each do |scenario|
-        %li
-          = link_to truncate(scenario.title, :length => 40).html_safe, scenario_path(scenario)
+      - unless %w{ overig other }.include?(group.downcase)
+        = render partial: 'pages/root_page/scenario_group', locals: { group: group, scenarios: scenarios }
+    = render partial: 'pages/root_page/scenario_group', locals: { group: 'Overig', scenarios: @grouped_scenarios['Overig'] }

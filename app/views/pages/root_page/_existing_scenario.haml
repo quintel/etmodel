@@ -1,8 +1,8 @@
 %ul
   - cache "scenario_select_#{I18n.locale}" do
-    - @scenarios = Api::Scenario.all(:from => :templates).sort_by(&:sorting_value).reverse
-    - @scenarios.each do |scenario|
-      - localized = scenario.description_for_locale(I18n.locale)
-      - text = localized.present? ? localized : scenario.description
-      %li
-        = link_to truncate(scenario.title, :length => 40).html_safe, scenario_path(scenario)
+    - @grouped_scenarios.each do |group,scenarios|
+      - if %w{ overig other }.include?(group.downcase)
+        - @last_group = group
+      - else
+        = render partial: 'pages/root_page/scenario_group', locals: { group: group, scenarios: scenarios }
+    = render partial: 'pages/root_page/scenario_group', locals: { group: @last_group, scenarios: @grouped_scenarios[@last_group] }

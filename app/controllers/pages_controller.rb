@@ -11,7 +11,7 @@ class PagesController < ApplicationController
       setup_countries_and_regions
     end
     scenarios = Api::Scenario.all(:from => :templates)
-    @grouped_scenarios = scenarios.sort_by(&:title).group_by(&:display_group)
+    @grouped_scenarios = scenarios.sort_by{ |s| [s.ordering || 9999, s.title] }.group_by(&:display_group)
   end
 
   def choose

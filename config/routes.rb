@@ -113,7 +113,7 @@ Etm::Application.routes.draw do
   match '/about'                        => 'pages#about'
   match '/feedback'                     => 'pages#feedback', :as => :feedback
   match '/tutorial/(:tab)(/:sidebar)'   => 'pages#tutorial', :as => :tutorial
-  match '/famous_users'                 => 'pages#famous_users'
+  match '/prominent_users'              => 'pages#prominent_users'
   match '/press_releases'               => 'pages#press_releases'
   match '/disclaimer'                   => 'pages#disclaimer'
   match '/privacy_statement'            => 'pages#privacy_statement'

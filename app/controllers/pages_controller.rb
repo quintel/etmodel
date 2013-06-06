@@ -76,8 +76,8 @@ public
     redirect_to home_path
   end
 
-  def famous_users
-    @users = YAML::load_file('config/famous_users.yml').sort_by{rand()}
+  def prominent_users
+    @users = YAML::load_file('config/prominent_users.yml').sort_by{rand()}
   end
 
   def quality

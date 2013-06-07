@@ -43,8 +43,12 @@ class @Target extends Backbone.Model
         return Metric.ratio_as_percentage(n, false, 2)
       when 'number'
         return Metric.round_number(n, 2)
-      when 'number_with_unit'
-        return "#{Metric.round_number(n, 2)} #{@get('unit')}"
+      when 'number_with_unit' 
+        if @get('unit') == "&euro; bln"
+          label = "&euro; " + I18n.t('units.currency.billions')
+        else
+          label = @get('unit')
+        return "#{Metric.round_number(n, 2)} #{label}"
       else
         return n
 

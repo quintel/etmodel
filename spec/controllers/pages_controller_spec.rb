@@ -67,11 +67,11 @@ describe PagesController, :vcr => true do
     end
   end
 
-  describe "#famous_users" do
+  describe "#prominent_users" do
     it "should render correctly" do
-      get :famous_users
+      get :prominent_users
       expect(response).to be_success
-      expect(response).to render_template(:famous_users)
+      expect(response).to render_template(:prominent_users)
     end
   end
 

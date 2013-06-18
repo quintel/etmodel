@@ -55,4 +55,8 @@ class User < ActiveRecord::Base
     "#{name} - #{email}"
   end
 
+  def hash
+    Digest::MD5.hexdigest(created_at.to_s)
+  end
+
 end

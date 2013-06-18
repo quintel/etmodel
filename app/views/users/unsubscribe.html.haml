@@ -1,0 +1,9 @@
+%h1= t 'unsubscribe.header'
+
+- if @allow_news_changed
+  %p=raw t 'unsubscribe.body.succesfully'
+
+- else
+  %p=raw t 'unsubscribe.body.already_done'
+
+%p= t 'unsubscribe.body.assurance'

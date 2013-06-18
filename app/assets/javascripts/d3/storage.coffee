@@ -96,14 +96,14 @@ D3.storage =
                                .attr("class","label")
                                .attr("x", @width/2)
                                .attr("y", 35)
-                               .text("Installed capacity of wind & solar, GW")
+                               .text("#{I18n.t('output_elements.storage_chart.installed_capacity')}")
                                .attr("text-anchor","middle")
       
       yAxisLabel = yAxisGroup.append("text")
                                .attr("class","label")
                                .attr("x", 0 - (@series_height/2))
                                .attr("y", 0 - 25)
-                               .text("Total cost of integrated production, €/MWh")
+                               .text("#{I18n.t('output_elements.storage_chart.total_cost')}")
                                .attr("text-anchor","middle")
                                .attr("transform", (d) -> "rotate(-90)" )
       
@@ -150,7 +150,7 @@ D3.storage =
                .attr("class", "indicative_label")
                .attr("x", 320)
                .attr('y', 0 - 300)
-               .text("INDICATIVE")
+               .text("#{I18n.t('output_elements.storage_chart.indicative')}")
                .attr("transform", (d) -> "rotate(45)" )
       
       legendGroup = @svg.append("g")
@@ -170,7 +170,7 @@ D3.storage =
                .attr("class", "legend_label")
                .attr("x", 15)
                .attr("y", 10)
-               .text("Inland wind turbine")
+               .text("#{I18n.t('output_elements.storage_chart.inland_wind')}")
       
       legendItem.append("rect")
                .attr("x", @width/2)
@@ -183,7 +183,7 @@ D3.storage =
                .attr("class", "legend_label")
                .attr("x", @width/2 + 15)
                .attr("y", 10)
-               .text("Electricity Storage")
+               .text("#{I18n.t('output_elements.storage_chart.electricity_storage')}")
       
       legendItem.append("rect")
                .attr("x", 0)
@@ -196,7 +196,7 @@ D3.storage =
                .attr("class", "legend_label")
                .attr("x", 15)
                .attr("y", 25)
-               .text("Conversion to Gas")
+               .text("#{I18n.t('output_elements.storage_chart.conversion_to_gas')}")
       
       legendItem.append("rect")
                .attr("x", @width/2)
@@ -209,7 +209,7 @@ D3.storage =
                .attr("class", "legend_label")
                .attr("x", @width/2 + 15)
                .attr("y", 25)
-               .text("Conversion to Heat")
+               .text("#{I18n.t('output_elements.storage_chart.conversion_to_heat')}")
 
     refresh: =>
       tracker_value = if @gquery.future_value() < @maximum_x then @gquery.future_value() else 200

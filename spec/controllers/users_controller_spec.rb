@@ -11,6 +11,50 @@ describe UsersController do
     end
   end
 
+  describe '#unsubscribe' do
+
+    context 'with a formerly interested subscriber' do
+
+      before do
+        @user = FactoryGirl.create(:user, allow_news: true)
+        get :unsubscribe, id: @user.id
+        @user.reload
+      end
+
+      it 'registers in the database' do
+        expect(@user.allow_news).to be_false
+      end
+
+      it 'renders a page succesfully' do
+        expect(response).to be_success
+      end
+
+      it 'shows you have been unsubscribed' do
+        expect(response.body).to match(/You have been unsubscribed/i)
+      end
+
+    end
+
+    context 'with an already signed-out user' do
+
+      before do
+        @user = FactoryGirl.create(:user, allow_news: false)
+        get :unsubscribe, id: @user.id
+        @user.reload
+      end
+
+      it 'renders a page succesfully' do
+        expect(response).to be_success
+      end
+
+      it 'shows you have been unsubscribed ALREADY' do
+        expect(response.body).to match(/already/i)
+      end
+
+    end
+
+  end
+
   describe "#create" do
     it "should create a new user" do
       expect {

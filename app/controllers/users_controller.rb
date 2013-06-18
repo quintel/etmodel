@@ -33,6 +33,10 @@ class UsersController < ApplicationController
   def unsubscribe
     @user = User.find(params[:id])
 
+    unless @user.hash == params[:h]
+      render text: 'invalid link. Cannot unsubscribe.' and return
+    end
+
     @allow_news_changed = @user.allow_news == true
     @user.allow_news = false
 

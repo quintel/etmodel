@@ -17,7 +17,7 @@ describe UsersController do
 
       before do
         @user = FactoryGirl.create(:user, allow_news: true)
-        get :unsubscribe, id: @user.id
+        get :unsubscribe, id: @user.id, h: @user.hash
         @user.reload
       end
 
@@ -39,7 +39,7 @@ describe UsersController do
 
       before do
         @user = FactoryGirl.create(:user, allow_news: false)
-        get :unsubscribe, id: @user.id
+        get :unsubscribe, id: @user.id, h: @user.hash
         @user.reload
       end
 
@@ -49,6 +49,28 @@ describe UsersController do
 
       it 'shows you have been unsubscribed ALREADY' do
         expect(response.body).to match(/already/i)
+      end
+
+    end
+
+    context 'with invalid hash' do
+
+      before do
+        @user = FactoryGirl.create(:user, allow_news: true)
+        get :unsubscribe, id: @user.id, h: 'i-am-a-hacker'
+        @user.reload
+      end
+
+      it 'does not register in the database' do
+        expect(@user.allow_news).to be_true
+      end
+
+      it 'renders a page succesfully' do
+        expect(response).to be_success
+      end
+
+      it 'shows that user has not been unsubscribed' do
+        expect(response.body).to match(/cannot unsubscribe/i)
       end
 
     end

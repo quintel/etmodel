@@ -18,6 +18,9 @@ Etm::Application.routes.draw do
 
   resources :user_sessions
   resources :users, :except => [:index, :show, :destroy]
+
+  match '/users/:id/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
+
   resource :user, :only => [:edit, :update]
 
   resources :partners, :only => [:show, :index]

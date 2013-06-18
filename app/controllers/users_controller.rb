@@ -28,6 +28,17 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET (This is a bit un-REST-ful, but makes it clickable from
+  # emails...)
+  def unsubscribe
+    @user = User.find(params[:id])
+
+    @allow_news_changed = @user.allow_news == true
+    @user.allow_news = false
+
+    @user.save!
+  end
+
   def update
     @user = current_user
     if @user.update_attributes(params[:user])

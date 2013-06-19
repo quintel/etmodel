@@ -47,12 +47,7 @@ D3.storage =
       p2g_curve = filter_on_y_values p2g_curve, @maximum_y
       p2h_curve = filter_on_y_values p2h_curve, @maximum_y
 
-      tracker = [{"x": tracker_value, "y": 0}, {"x": tracker_value, "y": @maximum_y}]
-
-      dataset = wind_curve.concat(p2p_curve,p2g_curve,p2h_curve);
-
-      max_x = d3.max(dataset, (d) -> d.x )
-      max_y = d3.max(dataset, (d) -> d.y )
+      @tracker = [{"x": tracker_value, "y": 0}, {"x": tracker_value, "y": @maximum_y}]
 
       #Create scale functions
       xScale = d3.scale.linear()
@@ -139,7 +134,7 @@ D3.storage =
       @svg.append("path")
                .attr("id", "tracker")
                .style("stroke-dasharray", ("3, 3"))
-               .attr("d", lineFunction(tracker))
+               .attr("d", lineFunction(@tracker))
                .attr("stroke", "red")
                .attr("stroke-width", 2)
                .attr("fill", "none")
@@ -147,7 +142,7 @@ D3.storage =
       @svg.append("g").append("text")
                .attr("class", "indicative_label")
                .attr("x", 320)
-               .attr('y', 0 - 300)
+               .attr('y', 0-300)
                .text("#{I18n.t('output_elements.storage_chart.indicative')}")
                .attr("transform", (d) -> "rotate(45)" )
       
@@ -211,7 +206,7 @@ D3.storage =
 
     refresh: =>
       tracker_value = if @gquery.future_value() < @maximum_x then @gquery.future_value() else 200
-
+      
       tracker = [{"x": tracker_value, "y": 0}, {"x": tracker_value, "y": @maximum_y}]
 
       #Create scale functions

@@ -17,7 +17,7 @@ describe UsersController do
 
       before do
         @user = FactoryGirl.create(:user, allow_news: true)
-        get :unsubscribe, id: @user.id, h: @user.hash
+        get :unsubscribe, id: @user.id, h: @user.md5_hash
         @user.reload
       end
 
@@ -39,7 +39,7 @@ describe UsersController do
 
       before do
         @user = FactoryGirl.create(:user, allow_news: false)
-        get :unsubscribe, id: @user.id, h: @user.hash
+        get :unsubscribe, id: @user.id, h: @user.md5_hash
         @user.reload
       end
 

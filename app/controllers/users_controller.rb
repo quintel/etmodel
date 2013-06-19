@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   def unsubscribe
     @user = User.find(params[:id])
 
-    unless @user.hash == params[:h]
+    unless @user.md5_hash == params[:h]
       render text: 'invalid link. Cannot unsubscribe.' and return
     end
 

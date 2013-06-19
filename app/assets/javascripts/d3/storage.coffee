@@ -37,7 +37,6 @@ D3.storage =
 
       p2h_curve = [{"x": 10.98666667, "y": 400}, {"x": 12.71314286, "y": 205.455858}, {"x": 12.87009524, "y": 197.1603587}, {"x": 13.02704762, "y": 190.6914147}, {"x": 13.184, "y": 180.6019692}, {"x": 13.34095238, "y": 173.9759327}, {"x": 13.49790476, "y": 167.9713138}, {"x": 13.65485714, "y": 162.7961413}, {"x": 13.81180952, "y": 158.2636254}, {"x": 13.9687619, "y": 153.0211185}, {"x": 14.12571429, "y": 149.4762432}, {"x": 15.6952381, "y": 120.3229776}, {"x": 20.40380952, "y": 83.04284531}, {"x": 25.11238095, "y": 67.17632274}, {"x": 29.82095238, "y": 56.55547905}, {"x": 34.52952381, "y": 50.33653144}, {"x": 39.23809524, "y": 45.71975686}, {"x": 43.94666667, "y": 42.47506121}, {"x": 48.6552381, "y": 40.1292938}, {"x": 53.36380952, "y": 38.30497442}, {"x": 58.07238095, "y": 36.67530272}, {"x": 62.78095238, "y": 35.18577178}, {"x": 67.48952381, "y": 33.95197659}, {"x": 72.19809524, "y": 32.95961798}, {"x": 76.90666667, "y": 32.08299342}, {"x": 81.6152381, "y": 31.38771495}, {"x": 86.32380952, "y": 30.75098379}, {"x": 91.03238095, "y": 30.08074439}, {"x": 95.74095238, "y": 29.55678803}, {"x": 100.4495238, "y": 29.05521076}, {"x": 105.1580952, "y": 28.57043357}, {"x": 109.8666667, "y": 28.1529025}, {"x": 114.5752381, "y": 27.77657202}, {"x": 119.2838095, "y": 27.44270908}]
 
-      #Width and height
       @maximum_x = 120
       @maximum_y = 400
 
@@ -49,9 +48,10 @@ D3.storage =
       p2g_curve  = filter_on_y_values p2g_curve, @maximum_y
       p2h_curve  = filter_on_y_values p2h_curve, @maximum_y
 
+      theData = [{color: "#00BFFF", values: wind_curve, label: "output_elements.storage_chart.inland_wind"}, {color: "#F08080", values: p2p_curve, label: "output_elements.storage_chart.electricity_storage"}, {color: "green", values: p2g_curve, label: "output_elements.storage_chart.conversion_to_gas"}, {color: "#8B008B", values: p2h_curve, label: "output_elements.storage_chart.conversion_to_heat"}]
+
       @tracker = [{"x": tracker_value, "y": 0}, {"x": tracker_value, "y": @maximum_y}]
 
-      #Create scale functions
       xScale = d3.scale.linear()
               .domain([0, @maximum_x])
               .range([0, @width])
@@ -60,35 +60,31 @@ D3.storage =
               .domain([0, @maximum_y])
               .range([@series_height, 0])
 
-      #Create X axis
       xAxis = d3.svg.axis()
                     .scale(xScale)
                     .orient("bottom")
 
-      #Define Y axis
       yAxis = d3.svg.axis()
                     .scale(yScale)
                     .orient("left")
                     .tickValues([])
                     .tickSize(0)
 
-      #Create xAxis
       xAxisGroup = @svg.append("g")
-                       .attr("class", "x_axis")
-                       .attr("transform", "translate(0,#{@series_height})")
-                       .call(xAxis)
+                                 .attr("class", "x_axis")
+                                 .attr("transform", "translate(0,#{@series_height})")
+                                 .call(xAxis)
 
-      #Create Y axis
       yAxisGroup = @svg.append("g")
-                       .attr("class", "y_axis")
-                       .call(yAxis)
+                                 .attr("class", "y_axis")
+                                 .call(yAxis)
 
       xAxisLabel = xAxisGroup.append("text")
-                             .attr("class","label")
-                             .attr("x", @width/2)
-                             .attr("y", 35)
-                             .text("#{I18n.t('output_elements.storage_chart.installed_capacity')}")
-                             .attr("text-anchor","middle")
+                               .attr("class","label")
+                               .attr("x", @width/2)
+                               .attr("y", 35)
+                               .text("#{I18n.t('output_elements.storage_chart.installed_capacity')}")
+                               .attr("text-anchor","middle")
 
       yAxisLabel = yAxisGroup.append("text")
                                .attr("class","label")
@@ -98,109 +94,61 @@ D3.storage =
                                .attr("text-anchor","middle")
                                .attr("transform", (d) -> "rotate(-90)" )
 
-      #This is the accessor function we talked about above
       lineFunction = d3.svg.line()
                              .x( (d) ->  xScale(d.x) )
                              .y( (d) ->  yScale(d.y) )
                              .interpolate("basis")
 
-      #The line SVG Path we draw
-      @svg.append("path")
-          .attr("d", lineFunction(wind_curve))
-          .attr("stroke", "#00BFFF")
-          .attr("stroke-width", 3)
-          .attr("fill", "none")
+      @svg.selectAll('path.serie')
+                  .data(theData)
+                  .enter()
+                  .append('path')
+                  .attr("d", (d) -> lineFunction(d.values) )
+                  .attr("stroke", (d) -> d.color )
+                  .attr("stroke-width", 3)
+                  .attr("fill", "none");
 
       @svg.append("path")
-          .attr("d", lineFunction(p2p_curve))
-          .attr("stroke", "#F08080")
-          .attr("stroke-width", 3)
-          .attr("fill", "none")
-
-      @svg.append("path")
-          .attr("d", lineFunction(p2g_curve))
-          .attr("stroke", "green")
-          .attr("stroke-width", 3)
-          .attr("fill", "none")
-
-      @svg.append("path")
-          .attr("d", lineFunction(p2h_curve))
-          .attr("stroke", "#8B008B")
-          .attr("stroke-width", 3)
-          .attr("fill", "none")
-
-      @svg.append("path")
-          .attr("id", "tracker")
-          .style("stroke-dasharray", ("3, 3"))
-          .attr("d", lineFunction(@tracker))
-          .attr("stroke", "red")
-          .attr("stroke-width", 2)
-          .attr("fill", "none")
+               .attr("id", "tracker")
+               .style("stroke-dasharray", ("3, 3"))
+               .attr("d", lineFunction(@tracker))
+               .attr("stroke", "red")
+               .attr("stroke-width", 2)
+               .attr("fill", "none")
 
       @svg.append("g").append("text")
-          .attr("class", "indicative_label")
-          .attr("x", 320)
-          .attr('y', 0-300)
-          .text("#{I18n.t('output_elements.storage_chart.indicative')}")
-          .attr("transform", (d) -> "rotate(45)" )
+               .attr("class", "indicative_label")
+               .attr("x", 320)
+               .attr('y', 0-300)
+               .text("#{I18n.t('output_elements.storage_chart.indicative')}")
+               .attr("transform", (d) -> "rotate(45)" )
 
       legendGroup = @svg.append("g")
-                        .attr("class", "legend")
-                        .attr("transform", "translate(0,#{@series_height + legend_margin})")
+                         .attr("class", "legend")
+                         .attr("transform", "translate(0,#{@series_height + legend_margin})")
 
       legendItem = legendGroup.append("svg")
 
-      legendItem.append("rect")
-                .attr("x", 0)
-                .attr("y", 0)
-                .attr("width", "10")
-                .attr("height", "10")
-                .attr("fill", "#00BFFF")
+      legendMargin = @width/legend_columns
 
-      legendItem.append("text")
-                .attr("class", "legend_label")
-                .attr("x", 15)
-                .attr("y", 10)
-                .text("#{I18n.t('output_elements.storage_chart.inland_wind')}")
+      legendItem.selectAll('rect')
+                 .data(theData)
+                 .enter()
+                 .append('rect')
+                 .attr("x", (d,i) -> i%2 * legendMargin )
+                 .attr("y", (d,i) -> Math.floor(i / 2) * 15 )
+                 .attr("width", "10")
+                 .attr("height", "10")
+                 .attr("fill", (d) -> d.color )
 
-      legendItem.append("rect")
-                .attr("x", @width/2)
-                .attr("y", 0)
-                .attr("width", "10")
-                .attr("height", "10")
-                .attr("fill", "#F08080")
-
-      legendItem.append("text")
-                .attr("class", "legend_label")
-                .attr("x", @width/2 + 15)
-                .attr("y", 10)
-                .text("#{I18n.t('output_elements.storage_chart.electricity_storage')}")
-
-      legendItem.append("rect")
-               .attr("x", 0)
-               .attr("y", 15)
-               .attr("width", "10")
-               .attr("height", "10")
-               .attr("fill", "green")
-
-      legendItem.append("text")
-               .attr("class", "legend_label")
-               .attr("x", 15)
-               .attr("y", 25)
-               .text("#{I18n.t('output_elements.storage_chart.conversion_to_gas')}")
-
-      legendItem.append("rect")
-               .attr("x", @width/2)
-               .attr("y", 15)
-               .attr("width", "10")
-               .attr("height", "10")
-               .attr("fill", "#8B008B")
-
-      legendItem.append("text")
-               .attr("class", "legend_label")
-               .attr("x", @width/2 + 15)
-               .attr("y", 25)
-               .text("#{I18n.t('output_elements.storage_chart.conversion_to_heat')}")
+      legendItem.selectAll('text')
+                  .data(theData)
+                  .enter()
+                  .append('text')
+                  .attr("class", "legend_label")
+                  .attr("x", (d,i) -> i%2 * legendMargin + 15 )
+                  .attr("y", (d,i) -> Math.floor(i / 2) * 15 + 10 )
+                  .text((d) -> "#{I18n.t(d.label)}" )
 
     refresh: =>
       tracker_value = if @gquery.future_value() < @maximum_x then @gquery.future_value() else 200

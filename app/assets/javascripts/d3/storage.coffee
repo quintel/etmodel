@@ -4,7 +4,7 @@ D3.storage =
       D3ChartView.prototype.initialize.call(this)
       @gquery = gqueries.find_or_create_by_key('installed_capacity_solar_and_wind')
       
-      @gquery.on 'change', @refresh
+      # @gquery.on 'change', @refresh
       
     can_be_shown_as_table: -> false
 

@@ -275,7 +275,7 @@ class @ChartList extends Backbone.Collection
       e.preventDefault()
       holder_id = $(e.target).parents(".chart_holder").data('holder_id')
       chart = @chart_in_holder holder_id
-      if chart.get('type') == 'block' || chart.get('type') == 'storage'
+      if chart.get('type') == 'block'
         alert("Sorry, this chart can't be zoomed")
         return false
       format = if chart.get('as_table') == true then 'table' else 'chart'

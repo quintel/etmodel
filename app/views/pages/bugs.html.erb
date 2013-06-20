@@ -13,6 +13,7 @@
   <li>Primary demand of carriers can differ between Sankey and overall Primary and Final energy use charts by small amounts. These discrepancies will be resolved in the next version of the ETM.</li>
   <li>Currently the only power plants which can be used for co-firing of wood_pellets are the ultra-supercritical pulverized coal power plant (Pulverized coal) and the equivalent CHP plant (Central Coal CHP). </li>
   <li>The technical specs and installed capacities of CHP plants have been updated. For the Netherlands, the heat and electricity balances have been updated accordingly, but for Germany and the UK this has not yet been done. The heat and electricity production for these countries can therefore deviate from the actual values. In fact, we know that CHP plants in Germany produce roughly 100 PJ too little heat leading to small (of order 1%) deviations in renewability percentage and CO2 reduction percentage.</li>
+  <li>Insulation in the Buildings sector competes with 'recirculation' and 'heat recovery' (in that order) as means to reduce the heat demand in the ETM. In reality, these techniques are all applied simultaneously. The simplification used in the ETM does not change the joint effect, but can result in incorrect relative effect of these techniques.</li>
 </ul>
 <br/>
 
@@ -22,6 +23,7 @@
   <li>We are currently still validating costs for certain power plants (coal-fired, hydro and nuclear power plants) and household and building heating technologies. These may therefore result in incorrect costs.</li>
   <li>We are currently overhauling all Combined Heat and Power plants in the ETM. We expect this to be finished by the end of September. This will affect both energy and cost calculations. </li>
   <li>Costs of insulation are currently related to the amount of energy that is saved by insulating. Because this amount depends on both the 'heat demand per person' and 'outdoor temperature' slider settings, the cost of insulation (incorrectly) depends on these settings as well.</li>
+  <li>The cost calculation for insulation in the ETM is based on the simplifying assumption that costs scale linearly with saved energy. This approximation will overestimate the costs for low degrees of insulation, and underestimate the costs for high insulation values. The reason is that, in reality, cost-effective measures are applied first, while the last few percent of savings require large investments. We have planned a complete overhaul of this part of the ETM which will improve the cost calculation for insulation considerably. </li>
 </ul>
 <br/>
 

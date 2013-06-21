@@ -136,7 +136,7 @@ describe ScenariosController, :vcr => true do
   context "a teacher" do
     before(:each) do
       login_as user
-      student= FactoryGirl.create(:user, teacher_id: user.id)
+      student= FactoryGirl.create(:user, teacher_email: user.email)
       @student_scenario = FactoryGirl.create(:saved_scenario, user: student)
     end
 

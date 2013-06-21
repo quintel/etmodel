@@ -18,5 +18,4 @@
 //= require fancybox
 //= require i18n
 //= require i18n/translations
-//= require chosen-jquery
 //= require autocomplete.js.coffee

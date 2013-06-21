@@ -43,6 +43,28 @@ class User < ActiveRecord::Base
 
   validates_presence_of :name
 
+
+  attr_accessor :teacher_email
+
+  validate :teacher_email_exists
+
+  def teacher_email
+    self.teacher.try(:email)
+  end
+
+  def teacher_email_exists
+    if @teacher_email.blank?
+      self.teacher_id = nil
+      return
+    end
+
+    self.teacher = User.where(email: @teacher_email).first
+    unless self.teacher
+      errors.add(:teacher_email, "does not exist.")
+    end
+  end
+
+
   acts_as_authentic
 
   scope :ordered, order('name')

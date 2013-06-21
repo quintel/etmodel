@@ -112,7 +112,7 @@ describe UsersController do
             post :create, { user: {
               name: 'Student one',
               email: 'stu@quintel.com',
-              teacher_id: @teacher.id,
+              teacher_email: @teacher.email,
               password: '12345',
               password_confirmation: '12345'
             }

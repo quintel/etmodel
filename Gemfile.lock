@@ -6,13 +6,6 @@ GIT
       i18n
 
 GIT
-  remote: git://github.com/sstephenson/ruby-yui-compressor.git
-  revision: 05f98cafbd6c4ef92d2235b6eb7b781a35f37eb0
-  specs:
-    yui-compressor (0.9.6)
-      POpen4 (>= 0.1.4)
-
-GIT
   remote: https://github.com/quintel/etplugin.git
   revision: 92c2046f9551de595f0c6b939ded7c3abb0229b3
   specs:
@@ -91,10 +84,6 @@ GEM
       json
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
-    chosen-rails (0.9.14)
-      coffee-rails (>= 3.2)
-      railties (>= 3.0)
-      sass-rails (>= 3.2)
     chunky_png (1.2.8)
     coderay (1.0.9)
     coffee-rails (3.2.2)
@@ -315,6 +304,8 @@ GEM
     yard-tomdoc (0.4.0)
       tomparse
       yard
+    yui-compressor (0.9.6)
+      POpen4 (>= 0.1.4)
 
 PLATFORMS
   ruby
@@ -329,7 +320,6 @@ DEPENDENCIES
   capistrano
   capybara (~> 2.0.2)
   capybara-webkit (~> 0.14.1)
-  chosen-rails
   coffee-rails (~> 3.2.1)
   compass-rails
   dalli
@@ -374,4 +364,4 @@ DEPENDENCIES
   webrat
   xray-rails
   yard-tomdoc (~> 0.4.0)
-  yui-compressor!
+  yui-compressor

@@ -214,6 +214,8 @@ class @ChartList extends Backbone.Collection
   # event binding prevents memory/event leaks and will be called just once.
   #
   setup_callbacks: ->
+    load_chart = @load
+
     # Launch the chart picker popup
     #
     $(document).on "click", "a.select_chart, a.add_chart", (e) ->
@@ -226,16 +228,18 @@ class @ChartList extends Backbone.Collection
         width: 1150
         height: 700
         padding: 0
-
-    # Pick a chart from the chart picker popup
-    #
-    $(document).on "click", "div.pick_chart", (e) =>
-      e.preventDefault()
-      data_holder = $(e.target).closest('div.pick_chart')
-      holder_id = data_holder.data('chart_holder')
-      chart_id  = data_holder.data('chart_id')
-      @load chart_id, holder_id, force: true
-      close_fancybox()
+        afterShow: ->
+          # Pick a chart from the chart picker popup
+          #
+          # $('body').on "click touchdown", "div.pick_chart", (e) =>
+          $('#select_charts .pick_chart').on 'click', (e) =>
+            data_holder = $(e.target).closest('div.pick_chart')
+            holder_id = data_holder.data('chart_holder')
+            chart_id  = data_holder.data('chart_id')
+            console.log("Loading: #{ chart_id }")
+            load_chart chart_id, holder_id, force: true
+            close_fancybox()
+            e.preventDefault()
 
     # Toggle chart lock
     #

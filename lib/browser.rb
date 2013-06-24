@@ -7,6 +7,7 @@ module Browser
     return 'chrome' if user_agent =~ /Chrome/
     return 'safari' if user_agent =~ /Safari/
     return 'opera' if user_agent =~ /Opera/
+    return 'ie10' if user_agent =~ /MSIE 10/
     return 'ie9' if user_agent =~ /MSIE 9/
     return 'ie8' if user_agent =~ /MSIE 8/
     return 'ie7' if user_agent =~ /MSIE 7/

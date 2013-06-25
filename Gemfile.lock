@@ -6,6 +6,13 @@ GIT
       i18n
 
 GIT
+  remote: git://github.com/sstephenson/ruby-yui-compressor.git
+  revision: 05f98cafbd6c4ef92d2235b6eb7b781a35f37eb0
+  specs:
+    yui-compressor (0.9.6)
+      POpen4 (>= 0.1.4)
+
+GIT
   remote: https://github.com/quintel/etplugin.git
   revision: 92c2046f9551de595f0c6b939ded7c3abb0229b3
   specs:
@@ -304,8 +311,6 @@ GEM
     yard-tomdoc (0.4.0)
       tomparse
       yard
-    yui-compressor (0.9.6)
-      POpen4 (>= 0.1.4)
 
 PLATFORMS
   ruby
@@ -364,4 +369,4 @@ DEPENDENCIES
   webrat
   xray-rails
   yard-tomdoc (~> 0.4.0)
-  yui-compressor
+  yui-compressor!

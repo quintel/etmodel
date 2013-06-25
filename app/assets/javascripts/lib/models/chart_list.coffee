@@ -218,7 +218,7 @@ class @ChartList extends Backbone.Collection
 
     # Launch the chart picker popup
     #
-    $(document).on "click", "a.select_chart, a.add_chart", (e) ->
+    $(document).on "click touchend", "a.select_chart, a.add_chart", (e) ->
       e.preventDefault()
       url = $(this).attr('href')
       $.fancybox.open
@@ -232,7 +232,7 @@ class @ChartList extends Backbone.Collection
           # Pick a chart from the chart picker popup
           #
           # $('body').on "click touchdown", "div.pick_chart", (e) =>
-          $('#select_charts .pick_chart').on 'click', (e) =>
+          $('#select_charts .pick_chart').on 'click touchend', (e) =>
             data_holder = $(e.target).closest('div.pick_chart')
             holder_id = data_holder.data('chart_holder')
             chart_id  = data_holder.data('chart_id')
@@ -243,7 +243,7 @@ class @ChartList extends Backbone.Collection
 
     # Toggle chart lock
     #
-    $(document).on 'click', "a.lock_chart", (e) =>
+    $(document).on 'click touchend', "a.lock_chart", (e) =>
       e.preventDefault()
       # which chart are we talking about?
       holder_id = $(e.target).parents(".chart_holder").data('holder_id')
@@ -252,7 +252,7 @@ class @ChartList extends Backbone.Collection
 
     # Remove chart
     #
-    $(document).on 'click', 'a.remove_chart', (e) =>
+    $(document).on 'click touchend', 'a.remove_chart', (e) =>
       e.preventDefault()
       holder_id = $(e.target).parents(".chart_holder").data('holder_id')
       $(".chart_holder[data-holder_id=#{holder_id}]").remove()
@@ -262,20 +262,20 @@ class @ChartList extends Backbone.Collection
 
     # Toggle chart/table format
     #
-    $(document).on 'click', 'a.table_format, a.chart_format', (e) =>
+    $(document).on 'click touchend', 'a.table_format, a.chart_format', (e) =>
       e.preventDefault()
       holder_id = $(e.target).parents(".chart_holder").data('holder_id')
       @chart_in_holder(holder_id).toggle_format()
 
     # Restore the default chart
     #
-    $(document).on 'click', 'a.default_chart', (e) =>
+    $(document).on 'click touchend', 'a.default_chart', (e) =>
       e.preventDefault()
       @load_default()
 
     # Zoom chart
     #
-    $(document).on 'click', 'a.zoom_chart', (e) =>
+    $(document).on 'click touchend', 'a.zoom_chart', (e) =>
       e.preventDefault()
       holder_id = $(e.target).parents(".chart_holder").data('holder_id')
       chart = @chart_in_holder holder_id

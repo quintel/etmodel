@@ -11,7 +11,7 @@ class Api::Scenario < ActiveResource::Base
 
   # The JSON request returns a string. Let's make it a DateTime object
   def parsed_created_at
-    DateTime.parse(created_at)
+    DateTime.parse(created_at) if created_at
   end
 
   def days_old

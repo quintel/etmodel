@@ -96,7 +96,7 @@ class @Chart extends Backbone.Model
 
   supported_by_current_browser: =>
     return true if Browser.hasD3Support()
-    _.indexOf(['d3', 'sankey', 'target_bar'], @get 'type') == -1
+    _.indexOf(['d3', 'sankey', 'storage', 'target_bar'], @get 'type') == -1
 
   # -- series and values -----------------------------------------------------
 

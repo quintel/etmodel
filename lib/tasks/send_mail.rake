@@ -7,6 +7,7 @@ task :send_mail => [:environment] do
   users = User.where(allow_news: true)
   users = users.uniq { |user| user.email }
   users = users.delete_if { |user| /@quintel/.match(user.email) }
+  users = users.delete_if { |user| user.saved_scenarios.size == 0 }
 
   puts "Total # of users            : #{ User.all.count }"
   puts "# of users allowing updates : #{ users.count }"

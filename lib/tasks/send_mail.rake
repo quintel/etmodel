@@ -13,15 +13,13 @@ task :send_mail => [:environment] do
   puts "# of users allowing updates : #{ users.count }"
 
   unless subject && !subject.blank?
-    puts 'Please provide subject'
-    exit
+    raise 'Please provide subject'
   end
 
   template_path = File.join(Rails.root,'app','views','user_mailer')
 
   unless template && File.fnmatch(File.join(template_path, template + '.*'), File.join(template_path, template + '.'))
-    puts 'Invalid template or not found in app/views/user_mailer'
-    exit
+    raise 'Invalid template or not found in app/views/user_mailer'
   end
 
   users.each do |user|

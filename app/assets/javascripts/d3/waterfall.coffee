@@ -12,6 +12,42 @@ D3.waterfall =
       bottom: 20
       left: 20
       right: 40
+    
+    string_splitter = (text,len) ->
+      elements = text.split(" ")
+      line = [""]
+      j = 0
+
+      for element in elements when element isnt ""
+        if element.length + line[j].length < len
+          line[j] = line[j].concat(element," ")
+        else
+          j++
+          line[j] = "".concat(element," ")
+      line[i] = l.substring(0,l.length-1) for l, i in line
+      line
+
+    line_wrap_labels = ->
+      labels = d3.selectAll('g.x_axis.inner_grid > g > text')  
+      labels.each (index) ->
+        lines = string_splitter($(this).text(),15)
+        if lines.length > 1
+          # Possible correction of x-coordinates, such that middle of wrapped and rotated label aligns w/ tick mark
+          # offset = @column_width / 2
+          # labels_margin = 15
+          # if typeof($(this).attr("transform")) == "string" and $(this).attr("transform").match(/rotate\(90\)/) != null
+            # $(this).attr("transform","rotate(90) translate(#{-labels_margin}, #{-offset})")
+          # else if typeof($(this).attr("transform")) == "string" and $(this).attr("transform").match(/rotate\(-90\)/) != null
+            # $(this).attr("transform","rotate(-90) translate(#{-labels_margin}, #{-offset})")
+
+          $(this).text("");
+          for line, i in lines
+            d_y = if i > 0 then 1 else 0 
+            d3.select(this)
+              .append("tspan")
+              .text(line)
+              .attr("dy", d_y + "em")
+              .attr("x", $(this).attr("x"))
 
     draw: =>
       [@width, @height] = @available_size()
@@ -57,6 +93,9 @@ D3.waterfall =
         .attr('text-anchor', 'end')
         .attr('transform', "rotate(-90) translate(#{-labels_margin}, #{-offset})")
 
+      # wrap long labels over 2 or more lines (15 char./line), so that they are readable
+      line_wrap_labels()
+      
       @svg.selectAll('rect.serie')
         .data(@prepare_data(), (d) -> d.key)
         .enter()

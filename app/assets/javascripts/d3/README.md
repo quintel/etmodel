@@ -1,7 +1,8 @@
 # D3 Charts.
 
 ## How to add a new D3 chart type
-This document describes how to add a new D3 chart type to et-model. It is not an introduction to D3.js and readers who have not used D3.js before are advised to go through one of the many tutorials available online
+This document describes how to add a new D3 chart type to et-model. It is not an introduction to D3.js and readers who have not used D3.js before are advised to go through one of the many tutorials available online.
+
 ### Background
 Before going into detail on how to create a new D3 chart type, some background on how charts are being rendered in the first place.
 
@@ -30,16 +31,27 @@ As part of the instantiation of a Chart object, a `@series` attribute is added, 
 
 ### Adding a new chart type
 
-* Extends D3ChartView, which in turn extends BaseChartView, which extends Backbone.View...
+In order to add a new chart type, one has to add a new file to `assets/javascripts/d3/`. The name of the file corresponds with the new type, i.e. `line.coffee` defines line charts, while `sankey.coffee` defines sankey diagrams as used in the ETM. 
 
-The `initialize()` function .....
-* Add data to chart object
+The file defines the View class, which extends D3ChartView, which in turn extends BaseChartView, which extends Backbone.View... This View class needs to implement at least 4 funtions:
+
+* initialize()
+* can_be_shown_as_table()
+* draw()
+* refresh()
+
+Apart from creating a new instance of the chart through a call to D3ChartView.prototype.initialize, the `initialize()` function generally also associates the data with the chart, although this is not mandatory.
+
+The `can_be_shown_as_table()` function is a simple function, that returns either `true` or `false`, dependent on the desired behavior.
 
 The `draw()` function contains the actual specification of the chart. Genereally, this involves creating a SVG container of the appropriate size, defining scales, creating axes, plotting series and creating a legend.
 
 The `refresh()` function contains the D3 specifications required to update the chart once the underlying data (=~ gqueries) changes. 
 
 ### Linking new chart type to slides
-* Create new output_element_type
-* Create new output_element of new type
-* Associate slide(s) in question with new output_element
+Once the new chart type has been defined, four more steps have to be taken in order to make the new chart type available for use in etmodel:
+
+* Extend `find_view_class()` in `assets/javascripts/lib/models/chart.coffee` in such a way that the proper View class is used. Here it also needs to be indicated whether the chart has been implemented for D3 only or for jqPlot as well. In case of the latter, the jqPlot chart will be used in browsers that don't support D3 (=~ SVG). If only D3-enabled browsers are supported the new chart type has to be added to the array of D3-only charts, which is part of the `supported_by_current_browser()` function within `chart.coffee`.
+* In the etmodel database, create a new output_element_type with the same name as that used for the new file.
+* In the etmodel database, create a new output_element of the new type.
+* Using etmodel's admin front-end, you can now associate the slide(s) in question with the new output_element, which will result in the new chart being displayed once the associated slide(s) become active/in focus.

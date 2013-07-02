@@ -18,14 +18,13 @@ D3.waterfall =
       line = [""]
       j = 0
 
-      for element in elements 
-        if element != ""
-          if element.length + line[j].length < len
-            line[j] = line[j].concat(element," ")
-          else
-            j++
-            line[j] = "".concat(element," ")
-      line[_j] = l.substring(0,l.length-1) for l in line
+      for element in elements when element isnt ""
+        if element.length + line[j].length < len
+          line[j] = line[j].concat(element," ")
+        else
+          j++
+          line[j] = "".concat(element," ")
+      line[i] = l.substring(0,l.length-1) for l, i in line
       line
 
     line_wrap_labels = ->
@@ -42,8 +41,8 @@ D3.waterfall =
             # $(this).attr("transform","rotate(-90) translate(#{-labels_margin}, #{-offset})")
 
           $(this).text("");
-          for line in lines
-            d_y = if _i > 0 then 1 else 0 
+          for line, i in lines
+            d_y = if i > 0 then 1 else 0 
             d3.select(this)
               .append("tspan")
               .text(line)

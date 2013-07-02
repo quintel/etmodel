@@ -16,9 +16,11 @@ task :send_mail => [:environment] do
     raise 'Please provide subject'
   end
 
-  template_path = File.join(Rails.root,'app','views','user_mailer')
+  Dir.chdir(File.join(Rails.root,'app','views','user_mailer'))
+  
+  template_files = Dir.glob(template + '.*')
 
-  unless template && File.fnmatch(File.join(template_path, template + '.*'), File.join(template_path, template + '.'))
+  unless template && template_files.size > 0
     raise 'Invalid template or not found in app/views/user_mailer'
   end
 

@@ -147,6 +147,16 @@ D3.storage =
                 .attr("width", "10")
                 .attr("height", "10")
                 .attr("fill", (d) -> d.color )
+      
+      legendItem.append('line')
+                .style("stroke-dasharray", ("3, 3"))
+                .attr("x1", 0)
+                .attr("y1", 2.5*cell_height)
+                .attr("x2", 10)
+                .attr("y2", 2.5*cell_height)
+                .attr("stroke-width", 2)
+                .attr("stroke", "#f00")
+                .attr("fill", "none")
 
       legendItem.selectAll('text')
                 .data(theData)
@@ -156,6 +166,12 @@ D3.storage =
                 .attr("x", (d,i) -> i%2 * legend_column_width + 15 )
                 .attr("y", (d,i) -> Math.floor(i / 2) * cell_height + 10 )
                 .text((d) -> "#{I18n.t(d.label)}" )
+
+      legendItem.append('text')
+                .attr("class", "legend_label")
+                .attr("x", 15)
+                .attr("y", 2*cell_height + 10)
+                .text("#{I18n.t('output_elements.storage_chart.tracker')}")
 
     refresh: =>
       # Prepare data for tracker line

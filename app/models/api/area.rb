@@ -22,7 +22,7 @@ class Api::Area < ActiveResource::Base
     :has_other,
     :has_solar_csp,
     :use_network_calculations,
-    :has_energy_storage
+    :has_electricity_storage
   ]
 
   def self.find_by_country_memoized(area_code)

@@ -42,6 +42,12 @@ class ScenariosController < ApplicationController
     if @scenario.nil?
       redirect_to home_path, :notice => "Scenario not found" and return
     end
+    if @scenario.description
+      localized = @scenario.description_for_locale(I18n.locale)
+      text = localized.present? ? localized : @scenario.description
+      renderer = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+      @description = renderer.render(text).html_safe
+    end
   end
 
   def new

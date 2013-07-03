@@ -156,9 +156,9 @@ D3.stacked_bar =
         .transition()
         .attr 'y', (d) =>
           value = if d.get('target_line_position') is '1'
-            d.safe_present_value()
+            if d.safe_present_value() == 0 then 3*@series_height else d.safe_present_value()
           else
-            d.safe_future_value()
+            if d.safe_future_value() == 0 then 3*@series_height else d.safe_future_value()
 
           @series_height - @y(value)
 

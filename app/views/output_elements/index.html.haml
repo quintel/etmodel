@@ -1,7 +1,7 @@
 #select_charts
   - @groups.each_pair do |group, charts|
     - if charts.any?
-      %h1= t(group)
+      %h1= t("chart_group.#{group.downcase}")
       - charts.each do |chart|
         %div.pick_chart{:data => { :chart_id => chart.id, :chart_holder => @chart_holder}}
           %a

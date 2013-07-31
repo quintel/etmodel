@@ -49,6 +49,7 @@ group :development do
 end
 
 group :test, :development do
+  gem 'debugger', '~> 1.6.1'
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'pry-stack_explorer'

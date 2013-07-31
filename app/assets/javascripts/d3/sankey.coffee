@@ -8,8 +8,8 @@ D3.sankey =
           {id: 'natural_gas',                   column: 0, label: "gas", color: '#F0F0F0'},
           {id: 'nuclear',                       column: 0, label: "nuclear", color: '#FD8D3C'},
           {id: 'biomass_products',              column: 0, label: "biomass", color: '#2ca02c'},
-          {id: 'electricity',                   column: 0, label: "renewable electricity", color: '#1f77b4'},
-          {id: 'imported_electricity',          column: 0, label: "imported electricity", color: '#1f77b4'},
+          {id: 'electricity',                   column: 0, label: "renewable_electricity", color: '#1f77b4'},
+          {id: 'imported_electricity',          column: 0, label: "imported_electricity", color: '#1f77b4'},
           {id: 'households',                    column: 1},
           {id: 'buildings',                     column: 1},
           {id: 'agriculture',                   column: 1},
@@ -18,9 +18,9 @@ D3.sankey =
           {id: 'other',                         column: 1},
           {id: 'exported_electricity',          column: 1},
           {id: 'useful_demand_electric',        column: 2, label: "electricity"},
-          {id: 'useful_demand_heat_cold',       column: 2, label: "heat/cold"},
+          {id: 'useful_demand_heat_cold',       column: 2, label: "heat_cold"},
           {id: 'useful_demand_transport',       column: 2, label: "transport"},
-          {id: 'useful_demand_non_energetic',   column: 2, label: "non-energetic"}
+          {id: 'useful_demand_non_energetic',   column: 2, label: "non_energetic"}
         ]
         links: [
           {left: 'coal_and_derivatives',      right: 'households',                  gquery: 'coal_and_derivatives_to_households_in_sankey_ufp', color: '#252525'},
@@ -105,16 +105,16 @@ D3.sankey =
           {id: 'geo_solar_wind_water_ambient', column: 0, label: "renewable",              color: '#2ca02c'},
           {id: 'natural_gas',                  column: 0, label: "gas",                    color: '#7f7f7f'},
           {id: 'nuclear',                      column: 0, label: "uranium",                color: '#ff7f0e'},
-          {id: 'biomass_products',             column: 0, label: "biomass & waste",        color: '#2ca02c'},
-          {id: 'import',                       column: 0, label: "electricity import",     color: '#1f77b4'},
-          {id: 'electricity_prod',             column: 1, label: "electricity production", color: '#1f77b4'},
+          {id: 'biomass_products',             column: 0, label: "biomass_waste",          color: '#2ca02c'},
+          {id: 'import',                       column: 0, label: "electricity_import",     color: '#1f77b4'},
+          {id: 'electricity_prod',             column: 1, label: "electricity_production", color: '#1f77b4'},
           {id: 'chps',                         column: 1, label: "CHPs",                   color: '#9467bd'},
-          {id: 'households',                   column: 2},
-          {id: 'buildings',                    column: 2},
-          {id: 'transport',                    column: 2},
-          {id: 'industry',                     column: 2},
-          {id: 'agriculture',                  column: 2},
-          {id: 'other',                        column: 2},
+          {id: 'households',                   column: 2, label: "households"},
+          {id: 'buildings',                    column: 2, label: "buildings"},
+          {id: 'transport',                    column: 2, label: "transport"},
+          {id: 'industry',                     column: 2, label: "industry"},
+          {id: 'agriculture',                  column: 2, label: "agriculture"},
+          {id: 'other',                        column: 2, label: "other"},
           {id: 'exported_electricity',         column: 2, label: 'export', color: '#1f77b4'},
           {id: 'loss',                         column: 2}
         ]
@@ -429,7 +429,7 @@ D3.sankey =
         .attr("dx", 25)
         .attr("dy", 3)
         .attr("y", (d) => @y(d.y_offset() + d.value() / 2) )
-        .text((d) -> d.label())
+        .text((d) -> "#{I18n.t("output_elements.sankey_labels.#{d.label()}")}")
       @setup_tooltips()
       nodes
 
@@ -491,13 +491,13 @@ D3.sankey =
         .attr("data-tooltip", (d) =>
           h = ""
           for l in d.right_links
-            h += "<span class='icon-arrow-right'></span> #{l.right.label()}: #{@value_formatter l.value()}<br/>"
+            h += "<span class='icon-arrow-right'></span> #{I18n.t("output_elements.sankey_labels.#{l.right.label()}")}: #{@value_formatter l.value()}<br/>"
           for l in d.left_links
-            h += "<span class='icon-arrow-left'></span> #{l.left.label()}: #{@value_formatter l.value()}<br/>"
+            h += "<span class='icon-arrow-left'></span> #{I18n.t("output_elements.sankey_labels.#{l.left.label()}")}: #{@value_formatter l.value()}<br/>"
           h
           )
         .attr("data-tooltip-title", (d) =>
-          "#{d.label()}: #{@value_formatter d.value()}")
+          "#{I18n.t("output_elements.sankey_labels.#{d.label()}")}: #{@value_formatter d.value()}")
 
       # move the rectangles
       @nodes.selectAll("rect")

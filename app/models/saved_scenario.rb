@@ -21,7 +21,7 @@ class SavedScenario < ActiveRecord::Base
 
   def scenario
     begin
-      Api::Scenario.find(scenario_id)
+      @scenario = Api::Scenario.find(scenario_id)
     rescue ActiveResource::ResourceNotFound
       nil
     end

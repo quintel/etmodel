@@ -140,7 +140,7 @@ describe UsersController do
     context "when user wants to edit another user's account" do
       it "he is redirected to the home page" do
         get :edit, id: user
-        expect(response).to redirect_to(:home)
+        expect(response).to redirect_to(:root)
       end
     end
   end

@@ -20,7 +20,7 @@ describe UserSessionsController do
     it "should redirect to admin after succesfull login in" do
       post :create, :user_session => {:email => @user.email, :password => @user.password}
       assigns(:user_session).user.should == @user
-      response.should redirect_to(home_path)
+      response.should redirect_to(root_path)
     end
 
     it "should render the same page to admin after unsuccessfull login." do

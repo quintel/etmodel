@@ -89,7 +89,7 @@ describe PagesController, :vcr => true do
         it "should update the session variable and redirect to home page" do
           get p
           expect(session[p]). to be_true
-          expect(response).to redirect_to(home_path)
+          expect(response).to redirect_to(root_path)
         end
       end
     end

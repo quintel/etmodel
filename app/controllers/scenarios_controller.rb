@@ -40,7 +40,7 @@ class ScenariosController < ApplicationController
 
   def show
     if @scenario.nil?
-      redirect_to home_path, :notice => "Scenario not found" and return
+      redirect_to root_path, :notice => "Scenario not found" and return
     end
   end
 

@@ -4,7 +4,7 @@ describe "loading a different country", :js => true, :vcr => true do
   fixtures :tabs, :sidebar_items, :slides, :output_elements, :output_element_types
 
   it "should create a new scenario from a preset" do
-    visit home_path
+    visit root_path
     # save_and_open_page
     click_link "Start a new scenario"
     select 'Germany', :from => 'area_code'

@@ -68,12 +68,12 @@ public
 
   def show_all_countries
     session[:show_all_countries] = true
-    redirect_to home_path
+    redirect_to root_path
   end
 
   def show_flanders
     session[:show_flanders] = true
-    redirect_to home_path
+    redirect_to root_path
   end
 
   def prominent_users

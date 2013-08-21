@@ -1,6 +1,6 @@
 <% if current_user%>
 <%= link_to t("header.sign_out"), "/logout" %> 
-<%= link_to I18n.t('home'), home_path %> 
+<%= link_to I18n.t('home'), root_path %> 
 <% else %>
 <h1>Login</h1>
 

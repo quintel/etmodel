@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if current_user
       @user = User.find(params[:id])
     else
-      redirect_to :home
+      redirect_to :root
     end
   end
 
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
-      redirect_to home_path, :notice => I18n.t("flash.register")
+      redirect_to root_path, :notice => I18n.t("flash.register")
     else
       render :new
     end

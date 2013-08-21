@@ -2,10 +2,10 @@ Etm::Application.routes.draw do
 
   get "gql/search"
 
-  root :to => 'pages#choose'
+  root :to => 'pages#root'
 
   match '/choose' => 'pages#choose'
-  match '/pro' => 'pages#root', :as => :home
+
   match '/info/:ctrl/:act' => "pages#info", :as => :tab_info
 
   match '/texts/:id' => 'texts#show'

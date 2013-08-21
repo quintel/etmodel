@@ -32,7 +32,7 @@ class UserSessionsController < ApplicationController
         elsif UserSession.find.user.role.andand.name == "admin"
           redirect_to "/admin"
         else
-          redirect_to_back(home_path)
+          redirect_to_back(root_path)
         end
       else
         respond_to do |format|
@@ -51,7 +51,7 @@ class UserSessionsController < ApplicationController
 
     respond_to do |format|
       flash[:notice] = I18n.t("flash.logout")
-      format.html { redirect_to(home_path) }
+      format.html { redirect_to(root_path) }
       format.xml  { head :ok }
     end
   end

@@ -50,18 +50,26 @@ module ApplicationHelper
     title.parameterize.underscore.to_sym
   end
 
+  def is_beta?
+    request.host_with_port =~ /beta/
+  end
+
+  def domain
+    request.host_with_port.gsub('beta.','').gsub('pro.','')
+  end
+  
   def information_links
     links = []
-    links.push text: t("header.partners") ,           url: partners_path
+    links.push text: t("header.partners") ,           url: "http://#{ "beta." if is_beta? }#{ domain }/partners?locale=#{ I18n.locale }", target: "_new"
     links.push text: t("header.about_qi") ,           url: "http://quintel.com", target: "_new"
     links.push text: t("header.education") ,          url: "http://onderwijs.quintel.nl/", target: "_new"
-    links.push text: t("header.prominent_users") ,    url: prominent_users_path
-    links.push text: t("header.press_releases") ,     url: press_releases_path
-    links.push text: t("header.quality_control") ,    url: quality_path
-    links.push text: t("header.units_used") ,         url: units_path
-    links.push text: t("header.privacy_statement") ,  url: privacy_statement_path
-    links.push text: t("header.disclaimer") ,         url: disclaimer_path
-    links.push text: t("header.bugs") ,               url: bugs_path
+    links.push text: t("header.prominent_users") ,    url: "http://#{ "beta." if is_beta? }#{ domain }/presets?locale=#{ I18n.locale }", target: "_new"
+    links.push text: t("header.press_releases") ,     url: "http://#{ "beta." if is_beta? }#{ domain }/press_releases?locale=#{ I18n.locale }", target: "_new"
+    links.push text: t("header.quality_control") ,    url: "http://#{ "beta." if is_beta? }#{ domain }/quality_control?locale=#{ I18n.locale }", target: "_new"
+    links.push text: t("header.units_used") ,         url: "http://#{ "beta." if is_beta? }#{ domain }/units?locale=#{ I18n.locale }", target: "_new"
+    links.push text: t("header.privacy_statement") ,  url: "http://#{ "beta." if is_beta? }#{ domain }/privacy?locale=#{ I18n.locale }", target: "_new"
+    links.push text: t("header.disclaimer") ,         url: "http://#{ "beta." if is_beta? }#{ domain }/terms?locale=#{ I18n.locale }", target: "_new"
+    links.push text: t("header.bugs") ,               url: "http://#{ "beta." if is_beta? }#{ domain }/known_issues?locale=#{ I18n.locale }", target: "_new"
     unless APP_CONFIG[:standalone]
       links.push text: "Wiki" ,                       url: "http://wiki.quintel.com", target: "_blank"
       links.push text: t("header.publications") ,     url: "http://refman.et-model.com", target: "_blank"

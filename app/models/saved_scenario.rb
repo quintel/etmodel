@@ -19,6 +19,15 @@ class SavedScenario < ActiveRecord::Base
   validates :scenario_id, :presence => true
   validates :title,       :presence => true
 
+  def self.batch_load(saved_scenarios)
+    ids       = saved_scenarios.map(&:scenario_id)
+    scenarios = Api::Scenario.batch_load(ids)
+
+    saved_scenarios.length.times do |idx|
+      saved_scenarios[idx].scenario = scenarios[idx]
+    end
+  end
+
   def scenario
     begin
       @scenario ||= Api::Scenario.find(scenario_id)
@@ -28,6 +37,7 @@ class SavedScenario < ActiveRecord::Base
   end
 
   def scenario=(x)
+    @scenario = x
     self.scenario_id = x.id unless x.nil?
   end
 

@@ -2,9 +2,7 @@
   %h1= @scenario.title.nil? ? t('scenario.no_title') : @scenario.title
 
   - if @scenario.description
-    - localized = @scenario.description_for_locale(I18n.locale)
-    - text = localized.present? ? localized : @scenario.description
-    %em= raw text
+    %em= @description
 
   %ul
     - if @scenario.created_at

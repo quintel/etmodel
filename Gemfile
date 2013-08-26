@@ -12,6 +12,7 @@ gem 'kaminari', '~> 0.13.0'
 gem 'simple_form'
 gem 'acts_as_commentable'
 gem 'nokogiri'
+gem 'redcarpet'
 
 # javascript
 # Change back to RubyGems once Invalid Byte Sequence error is fixed:

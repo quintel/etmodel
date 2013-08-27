@@ -26,12 +26,12 @@ class Interface
 
   def slides
     current_sidebar_item.slides.includes(:area_dependency).
-      includes(:description).ordered.reject(&:area_dependent)
+      includes(:description).reject(&:area_dependent)
   end
 
   def current_slide
     @current_slide ||=
-      (current_sidebar_item.slides.find{|s| s.short_name == @slide} || slides.ordered.first)
+      (current_sidebar_item.slides.find{|s| s.short_name == @slide} || slides.first)
   end
 
   def default_chart

@@ -10,6 +10,12 @@ class ApplicationController < ActionController::Base
   before_filter :export_i18n_messages
   after_filter :teardown_current
 
+  before_filter :beforeFilter
+
+  def beforeFilter
+     $request = request
+  end
+
   def locale
     # update session if passed
     session[:locale] = params[:locale] if params[:locale]

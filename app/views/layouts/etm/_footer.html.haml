@@ -1,5 +1,3 @@
-- country = params[:country] || Current.setting.country
-
 #logos
   #all_container
     .link_container.facebook
@@ -8,17 +6,28 @@
     .link_container.twitter
       %a.twitter-share{:href => "http://twitter.com/share?url=http://www.energytransitionmodel.com", :target=>"_blank" }&nbsp;
     #two_container
-      - %w[left right].each do |position|
-        %ul{:class => position}
-          - partners = Partner.place(position).country(country).include_descriptions || Partner.first
-          - partners.each_with_index do |company,i|
-            %li{:timeout => company.time }
-              - href = (company.description? ? partner_path(company.name.downcase) : company.url)
+      %ul.left
+        - company = Partner.find('gasterra')
+        %li{:timeout => 60000 }
+          - href = "#{ company.link }?locale=#{ I18n.locale }"
 
-              %a{:href => href, :id=> company.name.downcase,
-                 :style => "background-image: url('#{company.footer_logo}');" }
-                = company.name
+          %a{href: href, id: company.name.downcase,
+             style: "background-image: url('#{ company.footer_logo }');", target: '_blank' }
+            = company.name
 
-              .clear
+          .clear
 
-              %p#subheader= t(company.subheader)
+          %p#subheader= t('footer.main_sponsor')
+      %ul.right
+        - partners = Partner.primary.delete_if { |partner| partner.key == 'gasterra' } || Partner.all.first
+        - partners.each do |company|
+          %li{:timeout => 10000 }
+            - href = "#{ company.link }?locale=#{ I18n.locale }"
+        
+            %a{href: href, id: company.name.downcase,
+               style: "background-image: url('#{ company.footer_logo }');", target: '_blank' }
+              = company.name
+        
+            .clear
+        
+            %p#subheader= t('footer.sponsor')

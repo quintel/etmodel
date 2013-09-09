@@ -77,5 +77,11 @@ module ApplicationHelper
     end
     links.sort! {|x,y| x[:text] <=> y[:text] }
   end
+  
+  def ipad?
+    request.env['HTTP_USER_AGENT'].downcase.index('ipad')
+  rescue
+    false
+  end
 
 end

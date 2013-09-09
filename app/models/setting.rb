@@ -62,7 +62,7 @@ class Setting
       :network_parts_affected => [],
       :track_peak_load        => false,
       :area_code              => 'nl',
-      :start_year             => 2010,
+      :start_year             => 2011,
       :end_year               => 2050,
       :use_fce                => false,
       :locked_charts          => {}

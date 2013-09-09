@@ -13,7 +13,10 @@
     = javascript_include_tag 'application'
     = render "layouts/etm/javascript_unselectable"
     = yield :head
+    - if ipad?
+      %meta{:name=>"viewport", :content=>"width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"}
   %body{id: defined?(body_id) ? body_id : 'outside-model'}
+  
     #wrapper
       %header#top
         = render "layouts/etm/header"

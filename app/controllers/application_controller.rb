@@ -8,7 +8,8 @@ class ApplicationController < ActionController::Base
   before_filter :initialize_current
   before_filter :locale
   before_filter :export_i18n_messages
-  after_filter :teardown_current
+
+  after_filter  :teardown_current
 
   def locale
     # update session if passed

@@ -1,69 +1,64 @@
-# == Schema Information
-#
-# Table name: partners
-#
-#  id               :integer          not null, primary key
-#  name             :string(255)
-#  url              :string(255)
-#  country          :string(255)
-#  time             :integer
-#  repeat_any_other :boolean          default(FALSE)
-#  subheader        :string(255)
-#  created_at       :datetime
-#  updated_at       :datetime
-#  place            :string(255)      default("right")
-#  long_name        :string(255)
-#  partner_type     :string(255)      default("general")
-#
+class Partner
+  LEADING_PARTNERS = ['gasterra']
+  REMOTE_URL       = APP_CONFIG['partners_url'] || 'http://et-model.com'
 
-class Partner < ActiveRecord::Base
-  has_one :description, :as => :describable
+  attr_accessor :name, :key, :kind
 
-  scope :country, lambda {|country| where(:country => country) }
-  scope :place, lambda {|position| where(:place => position) }
-  scope :left, where(:place => "left")
-  scope :right, where(:place => "right")
-  scope :unique, group("name")
-  scope :include_descriptions, includes(:description)
-
-  accepts_nested_attributes_for :description
-
-  ##
-  # TODO: Handle the case when a partner has strange characters in the name.
-  #       It's probably easiest to add a new attribute 'slug' to partners that
-  #       holds a url suitable name.
-  #
-  def self.find_by_slug(name)
-    find_by_name(name.to_s.downcase)
+  def initialize(attr_hash)
+    attr_hash.symbolize_keys!
+    attr_hash.each do |key,value|
+      self.send("#{key}=", value)
+    end
   end
 
-  # If available will return the country specific partner item
-  def self.find_by_slug_localized(name, country = nil)
-    where(:name => name.downcase, :country => country).first || find_by_slug(name)
+  def self.all
+    HTTParty.get("#{ REMOTE_URL }/partners.json").parsed_response.map do |p|
+      new(p)
+    end
   end
 
-  def description?
-    self.description
+  def self.find(key)
+    self.all.select { |p| p.key == key }.first
   end
 
-  def name_or_long_name
-    self.long_name ? self.long_name : self.name
+  def self.primary
+    let_leading_partners_lead(all.select(&:is_primary?).sort_by(&:name))
   end
 
-  def logo
-    "/assets/partners/#{name.downcase.gsub(' ', '_')}.png"
+  def self.knowledge
+    let_leading_partners_lead(all.select(&:is_knowledge?).sort_by(&:name))
   end
 
-  def footer_logo
-    "/assets/partners/#{name.downcase.gsub(' ', '_')}-inner.png"
+  def self.education
+    let_leading_partners_lead(all.select(&:is_education?).sort_by(&:name))
+  end
+
+  def is_primary?
+    self.kind == 'primary'
+  end
+
+  def is_knowledge?
+    self.kind == 'knowledge'
+  end
+
+  def is_education?
+    self.kind == 'education'
   end
 
   def link
-    has_local_page? ? "/partners/#{name.downcase}" : url
+    "#{ REMOTE_URL }/partners/#{ key }"
   end
 
-  # Returns true if we have a local page about the partner
-  def has_local_page?
-    description && description.content.present?
+  def footer_logo
+    "http://#{ BUCKET_NAME }.s3.amazonaws.com/partners/#{ key }-inner.png"
+  end
+
+  #######
+  private
+  #######
+
+  def self.let_leading_partners_lead(partners)
+    leaders = partners.select {|partner| LEADING_PARTNERS.include?(partner.key) }
+    leaders + (partners - leaders)
   end
 end

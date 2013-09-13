@@ -8,13 +8,8 @@ class ApplicationController < ActionController::Base
   before_filter :initialize_current
   before_filter :locale
   before_filter :export_i18n_messages
-  after_filter :teardown_current
 
-  before_filter :beforeFilter
-
-  def beforeFilter
-     $request = request
-  end
+  after_filter  :teardown_current
 
   def locale
     # update session if passed

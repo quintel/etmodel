@@ -11,19 +11,19 @@ def plot_list(show_list,list_data,rows)
 end
 
 def plot_table(title,headings,rows)
-  table = Terminal::Table.new :title => title, :headings => headings, :rows => rows, :style => {:width => 120}
-  a = *(1..headings.size - 1).each { |i| table.align_column(i,:right) }
+  table = Terminal::Table.new title: title, headings: headings, rows: rows, style: { width: 120 }
+  a = Range.new(1,headings.size - 1).to_a.each { |i| table.align_column(i,:right) }
   puts table
 end
 
 desc 'Displays number of new user accounts over the last x days (period=x, default = 7 days).'
 task :user_stats => [:environment] do
   number_of_periods   = ENV['periods'] || 1
-  lists_shown         = ENV['list'] && ENV['list'].upcase=='TRUE' || false
+  lists_shown         = true unless ENV['list'] && ENV['list'].upcase=='FALSE'
   summary             = ENV['summary'] && (ENV['summary'].upcase=='TRUE' || ENV['summary'].upcase=='ONLY') || false
   summary_only        = ENV['summary'] && ENV['summary'].upcase=='ONLY' || false
 
-  periods = *(1..number_of_periods.to_i)
+  periods = Range.new(1,number_of_periods.to_i).to_a
 
   accounts_summary_rows = []
   scenario_summary_rows = []
@@ -39,40 +39,44 @@ task :user_stats => [:environment] do
 
     scenarios.keep_if { |scenario| regular_users.map(&:id).include?(scenario.user_id) }
 
-    title = "User Statistics"
+    title = "User Statistics - New accounts registered"
     headings = []
-    headings << {:value => "Metrics for period: #{start_date} - #{end_date}"}
-    headings << {:value => "#\naccounts", :alignment => :center}
-    headings << {:value => "Excl. QI\nand spam", :alignment => :center}
+    headings << { value: "Metrics for period: #{ start_date } - #{ end_date }"}
+    headings << { value: "#\naccounts", alignment: :center }
+    headings << { value: "Excl. QI\nand spam", alignment: :center }
     rows = []
     rows << ["New accounts registered",accounts.size,accounts_2.size]
-    accounts_summary_rows << ["#{start_date} - #{end_date}",accounts.size,accounts_2.size]
+    accounts_summary_rows << ["#{ start_date } - #{ end_date }",accounts.size,accounts_2.size]
     plot_list(lists_shown,accounts_2,rows) do
       accounts_2.each do |account|
         marker = account.teacher_id.nil? ? "-" : "S"
-        rows << ["#{marker} #{account.name.truncate(25)} (#{account.email.truncate(25)})",{:value => "#{account.company_school.truncate(40)}", :colspan => 2}]
+        rows << ["#{ marker } #{ account.name.truncate(25) } (#{ account.email.truncate(25) })",  \
+          {value: "#{ account.company_school.truncate(40) }", colspan: 2 }]
       end
       unless accounts_2.group_by(&:teacher_id).size == 1 && accounts_2.group_by(&:teacher_id).keys[0].blank?
         rows << :separator
-        rows << ["Referenced teachers",{:value => "# of registered students", :colspan => 2}]
+        rows << ["Referenced teachers",{ value: "# of registered students", colspan: 2}]
         rows << :separator
       end
       accounts_2.group_by(&:teacher_id).each do |key,coll|
-        rows << ["- #{User.find(key).name.truncate(25)} - #{User.find(key).company_school.truncate(20)}",{:value => coll.size, :colspan => 2}] unless key.nil?
+        rows << ["- #{ User.find(key).name.truncate(25) } - #{ User.find(key).company_school.truncate(20) }",  \
+          {value: coll.size, colspan: 2}] unless key.nil?
       end
     end
     plot_table(title,headings,rows) unless summary_only
 
-    headings[1] = {:value => "#\nscenarios", :alignment => :center}
-    headings[2] = {:value => "# of\nusers", :alignment => :center}
+    title = "User Statistics - New saved scenarios"
+    headings[1] = { value: "#\nscenarios", alignment: :center}
+    headings[2] = { value: "# of\nusers", alignment: :center}
     rows = []
     rows << ["New saved scenarios",scenarios.size,scenarios.map(&:user_id).uniq.size]
-    scenario_summary_rows << ["#{start_date} - #{end_date}",scenarios.size,scenarios.map(&:user_id).uniq.size]
+    scenario_summary_rows << ["#{ start_date } - #{ end_date }",scenarios.size,scenarios.map(&:user_id).uniq.size]
     plot_list(lists_shown,scenarios,rows) do
       scenarios.group_by(&:user_id).each do |key,scenarios|
         user = User.find(key)
         marker = accounts_2.map(&:id).include?(user.id) ? "-" : "R"
-        rows << ["#{marker} #{user.name.truncate(25)} (#{scenarios.size} #{'scenario'.pluralize(scenarios.size)})",{:value => "#{user.company_school.truncate(40)}", :colspan => 2}]
+        rows << ["#{ marker } #{ user.name.truncate(25) } (#{ scenarios.size } #{ 'scenario'.pluralize(scenarios.size) })",  \
+          { value: "#{ user.company_school.truncate(40) }", colspan: 2 }]
       end
     end
     plot_table(title,headings,rows) unless summary_only
@@ -82,13 +86,13 @@ task :user_stats => [:environment] do
     title = "User Statistics - New accounts registered"
     headings = []
     headings << "Period"
-    headings << {:value => "#\naccounts", :alignment => :center}
-    headings << {:value => "Excl. QI\nand spam", :alignment => :center}
+    headings << { value: "#\naccounts", alignment: :center}
+    headings << { value: "Excl. QI\nand spam", alignment: :center}
     plot_table(title,headings,accounts_summary_rows)
 
     title = "User Statistics - New saved scenarios"
-    headings[1] = {:value => "#\nscenarios", :alignment => :center}
-    headings[2] = {:value => "# of\nusers", :alignment => :center}
+    headings[1] = { value: "#\nscenarios", alignment: :center}
+    headings[2] = { value: "# of\nusers", alignment: :center}
     plot_table(title,headings,scenario_summary_rows)
   end
 end

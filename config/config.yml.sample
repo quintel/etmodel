@@ -10,6 +10,10 @@ development: &DEV
     # by nginx or a local rack-based proxy
     api_proxy_url: /ete_proxy
 
+    # base url for partners api. This is used to retrieve the partner
+    # names and such that are visible in the footer.
+    partners_url: http://et-model.com
+
     # google analytics key
     ga_tracker_code: 123456
 

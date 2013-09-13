@@ -7,27 +7,27 @@
       %a.twitter-share{:href => "http://twitter.com/share?url=http://www.energytransitionmodel.com", :target=>"_blank" }&nbsp;
     #two_container
       %ul.left
-        - company = Partner.find('gasterra')
+        - company = @partners.first
         %li{:timeout => 60000 }
           - href = "#{ company.link }?locale=#{ I18n.locale }"
 
           %a{href: href, id: company.name.downcase,
-             style: "background-image: url('#{ company.footer_logo }');", target: '_blank' }
+             style: "background-image: url('#{ company.img }');", target: '_blank' }
             = company.name
 
           .clear
 
           %p#subheader= t('footer.main_sponsor')
+
       %ul.right
-        - partners = Partner.primary.delete_if { |partner| partner.key == 'gasterra' } || Partner.all.first
-        - partners.each do |company|
+        - @partners[1..-1].each do |company|
           %li{:timeout => 10000 }
             - href = "#{ company.link }?locale=#{ I18n.locale }"
-        
+
             %a{href: href, id: company.name.downcase,
-               style: "background-image: url('#{ company.footer_logo }');", target: '_blank' }
+               style: "background-image: url('#{ company.img }');", target: '_blank' }
               = company.name
-        
+
             .clear
-        
+
             %p#subheader= t('footer.sponsor')

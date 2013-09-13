@@ -1,12 +1,12 @@
 class Partner
   LEADING_PARTNERS = ['gasterra']
-  REMOTE_URL       = APP_CONFIG['partners_url'] || 'http://et-model.com'
+  REMOTE_URL       = APP_CONFIG[:partners_url] || 'http://et-model.com'
 
-  attr_accessor :name, :key, :kind
+  attr_accessor :name, :key, :kind, :img
 
   def initialize(attr_hash)
     attr_hash.symbolize_keys!
-    attr_hash.each do |key,value|
+    attr_hash.each do |key, value|
       self.send("#{key}=", value)
     end
   end
@@ -47,10 +47,6 @@ class Partner
 
   def link
     "#{ REMOTE_URL }/partners/#{ key }"
-  end
-
-  def footer_logo
-    "http://#{ BUCKET_NAME }.s3.amazonaws.com/partners/#{ key }-inner.png"
   end
 
   #######

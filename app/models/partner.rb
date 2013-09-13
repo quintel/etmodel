@@ -1,5 +1,6 @@
 class Partner
   LEADING_PARTNERS = ['gasterra']
+  REMOTE_URL       = APP_CONFIG['partners_url'] || 'http://et-model.com'
 
   attr_accessor :name, :key, :kind
 
@@ -10,12 +11,10 @@ class Partner
     end
   end
 
-  def self.all    
-    items = []
-    HTTParty.get("http://#{ $request.host_with_port =~ /dev/ ? 'etmodel.dev' : 'et-model.com' }/partners.json").parsed_response.each do |partner|
-      items << self.new(partner)
+  def self.all
+    HTTParty.get("#{ REMOTE_URL }/partners.json").parsed_response.map do |p|
+      new(p)
     end
-    items
   end
 
   def self.find(key)
@@ -47,9 +46,9 @@ class Partner
   end
 
   def link
-    "http://#{ $request.host_with_port =~ /dev/ ? 'etmodel.dev' : 'et-model.com' }/partners/#{ key }"
+    "#{ REMOTE_URL }/partners/#{ key }"
   end
-  
+
   def footer_logo
     "http://#{ BUCKET_NAME }.s3.amazonaws.com/partners/#{ key }-inner.png"
   end

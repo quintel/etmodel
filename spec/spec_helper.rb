@@ -65,5 +65,15 @@ RSpec.configure do |config|
   config.include Capybara::DSL
   config.include Capybara::RSpecMatchers
 
+  # Stub out Partner.all.
+  [ :controller, :request ].each do |type|
+    config.before(:each, type: type) do
+      Partner.stub(:all).and_return([
+        Partner.new(name: 'StarTale',   key: 'st', img: '', kind: 'primary'),
+        Partner.new(name: 'TeamLiquid', key: 'tl', img: '', kind: 'general')
+      ])
+    end
+  end
+
   Sunspot.session = Sunspot::Rails::StubSessionProxy.new(Sunspot.session)
 end

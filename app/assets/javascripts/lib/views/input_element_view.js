@@ -207,11 +207,15 @@
 
   InputElementView = Backbone.View.extend({
     events: {
+      'touchend  .reset':      'resetValue',
       'click     .reset':      'resetValue',
       'mousedown .decrease':   'beginStepDown',
       'mousedown .increase':   'beginStepUp',
+      'touchend  .show-info':  'toggleInfoBox',
       'click     .show-info':  'toggleInfoBox',
+      'touchend  .output':     'showValueSelector',
       'click     .output':     'showValueSelector',
+      'touchend  a.converter_detail': 'showConverterDetail',
       'click     a.converter_detail': 'showConverterDetail'
     },
 

@@ -1,4 +1,0 @@
-#partner.information_page
-  .header= image_tag @partner.logo
-  = link_to "<< #{t 'partners.back_to_overview'}", partners_path(:partner_type => @partner.partner_type)
-  = @partner.description.try(:content)

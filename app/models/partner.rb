@@ -12,8 +12,9 @@ class Partner
   end
 
   def self.all
-    HTTParty.get("#{ REMOTE_URL }/partners.json").parsed_response.map do |p|
-      new(p)
+    Rails.cache.fetch(:'partner.all') do
+      HTTParty.get("#{ REMOTE_URL }/partners.json")
+        .parsed_response.map(&method(:new))
     end
   end
 

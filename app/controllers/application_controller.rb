@@ -8,13 +8,8 @@ class ApplicationController < ActionController::Base
   before_filter :initialize_current
   before_filter :locale
   before_filter :export_i18n_messages
-  before_filter :load_partners
 
   after_filter  :teardown_current
-
-  def load_partners
-    @partners = Partner.all
-  end
 
   def locale
     # update session if passed

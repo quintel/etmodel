@@ -7,7 +7,7 @@
       %a.twitter-share{:href => "http://twitter.com/share?url=http://www.energytransitionmodel.com", :target=>"_blank" }&nbsp;
     #two_container
       %ul.left
-        - company = @partners.first
+        - company = Partner.all.first
         %li{:timeout => 60000 }
           - href = "#{ company.link }?locale=#{ I18n.locale }"
 
@@ -20,7 +20,7 @@
           %p#subheader= t('footer.main_sponsor')
 
       %ul.right
-        - @partners[1..-1].each do |company|
+        - Partner.all[1..-1].each do |company|
           %li{:timeout => 10000 }
             - href = "#{ company.link }?locale=#{ I18n.locale }"
 

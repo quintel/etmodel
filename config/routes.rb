@@ -45,8 +45,7 @@ Etm::Application.routes.draw do
               :output_element_series,
               :general_user_notifications,
               :constraints,
-              :users,
-              :partners
+              :users
 
     resources :comments, :except => [:new, :create]
     resources :texts, :except => [:show]

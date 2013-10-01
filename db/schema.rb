@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506110832) do
+ActiveRecord::Schema.define(:version => 20130916182918) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -134,20 +134,6 @@ ActiveRecord::Schema.define(:version => 20130506110832) do
 
   add_index "output_elements", ["hidden"], :name => "index_output_elements_on_hidden"
   add_index "output_elements", ["key"], :name => "index_output_elements_on_key"
-
-  create_table "partners", :force => true do |t|
-    t.string   "name"
-    t.string   "url"
-    t.string   "country"
-    t.integer  "time"
-    t.boolean  "repeat_any_other", :default => false
-    t.string   "subheader"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "place",            :default => "right"
-    t.string   "long_name"
-    t.string   "partner_type",     :default => "general"
-  end
 
   create_table "prediction_measures", :force => true do |t|
     t.integer  "prediction_id"

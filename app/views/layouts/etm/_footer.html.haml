@@ -20,7 +20,7 @@
           %p#subheader= t('footer.main_sponsor')
 
       %ul.right
-        - Partner.all[1..-1].each do |company|
+        - Partner.all[1..-1].select(&:is_primary?).each do |company|
           %li{:timeout => 10000 }
             - href = "#{ company.link }?locale=#{ I18n.locale }"
 

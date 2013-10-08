@@ -2,7 +2,8 @@ class @CommonInterface
   constructor: ->
     @setup_menus()
     @setup_home_menu()
-    @setup_tooltips()
+    unless navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i)
+      @setup_tooltips()
     @setup_browser_tweaks()
     @call_the_cyclists()
 

@@ -56,7 +56,7 @@ module LayoutHelper
 
     # Germany
 
-    add_area_choice links, "de"
+    add_area_choice links, "de",                               true
 
     if @show_german_provinces
       links_de = []

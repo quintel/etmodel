@@ -143,12 +143,12 @@ D3.stacked_bar =
       stacked_data = _.flatten @stack_method(@prepare_data())
       @svg.selectAll('rect.serie')
         .data(stacked_data, (s) -> s.id)
+        .transition()
         .attr('y', (d) => @series_height - @y(d.y0 + d.y))
         .attr('height', (d) => @y(d.y))
         .attr("data-tooltip-text", (d) =>
           Metric.autoscale_value d.y, @model.get('unit')
         )
-        .transition()
 
       # move the target lines
       @svg.selectAll('rect.target_line')

@@ -22,7 +22,7 @@ class OutputElementsController < ApplicationController
     # id of the element the chart will be placed in
     @chart_holder = params[:holder]
     @groups = {}
-    %w[Overview Policy Supply Demand Cost Merit].each do |group|
+    %w[Overview Policy Supply Demand Cost Merit FCE].each do |group|
       @groups[group] = OutputElement.not_hidden.
         select_by_group(group).
         sort_by{|c| t "output_elements.#{c.key}"}.

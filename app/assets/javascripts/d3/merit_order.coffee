@@ -11,6 +11,7 @@ D3.merit_order =
       {key: 'coal_pwd',            color: '#252525'},
       {key: 'coal_pwd_cofiring',   color: '#4B8056'},
       {key: 'coal_pwd_ccs',        color: '#8c96c6'},
+      {key: 'diesel_engine',       color: '#854321'},
       {key: 'gas_ccgt',            color: '#f0f0f0'},
       {key: 'gas_ccgt_ccs',        color: '#bfd3e6'},
       {key: 'gas_conv',            color: '#969696'},

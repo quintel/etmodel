@@ -4,7 +4,9 @@
     .warning
       = @warning
 
-  %h1= @scenario.title.nil? ? t('scenario.no_title') : @scenario.title
+  %h1= @scenario.title.nil? ? t('scenario.no_title').truncate(40, separator: ' ') : @scenario.title.truncate(40, separator: ' ')
+
+  = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button primary"
 
   - if @scenario.description
     %em= @description
@@ -20,8 +22,6 @@
     %li
       %strong #{t('scenario.end_year')}:
       = @scenario.end_year
-
-  = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button primary", style: "margin: 40px;"
 
   %p
     %small{:style => "font-size: 12px; font-weight: normal"}

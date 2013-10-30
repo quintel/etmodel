@@ -18,12 +18,14 @@ D3.merit_order =
       {key: 'gas_turbine',         color: '#bdbdbd'},
       {key: 'lignite',             color: '#593B0A'},
       {key: 'lignite_chp',         color: '#574528'},
+      {key: 'lignite_oxy',         color: '#593B0A'},
       {key: 'must_run',            color: '#a1d99b'},
       {key: 'nuclear_iii',         color: '#fd8d3c'},
       {key: 'nuclear_ii',          color: '#C97E04'},
       {key: 'oil_plant',           color: '#7f2704'},
       {key: 'solar_pv',            color: '#fed976'},
       {key: 'wind_turbines',       color: '#4292c6'},
+      {key: 'hydro_mountain',      color: '#0066ff'},
       {key: 'hydro_river',         color: '#0066ff'}
     ]
 

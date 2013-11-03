@@ -18,7 +18,7 @@ module LayoutHelper
     current = Current.setting.area_code == code
     selected = current ? "selected='true'" : nil
     label = I18n.t(code)
-    label += ' (test)' if opts[:test]
+    label += " (#{ I18n.t('new') })" if opts[:test]
     content_tag :option, label.html_safe, :value => code, :selected => selected
   end
 

@@ -7,7 +7,7 @@ describe "loading a different country", :js => true, :vcr => true do
     visit root_path
     # save_and_open_page
     click_link "Start a new scenario"
-    select 'Germany (test)', :from => 'area_code'
+    select 'Germany (new)', :from => 'area_code'
     click_button 'Start'
 
     page.should have_content('Household energy demand')

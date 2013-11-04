@@ -81,8 +81,8 @@ D3.mekko =
       legend_columns = if @carrier_list.length > 9 then 3 else 2
       legend_rows = @carrier_list.length / legend_columns
       legend_height = legend_rows * @legend_cell_height
-      label_height = 120 # rotated labels
-      label_margin = 5
+      label_height = 70 # rotated labels
+      label_margin = 15
 
       @series_height = @height - legend_height - label_height - label_margin
       @label_offset = @series_height + label_margin
@@ -139,7 +139,7 @@ D3.mekko =
         .attr('transform', "translate(0, #{@label_offset})")
         .append("svg:text")
         .attr("text-anchor", "end")
-        .attr("transform", "rotate(-70)")
+        .attr("transform", "rotate(-30)")
 
       $("#{@container_selector()} rect.carrier").qtip
         content:

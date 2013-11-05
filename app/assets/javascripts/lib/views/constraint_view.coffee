@@ -59,7 +59,9 @@ class @ConstraintView extends Backbone.View
 
     out = switch key
       when 'total_energy_cost'
-        Metric.euros_to_string(result * 1000000000)
+        # One decimal place when billions, two when trillions.
+        precision = if result < 1000 then 1 else 2
+        Metric.euros_to_string(result * 1000000000, null, precision)
       when 'costs_fte'
         Metric.euros_to_string(result)
       when 'household_energy_cost'

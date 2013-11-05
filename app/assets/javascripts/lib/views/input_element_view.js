@@ -156,14 +156,32 @@
    *    u.format(2) # => "4.2"
    */
   UnitConversion.prototype.format = function (value) {
-    var formatted = (value * this.multiplier).toFixed(this.precision);
+    var multiplied = value * this.multiplier,
+        precision  = this.precision,
+        power      = Metric.power_of_thousand(multiplied),
+        scale      = '',
+        formatted;
 
-    if (parseFloat(formatted) === 0.0) {
-      // Reformat, to ensure that we don't display "-0.0".
-      return (0.0).toFixed(this.precision)
+    if (power == 1) {
+      // Don't show decimal places for numbers over 1000.
+      precision  = 0;
+    } else if (power >= 2) {
+      // Numbers over a million are shown as a power of 1000 with two decimal
+      // places, otherwise they won't fit. For example, 22,512,188 becomes
+      // "22.51 M".
+      multiplied = multiplied / Math.pow(1000, power);
+      precision  = 2;
+      scale      = Metric.power_symbols[power];
     }
 
-    return formatted;
+    formatted = I18n.toNumber(multiplied, { precision: precision });
+
+    if (multiplied == 0) {
+      // Reformat, to ensure that we don't display "-0.0".
+      return (0.0).toFixed(this.precision);
+    }
+
+    return (scale ? formatted + ' ' + scale : formatted);
   };
 
   /**

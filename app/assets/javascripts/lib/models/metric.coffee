@@ -175,6 +175,9 @@
     "5" : 'quadrillions'
     "6" : 'quintillions'
 
+  # Relates powers of a thousand to their SI symbols.
+  power_symbols: ['', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y']
+
   round_number : (value, precision) ->
     return false unless value?
     value.toFixed(precision)

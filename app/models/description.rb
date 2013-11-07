@@ -20,13 +20,6 @@ class Description < ActiveRecord::Base
 
   # REFACTOR: Validators
 
-  searchable do
-    text :content_en
-    text :content_nl
-    text :short_content_en
-    text :short_content_nl
-  end
-
   def short_content
     t :short_content
   end

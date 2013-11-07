@@ -63,11 +63,12 @@ class @Chart extends Backbone.Model
       when 'html_table'             then @table_view_factory()
       when 'scatter'
         if d3_support then D3.scatter.View else ScatterChartView
-      when 'sankey'                 then D3.sankey.View
-      when 'target_bar'             then D3.target_bar.View
-      when 'd3'                     then @d3_view_factory()
-      when 'storage'                then D3.storage.View
-      when 'import_export'          then D3.import_export.View
+      when 'sankey'                    then D3.sankey.View
+      when 'target_bar'                then D3.target_bar.View
+      when 'd3'                        then @d3_view_factory()
+      when 'storage'                   then D3.storage.View
+      when 'import_export_renewables'  then D3.import_export_renewables.View
+      when 'import_export_capacity'    then D3.import_export_capacity.View
       else throw "Chart type not available"
 
   # D3 charts have their own class. Let's make an instance of the right one
@@ -97,7 +98,7 @@ class @Chart extends Backbone.Model
 
   supported_by_current_browser: =>
     return true if Browser.hasD3Support()
-    _.indexOf(['d3', 'import_export', 'sankey', 'storage', 'target_bar'], @get 'type') == -1
+    _.indexOf(['d3', 'import_export_capacity', 'import_export_renewables', 'sankey', 'storage', 'target_bar'], @get 'type') == -1
 
   # -- series and values -----------------------------------------------------
 

@@ -44,6 +44,11 @@ en:
       b_2010: "Country B, 2010"
       a_double: "Coutry A, double capacity"
       b_double: "Coutry B, double capacity"
+    import_export_renewables_chart:
+      x_label: "Time, hours"
+      y_label: "Electricity price, €/MWh"
+      a_2010: "Reference (2010)"
+      a_double: "Increased renewables"
     sankey_labels:
       coal: "coal"
       oil: "oil"
@@ -252,3 +257,4 @@ en:
     energy_storage: "Energy Storage"
     electricity_import_export: "Import and export of electricity"
     import_export_capacity: "Effect of interconnector capacity on electricity price"
+    import_export_renewables: "Effect of additional renewables on electricity price"

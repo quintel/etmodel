@@ -1,4 +1,4 @@
-D3.import_export =
+D3.import_export_renewables =
   View: class extends D3ChartView
     initialize: ->
       D3ChartView.prototype.initialize.call(this)

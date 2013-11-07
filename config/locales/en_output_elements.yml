@@ -37,6 +37,18 @@ en:
       electricity_storage: "Electricity Storage"
       conversion_to_gas: "Conversion to Gas"
       conversion_to_heat: "Conversion to Heat"
+    import_export_capacity_chart:
+      x_label: "Time, hours"
+      y_label: "Electricity price, €/MWh"
+      a_2010: "Country A, 2010"
+      b_2010: "Country B, 2010"
+      a_double: "Coutry A, double capacity"
+      b_double: "Coutry B, double capacity"
+    import_export_renewables_chart:
+      x_label: "Time, hours"
+      y_label: "Electricity price, €/MWh"
+      a_2010: "Reference (2010)"
+      a_double: "Increased renewables"
     sankey_labels:
       coal: "coal"
       oil: "oil"
@@ -244,3 +256,5 @@ en:
     use_of_transport_fuels: "Transport fuel mix"
     energy_storage: "Energy Storage"
     electricity_import_export: "Import and export of electricity"
+    import_export_capacity: "Effect of interconnector capacity on electricity price"
+    import_export_renewables: "Effect of additional renewables on electricity price"

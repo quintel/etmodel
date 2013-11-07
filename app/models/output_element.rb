@@ -35,22 +35,6 @@ class OutputElement < ActiveRecord::Base
 
   scope :not_hidden, where(:hidden => false)
 
-  searchable do
-    string :key
-    text :content_en do
-      description.try :content_en
-    end
-    text :content_nl do
-      description.try :content_nl
-    end
-    text :short_content_en do
-      description.try :short_content_en
-    end
-    text :short_content_nl do
-      description.try :short_content_nl
-    end
-  end
-
   def title_for_description
     "output_elements.#{key}"
   end

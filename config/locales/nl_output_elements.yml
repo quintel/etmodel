@@ -35,6 +35,18 @@ nl:
       electricity_storage: "Elektriciteitsopslag"
       conversion_to_gas: "Conversie naar Gas"
       conversion_to_heat: "Conversie naar Warmte"
+    import_export_capacity_chart:
+      x_label: "Tijd, uren"
+      y_label: "Elektriciteitsprijs, €/MWh"
+      a_2010: "Land A, 2010"
+      b_2010: "Land B, 2010"
+      a_double: "Land A, dubbele capaciteit"
+      b_double: "Land B, dubbele capaciteit"
+    import_export_renewables_chart:
+      x_label: "Time, hours"
+      y_label: "Electricity price, €/MWh"
+      a_2010: "Reference (2010)"
+      a_double: "Increased renewables"
     sankey_labels:
       coal: "kolen"
       oil: "olie"
@@ -242,4 +254,6 @@ nl:
     use_of_transport_fuels: "Transport"
     energy_storage: "Energieopslag"
     electricity_import_export: "Import en export van elektriciteit"
+    import_export_capacity: "Effect of interconnector capaciteit op elektriciteitsprijs"
+    import_export_renewables: "Effect of extra hernieuwbare opwek op elektriciteitsprijs"
 

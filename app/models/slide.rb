@@ -35,29 +35,6 @@ class Slide < ActiveRecord::Base
 
   accepts_nested_attributes_for :description, :area_dependency
 
-  searchable do
-    string :key
-    text :name_en, :boost => 5 do
-      I18n.t("slides.#{key}", :locale => :en)
-    end
-    text :name_nl, :boost => 5 do
-      I18n.t("slides.#{key}", :locale => :nl)
-    end
-
-    text :content_en do
-      description.try :content_en
-    end
-    text :content_nl do
-      description.try :content_nl
-    end
-    text :short_content_en do
-      description.try :short_content_en
-    end
-    text :short_content_nl do
-      description.try :short_content_nl
-    end
-  end
-
   def image_path
     "/assets/slides/drawings/#{image}" if image.present?
   end

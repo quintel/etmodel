@@ -43,28 +43,6 @@ class InputElement < ActiveRecord::Base
     ie8_sanitize I18n.t(title_for_description)
   end
 
-  searchable do
-    string :key
-    text :name_en, :boost => 5 do
-      I18n.t("input_elements.#{key}", :locale => :en)
-    end
-    text :name_nl, :boost => 5 do
-      I18n.t("input_elements.#{key}", :locale => :nl)
-    end
-    text :content_en do
-      description.try :content_en
-    end
-    text :content_nl do
-      description.try :content_nl
-    end
-    text :short_content_en do
-      description.try :short_content_en
-    end
-    text :short_content_nl do
-      description.try :short_content_nl
-    end
-  end
-
   def belongs_to_a_group?
     !interface_group.blank?
   end

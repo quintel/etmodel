@@ -31,6 +31,7 @@ class ScenariosController < ApplicationController
       current_user.saved_scenarios
     end
     @saved_scenarios = items.order('created_at DESC').page(params[:page]).per(50)
+    SavedScenario.batch_load(@saved_scenarios)
 
     respond_to do |format|
       format.html

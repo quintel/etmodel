@@ -1,6 +1,13 @@
 class Api::Scenario < ActiveResource::Base
   self.site = "#{APP_CONFIG[:api_url]}/api/v3"
 
+  def self.batch_load(ids)
+    scenarios = JSON.parse(HTTParty.get("#{self.site}/scenarios/#{ids.join(',')}/batch").body)
+    scenarios.map do |scenario|
+      new(scenario)
+    end
+  end
+
   # description for a locale is enclosed in
   # <span class='en'>
   # </span>

@@ -20,7 +20,7 @@ D3.import_export_capacity =
       # Set maximum x and y values
 
       @maximum_x = 24
-      @maximum_y = 55
+      @maximum_y = 65
 
       # Prepare chart data
       a_2010_curve = [{"x": 1, "y": 28.70413257},{"x": 2, "y": 22.62189304},{"x": 3, "y": 19.51633239},{"x": 4, "y": 18.14248171},{"x": 5, "y": 17.57684852},{"x": 6, "y": 19.2486983},{"x": 7, "y": 21.5663164},{"x": 8, "y": 25.06365388},{"x": 9, "y": 32.33975048},{"x": 10, "y": 43.71940068},{"x": 11, "y": 49.1609725},{"x": 12, "y": 41.0612691},{"x": 13, "y": 35.18167868},{"x": 14, "y": 35.62345703},{"x": 15, "y": 34.21690708},{"x": 16, "y": 38.20480327},{"x": 17, "y": 48.34158767},{"x": 18, "y": 54.42327276},{"x": 19, "y": 59.34495965},{"x": 20, "y": 63.82867048},{"x": 21, "y": 62.26360344},{"x": 22, "y": 52.45554925},{"x": 23, "y": 39.56008034},{"x": 24, "y": 31.90527624}]
@@ -104,11 +104,28 @@ D3.import_export_capacity =
       @svg.selectAll('path.serie')
           .data(theData)
           .enter()
+          .append('g')
+          .attr('id', (d,i) -> 'path_' + i)
           .append('path')
           .attr("d", (d) -> lineFunction(d.values) )
           .attr("stroke", (d) -> d.color )
           .attr("stroke-width", 3)
           .attr("fill", "none")
+
+      
+      markers = for data, i in theData
+        @svg.select('g#path_' + i).selectAll('circle')
+            .data(data.values)
+            .enter()
+            .append('circle')
+            .attr(
+              cx: (d) -> parseInt(xScale(d.x)),
+              cy: (d) -> parseInt(yScale(d.y)),
+              r: 5,
+              fill: data.color,
+              stroke: 'rgb(255,255,255)',
+              'stroke-width': 2
+              )
 
       # Create legend
       legendGroup = @svg.append("g")

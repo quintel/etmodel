@@ -98,12 +98,28 @@ D3.import_export_renewables =
       @svg.selectAll('path.serie')
           .data(theData)
           .enter()
+          .append('g')
+          .attr('id', (d,i) -> 'path_' + i)
           .append('path')
           .attr("d", (d) -> lineFunction(d.values) )
           .attr("stroke", (d) -> d.color )
           .attr("stroke-width", 3)
           .attr("fill", "none")
 
+      markers = for data, i in theData
+        @svg.select('g#path_' + i).selectAll('circle')
+            .data(data.values)
+            .enter()
+            .append('circle')
+            .attr(
+              cx: (d) -> parseInt(xScale(d.x)),
+              cy: (d) -> parseInt(yScale(d.y)),
+              r: 5,
+              fill: data.color,
+              stroke: 'rgb(255,255,255)',
+              'stroke-width': 2
+              )
+              
       # Create legend
       legendGroup = @svg.append("g")
                         .attr("class", "legend")

@@ -1,5 +1,12 @@
 .scenario_wrapper#show_scenario
-  %h1= @scenario.title.nil? ? t('scenario.no_title') : @scenario.title
+
+  - if @warning
+    .warning
+      = @warning
+
+  %h1= @scenario.title.nil? ? t('scenario.no_title').truncate(40, separator: ' ') : @scenario.title.truncate(40, separator: ' ')
+
+  = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button primary"
 
   - if @scenario.description
     %em= @description
@@ -15,11 +22,6 @@
     %li
       %strong #{t('scenario.end_year')}:
       = @scenario.end_year
-
-  - if @scenario.created_at && @scenario.days_old > 31
-    = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button primary", style: "margin: 40px;", :confirm => t("scenario.warning")
-  - else
-    = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button primary", style: "margin: 40px;"
 
   %p
     %small{:style => "font-size: 12px; font-weight: normal"}

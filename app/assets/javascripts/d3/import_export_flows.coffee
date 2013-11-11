@@ -76,7 +76,7 @@ D3.import_export_flows =
 
     create_connections_data = (data) ->
       connection_data = []
-      for i in [0..data.length]
+      for i in [0...data.length]
         coordinates = get_connection_coordinates(data[i])
         connection_data[i] = {'x1': coordinates.x1, 'y1': coordinates.y1, 'x2': coordinates.x2, 'y2': coordinates.y2, 'capacity': data[i].capacity, 'direction': data[i].direction}
       return connection_data
@@ -87,21 +87,21 @@ D3.import_export_flows =
       if (data.direction == 2)
         dx = Math.sqrt(Math.pow(x,2) + Math.pow(y,2))/ 2
       else
-        dx = 30
+        dx = 18
 
       return {'x': x, 'y': y, 'dx': dx}
 
     draw: =>
       [@width, @height] = @available_size()
 
-      country_data = [{'country': 'NL', 'x': 100, 'y': 50, 'r': 25},
-                      {'country': 'BE', 'x': 90, 'y': 200, 'r': 20},
-                      {'country': 'FR', 'x': 60, 'y': 350, 'r': 35},
-                      {'country': 'DE', 'x': 300, 'y': 150, 'r': 35}]
+      country_data = [{'country': 'NL', 'x': 275, 'y': 25, 'r': 25},
+                      {'country': 'BE', 'x': 165, 'y': 140, 'r': 20},
+                      {'country': 'FR', 'x': 25, 'y': 295, 'r': 30},
+                      {'country': 'DE', 'x': 500, 'y': 150, 'r': 30}]
 
-      conn_data = [{'from': 'NL', 'to': 'BE', 'capacity': 100, 'direction': 2},{'from': 'NL', 'to': 'DE', 'capacity': 100, 'direction': 2},
-                      {'from': 'BE', 'to': 'FR', 'capacity': 100, 'direction': 1},
-                      {'from': 'FR', 'to': 'BE', 'capacity': 100, 'direction': 1},{'from': 'FR', 'to': 'DE', 'capacity': 100, 'direction': 2}]
+      conn_data = [{'from': 'BE', 'to': 'NL', 'capacity': '2300 MW', 'direction': 2},{'from': 'NL', 'to': 'DE', 'capacity': '5740 MW', 'direction': 2},
+                      {'from': 'BE', 'to': 'FR', 'capacity': '2300 MW', 'direction': 1},
+                      {'from': 'FR', 'to': 'BE', 'capacity': '3200 MW', 'direction': 1},{'from': 'FR', 'to': 'DE', 'capacity': '2750 MW', 'direction': 2}]
 
       svg = @create_svg_container @width, @height, @margins
 
@@ -136,7 +136,8 @@ D3.import_export_flows =
                   cx: (d) -> d.x,
                   cy: (d) -> d.y,
                   r: (d) -> d.r,
-                  fill: 'rgba(180,180,180,1)'
+                  fill: 'rgba(180,180,180,1)',
+                  class: 'country'
                 )
 
       countries.selectAll('text')
@@ -148,7 +149,8 @@ D3.import_export_flows =
                   x: (d) -> d.x,
                   y: (d) -> d.y + 6,
                   'text-anchor': 'middle',
-                  class: 'country'
+                  fill: '#fff'
+                  class: 'country_label'
                 )
 
       connections = svg.append('g')
@@ -160,7 +162,7 @@ D3.import_export_flows =
                   .attr(
                     id: (d,i) -> "edge_" + i,
                     d: (d) -> coord = adjust_coordinates(d); return "M" + coord.x1 + "," + coord.y1 + " L" + coord.x2 + "," + coord.y2,
-                    stroke: 'rgb(255,0,0)',
+                    # stroke: 'rgb(255,0,0)',
                     'stroke-width': 4,
                     'marker-start': (d) -> if (d.direction == 2) then "url(#reverse-arrowhead)" else "",
                     "marker-end": "url(#arrowhead)"
@@ -178,9 +180,9 @@ D3.import_export_flows =
                   .append('textPath')
                   .text((d) -> d.capacity)
                   .attr(
-                    'text-anchor': 'middle',
+                    'text-anchor': (d) -> if (d.direction == 2) then 'middle' else 'left',
                     'xlink:href': (d,i) -> '#edge_' + i
                   )
 
     refresh: =>
-      draw()
+      

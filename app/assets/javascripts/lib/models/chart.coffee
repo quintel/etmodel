@@ -67,6 +67,7 @@ class @Chart extends Backbone.Model
       when 'target_bar'                then D3.target_bar.View
       when 'd3'                        then @d3_view_factory()
       when 'storage'                   then D3.storage.View
+      when 'import_export_flows'       then D3.import_export_flows.View
       when 'import_export_renewables'  then D3.import_export_renewables.View
       when 'import_export_capacity'    then D3.import_export_capacity.View
       else throw "Chart type not available"
@@ -98,7 +99,7 @@ class @Chart extends Backbone.Model
 
   supported_by_current_browser: =>
     return true if Browser.hasD3Support()
-    _.indexOf(['d3', 'import_export_capacity', 'import_export_renewables', 'sankey', 'storage', 'target_bar'], @get 'type') == -1
+    _.indexOf(['d3', 'import_export_capacity', 'import_export_flows', 'import_export_renewables', 'sankey', 'storage', 'target_bar'], @get 'type') == -1
 
   # -- series and values -----------------------------------------------------
 

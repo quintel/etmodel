@@ -26,6 +26,7 @@ class OutputElementsController < ApplicationController
       @groups[group] = OutputElement.not_hidden.
         select_by_group(group).
         sort_by{|c| t "output_elements.#{c.key}"}.
+        reject(&:area_dependent).
         reject(&:block_chart?).
         reject(&:not_allowed_in_this_area)
     end

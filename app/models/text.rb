@@ -12,7 +12,6 @@
 #  title_nl         :string(255)
 #  short_content_en :text
 #  short_content_nl :text
-#  searchable       :boolean          default(FALSE)
 #
 
 class Text < ActiveRecord::Base

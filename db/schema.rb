@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130916182918) do
+ActiveRecord::Schema.define(:version => 20131127151621) do
 
   create_table "area_dependencies", :force => true do |t|
     t.string  "dependent_on"
@@ -280,7 +280,6 @@ ActiveRecord::Schema.define(:version => 20130916182918) do
     t.string   "title_nl"
     t.text     "short_content_en"
     t.text     "short_content_nl"
-    t.boolean  "searchable",       :default => false
   end
 
   add_index "texts", ["key"], :name => "index_translations_on_key"

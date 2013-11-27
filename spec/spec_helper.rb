@@ -74,6 +74,4 @@ RSpec.configure do |config|
       ])
     end
   end
-
-  Sunspot.session = Sunspot::Rails::StubSessionProxy.new(Sunspot.session)
 end

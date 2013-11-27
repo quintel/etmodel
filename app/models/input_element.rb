@@ -91,7 +91,7 @@ class InputElement < ActiveRecord::Base
     ).html_safe
   end
 
-  # Used by admin and search page
+  # Used by admin page
   def url
     slide.try :url
   end

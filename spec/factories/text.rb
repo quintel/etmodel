@@ -7,6 +7,5 @@ FactoryGirl.define do
     content_nl 'Content NL'
     short_content_en 'Short Content EN'
     short_content_nl 'Short Content NL'
-    searchable false
   end
 end

@@ -31,7 +31,6 @@ gem 'mysql2', '~>0.3.11'
 gem 'dalli'
 
 gem 'dynamic_form'
-gem 'sunspot_rails'
 
 # jquery-etmodel-rails contains the jquery.etmodel.js plugin
 # When working on the plugin, use :path => '/path/to/etplugin'
@@ -43,7 +42,6 @@ group :development do
   gem 'tomdoc'
   gem 'yard-tomdoc', "~> 0.4.0"
   gem 'annotate', :require => false
-  gem 'sunspot_solr'
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'xray-rails'

@@ -1,10 +1,4 @@
 module LayoutHelper
-  def search_result_description(result)
-    truncate(strip_tags(result.description.content), :length => 160)
-  rescue
-    nil
-  end
-
   def back_to_model_link
     last_etm_page = Current.setting.last_etm_page
     if last_etm_page.blank?

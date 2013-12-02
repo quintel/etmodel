@@ -4,22 +4,22 @@ Etm::Application.routes.draw do
 
   root :to => 'pages#root'
 
-  match '/choose' => 'pages#choose'
+  get '/choose' => 'pages#choose'
 
-  match '/info/:ctrl/:act' => "pages#info", :as => :tab_info
+  get '/info/:ctrl/:act' => "pages#info", :as => :tab_info
 
-  match '/texts/:id' => 'texts#show'
+  get '/texts/:id' => 'texts#show'
 
-  match 'login'  => 'user_sessions#new', :as => :login
-  match 'logout' => 'user_sessions#destroy', :as => :logout
+  get 'login'  => 'user_sessions#new', :as => :login
+  get 'logout' => 'user_sessions#destroy', :as => :logout
 
   resources :descriptions, :only => :show
-  match '/descriptions/charts/:id'  => 'descriptions#charts'
+  get '/descriptions/charts/:id'  => 'descriptions#charts'
 
   resources :user_sessions
   resources :users, :except => [:index, :show, :destroy]
 
-  match '/users/:id/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
+  get '/users/:id/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
 
   resource :user, :only => [:edit, :update]
 
@@ -36,8 +36,8 @@ Etm::Application.routes.draw do
 
   namespace :admin do
     root :to => 'pages#index'
-    match 'map', :to => 'pages#map', :as => :map
-    match 'clear_cache' => 'pages#clear_cache', :as => :clear_cache
+    get 'map', :to => 'pages#map', :as => :map
+    get 'clear_cache' => 'pages#clear_cache', :as => :clear_cache
 
     resources :predictions,
               :sidebar_items,
@@ -86,11 +86,11 @@ Etm::Application.routes.draw do
     get :load, :on => :member
   end
 
-  match '/scenario/new' => 'scenarios#new'
-  match '/scenario/reset' => 'scenarios#reset'
-  match '/scenario/grid_investment_needed' => 'scenarios#grid_investment_needed'
+  get '/scenario/new' => 'scenarios#new'
+  get '/scenario/reset' => 'scenarios#reset'
+  get '/scenario/grid_investment_needed' => 'scenarios#grid_investment_needed'
   # This is the main action
-  match '/scenario(/:tab(/:sidebar(/:slide)))' => 'scenarios#play', :as => :play
+  get '/scenario(/:tab(/:sidebar(/:slide)))' => 'scenarios#play', :as => :play
 
   resources :output_elements, :only => [:index, :show] do
     collection do
@@ -107,27 +107,27 @@ Etm::Application.routes.draw do
     end
   end
 
-  match '/ete(/*url)' => 'api_proxy#default'
-  match '/ete_proxy(/*url)' => 'api_proxy#default'
+  get '/ete(/*url)' => 'api_proxy#default'
+  get '/ete_proxy(/*url)' => 'api_proxy#default'
 
-  match '/select_movie/:id'             => 'pages#select_movie', :defaults => {:format => :js}
-  match '/units'                        => 'pages#units'
-  match '/about'                        => 'pages#about'
-  match '/feedback'                     => 'pages#feedback', :as => :feedback
-  match '/tutorial/(:tab)(/:sidebar)'   => 'pages#tutorial', :as => :tutorial
-  match '/prominent_users'              => 'pages#prominent_users'
-  match '/press_releases'               => 'pages#press_releases'
-  match '/disclaimer'                   => 'pages#disclaimer'
-  match '/privacy_statement'            => 'pages#privacy_statement'
-  match '/show_all_countries'           => 'pages#show_all_countries'
-  match '/show_flanders'                => 'pages#show_flanders'
-  match '/sitemap(.:format)'            => 'pages#sitemap', :defaults => {:format => :xml}
-  match '/known_issues'                 => 'pages#bugs',        :as => :bugs
-  match '/quality_control'              => 'pages#quality', :as => :quality
-  match '/set_locale(/:locale)' => 'pages#set_locale', :as => :set_locale
-  match '/browser_support' => 'pages#browser_support'
-  match '/update_footer'   => 'pages#update_footer'
+  get '/select_movie/:id'             => 'pages#select_movie', :defaults => {:format => :js}
+  get '/units'                        => 'pages#units'
+  get '/about'                        => 'pages#about'
+  get '/feedback'                     => 'pages#feedback', :as => :feedback
+  get '/tutorial/(:tab)(/:sidebar)'   => 'pages#tutorial', :as => :tutorial
+  get '/prominent_users'              => 'pages#prominent_users'
+  get '/press_releases'               => 'pages#press_releases'
+  get '/disclaimer'                   => 'pages#disclaimer'
+  get '/privacy_statement'            => 'pages#privacy_statement'
+  get '/show_all_countries'           => 'pages#show_all_countries'
+  get '/show_flanders'                => 'pages#show_flanders'
+  get '/sitemap(.:format)'            => 'pages#sitemap', :defaults => {:format => :xml}
+  get '/known_issues'                 => 'pages#bugs',        :as => :bugs
+  get '/quality_control'              => 'pages#quality', :as => :quality
+  get '/set_locale(/:locale)' => 'pages#set_locale', :as => :set_locale
+  get '/browser_support' => 'pages#browser_support'
+  get '/update_footer'   => 'pages#update_footer'
 
-  match "/404", :to => "pages#404"
-  match "/500", :to => "pages#500"
+  get "/404", :to => "pages#404"
+  get "/500", :to => "pages#500"
 end

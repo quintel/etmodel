@@ -33,7 +33,7 @@ class OutputElement < ActiveRecord::Base
   validates :key, :presence => true, :uniqueness => true
   delegate :html_table?, :to => :output_element_type
 
-  scope :not_hidden, where(:hidden => false)
+  scope :not_hidden, -> { where(:hidden => false) }
 
   def title_for_description
     "output_elements.#{key}"

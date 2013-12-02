@@ -67,7 +67,7 @@ class User < ActiveRecord::Base
 
   acts_as_authentic
 
-  scope :ordered, order('name')
+  scope :ordered, -> { order('name') }
 
   def admin?
     role.try(:name) == "admin"

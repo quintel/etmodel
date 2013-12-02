@@ -27,11 +27,11 @@ class InputElement < ActiveRecord::Base
   has_many :predictions
   belongs_to :slide
 
-
   validates :key, :presence => true, :uniqueness => true
 
-  scope :households_heating_sliders, where(:share_group => 'heating_households')
-  scope :ordered, order('position')
+  scope :households_heating_sliders, -> { where(:share_group => 'heating_households') }
+  scope :ordered, -> { order('position') }
+
   accepts_nested_attributes_for :description, :area_dependency
 
 

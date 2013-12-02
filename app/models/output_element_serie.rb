@@ -37,12 +37,12 @@ class OutputElementSerie < ActiveRecord::Base
   has_one :description, :as => :describable
   has_one :area_dependency, :as => :dependable
 
-  scope :gquery_contains, lambda {|q| where("gquery LIKE ?", "%#{q}%")}
-  scope :ordered_for_admin, order("output_elements.`key`").includes('output_element')
+  scope :gquery_contains,   -> { |q| where("gquery LIKE ?", "%#{q}%")}
+  scope :ordered_for_admin, -> { order("output_elements.`key`").includes('output_element') }
   # Hmmm ugly
-  scope :block_charts, where(:output_element_id => OutputElementType::BLOCK_CHART_ID)
+  scope :block_charts,      -> { where(:output_element_id => OutputElementType::BLOCK_CHART_ID) }
 
-  scope :contains, lambda{|search| where("`key` LIKE ?", "%#{search}%")}
+  scope :contains, -> { |search| where("`key` LIKE ?", "%#{search}%") }
 
   validates :gquery, :presence => true
 

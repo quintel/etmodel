@@ -17,13 +17,13 @@
 class Comment < ActiveRecord::Base
   belongs_to :commentable, :polymorphic => true
   belongs_to :user
-  
+
   validates :body, :presence => true
-  
+
   attr_accessible :body, :name, :email
-  
-  scope :recent_first, order('created_at DESC')
-  
+
+  scope :recent_first, -> { order('created_at DESC') }
+
   def author_name
     if user
       user.name

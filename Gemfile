@@ -1,15 +1,14 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-gem 'rails', '3.2.13'
+gem 'rails', '~>4.0.1'
 gem 'jquery-rails', "~> 2.0.2"
 gem 'haml', '~>3.1.4'
 gem 'authlogic'
-gem 'paper_trail', '~>2.2.4'
 gem 'httparty', '~> 0.7.4'
 gem 'tabs_on_rails', '~>2.1.1'
 gem 'kaminari', '~> 0.13.0'
-gem 'simple_form'
+#gem 'simple_form'
 gem 'acts_as_commentable'
 gem 'nokogiri', '~> 1.6'
 gem 'redcarpet'
@@ -74,15 +73,13 @@ group :production do
   gem 'unicorn'
 end
 
-group :assets do
-  gem 'therubyracer', '~> 0.12.0'
-  gem 'libv8', '~> 3.16.14.3'
-  gem 'sass-rails', '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier'
-  gem 'yui-compressor', github: 'sstephenson/ruby-yui-compressor'
-  gem 'compass-rails'
-  gem 'oily_png' # Faster sprite compilation.
-end
+gem 'therubyracer', '~> 0.12.0'
+gem 'libv8', '~> 3.16.14.3'
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
+gem 'yui-compressor', github: 'sstephenson/ruby-yui-compressor'
+gem 'compass-rails'
+gem 'oily_png' # Faster sprite compilation.
 
 gem 'capistrano'

@@ -30,7 +30,7 @@ class Slide < ActiveRecord::Base
 
   validates :key, :presence => true, :uniqueness => true
 
-  scope :controller, -> { |controller| where(:controller_name => controller) }
+  scope :controller, ->(controller) { where(:controller_name => controller) }
   scope :ordered,    -> { order('position') }
 
   accepts_nested_attributes_for :description, :area_dependency

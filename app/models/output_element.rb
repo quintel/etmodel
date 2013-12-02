@@ -21,7 +21,7 @@
 class OutputElement < ActiveRecord::Base
   include AreaDependent
 
-  has_paper_trail
+  
 
   has_many :output_element_series, :order => "order_by", :dependent => :destroy
   belongs_to :output_element_type

@@ -41,7 +41,7 @@ class Constraint < ActiveRecord::Base
 
   # --------------------------------------------------------------------------
 
-  has_paper_trail
+  
 
   validates :group, :presence => true, :inclusion => GROUPS
 

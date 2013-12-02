@@ -19,7 +19,7 @@
 class Slide < ActiveRecord::Base
   include AreaDependent
 
-  has_paper_trail
+  
 
   belongs_to :sidebar_item
   has_one :description, :as => :describable

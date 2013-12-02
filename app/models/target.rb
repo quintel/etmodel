@@ -17,7 +17,7 @@ class Target < ActiveRecord::Base
   include AreaDependent
 
   has_one :area_dependency, :as => :dependable, :dependent => :destroy
-  has_paper_trail
+  
 
   accepts_nested_attributes_for :area_dependency
 

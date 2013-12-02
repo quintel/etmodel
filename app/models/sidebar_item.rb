@@ -16,7 +16,7 @@
 class SidebarItem < ActiveRecord::Base
   include AreaDependent
 
-  has_paper_trail
+  
 
   has_one :area_dependency, :as => :dependable, :dependent => :destroy
   has_one :description, :as => :describable, :dependent => :destroy

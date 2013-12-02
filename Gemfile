@@ -55,7 +55,6 @@ group :test, :development do
   gem 'pry-debugger'
   gem 'rspec-rails', "~> 2.12.0"
   gem 'watchr'
-  gem 'jasminerice'
 end
 
 group :test do

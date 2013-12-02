@@ -31,7 +31,7 @@ class OutputElementSerie < ActiveRecord::Base
   include Colors
   include AreaDependent
 
-  has_paper_trail
+  
 
   belongs_to :output_element
   has_one :description, :as => :describable

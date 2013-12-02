@@ -7,7 +7,7 @@ gem 'activeresource'
 gem 'protected_attributes'
 
 gem 'jquery-rails', "~> 2.0.2"
-gem 'haml', '~>3.1.4'
+gem 'haml', '~>4.0'
 gem 'authlogic'
 gem 'httparty', '~> 0.7.4'
 gem 'tabs_on_rails', '~>2.1.1'

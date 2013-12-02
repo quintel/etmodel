@@ -3,6 +3,7 @@ source 'http://gems.github.com'
 
 gem 'rails', '~>4.0.1'
 gem 'activerecord-session_store'
+gem 'activeresource'
 gem 'jquery-rails', "~> 2.0.2"
 gem 'haml', '~>3.1.4'
 gem 'authlogic'

@@ -127,7 +127,8 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.3)
     fssm (0.2.10)
-    haml (3.1.8)
+    haml (4.0.4)
+      tilt
     hike (1.2.3)
     httparty (0.7.8)
       crack (= 0.1.8)
@@ -322,7 +323,7 @@ DEPENDENCIES
   debugger (~> 1.6.1)
   dynamic_form
   factory_girl_rails (~> 4.1.0)
-  haml (~> 3.1.4)
+  haml (~> 4.0)
   httparty (~> 0.7.4)
   i18n-js!
   jasminerice

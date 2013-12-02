@@ -54,7 +54,7 @@ class Constraint < ActiveRecord::Base
   scope :default, -> { where('position IS NOT NULL') }
   scope :enabled, -> { where(disabled: false) }
 
-  scope :gquery_contains, -> { |search| where("`gquery_key` LIKE ?", "%#{search}%") }
+  scope :gquery_contains, ->(search) { where("`gquery_key` LIKE ?", "%#{search}%") }
 
   # CLASS METHODS ------------------------------------------------------------
 

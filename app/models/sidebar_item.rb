@@ -29,7 +29,7 @@ class SidebarItem < ActiveRecord::Base
   validates :key, :presence => true, :uniqueness => true
 
   scope :ordered, -> { order('position') }
-  scope :gquery_contains, -> { |search| where("percentage_bar_query LIKE ?", "%#{search}%") }
+  scope :gquery_contains, ->(search) { where("percentage_bar_query LIKE ?", "%#{search}%") }
   scope :roots, -> { where(:parent_id => nil) }
 
   def parsed_key_for_admin

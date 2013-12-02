@@ -22,9 +22,6 @@ gem 'jbuilder'
 # supporting gems
 gem 'airbrake', '~> 3.1.2'
 
-# Used to print process information before each log line.
-gem 'better_logging'
-
 # system gems
 gem 'mysql2', '~>0.3.11'
 gem 'dalli'

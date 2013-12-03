@@ -12,11 +12,11 @@
 
 class PredictionValue < ActiveRecord::Base
   belongs_to :prediction
+
   
-  has_paper_trail
-  
+
   validates :value, :presence => true
   validates :year, :presence => true
-  
-  scope :future_first, order("year DESC")
+
+  scope :future_first, -> { order("year DESC") }
 end

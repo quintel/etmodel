@@ -36,13 +36,7 @@ class User < ActiveRecord::Base
 
   attr_protected :role_id #To refrain Hackers from using mass assignment when creating new account
 
-  validates_format_of :phone_number,
-                      :message => " is niet goed ingevuld.",
-                      :with => /^[\(\)0-9\- \+\.]{10,20}$/,
-                      :allow_blank => true
-
   validates_presence_of :name
-
 
   attr_accessor :teacher_email
 
@@ -67,7 +61,7 @@ class User < ActiveRecord::Base
 
   acts_as_authentic
 
-  scope :ordered, order('name')
+  scope :ordered, -> { order('name') }
 
   def admin?
     role.try(:name) == "admin"

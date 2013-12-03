@@ -41,7 +41,7 @@ class Constraint < ActiveRecord::Base
 
   # --------------------------------------------------------------------------
 
-  has_paper_trail
+  
 
   validates :group, :presence => true, :inclusion => GROUPS
 
@@ -50,10 +50,11 @@ class Constraint < ActiveRecord::Base
 
   accepts_nested_attributes_for :description, :area_dependency
 
-  scope :ordered, order('position')
-  scope :default, where('position IS NOT NULL')
-  scope :gquery_contains, lambda{|search| where("`gquery_key` LIKE ?", "%#{search}%")}
-  scope :enabled, where(:disabled => false)
+  scope :ordered, -> { order('position') }
+  scope :default, -> { where('position IS NOT NULL') }
+  scope :enabled, -> { where(disabled: false) }
+
+  scope :gquery_contains, ->(search) { where("`gquery_key` LIKE ?", "%#{search}%") }
 
   # CLASS METHODS ------------------------------------------------------------
 

@@ -1,11 +1,14 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-gem 'rails', '3.2.13'
+gem 'rails', '~>4.0.1'
+gem 'activerecord-session_store'
+gem 'activeresource'
+gem 'protected_attributes'
+
 gem 'jquery-rails', "~> 2.0.2"
-gem 'haml', '~>3.1.4'
+gem 'haml', '~>4.0'
 gem 'authlogic'
-gem 'paper_trail', '~>2.2.4'
 gem 'httparty', '~> 0.7.4'
 gem 'tabs_on_rails', '~>2.1.1'
 gem 'kaminari', '~> 0.13.0'
@@ -22,9 +25,6 @@ gem 'jbuilder'
 
 # supporting gems
 gem 'airbrake', '~> 3.1.2'
-
-# Used to print process information before each log line.
-gem 'better_logging'
 
 # system gems
 gem 'mysql2', '~>0.3.11'
@@ -55,7 +55,6 @@ group :test, :development do
   gem 'pry-debugger'
   gem 'rspec-rails', "~> 2.12.0"
   gem 'watchr'
-  gem 'jasminerice'
 end
 
 group :test do
@@ -74,15 +73,13 @@ group :production do
   gem 'unicorn'
 end
 
-group :assets do
-  gem 'therubyracer', '~> 0.12.0'
-  gem 'libv8', '~> 3.16.14.3'
-  gem 'sass-rails', '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier'
-  gem 'yui-compressor', github: 'sstephenson/ruby-yui-compressor'
-  gem 'compass-rails'
-  gem 'oily_png' # Faster sprite compilation.
-end
+gem 'therubyracer', '~> 0.12.0'
+gem 'libv8', '~> 3.16.14.3'
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
+gem 'yui-compressor', github: 'sstephenson/ruby-yui-compressor'
+gem 'compass-rails', '~> 2.0.alpha.0'
+gem 'oily_png' # Faster sprite compilation.
 
-gem 'capistrano'
+gem 'capistrano', '~> 2'

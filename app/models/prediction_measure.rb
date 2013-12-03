@@ -18,7 +18,7 @@
 class PredictionMeasure < ActiveRecord::Base
   belongs_to :prediction
   
-  has_paper_trail
+  
   
   validates :name, :presence => true
   

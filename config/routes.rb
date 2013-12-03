@@ -3,6 +3,7 @@ Etm::Application.routes.draw do
   get "gql/search"
 
   root :to => 'pages#root'
+  post '/' => 'pages#root'
 
   get '/choose' => 'pages#choose'
 

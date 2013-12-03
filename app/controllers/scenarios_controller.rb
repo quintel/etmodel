@@ -63,9 +63,8 @@ class ScenariosController < ApplicationController
       raise NoScenarioIdError.new(self)
     end
 
-    @saved_scenario = SavedScenario.new(
-      :api_session_id => Current.setting.api_session_id
-    )
+    @saved_scenario = SavedScenario.new
+    @saved_scenario.api_session_id = Current.setting.api_session_id
   end
 
   def reset

@@ -15,6 +15,8 @@ class SavedScenario < ActiveRecord::Base
 
   attr_accessor :title, :description, :api_session_id
 
+  attr_accessible :scenario_id
+
   validates :user_id,     :presence => true
   validates :scenario_id, :presence => true
   validates :title,       :presence => true

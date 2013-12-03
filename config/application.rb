@@ -58,6 +58,9 @@ module Etm
     #custom 404 and 500 page
     config.exceptions_app = self.routes
 
+    #Needed for i18n-js to work
+    config.assets.initialize_on_precompile = true
+
   end
 
   Date::DATE_FORMATS[:default] = "%d-%m-%Y"

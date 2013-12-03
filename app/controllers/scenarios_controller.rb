@@ -95,16 +95,15 @@ class ScenariosController < ApplicationController
     )
     begin
       @scenario = Api::Scenario.create(attrs)
+      @saved_scenario = current_user.saved_scenarios.new
+
+      @saved_scenario.scenario_id = @scenario.id
       # Setting a fake title because the object validates its presence - the
       # engine scenarios table actually saves it
-      @saved_scenario = current_user.saved_scenarios.create!(
-        {:scenario_id => @scenario.id, :title => '_'})
+      @saved_scenario.title = '_'
+      @saved_scenario.save!
+
       redirect_to scenarios_path
-    rescue
-      @saved_scenario = SavedScenario.new(
-        :api_session_id => scenario_id
-      )
-      render :new
     end
   end
 

@@ -26,10 +26,15 @@ class @AppView extends Backbone.View
       area_code:          globals.settings.area_code
       end_year:           globals.settings.end_year
 
-    # Store the scenario id
-    @api.ensure_id().done (id) =>
-      @settings.save { api_session_id: id },
-        success: @enableIdDependantSettings
+    @api.create_or_resume_scenario()
+      .fail(@handle_ajax_error)
+      .done (data) =>
+        @settings.save { api_session_id: data.id },
+          success: @enableIdDependantSettings
+
+        @input_elements.initialize_user_values(data.inputs)
+        @setup_fce_toggle()
+        @setup_checkboxes
 
   # (Re)builds the list of sliders and renders them. This is usually called by
   # play.js.erb
@@ -41,12 +46,6 @@ class @AppView extends Backbone.View
       InputElement.Balancer.balancers = {}
     @input_elements = new InputElementList()
     @input_elements.on "change", @handleInputElementsUpdate
-    @user_values()
-      .done (args...) =>
-        @input_elements.initialize_user_values(args...)
-        @setup_fce_toggle()
-        @setup_checkboxes()
-      .fail @handle_ajax_error
 
   # Returns a deferred object on which the .done() method can be called
   #

@@ -1,4 +1,4 @@
-# Quintel Energy Transition Model
+# Quintel Energy Transition Model PRO
 
 ## Build Status
 
@@ -11,6 +11,10 @@
 ### Staging
 ![Staging branch](https://semaphoreapp.com/api/v1/projects/4c715d68deace497255af08727d617d510d3e01d/81874/badge.png)
 
+## License
+
+The ETM pro is released under the [MIT License](LICENSE.txt).
+
 ## Branches
 
 * **master**: Working branch. Please always commit to this branch and rebase from here.
@@ -19,12 +23,14 @@
 
 ## Installing
 
-* Install Ruby 1.9.3 or higher. (We can recommend [rbenv](https://github.com/sstephenson/rbenv) by the way.)
+* Install Ruby 1.9.3 or higher.
 * Pull this repository (`git clone git@github.com:quintel/etmodel.git`)
 * Create your own `database.yml` and `config.yml` from the samples in `config/`.
 * Run `bundle install` to install all the dependencies
-* Create local databases with `rake db:create`.
-* Clone the database from the staging server using `cap staging db2local`
+* Create local database with `rake db:create`
+* Fill the database with `rake db:reset`
+* Fire up your local server with `rails server -p3000`
+* Got to [localhost:3000][http://localhost:3000] and you should see the ETM pro!
 
 ## Bugs and feature requests
 

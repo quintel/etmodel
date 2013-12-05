@@ -19,9 +19,6 @@ class Prediction < ActiveRecord::Base
   has_many :values,   :class_name => "PredictionValue",   :dependent => :destroy
   has_many :measures, :class_name => "PredictionMeasure", :dependent => :destroy
 
-  
-  acts_as_commentable
-
   accepts_nested_attributes_for :values,   :allow_destroy => true, :reject_if => proc {|a| a[:year].blank? || a[:value].blank? }
   accepts_nested_attributes_for :measures, :allow_destroy => true, :reject_if => proc {|a| a[:name].blank? }
 

@@ -13,7 +13,7 @@ module Admin
     end
 
     def create
-      @constraint = Constraint.new(params[:constraint])
+      @constraint = Constraint.new(constraint_parameters)
 
       if @constraint.save
         flash[:notice] = "Constraint saved"
@@ -24,7 +24,7 @@ module Admin
     end
 
     def update
-      if @constraint.update_attributes(params[:constraint])
+      if @constraint.update_attributes(constraint_parameters)
         flash[:notice] = "Constraint updated"
         redirect_to admin_constraint_path(@constraint)
       else
@@ -50,7 +50,9 @@ module Admin
       @constraint.build_area_dependency unless @constraint.area_dependency
     end
 
+    #######
     private
+    #######
 
     def find_element
       if params[:version_id]
@@ -60,6 +62,15 @@ module Admin
       else
         @constraint = Constraint.find(params[:id])
       end
+    end
+
+    def constraint_parameters
+      params.require(:constraint).permit(:key,
+                                         :group,
+                                         :gquery_key,
+                                         :disabled,
+                                         :description_attributes,
+                                         :area_dependency_attributes)
     end
   end
 end

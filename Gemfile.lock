@@ -103,6 +103,7 @@ GEM
       compass (>= 0.12.2, < 0.14)
     crack (0.1.8)
     dalli (2.6.4)
+    database_cleaner (1.2.0)
     debug_inspector (0.0.2)
     debugger (1.6.3)
       columnize (>= 0.3.1)
@@ -301,6 +302,7 @@ DEPENDENCIES
   coffee-rails
   compass-rails (~> 2.0.alpha.0)
   dalli
+  database_cleaner
   debugger (~> 1.6.1)
   dynamic_form
   factory_girl_rails (~> 4.1.0)

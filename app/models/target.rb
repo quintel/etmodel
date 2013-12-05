@@ -17,14 +17,14 @@ class Target < ActiveRecord::Base
   include AreaDependent
 
   has_one :area_dependency, :as => :dependable, :dependent => :destroy
-  has_paper_trail
+  
 
   accepts_nested_attributes_for :area_dependency
 
-  scope :gquery_contains, lambda{|search| where([
+  scope :gquery_contains, ->(search) { where([
     "query LIKE :q OR reached_query LIKE :q OR target_query LIKE :q",
     {:q => "%#{search}%"}]
-  )}
+  ) }
 
   # attributes used by the backbone js object def js_attributes
   def js_attributes

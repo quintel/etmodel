@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'active_resource'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -56,6 +57,9 @@ module Etm
 
     #custom 404 and 500 page
     config.exceptions_app = self.routes
+
+    #Needed for i18n-js to work
+    config.assets.initialize_on_precompile = true
 
   end
 

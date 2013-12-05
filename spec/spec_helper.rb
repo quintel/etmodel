@@ -17,7 +17,6 @@ end
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/rails'
-require 'capybara-webkit'
 require 'authlogic/test_case'
 require 'factory_girl'
 require 'shoulda/matchers'
@@ -57,13 +56,36 @@ RSpec.configure do |config|
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  config.use_transactional_fixtures = true
+  config.use_transactional_fixtures = false
 
   config.include Webrat::Matchers
   config.include EtmAuthHelper
   config.include Authlogic::TestCase
   config.include Capybara::DSL
   config.include Capybara::RSpecMatchers
+
+  # Database
+  # --------
+
+  # Integration tests should use truncation; real requests aren't wrapped
+  # in a transaction, so neither should high-level tests. These filters need
+  # to be above the filter which starts DatabaseCleaner.
+
+  config.before(:each, type: :request) do
+    DatabaseCleaner.strategy = :truncation
+  end
+
+  config.after(:each, type: :request) do
+    DatabaseCleaner.strategy = :transaction
+  end
+
+  # The database_cleaner gem is used to restore the DB to a clean state before
+  # each example runs. This is used in preference over rspec-rails'
+  # transactions since we also need this behaviour in Cucumber features.
+
+  config.before(:suite) { DatabaseCleaner.strategy = :transaction }
+  config.before(:each)  { DatabaseCleaner.start                   }
+  config.after(:each)   { DatabaseCleaner.clean                   }
 
   # Stub out Partner.all.
   [ :controller, :request ].each do |type|

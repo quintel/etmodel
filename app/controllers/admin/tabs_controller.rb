@@ -11,7 +11,7 @@ module Admin
     end
 
     def create
-      @tab = Tab.new(params[:tab])
+      @tab = Tab.new(tab_parameters)
       if @tab.save
         flash[:notice] = "Tab saved"
         redirect_to admin_tabs_url
@@ -22,7 +22,7 @@ module Admin
 
     def update
       @tab = Tab.find(params[:id])
-      if @tab.update_attributes(params[:tab])
+      if @tab.update_attributes(tab_parameters)
         flash[:notice] = "Tab updated"
         redirect_to admin_tabs_url
       else
@@ -39,7 +39,9 @@ module Admin
     def show
     end
 
+    #######
     private
+    #######
 
     def find_model
       if params[:version_id]
@@ -49,6 +51,10 @@ module Admin
       else
         @tab = Tab.find(params[:id])
       end
+    end
+
+    def tab_parameters
+      params.require(:tab).permit(:key, :nl_vimeo_id, :en_vimeo_id, :position)
     end
   end
 end

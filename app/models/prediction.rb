@@ -18,22 +18,19 @@ class Prediction < ActiveRecord::Base
   belongs_to :input_element
   has_many :values,   :class_name => "PredictionValue",   :dependent => :destroy
   has_many :measures, :class_name => "PredictionMeasure", :dependent => :destroy
-    
-  has_paper_trail
-  acts_as_commentable
-  
+
   accepts_nested_attributes_for :values,   :allow_destroy => true, :reject_if => proc {|a| a[:year].blank? || a[:value].blank? }
   accepts_nested_attributes_for :measures, :allow_destroy => true, :reject_if => proc {|a| a[:name].blank? }
-  
+
   validates :title, :presence => true
   validates :input_element_id, :presence => true
-  
-  scope :for_area, lambda{|a| where(:area => a)}
-  
+
+  scope :for_area, ->(a) { where(:area => a) }
+
   def last_value
     @last_value ||= values.future_first.first
   end
-  
+
   # Prepare blank records, useful when building forms
   def prepare_nested_attributes
     if new_record?
@@ -43,23 +40,23 @@ class Prediction < ActiveRecord::Base
     end
     (8 - measures.size).times { measures.build }
   end
-  
+
   def values_to_a
     values.map{|v| [v.year, v.value]}
   end
-  
+
   def values_to_h
     @values_hash ||= {}.tap{|h| values.each{|v| h[v.year] = v.value}}
   end
-  
+
   def max_value
     values.map(&:value).compact.max
   end
-  
+
   def min_value
     values.map(&:value).compact.min
   end
-  
+
   # calculates the prediction value for a year
   def value_for_year(x)
     hash = values_to_h
@@ -77,14 +74,14 @@ class Prediction < ActiveRecord::Base
     if x < (min_year = years.min)
       return hash[min_year]
     end
-    # linear interpolation    
+    # linear interpolation
     x0 = years.select{|z| z < x}.max
     x1 = years.select{|z| z > x}.min
     y0 = hash[x0]
     y1 = hash[x1]
     y = y0 + (x - x0) * ((y1- y0) / (x1 - x0))
   end
-  
+
   # The slider often uses a different unit from the prediction. Let's convert it
   def corresponding_slider_value
     raw = value_for_year(Current.setting.end_year || 2050)

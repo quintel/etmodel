@@ -10,15 +10,12 @@
 #
 
 class Tab < ActiveRecord::Base
-  has_paper_trail
 
   validates :key, :presence => true, :uniqueness => true
 
   has_many :sidebar_items, :dependent => :nullify
 
-  scope :ordered, order('position')
-
-  attr_accessible :key, :nl_vimeo_id, :en_vimeo_id, :position
+  scope :ordered, -> { order('position') }
 
   def allowed_sidebar_items
     sidebar_items.roots.includes(:area_dependency).ordered.reject(&:area_dependent)

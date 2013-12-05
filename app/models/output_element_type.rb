@@ -10,7 +10,7 @@
 
 class OutputElementType < ActiveRecord::Base
   BLOCK_CHART_ID = 8 # Ugly
-  has_paper_trail
+  
 
   has_many :output_elements, :dependent => :nullify
 

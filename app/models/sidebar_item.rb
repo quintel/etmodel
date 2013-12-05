@@ -16,7 +16,7 @@
 class SidebarItem < ActiveRecord::Base
   include AreaDependent
 
-  has_paper_trail
+  
 
   has_one :area_dependency, :as => :dependable, :dependent => :destroy
   has_one :description, :as => :describable, :dependent => :destroy
@@ -28,9 +28,9 @@ class SidebarItem < ActiveRecord::Base
   accepts_nested_attributes_for :description, :area_dependency
   validates :key, :presence => true, :uniqueness => true
 
-  scope :ordered, order('position')
-  scope :gquery_contains, lambda{|search| where("percentage_bar_query LIKE ?", "%#{search}%")}
-  scope :roots, where(:parent_id => nil)
+  scope :ordered, -> { order('position') }
+  scope :gquery_contains, ->(search) { where("percentage_bar_query LIKE ?", "%#{search}%") }
+  scope :roots, -> { where(:parent_id => nil) }
 
   def parsed_key_for_admin
     "#{section.andand} | #{key}"

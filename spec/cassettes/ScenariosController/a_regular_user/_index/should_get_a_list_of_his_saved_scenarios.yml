@@ -1,0 +1,87 @@
+--- 
+http_interactions: 
+- request: 
+    method: get
+    uri: http://beta.et-engine.com/api/v3//scenarios/123/batch
+    body: 
+      encoding: US-ASCII
+      string: ""
+    headers: {}
+
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      Server: 
+      - nginx/1.2.6
+      Date: 
+      - Thu, 05 Dec 2013 08:42:47 GMT
+      Content-Type: 
+      - application/json; charset=utf-8
+      Transfer-Encoding: 
+      - chunked
+      Connection: 
+      - keep-alive
+      Status: 
+      - 200 OK
+      X-Ua-Compatible: 
+      - IE=Edge,chrome=1
+      Etag: 
+      - "\"e760e264b94e29d18a77ec091e48f3bd\""
+      Cache-Control: 
+      - max-age=0, private, must-revalidate
+      X-Request-Id: 
+      - 0ae098d1fc4858b15e33d31a6f011737
+      X-Runtime: 
+      - "0.009314"
+      X-Rack-Cache: 
+      - miss
+    body: 
+      encoding: US-ASCII
+      string: "[{\"id\":123,\"title\":\"Martinus scenario run\",\"area_code\":\"nl\",\"start_year\":2011,\"end_year\":2030,\"url\":\"http://beta.et-engine.com/api/v3/scenarios/123\",\"ordering\":null,\"display_group\":null,\"source\":null,\"template\":null,\"created_at\":\"2010-06-14T17:23:00+02:00\"}]"
+    http_version: 
+  recorded_at: Thu, 05 Dec 2013 08:42:47 GMT
+- request: 
+    method: get
+    uri: http://beta.et-engine.com/api/v3/scenarios/123/batch
+    body: 
+      encoding: US-ASCII
+      string: ""
+    headers: {}
+
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      Server: 
+      - nginx/1.2.6
+      Date: 
+      - Thu, 05 Dec 2013 08:45:49 GMT
+      Content-Type: 
+      - application/json; charset=utf-8
+      Transfer-Encoding: 
+      - chunked
+      Connection: 
+      - keep-alive
+      Status: 
+      - 200 OK
+      X-Ua-Compatible: 
+      - IE=Edge,chrome=1
+      Etag: 
+      - "\"e760e264b94e29d18a77ec091e48f3bd\""
+      Cache-Control: 
+      - max-age=0, private, must-revalidate
+      X-Request-Id: 
+      - 41bef2d9186036df216ad3ff28b46d78
+      X-Runtime: 
+      - "0.010210"
+      X-Rack-Cache: 
+      - miss
+    body: 
+      encoding: US-ASCII
+      string: "[{\"id\":123,\"title\":\"Martinus scenario run\",\"area_code\":\"nl\",\"start_year\":2011,\"end_year\":2030,\"url\":\"http://beta.et-engine.com/api/v3/scenarios/123\",\"ordering\":null,\"display_group\":null,\"source\":null,\"template\":null,\"created_at\":\"2010-06-14T17:23:00+02:00\"}]"
+    http_version: 
+  recorded_at: Thu, 05 Dec 2013 08:45:49 GMT
+recorded_with: VCR 2.4.0

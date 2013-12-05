@@ -128,7 +128,8 @@ describe ScenariosController, :vcr => true do
       it "should get a list of all saved scenarios" do
         get :index
         response.should be_success
-        assigns(:saved_scenarios).to_set.should == [user_scenario, admin_scenario].to_set
+        assigns(:saved_scenarios).should include user_scenario
+        assigns(:saved_scenarios).should include admin_scenario
       end
     end
   end

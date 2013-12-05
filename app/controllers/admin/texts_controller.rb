@@ -9,7 +9,7 @@ module Admin
     end
 
     def update
-      if @text.update_attributes(params[:text])
+      if @text.update_attributes(text_parameters)
         flash[:notice] = "Successfully updated text."
         redirect_to admin_texts_path
       else
@@ -22,7 +22,7 @@ module Admin
     end
 
     def create
-      @text = Text.new(params[:text])
+      @text = Text.new(text_parameters)
       if @text.save
         flash[:notice] = "Successfully created a new text."
         redirect_to admin_texts_path
@@ -37,6 +37,18 @@ module Admin
     end
 
     private
+
+    def text_parameters
+      if params[:text]
+        params.require(:text).permit(:key,
+                                     :content_en,
+                                     :content_nl,
+                                     :title_en,
+                                     :title_nl,
+                                     :short_content_en,
+                                     :short_content_nl)
+      end
+    end
 
     def find_text
       @text = Text.find params[:id]

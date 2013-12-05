@@ -7,9 +7,6 @@ Etm::Application.configure do
   # since you don't have to restart the webserver when you make code changes.
   config.cache_classes = false
 
-  # Log error messages when you accidentally call methods on nil.
-  config.whiny_nils = true
-
   # Show full error reports and disable caching
   config.consider_all_requests_local = true
 
@@ -23,4 +20,6 @@ Etm::Application.configure do
   config.cache_store = :dalli_store
   #config.cache_store = :file_store, '/tmp/cache'
   config.assets.debug = true
+
+  config.eager_load = false
 end

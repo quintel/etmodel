@@ -18,7 +18,7 @@ module Admin
     end
 
     def create
-      @slide = Slide.new(params[:slide])
+      @slide = Slide.new(slide_parameters)
       if @slide.save
         flash[:notice] = "Slide saved"
         redirect_to admin_slides_url
@@ -29,9 +29,9 @@ module Admin
 
     def update
       @slide = Slide.find(params[:id])
-      if @slide.update_attributes(params[:slide])
-      flash[:notice] = "Slide updated"
-      redirect_to admin_slides_url
+      if @slide.update_attributes(slide_parameters)
+        flash[:notice] = "Slide updated"
+        redirect_to admin_slides_url
       else
         render :action => 'edit'
       end
@@ -47,16 +47,32 @@ module Admin
       @slide.build_area_dependency unless @slide.area_dependency
     end
 
+    #######
     private
+    #######
 
-      def find_model
-        if params[:version_id]
-          @version = Version.find(params[:version_id])
-          @slide = @version.reify
-          flash[:notice] = "Revision"
-        else
-          @slide = Slide.find(params[:id])
-        end
+    def slide_parameters
+      if params[:slide]
+        params.require(:slide).permit(:image,
+                                      :general_sub_header,
+                                      :group_sub_header,
+                                      :subheader_image,
+                                      :key,
+                                      :position,
+                                      :sidebar_item_id,
+                                      :output_element_id,
+                                      :alt_output_element_id)
       end
+    end
+
+    def find_model
+      if params[:version_id]
+        @version = Version.find(params[:version_id])
+        @slide = @version.reify
+        flash[:notice] = "Revision"
+      else
+        @slide = Slide.find(params[:id])
+      end
+    end
   end
 end

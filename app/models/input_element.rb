@@ -20,18 +20,18 @@
 
 class InputElement < ActiveRecord::Base
   include AreaDependent
-  has_paper_trail
+  
 
   has_one :description, :as => :describable, :dependent => :destroy
   has_one :area_dependency, :as => :dependable, :dependent => :destroy
   has_many :predictions
   belongs_to :slide
 
-
   validates :key, :presence => true, :uniqueness => true
 
-  scope :households_heating_sliders, where(:share_group => 'heating_households')
-  scope :ordered, order('position')
+  scope :households_heating_sliders, -> { where(:share_group => 'heating_households') }
+  scope :ordered, -> { order('position') }
+
   accepts_nested_attributes_for :description, :area_dependency
 
 

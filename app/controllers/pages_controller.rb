@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   include ApplicationHelper
   before_filter :ensure_valid_browser, :except => [:browser_support]
   layout 'static_page', :only => [:about, :units, :browser_support, :bugs,
-    :disclaimer, :privacy_statement, :press_releases, :quality]
+    :disclaimer, :privacy_statement, :quality]
 
   def root
     if request.post?
@@ -57,10 +57,6 @@ protected
   end
 
 public
-
-  def press_releases
-    @releases = PressRelease.order("release_date desc")
-  end
 
   def update_footer
     render :partial => "layouts/etm/footer"

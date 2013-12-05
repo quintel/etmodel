@@ -39,4 +39,6 @@ Etm::Application.configure do
   config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   config.i18n.fallbacks = true
+
+  config.eager_load = true
 end

@@ -61,8 +61,7 @@ group :test do
   gem 'webrat'
   gem 'simplecov'
   gem 'webmock', '~> 1.8.0'
-  gem 'capybara', '~> 2.0.2'
-  gem 'capybara-webkit', '~> 0.14.1'
+  gem 'capybara'
   gem 'launchy'
   gem 'vcr', '~> 2.4.0'
 end

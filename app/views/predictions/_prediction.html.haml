@@ -55,22 +55,3 @@
   - else
     %ul.measure
       %li= t('prediction.no_measures_available')
--#.share
-  -# link_to t('prediction.share_link'), share_prediction_path(@prediction), :target => '_blank'
-  -#%a{:href => "http://twitter.com/share", :class => "twitter-share-button", :'data-count' => "none"} Tweet
-  -#%script{:src => "http://platform.twitter.com/widgets.js"}
-.comments
-  %h3= t('prediction.comments')
-  #comments_container
-    = render @prediction.comments
-
-  = simple_form_for @comment,
-    :url => comment_prediction_path(@prediction),
-    :remote => true do |f|
-    %h4= t('prediction.new_comment')
-    - unless current_user
-      = f.input :email
-      = f.input :name
-    = f.input :body, :label => false
-    = f.submit t('prediction.post_comment')
-

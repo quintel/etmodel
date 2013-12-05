@@ -48,7 +48,6 @@ Etm::Application.routes.draw do
               :constraints,
               :users
 
-    resources :comments, :except => [:new, :create]
     resources :texts, :except => [:show]
     resources :areas, :only => [:index, :show]
 
@@ -67,11 +66,6 @@ Etm::Application.routes.draw do
     resources :gql do
       collection do
         get :search
-      end
-    end
-    resources :press_releases, :except => :show do
-      collection do
-        post :upload
       end
     end
 
@@ -103,7 +97,6 @@ Etm::Application.routes.draw do
 
   resources :predictions, :only => [:index, :show] do
     member do
-      post :comment
       get :share
     end
   end
@@ -117,7 +110,6 @@ Etm::Application.routes.draw do
   get '/feedback'                     => 'pages#feedback', :as => :feedback
   get '/tutorial/(:tab)(/:sidebar)'   => 'pages#tutorial', :as => :tutorial
   get '/prominent_users'              => 'pages#prominent_users'
-  get '/press_releases'               => 'pages#press_releases'
   get '/disclaimer'                   => 'pages#disclaimer'
   get '/privacy_statement'            => 'pages#privacy_statement'
   get '/show_all_countries'           => 'pages#show_all_countries'

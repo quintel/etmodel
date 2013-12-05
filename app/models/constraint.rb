@@ -14,6 +14,7 @@
 # TODO: this should be renamed, DashboardItem would be a better name
 #
 class Constraint < ActiveRecord::Base
+
   include AreaDependent
 
   # Groups names to which a constraint must belong. Used both during
@@ -40,8 +41,6 @@ class Constraint < ActiveRecord::Base
   end
 
   # --------------------------------------------------------------------------
-
-  
 
   validates :group, :presence => true, :inclusion => GROUPS
 

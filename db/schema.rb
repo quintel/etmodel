@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131203125747) do
+ActiveRecord::Schema.define(version: 20131205122848) do
 
   create_table "area_dependencies", force: true do |t|
     t.string  "dependent_on"
@@ -21,21 +21,6 @@ ActiveRecord::Schema.define(version: 20131203125747) do
   end
 
   add_index "area_dependencies", ["dependable_id", "dependable_type"], name: "index_area_dependencies_on_dependable_id_and_dependable_type", using: :btree
-
-  create_table "comments", force: true do |t|
-    t.integer  "commentable_id"
-    t.string   "commentable_type"
-    t.integer  "user_id"
-    t.string   "email"
-    t.string   "name"
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id", using: :btree
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "constraints", force: true do |t|
     t.string   "key"
@@ -175,16 +160,6 @@ ActiveRecord::Schema.define(version: 20131203125747) do
   add_index "predictions", ["area"], name: "index_predictions_on_area", using: :btree
   add_index "predictions", ["input_element_id"], name: "index_predictions_on_input_element_id", using: :btree
   add_index "predictions", ["user_id"], name: "index_predictions_on_user_id", using: :btree
-
-  create_table "press_releases", force: true do |t|
-    t.string   "medium"
-    t.string   "release_type"
-    t.datetime "release_date"
-    t.string   "link"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "title"
-  end
 
   create_table "roles", force: true do |t|
     t.string   "name"

@@ -4,7 +4,6 @@ source 'http://gems.github.com'
 gem 'rails', '~>4.0.1'
 gem 'activerecord-session_store'
 gem 'activeresource'
-gem 'protected_attributes'
 
 gem 'jquery-rails', "~> 2.0.2"
 gem 'haml', '~>4.0'
@@ -13,7 +12,6 @@ gem 'httparty', '~> 0.7.4'
 gem 'tabs_on_rails', '~>2.1.1'
 gem 'kaminari', '~> 0.13.0'
 gem 'simple_form'
-gem 'acts_as_commentable'
 gem 'nokogiri', '~> 1.6'
 gem 'redcarpet'
 

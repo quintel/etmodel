@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(users_parameters)
 
     if @user.save
       redirect_to root_path, :notice => I18n.t("flash.register")
@@ -40,10 +40,18 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    if @user.update_attributes(params[:user])
+    if @user.update_attributes(users_parameters)
       redirect_to edit_user_path(@user), :notice => I18n.t("flash.edit_profile")
     else
       render :edit
     end
+  end
+
+  #######
+  private
+  #######
+
+  def users_parameters
+    params.require(:user).permit(:name, :email, :company_school, :allow_news, :teacher_email, :password, :password_confirmation)
   end
 end

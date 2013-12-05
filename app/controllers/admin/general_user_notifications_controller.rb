@@ -11,7 +11,7 @@ module Admin
     end
 
     def create
-      @notification = GeneralUserNotification.new(params[:general_user_notification])
+      @notification = GeneralUserNotification.new(general_user_notification_parameters)
       if @notification.save
         flash[:notice] = 'Notification was successfully created.'
         redirect_to admin_general_user_notifications_path
@@ -22,7 +22,7 @@ module Admin
 
     def update
       @notification = GeneralUserNotification.find(params[:id])
-      if @notification.update_attributes(params[:general_user_notification])
+      if @notification.update_attributes(general_user_notification_parameters)
         flash[:notice] = 'Notification was successfully updated.'
         redirect_to admin_general_user_notifications_path
       else
@@ -46,10 +46,18 @@ module Admin
     def edit
     end
 
+    #######
     private
+    #######
 
-      def find_notification
-        @notification = GeneralUserNotification.find params[:id]
-      end
+    def general_user_notification_parameters
+      params.require(:general_user_notification).permit(:key,
+                                                        :notification_nl,
+                                                        :notification_en,
+                                                        :active)
+    end
+    def find_notification
+      @notification = GeneralUserNotification.find params[:id]
+    end
   end
 end

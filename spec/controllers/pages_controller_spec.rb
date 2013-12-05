@@ -75,14 +75,6 @@ describe PagesController, :vcr => true do
     end
   end
 
-  describe "#press_releases" do
-    it "should render correctly" do
-      get :press_releases
-      expect(response).to be_success
-      expect(response).to render_template(:press_releases)
-    end
-  end
-
   context "hidden setting pages" do
     [:show_all_countries, :show_flanders].each do |p|
       describe "pages##{p}" do

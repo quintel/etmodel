@@ -1,63 +1,81 @@
 module Admin
-class OutputElementsController < BaseController
-  before_filter :find_element, :only => [:show, :edit, :update, :destroy]
+  class OutputElementsController < BaseController
+    before_filter :find_element, :only => [:show, :edit, :update, :destroy]
 
-  def index
-    t = params[:type]
-    scope = OutputElement.scoped
-    scope = scope.where(:output_element_type_id => t) if t.present?
-    @output_elements = scope.all
-    @types = OutputElementType.all
-  end
-
-  def new
-    @output_element = OutputElement.new
-    @output_element.build_description
-    @output_element.build_area_dependency
-  end
-
-  def create
-    @output_element = OutputElement.new(params[:output_element])
-
-    if @output_element.save
-      flash[:notice] = "OutputElement saved"
-      redirect_to admin_output_elements_url
-    else
-      render :action => 'new'
+    def index
+      t = params[:type]
+      scope = OutputElement.scoped
+      scope = scope.where(:output_element_type_id => t) if t.present?
+      @output_elements = scope.all
+      @types = OutputElementType.all
     end
-  end
 
-  def update
-    if @output_element.update_attributes(params[:output_element])
-      ["nl","en"].each do |l|
-        expire_fragment("slider_#{@output_element.id}_#{l}")
+    def new
+      @output_element = OutputElement.new
+      @output_element.build_description
+      @output_element.build_area_dependency
+    end
+
+    def create
+      @output_element = OutputElement.new(oe_attributes)
+
+      if @output_element.save
+        flash[:notice] = "OutputElement saved"
+        redirect_to admin_output_elements_url
+      else
+        render :action => 'new'
       end
-      flash[:notice] = "OutputElement updated"
-      redirect_to admin_output_elements_url
-    else
-      render :action => 'edit'
     end
-  end
 
-  def destroy
-    if @output_element.destroy
-      flash[:notice] = "Successfully destroyed output_element."
-      redirect_to admin_output_elements_url
-    else
-      flash[:error] = "Error while deleting output_element."
-      redirect_to admin_output_elements_url
+    def update
+      if @output_element.update_attributes(oe_attributes)
+        ["nl","en"].each do |l|
+          expire_fragment("slider_#{@output_element.id}_#{l}")
+        end
+        flash[:notice] = "OutputElement updated"
+        redirect_to admin_output_elements_url
+      else
+        render :action => 'edit'
+      end
     end
-  end
 
-  def show
-  end
+    def destroy
+      if @output_element.destroy
+        flash[:notice] = "Successfully destroyed output_element."
+        redirect_to admin_output_elements_url
+      else
+        flash[:error] = "Error while deleting output_element."
+        redirect_to admin_output_elements_url
+      end
+    end
 
-  def edit
-    @output_element.build_description unless @output_element.description
-    @output_element.build_area_dependency unless @output_element.area_dependency
-  end
+    def show
+    end
 
-  private
+    def edit
+      @output_element.build_description unless @output_element.description
+      @output_element.build_area_dependency unless @output_element.area_dependency
+    end
+
+    #######
+    private
+    #######
+
+    def oe_attributes
+      if params[:output_element]
+        params.require(:output_element).permit(:output_element_type_id,
+                                               :under_construction,
+                                               :unit,
+                                               :percentage,
+                                               :group,
+                                               :show_point_label,
+                                               :growth_chart,
+                                               :key,
+                                               :max_axis_value,
+                                               :min_axis_value,
+                                               :hidden)
+      end
+    end
 
     def find_element
       if params[:version_id]
@@ -69,5 +87,5 @@ class OutputElementsController < BaseController
       end
     end
 
-end
+  end
 end

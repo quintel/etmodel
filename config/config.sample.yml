@@ -1,6 +1,4 @@
 development: &DEV
-    airbrake_api_key: '3ea5a72aad48a32d7bb486bc71ad4fd5'
-
     # base url for api requests. This is used when CORS is enabled
     # (which is the default) or when the rails application runs a
     # local rack-based AJAX proxy
@@ -16,12 +14,6 @@ development: &DEV
 
     # google analytics key
     ga_tracker_code: 123456
-
-    # is this still used?
-    max_scenarios:
-
-    # is this still used?
-    unselectable_text: false
 
     #  standalone instances are those such as the laptop. If set to true
     # the remote links and scripts will be disabled and the videos will

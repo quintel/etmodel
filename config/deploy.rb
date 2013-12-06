@@ -15,25 +15,25 @@ set :local_db_name, 'etmodel_dev'
 
 task :production do
   set :branch, "production"
-  set :domain, "et-model.com"
+  set :domain, from_config(:production, :domain)
   set :rails_env, "production"
   set :application_key, "etmodel"
-  set :db_pass, "HaLjXwRWmu60DK"
+  set :db_pass, from_config(:production, :password)
   set :db_name, application_key
   set :db_user, application_key
-  set :airbrake_key, "aadd4cc40d52dabf842d4dce932e84a3"
+  set :airbrake_key, from_config(:production, :airbrake_key)
   server domain, :web, :app, :db, :primary => true
 end
 
 task :staging do
-  set :domain, "beta.et-model.com"
+  set :domain, from_config(:staging, :domain)
   set :branch, "staging"
   set :rails_env, "staging"
   set :application_key, "etmodel_staging"
-  set :db_pass, "1is5sRJmehiULV"
+  set :db_pass, from_config(:staging, :password)
   set :db_name, application_key
   set :db_user, application_key
-  set :airbrake_key, "a736722b2610573160a2f015f036488b"
+  set :airbrake_key, from_config(:staging, :airbrake_key)
   server domain, :web, :app, :db, :primary => true
 end
 
@@ -46,3 +46,9 @@ def rake_on_current(*tasks)
   end
 end
 
+# Returns the value of *key* from the database.yml for a particular
+# *environment*
+def from_config(environment, key)
+  path = File.expand_path('../database.yml', __FILE__)
+  YAML.load_file(path)[environment.to_s][key.to_s]
+end

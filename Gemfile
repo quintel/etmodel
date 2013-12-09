@@ -78,7 +78,7 @@ gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
 gem 'yui-compressor', github: 'sstephenson/ruby-yui-compressor'
-gem 'compass-rails', '~> 2.0.alpha.0'
+gem 'compass-rails'
 gem 'oily_png' # Faster sprite compilation.
 
 gem 'capistrano', '~> 2'

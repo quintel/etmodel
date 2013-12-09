@@ -37,6 +37,13 @@ The ETM pro is released under the [MIT License](LICENSE.txt).
 * Fire up your local server with `rails server -p3000`
 * Got to [localhost:3000][http://localhost:3000] and you should see the ETM pro!
 
+### Admin access
+
+If you want to get admin access to your own page, the easiest way to do so
+is to create an Admin User through the console and follow instructions:
+
+    rake db:create_admin
+
 ## Bugs and feature requests
 
 If you encounter a bug or if you have a feature request, you can either let us know by creating an [Issue](issues/new) *or* you can try to fix it yourself and create a [pull request](pulls/new).

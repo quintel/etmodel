@@ -1,31 +1,42 @@
 development:
-    adapter: mysql2
-    database: etmodel_dev
-    host: 127.0.0.1
-    username: root
-    password:
-    encoding: utf8
-    timeout: 5000
+  adapter: mysql2
+  database: etmodel_dev
+  host: 127.0.0.1
+  username: root
+  password:
+  encoding: utf8
+  timeout: 5000
 
 test:
-    adapter: mysql2
-    database: etmodel_test
-    host: 127.0.0.1
-    username: root
-    password:
-    encoding: utf8
-    timeout: 5000
-    pool: 5
+  adapter: mysql2
+  database: etmodel_test
+  host: 127.0.0.1
+  username: root
+  password:
+  encoding: utf8
+  timeout: 5000
+  pool: 5
 
-production: &PRODUCTION
-    adapter: mysql2
-    database: etmodel_prod
-    host: 127.0.0.1
-    username: root
-    password:
-    encoding: utf8
-    timeout: 5000
-    pool: 5
+production:
+  domain: FILL_ME_IN
+  adapter: mysql2
+  database: etmodel_prod
+  host: FILL_ME_IN
+  username: FILL_ME_IN
+  password: FILL_ME_IN
+  airbrake_key: FILL_ME_IN
+  encoding: utf8
+  timeout: 5000
+  pool: 5
 
 staging:
-    <<: *PRODUCTION
+  domain: FILL_ME_IN
+  adapter: mysql2
+  database: etmodel_staging
+  host: FILL_ME_IN
+  username: FILL_ME_IN
+  password: FILL_ME_IN
+  airbrake_key: FILL_ME_IN
+  encoding: utf8
+  timeout: 5000
+  pool: 5

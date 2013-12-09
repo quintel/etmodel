@@ -48,16 +48,24 @@ module Admin
       @sidebar_item.build_area_dependency unless @sidebar_item.area_dependency
     end
 
+    #######
     private
+    #######
 
-      def find_model
-        if params[:version_id]
-          @version = Version.find(params[:version_id])
-          @sidebar_item = @version.reify
-          flash[:notice] = "Revision"
-        else
-          @sidebar_item = SidebarItem.find(params[:id])
-        end
+    def sidebar_item_parameters
+      params(:sidebar_item).require(:key, :section, :percentage_bar_query,
+                                    :nl_vimeo_id, :en_vimeo_id, :tab_id,
+                                    :position, :parent_id)
+    end
+
+    def find_model
+      if params[:version_id]
+        @version = Version.find(params[:version_id])
+        @sidebar_item = @version.reify
+        flash[:notice] = "Revision"
+      else
+        @sidebar_item = SidebarItem.find(params[:id])
       end
     end
+  end
 end

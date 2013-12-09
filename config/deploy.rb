@@ -46,9 +46,22 @@ def rake_on_current(*tasks)
   end
 end
 
-# Returns the value of *key* from the database.yml for a particular
-# *environment*
+# Returns the value of +key+ from the database.yml for a particular
+# +environment+
 def from_config(environment, key)
-  path = File.expand_path('../database.yml', __FILE__)
-  YAML.load_file(path)[environment.to_s][key.to_s]
+  ENV[key.to_s.upcase] ||
+    deploy_config(environment)[key.to_s]
+end
+
+# Loads the deployment configuration for the given +environment+.
+def deploy_config(environment)
+  @deploy_config ||= begin
+    config = YAML.load_file(File.expand_path('../database.yml', __FILE__))
+
+    unless config.key?(environment.to_s)
+      raise "No deploy config found for the #{ environment } environment!"
+    end
+
+    config[environment.to_s]
+  end
 end

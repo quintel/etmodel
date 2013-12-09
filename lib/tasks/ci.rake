@@ -10,7 +10,7 @@ namespace :ci do
         raise "config/#{ file }.yml already exists. Not continuing."
       end
 
-      config = YAML.load_file("config/{ file }.sample.yml")
+      config = YAML.load_file("config/#{ file }.sample.yml")
       File.write("config/#{ file }.yml", YAML.dump(config))
     end
   end

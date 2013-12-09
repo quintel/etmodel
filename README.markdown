@@ -40,7 +40,7 @@ The ETM pro is released under the [MIT License](LICENSE.txt).
 * Create local database with `rake db:create`
 * Fill the database with `rake db:reset`
 * Fire up your local server with `rails server -p3000`
-* Got to [localhost:3000][http://localhost:3000] and you should see the ETM pro!
+* Got to [localhost:3000](http://localhost:3000) and you should see the ETM pro!
 
 ### Admin access
 

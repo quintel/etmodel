@@ -99,8 +99,8 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    compass-rails (2.0.alpha.0)
-      compass (>= 0.12.2, < 0.14)
+    compass-rails (1.1.2)
+      compass (>= 0.12.2)
     crack (0.1.8)
     dalli (2.6.4)
     database_cleaner (1.2.0)
@@ -303,7 +303,7 @@ DEPENDENCIES
   capistrano (~> 2)
   capybara
   coffee-rails
-  compass-rails (~> 2.0.alpha.0)
+  compass-rails
   dalli
   database_cleaner
   debugger (~> 1.6.1)

@@ -48,5 +48,5 @@ is to create an Admin User through the console and follow instructions:
 ## Bugs and feature requests
 
 If you encounter a bug or if you have a feature request, you can either let us
-know by creating an [Issue](github/quintel/etmodel/issues) *or* you can try to
-fix it yourself and create a [pull request](github.com/quintel/pulls).
+know by creating an [Issue](http://github/quintel/etmodel/issues) *or* you can try to
+fix it yourself and create a [pull request](http://github.com/quintel/pulls).

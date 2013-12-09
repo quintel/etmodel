@@ -26,10 +26,11 @@ The ETM pro is released under the [MIT License](LICENSE.txt).
 * Install Ruby 1.9.3 or higher.
 * Pull this repository with `git clone git@github.com:quintel/etmodel.git`
 * Create your personal configuration files from the samples with
-
-      cp -vn config/database.sample.yml config/database.yml
-      cp -vn config/config.sample.yml config/config.yml
-      cp -vn config/email.sample.yml config/email.yml
+  ```
+    cp -vn config/database.sample.yml config/database.yml
+    cp -vn config/config.sample.yml config/config.yml
+    cp -vn config/email.sample.yml config/email.yml
+  ```
 
 * Run `bundle install` to install all the dependencies
 * Create local database with `rake db:create`

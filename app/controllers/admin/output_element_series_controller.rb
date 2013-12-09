@@ -77,7 +77,10 @@ module Admin
                                                      :show_at_first,
                                                      :is_target_line,
                                                      :target_line_position,
-                                                     :gquery)
+                                                     :gquery,
+                                                     :output_element_id,
+                                                     :area_dependency_attributes,
+                                                     :description_attributes)
       end
     end
 

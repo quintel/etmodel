@@ -5,11 +5,13 @@ namespace :ci do
 
   task :setup do
     # Config.
-    if File.exists?('config/config.yml')
-      raise 'config/config.yml already exists. Not continuing.'
-    end
+    %w[config email].each do |file|
+      if File.exists?("config/#{ file }.yml")
+        raise "config/#{ file }.yml already exists. Not continuing."
+      end
 
-    config = YAML.load_file('config/config.sample.yml')
-    File.write('config/config.yml', YAML.dump(config))
+      config = YAML.load_file("config/{ file }.sample.yml")
+      File.write("config/#{ file }.yml", YAML.dump(config))
+    end
   end
 end

@@ -3,7 +3,7 @@
     - if charts.any?
       %h1= t("chart_group.#{group.downcase}")
       - charts.each do |chart|
-        %div.pick_chart{:data => { :chart_id => chart.id, :chart_holder => @chart_holder}}
+        %div.pick_chart{'data-chart_id' => chart.id, 'data-chart_holder' => @chart_holder}
           %a
             = image_tag "output_elements/#{chart.icon}", :size => "50x30"
             %h2= t("output_elements.#{chart.key}").html_safe

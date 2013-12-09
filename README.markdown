@@ -21,9 +21,13 @@ The ETM pro is released under the [MIT License](LICENSE.txt).
 * **staging**: Tracks [the ETM beta server](http://beta.pro.et-model.com)
 * **production**: Tracks [the ETM production server](http://pro.et-model.com)
 
+## Dependencies
+
+* Ruby 1.9.3 or Ruby 2.0
+* Mysql database server
+
 ## Installing
 
-* Install Ruby 1.9.3 or higher.
 * Pull this repository with `git clone git@github.com:quintel/etmodel.git`
 * Create your personal configuration files from the samples with
   ```

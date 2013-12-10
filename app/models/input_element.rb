@@ -20,7 +20,6 @@
 
 class InputElement < ActiveRecord::Base
   include AreaDependent
-  
 
   has_one :description, :as => :describable, :dependent => :destroy
   has_one :area_dependency, :as => :dependable, :dependent => :destroy

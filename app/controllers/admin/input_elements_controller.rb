@@ -66,7 +66,9 @@ module Admin
     #######
 
     def input_element_parameters
-      params.require(:input_element).permit!
+      if params[:input_element]
+        params.require(:input_element).permit!
+      end
     end
 
     def find_model

@@ -63,17 +63,7 @@ module Admin
 
     def oe_attributes
       if params[:output_element]
-        params.require(:output_element).permit(:output_element_type_id,
-                                               :under_construction,
-                                               :unit,
-                                               :percentage,
-                                               :group,
-                                               :show_point_label,
-                                               :growth_chart,
-                                               :key,
-                                               :max_axis_value,
-                                               :min_axis_value,
-                                               :hidden)
+        params.require(:output_element).permit!
       end
     end
 

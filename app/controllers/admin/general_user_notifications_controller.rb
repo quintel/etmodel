@@ -51,10 +51,8 @@ module Admin
     #######
 
     def general_user_notification_parameters
-      params.require(:general_user_notification).permit(:key,
-                                                        :notification_nl,
-                                                        :notification_en,
-                                                        :active)
+      params.require(:general_user_notification).permit!
+
     end
     def find_notification
       @notification = GeneralUserNotification.find params[:id]

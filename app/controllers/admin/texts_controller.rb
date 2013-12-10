@@ -40,13 +40,7 @@ module Admin
 
     def text_parameters
       if params[:text]
-        params.require(:text).permit(:key,
-                                     :content_en,
-                                     :content_nl,
-                                     :title_en,
-                                     :title_nl,
-                                     :short_content_en,
-                                     :short_content_nl)
+        params.require(:text).permit!
       end
     end
 

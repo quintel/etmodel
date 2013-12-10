@@ -53,15 +53,7 @@ module Admin
 
     def slide_parameters
       if params[:slide]
-        params.require(:slide).permit(:image,
-                                      :general_sub_header,
-                                      :group_sub_header,
-                                      :subheader_image,
-                                      :key,
-                                      :position,
-                                      :sidebar_item_id,
-                                      :output_element_id,
-                                      :alt_output_element_id)
+        params.require(:slide).permit!
       end
     end
 

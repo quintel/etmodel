@@ -1,0 +1,77 @@
+#!/usr/bin/env ruby
+
+require 'colored'
+
+PATH = File.expand_path('..',  __FILE__)
+
+banner = <<BANNER
+
+This Script will reset all the branches for etmodel, etengine and etsource
+
+If you want to checkout all the master branches for these repositories:
+
+  $ script/reset master
+
+You can also choose `production` or `staging`
+
+  $ script/reset staging
+
+If you want to checkout a special feature branch for etmodel but stick with
+the master branch for etengine, please run:
+
+  $ script/reset my-special-feature master
+
+You can also supply a third argument that specifies the branch for ETSource:
+
+  $ script/reset my-special-feature master production
+
+BANNER
+
+def run_command(command)
+  puts "executing `#{ command }`".yellow
+  `#{ command } > /dev/null`
+  raise("#{ command } failed") if $? != 0
+end
+
+branches = Hash.new
+branches[:etmodel]  = ARGV[0] || ( $stderr.puts(banner) ; exit )
+branches[:etengine] = ARGV[1] || branches[:etmodel]
+branches[:etsource] = ARGV[2] || branches[:etengine]
+
+puts "Script/reset will pull the latest repositories for you:"
+
+branches.each do |repo, branch|
+  puts "* #{ repo } -> #{ branch }"
+end
+
+puts "\nAnd pull the latest databases from staging, reset your server, flush"
+puts "your cache."
+
+puts "\nAre you sure you want to do this? (Y)es or (N)o?"
+
+unless STDIN.gets.chomp().match /^[yY]/
+  puts "Bye bye."
+  exit
+end
+
+branches.each do |repo, branch|
+
+  puts "\n#{ repo.upcase }\n#{ '-' * repo.size }"
+  Dir.chdir("../#{ repo }")
+
+  run_command "git up"
+  run_command "git checkout #{ branch }"
+
+  unless repo == :etsource
+    run_command "bundle install"
+    run_command "cap staging db2local"
+    run_command "touch tmp/restart.txt"
+  end
+
+end
+
+puts "\nGENERAL\n--------"
+
+run_command "echo flush_all | nc localhost #{ ENV['BOXEN_MEMCACHED_PORT'] || 11211 }"
+
+puts "\nAll done!".green

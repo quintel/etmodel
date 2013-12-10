@@ -54,7 +54,7 @@ module Admin
     end
 
     def tab_parameters
-      params.require(:tab).permit(:key, :nl_vimeo_id, :en_vimeo_id, :position)
+      params.require(:tab).permit!
     end
   end
 end

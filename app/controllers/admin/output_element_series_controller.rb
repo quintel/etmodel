@@ -70,17 +70,7 @@ module Admin
 
     def oes_parameters
       if params[:output_element_serie]
-        params.require(:output_element_serie).permit(:label,
-                                                     :color,
-                                                     :order_by,
-                                                     :group,
-                                                     :show_at_first,
-                                                     :is_target_line,
-                                                     :target_line_position,
-                                                     :gquery,
-                                                     :output_element_id,
-                                                     :area_dependency_attributes,
-                                                     :description_attributes)
+        params.require(:output_element_serie).permit!
       end
     end
 

@@ -65,12 +65,7 @@ module Admin
     end
 
     def constraint_parameters
-      params.require(:constraint).permit(:key,
-                                         :group,
-                                         :gquery_key,
-                                         :disabled,
-                                         :description_attributes,
-                                         :area_dependency_attributes)
+      params.require(:constraint).permit!
     end
   end
 end

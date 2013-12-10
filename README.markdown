@@ -1,5 +1,7 @@
 # The Energy Transition Model (ETM) Professional
 
+![](http://f.cl.ly/items/291h3S0g3E2U3L1T0Z2H/Screen%20Shot%202013-12-10%20at%2013.38.35.png)
+
 This is the source code of the [ETM Pro](http://pro.et-mode.com):
 an online web app that let you create a future energy scenario for various countries.
 This software is [Open Source](LICENSE.txt), so you can fork it and alter at your will.

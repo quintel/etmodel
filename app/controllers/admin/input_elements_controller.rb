@@ -19,7 +19,7 @@ module Admin
     end
 
     def create
-      @input_element = InputElement.new(params[:input_element])
+      @input_element = InputElement.new(input_element_parameters)
 
       if @input_element.save
         flash[:notice] = "InputElement saved"
@@ -32,7 +32,7 @@ module Admin
     def update
       @input_element = InputElement.find(params[:id])
 
-      if @input_element.update_attributes(params[:input_element])
+      if @input_element.update_attributes(input_element_parameters)
         ["nl","en"].each do |l|
           expire_fragment("slider_#{@input_element.id}_#{l}")
         end
@@ -61,16 +61,23 @@ module Admin
       @input_element.build_area_dependency unless @input_element.area_dependency
     end
 
+    #######
     private
+    #######
 
-      def find_model
-        if params[:version_id]
-          @version = Version.find(params[:version_id])
-          @input_element = @version.reify
-          flash[:notice] = "Revision"
-        else
-          @input_element = InputElement.find(params[:id])
-        end
+    def input_element_parameters
+      params.require(:input_element).permit!
+    end
+
+    def find_model
+      if params[:version_id]
+        @version = Version.find(params[:version_id])
+        @input_element = @version.reify
+        flash[:notice] = "Revision"
+      else
+        @input_element = InputElement.find(params[:id])
       end
+    end
+
   end
 end

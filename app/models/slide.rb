@@ -19,8 +19,6 @@
 class Slide < ActiveRecord::Base
   include AreaDependent
 
-  
-
   belongs_to :sidebar_item
   has_one :description, :as => :describable
   has_many :sliders, :dependent => :nullify, :class_name => 'InputElement'

@@ -53,9 +53,7 @@ module Admin
     #######
 
     def sidebar_item_parameters
-      params(:sidebar_item).require(:key, :section, :percentage_bar_query,
-                                    :nl_vimeo_id, :en_vimeo_id, :tab_id,
-                                    :position, :parent_id)
+      params.require(:sidebar_item).permit!
     end
 
     def find_model

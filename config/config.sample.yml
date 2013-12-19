@@ -31,6 +31,10 @@ development: &DEV
     # optional URL overrides for the splash screen links
     # mixer_url: http://mixer.et-model.com
     # etflex_url: http://light.et-model.com
+
+    # Optionally send error messages to the Airbrake service by providing your
+    # API key:
+    airbrake_api_key: false
 production: &PRODUCTION
     <<: *DEV
 test:

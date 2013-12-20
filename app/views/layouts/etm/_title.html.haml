@@ -2,14 +2,14 @@
 
 .buttons
   %a.button.fancybox{ href: @interface.tab_info_path }
-    %span.icon-info-sign
+    %span.fa.fa-info
     = raw t("header.information")
 
   - if @interface.current_tutorial_movie
     %a.button.fancybox{:href => @interface.tutorial_movie_path, :title => "Tutorial"}<>
-      %span.icon-facetime-video
+      %span.fa.fa-video-camera
       Tutorial
 
   %a.button.add_chart{:href => output_elements_path}
-    %span.icon-signal
+    %span.fa.fa-signal
     = t 'header.add_chart'

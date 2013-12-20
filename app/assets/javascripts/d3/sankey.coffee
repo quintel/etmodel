@@ -491,9 +491,9 @@ D3.sankey =
         .attr("data-tooltip", (d) =>
           h = ""
           for l in d.right_links
-            h += "<span class='icon-arrow-right'></span> #{I18n.t("output_elements.sankey_labels.#{l.right.label()}")}: #{@value_formatter l.value()}<br/>"
+            h += "<span class='fa fa-arrow-right'></span> #{I18n.t("output_elements.sankey_labels.#{l.right.label()}")}: #{@value_formatter l.value()}<br/>"
           for l in d.left_links
-            h += "<span class='icon-arrow-left'></span> #{I18n.t("output_elements.sankey_labels.#{l.left.label()}")}: #{@value_formatter l.value()}<br/>"
+            h += "<span class='fa fa-arrow-left'></span> #{I18n.t("output_elements.sankey_labels.#{l.left.label()}")}: #{@value_formatter l.value()}<br/>"
           h
           )
         .attr("data-tooltip-title", (d) =>

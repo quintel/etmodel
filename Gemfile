@@ -14,6 +14,7 @@ gem 'kaminari', '~> 0.13.0'
 gem 'simple_form'
 gem 'nokogiri', '~> 1.6'
 gem 'redcarpet'
+gem 'font-awesome-rails'
 
 # javascript
 # Change back to RubyGems once Invalid Byte Sequence error is fixed:

@@ -49,7 +49,7 @@
             %span.right_align
               - if current_user.try(:admin?)
                 = link_to '', edit_admin_prediction_path(p),
-                  :target => '_new', :class => 'edit icon-pencil'
+                  :target => '_new', :class => 'edit fa fa-pencil'
               #{describe_prediction(p)}
             .colour{:style => "border-bottom: solid 4px #{cycle(*colours)}"}
 

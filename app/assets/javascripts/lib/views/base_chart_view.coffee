@@ -58,9 +58,9 @@ class @BaseChartView extends Backbone.View
   update_lock_icon: =>
     icon = @$el.find('a.lock_chart')
     if @model.get 'locked'
-      icon.removeClass('icon-unlock').addClass('icon-lock')
+      icon.removeClass('fa fa-unlock').addClass('fa fa-lock')
     else
-      icon.removeClass('icon-lock').addClass('icon-unlock')
+      icon.removeClass('fa fa-lock').addClass('fa fa-unlock')
 
   toggle_format: =>
     tbl = @model.get 'as_table'

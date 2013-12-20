@@ -121,6 +121,8 @@ GEM
     factory_girl_rails (4.1.0)
       factory_girl (~> 4.1.0)
       railties (>= 3.0.0)
+    font-awesome-rails (4.0.3.0)
+      railties (>= 3.2, < 5.0)
     fssm (0.2.10)
     haml (4.0.4)
       tilt
@@ -309,6 +311,7 @@ DEPENDENCIES
   debugger (~> 1.6.1)
   dynamic_form
   factory_girl_rails (~> 4.1.0)
+  font-awesome-rails
   haml (~> 4.0)
   httparty (~> 0.7.4)
   i18n-js!

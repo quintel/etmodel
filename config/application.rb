@@ -51,6 +51,10 @@ module Etm
     config.assets.enabled = true
     config.assets.precompile += ['etm.js', 'refreshed.js', 'refreshed.css', 'admin.css', 'ie.css']
     config.assets.precompile += ['backcasting.js']
+
+    # Compile images in vendor/assets/images
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
     config.assets.css_compressor = :yui
     config.assets.js_compressor = :uglifier
     config.assets.compress = true

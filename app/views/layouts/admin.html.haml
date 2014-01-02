@@ -10,8 +10,8 @@
     #wrapper
       %header#top
         = render "layouts/etm/header"
-        - if live_server?
-          .live_server_notice This is the production server!
+      - if live_server?
+        .live_server_notice== This is the #{ live_server_type } server!
       %nav#admin
         = tabs_tag do |tab|
           = tab.main                   'Main', admin_root_path

@@ -46,6 +46,14 @@ module ApplicationHelper
     APP_CONFIG[:live_server]
   end
 
+  def live_server_type
+    if APP_CONFIG[:live_server].is_a?(String)
+      APP_CONFIG[:live_server]
+    else
+      'production'
+    end
+  end
+
   def to_yml_syntax(title)
     title.parameterize.underscore.to_sym
   end

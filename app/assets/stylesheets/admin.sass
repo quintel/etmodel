@@ -1,7 +1,17 @@
+@import compass/css3/box-shadow
+@import compass/css3/images
+
 body#admin_section
   .live_server_notice
-    background: red
+    @include background(linear-gradient(top, #b34128, #901e0f))
+    @include box-shadow(0 1px 2px rgba(10, 10, 10, 0.25), inset 0 1px 1px rgba(0, 0, 0, 0.1))
+    border-bottom: 1px solid #6b1f12
+    text-shadow: 0 1px 1px #6b1f12
+    padding: 5px 0
     text-align: center
+    text-transform: uppercase
+    font-weight: bold
+    font-size: 11px
     color: white
 
   table.admin

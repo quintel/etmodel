@@ -15,7 +15,7 @@ gem 'simple_form'
 gem 'nokogiri', '~> 1.6'
 gem 'redcarpet'
 gem 'font-awesome-rails'
-gem 'non-stupid-digest-assets'
+gem 'non-stupid-digest-assets', github: 'wtfiwtz/non-stupid-digest-assets', ref: '9c8f1a94'
 
 # javascript
 # Change back to RubyGems once Invalid Byte Sequence error is fixed:

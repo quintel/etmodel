@@ -18,7 +18,7 @@ module Admin
     end
 
     def create
-      @sidebar_item = SidebarItem.new(params[:sidebar_item])
+      @sidebar_item = SidebarItem.new(sidebar_item_parameters)
       if @sidebar_item.save
         flash[:notice] = "category saved"
         redirect_to admin_sidebar_items_url
@@ -29,7 +29,7 @@ module Admin
 
     def update
       @sidebar_item = SidebarItem.find(params[:id])
-      if @sidebar_item.update_attributes(params[:sidebar_item])
+      if @sidebar_item.update_attributes(sidebar_item_parameters)
         flash[:notice] = "category updated"
         redirect_to admin_sidebar_items_url
       else

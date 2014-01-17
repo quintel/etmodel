@@ -81,7 +81,7 @@ class @ConstraintView extends Backbone.View
       when 'targets_met'
         null
       when 'loss_of_load'
-        Metric.ratio_as_percentage(result, false, 1)
+        "#{Metric.round_number(result, 0)} #{I18n.t('units.hours')}"
       when 'renewable_electricity_percentage'
         Metric.ratio_as_percentage(result)
       when 'score'

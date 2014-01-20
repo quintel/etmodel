@@ -40,7 +40,13 @@
           <%% _.each( items, function(data, attr) { %>
             <tr>
               <td><%%= data.desc %></td>
-              <td><%%= Metric.converter_detail_format(data.future, data.unit)%></td>
+              <td>
+                <%% if (data.future && _.isString(data.future)) { %>
+                  <%%= data.future %>
+                <%% } else { %>
+                  <%%= Metric.converter_detail_format(data.future, data.unit) %>
+                <%% } %>
+              </td>
               <td><%%= data.unit %></td>
             </tr>
           <%% }) %>

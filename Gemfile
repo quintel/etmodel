@@ -8,7 +8,7 @@ gem 'activeresource'
 gem 'jquery-rails', "~> 2.0.2"
 gem 'haml', '~>4.0'
 gem 'authlogic'
-gem 'httparty', '~> 0.7.4'
+gem 'httparty'
 gem 'tabs_on_rails', '~>2.1.1'
 gem 'kaminari', '~> 0.13.0'
 gem 'simple_form'

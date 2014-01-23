@@ -2,7 +2,7 @@ class Api::Scenario < ActiveResource::Base
   self.site = "#{APP_CONFIG[:api_url]}/api/v3"
 
   def self.batch_load(ids)
-    scenarios = JSON.parse(HTTParty.get("#{self.site}/scenarios/#{ids.join(',')}/batch").body)
+    scenarios = HTTParty.get("#{self.site}/scenarios/#{ids.join(',')}/batch")
     scenarios.map do |scenario|
       new(scenario)
     end

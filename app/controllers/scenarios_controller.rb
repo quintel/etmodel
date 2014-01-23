@@ -116,8 +116,16 @@ class ScenariosController < ApplicationController
     if @scenario.nil?
       redirect_to play_path, :notice => "Scenario not found" and return
     end
+
     session[:dashboard] = nil
+
+    new_scenario = Api::Scenario.create(scenario: { scenario: {
+      scenario_id: @scenario.id
+    }})
+
     Current.setting = Setting.load_from_scenario(@scenario)
+    Current.setting.api_session_id = new_scenario.id
+
     redirect_to play_path
   end
 

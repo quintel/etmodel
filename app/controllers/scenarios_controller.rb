@@ -88,13 +88,14 @@ class ScenariosController < ApplicationController
       raise NoScenarioIdError.new(self)
     end
 
-    attrs = params[:saved_scenario].merge(
+    attrs = { scenario: params[:saved_scenario].merge(
       :protected => true,
       :source => 'ETM',
       :scenario_id => scenario_id
-    )
+    ) }
+
     begin
-      @scenario = Api::Scenario.create(attrs)
+      @scenario = Api::Scenario.create(scenario: attrs)
       @saved_scenario = current_user.saved_scenarios.new
 
       @saved_scenario.scenario_id = @scenario.id
@@ -115,8 +116,16 @@ class ScenariosController < ApplicationController
     if @scenario.nil?
       redirect_to play_path, :notice => "Scenario not found" and return
     end
+
     session[:dashboard] = nil
+
+    new_scenario = Api::Scenario.create(scenario: { scenario: {
+      scenario_id: @scenario.id
+    }})
+
     Current.setting = Setting.load_from_scenario(@scenario)
+    Current.setting.api_session_id = new_scenario.id
+
     redirect_to play_path
   end
 

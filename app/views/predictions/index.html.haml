@@ -22,11 +22,16 @@
       available: #{has_active_scenario?}
     }
   = javascript_include_tag 'backcasting'
-.prediction
-  %h1
-    = (t('prediction.page_title.prefix') + "&nbsp;" + t('prediction.page_title.' + @input_element.key)).html_safe
-  .help_link
-    = link_to t('prediction.help'), "http://wiki.quintel.nl/index.php/Backcasting", :target=>"_blank"
+
+/ The below is commented out because there is currently no need to refer to the Backcasting page.
+/ In case it is used in later versions, this can easily be reverted.
+/
+/ .prediction
+/   %h1
+/     = (t('prediction.page_title.prefix') + "&nbsp;" + t('prediction.page_title.' + @input_element.key)).html_safe
+/   .help_link
+/     = link_to t('prediction.help'), "http://wiki.quintel.nl/index.php/Backcasting", :target=>"_blank"
+
 
   .upper_block
     .available_predictions

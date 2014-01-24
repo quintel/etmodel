@@ -89,9 +89,10 @@ Etm::Application.routes.draw do
 
   resources :output_elements, :only => [:index, :show] do
     collection do
-      get :visible
-      get :invisible
+      get 'visible/:id',   action: :visible
+      get 'invisible/:id', action: :invisible
     end
+
     get :zoom, :on => :member
   end
 

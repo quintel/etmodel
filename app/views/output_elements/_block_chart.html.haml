@@ -24,11 +24,11 @@
       - blocks.each do |block|
         - show_or_not = session["block_#{block.id}"]
         - show_or_not ||= block.show_at_first ? 'visible' : 'invisible'
-        .block_container{:class => show_or_not, :id => "block_container_#{block.id}", :data => {:block_id => block.id}}
+        .block_container{:class => show_or_not, :id => "block_container_#{block.id}", 'data-block_id' => block.id}
           .block{:id => "block_#{block.id}",
-            :data => {:title => t("output_element_series.#{block.label}"),
-              :description => block.description.short_content,
-              :description_id => block.description.andand.id}}
+              'data-title' => t("output_element_series.#{block.label}"),
+              'data-description' => block.description.short_content,
+              'data-description_id' => block.description.andand.id}
             .header{:class => block.group.downcase}= t("output_element_series.#{block.label}")
           .balloon-tip
 
@@ -42,7 +42,7 @@
             - show_or_not = session["block_#{b.id}"]
             - show_or_not ||= b.show_at_first ? 'visible' : 'invisible'
 
-            %a.show_hide_block{:href=>'#', :class => show_or_not, :id => "show_hide_block_#{b.id}", :data => {:block_id => b.id}}
+            %a.show_hide_block{:href=>'#', :class => show_or_not, :id => "show_hide_block_#{b.id}", 'data-block_id' => b.id}
               = t("output_element_series.#{b.label}")
       = link_to t("output_element_series.groups.#{group}"), "#"
 

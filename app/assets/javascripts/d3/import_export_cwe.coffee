@@ -17,7 +17,7 @@ D3.import_export_cwe =
       result.push(d) for d in data when d.y <= max
       return result
 
-    formatDay = (d,i) -> i + 8
+    formatDay = (d,i) -> if i <= 13 then i + 8 else ""
 
     draw: =>
       # Set maximum x and y values
@@ -78,6 +78,8 @@ D3.import_export_cwe =
       yAxisGroup = @svg.append("g")
                        .attr("class", "y_axis")
                        .call(yAxis)
+
+      xAxisGroup.selectAll('text').attr('transform', 'translate(20,0)')
 
       xAxisLabel = xAxisGroup.append("text")
                              .attr("class","label")

@@ -102,8 +102,8 @@ Etm::Application.routes.draw do
     end
   end
 
-  get '/ete(/*url)' => 'api_proxy#default'
-  get '/ete_proxy(/*url)' => 'api_proxy#default'
+  match '/ete(/*url)',       to: 'api_proxy#default', via: :all
+  match '/ete_proxy(/*url)', to: 'api_proxy#default', via: :all
 
   get '/select_movie/:id'             => 'pages#select_movie', :defaults => {:format => :js}
   get '/units'                        => 'pages#units'

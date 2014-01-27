@@ -1,5 +1,5 @@
 module Browser
-  ALLOWED_BROWSERS = %w[firefox ie10 ie9 ie8 ie7 chrome safari]
+  ALLOWED_BROWSERS = %w[firefox ie11 ie10 ie9 ie8 ie7 chrome safari]
 
   def user_agent
     user_agent = request.env['HTTP_USER_AGENT']
@@ -7,6 +7,7 @@ module Browser
     return 'chrome' if user_agent =~ /Chrome/
     return 'safari' if user_agent =~ /Safari/
     return 'opera' if user_agent =~ /Opera/
+    return 'ie11' if user_agent =~ /MSIE 11/
     return 'ie10' if user_agent =~ /MSIE 10/
     return 'ie9' if user_agent =~ /MSIE 9/
     return 'ie8' if user_agent =~ /MSIE 8/

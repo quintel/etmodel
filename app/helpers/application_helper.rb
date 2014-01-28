@@ -76,7 +76,7 @@ module ApplicationHelper
     links.push text: t("header.quality_control") ,    url: "http://#{ "beta." if is_beta? }#{ domain }/quality_control?locale=#{ I18n.locale }", target: "_new"
     links.push text: t("header.units_used") ,         url: "http://#{ "beta." if is_beta? }#{ domain }/units?locale=#{ I18n.locale }", target: "_new"
     links.push text: t("header.privacy_statement") ,  url: "http://#{ "beta." if is_beta? }#{ domain }/privacy?locale=#{ I18n.locale }", target: "_new"
-    links.push text: t("header.disclaimer") ,         url: "http://#{ "beta." if is_beta? }#{ domain }/terms?locale=#{ I18n.locale }", target: "_new"
+    links.push text: t("header.disclaimer") ,         url: "http://#{ "beta." if is_beta? }#{ domain }/disclaimer?locale=#{ I18n.locale }", target: "_new"
     links.push text: t("header.bugs") ,               url: "http://#{ "beta." if is_beta? }#{ domain }/known_issues?locale=#{ I18n.locale }", target: "_new"
     unless APP_CONFIG[:standalone]
       links.push text: t("header.documentation") ,                       url: "https://github.com/quintel/documentation", target: "_blank"

@@ -1,7 +1,6 @@
 #notice_bar
   - GeneralUserNotification.active.each do |n|
     .general_notice= raw n.text
-  .fce_notice{:class => Current.setting.use_fce ? nil : 'hidden'}= raw t("fce.notice")
 #header_inside{:style => "position: relative;"}
   %ul.sub-nav
     %li.expandable

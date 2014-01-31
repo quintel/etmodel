@@ -16,7 +16,6 @@ class @Setting extends Backbone.Model
     # the FCE warning to toggle on.
     use_fce = false unless use_fce is true
     $('#settings_use_fce').attr('checked', use_fce)
-    $('.fce_notice').toggle(use_fce)
 
     @save use_fce: use_fce
     App.call_api()

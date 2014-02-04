@@ -85,13 +85,26 @@ class @BaseChartView extends Backbone.View
   #
   render_as_table: =>
     @clear_container()
+
     table_data =
       start_year: App.settings.get('start_year')
       end_year: App.settings.get('end_year')
       series: @model.formatted_series_hash()
+      totals: _.map(@column_totals(), @model.format_value)
+
     tmpl = $("#chart-table-template").html()
     table = _.template(tmpl, table_data)
     @container_node().removeClass('chart_canvas').addClass('table_canvas').html(table)
+
+  column_totals: ->
+    present = 0.0
+    future  = 0.0
+
+    _(@model.results(true)).each (row) ->
+      present += row[0][1]
+      future  += row[1][1]
+
+    [ present, future ]
 
   # D3 charts override this method
   supported_in_current_browser: -> true

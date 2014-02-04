@@ -155,19 +155,23 @@ class @Chart extends Backbone.Model
 
     # the series array is wrapped in underscore to fix an IE8 bug
     items = _(series).map (s) =>
-      type = @get 'type'
+      type  = @get 'type'
       label = s.get 'label'
+
       if (type == 'mekko') || (type == 'horizontal_stacked_bar')
         label = "#{label} - #{s.get('group')}"
-      unit = @get 'unit'
+
       out =
         label: label
-        present_value: Metric.autoscale_value(s.safe_present_value(), unit, 2)
-        future_value:  Metric.autoscale_value(s.safe_future_value(),  unit, 2)
+        present_value: @format_value(s.safe_present_value())
+        future_value:  @format_value(s.safe_future_value())
 
     # some charts draw series bottom to top. Let's flip the array
     return items.reverse() if @get('type') in ['vertical_stacked_bar', 'bezier']
     items
+
+  format_value: (value) =>
+    Metric.autoscale_value(value, @get('unit'), 2)
 
   # -- garbage stuff ---------------------------------------------------------
 

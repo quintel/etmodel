@@ -65,19 +65,17 @@
 table
   &.chart
     width: 100%
-    border-collapse: collapse
+    border-spacing: 0
     thead
-      tr
-        background: #71a2cf
-        color: white
+      td
+        border-bottom: 1px solid #71a2cf
+        border-right: 1px solid #71a2cf
       th
+        background: #71a2cf
         border: 1px solid #71a2cf
+        color: white
         font-weight: normal
         text-align: right
-        &:first-child
-          background: white
-          border-left: none
-          border-top-color: white
     tr
       &.even
         background-color: #eee
@@ -90,8 +88,16 @@ table
     td
       text-align: right
     tbody
-      tr, td
-        border: 1px solid #e5e5e5
+      th, td
+        border-right: 1px solid #e5e5e5
+        border-top: 1px solid #e5e5e5
+        &:first-child
+          border-left: 1px solid #e5e5e5
+      tr:first-child
+        th, td
+          border-top: none
+    tfoot th, tfoot td
+      border-top: 1px solid #71a2cf
   &#power_plants
     th.unit
       font-weight: normal

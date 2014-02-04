@@ -25,7 +25,6 @@
 
   .charts_container
     position: relative
-    padding: 3px
     .chart_canvas
       // zoomed charts and dashboard popups redefine the height
       height: 350px
@@ -55,22 +54,30 @@ table
     border-collapse: collapse
     thead
       tr
-        background: #528FBD
+        background: #71a2cf
+        color: white
       th
-        border: 1px solid #D9E2F0
+        border: 1px solid #71a2cf
+        font-weight: normal
+        text-align: right
+        &:first-child
+          background: white
+          border-left: none
+          border-top-color: white
     tr
       &.even
         background-color: #eee
     td, th
-      font-size: 10px
+      font-size: 11px
+      padding: 3px 5px 2px
       &.bordered
-        border: 1px solid #ddd
+        border: 1px solid #e5e5e5
 
     td
       text-align: right
     tbody
       tr, td
-        border: 1px solid #ddd
+        border: 1px solid #e5e5e5
   &#power_plants
     th.unit
       font-weight: normal
@@ -82,12 +89,12 @@ table
         border-top: 1px solid #999
         border-bottom: 3px double #999
       td, th
-        border: 1px solid #eee
+        border: 1px solid #e5e5e5
       td
         font-weight: bold
   &.autostripe
     tbody tr:nth-child(2n+1)
-      background-color: #ddd
+      background-color: #f5f5f5
   &.condensed
     td, th
       font-size: 10px

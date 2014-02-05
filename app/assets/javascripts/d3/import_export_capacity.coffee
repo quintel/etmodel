@@ -127,6 +127,12 @@ D3.import_export_capacity =
               'stroke-width': 2
               )
 
+      # Draw 'Indicative' label
+      @svg.append("text")
+          .attr("class", "indicative_label")
+          .text("#{I18n.t('output_elements.storage_chart.indicative')}")
+          .attr("transform", "translate(#{ @width - 100 },#{ @height - 90 }) rotate(-45)" )
+
       # Create legend
       legendGroup = @svg.append("g")
                         .attr("class", "legend")

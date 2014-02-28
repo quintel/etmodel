@@ -17,3 +17,4 @@
 //= require fancybox
 //= require i18n
 //= require i18n/translations
+//= require sign_up_form

@@ -3,7 +3,7 @@
 
 // Sizing --------------------------------------------------------------------
 
-a.button
+a.button, a.btn
   @include anchor-button
   padding: 6px 11px
 
@@ -12,7 +12,7 @@ button.button::-moz-focus-inner
   border: 0
   padding: 0
 
-input.button, button.button
+input.button, button.button, input.btn
   @include button-button
   padding: 6px 11px
 
@@ -24,7 +24,7 @@ input.button, button.button
     // IE
     padding: 9px 11px 6px
 
-a.button, input.button, button.button
+a.button, input.button, button.button, input.btn
   @include border-radius(3px)
   font-size: 12px
   line-height: 15px
@@ -44,7 +44,7 @@ a.button, input.button, button.button
 a.button.small
   padding: 5px 9px 5px
 
-input.button.small, button.button.small
+input.button.small, button.button.small, input.btn.small
   padding: 5px 9px 5px
 
   &[type]
@@ -54,7 +54,7 @@ input.button.small, button.button.small
     // IE
     padding: 8px 9px 5px
 
-a.button.small, input.button.small, button.button.small
+a.button.small, input.button.small, button.button.small, input.btn.small
   font-size: 11px
 
   span
@@ -69,7 +69,7 @@ h2 a.button, h2 input.button, h2 button.button
 
 // Info / Tutorial Buttons
 
-.button
+.button, .btn
   span.right-icon
     display: inline-block
     height: 11px
@@ -86,7 +86,7 @@ h2 a.button, h2 input.button, h2 button.button
 
 // Colours -------------------------------------------------------------------
 
-a.button, input.button, button.button
+a.button, input.button, button.button, input.btn
   @include background-image(linear-gradient(#f9f9f9, #dfdfdf))
   background-color: #eee
   color: #333

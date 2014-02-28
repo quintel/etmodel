@@ -1,0 +1,32 @@
+!!! 5
+%html
+  %head
+    %title= t("meta.title")
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
+    %meta{:description => "#{t('meta.description')}" }
+    = csrf_meta_tag
+
+    /[if lte IE 8]
+      = stylesheet_link_tag 'ie'
+
+    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'form_only'
+    = javascript_include_tag 'application'
+
+    = yield :head
+
+    - if ipad?
+      %meta{:name=>"viewport", :content=>"width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"}
+
+  %body#form-only
+    %header#top
+      %img(src="/assets/header/logo400-blue@2x.png" width="400" height="49" alt="Energy Transition Model")
+
+    #content
+      = content_for?(:content) ? yield(:content) : yield
+
+    :javascript
+      I18n.defaultLocale = "#{I18n.default_locale}";
+      I18n.locale = "#{I18n.locale}";
+
+    = yield :scripts

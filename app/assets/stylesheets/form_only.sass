@@ -1,0 +1,219 @@
+html
+  background: #ebeff4
+
+body
+  background: none
+  font: 14px "Helvetica Neue", Arial, sans-serif
+  height: auto
+  padding-bottom: 50px
+
+  #content
+    background: none
+    height: auto
+    margin: 0 auto
+    min-width: inherit
+    width: 775px
+
+  .user-type-selection
+    border-bottom: 1px solid #ddd
+    margin: -35px -50px 25px
+    overflow: hidden
+
+    h3
+      font-size: 18px
+
+    .selection
+      border-left: 1px solid #ddd
+      float: left
+      overflow: hidden
+      margin-left: -1px
+      padding: 28px 50px 9px 25px
+      position: relative
+      transition: opacity .2s, box-shadow .2s
+      width: 311px
+
+      &:first-child
+        border-right: 1px solid #ddd
+        padding-right: 25px
+        padding-left: 50px
+        border-left: none
+        margin-left: 0
+
+      h3, p
+        position: relative
+        z-index: 2
+
+      h3
+        font-weight: normal
+        margin: 0 0 10px
+
+        strong
+          font-weight: bold
+
+      p
+        color: #666
+        line-height: 22px
+        padding-right: 10px
+
+        .choice
+          color: #4b8ac2
+          cursor: pointer
+          font-size: 15px
+          font-weight: bold
+          margin: 0 -5px
+          padding: 5px
+          text-decoration: none
+          -webkit-font-smoothing: antialiased
+
+          .fa
+            font-size: 14px
+            margin-left: 2px
+            min-width: 14px
+
+          .fa-check
+            display: none
+
+          &:hover
+            color: #193147
+
+          &.selected
+            cursor: default
+            color: #599138
+            &:hover
+              color: #599138
+            .fa-check
+              display: inline-block
+            .fa-arrow-right
+              display: none
+
+      .fa.bg
+        bottom: -50px
+        color: #f9f9f9
+        color: rgba(0, 0, 0, 0.03)
+        font-size: 256px
+        position: absolute
+        right: -5px
+        z-index: 1
+
+      &.deselected
+        box-shadow: inset 1px 1px 6px #bbb
+        opacity: 0.2
+
+        &:hover
+          box-shadow: none
+          opacity: 1.0
+
+  .main
+    background: white
+    border: 1px solid #ccc
+    border-bottom-color: #bbb
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+    border-radius: 5px
+    padding: 35px 50px
+
+  form
+    transition: opacity .2s
+    width: auto
+
+    .row
+      overflow: hidden
+      padding: 0 0 0 50px
+      margin: 0 -25px 0 -50px
+
+  header#top
+    background: none
+    border-bottom: none
+    border-top: none
+    box-shadow: none
+    text-align: center
+    padding: 35px 0
+
+    img
+      width: 400px
+
+  h1
+    border-bottom: 1px solid #eee
+    font-size: 24px
+    margin: -5px 0 0
+    padding: 0 0 25px
+    margin-bottom: 24px
+    text-align: center
+
+  .section
+    margin: 20px 0
+    padding-bottom: 15px
+
+  .highlight
+    background: #f9f9f9
+    border-top: 1px solid #eee
+    border-bottom: 1px solid #eee
+    margin: -26px -50px 0
+    padding: 25px 50px 20px
+
+  form, form.simple_form
+    .input
+      clear: none
+      float: left
+      margin-bottom: 15px !important
+      width: 349px
+
+    input.string, input.password
+      width: 308px
+
+    label
+      cursor: pointer
+      display: block
+      font-weight: bold
+      margin: 0 0 5px 0
+      margin-bottom: 5px !important
+      text-align: left
+      width: 310px
+
+      abbr
+        display: none
+
+      .optional
+        color: #777
+        font-size: 11px
+        font-weight: normal
+        margin-left: 5px
+
+    .hint
+      color: #777
+      display: block
+      font-size: 12px
+      font-style: normal
+      font-weight: normal
+      line-height: 18px
+      margin: 5px 25px -13px 0
+
+    .input.user_allow_news
+      margin: 15px 0 10px 0 !important
+      width: 675px !important
+
+      input
+        margin: 0 5px 0 0
+
+      label
+        display: inline-block
+        font-size: 12px
+        font-weight: normal
+        padding-top: 6px
+        width: auto
+
+    .user_password_confirmation label
+      color: white
+
+    input.btn.primary
+      font: bold 16px "Helvetica Neue", Arial, sans-serif
+      outline: none
+      padding: 10px 16px
+      -webkit-font-smoothing: antialiased
+
+    .field_with_errors
+      background: none
+
+      .error
+        color: #c32626
+        font-size: 12px
+        margin: 3px 0 0 0

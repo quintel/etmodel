@@ -3,3 +3,33 @@ nl:
     title: "Titel"
     description: "Beschrijving"
     save_scenario: "Scenario toevoegen"
+    optional: "Onverplicht"
+    labels:
+      user:
+        username: "Naam"
+        name: "Naam"
+        email: "E-mail adres"
+        heared_first_at: "Waar heb je het eerst van ons gehoord?"
+        allow_news: "Wilt u nieuws ontvangen?"
+        phone_number: "Telefoonnummer"
+        password: "Wachtwoord"
+        password_confirmation: "Wachtwoord bevestiging"
+        error_header: "Probeer het opnieuw!"
+        error_message: "We liepen tegen de volgende problemen aan:"
+        email_invalid: "moet een geldig email adres zijn"
+        group: "Groep"
+        message: "Bericht"
+        remember: "Onthouden"
+
+        company_school: "Company or organisation"
+        school:         "School or university"
+        teacher_email:  "E-mailadres docent"
+        submit:         "Create my account!"
+    placeholders:
+      user:
+        password_confirmation: "Please repeat password..."
+    hints:
+      user:
+        company_school: "If you're a member of an energy-related company, trade-group, or government agency, please let us know!"
+        school: "Please let us know which school, college, or university you represent. We love hearing how educators use our model; please don't hesitate to contact us to let us know how you get on!"
+        teacher_email: "Your teacher should provide you with the e-mail address of their ETM account. This will allow them to view the scenarios you create."

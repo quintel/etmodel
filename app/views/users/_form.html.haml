@@ -1,10 +1,49 @@
-= simple_form_for @user do |f|
-  = f.input :name
-  = f.input :email
-  = f.input :company_school
-  = f.input :teacher_email
-  = f.input :password
-  = f.input :password_confirmation
-  = f.input :allow_news
+.main
+  .user-type-selection
+    .selection.individual
+      .fa.fa-user.bg
+      %h3= t('sign_up.individual_title').html_safe
+      %p=  t('sign_up.individual_text')
+      %p
+        %span.choice.individual
+          %span.text= t('sign_up.im_an_individual')
+          %span.fa.fa-arrow-right
+          %span.fa.fa-check
 
-  = f.button :submit
+    .selection.education
+      .fa.fa-lightbulb-o.bg
+      %h3= t('sign_up.education_title').html_safe
+      %p= t('sign_up.education_text')
+      %p
+        %span.choice.student
+          %span.text= t('sign_up.im_a_student')
+          %span.fa.fa-arrow-right
+          %span.fa.fa-check
+        %span.choice.teacher(style="margin-left: 20px")
+          %span.text= t('sign_up.im_a_teacher')
+          %span.fa.fa-arrow-right
+          %span.fa.fa-check
+
+  = simple_form_for @user, html: { class: 'vertical' } do |f|
+    = hidden_field_tag :mode, params[:mode]
+
+    .section
+      .row
+        = f.input :name
+        = f.input :email, required: true
+
+      .row
+        = f.input :password, required: true
+        = f.input :password_confirmation, required: true
+
+    .section.highlight
+      .row
+        = f.input :company_school
+        = f.input :teacher_email
+
+    = f.input :allow_news
+
+    = f.button :submit, I18n.t('simple_form.labels.user.submit'), class: 'primary'
+
+:javascript
+  $(function() { new SignUpForm({ el: $('.main') }); });

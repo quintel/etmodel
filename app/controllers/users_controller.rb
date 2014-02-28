@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   layout 'static_page'
+  layout 'form_only', only: %w( new create edit update )
 
   def new
     @user = User.new

@@ -3,7 +3,6 @@
 <h2>Interface / Website</h2>
 <ul>
   <li>Internet Explorer 7 and 8 have been known to give errors and not load several charts. These old browsers are not or not fully supported.</li>
-  <li>The slider 'washing machine' (in Demand > Households > Appliances) and the slider 'low-temperature washing' (in Demand > Households > Behavior) can affect each other incorrectly
 </ul>
 <br/>
 
@@ -13,7 +12,6 @@
   <li>Primary demand of carriers can differ between Sankey and overall Primary and Final energy use charts by small amounts. These discrepancies will be resolved in the next version of the ETM.</li>
   <li>Currently the only power plants which can be used for co-firing of wood_pellets are the ultra-supercritical pulverized coal power plant (Pulverized coal) and the equivalent CHP plant (Central Coal CHP). </li>
   <li>The technical specs and installed capacities of CHP plants have been updated. For the Netherlands, the heat and electricity balances have been updated accordingly, but for Germany and the UK this has not yet been done. The heat and electricity production for these countries can therefore deviate from the actual values. In fact, we know that CHP plants in Germany produce roughly 100 PJ too little heat leading to small (of order 1%) deviations in renewability percentage and CO2 reduction percentage.</li>
-  <li>Insulation in the Buildings sector competes with 'recirculation' and 'heat recovery' (in that order) as means to reduce the heat demand in the ETM. In reality, these techniques are all applied simultaneously. The simplification used in the ETM does not change the joint effect, but can result in incorrect relative effect of these techniques.</li>
 </ul>
 <br/>
 
@@ -21,9 +19,6 @@
 <ul>
   <li>As yet, kerosene and heavy fuel oil have no extra refinery costs (on top of crude oil). These will be analyzed and resolved in one of the next versions.</li>
   <li>We are currently still validating costs for certain power plants (coal-fired, hydro and nuclear power plants) and household and building heating technologies. These may therefore result in incorrect costs.</li>
-  <li>We are currently overhauling all Combined Heat and Power plants in the ETM. We expect this to be finished by the end of September. This will affect both energy and cost calculations. </li>
-  <li>Costs of insulation are currently related to the amount of energy that is saved by insulating. Because this amount depends on both the 'heat demand per person' and 'outdoor temperature' slider settings, the cost of insulation (incorrectly) depends on these settings as well.</li>
-  <li>The cost calculation for insulation in the ETM is based on the simplifying assumption that costs scale linearly with saved energy. This approximation will overestimate the costs for low degrees of insulation, and underestimate the costs for high insulation values. The reason is that, in reality, cost-effective measures are applied first, while the last few percent of savings require large investments. We have planned a complete overhaul of this part of the ETM which will improve the cost calculation for insulation considerably. </li>
 </ul>
 <br/>
 
@@ -39,7 +34,6 @@
   <li>Industry and agriculture are excluded from the employment calculation.</li>
   <li>At present, geothermal heating in Households and Buildings uses employment figures from geothermal electricity production (scaled to match the capacity). This is due to the lack of literature on geothermal heating projects in the Netherlands.</li>
   <li>Employment effects of district heating do not take the construction of a heat network into account. The extent and properties of such a network are too dependent on the specifics of each project, to conclude what impact the network has on employment.</li>
-  <li>The 'Replacement of existing houses' slider does not take into account that heating or cooling technologies need to be installed for each new house. The effect of this slider on employment is therefore unrealistically small.</li>
   <li>To assess the employment impact of CCS technologies we have added 30% to the impact of the 'planning', 'production', 'placement' and 'removal' stages and 70% to 'maintenance' compared to the reference non-CCS technologies.</li>
   <li>The employment impact of maintenance for offshore wind turbines has been taken from onshore wind research.</li>
   <li>The following technologies are not included in the employment calculation:</li>
@@ -47,7 +41,6 @@
       <li>The hydropower plants (both river and mountain)</li>
       <li>Central burners for heat generation in the Supply section (coal, gas, biomass and waste-fired)</li>
       <li>Appliances (washing machines, stereos etc.)</li>
-      <li>Ventilation, recirculation en heat recovery</li>
     </ul>
 </ul>
 <br/>

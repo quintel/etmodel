@@ -3,7 +3,7 @@ set :server_type, 'production'
 set :deploy_to, "/u/apps/etmodel"
 set :scm, :git
 set :repository, "https://github.com/quintel/etmodel.git"
-set :user, 'antw'
+set :user, 'ubuntu'
 set :deploy_via, :remote_cache
 # Some files that will need proper permissions set
 set :chmod755, "app config db lib public vendor script script/* public/disp*"

@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - '"f52ef6a23b8efd0c3e7c45ade4af2b3c"'
+      - "\"f52ef6a23b8efd0c3e7c45ade4af2b3c\""
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
@@ -34,7 +34,54 @@ http_interactions:
       - close
     body:
       encoding: UTF-8
-      string: '[{"id":123,"title":"Martinus scenario run","area_code":"nl","start_year":2011,"end_year":2030,"url":"http://etengine.dev/api/v3/scenarios/123","ordering":null,"display_group":null,"source":null,"template":null,"created_at":"2010-06-14T17:23:00.000+02:00"}]'
+      string: "[{\"id\":123,\"title\":\"Martinus scenario run\",\"area_code\":\"nl\",\"start_year\":2011,\"end_year\":2030,\"url\":\"http://etengine.dev/api/v3/scenarios/123\",\"ordering\":null,\"display_group\":null,\"source\":null,\"template\":null,\"created_at\":\"2010-06-14T17:23:00.000+02:00\"}]"
     http_version: 
   recorded_at: Fri, 13 Dec 2013 09:39:05 GMT
+- request:
+    method: get
+    uri: http://beta.et-engine.com/api/v3//scenarios/123/batch
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.5
+      Date:
+      - Tue, 11 Mar 2014 10:23:17 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Etag:
+      - "\"7f71d4521aff7f27cc80b377946c51ac\""
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 19c29b56-222c-45c0-8f14-015fcc82b7e1
+      X-Runtime:
+      - '0.008880'
+    body:
+      encoding: UTF-8
+      string: "[{\"id\":123,\"title\":\"Martinus scenario run\",\"area_code\":\"nl\",\"start_year\":2011,\"end_year\":2030,\"url\":\"http://beta.et-engine.com/api/v3/scenarios/123\",\"ordering\":null,\"display_group\":null,\"source\":null,\"template\":null,\"created_at\":\"2010-06-14T17:23:00.000+02:00\"}]"
+    http_version: 
+  recorded_at: Tue, 11 Mar 2014 10:23:17 GMT
 recorded_with: VCR 2.4.0

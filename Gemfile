@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-gem 'rails', '~>4.0.2'
+gem 'rails', '~> 4.0.3'
 gem 'activerecord-session_store'
 gem 'activeresource'
 

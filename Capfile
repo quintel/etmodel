@@ -16,6 +16,7 @@ namespace :deploy do
     run "ln -sf #{shared_path}/config/config.yml #{release_path}/config/"
     run "ln -sf #{shared_path}/config/email.yml #{release_path}/config/"
     run "ln -sf #{shared_path}/config/database.yml #{release_path}/config/"
+    run "ln -sf #{shared_path}/config/newrelic.yml #{release_path}/config/"
     run "ln -nfs #{shared_path}/media #{release_path}/public/media"
     run "ln -nfs #{shared_path}/media/videos #{release_path}/public/videos"
   end

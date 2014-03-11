@@ -70,8 +70,9 @@ group :test do
   gem 'vcr', '~> 2.4.0'
 end
 
-group :production do
+group :production, :staging do
   gem 'unicorn'
+  gem 'newrelic_rpm'
 end
 
 gem 'therubyracer', '~> 0.12.0'

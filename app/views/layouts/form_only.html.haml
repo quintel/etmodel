@@ -20,7 +20,8 @@
 
   %body#form-only{ class: I18n.locale }
     %header#top
-      %img(src="/assets/header/logo400-blue@2x.png" width="400" height="49" alt="Energy Transition Model")
+      %a{ href: root_path }
+        %img(src="/assets/header/logo400-blue@2x.png" width="400" height="49" alt="Energy Transition Model")
 
     #content
       = content_for?(:content) ? yield(:content) : yield

@@ -1,4 +1,4 @@
-input.button
+input.button, input.btn
   cursor: pointer
 
 input, textarea, select
@@ -42,11 +42,23 @@ form, fieldset
       width: 150px
       height: 10px
       margin-top: 5px
+
+  input.string, input.password
+    border: 1px solid #bbb
+    border-radius: 3px
+    padding: 7px
+    font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif
+    width: 300px
+    transition: border-color .1s, box-shadow .1s
+
+    &:focus
+      border-color: #4b8ac2
+      box-shadow: 0 0 7px #73abd9
+      outline: none
+
   textarea
     width: 500px
     height: 120px
-  // input[type=text]
-  //   width: 500px
 
   div.boolean, .simple_form input[type='submit']
     margin-left: 220px
@@ -79,5 +91,6 @@ form, fieldset
     margin: 0
     vertical-align: -2px
     margin-left: 2px
+
 .new_user, .edit_user
   width: 725px

@@ -1,5 +1,36 @@
 en:
   simple_form:
-    title: "Title"
-    description: "Description"
-    save_scenario: "Save scenario"
+    optional: "Optional"
+    defaults:
+      title: "Title"
+      description: "Description"
+      save_scenario: "Save scenario"
+    labels:
+      user:
+        username: "Name"
+        email: "E-mail"
+        heared_first_at: "How did you hear about us?"
+        allow_news: "Do you want to recieve occasional information about the ETM?"
+        password: "Password"
+        phone_number: "Phone number"
+        name: "Name"
+        password_confirmation: "-"
+        error_header: "Please try again"
+        error_message: "We had some problems saving your information"
+        email_invalid: "should look like an email address"
+        group: "Group"
+        message: "Message"
+        remember: "Remember"
+
+        company_school: "Company or organisation"
+        school:         "School or university"
+        teacher_email:  "Your teacher's e-mail address"
+        submit:         "Create my account!"
+    placeholders:
+      user:
+        password_confirmation: "Please repeat password..."
+    hints:
+      user:
+        company_school: "If you're a member of an energy-related company, trade-group, or government agency, please let us know!"
+        school: "Please let us know which school, college, or university you represent. We love hearing how educators use our model; please don't hesitate to contact us to let us know how you get on!"
+        teacher_email: "Your teacher should provide you with the e-mail address of their ETM account. This will allow them to view the scenarios you create."

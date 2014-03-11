@@ -3,7 +3,7 @@ set :server_type, 'production'
 set :deploy_to, "/u/apps/etmodel"
 set :scm, :git
 set :repository, "https://github.com/quintel/etmodel.git"
-set :user, 'ubuntu'
+set :user, 'antw'
 set :deploy_via, :remote_cache
 # Some files that will need proper permissions set
 set :chmod755, "app config db lib public vendor script script/* public/disp*"
@@ -40,6 +40,26 @@ task :staging do
   set :db_name,         remote_config(:database, :database)
   set :db_user,         remote_config(:database, :username)
   set :db_pass,         remote_config(:database, :password)
+end
+
+task :ansible do
+  set :branch,          'staging'
+  set :rails_env,       'staging'
+  set :application_key, 'etmodel_staging'
+  set :domain,          read_domain_from_config
+
+  server 'ansible', :web, :app, :db, :primary => true
+
+  set :db_host,         remote_config(:database, :host)
+  set :db_name,         remote_config(:database, :database)
+  set :db_user,         remote_config(:database, :username)
+  set :db_pass,         remote_config(:database, :password)
+
+  set :scm, :none
+  set :repository, "."
+  set :local_repository, "."
+  set :deploy_via, :copy
+  set :user, 'antw'
 end
 
 # Useful, taken from the capistrano gem

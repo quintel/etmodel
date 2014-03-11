@@ -49,7 +49,7 @@ module Etm
     end
 
     config.assets.enabled = true
-    config.assets.precompile += ['etm.js', 'refreshed.js', 'refreshed.css', 'admin.css', 'ie.css']
+    config.assets.precompile += ['etm.js', 'refreshed.js', 'refreshed.css', 'admin.css', 'ie.css', 'form_only.css']
     config.assets.precompile += ['backcasting.js']
 
     # Compile images in vendor/assets/images

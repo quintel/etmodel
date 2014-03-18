@@ -15,6 +15,7 @@ D3.merit_order =
       {key: 'gas_ccgt',            color: '#f0f0f0'},
       {key: 'gas_ccgt_ccs',        color: '#bfd3e6'},
       {key: 'gas_conv',            color: '#969696'},
+      {key: 'gas_engine',          color: '#F5F5F5'},
       {key: 'gas_turbine',         color: '#bdbdbd'},
       {key: 'lignite',             color: '#593B0A'},
       {key: 'lignite_chp',         color: '#574528'},

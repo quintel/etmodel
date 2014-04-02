@@ -61,7 +61,7 @@
                   values = @scenarios.map{|s| s.user_values.attributes[key]}.compact
                   user_avg = (values.sum / values.compact.size).round(1) rescue nil
                   total_avg = (@scenarios.map{|s| s.user_values.attributes[key] || attrs["default"]}.sum / @scenarios.size).round(1)
-                  @average_values[key] = user_avg
+                  @average_values[key] = user_avg unless user_avg.nil?
                   @average_values_using_defaults[key] = total_avg
                 %tr
                   %th.slider= raw t "input_elements.#{slider.key}"

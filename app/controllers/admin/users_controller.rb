@@ -12,8 +12,7 @@ module Admin
     end
 
     def update
-      if @user.update_attributes(params[:user])
-        @user.role_id = params[:user][:role_id] and @user.save if current_user.try(:admin?)
+      if @user.update_attributes(user_parameters)
         redirect_to [:admin, @user], :notice => 'User updated'
       else
         render :edit
@@ -25,9 +24,8 @@ module Admin
     end
 
     def create
-      @user = User.new params[:user]
+      @user = User.new(user_parameters)
       if @user.save
-        @user.role_id = params[:user][:role_id] and @user.save if current_user.try(:admin?)
         redirect_to [:admin, @user], :notice => 'User added'
       else
         render :new
@@ -43,6 +41,16 @@ module Admin
 
       def find_user
         @user = User.find params[:id]
+      end
+
+      def user_parameters
+        uparams = params.require(:user).permit!
+
+        unless current_user.try(:admin?)
+          uparams.delete(:role_id)
+        end
+
+        uparams
       end
   end
 end

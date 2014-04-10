@@ -2,7 +2,7 @@ Check the <a href='http://wiki.quintel.nl/index.php/Charts' target='_blank'>wiki
 %br
 %br
 = simple_form_for [:admin, @output_element_serie] do |f|
-  = f.association :output_element, :collection => OutputElement.all(:order => "`output_elements`.key   ASC").map{|o| [o.key, o.id]}
+  = f.association :output_element, :collection => OutputElement.all.order("`output_elements`.key ASC").map{|o| [o.key, o.id]}
   = f.input :label, :hint => "The translations of the label should be available! *Please use an identifier_like_this (no capital letters or spaces)*. Check the <a href='http://wiki.quintel.nl/index.php/Charts' target='_blank'>wiki</a> for more info".html_safe
   = f.input :gquery, :hint => "This should be the key of your fantastic gquery! These can be found on the engine!"
   = f.input :color, :collection => OutputElementSerie::COLORS.to_a,:hint => "<span class='color_hint'></span><br/>".html_safe

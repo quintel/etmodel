@@ -23,7 +23,7 @@ class OutputElement < ActiveRecord::Base
 
   
 
-  has_many :output_element_series, :order => "order_by", :dependent => :destroy
+  has_many :output_element_series, ->{ order(:order_by) }, :dependent => :destroy
   belongs_to :output_element_type
   has_one :description, :as => :describable, :dependent => :destroy
   has_one :area_dependency, :as => :dependable, :dependent => :destroy

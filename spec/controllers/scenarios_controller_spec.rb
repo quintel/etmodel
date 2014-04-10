@@ -16,7 +16,7 @@ describe ScenariosController, :vcr => true do
   }
 
   before do
-    Api::Scenario.stub!(:find).and_return scenario_mock
+    Api::Scenario.stub(:find).and_return scenario_mock
   end
 
   let(:user) { FactoryGirl.create :user }
@@ -70,7 +70,7 @@ describe ScenariosController, :vcr => true do
 
       describe "#create" do
         it "should save a scenario" do
-          Api::Scenario.stub!(:create).and_return scenario_mock
+          Api::Scenario.stub(:create).and_return scenario_mock
           lambda {
             post :create, :saved_scenario => {:api_session_id => 12345}
             response.should redirect_to(scenarios_path)

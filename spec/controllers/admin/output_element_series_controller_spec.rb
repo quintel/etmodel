@@ -44,13 +44,13 @@ describe Admin::OutputElementSeriesController do
     end
 
     it "update action should render edit template when model is invalid" do
-      @output_element_serie.stub!(:update_attributes).with(any_args).and_return(false)
+      @output_element_serie.stub(:update_attributes).with(any_args).and_return(false)
       put :update, :id => @output_element_serie
       response.should render_template(:edit)
     end
 
     it "update action should redirect when model is valid" do
-      @output_element_serie.stub!(:update_attributes).with(any_args).and_return(true)
+      @output_element_serie.stub(:update_attributes).with(any_args).and_return(true)
       put :update, :id => @output_element_serie
       response.should redirect_to(admin_output_element_serie_path(:id => @output_element_serie.id))
     end

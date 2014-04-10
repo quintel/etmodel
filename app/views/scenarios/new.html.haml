@@ -3,7 +3,7 @@
   %p= t("scenario.save_desc")
 
   = simple_form_for @saved_scenario, :url => scenarios_path do |f|
-    = f.input :title, label: t('simple_form.title')
-    = f.input :description, label: t('simple_form.description'), :as => :text
+    = f.input :title
+    = f.input :description, :as => :text
     = f.hidden_field :api_session_id
-    = f.button :submit, value: t('simple_form.save_scenario')
+    = f.button :submit

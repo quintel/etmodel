@@ -1,11 +1,11 @@
 * html body
-  :width expression(document.documentElement.clientWidth < 980 ? "980px" : "auto")
+  width: 'expression(document.documentElement.clientWidth < 980 ? "980px" : "auto")'
 
 footer ul
-  :margin-left expression(this.parentNode.offsetWidth > this.offsetWidth ? ((this.parentNode.offsetWidth-this.offsetWidth)/2 + "px") : "0")
+  margin-left: 'expression(this.parentNode.offsetWidth > this.offsetWidth ? ((this.parentNode.offsetWidth-this.offsetWidth)/2 + "px") : "0")'
 
 footer ul li
-  :background-image expression((this===this.parentNode.childNodes[0]) ? "none" : "auto")
+  background-image: 'expression((this===this.parentNode.childNodes[0]) ? "none" : "auto")'
 
 header#main .frame
   // :width expression(document.documentElement.clientWidth < 960 ? "960px" : "auto"&&document.documentElement.clientWidth > 1259 ? "1259px" : "auto");

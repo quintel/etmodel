@@ -4,7 +4,7 @@ describe PagesController, :vcr => true do
   render_views
 
   before do
-    ApplicationController.stub!(:ensure_valid_browser)
+    ApplicationController.stub(:ensure_valid_browser)
   end
 
   {'nl' => 2030, 'de' => 2050}.each do |country, year|

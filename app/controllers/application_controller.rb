@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
 
   before_filter :initialize_current
   before_filter :locale
-  before_filter :export_i18n_messages
 
   after_filter  :teardown_current
 
@@ -89,9 +88,5 @@ private
   def current_user
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.user
-  end
-
-  def export_i18n_messages
-    SimplesIdeias::I18n.export! if Rails.env.development?
   end
 end

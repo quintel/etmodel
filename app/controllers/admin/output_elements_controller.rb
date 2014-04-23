@@ -3,9 +3,12 @@ module Admin
     before_filter :find_element, :only => [:show, :edit, :update, :destroy]
 
     def index
-      t = params[:type]
-      scope = OutputElement.scoped
-      scope = scope.where(:output_element_type_id => t) if t.present?
+      if params[:type].present?
+        scope = scope.where(:output_element_type_id => params[:type])
+      else
+        scope = OutputElement.all
+      end
+
       @output_elements = scope.all
       @types = OutputElementType.all
     end

@@ -25,13 +25,13 @@ describe Admin::InputElementsController do
     end
 
     it "create action should render new template when model is invalid" do
-      @input_element.stub!(:save).and_return(false)
+      @input_element.stub(:save).and_return(false)
       post :create
       response.should render_template(:new)
     end
 
     it "create action should redirect when model is valid" do
-      @input_element.stub!(:save).and_return(true)
+      @input_element.stub(:save).and_return(true)
       post :create
       response.should redirect_to(admin_input_elements_url)
     end
@@ -49,13 +49,13 @@ describe Admin::InputElementsController do
     end
 
     it "update action should render edit template when model is invalid" do
-      @input_element.stub!(:update_attributes).with(any_args).and_return(false)
+      @input_element.stub(:update_attributes).with(any_args).and_return(false)
       put :update, :id => @input_element
       response.should render_template(:edit)
     end
 
     it "update action should redirect when model is valid" do
-      @input_element.stub!(:update_attributes).with(any_args).and_return(true)
+      @input_element.stub(:update_attributes).with(any_args).and_return(true)
       put :update, :id => @input_element
       response.should redirect_to(admin_input_elements_url)
     end

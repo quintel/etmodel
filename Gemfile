@@ -1,13 +1,15 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-gem 'rails', '~> 4.0.3'
+gem 'rails', '~> 4.1.0'
 gem 'activerecord-session_store'
 gem 'activeresource'
 
 gem 'jquery-rails', "~> 2.0.2"
 gem 'haml', '~>4.0'
 gem 'authlogic'
+gem 'bcrypt' # binarylogic/authlogic#405
+gem 'scrypt' # binarylogic/authlogic#405
 gem 'httparty'
 gem 'tabs_on_rails', '~>2.1.1'
 gem 'kaminari', '~> 0.13.0'
@@ -39,12 +41,12 @@ gem "jquery-etmodel-rails", '~> 0.3', :git  => "https://github.com/quintel/etplu
 gem 'jquery-qtip2-rails'
 
 group :development do
+  gem 'spring'
   gem 'tomdoc'
   gem 'yard-tomdoc', "~> 0.4.0"
   gem 'annotate', :require => false
   gem 'quiet_assets'
   gem 'better_errors'
-  gem 'xray-rails'
   gem 'seed_dump'
 end
 
@@ -54,13 +56,13 @@ group :test, :development do
   gem 'pry-remote'
   gem 'pry-stack_explorer'
   gem 'pry-debugger'
-  gem 'rspec-rails', "~> 2.12.0"
+  gem 'rspec-rails', "~> 2.14"
   gem 'watchr'
 end
 
 group :test do
   gem 'database_cleaner'
-  gem 'factory_girl_rails', '~> 4.1.0'
+  gem 'factory_girl_rails', '~> 4.1'
   gem 'shoulda-matchers', require: false
   gem 'webrat'
   gem 'simplecov'

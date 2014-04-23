@@ -1,7 +1,7 @@
 %h2 Interface map
 
-= link_to_function 'toggle slides', '$("ul.slides").toggle()'
-= link_to_function 'toggle sliders', '$("ul.sliders").toggle()'
+%a(href="#" onclick="$('ul.slides').toggle(); return false;") toggle slides
+%a(href="#" onclick="$('ul.sliders').toggle(); return false;") toggle sliders
 
 %ul#interface_map
   - Tab.ordered.each do |tab|

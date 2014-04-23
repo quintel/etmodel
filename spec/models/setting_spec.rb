@@ -37,7 +37,7 @@ describe Setting do
     context "use_peak_load is off" do
       before do
         @s = Setting.new
-        @s.stub!(:use_peak_load).and_return(false)
+        @s.stub(:use_peak_load).and_return(false)
       end
 
       context "track_peak_load on" do
@@ -57,11 +57,11 @@ describe Setting do
         @setting = Setting.new(:track_peak_load => true)
       end
       it "should" do
-        @setting.stub!(:use_peak_load).and_return(true)
+        @setting.stub(:use_peak_load).and_return(true)
         @setting.track_peak_load?.should be_true
       end
       it "should" do
-        @setting.stub!(:use_peak_load).and_return(false)
+        @setting.stub(:use_peak_load).and_return(false)
         @setting.track_peak_load?.should be_false
       end
     end
@@ -99,7 +99,7 @@ describe Setting do
   describe "#use_peak_load" do
     [true, false].each do |flag|
       context "use_network_calculations? = #{flag}" do
-        before  { @setting.stub!(:use_network_calculations?).and_return(flag) }
+        before  { @setting.stub(:use_network_calculations?).and_return(flag) }
         specify { @setting.use_peak_load.should == flag}
       end
     end
@@ -110,11 +110,11 @@ describe Setting do
       :use_network_calculations? => :use_network_calculations?
     }.each do |setting_method_name, area_method_name|
       describe "##{setting_method_name} should be true if area##{area_method_name} is true" do
-        before { @setting.stub!(:area).and_return(mock_model(Api::Area, area_method_name => true))}
+        before { @setting.stub(:area).and_return(mock_model(Api::Area, area_method_name => true))}
         specify { @setting.send(setting_method_name).should be_true}
       end
       describe "##{setting_method_name} with no area should be false" do
-        before { @setting.stub!(:area).and_return(nil)}
+        before { @setting.stub(:area).and_return(nil)}
         specify { @setting.send(setting_method_name).should be_false}
       end
     end

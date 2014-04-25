@@ -24,6 +24,12 @@
       overflow: hidden
       vertical-align: top
       position: relative
+      &.empty
+        padding: 5px 5px 0 5px
+        margin: 2px 5px
+        color: red
+        &:hover
+          background: none
       &.active
         background: #eee
       &:hover
@@ -81,3 +87,6 @@
           font-size: 12px
           padding: 1px 0
           height: 17px
+      &.empty
+        margin: 0 0 0 20px
+        padding: 5px 0 5px 5px

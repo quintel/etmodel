@@ -5,24 +5,33 @@
     %ul{style: "display: none;"}
 
       - tab.allowed_sidebar_items.each do |item|
-        - slide_key = item.slides.ordered.first.short_name
-        %li{:id => item.key, :data => {:gquery => item.percentage_bar_query}}
+        - if item.slides.none?
+          %li.empty
+            %span.title== Empty item: #{ item.key }
+        - else
+          - slide_key = slide = item.slides.ordered.first.short_name
+          %li{:id => item.key, :data => {:gquery => item.percentage_bar_query}}
 
-          = link_to play_path(tab.key, item.key, slide_key),
-            :data => {:nav => true, :key => "#{tab.key}/#{item.key}/#{slide_key}" } do
-            %p
-              %span.title
-                = raw t("sidebar_items.#{item.key}.short_name")
-              - if item.percentage_bar_query.present?
-                %span.bar{:alt => t('sidebar_items.alt'), :style => "width: 0px"}
-                %span.value
+            = link_to play_path(tab.key, item.key, slide_key),
+              :data => {:nav => true, :key => "#{tab.key}/#{item.key}/#{slide_key}" } do
+              %p
+                %span.title
+                  = raw t("sidebar_items.#{item.key}.short_name")
+                - if item.percentage_bar_query.present?
+                  %span.bar{:alt => t('sidebar_items.alt'), :style => "width: 0px"}
+                  %span.value
 
         - item.children.includes(:area_dependency).reject(&:area_dependent).each do |child|
-          - slide_key = child.slides.ordered.first.short_name
-          %li.child{:id => child.key}
-            = link_to play_path(tab.key, child.key, slide_key),
-              :data => {:nav => true, :key => "#{tab.key}/#{child.key}/#{slide_key}" } do
-              %p
-                %span.bullet.fa.fa-chevron-right
-                %span.title
-                  = raw t("sidebar_items.#{child.key}.short_name")
+          - if child.slides.none?
+            %li.child.empty
+              %span.bullet.fa.fa-chevron-right
+              %span.title== Empty item: #{ child.key }
+          - else
+            - slide_key = child.slides.ordered.first.short_name
+            %li.child{:id => child.key}
+              = link_to play_path(tab.key, child.key, slide_key),
+                :data => {:nav => true, :key => "#{tab.key}/#{child.key}/#{slide_key}" } do
+                %p
+                  %span.bullet.fa.fa-chevron-right
+                  %span.title
+                    = raw t("sidebar_items.#{child.key}.short_name")

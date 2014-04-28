@@ -9,7 +9,7 @@ set :deploy_via, :remote_cache
 set :chmod755, "app config db lib public vendor script script/* public/disp*"
 ssh_options[:forward_agent] = true
 set :use_sudo, false
-set :bundle_flags, '--deployment --quiet --binstubs --shebang ruby-local-exec'
+set :bundle_flags, '--deployment --quiet --shebang ruby-local-exec'
 set :local_db_name, 'etmodel_dev'
 
 task :production do

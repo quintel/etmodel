@@ -56,8 +56,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  acts_as_authentic do |config|
+    config.crypto_provider = Authlogic::CryptoProviders::Sha512
+  end
 
-  acts_as_authentic
 
   scope :ordered, -> { order('name') }
 

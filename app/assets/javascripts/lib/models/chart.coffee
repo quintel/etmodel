@@ -47,6 +47,8 @@ class @Chart extends Backbone.Model
     switch @get('type')
       when 'bezier'
         if d3_support then D3.bezier.View else BezierChartView
+      when 'time_curve'
+        D3.time_curve.View
       when 'mekko'
         if d3_support then D3.mekko.View else MekkoChartView
       when 'vertical_stacked_bar'

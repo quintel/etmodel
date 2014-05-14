@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140514105845) do
+ActiveRecord::Schema.define(version: 20140514131219) do
 
   create_table "area_dependencies", force: true do |t|
     t.string  "dependent_on"

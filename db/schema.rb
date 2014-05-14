@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131205122848) do
+ActiveRecord::Schema.define(version: 20140514105845) do
 
   create_table "area_dependencies", force: true do |t|
     t.string  "dependent_on"
@@ -83,14 +83,14 @@ ActiveRecord::Schema.define(version: 20131205122848) do
     t.integer  "output_element_id"
     t.string   "label"
     t.string   "color"
-    t.integer  "order_by"
+    t.integer  "order_by",             default: 1
     t.string   "group"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "show_at_first"
     t.boolean  "is_target_line"
     t.string   "target_line_position"
-    t.string   "gquery",               null: false
+    t.string   "gquery",                           null: false
   end
 
   add_index "output_element_series", ["output_element_id"], name: "index_output_element_series_on_output_element_id", using: :btree
@@ -102,16 +102,16 @@ ActiveRecord::Schema.define(version: 20131205122848) do
   end
 
   create_table "output_elements", force: true do |t|
-    t.integer  "output_element_type_id"
+    t.integer  "output_element_type_id",                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "under_construction",     default: false
     t.string   "unit"
-    t.boolean  "percentage"
+    t.boolean  "percentage",             default: false
     t.string   "group"
-    t.boolean  "show_point_label"
-    t.boolean  "growth_chart"
-    t.string   "key"
+    t.boolean  "show_point_label",       default: false
+    t.boolean  "growth_chart",           default: false
+    t.string   "key",                                    null: false
     t.float    "max_axis_value"
     t.float    "min_axis_value"
     t.boolean  "hidden",                 default: false

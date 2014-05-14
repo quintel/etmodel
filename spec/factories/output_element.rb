@@ -1,6 +1,11 @@
 FactoryGirl.define do
+  factory :output_element_type do
+    name 'test_chart'
+  end
+
   factory :output_element do
     sequence(:key) {|n| "output_element_#{n}" }
+    association :output_element_type
   end
 
   factory :output_element_serie do

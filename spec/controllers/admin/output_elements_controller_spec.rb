@@ -31,7 +31,7 @@ describe Admin::OutputElementsController do
     end
 
     it "create action should redirect when model is valid" do
-      post :create, :output_element => FactoryGirl.attributes_for(:output_element)
+      post :create, :output_element => FactoryGirl.attributes_for(:output_element).merge(:output_element_type_id => 1)
       response.should redirect_to(admin_output_elements_path)
     end
   end

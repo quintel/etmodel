@@ -146,7 +146,11 @@ describe ScenariosController, :vcr => true do
         get :index
         expect(response).to be_success
         expect(assigns(:saved_scenarios)).to_not include(admin_scenario)
-        expect(assigns(:saved_scenarios)).to eq [user_scenario, @student_scenario]
+
+        expect(assigns(:saved_scenarios)).to have(2).elements
+
+        expect(assigns(:saved_scenarios)).to include(user_scenario)
+        expect(assigns(:saved_scenarios)).to include(@student_scenario)
       end
     end
   end

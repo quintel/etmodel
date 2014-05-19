@@ -11,7 +11,7 @@ module LayoutHelper
   def country_option(code, opts = {})
     current = Current.setting.area_code == code
     selected = current ? "selected='true'" : nil
-    label = I18n.t(code)
+    label = I18n.t("country_select.#{ code }", default: I18n.t(code))
     label += " (#{ I18n.t('new') })" if opts[:test]
     content_tag :option, label.html_safe, :value => code, :selected => selected
   end
@@ -62,9 +62,10 @@ module LayoutHelper
 
     # Other countries
 
-    add_area_choice links, "uk",                               true
+    add_area_choice links, "uk"
     add_area_choice links, "ro",                               true
-    add_area_choice links, "pl",                               true
+    add_area_choice links, "pl"
+    add_area_choice links, "es"
     add_area_choice links, "tr",                               true
     add_area_choice links, "za",                               true if session[:show_all_countries]
     add_area_choice links, "be-vlg",                           true if session[:show_all_countries] || session[:show_flanders]

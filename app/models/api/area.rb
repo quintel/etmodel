@@ -25,13 +25,11 @@ class Api::Area < ActiveResource::Base
   ]
 
   def self.find_by_country_memoized(area_code)
-    if @areas_by_country.nil?
-      @areas_by_country ||= all.each_with_object({}) do |area, store|
-        store[area.area] = area
-      end.with_indifferent_access
+    areas = Rails.cache.fetch(:api_areas) do
+      all.index_by(&:area).with_indifferent_access
     end
 
-    @areas_by_country[area_code]
+    areas[area_code]
   end
 
   def use_network_calculations?

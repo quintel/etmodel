@@ -66,6 +66,7 @@ module LayoutHelper
     add_area_choice links, "ro",                               true
     add_area_choice links, "pl"
     add_area_choice links, "es"
+    add_area_choice links, "fr"
     add_area_choice links, "tr",                               true
     add_area_choice links, "za",                               true if session[:show_all_countries]
     add_area_choice links, "be-vlg",                           true if session[:show_all_countries] || session[:show_flanders]

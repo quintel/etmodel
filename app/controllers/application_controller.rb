@@ -12,7 +12,11 @@ class ApplicationController < ActionController::Base
 
   def locale
     # update session if passed
-    session[:locale] = params[:locale] if params[:locale]
+    if params[:locale]
+      session[:locale] = params[:locale]
+      redirect_to(params.except(:locale))
+    end
+
     # set locale based on session or url
     loc =  session[:locale] || get_locale_from_url
     loc = I18n.default_locale unless ['en', 'nl'].include?(loc.to_s)

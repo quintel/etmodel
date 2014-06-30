@@ -51,7 +51,6 @@ module LayoutHelper
     # Germany
 
     add_area_choice links, "de",                               true
-    add_area_choice links, "eu",                               true
 
     if @show_german_provinces
       links_de = []
@@ -61,13 +60,14 @@ module LayoutHelper
     end
 
     # Other countries
-
-    add_area_choice links, "uk"
+    
+    add_area_choice links, "fr",                               true
     add_area_choice links, "ro",                               true
-    add_area_choice links, "pl"
-    add_area_choice links, "es"
-    add_area_choice links, "fr"
+    add_area_choice links, "pl",                               true
+    add_area_choice links, "es",                               true
     add_area_choice links, "tr",                               true
+    add_area_choice links, "uk",                               true
+    add_area_choice links, "eu",                               true
     add_area_choice links, "za",                               true if session[:show_all_countries]
     add_area_choice links, "be-vlg",                           true if session[:show_all_countries] || session[:show_flanders]
     return links

@@ -13,15 +13,28 @@
 class Setting
   extend ActiveModel::Naming
 
-  attr_accessor :last_etm_page,
-                :preset_scenario_id,
-                :api_session_id,
-                :area_code,
-                :locked_charts
+  # A list of all attributes which may be stored in the Setting, and their
+  # default values.
+  DEFAULT_ATTRIBUTES = {
+    network_parts_affected: [],
+    track_peak_load:        false,
+    area_code:              'nl',
+    start_year:             2011,
+    end_year:               2050,
+    use_fce:                false,
+    locked_charts:          {},
+    last_etm_page:          nil,
+    preset_scenario_id:     nil,
+    api_session_id:         nil
+  }.freeze
+
+  # An array containing all the attribute names.
+  ATTRIBUTE_KEYS = DEFAULT_ATTRIBUTES.keys.freeze
+
+  attr_accessor *ATTRIBUTE_KEYS
 
   def initialize(attributes = {})
-    attributes = self.class.default_attributes.merge(attributes)
-    attributes.each do |name, value|
+    DEFAULT_ATTRIBUTES.merge(attributes).each do |name, value|
       self.send("#{name}=", value)
     end
   end
@@ -54,31 +67,16 @@ class Setting
   # ------ Defaults and Resetting ---------------------------------------------
 
   def self.default
-    new(default_attributes)
+    new(DEFAULT_ATTRIBUTES)
   end
 
-  def self.default_attributes
-    {
-      :network_parts_affected => [],
-      :track_peak_load        => false,
-      :area_code              => 'nl',
-      :start_year             => 2011,
-      :end_year               => 2050,
-      :use_fce                => false,
-      :locked_charts          => {}
-    }
-  end
-  attr_accessor *default_attributes.keys
 
   def reset_attribute(key)
-    default_value = self.class.default_attributes[key.to_sym]
-    self.send("#{key}=", default_value)
+    self.send("#{key}=", DEFAULT_ATTRIBUTES[key.to_sym])
   end
 
   def reset!
-    self.class.default_attributes.each do |key, value|
-      self.reset_attribute key
-    end
+    ATTRIBUTE_KEYS.each { |key| reset_attribute(key) }
   end
 
   # When a user resets a scenario to its start value
@@ -90,6 +88,10 @@ class Setting
     [:use_fce, :network_parts_affected, :locked_charts].each do |key|
       self.reset_attribute key
     end
+  end
+
+  def start_year
+    area.analysis_year || DEFAULT_ATTRIBUTES[:start_year]
   end
 
   def end_year=(end_year)
@@ -127,5 +129,13 @@ class Setting
   def country
     return nil unless area_code
     area_code.split('-')[0]
+  end
+
+  # Returns the Setting as a Hash (which can then be converted to JSON in a
+  # view).
+  def to_hash
+    DEFAULT_ATTRIBUTES.keys.each_with_object({}) do |key, data|
+      data[key] = public_send(key)
+    end
   end
 end

@@ -68,6 +68,8 @@
          "#{value} #{@scaling_in_words(pow, 'joules')}"
       when 'PJ'
          "#{value} #{@scaling_in_words(pow + 3, 'joules')}"
+      when 'EJ'
+         "#{value} #{@scaling_in_words(pow + 4, 'joules')}"
       when 'MW'
          "#{value} #{@scaling_in_words(pow + 2, 'watt')}"
       when 'MT'

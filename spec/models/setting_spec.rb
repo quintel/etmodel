@@ -5,7 +5,7 @@ describe Setting do
   subject { @setting }
 
   describe "#new" do
-    context "defaults" do
+    context "defaults", vcr: true do
       before do
         @setting = Setting.new
       end
@@ -27,9 +27,12 @@ describe Setting do
   describe "Setting.default" do
     it "should return a new Setting with default_values" do
       # twice: once in default and once in initialize
-      Setting.should_receive(:default_attributes).twice.and_return({})
       setting = Setting.default
       setting.class.should == Setting
+
+      Setting.default_attributes.each do |key, default|
+        setting[key].should == default
+      end
     end
   end
 
@@ -121,7 +124,7 @@ describe Setting do
   end
 
   describe "regression tests" do
-    describe "DEFAULT_ATTRIBUTES" do
+    describe "DEFAULT_ATTRIBUTES", vcr: true do
       it "should not persist default values that are objects, e.g. Array" do
         # BUG: Storing default_attributes in constant DEFAULT_ATTRIBUTES
         #      messes with arrays as default_attributes.

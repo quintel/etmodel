@@ -15,26 +15,25 @@ class Setting
 
   # A list of all attributes which may be stored in the Setting, and their
   # default values.
-  DEFAULT_ATTRIBUTES = {
-    network_parts_affected: [],
-    track_peak_load:        false,
-    area_code:              'nl',
-    start_year:             2011,
-    end_year:               2050,
-    use_fce:                false,
-    locked_charts:          {},
-    last_etm_page:          nil,
-    preset_scenario_id:     nil,
-    api_session_id:         nil
-  }.freeze
+  def self.default_attributes
+    {
+      network_parts_affected: [],
+      track_peak_load:        false,
+      area_code:              'nl',
+      start_year:             2011,
+      end_year:               2050,
+      use_fce:                false,
+      locked_charts:          {},
+      last_etm_page:          nil,
+      preset_scenario_id:     nil,
+      api_session_id:         nil
+    }
+  end
 
-  # An array containing all the attribute names.
-  ATTRIBUTE_KEYS = DEFAULT_ATTRIBUTES.keys.freeze
-
-  attr_accessor *ATTRIBUTE_KEYS
+  attr_accessor *default_attributes.keys
 
   def initialize(attributes = {})
-    DEFAULT_ATTRIBUTES.merge(attributes).each do |name, value|
+    self.class.default_attributes.merge(attributes).each do |name, value|
       self.send("#{name}=", value)
     end
   end
@@ -67,16 +66,16 @@ class Setting
   # ------ Defaults and Resetting ---------------------------------------------
 
   def self.default
-    new(DEFAULT_ATTRIBUTES)
+    new(default_attributes)
   end
 
 
   def reset_attribute(key)
-    self.send("#{key}=", DEFAULT_ATTRIBUTES[key.to_sym])
+    self.send("#{key}=", self.class.default_attributes[key.to_sym])
   end
 
   def reset!
-    ATTRIBUTE_KEYS.each { |key| reset_attribute(key) }
+    self.class.default_attributes.keys.each { |key| reset_attribute(key) }
   end
 
   # When a user resets a scenario to its start value
@@ -91,7 +90,7 @@ class Setting
   end
 
   def start_year
-    area.analysis_year || DEFAULT_ATTRIBUTES[:start_year]
+    area.analysis_year || self.class.default_attributes[:start_year]
   end
 
   def end_year=(end_year)
@@ -134,7 +133,7 @@ class Setting
   # Returns the Setting as a Hash (which can then be converted to JSON in a
   # view).
   def to_hash
-    DEFAULT_ATTRIBUTES.keys.each_with_object({}) do |key, data|
+    self.class.default_attributes.keys.each_with_object({}) do |key, data|
       data[key] = public_send(key)
     end
   end

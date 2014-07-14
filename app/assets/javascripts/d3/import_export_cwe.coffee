@@ -34,7 +34,7 @@ D3.import_export_cwe =
 
       EPEX_Spot_DE = [{"x": "1", "y": "33.49"}, {"x": "3", "y": "31.13"}, {"x": "5", "y": "28.31"}, {"x": "7", "y": "29.66"}, {"x": "9", "y": "19.59"}, {"x": "11", "y": "41.94"}, {"x": "13", "y": "49.35"}, {"x": "15", "y": "45.69"}, {"x": "17", "y": "40.75"}, {"x": "19", "y": "39.58"}, {"x": "21", "y": "31.87"}, {"x": "23", "y": "24.69"}, {"x": "25", "y": "48.52"}, {"x": "27", "y": "49.51"}]
 
-      theData = [{color: "#00BFFF", values: APX_DAM, label: "APX DAM"}, {color: "#1947A8", values: Belpex_DAM , label: "Belpex DAM"}, {color: "#F5C400", values: EPEX_Spot_FR, label: "EPEX Spot FR"}, {color: "#DB2C18", values: EPEX_Spot_DE, label: "EPEX Spot DE"}]
+      theData = [{color: "#00BFFF", values: APX_DAM, label: "APX DAM (NL)"}, {color: "#1947A8", values: Belpex_DAM , label: "Belpex DAM (BE)"}, {color: "#F5C400", values: EPEX_Spot_FR, label: "EPEX Spot FR"}, {color: "#DB2C18", values: EPEX_Spot_DE, label: "EPEX Spot DE"}]
 
       # Create SVG convas and set related variables
       [@width, @height] = @available_size()

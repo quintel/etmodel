@@ -4,6 +4,10 @@
       - if %w{ actueel featured }.include?(group.downcase)
         = render partial: 'pages/root_page/scenario_group', locals: {group: group, scenarios: scenarios }
         - @grouped_scenarios.delete(group)
+    - @grouped_scenarios.each do |group,scenarios| 
+      - if ["energy productivity"].include?(group.downcase)
+        = render partial: 'pages/root_page/scenario_group', locals: {group: group, scenarios: scenarios }
+        - @grouped_scenarios.delete(group)
     - @grouped_scenarios.each do |group,scenarios|
       - if %w{ overig other }.include?(group.downcase)
         - @last_group = group

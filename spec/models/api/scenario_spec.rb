@@ -20,7 +20,7 @@ describe Api::Scenario do
       'one', 'two', 'three', :rest, nil
     ] }
 
-    let(:ordered) { Api::Scenario.grouped_scenarios(unsorted, order) }
+    let(:ordered) { Api::Scenario.in_groups(unsorted, order) }
 
     it 'places "one" scenarios first' do
       expect(ordered[0][:name]).to eq('one')

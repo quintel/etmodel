@@ -3,7 +3,8 @@
     %h4#continue_current_scenario
       %a{:href => Current.setting.last_etm_page,
          :alt => "continue",
-         :title => "continue"}= t('intro.continue_with_current_scenario')
+         :title => "continue"}
+        == #{ t('intro.continue_with_current_scenario') }&hellip;
 
   %h4#new_scenario_button
     %a{href: '#top'}= t 'intro.start_a_new_scenario'

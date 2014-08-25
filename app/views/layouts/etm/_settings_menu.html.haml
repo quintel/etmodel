@@ -11,9 +11,9 @@
         #year= Current.setting.end_year
         #{t "header.current_end_year"}:
 
-    %li
+    %li.language
       #{t "header.current_language"}:
-      = select_tag "locale", options_for_select([:en, :nl], I18n.locale)
+      = language_select
 
     - if current_user
       %li
@@ -39,7 +39,7 @@
           %label{:for => "settings_use_fce"}= t('fce.check')
 
       - if Current.setting.allow_merit_order?
-        %li
+        %li.merit
           = check_box :settings, :use_merit_order
           %label{:for => "settings_use_merit_order"}= t('header.merit_order_check')
 

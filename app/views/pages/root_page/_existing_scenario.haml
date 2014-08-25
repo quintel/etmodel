@@ -1,16 +1,6 @@
-%ul
-  - cache "scenario_select_#{I18n.locale}" do
-    - @grouped_scenarios.each do |group,scenarios| 
-      - if %w{ actueel featured }.include?(group.downcase)
-        = render partial: 'pages/root_page/scenario_group', locals: {group: group, scenarios: scenarios }
-        - @grouped_scenarios.delete(group)
-    - @grouped_scenarios.each do |group,scenarios| 
-      - if ["energy productivity"].include?(group.downcase)
-        = render partial: 'pages/root_page/scenario_group', locals: {group: group, scenarios: scenarios }
-        - @grouped_scenarios.delete(group)
-    - @grouped_scenarios.each do |group,scenarios|
-      - if %w{ overig other }.include?(group.downcase)
-        - @last_group = group
-      - else
-        = render partial: 'pages/root_page/scenario_group', locals: { group: group, scenarios: scenarios }
-    = render partial: 'pages/root_page/scenario_group', locals: { group: @last_group, scenarios: @grouped_scenarios[@last_group] }
+- cache "scenario_select_#{I18n.locale}" do
+  - grouped = Api::Scenario.in_groups(Api::Scenario.all(:from => :templates))
+
+  %ul
+    - grouped.each do |data|
+      = render partial: 'pages/root_page/scenario_group', locals: { group: data[:name], scenarios: data[:scenarios] }

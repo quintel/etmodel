@@ -1,11 +1,7 @@
 %li
-  - header = if %w{ actueel featured }.include?(group.downcase) 
-    - t('scenario.featured_display_group')
-  - elsif %w{ overig other }.include?(group.downcase)
-    - t('scenario.general_display_group')
-  - else 
-    - group
-  %strong #{ header }
+  - group_key = group.is_a?(String) ? group.downcase : nil
+  %strong= t("scenario.#{ group_key }", default: group)
+
 - scenarios.each do |scenario|
   %li
     = link_to truncate(scenario.title, :length => 40).html_safe, scenario_path(scenario)

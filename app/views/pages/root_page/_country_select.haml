@@ -7,4 +7,4 @@
           - area_code[:data].each do |sub_area_code|
             = country_option sub_area_code[:area_code], :test => sub_area_code[:test]
     - else
-      = country_option area_code[:area_code], :test => area_code[:test]
+      = country_option area_code[:area_code], :test => area_code[:test], earliest: Api::Area.find_by_country_memoized(area_code[:area_code]).analysis_year + 1

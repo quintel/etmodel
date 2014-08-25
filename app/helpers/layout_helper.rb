@@ -11,9 +11,12 @@ module LayoutHelper
   def country_option(code, opts = {})
     current = Current.setting.area_code == code
     selected = current ? "selected='true'" : nil
+
     label = I18n.t("country_select.#{ code }", default: I18n.t(code))
     label += " (#{ I18n.t('new') })" if opts[:test]
-    content_tag :option, label.html_safe, :value => code, :selected => selected
+
+    content_tag :option, label.html_safe, :value => code, :selected => selected,
+      'data-earliest' => opts[:earliest] || 2013
   end
 
   def area_links

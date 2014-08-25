@@ -18,16 +18,19 @@
       padding: 0 0 3px
       h3.selected a
         background: image-url("slides/triangle-hover.gif") no-repeat left center
+        font-weight: bold
       div p img
         float: left
         padding: 0 20px 0 0
       h3
+        cursor: pointer
         margin: 0
         background: #dfe8f3
         height: 30px
         outline: none
         a
-          font: 16px/30px $title_font_family
+          font-size: 14px
+          line-height: 30px
           height: 30px
           margin: 0 0 2px
           color: #224368
@@ -36,8 +39,6 @@
           background: image-url("slides/triangle.gif") no-repeat left center
           text-align: left
           overflow: hidden
-          &:hover
-            background: image-url("slides/triangle-hover.gif") no-repeat left center
       .slide
         display: none
         p

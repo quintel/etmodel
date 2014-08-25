@@ -26,7 +26,7 @@ class @CommonInterface
   # other is clicked.
   check_year_radio_buttons: ->
     elements = $('#end_year option:selected')
-    if elements.text() == 'other'
+    if elements.val() == 'other'
       $('#other_year').show()
     else
       $('#other_year').hide()

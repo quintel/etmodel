@@ -1,7 +1,16 @@
-%li
+%li.title
   - group_key = group.is_a?(String) ? group.downcase : nil
   %strong= t("scenario.#{ group_key }", default: group)
 
 - scenarios.each do |scenario|
-  %li
-    = link_to truncate(scenario.title, :length => 40).html_safe, scenario_path(scenario)
+  - if scenario.title.to_s.include?(' - ')
+    %li.with_org
+      = link_to scenario_path(scenario) do
+        - title, org = scenario.title.split(' - ', 2)
+
+        %span.who= title.html_safe
+        %span.org= org.html_safe
+  - else
+    %li
+      = link_to scenario_path(scenario) do
+        = truncate(scenario.title, length: 40).html_safe

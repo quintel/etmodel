@@ -52,6 +52,35 @@ body#outside-model
         background: #eee
       &:hover
         background: #ebebeb
+      &.title:hover
+        background: none
+        cursor: default
+
+  #existing_scenario ul
+    border-bottom: none
+
+    li
+      padding: 3px 10px 3px 15px
+      white-space: nowrap
+
+      &.with_org
+        color: #999
+        font-size: 11px
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+
+      &.title
+        padding-top: 13px
+
+      .who
+        color: black
+        font-size: 13px
+
+      .org
+        color: #999
+        line-height: 0
+        margin-left: 4px
 
 #information
   margin-left: 300px

@@ -1,15 +1,15 @@
 %h2= raw t("sidebar_items.#{@interface.current_sidebar_item.key}.long_name")
 
-.buttons
-  %a.button.fancybox{ href: @interface.tab_info_path }
-    %span.fa.fa-info
-    = raw t("header.information")
+.help
+  %a.info.fancybox{ href: @interface.tab_info_path }
+    %span.fa.fa-book
+    = t("header.information").rstrip
 
   - if @interface.current_tutorial_movie
-    %a.button.fancybox{:href => @interface.tutorial_movie_path, :title => "Tutorial"}<>
+    %a.tutorial.fancybox{:href => @interface.tutorial_movie_path, :title => "Tutorial"}<>
       %span.fa.fa-video-camera
       Tutorial
 
-  %a.button.add_chart{:href => output_elements_path}
-    %span.fa.fa-signal
+  %a.add_chart{:href => output_elements_path}
+    %span.fa.fa-plus-square
     = t 'header.add_chart'

@@ -25,8 +25,10 @@
         %a.save{:href => new_scenario_path}= t("header.save_scenario")
         %a#reset_scenario{:href => scenario_reset_path}= t("header.reset_scenario")
     - if controller_name != 'pages' && has_active_scenario?
+      %li.sep
+
       - if Current.setting.use_peak_load
-        %li
+        %li.scenario_option
           = check_box :track_peak_load, :settings,
             :onchange => 'App.settings.toggle_peak_load_tracking()',
             :checked => Current.setting.track_peak_load
@@ -34,12 +36,12 @@
             = t 'header.notify_of_grid_investments'
 
       - if Current.setting.allow_fce?
-        %li
+        %li.scenario_option
           = check_box :settings, :use_fce, :checked => Current.setting.use_fce
           %label{:for => "settings_use_fce"}= t('fce.check')
 
       - if Current.setting.allow_merit_order?
-        %li.merit
+        %li.scenario_option
           = check_box :settings, :use_merit_order
           %label{:for => "settings_use_merit_order"}= t('header.merit_order_check')
 

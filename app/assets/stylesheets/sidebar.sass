@@ -1,46 +1,61 @@
+$sidebar-hover-bg: #fbfbfb
+$sidebar-active-bg: #e2e2e2
+
 #sidebar
-  border-top: 1px solid #ddd
+  background: #f0f0f0
   border-right: 1px solid #ddd
-  background-color: #f4f4f4
+  color: black
   h4
-    @include background(linear-gradient(top,#f9f9f9, #f4f4f4))
     margin: 0 0 0 0
-    border-top: 1px solid white
-    border-bottom: 1px solid #ddd
     padding: 10px 15px
     cursor: pointer
-    font-weight: normal
-    &.active
-      font-weight: bold
-      border-left: 5px solid #63A1C9
+    color: #333
+    font-weight: bold
+    font-size: 14px
+    +background(linear-gradient(#fbfbfb, #f0f0f0))
+    &:hover
+      text-decoration: underline
+  .sep
+    height: 1px
+    background: #ddd
+    margin: 0
   ul
-    @include background(linear-gradient(top,#f9f9f9, #f4f4f4))
     margin: 0 0 0 0
-    padding: 13px 0
+    padding: 0
     list-style: none
-    border-bottom: 1px solid #ddd
     li, li.child
       padding: 0 0 0 0
       overflow: hidden
       vertical-align: top
       position: relative
+      &.active
+        background: $sidebar-active-bg
+        color: black
+        margin-right: -1px
+        a
+          border-right: 4px solid #71a2cf
+          color: black
+          width: 166px
+          &:hover
+            background: $sidebar-active-bg
+            cursor: default
+        &:hover
+          background: $sidebar-active-bg
       &.empty
         padding: 5px 5px 0 5px
         margin: 2px 5px
         color: red
         &:hover
           background: none
-      &.active
-        background: #eee
       &:hover
-        background: #ebebeb
+        background: $sidebar-hover-bg
       a:hover, &.active a
         span.value
           background: transparent none
       a
         float: left
-        width: 240px
-        color: #333
+        width: 165px
+        color: black
         text-decoration: none
         padding: 5px 0 5px 5px
         margin: 2px 5px
@@ -55,18 +70,22 @@
           float: left
           height: 5px
           background: #999
-          margin: 2px 0 3px 0
+          margin: 2px 0 3px 26px
           overflow: hidden
+          &:before
+            border-left: 1px solid black
+            height: 10px
+            display:block
+            width: 1px
 
         span.value
           position: absolute
-          top: 13px
-          color: #000000
+          top: 14px
+          color: #777
           font-size: 10px
           height: 10px
           width: 20px
           padding-left: 3px
-          font-style: italic
           font-weight: normal
 
         span.title
@@ -77,15 +96,20 @@
           line-height: 150%
           height: 20px
     li.child
+      &.active a
+        padding-top: 3px
+        padding-bottom: 3px
+        width: 146px
       a
         margin: 0 0 0 20px
+        width: 145px
         span.bullet
           float: left
-          margin-top: 3px
+          margin-top: 4px
           padding-right: 5px
         span.title
           font-size: 12px
-          padding: 1px 0
+          padding: 2px 0 1px
           height: 17px
       &.empty
         margin: 0 0 0 20px

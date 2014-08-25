@@ -50,5 +50,10 @@ class @SidebarView extends Backbone.View
       percentage = Math.round(result * 100)
       pixels     = "#{ percentage }px"
 
-      $item.find('.bar').animate(width: pixels, 1000)
-      $item.find('.value').html("#{ percentage }%").animate(left: pixels, 1000)
+      if percentage is 0
+        vPixels = "#{ percentage + 22 }px"
+      else
+        vPixels = "#{ percentage + 26 }px"
+
+      $item.find('.bar').animate(width: pixels, 300)
+      $item.find('.value').html("#{ percentage }%").animate(left: vPixels, 300)

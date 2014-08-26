@@ -20,7 +20,7 @@ $sidebar-active-bg: #e2e2e2
     background: #ddd
     margin: 0
   ul
-    margin: 0 0 0 0
+    margin: 0 0 10px 0
     padding: 0
     list-style: none
     li, li.child
@@ -72,11 +72,6 @@ $sidebar-active-bg: #e2e2e2
           background: #999
           margin: 2px 0 3px 26px
           overflow: hidden
-          &:before
-            border-left: 1px solid black
-            height: 10px
-            display:block
-            width: 1px
 
         span.value
           position: absolute
@@ -99,13 +94,15 @@ $sidebar-active-bg: #e2e2e2
       &.active a
         padding-top: 3px
         padding-bottom: 3px
-        width: 146px
+        width: 155px
       a
-        margin: 0 0 0 20px
-        width: 145px
+        padding: 3px 20px
+        margin: 0 0 0 11px
+        width: 154px
         span.bullet
           float: left
-          margin-top: 4px
+          font-size: 12px
+          margin-top: 5px
           padding-right: 5px
         span.title
           font-size: 12px

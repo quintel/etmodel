@@ -3,4 +3,4 @@
 - other_year_selected = !preset_years.include?(Current.setting.end_year)
 = select_tag :end_year, options_for_select(preset_years, other_year_selected ? "other" : (Current.setting.end_year || 2050)),{:onchange => "Interface.check_year_radio_buttons();"}
 - custom_years = (2013..2050).to_a.map {|i| [i,i]}
-= select_tag :other_year, options_for_select(custom_years, other_year_selected ? {:selected => Current.setting.end_year} : {}), {}.merge(other_year_selected ? {:style=>"width:60px"} : {:style => 'display:none'})
+= select_tag :other_year, options_for_select(custom_years, other_year_selected ? {:selected => Current.setting.end_year} : {}), {}.merge(other_year_selected ? {} : {:style => 'display:none'})

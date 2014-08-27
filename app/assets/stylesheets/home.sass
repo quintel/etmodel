@@ -16,12 +16,33 @@ body#outside-model
   width: 300px
   background-color: #f4f4f4
   #new_scenario
-    padding-left: 15px
-  #submit
-    float: right
+    border-bottom: 1px solid #ddd
+    padding: 20px
+  #submit button
+    border-radius: 5px
+    margin: 0
+    &:focus
+      border-color: #417cb1
+      border-bottom-color: #3b6f9e
+      box-shadow: 0 0 7px #73abd9
+      outline: none
+  p
+    margin: 0
   select
-    font-size: 16px
-    margin-top: -25px
+    background: #fff
+    +background(linear-gradient(#fff, #eee))
+    border: 1px solid #aaa
+    border-radius: 5px
+    font: 12px $body_font_family
+    height: 25px
+    padding: 0 3px
+    margin: 5px 0 20px
+    &:hover
+      cursor: pointer
+    &:focus
+      border-color: #4b8ac2
+      box-shadow: 0 0 7px #73abd9
+      outline: none
   a
     text-decoration: none
     color: #000

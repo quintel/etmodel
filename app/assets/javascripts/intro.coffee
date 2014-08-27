@@ -1,17 +1,32 @@
 $ ->
   $("#new_scenario_button").click (e) ->
     e.preventDefault()
+    newScenario = $('#new_scenario')
+
     $("#new_scenario_button").addClass('active')
     $("#existing_scenario_button").removeClass('active')
-    $("#new_scenario").slideToggle().addClass('active')
+
+    unless newScenario.is(':visible')
+      newScenario.slideDown
+        duration: 175
+        easing: 'easeOutQuad'
+
+    newScenario.addClass('active')
+
     $("#existing_scenario").hide()
     $("#load_existing_scenario").hide()
 
   $("#existing_scenario_button").click (e) ->
     e.preventDefault()
+    existingScenario = $('#existing_scenario')
+
     $("#existing_scenario_button").addClass('active')
     $("#new_scenario_button").removeClass('active')
-    $("#existing_scenario").slideToggle().addClass('active')
+
+    unless existingScenario.is(':visible')
+      existingScenario.slideDown(600)
+
+    existingScenario.addClass('active')
     $("#new_scenario").hide().removeClass('active')
 
   areaSelect = $("#new_scenario select[name=area_code]")

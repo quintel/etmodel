@@ -1,96 +1,60 @@
-set :application, "etmodel"
-set :server_type, 'production'
-set :deploy_to, "/u/apps/etmodel"
-set :scm, :git
-set :repository, "https://github.com/quintel/etmodel.git"
-set :user, 'ubuntu'
-set :deploy_via, :remote_cache
-# Some files that will need proper permissions set
-set :chmod755, "app config db lib public vendor script script/* public/disp*"
-ssh_options[:forward_agent] = true
-set :use_sudo, false
-set :bundle_flags, '--deployment --quiet --shebang ruby-local-exec'
-set :local_db_name, 'etmodel_dev'
+# config valid only for Capistrano 3.1
+lock '3.2.1'
 
-task :production do
-  set :branch,          'production'
-  set :rails_env,       'production'
-  set :application_key, 'etmodel'
-  set :domain,          read_domain_from_config
+set :log_level, 'info'
 
-  server domain, :web, :app, :db, :primary => true
+set :application, 'etmodel'
+set :repo_url, 'https://github.com/quintel/etmodel.git'
 
-  set :airbrake_key,    remote_config(:config, :airbrake_api_key)
-  set :db_host,         remote_config(:database, :host)
-  set :db_name,         remote_config(:database, :database)
-  set :db_user,         remote_config(:database, :username)
-  set :db_pass,         remote_config(:database, :password)
-end
+# Set up rbenv
+set :rbenv_type, :user
+set :rbenv_ruby, '2.1.1'
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 
-task :staging do
-  set :branch,          'staging'
-  set :rails_env,       'staging'
-  set :application_key, 'etmodel_staging'
-  set :domain,          read_domain_from_config
+# Default branch is :master
+# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
-  server domain, :web, :app, :db, :primary => true
+# Default deploy_to directory is /var/www/my_app
+# set :deploy_to, "/var/www/#{fetch(:application)}"
 
-  set :airbrake_key,    remote_config(:config, :airbrake_api_key)
-  set :db_host,         remote_config(:database, :host)
-  set :db_name,         remote_config(:database, :database)
-  set :db_user,         remote_config(:database, :username)
-  set :db_pass,         remote_config(:database, :password)
-end
+# Default value for :scm is :git
+# set :scm, :git
 
-task :ansible do
-  set :branch,          'staging'
-  set :rails_env,       'staging'
-  set :application_key, 'etmodel_staging'
-  set :domain,          read_domain_from_config
+# Default value for :format is :pretty
+# set :format, :pretty
 
-  server 'ansible', :web, :app, :db, :primary => true
+# Default value for :log_level is :debug
+# set :log_level, :debug
 
-  set :db_host,         remote_config(:database, :host)
-  set :db_name,         remote_config(:database, :database)
-  set :db_user,         remote_config(:database, :username)
-  set :db_pass,         remote_config(:database, :password)
+# Default value for :pty is false
+# set :pty, true
 
-  set :scm, :none
-  set :repository, "."
-  set :local_repository, "."
-  set :deploy_via, :copy
-  set :user, 'antw'
-end
+# Default value for :linked_files is []
+set :linked_files,
+  %w{config/database.yml config/config.yml config/email.yml}
 
-# Useful, taken from the capistrano gem
-def rake_on_current(*tasks)
-  rails_env = fetch(:rails_env, rails_env)
-  rake = fetch(:rake, "rake")
-  tasks.each do |t|
-    run "if [ -d #{release_path} ]; then cd #{release_path}; else cd #{current_path}; fi; #{rake} RAILS_ENV=#{rails_env} #{t}"
+# Default value for linked_dirs is []
+set :linked_dirs,
+  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+
+# Default value for default_env is {}
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+
+# Default value for keep_releases is 5
+# set :keep_releases, 5
+
+namespace :deploy do
+
+  desc 'Restart application'
+  task :restart do
+    invoke 'unicorn:restart'
   end
-end
 
-# Reads and returns the contents of a remote +path+, caching it in case of
-# multiple calls.
-def remote_file(path)
-  @remote_files ||= {}
-  @remote_files[path] ||= YAML.load(capture("cat #{ path }"))
-end
+  after :publishing, :restart
 
-# Reads the remote database.yml file to read the value of an attribute. If a
-# matching environment variable is set (prefixed with "DB_"), it will be used
-# instead.
-def remote_config(file, key)
-  ENV["DB_#{ key.to_s.upcase }"] ||
-    remote_file(
-      "#{ shared_path }/config/#{ file }.yml"
-    )[rails_env.to_s][key.to_s]
-end
+  after :restart, :clear_cache do
+    invoke 'memcached:flush'
+  end
 
-# Reads the domain to which we'll deploy. Uses the "domain" setting from
-# database.yml, or the DOMAIN environment variable.
-def read_domain_from_config
-  ENV['DOMAIN'] ||
-    YAML.load_file('config/database.yml')[rails_env.to_s]['domain']
 end

@@ -48,6 +48,14 @@ group :development do
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'seed_dump'
+
+  # Deploy with Capistrano.
+  gem 'capistrano',             '~> 3.0',   require: false
+  gem 'capistrano-rbenv',       '~> 2.0',   require: false
+  gem 'capistrano-rails',       '~> 1.1',   require: false
+  gem 'capistrano-bundler',     '~> 1.1',   require: false
+  gem 'capistrano3-unicorn',    '~> 0.2',   require: false
+  gem 'capistrano-maintenance', '~> 0.0.4', require: false
 end
 
 group :test, :development do
@@ -85,5 +93,3 @@ gem 'uglifier'
 gem 'yui-compressor', github: 'sstephenson/ruby-yui-compressor'
 gem 'compass-rails'
 gem 'oily_png' # Faster sprite compilation.
-
-gem 'capistrano', '~> 2'

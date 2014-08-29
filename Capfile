@@ -1,28 +1,26 @@
-require 'bundler/capistrano'
-require 'airbrake/capistrano'
+# Load DSL and Setup Up Stages
+require 'capistrano/setup'
 
-load 'deploy' if respond_to?(:namespace) # cap2 differentiator
-Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
-load 'lib/capistrano/db_recipes'
-load 'lib/capistrano/memcached'
-load 'lib/capistrano/maintenance'
-load 'lib/capistrano/unicorn'
-load 'deploy/assets'
+# Includes default deployment tasks
+require 'capistrano/deploy'
 
-load 'config/deploy' # remove this line to skip loading any of the default tasks
+# Includes tasks from other gems included in your Gemfile
+#
+# For documentation on these, see for example:
+#
+#   https://github.com/capistrano/rvm
+#   https://github.com/capistrano/rbenv
+#   https://github.com/capistrano/chruby
+#   https://github.com/capistrano/bundler
+#   https://github.com/capistrano/rails
+#
+# require 'capistrano/rvm'
+require 'capistrano/rbenv'
+# require 'capistrano/chruby'
+require 'capistrano/bundler'
+require 'capistrano/rails/assets'
+require 'capistrano/rails/migrations'
+require 'capistrano3/unicorn'
 
-namespace :deploy do
-  task :link_configuration_files do
-    run "ln -sf #{shared_path}/config/config.yml #{release_path}/config/"
-    run "ln -sf #{shared_path}/config/email.yml #{release_path}/config/"
-    run "ln -sf #{shared_path}/config/database.yml #{release_path}/config/"
-    run "ln -sf #{shared_path}/config/newrelic.yml #{release_path}/config/"
-    run "ln -nfs #{shared_path}/media #{release_path}/public/media"
-    run "ln -nfs #{shared_path}/media/videos #{release_path}/public/videos"
-  end
-end
-
-before "deploy:assets:precompile", "deploy:link_configuration_files"
-after "deploy:update_code", "deploy:link_configuration_files"
-after "deploy", "deploy:cleanup"
-after "deploy", "memcached:flush"
+# Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
+Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }

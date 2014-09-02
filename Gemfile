@@ -51,13 +51,13 @@ group :development do
 end
 
 group :test, :development do
-  gem 'debugger', '~> 1.6.1'
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'pry-stack_explorer'
-  gem 'pry-debugger'
   gem 'rspec-rails', "~> 2.14"
   gem 'watchr'
+
+  gem 'pry-byebug', platforms: [:mri_20, :mri_21]
 end
 
 group :test do

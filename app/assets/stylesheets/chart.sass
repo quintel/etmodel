@@ -4,6 +4,9 @@
     float: left
     min-height: 300px
     margin-right: 2px
+    .vertical_stacked_bar, .waterfall, .target_bar, .co2_emissions, .merit_order
+      svg
+        shape-rendering: crispEdges
     header
       background: #dfe8f3
       height: 30px
@@ -202,7 +205,7 @@ div.d3_container
     text.target_unit
       font-size: 9px
     text.year_label
-      fill: #777
+      fill: #fff
       font-size: 9px
     .x_axis
       line, path

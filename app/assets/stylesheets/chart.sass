@@ -4,9 +4,6 @@
     float: left
     min-height: 300px
     margin-right: 2px
-    .vertical_stacked_bar, .waterfall, .target_bar, .co2_emissions, .merit_order
-      svg
-        shape-rendering: crispEdges
     header
       background: #dfe8f3
       height: 30px
@@ -157,6 +154,9 @@ table
 // =========  D3 charts ======================================================
 
 div.d3_container
+  &.vertical_stacked_bar, &.waterfall, &.target_bar, &.co2_emissions, &.merit_order
+    svg
+      shape-rendering: crispEdges
   text
     font-family: $body_font_family
     font-size: 12px

@@ -7,9 +7,9 @@
         == #{ t('intro.continue_with_current_scenario') }&hellip;
 
   .section
-    %h4#new_scenario_button
+    %h4#new_scenario_button{ class: has_active_scenario? ? 'none' : 'active' }
       %a{href: '#top'}= t 'intro.start_a_new_scenario'
-    #new_scenario{style: "display: none;"}
+    #new_scenario{style: "display: #{ has_active_scenario? ? 'none' : 'block' };"}
       = form_tag root_path do
         = render "pages/root_page/country_select"
         = render "pages/root_page/year_select"

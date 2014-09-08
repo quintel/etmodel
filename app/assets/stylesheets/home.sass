@@ -49,14 +49,16 @@ body#outside-model
   h4
     @include background(linear-gradient(top,#f9f9f9, #f4f4f4))
     margin: 0 0 0 0
-    border-top: 1px solid white
-    border-bottom: 1px solid #ddd
-    padding: 10px 15px
     cursor: pointer
     font-weight: normal
+    a
+      display: block
+      padding: 10px 15px
+      border-bottom: 1px solid #ddd
     &.active
+      border-right: 4px solid #63A1C9
       font-weight: bold
-      border-left: 5px solid #63A1C9
+      margin-right: -1px
   ul
     @include background(linear-gradient(top,#f9f9f9, #f4f4f4))
     margin: 0 0 0 0
@@ -85,7 +87,6 @@ body#outside-model
 
   #existing_scenario ul
     border-bottom: none
-
     li
       padding: 3px 10px 3px 15px
       white-space: nowrap

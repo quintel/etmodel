@@ -6,19 +6,21 @@
          :title => "continue"}
         == #{ t('intro.continue_with_current_scenario') }&hellip;
 
-  %h4#new_scenario_button
-    %a{href: '#top'}= t 'intro.start_a_new_scenario'
-  #new_scenario{style: "display: none;"}
-    = form_tag root_path do
-      = render "pages/root_page/country_select"
-      = render "pages/root_page/year_select"
-      #submit
-        = render "pages/root_page/start_button"
-  .clear
-  %h4#existing_scenario_button
-    %a{href: '#top'}= t 'intro.load_a_scenario'
-  #existing_scenario{style: "display: none;"}
-    = render 'pages/root_page/existing_scenario'
+  .section
+    %h4#new_scenario_button
+      %a{href: '#top'}= t 'intro.start_a_new_scenario'
+    #new_scenario{style: "display: none;"}
+      = form_tag root_path do
+        = render "pages/root_page/country_select"
+        = render "pages/root_page/year_select"
+        #submit
+          = render "pages/root_page/start_button"
+    .clear
+  .section
+    %h4#existing_scenario_button
+      %a{href: '#top'}= t 'intro.load_a_scenario'
+    #existing_scenario{style: "display: none;"}
+      = render 'pages/root_page/existing_scenario'
 
 #information
   = render 'pages/root_page/movies'

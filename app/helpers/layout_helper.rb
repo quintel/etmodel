@@ -20,67 +20,22 @@ module LayoutHelper
   end
 
   def area_links
-    links = []
-    add_area_choice links, "nl"
-
-    # Provinces of the Netherlands
-
-    links_nl = []
-
-    add_area_choice links_nl, "nl-drenthe"
-    add_area_choice links_nl, "nl-flevoland"
-    add_area_choice links_nl, "nl-friesland"
-    add_area_choice links_nl, "nl-gelderland"
-    add_area_choice links_nl, "nl-limburg"
-    add_area_choice links_nl, "nl-noord-brabant"
-    add_area_choice links_nl, "nl-noord-holland"
-    add_area_choice links_nl, "nl-overijssel"
-    add_area_choice links_nl, "nl-utrecht"
-    add_area_choice links_nl, "nl-zeeland"
-    add_area_choice links_nl, "nl-zuid-holland"
-    add_area_choice links_nl, "nl-noord"                       if @show_all
-
-    links.push text: "Provinces of the Netherlands" ,          data: links_nl
-
-    # Municipalities of the Netherlands
-
-    links_municipalities = []
-
-    add_area_choice links_municipalities, "ams",               true
-    add_area_choice links_municipalities, "grs",               true
-
-    links.push text: "Municipalities of the Netherlands" ,     data: links_municipalities
-
-    # Germany
-
-    add_area_choice links, "de",                               true
-
-    if @show_german_provinces
-      links_de = []
-      add_area_choice links_de, "br",                          true
-
-      links.push text: "Provinces of Germany",                 data: links_de
-    end
-
-    # Other countries
-    
-    add_area_choice links, "fr",                               true
-    add_area_choice links, "ro",                               true
-    add_area_choice links, "pl",                               true
-    add_area_choice links, "es",                               true
-    add_area_choice links, "tr",                               true
-    add_area_choice links, "uk",                               true
-    add_area_choice links, "eu",                               true
-    add_area_choice links, "za",                               true if session[:show_all_countries]
-    add_area_choice links, "be-vlg",                           true if session[:show_all_countries] || session[:show_flanders]
-    return links
+    [ area_choice('fr'),
+      area_choice('de'),
+      area_choice('nl'),
+      area_choice('pl'),
+      area_choice('es'),
+      area_choice('uk'),
+      :separator,
+      area_choice('eu')
+    ].compact
   end
 
-  def add_area_choice(collection, area_code, test = false)
-    if area = Api::Area.find_by_country_memoized(area_code)
-      if area.useable? || admin?
-        collection.push(area_code: area_code, test: test)
-      end
+  def area_choice(area_code)
+    area = Api::Area.find_by_country_memoized(area_code)
+
+    if area && (area.useable || admin?)
+      { area_code: area_code }
     end
   end
 

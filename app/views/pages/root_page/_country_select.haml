@@ -1,7 +1,9 @@
 %p= t("choose_country")
 %select{:name => "area_code"}
   - area_links.each do |area_code|
-    - if area_code[:data]
+    - if area_code == :separator
+      %option(disabled='disabled') &mdash;
+    - elsif area_code[:data]
       - if area_code[:data].any?
         %optgroup{:label => area_code[:text]}
           - area_code[:data].each do |sub_area_code|

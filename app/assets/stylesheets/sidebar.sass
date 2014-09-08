@@ -35,7 +35,7 @@ $sidebar-active-bg: #e2e2e2
         a
           border-right: 4px solid #71a2cf
           color: black
-          width: 166px
+          width: 176px
           &:hover
             background: $sidebar-active-bg
             cursor: default
@@ -54,10 +54,10 @@ $sidebar-active-bg: #e2e2e2
           background: transparent none
       a
         float: left
-        width: 165px
+        width: 175px
         color: black
         text-decoration: none
-        padding: 8px 20px
+        padding: 8px 10px 8px 20px
 
         p
           float: left
@@ -86,18 +86,22 @@ $sidebar-active-bg: #e2e2e2
           position: relative
           float: left
           padding-left: 25px
-          overflow: visible
+          overflow: hidden
           line-height: 150%
-          height: 20px
+          text-overflow: ellipsis
+          width: 160px
+
+        sub
+          line-height: 1
     li.child
       &.active a
         padding-top: 3px
         padding-bottom: 3px
-        width: 155px
+        width: 165px
       a
-        padding: 3px 20px
+        padding: 3px 10px 3px 20px
         margin: 0 0 0 11px
-        width: 154px
+        width: 164px
         span.bullet
           float: left
           font-size: 12px
@@ -107,6 +111,7 @@ $sidebar-active-bg: #e2e2e2
           font-size: 12px
           padding: 2px 0 1px
           height: 17px
+          width: 150px
       &.empty
         margin: 0 0 0 20px
         padding: 5px 0 5px 5px

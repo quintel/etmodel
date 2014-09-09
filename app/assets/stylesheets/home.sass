@@ -21,11 +21,13 @@ body#outside-model
   #submit button
     border-radius: 5px
     margin: 0
-    &:focus
+    &:focus, &:active
       border-color: #417cb1
       border-bottom-color: #3b6f9e
       box-shadow: 0 0 7px #73abd9
       outline: none
+    &:active
+      box-shadow: inset 0 1px 4px #4c76a1
   p
     margin: 0
   select
@@ -33,10 +35,12 @@ body#outside-model
     +background(linear-gradient(#fff, #eee))
     border: 1px solid #aaa
     border-radius: 5px
-    font: 12px $body_font_family
-    height: 25px
-    padding: 0 3px
-    margin: 5px 0 20px
+    font-size: 13px
+    font: $body_font_family
+    height: 28px
+    line-height: 1.42857
+    margin: 5px 0 15px
+    padding: 3px 5px
     &:hover
       cursor: pointer
     &:focus

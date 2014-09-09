@@ -1,4 +1,5 @@
-#notice_bar
+- if GeneralUserNotification.active.any?
+  #notice_bar
   - GeneralUserNotification.active.each do |n|
     .general_notice= raw n.text
 #header_inside{:style => "position: relative;"}

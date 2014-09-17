@@ -1,4 +1,6 @@
 body#predictions_index
+  padding: 30px
+
   ul
     padding: 0px
     margin: 0px
@@ -106,93 +108,94 @@ body#predictions_index
         input
           padding: 3px
           font-size: 14px
-      .buttons
+
+    .buttons
+      float: left
+      padding: 15px 0
+      button, input[type=button]
+        cursor: pointer
+        float: right
+        background-color: #63A1C9
+        border: 1 px
+        padding: 5px 10px
+        color: white
+        font-size: 10px
+        margin-right: 10px
+    .buttons.right
+      float: right
+      button
+        margin-right: 0px
+
+    .expert_avatar
+      float: left
+      clear: both
+      width: 54px
+      height: 70%
+      margin: 5px 0 0 0
+      padding-right: 10px
+      background: url('/assets/backcasting/bg-prediction-speechbox.png') no-repeat center right
+      img
+        height: 54px
+        border: 1px solid #CCC
+
+    .description
+      float: right
+      width: 786px
+      padding: 10px
+      font: italic
+      line-height: 20px
+      background-color: #F0F0F0
+      a
+        color: #63A1C9
+        text-decoration: none
+      a:hover
+        text-decoration: underline
+    .connector
+      float: right
+      width: 806px
+      height: 13px
+      background: url('/assets/backcasting/bg-prediction-connector.png') no-repeat top center
+    .measures
+      float: right
+      width: 786px
+      padding: 10px
+      background-color: #F0F0F0
+
+      i
         float: left
-        padding: 15px 0
-        input[type=button]
-          cursor: pointer
+        margin-bottom: 5px
+      ul
+        float: left
+        width: 786px
+        &.even
+          background-color: #E4E4E4
+        &.odd
+          background-color: #F0F0F0
+
+        li
+          float: left
+          font-size: 12px
+          padding: 7px
+          vertical-align: top
+        li.years
           float: right
-          background-color: #63A1C9
-          border: 1 px
-          padding: 5px 10px
-          color: white
-          font-size: 10px
-          margin-right: 10px
-      .buttons.right
-        float: right
-        input[type=button]
-          margin-right: 0px
-
-      .expert_avatar
-        float: left
+        li.name
+          width: 75%
+        li.inline_description
+          display: none
+          font-size: 11px
+          font-style: italic
+      .measure
+        cursor: pointer
+      .more_info,.measure.active:hover .more_info
         clear: both
-        width: 54px
-        height: 70%
-        margin: 5px 0 0 0
-        padding-right: 10px
-        background: url('/assets/backcasting/bg-prediction-speechbox.png') no-repeat center right
-        img
-          height: 54px
-          border: 1px solid #CCC
-
-      .description
-        float: right
-        width: 786px
-        padding: 10px
-        font: italic
-        line-height: 20px
-        background-color: #F0F0F0
-        a
-          color: #63A1C9
-          text-decoration: none
-        a:hover
-          text-decoration: underline
-      .connector
-        float: right
-        width: 806px
-        height: 13px
-        background: url('/assets/backcasting/bg-prediction-connector.png') no-repeat top center
-      .measures
-        float: right
-        width: 786px
-        padding: 10px
-        background-color: #F0F0F0
-
-        i
-          float: left
-          margin-bottom: 5px
-        ul
-          float: left
-          width: 786px
-          &.even
-            background-color: #E4E4E4
-          &.odd
-            background-color: #F0F0F0
-
-          li
-            float: left
-            font-size: 12px
-            padding: 7px
-            vertical-align: top
-          li.years
-            float: right
-          li.name
-            width: 75%
-          li.inline_description
-            display: none
-            font-size: 11px
-            font-style: italic
-        .measure
-          cursor: pointer
-        .more_info,.measure.active:hover .more_info
-          clear: both
-          width: 18px
-          height: 18px
-          background: url('/assets/backcasting/bg-prediction-readmore.png') no-repeat
-          cursor: pointer
-        .measure:hover,.measure.active
-          .more_info
-            background: url('/assets/backcasting/bg-prediction-readmore-active.png') no-repeat
+        width: 18px
+        height: 18px
+        background: url('/assets/backcasting/bg-prediction-readmore.png') no-repeat
+        cursor: pointer
+      .measure:hover,.measure.active
+        .more_info
+          background: url('/assets/backcasting/bg-prediction-readmore-active.png') no-repeat
 
       .share
         margin-top: 10px

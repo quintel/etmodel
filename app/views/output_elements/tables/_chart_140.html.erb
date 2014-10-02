@@ -1,18 +1,30 @@
 <script type="text/template" id="merit-order-table-template">
-  <table class="autostripe condensed profitability">
+  <table class="chart profitability">
     <thead>
       <tr>
-        <th><%= t("output_elements.tables.merit_order.technology") %></th>
-        <th><%= t("output_elements.tables.merit_order.position") %></th>
+        <th class="technology"><%= t("output_elements.tables.merit_order.technology") %></th>
+        <th class="position"><%= t("output_elements.tables.merit_order.position") %></th>
         <th><%= t("output_elements.tables.merit_order.available_capacity") %></th>
         <th><%= t("output_elements.tables.merit_order.flh_future") %></th>
         <th><%= t("output_elements.tables.merit_order.profits_per_mwh_electricity") %></th>
-        <th></th>
       </tr>
     </thead>
+    <tbody>
+      <%% _.each(series, function(serie){ %>
+        <tr class="<%%= serie.profitability %>">
+          <td class="technology">
+            <%%= I18n.t("output_elements.tables.merit_order." + serie.label) %>
+          </td>
+          <td class="position"><%%= serie.position || '-' %></td>
+          <td><%%= Metric.autoscale_value(serie.capacity, 'MW') %></td>
+          <td><%%= Metric.round_number(serie.full_load_hours, 0) %></td>
+          <td><%%= Metric.autoscale_value(serie.profit_per_mwh_electricity, 'euro', 0) %></td>
+        </tr>
+      <%% }) %>
+    </tbody>
     <tfoot>
       <tr>
-        <td colspan="6">
+        <td colspan="5">
           <span class="legend_block" style="background: green"></span>
           <span class="legend_label"><%= t 'output_elements.tables.merit_order.profitable' %></span>
           <span class="legend_block" style="background: orange"></span>
@@ -22,18 +34,5 @@
         </td>
       </tr>
     </tfoot>
-    <tbody>
-      <%% _.each(series, function(serie){ %>
-        <tr class="<%%= serie.profitability %>">
-          <td>
-            <%%= I18n.t("output_elements.tables.merit_order." + serie.label) %>
-          </td>
-          <td><%%= serie.position || '-' %></td>
-          <td><%%= Metric.autoscale_value(serie.capacity, 'MW') %></td>
-          <td><%%= Metric.round_number(serie.full_load_hours, 0) %></td>
-          <td><%%= Metric.autoscale_value(serie.profit_per_mwh_electricity, 'euro', 0) %></td>
-        </tr>
-      <%% }) %>
-    </tbody>
   </table>
 </script>

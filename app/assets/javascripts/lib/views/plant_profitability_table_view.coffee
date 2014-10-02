@@ -26,8 +26,10 @@ class @PlantProfitabilityTableView extends HtmlTableChartView
         profit_per_mwh_electricity: values.profit_per_mwh_electricity
         label: @series_labels[key] || key
 
-    sorted_items = items.sort(@sorting_function)
-    sorted_items = _(sorted_items).map (item) -> forSet(item)
+    for item, index in _.sortBy(items, (item) -> item.position)
+      item.position = index + 1
+
+    sorted_items = (forSet(item) for item in items.sort(@sorting_function))
 
     @container_node().html tmpl({series: sorted_items})
     true

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140514131219) do
+ActiveRecord::Schema.define(version: 20141006103818) do
 
   create_table "area_dependencies", force: true do |t|
     t.string  "dependent_on"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20140514131219) do
   create_table "input_elements", force: true do |t|
     t.string   "key"
     t.string   "share_group"
-    t.float    "step_value"
+    t.float    "step_value",        limit: 24
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "unit"
@@ -102,19 +102,19 @@ ActiveRecord::Schema.define(version: 20140514131219) do
   end
 
   create_table "output_elements", force: true do |t|
-    t.integer  "output_element_type_id",                 null: false
+    t.integer  "output_element_type_id",                            null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "under_construction",     default: false
+    t.boolean  "under_construction",                default: false
     t.string   "unit"
-    t.boolean  "percentage",             default: false
+    t.boolean  "percentage",                        default: false
     t.string   "group"
-    t.boolean  "show_point_label",       default: false
-    t.boolean  "growth_chart",           default: false
-    t.string   "key",                                    null: false
-    t.float    "max_axis_value"
-    t.float    "min_axis_value"
-    t.boolean  "hidden",                 default: false
+    t.boolean  "show_point_label",                  default: false
+    t.boolean  "growth_chart",                      default: false
+    t.string   "key",                                               null: false
+    t.float    "max_axis_value",         limit: 24
+    t.float    "min_axis_value",         limit: 24
+    t.boolean  "hidden",                            default: false
   end
 
   add_index "output_elements", ["hidden"], name: "index_output_elements_on_hidden", using: :btree
@@ -137,7 +137,7 @@ ActiveRecord::Schema.define(version: 20140514131219) do
 
   create_table "prediction_values", force: true do |t|
     t.integer  "prediction_id"
-    t.float    "value"
+    t.float    "value",         limit: 24
     t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"

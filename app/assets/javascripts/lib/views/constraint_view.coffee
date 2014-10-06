@@ -66,7 +66,7 @@ class @ConstraintView extends Backbone.View
         Metric.euros_to_string(result)
       when 'household_energy_cost'
         I18n.toCurrency(result, { precision: 0, unit: '&euro;' })
-      when 'total_primary_energy', 'employment', 'co2_reduction'
+      when 'total_primary_energy', 'employment', 'co2_reduction', 'local_co2_reduction'
         # show + prefix if needed
         Metric.ratio_as_percentage(result, true)
       when 'net_energy_import', 'profitability'

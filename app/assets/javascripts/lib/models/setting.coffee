@@ -20,13 +20,21 @@ class @Setting extends Backbone.Model
     @save use_fce: use_fce
     App.call_api()
 
-    # update dashboard item text
+    # update dashboard item text for co2_reduction
     if item = dashboard.find_by_key('co2_reduction')
       item.view.update_header(
         if use_fce
           I18n.t 'constraints.greenhouse_gas.label'
         else
           I18n.t 'constraints.co2_reduction.label' )
+
+    # update dashboard item text for local_co2_reduction
+    if item = dashboard.find_by_key('local_co2_reduction')
+      item.view.update_header(
+        if use_fce
+          I18n.t 'constraints.greenhouse_gas.label'
+        else
+          I18n.t 'constraints.local_co2_reduction.label' )
 
   toggle_peak_load_tracking: =>
     @save track_peak_load: $("#track_peak_load_settings").is(':checked')

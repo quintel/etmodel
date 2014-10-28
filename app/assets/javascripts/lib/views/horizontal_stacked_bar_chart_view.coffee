@@ -4,6 +4,9 @@ class @HorizontalStackedBarChartView extends JQPlotChartView
   initialize: ->
     @initialize_defaults()
 
+  tableOptions:
+    labelFormatter: -> (s) -> "#{ s.get('label') } - #{ s.get('group') }"
+
   render: =>
     @clear_results_cache()
     @pre_render()

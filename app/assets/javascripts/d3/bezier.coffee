@@ -3,6 +3,9 @@ D3.bezier =
     initialize: ->
       D3ChartView.prototype.initialize.call(this)
 
+    tableOptions:
+      sorter: -> (series) -> series.reverse()
+
     can_be_shown_as_table: -> true
 
     margins:
@@ -82,7 +85,7 @@ D3.bezier =
         .ticks(4)
         .tickSize(-@series_width, 10, 0)
         .orient("right")
-        .tickFormat((x) => Metric.autoscale_value x, @model.get('unit'))
+        .tickFormat(@main_formatter())
       @svg.append("svg:g")
         .attr("class", "y_axis inner_grid")
         .attr("transform", "translate(#{@series_width}, 0)")
@@ -119,6 +122,7 @@ D3.bezier =
       @inverted_y = @inverted_y.domain([0, tallest])
 
       # animate the y-axis
+      @y_axis.tickFormat(@main_formatter())
       @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@inverted_y))
 
       # See above for explanation of this method chain
@@ -129,8 +133,8 @@ D3.bezier =
         .transition()
         .attr('d', (d) => @area d.values)
         .attr('data-tooltip-text', (d) => "
-          #{@start_year}: #{Metric.autoscale_value d.values[0].y, @model.get 'unit'}</br>
-          #{@end_year}: #{Metric.autoscale_value d.values[2].y, @model.get 'unit'}
+          #{@start_year}: #{@main_formatter()(d.values[0].y)}</br>
+          #{@end_year}: #{@main_formatter()(d.values[2].y)}
         ")
 
     # We need to pass the chart series through the stacking function and the SVG

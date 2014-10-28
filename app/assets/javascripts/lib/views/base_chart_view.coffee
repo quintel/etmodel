@@ -1,6 +1,26 @@
 # All charts inherit from this base class.
 #
 class @BaseChartView extends Backbone.View
+  # Customise the way the table-view is rendered. Possibilities are:
+  #
+  # labelFormatter: A function which should return a function; used to format
+  #                 the label for each row.
+  #
+  # valueFormatter: A function which should return a function; used to format
+  #                 the present and value in each row.
+  #
+  # sorter:         A function which should return a function; receives the
+  #                 entire series, and should return the series sorted as
+  #                 desired.
+  #
+  # For example:
+  #
+  #   tableOptions:
+  #     labelFormatter: -> (serie)  -> serie.get('label')
+  #     valueFormatter: -> (value)  -> Math.round(value)
+  #     sorter:         -> (series) -> series.reverse()
+  tableOptions: {}
+
   initialize_defaults: =>
     @model.bind('refresh', @render_as_needed)
 
@@ -70,6 +90,22 @@ class @BaseChartView extends Backbone.View
 
   hide_format_toggler: => $("a.toggle_chart_format").hide()
 
+  # Internal: Returns a function which can format and scale values on an axis,
+  # ensuring that all returned formatted values are in the same unit.
+  create_scaler: (max_value, unit, opts = {}) ->
+    if Quantity.isSupported(unit)
+      Quantity.scaleAndFormatBy(max_value, unit, opts)
+    else
+      (value) -> Metric.autoscale_value(value, unit, opts.precision)
+
+  # Internal: Returns a function which will format values for the "main" axis
+  # of the chart.
+  main_formatter: (opts = {}) =>
+    @create_scaler(@max_series_value(), @model.get('unit').toUpperCase(), opts)
+
+  max_series_value: ->
+    @model.max_series_value()
+
   # Derived classes can override this
   #
   can_be_shown_as_table: -> true
@@ -86,25 +122,10 @@ class @BaseChartView extends Backbone.View
   render_as_table: =>
     @clear_container()
 
-    table_data =
-      start_year: App.settings.get('start_year')
-      end_year: App.settings.get('end_year')
-      series: @model.formatted_series_hash()
-      totals: _.map(@column_totals(), @model.format_value)
-
-    tmpl = $("#chart-table-template").html()
-    table = _.template(tmpl, table_data)
-    @container_node().removeClass('chart_canvas').addClass('table_canvas').html(table)
-
-  column_totals: ->
-    present = 0.0
-    future  = 0.0
-
-    _(@model.results(true)).each (row) ->
-      present += row[0][1]
-      future  += row[1][1]
-
-    [ present, future ]
+    @container_node()
+      .removeClass('chart_canvas')
+      .addClass('table_canvas')
+      .html(new TableView(this, @tableOptions).render())
 
   # D3 charts override this method
   supported_in_current_browser: -> true

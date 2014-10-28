@@ -99,7 +99,7 @@ D3.stacked_bar =
         .ticks(5)
         .tickSize(-@width, 10, 0)
         .orient("right")
-        .tickFormat((x) => Metric.autoscale_value x, @model.get('unit'))
+        .tickFormat(@main_formatter())
       @svg.append("svg:g")
         .attr("class", "y_axis inner_grid")
         .attr("transform", "translate(#{@width - 25}, 0)")
@@ -146,9 +146,7 @@ D3.stacked_bar =
         .transition()
         .attr('y', (d) => @series_height - @y(d.y0 + d.y))
         .attr('height', (d) => @y(d.y))
-        .attr("data-tooltip-text", (d) =>
-          Metric.autoscale_value d.y, @model.get('unit')
-        )
+        .attr("data-tooltip-text", (d) => @main_formatter()(d.y))
 
       # move the target lines
       @svg.selectAll('rect.target_line')

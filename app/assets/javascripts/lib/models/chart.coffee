@@ -140,6 +140,13 @@ class @Chart extends Backbone.Model
 
   values_targets: => _.map @target_series(),     (s) -> s.safe_future_value()
 
+  max_series_value: ->
+    _.max([
+      _.sum(@values_present()),
+      _.sum(@values_future()),
+      @values_targets()...
+    ])
+
   # @return [[Float,Float]] Array of present/future values [Float,Float]
   value_pairs: ->
     @series.map (s) -> [s.safe_present_value(), s.safe_future_value()]
@@ -147,30 +154,6 @@ class @Chart extends Backbone.Model
   non_target_series: -> @series.reject (s) -> s.get('is_target_line')
 
   target_series: -> @series.select (s) -> s.get('is_target_line')
-
-  # This is used to show a chart as a table
-  # See base_chart_view#render_as_table
-  formatted_series_hash : ->
-    # Legacy code duplicates target series. See stacked_bar.coffee#draw
-    targets_without_duplicates = _.uniq @target_series(), false, (s) -> s.get 'label'
-    series = _.union @non_target_series(), targets_without_duplicates
-
-    # the series array is wrapped in underscore to fix an IE8 bug
-    items = _(series).map (s) =>
-      type  = @get 'type'
-      label = s.get 'label'
-
-      if (type == 'mekko') || (type == 'horizontal_stacked_bar')
-        label = "#{label} - #{s.get('group')}"
-
-      out =
-        label: label
-        present_value: @format_value(s.safe_present_value())
-        future_value:  @format_value(s.safe_future_value())
-
-    # some charts draw series bottom to top. Let's flip the array
-    return items.reverse() if @get('type') in ['vertical_stacked_bar', 'bezier']
-    items
 
   format_value: (value) =>
     Metric.autoscale_value(value, @get('unit'), 2)

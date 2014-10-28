@@ -2,6 +2,9 @@ class @VerticalStackedBarChartView extends JQPlotChartView
   initialize: ->
     @initialize_defaults()
 
+  tableOptions:
+    sorter: -> (series) -> series.reverse()
+
   render: =>
     @pre_render()
     @render_chart()

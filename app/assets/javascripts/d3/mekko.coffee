@@ -18,6 +18,9 @@ D3.mekko =
       @series = @model.series.models
       @initialize_defaults()
 
+    tableOptions:
+      labelFormatter: -> (s) -> "#{ s.get('label') } - #{ s.get('group') }"
+
     can_be_shown_as_table: -> true
 
     # To render the mekko we need three collections:
@@ -73,6 +76,10 @@ D3.mekko =
       bottom: 10
       left: 35
       right: 10
+
+    col_value_scaler: =>
+      max_y_value = _.max(@sector_list.map((a) -> a.total_value()))
+      Quantity.scaleAndFormatBy(max_y_value, @model.get('unit').toUpperCase())
 
     draw: =>
       @prepare_data()
@@ -176,7 +183,7 @@ D3.mekko =
         .transition().duration(500)
         .attr('transform', (d) => "translate(#{@x(d.total_value() / 2)}, #{@label_offset})")
         .select('text')
-        .text((d) -> "#{d.get 'key'} #{parseInt d.total_value()} PJ")
+        .text((d) => "#{d.get 'key'} #{@col_value_scaler()(d.total_value())}")
 
       # let's track the vertical offset for every sector
       offsets = {}
@@ -199,7 +206,7 @@ D3.mekko =
           offsets[d.get 'sector'] += x
           old
         )
-        .attr("data-tooltip-text", (d) -> Metric.autoscale_value d.val(), 'PJ')
+        .attr("data-tooltip-text", (d) => @main_formatter()(d.val()))
 
 # Pseudo-collection of nodes
 #

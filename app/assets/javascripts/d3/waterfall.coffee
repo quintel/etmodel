@@ -67,7 +67,7 @@ D3.waterfall =
         .ticks(4)
         .tickSize(-@series_width, 10, 0)
         .orient("right")
-        .tickFormat((x) => Metric.autoscale_value x, @model.get('unit'))
+        .tickFormat(@main_formatter())
 
       @x = d3.scale.ordinal().rangeRoundBands([0, @series_width])
         .domain(@labels())
@@ -126,6 +126,9 @@ D3.waterfall =
           at: 'top center'
           follow: 'mouse'
 
+    max_series_value: ->
+      d3.max(@prepare_data(), (d) -> d.top)
+
     refresh: =>
       data = @prepare_data()
       # update the scales as needed
@@ -143,7 +146,7 @@ D3.waterfall =
         .transition()
         .attr('y', (d) => @y d.top)
         .attr('height', (d) => @y(d.bottom) - @y(d.top))
-        .attr('data-tooltip-text', (d) => Metric.autoscale_value d.value, @model.get('unit'))
+        .attr('data-tooltip-text', (d) => @main_formatter()(d.value))
 
       @svg.selectAll('text.serie')
         .data(data, (d) -> d.key)
@@ -154,7 +157,7 @@ D3.waterfall =
           else
             @y(d.bottom) + 10
         )
-        .text((d) => Metric.autoscale_value d.value, @model.get('unit'), 1)
+        .text((d) => @main_formatter(precision: 1)(d.value))
 
     # The final label is not defined in the chart attributes, so we must add
     # add it manually. This is ugly!

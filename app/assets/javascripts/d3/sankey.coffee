@@ -344,7 +344,7 @@ D3.sankey =
       @link_list = _.map D3.sankey.charts[k].data.links, (l) =>
         new D3.sankey.Link(_.extend l, view: this)
 
-      @value_formatter = (x) -> Metric.autoscale_value x, 'PJ', 2
+      @value_formatter = (x) -> @main_formatter()(x)
 
       @initialize_defaults()
 
@@ -383,6 +383,15 @@ D3.sankey =
             g.append('svg:stop').attr('offset', '0%').attr('style', 'stop-color:rgb(250,0,0);stop-opacity:1')
             g.append('svg:stop').attr('offset', '100%').attr('style', 'stop-color:rgb(250,0,0);stop-opacity:0.0')
       )
+
+    # Internal: Returns a function which will format values for the "main" axis
+    # of the chart.
+    main_formatter: =>
+      # Scale by the largest link value.
+      @create_scaler(@max_series_value(), 'PJ', precision: 2)
+
+    max_series_value: ->
+      _.max(_.map(@link_list, (link) -> link.value()))
 
     draw_links: =>
       # links are treated as a group

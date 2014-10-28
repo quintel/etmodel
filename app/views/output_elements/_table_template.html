@@ -3,24 +3,25 @@
     <thead>
       <tr>
         <td></td>
-        <th><%%= start_year %></th>
-        <th><%%= end_year %></th>
+        <th><%%= startYear %></th>
+        <th><%%= endYear %></th>
       </tr>
     </thead>
     <tbody>
-      <%% _.each(series, function(serie){ %>
+      <%% _.each(data, function(row) { %>
         <tr>
-          <th><%%= serie.label %></th>
-          <td><%%= serie.present_value %></td>
-          <td><%%= serie.future_value %></td>
+          <th><%%= formatLabel(row.serie) %></th>
+          <td><%%= formatValue(row.present) %></td>
+          <td><%%= formatValue(row.future) %></td>
         </tr>
       <%% }) %>
     </tbody>
-  <tfoot>
-  <tr>
-    <th><%%= I18n.t("output_elements.common.total") %></th>
-    <td><%%= totals[0] %></td>
-    <td><%%= totals[1] %></td>
-  </tr>
+    <tfoot>
+      <tr>
+        <th><%%= I18n.t("output_elements.common.total") %></th>
+        <td><%%= formatValue(totals[0]) %></td>
+        <td><%%= formatValue(totals[1]) %></td>
+      </tr>
+    </tfoot>
   </table>
 </script>

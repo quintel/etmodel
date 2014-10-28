@@ -64,7 +64,7 @@ D3.co2_emissions =
         .ticks(5)
         .tickSize(-(@width - 25), 10, 0)
         .orient("right")
-        .tickFormat((x) => Metric.autoscale_value x, @model.get('unit'))
+        .tickFormat(@main_formatter())
       @svg.append("svg:g")
         .attr("class", "y_axis inner_grid")
         .attr("transform", "translate(#{@width - 25}, 0)")
@@ -101,14 +101,18 @@ D3.co2_emissions =
         .attr('y', @series_height)
         .style('opacity', 0.0)
 
-    refresh: =>
-      # calculate tallest column
-      tallest = d3.max([
+    max_series_value: ->
+      _.max([
         @serie_1990.safe_future_value(),
         @serie_value.safe_present_value(),
         @serie_value.safe_future_value(),
         @serie_target.safe_future_value()
       ])
+
+    refresh: =>
+      # calculate tallest column
+      tallest = @max_series_value()
+
       # update the scales as needed
       @y = @y.domain([0, tallest])
       @inverted_y = @inverted_y.domain([0, tallest])
@@ -122,9 +126,7 @@ D3.co2_emissions =
         .transition()
         .attr('y', (d) => @series_height - @y(d.y))
         .attr('height', (d) => @y(d.y))
-        .attr("data-tooltip", (d) =>
-          html = Metric.autoscale_value d.y, @model.get('unit')
-        )
+        .attr("data-tooltip", (d) => @main_formatter()(d.y))
 
       # move the target lines
       @svg.selectAll('rect.target_line')
@@ -151,24 +153,24 @@ D3.co2_emissions =
       unit = @model.get('unit')
       raw_target = @serie_target.future_value()
       target = if raw_target?
-        target = Metric.autoscale_value raw_target, unit
+        target = @main_formatter()(raw_target)
       else
         '-'
       html = "
         <table class='chart'>
           <thead>
             <tr>
-              <td>1990</td>
-              <td>#{@start_year}</td>
-              <td>#{@end_year}</td>
-              <td>Target</td>
+              <th>1990</td>
+              <th>#{@start_year}</td>
+              <th>#{@end_year}</td>
+              <th>Target</td>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>#{Metric.autoscale_value @serie_1990.safe_future_value(), unit}</td>
-              <td>#{Metric.autoscale_value @serie_value.safe_present_value(), unit}</td>
-              <td>#{Metric.autoscale_value @serie_value.safe_future_value(), unit}</td>
+              <td>#{@main_formatter()(@serie_1990.safe_future_value())}</td>
+              <td>#{@main_formatter()(@serie_value.safe_present_value())}</td>
+              <td>#{@main_formatter()(@serie_value.safe_future_value())}</td>
               <td>#{target}</td>
             </tr>
           </tbody>

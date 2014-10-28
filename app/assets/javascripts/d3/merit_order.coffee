@@ -80,7 +80,7 @@ D3.merit_order =
       @y = d3.scale.linear().domain([0, 100]).range([0, @series_height])
       @inverted_y = @y.copy().range([@series_height, 0])
       @x_axis = d3.svg.axis().scale(@x).ticks(4).orient("bottom")
-        .tickFormat((x) => Metric.autoscale_value x, 'MW')
+        .tickFormat((x) => @main_formatter()(x))
       @y_axis = d3.svg.axis().scale(@inverted_y).ticks(4).orient("left")
 
 
@@ -143,6 +143,19 @@ D3.merit_order =
         series: @nodes.models
         left_margin: 15
 
+    # Internal: Returns a function which will format values for the "main" axis
+    # of the chart.
+    main_formatter: (opts = {}) =>
+      @create_scaler(
+        # Capacity is the "main" unit.
+        @max_series_value(),
+        @nodes.models[0].gquery_x.get('gquery').get('unit'),
+        opts
+      )
+
+    max_series_value: ->
+      _.max(_.map(@nodes.models, (n) -> n.value_x()))
+
     refresh: =>
       # updated scales and axis
       #
@@ -179,8 +192,8 @@ D3.merit_order =
             @series_height - h
         )
         .attr("x", (d) => @x(d.get 'x_offset'))
-        .attr("data-tooltip-text", (d) ->
-          html = "#{I18n.t('output_elements.merit_order_chart.installed_capacity')}: #{Metric.autoscale_value(d.value_x(), 'MW', 2)}
+        .attr("data-tooltip-text", (d) =>
+          html = "#{I18n.t('output_elements.merit_order_chart.installed_capacity')}: #{@main_formatter(precision: 2)(d.value_x())}
                   <br/>
                   #{I18n.t('output_elements.merit_order_chart.operating_costs')}: #{Metric.autoscale_value d.original_y_value(), 'Eur/Mwh', 2}
                   <br/>

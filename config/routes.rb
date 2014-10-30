@@ -5,6 +5,8 @@ Etm::Application.routes.draw do
   root :to => 'pages#root'
   post '/' => 'pages#root'
 
+  get '/scaled', :to => 'pages#scaled'
+
   get '/choose' => 'pages#choose'
 
   get '/info/:ctrl/:act' => "pages#info", :as => :tab_info

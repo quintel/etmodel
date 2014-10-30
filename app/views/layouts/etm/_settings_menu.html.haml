@@ -11,6 +11,14 @@
         #year= Current.setting.end_year
         #{t "header.current_end_year"}:
 
+    - if Current.setting.scaling
+      %li.scaling
+        You have scaled the region to
+        %strong
+          = number_to_human(Current.setting.scaling[:value]).downcase
+          residences
+        == (#{ scaling_reduction } of it's original size).
+
     %li.language
       #{t "header.current_language"}:
       = language_select

@@ -25,6 +25,7 @@ class @AppView extends Backbone.View
       preset_scenario_id: globals.settings.preset_scenario_id
       area_code:          globals.settings.area_code
       end_year:           globals.settings.end_year
+      scale:              globals.settings.scaling
 
     # Store the scenario id
     @api.ensure_id().done (id) =>
@@ -54,6 +55,7 @@ class @AppView extends Backbone.View
     return @_user_values_dfd if @_user_values_dfd
     @_user_values_dfd = $.Deferred (dfd) =>
       @api.user_values
+        extras: !! App.settings.get('scaling')
         success: (args...) ->
           dfd.resolve(args...)
         fail: @handle_ajax_error

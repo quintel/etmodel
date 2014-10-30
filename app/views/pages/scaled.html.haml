@@ -1,0 +1,13 @@
+= form_tag root_path do
+  = render "pages/root_page/country_select"
+  = render "pages/root_page/year_select"
+
+  %p Scaling attribute
+  %select(name="scaling_attribute")
+    %option(value="number_of_residences") Number of residences
+
+  %p Scale to&hellip;
+  %input(type="text" name="scaling_value")
+
+  #submit
+    = render "pages/root_page/start_button"

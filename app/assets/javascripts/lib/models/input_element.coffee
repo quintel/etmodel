@@ -56,6 +56,13 @@ class @InputElementList extends Backbone.Collection
         start_value: values.default
         label: if _.isObject(values.label) then values.label else null
 
+      if App.settings.get('scaling')
+        if ! i.get('step_value') || i.get('step_value') > values.step
+          # When region scaling, the pre-defined input step is too large for
+          # some inputs. We therefore use the values from ETEngine which
+          # accounts for this.
+          i.set(step_value: values.step)
+
       v = +values.user
       def = if (v? && !_.isNaN(v)) then v else values.default
 

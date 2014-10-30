@@ -12,6 +12,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def scaled
+    setup_countries_and_regions
+  end
+
   def choose
     @mixer_url = (APP_CONFIG[:mixer_url] || "http://mixer.et-model.com") +
       "?locale=#{I18n.locale}"
@@ -51,6 +55,14 @@ protected
     Current.setting = Setting.default
     Current.setting.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
     Current.setting.area_code = params[:area_code]
+
+    if params[:scaling_attribute]
+      Current.setting.scaling = {
+        area_attribute: params[:scaling_attribute],
+        value:          params[:scaling_value]
+      }
+    end
+
     redirect_to play_path and return
   end
 

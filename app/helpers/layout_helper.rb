@@ -65,4 +65,15 @@ module LayoutHelper
   def english?
     I18n.locale.to_s == 'en'
   end
+
+  def scaling_reduction
+    region    = Current.setting.area
+    value     = Current.setting.scaling[:value]
+    default   = region.public_send(Current.setting.scaling[:area_attribute])
+
+    percent   = (value.to_f / default) * 100
+    precision = (percent > 10 ? 0 : (percent < 1 ? 2 : 1))
+
+    number_to_percentage(percent, precision: precision)
+  end
 end

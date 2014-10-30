@@ -37,7 +37,7 @@ gem 'dynamic_form'
 # jquery-etmodel-rails contains the jquery.etmodel.js plugin
 # When working on the plugin, use :path => '/path/to/etplugin'
 # gem "jquery-etmodel-rails", :path => "~/Sites/etplugin"
-gem "jquery-etmodel-rails", '~> 0.3', :git  => "https://github.com/quintel/etplugin.git"
+gem 'jquery-etmodel-rails', ref: '926f0db', github: 'quintel/etplugin'
 gem 'jquery-qtip2-rails'
 
 group :development do

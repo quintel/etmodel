@@ -25,6 +25,7 @@ class Setting
       use_fce:                false,
       locked_charts:          {},
       last_etm_page:          nil,
+      scaling:                nil,
       preset_scenario_id:     nil,
       api_session_id:         nil
     }
@@ -58,7 +59,8 @@ class Setting
       :preset_scenario_id => scenario.id,
       :use_fce => scenario.use_fce,
       :end_year => scenario.end_year,
-      :area_code => scenario.area_code
+      :area_code => scenario.area_code,
+      :scaling => scenario.scaling && scenario.scaling.attributes
     }
     new(attrs)
   end

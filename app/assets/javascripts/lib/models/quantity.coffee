@@ -153,7 +153,7 @@ class @Quantity
   #   formatter('1337000') # => "1,337 TJ"
   @scaleAndFormatBy: (maxValue, unitName, opts) ->
     bestUnit = new Quantity(maxValue, unitName).smartScale().unit.name
-    (value) -> new Quantity(value, unitName).to(bestUnit).format(opts)
+    (value) -> new Quantity(value, unitName).to(bestUnit).format(_.clone(opts))
 
   # Public: Returns if the given unit name is supported by the Quantity class.
   #

@@ -15,7 +15,7 @@
       %li.scaling
         You have scaled the region to
         %strong
-          = number_to_human(Current.setting.scaling[:value]).downcase
+          = number_with_delimiter(Current.setting.scaling[:value].to_i)
           residences
         == (#{ scaling_reduction } of it's original size).
 

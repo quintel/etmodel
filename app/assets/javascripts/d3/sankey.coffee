@@ -434,21 +434,23 @@ D3.sankey =
       nodes
 
     setup_tooltips: ->
-        $("#{@container_selector()} g.node").qtip
+        $("#{@container_selector()} g.node rect").qtip
           content:
-            title: -> $(this).attr('data-tooltip-title')
-            text: -> $(this).attr('data-tooltip')
+            title: -> $(this).parent('g').attr('data-tooltip-title')
+            text: -> $(this).parent('g').attr('data-tooltip')
           position:
-            target: 'mouse'
             my: 'right center'
-            at: 'top center'
+            at: 'left center'
+            viewport: $("#{@container_selector()}")
+            adjust:
+              method: 'flipinvert'
 
         $("#{@container_selector()} g.link path").qtip
           content: -> $(this).attr('data-tooltip')
           position:
             target: 'mouse'
-            my: 'bottom right'
-            at: 'top left'
+            my: 'right center'
+            at: 'left center'
           style:
             classes: "qtip-tipsy"
 

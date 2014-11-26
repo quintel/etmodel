@@ -121,7 +121,11 @@ class Setting
 
   # Returns the ActiveResource object
   def area
-    Api::Area.find_by_country_memoized(area_code)
+    @area = if scaling.present?
+      Api::ScaledArea.new(Api::Area.find_by_country_memoized(area_code))
+    else
+      Api::Area.find_by_country_memoized(area_code)
+    end
   end
 
   # returns the country part of the area_code

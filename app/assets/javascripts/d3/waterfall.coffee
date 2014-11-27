@@ -138,6 +138,9 @@ D3.waterfall =
 
       @y.domain([min_value, max_value])
 
+      # Refresh the unit scaling.
+      @y_axis.tickFormat(@main_formatter())
+
       # animate the y-axis
       @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@y))
 

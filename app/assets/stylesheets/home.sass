@@ -30,23 +30,6 @@ body#outside-model
       box-shadow: inset 0 1px 4px #4c76a1
   p
     margin: 0
-  select
-    background: #fff
-    +background(linear-gradient(#fff, #eee))
-    border: 1px solid #aaa
-    border-radius: 5px
-    font-size: 13px
-    font: $body_font_family
-    height: 28px
-    line-height: 1.42857
-    margin: 5px 0 15px
-    padding: 3px 5px
-    &:hover
-      cursor: pointer
-    &:focus
-      border-color: #4b8ac2
-      box-shadow: 0 0 7px #73abd9
-      outline: none
   a
     text-decoration: none
     color: #000
@@ -111,6 +94,25 @@ body#outside-model
         color: #999
         line-height: 0
         margin-left: 4px
+
+#startbar, #new_scaled_scenario
+  select
+    background: #fff
+    +background(linear-gradient(#fff, #eee))
+    border: 1px solid #aaa
+    border-radius: 5px
+    font-size: 13px
+    font: $body_font_family
+    height: 28px
+    line-height: 1.42857
+    margin: 5px 0 15px
+    padding: 3px 5px
+    &:hover
+      cursor: pointer
+    &:focus
+      border-color: #4b8ac2
+      box-shadow: 0 0 7px #73abd9
+      outline: none
 
 #information
   margin-left: 300px
@@ -187,3 +189,38 @@ body#outside-model
       padding: 2px 10px
     a
       padding: 0 10px 5px 10px
+
+#new_scaled_scenario
+  background: #EEF2F7
+  border-radius: 5px
+  font: 14px "Helvetica Neue"
+  margin: 50px auto
+  padding: 35px 50px
+  width: 400px
+
+  p
+    font-weight: bold
+    margin-bottom: 5px
+
+  input
+    border: 1px solid #ccc
+    border-radius: 5px
+    font-size: 13px
+    margin-top: 5px
+    padding: 6px 5px 5px
+    transition: border-color .1s, box-shadow .1s
+
+    &:focus
+      border-color: #4b8ac2
+      box-shadow: 0 0 7px #73abd9
+      outline: none
+
+  .row
+    margin: 0 -1px
+    overflow: hidden
+    padding: 0 1px 10px
+    width: 402px
+
+  .field
+    float: left
+    width: 200px

@@ -1,13 +1,18 @@
-= form_tag root_path do
-  = render "pages/root_page/country_select"
-  = render "pages/root_page/year_select"
+= form_for root_path, html: { id: 'new_scaled_scenario' } do |f|
+  .row
+    .field
+      = render "pages/root_page/country_select"
+    .field
+      = render "pages/root_page/year_select"
 
-  %p Scaling attribute
-  %select(name="scaling_attribute")
-    %option(value="number_of_residences") Number of residences
-
-  %p Scale to&hellip;
-  %input(type="text" name="scaling_value" placeholder="e.g. 1000, 250000, ...")
+  .row
+    .field
+      %p Scaling attribute
+      %select(name="scaling_attribute")
+        %option(value="number_of_residences") Number of residences
+    .field
+      %p Scale to&hellip;
+      %input.string(type="text" name="scaling_value" placeholder="e.g. 1000, 250000, ...")
 
   #submit
     = render "pages/root_page/start_button"

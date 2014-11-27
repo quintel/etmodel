@@ -1,25 +1,21 @@
 -# Population chart
-%table#population.chart
+%table#population.chart.centered.autostripe
   %thead
     %tr
       %th
-      %th.border-rgt= Current.setting.start_year
-      %th{:colspan => 1, :style => "text-align: center"}= Current.setting.end_year
+      %th= Current.setting.start_year
+      %th= Current.setting.end_year
 
   %tbody
-
-  %tr.even
-    %th= t "input_elements.households_number_of_inhabitants_chart"
-    %td.border-rgt{:data => {:gquery => "households_number_of_inhabitants", :graph => :present}}
-    %td{:data => {:gquery => "households_number_of_inhabitants"}}
-  %tr.odd
-    %th= t "input_elements.households_number_of_households"
-    %td.border-rgt{:data => {:gquery => "households_number_of_residences", :graph => :present}}
-    %td{:data => {:gquery => "households_number_of_residences"}}
-  %tr.even
-    %th= t "input_elements.households_inhabitants_per_household"
-    %td.border-rgt{:data => {:gquery => "households_number_of_inhabitants_per_residence", :graph => :present}}
-    %td{:data => {:gquery => "households_number_of_inhabitants_per_residence"}}
-  
-  %tfoot
-
+    %tr
+      %th= t "input_elements.households_number_of_inhabitants_chart"
+      %td{:data => {:gquery => "households_number_of_inhabitants", :graph => :present}}
+      %td{:data => {:gquery => "households_number_of_inhabitants"}}
+    %tr
+      %th= t "input_elements.households_number_of_households"
+      %td{:data => {:gquery => "households_number_of_residences", :graph => :present}}
+      %td{:data => {:gquery => "households_number_of_residences"}}
+    %tr
+      %th= t "input_elements.households_inhabitants_per_household"
+      %td{:data => {:gquery => "households_number_of_inhabitants_per_residence", :graph => :present}}
+      %td{:data => {:gquery => "households_number_of_inhabitants_per_residence"}}

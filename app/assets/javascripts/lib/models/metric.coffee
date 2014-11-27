@@ -51,7 +51,8 @@
       pow = @power_of_thousand(x)
       value = x / Math.pow(1000, pow)
 
-      if value > 0 and value < 1
+      # Allow more relaxed scaling down of unitless ("#") values.
+      if pow > 0 and value > 0 and value < (if unit is '#' then 10 else 1)
         pow -= 1
         value *= 1000
 
@@ -100,6 +101,8 @@
         "#{@round_number x, 2} €/MWe"
       when 'MEur/MWe'
         "#{@round_number x, 2} M€/MWe"
+      when '#'
+        "#{value} #{@scaling_in_words(pow, 'nounit')}"
       else
         value
 

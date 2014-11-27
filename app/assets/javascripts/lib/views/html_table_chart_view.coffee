@@ -52,7 +52,7 @@ class @HtmlTableChartView extends BaseChartView
       raw_value = if graph == 'future' then serie.future_value() else serie.present_value()
 
       raw_value = 0 unless _.isNumber(raw_value)
-      value = Metric.round_number(raw_value, decimals)
+      value = Metric.autoscale_value(raw_value, serie.get('gquery').get('unit'), decimals)
       # some gqueries need a special treatment if they're 0
       on_zero = $(cell).data('on_zero')
       if raw_value == 0 and on_zero

@@ -1,6 +1,8 @@
 class Api::Area < ActiveResource::Base
   self.site = "#{APP_CONFIG[:api_url]}/api/v3"
 
+  include Api::CommonArea
+
   # This list of attributes is used in the forms where you can set the
   # area dependencies for an object, such as the input_elements
   #
@@ -21,7 +23,9 @@ class Api::Area < ActiveResource::Base
     :has_other,
     :has_solar_csp,
     :use_network_calculations,
-    :has_electricity_storage
+    :has_electricity_storage,
+    :is_national_scenario,
+    :is_local_scenario
   ]
 
   def self.find_by_country_memoized(area_code)

@@ -39,5 +39,19 @@ module Api
       expect(scaled.has_industry).to be_false
       expect(scaled.attributes[:has_industry]).to be_false
     end
+
+    it 'does not have industry' do
+      expect(scaled.has_other?).to be_false
+      expect(scaled.has_other).to be_false
+      expect(scaled.attributes[:has_other]).to be_false
+    end
+
+    it 'is not a national scenario' do
+      expect(scaled.is_national_scenario).to be_false
+    end
+
+    it 'a local scenario' do
+      expect(scaled.is_local_scenario).to be_true
+    end
   end
 end

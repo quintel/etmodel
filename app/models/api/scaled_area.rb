@@ -1,20 +1,21 @@
 class Api::ScaledArea < SimpleDelegator
   include Api::CommonArea
 
-  DISABLED_SECTORS = [
-    :agriculture, :industry, :other, :electricity_storage, :fce
+  DISABLED_FEATURES = [
+    :has_agriculture, :has_industry, :has_other,
+    :has_electricity_storage, :has_fce, :use_network_calculations
   ].freeze
 
-  DISABLED_SECTORS.each do |sector|
+  DISABLED_FEATURES.each do |feature|
     class_eval <<-RUBY, __FILE__, __LINE__ + 1
-      def has_#{ sector }  ; false ; end
-      def has_#{ sector }? ; false ; end
+      def #{ feature }  ; false ; end
+      def #{ feature }? ; false ; end
     RUBY
   end
 
   def attributes(*)
     super.tap do |data|
-      DISABLED_SECTORS.each { |sector| data["has_#{ sector }"] = false }
+      DISABLED_FEATURES.each { |feature| data[feature.to_s] = false }
     end
   end
 

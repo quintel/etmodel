@@ -9,6 +9,24 @@ class @InputElement extends Backbone.Model
     @bind('change:user_value', @update_collection)
     @bind('change:user_value', @additional_callbacks)
 
+  conversions: ->
+    conversions = @get('conversions') or []
+
+    if App.settings.get('scaling') and Quantity.isSupported(@get('unit'))
+      base   = new Quantity(@get('start_value'), @get('unit'))
+      scaled = base.smartScale()
+
+      if scaled.unit.name isnt base.unit.name
+        conversions = conversions.slice()
+
+        conversions.push({
+          default:    true
+          unit:       scaled.localizedUnit()
+          multiplier: base.unit.power.multiple / scaled.unit.power.multiple
+        })
+
+    conversions
+
   logUpdate: =>
     App.debug "Slider #{@get 'key'}: #{@get('user_value')}"
 

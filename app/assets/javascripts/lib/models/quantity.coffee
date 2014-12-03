@@ -48,6 +48,21 @@ i18nKey = (unit) ->
 
 # ------------------------------------------------------------------------------
 
+# Support for the "mln" input unit.
+
+mlnBase = { name: 'ln', i18n: 'ln' }
+
+compiledUnits['ln']  = { name: 'ln',  base: mlnBase, power: POWERS[8] }
+compiledUnits['kln'] = { name: 'kln', base: mlnBase, power: POWERS[7] }
+compiledUnits['Mln'] = { name: 'mln', base: mlnBase, power: POWERS[6] }
+
+compiledUnits['mln'] = {
+  name: 'mln', base: mlnBase,
+  power: { prefix: 'm', multiple: 1e6, i18n: 'millions' }
+}
+
+# ------------------------------------------------------------------------------
+
 class @Quantity
   # Public: Creates a new Quantity.
   #
@@ -137,8 +152,13 @@ class @Quantity
       #
       opts.precision = _.min(["#{ @value }".split('.', 2)[1]?.length || 0, 2])
 
-    "#{ I18n.toNumber(@value, opts) }
-     #{ I18n.t(i18nKey(@unit), defaultValue: @unit.name) }"
+    "#{ I18n.toNumber(@value, opts) } #{ @localizedUnit() }"
+
+  localizedUnit: ->
+    if @unit.base.i18n
+      I18n.t(i18nKey(@unit), defaultValue: @unit.name)
+    else
+      @unit.name
 
   # Public: Given a number and unit, determines the most appropriate power in
   # which to display the number, and returns a function for converting and

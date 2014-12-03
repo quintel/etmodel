@@ -8,7 +8,7 @@
 
                 <select>
                     <%% _.each(conversions, function (conversion) { %>
-                        <option value="<%%= conversion.uid %>">
+                        <option value="<%%= conversion.uid %>"<%% if (conversion.default) { %> selected="selected"<%% } %>>
                             <%%= conversion.name %>
                         </option>
                     <%% }); %>

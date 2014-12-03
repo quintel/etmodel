@@ -72,10 +72,11 @@
    * key, and each value an array in the format [ unit, multiplier ].
    */
   conversionsFromModel = function (model) {
-    var conversions = [],
-        modelConvs  = model.get('conversions'),
-        mPrecision  = floatPrecision(model.get('step_value')),
-        cKey;
+    var conversions   = [],
+        modelConvs    = model.conversions(),
+        mPrecision    = floatPrecision(model.get('step_value')),
+        customDefault = false,
+        i;
 
     conversions.push(new UnitConversion({
       name:       I18n.t('unit_conversions.default'),
@@ -83,15 +84,20 @@
       multiplier: 1
     }, mPrecision));
 
-    for (cKey in modelConvs) {
-      if (modelConvs.hasOwnProperty(cKey)) {
-        conversions.push(new UnitConversion({
-          name:       I18n.t('unit_conversions.' + cKey),
-          unit:       modelConvs[cKey][0],
-          multiplier: modelConvs[cKey][1]
-        }, mPrecision));
+    for (i = 0; i < modelConvs.length; i++) {
+      conversions.push(new UnitConversion({
+        name:       modelConvs[i].unit,
+        unit:       modelConvs[i].unit,
+        multiplier: modelConvs[i].multiplier,
+        default:    modelConvs[i].default
+      }, mPrecision));
+
+      if (modelConvs[i].default) {
+          customDefault = true;
       }
     }
+
+    conversions[0].default = ! customDefault;
 
     return _.sortBy(conversions, function (c) { return c.name; });
   };
@@ -142,9 +148,14 @@
     this.multiplier = data.multiplier == null ? 1 : data.multiplier;
     this.unit       = data.unit;
     this.uid        = _.uniqueId('uconv_');
+    this.default    = data.default;
 
     this.precision  = data.precision ||
-        originalPrecision + floatPrecision(this.multiplier);
+        originalPrecision - floatPrecision(1 / this.multiplier);
+
+    if (this.precision < 0) {
+        this.precision = 0;
+    }
   }
 
   /**
@@ -218,7 +229,8 @@
    * Creates an <option> element which represents the unit conversion.
    */
   UnitConversion.prototype.toOptionEl = function () {
-    return $('<option></option>').val(this.uid).text(this.name);
+    return $('<option></option>').val(this.uid).
+        text(this.name).attr('selected', this.default);
   };
 
   // # InputElementView ------------------------------------------------------
@@ -246,7 +258,9 @@
       );
 
       this.conversions   = conversionsFromModel(this.model);
-      this.conversion    = this.conversions[0];
+      this.conversion    = _.find(this.conversions,
+                                  function(c) { return c.default });
+
       this.valueSelector = new ValueSelector({ view: this });
       this.initialValue  = this.model.get('start_value');
 

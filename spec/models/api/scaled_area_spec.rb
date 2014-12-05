@@ -28,19 +28,55 @@ module Api
 
     let(:scaled) { ScaledArea.new(area) }
 
-    it 'does not have agriculture' do
-      expect(scaled.has_agriculture?).to be_false
-      expect(scaled.has_agriculture).to be_false
-      expect(scaled.attributes[:has_agriculture]).to be_false
+    it 'may optionally not have agriculture' do
+      Current.setting[:scaling] = { has_agriculture: false }
+
+      begin
+        expect(scaled.has_agriculture?).to be_false
+        expect(scaled.has_agriculture).to be_false
+        expect(scaled.attributes[:has_agriculture]).to be_false
+      ensure
+        Current.setting[:scaling] = nil
+      end
     end
 
-    it 'does not have industry' do
-      expect(scaled.has_industry?).to be_false
-      expect(scaled.has_industry).to be_false
-      expect(scaled.attributes[:has_industry]).to be_false
+    it 'may optionally have agriculture' do
+      Current.setting[:scaling] = { has_agriculture: true }
+
+      begin
+        expect(scaled.has_agriculture?).to be_true
+        expect(scaled.has_agriculture).to be_true
+        expect(scaled.attributes[:has_agriculture]).to be_true
+      ensure
+        Current.setting[:scaling] = nil
+      end
     end
 
-    it 'does not have industry' do
+    it 'may optionally not have industry' do
+      Current.setting[:scaling] = { has_industry: false }
+
+      begin
+        expect(scaled.has_industry?).to be_false
+        expect(scaled.has_industry).to be_false
+        expect(scaled.attributes[:has_industry]).to be_false
+      ensure
+        Current.setting[:scaling] = nil
+      end
+    end
+
+    it 'may optionally have industry' do
+      Current.setting[:scaling] = { has_industry: true }
+
+      begin
+        expect(scaled.has_industry?).to be_true
+        expect(scaled.has_industry).to be_true
+        expect(scaled.attributes[:has_industry]).to be_true
+      ensure
+        Current.setting[:scaling] = nil
+      end
+    end
+
+    it 'does not have "other"' do
       expect(scaled.has_other?).to be_false
       expect(scaled.has_other).to be_false
       expect(scaled.attributes[:has_other]).to be_false

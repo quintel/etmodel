@@ -1,10 +1,17 @@
 class Api::ScaledArea < SimpleDelegator
   include Api::CommonArea
 
+  # Area features which are disabled in the ETM front-end for all scaled
+  # scenarios.
   DISABLED_FEATURES = [
-    :has_agriculture, :has_industry, :has_other,
-    :has_electricity_storage, :has_fce, :use_network_calculations
+    :has_other, :has_electricity_storage, :has_fce, :use_network_calculations
   ].freeze
+
+  # Area features which may be turned on or off by the user when the start a new
+  # scaled scenario.
+  OPTIONAL_FEATURES = [
+    :has_agriculture, :has_industry
+  ]
 
   DISABLED_FEATURES.each do |feature|
     class_eval <<-RUBY, __FILE__, __LINE__ + 1
@@ -13,9 +20,21 @@ class Api::ScaledArea < SimpleDelegator
     RUBY
   end
 
+  OPTIONAL_FEATURES.each do |feature|
+    class_eval <<-RUBY, __FILE__, __LINE__ + 1
+      def #{ feature }
+        Current.setting[:scaling] && Current.setting[:scaling][:#{ feature }]
+      end
+
+      alias_method :#{ feature }?, :#{ feature }
+    RUBY
+  end
+
   def attributes(*)
     super.tap do |data|
-      DISABLED_FEATURES.each { |feature| data[feature.to_s] = false }
+      (DISABLED_FEATURES + OPTIONAL_FEATURES).each do |feature|
+        data[feature.to_s] = public_send(feature)
+      end
     end
   end
 

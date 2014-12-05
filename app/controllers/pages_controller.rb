@@ -58,8 +58,10 @@ protected
 
     if params[:scaling_attribute]
       Current.setting.scaling = {
-        area_attribute: params[:scaling_attribute],
-        value:          params[:scaling_value]
+        area_attribute:  params[:scaling_attribute],
+        value:           params[:scaling_value],
+        has_agriculture: params[:has_agriculture] == '1',
+        has_industry:    params[:has_industry] == '1'
       }
     end
 

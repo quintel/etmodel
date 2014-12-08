@@ -109,6 +109,15 @@ nl:
     renewable:           "Hernieuwbaar"
     summary:             "Samenvattend"
 
+  local_scenario:
+    include_agriculture: Include agriculture
+    include_energy: Include energy sector
+    include_industry: Include industry
+    scaling_attribute: Scaling attribute
+    scale_to: Scale to
+    attributes:
+      number_of_residences: Number of residences
+
   # ----------- Dashbord titles ----------- #
   dashboard:
     changer:

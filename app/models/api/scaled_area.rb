@@ -10,7 +10,7 @@ class Api::ScaledArea < SimpleDelegator
   # Area features which may be turned on or off by the user when the start a new
   # scaled scenario.
   OPTIONAL_FEATURES = [
-    :has_agriculture, :has_industry
+    :has_agriculture, :has_energy, :has_industry
   ]
 
   DISABLED_FEATURES.each do |feature|

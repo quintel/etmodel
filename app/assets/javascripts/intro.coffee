@@ -51,3 +51,13 @@ $ ->
     cYearSelect.val(selected)
 
   areaSelect.change(areaOnChange).change()
+
+  $("#new_scaled_scenario").submit ->
+    variableEl = $("#new_scaled_scenario [name=scaling_value]")
+    value      = $.trim(variableEl.val())
+
+    if not value.length or parseInt(value, 10) is 0
+      variableEl.addClass('error').focus()
+      return false
+
+    variableEl.removeClass('error')

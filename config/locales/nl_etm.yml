@@ -116,8 +116,12 @@ nl:
     scaling_attribute: Scaling attribute
     scale_to: Scale to
     attributes:
-      number_of_residences: Number of residences
-      number_of_inhabitants: Number of residents
+      number_of_residences:
+        long: Number of residences
+        short: residences
+      number_of_inhabitants:
+        long: Number of residents
+        short: residents
 
   # ----------- Dashbord titles ----------- #
   dashboard:

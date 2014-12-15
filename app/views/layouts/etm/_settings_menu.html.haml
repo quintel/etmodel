@@ -16,7 +16,7 @@
         You have scaled the region to
         %strong
           = number_with_delimiter(Current.setting.scaling[:value].to_i)
-          residences
+          = t(:"local_scenario.attributes.#{ Current.setting.scaling[:area_attribute] }.short")
         == (#{ scaling_reduction } of it's original size).
 
     %li.language

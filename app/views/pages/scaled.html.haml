@@ -10,6 +10,7 @@
       %p=t(:'local_sceanrio.scaling_attribute')
       %select(name="scaling_attribute")
         %option(value="number_of_residences")= t(:'local_scenario.attributes.number_of_residences')
+        %option(value="number_of_inhabitants")= t(:'local_scenario.attributes.number_of_inhabitants')
     .field
       %p== #{ t(:'local_scenario.scale_to') }&hellip;
       %input.string(type="text" name="scaling_value" placeholder="e.g. 1000, 250000, ...")

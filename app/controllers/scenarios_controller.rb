@@ -110,7 +110,8 @@ class ScenariosController < ApplicationController
 
   # Loads a scenario from a id.
   #
-  # GET /scenarios/:id/load
+  # GET  /scenarios/:id/load
+  # POST /scenarios/:id/load
   #
   def load
     if @scenario.nil?
@@ -119,11 +120,18 @@ class ScenariosController < ApplicationController
 
     session[:dashboard] = nil
 
-    new_scenario = Api::Scenario.create(scenario: { scenario: {
-      scenario_id: @scenario.id
-    }})
+    scenario_attrs = { scenario_id: @scenario.id }
 
     Current.setting = Setting.load_from_scenario(@scenario)
+
+    if request.post? && params[:scaling_attribute]
+      scaling_attrs = Api::Scenario.scaling_from_params(params)
+
+      scenario_attrs.merge!(scale: scaling_attrs)
+      Current.setting.scaling = scaling_attrs
+    end
+
+    new_scenario = Api::Scenario.create(scenario: { scenario: scenario_attrs })
     Current.setting.api_session_id = new_scenario.id
 
     redirect_to play_path

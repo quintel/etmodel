@@ -62,6 +62,18 @@ class Api::Scenario < ActiveResource::Base
     end.flatten.compact
   end
 
+  def self.scaling_from_params(params)
+    if params[:scaling_attribute]
+      { area_attribute:  params[:scaling_attribute],
+        value:           params[:scaling_value],
+        has_agriculture: params[:has_agriculture] == '1',
+        has_energy:      params[:has_energy] == '1',
+        has_industry:    params[:has_industry] == '1' }
+    else
+      {}
+    end
+  end
+
   # description for a locale is enclosed in
   # <span class='en'>
   # </span>

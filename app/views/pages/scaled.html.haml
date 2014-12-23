@@ -1,26 +1,29 @@
-= form_tag root_path, id: 'new_scaled_scenario' do
-  .row
-    .field
-      = render "pages/root_page/country_select"
-    .field
-      = render "pages/root_page/year_select"
+#scaled_scenario_setup
+  .selections
+    .selection.new.active
+      = t(:'local_scenario.start_new').html_safe
+    .selection.preset
+      = t(:'local_scenario.based_on_preset').html_safe
 
-  .row
-    .field
-      %p=t(:'local_sceanrio.scaling_attribute')
-      %select(name="scaling_attribute")
-        %option(value="number_of_residences")= t(:'local_scenario.attributes.number_of_residences.long')
-        %option(value="number_of_inhabitants")= t(:'local_scenario.attributes.number_of_inhabitants.long')
-    .field
-      %p== #{ t(:'local_scenario.scale_to') }&hellip;
-      %input.string(type="text" name="scaling_value" placeholder="e.g. 1000, 250000, ...")
-  .row.features
-    %label
-      %input(type="checkbox" name="has_agriculture" value="1")= t(:'local_scenario.include_agriculture')
-    %label
-      %input(type="checkbox" name="has_energy" value="1" checked)= t(:'local_scenario.include_energy')
-    %label
-      %input(type="checkbox" name="has_industry" value="1")= t(:'local_scenario.include_industry')
+  = form_tag root_path, id: 'new_scaled_scenario' do
+    .row
+      .field
+        = render "pages/root_page/country_select"
+      .field
+        = render "pages/root_page/year_select"
 
-  #submit
-    = render "pages/root_page/start_button"
+    = render partial: 'scaled_common'
+
+    #submit
+      = render "pages/root_page/start_button"
+
+  = form_tag load_scenarios_path, id: 'preset_scaled_scenario', method: :post do
+    .row
+      .field
+        %p Select an existing scenario
+        = presets_select
+
+    = render partial: 'scaled_common'
+
+    #submit
+      = render "pages/root_page/start_button"

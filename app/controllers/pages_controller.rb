@@ -55,15 +55,10 @@ protected
     Current.setting = Setting.default
     Current.setting.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
     Current.setting.area_code = params[:area_code]
+    Current.setting.preset_scenario_id = params[:preset_scenario_id]
 
     if params[:scaling_attribute]
-      Current.setting.scaling = {
-        area_attribute:  params[:scaling_attribute],
-        value:           params[:scaling_value],
-        has_agriculture: params[:has_agriculture] == '1',
-        has_energy:      params[:has_energy] == '1',
-        has_industry:    params[:has_industry] == '1'
-      }
+      Current.setting.scaling = Api::Scenario.scaling_from_params(scaling)
     end
 
     redirect_to play_path and return

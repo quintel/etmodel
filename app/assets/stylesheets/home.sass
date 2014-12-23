@@ -95,7 +95,7 @@ body#outside-model
         line-height: 0
         margin-left: 4px
 
-#startbar, #new_scaled_scenario
+#startbar, #new_scaled_scenario, #preset_scaled_scenario
   select
     background: #fff
     +background(linear-gradient(#fff, #eee))
@@ -195,7 +195,7 @@ body#outside-model
     a
       padding: 0 10px 5px 10px
 
-#new_scaled_scenario
+#scaled_scenario_setup
   background: #EEF2F7
   border-radius: 5px
   font: 14px "Helvetica Neue"
@@ -203,8 +203,32 @@ body#outside-model
   padding: 35px 50px
   width: 400px
 
+  .selections
+    margin: -35px -50px 35px
+    overflow: hidden
+
+    .selection
+      background: #f9fafc
+      border-top: 2px solid #cedeea
+      cursor: pointer
+      float: left
+      padding: 23px 50px 25px
+      width: 150px
+    .active
+      background: none
+      border-bottom: none
+      border-top-color: #639cca
+      color: black
+    .preset
+      text-align: right
+    strong
+      display: block
+      font-size: 18px
+      font-weight: 400
+
   p
     font-weight: bold
+    margin-top: 0
     margin-bottom: 5px
 
   input
@@ -231,7 +255,7 @@ body#outside-model
     width: 200px
 
   .features
-    background: rgba(255, 255, 255, 0.7)
+    background: #f9fafc
     border-radius: 5px
     font-size: 11px
     margin-bottom: 15px
@@ -244,3 +268,9 @@ body#outside-model
       input
         margin: 0 5px 0 0
         vertical-align: text-top
+
+  #preset_scaled_scenario
+    display: none
+
+    #preset_id
+      max-width: 402px

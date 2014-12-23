@@ -61,3 +61,18 @@ $ ->
       return false
 
     variableEl.removeClass('error')
+
+  $("#scaled_scenario_setup .selection").on "click", (event) ->
+    target = $(event.currentTarget)
+
+    $("#scaled_scenario_setup .selection").removeClass("active")
+    target.addClass("active")
+
+    if target.hasClass('new')
+      $("#new_scaled_scenario").show()
+      $("#preset_scaled_scenario").hide()
+    else
+      $("#preset_scaled_scenario").show()
+      $("#new_scaled_scenario").hide()
+
+    event.preventDefault()

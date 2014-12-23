@@ -1,0 +1,16 @@
+.row
+  .field
+    %p=t(:'local_sceanrio.scaling_attribute')
+    %select(name="scaling_attribute")
+      %option(value="number_of_residences")= t(:'local_scenario.attributes.number_of_residences.long')
+      %option(value="number_of_inhabitants")= t(:'local_scenario.attributes.number_of_inhabitants.long')
+  .field
+    %p== #{ t(:'local_scenario.scale_to') }&hellip;
+    %input.string(type="text" name="scaling_value" placeholder="e.g. 1000, 250000, ...")
+.row.features
+  %label
+    %input(type="checkbox" name="has_agriculture" value="1")= t(:'local_scenario.include_agriculture')
+  %label
+    %input(type="checkbox" name="has_energy" value="1" checked)= t(:'local_scenario.include_energy')
+  %label
+    %input(type="checkbox" name="has_industry" value="1")= t(:'local_scenario.include_industry')

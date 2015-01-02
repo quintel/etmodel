@@ -90,12 +90,16 @@ module LayoutHelper
     end
 
     # Logged-in user's saved scenarios.
-    if current_user && current_user.saved_scenarios.any?
-      user_scenarios = current_user.saved_scenarios.reverse.map do |ss|
-        [ss.scenario.title, ss.scenario.id]
-      end
+    if current_user
+      available_scenarios = current_user.saved_scenarios.select(&:scenario)
 
-      grouped_options.unshift([t('scenario.saved'), user_scenarios])
+      if available_scenarios.any?
+        user_scenarios = available_scenarios.reverse.map do |ss|
+          [ss.scenario.title, ss.scenario.id]
+        end
+
+        grouped_options.unshift([t('scenario.saved'), user_scenarios])
+      end
     end
 
     select_tag 'id', grouped_options_for_select(grouped_options), id: :preset_id

@@ -82,7 +82,6 @@ D3.stacked_bar =
         .attr('data-tooltip-title', (s) => s.label)
         .attr('y', @series_height)
         .style('fill', (d) => d.color)
-        .style('opacity', 0.8)
 
       $("#{@container_selector()} rect.serie").qtip
         content:

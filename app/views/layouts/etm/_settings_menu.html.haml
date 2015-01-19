@@ -12,12 +12,7 @@
         #{t "header.current_end_year"}:
 
     - if Current.setting.scaling
-      %li.scaling
-        You have scaled the region to
-        %strong
-          = number_with_delimiter(Current.setting.scaling[:value].to_i)
-          = t(:"local_scenario.attributes.#{ Current.setting.scaling[:area_attribute] }.short")
-        == (#{ scaling_reduction } of it's original size).
+      %li.scaling= scaling_summary
 
     %li.language
       #{t "header.current_language"}:

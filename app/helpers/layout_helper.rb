@@ -66,6 +66,17 @@ module LayoutHelper
     I18n.locale.to_s == 'en'
   end
 
+  def scaling_summary
+    attribute = Current.setting.scaling[:area_attribute]
+    value     = Current.setting.scaling[:value].to_i
+
+    I18n.t(:'local_scenario.summary_html', {
+      value:     number_with_delimiter(value),
+      attribute: t(:"local_scenario.attributes.#{ attribute }.short"),
+      reduction: scaling_reduction
+    }).html_safe
+  end
+
   def scaling_reduction
     region    = Current.setting.area
     value     = Current.setting.scaling[:value]

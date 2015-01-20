@@ -39,20 +39,25 @@
   # autoscale_value(20, '%') => 20%
   # autoscale_value(1234)    => 1234
   #
-  autoscale_value: (x, unit, precision = 'auto') ->
-    if Quantity.isSupported(unit)
+  autoscale_value: (x, unit, precision = 'auto', scaleDown = true) ->
+    if scaleDown and Quantity.isSupported(unit)
       return new Quantity(x, unit).smartScale().format()
 
     if x == 0
       pow = 0
       value = 0
       precision = 0
+    else if ! scaleDown or unit is 'hours'
+      pow = 0
+      value = @round_number(x, precision)
     else
       pow = @power_of_thousand(x)
       value = x / Math.pow(1000, pow)
 
       # Allow more relaxed scaling down of unitless ("#") values.
-      if pow > 0 and value > 0 and value < (if unit is '#' then 10 else 1)
+      scalePoint = if unit is '#' then 10 else 1
+
+      if scaleDown and pow > 0 and value > 0 and value < scalePoint
         pow -= 1
         value *= 1000
 

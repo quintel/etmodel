@@ -1,7 +1,7 @@
 class Api::Scenario < ActiveResource::Base
   PRESET_GROUPS = [
     'Actueel',
-    'Energy Efficiency',
+    'High Energy Productivity Growth',
     'Watt Nu?! 2013',
     'Watt Nu?! 2012',
     'EC2013',

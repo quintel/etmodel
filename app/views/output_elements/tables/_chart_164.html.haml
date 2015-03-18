@@ -1,0 +1,36 @@
+-# Population chart
+%table#population.chart.centered.autostripe
+  %thead
+    %tr
+      %th 
+      %th= t 'output_elements.storage_capacity'
+      %th= t 'output_elements.storage_volume'
+      %th= t 'output_elements.annual_stored_energy'
+
+  %tbody
+    %tr
+      %th= t "input_elements.electricity_stored_in_batteries"
+      %td 10 MW
+      %td 10 PJ
+      %td 900 PJ
+    %tr
+      %th= t "input_elements.electricity_stored_in_EV"
+      %td 100 MW
+      %td 250 PJ
+      %td 750 PJ
+    %tr
+      %th= t "input_elements.electricity_converted_to_heat"
+      %td 80 MW
+      %td 80 PJ
+      %td 3200 PJ
+    %tr
+      %th= t "electricity_converted_to_gas"
+      %td 12 MW
+      %td 
+      %td 5 PJ
+    %tr
+      %th= t "input_elements.electricity_exported"
+      %td 8040 MW
+      %td 
+      %td 230 PJ
+    

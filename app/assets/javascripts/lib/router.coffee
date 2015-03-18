@@ -4,11 +4,13 @@ class @Router extends Backbone.Router
     "costs/:sidebar(/:slide)"  : "costs"
     "targets/:sidebar(/:slide)": "targets"
     "supply/:sidebar(/:slide)" : "supply"
+    "flexibility/:sidebar(/:slide)" : "flexibility"
 
   demand:  (sidebar, slide) => @load_slides('demand', sidebar, slide)
   costs:   (sidebar, slide) => @load_slides('costs', sidebar, slide)
   targets: (sidebar, slide) => @load_slides('targets', sidebar, slide)
   supply:  (sidebar, slide) => @load_slides('supply', sidebar, slide)
+  flexibility:  (sidebar, slide) => @load_slides('flexibility', sidebar, slide)
 
   load_slides: (tab, sidebar, slide) ->
     url = "/scenario/#{tab}/#{sidebar}/#{slide}"

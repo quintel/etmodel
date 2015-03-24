@@ -3,6 +3,7 @@
   = form_tag compare_scenarios_path, method: 'get' do
     %h3= t("scenario.saved")
     = submit_tag t('scenario.compare')
+    = submit_tag t('scenario.merge'), name: 'merge'
     %table.default
       %thead
         %tr

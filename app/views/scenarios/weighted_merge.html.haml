@@ -1,0 +1,29 @@
+.scenario_wrapper
+  %h2 Merge scenarios using weights
+
+  - if @errors
+    .errors(style="margin: 20px 20px 0; color: darkred")
+      - @errors.each do |key, messages|
+        - messages.each do |message|
+          %li= message
+
+  = form_tag weighted_merge_scenarios_path, :method => :post do
+    %p
+      %table
+        %tr
+          %th Scenario
+          %th Weight / importance
+        - @scenarios.each do |scenario|
+          %tr
+            %td
+              = scenario.title
+              %span(style="color: #777")
+                == (#{ scenario.area_code.upcase } in #{ scenario.end_year })
+            %td= text_field_tag "merge_scenarios[#{scenario.id}]", '1', type: :number
+
+      - # Send the original scenario IDs in case of error and re-rendering this
+      - # page.
+      - params[:scenario_ids].each do |id|
+        = hidden_field_tag 'scenario_ids[]', id
+
+      = submit_tag "Merge scenarios"

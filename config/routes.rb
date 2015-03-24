@@ -79,6 +79,9 @@ Etm::Application.routes.draw do
       post :load
       get :compare
       post :merge
+
+      get  :weighted_merge
+      post :weighted_merge, to: :perform_weighted_merge
     end
     get :load, :on => :member
   end

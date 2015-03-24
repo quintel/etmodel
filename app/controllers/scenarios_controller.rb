@@ -6,6 +6,7 @@ class ScenariosController < ApplicationController
                 :store_last_etm_page,
                 :load_constraints,
                 :prevent_browser_cache, :only => :play
+  before_filter :setup_comparison, only: [:compare, :weighted_merge]
 
   # Raised when trying to save a scenario, but the user does not have a
   # scenario in progress. See quintel/etengine#542.
@@ -153,12 +154,11 @@ class ScenariosController < ApplicationController
   end
 
   def compare
-    scenario_ids = params[:scenario_ids] || []
-    @scenarios = scenario_ids.map{|id| Api::Scenario.find id, params: {detailed: true}}
-    if @scenarios.empty?
-      flash[:error] = "Please select one or more scenarios"
-      redirect_to scenarios_path and return
+    if params[:merge]
+      redirect_to(weighted_merge_scenarios_url(params))
+      return
     end
+
     @default_values = @scenarios.first.all_inputs
     @average_values = {}
     @average_values_using_defaults = {}
@@ -179,6 +179,36 @@ class ScenariosController < ApplicationController
         :end_year => end_year
       }}
     )
+  end
+
+  def weighted_merge
+  end
+
+  def perform_weighted_merge
+    scenarios = params.require(:merge_scenarios)
+
+    req_body = scenarios.map do |id, weight|
+      { scenario_id: id, weight: weight }
+    end
+
+    result = HTTParty.post("#{APP_CONFIG[:api_url]}/api/v3/scenarios/merge", {
+      body: { scenarios: req_body }.to_json,
+      headers: {
+        'Accept'       => 'application/json',
+        'Content-Type' => 'application/json'
+      }
+    })
+
+    body = JSON.parse(result.body)
+
+    if (400..499).include?(result.code)
+      @errors = body['errors']
+      setup_comparison
+
+      render :weighted_merge
+    else
+      redirect_to(scenario_url(body['id']))
+    end
   end
 
   private
@@ -220,5 +250,14 @@ class ScenariosController < ApplicationController
       response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
       response.headers["Pragma"] = "no-cache"
       response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+    end
+
+    def setup_comparison
+      scenario_ids = params[:scenario_ids] || []
+      @scenarios = scenario_ids.map{|id| Api::Scenario.find id, params: {detailed: true}}
+      if @scenarios.empty?
+        flash[:error] = "Please select one or more scenarios"
+        redirect_to scenarios_path and return
+      end
     end
 end

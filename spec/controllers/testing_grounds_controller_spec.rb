@@ -17,7 +17,7 @@ describe TestingGroundsController do
     end
 
     it "redirects to ivy" do
-      expect(response).to redirect_to("http://ivy.com")
+      expect(response).to redirect_to("http://localhost:3002/testing_grounds/import?scenario_id=")
     end
   end
 end

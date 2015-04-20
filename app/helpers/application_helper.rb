@@ -65,7 +65,7 @@ module ApplicationHelper
   def domain
     request.host_with_port.gsub('beta.','').gsub('pro.','')
   end
-  
+
   def information_links
     links = []
     links.push text: t("header.partners") ,           url: "http://#{ "beta." if is_beta? }#{ domain }/partners?locale=#{ I18n.locale }", target: "_new"
@@ -85,7 +85,7 @@ module ApplicationHelper
     end
     links.sort! {|x,y| x[:text] <=> y[:text] }
   end
-  
+
   def ipad?
     request.env['HTTP_USER_AGENT'].downcase.index('ipad')
   rescue

@@ -24,6 +24,7 @@ Etm::Application.routes.draw do
   get '/users/:id/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
 
   resource :user, only: [:edit, :update]
+  resources :testing_grounds, only: [:create]
 
   # Old partner paths.
   get '/partners/:id', to: redirect("#{Partner::REMOTE_URL}/partners/%{id}")

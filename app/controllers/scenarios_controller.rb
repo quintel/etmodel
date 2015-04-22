@@ -83,27 +83,12 @@ class ScenariosController < ApplicationController
   # tells ETE to create a *copy* of the current scenario. Check in the engine
   # the Scenario#scenario_id= method to see what's going on.
   def create
-    scenario_id = params[:saved_scenario].delete(:api_session_id)
-
-    if scenario_id.blank?
+    if params[:saved_scenario][:api_session_id].blank?
       raise NoScenarioIdError.new(self)
     end
 
-    attrs = { scenario: params[:saved_scenario].merge(
-      :protected => true,
-      :source => 'ETM',
-      :scenario_id => scenario_id
-    ) }
-
     begin
-      @scenario = Api::Scenario.create(scenario: attrs)
-      @saved_scenario = current_user.saved_scenarios.new
-
-      @saved_scenario.scenario_id = @scenario.id
-      # Setting a fake title because the object validates its presence - the
-      # engine scenarios table actually saves it
-      @saved_scenario.title = '_'
-      @saved_scenario.save!
+      Scenario::Creator.new(current_user, params[:saved_scenario]).create
 
       redirect_to scenarios_path
     end

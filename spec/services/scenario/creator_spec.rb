@@ -7,7 +7,7 @@ describe Scenario::Creator do
     user = FactoryGirl.create(:user)
     Api::Scenario.stub(:create).and_return scenario_mock
 
-    Scenario::Creator.new(user, {}, "Scenario magic").create
+    Scenario::Creator.new(user, {}).create
 
     expect(SavedScenario.count).to eq(1)
   end

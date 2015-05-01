@@ -8,9 +8,11 @@
   = form_tag root_path, id: 'new_scaled_scenario' do
     .row
       .field
-        = render "pages/root_page/country_select"
+        %p= t("choose_country")
+        = I18n.t(Current.setting.area_code)
       .field
-        = render "pages/root_page/year_select"
+        %p= t("choose_year")
+        = (Current.setting.end_year || 2050)
 
     = render partial: 'scaled_common'
 

@@ -10,9 +10,13 @@
       .field
         %p= t("choose_country")
         = I18n.t(Current.setting.area_code)
+        .hidden
+          = render "pages/root_page/country_select"
       .field
         %p= t("choose_year")
         = (Current.setting.end_year || 2050)
+        .hidden
+          = render "pages/root_page/year_select"
 
     = render partial: 'scaled_common'
 

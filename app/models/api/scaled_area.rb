@@ -3,9 +3,7 @@ class Api::ScaledArea < SimpleDelegator
 
   # Area features which are disabled in the ETM front-end for all scaled
   # scenarios.
-  DISABLED_FEATURES = [
-    :has_other, :has_electricity_storage, :has_fce, :use_network_calculations
-  ].freeze
+  DISABLED_FEATURES = [:has_other, :has_fce, :use_network_calculations]
 
   # Area features which may be turned on or off by the user when the start a new
   # scaled scenario.

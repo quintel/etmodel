@@ -16,7 +16,7 @@ describe TestingGroundsController do
       expect(SavedScenario.count).to eq(1)
     end
 
-    it "redirects to ivy" do
+    it "redirects to ETMoses" do
       expect(response).to redirect_to("http://localhost:3002/testing_grounds/import?scenario_id=")
     end
   end

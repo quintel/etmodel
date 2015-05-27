@@ -5,7 +5,7 @@ class TestingGroundsController < ApplicationController
                         api_session_id: Current.setting.api_session_id }
 
     if Scenario::Creator.new(current_user, scenario_params).create
-      redirect_to "#{APP_CONFIG[:etloader_url]}/testing_grounds/import?scenario_id=#{Current.setting.api_session_id}"
+      redirect_to "#{APP_CONFIG[:etmoses_url]}/testing_grounds/import?scenario_id=#{Current.setting.api_session_id}"
     else
       redirect_to play_path
     end

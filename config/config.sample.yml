@@ -4,9 +4,9 @@ development: &DEV
     # local rack-based AJAX proxy
     api_url: http://beta.et-engine.com
 
-    # URL for the ETLoader application. ETLoader and testing ground features are
+    # URL for the ETMoses application. ETMoses and testing ground features are
     # presently supported only when "api_url" is "http://beta.et-engine.com".
-    etloader_url: http://ivy.et-engine.com
+    etmoses_url: http://beta.moses.et-model.com
 
     # This sets the url we use as API proxy. The proxying is handled
     # by nginx or a local rack-based proxy
@@ -45,6 +45,6 @@ test:
     <<: *DEV
     # set to true to pipe requests through the local proxy
     standalone: true
-    etloader_url: http://localhost:3002
+    etmoses_url: http://localhost:3002
 staging:
     <<: *PRODUCTION

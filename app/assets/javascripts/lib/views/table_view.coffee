@@ -6,7 +6,7 @@ class @TableView
 
     @options = _.extend({
       labelFormatter: -> (serie) -> serie.get('label')
-      valueFormatter: => @chartView.main_formatter()
+      valueFormatter: => @chartView.main_formatter(precision: 4)
       sorter:         -> _.identity
     }, options)
 

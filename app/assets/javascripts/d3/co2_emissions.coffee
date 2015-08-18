@@ -150,10 +150,12 @@ D3.co2_emissions =
       @clear_container()
       @setup_series()
 
+      formatter = @main_formatter(precision: 4)
+
       unit = @model.get('unit')
       raw_target = @serie_target.future_value()
       target = if raw_target?
-        target = @main_formatter()(raw_target)
+        target = formatter(raw_target)
       else
         '-'
       html = "
@@ -168,9 +170,9 @@ D3.co2_emissions =
           </thead>
           <tbody>
             <tr>
-              <td>#{@main_formatter()(@serie_1990.safe_future_value())}</td>
-              <td>#{@main_formatter()(@serie_value.safe_present_value())}</td>
-              <td>#{@main_formatter()(@serie_value.safe_future_value())}</td>
+              <td>#{formatter(@serie_1990.safe_future_value())}</td>
+              <td>#{formatter(@serie_value.safe_present_value())}</td>
+              <td>#{formatter(@serie_value.safe_future_value())}</td>
               <td>#{target}</td>
             </tr>
           </tbody>

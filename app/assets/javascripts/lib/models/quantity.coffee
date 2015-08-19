@@ -144,6 +144,9 @@ class @Quantity
   #
   # Returns a string.
   format: (opts = {}) ->
+    unless opts.hasOwnProperty('strip_insignificant_zeros')
+      opts.strip_insignificant_zeros = true
+
     if opts.precision is 'auto' or not opts.precision?
       maxPrecision = opts.maxPrecision || 2
 
@@ -155,10 +158,7 @@ class @Quantity
       opts.precision = _.min(
         ["#{ @value }".split('.', 2)[1]?.length || 0, maxPrecision])
 
-    num = I18n.toNumber(@value, opts).replace(/\.?0+$/, '')
-    num = '0' if num.length is 0
-
-    "#{ num } #{ @localizedUnit() }"
+    "#{ I18n.toNumber(@value, opts) } #{ @localizedUnit() }"
 
   localizedUnit: ->
     if @unit.base.i18n

@@ -11,8 +11,8 @@
       <%% _.each(data, function(row) { %>
         <tr>
           <th><%%= formatLabel(row.serie) %></th>
-          <td><%%= formatValue(row.present) %></td>
-          <td><%%= formatValue(row.future) %></td>
+          <td title="<%%= formatTitle(row.present) %>"><%%= formatValue(row.present) %></td>
+          <td title="<%%= formatTitle(row.future) %>"><%%= formatValue(row.future) %></td>
         </tr>
       <%% }) %>
     </tbody>

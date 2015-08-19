@@ -6,7 +6,8 @@ class @TableView
 
     @options = _.extend({
       labelFormatter: -> (serie) -> serie.get('label')
-      valueFormatter: => @chartView.main_formatter(precision: 4)
+      valueFormatter: => @chartView.main_formatter(maxFrom: 'maxValue', maxPrecision: 5)
+      titleFormatter: => @chartView.main_formatter(maxFrom: 'maxValue', maxPrecision: 10)
       sorter:         -> _.identity
     }, options)
 
@@ -17,6 +18,7 @@ class @TableView
       totals:      @totalsData(),
       formatLabel: @options.labelFormatter(),
       formatValue: @options.valueFormatter(),
+      formatTitle: @options.titleFormatter(),
       startYear:   App.settings.get('start_year'),
       endYear:     App.settings.get('end_year')
     })

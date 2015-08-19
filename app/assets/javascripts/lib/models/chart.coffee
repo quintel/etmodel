@@ -140,6 +140,13 @@ class @Chart extends Backbone.Model
 
   values_targets: => _.map @target_series(),     (s) -> s.safe_future_value()
 
+  max_value: ->
+    _.max([
+      @values_present()...,
+      @values_future()...,
+      @values_targets()...
+    ])
+
   max_series_value: ->
     _.max([
       _.sum(@values_present()),

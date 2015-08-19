@@ -145,14 +145,20 @@ class @Quantity
   # Returns a string.
   format: (opts = {}) ->
     if opts.precision is 'auto' or not opts.precision?
+      maxPrecision = opts.maxPrecision || 2
+
       # Automatically determine how many significant decimal places are
       # present in the number.
       #
       # .split('.')[1] => the decimal places
       #
-      opts.precision = _.min(["#{ @value }".split('.', 2)[1]?.length || 0, 2])
+      opts.precision = _.min(
+        ["#{ @value }".split('.', 2)[1]?.length || 0, maxPrecision])
 
-    "#{ I18n.toNumber(@value, opts) } #{ @localizedUnit() }"
+    num = I18n.toNumber(@value, opts).replace(/\.?0+$/, '')
+    num = '0' if num.length is 0
+
+    "#{ num } #{ @localizedUnit() }"
 
   localizedUnit: ->
     if @unit.base.i18n

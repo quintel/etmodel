@@ -101,7 +101,12 @@ class @BaseChartView extends Backbone.View
   # Internal: Returns a function which will format values for the "main" axis
   # of the chart.
   main_formatter: (opts = {}) =>
-    @create_scaler(@max_series_value(), @model.get('unit'), opts)
+    maxValue = if opts.maxFrom is 'maxValue'
+      @model.max_value()
+    else
+      @model.max_series_value()
+
+    @create_scaler(maxValue, @model.get('unit'), opts)
 
   max_series_value: ->
     @model.max_series_value()

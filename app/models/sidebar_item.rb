@@ -16,8 +16,6 @@
 class SidebarItem < ActiveRecord::Base
   include AreaDependent
 
-  
-
   has_one :area_dependency, :as => :dependable, :dependent => :destroy
   has_one :description, :as => :describable, :dependent => :destroy
   belongs_to :tab

@@ -23,10 +23,15 @@ class @ConstraintView extends Backbone.View
     value = @model.result()
     value *= 1000000000 if @model.get('key') == 'total_energy_cost'
     return if _.isNaN(value)
-    scale = Metric.power_of_thousand(value)
-    unit  = I18n.t('units.currency.' + Metric.power_of_thousand_to_string(scale))
-    label = "(#{unit})"
-    @update_subheader label
+
+    scale = Metric.power_of_thousand_to_string(Metric.power_of_thousand(value))
+
+    unit = [
+      I18n.t("units.currency.#{ scale }"),
+      I18n.t("units.man_years.unit")
+    ].join('/')
+
+    @update_subheader "(#{ unit })"
 
   update_header: (title) =>
     $('.header', @dom_id).html(title)

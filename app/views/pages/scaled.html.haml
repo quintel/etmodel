@@ -1,10 +1,4 @@
 #scaled_scenario_setup
-  .selections
-    .selection.new.active
-      = t(:'local_scenario.start_new').html_safe
-    .selection.preset
-      = t(:'local_scenario.based_on_preset').html_safe
-
   = form_tag load_scenarios_path, id: 'new_scaled_scenario' do
     = hidden_field_tag 'id', Current.setting.api_session_id
 

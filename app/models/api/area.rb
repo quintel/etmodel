@@ -7,6 +7,7 @@ class Api::Area < ActiveResource::Base
   # area dependencies for an object, such as the input_elements
   #
   DEPENDABLE_ATTRIBUTES = [
+    :_always_hidden,
     :has_agriculture,
     :has_buildings,
     :has_climate,

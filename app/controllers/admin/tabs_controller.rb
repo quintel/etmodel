@@ -8,6 +8,7 @@ module Admin
 
     def new
       @tab = Tab.new
+      @tab.build_area_dependency
     end
 
     def create
@@ -34,6 +35,7 @@ module Admin
     end
 
     def edit
+      @tab.build_area_dependency unless @tab.area_dependency
     end
 
     def show

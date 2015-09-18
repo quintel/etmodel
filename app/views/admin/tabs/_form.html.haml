@@ -2,6 +2,10 @@
   = form.input :key
   = form.input :nl_vimeo_id, :hint=>"This value should be the key of a vimeo video, it will be shown when the tutorial button is clicked"
   = form.input :en_vimeo_id, :hint=>"This value should be the key of a vimeo video, it will be shown when the tutorial button is clicked"
+
+  = form.simple_fields_for :area_dependency do |subform|
+    = subform.input :dependent_on, :as => :select, :collection => Api::Area::DEPENDABLE_ATTRIBUTES, :hint => "When you dont want to show the tab for areas which have a certain setting."
+
   = form.input :position
   = form.button :submit
 

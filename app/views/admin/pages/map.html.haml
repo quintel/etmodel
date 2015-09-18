@@ -4,7 +4,7 @@
 %a(href="#" onclick="$('ul.sliders').toggle(); return false;") toggle sliders
 
 %ul#interface_map
-  - Tab.ordered.each do |tab|
+  - Tab.frontend.each do |tab|
     %li
       = link_to tab.key, edit_admin_tab_path(tab)
       %ul

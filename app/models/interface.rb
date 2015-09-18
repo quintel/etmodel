@@ -7,7 +7,7 @@ class Interface
 
   # Returns the available tabs (AR object)
   def tabs
-    @tabs ||= Tab.ordered
+    @tabs ||= Tab.frontend
   end
 
   def current_tab

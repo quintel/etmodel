@@ -14,12 +14,6 @@ GIT
       railties (>= 3.1)
 
 GIT
-  remote: git://github.com/sstephenson/ruby-yui-compressor.git
-  revision: fc914911329bbfaea7f4f5dfb9a8c2c38b8027f9
-  specs:
-    yui-compressor (0.12.0)
-
-GIT
   remote: git://github.com/wtfiwtz/non-stupid-digest-assets.git
   revision: 9c8f1a94523d37368fb2806bc27056611377324a
   ref: 9c8f1a94
@@ -393,4 +387,6 @@ DEPENDENCIES
   webmock (~> 1.8.0)
   webrat
   yard-tomdoc (~> 0.4.0)
-  yui-compressor!
+
+BUNDLED WITH
+   1.10.6

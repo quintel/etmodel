@@ -90,6 +90,5 @@ gem 'libv8', '~> 3.16.14.3'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
-gem 'yui-compressor', github: 'sstephenson/ruby-yui-compressor'
 gem 'compass-rails'
 gem 'oily_png' # Faster sprite compilation.

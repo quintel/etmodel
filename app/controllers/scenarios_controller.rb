@@ -50,7 +50,7 @@ class ScenariosController < ApplicationController
       renderer = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
       @description = renderer.render(text).html_safe
     end
-    if @scenario.created_at && @scenario.days_old > 31
+    if @scenario.created_at && @scenario.days_old > 180
       if SavedScenario.where('user_id = ? AND scenario_id = ?', current_user, @scenario).empty?
         @warning = t('scenario.preset_warning')
       else

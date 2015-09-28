@@ -1,11 +1,9 @@
 .row
-  .field
-    %p=t(:'local_sceanrio.scaling_attribute')
+  .field.scaling_choice
+    %label(for="scaling_value")== #{ t(:'local_scenario.scale_to') }&hellip;
+    %input.string(type="text" id="scaling_value" name="scaling_value" placeholder="e.g. 1000, 250000, ...")
+    %span.attribute= t(:'local_scenario.attributes.number_of_residences.short')
     %input(type='hidden' name="scaling_attribute" value='number_of_residences')
-    = t(:'local_scenario.attributes.number_of_residences.long')
-  .field
-    %p== #{ t(:'local_scenario.scale_to') }&hellip;
-    %input.string(type="text" name="scaling_value" placeholder="e.g. 1000, 250000, ...")
 .row.features
   %label
     %input(type="checkbox" name="has_agriculture" value="1")= t(:'local_scenario.include_agriculture')

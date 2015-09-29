@@ -43,7 +43,10 @@ D3.co2_emissions =
       # Ugly stuff. Check the db to see which series have been defined.
       # Since this chart is very specific the series could actually be
       # hard-coded
-      series_for_legend = [@serie_1990, @serie_domestic, @serie_imported]
+      series_for_legend = [
+        @serie_1990, @serie_target,
+        @serie_domestic, @serie_imported
+      ]
 
       @draw_legend
         svg: @svg

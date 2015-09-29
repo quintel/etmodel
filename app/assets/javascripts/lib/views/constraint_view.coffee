@@ -105,6 +105,9 @@ class @ConstraintView extends Backbone.View
     return false if (diff == undefined || diff == null)
     arrow_element = $('.arrow', @dom_id)
     @cleanArrows()
+
+    return false unless diff && Math.abs(diff)
+
     if diff > 0
       newClass = 'arrow_up'
     else if diff < 0

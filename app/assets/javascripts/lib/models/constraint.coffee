@@ -12,7 +12,7 @@ class Constraint extends Backbone.Model
 
   calculate_diff : (new_result, previous_result) ->
     if previous_result != undefined
-      return Metric.round_number((new_result - previous_result),4)
+      return Metric.round_number((new_result - previous_result), 3)
     else
       return null
 

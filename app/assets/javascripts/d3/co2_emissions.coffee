@@ -203,23 +203,42 @@ D3.co2_emissions =
       else
         '-'
       html = "
-        <table class='chart'>
+        <table class='chart has-total autostripe'>
           <thead>
             <tr>
+              <td></td>
               <th>1990</td>
               <th>#{@start_year}</td>
               <th>#{@end_year}</td>
-              <th>Target</td>
+              <th>#{I18n.t('output_element_series.target')}</td>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>#{formatter(@serie_1990.safe_future_value())}</td>
-              <td>#{formatter(@serie_domestic.safe_present_value())}</td>
+              <th>#{I18n.t('output_element_series.local')}</th>
+              <td class='novalue'>&mdash;</td>
+              <td>#{formatter(@serie_domestic.safe_present_value())}<br/></td>
               <td>#{formatter(@serie_domestic.safe_future_value())}</td>
-              <td>#{target}</td>
+              <td class='novalue'>&mdash;</td>
+            </tr>
+
+            <tr>
+              <th>#{I18n.t('output_element_series.imported')}</th>
+              <td class='novalue'>&mdash;</td>
+              <td>#{formatter(@serie_imported.safe_present_value())}<br/></td>
+              <td>#{formatter(@serie_imported.safe_future_value())}</td>
+              <td class='novalue'>&mdash;</td>
             </tr>
           </tbody>
+          <tfoot>
+            <tr>
+              <th>#{I18n.t('output_element_series.total')}</th>
+              <td>#{formatter(@serie_1990.safe_future_value())}</td>
+              <td>#{formatter(@serie_domestic.safe_present_value() + @serie_imported.safe_present_value())}<br/></td>
+              <td>#{formatter(@serie_domestic.safe_future_value() + @serie_imported.safe_future_value())}</td>
+              <td>#{target}</td>
+            </tr>
+          </tfoot>
         </table>
       "
       @container_node().html(html)

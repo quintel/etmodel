@@ -5,6 +5,13 @@ D3.co2_emissions =
       D3ChartView.prototype.initialize.call(this)
       @series = @model.series.models
 
+    gquery_keys:
+      start:    '1990_in_co2_emissions'
+      domestic: 'co2_emissions_of_final_demand_excluding_imported_' +
+                'electricity_in_co2_emissions'
+      imported: 'co2_emissions_of_imported_electricity_in_co2_emissions'
+      target:   'policy_goal_co2_emissions_target_value'
+
     can_be_shown_as_table: -> true
 
     margins:
@@ -17,9 +24,10 @@ D3.co2_emissions =
     # added when the JSON request is complete, ie after the initialize method
     #
     setup_series: =>
-      @serie_1990   = @series[0]
-      @serie_value  = @series[1]
-      @serie_target = @series[2]
+      @serie_1990     = @serie_for(@gquery_keys.start)
+      @serie_domestic = @serie_for(@gquery_keys.domestic)
+      @serie_imported = @serie_for(@gquery_keys.imported)
+      @serie_target   = @serie_for(@gquery_keys.target)
 
     draw: =>
       @setup_series()
@@ -35,7 +43,7 @@ D3.co2_emissions =
       # Ugly stuff. Check the db to see which series have been defined.
       # Since this chart is very specific the series could actually be
       # hard-coded
-      series_for_legend = [@serie_1990, @serie_value]
+      series_for_legend = [@serie_1990, @serie_domestic, @serie_imported]
 
       @draw_legend
         svg: @svg
@@ -79,7 +87,7 @@ D3.co2_emissions =
         .attr("width", @block_width)
         .attr('x', (s) => @x(s.x) + @block_width / 2)
         .attr('y', @series_height)
-        .style('fill', '#333')
+        .style('fill', (d) => d.color)
         .style('opacity', 0.8)
 
       $("#{@container_selector()} rect.serie").qtip
@@ -104,9 +112,10 @@ D3.co2_emissions =
     max_series_value: ->
       _.max([
         @serie_1990.safe_future_value(),
-        @serie_value.safe_present_value(),
-        @serie_value.safe_future_value(),
-        @serie_target.safe_future_value()
+        @serie_domestic.safe_present_value() +
+          @serie_imported.safe_present_value(),
+        @serie_domestic.safe_future_value() +
+          @serie_imported.safe_future_value()
       ])
 
     refresh: =>
@@ -124,7 +133,7 @@ D3.co2_emissions =
       @svg.selectAll('rect.serie')
         .data(@prepare_data(), (s) -> s.id)
         .transition()
-        .attr('y', (d) => @series_height - @y(d.y))
+        .attr('y', (d) => @series_height - @y((d.y0 || 0.0) + d.y))
         .attr('height', (d) => @y(d.y))
         .attr("data-tooltip", (d) => @main_formatter()(d.y))
 
@@ -137,11 +146,46 @@ D3.co2_emissions =
 
 
     prepare_data: =>
-      [
-        {id: 'co2_1990',    x: 1990,        y: @serie_1990.safe_future_value()},
-        {id: 'co2_present', x: @start_year, y: @serie_value.safe_present_value()},
-        {id: 'co2_future',  x: @end_year,   y: @serie_value.safe_future_value()}
-      ]
+      stack = d3.layout.stack().offset('zero')
+
+      target = {
+        id:    'co2_1990',
+        x:     1990,
+        y:     @serie_1990.safe_future_value(),
+        color: @serie_1990.get('color'),
+        label: @serie_1990.get('label')
+      }
+
+      stacked = _.flatten(stack([[{
+        id:   'co2_present_domestic',
+        x:     @start_year,
+        y:     @serie_domestic.safe_present_value(),
+        color: @serie_domestic.get('color'),
+        label: @serie_imported.get('label')
+      }, {
+        id:   'co2_future_domestic',
+        x:     @end_year,
+        y:     @serie_domestic.safe_future_value(),
+        color: @serie_domestic.get('color'),
+        label: @serie_imported.get('label')
+      }], [{
+        id:    'co2_present_imported',
+        x:     @start_year,
+        y:     @serie_imported.safe_present_value(),
+        color: @serie_imported.get('color'),
+        label: @serie_imported.get('label')
+      }, {
+        id:    'co2_future_imported',
+        x:     @end_year,
+        y:     @serie_imported.safe_future_value(),
+        color: @serie_imported.get('color'),
+        label: @serie_imported.get('label')
+      }]]))
+
+      [target, stacked...]
+
+    serie_for: (gquery_key) =>
+      _.detect(@series, (s) -> s.get('gquery_key') == gquery_key)
 
     # This chart has to override the standard render_as_table method
     #
@@ -171,8 +215,8 @@ D3.co2_emissions =
           <tbody>
             <tr>
               <td>#{formatter(@serie_1990.safe_future_value())}</td>
-              <td>#{formatter(@serie_value.safe_present_value())}</td>
-              <td>#{formatter(@serie_value.safe_future_value())}</td>
+              <td>#{formatter(@serie_domestic.safe_present_value())}</td>
+              <td>#{formatter(@serie_domestic.safe_future_value())}</td>
               <td>#{target}</td>
             </tr>
           </tbody>

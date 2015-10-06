@@ -1,10 +1,10 @@
 -# Investment chart
-%table#investments.chart
+%table#investments.chart{ data: { decimals: 4 } }
   %thead
     %tr
-      %th
+      %th(style="width: 50%")
       %th.border-rgt= Current.setting.start_year
-      %th{:colspan => 1, :style => "text-align: center"}= Current.setting.end_year
+      %th= Current.setting.end_year
       %th
     %tr
       %th= t 'output_elements.tables.investments.technology'
@@ -16,8 +16,7 @@
       %th= t 'output_elements.tables.investments.bln_euro'
       %th= t 'output_elements.tables.investments.bln_euro'
       %th= t 'output_elements.tables.investments.bln_euro'
-  %tbody
-  %thead
+  %thead.subhead
     %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.agriculture'
   %tr.even
     %th= t "input_elements.agriculture_burner_crude_oil_share"
@@ -59,7 +58,7 @@
     %td.border-rgt{:data => {:gquery => "agriculture_heatpump_water_water_ts_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "agriculture_heatpump_water_water_ts_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "agriculture_heatpump_water_water_ts_electricity_delta_in_investment_cost_table"}}
-  %thead
+  %thead.subhead
     %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.buildings'
   %tr.even
     %th= t "input_elements.buildings_chp_engine_biogas_share"
@@ -146,7 +145,7 @@
     %td.border-rgt{:data => {:gquery => "buildings_space_heater_wood_pellets_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "buildings_space_heater_wood_pellets_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "buildings_space_heater_wood_pellets_delta_in_investment_cost_table"}}
-  %thead
+  %thead.subhead
     %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.energy'
   %tr.even
     %th= t "input_elements.number_of_energy_chp_combined_cycle_network_gas"
@@ -318,7 +317,7 @@
     %td.border-rgt{:data => {:gquery => "energy_power_wind_turbine_offshore_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "energy_power_wind_turbine_offshore_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "energy_power_wind_turbine_offshore_delta_in_investment_cost_table"}}
-  %thead
+  %thead.subhead
     %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.households'
   %tr.even
     %th= t "input_elements.households_collective_chp_network_gas_share"
@@ -465,7 +464,7 @@
     %td.border-rgt{:data => {:gquery => "households_water_heater_solar_thermal_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "households_water_heater_solar_thermal_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "households_water_heater_solar_thermal_delta_in_investment_cost_table"}}
-  %thead
+  %thead.subhead
     %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.industry'
   %tr.even
     %th= t "input_elements.number_of_industry_chp_combined_cycle_gas_power_fuelmix"
@@ -482,13 +481,13 @@
     %td.border-rgt{:data => {:gquery => "industry_chp_turbine_gas_power_fuelmix_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "industry_chp_turbine_gas_power_fuelmix_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "industry_chp_turbine_gas_power_fuelmix_delta_in_investment_cost_table"}}
-  %thead
+  %thead.subhead
     %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.total'
   %tfoot
     %tr
-      %th.bordered
+      %th
         %strong Total
-      %td.bordered{:data => {:gquery => 'total_present_in_investment_cost_table', :graph => :present}} -
-      %td.bordered{:data => {:gquery => 'total_future_in_investment_cost_table'}} -
-      %td.bordered{:data => {:gquery => 'total_delta_in_investment_cost_table'}} -
+      %td{:data => {:gquery => 'total_present_in_investment_cost_table', :graph => :present}} -
+      %td{:data => {:gquery => 'total_future_in_investment_cost_table'}} -
+      %td{:data => {:gquery => 'total_delta_in_investment_cost_table'}} -
 

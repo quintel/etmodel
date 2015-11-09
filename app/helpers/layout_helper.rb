@@ -20,7 +20,8 @@ module LayoutHelper
   end
 
   def area_links
-    [ area_choice('fr'),
+    [ area_choice('br'),
+      area_choice('fr'),
       area_choice('de'),
       area_choice('nl'),
       area_choice('pl'),

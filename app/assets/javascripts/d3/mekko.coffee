@@ -79,7 +79,7 @@ D3.mekko =
 
     col_value_scaler: =>
       max_y_value = _.max(@sector_list.map((a) -> a.total_value()))
-      Quantity.scaleAndFormatBy(max_y_value, @model.get('unit').toUpperCase())
+      Quantity.scaleAndFormatBy(max_y_value, @model.get('unit'))
 
     draw: =>
       @prepare_data()

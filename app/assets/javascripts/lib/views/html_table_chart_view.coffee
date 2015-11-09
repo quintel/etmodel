@@ -39,10 +39,13 @@ class @HtmlTableChartView extends BaseChartView
   # is the result of a gquery and write the output
   #
   fill_cells: ->
+    default_decimals = @container_node().find('.chart').data('decimals')
+    default_decimals = 1 unless _.isNumber(default_decimals)
+
     for cell in @dynamic_cells()
       gqid = $(cell).data('gquery')
       decimals = $(cell).data('decimals')
-      decimals = 1 unless _.isNumber(decimals)
+      decimals = default_decimals unless _.isNumber(decimals)
       graph = $(cell).data('graph') || 'future'
       serie = @model.series.with_gquery(gqid)
       if !serie

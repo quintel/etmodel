@@ -55,7 +55,7 @@ group :development do
   gem 'capistrano-rails',       '~> 1.1',   require: false
   gem 'capistrano-bundler',     '~> 1.1',   require: false
   gem 'capistrano3-unicorn',    '~> 0.2',   require: false
-  gem 'capistrano-maintenance', '~> 0.0.4', require: false
+  gem 'capistrano-maintenance', '~> 1.0',   require: false
 end
 
 group :test, :development do

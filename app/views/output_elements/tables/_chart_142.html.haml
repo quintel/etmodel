@@ -340,6 +340,13 @@
     %td{:data => {:gquery => "households_collective_geothermal_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "households_collective_geothermal_delta_in_investment_cost_table"}}
   %tr.even
+    %th= t "input_elements.households_solar_pv_solar_radiation_market_penetration"
+    %td.border-rgt{:data => {:gquery => "households_solar_pv_solar_radiation_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_solar_pv_solar_radiation_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_solar_pv_solar_radiation_delta_in_investment_cost_table"}}
+  %thead.subhead
+    %th{:colspan => 4, :style => "text-align: center"}=t 'Cooling'
+  %tr.even
     %th= t "input_elements.households_cooling_airconditioning_electricity_share"
     %td.border-rgt{:data => {:gquery => "households_cooling_airconditioning_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "households_cooling_airconditioning_electricity_future_in_investment_cost_table"}}
@@ -354,16 +361,13 @@
     %td.border-rgt{:data => {:gquery => "households_cooling_heatpump_ground_water_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "households_cooling_heatpump_ground_water_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "households_cooling_heatpump_ground_water_electricity_delta_in_investment_cost_table"}}
-  %tr.odd
+  %thead.subhead
+    %th{:colspan => 4, :style => "text-align: center"}=t 'Space heating'
+  %tr.even
     %th= t "input_elements.households_heat_network_connection_steam_hot_water_share"
     %td.border-rgt{:data => {:gquery => "households_heat_network_connection_steam_hot_water_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "households_heat_network_connection_steam_hot_water_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "households_heat_network_connection_steam_hot_water_delta_in_investment_cost_table"}}
-  %tr.even
-    %th= t "input_elements.households_solar_pv_solar_radiation_market_penetration"
-    %td.border-rgt{:data => {:gquery => "households_solar_pv_solar_radiation_present_in_investment_cost_table", :graph => :present}}
-    %td{:data => {:gquery => "households_solar_pv_solar_radiation_future_in_investment_cost_table"}}
-    %td{:data => {:gquery => "households_solar_pv_solar_radiation_delta_in_investment_cost_table"}}
   %tr.odd
     %th= t "input_elements.households_space_heater_coal_share"
     %td.border-rgt{:data => {:gquery => "households_space_heater_coal_present_in_investment_cost_table", :graph => :present}}
@@ -390,10 +394,10 @@
     %td{:data => {:gquery => "households_space_heater_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "households_space_heater_electricity_delta_in_investment_cost_table"}}
   %tr.even
-    %th= t "input_elements.households_space_heater_heatpump_add_on_electricity_share"
-    %td.border-rgt{:data => {:gquery => "households_space_heater_heatpump_add_on_electricity_present_in_investment_cost_table", :graph => :present}}
-    %td{:data => {:gquery => "households_space_heater_heatpump_add_on_electricity_future_in_investment_cost_table"}}
-    %td{:data => {:gquery => "households_space_heater_heatpump_add_on_electricity_delta_in_investment_cost_table"}}
+    %th= t "input_elements.households_space_heater_hybrid_heatpump_air_water_electricity_share"
+    %td.border-rgt{:data => {:gquery => "households_space_heater_hybrid_heatpump_air_water_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_space_heater_hybrid_heatpump_air_water_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_space_heater_hybrid_heatpump_air_water_electricity_delta_in_investment_cost_table"}}
   %tr.odd
     %th= t "input_elements.households_space_heater_heatpump_air_water_electricity_share"
     %td.border-rgt{:data => {:gquery => "households_space_heater_heatpump_air_water_electricity_present_in_investment_cost_table", :graph => :present}}
@@ -419,6 +423,8 @@
     %td.border-rgt{:data => {:gquery => "households_space_heater_wood_pellets_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "households_space_heater_wood_pellets_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "households_space_heater_wood_pellets_delta_in_investment_cost_table"}}
+  %thead.subhead
+    %th{:colspan => 4, :style => "text-align: center"}=t 'Hot water'
   %tr.even
     %th= t "input_elements.households_water_heater_combined_network_gas_share"
     %td.border-rgt{:data => {:gquery => "households_water_heater_combined_network_gas_present_in_investment_cost_table", :graph => :present}}
@@ -445,21 +451,26 @@
     %td{:data => {:gquery => "households_water_heater_heatpump_ground_water_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "households_water_heater_heatpump_ground_water_electricity_delta_in_investment_cost_table"}}
   %tr.odd
+    %th= t "input_elements.households_water_heater_hybrid_heatpump_air_water_electricity_share"
+    %td.border-rgt{:data => {:gquery => "households_water_heater_hybrid_heatpump_air_water_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_water_heater_hybrid_heatpump_air_water_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_water_heater_hybrid_heatpump_air_water_electricity_delta_in_investment_cost_table"}}
+  %tr.even
     %th= t "input_elements.households_water_heater_micro_chp_network_gas_share"
     %td.border-rgt{:data => {:gquery => "households_water_heater_micro_chp_network_gas_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "households_water_heater_micro_chp_network_gas_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "households_water_heater_micro_chp_network_gas_delta_in_investment_cost_table"}}
-  %tr.even
+  %tr.odd
     %th= t "input_elements.households_water_heater_network_gas_share"
     %td.border-rgt{:data => {:gquery => "households_water_heater_network_gas_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "households_water_heater_network_gas_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "households_water_heater_network_gas_delta_in_investment_cost_table"}}
-  %tr.odd
+  %tr.even
     %th= t "input_elements.households_water_heater_resistive_electricity_share"
     %td.border-rgt{:data => {:gquery => "households_water_heater_resistive_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "households_water_heater_resistive_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "households_water_heater_resistive_electricity_delta_in_investment_cost_table"}}
-  %tr.even
+  %tr.odd
     %th= t "input_elements.households_water_heater_solar_thermal_share"
     %td.border-rgt{:data => {:gquery => "households_water_heater_solar_thermal_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "households_water_heater_solar_thermal_future_in_investment_cost_table"}}

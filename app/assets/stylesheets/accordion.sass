@@ -4,6 +4,43 @@
     text-decoration: none
     color: #63a0c9
     font: 13px $body_font_family
+    &:hover
+      color: #2e5671
+
+  .merit-data-downloads
+    border: 1px solid #e5e5e5
+    border-radius: 4px
+    list-style: none
+    margin: 1.5em 0
+    overflow: hidden
+    padding: .5em 1em
+
+    .fa
+      font-size: 14px
+      margin-top: -1px
+      margin-right: 1px
+      vertical-align: middle
+
+    li
+      float: left
+      text-align: center
+      width: 50%
+
+      .filetype
+        color: #aaa
+        font-size: 11px
+        line-height: 0
+
+      a
+        font-size: 12px
+        padding: 5px 0
+
+        &:hover .filetype
+          color: #777
+
+      &:last-child
+        border-left: 1px solid #e5e5e5
+        margin-right: -1px
 
   ul.accordion
     float: left

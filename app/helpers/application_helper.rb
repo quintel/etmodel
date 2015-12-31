@@ -92,4 +92,18 @@ module ApplicationHelper
     false
   end
 
+  # Returns a hash of values which may be interpolated into description texts.
+  def formatted_description_values
+    @description_values ||= {
+      etengine_url: APP_CONFIG[:api_url].to_s.chomp('/'),
+      scenario_id:  Current.setting.api_session_id,
+      area_code:    Current.setting.area_code,
+      end_year:     Current.setting.end_year
+    }.freeze
+  end
+
+  def format_description(text)
+    text ? (text.to_s % formatted_description_values) : text
+  end
+
 end

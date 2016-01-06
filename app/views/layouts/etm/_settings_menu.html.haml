@@ -27,11 +27,16 @@
       - if has_active_scenario?
         %a.save{:href => new_scenario_path}= t("header.save_scenario")
         %a#reset_scenario{:href => scenario_reset_path}= t("header.reset_scenario")
+
+    - if Current.setting.api_session_id.present?
+      %li.sep
+        = link_to t("header.show_graph"), et_engine_graph_url, target: "_blank"
+
     - if controller_name != 'pages' && has_active_scenario?
       %li.sep
       %li.scenario_option
         - if current_scenario_scaled?
-          = link_to I18n.t('header.save_and_enter_testing_ground'), testing_grounds_path, target: "_blank", method: :post
+          = link_to t('header.save_and_enter_testing_ground'), testing_grounds_path, target: "_blank", method: :post
         - else
           = link_to t('header.scale_scenario'), scaled_path
       %li.sep

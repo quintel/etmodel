@@ -79,7 +79,7 @@ module ApplicationHelper
     links.push text: t("header.disclaimer") ,         url: "http://#{ "beta." if is_beta? }#{ domain }/terms?locale=#{ I18n.locale }", target: "_new"
     links.push text: t("header.bugs") ,               url: "http://#{ "beta." if is_beta? }#{ domain }/known_issues?locale=#{ I18n.locale }", target: "_new"
     unless APP_CONFIG[:standalone]
-      links.push text: t("header.documentation") ,                       url: "https://github.com/quintel/documentation", target: "_blank"
+      links.push text: t("header.documentation") ,    url: "https://github.com/quintel/documentation", target: "_blank"
       links.push text: t("header.publications") ,     url: "http://refman.et-model.com", target: "_blank"
       links.push text: t("header.feedback") ,         url: feedback_path, class: "fancybox"
     end
@@ -105,5 +105,4 @@ module ApplicationHelper
   def format_description(text)
     text ? (text.to_s % formatted_description_values) : text
   end
-
 end

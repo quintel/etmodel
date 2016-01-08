@@ -28,6 +28,8 @@ class @BlockChartView extends BaseChartView
     $('#block_list li').mouseenter -> $(this).find("ul").show(1)
     $('#block_list li').mouseleave -> $(this).find("ul").hide(1)
     $('.show_hide_block').click (e) =>
+      return if $(e.target).parent().hasClass('disabled')
+
       block_id = $(e.target).attr('data-block_id')
       @toggle_block(block_id)
       @align_checkbox(block_id)
@@ -104,6 +106,12 @@ class @BlockChartView extends BaseChartView
       method: 'post'
     @update_block_charts()
 
+  update_block: (block) =>
+    iszero = block[2] == 0
+
+    $("#block_container_" + block[0]).toggleClass('is_zero', iszero)
+    $("#show_hide_block_" + block[0]).parent().toggleClass('disabled', iszero)
+
   update_block_charts: =>
     data_array = @results()
     max_cost = 0
@@ -112,6 +120,10 @@ class @BlockChartView extends BaseChartView
     canvas = @container_node().find('#canvas')
     canvas_width  = canvas.width()
     canvas_height = canvas.height()
+
+    # Show and hide the block if the value is 0
+    for block in data_array
+    	@update_block(block)
 
     for block in data_array
       if ($('#block_container_'+block[0]).hasClass('visible'))

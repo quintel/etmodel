@@ -92,8 +92,12 @@
             line-height: 0.9em
             display: block
             width: 75px
-      .invisible
+      .invisible, .is_zero
         display: none
+
+      .disabled
+        cursor: default
+        color: #ccc
 
 //put the first ul > li separately, because otherwise it messes with ul > li > ul > li
 ul#block_list > li
@@ -138,12 +142,16 @@ ul#block_list
         a
           padding: 5px
           text-decoration: none
-        a:hover
-          text-decoration: none
-          color: #fff
-      li:hover
+
+      li.disabled
+        a
+          cursor: default
+          color: #ccc
+
+      li:not(.disabled):hover
         background-color: #63A1C9
         a
+          text-decoration: none
           color: #fff
 
 .charts_container

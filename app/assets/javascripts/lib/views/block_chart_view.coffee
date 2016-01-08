@@ -28,12 +28,14 @@ class @BlockChartView extends BaseChartView
     $('#block_list li').mouseenter -> $(this).find("ul").show(1)
     $('#block_list li').mouseleave -> $(this).find("ul").hide(1)
     $('.show_hide_block').click (e) =>
+      e.preventDefault()
+
       return if $(e.target).parent().hasClass('disabled')
 
       block_id = $(e.target).attr('data-block_id')
       @toggle_block(block_id)
       @align_checkbox(block_id)
-      false
+
     $('.block_list_checkbox').click (e) =>
       if $(e.target).is(':checked')
         for item in $(e.target).parent().find('.show_hide_block')

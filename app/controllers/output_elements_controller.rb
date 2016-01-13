@@ -21,15 +21,7 @@ class OutputElementsController < ApplicationController
   def index
     # id of the element the chart will be placed in
     @chart_holder = params[:holder]
-    @groups = {}
-    %w[Overview Policy Supply Demand Cost Merit FCE].each do |group|
-      @groups[group] = OutputElement.not_hidden.
-        select_by_group(group).
-        sort_by{|c| t "output_elements.#{c.key}"}.
-        reject(&:area_dependent).
-        reject(&:block_chart?).
-        reject(&:not_allowed_in_this_area)
-    end
+    @groups = OutputElement.not_hidden.select_by_group
   end
 
   # legacy actions used by the block charts

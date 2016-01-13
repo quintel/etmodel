@@ -15,6 +15,7 @@
       %th.tal Type
       %th.tal Unit
       %th.tal Group
+      %th.tal Sub group
       %th Hidden
       %th Used
       %th
@@ -28,6 +29,7 @@
         %td= o.type
         %td= o.unit
         %td= o.group
+        %td= o.sub_group
         %td= 'Hidden' if o.hidden?
         %td= o.slides.count
         %td= link_to "Show", admin_output_element_path(o)

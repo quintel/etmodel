@@ -103,6 +103,11 @@ module ApplicationHelper
   end
 
   def format_description(text)
-    text ? (text.to_s % formatted_description_values) : text
+    if text
+      values = formatted_description_values
+      text.to_s.gsub(/%\{(\w+)\}/) { |token| values[token[2..-2].to_sym] }
+    else
+      text
+    end
   end
 end

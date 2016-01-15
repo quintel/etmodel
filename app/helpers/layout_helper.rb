@@ -20,15 +20,15 @@ module LayoutHelper
   end
 
   def area_links
-    [ area_choice('br'),
-      area_choice('fr'),
+    [ area_choice('fr'),
       area_choice('de'),
       area_choice('nl'),
       area_choice('pl'),
       area_choice('es'),
       area_choice('uk'),
       :separator,
-      area_choice('eu')
+      area_choice('eu'),
+      area_choice('br')
     ].compact
   end
 

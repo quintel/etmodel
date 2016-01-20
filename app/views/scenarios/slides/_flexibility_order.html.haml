@@ -1,0 +1,12 @@
+%ul.sortable{ data: flexibility_urls }
+  %li{data: { id: 'power_to_power_in_batteries' }}
+    = t('output_elements.flexibility_options.power_to_power_in_batteries')
+  %li{data: { id: 'power_to_power_in_ev' }}
+    = t('output_elements.flexibility_options.power_to_power_in_ev')
+  %li{data: { id: 'power_to_gas' }}
+    = t('output_elements.flexibility_options.power_to_gas')
+  %li{data: { id: 'power_to_heat' }}
+    = t('output_elements.flexibility_options.power_to_heat')
+  %li{data: { id: 'export' }}
+    = t('output_elements.flexibility_options.export')
+  %li.ignore{data: {id: 'curtailment'}}= t('output_elements.flexibility_options.curtailment')

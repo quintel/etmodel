@@ -17,4 +17,5 @@
 //= require fancybox
 //= require i18n
 //= require i18n/translations
+//= require sortable.min
 //= require sign_up_form

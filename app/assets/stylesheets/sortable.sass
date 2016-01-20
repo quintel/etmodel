@@ -1,0 +1,17 @@
+ul.sortable
+  padding-left: 0
+
+  li
+    list-style-type: none
+    padding: 5px
+    border: 1px solid #eee
+
+    &.ignore
+      color: #ccc
+
+    &:not(.ignore)
+      cursor: grab
+
+      &.sortable-chosen
+        cursor: grabbing
+        background-color: #F2FAFF

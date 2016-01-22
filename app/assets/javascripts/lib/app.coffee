@@ -166,6 +166,7 @@ class @AppView extends Backbone.View
     $(".chart_holder[data-block_ui_on_refresh=true]:visible").busyBox
       spinner: "<em>Loading</em>"
     $("#dashboard .loading").show()
+    $(".arrow").css("opacity", "0.0")
 
   hideLoading: ->
     $(".chart_holder").busyBox('close')

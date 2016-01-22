@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 20160122125506) do
     t.string   "unit"
     t.boolean  "percentage",                        default: false
     t.string   "group"
+    t.string   "sub_group"
     t.boolean  "show_point_label",                  default: false
     t.boolean  "growth_chart",                      default: false
     t.string   "key",                                               null: false

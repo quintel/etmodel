@@ -7,6 +7,7 @@
   = f.input :unit, :hint => "This will be used on the axis"
   = f.input :percentage, :hint => "Some chart_types (in policy) are showing percentages. Check this box if your charts should go from 0% to 100%"
   = f.input :group, :as => :select, :collection => ['Overview', 'Dashboard', 'Demand', 'Supply', 'Policy', 'Cost', 'Merit', 'FCE'],  :hint => "In which section do you want to put your charts in the 'select chart' screen?"
+  = f.input :sub_group, :hint => "In which subsection do you want to put your chart?"
   = f.input :show_point_label, :hint => "Do you want the values of the series to show up inside the chart? This doesnt apply to all the charts"
   = f.input :growth_chart, :hint => "Do you want your chart to be exponential? check this box. (only applies to bezier chart)"
   = f.input :min_axis_value, :hint => "When filled in this will override the generated axis values (only applies to horizontal stacked bar chart)"

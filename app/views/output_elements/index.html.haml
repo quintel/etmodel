@@ -1,10 +1,11 @@
 #select_charts
   - @groups.each_pair do |group, charts|
-    - if charts.any?
-      %h1= t("chart_group.#{group.downcase}")
-      - charts.each do |chart|
-        %div.pick_chart{'data-chart_id' => chart.id, 'data-chart_holder' => @chart_holder}
-          %a
-            = image_tag "output_elements/#{chart.icon}", :size => "50x30"
-            %h2= t("output_elements.#{chart.key}").html_safe
+    %h1= t("chart_group.#{group.downcase}")
+    - if charts.is_a?(Array)
+      = render 'chart_preview', charts: charts
 
+    - elsif charts.is_a?(Hash)
+      - charts.each_pair do |sub_group, charts|
+        - if sub_group
+          %h2= t("chart_sub_group.#{sub_group.downcase}")
+        = render 'chart_preview', charts: charts

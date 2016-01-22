@@ -21,8 +21,6 @@
 class OutputElement < ActiveRecord::Base
   include AreaDependent
 
-  
-
   has_many :output_element_series, ->{ order(:order_by) }, :dependent => :destroy
   belongs_to :output_element_type
   has_one :description, :as => :describable, :dependent => :destroy
@@ -90,8 +88,21 @@ class OutputElement < ActiveRecord::Base
     }
   end
 
-  def self.select_by_group(group)
-    where("`group` = '#{group}'").reject(&:area_dependent)
+  def self.select_by_group
+    Hash[whitelisted.group_by(&:group).each.map do |group, elements|
+      if elements.map(&:sub_group).compact.any?
+        elements = elements.group_by(&:sub_group)
+      end
+
+      [group, elements]
+    end]
+  end
+
+  def self.whitelisted
+    all.reject(&:area_dependent).
+        reject(&:block_chart?).
+        reject(&:not_allowed_in_this_area).
+        sort_by{|c| I18n.t "output_elements.#{c.key}"}
   end
 
   def allowed_output_element_series

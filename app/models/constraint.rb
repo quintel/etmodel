@@ -44,6 +44,7 @@ class Constraint < ActiveRecord::Base
 
   validates :group, :presence => true, :inclusion => GROUPS
 
+  belongs_to :output_element
   has_one :description, :as => :describable, :dependent => :destroy
   has_one :area_dependency, :as => :dependable, :dependent => :destroy
 

@@ -1,6 +1,18 @@
 #dashboard_popup{class: @constraint.key}
-  %h2= t("constraints.#{@constraint.key}.title").html_safe
-  = render :partial => @constraint.key
+  %h2
+    - if @constraint.output_element
+      = t("output_elements.#{@constraint.output_element.key}").html_safe
+    - else
+      = t("constraints.#{@constraint.key}.title").html_safe
+
+  - if @constraint.description
+    .description= @constraint.description.try :short_content
+
+  - if @constraint.chart_number
+    #charts
+      .chart{:'data-chart_id' => @constraint.chart_number}
+
+  = render partial: @constraint.key rescue nil
 
   = render 'output_elements/chart_template'
   :javascript

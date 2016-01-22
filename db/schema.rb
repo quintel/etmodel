@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141128142852) do
+ActiveRecord::Schema.define(version: 20160122125506) do
 
   create_table "area_dependencies", force: true do |t|
     t.string  "dependent_on"
@@ -27,9 +27,11 @@ ActiveRecord::Schema.define(version: 20141128142852) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "gquery_key"
-    t.string   "group",      limit: 25,                 null: false
+    t.string   "group",             limit: 25,                 null: false
     t.integer  "position"
-    t.boolean  "disabled",              default: false
+    t.boolean  "disabled",                     default: false
+    t.integer  "output_element_id"
+    t.integer  "chart_number"
   end
 
   add_index "constraints", ["disabled"], name: "index_constraints_on_disabled", using: :btree

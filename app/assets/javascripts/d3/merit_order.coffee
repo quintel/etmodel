@@ -135,6 +135,8 @@ D3.merit_order =
           my: 'bottom right'
           at: 'top center'
 
+      @check_merit_enabled()
+
       # add legend
       @draw_legend
         svg: @svg

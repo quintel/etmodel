@@ -1,5 +1,6 @@
 class @MeritOrderTableView extends HtmlTableChartView
   after_render: =>
+    @check_merit_enabled()
     @sort_items()
 
   sort_items: =>

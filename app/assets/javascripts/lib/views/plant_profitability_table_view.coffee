@@ -32,6 +32,7 @@ class @PlantProfitabilityTableView extends HtmlTableChartView
     sorted_items = (forSet(item) for item in items.sort(@sorting_function))
 
     @container_node().html tmpl({series: sorted_items})
+    @check_merit_enabled()
     true
 
   # Index used for sorting

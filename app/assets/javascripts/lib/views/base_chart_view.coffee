@@ -35,7 +35,7 @@ class @BaseChartView extends Backbone.View
   check_merit_enabled: =>
     unless App.settings.merit_order_enabled()
       @container_node().html(
-        $('<p>').html(I18n.t('wells.warning.merit')).addClass('well')
+        $('<div>').html(I18n.t('wells.warning.merit')).addClass('well')
       )
 
   # the chart_canvas class has a predefined height, while the table_canvas

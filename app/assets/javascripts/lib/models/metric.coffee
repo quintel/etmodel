@@ -52,9 +52,12 @@
       value = @round_number(x, precision)
     else
       pow = @power_of_thousand(x)
-      value = x / Math.pow(1000, pow)
 
-      return @round_number(x, precision) if pow < 0
+      if pow < 0
+        value = x
+        pow   = 0
+      else
+        value = x / Math.pow(1000, pow)
 
       # Allow more relaxed scaling down of unitless ("#") values.
       scalePoint = if unit is '#' then 10 else 1
@@ -69,8 +72,11 @@
         #
         # .split('.')[1] => the decimal places
         #
-        str_value = "#{ value }"
-        precision = _.min([str_value.split('.', 2)[1]?.length || 0, 2])
+        str_value = value.toFixed(20)
+
+        precision = _.min([
+          str_value.split('.', 2)[1]?.replace(/0+$/).length || 0, 2
+        ])
 
       value = @round_number(value, precision)
 

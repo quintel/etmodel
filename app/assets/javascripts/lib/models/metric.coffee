@@ -151,7 +151,13 @@
     prefix = if x < 0 then "-" else ""
     abs_value = Math.abs(x)
     scale     = @power_of_thousand(x)
-    value     = abs_value / Math.pow(1000, scale)
+
+    if scale < 0
+      precision = scale = 0
+      value = abs_value
+    else
+      value = abs_value / Math.pow(1000, scale)
+
     suffix    = ''
     rounded   = @round_number(value, precision).toString()
 

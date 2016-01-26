@@ -54,6 +54,8 @@
       pow = @power_of_thousand(x)
       value = x / Math.pow(1000, pow)
 
+      return @round_number(x, precision) if pow < 0
+
       # Allow more relaxed scaling down of unitless ("#") values.
       scalePoint = if unit is '#' then 10 else 1
 

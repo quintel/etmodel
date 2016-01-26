@@ -265,7 +265,13 @@ class @ChartList extends Backbone.Collection
     #
     $(document).on 'touchend click', 'a.table_format, a.chart_format', (e) =>
       e.preventDefault()
-      holder_id = $(e.target).parents(".chart_holder").data('holder_id')
+
+      holder_target = if $(e.target).parents(".fancybox-inner").length > 0
+        $(e.target).parents(".fancybox-inner").find(".chart_holder")
+      else
+        $(e.target).parents(".chart_holder")
+
+      holder_id = $(holder_target).data('holder_id')
       @chart_in_holder(holder_id).toggle_format()
 
     # Restore the default chart

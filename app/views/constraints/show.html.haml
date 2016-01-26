@@ -5,6 +5,13 @@
     - else
       = t("constraints.#{@constraint.key}.title").html_safe
 
+    - if @constraint.output_element_id
+      %span.popup-actions
+        %a.chart_format.tooltip.button{href: "#", title: t('output_elements.tooltips.chart')}
+          Chart view
+        %a.table_format.tooltip.button{href: "#", title: t('output_elements.tooltips.table')}
+          Table view
+
   - if @constraint.description
     .description= @constraint.description.try :short_content
 

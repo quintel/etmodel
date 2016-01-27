@@ -39,8 +39,9 @@ class @HtmlTableChartView extends BaseChartView
   # is the result of a gquery and write the output
   #
   fill_cells: ->
-    default_decimals = @container_node().find('.chart').data('decimals')
-    default_decimals = 1 unless _.isNumber(default_decimals)
+    container_node_data = @container_node().find('.chart').data()
+    default_decimals    = container_node_data.decimals
+    default_decimals    = 1 unless _.isNumber(default_decimals)
 
     for cell in @dynamic_cells()
       gqid = $(cell).data('gquery')
@@ -53,9 +54,9 @@ class @HtmlTableChartView extends BaseChartView
         return
 
       raw_value = if graph == 'future' then serie.future_value() else serie.present_value()
-
       raw_value = 0 unless _.isNumber(raw_value)
-      value = Metric.autoscale_value(raw_value, serie.get('gquery').get('unit'), decimals, false)
+      value     = @main_formatter(maxFrom: 5, maxPrecision: 5)(raw_value)
+
       # some gqueries need a special treatment if they're 0
       on_zero = $(cell).data('on_zero')
       if raw_value == 0 and on_zero

@@ -7,6 +7,12 @@
       - if area_code[:data].any?
         %optgroup{:label => area_code[:text]}
           - area_code[:data].each do |sub_area_code|
-            = country_option sub_area_code[:area_code], :test => sub_area_code[:test]
+            = country_option sub_area_code[:area_code], test: sub_area_code[:test], selected: params[:country]
     - else
-      = country_option area_code[:area_code], :test => area_code[:test], earliest: Api::Area.find_by_country_memoized(area_code[:area_code]).analysis_year + 1
+      = country_option area_code[:area_code], test: area_code[:test], earliest: Api::Area.find_by_country_memoized(area_code[:area_code]).analysis_year + 1, selected: params[:country]
+
+%p.dataset_information
+  %a
+    %span.link
+    %span
+      = I18n.t("intro.dataset_information")

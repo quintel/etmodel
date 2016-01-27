@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   include ApplicationHelper
   before_filter :ensure_valid_browser, :except => [:browser_support]
   layout 'static_page', :only => [:about, :units, :browser_support, :bugs,
-    :disclaimer, :privacy_statement, :quality]
+    :disclaimer, :privacy_statement, :quality, :dataset]
 
   def root
     if request.post?
@@ -14,6 +14,11 @@ class PagesController < ApplicationController
 
   def scaled
     setup_countries_and_regions
+  end
+
+  def dataset
+    @dataset_locale = params[:dataset_locale]
+    @api_area = Api::Area.find_by_country_memoized(@dataset_locale.to_sym)
   end
 
   def choose

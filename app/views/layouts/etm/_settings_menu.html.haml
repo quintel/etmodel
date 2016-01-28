@@ -56,7 +56,7 @@
 
       - if Current.setting.allow_merit_order?
         %li.scenario_option
-          = check_box :settings, :use_merit_order
+          = check_box :settings, :use_merit_order, :checked => Current.setting.use_merit_order
           %label{:for => "settings_use_merit_order"}= t('header.merit_order_check')
 
       - if params[:debug]

@@ -14,8 +14,6 @@
 #
 
 class Description < ActiveRecord::Base
-  
-
   belongs_to :describable, :polymorphic => true
 
   # REFACTOR: Validators

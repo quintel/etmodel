@@ -48,12 +48,13 @@ class Slide < ActiveRecord::Base
   # See Current.view
   # Some sliders cannot be used on some areas. Let's filter them out
   def safe_input_elements
-    @safe_input_elements ||= sliders.includes(:area_dependency).includes(:description).ordered.reject(&:area_dependent)
+    @safe_input_elements ||= sliders.includes(:area_dependency)
+      .includes(:description).ordered.reject(&:area_dependent)
   end
 
   # Complementary to grouped_input_elements
   def input_elements_not_belonging_to_a_group
-    safe_input_elements.reject &:belongs_to_a_group?
+    safe_input_elements.reject(&:belongs_to_a_group?)
   end
 
   # Gets a interface groups hash with an array of input elements.
@@ -61,8 +62,7 @@ class Slide < ActiveRecord::Base
   # @return [Hash] interface_group => [InputElement]
   def grouped_input_elements
     interface_groups = {}
-    items = safe_input_elements.select &:belongs_to_a_group?
-    items.each do |i|
+    safe_input_elements.select(&:belongs_to_a_group?).each do |i|
       interface_groups[i.interface_group] ||= []
       interface_groups[i.interface_group] << i
     end

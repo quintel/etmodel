@@ -40,16 +40,6 @@ development: &DEV
     # API key:
     airbrake_api_key: false
 
-    valid_countries:
-      - fr
-      - de
-      - nl
-      - pl
-      - es
-      - uk
-      - eu
-      - br
-
 production: &PRODUCTION
     <<: *DEV
 test:

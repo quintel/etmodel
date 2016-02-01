@@ -126,9 +126,7 @@ Etm::Application.routes.draw do
   get '/set_locale(/:locale)' => 'pages#set_locale', as: :set_locale
   get '/browser_support' => 'pages#browser_support'
   get '/update_footer'   => 'pages#update_footer'
-  get '/:dataset_locale' => 'pages#dataset', constraints: {
-    dataset_locale: Regexp.new(APP_CONFIG[:valid_countries].join("|"))
-  }
+  get '/regions/:dataset_locale' => 'pages#dataset', as: :region
 
   get "/404", to: "pages#404"
   get "/500", to: "pages#500"

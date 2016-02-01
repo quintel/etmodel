@@ -17,8 +17,9 @@ class PagesController < ApplicationController
   end
 
   def dataset
-    @dataset_locale = params[:dataset_locale]
-    @api_area = Api::Area.find_by_country_memoized(@dataset_locale.to_sym)
+    unless @area = Api::Area.find_by_country_memoized(params[:dataset_locale])
+      fail ActiveRecord::RecordNotFound
+    end
   end
 
   def choose

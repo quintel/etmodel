@@ -1,5 +1,5 @@
 .page
-  %h1= I18n.t(@dataset_locale)
+  %h1= I18n.t(@area.area)
   %ul.dataset-info
     %li
       = I18n.t("dataset.present_year")
@@ -12,4 +12,4 @@
 
   .clearfix
 
-  = link_to I18n.t("dataset.start_scenario"), root_path(country: @dataset_locale), class: "button primary"
+  = link_to I18n.t("dataset.start_scenario"), region_path(country: @area.area), class: "button primary"

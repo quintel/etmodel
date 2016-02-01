@@ -55,7 +55,7 @@ $ ->
     selectedOption = $(this).find("option[value='" + areaValue + "']")
 
     $("p.dataset_information a")
-      .attr("href", areaValue)
+      .attr("href", "/regions/" + areaValue)
       .find(".link")
       .text(selectedOption.text())
 

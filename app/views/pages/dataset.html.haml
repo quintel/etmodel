@@ -3,12 +3,14 @@
   %ul.dataset-info
     %li
       = I18n.t("dataset.present_year")
-      %span= @api_area.analysis_year
-    %li
-      = I18n.t("dataset.last_updated")
-      %span
-        = time_ago_in_words(DateTime.parse(@api_area.last_updated_at))
-        = I18n.t("datetime.distance_in_words.ago")
+      %span= @area.analysis_year
+
+    - if @area.last_updated_at
+      %li
+        = I18n.t("dataset.last_updated")
+        %span
+          = time_ago_in_words(DateTime.parse(@area.last_updated_at))
+          = I18n.t("datetime.distance_in_words.ago")
 
   .clearfix
 

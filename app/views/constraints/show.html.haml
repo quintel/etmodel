@@ -8,9 +8,9 @@
   - if @constraint.description
     .description= @constraint.description.try :short_content
 
-  - if @constraint.chart_number
+  - if @constraint.output_element_id
     #charts
-      .chart{:'data-chart_id' => @constraint.chart_number}
+      .chart{:'data-chart_id' => @constraint.output_element_id }
 
   = render partial: @constraint.key rescue nil
 

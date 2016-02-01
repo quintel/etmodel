@@ -41,17 +41,14 @@ class @ConstraintView extends Backbone.View
 
   open_popup: (e) =>
     e.preventDefault()
-    constraint = $(@dom_id)
-    constraint_id = @model.get('id')
-    key = @model.get('key')
-    url = $(constraint).attr('href')
+
     $.fancybox.open
+      href:     $(@dom_id).attr('href')
       autoSize: false
-      href: url
-      type: 'ajax'
-      width: 720
-      height: 500
-      padding: 0
+      type:     'ajax'
+      width:    720
+      height:   500
+      padding:  0
       beforeClose: ->
         # don't leave stale charts around!
         charts.prune()

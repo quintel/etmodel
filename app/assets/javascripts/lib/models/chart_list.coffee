@@ -183,7 +183,8 @@ class @ChartList extends Backbone.Collection
         title: 'Loading'
         chart_id: 0
         holder_id: holder_id
-        header: options.header)
+        header: options.header,
+        popup: options.popup)
       $container.append new_chart
     holder_id
 

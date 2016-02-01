@@ -1,6 +1,6 @@
 #dashboard_popup
   margin: 0px
-  height: 460px
+  height: 475px
   overflow: hidden
   background-color: #fff
   h2
@@ -11,6 +11,17 @@
   .description
     text-align: left
     padding: 7px
+  .chart_holder
+    header h3
+      display: none
+    .actions
+      text-align: right
+      a
+        display: none
+        &.chart_format
+          display: block
+        &.chart_info
+          display: none !important
   #charts
     text-align: center
     margin: 0 auto

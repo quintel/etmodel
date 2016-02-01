@@ -1,0 +1,15 @@
+.page
+  %h1= I18n.t(@dataset_locale)
+  %ul.dataset-info
+    %li
+      = I18n.t("dataset.present_year")
+      %span= @api_area.analysis_year
+    %li
+      = I18n.t("dataset.last_updated")
+      %span
+        = time_ago_in_words(DateTime.parse(@api_area.last_updated_at))
+        = I18n.t("datetime.distance_in_words.ago")
+
+  .clearfix
+
+  = link_to I18n.t("dataset.start_scenario"), root_path(country: @dataset_locale), class: "button primary"

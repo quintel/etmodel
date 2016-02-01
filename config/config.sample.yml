@@ -39,6 +39,17 @@ development: &DEV
     # Optionally send error messages to the Airbrake service by providing your
     # API key:
     airbrake_api_key: false
+
+    valid_countries:
+      - fr
+      - de
+      - nl
+      - pl
+      - es
+      - uk
+      - eu
+      - br
+
 production: &PRODUCTION
     <<: *DEV
 test:

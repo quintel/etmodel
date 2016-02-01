@@ -50,6 +50,15 @@ $ ->
 
     cYearSelect.val(selected)
 
+    # Set dataset information
+    areaValue = $(this).val()
+    selectedOption = $(this).find("option[value='" + areaValue + "']")
+
+    $("p.dataset_information a")
+      .attr("href", areaValue)
+      .find(".link")
+      .text(selectedOption.text())
+
   areaSelect.change(areaOnChange).change()
 
   $("#new_scaled_scenario").submit ->

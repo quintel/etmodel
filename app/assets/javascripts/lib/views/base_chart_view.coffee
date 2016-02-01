@@ -33,6 +33,7 @@ class @BaseChartView extends Backbone.View
       @render()
 
   check_merit_enabled: =>
+    $(".merit-data-downloads").toggle(App.settings.merit_order_enabled())
     unless App.settings.merit_order_enabled()
       @container_node().html(
         $('<div>').html(I18n.t('wells.warning.merit')).addClass('well')

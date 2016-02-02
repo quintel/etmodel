@@ -1,42 +1,41 @@
--# Population chart
-%table#population.chart.centered.autostripe
+-# Flexibility options chart
+%table#flexibility.chart.centered.autostripe
   %thead
     %tr
       %th 
-      %th= t 'output_elements.storage_capacity'
-      %th= t 'output_elements.storage_volume'
-      %th= t 'output_elements.annual_stored_energy'
-      %th= t 'output_elements.cycles'      
+      %th= t 'output_elements.tables.flexibility.storage_capacity'
+      %th= t 'output_elements.tables.flexibility.storage_volume'
+      %th= t 'output_elements.tables.flexibility.annual_stored_energy'     
 
   %tbody
     %tr
-      %th= t "input_elements.electricity_stored_in_batteries"
-      %td 370 MW
-      %td 500 MWh
-      %td 25 GWh
-      %td 50
+      %th= t "output_elements.tables.flexibility.electricity_stored_in_batteries"
+      %td{:data => {:gquery => "households_flexibility_p2p_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "households_flexibility_p2p_electricity_volume", :graph => :future}}
+      %td{:data => {:gquery => "households_flexibility_p2p_electricity_demand", :graph => :future}}
     %tr
-      %th= t "input_elements.electricity_stored_in_EV"
-      %td 370 MW
-      %td 2.5 GWh
-      %td 250 GWh
-      %td 100
+      %th= t "output_elements.tables.flexibility.electricity_stored_in_EV"
+      %td{:data => {:gquery => "transport_car_using_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "transport_car_using_electricity_volume", :graph => :future}}
+      %td{:data => {:gquery => "transport_car_using_electricity_demand", :graph => :future}}
     %tr
-      %th= t "input_elements.electricity_converted_to_heat"
-      %td 525 MW
-      %td 3.0 GWh
-      %td 1.0 TWh
-      %td 
+      %th= t "output_elements.tables.flexibility.electricity_converted_to_heat"
+      %td{:data => {:gquery => "households_flexibility_p2h_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "households_flexibility_p2h_electricity_volume", :graph => :future}}
+      %td{:data => {:gquery => "households_flexibility_p2h_electricity_demand", :graph => :future}}
     %tr
-      %th= t "electricity_converted_to_gas"
-      %td 12 MW
+      %th= t "output_elements.tables.flexibility.electricity_converted_to_gas"
+      %td{:data => {:gquery => "energy_flexibility_p2g_electricity_capacity", :graph => :future}}
       %td 
-      %td 18 GWh
-      %td 
+      %td{:data => {:gquery => "energy_flexibility_p2g_electricity_demand", :graph => :future}} 
     %tr
-      %th= t "input_elements.electricity_exported"
-      %td 5850 MW
+      %th= t "output_elements.tables.flexibility.electricity_exported"
+      %td{:data => {:gquery => "energy_export_electricity_capacity", :graph => :future}}
       %td 
-      %td 1.5 TWh
+      %td{:data => {:gquery => "energy_export_electricity_demand", :graph => :future}}
+    %tr
+      %th= t "output_elements.tables.flexibility.electricity_curtailed"
+      %td
       %td 
+      %td{:data => {:gquery => "energy_curtailment_electricity_demand", :graph => :future}}
     

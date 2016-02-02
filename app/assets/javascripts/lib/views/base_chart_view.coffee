@@ -98,7 +98,7 @@ class @BaseChartView extends Backbone.View
           order: order,
           scenario_id: globals.api_session_id
       success: ->
-        console.log('Recalculate something')
+        App.call_api()
       error: (e,f) ->
         console.log('Throw error')
 

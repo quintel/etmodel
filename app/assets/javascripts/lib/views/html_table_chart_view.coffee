@@ -55,7 +55,7 @@ class @HtmlTableChartView extends BaseChartView
 
       raw_value = if graph == 'future' then serie.future_value() else serie.present_value()
       raw_value = 0 unless _.isNumber(raw_value)
-      value     = @main_formatter(maxFrom: 5, maxPrecision: 5)(raw_value)
+      value     = @main_formatter(maxFrom: 5, precision: default_decimals, maxPrecision: 5, scaledown: false)(raw_value)
 
       # some gqueries need a special treatment if they're 0
       on_zero = $(cell).data('on_zero')

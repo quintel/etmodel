@@ -143,7 +143,7 @@ class @BaseChartView extends Backbone.View
     if Quantity.isSupported(unit)
       Quantity.scaleAndFormatBy(max_value, unit, opts)
     else
-      (value) -> Metric.autoscale_value(value, unit, opts.precision)
+      (value) -> Metric.autoscale_value(value, unit, opts.precision, opts.scaledown)
 
   # Internal: Returns a function which will format values for the "main" axis
   # of the chart.

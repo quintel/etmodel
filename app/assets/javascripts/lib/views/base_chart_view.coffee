@@ -115,6 +115,8 @@ class @BaseChartView extends Backbone.View
         success: (data) ->
           Sortable.create sortable_el,
             filter: '.ignore',
+            ghostClass: 'ghost',
+            animation: 150,
             store:
               get: (sortable) ->
                 data.order.concat(['curtailment'])

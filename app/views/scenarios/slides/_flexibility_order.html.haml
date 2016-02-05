@@ -1,13 +1,8 @@
 %ul.sortable{ data: flexibility_urls }
-  %li{data: { id: 'power_to_power' }}
-    = t('output_elements.flexibility_options.power_to_power_in_batteries')
-  %li{data: { id: 'electric_vehicle' }}
-    = t('output_elements.flexibility_options.power_to_power_in_ev')
-  %li{data: { id: 'power_to_heat' }}
-    = t('output_elements.flexibility_options.power_to_heat')
-  %li{data: { id: 'power_to_gas' }}
-    = t('output_elements.flexibility_options.power_to_gas')
-  %li{data: { id: 'export' }}
-    = t('output_elements.flexibility_options.export')
+  - %w(power_to_power electric_vehicle power_to_heat power_to_gas export).each do |flexibility_option|
+    %li{data: { id: flexibility_option }}
+      = t("output_elements.flexibility_options.#{ flexibility_option }")
+      %span.fa.fa-bars
+
   %li.ignore{data: {id: 'curtailment'}}
     = t('output_elements.flexibility_options.curtailment')

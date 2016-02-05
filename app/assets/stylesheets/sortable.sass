@@ -1,17 +1,37 @@
 ul.sortable
   padding-left: 0
+  border: 1px solid #eee
 
   li
     list-style-type: none
-    padding: 5px
-    border: 1px solid #eee
+    padding: 10px 14px
+    border-bottom: 1px solid #eee
+
+    span.fa-bars
+      float: right
+      line-height: 18px
+      color: #BBB
+      -webkit-transform: scale(1.5, 1.0)
+      -moz-transform: scale(1.5, 1.0)
+      -ms-transform: scale(1.5, 1.0)
+      -o-transform: scale(1.5, 1.0)
+      transform: scale(1.5, 1.0)
 
     &.ignore
       color: #ccc
 
+    &.ghost
+      opacity: 0.1
+      background: #ddd
+
+    &:last-child
+      border-bottom: none
+
     &:not(.ignore)
       cursor: grab
+      cursor: -webkit-grab
 
       &.sortable-chosen
         cursor: grabbing
-        background-color: #F2FAFF
+        cursor: -webkit-grabbing
+        background-color: lighten(#DFE8F3, 5%)

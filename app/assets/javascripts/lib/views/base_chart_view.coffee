@@ -107,10 +107,11 @@ class @BaseChartView extends Backbone.View
     sortable_el = document.querySelectorAll("ul.sortable")[0]
 
     if sortable_el
-      scenario_urls = $(sortable_el).data()
+      api_session_id = App.settings.get("api_session_id")
+      base_url = "#{ globals.api_url }/api/v3/scenarios/#{ api_session_id }/flexibility_order/"
 
       $.ajax
-        url: scenario_urls.get,
+        url: "#{ base_url}get",
         type: 'GET',
         success: (data) ->
           Sortable.create sortable_el,
@@ -122,7 +123,7 @@ class @BaseChartView extends Backbone.View
                 data.order.concat(['curtailment'])
 
               set: (sortable) ->
-                self.update_flexibility_order(scenario_urls.set, sortable.toArray())
+                self.update_flexibility_order("#{ base_url }set", sortable.toArray())
 
   update_lock_icon: =>
     icon = @$el.find('a.lock_chart')

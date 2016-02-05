@@ -1,4 +1,4 @@
-%ul.sortable{ data: flexibility_urls }
+%ul.sortable
   - %w(power_to_power electric_vehicle power_to_heat power_to_gas export).each do |flexibility_option|
     %li{data: { id: flexibility_option }}
       = t("output_elements.flexibility_options.#{ flexibility_option }")

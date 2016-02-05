@@ -9,8 +9,8 @@ module LayoutHelper
   end
 
   def country_option(code, opts = {})
-    current = Current.setting.area_code == code
-    selected = (opts[:selected] == code || current) ? "selected='true'" : nil
+    selector = params[:country] || Current.setting.area_code
+    selected = selector == code ? "selected='true'" : nil
 
     label = I18n.t("country_select.#{ code }", default: I18n.t(code))
     label += " (#{ I18n.t('new') })" if opts[:test]

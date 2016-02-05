@@ -6,6 +6,6 @@
 
     - elsif charts.is_a?(Hash)
       - charts.each_pair do |sub_group, charts|
-        - if sub_group
+        - if sub_group.present?
           %h2= t("chart_sub_group.#{sub_group.downcase}")
         = render 'chart_preview', charts: charts

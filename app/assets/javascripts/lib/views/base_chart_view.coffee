@@ -104,27 +104,26 @@ class @BaseChartView extends Backbone.View
 
   set_sortable: =>
     self = this
-    api_session_id = App.settings.get("api_session_id")
-    base_url = "#{ globals.api_url }/api/v3/scenarios/#{ api_session_id }/flexibility_order/"
-    sort_el = $("ul.sortable")
+    sortable_el = document.querySelectorAll("ul.sortable")[0]
 
-    if sort_el.length > 0
+    if sortable_el
+      api_session_id = App.settings.get("api_session_id")
+      base_url = "#{ globals.api_url }/api/v3/scenarios/#{ api_session_id }/flexibility_order/"
+
       $.ajax
-        type: 'GET',
         url: "#{ base_url}get",
+        type: 'GET',
         success: (data) ->
-          sort_el.sortable(
-            items: ":not(.ignore)",
-            create: (_, ui) =>
-              order = data.order.map((val) ->
-                sort_el.find("li##{val}")['0'].outerHTML
-              )
-              sort_el.empty().html(order.join(""))
-            stop: (_, ui) =>
-              order = sort_el.find("li").map(-> $(this).attr('id'))
+          Sortable.create sortable_el,
+            filter: '.ignore',
+            ghostClass: 'ghost',
+            animation: 150,
+            store:
+              get: (sortable) ->
+                data.order.concat(['curtailment'])
 
-              self.update_flexibility_order("#{ base_url }set", order.toArray())
-          )
+              set: (sortable) ->
+                self.update_flexibility_order("#{ base_url }set", sortable.toArray())
 
   update_lock_icon: =>
     icon = @$el.find('a.lock_chart')

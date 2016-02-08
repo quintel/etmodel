@@ -3,7 +3,6 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui.min
 //= require underscore-min
 //= require backbone-min
 //= require modernizr.custom
@@ -18,4 +17,5 @@
 //= require fancybox
 //= require i18n
 //= require i18n/translations
+//= require sortable.min
 //= require sign_up_form

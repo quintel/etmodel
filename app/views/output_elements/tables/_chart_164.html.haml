@@ -1,8 +1,9 @@
 -# Flexibility options chart
+.merit_order_enabled
 %table#flexibility.chart.centered.autostripe
   %thead
     %tr
-      %th 
+      %th
       %th
         = t 'output_elements.tables.flexibility.storage_capacity'
         (MW)
@@ -10,7 +11,7 @@
         = t 'output_elements.tables.flexibility.storage_volume'
         (MWh)
       %th
-        = t 'output_elements.tables.flexibility.annual_stored_energy'     
+        = t 'output_elements.tables.flexibility.annual_stored_energy'
         (PJ)
   %tbody
     %tr
@@ -31,16 +32,15 @@
     %tr
       %th= t "output_elements.tables.flexibility.electricity_converted_to_gas"
       %td{:data => {:gquery => "energy_flexibility_p2g_electricity_capacity", :graph => :future}}
-      %td 
-      %td{:data => {:gquery => "energy_flexibility_p2g_electricity_demand", :graph => :future}} 
+      %td
+      %td{:data => {:gquery => "energy_flexibility_p2g_electricity_demand", :graph => :future}}
     %tr
       %th= t "output_elements.tables.flexibility.electricity_exported"
       %td{:data => {:gquery => "energy_export_electricity_capacity", :graph => :future}}
-      %td 
+      %td
       %td{:data => {:gquery => "energy_export_electricity_demand", :graph => :future}}
     %tr
       %th= t "output_elements.tables.flexibility.electricity_curtailed"
       %td
-      %td 
+      %td
       %td{:data => {:gquery => "energy_curtailment_electricity_demand", :graph => :future}}
-    

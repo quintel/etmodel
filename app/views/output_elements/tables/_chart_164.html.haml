@@ -1,46 +1,50 @@
 -# Flexibility options chart
-%table#flexibility.chart.centered.autostripe
-  %thead
-    %tr
-      %th 
-      %th
-        = t 'output_elements.tables.flexibility.storage_capacity'
-        (MW)
-      %th
-        = t 'output_elements.tables.flexibility.storage_volume'
-        (MWh)
-      %th
-        = t 'output_elements.tables.flexibility.annual_stored_energy'     
-        (PJ)
-  %tbody
-    %tr
-      %th= t "output_elements.tables.flexibility.electricity_stored_in_batteries"
-      %td{:data => {:gquery => "households_flexibility_p2p_electricity_capacity", :graph => :future}}
-      %td{:data => {:gquery => "households_flexibility_p2p_electricity_volume", :graph => :future}}
-      %td{:data => {:gquery => "households_flexibility_p2p_electricity_demand", :graph => :future}}
-    %tr
-      %th= t "output_elements.tables.flexibility.electricity_stored_in_EV"
-      %td{:data => {:gquery => "transport_car_using_electricity_capacity", :graph => :future}}
-      %td{:data => {:gquery => "transport_car_using_electricity_volume", :graph => :future}}
-      %td{:data => {:gquery => "transport_car_using_electricity_demand", :graph => :future}}
-    %tr
-      %th= t "output_elements.tables.flexibility.electricity_converted_to_heat"
-      %td{:data => {:gquery => "households_flexibility_p2h_electricity_capacity", :graph => :future}}
-      %td{:data => {:gquery => "households_flexibility_p2h_electricity_volume", :graph => :future}}
-      %td{:data => {:gquery => "households_flexibility_p2h_electricity_demand", :graph => :future}}
-    %tr
-      %th= t "output_elements.tables.flexibility.electricity_converted_to_gas"
-      %td{:data => {:gquery => "energy_flexibility_p2g_electricity_capacity", :graph => :future}}
-      %td 
-      %td{:data => {:gquery => "energy_flexibility_p2g_electricity_demand", :graph => :future}} 
-    %tr
-      %th= t "output_elements.tables.flexibility.electricity_exported"
-      %td{:data => {:gquery => "energy_export_electricity_capacity", :graph => :future}}
-      %td 
-      %td{:data => {:gquery => "energy_export_electricity_demand", :graph => :future}}
-    %tr
-      %th= t "output_elements.tables.flexibility.electricity_curtailed"
-      %td
-      %td 
-      %td{:data => {:gquery => "energy_curtailment_electricity_demand", :graph => :future}}
-    
+- if Current.setting.use_merit_order
+  %table#flexibility.chart.centered.autostripe
+    %thead
+      %tr
+        %th
+        %th
+          = t 'output_elements.tables.flexibility.storage_capacity'
+          (MW)
+        %th
+          = t 'output_elements.tables.flexibility.storage_volume'
+          (MWh)
+        %th
+          = t 'output_elements.tables.flexibility.annual_stored_energy'
+          (PJ)
+    %tbody
+      %tr
+        %th= t "output_elements.tables.flexibility.electricity_stored_in_batteries"
+        %td{:data => {:gquery => "households_flexibility_p2p_electricity_capacity", :graph => :future}}
+        %td{:data => {:gquery => "households_flexibility_p2p_electricity_volume", :graph => :future}}
+        %td{:data => {:gquery => "households_flexibility_p2p_electricity_demand", :graph => :future}}
+      %tr
+        %th= t "output_elements.tables.flexibility.electricity_stored_in_EV"
+        %td{:data => {:gquery => "transport_car_using_electricity_capacity", :graph => :future}}
+        %td{:data => {:gquery => "transport_car_using_electricity_volume", :graph => :future}}
+        %td{:data => {:gquery => "transport_car_using_electricity_demand", :graph => :future}}
+      %tr
+        %th= t "output_elements.tables.flexibility.electricity_converted_to_heat"
+        %td{:data => {:gquery => "households_flexibility_p2h_electricity_capacity", :graph => :future}}
+        %td{:data => {:gquery => "households_flexibility_p2h_electricity_volume", :graph => :future}}
+        %td{:data => {:gquery => "households_flexibility_p2h_electricity_demand", :graph => :future}}
+      %tr
+        %th= t "output_elements.tables.flexibility.electricity_converted_to_gas"
+        %td{:data => {:gquery => "energy_flexibility_p2g_electricity_capacity", :graph => :future}}
+        %td
+        %td{:data => {:gquery => "energy_flexibility_p2g_electricity_demand", :graph => :future}}
+      %tr
+        %th= t "output_elements.tables.flexibility.electricity_exported"
+        %td{:data => {:gquery => "energy_export_electricity_capacity", :graph => :future}}
+        %td
+        %td{:data => {:gquery => "energy_export_electricity_demand", :graph => :future}}
+      %tr
+        %th= t "output_elements.tables.flexibility.electricity_curtailed"
+        %td
+        %td
+        %td{:data => {:gquery => "energy_curtailment_electricity_demand", :graph => :future}}
+
+- else
+  .well
+    = raw I18n.t("wells.warning.merit")

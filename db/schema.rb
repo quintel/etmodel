@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125135506) do
+ActiveRecord::Schema.define(version: 20160208130731) do
 
   create_table "area_dependencies", force: true do |t|
     t.string  "dependent_on"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20160125135506) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "gquery_key"
-    t.string   "group",             limit: 25,                   null: false
+    t.string   "group",             limit: 25,                 null: false
     t.integer  "position"
     t.boolean  "disabled",                     default: false
     t.integer  "output_element_id"
@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(version: 20160125135506) do
     t.float    "max_axis_value",         limit: 24
     t.float    "min_axis_value",         limit: 24
     t.boolean  "hidden",                            default: false
+    t.boolean  "requires_merit_order",              default: false
   end
 
   add_index "output_elements", ["hidden"], name: "index_output_elements_on_hidden", using: :btree

@@ -107,8 +107,7 @@ class @BaseChartView extends Backbone.View
     sortable_el = document.querySelectorAll("ul.sortable")[0]
 
     if sortable_el
-      api_session_id = App.settings.get("api_session_id")
-      base_url = "#{ globals.api_url }/api/v3/scenarios/#{ api_session_id }/flexibility_order/"
+      base_url = "#{ App.scenario.url_path() }/flexibility_order/"
 
       $.ajax
         url: "#{ base_url}get",

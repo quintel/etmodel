@@ -96,7 +96,7 @@ class @BaseChartView extends Backbone.View
       data:
         flexibility_order:
           order: order,
-          scenario_id: globals.api_session_id
+          scenario_id: App.scenario.api_session_id()
       success: ->
         App.call_api()
       error: (e,f) ->

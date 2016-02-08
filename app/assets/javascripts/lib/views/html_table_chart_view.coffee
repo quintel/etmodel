@@ -19,6 +19,9 @@ class @HtmlTableChartView extends BaseChartView
     @fill_cells()
     @after_render()
 
+    if @container_node().find(".merit_order_enabled")
+      @check_merit_enabled()
+
   # The table HTML is provided by the rails app.
   #
   table_html: => @model.get 'html'

@@ -24,7 +24,7 @@ class @D3ChartView extends BaseChartView
 
     if @model.get('requires_merit_order')
       @check_merit_enabled()
-      @drawn = false
+      @drawn = App.settings.merit_order_enabled()
 
     @refresh()
 

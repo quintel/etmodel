@@ -40,7 +40,7 @@ class @Setting extends Backbone.Model
   merit_order_enabled: ->
     try
       values = App.input_elements.user_values.settings_enable_merit_order
-      values? && values.user == 1
+      values? && (if values.user? then values.user else values.default) == 1
     catch error
       # handles uninitialized user values hash.
       # TODO: use deferred object

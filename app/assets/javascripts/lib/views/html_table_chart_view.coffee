@@ -45,17 +45,18 @@ class @HtmlTableChartView extends BaseChartView
     default_decimals = @container_node().find('.chart').data('decimals') || 1
 
     for cell in @dynamic_cells()
-      gqid = $(cell).data('gquery')
+      gqid     = $(cell).data('gquery')
       decimals = $(cell).data('decimals') || default_decimals
-      graph = $(cell).data('graph') || 'future'
-      serie = @model.series.with_gquery(gqid)
+      graph    = $(cell).data('graph') || 'future'
+      serie    = @model.series.with_gquery(gqid)
+
       if !serie
         console.warn "Missing gquery: #{gqid}"
         return
 
       raw_value = if graph == 'future' then serie.future_value() else serie.present_value()
       raw_value = 0 unless _.isNumber(raw_value)
-      value     = @main_formatter(maxFrom: 5, precision: default_decimals, maxPrecision: 5, scaledown: false)(raw_value)
+      value     = @main_formatter(maxFrom: 5, precision: decimals, maxPrecision: 5, scaledown: false)(raw_value)
 
       # some gqueries need a special treatment if they're 0
       on_zero = $(cell).data('on_zero')

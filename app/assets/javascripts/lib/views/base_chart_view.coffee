@@ -89,43 +89,6 @@ class @BaseChartView extends Backbone.View
     @update_lock_icon()
     this
 
-  update_flexibility_order: (url, order) =>
-    $.ajax
-      url: url,
-      type: 'POST',
-      data:
-        flexibility_order:
-          order: order,
-          scenario_id: App.scenario.api_session_id()
-      success: ->
-        App.call_api()
-      error: (e,f) ->
-        console.log('Throw error')
-
-  set_sortable: =>
-    self = this
-    sortable_el = document.querySelectorAll("ul.sortable")[0]
-
-    if sortable_el
-      base_url = "#{ App.scenario.url_path() }/flexibility_order/"
-
-      $.ajax
-        url: "#{ base_url }get",
-        type: 'GET',
-        success: (data) ->
-          Sortable.create sortable_el,
-            ghostClass: 'ghost'
-            animation: 150
-            store:
-              get: (sortable) ->
-                data.order.concat(['curtailment'])
-
-              set: (sortable) ->
-                self.update_flexibility_order(
-                  "#{ base_url }set",
-                  sortable.toArray().concat(['curtailment'])
-                )
-
   update_lock_icon: =>
     icon = @$el.find('a.lock_chart')
     if @model.get 'locked'

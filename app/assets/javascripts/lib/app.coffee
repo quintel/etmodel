@@ -49,6 +49,10 @@ class @AppView extends Backbone.View
         @setup_checkboxes()
       .fail @handle_ajax_error
 
+    # Create flexibility order.
+    if (sortable = $('#accordion_wrapper ul.sortable')).length
+      new FlexibilityOrder(sortable[0]).render()
+
   # Returns a deferred object on which the .done() method can be called
   #
   user_values: =>

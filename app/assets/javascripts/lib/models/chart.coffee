@@ -39,7 +39,6 @@ class @Chart extends Backbone.Model
     )
 
     @view.update_header()
-    @view.set_sortable()
 
   # -- view class detection --------------------------------------------------
 

@@ -1,37 +1,89 @@
+.sortable-container
+  background: #eee
+  border-radius: 4px
+  margin-bottom: 10px
+  padding: 4px
+  counter-reset: section
+
 ul.sortable
   padding-left: 0
-  border: 1px solid #eee
 
-  li
-    list-style-type: none
-    padding: 10px 14px
-    border-bottom: 1px solid #eee
+ul.sortable li, #flexibility-options .curtailment
+  background: white
+  border: 1px solid #ddd
+  list-style-type: none
+  margin-bottom: -1px
+  overflow: hidden
+  padding: 10px 14px 10px 50px
+  position: relative
 
-    span.fa-bars
-      float: right
-      line-height: 18px
-      color: #BBB
-      -webkit-transform: scale(1.5, 1.0)
-      -moz-transform: scale(1.5, 1.0)
-      -ms-transform: scale(1.5, 1.0)
-      -o-transform: scale(1.5, 1.0)
-      transform: scale(1.5, 1.0)
+  &:before
+    bottom: 0px
+    background: linear-gradient(white, #fafafa)
+    border-right: 1px solid #ddd
+    color: #999
+    counter-increment: section
+    content: counter(section)
+    display: inline-block
+    left: 0px
+    padding: 10px 14px 0
+    position: absolute
+    right: 0px
+    text-align: center
+    top: 0px
+    width: 10px
 
-    &.ignore
-      color: #999
+  span.fa
+    color: #BBB
+    float: right
+    line-height: 18px
+    margin-top: 2px
 
-    &.ghost
-      opacity: 0.1
-      background: #ddd
+ul.sortable li
+  cursor: grab
+  cursor: -webkit-grab
 
-    &:last-child
-      border-bottom: none
+  &:first-child
+    border-top-left-radius: 3px
+    border-top-right-radius: 3px
 
-    &:not(.ignore)
-      cursor: grab
-      cursor: -webkit-grab
+  &:last-child
+    border-bottom-left-radius: 3px
+    border-bottom-right-radius: 3px
 
-      &.sortable-chosen
-        cursor: grabbing
-        cursor: -webkit-grabbing
-        background-color: lighten(#DFE8F3, 5%)
+  .fa
+    -webkit-transform: scale(1.5, 1.0)
+    -moz-transform: scale(1.5, 1.0)
+    -ms-transform: scale(1.5, 1.0)
+    -o-transform: scale(1.5, 1.0)
+    transform: scale(1.5, 1.0)
+
+  &.sortable-chosen
+    &:before
+      content: '-'
+    cursor: grabbing
+    cursor: -webkit-grabbing
+    background-color: lighten(#DFE8F3, 5%)
+
+  &.ghost
+    opacity: 0.2
+    background: #ddd
+    &:before
+      content: counter(section)
+
+#flexibility-options
+  .curtailment
+    border-radius: 3px
+    color: #999
+    cursor: default
+    margin-top: 4px
+    margin-bottom: 0
+
+    .fa
+      color: #ccc
+      font-size: 17px
+      margin-right: 1px
+
+  .curtailment, .sortable li:last-child
+    border-bottom-color: #ccc
+    box-shadow: 0 1px 0 #ddd

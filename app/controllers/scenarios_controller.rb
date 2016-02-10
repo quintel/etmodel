@@ -104,8 +104,6 @@ class ScenariosController < ApplicationController
       redirect_to play_path, :notice => "Scenario not found" and return
     end
 
-    session[:dashboard] = nil
-
     scenario_attrs = { scenario_id: @scenario.id }
 
     Current.setting = Setting.load_from_scenario(@scenario)

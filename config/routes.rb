@@ -40,7 +40,7 @@ Etm::Application.routes.draw do
   namespace :admin do
     root to: 'pages#index'
     get 'map', to: 'pages#map', as: :map
-    get 'clear_cache' => 'pages#clear_cache', as: :clear_cache
+    post 'clear_cache' => 'pages#clear_cache', as: :clear_cache
 
     resources :predictions,
               :sidebar_items,

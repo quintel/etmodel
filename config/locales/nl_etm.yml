@@ -4,6 +4,7 @@ nl:
     title: "Energietransitiemodel - Je eigen onafhankelijke, volledige en op feiten gebaseerde energiescenario."
     description: "Maak je eigen, onafhankelijke energiescenario voor 2020 tot 2050. Direct online en zonder kosten."
 
+  # ----------- Tabs ----------- #
   tabs:
     home: "Home"
     demand: "Vraag"
@@ -59,6 +60,7 @@ nl:
     reset_scenario: "Scenario resetten"
     save_scenario: "Scenario opslaan"
     settings: "Opties"
+    show_graph: "Toon graaf"
     sign_in: "Login"
     sign_out: "Log uit"
     units_used: "Gebruikte eenheden"
@@ -113,11 +115,11 @@ nl:
     summary:             "Samenvattend"
 
   local_scenario:
-    include_agriculture: Include agriculture
-    include_energy: Include energy sector
-    include_industry: Include industry
-    scaling_attribute: Scaling attribute
-    scale_to: Scale to
+    include_agriculture: Neem landbouwsector mee
+    include_energy: Neem energiesector mee
+    include_industry: Neem industrie mee
+    scaling_attribute: Schalingsparameter
+    scale_to: Schaal naar
     start_new: "Schaal <strong>huidig scenario</strong>"
     based_on_preset: "Schaal <strong>opgeslagen scenario</strong>"
     summary_html: >

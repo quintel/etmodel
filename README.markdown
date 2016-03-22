@@ -25,8 +25,7 @@ The ETM pro is released under the [MIT License](LICENSE.txt).
 
 ## Branches
 
-* **master**: Working branch. Please always commit to this branch and rebase from here.
-* **staging**: Tracks [the ETM beta server](http://beta.pro.et-model.com)
+* **master**: Working branch and is tracked by [the ETM beta server](http://beta.pro.et-model.com)
 * **production**: Tracks [the ETM production server](http://pro.et-model.com)
 
 ## Dependencies

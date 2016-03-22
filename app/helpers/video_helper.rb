@@ -16,7 +16,7 @@ module VideoHelper
       :width       => 510,
       :height      => 290,
       :frameborder => 0,
-      :src         => "http://player.vimeo.com/video/#{video_id}"
+      :src         => "https://player.vimeo.com/video/#{video_id}"
     }
     content_tag :iframe, nil, defaults.merge(opts)
   end

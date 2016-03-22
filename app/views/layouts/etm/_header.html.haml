@@ -26,12 +26,14 @@
         %a.menu_toggler.signin{:href=>"#"}= t("header.sign_in")
         = render "layouts/etm/signin_menu"
 
-    %li{:style=>'width: 190px'}
-      %form#searchform(action="http://refman.et-model.com/publications" method="get")
-        %fieldset
-          %input.btn-search(type="submit" value="")
-          %span.text
-            %input{ :name => 'q', :type => "text", :placeholder => "#{t("search_the_website")}" }
+    -# Disabling for the moment, see https://github.com/quintel/etmodel/issues/2021
+       Also http end points are no longer allowed
+      %li{:style=>'width: 190px'}
+        %form#searchform(action="http://refman.et-model.com/publications" method="get")
+          %fieldset
+            %input.btn-search(type="submit" value="")
+            %span.text
+              %input{ :name => 'q', :type => "text", :placeholder => "#{t("search_the_website")}" }
 
   %a.root_link{ href: root_path }
     %img(src="/assets/header/logo400@2x.png" width="400" height="49" alt="Energy Transition Model")

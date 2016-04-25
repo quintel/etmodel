@@ -43,6 +43,10 @@ var D3ChartDateSelect = (function () {
             return this.weeks[this.val()];
         },
 
+        setVal: function(value) {
+            this.selectBox.val(value);
+        },
+
         val: function () {
             return parseInt(this.selectBox.val(), 10);
         },
@@ -53,7 +57,7 @@ var D3ChartDateSelect = (function () {
     };
 
     function D3ChartDateSelect(scope, range) {
-        this.scope = scope;
+        this.scope = $(scope);
         this.range = range;
     }
 

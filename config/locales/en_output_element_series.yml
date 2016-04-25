@@ -34,6 +34,9 @@ en:
     actual_2010: "2010"
     actual_20xx: "future"
     actual_co2_emitted: "Actual CO2 emissions"
+    agriculture_chp_engine_biogas: 'Agriculture chp engine biogas'
+    agriculture_chp_engine_network_gas: 'Agriculture chp engine network gas'
+    agriculture_chp_supercritical_wood_pellets: 'Agriculture chp supercritical wood pellets'
     all_plants_capacity: "All Plants (capacity)"
     aluminium: "Aluminium"
     ambient: "Ambient heat and cold"
@@ -65,8 +68,12 @@ en:
     biomass_products: "Biomass and derivatives"
     biomass_products_non_energetic: "Non-energetic biomass products and derivatives"
     blue_energy: "Blue Energy"
+    buildings_chp_engine_biogas: 'Buildings chp engine biogas'
+    buildings_collective_chp_network_gas: 'Buildings collective chp network gas'
+    buildings_collective_chp_wood_pellets: 'Buildings collective chp wood pellets'
     buildings_cooling_demand: "Cooling buildings"
     buildings_heating_demand: "Heating buildings"
+    buildings_solar_pv_solar_radiation: 'Buildings solar pv solar radiation'
     capaciteit_bezet_mva: "Capacity used - [MVA]"
     capaciteit_totaal_mva: "Capacity - total [MVA]"
     central_gas_chp: "Gas CHP"
@@ -159,7 +166,41 @@ en:
     electricity_trucks: "Electricity for trucks"
     energetic_use: "Energetic use"
     energy: "Energy"
+    energy_chp_combined_cycle_network_gas: 'Energy chp combined cycle network gas'
+    energy_chp_supercritical_waste_mix: 'Energy chp supercritical waste mix'
+    energy_chp_ultra_supercritical_coal: 'Energy chp ultra supercritical coal'
+    energy_chp_ultra_supercritical_cofiring_coal: 'Energy chp ultra supercritical cofiring coal'
+    energy_chp_ultra_supercritical_lignite: 'Energy chp ultra supercritical lignite'
+    energy_export_electricity: "Energy export electricty"
+    energy_flexibility_curtailment_electricity: "Energy flexibility curtailment electricity"
+    energy_flexibility_p2g_electricity: 'Energy flexibility p2g electricity'
     energy_import: "Energy import"
+    energy_power_combined_cycle_ccs_coal: 'Energy power combined cycle ccs coal'
+    energy_power_combined_cycle_ccs_network_gas: 'Energy power combined cycle ccs network gas'
+    energy_power_combined_cycle_coal: 'Energy power combined cycle coal'
+    energy_power_combined_cycle_network_gas: 'Energy power combined cycle network gas'
+    energy_power_engine_diesel: 'Energy power engine diesel'
+    energy_power_engine_network_gas: 'Energy power engine network gas'
+    energy_power_geothermal: 'Energy power geothermal'
+    energy_power_hydro_mountain: 'Energy power hydro mountain'
+    energy_power_hydro_river: 'Energy power hydro river'
+    energy_power_nuclear_gen2_uranium_oxide: 'Energy power nuc. gen2 UO'
+    energy_power_nuclear_gen3_uranium_oxide: 'Energy power nuclear gen3 UO'
+    energy_power_solar_csp_solar_radiation: 'Energy power solar csp solar radiation'
+    energy_power_solar_pv_solar_radiation: 'Energy power solar pv solar radiation'
+    energy_power_supercritical_coal: 'Energy power supercritical coal'
+    energy_power_supercritical_waste_mix: 'Energy power supercritical waste mix'
+    energy_power_turbine_network_gas: 'Energy power turbine network gas'
+    energy_power_ultra_supercritical_ccs_coal: 'Energy power ultra supercritical ccs coal'
+    energy_power_ultra_supercritical_coal: 'Energy power ultra supercritical coal'
+    energy_power_ultra_supercritical_cofiring_coal: 'Energy power ultra supercritical cofiring coal'
+    energy_power_ultra_supercritical_crude_oil: 'Energy power ultra supercritical crude oil'
+    energy_power_ultra_supercritical_lignite: 'Energy power ultra supercritical lignite'
+    energy_power_ultra_supercritical_network_gas: 'Energy power ultra supercritical network gas'
+    energy_power_ultra_supercritical_oxyfuel_ccs_lignite: 'Energy power usc oxyfuel ccs lignite'
+    energy_power_wind_turbine_coastal: 'Energy power wind turbine coastal'
+    energy_power_wind_turbine_inland: 'Energy power wind turbine inland'
+    energy_power_wind_turbine_offshore: 'Energy power wind turbine offshore'
     environment: "Environment"
     final_demand_greengas: "Final demand green gas"
     final_demand_natural_gas: "Final demand natural gas"
@@ -219,8 +260,17 @@ en:
     hot_water_from_electricity: "Hot water from electricity"
     hot_water_from_fossil_fuels: "Hot water from fossil fuels"
     hot_water_from_renewables: "Hot water from renewables"
+    households_collective_chp_biogas: 'Households collective chp biogas'
+    households_collective_chp_network_gas: 'Households collective chp network gas'
+    households_collective_chp_wood_pellets: 'Households collective chp wood pellets'
     households_cooling_demand: "Cooling households"
+    households_flexibility_p2h_electricity: 'Households flexibility p2h electricity'
+    households_flexibility_p2p_electricity: 'Households flexibility p2p electricity'
     households_heating_demand: "Heating households"
+    households_solar_pv_solar_radiation: 'Households solar pv solar radiation'
+    households_space_heater_micro_chp_network_gas: 'Households space heater micro chp network gas'
+    households_water_heater_fuel_cell_chp_network_gas: 'Households water heater fuel cell chp network gas'
+    households_water_heater_micro_chp_network_gas: 'Households water heater micro chp network gas'
     hv_net: "HV net"
     hydro: "Hydro"
     hydro_mountain: "Hydro mountain"
@@ -230,6 +280,10 @@ en:
     imported: "Imported"
     imported_electricity: "Imported Electricity"
     imported_heat: "Imported heat"
+    industry_chp_combined_cycle_gas_power_fuelmix: 'Industry chp combined cycle gas power fuelmix'
+    industry_chp_engine_gas_power_fuelmix: 'Industry chp engine gas power fuelmix'
+    industry_chp_turbine_gas_power_fuelmix: 'Industry chp turbine gas power fuelmix'
+    industry_chp_ultra_supercritical_coal: 'Industry chp ultra supercritical coal'
     inland: "Inland"
     insulation_savings_new_houses: "Insulation savings, new houses"
     insulation_savings_old_houses: "Insulation savings, old houses"
@@ -345,12 +399,14 @@ en:
     torrified_biomass_pellets: "Torrified biomass pellets"
     total: "Total"
     total_co2_emission: "Total CO2 emissions"
+    total_demand: "Total demand"
     total_energy_cost: "Total energy cost"
     total_investment: "Investment in electricity production"
     total_plants_investm: "Total plants (investm.)"
     total_plants_prod_future: "Total plants (prod. future)"
     total_plants_prod_present: "Total plants (prod. present)"
     trains: "Trains"
+    transport_car_using_electricity: 'Transport car using electricity'
     uranium: "Uranium"
     vacuum_cleaner: "Vacuum cleaner"
     vehicles: "Vehicles"

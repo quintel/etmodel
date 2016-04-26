@@ -33,8 +33,8 @@ D3.merit_order_price_curve =
         .y((data) -> yScale(data.y))
         .interpolate('step-after')
 
-    allAxisValues: (axis) ->
-      @chartData[0].values.map((point) -> point[axis])
+    maxYvalue: ->
+      @chartData[0].values.map((point) -> point.y)
 
     updateData: ->
       xScale = @createTimeScale(@dateSelect.getCurrentRange())

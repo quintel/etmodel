@@ -3,8 +3,33 @@ D3.merit_order_hourly_flexibility =
     initialize: ->
       D3YearlyChartView.prototype.initialize.call(this)
 
+    calculateOffset: (data) ->
+      @totalDemand[0].values.map((point) -> point.y)
+
+    dataForChart: ->
+      @totalDemand = @model.target_series().map(@convertToDateRange)
+      @series = @getSeries()
+
+      stack = d3.layout.stack()
+        .offset(@calculateOffset.bind(this))
+        .values((d) -> d.values)
+
+      stack(
+        @series.map((serie) =>
+          @convertToDateRange(serie, undefined, undefined, true)
+        )
+      )
+
     draw: ->
       @drawChart()
+      @dateSelect.setVal(1)
+
+      @draw_legend(
+        svg:     @create_svg_container(@width, 400, @margins),
+        series:  @series,
+        width:   @width,
+        columns: 2
+      )
 
       defs = @svg.append('defs')
       defs.append('clipPath')
@@ -13,35 +38,12 @@ D3.merit_order_hourly_flexibility =
           .attr('width', @width)
           .attr('height', @height)
 
-    dataForChart: ->
-      stack = d3.layout.stack()
-        .offset("zero")
-        .values((d) -> d.values)
-
-      #@model.non_target_series().map (serie) ->
-      #  color:  serie.get('color'),
-      #  label:  serie.get('label'),
-      #  values:  _.map(serie.future_value(),
-      #                (value, hour) -> {
-      #                  x: new Date(hour * 60 * 60 * 1000),
-      #                  y: value })
-
-      fakeData = [
-        {key: "a", color: "#990", values: []},
-        {key: "b", color: "#905", values: []},
-        {key: "c", color: "#590", values: []}
-      ]
-
-      for i in [0...3]
-        for j in [0...8760]
-          fakeData[i].values.push(
-            y: Math.sin(j + 1) / 10, x: new Date(j * 60 * 60 * 1000)
-          )
-
-      stack(fakeData)
+    getSeries: ->
+      @model.non_target_series()
 
     drawData: (xScale, yScale) ->
       area = @area(xScale, yScale)
+      line = @line(xScale, yScale)
 
       @svg.selectAll('path.serie')
         .data(@chartData)
@@ -55,34 +57,58 @@ D3.merit_order_hourly_flexibility =
         .attr('d', (data) -> area(data.values) )
         .attr('fill', (data) -> data.color )
 
+      @svg.selectAll('path.serie')
+        .data(@totalDemand)
+        .enter()
+        .append('g')
+        .attr('id', (data, index) -> "path_#{ index }")
+        .attr("class", "serie-line")
+        .append('path')
+        .attr('class', 'line')
+        .attr('d', (data) -> line(data.values) )
+        .attr('stroke', (data) -> data.color )
+        .attr('stroke-width', 2)
+        .attr('fill', 'none')
+
     updateData: (xScale, yScale) ->
       xScale = @createTimeScale(@dateSelect.getCurrentRange())
       yScale = @createLinearScale()
       area   = @area(xScale, yScale)
+      line   = @line(xScale, yScale)
 
       @svg.select(".x_axis").call(@createTimeAxis(xScale))
       @svg.select(".y_axis").call(@createLinearAxis(yScale))
 
       @chartData.map(LoadSlicer.slice.bind(this))
+      @totalDemand.map(LoadSlicer.slice.bind(this))
 
       @svg.selectAll('g.serie')
         .data(@chartData)
         .select('path.area')
         .attr('d', (data) -> area(data.values) )
 
+      @svg.selectAll('g.serie-line')
+        .data(@totalDemand)
+        .select('path.line')
+        .attr('d', (data) -> line(data.values) )
+
     area: (xScale, yScale) ->
       d3.svg.area()
         .x((data) -> xScale(data.x))
         .y0((data) -> yScale(data.y0))
         .y1((data) -> yScale(data.y0 + data.y))
-        .interpolate('step-after')
+        .interpolate('cardinal')
 
-    allAxisValues: (axis) ->
-      result = 0
+    line: (xScale, yScale) ->
+      d3.svg.line()
+        .x((data) -> xScale(data.x))
+        .y((data) -> yScale(data.y))
+        .interpolate('cardinal')
 
-      for chart in @chartData
-        result += d3.max(chart.values.map((point) -> point[axis]))
+    maxYvalue: ->
+      last   = @chartData[@chartData.length - 1]
+      result = d3.max(@totalDemand[0].values.map((point) -> point.y))
+
+      result += d3.max(last.values.map((point) -> point.y0))
 
       [result]
-
-    refresh: ->

@@ -42,7 +42,7 @@ D3.merit_order_hourly_supply =
       order = @order
 
       _.filter(@model.non_target_series(), (serie) ->
-        d3.max(serie.future_value()) > 0 && serie.get('group') != 'flex'
+        d3.max(serie.future_value()) > 0
       ).sort((a,b) ->
         order.indexOf(a.get('group')) - order.indexOf(b.get('group'))
       )
@@ -111,10 +111,10 @@ D3.merit_order_hourly_supply =
         .y((data) -> yScale(data.y))
         .interpolate('cardinal')
 
-    allAxisValues: (axis) ->
+    maxYvalue: ->
       result = 0
 
       for chart in @chartData
-        result += d3.max(chart.values.map((point) -> point[axis]))
+        result += d3.max(chart.values.map((point) -> point.y))
 
       [result]

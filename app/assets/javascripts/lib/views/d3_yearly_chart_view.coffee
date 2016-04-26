@@ -54,16 +54,17 @@ class @D3YearlyChartView extends D3ChartView
 
     scale
 
-  convertToDateRange: (serie) ->
+  convertToDateRange: (serie, index, all, negate = false) ->
     color:  serie.get('color'),
     label:  serie.get('label'),
     values:  _.map(serie.future_value(),
                   (value, hour) -> {
                     x: new Date(hour * 60 * 60 * 1000),
-                    y: value })
+                    y: (if negate then -value else value)
+                  })
 
   createLinearScale: ->
-    maxY = d3.max(@allAxisValues('y'))
+    maxY = d3.max(@maxYvalue())
 
     d3.scale.linear().domain([0, maxY]).range([@height, 0]).nice()
 

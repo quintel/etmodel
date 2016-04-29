@@ -33,10 +33,9 @@ D3.merit_order_price_curve =
         .y((data) -> yScale(data.y))
         .interpolate('step-after')
 
-    maxYvalue: ->
-      @chartData[0].values.map((point) -> point.y)
-
     updateData: ->
+      @chartData = new MeritTransformator(this, @chartData).transform()
+
       xScale = @createTimeScale(@dateSelect.getCurrentRange())
       yScale = @createLinearScale()
       line   = @line(xScale, yScale)
@@ -44,9 +43,11 @@ D3.merit_order_price_curve =
       @svg.select(".x_axis").call(@createTimeAxis(xScale))
       @svg.select(".y_axis").call(@createLinearAxis(yScale))
 
-      @chartData.map(LoadSlicer.slice.bind(this))
-
       @svg.selectAll('g.serie')
         .data(@chartData)
         .select('path.line')
         .attr('d', (data) -> line(data.values) )
+
+    maxYvalue: ->
+      d3.max(@chartData[0].values.map((point) -> point.y))
+

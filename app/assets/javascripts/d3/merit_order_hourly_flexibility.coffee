@@ -8,13 +8,13 @@ D3.merit_order_hourly_flexibility =
 
     dataForChart: ->
       @totalDemand = @model.target_series().map(@convertToDateRange)
-      @series = @getSeries()
+      @series = @model.non_target_series()
 
-      stack = d3.layout.stack()
+      @stack = d3.layout.stack()
         .offset(@calculateOffset.bind(this))
         .values((d) -> d.values)
 
-      stack(
+      @stack(
         @series.map((serie) =>
           @convertToDateRange(serie, undefined, undefined, true)
         )
@@ -37,9 +37,6 @@ D3.merit_order_hourly_flexibility =
           .append('rect')
           .attr('width', @width)
           .attr('height', @height)
-
-    getSeries: ->
-      @model.non_target_series()
 
     drawData: (xScale, yScale) ->
       area = @area(xScale, yScale)
@@ -71,6 +68,9 @@ D3.merit_order_hourly_flexibility =
         .attr('fill', 'none')
 
     updateData: (xScale, yScale) ->
+      @totalDemand = new MeritTransformator(this, @totalDemand).transform()
+      @chartData   = new MeritTransformator(this, @chartData).transform()
+
       xScale = @createTimeScale(@dateSelect.getCurrentRange())
       yScale = @createLinearScale()
       area   = @area(xScale, yScale)
@@ -78,9 +78,6 @@ D3.merit_order_hourly_flexibility =
 
       @svg.select(".x_axis").call(@createTimeAxis(xScale))
       @svg.select(".y_axis").call(@createLinearAxis(yScale))
-
-      @chartData.map(LoadSlicer.slice.bind(this))
-      @totalDemand.map(LoadSlicer.slice.bind(this))
 
       @svg.selectAll('g.serie')
         .data(@chartData)
@@ -110,5 +107,3 @@ D3.merit_order_hourly_flexibility =
       result = d3.max(@totalDemand[0].values.map((point) -> point.y))
 
       result += d3.max(last.values.map((point) -> point.y0))
-
-      [result]

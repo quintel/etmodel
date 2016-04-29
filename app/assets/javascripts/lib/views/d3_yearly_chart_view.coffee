@@ -59,14 +59,12 @@ class @D3YearlyChartView extends D3ChartView
     label:  serie.get('label'),
     values:  _.map(serie.future_value(),
                   (value, hour) -> {
-                    x: new Date(hour * 60 * 60 * 1000),
+                    x: new Date(hour * 3600000),
                     y: (if negate then -value else value)
                   })
 
   createLinearScale: ->
-    maxY = d3.max(@maxYvalue())
-
-    d3.scale.linear().domain([0, maxY]).range([@height, 0]).nice()
+    d3.scale.linear().domain([0, @maxYvalue()]).range([@height, 0]).nice()
 
   createLinearAxis: (scale) ->
     d3.svg.axis().scale(scale).orient('left').ticks(7).tickSize(-@width, 0)

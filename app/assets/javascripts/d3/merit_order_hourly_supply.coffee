@@ -12,11 +12,11 @@ D3.merit_order_hourly_supply =
     dataForChart: ->
       @series = @getSeries()
 
-      stack = d3.layout.stack()
+      @stack = d3.layout.stack()
         .offset("zero")
         .values((d) -> d.values)
 
-      stack(@series.map(@convertToDateRange))
+      @stack(@series.map(@convertToDateRange))
 
     draw: ->
       @totalDemand = @model.target_series().map(@convertToDateRange)
@@ -77,6 +77,9 @@ D3.merit_order_hourly_supply =
         .attr('fill', 'none')
 
     updateData: (xScale, yScale) ->
+      @totalDemand = new MeritTransformator(this, @totalDemand).transform()
+      @chartData   = new MeritTransformator(this, @chartData).transform()
+
       xScale = @createTimeScale(@dateSelect.getCurrentRange())
       yScale = @createLinearScale()
       area   = @area(xScale, yScale)
@@ -84,9 +87,6 @@ D3.merit_order_hourly_supply =
 
       @svg.select(".x_axis").call(@createTimeAxis(xScale))
       @svg.select(".y_axis").call(@createLinearAxis(yScale))
-
-      @chartData.map(LoadSlicer.slice.bind(this))
-      @totalDemand.map(LoadSlicer.slice.bind(this))
 
       @svg.selectAll('g.serie')
         .data(@chartData)
@@ -117,4 +117,4 @@ D3.merit_order_hourly_supply =
       for chart in @chartData
         result += d3.max(chart.values.map((point) -> point.y))
 
-      [result]
+      result

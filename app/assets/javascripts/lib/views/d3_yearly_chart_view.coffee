@@ -21,6 +21,16 @@ class @D3YearlyChartView extends D3ChartView
 
     @drawData(@xScale, @yScale)
 
+
+  drawLegend: (series, columns = 2) ->
+    height = ((series.length + 1) / columns) * 15
+    @draw_legend(
+      svg:     @create_svg_container(@width, height, @margins),
+      series:  series,
+      width:   @width,
+      columns: columns
+    )
+
   # Draws the X axis onto the charts, configuring the scaling and grey grid
   # lines.
   drawXAxis: ->
@@ -54,14 +64,16 @@ class @D3YearlyChartView extends D3ChartView
 
     scale
 
-  convertToDateRange: (serie, index, all, negate = false) ->
+  filterYValue: (value) ->
+    value
+
+  convertToDateRange: (serie) =>
     color:  serie.get('color'),
     label:  serie.get('label'),
-    values:  _.map(serie.future_value(),
-                  (value, hour) -> {
+    key:    serie.get('gquery').get('key'),
+    values:  _.map(serie.future_value(), (value, hour) =>
                     x: new Date(hour * 3600000),
-                    y: (if negate then -value else value)
-                  })
+                    y: @filterYValue.call(serie, value))
 
   createLinearScale: ->
     d3.scale.linear().domain([0, @maxYvalue()]).range([@height, 0]).nice()

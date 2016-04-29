@@ -3,12 +3,6 @@ D3.merit_order_hourly_supply =
     initialize: ->
       D3YearlyChartView.prototype.initialize.call(this)
 
-    order: [
-      'dispatchable',
-      'must_run',
-      'volatile'
-    ]
-
     dataForChart: ->
       @series = @getSeries()
 
@@ -18,33 +12,37 @@ D3.merit_order_hourly_supply =
 
       @stack(@series.map(@convertToDateRange))
 
+    filterYValue: (value) ->
+      if this.attributes.gquery_key == 'households_flexibility_p2p_electricity'
+        if value > 0 then value else 0
+      else
+        value
+
     draw: ->
       @totalDemand = @model.target_series().map(@convertToDateRange)
 
       @drawChart()
       @dateSelect.setVal(1)
 
-      @draw_legend(
-        svg:     @create_svg_container(@width, 400, @margins),
-        series:  @series,
-        width:   @width,
-        columns: 2
-      )
+      @drawLegend(@series.concat(@model.target_series()))
 
       defs = @svg.append('defs')
       defs.append('clipPath')
-          .attr('id', 'clip')
+          .attr('id', "clip_" + @chart_container_id())
           .append('rect')
           .attr('width', @width)
           .attr('height', @height)
 
-    getSeries: ->
-      order = @order
+    getSpikiness: (serie) ->
+      values = serie.future_value()
 
+      Math.abs((d3.max(values) - d3.min(values)) / d3.sum(values))
+
+    getSeries: ->
       _.filter(@model.non_target_series(), (serie) ->
         d3.max(serie.future_value()) > 0
-      ).sort((a,b) ->
-        order.indexOf(a.get('group')) - order.indexOf(b.get('group'))
+      ).sort((a,b) =>
+        @getSpikiness(a) > @getSpikiness(b)
       )
 
     drawData: (xScale, yScale) ->
@@ -56,7 +54,7 @@ D3.merit_order_hourly_supply =
         .enter()
         .append('g')
         .attr('id', (data, index) -> "path_#{ index }")
-        .attr('clip-path', 'url(#clip)')
+        .attr('clip-path', "url(#clip_" + @chart_container_id() + ")")
         .attr("class", "serie")
         .append('path')
         .attr('class', 'area')
@@ -112,9 +110,6 @@ D3.merit_order_hourly_supply =
         .interpolate('cardinal')
 
     maxYvalue: ->
-      result = 0
+      last = @chartData[@chartData.length - 1]
 
-      for chart in @chartData
-        result += d3.max(chart.values.map((point) -> point.y))
-
-      result
+      d3.max(last.values.map((point) -> point.y + point.y0))

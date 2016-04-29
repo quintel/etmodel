@@ -14,26 +14,20 @@ D3.merit_order_hourly_flexibility =
         .offset(@calculateOffset.bind(this))
         .values((d) -> d.values)
 
-      @stack(
-        @series.map((serie) =>
-          @convertToDateRange(serie, undefined, undefined, true)
-        )
-      )
+      @stack(@series.map(@convertToDateRange))
+
+    filterYValue: (value) ->
+      if this.attributes.gquery_key == 'total_demand' then value else -value
 
     draw: ->
       @drawChart()
       @dateSelect.setVal(1)
 
-      @draw_legend(
-        svg:     @create_svg_container(@width, 400, @margins),
-        series:  @series,
-        width:   @width,
-        columns: 2
-      )
+      @drawLegend(@series)
 
       defs = @svg.append('defs')
       defs.append('clipPath')
-          .attr('id', 'clip')
+          .attr('id', "clip_" + @chart_container_id())
           .append('rect')
           .attr('width', @width)
           .attr('height', @height)
@@ -47,7 +41,7 @@ D3.merit_order_hourly_flexibility =
         .enter()
         .append('g')
         .attr('id', (data, index) -> "path_#{ index }")
-        .attr('clip-path', 'url(#clip)')
+        .attr('clip-path', "url(#clip_" + @chart_container_id() + ")")
         .attr("class", "serie")
         .append('path')
         .attr('class', 'area')
@@ -103,7 +97,6 @@ D3.merit_order_hourly_flexibility =
         .interpolate('cardinal')
 
     maxYvalue: ->
-      last   = @chartData[@chartData.length - 1]
-      result = d3.max(@totalDemand[0].values.map((point) -> point.y))
+      last = @chartData[@chartData.length - 1]
 
-      result += d3.max(last.values.map((point) -> point.y0))
+      d3.max(last.values.map((point) -> point.y + point.y0))

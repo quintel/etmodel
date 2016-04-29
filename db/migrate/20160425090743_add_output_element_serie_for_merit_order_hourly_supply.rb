@@ -79,7 +79,7 @@ class AddOutputElementSerieForMeritOrderHourlySupply < ActiveRecord::Migration
         label: key.to_s,
         gquery: key.to_s,
         group: group,
-        is_target_line: key == 'total_demand',
+        is_target_line: (key == :total_demand),
         order_by: 5
       )
     end

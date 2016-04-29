@@ -1,6 +1,67 @@
 class ColorOutputElementSeriesForHourlySupplyMerit < ActiveRecord::Migration
   def change
-    colors = ["#bbdd77", "#aa77dd", "#b277dd", "#bb77dd", "#c377dd", "#cc77dd", "#d477dd", "#dd77dd", "#dd77d4", "#dd77cc", "#dd77c3", "#dd77bb", "#dd77b2", "#dd77aa", "#dd77a1", "#dd7799", "#dd7790", "#dd7788", "#dd777f", "#dd7777", "#dd7f77", "#dd8877", "#dd9077", "#dd9977", "#dda177", "#ddaa77", "#ddb277", "#ddbb77", "#ddc377", "#ddcc77", "#ddd477", "#dddd77", "#d4dd77", "#ccdd77", "#c3dd77", "#bbdd77", "#b2dd77", "#aadd77", "#a1dd77", "#99dd77", "#90dd77", "#88dd77", "#7fdd77", "#77dd77", "#77dd7f", "#77dd88", "#77dd90", "#77dd99", "#77dda1", "#77ddaa", "#77ddb2", "#77ddbb", "#77ddc3", "#77ddcc", "#77ddd4", "#77dddd", "#77d4dd", "#77ccdd", "#77c3dd", "#77bbdd", "#77b2dd", "#77aadd", "#77a1dd", "#7799dd", "#7790dd", "#7788dd", "#777fdd", "#7777dd", "#7f77dd", "#8877dd"]
+    colors = [
+      "#DC1912",
+      "#771108",
+      "#AA2D02",
+      "#EE9F6E",
+      "#F76814",
+      "#F27D3A",
+      "#F0904C",
+      "#CE7013",
+      "#CE8814",
+      "#FFDEAC",
+      "#4A3609",
+      "#EDB406",
+      "#896F0F",
+      "#D7B00F",
+      "#9B9303",
+      "#FBE875",
+      "#D7E91D",
+      "#566D0B",
+      "#3D6B0D",
+      "#94F95C",
+      "#08A549",
+      "#398E4A",
+      "#D0F2B4",
+      "#065530",
+      "#75EEA3",
+      "#2ACD99",
+      "#C2FFD1",
+      "#0B7E6D",
+      "#3BFAEB",
+      "#DFFBE5",
+      "#131D1C",
+      "#00A7B4",
+      "#407A8E",
+      "#C6E0E9",
+      "#9DD5FA",
+      "#295888",
+      "#A3BFF6",
+      "#629DF9",
+      "#4E60D1",
+      "#201A39",
+      "#2F2661",
+      "#B895F6",
+      "#9977EE",
+      "#AF63F1",
+      "#8643A9",
+      "#953ABC",
+      "#431B51",
+      "#D54CF7",
+      "#F364F0",
+      "#FDC2D8",
+      "#772467",
+      "#D92EBF",
+      "#A72E77",
+      "#FA66A9",
+      "#CF2886",
+      "#EDC2B7",
+      "#F12A72",
+      "#F64571",
+      "#A41C35",
+      "#390905"
+    ]
 
     oe = OutputElement.find_by_key('merit_order_hourly_supply')
     oe.update_attribute('unit', 'MW')
@@ -8,5 +69,8 @@ class ColorOutputElementSeriesForHourlySupplyMerit < ActiveRecord::Migration
     oe.output_element_series.each_with_index do |serie, index|
       serie.update_attribute('color', colors[index])
     end
+
+    serie = oe.output_element_series.find_by_label('total_demand')
+    serie.update_attribute('color', '#CC0000')
   end
 end

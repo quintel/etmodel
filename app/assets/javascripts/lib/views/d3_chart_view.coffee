@@ -86,10 +86,11 @@ class @D3ChartView extends BaseChartView
   # - vertical_offset: equivalent to top margin (default: 0)
   #
   draw_legend: (opts = {}) =>
-    opts.columns = opts.columns || 1
-    opts.left_margin = opts.left_margin || 10
+    opts.columns         = opts.columns || 1
+    opts.left_margin     = opts.left_margin || 10
     opts.vertical_offset = opts.vertical_offset || 0
-    legend_margin = opts.width / opts.columns
+    legend_margin        = opts.width / opts.columns
+
     legend = opts.svg.append('svg:g')
       .attr("transform", "translate(#{opts.left_margin},#{opts.vertical_offset})")
       .selectAll("svg.legend")

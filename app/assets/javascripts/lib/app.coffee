@@ -190,4 +190,5 @@ class @AppView extends Backbone.View
   # TODO: Move this interface methods to a separate Interface class
   #
   update_merit_order_checkbox: =>
+    $(".merit-data-downloads").toggle(@settings.merit_order_enabled())
     $("#settings_use_merit_order").attr('checked', @settings.merit_order_enabled())

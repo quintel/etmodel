@@ -1,0 +1,87 @@
+class AddOutputElementSerieForMeritOrderHourlySupply < ActiveRecord::Migration
+  def change
+    output_element = OutputElement.find_or_create_by!(key: 'merit_order_hourly_supply', requires_merit_order: true, group: "Merit", output_element_type_id: 16)
+    colors = [
+        "#8c5e5e", "#eaee4e", "#64edde", "#ee841a", "#ed9bee",
+        "#7bc2eb", "#819a47", "#ee526a", "#a7ed8e", "#62988e",
+        "#c59e04", "#a76426", "#a182b8", "#d25e92", "#55e4e8",
+        "#6cbe8a", "#b8524c", "#aec944", "#827041", "#e75c39",
+        "#748eaa", "#edd417", "#977e21", "#aab0ee", "#c87d02",
+        "#747669", "#56c8b8", "#80e7b0", "#6e8c60", "#87c66a",
+        "#a46384", "#cc7abe", "#61b4ca", "#ee79ca", "#cdee6d",
+        "#ee5a90", "#945d3e", "#88738b", "#cbc221", "#9ea02b",
+        "#cd9de4", "#cd6720", "#ce516c", "#bb5732", "#a95662",
+        "#8b9cd3", "#5aeeee", "#da4e4d", "#ee6e2e", "#64a381",
+        "#87CEEB"
+    ]
+
+    {
+      agriculture_chp_engine_biogas: 'must_run',
+      agriculture_chp_engine_network_gas: 'must_run',
+      agriculture_chp_supercritical_wood_pellets: 'must_run',
+      buildings_chp_engine_biogas: 'must_run',
+      buildings_collective_chp_network_gas: 'must_run',
+      buildings_collective_chp_wood_pellets: 'must_run',
+      energy_chp_supercritical_waste_mix: 'must_run',
+      energy_power_supercritical_waste_mix: 'must_run',
+      households_collective_chp_biogas: 'must_run',
+      households_collective_chp_network_gas: 'must_run',
+      households_collective_chp_wood_pellets: 'must_run',
+      households_space_heater_micro_chp_network_gas: 'must_run',
+      households_water_heater_fuel_cell_chp_network_gas: 'must_run',
+      households_water_heater_micro_chp_network_gas: 'must_run',
+      industry_chp_combined_cycle_gas_power_fuelmix: 'must_run',
+      industry_chp_engine_gas_power_fuelmix: 'must_run',
+      industry_chp_turbine_gas_power_fuelmix: 'must_run',
+      industry_chp_ultra_supercritical_coal: 'must_run',
+      buildings_solar_pv_solar_radiation: 'volatile',
+      energy_power_geothermal: 'volatile',
+      energy_power_hydro_river: 'volatile',
+      energy_power_solar_csp_solar_radiation: 'volatile',
+      energy_power_solar_pv_solar_radiation: 'volatile',
+      energy_power_wind_turbine_coastal: 'volatile',
+      energy_power_wind_turbine_inland: 'volatile',
+      energy_power_wind_turbine_offshore: 'volatile',
+      households_solar_pv_solar_radiation: 'volatile',
+      energy_chp_combined_cycle_network_gas: 'dispatchable',
+      energy_chp_ultra_supercritical_coal:'dispatchable',
+      energy_chp_ultra_supercritical_cofiring_coal:'dispatchable',
+      energy_chp_ultra_supercritical_lignite:'dispatchable',
+      energy_power_combined_cycle_ccs_coal:'dispatchable',
+      energy_power_combined_cycle_ccs_network_gas:'dispatchable',
+      energy_power_combined_cycle_coal:'dispatchable',
+      energy_power_combined_cycle_network_gas:'dispatchable',
+      energy_power_engine_diesel:'dispatchable',
+      energy_power_engine_network_gas:'dispatchable',
+      energy_power_hydro_mountain:'dispatchable',
+      energy_power_nuclear_gen2_uranium_oxide:'dispatchable',
+      energy_power_nuclear_gen3_uranium_oxide:'dispatchable',
+      energy_power_supercritical_coal:'dispatchable',
+      energy_power_turbine_network_gas:'dispatchable',
+      energy_power_ultra_supercritical_ccs_coal:'dispatchable',
+      energy_power_ultra_supercritical_coal:'dispatchable',
+      energy_power_ultra_supercritical_cofiring_coal:'dispatchable',
+      energy_power_ultra_supercritical_crude_oil:'dispatchable',
+      energy_power_ultra_supercritical_lignite:'dispatchable',
+      energy_power_ultra_supercritical_network_gas:'dispatchable',
+      energy_power_ultra_supercritical_oxyfuel_ccs_lignite:'dispatchable',
+      households_flexibility_p2p_electricity: 'flex',
+      transport_car_using_electricity: 'flex',
+      energy_flexibility_p2g_electricity: 'flex',
+      households_flexibility_p2h_electricity: 'flex',
+      energy_export_electricity: 'flex',
+      energy_flexibility_curtailment_electricity: 'flex',
+      total_demand: ''
+    }.each_with_index do |(key, group), index|
+      OutputElementSerie.create!(
+        color: colors[index],
+        output_element: output_element,
+        label: key.to_s,
+        gquery: key.to_s,
+        group: group,
+        is_target_line: (key == :total_demand),
+        order_by: 5
+      )
+    end
+  end
+end

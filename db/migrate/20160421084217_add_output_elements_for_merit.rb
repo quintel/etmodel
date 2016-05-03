@@ -4,15 +4,15 @@ class AddOutputElementsForMerit < ActiveRecord::Migration
       group: 'Merit',
       key: 'merit_order_price_curve',
       requires_merit_order: true,
-      output_element_type_id: 16
+      output_element_type_id: 16,
+      unit: "EUR/MWh"
     )
 
     OutputElementSerie.create!(
       label: 'merit_price',
       color: '#5D7929',
       gquery: 'merit_order_price_curve',
-      output_element: merit_order_price_curve,
-      unit: "EUR/MWh"
+      output_element: merit_order_price_curve
     )
   end
 end

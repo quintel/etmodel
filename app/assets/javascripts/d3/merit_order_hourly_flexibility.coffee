@@ -23,7 +23,7 @@ D3.merit_order_hourly_flexibility =
       @drawChart()
       @dateSelect.setVal(1)
 
-      @drawLegend(@series)
+      @drawLegend(@series.concat(@model.target_series()))
 
       defs = @svg.append('defs')
       defs.append('clipPath')

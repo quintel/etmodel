@@ -19,12 +19,13 @@ D3.merit_order_price_curve =
 
     averageData: ->
       values  = @prices[0].values.slice()
+      mean    = d3.mean(values.map((price) -> price.y))
 
       color:  @average.attributes.color,
       label:  @average.attributes.label,
       key:    'average',
       values: values.map((price) ->
-        x: price.x, y: d3.mean(values.map((price) -> price.y))
+        x: price.x, y: mean
       )
 
     dataForChart: ->

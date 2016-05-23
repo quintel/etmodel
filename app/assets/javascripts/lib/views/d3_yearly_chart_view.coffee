@@ -10,20 +10,20 @@ class @D3YearlyChartView extends D3ChartView
   drawChart: ->
     [@width, @height] = @available_size()
 
-    @svg        = @create_svg_container @width, @height, @margins
-    @chartData  = @dataForChart()
+    @svg          = @create_svg_container @width, @height, @margins
+    @rawChartData = @dataForChart()
 
-    @dateSelect = new D3ChartDateSelect(@container_selector(), @chartData[0].values.length)
-    @dateSelect.draw(@updateData.bind(this))
+    @dateSelect = new D3ChartDateSelect(@container_selector(),
+                                        @rawChartData[0].values.length)
+
+    @dateSelect.draw(@refresh.bind(this))
 
     @xScale     = @drawXAxis()
     @yScale     = @drawYAxis()
 
-    @drawData(@xScale, @yScale)
-
-
   drawLegend: (series, columns = 2) ->
     height = ((series.length + 1) / columns) * 15
+
     @draw_legend(
       svg:     @create_svg_container(@width, height, @margins),
       series:  series,
@@ -67,13 +67,11 @@ class @D3YearlyChartView extends D3ChartView
   filterYValue: (value) ->
     value
 
-  convertToDateRange: (serie) =>
+  getSerie: (serie) =>
     color:  serie.get('color'),
     label:  serie.get('label'),
     key:    serie.get('gquery').get('key'),
-    values:  _.map(serie.future_value(), (value, hour) =>
-                    x: new Date(hour * 3600000),
-                    y: @filterYValue.call(serie, value))
+    values: serie.future_value()
 
   createLinearScale: ->
     d3.scale.linear().domain([0, @maxYvalue()]).range([@height, 0]).nice()
@@ -90,6 +88,18 @@ class @D3YearlyChartView extends D3ChartView
 
     d3.svg.axis().scale(scale).orient('bottom').tickFormat(format).ticks(7)
 
-  refresh: ->
-    @chartData = @dataForChart()
-    @updateData()
+  convertData: =>
+    @convertToXY(new MeritTransformator(this, @rawChartData).transform())
+
+  convertToXY: (data) =>
+    dateVal = @dateSelect.val()
+    seconds = if dateVal < 1 then 86400000 else 3600000
+    offset  = if dateVal < 1 then 0 else 168 * (dateVal - 1)
+
+    data.map((chart) =>
+      chart.values = chart.values.map((value, hour) =>
+        x: new Date((hour + offset) * seconds),
+        y: @filterYValue.call(chart, value)
+      )
+      chart
+    )

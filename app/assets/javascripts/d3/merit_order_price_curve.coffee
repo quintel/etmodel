@@ -17,33 +17,26 @@ D3.merit_order_price_curve =
 
       @drawLegend(@legendSeries, 1)
 
-    averageData: ->
-      values  = @prices[0].values.slice()
-      mean    = d3.mean(values.map((price) -> price.y))
-
+    averageData: (data) ->
       color:  @average.attributes.color,
       label:  @average.attributes.label,
       key:    'average',
-      values: values.map((price) ->
-        x: price.x, y: mean
-      )
+      values: Array.apply(null, Array(8760)).map(
+        Number.prototype.valueOf, d3.mean(data[0].values.slice()))
 
     dataForChart: ->
-      @prices = @model.non_target_series().map(@convertToDateRange)
-      @prices.push(@averageData())
-      @prices
+      data = @model.non_target_series().map(@getSerie)
+      data.push(@averageData(data))
+      data
 
-    drawData: (xScale, yScale) ->
-      line = @line(xScale, yScale)
-
+    drawData: (xScale, yScale, line) ->
       @svg.selectAll('path.serie')
         .data(@chartData)
         .enter()
         .append('g')
         .attr('id', (data, index) -> "path_#{ index }")
-        .attr('class', 'serie')
+        .attr('class', 'serie line')
         .append('path')
-        .attr('class', 'line')
         .attr('d', (data) -> line(data.values) )
         .attr('stroke', (data) -> data.color )
         .attr('stroke-width', 2)
@@ -59,8 +52,8 @@ D3.merit_order_price_curve =
         .y((data) -> yScale(data.y))
         .interpolate('step-after')
 
-    updateData: ->
-      @chartData = new MeritTransformator(this, @chartData).transform()
+    refresh: ->
+      @chartData = @convertData()
 
       xScale = @createTimeScale(@dateSelect.getCurrentRange())
       yScale = @createLinearScale()
@@ -69,10 +62,13 @@ D3.merit_order_price_curve =
       @svg.select(".x_axis").call(@createTimeAxis(xScale))
       @svg.select(".y_axis").call(@createLinearAxis(yScale))
 
-      @svg.selectAll('g.serie')
-        .data(@chartData)
-        .select('path.line')
-        .attr('d', (data) -> line(data.values) )
+      if @container_node().find("g.serie.line").length > 0
+        @svg.selectAll('g.serie.line')
+          .data(@chartData)
+          .select('path')
+          .attr('d', (data) -> line(data.values) )
+      else
+        @drawData(xScale, yScale, line)
 
     maxYvalue: ->
-      d3.max(@chartData[0].values.map((point) -> point.y))
+      d3.max(@rawChartData[0].values)

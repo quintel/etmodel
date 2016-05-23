@@ -3,27 +3,22 @@ D3.merit_order_hourly_flexibility =
     initialize: ->
       D3YearlyChartView.prototype.initialize.call(this)
 
-    calculateOffset: (data) ->
-      @totalDemand[0].values.map((point) -> point.y)
-
     dataForChart: ->
-      @totalDemand = @model.target_series().map(@convertToDateRange)
-      @series = @model.non_target_series()
+      @series = @model.target_series().concat(@model.non_target_series())
+      @series.map(@getSerie)
 
-      @stack = d3.layout.stack()
-        .offset(@calculateOffset.bind(this))
-        .values((d) -> d.values)
-
-      @stack(@series.map(@convertToDateRange))
+    calculateOffset: (data) ->
+      @chartData[0].values.map((point) -> point.y)
 
     filterYValue: (value) ->
-      if this.attributes.gquery_key == 'total_demand' then value else -value
+      if this.key == 'total_demand' then value else -value
 
     draw: ->
       @drawChart()
+
       @dateSelect.setVal(1)
 
-      @drawLegend(@series.concat(@model.target_series()))
+      @drawLegend(@series)
 
       defs = @svg.append('defs')
       defs.append('clipPath')
@@ -32,12 +27,19 @@ D3.merit_order_hourly_flexibility =
           .attr('width', @width)
           .attr('height', @height)
 
-    drawData: (xScale, yScale) ->
-      area = @area(xScale, yScale)
-      line = @line(xScale, yScale)
+    setStackedData: ->
+      @chartData = @convertData()
 
+      @stack = d3.layout.stack()
+        .offset(@calculateOffset.bind(this))
+        .values((d) -> d.values)
+
+      @stackedData = @stack(@chartData[1..@chartData.length])
+      @totalDemand = [@chartData[0]]
+
+    drawData: (xScale, yScale, area, line) ->
       @svg.selectAll('path.serie')
-        .data(@chartData)
+        .data(@stackedData)
         .enter()
         .append('g')
         .attr('id', (data, index) -> "path_#{ index }")
@@ -53,6 +55,7 @@ D3.merit_order_hourly_flexibility =
         .enter()
         .append('g')
         .attr('id', (data, index) -> "path_#{ index }")
+        .attr('clip-path', "url(#clip_" + @chart_container_id() + ")")
         .attr("class", "serie-line")
         .append('path')
         .attr('class', 'line')
@@ -61,9 +64,8 @@ D3.merit_order_hourly_flexibility =
         .attr('stroke-width', 2)
         .attr('fill', 'none')
 
-    updateData: (xScale, yScale) ->
-      @totalDemand = new MeritTransformator(this, @totalDemand).transform()
-      @chartData   = new MeritTransformator(this, @chartData).transform()
+    refresh: ->
+      @setStackedData()
 
       xScale = @createTimeScale(@dateSelect.getCurrentRange())
       yScale = @createLinearScale()
@@ -73,15 +75,19 @@ D3.merit_order_hourly_flexibility =
       @svg.select(".x_axis").call(@createTimeAxis(xScale))
       @svg.select(".y_axis").call(@createLinearAxis(yScale))
 
-      @svg.selectAll('g.serie')
-        .data(@chartData)
-        .select('path.area')
-        .attr('d', (data) -> area(data.values) )
+      if @container_node().find("g.serie-line").length > 0
+        @svg.selectAll('g.serie')
+          .data(@stackedData)
+          .select('path.area')
+          .attr('d', (data) -> area(data.values) )
 
-      @svg.selectAll('g.serie-line')
-        .data(@totalDemand)
-        .select('path.line')
-        .attr('d', (data) -> line(data.values) )
+        @svg.selectAll('g.serie-line')
+          .data(@totalDemand)
+          .select('path.line')
+          .attr('d', (data) -> line(data.values) )
+
+      else
+        @drawData(xScale, yScale, area, line)
 
     area: (xScale, yScale) ->
       d3.svg.area()
@@ -97,6 +103,4 @@ D3.merit_order_hourly_flexibility =
         .interpolate('cardinal')
 
     maxYvalue: ->
-      last = @chartData[@chartData.length - 1]
-
-      d3.max(last.values.map((point) -> point.y + point.y0))
+      d3.sum(@rawChartData.map (chart) -> d3.max(chart.values.map(Math.abs)))

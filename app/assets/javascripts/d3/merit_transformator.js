@@ -5,7 +5,7 @@ var MeritTransformator = (function () {
 
     function transformSerieValues(serie) {
         if (this.scope.dateSelect.val() > 0) {
-            return LoadSlicer.slice(serie, this.scope.dateSelect.getCurrentRange());
+            return LoadSlicer.slice(serie, this.scope.dateSelect.val());
         } else {
             return Downsampler.downsample(serie);
         }
@@ -14,25 +14,17 @@ var MeritTransformator = (function () {
     MeritTransformator.prototype = {
         transform: function () {
             this.data.forEach(function(serie) {
-                if (!(serie.oldValues)) {
-                    serie.oldValues = serie.values;
-                }
-
                 serie.values = transformSerieValues.call(this, serie);
             }.bind(this));
 
 
-            if (this.scope.stack) {
-                return this.scope.stack(this.data);
-            } else {
-                return this.data;
-            }
+            return this.data;
         }
     };
 
     function MeritTransformator (scope, data) {
         this.scope = scope;
-        this.data  = data;
+        this.data  = $.extend(true, [], data);
     }
 
     return MeritTransformator;

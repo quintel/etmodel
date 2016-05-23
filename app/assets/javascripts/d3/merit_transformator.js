@@ -13,18 +13,18 @@ var MeritTransformator = (function () {
 
     MeritTransformator.prototype = {
         transform: function () {
-            this.data.forEach(function(serie) {
-                serie.values = transformSerieValues.call(this, serie);
+            return this.data.map(function(serie) {
+                return $.extend(
+                    {}, serie,
+                    { values: transformSerieValues.call(this, serie) }
+                );
             }.bind(this));
-
-
-            return this.data;
         }
     };
 
     function MeritTransformator (scope, data) {
         this.scope = scope;
-        this.data  = $.extend(true, [], data);
+        this.data  = data;
     }
 
     return MeritTransformator;

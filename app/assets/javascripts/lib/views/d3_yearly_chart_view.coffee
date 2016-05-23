@@ -21,6 +21,9 @@ class @D3YearlyChartView extends D3ChartView
     @xScale     = @drawXAxis()
     @yScale     = @drawYAxis()
 
+  refresh: ->
+    @rawChartData = @dataForChart()
+
   drawLegend: (series, columns = 2) ->
     height = ((series.length + 1) / columns) * 15
 

@@ -53,6 +53,8 @@ D3.merit_order_price_curve =
         .interpolate('step-after')
 
     refresh: ->
+      super
+
       @chartData = @convertData()
 
       xScale = @createTimeScale(@dateSelect.getCurrentRange())

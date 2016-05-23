@@ -77,6 +77,8 @@ D3.merit_order_hourly_supply =
         .attr('fill', 'none')
 
     refresh: (xScale, yScale) ->
+      super
+
       @setStackedData()
 
       xScale = @createTimeScale(@dateSelect.getCurrentRange())

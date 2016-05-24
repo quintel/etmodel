@@ -94,6 +94,7 @@ D3.merit_order_hourly_supply =
           .data(@stackedData)
           .select('path.area')
           .attr('d', (data) -> area(data.values) )
+          .attr('fill', (data) -> data.color )
 
         @svg.selectAll('g.serie-line')
           .data(@totalDemand)
@@ -117,5 +118,13 @@ D3.merit_order_hourly_supply =
         .interpolate('cardinal')
 
     maxYvalue: ->
-      d3.sum(@rawChartData[1..@rawChartData.length].map (chart) ->
-        d3.max(chart.values))
+      result = []
+
+      @rawChartData[1..@rawChartData.length].map (chart) ->
+        chart.values.forEach (value, index) ->
+          if result[index]
+            result[index] += value
+          else
+            result[index] = value
+
+      d3.max(result)

@@ -81,6 +81,7 @@ D3.merit_order_hourly_flexibility =
         @svg.selectAll('g.serie')
           .data(@stackedData)
           .select('path.area')
+          .attr('fill', (data) -> data.color )
           .attr('d', (data) -> area(data.values) )
 
         @svg.selectAll('g.serie-line')
@@ -105,4 +106,13 @@ D3.merit_order_hourly_flexibility =
         .interpolate('cardinal')
 
     maxYvalue: ->
-      d3.sum(@rawChartData.map (chart) -> d3.max(chart.values.map(Math.abs)))
+      result = []
+
+      @rawChartData[1..@rawChartData.length].map (chart) ->
+        chart.values.forEach (value, index) ->
+          if result[index]
+            result[index] += Math.abs(value)
+          else
+            result[index] = Math.abs(value)
+
+      d3.max(result)

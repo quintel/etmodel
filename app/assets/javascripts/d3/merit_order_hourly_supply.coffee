@@ -43,11 +43,8 @@ D3.merit_order_hourly_supply =
       Math.abs((d3.max(values) - d3.min(values)) / d3.sum(values))
 
     getSeries: ->
-      _.filter(@model.non_target_series(), (serie) ->
-        d3.max(serie.future_value()) > 0
-      ).sort((a,b) =>
+      @model.non_target_series().sort (a, b) =>
         @getSpikiness(a) > @getSpikiness(b)
-      )
 
     drawData: (xScale, yScale, area, line) ->
       @svg.selectAll('path.serie')

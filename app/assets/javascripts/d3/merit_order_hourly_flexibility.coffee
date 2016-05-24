@@ -108,7 +108,7 @@ D3.merit_order_hourly_flexibility =
     maxYvalue: ->
       result = []
 
-      @rawChartData[1..@rawChartData.length].map (chart) ->
+      @rawChartData.map (chart) ->
         chart.values.forEach (value, index) ->
           if result[index]
             result[index] += Math.abs(value)

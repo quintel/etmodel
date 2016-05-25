@@ -3,7 +3,7 @@ var LoadSlicer = (function () {
 
     return {
         slice: function sliceValues(serie, range) {
-            return serie.values.slice((range * 168), (range + 1) * 168);
+            return serie.values.slice((range - 1) * 168, range * 168);
         }
     };
 }());

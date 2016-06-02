@@ -4,10 +4,14 @@
     %input.string(type="text" id="scaling_value" name="scaling_value" placeholder="e.g. 1000, 250000, ...")
     %span.attribute= t(:'local_scenario.attributes.number_of_residences.short')
     %input(type='hidden' name="scaling_attribute" value='number_of_residences')
+
 .row.features
   %label
-    %input(type="checkbox" name="has_agriculture" value="1")= t(:'local_scenario.include_agriculture')
+    = scaling_sector_checkbox :agriculture, false
+    = t(:'local_scenario.include_agriculture')
   %label
-    %input(type="checkbox" name="has_energy" value="1" checked)= t(:'local_scenario.include_energy')
+    = scaling_sector_checkbox :energy
+    = t(:'local_scenario.include_energy')
   %label
-    %input(type="checkbox" name="has_industry" value="1")= t(:'local_scenario.include_industry')
+    = scaling_sector_checkbox :industry, false
+    = t(:'local_scenario.include_industry')

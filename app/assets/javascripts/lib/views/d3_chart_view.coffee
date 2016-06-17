@@ -68,11 +68,12 @@ class @D3ChartView extends BaseChartView
 
   # Returns a D3-selected SVG container
   #
-  create_svg_container: (width, height, margins) =>
+  create_svg_container: (width, height, margins, klass = '') =>
     d3.select(@container_selector())
       .append("svg:svg")
       .attr("height", height + margins.top + margins.bottom)
       .attr("width", width + margins.left + margins.right)
+      .attr('class', klass)
       .append("svg:g")
       .attr("transform", "translate(#{margins.left}, #{margins.top})")
 

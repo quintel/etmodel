@@ -4,7 +4,7 @@ class @D3YearlyChartView extends D3ChartView
   margins:
     top: 20
     bottom: 20
-    left: 60
+    left: 65
     right: 20
     label_left: 30
 

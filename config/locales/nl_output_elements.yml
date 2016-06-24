@@ -36,6 +36,10 @@ nl:
     merit_order_chart:
       installed_capacity: "Geïnstalleerd vermogen"
       operating_costs: "Marginale kosten"
+    merit_excess_chart:
+      minimum_duration: "Minimale duur [uur]"
+      no_excess_message: "Geen elektriciteitsoverschotten"
+      number_of_events: "Aantal keer per jaar"
     storage_chart:
       tracker: "Toekomstige geïnstalleerde capaciteit"
       installed_capacity: "Geïnstalleerde capaciteit wind- en zonne-energie, GW"
@@ -238,6 +242,7 @@ nl:
     mekko_of_primary_demand_of_biomass: "Primair gebruik van biogene brandstoffen"
     mekko_of_primary_co2: "Primaire CO<sub>2</sub> uitstoot van eindgebruik"
     merit_order: "Merit order capaciteiten en marginale kosten"
+    merit_order_excess_events: "Merit order excess events (JB)"
     merit_order_hourly_flexibility: "Inzet van flexibiliteitsopties op uurbasis"
     merit_order_hourly_supply: "Elektriciteitsproductie op uurbasis"
     merit_order_table: "Merit order tabel"

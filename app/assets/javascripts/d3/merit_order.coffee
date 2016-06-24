@@ -77,26 +77,26 @@ D3.merit_order =
 
     draw: =>
       [@width, @height] = @available_size()
-      @series_height = @height
 
-      @svg = @create_svg_container @width, @height, @margins
+      @svg        = @create_svg_container @width, @height, @margins
 
-      @x = d3.scale.linear().domain([0, 100]).range([0, @width])
-      @y = d3.scale.linear().domain([0, 100]).range([0, @series_height])
-      @inverted_y = @y.copy().range([@series_height, 0])
-      @x_axis = d3.svg.axis().scale(@x).ticks(4).orient("bottom")
-        .tickFormat((x) => @main_formatter()(x))
-      @y_axis = d3.svg.axis().scale(@inverted_y).ticks(4).orient("left")
-
+      @x          = d3.scale.linear().domain([0, 100]).range([0, @width])
+      @y          = d3.scale.linear().domain([0, 100]).range([0, @height])
+      @inverted_y = @y.copy().range([@height, 0])
+      @x_axis     = d3.svg.axis().scale(@x).ticks(4).orient("bottom")
+                      .tickFormat((x) => @main_formatter()(x))
+      @y_axis     = d3.svg.axis().scale(@inverted_y).ticks(4).orient("left")
 
       # axis
       @svg.append("svg:g")
         .attr("class", "x_axis")
-        .attr("transform", "translate(0, #{@series_height})")
+        .attr("transform", "translate(0, #{@height})")
         .call(@x_axis)
+
       @svg.append("svg:g")
         .attr("class", "y_axis")
         .call(@y_axis)
+
       @svg.append("svg:text")
         .text("#{I18n.t('output_elements.merit_order_chart.operating_costs')} [EUR/MWh]")
         .attr("x", @height / -2)
@@ -108,7 +108,7 @@ D3.merit_order =
       @svg.append("svg:text")
         .text("#{I18n.t('output_elements.merit_order_chart.installed_capacity')}")
         .attr("x", @width / 2)
-        .attr("y", @series_height + 30)
+        .attr("y", @height + 30)
         .attr("text-anchor", "middle")
         .attr("class", "axis_label")
 
@@ -122,12 +122,10 @@ D3.merit_order =
         .attr("fill", (d) => d.get 'color')
         .style("stroke", (d) => d3.rgb(d.get 'color').darker(1))
         .on("mouseover", ->
-          item = d3.select(this)
-          item.transition().attr("fill", (d) -> d3.rgb(d.get("color")).brighter(1))
+          d3.select(this).attr("fill", (d) -> d3.rgb(d.color).brighter(1))
         )
         .on("mouseout", ->
-          item = d3.select(this)
-          item.transition().attr("fill", (d) -> d.get("color"))
+          d3.select(this).attr("fill", (d) -> d.color)
         )
         .attr('data-tooltip-title', (d) -> I18n.t "output_element_series.#{d.get('key')}")
 
@@ -172,6 +170,7 @@ D3.merit_order =
       @y.domain([0, max_height])
       @inverted_y.domain([0, max_height])
       @x.domain([0, @nodes.total_width()])
+
       @svg.selectAll(".x_axis").transition().call(@x_axis.scale(@x))
       @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@inverted_y))
 
@@ -188,17 +187,17 @@ D3.merit_order =
         .data(@nodes.models, (d) -> d.get('key'))
         .transition()
         .attr("height", (d) =>
-          if (h = @y(d.value_y())) < @min_node_height
+          if (height = @y(d.value_y())) < @min_node_height
             @min_node_height
           else
-            h
+            height
         )
         .attr("width", (d) => @x(d.value_x()))
         .attr("y", (d) =>
-          if (h = @y(d.value_y())) < @min_node_height
-            @series_height - @min_node_height
+          if (height = @y(d.value_y())) < @min_node_height
+            @height - @min_node_height
           else
-            @series_height - h
+            @height - height
         )
         .attr("x", (d) => @x(d.get 'x_offset'))
         .attr("data-tooltip-text", (d) =>

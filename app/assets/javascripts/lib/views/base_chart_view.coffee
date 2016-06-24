@@ -140,10 +140,21 @@ class @BaseChartView extends Backbone.View
   render_as_table: =>
     @clear_container()
 
+    Table = @table_view_for()
+
     @container_node()
       .removeClass('chart_canvas')
       .addClass('table_canvas')
-      .html(new TableView(this, @tableOptions).render())
+      .html(new Table(this, @tableOptions).render())
+
+  table_view_for: ->
+    switch @table_view()
+      when 'merit_order_excess_table'
+        MeritOrderExcessTableView
+      when 'default'
+        TableView
+
+  table_view: -> 'default'
 
   # D3 charts override this method
   supported_in_current_browser: -> true

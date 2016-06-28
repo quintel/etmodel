@@ -6,6 +6,7 @@ class @D3YearlyChartView extends D3ChartView
     bottom: 20
     left: 60
     right: 20
+    label_left: 30
 
   drawChart: ->
     [@width, @height] = @available_size()
@@ -58,7 +59,7 @@ class @D3YearlyChartView extends D3ChartView
       .call(axis)
       .append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y", ((@margins.left / 2) * -1) - 30)
+      .attr("y", ((@margins.left / 2) * -1) - @margins.label_left)
       .attr("x", ((@height / 2) * -1) + 30)
       .attr("dy", ".71em")
       .attr("font-weight", "bold")

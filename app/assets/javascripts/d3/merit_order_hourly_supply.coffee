@@ -66,6 +66,15 @@ D3.merit_order_hourly_supply =
         .attr('class', 'area')
         .attr('d', (data) -> area(data.values) )
         .attr('fill', (data) -> data.color )
+        .attr('data-tooltip-text', (d) -> d.label)
+
+      $("#{@container_selector()} path.area").qtip
+        content:
+          text:  -> $(this).attr('data-tooltip-text')
+        position:
+          target: 'mouse'
+          my: 'bottom right'
+          at: 'top center'
 
       @svg.selectAll('path.serie')
         .data(@totalDemand)

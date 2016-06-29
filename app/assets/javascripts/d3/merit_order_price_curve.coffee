@@ -3,6 +3,13 @@ D3.merit_order_price_curve =
     initialize: ->
       D3YearlyChartView.prototype.initialize.call(this)
 
+    margins:
+      top: 20
+      bottom: 20
+      left: 50
+      right: 20
+      label_left: 20
+
     draw: ->
       @average = new ChartSerie(
         color: "#CC0000",

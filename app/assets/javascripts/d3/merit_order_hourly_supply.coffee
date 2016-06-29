@@ -18,7 +18,7 @@ D3.merit_order_hourly_supply =
 
       @dateSelect.setVal(1)
 
-      @drawLegend(@series)
+      @drawLegend(@getLegendSeries())
 
       defs = @svg.append('defs')
       defs.append('clipPath')
@@ -41,6 +41,14 @@ D3.merit_order_hourly_supply =
       values = serie.future_value()
 
       Math.abs((d3.max(values) - d3.min(values)) / d3.sum(values))
+
+    getLegendSeries: ->
+      legendSeries = []
+      @series.forEach (serie) =>
+         if serie.future_value().find((v) -> (v > 0))
+           legendSeries.push(serie)
+
+      legendSeries
 
     getSeries: ->
       @model.non_target_series().sort (a, b) =>
@@ -77,6 +85,7 @@ D3.merit_order_hourly_supply =
       super
 
       @setStackedData()
+      @drawLegend(@getLegendSeries())
 
       xScale = @createTimeScale(@dateSelect.getCurrentRange())
       yScale = @createLinearScale()

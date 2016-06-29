@@ -27,8 +27,10 @@ class @D3YearlyChartView extends D3ChartView
   drawLegend: (series, columns = 2) ->
     height = ((series.length + 1) / columns) * 15
 
+    $("svg.legend").remove()
+
     @draw_legend(
-      svg:     @create_svg_container(@width, height, @margins),
+      svg:     @create_svg_container(@width, height, @margins, 'legend'),
       series:  series,
       width:   @width,
       columns: columns

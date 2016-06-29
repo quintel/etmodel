@@ -20,8 +20,6 @@ D3.merit_order_price_curve =
       @legendSeries.push(@average)
 
       @drawChart()
-      @dateSelect.setVal(1)
-
       @drawLegend(@legendSeries, 1)
 
     averageData: (data) ->

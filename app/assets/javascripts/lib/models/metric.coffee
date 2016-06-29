@@ -137,6 +137,7 @@
 
   # as format_percentage, but multiplying the value * 100
   ratio_as_percentage: (x, prefix, precision) ->
+    return x if /\%/.test(x)
     return '-' if (_.isNaN(x) || _.isNull(x) || x == 'null')
     return @percentage_to_string(x * 100, prefix, precision)
 

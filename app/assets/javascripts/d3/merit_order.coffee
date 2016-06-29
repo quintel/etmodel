@@ -80,15 +80,18 @@ D3.merit_order =
           at: 'top center'
 
       @check_merit_enabled()
+      @draw_merit_legend()
 
-      @svg_legend = @create_svg_container @width, 200, @margins
+    draw_merit_legend: =>
+      $("svg.legend").remove()
 
-      # add legend
+      @svg_legend = @create_svg_container(@width, 200, @margins, 'legend')
+
       @draw_legend
-        svg: @svg_legend
-        columns: 3
-        width: @width
-        series: @merit_data.data
+        svg:         @svg_legend
+        columns:     3
+        width:       @width
+        series:      @merit_data.legendData()
         left_margin: 15
 
     # Internal: Returns a function which will format values for the "main" axis
@@ -114,6 +117,8 @@ D3.merit_order =
       @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@inverted_y))
 
       @min_node_height = 2
+
+      @draw_merit_legend()
 
       # let's calculate the x-offset of the blocks
       offset = 0

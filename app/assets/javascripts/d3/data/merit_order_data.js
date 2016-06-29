@@ -37,6 +37,12 @@ var MeritOrderData = (function () {
             return this.formatted;
         },
 
+        legendData: function () {
+            return _.reject(this.data, function (obj) {
+                return obj.future_value().capacity <= 0;
+            });
+        },
+
         maxHeight: function () {
             return d3.max(_.map(this.format(), function (d) {
                 return d.operating_costs;

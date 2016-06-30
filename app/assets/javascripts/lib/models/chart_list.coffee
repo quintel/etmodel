@@ -38,6 +38,8 @@ class @ChartList extends Backbone.Collection
   #
   # Returns the newly created chart object or false if something went wrong
   load: (chart_id, holder_id = null, options = {}) =>
+    @chart_requests = []
+
     # if the chart is already there...
     current = @chart_in_holder holder_id
     if current && current.get('chart_id') == chart_id
@@ -54,8 +56,13 @@ class @ChartList extends Backbone.Collection
     App.debug """Loading chart: ##{chart_id} in #{holder_id}
                #{window.location.origin}/admin/output_elements/#{chart_id}"""
 
+    @chart_requests.push(@request_output_element(chart_id, holder_id, options))
+
+    @last()
+
+  request_output_element: (chart_id, holder_id = null, options = {}) =>
     $.ajax
-      url: "/output_elements/#{chart_id}"
+      url: "/output_elements/#{ chart_id }"
       success: (data) =>
         holder_id = @add_container_if_needed(holder_id, options)
 
@@ -64,7 +71,7 @@ class @ChartList extends Backbone.Collection
         # want to be able to show the same chart more than once
         #
         settings = _.extend {}, data.attributes, {
-            id: "#{data.attributes.id}-#{holder_id}"
+            id: "#{ data.attributes.id }-#{ holder_id }"
             chart_id: data.attributes.id
             container: holder_id
             html: data.html # tables and block chart
@@ -91,14 +98,15 @@ class @ChartList extends Backbone.Collection
           @remove old_chart
 
         @chart_holders[holder_id] = new_chart
-        @add new_chart
-        # Pass the gqueries to the chart
+
+        ## Pass the gqueries to the chart
         for s in data.series
           s.owner = holder_id
           new_chart.series.add(s)
 
-        App.call_api() unless options.wait
-    @last()
+        if options.ignore_lock == undefined
+          @add new_chart
+          App.call_api() unless options.wait
 
   # Returns the chart held in a holder
   #
@@ -129,6 +137,7 @@ class @ChartList extends Backbone.Collection
         charts_to_load.holder_0 = @default_chart_id
 
     ordered_charts = _.keys(charts_to_load).sort()
+
     for holder in ordered_charts
       chart = charts_to_load[holder]
       # The chart string has this format:
@@ -156,6 +165,13 @@ class @ChartList extends Backbone.Collection
           # but don't remove the locks, which is what `force: true` would do
           ignore_lock: true
         })
+
+    $.when.apply(null, @chart_requests).done((d) =>
+      App.call_api()
+
+      for holder_id, chart of @chart_holders
+        @add chart
+    )
 
   # adds a chart container, unless it is already in the DOM. Returns the
   # holder_id

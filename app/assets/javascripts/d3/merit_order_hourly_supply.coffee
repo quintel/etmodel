@@ -16,8 +16,6 @@ D3.merit_order_hourly_supply =
     draw: ->
       @drawChart()
 
-      @dateSelect.setVal(1)
-
       @drawLegend(@getLegendSeries())
 
       defs = @svg.append('defs')

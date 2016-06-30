@@ -5,46 +5,62 @@ var D3ChartDateSelect = (function () {
         msInWeek = 604800000;
 
     function buildOption(i) {
-        var timeFormat = d3.time.format("%b %d"),
+        var nextIndex  = (i + 1),
+            timeFormat = d3.time.format("%b %d"),
             msOffset   = (msInWeek * i),
             start      = new Date(epoch.getDate() + msOffset),
-            end        = new Date(start.getDate() + msOffset + msInWeek - (msInWeek / 7));
+            end        = new Date(start.getDate() + msOffset + msInWeek - (msInWeek / 7)),
+            optionText = (timeFormat(start) + " - " + timeFormat(end));
 
-        this.weeks[i + 1] = [start, end];
+        this.weeks[nextIndex] = [start, end];
 
-        return $("<option/>").attr('value', i + 1).text(
-            timeFormat(start) + " - " + timeFormat(end)
-        );
+        return '<option value="' + nextIndex + '">' + optionText + '</option>';
     }
 
     function createOptions() {
-        var i;
-
-        this.selectBox.append($('<option value="0">Whole year</option>'));
+        var i,
+            options = '<option value="0">Whole year</option>';
 
         for (i = 0; i < 52; i += 1) {
-            this.selectBox.append(buildOption.call(this, i));
+            options += buildOption.call(this, i);
         }
+
+        return options;
+    }
+
+    function updateMeritChartsDate(s, val) {
+        this.selectBox.val(val);
+        this.updateChart && this.updateChart();
+    }
+
+    function setMeritChartsDate() {
+        App.settings.set('merit_charts_date', $(this).val());
+    }
+
+    function buildSelectBox() {
+        return $("<select/>")
+            .addClass("d3-chart-date-select")
+            .append(createOptions.call(this))
+            .val(App.settings.get('merit_charts_date') || '1')
+            .on('change', setMeritChartsDate);
     }
 
     D3ChartDateSelect.prototype = {
         selectBox: undefined,
-        weeks: [ [epoch, new Date(1970, 11, 30) ] ],
+        weeks: [ [ epoch, new Date(1970, 11, 30) ] ],
         draw: function (updateChart) {
-            this.selectBox = $("<select/>").addClass("d3-chart-date-select");
-            this.selectBox.on('change', updateChart || function () { return; });
-
-            createOptions.call(this);
+            this.updateChart = updateChart;
+            this.selectBox = buildSelectBox.call(this);
 
             this.scope.append(this.selectBox);
+
+            App.settings.on('change:merit_charts_date',
+                updateMeritChartsDate.bind(this));
+
         },
 
         getCurrentRange: function () {
             return this.weeks[this.val()];
-        },
-
-        setVal: function(value) {
-            this.selectBox.val(value);
         },
 
         val: function () {

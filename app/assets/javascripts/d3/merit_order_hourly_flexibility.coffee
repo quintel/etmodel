@@ -15,9 +15,6 @@ D3.merit_order_hourly_flexibility =
 
     draw: ->
       @drawChart()
-
-      @dateSelect.setVal(1)
-
       @drawLegend(@series)
 
       defs = @svg.append('defs')

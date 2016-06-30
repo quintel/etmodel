@@ -9,7 +9,9 @@
   .clear
 
 - content_for :scripts do
-  = render 'output_elements/table_template'
+  - Dir["app/views/output_elements/table_templates/*"].each do |file|
+    = render file: Rails.root.join(file).to_s
+
   = render 'output_elements/chart_template'
   :javascript
     $(function(){

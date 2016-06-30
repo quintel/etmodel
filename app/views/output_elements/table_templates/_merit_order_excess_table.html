@@ -1,0 +1,19 @@
+<script type="text/template" id="merit-order-excess-chart-table-template">
+  <table class="chart autostripe" cellspacing="0">
+    <thead>
+      <tr>
+        <th><%%= I18n.t('output_elements.merit_excess_chart.minimum_duration') %></th>
+        <th><%%= I18n.t('output_elements.merit_excess_chart.number_of_events') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%% _.each(data, function(row) { %>
+        <tr>
+          <td title="<%%= row[0] %>"><%%= row[0] %></td>
+          <td title="<%%= row[1] %>"><%%= row[1] %></td>
+        </tr>
+      <%% }) %>
+    </tbody>
+  </table>
+</script>
+

@@ -38,27 +38,33 @@ class @ChartList extends Backbone.Collection
   #
   # Returns the newly created chart object or false if something went wrong
   load: (chart_id, holder_id = null, options = {}) =>
-    @chart_requests = []
+    if @should_load_chart(chart_id, holder_id, options)
+      App.debug """Loading chart: ##{chart_id} in #{holder_id}
+                 #{window.location.origin}/admin/output_elements/#{chart_id}"""
 
-    # if the chart is already there...
-    current = @chart_in_holder holder_id
-    if current && current.get('chart_id') == chart_id
-      return false unless options.force
+      @chart_requests.push(@request_output_element(chart_id, holder_id, options))
+
+      @last()
+
+  should_load_chart: (chart_id, holder_id = null, options = {}) =>
+    should_load = true
+    current     = @chart_in_holder(holder_id)
+
+    if current && current.get('chart_id') == chart_id && !options.force
+      should_load = false
 
     # if we want to replace a locked chart...
     locked_charts = App.settings.get 'locked_charts'
+
     if locked_charts[holder_id]
       if options.force
-        @chart_in_holder(holder_id).toggle_lock(false)
-      else
-        return false unless options.ignore_lock
+        # TODO: Remove the toggle_lock method because this method should return
+        # a boolean but now also excecutes code in between which is confusing.
+        current.toggle_lock(false)
+      else if !options.ignore_lock
+        should_load = false
 
-    App.debug """Loading chart: ##{chart_id} in #{holder_id}
-               #{window.location.origin}/admin/output_elements/#{chart_id}"""
-
-    @chart_requests.push(@request_output_element(chart_id, holder_id, options))
-
-    @last()
+    should_load
 
   request_output_element: (chart_id, holder_id = null, options = {}) =>
     $.ajax
@@ -92,18 +98,19 @@ class @ChartList extends Backbone.Collection
             @delete_container(holder_id) unless @chart_holders[holder_id]
           return false
 
-        # Remember what we were showing in that position
         if old_chart = @chart_in_holder holder_id
           old_chart.delete()
           @remove old_chart
 
+        # Remember what we were showing in that position
         @chart_holders[holder_id] = new_chart
 
-        ## Pass the gqueries to the chart
+        # Pass the gqueries to the chart
         for s in data.series
           s.owner = holder_id
           new_chart.series.add(s)
 
+        # Render the chart only if it is not new chart
         if options.ignore_lock == undefined
           @add new_chart
           App.call_api() unless options.wait
@@ -125,6 +132,8 @@ class @ChartList extends Backbone.Collection
   #
   load_charts: =>
     # The accordion takes care of setting @default_chart_id
+    @chart_requests = []
+
     settings = App.settings.get 'locked_charts'
 
     # safe copy of the settings hash
@@ -317,4 +326,3 @@ class @ChartList extends Backbone.Collection
         beforeClose: ->
           # don't leave stale charts around!
           charts.prune()
-

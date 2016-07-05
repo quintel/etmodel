@@ -140,4 +140,8 @@ D3.merit_order_hourly_supply =
           else
             result[index] = value
 
+      # Add the peak demand so that it isn't rendered off-screen when demand
+      # exceeds supply.
+      result.push(d3.max(@rawChartData[0].values))
+
       d3.max(result)

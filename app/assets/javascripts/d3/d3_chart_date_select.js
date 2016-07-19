@@ -9,7 +9,7 @@ var D3ChartDateSelect = (function () {
             timeFormat = d3.time.format("%b %d"),
             msOffset   = (msInWeek * i),
             start      = new Date(epoch.getDate() + msOffset),
-            end        = new Date(start.getDate() + msOffset + msInWeek - (msInWeek / 7)),
+            end        = new Date(start.getDate() + msOffset + msInWeek),
             optionText = (timeFormat(start) + " - " + timeFormat(end));
 
         this.weeks[nextIndex] = [start, end];

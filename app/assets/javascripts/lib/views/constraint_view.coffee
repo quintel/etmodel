@@ -86,7 +86,7 @@ class @ConstraintView extends Backbone.View
           "#{formatted}#{App.settings.country().toUpperCase()}"
       when 'targets_met'
         null
-      when 'loss_of_load', 'blackout_hours'
+      when 'loss_of_load', 'blackout_hours', 'total_number_of_excess_events'
         "#{Metric.round_number(result, 0)} #{I18n.t('units.hours')}"
       when 'renewable_electricity_percentage'
         Metric.ratio_as_percentage(result)

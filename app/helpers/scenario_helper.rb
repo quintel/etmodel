@@ -7,11 +7,11 @@ module ScenarioHelper
     scaled  = Current.setting.scaling.present?
     checked = scaled ? Current.setting.scaling[:"has_#{ name }"] : default
 
-    if scaled && checked
-      check_box_tag("has_#{ name }", '1', checked, disabled: true) +
-      hidden_field_tag("has_#{ name }", '1')
+    if scaled
+      hidden_field_tag("has_#{ name }", '0') +
+      check_box_tag("has_#{ name }", '1', checked, disabled: !checked)
     else
-      check_box_tag("has_#{ name }", '1', checked, disabled: scaled)
+      check_box_tag("has_#{ name }", '1', checked)
     end
   end
 end

@@ -26,7 +26,11 @@ class Api::Area < ActiveResource::Base
     :use_network_calculations,
     :has_electricity_storage,
     :is_national_scenario,
-    :is_local_scenario
+    :is_local_scenario,
+    :has_detailed_chemical_industry,
+    :has_detailed_other_industry,
+    :has_aggregated_chemical_industry,
+    :has_aggregated_other_industry
   ]
 
   def self.find_by_country_memoized(area_code)

@@ -1,4 +1,4 @@
-D3.co2_emissions =
+D3.co2_emissions_biomass =
   View: class extends D3ChartView
     el: 'body'
     initialize: ->
@@ -6,17 +6,23 @@ D3.co2_emissions =
       @series = @model.series.models
 
     gquery_keys:
-      start:    '1990_in_co2_emissions'
-      domestic: 'co2_emissions_of_final_demand_excluding_imported_' +
-                'electricity_in_co2_emissions'
-      imported: 'co2_emissions_of_imported_electricity_in_co2_emissions'
-      target:   'policy_goal_co2_emissions_target_value'
+      start:          '1990_in_co2_emissions'
+      domestic:       'co2_emissions_of_final_demand_excluding_imported_' +
+                      'electricity_in_co2_emissions'
+      imported:       'co2_emissions_of_imported_electricity_in_co2_emissions'
+      gas_present:    'climate_relevant_co2_biomass_gas_present'
+      gas_future:     'climate_relevant_co2_biomass_gas_future'
+      liquid_present: 'climate_relevant_co2_biomass_liquid_present'
+      liquid_future:  'climate_relevant_co2_biomass_liquid_future'
+      solid_present:  'climate_relevant_co2_biomass_solid_present'
+      solid_future:   'climate_relevant_co2_biomass_solid_future'
+      target:         'policy_goal_co2_emissions_target_value'
 
     can_be_shown_as_table: -> true
 
     margins:
       top: 20
-      bottom: 35
+      bottom: 45
       left: 30
       right: 40
 
@@ -24,10 +30,16 @@ D3.co2_emissions =
     # added when the JSON request is complete, ie after the initialize method
     #
     setup_series: =>
-      @serie_1990     = @serie_for(@gquery_keys.start)
-      @serie_domestic = @serie_for(@gquery_keys.domestic)
-      @serie_imported = @serie_for(@gquery_keys.imported)
-      @serie_target   = @serie_for(@gquery_keys.target)
+      @serie_1990           = @serie_for(@gquery_keys.start)
+      @serie_domestic       = @serie_for(@gquery_keys.domestic)
+      @serie_imported       = @serie_for(@gquery_keys.imported)
+      @serie_gas_present    = @serie_for(@gquery_keys.gas_present)
+      @serie_gas_future     = @serie_for(@gquery_keys.gas_future)
+      @serie_liquid_present = @serie_for(@gquery_keys.liquid_present)
+      @serie_liquid_future  = @serie_for(@gquery_keys.liquid_future)
+      @serie_solid_present  = @serie_for(@gquery_keys.solid_present)
+      @serie_solid_future   = @serie_for(@gquery_keys.solid_future)
+      @serie_target         = @serie_for(@gquery_keys.target)
 
     draw: =>
       @setup_series()
@@ -44,8 +56,13 @@ D3.co2_emissions =
       # Since this chart is very specific the series could actually be
       # hard-coded
       series_for_legend = [
-        @serie_1990, @serie_target,
-        @serie_domestic, @serie_imported
+        @serie_1990, 
+        @serie_gas_present,
+        @serie_domestic,
+        @serie_liquid_present,
+        @serie_imported,
+        @serie_solid_present,
+        @serie_target
       ]
 
       @draw_legend
@@ -116,9 +133,15 @@ D3.co2_emissions =
       _.max([
         @serie_1990.safe_future_value(),
         @serie_domestic.safe_present_value() +
-          @serie_imported.safe_present_value(),
+          @serie_imported.safe_present_value() +
+          @serie_gas_present.safe_present_value() +
+          @serie_liquid_present.safe_present_value() +
+          @serie_solid_present.safe_present_value(),
         @serie_domestic.safe_future_value() +
-          @serie_imported.safe_future_value()
+          @serie_imported.safe_future_value() +
+          @serie_gas_future.safe_future_value() +
+          @serie_liquid_future.safe_future_value() +
+          @serie_solid_future.safe_future_value()
       ])
 
     refresh: =>
@@ -164,13 +187,13 @@ D3.co2_emissions =
         x:     @start_year,
         y:     @serie_domestic.safe_present_value(),
         color: @serie_domestic.get('color'),
-        label: @serie_imported.get('label')
+        label: @serie_domestic.get('label')
       }, {
         id:   'co2_future_domestic',
         x:     @end_year,
         y:     @serie_domestic.safe_future_value(),
         color: @serie_domestic.get('color'),
-        label: @serie_imported.get('label')
+        label: @serie_domestic.get('label')
       }], [{
         id:    'co2_present_imported',
         x:     @start_year,
@@ -183,6 +206,42 @@ D3.co2_emissions =
         y:     @serie_imported.safe_future_value(),
         color: @serie_imported.get('color'),
         label: @serie_imported.get('label')
+      }], [{
+        id:    'co2_present_gas',
+        x:     @start_year,
+        y:     @serie_gas_present.safe_present_value(),
+        color: @serie_gas_present.get('color'),
+        label: @serie_gas_present.get('label')
+      }, {
+        id:    'co2_future_gas',
+        x:     @end_year,
+        y:     @serie_gas_future.safe_future_value(),
+        color: @serie_gas_future.get('color'),
+        label: @serie_gas_future.get('label')
+      }], [{
+        id:    'co2_present_liquid',
+        x:     @start_year,
+        y:     @serie_liquid_present.safe_present_value(),
+        color: @serie_liquid_present.get('color'),
+        label: @serie_liquid_present.get('label')
+      }, {
+        id:    'co2_future_liquid',
+        x:     @end_year,
+        y:     @serie_liquid_future.safe_future_value(),
+        color: @serie_liquid_future.get('color'),
+        label: @serie_liquid_future.get('label')
+      }], [{
+        id:    'co2_present_solid',
+        x:     @start_year,
+        y:     @serie_solid_present.safe_present_value(),
+        color: @serie_solid_present.get('color'),
+        label: @serie_solid_present.get('label')
+      }, {
+        id:    'co2_future_solid',
+        x:     @end_year,
+        y:     @serie_solid_future.safe_future_value(),
+        color: @serie_solid_future.get('color'),
+        label: @serie_solid_future.get('label')
       }]]))
 
       [target, stacked...]
@@ -224,7 +283,7 @@ D3.co2_emissions =
               <td class='novalue'>&mdash;</td>
               <td class='novalue'>&mdash;</td>
             </tr>
-
+            
             <tr>
               <th>#{I18n.t('output_element_series.co2_emission_local_production')}</th>
               <td class='novalue'>&mdash;</td>
@@ -240,13 +299,45 @@ D3.co2_emissions =
               <td>#{formatter(@serie_imported.safe_future_value())}</td>
               <td class='novalue'>&mdash;</td>
             </tr>
+
+            <tr>
+              <th>#{I18n.t('output_element_series.co2_biomass_gas_present')}</th>
+              <td class='novalue'>&mdash;</td>
+              <td>#{formatter(@serie_gas_present.safe_present_value())}<br/></td>
+              <td>#{formatter(@serie_gas_future.safe_future_value())}</td>
+              <td class='novalue'>&mdash;</td>
+            </tr>
+
+            <tr>
+              <th>#{I18n.t('output_element_series.co2_biomass_liquid_present')}</th>
+              <td class='novalue'>&mdash;</td>
+              <td>#{formatter(@serie_liquid_present.safe_present_value())}<br/></td>
+              <td>#{formatter(@serie_liquid_future.safe_future_value())}</td>
+              <td class='novalue'>&mdash;</td>
+            </tr>
+
+            <tr>
+              <th>#{I18n.t('output_element_series.co2_biomass_solid_present')}</th>
+              <td class='novalue'>&mdash;</td>
+              <td>#{formatter(@serie_solid_present.safe_present_value())}<br/></td>
+              <td>#{formatter(@serie_solid_future.safe_future_value())}</td>
+              <td class='novalue'>&mdash;</td>
+            </tr>
           </tbody>
           <tfoot>
             <tr>
               <th>#{I18n.t('output_element_series.total')}</th>
               <td>#{formatter(@serie_1990.safe_future_value())}</td>
-              <td>#{formatter(@serie_domestic.safe_present_value() + @serie_imported.safe_present_value())}<br/></td>
-              <td>#{formatter(@serie_domestic.safe_future_value() + @serie_imported.safe_future_value())}</td>
+              <td>#{formatter(@serie_domestic.safe_present_value() + 
+                                @serie_imported.safe_present_value() +
+                                @serie_gas_present.safe_present_value() +
+                                @serie_liquid_present.safe_present_value() +
+                                @serie_solid_present.safe_present_value())}<br/></td>
+              <td>#{formatter(@serie_domestic.safe_future_value() + 
+                                @serie_imported.safe_future_value() +
+                                @serie_gas_future.safe_future_value() +
+                                @serie_liquid_future.safe_future_value() +
+                                @serie_solid_future.safe_future_value())}</td>
               <td>#{target}</td>
             </tr>
           </tfoot>

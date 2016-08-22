@@ -218,7 +218,15 @@ D3.co2_emissions =
           </thead>
           <tbody>
             <tr>
-              <th>#{I18n.t('output_element_series.local')}</th>
+              <th>#{I18n.t('output_element_series.co2_emissions_1990')}</th>
+              <td>#{formatter(@serie_1990.safe_present_value())}<br/></td>
+              <td class='novalue'>&mdash;</td>
+              <td class='novalue'>&mdash;</td>
+              <td class='novalue'>&mdash;</td>
+            </tr>
+
+            <tr>
+              <th>#{I18n.t('output_element_series.co2_emission_local_production')}</th>
               <td class='novalue'>&mdash;</td>
               <td>#{formatter(@serie_domestic.safe_present_value())}<br/></td>
               <td>#{formatter(@serie_domestic.safe_future_value())}</td>
@@ -226,7 +234,7 @@ D3.co2_emissions =
             </tr>
 
             <tr>
-              <th>#{I18n.t('output_element_series.imported')}</th>
+              <th>#{I18n.t('output_element_series.co2_emission_imported_electricity')}</th>
               <td class='novalue'>&mdash;</td>
               <td>#{formatter(@serie_imported.safe_present_value())}<br/></td>
               <td>#{formatter(@serie_imported.safe_future_value())}</td>

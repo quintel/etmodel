@@ -199,6 +199,60 @@ D3.sankey =
           {left: 'chps',                          right: 'loss',             gquery: 'chps_to_loss_in_sankey', color: '#7f7f7f'},
           {left: 'electricity_prod',              right: 'exported_electricity', gquery: 'electricity_production_to_export_in_sankey', color: '#1f77b4'}
         ]
+    refinery:
+      data:
+        nodes: [
+          {id: 'oil_import',                      column: 0, label: 'oil_import',             color: '#854321'},
+          {id: 'extraction',                      column: 0, label: 'extraction',             color: '#854321'},
+          {id: 'heat_input',                      column: 0, label: 'heat_input',             color: '#d62728'},
+          {id: 'fuel_import',                     column: 0, label: 'fuel_import',            color: '#854321'},
+          {id: 'refinery',                        column: 1, label: 'refinery',               color: '#854321'},
+          {id: 'distribution_diesel',             column: 2, label: 'distribution_diesel',    color: '#854321'},
+          {id: 'distribution_gasoline',           column: 2, label: 'distribution_gasoline',  color: '#8B0000'},
+          {id: 'distribution_lpg',                column: 2, label: 'distribution_lpg',       color: '#CCCCCC'},
+          {id: 'distribution_hfo',                column: 2, label: 'distribution_hfo',       color: '#BA7D40'},
+          {id: 'distribution_kerosene',           column: 2, label: 'distribution_kerosene',  color: '#BFEFFF'},
+          {id: 'distribution_oil_products',       column: 2, label: 'distribution_oil_products', color: '#854321'},
+          {id: 'distribution_refinery_gas',       column: 2, label: 'distribution_refinery_gas', color: '#7f7f7f'},
+          {id: 'loss',                            column: 2},
+          {id: 'transport',                       column: 3, label: 'transport'},
+          {id: 'energy',                          column: 3, label: 'energy'},
+          {id: 'industry',                        column: 3, label: 'industry'},
+          {id: 'export',                          column: 3, label: 'export'}
+        ]
+        links: [
+          {left: 'oil_import',                    right: 'refinery',                 gquery: 'crude_oil_import_to_refinery_in_sankey', color: '#854321'},
+          {left: 'extraction',                    right: 'refinery',                 gquery: 'crude_oil_extraction_to_refinery_in_sankey', color: '#854321'},
+          {left: 'heat_input',                    right: 'refinery',                 gquery: 'refinery_heat_input_in_sankey', color: '#d62728'},
+          {left: 'refinery',                      right: 'distribution_diesel',      gquery: 'diesel_refinery_to_distribution_in_sankey', color: '#854321'},
+          {left: 'refinery',                      right: 'distribution_gasoline',    gquery: 'gasoline_refinery_to_distribution_in_sankey', color: '#8B0000'},
+          {left: 'refinery',                      right: 'distribution_lpg',         gquery: 'lpg_refinery_to_distribution_in_sankey', color: '#CCCCCC'},
+          {left: 'refinery',                      right: 'distribution_hfo',         gquery: 'hfo_refinery_to_distribution_in_sankey', color: '#BA7D40'},
+          {left: 'refinery',                      right: 'distribution_kerosene',    gquery: 'kerosene_refinery_to_distribution_in_sankey', color: '#BFEFFF'},
+          {left: 'refinery',                      right: 'distribution_oil_products',gquery: 'oil_products_refinery_to_distribution_in_sankey', color: '#854321'},
+          {left: 'refinery',                      right: 'distribution_refinery_gas',gquery: 'refinery_gas_refinery_to_distribution_in_sankey', color: '#7f7f7f'},
+          {left: 'refinery',                      right: 'loss',                     gquery: 'refinery_loss_in_sankey', color: '#416B86'},
+          {left: 'fuel_import',                   right: 'distribution_diesel',      gquery: 'diesel_import_to_distribution_in_sankey', color: '#854321'},
+          {left: 'fuel_import',                   right: 'distribution_gasoline',    gquery: 'gasoline_import_to_distribution_in_sankey', color: '#8B0000'},
+          {left: 'fuel_import',                   right: 'distribution_lpg',         gquery: 'lpg_import_to_distribution_in_sankey', color: '#CCCCCC'},
+          {left: 'fuel_import',                   right: 'distribution_hfo',         gquery: 'hfo_import_to_distribution_in_sankey', color: '#BA7D40'},
+          {left: 'fuel_import',                   right: 'distribution_kerosene',    gquery: 'kerosene_import_to_distribution_in_sankey', color: '#7f7f7f'},
+          {left: 'fuel_import',                   right: 'distribution_oil_products',gquery: 'oil_products_import_to_distribution_in_sankey', color: '#854321'},
+          {left: 'distribution_diesel',           right: 'transport',                gquery: 'diesel_distribution_to_transport_in_sankey', color: '#854321'},
+          {left: 'distribution_diesel',           right: 'energy',                   gquery: 'diesel_distribution_to_energy_in_sankey', color: '#854321'},
+          {left: 'distribution_diesel',           right: 'export',                   gquery: 'diesel_distribution_to_export_in_sankey', color: '#854321'},
+          {left: 'distribution_gasoline',         right: 'transport',                gquery: 'gasoline_distribution_to_transport_in_sankey', color: '#8B0000'},
+          {left: 'distribution_gasoline',         right: 'export',                   gquery: 'gasoline_distribution_to_export_in_sankey', color: '#8B0000'},
+          {left: 'distribution_lpg',              right: 'transport',                gquery: 'lpg_distribution_to_transport_in_sankey', color: '#CCCCCC'},
+          {left: 'distribution_lpg',              right: 'export',                   gquery: 'lpg_distribution_to_export_in_sankey', color: '#CCCCCC'},
+          {left: 'distribution_hfo',              right: 'transport',                gquery: 'hfo_distribution_to_transport_in_sankey', color: '#BA7D40'},
+          {left: 'distribution_hfo',              right: 'export',                   gquery: 'hfo_distribution_to_export_in_sankey', color: '#BA7D40'},
+          {left: 'distribution_kerosene',         right: 'transport',                gquery: 'kerosene_distribution_to_transport_in_sankey', color: '#BFEFFF'},
+          {left: 'distribution_kerosene',         right: 'export',                   gquery: 'kerosene_distribution_to_export_in_sankey', color: '#BFEFFF'},
+          {left: 'distribution_oil_products',     right: 'industry',                 gquery: 'oil_products_distribution_to_industry_in_sankey', color: '#854321'},
+          {left: 'distribution_oil_products',     right: 'export',                   gquery: 'oil_products_distribution_to_export_in_sankey', color: '#854321'},
+          {left: 'distribution_refinery_gas',     right: 'industry',                 gquery: 'refinery_gas_distribution_to_industry_in_sankey', color: '#7f7f7f'}
+        ]
 
   # In this chart most positioning is calculated by us. The D3 sankey plugin is
   # cool but not flexible enough

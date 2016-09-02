@@ -1,6 +1,6 @@
 #flexibility-options.sortable-container
   %ul.sortable
-    - %w(power_to_power electric_vehicle power_to_heat power_to_gas export).each do |flexibility_option|
+    - FlexibilityOrder.all.each do |flexibility_option|
       %li{data: { id: flexibility_option }}
         = t("output_elements.flexibility_options.#{ flexibility_option }")
         %span.fa.fa-bars

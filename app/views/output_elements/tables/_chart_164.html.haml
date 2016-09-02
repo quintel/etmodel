@@ -42,6 +42,12 @@
       %td{:data => {:decimals => 4, :gquery => "energy_flexibility_p2g_electricity_demand", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "energy_flexibility_p2g_electricity_usage_twh", :graph => :future}}
     %tr
+      %th= t "output_elements.tables.flexibility.electricity_converted_to_gas_industry"
+      %td{:data => {:gquery => "industry_flexibility_p2g_electricity_capacity", :graph => :future}}
+      %td
+      %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2g_electricity_demand", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2g_electricity_usage_twh", :graph => :future}}
+    %tr
       %th= t "output_elements.tables.flexibility.losses_in_storage"
       %td
       %td

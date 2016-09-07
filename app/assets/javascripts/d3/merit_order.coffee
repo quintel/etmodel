@@ -83,12 +83,9 @@ D3.merit_order =
       @draw_merit_legend()
 
     draw_merit_legend: =>
-      $("svg.legend").remove()
-
-      @svg_legend = @create_svg_container(@width, 200, @margins, 'legend')
+      $("div.legend").remove()
 
       @draw_legend
-        svg:         @svg_legend
         columns:     3
         width:       @width
         series:      @merit_data.legendData()

@@ -94,10 +94,9 @@ D3.mekko =
       @series_height = @height - legend_height - label_height - label_margin
       @label_offset = @series_height + label_margin
 
-      @svg = @create_svg_container @width, @height, @margins
+      @svg = @create_svg_container @width, @series_height + label_height, @margins
 
       @draw_legend
-        svg: @svg
         series: @carrier_list.models
         width: @width
         vertical_offset: @series_height + label_height
@@ -140,13 +139,24 @@ D3.mekko =
 
       # Let's append a vertical sector label
       #
-      @sectors
+      sector_label = @sectors
         .append('g')
         .attr('class', 'sector_label')
         .attr('transform', "translate(0, #{@label_offset})")
         .append("svg:text")
         .attr("text-anchor", "end")
-        .attr("transform", "rotate(-30)")
+        .attr("transform", "rotate(-90) translate(0, -5)")
+
+      sector_label.append("svg:tspan")
+        .attr('class', 'key')
+        .attr("dy", 0)
+        .attr('x', 0)
+
+      sector_label.append("svg:tspan")
+        .attr('class', 'total_value')
+        .attr("dy", 10)
+        .attr('x', 0)
+        .style("font-size", "75%")
 
       $("#{@container_selector()} rect.carrier").qtip
         content:
@@ -178,12 +188,17 @@ D3.mekko =
 
       # Move and update the vertical label
       #
-      @svg.selectAll("g.sector_label")
+      sector_label = @svg.selectAll("g.sector_label")
         .data(@sector_list.models, (d) -> d.get 'key' )
         .transition().duration(500)
         .attr('transform', (d) => "translate(#{@x(d.total_value() / 2)}, #{@label_offset})")
         .select('text')
-        .text((d) => "#{d.get 'key'} #{@col_value_scaler()(d.total_value())}")
+
+      sector_label.select('tspan.total_value')
+        .text((d) => @col_value_scaler()(d.total_value()))
+
+      sector_label.select('tspan.key')
+        .text((d) -> d.get 'key')
 
       # let's track the vertical offset for every sector
       offsets = {}

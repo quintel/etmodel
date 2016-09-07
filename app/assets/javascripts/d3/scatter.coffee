@@ -24,7 +24,7 @@ D3.scatter =
       @series_height = @height - legend_height - legend_margin
       @series_width = @width - 20
 
-      @svg = @create_svg_container @width, @height, @margins
+      @svg = @create_svg_container @width, @series_height, @margins
 
       @draw_legend
         svg: @svg

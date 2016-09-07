@@ -27,6 +27,7 @@
         .interface_group
           %span{:style =>"float:left"}= t("accordion.#{to_yml_syntax(group)}")
           - unless slide.group_sub_header.blank?
-            %span.sub_header_arrow= t("subheaders.#{to_yml_syntax(slide.group_sub_header)}")
+            %span.sub_header_arrow
+              = t("subheaders.#{to_yml_syntax(group)}", default: t("subheaders.#{to_yml_syntax(slide.group_sub_header)}"))
         - sliders.each do |input_element|
           = render :partial => 'input_elements/slider', :object => input_element

@@ -88,11 +88,11 @@ D3.mekko =
       legend_columns = if @carrier_list.length > 9 then 3 else 2
       legend_rows = @carrier_list.length / legend_columns
       legend_height = legend_rows * @legend_cell_height
-      label_height = 70 # rotated labels
-      label_margin = 15
+      label_height = 80 # rotated labels
+      @label_margin = 25
 
-      @series_height = @height - legend_height - label_height - label_margin
-      @label_offset = @series_height + label_margin
+      @series_height  = @height - legend_height - label_height - @label_margin
+      @label_offset   = @series_height + @label_margin
 
       @svg = @create_svg_container @width, @series_height + label_height, @margins
 
@@ -139,11 +139,22 @@ D3.mekko =
 
       # Let's append a vertical sector label
       #
-      sector_label = @sectors
+      sector_group = @sectors
         .append('g')
         .attr('class', 'sector_label')
         .attr('transform', "translate(0, #{@label_offset})")
-        .append("svg:text")
+
+      sector_group.append("svg:line")
+        .attr('class', 'sector_line')
+        .attr("stroke-width", "1px")
+        .attr("fill", "none")
+        .attr("stroke", "#000000")
+        .attr("x1", 0)
+        .attr("x2", 0)
+        .attr("y1", -25)
+        .attr("y2", -5)
+
+      sector_label = sector_group.append("svg:text")
         .attr("text-anchor", "end")
         .attr("transform", "rotate(-90) translate(0, -5)")
 
@@ -169,6 +180,7 @@ D3.mekko =
 
     refresh: =>
       total_value = @node_list.grand_total()
+
       @x.domain([0, total_value])
       @y.domain([0, total_value])
 
@@ -179,7 +191,7 @@ D3.mekko =
       #
       @svg.selectAll("g.sector")
         .data(@sector_list.models, (d) -> d.get 'key' )
-        .transition().duration(500)
+        # .transition().duration(500)
         .attr("transform", (d) =>
           old = @sector_offset
           @sector_offset += @x d.total_value()
@@ -188,16 +200,18 @@ D3.mekko =
 
       # Move and update the vertical label
       #
+      average_width = @x(total_value / @sector_list.models.length)
+
       sector_label = @svg.selectAll("g.sector_label")
         .data(@sector_list.models, (d) -> d.get 'key' )
-        .transition().duration(500)
+        # .transition().duration(500)
         .attr('transform', (d) => "translate(#{@x(d.total_value() / 2)}, #{@label_offset})")
         .select('text')
 
-      sector_label.select('tspan.total_value')
+      sector_label.select('text tspan.total_value')
         .text((d) => @col_value_scaler()(d.total_value()))
 
-      sector_label.select('tspan.key')
+      sector_label.select('text tspan.key')
         .text((d) -> d.get 'key')
 
       # let's track the vertical offset for every sector
@@ -208,7 +222,7 @@ D3.mekko =
       #
       @svg.selectAll(".carrier")
         .data(@node_list.models, (d) -> d.key())
-        .transition().duration(500)
+        # .transition().duration(500)
         .attr("width", (d) => @x d.sector.total_value() )
         .attr("height", (d) =>
           x = d.val() / d.sector.total_value() * @series_height
@@ -222,6 +236,70 @@ D3.mekko =
           old
         )
         .attr("data-tooltip-text", (d) => @main_formatter()(d.val()))
+
+      @arrangeLabels()
+      @moveArrows()
+
+    # Arranges the labels for each sector so that no labels overlap.
+    #
+    # Tests the position of each label against every other label and moves any
+    # which overlap until there are no more overlaps.
+    arrangeLabels: =>
+      # Defines the left- and right-most edges of the chart. Labels will not be
+      # permitted outside these limits
+      maxLeft  = @svg[0][0].getBoundingClientRect().left + 20 # + 20 for axis.
+      maxRight = @svg[0][0].getBoundingClientRect().right
+
+      # Assumes that selectAll returns labels in the order they appear in the
+      # DOM (i.e. left-to-right).
+      labels = @svg.selectAll('g.sector_label')[0]
+
+      # Iterates through label 1..n, providing the position of the label and the
+      # previous label to a "value" function which may return by how much to
+      # move the label in order to resolve a collision with the previous.
+      moveLabels = (labels, value) ->
+        labels.reduce (prevLabel, label) ->
+          prevRect = prevLabel.getBoundingClientRect()
+          rect     = label.getBoundingClientRect()
+          moveBy   = value(prevRect, rect)
+
+          if moveBy
+            el = d3.transform(d3.select(label).attr('transform'))
+            el.translate = [el.translate[0] + moveBy, el.translate[1]]
+
+            # Prevent moving the label beyond the right- or left-most edges of
+            # the chart.
+            if (rect.right + moveBy) > maxRight
+              el.translate[0] -= ((rect.right + moveBy) - maxRight)
+            else if (rect.left + moveBy) < maxLeft
+              el.translate[0] += (maxLeft - (rect.left + moveBy))
+
+            d3.select(label)
+              .attr('transform', 'translate('+ el.translate + ')')
+              .attr('data-moved', el.translate[0])
+
+          # The current label becomes prevLabel in the next iteration.
+          return label
+
+      # Arrange labels left-to-right.
+      moveLabels labels, (previous, current) ->
+        previous.right - current.left if previous.right > current.left
+
+      # Arrange labels right-to-left (to fix any smushed up against the right
+      # side of the chart).
+      moveLabels labels.reverse(), (previous, current) ->
+        previous.left - current.right if previous.left < current.right
+
+    moveArrows: =>
+      @svg.selectAll('g.sector').each(() ->
+        scope = d3.select(this)
+        moved = scope.select('g.sector_label').attr('data-moved')
+
+        if moved
+          scope.select('line').attr('x1', () ->
+            -(moved - (scope.select('rect').attr('width') / 2.0))
+          )
+      )
 
 # Pseudo-collection of nodes
 #

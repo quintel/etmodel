@@ -26,7 +26,14 @@ class @D3ChartView extends BaseChartView
       @check_merit_enabled()
       @drawn = App.settings.merit_order_enabled()
 
+    @display_empty_message()
     @refresh()
+
+  is_empty: =>
+    false
+
+  display_empty_message: =>
+    EmptyChartMessage.display(this)
 
   html: =>
     type = @model.get 'type'

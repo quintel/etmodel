@@ -64,6 +64,23 @@
       min-height: 350px
       background-color: #fff
 
+      .empty
+        svg, .legend
+          display: none
+
+        .empty-wrapper
+          +background(linear-gradient(#fbfbfb, #f0f0f0))
+          border-bottom: 1px solid #bbb
+          width: 100%
+          text-align: center
+
+          p
+            padding-top: 135px
+            margin: 0
+
+          .annotation
+            font-size: 80%
+
       select.d3-chart-date-select
         float: right
         margin-top: 10px

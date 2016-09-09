@@ -13,6 +13,14 @@ D3.stacked_bar =
       left: 30
       right: 40
 
+    is_empty: =>
+      total = 0
+
+      @prepare_data().map (d) ->
+        total += (d.reduce (t,s) -> t.y + s.y)
+
+      total <= 0
+
     draw: =>
       [@width, @height] = @available_size()
 

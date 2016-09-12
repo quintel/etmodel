@@ -144,15 +144,17 @@ D3.mekko =
         .attr('class', 'sector_label')
         .attr('transform', "translate(0, #{@label_offset})")
 
-      sector_group.append("svg:line")
+      @svg.selectAll(".sector_line")
+        .data(@sector_list.models, (d) -> d.get 'key' )
+        .enter().append("svg:line")
         .attr('class', 'sector_line')
         .attr("stroke-width", "1px")
         .attr("fill", "none")
         .attr("stroke", "#000000")
         .attr("x1", 0)
         .attr("x2", 0)
-        .attr("y1", -25)
-        .attr("y2", -5)
+        .attr("y1", @label_offset - 25)
+        .attr("y2", @label_offset - 2)
 
       sector_label = sector_group.append("svg:text")
         .attr("text-anchor", "end")
@@ -203,7 +205,7 @@ D3.mekko =
       average_width = @x(total_value / @sector_list.models.length)
 
       sector_label = @svg.selectAll("g.sector_label")
-        .data(@sector_list.models, (d) -> d.get 'key' )
+        .data(@sector_list.models, (d, i) -> d.get 'key' )
         # .transition().duration(500)
         .attr('transform', (d) => "translate(#{@x(d.total_value() / 2)}, #{@label_offset})")
         .select('text')
@@ -276,7 +278,6 @@ D3.mekko =
 
             d3.select(label)
               .attr('transform', 'translate('+ el.translate + ')')
-              .attr('data-moved', el.translate[0])
 
           # The current label becomes prevLabel in the next iteration.
           return label
@@ -291,15 +292,20 @@ D3.mekko =
         previous.left - current.right if previous.left < current.right
 
     moveArrows: =>
-      @svg.selectAll('g.sector').each(() ->
-        scope = d3.select(this)
-        moved = scope.select('g.sector_label').attr('data-moved')
+      x = @x
+      offset = 0
 
-        if moved
-          scope.select('line').attr('x1', () ->
-            -(moved - (scope.select('rect').attr('width') / 2.0))
-          )
-      )
+      d3.selectAll('line.sector_line').each (d, i) ->
+        total  = x(d.total_value())
+        moveX2 = offset + d3.transform(d3.select($('g.sector_label')[i])
+          .attr('transform'))
+          .translate[0]
+
+        offset += total
+
+        d3.select(this)
+          .attr('x1', offset - (total / 2))
+          .attr('x2', moveX2)
 
 # Pseudo-collection of nodes
 #

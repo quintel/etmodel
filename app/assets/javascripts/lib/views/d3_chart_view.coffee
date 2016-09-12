@@ -79,39 +79,32 @@ class @D3ChartView extends BaseChartView
 
 
   # Builds a standard legend. Options hash:
-  # - svg: SVG container (required)
   # - series: array of series. The label might be its 'label' attribute or its
   #           'key' attribute, which is translated with I18n.js
   # - columns: number of columns (default: 1)
   # - left_margin: (default: 10)
-  # - vertical_offset: equivalent to top margin (default: 0)
   #
   draw_legend: (opts = {}) =>
     opts.columns         = opts.columns || 1
     opts.left_margin     = opts.left_margin || 10
-    opts.vertical_offset = opts.vertical_offset || 0
-    legend_margin        = opts.width / opts.columns
+    legend_item_width    = (opts.width - opts.left_margin) / opts.columns
 
-    legend = opts.svg.append('svg:g')
-      .attr("transform", "translate(#{opts.left_margin},#{opts.vertical_offset})")
-      .selectAll("svg.legend")
+    legend = d3.select(@container_selector())
+      .append('div')
+      .attr("class", "legend")
+      .style("margin-left", "#{ opts.left_margin + @margins.left }px")
+      .selectAll(".legend-item")
       .data(opts.series)
       .enter()
-      .append("svg:g")
-      .attr("class", "legend")
-      .attr("transform", (d, i) =>
-        x = legend_margin * (i % opts.columns)
-        y = Math.floor(i / opts.columns) * @legend_cell_height
-        "translate(#{x}, #{y})")
-      .attr("height", 30)
-      .attr("width", 90)
-    legend.append("svg:rect")
-      .attr("width", 10)
-      .attr("height", 10)
-      .attr("fill", (d) => d.get 'color')
-    legend.append("svg:text")
-      .attr("x", 15)
-      .attr("y", 10)
+      .append("div")
+      .attr("class", "legend-item")
+      .style('width', "#{ legend_item_width }px")
+
+    legend.append("span")
+      .attr('class', 'rect')
+      .style("background-color", (d) => d.get 'color')
+
+    legend.append("span")
       .text((d) ->
         d.get('label') || I18n.t("output_element_series.#{d.get('key')}")
       )

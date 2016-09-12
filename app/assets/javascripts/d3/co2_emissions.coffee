@@ -38,7 +38,7 @@ D3.co2_emissions =
       legend_margin = 20
       @series_height = @height - legend_height - legend_margin
 
-      @svg = @create_svg_container @width, @height, @margins
+      @svg = @create_svg_container @width, @series_height, @margins
 
       # Ugly stuff. Check the db to see which series have been defined.
       # Since this chart is very specific the series could actually be

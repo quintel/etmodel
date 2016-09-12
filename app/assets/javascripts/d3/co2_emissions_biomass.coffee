@@ -50,13 +50,13 @@ D3.co2_emissions_biomass =
       legend_margin = 20
       @series_height = @height - legend_height - legend_margin
 
-      @svg = @create_svg_container @width, @height, @margins
+      @svg = @create_svg_container @width, @series_height, @margins
 
       # Ugly stuff. Check the db to see which series have been defined.
       # Since this chart is very specific the series could actually be
       # hard-coded
       series_for_legend = [
-        @serie_1990, 
+        @serie_1990,
         @serie_gas_present,
         @serie_domestic,
         @serie_liquid_present,
@@ -283,7 +283,7 @@ D3.co2_emissions_biomass =
               <td class='novalue'>&mdash;</td>
               <td class='novalue'>&mdash;</td>
             </tr>
-            
+
             <tr>
               <th>#{I18n.t('output_element_series.co2_emission_local_production')}</th>
               <td class='novalue'>&mdash;</td>
@@ -328,12 +328,12 @@ D3.co2_emissions_biomass =
             <tr>
               <th>#{I18n.t('output_element_series.total')}</th>
               <td>#{formatter(@serie_1990.safe_future_value())}</td>
-              <td>#{formatter(@serie_domestic.safe_present_value() + 
+              <td>#{formatter(@serie_domestic.safe_present_value() +
                                 @serie_imported.safe_present_value() +
                                 @serie_gas_present.safe_present_value() +
                                 @serie_liquid_present.safe_present_value() +
                                 @serie_solid_present.safe_present_value())}<br/></td>
-              <td>#{formatter(@serie_domestic.safe_future_value() + 
+              <td>#{formatter(@serie_domestic.safe_future_value() +
                                 @serie_imported.safe_future_value() +
                                 @serie_gas_future.safe_future_value() +
                                 @serie_liquid_future.safe_future_value() +

@@ -205,7 +205,7 @@ D3.mekko =
       average_width = @x(total_value / @sector_list.models.length)
 
       sector_label = @svg.selectAll("g.sector_label")
-        .data(@sector_list.models, (d, i) -> d.get 'key' )
+        .data(@sector_list.models, (d) -> d.get 'key' )
         # .transition().duration(500)
         .attr('transform', (d) => "translate(#{@x(d.total_value() / 2)}, #{@label_offset})")
         .select('text')
@@ -293,19 +293,22 @@ D3.mekko =
 
     moveArrows: =>
       x = @x
-      offset = 0
+      sector_offset = 0
+      sector_labels = @svg.selectAll('g.sector_label')
 
-      d3.selectAll('line.sector_line').each (d, i) ->
-        total  = x(d.total_value())
-        moveX2 = offset + d3.transform(d3.select($('g.sector_label')[i])
+      @svg.selectAll('line.sector_line').each (d, i) ->
+        width   = x(d.total_value())
+        label_x = d3.transform(d3.select(sector_labels[0][i])
           .attr('transform'))
           .translate[0]
 
-        offset += total
+        x2 = sector_offset + label_x
+
+        sector_offset += width
 
         d3.select(this)
-          .attr('x1', offset - (total / 2))
-          .attr('x2', moveX2)
+          .attr('x1', sector_offset - (width / 2))
+          .attr('x2', x2)
 
 # Pseudo-collection of nodes
 #

@@ -19,6 +19,8 @@
 #
 
 class OutputElement < ActiveRecord::Base
+  MENU_ORDER = %w(Overview Merit Cost Supply Demand Policy FCE)
+
   include AreaDependent
 
   has_many :output_element_series, ->{ order(:order_by) }, :dependent => :destroy
@@ -103,7 +105,7 @@ class OutputElement < ActiveRecord::Base
     all.reject(&:area_dependent).
         reject(&:block_chart?).
         reject(&:not_allowed_in_this_area).
-        sort_by{|c| I18n.t "output_elements.#{c.key}"}
+        sort_by{|c| MENU_ORDER.index(c.group) || -1 }
   end
 
   def allowed_output_element_series

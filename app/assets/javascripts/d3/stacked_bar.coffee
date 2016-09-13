@@ -135,6 +135,8 @@ D3.stacked_bar =
       @y = @y.domain([0, tallest]).nice()
       @inverted_y = @inverted_y.domain([0, tallest]).nice()
 
+      @y_axis.tickFormat(@main_formatter())
+
       # animate the y-axis
       @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@inverted_y))
 

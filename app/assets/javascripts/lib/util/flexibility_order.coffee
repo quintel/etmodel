@@ -23,7 +23,6 @@ class @FlexibilityOrder
       url: @url('get')
       type: 'GET'
       success: (data) =>
-        console.log @element
         Sortable.create @element,
           ghostClass: 'ghost'
           animation: 150

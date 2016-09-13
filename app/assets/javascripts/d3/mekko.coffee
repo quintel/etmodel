@@ -88,18 +88,18 @@ D3.mekko =
       legend_columns = if @carrier_list.length > 9 then 3 else 2
       legend_rows = @carrier_list.length / legend_columns
       legend_height = legend_rows * @legend_cell_height
-      label_height = 80 # rotated labels
+      @label_height = 80 # rotated labels
       @label_margin = 25
 
-      @series_height  = @height - legend_height - label_height - @label_margin
+      @series_height  = @height - legend_height - @label_height - @label_margin
       @label_offset   = @series_height + @label_margin
 
-      @svg = @create_svg_container @width, @series_height + label_height, @margins
+      @svg = @create_svg_container @width, @series_height + @label_height, @margins
 
       @draw_legend
         series: @carrier_list.models
         width: @width
-        vertical_offset: @series_height + label_height
+        vertical_offset: @series_height + @label_height
         columns: legend_columns
 
       @x = d3.scale.linear().range([0, @width])
@@ -239,8 +239,40 @@ D3.mekko =
         )
         .attr("data-tooltip-text", (d) => @main_formatter()(d.val()))
 
+      @wrapLabels()
       @arrangeLabels()
       @moveArrows()
+
+    wrapLabels: =>
+      label_height = @label_height
+
+      @svg.selectAll("tspan.key").each((d) ->
+        el         = d3.select(this)
+        words      = el.text().split(/\s+/).reverse()
+        line       = []
+        lineNumber = 0
+        lineHeight = 1.1
+        y          = el.attr('y')
+
+        el.text(null)
+          .attr("x", 0)
+          .attr("y", y)
+          .attr("dy", "0em")
+
+        while word = words.pop()
+          line.push(word)
+          el.text(line.join(' '))
+
+          if el.node().getComputedTextLength() > label_height
+            line.pop()
+            el.text(line.join(' '))
+            line = [word]
+            el   = el.insert("tspan", "tspan + *")
+                     .attr("x", 0)
+                     .attr("y", y)
+                     .attr("dy", ++lineNumber * lineHeight + "em")
+                     .text(word)
+      )
 
     # Arranges the labels for each sector so that no labels overlap.
     #

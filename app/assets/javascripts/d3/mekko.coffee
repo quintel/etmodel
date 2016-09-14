@@ -292,7 +292,7 @@ D3.mekko =
       transform  = d3.transform(@svg.attr('transform')).translate[1] / 2
 
       if g_height > (svg_height - transform)
-        d3.select(real_svg).style('height', g_height + transform)
+        real_svg.setAttribute('height', g_height + transform)
 
     # Arranges the labels for each sector so that no labels overlap.
     #

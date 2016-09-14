@@ -239,7 +239,13 @@ D3.mekko =
         )
         .attr("data-tooltip-text", (d) => @main_formatter()(d.val()))
 
-      @wrapLabels()
+      if ! @has_wrapped_labels
+        # The first time the chart is loaded, adjust labels to wrap long text
+        # and increase height.
+        @wrapLabels()
+        @fitHeightToLabels()
+        @has_wrapped_labels = true
+
       @arrangeLabels()
       @moveArrows()
 
@@ -273,6 +279,20 @@ D3.mekko =
                      .attr("dy", ++lineNumber * lineHeight + "em")
                      .text(word)
       )
+
+    # Increase the height of the SVG element to fit the largest unwrapped label.
+    fitHeightToLabels: ->
+      # @svg is actually the <g> element...
+      real_svg   = @svg.node().parentNode
+      svg_height = real_svg.getBoundingClientRect().height
+      g_height   = @svg.node().getBoundingClientRect().height
+
+      # Need to adjust the height for the transform of the <g> element. Only the
+      # transform from the top of the element matters.
+      transform  = d3.transform(@svg.attr('transform')).translate[1] / 2
+
+      if g_height > (svg_height - transform)
+        d3.select(real_svg).style('height', g_height + transform)
 
     # Arranges the labels for each sector so that no labels overlap.
     #

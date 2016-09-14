@@ -60,10 +60,14 @@ module ApplicationHelper
 
   def is_beta?
     request.host_with_port =~ /beta/
+    true
   end
 
   def domain
-    request.host_with_port.gsub('beta.','').gsub('pro.','')
+    request.host_with_port
+      .gsub('beta.','')
+      .gsub('pro.','')
+      .gsub('beta-pro.', '')
   end
 
   def information_links

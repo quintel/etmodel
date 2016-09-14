@@ -65,9 +65,9 @@ module ApplicationHelper
 
   def domain
     request.host_with_port
-      .gsub('beta.','')
-      .gsub('pro.','')
-      .gsub('beta-pro.', '')
+      .gsub(/\Abeta\./,'')
+      .gsub(/\Apro\./,'')
+      .gsub(/\Abeta-pro\./, '')
   end
 
   def information_links

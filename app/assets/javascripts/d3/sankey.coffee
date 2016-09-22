@@ -1,5 +1,33 @@
 D3.sankey =
   charts:
+    co2_sankey:
+      data:
+        nodes: [
+          {id: 'coal',                      column: 0, label: 'coal',             color: '#252525'},
+          {id: 'gas',                      column: 0, label: 'gas',             color: '#416B86'},
+          {id: 'oil',                      column: 0, label: 'oil',             color: '#854321'},
+          {id: 'households',                      column: 1, label: 'households'},
+          {id: 'buildings',                      column: 1, label: 'buildings'},
+          {id: 'transport',                       column: 1, label: 'transport'},
+          {id: 'industry',                        column: 1, label: 'industry',               color: '#854321'},
+          {id: 'refinery',                        column: 1, label: 'refinery',               color: '#854321'},
+          {id: 'agriculture',                      column: 1, label: 'agriculture'},
+          {id: 'other',                           column: 1, label: 'other'},
+          {id: 'export',                          column: 1, label: 'export'},
+          {id: 'emitted',                          column: 2, label: 'emitted',      color: '#d62728'},
+          {id: 'captured',                          column: 2, label: 'captured',      color: '#416B86'}
+        ]
+        links: [
+          {left: 'coal',                    right: 'households',                 gquery: 'households_coal_total_in_co2_sankey', color: '#252525'},
+          {left: 'gas',                    right: 'households',                 gquery: 'households_gas_total_in_co2_sankey', color: '#416B86'},
+          {left: 'oil',                    right: 'households',                 gquery: 'households_oil_total_in_co2_sankey', color: '#854321'},
+          {left: 'coal',                    right: 'transport',                 gquery: 'transport_coal_total_in_co2_sankey', color: '#252525'},
+          {left: 'gas',                    right: 'transport',                 gquery: 'transport_gas_total_in_co2_sankey', color: '#416B86'},
+          {left: 'oil',                    right: 'transport',                 gquery: 'transport_oil_total_in_co2_sankey', color: '#854321'},
+          {left: 'households',                      right: 'emitted',      gquery: 'households_emitted_in_co2_sankey', color: '#8B0000'},
+          {left: 'transport',                      right: 'emitted',    gquery: 'transport_emitted_in_co2_sankey', color: '#8B0000'},
+          {left: 'transport',                      right: 'captured',    gquery: 'gasoline_refinery_to_distribution_in_sankey', color: '#8B0000'}
+        ]
     sankey:
       data:
         nodes: [

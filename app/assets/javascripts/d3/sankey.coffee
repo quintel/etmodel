@@ -447,12 +447,6 @@ D3.sankey =
             g.append('svg:stop').attr('offset', '100%').attr('style', 'stop-color:rgb(250,0,0);stop-opacity:0.0')
       )
 
-    # Internal: Returns a function which will format values for the "main" axis
-    # of the chart.
-    main_formatter: =>
-      # Scale by the largest link value.
-      @create_scaler(@max_series_value(), 'PJ', precision: 2)
-
     max_series_value: ->
       _.max(_.map(@link_list, (link) -> link.value()))
 

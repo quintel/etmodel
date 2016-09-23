@@ -407,7 +407,7 @@ D3.sankey =
       @link_list = _.map D3.sankey.charts[k].data.links, (l) =>
         new D3.sankey.Link(_.extend l, view: this)
 
-      @value_formatter = (x) -> @main_formatter()(x)
+      @value_formatter = (x) -> @main_formatter(maxFrom: 'maxValue')(x)
 
       @initialize_defaults()
 

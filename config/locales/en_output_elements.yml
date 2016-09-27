@@ -10,6 +10,7 @@ en:
     fce: "Fuel chain emissions"
     merit: "Merit order and flexibility"
   output_elements:
+    co2_sankey: "Sankey diagram of energetic on-the-spot CO<sub>2</sub> emissions"
     common:
       total: "Total"
       old_browser: "Sorry! This chart is not supported by your browser. Please use Google Chrome, Firefox or Safari or Internet Explorer version 9 or higher."
@@ -74,15 +75,20 @@ en:
       a_double: "Increased renewables"
     import_export_flows: "Interconnection capacity"
     sankey_labels:
+      captured: "captured"
       coal: "coal"
+      coal_households: "coal for households"
       oil: "oil"
+      oil_households: "oil for households"
       renewable: "renewable"
       gas: "gas"
+      gas_households: "gas for households"
       hydrogen: "hydrogen"
       uranium: "uranium"
       biomass_waste: "biomass & waste"
       electricity_import: "electricity import"
       electricity_production: "electricity production"
+      emitted: "emitted"
       CHPs: "CHPs"
       households: "households"
       buildings: "buildings"
@@ -112,7 +118,7 @@ en:
       distribution_kerosene: "kerosene"
       distribution_oil_products: "oil products"
       distribution_refinery_gas: "refinery gas"
-      energy: "energy"
+      energy: "power"
     tables:
       merit_order:
         available_capacity: "Available capacity"

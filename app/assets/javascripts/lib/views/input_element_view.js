@@ -141,6 +141,22 @@
     BODY_HIDE_EVENT = true;
   };
 
+  /**
+   * Adjusts the step value of a slider in the event that the default step is
+   * far to small to be useful.
+   *
+   * This is only ~100px available to the slider, therefore having more than 100
+   * discrete steps available to select is usless.
+   */
+  function smartStep(model) {
+    var min = model.get('min_value'),
+        max = model.get('max_value'),
+        step = model.get('step_value'),
+        perPixel = (max - min) / 100;
+
+    return (perPixel > (step * 1.5)) ? perPixel : step;
+  }
+
   // # UnitConversion --------------------------------------------------------
 
   function UnitConversion (data, originalPrecision) {
@@ -573,11 +589,9 @@
       }
 
       if (isIncreasing) {
-        this.quinn.setTentativeValue(
-          initialValue + this.model.get('step_value'));
+        this.quinn.setTentativeValue(initialValue + smartStep(this.model));
       } else {
-        this.quinn.setTentativeValue(
-          initialValue - this.model.get('step_value'));
+        this.quinn.setTentativeValue(initialValue - smartStep(this.model));
       }
 
       initialValue = this.quinn.model.value;

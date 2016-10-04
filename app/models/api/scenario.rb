@@ -5,6 +5,7 @@ class Api::Scenario < ActiveResource::Base
     'Watt Nu?! 2013',
     'Watt Nu?! 2012',
     'EC2013',
+    'Regional',
     :rest,
     nil
   ].freeze

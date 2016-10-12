@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://etengine.dev/api/v3//scenarios/123,123/batch
+    uri: https://beta-engine.energytransitionmodel.com/api/v3//scenarios/123,123/batch
     body:
       encoding: US-ASCII
       string: ''
@@ -12,30 +12,38 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx/1.8.1
+      Date:
+      - Wed, 12 Oct 2016 08:57:32 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Status:
+      - 200 OK
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
-      Content-Type:
-      - application/json; charset=utf-8
       Etag:
-      - '"2f4994ada4599df35cc428c24b89393f"'
+      - '"89df814962f652f78956f11ab7bcfeb0"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - a77b6c0b-b4ff-4587-9a05-11212fdee88d
+      - 771c9275-5656-4533-bfad-977859cdaa68
       X-Runtime:
-      - '0.017733'
-      Date:
-      - Wed, 12 Oct 2016 08:36:10 GMT
-      Connection:
-      - close
+      - '0.016927'
     body:
       encoding: UTF-8
-      string: '[{"id":123,"title":"Martinus scenario run","area_code":"nl","start_year":2013,"end_year":2030,"url":"http://etengine.dev/api/v3/scenarios/123","ordering":null,"display_group":null,"scaling":null,"source":null,"template":null,"created_at":"2010-06-14T17:23:00.000+02:00"},{"id":123,"title":"Martinus
-        scenario run","area_code":"nl","start_year":2013,"end_year":2030,"url":"http://etengine.dev/api/v3/scenarios/123","ordering":null,"display_group":null,"scaling":null,"source":null,"template":null,"created_at":"2010-06-14T17:23:00.000+02:00"}]'
+      string: '[{"id":123,"title":"Martinus scenario run","area_code":"nl","start_year":2013,"end_year":2030,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/123","ordering":null,"display_group":null,"scaling":null,"source":null,"template":null,"created_at":"2010-06-14T17:23:00.000+02:00"},{"id":123,"title":"Martinus
+        scenario run","area_code":"nl","start_year":2013,"end_year":2030,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/123","ordering":null,"display_group":null,"scaling":null,"source":null,"template":null,"created_at":"2010-06-14T17:23:00.000+02:00"}]'
     http_version: 
-  recorded_at: Wed, 12 Oct 2016 08:36:10 GMT
+  recorded_at: Wed, 12 Oct 2016 08:57:31 GMT
 recorded_with: VCR 2.4.0

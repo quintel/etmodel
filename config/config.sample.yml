@@ -2,11 +2,11 @@ development: &DEV
     # base url for api requests. This is used when CORS is enabled
     # (which is the default) or when the rails application runs a
     # local rack-based AJAX proxy
-    api_url: http://beta.et-engine.com
+    api_url: https://beta-engine.energytransitionmodel.com
 
     # URL for the ETMoses application. ETMoses and testing ground features are
     # presently supported only when "api_url" is "http://beta.et-engine.com".
-    etmoses_url: http://beta.moses.et-model.com
+    etmoses_url: https://beta-moses.energytransitionmodel.com
 
     # This sets the url we use as API proxy. The proxying is handled
     # by nginx or a local rack-based proxy
@@ -14,7 +14,7 @@ development: &DEV
 
     # base url for partners api. This is used to retrieve the partner
     # names and such that are visible in the footer.
-    partners_url: http://et-model.com
+    partners_url: https://energytransitionmodel.com
 
     # google analytics key
     ga_tracker_code: 123456
@@ -27,7 +27,7 @@ development: &DEV
 
     # URL that shows the gquery details (used on the charts admin page)
     # the gquery key is appended to the url
-    gquery_detail_url: http://et-engine.com/data/latest/gqueries/key/
+    gquery_detail_url: https://beta-engine.energytransitionmodel.com/data/latest/gqueries/key/
 
     # set to true if you want a "production server" warning in the admin section
     live_server: false
@@ -47,5 +47,6 @@ test:
     # set to true to pipe requests through the local proxy
     standalone: true
     etmoses_url: http://localhost:3002
+    api_url: https://beta-engine.energytransitionmodel.com
 staging:
     <<: *PRODUCTION

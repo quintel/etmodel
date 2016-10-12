@@ -28,7 +28,7 @@ describe Setting do
     end
   end
 
-  describe "Setting.default" do
+  describe "Setting.default", vcr: true do
     it "should return a new Setting with default_values" do
       # twice: once in default and once in initialize
       setting = Setting.default
@@ -74,7 +74,7 @@ describe Setting do
     end
   end
 
-  describe "#reset!" do
+  describe "#reset!", vcr: true do
     before do
       @random_attributes = Setting.default_attributes.clone
       @random_attributes.each do |key, value|

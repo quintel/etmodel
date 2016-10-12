@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe SettingsController do
-  describe 'on PUT /settings' do
+  describe 'on PUT /settings', vcr: true do
     it "should update individual settings" do
       put :update, :format => :json, :use_fce => 1
       response.should be_success

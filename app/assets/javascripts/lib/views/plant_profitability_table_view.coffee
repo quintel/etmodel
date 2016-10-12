@@ -61,14 +61,14 @@ class @PlantProfitabilityTableView extends HtmlTableChartView
     energy_power_nuclear_gen2_uranium_oxide: 'nuclear_ii'
     energy_power_nuclear_gen3_uranium_oxide: 'nuclear_iii'
     energy_power_supercritical_coal: 'coal_conv'
-    energy_power_engine_network_gas: 'gas_engine'
     energy_power_turbine_network_gas: 'gas_turbine'
     energy_power_ultra_supercritical_ccs_coal: 'coal_pwd_ccs'
     energy_power_ultra_supercritical_coal: 'coal_pwd'
     energy_power_ultra_supercritical_cofiring_coal: 'coal_pwd_cofiring'
     energy_power_ultra_supercritical_crude_oil: 'oil_plant'
     energy_power_ultra_supercritical_lignite: 'lignite'
-    energy_power_ultra_supercritical_network_gas: 'gas_conv'
+    energy_power_ultra_supercritical_network_gas: 'gas_conv',
+    energy_chp_ultra_supercritical_cofiring_coal: 'coal_chp_cofiring'
 
   # Sort by two fields
   #

@@ -4,14 +4,18 @@ describe Setting do
   before  { @setting = Setting.new }
   subject { @setting }
 
+  let(:defaults) do
+    Setting.default_attributes.merge(start_year: @setting.area.analysis_year)
+  end
+
   describe "#new" do
     context "defaults", vcr: true do
       before do
         @setting = Setting.new
       end
       subject { @setting }
-      Setting.default_attributes.each do |key, default|
-        its(key) { should == default }
+      Setting.default_attributes.each_key do |key|
+        its(key) { should == defaults[key] }
       end
     end
     context "other settings" do
@@ -30,8 +34,8 @@ describe Setting do
       setting = Setting.default
       setting.class.should == Setting
 
-      Setting.default_attributes.each do |key, default|
-        setting[key].should == default
+      Setting.default_attributes.each_key do |key|
+        setting[key].should == defaults[key]
       end
     end
   end
@@ -80,8 +84,8 @@ describe Setting do
     end
     it "should reset all attributes to default values" do
       @setting.reset!
-      Setting.default_attributes.each do |key, value|
-        @setting.send(key).should eql(value)
+      Setting.default_attributes.each_key do |key|
+        @setting.send(key).should eql(defaults[key])
       end
     end
   end

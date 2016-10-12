@@ -17,11 +17,13 @@ class @PlantProfitabilityTableView extends HtmlTableChartView
       else
         'N/A'
       continue if values.capacity == 0
+
       items.push
         profitability: profitability
         key: key
         position: values.position
         capacity: values.capacity
+        availability: values.availability
         full_load_hours: values.full_load_hours
         profit_per_mwh_electricity: values.profit_per_mwh_electricity
         label: @series_labels[key] || key

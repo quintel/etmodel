@@ -35,7 +35,11 @@ VCR.configure do |c|
   c.ignore_localhost = true
   c.default_cassette_options = {
     :match_requests_on => [:uri, :method, :body],
-    :record => :new_episodes
+    # :once prevents recording new requests when a YAML file already exists
+    # matching the spec name. This prevents unintentional creation of new
+    # recorded requests. If you intend to record new requests, change this to
+    # :new_episodes, run the specs, then change it back to :once.
+    :record => :once
   }
   c.debug_logger = File.open Rails.root.join("log/vcr.log"), 'w'
 end

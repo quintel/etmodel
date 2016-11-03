@@ -30,7 +30,7 @@ The ETM pro is released under the [MIT License](LICENSE.txt).
 
 ## Dependencies
 
-* Ruby 1.9.3 or Ruby 2.0
+* Ruby 1.9.3, 2.1.2 or 2.3
 * Mysql database server
 
 ## Installing
@@ -42,12 +42,12 @@ The ETM pro is released under the [MIT License](LICENSE.txt).
   cp -vn config/config.sample.yml config/config.yml
   cp -vn config/email.sample.yml config/email.yml
   ```
+  * Probably set "standalone" to `true` in "config/config.yml"
 
 * Run `bundle install` to install all the dependencies
-* Create local database with `rake db:create`
-* Fill the database with `rake db:reset`
+* Create and fill local database with `rake db:setup` and `RAILS_ENV=test rake db:setup`
 * Fire up your local server with `rails server -p3000`
-* Got to [localhost:3000](http://localhost:3000) and you should see the ETM pro!
+* Go to [localhost:3000](http://localhost:3000) and you should see the ETM pro!
 
 ### Admin access
 

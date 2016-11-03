@@ -17,7 +17,7 @@ describe TestingGroundsController do
     end
 
     it "redirects to ETMoses" do
-      expect(response).to redirect_to("http://localhost:3002/testing_grounds/import?scenario_id=")
+      expect(response.redirect_url).to include("testing_grounds/import?scenario_id=")
     end
   end
 end

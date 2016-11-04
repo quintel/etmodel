@@ -4,7 +4,7 @@
 
     %dl
       - Constraint::GROUPS.each do |group|
-        %dt= t(:"constraint_groups.#{group}")
+        %dt= t(:"constraint_groups.#{group}").html_safe
 
         - constraints_for_group(group).reject(&:not_allowed_in_this_area).each do |constraint|
           %dd

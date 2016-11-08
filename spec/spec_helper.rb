@@ -32,7 +32,11 @@ VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
   c.hook_into :webmock
   c.configure_rspec_metadata!
-  c.ignore_localhost = true
+
+  # If running specs against local etengine server, it would otherwise not
+  # be noticed that cassettes might be missing (and that the server is local)
+  c.ignore_localhost = false
+
   c.default_cassette_options = {
     :match_requests_on => [:uri, :method, :body],
     # :once prevents recording new requests when a YAML file already exists

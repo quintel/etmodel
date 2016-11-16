@@ -1,3 +1,8 @@
+def system_v(cmd)
+  info "Execute '#{cmd}'"
+  system cmd
+end
+
 desc 'Copy database from the server to your local database'
 task db2local: ['deploy:set_rails_env'] do
   on roles(:app) do
@@ -21,18 +26,18 @@ task db2local: ['deploy:set_rails_env'] do
 
       credentials = [
         "--user=#{ username }",
-        password ? "-p #{ password }" : ''
+        password && "--password=#{ password }"
       ].compact.join(' ')
 
       info 'Importing database'
 
-      system "gunzip -f #{ filename }"
+      system_v "gunzip -f #{ filename }"
 
-      system "mysqladmin -f #{ credentials } drop #{ database }"
-      system "mysqladmin #{ credentials } create #{ database }"
-      system "mysql #{ credentials } #{ database } < #{ filename.chomp('.gz') }"
+      system_v "mysqladmin -f #{ credentials } drop #{ database }"
+      system_v "mysqladmin #{ credentials } create #{ database }"
+      system_v "mysql #{ credentials } #{ database } < #{ filename.chomp('.gz') }"
 
-      system "rm #{ filename.chomp('.gz') }"
+      system_v "rm #{ filename.chomp('.gz') }"
 
       info 'Finished importing database'
     end

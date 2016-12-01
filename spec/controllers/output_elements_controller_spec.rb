@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe OutputElementsController do
+describe OutputElementsController, vcr: true do
   render_views
 
   describe "#index" do

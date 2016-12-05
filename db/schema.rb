@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160705092705) do
+ActiveRecord::Schema.define(version: 20161205083459) do
 
   create_table "area_dependencies", force: true do |t|
     t.string  "dependent_on"
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 20160705092705) do
     t.boolean  "is_target_line"
     t.string   "target_line_position"
     t.string   "gquery",                           null: false
+    t.boolean  "is_1990"
   end
 
   add_index "output_element_series", ["output_element_id"], name: "index_output_element_series_on_output_element_id", using: :btree

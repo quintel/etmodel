@@ -118,10 +118,9 @@ class @Chart extends Backbone.Model
   #   [[2010,20.4],2040,210.4]]
   # ]
   results : (exclude_target) ->
-    series = if exclude_target
-      @non_target_series()
-    else
-      @series.toArray()
+    series = @non_target_series()
+    if !exclude_target
+      series.concat(@target_series)
 
     _(series).map (s) =>
       factor = if @get('precentage') then 100 else 1
@@ -137,6 +136,8 @@ class @Chart extends Backbone.Model
   # @return [Float] All possible values. Helpful to determine min/max values
   values : => _.flatten @value_pairs()
 
+  values_1990: => _.map @year_1990_series(), (s) -> s.safe_present_value()
+
   values_present: => _.map @non_target_series(), (s) -> s.safe_present_value()
 
   values_future:  => _.map @non_target_series(), (s) -> s.safe_future_value()
@@ -145,6 +146,7 @@ class @Chart extends Backbone.Model
 
   max_value: ->
     _.max([
+      @values_1990()...,
       @values_present()...,
       @values_future()...,
       @values_targets()...
@@ -152,6 +154,7 @@ class @Chart extends Backbone.Model
 
   max_series_value: ->
     _.max([
+      _.sum(@values_1990()),
       _.sum(@values_present()),
       _.sum(@values_future()),
       @values_targets()...
@@ -161,9 +164,11 @@ class @Chart extends Backbone.Model
   value_pairs: ->
     @series.map (s) -> [s.safe_present_value(), s.safe_future_value()]
 
-  non_target_series: -> @series.reject (s) -> s.get('is_target_line')
+  non_target_series: -> @series.reject (s) -> s.get('is_target_line') || s.get('is_1990')
 
   target_series: -> @series.select (s) -> s.get('is_target_line')
+
+  year_1990_series: -> @series.select (s) -> s.get('is_1990')
 
   format_value: (value) =>
     Metric.autoscale_value(value, @get('unit'), 2)

@@ -52,7 +52,7 @@ class @Chart extends Backbone.Model
       when 'mekko'
         if d3_support then D3.mekko.View else MekkoChartView
       when 'vertical_stacked_bar'
-        if d3_support then D3.stacked_bar.View else VerticalStackedBarChartView
+        D3.stacked_bar.View
       when 'line'
         if d3_support then D3.line.View else LineChartView
       when 'waterfall'

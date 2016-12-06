@@ -69,6 +69,12 @@ class @ChartList extends Backbone.Collection
   request_output_element: (chart_id, holder_id = null, options = {}) =>
     $.ajax
       url: "/output_elements/#{ chart_id }"
+      error: (jqXHR) ->
+        if jqXHR.status == 404
+          s = App.settings.get 'locked_charts'
+          delete s[holder_id]
+          App.settings.save locked_charts: s
+
       success: (data) =>
         holder_id = @add_container_if_needed(holder_id, options)
 
@@ -175,7 +181,23 @@ class @ChartList extends Backbone.Collection
           ignore_lock: true
         })
 
-    $.when.apply(null, @chart_requests).done((d) =>
+    # The @chart_requests are jqXHR objects returned by $.ajax().
+    # Here, we want to wait until all Ajax requests have returned, no matter
+    # their success. But Promise.all (and similar constructs like $.when)
+    # has a fast-failure feature if one of the requests fails.
+    # Hence, we have to wrap the jqXHRs in new Promises which will
+    # always return successfully - after all, we are not interested in the
+    # success of the requests anyways (since success is handled directly in
+    # callbacks to the Ajax calls).
+    Promise.all(@chart_requests.map((request) ->
+      # We pass the Promise's _resolve_ function to the outside so that
+      # we can call it in the request's _always_ callback and thereby resolve
+      # the Promise
+      p_resolve = null
+      promise = new Promise((resolve) -> p_resolve = resolve)
+      request.always -> p_resolve()
+      promise
+    )).then( =>
       App.call_api()
 
       for holder_id, chart of @chart_holders

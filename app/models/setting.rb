@@ -120,6 +120,10 @@ class Setting
     area.attributes[:has_fce]
   end
 
+  def derived_dataset?
+    area.base_dataset?
+  end
+
   # Returns the ActiveResource object
   def area
     @area = if scaling.present?

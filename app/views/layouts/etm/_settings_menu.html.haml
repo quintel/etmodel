@@ -3,9 +3,7 @@
   %ul
     - if has_active_scenario?
       %li
-        #flag
-          %img{src: icon_for_area_code(Current.setting.area_code), title: I18n.t(Current.setting.area_code), width: 16 }
-          = I18n.t(Current.setting.area_code) unless Current.setting.area_code.length == 2
+        #flag= current_area_info
         #{t "header.current_country"}:
       %li
         #year= Current.setting.end_year

@@ -13,8 +13,7 @@
         = t("header.settings")
         - if has_active_scenario?
           %span.scenario_info
-            %img{src: icon_for_area_code(Current.setting.area_code), title: I18n.t(Current.setting.area_code), width: 16 }
-            = I18n.t(Current.setting.area_code) unless Current.setting.area_code.length == 2
+            = current_area_info
             = Current.setting.end_year
       = render "layouts/etm/settings_menu"
 

@@ -34,11 +34,13 @@ class Api::Area < ActiveResource::Base
   ]
 
   def self.find_by_country_memoized(area_code)
-    areas = Rails.cache.fetch(:api_areas) do
+    all_by_area_code[area_code]
+  end
+
+  def self.all_by_area_code
+    Rails.cache.fetch(:api_areas) do
       all.index_by(&:area).with_indifferent_access
     end
-
-    areas[area_code]
   end
 
   def use_network_calculations?

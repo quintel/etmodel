@@ -60,10 +60,12 @@ class @Chart extends Backbone.Model
       when 'horizontal_stacked_bar' then HorizontalStackedBarChartView
       when 'grouped_vertical_bar'   then GroupedVerticalBarChartView
       when 'block'                  then BlockChartView
-      when 'co2_emissions'
-        if d3_support then D3.co2_emissions.View else CO2EmissionsChartView
+      # TODO Integrate into 'vertical_stacked_bar' like it was done
+      #      for 'co2_emissions' in #2283.
+      #      Problem here: Biomass chart contains series which are for
+      #      present or future only.
       when 'co2_emissions_biomass'
-        if d3_support then D3.co2_emissions_biomass.View else CO2EmissionsChartView
+        D3.co2_emissions_biomass.View
       when 'html_table'             then @table_view_factory()
       when 'scatter'
         if d3_support then D3.scatter.View else ScatterChartView

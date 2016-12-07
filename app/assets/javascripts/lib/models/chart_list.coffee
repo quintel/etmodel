@@ -40,7 +40,7 @@ class @ChartList extends Backbone.Collection
   load: (chart_id, holder_id = null, options = {}) =>
     if @should_load_chart(chart_id, holder_id, options)
       App.debug """Loading chart: ##{chart_id} in #{holder_id}
-                 #{window.location.origin}/admin/output_elements/#{chart_id}"""
+                 #{window.location.origin}/output_elements/#{chart_id}"""
 
       @chart_requests.push(@request_output_element(chart_id, holder_id, options))
 

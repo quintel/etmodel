@@ -40,7 +40,7 @@ module LayoutHelper
     content_tag :option, label.html_safe,
       :value => code,
       :selected => selected,
-      'data-earliest' => area[:analysis_year]
+      'data-earliest' => area[:analysis_year] + 1
   end
 
   def area_links
@@ -67,7 +67,7 @@ module LayoutHelper
     if area && (area.useable || admin?)
       { area_code: area.area,
         test: area.test?,
-        analysis_year: area.try(:analysis_year) || 2013 }
+        analysis_year: area.try(:analysis_year) || 2012 }
     end
   end
 

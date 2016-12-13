@@ -72,10 +72,8 @@ module LayoutHelper
   end
 
   def derived_dataset_choices
-    Api::Area.all_by_area_code.sort_by { |area, _| area }.map do |_, area|
-      if area.base_dataset?
-        area_choice(area)
-      end
+    Api::Area.derived_datasets.map do |area|
+      area_choice(area)
     end
   end
 

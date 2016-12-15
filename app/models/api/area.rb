@@ -44,7 +44,7 @@ class Api::Area < ActiveResource::Base
   end
 
   def self.derived_datasets
-    all_by_area_code.sort_by { |area_code, _| area_code }.map { |_, area| area }.find_all { |area| area.is_derived? }
+    all_by_area_code.sort.map(&:last).select(&:is_derived?)
   end
 
   def use_network_calculations?

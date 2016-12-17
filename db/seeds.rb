@@ -403,7 +403,8 @@ Constraint.create!([
   { :id => 10, :key => "loss_of_load", :created_at => "2011-12-02 11:30:00", :updated_at => "2012-01-30 13:56:33", :gquery_key => "dashboard_security_of_supply", :group => "import", :position => nil, :disabled => false },
   { :id => 11, :key => "renewable_electricity_percentage", :created_at => "2012-01-04 14:01:41", :updated_at => "2012-01-23 13:49:03", :gquery_key => "dashboard_share_of_renewable_electricity", :group => "renewable", :position => nil, :disabled => false },
   { :id => 12, :key => "employment", :created_at => "2012-03-14 08:18:01", :updated_at => "2012-03-14 14:59:32", :gquery_key => "dashboard_employment", :group => "costs", :position => nil, :disabled => false },
-  { :id => 13, :key => "profitability", :created_at => "2012-12-10 13:14:42", :updated_at => "2012-12-17 13:40:03", :gquery_key => "dashboard_profitability", :group => "costs", :position => nil, :disabled => false }
+  { :id => 13, :key => "profitability", :created_at => "2012-12-10 13:14:42", :updated_at => "2012-12-17 13:40:03", :gquery_key => "dashboard_profitability", :group => "costs", :position => nil, :disabled => false },
+  { :id => 14, :key => "renewable_percentage_households", :created_at => "2016-11-15 16:55:37", :updated_at => "2016-11-15 16:56:37", :gquery_key => "dashboard_renewability_households", :group => "renewable", :position => nil, :disabled => false }
 ])
 
 

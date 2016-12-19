@@ -11,6 +11,7 @@ Check the <a href='http://wiki.quintel.nl/index.php/Charts' target='_blank'>wiki
   = f.input :show_at_first, :hint => "Should the serie shown as default in the cost/block chart?"
   = f.input :is_target_line, :hint => "This sets a serie to be a target line and should be the last one of the series!! (a target line is the horizontal red line mostly used on barcharts )"
   = f.input :target_line_position, :hint => "This should be filled in when is_target_line is true, should be 1 if you want it placed on top of the 1st serie, 2 for the 2nd, etc.. See <a href='http://wiki.quintel.nl/index.php/Charts#Vertical_Stacked_Bar' target='_blank'>wiki</a> for more info".html_safe
+  = f.input :is_1990, :hint => "This sets a serie to be used for the 1990 column instead of the start year and end year columns. A chart automatically gets a 1990 column if at least one of its series has this flag."
 
   = f.simple_fields_for :area_dependency do |j|
     = j.input :dependent_on, :as => :select, :collection => Api::Area::DEPENDABLE_ATTRIBUTES, :hint => "When you dont want to show the serie for areas which have a certain setting. E.g. dont wanna show Solar CSP in NL? Put this to 'has_solar_csp' and be sure that for NL this value is false in the area data."

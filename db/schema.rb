@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 20161217095256) do
     t.boolean  "is_target_line"
     t.string   "target_line_position"
     t.string   "gquery",                           null: false
+    t.boolean  "is_1990"
   end
 
   add_index "output_element_series", ["output_element_id"], name: "index_output_element_series_on_output_element_id", using: :btree

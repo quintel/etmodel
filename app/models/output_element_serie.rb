@@ -31,7 +31,7 @@ class OutputElementSerie < ActiveRecord::Base
   include Colors
   include AreaDependent
 
-  
+
 
   belongs_to :output_element
   has_one :description, :as => :describable
@@ -66,7 +66,8 @@ class OutputElementSerie < ActiveRecord::Base
       :group => group, #used to group series
       :group_translated => group_translated, # used to display groups in mekkos's & horizontal_stacked_bar
       :is_target_line => is_target_line,
-      :target_line_position => target_line_position
+      :target_line_position => target_line_position,
+      :is_1990 => is_1990,
     }
   end
 

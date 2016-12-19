@@ -4,6 +4,11 @@ D3.stacked_bar =
     initialize: ->
       D3ChartView.prototype.initialize.call(this)
       @series = @model.series.models
+      # the stack method will filter the data and calculate the offset
+      # for every item
+      @stack_method = (columns) ->
+        _.flatten(columns.map (column) ->
+          d3.layout.stack().offset('zero')(column.map (item) -> [item]))
 
     can_be_shown_as_table: -> true
 
@@ -56,19 +61,16 @@ D3.stacked_bar =
         vertical_offset: @series_height + legend_margin
         columns: legend_columns
 
-      # the stack method will filter the data and calculate the offset for every
-      # item
-      @stack_method = d3.layout.stack().offset('zero')
-      stacked_data = _.flatten @stack_method(@prepare_data())
+      columns = @get_columns()
 
       @x = d3.scale.ordinal().rangeRoundBands([0, @width])
-        .domain([@start_year, @end_year])
+        .domain(columns)
 
       @bar_width = @x.rangeBand() * 0.5
 
       # show years
       @svg.selectAll('text.year')
-        .data([@start_year, @end_year])
+        .data(columns)
         .enter().append('svg:text')
         .attr('class', 'year')
         .text((d) -> d)
@@ -82,7 +84,7 @@ D3.stacked_bar =
 
       # there we go
       rect = @svg.selectAll('rect.serie')
-        .data(stacked_data, (s) -> s.id)
+        .data(@stack_method(@prepare_data()), (s) -> s.id)
         .enter().append('svg:rect')
         .attr('class', 'serie')
         .attr("width", @bar_width)
@@ -134,11 +136,7 @@ D3.stacked_bar =
 
     refresh: =>
       # calculate tallest column
-      tallest = Math.max(
-        _.sum(@model.values_future()),
-        _.sum(@model.values_present()),
-        _.max(@model.values_targets()) || 0
-      ) * 1.05
+      tallest = (@model.max_series_value() || 0) * 1.05
       # update the scales as needed
       @y = @y.domain([0, tallest]).nice()
       @inverted_y = @inverted_y.domain([0, tallest]).nice()
@@ -148,10 +146,8 @@ D3.stacked_bar =
       # animate the y-axis
       @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@inverted_y))
 
-      # let the stack method filter the data again, adding the offsets as needed
-      stacked_data = _.flatten @stack_method(@prepare_data())
       @svg.selectAll('rect.serie')
-        .data(stacked_data, (s) -> s.id)
+        .data(@stack_method(@prepare_data()), (s) -> s.id)
         .transition()
         .attr('y', (d) => @series_height - @y(d.y0 + d.y))
         .attr('height', (d) => @y(d.y))
@@ -171,23 +167,47 @@ D3.stacked_bar =
 
       # draw grid
 
+    get_columns: =>
+      result = [@start_year, @end_year]
+      if @model.year_1990_series().length
+        result.unshift(1990)
+      result
+
     # the stack layout method expects data to be in a precise format. We could
     # force the values() method but this way is simpler and cleaner.
     prepare_data: =>
-      @model.non_target_series().map (s) ->
-        [
+      year_1990 = []
+      @model.year_1990_series().forEach (s) ->
+        year_1990.push(
+          {
+            x: 1990
+            y: s.safe_present_value()
+            id: "#{s.get 'gquery_key'}_1990"
+            color: s.get('color')
+            label: s.get('label')
+          })
+
+      present = []
+      future = []
+      @model.non_target_series().forEach (s) ->
+        present.push(
           {
             x: App.settings.get('start_year')
             y: s.safe_present_value()
             id: "#{s.get 'gquery_key'}_present"
             color: s.get('color')
             label: s.get('label')
-          },
+          })
+        future.push(
           {
             x: App.settings.get('end_year')
             y: s.safe_future_value()
             id: "#{s.get 'gquery_key'}_future"
             color: s.get('color')
             label: s.get('label')
-          }
-        ]
+          })
+
+      result = [present, future]
+      if year_1990.length
+        result.unshift(year_1990)
+      result

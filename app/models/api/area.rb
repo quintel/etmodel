@@ -1,6 +1,12 @@
 class Api::Area < ActiveResource::Base
   self.site = "#{APP_CONFIG[:api_url]}/api/v3"
 
+  # Represents an optional nested "scaling" attribute within an Api::Area
+  class Scaling < ActiveResource::Base
+    self.prefix = Api::Area.prefix
+    self.site = Api::Area.site
+  end
+
   include Api::CommonArea
 
   # This list of attributes is used in the forms where you can set the

@@ -30,12 +30,6 @@ var Util = {
 
   timestamp:function() {
     return (new Date()).getTime();
-  },
-
-  makeUnselectable:function(el) {
-    el.bind('selectstart', function() {
-      return false;
-    });
   }
 }
 

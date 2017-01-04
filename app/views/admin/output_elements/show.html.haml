@@ -16,6 +16,7 @@
       %th.tal color
       %th Gquery
       %th.tal is_target_line
+      %th.tal is_1990
       %th Group
       %th Order
       %th
@@ -28,6 +29,7 @@
         %td{:style => "background: #{serie.color}"}= color_to_string(serie.color)
         %td= link_to serie.gquery, serie.url_in_etengine, :target => '_blank'
         %td= serie.is_target_line
+        %td= serie.is_1990
         %td= serie.group
         %td= serie.order_by
         %td

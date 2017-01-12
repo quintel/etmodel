@@ -61,15 +61,22 @@ protected
     Current.setting.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
     Current.setting.area_code = params[:area_code]
     Current.setting.preset_scenario_id = params[:preset_scenario_id]
-
-    if params[:scaling_attribute]
-      Current.setting.scaling = Api::Scenario.scaling_from_params(params)
-    end
+    Current.setting.scaling = assign_scaling(params)
 
     redirect_to play_path and return
   end
 
 public
+
+  def assign_scaling(params)
+    area = Api::Area.find_by_country_memoized(params[:area_code])
+
+    if params[:scaling_attribute]
+      Api::Scenario.scaling_from_params(params)
+    elsif area.derived?
+      area.scaling.attributes
+    end
+  end
 
   def update_footer
     render :partial => "layouts/etm/footer"

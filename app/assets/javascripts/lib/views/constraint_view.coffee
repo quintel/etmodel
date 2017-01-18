@@ -84,7 +84,7 @@ class @ConstraintView extends Backbone.View
         Metric.ratio_as_percentage(result)
       when 'bio_footprint'
         formatted = "#{Metric.round_number(result, 1)}x"
-        if App.settings.get('scaling')
+        if App.settings.get_scaling()
           formatted
         else
           "#{formatted}#{App.settings.country().toUpperCase()}"

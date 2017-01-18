@@ -61,20 +61,23 @@ protected
     Current.setting.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
     Current.setting.area_code = params[:area_code]
     Current.setting.preset_scenario_id = params[:preset_scenario_id]
-    Current.setting.scaling = assign_scaling(params)
+
+    assign_scaling_attributes(params)
 
     redirect_to play_path and return
   end
 
 public
 
-  def assign_scaling(params)
+  def assign_scaling_attributes(params)
     area = Api::Area.find_by_country_memoized(params[:area_code])
 
+    if area.derived?
+      Current.setting.area_scaling = area.scaling.attributes
+    end
+
     if params[:scaling_attribute]
-      Api::Scenario.scaling_from_params(params)
-    elsif area.derived?
-      area.scaling.attributes
+      Current.setting.scaling = Api::Scenario.scaling_from_params(params)
     end
   end
 

@@ -27,6 +27,7 @@ class Setting
       locked_charts:          {},
       last_etm_page:          nil,
       scaling:                nil,
+      area_scaling:           nil,
       preset_scenario_id:     nil,
       api_session_id:         nil
     }

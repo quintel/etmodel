@@ -8,6 +8,9 @@ class @Setting extends Backbone.Model
   # Always use PUT requests
   isNew : -> false
 
+  get_scaling: =>
+    @get('scaling') || @get('area_scaling')
+
   toggle_fce: (event) =>
     @set(use_fce: !! $(event.target).attr('checked'))
 

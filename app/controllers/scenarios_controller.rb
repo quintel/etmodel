@@ -108,11 +108,12 @@ class ScenariosController < ApplicationController
 
     Current.setting = Setting.load_from_scenario(@scenario)
 
-    if request.post? && params[:scaling_attribute]
-      scaling_attrs = Api::Scenario.scaling_from_params(params)
+    if request.post?
+      assign_scaling_attributes(params)
+    end
 
-      scenario_attrs.merge!(scale: scaling_attrs)
-      Current.setting.scaling = scaling_attrs
+    if Current.setting.scaling
+      scenario_attrs.merge!(scale: Current.setting.scaling)
     end
 
     new_scenario = Api::Scenario.create(scenario: { scenario: scenario_attrs })

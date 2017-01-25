@@ -84,6 +84,18 @@ protected
 
 private
 
+  def assign_scaling_attributes(params)
+    area = Api::Area.find_by_country_memoized(params[:area_code]) || Current.setting.area
+
+    if area.derived?
+      Current.setting.area_scaling = area.scaling.attributes
+    end
+
+    if params[:scaling_attribute]
+      Current.setting.scaling = Api::Scenario.scaling_from_params(params)
+    end
+  end
+
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
     @current_user_session = UserSession.find

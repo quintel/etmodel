@@ -62,9 +62,7 @@ protected
     Current.setting.area_code = params[:area_code]
     Current.setting.preset_scenario_id = params[:preset_scenario_id]
 
-    if params[:scaling_attribute]
-      Current.setting.scaling = Api::Scenario.scaling_from_params(params)
-    end
+    assign_scaling_attributes(params)
 
     redirect_to play_path and return
   end

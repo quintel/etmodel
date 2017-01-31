@@ -1,6 +1,12 @@
 class Api::Area < ActiveResource::Base
   self.site = "#{APP_CONFIG[:api_url]}/api/v3"
 
+  # Represents an optional nested "scaling" attribute within an Api::Area
+  class Scaling < ActiveResource::Base
+    self.prefix = Api::Area.prefix
+    self.site = Api::Area.site
+  end
+
   include Api::CommonArea
 
   # This list of attributes is used in the forms where you can set the
@@ -34,11 +40,17 @@ class Api::Area < ActiveResource::Base
   ]
 
   def self.find_by_country_memoized(area_code)
-    areas = Rails.cache.fetch(:api_areas) do
+    all_by_area_code[area_code]
+  end
+
+  def self.all_by_area_code
+    Rails.cache.fetch(:api_areas) do
       all.index_by(&:area).with_indifferent_access
     end
+  end
 
-    areas[area_code]
+  def self.derived_datasets
+    all_by_area_code.sort.map(&:last).select(&:derived?)
   end
 
   def use_network_calculations?

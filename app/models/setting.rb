@@ -27,6 +27,7 @@ class Setting
       locked_charts:          {},
       last_etm_page:          nil,
       scaling:                nil,
+      area_scaling:           nil,
       preset_scenario_id:     nil,
       api_session_id:         nil
     }
@@ -118,6 +119,10 @@ class Setting
 
   def allow_fce?
     area.attributes[:has_fce]
+  end
+
+  def derived_dataset?
+    area.derived?
   end
 
   # Returns the ActiveResource object

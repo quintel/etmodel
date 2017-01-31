@@ -12,7 +12,7 @@ class @InputElement extends Backbone.Model
   conversions: ->
     conversions = @get('conversions') or []
 
-    if App.settings.get('scaling') and Quantity.isSupported(@get('unit'))
+    if App.settings.get_scaling() and Quantity.isSupported(@get('unit'))
       base   = new Quantity(@get('start_value'), @get('unit'))
       scaled = base.smartScale()
 
@@ -74,7 +74,7 @@ class @InputElementList extends Backbone.Collection
         start_value: values.default
         label: if _.isObject(values.label) then values.label else null
 
-      if App.settings.get('scaling')
+      if App.settings.get_scaling()
         if ! i.get('step_value') || i.get('step_value') > values.step
           # When region scaling, the pre-defined input step is too large for
           # some inputs. We therefore use the values from ETEngine which

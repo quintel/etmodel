@@ -8,36 +8,72 @@ module LayoutHelper
     end
   end
 
-  def country_option(code, opts = {})
+  def current_area_name
+    code = Current.setting.area_code
+    I18n.t(code, default: code.humanize)
+  end
+
+  def current_area_info
+    area_name = current_area_name
+    capture_haml do
+      unless Current.setting.derived_dataset?
+        haml_tag 'img',
+          src: icon_for_area_code(Current.setting.area_code),
+          title: area_name,
+          width: 16
+      end
+      unless Current.setting.area_code.length == 2
+        haml_concat area_name
+      end
+    end
+  end
+
+  def country_option(area)
+    code = area[:area_code]
+
     selector = params[:country] || Current.setting.area_code
     selected = selector == code ? "selected='true'" : nil
 
-    label = I18n.t("country_select.#{ code }", default: I18n.t(code))
-    label += " (#{ I18n.t('new') })" if opts[:test]
+    label = I18n.t("country_select.#{ code }", default: [code.to_sym, code.humanize])
+    label += " (#{ I18n.t('new') })" if area[:test]
 
-    content_tag :option, label.html_safe, :value => code, :selected => selected,
-      'data-earliest' => opts[:earliest] || 2013
+    content_tag :option, label.html_safe,
+      :value => code,
+      :selected => selected,
+      'data-earliest' => area[:analysis_year] + 1
   end
 
   def area_links
-    [ area_choice('be'),
-      area_choice('fr'),
-      area_choice('de'),
-      area_choice('nl'),
-      area_choice('pl'),
-      area_choice('es'),
-      area_choice('uk'),
+    [ area_choice_from_code('be'),
+      area_choice_from_code('fr'),
+      area_choice_from_code('de'),
+      area_choice_from_code('nl'),
+      area_choice_from_code('pl'),
+      area_choice_from_code('es'),
+      area_choice_from_code('uk'),
       :separator,
-      area_choice('eu'),
-      area_choice('br')
+      area_choice_from_code('eu'),
+      area_choice_from_code('br'),
+      :separator,
+      *derived_dataset_choices,
     ].compact
   end
 
-  def area_choice(area_code)
-    area = Api::Area.find_by_country_memoized(area_code)
+  def area_choice_from_code(area_code)
+    area_choice(Api::Area.find_by_country_memoized(area_code))
+  end
 
+  def area_choice(area)
     if area && (area.useable || admin?)
-      { area_code: area_code }
+      { area_code: area.area,
+        test: area.test?,
+        analysis_year: area.try(:analysis_year) || 2012 }
+    end
+  end
+
+  def derived_dataset_choices
+    Api::Area.derived_datasets.map do |area|
+      area_choice(area)
     end
   end
 

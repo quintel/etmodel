@@ -26,9 +26,8 @@
         %a.save{:href => new_scenario_path}= t("header.save_scenario")
         %a#reset_scenario{:href => scenario_reset_path}= t("header.reset_scenario")
 
-    - if Current.setting.api_session_id.present?
-      %li.sep
-        = link_to t("header.show_graph"), et_engine_graph_url, target: "_blank"
+    %li.sep
+      = link_to t("header.show_graph"), '#', target: "_blank", id: "show_graph", class: 'wait', data: { url: et_engine_graph_url }
 
     - if controller_name != 'pages' && has_active_scenario?
       %li.sep

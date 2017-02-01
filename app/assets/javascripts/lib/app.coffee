@@ -179,13 +179,22 @@ class @AppView extends Backbone.View
   debug: (t) ->
     console.log(t) if globals.debug_js
 
-  disableIdDependantSettings: ->
-    $('#settings_menu a.save, #settings_menu a#reset_scenario').
+  disabledSettings: ->
+    '#settings_menu a.save,
+     #settings_menu a#reset_scenario,
+     #settings_menu a#show_graph'
+
+  disableIdDependantSettings: =>
+    $(@disabledSettings()).
       addClass('wait').on('click', disabledSetting)
 
-  enableIdDependantSettings: (args...) ->
-    $('#settings_menu a.save, #settings_menu a#reset_scenario').
-      removeClass('wait').off('click', disabledSetting)
+  enableIdDependantSettings: (args...) =>
+    $(@disabledSettings())
+      .removeClass('wait').off('click', disabledSetting)
+
+    $('#settings_menu a#show_graph').attr('href', ->
+      $(this).data('url').replace(/:id/, App.settings.get('api_session_id'))
+    )
 
   # TODO: Move this interface methods to a separate Interface class
   #

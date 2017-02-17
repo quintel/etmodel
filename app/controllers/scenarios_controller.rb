@@ -108,9 +108,7 @@ class ScenariosController < ApplicationController
 
     Current.setting = Setting.load_from_scenario(@scenario)
 
-    if request.post?
-      assign_scaling_attributes(params)
-    end
+    assign_scaling_attributes(params)
 
     if Current.setting.scaling
       scenario_attrs.merge!(scale: Current.setting.scaling)

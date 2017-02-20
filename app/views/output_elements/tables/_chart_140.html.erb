@@ -11,18 +11,18 @@
       </tr>
     </thead>
     <tbody>
-      <%% _.each(series, function(serie){ %>
-        <tr class="<%%= serie.profitability %>">
+      <% _.each(series, function(serie){ %>
+        <tr class="<%= serie.profitability %>">
           <td class="technology">
-            <%%= I18n.t("output_elements.tables.merit_order." + serie.label) %>
+            <%= I18n.t("output_elements.tables.merit_order." + serie.label) %>
           </td>
-          <td class="position"><%%= serie.position || '-' %></td>
-          <td><%%= Metric.autoscale_value(serie.capacity, 'MW') %></td>
-          <td><%%= Metric.autoscale_value(serie.availability, '%')%></td>
-          <td><%%= Metric.round_number(serie.full_load_hours, 0) %></td>
-          <td><%%= Metric.autoscale_value(serie.profit_per_mwh_electricity, 'euro', 0) %></td>
+          <td class="position"><%= serie.position || '-' %></td>
+          <td><%= Metric.autoscale_value(serie.capacity, 'MW') %></td>
+          <td><%= Metric.autoscale_value(serie.availability, '%')%></td>
+          <td><%= Metric.round_number(serie.full_load_hours, 0) %></td>
+          <td><%= Metric.autoscale_value(serie.profit_per_mwh_electricity, 'euro', 0) %></td>
         </tr>
-      <%% }) %>
+      <% }) %>
     </tbody>
     <tfoot>
       <tr>

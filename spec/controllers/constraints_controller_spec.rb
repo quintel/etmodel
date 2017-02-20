@@ -1,13 +1,12 @@
 require 'spec_helper'
 
-describe ConstraintsController do
-  render_views
+describe ConstraintsController, type: :controller do
   describe "on GET show" do
     let(:constraint) { FactoryGirl.create :constraint, :key => 'total_primary_energy' }
 
-    before { get :show, :id => constraint.id }
+    let(:response) { get(:show, id: constraint.id) }
 
-    it { should respond_with(:success) }
-    it { should render_template(:show) }
+    it { expect(response).to be_success }
+    it { expect(response).to render_template(:show) }
   end
 end

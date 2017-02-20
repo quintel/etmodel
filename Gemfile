@@ -3,23 +3,23 @@ source 'http://gems.github.com'
 
 ruby '2.3.1'
 
-gem 'rails', '~> 4.1.0'
+gem 'rails', '~> 5.0.1'
 gem 'activerecord-session_store'
-gem 'activeresource'
+gem 'activeresource', github: 'rails/activeresource', branch: 'master'
 
-gem 'jquery-rails', "~> 2.0.2"
+gem 'jquery-rails', "~> 4.2.2"
 gem 'haml', '~>4.0'
 gem 'authlogic'
 gem 'bcrypt' # binarylogic/authlogic#405
 gem 'scrypt' # binarylogic/authlogic#405
 gem 'httparty'
-gem 'tabs_on_rails', '~>2.1.1'
-gem 'kaminari', '~> 0.13.0'
+gem 'tabs_on_rails', '~> 3.0'
+gem 'kaminari', '~> 1.0.1'
 gem 'simple_form'
 gem 'nokogiri', '~> 1.6'
 gem 'redcarpet'
 gem 'font-awesome-rails'
-gem 'non-stupid-digest-assets', github: 'wtfiwtz/non-stupid-digest-assets', ref: '9c8f1a94'
+gem 'non-stupid-digest-assets'
 
 # javascript
 # Change back to RubyGems once Invalid Byte Sequence error is fixed:
@@ -40,14 +40,13 @@ gem 'dynamic_form'
 # When working on the plugin, use :path => '/path/to/etplugin'
 # gem "jquery-etmodel-rails", :path => "~/Sites/etplugin"
 gem 'jquery-etmodel-rails', ref: 'c668ad4', github: 'quintel/etplugin'
-gem 'jquery-qtip2-rails'
 
 group :development do
   gem 'spring'
   gem 'tomdoc'
   gem 'yard-tomdoc', "~> 0.4.0"
   gem 'annotate', :require => false
-  gem 'quiet_assets'
+  # gem 'quiet_assets'
   gem 'better_errors'
   gem 'seed_dump'
 
@@ -64,7 +63,7 @@ group :test, :development do
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'pry-stack_explorer'
-  gem 'rspec-rails', "~> 2.14"
+  gem 'rspec-rails', "~> 3.5"
   gem 'watchr'
 
   gem 'pry-byebug', platforms: [:mri_20, :mri_21]
@@ -74,12 +73,12 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.1'
   gem 'shoulda-matchers', require: false
-  gem 'webrat'
+  gem 'rails-controller-testing'
   gem 'simplecov'
   gem 'webmock', '~> 1.8.0'
   gem 'capybara'
   gem 'launchy'
-  gem 'vcr', '~> 2.4.0'
+  gem 'vcr', '~> 3.0.3'
 end
 
 group :production, :staging do
@@ -93,4 +92,5 @@ gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
 gem 'compass-rails'
+gem 'compass-blueprint'
 gem 'oily_png' # Faster sprite compilation.

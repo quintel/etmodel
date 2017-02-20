@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Admin::SidebarItemsController do
+describe Admin::SidebarItemsController, type: :controller do
   let(:admin) { FactoryGirl.create :admin }
   let!(:sidebar_item) { FactoryGirl.create :sidebar_item }
 

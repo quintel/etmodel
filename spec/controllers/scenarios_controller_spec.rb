@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ScenariosController, vcr: true do
+describe ScenariosController, type: :controller, vcr: true do
   render_views
 
   let(:scenario_mock) { ete_scenario_mock }
@@ -137,7 +137,7 @@ describe ScenariosController, vcr: true do
         expect(response).to be_success
         expect(assigns(:saved_scenarios)).to_not include(admin_scenario)
 
-        expect(assigns(:saved_scenarios)).to have(2).elements
+        expect(assigns(:saved_scenarios).length).to eql(2)
 
         expect(assigns(:saved_scenarios)).to include(user_scenario)
         expect(assigns(:saved_scenarios)).to include(@student_scenario)

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe PagesController, :vcr => true do
+describe PagesController, type: :controller, vcr: true do
   render_views
 
   before do
@@ -22,7 +22,8 @@ describe PagesController, :vcr => true do
   context "setting custom year values" do
     it "should have custom year field" do
       get :root
-      response.should have_selector("form") do |form|
+
+      response.body.should have_selector("#new_scenario form") do |form|
         form.should have_selector("select", :name => 'other_year')
       end
     end
@@ -38,7 +39,7 @@ describe PagesController, :vcr => true do
     end
   end
 
-  context :static_pages do
+  context "static pages" do
     [ :bugs, :units, :browser_support, :disclaimer,
       :privacy_statement].each do |page|
       describe "#{page} page" do
@@ -80,7 +81,7 @@ describe PagesController, :vcr => true do
       describe "pages##{p}" do
         it "should update the session variable and redirect to home page" do
           get p
-          expect(session[p]). to be_true
+          expect(session[p]). to be(true)
           expect(response).to redirect_to(root_path)
         end
       end

@@ -109,6 +109,7 @@ class @AppView extends Backbone.View
     # IE doesn't bubble onChange until the checkbox loses focus
     $(document).on 'click', "#settings_use_fce", @settings.toggle_fce
     $(document).on 'click', "#settings_use_merit_order", @settings.toggle_merit_order
+
     @checkboxes_initialized = true
 
   call_api: (input_params) =>

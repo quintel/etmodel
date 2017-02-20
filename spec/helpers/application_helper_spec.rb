@@ -10,7 +10,7 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe ApplicationHelper do
+describe ApplicationHelper, type: :helper do
   describe 'format_description' do
     it 'does not alter plain strings' do
       expect(format_description('test string')).to eq('test string')

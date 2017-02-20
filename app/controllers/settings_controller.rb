@@ -8,12 +8,21 @@ class SettingsController < ApplicationController
   end
 
   def update
+    setting_params = params.permit(
+      :api_session_id,
+      :track_peak_load,
+      :use_fce,
+      :end_year,
+      :network_parts_affected,
+      locked_charts: Array(params[:locked_charts].try(:keys))
+    )
+
     [ :api_session_id,
       :network_parts_affected,
       :track_peak_load,
       :use_fce,
       :locked_charts].each do |setting|
-      Current.setting.send("#{setting}=", params[setting]) unless params[setting].nil?
+      Current.setting.send("#{setting}=", setting_params[setting]) unless params[setting].nil?
     end
 
     if year = params[:end_year].to_s and year[/\d{4}/]
@@ -57,7 +66,7 @@ class SettingsController < ApplicationController
   # PUT /settings/dashboard
   #
   def update_dashboard
-    unless params[:dash].kind_of?(Hash)
+    unless params[:dash]
       render json: { error: 'Invalid constraints hash' }, status: :bad_request
       return
     end

@@ -32,9 +32,9 @@ module Api
       Current.setting[:scaling] = { has_agriculture: false }
 
       begin
-        expect(scaled.has_agriculture?).to be_false
-        expect(scaled.has_agriculture).to be_false
-        expect(scaled.attributes[:has_agriculture]).to be_false
+        expect(scaled.has_agriculture?).to be(false)
+        expect(scaled.has_agriculture).to be(false)
+        expect(scaled.attributes[:has_agriculture]).to be(false)
       ensure
         Current.setting[:scaling] = nil
       end
@@ -44,9 +44,9 @@ module Api
       Current.setting[:scaling] = { has_agriculture: true }
 
       begin
-        expect(scaled.has_agriculture?).to be_true
-        expect(scaled.has_agriculture).to be_true
-        expect(scaled.attributes[:has_agriculture]).to be_true
+        expect(scaled.has_agriculture?).to be(true)
+        expect(scaled.has_agriculture).to be(true)
+        expect(scaled.attributes[:has_agriculture]).to be(true)
       ensure
         Current.setting[:scaling] = nil
       end
@@ -56,9 +56,9 @@ module Api
       Current.setting[:scaling] = { has_industry: false }
 
       begin
-        expect(scaled.has_industry?).to be_false
-        expect(scaled.has_industry).to be_false
-        expect(scaled.attributes[:has_industry]).to be_false
+        expect(scaled.has_industry?).to be(false)
+        expect(scaled.has_industry).to be(false)
+        expect(scaled.attributes[:has_industry]).to be(false)
       ensure
         Current.setting[:scaling] = nil
       end
@@ -68,26 +68,26 @@ module Api
       Current.setting[:scaling] = { has_industry: true }
 
       begin
-        expect(scaled.has_industry?).to be_true
-        expect(scaled.has_industry).to be_true
-        expect(scaled.attributes[:has_industry]).to be_true
+        expect(scaled.has_industry?).to be(true)
+        expect(scaled.has_industry).to be(true)
+        expect(scaled.attributes[:has_industry]).to be(true)
       ensure
         Current.setting[:scaling] = nil
       end
     end
 
     it 'does not have "other"' do
-      expect(scaled.has_other?).to be_false
-      expect(scaled.has_other).to be_false
-      expect(scaled.attributes[:has_other]).to be_false
+      expect(scaled.has_other?).to be(false)
+      expect(scaled.has_other).to be(false)
+      expect(scaled.attributes[:has_other]).to be(false)
     end
 
     it 'is not a national scenario' do
-      expect(scaled.is_national_scenario).to be_false
+      expect(scaled.is_national_scenario).to be(false)
     end
 
     it 'a local scenario' do
-      expect(scaled.is_local_scenario).to be_true
+      expect(scaled.is_local_scenario).to be(true)
     end
   end
 end

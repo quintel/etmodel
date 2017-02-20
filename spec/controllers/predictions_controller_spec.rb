@@ -1,7 +1,6 @@
 require 'spec_helper'
 
-describe PredictionsController do
-  render_views
+describe PredictionsController, type: :controller do
   let(:prediction) { FactoryGirl.create :prediction}
 
   before do
@@ -31,7 +30,7 @@ describe PredictionsController do
       get :share, :id => prediction.id
     end
 
-    it { should respond_with(:success)}
-    it { should render_template :index}
+    it { response.should be_success }
+    it { response.should render_template :index}
   end
 end

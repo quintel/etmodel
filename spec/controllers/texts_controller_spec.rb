@@ -1,8 +1,7 @@
 require 'spec_helper'
 
-describe TextsController do
-  render_views
-  let!(:text)   { FactoryGirl.create :text, :key => 'foobar'}
+describe TextsController, type: :controller do
+  let!(:text) { FactoryGirl.create :text, :key => 'foobar'}
 
   describe "#show" do
     it "should show the text detail page" do

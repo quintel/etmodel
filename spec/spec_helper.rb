@@ -48,6 +48,20 @@ VCR.configure do |c|
   c.debug_logger = File.open Rails.root.join("log/vcr.log"), 'w'
 end
 
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    # Choose a test framework:
+    with.test_framework :rspec
+
+    # Choose one or more libraries:
+    with.library :active_record
+    with.library :active_model
+    # with.library :action_controller
+    # Or, choose the following (which implies all of the above):
+    # with.library :rails
+  end
+end
+
 RSpec.configure do |config|
   # == Mock Framework
   #
@@ -66,7 +80,7 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = false
 
-  config.include Webrat::Matchers
+  # config.include Webrat::Matchers
   config.include EtmAuthHelper
   config.include Authlogic::TestCase
   config.include Capybara::DSL

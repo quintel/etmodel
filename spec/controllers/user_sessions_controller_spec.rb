@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UserSessionsController do
+describe UserSessionsController, type: :controller do
   render_views
 
   before(:each) do
@@ -11,7 +11,7 @@ describe UserSessionsController do
     it "should get to the login page" do
       get :new
       response.should be_success
-      response.should have_selector("form") do |form|
+      response.body.should have_selector("form") do |form|
         form.should have_selector("input", :type => "text", :name => "user_session[email]")
         form.should have_selector("input", :type => "password", :name => "user_session[password]")
       end

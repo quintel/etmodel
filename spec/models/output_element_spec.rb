@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe OutputElement do
+describe OutputElement, type: :model do
 end

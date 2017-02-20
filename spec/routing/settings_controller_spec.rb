@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe SettingsController, 'routing' do
+describe SettingsController, 'routing', type: :routing do
   it 'routes to GET /settings/dashboard' do
     get('/settings/dashboard').should route_to('settings#dashboard')
   end

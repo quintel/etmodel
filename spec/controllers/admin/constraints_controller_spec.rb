@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Admin::ConstraintsController do
+describe Admin::ConstraintsController, type: :controller do
   render_views
 
   let!(:constraint) { FactoryGirl.create :constraint }
@@ -11,21 +11,17 @@ describe Admin::ConstraintsController do
   end
 
   describe "GET index" do
-    before do
-      get :index
-    end
+    let(:response) { get(:index) }
 
-    it { should respond_with(:success)}
-    it { should render_template :index}
+    it { expect(response).to be_success }
+    it { expect(response).to render_template(:index) }
   end
 
   describe "GET new" do
-    before do
-      get :new
-    end
+    let(:response) { get(:new) }
 
-    it { should respond_with(:success)}
-    it { should render_template :new}
+    it { expect(response).to be_success }
+    it { expect(response).to render_template(:new) }
   end
 
   describe "POST create" do
@@ -42,21 +38,17 @@ describe Admin::ConstraintsController do
   end
 
   describe "GET show" do
-    before do
-      get :show, :id => constraint.id
-    end
+    let(:response) { get(:show, id: constraint.id) }
 
-    it { should respond_with(:success)}
-    it { should render_template :show}
+    it { expect(response).to be_success}
+    it { expect(response).to render_template :show}
   end
 
   describe "GET edit" do
-    before do
-      get :edit, :id => constraint.id
-    end
+    let(:response) { get(:edit, id: constraint.id) }
 
-    it { should respond_with(:success)}
-    it { should render_template :edit}
+    it { expect(response).to be_success}
+    it { expect(response).to render_template :edit}
   end
 
   describe "PUT update" do

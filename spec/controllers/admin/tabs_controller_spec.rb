@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Admin::TabsController do
+describe Admin::TabsController, type: :controller do
   let(:admin) { FactoryGirl.create :admin }
   let!(:tab) { FactoryGirl.create :tab }
 

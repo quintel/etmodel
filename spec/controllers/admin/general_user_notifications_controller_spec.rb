@@ -1,47 +1,43 @@
 require 'spec_helper'
 
-describe Admin::GeneralUserNotificationsController do
+describe Admin::GeneralUserNotificationsController, type: :controller do
   render_views
   let!(:general_user_notification) { FactoryGirl.create :general_user_notification }
 
   before do
-    controller.class.skip_before_filter :restrict_to_admin
+    login_as(FactoryGirl.create(:admin))
   end
 
   describe "GET new" do
-    before do
-      get :new
-    end
+    let(:response) { get(:new) }
 
-    it { should respond_with(:success)}
-    it { should render_template :new}
+    it { expect(response).to be_success}
+    it { expect(response).to render_template :new}
   end
 
   describe "GET index" do
-    before do
-      get :index
-    end
+    let(:response) { get(:index) }
 
-    it { should respond_with(:success)}
-    it { should render_template :index}
+    it { expect(response).to be_success }
+    it { expect(response).to render_template(:index) }
   end
 
   describe "GET show" do
-    before do
+    let(:response) do
       get :show, :id => general_user_notification.id
     end
 
-    it { should respond_with(:success)}
-    it { should render_template :show}
+    it { expect(response).to be_success }
+    it { expect(response).to render_template(:show) }
   end
 
   describe "GET edit" do
-    before do
+    let(:response) do
       get :edit, :id => general_user_notification.id
     end
 
-    it { should respond_with(:success)}
-    it { should render_template :edit}
+    it { expect(response).to be_success }
+    it { expect(response).to render_template(:edit) }
   end
 
   describe "PUT update" do

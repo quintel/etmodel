@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe SavedScenario do
+describe SavedScenario, type: :model do
   it { should belong_to :user }
 
   describe "#scenario" do

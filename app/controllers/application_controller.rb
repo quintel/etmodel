@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   include LayoutHelper
   include Browser
 
+  protect_from_forgery with: :exception
+
   helper :all
   helper_method :current_user_session, :current_user, :admin?
 
@@ -13,8 +15,9 @@ class ApplicationController < ActionController::Base
   def locale
     # update session if passed
     if params[:locale]
+      redirect_params = params.permit(:controller, :action)
       session[:locale] = params[:locale]
-      redirect_to(params.except(:locale))
+      redirect_to(redirect_params)
     end
 
     # set locale based on session or url

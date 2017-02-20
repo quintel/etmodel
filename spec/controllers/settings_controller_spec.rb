@@ -1,23 +1,23 @@
 require 'spec_helper'
 
-describe SettingsController do
+describe SettingsController, type: :controller do
   describe 'on PUT /settings', vcr: true do
     it "should update individual settings" do
-      put :update, :format => :json, :use_fce => 1
+      put :update, :format => :json, :use_fce => true
       response.should be_success
-      session[:setting][:use_fce].should == 1
+      session[:setting][:use_fce].to_s.should == 'true'
     end
 
     it "should update individual settings passed as strings" do
-      put :update, :format => :json, "track_peak_load" => 1
+      put :update, :format => :json, "track_peak_load" => true
       response.should be_success
-      session[:setting][:track_peak_load].should == 1
+      session[:setting][:track_peak_load].to_s.should == 'true'
     end
 
     it "should update the charts hash" do
       put :update, :format => :json, :locked_charts => {'holder_0' => 123}
       response.should be_success
-      expect(session[:setting][:locked_charts]).to eql({'holder_0' => 123})
+      expect(session[:setting][:locked_charts]).to eql({'holder_0' => '123'})
     end
 
     it "should update the charts hash" do

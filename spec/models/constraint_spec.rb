@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Constraint do
+describe Constraint, type: :model do
   it { should validate_presence_of(:group) }
 
   Constraint::GROUPS.each do |group|
@@ -37,8 +37,8 @@ describe Constraint, '.for_dashboard' do
 
     subject { Constraint.for_dashboard(keys) }
 
-    it { should have(keys.length).constraints }
     it { should be_a(Array) }
+    it { expect(subject.length).to eq(keys.length) }
 
     it 'should return the total_primary_energy constraint first' do
       subject[0].should eql(Constraint.find_by_key(keys[0]))
@@ -56,7 +56,7 @@ describe Constraint, '.for_dashboard' do
     end
     subject { Constraint.for_dashboard(keys) }
 
-    it { should have(keys.length).constraints }
+    it { expect(subject.length).to eq(keys.length) }
     it { should be_a(Array) }
 
     it 'should return the total_primary_energy constraint first' do

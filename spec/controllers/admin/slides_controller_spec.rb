@@ -1,12 +1,10 @@
 require 'spec_helper'
 
-describe Admin::SlidesController do
-  render_views
-
+describe Admin::SlidesController, type: :controller do
   let!(:slide) { FactoryGirl.create :slide }
 
   before(:each) do
-    controller.class.skip_before_filter :restrict_to_admin
+    login_as(FactoryGirl.create(:admin))
   end
 
   it "index action should render index template" do
@@ -56,6 +54,6 @@ describe Admin::SlidesController do
     slide = FactoryGirl.create :slide
     delete :destroy, :id => slide.id
     response.should redirect_to(admin_slides_path)
-    Slide.exists?(slide.id).should be_false
+    Slide.exists?(slide.id).should be(false)
   end
 end

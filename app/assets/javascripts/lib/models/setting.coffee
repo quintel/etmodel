@@ -12,7 +12,7 @@ class @Setting extends Backbone.Model
     @get('scaling') || @get('area_scaling')
 
   toggle_fce: (event) =>
-    @set(use_fce: !! $(event.target).attr('checked'))
+    @set(use_fce: !! $(event.target).is(':checked'))
 
   on_fce_status_change: (setting, use_fce) =>
     # Old scenarios may provide "null" instead of true/false, and this causes

@@ -1,12 +1,10 @@
 require 'spec_helper'
 
-describe Admin::OutputElementsController do
-  render_views
-
+describe Admin::OutputElementsController, type: :controller do
   let!(:output_element) { FactoryGirl.create :output_element }
 
-  before(:each) do
-    controller.class.skip_before_filter :restrict_to_admin
+  before do
+    login_as(FactoryGirl.create(:admin))
   end
 
   it "index action should render index template" do
@@ -61,6 +59,6 @@ describe Admin::OutputElementsController do
     output_element = FactoryGirl.create :output_element
     delete :destroy, :id => output_element.id
     response.should redirect_to(admin_output_elements_path)
-    OutputElement.exists?(output_element.id).should be_false
+    OutputElement.exists?(output_element.id).should be(false)
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Colors
   COLORS = {
       'brown'            => '#8B4513',
@@ -14,9 +16,8 @@ module Colors
       'durable_green'    => '#ADDE4C',
       'gas_grey'         => '#CCCCCC',
       'geothermal_brown' => '#BA7D40',
-      'green'            => '#92B940',
-      'grey'             => '#A9A9A9',
       'green'            => '#228B22',
+      'grey'             => '#A9A9A9',
       'lignite_grey'     => '#666666',
       'lightorange'      => '#E69567',
       'lightgreen'       => '#B3CF7B',

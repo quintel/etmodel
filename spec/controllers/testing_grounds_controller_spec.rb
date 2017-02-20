@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe TestingGroundsController do
+describe TestingGroundsController, type: :controller do
   let(:scenario_mock) { ete_scenario_mock }
   let(:user){ FactoryGirl.create(:user) }
 

@@ -1,12 +1,10 @@
 require 'spec_helper'
 
-describe Admin::TextsController do
-  render_views
-
+describe Admin::TextsController, type: :controller do
   let!(:text) { FactoryGirl.create :text }
 
   before(:each) do
-    controller.class.skip_before_filter :restrict_to_admin
+    login_as(FactoryGirl.create(:admin))
   end
 
   it "index action should render index template" do
@@ -56,6 +54,6 @@ describe Admin::TextsController do
     text = FactoryGirl.create :text
     delete :destroy, :id => text.id
     response.should redirect_to(admin_texts_path)
-    Text.exists?(text.id).should be_false
+    Text.exists?(text.id).should be(false)
   end
 end

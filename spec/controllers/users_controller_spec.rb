@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UsersController do
+describe UsersController, type: :controller do
   render_views
 
   let(:user) { FactoryGirl.create(:user) }
@@ -24,7 +24,7 @@ describe UsersController do
       end
 
       it 'registers in the database' do
-        expect(@user.allow_news).to be_false
+        expect(@user.allow_news).to be(false)
       end
 
       it 'renders a page succesfully' do
@@ -64,7 +64,7 @@ describe UsersController do
       end
 
       it 'does not register in the database' do
-        expect(@user.allow_news).to be_true
+        expect(@user.allow_news).to be(true)
       end
 
       it 'renders a page succesfully' do
@@ -85,8 +85,8 @@ describe UsersController do
         post :create, :user => {
           :name => 'Rocky Balboa',
           :email => 'rb@quintel.com',
-          :password => 'adriana',
-          :password_confirmation => 'adriana'
+          :password => 'adriana_',
+          :password_confirmation => 'adriana_'
         }
         expect(response).to be_redirect
       }.to change{ User.count }
@@ -113,8 +113,8 @@ describe UsersController do
               name: 'Student one',
               email: 'stu@quintel.com',
               teacher_email: @teacher.email,
-              password: '12345',
-              password_confirmation: '12345'
+              password: '12345678',
+              password_confirmation: '12345678'
             }
             }
           }.to change{ User.count }
@@ -162,9 +162,14 @@ describe UsersController do
       it "does not update user's account" do
         user.name = ''
         post :update, id: user, user: user.attributes
+
         expect(response).to render_template(:edit)
-        expect(response).to have_selector("input#user_name", content: user.name)
-        expect(response).to have_selector("span.error", content: "can't be blank")
+
+        expect(response.body)
+          .to have_selector("input#user_name", text: user.name)
+
+        expect(response.body)
+          .to have_selector("span.error", text: "can't be blank")
       end
     end
   end

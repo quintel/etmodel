@@ -121,6 +121,12 @@ class Setting
     area.attributes[:has_fce]
   end
 
+  def locked_charts=(charts)
+    if charts.respond_to?(:to_h)
+      @locked_charts = charts.to_h.transform_values(&:to_s)
+    end
+  end
+
   def derived_dataset?
     area.derived?
   end

@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe Admin::InputElementsController do
-  before(:each) do
-    controller.class.skip_before_filter :restrict_to_admin
-    @input_element = FactoryGirl.create :input_element
-  end
+describe Admin::InputElementsController, type: :controller do
+  let(:admin) { FactoryGirl.create :admin }
 
-  render_views
+  before(:each) do
+    @input_element = FactoryGirl.create :input_element
+    login_as(admin)
+  end
 
   it "index action should render index template" do
     get :index
@@ -65,6 +65,6 @@ describe Admin::InputElementsController do
     input_element = InputElement.first
     delete :destroy, :id => input_element
     response.should redirect_to(admin_input_elements_url)
-    InputElement.exists?(input_element.id).should be_false
+    InputElement.exists?(input_element.id).should be(false)
   end
 end

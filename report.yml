@@ -1,0 +1,6 @@
+---
+- message: report.co2_excessive
+  when: query(co2_emissions) > 0.1
+
+- chart: co2_emissions query(co2_emissions) > 0.1
+  when: query(co2_emissions) > 0.1

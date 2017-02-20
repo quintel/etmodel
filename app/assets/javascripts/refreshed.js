@@ -1,5 +1,6 @@
 //= require html5shiv
 //= require jquery
+//= require jquery.browser
 
 jQuery( function() {
     if( $.browser.msie ) {

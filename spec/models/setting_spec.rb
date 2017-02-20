@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Setting do
+describe Setting, type: :model do
   before  { @setting = Setting.new }
   subject { @setting }
 
@@ -10,21 +10,25 @@ describe Setting do
 
   describe "#new" do
     context "defaults", vcr: true do
-      before do
-        @setting = Setting.new
-      end
-      subject { @setting }
+      subject { Setting.new }
+
       Setting.default_attributes.each_key do |key|
-        its(key) { should == defaults[key] }
+        it "#{key} is set to the default" do
+          expect(subject[key]).to eql(defaults[key])
+        end
       end
     end
+
     context "other settings" do
-      before do
-        @setting = Setting.new(:track_peak_load => :bar, :use_fce =>:baz)
+      subject { Setting.new(:track_peak_load => :bar, :use_fce =>:baz) }
+
+      it 'sets a custom track_peak_load' do
+        expect(subject[:track_peak_load]).to eql(:bar)
       end
-      subject { @setting }
-      its(:track_peak_load) { should == :bar}
-      its(:use_fce) { should == :baz}
+
+      it 'sets a custom use_fce' do
+        expect(subject[:use_fce]).to eql(:baz)
+      end
     end
   end
 
@@ -50,12 +54,19 @@ describe Setting do
       context "track_peak_load on" do
         before { @s.track_peak_load = true }
         subject { @s }
-        its(:track_peak_load?) { should be_false }
+
+        it 'is not tracking peak load' do
+          expect(subject.track_peak_load?).to be(false)
+        end
       end
+
       context "track_peak_load off" do
         before { @s.track_peak_load = false }
         subject { @s }
-        its(:track_peak_load?) { should be_false }
+
+        it 'is not tracking peak load' do
+          expect(subject.track_peak_load?).to be(false)
+        end
       end
     end
 
@@ -63,13 +74,15 @@ describe Setting do
       before do
         @setting = Setting.new(:track_peak_load => true)
       end
+
       it "should" do
         @setting.stub(:use_peak_load).and_return(true)
-        @setting.track_peak_load?.should be_true
+        @setting.track_peak_load?.should be(true)
       end
+
       it "should" do
         @setting.stub(:use_peak_load).and_return(false)
-        @setting.track_peak_load?.should be_false
+        @setting.track_peak_load?.should be(false)
       end
     end
   end
@@ -117,12 +130,21 @@ describe Setting do
       :use_network_calculations? => :use_network_calculations?
     }.each do |setting_method_name, area_method_name|
       describe "##{setting_method_name} should be true if area##{area_method_name} is true" do
-        before { @setting.stub(:area).and_return(mock_model(Api::Area, area_method_name => true))}
-        specify { @setting.send(setting_method_name).should be_true}
+        before do
+          area = Api::Area.new
+          allow(area).to receive(area_method_name).and_return(true)
+          allow(@setting).to receive(:area).and_return(area)
+        end
+
+        specify { @setting.send(setting_method_name).should be_truthy }
       end
+
       describe "##{setting_method_name} with no area should be false" do
-        before { @setting.stub(:area).and_return(nil)}
-        specify { @setting.send(setting_method_name).should be_false}
+        before do
+          allow(@setting).to receive(:area).and_return(nil)
+        end
+
+        specify { @setting.send(setting_method_name).should be_falsey }
       end
     end
   end

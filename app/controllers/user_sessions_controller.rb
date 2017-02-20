@@ -22,7 +22,10 @@ class UserSessionsController < ApplicationController
   # POST /user_sessions
   # POST /user_sessions.xml
   def create
-    @user_session = UserSession.new(params[:user_session])
+    @user_session = UserSession.new(
+      params.require(:user_session).permit(:email, :password)
+    )
+
     @user_session.save do |result|
        if result
         flash[:notice] = I18n.t("flash.login")

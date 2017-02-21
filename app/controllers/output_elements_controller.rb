@@ -1,7 +1,7 @@
 class OutputElementsController < ApplicationController
   layout false
 
-  before_filter :find_output_element, :only => [:show, :zoom]
+  before_action :find_output_element, :only => [:show, :zoom]
 
   # Returns all the data required to show a chart.
   # JSON only

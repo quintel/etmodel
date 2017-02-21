@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   include ApplicationHelper
-  before_filter :ensure_valid_browser, :except => [:browser_support]
+  before_action :ensure_valid_browser, :except => [:browser_support]
   layout 'static_page', :only => [:about, :units, :browser_support, :bugs,
     :disclaimer, :privacy_statement, :quality, :dataset]
 

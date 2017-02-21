@@ -1,6 +1,6 @@
 module Admin
   class TextsController < BaseController
-    before_filter :find_text, :only => [:edit, :update, :destroy]
+    before_action :find_text, :only => [:edit, :update, :destroy]
     def index
       @texts = Text.all
     end

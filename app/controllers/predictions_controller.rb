@@ -1,6 +1,6 @@
 class PredictionsController < ApplicationController
-  before_filter :find_input_element, :only => :index
-  before_filter :find_prediction, :only => [:show, :comment, :share]
+  before_action :find_input_element, :only => :index
+  before_action :find_prediction, :only => [:show, :comment, :share]
 
   def index
     @predictions = @input_element.available_predictions(Current.setting.area_code)

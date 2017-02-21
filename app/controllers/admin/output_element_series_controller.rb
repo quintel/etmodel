@@ -1,6 +1,6 @@
 module Admin
   class OutputElementSeriesController  < BaseController
-    before_filter :find_model, :only => [:edit, :show]
+    before_action :find_model, :only => [:edit, :show]
 
     def index
       scope = OutputElementSerie

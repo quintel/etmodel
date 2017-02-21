@@ -1,6 +1,6 @@
 module Admin
   class ConstraintsController < BaseController
-    before_filter :find_element, :only => [:show, :edit, :update, :destroy]
+    before_action :find_element, :only => [:show, :edit, :update, :destroy]
 
     def index
       @constraints = Constraint.all

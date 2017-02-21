@@ -1,6 +1,6 @@
 module Admin
   class SlidesController < BaseController
-    before_filter :find_model, :only => [:edit, :destroy]
+    before_action :find_model, :only => [:edit, :destroy]
 
     def index
       if params[:sidebar_item_id]

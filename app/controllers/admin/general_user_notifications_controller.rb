@@ -1,6 +1,6 @@
 module Admin
   class GeneralUserNotificationsController < BaseController
-    before_filter :find_notification, :only => [:show, :edit, :update, :destroy]
+    before_action :find_notification, :only => [:show, :edit, :update, :destroy]
 
     def index
       @notifications = GeneralUserNotification.all

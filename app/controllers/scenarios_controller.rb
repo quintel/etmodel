@@ -1,12 +1,12 @@
 class ScenariosController < ApplicationController
-  before_filter :ensure_valid_browser
-  before_filter :find_scenario, :only => [:show, :load]
-  before_filter :require_user, :only => [:index, :new, :merge]
-  before_filter :load_interface,
+  before_action :ensure_valid_browser
+  before_action :find_scenario, :only => [:show, :load]
+  before_action :require_user, :only => [:index, :new, :merge]
+  before_action :load_interface,
                 :store_last_etm_page,
                 :load_constraints,
                 :prevent_browser_cache, :only => :play
-  before_filter :setup_comparison, only: [:compare, :weighted_merge]
+  before_action :setup_comparison, only: [:compare, :weighted_merge]
 
   # Raised when trying to save a scenario, but the user does not have a
   # scenario in progress. See quintel/etengine#542.

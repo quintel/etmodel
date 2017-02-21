@@ -1,6 +1,6 @@
 module Admin
   class TabsController < BaseController
-    before_filter :find_model, :only => [:show, :edit]
+    before_action :find_model, :only => [:show, :edit]
 
     def index
       @tabs = Tab.ordered

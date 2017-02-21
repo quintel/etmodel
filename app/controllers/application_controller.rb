@@ -7,10 +7,10 @@ class ApplicationController < ActionController::Base
   helper :all
   helper_method :current_user_session, :current_user, :admin?
 
-  before_filter :initialize_current
-  before_filter :locale
+  before_action :initialize_current
+  before_action :locale
 
-  after_filter  :teardown_current
+  after_action  :teardown_current
 
   def locale
     # update session if passed

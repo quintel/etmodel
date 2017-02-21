@@ -1,6 +1,6 @@
 module Admin
   class InputElementsController < BaseController
-    before_filter :find_model, :only => :edit
+    before_action :find_model, :only => :edit
 
     def index
       if params[:slide_id]

@@ -1,5 +1,9 @@
 source 'http://rubygems.org'
-source 'http://gems.github.com'
+
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
 
 ruby '2.3.1'
 
@@ -28,7 +32,7 @@ gem 'i18n-js', :github => 'fnando/i18n-js'
 gem 'jbuilder'
 
 # supporting gems
-gem 'airbrake', '~> 3.1.2'
+gem 'airbrake'
 
 # system gems
 gem 'mysql2', '~>0.3.11'
@@ -42,11 +46,13 @@ gem 'dynamic_form'
 gem 'jquery-etmodel-rails', ref: 'c668ad4', github: 'quintel/etplugin'
 
 group :development do
+  gem 'listen', '~> 3.0.5'
   gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+
   gem 'tomdoc'
   gem 'yard-tomdoc', "~> 0.4.0"
-  gem 'annotate', :require => false
-  # gem 'quiet_assets'
+
   gem 'better_errors'
   gem 'seed_dump'
 
@@ -66,7 +72,7 @@ group :test, :development do
   gem 'rspec-rails', "~> 3.5"
   gem 'watchr'
 
-  gem 'pry-byebug', platforms: [:mri_20, :mri_21]
+  gem 'pry-byebug', platform: :mri
 end
 
 group :test do

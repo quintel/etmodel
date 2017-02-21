@@ -1,7 +1,19 @@
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore Byebug command history file.
+.byebug_history
+
 db/dumps
 db/sphinx
 config/development.sphinx.conf
-log/*
 config/database.yml
 config/config.yml
 config/email.yml
@@ -13,12 +25,10 @@ public/assets/*
 public/system/*
 public/flowplayer/*
 public/videos/*
-tmp/*
 import/*
 etm*.sql
 public/doc
 vendor/bundle
-.bundle
 *.tmproj
 .powrc
 .tmtags

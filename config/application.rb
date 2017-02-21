@@ -23,7 +23,6 @@ module Etm
     config.active_support.deprecation = :log
     config.time_zone = 'Amsterdam'
 
-    config.secret_token = '73916e8ec68237f87e1e992eae492e8eb3de2157da4d3141c74f3918060cba89e8fdd39a145990041ced83ffb5a96212399ff12b853157a4df9a0bdc71833130'
     config.encoding = "utf-8"
 
     config.generators do |g|

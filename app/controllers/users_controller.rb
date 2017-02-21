@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     unless @user.md5_hash == params[:h]
-      render text: 'invalid link. Cannot unsubscribe.' and return
+      render plain: 'invalid link. Cannot unsubscribe.' and return
     end
 
     @allow_news_changed = @user.allow_news == true

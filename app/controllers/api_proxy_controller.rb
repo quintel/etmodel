@@ -12,11 +12,11 @@ class ApiProxyController < ApplicationController
     response = if request.get?
       NastyProxy.get uri
     elsif request.post?
-      NastyProxy.post uri, :body => parameters
+      NastyProxy.post uri, body: parameters
     elsif request.put?
-      NastyProxy.put uri, :body => parameters
+      NastyProxy.put uri, body: parameters
     end
 
-    render :json => response
+    render json: response
   end
 end

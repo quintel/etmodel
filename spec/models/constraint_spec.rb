@@ -32,7 +32,7 @@ describe Constraint, '.for_dashboard' do
   context 'when an array of keys' do
     let(:keys) { %w( total_primary_energy co2_reduction ) }
     before do
-      keys.each{|k| FactoryGirl.create :constraint, :key => k}
+      keys.each{|k| FactoryGirl.create :constraint, key: k}
     end
 
     subject { Constraint.for_dashboard(keys) }
@@ -52,7 +52,7 @@ describe Constraint, '.for_dashboard' do
   context 'when given an array with a duplicate key' do
     let(:keys) { %w( total_primary_energy co2_reduction total_primary_energy ) }
     before do
-      keys.each{|k| FactoryGirl.create :constraint, :key => k}
+      keys.each{|k| FactoryGirl.create :constraint, key: k}
     end
     subject { Constraint.for_dashboard(keys) }
 
@@ -74,7 +74,7 @@ describe Constraint, '.for_dashboard' do
 
   context 'when given an array with an invalid key' do
     let(:keys) { %w( total_primary_energy does_not_exist ) }
-    before { FactoryGirl.create :constraint, :key => 'total_primary_energy'}
+    before { FactoryGirl.create :constraint, key: 'total_primary_energy'}
     it 'should raise an error' do
       expect { Constraint.for_dashboard(keys) }.to \
         raise_error(Constraint::NoSuchConstraint, /does_not_exist/)

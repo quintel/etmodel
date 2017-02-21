@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(users_parameters)
 
     if @user.save
-      redirect_to root_path, :notice => I18n.t("flash.register")
+      redirect_to root_path, notice: I18n.t("flash.register")
     else
       render :new
     end
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(users_parameters)
-      redirect_to edit_user_path(@user), :notice => I18n.t("flash.edit_profile")
+      redirect_to edit_user_path(@user), notice: I18n.t("flash.edit_profile")
     else
       render :edit
     end

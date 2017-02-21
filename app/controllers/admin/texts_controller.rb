@@ -1,6 +1,6 @@
 module Admin
   class TextsController < BaseController
-    before_action :find_text, :only => [:edit, :update, :destroy]
+    before_action :find_text, only: [:edit, :update, :destroy]
     def index
       @texts = Text.all
     end
@@ -13,7 +13,7 @@ module Admin
         flash[:notice] = "Successfully updated text."
         redirect_to admin_texts_path
       else
-        render :action => 'edit'
+        render action: 'edit'
       end
     end
 

@@ -27,7 +27,7 @@ describe Admin::ConstraintsController do
   describe "POST create" do
     before do
       @old_constraint_count = Constraint.count
-      post :create, :constraint => FactoryGirl.attributes_for(:constraint)
+      post :create, constraint: FactoryGirl.attributes_for(:constraint)
     end
 
     it "should create a new constraint" do
@@ -54,7 +54,7 @@ describe Admin::ConstraintsController do
   describe "PUT update" do
     before do
       @constraint = FactoryGirl.create :constraint
-      put :update, :id => @constraint.id, :constraint => { :key => 'yo'}
+      put :update, id: @constraint.id, constraint: { key: 'yo'}
     end
 
     it { is_expected.to redirect_to(admin_constraint_path(@constraint)) }
@@ -64,7 +64,7 @@ describe Admin::ConstraintsController do
     before do
       @constraint = FactoryGirl.create :constraint
       @old_constraint_count = Constraint.count
-      delete :destroy, :id => @constraint.id
+      delete :destroy, id: @constraint.id
     end
 
     it "should delete the constraint" do

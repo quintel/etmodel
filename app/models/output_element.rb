@@ -23,17 +23,17 @@ class OutputElement < ActiveRecord::Base
 
   include AreaDependent
 
-  has_many :output_element_series, ->{ order(:order_by) }, :dependent => :destroy
+  has_many :output_element_series, ->{ order(:order_by) }, dependent: :destroy
   belongs_to :output_element_type
-  has_one :description, :as => :describable, :dependent => :destroy
-  has_one :area_dependency, :as => :dependable, :dependent => :destroy
+  has_one :description, as: :describable, dependent: :destroy
+  has_one :area_dependency, as: :dependable, dependent: :destroy
 
   accepts_nested_attributes_for :description, :area_dependency
 
-  validates :key, :presence => true, :uniqueness => true
-  delegate :html_table?, :to => :output_element_type
+  validates :key, presence: true, uniqueness: true
+  delegate :html_table?, to: :output_element_type
 
-  scope :not_hidden, -> { where(:hidden => false) }
+  scope :not_hidden, -> { where(hidden: false) }
 
   def title_for_description
     "output_elements.#{key}"
@@ -74,20 +74,20 @@ class OutputElement < ActiveRecord::Base
 
   def json_attributes
     {
-      :id                   => id,
-      :type                 => output_element_type.name,
-      :percentage           => percentage == true,
-      :unit                 => unit,
-      :group                => group,
-      :name                 => I18n.t("output_elements.#{key}").html_safe,
-      :show_point_label     => show_point_label,
-      :max_axis_value       => max_axis_value,
-      :min_axis_value       => min_axis_value,
-      :growth_chart         => growth_chart,
-      :key                  => key,
-      :under_construction   => under_construction,
-      :has_description      => has_description?,
-      :requires_merit_order => requires_merit_order?
+      id: id,
+      type: output_element_type.name,
+      percentage: percentage == true,
+      unit: unit,
+      group: group,
+      name: I18n.t("output_elements.#{key}").html_safe,
+      show_point_label: show_point_label,
+      max_axis_value: max_axis_value,
+      min_axis_value: min_axis_value,
+      growth_chart: growth_chart,
+      key: key,
+      under_construction: under_construction,
+      has_description: has_description?,
+      requires_merit_order: requires_merit_order?
     }
   end
 
@@ -138,6 +138,6 @@ class OutputElement < ActiveRecord::Base
   end
 
   def slides
-    Slide.where(:output_element_id => id)
+    Slide.where(output_element_id: id)
   end
 end

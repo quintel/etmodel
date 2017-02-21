@@ -24,7 +24,7 @@ describe Admin::TabsController do
 
   describe "POST create" do
     it "should be successful" do
-      post :create, :tab => { :key => 'a_tab' }
+      post :create, tab: { key: 'a_tab' }
       expect(response).to be_redirect
     end
   end

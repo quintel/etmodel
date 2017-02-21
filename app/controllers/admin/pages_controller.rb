@@ -5,7 +5,7 @@ module Admin
 
     def clear_cache
       Rails.cache.clear
-      redirect_to admin_root_path, :notice => 'Cache cleared'
+      redirect_to admin_root_path, notice: 'Cache cleared'
     end
   end
 end

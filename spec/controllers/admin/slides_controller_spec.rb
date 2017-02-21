@@ -24,7 +24,7 @@ describe Admin::SlidesController do
     end
 
     it "create action should redirect when model is valid" do
-      post :create, :slide => FactoryGirl.attributes_for(:slide)
+      post :create, slide: FactoryGirl.attributes_for(:slide)
       expect(response).to redirect_to(admin_slides_path)
     end
   end
@@ -35,24 +35,24 @@ describe Admin::SlidesController do
     end
 
     it "update action should render edit template when model is invalid" do
-      put :update, :id => @slide, :slide => {:key => ''}
+      put :update, id: @slide, slide: {key: ''}
       expect(response).to render_template(:edit)
     end
 
     it "update action should redirect when model is valid" do
-      put :update, :id => @slide, :slide => {:key => 'abc'}
+      put :update, id: @slide, slide: {key: 'abc'}
       expect(response).to redirect_to(admin_slides_path)
     end
   end
 
   it "edit action should render edit template" do
-    get :edit, :id => slide.id
+    get :edit, id: slide.id
     expect(response).to render_template(:edit)
   end
 
   it "destroy action should destroy model and redirect to index action" do
     slide = FactoryGirl.create :slide
-    delete :destroy, :id => slide.id
+    delete :destroy, id: slide.id
     expect(response).to redirect_to(admin_slides_path)
     expect(Slide.exists?(slide.id)).to be(false)
   end

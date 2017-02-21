@@ -38,12 +38,12 @@ VCR.configure do |c|
   c.ignore_localhost = false
 
   c.default_cassette_options = {
-    :match_requests_on => [:uri, :method, :body],
+    match_requests_on: [:uri, :method, :body],
     # :once prevents recording new requests when a YAML file already exists
     # matching the spec name. This prevents unintentional creation of new
     # recorded requests. If you intend to record new requests, change this to
     # :new_episodes, run the specs, then change it back to :once.
-    :record => :once
+    record: :once
   }
   c.debug_logger = File.open Rails.root.join("log/vcr.log"), 'w'
 end
@@ -125,7 +125,7 @@ RSpec.configure do |config|
   # To explicitly tag specs without using automatic inference, set the `:type`
   # metadata manually:
   #
-  #     describe ThingsController, :type => :controller do
+  #     describe ThingsController, type: :controller do
   #       # Equivalent to being in spec/controllers
   #     end
   config.infer_spec_type_from_file_location!

@@ -1,12 +1,12 @@
 class PredictionsController < ApplicationController
-  before_action :find_input_element, :only => :index
-  before_action :find_prediction, :only => [:show, :comment, :share]
+  before_action :find_input_element, only: :index
+  before_action :find_prediction, only: [:show, :comment, :share]
 
   def index
     @predictions = @input_element.available_predictions(Current.setting.area_code)
     @prediction  = @predictions.find(params[:prediction_id]) rescue @predictions.first
 
-    render :layout => 'iframe'
+    render layout: 'iframe'
   end
 
   def share
@@ -18,13 +18,13 @@ class PredictionsController < ApplicationController
     @input_element = @prediction.input_element
     @predictions = @input_element.available_predictions('nl') # the area should probably be include inside the url when more then 1 area is available
     @end_year = 2050
-    render :action => 'index'
+    render action: 'index'
   end
 
   def show
     I18n.locale = 'nl'
     @input_element = @prediction.input_element
-    render :layout => false if request.xhr?
+    render layout: false if request.xhr?
   end
 
   private

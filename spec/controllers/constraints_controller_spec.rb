@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe ConstraintsController do
   describe "on GET show" do
-    let(:constraint) { FactoryGirl.create :constraint, :key => 'total_primary_energy' }
+    let(:constraint) { FactoryGirl.create :constraint, key: 'total_primary_energy' }
 
     let(:response) { get(:show, id: constraint.id) }
 

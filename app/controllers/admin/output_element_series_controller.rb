@@ -1,6 +1,6 @@
 module Admin
   class OutputElementSeriesController  < BaseController
-    before_action :find_model, :only => [:edit, :show]
+    before_action :find_model, only: [:edit, :show]
 
     def index
       scope = OutputElementSerie
@@ -9,7 +9,7 @@ module Admin
     end
 
     def new
-      @output_element_serie = OutputElementSerie.new(:output_element_id => params[:output_element_id])
+      @output_element_serie = OutputElementSerie.new(output_element_id: params[:output_element_id])
       @output_element_serie.build_description
       @output_element_serie.build_area_dependency
     end
@@ -20,7 +20,7 @@ module Admin
         flash[:notice] = "OutputElementSerie saved"
         redirect_to [:admin, @output_element_serie]
       else
-        render :action => 'new'
+        render action: 'new'
       end
     end
 
@@ -31,7 +31,7 @@ module Admin
         flash[:notice] = "OutputElementSerie updated"
         redirect_to [:admin, @output_element_serie]
       else
-        render :action => 'edit'
+        render action: 'edit'
       end
     end
 

@@ -24,7 +24,7 @@ describe Admin::GeneralUserNotificationsController do
 
   describe "GET show" do
     let(:response) do
-      get :show, :id => general_user_notification.id
+      get :show, id: general_user_notification.id
     end
 
     it { expect(response).to be_success }
@@ -33,7 +33,7 @@ describe Admin::GeneralUserNotificationsController do
 
   describe "GET edit" do
     let(:response) do
-      get :edit, :id => general_user_notification.id
+      get :edit, id: general_user_notification.id
     end
 
     it { expect(response).to be_success }
@@ -43,8 +43,8 @@ describe Admin::GeneralUserNotificationsController do
   describe "PUT update" do
     before do
       @general_user_notification = FactoryGirl.create :general_user_notification
-      put :update, :id => @general_user_notification.id,
-                   :general_user_notification => { :notification_en => 'another text'}
+      put :update, id: @general_user_notification.id,
+                   general_user_notification: { notification_en: 'another text'}
     end
 
     it { is_expected.to redirect_to(admin_general_user_notifications_path) }
@@ -54,7 +54,7 @@ describe Admin::GeneralUserNotificationsController do
     before do
       @general_user_notification = FactoryGirl.create :general_user_notification
       @general_user_notification_count = GeneralUserNotification.count
-      delete :destroy, :id => @general_user_notification.id
+      delete :destroy, id: @general_user_notification.id
     end
 
     it "should delete the GeneralUserNotification" do

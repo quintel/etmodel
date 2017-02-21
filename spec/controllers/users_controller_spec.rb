@@ -82,11 +82,11 @@ describe UsersController do
   describe "#create" do
     it "should create a new user" do
       expect {
-        post :create, :user => {
-          :name => 'Rocky Balboa',
-          :email => 'rb@quintel.com',
-          :password => 'adriana_',
-          :password_confirmation => 'adriana_'
+        post :create, user: {
+          name: 'Rocky Balboa',
+          email: 'rb@quintel.com',
+          password: 'adriana_',
+          password_confirmation: 'adriana_'
         }
         expect(response).to be_redirect
       }.to change{ User.count }
@@ -94,9 +94,9 @@ describe UsersController do
 
     it "should not create a new user with invalid data" do
       expect {
-        post :create, :user => {
-          :name => 'Rocky Balboa',
-          :email => 'rb@quintel.com'
+        post :create, user: {
+          name: 'Rocky Balboa',
+          email: 'rb@quintel.com'
         }
         expect(response).to render_template(:new)
       }.to_not change{ User.count }

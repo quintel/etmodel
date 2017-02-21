@@ -38,8 +38,8 @@ module LayoutHelper
     label += " (#{ I18n.t('new') })" if area[:test]
 
     content_tag :option, label.html_safe,
-      :value => code,
-      :selected => selected,
+      value: code,
+      selected: selected,
       'data-earliest' => area[:analysis_year] + 1
   end
 
@@ -128,7 +128,7 @@ module LayoutHelper
 
   # Public: Creates a drop-down of preset and user-saved scenarios.
   def presets_select
-    grouped = Api::Scenario.in_groups(Api::Scenario.all(:from => :templates))
+    grouped = Api::Scenario.in_groups(Api::Scenario.all(from: :templates))
 
     # Global presets.
     grouped_options = grouped.map do |group|

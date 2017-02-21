@@ -58,11 +58,11 @@ class Setting
   #
   def self.load_from_scenario(scenario)
     attrs = {
-      :preset_scenario_id => scenario.id,
-      :use_fce => scenario.use_fce,
-      :end_year => scenario.end_year,
-      :area_code => scenario.area_code,
-      :scaling => scenario.scaling && scenario.scaling.attributes
+      preset_scenario_id: scenario.id,
+      use_fce: scenario.use_fce,
+      end_year: scenario.end_year,
+      area_code: scenario.area_code,
+      scaling: scenario.scaling && scenario.scaling.attributes
     }
     new(attrs)
   end

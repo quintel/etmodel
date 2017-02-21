@@ -1,6 +1,6 @@
 module Admin
   class InputElementsController < BaseController
-    before_action :find_model, :only => :edit
+    before_action :find_model, only: :edit
 
     def index
       if params[:slide_id]
@@ -25,7 +25,7 @@ module Admin
         flash[:notice] = "InputElement saved"
         redirect_to admin_input_elements_url
       else
-        render :action => 'new'
+        render action: 'new'
       end
     end
 
@@ -39,7 +39,7 @@ module Admin
         flash[:notice] = "InputElement updated"
         redirect_to admin_input_elements_url
       else
-        render :action => 'edit'
+        render action: 'edit'
       end
     end
 

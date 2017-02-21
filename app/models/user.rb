@@ -27,7 +27,7 @@
 #
 
 class User < ActiveRecord::Base
-  has_many   :saved_scenarios, :dependent => :destroy
+  has_many   :saved_scenarios, dependent: :destroy
   has_many   :predictions
   belongs_to :role
 

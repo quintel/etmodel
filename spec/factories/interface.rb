@@ -5,12 +5,12 @@ FactoryGirl.define do
 
   factory :sidebar_item do
     sequence(:key) {|n| "sidebar_item_#{n}" }
-    association :tab, :factory => :tab
+    association :tab, factory: :tab
   end
 
   factory :slide do
     sequence(:key) {|n| "slide_#{n}" }
-    association :sidebar_item, :factory => :sidebar_item
-    association :output_element, :factory => :output_element
+    association :sidebar_item, factory: :sidebar_item
+    association :output_element, factory: :output_element
   end
 end

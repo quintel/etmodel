@@ -1,6 +1,6 @@
 module Admin
   class ConstraintsController < BaseController
-    before_action :find_element, :only => [:show, :edit, :update, :destroy]
+    before_action :find_element, only: [:show, :edit, :update, :destroy]
 
     def index
       @constraints = Constraint.all
@@ -19,7 +19,7 @@ module Admin
         flash[:notice] = "Constraint saved"
         redirect_to admin_constraint_path(@constraint)
       else
-        render :action => 'new'
+        render action: 'new'
       end
     end
 
@@ -28,7 +28,7 @@ module Admin
         flash[:notice] = "Constraint updated"
         redirect_to admin_constraint_path(@constraint)
       else
-        render :action => 'edit'
+        render action: 'edit'
       end
     end
 

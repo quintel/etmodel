@@ -42,11 +42,11 @@ class Constraint < ActiveRecord::Base
 
   # --------------------------------------------------------------------------
 
-  validates :group, :presence => true, :inclusion => GROUPS
+  validates :group, presence: true, inclusion: GROUPS
 
   belongs_to :output_element
-  has_one :description, :as => :describable, :dependent => :destroy
-  has_one :area_dependency, :as => :dependable, :dependent => :destroy
+  has_one :description, as: :describable, dependent: :destroy
+  has_one :area_dependency, as: :dependable, dependent: :destroy
 
   accepts_nested_attributes_for :description, :area_dependency
 
@@ -74,7 +74,7 @@ class Constraint < ActiveRecord::Base
   def self.for_dashboard(keys)
     raise IllegalConstraintKey if keys.any?(&:blank?)
 
-    constraints = Constraint.enabled.where(:key => keys.uniq)
+    constraints = Constraint.enabled.where(key: keys.uniq)
 
     # Maps the given keys to the retrieved constraints.
     keys.to_enum.with_index.each_with_object([]) do |(key, index), ordered|
@@ -94,7 +94,7 @@ class Constraint < ActiveRecord::Base
   # @return [Hash{String => Object}]
   #
   def as_json(*)
-    json = super(:only => [ :id, :key, :gquery_key ])
+    json = super(only: [ :id, :key, :gquery_key ])
 
     if ActiveRecord::Base.include_root_in_json
       json['constraint']

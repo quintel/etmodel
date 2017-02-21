@@ -1,6 +1,6 @@
 module Admin
   class TabsController < BaseController
-    before_action :find_model, :only => [:show, :edit]
+    before_action :find_model, only: [:show, :edit]
 
     def index
       @tabs = Tab.ordered
@@ -17,7 +17,7 @@ module Admin
         flash[:notice] = "Tab saved"
         redirect_to admin_tabs_url
       else
-        render :action => 'new'
+        render action: 'new'
       end
     end
 
@@ -27,7 +27,7 @@ module Admin
         flash[:notice] = "Tab updated"
         redirect_to admin_tabs_url
       else
-        render :action => 'edit'
+        render action: 'edit'
       end
     end
 

@@ -1,6 +1,6 @@
 module Admin
   class SidebarItemsController < BaseController
-    before_action :find_model, :only => [:show, :edit]
+    before_action :find_model, only: [:show, :edit]
 
     def index
       if params[:tab_id]
@@ -23,7 +23,7 @@ module Admin
         flash[:notice] = "category saved"
         redirect_to admin_sidebar_items_url
       else
-        render :action => 'new'
+        render action: 'new'
       end
     end
 
@@ -33,7 +33,7 @@ module Admin
         flash[:notice] = "category updated"
         redirect_to admin_sidebar_items_url
       else
-        render :action => 'edit'
+        render action: 'edit'
       end
     end
 

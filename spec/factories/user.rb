@@ -6,7 +6,7 @@ FactoryGirl.define do
     password_confirmation "password"
   end
 
-  factory :admin, :parent => :user do
-    association :role, :factory => :admin_role
+  factory :admin, parent: :user do
+    association :role, factory: :admin_role
   end
 end

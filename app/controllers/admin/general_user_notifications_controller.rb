@@ -1,6 +1,6 @@
 module Admin
   class GeneralUserNotificationsController < BaseController
-    before_action :find_notification, :only => [:show, :edit, :update, :destroy]
+    before_action :find_notification, only: [:show, :edit, :update, :destroy]
 
     def index
       @notifications = GeneralUserNotification.all
@@ -16,7 +16,7 @@ module Admin
         flash[:notice] = 'Notification was successfully created.'
         redirect_to admin_general_user_notifications_path
       else
-        render :action => 'new'
+        render action: 'new'
       end
     end
 
@@ -26,7 +26,7 @@ module Admin
         flash[:notice] = 'Notification was successfully updated.'
         redirect_to admin_general_user_notifications_path
       else
-        render :action => "edit"
+        render action: "edit"
       end
     end
 

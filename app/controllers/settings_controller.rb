@@ -2,7 +2,7 @@ class SettingsController < ApplicationController
   layout 'etm'
 
   before_action :ensure_valid_browser
-  skip_before_action :verify_authenticity_token, :only => :update
+  skip_before_action :verify_authenticity_token, only: :update
 
   def edit
   end
@@ -34,7 +34,7 @@ class SettingsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to_back }
-      format.json { render :json => Current.setting }
+      format.json { render json: Current.setting }
     end
   end
 

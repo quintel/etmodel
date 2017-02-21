@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   include ApplicationHelper
-  before_action :ensure_valid_browser, :except => [:browser_support]
-  layout 'static_page', :only => [:about, :units, :browser_support, :bugs,
+  before_action :ensure_valid_browser, except: [:browser_support]
+  layout 'static_page', only: [:about, :units, :browser_support, :bugs,
     :disclaimer, :privacy_statement, :quality, :dataset]
 
   def root
@@ -46,7 +46,7 @@ class PagesController < ApplicationController
       t("sidebar_items.#{s.key}.long_name") rescue nil
 
     @description = s.description.try(:content) if s
-    render :layout => false
+    render layout: false
   end
 
 protected
@@ -70,7 +70,7 @@ protected
 public
 
   def update_footer
-    render :partial => "layouts/etm/footer"
+    render partial: "layouts/etm/footer"
   end
 
   def show_all_countries
@@ -102,7 +102,7 @@ public
         @errors = true
       end
     else
-      render :layout => false
+      render layout: false
     end
   end
 
@@ -112,7 +112,7 @@ public
     @vimeo_id_for_tab =  Tab.find_by_key(@tab).try("#{loc}_vimeo_id")
     @sidebar = params[:sidebar]
     @vimeo_id_for_sidebar = SidebarItem.find_by_key(@sidebar).try("#{loc}_vimeo_id")
-    render :layout => false
+    render layout: false
   end
 
   def set_locale

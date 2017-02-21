@@ -1,10 +1,10 @@
 module Admin
   class OutputElementsController < BaseController
-    before_action :find_element, :only => [:show, :edit, :update, :destroy]
+    before_action :find_element, only: [:show, :edit, :update, :destroy]
 
     def index
       if params[:type].present?
-        scope = scope.where(:output_element_type_id => params[:type])
+        scope = scope.where(output_element_type_id: params[:type])
       else
         scope = OutputElement.all
       end
@@ -26,7 +26,7 @@ module Admin
         flash[:notice] = "OutputElement saved"
         redirect_to admin_output_elements_url
       else
-        render :action => 'new'
+        render action: 'new'
       end
     end
 
@@ -38,7 +38,7 @@ module Admin
         flash[:notice] = "OutputElement updated"
         redirect_to admin_output_elements_url
       else
-        render :action => 'edit'
+        render action: 'edit'
       end
     end
 

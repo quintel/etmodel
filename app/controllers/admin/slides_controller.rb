@@ -1,6 +1,6 @@
 module Admin
   class SlidesController < BaseController
-    before_action :find_model, :only => [:edit, :destroy]
+    before_action :find_model, only: [:edit, :destroy]
 
     def index
       if params[:sidebar_item_id]
@@ -23,7 +23,7 @@ module Admin
         flash[:notice] = "Slide saved"
         redirect_to admin_slides_url
       else
-        render :action => 'new'
+        render action: 'new'
       end
     end
 
@@ -33,13 +33,13 @@ module Admin
         flash[:notice] = "Slide updated"
         redirect_to admin_slides_url
       else
-        render :action => 'edit'
+        render action: 'edit'
       end
     end
 
     def destroy
       @slide.destroy
-      redirect_to admin_slides_path, :notice => 'Slide deleted'
+      redirect_to admin_slides_path, notice: 'Slide deleted'
     end
 
     def edit

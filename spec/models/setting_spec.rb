@@ -20,7 +20,7 @@ describe Setting do
     end
 
     context "other settings" do
-      subject { Setting.new(:track_peak_load => :bar, :use_fce =>:baz) }
+      subject { Setting.new(track_peak_load: :bar, use_fce: :baz) }
 
       it 'sets a custom track_peak_load' do
         expect(subject[:track_peak_load]).to eql(:bar)
@@ -72,7 +72,7 @@ describe Setting do
 
     context "use_peak_load is on" do
       before do
-        @setting = Setting.new(:track_peak_load => true)
+        @setting = Setting.new(track_peak_load: true)
       end
 
       it "should" do

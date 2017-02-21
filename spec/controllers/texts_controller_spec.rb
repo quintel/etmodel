@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 describe TextsController do
-  let!(:text) { FactoryGirl.create :text, :key => 'foobar'}
+  let!(:text) { FactoryGirl.create :text, key: 'foobar'}
 
   describe "#show" do
     it "should show the text detail page" do
-      get :show, :id => 'foobar'
+      get :show, id: 'foobar'
       expect(response).to be_success
       expect(response).to render_template(:show)
     end

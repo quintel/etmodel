@@ -8,10 +8,10 @@ module ApplicationHelper
       flash_message(:notice) if flash[:notice]
       flash_message(:error) if flash[:error]
     else
-      haml_tag 'div#flash', :class => type.to_s do
+      haml_tag 'div#flash', class: type.to_s do
         haml_tag :p do
           haml_concat flash[type]
-          haml_tag :small, link_to('close', '#', :onclick => "$('#flash').hide();")
+          haml_tag :small, link_to('close', '#', onclick: "$('#flash').hide();")
         end
       end
     end

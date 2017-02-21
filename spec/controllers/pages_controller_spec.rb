@@ -3,10 +3,6 @@ require 'spec_helper'
 describe PagesController, vcr: true do
   render_views
 
-  before do
-    allow(ApplicationController).to receive(:ensure_valid_browser)
-  end
-
   {'nl' => 2030, 'de' => 2050}.each do |country, year|
     describe "selecting #{country} #{year}" do
       before do

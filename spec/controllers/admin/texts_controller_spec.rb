@@ -24,7 +24,7 @@ describe Admin::TextsController do
     end
 
     it "create action should redirect when model is valid" do
-      post :create, text: FactoryGirl.attributes_for(:text)
+      post :create, params: { text: FactoryGirl.attributes_for(:text) }
       expect(response).to redirect_to(admin_texts_path)
     end
   end
@@ -35,24 +35,26 @@ describe Admin::TextsController do
     end
 
     it "update action should render edit template when model is invalid" do
-      put :update, id: @text, text: {key: ''}
+      put :update, params: { id: @text, text: { key: '' } }
       expect(response).to render_template(:edit)
     end
 
     it "update action should redirect when model is valid" do
-      put :update, id: @text, text: {key: 'abc'}
+      put :update, params: { id: @text, text: { key: 'abc' } }
       expect(response).to redirect_to(admin_texts_path)
     end
   end
 
   it "edit action should render edit template" do
-    get :edit, id: text.id
+    get :edit, params: { id: text.id }
     expect(response).to render_template(:edit)
   end
 
   it "destroy action should destroy model and redirect to index action" do
     text = FactoryGirl.create :text
-    delete :destroy, id: text.id
+
+    delete :destroy, params: { id: text.id }
+
     expect(response).to redirect_to(admin_texts_path)
     expect(Text.exists?(text.id)).to be(false)
   end

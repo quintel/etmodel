@@ -9,7 +9,9 @@ describe PredictionsController do
 
   describe "GET index" do
     before do
-      xhr :get, :index, input_element_id: prediction.input_element.id
+      get :index, xhr: true, params: {
+        input_element_id: prediction.input_element.id
+      }
     end
 
     it { expect(response).to be_success }
@@ -18,7 +20,7 @@ describe PredictionsController do
 
   describe "GET show" do
     before do
-      xhr :get, :show, id: prediction.id
+      get :show, xhr: true, params: { id: prediction.id }
     end
 
     it { expect(response).to be_success }
@@ -27,7 +29,7 @@ describe PredictionsController do
 
   describe "GET share" do
     before do
-      get :share, id: prediction.id
+      get :share, params: { id: prediction.id }
     end
 
     it { expect(response).to be_success }

@@ -27,7 +27,10 @@ describe Admin::ConstraintsController do
   describe "POST create" do
     before do
       @old_constraint_count = Constraint.count
-      post :create, constraint: FactoryGirl.attributes_for(:constraint)
+
+      post :create, params: {
+        constraint: FactoryGirl.attributes_for(:constraint)
+      }
     end
 
     it "should create a new constraint" do
@@ -38,14 +41,14 @@ describe Admin::ConstraintsController do
   end
 
   describe "GET show" do
-    let(:response) { get(:show, id: constraint.id) }
+    let(:response) { get(:show, params: { id: constraint.id }) }
 
     it { expect(response).to be_success}
     it { expect(response).to render_template :show}
   end
 
   describe "GET edit" do
-    let(:response) { get(:edit, id: constraint.id) }
+    let(:response) { get(:edit, params: { id: constraint.id }) }
 
     it { expect(response).to be_success}
     it { expect(response).to render_template :edit}
@@ -54,7 +57,7 @@ describe Admin::ConstraintsController do
   describe "PUT update" do
     before do
       @constraint = FactoryGirl.create :constraint
-      put :update, id: @constraint.id, constraint: { key: 'yo'}
+      put :update, params: { id: @constraint.id, constraint: { key: 'yo'} }
     end
 
     it { is_expected.to redirect_to(admin_constraint_path(@constraint)) }
@@ -64,7 +67,7 @@ describe Admin::ConstraintsController do
     before do
       @constraint = FactoryGirl.create :constraint
       @old_constraint_count = Constraint.count
-      delete :destroy, id: @constraint.id
+      delete :destroy, params: { id: @constraint.id }
     end
 
     it "should delete the constraint" do

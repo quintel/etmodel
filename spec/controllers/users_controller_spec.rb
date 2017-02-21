@@ -19,7 +19,7 @@ describe UsersController do
 
       before do
         @user = FactoryGirl.create(:user, allow_news: true)
-        get :unsubscribe, id: @user.id, h: @user.md5_hash
+        get :unsubscribe, params: { id: @user.id, h: @user.md5_hash }
         @user.reload
       end
 
@@ -41,7 +41,7 @@ describe UsersController do
 
       before do
         @user = FactoryGirl.create(:user, allow_news: false)
-        get :unsubscribe, id: @user.id, h: @user.md5_hash
+        get :unsubscribe, params: { id: @user.id, h: @user.md5_hash }
         @user.reload
       end
 
@@ -59,7 +59,7 @@ describe UsersController do
 
       before do
         @user = FactoryGirl.create(:user, allow_news: true)
-        get :unsubscribe, id: @user.id, h: 'i-am-a-hacker'
+        get :unsubscribe, params: { id: @user.id, h: 'i-am-a-hacker' }
         @user.reload
       end
 
@@ -82,22 +82,23 @@ describe UsersController do
   describe "#create" do
     it "should create a new user" do
       expect {
-        post :create, user: {
+        post :create, params: { user: {
           name: 'Rocky Balboa',
           email: 'rb@quintel.com',
           password: 'adriana_',
           password_confirmation: 'adriana_'
-        }
+        } }
         expect(response).to be_redirect
       }.to change{ User.count }
     end
 
     it "should not create a new user with invalid data" do
       expect {
-        post :create, user: {
+        post :create, params: { user: {
           name: 'Rocky Balboa',
           email: 'rb@quintel.com'
-        }
+        } }
+
         expect(response).to render_template(:new)
       }.to_not change{ User.count }
     end
@@ -109,15 +110,15 @@ describe UsersController do
 
         it "assigns a correct teacher_id to the user" do
           expect {
-            post :create, { user: {
+            post :create, params: { user: {
               name: 'Student one',
               email: 'stu@quintel.com',
               teacher_email: @teacher.email,
               password: '12345678',
               password_confirmation: '12345678'
-            }
-            }
+            } }
           }.to change{ User.count }
+
           expect(User.last.teacher_id).to eql @teacher.id
         end
       end
@@ -131,7 +132,7 @@ describe UsersController do
       end
 
       it "the system finds a correct user" do
-        get :edit, id: user
+        get :edit, params: { id: user }
         expect(response).to be_success
         expect(assigns(:user)).to eql user
       end
@@ -139,7 +140,7 @@ describe UsersController do
 
     context "when user wants to edit another user's account" do
       it "he is redirected to the home page" do
-        get :edit, id: user
+        get :edit, params: { id: user }
         expect(response).to redirect_to(:root)
       end
     end
@@ -153,7 +154,7 @@ describe UsersController do
     context "with valid parameters" do
       it "updates user's account" do
         user.name = 'Shiny'
-        post :update, id: user, user: user.attributes
+        post :update, params: { id: user, user: user.attributes }
         expect(response).to redirect_to(edit_user_path(user))
       end
     end
@@ -161,7 +162,7 @@ describe UsersController do
     context "with invalid parameters" do
       it "does not update user's account" do
         user.name = ''
-        post :update, id: user, user: user.attributes
+        post :update, params: { id: user, user: user.attributes }
 
         expect(response).to render_template(:edit)
 

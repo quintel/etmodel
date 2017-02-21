@@ -6,7 +6,7 @@ describe DescriptionsController do
 
   describe "#show" do
     it "should show the description template" do
-      get :show, id: description.id
+      get :show, params: { id: description.id }
       expect(response).to be_success
       expect(response).to render_template(:show)
     end
@@ -14,7 +14,7 @@ describe DescriptionsController do
 
   describe "#charts" do
     it "should return the chart description" do
-      get :charts, id: chart.id
+      get :charts, params: { id: chart.id }
       expect(response).to be_success
       expect(response).to render_template(:show)
     end

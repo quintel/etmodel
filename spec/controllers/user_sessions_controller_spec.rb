@@ -18,13 +18,19 @@ describe UserSessionsController do
     end
 
     it "should redirect to admin after succesfull login in" do
-      post :create, user_session: {email: @user.email, password: @user.password}
+      post :create, params: {
+        user_session: { email: @user.email, password: @user.password }
+      }
+
       expect(assigns(:user_session).user).to eq(@user)
       expect(response).to redirect_to(root_path)
     end
 
     it "should render the same page to admin after unsuccessfull login." do
-      post :create, user_session: {email: @user.email, password: 'pssassword'}
+      post :create, params: {
+        user_session: { email: @user.email, password: 'pssassword' }
+      }
+
       expect(controller.send(:current_user)).to be_nil
       expect(response).to be_success
     end

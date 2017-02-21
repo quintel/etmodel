@@ -38,7 +38,7 @@ describe Admin::InputElementsController do
   end
 
   it "edit action should render edit template" do
-    get :edit, id: InputElement.first.id
+    get :edit, params: { id: InputElement.first.id }
     expect(response).to render_template(:edit)
   end
 
@@ -50,20 +50,20 @@ describe Admin::InputElementsController do
 
     it "update action should render edit template when model is invalid" do
       allow(@input_element).to receive(:update_attributes).with(any_args).and_return(false)
-      put :update, id: @input_element
+      put :update, params: { id: @input_element }
       expect(response).to render_template(:edit)
     end
 
     it "update action should redirect when model is valid" do
       allow(@input_element).to receive(:update_attributes).with(any_args).and_return(true)
-      put :update, id: @input_element
+      put :update, params: { id: @input_element }
       expect(response).to redirect_to(admin_input_elements_url)
     end
   end
 
   it "destroy action should destroy model and redirect to index action" do
     input_element = InputElement.first
-    delete :destroy, id: input_element
+    delete :destroy, params: { id: input_element }
     expect(response).to redirect_to(admin_input_elements_url)
     expect(InputElement.exists?(input_element.id)).to be(false)
   end

@@ -10,7 +10,7 @@ describe PagesController, vcr: true do
   {'nl' => 2030, 'de' => 2050}.each do |country, year|
     describe "selecting #{country} #{year}" do
       before do
-        post :root, area_code: country, end_year: year
+        post :root, params: { area_code: country, end_year: year }
       end
 
       specify { expect(response).to redirect_to(play_path) }
@@ -29,12 +29,15 @@ describe PagesController, vcr: true do
     end
 
     it "should not select custom year values if it's not selected" do
-      post :root, area_code: "nl", other_year: '2034'
+      post :root, params: { area_code: "nl", other_year: '2034' }
       expect(session[:setting].end_year).not_to eq(2034)
     end
 
     it "should not select other field" do
-      post :root, area_code: "nl", end_year: 'other', other_year: '2036'
+      post :root, params: {
+        area_code: "nl", end_year: 'other', other_year: '2036'
+      }
+
       expect(session[:setting].end_year).to eq(2036)
     end
   end
@@ -54,7 +57,7 @@ describe PagesController, vcr: true do
 
   context "setting locale" do
     it "should set the locale and redirect" do
-      post :set_locale, locale: 'nl'
+      post :set_locale, params: { locale: 'nl' }
       expect(response).to be_redirect
       expect(I18n.locale).to eq(:nl)
     end
@@ -93,7 +96,7 @@ describe PagesController, vcr: true do
       s = FactoryGirl.create :sidebar_item, section: 'foo', key: 'bar'
       t = FactoryGirl.create :text, key: 'foo_bar'
 
-      get :info, ctrl: 'foo', act: 'bar'
+      get :info, params: { ctrl: 'foo', act: 'bar' }
       expect(response).to be_success
       expect(response).to render_template(:info)
     end
@@ -101,18 +104,19 @@ describe PagesController, vcr: true do
 
   describe "#feedback" do
     it "should render the form" do
-      xhr :get, :feedback
+      get :feedback, xhr: true
       expect(response).to be_success
       expect(response).to render_template(:feedback)
     end
 
     it "should let the user post some feedback and send a couple emails" do
       ActionMailer::Base.deliveries = []
-      xhr :post, :feedback, feedback: {
+      post :feedback, xhr: true, params: { feedback: {
         name: 'Schwarzenegger',
         email: 'arnold@quintel.com',
         msg: "I'll be back"
-      }, format: :js
+      }, format: :js }
+
       expect(response).to be_success
       expect(response).to render_template(:feedback)
       emails = ActionMailer::Base.deliveries

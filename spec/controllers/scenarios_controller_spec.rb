@@ -62,7 +62,7 @@ describe ScenariosController, vcr: true do
         it "should save a scenario" do
           allow(Api::Scenario).to receive(:create).and_return scenario_mock
           expect {
-            post :create, saved_scenario: {api_session_id: 12345}
+            post :create, params: { saved_scenario: { api_session_id: 12345 } }
             expect(response).to redirect_to(scenarios_path)
           }.to change(SavedScenario, :count)
         end
@@ -71,7 +71,7 @@ describe ScenariosController, vcr: true do
           expect(Api::Scenario).not_to receive(:create)
 
           expect {
-            post :create, saved_scenario: {api_session_id: ''}
+            post :create, params: { saved_scenario: { api_session_id: '' } }
           }.to_not change(SavedScenario, :count)
 
           expect(response).to_not be_success
@@ -91,7 +91,7 @@ describe ScenariosController, vcr: true do
         it "should compare them" do
           s1 = FactoryGirl.create :saved_scenario
           s2 = FactoryGirl.create :saved_scenario
-          get :compare, scenario_ids: [s1.id, s2.id]
+          get :compare, params: { scenario_ids: [s1.id, s2.id] }
           expect(response).to be_success
           expect(response).to render_template(:compare)
         end
@@ -99,11 +99,13 @@ describe ScenariosController, vcr: true do
 
       describe "#merge" do
         it "should create a remote scenario with the average values" do
-          post :merge,
+          post :merge, params: {
             inputs: 'average',
-            inputs_avg: {households_number_of_inhabitants: 1.0}.to_yaml,
-            inputs_def: {households_number_of_inhabitants: 1.0}.to_yaml
-            expect(response).to be_success
+            inputs_avg: { households_number_of_inhabitants: 1.0 }.to_yaml,
+            inputs_def: { households_number_of_inhabitants: 1.0 }.to_yaml
+          }
+
+          expect(response).to be_success
         end
       end
     end

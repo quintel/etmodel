@@ -117,6 +117,6 @@ public
 
   def set_locale
     locale
-    redirect_to_back
+    render(plain: '', status: :ok)
   end
 end

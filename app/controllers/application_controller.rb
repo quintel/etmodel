@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     if params[:locale]
       redirect_params = params.permit(:controller, :action)
       session[:locale] = params[:locale]
-      redirect_to(redirect_params)
+      redirect_to(redirect_params) if request.get?
     end
 
     # set locale based on session or url

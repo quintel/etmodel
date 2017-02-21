@@ -1,11 +1,4 @@
 GIT
-  remote: https://github.com/fnando/i18n-js.git
-  revision: b8fb918c827a2d3bbe187372e47bbe1a7a6c4c19
-  specs:
-    i18n-js (3.0.0)
-      i18n (~> 0.6, >= 0.6.6)
-
-GIT
   remote: https://github.com/quintel/etplugin.git
   revision: c668ad44d6db6eba2f9b8ec0c0b0f7a1a0ffaa6c
   ref: c668ad4
@@ -178,6 +171,8 @@ GEM
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
     i18n (0.8.1)
+    i18n-js (3.0.0)
+      i18n (~> 0.6, >= 0.6.6)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
       multi_json (~> 1.2)
@@ -402,7 +397,7 @@ DEPENDENCIES
   font-awesome-rails
   haml (~> 4.0)
   httparty
-  i18n-js!
+  i18n-js
   jbuilder
   jquery-etmodel-rails!
   jquery-rails (~> 4.2.2)

@@ -26,9 +26,7 @@ gem 'font-awesome-rails'
 gem 'non-stupid-digest-assets'
 
 # javascript
-# Change back to RubyGems once Invalid Byte Sequence error is fixed:
-#   https://github.com/fnando/i18n-js/pull/139
-gem 'i18n-js', :github => 'fnando/i18n-js'
+gem 'i18n-js'
 gem 'jbuilder'
 
 # supporting gems

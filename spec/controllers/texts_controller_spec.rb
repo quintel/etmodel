@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe TextsController, type: :controller do
+describe TextsController do
   let!(:text) { FactoryGirl.create :text, :key => 'foobar'}
 
   describe "#show" do

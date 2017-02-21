@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ConstraintsController, type: :controller do
+describe ConstraintsController do
   describe "on GET show" do
     let(:constraint) { FactoryGirl.create :constraint, :key => 'total_primary_energy' }
 

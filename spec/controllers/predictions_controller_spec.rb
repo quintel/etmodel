@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe PredictionsController, type: :controller do
+describe PredictionsController do
   let(:prediction) { FactoryGirl.create :prediction}
 
   before do
-    Setting.any_instance.stub(:area_code).and_return('nl')
+    allow_any_instance_of(Setting).to receive(:area_code).and_return('nl')
   end
 
   describe "GET index" do
@@ -12,8 +12,8 @@ describe PredictionsController, type: :controller do
       xhr :get, :index, :input_element_id => prediction.input_element.id
     end
 
-    it { response.should be_success }
-    it { response.should render_template :index }
+    it { expect(response).to be_success }
+    it { expect(response).to render_template :index }
   end
 
   describe "GET show" do
@@ -21,8 +21,8 @@ describe PredictionsController, type: :controller do
       xhr :get, :show, :id => prediction.id
     end
 
-    it { response.should be_success }
-    it { response.should render_template :show }
+    it { expect(response).to be_success }
+    it { expect(response).to render_template :show }
   end
 
   describe "GET share" do
@@ -30,7 +30,7 @@ describe PredictionsController, type: :controller do
       get :share, :id => prediction.id
     end
 
-    it { response.should be_success }
-    it { response.should render_template :index}
+    it { expect(response).to be_success }
+    it { expect(response).to render_template :index}
   end
 end

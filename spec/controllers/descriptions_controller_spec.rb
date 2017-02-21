@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe DescriptionsController, type: :controller do
+describe DescriptionsController do
   let!(:chart)   { FactoryGirl.create :output_element_with_description}
   let!(:description)   { chart.description}
 

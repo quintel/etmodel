@@ -5,7 +5,7 @@ describe Scenario::Creator do
 
   it "creates a scenario" do
     user = FactoryGirl.create(:user)
-    Api::Scenario.stub(:create).and_return scenario_mock
+    allow(Api::Scenario).to receive(:create).and_return scenario_mock
 
     Scenario::Creator.new(user, {}).create
 

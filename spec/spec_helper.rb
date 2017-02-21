@@ -112,10 +112,21 @@ RSpec.configure do |config|
   # Stub out Partner.all.
   [ :controller, :request ].each do |type|
     config.before(:each, type: type) do
-      Partner.stub(:all).and_return([
+      allow(Partner).to receive(:all).and_return([
         Partner.new(name: 'StarTale',   key: 'st', img: '', kind: 'primary'),
         Partner.new(name: 'TeamLiquid', key: 'tl', img: '', kind: 'general')
       ])
     end
   end
+
+  # rspec-rails 3 will no longer automatically infer an example group's spec type
+  # from the file location. You can explicitly opt-in to the feature using this
+  # config option.
+  # To explicitly tag specs without using automatic inference, set the `:type`
+  # metadata manually:
+  #
+  #     describe ThingsController, :type => :controller do
+  #       # Equivalent to being in spec/controllers
+  #     end
+  config.infer_spec_type_from_file_location!
 end

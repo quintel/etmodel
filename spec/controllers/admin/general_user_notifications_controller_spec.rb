@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Admin::GeneralUserNotificationsController, type: :controller do
+describe Admin::GeneralUserNotificationsController do
   render_views
   let!(:general_user_notification) { FactoryGirl.create :general_user_notification }
 
@@ -47,7 +47,7 @@ describe Admin::GeneralUserNotificationsController, type: :controller do
                    :general_user_notification => { :notification_en => 'another text'}
     end
 
-    it { should redirect_to(admin_general_user_notifications_path) }
+    it { is_expected.to redirect_to(admin_general_user_notifications_path) }
   end
 
   describe "DELETE destroy" do
@@ -58,8 +58,8 @@ describe Admin::GeneralUserNotificationsController, type: :controller do
     end
 
     it "should delete the GeneralUserNotification" do
-      GeneralUserNotification.count.should == @general_user_notification_count - 1
+      expect(GeneralUserNotification.count).to eq(@general_user_notification_count - 1)
     end
-    it { should redirect_to(admin_general_user_notifications_path)}
+    it { is_expected.to redirect_to(admin_general_user_notifications_path)}
   end
 end

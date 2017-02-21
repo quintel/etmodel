@@ -1,11 +1,11 @@
 def ete_scenario_mock
   mock = double("api_scenario")
-  mock.stub(:id){"123"}
-  mock.stub(:title){"title"}
-  mock.stub(:end_year){"2050"}
-  mock.stub(:area_code){"nl"}
-  mock.stub(:parsed_created_at){ Time.now }
-  mock.stub(:created_at){ Time.now }
-  mock.stub(:all_inputs){ {} }
+  allow(mock).to receive(:id){"123"}
+  allow(mock).to receive(:title){"title"}
+  allow(mock).to receive(:end_year){"2050"}
+  allow(mock).to receive(:area_code){"nl"}
+  allow(mock).to receive(:parsed_created_at){ Time.now }
+  allow(mock).to receive(:created_at){ Time.now }
+  allow(mock).to receive(:all_inputs){ {} }
   mock
 end

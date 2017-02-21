@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Admin::ConstraintsController, type: :controller do
+describe Admin::ConstraintsController do
   render_views
 
   let!(:constraint) { FactoryGirl.create :constraint }
@@ -31,10 +31,10 @@ describe Admin::ConstraintsController, type: :controller do
     end
 
     it "should create a new constraint" do
-      Constraint.count.should == @old_constraint_count + 1
+      expect(Constraint.count).to eq(@old_constraint_count + 1)
     end
 
-    it { should redirect_to(admin_constraint_path(assigns(:constraint)))}
+    it { is_expected.to redirect_to(admin_constraint_path(assigns(:constraint)))}
   end
 
   describe "GET show" do
@@ -57,7 +57,7 @@ describe Admin::ConstraintsController, type: :controller do
       put :update, :id => @constraint.id, :constraint => { :key => 'yo'}
     end
 
-    it { should redirect_to(admin_constraint_path(@constraint)) }
+    it { is_expected.to redirect_to(admin_constraint_path(@constraint)) }
   end
 
   describe "DELETE destroy" do
@@ -68,8 +68,8 @@ describe Admin::ConstraintsController, type: :controller do
     end
 
     it "should delete the constraint" do
-      Constraint.count.should == @old_constraint_count - 1
+      expect(Constraint.count).to eq(@old_constraint_count - 1)
     end
-    it { should redirect_to(admin_constraints_path)}
+    it { is_expected.to redirect_to(admin_constraints_path)}
   end
 end

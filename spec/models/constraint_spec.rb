@@ -1,14 +1,14 @@
 require 'spec_helper'
 
-describe Constraint, type: :model do
-  it { should validate_presence_of(:group) }
+describe Constraint do
+  it { is_expected.to validate_presence_of(:group) }
 
   Constraint::GROUPS.each do |group|
-    it { should allow_value(group).for(:group) }
+    it { is_expected.to allow_value(group).for(:group) }
   end
 
-  it { should_not allow_value('').for(:group) }
-  it { should_not allow_value('invalid_group').for(:group) }
+  it { is_expected.not_to allow_value('').for(:group) }
+  it { is_expected.not_to allow_value('invalid_group').for(:group) }
 end
 
 # ----------------------------------------------------------------------------
@@ -18,12 +18,12 @@ describe Constraint, '#as_json' do
   subject { Constraint.first.as_json }
 
   it 'should remove the "constraint" root' do
-    subject.should_not have_key('constraint')
+    expect(subject).not_to have_key('constraint')
   end
 
-  it { should have_key('id') }
-  it { should have_key('key') }
-  it { should have_key('gquery_key') }
+  it { is_expected.to have_key('id') }
+  it { is_expected.to have_key('key') }
+  it { is_expected.to have_key('gquery_key') }
 end
 
 # ----------------------------------------------------------------------------
@@ -37,15 +37,15 @@ describe Constraint, '.for_dashboard' do
 
     subject { Constraint.for_dashboard(keys) }
 
-    it { should be_a(Array) }
+    it { is_expected.to be_a(Array) }
     it { expect(subject.length).to eq(keys.length) }
 
     it 'should return the total_primary_energy constraint first' do
-      subject[0].should eql(Constraint.find_by_key(keys[0]))
+      expect(subject[0]).to eql(Constraint.find_by_key(keys[0]))
     end
 
     it 'should return the co2_reduction constraint second' do
-      subject[1].should eql(Constraint.find_by_key(keys[1]))
+      expect(subject[1]).to eql(Constraint.find_by_key(keys[1]))
     end
   end
 
@@ -57,18 +57,18 @@ describe Constraint, '.for_dashboard' do
     subject { Constraint.for_dashboard(keys) }
 
     it { expect(subject.length).to eq(keys.length) }
-    it { should be_a(Array) }
+    it { is_expected.to be_a(Array) }
 
     it 'should return the total_primary_energy constraint first' do
-      subject[0].should eql(Constraint.find_by_key(keys[0]))
+      expect(subject[0]).to eql(Constraint.find_by_key(keys[0]))
     end
 
     it 'should return the co2_reduction constraint second' do
-      subject[1].should eql(Constraint.find_by_key(keys[1]))
+      expect(subject[1]).to eql(Constraint.find_by_key(keys[1]))
     end
 
     it 'should return the total_primary_energy constraint third' do
-      subject[2].should eql(Constraint.find_by_key(keys[2]))
+      expect(subject[2]).to eql(Constraint.find_by_key(keys[2]))
     end
   end
 

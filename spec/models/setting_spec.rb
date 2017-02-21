@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Setting, type: :model do
+describe Setting do
   before  { @setting = Setting.new }
   subject { @setting }
 
@@ -36,10 +36,10 @@ describe Setting, type: :model do
     it "should return a new Setting with default_values" do
       # twice: once in default and once in initialize
       setting = Setting.default
-      setting.class.should == Setting
+      expect(setting.class).to eq(Setting)
 
       Setting.default_attributes.each_key do |key|
-        setting[key].should == defaults[key]
+        expect(setting[key]).to eq(defaults[key])
       end
     end
   end
@@ -48,7 +48,7 @@ describe Setting, type: :model do
     context "use_peak_load is off" do
       before do
         @s = Setting.new
-        @s.stub(:use_peak_load).and_return(false)
+        allow(@s).to receive(:use_peak_load).and_return(false)
       end
 
       context "track_peak_load on" do
@@ -76,13 +76,13 @@ describe Setting, type: :model do
       end
 
       it "should" do
-        @setting.stub(:use_peak_load).and_return(true)
-        @setting.track_peak_load?.should be(true)
+        allow(@setting).to receive(:use_peak_load).and_return(true)
+        expect(@setting.track_peak_load?).to be(true)
       end
 
       it "should" do
-        @setting.stub(:use_peak_load).and_return(false)
-        @setting.track_peak_load?.should be(false)
+        allow(@setting).to receive(:use_peak_load).and_return(false)
+        expect(@setting.track_peak_load?).to be(false)
       end
     end
   end
@@ -98,7 +98,7 @@ describe Setting, type: :model do
     it "should reset all attributes to default values" do
       @setting.reset!
       Setting.default_attributes.each_key do |key|
-        @setting.send(key).should eql(defaults[key])
+        expect(@setting.send(key)).to eql(defaults[key])
       end
     end
   end
@@ -108,10 +108,10 @@ describe Setting, type: :model do
       before {
         @setting = Setting.default
         @area = Api::Area.new
-        Api::Area.should_receive(:find_by_country_memoized).with(@setting.area_code).and_return(@area)
+        expect(Api::Area).to receive(:find_by_country_memoized).with(@setting.area_code).and_return(@area)
       }
       it "should return area" do
-        @setting.area.should == @area
+        expect(@setting.area).to eq(@area)
       end
     end
   end
@@ -119,8 +119,8 @@ describe Setting, type: :model do
   describe "#use_peak_load" do
     [true, false].each do |flag|
       context "use_network_calculations? = #{flag}" do
-        before  { @setting.stub(:use_network_calculations?).and_return(flag) }
-        specify { @setting.use_peak_load.should == flag}
+        before  { allow(@setting).to receive(:use_network_calculations?).and_return(flag) }
+        specify { expect(@setting.use_peak_load).to eq(flag)}
       end
     end
   end
@@ -136,7 +136,7 @@ describe Setting, type: :model do
           allow(@setting).to receive(:area).and_return(area)
         end
 
-        specify { @setting.send(setting_method_name).should be_truthy }
+        specify { expect(@setting.send(setting_method_name)).to be_truthy }
       end
 
       describe "##{setting_method_name} with no area should be false" do
@@ -144,7 +144,7 @@ describe Setting, type: :model do
           allow(@setting).to receive(:area).and_return(nil)
         end
 
-        specify { @setting.send(setting_method_name).should be_falsey }
+        specify { expect(@setting.send(setting_method_name)).to be_falsey }
       end
     end
   end
@@ -156,7 +156,7 @@ describe Setting, type: :model do
         #      messes with arrays as default_attributes.
         s1 = Setting.default
         s1.network_parts_affected << :network
-        Setting.default_attributes[:network_parts_affected].should be_empty
+        expect(Setting.default_attributes[:network_parts_affected]).to be_empty
       end
     end
   end

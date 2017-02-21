@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe OutputElementSerie, type: :model do
-  it { should validate_presence_of :gquery }
+describe OutputElementSerie do
+  it { is_expected.to validate_presence_of :gquery }
 end

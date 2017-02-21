@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe PagesController, type: :controller, vcr: true do
+describe PagesController, vcr: true do
   render_views
 
   before do
-    ApplicationController.stub(:ensure_valid_browser)
+    allow(ApplicationController).to receive(:ensure_valid_browser)
   end
 
   {'nl' => 2030, 'de' => 2050}.each do |country, year|
@@ -13,9 +13,9 @@ describe PagesController, type: :controller, vcr: true do
         post :root, :area_code => country, :end_year => year
       end
 
-      specify { response.should redirect_to(play_path) }
-      specify { session[:setting].end_year.should == year }
-      specify { session[:setting].area_code.should == country }
+      specify { expect(response).to redirect_to(play_path) }
+      specify { expect(session[:setting].end_year).to eq(year) }
+      specify { expect(session[:setting].area_code).to eq(country) }
     end
   end
 
@@ -23,19 +23,19 @@ describe PagesController, type: :controller, vcr: true do
     it "should have custom year field" do
       get :root
 
-      response.body.should have_selector("#new_scenario form") do |form|
-        form.should have_selector("select", :name => 'other_year')
+      expect(response.body).to have_selector("#new_scenario form") do |form|
+        expect(form).to have_selector("select", :name => 'other_year')
       end
     end
 
     it "should not select custom year values if it's not selected" do
       post :root, :area_code => "nl", :other_year => '2034'
-      session[:setting].end_year.should_not == 2034
+      expect(session[:setting].end_year).not_to eq(2034)
     end
 
     it "should not select other field" do
       post :root, :area_code => "nl", :end_year => 'other', :other_year => '2036'
-      session[:setting].end_year.should == 2036
+      expect(session[:setting].end_year).to eq(2036)
     end
   end
 
@@ -45,8 +45,8 @@ describe PagesController, type: :controller, vcr: true do
       describe "#{page} page" do
         it "should work" do
           get page
-          response.should be_success
-          response.should render_template(page)
+          expect(response).to be_success
+          expect(response).to render_template(page)
         end
       end
     end
@@ -55,8 +55,8 @@ describe PagesController, type: :controller, vcr: true do
   context "setting locale" do
     it "should set the locale and redirect" do
       post :set_locale, :locale => 'nl'
-      response.should be_redirect
-      I18n.locale.should == :nl
+      expect(response).to be_redirect
+      expect(I18n.locale).to eq(:nl)
     end
   end
 

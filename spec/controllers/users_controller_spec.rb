@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UsersController, type: :controller do
+describe UsersController do
   render_views
 
   let(:user) { FactoryGirl.create(:user) }

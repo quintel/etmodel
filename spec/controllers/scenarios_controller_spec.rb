@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe ScenariosController, type: :controller, vcr: true do
+describe ScenariosController, vcr: true do
   render_views
 
   let(:scenario_mock) { ete_scenario_mock }
 
   before do
-    Api::Scenario.stub(:find).and_return scenario_mock
+    allow(Api::Scenario).to receive(:find).and_return scenario_mock
   end
 
   let(:user) { FactoryGirl.create :user }
@@ -18,7 +18,7 @@ describe ScenariosController, type: :controller, vcr: true do
     describe "#index" do
       it "should be redirected" do
         get :index
-        response.should redirect_to(login_url)
+        expect(response).to redirect_to(login_url)
       end
     end
   end
@@ -31,8 +31,8 @@ describe ScenariosController, type: :controller, vcr: true do
     describe "#index" do
       it "should get a list of his saved scenarios" do
         get :index
-        response.should be_success
-        assigns(:saved_scenarios).should == [user_scenario]
+        expect(response).to be_success
+        expect(assigns(:saved_scenarios)).to eq([user_scenario])
       end
     end
 
@@ -44,8 +44,8 @@ describe ScenariosController, type: :controller, vcr: true do
       describe "#new" do
         it "should show a form to save the scenario" do
           get :new
-          response.should be_success
-          assigns(:saved_scenario).api_session_id.should == 12345
+          expect(response).to be_success
+          expect(assigns(:saved_scenario).api_session_id).to eq(12345)
         end
 
         it "raises an error if no scenario is in progress" do
@@ -60,15 +60,15 @@ describe ScenariosController, type: :controller, vcr: true do
 
       describe "#create" do
         it "should save a scenario" do
-          Api::Scenario.stub(:create).and_return scenario_mock
-          lambda {
+          allow(Api::Scenario).to receive(:create).and_return scenario_mock
+          expect {
             post :create, saved_scenario: {api_session_id: 12345}
-            response.should redirect_to(scenarios_path)
-          }.should change(SavedScenario, :count)
+            expect(response).to redirect_to(scenarios_path)
+          }.to change(SavedScenario, :count)
         end
 
         it "does not save if no scenario is in progress" do
-          Api::Scenario.should_not_receive(:create)
+          expect(Api::Scenario).not_to receive(:create)
 
           expect {
             post :create, saved_scenario: {api_session_id: ''}
@@ -82,8 +82,8 @@ describe ScenariosController, type: :controller, vcr: true do
       describe "#reset" do
         it "should reset a scenario" do
           get :reset
-          session[:setting].api_session_id.should be_nil
-          response.should be_redirect
+          expect(session[:setting].api_session_id).to be_nil
+          expect(response).to be_redirect
         end
       end
 
@@ -117,9 +117,9 @@ describe ScenariosController, type: :controller, vcr: true do
     describe "#index" do
       it "should get a list of all saved scenarios" do
         get :index
-        response.should be_success
-        assigns(:saved_scenarios).should include user_scenario
-        assigns(:saved_scenarios).should include admin_scenario
+        expect(response).to be_success
+        expect(assigns(:saved_scenarios)).to include user_scenario
+        expect(assigns(:saved_scenarios)).to include admin_scenario
       end
     end
   end

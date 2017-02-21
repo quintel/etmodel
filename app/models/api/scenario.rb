@@ -13,10 +13,9 @@ class Api::Scenario < ActiveResource::Base
   self.site = "#{APP_CONFIG[:api_url]}/api/v3"
 
   def self.batch_load(ids)
-    scenarios = HTTParty.get("#{self.site}/scenarios/#{ids.join(',')}/batch")
-    scenarios.map do |scenario|
-      new(scenario)
-    end
+    HTTParty
+      .get(self.site.merge("scenarios/#{ids.join(',')}/batch"))
+      .map { |scenario| new(scenario) }
   end
 
   # Public: Given an array of scenarios, an array of display groups, groups the

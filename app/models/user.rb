@@ -57,9 +57,9 @@ class User < ActiveRecord::Base
   end
 
   acts_as_authentic do |config|
-    config.crypto_provider = Authlogic::CryptoProviders::Sha512
+    config.crypto_provider = Authlogic::CryptoProviders::BCrypt
+    config.transition_from_crypto_providers = Authlogic::CryptoProviders::Sha512
   end
-
 
   scope :ordered, -> { order('name') }
 

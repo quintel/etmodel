@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe SettingsController, 'routing' do
   it 'routes to GET /settings/dashboard' do

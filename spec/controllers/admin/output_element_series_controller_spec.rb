@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Admin::OutputElementSeriesController do
   let!(:serie) { FactoryGirl.create :output_element_serie }

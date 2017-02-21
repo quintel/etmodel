@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Admin::OutputElementsController do
   let!(:output_element) { FactoryGirl.create :output_element }

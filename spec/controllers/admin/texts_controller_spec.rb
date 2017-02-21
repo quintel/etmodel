@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Admin::TextsController do
   let!(:text) { FactoryGirl.create :text }

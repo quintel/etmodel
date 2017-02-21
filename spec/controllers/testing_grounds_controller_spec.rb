@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe TestingGroundsController do
   let(:scenario_mock) { ete_scenario_mock }

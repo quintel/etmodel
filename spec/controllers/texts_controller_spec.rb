@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe TextsController do
   let!(:text) { FactoryGirl.create :text, key: 'foobar'}

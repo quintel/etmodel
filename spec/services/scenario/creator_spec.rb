@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Scenario::Creator do
   let(:scenario_mock) { ete_scenario_mock }

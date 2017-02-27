@@ -178,7 +178,7 @@
   # 0-999: 0, 1000-999999: 1, ...
   power_of_thousand: (x) ->
     if x is 0 then 0 else
-      parseInt(Math.log(Math.abs(x)) / Math.log(1000), 10)
+      Math.trunc(Math.log(Math.abs(x)) / Math.log(1000))
 
   # Returns the string currently used on the i18n file
   power_of_thousand_to_string: (x) -> @scale_label["#{x}"]

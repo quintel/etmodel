@@ -52,7 +52,7 @@ describe PagesController, vcr: true do
   end
 
   context "setting locale" do
-    it "should set the locale and redirect", :focus do
+    it "should set the locale and redirect" do
       expect {
         put :set_locale, params: { locale: 'nl' }
         expect(response).to be_success

@@ -66,7 +66,7 @@ class SettingsController < ApplicationController
   # PUT /settings/dashboard
   #
   def update_dashboard
-    unless params[:dash]
+    unless params[:dash] && params[:dash].respond_to?(:to_h)
       render json: { error: 'Invalid constraints hash' }, status: :bad_request
       return
     end

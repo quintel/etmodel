@@ -159,6 +159,11 @@ class @Quantity
       opts.precision = _.min(
         ["#{ @value }".split('.', 2)[1]?.length || 0, maxPrecision])
 
+      # Prevent formatting a "0" with no precision, which results in an empty
+      # string.
+      if opts.strip_insignificant_zeros and opts.precision is 0 and @value is 0
+        opts.precision = 1
+
     "#{ I18n.toNumber(@value, opts) } #{ @localizedUnit() }"
 
   localizedUnit: ->

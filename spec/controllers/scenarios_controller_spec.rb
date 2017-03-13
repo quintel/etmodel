@@ -11,8 +11,8 @@ describe ScenariosController, vcr: true do
 
   let(:user) { FactoryGirl.create :user }
   let(:admin) { FactoryGirl.create :admin }
-  let!(:user_scenario) { FactoryGirl.create :saved_scenario, user: user }
-  let!(:admin_scenario) { FactoryGirl.create :saved_scenario, user: admin }
+  let!(:user_scenario) { FactoryGirl.create :saved_scenario, user: user, id: 648695 }
+  let!(:admin_scenario) { FactoryGirl.create :saved_scenario, user: admin, id: 648696 }
 
   context "a guest" do
     describe "#index" do

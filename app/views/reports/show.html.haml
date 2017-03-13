@@ -1,0 +1,20 @@
+#active-content
+  #report
+    #title
+      %h2== Scenario Report
+      %p.loading Please wait one moment while your report is loaded&hellip;
+
+%script(id="report-template" language="text/liquid")
+  = @report.html_safe
+
+- content_for :scripts do
+  - Dir["app/views/output_elements/table_templates/*"].each do |file|
+    = render file: Rails.root.join(file).to_s
+
+  = render 'output_elements/chart_template'
+  :javascript
+    $(function(){
+      window.App = App = new AppView();
+      App.settings.set(globals.settings, {silent : true});
+      App.bootstrap();
+    })

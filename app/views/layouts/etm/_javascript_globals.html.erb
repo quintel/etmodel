@@ -7,5 +7,6 @@
         json.standalone     APP_CONFIG[:standalone]
         json.settings       Current.setting
         json.debug_js       admin?
+        json.env            Rails.env
       end.html_safe %>;
 </script>

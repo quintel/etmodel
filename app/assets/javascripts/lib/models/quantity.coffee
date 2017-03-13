@@ -62,6 +62,14 @@ compiledUnits['mln'] = {
   power: { prefix: 'm', multiple: 1e6, i18n: 'millions' }
 }
 
+# Support for unitless numbers.
+
+compiledUnits['#'] = {
+  name: '#',
+  base: { name: '#', i18n: 'nounit' },
+  power: minPower
+};
+
 # ------------------------------------------------------------------------------
 
 class @Quantity
@@ -168,9 +176,25 @@ class @Quantity
 
   localizedUnit: ->
     if @unit.base.i18n
-      I18n.t(i18nKey(@unit), defaultValue: @unit.name)
+      if I18n.t(i18nKey(@unit)).length
+        I18n.t(i18nKey(@unit), defaultValue: @unit.name)
+      else
+        '' # Blank messages ("nounit.unit") are fine; don't fallback to default.
     else
       @unit.name
+
+  toString: -> @format()
+
+  # Used to coerce Quantity into numbers so that it may be used in expressions.
+  #
+  # For example:
+  #   quantity = new Quantity(50, 'kg')
+  #   quantity > 50 # false
+  #   quantity > 40 # true
+  #
+  # Returns a number.
+  valueOf: ->
+    @value
 
   # Public: Given a number and unit, determines the most appropriate power in
   # which to display the number, and returns a function for converting and

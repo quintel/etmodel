@@ -83,12 +83,17 @@ Etm::Application.routes.draw do
       get  :weighted_merge
       post :weighted_merge, to: :perform_weighted_merge
     end
+
     get :load, on: :member
   end
 
   get '/scenario/new' => 'scenarios#new'
   get '/scenario/reset' => 'scenarios#reset'
   get '/scenario/grid_investment_needed' => 'scenarios#grid_investment_needed'
+
+  get '/scenario/reports/:id' => 'reports#show',
+    constraints: { id: /[0-9a-z-]+/ }
+
   # This is the main action
   get '/scenario(/:tab(/:sidebar(/:slide)))' => 'scenarios#play', as: :play
 

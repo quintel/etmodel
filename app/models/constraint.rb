@@ -72,6 +72,8 @@ class Constraint < ActiveRecord::Base
   #   Raised if one of the keys did not match a Constraint in the DB.
   #
   def self.for_dashboard(keys)
+    return Constraint.default.ordered if !keys || keys.none?
+
     raise IllegalConstraintKey if keys.any?(&:blank?)
 
     constraints = Constraint.enabled.where(key: keys.uniq)

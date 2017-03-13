@@ -20,6 +20,13 @@ class Api::Scenario < ActiveResource::Base
     HTTParty.get(url_to("#{ ids.uniq.join(',') }/batch")).map { |scn| new(scn) }
   end
 
+  def self.find_with_queries(id, queries)
+    HTTParty.put(
+      "#{ APP_CONFIG[:api_url] }/api/v3/scenarios/#{ id }",
+      body: { gqueries: Array(queries) }
+    )
+  end
+
   # Public: Given an array of scenarios, an array of display groups, groups the
   # scenarios according to their display_group, in the order specified in the
   # group array.

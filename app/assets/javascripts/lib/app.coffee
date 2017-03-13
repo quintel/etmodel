@@ -68,7 +68,9 @@ class @AppView extends Backbone.View
   # At this point we have all the settings initialized.
   bootstrap: =>
     @sidebar.bootstrap()
-    @router.load_default_slides()
+
+    unless Backbone.history.getFragment().match(/^reports\//)
+      @router.load_default_slides()
 
     # If a "change dashboard" button is present, set up the DashboardChanger.
     dashChangeEl = $('#dashboard_change')
@@ -81,7 +83,12 @@ class @AppView extends Backbone.View
     window.charts = @charts = new ChartList()
     @accordion = new Accordion()
     @accordion.setup()
-    @charts.load_charts()
+
+    if Backbone.history.getFragment().match(/^reports\//)
+      new ReportView(window.reportData).renderInto($('#report'));
+      $('#report .loading').remove();
+    else
+      @charts.load_charts()
 
   setup_fce_toggle: ->
     if element = $('.slide .fce-toggle')
@@ -112,14 +119,18 @@ class @AppView extends Backbone.View
 
     @checkboxes_initialized = true
 
-  call_api: (input_params) =>
+  call_api: (input_params, options = {}) =>
     @api.update
       queries:  window.gqueries.keys(),
       inputs:   input_params,
       settings:
         use_fce: App.settings.get('use_fce')
-      success:  @handle_api_result
-      error:    @handle_ajax_error
+      success: (json, data, textStatus, jqXHR) =>
+        @handle_api_result(json, data, textStatus, jqXHR)
+        options.success?(json, data, textStatus, jqXHR)
+      error: (jqXHR, textStatus, error) =>
+        @handle_ajax_error(jqXHR, textStatus, error)
+        options.error?(jqXHR, textStatus, error)
 
   handle_ajax_error: (jqXHR, textStatus, error) ->
     console.log("Something went wrong: " + textStatus)

@@ -4,6 +4,7 @@
 
 //= require jqplot
 //= require jquery.quinn.min
+//= require liquid
 
 // silly sprockets...
 //= require lib/views/base_chart_view

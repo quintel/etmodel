@@ -1,0 +1,85 @@
+#report
+  // TODO This should be 622px, however the sidebar r-margin messes things up.
+  width: 632px
+
+  .report-errors
+    color: #e24545
+    font-weight: bold
+
+    ul
+      list-style: none
+      padding-left: 0
+
+    pre
+      border-left: 3px solid #ddd
+      color: #aaa
+      font-weight: normal
+      font-size: 11px
+      padding-left: 2em
+      margin-left: 2em
+
+  #title h2
+    float: none
+
+  div.chart
+    border: 1px solid #ddd
+    margin: 1em 0
+    overflow: hidden
+    padding-bottom: 5px
+    padding: 10px
+    width: 600px
+
+    .chart_holder
+      float: none
+      overflow: hidden
+
+      .chart_canvas
+        min-height: 300px
+
+    .legend
+      margin: 10px 20px 0 !important
+      text-align: center
+
+      .legend-item
+        padding: 0 7px
+        width: auto !important
+
+    .caption
+      border-top: 1px solid #ddd
+      color: #777
+      font-size: 12px
+      line-height: 1.4
+      margin: 22px 50px
+      padding-top: 20px
+      text-align: center
+
+@media print
+  @page
+    margin: 2cm
+
+  header#top, #sidebar, footer
+    display: none
+
+  #content #active-content
+    margin: 0
+    padding: 0
+
+  #title
+    display: none
+
+  #report
+    font-family: serif
+    font-size: 16pt
+    line-height: 1.5
+    margin: 0
+    width: auto
+
+    .chart
+      font: 13px/20px "Lucida Grande", Verdana, Arial, Helvetica, sans-serif
+
+    .report-view :first-child
+      margin-top: 0
+
+    .report-component.chart
+      margin-left: auto
+      margin-right: auto

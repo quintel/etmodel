@@ -1,12 +1,11 @@
 class ScenariosController < ApplicationController
+  include MainInterfaceController.new(:play)
+
   before_action :ensure_valid_browser
   before_action :find_scenario, only: [:show, :load]
   before_action :require_user, only: [:index, :new, :merge]
-  before_action :load_interface,
-                :store_last_etm_page,
-                :load_constraints,
-                :prevent_browser_cache, only: :play
   before_action :setup_comparison, only: [:compare, :weighted_merge]
+  before_action :store_last_etm_page, :prevent_browser_cache, only: :play
 
   # Raised when trying to save a scenario, but the user does not have a
   # scenario in progress. See quintel/etengine#542.
@@ -202,36 +201,21 @@ class ScenariosController < ApplicationController
       nil
     end
 
-    def load_interface
-      tab = params[:tab] || 'demand'
-      @interface = Interface.new(tab, params[:sidebar], params[:slide])
-
-      # The JS app will take care of fetching a scenario id, in the meanwhile we
-      # use this variable to show all the items in the top menu
-      @active_scenario = true
-    end
-
+    # Remembers the most recently visited ETM page so that the visitor can be
+    # brought back here if they reload, or return to the site later.
     def store_last_etm_page
-      tab_key     = @interface.current_tab.key rescue nil
-      sidebar_key = @interface.current_sidebar_item.key rescue nil
-      slide_key   = @interface.current_slide.short_name rescue nil
-      Current.setting.last_etm_page = play_url(tab_key, sidebar_key, slide_key)
-    end
+      tab_key     = @interface.try(:current_tab).try(:key)
+      sidebar_key = @interface.try(:current_sidebar_item).try(:key)
+      slide_key   = @interface.try(:current_slide).try(:short_name)
 
-    def load_constraints
-      dash = session[:dashboard]
-
-      @constraints = if dash and dash.any?
-        Constraint.for_dashboard(dash)
-      else
-        Constraint.default.ordered
-      end
+      Current.setting.last_etm_page =
+        play_url(tab_key, sidebar_key, slide_key)
     end
 
     def prevent_browser_cache
-      response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
-      response.headers["Pragma"] = "no-cache"
-      response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+      response.headers['Cache-Control'] = 'no-cache, no-store, max-age=0, must-revalidate'
+      response.headers['Pragma'] = 'no-cache'
+      response.headers['Expires'] = 'Fri, 01 Jan 1990 00:00:00 GMT'
     end
 
     def setup_comparison

@@ -1,91 +1,90 @@
-#charts_wrapper
-  .chart_holder
-    width: 600px
-    float: left
-    min-height: 300px
-    margin-right: 2px
-    header
-      background: #dfe8f3
-      height: 30px
-      h3
-        float: left
-        margin: 0 0 3px 0
+.chart_holder
+  width: 600px
+  float: left
+  min-height: 300px
+  margin-right: 2px
+  header
+    background: #dfe8f3
+    height: 30px
+    h3
+      float: left
+      margin: 0 0 3px 0
+      font-size: 14px
+      line-height: 30px
+      color: #374d5c
+      padding: 0 0 0 11px
+      overflow: hidden
+      text-overflow: ellipsis
+      max-width: 396px
+      white-space: nowrap
+    .actions
+      float: right
+      a
+        color: #a5b9ce
+        text-decoration: none
+
+        display: block
+        float: right
+        padding: 9px 8px 8px
+        text-align: center
+        vertical-align: text-top
+        width: 15px
         font-size: 14px
-        line-height: 30px
-        color: #374d5c
-        padding: 0 0 0 11px
-        overflow: hidden
-        text-overflow: ellipsis
-        max-width: 396px
-        white-space: nowrap
-      .actions
-        float: right
-        a
-          color: #a5b9ce
-          text-decoration: none
+        color: #8895b2
+        border-left: 1px solid white
 
-          display: block
-          float: right
-          padding: 9px 8px 8px
-          text-align: center
-          vertical-align: text-top
-          width: 15px
-          font-size: 14px
-          color: #8895b2
-          border-left: 1px solid white
+        &.fa-table
+          padding: 10px 8px 7px
 
-          &.fa-table
-            padding: 10px 8px 7px
+        &:hover
+          background: #71a2cf
+          color: white
 
-          &:hover
-            background: #71a2cf
-            color: white
+.charts_container
+  position: relative
+  .chart_canvas
+    // zoomed charts and dashboard popups redefine the height
+    min-height: 350px
+    background-color: #fff
 
-  .charts_container
-    position: relative
-    .chart_canvas
-      // zoomed charts and dashboard popups redefine the height
-      min-height: 350px
-      background-color: #fff
+    .empty
+      svg, .legend
+        display: none
 
-      .empty
-        svg, .legend
-          display: none
+      .empty-wrapper
+        +background(linear-gradient(#fbfbfb, #f0f0f0))
+        border-bottom: 1px solid #bbb
+        width: 100%
+        text-align: center
 
-        .empty-wrapper
-          +background(linear-gradient(#fbfbfb, #f0f0f0))
-          border-bottom: 1px solid #bbb
-          width: 100%
-          text-align: center
+        p
+          padding-top: 135px
+          margin: 0
 
-          p
-            padding-top: 135px
-            margin: 0
+        .annotation
+          font-size: 80%
 
-          .annotation
-            font-size: 80%
+    select.d3-chart-date-select
+      float: right
+      margin-top: 10px
 
-      select.d3-chart-date-select
-        float: right
-        margin-top: 10px
-
-    .table_canvas
-      // free to expand as needed
-      background-color: #fff
-      padding-top: 10px
-    .chart_not_finished
-      display: none
-      position: absolute
-      top: 5px
-      height: 53px
-      width: 264px
-      right: -5px
-      z-index: 3
-      background: url(/assets/layout/still_to_do.png) no-repeat
-    // jqplot charts set labels with absolute positioning and they often
-    // overlap charts under them
-    .jqplot-target
-      margin-bottom: 100px
+  .table_canvas
+    // free to expand as needed
+    background-color: #fff
+    padding-top: 10px
+  .chart_not_finished
+    display: none
+    position: absolute
+    top: 5px
+    height: 53px
+    width: 264px
+    right: -5px
+    z-index: 3
+    background: url(/assets/layout/still_to_do.png) no-repeat
+  // jqplot charts set labels with absolute positioning and they often
+  // overlap charts under them
+  .jqplot-target
+    margin-bottom: 100px
 
 // ======== Wells ============================================================
 

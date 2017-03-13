@@ -9,7 +9,7 @@
 
     /[if lte IE 8]
       = stylesheet_link_tag 'ie'
-    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
     = yield :head
     - if ipad?

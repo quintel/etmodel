@@ -128,7 +128,7 @@ class Setting
   end
 
   def derived_dataset?
-    area.derived?
+    area && area.derived?
   end
 
   # Returns the ActiveResource object

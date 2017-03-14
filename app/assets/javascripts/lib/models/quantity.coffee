@@ -172,7 +172,7 @@ class @Quantity
       if opts.strip_insignificant_zeros and opts.precision is 0 and @value is 0
         opts.precision = 1
 
-    "#{ I18n.toNumber(@value, opts) } #{ @localizedUnit() }"
+    "#{ I18n.toNumber(@value, opts) } #{ @localizedUnit() }".trim()
 
   localizedUnit: ->
     if @unit.base.i18n

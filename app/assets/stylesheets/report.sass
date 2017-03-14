@@ -69,17 +69,40 @@
 
   #report
     font-family: serif
-    font-size: 16pt
+    font-size: 14pt
     line-height: 1.5
     margin: 0
     width: auto
 
-    .chart
+    div.chart
       font: 13px/20px "Lucida Grande", Verdana, Arial, Helvetica, sans-serif
 
-    .report-view :first-child
+    .report-view > :first-child
       margin-top: 0
 
     .report-component.chart
       margin-left: auto
       margin-right: auto
+
+    table.chart
+      border-color: black
+      th, td
+        background: none
+        border-color: black
+        font-size: inherit
+      thead, tfoot
+        td, th
+          border-left: none
+          border-top: 1px solid black
+          font-weight: bold
+          &:first-child
+            border-left: 1px solid black
+      thead
+        th, td
+          background: none
+          border-bottom-width: 3px
+          color: black
+      tfoot
+        td, th
+          border-top-width: 3px
+          border-right: 1px solid black

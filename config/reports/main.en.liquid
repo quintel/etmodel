@@ -1,31 +1,36 @@
 <h1 class="banner">Title page</h1>
 
  <ul>
-  <li>Author: you</li>
-  <li>Date: today</li>
-  <li>Scenario: ID</li>
+  <li>Author: Chael Kruip</li>
+
+  {% if settings.pdf %}
+    <li>Created: Monday April 3rd 2017</li>
+  {% endif %}
+  <li>Scenario link: <a href="https://pro.energytransitionmodel.com/scenarios/320642">pro.energytransitionmodel.com/scenarios/320642</a></li>
 </ul>
 
-<p>This report was automagically created by the Energy Transition Model</p>
+<p>This report was automatically created by the  <a href="https://energytransitionmodel.com">Energy Transition Model.</a></p>
 
 <h1 class="banner">Introduction</h1>
 
 <p>
-This is an automatically generated report based on the choices made in your scenario.
+  This is an automatically generated report based on the choices made in your scenario.
 </p>
-Each chapter in this report highlights an important result such as CO2 emissions, cost,
-renewability etc. which correspond to the dashboard items of the Energy Transition 
-Model (ETM).
+  Each chapter in this report highlights an important result such as CO2 emissions, cost,
+  renewability etc. which correspond to the dashboard items of the 
+  <a href="https://energytransitionmodel.com">Energy Transition Model.</a> (ETM).
 <p>
-Following the dashboard-chapters, the report contains a chapter with suggestions for 
-improving the scenario and a chapter with implications for the years leading up to
-the end-year.
+  Following the dashboard-chapters, the report contains a chapter with suggestions for 
+  improving the scenario and a chapter with implications for the years leading up to
+  the end-year.
 </p>
 <p>
-Finally, an appendix lists all the sliders changed from their default value.
+  Finally, appendix A lists all the sliders that were changed from their default value.
+  Appendix B gives a detailed overview of all investment costs.
+  Appendix C provides background information about the Energy Transition Model.
 </p>
 
-<h2>Index</h2>
+<h1 class="banner">Table of contents</h1>
 <ol>
   <li>Summary</li>
   <li>Energy use</li>
@@ -34,18 +39,34 @@ Finally, an appendix lists all the sliders changed from their default value.
   <li>Reliability and black-outs</li>
   <li>Costs and employment</li>
   <li>Bio-footprint and renewability</li>
-  <li>Suggestions for improvement</li>
   <li>Implications of this scenario</li>
+  <li>Suggestions for improvement</li>
   <li>APPENDIX A: Slider settings</li>
+  <li>APPENDIX B: Investment costs</li>
 </ol>
 
 <h1 class="banner">Summary</h1>
 
-In your scenario, primary energy use has BLA
+{% if future.primary_energy_demand_percentage_wrt_start_year > 95.0 %}
+
+  <p>
+    In your scenario, primary energy use is still 
+    {{ future.primary_energy_demand_percentage_wrt_start_year | round: 2 }}% of what it was in the 
+    start-year.
+  </p>
+{% else %}
+  <p>
+    In your scenario, primary energy use is has been reduced to
+    {{ future.primary_energy_demand_percentage_wrt_start_year | round: 2 }}% of what it was in the 
+    start-year.
+  </p>
+
+{% endif %}
+
 
 {% if future.co2_reduction_percentage > 40.0 %}
   <p>
-    Your CO2-reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
+    The realised CO2-reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
     exceeds the Dutch national ambition for 2030 of 40%.
 
   {% if future.co2_reduction_percentage > 80.0 %}
@@ -53,7 +74,7 @@ In your scenario, primary energy use has BLA
   {% endif %}
   </p>
 {% else %}
-  Your CO2-reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }} 
+  The realised  CO2-reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }}% 
     falls short of the Dutch national ambition for 2030 of 40%.
 {% endif %}
 
@@ -62,16 +83,24 @@ In your scenario, primary energy use has BLA
 
 <h2>Energy consumption</h2>
 
+The {{ future.biggest_final_demand_sector_name | without_unit }} sector is the largest consumer of energy
+with {{ future.biggest_final_demand_sector_value | autoscale: 'MJ'}} of final demand.
+
 {% chart 146 %}
   Final energy demand for all sectors.
 {% endchart %}
 
-<h2>Electricity production</h2>
+When it comes to <strong>primary</strong> demand (final demand plus all transformation and distribution losses),
+the energy use for the whole system looks like this: 
 
-
-{% chart 99 %}
-  Electricity mix.
+{% chart 52 %}
+  Primary energy demand for all sectors.
 {% endchart %}
+
+When looking at primary demand, exported oil(products) can play a big role if refeneries are still producing
+at a significant rate.
+
+<h2>Electricity production</h2>
 
 <p>
   In your scenario, wind turbines and solar arrays are producing
@@ -80,6 +109,10 @@ In your scenario, primary energy use has BLA
   {{ future.electricity_produced_from_coal | autoscale: 'MJ'}} and
   {{ future.electricity_produced_from_natural_gas | autoscale: 'MJ'}} respecively.
 </p>
+
+{% chart 99 %}
+  Electricity mix.
+{% endchart %}
 
 <h2>Central heat network</h2>
 
@@ -130,12 +163,12 @@ consumed centrally.
     In your scenario, CO2 emission reductions fall short of the Dutch ambitions of 40% in 2030 
     and 80% - 95% in 2050. You can reduce CO2 by 
     <ul>
-      <li>Realising energy savings: reduce energy consumption in the most energy-intensive sectors</li>
-      <li>Phasing out fossil fuels: heating and hot water in homes, transportation and electricity 
+      <li><strong>Realising energy savings</strong>: reduce energy consumption in the most energy-intensive sectors</li>
+      <li><strong>Phasing out fossil fuels</strong>: heating and hot water in homes, transportation and electricity 
         production are places where fossil fuels can be replaced by CO2-neutral alternatives.</li>
-      <li>CCS(U): Capturing, storing and, optionally, using CO2 can be viable options in the 
+      <li><strong>CCS(U)</strong>: Capturing, storing and, optionally, using CO2 can be viable options in the 
         energy-intensive industry and electricity generation (energy) sector.</li>
-      <li>Flexibility: storage and conversion technologies enable you to utilise energy which would
+      <li><strong>Flexibility</strong>: storage and conversion technologies enable you to utilise energy which would
       otherwise be exported or curtailed.</li>
     </ul>
   </p>
@@ -155,15 +188,15 @@ consumed centrally.
 
 <h2>CO2 emissions of biomass</h2>
 
+<p>
 Climate change is not induced by the annual CO2 emissions, but by the total amount of CO2 present
- in the air. Virtually any form of combustion contributes to the amount of CO2 in the air.
-
+ in the air. 
+</p>
+<p>
 Usually no CO2 emissions are attributed to biomass as biomass absorbs as much CO2 as is emitted 
-during combustion (over the complete life cycle). The life cycle of biomass varies from a couple 
-of months to over a century. To have a 66% chance of remaining below a temperature rise of 2 
-degrees roughly 20 years of current emission can be emitted. Exceeding this temperature increase 
-can have irreversible consequences. The CO2 emitted by combustion of biomass is not always 
-absorbed within a time-scale that is relevant for climate change.
+during combustion (over the complete life cycle). The CO2 emitted by combustion of biomass is 
+not always absorbed within a time-scale that is relevant for climate change.
+</p>
 
 {% chart 188 %}
   Which part of the CO2 emissions from biomass is relevant to the environment is uncertain and 
@@ -174,12 +207,12 @@ absorbed within a time-scale that is relevant for climate change.
 
 {% if future.total_net_energy_import > 0.0 %}
   <p>
-    Your scenario has {{ future.total_net_energy_import | autoscale: 'MJ'}} of net energy import 
+    Your scenario has {{ future.total_net_energy_import | round: 3 | autoscale: 'MJ'}} of net energy import 
     in the end-year.
   </p>
 {% else %}
   <p>
-    Your scenario has -{{ future.total_net_energy_import | autoscale: 'MJ'}} of net energy export 
+    Your scenario has -{{ future.total_net_energy_import | round: 1 | autoscale: 'MJ'}} of net energy export 
     in the end-year.
   </p>
     
@@ -210,21 +243,46 @@ absorbed within a time-scale that is relevant for climate change.
 
 <h2>LOLE and black-outs</h2>
 
-{% chart 111 %}
+
+<p>
   The loss of load expectation (LOLE) is the expected number of hours per year that the electricity
    supply cannot meet its demand. A nonzero LOLE does not necessarily result in blackouts as 
    electricity can be imported or can be available in batteries. The Netherlands accepts a 
    LOLE of 4 h/yr. We distinguish (un)reliable electricity production as volatile electricity 
    producers cannot be relied on at all times.
+</p>
+
+{% chart 111 %}
+  Reliability of production capacity.
 {% endchart %}
 
+{% if future.dashboard_blackout_hours > 1 %}
+  <p>
+    Your scenario has {{ future.dashboard_blackout_hours | without_unit }} blackout hours.
+    Try building more reliable back-up capacity in the electricity production section.
+    Note that solar and wind power are intermittent and cannot add reliable electricity at all
+    times. 
+  </p>
+{% else %}
+  <p>
+    Your scenario has zero blackout hours.
+  </p>  
+{% endif %}
 
 
 <h1 class="banner">Cost and employment</h1>
 <h2>Cost of the energy system</h2>
 
+<p>
+  Costs of the future energy system are roughly 
+  {{ future.dashboard_total_costs | autoscale: 'euro' }} and are broken down in the following chart.
+</p>
 
-<!-- Round the query value to 2dp -->
+
+{% chart 48 %}
+  Costs of the energy system.
+{% endchart %}
+
 <p>
   Electricity production costs:
   {{ future.costs_of_used_electricity | autoscale: 'euro' }}.
@@ -247,11 +305,21 @@ absorbed within a time-scale that is relevant for climate change.
 
 <h2>Bio-footprint</h2>
 <p>
-In your scenario, {{ future.bio_footprint | round: 1 }} times the available areable land is used for
-the production of bio-fuels such as wood, ethanol, bio-gas and bio-diesel.
+  In your scenario, {{ future.bio_footprint | round: 1 }} times the available areable land is used for
+  the production of bio-fuels such as wood, ethanol, bio-gas and bio-diesel.
 </p>
 
+<p>
+  As can be seen from the chart below, BLA
+</p>
+
+{% chart 168 %}
+  Biofootprint per carrier.
+{% endchart %}
+
 <h2>Renewability</h2>
+
+The renewability percentage of your future scenario is {{ future.renewability_percentage | round: 1 }}%.
 
 {% chart 49 %}
   Renewability percentage of final energy demand.
@@ -269,47 +337,6 @@ the production of bio-fuels such as wood, ethanol, bio-gas and bio-diesel.
 </table>
 
 
-<!-- ... and case -->
-<p>
-  {% case settings.area_code %}
-    {% when 'nl' %}
-      Nederlands. 
-    {% when 'de' %}
-      Deutschland.
-    {% when 'uk' %}
-      Sigh.
-    {% else %}
-      I'm not sure where you're from.
-  {% endcase %}
-</p>
-
-
-<h1 class="banner">Suggestions for improvement</h1>
-<h2>Possible inconsistencies</h2>
-
-<h3>Refineries and electric vehicles</h3>
-
-<p>
-Electric vehicles constitute {{ future.ev_percentage | round: 1 }}% of all cars. 
-At the same time, oil refineries are still {{ future.refinery_percentage | round: 1 }}% of
-their current size. 
-
-Do you think this is realistic? For an analysis of the correllation between electrification
-of transport and the size of the refinery sector see the report
-"Industry in Transition" (Quintel Intelligence 2016). 
-</p>
-
-{% chart 190 %}
-  Sankey diagram of oil products in refineries.
-{% endchart %}
-
-<h3>Size of metal industry and electric vehicles</h3>
-
-
-
-<h2>Extreme assumptions</h2>
-
-<h3>Bio-mass and areable land</h3>
 
 
 <h1 class="banner">Implications of this scenario</h1>
@@ -317,29 +344,18 @@ of transport and the size of the refinery sector see the report
 <h2>Investments needed</h2>
 
 <p>
-  The following (total) investments must be done to realise your scenario:
-</p>
-
-
-{% chart 142 %}
-  This table shows an overview of the investment cost of heat and electricity producing 
-  technologies. The investment costs are shown for both the start scenario (2010) and for the 
-  future scenario. In both cases a 'green-field' approach is taken: no previously installed 
-  technologies are assumed. The last column shows the difference between the investment costs 
-  of the two scenarios.
-{% endchart %}
-
-<p>
   Your scenario spans {{ future:scenario_duration }} year. As a result of the choices 
-  you made, we must build the following list of items on average every year
+  you made, we must build (amongst others) the following list of items on average every year
 </p>
 
 
 <ul>
-  <li>{{ future:number_of_wind_turbines_per_year | round: 1 }} windturbines</li>
-  <li>{{ future:number_of_wind_turbines_per_year }} windturbines</li>
-  <li>{{ future:number_of_wind_turbines_per_year }} windturbines</li>
+  <li>{{ future:number_of_wind_turbines_per_year | round: 1 | without_unit }} off-shore windturbines</li>
+  <li>{{ future:number_of_wind_turbines_per_year | round: 1 | without_unit }} on-shore windturbines</li>
+  <li>{{ future:number_of_wind_turbines_per_year | round: 1 | without_unit }} coastal windturbines</li>
 </ul>
+
+For a complete list of investment costs per technology see Appendix B.
 
 <h2>Land-use</h2>
 
@@ -348,6 +364,133 @@ of transport and the size of the refinery sector see the report
   {{ future.area_used_for_coastal_wind | round: 2 }} square kilometers
 </p>
 
+<h1 class="banner">Suggestions for improvement</h1>
+
+<h2>Possible inconsistencies</h2>
+
+<!-- Relation between EV and refineries and metal industry -->
+{% if future.ev_percentage > 50 %}
+  {% if future.refinery_percentage > 50 %}
+  
+    <h3>Refineries and electric vehicles</h3>
+
+    <p>
+      In your scenario, electric vehicles constitute {{ future.ev_percentage | round: 1 }}% 
+      of all cars, yet oil refineries are still {{ future.refinery_percentage | round: 1 }}% 
+      of their current size. 
+
+      Do you think this is realistic? For an analysis of the correllation between electrification
+      of transport and the size of the refinery sector see the report
+      "Industry in Transition" (Quintel Intelligence 2016). 
+    </p>
+
+    {% chart 190 %}
+      Sankey diagram of oil products in refineries.
+    {% endchart %}
+
+  {% endif %}
+
+  {% if future.steel_industry_percentage > 50 %}
+    <h3>Size of steel industry and electric vehicles</h3>
+
+      <p>
+        Like oil refineries, a large part of the production output of steel plants is currently 
+        dedicated to cars. If, self-driving electric vehicles start to replace fossil fuel cars, 
+        the number  of cars can be reduced dramatically. 
+
+         are still {{ future.steel_industry_percentage | round: 1 }}% 
+        of their current size. 
+
+        Do you think this is realistic? For an analysis of the correllation between electrification
+        of transport and the size of the refinery sector see the report
+        "Industry in Transition" (Quintel Intelligence 2016). 
+      </p>
+
+  {% endif %}
+{% endif %}
+
+<!-- Inconsistency between heating options and hot water options -->
+
+{% if future.biggest_space_heater_share_name != future.biggest_water_heater_share_name %}
+
+  <h3>Space heating and hot water technologies</h3>
+  <p>
+    The space heating technologies in your scenario are not consistent with those producing hot
+    water. You have chosen to heat most houses with a 
+    {{ future.biggest_space_heater_share_name | without_unit }} whereas most of the hot water
+    in households is produced by a 
+    {{ future.biggest_water_heater_share_name | without_unit }}. The percentages
+  </p>
+
+  <p>
+    NOTE: The combi-technology shares (percentages) in the households space heating and hot water 
+    sections represent the market share of these technologies. This means that if you choose to 
+    use technology A for space heating in 100% of the houses, and technology B for hot water in 
+    100% of the households, every household containes one of both A and B.
+  </p>
+{% endif %}
+
+<!-- If curtailment occors, why not build more flex or industry use of H2? -->
+{% if future.electricity_curtailed > 0 %}
+
+  <h2>Unused potential</h2>
+
+
+  In your scenario, there are 
+  {{ future.total_number_of_excess_events }} hours that electricity production exceeds demand.
+  This electricity is not used (curtailed). To usefully employ the excess electricity you can
+
+  <ul>
+    <li><strong>Store electricity</strong>: in the flexibility section, you can build batteries in homes or 
+      indicate how much of ellectric car batteries can be used for storing electricity.</li>
+    <li><strong>Convert electricity to gas</strong>: in the flexibility section, you can build power-to-gas plants
+      to convert electricity to hydrogen gas.</li>
+    <li><strong>Convert electricity to heat</strong>: in the flexibility section, you can build power-to-heat plants
+      which generate heat from electricity and store the heat for use in houses.</li>
+    <li><strong>Increase interconnectivity</strong>: in the import/export section you can increase the capacity of
+      the interconnectors with neighbouring countries.</li>
+    <li><strong>Increase demand</strong>: by electrifying for example heating/hot water production in houses
+    or transport.</li>
+  </ul>
+
+
+{% endif %}
+
+<h2>Extreme assumptions</h2>
+
+{% if future.share_of_greengas_in_gas_network > 0.05 %}
+
+  <h3>Bio-mass and areable land</h3>
+
+  <p>
+    Your scenario has {{ future.share_of_greengas_in_gas_network | times: 100 | round: 1 }}% of greengas mixed into the gas
+    network. This requires about {{ future.bio_footprint_of_greengas_km | round: 1 }} square kilometers of areable
+    land which is {{ future.bio_footprint_of_greengas_fraction_of_areable_land | round: 1 }} times the available
+    areable land in your country.
+  </p>
+
+{% endif %}
+
+
+
+
 <h1 class="banner">APPENDIX A: Slider settings</h1>
 
 This appendix lists all the sliders which have been moved from their default value.
+
+<h1 class="banner">APPENDIX B: investment costs</h1>
+
+<p>
+  The following (total) investments must be done to realise your scenario:
+</p>
+
+
+<!-- {% chart 142 %}
+  This table shows an overview of the investment cost of heat and electricity producing 
+  technologies. The investment costs are shown for both the start scenario (2010) and for the 
+  future scenario. In both cases a 'green-field' approach is taken: no previously installed 
+  technologies are assumed. The last column shows the difference between the investment costs 
+  of the two scenarios.
+{% endchart %} -->
+
+<h1 class="banner">APPENDIX B: investment costs</h1>

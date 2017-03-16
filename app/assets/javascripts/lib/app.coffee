@@ -42,7 +42,8 @@ class @AppView extends Backbone.View
       InputElement.Balancer.balancers = {}
     @input_elements = new InputElementList()
     @input_elements.on "change", @handleInputElementsUpdate
-    @user_values()
+
+    deferred = @user_values()
       .done (args...) =>
         @input_elements.initialize_user_values(args...)
         @setup_fce_toggle()
@@ -52,6 +53,8 @@ class @AppView extends Backbone.View
     # Create flexibility order.
     if (sortable = $('#accordion_wrapper ul.sortable')).length
       new FlexibilityOrder(sortable[0]).render()
+
+    deferred
 
   # Returns a deferred object on which the .done() method can be called
   #
@@ -85,8 +88,10 @@ class @AppView extends Backbone.View
     @accordion.setup()
 
     if Backbone.history.getFragment().match(/^reports\//)
-      new ReportView(window.reportData).renderInto($('#report'));
-      $('#report .loading').remove();
+      App.setup_sliders().done(->
+        new ReportView(window.reportData).renderInto($('#report'));
+        $('#report .loading').remove();
+      )
     else
       @charts.load_charts()
 

@@ -118,7 +118,14 @@
 
     App.call_api({}, {
       success: function () {
-        onSuccess(template.render(queryValues(queryKeys)));
+        onSuccess(template.render(
+          $.extend(queryValues(queryKeys), { settings: {
+            area_code: App.settings.get('area_code'),
+            end_year: App.settings.get('end_year'),
+            merit_order_enabled: App.settings.merit_order_enabled(),
+            start_year: App.settings.get('start_year'),
+          }})
+        ));
       },
       error: function (resp) {
         onError(resp.responseJSON.errors);

@@ -123,18 +123,19 @@
   {{ future.costs_of_used_electricity | autoscale: 'euro' }}.
 </p>
 
-{% if area.merit %}
-<h2>Merit order and profitability of power plants</h2>
+{% if settings.merit_order_enabled %}
+  <h2>Merit order and profitability of power plants</h2>
+
+
+  {% chart 125 %}
+    Merit order.
+  {% endchart %}
+
+  {% chart 140 %}
+    Profitability of power plants.
+  {% endchart %}
+
 {% endif %}
-
-{% chart 125 %}
-  Merit order.
-{% endchart %}
-
-{% chart 140 %}
-  Profitability of power plants.
-{% endchart %}
-
 <h1 class="banner">Bio-footprint and renewability</h1>
 
 <h2>Bio-footprint</h2>
@@ -163,7 +164,7 @@ the production of bio-fuels such as wood, ethanol, bio-gas and bio-diesel.
 
 <!-- ... and case -->
 <p>
-  {% case area.name %}
+  {% case settings.area_code %}
     {% when 'nl' %}
       Nederlands. 
     {% when 'de' %}
@@ -178,7 +179,30 @@ the production of bio-fuels such as wood, ethanol, bio-gas and bio-diesel.
 
 <h1 class="banner">Suggestions for improvement</h1>
 <h2>Possible inconsistencies</h2>
+
+<h3>Refineries and electric vehicles</h3>
+
+<p>
+Electric vehicles constitute {{ future.ev_percentage | round: 1 }}% of all cars. 
+At the same time, oil refineries are still {{ future.refinery_percentage | round: 1 }}% of
+their current size. 
+
+Do you think this is realistic? For an analysis of the correllation between electrification
+of transport and the size of the refinery sector see the report
+"Industry in Transition" (Quintel Intelligence 2016). 
+</p>
+
+{% chart 190 %}
+  Sankey diagram of oil products in refineries.
+{% endchart %}
+
+<h3>Size of metal industry and electric vehicles</h3>
+
+
+
 <h2>Extreme assumptions</h2>
+
+<h3>Bio-mass and areable land</h3>
 
 
 <h1 class="banner">Implications of this scenario</h1>
@@ -192,7 +216,7 @@ the production of bio-fuels such as wood, ethanol, bio-gas and bio-diesel.
 
 
 <ul>
-  <li>{{ future:number_of_wind_turbines_per_year }} windturbines</li>
+  <li>{{ future:number_of_wind_turbines_per_year | round: 1 }} windturbines</li>
   <li>{{ future:number_of_wind_turbines_per_year }} windturbines</li>
   <li>{{ future:number_of_wind_turbines_per_year }} windturbines</li>
 </ul>

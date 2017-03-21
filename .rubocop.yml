@@ -1,0 +1,177 @@
+# require: rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'config/routes.rb'
+    - 'config/unicorn/**/*'
+    - 'db/migrate/**/*'
+    - 'db/schema.rb'
+    - 'spec/support/**/*'
+
+# Limiting methods to 10 lines is a bit excessive; increase to 20.
+Metrics/MethodLength:
+  Max: 20 # Default is 10.
+
+# Specs often have long describe/context blocks; this is fine.
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+# Indent parameters with two spaces only.
+#
+#   # Bad
+#   call_this_long_method(
+#     with_inner_call(
+#       my_parameters
+#     )
+#   )
+#
+#   # Good
+#   call_this_long_method(with_inner_call(
+#     my_parameters
+#   ))
+#
+Style/FirstParameterIndentation:
+  EnforcedStyle: consistent
+
+# Indent "when" by two spaces.
+#
+#   # Bad
+#   case something
+#   when 0 then something
+#   when 1 then something_else
+#   end
+#
+#   # Good
+#   case something
+#     when 0 then something
+#     when 1 then something_else
+#   end
+# Style/CaseIndentation:
+  # IndentOneStep: true
+
+# Multi-line parameters should be indented by two spaces only.
+#
+#   # Bad
+#   call_something(param_one,
+#                  param_two,
+#                  param_three)
+#
+#   # Good
+#   call_something(
+#     param_one, param_two, param_three)
+#
+#   # Acceptable, but not as readable
+#   call_something(param_one
+#     param_two, param_three)
+#
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+# Spaces inside interpolated strings.
+#
+#   # Bad
+#   "#{ok}"
+#
+#   # Good
+#   "#{ ok }"
+
+Style/SpaceInsideStringInterpolation:
+  EnforcedStyle: space
+
+Style/SpaceInsideBrackets:
+  Enabled: false
+
+# Only suggest guard clauses when a block is three or more lines long.
+Style/GuardClause:
+  MinBodyLength: 3 # Default is 1.
+
+# Indent hash keys with two spaces only.
+#
+#   # Bad
+#   my_hash = { "one" => 1,
+#               "two" => 2,
+#               "three" => 3 }
+#
+#   # Good
+#   my_hash = {
+#     "one" => 1,
+#     "two" => 2,
+#     "three" => 3
+#   }
+#
+Style/IndentHash:
+  EnforcedStyle: consistent
+
+Style/IndentationWidth:
+  Enabled: false
+
+# Indent array values with two spaces only.
+#
+#   # Bad
+#   my_array = [ 1,
+#                2,
+#                3 ]
+#   # Good
+#   my_array = [
+#     1,
+#     2,
+#     3
+#   ]
+#
+Style/IndentArray:
+  EnforcedStyle: consistent
+
+# Multi-line method calls are indented by two spaces only.
+#
+#   # Bad
+#   MyClass.where(thing: true, another: 'yes')
+#          .order(:created_at)
+#          .limit(5)
+#
+#   # Good
+#   MyClass.where(thing: true, another: 'yes')
+#     .order(:created_at).limit(5)
+#
+#   # Good
+#   MyClass.where(thing: true, another: 'yes')
+#     .order(:created_at)
+#     .limit(5)
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+# Permit, but don't mandate, a space after the not operator.
+Style/SpaceAfterNot:
+  Enabled: false
+
+# No one-line nested modules.
+#
+#   # Bad:
+#   module One::Two
+#   end
+#
+#   # Good
+#   module One
+#     module Two
+#     end
+#   end
+Style/ClassAndModuleChildren:
+  Enabled: true
+  Exclude:
+    - 'app/models/network/technologies/*'
+    - 'app/models/market/foundations/*'
+
+# Temporary Settings
+# ##################
+
+# Many methods have a too-high ABC complexity. Refactor and reduce to the
+# default ABC size.
+Metrics/AbcSize:
+  Max: 15 # Default is 15.
+
+Style/DotPosition:
+  Enabled: false

@@ -1,0 +1,87 @@
+<h1>A header</h1>
+
+<!--
+  Templates are just HTML, so you have everything at your disposal including
+  paragraphs, headers, tables, lists, images, etc.
+-->
+
+<p>Hello world.</p>
+
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+<table class="chart autostripe">
+  <thead>
+    <tr><th>Column One</th><th>Column two</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1x1</td><td>1x2</td></tr>
+    <tr><td>2x1</td><td>2x2</td></tr>
+    <tr><td>3x1</td><td>3x2</td></tr>
+  </tbody>
+</table>
+
+<!--
+  Three paragraphs which are shown only for a scenario where CO2 emissions are
+  greater than zero. Each paragraph contains future and present values which
+  are queries from ETEngine.
+-->
+{% if future.total_co2_emissions > 0 %}
+  <!-- Round the query value to 2dp -->
+  <p>
+    Electricity production costs:
+    {{ future.costs_of_used_electricity | round: 2 }}.
+  </p>
+  <!-- Round a query value to 2dp and don't format with the unit -->
+  <p>
+    Coastal area used by wind:
+    {{ future.area_used_for_coastal_wind | round: 2 | without_unit }}
+    km<sup>2</sup>.
+  </p>
+  <p>
+    In your scenario, wind turbines and solar arrays are producing
+    {{ future.electricity_produced_from_wind_and_solar }} of electricity, while
+    natural gas is being used to create
+    {{ future.electricity_produced_from_natural_gas }}. In the current day,
+    {{ present.electricity_produced_from_wind_and_solar }} of electricity is
+    produced using wind and solar sources.
+  </p>
+{% endif %}
+
+<!-- Supports else, elsif, and unless. -->
+{% if future.total_co2_emissions > 10000 %}
+  <p>Something</p>
+{% elsif future.total_co2_emissions > 10 %}
+  <p>Something else.</p>
+{% endif %}
+
+<!-- ... and case -->
+<p>
+  {% case area.name %}
+    {% when 'nl' %}
+      Nederlands.
+    {% when 'de' %}
+      Deutschland.
+    {% when 'uk' %}
+      Sigh.
+    {% else %}
+      I'm not sure where you're from.
+  {% endcase %}
+</p>
+
+<!--
+  A chart component. Chart 57 is "useful demand in residences". Intention is to
+  change this from a numeric ID to the human-readable key.
+
+  Note that the chart has text inside it; this is shown as a caption underneath
+  the chart.
+-->
+{% chart 57 %}
+  This is a chart which shows some interesting information about your scenario.
+  Quis inventore nihil molestiae perspiciatis ut nam. Dolorum nihil animi
+  repellendus et. Asperiores nihil voluptas dul ut omnis perferendis. Dolorem
+  dolorem maxime praesentium laboriosam dolor aperiam.
+{% endchart %}

@@ -136,7 +136,7 @@ class @ChartList extends Backbone.Collection
   # There is some (ugly) logic to keep track of which charts should have the
   # locked flag on and which not
   #
-  load_charts: (custom_charts) =>
+  load_charts: (custom_charts, apiOptions = {}) =>
     # The accordion takes care of setting @default_chart_id
     @chart_requests = []
 
@@ -195,7 +195,7 @@ class @ChartList extends Backbone.Collection
         deferred.resolve()
       deferred
     )).always( =>
-      App.call_api()
+      App.call_api({}, apiOptions)
 
       for holder_id, chart of @chart_holders
         @add chart

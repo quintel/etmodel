@@ -407,18 +407,22 @@ Liquid.Context = Liquid.Class.extend({
               right = parseInt(range[2]),
               arr   = [];
           if(isNaN(left)){
-            let varLeft = this.resolve(range[1]);
-            left = parseInt(varLeft);
-            if(isNaN(left)){
-              throw new Error('Incorrect param for range: ' + key);
-            }
+            (function () {
+              var varLeft = this.resolve(range[1]);
+              left = parseInt(varLeft);
+              if(isNaN(left)){
+                throw new Error('Incorrect param for range: ' + key);
+              }
+            }());
           }
           if(isNaN(right)){
-            let varRight = this.resolve(range[2]);
-            right = parseInt(varRight);
-            if(isNaN(right)){
-              throw new Error('Incorrect param for range: ' + key);
-            }
+            (function () {
+              var varRight = this.resolve(range[2]);
+              right = parseInt(varRight);
+              if(isNaN(right)){
+                throw new Error('Incorrect param for range: ' + key);
+              }
+            }());
           }
           var limit = right-left+1;
           for (var i=0; i<limit; i++) arr.push(i+left);

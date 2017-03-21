@@ -10,10 +10,18 @@
 
 <h1 class="banner">Introduction</h1>
 
-<h2> How to read this report </h2>
-
-<p>Each chapter in this report highlights an important result such as CO2 
-  emissions.</p>
+<p>
+This is an automatically generated report based on the choices made in your scenario.
+<br>
+Each chapter in this report highlights an important result such as CO2 emissions, cost,
+renewability etc. which correspond to the dashboard items of the ETM.
+<br>
+Following the dashboard-chapters, the report contains a chapter with suggestions for 
+improving the scenario and a chapter with implications for the years leading up to
+the end-year.
+<br>
+Finally, an appendix lists all the sliders changed from their default value.
+</p>
 
 <h2>Index</h2>
 <ol>
@@ -46,14 +54,43 @@
 <p>
   In your scenario, wind turbines and solar arrays are producing
   {{ future.electricity_produced_from_wind_and_solar | autoscale: 'MJ'}} of electricity, while
-  natural gas is being used to create
-  {{ future.electricity_produced_from_natural_gas | autoscale: 'MJ'}}.
+  coal and natural gas are being used to create
+  {{ future.electricity_produced_from_coal | autoscale: 'MJ'}} and
+  {{ future.electricity_produced_from_natural_gas | autoscale: 'MJ'}} respecively.
 </p>
+
+<h2>Central heat network</h2>
+
+The central heat network in your scenario can be used to heat houses and buildings and provide heat
+to the industry and agricultural sectors. The chart below show the balance of heat produced and 
+consumed centrally.
+
+{% chart 174 %}
+  Heat balance of central heat network.
+{% endchart %}
+
+{% if future.energy_heat_network_unused_steam_hot_water_in_heat_network_mekko > 0.0 %}
+  <p>
+  There is 
+  {{ future.energy_heat_network_unused_steam_hot_water_in_heat_network_mekko | autoscale: 'PJ'}} 
+  excess heat produced in agriculture or industry which flows back into the central heat
+  network but is not used by other sectors. 
+  </p>
+{% else %}
+  <p>
+  There is 
+  {{ future.energy_heat_network_backup_heater_network_gas_in_heat_network_mekko | autoscale: 'PJ'}}
+  insufficient heat produced to satisfy the demand of the central heat network. A backup
+  gas heater is deployed to satisfy the deficit.
+  </p>
+{% endif %}
 
 <h1 class="banner">CO2 Emissions (-{{ future.co2_reduction_percentage | round: 1 | without_unit }}%)</h1>
 
 {% chart 46 %}
-  CO2 emissions based on primary energy demand.
+  CO2 emissions based on primary energy demand for 1990 (left), {{ settings.start_year }} (middle), 
+  and {{ settings.end_year }} (right). These figures represent emissions across the complete fuel chain
+  including all transformations and losses.
 {% endchart %}
 
 <!-- Supports else, elsif, and unless. -->
@@ -82,6 +119,17 @@
   </p>
 {% endif %}
 
+<h2>On-the-spot CO2 emissions</h2>
+
+<p>
+ The Sankey digram below shows 
+ <strong>which</strong> carriers are primarily responsible for CO2 emissions (left column) and 
+ <strong>where</strong> in the system CO2 is emitted (centre column). 
+</p>
+
+{% chart 191 %}
+  Sankey diagram showing which carriers and sectors are primarily responsible for CO2 emissions.
+{% endchart %}
 
 <h1 class="banner">Energy import and export</h1>
 

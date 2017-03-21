@@ -221,7 +221,12 @@
         requests[holderId] = chartId + '-C';
       });
 
-      window.charts.load_charts(requests);
+      window.charts.load_charts(requests, { success: function () {
+        // Charts loaded; wait 1 second for the chart transitions.
+        window.setTimeout(function () {
+          window.status = 'chartsDidLoad';
+        }, 1000);
+      } });
     }
   });
 

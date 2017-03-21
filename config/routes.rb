@@ -92,7 +92,7 @@ Etm::Application.routes.draw do
   get '/scenario/grid_investment_needed' => 'scenarios#grid_investment_needed'
 
   get '/scenario/reports/:id' => 'reports#show',
-    constraints: { id: /[0-9a-z-]+/ }
+    constraints: { id: /[0-9a-z-]+/ }, as: :report
 
   # This is the main action
   get '/scenario(/:tab(/:sidebar(/:slide)))' => 'scenarios#play', as: :play

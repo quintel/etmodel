@@ -38,6 +38,10 @@ gem 'dalli'
 
 gem 'dynamic_form'
 
+# Reports / PDF
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
 # jquery-etmodel-rails contains the jquery.etmodel.js plugin
 # When working on the plugin, use :path => '/path/to/etplugin'
 # gem "jquery-etmodel-rails", :path => "~/Sites/etplugin"

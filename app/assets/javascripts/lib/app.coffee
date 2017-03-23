@@ -90,7 +90,6 @@ class @AppView extends Backbone.View
     if Backbone.history.getFragment().match(/^reports\//)
       App.setup_sliders().done(->
         new ReportView(window.reportData).renderInto($('#report'));
-        $('#report .loading').remove();
       )
     else
       @charts.load_charts()

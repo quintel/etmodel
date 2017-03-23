@@ -1,17 +1,70 @@
-<h1>A header</h1>
+<header>
+  <h1>Analysis of Renewability in Your 2050 Scenario</h1>
+  <p>
+    <span class="creation-date">{% current_date %}</span>
+    <span class="scenario-link">{% link_to_scenario %}</span>
+  </p>
+</header>
 
 <!--
   Templates are just HTML, so you have everything at your disposal including
   paragraphs, headers, tables, lists, images, etc.
 -->
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum
+  sodales nunc quis aliquam. Aenean lacus lectus, feugiat eu lacinia non, congue
+  eu urna. Nulla purus lectus, congue eu massa quis, sodales laoreet sem.
+  Integer bibendum dui quis dolor fermentum aliquam. Nam sit amet erat finibus,
+  auctor risus vel, elementum est. Donec eget mi nec nibh auctor finibus.
+</p>
 
-<p>Hello world.</p>
+<h1><span class="section-number">1.2</span> Energy Production</h1>
+
+<p>
+  Than praesent eget euismod augue. Duis sem tellus, placerat sit amet urna non, auctor
+  pharetra purus. Nullam massa dolor
+  <abbr title="Combined heat and power">CHP</abbr>, egestas quis tristique
+  maximus, lacinia
+  rutrum nulla. Phasellus sapien metus, imperdiet eu sem id, sodales molestie
+  velit. Aenean at eros vel augue tincidunt mattis eu sed urna.
+</p>
+
+<h2><span class="section-number">1.2.1</span> Renewable Energy Sources</h2>
+
+<p>
+  Mauris id pretium mauris
+  {{ future.electricity_produced_from_wind_and_solar | autoscale: 'MJ' }}.
+  In hac habitasse platea dictumst. Etiam felis felis, aliquam quis mauris
+  dignissim, pharetra viverra nunc. Cras a sem bibendum, viverra mauris vitae,
+  sodales odio. Integer facilisis, mauris et rutrum hendrerit, ex felis viverra
+  eros, a viverra enim metus bibendum ligula. Ut venenatis nunc est, non
+  consequat nisi lacinia in:
+</p>
 
 <ul>
-  <li>Item 1</li>
-  <li>Item 2</li>
-  <li>Item 3</li>
+  <li>
+    <strong>non bibendum quam</strong>, eu imperdiet tellus etiam lobortis ex eu
+    tellus pharetra eleifend volutpat lacus rutrum, un
+  </li>
+  <li>
+    <strong>aenean augue sapien</strong>, nullam a orci suscipit gravida eros
+    eget, accumsan est pellentesque finibus lacus, un
+  </li>
+  <li>
+    <strong>sit amet porta ipsum</strong>, at elementum velit nulla sodales
+    tincidunt erat, in vulputate neque finibus at, integer nec nisl convallis
+    risus rhoncus molestie; suspendisse potenti.
+  </li>
 </ul>
+
+<p>
+  Odio delicata ius eu, te eos eius deleniti efficiantur. No his percipit
+  quaestio platonem, eu quis esse mea. Integre omnesque eu has, eam sint doctus
+  nostrum te. Eros iusto graeci in has, posse euismod eos no, qui vero putent
+  ei. Adhuc verterem vel et, at labore euismod ornatus mel. Eam indoctum
+  pericula petentium ne, no delectus molestiae et, lorem forensibus argumentum
+  te per. Sed an habemus patrioque, mea eu oratio option accusam.
+</p>
 
 <table class="chart autostripe">
   <thead>
@@ -30,47 +83,44 @@
   are queries from ETEngine.
 -->
 {% if future.total_co2_emissions > 0 %}
-  <!-- Round the query value to 2dp -->
   <p>
+    <!-- Round the query value to 2dp -->
     Electricity production costs:
-    {{ future.costs_of_used_electricity | round: 2 }}.
-  </p>
-  <!-- Round a query value to 2dp and don't format with the unit -->
-  <p>
-    Coastal area used by wind:
-    {{ future.area_used_for_coastal_wind | round: 2 | without_unit }}
-    km<sup>2</sup>.
-  </p>
-  <p>
+    {{ future.costs_of_used_electricity | round: 2 | autoscale: 'euro' }}.
+    <!-- Round a query value to 2dp and don't format with the unit -->
+    Coastal area used by wind is
+    <abbr>
+      {{ future.area_used_for_coastal_wind | round: 2 | without_unit }}
+      km<sup>2</sup>.
+    </abbr>
+
     In your scenario, wind turbines and solar arrays are producing
-    {{ future.electricity_produced_from_wind_and_solar }} of electricity, while
+    {{ future.electricity_produced_from_wind_and_solar | autoscale: 'MJ' }} of electricity, while
     natural gas is being used to create
-    {{ future.electricity_produced_from_natural_gas }}. In the current day,
-    {{ present.electricity_produced_from_wind_and_solar }} of electricity is
+    {{ future.electricity_produced_from_natural_gas | autoscale: 'MJ' }}. In the current day,
+    {{ present.electricity_produced_from_wind_and_solar | autoscale: 'MJ' }} of electricity is
     produced using wind and solar sources.
+
+    <!-- Supports else, elsif, and unless. -->
+    {% if future.total_co2_emissions > 10000 %}
+      Something
+    {% elsif future.total_co2_emissions > 10 %}
+      Something else.
+    {% endif %}
+
+    <!-- ... and case -->
+    {% case area.name %}
+      {% when 'nl' %}
+        Nederlands.
+      {% when 'de' %}
+        Deutschland.
+      {% when 'uk' %}
+        Sigh.
+      {% else %}
+        I'm not sure where you're from.
+    {% endcase %}
   </p>
 {% endif %}
-
-<!-- Supports else, elsif, and unless. -->
-{% if future.total_co2_emissions > 10000 %}
-  <p>Something</p>
-{% elsif future.total_co2_emissions > 10 %}
-  <p>Something else.</p>
-{% endif %}
-
-<!-- ... and case -->
-<p>
-  {% case area.name %}
-    {% when 'nl' %}
-      Nederlands.
-    {% when 'de' %}
-      Deutschland.
-    {% when 'uk' %}
-      Sigh.
-    {% else %}
-      I'm not sure where you're from.
-  {% endcase %}
-</p>
 
 <!--
   A chart component. Chart 57 is "useful demand in residences". Intention is to
@@ -85,3 +135,24 @@
   repellendus et. Asperiores nihil voluptas dul ut omnis perferendis. Dolorem
   dolorem maxime praesentium laboriosam dolor aperiam.
 {% endchart %}
+
+<p>
+  His animal aperiam ei, te affert dissentiunt sea, congue omittantur eu quo.
+  Sit qualisque contentiones ad, clita aliquip praesent no eum. An consul
+  torquatos. Quo semper persius urbanitas eu, mea et facilis nusquam definiebas.
+  Quo ad vero dicta referrentur, ne patrioque repudiandae conclusionemque vim.
+  Alii tibique sapientem vim ut, veritus oporteat ut ius. Duo eros delicatissimi
+  ex.
+</p>
+
+<h2><span class="section-number">1.2.2</span> Non-Renewable Energy Sources</h2>
+
+<p>
+  Pri ei eius equidem necessitatibus, dico ridens 2.3.1 principes his id, mel no
+  dicam dolores constituto. Eos natum feugiat et. Mel tale reque summo ad, te
+  ridens delicata per. Eam an prompta ornatus, ne eripuit eruditi fabulas nec,
+  et quod ipsum doming eos. Nec tritani invidunt ut, error scaevola sententiae
+  eum no, aperiam veritus salutatus an has. altera ponderum consectetuer et, ius
+  soleat admodum ex. Nec recusabo molestiae ad, sed appetere facilisis
+  expetendis ex, vel in malorum antiopam definiebas.
+</p>

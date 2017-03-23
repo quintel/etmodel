@@ -155,6 +155,7 @@
 
       container.append(this.render(function () {
         self.renderCharts();
+        $('#report .loading').remove();
       }));
     },
 
@@ -267,7 +268,11 @@
     },
 
     autoscale: function (value, unit) {
-      return Metric.autoscale_value(value, unit);
+      return (
+        '<abbr>' +
+          Metric.autoscale_value(value, unit) +
+        '</abbr>'
+      );
     }
   });
 

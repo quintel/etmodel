@@ -1,8 +1,27 @@
-#active-content
-  #report
-    #title
-      %h2== Scenario Report
-      %p.loading Please wait one moment while your report is loaded&hellip;
+#navbar
+  = link_to(play_path) do
+    = image_tag 'reports/back.svg'
+    Return to your scenario
+  %ul.controls
+    %li
+      %span.disabled
+        = image_tag 'reports/share.svg'
+        Share
+    %li
+      %a(href="javascript:window.print()")
+        = image_tag 'reports/print.svg'
+        Print
+    %li
+      %span.disabled
+        = image_tag 'reports/download.svg'
+        Download PDF
+  .loading
+    .bar
+
+#report
+  #title.loading
+    %h1 Creating your report&hellip;
+    %p Please wait one moment while your report is loaded.
 
 %script(id="report-template" language="text/liquid")
   = @report.html_safe

@@ -1,0 +1,304 @@
+$serif-font-family: "Linux Libertine O", "Times New Roman", "Times", serif
+$sans-font-family: "Merriweather Sans", sans-serif
+$body_font_family: $serif-font-family
+
+@font-face
+  font-family: 'Linux Libertine O'
+  src: asset-url('linlibertine_r-webfont.woff2') format('woff2'), asset-url('linlibertine_r-webfont.woff') format('woff')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'Linux Libertine O'
+  src: asset-url('linlibertine_rb-webfont.woff2') format('woff2'), asset-url('linlibertine_rb-webfont.woff') format('woff')
+  font-weight: bold
+  font-style: normal
+
+@keyframes loading-bar
+  0%
+    opacity: 1
+    width: 0%
+  90%
+    opacity: 1
+    width: 100%
+    height: 3px
+  100%
+    opacity: 0
+    width: 100%
+    height: 0px
+
+@import reset
+@import chart
+
+#report .loading
+  padding-top: 1rem
+  h1, p
+    text-align: center
+    font-family: $sans-font-family
+  h1
+    max-width: 100%
+  p
+    color: #777
+
+#navbar .loading
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  .bar
+    opacity: 0
+    background: #67cc6f
+    height: 3px
+    width: 50%
+    animation-duration: 5s
+    animation-name: loading-bar
+    animation-timing-function: cubic-bezier(0.37, 0, 0.19, 1)
+
+html.report
+  background: #fafafa
+  font-size: 125%
+  font-family: $serif-font-family
+  line-height: 130%
+
+  body
+    margin: 0
+    padding-top: 4rem
+
+sup, sub
+  line-height: 0
+
+a
+  color: #1173b5
+  text-decoration: none
+
+abbr,
+  -moz-font-feature-settings: "liga" 1, "onum", "c2sc", "smcp"
+  -ms-font-feature-settings: "liga" 1, "onum", "c2sc", "smcp"
+  -webkit-font-feature-settings: "liga", "onum", "c2sc", "smcp"
+  -o-font-feature-settings: "liga", "onum", "c2sc", "smcp"
+  font-feature-settings: "liga", "onum", "c2sc", "smcp"
+  letter-spacing: 0.04em
+  white-space: nowrap
+
+#navbar
+  background: white
+  background: rgba(254, 254, 254, 0.95)
+  border-bottom: 1px solid #ddd
+  font-family: $sans-font-family
+  font-size: 0.7rem
+  line-height: 100%
+  position: fixed
+  padding: 1rem 2rem
+  top: 0
+  left: 0
+  right: 0
+  z-index: 999
+
+  .disabled, a
+    padding: 0.5rem 0
+
+    img
+      height: 17px
+      margin: 0px 2px -1px 0
+      vertical-align: text-top
+      width: 17px
+
+  .disabled
+    color: #888
+    cursor: default
+    opacity: 0.5
+
+  a
+    color: #888
+    &:hover
+      color: #333
+
+  ul
+    float: right
+    list-style: none
+    margin: 0
+    padding: 0
+    li
+      display: inline-block
+      margin-left: 0.7rem
+
+#title
+  padding-top: 0
+
+#report
+  color: #333
+  hyphens: auto
+  margin: 2em auto
+  width: 32em
+
+  -moz-font-feature-settings: "liga" 1, "onum"
+  -ms-font-feature-settings: "liga" 1, "onum"
+  -webkit-font-feature-settings: "liga", "onum"
+  -o-font-feature-settings: "liga", "onum"
+  font-feature-settings: "liga", "onum"
+
+  header
+    border-bottom: 1px solid #ccc
+    hyphens: initial
+    padding: 1rem 0 4rem
+    h1
+      font-family: $sans-font-family
+      font-size: 2rem
+      line-height: 130%
+      width: 100%
+    .creation-date
+      display: block
+      text-transform: uppercase
+      letter-spacing: 0.06rem
+      word-spacing: 0.06rem
+      -moz-font-feature-settings: "liga" 1, "onum", "c2sc", "smcp"
+      -ms-font-feature-settings: "liga" 1, "onum", "c2sc", "smcp"
+      -webkit-font-feature-settings: "liga", "onum", "c2sc", "smcp"
+      -o-font-feature-settings: "liga", "onum", "c2sc", "smcp"
+      font-feature-settings: "liga", "onum", "c2sc", "smcp"
+    .scenario-link
+      display: none
+
+  h1, h2
+    font-weight: bold
+    font-family: $sans-font-family
+    font-size: 1.15rem
+    margin: 1rem 0
+    max-width: 80%
+  h2
+    font-size: 1em
+  .section-number
+    color: #9a8da9
+    display: inline-block
+    font-weight: normal
+    letter-spacing: -0.06rem
+    margin-right: 0.5rem
+
+  div.chart
+    border: 1px solid #ddd
+    font-family: $sans-font-family
+    margin: 1em 0
+    overflow: hidden
+    padding-bottom: 5px
+    padding: 10px
+
+    .chart_inner
+      overflow: hidden
+
+    .chart_holder
+      float: none
+      // overflow: hidden
+      width: initial
+      .chart_canvas
+        min-height: 300px
+
+    .legend
+      margin: 10px 20px 0 !important
+      text-align: center
+
+      .legend-item
+        padding: 0 7px
+        width: auto !important
+
+    .caption
+      border-top: 1px solid #ddd
+      color: #777
+      font-size: 0.7rem
+      font-weight: 300
+      line-height: 1.5
+      margin: 1rem 2rem
+      padding-top: 1rem
+      text-align: center
+
+    &, .legend .legend-item, text
+      font-size: 0.7rem
+      font-weight: 300
+
+    .legend .legend-item span.rect
+      height: 0.5416rem
+      width: 0.5416rem
+
+    div.d3_container text, .legend .legend-item
+      // Chart axis labels
+      font-family: $sans-font-family
+
+  table.chart
+    border-bottom-color: #9a8da9
+    -moz-font-feature-settings: "tnum"
+    -ms-font-feature-settings: "tnum"
+    -webkit-font-feature-settings: "tnum"
+    -o-font-feature-settings: "tnum"
+    font-feature-settings: "tnum"
+    th, td
+      font-size: 1rem
+      text-align: center
+    thead th
+      background-color: #9a8da9
+    thead th, thead td, tfoot td, tfoot th
+      border-color: #9a8da9
+
+.charts_container .chart_canvas
+  background: none
+
+@media print
+  html
+    font-size: 100%
+    line-height: 110%
+
+  @page
+    margin: 3cm 5cm
+
+  #navbar
+    display: none
+
+  html.report
+    background: none
+    font-size: 100%
+    line-height: 120%
+    body
+      padding-top: 0
+
+  #report
+    margin: auto
+    width: auto
+
+    header
+      padding-top: 0
+      .scenario-link
+        display: inline
+
+    .section-number, header .creation-date
+      letter-spacing: 0
+
+    h1, h2, h3, h4, h5
+      page-break-after: avoid
+
+    table.chart
+      border-color: black
+      th, td
+        background: none
+        border-color: black !important
+        font-size: inherit
+      thead, tfoot
+        td, th
+          border-left: none
+          border-top: 1px solid black
+          font-weight: bold
+          &:first-child
+            border-left: 1px solid black
+      thead
+        th, td
+          background: none
+          border-bottom-width: 3px
+          color: black
+      tfoot
+        td, th
+          border-top-width: 3px
+          border-right: 1px solid black
+
+    div.chart
+      page-break-inside: avoid
+      page-break-after: auto
+      svg
+        transform: scale(0.65) !important
+        margin: -8% 0 -8% -23%

@@ -5,6 +5,7 @@ class ReportsController < ApplicationController
   include MainInterfaceController.new(:show)
 
   before_action :ensure_scenario, if: -> { params[:scenario_id].blank? }
+  layout 'report'
 
   # Shows a scenario report.
   #

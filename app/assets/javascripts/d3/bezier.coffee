@@ -65,7 +65,7 @@ D3.bezier =
         .data([@start_year, @end_year])
         .enter().append('svg:text')
         .attr('class', 'year')
-        .attr("text-anchor", "middle")
+        .attr("text-anchor", (d, i) => if i == 0 then 'start' else 'end')
         .text((d) -> d)
         .attr('x', (d, i) => if i == 0 then 0 else @series_width)
         .attr('y', @series_height + 16)

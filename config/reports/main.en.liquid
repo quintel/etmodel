@@ -131,11 +131,43 @@ consumed centrally.
   Sankey diagram showing which carriers and sectors are primarily responsible for CO2 emissions.
 {% endchart %}
 
+<h2>CO2 emissions of biomass</h2>
+
+Climate change is not induced by the annual CO2 emissions, but by the total amount of CO2 present
+ in the air. Virtually any form of combustion contributes to the amount of CO2 in the air.
+
+Usually no CO2 emissions are attributed to biomass as biomass absorbs as much CO2 as is emitted 
+during combustion (over the complete life cycle). The life cycle of biomass varies from a couple 
+of months to over a century. To have a 66% chance of remaining below a temperature rise of 2 
+degrees roughly 20 years of current emission can be emitted. Exceeding this temperature increase 
+can have irreversible consequences. The CO2 emitted by combustion of biomass is not always 
+absorbed within a time-scale that is relevant for climate change.
+
+{% chart 188 %}
+  Which part of the CO2 emissions from biomass is relevant to the environment is uncertain and 
+  speculative. This chart serves to explore the (potential) amount of these emissions. 
+{% endchart %}
+
 <h1 class="banner">Energy import and export</h1>
+
+{% if future.total_net_energy_import > 0.0 %}
+  <p>
+    Your scenario has {{ future.total_net_energy_import | autoscale: 'MJ'}} of net energy import 
+    in the end-year.
+  </p>
+{% else %}
+  <p>
+    Your scenario has -{{ future.total_net_energy_import | autoscale: 'MJ'}} of net energy export 
+    in the end-year.
+  </p>
+    
+{% endif %}
 
 {% chart 76 %}
   Import and export of energy.
 {% endchart %}
+
+
 
 
 {% if future.total_number_of_excess_events > 1.0 %}

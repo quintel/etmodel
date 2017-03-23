@@ -154,7 +154,10 @@
       var self = this;
 
       container.append(this.render(function () {
-        self.renderCharts();
+        self.renderCharts(function () {
+          $('#navbar .loading .bar').addClass('done');
+        });
+
         $('#report .loading').remove();
       }));
     },
@@ -206,7 +209,7 @@
      * Post-processing method which looks through the rendered report for a list
      * of charts to be rendered.
      */
-    renderCharts: function () {
+    renderCharts: function (cb) {
       var requests = {};
 
       $(this.$el.find('.chart_inner')).each(function (index, el) {
@@ -223,6 +226,8 @@
       });
 
       window.charts.load_charts(requests, { success: function () {
+        if (cb) cb();
+
         // Charts loaded; wait 1 second for the chart transitions.
         window.setTimeout(function () {
           window.status = 'chartsDidLoad';

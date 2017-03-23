@@ -18,14 +18,19 @@ $body_font_family: $serif-font-family
   0%
     opacity: 1
     width: 0%
-  90%
+    height: 3px
+  100%
     opacity: 1
     width: 100%
     height: 3px
+
+@keyframes loading-bar-done
+  0%
+    opacity: 1
+    width: inherit
   100%
     opacity: 0
     width: 100%
-    height: 0px
 
 @import reset
 @import chart
@@ -46,13 +51,17 @@ $body_font_family: $serif-font-family
   left: 0
   right: 0
   .bar
-    opacity: 0
+    opacity: 1
     background: #67cc6f
     height: 3px
-    width: 50%
-    animation-duration: 5s
+    animation-duration: 6s
     animation-name: loading-bar
     animation-timing-function: cubic-bezier(0.37, 0, 0.19, 1)
+    animation-fill-mode: forwards
+    &.done
+      animation-duration: 1.0s
+      animation-name: loading-bar-done
+      animation-fill-mode: forwards
 
 html.report
   background: #fafafa

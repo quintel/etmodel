@@ -19,7 +19,8 @@ class ReportsController < ApplicationController
         pdf = WickedPdf.new.pdf_from_url(
           report_pdf_fetch_url,
           print_media_type: true,
-          window_status: 'chartsDidLoad'
+          window_status: 'chartsDidLoad',
+          margin: { top: 40, bottom: 40, left: 40, right: 40 }
         )
 
         render plain: pdf, layout: nil

@@ -128,6 +128,7 @@
         ));
       },
       error: function (resp) {
+        $('#navbar .loading .bar').addClass('done');
         onError(resp.responseJSON.errors);
       }
     });

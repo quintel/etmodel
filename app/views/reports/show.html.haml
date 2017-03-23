@@ -12,9 +12,14 @@
         = image_tag 'reports/print.svg'
         Print
     %li
-      %span.disabled
-        = image_tag 'reports/download.svg'
-        Download PDF
+      - if Rails.env.development? && APP_CONFIG[:report_pdf_host].blank?
+        %span.disabled
+          = image_tag 'reports/download.svg'
+          Download PDF
+      - else
+        = link_to report_path(format: 'pdf') do
+          = image_tag 'reports/download.svg'
+          Download PDF
   .loading
     .bar
 

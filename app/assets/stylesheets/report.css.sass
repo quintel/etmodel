@@ -308,6 +308,7 @@ abbr,
     div.chart
       page-break-inside: avoid
       page-break-after: auto
-      svg
-        transform: scale(0.65) !important
-        margin: -8% 0 -8% -23%
+
+      &, .chart_inner
+        // Fixes chart scaling in print and PDF
+        overflow: visible

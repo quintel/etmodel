@@ -320,5 +320,28 @@
     }
   }));
 
+  /**
+   * Outputs the current date. Useful for report headers.
+   */
+  Liquid.Template.registerTag('current_date', Liquid.Tag.extend({
+    render: function () {
+      return new Date().strftime('%d %B, %Y');
+    }
+  }));
+
+  /**
+   * Outputs a link to to the users scenario.
+   */
+  Liquid.Template.registerTag('link_to_scenario', Liquid.Tag.extend({
+    render: function () {
+      var url = (
+        window.location.origin +
+        '/scenarios/' + App.scenario.api_session_id()
+      );
+
+      return '<a href="' + url + '">' + url + '</a>';
+    }
+  }));
+
   window.ReportView = ReportView;
 }());

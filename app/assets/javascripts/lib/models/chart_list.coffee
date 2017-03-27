@@ -224,10 +224,10 @@ class @ChartList extends Backbone.Collection
         deferred.resolve()
       deferred
     )).always( =>
-      App.call_api({}, apiOptions)
-
       for holder_id, chart of @chart_holders
         @add chart
+
+      App.call_api({}, apiOptions)
     )
 
   # adds a chart container, unless it is already in the DOM. Returns the

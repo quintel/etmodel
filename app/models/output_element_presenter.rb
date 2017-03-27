@@ -50,7 +50,7 @@ class OutputElementPresenter
   def as_json(*)
     {
       attributes: json_attributes,
-      template: template,
+      html: template,
       series: @element.allowed_output_element_series.map(&:json_attributes)
     }
   end

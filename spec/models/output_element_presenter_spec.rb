@@ -46,7 +46,7 @@ RSpec.describe OutputElementPresenter do
     end
 
     it 'includes the template with the JSON' do
-      expect(json[:template]).to eq('Hello, world.')
+      expect(json[:html]).to eq('Hello, world.')
     end
   end
 
@@ -60,7 +60,7 @@ RSpec.describe OutputElementPresenter do
     end
 
     it 'is includes no template with the JSON' do
-      expect(json[:template]).to be_nil
+      expect(json[:html]).to be_nil
     end
   end
 

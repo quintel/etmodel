@@ -4,7 +4,7 @@ FactoryGirl.define do
   end
 
   factory :output_element do
-    sequence(:key) {|n| "output_element_#{n}" }
+    sequence(:key) { |n| "output_element_#{n}" }
     association :output_element_type
   end
 

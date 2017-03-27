@@ -101,6 +101,7 @@ Etm::Application.routes.draw do
     collection do
       get 'visible/:id',   action: :visible
       get 'invisible/:id', action: :invisible
+      get 'batch/:ids',    action: :batch
     end
 
     get :zoom, on: :member

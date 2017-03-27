@@ -6,16 +6,24 @@ class OutputElementsController < ApplicationController
   # Returns all the data required to show a chart.
   # JSON only
   def show
-    template = if tmpl = @chart.template
-      render_to_string(partial: tmpl, locals: {output_element: @chart})
-    else
-     nil
-   end
-    render status: :ok, json: {
-      attributes: @chart.json_attributes,
-      series: @chart.allowed_output_element_series.map(&:json_attributes),
-      html: template
-    }
+    json = OutputElementPresenter.present(
+      @chart, ->(*args) { render_to_string(*args) }
+    )
+
+    render(status: :ok, json: json)
+  end
+
+  # Returns all the data required to show multiple charts. Renders a JSON object
+  # where each key matches that of the requested chart.
+  def batch
+    ids = params[:ids].to_s.split(',').reject(&:blank?).uniq
+
+    json = OutputElementPresenter.collection(
+      OutputElement.where(id: ids),
+      ->(*args) { render_to_string(*args) }
+    )
+
+    render(status: :ok, json: json)
   end
 
   def index

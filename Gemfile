@@ -26,7 +26,7 @@ gem 'font-awesome-rails'
 gem 'non-stupid-digest-assets'
 
 # javascript
-gem 'i18n-js'
+gem 'i18n-js', '~> 3.0.0.rc16'
 gem 'jbuilder'
 
 # supporting gems

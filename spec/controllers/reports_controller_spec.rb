@@ -5,10 +5,15 @@ describe ReportsController, vcr: true do
 
   describe '#show' do
     context 'without an active scenario' do
-      it 'redirects when no scenario has been started' do
-        get :show, params: { id: 'sample' }
+      before { get(:show, params: { id: 'sample' }) }
 
-        expect(response).to be_redirect
+      it 'starts a new scenario' do
+        expect(response.body).to include('"api_session_id":null')
+      end
+
+      it 'renders the report' do
+        expect(response).to be_success
+        expect(response).to render_template(:show)
       end
     end
 

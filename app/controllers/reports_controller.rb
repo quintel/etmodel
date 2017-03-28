@@ -4,9 +4,7 @@
 class ReportsController < ApplicationController
   include MainInterfaceController.new(:show)
 
-  before_action :ensure_scenario, if: -> { params[:scenario_id].blank? }
   before_action :start_scenario_with_param, only: :show
-
   layout 'report'
 
   # Shows a scenario report.
@@ -31,10 +29,6 @@ class ReportsController < ApplicationController
   end
 
   private
-
-  def ensure_scenario
-    redirect_to('/') && return unless Current.setting.api_session_id
-  end
 
   # Requests for PDF versions lack the scenario ID and other settings from the
   # user's session. Start a new scenario using the original as a base only for

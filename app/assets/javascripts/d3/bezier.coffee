@@ -30,13 +30,10 @@ D3.bezier =
 
       legend_columns = if @model.series.length > 6 then 2 else 1
       legend_rows = @model.series.length / legend_columns
-      legend_height = legend_rows * @legend_cell_height
       legend_margin = 20
 
-      legend_height = 0
-
       # dimensions of the chart body
-      @series_height = @height - legend_height - legend_margin
+      @series_height = @height - legend_margin
       @series_width  = @width - 15
 
       @svg = @create_svg_container @width, @series_height, @margins

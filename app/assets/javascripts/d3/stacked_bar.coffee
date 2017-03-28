@@ -47,12 +47,9 @@ D3.stacked_bar =
 
       legend_columns = if series_for_legend.length > 6 then 2 else 1
       legend_rows = series_for_legend.length / legend_columns
-      legend_height = legend_rows * @legend_cell_height
       legend_margin = 20
 
-      legend_height = 0
-
-      @series_height = @height - legend_height - legend_margin
+      @series_height = @height - legend_margin
 
       @svg = @create_svg_container @width, @series_height, @margins
 

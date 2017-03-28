@@ -17,10 +17,9 @@ D3.line =
 
       legend_columns = 2
       legend_rows = @model.series.length / legend_columns
-      legend_height = legend_rows * @legend_cell_height
       legend_margin = 20
 
-      @series_height = @height - legend_height - legend_margin
+      @series_height = @height - legend_margin
 
       @svg = @create_svg_container @width, @series_height, @margins
 

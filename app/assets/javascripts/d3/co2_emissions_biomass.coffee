@@ -46,9 +46,8 @@ D3.co2_emissions_biomass =
 
       [@width, @height] = @available_size()
 
-      legend_height = @legend_cell_height
       legend_margin = 20
-      @series_height = @height - legend_height - legend_margin
+      @series_height = @height - legend_margin
 
       @svg = @create_svg_container @width, @series_height, @margins
 

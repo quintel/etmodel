@@ -63,9 +63,8 @@ class @AppView extends Backbone.View
     @_user_values_dfd = $.Deferred (dfd) =>
       @api.user_values
         extras: !! App.settings.get('scaling')
-        success: (args...) ->
-          dfd.resolve(args...)
-        fail: @handle_ajax_error
+        success: dfd.resolve
+        error: dfd.reject
     @_user_values_dfd
 
   # At this point we have all the settings initialized.

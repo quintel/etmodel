@@ -23,6 +23,7 @@ class @BaseChartView extends Backbone.View
 
   initialize_defaults: =>
     @model.bind('refresh', @render_as_needed)
+    @init_margins && @init_margins()
 
   # Separate chart and table rendering
   render_as_needed: =>

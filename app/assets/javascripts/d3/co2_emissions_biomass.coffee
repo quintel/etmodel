@@ -22,7 +22,7 @@ D3.co2_emissions_biomass =
 
     margins:
       top: 20
-      bottom: 45
+      bottom: 20
       left: 30
       right: 40
 

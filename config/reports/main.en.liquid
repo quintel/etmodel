@@ -12,19 +12,22 @@
 
 <p>
 This is an automatically generated report based on the choices made in your scenario.
-<br>
+</p>
 Each chapter in this report highlights an important result such as CO2 emissions, cost,
-renewability etc. which correspond to the dashboard items of the ETM.
-<br>
+renewability etc. which correspond to the dashboard items of the Energy Transition 
+Model (ETM).
+<p>
 Following the dashboard-chapters, the report contains a chapter with suggestions for 
 improving the scenario and a chapter with implications for the years leading up to
 the end-year.
-<br>
+</p>
+<p>
 Finally, an appendix lists all the sliders changed from their default value.
 </p>
 
 <h2>Index</h2>
 <ol>
+  <li>Summary</li>
   <li>Energy use</li>
   <li>CO2 Emissions</li>
   <li>Energy import and export</li>
@@ -35,6 +38,25 @@ Finally, an appendix lists all the sliders changed from their default value.
   <li>Implications of this scenario</li>
   <li>APPENDIX A: Slider settings</li>
 </ol>
+
+<h1 class="banner">Summary</h1>
+
+In your scenario, primary energy use has BLA
+
+{% if future.co2_reduction_percentage > 40.0 %}
+  <p>
+    Your CO2-reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
+    exceeds the Dutch national ambition for 2030 of 40%.
+
+  {% if future.co2_reduction_percentage > 80.0 %}
+    Your scenario even surpasses the goal of 80% - 95% reduction aimed for by the EU for 2050!
+  {% endif %}
+  </p>
+{% else %}
+  Your CO2-reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }} 
+    falls short of the Dutch national ambition for 2030 of 40%.
+{% endif %}
+
 
 <h1 class="banner">Energy use</h1>
 
@@ -85,7 +107,7 @@ consumed centrally.
   </p>
 {% endif %}
 
-<h1 class="banner">CO2 Emissions (-{{ future.co2_reduction_percentage | round: 1 | without_unit }}%)</h1>
+<h1 class="banner">CO2 Emissions ({{ future.co2_reduction_percentage | round: 1 | without_unit }}% reduction achieved)</h1>
 
 {% chart 46 %}
   CO2 emissions based on primary energy demand for 1990 (left), {{ settings.start_year }} (middle), 
@@ -189,13 +211,18 @@ absorbed within a time-scale that is relevant for climate change.
 <h2>LOLE and black-outs</h2>
 
 {% chart 111 %}
-  Import and export of energy.
+  The loss of load expectation (LOLE) is the expected number of hours per year that the electricity
+   supply cannot meet its demand. A nonzero LOLE does not necessarily result in blackouts as 
+   electricity can be imported or can be available in batteries. The Netherlands accepts a 
+   LOLE of 4 h/yr. We distinguish (un)reliable electricity production as volatile electricity 
+   producers cannot be relied on at all times.
 {% endchart %}
 
 
 
 <h1 class="banner">Cost and employment</h1>
 <h2>Cost of the energy system</h2>
+
 
 <!-- Round the query value to 2dp -->
 <p>
@@ -288,6 +315,19 @@ of transport and the size of the refinery sector see the report
 <h1 class="banner">Implications of this scenario</h1>
 
 <h2>Investments needed</h2>
+
+<p>
+  The following (total) investments must be done to realise your scenario:
+</p>
+
+
+{% chart 142 %}
+  This table shows an overview of the investment cost of heat and electricity producing 
+  technologies. The investment costs are shown for both the start scenario (2010) and for the 
+  future scenario. In both cases a 'green-field' approach is taken: no previously installed 
+  technologies are assumed. The last column shows the difference between the investment costs 
+  of the two scenarios.
+{% endchart %}
 
 <p>
   Your scenario spans {{ future:scenario_duration }} year. As a result of the choices 

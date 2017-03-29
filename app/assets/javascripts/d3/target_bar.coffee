@@ -65,8 +65,6 @@ D3.target_bar =
     target_value: =>  @format_value @target_query.future_value()
 
   View: class extends D3ChartView
-    el: "body"
-
     initialize: ->
       @key = @model.get 'key'
       @series = @model.series

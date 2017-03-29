@@ -1,6 +1,5 @@
 D3.co2_emissions_biomass =
   View: class extends D3ChartView
-    el: 'body'
     initialize: ->
       D3ChartView.prototype.initialize.call(this)
       @series = @model.series.models

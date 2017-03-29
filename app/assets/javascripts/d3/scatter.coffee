@@ -1,6 +1,5 @@
 D3.scatter =
   View: class extends D3ChartView
-    el: 'body'
     initialize: ->
       D3ChartView.prototype.initialize.call(this)
       @series = @model.series.models

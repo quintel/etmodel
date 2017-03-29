@@ -83,7 +83,7 @@ D3.merit_order =
       @draw_merit_legend()
 
     draw_merit_legend: =>
-      $("div.legend").remove()
+      @$el.find("div.legend").remove()
 
       @draw_legend
         columns:     3

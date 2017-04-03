@@ -134,6 +134,96 @@
     });
   };
 
+  /**
+   * Converts a list of (jQuery) header elements into a tree structure with
+   * <h1> elements in the top-most array, <h2> as their children, <h3> as the
+   * children to <h2>.
+   */
+  var headerTree = function (els) {
+    var headers = [];
+    var curMajor;
+    var curMinor;
+
+    els.each(function (i, header) {
+      var element = { el: $(header), children: [] };
+
+      if (!curMajor || header.nodeName === 'H1') {
+        curMajor = element;
+        curMinor = null;
+        headers.push(element);
+      } else if (!curMinor || header.nodeName === 'H2') {
+        curMinor = element;
+        curMajor.children.push(element);
+      } else if (header.nodeName === 'H3') {
+        curMinor.children.push(element);
+      }
+    });
+
+    return headers;
+  };
+
+  /**
+   * Given a tree where the top-level is an array of elements in the form
+   * { children: [] }, performs a depth-first traversal of the structure,
+   * calling the given func on each node.
+   *
+   * @param {array} nodes
+   *        An array of nodes to traverse.
+   * @param {function} func
+   *        A function to call on each node. The function is yielded each node,
+   *        the index of the node among its siblings, and the location of the
+   *        node in the tree.
+   * @param {array} location
+   *        Internal: Current location/depth of traversal.
+   *
+   * @return {array} Returns the tree.
+   */
+  var traverseTree = function (nodes, func, location) {
+    nodes.forEach(function (node, index) {
+      func(node, index, location || []);
+
+      if (node.children) {
+        traverseTree(node.children, func, (location || []).concat(index));
+      }
+    });
+
+    return nodes;
+  };
+
+  /**
+   * Assigns an ID to each header element in the tree, based on the text
+   * content of the header. Uniqueness is not guaranteed.
+   */
+  var identHeaders = function (headers) {
+    return traverseTree(headers, function (header) {
+      if (!header.el.attr('id')) {
+        header.el.attr(
+          'id',
+          header.el.text().toLowerCase().trim()
+            .replace(/[^a-z0-9-]+/g, '-')
+            .replace(/^-/, '')
+            .replace(/-$/, '')
+        );
+      }
+    });
+  };
+
+  /**
+   * For each header, assigns a section number which provides a perma-link to
+   * the section.
+   */
+  var numberHeaders = function (headers) {
+    return traverseTree(headers, function (header, index, location) {
+      var numbers = location.concat(index).map(function (i) { return i + 1; });
+
+      header.el.prepend(' ').prepend(
+        $('<a class="section-number"></a>')
+          .text(numbers.join('.'))
+          .attr('href', '#' + header.el.attr('id'))
+      );
+    });
+  };
+
   // ---------------------------------------------------------------------------
 
   /**
@@ -155,6 +245,10 @@
       var self = this;
 
       container.append(this.render(function () {
+        numberHeaders(identHeaders(
+          headerTree($('main').find('h1, h2, h3'))
+        ));
+
         self.renderCharts(function () {
           $('#navbar .loading .bar').addClass('done');
         });

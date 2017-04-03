@@ -237,6 +237,24 @@
     }
   });
 
+  /**
+   * Actions to take when the initial requests to load ETE data fail. Typically
+   * due to the use of a local ETE which hasn't warmed-up.
+   */
+  ReportView.onLoadingError = function () {
+    var loading = $('#report .loading');
+
+    loading.find('h1').html('Sorry&hellip;');
+
+    loading.find('p').html(
+      'We weren\'t able to fetch the data in a timely manner.<br/>' +
+      'Please try ' +
+      '<a href="javascript:location.reload(true)">reloading the page</a>.'
+    );
+
+    $('#navbar .loading .bar').addClass('error');
+  };
+
   // ---------------------------------------------------------------------------
 
   Liquid.Template.registerFilter({

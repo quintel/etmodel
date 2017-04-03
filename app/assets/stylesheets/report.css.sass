@@ -45,6 +45,7 @@ $body_font_family: $serif-font-family
     max-width: 100%
   p
     color: #777
+    line-height: 150%
 
 #navbar .loading
   position: absolute
@@ -59,10 +60,13 @@ $body_font_family: $serif-font-family
     animation-name: loading-bar
     animation-timing-function: cubic-bezier(0.37, 0, 0.19, 1)
     animation-fill-mode: forwards
+    transition: background-color 1s
     &.done
       animation-duration: 1.0s
       animation-name: loading-bar-done
       animation-fill-mode: forwards
+    &.error
+      background-color: #ec6262
 
 html.report
   background: #fafafa

@@ -87,6 +87,8 @@ class @AppView extends Backbone.View
     @accordion.setup()
 
     if Backbone.history.getFragment().match(/^reports\//)
+      @handle_ajax_error = ReportView.onLoadingError
+
       App.setup_sliders().done(->
         new ReportView(window.reportData).renderInto($('#report'));
       )

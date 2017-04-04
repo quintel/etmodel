@@ -248,6 +248,7 @@ abbr,
     -webkit-font-feature-settings: "tnum"
     -o-font-feature-settings: "tnum"
     font-feature-settings: "tnum"
+    hyphens: initial
     th, td
       font-size: 1rem
       text-align: center
@@ -255,6 +256,22 @@ abbr,
       background-color: #9a8da9
     thead th, thead td, tfoot td, tfoot th
       border-color: #9a8da9
+
+  // Charts which are rendered as tables.
+  div.chart .table_canvas
+    background: none
+    padding-top: 0
+    table.chart th, td
+      font-size: 0.7rem
+    table.profitability
+      td
+        white-space: nowrap
+      tfoot td
+        padding-top: 1rem
+        text-align: center
+        span.legend_block, span.legend_label
+          display: inline-block
+          float: none
 
 .charts_container .chart_canvas
   background: none

@@ -93,14 +93,24 @@
       var query = window.gqueries.with_key(key);
       var unit = query.get('unit');
 
+      /* eslint-disable no-param-reassign */
+
+      if (isNaN(Number(query.get('future')))) {
+        // Not a numeric value.
+        memo.present[key] = query.get('present');
+        memo.future[key] = query.get('future');
+
+        return memo;
+      }
+
       if (!Quantity.isSupported(unit)) {
         unit = '#';
       }
 
-      // eslint-disable-next-line no-param-reassign
       memo.present[key] = new Quantity(query.get('present'), unit);
-      // eslint-disable-next-line no-param-reassign
       memo.future[key] = new Quantity(query.get('future'), unit);
+
+      /* eslint-enable no-param-reassign */
 
       return memo;
     }, { present: {}, future: {} });

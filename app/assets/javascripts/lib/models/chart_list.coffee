@@ -57,6 +57,11 @@ class @ChartList extends Backbone.Collection
       # or more locked charts. Don't show the default.
       return false
 
+    App.debug(
+      "Loading chart: ##{ chart_id } in #{ holder_id } | " +
+      "#{ window.location.origin }/admin/output_elements/#{ chart_id }"
+    )
+
     $.ajax(url: "/output_elements/#{ chart_id }")
       .fail (jqXHR) ->
           if jqXHR.status == 404
@@ -271,7 +276,6 @@ class @ChartList extends Backbone.Collection
             data_holder = $(e.target).closest('div.pick_chart')
             holder_id = data_holder.data('chart_holder')
             chart_id  = data_holder.data('chart_id')
-            console.log("Loading: #{ chart_id }")
             load_chart chart_id, holder_id, force: true
             close_fancybox()
             e.preventDefault()

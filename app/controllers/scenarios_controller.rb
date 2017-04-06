@@ -50,7 +50,7 @@ class ScenariosController < ApplicationController
       @description = renderer.render(text).html_safe
     end
     if @scenario.created_at && @scenario.days_old > 180
-      if SavedScenario.where('user_id = ? AND scenario_id = ?', current_user, @scenario).empty?
+      if SavedScenario.where('user_id = ? AND scenario_id = ?', current_user, @scenario.id).empty?
         @warning = t('scenario.preset_warning')
       else
         @warning = t('scenario.warning')

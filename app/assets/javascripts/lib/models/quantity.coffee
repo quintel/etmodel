@@ -129,7 +129,10 @@ class @Quantity
       _.find(POWERS, (x) -> x.multiple is multiple)
 
     if power is @unit.power then this else
-      @to("#{ power.prefix }#{ @unit.base.name }")
+      try
+        @to("#{ power.prefix }#{ @unit.base.name }")
+      catch
+        this
 
   # Public: Formats the quantity as a human-readable string, using the
   # localisation options given as parameters, and defined in the unit.

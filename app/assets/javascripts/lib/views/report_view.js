@@ -30,7 +30,7 @@
   // ---------------------------------------------------------------------------
 
   // Matches queries in a string.
-  var queryRe = /^(?:present|future)\.([a-z0-9_]+)$/i;
+  var queryRe = /^(?:present|future)\.([a-z0-9_]+)(?:\.|$)/i;
 
   /**
    * Provided a Liquid.js block node (typically an "if") extracts the queries

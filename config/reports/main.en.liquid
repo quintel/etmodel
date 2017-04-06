@@ -2,15 +2,21 @@
   <h1>Title page</h1>
   <p>
     <span class="creation-date">{% current_date %} ~ by Chael Kruip</span>
-  <p>
+  </p>
 
+  <p class="scenario-link">
+    <span class="desc">Address •</span>
+    {% link_to_scenario %}
   </p>
-    <span class="scenario-link">{% link_to_scenario %}</span>
-    <ul>
-      <li>Start-year: {{ settings.start_year }}</li>  
-      <li>End-year: {{ settings.end_year }}</li>  
-      <li>Region: {{ settings.area_code }}</li>
-  </p>
+
+  <dl>
+    <dt>Start-year</dt>
+    <dd>{{ settings.start_year }}</dd>
+    <dt>End-year</dt>
+    <dd>{{ settings.end_year }}</dd>
+    <dt>Region</dt>
+    <dd>{{ settings.area_code }}</dd>
+  </dl>
 </header>
 
 <main>

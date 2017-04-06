@@ -166,7 +166,7 @@ abbr,
       font-size: 2rem
       line-height: 130%
       width: 100%
-    .creation-date
+    .creation-date, dl, .scenario-link .desc
       display: block
       text-transform: uppercase
       letter-spacing: 0.06rem
@@ -178,9 +178,25 @@ abbr,
       font-feature-settings: "liga", "onum", "c2sc", "smcp"
     .scenario-link
       display: block
+      margin-bottom: 0
+      .desc
+        display: inline
+      a
+        font-family: monospace
+        font-size: 0.9rem
+        line-height: 0
     .author
       display: block
       font-style: italic
+    dl
+      margin-top: 0
+    dt:after
+      content: " • "
+    dt, dd
+      display: inline-block
+      margin-left: 0
+    dd
+      margin-right: 0.75rem
 
   h1, h2, h3
     font-weight: bold

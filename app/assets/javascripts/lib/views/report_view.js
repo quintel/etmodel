@@ -156,6 +156,7 @@
     var template = Liquid.parse($('#report-template').html());
     var queryKeys = extractQueries(template.root.nodelist);
 
+    var queriesDef = $.Deferred();
     var slidesDef = $.getJSON('/input_elements/by_slide');
 
     // In order to fetch the query values during App.call_api, the queries
@@ -164,15 +165,18 @@
       window.gqueries.find_or_create_by_key(queryKey);
     });
 
-    $.when(App.call_api({}), App.user_values(), slidesDef)
-      .done(function (queryVals, inputVals) {
+    App.call_api({}, {
+      success: queriesDef.resolve,
+      error: queriesDef.reject
+    });
+
+    $.when(queriesDef, App.user_values(), slidesDef)
+      .then(function (queryVals, inputVals, slides) {
         onSuccess(template.render(
           $.extend(
             queryValues(queryKeys),
             {
-              user_values: mapInputsToSlides(
-                inputVals[0], slidesDef.responseJSON
-              ),
+              user_values: mapInputsToSlides(inputVals[0], slides[0]),
               settings: {
                 area_code: App.settings.get('area_code'),
                 end_year: App.settings.get('end_year'),

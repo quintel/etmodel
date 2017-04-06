@@ -516,12 +516,13 @@
    */
   Liquid.Template.registerTag('link_to_scenario', Liquid.Tag.extend({
     render: function () {
-      var url = (
-        window.location.origin +
-        '/scenarios/' + App.scenario.api_session_id()
-      );
+      var path = '/scenarios/' + App.scenario.api_session_id();
 
-      return '<a href="' + url + '">' + url + '</a>';
+      return (
+        '<a href="' + window.location.origin + path + '">' +
+          window.location.host + path +
+        '</a>'
+      );
     }
   }));
 

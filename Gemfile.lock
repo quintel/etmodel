@@ -69,9 +69,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
-    airbrake (6.0.0)
-      airbrake-ruby (~> 2.0)
-    airbrake-ruby (2.0.0)
+    airbrake (5.7.1)
+      airbrake-ruby (~> 1.7)
+    airbrake-ruby (1.7.1)
     airbrussh (1.1.2)
       sshkit (>= 1.6.1, != 1.7.0)
     arel (7.1.4)
@@ -378,7 +378,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-session_store
   activeresource!
-  airbrake
+  airbrake (~> 5.0)
   authlogic
   bcrypt
   better_errors

@@ -30,7 +30,7 @@ gem 'i18n-js', '~> 3.0.0.rc16'
 gem 'jbuilder'
 
 # supporting gems
-gem 'airbrake'
+gem 'airbrake', '~> 5.0'
 
 # system gems
 gem 'mysql2', '~>0.3.11'

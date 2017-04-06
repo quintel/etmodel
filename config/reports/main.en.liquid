@@ -2,7 +2,14 @@
   <h1>Title page</h1>
   <p>
     <span class="creation-date">{% current_date %} ~ by Chael Kruip</span>
+  <p>
+
+  </p>
     <span class="scenario-link">{% link_to_scenario %}</span>
+    <ul>
+      <li>Start-year: {{ settings.start_year }}</li>  
+      <li>End-year: {{ settings.end_year }}</li>  
+      <li>Country: {{ settings.area_code }}</li>
   </p>
 </header>
 
@@ -36,8 +43,8 @@
     <li><a href="#energy-use">Energy use</a></li>
     <li><a href="#co2-emissions">CO2 Emissions</a></li>
     <li><a href="#energy-import-and-export">Energy import and export</a></li>
-    <li><a href="#reliability-and-black-outs">Reliability and black-outs</a></li>
-    <li><a href="#costs-and-employment">Costs and employment</a></li>
+    <li><a href="#costs-of-the-energy-system">Costs of the energy system</a></li>
+    <li><a href="#security-of-supply-and-profitability-of-power-plants">Security of supply and profitability of power plants</a></li>
     <li><a href="#bio-footprint-and-renewability">Bio-footprint and renewability</a></li>
     <li><a href="#implications-of-this-scenario">Implications of this scenario</a></li>
     <li><a href="#suggestions-for-improvement">Suggestions for improvement</a></li>
@@ -88,79 +95,79 @@
 
   <h1 class="banner">Energy use and production</h1>
 
-  <h2>Energy consumption</h2>
+    <h2>Energy consumption</h2>
 
-  The {{ future.biggest_final_demand_sector_name | without_unit }} sector is the largest consumer of energy
-  with {{ future.biggest_final_demand_sector_value | autoscale: 'MJ'}} of <strong>final demand</strong>
-  (the energy which is directly consumed by a sector).
+      The {{ future.biggest_final_demand_sector_name | without_unit }} sector is the largest consumer of energy
+      with {{ future.biggest_final_demand_sector_value | autoscale: 'MJ'}} of <strong>final demand</strong>
+      (the energy which is directly consumed by a sector).
 
-  {% chart 146 %}
-    Final energy demand for all sectors.
-  {% endchart %}
+      {% chart 146 %}
+        Final energy demand for all sectors.
+      {% endchart %}
 
-  When it comes to <strong>primary demand</strong> (final demand plus all transformation and distribution losses),
-  the energy use for the whole system looks like this:
+      When it comes to <strong>primary demand</strong> (final demand plus all transformation and distribution losses),
+      the energy use for the whole system looks like this:
 
-  {% chart 52 %}
-    Primary energy demand for all sectors.
-  {% endchart %}
+      {% chart 52 %}
+        Primary energy demand for all sectors.
+      {% endchart %}
 
-  When looking at primary demand, exported oil(products) can play a big role if refeneries are still producing
-  at a significant rate.
+      When looking at primary demand, exported oil(products) can play a big role if refeneries are still producing
+      at a significant rate.
 
-  <h2>Electricity production</h2>
+    <h2>Electricity production</h2>
 
-  <p>
-    In your scenario, most electricity is produced by 
-    {{ future.biggest_electricity_producer_name | without_unit }} 
-    ({{ future.biggest_electricity_producer_value | autoscale: 'MJ'}}).
-  </p>
+      <p>
+        In your scenario, most electricity is produced by 
+        {{ future.biggest_electricity_producer_name | without_unit }} 
+        ({{ future.biggest_electricity_producer_value | autoscale: 'MJ'}}).
+      </p>
 
-  {% chart 99 %}
-    Electricity mix.
-  {% endchart %}
+      {% chart 99 %}
+        Electricity mix.
+      {% endchart %}
 
-  <h2>Central heat network</h2>
+    <h2>Central heat network</h2>
 
-  The central heat network in your scenario can be used to heat houses and buildings and provide heat
-  to the industry and agricultural sectors. The chart below show the balance of heat produced and 
-  consumed centrally.
+      The central heat network in your scenario can be used to heat houses and buildings and provide heat
+      to the industry and agricultural sectors. The chart below show the balance of heat produced and 
+      consumed centrally.
 
-  {% chart 174 %}
-    Heat balance of central heat network.
-  {% endchart %}
+      {% chart 174 %}
+        Heat balance of central heat network.
+      {% endchart %}
 
-  {% if future.energy_heat_network_unused_steam_hot_water_in_heat_network_mekko > 0.0 %}
-    <p>
-      There is 
-      {{ future.energy_heat_network_unused_steam_hot_water_in_heat_network_mekko | autoscale: 'PJ'}} 
-      excess heat produced in agriculture or industry which flows back into the central heat
-      network but is not used by other sectors.<br>
+      {% if future.energy_heat_network_unused_steam_hot_water_in_heat_network_mekko > 0.0 %}
+        <p>
+          There is 
+          {{ future.energy_heat_network_unused_steam_hot_water_in_heat_network_mekko | autoscale: 'PJ'}} 
+          excess heat produced in agriculture or industry which flows back into the central heat
+          network but is not used by other sectors.<br>
 
-      You can balance the network by
-      <ul>
-        <li><strong>Reducing heat production</strong>: in the industry and agriculture sections you can 
-          decrease numbers of CHPs and burners.</li>
-        <li><strong>Increase demand</strong>: by increaing the demand of all sectors in the left-hand side
-          of the diagram.</li>
-      </ul>
-    </p>
-  {% else %}
-    <p>
-      There is 
-      {{ future.energy_heat_network_backup_heater_network_gas_in_heat_network_mekko | autoscale: 'PJ'}}
-      insufficient heat produced to satisfy the demand of the central heat network. A backup
-      gas heater is deployed to satisfy the deficit.<br>
+          You can balance the network by
+          <ul>
+            <li><strong>Reducing heat production</strong>: in the industry and agriculture sections you can 
+              decrease numbers of CHPs and burners.</li>
+            <li><strong>Increase demand</strong>: by increaing the demand of all sectors in the left-hand side
+              of the diagram.</li>
+          </ul>
+        </p>
+      {% else %}
+        <p>
+          There is 
+          {{ future.energy_heat_network_backup_heater_network_gas_in_heat_network_mekko | autoscale: 'PJ'}}
+          insufficient heat produced to satisfy the demand of the central heat network. A backup
+          gas heater is deployed to satisfy the deficit.<br>
 
-      You can balance the network by
-      <ul>
-        <li><strong>Building more heat production</strong>: in the industry and agriculture sections you can 
-          generate more heat by increasing numbers of CHPs and burners.</li>
-        <li><strong>Decreasing demand</strong>: by reducing the demand of all sectors in the left-hand side
-          of the diagram.</li>
-      </ul>
-    </p>
-  {% endif %}
+          You can balance the network by
+          <ul>
+            <li><strong>Building more heat production</strong>: in the industry and agriculture sections you can 
+              generate more heat by increasing numbers of CHPs and burners.</li>
+            <li><strong>Decreasing demand</strong>: by reducing the demand of all sectors in the left-hand side
+              of the diagram.</li>
+          </ul>
+        </p>
+      {% endif %}
 
   <h1 class="banner">CO2 Emissions</h1>
 
@@ -199,6 +206,8 @@
             energy-intensive industry and electricity generation (energy) sector.</li>
           <li><strong>Flexibility</strong>: storage and conversion technologies enable you to utilise energy which would
           otherwise be exported or curtailed.</li>
+          <li><strong>Fuel and CO2 pricing</strong>: by increasing the price of CO2 and fossil fuels, fossil plants might
+          get less full load hours depending on the alternatives for electricity generation.</li>
         </ul>
       </p>
     {% endif %}
@@ -310,52 +319,7 @@
   {% endif %}
 
 
-
-
-  <h1 class="banner">Reliability and black-outs</h1>
-
-  <h2>LOLE and black-outs</h2>
-
-
-  <p>
-    The loss of load expectation (LOLE) is the expected number of hours per year that the electricity
-     supply cannot meet its demand. A nonzero LOLE does not necessarily result in blackouts as 
-     electricity can be imported or can be available in batteries. The Netherlands accepts a 
-     LOLE of 4 h/yr. We distinguish (un)reliable electricity production as volatile electricity 
-     producers cannot be relied on at all times.
-  </p>
-
-  <p>
-    In your scenario, there is {{ future.dispatchable_electricity_production_capacity | autoscale: 'MW' }} of
-    reliable (dispatchable) electricity production. Resulting in 
-    {{ future.dashboard_security_of_supply | without_unit }} hours of loss of load.
-  </p>
-
-  {% chart 111 %}
-    Reliability of production capacity.
-  {% endchart %}
-
-  <p>
-    Similar to LOLE, the number of blackout hours is a measure for the reliability of the electricity 
-    supply in your scenario. It also takes into account the possibility for import and flexibility to 
-    prevent a shortage of power.
-  </p>
-
-  {% if future.dashboard_blackout_hours > 1 %}
-    <p>
-      Your scenario has {{ future.dashboard_blackout_hours | without_unit }} blackout hours.
-      Try building more reliable back-up capacity in the electricity production section.
-      Note that solar and wind power are intermittent and cannot add reliable electricity at all
-      times. 
-    </p>
-  {% else %}
-    <p>
-      Your scenario has zero blackout hours.
-    </p>  
-  {% endif %}
-
-
-  <h1 class="banner">Cost and employment</h1>
+  <h1 class="banner">Costs of the energy system</h1>
     <h2>Cost of the energy system</h2>
 
       <p>
@@ -401,24 +365,91 @@
 
 
     {% if settings.merit_order_enabled %}
-      <h2>Merit order and profitability of power plants</h2>
+      <h2>Merit order and fuel prices</h2>
 
         <p>
           The <i>merit order</i> ranks dispatchable power plants (those which you can switch on and off)
           according to their <i>marginal costs</i> (the costs of producing an extra MWh of electricity).
           Wind, solar and must-run plants have effectively zero marginal costs.
-        </p>
-
-        <p>
-          Depending on the demand for electricity, the merit order determines which plants are running for each hour
-          of the year. The plants with lowest marginal costs will often (baseload generation) whereas plants with 
-          higher marginal costs might only run in cases of peak demand.
-          The marginal costs and installed capacity of power generation for your scenario is shown in the chart below.
+          The marginal costs and installed capacity of power generation for your scenario is shown in the 
+          chart below.
         </p>
 
         {% chart 125 %}
           Merit order.
         {% endchart %}
+
+        <p>
+          Depending on the demand for electricity, the merit order determines which plants are running for each hour
+          of the year. The plants with lowest marginal costs will often (baseload generation) whereas plants with 
+          higher marginal costs might only run in cases of peak demand.          
+        </p>
+
+        <p>
+          Fuel prices determine to a large extend the marginal costs of power plants. Increasing the proce of coal
+          and/or CO2 can, for instance, make gas fueled power plants more compatitive with coal fired power plants.
+        </p>
+        
+        {% chart 32 %}
+          The vertical axis shows all relevant production costs of electricity for various generation technologies 
+          (in €/MWhe). The horizontal axis shows the investment costs (in million €/MWe).
+        {% endchart %}
+
+
+    {% endif %}
+
+  <h1 class="banner">Security of supply and profitability of power plants</h1>
+
+    <h2>Reliability</h2>
+
+    <p>
+      The loss of load expectation (LOLE) is the expected number of hours per year that the electricity
+       supply cannot meet its demand. A nonzero LOLE does not necessarily result in blackouts as 
+       electricity can be imported or can be available in batteries. The Netherlands accepts a 
+       LOLE of 4 h/yr. We distinguish (un)reliable electricity production as volatile electricity 
+       producers cannot be relied on at all times.
+    </p>
+
+    <p>
+      In your scenario, there is {{ future.dispatchable_electricity_production_capacity | autoscale: 'MW' }} of
+      reliable (dispatchable) electricity production. Resulting in 
+      {{ future.dashboard_security_of_supply | without_unit }} hours of loss of load.
+    </p>
+
+    {% chart 111 %}
+      Reliability of production capacity.
+    {% endchart %}
+
+    <p>
+      Similar to LOLE, the number of blackout hours is a measure for the reliability of the electricity 
+      supply in your scenario. It also takes into account the possibility for import and flexibility to 
+      prevent a shortage of power.
+    </p>
+
+    {% if future.dashboard_blackout_hours > 1 %}
+      <p>
+        Your scenario has {{ future.dashboard_blackout_hours | without_unit }} blackout hours.
+        Try building more reliable back-up capacity in the electricity production section.
+        Note that solar and wind power are intermittent and cannot add reliable electricity at all
+        times. 
+      </p>
+    {% else %}
+      <p>
+        Your scenario has zero blackout hours.
+      </p>  
+    {% endif %}
+
+    {% if settings.merit_order_enabled %}
+      <h2>Profitability of power plants</h2>
+
+        <p>
+          Security of (electricity) supply and the profitability of power plants are intimately linked. 
+          For dispatchable power plants to make money, they need to run sufficiently often, ideally when
+          electricity prices are high.
+          A reliable electricity system traditionally requires, however, 
+          that there are power plants available which are only needed for a couple of extreme demand peaks 
+          every year.
+        </p>
 
         <p>
           In your scenario, {{ future.profitability_percentage | round: 1 | without_unit }}% of powerplants is not 
@@ -435,50 +466,44 @@
           by incereasing electricity demand (making them run more hours). Also reducing electricity generation with zero
           marginal costs can make power plants profitable again.
         </p>
-
     {% endif %}
 
   <h1 class="banner">Bio-footprint and renewability</h1>
 
-  <h2>Bio-footprint</h2>
-  <p>
-    In your scenario, {{ future.bio_footprint | round: 1 }} times the available areable land is used for
-    the production of bio-fuels such as wood, ethanol, bio-gas and bio-diesel.
-  </p>
+    <h2>Bio-footprint</h2>
+      <p>
+        In your scenario, {{ future.bio_footprint | round: 1 }} times the available areable land is used for
+        the production of bio-fuels such as wood, ethanol, bio-gas and bio-diesel.
+      </p>
 
-  <p>
-    As can be seen from the chart below, BLA
-  </p>
+      {% chart 168 %}
+        Biofootprint per carrier.
+      {% endchart %}
 
-  {% chart 168 %}
-    Biofootprint per carrier.
-  {% endchart %}
+    <h2>Renewability</h2>
 
-  <h2>Renewability</h2>
+      The percentage of renewable energy in your scenario is {{ future.renewability_percentage | round: 1 }}%.
 
-  The percentage of renewable energy in your scenario is {{ future.renewability_percentage | round: 1 }}%.
+      {% chart 49 %}
+        Renewability percentage of final energy demand.
+      {% endchart %}
 
-  {% chart 49 %}
-    Renewability percentage of final energy demand.
-  {% endchart %}
-
-  For electricity generation, the renewability is 
-  {{ future.share_of_renewable_electricity | times: 100 | round: 1 }}%.
-  
-  {% chart 112 %}
-    Renewability of produced electricity. The renewability is defined as all renewable electricity 
-    production divided by local electricity consumption and can be larger than 100%.
-  {% endchart %}
+      For electricity generation, the renewability is 
+      {{ future.share_of_renewable_electricity | times: 100 | round: 1 }}%.
+      
+      {% chart 112 %}
+        Renewability of produced electricity. The renewability is defined as all renewable electricity 
+        production divided by local electricity consumption and can be larger than 100%.
+      {% endchart %}
 
   <h1 class="banner">Implications of this scenario</h1>
 
   <h2>Investments needed</h2>
 
   <p>
-    Your scenario spans {{ future:scenario_duration }} year. As a result of the choices 
-    you made, we must build (amongst others) the following list of items on average every year
+    Your scenario spans {{ future.scenario_duration | round: 0 }} years. The various assumptions imply that on average  
+    the following list of technologies need to be installed every year
   </p>
-
 
   <ul>
     <li>{{ future.number_of_wind_turbines_per_year_offshore | round: 1 }} off-shore windturbines</li>
@@ -488,7 +513,7 @@
 
   </ul>
 
-  For a complete list of investment costs per technology see Appendix B.
+  For a complete list of investment costs per technology see <a href="#appendix-b-investment-costs">Appendix B</a>.
 
   <h2>Area needed for wind</h2>
 
@@ -572,9 +597,8 @@
 
     <h2>Unused potential</h2>
 
-
     In your scenario, there are 
-    {{ future.total_number_of_excess_events }} hours that electricity production exceeds demand.
+    {{ future.dashboard_total_number_of_excess_events }} hours that electricity production exceeds demand.
     This electricity is not used (curtailed). To usefully employ the excess electricity you can
 
     <ul>
@@ -669,19 +693,66 @@
   </p>
 
 
-  <!-- {% chart 142 %}
+  {% chart 142 %}
     This table shows an overview of the investment cost of heat and electricity producing 
     technologies. The investment costs are shown for both the start scenario (2010) and for the 
     future scenario. In both cases a 'green-field' approach is taken: no previously installed 
     technologies are assumed. The last column shows the difference between the investment costs 
     of the two scenarios.
-  {% endchart %} -->
+  {% endchart %}
 
   <h1 class="banner">APPENDIX C: About The Energy Transition Model</h1>
 
-  <p>
-    The <a href="https://energytransitionmodel.com">Energy Transition Model (ETM)</a> is a free, open-source, web-based
-     energy model for the exploration of energy scenario's. 
-  </p>
+    <h2>Introduction</h2>
+    
+      <p>
+        The <a href="https://energytransitionmodel.com">Energy Transition Model (ETM)</a> is 
+        a free, open-source, web-based
+         energy model for the exploration of energy scenario's.
+      </p>
+
+      <p>
+        The ETM is for anyone who wants to explore and create energy scenarios for countries, cities, 
+        neighbourhoods and even streets.
+        No prior knowledge is assumed and the ETM is therefore of interest to both experts and students. 
+        You can make assumptions about demand and supply of different types of energy from the source to 
+        the application. the ETM determines, for all stakeholders in the system, sustainability, reliability 
+        and affordability at national and local level.
+      </p>
+
+      <p>
+        You can look up how the ETM compares to other models on 
+        <a href="www.energierekenmodellen.nl">energierekenmodellen.nl</a>.
+      </p>
+
+
+    <h2>Beyond The Energy Transition Model</h2>
+
+      <p>
+        <i>"All models are wrong but some are useful"</i>
+        <br>
+        <br>
+        <strong>George Box</strong>
+      </p>
+
+      <p>
+        Although Quintel strives to properly include all important features of the energy system, the ETM nescessarily 
+        has a limited scope and should not be used as a substitute for critical thought. On the contrary! Hopefully, the
+        user is inspired to challenge results and limits of the model and starts thinking outside of the boudaries of
+        the Energy Transition Model.
+      </p>
+
+      <p>
+        The following (very) incomplete list of topics is indicative of the limits of the ETM:
+        <ul>
+          <li><strong>Human behaviour</strong>: arguably the biggest impact on the success of failure of energy transition 
+            is declared out of scope of the primarily technical ETM.</li>
+          <li><strong>Economic relations</strong>: the ETM calculates costs based on published values but does not assume
+            price-elasticity relations or other economic relations which may no longer apply in the future.</li>
+          <li><strong>Policy</strong>: no subsedies or taxes are assumed in the ETM, they are viewed as the possible
+            motivation for the choices of the user, however.</li>
+        </ul>
+
+      </p>
 
 </main>

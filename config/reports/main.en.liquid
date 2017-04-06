@@ -638,6 +638,30 @@
 
   This appendix lists all the sliders which have been moved from their default value.
 
+  {% if user_values.length %}
+    <ul class="user-values">
+      {% for slide in user_values %}
+        <li>
+          <p><strong>{{ slide.path | join: " • " }}</strong></p>
+          <ul>
+            {% for input in slide.user_values %}
+              <li>
+                {{ input.name }}:
+                {{ input.default | autoscale: input.unit }} →
+                {{ input.user | autoscale: input.unit }}
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>
+      This is an untouched scenario; no values were changed from the
+      defaults.
+    </p>
+  {% endif %}
+
   <h1 class="banner">APPENDIX B: Investment costs</h1>
 
   <p>

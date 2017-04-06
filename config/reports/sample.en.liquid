@@ -171,9 +171,9 @@
     expetendis ex, vel in malorum antiopam definiebas.
   </p>
 
-  {% if user_values.length %}
-    <h1>Appendix A: Scenario Values</h1>
+  <h1>Appendix A: Scenario Values</h1>
 
+  {% if user_values.length %}
     <ul class="user-values">
       {% for slide in user_values %}
         <li>
@@ -190,5 +190,10 @@
         </li>
       {% endfor %}
     </ul>
+  {% else %}
+    <p>
+      This is an untouched scenario; no values were changed from the
+      defaults.
+    </p>
   {% endif %}
 </main>

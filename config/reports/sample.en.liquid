@@ -170,4 +170,25 @@
     soleat admodum ex. Nec recusabo molestiae ad, sed appetere facilisis
     expetendis ex, vel in malorum antiopam definiebas.
   </p>
+
+  {% if user_values.length %}
+    <h1>Appendix A: Scenario Values</h1>
+
+    <ul class="user-values">
+      {% for slide in user_values %}
+        <li>
+          <p><strong>{{ slide.path | join: " • " }}</strong></p>
+          <ul>
+            {% for input in slide.user_values %}
+              <li>
+                {{ input.name }}:
+                {{ input.default | autoscale: input.unit }} →
+                {{ input.user | autoscale: input.unit }}
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 </main>

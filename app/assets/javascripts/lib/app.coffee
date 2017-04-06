@@ -88,10 +88,7 @@ class @AppView extends Backbone.View
 
     if Backbone.history.getFragment().match(/^reports\//)
       @handle_ajax_error = ReportView.onLoadingError
-
-      App.setup_sliders().done(->
-        new ReportView(window.reportData).renderInto($('#report'));
-      )
+      new ReportView(window.reportData).renderInto($('#report'));
     else
       @charts.load_charts()
 

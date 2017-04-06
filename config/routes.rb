@@ -107,6 +107,8 @@ Etm::Application.routes.draw do
     get :zoom, on: :member
   end
 
+  get '/input_elements/by_slide' => 'input_elements#by_slide'
+
   resources :predictions, only: [:index, :show] do
     member do
       get :share

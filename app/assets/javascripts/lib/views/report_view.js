@@ -116,9 +116,47 @@
     }, { present: {}, future: {} });
   };
 
+  /**
+   * Maps the list of user values from ETEngine to slides and sliders in
+   * the ETM interface. Omits any slides for which the user has not provided
+   * a custom value.
+   *
+   * @param {object} valsAn
+   *   object of input keys and their values, from ETEngine.
+   * @param {array} slides
+   *   array of slides in the ETM interface, with an array describing the
+   *   inputs/sliders which appear.
+   *
+   * @return {array}
+   *   returns an array of { path: array, input_values: array }
+   */
+  var mapInputsToSlides = function inputValues(vals, slides) {
+    var userVals = _.compact(slides.map(function (slide) {
+      var userValues = slide.input_elements.map(function (ie) {
+        if (vals[ie.key] && vals[ie.key].user !== undefined) {
+          return _.extend(vals[ie.key], ie);
+        }
+
+        return null;
+      });
+
+      userValues = _.compact(userValues);
+
+      if (!userValues.length) {
+        return null;
+      }
+
+      return { path: slide.path, user_values: userValues };
+    }));
+
+    return userVals;
+  };
+
   var renderLiquid = function renderLiquid(onSuccess, onError) {
     var template = Liquid.parse($('#report-template').html());
     var queryKeys = extractQueries(template.root.nodelist);
+
+    var slidesDef = $.getJSON('/input_elements/by_slide');
 
     // In order to fetch the query values during App.call_api, the queries
     // need to be added to the global collection.
@@ -126,22 +164,29 @@
       window.gqueries.find_or_create_by_key(queryKey);
     });
 
-    App.call_api({}, {
-      success: function () {
+    $.when(App.call_api({}), App.user_values(), slidesDef)
+      .done(function (queryVals, inputVals) {
         onSuccess(template.render(
-          $.extend(queryValues(queryKeys), { settings: {
-            area_code: App.settings.get('area_code'),
-            end_year: App.settings.get('end_year'),
-            merit_order_enabled: App.settings.merit_order_enabled(),
-            start_year: App.settings.get('start_year')
-          } })
+          $.extend(
+            queryValues(queryKeys),
+            {
+              user_values: mapInputsToSlides(
+                inputVals[0], slidesDef.responseJSON
+              ),
+              settings: {
+                area_code: App.settings.get('area_code'),
+                end_year: App.settings.get('end_year'),
+                merit_order_enabled: App.settings.merit_order_enabled(),
+                start_year: App.settings.get('start_year')
+              }
+            }
+           )
         ));
-      },
-      error: function (resp) {
+      })
+      .fail(function (queryResp) {
         $('#navbar .loading .bar').addClass('done');
-        onError(resp.responseJSON.errors);
-      }
-    });
+        onError(queryResp.responseJSON.errors);
+      });
   };
 
   /**

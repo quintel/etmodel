@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.7.2'
+lock '3.8.0'
 
 set :log_level, 'info'
 

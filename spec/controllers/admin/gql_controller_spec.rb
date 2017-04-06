@@ -1,14 +1,14 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Admin::GqlController do
   before(:each) do
-    controller.class.skip_before_filter :restrict_to_admin
+    login_as(FactoryGirl.create(:admin))
   end
-  
+
   describe "GET 'search'" do
     it "should be successful" do
       get 'search'
-      response.should be_success
+      expect(response).to have_http_status(:success)
     end
   end
 

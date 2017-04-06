@@ -1,21 +1,21 @@
 <script id="input-element-template" type="text/template">
     <div class="slider-row">
         <label>
-          <%% if (predictions) { %>
-              <a href="/predictions?input_element_id=<%%= input_element_id %>" class="prediction"></a>
-          <%% } %>
-          <%%= name %>
-          <%% if ( location.search.match(/\bdebug/) ) { %>
-           (#<%%= input_element_id %>)
-          <%% } %>
+          <% if (predictions) { %>
+              <a href="/predictions?input_element_id=<%= input_element_id %>" class="prediction"></a>
+          <% } %>
+          <%= name %>
+          <% if ( location.search.match(/\bdebug/) ) { %>
+           (#<%= input_element_id %>)
+          <% } %>
         </label>
 
-        <%% if (sublabel) { %>
+        <% if (sublabel) { %>
             <div class="sublabel">
-              <%%= sublabel.value %>
-              <%%= sublabel.suffix %>
+              <%= sublabel.value %>
+              <%= sublabel.suffix %>
             </div>
-        <%% } %>
+        <% } %>
 
         <div class="slider-controls">
             <div class="reset"></div>
@@ -31,13 +31,13 @@
 
     <div class="info-wrap">
         <div class="info">
-            <%%= info %>
-            <%% if (converter) { %>
+            <%= info %>
+            <% if (converter) { %>
               <br/>
               <a href="#" class="converter_detail"
-                 data-converter="<%%= converter %>"
-                 data-title="<%%= name %>"><%%= info_link %></a>
-            <%% } %>
+                 data-converter="<%= converter %>"
+                 data-title="<%= name %>"><%= info_link %></a>
+            <% } %>
         </div>
     </div>
 </script>

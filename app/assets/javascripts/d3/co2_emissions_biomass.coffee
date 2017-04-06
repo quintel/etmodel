@@ -1,6 +1,5 @@
 D3.co2_emissions_biomass =
   View: class extends D3ChartView
-    el: 'body'
     initialize: ->
       D3ChartView.prototype.initialize.call(this)
       @series = @model.series.models
@@ -22,7 +21,7 @@ D3.co2_emissions_biomass =
 
     margins:
       top: 20
-      bottom: 45
+      bottom: 20
       left: 30
       right: 40
 
@@ -46,9 +45,8 @@ D3.co2_emissions_biomass =
 
       [@width, @height] = @available_size()
 
-      legend_height = @legend_cell_height
       legend_margin = 20
-      @series_height = @height - legend_height - legend_margin
+      @series_height = @height - legend_margin
 
       @svg = @create_svg_container @width, @series_height, @margins
 

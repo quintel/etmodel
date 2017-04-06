@@ -3,7 +3,7 @@ require File.expand_path('../application', __FILE__)
 Encoding.default_external = Encoding::UTF_8
 
 # Initialize the rails application
-Etm::Application.initialize!
+Rails.application.initialize!
 
 # Required to get handle links and assets correctly
 # ActionMailer::Base.asset_host                 = "http://www.energytransitionmodel.com"

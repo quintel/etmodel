@@ -16,19 +16,19 @@
 class SidebarItem < ActiveRecord::Base
   include AreaDependent
 
-  has_one :area_dependency, :as => :dependable, :dependent => :destroy
-  has_one :description, :as => :describable, :dependent => :destroy
+  has_one :area_dependency, as: :dependable, dependent: :destroy
+  has_one :description, as: :describable, dependent: :destroy
   belongs_to :tab
-  has_many :slides, :dependent => :nullify
-  belongs_to :parent, :class_name => "SidebarItem"
-  has_many :children, :foreign_key => 'parent_id', :class_name => "SidebarItem"
+  has_many :slides, dependent: :nullify
+  belongs_to :parent, class_name: "SidebarItem"
+  has_many :children, foreign_key: 'parent_id', class_name: "SidebarItem"
 
   accepts_nested_attributes_for :description, :area_dependency
-  validates :key, :presence => true, :uniqueness => true
+  validates :key, presence: true, uniqueness: true
 
   scope :ordered, -> { order('position') }
   scope :gquery_contains, ->(search) { where("percentage_bar_query LIKE ?", "%#{search}%") }
-  scope :roots, -> { where(:parent_id => nil) }
+  scope :roots, -> { where(parent_id: nil) }
 
   def parsed_key_for_admin
     "#{section.andand} | #{key}"

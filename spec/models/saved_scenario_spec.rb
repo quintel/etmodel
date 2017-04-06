@@ -1,11 +1,11 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe SavedScenario do
-  it { should belong_to :user }
+  it { is_expected.to belong_to :user }
 
   describe "#scenario" do
     it "returns nil if scenario is not found in ET-Engine" do
-      Api::Scenario.should_receive(:find).with(0).and_raise(ActiveResource::ResourceNotFound.new(404))
+      expect(Api::Scenario).to receive(:find).with(0).and_raise(ActiveResource::ResourceNotFound.new(404))
       expect(SavedScenario.new(scenario_id: 0).scenario).to be_nil
     end
   end

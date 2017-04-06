@@ -1,7 +1,5 @@
 D3.merit_order =
   View: class extends D3ChartView
-    el: "body"
-
     initialize: ->
       # the initalizer is wrapped in a try to prevent IE8 errors. The d3.scale()
       # method raises (on IE8) an exception before we have a chance to notify
@@ -83,7 +81,7 @@ D3.merit_order =
       @draw_merit_legend()
 
     draw_merit_legend: =>
-      $("div.legend").remove()
+      @$el.find("div.legend").remove()
 
       @draw_legend
         columns:     3

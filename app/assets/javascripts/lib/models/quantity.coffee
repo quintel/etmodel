@@ -62,6 +62,14 @@ compiledUnits['mln'] = {
   power: { prefix: 'm', multiple: 1e6, i18n: 'millions' }
 }
 
+# Support for unitless numbers.
+
+compiledUnits['#'] = {
+  name: '#',
+  base: { name: '#', i18n: 'nounit' },
+  power: minPower
+};
+
 # ------------------------------------------------------------------------------
 
 class @Quantity
@@ -121,7 +129,10 @@ class @Quantity
       _.find(POWERS, (x) -> x.multiple is multiple)
 
     if power is @unit.power then this else
-      @to("#{ power.prefix }#{ @unit.base.name }")
+      try
+        @to("#{ power.prefix }#{ @unit.base.name }")
+      catch
+        this
 
   # Public: Formats the quantity as a human-readable string, using the
   # localisation options given as parameters, and defined in the unit.
@@ -159,13 +170,29 @@ class @Quantity
       opts.precision = _.min(
         ["#{ @value }".split('.', 2)[1]?.length || 0, maxPrecision])
 
-    "#{ I18n.toNumber(@value, opts) } #{ @localizedUnit() }"
+    "#{ I18n.toNumber(@value, opts) } #{ @localizedUnit() }".trim()
 
   localizedUnit: ->
     if @unit.base.i18n
-      I18n.t(i18nKey(@unit), defaultValue: @unit.name)
+      if I18n.t(i18nKey(@unit)).length
+        I18n.t(i18nKey(@unit), defaultValue: @unit.name)
+      else
+        '' # Blank messages ("nounit.unit") are fine; don't fallback to default.
     else
       @unit.name
+
+  toString: -> @format()
+
+  # Used to coerce Quantity into numbers so that it may be used in expressions.
+  #
+  # For example:
+  #   quantity = new Quantity(50, 'kg')
+  #   quantity > 50 # false
+  #   quantity > 40 # true
+  #
+  # Returns a number.
+  valueOf: ->
+    @value
 
   # Public: Given a number and unit, determines the most appropriate power in
   # which to display the number, and returns a function for converting and

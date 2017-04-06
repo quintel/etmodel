@@ -1,11 +1,6 @@
-/*
-* jQuery.ajaxQueue - A queue for ajax requests
-* 
-* (c) 2011 Corey Frang
-* Dual licensed under the MIT and GPL licenses.
-*
-* Requires jQuery 1.5+
-*/ 
+/*! jQuery Ajax Queue - v0.1.2pre - 2013-03-19
+* https://github.com/gnarf37/jquery-ajaxQueue
+* Copyright (c) 2013 Corey Frang; Licensed MIT */
 (function($) {
 
 // jQuery on an empty object, we are going to use this as our Queue
@@ -15,6 +10,14 @@ $.ajaxQueue = function( ajaxOpts ) {
     var jqXHR,
         dfd = $.Deferred(),
         promise = dfd.promise();
+
+    // run the actual query
+    function doRequest( next ) {
+        jqXHR = $.ajax( ajaxOpts );
+        jqXHR.done( dfd.resolve )
+            .fail( dfd.reject )
+            .then( next, next );
+    }
 
     // queue our ajax request
     ajaxQueue.queue( doRequest );
@@ -39,14 +42,6 @@ $.ajaxQueue = function( ajaxOpts ) {
         dfd.rejectWith( ajaxOpts.context || ajaxOpts, [ promise, statusText, "" ] );
         return promise;
     };
-
-    // run the actual query
-    function doRequest( next ) {
-        jqXHR = $.ajax( ajaxOpts )
-            .then( next, next )
-            .done( dfd.resolve )
-            .fail( dfd.reject );
-    }
 
     return promise;
 };

@@ -4,16 +4,16 @@ FactoryGirl.define do
   end
 
   factory :output_element do
-    sequence(:key) {|n| "output_element_#{n}" }
+    sequence(:key) { |n| "output_element_#{n}" }
     association :output_element_type
   end
 
   factory :output_element_serie do
-    association :output_element, :factory => :output_element
+    association :output_element, factory: :output_element
     gquery 'gquery_foobar'
   end
 
-  factory :output_element_with_description, :parent => :output_element do
-    association :description, :factory => :description
+  factory :output_element_with_description, parent: :output_element do
+    association :description, factory: :description
   end
 end

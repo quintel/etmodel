@@ -30,11 +30,10 @@ D3.bezier =
 
       legend_columns = if @model.series.length > 6 then 2 else 1
       legend_rows = @model.series.length / legend_columns
-      legend_height = legend_rows * @legend_cell_height
       legend_margin = 20
 
       # dimensions of the chart body
-      @series_height = @height - legend_height - legend_margin
+      @series_height = @height - legend_margin
       @series_width  = @width - 15
 
       @svg = @create_svg_container @width, @series_height, @margins
@@ -63,7 +62,7 @@ D3.bezier =
         .data([@start_year, @end_year])
         .enter().append('svg:text')
         .attr('class', 'year')
-        .attr("text-anchor", "middle")
+        .attr("text-anchor", (d, i) => if i == 0 then 'start' else 'end')
         .text((d) -> d)
         .attr('x', (d, i) => if i == 0 then 0 else @series_width)
         .attr('y', @series_height + 16)

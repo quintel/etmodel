@@ -13,9 +13,9 @@
     <tbody>
       <%% _.each(series, function(serie){ %>
         <tr class="<%%= serie.profitability %>">
-          <td class="technology">
+          <th class="technology">
             <%%= I18n.t("output_elements.tables.merit_order." + serie.label) %>
-          </td>
+          </th>
           <td class="position"><%%= serie.position || '-' %></td>
           <td><%%= Metric.autoscale_value(serie.capacity, 'MW') %></td>
           <td><%%= Metric.autoscale_value(serie.availability, '%')%></td>

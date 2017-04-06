@@ -38,88 +38,82 @@ class @ChartList extends Backbone.Collection
   #
   # Returns the newly created chart object or false if something went wrong
   load: (chart_id, holder_id = null, options = {}) =>
-    if @should_load_chart(chart_id, holder_id, options)
-      App.debug """Loading chart: ##{chart_id} in #{holder_id}
-                 #{window.location.origin}/admin/output_elements/#{chart_id}"""
-
-      @chart_requests.push(@request_output_element(chart_id, holder_id, options))
-
-      @last()
-
-  should_load_chart: (chart_id, holder_id = null, options = {}) =>
-    should_load = true
-    current     = @chart_in_holder(holder_id)
+    current = @chart_in_holder(holder_id)
 
     if current && current.get('chart_id') == chart_id && !options.force
-      should_load = false
+      return false
 
     # if we want to replace a locked chart...
     locked_charts = App.settings.get 'locked_charts'
-
     if locked_charts[holder_id]
       if options.force
         # TODO: Remove the toggle_lock method because this method should return
         # a boolean but now also excecutes code in between which is confusing.
         current.toggle_lock(false)
-      else if !options.ignore_lock
-        should_load = false
+      else
+        return false unless options.ignore_lock
+    else if !options.force && _.keys(locked_charts).length
+      # Accordion has tried to load the default chart, but we already have one
+      # or more locked charts. Don't show the default.
+      return false
 
-    should_load
+    App.debug(
+      "Loading chart: ##{ chart_id } in #{ holder_id } | " +
+      "#{ window.location.origin }/admin/output_elements/#{ chart_id }"
+    )
 
-  request_output_element: (chart_id, holder_id = null, options = {}) =>
-    $.ajax
-      url: "/output_elements/#{ chart_id }"
-      error: (jqXHR) ->
-        if jqXHR.status == 404
-          s = App.settings.get 'locked_charts'
-          delete s[holder_id]
-          App.settings.save locked_charts: s
+    $.ajax(url: "/output_elements/#{ chart_id }")
+      .fail (jqXHR) ->
+          if jqXHR.status == 404
+            s = App.settings.get 'locked_charts'
+            delete s[holder_id]
+            App.settings.save locked_charts: s
+      .done (data) =>
+        @render_output_element(chart_id, holder_id, options, data)
 
-      success: (data) =>
-        holder_id = @add_container_if_needed(holder_id, options)
+  render_output_element: (chart_id, holder_id, options, data) =>
+    holder_id = @add_container_if_needed(holder_id, options)
 
-        # Create the new Chart. The id attribute is concatenated to the
-        # holder_id because backbone collections make items unique by id. We
-        # want to be able to show the same chart more than once
-        #
-        settings = _.extend {}, data.attributes, {
-            id: "#{ data.attributes.id }-#{ holder_id }"
-            chart_id: data.attributes.id
-            container: holder_id
-            html: data.html # tables and block chart
-            locked: options.locked
-            as_table: options.as_table
-            prunable: options.prunable
-          }
-        new_chart = new Chart settings
+    # Create the new Chart. The id attribute is concatenated to the
+    # holder_id because backbone collections make items unique by id. We
+    # want to be able to show the same chart more than once
+    #
+    settings = _.extend {}, data.attributes, {
+        id: "#{ data.attributes.id }-#{ holder_id }"
+        chart_id: data.attributes.id
+        container: holder_id
+        html: data.html # tables and block chart
+        locked: options.locked
+        as_table: options.as_table
+        prunable: options.prunable
+      }
+    new_chart = new Chart settings
 
-        if !new_chart.supported_by_current_browser()
-          # try opening the alternative, but watch out for loops!
-          if options.alternate && options.alternate != chart_id
-            @load options.alternate, holder_id
-          else
-            # sorry, no chart to load...
-            alert I18n.t('output_elements.common.old_browser')
-            # delete holder if empty
-            @delete_container(holder_id) unless @chart_holders[holder_id]
-          return false
+    if !new_chart.supported_by_current_browser()
+      # try opening the alternative, but watch out for loops!
+      if options.alternate && options.alternate != chart_id
+        @load options.alternate, holder_id
+      else
+        # sorry, no chart to load...
+        alert I18n.t('output_elements.common.old_browser')
+        # delete holder if empty
+        @delete_container(holder_id) unless @chart_holders[holder_id]
+      return false
 
-        if old_chart = @chart_in_holder holder_id
-          old_chart.delete()
-          @remove old_chart
+    if old_chart = @chart_in_holder holder_id
+      old_chart.delete()
+      @remove old_chart
 
-        # Remember what we were showing in that position
-        @chart_holders[holder_id] = new_chart
+    # Remember what we were showing in that position
+    @chart_holders[holder_id] = new_chart
 
-        # Pass the gqueries to the chart
-        for s in data.series
-          s.owner = holder_id
-          new_chart.series.add(s)
+    # Pass the gqueries to the chart
+    for s in data.series
+      s.owner = holder_id
+      new_chart.series.add(s)
 
-        # Render the chart only if it is not new chart
-        if options.ignore_lock == undefined
-          @add new_chart
-          App.call_api() unless options.wait
+    @add(new_chart)
+    App.call_api() unless options.wait
 
   # Returns the chart held in a holder
   #
@@ -136,11 +130,9 @@ class @ChartList extends Backbone.Collection
   # There is some (ugly) logic to keep track of which charts should have the
   # locked flag on and which not
   #
-  load_charts: =>
+  load_charts: (custom_charts, apiOptions = {}) =>
     # The accordion takes care of setting @default_chart_id
-    @chart_requests = []
-
-    settings = App.settings.get 'locked_charts'
+    settings = custom_charts || App.settings.get('locked_charts')
 
     # safe copy of the settings hash
     charts_to_load = _.extend {}, settings
@@ -152,9 +144,12 @@ class @ChartList extends Backbone.Collection
         charts_to_load.holder_0 = @default_chart_id
 
     ordered_charts = _.keys(charts_to_load).sort()
+    render_options = {}
+    request_ids    = []
 
     for holder in ordered_charts
       chart = charts_to_load[holder]
+
       # The chart string has this format:
       #     XXX-YYY
       # XXX is the chart id, while YYY is 'T' if the chart must be shown as
@@ -173,33 +168,33 @@ class @ChartList extends Backbone.Collection
         default_chart_locked
 
       if id && holder
-        @load(id, holder, {
+        render_options[id] = {
+          holder: holder,
           locked: locked,
           as_table: (format == 'T'),
+          wait: true
           # the initial render should ignore the lock check: render the charts
           # but don't remove the locks, which is what `force: true` would do
           ignore_lock: true
-        })
+        }
 
-    # The @chart_requests are jqXHR objects returned by $.ajax().
-    # Here, we want to wait until all Ajax requests have returned, no matter
-    # their success, but $.when has a fast-failure feature if one
-    # of the requests fails.
-    # Hence, we have to wrap the jqXHRs in new Deferreds which will
-    # always return successfully - after all, we are not interested in the
-    # success of the requests anyways (since success is handled directly in
-    # callbacks to the Ajax calls).
-    $.when.apply(null, @chart_requests.map((request) ->
-      deferred = $.Deferred()
-      request.always ->
-        deferred.resolve()
-      deferred
-    )).always( =>
-      App.call_api()
+        request_ids.push(id)
 
-      for holder_id, chart of @chart_holders
-        @add chart
-    )
+    return unless request_ids.length # Nothing to do!
+
+    $.ajax(url: "/output_elements/batch/#{ request_ids.join(',') }")
+      .fail (jqXHR) ->
+        console.error('Failed to fetch output elements')
+      .done (data) =>
+        for id in request_ids when data[id]
+          @render_output_element(
+            id,
+            render_options[id].holder,
+            render_options[id],
+            data[id]
+          )
+
+        App.call_api({}, apiOptions)
 
   # adds a chart container, unless it is already in the DOM. Returns the
   # holder_id
@@ -281,7 +276,6 @@ class @ChartList extends Backbone.Collection
             data_holder = $(e.target).closest('div.pick_chart')
             holder_id = data_holder.data('chart_holder')
             chart_id  = data_holder.data('chart_id')
-            console.log("Loading: #{ chart_id }")
             load_chart chart_id, holder_id, force: true
             close_fancybox()
             e.preventDefault()

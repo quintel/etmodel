@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe UserSessionsController do
   render_views
@@ -10,23 +10,29 @@ describe UserSessionsController do
   context "User is not logged in" do
     it "should get to the login page" do
       get :new
-      response.should be_success
-      response.should have_selector("form") do |form|
-        form.should have_selector("input", :type => "text", :name => "user_session[email]")
-        form.should have_selector("input", :type => "password", :name => "user_session[password]")
+      expect(response).to be_success
+      expect(response.body).to have_selector("form") do |form|
+        expect(form).to have_selector("input", type: "text", name: "user_session[email]")
+        expect(form).to have_selector("input", type: "password", name: "user_session[password]")
       end
     end
 
     it "should redirect to admin after succesfull login in" do
-      post :create, :user_session => {:email => @user.email, :password => @user.password}
-      assigns(:user_session).user.should == @user
-      response.should redirect_to(root_path)
+      post :create, params: {
+        user_session: { email: @user.email, password: @user.password }
+      }
+
+      expect(assigns(:user_session).user).to eq(@user)
+      expect(response).to redirect_to(root_path)
     end
 
     it "should render the same page to admin after unsuccessfull login." do
-      post :create, :user_session => {:email => @user.email, :password => 'pssassword'}
-      controller.send(:current_user).should be_nil
-      response.should be_success
+      post :create, params: {
+        user_session: { email: @user.email, password: 'pssassword' }
+      }
+
+      expect(controller.send(:current_user)).to be_nil
+      expect(response).to be_success
     end
   end
 end

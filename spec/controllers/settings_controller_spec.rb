@@ -1,28 +1,31 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe SettingsController do
   describe 'on PUT /settings', vcr: true do
     it "should update individual settings" do
-      put :update, :format => :json, :use_fce => 1
-      response.should be_success
-      session[:setting][:use_fce].should == 1
+      put :update, params: { format: :json, use_fce: true }
+      expect(response).to be_success
+      expect(session[:setting][:use_fce].to_s).to eq('true')
     end
 
     it "should update individual settings passed as strings" do
-      put :update, :format => :json, "track_peak_load" => 1
-      response.should be_success
-      session[:setting][:track_peak_load].should == 1
+      put :update, params: { format: :json, "track_peak_load" => true }
+      expect(response).to be_success
+      expect(session[:setting][:track_peak_load].to_s).to eq('true')
     end
 
     it "should update the charts hash" do
-      put :update, :format => :json, :locked_charts => {'holder_0' => 123}
-      response.should be_success
-      expect(session[:setting][:locked_charts]).to eql({'holder_0' => 123})
+      put :update, params: {
+        format: :json, locked_charts: { 'holder_0' => 123 }
+      }
+
+      expect(response).to be_success
+      expect(session[:setting][:locked_charts]).to eql({'holder_0' => '123'})
     end
 
     it "should update the charts hash" do
-      put :update, :format => :json, :locked_charts => {}
-      response.should be_success
+      put :update, params: { format: :json, locked_charts: {} }
+      expect(response).to be_success
       expect(session[:setting][:locked_charts]).to eql({})
     end
   end
@@ -46,26 +49,26 @@ describe SettingsController do
 
     context 'when given a valid setting hash' do
       it 'should return 200 OK' do
-        put :update_dashboard, dash: dash_settings
-        response.code.should eql('200')
+        put :update_dashboard, params: { dash: dash_settings }
+        expect(response.code).to eql('200')
       end
 
       it 'should return the constraints as JSON' do
-        put :update_dashboard, dash: dash_settings
+        put :update_dashboard, params: { dash: dash_settings }
 
         parsed = JSON.parse(response.body)
-        parsed.should have_key('constraints')
-        parsed['constraints'].should eql(constraints.map(&:as_json))
+        expect(parsed).to have_key('constraints')
+        expect(parsed['constraints']).to eql(constraints.map(&:as_json))
       end
 
       it 'should return HTML with which to replace the dashboard' do
-        put :update_dashboard, dash: dash_settings
-        JSON.parse(response.body).should have_key('html')
+        put :update_dashboard, params: { dash: dash_settings }
+        expect(JSON.parse(response.body)).to have_key('html')
       end
 
       it 'should set the preferences in the session' do
-        put :update_dashboard, dash: dash_settings
-        session[:dashboard].should eql(dash_settings.values)
+        put :update_dashboard, params: { dash: dash_settings }
+        expect(session[:dashboard]).to eql(dash_settings.values)
       end
     end
 
@@ -74,7 +77,7 @@ describe SettingsController do
     context 'when no setting hash is provided' do
       it 'should return a 400 Bad Request' do
         put :update_dashboard
-        response.status.should eql(400)
+        expect(response.status).to eql(400)
       end
     end
 
@@ -82,8 +85,8 @@ describe SettingsController do
 
     context 'when the setting option is not a hash' do
       it 'should return a 400 Bad Request' do
-        put :update_dashboard, dash: 'invalid'
-        response.status.should eql(400)
+        put :update_dashboard, params: { dash: 'invalid' }
+        expect(response.status).to eql(400)
       end
     end
 
@@ -91,10 +94,11 @@ describe SettingsController do
 
     context 'when given extra options' do
       it 'should not set extra keys on the session' do
-        put :update_dashboard,
+        put :update_dashboard, params: {
           dash: dash_settings.merge(another: constraints[0].key)
+        }
 
-        session[:dashboard].should eql(dash_settings.values)
+        expect(session[:dashboard]).to eql(dash_settings.values)
       end
     end
 
@@ -102,12 +106,12 @@ describe SettingsController do
 
     context 'when given only a subset of options' do
       it 'should not accept partial assignment' do
-        put :update_dashboard, dash: {
+        put :update_dashboard, params: { dash: {
           Constraint::GROUPS[0] => constraints[0].key,
           Constraint::GROUPS[1] => constraints[1].key
-        }
+        } }
 
-        response.status.should eql(400)
+        expect(response.status).to eql(400)
       end
     end
 
@@ -115,10 +119,11 @@ describe SettingsController do
 
     context 'when given an invalid constraint ID' do
       it 'should return a 400 Bad Request' do
-        put :update_dashboard,
+        put :update_dashboard, params: {
           dash: dash_settings.merge(Constraint::GROUPS[0] => 0)
+        }
 
-        response.status.should eql(400)
+        expect(response.status).to eql(400)
       end
     end
 

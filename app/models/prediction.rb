@@ -16,16 +16,16 @@
 class Prediction < ActiveRecord::Base
   belongs_to :user
   belongs_to :input_element
-  has_many :values,   :class_name => "PredictionValue",   :dependent => :destroy
-  has_many :measures, :class_name => "PredictionMeasure", :dependent => :destroy
+  has_many :values,   class_name: "PredictionValue",   dependent: :destroy
+  has_many :measures, class_name: "PredictionMeasure", dependent: :destroy
 
-  accepts_nested_attributes_for :values,   :allow_destroy => true, :reject_if => proc {|a| a[:year].blank? || a[:value].blank? }
-  accepts_nested_attributes_for :measures, :allow_destroy => true, :reject_if => proc {|a| a[:name].blank? }
+  accepts_nested_attributes_for :values,   allow_destroy: true, reject_if: proc {|a| a[:year].blank? || a[:value].blank? }
+  accepts_nested_attributes_for :measures, allow_destroy: true, reject_if: proc {|a| a[:name].blank? }
 
-  validates :title, :presence => true
-  validates :input_element_id, :presence => true
+  validates :title, presence: true
+  validates :input_element_id, presence: true
 
-  scope :for_area, ->(a) { where(:area => a) }
+  scope :for_area, ->(a) { where(area: a) }
 
   def last_value
     @last_value ||= values.future_first.first
@@ -34,7 +34,7 @@ class Prediction < ActiveRecord::Base
   # Prepare blank records, useful when building forms
   def prepare_nested_attributes
     if new_record?
-      [2010, 2015, 2020, 2025, 2030, 2040, 2050].each{|y| values.build(:year => y)}
+      [2010, 2015, 2020, 2025, 2030, 2040, 2050].each{|y| values.build(year: y)}
     else
       8.times { values.build }
     end

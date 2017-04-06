@@ -6,5 +6,6 @@ Etm::Application.configure do
 
   # Required by Devise.
   config.action_mailer.default_url_options = {
-    host: 'beta.et-model.com' }
+    host: 'beta-engine.energytransitionmodel.com'
+  }
 end

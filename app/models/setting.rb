@@ -58,11 +58,11 @@ class Setting
   #
   def self.load_from_scenario(scenario)
     attrs = {
-      :preset_scenario_id => scenario.id,
-      :use_fce => scenario.use_fce,
-      :end_year => scenario.end_year,
-      :area_code => scenario.area_code,
-      :scaling => scenario.scaling && scenario.scaling.attributes
+      preset_scenario_id: scenario.id,
+      use_fce: scenario.use_fce,
+      end_year: scenario.end_year,
+      area_code: scenario.area_code,
+      scaling: scenario.scaling && scenario.scaling.attributes
     }
     new(attrs)
   end
@@ -121,8 +121,14 @@ class Setting
     area.attributes[:has_fce]
   end
 
+  def locked_charts=(charts)
+    if charts.respond_to?(:to_h)
+      @locked_charts = charts.to_h.transform_values(&:to_s)
+    end
+  end
+
   def derived_dataset?
-    area.derived?
+    area && area.derived?
   end
 
   # Returns the ActiveResource object

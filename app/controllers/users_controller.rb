@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(users_parameters)
 
     if @user.save
-      redirect_to root_path, :notice => I18n.t("flash.register")
+      redirect_to root_path, notice: I18n.t("flash.register")
     else
       render :new
     end
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     unless @user.md5_hash == params[:h]
-      render text: 'invalid link. Cannot unsubscribe.' and return
+      render plain: 'invalid link. Cannot unsubscribe.' and return
     end
 
     @allow_news_changed = @user.allow_news == true
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(users_parameters)
-      redirect_to edit_user_path(@user), :notice => I18n.t("flash.edit_profile")
+      redirect_to edit_user_path(@user), notice: I18n.t("flash.edit_profile")
     else
       render :edit
     end
@@ -53,6 +53,9 @@ class UsersController < ApplicationController
   #######
 
   def users_parameters
-    params.require(:user).permit(:name, :email, :company_school, :allow_news, :teacher_email, :password, :password_confirmation)
+    params.require(:user).permit(
+      :name, :email, :company_school, :allow_news, :teacher_email,
+      :password, :password_confirmation
+    )
   end
 end

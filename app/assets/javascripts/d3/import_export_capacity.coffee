@@ -43,12 +43,11 @@ D3.import_export_capacity =
 
       legend_columns = 2
       legend_rows = theData.length / legend_columns
-      legend_height = legend_rows * @legend_cell_height
       legend_column_width = @width/legend_columns
       legend_margin = 50
       cell_height = @legend_cell_height
 
-      @series_height = @height - legend_height - legend_margin
+      @series_height = @height - legend_margin
 
       @svg = @create_svg_container @width, @height, @margins
 

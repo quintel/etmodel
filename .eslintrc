@@ -1,0 +1,47 @@
+{
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": "airbnb-base",
+  "parser": "babel-eslint",
+  "rules": {
+    "babel/arrow-parens": "off",
+    "babel/generator-star-spacing": "warn",
+    "babel/no-await-in-loop": "warn",
+    "babel/object-shorthand": "warn",
+    "comma-dangle": ["error", "never"],
+    "max-len": ["error", {
+      "code": 80,
+      "tabWidth": 2,
+      "ignoreUrls": true,
+      "ignoreComments": false,
+      "ignoreStrings": false,
+      "ignoreTemplateLiterals": true,
+      "ignoreTrailingComments": true
+    }],
+    "no-prototype-builtins": "off",
+    "quote-props": ["error", "consistent-as-needed"],
+    "quotes": ["error", "single"],
+
+    "no-var": "off",
+    "object-shorthand": "off",
+    "func-names": "off",
+    "strict": "off",
+    "prefer-template": "off",
+    "prefer-arrow-callback": "off"
+  },
+  "globals": {
+    "Backbone": true,
+    "_": true,
+    "jQuery": true,
+    "$": true
+  },
+  "plugins": [
+    "babel"
+  ]
+}

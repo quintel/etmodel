@@ -2,19 +2,22 @@ class ApplicationController < ActionController::Base
   include LayoutHelper
   include Browser
 
+  protect_from_forgery with: :exception
+
   helper :all
   helper_method :current_user_session, :current_user, :admin?
 
-  before_filter :initialize_current
-  before_filter :locale
+  before_action :initialize_current
+  before_action :locale
 
-  after_filter  :teardown_current
+  after_action  :teardown_current
 
   def locale
     # update session if passed
     if params[:locale]
+      redirect_params = params.permit(:controller, :action)
       session[:locale] = params[:locale]
-      redirect_to(params.except(:locale))
+      redirect_to(redirect_params) if request.get?
     end
 
     # set locale based on session or url
@@ -77,9 +80,7 @@ protected
 
   # redirect_to :back fails fairly often. This is safer
   def redirect_to_back(default_url = root_path)
-    redirect_to :back
-  rescue ActionController::RedirectBackError
-    redirect_to default_url
+    redirect_back(fallback_location: default_url)
   end
 
 private

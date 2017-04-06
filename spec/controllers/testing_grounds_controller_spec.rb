@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe TestingGroundsController do
   let(:scenario_mock) { ete_scenario_mock }
@@ -7,7 +7,7 @@ describe TestingGroundsController do
   describe "#create" do
     before do
       login_as user
-      Api::Scenario.stub(:create).and_return scenario_mock
+      allow(Api::Scenario).to receive(:create).and_return scenario_mock
 
       post :create
     end

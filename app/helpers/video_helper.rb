@@ -13,10 +13,10 @@ module VideoHelper
   #
   def vimeo_video_player(video_id, opts = {})
     defaults = {
-      :width       => 510,
-      :height      => 290,
-      :frameborder => 0,
-      :src         => "https://player.vimeo.com/video/#{video_id}"
+      width: 510,
+      height: 290,
+      frameborder: 0,
+      src: "https://player.vimeo.com/video/#{video_id}"
     }
     content_tag :iframe, nil, defaults.merge(opts)
   end
@@ -29,13 +29,13 @@ module VideoHelper
     mp4 = "/videos/#{video_id}.m4v"
     return unless local_video_exists?(ogv) && local_video_exists?(mp4)
     defaults = {
-      :id       => 'js_video_player',
-      :width    => 510,
-      :height   => 290,
-      :class    => 'video-js vsj-default-skin',
-      :controls => true,
-      :preload  => false,
-      :poster   => '/assets/video_poster_image.png'
+      id: 'js_video_player',
+      width: 510,
+      height: 290,
+      class: 'video-js vsj-default-skin',
+      controls: true,
+      preload: false,
+      poster: '/assets/video_poster_image.png'
     }
     include_video_js_files
     content_tag :video, defaults.merge(opts) do

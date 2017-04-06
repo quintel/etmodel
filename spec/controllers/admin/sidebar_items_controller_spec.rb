@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Admin::SidebarItemsController do
   let(:admin) { FactoryGirl.create :admin }
@@ -11,14 +11,14 @@ describe Admin::SidebarItemsController do
   describe "GET index" do
     it "should be successful" do
       get :index
-      response.should render_template(:index)
+      expect(response).to render_template(:index)
     end
   end
 
   describe "GET new" do
     it "should be successful" do
       get :new
-      response.should render_template(:new)
+      expect(response).to render_template(:new)
     end
   end
 end

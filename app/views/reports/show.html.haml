@@ -1,0 +1,44 @@
+#navbar
+  = link_to(play_path) do
+    = image_tag 'reports/back.svg'
+    Return to your scenario
+  %ul.controls
+    %li
+      %span.disabled
+        = image_tag 'reports/share.svg'
+        Share
+    %li
+      %a(href="javascript:window.print()")
+        = image_tag 'reports/print.svg'
+        Print
+    %li
+      - if Rails.env.development? && APP_CONFIG[:report_pdf_host].blank?
+        %span.disabled
+          = image_tag 'reports/download.svg'
+          Download PDF
+      - else
+        = link_to report_path(format: 'pdf') do
+          = image_tag 'reports/download.svg'
+          Download PDF
+  .loading
+    .bar
+
+#report
+  #title.loading
+    %h1 Creating your report&hellip;
+    %p Please wait one moment while your report is loaded.
+
+%script(id="report-template" language="text/liquid")
+  = @report.html_safe
+
+- content_for :scripts do
+  - Dir["app/views/output_elements/table_templates/*"].each do |file|
+    = render file: Rails.root.join(file).to_s
+
+  = render 'output_elements/chart_template'
+  :javascript
+    $(function(){
+      window.App = App = new AppView();
+      App.settings.set(globals.settings, {silent : true});
+      App.bootstrap();
+    })

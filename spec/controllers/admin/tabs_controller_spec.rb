@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Admin::TabsController do
   let(:admin) { FactoryGirl.create :admin }
@@ -11,21 +11,21 @@ describe Admin::TabsController do
   describe "GET index" do
     it "should be successful" do
       get :index
-      response.should render_template(:index)
+      expect(response).to render_template(:index)
     end
   end
 
   describe "GET new" do
     it "should be successful" do
       get :new
-      response.should render_template(:new)
+      expect(response).to render_template(:new)
     end
   end
 
   describe "POST create" do
     it "should be successful" do
-      post :create, :tab => { :key => 'a_tab' }
-      response.should be_redirect
+      post :create, params: { tab: { key: 'a_tab' } }
+      expect(response).to be_redirect
     end
   end
 end

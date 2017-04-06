@@ -20,15 +20,15 @@ class Slide < ActiveRecord::Base
   include AreaDependent
 
   belongs_to :sidebar_item
-  has_one :description, :as => :describable
-  has_many :sliders, :dependent => :nullify, :class_name => 'InputElement'
+  has_one :description, as: :describable
+  has_many :sliders, dependent: :nullify, class_name: 'InputElement'
   belongs_to :output_element # default chart
-  belongs_to :alt_output_element, :class_name => 'OutputElement' # secondary chart
-  has_one :area_dependency, :as => :dependable, :dependent => :destroy
+  belongs_to :alt_output_element, class_name: 'OutputElement' # secondary chart
+  has_one :area_dependency, as: :dependable, dependent: :destroy
 
-  validates :key, :presence => true, :uniqueness => true
+  validates :key, presence: true, uniqueness: true
 
-  scope :controller, ->(controller) { where(:controller_name => controller) }
+  scope :controller, ->(controller) { where(controller_name: controller) }
   scope :ordered,    -> { order('position') }
 
   accepts_nested_attributes_for :description, :area_dependency
@@ -42,7 +42,7 @@ class Slide < ActiveRecord::Base
   end
 
   def short_name
-    I18n.t("slides.#{key}", :locale => :en).parameterize
+    I18n.t("slides.#{key}", locale: :en).parameterize
   end
 
   # See Current.view

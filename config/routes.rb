@@ -83,12 +83,17 @@ Etm::Application.routes.draw do
       get  :weighted_merge
       post :weighted_merge, to: :perform_weighted_merge
     end
+
     get :load, on: :member
   end
 
   get '/scenario/new' => 'scenarios#new'
   get '/scenario/reset' => 'scenarios#reset'
   get '/scenario/grid_investment_needed' => 'scenarios#grid_investment_needed'
+
+  get '/scenario/reports/:id' => 'reports#show',
+    constraints: { id: /[0-9a-z-]+/ }, as: :report
+
   # This is the main action
   get '/scenario(/:tab(/:sidebar(/:slide)))' => 'scenarios#play', as: :play
 
@@ -96,10 +101,13 @@ Etm::Application.routes.draw do
     collection do
       get 'visible/:id',   action: :visible
       get 'invisible/:id', action: :invisible
+      get 'batch/:ids',    action: :batch
     end
 
     get :zoom, on: :member
   end
+
+  get '/input_elements/by_slide' => 'input_elements#by_slide'
 
   resources :predictions, only: [:index, :show] do
     member do
@@ -123,7 +131,7 @@ Etm::Application.routes.draw do
   get '/sitemap(.:format)'            => 'pages#sitemap', defaults: {format: :xml}
   get '/known_issues'                 => 'pages#bugs',        as: :bugs
   get '/quality_control'              => 'pages#quality', as: :quality
-  get '/set_locale(/:locale)' => 'pages#set_locale', as: :set_locale
+  put '/set_locale(/:locale)' => 'pages#set_locale', as: :set_locale
   get '/browser_support' => 'pages#browser_support'
   get '/update_footer'   => 'pages#update_footer'
   get '/regions/:dataset_locale' => 'pages#dataset', as: :region

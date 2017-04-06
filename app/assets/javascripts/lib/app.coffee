@@ -42,7 +42,8 @@ class @AppView extends Backbone.View
       InputElement.Balancer.balancers = {}
     @input_elements = new InputElementList()
     @input_elements.on "change", @handleInputElementsUpdate
-    @user_values()
+
+    deferred = @user_values()
       .done (args...) =>
         @input_elements.initialize_user_values(args...)
         @setup_fce_toggle()
@@ -53,6 +54,8 @@ class @AppView extends Backbone.View
     if (sortable = $('#accordion_wrapper ul.sortable')).length
       new FlexibilityOrder(sortable[0]).render()
 
+    deferred
+
   # Returns a deferred object on which the .done() method can be called
   #
   user_values: =>
@@ -60,15 +63,16 @@ class @AppView extends Backbone.View
     @_user_values_dfd = $.Deferred (dfd) =>
       @api.user_values
         extras: !! App.settings.get('scaling')
-        success: (args...) ->
-          dfd.resolve(args...)
-        fail: @handle_ajax_error
+        success: dfd.resolve
+        error: dfd.reject
     @_user_values_dfd
 
   # At this point we have all the settings initialized.
   bootstrap: =>
     @sidebar.bootstrap()
-    @router.load_default_slides()
+
+    unless Backbone.history.getFragment().match(/^reports\//)
+      @router.load_default_slides()
 
     # If a "change dashboard" button is present, set up the DashboardChanger.
     dashChangeEl = $('#dashboard_change')
@@ -81,7 +85,14 @@ class @AppView extends Backbone.View
     window.charts = @charts = new ChartList()
     @accordion = new Accordion()
     @accordion.setup()
-    @charts.load_charts()
+
+    if Backbone.history.getFragment().match(/^reports\//)
+      @handle_ajax_error = ReportView.onLoadingError
+
+      @setup_sliders().done ->
+        new ReportView(window.reportData).renderInto($('#report'));
+    else
+      @charts.load_charts()
 
   setup_fce_toggle: ->
     if element = $('.slide .fce-toggle')
@@ -109,16 +120,21 @@ class @AppView extends Backbone.View
     # IE doesn't bubble onChange until the checkbox loses focus
     $(document).on 'click', "#settings_use_fce", @settings.toggle_fce
     $(document).on 'click', "#settings_use_merit_order", @settings.toggle_merit_order
+
     @checkboxes_initialized = true
 
-  call_api: (input_params) =>
+  call_api: (input_params, options = {}) =>
     @api.update
       queries:  window.gqueries.keys(),
       inputs:   input_params,
       settings:
         use_fce: App.settings.get('use_fce')
-      success:  @handle_api_result
-      error:    @handle_ajax_error
+      success: (json, data, textStatus, jqXHR) =>
+        @handle_api_result(json, data, textStatus, jqXHR)
+        options.success?(json, data, textStatus, jqXHR)
+      error: (jqXHR, textStatus, error) =>
+        @handle_ajax_error(jqXHR, textStatus, error)
+        options.error?(jqXHR, textStatus, error)
 
   handle_ajax_error: (jqXHR, textStatus, error) ->
     console.log("Something went wrong: " + textStatus)

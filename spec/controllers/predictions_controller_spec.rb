@@ -1,37 +1,38 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe PredictionsController do
-  render_views
   let(:prediction) { FactoryGirl.create :prediction}
 
   before do
-    Setting.any_instance.stub(:area_code).and_return('nl')
+    allow_any_instance_of(Setting).to receive(:area_code).and_return('nl')
   end
 
   describe "GET index" do
     before do
-      xhr :get, :index, :input_element_id => prediction.input_element.id
+      get :index, xhr: true, params: {
+        input_element_id: prediction.input_element.id
+      }
     end
 
-    it { response.should be_success }
-    it { response.should render_template :index }
+    it { expect(response).to be_success }
+    it { expect(response).to render_template :index }
   end
 
   describe "GET show" do
     before do
-      xhr :get, :show, :id => prediction.id
+      get :show, xhr: true, params: { id: prediction.id }
     end
 
-    it { response.should be_success }
-    it { response.should render_template :show }
+    it { expect(response).to be_success }
+    it { expect(response).to render_template :show }
   end
 
   describe "GET share" do
     before do
-      get :share, :id => prediction.id
+      get :share, params: { id: prediction.id }
     end
 
-    it { should respond_with(:success)}
-    it { should render_template :index}
+    it { expect(response).to be_success }
+    it { expect(response).to render_template :index}
   end
 end

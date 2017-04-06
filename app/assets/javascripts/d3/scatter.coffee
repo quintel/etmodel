@@ -1,6 +1,5 @@
 D3.scatter =
   View: class extends D3ChartView
-    el: 'body'
     initialize: ->
       D3ChartView.prototype.initialize.call(this)
       @series = @model.series.models
@@ -18,10 +17,9 @@ D3.scatter =
 
       legend_columns = 2
       legend_rows = @series.length / legend_columns
-      legend_height = legend_rows * @legend_cell_height
       legend_margin = 30
 
-      @series_height = @height - legend_height - legend_margin
+      @series_height = @height - legend_margin
       @series_width = @width - 20
 
       @svg = @create_svg_container @width, @series_height, @margins

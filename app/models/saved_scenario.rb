@@ -15,9 +15,9 @@ class SavedScenario < ActiveRecord::Base
 
   attr_accessor :title, :description, :api_session_id
 
-  validates :user_id,     :presence => true
-  validates :scenario_id, :presence => true
-  validates :title,       :presence => true
+  validates :user_id,     presence: true
+  validates :scenario_id, presence: true
+  validates :title,       presence: true
 
   def self.batch_load(saved_scenarios)
     ids       = saved_scenarios.map(&:scenario_id)

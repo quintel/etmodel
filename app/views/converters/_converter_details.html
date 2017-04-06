@@ -1,6 +1,6 @@
 <script id="converter-details-template" type="text/template">
   <div class="popup_converter_details">
-    <h3><%%= title %></h3>
+    <h3><%= title %></h3>
     <table class="converter-detail">
       <thead>
         <tr>
@@ -15,7 +15,7 @@
             * Values are for one typical unit (future value)
           </td>
         </tr>
-        <%% if(uses_coal_and_wood_pellets) { %>
+        <% if(uses_coal_and_wood_pellets) { %>
           <tr>
             <td colspan="3">
               ** The fuel input mix of this plant can be changed by your slider
@@ -23,7 +23,7 @@
               this table.
             </td>
           </tr>
-        <%% } %>
+        <% } %>
         <tr>
           <td colspan="3">
             For questions about these data, please contact:
@@ -32,26 +32,26 @@
         </tr>
       </tfoot>
       <tbody>
-        <%% _.each( data, function(items, group) { %>
+        <% _.each( data, function(items, group) { %>
           <tr>
-            <th colspan="3"><%%= group %></th>
+            <th colspan="3"><%= group %></th>
           </tr>
 
-          <%% _.each( items, function(data, attr) { %>
+          <% _.each( items, function(data, attr) { %>
             <tr>
-              <td><%%= data.desc %></td>
+              <td><%= data.desc %></td>
               <td>
-                <%% if (data.future && _.isString(data.future)) { %>
-                  <%%= data.future %>
-                <%% } else { %>
-                  <%%= Metric.converter_detail_format(data.future, data.unit) %>
-                <%% } %>
+                <% if (data.future && _.isString(data.future)) { %>
+                  <%= data.future %>
+                <% } else { %>
+                  <%= Metric.converter_detail_format(data.future, data.unit) %>
+                <% } %>
               </td>
-              <td><%%= data.unit %></td>
+              <td><%= data.unit %></td>
             </tr>
-          <%% }) %>
+          <% }) %>
 
-        <%% }) %>
+        <% }) %>
       </tbody>
     </table>
   <div>

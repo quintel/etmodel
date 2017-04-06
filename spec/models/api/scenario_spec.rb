@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Api::Scenario do
   let(:defaults) { { ordering: nil, title: nil } }

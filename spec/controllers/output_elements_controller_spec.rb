@@ -1,8 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe OutputElementsController, vcr: true do
-  render_views
-
   describe "#index" do
     it "should render the page correctly" do
       get :index

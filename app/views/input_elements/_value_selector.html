@@ -2,19 +2,19 @@
     <form action="#">
         <input type="text" />
 
-        <%% if (conversions.length > 1) { %>
+        <% if (conversions.length > 1) { %>
             <div class="conversion">
                 <span class="unit"> </span>
 
                 <select>
-                    <%% _.each(conversions, function (conversion) { %>
-                        <option value="<%%= conversion.uid %>"<%% if (conversion.default) { %> selected="selected"<%% } %>>
-                            <%%= conversion.name %>
+                    <% _.each(conversions, function (conversion) { %>
+                        <option value="<%= conversion.uid %>"<% if (conversion.default) { %> selected="selected"<% } %>>
+                            <%= conversion.name %>
                         </option>
-                    <%% }); %>
+                    <% }); %>
                 </select>
             </div>
-        <%% } %>
+        <% } %>
 
         <button>Update</button>
     </form>

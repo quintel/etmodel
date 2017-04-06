@@ -13,6 +13,23 @@ class @D3ChartView extends BaseChartView
     @end_year = App.settings.get('end_year')
     @initialize_defaults()
 
+  # Update margins to reflect font-size
+  init_margins: =>
+    fontSize = d3.select('body').style('font-size')
+    return unless fontSize && fontSize.match(/\d+px/)
+
+    multiplier = parseInt(fontSize, 10) / 13
+    return if multiplier is 1
+
+    @margins = _.reduce(
+      _.keys(@margins),
+      (memo, key) => memo[key] = Math.ceil(@margins[key] * multiplier); memo,
+      {}
+    )
+
+    # Self-destruct.
+    @init_margins = =>
+
   render: (force_redraw) =>
     return false unless @model.supported_by_current_browser()
 

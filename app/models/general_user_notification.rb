@@ -12,7 +12,7 @@
 #
 
 class GeneralUserNotification < ActiveRecord::Base
-  scope :active, -> { where(:active => true) }
+  scope :active, -> { where(active: true) }
 
   def text
     I18n.locale.to_s == 'en' ? notification_en : notification_nl

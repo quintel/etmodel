@@ -40,6 +40,13 @@ development: &DEV
     # API key:
     airbrake_api_key: false
 
+    # Creating PDF versions of reports requires an external request back to the
+    # app. This may not work in the development environments which run only a
+    # single server process. Run a second instance of the app to prevent a
+    # deadlock while fetching the HTML for the report.
+    #
+    # report_pdf_host: http://localhost:3000
+
 production: &PRODUCTION
     <<: *DEV
 test:

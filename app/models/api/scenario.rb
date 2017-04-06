@@ -12,11 +12,19 @@ class Api::Scenario < ActiveResource::Base
 
   self.site = "#{APP_CONFIG[:api_url]}/api/v3"
 
+  def self.url_to(path)
+    "#{ APP_CONFIG[:api_url] }/api/v3/scenarios/#{ path }"
+  end
+
   def self.batch_load(ids)
-    scenarios = HTTParty.get("#{self.site}/scenarios/#{ids.join(',')}/batch")
-    scenarios.map do |scenario|
-      new(scenario)
-    end
+    HTTParty.get(url_to("#{ ids.uniq.join(',') }/batch")).map { |scn| new(scn) }
+  end
+
+  def self.find_with_queries(id, queries)
+    HTTParty.put(
+      "#{ APP_CONFIG[:api_url] }/api/v3/scenarios/#{ id }",
+      body: { gqueries: Array(queries) }
+    )
   end
 
   # Public: Given an array of scenarios, an array of display groups, groups the
@@ -94,7 +102,7 @@ class Api::Scenario < ActiveResource::Base
 
   # Returns an HTTParty::Reponse object with a hash of the scenario user_values
   def all_inputs
-    HTTParty.get("#{APP_CONFIG[:api_url]}/api/v3/scenarios/#{id}/inputs")
+    HTTParty.get(self.class.url_to("#{ id }/inputs"))
   end
 
   # The value which is used for sorting. Used on the preset scenario list

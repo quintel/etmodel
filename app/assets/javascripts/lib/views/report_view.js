@@ -133,8 +133,19 @@
   var mapInputsToSlides = function inputValues(vals, slides) {
     var userVals = _.compact(slides.map(function (slide) {
       var userValues = slide.input_elements.map(function (ie) {
-        if (vals[ie.key] && vals[ie.key].user !== undefined) {
-          return _.extend(vals[ie.key], ie);
+        var values = vals[ie.key];
+        var fUser;
+        var fDefault;
+
+        if (values && values.user !== undefined) {
+          fUser = Metric.autoscale_value(values.user, values.unit);
+          fDefault = Metric.autoscale_value(values.default, values.unit);
+
+          // Omit any inputs which would not show a significant change.
+          // e.g. "2.0% -> 2.0%" is meaningless to the visitor.
+          if (fUser !== fDefault) {
+            return _.extend(values, ie);
+          }
         }
 
         return null;

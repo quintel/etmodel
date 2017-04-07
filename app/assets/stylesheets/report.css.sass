@@ -298,6 +298,12 @@ abbr,
         span.legend_block, span.legend_label
           display: inline-block
           float: none
+  main
+    h1, h2, h3
+      // Ensures that links to headers don't result in the text appearing behind
+      // the page header.
+      margin-top: -4rem
+      padding-top: 4rem
 
 .charts_container .chart_canvas
   background: none

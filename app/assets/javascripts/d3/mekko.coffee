@@ -209,8 +209,10 @@ D3.mekko =
         .attr('transform', (d) => "translate(#{@x(d.total_value() / 2)}, #{@label_offset})")
         .select('text')
 
-      sector_label.select('text tspan.total_value')
-        .text((d) => @col_value_scaler()(d.total_value()))
+      # Value formatting removes any HTML elements (such as <sup/> which will
+      # not display correctly).
+      sector_label.select('text tspan.total_value').html (d) =>
+        @col_value_scaler()(d.total_value()).replace(/<[^>]+?>/g, '')
 
       sector_label.select('text tspan.key')
         .text((d) -> d.get 'key')

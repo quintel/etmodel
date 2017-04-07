@@ -15,8 +15,8 @@ BASE_UNITS = [
   { name: 'g' }
   { name: 'J' }
   { name: 'm' }
-  { name: 'm2' }
-  { name: 'm3' }
+  { name: 'm2', i18n: 'm2' }
+  { name: 'm3', i18n: 'm3' }
   { name: 'T' }
   { name: 'W' }
   { name: 'Wh' }

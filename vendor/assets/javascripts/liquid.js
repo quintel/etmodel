@@ -884,7 +884,7 @@ Liquid.Template.registerTag( 'case', Liquid.Block.extend({
       };
     });
 
-    return output;
+    return output.join('');
   },
   recordWhenCondition: function(markup) {
     while(markup) {

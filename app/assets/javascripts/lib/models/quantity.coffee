@@ -15,7 +15,6 @@ BASE_UNITS = [
   { name: 'g' }
   { name: 'J' }
   { name: 'm' }
-  { name: 'm2', i18n: 'm2' }
   { name: 'm3', i18n: 'm3' }
   { name: 'T' }
   { name: 'W' }
@@ -68,7 +67,12 @@ compiledUnits['#'] = {
   name: '#',
   base: { name: '#', i18n: 'nounit' },
   power: minPower
-};
+}
+
+m2Base = { name: 'm2', i18n: 'm2' }
+
+compiledUnits['m2'] = { name: 'm2', base: m2Base, power: POWERS[8] }
+compiledUnits['km2'] = { name: 'km2', base: m2Base, power: POWERS[7] }
 
 # ------------------------------------------------------------------------------
 

@@ -32,8 +32,10 @@ $body_font_family: $serif-font-family
     opacity: 0
     width: 100%
 
+@import compass/utilities/general/clearfix
 @import reset
 @import chart
+@import blockchart
 @import jquery.qtip
 
 .busybox-spinner
@@ -219,20 +221,24 @@ abbr,
     list-style: none
     padding-left: 0
 
+  .chart_canvas #canvas_container
+    background: none
+
   div.chart
     border: 1px solid #ddd
+    +pie-clearfix
     font-family: $sans-font-family
     margin: 1em 0
-    overflow: hidden
+    overflow: visible
     padding-bottom: 5px
     padding: 10px
 
     .chart_inner
-      overflow: hidden
+      +pie-clearfix
+      overflow: visible
 
     .chart_holder
       float: none
-      // overflow: hidden
       width: initial
       .chart_canvas
         min-height: 300px
@@ -398,3 +404,9 @@ abbr,
 
       &.hidden-legend .legend
         display: block
+
+    .chart_canvas
+      #canvas_container
+        padding-bottom: 1.5rem
+      #block_list
+        display: none

@@ -474,12 +474,12 @@
    *   "{% chart 52 %}This is a caption{% endchart %}"
    */
   Liquid.Template.registerTag('chart', Liquid.Block.extend({
-    tagSyntax: /(\d+)/,
+    tagSyntax: /(\d+)( ?\| .*)?/,
 
     // Underscore template which renders the necessary elements around the
     // chart.
     template: _.template(
-      '<div class="chart">' +
+      '<div class="chart<%= showLegend ? "" : " hidden-legend" %>">' +
       '  <div ' +
       '    class="chart_inner" ' +
       '    id="<%= _.uniqueId("rchart_") %>" ' +
@@ -491,11 +491,14 @@
       '</div>'
     ),
 
+    defaultOpts: { legend: true },
+
     init: function (tagName, markup, tokens) {
       var parts = markup.match(this.tagSyntax);
 
       if (parts) {
         this.chartId = parts[1];
+        this.opts = _.extend({}, this.defaultOpts, this.parseOpts(parts[2]));
       } else {
         throw new Error('Syntax error in "chart" - Valid syntax: chart key');
       }
@@ -507,9 +510,35 @@
     render: function (context) {
       return this.template({
         chartId: this.chartId,
+        showLegend: this.opts.legend,
         // eslint-disable-next-line no-underscore-dangle
         caption: this._super(context).join('').trim()
       });
+    },
+
+    parseOpts: function (options) {
+      var tokens;
+
+      if (!options || !options.trim().length) {
+        return {};
+      }
+
+      tokens = options.trim().match(/([\w]+): ([\w0-9]+)\b/g);
+
+      return _.reduce(tokens, function (memo, token) {
+        var parts = token.replace(/^ ?\| /, '').split(': ');
+
+        if (parts[1] === 'false') {
+          parts[1] = false;
+        } else if (parts[1] === 'true') {
+          parts[1] = true;
+        } else if (!isNaN(Number(parts[1]))) {
+          parts[1] = Number(parts[1]);
+        }
+
+        memo[parts[0]] = parts[1]; // eslint-disable-line no-param-reassign
+        return memo;
+      }, {});
     }
   }));
 

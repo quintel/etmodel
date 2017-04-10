@@ -237,6 +237,9 @@ abbr,
       .chart_canvas
         min-height: 300px
 
+    &.hidden-legend .legend
+      display: none
+
     .legend
       margin: 10px 20px 0 !important
       text-align: center
@@ -304,6 +307,8 @@ abbr,
       // the page header.
       margin-top: -4rem
       padding-top: 4rem
+    h1:first-of-type
+      margin-top: -3rem
 
 .charts_container .chart_canvas
   background: none
@@ -390,3 +395,6 @@ abbr,
 
       d3-chart-date-select
         display: none
+
+      &.hidden-legend .legend
+        display: block

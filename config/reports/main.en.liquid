@@ -64,14 +64,14 @@
     {% if future.primary_energy_demand_percentage_wrt_start_year > 95.0 %}
 
       <p>
-        In your scenario, primary energy use is still 
-        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 2 }}% of its 
+        In your scenario, primary energy use is still
+        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 2 }}% of its
         start-year value.
       </p>
     {% else %}
       <p>
         In your scenario, primary energy use is has been reduced to
-        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 2 }}% of its value in the 
+        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 2 }}% of its value in the
         start-year.
       </p>
 
@@ -88,8 +88,11 @@
       {% endif %}
       </p>
     {% else %}
-      The realised  CO2-reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
+      <p>
+        The realised CO2-reduction of
+        {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
         falls short of the Dutch national ambition for 2030 of 40%.
+      </p>
     {% endif %}
 
     <p>
@@ -106,29 +109,38 @@
 
     <h2>Energy consumption</h2>
 
-      The {{ future.biggest_final_demand_sector_name | without_unit }} sector is the largest consumer of energy
-      with {{ future.biggest_final_demand_sector_value | autoscale: 'MJ'}} of <strong>final demand</strong>
-      (the energy which is directly consumed by a sector).
+      <p>
+        The {{ future.biggest_final_demand_sector_name | without_unit }} sector
+        is the largest consumer of energy with
+        {{ future.biggest_final_demand_sector_value | autoscale: 'MJ'}} of
+        <strong>final demand</strong> (the energy which is directly consumed by
+        a sector).
+      </p>
 
       {% chart 146 %}
         Final energy demand for all sectors.
       {% endchart %}
 
-      When it comes to <strong>primary demand</strong> (final demand plus all transformation and distribution losses),
-      the energy use for the whole system looks like this:
+      <p>
+        When it comes to <strong>primary demand</strong> (final demand plus all
+        transformation and distribution losses), the energy use for the whole
+        system looks like this:
+      </p>
 
       {% chart 52 %}
         Primary energy demand for all sectors.
       {% endchart %}
 
-      When looking at primary demand, exported oil(products) can play a big role if refeneries are still producing
-      at a significant rate.
+      <p>
+        When looking at primary demand, exported oil(products) can play a big
+        role if refeneries are still producing at a significant rate.
+      </p>
 
     <h2>Electricity production</h2>
 
       <p>
-        In your scenario, most electricity is produced by 
-        {{ future.biggest_electricity_producer_name | without_unit }} 
+        In your scenario, most electricity is produced by
+        {{ future.biggest_electricity_producer_name | without_unit }}
         ({{ future.biggest_electricity_producer_value | autoscale: 'MJ'}}).
       </p>
 
@@ -138,9 +150,11 @@
 
     <h2>Central heat network</h2>
 
-      The central heat network in your scenario can be used to heat houses and buildings and provide heat
-      to the industry and agricultural sectors. The chart below show the balance of heat produced and 
-      consumed centrally.
+      <p>
+        The central heat network in your scenario can be used to heat houses and
+        buildings and provide heat to the industry and agricultural sectors. The
+        chart below show the balance of heat produced and consumed centrally.
+      </p>
 
       {% chart 174 %}
         Heat balance of central heat network.
@@ -148,47 +162,49 @@
 
       {% if future.energy_heat_network_unused_steam_hot_water_in_heat_network_mekko > 0.0 %}
         <p>
-          There is 
-          {{ future.energy_heat_network_unused_steam_hot_water_in_heat_network_mekko | autoscale: 'PJ'}} 
+          There is
+          {{ future.energy_heat_network_unused_steam_hot_water_in_heat_network_mekko | autoscale: 'PJ'}}
           excess heat produced in agriculture or industry which flows back into the central heat
-          network but is not used by other sectors.<br>
-
-          You can balance the network by
-          <ul>
-            <li><strong>Reducing heat production</strong>: in the industry and agriculture sections you can 
-              decrease numbers of CHPs and burners.</li>
-            <li><strong>Increase demand</strong>: by increaing the demand of all sectors in the left-hand side
-              of the diagram.</li>
-          </ul>
+          network but is not used by other sectors.
         </p>
+
+        <p>You can balance the network by</p>
+
+        <ul>
+          <li><strong>Reducing heat production</strong>: in the industry and agriculture sections you can
+            decrease numbers of CHPs and burners.</li>
+          <li><strong>Increase demand</strong>: by increaing the demand of all sectors in the left-hand side
+            of the diagram.</li>
+        </ul>
       {% else %}
         <p>
-          There is 
+          There is
           {{ future.energy_heat_network_backup_heater_network_gas_in_heat_network_mekko | autoscale: 'PJ'}}
           insufficient heat produced to satisfy the demand of the central heat network. A backup
-          gas heater is deployed to satisfy the deficit.<br>
-
-          You can balance the network by
-          <ul>
-            <li><strong>Building more heat production</strong>: in the industry and agriculture sections you can 
-              generate more heat by increasing numbers of CHPs and burners.</li>
-            <li><strong>Decreasing demand</strong>: by reducing the demand of all sectors in the left-hand side
-              of the diagram.</li>
-          </ul>
+          gas heater is deployed to satisfy the deficit.
         </p>
+
+        <p>You can balance the network by</p>
+
+        <ul>
+          <li><strong>Building more heat production</strong>: in the industry and agriculture sections you can
+            generate more heat by increasing numbers of CHPs and burners.</li>
+          <li><strong>Decreasing demand</strong>: by reducing the demand of all sectors in the left-hand side
+            of the diagram.</li>
+        </ul>
       {% endif %}
 
   <h1 class="banner">CO2 Emissions</h1>
 
     <p>
       In your scenario, a CO2 emission reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
-      has been realised. The chart below relates the CO2 in {{ settings.end_year }} to the 1990 reference value and 
+      has been realised. The chart below relates the CO2 in {{ settings.end_year }} to the 1990 reference value and
       emissions in {{ settings.start_year }}.
     </p>
 
     {% chart 46 %}
-      CO2 emissions based on primary energy demand broken down by sector for 1990 (left), 
-      {{ settings.start_year }} (middle), 
+      CO2 emissions based on primary energy demand broken down by sector for 1990 (left),
+      {{ settings.start_year }} (middle),
       and {{ settings.end_year }} (right). These figures represent emissions across the complete fuel chain
       including all transformations and losses.
     {% endchart %}
@@ -204,31 +220,32 @@
       {% endif %}
       </p>
     {% else %}
-
-        In your scenario, CO2 emission reductions fall short of the Dutch ambitions of 40% in 2030 
-        and 80% - 95% in 2050. You can reduce CO2 by 
-        <ul>
-          <li><strong>Realising energy savings</strong>: reduce energy consumption in the most energy-intensive sectors</li>
-          <li><strong>Phasing out fossil fuels</strong>: heating and hot water in homes, transportation and electricity 
-            production are places where fossil fuels can be replaced by CO2-neutral alternatives.</li>
-          <li><strong>CCS(U)</strong>: Capturing, storing and, optionally, using CO2 can be viable options in the 
-            energy-intensive industry and electricity generation (energy) sector.</li>
-          <li><strong>Flexibility</strong>: storage and conversion technologies enable you to utilise energy which would
-          otherwise be exported or curtailed.</li>
-          <li><strong>Fuel and CO2 pricing</strong>: by increasing the price of CO2 and fossil fuels, fossil plants might
-          get less full load hours depending on the alternatives for electricity generation.</li>
-        </ul>
+      <p>
+        In your scenario, CO2 emission reductions fall short of the Dutch ambitions of 40% in 2030
+        and 80% - 95% in 2050. You can reduce CO2 by:
       </p>
+
+      <ul>
+        <li><strong>Realising energy savings</strong>: reduce energy consumption in the most energy-intensive sectors</li>
+        <li><strong>Phasing out fossil fuels</strong>: heating and hot water in homes, transportation and electricity
+          production are places where fossil fuels can be replaced by CO2-neutral alternatives.</li>
+        <li><strong>CCS(U)</strong>: Capturing, storing and, optionally, using CO2 can be viable options in the
+          energy-intensive industry and electricity generation (energy) sector.</li>
+        <li><strong>Flexibility</strong>: storage and conversion technologies enable you to utilise energy which would
+        otherwise be exported or curtailed.</li>
+        <li><strong>Fuel and CO2 pricing</strong>: by increasing the price of CO2 and fossil fuels, fossil plants might
+        get less full load hours depending on the alternatives for electricity generation.</li>
+      </ul>
     {% endif %}
 
     <h2>Flow-diagram of CO2 emissions</h2>
 
     <p>
-     The Sankey digram below shows 
+     The Sankey digram below shows
      <ul>
-        <li><strong>which</strong> carriers are primarily responsible for CO2 emissions (left column)</li> 
+        <li><strong>which</strong> carriers are primarily responsible for CO2 emissions (left column)</li>
         <li><strong>where</strong> in the system CO2 is produced (centre column)</li>
-        <li><strong>which part</strong> of the CO2 is captured and emitted (right column)</li> 
+        <li><strong>which part</strong> of the CO2 is captured and emitted (right column)</li>
       </ul>
     </p>
 
@@ -237,24 +254,24 @@
     {% endchart %}
 
     <p>
-      You can build corbon capture and storage (CCS) power plants in the supply section of the ETM to 
+      You can build corbon capture and storage (CCS) power plants in the supply section of the ETM to
       reduce CO2 emissions of electricity generation.
     </p>
 <!--     <h2>CO2 emissions of biomass</h2>
 
     <p>
     Climate change is not induced by the annual CO2 emissions, but by the total amount of CO2 present
-     in the air. 
+     in the air.
     </p>
     <p>
-    Usually no CO2 emissions are attributed to biomass as biomass absorbs as much CO2 as is emitted 
-    during combustion (over the complete life cycle). The CO2 emitted by combustion of biomass is 
+    Usually no CO2 emissions are attributed to biomass as biomass absorbs as much CO2 as is emitted
+    during combustion (over the complete life cycle). The CO2 emitted by combustion of biomass is
     not always absorbed within a time-scale that is relevant for climate change.
     </p>
 
     {% chart 188 %}
-      Which part of the CO2 emissions from biomass is relevant to the environment is uncertain and 
-      speculative. This chart serves to explore the (potential) amount of these emissions. 
+      Which part of the CO2 emissions from biomass is relevant to the environment is uncertain and
+      speculative. This chart serves to explore the (potential) amount of these emissions.
     {% endchart %}
  -->
   <h1 class="banner">Energy import and export</h1>
@@ -262,13 +279,13 @@
   <!-- If net import -->
   {% if future.total_net_energy_import > 0.0 %}
     <p>
-      Your scenario has {{ future.total_net_energy_import | round: 3 | autoscale: 'MJ'}} of net energy import 
+      Your scenario has {{ future.total_net_energy_import | round: 3 | autoscale: 'MJ'}} of net energy import
       in the end-year.
     </p>
 
 
     {% chart 76 %}
-      Import and export of energy in the end-year. In this 'waterfall' diagram, export is indicated with a minus sign. 
+      Import and export of energy in the end-year. In this 'waterfall' diagram, export is indicated with a minus sign.
       The last column depicts the net import (or export) of all energy with neighbouring countries.
     {% endchart %}
 
@@ -276,7 +293,7 @@
     {% case settings.area_code %}
       {% when 'nl' %}
         <p>
-          The Netherlands is traditionally a country with a big oil-processing industry resulting in large 
+          The Netherlands is traditionally a country with a big oil-processing industry resulting in large
           energy flows of crude oil into the country and oil products out of the country. Having been largely
           self-sufficient with respect to natural gas, the production of Dutch gas is declining see image
           below:
@@ -292,16 +309,16 @@
 
   {% else %}
     <p>
-      Your scenario has -{{ future.total_net_energy_import | round: 1 | autoscale: 'MJ'}} of net energy export 
+      Your scenario has -{{ future.total_net_energy_import | round: 1 | autoscale: 'MJ'}} of net energy export
       in the end-year.
     </p>
 
 
     {% chart 76 %}
-      Import and export of energy in the end-year. In this 'waterfall' diagram, export is indicated with a minus sign. 
+      Import and export of energy in the end-year. In this 'waterfall' diagram, export is indicated with a minus sign.
       The last column depicts the net import (or export) of all energy with neighbouring countries.
     {% endchart %}
-      
+
   {% endif %}
 
 
@@ -309,8 +326,8 @@
   {% if future.total_number_of_excess_events > 1.0 %}
     <h2>Excess Electricity Production</h2>
 
-      <p>You created a scenario where for {{ future.dashboard_total_number_of_excess_events | without_unit }} 
-        hours in the year, (renewable and must-run) electricity production exceeds demand. The histogram below 
+      <p>You created a scenario where for {{ future.dashboard_total_number_of_excess_events | without_unit }}
+        hours in the year, (renewable and must-run) electricity production exceeds demand. The histogram below
         shows what the frequency and distribution of durations of excess events are.
       </p>
 
@@ -319,7 +336,7 @@
       {% endchart %}
 
       <p>
-        Flexibility options such as batteries, power-to-heat and power-to-gas can be used to use 
+        Flexibility options such as batteries, power-to-heat and power-to-gas can be used to use
         excess electricity later (storage) or for heating (power-to-heat) or replace natural gas (power-to-gas).
         In section <a href="#unused-potential">Unused potential</a>, more details of how to use excess can be
         found.
@@ -332,7 +349,7 @@
     <h2>Cost of the energy system</h2>
 
       <p>
-        Costs of the future energy system are roughly 
+        Costs of the future energy system are roughly
         {{ future.dashboard_total_costs | autoscale: 'euro' }} and are broken down in the following chart.
         Costs include
 
@@ -351,7 +368,7 @@
       {% chart 48 %}
         Costs of the energy system.
       {% endchart %}
-      
+
       <p>
         Electricity production costs:
         {{ future.costs_of_used_electricity | autoscale: 'euro' }}.
@@ -380,7 +397,7 @@
           The <i>merit order</i> ranks dispatchable power plants (those which you can switch on and off)
           according to their <i>marginal costs</i> (the costs of producing an extra MWh of electricity).
           Wind, solar and must-run plants have effectively zero marginal costs.
-          The marginal costs and installed capacity of power generation for your scenario is shown in the 
+          The marginal costs and installed capacity of power generation for your scenario is shown in the
           chart below.
         </p>
 
@@ -390,17 +407,17 @@
 
         <p>
           Depending on the demand for electricity, the merit order determines which plants are running for each hour
-          of the year. The plants with lowest marginal costs will often (baseload generation) whereas plants with 
-          higher marginal costs might only run in cases of peak demand.          
+          of the year. The plants with lowest marginal costs will often (baseload generation) whereas plants with
+          higher marginal costs might only run in cases of peak demand.
         </p>
 
         <p>
           Fuel prices determine to a large extend the marginal costs of power plants. Increasing the proce of coal
           and/or CO2 can, for instance, make gas fueled power plants more compatitive with coal fired power plants.
         </p>
-        
+
 <!--         {% chart 32 %}
-          The vertical axis shows all relevant production costs of electricity for various generation technologies 
+          The vertical axis shows all relevant production costs of electricity for various generation technologies
           (in €/MWhe). The horizontal axis shows the investment costs (in million €/MWe).
         {% endchart %} -->
 
@@ -413,15 +430,15 @@
 
     <p>
       The loss of load expectation (LOLE) is the expected number of hours per year that the electricity
-       supply cannot meet its demand. A nonzero LOLE does not necessarily result in blackouts as 
-       electricity can be imported or can be available in batteries. The Netherlands accepts a 
-       LOLE of 4 h/yr. We distinguish (un)reliable electricity production as volatile electricity 
+       supply cannot meet its demand. A nonzero LOLE does not necessarily result in blackouts as
+       electricity can be imported or can be available in batteries. The Netherlands accepts a
+       LOLE of 4 h/yr. We distinguish (un)reliable electricity production as volatile electricity
        producers cannot be relied on at all times.
     </p>
 
     <p>
       In your scenario, there is {{ future.dispatchable_electricity_production_capacity | autoscale: 'MW' }} of
-      reliable (dispatchable) electricity production. Resulting in 
+      reliable (dispatchable) electricity production. Resulting in
       {{ future.dashboard_security_of_supply | without_unit }} hours of loss of load.
     </p>
 
@@ -430,8 +447,8 @@
     {% endchart %}
 
     <p>
-      Similar to LOLE, the number of blackout hours is a measure for the reliability of the electricity 
-      supply in your scenario. It also takes into account the possibility for import and flexibility to 
+      Similar to LOLE, the number of blackout hours is a measure for the reliability of the electricity
+      supply in your scenario. It also takes into account the possibility for import and flexibility to
       prevent a shortage of power.
     </p>
 
@@ -440,29 +457,29 @@
         Your scenario has {{ future.dashboard_blackout_hours | without_unit }} blackout hours.
         Try building more reliable back-up capacity in the electricity production section.
         Note that solar and wind power are intermittent and cannot add reliable electricity at all
-        times. 
+        times.
       </p>
     {% else %}
       <p>
         Your scenario has zero blackout hours.
-      </p>  
+      </p>
     {% endif %}
 
     {% if settings.merit_order_enabled %}
       <h2>Profitability of power plants</h2>
 
         <p>
-          Security of (electricity) supply and the profitability of power plants are intimately linked. 
+          Security of (electricity) supply and the profitability of power plants are intimately linked.
           For dispatchable power plants to make money, they need to run sufficiently often, ideally when
           electricity prices are high.
-          A reliable electricity system traditionally requires, however, 
-          that there are power plants available which are only needed for a couple of extreme demand peaks 
+          A reliable electricity system traditionally requires, however,
+          that there are power plants available which are only needed for a couple of extreme demand peaks
           every year.
         </p>
 
         <p>
-          In your scenario, {{ future.profitability_percentage | round: 1 | without_unit }}% of powerplants is not 
-          profitable. This means that they are not earning back their investment costs 
+          In your scenario, {{ future.profitability_percentage | round: 1 | without_unit }}% of powerplants is not
+          profitable. This means that they are not earning back their investment costs
           (orange in table below) or are not even earning their OPEX (operational expenditure) back (red).
         </p>
 
@@ -497,11 +514,11 @@
         Renewability percentage of final energy demand.
       {% endchart %}
 
-      For electricity generation, the renewability is 
+      For electricity generation, the renewability is
       {{ future.share_of_renewable_electricity | times: 100 | round: 1 }}%.
-      
+
       {% chart 112 %}
-        Renewability of produced electricity. The renewability is defined as all renewable electricity 
+        Renewability of produced electricity. The renewability is defined as all renewable electricity
         production divided by local electricity consumption and can be larger than 100%.
       {% endchart %}
 
@@ -510,7 +527,7 @@
   <h2>Investments needed</h2>
 
   <p>
-    Your scenario spans {{ future.scenario_duration | round: 0 }} years. The various assumptions imply that on average  
+    Your scenario spans {{ future.scenario_duration | round: 0 }} years. The various assumptions imply that on average
     the following list of technologies need to be installed every year
   </p>
 
@@ -522,7 +539,10 @@
 
   </ul>
 
-  For a complete list of investment costs per technology see <a href="#appendix-b-investment-costs">Appendix B</a>.
+  <p>
+    For a complete list of investment costs per technology see
+    <a href="#appendix-b-investment-costs">Appendix B</a>.
+  </p>
 
   <h2>Area needed for wind</h2>
 
@@ -532,7 +552,7 @@
       <li>Area used by off-shore wind: {{ future.area_used_for_offshore_wind | round: 2 }} </li>
       <li>Area used by inland wind: {{ future.area_used_for_onshore_wind | round: 2 }} </li>
     </ul>
-      
+
   </p>
 
   <h1 class="banner">Suggestions for improvement</h1>
@@ -542,17 +562,17 @@
   <!-- Relation between EV and refineries and metal industry -->
   {% if future.ev_percentage > 50 %}
     {% if future.refinery_percentage > 50 %}
-    
+
       <h3>Refineries and electric vehicles</h3>
 
       <p>
-        In your scenario, electric vehicles constitute {{ future.ev_percentage | round: 1 }}% 
-        of all cars, yet oil refineries are still {{ future.refinery_percentage | round: 1 }}% 
-        of their current size. 
+        In your scenario, electric vehicles constitute {{ future.ev_percentage | round: 1 }}%
+        of all cars, yet oil refineries are still {{ future.refinery_percentage | round: 1 }}%
+        of their current size.
 
         Do you think this is realistic? For an analysis of the correllation between electrification
         of transport and the size of the refinery sector see the report
-        "Industry in Transition" (Quintel Intelligence 2016). 
+        "Industry in Transition" (Quintel Intelligence 2016).
       </p>
 
       {% chart 190 %}
@@ -565,16 +585,16 @@
       <h3>Size of steel industry and electric vehicles</h3>
 
         <p>
-          Like oil refineries, a large part of the production output of steel plants is currently 
-          dedicated to cars. If, self-driving electric vehicles start to replace fossil fuel cars, 
-          the number  of cars can be reduced dramatically. 
+          Like oil refineries, a large part of the production output of steel plants is currently
+          dedicated to cars. If, self-driving electric vehicles start to replace fossil fuel cars,
+          the number  of cars can be reduced dramatically.
 
-           are still {{ future.steel_industry_percentage | round: 1 }}% 
-          of their current size. 
+           are still {{ future.steel_industry_percentage | round: 1 }}%
+          of their current size.
 
           Do you think this is realistic? For an analysis of the correllation between electrification
           of transport and the size of the refinery sector see the report
-          "Industry in Transition" (Quintel Intelligence 2016). 
+          "Industry in Transition" (Quintel Intelligence 2016).
         </p>
 
     {% endif %}
@@ -587,16 +607,16 @@
     <h3>Space heating and hot water technologies</h3>
     <p>
       The space heating technologies in your scenario are not consistent with those producing hot
-      water. You have chosen to heat most houses with a 
+      water. You have chosen to heat most houses with a
       {{ future.biggest_space_heater_share_name | without_unit }} whereas most of the hot water
-      in households is produced by a 
+      in households is produced by a
       {{ future.biggest_water_heater_share_name | without_unit }}. The percentages
     </p>
 
     <p>
-      NOTE: The combi-technology shares (percentages) in the households space heating and hot water 
-      sections represent the market share of these technologies. This means that if you choose to 
-      use technology A for space heating in 100% of the houses, and technology B for hot water in 
+      NOTE: The combi-technology shares (percentages) in the households space heating and hot water
+      sections represent the market share of these technologies. This means that if you choose to
+      use technology A for space heating in 100% of the houses, and technology B for hot water in
       100% of the households, every household containes one of both A and B.
     </p>
   {% endif %}
@@ -606,12 +626,12 @@
 
     <h2>Unused potential</h2>
 
-    In your scenario, there are 
+    In your scenario, there are
     {{ future.dashboard_total_number_of_excess_events }} hours that electricity production exceeds demand.
     This electricity is not used (curtailed). To usefully employ the excess electricity you can
 
     <ul>
-      <li><strong>Store electricity</strong>: in the flexibility section, you can build batteries in homes or 
+      <li><strong>Store electricity</strong>: in the flexibility section, you can build batteries in homes or
         indicate how much of ellectric car batteries can be used for storing electricity.</li>
       <li><strong>Convert electricity to gas</strong>: in the flexibility section, you can build power-to-gas plants
         to convert electricity to hydrogen gas.</li>
@@ -650,7 +670,7 @@
   {% if settings.merit_order_enabled %}
     {% if future.profitability_percentage > 10 %}
       <p>
-        In your scenario, {{ future.profitability_percentage | round: 1 | without_unit }}% of powerplants is not 
+        In your scenario, {{ future.profitability_percentage | round: 1 | without_unit }}% of powerplants is not
         profitable. This means that they are not earning back their investment costs and sometimes not even their running costs.
         Such plants will not stay open very long. Having them around in your future year might not be realistic.
         You can either
@@ -703,34 +723,34 @@
 
 
   {% chart 142 %}
-    This table shows an overview of the investment cost of heat and electricity producing 
-    technologies. The investment costs are shown for both the start scenario (2010) and for the 
-    future scenario. In both cases a 'green-field' approach is taken: no previously installed 
-    technologies are assumed. The last column shows the difference between the investment costs 
+    This table shows an overview of the investment cost of heat and electricity producing
+    technologies. The investment costs are shown for both the start scenario (2010) and for the
+    future scenario. In both cases a 'green-field' approach is taken: no previously installed
+    technologies are assumed. The last column shows the difference between the investment costs
     of the two scenarios.
   {% endchart %}
 
   <h1 class="banner">APPENDIX C: About The Energy Transition Model</h1>
 
     <h2>Introduction</h2>
-    
+
       <p>
-        The <a href="https://energytransitionmodel.com">Energy Transition Model (ETM)</a> is 
+        The <a href="https://energytransitionmodel.com">Energy Transition Model (ETM)</a> is
         a free, open-source, web-based
          energy model for the exploration of energy scenario's.
       </p>
 
       <p>
-        The ETM is for anyone who wants to explore and create energy scenarios for countries, cities, 
+        The ETM is for anyone who wants to explore and create energy scenarios for countries, cities,
         neighbourhoods and even streets.
-        No prior knowledge is assumed and the ETM is therefore of interest to both experts and students. 
-        You can make assumptions about demand and supply of different types of energy from the source to 
-        the application. the ETM determines, for all stakeholders in the system, sustainability, reliability 
+        No prior knowledge is assumed and the ETM is therefore of interest to both experts and students.
+        You can make assumptions about demand and supply of different types of energy from the source to
+        the application. the ETM determines, for all stakeholders in the system, sustainability, reliability
         and affordability at national and local level.
       </p>
 
       <p>
-        You can look up how the ETM compares to other models on 
+        You can look up how the ETM compares to other models on
         <a href="www.energierekenmodellen.nl">energierekenmodellen.nl</a>.
       </p>
 
@@ -745,7 +765,7 @@
       </p>
 
       <p>
-        Although Quintel strives to properly include all important features of the energy system, the ETM nescessarily 
+        Although Quintel strives to properly include all important features of the energy system, the ETM nescessarily
         has a limited scope and should not be used as a substitute for critical thought. On the contrary! Hopefully, the
         user is inspired to challenge results and limits of the model and starts thinking outside of the boudaries of
         the Energy Transition Model.
@@ -754,7 +774,7 @@
       <p>
         The following (very) incomplete list of topics is indicative of the limits of the ETM:
         <ul>
-          <li><strong>Human behaviour</strong>: arguably the biggest impact on the success of failure of energy transition 
+          <li><strong>Human behaviour</strong>: arguably the biggest impact on the success of failure of energy transition
             is declared out of scope of the primarily technical ETM.</li>
           <li><strong>Economic relations</strong>: the ETM calculates costs based on published values but does not assume
             price-elasticity relations or other economic relations which may no longer apply in the future.</li>

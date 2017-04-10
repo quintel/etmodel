@@ -88,16 +88,19 @@
       {% endif %}
       </p>
     {% else %}
-      The realised  CO2-reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }}% 
+      The realised  CO2-reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
         falls short of the Dutch national ambition for 2030 of 40%.
     {% endif %}
 
     <p>
-      The renewability percentage of energy consumed in your scenario is 
+      The renewability percentage of energy consumed in your scenario is
       {{ future.dashboard_renewability | times: 100 | round: 1 | without_unit }}%.
     </p>
 
-    Your scenario has {{ future.dashboard_blackout_hours | without_unit }} blackout hours.
+    <p>
+      Your scenario has {{ future.dashboard_blackout_hours | without_unit }}
+      blackout hours.
+    </p>
 
   <h1 class="banner">Energy use and production</h1>
 

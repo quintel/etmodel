@@ -204,7 +204,9 @@ class ScenariosController < ApplicationController
     # Remembers the most recently visited ETM page so that the visitor can be
     # brought back here if they reload, or return to the site later.
     def store_last_etm_page
-      tab_key     = @interface.try(:current_tab).try(:key)
+      render_not_found && return unless @interface.current_tab
+
+      tab_key     = @interface.current_tab.key
       sidebar_key = @interface.try(:current_sidebar_item).try(:key)
       slide_key   = @interface.try(:current_slide).try(:short_name)
 

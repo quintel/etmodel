@@ -136,6 +136,7 @@ Etm::Application.routes.draw do
   get '/update_footer'   => 'pages#update_footer'
   get '/regions/:dataset_locale' => 'pages#dataset', as: :region
 
-  get "/404", to: "pages#404"
-  get "/500", to: "pages#500"
+  %w[404 422 500].each do |code|
+    get "/#{ code }", to: 'errors#show', code: code
+  end
 end

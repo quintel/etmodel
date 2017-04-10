@@ -106,4 +106,14 @@ private
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.user
   end
+
+  def render_not_found
+    render(
+      file: Rails.root.join('public/404.html'),
+      status: :not_found,
+      layout: false
+    )
+
+    true
+  end
 end

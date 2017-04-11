@@ -445,13 +445,19 @@
   ReportView.onLoadingError = function () {
     var loading = $('#report .loading');
 
-    loading.find('h1').html('Sorry&hellip;');
+    var reload = $('<a href="#"></a>')
+      .text(I18n.t('report.timeout.reload'))
+      .click(function (e) {
+        e.preventDefault();
+        location.reload(true);
+      });
 
-    loading.find('p').html(
-      'We weren\'t able to fetch the data in a timely manner.<br/>' +
-      'Please try ' +
-      '<a href="javascript:location.reload(true)">reloading the page</a>.'
-    );
+    loading.find('h1').html(I18n.t('report.timeout.header') + '&hellip;');
+
+    loading.find('p')
+      .text(I18n.t('report.timeout.message'))
+      .append('<br />')
+      .append(reload);
 
     $('#navbar .loading .bar').addClass('error');
   };

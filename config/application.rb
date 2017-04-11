@@ -35,6 +35,7 @@ module Etm
 
     #Needed for i18n-js to work
     config.assets.initialize_on_precompile = true
+    config.middleware.use I18n::JS::Middleware
   end
 
   Date::DATE_FORMATS[:default] = "%d-%m-%Y"

@@ -27,6 +27,7 @@
         %a#reset_scenario{:href => scenario_reset_path}= t("header.reset_scenario")
 
     %li.sep
+      = link_to t("header.scenario_report"), report_path(:main)
       = link_to t("header.show_graph"), '#', target: "_blank", id: "show_graph", class: 'wait', data: { url: et_engine_graph_url }
 
     - if controller_name != 'pages' && has_active_scenario?

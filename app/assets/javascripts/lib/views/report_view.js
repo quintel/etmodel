@@ -1,4 +1,4 @@
-/* globals Liquid Quantity App Metric globals */
+/* globals Liquid Quantity App Metric I18n globals */
 (function () {
   /**
    * Determines if ETE errors should be shown to the visitor instead of a simple
@@ -494,6 +494,28 @@
           Metric.autoscale_value(value, unit) +
         '</abbr>'
       );
+    },
+
+    /**
+     * Retrieves some translated text. The value given should be the final part
+     * of the translation, with a prefix specifying the namespace to the
+     * translation.
+     *
+     * For example, if there exists a translation "a.b.first", call the
+     * filter as:
+     *
+     *     {{ 'first' | i18n: 'a.b' }}
+     *
+     * Values returned by queries may be used thusly:
+     *
+     *     {{ future.biggest_producer | i18n: 'output_elements' }}
+     */
+    i18n: function (name, prefix) {
+      if (prefix.length) {
+        return I18n.t(prefix + '.' + name);
+      }
+
+      return I18n.t(name);
     }
   });
 

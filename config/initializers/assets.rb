@@ -17,6 +17,9 @@ Rails.application.config.assets.precompile += %w(
   form_only.css
   backcasting.js
   report.css
+  i18n.js
+  i18n/en.js
+  i18n/nl.js
 )
 
 # Compile images in vendor/assets/images

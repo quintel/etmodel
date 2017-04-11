@@ -13,6 +13,7 @@
     = yield
 
     = javascript_include_tag 'application'
+    = javascript_include_tag "i18n/#{ I18n.locale }"
     = render 'layouts/etm/javascript_globals'
     = javascript_include_tag 'etm'
 

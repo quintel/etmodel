@@ -19,7 +19,7 @@
   </dl>
 </header>
 
-<main>
+<div class="preamble">
   <h1 class="banner">Introduction</h1>
 
   <p>
@@ -44,21 +44,10 @@
   </p>
 
   <h1 class="banner">Table of contents</h1>
-  <ol>
-    <li><a href="#summary">Summary</a></li>
-    <li><a href="#energy-use">Energy use</a></li>
-    <li><a href="#co2-emissions">CO2 Emissions</a></li>
-    <li><a href="#energy-import-and-export">Energy import and export</a></li>
-    <li><a href="#costs-of-the-energy-system">Costs of the energy system</a></li>
-    <li><a href="#security-of-supply-and-profitability-of-power-plants">Security of supply and profitability of power plants</a></li>
-    <li><a href="#bio-footprint-and-renewability">Bio-footprint and renewability</a></li>
-    <li><a href="#implications-of-this-scenario">Implications of this scenario</a></li>
-    <li><a href="#suggestions-for-improvement">Suggestions for improvement</a></li>
-    <li><a href="#appendix-a-slider-settings">APPENDIX A: Slider settings</a></li>
-    <li><a href="#appendix-b-investment-costs">APPENDIX B: Investment costs</a></li>
-    <li><a href="#appendix-c-about-the-energy-transition-model">APPENDIX C: The Energy Transition Model</a></li>
-  </ol>
+  {% toc 2 %}
+</div>
 
+<main>
   <h1 class="banner">Summary</h1>
 
     {% if future.primary_energy_demand_percentage_wrt_start_year > 95.0 %}

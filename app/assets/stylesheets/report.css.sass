@@ -206,16 +206,23 @@ abbr,
     font-size: 1.15rem
     margin: 1rem 0
     max-width: 80%
+    .section-number
+      color: #9a8da9
+      display: inline-block
+      font-weight: normal
+      letter-spacing: -0.06rem
+      margin-right: 0.25rem
   h2, h3
     font-size: 1em
   h3
     font-weight: normal
-  .section-number
-    color: #9a8da9
-    display: inline-block
-    font-weight: normal
-    letter-spacing: -0.06rem
-    margin-right: 0.25rem
+
+  ol.toc
+    list-style: none
+    padding-left: 0
+
+    ol.toc
+      padding-left: 1rem
 
   ul.user-values
     list-style: none
@@ -319,6 +326,8 @@ abbr,
       padding-top: 4rem
     h1:first-of-type
       margin-top: -3rem
+  .preamble + main h1:first-of-type
+    margin-top: -4rem
 
 .charts_container .chart_canvas
   background: none

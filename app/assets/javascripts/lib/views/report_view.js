@@ -294,6 +294,28 @@
     });
   };
 
+  var tableOfContent = function (tree, depth, maxDepth) {
+    var list = $('<ol class="toc" />');
+    depth = depth || 1; // eslint-disable-line no-param-reassign
+
+    tree.forEach(function (header) {
+      var li = $($('<li/>').append(
+        $('<a/>')
+          .attr('href', '#' + header.el.attr('id'))
+          .text(header.el.text())
+      ));
+
+      if ((!maxDepth || (depth < maxDepth)) &&
+            header.children && header.children.length) {
+        li.append(tableOfContent(header.children, depth + 1, maxDepth));
+      }
+
+      list.append(li);
+    });
+
+    return list;
+  };
+
   // ---------------------------------------------------------------------------
 
   /**
@@ -315,9 +337,20 @@
       var self = this;
 
       container.append(this.render(function () {
-        numberHeaders(identHeaders(
-          headerTree($('main').find('h1, h2, h3'))
-        ));
+        var headers = headerTree($('main').find('h1, h2, h3'));
+
+        numberHeaders(identHeaders(headers));
+
+        container.find('.table-of-content').each(function (i, el) {
+          var $el = $(el);
+          var maxDepth = parseInt($el.data('max-depth'), 10);
+
+          if (isNaN(maxDepth)) {
+            maxDepth = null;
+          }
+
+          $el.html(tableOfContent(headers, 1, maxDepth));
+        });
 
         self.renderCharts(function () {
           $('#navbar .loading .bar').addClass('done');
@@ -563,6 +596,25 @@
           window.location.host + path +
         '</a>'
       );
+    }
+  }));
+
+  Liquid.Template.registerTag('toc', Liquid.Tag.extend({
+    init: function (tagName, markup) {
+      this.maxDepth = markup;
+
+      // eslint-disable-next-line no-underscore-dangle
+      this._super(tagName, markup);
+    },
+
+    render: function () {
+      var depth;
+
+      if (this.maxDepth) {
+        depth = ' data-max-depth="' + this.maxDepth + '"';
+      }
+
+      return '<div class="table-of-content"' + depth + '></div>';
     }
   }));
 

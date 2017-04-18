@@ -192,6 +192,7 @@
                 area_code: App.settings.get('area_code'),
                 end_year: App.settings.get('end_year'),
                 merit_order_enabled: App.settings.merit_order_enabled(),
+                scaling: App.api.scenario.scale,
                 start_year: App.settings.get('start_year')
               }
             }

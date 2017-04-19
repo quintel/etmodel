@@ -616,7 +616,7 @@
 
       return (
         '<a href="' + window.location.origin + path + '">' +
-          window.location.host + path +
+          '#' + App.scenario.api_session_id() +
         '</a>'
       );
     }

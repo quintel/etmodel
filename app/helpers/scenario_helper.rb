@@ -1,6 +1,6 @@
 module ScenarioHelper
   def current_scenario_scaled?
-    Current.setting.scaling.present?
+    Current.setting.scaling.present? || Current.setting.derived_dataset?
   end
 
   def scaling_sector_checkbox(name, default = true)

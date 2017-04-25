@@ -118,7 +118,7 @@ module LayoutHelper
   def scaling_reduction
     region    = Current.setting.area
     value     = Current.setting.scaling[:value]
-    default   = region.public_send(Current.setting.scaling[:area_attribute])
+    default   = Current.setting.scaling[:base_value]
 
     percent   = (value.to_f / default) * 100
     precision = (percent > 10 ? 0 : (percent < 1 ? 2 : 1))

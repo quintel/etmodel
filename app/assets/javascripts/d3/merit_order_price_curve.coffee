@@ -19,7 +19,8 @@ D3.merit_order_price_curve =
       @legendSeries = @model.non_target_series()
       @legendSeries.push(@average)
 
-      @drawChart()
+      super
+
       @drawLegend(@legendSeries, 1)
 
     averageData: (data) ->

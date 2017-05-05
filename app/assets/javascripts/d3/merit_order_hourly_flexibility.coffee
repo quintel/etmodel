@@ -14,7 +14,8 @@ D3.merit_order_hourly_flexibility =
       if this.key == 'total_demand' then value else -value
 
     draw: ->
-      @drawChart()
+      super
+
       @drawLegend(@series)
 
       defs = @svg.append('defs')

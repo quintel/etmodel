@@ -1,7 +1,7 @@
 class @ChartSerie extends Backbone.Model
   initialize : ->
     gquery = gqueries.find_or_create_by_key @get('gquery_key')
-    @set {gquery : gquery}
+    @set {gquery : gquery, skip: false}
 
   # The safe_* methods convert bad values to 0
   safe_future_value:  -> @get('gquery').safe_future_value()

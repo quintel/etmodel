@@ -11,14 +11,20 @@ var MeritTransformator = (function () {
         }
     }
 
+    function mapSerie(serie) {
+        if (!serie.skip) {
+            return $.extend(
+                {}, serie,
+                { values: transformSerieValues.call(this, serie) }
+          );
+        }
+    }
+
     MeritTransformator.prototype = {
         transform: function () {
-            return this.data.map(function(serie) {
-                return $.extend(
-                    {}, serie,
-                    { values: transformSerieValues.call(this, serie) }
-                );
-            }.bind(this));
+            return this.data.map(mapSerie.bind(this)).filter(function (d) {
+                return d != undefined;
+            });
         }
     };
 

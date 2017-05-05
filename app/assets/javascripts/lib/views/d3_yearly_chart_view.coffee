@@ -8,7 +8,7 @@ class @D3YearlyChartView extends D3ChartView
     right: 20
     label_left: 30
 
-  drawChart: ->
+  draw: ->
     [@width, @height] = @available_size()
 
     @svg          = @create_svg_container @width, @height, @margins
@@ -76,6 +76,7 @@ class @D3YearlyChartView extends D3ChartView
     color:  serie.get('color'),
     label:  serie.get('label'),
     key:    serie.get('gquery').get('key'),
+    skip:   serie.get('skip'),
     values: serie.future_value()
 
   createLinearScale: ->

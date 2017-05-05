@@ -102,6 +102,8 @@ class @D3ChartView extends BaseChartView
       .attr("transform", "translate(#{margins.left}, #{margins.top})")
 
 
+  legend_click: (d) => d
+
   # Builds a standard legend. Options hash:
   # - series: array of series. The label might be its 'label' attribute or its
   #           'key' attribute, which is translated with I18n.js
@@ -121,8 +123,14 @@ class @D3ChartView extends BaseChartView
       .data(opts.series)
       .enter()
       .append("div")
-      .attr("class", "legend-item")
+      .attr("class", (d) ->
+        ["legend-item",
+          (if d.get('skip') then 'hidden' else ''),
+          (if d.get('is_target_line') then 'target_line' else '')
+        ].join(' ')
+      )
       .style('width', "#{ legend_item_width }px")
+      .on('click', @legend_click)
 
     legend.append("span")
       .attr('class', 'rect')

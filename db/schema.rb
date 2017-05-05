@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,18 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161217095256) do
+ActiveRecord::Schema.define(version: 20170426122152) do
 
-  create_table "area_dependencies", force: true do |t|
+  create_table "area_dependencies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string  "dependent_on"
-    t.text    "description"
+    t.text    "description",     limit: 65535
     t.integer "dependable_id"
     t.string  "dependable_type"
+    t.index ["dependable_id", "dependable_type"], name: "index_area_dependencies_on_dependable_id_and_dependable_type", using: :btree
   end
 
-  add_index "area_dependencies", ["dependable_id", "dependable_type"], name: "index_area_dependencies_on_dependable_id_and_dependable_type", using: :btree
-
-  create_table "constraints", force: true do |t|
+  create_table "constraints", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "key"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -31,26 +29,24 @@ ActiveRecord::Schema.define(version: 20161217095256) do
     t.integer  "position"
     t.boolean  "disabled",                     default: false
     t.integer  "output_element_id"
+    t.index ["disabled"], name: "index_constraints_on_disabled", using: :btree
+    t.index ["key"], name: "index_constraints_on_key", using: :btree
+    t.index ["position"], name: "index_constraints_on_position", using: :btree
   end
 
-  add_index "constraints", ["disabled"], name: "index_constraints_on_disabled", using: :btree
-  add_index "constraints", ["key"], name: "index_constraints_on_key", using: :btree
-  add_index "constraints", ["position"], name: "index_constraints_on_position", using: :btree
-
-  create_table "descriptions", force: true do |t|
-    t.text     "content_en"
-    t.text     "short_content_en"
+  create_table "descriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.text     "content_en",       limit: 65535
+    t.text     "short_content_en", limit: 65535
     t.integer  "describable_id"
     t.string   "describable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "content_nl"
-    t.text     "short_content_nl"
+    t.text     "content_nl",       limit: 65535
+    t.text     "short_content_nl", limit: 65535
+    t.index ["describable_id", "describable_type"], name: "index_descriptions_on_describable_id_and_describable_type", using: :btree
   end
 
-  add_index "descriptions", ["describable_id", "describable_type"], name: "index_descriptions_on_describable_id_and_describable_type", using: :btree
-
-  create_table "general_user_notifications", force: true do |t|
+  create_table "general_user_notifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "key"
     t.string   "notification_nl"
     t.string   "notification_en"
@@ -59,7 +55,7 @@ ActiveRecord::Schema.define(version: 20161217095256) do
     t.datetime "updated_at"
   end
 
-  create_table "input_elements", force: true do |t|
+  create_table "input_elements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "key"
     t.string   "share_group"
     t.float    "step_value",        limit: 24
@@ -67,20 +63,19 @@ ActiveRecord::Schema.define(version: 20161217095256) do
     t.datetime "updated_at"
     t.string   "unit"
     t.boolean  "fixed"
-    t.text     "comments"
+    t.text     "comments",          limit: 65535
     t.string   "interface_group"
     t.string   "command_type"
     t.string   "related_converter"
     t.integer  "slide_id"
     t.integer  "position"
+    t.index ["command_type"], name: "index_input_elements_on_command_type", using: :btree
+    t.index ["key"], name: "unique api key", unique: true, using: :btree
+    t.index ["position"], name: "index_input_elements_on_position", using: :btree
+    t.index ["slide_id"], name: "index_input_elements_on_slide_id", using: :btree
   end
 
-  add_index "input_elements", ["command_type"], name: "index_input_elements_on_command_type", using: :btree
-  add_index "input_elements", ["key"], name: "unique api key", unique: true, using: :btree
-  add_index "input_elements", ["position"], name: "index_input_elements_on_position", using: :btree
-  add_index "input_elements", ["slide_id"], name: "index_input_elements_on_slide_id", using: :btree
-
-  create_table "output_element_series", force: true do |t|
+  create_table "output_element_series", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer  "output_element_id"
     t.string   "label"
     t.string   "color"
@@ -93,17 +88,16 @@ ActiveRecord::Schema.define(version: 20161217095256) do
     t.string   "target_line_position"
     t.string   "gquery",                           null: false
     t.boolean  "is_1990"
+    t.index ["output_element_id"], name: "index_output_element_series_on_output_element_id", using: :btree
   end
 
-  add_index "output_element_series", ["output_element_id"], name: "index_output_element_series_on_output_element_id", using: :btree
-
-  create_table "output_element_types", force: true do |t|
+  create_table "output_element_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "output_elements", force: true do |t|
+  create_table "output_elements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer  "output_element_type_id",                            null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -119,96 +113,89 @@ ActiveRecord::Schema.define(version: 20161217095256) do
     t.float    "min_axis_value",         limit: 24
     t.boolean  "hidden",                            default: false
     t.boolean  "requires_merit_order",              default: false
+    t.index ["hidden"], name: "index_output_elements_on_hidden", using: :btree
+    t.index ["key"], name: "index_output_elements_on_key", using: :btree
   end
 
-  add_index "output_elements", ["hidden"], name: "index_output_elements_on_hidden", using: :btree
-  add_index "output_elements", ["key"], name: "index_output_elements_on_key", using: :btree
-
-  create_table "prediction_measures", force: true do |t|
+  create_table "prediction_measures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin" do |t|
     t.integer  "prediction_id"
     t.string   "name"
     t.integer  "impact"
     t.integer  "cost"
     t.integer  "year_start"
     t.string   "actor"
-    t.text     "description"
+    t.text     "description",   limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "year_end"
+    t.index ["prediction_id"], name: "index_prediction_measures_on_prediction_id", using: :btree
   end
 
-  add_index "prediction_measures", ["prediction_id"], name: "index_prediction_measures_on_prediction_id", using: :btree
-
-  create_table "prediction_values", force: true do |t|
+  create_table "prediction_values", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin" do |t|
     t.integer  "prediction_id"
     t.float    "value",         limit: 24
     t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["prediction_id"], name: "index_prediction_values_on_prediction_id", using: :btree
+    t.index ["year"], name: "index_prediction_values_on_year", using: :btree
   end
 
-  add_index "prediction_values", ["prediction_id"], name: "index_prediction_values_on_prediction_id", using: :btree
-  add_index "prediction_values", ["year"], name: "index_prediction_values_on_year", using: :btree
-
-  create_table "predictions", force: true do |t|
+  create_table "predictions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin" do |t|
     t.integer  "input_element_id"
     t.integer  "user_id"
     t.boolean  "expert"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "description"
+    t.text     "description",      limit: 65535
     t.string   "title"
     t.string   "area"
+    t.index ["area"], name: "index_predictions_on_area", using: :btree
+    t.index ["input_element_id"], name: "index_predictions_on_input_element_id", using: :btree
+    t.index ["user_id"], name: "index_predictions_on_user_id", using: :btree
   end
 
-  add_index "predictions", ["area"], name: "index_predictions_on_area", using: :btree
-  add_index "predictions", ["input_element_id"], name: "index_predictions_on_input_element_id", using: :btree
-  add_index "predictions", ["user_id"], name: "index_predictions_on_user_id", using: :btree
-
-  create_table "roles", force: true do |t|
+  create_table "roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "saved_scenarios", force: true do |t|
-    t.integer  "user_id",     null: false
-    t.integer  "scenario_id", null: false
-    t.text     "settings"
+  create_table "saved_scenarios", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.integer  "user_id",                   null: false
+    t.integer  "scenario_id",               null: false
+    t.text     "settings",    limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["scenario_id"], name: "index_saved_scenarios_on_scenario_id", using: :btree
+    t.index ["user_id"], name: "index_saved_scenarios_on_user_id", using: :btree
   end
 
-  add_index "saved_scenarios", ["scenario_id"], name: "index_saved_scenarios_on_scenario_id", using: :btree
-  add_index "saved_scenarios", ["user_id"], name: "index_saved_scenarios_on_user_id", using: :btree
-
-  create_table "sessions", force: true do |t|
-    t.string   "session_id", null: false
-    t.text     "data"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "sessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin" do |t|
+    t.string   "session_id",               null: false
+    t.text     "data",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["session_id"], name: "index_sessions_on_session_id", using: :btree
+    t.index ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
   end
 
-  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", using: :btree
-  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
-
-  create_table "sidebar_items", force: true do |t|
+  create_table "sidebar_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string  "key"
     t.string  "section"
-    t.text    "percentage_bar_query"
+    t.text    "percentage_bar_query", limit: 65535
     t.string  "nl_vimeo_id"
     t.string  "en_vimeo_id"
     t.integer "tab_id"
     t.integer "position"
     t.integer "parent_id"
+    t.index ["key"], name: "index_sidebar_items_on_key", using: :btree
+    t.index ["parent_id"], name: "index_sidebar_items_on_parent_id", using: :btree
+    t.index ["position"], name: "index_sidebar_items_on_position", using: :btree
+    t.index ["tab_id"], name: "index_sidebar_items_on_tab_id", using: :btree
   end
 
-  add_index "sidebar_items", ["key"], name: "index_sidebar_items_on_key", using: :btree
-  add_index "sidebar_items", ["parent_id"], name: "index_sidebar_items_on_parent_id", using: :btree
-  add_index "sidebar_items", ["position"], name: "index_sidebar_items_on_position", using: :btree
-  add_index "sidebar_items", ["tab_id"], name: "index_sidebar_items_on_tab_id", using: :btree
-
-  create_table "slides", force: true do |t|
+  create_table "slides", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -220,23 +207,21 @@ ActiveRecord::Schema.define(version: 20161217095256) do
     t.integer  "sidebar_item_id"
     t.integer  "output_element_id"
     t.integer  "alt_output_element_id"
+    t.index ["key"], name: "index_slides_on_key", using: :btree
+    t.index ["position"], name: "index_slides_on_position", using: :btree
+    t.index ["sidebar_item_id"], name: "index_slides_on_sidebar_item_id", using: :btree
   end
 
-  add_index "slides", ["key"], name: "index_slides_on_key", using: :btree
-  add_index "slides", ["position"], name: "index_slides_on_position", using: :btree
-  add_index "slides", ["sidebar_item_id"], name: "index_slides_on_sidebar_item_id", using: :btree
-
-  create_table "tabs", force: true do |t|
+  create_table "tabs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string  "key"
     t.string  "nl_vimeo_id"
     t.string  "en_vimeo_id"
     t.integer "position"
+    t.index ["key"], name: "index_tabs_on_key", using: :btree
+    t.index ["position"], name: "index_tabs_on_position", using: :btree
   end
 
-  add_index "tabs", ["key"], name: "index_tabs_on_key", using: :btree
-  add_index "tabs", ["position"], name: "index_tabs_on_position", using: :btree
-
-  create_table "targets", force: true do |t|
+  create_table "targets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "code"
     t.string   "query"
     t.string   "unit"
@@ -245,25 +230,23 @@ ActiveRecord::Schema.define(version: 20161217095256) do
     t.string   "display_format"
     t.string   "reached_query"
     t.string   "target_query"
+    t.index ["code"], name: "index_policy_goals_on_key", using: :btree
   end
 
-  add_index "targets", ["code"], name: "index_policy_goals_on_key", using: :btree
-
-  create_table "texts", force: true do |t|
+  create_table "texts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "key"
-    t.text     "content_en"
-    t.text     "content_nl"
+    t.text     "content_en",       limit: 65535
+    t.text     "content_nl",       limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title_en"
     t.string   "title_nl"
-    t.text     "short_content_en"
-    t.text     "short_content_nl"
+    t.text     "short_content_en", limit: 65535
+    t.text     "short_content_nl", limit: 65535
+    t.index ["key"], name: "index_translations_on_key", using: :btree
   end
 
-  add_index "texts", ["key"], name: "index_translations_on_key", using: :btree
-
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "name",                              null: false
     t.string   "email",                             null: false
     t.string   "company_school"
@@ -287,8 +270,7 @@ ActiveRecord::Schema.define(version: 20161217095256) do
     t.string   "group"
     t.integer  "teacher_id"
     t.integer  "student_id"
+    t.index ["email"], name: "index_users_on_email", using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", using: :btree
 
 end

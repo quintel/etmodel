@@ -1,29 +1,49 @@
-D3.merit_order_hourly_supply =
+D3.dynamic_demand_curve =
   View: class extends D3YearlyChartView
     initialize: ->
       D3YearlyChartView.prototype.initialize.call(this)
 
+    can_be_shown_as_table: -> false
+
+    margins :
+      top: 20
+      bottom: 50
+      left: 50
+      right: 20
+
     dataForChart: ->
-      @series = @model.target_series().concat(@getSeries())
+      @series = @model.target_series().concat(@model.non_target_series())
       @series.map(@getSerie)
 
-    filterYValue: (value) ->
-      if this.key == 'households_flexibility_p2p_electricity'
-        if value > 0 then value else 0
-      else
-        value
+    maxYvalue: ->
+      result = []
+
+      @rawChartData.map (chart) ->
+        chart.values.forEach (value, index) ->
+          if result[index]
+            result[index] += value
+          else
+            result[index] = (if chart.skip then 0 else value)
+
+      d3.max(result)
 
     draw: ->
       super
 
-      @drawLegend(@getLegendSeries())
+      @serieGroup = @svg.append('g').classed('series', true)
 
-      defs = @svg.append('defs')
-      defs.append('clipPath')
-          .attr('id', "clip_" + @chart_container_id())
-          .append('rect')
-          .attr('width', @width)
-          .attr('height', @height)
+    area: (xScale, yScale) ->
+      d3.svg.area()
+        .x((data) -> xScale(data.x))
+        .y0((data) -> yScale(data.y0))
+        .y1((data) -> yScale(data.y0 + data.y))
+        .interpolate('step-before')
+
+    line: (xScale, yScale) ->
+      d3.svg.line()
+        .x((data) -> xScale(data.x))
+        .y((data) -> yScale(data.y))
+        .interpolate('step-before')
 
     setStackedData: ->
       @chartData = @convertData()
@@ -32,13 +52,8 @@ D3.merit_order_hourly_supply =
         .offset("zero")
         .values((d) -> d.values)
 
-      @stackedData = @stack(@chartData[1..@chartData.length])
-      @totalDemand = [@chartData[0]]
-
-    getSpikiness: (serie) ->
-      values = serie.future_value()
-
-      Math.abs((d3.max(values) - d3.min(values)) / d3.sum(values))
+      @stackedData = @stack(@chartData.filter((d) -> d.key != 'total_demand'))
+      @totalDemand = @chartData.filter((d) -> d.key == 'total_demand')
 
     getLegendSeries: ->
       legendSeries = []
@@ -48,12 +63,16 @@ D3.merit_order_hourly_supply =
 
       legendSeries
 
-    getSeries: ->
-      @model.non_target_series().sort (a, b) =>
-        @getSpikiness(a) > @getSpikiness(b)
+    legend_click: (e) ->
+      serie = @series.find((a) -> (a.id == e.attributes.id))
 
-    drawData: (xScale, yScale, area, line) ->
-      @svg.selectAll('path.serie')
+      if serie.attributes.is_target_line
+        serie.set('skip', !serie.get('skip'))
+
+        @refresh()
+
+    initialDraw: (xScale, yScale, area, line) ->
+      @svg.selectAll('g.serie')
         .data(@stackedData)
         .enter()
         .append('g')
@@ -74,7 +93,7 @@ D3.merit_order_hourly_supply =
           my: 'bottom right'
           at: 'top center'
 
-      @svg.selectAll('path.serie')
+      @svg.selectAll('g.serie-line')
         .data(@totalDemand)
         .enter()
         .append('g')
@@ -103,45 +122,20 @@ D3.merit_order_hourly_supply =
       @svg.select(".y_axis").call(@createLinearAxis(yScale))
 
       if @container_node().find("g.serie").length > 0
-        @svg.selectAll('g.serie')
+        serie = @svg.selectAll('g.serie')
           .data(@stackedData)
           .select('path.area')
           .attr('d', (data) -> area(data.values) )
           .attr('fill', (data) -> data.color )
 
-        @svg.selectAll('g.serie-line')
-          .data(@totalDemand)
-          .select('path.line')
-          .attr('d', (data) -> line(data.values) )
+        if @totalDemand.length > 0
+          @svg.selectAll('g.serie-line')
+            .style('opacity', 1)
+            .data(@totalDemand)
+            .select('path.line')
+            .attr('d', (data) -> line(data.values) )
+        else
+          @svg.selectAll('g.serie-line').style('opacity', 0)
 
       else
-        @drawData(xScale, yScale, area, line)
-
-    area: (xScale, yScale) ->
-      d3.svg.area()
-        .x((data) -> xScale(data.x))
-        .y0((data) -> yScale(data.y0))
-        .y1((data) -> yScale(data.y0 + data.y))
-        .interpolate('cardinal')
-
-    line: (xScale, yScale) ->
-      d3.svg.line()
-        .x((data) -> xScale(data.x))
-        .y((data) -> yScale(data.y))
-        .interpolate('cardinal')
-
-    maxYvalue: ->
-      result = []
-
-      @rawChartData[1..@rawChartData.length].map (chart) ->
-        chart.values.forEach (value, index) ->
-          if result[index]
-            result[index] += value
-          else
-            result[index] = value
-
-      # Add the peak demand so that it isn't rendered off-screen when demand
-      # exceeds supply.
-      result.push(d3.max(@rawChartData[0].values))
-
-      d3.max(result)
+        @initialDraw(xScale, yScale, area, line)

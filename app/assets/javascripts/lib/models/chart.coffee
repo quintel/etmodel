@@ -78,6 +78,7 @@ class @Chart extends Backbone.Model
       when 'import_export_flows'       then D3.import_export_flows.View
       when 'import_export_renewables'  then D3.import_export_renewables.View
       when 'import_export_capacity'    then D3.import_export_capacity.View
+      when 'dynamic_demand_curve'      then D3.dynamic_demand_curve.View
       else throw "Chart type not available"
 
   # D3 charts have their own class. Let's make an instance of the right one

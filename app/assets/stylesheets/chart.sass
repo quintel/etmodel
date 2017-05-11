@@ -387,17 +387,21 @@ div.d3_container
     line-height: 14px
     vertical-align: top
     font-size: 12px
-    opacity: 1.0
-    cursor: not-allowed
-
-    &.hidden
-      opacity: 0.5
-
-    &.target_line
-      cursor: pointer
 
     span.rect
       width: 10px
       height: 10px
       display: inline-block
       margin-right: 5px
+
+// Clickable legends in the dynamic demand curve chart.
+.dynamic_demand_curve
+  .legend
+    .legend-item
+      &.hidden .rect
+        opacity: 0.5
+      &.target_line
+        color: #63A0C9
+        cursor: pointer
+        &:hover
+          color: #2E5671

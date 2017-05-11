@@ -8,8 +8,9 @@ D3.dynamic_demand_curve =
     margins :
       top: 20
       bottom: 50
-      left: 50
+      left: 65
       right: 20
+      label_left: 30
 
     dataForChart: ->
       @series = @model.target_series().concat(@model.non_target_series())

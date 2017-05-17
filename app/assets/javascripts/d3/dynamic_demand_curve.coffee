@@ -16,17 +16,8 @@ D3.dynamic_demand_curve =
       @series = @model.target_series().concat(@model.non_target_series())
       @series.map(@getSerie)
 
-    maxYvalue: ->
-      result = []
-
-      @rawChartData.map (chart) ->
-        chart.values.forEach (value, index) ->
-          if result[index]
-            result[index] += value
-          else
-            result[index] = (if chart.skip then 0 else value)
-
-      d3.max(result)
+    visibleData: ->
+      super().filter (data) => !data.skip
 
     draw: ->
       super

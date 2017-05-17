@@ -72,6 +72,24 @@ class @D3YearlyChartView extends D3ChartView
   filterYValue: (value) ->
     value
 
+  maxYvalue: ->
+    targetKeys = @model.target_series().map((s) -> s.get('gquery_key'))
+    grouped = _.groupBy(@visibleData(), (d) -> _.contains(targetKeys, d.key))
+
+    targets = _.pluck(grouped[true], 'values')
+    series = _.pluck(grouped[false], 'values')
+
+    max = 0.0
+
+    for _load, index in series[0]
+      aggregateLoad = d3.sum(series, (s) -> s[index])
+      targetLoad = d3.max(targets, (s) -> s[index])
+
+      if aggregateLoad > max then max = aggregateLoad
+      if targetLoad > max then max = targetLoad
+
+    max
+
   getSerie: (serie) =>
     color:  serie.get('color'),
     label:  serie.get('label'),

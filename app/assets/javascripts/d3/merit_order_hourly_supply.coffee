@@ -35,11 +35,6 @@ D3.merit_order_hourly_supply =
       @stackedData = @stack(@chartData[1..@chartData.length])
       @totalDemand = [@chartData[0]]
 
-    getSpikiness: (serie) ->
-      values = serie.future_value()
-
-      Math.abs((d3.max(values) - d3.min(values)) / d3.sum(values))
-
     getLegendSeries: ->
       legendSeries = []
       @series.forEach (serie) =>
@@ -49,8 +44,21 @@ D3.merit_order_hourly_supply =
       legendSeries
 
     getSeries: ->
-      @model.non_target_series().sort (a, b) =>
-        @getSpikiness(a) > @getSpikiness(b)
+      weekNum = this.dateSelect && this.dateSelect.val() || 0
+
+      _.sortBy @model.non_target_series(), (serie) =>
+        values = MeritTransformator.sliceValues(serie.future_value(), weekNum)
+
+        min = max = sum = 0
+
+        for value in values
+          if value < min then min = value
+          if value > max then max = value
+          sum += value
+
+        return 0 if sum == 0
+
+        Math.abs((max - min) / sum)
 
     drawData: (xScale, yScale, area, line) ->
       @svg.selectAll('path.serie')

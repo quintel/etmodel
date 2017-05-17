@@ -137,19 +137,3 @@ D3.merit_order_hourly_supply =
         .x((data) -> xScale(data.x))
         .y((data) -> yScale(data.y))
         .interpolate('cardinal')
-
-    maxYvalue: ->
-      result = []
-
-      @rawChartData[1..@rawChartData.length].map (chart) ->
-        chart.values.forEach (value, index) ->
-          if result[index]
-            result[index] += value
-          else
-            result[index] = value
-
-      # Add the peak demand so that it isn't rendered off-screen when demand
-      # exceeds supply.
-      result.push(d3.max(@rawChartData[0].values))
-
-      d3.max(result)

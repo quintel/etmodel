@@ -10,6 +10,7 @@ $(function () {
         chart_data = $(popup_charts[i]).data();
         charts.load(chart_data.chart_id, null, {
             popup:    true,
+            force:    true,
             header:   false,
             prunable: true,
             wrapper:  (chart_data.wrapper || "#charts")

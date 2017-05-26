@@ -92,7 +92,7 @@ class @AppView extends Backbone.View
       @setup_sliders().done ->
         new ReportView(window.reportData).renderInto($('#report'));
     else
-      @charts.load_charts()
+      @charts.load_initial_charts(@settings.get('locked_charts'))
 
   setup_fce_toggle: ->
     if element = $('.slide .fce-toggle')

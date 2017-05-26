@@ -24,7 +24,7 @@ class Setting
       end_year:               2050,
       use_fce:                false,
       use_merit_order:        false,
-      locked_charts:          {},
+      locked_charts:          [],
       last_etm_page:          nil,
       scaling:                nil,
       area_scaling:           nil,
@@ -121,10 +121,8 @@ class Setting
     area.attributes[:has_fce]
   end
 
-  def locked_charts=(charts)
-    if charts.respond_to?(:to_h)
-      @locked_charts = charts.to_h.transform_values(&:to_s)
-    end
+  def locked_charts
+    @locked_charts || []
   end
 
   def derived_dataset?

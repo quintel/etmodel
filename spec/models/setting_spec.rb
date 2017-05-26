@@ -44,6 +44,24 @@ describe Setting do
     end
   end
 
+  describe '#to_hash', vcr: true do
+    context 'when locked_charts is nil' do
+      let(:setting) { Setting.new(locked_charts: nil) }
+
+      it 'uses an empty array for the charts' do
+        expect(setting.to_hash[:locked_charts]).to eq([])
+      end
+    end
+
+    context 'when locked_charts is an array' do
+      let(:setting) { Setting.new(locked_charts: %w[d e f]) }
+
+      it 'does no alter the charts' do
+        expect(setting.to_hash[:locked_charts]).to eq(%w[d e f])
+      end
+    end
+  end
+
   describe "#track_peak_load?" do
     context "use_peak_load is off" do
       before do
@@ -91,7 +109,12 @@ describe Setting do
     before do
       @random_attributes = Setting.default_attributes.clone
       @random_attributes.each do |key, value|
-        @random_attributes[key] = 11
+        @random_attributes[key] =
+          case value
+          when Array then %w[a b c]
+          when Hash  then { a: 'b' }
+          else 11
+          end
       end
       @setting = Setting.new(@random_attributes)
     end

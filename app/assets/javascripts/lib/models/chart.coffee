@@ -29,6 +29,9 @@ class @Chart extends Backbone.Model
     # with the old jqplot charts. See ETPlugin charts for a better approach.
     @render()
 
+  defaults:
+    locked: false
+
   render : =>
     return false unless @supported_by_current_browser()
 
@@ -214,22 +217,17 @@ class @Chart extends Backbone.Model
     @update_lock_settings()
     @view.update_lock_icon()
 
+  # A unique ID which represents this chart - and how it should be displayed -
+  # in the list of locked charts.
+  lock_list_id: =>
+    "#{@get('chart_id')}-#{if @get('as_table') then 'T' else 'C'}"
+
   # updates the settings hash and pushes the changes to the rails app
-  #
   update_lock_settings: =>
-    s = App.settings.get 'locked_charts'
-    holder_id = @get 'container'
-
-    if @get 'locked'
-      tbl_string = if @get('as_table') then 'T' else 'C'
-      s[holder_id] = "#{@get 'chart_id'}-#{tbl_string}"
-    else
-      delete s[holder_id]
-
-    App.settings.save locked_charts: s
+    App.settings.update_locked_chart_list(@collection)
 
   # should the default button be shown?
   #
   wants_default_button: =>
-    (@get('container') == 'holder_0') &&
-    (@get('chart_id') != App.charts.default_chart_id)
+    (@get('chart_id') != App.charts.default_chart_id) &&
+    (@get('container') == App.charts.default_holder)

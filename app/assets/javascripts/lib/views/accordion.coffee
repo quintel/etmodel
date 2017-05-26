@@ -30,7 +30,11 @@ class @Accordion
       Tracker.track({slide: slide_title})
 
       # request the default chart
-      chart_holder = 'holder_0'
+      available_holders =
+        App.charts.models
+          .filter((chart) -> !chart.get('locked'))
+          .map((chart) -> chart.get('container'))
+
       default_chart = header.data('default_chart')
       alternate_chart = header.data('alt_chart')
       # store the default chart for this slide
@@ -40,7 +44,11 @@ class @Accordion
       # settings hash (to restore properly the locked charts); after that the
       # charts are loaded according to the accordion events
       if @bootstrapped
-        charts.load(default_chart, chart_holder, alternate: alternate_chart)
+        App.charts.load_into_available_holder(
+          default_chart, alternate: alternate_chart
+        )
+
+        App.charts.forEach((chart) -> chart.view.update_header())
 
   open_right_tab: ->
     $("h3.selected").trigger 'click'

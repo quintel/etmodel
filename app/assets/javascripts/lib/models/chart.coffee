@@ -1,3 +1,23 @@
+# Given a chart model, returns an flattened array containing all values which
+# will be shown in the chart. Useful for computing min and max display value.
+chart_values = (model) ->
+  [
+    model.values_1990()...,
+    model.values_present()...,
+    model.values_future()...,
+    model.values_targets()...
+  ]
+
+# Given a chart model, returns an array of values which may be used to compute
+# the minimum or maximum values shown in the chart.
+series_values = (model) ->
+  [
+    _.sum(model.values_1990()),
+    _.sum(model.values_present()),
+    _.sum(model.values_future()),
+    model.values_targets()...
+  ]
+
 # The big picture: the chart object renders a chart that can be based on
 # jqPlot (IE<9) or D3 (newer browsers). The chart will be rendered inside a
 # holder element:
@@ -150,21 +170,17 @@ class @Chart extends Backbone.Model
 
   values_targets: => _.map @target_series(),     (s) -> s.safe_future_value()
 
+  min_value: ->
+    _.min(chart_values(this))
+
   max_value: ->
-    _.max([
-      @values_1990()...,
-      @values_present()...,
-      @values_future()...,
-      @values_targets()...
-    ])
+    _.max(chart_values(this))
+
+  min_series_value: ->
+    _.min(series_values(this))
 
   max_series_value: ->
-    _.max([
-      _.sum(@values_1990()),
-      _.sum(@values_present()),
-      _.sum(@values_future()),
-      @values_targets()...
-    ])
+    _.max(series_values(this))
 
   # @return [[Float,Float]] Array of present/future values [Float,Float]
   value_pairs: ->

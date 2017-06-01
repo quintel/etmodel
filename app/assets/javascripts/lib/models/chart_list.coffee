@@ -42,9 +42,6 @@ class @ChartList extends Backbone.Collection
   #             locked      - flag the chart as locked (default: false)
   #             as_table    - render the chart as a table (default: false). Only
   #                           some chart types have this feature!
-  #             ignore_lock - don't overwrite the lock flag. This might be
-  #                           needed on the initial render, where we want to
-  #                           plot the charts and preserve the locks
   #             wait        - don't fire the API request immediately
   #             wrapper     - selector for the wrapper that will contain the
   #                           chart holder
@@ -54,11 +51,6 @@ class @ChartList extends Backbone.Collection
   #
   # Returns the newly created chart object or false if something went wrong
   load: (chart_id, holder_id = null, options = {}) =>
-    current = @chart_in_holder(holder_id)
-
-    if current && current.get('chart_id') == chart_id && !options.force
-      return false
-
     # "load" is called when the page first loads; at this point the list of
     # chart models is not ready. Therefore we go to the app settings instead.
     locked_charts = App.settings.get('locked_charts').map(
@@ -74,15 +66,15 @@ class @ChartList extends Backbone.Collection
       _.contains(locked_holders, holder_id) ||
       # Is probably loading a second instance of a chart (zoomed, or in the
       # dashboard).
-      _.contains(locked_charts, chart_id)
+      _.contains(locked_charts, chart_id) ||
+      # Trying to load a chart in the same holder in which is already appears?
+      @chart_in_holder(holder_id)?.get('chart_id') == chart_id
 
-    if will_replace_locked
-      if options.force
-        # TODO: Remove the toggle_lock method because this method should return
-        # a boolean but now also excecutes code in between which is confusing.
-        current.toggle_lock(false)
-      else
-        return false unless options.ignore_lock
+    # Chart or holder is already present. Without a force option, return and
+    # ignore the request to load the chart. This may happen by code trying to
+    # load the default chart for a slide, when all available holders are locked.
+    if will_replace_locked && !options.force
+      return false
 
     App.debug(
       "Loading chart: ##{ chart_id } in #{ holder_id } | " +
@@ -209,10 +201,8 @@ class @ChartList extends Backbone.Collection
         holder: chart.holder,
         locked: true,
         as_table: chart.as_table,
-        wait: true
-        # the initial render should ignore the lock check: render the charts
-        # but don't remove the locks, which is what `force: true` would do
-        ignore_lock: true
+        wait: true,
+        force: true # the initial render should ignore the lock check
       }
 
       request_ids.push(chart.id)

@@ -409,20 +409,23 @@
      * of charts to be rendered.
      */
     renderCharts: function (cb) {
-      var requests = {};
+      var requests =
+        $(this.$el.find('.chart_inner')).map(function (index, el) {
+          var chartEl = $(el);
+          var holderId = _.uniqueId('rchart_holder_');
+          var chartId = chartEl.data('report-chart-id');
 
-      $(this.$el.find('.chart_inner')).each(function (index, el) {
-        var chartEl = $(el);
-        var holderId = _.uniqueId('rchart_holder_');
-        var chartId = chartEl.data('report-chart-id');
+          window.charts.add_container_if_needed(holderId, {
+            wrapper: '#' + chartEl.attr('id'),
+            header: false
+          });
 
-        window.charts.add_container_if_needed(holderId, {
-          wrapper: '#' + chartEl.attr('id'),
-          header: false
+          return {
+            id: chartId,
+            as_table: false,
+            holder: holderId
+          };
         });
-
-        requests[holderId] = chartId + '-C';
-      });
 
       window.charts.load_charts(requests, { success: function () {
         if (cb) cb();

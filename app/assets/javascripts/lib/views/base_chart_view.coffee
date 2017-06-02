@@ -118,7 +118,10 @@ class @BaseChartView extends Backbone.View
     maxValue = if opts.maxFrom is 'maxValue'
       @model.max_value()
     else
-      @model.max_series_value()
+      max = @model.max_series_value()
+      min = Math.abs(@model.min_series_value())
+
+      if max > min then max else min
 
     @create_scaler(maxValue, @model.get('unit'), opts)
 

@@ -1,3 +1,23 @@
+# Given a chart model, returns an flattened array containing all values which
+# will be shown in the chart. Useful for computing min and max display value.
+chart_values = (model) ->
+  [
+    model.values_1990()...,
+    model.values_present()...,
+    model.values_future()...,
+    model.values_targets()...
+  ]
+
+# Given a chart model, returns an array of values which may be used to compute
+# the minimum or maximum values shown in the chart.
+series_values = (model) ->
+  [
+    _.sum(model.values_1990()),
+    _.sum(model.values_present()),
+    _.sum(model.values_future()),
+    model.values_targets()...
+  ]
+
 # The big picture: the chart object renders a chart that can be based on
 # jqPlot (IE<9) or D3 (newer browsers). The chart will be rendered inside a
 # holder element:
@@ -28,6 +48,9 @@ class @Chart extends Backbone.Model
     # this should be called later! It's still here for backwards compatibility
     # with the old jqplot charts. See ETPlugin charts for a better approach.
     @render()
+
+  defaults:
+    locked: false
 
   render : =>
     return false unless @supported_by_current_browser()
@@ -147,21 +170,17 @@ class @Chart extends Backbone.Model
 
   values_targets: => _.map @target_series(),     (s) -> s.safe_future_value()
 
+  min_value: ->
+    _.min(chart_values(this))
+
   max_value: ->
-    _.max([
-      @values_1990()...,
-      @values_present()...,
-      @values_future()...,
-      @values_targets()...
-    ])
+    _.max(chart_values(this))
+
+  min_series_value: ->
+    _.min(series_values(this))
 
   max_series_value: ->
-    _.max([
-      _.sum(@values_1990()),
-      _.sum(@values_present()),
-      _.sum(@values_future()),
-      @values_targets()...
-    ])
+    _.max(series_values(this))
 
   # @return [[Float,Float]] Array of present/future values [Float,Float]
   value_pairs: ->
@@ -214,22 +233,17 @@ class @Chart extends Backbone.Model
     @update_lock_settings()
     @view.update_lock_icon()
 
+  # A unique ID which represents this chart - and how it should be displayed -
+  # in the list of locked charts.
+  lock_list_id: =>
+    "#{@get('chart_id')}-#{if @get('as_table') then 'T' else 'C'}"
+
   # updates the settings hash and pushes the changes to the rails app
-  #
   update_lock_settings: =>
-    s = App.settings.get 'locked_charts'
-    holder_id = @get 'container'
-
-    if @get 'locked'
-      tbl_string = if @get('as_table') then 'T' else 'C'
-      s[holder_id] = "#{@get 'chart_id'}-#{tbl_string}"
-    else
-      delete s[holder_id]
-
-    App.settings.save locked_charts: s
+    App.settings.update_locked_chart_list(@collection)
 
   # should the default button be shown?
   #
   wants_default_button: =>
-    (@get('container') == 'holder_0') &&
-    (@get('chart_id') != App.charts.default_chart_id)
+    (@get('chart_id') != App.charts.default_chart_id) &&
+    (@get('container') == App.charts.default_holder)

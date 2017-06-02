@@ -5,7 +5,7 @@
         <h3><%%= title %></h3>
         <div class="actions">
 
-          <%% if (holder_id != 'holder_0') { %>
+          <%% if (holder_id != window.charts.default_holder) { %>
           <a class="remove_chart tooltip fa fa-times"
              href="#"
              title="<%= t 'output_elements.tooltips.remove' %>"></a>

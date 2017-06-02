@@ -39,6 +39,12 @@ class @Setting extends Backbone.Model
   # Used by the bio-footprint dashboard item
   country: => @get('area_code').split('-')[0]
 
+  # Updates the list of locked charts and persists to the server.
+  update_locked_chart_list: (charts) ->
+    @save(
+      locked_charts:
+        charts.where(locked: true).map((chart) -> chart.lock_list_id()))
+
   # Is MO enabled?
   merit_order_enabled: ->
     try

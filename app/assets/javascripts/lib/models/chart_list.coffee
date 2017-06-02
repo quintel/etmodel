@@ -1,16 +1,32 @@
 class @ChartList extends Backbone.Collection
   model : Chart
 
+  # Sort in the order by which they appear in the UI.
+  comparator: (model) ->
+    parseInt(model.get('container').split('_')[1], 10)
+
   initialize: ->
     $.jqplot.config.enablePlugins = true
     @container = $("#charts_wrapper")
     @template = _.template $('#chart-holder-template').html()
+
+    @default_holder = _.uniqueId('holder_')
 
     # We can have multiple charts. This hash keeps track ok which chart holders
     # are being used
     @chart_holders = {}
 
     @setup_callbacks()
+
+  # Returns the first available holder or null if there is none.
+  available_holder: =>
+    if !@models.length && !App.settings.get('locked_charts').length
+      # Initial page load and there are no locked charts: we need to return the
+      # default holder so that the default chart can be shown.
+      return @default_holder
+
+    unlocked = @where(locked: false)[0]
+    unlocked && unlocked.get('container') || null
 
   # Loads a chart into a DOM element making an AJAX request. Will create the
   # container if needed
@@ -26,9 +42,6 @@ class @ChartList extends Backbone.Collection
   #             locked      - flag the chart as locked (default: false)
   #             as_table    - render the chart as a table (default: false). Only
   #                           some chart types have this feature!
-  #             ignore_lock - don't overwrite the lock flag. This might be
-  #                           needed on the initial render, where we want to
-  #                           plot the charts and preserve the locks
   #             wait        - don't fire the API request immediately
   #             wrapper     - selector for the wrapper that will contain the
   #                           chart holder
@@ -38,23 +51,29 @@ class @ChartList extends Backbone.Collection
   #
   # Returns the newly created chart object or false if something went wrong
   load: (chart_id, holder_id = null, options = {}) =>
-    current = @chart_in_holder(holder_id)
+    # "load" is called when the page first loads; at this point the list of
+    # chart models is not ready. Therefore we go to the app settings instead.
+    locked_charts = App.settings.get('locked_charts').map(
+      (id) -> parseInt(id.split('-')[0], 10)
+    )
 
-    if current && current.get('chart_id') == chart_id && !options.force
-      return false
+    # Will only have values when loading new charts (i.e. not on initial page
+    # load).
+    locked_holders = @where(locked: true).map((chart) -> chart.get('container'))
 
-    # if we want to replace a locked chart...
-    locked_charts = App.settings.get 'locked_charts'
-    if locked_charts[holder_id]
-      if options.force
-        # TODO: Remove the toggle_lock method because this method should return
-        # a boolean but now also excecutes code in between which is confusing.
-        current.toggle_lock(false)
-      else
-        return false unless options.ignore_lock
-    else if !options.force && _.keys(locked_charts).length
-      # Accordion has tried to load the default chart, but we already have one
-      # or more locked charts. Don't show the default.
+    will_replace_locked =
+      # Is replacing an existing chart in an holder which is currently locked...
+      _.contains(locked_holders, holder_id) ||
+      # Is probably loading a second instance of a chart (zoomed, or in the
+      # dashboard).
+      _.contains(locked_charts, chart_id) ||
+      # Trying to load a chart in the same holder in which is already appears?
+      @chart_in_holder(holder_id)?.get('chart_id') == chart_id
+
+    # Chart or holder is already present. Without a force option, return and
+    # ignore the request to load the chart. This may happen by code trying to
+    # load the default chart for a slide, when all available holders are locked.
+    if will_replace_locked && !options.force
       return false
 
     App.debug(
@@ -70,6 +89,15 @@ class @ChartList extends Backbone.Collection
             App.settings.save locked_charts: s
       .done (data) =>
         @render_output_element(chart_id, holder_id, options, data)
+
+  # Loads the chart into the first available holder. If no holder is available
+  # (i.e. all are locked), the chart will not be loaded.
+  load_into_available_holder: (chart_id, options = {}) =>
+    if !(holder_id = @available_holder())
+      # No unlocked holders available into which this chart may be rendered.
+      return false
+
+    @load(chart_id, holder_id, options)
 
   render_output_element: (chart_id, holder_id, options, data) =>
     holder_id = @add_container_if_needed(holder_id, options)
@@ -122,65 +150,64 @@ class @ChartList extends Backbone.Collection
   # restores the default chart for the current slide
   #
   load_default: =>
-    @chart_in_holder('holder_0').toggle_lock(false)
-    @load @default_chart_id, 'holder_0'
+    @chart_in_holder(@default_holder).toggle_lock(false)
+    @load @default_chart_id, @default_holder
 
-  # This is called right after the app bootstrap. And renders the default
-  # chart and the other optional locked charts.
-  # There is some (ugly) logic to keep track of which charts should have the
-  # locked flag on and which not
+  # With the list of locked charts (formatted as their ID and display format,
+  # e.g. "190-C"), renders each chart in a unique holder. Used when the page is
+  # first loaded.
   #
-  load_charts: (custom_charts, apiOptions = {}) =>
-    # The accordion takes care of setting @default_chart_id
-    settings = custom_charts || App.settings.get('locked_charts')
+  # If the visitor has no locked charts, the default is loaded instead.
+  load_initial_charts: (wanted) =>
+    if !wanted.length && @default_chart_id
+      @load_charts([{ id: @default_chart_id, holder: @default_holder }])
+    else if wanted.length
+      @load_charts(wanted.map((chart, index) =>
+        [id, format] = chart.split('-')
 
-    # safe copy of the settings hash
-    charts_to_load = _.extend {}, settings
+        as_table = format == 'T'
+        holder = index == 0 && @default_holder || _.uniqueId('holder_')
 
-    # is the default chart locked?
-    unless default_chart_locked = settings.holder_0
-      # if not then use the default chart
-      if @default_chart_id
-        charts_to_load.holder_0 = @default_chart_id
+        { id, as_table, holder }
+      ))
 
-    ordered_charts = _.keys(charts_to_load).sort()
+  # Loads one or more charts, based on options given.
+  #
+  # `charts` should be an array of objects containing the chart `id`, the
+  # `holder` (DOM element ID) into which it should be rendered, and any
+  # additional options.
+  #
+  # For example
+  #
+  #   list.load_charts([
+  #     { id: 190, as_table: false, holder: 'holder_80'},
+  #     { id: 64, as_table: true, holder: 'holder_81'}
+  #   ])
+  #
+  # A second parameter accepts options which are passed transparently to
+  # Api.call_api when fetching the chart data.
+  #
+  # charts     - An array of objects containing information which which charts
+  #              should be rendered.
+  # apiOptions - Options passed to Api.call_api when feching chart data.
+  #
+  # Returns nothing.
+  load_charts: (charts, apiOptions = {}) =>
     render_options = {}
     request_ids    = []
 
-    for holder in ordered_charts
-      chart = charts_to_load[holder]
+    for chart, index in charts
+      render_options[chart.id] = {
+        holder: chart.holder,
+        locked: true,
+        as_table: chart.as_table,
+        wait: true,
+        force: true # the initial render should ignore the lock check
+      }
 
-      # The chart string has this format:
-      #     XXX-YYY
-      # XXX is the chart id, while YYY is 'T' if the chart must be shown as
-      # a table.
-      # Historical note: this "chart string" used to be a nested hash, but it
-      # turned out to be very painful to handle. This is why ETM uses
-      # active-record sessions, too: hashes weren't saved properly in
-      # memcached/dalli stores. Weird active support bug that I've not
-      # bothered fixing since Rails 4 rewrites most of it.
-      # PZ
-      [id, format] = "#{chart}".split '-'
+      request_ids.push(chart.id)
 
-      locked = if (holder != 'holder_0')
-        true
-      else
-        default_chart_locked
-
-      if id && holder
-        render_options[id] = {
-          holder: holder,
-          locked: locked,
-          as_table: (format == 'T'),
-          wait: true
-          # the initial render should ignore the lock check: render the charts
-          # but don't remove the locks, which is what `force: true` would do
-          ignore_lock: true
-        }
-
-        request_ids.push(id)
-
-    return unless request_ids.length # Nothing to do!
+    return $.Deferred().resolveWith({}) unless request_ids.length
 
     $.ajax(url: "/output_elements/batch/#{ request_ids.join(',') }")
       .fail (jqXHR) ->
@@ -195,6 +222,8 @@ class @ChartList extends Backbone.Collection
           )
 
         App.call_api({}, apiOptions)
+
+    null # Return nothing.
 
   # adds a chart container, unless it is already in the DOM. Returns the
   # holder_id

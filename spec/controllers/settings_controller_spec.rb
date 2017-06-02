@@ -16,17 +16,17 @@ describe SettingsController do
 
     it "should update the charts hash" do
       put :update, params: {
-        format: :json, locked_charts: { 'holder_0' => 123 }
+        format: :json, locked_charts: [123]
       }
 
       expect(response).to be_success
-      expect(session[:setting][:locked_charts]).to eql({'holder_0' => '123'})
+      expect(session[:setting][:locked_charts]).to eql(['123'])
     end
 
     it "should update the charts hash" do
-      put :update, params: { format: :json, locked_charts: {} }
+      put :update, params: { format: :json, locked_charts: [] }
       expect(response).to be_success
-      expect(session[:setting][:locked_charts]).to eql({})
+      expect(session[:setting][:locked_charts]).to eql([])
     end
   end
 

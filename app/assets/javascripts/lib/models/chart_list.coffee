@@ -347,6 +347,21 @@ class @ChartList extends Backbone.Collection
       e.preventDefault()
       @load_default()
 
+    # Given a link to fetch chart information and an optional format, open the
+    # chart in a FancyBox pop-up.
+    zoomChart = (href, format) ->
+      return $.fancybox.open({
+        autoSize: false
+        href: "#{href}?format=#{format || 'chart'}"
+        type: 'ajax'
+        width: 1100
+        height: 570
+        padding: 0
+        beforeClose: ->
+          # don't leave stale charts around!
+          charts.prune()
+      })
+
     # Zoom chart
     #
     $(document).on 'touchend click', 'a.zoom_chart', (e) =>
@@ -356,15 +371,24 @@ class @ChartList extends Backbone.Collection
       if chart.get('type') == 'block'
         alert("Sorry, this chart can't be zoomed")
         return false
-      format = if chart.get('as_table') == true then 'table' else 'chart'
-      url = "#{$(e.target).attr('href')}?format=#{format}"
-      $.fancybox.open
-        autoSize: false
-        href: url
-        type: 'ajax'
-        width: 1100
-        height: 570
-        padding: 0
-        beforeClose: ->
-          # don't leave stale charts around!
-          charts.prune()
+
+      zoomChart(
+        $(e.target).attr('href'),
+        if chart.get('as_table') == true then 'table' else 'chart'
+      )
+
+    # Click chart link
+    #
+    $(document).on 'touchend click', 'a.open_chart', (e) =>
+      e.preventDefault()
+
+      target = $(e.target)
+
+      url = [
+        window.location.origin,
+        'output_elements',
+        target.data('chartKey'),
+        'zoom'
+      ]
+
+      zoomChart(url.join('/'), target.data('chartFormat'))

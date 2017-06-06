@@ -51,6 +51,12 @@ class OutputElementsController < ApplicationController
 
   def find_output_element
     @as_table = params[:format] == 'table'
-    @chart = OutputElement.find(params[:id])
+
+    @chart =
+      if params[:id] && params[:id] =~ /\D/
+        OutputElement.find_by_key!(params[:id])
+      else
+        OutputElement.find(params[:id])
+      end
   end
 end

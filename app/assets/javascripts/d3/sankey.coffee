@@ -524,18 +524,15 @@ D3.sankey =
 
       # move the rectangles
       @nodes.selectAll("rect")
-        .transition().duration(500)
         .attr("height", (d) => @y d.value())
         .attr("y", (d) => @y(d.y_offset()))
 
       # then move the node label
       @nodes.selectAll("text.label")
-        .transition().duration(500)
         .attr("y", (d) => @y(d.y_offset() + d.value() / 2) )
 
       # then transform the links
       @links.data(@link_list, (d) -> d.cid)
-        .transition().duration(500)
         .selectAll("path")
         .attr("d", (link) => @link_line link.path_points())
         .style("stroke-width", (link) => @y(link.value()))

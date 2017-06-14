@@ -475,20 +475,22 @@ D3.sankey =
     # callbacks
     #
     unselectedLinkOpacity = 0.1
-    selectedLinkOpacity = 0.5
-    hoverLinkOpacity = 0.9
+    selectedLinkOpacity = 0.4
+    hoverLinkOpacity = 0.7
 
     node_mouseover: (e) =>
       @svg.selectAll(".link")
         .filter((d) -> !d.connects(e.get 'id'))
         .transition()
         .duration(200)
+        .select('path')
         .style("opacity", unselectedLinkOpacity)
 
     link_mouseover: ->
       d3.select(this)
         .transition()
         .duration(200)
+        .select('path')
         .style("opacity", hoverLinkOpacity)
 
     # this is used as link_mouseout, too
@@ -496,6 +498,7 @@ D3.sankey =
       d3.selectAll(".link")
         .transition()
         .duration(200)
+        .select('path')
         .style("opacity", selectedLinkOpacity)
 
     # this method is called every time we're updating the chart

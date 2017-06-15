@@ -116,6 +116,7 @@ D3.merit_order_hourly_supply =
           .select('path.area')
           .attr('d', (data) -> area(data.values) )
           .attr('fill', (data) -> data.color )
+          .attr('data-tooltip-text', (d) -> d.label)
 
         @svg.selectAll('g.serie-line')
           .data(@totalDemand)

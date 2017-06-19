@@ -50,7 +50,7 @@ D3.dynamic_demand_curve =
     getLegendSeries: ->
       legendSeries = []
       @series.forEach (serie) =>
-         if serie.future_value().find((v) -> (v > 0))
+         if _.find(serie.future_value(), (v) -> (v > 0))
            legendSeries.push(serie)
 
       legendSeries

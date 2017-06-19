@@ -7,7 +7,9 @@ class ApiProxyController < ApplicationController
   def default
     uri = "/#{params[:url]}"
     uri += ".#{params[:format]}" if params[:format]
-    parameters = params.except('controller', 'action', 'url', 'format').to_json
+
+    parameters =
+      params.permit!.to_h.except('controller', 'action', 'url', 'format')
 
     response = if request.get?
       NastyProxy.get uri

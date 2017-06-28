@@ -4,20 +4,56 @@
 
       <table class="chart autostripe">
         <thead>
-          <tr><th>Topic</th><th>Start-value</th><th>Scenario result</th><th>Target</th></tr>
+          <tr><th>Topic</th><th>Start-value</th><th>Scenario result</th><th>Target</th><th>Read more...</th></tr>
         </thead>
         <tbody>
-          <tr><td>Targets and goals</td><td>-</td><td>6</td><td>4/6 RED</td></tr>
-          <tr><td>Total energy</td>
+          <tr>
+            <td>Targets and goals</td>
+            <td>-</td>
+            <td>6</td>
+            <td>4/6 RED</td>
+            <td><a href="#Targets-and-goals">Targets</a></td>
+          </tr>
+          <tr>
+              <td>Total energy</td>
               <td>{{ present.dashboard_energy_demand_primary_of_final | autoscale: 'MJ' }}</td>
               <td>{{ future.dashboard_energy_demand_primary_of_final | autoscale: 'MJ' }}</td>
               <td>3 EJ GREEN</td>
+              <td><a href="#Energy-use-and-production">Energy use</a></td></tr>
           </tr>
-          <tr><td>CO2-reduction</td>
+          <tr>
+              <td>CO2-emissions</td>
               <td>{{ present.policy_goal_co2_emissions_value | autoscale: 'MT' }}</td>
               <td>{{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}</td>
               <td>{{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }} RED</td>
+              <td><a href="#CO2-emissions">CO2-emissions</a></td></tr>
           </tr>
+          <tr>
+              <td>Curtailed electricity</td>
+              <td>{{ present.electricity_curtailed  }}</td>
+              <td>{{ future.electricity_curtailed }}</td>
+              <td> 
+                {% if future.electricity_curtailed.value > 0 %} 
+                  RED 
+                {% else %} 
+                  GREEN
+                {% endif %}</td>
+              <td><a href="#Suggestions-for-improvement">Suggestions for improvement</a></td></tr>
+          </tr>
+          <tr>
+              <td>Costs</td>
+              <td>{{ present.dashboard_total_costs | autoscale: 'bln_euro' }}</td>
+              <td>{{ future.dashboard_total_costs | autoscale: 'bln_euro' }} </td>
+              <td> 
+                {% if future.policy_goal_total_energy_costs_reached.value %} 
+                  {{ future.policy_goal_total_energy_costs_target_value | autoscale: 'bln_euro' }} GREEN 
+                {% else %} 
+                  {{ future.policy_goal_total_energy_costs_target_value | autoscale: 'bln_euro' }} RED 
+                {% endif %}
+              </td>
+              <td><a href="#Costs-of-energy">Costs of energy</a></td></tr>
+          </tr>
+
         </tbody>
       </table>
 
@@ -758,7 +794,7 @@
 
     In your scenario, there are
     {{ future.dashboard_total_number_of_excess_events }} hours that electricity production exceeds demand.
-    This electricity is not used (curtailed). To usefully employ the excess electricity you can
+    Some of this electricity is not used (curtailed). To usefully employ the excess electricity you can
 
     <ul>
       <li><strong>Store electricity</strong>: in the flexibility section, you can build batteries in homes or

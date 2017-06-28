@@ -2,6 +2,26 @@
 <header>
  <h1 class="banner">Scenario quick-scan</h1>
 
+      <table class="chart autostripe">
+        <thead>
+          <tr><th>Topic</th><th>Start-value</th><th>Scenario result</th><th>Target</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Targets and goals</td><td>-</td><td>6</td><td>4/6 RED</td></tr>
+          <tr><td>Total energy</td>
+              <td>{{ present.dashboard_energy_demand_primary_of_final | autoscale: 'MJ' }}</td>
+              <td>{{ future.dashboard_energy_demand_primary_of_final | autoscale: 'MJ' }}</td>
+              <td>3 EJ GREEN</td>
+          </tr>
+          <tr><td>CO2-reduction</td>
+              <td>{{ present.policy_goal_co2_emissions_value | autoscale: 'MT' }}</td>
+              <td>{{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}</td>
+              <td>{{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }} RED</td>
+          </tr>
+        </tbody>
+      </table>
+
+
     {% if future.policy_goal_co2_emissions_target_value.value  %}
         {% if future.policy_goal_co2_emissions_reached.value %}
           <p>

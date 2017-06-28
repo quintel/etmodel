@@ -1,3 +1,72 @@
+<!-- Summary table for easy comparison-->
+<header>
+ <h1 class="banner">Scenario quick-scan</h1>
+
+    {% if future.policy_goal_co2_emissions_target_value.value  %}
+        {% if future.policy_goal_co2_emissions_reached.value %}
+          <p>
+            You have reached your goal of
+            {{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}
+          </p>
+        {% else %}
+          <p>
+            You have only managed to reduce CO2-emissions to
+            {{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}
+            falling short of your goal of limiting emissions to
+            {{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}.
+            Try to reduce more CO2 by the options listed in the 
+            <a href="#CO2-emissions">CO2-emissions</a> section.
+          </p>                  
+        {% endif %}
+    {% endif %}
+
+
+    {% if future.primary_energy_demand_percentage_wrt_start_year > 95.0 %}
+      <p>
+        In your scenario, primary energy use is still
+        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}% of its
+        start-year value.
+      </p>
+    {% else %}
+      <p>
+        In your scenario, primary energy use is has been reduced to
+        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}% of its value in the
+        start-year.
+      </p>
+
+    {% endif %}
+
+
+    {% if future.co2_reduction_percentage > 40.0 %}
+      <p>
+        The realised CO2-reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
+        exceeds the Dutch national ambition for 2030 of 40%.
+
+      {% if future.co2_reduction_percentage > 80.0 %}
+        Your scenario even surpasses the EU goal of 80% - 95% reduction by 2050!
+      {% endif %}
+      </p>
+    {% else %}
+      <p>
+        The realised CO2-reduction of
+        {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
+        falls short of the Dutch national ambition for 2030 of 40%.
+      </p>
+    {% endif %}
+
+    <p>
+      The renewability percentage of energy consumed in your scenario is
+      {{ future.dashboard_renewability | times: 100 | round: 1 | without_unit }}%.
+    </p>
+
+    <p>
+      Your scenario has {{ future.dashboard_blackout_hours | without_unit }}
+      blackout hours.
+    </p>
+
+</header>
+
+
 <header>
   <h1>Your Scenario Results</h1>
   <p class="creation-date">

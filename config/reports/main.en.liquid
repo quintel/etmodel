@@ -86,6 +86,66 @@
       blackout hours.
     </p>
 
+  <!-- Only display if the user has set targets -->
+  <h1 class="banner">Targets and goals</h1>
+
+    <!-- CO2 -->
+    {% if future.policy_goal_co2_emissions_target_value.value  %}
+      <h2>CO2-reduction</h2>
+
+        {% if future.policy_goal_co2_emissions_reached.value %}
+          <p>
+            You have reached your goal of
+            {{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}
+          </p>
+        {% else %}
+          <p>
+            You have only managed to reduce emissions to
+            {{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}
+            falling short of your goal of limiting emissions to
+            {{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}.
+            Try to reduce more CO2 by the options listed in the 
+            <a href="#CO2-emissions">CO2 emissions</a> section.
+          </p>                  
+        {% endif %}
+    {% endif %}
+
+    <!-- Renewability -->
+    {% if future.policy_goal_renewable_percentage_target_value.value %}
+      <h2>Renewability</h2>
+        <p>
+          {% if future.policy_goal_renewable_percentage_reached.value %}
+            You succesfully reached your goal of 
+            {{ future.policy_goal_renewable_percentage_target_value | times: 100 | round: 1 }}%
+            by realizing a renewability share for energy of       
+            {{ future.policy_goal_renewable_percentage_value | times: 100 | round: 1 }}%!
+          {% else %}
+            You only managed
+            {{ future.policy_goal_renewable_percentage_value | times: 100 | round: 1 }}% 
+            falling short of you goal of 
+            {{ future.policy_goal_renewable_percentage_target_value | times: 100 | round: 1 }}%.
+          {% endif %}
+        </p>
+    {% endif %}
+
+    <!-- Costs -->
+    {% if future.policy_goal_total_energy_costs_target_value.value %}
+      <h2>Costs of energy</h2>
+        <p>
+          {% if future.policy_goal_total_energy_costs_reached.value %}
+            You succesfully reached your goal of keeping costs under
+            {{ future.policy_goal_total_energy_costs_target_value | round: 1 }} bln EUR per year
+            by realizing total annual costs for energy of       
+            {{ future.policy_goal_total_energy_costs_value | round: 1 }} bln EUR!
+          {% else %}
+            The annual costs for energy in you scenario are
+            {{ future.policy_goal_total_energy_costs_value |  round: 1 }} bln EUR
+            which is more than your goal of 
+            {{ future.policy_goal_total_energy_costs_target_value | round: 1 }} bln EUR per year.
+          {% endif %}
+        </p>
+    {% endif %}
+
   <h1 class="banner">Energy use and production</h1>
 
     <h2>Energy consumption</h2>

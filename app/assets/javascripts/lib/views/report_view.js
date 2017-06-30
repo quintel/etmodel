@@ -68,6 +68,10 @@
       if (node.blocks) {
         node.blocks.forEach(function (block) {
           queries = queries.concat(queriesFromBlock(block));
+
+          if (block.attachment) {
+            queries = queries.concat(extractQueries(block.attachment));
+          }
         });
       } else if (node.name && node.name.match(queryRe)) {
         queries = queries.concat([node.name.match(queryRe)[1]]);

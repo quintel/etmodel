@@ -59,6 +59,31 @@ abbr
 strong abbr
   font-weight: bold
 
+blockquote
+  border-left: 2px solid lighten($grey, 30%)
+  margin-left: 10px
+  padding: 0 1rem 0.25rem 1.5rem
+  position: relative
+  color: $grey
+
+  p:first-child:before
+    background: white
+    color: lighten($grey, 25%)
+    content: '“'
+    font-family: Georgia, serif
+    font-size: 58px
+    font-style: italic
+    height: 26px
+    left: -17px
+    line-height: 1
+    position: absolute
+    top: 7px
+
+  p:first-child
+    padding-top: 8px
+  p:last-child
+    margin-bottom: 0
+
 // Top Navigation Bar
 // ------------------
 

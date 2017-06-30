@@ -1,142 +1,178 @@
-<!-- Summary table for easy comparison-->
 <header>
- <h1 class="banner">Scenario quick-scan</h1>
+  <div class="inner">
+    <h1>Your Scenario Results</h1>
+    <p class="scenario-details">
+      {% current_date %}
+      <span class="bullet">&bull;</span>
+      {% link_to_scenario %}
+      <span class="bullet">&bull;</span>
+      by Quintel Intelligence<br />
+      <span class="region {{ settings.area_code }}">
+        {{ settings.area_code | upcase }}
+      </span>
+      <span class="bullet">&bull;</span>
+      {{ settings.start_year }}
+      to {{ settings.end_year }}
+    </p>
+  </div>
+</header>
 
-      <table class="chart autostripe">
-        <thead>
-          <tr><th>Topic</th><th>Start-value</th><th>Scenario result</th><th>Target</th><th>Read more...</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Targets and goals</td>
-            <td>-</td>
-            <td>6</td>
-            <td>4/6 RED</td>
-            <td><a href="#Targets-and-goals">Targets</a></td>
-          </tr>
-          <tr>
-              <td>Total energy</td>
-              <td>{{ present.dashboard_energy_demand_primary_of_final | autoscale: 'MJ' }}</td>
-              <td>{{ future.dashboard_energy_demand_primary_of_final | autoscale: 'MJ' }}</td>
-              <td>3 EJ GREEN</td>
-              <td><a href="#Energy-use-and-production">Energy use</a></td></tr>
-          </tr>
-          <tr>
-              <td>CO2-emissions</td>
-              <td>{{ present.policy_goal_co2_emissions_value | autoscale: 'MT' }}</td>
-              <td>{{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}</td>
-              <td>{{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }} RED</td>
-              <td><a href="#CO2-emissions">CO2-emissions</a></td></tr>
-          </tr>
-          <tr>
-              <td>Curtailed electricity</td>
-              <td>{{ present.electricity_curtailed  }}</td>
-              <td>{{ future.electricity_curtailed }}</td>
-              <td> 
-                {% if future.electricity_curtailed.value > 0 %} 
-                  RED 
-                {% else %} 
-                  GREEN
-                {% endif %}</td>
-              <td><a href="#Suggestions-for-improvement">Suggestions for improvement</a></td></tr>
-          </tr>
-          <tr>
-              <td>Costs</td>
-              <td>{{ present.dashboard_total_costs | autoscale: 'bln_euro' }}</td>
-              <td>{{ future.dashboard_total_costs | autoscale: 'bln_euro' }} </td>
-              <td> 
-                {% if future.policy_goal_total_energy_costs_reached.value %} 
-                  {{ future.policy_goal_total_energy_costs_target_value | autoscale: 'bln_euro' }} GREEN 
-                {% else %} 
-                  {{ future.policy_goal_total_energy_costs_target_value | autoscale: 'bln_euro' }} RED 
-                {% endif %}
-              </td>
-              <td><a href="#Costs-of-energy">Costs of energy</a></td></tr>
-          </tr>
+<!-- Summary table for easy comparison-->
+<section class="snapshot">
+  <h1 class="banner">At a glance&hellip;</h1>
 
-        </tbody>
-      </table>
-
-
-    {% if future.policy_goal_co2_emissions_target_value.value  %}
-        {% if future.policy_goal_co2_emissions_reached.value %}
-          <p>
-            You have reached your goal of
-            {{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}
-          </p>
-        {% else %}
-          <p>
-            You have only managed to reduce CO2-emissions to
-            {{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}
-            falling short of your goal of limiting emissions to
-            {{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}.
-            Try to reduce more CO2 by the options listed in the 
-            <a href="#CO2-emissions">CO2-emissions</a> section.
-          </p>                  
-        {% endif %}
-    {% endif %}
-
-
-    {% if future.primary_energy_demand_percentage_wrt_start_year > 95.0 %}
+  <ul class="summary-main">
+    <li class="target-missed">
       <p>
-        In your scenario, primary energy use is still
-        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}% of its
-        start-year value.
+        <strong><a href="#targets-and-goals">Targets and goals</a></strong><br />
+        Attained <strong>4 <abbr>of</abbr> 6</strong> targets
       </p>
+    </li>
+
+    <li><!-- class="target-met"> -->
+      <p>
+        <strong><a href="#energy-use-and-production">Total energy</a></strong><br />
+        Initial value:
+        <strong>{{ present.dashboard_energy_demand_primary_of_final | autoscale: 'MJ' }}</strong>
+        <span class="bullet">&bull;</span>
+        Scenario result:
+        <strong>{{ future.dashboard_energy_demand_primary_of_final | autoscale: 'MJ' }}</strong>
+      </p>
+    </li>
+
+    {% if future.policy_goal_co2_emissions_target_value.value %}
+      {% if future.policy_goal_co2_emissions_reached.value %}
+        <li class="target-met">
+      {% else %}
+        <li class="target-missed">
+      {% endif %}
     {% else %}
-      <p>
-        In your scenario, primary energy use is has been reduced to
-        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}% of its value in the
-        start-year.
-      </p>
-
+      <li>
     {% endif %}
+      <p>
+        <strong><a href="#co2-emissions">CO<sub>2</sub> emissions</a></strong><br />
+        Initial value:
+        <strong>{{ present.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong>
+        <span class="bullet">&bull;</span>
+        Scenario result:
+        <strong>{{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong>
+        {% if future.policy_goal_co2_emissions_target_value.value %}
+          <span class="bullet">&bull;</span>
+          Target:
+          <strong>{{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}</strong>
+        {% endif %}
+      </p>
+    </li>
 
+    {% if future.electricity_curtailed > 0 %}
+      <li class="target-missed">
+    {% else %}
+      <li class="target-met">
+    {% endif %}
+      <p>
+        <strong><a href="#suggestions-for-improvement">Curtailed electricity</a></strong><br />
+        Initial value:
+        <strong>{{ present.electricity_curtailed | autoscale: 'MJ' }}</strong>
+        <span class="bullet">&bull;</span>
+        Scenario result:
+        <strong>{{ future.electricity_curtailed | autoscale: 'MJ' }}</strong>
+      </p>
+    </li>
+
+    {% if future.policy_goal_total_energy_costs_target_value.value %}
+      {% if future.policy_goal_total_energy_costs_reached.value %}
+        <li class="target-met">
+      {% else %}
+        <li class="target-missed">
+      {% endif %}
+    {% else %}
+      <li>
+    {% endif %}
+      <p>
+        <strong><a href="#costs-of-energy">Costs</a></strong><br />
+        Initial value:
+        <strong>{{ present.policy_goal_total_energy_costs_value | autoscale: 'bln_euro' }}</strong>
+        <span class="bullet">&bull;</span>
+        Scenario result:
+        <strong>{{ future.policy_goal_total_energy_costs_value | autoscale: 'bln_euro' }}</strong>
+
+        {% if future.policy_goal_total_energy_costs_target_value.value %}
+          <span class="bullet">&bull;</span>
+          Target: <strong>3 <abbr>EJ</abbr></strong>
+        {% endif %}
+      </p>
+    </li>
+  </ul>
+  <!-- end: main summary items -->
+
+  <h4>More information</h4>
+
+  <ul class="summary-extras">
+    {% if future.primary_energy_demand_percentage_wrt_start_year > 95.0 %}
+      <li class="target-missed">
+        In your scenario, primary energy use is still
+        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}%
+        of the {{ settings.start_year }} value.
+      </li>
+    {% else %}
+      <li>
+        In your scenario, primary energy use has been reduced to
+        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}%
+        of its value in {{ settings.start_year }}.
+      </li>
+    {% endif %}
 
     {% if future.co2_reduction_percentage > 40.0 %}
-      <p>
-        The realised CO2-reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
+      <li class="target-met">
+        The realised CO<sub>2</sub> reduction of
+        {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
         exceeds the Dutch national ambition for 2030 of 40%.
 
-      {% if future.co2_reduction_percentage > 80.0 %}
-        Your scenario even surpasses the EU goal of 80% - 95% reduction by 2050!
-      {% endif %}
-      </p>
+        {% if future.co2_reduction_percentage > 80.0 %}
+          Your scenario even surpasses the EU goal of 80% - 95% reduction by
+          2050!
+        {% endif %}
+      </li>
     {% else %}
-      <p>
-        The realised CO2-reduction of
+      <li class="target-missed">
+        The realised CO<sub>2</sub> reduction of
         {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
         falls short of the Dutch national ambition for 2030 of 40%.
-      </p>
+      </li>
     {% endif %}
 
-    <p>
-      The renewability percentage of energy consumed in your scenario is
-      {{ future.dashboard_renewability | times: 100 | round: 1 | without_unit }}%.
-    </p>
+    {% if future.policy_goal_renewable_percentage_target_value.value  %}
+      {% if future.policy_goal_renewable_percentage_reached.value %}
+        <li class="target-met">
+      {% else %}
+        <li class="target-missed">
+      {% endif %}
+        The renewability percentage of energy consumed in your scenario is
+        {{ future.dashboard_renewability | times: 100 | round: 1 | without_unit }}%.
+      </li>
+    {% else %}
+      <li>
+        The renewability percentage of energy consumed in your scenario is
+        {{ future.dashboard_renewability | times: 100 | round: 1 | without_unit }}%.
+      </li>
+    {% endif %}
 
-    <p>
+    {% if future.dashboard_blackout_hours.value %}
+      <li class="target-missed">
+    {% else %}
+      <li class="target-met">
+    {% endif %}
       Your scenario has {{ future.dashboard_blackout_hours | without_unit }}
       blackout hours.
-    </p>
+    </li>
+  </ul>
+  <!-- end: summary extras -->
+</section>
 
-</header>
 
+<main>
+  {% toc %}
 
-<header>
-  <h1>Your Scenario Results</h1>
-  <p class="creation-date">
-    {% current_date %}, Nr: {% link_to_scenario %} ~ by Chael Kruip
-  </p>
-
-  <p class="scenario-desc">
-    for the region {{ settings.area_code }}
-    from {{ settings.start_year }}
-    to {{ settings.end_year }}
-  </dl>
-</header>
-
-<div class="preamble">
   <h1 class="banner">Introduction</h1>
 
   <p>
@@ -160,57 +196,6 @@
     Appendix C provides background information about the Energy Transition Model.
   </p>
 
-  <h1 class="banner">Table of contents</h1>
-  {% toc 2 %}
-</div>
-
-<main>
-  <h1 class="banner">Summary</h1>
-
-    {% if future.primary_energy_demand_percentage_wrt_start_year > 95.0 %}
-
-      <p>
-        In your scenario, primary energy use is still
-        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 2 }}% of its
-        start-year value.
-      </p>
-    {% else %}
-      <p>
-        In your scenario, primary energy use is has been reduced to
-        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 2 }}% of its value in the
-        start-year.
-      </p>
-
-    {% endif %}
-
-
-    {% if future.co2_reduction_percentage > 40.0 %}
-      <p>
-        The realised CO2-reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
-        exceeds the Dutch national ambition for 2030 of 40%.
-
-      {% if future.co2_reduction_percentage > 80.0 %}
-        Your scenario even surpasses the EU goal of 80% - 95% reduction by 2050!
-      {% endif %}
-      </p>
-    {% else %}
-      <p>
-        The realised CO2-reduction of
-        {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
-        falls short of the Dutch national ambition for 2030 of 40%.
-      </p>
-    {% endif %}
-
-    <p>
-      The renewability percentage of energy consumed in your scenario is
-      {{ future.dashboard_renewability | times: 100 | round: 1 | without_unit }}%.
-    </p>
-
-    <p>
-      Your scenario has {{ future.dashboard_blackout_hours | without_unit }}
-      blackout hours.
-    </p>
-
   <!-- Only display if the user has set targets -->
   <h1 class="banner">Targets and goals</h1>
 
@@ -229,9 +214,9 @@
             {{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}
             falling short of your goal of limiting emissions to
             {{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}.
-            Try to reduce more CO2 by the options listed in the 
+            Try to reduce more CO2 by the options listed in the
             <a href="#CO2-emissions">CO2 emissions</a> section.
-          </p>                  
+          </p>
         {% endif %}
     {% endif %}
 
@@ -240,14 +225,14 @@
       <h2>Renewability</h2>
         <p>
           {% if future.policy_goal_renewable_percentage_reached.value %}
-            You succesfully reached your goal of 
+            You succesfully reached your goal of
             {{ future.policy_goal_renewable_percentage_target_value | times: 100 | round: 1 }}%
-            by realizing a renewability share for energy of       
+            by realizing a renewability share for energy of
             {{ future.policy_goal_renewable_percentage_value | times: 100 | round: 1 }}%!
           {% else %}
             You only managed
-            {{ future.policy_goal_renewable_percentage_value | times: 100 | round: 1 }}% 
-            falling short of you goal of 
+            {{ future.policy_goal_renewable_percentage_value | times: 100 | round: 1 }}%
+            falling short of you goal of
             {{ future.policy_goal_renewable_percentage_target_value | times: 100 | round: 1 }}%.
           {% endif %}
         </p>
@@ -260,12 +245,12 @@
           {% if future.policy_goal_total_energy_costs_reached.value %}
             You succesfully reached your goal of keeping costs under
             {{ future.policy_goal_total_energy_costs_target_value | round: 1 }} bln EUR per year
-            by realizing total annual costs for energy of       
+            by realizing total annual costs for energy of
             {{ future.policy_goal_total_energy_costs_value | round: 1 }} bln EUR!
           {% else %}
             The annual costs for energy in you scenario are
             {{ future.policy_goal_total_energy_costs_value |  round: 1 }} bln EUR
-            which is more than your goal of 
+            which is more than your goal of
             {{ future.policy_goal_total_energy_costs_target_value | round: 1 }} bln EUR per year.
           {% endif %}
         </p>
@@ -853,7 +838,7 @@
   {% endif %}
 
 
-  <h1 class="banner">APPENDIX A: Slider settings</h1>
+  <h1 class="banner">Appendix A: Slider settings</h1>
 
   This appendix lists all the sliders which have been moved from their default value.
 
@@ -881,7 +866,7 @@
     </p>
   {% endif %}
 
-  <h1 class="banner">APPENDIX B: Investment costs</h1>
+  <h1 class="banner">Appendix B: Investment costs</h1>
 
   <p>
     The following (total) investments must be done to realise your scenario:
@@ -896,7 +881,7 @@
     of the two scenarios.
   {% endchart %}
 
-  <h1 class="banner">APPENDIX C: About The Energy Transition Model</h1>
+  <h1 class="banner">Appendix C: About The Energy Transition Model</h1>
 
     <h2>Introduction</h2>
 

@@ -303,7 +303,7 @@
       var li = $($('<li/>').append(
         $('<a/>')
           .attr('href', '#' + header.el.attr('id'))
-          .text(header.el.text())
+          .text(header.el.text().split(' ').slice(1).join(' '))
       ));
 
       if ((!maxDepth || (depth < maxDepth)) &&
@@ -371,7 +371,21 @@
       renderLiquid(
         // onSuccess
         function (template) {
-          self.$el.html(template);
+          var article = $('<article></article>').html(template);
+          var nav = $('<nav class="table-of-content"></nav>');
+
+          self.$el.empty().append(nav).append(article);
+
+          self.$el.append(
+            '<div id="credits"> ' +
+            '  &copy; Quintel Intelligence &bull;' +
+            ' ' + I18n.t('report.icons_by') +
+            '  <a href="http://www.flaticon.com/authors/freepik">Freepik</a>' +
+            '  &amp;' +
+            '  <a href="http://www.flaticon.com/authors/yannick">Yannick</a>' +
+            '</div>'
+          );
+
           if (cb) cb(template);
         },
         // onError
@@ -499,11 +513,13 @@
     },
 
     autoscale: function (value, unit) {
-      return (
-        '<abbr>' +
-          Metric.autoscale_value(value, unit) +
-        '</abbr>'
-      );
+      var split = Metric.autoscale_value(value, unit).split(' ');
+
+      if (split.length === 1) {
+        return split[0];
+      }
+
+      return split[0] + ' <abbr>' + split[1] + '</abbr>';
     },
 
     /**

@@ -1,10 +1,173 @@
 <header>
-  <h1>Analysis of Renewability in Your 2050 Scenario</h1>
-  <p>
-    <span class="creation-date">{% current_date %}</span>
-    <span class="scenario-link">{% link_to_scenario %}</span>
-  </p>
+  <div class="inner">
+    <h1>Your Scenario Results</h1>
+    <p class="scenario-details">
+      {% current_date %}
+      <span class="bullet">&bull;</span>
+      {% link_to_scenario %}
+      <span class="bullet">&bull;</span>
+      by Quintel Intelligence<br />
+      <span class="region {{ settings.area_code }}">
+        {{ settings.area_code | upcase }}
+      </span>
+      <span class="bullet">&bull;</span>
+      {{ settings.start_year }}
+      to {{ settings.end_year }}
+    </p>
+  </div>
 </header>
+
+<!-- Summary table for easy comparison-->
+<section class="snapshot">
+  <h1 class="banner">At a glance&hellip;</h1>
+
+  <ul class="summary-main">
+    <li class="target-missed">
+      <p>
+        <strong><a href="#targets-and-goals">Targets and goals</a></strong><br />
+        Attained <strong>4 <abbr>of</abbr> 6</strong> targets
+      </p>
+    </li>
+
+    <li><!-- class="target-met"> -->
+      <p>
+        <strong><a href="#energy-use-and-production">Total energy</a></strong><br />
+        Initial value:
+        <strong>{{ present.dashboard_energy_demand_primary_of_final | autoscale: 'MJ' }}</strong>
+        <span class="bullet">&bull;</span>
+        Scenario result:
+        <strong>{{ future.dashboard_energy_demand_primary_of_final | autoscale: 'MJ' }}</strong>
+      </p>
+    </li>
+
+    {% if future.policy_goal_co2_emissions_target_value.value %}
+      {% if future.policy_goal_co2_emissions_reached.value %}
+        <li class="target-met">
+      {% else %}
+        <li class="target-missed">
+      {% endif %}
+    {% else %}
+      <li>
+    {% endif %}
+      <p>
+        <strong><a href="#co2-emissions">CO<sub>2</sub> emissions</a></strong><br />
+        Initial value:
+        <strong>{{ present.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong>
+        <span class="bullet">&bull;</span>
+        Scenario result:
+        <strong>{{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong>
+        {% if future.policy_goal_co2_emissions_target_value.value %}
+          <span class="bullet">&bull;</span>
+          Target:
+          <strong>{{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}</strong>
+        {% endif %}
+      </p>
+    </li>
+
+    {% if future.electricity_curtailed > 0 %}
+      <li class="target-missed">
+    {% else %}
+      <li class="target-met">
+    {% endif %}
+      <p>
+        <strong><a href="#suggestions-for-improvement">Curtailed electricity</a></strong><br />
+        Initial value:
+        <strong>{{ present.electricity_curtailed | autoscale: 'MJ' }}</strong>
+        <span class="bullet">&bull;</span>
+        Scenario result:
+        <strong>{{ future.electricity_curtailed | autoscale: 'MJ' }}</strong>
+      </p>
+    </li>
+
+    {% if future.policy_goal_total_energy_costs_target_value.value %}
+      {% if future.policy_goal_total_energy_costs_reached.value %}
+        <li class="target-met">
+      {% else %}
+        <li class="target-missed">
+      {% endif %}
+    {% else %}
+      <li>
+    {% endif %}
+      <p>
+        <strong><a href="#costs-of-energy">Costs</a></strong><br />
+        Initial value:
+        <strong>{{ present.policy_goal_total_energy_costs_value | autoscale: 'bln_euro' }}</strong>
+        <span class="bullet">&bull;</span>
+        Scenario result:
+        <strong>{{ future.policy_goal_total_energy_costs_value | autoscale: 'bln_euro' }}</strong>
+
+        {% if future.policy_goal_total_energy_costs_target_value.value %}
+          <span class="bullet">&bull;</span>
+          Target: <strong>3 <abbr>EJ</abbr></strong>
+        {% endif %}
+      </p>
+    </li>
+  </ul>
+  <!-- end: main summary items -->
+
+  <h4>More information</h4>
+
+  <ul class="summary-extras">
+    {% if future.primary_energy_demand_percentage_wrt_start_year > 95.0 %}
+      <li class="target-missed">
+        In your scenario, primary energy use is still
+        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}%
+        of the {{ settings.start_year }} value.
+      </li>
+    {% else %}
+      <li>
+        In your scenario, primary energy use has been reduced to
+        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}%
+        of its value in {{ settings.start_year }}.
+      </li>
+    {% endif %}
+
+    {% if future.co2_reduction_percentage > 40.0 %}
+      <li class="target-met">
+        The realised CO<sub>2</sub> reduction of
+        {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
+        exceeds the Dutch national ambition for 2030 of 40%.
+
+        {% if future.co2_reduction_percentage > 80.0 %}
+          Your scenario even surpasses the EU goal of 80% - 95% reduction by
+          2050!
+        {% endif %}
+      </li>
+    {% else %}
+      <li class="target-missed">
+        The realised CO<sub>2</sub> reduction of
+        {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
+        falls short of the Dutch national ambition for 2030 of 40%.
+      </li>
+    {% endif %}
+
+    {% if future.policy_goal_renewable_percentage_target_value.value  %}
+      {% if future.policy_goal_renewable_percentage_reached.value %}
+        <li class="target-met">
+      {% else %}
+        <li class="target-missed">
+      {% endif %}
+        The renewability percentage of energy consumed in your scenario is
+        {{ future.dashboard_renewability | times: 100 | round: 1 | without_unit }}%.
+      </li>
+    {% else %}
+      <li>
+        The renewability percentage of energy consumed in your scenario is
+        {{ future.dashboard_renewability | times: 100 | round: 1 | without_unit }}%.
+      </li>
+    {% endif %}
+
+    {% if future.dashboard_blackout_hours.value %}
+      <li class="target-missed">
+    {% else %}
+      <li class="target-met">
+    {% endif %}
+      Your scenario has {{ future.dashboard_blackout_hours | without_unit }}
+      blackout hours.
+    </li>
+  </ul>
+  <!-- end: summary extras -->
+</section>
 
 <main>
   {% toc %}
@@ -93,10 +256,8 @@
       {{ future.costs_of_used_electricity | round: 2 | autoscale: 'euro' }}.
       <!-- Round a query value to 2dp and don't format with the unit -->
       Coastal area used by wind is
-      <abbr>
-        {{ future.area_used_for_coastal_wind | round: 2 | without_unit }}
-        km<sup>2</sup>.
-      </abbr>
+      {{ future.area_used_for_coastal_wind | round: 2 | without_unit }}
+      <abbr>km<sup>2</sup></abbr>.
 
       In your scenario, wind turbines and solar arrays are producing
       {{ future.electricity_produced_from_wind_and_solar | autoscale: 'MJ' }} of electricity, while

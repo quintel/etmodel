@@ -1,18 +1,8 @@
-$serif-font-family: "Linux Libertine O", "Times New Roman", "Times", serif
-$sans-font-family: "Merriweather Sans", sans-serif
-$body_font_family: $serif-font-family
+$font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+$body_font_family: $font-family
 
-@font-face
-  font-family: 'Linux Libertine O'
-  src: asset-url('linlibertine_r-webfont.woff2') format('woff2'), asset-url('linlibertine_r-webfont.woff') format('woff')
-  font-weight: normal
-  font-style: normal
-
-@font-face
-  font-family: 'Linux Libertine O'
-  src: asset-url('linlibertine_rb-webfont.woff2') format('woff2'), asset-url('linlibertine_rb-webfont.woff') format('woff')
-  font-weight: bold
-  font-style: normal
+$font-color: #222
+$grey: #7e868e
 
 @keyframes loading-bar
   0%
@@ -38,76 +28,48 @@ $body_font_family: $serif-font-family
 @import blockchart
 @import jquery.qtip
 
-.busybox-spinner
-  display: none
-
-#report .loading
-  padding-top: 1rem
-  h1, p
-    text-align: center
-    font-family: $sans-font-family
-  h1
-    max-width: 100%
-  p
-    color: #777
-    line-height: 150%
-
-#navbar .loading
-  position: absolute
-  bottom: 0
-  left: 0
-  right: 0
-  .bar
-    opacity: 1
-    background: #67cc6f
-    height: 3px
-    animation-duration: 6s
-    animation-name: loading-bar
-    animation-timing-function: cubic-bezier(0.37, 0, 0.19, 1)
-    animation-fill-mode: forwards
-    transition: background-color 1s
-    &.done
-      animation-duration: 1.0s
-      animation-name: loading-bar-done
-      animation-fill-mode: forwards
-    &.error
-      background-color: #ec6262
-
 html.report
-  background: #fafafa
-  font-size: 125%
-  font-family: $serif-font-family
-  line-height: 130%
+  background: white
+  font-size: 112.5%
+  font-family: $font-family
+  line-height: 150%
 
   body
     margin: 0
-    padding-top: 4rem
+    padding-top: 53px
 
 sup, sub
   line-height: 0
 
 a
-  color: #1173b5
+  border-radius: 3px
+  color: #2474bd
+  padding: 2px
+  margin: 0 -2px
   text-decoration: none
+  &:hover
+    background: #fff5b0
+    color: $font-color
 
-abbr,
-  -moz-font-feature-settings: "liga" 1, "onum", "c2sc", "smcp"
-  -ms-font-feature-settings: "liga" 1, "onum", "c2sc", "smcp"
-  -webkit-font-feature-settings: "liga", "onum", "c2sc", "smcp"
-  -o-font-feature-settings: "liga", "onum", "c2sc", "smcp"
-  font-feature-settings: "liga", "onum", "c2sc", "smcp"
-  letter-spacing: 0.04em
-  white-space: nowrap
+abbr
+  font-size: 0.8333rem
+  font-weight: 500
+  line-height: 0
+  text-transform: uppercase
+strong abbr
+  font-weight: bold
+
+// Top Navigation Bar
+// ------------------
 
 #navbar
   background: white
   background: rgba(254, 254, 254, 0.95)
   border-bottom: 1px solid #ddd
-  font-family: $sans-font-family
-  font-size: 0.7rem
+  font-size: 0.8333rem
   line-height: 100%
   position: fixed
-  padding: 1rem 2rem
+  padding: 1rem 20px
   top: 0
   left: 0
   right: 0
@@ -120,17 +82,19 @@ abbr,
       height: 17px
       margin: 0px 2px -1px 0
       vertical-align: text-top
-      width: 17px
+      width: 16px
 
   .disabled
-    color: #888
+    color: $grey
     cursor: default
     opacity: 0.5
 
   a
-    color: #888
+    color: $grey
+    white-space: nowrap
     &:hover
-      color: #333
+      background: none
+      color: $font-color
 
   ul
     float: right
@@ -139,94 +103,181 @@ abbr,
     padding: 0
     li
       display: inline-block
-      margin-left: 0.7rem
-
-.qtip-bootstrap
-  font-family: $sans-font-family
-  font-size: 0.7rem
-  .qtip-titlebar
-    font-weight: bold
+      margin-left: 1rem
 
 #report
-  color: #333
-  hyphens: auto
-  margin: 2em auto
-  width: 32em
+  color: $font-color
 
-  -moz-font-feature-settings: "liga" 1, "onum"
-  -ms-font-feature-settings: "liga" 1, "onum"
-  -webkit-font-feature-settings: "liga", "onum"
-  -o-font-feature-settings: "liga", "onum"
-  font-feature-settings: "liga", "onum"
+  // Sidebar
+  // -------
+
+  nav
+    background: #fff
+    border-right: 1px solid #d6e0e6
+    bottom: 0px
+    box-shadow: 0 0 5px #d6e0e6
+    color: $grey
+    font-size: 13px
+    left: 0
+    line-height: 1.7
+    overflow-x: hidden
+    overflow-y: auto
+    padding: 20px
+    position: fixed
+    transition: all 0.3s ease-in-out
+    top: 53px
+    width: 230px
+
+    &:hover
+      color: $font-color
+      ol.toc a
+        color: $font-color
+
+    ol.toc
+      margin-top: 0
+
+      a
+        color: $grey
+        transition: color 0.2s
+        &:hover
+          color: $font-color
+      li
+        font-size: 14px
+        font-weight: bold
+        margin-top: 0.5rem
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+        &:first-child
+          margin-top: 0
+
+      ol.toc
+        padding-left: 0
+        li
+          margin-top: 0
+          a
+            font-size: 13px
+            font-weight: normal
+            text-decoration: none
+        ol.toc
+          padding-left: 1rem
+
+  .report-view main, .report-view section, header .inner
+    margin: 1em auto
+    padding: 0 1rem
+    width: 38em
+
+  article, #credits
+    margin-left: 271px
+
+  #credits
+    color: lighten($grey, 20%)
+    font-size: 14px
+    margin-top: 4rem
+    margin-bottom: 2rem
+    text-align: center
+    a
+      color: lighten($grey, 20%)
+      &:hover
+        background: none
+        color: $font-color
+        text-decoration: underline
+
+  section.snapshot
+    border-bottom: 1px solid #ccc
+    padding-bottom: 2rem
+    margin-bottom: 2rem
+
+  .bullet
+    margin: 0 3px
+
+  ul.user-values
+    list-style: none
+    padding-left: 0
+
+  // Main Header
+  // -----------
 
   header
-    border-bottom: 1px solid #ccc
-    hyphens: initial
-    padding: 1rem 0 4rem
+    background: #ecf1f5
+    border-bottom: 1px solid #d6e0e6
+    padding: 1.5rem 0
+    margin-bottom: 3rem
+    text-align: center
+
     h1
-      font-family: $sans-font-family
+      background: image-url("reports/title.svg") top center no-repeat
+      background-size: 96px
       font-size: 2rem
-      line-height: 130%
-      width: 100%
-    .creation-date, .scenario-desc, dl, .scenario-link .desc
-      display: block
-      text-transform: uppercase
-      letter-spacing: 0.06rem
-      word-spacing: 0.06rem
-      -moz-font-feature-settings: "liga" 1, "onum", "c2sc", "smcp"
-      -ms-font-feature-settings: "liga" 1, "onum", "c2sc", "smcp"
-      -webkit-font-feature-settings: "liga", "onum", "c2sc", "smcp"
-      -o-font-feature-settings: "liga", "onum", "c2sc", "smcp"
-      font-feature-settings: "liga", "onum", "c2sc", "smcp"
-    .scenario-link
-      display: block
-      margin-bottom: 0
-      .desc
-        display: inline
+      padding: 122px 5rem 0
+      line-height: 125%
+      max-width: initial
+      -webkit-print-color-adjust: exact
+
+    h1 + p
+      color: darken($grey, 5%)
+      margin-top: -0.5rem
+      font-size: 15px
+
+    .scenario-details
+      img
+        margin-top: -5px
+        vertical-align: middle
       a
-        font-family: monospace
-        font-size: 0.9rem
-        line-height: 0
-    .author
-      display: block
-      font-style: italic
-    dl
-      margin-top: 0
-    dt:after
-      content: " • "
-    dt, dd
-      display: inline-block
-      margin-left: 0
-    dd
-      margin-right: 0.75rem
+        color: darken($grey, 5%)
+        &:hover
+          background: none
+          color: $font-color
+
+  .region
+    &.be, &.br, &.de, &.es, &.eu, &.fr, &.nl, &.pl, &.uk
+      padding: 1px 0 0 22px
+      background-size: 18px 18px
+      background-repeat: no-repeat
+      -webkit-print-color-adjust: exact
+    @each $region in be, br, de, es, eu, fr, nl, pl, uk
+      &.#{$region}
+        background-image: image-url("reports/regions/#{$region}.svg")
+
+  // Headers
+  // -------
 
   h1, h2, h3
     font-weight: bold
-    font-family: $sans-font-family
-    font-size: 1.15rem
+    font-size: 1.5rem
     margin: 1rem 0
     max-width: 80%
-    .section-number
-      color: #9a8da9
-      display: inline-block
-      font-weight: normal
-      letter-spacing: -0.06rem
-      margin-right: 0.25rem
-  h2, h3
-    font-size: 1em
+  h2,
+    font-size: 1.25rem
   h3
     font-weight: normal
+  .section-number
+    display: none
+
+  main
+    h1, h2, h3
+      // Ensures that links to headers don't result in the text appearing behind
+      // the page header.
+      margin-top: -4rem
+      padding-top: 4rem
+    h1
+      margin-top: -3rem
+
+  // Table of contents
+  // -----------------
+
+  main .toc
+    display: none
 
   ol.toc
     list-style: none
     padding-left: 0
 
     ol.toc
-      padding-left: 1rem
+      padding-left: 1.5rem
 
-  ul.user-values
-    list-style: none
-    padding-left: 0
+  // Charts
+  // ------
 
   .chart_canvas #canvas_container
     background: none
@@ -234,7 +285,7 @@ abbr,
   div.chart
     border: 1px solid #ddd
     +pie-clearfix
-    font-family: $sans-font-family
+    font-family: $font-family
     margin: 1em 0
     overflow: visible
     padding-bottom: 5px
@@ -261,10 +312,13 @@ abbr,
         padding: 0 7px
         width: auto !important
 
+        .rect
+          -webkit-print-color-adjust: exact
+
     .caption
       border-top: 1px solid #ddd
       color: #777
-      font-size: 0.7rem
+      font-size: 0.8333rem
       font-weight: 300
       line-height: 1.5
       margin: 1rem 2rem
@@ -272,7 +326,7 @@ abbr,
       text-align: center
 
     &, .legend .legend-item, text
-      font-size: 0.7rem
+      font-size: 0.8333rem
       font-weight: 300
 
     .legend .legend-item span.rect
@@ -281,29 +335,25 @@ abbr,
 
     div.d3_container text, .legend .legend-item
       // Chart axis labels
-      font-family: $sans-font-family
+      font-family: $font-family
 
     table
       margin-bottom: 0
 
+  // Chart Tables
+  // ------------
+
   table.chart
-    border-bottom-color: #9a8da9
-    -moz-font-feature-settings: "tnum"
-    -ms-font-feature-settings: "tnum"
-    -webkit-font-feature-settings: "tnum"
-    -o-font-feature-settings: "tnum"
-    font-feature-settings: "tnum"
-    hyphens: initial
+    border-bottom-color: #5386b5
     margin-bottom: 1rem
     th, td
       font-size: 1rem
       text-align: center
     thead th
-      background-color: #9a8da9
+      background-color: #5386b5
     thead th, thead td, tfoot td, tfoot th
-      border-color: #9a8da9
+      border-color: #5386b5
 
-  // Charts which are rendered as tables.
   div.chart .table_canvas
     background: none
     padding-top: 0
@@ -318,23 +368,73 @@ abbr,
         span.legend_block, span.legend_label
           display: inline-block
           float: none
-  main
-    h1, h2, h3
-      // Ensures that links to headers don't result in the text appearing behind
-      // the page header.
-      margin-top: -4rem
-      padding-top: 4rem
-    h1:first-of-type
-      margin-top: -3rem
-  .preamble + main h1:first-of-type
-    margin-top: -4rem
+
+  // "At a glance..."
+  // ----------------
+
+  .snapshot
+    ul
+      list-style: none
+      padding-left: 0
+    li
+      background: image-url("reports/information.svg") 0 4px no-repeat
+      background-size: 44px 44px
+      margin-bottom: 1rem
+      padding-left: 54px
+      -webkit-print-color-adjust: exact
+    .target-missed
+      background-image: image-url("reports/target-missed.svg")
+    .target-met
+      background-image: image-url("reports/target-met.svg")
+    ul.summary-extras
+      li
+        background-size: 22px 22px
+        background-position: 0px 2px
+        padding-left: 32px
+
+// Custom ETM Styles
+// -----------------
 
 .charts_container .chart_canvas
   background: none
 
+// Loading and Errors
+// ------------------
+
+#report .loading
+  padding-top: 4rem
+  h1, p
+    text-align: center
+  h1
+    max-width: 100%
+  p
+    color: $grey
+    line-height: 150%
+
+#navbar .loading
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  .bar
+    opacity: 1
+    background: #32be64
+    height: 3px
+    animation-duration: 6s
+    animation-name: loading-bar
+    animation-timing-function: cubic-bezier(0.37, 0, 0.19, 1)
+    animation-fill-mode: forwards
+    transition: background-color 1s
+    &.done
+      animation-duration: 1.0s
+      animation-name: loading-bar-done
+      animation-fill-mode: forwards
+    &.error
+      background-color: #ec6262
+
 #report .report-errors
   color: #e24545
-  font-family: $sans-font-family
+  font-family: $font-family
   font-weight: bold
 
   h3
@@ -354,17 +454,32 @@ abbr,
     padding-left: 1rem
     margin-left: 1rem
 
+// Custom Library Styles
+// ---------------------
+
+.busybox-spinner
+  display: none
+
+.qtip-bootstrap
+  font-family: $font-family
+  font-size: 0.7rem
+  .qtip-titlebar
+    font-weight: bold
+
+// Print Styles
+// ------------
+
 @media print
   @page
-    margin: 3cm 5cm
+    margin: 3cm 4cm
 
-  #navbar
+  #navbar, #credits, nav
     display: none
 
   html.report
     background: none
-    font-size: 120%
-    line-height: 130%
+    font-size: 77.778%
+    line-height: 150%
     body
       padding-top: 0
 
@@ -372,14 +487,47 @@ abbr,
     margin: auto
     width: auto
 
+    article, #credits
+      margin-left: 0
+
+    .report-view main, .report-view section, header .inner
+      margin-left: 0
+      margin-right: 0
+      width: auto
+
     header
       padding-top: 0
+
+      h1, .inner
+        margin-top: 0
+      .inner
+        padding-top: 2rem
+
+    .snapshot
+      li
+        background-size: 29px 29px
+        padding-left: 38px
+
+      ul.summary-extras li
+        background-size: 14px 14px
+        background-position: 0px 2px
+        padding-left: 21px
 
     .section-number, header .creation-date
       letter-spacing: 0
 
+    .toc
+      display: block
+
     h1, h2, h3, h4, h5
       page-break-after: avoid
+
+    h1, h2, h3
+      .section-number
+        color: #9a8da9
+        display: inline-block
+        font-weight: normal
+        margin-right: 0.25rem
 
     table.chart
       border-color: black
@@ -407,6 +555,9 @@ abbr,
     div.chart
       page-break-inside: avoid
       page-break-after: auto
+
+      margin: 0 auto
+      max-width: 460px
 
       &, .chart_inner
         // Fixes chart scaling in print and PDF

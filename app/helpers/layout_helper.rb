@@ -34,7 +34,7 @@ module LayoutHelper
     selector = params[:country] || Current.setting.area_code
     selected = selector == code ? "selected='true'" : nil
 
-    label = I18n.t("country_select.#{ code }", default: [code.to_sym, code.humanize])
+    label = I18n.t("country_select.areas.#{ code }", default: [code.to_sym, code.humanize])
     label += " (#{ I18n.t('new') })" if area[:test]
 
     content_tag :option, label.html_safe,
@@ -44,18 +44,28 @@ module LayoutHelper
   end
 
   def area_links
-    [ area_choice_from_code('be'),
-      area_choice_from_code('fr'),
-      area_choice_from_code('de'),
-      area_choice_from_code('nl'),
-      area_choice_from_code('pl'),
-      area_choice_from_code('es'),
-      area_choice_from_code('uk'),
+    [ { text: I18n.t('country_select.groups.countries'),
+        data: [
+          area_choice_from_code('be'),
+          area_choice_from_code('fr'),
+          area_choice_from_code('de'),
+          area_choice_from_code('nl'),
+          area_choice_from_code('pl'),
+          area_choice_from_code('es'),
+          area_choice_from_code('uk'),
+        ]
+      },
       :separator,
-      area_choice_from_code('eu'),
-      area_choice_from_code('br'),
+      { text: I18n.t('country_select.groups.regions_nl'),
+        data: derived_dataset_choices
+      },
       :separator,
-      *derived_dataset_choices,
+      { text: I18n.t('country_select.groups.third_party'),
+        data: [
+          area_choice_from_code('eu'),
+          area_choice_from_code('br')
+        ]
+      }
     ].compact
   end
 
@@ -67,7 +77,8 @@ module LayoutHelper
     if area && (area.useable || admin?)
       { area_code: area.area,
         test: area.test?,
-        analysis_year: area.try(:analysis_year) || 2012 }
+        analysis_year: area.try(:analysis_year) || 2012,
+        derived: area.derived? }
     end
   end
 

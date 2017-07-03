@@ -22,12 +22,6 @@
   <h1 class="banner">At a glance&hellip;</h1>
 
   <ul class="summary-main">
-    <li class="target-missed">
-      <p>
-        <strong><a href="#targets-and-goals">Targets and goals</a></strong><br />
-        Attained <strong>4 <abbr>of</abbr> 6</strong> targets
-      </p>
-    </li>
 
     <li><!-- class="target-met"> -->
       <p>
@@ -64,20 +58,29 @@
       </p>
     </li>
 
-    {% if future.electricity_curtailed > 0 %}
-      <li class="target-missed">
+    {% if future.policy_goal_renewable_percentage_target_value.value  %}
+      {% if future.policy_goal_renewable_percentage_reached.value %}
+        <li class="target-met">
+      {% else %}
+        <li class="target-missed">
+      {% endif %}
     {% else %}
-      <li class="target-met">
+      <li>
     {% endif %}
-      <p>
-        <strong><a href="#suggestions-for-improvement">Curtailed electricity</a></strong><br />
-        Initial value:
-        <strong>{{ present.electricity_curtailed | autoscale: 'MJ' }}</strong>
+      <strong><a href="#renewability">Renewability</a></strong><br />
+      Initial value:
+      <strong>{{ present.dashboard_renewability | times: 100 | round: 1 }}%</strong>
+      <span class="bullet">&bull;</span>
+      Scenario result:
+      <strong>{{ future.dashboard_renewability | times: 100 | round: 1 }}%</strong>
+
+      {% if future.policy_goal_renewable_percentage_target_value.value  %}
         <span class="bullet">&bull;</span>
-        Scenario result:
-        <strong>{{ future.electricity_curtailed | autoscale: 'MJ' }}</strong>
-      </p>
+        Target:
+        <strong>{{ future.policy_goal_renewable_percentage_target_value | times: 100 | round: 1 }}%</strong>
+      {% endif %}
     </li>
+
 
     {% if future.policy_goal_total_energy_costs_target_value.value %}
       {% if future.policy_goal_total_energy_costs_reached.value %}
@@ -108,20 +111,6 @@
   <h4>More information</h4>
 
   <ul class="summary-extras">
-    {% if future.primary_energy_demand_percentage_wrt_start_year > 95.0 %}
-      <li class="target-missed">
-        In your scenario, primary energy use is still
-        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}%
-        of the {{ settings.start_year }} value.
-      </li>
-    {% else %}
-      <li>
-        In your scenario, primary energy use has been reduced to
-        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}%
-        of its value in {{ settings.start_year }}.
-      </li>
-    {% endif %}
-
     {% if future.co2_reduction_percentage > 40.0 %}
       <li class="target-met">
         The realised CO<sub>2</sub> reduction of
@@ -141,34 +130,90 @@
       </li>
     {% endif %}
 
-    {% if future.policy_goal_renewable_percentage_target_value.value  %}
-      {% if future.policy_goal_renewable_percentage_reached.value %}
-        <li class="target-met">
-      {% else %}
-        <li class="target-missed">
-      {% endif %}
-        The renewability percentage of energy consumed in your scenario is
-        {{ future.dashboard_renewability | times: 100 | round: 1 | without_unit }}%.
-      </li>
-    {% else %}
-      <li>
-        The renewability percentage of energy consumed in your scenario is
-        {{ future.dashboard_renewability | times: 100 | round: 1 | without_unit }}%.
-      </li>
-    {% endif %}
-
-    {% if future.dashboard_blackout_hours.value %}
+    {% if future.electricity_curtailed > 0 %}
       <li class="target-missed">
     {% else %}
       <li class="target-met">
     {% endif %}
-      Your scenario has {{ future.dashboard_blackout_hours | without_unit }}
-      blackout hours.
+      <p>
+        Your scenario has {{ future.electricity_curtailed | autoscale: 'MJ' }}
+        of curtailed electricity. You can put this electricity to good use!
+        <a href="#suggestions-for-improvement" class="learn-more">
+          Learn more &raquo;
+        </a>
+      </p>
     </li>
+
+    {% if future.dashboard_blackout_hours > 0 %}
+      <li class="target-missed">
+        Your scenario has {{ future.dashboard_blackout_hours | without_unit }}
+        blackout hours. Build more electricity backup capacity or reduce demand.
+        <a href="#reliability" class="learn-more">Learn more &raquo;</a>
+      </li>
+    {% else %}
+      <li class="target-met">
+        Your scenario has no blackout hours.
+        <a href="#reliability" class="learn-more">Learn more &raquo;</a>
+      </li>
+    {% endif %}
+
+    {% if future.primary_energy_demand_percentage_wrt_start_year > 95.0 %}
+      <li class="target-missed">
+        In your scenario, primary energy use is still
+        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}%
+        of the {{ settings.start_year }} value.
+      </li>
+    {% else %}
+      <li>
+        In your scenario, primary energy use has been reduced to
+        {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}%
+        of its value in {{ settings.start_year }}.
+      </li>
+    {% endif %}
+
+    {% if future.bio_footprint > 1 %}
+      <li class="target-missed">
+        You use more land that your region supports! Your scenario bio-footprint
+        is
+    {% else %}
+      <li>
+        The bio-footprint of your scenario is
+    {% endif %}
+      {{ future.bio_footprint | round: 1 }}x{{ settings.area_code | upcase }},
+      {% if present.bio_footprint.value == future.bio_footprint.value %}
+        which is unchanged from {{ settings.start_year }}.
+      {% else %}
+        compared with
+        {{ present.bio_footprint | round: 1 }}x{{ settings.area_code | upcase }}
+        in the present day.
+      {% endif %}
+      <a href="#bio-footprint" class="learn-more">Learn more &raquo;</a>
+    </li>
+
+    {% if future.share_of_greengas_in_gas_network > 0.1 %}
+      <li class="target-missed">
+        Feeding in more than 10% green gas into the gas network requires large
+        technical investments. Your scenario uses
+        {{ future.share_of_greengas_in_gas_network | times: 100 | round: 1 }}%
+        green gas.
+        <a href="#extreme-assumptions" class="learn-more">Learn more &raquo;</a>
+      </li>
+    {% endif %}
+
+    {% if future.profitability_percentage.value < 100 %}
+      <li>
+        {{ 100 | minus: future.profitability_percentage | round: 1 }}% of
+        power-plants are not profitable in your scenario. Do you think they will
+        still be around in {{ settings.end_year }}?
+        <a href="#profitability-of-power-plants" class="learn-more">
+          Learn more &raquo;
+        </a>
+      </li>
+    {% endif %}
+
   </ul>
   <!-- end: summary extras -->
 </section>
-
 
 <main>
   {% toc %}
@@ -799,8 +844,12 @@
 
   <h2>Extreme assumptions</h2>
 
-  Depending on your choices, this section point out some assumptions which imply big changes in the whole energy system.
-  This might help you to focus on which aspects of your scenario could use some extra argumentation or research.
+  <p>
+    Depending on your choices, this section highlights some assumptions which
+    imply big changes in the energy system. This might help you to focus on
+    which aspects of your scenario could use some extra argumentation or
+    research.
+  </p>
 
 
   <!-- Extreme amount of greengas -->

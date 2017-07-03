@@ -81,7 +81,6 @@
       {% endif %}
     </li>
 
-
     {% if future.policy_goal_total_energy_costs_target_value.value %}
       {% if future.policy_goal_total_energy_costs_reached.value %}
         <li class="target-met">
@@ -111,38 +110,65 @@
   <h4>More information</h4>
 
   <ul class="summary-extras">
-    {% if future.co2_reduction_percentage > 40.0 %}
-      <li class="target-met">
-        The realised CO<sub>2</sub> reduction of
-        {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
-        exceeds the Dutch national ambition for 2030 of 40%.
 
-        {% if future.co2_reduction_percentage > 80.0 %}
-          Your scenario even surpasses the EU goal of 80% - 95% reduction by
-          2050!
-        {% endif %}
-      </li>
-    {% else %}
-      <li class="target-missed">
-        The realised CO<sub>2</sub> reduction of
-        {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
-        falls short of the Dutch national ambition for 2030 of 40%.
-      </li>
-    {% endif %}
+    <!-- begin: national CO2 targets -->
+    {% case settings.area_code %}
+    {% when 'nl' %}
+      {% if future.co2_reduction_percentage > 40.0 %}
+        <li class="target-met">
+          The realised CO<sub>2</sub> reduction of
+          {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
+          exceeds the Dutch national ambition for 2030 of 40%.
+
+          {% if future.co2_reduction_percentage > 80.0 %}
+            Your scenario even surpasses the EU goal of 80% - 95% reduction by
+            2050!
+          {% endif %}
+        </li>
+      {% else %}
+        <li class="target-missed">
+          The realised CO<sub>2</sub> reduction of
+          {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
+          falls short of the Dutch national ambition for 2030 of 40%.
+        </li>
+      {% endif %}
+
+    {% when 'uk' %}
+      {% if future.co2_reduction_percentage > 57.0 %}
+        <li class="target-met">
+          The realised CO<sub>2</sub> reduction of
+          {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
+          exceeds the UK national ambition for 2030 of 57%.
+
+          {% if future.co2_reduction_percentage > 80.0 %}
+            Your scenario even surpasses the EU goal of 80% - 95% reduction by
+            2050!
+          {% endif %}
+        </li>
+      {% else %}
+        <li class="target-missed">
+          The realised CO<sub>2</sub> reduction of
+          {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
+          falls short of the UK national ambition for 2030 of 57%.
+        </li>
+      {% endif %}
+    {% endcase %}
+    <!-- end: national CO2 targets -->
 
     {% if future.electricity_curtailed > 0 %}
       <li class="target-missed">
-    {% else %}
-      <li class="target-met">
-    {% endif %}
-      <p>
         Your scenario has {{ future.electricity_curtailed | autoscale: 'MJ' }}
-        of curtailed electricity. You can put this electricity to good use!
+        of curtailed electricity production. You can put this electricity to
+        good use!
         <a href="#suggestions-for-improvement" class="learn-more">
           Learn more &raquo;
         </a>
-      </p>
-    </li>
+      </li>
+    {% else %}
+      <li class="target-met">
+        Your scenario has no curtailed electricity production.
+      </li>
+    {% endif %}
 
     {% if future.dashboard_blackout_hours > 0 %}
       <li class="target-missed">
@@ -159,7 +185,7 @@
 
     {% if future.primary_energy_demand_percentage_wrt_start_year > 95.0 %}
       <li class="target-missed">
-        In your scenario, primary energy use is still
+        In your scenario, primary energy use is
         {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}%
         of the {{ settings.start_year }} value.
       </li>
@@ -246,7 +272,7 @@
 
     <!-- CO2 -->
     {% if future.policy_goal_co2_emissions_target_value.value  %}
-      <h2>CO2-reduction</h2>
+      <h2>CO<sub>2</sub> reduction</h2>
 
         {% if future.policy_goal_co2_emissions_reached.value %}
           <p>

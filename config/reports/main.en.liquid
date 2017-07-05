@@ -124,12 +124,18 @@
             Your scenario even surpasses the EU goal of 80% - 95% reduction by
             2050!
           {% endif %}
+          <a href="#suggestions-for-improvement" class="learn-more">
+            Learn more &raquo;
+          </a>
         </li>
       {% else %}
         <li class="target-missed">
           The realised CO<sub>2</sub> reduction of
           {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
           falls short of the Dutch national ambition for 2030 of 40%.
+          <a href="#suggestions-for-improvement" class="learn-more">
+            Learn more &raquo;
+          </a>
         </li>
       {% endif %}
 
@@ -144,12 +150,18 @@
             Your scenario even surpasses the EU goal of 80% - 95% reduction by
             2050!
           {% endif %}
+          <a href="#suggestions-for-improvement" class="learn-more">
+            Learn more &raquo;
+          </a>
         </li>
       {% else %}
         <li class="target-missed">
           The realised CO<sub>2</sub> reduction of
           {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
           falls short of the UK national ambition for 2030 of 57%.
+          <a href="#suggestions-for-improvement" class="learn-more">
+            Learn more &raquo;
+          </a>
         </li>
       {% endif %}
     {% endcase %}
@@ -188,12 +200,18 @@
         In your scenario, primary energy use is
         {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}%
         of the {{ settings.start_year }} value.
+        <a href="#Energy-use-and-production" class="learn-more">
+          Learn more &raquo;
+        </a>
       </li>
     {% else %}
       <li>
         In your scenario, primary energy use has been reduced to
         {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}%
         of its value in {{ settings.start_year }}.
+        <a href="#Energy-use-and-production" class="learn-more">
+          Learn more &raquo;
+        </a>
       </li>
     {% endif %}
 

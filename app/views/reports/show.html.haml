@@ -7,15 +7,6 @@
       %a(href="javascript:window.print()")
         = image_tag 'reports/print.svg'
         = t('report.print')
-    %li
-      - if Rails.env.development? && APP_CONFIG[:report_pdf_host].blank?
-        %span.disabled
-          = image_tag 'reports/download.svg'
-          = t('report.pdf')
-      - else
-        = link_to report_path(format: 'pdf') do
-          = image_tag 'reports/download.svg'
-          = t('report.pdf')
   .loading
     .bar
 

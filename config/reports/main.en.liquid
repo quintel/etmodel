@@ -217,7 +217,7 @@
 
     {% if future.bio_footprint > 1 %}
       <li class="target-missed">
-        You use more land that your region supports! Your scenario bio-footprint
+        You use more land than your region supports! Your scenario bio-footprint
         is
     {% else %}
       <li>
@@ -247,7 +247,7 @@
     {% if future.profitability_percentage.value < 100 %}
       <li>
         {{ 100 | minus: future.profitability_percentage | round: 1 }}% of
-        power-plants are not profitable in your scenario. Do you think they will
+        power-plants are profitable in your scenario. Do you think they will
         still be around in {{ settings.end_year }}?
         <a href="#profitability-of-power-plants" class="learn-more">
           Learn more &raquo;
@@ -379,8 +379,8 @@
     <h2>Electricity production</h2>
 
       <p>
-        In your scenario, most electricity is produced by
-        {{ future.biggest_electricity_producer_name | without_unit }}
+        In your scenario, most electricity is produced by the 
+        {{ future.biggest_electricity_producer_name | i18n: 'output_element_series'  }} power plant
         ({{ future.biggest_electricity_producer_value | autoscale: 'MJ'}}).
       </p>
 
@@ -392,7 +392,7 @@
 
       <p>
         The central heat network in your scenario can be used to heat houses and
-        buildings and provide heat to the industry and agricultural sectors. The
+        buildings and provides heat to the industry and agricultural sectors. The
         chart below show the balance of heat produced and consumed centrally.
       </p>
 
@@ -413,7 +413,7 @@
         <ul>
           <li><strong>Reducing heat production</strong>: in the industry and agriculture sections you can
             decrease numbers of CHPs and burners.</li>
-          <li><strong>Increase demand</strong>: by increaing the demand of all sectors in the left-hand side
+          <li><strong>Increase demand</strong>: by increasing the demand of all sectors in the left-hand side
             of the diagram.</li>
         </ul>
       {% else %}
@@ -481,7 +481,7 @@
     <h2>Flow-diagram of CO2 emissions</h2>
 
     <p>
-     The Sankey digram below shows
+     The Sankey diagram below shows:
      <ul>
         <li><strong>which</strong> carriers are primarily responsible for CO2 emissions (left column)</li>
         <li><strong>where</strong> in the system CO2 is produced (centre column)</li>
@@ -608,26 +608,6 @@
       {% chart 48 %}
         Costs of the energy system.
       {% endchart %}
-
-      <p>
-        Electricity production costs:
-        {{ future.costs_of_used_electricity | autoscale: 'euro' }}.
-      </p>
-
-
-      <h3>Investments</h3>
-
-      <table class="chart autostripe">
-        <thead>
-          <tr><th>Column One</th><th>Column two</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>1x1</td><td>1x2</td></tr>
-          <tr><td>2x1</td><td>2x2</td></tr>
-          <tr><td>3x1</td><td>3x2</td></tr>
-        </tbody>
-      </table>
-
 
 
     {% if settings.merit_order_enabled %}
@@ -848,9 +828,9 @@
     <p>
       The space heating technologies in your scenario are not consistent with those producing hot
       water. You have chosen to heat most houses with a
-      {{ future.biggest_space_heater_share_name | without_unit }} whereas most of the hot water
+      {{ future.biggest_space_heater_share_name | i18n: 'output_element_series' }} whereas most of the hot water
       in households is produced by a
-      {{ future.biggest_water_heater_share_name | without_unit }}. The percentages
+      {{ future.biggest_water_heater_share_name | i18n: 'output_element_series'  }}. The percentages
     </p>
 
     <p>
@@ -912,9 +892,9 @@
 
   <!-- Unprofitable plants -->
   {% if settings.merit_order_enabled %}
-    {% if future.profitability_percentage > 10 %}
+    {% if future.profitability_percentage < 100 %}
       <p>
-        In your scenario, {{ future.profitability_percentage | round: 1 | without_unit }}% of powerplants is not
+        In your scenario, {{ 100 | minus: future.profitability_percentage | round: 1 }}% of powerplants is not
         profitable. This means that they are not earning back their investment costs and sometimes not even their running costs.
         Such plants will not stay open very long. Having them around in your future year might not be realistic.
         You can either

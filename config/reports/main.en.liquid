@@ -632,7 +632,7 @@
         </p>
 
         <p>
-          Fuel prices determine to a large extend the marginal costs of power plants. Increasing the proce of coal
+          Fuel prices determine to a large extend the marginal costs of power plants. Increasing the price of coal
           and/or CO2 can, for instance, make gas fueled power plants more compatitive with coal fired power plants.
         </p>
 
@@ -698,7 +698,7 @@
         </p>
 
         <p>
-          In your scenario, {{ future.profitability_percentage | round: 1 | without_unit }}% of powerplants is not
+          In your scenario, {{ 100 | minus: future.profitability_percentage | round: 1 }}% of powerplants is not
           profitable. This means that they are not earning back their investment costs
           (orange in table below) or are not even earning their OPEX (operational expenditure) back (red).
         </p>
@@ -809,12 +809,11 @@
           dedicated to cars. If, self-driving electric vehicles start to replace fossil fuel cars,
           the number  of cars can be reduced dramatically.
 
-           are still {{ future.steel_industry_percentage | round: 1 }}%
-          of their current size.
+          In your scenario, electric vehicles constitute {{ future.ev_percentage | round: 1 }}%
+          of all cars, yet the steel industry is still {{ future.steel_industry_percentage | round: 1 }}%
+          of its current size.
 
-          Do you think this is realistic? For an analysis of the correllation between electrification
-          of transport and the size of the refinery sector see the report
-          "Industry in Transition" (Quintel Intelligence 2016).
+          Do you think this is realistic?.
         </p>
 
     {% endif %}
@@ -830,7 +829,8 @@
       water. You have chosen to heat most houses with a
       {{ future.biggest_space_heater_share_name | i18n: 'output_element_series' }} whereas most of the hot water
       in households is produced by a
-      {{ future.biggest_water_heater_share_name | i18n: 'output_element_series'  }}. The percentages
+      {{ future.biggest_water_heater_share_name | i18n: 'output_element_series'  }}. Did you choose that
+      on purpose?
     </p>
 
     <p>
@@ -948,8 +948,8 @@
 
   {% chart 142 %}
     This table shows an overview of the investment cost of heat and electricity producing
-    technologies. The investment costs are shown for both the start scenario (2010) and for the
-    future scenario. In both cases a 'green-field' approach is taken: no previously installed
+    technologies. The investment costs are shown for both the start scenario ({{ settings.start_year }}) 
+    and for the future year. In both cases a 'green-field' approach is taken: no previously installed
     technologies are assumed. The last column shows the difference between the investment costs
     of the two scenarios.
   {% endchart %}
@@ -1002,7 +1002,7 @@
             is declared out of scope of the primarily technical ETM.</li>
           <li><strong>Economic relations</strong>: the ETM calculates costs based on published values but does not assume
             price-elasticity relations or other economic relations which may no longer apply in the future.</li>
-          <li><strong>Policy</strong>: no subsedies or taxes are assumed in the ETM, they are viewed as the possible
+          <li><strong>Policy</strong>: no subsidies or taxes are assumed in the ETM, they are viewed as the possible
             motivation for the choices of the user, however.</li>
         </ul>
 

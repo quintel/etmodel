@@ -25,7 +25,7 @@
 
     <li><!-- class="target-met"> -->
       <p>
-        <strong><a href="#energiegebruik-en-productie">Totale energie</a></strong><br />
+        <strong><a href="#energiegebruik-en--productie">Totale energie</a></strong><br />
         Startwaarde:
         <strong>{{ present.dashboard_energy_demand_primary_of_final | autoscale: 'MJ' }}</strong>
         <span class="bullet">&bull;</span>
@@ -44,7 +44,7 @@
       <li>
     {% endif %}
       <p>
-        <strong><a href="#co2-emissions">CO<sub>2</sub>-uitstoot</a></strong><br />
+        <strong><a href="#co2-uitstoot">CO<sub>2</sub>-uitstoot</a></strong><br />
         Startwaarde:
         <strong>{{ present.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong>
         <span class="bullet">&bull;</span>
@@ -67,7 +67,7 @@
     {% else %}
       <li>
     {% endif %}
-      <strong><a href="#Hernieuwbaarheid">Hernieuwbaarheid</a></strong><br />
+      <strong><a href="#hernieuwbaarheid">Hernieuwbaarheid</a></strong><br />
       Startwaarde:
       <strong>{{ present.dashboard_renewability | times: 100 | round: 1 }}%</strong>
       <span class="bullet">&bull;</span>
@@ -91,7 +91,7 @@
       <li>
     {% endif %}
       <p>
-        <strong><a href="#Kosten-van-het-energiesysteem">Kosten</a></strong><br />
+        <strong><a href="#kosten-van-het-energiesysteem">Kosten</a></strong><br />
         Startwaarde:
         <strong>{{ present.policy_goal_total_energy_costs_value | autoscale: 'bln_euro' }}</strong>
         <span class="bullet">&bull;</span>
@@ -124,7 +124,7 @@
             Je scenario gaat zelfs verder dan het EU doel van 80% - 95% reductie in
             2050!
           {% endif %}
-          <a href="#Verbetersuggesties" class="learn-more">
+          <a href="#verbetersuggesties" class="learn-more">
             Lees verder &raquo;
           </a>
         </li>
@@ -133,7 +133,7 @@
           De gerealiseerde CO<sub>2</sub>-reductie van
           {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
           haalt de Nederlandse ambitie voor 2030 van 40% niet.
-          <a href="#Verbetersuggesties" class="learn-more">
+          <a href="#verbetersuggesties" class="learn-more">
             Lees verder &raquo;
           </a>
         </li>
@@ -150,7 +150,7 @@
             Je scenario gaat zelfs verder dan het EU doel van 80% - 95% reductie in
             2050!
           {% endif %}
-          <a href="#Verbetersuggesties" class="learn-more">
+          <a href="#verbetersuggesties" class="learn-more">
             Lees verder &raquo;
           </a>
         </li>
@@ -159,7 +159,7 @@
           De gerealiseerde CO<sub>2</sub>-reductie van
           {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
           haalt de Britse ambitie voor 2030 van 57% niet.
-          <a href="#Verbetersuggesties" class="learn-more">
+          <a href="#verbetersuggesties" class="learn-more">
             Lees verder &raquo;
           </a>
         </li>
@@ -171,7 +171,7 @@
       <li class="target-missed">
         Je scenario heeft {{ future.electricity_curtailed | autoscale: 'MJ' }}
         ongebruikte elektriciteit. Je kunt deze elektriciteit nuttig inzetten!
-        <a href="#Verbetersuggesties" class="learn-more">
+        <a href="#verbetersuggesties" class="learn-more">
           Lees verder &raquo;
         </a>
       </li>
@@ -200,7 +200,7 @@
         Het primaire energiegebruik in je scenario is
         {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}%
         van de {{ settings.start_year }} startwaarde.
-        <a href="#energiegebruik-en-productie" class="learn-more">
+        <a href="#energiegebruik-en--productie" class="learn-more">
           Lees verder &raquo;
         </a>
       </li>
@@ -209,7 +209,7 @@
         In je scenario, primair energiegebruik is gereduceerd tot
         {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}%
         van de startwaarde {{ settings.start_year }}.
-        <a href="#energiegebruik-en-productie" class="learn-more">
+        <a href="#energiegebruik-en--productie" class="learn-more">
           Lees verder &raquo;
         </a>
       </li>
@@ -230,7 +230,7 @@
         in vergelijking met de startwaarde van
         {{ present.bio_footprint | round: 1 }}x{{ settings.area_code | upcase }}.
       {% endif %}
-      <a href="#bio-footprint" class="learn-more">Lees verder &raquo;</a>
+      <a href="#biovoetafdruk" class="learn-more">Lees verder &raquo;</a>
     </li>
 
     {% if future.share_of_greengas_in_gas_network > 0.1 %}
@@ -239,7 +239,7 @@
         aanpassingen en investering. Jouw scenario heeft
         {{ future.share_of_greengas_in_gas_network | times: 100 | round: 1 }}%
         groengas in het gasnet.
-        <a href="#extreme-assumptions" class="learn-more">Lees verder &raquo;</a>
+        <a href="#extreme-aannames" class="learn-more">Lees verder &raquo;</a>
       </li>
     {% endif %}
 
@@ -248,7 +248,7 @@
         {{ 100 | minus: future.profitability_percentage | round: 1 }}% van de 
         elektriciteitcentrales in je scenario zijn niet winstgevend. Denk 
         je dat ze er nog zullen zijn in {{ settings.end_year }}?
-        <a href="#profitability-of-power-plants" class="learn-more">
+        <a href="#winstgevendheid-van-elektriciteitscentrales" class="learn-more">
           Lees verder &raquo;
         </a>
       </li>
@@ -573,10 +573,9 @@
       {% endchart %}
 
       <p>
-        Flexibility options such as batteries, power-to-heat and power-to-gas can be used to use
-        excess electricity later (storage) or for heating (power-to-heat) or replace natural gas (power-to-gas).
-        In section <a href="#unused-potential">Unused potential</a>, more details of how to use excess can be
-        found.
+        Flexibiliteitsopties zoals batterijen, power-to-heat (P2H) en power-to-gas (P2G) 
+        kunnen worden gebruikt om elektriciteitsoverschotten te gebruiken.
+        In de sectie <a href="#onbenut-potentieel">Onbenut potentieel</a> kun je meer lezen over deze opties.
       </p>
 
   {% endif %}
@@ -586,51 +585,52 @@
     <h2>Kosten van het energiesysteem</h2>
 
       <p>
-        Costs of the future energy system are roughly
-        {{ future.dashboard_total_costs | autoscale: 'euro' }} and are broken down in the following chart.
-        Costs include
+        De kosten van het toekomstige energiesysteem zijn ruwweg
+        {{ future.dashboard_total_costs | autoscale: 'euro' }} mld EUR per jaar.
+        Kosten zijn opgebouwd uit:
 
         <ul>
-          <li><strong>Investments</strong>.</li>
-          <li><strong>Fuel costs</strong>: using fuel prices set in the costs section.</li>
-          <li><strong>Operation and Maintenance</strong>: both variable and fixed.</li>
-          <li><strong>Weighted average costs of capital</strong>: assuming linear depreciation.</li>
-          <li><strong>Decommisioning costs</strong>: relevant for nuclear power plants only.</li>
+          <li><strong>Investeringen</strong>.</li>
+          <li><strong>Brandstofkosten</strong>: gebruikmakend van de prijzen welke gezet kunnen worden in de kosten sectie.</li>
+          <li><strong>Operation and Maintenance (O&M)</strong>: zowel vast als variabel.</li>
+          <li><strong>Weighted average costs of capital (WACC)</strong>: met lineaire afschrijving.</li>
+          <li><strong>Decommisioning</strong>: alleen relevant voor kerncentrales.</li>
         </ul>
 
-        Costs do <strong>not</strong> include subsidies and taxes.
+        Kosten nemen <strong>geen</strong> subsidies en belastingen mee.
 
       </p>
 
       {% chart 48 %}
-        Costs of the energy system.
+        Kosten van het energiesysteem.
       {% endchart %}
 
 
     {% if settings.merit_order_enabled %}
-      <h2>Merit order and fuel prices</h2>
+      <h2>Merit order en brandstofprijzen</h2>
 
         <p>
-          The <i>merit order</i> ranks dispatchable power plants (those which you can switch on and off)
-          according to their <i>marginal costs</i> (the costs of producing an extra MWh of electricity).
-          Wind, solar and must-run plants have effectively zero marginal costs.
-          The marginal costs and installed capacity of power generation for your scenario is shown in the
-          chart below.
+          De <i>merit order</i> sorteert 'dispatchable' (regelbare) elektriciteitcentrales
+          op <i>marginale kosten</i> (de kosten van het produceren van een extra MWh elektriciteit).
+          Wind, zon-PV en must-run WKK hebben effectief marginale kosten van nul.
+          De onderstaande grafiek toont marginale kosten en geïnstalleerd vermogen van elektriciteitsproductie in 
+          jouw scenario.
         </p>
 
         {% chart 125 %}
-          Merit order.
+          Merit order en marginale kosten.
         {% endchart %}
 
         <p>
-          Depending on the demand for electricity, the merit order determines which plants are running for each hour
-          of the year. The plants with lowest marginal costs will often (baseload generation) whereas plants with
-          higher marginal costs might only run in cases of peak demand.
+          Afhankelijk van de vraag op elk moment in het jaar bepaalt de merit order welke centrales draaien en welke niet. 
+          Centrales met lage marginale kosten zoals kerncentrales draaien meestal 'baseload' terwijl centrales met hogere
+          marginale kosten de pieken in de vraag opvangen.
         </p>
 
         <p>
-          Fuel prices determine to a large extend the marginal costs of power plants. Increasing the proce of coal
-          and/or CO2 can, for instance, make gas fueled power plants more compatitive with coal fired power plants.
+          Marginale kosten voor centrales worden voornamelijk door brandstofprijzen bepaald. Door de 
+          prijs van kolen of CO2 op te voeren in het ETM kunnen gasgestookte centrales meer competitief 
+          worden met kolencentrales.
         </p>
 
 <!--         {% chart 32 %}
@@ -641,248 +641,245 @@
 
     {% endif %}
 
-  <h1 class="banner">Security of supply and profitability of power plants</h1>
+  <h1 class="banner">Leveringszekerheid en winstgevendheid van elektriciteitscentrales</h1>
 
-    <h2>Reliability</h2>
+    <h2>Leveringszekerheid</h2>
 
     <p>
-      The loss of load expectation (LOLE) is the expected number of hours per year that the electricity
-       supply cannot meet its demand. A nonzero LOLE does not necessarily result in blackouts as
-       electricity can be imported or can be available in batteries. The Netherlands accepts a
-       LOLE of 4 h/yr. We distinguish (un)reliable electricity production as volatile electricity
-       producers cannot be relied on at all times.
+      De 'loss of load expectation' (LOLE) een het verwachte aantal uur per jaar dat er
+      niet aan de elektriciteitsvraag kan worden voldaan met het opgestelde productievermogen.
+      Een LOLE groter dan nul betekent niet direct dat het licht uitgaat omdat elektriciteits kan worden
+      geïmporteerd of uit batterijen kan worden gehaald. In Nederland wordt een LOLE van 4 u/j 
+      acceptabel geacht.
     </p>
 
     <p>
-      In your scenario, there is {{ future.dispatchable_electricity_production_capacity | autoscale: 'MW' }} of
-      reliable (dispatchable) electricity production. Resulting in
-      {{ future.dashboard_security_of_supply | without_unit }} hours of loss of load.
+      In jouw scenario staat {{ future.dispatchable_electricity_production_capacity | autoscale: 'MW' }} 
+      betrouwbaar (dispatchable) productievermogen opgesteld. Dit resulteert in 
+      {{ future.dashboard_security_of_supply | without_unit }} uur 'loss of load' per jaar.
     </p>
 
     {% chart 111 %}
-      Reliability of production capacity.
+      Betrouwbaarheid van elektriciteitsopwek.
     {% endchart %}
 
     <p>
-      Similar to LOLE, the number of blackout hours is a measure for the reliability of the electricity
-      supply in your scenario. It also takes into account the possibility for import and flexibility to
-      prevent a shortage of power.
+      Net zoals LOLE is het aantal black-out uren een maat voor de betrouwbaarheid van je elektriciteitssysteem. 
+      Het verschil met LOLE is dat nu ook de mogelijkheid van import en opslag in batterijen wordt meegenomen om
+      tekorten op te vangen.
     </p>
 
     {% if future.dashboard_blackout_hours > 1 %}
       <p>
-        Your scenario has {{ future.dashboard_blackout_hours | without_unit }} blackout hours.
-        Try building more reliable back-up capacity in the electricity production section.
-        Note that solar and wind power are intermittent and cannot add reliable electricity at all
-        times.
+        Je scenario heeft {{ future.dashboard_blackout_hours | without_unit }} blackout-uren.
+        Installeer meer back-up capaciteit in de aanbod-sectie van het ETM of verlaag de vraag naar elektriciteit.
+        Stroom uit zon en wind hebben beperkte betrouwbaarheid omdat het niet altijd waait en de zon niet continu
+        schijnt.
       </p>
     {% else %}
       <p>
-        Your scenario has zero blackout hours.
+        Je scenario heeft geen black-outs.
       </p>
     {% endif %}
 
     {% if settings.merit_order_enabled %}
-      <h2>Profitability of power plants</h2>
+      <h2>Winstgevendheid van elektriciteitscentrales</h2>
 
         <p>
-          Security of (electricity) supply and the profitability of power plants are intimately linked.
-          For dispatchable power plants to make money, they need to run sufficiently often, ideally when
-          electricity prices are high.
-          A reliable electricity system traditionally requires, however,
-          that there are power plants available which are only needed for a couple of extreme demand peaks
-          every year.
+          Betrouwbaarheid van (elektriciteits-) aanbod en de winstgeventheid van centrales zijn direct met elkaar gelinkt.
+          Dispatchble centrales maken winst als ze veel draaiuren hebben, liefst op momenten dat de elektriciteitsprijs 
+          hoog is.
+          Een betrouwbaar elektriciteitssysteem heeft echter back-up centrales nodig om extreme pieken op te vangen 
+          die maar een paar keer per jaar optreden. Die centrales hebben dus typisch weinig draaiuren.
         </p>
 
         <p>
-          In your scenario, {{ future.profitability_percentage | round: 1 | without_unit }}% of powerplants is
-          profitable. This means that they are not earning back their investment costs
-          (orange in table below) or are not even earning their OPEX (operational expenditure) back (red).
+          In jouw scenario is {{ 100 | minus: future.profitability_percentage | round: 1 }}% van de centrales
+          verliesgevend. Dit betekent dat ze hun investeringen niet terugverdienen (oranje in onderstaande tabel) 
+          of zelfs hun OPEX (operational expenditure) niet dekken (rood).
         </p>
 
         {% chart 140 %}
-          Profitability of power plants.
+          Winstgevendheid van elektriciteitscentrales.
         {% endchart %}
 
         <p>
-          Unprofitable plants will likely be taken out of commission after a while. You can improve their profitability
-          by incereasing electricity demand (making them run more hours). Also reducing electricity generation with zero
-          marginal costs can make power plants profitable again.
+          Verliesgevende centrales zullen waarschijnlijk op den duur uit bedrijf worden genomen. 
+          Je kunt de winstgevenheid van het centralepark vergroten door de vraag toe te laten nemen. 
+          Ook het verlagen van elektriciteitsopwek met lage marginale kosten (zoals zon en wind) kan de
+          winstgevendheid van dispachable centrales verhogen.
         </p>
     {% endif %}
 
-  <h1 class="banner">Bio-footprint and renewability</h1>
+  <h1 class="banner">Biovoetafdruk en hernieuwbaarheid</h1>
 
-    <h2>Bio-footprint</h2>
+    <h2>Biovoetafdruk</h2>
       <p>
-        In your scenario, {{ future.bio_footprint | round: 1 }} times the available areable land is used for
-        the production of bio-fuels such as wood, ethanol, bio-gas and bio-diesel.
+        Je scenario gebruikt {{ future.bio_footprint | round: 1 }} keer het beschikbare lanbouwareaal voor de productie
+        van biobrandstoffen zoals hout, bio-ethanol, bio-gas en bio-diesel.
       </p>
 
       {% chart 168 %}
-        Biofootprint per carrier.
+        Biovoetafdruk per energiedrager.
       {% endchart %}
 
-    <h2>Renewability</h2>
+    <h2>Hernieuwbaarheid</h2>
 
-      The percentage of renewable energy in your scenario is {{ future.renewability_percentage | round: 1 }}%.
+      Het percentage hernieuwbare energie in jouw scenario is {{ future.renewability_percentage | round: 1 }}%.
 
       {% chart 49 %}
-        Renewability percentage of final energy demand.
+        Hernieuwbaarheidspercentage van energetisch eindgebruik.
       {% endchart %}
 
-      For electricity generation, the renewability is
+      Voor de opwek van elektrciteit is het hernieuwbaarheidspercentage
       {{ future.share_of_renewable_electricity | times: 100 | round: 1 }}%.
 
       {% chart 112 %}
-        Renewability of produced electricity. The renewability is defined as all renewable electricity
-        production divided by local electricity consumption and can be larger than 100%.
+        Hernieuwbaarheidspercentage van elektriciteitsproductie.
       {% endchart %}
 
-  <h1 class="banner">Implications of this scenario</h1>
+  <h1 class="banner">Implicaties van je scenario</h1>
 
-  <h2>Investments needed</h2>
+  <h2>Investeringen</h2>
 
   <p>
-    Your scenario spans {{ future.scenario_duration | round: 0 }} years. The various assumptions imply that on average
-    the following list of technologies need to be installed every year
+    Je scenario overbrugt {{ future.scenario_duration | round: 0 }} jaar. De aannames in jouw scenario
+    resulteren er onder anderen in dat jaarlijks de volgende investeringen moeten worden gerealiseerd
   </p>
 
   <ul>
     <li>{{ future.number_of_wind_turbines_per_year_offshore | round: 1 }} off-shore windturbines</li>
-    <li>{{ future.number_of_wind_turbines_per_year_inland | round: 1 | without_unit }} inland windturbines</li>
-    <li>{{ future.number_of_wind_turbines_per_year_coastal | round: 1 | without_unit }} coastal windturbines</li>
-    <li>{{ future.number_of_electric_vehicles_per_year | round: 1 | without_unit }} electric vehicles</li>
+    <li>{{ future.number_of_wind_turbines_per_year_inland | round: 1 | without_unit }} windturbines op land</li>
+    <li>{{ future.number_of_wind_turbines_per_year_coastal | round: 1 | without_unit }} windturbines aan de kust</li>
+    <li>{{ future.number_of_electric_vehicles_per_year | round: 1 | without_unit }} elektrische auto's</li>
 
   </ul>
 
   <p>
-    For a complete list of investment costs per technology see
+    Een complete tabel met investeringskosten per technologie kun je vinden in 
     <a href="#appendix-b-investment-costs">Appendix B</a>.
   </p>
 
-  <h2>Area needed for wind</h2>
+  <h2>Landgebruik voor windturbines</h2>
 
   <p>
     <ul>
-      <li>Coastal area used by wind: {{ future.area_used_for_coastal_wind | round: 2 }} </li>
-      <li>Area used by off-shore wind: {{ future.area_used_for_offshore_wind | round: 2 }} </li>
-      <li>Area used by inland wind: {{ future.area_used_for_onshore_wind | round: 2 }} </li>
+      <li>Wind aan de kust: {{ future.area_used_for_coastal_wind | round: 2 }} </li>
+      <li>Off-shore wind: {{ future.area_used_for_offshore_wind | round: 2 }} </li>
+      <li>Wind op land: {{ future.area_used_for_onshore_wind | round: 2 }} </li>
     </ul>
 
   </p>
 
-  <h1 class="banner">Suggestions for improvement</h1>
+  <h1 class="banner">Verbetersuggesties</h1>
 
-  <h2>Possible inconsistencies</h2>
+  <h2>Mogelijke inconsistenties</h2>
 
   <!-- Relation between EV and refineries and metal industry -->
   {% if future.ev_percentage > 50 %}
     {% if future.refinery_percentage > 50 %}
 
-      <h3>Refineries and electric vehicles</h3>
+      <h3>Raffinaderijen en elektrische auto's</h3>
 
       <p>
-        In your scenario, electric vehicles constitute {{ future.ev_percentage | round: 1 }}%
-        of all cars, yet oil refineries are still {{ future.refinery_percentage | round: 1 }}%
-        of their current size.
+        In jouw scenario vertegenwoordigen elektrische auto's (EV) {{ future.ev_percentage | round: 1 }}%
+        van alle auto's terwijl raffinaderijen nog steeds {{ future.refinery_percentage | round: 1 }}%
+        van hun grootte in het startjaar hebben.
 
-        Do you think this is realistic? For an analysis of the correllation between electrification
-        of transport and the size of the refinery sector see the report
-        "Industry in Transition" (Quintel Intelligence 2016).
+        Denk je dat dit realistisch is? Het is aannemelijk dat er een correlatie bestaat tussen afname van
+        benzine- en dieselgebruik en krimp van de raffinagesector.
       </p>
 
       {% chart 190 %}
-        Sankey diagram of oil products in refineries.
+        Sankey diagram van olieproductien in de raffinagesector.
       {% endchart %}
 
     {% endif %}
 
     {% if future.steel_industry_percentage > 50 %}
-      <h3>Size of steel industry and electric vehicles</h3>
+      <h3>Grootte van de staalindustrie en electrisch vervoer</h3>
 
         <p>
-          Like oil refineries, a large part of the production output of steel plants is currently
-          dedicated to cars. If, self-driving electric vehicles start to replace fossil fuel cars,
-          the number  of cars can be reduced dramatically.
+          Zoals in de raffinagesector is een aanzienlijk deel van staalproductie voor de 
+          automobielindustrie
+          Als zelfrijdende, elektrische auto's een vlucht gaan nemen neemt het aantal auto's
+          op de weg sterk af.
 
-           are still {{ future.steel_industry_percentage | round: 1 }}%
-          of their current size.
+          In jouw scenario vertegenwoordigen elektrische auto's (EV) {{ future.ev_percentage | round: 1 }}%
+          van alle auto's terwijl de staalindustrie nog {{ future.steel_industry_percentage | round: 1 }}%
+          van zijn huidige grootte heeft.
 
-          Do you think this is realistic? For an analysis of the correllation between electrification
-          of transport and the size of the refinery sector see the report
-          "Industry in Transition" (Quintel Intelligence 2016).
+          Denk je dat dit realistisch is? Het is aannemelijk dat er een correlatie bestaat tussen afname van
+          auto's en krimp van de staalsector.
         </p>
 
     {% endif %}
   {% endif %}
 
   <!-- Inconsistency between heating options and hot water options -->
-
   {% if future.biggest_space_heater_share_name != future.biggest_water_heater_share_name %}
 
-    <h3>Space heating and hot water technologies</h3>
+    <h3>Ruimteverwarming en warm-water technologieën</h3>
     <p>
-      The space heating technologies in your scenario are not consistent with those producing hot
-      water. You have chosen to heat most houses with a
-      {{ future.biggest_space_heater_share_name | i18n: 'input_element_series'  }} whereas most of the hot water
-      in households is produced by a
-      {{ future.biggest_water_heater_share_name | i18n: 'input_element_series'  }}. The percentages
+      De technologieën voor ruimteverwarming en warm water in jouw scenario zijn niet consistent. 
+      De meeste huizen worden verwarmd met 
+      {{ future.biggest_space_heater_share_name | i18n: 'input_element_series'  }} terwijl het warme water
+      voornamelijk door 
+      {{ future.biggest_water_heater_share_name | i18n: 'input_element_series'  }} wordt geleverd. Is
+      dat opzettelijk?
     </p>
 
     <p>
-      NOTE: The combi-technology shares (percentages) in the households space heating and hot water
-      sections represent the market share of these technologies. This means that if you choose to
-      use technology A for space heating in 100% of the houses, and technology B for hot water in
-      100% of the households, every household containes one of both A and B.
+      NB: De combi-technologieë-aandelen (percentages) in de ruimteverwarmingssectie van househoudens
+      en heet water representeren marktaandelen van deze technologieën.
+      Als je dus technologie A kiest voor ruimteverwarming in 100% van de huishoudens, en technologie
+      B voor heet water in 100% van de huishoudens dan heeft elk huishouden zowel technologie A als B.
     </p>
   {% endif %}
 
   <!-- If curtailment occors, why not build more flex or industry use of H2? -->
   {% if future.electricity_curtailed > 0 %}
 
-    <h2>Unused potential</h2>
+    <h2>Onbenut potentieel</h2>
 
-    In your scenario, there are
-    {{ future.dashboard_total_number_of_excess_events }} hours that electricity production exceeds demand.
-    Some of this electricity is not used (curtailed). To usefully employ the excess electricity you can
+    In jouw scenario zijn er
+    {{ future.dashboard_total_number_of_excess_events }} uren dat elektriciteitsproductie hoger is dan de vraag.
+    Een deel van deze elektriciteit wordt nu niet gebruikt (gecurtailed). Je kunt deze overschotten als volgt inzetten
 
     <ul>
-      <li><strong>Store electricity</strong>: in the flexibility section, you can build batteries in homes or
-        indicate how much of ellectric car batteries can be used for storing electricity.</li>
-      <li><strong>Convert electricity to gas</strong>: in the flexibility section, you can build power-to-gas plants
-        to convert electricity to hydrogen gas.</li>
-      <li><strong>Convert electricity to heat</strong>: in the flexibility section, you can build power-to-heat plants
-        which generate heat from electricity and store the heat for use in houses.</li>
-      <li><strong>Increase interconnectivity</strong>: in the import/export section you can increase the capacity of
-        the interconnectors with neighbouring countries.</li>
-      <li><strong>Increase demand</strong>: by electrifying for example heating/hot water production in houses
-      or transport.</li>
+      <li><strong>Opslag</strong>: in de flexibiliteits-sectie kun je aangeven hoeveel thuisbatterijen er moeten
+        komen en welk deel van EV accus kunnen worden ingezet voor opslag.</li>
+      <li><strong>Omzetting naar (waterstof)gas</strong>: in de flexibiliteits-sectie kun je power-to-gas (P2G) centrales
+        neerzetten om elektriciteitsoverschotten om te zetten in waterstofgas.</li>
+      <li><strong>Omzetting in warmte</strong>: in de flexibiliteits-sectie kun je power-to-heat (P2H) installaties
+        bouwen waarmee warm water wordt gemaakt voor huishoudens.</li>
+      <li><strong>Interconnectiviteit vergroten</strong>: in de import/export sectie kun je de capaciteit van de
+         interconnectoren met buurlanden vergroten zodat overschotten kunnen worden geëxporteerd.</li>
+      <li><strong>Vraagtoename</strong>: door bijvoorbeeld ruimteverwarming- warm waterproductie in huishoudens of
+       transport te elektrificeren.</li>
     </ul>
 
 
   {% endif %}
 
-  <h2>Extreme assumptions</h2>
+  <h2>Extreme aannames</h2>
 
   <p>
-    Depending on your choices, this section highlights some assumptions which
-    imply big changes in the energy system. This might help you to focus on
-    which aspects of your scenario could use some extra argumentation or
-    research.
+    Afhankelijk van je keuzes worden er in deze sectie aannames uitgelicht die een extreme verandering van het 
+    energiesysteem impliceren.
+    Dit kan helpen om te bepalen welke aspecten van je scenario nog extra onderbouwing of onderzoek vergen.
   </p>
 
 
   <!-- Extreme amount of greengas -->
   {% if future.share_of_greengas_in_gas_network > 0.05 %}
 
-    <h3>Greengas and areable land</h3>
+    <h3>Groen gas en lanbouwareaal</h3>
 
     <p>
-      Your scenario has {{ future.share_of_greengas_in_gas_network | times: 100 | round: 1 }}% of greengas mixed into the gas
-      network. This requires about {{ future.bio_footprint_of_greengas_km | round: 1 }} of areable
-      land which is {{ future.bio_footprint_of_greengas_fraction_of_areable_land | round: 1 }} times the available
-      areable land in your country.
+      Je scenario heeft {{ future.share_of_greengas_in_gas_network | times: 100 | round: 1 }}% groen gas in het gasnet
+      Voor de productie van dat gas is {{ future.bio_footprint_of_greengas_km | round: 1 }} landbouwgrond nodig
+      ({{ future.bio_footprint_of_greengas_fraction_of_areable_land | round: 1 }} keer het landbouwareaal van je regio).
     </p>
 
   {% endif %}
@@ -891,26 +888,25 @@
   {% if settings.merit_order_enabled %}
     {% if future.profitability_percentage < 100 %}
       <p>
-        In your scenario, {{ 100 | minus: future.profitability_percentage | round: 1 }}% of powerplants is not
-        profitable. This means that they are not earning back their investment costs and sometimes not even their running costs.
-        Such plants will not stay open very long. Having them around in your future year might not be realistic.
-        You can either
+        In je scenario is {{ 100 | minus: future.profitability_percentage | round: 1 }}% van de centrales verliesgevend.
+        Dit betekend dat ze hun investeringskosten niet terugverdienen en soms zelfs niet hun draaikosten.
+        Het is niet te verwachten dat verliesgevende centrales lang open zullen blijven. Om winstgevendheid te verbeteren kun je:
         <ul>
-          <li><strong>Increase electricity demand</strong>: making the unprofitable plants run more hours could improve their
-            situation.</li>
-          <li><strong>Reduce competing production</strong>: typically, wind and solar electricity generation has marginal costs
-            close to zero, 'pushing' conventional plants out of the merit order.</li>
-          <li><strong>Close the plants</strong>: closing unprofitable plants might increase the realism of your scenario as such
-            plants are not expected to exist very long.</li>
+          <li><strong>Elektriciteitsvraag laten toenemen</strong>: door centrales meer draaiuren te geven kun je hun winstgevendheid
+            verbeteren.</li>
+          <li><strong>Concurrende productie verlagen</strong>: elektriciteit uit wind en zon-PV heeft zeer lage marginale kosten, 
+            daardoor worden conventionele (dispatchable) centrales uit de markt 'gedrukt'.</li>
+          <li><strong>Sluiten van centrales</strong>: dit vergroot het realisme van je scenario en kan de kosten voor het systeem 
+            verlagen.</li>
         </ul>
       </p>
     {% endif %}
   {% endif %}
 
 
-  <h1 class="banner">Appendix A: Slider settings</h1>
+  <h1 class="banner">Appendix A: Slider-settings</h1>
 
-  This appendix lists all the sliders which have been moved from their default value.
+  In deze appendix wordt een lijst gegeven van alle schuifjes die van hun startwaarde zijn verplaatst.
 
   {% if user_values.length %}
     <ul class="user-values">
@@ -931,52 +927,53 @@
     </ul>
   {% else %}
     <p>
-      This is an untouched scenario; no values were changed from the
-      defaults.
+      Er zijn geen schuifjes aangepast.
     </p>
   {% endif %}
 
-  <h1 class="banner">Appendix B: Investment costs</h1>
+  <h1 class="banner">Appendix B: Investeringskosten</h1>
 
   <p>
-    The following (total) investments must be done to realise your scenario:
+    De volgende (totale) investeringen moeten worden gedaan om jouw scenario te realiseren:
   </p>
 
 
   {% chart 142 %}
-    This table shows an overview of the investment cost of heat and electricity producing
-    technologies. The investment costs are shown for both the start scenario (2010) and for the
-    future scenario. In both cases a 'green-field' approach is taken: no previously installed
-    technologies are assumed. The last column shows the difference between the investment costs
-    of the two scenarios.
+    Deze tabel geeft een overzicht van de investeringskosten van warmte en elektriciteitsproductie. 
+    De investeringskosten worden weergegeven voor zowel het startscenario ({{ settings.start_year }}) 
+    als voor het toekomstjaar. 
+    In beide gevallen wordt een 'green-field' benadering genomen: er worden geen eerder geïnstalleerde 
+    technologieën meegenomen. De laatste kolom laat het verschil zien tussen de investeringskosten 
+    voor begin- en eindjaar.
   {% endchart %}
 
   <h1 class="banner">Appendix C: About The Energy Transition Model</h1>
 
-    <h2>Introduction</h2>
+    <h2>Inleiding</h2>
 
       <p>
-        The <a href="https://energytransitionmodel.com">Energy Transition Model (ETM)</a> is
-        a free, open-source, web-based
-         energy model for the exploration of energy scenario's.
+        Het <a href="https://energytransitionmodel.com">Energyietransitiemodel (ETM)</a> is
+        een graties, open-source, web-based
+         energiemodel om energiescenario's voor de toekomst mee te verkennen.
       </p>
 
       <p>
-        The ETM is for anyone who wants to explore and create energy scenarios for countries, cities,
-        neighbourhoods and even streets.
-        No prior knowledge is assumed and the ETM is therefore of interest to both experts and students.
-        You can make assumptions about demand and supply of different types of energy from the source to
-        the application. the ETM determines, for all stakeholders in the system, sustainability, reliability
-        and affordability at national and local level.
+        Het ETM is voor iedereen die energie-scenario's wil verkennen en creëren voor landen, steden,
+        wijken en zelfs straten.
+        Er wordt geen voorkennis aangenomen zodat het ETM door zowel experts als studenten kan worden gebruikt.
+        Je kunt aannames maken over vraag en aanbod van verschillende soorten energie van bron tot
+        toepassing. Het ETM bepaalt voor alle belanghebbenden in het systeem duurzaamheid, betrouwbaarheid
+        En betaalbaarheid op nationaal en lokaal niveau.
       </p>
 
       <p>
-        You can look up how the ETM compares to other models on
-        <a href="www.energierekenmodellen.nl">energierekenmodellen.nl</a>.
+        Op
+        <a href="www.energierekenmodellen.nl">energierekenmodellen.nl</a> kun je zien hoe het ETM zich
+        verhoudt tot andere modellen.
       </p>
 
 
-    <h2>Beyond The Energy Transition Model</h2>
+    <h2>Scope van het Energietransitiemodel</h2>
 
       <blockquote>
         <p>
@@ -986,21 +983,19 @@
       </blockquote>
 
       <p>
-        Although Quintel strives to properly include all important features of the energy system, the ETM nescessarily
-        has a limited scope and should not be used as a substitute for critical thought. On the contrary! Hopefully, the
-        user is inspired to challenge results and limits of the model and starts thinking outside of the boudaries of
-        the Energy Transition Model.
+        Hoewel Quintel alle belangrijke kenmerken van het energiesysteem probeert mee te nemen, heeft het ETM noodzakelijkerwijs
+        een beperkte reikwijdte en mag het niet worden gebruikt als vervanging voor kritisch denken. Integendeel! Hopelijk, wordt de 
+        gebruiker geïnspireerd om dieper na te denken over de resultaten en de grenzen van het model op te zoeken!
       </p>
 
       <p>
-        The following (very) incomplete list of topics is indicative of the limits of the ETM:
+        De volgende (zeer) onvolledige lijst van onderwerpen is indicatief voor de grenzen van het ETM:
         <ul>
-          <li><strong>Human behaviour</strong>: arguably the biggest impact on the success of failure of energy transition
-            is declared out of scope of the primarily technical ETM.</li>
-          <li><strong>Economic relations</strong>: the ETM calculates costs based on published values but does not assume
-            price-elasticity relations or other economic relations which may no longer apply in the future.</li>
-          <li><strong>Policy</strong>: no subsedies or taxes are assumed in the ETM, they are viewed as the possible
-            motivation for the choices of the user, however.</li>
+          <li><strong>Menselijk gedrag</strong>: ongetwijfeld de grootste impact op het succes of het mislukken van de 
+            energietransitie valt buiten de scope van het voornamelijk technisch/financiële ETM.</li>
+          <li><strong>Economische verbanden</strong>: het ETM berekent kosten op basis van gepubliceerde huidige waarden en neemt
+            geen prijselasticiteit of andere economische relaties aan die in de toekomst wellicht niet langer gelden.</li>
+          <li><strong>Wetgeving</strong>: het ETM berekent kosten zonder subsidies of belastingen.</li>
         </ul>
 
       </p>

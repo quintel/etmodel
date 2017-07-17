@@ -286,66 +286,69 @@
   </p>
 
   <!-- Only display if the user has set targets -->
-  <h1 class="banner">Doelen</h1>
+  {% if COUNT(GRAPH(graph).goals) %}
+    <h1 class="banner">Doelen</h1>
 
-    <!-- CO2 -->
-    {% if future.policy_goal_co2_emissions_target_value.value  %}
-      <h2>CO<sub>2</sub> reduction</h2>
+      <!-- CO2 -->
+      {% if future.policy_goal_co2_emissions_target_value.value  %}
+        <h2>CO<sub>2</sub> reduction</h2>
 
-        {% if future.policy_goal_co2_emissions_reached.value %}
-          <p>
-            Je hebt je doel van
-            {{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}
-            bereikt.
-          </p>
-        {% else %}
-          <p>
-            Je hebt de CO<sub>2</sub>-uitstoot slechts tot
-            {{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}
-            kunnen beperken. Dit is meer dan het gestelde doel van
-            {{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}.
-            In de
-            <a href="#uitstoot">uitstoot-sectie</a> kun je meer lezen over
-            hoe je de CO<sub>2</sub>-uitstoot verder kunt terugbrengen.
-          </p>
-        {% endif %}
-    {% endif %}
-
-    <!-- Renewability -->
-    {% if future.policy_goal_renewable_percentage_target_value.value %}
-      <h2>Hernieuwbaarheid</h2>
-        <p>
-          {% if future.policy_goal_renewable_percentage_reached.value %}
-            Je hebt je doel van
-            {{ future.policy_goal_renewable_percentage_target_value | times: 100 | round: 1 }}%
-            hernieuwbare energie geraliseerd met een resultaat van
-            {{ future.policy_goal_renewable_percentage_value | times: 100 | round: 1 }}%!
+          {% if future.policy_goal_co2_emissions_reached.value %}
+            <p>
+              Je hebt je doel van
+              {{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}
+              bereikt.
+            </p>
           {% else %}
-            Je scenario heeft een hernieuwbaarheidspercentage van slechts 
-            {{ future.policy_goal_renewable_percentage_value | times: 100 | round: 1 }}%
-            terwijl je doel
-            {{ future.policy_goal_renewable_percentage_target_value | times: 100 | round: 1 }}% was.
+            <p>
+              Je hebt de CO<sub>2</sub>-uitstoot slechts tot
+              {{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}
+              kunnen beperken. Dit is meer dan het gestelde doel van
+              {{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}.
+              In de
+              <a href="#co2-emissions">CO<sub>2</sub> emissions</a> sectie kun je meer lezen over
+              hoe je de CO<sub>2</sub>-uitstoot verder kunt terugbrengen.
+            </p>
           {% endif %}
-        </p>
-    {% endif %}
+      {% endif %}
 
-    <!-- Costs -->
-    {% if future.policy_goal_total_energy_costs_target_value.value %}
-      <h2>Costs of energy</h2>
-        <p>
-          {% if future.policy_goal_total_energy_costs_reached.value %}
-            Je hebt de kosten succesvol onder je doelwaarde van 
-            {{ future.policy_goal_total_energy_costs_target_value | round: 1 }} mld EUR per jaar
-            gehouden: 
-            {{ future.policy_goal_total_energy_costs_value | round: 1 }} mld EUR/j!
-          {% else %}
-            De jaarlijkse kosten van je scenario zijn 
-            {{ future.policy_goal_total_energy_costs_value |  round: 1 }} mld EUR,
-            meer dan je doel van
-            {{ future.policy_goal_total_energy_costs_target_value | round: 1 }} mld EUR.
-          {% endif %}
-        </p>
-    {% endif %}
+      <!-- Renewability -->
+      {% if future.policy_goal_renewable_percentage_target_value.value %}
+        <h2>Hernieuwbaarheid</h2>
+          <p>
+            {% if future.policy_goal_renewable_percentage_reached.value %}
+              Je hebt je doel van
+              {{ future.policy_goal_renewable_percentage_target_value | times: 100 | round: 1 }}%
+              hernieuwbare energie geraliseerd met een resultaat van
+              {{ future.policy_goal_renewable_percentage_value | times: 100 | round: 1 }}%!
+            {% else %}
+              Je scenario heeft slechts een hernieuwbaarheids-percentage van 
+              {{ future.policy_goal_renewable_percentage_value | times: 100 | round: 1 }}%
+              terwijl je doel
+              {{ future.policy_goal_renewable_percentage_target_value | times: 100 | round: 1 }}% was.
+            {% endif %}
+          </p>
+      {% endif %}
+
+      <!-- Costs -->
+      {% if future.policy_goal_total_energy_costs_target_value.value %}
+        <h2>Costs of energy</h2>
+          <p>
+            {% if future.policy_goal_total_energy_costs_reached.value %}
+              Je hebt de kosten succesvol onder je doelwaarde van 
+              {{ future.policy_goal_total_energy_costs_target_value | round: 1 }} mld EUR per jaar
+              gehouden: 
+              {{ future.policy_goal_total_energy_costs_value | round: 1 }} mld EUR/j!
+            {% else %}
+              De jaarlijkse kosten van je scenario zijn 
+              {{ future.policy_goal_total_energy_costs_value |  round: 1 }} mld EUR,
+              meer dan je doel van
+              {{ future.policy_goal_total_energy_costs_target_value | round: 1 }} mld EUR.
+            {% endif %}
+          </p>
+      {% endif %}
+  {% endif %}
+
 
   <h1 class="banner">Energiegebruik en -productie</h1>
 

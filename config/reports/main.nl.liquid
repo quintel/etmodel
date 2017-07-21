@@ -177,7 +177,7 @@
       </li>
     {% else %}
       <li class="target-met">
-        Je scenario heeft geen elektriciteitsoverschotten.
+        Je scenario heeft geen elektriciteitsoverschotten (curtailment)
       </li>
     {% endif %}
 
@@ -206,7 +206,7 @@
       </li>
     {% else %}
       <li>
-        In je scenario, primair energiegebruik is gereduceerd tot
+        In je scenario is primair energiegebruik gereduceerd tot
         {{ future.primary_energy_demand_percentage_wrt_start_year | round: 1 }}%
         van de startwaarde {{ settings.start_year }}.
         <a href="#energiegebruik-en--productie" class="learn-more">
@@ -227,7 +227,7 @@
       {% if present.bio_footprint.value == future.bio_footprint.value %}
         gelijk aan de startwaarde in {{ settings.start_year }}.
       {% else %}
-        in vergelijking met de startwaarde van
+        in het startjaar is dat 
         {{ present.bio_footprint | round: 1 }}x{{ settings.area_code | upcase }}.
       {% endif %}
       <a href="#biovoetafdruk" class="learn-more">Lees verder &raquo;</a>
@@ -238,7 +238,7 @@
         Bijmengen van meer dan 10% groen gas in het gas netwerk vergt grote 
         aanpassingen en investering. Jouw scenario heeft
         {{ future.share_of_greengas_in_gas_network | times: 100 | round: 1 }}%
-        groengas in het gasnet.
+        groen gas in het gasnet.
         <a href="#extreme-aannames" class="learn-more">Lees verder &raquo;</a>
       </li>
     {% endif %}
@@ -246,7 +246,7 @@
     {% if future.profitability_percentage.value < 100 %}
       <li>
         {{ 100 | minus: future.profitability_percentage | round: 1 }}% van de 
-        elektriciteitcentrales in je scenario zijn niet winstgevend. Denk 
+        elektriciteitscentrales in je scenario zijn niet winstgevend. Denk 
         je dat ze er nog zullen zijn in {{ settings.end_year }}?
         <a href="#winstgevendheid-van-elektriciteitscentrales" class="learn-more">
           Lees verder &raquo;
@@ -264,12 +264,12 @@
   <h1 class="banner">Inleiding</h1>
 
   <p>
-    Dit rapport is automatisch gegenenereerd door het
+    Dit rapport is automatisch gegenereerd door het
     <a href="https://energytransitionmodel.com">Energietransitiemodel</a>
-    <abbr>(ETM)</abbr>, gebaseerd op de schuifjes-instellingen in jouw scenario.
+    <abbr>(ETM)</abbr> en is gebaseerd op de schuifjes-instellingen in jouw scenario.
   </p>
   <p>
-    Elk hoofdstuk behandelt een belangrijk aspect van je scenrio zoals CO2-uitstoot, 
+    Elk hoofdstuk behandelt een belangrijk aspect van je scenario zoals CO<sub>2</sub>-uitstoot, 
     kosten, hernieuwbaarheid etc. welke overeenkomen met de dashboard-waarden in het
     <abbr>ETM</abbr>-front-end. Grafieken tonen extra informatie bij mouse-over.
   </p>
@@ -298,13 +298,13 @@
           </p>
         {% else %}
           <p>
-            Je hebt de CO2-uitstoot slechts tot
+            Je hebt de CO<sub>2</sub>-uitstoot slechts tot
             {{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}
             kunnen beperken. Dit is meer dan het gestelde doel van
             {{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}.
             In de
-            <a href="#CO2-emissions">CO2 emissions</a> sectie kun je meer lezen over
-            hoe je de CO2-uitstoot verder kunt terugbrengen.
+            <a href="#uitstoot">uitstoot-sectie</a> kun je meer lezen over
+            hoe je de CO<sub>2</sub>-uitstoot verder kunt terugbrengen.
           </p>
         {% endif %}
     {% endif %}
@@ -319,7 +319,7 @@
             hernieuwbare energie geraliseerd met een resultaat van
             {{ future.policy_goal_renewable_percentage_value | times: 100 | round: 1 }}%!
           {% else %}
-            Je scenario heeft slechts een hernieuwbaarheids-percentage van 
+            Je scenario heeft een hernieuwbaarheidspercentage van slechts 
             {{ future.policy_goal_renewable_percentage_value | times: 100 | round: 1 }}%
             terwijl je doel
             {{ future.policy_goal_renewable_percentage_target_value | times: 100 | round: 1 }}% was.
@@ -350,10 +350,10 @@
     <h2>Energiegebruik</h2>
 
       <p>
-        De {{ future.biggest_final_demand_sector_name | without_unit }} sector
+        De {{ future.biggest_final_demand_sector_name | without_unit }}-sector
         is de grootste eindgebruiker van energie met
         {{ future.biggest_final_demand_sector_value | autoscale: 'MJ'}} 
-        <strong>finaal gebruik</strong> (de energie die direct wordt geconsummeerd).
+        <strong>finaal gebruik</strong> (de energie die direct wordt geconsumeerd).
       </p>
 
       {% chart 146 %}
@@ -362,7 +362,7 @@
 
       <p>
         Het <strong>primaire energiegebruik</strong> (finaal gebruik plus alle
-        transformatie- en distributieverliezen), het energiegebruik van het 
+        transformatie- en distributieverliezen), van het 
         energiesysteem als geheel ziet er als volgt uit:
       </p>
 
@@ -371,7 +371,7 @@
       {% endchart %}
 
       <p>
-        Ge-exporteerde olie(producten) kunnen een groot aandeel hebben in
+        Geëxporteerde olie(producten) kunnen een groot aandeel hebben in
         primair gebruik als de raffinagesector van significant formaat is.
       </p>
 
@@ -391,7 +391,7 @@
 
       <p>
         Het centrale warmtenet in je scenario kan worden gebruikt om huizen en gebouwen
-        te verwarmen en levert optioneel warmte aan de industrie en landbouwsector. De
+        te verwarmen en levert optioneel warmte aan de industrie- en de landbouwsector. De
         laatste twee kunnen ook restwarmte aan het centrale netwerk leveren. De onderstaande
         grafiek toont de balans tussen vraag en aanbod van het centrale warmtenet.
       </p>
@@ -415,9 +415,7 @@
         </ul>
       {% else %}
         <p>
-          Er is 
-          {{ future.energy_heat_network_backup_heater_network_gas_in_heat_network_mekko | autoscale: 'PJ'}}
-          onvoldoende warmte geproduceerd. Een back-up gasketel wordt nu ingezet om het tekort op te vangen.
+          Er is onvoldoende warmte geproduceerd. Een back-up gasketel wordt nu ingezet om het tekort van {{ future.energy_heat_network_backup_heater_network_gas_in_heat_network_mekko | autoscale: 'PJ'}} op te vangen.
         </p>
 
         <p>Je kunt vraag en aanbod als volgt op elkaar afstemmen:</p>
@@ -429,17 +427,17 @@
         </ul>
       {% endif %}
 
-  <h1 class="banner">CO2-uitstoot</h1>
+  <h1 class="banner">Uitstoot</h1>
 
     <p>
-      In je scenario is een CO2-reductie van 
+      In je scenario is een CO<sub>2</sub>-reductie van 
       {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
-      gerealiseerd. De onderstaande grafiek relateert de CO2 {{ settings.end_year }} aan de referentiewaarde uit 1990 
+      gerealiseerd. De onderstaande grafiek relateert de CO<sub>2</sub>-uitstoot in {{ settings.end_year }} aan de referentiewaarde uit 1990 
       en de uitstoot in {{ settings.start_year }}.
     </p>
 
     {% chart 46 %}
-      CO2-uitstoot gebaseerd op primair energiegerbruik en uitgesplits in sectoren voor 1990 (links),
+      CO<sub>2</sub>-uitstoot gebaseerd op primair energiegebruik en uitgesplitst in sectoren voor 1990 (links),
       {{ settings.start_year }} (midden),
       en {{ settings.end_year }} (rechts). Deze getallen gelden voor de hele energetische keten inclusief
       omzet- en transportverliezen.
@@ -448,7 +446,7 @@
     <!-- Supports else, elsif, and unless. -->
     {% if future.co2_reduction_percentage > 40.0 %}
       <p>
-        De CO2-afname van {{ future.co2_reduction_percentage | round: 1 | without_unit }}% gaat 
+        De CO<sub>2</sub>-afname van {{ future.co2_reduction_percentage | round: 1 | without_unit }}% gaat 
         verder dan het Nederlandse doel voor 2030 van 40%.
 
       {% if future.co2_reduction_percentage > 80.0 %}
@@ -457,59 +455,59 @@
       </p>
     {% else %}
       <p>
-        De CO2-uistootreductie is kleiner dan de Nederlandse ambitie van 40% in 2030
-        en 80% - 95% in 2050. Je kunt meer CO2-uitstoot reduceren door:
+        De reductie van de CO<sub>2</sub>-uitstoot is kleiner dan de Nederlandse ambitie van 40% in 2030
+        en 80% - 95% in 2050. Je kunt meer CO<sub>2</sub>-uitstoot reduceren door:
       </p>
 
       <ul>
         <li><strong>Besparing</strong>: reduceer de vraag in de meest energie-intensieve sectoren</li>
         <li><strong>Uitfaseren fossiel</strong>: ruimteverwarming en warm water in huishoudens en gebouwen, 
           transport en elektriciteitsproductie zijn toepassingen waar fossiele brandstoffen kunnen worden
-          vervangen door CO2-neutrale alternatieven.</li>
-        <li><strong>CCS(U)</strong>: Afvangen, opslag en, optionele, inzet van CO2 kunnen wellicht uitkomst
+          vervangen door CO<sub>2</sub>-neutrale alternatieven.</li>
+        <li><strong>CCS(U)</strong>: Afvangen, opslag en (optionele) inzet van CO<sub>2</sub> kunnen wellicht uitkomst
           bieden in de elektriciteitsproductie en de energie-intensieve industrie.</li>
-        <li><strong>Flexibiliteit</strong>: opslag en omzetting van elektriciteitsoverschotten verlaagt de 
+        <li><strong>Flexibiliteit</strong>: opslag en omzetting van elektriciteitsoverschotten verlagen de 
           vraag naar fossiele vormen van energie.</li>
-        <li><strong>Brandstof- en CO2-beprijzing</strong>: door de prijs van CO2 en fossiele brandstoffen
-          vergroten kunnen de draaiuren van fossiele centrales worden teruggebracht afhankelijk van de 
+        <li><strong>Brandstof- en CO<sub>2</sub>-beprijzing</strong>: door de prijs van CO<sub>2</sub> en fossiele brandstoffen te
+          verhogen kunnen de draaiuren van fossiele centrales worden teruggebracht afhankelijk van de 
           beschikbaarheid van andere opwekmethoden.</li>
       </ul>
     {% endif %}
 
-    <h2>Sankey-diagram van CO2-uitstoot</h2>
+    <h2>Sankey-diagram van CO<sub>2</sub>-uitstoot</h2>
 
     <p>
      Het onderstaande Sankey diagram toont:
      <ul>
-        <li><strong>welke</strong> energiedragers met name verantwoordelijk zijn voor CO2-uitstoot 
+        <li><strong>welke</strong> energiedragers met name verantwoordelijk zijn voor CO<sub>2</sub>-uitstoot 
           (linker kolom)</li>
-        <li><strong>waar</strong> in het systeem CO2 wordt uitgestoten (middelste kolom)</li>
-        <li><strong>welk deel</strong> van de CO2 wordt opgeslagen of uitgestoten (rechter kolom)</li>
+        <li><strong>waar</strong> in het systeem CO<sub>2</sub> wordt uitgestoten (middelste kolom)</li>
+        <li><strong>welk deel</strong> van de CO<sub>2</sub> wordt opgeslagen of uitgestoten (rechter kolom)</li>
       </ul>
     </p>
 
     {% chart 191 %}
-      Sankey diagram van de dragers en sectoren welke verantwoordelijk zijn voor CO2-uitstoot.
+      Sankey diagram van de dragers en sectoren welke verantwoordelijk zijn voor CO<sub>2</sub>-uitstoot.
     {% endchart %}
 
     <p>
-      Je kunt Carbon Capture and Storage (CCS) centrales bouwen in het 'Aanbod' deel van het ETM om 
-      CO2-uitstoot van elektriciteitsopwek te verkleinen.
+      Je kunt Carbon Capture and Storage (CCS) centrales bouwen in het 'Aanbod' deel van het ETM om de 
+      CO<sub>2</sub>-uitstoot van elektriciteitsopwek te verkleinen.
     </p>
-<!--     <h2>CO2 emissions of biomass</h2>
+<!--     <h2>CO<sub>2</sub> emissions of biomass</h2>
 
     <p>
-    Climate change is not induced by the annual CO2 emissions, but by the total amount of CO2 present
+    Climate change is not induced by the annual CO<sub>2</sub> emissions, but by the total amount of CO<sub>2</sub> present
      in the air.
     </p>
     <p>
-    Usually no CO2 emissions are attributed to biomass as biomass absorbs as much CO2 as is emitted
-    during combustion (over the complete life cycle). The CO2 emitted by combustion of biomass is
+    Usually no CO<sub>2</sub> emissions are attributed to biomass as biomass absorbs as much CO<sub>2</sub> as is emitted
+    during combustion (over the complete life cycle). The CO<sub>2</sub> emitted by combustion of biomass is
     not always absorbed within a time-scale that is relevant for climate change.
     </p>
 
     {% chart 188 %}
-      Which part of the CO2 emissions from biomass is relevant to the environment is uncertain and
+      Which part of the CO<sub>2</sub> emissions from biomass is relevant to the environment is uncertain and
       speculative. This chart serves to explore the (potential) amount of these emissions.
     {% endchart %}
  -->
@@ -534,7 +532,7 @@
         <p>
           Netherlands is traditioneel een land met een grote petrochemische industrie met grote energiestromen
           van ruwe olie het land in en olieproductien het land uit. Gasproductie in Nederland is aan het afnemen
-          mede vanwegen de aardbevingen in Groningen:
+          mede vanwegen de aardbevingen in Groningen.
 
           {% chart 159 %}
             Productie van aardgas in Nederland naar projecties van Energie Beheer Nederland.
@@ -547,8 +545,8 @@
 
   {% else %}
     <p>
-      Your scenario has -{{ future.total_net_energy_import | round: 1 | autoscale: 'MJ'}} of net energy export
-      in the end-year.
+      Jouw scenario heeft -{{ future.total_net_energy_import | round: 1 | autoscale: 'MJ'}} netto energie-export
+      in het einjaar.
     </p>
 
     {% chart 76 %}
@@ -563,7 +561,7 @@
   {% if future.total_number_of_excess_events > 1.0 %}
     <h2>Elektriciteitsoverschotten</h2>
 
-      <p>In je scenario is er {{ future.dashboard_total_number_of_excess_events | without_unit }}
+      <p>In je scenario zijn er {{ future.dashboard_total_number_of_excess_events | without_unit }}
         uren per jaar waar (hernieuwbare en must-run) elektriciteitsproductie de vraag overstijgt. 
         Het onderstaande histogram toont de frequentie en duur van deze events.
       </p>
@@ -610,7 +608,7 @@
       <h2>Merit order en brandstofprijzen</h2>
 
         <p>
-          De <i>merit order</i> sorteert 'dispatchable' (regelbare) elektriciteitcentrales
+          De <i>merit order</i> sorteert 'dispatchable' (regelbare) elektriciteitscentrales
           op <i>marginale kosten</i> (de kosten van het produceren van een extra MWh elektriciteit).
           Wind, zon-PV en must-run WKK hebben effectief marginale kosten van nul.
           De onderstaande grafiek toont marginale kosten en geïnstalleerd vermogen van elektriciteitsproductie in 
@@ -629,7 +627,7 @@
 
         <p>
           Marginale kosten voor centrales worden voornamelijk door brandstofprijzen bepaald. Door de 
-          prijs van kolen of CO2 op te voeren in het ETM kunnen gasgestookte centrales meer competitief 
+          prijs van kolen of CO<sub>2</sub> op te voeren in het ETM kunnen gasgestookte centrales meer competitief 
           worden met kolencentrales.
         </p>
 
@@ -646,9 +644,9 @@
     <h2>Leveringszekerheid</h2>
 
     <p>
-      De 'loss of load expectation' (LOLE) een het verwachte aantal uur per jaar dat er
+      De 'loss of load expectation' (LOLE) is het verwachte aantal uur per jaar dat er
       niet aan de elektriciteitsvraag kan worden voldaan met het opgestelde productievermogen.
-      Een LOLE groter dan nul betekent niet direct dat het licht uitgaat omdat elektriciteits kan worden
+      Een LOLE groter dan nul betekent niet direct dat het licht uitgaat omdat elektriciteit kan worden
       geïmporteerd of uit batterijen kan worden gehaald. In Nederland wordt een LOLE van 4 u/j 
       acceptabel geacht.
     </p>
@@ -686,7 +684,7 @@
       <h2>Winstgevendheid van elektriciteitscentrales</h2>
 
         <p>
-          Betrouwbaarheid van (elektriciteits-) aanbod en de winstgeventheid van centrales zijn direct met elkaar gelinkt.
+          Betrouwbaarheid van (elektriciteits)aanbod en de winstgevendheid van centrales zijn direct met elkaar gelinkt.
           Dispatchble centrales maken winst als ze veel draaiuren hebben, liefst op momenten dat de elektriciteitsprijs 
           hoog is.
           Een betrouwbaar elektriciteitssysteem heeft echter back-up centrales nodig om extreme pieken op te vangen 
@@ -705,9 +703,9 @@
 
         <p>
           Verliesgevende centrales zullen waarschijnlijk op den duur uit bedrijf worden genomen. 
-          Je kunt de winstgevenheid van het centralepark vergroten door de vraag toe te laten nemen. 
+          Je kunt de winstgevendheid van het centralepark vergroten door de vraag toe te laten nemen. 
           Ook het verlagen van elektriciteitsopwek met lage marginale kosten (zoals zon en wind) kan de
-          winstgevendheid van dispachable centrales verhogen.
+          winstgevendheid van dispatchable centrales verhogen.
         </p>
     {% endif %}
 
@@ -715,8 +713,8 @@
 
     <h2>Biovoetafdruk</h2>
       <p>
-        Je scenario gebruikt {{ future.bio_footprint | round: 1 }} keer het beschikbare lanbouwareaal voor de productie
-        van biobrandstoffen zoals hout, bio-ethanol, bio-gas en bio-diesel.
+        Je scenario gebruikt {{ future.bio_footprint | round: 1 }} keer het beschikbare landbouwareaal voor de productie
+        van biobrandstoffen zoals hout, bio-ethanol, biogas en biodiesel.
       </p>
 
       {% chart 168 %}
@@ -731,7 +729,7 @@
         Hernieuwbaarheidspercentage van energetisch eindgebruik.
       {% endchart %}
 
-      Voor de opwek van elektrciteit is het hernieuwbaarheidspercentage
+      Voor de opwek van elektriciteit is het hernieuwbaarheidspercentage
       {{ future.share_of_renewable_electricity | times: 100 | round: 1 }}%.
 
       {% chart 112 %}
@@ -797,11 +795,10 @@
     {% endif %}
 
     {% if future.steel_industry_percentage > 50 %}
-      <h3>Grootte van de staalindustrie en electrisch vervoer</h3>
+      <h3>Grootte van de staalindustrie en elektrisch vervoer</h3>
 
         <p>
-          Zoals in de raffinagesector is een aanzienlijk deel van staalproductie voor de 
-          automobielindustrie
+          Een aanzienlijk deel van staalproductie is voor de automobielindustrie.
           Als zelfrijdende, elektrische auto's een vlucht gaan nemen neemt het aantal auto's
           op de weg sterk af.
 
@@ -830,8 +827,8 @@
     </p>
 
     <p>
-      NB: De combi-technologieë-aandelen (percentages) in de ruimteverwarmingssectie van househoudens
-      en heet water representeren marktaandelen van deze technologieën.
+      NB: De combinatie van technologie-aandelen (percentages) in de ruimteverwarmingssectie van huishoudens
+      en warm water representeren marktaandelen van deze technologieën.
       Als je dus technologie A kiest voor ruimteverwarming in 100% van de huishoudens, en technologie
       B voor heet water in 100% van de huishoudens dan heeft elk huishouden zowel technologie A als B.
     </p>
@@ -848,14 +845,14 @@
 
     <ul>
       <li><strong>Opslag</strong>: in de flexibiliteits-sectie kun je aangeven hoeveel thuisbatterijen er moeten
-        komen en welk deel van EV accus kunnen worden ingezet voor opslag.</li>
+        komen en welk deel van EV accu's kunnen worden ingezet voor opslag.</li>
       <li><strong>Omzetting naar (waterstof)gas</strong>: in de flexibiliteits-sectie kun je power-to-gas (P2G) centrales
         neerzetten om elektriciteitsoverschotten om te zetten in waterstofgas.</li>
       <li><strong>Omzetting in warmte</strong>: in de flexibiliteits-sectie kun je power-to-heat (P2H) installaties
         bouwen waarmee warm water wordt gemaakt voor huishoudens.</li>
       <li><strong>Interconnectiviteit vergroten</strong>: in de import/export sectie kun je de capaciteit van de
          interconnectoren met buurlanden vergroten zodat overschotten kunnen worden geëxporteerd.</li>
-      <li><strong>Vraagtoename</strong>: door bijvoorbeeld ruimteverwarming- warm waterproductie in huishoudens of
+      <li><strong>Vraagtoename</strong>: door bijvoorbeeld ruimteverwarming, warm waterproductie of
        transport te elektrificeren.</li>
     </ul>
 
@@ -889,12 +886,12 @@
     {% if future.profitability_percentage < 100 %}
       <p>
         In je scenario is {{ 100 | minus: future.profitability_percentage | round: 1 }}% van de centrales verliesgevend.
-        Dit betekend dat ze hun investeringskosten niet terugverdienen en soms zelfs niet hun draaikosten.
+        Dit betekent dat ze hun investeringskosten niet terugverdienen en soms zelfs niet hun draaikosten.
         Het is niet te verwachten dat verliesgevende centrales lang open zullen blijven. Om winstgevendheid te verbeteren kun je:
         <ul>
           <li><strong>Elektriciteitsvraag laten toenemen</strong>: door centrales meer draaiuren te geven kun je hun winstgevendheid
             verbeteren.</li>
-          <li><strong>Concurrende productie verlagen</strong>: elektriciteit uit wind en zon-PV heeft zeer lage marginale kosten, 
+          <li><strong>Concurrerende productie verlagen</strong>: elektriciteit uit wind en zon-PV heeft zeer lage marginale kosten, 
             daardoor worden conventionele (dispatchable) centrales uit de markt 'gedrukt'.</li>
           <li><strong>Sluiten van centrales</strong>: dit vergroot het realisme van je scenario en kan de kosten voor het systeem 
             verlagen.</li>
@@ -939,21 +936,21 @@
 
 
   {% chart 142 %}
-    Deze tabel geeft een overzicht van de investeringskosten van warmte en elektriciteitsproductie. 
+    Deze tabel geeft een overzicht van de investeringskosten van warmte- en elektriciteitsproductie. 
     De investeringskosten worden weergegeven voor zowel het startscenario ({{ settings.start_year }}) 
     als voor het toekomstjaar. 
     In beide gevallen wordt een 'green-field' benadering genomen: er worden geen eerder geïnstalleerde 
     technologieën meegenomen. De laatste kolom laat het verschil zien tussen de investeringskosten 
-    voor begin- en eindjaar.
+    voor begin- en het eindjaar.
   {% endchart %}
 
-  <h1 class="banner">Appendix C: About The Energy Transition Model</h1>
+  <h1 class="banner">Appendix C: Over het Energietransitiemodel</h1>
 
     <h2>Inleiding</h2>
 
       <p>
         Het <a href="https://energytransitionmodel.com">Energyietransitiemodel (ETM)</a> is
-        een graties, open-source, web-based
+        een gratis, open-source, web-based
          energiemodel om energiescenario's voor de toekomst mee te verkennen.
       </p>
 
@@ -963,7 +960,7 @@
         Er wordt geen voorkennis aangenomen zodat het ETM door zowel experts als studenten kan worden gebruikt.
         Je kunt aannames maken over vraag en aanbod van verschillende soorten energie van bron tot
         toepassing. Het ETM bepaalt voor alle belanghebbenden in het systeem duurzaamheid, betrouwbaarheid
-        En betaalbaarheid op nationaal en lokaal niveau.
+        en betaalbaarheid op nationaal en lokaal niveau.
       </p>
 
       <p>

@@ -270,7 +270,7 @@
     <abbr>(ETM)</abbr>, based on the sliders you have set in your scenario.
   </p>
   <p>
-    Each chapter in this report highlights an important result such as CO2 emissions, cost,
+    Each chapter in this report highlights an important result such as CO<sub>2</sub> emissions, cost,
     renewability etc. which correspond to the dashboard items of the
     <abbr>ETM</abbr>. All charts contain more information on mouse-over.
   </p>
@@ -304,8 +304,8 @@
               {{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}
               falling short of your goal of limiting emissions to
               {{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}.
-              Try to reduce more CO2 by the options listed in the
-              <a href="#CO2-emissions">CO2 emissions</a> section.
+              Try to reduce more CO<sub>2</sub> by the options listed in the
+              <a href="#co2-emissions">CO<sub>2</sub> emissions</a> section.
             </p>
           {% endif %}
       {% endif %}
@@ -374,8 +374,8 @@
       {% endchart %}
 
       <p>
-        When looking at primary demand, exported oil(products) can play a big
-        role if refeneries are still producing at a significant rate.
+        When looking at primary demand, exported oil (products) can play a big
+        role if refineries are still producing at a significant rate.
       </p>
 
     <h2>Electricity production</h2>
@@ -436,16 +436,16 @@
         </ul>
       {% endif %}
 
-  <h1 class="banner">CO2 Emissions</h1>
+  <h1 class="banner">CO<sub>2</sub> emissions</h1>
 
     <p>
-      In your scenario, a CO2 emission reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
-      has been realised. The chart below relates the CO2 in {{ settings.end_year }} to the 1990 reference value and
+      In your scenario, a CO<sub>2</sub> emission reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
+      has been realised. The chart below relates the CO<sub>2</sub> in {{ settings.end_year }} to the 1990 reference value and
       emissions in {{ settings.start_year }}.
     </p>
 
     {% chart 46 %}
-      CO2 emissions based on primary energy demand broken down by sector for 1990 (left),
+      CO<sub>2</sub> emissions based on primary energy demand broken down by sector for 1990 (left),
       {{ settings.start_year }} (middle),
       and {{ settings.end_year }} (right). These figures represent emissions across the complete fuel chain
       including all transformations and losses.
@@ -463,56 +463,56 @@
       </p>
     {% else %}
       <p>
-        In your scenario, CO2 emission reductions fall short of the Dutch ambitions of 40% in 2030
-        and 80% - 95% in 2050. You can reduce CO2 by:
+        In your scenario, CO<sub>2</sub> emission reductions fall short of the Dutch ambitions of 40% in 2030
+        and 80% - 95% in 2050. You can reduce CO<sub>2</sub> by:
       </p>
 
       <ul>
         <li><strong>Realising energy savings</strong>: reduce energy consumption in the most energy-intensive sectors</li>
         <li><strong>Phasing out fossil fuels</strong>: heating and hot water in homes, transportation and electricity
-          production are places where fossil fuels can be replaced by CO2-neutral alternatives.</li>
-        <li><strong>CCS(U)</strong>: Capturing, storing and, optionally, using CO2 can be viable options in the
+          production are places where fossil fuels can be replaced by CO<sub>2</sub>-neutral alternatives.</li>
+        <li><strong>CCS(U)</strong>: Capturing, storing, and optionally using CO<sub>2</sub> can be viable options in the
           energy-intensive industry and electricity generation (energy) sector.</li>
         <li><strong>Flexibility</strong>: storage and conversion technologies enable you to utilise energy which would
         otherwise be exported or curtailed.</li>
-        <li><strong>Fuel and CO2 pricing</strong>: by increasing the price of CO2 and fossil fuels, fossil plants might
+        <li><strong>Fuel and CO<sub>2</sub> pricing</strong>: by increasing the price of CO<sub>2</sub> and fossil fuels, fossil plants might
         get less full load hours depending on the alternatives for electricity generation.</li>
       </ul>
     {% endif %}
 
-    <h2>Flow-diagram of CO2 emissions</h2>
+    <h2>Flow-diagram of CO<sub>2</sub> emissions</h2>
 
     <p>
      The Sankey diagram below shows:
      <ul>
-        <li><strong>which</strong> carriers are primarily responsible for CO2 emissions (left column)</li>
-        <li><strong>where</strong> in the system CO2 is produced (centre column)</li>
-        <li><strong>which part</strong> of the CO2 is captured and emitted (right column)</li>
+        <li><strong>which</strong> carriers are primarily responsible for CO<sub>2</sub> emissions (left column)</li>
+        <li><strong>where</strong> in the system CO<sub>2</sub> is produced (centre column)</li>
+        <li><strong>which part</strong> of the CO<sub>2</sub> is captured and emitted (right column)</li>
       </ul>
     </p>
 
     {% chart 191 %}
-      Sankey diagram showing which carriers and sectors are primarily responsible for CO2 emissions.
+      Sankey diagram showing which carriers and sectors are primarily responsible for CO<sub>2</sub> emissions.
     {% endchart %}
 
     <p>
-      You can build corbon capture and storage (CCS) power plants in the supply section of the ETM to
-      reduce CO2 emissions of electricity generation.
+      You can build carbon capture and storage (CCS) power plants in the supply section of the ETM to
+      reduce CO<sub>2</sub> emissions of electricity generation.
     </p>
-<!--     <h2>CO2 emissions of biomass</h2>
+<!--     <h2>CO<sub>2</sub> emissions of biomass</h2>
 
     <p>
-    Climate change is not induced by the annual CO2 emissions, but by the total amount of CO2 present
+    Climate change is not induced by the annual CO<sub>2</sub> emissions, but by the total amount of CO<sub>2</sub> present
      in the air.
     </p>
     <p>
-    Usually no CO2 emissions are attributed to biomass as biomass absorbs as much CO2 as is emitted
-    during combustion (over the complete life cycle). The CO2 emitted by combustion of biomass is
+    Usually no CO<sub>2</sub> emissions are attributed to biomass as biomass absorbs as much CO<sub>2</sub> as is emitted
+    during combustion (over the complete life cycle). The CO<sub>2</sub> emitted by combustion of biomass is
     not always absorbed within a time-scale that is relevant for climate change.
     </p>
 
     {% chart 188 %}
-      Which part of the CO2 emissions from biomass is relevant to the environment is uncertain and
+      Which part of the CO<sub>2</sub> emissions from biomass is relevant to the environment is uncertain and
       speculative. This chart serves to explore the (potential) amount of these emissions.
     {% endchart %}
  -->
@@ -600,7 +600,7 @@
           <li><strong>Fuel costs</strong>: using fuel prices set in the costs section.</li>
           <li><strong>Operation and Maintenance</strong>: both variable and fixed.</li>
           <li><strong>Weighted average costs of capital</strong>: assuming linear depreciation.</li>
-          <li><strong>Decommisioning costs</strong>: relevant for nuclear power plants only.</li>
+          <li><strong>Decommissioning  costs</strong>: relevant for nuclear power plants only.</li>
         </ul>
 
         Costs do <strong>not</strong> include subsidies and taxes.
@@ -635,7 +635,7 @@
 
         <p>
           Fuel prices determine to a large extend the marginal costs of power plants. Increasing the price of coal
-          and/or CO2 can, for instance, make gas fueled power plants more compatitive with coal fired power plants.
+          and/or CO<sub>2</sub> can, for instance, make gas fuelled power plants more competitive with coal fired power plants.
         </p>
 
 <!--         {% chart 32 %}
@@ -700,7 +700,7 @@
         </p>
 
         <p>
-          In your scenario, {{ 100 | minus: future.profitability_percentage | round: 1 }}% of powerplants is not
+          In your scenario, {{ 100 | minus: future.profitability_percentage | round: 1 }}% of power plants is not
           profitable. This means that they are not earning back their investment costs
           (orange in table below) or are not even earning their OPEX (operational expenditure) back (red).
         </p>
@@ -711,7 +711,7 @@
 
         <p>
           Unprofitable plants will likely be taken out of commission after a while. You can improve their profitability
-          by incereasing electricity demand (making them run more hours). Also reducing electricity generation with zero
+          by increasing electricity demand (making them run more hours). Also reducing electricity generation with zero
           marginal costs can make power plants profitable again.
         </p>
     {% endif %}
@@ -725,7 +725,7 @@
       </p>
 
       {% chart 168 %}
-        Biofootprint per carrier.
+        Bio footprint per carrier.
       {% endchart %}
 
     <h2>Renewability</h2>
@@ -754,9 +754,9 @@
   </p>
 
   <ul>
-    <li>{{ future.number_of_wind_turbines_per_year_offshore | round: 1 }} off-shore windturbines</li>
-    <li>{{ future.number_of_wind_turbines_per_year_inland | round: 1 | without_unit }} inland windturbines</li>
-    <li>{{ future.number_of_wind_turbines_per_year_coastal | round: 1 | without_unit }} coastal windturbines</li>
+    <li>{{ future.number_of_wind_turbines_per_year_offshore | round: 1 }} off-shore wind turbines</li>
+    <li>{{ future.number_of_wind_turbines_per_year_inland | round: 1 | without_unit }} inland wind turbines</li>
+    <li>{{ future.number_of_wind_turbines_per_year_coastal | round: 1 | without_unit }} coastal wind turbines</li>
     <li>{{ future.number_of_electric_vehicles_per_year | round: 1 | without_unit }} electric vehicles</li>
 
   </ul>
@@ -881,7 +881,7 @@
   <!-- Extreme amount of greengas -->
   {% if future.share_of_greengas_in_gas_network > 0.05 %}
 
-    <h3>Greengas and areable land</h3>
+    <h3>Green gas and areable land</h3>
 
     <p>
       Your scenario has {{ future.share_of_greengas_in_gas_network | times: 100 | round: 1 }}% of greengas mixed into the gas
@@ -896,7 +896,7 @@
   {% if settings.merit_order_enabled %}
     {% if future.profitability_percentage < 100 %}
       <p>
-        In your scenario, {{ 100 | minus: future.profitability_percentage | round: 1 }}% of powerplants is not
+        In your scenario, {{ 100 | minus: future.profitability_percentage | round: 1 }}% of power plants is not
         profitable. This means that they are not earning back their investment costs and sometimes not even their running costs.
         Such plants will not stay open very long. Having them around in your future year might not be realistic.
         You can either
@@ -991,9 +991,9 @@
       </blockquote>
 
       <p>
-        Although Quintel strives to properly include all important features of the energy system, the ETM nescessarily
+        Although Quintel strives to properly include all important features of the energy system, the ETM necessarily 
         has a limited scope and should not be used as a substitute for critical thought. On the contrary! Hopefully, the
-        user is inspired to challenge results and limits of the model and starts thinking outside of the boudaries of
+        user is inspired to challenge results and limits of the model and starts thinking outside of the boundaries of
         the Energy Transition Model.
       </p>
 

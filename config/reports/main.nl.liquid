@@ -302,6 +302,7 @@
           {% else %}
             <p>
               Je hebt de CO<sub>2</sub>-uitstoot slechts tot
+
               {{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}
               kunnen beperken. Dit is meer dan het gestelde doel van
               {{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}.
@@ -348,7 +349,6 @@
           </p>
       {% endif %}
   {% endif %}
-
 
   <h1 class="banner">Energiegebruik en -productie</h1>
 

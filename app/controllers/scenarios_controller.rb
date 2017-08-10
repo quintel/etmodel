@@ -136,7 +136,7 @@ class ScenariosController < ApplicationController
 
   def compare
     if params[:merge]
-      redirect_to(weighted_merge_scenarios_url(params))
+      redirect_to(weighted_merge_scenarios_url(params.permit(scenario_ids: [])))
       return
     end
 

@@ -153,7 +153,9 @@ D3.stacked_bar =
 
       # move the target lines
       @svg.selectAll('rect.target_line')
-        .data(@model.target_series(), (d) -> d.get 'gquery_key')
+        .data(@model.target_series(), (d) ->
+          "#{ d.get('gquery_key') }_#{ d.get('target_line_position') }"
+        )
         .transition()
         .attr 'y', (d) =>
           value = if d.get('target_line_position') is '1'

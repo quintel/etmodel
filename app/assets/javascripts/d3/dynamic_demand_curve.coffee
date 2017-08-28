@@ -29,13 +29,13 @@ D3.dynamic_demand_curve =
         .x((data) -> xScale(data.x))
         .y0((data) -> yScale(data.y0))
         .y1((data) -> yScale(data.y0 + data.y))
-        .interpolate('cardinal')
+        .interpolate('monotone')
 
     line: (xScale, yScale) ->
       d3.svg.line()
         .x((data) -> xScale(data.x))
         .y((data) -> yScale(data.y))
-        .interpolate('cardinal')
+        .interpolate('monotone')
 
     setStackedData: ->
       @chartData = @convertData()

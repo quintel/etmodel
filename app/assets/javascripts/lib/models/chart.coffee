@@ -92,16 +92,17 @@ class @Chart extends Backbone.Model
       when 'html_table'             then @table_view_factory()
       when 'scatter'
         if d3_support then D3.scatter.View else ScatterChartView
-      when 'sankey'                    then D3.sankey.View
-      when 'refinery'                  then D3.sankey.View
-      when 'target_bar'                then D3.target_bar.View
-      when 'd3'                        then @d3_view_factory()
-      when 'storage'                   then D3.storage.View
-      when 'import_export_cwe'         then D3.import_export_cwe.View
-      when 'import_export_flows'       then D3.import_export_flows.View
-      when 'import_export_renewables'  then D3.import_export_renewables.View
-      when 'import_export_capacity'    then D3.import_export_capacity.View
-      when 'dynamic_demand_curve'      then D3.dynamic_demand_curve.View
+      when 'sankey'                     then D3.sankey.View
+      when 'refinery'                   then D3.sankey.View
+      when 'target_bar'                 then D3.target_bar.View
+      when 'd3'                         then @d3_view_factory()
+      when 'storage'                    then D3.storage.View
+      when 'import_export_cwe'          then D3.import_export_cwe.View
+      when 'import_export_flows'        then D3.import_export_flows.View
+      when 'import_export_renewables'   then D3.import_export_renewables.View
+      when 'import_export_capacity'     then D3.import_export_capacity.View
+      when 'dynamic_demand_curve'       then D3.dynamic_demand_curve.View
+      when 'heat_demand_and_production' then D3.heat_demand_and_production.View
       else throw "Chart type not available"
 
   # D3 charts have their own class. Let's make an instance of the right one

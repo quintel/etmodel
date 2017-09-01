@@ -43,6 +43,10 @@ class Api::Area < ActiveResource::Base
     all_by_area_code[area_code]
   end
 
+  def self.code_exists?(area_code)
+    all_by_area_code.key?(area_code.to_s)
+  end
+
   def self.all_by_area_code
     Rails.cache.fetch(:api_areas) do
       all.index_by(&:area).with_indifferent_access

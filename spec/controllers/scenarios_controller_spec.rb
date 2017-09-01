@@ -79,6 +79,38 @@ describe ScenariosController, vcr: true do
         end
       end
 
+      context 'with a scenario for a non-existent region' do
+        before do
+          session[:setting] = Setting.new(area_code: 'nope')
+
+          expect(Api::Area)
+            .to receive(:code_exists?)
+            .with('nope').and_return(false)
+        end
+
+        it 'resets to the default setting' do
+          get :play
+          expect(session[:setting].area_code).to eq('nl')
+        end
+      end
+
+      context 'with a scenario for a existing region' do
+        before do
+          session[:setting] = Setting.new(area_code: 'de', api_session_id: 123)
+
+          expect(Api::Area)
+            .to receive(:code_exists?)
+            .with('de').and_return(true)
+        end
+
+        it 'does not reset to the default setting' do
+          get :play
+
+          expect(session[:setting].area_code).to eq('de')
+          expect(session[:setting].api_session_id).to eq(123)
+        end
+      end
+
       describe "#reset" do
         it "should reset a scenario" do
           get :reset

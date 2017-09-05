@@ -9,18 +9,22 @@ class AddColdSnapInputElement < ActiveRecord::Migration[5.0]
     Enable the &ldquo;cold snap&rdquo; below to use the 1987 heat demand and air
     temperature. When turned off (the default), the ETM will use 2013 demand and
     temperature curves as the basis for your scenario.
+
+    The average temperature in 1987 was 1 <sup>o</sup>C higher than the actual average temperature. To simulate this set the climate slide to -1 []o[]C.
   TEXT
 
   NL_DESCRIPTION = <<-TEXT.strip_heredoc
-    In 1987, the Netherlands experienced an exceptional cold snap in the
-    second week of January, which significantly increased the demand for space
-    heating. This may happen again in the future, and low temperatures may
-    negatively affect the ability for air and hybrid heat pumps to satisfy
-    demand.
+    In 1987 was er in Nederland een uitzonderlijk koude periode gedurende de tweede week van januari. 
+    Dit zorgde voor een significante toename van de warmtevraag. Een dergelijk koude periode kan in de toekomst weer voorkomen. 
+    De vraag is of de opgestelde warmtetechnologieën dan voldoende vermogen zullen hebben om in de warmtevraag te voorzien. 
+    Om dat te verkennen kan hieronder een koud jaar worden geselecteerd.
 
-    Enable the &ldquo;cold snap&rdquo; below to use the 1987 heat demand and air
-    temperature. When turned off (the default), the ETM will use 2013 demand and
-    temperature curves as the basis for your scenario.
+    Voor de standaard warmtevraag- en temperatuurprofielen gebruikt het ETM data uit 2013.
+    Selecteer hieronder de &ldquo;cold snap&rdquo; om om de profielen die passen bij het jaar 1987 te gebruiken.
+
+    In 1987 was de gemiddelde temperatuur 1 1 <sup>o</sup>C lager dan in 2013. 
+    Dit is te simuleren door bij "klimaat" een temperatuur van -1 <sup>o</sup>C in te stellen.
+
   TEXT
 
   def up

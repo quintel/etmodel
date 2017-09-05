@@ -18,17 +18,11 @@ D3.heat_demand_and_production =
       @series = @model.target_series().concat(@getSeries())
       data = @series.map(@getSerie)
 
-      # console.log @demandKey
-      # console.log data
-
       demandVals = data.find((serie) => serie.key == @demandKey).values
       production = data.find((serie) => serie.key == @productionKey)
 
       surplusVals = new Array(demandVals.length)
       deficitVals = new Array(demandVals.length)
-
-      console.log(demandVals.slice(22, 30))
-      console.log(production.values.slice(22, 30))
 
       # Remove from the production series any time when production exceeds
       # demand.

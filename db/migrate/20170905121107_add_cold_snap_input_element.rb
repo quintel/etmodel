@@ -10,21 +10,28 @@ class AddColdSnapInputElement < ActiveRecord::Migration[5.0]
     temperature. When turned off (the default), the ETM will use 2013 demand and
     temperature curves as the basis for your scenario.
 
-    The average temperature in 1987 was 1 <sup>o</sup>C higher than the actual average temperature. To simulate this set the climate slide to -1 []o[]C.
+    The average temperature in 1987 was 1&deg;C lower than in 2013. To simulate
+    this set the
+    <a href="/scenario/demand/households/climate">outdoor temperature</a>
+    to -1&deg;C.
   TEXT
 
   NL_DESCRIPTION = <<-TEXT.strip_heredoc
-    In 1987 was er in Nederland een uitzonderlijk koude periode gedurende de tweede week van januari. 
-    Dit zorgde voor een significante toename van de warmtevraag. Een dergelijk koude periode kan in de toekomst weer voorkomen. 
-    De vraag is of de opgestelde warmtetechnologieën dan voldoende vermogen zullen hebben om in de warmtevraag te voorzien. 
-    Om dat te verkennen kan hieronder een koud jaar worden geselecteerd.
+    In 1987 was er in Nederland een uitzonderlijk koude periode gedurende de
+    tweede week van januari. Dit zorgde voor een significante toename van de
+    warmtevraag. Een dergelijk koude periode kan in de toekomst weer voorkomen.
+    De vraag is of de opgestelde warmtetechnologieën dan voldoende vermogen
+    zullen hebben om in de warmtevraag te voorzien. Om dat te verkennen kan
+    hieronder een koud jaar worden geselecteerd.
 
-    Voor de standaard warmtevraag- en temperatuurprofielen gebruikt het ETM data uit 2013.
-    Selecteer hieronder de &ldquo;cold snap&rdquo; om om de profielen die passen bij het jaar 1987 te gebruiken.
+    Voor de standaard warmtevraag- en temperatuurprofielen gebruikt het ETM data
+    uit 2013. Selecteer hieronder de &ldquo;koude winter&rdquo; om om de
+    profielen die passen bij het jaar 1987 te gebruiken.
 
-    In 1987 was de gemiddelde temperatuur 1 1 <sup>o</sup>C lager dan in 2013. 
-    Dit is te simuleren door bij "klimaat" een temperatuur van -1 <sup>o</sup>C in te stellen.
-
+    In 1987 was de gemiddelde temperatuur 1&deg;C lager dan in 2013.
+    Dit is te simuleren door bij
+    <a href="/scenario/demand/households/climate">&ldquo;klimaat&rdquo; een
+    temperatuur</a> van -1&deg;C in te stellen.
   TEXT
 
   def up

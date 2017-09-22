@@ -17,6 +17,8 @@ D3.stacked_bar =
       left: 30
       right: 40
 
+    legend_margin: 20
+
     is_empty: =>
       total = 0
 
@@ -28,36 +30,11 @@ D3.stacked_bar =
     draw: =>
       [@width, @height] = @available_size()
 
-      # prepare legend
-      # remove duplicate target series. Required for backwards compatibility.
-      # When we'll drop the old charts we should use a single serie as target
-      # rather than two
-      target_lines = []
-      series_for_legend = []
-      for s in @series
-        label = s.get 'label'
-        if s.get 'is_target_line'
-          if _.indexOf(target_lines, label) == -1
-            target_lines.push label
-            series_for_legend.push s
-          # otherwise the target line has already been added
-        else
-          series_for_legend.push s
-
-      legend_columns = if series_for_legend.length > 6 then 2 else 1
-      legend_rows = series_for_legend.length / legend_columns
-      legend_margin = 20
-
-      @series_height = @height - legend_margin
+      @series_height = @height - @legend_margin
 
       @svg = @create_svg_container @width, @series_height, @margins
 
-      @draw_legend
-        svg: @svg
-        series: series_for_legend
-        width: @width
-        vertical_offset: @series_height + legend_margin
-        columns: legend_columns
+      @display_legend()
 
       columns = @get_columns()
 
@@ -165,6 +142,8 @@ D3.stacked_bar =
 
           @series_height - @y(value)
 
+      @display_legend()
+
       # draw grid
 
     get_columns: =>
@@ -172,6 +151,42 @@ D3.stacked_bar =
       if @model.year_1990_series().length
         result.unshift(1990)
       result
+
+    display_legend: =>
+      $(@container_selector()).find('.legend').remove()
+
+      series_for_legend = @prepare_legend_items()
+      legend_columns = if series_for_legend.length > 6 then 2 else 1
+
+      @draw_legend
+        svg: @svg
+        series: series_for_legend
+        width: @width
+        vertical_offset: @series_height + @legend_margin
+        columns: legend_columns
+
+    prepare_legend_items: =>
+      # Prepare legend
+      # remove duplicate target series. Required for backwards compatibility.
+      # When we'll drop the old charts we should use a single serie as target
+      # rather than two.
+      #
+      # Also checks if series have a significant value i.e. a value larger than
+      # 0.0000001 otherwise it doesn't get added to the legend.
+      target_lines = []
+      series_for_legend = []
+
+      for s in @series
+        label = s.get 'label'
+        if s.get 'is_target_line'
+          if _.indexOf(target_lines, label) == -1
+            target_lines.push label
+            series_for_legend.push s
+          # otherwise the target line has already been added
+        else if Math.abs((s.safe_future_value() + s.safe_present_value())) > 1e-7
+          series_for_legend.push s
+
+      series_for_legend
 
     # the stack layout method expects data to be in a precise format. We could
     # force the values() method but this way is simpler and cleaner.

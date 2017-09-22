@@ -843,6 +843,23 @@
     </p>
   {% endif %}
 
+  <!-- Inconsistency between heating options and insulation -->
+  
+  {% if increase_in_insulation = 0 and future.share_of_heat_pumps > 10  %}
+
+    <h3>Heat pumps and insulation</h3>
+    <p>
+      The amount of heat pumps installed in your scenario is not consistent with the level of insulation in you scenario. 
+      You have installed #SHARE_OF_HEAT_PUMP_AIR %  heat pump air and #SHARE_OF_HEAT_PUMP_GROUND % heat pump ground. 
+      The insulation level of old houses is Rc = #INSULATION_LEVEL_OLD_HOUSES 
+      and the insulation level of new houses is Rc = #INSULATION_LEVEL_NEW_HOUSES. 
+      The risk is that these heat pumps will not be able to supply enough heat during cold days 
+      and/or that the load on the electricity network will increase significantly.
+
+      You might consider increasing the level of insulation or decreasing the share of heat pumps in your scenario.
+      </p>
+  {% endif %}
+
   <!-- If curtailment occors, why not build more flex or industry use of H2? -->
   {% if future.electricity_curtailed > 0 %}
 

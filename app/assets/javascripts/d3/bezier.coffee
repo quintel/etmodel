@@ -137,7 +137,7 @@ D3.bezier =
       legend_columns = if @model.series.length > 6 then 2 else 1
 
       series = _.filter @model.series.models, (s) ->
-        Math.abs((s.safe_future_value() + s.safe_present_value())) > 1e-7
+        (Math.abs(s.safe_future_value()) + Math.abs(s.safe_present_value())) > 1e-7
 
       @draw_legend
         svg: @svg

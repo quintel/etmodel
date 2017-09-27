@@ -8,6 +8,8 @@ D3.bezier =
 
     can_be_shown_as_table: -> true
 
+    legend_margin: 20
+
     margins:
       top: 20
       bottom: 20
@@ -28,22 +30,13 @@ D3.bezier =
     draw: =>
       [@width, @height] = @available_size()
 
-      legend_columns = if @model.series.length > 6 then 2 else 1
-      legend_rows = @model.series.length / legend_columns
-      legend_margin = 20
-
       # dimensions of the chart body
-      @series_height = @height - legend_margin
+      @series_height = @height - @legend_margin
       @series_width  = @width - 15
 
       @svg = @create_svg_container @width, @series_height, @margins
 
-      @draw_legend
-        svg: @svg
-        series: @model.series.models
-        width: @width
-        vertical_offset: @series_height + legend_margin
-        columns: legend_columns
+      @display_legend()
 
       # the stack method will filter the data and calculate the offset for every
       # item. The values function tells this method that the values it will
@@ -127,6 +120,8 @@ D3.bezier =
       # See above for explanation of this method chain
       stacked_data = @stack_method(@nest.entries @prepare_data())
 
+      @display_legend()
+
       @svg.selectAll('path.serie')
         .data(stacked_data, (s) -> s.key)
         .transition()
@@ -135,6 +130,21 @@ D3.bezier =
           #{@start_year}: #{@main_formatter()(d.values[0].y)}</br>
           #{@end_year}: #{@main_formatter()(d.values[2].y)}
         ")
+
+    display_legend: =>
+      $(@container_selector()).find('.legend').remove()
+
+      legend_columns = if @model.series.length > 6 then 2 else 1
+
+      series = _.filter @model.series.models, (s) ->
+        Math.abs((s.safe_future_value() + s.safe_present_value())) > 1e-7
+
+      @draw_legend
+        svg: @svg
+        series: series
+        width: @width
+        vertical_offset: @series_height + @legend_margin
+        columns: legend_columns
 
     # We need to pass the chart series through the stacking function and the SVG
     # area function. To do this let's format the data as an array. An

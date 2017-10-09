@@ -7,6 +7,11 @@ class Api::Area < ActiveResource::Base
     self.site = Api::Area.site
   end
 
+  class GraphValues < ActiveResource::Base
+    self.prefix = Api::Area.prefix
+    self.site = Api::Area.site
+  end
+
   include Api::CommonArea
 
   # This list of attributes is used in the forms where you can set the

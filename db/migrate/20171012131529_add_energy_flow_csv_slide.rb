@@ -19,11 +19,10 @@ class AddEnergyFlowCsvSlide < ActiveRecord::Migration[5.0]
           </ul>
         TXT
         content_nl: <<-TXT.strip_heredoc,
-          The Energy Transition Model describes the energy flows through several
-          hundred uses and conversions; this CSV provides a list of each of
-          these flows (inputs and outputs).
+          Het Energietransitiemodel beschrijft het energiesysteem als een verzameling van honderden energie-omzetters (nodes) die verbonden zijn met energiestromen (edges). 
+          Deze CSV geeft een lijst van alle energie-omzetters en de energiestromen die daar ingaan en uitkomen (uitgesplitst naar drager).
           <ul class="data-download">
-            <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv"><span class="fa fa-download"></span> Energy flows <span class="filetype">(375KB CSV)</span></a></li>
+            <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv"><span class="fa fa-download"></span> Energiestromen <span class="filetype">(375KB CSV)</span></a></li>
           </ul>
         TXT
       }

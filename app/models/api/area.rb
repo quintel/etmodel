@@ -1,15 +1,20 @@
 class Api::Area < ActiveResource::Base
   self.site = "#{APP_CONFIG[:api_url]}/api/v3"
 
-  # Represents an optional nested "scaling" attribute within an Api::Area
-  class Scaling < ActiveResource::Base
+  class AtlasResource < ActiveResource::Base
     self.prefix = Api::Area.prefix
     self.site = Api::Area.site
   end
 
-  class GraphValues < ActiveResource::Base
-    self.prefix = Api::Area.prefix
-    self.site = Api::Area.site
+  # Represents an optional nested "scaling" attribute within an Api::Area
+  class Scaling < AtlasResource; end
+
+  class GraphValues < AtlasResource
+    class DemandSetter < AtlasResource; end
+    class PresetDemandSetter < AtlasResource; end
+    class ShareSetter < AtlasResource; end
+    class ConversionSetter < AtlasResource; end
+    class NumberOfUnitsSetter < AtlasResource; end
   end
 
   include Api::CommonArea

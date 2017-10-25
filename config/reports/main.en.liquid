@@ -843,6 +843,25 @@
     </p>
   {% endif %}
 
+  <!-- Inconsistency between heating options and insulation -->
+
+  {% if future.increase_in_insulation <= 0 %}
+    {% if future.share_of_heatpump_all_in_space_heating_production_in_households > 0.1 %}
+      <h3>Heat pumps and insulation</h3>
+      <p>
+        The amount of heat pumps installed in your scenario is not consistent with the level of insulation in your scenario.
+        You have installed {{ future.share_of_heatpump_air_in_space_heating_production_in_households | times: 100 | round: 1 }}%
+        air heat pumps and {{ future.share_of_heatpump_ground_in_space_heating_production_in_households | times: 100 | round: 1 }}%
+        ground heat pumps. The insulation level of old houses is {{ future.insulation_level_old_houses | round: 1 }} Rc
+        and the insulation level of new houses is {{ future.insulation_level_new_houses | round: 1 }} Rc.
+        The risk is that these heat pumps will not be able to supply enough heat during cold days
+        or that the load on the electricity network will increase significantly.
+
+        You might consider increasing the level of insulation or decreasing the share of heat pumps in your scenario.
+      </p>
+    {% endif %}
+  {% endif %}
+
   <!-- If curtailment occors, why not build more flex or industry use of H2? -->
   {% if future.electricity_curtailed > 0 %}
 

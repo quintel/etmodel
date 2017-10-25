@@ -839,6 +839,31 @@
     </p>
   {% endif %}
 
+
+    <!-- Inconsistency between heating options and insulation -->
+
+  {% if increase_in_insulation = 0 and future.share_of_heat_pumps > 10  %}
+
+  {% endif %}
+
+  {% if future.increase_in_insulation <= 0 %}
+    {% if future.share_of_heatpump_all_in_space_heating_production_in_households > 0.1 %}
+      <h3>Warmtepompen en isolatie</h3>
+      <p>
+        Het aantal warmtepompen dat is geïnstalleerd in je scenario is niet consistent met de isolatiegraad.
+        Je hebt {{ future.share_of_heatpump_air_in_space_heating_production_in_households | times: 100 | round: 1 }}
+        luchtwarmtepompen geïnstalleerd en {{ future.share_of_heatpump_ground_in_space_heating_production_in_households | times: 100 | round: 1 }}%
+        bodemwarmtepompen. Het isolatieniveau van oude huizen is {{ future.insulation_level_old_houses | round: 1 }} Rc
+        en het isolatieniveau van nieuwe huizen is {{ future.insulation_level_new_houses | round: 1 }} Rc.
+        Het risico is dat de warmtepompen in de winter de vraag naar warmte niet volledig kunnen invullen
+        of dat de belasting op het elektriciteitsnet onrealistisch veel toeneemt.
+
+        Je kunt overwegen om minder lucht- en bodemwarmtepompen in te zetten of om meer te isoleren.
+      </p>
+    {% endif %}
+  {% endif %}
+
+
   <!-- If curtailment occors, why not build more flex or industry use of H2? -->
   {% if future.electricity_curtailed > 0 %}
 

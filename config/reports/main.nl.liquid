@@ -841,20 +841,26 @@
 
 
     <!-- Inconsistency between heating options and insulation -->
-  
+
   {% if increase_in_insulation = 0 and future.share_of_heat_pumps > 10  %}
 
-    <h3>Warmtepompen en isolatie</h3>
-    <p>
-      Het aantal warmtepompen dat is geïnstalleerd in je scenario is niet consistent met de isolatiegraad.
-      Je hebt #SHARE_OF_HEAT_PUMP_AIR % luchtwarmtepompen geïnstalleerd en #SHARE_OF_HEAT_PUMP_GROUND % bodemwarmtepompen. 
-      Het isolatieniveau van oude huizen is Rc = #INSULATION_LEVEL_OLD_HOUSES 
-      en het isolatieniveau van nieuwe huizen is Rc = #INSULATION_LEVEL_NEW_HOUSES. 
-      Het risico is dat de warmtepompen in de winter de vraag naar warmte niet volledig kunnen invullen 
-      of dat de belasting op het elektriciteitsnet onrealistisch veel toeneemt.
+  {% endif %}
 
-      Je kunt overwegen om minder lucht- en bodemwarmtepompen in te zetten of om meer te isoleren.
+  {% if future.increase_in_insulation <= 0 %}
+    {% if future.share_of_heatpump_all_in_space_heating_production_in_households > 0.1 %}
+      <h3>Warmtepompen en isolatie</h3>
+      <p>
+        Het aantal warmtepompen dat is geïnstalleerd in je scenario is niet consistent met de isolatiegraad.
+        Je hebt {{ future.share_of_heatpump_air_in_space_heating_production_in_households | times: 100 | round: 1 }}
+        luchtwarmtepompen geïnstalleerd en {{ future.share_of_heatpump_ground_in_space_heating_production_in_households | times: 100 | round: 1 }}%
+        bodemwarmtepompen. Het isolatieniveau van oude huizen is {{ future.insulation_level_old_houses | round: 1 }} Rc
+        en het isolatieniveau van nieuwe huizen is {{ future.insulation_level_new_houses | round: 1 }} Rc.
+        Het risico is dat de warmtepompen in de winter de vraag naar warmte niet volledig kunnen invullen
+        of dat de belasting op het elektriciteitsnet onrealistisch veel toeneemt.
+
+        Je kunt overwegen om minder lucht- en bodemwarmtepompen in te zetten of om meer te isoleren.
       </p>
+    {% endif %}
   {% endif %}
 
 

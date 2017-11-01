@@ -5,17 +5,16 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.3.1'
+ruby '2.4.2'
 
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 5.1'
 gem 'activerecord-session_store'
-gem 'activeresource', github: 'rails/activeresource', branch: 'master'
+gem 'activeresource', '~> 5.0'
 
 gem 'jquery-rails', "~> 4.2.2"
-gem 'haml', '~>4.0'
+gem 'haml', '~> 5.0'
 gem 'authlogic'
-gem 'bcrypt' # binarylogic/authlogic#405
-gem 'scrypt' # binarylogic/authlogic#405
+gem 'bcrypt'
 gem 'httparty'
 gem 'tabs_on_rails', '~> 3.0'
 gem 'kaminari', '~> 1.0.1'
@@ -26,7 +25,7 @@ gem 'font-awesome-rails'
 gem 'non-stupid-digest-assets'
 
 # javascript
-gem 'i18n-js', '~> 3.0.0.rc16'
+gem 'i18n-js', '~> 3'
 gem 'jbuilder'
 
 # supporting gems

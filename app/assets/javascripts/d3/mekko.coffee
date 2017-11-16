@@ -85,21 +85,15 @@ D3.mekko =
       @prepare_data()
       [@width, @height] = @available_size()
 
-      legend_columns = if @carrier_list.length > 9 then 3 else 2
-      legend_rows = @carrier_list.length / legend_columns
       @label_height = 85 # rotated labels
       @label_margin = 25
+
+      @display_legend()
 
       @series_height  = @height - @label_margin
       @label_offset   = @series_height + @label_margin
 
       @svg = @create_svg_container @width, @series_height + @label_height, @margins
-
-      @draw_legend
-        series: @carrier_list.models
-        width: @width
-        vertical_offset: @series_height + @label_height
-        columns: legend_columns
 
       @x = d3.scale.linear().range([0, @width])
       @y = d3.scale.linear().range([0, @series_height])
@@ -240,6 +234,8 @@ D3.mekko =
         )
         .attr("data-tooltip-text", (d) => @main_formatter()(d.val()))
 
+      @display_legend()
+
       if ! @has_wrapped_labels
         # The first time the chart is loaded, adjust labels to wrap long text
         # and increase height.
@@ -249,6 +245,21 @@ D3.mekko =
 
       @arrangeLabels()
       @moveArrows()
+
+    display_legend: =>
+      $(@container_selector()).find('.legend').remove()
+
+      legend_columns = if @carrier_list.length > 9 then 3 else 2
+
+      series = _.filter(@carrier_list.models, (s) ->
+        Math.abs(s.total_value()) > 1e-7
+      )
+
+      @draw_legend
+        series: series
+        width: @width
+        vertical_offset: @series_height + @label_height
+        columns: legend_columns
 
     wrapLabels: =>
       label_height = @label_height

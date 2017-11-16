@@ -6,6 +6,7 @@ class FlexibilityOrder
        power_to_heat_industry
        power_to_gas
        power_to_gas_industry
+       power_to_kerosene
        export)
   end
 end

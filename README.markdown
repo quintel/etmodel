@@ -47,6 +47,7 @@ The ETM pro is released under the [MIT License](LICENSE.txt).
   for the lazy:
   
   ```bash
+  cd config
   for i in *.sample.yml; do; j="$(echo $i | sed 's/.sample//g')"; cp -vn $i $j; done;
   ```
   

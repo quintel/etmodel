@@ -37,11 +37,20 @@ The ETM pro is released under the [MIT License](LICENSE.txt).
 
 * Pull this repository with `git clone git@github.com:quintel/etmodel.git`
 * Create your personal configuration files from the samples with
-  ```
+
+  ```bash
   cp -vn config/database.sample.yml config/database.yml
   cp -vn config/config.sample.yml config/config.yml
   cp -vn config/email.sample.yml config/email.yml
   ```
+  
+  for the lazy:
+  
+  ```bash
+  for i in *.sample.yml; do; j="$(echo $i | sed 's/.sample//g')"; cp -vn $i $j; done;
+  ```
+  
+  
   * Probably set "standalone" to `true` in "config/config.yml"
 
 * Run `bundle install` to install all the dependencies

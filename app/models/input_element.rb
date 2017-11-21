@@ -27,6 +27,7 @@ class InputElement < ActiveRecord::Base
   belongs_to :slide
 
   validates :key, presence: true, uniqueness: true
+  validates :position, numericality: true
 
   scope :households_heating_sliders, -> { where(share_group: 'heating_households') }
   scope :ordered, -> { order('position') }

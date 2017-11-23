@@ -1,6 +1,7 @@
 // these scripts are included in the main pages
 // see etm.js for the backbone app and everything else
 
+//= require extensions
 //= require jquery
 //= require jquery_ujs
 //= require jquery.browser

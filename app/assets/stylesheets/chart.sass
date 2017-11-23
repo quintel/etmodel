@@ -382,10 +382,12 @@ div.d3_container
   margin-left: 10px
   clear: both
 
-  .legend-item
+  .legend-column
     display: inline-block
-    line-height: 14px
     vertical-align: top
+
+  .legend-item
+    line-height: 20px
     font-size: 12px
 
     span.rect
@@ -398,6 +400,8 @@ div.d3_container
 .dynamic_demand_curve
   .legend
     .legend-item
+      &.hidden
+        display: block
       &.hidden .rect
         opacity: 0.5
       &.target_line

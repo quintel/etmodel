@@ -4,7 +4,7 @@ D3.merit_order_hourly_supply =
       D3YearlyChartView.prototype.initialize.call(this)
 
     dataForChart: ->
-      @series = @model.target_series().concat(@getSeries())
+      @series = @getSeries().concat(@model.target_series())
       @series.map(@getSerie)
 
     filterYValue: (value) ->
@@ -24,16 +24,6 @@ D3.merit_order_hourly_supply =
           .append('rect')
           .attr('width', @width)
           .attr('height', @height)
-
-    setStackedData: ->
-      @chartData = @convertData()
-
-      @stack = d3.layout.stack()
-        .offset("zero")
-        .values((d) -> d.values)
-
-      @stackedData = @stack(@chartData[1..@chartData.length])
-      @totalDemand = [@chartData[0]]
 
     getLegendSeries: ->
       legendSeries = []

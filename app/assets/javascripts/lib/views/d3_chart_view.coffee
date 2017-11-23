@@ -115,31 +115,41 @@ class @D3ChartView extends BaseChartView
     opts.left_margin     = opts.left_margin || 10
     legend_item_width    = (opts.width - opts.left_margin) / opts.columns
 
+    series = opts.series.reverse().chunk(opts.columns)
+
     legend = d3.select(@container_selector())
       .append('div')
       .attr("class", "legend")
       .style("margin-left", "#{ opts.left_margin + @margins.left }px")
-      .selectAll(".legend-item")
-      .data(opts.series)
+      .selectAll(".legend-column")
+      .data(series)
       .enter()
       .append("div")
-      .attr("class", (d) ->
-        ["legend-item",
-          (if d.get('skip') then 'hidden' else ''),
-          (if d.get('is_target_line') then 'target_line' else '')
-        ].join(' ')
-      )
+      .attr("class", "legend-column")
       .style('width', "#{ legend_item_width }px")
-      .on('click', @legend_click)
 
-    legend.append("span")
-      .attr('class', 'rect')
-      .style("background-color", (d) => d.get 'color')
+    legend_click = @legend_click
 
-    legend.append("span")
-      .text((d) ->
-        d.get('label') || I18n.t("output_element_series.#{d.get('key')}")
+    d3.selectAll(".legend-column").each((items) ->
+      scope = d3.select(this)
+
+      items.forEach((d) =>
+        item = scope.append('div')
+          .attr("class", "legend-item")
+          .classed("hidden", d.get('skip'))
+          .classed("target_line", d.get('is_target_line'))
+          .on('click', legend_click.bind(null, d))
+
+        item.append("span")
+          .attr('class', 'rect')
+          .style("background-color", () => d.get 'color')
+
+        item.append("span")
+          .text(() ->
+            d.get('label') || I18n.t("output_element_series.#{d.get('key')}")
+          )
       )
+    )
 
   # height of the legend item
   legend_cell_height: 15

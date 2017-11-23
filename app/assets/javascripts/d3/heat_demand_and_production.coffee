@@ -15,8 +15,7 @@ D3.heat_demand_and_production =
       D3YearlyChartView.prototype.initialize.call(this)
 
     dataForChart: ->
-      @series = @model.target_series().concat(@getSeries())
-      data = @series.map(@getSerie)
+      data = super
 
       demandVals = data.find((serie) => serie.key == @demandKey).values
       production = data.find((serie) => serie.key == @productionKey)
@@ -38,7 +37,7 @@ D3.heat_demand_and_production =
           deficitVals[index] = 0
           demand
 
-      data.push({
+      data.unshift({
         color: '#FF8C8C',
         label: I18n.t("output_element_series.#{ @deficitKey }")
         key: @deficitKey,
@@ -46,7 +45,7 @@ D3.heat_demand_and_production =
         values: deficitVals
       })
 
-      data.push({
+      data.unshift({
         color: '#A2D679',
         label: I18n.t("output_element_series.#{ @surplusKey }")
         key: @surplusKey,
@@ -70,22 +69,12 @@ D3.heat_demand_and_production =
       super
       @drawLegend(@getLegendSeries())
 
-    setStackedData: ->
-      @chartData = @convertData()
-
-      @stack = d3.layout.stack()
-        .offset("zero")
-        .values((d) -> d.values)
-
-      @stackedData = @stack(@chartData[1..@chartData.length])
-      @totalDemand = [@chartData[0]]
-
     getLegendSeries: () ->
       legendSeries = @series.filter (serie) ->
         _.find(serie.future_value(), (v) -> v > 0)
 
-      legendSeries.push(new FakeSerie(@deficitKey, '#FF8C8C'))
-      legendSeries.push(new FakeSerie(@surplusKey, '#A2D679'))
+      legendSeries.unshift(new FakeSerie(@deficitKey, '#FF8C8C'))
+      legendSeries.unshift(new FakeSerie(@surplusKey, '#A2D679'))
 
       legendSeries
 

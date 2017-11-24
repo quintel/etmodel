@@ -3,12 +3,11 @@ D3.merit_order_hourly_flexibility =
     initialize: ->
       D3YearlyChartView.prototype.initialize.call(this)
 
-    dataForChart: ->
-      @series = @model.target_series().concat(@model.non_target_series())
-      @series.map(@getSerie)
+    stackOffset: ->
+      @calculateOffset.bind(this)
 
     calculateOffset: (data) ->
-      @chartData[0].values.map((point) -> point.y)
+      @chartData[@chartData.length - 1].values.map((point) -> point.y)
 
     filterYValue: (value) ->
       if this.key == 'total_demand' then value else -value
@@ -24,16 +23,6 @@ D3.merit_order_hourly_flexibility =
           .append('rect')
           .attr('width', @width)
           .attr('height', @height)
-
-    setStackedData: ->
-      @chartData = @convertData()
-
-      @stack = d3.layout.stack()
-        .offset(@calculateOffset.bind(this))
-        .values((d) -> d.values)
-
-      @stackedData = @stack(@chartData[1..@chartData.length])
-      @totalDemand = [@chartData[0]]
 
     drawData: (xScale, yScale, area, line) ->
       @svg.selectAll('path.serie')
@@ -75,6 +64,7 @@ D3.merit_order_hourly_flexibility =
       super
 
       @setStackedData()
+      @drawLegend(@series)
 
       xScale = @createTimeScale(@dateSelect.getCurrentRange())
       yScale = @createLinearScale()

@@ -12,10 +12,6 @@ D3.dynamic_demand_curve =
       right: 20
       label_left: 30
 
-    dataForChart: ->
-      @series = @model.target_series().concat(@model.non_target_series())
-      @series.map(@getSerie)
-
     visibleData: ->
       super().filter (data) => !data.skip
 
@@ -37,15 +33,9 @@ D3.dynamic_demand_curve =
         .y((data) -> yScale(data.y))
         .interpolate('monotone')
 
-    setStackedData: ->
-      @chartData = @convertData()
-
-      @stack = d3.layout.stack()
-        .offset("zero")
-        .values((d) -> d.values)
-
-      @stackedData = @stack(@chartData.filter((d) -> d.key != 'total_demand'))
-      @totalDemand = @chartData.filter((d) -> d.key == 'total_demand')
+    getStackedData: ->
+      stacked: @stack(@chartData.filter((d) -> d.key != 'total_demand')),
+      total: @chartData.filter((d) -> d.key == 'total_demand')
 
     getLegendSeries: ->
       legendSeries = []

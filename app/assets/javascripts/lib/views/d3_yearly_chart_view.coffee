@@ -22,6 +22,32 @@ class @D3YearlyChartView extends D3ChartView
     @xScale     = @drawXAxis()
     @yScale     = @drawYAxis()
 
+
+  dataForChart: ->
+    @series = @model.non_target_series().concat(@model.target_series())
+    @series.map(@getSerie)
+
+  stackOffset: ->
+    "zero"
+
+  setStackedData: ->
+    @chartData = @convertData()
+
+    @stack = d3.layout.stack()
+      .offset(@stackOffset())
+      .values((d) -> d.values)
+
+    stackedData = @getStackedData()
+
+    @stackedData = stackedData.stacked
+    @totalDemand = stackedData.total
+
+  getStackedData: ->
+    lastId = @chartData.length - 1
+
+    stacked: @stack(@chartData[0...lastId]),
+    total: [@chartData[lastId]]
+
   refresh: ->
     @rawChartData = @dataForChart()
 

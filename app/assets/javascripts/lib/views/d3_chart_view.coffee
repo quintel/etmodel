@@ -132,23 +132,23 @@ class @D3ChartView extends BaseChartView
 
     d3.selectAll(".legend-column").each((items) ->
       scope = d3.select(this)
+                .selectAll(".legend-item")
+                .data(items)
+                .enter()
+                .append('div')
+                .attr("class", "legend-item")
+                .classed("hidden", (d) -> d.get('skip'))
+                .classed("target_line", (d) -> d.get('is_target_line'))
+                .on('click', (d) -> legend_click(d))
 
-      items.forEach((d) =>
-        item = scope.append('div')
-          .attr("class", "legend-item")
-          .classed("hidden", d.get('skip'))
-          .classed("target_line", d.get('is_target_line'))
-          .on('click', legend_click.bind(null, d))
+      scope.append("span")
+        .attr('class', 'rect')
+        .style("background-color", (d) => d.get 'color')
 
-        item.append("span")
-          .attr('class', 'rect')
-          .style("background-color", () => d.get 'color')
-
-        item.append("span")
-          .text(() ->
-            d.get('label') || I18n.t("output_element_series.#{d.get('key')}")
-          )
-      )
+      scope.append("span")
+        .text((d) ->
+          d.get('label') || I18n.t("output_element_series.#{d.get('key')}")
+        )
     )
 
   # height of the legend item

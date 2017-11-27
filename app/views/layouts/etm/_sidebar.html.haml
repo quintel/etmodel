@@ -21,7 +21,7 @@
                   %span.bar{:alt => t('sidebar_items.alt'), :style => "width: 0px"}
                   %span.value
 
-        - item.children.includes(:area_dependency).reject(&:area_dependent).each do |child|
+        - item.children.ordered.includes(:area_dependency).reject(&:area_dependent).each do |child|
           - if child.slides.none?
             %li.child.empty
               %span.bullet.fa.fa-chevron-right

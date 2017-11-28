@@ -7,7 +7,9 @@
     "browser": true,
     "node": true
   },
-  "extends": "airbnb-base",
+  "extends": [
+    "airbnb-base",
+  ],
   "parser": "babel-eslint",
   "rules": {
     "babel/arrow-parens": "off",
@@ -27,7 +29,6 @@
     "no-prototype-builtins": "off",
     "quote-props": ["error", "consistent-as-needed"],
     "quotes": ["error", "single"],
-
     "no-var": "off",
     "object-shorthand": "off",
     "func-names": "off",

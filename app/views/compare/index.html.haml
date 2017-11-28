@@ -1,0 +1,22 @@
+%main
+  %h1 Local vs. Global
+
+  #metrics
+    .loading
+      = image_tag('layout/ajax-loader-small.gif')
+      One moment please; loading data&hellip;
+    %form.prompt
+      .field
+        %label(for="compare-scenario-ids") Scenario IDs
+        %input#compare-scenario-ids(type="text" placeholder="Comma-separated IDs please" value="771759, 771760, 771761")
+      %button Load summary →
+
+%script#compare-metric-template(type="text/template")
+  .summary
+    .title
+      %h2
+        %span(class="arrow")
+        <%= title %>
+    .delta
+    .present
+    .future

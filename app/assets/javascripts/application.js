@@ -20,3 +20,4 @@
 //= require i18n
 //= require sortable.min
 //= require sign_up_form
+//= require compare/metric

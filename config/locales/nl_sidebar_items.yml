@@ -63,6 +63,15 @@ nl:
     fce:
       short_name: "Ketenanalyse"
       long_name: "Ketenanalyse"
+    flexibility_conversion:
+      short_name: "Conversie"
+      long_name: "Energieconversie"
+    flexibility_demand:
+      short_name: "Vraagsturing"
+      long_name: "Vraagsturing"
+    flexibility_storage:
+      short_name: "Opslag"
+      long_name: "Opslag elektriciteit"
     fossil_heat:
       short_name: "Fossiele warmte"
       long_name: "Fossiele warmte"
@@ -132,9 +141,18 @@ nl:
     transport_costs:
       short_name: "Transport"
       long_name: "Transport"
+    transport_freight_transport:
+      short_name: "Vrachtvervoer"
+      long_name: "Vrachtvervoer"
     transport_fuels:
-      short_name: "Transport brandstoffen"
+      short_name: "Transportbrandstoffen"
       long_name: "Transportbrandstoffen"
+    transport_international_transport:
+      short_name: "Internationaal transport"
+      long_name: "Internationaal transport"
+    transport_passenger_transport:
+      short_name: "Passagiersvervoer"
+      long_name: "Passagiersvervoer"
     water:
       short_name: "Waterkracht"
       long_name: "Kosten waterkracht"

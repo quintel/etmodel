@@ -60,14 +60,6 @@ describe PagesController, vcr: true do
     end
   end
 
-  describe "#choose" do
-    it "should render correctly" do
-      get :choose
-      expect(response).to be_success
-      expect(response).to render_template(:choose)
-    end
-  end
-
   describe "#prominent_users" do
     it "should render correctly" do
       get :prominent_users

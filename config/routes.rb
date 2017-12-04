@@ -6,8 +6,6 @@ Etm::Application.routes.draw do
 
   get '/scaled', to: 'pages#scaled'
 
-  get '/choose' => 'pages#choose'
-
   get '/info/:ctrl/:act' => "pages#info", as: :tab_info
 
   get '/texts/:id' => 'texts#show'

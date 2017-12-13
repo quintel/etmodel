@@ -12,6 +12,7 @@
     = stylesheet_link_tag 'application'
     = stylesheet_link_tag 'form_only'
     = javascript_include_tag 'application'
+    = javascript_include_tag "i18n/#{ I18n.locale }"
 
     = yield :head
 

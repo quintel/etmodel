@@ -22,15 +22,6 @@ class PagesController < ApplicationController
     end
   end
 
-  def choose
-    @mixer_url = (APP_CONFIG[:mixer_url] || "http://mixer.et-model.com") +
-      "?locale=#{I18n.locale}"
-    @etflex_url = APP_CONFIG[:etflex_url] || "http://light.energytransitionmodel.com"
-
-    render layout: 'refreshed'
-    @other_locale = english? ? "nl" : "en"
-  end
-
   # Popup with the text description. This is confusing because the title can
   # be defined in a Text object or in the standard translation files, while
   # the description is a normal description object.

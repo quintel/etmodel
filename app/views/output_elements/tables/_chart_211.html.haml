@@ -1,0 +1,25 @@
+-# Carbon balance table
+.merit_order_enabled
+%table#carbon_balance.chart.centered.autostripe
+  %thead
+    %tr
+      %th
+      %th
+        = t 'output_elements.tables.carbon_balance.available'
+        (MT)
+      %th
+        = t 'output_elements.tables.carbon_balance.used'
+        (MT)
+  %tbody
+    %tr
+      %th= t "output_elements.tables.carbon_balance.point_source_co_steel"
+      %td{:data => {:gquery => "point_source_co_available", :graph => :future}}
+      %td{:data => {:gquery => "point_source_co_used", :graph => :future}}
+    %tr
+      %th= t "output_elements.tables.carbon_balance.point_source_co2_steel"
+      %td{:data => {:gquery => "point_source_co2_available", :graph => :future}}
+      %td{:data => {:gquery => "point_source_co2_used", :graph => :future}}
+    %tr
+      %th= t "output_elements.tables.flexibility.carbon_balance.direct_air_capture"
+      %td= t "output_elements.tables.carbon_balance.infinite"
+      %td{:data => {:gquery => "direct_air_capture_co2_used", :graph => :future}}

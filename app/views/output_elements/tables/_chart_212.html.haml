@@ -5,21 +5,21 @@
     %tr
       %th
       %th
-        = t 'output_elements.tables.carbon_balance.demand'
+        = t 'output_elements.tables.carbon_balance.available'
         (MT)
       %th
-        = t 'output_elements.tables.carbon_balance.supply'
+        = t 'output_elements.tables.carbon_balance.used'
         (MT)
   %tbody
     %tr
-      %th= t "output_elements.tables.carbon_balance.point_source_co"
-      %td{:data => {:gquery => "point_source_co_demand", :graph => :future}}
-      %td
+      %th= t "output_elements.tables.carbon_balance.point_source_co_steel"
+      %td{:data => {:gquery => "point_source_co_available", :graph => :future}}
+      %td{:data => {:gquery => "point_source_co_used", :graph => :future}}
     %tr
-      %th= t "output_elements.tables.carbon_balance.point_source_co2"
-      %td{:data => {:gquery => "point_source_co2_demand", :graph => :future}}
-      %td{:data => {:gquery => "point_source_co2_supply", :graph => :future}}
+      %th= t "output_elements.tables.carbon_balance.point_source_co2_steel"
+      %td{:data => {:gquery => "point_source_co2_available", :graph => :future}}
+      %td{:data => {:gquery => "point_source_co2_used", :graph => :future}}
     %tr
       %th= t "output_elements.tables.flexibility.carbon_balance.direct_air_capture"
-      %td{:data => {:gquery => "direct_air_capture_demand", :graph => :future}}
-      %td
+      %td= t "output_elements.tables.carbon_balance.infinite"
+      %td{:data => {:gquery => "direct_air_capture_co2_used", :graph => :future}}

@@ -1,4 +1,4 @@
-(function () {
+(function() {
   'use strict';
 
   // # Constants
@@ -28,9 +28,7 @@
   ];
 
   // Additional queries to fetch for each scenario.
-  var ADDITIONAL_QUERIES = [
-    'households_number_of_inhabitants'
-  ];
+  var ADDITIONAL_QUERIES = ['households_number_of_inhabitants'];
 
   // Colors assigned to each scenarios.
   var SCENARIO_COLORS = [
@@ -50,15 +48,11 @@
 
   // Helpers -------------------------------------------------------------------
 
-  var formatNumber = function (num) {
-    return Math.round(num * 10) / 10;
-  };
-
   /**
    * Outputs a CSS class which describes whether a value has increased or
    * decreased.
    */
-  var changeClassName = function (value) {
+  var changeClassName = function(value) {
     if (value < 0) {
       return 'change-lower';
     } else if (value > 0) {
@@ -68,9 +62,9 @@
     return 'no-change';
   };
 
-  var colorizeBar = function (origVal, newVal) {
+  var colorizeBar = function(origVal, newVal) {
     if (newVal / origVal < 0.95) {
-      return 'change-lower'
+      return 'change-lower';
     } else if (newVal / origVal > 1.05) {
       return 'change-higher';
     }
@@ -82,10 +76,10 @@
    * Temporary function to transform the results of queries to more readable
    * units.
    */
-  var transformQueries = function (results) {
+  var transformQueries = function(results) {
     var newRes = _.extend({}, results);
 
-    _.keys(results).forEach(function (key) {
+    _.keys(results).forEach(function(key) {
       switch (key) {
         case 'total_co2_emissions': // kg to MT
         case 'dashboard_energy_demand_primary_of_final': // MJ to PJ
@@ -102,20 +96,23 @@
     return newRes;
   };
 
-  var parseScenarioIDs = function (str) {
-    var split = ('' + str).trim()
+  var parseScenarioIDs = function(str) {
+    var split = ('' + str)
+      .trim()
       .replace(/\s/g, ',')
       .replace(/,+/g, ',')
-      .split(',')
+      .split(',');
 
     return _.chain(split)
-      .map(function (val) { return parseInt(val, 10)})
+      .map(function(val) {
+        return parseInt(val, 10);
+      })
       .reject(_.isNaN)
       .uniq()
       .value();
   };
 
-  var scenarioIDsFromURL = function (url) {
+  var scenarioIDsFromURL = function(url) {
     if (url.match(/\/compare\/\d/)) {
       return parseScenarioIDs(url.replace(/\/compare\//, ''));
     }
@@ -129,10 +126,14 @@
     /**
      * Returns the sum of all the values for the given gquery and period.
      */
-    periodSum: function (period, gquery) {
-      return _.reduce(this.get('parts'), function (memo, part) {
-        return memo + part[gquery][period];
-      }, 0);
+    periodSum: function(period, gquery) {
+      return _.reduce(
+        this.get('parts'),
+        function(memo, part) {
+          return memo + part[gquery][period];
+        },
+        0
+      );
     },
 
     /**
@@ -140,15 +141,15 @@
      * example, a 100 to 50 is a -50 (%) change, while 100 to 200 is a +100 (%)
      * change.
      */
-    percentageChange: function (gqueryKey) {
-      return ((this.future(gqueryKey) / this.present(gqueryKey)) - 1) * 100;
+    percentageChange: function(gqueryKey) {
+      return (this.future(gqueryKey) / this.present(gqueryKey) - 1) * 100;
     },
 
-    present: function (gqueryKey) {
+    present: function(gqueryKey) {
       return this.periodSum('present', gqueryKey);
     },
 
-    future: function (gqueryKey) {
+    future: function(gqueryKey) {
       return this.periodSum('future', gqueryKey);
     }
   });
@@ -160,7 +161,7 @@
    * scenarios.
    */
   var DeltaBar = Backbone.View.extend({
-    render: function () {
+    render: function() {
       // bar width is 85 on each side of 0
       var value = this.options.value;
       var left = 85;
@@ -168,7 +169,7 @@
 
       if (value > 0) {
         left = 85;
-        width = Math.max(Math.min((value / 100) * 85, 85), 2);
+        width = Math.max(Math.min(value / 100 * 85, 85), 2);
       } else if (value < 0) {
         width = Math.max(Math.min(85 * Math.abs(value / 100), 85), 2);
         left = 85 - width;
@@ -176,12 +177,14 @@
 
       this.$el.append(
         $('<div class="bar" />').append(
-          $('<div class="segment" />').css({
-            position: 'absolute',
-            width: width + 'px',
-            left: left + 'px'
-          }).addClass(changeClassName(value)),
-          $('<div class="target" />').css({ left: '50%' }),
+          $('<div class="segment" />')
+            .css({
+              position: 'absolute',
+              width: width + 'px',
+              left: left + 'px'
+            })
+            .addClass(changeClassName(value)),
+          $('<div class="target" />').css({ left: '50%' })
         )
       );
 
@@ -194,7 +197,7 @@
    * value and a small "delta bar" showing the overall trend.
    */
   var DeltaView = Backbone.View.extend({
-    render: function () {
+    render: function() {
       var percentage = this.model.percentageChange(this.options.key);
       var prefix = percentage < 0 ? '' : '+';
       var arrow = '-';
@@ -207,9 +210,12 @@
 
       this.$el.append(
         $('<span class="arrow" />')
-          .text(arrow).addClass(changeClassName(percentage)),
+          .text(arrow)
+          .addClass(changeClassName(percentage)),
         ' ',
-        prefix, Math.round(percentage), '%',
+        prefix,
+        Math.round(percentage),
+        '%',
         new DeltaBar({ value: percentage }).render()
       );
 
@@ -228,14 +234,18 @@
    * TODO Move "options.data" into a model of some sort
    */
   var PeriodBar = Backbone.View.extend({
-    render: function () {
-      var total = _.reduce(this.options.data, function (memo, element) {
-        return memo + element.value;
-      }, 0.0);
+    render: function() {
+      var total = _.reduce(
+        this.options.data,
+        function(memo, element) {
+          return memo + element.value;
+        },
+        0.0
+      );
 
-      var elements = _.map(this.options.data, function (element) {
+      var elements = _.map(this.options.data, function(element) {
         var segment = $('<div class="segment" />').css({
-          width: ((element.value / total) * 100) + '%'
+          width: element.value / total * 100 + '%'
         });
 
         segment
@@ -250,15 +260,22 @@
         return segment;
       });
 
-      this.$el.append($('<div class="bar" />')
-        .append($('<div class="inner-bar" />')
-        .css({ width: this.options.width })
-        .append(elements)));
+      this.$el.append(
+        $('<div class="bar" />').append(
+          $('<div class="inner-bar" />')
+            .css({ width: this.options.width })
+            .append(elements)
+        )
+      );
 
       this.$el.find('.segment').qtip({
         content: {
-          title: function () { return $(this).attr('data-tooltip-title'); },
-          text: function () { return $(this).attr('data-tooltip-text'); }
+          title: function() {
+            return $(this).attr('data-tooltip-title');
+          },
+          text: function() {
+            return $(this).attr('data-tooltip-text');
+          }
         },
         position: {
           target: 'mouse',
@@ -276,7 +293,7 @@
    * with a mini-horizontal stacked-bar.
    */
   var PeriodView = Backbone.View.extend({
-    render: function () {
+    render: function() {
       var period = this.options.period;
       var key = this.options.key;
       var present = this.model.present(key);
@@ -284,12 +301,12 @@
       var value = period === 'future' ? future : present;
       var self = this;
 
-      var barData = _.map(this.model.get('parts'), function (part) {
-        return ({
+      var barData = _.map(this.model.get('parts'), function(part) {
+        return {
           value: part[key][period],
           unit: self.model.get('unit'),
           scenario: part.scenario
-        });
+        };
       });
 
       var widest = Math.max(present, future);
@@ -297,10 +314,15 @@
       this.$el.append(
         value.toFixed(2),
         $('<span class="unit" />').text(this.model.get('unit')),
-        new PeriodBar(_.extend({
-          data: barData,
-          width: ((value / widest) * 100) + '%'
-        }, this.barOptions())).render()
+        new PeriodBar(
+          _.extend(
+            {
+              data: barData,
+              width: value / widest * 100 + '%'
+            },
+            this.barOptions()
+          )
+        ).render()
       );
 
       return this.$el;
@@ -310,7 +332,7 @@
      * Creates additional options to be provided to PeriodBar when rendering
      * data for the future.
      */
-    barOptions: function () {
+    barOptions: function() {
       var key;
       var otherData;
 
@@ -320,8 +342,8 @@
 
       key = this.options.key;
 
-      otherData = _.map(this.model.get('parts'), function (part) {
-        return ({ value: part[key].present });
+      otherData = _.map(this.model.get('parts'), function(part) {
+        return { value: part[key].present };
       });
 
       return { colorize: colorizeBar, otherData: otherData };
@@ -335,9 +357,9 @@
   var LegendView = Backbone.View.extend({
     className: 'region-legend',
 
-    formattedMeasure: function (number) {
+    formattedMeasure: function(number) {
       if (number > 1000000) {
-        return (Math.round(number / 100000) / 10) + 'M';
+        return Math.round(number / 100000) / 10 + 'M';
       } else if (number > 10000) {
         return Math.round(number / 1000) + 'k';
       }
@@ -345,15 +367,15 @@
       return number;
     },
 
-    measureTotal: function () {
+    measureTotal: function() {
       return _.sum(this.options.parts.map(this.extractMeasure));
     },
 
-    extractMeasure: function (part) {
+    extractMeasure: function(part) {
       return part.households_number_of_inhabitants.future;
     },
 
-    render: function () {
+    render: function() {
       var self = this;
       var total = this.measureTotal();
 
@@ -361,14 +383,14 @@
         '<h3>Comparing ' + this.options.parts.length + ' regions:</h3>'
       );
 
-      this.options.parts.forEach(function (part) {
-        var share = (part.households_number_of_inhabitants.future / total);
+      this.options.parts.forEach(function(part) {
+        var share = part.households_number_of_inhabitants.future / total;
         var inhabitants = self.formattedMeasure(self.extractMeasure(part));
 
         self.$el.append(
           $('<div class="legend-item" />')
             .css({
-              width: (share * 100) + '%'
+              width: share * 100 + '%'
             })
             .append(
               $('<div class="legend-color" />').css({
@@ -378,12 +400,14 @@
             .append(
               $('<a class="area-code">')
                 .text(part.scenario.areaCode.toUpperCase())
-                .attr("href", "/scenarios/" + part.scenario.id)
-                .attr("title", "View this scenario")
+                .attr('href', '/scenarios/' + part.scenario.id)
+                .attr('title', 'View this scenario')
             )
-            .append($('<span class="measure" />').text(
-              '(' + inhabitants + ' inhabitants)'
-            ))
+            .append(
+              $('<span class="measure" />').text(
+                '(' + inhabitants + ' inhabitants)'
+              )
+            )
         );
       });
 
@@ -397,19 +421,19 @@
   var RegionMetricBreakdownView = Backbone.View.extend({
     className: 'region',
 
-    regionModel: function () {
+    regionModel: function() {
       if (!this.cachedRegionModel) {
-        this.cachedRegionModel = new Metric(_.extend(
-          {},
-          this.options.model.attributes,
-          { parts: [this.options.part] }
-        ));
+        this.cachedRegionModel = new Metric(
+          _.extend({}, this.options.model.attributes, {
+            parts: [this.options.part]
+          })
+        );
       }
 
       return this.cachedRegionModel;
     },
 
-    subViewOpts: function (custom) {
+    subViewOpts: function(custom) {
       return _.extend(
         {},
         { model: this.regionModel(), key: this.model.get('key') },
@@ -417,7 +441,7 @@
       );
     },
 
-    render: function () {
+    render: function() {
       var deltaView = new DeltaView(this.subViewOpts());
       var presentView = new PeriodView(this.subViewOpts({ period: 'present' }));
       var futureView = new PeriodView(this.subViewOpts({ period: 'future' }));
@@ -431,7 +455,7 @@
         ),
         $('<div class="delta"></div>').append(deltaView.render()),
         $('<div class="present"></div>').append(presentView.render()),
-        $('<div class="future"></div>').append(futureView.render()),
+        $('<div class="future"></div>').append(futureView.render())
       );
 
       return this.$el;
@@ -445,13 +469,14 @@
   var MetricBreakdownView = Backbone.View.extend({
     className: 'breakdown',
 
-    render: function () {
+    render: function() {
       var model = this.model;
 
-      var regionEls = this.model.get('parts').map(function (part) {
-        return (new RegionMetricBreakdownView({
-          model: model, part: part
-        })).render();
+      var regionEls = this.model.get('parts').map(function(part) {
+        return new RegionMetricBreakdownView({
+          model: model,
+          part: part
+        }).render();
       });
 
       this.$el.append(regionEls);
@@ -474,15 +499,15 @@
       'click h2': 'toggleBreakdown'
     },
 
-    render: function () {
+    render: function() {
       var key = this.model.get('key');
       var name = this.model.get('name') || key;
 
       this.$el.html(METRIC_VIEW_T({ title: name }));
 
-      this.$el.find('.delta').append(
-        new DeltaView({ model: this.model, key: key }).render()
-      );
+      this.$el
+        .find('.delta')
+        .append(new DeltaView({ model: this.model, key: key }).render());
 
       this.$el.find('.present').append(
         new PeriodView({
@@ -520,7 +545,7 @@
       return this.$el;
     },
 
-    toggleBreakdown: function () {
+    toggleBreakdown: function() {
       var container = this.$el.find('.breakdown-container');
 
       if (this.$el.hasClass('open')) {
@@ -530,9 +555,7 @@
 
       this.$el.addClass('open');
 
-      container.append(
-        new MetricBreakdownView({ model: this.model }).render()
-      );
+      container.append(new MetricBreakdownView({ model: this.model }).render());
 
       return null;
     }
@@ -541,7 +564,7 @@
   var DashboardView = Backbone.View.extend({
     className: 'results',
 
-    render: function () {
+    render: function() {
       var self = this;
 
       // Legend
@@ -557,7 +580,7 @@
       );
 
       // Dashboard metrics.
-      this.options.metrics.forEach(function (metric) {
+      this.options.metrics.forEach(function(metric) {
         var model = new Metric(_.extend(metric, { parts: self.collection }));
         self.$el.append(new MetricView({ model: model }).render());
       });
@@ -584,7 +607,7 @@
 
     input.val(ids.join(', '));
 
-    ids.forEach(function (id) {
+    ids.forEach(function(id) {
       var gqueries = _.pluck(METRICS, 'key').concat(ADDITIONAL_QUERIES);
 
       requests.push(
@@ -593,14 +616,14 @@
           url: globals.api_url + '/api/v3/scenarios/' + id,
           data: { gqueries: gqueries },
           dataType: 'json'
-        }).fail(function (response) {
+        }).fail(function(response) {
           errored.push({ id: id, message: response.responseJSON.errors[0] });
         })
       );
     });
 
-    $.when.apply($, requests)
-      .done(function () {
+    $.when(...requests)
+      .done(function() {
         var results;
         var data;
 
@@ -613,7 +636,7 @@
           results = Array.prototype.slice.call(arguments);
         }
 
-        data = _.map(results, function (res, index) {
+        data = _.map(results, function(res, index) {
           // res[0] = scenario JSON; res[1] = response status; res[2] = XHR
 
           var scenario = {
@@ -632,26 +655,30 @@
 
         container.find('.loading').hide();
 
-        container.prepend(new DashboardView({
-          collection: data,
-          metrics: METRICS
-        }).render());
+        container.prepend(
+          new DashboardView({
+            collection: data,
+            metrics: METRICS
+          }).render()
+        );
 
         container.find('form.prompt').show();
       })
-      .fail(function () {
+      .fail(function() {
         // Wait a little bit longer for any other errors to arrive.
-        window.setTimeout(function () {
-          var messages = errored.map(function (error) {
+        window.setTimeout(function() {
+          var messages = errored.map(function(error) {
             return $('<li />').text(error.id + ': ' + error.message);
           });
 
-          container.find('form.prompt').append(
-            $('<div class="errors" />').append(
-              '<h4>Oops!</h4>',
-              $('<ul />').append(messages)
-            )
-          );
+          container
+            .find('form.prompt')
+            .append(
+              $('<div class="errors" />').append(
+                '<h4>Oops!</h4>',
+                $('<ul />').append(messages)
+              )
+            );
 
           container.find('.loading').hide();
           container.find('form.prompt').show();
@@ -659,14 +686,14 @@
       });
   }
 
-  $(function () {
+  $(function() {
     var container = $('#metrics');
 
     if (container.length === 0) {
       return;
     }
 
-    container.find('form.prompt button').on('click', function (event) {
+    container.find('form.prompt button').on('click', function(event) {
       var input = container.find('form.prompt input');
       var ids = parseScenarioIDs(input.val());
 
@@ -679,6 +706,7 @@
 
       loadComparison(ids, container);
 
+      // eslint-disable-next-line no-restricted-globals
       history.replaceState(
         { ids: ids },
         'Compare scenarios',
@@ -693,4 +721,4 @@
       loadComparison(scenarioIDsFromURL(window.location.pathname), container);
     }
   });
-}());
+})();

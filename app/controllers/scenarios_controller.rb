@@ -4,6 +4,7 @@ class ScenariosController < ApplicationController
   before_action :ensure_valid_browser
   before_action :find_scenario, only: [:show, :load]
   before_action :require_user, only: [:index, :new, :merge]
+  before_action :redirect_compare, only: :compare
   before_action :setup_comparison, only: [:compare, :weighted_merge]
   before_action :store_last_etm_page, :prevent_browser_cache, only: :play
 
@@ -135,11 +136,6 @@ class ScenariosController < ApplicationController
   end
 
   def compare
-    if params[:merge]
-      redirect_to(weighted_merge_scenarios_url(params.permit(scenario_ids: [])))
-      return
-    end
-
     @default_values = @scenarios.first.all_inputs
     @average_values = {}
     @average_values_using_defaults = {}
@@ -226,6 +222,32 @@ class ScenariosController < ApplicationController
       if @scenarios.empty?
         flash[:error] = "Please select one or more scenarios"
         redirect_to scenarios_path and return
+      end
+    end
+
+    def redirect_compare
+      if params[:merge]
+        redirect_to(
+          weighted_merge_scenarios_url(params.permit(scenario_ids: []))
+        )
+
+        return
+      end
+
+      if params[:combine]
+        redirect_to(local_global_comparison_url)
+        return
+      end
+    end
+
+    def local_global_comparison_url
+      ids = (params.permit(scenario_ids: [])[:scenario_ids] || [])
+        .map(&:to_i).reject(&:zero?)
+
+      if ids.empty?
+        scenarios_url
+      else
+        local_global_scenarios_url(ids.join(','))
       end
     end
 end

@@ -236,13 +236,8 @@ D3.mekko =
 
       @display_legend()
 
-      if ! @has_wrapped_labels
-        # The first time the chart is loaded, adjust labels to wrap long text
-        # and increase height.
-        @wrapLabels()
-        @fitHeightToLabels()
-        @has_wrapped_labels = true
-
+      @wrapLabels()
+      @fitHeightToLabels()
       @arrangeLabels()
       @moveArrows()
 

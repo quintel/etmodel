@@ -178,12 +178,15 @@ D3.stacked_bar =
 
       for s in @series
         label = s.get 'label'
+        total = Math.abs(s.safe_future_value()) +
+                Math.abs(s.safe_present_value())
+
         if s.get 'is_target_line'
           if _.indexOf(target_lines, label) == -1
             target_lines.push label
             series_for_legend.push s
           # otherwise the target line has already been added
-        else if (Math.abs(s.safe_future_value()) + Math.abs(s.safe_present_value())) > 1e-7
+        else if total > 1e-7
           series_for_legend.push s
 
       series_for_legend

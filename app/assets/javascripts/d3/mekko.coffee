@@ -201,7 +201,16 @@ D3.mekko =
         .data(@sector_list.models, (d) -> d.get 'key' )
         # .transition().duration(500)
         .attr('transform', (d) => "translate(#{@x(d.total_value() / 2)}, #{@label_offset})")
+        .attr('opacity', (d) ->
+          if Math.abs(d.total_value()) > 1e-7 then 1 else 0
+        )
         .select('text')
+
+      @svg.selectAll("line.sector_line")
+        .data(@sector_list.models, (d) -> d.get 'key' )
+        .attr('stroke', (d) ->
+          if Math.abs(d.total_value()) > 1e-7 then '#000000' else 'transparent'
+        )
 
       # Value formatting removes any HTML elements (such as <sup/> which will
       # not display correctly).

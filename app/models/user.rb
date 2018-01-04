@@ -75,4 +75,8 @@ class User < ActiveRecord::Base
     Digest::MD5.hexdigest(created_at.to_s)
   end
 
+  def deliver_password_reset_instructions!
+    reset_perishable_token!
+    UserMailer.password_reset_instructions(self).deliver
+  end
 end

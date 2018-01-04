@@ -18,3 +18,28 @@ en:
       email: "email"
       password: "password"
       remember_me: "remember me"
+
+  user:
+    forgot_password:
+      account_not_found: "We're sorry but we can't locate your account"
+
+      mail:
+        subject: Energy Transition Model Password Reset
+        button: Reset password
+        header: Password Reset Instructions
+        text: |
+          A request has been made to to reset your password for the Energy
+          Transition Model. If you did not make this request, simply ignore this
+          email. If you did make this request, please follow the link below.
+
+      form:
+        submit: "Update password"
+        submit_new: "Reset password"
+      instructions: "Instructions to reset your password have been emailed to you"
+      reset_description: 'Please enter your new password below.'
+      reset_description_new: |
+        Please enter the e-mail address you used to sign up to the Energy
+        Transition Model. Password reset instructions will be sent within a
+        couple of minutes.
+      reset_header_html: <strong>Reset</strong> your password
+      success: "Your password was successfully updated"

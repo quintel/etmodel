@@ -19,7 +19,10 @@ D3.mekko =
       @initialize_defaults()
 
     tableOptions:
-      labelFormatter: -> (s) -> "#{ s.get('label') } - #{ s.get('group') }"
+      labelFormatter: -> (s) ->
+        group = I18n.t("output_element_series.groups.#{ s.get('group') }")
+
+        "#{ s.get('label') } - #{ group }"
 
     can_be_shown_as_table: -> true
 

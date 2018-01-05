@@ -17,7 +17,7 @@ class ScenariosController < ApplicationController
 
   rescue_from NoScenarioIdError do |ex|
     render :cannot_save_without_id, status: :bad_request
-    notify_airbrake(ex)
+    notify_airbrake(ex) unless Rails.env.test?
   end
 
   def index

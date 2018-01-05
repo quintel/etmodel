@@ -24,7 +24,9 @@ class SidebarItem < ActiveRecord::Base
   has_many :children, foreign_key: 'parent_id', class_name: "SidebarItem"
 
   accepts_nested_attributes_for :description, :area_dependency
+
   validates :key, presence: true, uniqueness: true
+  validates :position, numericality: true
 
   scope :ordered, -> { order('position') }
   scope :gquery_contains, ->(search) { where("percentage_bar_query LIKE ?", "%#{search}%") }

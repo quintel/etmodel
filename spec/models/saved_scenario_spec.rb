@@ -13,7 +13,7 @@ describe SavedScenario do
   describe "#scenario=" do
     before(:each) do
       @saved_scenario_new = SavedScenario.new(scenario_id: 0)
-      @saved_scenario_db = FactoryGirl.create(:saved_scenario)
+      @saved_scenario_db = FactoryBot.create(:saved_scenario)
     end
 
     it "assigns a new id if new id is not nil" do

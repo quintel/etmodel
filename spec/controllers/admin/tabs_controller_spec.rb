@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe Admin::TabsController do
-  let(:admin) { FactoryGirl.create :admin }
-  let!(:tab) { FactoryGirl.create :tab }
+  let(:admin) { FactoryBot.create :admin }
+  let!(:tab) { FactoryBot.create :tab }
 
   before do
     login_as(admin)

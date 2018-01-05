@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Admin::GqlController do
   before(:each) do
-    login_as(FactoryGirl.create(:admin))
+    login_as(FactoryBot.create(:admin))
   end
 
   describe "GET 'search'" do

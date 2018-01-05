@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe Admin::SidebarItemsController do
-  let(:admin) { FactoryGirl.create :admin }
-  let!(:sidebar_item) { FactoryGirl.create :sidebar_item }
+  let(:admin) { FactoryBot.create :admin }
+  let!(:sidebar_item) { FactoryBot.create :sidebar_item }
 
   before do
     login_as(admin)

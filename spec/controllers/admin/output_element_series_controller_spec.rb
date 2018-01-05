@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe Admin::OutputElementSeriesController do
-  let!(:serie) { FactoryGirl.create :output_element_serie }
-  let(:admin) { FactoryGirl.create :admin }
+  let!(:serie) { FactoryBot.create :output_element_serie }
+  let(:admin) { FactoryBot.create :admin }
 
    before do
     login_as(admin)
@@ -31,7 +31,7 @@ describe Admin::OutputElementSeriesController do
 
     it "create action should redirect when model is valid" do
       post :create, params: {
-        output_element_serie: FactoryGirl.attributes_for(:output_element_serie)
+        output_element_serie: FactoryBot.attributes_for(:output_element_serie)
       }
 
       new_serie = assigns(:output_element_serie)
@@ -65,7 +65,7 @@ describe Admin::OutputElementSeriesController do
 
 
   it "destroy action should destroy model and redirect to index action" do
-    output_element_serie = FactoryGirl.create :output_element_serie
+    output_element_serie = FactoryBot.create :output_element_serie
     delete :destroy, params: { id: output_element_serie.id }
     expect(response).to redirect_to([:admin, output_element_serie.output_element])
     expect(OutputElementSerie.exists?(output_element_serie.id)).to be(false)

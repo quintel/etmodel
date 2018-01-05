@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :api_scenario, class: Api::Scenario do
     country "de"
     end_year 2050

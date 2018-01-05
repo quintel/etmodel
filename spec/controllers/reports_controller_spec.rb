@@ -19,7 +19,7 @@ describe ReportsController, vcr: true do
 
     context 'with an active scenario' do
       before { session[:setting] = Setting.new(api_session_id: 648_695) }
-      before { FactoryGirl.create(:tab, key: 'demand') }
+      before { FactoryBot.create(:tab, key: 'demand') }
 
       it 'uses the scenario' do
         get :show, params: { id: 'sample' }
@@ -41,7 +41,7 @@ describe ReportsController, vcr: true do
 
     context 'with a specified scenario' do
       before { session[:setting] = Setting.new(api_session_id: 648_695) }
-      before { FactoryGirl.create(:tab, key: 'demand') }
+      before { FactoryBot.create(:tab, key: 'demand') }
 
       it 'starts a new scenario with the specified ID' do
         get :show, params: { id: 'sample', scenario_id: 648_695 }

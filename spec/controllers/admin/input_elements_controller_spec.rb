@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe Admin::InputElementsController do
-  let(:admin) { FactoryGirl.create :admin }
+  let(:admin) { FactoryBot.create :admin }
 
   before(:each) do
-    @input_element = FactoryGirl.create :input_element
+    @input_element = FactoryBot.create :input_element
     login_as(admin)
   end
 

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe OutputElementPresenter do
   let(:oe) do
-    FactoryGirl.create(:output_element, key: 'useful_demand_in_households')
+    FactoryBot.create(:output_element, key: 'useful_demand_in_households')
   end
 
   let(:renderer) { ->(*) {} }
@@ -26,8 +26,8 @@ RSpec.describe OutputElementPresenter do
   end
 
   it 'includes the element series' do
-    FactoryGirl.create(:output_element_serie, output_element: oe)
-    FactoryGirl.create(:output_element_serie, output_element: oe)
+    FactoryBot.create(:output_element_serie, output_element: oe)
+    FactoryBot.create(:output_element_serie, output_element: oe)
 
     expect(json[:series].length).to eq(2)
   end
@@ -65,7 +65,7 @@ RSpec.describe OutputElementPresenter do
   end
 
   describe '.collection' do
-    let(:other) { FactoryGirl.create(:output_element) }
+    let(:other) { FactoryBot.create(:output_element) }
 
     it 'presents multiple elements' do
       json = OutputElementPresenter.collection([oe, other], ->(*) {})

@@ -10,7 +10,6 @@ require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/rails'
 require 'authlogic/test_case'
-require 'factory_girl'
 require 'shoulda/matchers'
 require 'vcr'
 

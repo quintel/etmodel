@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :press_release do
     title 'PR title'
     link 'http://www.quintel.com/'

@@ -2,10 +2,10 @@ require 'rails_helper'
 
 describe Admin::GeneralUserNotificationsController do
   render_views
-  let!(:general_user_notification) { FactoryGirl.create :general_user_notification }
+  let!(:general_user_notification) { FactoryBot.create :general_user_notification }
 
   before do
-    login_as(FactoryGirl.create(:admin))
+    login_as(FactoryBot.create(:admin))
   end
 
   describe "GET new" do
@@ -42,7 +42,7 @@ describe Admin::GeneralUserNotificationsController do
 
   describe "PUT update" do
     before do
-      @general_user_notification = FactoryGirl.create :general_user_notification
+      @general_user_notification = FactoryBot.create :general_user_notification
 
       put :update, params: {
         id: @general_user_notification.id,
@@ -55,7 +55,7 @@ describe Admin::GeneralUserNotificationsController do
 
   describe "DELETE destroy" do
     before do
-      @general_user_notification = FactoryGirl.create :general_user_notification
+      @general_user_notification = FactoryBot.create :general_user_notification
       @general_user_notification_count = GeneralUserNotification.count
       delete :destroy, params: { id: @general_user_notification.id }
     end

@@ -3,8 +3,8 @@ require 'rails_helper'
 describe Admin::ConstraintsController do
   render_views
 
-  let!(:constraint) { FactoryGirl.create :constraint }
-  let!(:admin) { FactoryGirl.create :admin }
+  let!(:constraint) { FactoryBot.create :constraint }
+  let!(:admin) { FactoryBot.create :admin }
 
   before do
     login_as(admin)
@@ -29,7 +29,7 @@ describe Admin::ConstraintsController do
       @old_constraint_count = Constraint.count
 
       post :create, params: {
-        constraint: FactoryGirl.attributes_for(:constraint)
+        constraint: FactoryBot.attributes_for(:constraint)
       }
     end
 
@@ -56,7 +56,7 @@ describe Admin::ConstraintsController do
 
   describe "PUT update" do
     before do
-      @constraint = FactoryGirl.create :constraint
+      @constraint = FactoryBot.create :constraint
       put :update, params: { id: @constraint.id, constraint: { key: 'yo'} }
     end
 
@@ -65,7 +65,7 @@ describe Admin::ConstraintsController do
 
   describe "DELETE destroy" do
     before do
-      @constraint = FactoryGirl.create :constraint
+      @constraint = FactoryBot.create :constraint
       @old_constraint_count = Constraint.count
       delete :destroy, params: { id: @constraint.id }
     end

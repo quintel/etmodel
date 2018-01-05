@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :output_element_type do
     name 'test_chart'
   end

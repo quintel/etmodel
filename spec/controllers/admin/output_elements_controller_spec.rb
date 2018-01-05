@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe Admin::OutputElementsController do
-  let!(:output_element) { FactoryGirl.create :output_element }
+  let!(:output_element) { FactoryBot.create :output_element }
 
   before do
-    login_as(FactoryGirl.create(:admin))
+    login_as(FactoryBot.create(:admin))
   end
 
   it "index action should render index template" do
@@ -30,7 +30,7 @@ describe Admin::OutputElementsController do
 
     it "create action should redirect when model is valid" do
       post :create, params: {
-        output_element: FactoryGirl.attributes_for(:output_element).merge(output_element_type_id: 1)
+        output_element: FactoryBot.attributes_for(:output_element).merge(output_element_type_id: 1)
       }
 
       expect(response).to redirect_to(admin_output_elements_path)
@@ -39,7 +39,7 @@ describe Admin::OutputElementsController do
 
   describe "update" do
     before do
-      @output_element = FactoryGirl.create :output_element
+      @output_element = FactoryBot.create :output_element
     end
 
     it "update action should render edit template when model is invalid" do
@@ -62,7 +62,7 @@ describe Admin::OutputElementsController do
   end
 
   it "destroy action should destroy model and redirect to index action" do
-    output_element = FactoryGirl.create :output_element
+    output_element = FactoryBot.create :output_element
 
     delete :destroy, params: { id: output_element.id }
 

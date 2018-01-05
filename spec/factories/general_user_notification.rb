@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :general_user_notification do
     key 'foobar'
     notification_en 'EN'

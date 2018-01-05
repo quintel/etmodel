@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe Admin::SlidesController do
-  let!(:slide) { FactoryGirl.create :slide }
+  let!(:slide) { FactoryBot.create :slide }
 
   before(:each) do
-    login_as(FactoryGirl.create(:admin))
+    login_as(FactoryBot.create(:admin))
   end
 
   it "index action should render index template" do
@@ -24,14 +24,14 @@ describe Admin::SlidesController do
     end
 
     it "create action should redirect when model is valid" do
-      post :create, params: { slide: FactoryGirl.attributes_for(:slide) }
+      post :create, params: { slide: FactoryBot.attributes_for(:slide) }
       expect(response).to redirect_to(admin_slides_path)
     end
   end
 
   describe "update" do
     before do
-      @slide = FactoryGirl.create :slide
+      @slide = FactoryBot.create :slide
     end
 
     it "update action should render edit template when model is invalid" do
@@ -51,7 +51,7 @@ describe Admin::SlidesController do
   end
 
   it "destroy action should destroy model and redirect to index action" do
-    slide = FactoryGirl.create :slide
+    slide = FactoryBot.create :slide
 
     delete :destroy, params: { id: slide.id }
 

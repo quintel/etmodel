@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :description do
     content_en 'Content EN'
     content_nl 'Content NL'

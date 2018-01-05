@@ -3,7 +3,7 @@ require 'rails_helper'
 describe UsersController do
   render_views
 
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
 
   describe "#new" do
     it "should show the signup form" do
@@ -18,7 +18,7 @@ describe UsersController do
     context 'with a formerly interested subscriber' do
 
       before do
-        @user = FactoryGirl.create(:user, allow_news: true)
+        @user = FactoryBot.create(:user, allow_news: true)
         get :unsubscribe, params: { id: @user.id, h: @user.md5_hash }
         @user.reload
       end
@@ -40,7 +40,7 @@ describe UsersController do
     context 'with an already signed-out user' do
 
       before do
-        @user = FactoryGirl.create(:user, allow_news: false)
+        @user = FactoryBot.create(:user, allow_news: false)
         get :unsubscribe, params: { id: @user.id, h: @user.md5_hash }
         @user.reload
       end
@@ -58,7 +58,7 @@ describe UsersController do
     context 'with invalid hash' do
 
       before do
-        @user = FactoryGirl.create(:user, allow_news: true)
+        @user = FactoryBot.create(:user, allow_news: true)
         get :unsubscribe, params: { id: @user.id, h: 'i-am-a-hacker' }
         @user.reload
       end
@@ -105,7 +105,7 @@ describe UsersController do
     describe "when teacher email is provided" do
       context "and it is valid" do
         before(:each) do
-          @teacher = FactoryGirl.create(:user)
+          @teacher = FactoryBot.create(:user)
         end
 
         it "assigns a correct teacher_id to the user" do

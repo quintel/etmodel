@@ -10,7 +10,7 @@ describe OutputElementsController, vcr: true do
   end
 
   describe '#show' do
-    let!(:output_element) { FactoryGirl.create(:output_element, key: 'abc') }
+    let!(:output_element) { FactoryBot.create(:output_element, key: 'abc') }
 
     context 'with a numeric ID' do
       before { get(:show, params: { id: output_element.id }) }

@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe Admin::TextsController do
-  let!(:text) { FactoryGirl.create :text }
+  let!(:text) { FactoryBot.create :text }
 
   before(:each) do
-    login_as(FactoryGirl.create(:admin))
+    login_as(FactoryBot.create(:admin))
   end
 
   it "index action should render index template" do
@@ -24,14 +24,14 @@ describe Admin::TextsController do
     end
 
     it "create action should redirect when model is valid" do
-      post :create, params: { text: FactoryGirl.attributes_for(:text) }
+      post :create, params: { text: FactoryBot.attributes_for(:text) }
       expect(response).to redirect_to(admin_texts_path)
     end
   end
 
   describe "update" do
     before do
-      @text = FactoryGirl.create :text
+      @text = FactoryBot.create :text
     end
 
     it "update action should render edit template when model is invalid" do
@@ -51,7 +51,7 @@ describe Admin::TextsController do
   end
 
   it "destroy action should destroy model and redirect to index action" do
-    text = FactoryGirl.create :text
+    text = FactoryBot.create :text
 
     delete :destroy, params: { id: text.id }
 

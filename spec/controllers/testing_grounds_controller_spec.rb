@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe TestingGroundsController do
   let(:scenario_mock) { ete_scenario_mock }
-  let(:user){ FactoryGirl.create(:user) }
+  let(:user){ FactoryBot.create(:user) }
 
   describe "#create" do
     before do

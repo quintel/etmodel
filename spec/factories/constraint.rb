@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :constraint do
     sequence(:key) {|n| "constraint_#{n}" }
     group Constraint::GROUPS.sample # pick a random group

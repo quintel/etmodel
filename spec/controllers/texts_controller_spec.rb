@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe TextsController do
-  let!(:text) { FactoryGirl.create :text, key: 'foobar'}
+  let!(:text) { FactoryBot.create :text, key: 'foobar'}
 
   describe "#show" do
     it "should show the text detail page" do

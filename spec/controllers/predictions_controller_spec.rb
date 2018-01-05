@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe PredictionsController do
-  let(:prediction) { FactoryGirl.create :prediction}
+  let(:prediction) { FactoryBot.create :prediction}
 
   before do
     allow_any_instance_of(Setting).to receive(:area_code).and_return('nl')

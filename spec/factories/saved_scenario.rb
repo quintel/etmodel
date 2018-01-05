@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :saved_scenario do
     title "Some scenario"
     scenario_id 648695

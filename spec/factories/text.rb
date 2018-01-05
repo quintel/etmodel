@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :text do
     key 'foobar'
     title_en 'Title EN'

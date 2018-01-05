@@ -4,7 +4,7 @@ describe UserSessionsController do
   render_views
 
   before(:each) do
-    @user = FactoryGirl.create :user
+    @user = FactoryBot.create :user
   end
 
   context "User is not logged in" do

@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :prediction do
     title 'foobar'
     association :input_element, factory: :input_element

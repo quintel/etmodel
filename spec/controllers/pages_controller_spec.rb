@@ -82,8 +82,8 @@ describe PagesController, vcr: true do
 
   describe "#info" do
     it "should render title and description" do
-      s = FactoryGirl.create :sidebar_item, section: 'foo', key: 'bar'
-      t = FactoryGirl.create :text, key: 'foo_bar'
+      s = FactoryBot.create :sidebar_item, section: 'foo', key: 'bar'
+      t = FactoryBot.create :text, key: 'foo_bar'
 
       get :info, params: { ctrl: 'foo', act: 'bar' }
       expect(response).to be_success

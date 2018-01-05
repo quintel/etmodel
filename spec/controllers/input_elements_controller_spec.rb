@@ -18,23 +18,23 @@ describe InputElementsController do
     #   SidebarItem 4
     #     Slide 4
     #       InputElement 5
-    let!(:t1) { FactoryGirl.create(:tab) }
-    let!(:t2) { FactoryGirl.create(:tab) }
+    let!(:t1) { FactoryBot.create(:tab) }
+    let!(:t2) { FactoryBot.create(:tab) }
 
-    let!(:si1) { FactoryGirl.create(:sidebar_item, tab: t1) }
-    let!(:si2) { FactoryGirl.create(:sidebar_item, tab: t1) }
-    let!(:si3) { FactoryGirl.create(:sidebar_item, tab: t2) }
+    let!(:si1) { FactoryBot.create(:sidebar_item, tab: t1) }
+    let!(:si2) { FactoryBot.create(:sidebar_item, tab: t1) }
+    let!(:si3) { FactoryBot.create(:sidebar_item, tab: t2) }
 
-    let!(:sl1) { FactoryGirl.create(:slide, sidebar_item: si1) }
-    let!(:sl2) { FactoryGirl.create(:slide, sidebar_item: si1) }
-    let!(:sl3) { FactoryGirl.create(:slide, sidebar_item: si2) }
-    let!(:sl4) { FactoryGirl.create(:slide, sidebar_item: si3) }
+    let!(:sl1) { FactoryBot.create(:slide, sidebar_item: si1) }
+    let!(:sl2) { FactoryBot.create(:slide, sidebar_item: si1) }
+    let!(:sl3) { FactoryBot.create(:slide, sidebar_item: si2) }
+    let!(:sl4) { FactoryBot.create(:slide, sidebar_item: si3) }
 
-    let!(:ie1) { FactoryGirl.create(:input_element, slide: sl1) }
-    let!(:ie2) { FactoryGirl.create(:input_element, slide: sl1) }
-    let!(:ie3) { FactoryGirl.create(:input_element, slide: sl2) }
-    let!(:ie4) { FactoryGirl.create(:input_element, slide: sl3) }
-    let!(:ie5) { FactoryGirl.create(:input_element, slide: sl4) }
+    let!(:ie1) { FactoryBot.create(:input_element, slide: sl1) }
+    let!(:ie2) { FactoryBot.create(:input_element, slide: sl1) }
+    let!(:ie3) { FactoryBot.create(:input_element, slide: sl2) }
+    let!(:ie4) { FactoryBot.create(:input_element, slide: sl3) }
+    let!(:ie5) { FactoryBot.create(:input_element, slide: sl4) }
 
     let(:json) do
       get(:by_slide)

@@ -9,10 +9,10 @@ describe ScenariosController, vcr: true do
     allow(Api::Scenario).to receive(:find).and_return scenario_mock
   end
 
-  let(:user) { FactoryGirl.create :user }
-  let(:admin) { FactoryGirl.create :admin }
-  let!(:user_scenario) { FactoryGirl.create :saved_scenario, user: user, id: 648695 }
-  let!(:admin_scenario) { FactoryGirl.create :saved_scenario, user: admin, id: 648696 }
+  let(:user) { FactoryBot.create :user }
+  let(:admin) { FactoryBot.create :admin }
+  let!(:user_scenario) { FactoryBot.create :saved_scenario, user: user, id: 648695 }
+  let!(:admin_scenario) { FactoryBot.create :saved_scenario, user: admin, id: 648696 }
 
   context "a guest" do
     describe "#index" do
@@ -121,8 +121,8 @@ describe ScenariosController, vcr: true do
 
       describe "#compare" do
         it "should compare them" do
-          s1 = FactoryGirl.create :saved_scenario
-          s2 = FactoryGirl.create :saved_scenario
+          s1 = FactoryBot.create :saved_scenario
+          s2 = FactoryBot.create :saved_scenario
           get :compare, params: { scenario_ids: [s1.id, s2.id] }
           expect(response).to be_success
           expect(response).to render_template(:compare)
@@ -161,8 +161,8 @@ describe ScenariosController, vcr: true do
   context "a teacher" do
     before(:each) do
       login_as user
-      student= FactoryGirl.create(:user, teacher_email: user.email)
-      @student_scenario = FactoryGirl.create(:saved_scenario, user: student)
+      student= FactoryBot.create(:user, teacher_email: user.email)
+      @student_scenario = FactoryBot.create(:saved_scenario, user: student)
     end
 
     describe "#index" do

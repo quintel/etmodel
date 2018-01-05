@@ -78,7 +78,7 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'factory_girl_rails', '~> 4.1'
+  gem 'factory_bot_rails', '~> 4.8'
   gem 'shoulda-matchers', require: false
   gem 'rails-controller-testing'
   gem 'simplecov'

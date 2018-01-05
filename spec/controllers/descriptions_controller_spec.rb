@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe DescriptionsController do
-  let!(:chart)   { FactoryGirl.create :output_element_with_description}
+  let!(:chart)   { FactoryBot.create :output_element_with_description}
   let!(:description)   { chart.description}
 
   describe "#show" do

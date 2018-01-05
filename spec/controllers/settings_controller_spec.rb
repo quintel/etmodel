@@ -33,7 +33,7 @@ describe SettingsController do
   describe 'on PUT /settings/dashboard' do
     let(:constraints) do
       Constraint::GROUPS.each_with_object([]) do |group, c|
-        c.push FactoryGirl.create(:constraint, group: group)
+        c.push FactoryBot.create(:constraint, group: group)
       end
     end
 

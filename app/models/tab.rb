@@ -13,6 +13,7 @@ class Tab < ActiveRecord::Base
   include AreaDependent
 
   validates :key, presence: true, uniqueness: true
+  validates :position, numericality: true
 
   has_many :sidebar_items, dependent: :nullify
   has_one :area_dependency, as: :dependable, dependent: :destroy

@@ -27,6 +27,7 @@ class Slide < ActiveRecord::Base
   has_one :area_dependency, as: :dependable, dependent: :destroy
 
   validates :key, presence: true, uniqueness: true
+  validates :position, numericality: true
 
   scope :controller, ->(controller) { where(controller_name: controller) }
   scope :ordered,    -> { order('position') }

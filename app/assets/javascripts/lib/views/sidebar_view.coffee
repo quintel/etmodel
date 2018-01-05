@@ -24,7 +24,7 @@ class @SidebarView extends Backbone.View
 
     # AJAX-based navigation
     # hijack sidebar links
-    $(document).on 'click', "a[data-nav=true]", (e) ->
+    $(document).on 'click', "a[data-nav=true]", (e) =>
       e.preventDefault()
       target = $(e.target)
       # Don't do anything if it's already active
@@ -36,7 +36,24 @@ class @SidebarView extends Backbone.View
       target.parents("li").addClass("active")
       target.parents('ul').prev("h4").addClass("active")
       key = target.attr('data-key') || target.parents('a').attr('data-key')
+      @show_sub_items()
+
       App.router.navigate(key, { trigger: true })
+
+    @show_sub_items()
+
+  show_sub_items: ->
+    e = $("#sidebar ul li.active")
+
+    if e.hasClass('child')
+      parent = e.data('parent')
+    else
+      parent = e.attr('id')
+
+    $("#sidebar ul li.child")
+      .hide()
+      .filter("[data-parent='" + parent + "']")
+      .show()
 
   update_bars: ->
     for item in $("#sidebar ul li")

@@ -12,7 +12,7 @@ class @CarbonBalanceTableView extends @HtmlTableChartView
 
       [selfVal, compVal] = @cell_balance_values(gqueryKey, cellEl.data('graph'))
 
-      if selfVal && compVal && selfVal > compVal
+      if selfVal? && compVal? && selfVal > compVal
         cellEl.addClass('warning')
       else
         cellEl.removeClass('warning')

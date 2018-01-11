@@ -120,6 +120,7 @@ class @Chart extends Backbone.Model
     switch @get('key')
       when 'merit_order_table' then MeritOrderTableView
       when 'plant_profitability' then PlantProfitabilityTableView
+      when 'carbon_balance' then CarbonBalanceTableView
       else HtmlTableChartView
 
   # -- DOM and interface -----------------------------------------------------

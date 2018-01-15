@@ -61,10 +61,6 @@ $ ->
     return false unless slider_is_available()
     get_slider().set({ user_value : x })
 
-  update_input_element = ->
-    if input_element.value_for_prediction != false
-      set_slider_value(input_element.value_for_prediction)
-
   # returns the related input element
   get_slider = ->
     if !slider_is_available()
@@ -108,43 +104,3 @@ $ ->
       }
 
   plot_chart()
-
-  # interface stuff
-
-  # ajax loading of prediction details
-  $(".clickable_prediction").click ->
-    prediction_id = $(this).attr("prediction_id")
-    input_element.value_for_prediction = $(this).data('slider_value')
-
-    $(".clickable_prediction").removeClass('active')
-    $(this).addClass('active')
-
-    # if the user selects his own prediction
-    if prediction_id == undefined
-      $(".prediction_details").empty()
-      input_element.value_for_prediction = false
-      return
-
-    url = "/predictions/" + prediction_id
-    if slider_is_available()
-       url = url + "?end_year="+scenario.end_year
-
-    $(".prediction").busyBox({spinner: '<img src="/assets/layout/ajax-loader.gif" />'})
-    $(".prediction_details").load url, ->
-      $(".prediction").busyBox('close')
-
-  # extra info links
-  $("#predictions_index").on 'click', ".measure", (event) ->
-    $(this).find(".inline_description").toggle()
-    $(this).toggleClass('active')
-
-  # apply prediction
-  $("#predictions_index").on 'click', "input.apply_prediction", ->
-    update_input_element()
-    parent.$.fancybox.close()
-
-  # share prediction
-  $("#predictions_index").on 'click', "button.share_prediction", ->
-    $(this).hide()
-    $('#share_box').fadeIn('slow')
-    $('#share_link').focus().select()

@@ -1,13 +1,10 @@
 <script id="input-element-template" type="text/template">
     <div class="slider-row">
         <label>
-          <% if (predictions) { %>
-              <a href="/predictions?input_element_id=<%= input_element_id %>" class="prediction"></a>
-          <% } %>
-          <%= name %>
-          <% if ( location.search.match(/\bdebug/) ) { %>
-           (#<%= input_element_id %>)
-          <% } %>
+            <%= name %>
+            <% if ( location.search.match(/\bdebug/) ) { %>
+                (#<%= input_element_id %>)
+            <% } %>
         </label>
 
         <% if (sublabel) { %>

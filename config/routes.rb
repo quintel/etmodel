@@ -135,7 +135,7 @@ Etm::Application.routes.draw do
   get '/regions/:dataset_locale' => 'pages#dataset', as: :region
 
   get '/compare' => 'compare#index', as: :local_global
-  get '/compare/:ids' => 'compare#index', as: :local_global_scenarios
+  get '/compare/:ids' => 'compare#show', as: :local_global_scenarios
 
   %w[404 422 500].each do |code|
     get "/#{ code }", to: 'errors#show', code: code

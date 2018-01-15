@@ -195,59 +195,106 @@
     &.lower-better .change-lower, .higher-better .change-higher
       background: #2fa554
     &.lower-better .change-higher, .higher-better .change-lower
+
       background: #e24649
 
-  form.prompt
-    background: #f5f5f5
-    border-radius: 5px
-    font-size: 1rem
-    margin: 3rem auto 0
-    line-height: 1
-    overflow: hidden
-    padding: 3rem 0
-    text-align: center
-    width: 600px
+  .qtip
+    max-width: 400px
 
-    .field, button, .errors
-      float: left
-    .field, .errors
-      margin-left: 75px
-      width: 300px
-    .errors
-      background: #fff
-      border-left: 3px solid #e24649
-      color: #e24649
-      font-size: 0.8125rem
-      margin-top: 1rem
-      padding: 16px
-      text-align: left
-      width: 414px
-      h4
-        font-size: 1rem
-        margin-top: 0
-      ul
-        list-style: square
-        margin-bottom: 0
-        padding-left: 2rem
-
-    button, input[type=text]
-      box-sizing: border-box
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
-      font-size: 1rem
-      vertical-align: middle
-    input[type=text]
-      padding: 8px
-      width: 300px
-    button
+  form.select-scenarios
+    table
+      margin-top: 2rem
+    input[type=submit]
       background: #4ea96a
       border: none
-      border-radius: 0
+      border-radius: 3px
       color: #fff
       cursor: pointer
-      padding: 10px 8px
-      margin: 1.5rem 0 0 0.25rem
-    label
-      color: #777
-      display: block
-      margin-bottom: 0.5rem
-      text-align: left
+      font-size: 1rem
+      font-weight: bold
+      padding: 10px 13px
+      margin: 1rem 0 0
+    #available-scenarios
+      list-style: none
+      margin: 2rem auto 0
+      padding-left: 0
+      width: 550px
+      li
+        line-height: 1
+        margin-bottom: 0.5rem
+      label
+        background: #f6f6f6
+        border-radius: 3px
+        cursor: pointer
+        display: block
+        padding: 10px 10px 11px
+      input[type=checkbox]
+        font-size: 1rem
+        margin: 1px 3px 0 0
+        vertical-align: text-top
+      .check
+        display: none
+      .area
+        font-weight: bold
+        &:after
+          content: ": "
+          font-weight: normal
+      .title
+        display: inline-block
+        max-width: 390px
+        overflow: hidden
+        text-overflow: ellipsis
+        vertical-align: bottom
+        white-space: nowrap
+      .end-year
+        color: #777
+      li.selected label
+        background: #77b5ea
+        color: white
+        .end-year
+          color: #d7e7f1
+      #scenario-paginator
+        text-align: center
+    #commit
+      text-align: center
+      input[disabled]
+        opacity: 0.5
+
+  main.intro
+    h1, .description
+      text-align: center
+    h1
+      margin-top: 2rem
+    .description
+      color: #333
+      font-size: 0.875rem
+      margin-left: auto
+      margin-right: auto
+      width: 550px
+    #settings-menu-example
+      border-bottom: 1px dashed #aaa
+      cursor: pointer
+    #settings-menu-image
+      display: none
+    ol.instructions
+      border-top: 1px solid #ddd
+      counter-reset: description-item
+      list-style: none
+      margin-top: 2rem
+      padding-top: 2rem
+      width: 750px
+      li
+        counter-increment: description-item
+        margin-bottom: 0.25rem
+        &:before
+          background: #68a1ce
+          border-radius: 100%
+          color: white
+          content: counter(description-item)
+          display: inline-block
+          height: 1.5rem
+          line-height: 1.5rem
+          margin-left: -1.625rem
+          margin-right: 0.125rem
+          text-align: center
+          width: 1.5rem

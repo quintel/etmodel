@@ -1,22 +1,45 @@
-%main
+%main.intro
   %h1 Local vs. Global
+  %p.description
+    When developing scenarios for small regions, it's easy to forget that your
+    scenario is not an island, but affects &ndash; and is affected by &ndash;
+    nearby regions. By combining the results for these areas, you can see how
+    each individual contibutes to the whole.
 
-  #metrics
-    .loading
-      = image_tag('layout/ajax-loader-small.gif')
-      One moment please; loading data&hellip;
-    %form.prompt
-      .field
-        %label(for="compare-scenario-ids") Scenario IDs
-        %input#compare-scenario-ids(type="text" placeholder="Comma-separated IDs please" value="771759, 771760, 771761")
-      %button Load summary →
+  - if current_user
+    - if current_user.saved_scenarios.count.zero?
+      %p.description
+        %strong
+          You don't have any saved scenarios.
+      %ol.description
+        %li
+          Start by creating a new scenario from
+          %a(href=root_path) the home page
+          %span> .
+        %li
+          Make your desired changes and save the scenario through the
+          "settings" menu:
+          %span#settings-menu-example
+            Settings &rarr; Save scenario.
+          #settings-menu-image
+            = image_tag "pages/compare/settings-menu.#{I18n.locale}.png"
+        %li
+          Repeat until you have created all the scenarios you wish to compare
+          and revisit this page.
 
-%script#compare-metric-template(type="text/template")
-  .summary
-    .title
-      %h2
-        %span(class="arrow")
-        <%= title %>
-    .delta
-    .present
-    .future
+    - else
+      %p.description
+        %strong
+          Select two or more scenarios below to see how they compare&hellip;
+
+      = form_tag compare_scenarios_path, method: 'get', class: 'select-scenarios' do
+        %ul#available-scenarios
+          = render partial: 'scenarios_slice', locals: { scenarios: @scenarios }
+        #commit
+          = submit_tag "#{t('scenario.local_vs_global')} →", name: 'combine'
+  - else
+    %p.description
+      %strong
+        You need to be
+        = link_to 'logged in', login_path
+        to compare scenarios.

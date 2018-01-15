@@ -112,13 +112,73 @@
       .value();
   };
 
-  var scenarioIDsFromURL = function(url) {
-    if (url.match(/\/compare\/\d/)) {
-      return parseScenarioIDs(url.replace(/\/compare\//, ''));
-    }
+  // Router --------------------------------------------------------------------
 
-    return [];
-  };
+  var Workspace = Backbone.Router.extend({
+    routes: {
+      compare: 'index', // /compare
+      'compare/:ids': 'show' // /compare/1,2,3
+    },
+
+    /**
+     * The index page shows a simple list of available scenarios, with a button
+     * to start the comparison. The button is disabled until the visitor has
+     * selected one or more scenarios.
+     */
+    index: function() {
+      var selectedCount = 0;
+
+      $('form.select-scenarios').on('change', 'input[type=checkbox]', function(
+        event
+      ) {
+        var checkboxEl = $(event.target);
+        var wrapperEl = checkboxEl.parents('li');
+
+        if (checkboxEl.is(':checked')) {
+          wrapperEl.addClass('selected');
+          selectedCount += 1;
+        } else {
+          wrapperEl.removeClass('selected');
+
+          // Prevent sub-zero count during page initialization.
+          selectedCount = Math.max(0, selectedCount - 1);
+        }
+
+        $('#commit input').attr('disabled', !selectedCount);
+      });
+
+      $('#commit input').attr('disabled', true);
+
+      // Run the change handlers in case the visitor pressed their browser back
+      // button, in which case some inputs will be checked.
+      $('form.select-scenarios input[type=checkbox]').change();
+
+      // Settings menu example for users with no scenarios.
+      $('#settings-menu-example').qtip({
+        content: {
+          text: $('#settings-menu-image')
+        },
+        position: {
+          my: 'right middle',
+          at: 'left middle'
+        }
+      });
+    },
+
+    /**
+     * Shows a combination-comparison of scenarios.
+     */
+    show: function(ids) {
+      var container = $('#metrics');
+
+      METRIC_VIEW_T = _.template($('#compare-metric-template').html());
+
+      // When IDs are present in the URL, auto-submit.
+      if (window.location.pathname.match(/\/compare\/\d/)) {
+        loadComparison(parseScenarioIDs(ids), container);
+      }
+    }
+  });
 
   // # Models ------------------------------------------------------------------
 
@@ -687,38 +747,7 @@
   }
 
   $(function() {
-    var container = $('#metrics');
-
-    if (container.length === 0) {
-      return;
-    }
-
-    container.find('form.prompt button').on('click', function(event) {
-      var input = container.find('form.prompt input');
-      var ids = parseScenarioIDs(input.val());
-
-      event.preventDefault();
-
-      if (_.isEqual(ids, scenarioIDsFromURL(window.location.pathname))) {
-        // No changes to the IDs, do nothing.
-        return;
-      }
-
-      loadComparison(ids, container);
-
-      // eslint-disable-next-line no-restricted-globals
-      history.replaceState(
-        { ids: ids },
-        'Compare scenarios',
-        '/compare/' + ids.join(',')
-      );
-    });
-
-    METRIC_VIEW_T = _.template($('#compare-metric-template').html());
-
-    // When IDs are present in the URL, auto-submit.
-    if (window.location.pathname.match(/\/compare\/\d/)) {
-      loadComparison(scenarioIDsFromURL(window.location.pathname), container);
-    }
+    new Workspace(); // eslint-disable-line no-new
+    Backbone.history.start({ pushState: true });
   });
 })();

@@ -85,7 +85,6 @@ module ApplicationHelper
     unless APP_CONFIG[:standalone]
       links.push text: t("header.documentation") ,    url: "https://github.com/quintel/documentation", target: "_blank"
       links.push text: t("header.publications") ,     url: "http://refman.et-model.com", target: "_blank"
-      links.push text: t("header.feedback") ,         url: feedback_path, class: "fancybox"
     end
     links.sort! {|x,y| x[:text] <=> y[:text] }
   end

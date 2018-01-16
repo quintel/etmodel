@@ -1,7 +1,0 @@
-<% if @errors %>
-  $("#errors").html('<%= escape_javascript(t('feedback_error'))%>');
-<% else %>
-  $.fancybox.close();
-  var msg = "<%= escape_javascript(t('feedback_confirm')) %>";
-  alert(msg);
-<% end %>

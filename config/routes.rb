@@ -118,8 +118,6 @@ Etm::Application.routes.draw do
 
   get '/select_movie/:id'             => 'pages#select_movie', defaults: {format: :js}
   get '/units'                        => 'pages#units'
-  get '/about'                        => 'pages#about'
-  get '/feedback'                     => 'pages#feedback', as: :feedback
   get '/tutorial/(:tab)(/:sidebar)'   => 'pages#tutorial', as: :tutorial
   get '/prominent_users'              => 'pages#prominent_users'
   get '/disclaimer'                   => 'pages#disclaimer'

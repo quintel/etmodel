@@ -58,6 +58,11 @@ Etm::Application.configure do
   # Use a different cache store in production.
   config.cache_store = :dalli_store
 
+  # Used to generate URLs back to the app.
+  config.action_mailer.default_url_options = {
+    host: 'pro.energytransitionmodel.com'
+  }
+
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "new-rails-app_#{Rails.env}"

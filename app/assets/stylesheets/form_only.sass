@@ -7,6 +7,10 @@ body
   height: auto
   padding-bottom: 50px
 
+  .form-flash
+    #flash
+      margin-bottom: 10px
+
   #content
     background: none
     height: auto
@@ -114,14 +118,83 @@ body
     border-radius: 5px
     padding: 35px 50px
 
+    &.small
+      width: 360px
+      margin: 0 auto
+      p
+        color: #666
+        line-height: 22px
+        &:first-chld
+          margin-top: 0
+      h1
+        border-bottom: none
+        font-size: 18px
+        font-weight: normal
+        margin-bottom: 0
+        padding-bottom: 0
+        text-align: left
+      .section
+        background-color: #fdfbf0
+        border-bottom: 1px solid #ddd
+        margin: -50px -50px 2em -50px
+        overflow: hidden
+        padding: 50px 50px 1em
+        position: relative
+      .simple_form .error
+        margin-left: 0
+
   form
     transition: opacity .2s
     width: auto
+
+    &#password_reset.simple_form
+      .row
+        margin: -5px
+        padding: 5px
+        span.error
+          color: #c55
+        label
+          margin-top: 10px
+        .input
+          margin-bottom: 0 !important
+          width: auto
+        input.email, input.password
+          width: 100%
+          box-sizing: border-box
+          margin-bottom: 5px
+          z-index: 2
+          position: relative
+        input.btn, a.btn
+          font-size: 14px
+          padding-bottom: 7px
+          padding-top: 7px
+        a.btn
+          border-color: #ddd
+          color: #444
+          border-radius: 3px
+        .or
+          display: inline-block
+          color: #777
+          margin: 2px 7px 0 2px
+          vertical-align: middle
 
     .row
       overflow: hidden
       padding: 0 0 0 50px
       margin: 0 -25px 0 -50px
+
+  .small
+    position: relative
+    overflow: hidden
+
+    .fa.bg
+      bottom: -50px
+      color: #f9f9f9
+      color: rgba(0, 0, 0, 0.03)
+      font-size: 205px
+      position: absolute
+      right: -5px
+      z-index: 1
 
   header#top
     background: none
@@ -204,10 +277,7 @@ body
         padding-top: 6px
         width: auto
 
-    .user_password_confirmation label
-      color: white
-
-    input.btn.primary
+    input.btn, a.btn
       font: bold 16px "Helvetica Neue", Arial, sans-serif
       outline: none
       padding: 10px 16px

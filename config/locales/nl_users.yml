@@ -19,7 +19,7 @@ nl:
       messages:
         greater_than_or_equal_to: "moet groter of gelijk zijn aan %{count}"
         less_than_or_equal_to: "moet minder of gelijk zijn aan %{count}"
-        confirmation: "komt niet met de bevestiging overeen"
+        confirmation: "komt niet met het wachtwoord overeen"
         blank: "moet opgegeven zijn"
         exclusion: "is niet beschikbaar"
         invalid: "is ongeldig"
@@ -41,7 +41,29 @@ nl:
       user:
         password: "Wachtwoord"
         password_confirmation: "Wachtwoord bevestiging"
-        phone_number: "Telefoon nummer"
+        phone_number: "Telefoonnummer"
         name: "Naam"
       user_session:
         password: "Wachtwoord"
+
+  user:
+    forgot_password:
+      account_not_found: "Het spijt ons maar je account is niet bij ons bekend!"
+
+      mail:
+        subject: Energietransitiemodel Herstel Wachtwoord
+        button: Herstel wachtwoord
+        header: Instructies om het wachtwoord te herstellen
+        text: |
+          Een verzoek is gemaakt om uw wachtwoord te herstellen.
+          Als u dit verzoek niet gemaakt hebt, kunt u dit
+          verzoek negeren. Als je dit verzoek wel gemaakt hebt, volg dan onderstaande link om uw wachtwoord te wijzigen.
+
+      form:
+        submit: Update wachtwoord
+        submit_new: Herstel wachtwoord
+      instructions: "Er is een email met instructies naar je verstuurd om je wachtwoord opnieuw in te stellen."
+      reset_description: 'Vul uw nieuwe wachtwoord.'
+      reset_description_new: 'Vul uw e-mailadres in en druk op "Herstel wachtwoord".'
+      reset_header_html: <strong>Herstel</strong> je wachtwoord
+      success: "Je wachtwoord is succesvol geüpdated!"

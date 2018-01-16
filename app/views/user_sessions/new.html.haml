@@ -1,0 +1,27 @@
+- if current_user
+  = link_to t("header.sign_out"), "/logout"
+  = link_to I18n.t('home'), root_path
+
+- else
+  %h1 Login
+  = form_for(@user_session) do |f|
+    = error_messages_for @user_session, :header_message => t("user.error_header")
+    %p
+      = f.label :email, t("user.email")
+      %br/
+      = f.text_field :email
+    %p
+      = f.label :password, t("user.password")
+      %br/
+      = f.password_field :password
+      %br/
+      = link_to t("header.password_reset"), new_password_reset_path
+    %p
+      = f.label :remember_me, t("user.remember")
+      %br/
+      = f.check_box :remember_me, :checked => "checked"
+    %p
+      = hidden_field_tag 'redirect_to', @redirect_to
+      = f.submit 'Login', class: 'primary button'
+      %span.or= t('or')
+      = link_to t("header.create_account"), new_user_path, class: 'button'

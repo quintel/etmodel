@@ -18,6 +18,7 @@ Etm::Application.routes.draw do
 
   resources :user_sessions
   resources :users, except: [:index, :show, :destroy]
+  resources :password_resets, only: [:new, :create, :edit, :update]
 
   get '/users/:id/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
 

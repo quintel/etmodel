@@ -1,0 +1,18 @@
+%h1 Editing user_session
+
+= form_for(@user_session) do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br/
+    = f.text_field :name
+  %p
+    = f.label :password
+    %br/
+    = f.text_field :password
+  %p
+    = f.submit 'Update'
+
+= link_to 'Show', @user_session
+|
+= link_to 'Back', user_sessions_path

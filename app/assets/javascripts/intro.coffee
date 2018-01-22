@@ -30,14 +30,12 @@ $ ->
     $("#new_scenario").hide().removeClass('active')
 
   areaSelect = $("#new_scenario select[name=area_code]")
+  sYearSelect = $("#new_scenario select[name=end_year]")
+  cYearSelect = $("#new_scenario select[name=other_year]")
+
+  areaSelect.chosen(search_contains: true)
 
   areaOnChange = ->
-    # "Standard" years.
-    sYearSelect = $("#new_scenario select[name=end_year]")
-
-    # Custom years.
-    cYearSelect = $("#new_scenario select[name=other_year]")
-
     earliest = areaSelect.find(':selected').data('earliest')
     standard = sYearSelect.find('option').map (i, o) -> parseInt(o.value, 10)
     latest   = _.max(standard)

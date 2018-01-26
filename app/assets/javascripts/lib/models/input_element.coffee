@@ -7,6 +7,7 @@ class @InputElement extends Backbone.Model
     @bind('change:user_value', @markDirty)
     @bind('change:user_value', @logUpdate)
     @bind('change:user_value', @update_collection)
+    @bind("change:user_value", App.analytics.inputChanged)
     @bind('change:user_value', @additional_callbacks)
 
   conversions: ->

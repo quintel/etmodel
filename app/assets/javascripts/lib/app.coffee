@@ -12,6 +12,7 @@ class @AppView extends Backbone.View
     @scenario    = new Scenario()
     @router      = new Router()
     @merit_order = new MeritOrder(this)
+    @analytics   = new Analytics()
     Backbone.history.start({pushState: true, root: '/scenario'})
 
     @api = new ApiGateway
@@ -90,7 +91,7 @@ class @AppView extends Backbone.View
       @handle_ajax_error = ReportView.onLoadingError
 
       @setup_sliders().done ->
-        new ReportView(window.reportData).renderInto($('#report'));
+        new ReportView(window.reportData).renderInto($('#report'))
     else
       @charts.load_initial_charts(@settings.get('locked_charts'))
 

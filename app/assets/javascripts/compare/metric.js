@@ -8,19 +8,16 @@
   // Queries whose values are to be summarised. Move to DB?
   var METRICS = [
     {
-      name: 'Total CO<sub>2</sub> emissions',
       key: 'total_co2_emissions',
       unit: 'MT',
       lowerBetter: true
     },
     {
-      name: 'Total costs',
       key: 'dashboard_total_costs',
       unit: 'BLN',
       lowerBetter: true
     },
     {
-      name: 'Energy use',
       key: 'dashboard_energy_demand_primary_of_final',
       unit: 'PJ',
       lowerBetter: true
@@ -439,9 +436,11 @@
       var self = this;
       var total = this.measureTotal();
 
-      this.$el.append(
-        '<h3>Comparing ' + this.options.parts.length + ' regions:</h3>'
-      );
+      var headerText = I18n.t('local_global.legend_header', {
+        scenarios: this.options.parts.length
+      });
+
+      this.$el.append('<h3>' + headerText + '</h3>');
 
       this.options.parts.forEach(function(part) {
         var share = part.households_number_of_inhabitants.future / total;
@@ -461,7 +460,7 @@
               $('<a class="area-code">')
                 .text(part.scenario.areaCode.toUpperCase())
                 .attr('href', '/scenarios/' + part.scenario.id)
-                .attr('title', 'View this scenario')
+                .attr('title', I18n.t('local_global.view_scenario'))
             )
             .append(
               $('<span class="measure" />').text(
@@ -561,7 +560,7 @@
 
     render: function() {
       var key = this.model.get('key');
-      var name = this.model.get('name') || key;
+      var name = I18n.t('local_global.metrics.' + key);
 
       this.$el.html(METRIC_VIEW_T({ title: name }));
 
@@ -635,8 +634,12 @@
         $('<section class="header">')
           .append($('<div class="title" />').html('&nbsp;'))
           .append($('<div class="delta" />').html('&nbsp;'))
-          .append($('<div class="present" />').text('Present'))
-          .append($('<div class="future" />').text('Future'))
+          .append(
+            $('<div class="present" />').text(I18n.t('local_global.present'))
+          )
+          .append(
+            $('<div class="future" />').text(I18n.t('local_global.future'))
+          )
       );
 
       // Dashboard metrics.

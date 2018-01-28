@@ -1,36 +1,26 @@
 %main.intro
-  %h1 Local vs. Global
-  %p.description
-    When developing scenarios for small regions, it's easy to forget that your
-    scenario is not an island, but affects &ndash; and is affected by &ndash;
-    nearby regions. By combining the results for these areas, you can see how
-    each individual contibutes to the whole.
+  %h1= t('local_global.title')
+  %p.description= t('local_global.introduction')
 
   - if current_user
     - if current_user.saved_scenarios.count.zero?
       %p.description
-        %strong
-          You don't have any saved scenarios.
-      %ol.description
+        %strong= t('local_global.no_scenarios')
+      %ol.description.instructions
+        %li= t('local_global.how.step1_html', root_path: root_path)
         %li
-          Start by creating a new scenario from
-          %a(href=root_path) the home page
-          %span> .
-        %li
-          Make your desired changes and save the scenario through the
-          "settings" menu:
+          = t('local_global.how.step2')
           %span#settings-menu-example
-            Settings &rarr; Save scenario.
+            = t('header.settings')
+            &arr;
+            = t('header.save_scenario')
           #settings-menu-image
             = image_tag "pages/compare/settings-menu.#{I18n.locale}.png"
-        %li
-          Repeat until you have created all the scenarios you wish to compare
-          and revisit this page.
+        %li= t('local_global.how.step3')
 
     - else
       %p.description
-        %strong
-          Select two or more scenarios below to see how they compare&hellip;
+        %strong= t('local_global.how.prompt')
 
       = form_tag compare_scenarios_path, method: 'get', class: 'select-scenarios' do
         %ul#available-scenarios
@@ -40,6 +30,4 @@
   - else
     %p.description
       %strong
-        You need to be
-        = link_to 'logged in', login_path
-        to compare scenarios.
+        = t('local_global.account_required_html', login_path: login_path)

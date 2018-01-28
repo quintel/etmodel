@@ -113,8 +113,8 @@
 
   var Workspace = Backbone.Router.extend({
     routes: {
-      compare: 'index', // /compare
-      'compare/:ids': 'show' // /compare/1,2,3
+      'local-global': 'index', // /local-global
+      'local-global/:ids': 'show' // /local-global/1,2,3
     },
 
     /**
@@ -171,7 +171,7 @@
       METRIC_VIEW_T = _.template($('#compare-metric-template').html());
 
       // When IDs are present in the URL, auto-submit.
-      if (window.location.pathname.match(/\/compare\/\d/)) {
+      if (window.location.pathname.match(/\/local-global\/\d/)) {
         loadComparison(parseScenarioIDs(ids), container);
       }
     }

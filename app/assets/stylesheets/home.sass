@@ -76,11 +76,15 @@ body#outside-model
     display: block
     font-weight: bold
 
-  #existing_scenario ul
-    border-bottom: none
+  #existing_scenario ul, #other_features ul
     li
       padding: 3px 10px 3px 15px
       white-space: nowrap
+
+      a
+        display: block
+        margin: -3px -10px -3px -15px
+        padding: 3px 10px 3px 15px
 
       &.with_org
         color: #999
@@ -100,6 +104,21 @@ body#outside-model
         color: #999
         line-height: 0
         margin-left: 4px
+
+  #existing_scenario ul
+    padding-bottom: 10px
+
+  #other_features
+    background: linear-gradient(#f9f9f9, #f4f4f4 30px)
+    font-size: 12px
+    ul
+      background: none
+      border-bottom: none
+      li
+        padding-top: 2px
+        padding-bottom: 2px
+        &.title
+          color: #777
 
 #startbar, #new_scaled_scenario, #preset_scaled_scenario
   select

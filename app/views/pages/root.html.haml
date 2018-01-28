@@ -22,6 +22,11 @@
     #existing_scenario{style: "display: none;"}
       = render 'pages/root_page/existing_scenario'
 
+  #other_features
+    %ul
+      %li.title= t('intro.other_features')
+      %li= link_to(t('intro.local_global'), local_global_path)
+
 #information
   = render 'pages/root_page/movies'
   #load_existing_scenario{style: "display: none;"}

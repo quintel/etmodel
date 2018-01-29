@@ -2,31 +2,31 @@
 nl:
   local_global:
     account_required_html: |
-      You need to be <a href="%{login_path}">logged in<a> to compare scenarios.
-    future: Future
+      Je moet <a href="%{login_path}">ingelogd zijn<a> om scenario's te kunnen vergelijken.
+    future: Toekomst
     how:
       step1_html: |
-        Start by creating a new scenario from
-        <a href="%{root_path}>the home page</a>.
+        Maak eerst een nieuw scenario op
+        <a href="%{root_path}>de home page</a>.
       step2: |
-        Make your desired changes and save the scenario through the
-        "settings" menu:
+        Gebruik de schuifjes om een toekomstscenario te maken en sla het vervolgens op met het
+        "Opties" menu:
       step3: |
-        Repeat until you have created all the scenarios you wish to compare
-        and revisit this page.
-      prompt: Select two or more scenarios below to see how they compare
+        Herhaal totdat je alle scenario's hebt gemaakt die je wil vergelijken 
+        en kom dan terug naar deze pagina.
+      prompt: Selecteer twee of meer scenario's om te vergelijken
     introduction: |
-      When developing scenarios for small regions, it's easy to forget that your
-      scenario is not an island, but affects - and is affected by - nearby
-      regions. By combining the results for these areas, you can see how
-      each individual contibutes to the whole.
-    legend_header: Comparing %{scenarios} scenarios
-    loading: One moment please, loading data
+      Bij het maken van energiescenario's voor kleinere gebieden zoals gemeenten 
+      is het belangrijk om ook omliggende regio's mee te nemen in je denkproces.
+      Door de scenario's van meerdere gebieden te combineren kun je zien hoe ze 
+      optellen tot een gezamenlijk resultaat.
+    legend_header: Er worden %{scenarios} scenarios vergeleken
+    loading: Een moment geduld aub, de data wordt geladen
     metrics:
-      dashboard_energy_demand_primary_of_final: Energy use
-      dashboard_total_costs: Total costs
-      total_co2_emissions: Total CO2 emissions
-    no_scenarios: You don't have any saved scenarios.
-    present: Present
-    title: Local vs. Global
-    view_scenario: View this scenario
+      dashboard_energy_demand_primary_of_final: Energiegebruik
+      dashboard_total_costs: Totale kosten
+      total_co2_emissions: Totale CO2-uitstoot
+    no_scenarios: Je hebt nog geen opgeslagen scenario's gemaakt.
+    present: Heden
+    title: Lokaal vs. Globaal
+    view_scenario: Open dit scenario

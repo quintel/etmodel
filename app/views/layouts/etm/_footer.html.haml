@@ -3,12 +3,8 @@
     #two_container
       %ul.left
         - company = Partner.all.first
-        %li{:timeout => 60000 }
-          - href = "#{ company.link }?locale=#{ I18n.locale }"
-
-          %a{href: href, id: company.name.downcase,
-             style: "background-image: url('#{ company.img }');", target: '_blank' }
-            = company.name
+        %li{ timeout: 60000 }
+          = link_to company.name, "#{ company.link }?locale=#{ I18n.locale }", id: company.name.downcase, style: "background-image: url('#{ company.img }');", target: '_blank'
 
           .clear
 
@@ -16,12 +12,8 @@
 
       %ul.right
         - Partner.all[1..-1].select(&:is_primary?).each do |company|
-          %li{:timeout => 10000 }
-            - href = "#{ company.link }?locale=#{ I18n.locale }"
-
-            %a{href: href, id: company.name.downcase,
-               style: "background-image: url('#{ company.img }');", target: '_blank' }
-              = company.name
+          %li{ timeout: 10000 }
+            = link_to company.name, "#{ company.link }?locale=#{ I18n.locale }", id: company.name.downcase, style: "background-image: url('#{ company.img }');", target: '_blank'
 
             .clear
 

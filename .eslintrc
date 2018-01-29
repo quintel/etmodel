@@ -1,47 +1,39 @@
 {
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
-  },
-  "env": {
-    "browser": true,
-    "node": true
-  },
-  "extends": "airbnb-base",
   "parser": "babel-eslint",
-  "rules": {
-    "babel/arrow-parens": "off",
-    "babel/generator-star-spacing": "warn",
-    "babel/no-await-in-loop": "warn",
-    "babel/object-shorthand": "warn",
-    "comma-dangle": ["error", "never"],
-    "max-len": ["error", {
-      "code": 80,
-      "tabWidth": 2,
-      "ignoreUrls": true,
-      "ignoreComments": false,
-      "ignoreStrings": false,
-      "ignoreTemplateLiterals": true,
-      "ignoreTrailingComments": true
-    }],
-    "no-prototype-builtins": "off",
-    "quote-props": ["error", "consistent-as-needed"],
-    "quotes": ["error", "single"],
-
-    "no-var": "off",
-    "object-shorthand": "off",
-    "func-names": "off",
-    "strict": "off",
-    "prefer-template": "off",
-    "prefer-arrow-callback": "off"
+  "env": {
+    "es6": false,
+    "browser": true
   },
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
   "globals": {
     "Backbone": true,
     "_": true,
     "jQuery": true,
-    "$": true
+    "$": true,
+    "globals": true
   },
   "plugins": [
-    "babel"
-  ]
+    "react",
+    "jsx-a11y",
+    "import",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": "off",
+
+    "babel/arrow-parens": "off",
+    "quote-props": ["error", "consistent-as-needed"],
+    "no-var": "off",
+    "strict": "off",
+    "object-shorthand": "off",
+    "func-names": "off",
+    "prefer-template": "off",
+    "prefer-arrow-callback": "off",
+    "prefer-destructuring": "off",
+    "prefer-rest-params": "off"
+  }
 }

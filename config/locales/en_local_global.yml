@@ -1,0 +1,32 @@
+---
+en:
+  local_global:
+    account_required_html: |
+      You need to be <a href="%{login_path}">logged in<a> to compare scenarios.
+    future: Future
+    how:
+      step1_html: |
+        Start by creating a new scenario from
+        <a href="%{root_path}>the home page</a>.
+      step2: |
+        Make your desired changes and save the scenario through the
+        "settings" menu:
+      step3: |
+        Repeat until you have created all the scenarios you wish to compare
+        and revisit this page.
+      prompt: Select two or more scenarios below to see how they compare
+    introduction: |
+      When developing scenarios for small regions, it's easy to forget that your
+      scenario is not an island, but affects - and is affected by - nearby
+      regions. By combining the results for these areas, you can see how
+      each individual contibutes to the whole.
+    legend_header: Comparing %{scenarios} scenarios
+    loading: One moment please, loading data
+    metrics:
+      dashboard_energy_demand_primary_of_final: Energy use
+      dashboard_total_costs: Total costs
+      total_co2_emissions: Total CO2 emissions
+    no_scenarios: You don't have any saved scenarios.
+    present: Present
+    title: Local vs. Global
+    view_scenario: View this scenario

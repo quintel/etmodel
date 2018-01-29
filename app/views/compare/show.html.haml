@@ -1,0 +1,15 @@
+%main
+  #metrics
+    .loading
+      = image_tag('layout/ajax-loader-small.gif')
+      = t('local_global.loading')
+
+%script#compare-metric-template(type="text/template")
+  .summary
+    .title
+      %h2
+        %span(class="arrow")
+        <%= title %>
+    .delta
+    .present
+    .future

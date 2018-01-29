@@ -127,6 +127,36 @@ describe ScenariosController, vcr: true do
           expect(response).to be_success
           expect(response).to render_template(:compare)
         end
+
+        describe 'with a "combine" option' do
+          it 'should redirect to Local vs. Global' do
+            get :compare, params: { scenario_ids: %w(1 2), combine: '1' }
+
+            expect(response).to redirect_to(
+              local_global_scenarios_url("1,2")
+            )
+          end
+
+          it 'omits invalid IDs' do
+            get :compare, params: { scenario_ids: %w(1 no), combine: '1' }
+
+            expect(response).to redirect_to(
+              local_global_scenarios_url('1')
+            )
+          end
+
+          it 'redirects to the landing page when no valid IDs are present' do
+            get :compare, params: { scenario_ids: [], combine: '1' }
+
+            expect(response).to redirect_to(scenarios_url)
+          end
+
+          it 'redirects to the landing page with no scenario_ids param' do
+            get :compare, params: { combine: '1' }
+
+            expect(response).to redirect_to(scenarios_url)
+          end
+        end
       end
 
       describe "#merge" do

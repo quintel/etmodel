@@ -17,6 +17,8 @@ class Api::Scenario < ActiveResource::Base
   end
 
   def self.batch_load(ids)
+    return [] if ids.empty?
+
     HTTParty.get(url_to("#{ ids.uniq.join(',') }/batch")).map { |scn| new(scn) }
   end
 

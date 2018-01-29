@@ -1,0 +1,300 @@
+#compare
+  main
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+    margin: 16px auto
+    padding: 0
+    margin-bottom: 200px // Spacing for the sponsors footer
+    width: 960px
+
+  .loading
+    color: #888
+    display: none
+    font-size: 1.25rem
+    padding: 6rem 0 1rem
+    text-align: center
+
+    img
+      margin: -5px 5px 0 0
+      vertical-align: middle
+
+  .region-legend
+    background: #f5f5f5
+    border-radius: 5px
+    margin: 1.5rem 0 1rem
+    overflow: hidden
+    padding: 1rem
+
+    h3
+      font-size: 1rem
+      font-weight: normal
+      margin: 0
+
+    h3, .measure
+      color: #777
+
+    .area-code
+      color: black
+      font-weight: bold
+      margin-right: 0.375rem
+
+    .legend-item
+      display: inline-block
+      float: left
+      text-overflow: ellipsis
+      overflow: hidden
+
+      &:last-child
+        .legend-color
+          border-right: 0
+
+    .legend-color
+      box-sizing: border-box
+      border-right: 1px solid #f5f5f5
+      height: 7px
+      margin: 0.75rem 0 0.25rem
+
+    .measure
+      white-space: nowrap
+
+  section
+    border-bottom: 1px solid #ddd
+    overflow: hidden
+    padding: 16px 0
+
+    .summary
+      overflow: hidden
+
+    h2
+      cursor: pointer
+      margin: 0
+
+    .title, .delta, .present, .future
+      float: left
+      margin: 0
+
+    .delta, .present, .future
+      border-left: 1px solid #ddd
+      padding: 0 16px 2px
+      width: 170px
+
+    .title h2, .delta, .present, .future
+      font-size: 1.125rem
+
+    .delta
+      border-left: none
+
+      .arrow
+        background-color: #bbb
+        border-radius: 3px
+        color: white
+        display: inline-block
+        height: 21px
+        font-size: 1rem
+        padding-top: 1px
+        text-align: center
+        width: 22px
+
+    .diff
+      color: #888
+      font-size: 0.875rem
+      margin-left: 2px
+
+    .unit
+      font-size: 0.875rem
+      line-height: 1
+      margin-left: 1px
+
+    .title
+      width: 352px
+
+    .bar
+      background: #eee
+      height: 7px
+      margin-top: 8px
+      position: relative
+      overflow: none
+      width: 100%
+
+      .inner-bar
+        height: 7px
+        width: 100%
+
+      .segment
+        background: #bbb
+        border-right: 1px solid white
+        box-sizing: border-box
+        float: left
+        height: 7px
+
+      .target
+        background-color: #ccc
+        border: 1px solid white
+        height: 13px
+        position: absolute
+        top: -4px
+        width: 1px
+
+    .delta .bar .segment
+      border-left: 1px solid white
+      border-right: none
+
+    .breakdown
+      .legend-color
+        border-radius: 9px
+        display: inline-block
+        height: 12px
+        margin-top: -3px
+        margin-right: 0.2rem
+        vertical-align: middle
+        width: 12px
+      .region
+        margin: 1rem 0
+        overflow: hidden
+      .title
+        text-align: right
+      .title, .delta, .present, .future
+        &, &unit
+          font-size: 0.8125rem
+
+      .delta .arrow
+        font-size: 0.8125rem
+        height: 14px
+        line-height: 1
+        padding-top: 2px
+        width: 16px
+
+  section.metric-view
+    .title:before
+      display: inline-block
+      content: "▸"
+      height: 1rem
+      float: left
+      font-size: 1.5rem
+      line-height: 0.7
+      width: 1rem
+    &.open .title:before
+      content: "▾"
+    .breakdown .region .title
+      &:before
+        display: none
+      h2
+        cursor: default
+
+  section.header
+    color: #888
+    font-size: 1rem
+
+    .present, .future
+      font-size: 1rem
+      line-height: 1
+
+  sub
+    line-height: 0
+
+  .metric-view
+    &.lower-better .change-lower, .higher-better .change-higher
+      background: #2fa554
+    &.lower-better .change-higher, .higher-better .change-lower
+
+      background: #e24649
+
+  .qtip
+    max-width: 400px
+
+  form.select-scenarios
+    table
+      margin-top: 2rem
+    input[type=submit]
+      background: #4ea96a
+      border: none
+      border-radius: 3px
+      color: #fff
+      cursor: pointer
+      font-size: 1rem
+      font-weight: bold
+      padding: 10px 13px
+      margin: 1rem 0 0
+    #available-scenarios
+      list-style: none
+      margin: 2rem auto 0
+      padding-left: 0
+      width: 550px
+      li
+        line-height: 1
+        margin-bottom: 0.5rem
+      label
+        background: #f6f6f6
+        border-radius: 3px
+        cursor: pointer
+        display: block
+        padding: 10px 10px 11px
+      input[type=checkbox]
+        font-size: 1rem
+        margin: 1px 3px 0 0
+        vertical-align: text-top
+      .check
+        display: none
+      .area
+        font-weight: bold
+        &:after
+          content: ": "
+          font-weight: normal
+      .title
+        display: inline-block
+        max-width: 390px
+        overflow: hidden
+        text-overflow: ellipsis
+        vertical-align: bottom
+        white-space: nowrap
+      .end-year
+        color: #777
+      li.selected label
+        background: #77b5ea
+        color: white
+        .end-year
+          color: #d7e7f1
+      #scenario-paginator
+        text-align: center
+    #commit
+      text-align: center
+      input[disabled]
+        opacity: 0.5
+
+  main.intro
+    h1, .description
+      text-align: center
+    h1
+      margin-top: 2rem
+    .description
+      color: #333
+      font-size: 0.875rem
+      margin-left: auto
+      margin-right: auto
+      width: 550px
+    #settings-menu-example
+      border-bottom: 1px dashed #aaa
+      cursor: pointer
+    #settings-menu-image
+      display: none
+    ol.instructions
+      border-top: 1px solid #ddd
+      counter-reset: description-item
+      list-style: none
+      margin-top: 2rem
+      padding-top: 2rem
+      width: 750px
+      li
+        counter-increment: description-item
+        margin-bottom: 0.25rem
+        &:before
+          background: #68a1ce
+          border-radius: 100%
+          color: white
+          content: counter(description-item)
+          display: inline-block
+          height: 1.5rem
+          line-height: 1.5rem
+          margin-left: -1.625rem
+          margin-right: 0.125rem
+          text-align: center
+          width: 1.5rem

@@ -1,0 +1,32 @@
+---
+nl:
+  local_global:
+    account_required_html: |
+      Je moet <a href="%{login_path}">ingelogd zijn<a> om scenario's te kunnen vergelijken.
+    future: Toekomst
+    how:
+      step1_html: |
+        Maak eerst een nieuw scenario op
+        <a href="%{root_path}>de home page</a>.
+      step2: |
+        Gebruik de schuifjes om een toekomstscenario te maken en sla het vervolgens op met het
+        "Opties" menu:
+      step3: |
+        Herhaal totdat je alle scenario's hebt gemaakt die je wil vergelijken 
+        en kom dan terug naar deze pagina.
+      prompt: Selecteer twee of meer scenario's om te vergelijken
+    introduction: |
+      Bij het maken van energiescenario's voor kleinere gebieden zoals gemeenten 
+      is het belangrijk om ook omliggende regio's mee te nemen in je denkproces.
+      Door de scenario's van meerdere gebieden te combineren kun je zien hoe ze 
+      optellen tot een gezamenlijk resultaat.
+    legend_header: Er worden %{scenarios} scenarios vergeleken
+    loading: Een moment geduld aub, de data wordt geladen
+    metrics:
+      dashboard_energy_demand_primary_of_final: Energiegebruik
+      dashboard_total_costs: Totale kosten
+      total_co2_emissions: Totale CO2-uitstoot
+    no_scenarios: Je hebt nog geen opgeslagen scenario's gemaakt.
+    present: Heden
+    title: Lokaal vs. Globaal
+    view_scenario: Open dit scenario

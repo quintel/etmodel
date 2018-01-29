@@ -685,7 +685,8 @@
       );
     });
 
-    $.when(...requests)
+    $.when
+      .apply($, requests)
       .done(function() {
         var results;
         var data;

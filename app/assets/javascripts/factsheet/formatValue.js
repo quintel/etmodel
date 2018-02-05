@@ -51,10 +51,14 @@ function formatQuantityValue(value, unit, options) {
  * and unit in the users locale.
  */
 function formatNonQuantityValue(value, unit, options) {
+  if (options.as === '+%') {
+    return [Metric.percentage_to_string(value, true), '%', options];
+  }
+
   return [
     Metric.autoscale_value(value, unit, options.precision),
     unit,
-    options.precision
+    options
   ];
 }
 
@@ -87,7 +91,7 @@ function stripUnit(value, unit, options) {
 // eslint-disable-next-line no-unused-vars
 function formatValue(value, unit, options) {
   var result = [convertFactor, setPrecision, localiseValue, stripUnit].reduce(
-    function (memo, func) {
+    function(memo, func) {
       return func.apply(this, memo);
     },
     [value, unit, options]

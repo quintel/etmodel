@@ -9,16 +9,17 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 Rails.application.config.assets.precompile += %w(
-  etm.js
-  compare.js
   admin.css
-  ie.css
-  form_only.css
   backcasting.js
-  report.css
+  compare.js
+  etm.js
+  factsheet.js
+  form_only.css
   i18n.js
   i18n/en.js
   i18n/nl.js
+  ie.css
+  report.css
 )
 
 # Compile images in vendor/assets/images

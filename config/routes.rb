@@ -83,7 +83,10 @@ Etm::Application.routes.draw do
       post 'weighted_merge' => :perform_weighted_merge
     end
 
-    get :load, on: :member
+    member do
+      get :load
+      get 'factsheet' => 'factsheets#show'
+    end
   end
 
   get '/scenario/new' => 'scenarios#new'

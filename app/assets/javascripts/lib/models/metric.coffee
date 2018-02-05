@@ -47,7 +47,7 @@
       pow = 0
       value = 0
       precision = 0
-    else if ! scaleDown or unit is 'hours'
+    else if ! scaleDown or unit is 'hours' or unit is 'year'
       pow = 0
       value = @round_number(x, precision)
     else

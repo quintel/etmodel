@@ -1,0 +1,27 @@
+!!! 5
+%html.factsheet
+  %head
+    %title= t("meta.title")
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
+    %meta{:description => "#{t('meta.description')}" }
+    = csrf_meta_tag
+
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+
+    :javascript
+      I18n.defaultLocale = "#{I18n.default_locale}";
+      I18n.locale = "#{I18n.locale}";
+
+      window.factsheetSettings = #{factsheet_client_settings.to_json.html_safe}
+
+    = javascript_include_tag 'factsheet'
+    = javascript_include_tag "i18n/#{I18n.locale}", skip_pipeline: true
+
+    %style(media="print")
+      @page { margin: 1.4cm 1cm 1cm; }
+
+    = yield :head
+
+  %body#factsheet{ class: I18n.locale }
+    = yield

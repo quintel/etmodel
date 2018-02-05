@@ -1,0 +1,130 @@
+#factsheet-pending
+  .loading
+    = image_tag('layout/ajax-loader-small.gif')
+    == #{t('local_global.loading')}&hellip;
+
+#factsheet-content(style="display: none")
+  %header
+    #title
+      %h1
+        Factsheet energie
+        %strong= t(@scenario.area_code)
+    %dl.detail-list
+      %dt Inwongers
+      %dd(data-query="households_number_of_inhabitants") &mdash;
+      %dt Woningen
+      %dd(data-query="households_number_of_residences") &mdash;
+      %dt Energiegebruik gebouwde omgeving
+      %dd(data-query="dashboard_renewability") &mdash;
+    .logos
+      Over Morgen
+      %br<>
+      Quintel
+  %main
+    %section.summary
+      #present.panel
+        %h2
+          Huidige situatie
+          %span(data-query="graph_year" data-period="present" data-as="#") &mdash;
+        .content
+          .chart.column
+          %dl.carriers.column
+            %dt.oil Benzine/Diesel/LPG
+            %dd.oil(data-query="factsheet_demand_of_gasoline_diesel_lpg" data-as="TJ" data-no-unit data-precision="0" data-period="present") &mdash;
+            %dt.gas-industry Aardgas overige (industrie)
+            %dd.gas-industry(data-query="factsheet_demand_of_gas_in_industry_agriculture_other" data-as="TJ" data-no-unit data-precision="0" data-period="present") &mdash;
+            %dt.gas Aardgas gebouwde omgeving
+            %dd.gas(data-query="factsheet_demand_of_gas_in_households_and_buildings" data-as="TJ" data-no-unit data-precision="0" data-period="present") &mdash;
+            %dt.heat Collecteve warmte
+            %dd.heat(data-query="factsheet_demand_of_collective_heat" data-as="TJ" data-no-unit data-precision="0" data-period="present") &mdash;
+            %dt.electricity Elektriciteit
+            %dd.electricity(data-query="total_electricity_produced" data-as="TJ" data-no-unit data-precision="0" data-period="present") &mdash;
+            %dt.total Total
+            %dd.total(data-query="factsheet_total_demand" data-as="TJ" data-precision="0" data-period="present") &mdash;
+      #future.panel
+        %h2
+          %span.note
+            Besparing
+            %span(data-query="factsheet_total_demand_change")
+          Energievraag en -aanbod
+          %span(data-query="graph_year" data-as="#") &mdash;
+        .content
+          #aggregate-demand.column
+            .chart
+          #individual-demand.column
+            .chart
+            .legend
+              %table
+                %tbody
+                %tfoot
+                  %tr
+                    %td.key Totaal
+                    %td.value(data-query="factsheet_total_demand" data-as="TJ") &mdash;
+    %section.breakdown
+      .row
+        .panel.wind
+          %h2 Wind
+          .value(data-query="electricity_produced_from_wind" data-as="TJ") &mdash;
+          %dl.detail-list
+            %dt
+              %span(data-query="factsheet_number_of_wind_turbine_inland_coastal") &mdash;
+              windmolens op land
+            %dd(data-query="factsheet_supply_of_wind_turbine_inland_coastal" data-as="TJ") &mdash;
+            %dt
+              %span(data-query="factsheet_number_of_wind_turbine_offshore") &mdash;
+              windmolens op zee
+            %dd(data-query="factsheet_supply_of_wind_turbine_offshore" data-as="TJ") &mdash;
+        .panel.solar
+          %h2 Zon
+          .value(data-query="factsheet_supply_of_solar_total" data-as="TJ") &mdash;
+          %dl.detail-list
+            %dt<>
+              %span(data-query="factsheet_number_of_solar_pv") &mdash;
+              PV-panelen
+            %dd.solar-pv<>
+              %span(data-query="factsheet_supply_of_solar_pv" data-as="TJ") &mdash;
+              (
+              %span(data-query="factsheet_capacity_of_solar_pv")<> &mdash;
+              )
+            %dt<>
+              %span(data-query="factsheet_number_of_water_heater_solar_thermal") &mdash;
+              zonnecollectoren
+            %dd.solar-thermal<>
+              %span(data-query="factsheet_supply_of_water_heater_solar_thermal" data-as="TJ") &mdash;
+              (
+              %span(data-query="factsheet_capacity_of_water_heater_solar_thermal")<> &mdash;
+              )
+      .row
+        .panel.collective-heat
+          %h2 Collectieve Warmte
+          .value(data-query="factsheet_demand_of_collective_heat" data-as="TJ") &mdash;
+          %dl.detail-list
+            %dt Geothermie
+            %dd(data-query="factsheet_percentage_of_geothermal_in_heat_network") &mdash;
+            %dt Restwarmte
+            %dd(data-query="factsheet_percentage_of_steam_hot_water_in_heat_network") &mdash;
+        .panel.heat
+          %h2 Individuele Warmte
+          .value(data-query="factsheet_demand_of_individual_heat_total" data-as="TJ") &mdash;
+          %dl.detail-list
+            %dt Elektrisch verwarmen
+            %dd(data-query="factsheet_demand_of_individual_heat_all_electric" data-as="TJ") &mdash;
+      .row
+        .panel.renewable-gas
+          %h2 Hernieuwbaar Gas
+          .value(data-query="factsheet_demand_of_gas_total" data-as="TJ") &mdash;
+          %dl.detail-list
+            %dt Aardgas
+            %dd(data-query="factsheet_demand_of_natural_gas" data-as="TJ") &mdash;
+            %dt Biogas
+            %dd(data-query="factsheet_supply_of_greengas" data-as="TJ") &mdash;
+            %dt Power to gas
+            %dd(data-query="factsheet_supply_of_power_to_gas" data-as="TJ") &mdash;
+        .panel.biomass
+          %h2 Biomassa
+          .value(data-query="factsheet_demand_of_biomass_total" data-as="TJ") &mdash;
+          %dl.detail-list
+            %dt Bijstook biomassa
+            %dd(data-query="factsheet_demand_of_biomass_in_households_and_buildings" data-as="TJ") &mdash;
+            %dt Transport
+            %dd(data-query="final_demand_of_biomass_products_in_transport" data-as="TJ") &mdash;

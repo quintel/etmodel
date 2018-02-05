@@ -31,6 +31,10 @@
       },
       { key: 'electricity_produced_from_wind', color: '#f4a540' },
       { key: 'electricity_produced_from_solar', color: '#fbca36' },
+      {
+        key: 'factsheet_demand_of_individual_heat_other_sources',
+        color: '#811417'
+      },
       { key: 'factsheet_demand_of_collective_heat', color: '#a41824' },
       {
         key: 'factsheet_demand_of_individual_heat_all_electric',

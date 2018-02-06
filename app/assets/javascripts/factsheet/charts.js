@@ -16,7 +16,7 @@
       { key: 'factsheet_demand_of_gasoline_diesel_lpg', color: '#82ca39' }
     ],
     futureDemand: [
-      { key: 'final_demand_of_electricity', color: '#fbca36' },
+      { key: 'factsheet_demand_of_electricity_future', color: '#fbca36' },
       { key: 'factsheet_demand_of_heat_total', color: '#eb3138' },
       {
         key: 'factsheet_demand_of_gas_total',

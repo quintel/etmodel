@@ -25,7 +25,9 @@
       #present.panel
         %h2
           Huidige situatie
-          %span(data-query="graph_year" data-period="present" data-as="#") &mdash;
+          (
+          %span(data-query="graph_year" data-period="present" data-as="#")<> &mdash;
+          )
         .content
           .chart.column
           %dl.carriers.column

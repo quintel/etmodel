@@ -20,7 +20,7 @@
       { key: 'factsheet_supply_of_heat_total', color: '#eb3138' },
       {
         key: 'factsheet_demand_of_gas_total',
-        color: '#3b73bf'
+        color: '#56aee4'
       },
       { key: 'factsheet_demand_of_gasoline_diesel_lpg', color: '#82ca39' }
     ],

@@ -56,6 +56,12 @@
     ]
   };
 
+  function totalValue(gqueries, series, period) {
+    return d3.sum(series, function(serie) {
+      return gqueries[serie.key][period];
+    });
+  }
+
   function valueScaler(gqueries, series, period) {
     var unit = gqueries[series[0].key].unit;
 
@@ -112,11 +118,14 @@
    * Renders a chart describing individual demands for the future.
    */
   function futureDemandBreakdownChart(gqueries) {
+    var max = totalValue(gqueries, definitions.futureDemand, 'future');
+
     return {
       title: 'Energieaanbod',
       formatValue: function() {
         return '';
       },
+      max: max,
       margin: { top: 10, right: 0, bottom: 25, left: 5 },
       series: chartSeriesFromRequest(gqueries, definitions.breakdown, 'future')
     };

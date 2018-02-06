@@ -1,5 +1,5 @@
 /* globals d3 */
-(function () {
+(function() {
   var chartDefaults = {
     margin: {
       top: 10,
@@ -7,7 +7,7 @@
       bottom: 25,
       left: 60
     },
-    formatValue: function (value) {
+    formatValue: function(value) {
       return value;
     }
   };
@@ -38,17 +38,18 @@
    * Creates a vertical scale which derives its maximum value from the sum of
    * the values in the series.
    */
-  function yScale(height, series) {
+  function yScale(height, series, max) {
     return d3.scale
       .linear()
       .range([height, 0])
       .domain([
         0,
-        d3.sum(
-          series.map(function (serie) {
-            return serie.value;
-          })
-        )
+        max ||
+          d3.sum(
+            series.map(function(serie) {
+              return serie.value;
+            })
+          )
       ])
       .nice();
   }
@@ -102,7 +103,7 @@
       settings.width - settings.margin.left - settings.margin.right;
 
     var x = xScale(innerWidth, settings.title);
-    var y = yScale(innerHeight, settings.series);
+    var y = yScale(innerHeight, settings.series, settings.max);
 
     var svg = d3
       .select(selector)

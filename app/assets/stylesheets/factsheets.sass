@@ -73,11 +73,6 @@ body#factsheet
       padding-left: 0.25rem
       margin-left: 0
       white-space: nowrap
-    &.has-icons
-      margin-bottom: -0.25rem
-      dt, dd
-        padding-top: 0.25rem
-        padding-bottom: 0.25rem
 
   main
     display: flex
@@ -228,10 +223,21 @@ body#factsheet
           border-left: 2px dashed white
           margin-right: 0rem
           padding-left: 1rem
-        .detail-list
+          ul
+            left: 1rem
+            right: 0
+        ul
+          bottom: 0
+          list-style: none
           margin: 0
+          padding: 0
           position: absolute
-          bottom: 0px
+          left: 0
+          right: 1rem
+          li.spacer
+            margin: 0.5rem 0
+          &.has-icons li
+            margin-top: 0.75rem
 
       .row:last-child .panel
         margin-bottom: 0
@@ -251,11 +257,9 @@ body#factsheet
         background-image: asset-url('factsheet/wind.png')
       .solar
         background-image: asset-url('factsheet/solar.png')
-        dd, dt
-          padding-bottom: 0
-        dd.right
-          float: right
+        background-size: 35%
         .icon
+          float: right
           margin-top: -0.25rem
       .collective-heat
         background-image: asset-url('factsheet/collective-heat.png')

@@ -74,36 +74,40 @@
         .panel.wind
           %h3 Wind
           .value(data-query="electricity_produced_from_wind" data-as="TJ") &mdash;
-          %dl.detail-list
-            %dt<>
+          %ul
+            %li
               %span(data-query="factsheet_number_of_wind_turbine_inland_coastal") &mdash;
               windmolens op land
-            %dd(data-query="factsheet_supply_of_wind_turbine_inland_coastal" data-as="TJ") &mdash;
-            %dt<>
+              (
+              %span(data-query="factsheet_supply_of_wind_turbine_inland_coastal" data-as="TJ")<> &mdash;
+              )
+            %li
               %span(data-query="factsheet_number_of_wind_turbine_offshore") &mdash;
               windmolens op zee
-            %dd(data-query="factsheet_supply_of_wind_turbine_offshore" data-as="TJ") &mdash;
+              (
+              %span(data-query="factsheet_supply_of_wind_turbine_offshore" data-as="TJ")<> &mdash;
+              )
         .panel.solar
           %h3 Zon
           .value(data-query="factsheet_supply_of_solar_total" data-as="TJ") &mdash;
-          %dl.detail-list.has-icons
-            %dt<>
+          %ul
+            %li
               %span(data-query="factsheet_number_of_solar_pv") &mdash;
               PV­ panelen gebouwen
-            %dd(data-query="factsheet_supply_of_solar_pv_households_buildings" data-as="TJ") &mdash;
-            %dt<>
+            %li(data-query="factsheet_supply_of_solar_pv_households_buildings" data-as="TJ") &mdash;
+            %li
               %span(data-query="factsheet_solar_pv_plants_land_use") &mdash;
               ha zonneveld
-            %dd
+            %li
               %span(data-query="factsheet_supply_of_solar_pv_plants" data-as="TJ") &mdash;
               %span.icon.solar-pv
-            %dt.solo(style="margin-bottom: 0.5rem")
+            %li.spacer
               %span(data-query="factsheet_capacity_of_solar_pv") &mdash;
               vermogen PV panelen
-            %dt<>
+            %li
               %span(data-query="factsheet_number_of_water_heater_solar_thermal") &mdash;
               zonnecollectoren
-            %dd.right<>
+            %li.right<>
               %span(data-query="factsheet_demand_of_water_heater_solar_thermal" data-as="TJ") &mdash;
               (
               %span(data-query="factsheet_capacity_of_water_heater_solar_thermal")<> &mdash;
@@ -113,25 +117,35 @@
         .panel.collective-heat
           %h3 Collectieve Warmte
           .value(data-query="factsheet_demand_of_collective_heat" data-as="TJ") &mdash;
-          %dl.detail-list
-            %dt.solo<>
+          %ul
+            %li.spacer
               Vermogen bron
               %span(data-query="factsheet_capacity_of_collective_heat_sources")
-            %dt.solo(style="margin-bottom: 0.5rem")<>
+              %br
               %span(data-query="factsheet_demand_of_collective_heat_per_residence" data-no-unit)
               woningequivalenten
-            %dt Geothermie
-            %dd(data-query="factsheet_share_of_geothermal_in_collective_heat_sources") &mdash;
-            %dt Restwarmte
-            %dd(data-query="factsheet_share_of_waste_heat_in_collective_heat_sources") &mdash;
-            %dt LT bronnen
-            %dd(data-query="factsheet_share_of_local_chps_in_collective_heat_sources") &mdash;
+            %li
+              Geothermie
+              (
+              %span(data-query="factsheet_share_of_geothermal_in_collective_heat_sources")<> &mdash;
+              )
+            %li
+              Restwarmte
+              (
+              %span(data-query="factsheet_share_of_waste_heat_in_collective_heat_sources")<> &mdash;
+              )
+            %li
+              LT bronnen
+              (
+              %span(data-query="factsheet_share_of_local_chps_in_collective_heat_sources")<> &mdash;
+              )
         .panel.heat
           %h3 Individuele Warmte
           .value(data-query="factsheet_demand_of_individual_heat_total" data-as="TJ") &mdash;
-          %dl.detail-list
-            %dt Elektrisch verwarmen
-            %dd(data-query="factsheet_share_all_electric_in_individual_heat") &mdash;
+          %ul
+            %li
+              Elektrisch verwarmen
+              %span(data-query="factsheet_share_all_electric_in_individual_heat") &mdash;
           .solar-arrow
             .tail
             .head
@@ -144,26 +158,32 @@
         .panel.renewable-gas
           %h3 Hernieuwbaar Gas
           .value(data-query="factsheet_demand_of_gas_total" data-as="TJ") &mdash;
-          %dl.detail-list.has-icons
-            %dt Aardgas
-            %dd
-              %span(data-query="factsheet_share_natural_gas_in_total_gas") &mdash;
+          %ul.has-icons
+            %li
+              Aardgas
+              (
+              %span(data-query="factsheet_share_natural_gas_in_total_gas")<> &mdash;
+              )
               %span.icon.natural-gas
-            %dt Biogas
-            %dd
-              %span(data-query="factsheet_share_greengas_in_total_gas") &mdash;
+            %li
+              Biogas
+              (
+              %span(data-query="factsheet_share_greengas_in_total_gas")<> &mdash;
+              )
               %span.icon.biogas
-            %dt Power to gas
-            %dd
-              %span(data-query="factsheet_share_hydrogen_in_total_gas") &mdash;
+            %li
+              Power to gas
+              (
+              %span(data-query="factsheet_share_hydrogen_in_total_gas")<> &mdash;
+              )
               %span.icon.power-to-gas
         .panel.biomass
           %h3 Biomassa
           .value(data-query="factsheet_demand_of_biomass_total" data-as="TJ") &mdash;
-          %dl.detail-list.has-icons
-            %dt Bijstook biomassa
-            %dd
+          %ul.has-icons
+            %li
+              Bijstook biomassa
               %span.icon.biomass-heat(data-query="factsheet_demand_of_biomass_in_households_and_buildings" data-as="TJ") &mdash;
-            %dt Transport
-            %dd
+            %li
+              Transport
               %span.icon.biomass-transport(data-query="final_demand_of_biomass_products_in_transport" data-as="TJ") &mdash;

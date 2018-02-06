@@ -113,6 +113,14 @@
           %dl.detail-list
             %dt Elektrisch verwarmen
             %dd(data-query="factsheet_demand_of_individual_heat_all_electric" data-as="TJ") &mdash;
+          .solar-arrow
+            .tail
+            .head
+            .quantity &mdash;
+          .biomass-arrow
+            .quantity &mdash;
+            .heat
+            .tail
       .row
         .panel.renewable-gas
           %h2 Hernieuwbaar Gas
@@ -134,11 +142,9 @@
           %h2 Biomassa
           .value(data-query="factsheet_demand_of_biomass_total" data-as="TJ") &mdash;
           %dl.detail-list.has-icons
-            %dt Bijstook
+            %dt Bijstook biomassa
             %dd
-              %span(data-query="factsheet_demand_of_biomass_in_households_and_buildings" data-as="TJ") &mdash;
-              %span.icon.biomass-heat
+              %span.icon.biomass-heat(data-query="factsheet_demand_of_biomass_in_households_and_buildings" data-as="TJ") &mdash;
             %dt Transport
             %dd
-              %span(data-query="final_demand_of_biomass_products_in_transport" data-as="TJ") &mdash;
-              %span.icon.biomass-transport
+              %span.icon.biomass-transport(data-query="final_demand_of_biomass_products_in_transport" data-as="TJ") &mdash;

@@ -256,8 +256,43 @@ body#factsheet
         background-image: asset-url('factsheet/collective-heat.png')
       .heat
         background-image: asset-url('factsheet/individual-heat.png')
+        position: relative
+        .solar-arrow, .biomass-arrow
+          background: asset-url('factsheet/arrow-down.png') center bottom no-repeat
+          position: absolute
+          width: 15px
+          z-index: 1
+          .tail
+            background: #eb1c30
+            bottom: 0px
+            left: 7px
+            position: absolute
+            top: 0px
+            width: 1px
+          .quantity
+            position: relative
+            font-size: 0.75rem
+            lefT: -2px
+        .solar-arrow
+          height: 122px
+          right: 0px
+          top: -34px
+          .tail
+            bottom: 2px
+          .quantity
+            top: 128px
+        .biomass-arrow
+          background: asset-url('factsheet/arrow-up.png') center top no-repeat
+          bottom: -225px
+          height: 305px
+          right: 0px
+          .tail
+            top: 2px
+          .quantity
+            top: -28px
       .biomass
         background-image: asset-url('factsheet/biomass.png')
+        background-position: 82% top
       .renewable-gas
         background-image: none
       .heat, .collective-heat
@@ -282,9 +317,24 @@ body#factsheet
           background-image: asset-url('factsheet/gas.svg')
         &.biomass-heat
           background-image: asset-url('factsheet/biomass-heat.png')
-          width: 80px
+          box-sizing: border-box
+          color: #fff
+          font-weight: normal
+          font-size: 0.6875rem
+          height: 30px
+          padding: 3px 17px 0px 39px
+          text-align: center
+          width: 108px
         &.biomass-transport
           background-image: asset-url('factsheet/biomass-transport.png')
+          box-sizing: border-box
+          color: #fff
+          font-size: 0.6875rem
+          font-weight: normal
+          height: 30px
+          padding-top: 6px
+          text-align: center
+          width: 59px
         &.biogas
           background-image: asset-url('factsheet/biogas.png')
         &.power-to-gas

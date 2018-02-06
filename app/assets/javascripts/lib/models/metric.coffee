@@ -82,7 +82,7 @@
 
     switch unit
       when '%'
-         @percentage_to_string(x)
+         @percentage_to_string(x, false, precision)
       when 'MJ'
          "#{value} #{@scaling_in_words(pow, 'joules')}"
       when 'PJ'
@@ -128,7 +128,7 @@
   # pts(10, true) => +10%
   # pts(10, true, 2) => 10.00%
   percentage_to_string: (x, prefix, precision) ->
-    precision = precision || 1
+    precision ?= 1
     prefix = prefix || false
     value = @round_number(x, precision)
     value = "+#{value}" if prefix && value > 0.0

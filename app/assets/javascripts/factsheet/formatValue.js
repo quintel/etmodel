@@ -52,7 +52,11 @@ function formatQuantityValue(value, unit, options) {
  */
 function formatNonQuantityValue(value, unit, options) {
   if (options.as === '+%') {
-    return [Metric.percentage_to_string(value, true), '%', options];
+    return [
+      Metric.percentage_to_string(value, true, options.precision),
+      '%',
+      options
+    ];
   }
 
   return [

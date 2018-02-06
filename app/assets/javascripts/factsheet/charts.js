@@ -3,7 +3,7 @@
 (function() {
   var definitions = {
     demand: [
-      { key: 'total_electricity_produced', color: '#fbca36' },
+      { key: 'final_demand_of_electricity', color: '#fbca36' },
       { key: 'factsheet_demand_of_collective_heat', color: '#eb3138' },
       {
         key: 'factsheet_demand_of_gas_in_industry_agriculture_other',
@@ -16,25 +16,17 @@
       { key: 'factsheet_demand_of_gasoline_diesel_lpg', color: '#82ca39' }
     ],
     futureDemand: [
-      { key: 'total_electricity_produced', color: '#fbca36' },
-      { key: 'factsheet_supply_of_heat_total', color: '#eb3138' },
+      { key: 'final_demand_of_electricity', color: '#fbca36' },
+      { key: 'factsheet_demand_of_heat_total', color: '#eb3138' },
       {
         key: 'factsheet_demand_of_gas_total',
         color: '#56aee4'
       },
-      { key: 'factsheet_demand_of_gasoline_diesel_lpg', color: '#82ca39' }
+      { key: 'factsheet_demand_of_biomass_transport', color: '#82ca39' }
     ],
     breakdown: [
-      {
-        key: 'factsheet_electricity_not_from_wind_and_solar',
-        color: '#da871c'
-      },
       { key: 'electricity_produced_from_wind', color: '#f4a540' },
       { key: 'electricity_produced_from_solar', color: '#fbca36' },
-      {
-        key: 'factsheet_demand_of_individual_heat_other_sources',
-        color: '#811417'
-      },
       { key: 'factsheet_demand_of_collective_heat', color: '#a41824' },
       {
         key: 'factsheet_demand_of_individual_heat_all_electric',
@@ -45,22 +37,22 @@
         color: '#e73133'
       },
       {
-        key: 'factsheet_supply_of_water_heater_solar_thermal',
+        key: 'factsheet_demand_of_water_heater_solar_thermal',
         color: '#eb5a3c'
       },
       {
-        key: 'factsheet_supply_of_power_to_gas',
+        key: 'final_demand_of_hydrogen_in_transport',
         color: '#2c3480'
       },
       {
-        key: 'factsheet_supply_of_greengas',
+        key: 'factsheet_demand_of_greengas',
         color: '#2874b4'
       },
       {
         key: 'factsheet_demand_of_natural_gas',
         color: '#56aee4'
       },
-      { key: 'factsheet_demand_of_gasoline_diesel_lpg', color: '#82ca39' }
+      { key: 'factsheet_demand_of_biomass_transport', color: '#82ca39' }
     ]
   };
 

@@ -79,23 +79,25 @@
         .panel.solar
           %h2 Zon
           .value(data-query="factsheet_supply_of_solar_total" data-as="TJ") &mdash;
-          %dl.detail-list
+          %dl.detail-list.has-icons
             %dt<>
               %span(data-query="factsheet_number_of_solar_pv") &mdash;
               PV-panelen
-            %dd.solar-pv<>
+            %dd<>
               %span(data-query="factsheet_supply_of_solar_pv" data-as="TJ") &mdash;
               (
               %span(data-query="factsheet_capacity_of_solar_pv")<> &mdash;
               )
+              %span.icon.solar-pv
             %dt<>
               %span(data-query="factsheet_number_of_water_heater_solar_thermal") &mdash;
               zonnecollectoren
-            %dd.solar-thermal<>
+            %dd<>
               %span(data-query="factsheet_supply_of_water_heater_solar_thermal" data-as="TJ") &mdash;
               (
               %span(data-query="factsheet_capacity_of_water_heater_solar_thermal")<> &mdash;
               )
+              %span.icon.solar-thermal
       .row
         .panel.collective-heat
           %h2 Collectieve Warmte
@@ -115,18 +117,28 @@
         .panel.renewable-gas
           %h2 Hernieuwbaar Gas
           .value(data-query="factsheet_demand_of_gas_total" data-as="TJ") &mdash;
-          %dl.detail-list
+          %dl.detail-list.has-icons
             %dt Aardgas
-            %dd(data-query="factsheet_demand_of_natural_gas" data-as="TJ") &mdash;
+            %dd
+              %span(data-query="factsheet_demand_of_natural_gas" data-as="TJ") &mdash;
+              %span.icon.natural-gas
             %dt Biogas
-            %dd(data-query="factsheet_supply_of_greengas" data-as="TJ") &mdash;
+            %dd
+              %span(data-query="factsheet_supply_of_greengas" data-as="TJ") &mdash;
+              %span.icon.biogas
             %dt Power to gas
-            %dd(data-query="factsheet_supply_of_power_to_gas" data-as="TJ") &mdash;
+            %dd
+              %span(data-query="factsheet_supply_of_power_to_gas" data-as="TJ") &mdash;
+              %span.icon.power-to-gas
         .panel.biomass
           %h2 Biomassa
           .value(data-query="factsheet_demand_of_biomass_total" data-as="TJ") &mdash;
-          %dl.detail-list
-            %dt Bijstook biomassa
-            %dd(data-query="factsheet_demand_of_biomass_in_households_and_buildings" data-as="TJ") &mdash;
+          %dl.detail-list.has-icons
+            %dt Bijstook
+            %dd
+              %span(data-query="factsheet_demand_of_biomass_in_households_and_buildings" data-as="TJ") &mdash;
+              %span.icon.biomass-heat
             %dt Transport
-            %dd(data-query="final_demand_of_biomass_products_in_transport" data-as="TJ") &mdash;
+            %dd
+              %span(data-query="final_demand_of_biomass_products_in_transport" data-as="TJ") &mdash;
+              %span.icon.biomass-transport

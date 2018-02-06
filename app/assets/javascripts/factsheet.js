@@ -142,7 +142,9 @@ jQuery(function() {
   });
 
   request.fail(function(error) {
-    var messages = error.responseJSON.errors.map(function(message) {
+    var messages = _.uniq(error.responseJSON.errors.sort()).map(function(
+      message
+    ) {
       return $('<li/>').text(message);
     });
 

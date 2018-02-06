@@ -46,8 +46,10 @@
       #future.panel
         %h2
           %span.note
-            Energiegebruik
-            %span(data-query="factsheet_total_demand_change" data-as="+%") &mdash;
+            Besparing
+            %span(data-query="factsheet_total_demand_relative_change" data-as="%") &mdash;
+            %br<>
+            %span.small(data-query="factsheet_total_demand_absolute_change" data-as="TJ") &mdash;
           2. Energievraag en -aanbod
           (
           %span(data-query="graph_year" data-as="#")<> &mdash;

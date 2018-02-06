@@ -4,6 +4,7 @@ $small-font-size: 1rem * (13 / 16)
 $text-color: #3a3f42
 $grey-border-color: #afb8bd
 $grey-font-color: #656f73
+$green-font-color: #37a74f
 
 @mixin tiny-font
   font-size: $tiny-font-size
@@ -95,10 +96,13 @@ body#factsheet
       font-weight: 600
 
       .note
-        color: $grey-font-color
+        color: $green-font-color
         float: right
         font-size: 1rem
         font-weight: normal
+        text-align: right
+        .small
+          font-size: 0.75rem
 
     .summary
       border-right: 2px solid white

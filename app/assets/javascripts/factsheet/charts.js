@@ -104,7 +104,8 @@
         right: 0,
         bottom: 25,
         left: 75
-      }
+      },
+      drawLabels: period === 'future'
     };
   }
 

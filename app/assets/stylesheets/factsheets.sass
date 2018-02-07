@@ -120,23 +120,23 @@ body#factsheet
       .content
         display: flex
         .column
-          flex: 1
+          flex: 3
           margin-right: 1rem
           &:last-child
             margin-right: 0
         .carriers
           align-self: flex-end
-          flex: 1
+          flex: 2
           margin: 0
           dt, dd
             float: left
             padding: 0.5rem 0
             text-align: right
           dt
-            width: 75%
+            width: 67%
           dd
             margin: 0
-            width: 25%
+            width: 33%
             background-image: asset-url('factsheet/gas-industry.svg')
             background-size: 26px
             background-repeat: no-repeat
@@ -161,13 +161,14 @@ body#factsheet
             width: 100%
 
     #aggregate-demand, #individual-demand
-      flex: 1
+      flex: 3
 
       .chart
         height: 100%
 
     #individual-demand
       display: flex
+      flex: 2
 
       .chart, .legend
         flex: 6
@@ -175,7 +176,7 @@ body#factsheet
       .chart
         flex: 4
         // !! temporary?
-        margin: 0 0 0 -62px
+        margin: 0 0 0 -100px
       .legend
         align-self: flex-end
         padding-left: 1rem

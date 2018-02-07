@@ -1,4 +1,4 @@
-/* globals d3 */
+/* globals d3 I18n */
 (function() {
   var chartDefaults = {
     margin: {
@@ -30,7 +30,7 @@
   function xScale(width, title) {
     return d3.scale
       .ordinal()
-      .rangeRoundBands([0, width], 0.4) // second param adjusts bar width
+      .rangeRoundBands([0, width], 0.45) // second param adjusts bar width
       .domain([title]);
   }
 
@@ -76,6 +76,28 @@
       .ticks(5)
       .tickSize(6, 6, 0)
       .tickFormat(tickFormat);
+  }
+
+  function drawLabels(svg, y, settings) {
+    seriesToRender(settings.series).forEach(function(data) {
+      var top = y(data.y1);
+      var bottom = y(data.y0);
+
+      if (bottom - top < 0.1) {
+        // Don't draw label for any item too small to show.
+        return;
+      }
+
+      svg
+        .append('g')
+        .append('svg:text')
+        .text(I18n.t('factsheet.series.' + data.key))
+        .style('fill', data.color)
+        .attr(
+          'transform',
+          'translate(8,' + (top + (bottom - top) / 2 + 4) + ')'
+        );
+    });
   }
 
   /**

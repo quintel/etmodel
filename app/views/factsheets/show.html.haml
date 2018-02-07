@@ -17,9 +17,10 @@
       %dt Energiegebruik gebouwde omgeving
       %dd(data-query="factsheet_share_households_buildings_in_total_demand" data-period="present") &mdash;
     .logos
-      Over Morgen
+      = image_tag('factsheet/over-morgen.png', style: 'width: 6rem')
       %br<>
-      Quintel
+      %span.date
+        = l(Date.today, format: :long)
   %main
     %section.summary
       #present.panel

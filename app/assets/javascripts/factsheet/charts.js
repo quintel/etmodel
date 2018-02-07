@@ -91,12 +91,20 @@
    * Generic version of presentDemandChart and futureDemandChart.
    */
   function demandChart(gqueries, period, definition) {
-    var scale = valueScaler(gqueries, definitions.demand, period);
+    var scale = function(value, unit) {
+      return new Quantity(value, 'MJ').to('TJ').format();
+    };
 
     return {
       title: 'Energievraag',
       formatValue: scale,
-      series: chartSeriesFromRequest(gqueries, definition, period)
+      series: chartSeriesFromRequest(gqueries, definition, period),
+      margin: {
+        top: 10,
+        right: 0,
+        bottom: 25,
+        left: 75
+      }
     };
   }
 

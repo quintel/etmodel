@@ -94,7 +94,7 @@
           .value(data-query="factsheet_supply_of_solar_total" data-as="TJ") &mdash;
           %ul
             %li
-              %span(data-query="factsheet_number_of_solar_pv") &mdash;
+              %span(data-query="factsheet_number_of_solar_pv" data-precision="-3") &mdash;
               PV­ panelen gebouwen
             %li(data-query="factsheet_supply_of_solar_pv_households_buildings" data-as="TJ") &mdash;
             %li
@@ -107,7 +107,7 @@
               %span(data-query="factsheet_capacity_of_solar_pv") &mdash;
               vermogen PV panelen
             %li
-              %span(data-query="factsheet_number_of_water_heater_solar_thermal") &mdash;
+              %span(data-query="factsheet_number_of_water_heater_solar_thermal" data-precision="-3") &mdash;
               zonnecollectoren
             %li.right<>
               %span(data-query="factsheet_demand_of_water_heater_solar_thermal" data-as="TJ") &mdash;
@@ -124,7 +124,7 @@
               Vermogen bron
               %span(data-query="factsheet_capacity_of_collective_heat_sources")
               %br
-              %span(data-query="factsheet_demand_of_collective_heat_per_residence" data-no-unit)
+              %span(data-query="factsheet_demand_of_collective_heat_per_residence" data-precision="-3" data-no-unit)
               woningequivalenten
             %li
               Geothermie

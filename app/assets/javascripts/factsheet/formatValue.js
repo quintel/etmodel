@@ -26,6 +26,24 @@ function setPrecision(value, unit, options) {
   return [value, unit, _.extend({}, options, { precision: precision })];
 }
 
+function nicifyLargeNumber(value, unit, options) {
+  if (options.precision < 0) {
+    var divisor = Math.pow(10, Math.abs(options.precision));
+
+    if (value > divisor) {
+      // Don't round numbers smaller than the divisor. For exmaple, if rounding
+      // to the nearest thousand, allow "9999" to remain untouched.
+      return [
+        Math.round(value / divisor) * divisor,
+        unit,
+        _.extend({}, options, { precision: 0 })
+      ];
+    }
+  }
+
+  return [value, unit, options];
+}
+
 /**
  * Converts a Quantity-supported value to a string representing the value
  * and unit in the users locale.
@@ -94,7 +112,13 @@ function stripUnit(value, unit, options) {
  */
 // eslint-disable-next-line no-unused-vars
 function formatValue(value, unit, options) {
-  var result = [convertFactor, setPrecision, localiseValue, stripUnit].reduce(
+  var result = [
+    convertFactor,
+    setPrecision,
+    nicifyLargeNumber,
+    localiseValue,
+    stripUnit
+  ].reduce(
     function(memo, func) {
       return func.apply(this, memo);
     },

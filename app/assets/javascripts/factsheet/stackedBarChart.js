@@ -78,8 +78,11 @@
       .tickFormat(tickFormat);
   }
 
-  function drawLabels(svg, y, settings) {
-    seriesToRender(settings.series).forEach(function(data) {
+  /**
+   * Draw labels describing each series to the left of the rect.
+   */
+  function drawLabels(svg, y, series) {
+    series.forEach(function(data) {
       var top = y(data.y1);
       var bottom = y(data.y0);
 
@@ -97,6 +100,46 @@
           'transform',
           'translate(8,' + (top + (bottom - top) / 2 + 4) + ')'
         );
+    });
+  }
+
+  /**
+   * On series with an "icon", draws the matching SVG icon in the middle of the
+   * bar, provided the bar is tall enough.
+   */
+  function drawIcons(svg, x, y, allSeries) {
+    allSeries.forEach(function(series) {
+      if (!series.icon) {
+        return;
+      }
+
+      d3.xml(series.icon, 'image/svg+xml', function(xml) {
+        var imported = document.importNode(xml.documentElement, true);
+
+        var top = y(series.y1);
+        var bottom = y(series.y0);
+
+        if (bottom - top < 20) {
+          // do not render icons on series too small to show them
+          return;
+        }
+
+        svg.selectAll('g.series.' + series.key).each(function(d, i) {
+          var cloned = imported.cloneNode(true);
+
+          d3
+            .select(cloned)
+            .attr('width', '24px')
+            .attr('height', '24px')
+            .attr('x', x.rangeBand() / 2 - 12 + 'px')
+            .attr('y', top + (bottom - top) / 2 - 12 + 'px')
+            .select('path, polygon')
+            .style('fill', '#FFF')
+            .style('shape-rendering', 'auto');
+
+          this.appendChild(cloned);
+        });
+      });
     });
   }
 
@@ -127,6 +170,8 @@
     var x = xScale(innerWidth, settings.title);
     var y = yScale(innerHeight, settings.series, settings.max);
 
+    var series = seriesToRender(settings.series);
+
     var svg = d3
       .select(selector)
       .append('svg')
@@ -141,7 +186,7 @@
     // Render each column; this implementation permits only one.
     var column = svg
       .selectAll('.column')
-      .data([{ key: settings.title, data: seriesToRender(settings.series) }])
+      .data([{ key: settings.title, data: series }])
       .enter()
       .append('g')
       .attr('class', 'column')
@@ -151,11 +196,15 @@
 
     // Render each series within each column.
     column
-      .selectAll('rect')
+      .selectAll('g.series')
       .data(function(d) {
         return d.data;
       })
       .enter()
+      .append('g')
+      .attr('class', function(d) {
+        return 'series ' + d.key;
+      })
       .append('rect')
       .attr('width', x.rangeBand())
       .attr('y', function(d) {
@@ -181,8 +230,10 @@
       .call(yAxis(y, settings.formatValue));
 
     if (settings.drawLabels) {
-      drawLabels(svg, y, settings);
+      drawLabels(svg, y, series);
     }
+
+    drawIcons(svg, x, y, series);
   }
 
   window.stackedBarChart = stackedBarChart;

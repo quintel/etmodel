@@ -3,26 +3,53 @@
 (function() {
   var definitions = {
     demand: [
-      { key: 'final_demand_of_electricity', color: '#fbca36' },
-      { key: 'factsheet_demand_of_collective_heat', color: '#eb3138' },
+      {
+        key: 'final_demand_of_electricity',
+        color: '#fbca36',
+        icon: '/assets/factsheet/electricity.svg'
+      },
+      {
+        key: 'factsheet_demand_of_collective_heat',
+        color: '#eb3138',
+        icon: '/assets/factsheet/heat.svg'
+      },
       {
         key: 'factsheet_demand_of_gas_in_industry_agriculture_other',
-        color: '#3b73bf'
+        color: '#3b73bf',
+        icon: '/assets/factsheet/gas.svg'
       },
       {
         key: 'factsheet_demand_of_gas_in_households_and_buildings',
-        color: '#56aee4'
+        color: '#56aee4',
+        icon: '/assets/factsheet/gas.svg'
       },
-      { key: 'factsheet_demand_of_gasoline_diesel_lpg', color: '#82ca39' }
+      {
+        key: 'factsheet_demand_of_gasoline_diesel_lpg',
+        color: '#82ca39',
+        icon: '/assets/factsheet/oil.svg'
+      }
     ],
     futureDemand: [
-      { key: 'factsheet_demand_of_electricity_future', color: '#fbca36' },
-      { key: 'factsheet_demand_of_heat_total', color: '#eb3138' },
+      {
+        key: 'factsheet_demand_of_electricity_future',
+        color: '#fbca36',
+        icon: '/assets/factsheet/electricity.svg'
+      },
+      {
+        key: 'factsheet_demand_of_heat_total',
+        color: '#eb3138',
+        icon: '/assets/factsheet/heat.svg'
+      },
       {
         key: 'factsheet_demand_of_gas_total',
-        color: '#56aee4'
+        color: '#56aee4',
+        icon: '/assets/factsheet/gas.svg'
       },
-      { key: 'factsheet_demand_of_biomass_transport', color: '#82ca39' }
+      {
+        key: 'factsheet_demand_of_biomass_transport',
+        color: '#82ca39',
+        icon: '/assets/factsheet/oil.svg'
+      }
     ],
     breakdown: [
       { key: 'electricity_produced_from_wind', color: '#f4a540' },

@@ -19,7 +19,7 @@
   function seriesToRender(series) {
     var y0 = 0;
 
-    return series.map(function (serie) {
+    return series.map(function(serie) {
       return Object.assign({}, serie, { y0: y0, y1: (y0 += +serie.value) });
     });
   }
@@ -123,26 +123,26 @@
       .enter()
       .append('g')
       .attr('class', 'column')
-      .attr('transform', function (d) {
+      .attr('transform', function(d) {
         return 'translate(' + x(d.key) + ',0)';
       });
 
     // Render each series within each column.
     column
       .selectAll('rect')
-      .data(function (d) {
+      .data(function(d) {
         return d.data;
       })
       .enter()
       .append('rect')
       .attr('width', x.rangeBand())
-      .attr('y', function (d) {
+      .attr('y', function(d) {
         return y(d.y1);
       })
-      .attr('height', function (d) {
+      .attr('height', function(d) {
         return y(d.y0) - y(d.y1);
       })
-      .style('fill', function (d) {
+      .style('fill', function(d) {
         return d.color;
       });
 
@@ -157,7 +157,11 @@
       .append('g')
       .attr('class', 'y axis')
       .call(yAxis(y, settings.formatValue));
+
+    if (settings.drawLabels) {
+      drawLabels(svg, y, settings);
+    }
   }
 
   window.stackedBarChart = stackedBarChart;
-}());
+})();

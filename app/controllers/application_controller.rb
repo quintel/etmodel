@@ -111,9 +111,29 @@ private
     @current_user = current_user_session && current_user_session.user
   end
 
-  def render_not_found
+  # Internal: Renders a 404 page.
+  #
+  # thing - An optional noun, describing what thing could not be found. Leave
+  #         nil to say "the page cannot be found"
+  #
+  # For example
+  #   render_not_found('scenario') => 'the scenario cannot be found'
+  #
+  # Returns true.
+  def render_not_found(thing = nil)
+    content = Rails.root.join('public/404.html').read
+
+    unless thing.nil?
+      # Swap out the word "page" for something else, when appropriate.
+      document = Nokogiri::HTML.parse(content)
+      header = document.at_css('h1')
+      header.content = header.content.sub(/\bpage\b/, thing)
+
+      content = document.to_s
+    end
+
     render(
-      file: Rails.root.join('public/404.html'),
+      html: content.html_safe,
       status: :not_found,
       layout: false
     )

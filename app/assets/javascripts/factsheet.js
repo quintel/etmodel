@@ -1,8 +1,10 @@
-/* globals formatQueryResult stackedBarChart d3 Quantity I18n */
+/* globals formatQueryResult preferredUnits stackedBarChart d3 transformGqueries I18n */
 
 //= require d3.v2
 //= require lib/models/metric
 //= require lib/models/quantity
+//= require factsheet/preferredUnits
+//= require factsheet/transformGqueries
 //= require factsheet/formatValue
 //= require factsheet/stackedBarChart
 //= require factsheet/charts
@@ -48,30 +50,6 @@ function assignQueryValues(element, values) {
   });
 }
 
-/**
- * Transforms the queries returned by ETEngine so that any query expressing a
- * value in some amount of joules (TJ, PJ, etc) is converted to MJ.
- */
-function transformGqueries(gqueries) {
-  var transformed = Object.assign({}, gqueries);
-
-  d3.keys(gqueries).forEach(function(key) {
-    var gquery = gqueries[key];
-    var unit = gquery.unit;
-
-    if (unit && unit !== 'MJ' && unit.match(/^\wJ$/)) {
-      // Energy; convert to MJ.
-      transformed[key] = {
-        present: new Quantity(gquery.present, unit).to('MJ').value,
-        future: new Quantity(gquery.future, unit).to('MJ').value,
-        unit: 'MJ'
-      };
-    }
-  });
-
-  return transformed;
-}
-
 jQuery(function() {
   var request;
   var queries;
@@ -112,7 +90,8 @@ jQuery(function() {
   });
 
   request.done(function(response) {
-    var gqueries = transformGqueries(response.gqueries);
+    var units = preferredUnits(response.gqueries);
+    var gqueries = transformGqueries(response.gqueries, units);
 
     if (response.scenario.title && response.scenario.title !== 'API') {
       $('#title').append($('<h2/>').text(response.scenario.title));
@@ -127,12 +106,12 @@ jQuery(function() {
 
     stackedBarChart(
       '#present .chart',
-      window.charts.presentDemandChart(gqueries)
+      window.charts.presentDemandChart(gqueries, units.J)
     );
 
     stackedBarChart(
       '#aggregate-demand .chart',
-      window.charts.futureDemandChart(gqueries)
+      window.charts.futureDemandChart(gqueries, units.J)
     );
 
     stackedBarChart(

@@ -33,24 +33,24 @@
           .chart.column
           %dl.carriers.column
             %dt.oil Benzine/Diesel/LPG
-            %dd.oil(data-query="factsheet_demand_of_gasoline_diesel_lpg" data-as="TJ" data-no-unit data-precision="0" data-period="present") &mdash;
+            %dd.oil(data-query="factsheet_demand_of_gasoline_diesel_lpg" data-no-unit data-precision="0" data-period="present") &mdash;
             %dt.gas-industry Aardgas overige (industrie)
-            %dd.gas-industry(data-query="factsheet_demand_of_gas_in_industry_agriculture_other" data-as="TJ" data-no-unit data-precision="0" data-period="present") &mdash;
+            %dd.gas-industry(data-query="factsheet_demand_of_gas_in_industry_agriculture_other" data-no-unit data-precision="0" data-period="present") &mdash;
             %dt.gas Aardgas gebouwde omgeving
-            %dd.gas(data-query="factsheet_demand_of_gas_in_households_and_buildings" data-as="TJ" data-no-unit data-precision="0" data-period="present") &mdash;
+            %dd.gas(data-query="factsheet_demand_of_gas_in_households_and_buildings" data-no-unit data-precision="0" data-period="present") &mdash;
             %dt.heat Collectieve warmte
-            %dd.heat(data-query="factsheet_demand_of_collective_heat" data-as="TJ" data-no-unit data-precision="0" data-period="present") &mdash;
+            %dd.heat(data-query="factsheet_demand_of_collective_heat" data-no-unit data-precision="0" data-period="present") &mdash;
             %dt.electricity Elektriciteit
-            %dd.electricity(data-query="final_demand_of_electricity" data-as="TJ" data-no-unit data-precision="0" data-period="present") &mdash;
+            %dd.electricity(data-query="final_demand_of_electricity" data-no-unit data-precision="0" data-period="present") &mdash;
             %dt.total Total
-            %dd.total(data-query="factsheet_total_demand_present" data-as="TJ" data-precision="0" data-period="present") &mdash;
+            %dd.total(data-query="factsheet_total_demand_present" data-precision="0" data-period="present") &mdash;
       #future.panel
         %h2
           %span.note
             Besparing
             %span(data-query="factsheet_total_demand_relative_change" data-as="%") &mdash;
             %br<>
-            %span.small(data-query="factsheet_total_demand_absolute_change" data-as="TJ") &mdash;
+            %span.small(data-query="factsheet_total_demand_absolute_change") &mdash;
           2. Energievraag en -aanbod
           (
           %span(data-query="graph_year" data-as="#")<> &mdash;
@@ -66,7 +66,7 @@
                 %tfoot
                   %tr
                     %td.key Totaal
-                    %td.value(data-query="factsheet_total_demand_future" data-as="TJ") &mdash;
+                    %td.value(data-query="factsheet_total_demand_future") &mdash;
     %section.breakdown
       %h2
         3. Energieaanbod
@@ -76,42 +76,42 @@
       .row
         .panel.wind
           %h3 Wind
-          .value(data-query="electricity_produced_from_wind" data-as="TJ") &mdash;
+          .value(data-query="electricity_produced_from_wind") &mdash;
           %ul
             %li
               %span(data-query="factsheet_number_of_wind_turbine_inland_coastal") &mdash;
               windmolens op land
               (
-              %span(data-query="factsheet_capacity_of_wind_turbine_inland_coastal")<> &mdash;
+              %span(data-query="factsheet_capacity_of_wind_turbine_inland_coastal" data-as="MW")<> &mdash;
               )
             %li
               %span(data-query="factsheet_number_of_wind_turbine_offshore") &mdash;
               windmolens op zee
               (
-              %span(data-query="factsheet_capacity_of_wind_turbine_offshore")<> &mdash;
+              %span(data-query="factsheet_capacity_of_wind_turbine_offshore" data-as="MW")<> &mdash;
               )
         .panel.solar
           %h3 Zon
-          .value(data-query="factsheet_supply_of_solar_total" data-as="TJ") &mdash;
+          .value(data-query="factsheet_supply_of_solar_total") &mdash;
           %ul
             %li
               %span(data-query="factsheet_number_of_solar_pv" data-precision="-3") &mdash;
               PV­ panelen gebouwen
-            %li(data-query="factsheet_supply_of_solar_pv_households_buildings" data-as="TJ") &mdash;
+            %li(data-query="factsheet_supply_of_solar_pv_households_buildings") &mdash;
             %li
               %span(data-query="factsheet_solar_pv_plants_land_use") &mdash;
               ha zonneveld
             %li
-              %span(data-query="factsheet_supply_of_solar_pv_plants" data-as="TJ") &mdash;
+              %span(data-query="factsheet_supply_of_solar_pv_plants") &mdash;
               %span.icon.solar-pv
             %li.spacer
-              %span(data-query="factsheet_capacity_of_solar_pv") &mdash;
+              %span(data-query="factsheet_capacity_of_solar_pv" data-as="MW") &mdash;
               vermogen PV panelen
             %li
               %span(data-query="factsheet_number_of_water_heater_solar_thermal" data-precision="-3") &mdash;
               zonnecollectoren
             %li.right<>
-              %span(data-query="factsheet_demand_of_water_heater_solar_thermal" data-as="TJ") &mdash;
+              %span(data-query="factsheet_demand_of_water_heater_solar_thermal") &mdash;
               (
               %span(data-query="factsheet_capacity_of_water_heater_solar_thermal")<> &mdash;
               )
@@ -119,7 +119,7 @@
       .row
         .panel.collective-heat
           %h3 Collectieve Warmte
-          .value(data-query="factsheet_demand_of_collective_heat" data-as="TJ") &mdash;
+          .value(data-query="factsheet_demand_of_collective_heat") &mdash;
           %ul
             %li.spacer
               Vermogen bron
@@ -144,7 +144,7 @@
               )
         .panel.heat
           %h3 Individuele Warmte
-          .value(data-query="factsheet_demand_of_individual_heat_total" data-as="TJ") &mdash;
+          .value(data-query="factsheet_demand_of_individual_heat_total") &mdash;
           %ul
             %li
               Elektrisch verwarmen
@@ -160,7 +160,7 @@
       .row
         .panel.renewable-gas
           %h3 Hernieuwbaar Gas
-          .value(data-query="factsheet_demand_of_gas_total" data-as="TJ") &mdash;
+          .value(data-query="factsheet_demand_of_gas_total") &mdash;
           %ul.has-icons
             %li
               Aardgas
@@ -182,11 +182,11 @@
               %span.icon.power-to-gas
         .panel.biomass
           %h3 Biomassa
-          .value(data-query="factsheet_demand_of_biomass_total" data-as="TJ") &mdash;
+          .value(data-query="factsheet_demand_of_biomass_total") &mdash;
           %ul.has-icons
             %li
               Bijstook biomassa
-              %span.icon.biomass-heat(data-query="factsheet_demand_of_biomass_in_households_and_buildings" data-as="TJ") &mdash;
+              %span.icon.biomass-heat(data-query="factsheet_demand_of_biomass_in_households_and_buildings") &mdash;
             %li
               Transport
-              %span.icon.biomass-transport(data-query="final_demand_of_biomass_products_in_transport" data-as="TJ") &mdash;
+              %span.icon.biomass-transport(data-query="final_demand_of_biomass_products_in_transport") &mdash;

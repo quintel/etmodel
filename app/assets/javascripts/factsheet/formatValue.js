@@ -39,9 +39,11 @@ function nicifyLargeNumber(value, unit, options) {
       return [
         Math.round(value / divisor) * divisor,
         unit,
-        _.extend({}, options, { precision: 0 })
+        Object.assign({}, options, { precision: 0 })
       ];
     }
+
+    return [value, unit, Object.assign({}, options, { precision: 0 })];
   }
 
   return [value, unit, options];
@@ -56,8 +58,6 @@ function formatQuantityValue(value, unit, options) {
 
   if (options.as) {
     quant = quant.to(options.as);
-  } else {
-    quant = quant.smartScale();
   }
 
   return [

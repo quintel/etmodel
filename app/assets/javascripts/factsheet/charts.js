@@ -101,37 +101,47 @@
   /**
    * Generic version of presentDemandChart and futureDemandChart.
    */
-  function demandChart(gqueries, period, definition) {
+  function demandChart(gqueries, opts) {
     var scale = function(value) {
-      return new Quantity(value, 'MJ').to('TJ').format();
+      return new Quantity(value, opts.unit).format();
     };
 
     return {
       title: 'Energievraag',
       formatValue: scale,
-      series: chartSeriesFromRequest(gqueries, definition, period),
+      series: chartSeriesFromRequest(gqueries, opts.definition, opts.period),
       margin: {
         top: 10,
         right: 0,
         bottom: 25,
         left: 75
       },
-      drawLabels: period === 'future'
+      drawLabels: opts.drawLabels
     };
   }
 
   /**
    * Renders a chart describing the present demand of the scenario.
    */
-  function presentDemandChart(gqueries) {
-    return demandChart(gqueries, 'present', definitions.demand);
+  function presentDemandChart(gqueries, unit) {
+    return demandChart(gqueries, {
+      period: 'present',
+      definition: definitions.demand,
+      unit: unit,
+      drawLabels: false
+    });
   }
 
   /**
    * Renders a chart describing the future demand of the scenario.
    */
-  function futureDemandChart(gqueries) {
-    return demandChart(gqueries, 'future', definitions.futureDemand);
+  function futureDemandChart(gqueries, unit) {
+    return demandChart(gqueries, {
+      period: 'future',
+      definition: definitions.futureDemand,
+      unit: unit,
+      drawLabels: true
+    });
   }
 
   /**

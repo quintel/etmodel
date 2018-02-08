@@ -1,4 +1,4 @@
-/* globals Quantity Metric d3 */
+/* globals Quantity d3 */
 
 (function() {
   var definitions = {
@@ -89,22 +89,6 @@
     });
   }
 
-  function valueScaler(gqueries, series, period) {
-    var unit = gqueries[series[0].key].unit;
-
-    var max = d3.max(series, function(serie) {
-      return gqueries[serie.key][period];
-    });
-
-    if (Quantity.isSupported(unit)) {
-      return Quantity.scaleAndFormatBy(max, unit, {});
-    }
-
-    return function(value) {
-      return Metric.autoscale_value(value, unit, 2, false);
-    };
-  }
-
   function chartSeriesFromRequest(gqueries, series, period) {
     // Create a unit scaler.
     return series.map(function(serie) {
@@ -118,7 +102,7 @@
    * Generic version of presentDemandChart and futureDemandChart.
    */
   function demandChart(gqueries, period, definition) {
-    var scale = function(value, unit) {
+    var scale = function(value) {
       return new Quantity(value, 'MJ').to('TJ').format();
     };
 

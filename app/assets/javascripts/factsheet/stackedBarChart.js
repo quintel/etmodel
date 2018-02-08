@@ -20,7 +20,12 @@
     var y0 = 0;
 
     return series.map(function(serie) {
-      return Object.assign({}, serie, { y0: y0, y1: (y0 += +serie.value) });
+      var withCoordinates = Object.assign({}, serie, {
+        y0: y0,
+        y1: (y0 += +serie.value)
+      });
+
+      return withCoordinates;
     });
   }
 
@@ -124,7 +129,7 @@
           return;
         }
 
-        svg.selectAll('g.series.' + series.key).each(function(d, i) {
+        svg.selectAll('g.series.' + series.key).each(function() {
           var cloned = imported.cloneNode(true);
 
           d3

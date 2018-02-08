@@ -27,8 +27,11 @@ function setPrecision(value, unit, options) {
 }
 
 function nicifyLargeNumber(value, unit, options) {
+  var divisor;
+
   if (options.precision < 0) {
-    var divisor = Math.pow(10, Math.abs(options.precision));
+    // eslint-disable-next-line no-restricted-properties
+    divisor = Math.pow(10, Math.abs(options.precision));
 
     if (value > divisor) {
       // Don't round numbers smaller than the divisor. For exmaple, if rounding
@@ -100,7 +103,7 @@ function localiseValue(value, unit, options) {
  * Values to be shown without a unit will have the unit suffix removed.
  */
 function stripUnit(value, unit, options) {
-  if (options.hasOwnProperty('noUnit')) {
+  if (Object.prototype.hasOwnProperty.call(options, 'noUnit')) {
     return [value.split(' ')[0], unit, options];
   }
 
@@ -131,6 +134,7 @@ function formatValue(value, unit, options) {
 /**
  * Formats the result of executing a query.
  */
+// eslint-disable-next-line no-unused-vars
 function formatQueryResult(result, options) {
   return formatValue(
     options.period === 'present' ? result.present : result.future,

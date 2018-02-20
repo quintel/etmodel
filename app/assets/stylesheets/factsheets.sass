@@ -80,7 +80,7 @@ body#factsheet
   main
     display: flex
 
-    #present, #future
+    #summary, #carrier-use
       .content
         min-height: 22rem
         width: 100%
@@ -107,7 +107,7 @@ body#factsheet
         .small
           font-size: 0.75rem
 
-    .summary
+    .main
       border-right: 2px solid white
       flex: 3
       padding-right: 1rem
@@ -120,10 +120,17 @@ body#factsheet
       .content
         display: flex
         .column
-          flex: 3
           margin-right: 1rem
           &:last-child
             margin-right: 0
+        .charts
+          display: flex
+          flex: 3
+          .chart
+            flex: 1
+            height: 100%
+            &.future
+              margin-left: -90px
         .carriers
           align-self: flex-end
           flex: 2
@@ -137,7 +144,7 @@ body#factsheet
           dd
             margin: 0
             width: 33%
-            background-image: asset-url('factsheet/gas-industry.svg')
+            background-image: asset-url('factsheet/gas-other.svg')
             background-size: 26px
             background-repeat: no-repeat
             background-position: 0.9rem 0.2rem
@@ -145,8 +152,12 @@ body#factsheet
               background-image: asset-url('factsheet/gas.svg')
             &.oil
               background-image: asset-url('factsheet/oil.svg')
-            &.heat
-              background-image: asset-url('factsheet/heat.svg')
+            &.biofuel
+              background-image: asset-url('factsheet/wood.svg')
+            &.collective-heat
+              background-image: asset-url('factsheet/collective-heat.svg')
+            &.renewable-heat
+              background-image: asset-url('factsheet/renewable-heat.svg')
             &.electricity
               background-image: asset-url('factsheet/electricity.svg')
           dt.total
@@ -160,46 +171,35 @@ body#factsheet
             font-weight: bold
             width: 100%
 
-    #aggregate-demand, #individual-demand
-      flex: 3
-
-      .chart
-        height: 100%
-
-    #individual-demand
+    #carrier-use .content
       display: flex
-      flex: 2
 
       .chart, .legend
-        flex: 6
-        margin: 0
-      .chart
-        flex: 4
-        // !! temporary?
-        margin: 0 0 0 -100px
+        flex: 1
+
       .legend
         align-self: flex-end
-        padding-left: 1rem
-      table
-        border-collapse: collapse
-        margin-bottom: 1px
-        width: 100%
-        td
-          padding: 0.125rem 0
-          text-overflow: ellipsis
-          white-space: nowrap
-        .value
-          text-align: right
-        tfoot td
-          border-top: 1px solid $grey-border-color
-          font-weight: bold
-      .legend-item
-        display: inline-block
-        height: 0.75rem
-        margin-right: 0.2rem
-        margin-top: -0.1875rem
-        vertical-align: middle
-        width: 0.75rem
+
+        table
+          border-collapse: collapse
+          margin-bottom: 1px
+          width: 100%
+          td
+            padding: 0.125rem 0
+            text-overflow: ellipsis
+            white-space: nowrap
+          .value
+            text-align: right
+          tfoot td
+            border-top: 1px solid $grey-border-color
+            font-weight: bold
+        .legend-item
+          display: inline-block
+          height: 0.75rem
+          margin-right: 0.2rem
+          margin-top: -0.1875rem
+          vertical-align: middle
+          width: 0.75rem
 
     .breakdown
       flex-direction: column

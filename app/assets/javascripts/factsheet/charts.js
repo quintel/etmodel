@@ -4,82 +4,59 @@
   var definitions = {
     demand: [
       {
-        key: 'final_demand_of_electricity',
+        key: 'factsheet_energetic_final_demand_electricity',
         color: '#fbca36',
         icon: '/assets/factsheet/electricity.svg'
       },
       {
-        key: 'factsheet_demand_of_collective_heat',
-        color: '#eb3138',
-        icon: '/assets/factsheet/heat.svg'
+        key: 'factsheet_energetic_final_demand_renewable_heat',
+        color: '#eb5a3c',
+        icon: '/assets/factsheet/renewable-heat.svg'
       },
       {
-        key: 'factsheet_demand_of_gas_in_industry_agriculture_other',
+        key: 'factsheet_energetic_final_demand_collective_heat',
+        color: '#eb3138',
+        icon: '/assets/factsheet/collective-heat.svg'
+      },
+      {
+        key: 'factsheet_energetic_final_demand_gas_other',
         color: '#3b73bf',
-        icon: '/assets/factsheet/gas.svg'
+        icon: '/assets/factsheet/gas-other.svg'
       },
       {
-        key: 'factsheet_demand_of_gas_in_households_and_buildings',
+        key: 'factsheet_energetic_final_demand_gas_households_buildings',
         color: '#56aee4',
         icon: '/assets/factsheet/gas.svg'
       },
       {
-        key: 'factsheet_demand_of_gasoline_diesel_lpg',
-        color: '#82ca39',
-        icon: '/assets/factsheet/oil.svg'
-      }
-    ],
-    futureDemand: [
-      {
-        key: 'factsheet_demand_of_electricity_future',
-        color: '#fbca36',
-        icon: '/assets/factsheet/electricity.svg'
+        key: 'factsheet_energetic_final_demand_bio_fuels',
+        color: '#a55513',
+        icon: '/assets/factsheet/wood.svg'
       },
       {
-        key: 'factsheet_demand_of_heat_total',
-        color: '#eb3138',
-        icon: '/assets/factsheet/heat.svg'
-      },
-      {
-        key: 'factsheet_demand_of_gas_total',
-        color: '#56aee4',
-        icon: '/assets/factsheet/gas.svg'
-      },
-      {
-        key: 'factsheet_demand_of_biomass_transport',
+        key: 'factsheet_energetic_final_demand_oil_and_coal_products',
         color: '#82ca39',
         icon: '/assets/factsheet/oil.svg'
       }
     ],
     breakdown: [
-      { key: 'electricity_produced_from_wind', color: '#f4a540' },
-      { key: 'electricity_produced_from_solar', color: '#fbca36' },
-      { key: 'factsheet_demand_of_collective_heat', color: '#a41824' },
-      {
-        key: 'factsheet_demand_of_individual_heat_all_electric',
-        color: '#bc1a27'
-      },
-      {
-        key: 'factsheet_demand_of_biomass_in_households_and_buildings',
-        color: '#e73133'
-      },
-      {
-        key: 'factsheet_demand_of_water_heater_solar_thermal',
-        color: '#eb5a3c'
-      },
-      {
-        key: 'final_demand_of_hydrogen_in_transport',
-        color: '#2c3480'
-      },
-      {
-        key: 'factsheet_demand_of_greengas',
-        color: '#2874b4'
-      },
-      {
-        key: 'factsheet_demand_of_natural_gas',
-        color: '#56aee4'
-      },
-      { key: 'factsheet_demand_of_biomass_transport', color: '#82ca39' }
+      { key: 'factsheet_supply_heat_from_other', color: '#8c131d' },
+      { key: 'factsheet_supply_heat_collective', color: '#a41824' },
+      { key: 'factsheet_supply_heat_from_electricity', color: '#bc1a27' },
+      { key: 'factsheet_supply_heat_from_biomass', color: '#e73133' },
+      { key: 'factsheet_supply_heat_from_solar_thermal', color: '#eb5a3c' },
+
+      { key: 'factsheet_supply_gas_from_synthetic_gas', color: '#2c3480' },
+      { key: 'factsheet_supply_gas_from_biogas', color: '#2874b4' },
+      { key: 'factsheet_supply_gas_from_fossil', color: '#56aee4' },
+
+      { key: 'factsheet_supply_fossil_other', color: '#afafaf' },
+
+      { key: 'factsheet_supply_electricity_from_other', color: '#e29028' },
+      { key: 'factsheet_supply_electricity_from_wind', color: '#f4a540' },
+      { key: 'factsheet_supply_electricity_from_solar', color: '#fbca36' },
+
+      { key: 'factsheet_supply_biofuels', color: '#82ca39' }
     ]
   };
 
@@ -98,26 +75,35 @@
     });
   }
 
+  function valueFormatter(unit) {
+    return function(value) {
+      return new Quantity(value, unit).format();
+    };
+  }
+
   /**
    * Generic version of presentDemandChart and futureDemandChart.
    */
   function demandChart(gqueries, opts) {
-    var scale = function(value) {
-      return new Quantity(value, opts.unit).format();
-    };
+    var max = Math.max(
+      totalValue(gqueries, definitions.demand, 'future'),
+      totalValue(gqueries, definitions.demand, 'present')
+    );
 
-    return {
-      title: 'Energievraag',
-      formatValue: scale,
-      series: chartSeriesFromRequest(gqueries, opts.definition, opts.period),
-      margin: {
-        top: 10,
-        right: 0,
-        bottom: 25,
-        left: 75
+    return Object.assign(
+      {
+        barPadding: 0.25,
+        formatValue: opts.formatValue || valueFormatter(opts.unit),
+        margin: { top: 10, right: 0, bottom: 25, left: 75 },
+        max: max,
+        series: chartSeriesFromRequest(
+          gqueries,
+          definitions.demand,
+          opts.period
+        )
       },
-      drawLabels: opts.drawLabels
-    };
+      opts
+    );
   }
 
   /**
@@ -125,10 +111,10 @@
    */
   function presentDemandChart(gqueries, unit) {
     return demandChart(gqueries, {
+      drawLabels: false,
       period: 'present',
-      definition: definitions.demand,
-      unit: unit,
-      drawLabels: false
+      title: 'Heden',
+      unit: unit
     });
   }
 
@@ -137,26 +123,23 @@
    */
   function futureDemandChart(gqueries, unit) {
     return demandChart(gqueries, {
+      formatValue: function() {
+        return '';
+      },
       period: 'future',
-      definition: definitions.futureDemand,
       unit: unit,
-      drawLabels: true
+      title: 'Toekomst',
+      showY: false
     });
   }
 
   /**
    * Renders a chart describing individual demands for the future.
    */
-  function futureDemandBreakdownChart(gqueries) {
-    var max = totalValue(gqueries, definitions.futureDemand, 'future');
-
+  function futureDemandBreakdownChart(gqueries, unit) {
     return {
-      title: 'Energieaanbod',
-      formatValue: function() {
-        return '';
-      },
-      max: max,
-      margin: { top: 10, right: 0, bottom: 25, left: 5 },
+      formatValue: valueFormatter(unit),
+      margin: { top: 10, right: 0, bottom: 25, left: 75 },
       series: chartSeriesFromRequest(gqueries, definitions.breakdown, 'future')
     };
   }

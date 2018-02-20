@@ -1,15 +1,18 @@
 /* globals d3 I18n */
 (function() {
   var chartDefaults = {
+    barPadding: 0.45,
+    formatValue: function(value) {
+      return value;
+    },
     margin: {
       top: 10,
       right: 0,
       bottom: 25,
       left: 60
     },
-    formatValue: function(value) {
-      return value;
-    }
+    showY: true,
+    title: ''
   };
 
   /**
@@ -20,9 +23,12 @@
     var y0 = 0;
 
     return series.map(function(serie) {
+      var value = Math.max(0, serie.value);
+
       var withCoordinates = Object.assign({}, serie, {
         y0: y0,
-        y1: (y0 += +serie.value)
+        y1: (y0 += value),
+        value: value
       });
 
       return withCoordinates;
@@ -32,10 +38,10 @@
   /**
    * Creates a horizontal scale.
    */
-  function xScale(width, title) {
+  function xScale(width, title, barPadding) {
     return d3.scale
       .ordinal()
-      .rangeRoundBands([0, width], 0.45) // second param adjusts bar width
+      .rangeRoundBands([0, width], barPadding) // second param adjusts bar width
       .domain([title]);
   }
 
@@ -124,7 +130,7 @@
         var top = y(series.y1);
         var bottom = y(series.y0);
 
-        if (bottom - top < 20) {
+        if (bottom - top < 26) {
           // do not render icons on series too small to show them
           return;
         }
@@ -172,7 +178,7 @@
     var innerWidth =
       settings.width - settings.margin.left - settings.margin.right;
 
-    var x = xScale(innerWidth, settings.title);
+    var x = xScale(innerWidth, settings.title, settings.barPadding);
     var y = yScale(innerHeight, settings.series, settings.max);
 
     var series = seriesToRender(settings.series);
@@ -229,10 +235,12 @@
       .attr('transform', 'translate(0,' + innerHeight + ')')
       .call(xAxis(x));
 
-    svg
-      .append('g')
-      .attr('class', 'y axis')
-      .call(yAxis(y, settings.formatValue));
+    if (settings.showY) {
+      svg
+        .append('g')
+        .attr('class', 'y axis')
+        .call(yAxis(y, settings.formatValue));
+    }
 
     if (settings.drawLabels) {
       drawLabels(svg, y, series);

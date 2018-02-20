@@ -1,4 +1,4 @@
-/* globals formatQueryResult preferredUnits stackedBarChart d3 transformGqueries I18n */
+/* globals formatQueryResult preferredUnits stackedBarChart d3 transformGqueries drawLegend */
 
 //= require d3.v2
 //= require lib/models/metric
@@ -8,6 +8,7 @@
 //= require factsheet/formatValue
 //= require factsheet/stackedBarChart
 //= require factsheet/charts
+//= require factsheet/drawLegend
 
 /**
  * Given the full list of charts which will be displayed, extracts the queries
@@ -55,28 +56,10 @@ jQuery(function() {
   var queries;
 
   var url = window.factsheetSettings.endpoint;
-  var individualDemandLegendEl = $('#individual-demand .legend tbody');
 
-  // draw individual demand legend
-  window.charts.definitions.breakdown.forEach(function(series) {
-    individualDemandLegendEl.prepend(
-      $('<tr/>').append(
-        $('<td class="key"/>').append(
-          $('<span class="legend-item" />').css(
-            'background-color',
-            series.color
-          ),
-          ' ',
-          I18n.t('factsheet.series.' + series.key)
-        ),
-        $('<td class="value" />')
-          .attr('data-query', series.key)
-          .attr('data-as', 'TJ')
-          .attr('data-no-unit', true)
-          .html('&mdash;')
-      )
-    );
-  });
+  $('#carrier-use .legend tbody').append(
+    drawLegend(window.charts.definitions.breakdown)
+  );
 
   queries = queriesFromElement(document).concat(
     queriesFromCharts(window.charts.definitions)
@@ -105,18 +88,18 @@ jQuery(function() {
     $('#factsheet-content').show();
 
     stackedBarChart(
-      '#present .chart',
+      '#summary .chart.present',
       window.charts.presentDemandChart(gqueries, units.J)
     );
 
     stackedBarChart(
-      '#aggregate-demand .chart',
+      '#summary .chart.future',
       window.charts.futureDemandChart(gqueries, units.J)
     );
 
     stackedBarChart(
-      '#individual-demand .chart',
-      window.charts.futureDemandBreakdownChart(gqueries)
+      '#carrier-use .chart',
+      window.charts.futureDemandBreakdownChart(gqueries, units.J)
     );
   });
 

@@ -88,10 +88,10 @@
             %li
               %span(data-query="factsheet_number_of_wind_turbine_inland_coastal") &mdash;
               windmolens op land
-              (
-              %span(data-query="factsheet_capacity_of_wind_turbine_inland_coastal" data-as="MW")<> &mdash;
-              )
             %li
+              %span(data-query="factsheet_installed_capacity_of_wind_turbine_inland_coastal" data-as="MW") &mdash;
+              opgesteld vermogen
+            %li.spacer
               %span(data-query="factsheet_supply_electricity_from_other") &mdash;
               restopgave
         .panel.solar
@@ -100,37 +100,29 @@
           %ul
             %li
               %span(data-query="factsheet_number_of_solar_pv" data-precision="-3") &mdash;
-              PV­ panelen gebouwen
-            %li(data-query="factsheet_supply_of_solar_pv_households_buildings") &mdash;
+              PV­-panelen op daken
             %li
               %span(data-query="factsheet_solar_pv_plants_land_use") &mdash;
-              ha zonneveld
+              hectare zonneveld
             %li
-              %span(data-query="factsheet_supply_of_solar_pv_plants") &mdash;
               %span.icon.solar-pv
-            %li.spacer
-              %span(data-query="factsheet_installed_capacity_of_solar_pv" data-as="MW") &mdash;
-              PV panelen
-              (
-              %span(data-query="factsheet_capacity_of_solar_pv" data-as="W")<> &mdash;
-              )
             %li
+              %span(data-query="factsheet_installed_capacity_of_solar_pv" data-as="MW") &mdash;
+              opgesteld vermogen
+            %li.right<>
+              %span.icon.solar-thermal
+            %li.spacer
+              
               %span(data-query="factsheet_number_of_water_heater_solar_thermal" data-precision="-3") &mdash;
               zonnecollectoren
-            %li.right<>
-              %span(data-query="factsheet_demand_of_water_heater_solar_thermal") &mdash;
-              (
-              %span(data-query="factsheet_installed_capacity_of_water_heater_solar_thermal")<> &mdash;
-              )
-              %span.icon.solar-thermal
       .row
         .panel.collective-heat
           %h3 Collectieve Warmte
           .value(data-query="factsheet_demand_of_collective_heat") &mdash;
           %ul
             %li.spacer
-              Vermogen bron
               %span(data-query="factsheet_installed_capacity_of_collective_heat_sources")
+              opgesteld vermogen
               %br
               %span(data-query="factsheet_demand_of_collective_heat_per_residence" data-precision="-3" data-no-unit)
               woningequivalenten

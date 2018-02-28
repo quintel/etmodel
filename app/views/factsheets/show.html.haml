@@ -35,30 +35,18 @@
           .charts.column
             .chart.present
             .chart.future
-          %dl.carriers.column
-            %dt.oil Olie en kolen
-            %dd.oil(data-query="factsheet_energetic_final_demand_oil_and_coal_products" data-no-unit data-precision="0") &mdash;
-
-            %dt.biofuel Biomassa en -brandstof
-            %dd.biofuel(data-query="factsheet_energetic_final_demand_bio_fuels" data-no-unit data-precision="0") &mdash;
-
-            %dt.gas Gas gebouwde omgeving
-            %dd.gas(data-query="factsheet_energetic_final_demand_gas_households_buildings" data-no-unit data-precision="0") &mdash;
-
-            %dt.gas-other Gas overige (o.a. industrie)
-            %dd.gas-other(data-query="factsheet_energetic_final_demand_gas_other" data-no-unit data-precision="0") &mdash;
-
-            %dt.collective-heat Collectieve warmte
-            %dd.collective-heat(data-query="factsheet_energetic_final_demand_collective_heat" data-no-unit data-precision="0") &mdash;
-
-            %dt.renewable-heat Zonthermie
-            %dd.renewable-heat(data-query="factsheet_energetic_final_demand_renewable_heat" data-no-unit data-precision="0") &mdash;
-
-            %dt.electricity Elektriciteit
-            %dd.electricity(data-query="factsheet_energetic_final_demand_electricity" data-no-unit data-precision="0") &mdash;
-
-            %dt.total Total
-            %dd.total(data-query="factsheet_total_demand" data-precision="0") &mdash;
+          .legend.column
+            %table
+              %thead
+                %th
+                %th.value Heden
+                %th.value Toekomst
+              %tbody
+              %tfoot
+                %tr
+                  %td.key
+                  %td.value(data-query="factsheet_total_demand" data-period="present") &mdash;
+                  %td.value(data-query="factsheet_total_demand" data-period="future") &mdash;
       #carrier-use.panel
         %h2
           2. Energieaanbod naar drager

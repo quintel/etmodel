@@ -47,6 +47,7 @@ nl:
         password: "Wachtwoord"
 
   user:
+    delete_me: Verwijder me
     forgot_password:
       account_not_found: "Het spijt ons maar je account is niet bij ons bekend!"
 
@@ -67,3 +68,20 @@ nl:
       reset_description_new: 'Vul uw e-mailadres in en druk op "Herstel wachtwoord".'
       reset_header_html: <strong>Herstel</strong> je wachtwoord
       success: "Je wachtwoord is succesvol geüpdated!"
+
+    delete_account:
+      title: Account verwijderen
+      information: |
+        Als u niet langer lid bent van het Energietransitiemodel, kunt u uw
+        account verwijderen. U wordt om bevestiging gevraagd op de volgende
+        pagina.
+      warning: |
+        U staat op het punt uw ETM-account te verwijderen. Alle persoonlijke
+        informatie over u - inclusief uw naam en e-mailadres - wordt verwijderd.
+        Scenario's die u hebt gemaakt, worden niet langer aan uzelf gekoppeld en
+        kunnen op een later tijdstip worden verwijderd
+      irreversible: Dit is onomkeerbaar.
+      confirm: |
+        Voer uw wachtwoord in en bevestig dat u nog steeds uw account wilt
+        verwijderen:
+      enter_password: Voer uw wachtwoord in

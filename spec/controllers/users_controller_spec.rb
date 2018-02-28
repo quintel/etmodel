@@ -155,7 +155,7 @@ describe UsersController do
       it "updates user's account" do
         user.name = 'Shiny'
         post :update, params: { id: user, user: user.attributes }
-        expect(response).to redirect_to(edit_user_path(user))
+        expect(response).to redirect_to(edit_user_path)
       end
     end
 
@@ -171,6 +171,87 @@ describe UsersController do
 
         expect(response.body)
           .to have_selector("span.error", text: "can't be blank")
+      end
+    end
+  end
+
+  describe '#destroy' do
+    let!(:user) do
+      FactoryBot.create(
+        :user,
+        password: 'my-password',
+        password_confirmation: 'my-password'
+        )
+    end
+
+    let!(:scenario) { FactoryBot.create(:saved_scenario, user: user) }
+
+    let(:password) { '' }
+    let(:request) { delete(:destroy, params: { password: password }) }
+
+    context 'as a guest' do
+      it 'redirects to the root' do
+        expect(request).to be_redirect
+      end
+    end
+
+    context 'with the correct user password' do
+      let(:password) { 'my-password' }
+
+      before { login_as(user) }
+
+      it 'redirects to the root' do
+        expect(request).to be_redirect
+      end
+
+      it 'deletes the account' do
+        expect { request }.to change { User.count }.by(-1)
+      end
+
+      it 'deletes saved scenarios' do
+        expect { request }.to change { SavedScenario.count }.by(-1)
+      end
+    end
+
+    context 'with an incorrect user password' do
+      let(:password) { 'wrong-password' }
+
+      before { login_as(user) }
+
+      it 'shows the confirmation form' do
+        expect(request.body).to have_selector('input.mistake')
+      end
+
+      it 'does not delete the account' do
+        expect { request }.to_not change { User.count }
+      end
+    end
+
+    context 'with an empty password' do
+      let(:password) { '' }
+
+      before { login_as(user) }
+
+      it 'shows the confirmation form' do
+        expect(request.body).to have_selector('input.mistake')
+      end
+
+      it 'does not delete the account' do
+        expect { request }.to_not change { User.count }
+      end
+    end
+
+    context 'with no password' do
+      let(:password) { nil }
+
+      before { login_as(user) }
+
+      it 'shows the confirmation form' do
+        expect(request.body).to have_selector('input.mistake')
+      end
+
+      it 'does not delete the account' do
+        expect { request }.to_not change { User.count }
       end
     end
   end

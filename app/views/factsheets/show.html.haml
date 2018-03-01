@@ -127,15 +127,18 @@
             %li
               LT bronnen
               (
-              %span(data-query="factsheet_share_of_local_chps_in_collective_heat_sources")<> &mdash;
+              %span(data-query="factsheet_share_of_lt_in_collective_heat_sources")<> &mdash;
               )
         .panel.heat
           %h3 Individuele Warmte
-          .value(data-query="factsheet_demand_of_individual_heat_total") &mdash;
+          .value(data-query="factsheet_supply_of_individual_heat_total") &mdash;
           %ul
             %li
               Elektrisch verwarmen
               %span(data-query="factsheet_share_all_electric_in_individual_heat") &mdash;
+            %li
+              Anders verwarmen
+              %span(data-query="factsheet_share_other_in_individual_heat") &mdash;
           .solar-arrow
             .tail
             .head

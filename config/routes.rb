@@ -17,12 +17,15 @@ Etm::Application.routes.draw do
   get '/descriptions/charts/:id'  => 'descriptions#charts'
 
   resources :user_sessions
-  resources :users, except: [:index, :show, :destroy]
+  resources :users, except: [:index, :show, :edit, :destroy]
   resources :password_resets, only: [:new, :create, :edit, :update]
 
   get '/users/:id/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
 
-  resource :user, only: [:edit, :update]
+  resource :user, only: [:edit, :update, :destroy] do
+    post :confirm_delete, on: :member
+  end
+
   resources :testing_grounds, only: [:create]
 
   # Old partner paths.

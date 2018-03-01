@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   layout 'static_page'
-  layout 'form_only', only: %w( new create edit update )
+  layout 'form_only', only: %w( new create )
+
+  before_action :require_user, except: %i( new create unsubscribe )
 
   def new
     @user = User.new
@@ -8,7 +10,7 @@ class UsersController < ApplicationController
 
   def edit
     if current_user
-      @user = User.find(params[:id])
+      @user = current_user
     else
       redirect_to :root
     end
@@ -42,15 +44,42 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(users_parameters)
-      redirect_to edit_user_path(@user), notice: I18n.t("flash.edit_profile")
+      redirect_to edit_user_path, notice: I18n.t("flash.edit_profile")
     else
       render :edit
     end
+
+  end
+
+  def confirm_delete
+  end
+
+  def destroy
+    confirmation = UserSession.new(
+      email: current_user.email,
+      password: params[:password]
+    )
+
+    if !confirmation.valid?
+      @confirm_error = true
+      render :confirm_delete
+
+      return
+    end
+
+    current_user_session.destroy
+    current_user.destroy
+
+    redirect_to root_path, notice: I18n.t('flash.account_deleted')
   end
 
   #######
   private
   #######
+
+  def require_user
+    redirect_to(root_url) unless current_user
+  end
 
   def users_parameters
     params.require(:user).permit(

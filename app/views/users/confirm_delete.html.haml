@@ -1,0 +1,15 @@
+.delete_account.confirm.simple_form
+  %h2= t('user.delete_account.title')
+
+  = form_tag '/user', method: :delete do |f|
+    %p= t('user.delete_account.warning')
+    %p
+      %strong= t('user.delete_account.irreversible')
+      = t('user.delete_account.confirm', delete_me: t('user.delete_account.delete_me'))
+    .row.field
+      %input.string{ type: "password", name: "password", placeholder: t('user.delete_account.enter_password'), class: (@confirm_error ? 'mistake' : '') }
+      %button.button(type='submit')<>
+        %span.fa.fa-exclamation-triangle
+        = t('user.delete_account.title')
+      %span.or or
+      = link_to t('cancel'), root_path, class: 'button'

@@ -18,7 +18,7 @@
 
     - if current_user
       %li
-        = link_to t("header.my_profile"), edit_user_path(current_user)
+        = link_to t("header.my_profile"), edit_user_path
 
     %li
       %a.load{:href => scenarios_path}= t("header.load_scenario")

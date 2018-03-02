@@ -107,6 +107,34 @@ body#factsheet
         .small
           font-size: 0.75rem
 
+    .legend
+      align-self: flex-end
+      margin-left: 0
+
+      table
+        border-collapse: collapse
+        margin-bottom: 1px
+        width: 100%
+        td, th
+          padding: 0.125rem 0
+          text-overflow: ellipsis
+          white-space: nowrap
+        th
+          color: $grey-font-color
+          font-weight: normal
+        .value
+          text-align: right
+        tfoot td
+          border-top: 1px solid $grey-border-color
+          font-weight: bold
+      .legend-item
+        display: inline-block
+        height: 0.75rem
+        margin-right: 0.2rem
+        margin-top: -0.1875rem
+        vertical-align: middle
+        width: 0.75rem
+
     .main
       border-right: 2px solid white
       flex: 3
@@ -125,81 +153,53 @@ body#factsheet
             margin-right: 0
         .charts
           display: flex
-          flex: 3
+          flex: 1
           .chart
             flex: 1
             height: 100%
             &.future
               margin-left: -90px
-        .carriers
-          align-self: flex-end
-          flex: 2
-          margin: 0
-          dt, dd
-            float: left
-            padding: 0.5rem 0
-            text-align: right
-          dt
-            width: 67%
-          dd
-            margin: 0
-            width: 33%
-            background-image: asset-url('factsheet/gas-other.svg')
-            background-size: 26px
-            background-repeat: no-repeat
-            background-position: 0.9rem 0.2rem
-            &.gas
-              background-image: asset-url('factsheet/gas.svg')
-            &.oil
-              background-image: asset-url('factsheet/oil.svg')
-            &.biofuel
-              background-image: asset-url('factsheet/wood.svg')
-            &.collective-heat
-              background-image: asset-url('factsheet/collective-heat.svg')
-            &.renewable-heat
-              background-image: asset-url('factsheet/renewable-heat.svg')
-            &.electricity
-              background-image: asset-url('factsheet/electricity.svg')
-          dt.total
+        .legend
+          flex: 1
+    #summary
+      .legend
+        tbody
+          td, th
+            padding-top: 0.4rem
+            padding-bottom: 0.4rem
+        td.value:last-child
+          padding-left: 0.5rem
+        td.key
+          background-repeat: no-repeat
+          background-position: center right
+          background-size: 1.5rem
+          padding-right: 3rem
+          text-align: right
+          .legend-item
             display: none
-          dd.total
-            background: none
-            border-top: 1px solid $grey-border-color
-            margin-top: 0.5rem
-            padding-bottom: 0
-            padding-top: 0.25rem
-            font-weight: bold
-            width: 100%
+        .factsheet-energetic-final-demand-gas-households-buildings .key
+          background-image: asset-url('factsheet/gas.svg')
+        .factsheet-energetic-final-demand-gas-other .key
+          background-image: asset-url('factsheet/gas-other.svg')
+        .factsheet-energetic-final-demand-oil-and-coal-products .key
+          background-image: asset-url('factsheet/oil.svg')
+        .factsheet-energetic-final-demand-bio-fuels .key
+          background-image: asset-url('factsheet/wood.svg')
+        .factsheet-energetic-final-demand-collective-heat .key
+          background-image: asset-url('factsheet/collective-heat.svg')
+        .factsheet-energetic-final-demand-renewable-heat .key
+          background-image: asset-url('factsheet/renewable-heat.svg')
+        .factsheet-energetic-final-demand-electricity .key
+          background-image: asset-url('factsheet/electricity.svg')
 
     #carrier-use .content
       display: flex
 
+      .chart
+        margin-right: 1rem
+
       .chart, .legend
         flex: 1
-
-      .legend
-        align-self: flex-end
-
-        table
-          border-collapse: collapse
-          margin-bottom: 1px
-          width: 100%
-          td
-            padding: 0.125rem 0
-            text-overflow: ellipsis
-            white-space: nowrap
-          .value
-            text-align: right
-          tfoot td
-            border-top: 1px solid $grey-border-color
-            font-weight: bold
-        .legend-item
-          display: inline-block
-          height: 0.75rem
-          margin-right: 0.2rem
-          margin-top: -0.1875rem
-          vertical-align: middle
-          width: 0.75rem
 
     .breakdown
       flex-direction: column

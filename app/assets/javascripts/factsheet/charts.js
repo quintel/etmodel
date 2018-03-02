@@ -92,7 +92,7 @@
 
     return Object.assign(
       {
-        barPadding: 0.25,
+        barPadding: 0.2,
         formatValue: opts.formatValue || valueFormatter(opts.unit),
         margin: { top: 10, right: 0, bottom: 25, left: 75 },
         max: max,

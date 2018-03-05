@@ -1,6 +1,30 @@
-%h1=t("header.edit_account")
+.edit_account
+  %h2= t("header.edit_account")
 
-= render 'form'
+  = simple_form_for @user do |f|
+    .section
+      .row
+        = f.input :name
+        = f.input :email, required: true
 
-= link_to 'Back', :back
-%br
+      .row
+        = f.input :password
+        = f.input :password_confirmation
+
+    .section.highlight
+      .row
+        = f.input :company_school
+
+    = f.input :allow_news
+
+    = f.button :submit, I18n.t('simple_form.labels.user.update'), class: 'primary'
+    = link_to t('cancel'), root_path, class: 'button'
+
+.delete_account
+  %h2= t('user.delete_account.title')
+  = form_tag confirm_delete_user_path, method: :post do |f|
+    %p
+      %button.button.right(type='submit')
+        %span.fa.fa-exclamation-triangle
+        = t('user.delete_account.title')
+      = t('user.delete_account.information')

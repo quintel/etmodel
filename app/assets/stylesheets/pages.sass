@@ -34,3 +34,81 @@
       line-height: 2em
     tr.even
       background-color: #F0F0F0
+
+.edit_account
+  width: 725px
+
+  h1, input[type=submit]
+    margin-left: 220px
+
+.edit_account, .delete_account
+  border: 1px solid #ddd
+  border-radius: 3px
+  margin: 2rem auto
+  padding: 1rem
+  width: 725px
+  h2
+    background: #f6f6f6
+    border-bottom: 1px solid #ddd
+    border-top-left-radius: 3px
+    border-top-right-radius: 3px
+    font-size: 16px
+    margin: -1rem -1rem 1rem
+    padding: 1rem
+  button.button[type], a.button, input.btn[type]
+    font-size: 13px
+    line-height: 15px
+    padding: 10px 13px
+    &:active
+      outline: none
+
+.edit_account
+  h2
+    margin-bottom: 2rem
+
+.delete_account
+  padding: 1rem
+  margin-bottom: 150px
+  p
+    margin: 0
+  button.button, button.button:active
+    background-image: linear-gradient(#fff492, #fbd565)
+    background-color: #ffe17a
+    color: #5a3a0b
+    border: 1px solid #caaa51
+    border-bottom-color: #c7a444
+    text-shadow: 0 1px 0 #ffef8c
+    .fa
+      margin-right: 0.25rem
+  button.right
+    float: right
+    margin-top: 3px
+    margin-left: 1rem
+  button.button:active
+    box-shadow: inset 0 1px 3px #c7a360
+    border-top-color: #c7a444
+  &.confirm
+    strong
+      background: #fff48f
+      padding: 2px 3px
+    input.string
+      border-top-right-radius: 0
+      border-bottom-right-radius: 0
+      padding: 10px 10px 9px
+      position: relative
+      z-index: 1
+      &:active, &:focus
+        z-index: 3
+      &.mistake:placeholder-shown
+        border-color: #ef1b1b
+        box-shadow: 0 0 5px #ff7575
+        z-index: 3
+    button.button[type]
+      border-top-left-radius: 0
+      border-bottom-left-radius: 0
+      margin-left: -1px
+      position: relative
+      z-index: 2
+    p
+      margin-bottom: 0.75rem
+

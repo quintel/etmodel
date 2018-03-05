@@ -23,7 +23,6 @@ class InputElement < ActiveRecord::Base
 
   has_one :description, as: :describable, dependent: :destroy
   has_one :area_dependency, as: :dependable, dependent: :destroy
-  has_many :predictions
   belongs_to :slide
 
   validates :key, presence: true, uniqueness: true
@@ -51,21 +50,11 @@ class InputElement < ActiveRecord::Base
     fixed
   end
 
-  def available_predictions(area = nil)
-    predictions.for_area(area || Current.setting.area_code)
-  end
-
-  def has_predictions?
-    return false unless Current.backcasting_enabled
-    available_predictions(Current.setting.area_code).any?
-  end
-  alias_method :has_predictions, :has_predictions?
-
   # Used by the interface to setup quinn
   def json_attributes
     Jbuilder.encode do |json|
       json.(self, :id, :unit, :share_group, :key, :related_converter, :step_value,
-            :disabled, :translated_name, :sanitized_description, :has_predictions,
+            :disabled, :translated_name, :sanitized_description,
             :fixed, :has_flash_movie)
     end
   end

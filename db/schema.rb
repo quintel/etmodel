@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180209102539) do
+ActiveRecord::Schema.define(version: 20180226135416) do
 
   create_table "area_dependencies", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string "dependent_on"
@@ -115,44 +115,6 @@ ActiveRecord::Schema.define(version: 20180209102539) do
     t.boolean "requires_merit_order", default: false
     t.index ["hidden"], name: "index_output_elements_on_hidden"
     t.index ["key"], name: "index_output_elements_on_key"
-  end
-
-  create_table "prediction_measures", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin" do |t|
-    t.integer "prediction_id"
-    t.string "name"
-    t.integer "impact"
-    t.integer "cost"
-    t.integer "year_start"
-    t.string "actor"
-    t.text "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer "year_end"
-    t.index ["prediction_id"], name: "index_prediction_measures_on_prediction_id"
-  end
-
-  create_table "prediction_values", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin" do |t|
-    t.integer "prediction_id"
-    t.float "value", limit: 24
-    t.integer "year"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["prediction_id"], name: "index_prediction_values_on_prediction_id"
-    t.index ["year"], name: "index_prediction_values_on_year"
-  end
-
-  create_table "predictions", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin" do |t|
-    t.integer "input_element_id"
-    t.integer "user_id"
-    t.boolean "expert"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text "description"
-    t.string "title"
-    t.string "area"
-    t.index ["area"], name: "index_predictions_on_area"
-    t.index ["input_element_id"], name: "index_predictions_on_input_element_id"
-    t.index ["user_id"], name: "index_predictions_on_user_id"
   end
 
   create_table "roles", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|

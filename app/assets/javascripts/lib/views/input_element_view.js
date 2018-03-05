@@ -332,7 +332,6 @@
           name:             this.model.get('translated_name'),
           info:             this.model.get('sanitized_description'),
           sublabel:         this.model.get('label'),
-          predictions:      this.model.get('has_predictions'),
           converter:        this.model.get('related_converter'),
           input_element_id: this.model.get("id"),
           end_year:         App.settings.get("end_year"),

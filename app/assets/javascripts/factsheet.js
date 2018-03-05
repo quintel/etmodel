@@ -57,6 +57,10 @@ jQuery(function() {
 
   var url = window.factsheetSettings.endpoint;
 
+  $('#summary .legend tbody').append(
+    drawLegend(window.charts.definitions.demand, ['present', 'future'])
+  );
+
   $('#carrier-use .legend tbody').append(
     drawLegend(window.charts.definitions.breakdown)
   );

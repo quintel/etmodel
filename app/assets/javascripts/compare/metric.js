@@ -421,7 +421,7 @@
         return Math.round(number / 1000) + 'k';
       }
 
-      return number;
+      return Math.round(number);
     },
 
     measureTotal: function() {

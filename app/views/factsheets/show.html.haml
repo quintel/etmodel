@@ -30,35 +30,23 @@
             %span(data-query="factsheet_total_demand_relative_change" data-as="%") &mdash;
             %br<>
             %span.small(data-query="factsheet_total_demand_absolute_change") &mdash;
-          1. Energievraag (eindgebruik) naar drager en sector
+          1. Energievraag (eindgebruik) naar drager
         .content
           .charts.column
             .chart.present
             .chart.future
-          %dl.carriers.column
-            %dt.oil Olie en kolen
-            %dd.oil(data-query="factsheet_energetic_final_demand_oil_and_coal_products" data-no-unit data-precision="0") &mdash;
-
-            %dt.biofuel Biomassa en -brandstof
-            %dd.biofuel(data-query="factsheet_energetic_final_demand_bio_fuels" data-no-unit data-precision="0") &mdash;
-
-            %dt.gas Gas gebouwde omgeving
-            %dd.gas(data-query="factsheet_energetic_final_demand_gas_households_buildings" data-no-unit data-precision="0") &mdash;
-
-            %dt.gas-other Gas overige (o.a. industrie)
-            %dd.gas-other(data-query="factsheet_energetic_final_demand_gas_other" data-no-unit data-precision="0") &mdash;
-
-            %dt.collective-heat Collectieve warmte
-            %dd.collective-heat(data-query="factsheet_energetic_final_demand_collective_heat" data-no-unit data-precision="0") &mdash;
-
-            %dt.renewable-heat Zonthermie
-            %dd.renewable-heat(data-query="factsheet_energetic_final_demand_renewable_heat" data-no-unit data-precision="0") &mdash;
-
-            %dt.electricity Elektriciteit
-            %dd.electricity(data-query="factsheet_energetic_final_demand_electricity" data-no-unit data-precision="0") &mdash;
-
-            %dt.total Total
-            %dd.total(data-query="factsheet_total_demand" data-precision="0") &mdash;
+          .legend.column
+            %table
+              %thead
+                %th
+                %th.value Heden
+                %th.value Toekomst
+              %tbody
+              %tfoot
+                %tr
+                  %td.key
+                  %td.value(data-query="factsheet_total_demand" data-period="present") &mdash;
+                  %td.value(data-query="factsheet_total_demand" data-period="future") &mdash;
       #carrier-use.panel
         %h2
           2. Energieaanbod naar drager
@@ -88,49 +76,41 @@
             %li
               %span(data-query="factsheet_number_of_wind_turbine_inland_coastal") &mdash;
               windmolens op land
-              (
-              %span(data-query="factsheet_capacity_of_wind_turbine_inland_coastal" data-as="MW")<> &mdash;
-              )
             %li
-              %span(data-query="factsheet_number_of_wind_turbine_offshore") &mdash;
-              windmolens op zee
-              (
-              %span(data-query="factsheet_capacity_of_wind_turbine_offshore" data-as="MW")<> &mdash;
-              )
+              %span(data-query="factsheet_installed_capacity_of_wind_turbine_inland_coastal" data-as="MW") &mdash;
+              opgesteld vermogen
+            %li.spacer
+              %span(data-query="factsheet_supply_electricity_from_other") &mdash;
+              restopgave
         .panel.solar
           %h3 Zon
           .value(data-query="factsheet_supply_of_solar_total") &mdash;
           %ul
             %li
               %span(data-query="factsheet_number_of_solar_pv" data-precision="-3") &mdash;
-              PV­ panelen gebouwen
-            %li(data-query="factsheet_supply_of_solar_pv_households_buildings") &mdash;
+              PV­-panelen op daken
             %li
               %span(data-query="factsheet_solar_pv_plants_land_use") &mdash;
-              ha zonneveld
+              hectare zonneveld
             %li
-              %span(data-query="factsheet_supply_of_solar_pv_plants") &mdash;
               %span.icon.solar-pv
-            %li.spacer
-              %span(data-query="factsheet_capacity_of_solar_pv" data-as="MW") &mdash;
-              vermogen PV panelen
             %li
+              %span(data-query="factsheet_installed_capacity_of_solar_pv" data-as="MW") &mdash;
+              opgesteld vermogen
+            %li.right<>
+              %span.icon.solar-thermal
+            %li.spacer
+              
               %span(data-query="factsheet_number_of_water_heater_solar_thermal" data-precision="-3") &mdash;
               zonnecollectoren
-            %li.right<>
-              %span(data-query="factsheet_demand_of_water_heater_solar_thermal") &mdash;
-              (
-              %span(data-query="factsheet_capacity_of_water_heater_solar_thermal")<> &mdash;
-              )
-              %span.icon.solar-thermal
       .row
         .panel.collective-heat
           %h3 Collectieve Warmte
           .value(data-query="factsheet_demand_of_collective_heat") &mdash;
           %ul
             %li.spacer
-              Vermogen bron
-              %span(data-query="factsheet_capacity_of_collective_heat_sources")
+              %span(data-query="factsheet_installed_capacity_of_collective_heat_sources")
+              opgesteld vermogen
               %br
               %span(data-query="factsheet_demand_of_collective_heat_per_residence" data-precision="-3" data-no-unit)
               woningequivalenten
@@ -147,15 +127,18 @@
             %li
               LT bronnen
               (
-              %span(data-query="factsheet_share_of_local_chps_in_collective_heat_sources")<> &mdash;
+              %span(data-query="factsheet_share_of_lt_in_collective_heat_sources")<> &mdash;
               )
         .panel.heat
           %h3 Individuele Warmte
-          .value(data-query="factsheet_demand_of_individual_heat_total") &mdash;
+          .value(data-query="factsheet_supply_of_individual_heat_total") &mdash;
           %ul
             %li
               Elektrisch verwarmen
               %span(data-query="factsheet_share_all_electric_in_individual_heat") &mdash;
+            %li
+              Anders verwarmen
+              %span(data-query="factsheet_share_other_in_individual_heat") &mdash;
           .solar-arrow
             .tail
             .head

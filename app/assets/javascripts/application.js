@@ -5,6 +5,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.browser
+//= require chosen.jquery.min
 //= require underscore-min
 //= require backbone-min
 //= require modernizr.custom

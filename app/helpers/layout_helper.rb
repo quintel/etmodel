@@ -166,4 +166,10 @@ module LayoutHelper
 
     select_tag 'id', grouped_options_for_select(grouped_options), id: :preset_id
   end
+
+  def flags
+    @flags ||= Dir.chdir(Rails.root.join('app/assets/images')) do
+      Dir.glob("icons/areas/*.png")
+    end
+  end
 end

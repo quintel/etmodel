@@ -24,6 +24,9 @@ body#outside-model
   #new_scenario
     border-bottom: 1px solid #ddd
     padding: 20px
+
+    #submit
+      margin-top: 12px
   #submit button
     border-radius: 5px
     margin: 0
@@ -120,8 +123,11 @@ body#outside-model
         &.title
           color: #777
 
+.select2-container--default .select2-selection--single .select2-selection__rendered
+  line-height: 25px
+
 #startbar, #new_scaled_scenario, #preset_scaled_scenario
-  select
+  select, span.select2-selection
     background: #fff
     +background(linear-gradient(#fff, #eee))
     border: 1px solid #aaa
@@ -138,6 +144,14 @@ body#outside-model
       border-color: #4b8ac2
       box-shadow: 0 0 7px #73abd9
       outline: none
+  span.select2-container
+    margin: 5px 0 5px
+    width: 231px
+  span.select2-selection
+    padding: 0
+    margin: 0
+  .no-search .select2-search
+    display: none
   input.error
     border-color: #c83737
     &:focus
@@ -280,3 +294,11 @@ body#outside-model
 
     #preset_id
       max-width: 402px
+
+#area-select-options .select2-container--default .select2-results > .select2-results__options
+  max-height: 500px
+  min-height: 300px
+  overflow-y: auto
+
+  li.select2-results__option > span > img
+    margin-right: 6px

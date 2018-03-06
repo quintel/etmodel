@@ -33,3 +33,8 @@
     = render 'pages/root_page/load_existing_scenario'
   .clear
 .clear
+
+#area-select-options
+.flags{ style: 'display: none'}
+  - flags.each do |flag|
+    = image_tag flag, class: File.basename(flag, '.png')

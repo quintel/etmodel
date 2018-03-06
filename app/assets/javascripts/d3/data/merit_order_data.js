@@ -1,6 +1,10 @@
 var MeritOrderData = (function () {
     'use strict';
 
+    function capacityOverZero(item) {
+        return item.future_value().capacity <= 0;
+    }
+
     return {
         set: function (data) {
             this.data = data;
@@ -10,7 +14,9 @@ var MeritOrderData = (function () {
         },
 
         operatingCosts: function () {
-            if (this.attributes.gquery_key === 'must_run_merit_order') {
+            if (this.attributes.gquery_key === 'must_run_merit_order' ||
+                capacityOverZero(this)) {
+
                 return 0;
             } else {
                 return this.attributes.operating_costs;
@@ -38,9 +44,7 @@ var MeritOrderData = (function () {
         },
 
         legendData: function () {
-            return _.reject(this.data, function (obj) {
-                return obj.future_value().capacity <= 0;
-            });
+            return _.reject(this.data, capacityOverZero);
         },
 
         maxHeight: function () {

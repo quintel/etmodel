@@ -106,13 +106,13 @@
       .row
         .panel.collective-heat
           %h3 Collectieve Warmte
-          .value(data-query="factsheet_demand_of_collective_heat") &mdash;
+          .value(data-query="factsheet_supply_heat_collective") &mdash;
           %ul
             %li.spacer
               %span(data-query="factsheet_installed_capacity_of_collective_heat_sources")
               opgesteld vermogen
               %br
-              %span(data-query="factsheet_demand_of_collective_heat_per_residence" data-precision="-3" data-no-unit)
+              %span(data-query="factsheet_supply_of_collective_heat_per_residence" data-precision="-3" data-no-unit)
               woningequivalenten
             %li
               Geothermie
@@ -150,7 +150,7 @@
       .row
         .panel.renewable-gas
           %h3 Hernieuwbaar Gas
-          .value(data-query="factsheet_demand_of_gas_total") &mdash;
+          .value(data-query="factsheet_supply_of_gas_total") &mdash;
           %ul.has-icons
             %li
               Aardgas

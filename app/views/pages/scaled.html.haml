@@ -6,14 +6,3 @@
 
     #submit
       = render "pages/root_page/start_button"
-
-  = form_tag load_scenarios_path, id: 'preset_scaled_scenario', method: :post do
-    .row
-      .field
-        %p Select a saved scenario
-        = presets_select
-
-    = render partial: 'scaled_common'
-
-    #submit
-      = render "pages/root_page/start_button"

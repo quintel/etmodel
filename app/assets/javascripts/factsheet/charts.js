@@ -46,7 +46,6 @@
 
       { key: 'factsheet_supply_heat_from_other', color: '#8c131d' },
       { key: 'factsheet_supply_heat_collective', color: '#a41824' },
-      { key: 'factsheet_supply_heat_from_electricity', color: '#bc1a27' },
       { key: 'factsheet_supply_heat_from_biomass', color: '#e73133' },
       { key: 'factsheet_supply_heat_from_solar_thermal', color: '#eb5a3c' },
 

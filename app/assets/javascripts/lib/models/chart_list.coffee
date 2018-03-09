@@ -141,8 +141,6 @@ class @ChartList extends Backbone.Collection
       new_chart.series.add(s)
 
     @add(new_chart)
-
-    App.analytics.chartAdded(data.attributes.key)
     App.call_api() unless options.wait
 
   # Returns the chart held in a holder

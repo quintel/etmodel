@@ -29,5 +29,5 @@
       I18n.defaultLocale = "#{I18n.default_locale}";
       I18n.locale = "#{I18n.locale}";
     = yield :scripts
-    - if Rails.env.production? || Rails.env.staging?
+    - if Rails.env.production?
       = render "layouts/etm/ga" unless APP_CONFIG[:standalone]

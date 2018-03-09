@@ -36,7 +36,7 @@
       {
         key: 'factsheet_energetic_final_demand_oil_and_coal_products',
         color: '#82ca39',
-        icon: '/assets/factsheet/oil.svg'
+        icon: '/assets/factsheet/transport.svg'
       }
     ],
     breakdown: [

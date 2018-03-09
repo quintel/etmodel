@@ -40,9 +40,10 @@
       }
     ],
     breakdown: [
-      { key: 'factsheet_supply_electricity_from_other', color: '#e29028' },
       { key: 'factsheet_supply_electricity_from_wind', color: '#f4a540' },
       { key: 'factsheet_supply_electricity_from_solar', color: '#fbca36' },
+      { key: 'factsheet_supply_electricity_from_other', color: '#e29028' },
+
 
       { key: 'factsheet_supply_heat_from_other', color: '#8c131d' },
       { key: 'factsheet_supply_heat_collective', color: '#a41824' },

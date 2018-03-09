@@ -1,4 +1,4 @@
-/* globals formatQueryResult preferredUnits stackedBarChart d3 transformGqueries drawLegend */
+/* globals formatQueryResult preferredUnits stackedBarChart d3 transformGqueries drawLegend I18n */
 
 //= require d3.v2
 //= require lib/models/metric
@@ -56,6 +56,10 @@ jQuery(function() {
   var queries = ['graph_year'];
 
   var url = window.factsheetSettings.endpoint;
+
+  I18n.translations[I18n.currentLocale()].number = {
+    format: { separator: ',', delimiter: '.' }
+  };
 
   $('#summary .legend tbody').append(
     drawLegend(window.charts.definitions.demand, ['present', 'future'])

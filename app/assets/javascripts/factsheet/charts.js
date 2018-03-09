@@ -40,6 +40,10 @@
       }
     ],
     breakdown: [
+      { key: 'factsheet_supply_electricity_from_other', color: '#e29028' },
+      { key: 'factsheet_supply_electricity_from_wind', color: '#f4a540' },
+      { key: 'factsheet_supply_electricity_from_solar', color: '#fbca36' },
+
       { key: 'factsheet_supply_heat_from_other', color: '#8c131d' },
       { key: 'factsheet_supply_heat_collective', color: '#a41824' },
       { key: 'factsheet_supply_heat_from_electricity', color: '#bc1a27' },
@@ -51,10 +55,6 @@
       { key: 'factsheet_supply_gas_from_fossil', color: '#56aee4' },
 
       { key: 'factsheet_supply_fossil_other', color: '#afafaf' },
-
-      { key: 'factsheet_supply_electricity_from_other', color: '#e29028' },
-      { key: 'factsheet_supply_electricity_from_wind', color: '#f4a540' },
-      { key: 'factsheet_supply_electricity_from_solar', color: '#fbca36' },
 
       { key: 'factsheet_supply_biofuels', color: '#82ca39' }
     ]

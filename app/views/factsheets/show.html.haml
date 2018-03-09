@@ -30,7 +30,7 @@
             %span(data-query="factsheet_total_demand_relative_change" data-as="%") &mdash;
             %br<>
             %span.small(data-query="factsheet_total_demand_absolute_change") &mdash;
-          1. Energievraag (eindgebruik) naar drager
+          1. Energievraag eindgebruik
         .content
           .charts.column
             .chart.present
@@ -39,8 +39,8 @@
             %table
               %thead
                 %th
-                %th.value Heden
-                %th.value Toekomst
+                %th.value 2015
+                %th.value 2050
               %tbody
               %tfoot
                 %tr
@@ -49,10 +49,8 @@
                   %td.value(data-query="factsheet_total_demand" data-period="future") &mdash;
       #carrier-use.panel
         %h2
-          2. Energieaanbod naar drager
-          (
+          2. Energiebronnen 
           %span(data-query="graph_year" data-as="#")<> &mdash;
-          )
         .content
           .chart
           .legend

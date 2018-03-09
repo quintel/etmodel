@@ -19,9 +19,9 @@
         icon: '/assets/factsheet/collective-heat.svg'
       },
       {
-        key: 'factsheet_energetic_final_demand_gas_other',
-        color: '#3b73bf',
-        icon: '/assets/factsheet/gas-other.svg'
+        key: 'factsheet_energetic_final_demand_bio_fuels',
+        color: '#a55513',
+        icon: '/assets/factsheet/wood.svg'
       },
       {
         key: 'factsheet_energetic_final_demand_gas_households_buildings',
@@ -29,9 +29,9 @@
         icon: '/assets/factsheet/gas.svg'
       },
       {
-        key: 'factsheet_energetic_final_demand_bio_fuels',
-        color: '#a55513',
-        icon: '/assets/factsheet/wood.svg'
+        key: 'factsheet_energetic_final_demand_gas_other',
+        color: '#3b73bf',
+        icon: '/assets/factsheet/gas-other.svg'
       },
       {
         key: 'factsheet_energetic_final_demand_oil_and_coal_products',

@@ -71,34 +71,42 @@
           %ul
             %li
               %span(data-query="factsheet_number_of_wind_turbine_inland_coastal") &mdash;
-              windmolens op land
-            %li
-              %span(data-query="factsheet_installed_capacity_of_wind_turbine_inland_coastal" data-as="MW") &mdash;
-              opgesteld vermogen
+              windturbines op land
+              (
+              %span(data-query="factsheet_capacity_of_wind_turbine_inland" data-as="MW")<> &mdash;
+              )
             %li.spacer
               %span(data-query="factsheet_supply_electricity_from_other") &mdash;
               restopgave
+              elektriciteit (
+              %span(data-query="factsheet_number_of_wind_turbine_offshore")> &mdash;
+              &nbsp;windturbines op zee (
+              %span(data-query="factsheet_capacity_of_wind_turbine_offshore")<> &mdash;
+              ) / innovatie)
+
         .panel.solar
           %h3 Zon
           .value(data-query="factsheet_supply_of_solar_total") &mdash;
           %ul
             %li
               %span(data-query="factsheet_number_of_solar_pv" data-precision="-3") &mdash;
-              PV­-panelen op daken
+              PV-panelen op daken
+            %li(data-query="factsheet_supply_electricity_from_solar") &mdash;
             %li
               %span(data-query="factsheet_solar_pv_plants_land_use") &mdash;
-              hectare zonneveld
-            %li
-              %span.icon.solar-pv
+              ha zonneveld
             %li
               %span(data-query="factsheet_installed_capacity_of_solar_pv" data-as="MW") &mdash;
-              opgesteld vermogen
-            %li.right<>
-              %span.icon.solar-thermal
+              vermogen
+              %span.icon.solar-pv
             %li.spacer
-
+            %li
               %span(data-query="factsheet_number_of_water_heater_solar_thermal" data-precision="-3") &mdash;
               zonnecollectoren
+            %li(data-query="factsheet_supply_heat_from_solar_thermal") &mdash;
+            %li
+              %span(data-query="factsheet_installed_capacity_of_solar_thermal") &mdash;
+              %span.icon.solar-thermal
       .row
         .panel.collective-heat
           %h3 Collectieve Warmte

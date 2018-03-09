@@ -113,7 +113,7 @@
     return demandChart(gqueries, {
       drawLabels: false,
       period: 'present',
-      title: 'Heden',
+      title: gqueries.graph_year.present,
       unit: unit
     });
   }
@@ -128,7 +128,7 @@
       },
       period: 'future',
       unit: unit,
-      title: 'Toekomst',
+      title: gqueries.graph_year.future,
       showY: false
     });
   }

@@ -53,7 +53,7 @@ function assignQueryValues(element, values) {
 
 jQuery(function() {
   var request;
-  var queries;
+  var queries = ['graph_year'];
 
   var url = window.factsheetSettings.endpoint;
 

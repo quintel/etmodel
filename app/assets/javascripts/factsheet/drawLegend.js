@@ -24,7 +24,6 @@ function drawLegend(definition, periods) {
         showPeriods.map(function(period) {
           return $('<td class="value" />')
             .attr('data-query', series.key)
-            .attr('data-as', 'TJ')
             .attr('data-no-unit', true)
             .attr('data-period', period)
             .html('&mdash;');

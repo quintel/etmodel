@@ -1,6 +1,14 @@
 #introduction
+  .whats_new
+    .fa.fa-bullhorn
+    %strong= t('updated.title')
+    = t('updated.description')
+    %br
+    = link_to "#{t('grid_investment.more_information')} →", whats_new_path
+
   %h1= t 'intro.introduction'
   %p= t 'intro.root_text'
+
   .movie_tabs
     %ul
       %li#what.active

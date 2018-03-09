@@ -128,6 +128,7 @@ Etm::Application.routes.draw do
   get '/sitemap(.:format)'            => 'pages#sitemap', defaults: {format: :xml}
   get '/known_issues'                 => 'pages#bugs',        as: :bugs
   get '/quality_control'              => 'pages#quality', as: :quality
+  get '/whats-new'                    => 'pages#whats_new', as: :whats_new
   put '/set_locale(/:locale)' => 'pages#set_locale', as: :set_locale
   get '/browser_support' => 'pages#browser_support'
   get '/update_footer'   => 'pages#update_footer'

@@ -1,5 +1,7 @@
 .information_page
-  width: 600px
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+  font-size: 14px
+  width: 720px
   margin: auto
   padding-bottom: 120px
   .left
@@ -8,7 +10,15 @@
     float: right
 
   li
-    margin-left: 20px
+    margin: 8px 0
+
+  section
+    border-bottom: 1px solid #ddd
+    margin-bottom: 2rem
+    padding-bottom: 1rem
+    &:last-child
+      border-bottom: none
+
   h3
     clear: both
     border-bottom: 1px dotted #000000
@@ -34,6 +44,27 @@
       line-height: 2em
     tr.even
       background-color: #F0F0F0
+
+.whats_new
+  border-bottom: 1px solid #ddd
+  margin-left: 31px
+  padding: 0 0 1rem 40px
+  a
+    display: inline-block
+    margin-top: 8px
+    text-decoration: none
+    white-space: nowrap
+    &:hover
+      text-decoration: underline
+  .fa
+    background: #73abd5
+    border-radius: 3px
+    color: #fff
+    float: left
+    font-size: 24px
+    margin: 4px 9px 0 -40px
+    padding: 4px
+    width: 24px
 
 .edit_account
   width: 725px

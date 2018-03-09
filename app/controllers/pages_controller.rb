@@ -40,6 +40,9 @@ class PagesController < ApplicationController
     render layout: false
   end
 
+  def whats_new
+  end
+
 protected
 
   def setup_countries_and_regions

@@ -61,11 +61,11 @@ jQuery(function() {
     format: { separator: ',', delimiter: '.' }
   };
 
-  $('#summary .legend tbody').append(
+  $('#summary .legend .items').append(
     drawLegend(window.charts.definitions.demand, ['present', 'future'])
   );
 
-  $('#carrier-use .legend tbody').append(
+  $('#carrier-use .legend .items').append(
     drawLegend(window.charts.definitions.breakdown)
   );
 

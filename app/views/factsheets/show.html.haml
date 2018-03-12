@@ -36,17 +36,15 @@
             .chart.present
             .chart.future
           .legend.column
-            %table
-              %thead
-                %th
-                %th.value(data-query="graph_year" data-period="present") &mdash;
-                %th.value(data-query="graph_year" data-period="future") &mdash;
-              %tbody
-              %tfoot
-                %tr
-                  %td.key
-                  %td.value(data-query="factsheet_total_demand" data-period="present") &mdash;
-                  %td.value(data-query="factsheet_total_demand" data-period="future") &mdash;
+            .legend-row.header
+              %span.key &nbsp;
+              %span.value(data-query="graph_year" data-period="present") &mdash;
+              %span.value(data-query="graph_year" data-period="future") &mdash;
+            .items
+            .total.legend-row
+              %span.key
+              %span.value(data-query="factsheet_total_demand" data-period="present") &mdash;
+              %span.value(data-query="factsheet_total_demand" data-period="future") &mdash;
       #carrier-use.panel
         %h2
           2. Energiebronnen
@@ -54,12 +52,10 @@
         .content
           .chart
           .legend
-            %table
-              %tbody
-              %tfoot
-                %tr
-                  %td.key Totaal
-                  %td.value(data-query="factsheet_total_supply") &mdash;
+            .items
+            .total
+              %span.key Totaal
+              %span.value(data-query="factsheet_total_supply") &mdash;
     %section.breakdown
       %h2
         3. Opgave per thema

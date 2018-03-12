@@ -10,10 +10,10 @@ function drawLegend(definition, periods) {
   var list = definition.map(function(series) {
     var key = series.key.replace(/_/g, '-');
 
-    return $('<tr/>')
+    return $('<div class="legend-row" />')
       .addClass(key)
       .append(
-        $('<td class="key"/>').append(
+        $('<span class="key"/>').append(
           $('<span class="legend-item" />').css(
             'background-color',
             series.color
@@ -22,7 +22,7 @@ function drawLegend(definition, periods) {
           I18n.t('factsheet.series.' + series.key)
         ),
         showPeriods.map(function(period) {
-          return $('<td class="value" />')
+          return $('<span class="value" />')
             .attr('data-query', series.key)
             .attr('data-no-unit', true)
             .attr('data-period', period)

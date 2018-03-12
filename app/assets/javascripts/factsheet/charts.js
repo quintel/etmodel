@@ -94,7 +94,7 @@
       {
         barPadding: 0.2,
         formatValue: opts.formatValue || valueFormatter(opts.unit),
-        margin: { top: 10, right: 0, bottom: 25, left: 75 },
+        margin: { top: 10, right: 0, bottom: 24, left: 75 },
         max: max,
         series: chartSeriesFromRequest(
           gqueries,
@@ -139,7 +139,7 @@
   function futureDemandBreakdownChart(gqueries, unit) {
     return {
       formatValue: valueFormatter(unit),
-      margin: { top: 10, right: 0, bottom: 25, left: 75 },
+      margin: { top: 10, right: 0, bottom: 24, left: 75 },
       series: chartSeriesFromRequest(gqueries, definitions.breakdown, 'future')
     };
   }

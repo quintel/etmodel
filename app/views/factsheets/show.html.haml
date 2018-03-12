@@ -60,7 +60,7 @@
       %h2
         3. Opgave per thema
         %span(data-query="graph_year" data-as="#")< &mdash;
-      .row
+      .row.larger
         .panel.wind
           %h3 Wind
           .value(data-query="factsheet_supply_from_wind_and_other_electricity") &mdash;
@@ -89,12 +89,12 @@
             %li
               %span(data-query="factsheet_solar_pv_plants_land_use") &mdash;
               ha zonneveld
+              %span.icon.solar-pv
             %li
               %span(data-query="factsheet_supply_from_solar_pv_plants") &mdash;
             %li
               %span(data-query="factsheet_installed_capacity_of_solar_pv" data-as="MW") &mdash;
               vermogen PV panelen
-              %span.icon.solar-pv
             %li.spacer
             %li
               %span(data-query="factsheet_number_of_water_heater_solar_thermal" data-precision="-3") &mdash;
@@ -183,3 +183,9 @@
             %li
               Overig
               %span(data-query="factsheet_demand_of_biomass_other") &mdash;
+
+  %footer
+    Dit factsheet is gegenereerd door het Energietransitiemodel voor het volgende
+    scenario:
+    = link_to(scenario_url(@scenario.id).gsub(%r{^https?://}, ''), scenario_url(@scenario.id))
+

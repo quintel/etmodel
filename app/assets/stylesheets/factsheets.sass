@@ -77,12 +77,20 @@ body#factsheet
       margin-left: 0
       white-space: nowrap
 
+  footer
+    padding-top: 1rem
+    text-align: center
+    font-size: 0.6875rem
+    line-height: 1rem
+    &, a
+      color: $grey-font-color
+
   main
     display: flex
 
     #summary, #carrier-use
       .content
-        min-height: 21rem
+        min-height: 20rem
         width: 100%
 
     .panel
@@ -216,6 +224,8 @@ body#factsheet
         display: flex
         flex: 1
         margin-bottom: 1rem
+        &.larger
+          flex: 1.1
         &:last-child
           border-bottom: none
           margin-bottom: 0
@@ -300,17 +310,17 @@ body#factsheet
             text-align: center
             width: 34px
         .solar-arrow
-          height: 122px
+          height: 116px
           right: 0px
           top: -34px
           .tail
             bottom: 2px
           .quantity
-            top: 128px
+            top: 119px
         .biomass-arrow
           background: asset-url('factsheet/arrow-up.png') center top no-repeat
-          bottom: -208px
-          height: 288px
+          bottom: -164px
+          height: 233px
           right: 0px
           .tail
             top: 2px
@@ -328,7 +338,7 @@ body#factsheet
           max-width: 100%
       .heat
         background-position: right center
-        background-size: 65%
+        background-size: 60%
       .collective-heat
         background-position: right 1em
         background-size: 50%

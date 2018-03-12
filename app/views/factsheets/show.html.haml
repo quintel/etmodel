@@ -67,7 +67,7 @@
       .row
         .panel.wind
           %h3 Wind
-          .value(data-query="electricity_produced_from_wind") &mdash;
+          .value(data-query="factsheet_supply_from_wind_and_other_electricity") &mdash;
           %ul
             %li
               %span(data-query="factsheet_number_of_wind_turbine_inland_coastal") &mdash;
@@ -79,10 +79,8 @@
               %span(data-query="factsheet_supply_electricity_from_other") &mdash;
               restopgave
               elektriciteit (
-              %span(data-query="factsheet_number_of_offshore_trubines_needed")> &mdash;
-              &nbsp;windturbines op zee (
-              %span(data-query="factsheet_capacity_of_wind_turbine_offshore" data-as="MW")<> &mdash;
-              ) / innovatie)
+              %span(data-query="factsheet_number_of_offshore_turbines_needed")> &mdash;
+              &nbsp;windturbines op zee (10 MW) / innovatie)
 
         .panel.solar
           %h3 Zon
@@ -107,7 +105,7 @@
               zonnecollectoren
             %li(data-query="factsheet_supply_heat_from_solar_thermal") &mdash;
             %li
-              %span(data-query="factsheet_installed_capacity_of_solar_thermal") &mdash;
+              %span(data-query="factsheet_installed_capacity_of_solar_thermal" data-as="MW") &mdash;
               %span.icon.solar-thermal
       .row
         .panel.collective-heat
@@ -116,7 +114,7 @@
           %ul
             %li.spacer
               Vermogen bronnen:
-              %span(data-query="factsheet_installed_capacity_of_collective_heat_sources")
+              %span(data-query="factsheet_installed_capacity_of_collective_heat_sources" data-as="MW")
               %br
               %span(data-query="factsheet_supply_of_collective_heat_per_residence" data-precision="-3" data-no-unit)
               woningequivalenten

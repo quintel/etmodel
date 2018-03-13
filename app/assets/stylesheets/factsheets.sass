@@ -1,10 +1,10 @@
 $tiny-font-size: 1rem * (11 / 16)
 $small-font-size: 1rem * (13 / 16)
 
-$text-color: #3a3f42
+$text-color: #575756
 $grey-border-color: #afb8bd
 $grey-font-color: #656f73
-$green-font-color: #33a725
+$green-font-color: #3aaa35
 
 @mixin tiny-font
   font-size: $tiny-font-size
@@ -29,7 +29,7 @@ body#factsheet
     border-bottom: 2px solid white
     display: flex
     margin-bottom: 1rem
-    padding-bottom: 1rem
+    padding-bottom: 0.4rem
 
     #title
       flex: 3
@@ -37,7 +37,7 @@ body#factsheet
       width: 60% // needed to force ellipses if h2 is too long
 
       h1
-        font-size: 2.5rem
+        font-size: 3rem
         font-weight: 300
         margin: 0
 
@@ -58,6 +58,9 @@ body#factsheet
       text-align: right
       .date
         color: $grey-font-color
+        font-size: 1.15rem
+        font-weight: bold
+        line-height: 30px
 
     .detail-list
       @include tiny-font
@@ -76,6 +79,7 @@ body#factsheet
       padding-left: 0.25rem
       margin-left: 0
       white-space: nowrap
+      font-weight: bold
 
   footer
     padding-top: 1rem
@@ -109,8 +113,8 @@ body#factsheet
       .note
         color: $green-font-color
         float: right
-        font-size: 1rem
-        font-weight: normal
+        font-size: 1.15rem
+        font-weight: 600
         text-align: right
         .small
           font-size: 0.75rem
@@ -227,6 +231,7 @@ body#factsheet
         &.larger
           flex: 1.1
         &:last-child
+          flex: 0.7
           border-bottom: none
           margin-bottom: 0
 
@@ -319,8 +324,8 @@ body#factsheet
             top: 119px
         .biomass-arrow
           background: asset-url('factsheet/arrow-up.png') center top no-repeat
-          bottom: -164px
-          height: 233px
+          bottom: -124px
+          height: 200px
           right: 0px
           .tail
             top: 2px
@@ -331,7 +336,7 @@ body#factsheet
       .biomass
         background-image: asset-url('factsheet/biomass.png')
         background-position: 82% top
-        background-size: 38%
+        background-size: 43%
       .renewable-gas
         background-image: none
         h3

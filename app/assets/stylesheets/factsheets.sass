@@ -77,12 +77,20 @@ body#factsheet
       margin-left: 0
       white-space: nowrap
 
+  footer
+    padding-top: 1rem
+    text-align: center
+    font-size: 0.6875rem
+    line-height: 1rem
+    &, a
+      color: $grey-font-color
+
   main
     display: flex
 
     #summary, #carrier-use
       .content
-        min-height: 22rem
+        min-height: 20rem
         width: 100%
 
     .panel
@@ -109,24 +117,26 @@ body#factsheet
 
     .legend
       align-self: flex-end
+      page-break-inside: avoid
       margin-left: 0
+      width: 100%
 
-      table
-        border-collapse: collapse
-        margin-bottom: 1px
-        width: 100%
-        td, th
-          padding: 0.125rem 0
-          text-overflow: ellipsis
-          white-space: nowrap
-        th
-          color: $grey-font-color
-          font-weight: normal
-        .value
-          text-align: right
-        tfoot td
-          border-top: 1px solid $grey-border-color
-          font-weight: bold
+      .header
+        color: $grey-font-color
+      .legend-row
+        overflow: hidden
+      .key, .value
+        padding: 0.125rem 0
+        text-overflow: ellipsis
+        float: left
+        width: 70%
+        white-space: nowrap
+      .value
+        text-align: right
+        width: 30%
+      .total
+        border-top: 1px solid $grey-border-color
+        font-weight: bold
       .legend-item
         display: inline-block
         height: 0.75rem
@@ -163,18 +173,20 @@ body#factsheet
           flex: 1
     #summary
       .legend
-        tbody
-          td, th
+        .items
+          .key, .value
             padding-top: 0.4rem
             padding-bottom: 0.4rem
-        td.value:last-child
-          padding-left: 0.5rem
-        td.key
+        .value
+          width: 17%
+        .key
           background-repeat: no-repeat
           background-position: center right
           background-size: 1.5rem
+          box-sizing: border-box
           padding-right: 3rem
           text-align: right
+          width: 66%
           .legend-item
             display: none
         .factsheet-energetic-final-demand-gas-households-buildings .key
@@ -182,7 +194,7 @@ body#factsheet
         .factsheet-energetic-final-demand-gas-other .key
           background-image: asset-url('factsheet/gas-other.svg')
         .factsheet-energetic-final-demand-oil-and-coal-products .key
-          background-image: asset-url('factsheet/oil.svg')
+          background-image: asset-url('factsheet/transport.svg')
         .factsheet-energetic-final-demand-bio-fuels .key
           background-image: asset-url('factsheet/wood.svg')
         .factsheet-energetic-final-demand-collective-heat .key
@@ -212,6 +224,8 @@ body#factsheet
         display: flex
         flex: 1
         margin-bottom: 1rem
+        &.larger
+          flex: 1.1
         &:last-child
           border-bottom: none
           margin-bottom: 0
@@ -244,6 +258,8 @@ body#factsheet
           right: 1rem
           li.spacer
             margin: 0.5rem 0
+            &:last-child
+              margin-bottom: 0
           &.has-icons li
             margin-top: 0.75rem
 
@@ -294,17 +310,17 @@ body#factsheet
             text-align: center
             width: 34px
         .solar-arrow
-          height: 122px
+          height: 116px
           right: 0px
           top: -34px
           .tail
             bottom: 2px
           .quantity
-            top: 128px
+            top: 119px
         .biomass-arrow
           background: asset-url('factsheet/arrow-up.png') center top no-repeat
-          bottom: -208px
-          height: 288px
+          bottom: -164px
+          height: 233px
           right: 0px
           .tail
             top: 2px
@@ -322,7 +338,7 @@ body#factsheet
           max-width: 100%
       .heat
         background-position: right center
-        background-size: 65%
+        background-size: 60%
       .collective-heat
         background-position: right 1em
         background-size: 50%

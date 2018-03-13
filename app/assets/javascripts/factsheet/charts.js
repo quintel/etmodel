@@ -19,9 +19,9 @@
         icon: '/assets/factsheet/collective-heat.svg'
       },
       {
-        key: 'factsheet_energetic_final_demand_gas_other',
-        color: '#3b73bf',
-        icon: '/assets/factsheet/gas-other.svg'
+        key: 'factsheet_energetic_final_demand_bio_fuels',
+        color: '#a55513',
+        icon: '/assets/factsheet/wood.svg'
       },
       {
         key: 'factsheet_energetic_final_demand_gas_households_buildings',
@@ -29,20 +29,24 @@
         icon: '/assets/factsheet/gas.svg'
       },
       {
-        key: 'factsheet_energetic_final_demand_bio_fuels',
-        color: '#a55513',
-        icon: '/assets/factsheet/wood.svg'
+        key: 'factsheet_energetic_final_demand_gas_other',
+        color: '#3b73bf',
+        icon: '/assets/factsheet/gas-other.svg'
       },
       {
         key: 'factsheet_energetic_final_demand_oil_and_coal_products',
         color: '#82ca39',
-        icon: '/assets/factsheet/oil.svg'
+        icon: '/assets/factsheet/transport.svg'
       }
     ],
     breakdown: [
+      { key: 'factsheet_supply_electricity_from_wind', color: '#f4a540' },
+      { key: 'factsheet_supply_electricity_from_solar', color: '#fbca36' },
+      { key: 'factsheet_supply_electricity_from_other', color: '#e29028' },
+
+
       { key: 'factsheet_supply_heat_from_other', color: '#8c131d' },
       { key: 'factsheet_supply_heat_collective', color: '#a41824' },
-      { key: 'factsheet_supply_heat_from_electricity', color: '#bc1a27' },
       { key: 'factsheet_supply_heat_from_biomass', color: '#e73133' },
       { key: 'factsheet_supply_heat_from_solar_thermal', color: '#eb5a3c' },
 
@@ -51,10 +55,6 @@
       { key: 'factsheet_supply_gas_from_fossil', color: '#56aee4' },
 
       { key: 'factsheet_supply_fossil_other', color: '#afafaf' },
-
-      { key: 'factsheet_supply_electricity_from_other', color: '#e29028' },
-      { key: 'factsheet_supply_electricity_from_wind', color: '#f4a540' },
-      { key: 'factsheet_supply_electricity_from_solar', color: '#fbca36' },
 
       { key: 'factsheet_supply_biofuels', color: '#82ca39' }
     ]
@@ -94,7 +94,7 @@
       {
         barPadding: 0.2,
         formatValue: opts.formatValue || valueFormatter(opts.unit),
-        margin: { top: 10, right: 0, bottom: 25, left: 75 },
+        margin: { top: 10, right: 0, bottom: 24, left: 75 },
         max: max,
         series: chartSeriesFromRequest(
           gqueries,
@@ -113,7 +113,7 @@
     return demandChart(gqueries, {
       drawLabels: false,
       period: 'present',
-      title: 'Heden',
+      title: gqueries.graph_year.present,
       unit: unit
     });
   }
@@ -128,7 +128,7 @@
       },
       period: 'future',
       unit: unit,
-      title: 'Toekomst',
+      title: gqueries.graph_year.future,
       showY: false
     });
   }
@@ -139,7 +139,7 @@
   function futureDemandBreakdownChart(gqueries, unit) {
     return {
       formatValue: valueFormatter(unit),
-      margin: { top: 10, right: 0, bottom: 25, left: 75 },
+      margin: { top: 10, right: 0, bottom: 24, left: 75 },
       series: chartSeriesFromRequest(gqueries, definitions.breakdown, 'future')
     };
   }

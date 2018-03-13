@@ -1,4 +1,4 @@
-/* globals formatQueryResult preferredUnits stackedBarChart d3 transformGqueries drawLegend */
+/* globals formatQueryResult preferredUnits stackedBarChart d3 transformGqueries drawLegend I18n */
 
 //= require d3.v2
 //= require lib/models/metric
@@ -53,15 +53,19 @@ function assignQueryValues(element, values) {
 
 jQuery(function() {
   var request;
-  var queries;
+  var queries = ['graph_year'];
 
   var url = window.factsheetSettings.endpoint;
 
-  $('#summary .legend tbody').append(
+  I18n.translations[I18n.currentLocale()].number = {
+    format: { separator: ',', delimiter: '.' }
+  };
+
+  $('#summary .legend .items').append(
     drawLegend(window.charts.definitions.demand, ['present', 'future'])
   );
 
-  $('#carrier-use .legend tbody').append(
+  $('#carrier-use .legend .items').append(
     drawLegend(window.charts.definitions.breakdown)
   );
 

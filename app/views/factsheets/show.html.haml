@@ -11,16 +11,16 @@
         %strong= t(@scenario.area_code)
     %dl.detail-list
       %dt Inwoners
-      %dd(data-query="households_number_of_inhabitants" data-period="present") &mdash;
+      %dd(data-query="households_number_of_inhabitants" data-period="present" data-precision="-3") &mdash;
       %dt Woningen
-      %dd(data-query="households_number_of_residences" data-period="present") &mdash;
+      %dd(data-query="households_number_of_residences" data-period="present" data-precision="-3") &mdash;
       %dt Energiegebruik gebouwde omgeving
       %dd(data-query="factsheet_share_households_buildings_in_total_demand" data-period="present") &mdash;
     .logos
       = image_tag('factsheet/over-morgen.png', style: 'width: 6rem')
       %br<>
       %span.date
-        = l(Date.today, format: :long, locale: :nl)
+        = Date.today.strftime("%-d-%-m-%Y")
   %main
     %section.main
       #summary.panel
@@ -30,87 +30,87 @@
             %span(data-query="factsheet_total_demand_relative_change" data-as="%") &mdash;
             %br<>
             %span.small(data-query="factsheet_total_demand_absolute_change") &mdash;
-          1. Energievraag (eindgebruik) naar drager
+          1. Energievraag eindgebruik
         .content
           .charts.column
             .chart.present
             .chart.future
           .legend.column
-            %table
-              %thead
-                %th
-                %th.value Heden
-                %th.value Toekomst
-              %tbody
-              %tfoot
-                %tr
-                  %td.key
-                  %td.value(data-query="factsheet_total_demand" data-period="present") &mdash;
-                  %td.value(data-query="factsheet_total_demand" data-period="future") &mdash;
+            .legend-row.header
+              %span.key &nbsp;
+              %span.value(data-query="graph_year" data-period="present") &mdash;
+              %span.value(data-query="graph_year" data-period="future") &mdash;
+            .items
+            .total.legend-row
+              %span.key
+              %span.value(data-query="factsheet_total_demand" data-period="present") &mdash;
+              %span.value(data-query="factsheet_total_demand" data-period="future") &mdash;
       #carrier-use.panel
         %h2
-          2. Energieaanbod naar drager
-          (
-          %span(data-query="graph_year" data-as="#")<> &mdash;
-          )
+          2. Energiebronnen
+          %span(data-query="graph_year" data-as="#")< &mdash;
         .content
           .chart
           .legend
-            %table
-              %tbody
-              %tfoot
-                %tr
-                  %td.key Totaal
-                  %td.value(data-query="factsheet_total_supply") &mdash;
+            .items
+            .total
+              %span.key Totaal
+              %span.value(data-query="factsheet_total_supply") &mdash;
     %section.breakdown
       %h2
-        3. Energieaanbod
-        (
-        %span(data-query="graph_year" data-as="#")<> &mdash;
-        )
-      .row
+        3. Opgave per thema
+        %span(data-query="graph_year" data-as="#")< &mdash;
+      .row.larger
         .panel.wind
           %h3 Wind
-          .value(data-query="electricity_produced_from_wind") &mdash;
+          .value(data-query="factsheet_supply_from_wind_and_other_electricity") &mdash;
           %ul
             %li
               %span(data-query="factsheet_number_of_wind_turbine_inland_coastal") &mdash;
-              windmolens op land
-            %li
-              %span(data-query="factsheet_installed_capacity_of_wind_turbine_inland_coastal" data-as="MW") &mdash;
-              opgesteld vermogen
+              windturbines op land
+              (
+              %span(data-query="factsheet_capacity_of_wind_turbine_inland" data-as="MW")<> &mdash;
+              )
             %li.spacer
               %span(data-query="factsheet_supply_electricity_from_other") &mdash;
               restopgave
+              elektriciteit (
+              %span(data-query="factsheet_number_of_offshore_turbines_needed")> &mdash;
+              &nbsp;windturbines op zee (10 MW) / innovatie)
+
         .panel.solar
           %h3 Zon
           .value(data-query="factsheet_supply_of_solar_total") &mdash;
           %ul
             %li
               %span(data-query="factsheet_number_of_solar_pv" data-precision="-3") &mdash;
-              PV­-panelen op daken
+              PV-panelen op daken
+            %li(data-query="factsheet_supply_electricity_from_solar") &mdash;
             %li
               %span(data-query="factsheet_solar_pv_plants_land_use") &mdash;
-              hectare zonneveld
-            %li
+              ha zonneveld
               %span.icon.solar-pv
             %li
+              %span(data-query="factsheet_supply_from_solar_pv_plants") &mdash;
+            %li
               %span(data-query="factsheet_installed_capacity_of_solar_pv" data-as="MW") &mdash;
-              opgesteld vermogen
-            %li.right<>
-              %span.icon.solar-thermal
+              vermogen PV panelen
             %li.spacer
-              
+            %li
               %span(data-query="factsheet_number_of_water_heater_solar_thermal" data-precision="-3") &mdash;
               zonnecollectoren
+            %li(data-query="factsheet_supply_heat_from_solar_thermal") &mdash;
+            %li
+              %span(data-query="factsheet_installed_capacity_of_solar_thermal" data-as="MW") &mdash;
+              %span.icon.solar-thermal
       .row
         .panel.collective-heat
           %h3 Collectieve Warmte
           .value(data-query="factsheet_supply_heat_collective") &mdash;
           %ul
             %li.spacer
-              %span(data-query="factsheet_installed_capacity_of_collective_heat_sources")
-              opgesteld vermogen
+              Vermogen bronnen:
+              %span(data-query="factsheet_installed_capacity_of_collective_heat_sources" data-as="MW")
               %br
               %span(data-query="factsheet_supply_of_collective_heat_per_residence" data-precision="-3" data-no-unit)
               woningequivalenten
@@ -134,8 +134,8 @@
           .value(data-query="factsheet_supply_of_individual_heat_total") &mdash;
           %ul
             %li
-              Elektrisch verwarmen
-              %span(data-query="factsheet_share_all_electric_in_individual_heat") &mdash;
+              Verwarmen met warmtepomp 
+              %span(data-query="factsheet_share_heat_pumps_in_individual_heat") &mdash;
             %li
               Anders verwarmen
               %span(data-query="factsheet_share_other_in_individual_heat") &mdash;
@@ -149,7 +149,7 @@
             .tail
       .row
         .panel.renewable-gas
-          %h3 Hernieuwbaar Gas
+          %h3 (Hernieuwbaar) Gas
           .value(data-query="factsheet_supply_of_gas_total") &mdash;
           %ul.has-icons
             %li
@@ -183,3 +183,9 @@
             %li
               Overig
               %span(data-query="factsheet_demand_of_biomass_other") &mdash;
+
+  %footer
+    Dit factsheet is gegenereerd door het Energietransitiemodel voor het volgende
+    scenario:
+    = link_to(scenario_url(@scenario.id).gsub(%r{^https?://}, ''), scenario_url(@scenario.id))
+

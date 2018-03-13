@@ -5,7 +5,7 @@
     demand: [
       {
         key: 'factsheet_energetic_final_demand_electricity',
-        color: '#fbca36',
+        color: '#ffce05',
         icon: '/assets/factsheet/electricity.svg'
       },
       {
@@ -15,7 +15,7 @@
       },
       {
         key: 'factsheet_energetic_final_demand_collective_heat',
-        color: '#eb3138',
+        color: '#e7332a',
         icon: '/assets/factsheet/collective-heat.svg'
       },
       {
@@ -25,7 +25,7 @@
       },
       {
         key: 'factsheet_energetic_final_demand_gas_households_buildings',
-        color: '#56aee4',
+        color: '#36a9e1',
         icon: '/assets/factsheet/gas.svg'
       },
       {
@@ -35,28 +35,23 @@
       },
       {
         key: 'factsheet_energetic_final_demand_oil_and_coal_products',
-        color: '#82ca39',
+        color: '#95c11f',
         icon: '/assets/factsheet/transport.svg'
       }
     ],
     breakdown: [
-      { key: 'factsheet_supply_electricity_from_wind', color: '#f4a540' },
-      { key: 'factsheet_supply_electricity_from_solar', color: '#fbca36' },
-      { key: 'factsheet_supply_electricity_from_other', color: '#e29028' },
-
-
-      { key: 'factsheet_supply_heat_from_other', color: '#8c131d' },
-      { key: 'factsheet_supply_heat_collective', color: '#a41824' },
-      { key: 'factsheet_supply_heat_from_biomass', color: '#e73133' },
-      { key: 'factsheet_supply_heat_from_solar_thermal', color: '#eb5a3c' },
-
-      { key: 'factsheet_supply_gas_from_synthetic_gas', color: '#2c3480' },
-      { key: 'factsheet_supply_gas_from_biogas', color: '#2874b4' },
-      { key: 'factsheet_supply_gas_from_fossil', color: '#56aee4' },
-
-      { key: 'factsheet_supply_fossil_other', color: '#afafaf' },
-
-      { key: 'factsheet_supply_biofuels', color: '#82ca39' }
+      { key: 'factsheet_supply_electricity_from_wind',   color: '#f39200' },
+      { key: 'factsheet_supply_electricity_from_solar',  color: '#f9b233' },
+      { key: 'factsheet_supply_electricity_from_other',  color: '#ffce05' },
+      { key: 'factsheet_supply_heat_from_other',         color: '#861612' },
+      { key: 'factsheet_supply_heat_collective',         color: '#a61612' },
+      { key: 'factsheet_supply_heat_from_biomass',       color: '#e6332a' },
+      { key: 'factsheet_supply_heat_from_solar_thermal', color: '#ec6839' },
+      { key: 'factsheet_supply_gas_from_synthetic_gas',  color: '#2d2e83' },
+      { key: 'factsheet_supply_gas_from_biogas',         color: '#1d71b8' },
+      { key: 'factsheet_supply_gas_from_fossil',         color: '#36a9e1' },
+      { key: 'factsheet_supply_fossil_other',            color: '#878787' },
+      { key: 'factsheet_supply_biofuels',                color: '#82ca39' }
     ]
   };
 

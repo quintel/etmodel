@@ -134,8 +134,8 @@
           .value(data-query="factsheet_supply_of_individual_heat_total") &mdash;
           %ul
             %li
-              Verwarmen met warmtepomp 
-              %span(data-query="factsheet_share_heat_pumps_in_individual_heat") &mdash;
+              Elektrisch verwarmen
+              %span(data-query="factsheet_share_electricity_in_individual_heat") &mdash;
             %li
               Anders verwarmen
               %span(data-query="factsheet_share_other_in_individual_heat") &mdash;
@@ -185,7 +185,6 @@
               %span(data-query="factsheet_demand_of_biomass_other") &mdash;
 
   %footer
-    Dit factsheet is gegenereerd door het Energietransitiemodel voor het volgende
+    Deze factsheet is gegenereerd door het Energietransitiemodel voor het volgende
     scenario:
     = link_to(scenario_url(@scenario.id).gsub(%r{^https?://}, ''), scenario_url(@scenario.id))
-

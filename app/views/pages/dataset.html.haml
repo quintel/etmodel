@@ -1,17 +1,60 @@
-.page
-  %h1= I18n.t(@area.area)
-  %ul.dataset-info
-    %li
-      = I18n.t("dataset.present_year")
-      %span= @area.analysis_year
+- content_for(:head) do
+  = javascript_include_tag 'establishment_shot'
+  = stylesheet_link_tag 'establishment_shot_print', media: 'print'
 
-    - if @area.last_updated_at
-      %li
-        = I18n.t("dataset.last_updated")
-        %span
-          = time_ago_in_words(DateTime.parse(@area.last_updated_at))
-          = I18n.t("datetime.distance_in_words.ago")
+- content_for :content do
+  .information_page.wider
+    %ul.options
+      %li.print
+        %a(href="javascript:window.print()")
+          = image_tag 'reports/print.svg'
+          %span= t('report.print')
 
-  .clearfix
+    .page#establishment_shot{ data: { area: @area.area, host: APP_CONFIG[:api_url] } }
+      %h1
+        = I18n.t(@area.area)
+        %span.loading
+          = image_tag('layout/ajax-loader-small.gif')
+      %ul.dataset-info
+        %li
+          = I18n.t("dataset.number_of_inhabitants")
+          %span= @area.number_of_inhabitants.to_i
 
-  = link_to I18n.t("dataset.start_scenario"), root_path(country: @area.area), class: "button primary"
+        %li
+          = I18n.t("dataset.total_energy_demand")
+          %span{ data: { query: 'co2_sheet_total_final_energy_demand', unit: 'J' } }
+
+        %li
+          = I18n.t("dataset.renewability")
+          %span{ data: { query: 'co2_sheet_renewability_percentage', unit: '%' } }
+
+        %li
+          = I18n.t("dataset.present_year")
+          %span= @area.analysis_year
+
+      .clearfix
+
+      .introduction
+
+      .overview
+        .column
+          .chart{ data: { chart: 'bar_chart' } }
+
+        .column.last
+          .column-inner
+            .chart.buildings{ data: { chart: 'bar_chart_buildings' } }
+            .chart.transport{ data: { chart: 'bar_chart_transport' } }
+          .column-inner
+            .chart.industry{ data: { chart: 'bar_chart_industry' } }
+            .chart.agriculture{ data: { chart: 'bar_chart_agriculture' } }
+
+        .clearfix
+
+      .footer
+        Created by the
+        = link_to 'energytransitionmodel.com', '/'
+
+    .navigation
+      = link_to I18n.t("dataset.start_scenario"), root_path(country: @area.area), class: "button primary"
+      %span.or or
+      = link_to "Back", root_path, class: "button"

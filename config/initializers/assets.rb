@@ -12,6 +12,8 @@ Rails.application.config.assets.precompile += %w(
   admin.css
   backcasting.js
   compare.js
+  establishment_shot.js
+  establishment_shot_print.css
   etm.js
   factsheet.js
   form_only.css

@@ -252,6 +252,7 @@ en:
     energy_power_supercritical_coal: 'Coal conventional'
     energy_power_supercritical_waste_mix: 'Waste incinerator'
     energy_power_turbine_network_gas: 'Gas turbine'
+    energy_power_turbine_turbine: 'Hydrogen turbine'
     energy_power_ultra_supercritical_ccs_coal: 'Pulverized coal CCS'
     energy_power_ultra_supercritical_coal: 'Pulverized coal'
     energy_power_ultra_supercritical_cofiring_coal: 'Pulverized coal with co-firing'
@@ -273,6 +274,11 @@ en:
     energy_hydrogen_steam_methane_reformer_for_mekko: "SMR"
     energy_import_hydrogen_for_mekko: "Import"
     energy_power_turbine_hydrogen_for_mekko: "Electricity production"
+    industry_final_demand_hydrogen_non_energetic_for_mekko: "Fertilizer production"
+    industry_final_demand_hydrogen_for_mekko: "Heat production industry"
+    agriculture_final_demand_hydrogen_for_mekko: "Heat production agriculture"
+    buildings_collective_burner_hydrogen_for_mekko: "Heat production buildings"
+    households_collective_burner_hydrogen_for_mekko: "Heat production households"
     environment: "Environment"
     excess_electricity: "Excess electricity"
     final_demand_greengas: "Final demand green gas"
@@ -378,9 +384,11 @@ en:
     hydro_mountain: "Hydro mountain"
     hydro_river: "Hydro river"
     hydrogen: "Hydrogen"
+    hydrogen_non_energetic: "Non-energetic hydrogen"
     hydrogen_cars: "Hydrogen cars"
     hydrogen_busses: "Hydrogen busses"
     hydrogen_trucks: "Hydrogen trucks"
+    hydrogen_turbine: "Hydrogen turbine"
     import: "Import"
     imported: "Imported"
     imported_electricity: "Imported Electricity"

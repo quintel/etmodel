@@ -74,6 +74,8 @@ body#outside-model
       &.title:hover
         background: none
         cursor: default
+  select[name="other_year"]
+    min-width: 63px
 
   #continue_current_scenario a
     display: block
@@ -144,6 +146,14 @@ body#outside-model
       border-color: #4b8ac2
       box-shadow: 0 0 7px #73abd9
       outline: none
+  .select2-container--below.select2-container--open
+    .select2-selection
+      border-bottom-left-radius: 0
+      border-bottom-right-radius: 0
+  .select2-container--above.select2-container--open
+    .select2-selection
+      border-top-left-radius: 0
+      border-top-right-radius: 0
   span.select2-container
     margin: 5px 0 5px
     width: 231px

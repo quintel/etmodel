@@ -40,18 +40,19 @@
       }
     ],
     breakdown: [
-      { key: 'factsheet_supply_electricity_from_wind',   color: '#f39200' },
-      { key: 'factsheet_supply_electricity_from_solar',  color: '#f9b233' },
-      { key: 'factsheet_supply_electricity_from_other',  color: '#ffce05' },
-      { key: 'factsheet_supply_heat_from_other',         color: '#861612' },
-      { key: 'factsheet_supply_heat_collective',         color: '#a61612' },
-      { key: 'factsheet_supply_heat_from_biomass',       color: '#e6332a' },
-      { key: 'factsheet_supply_heat_from_solar_thermal', color: '#ec6839' },
-      { key: 'factsheet_supply_gas_from_synthetic_gas',  color: '#2d2e83' },
-      { key: 'factsheet_supply_gas_from_biogas',         color: '#1d71b8' },
-      { key: 'factsheet_supply_gas_from_fossil',         color: '#36a9e1' },
-      { key: 'factsheet_supply_fossil_other',            color: '#878787' },
-      { key: 'factsheet_supply_biofuels',                color: '#82ca39' }
+      { key: 'factsheet_supply_electricity_from_wind', color: '#f39200' },
+      { key: 'factsheet_supply_electricity_from_solar', color: '#f9b233' },
+      { key: 'factsheet_supply_electricity_from_other', color: '#ffce05' },
+      { key: 'factsheet_supply_heat_from_other', color: '#861612' },
+      { key: 'factsheet_supply_heat_collective', color: '#a61612' },
+      { key: 'factsheet_supply_heat_from_electricity', color: '#e6332a' },
+      { key: 'factsheet_supply_heat_from_biomass', color: '#ec6839' },
+      { key: 'factsheet_supply_heat_from_solar_thermal', color: '#fd9069' },
+      { key: 'factsheet_supply_gas_from_synthetic_gas', color: '#2d2e83' },
+      { key: 'factsheet_supply_gas_from_biogas', color: '#1d71b8' },
+      { key: 'factsheet_supply_gas_from_fossil', color: '#36a9e1' },
+      { key: 'factsheet_supply_fossil_other', color: '#878787' },
+      { key: 'factsheet_supply_biofuels', color: '#82ca39' }
     ]
   };
 

@@ -8,6 +8,7 @@
 //= require underscore-min
 //= require backbone-min
 //= require modernizr.custom
+//= require select2.min
 //
 //= require_tree ./lib/util
 //= require flowplayer-3.2.6.min

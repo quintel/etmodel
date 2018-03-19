@@ -22,15 +22,6 @@ class @CommonInterface
     $(".movie_tabs li").removeClass 'active'
     $(".movie_tabs li##{page}").addClass 'active'
 
-  # Checks the select tag to show custom year field select when
-  # other is clicked.
-  check_year_radio_buttons: ->
-    elements = $('#end_year option:selected')
-    if elements.val() == 'other'
-      $('#other_year').show()
-    else
-      $('#other_year').hide()
-
   # footer logos rotation
   #
   call_the_cyclists: ->

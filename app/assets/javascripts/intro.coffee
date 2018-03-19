@@ -29,15 +29,35 @@ $ ->
     existingScenario.addClass('active')
     $("#new_scenario").hide().removeClass('active')
 
+  areaTemplate = (state) ->
+    if !state.id
+      return state.text
+
+    root  = $("<span/>")
+    flag  = $(".flags img.#{ state.id }").clone()
+    inner = $("<span/>").text(state.text)
+
+    if flag.length > 0
+      root.append(flag)
+
+    root.append(inner).attr('id', state.id)
+
   areaSelect = $("#new_scenario select[name=area_code]")
 
+  # "Standard" years.
+  sYearSelect = $("#new_scenario select[name=end_year]")
+
+  # Custom years.
+  cYearSelect = $("#new_scenario select[name=other_year]")
+
+  areaSelect.select2(
+    width: '231px',
+    templateResult: areaTemplate,
+    dropdownParent: $('#area-select-options')
+  )
+  sYearSelect.select2(minimumResultsForSearch: -1)
+
   areaOnChange = ->
-    # "Standard" years.
-    sYearSelect = $("#new_scenario select[name=end_year]")
-
-    # Custom years.
-    cYearSelect = $("#new_scenario select[name=other_year]")
-
     earliest = areaSelect.find(':selected').data('earliest')
     standard = sYearSelect.find('option').map (i, o) -> parseInt(o.value, 10)
     latest   = _.max(standard)
@@ -60,6 +80,19 @@ $ ->
       .text(selectedOption.text())
 
   areaSelect.change(areaOnChange).change()
+
+  # Checks the select tag to show custom year field select when
+  # other is clicked.
+  checkYearRadioButtons = ->
+    elements = $('#end_year option:selected')
+
+    if elements.val() == 'other'
+      cYearSelect.select2(minimumResultsForSearch: -1).show()
+    else
+      if cYearSelect.hasClass('select2-hidden-accessible')
+        cYearSelect.select2('destroy').hide()
+
+  sYearSelect.change(checkYearRadioButtons).change()
 
   $("#new_scaled_scenario").submit ->
     variableEl = $("#new_scaled_scenario [name=scaling_value]")

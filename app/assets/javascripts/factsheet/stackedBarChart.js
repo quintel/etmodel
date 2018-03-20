@@ -226,6 +226,16 @@
       })
       .style('fill', function(d) {
         return d.color;
+      })
+      .on('mouseover', function (d) {
+        if (settings.mouseover) {
+          settings.mouseover(d);
+        }
+      })
+      .on('mouseout', function (d) {
+        if (settings.mouseout) {
+          settings.mouseout(d);
+        }
       });
 
     // Append axis last so that they are displayed above the series.

@@ -31,18 +31,21 @@ EstablishmentShot.BarChart = (function () {
 
     BarChart.prototype = {
         render: function () {
-            var info = EstablishmentShot.Charts.charts[this.scope.data('chart')],
+            var chart = this.scope.data('chart'),
+                info = EstablishmentShot.Charts.charts[chart],
                 unit = this.data[0].unit;
 
             window.stackedBarChart(
                 this.scope[0],
                 {
-                    width:  info.width,
-                    height: info.height,
-                    series: this.data,
-                    title:  I18n.t('establishment_shot.charts.' + this.scope.data('chart')),
-                    margin: info.margin,
-                    max:    calculateMax(this.data),
+                    width:     info.width,
+                    height:    info.height,
+                    series:    this.data,
+                    title:     I18n.t('establishment_shot.charts.' + this.scope.data('chart')),
+                    margin:    info.margin,
+                    max:       calculateMax(this.data),
+                    mouseover: info.mouseover,
+                    mouseout:  info.mouseout,
                     formatValue: function (d) {
                         return d + ' ' + unit;
                     }

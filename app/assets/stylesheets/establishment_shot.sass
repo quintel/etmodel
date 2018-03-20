@@ -41,11 +41,15 @@ body
       stroke: #000
       shape-rendering: crispEdges
 
+    g.series:hover
+      cursor: pointer
+
     .axis--x path
       display: none
 
     .overview
       display: none
+      margin-top: 20px
 
       .column, .column > .column-inner
         display: inline-block
@@ -53,12 +57,10 @@ body
       .column
         vertical-align: top
         clear: none
-        padding-bottom: 15px
 
       .column:first-child
         width: 33%
-        > .chart
-          border-right: 1px dashed $border-color
+        border-right: 1px dashed $border-color
 
       .column.last
         width: 66%
@@ -70,6 +72,7 @@ body
             border-right: 1px dashed $border-color
 
           .chart:last-child
+            margin-top: 18px
             padding-top: 18px
             border-top: 1px dashed $border-color
 
@@ -78,8 +81,6 @@ body
       max-width: 110px
 
     .chart
-      margin-top: 20px
-
       > .legend
         float: right
         margin-right: 20px

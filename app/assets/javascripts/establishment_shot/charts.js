@@ -19,12 +19,12 @@ EstablishmentShot.Charts = (function () {
                 '#888888',
                 '#80D4FF',
                 '#3C9AC9',
-                '#B09300',
+                '#B0.200',
                 '#E6C337',
                 '#ffcf28'
             ],
             [
-                '#38FC2D',
+                '#38DC2D',
                 '#26b01f'
             ],
             [
@@ -46,6 +46,17 @@ EstablishmentShot.Charts = (function () {
                     right: 0,
                     bottom: 25,
                     left: 50
+                },
+                mouseover: function (d) {
+                    $(this).find(".legend ul li")
+                        .stop().animate({ 'opacity': 0.2 }, 500);
+
+                    $(this).find(".legend ul li." + d.key)
+                        .stop().animate({'opacity': 1.0 }, 500);
+                },
+                mouseout: function (d) {
+                    $(this).find(".legend ul li")
+                        .stop().animate({'opacity': 1.0 }, 500);
                 }
             }
         };
@@ -71,7 +82,7 @@ EstablishmentShot.Charts = (function () {
                 ],
                 mouseover: function (d) {
                     $(".column.last .chart")
-                        .stop().animate({ 'opacity': 0.3 }, 500);
+                        .stop().animate({ 'opacity': 0.2 }, 500);
 
                     $(".column.last .chart[data-chart='" + d.key + "']")
                         .stop().animate({'opacity': 1.0 }, 500);

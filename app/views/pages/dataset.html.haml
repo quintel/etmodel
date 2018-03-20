@@ -55,6 +55,7 @@
         = link_to 'energytransitionmodel.com', '/'
 
     .navigation
-      = link_to I18n.t("dataset.start_scenario"), root_path(country: @area.area), class: "button primary"
+      = link_to I18n.t("dataset.start_scenario", area: I18n.t(@area.area, default: [@area.area.to_sym, @area.area.humanize])), root_path(country: @area.area), class: "button primary"
+
       %span.or or
       = link_to "Back", root_path, class: "button"

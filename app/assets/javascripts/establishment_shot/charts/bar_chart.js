@@ -1,6 +1,20 @@
 EstablishmentShot.BarChart = (function () {
     'use strict';
 
+    function mouseover() {
+        var chart = $(this).parents('.chart'),
+            item = $(this).attr('class');
+
+        chart.find('g.series').stop().animate({ 'opacity': 0.3 });
+        chart.find('g.series.' + item).stop().animate({ 'opacity': 1.0 });
+    }
+
+    function mouseout() {
+        var chart = $(this).parents('.chart');
+
+        chart.find('g.series').stop().animate({ 'opacity': 1.0 });
+    }
+
     function drawLegend() {
         var key,
             item,
@@ -15,7 +29,15 @@ EstablishmentShot.BarChart = (function () {
                 .addClass('fa fa-square')
                 .css('color', serie.color);
 
-            listItem.append(square, I18n.t('establishment_shot.legend.' + serie.key));
+            if (serie.value > 0) {
+                listItem.on('mouseover', mouseover).on('mouseout', mouseout);
+            }
+
+            listItem
+                .addClass(serie.key)
+                .attr('title', serie.value + ' ' + serie.unit)
+                .append(square, I18n.t('establishment_shot.legend.' + serie.key));
+
             list.prepend(listItem);
         });
 
@@ -44,8 +66,8 @@ EstablishmentShot.BarChart = (function () {
                     title:     I18n.t('establishment_shot.charts.' + this.scope.data('chart')),
                     margin:    info.margin,
                     max:       calculateMax(this.data),
-                    mouseover: info.mouseover,
-                    mouseout:  info.mouseout,
+                    mouseover: info.mouseover.bind(this.scope),
+                    mouseout:  info.mouseout.bind(this.scope),
                     formatValue: function (d) {
                         return d + ' ' + unit;
                     }

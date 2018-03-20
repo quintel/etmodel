@@ -21,7 +21,12 @@ EstablishmentShot.BarChart = (function () {
 
         legend.append(list);
         this.scope.append(legend);
+    }
 
+    function calculateMax(data) {
+        return d3.sum(data.map(function(serie) {
+            return serie.value;
+        })) * 1.05;
     }
 
     BarChart.prototype = {
@@ -37,6 +42,7 @@ EstablishmentShot.BarChart = (function () {
                     series: this.data,
                     title:  I18n.t('establishment_shot.charts.' + this.scope.data('chart')),
                     margin: info.margin,
+                    max:    calculateMax(this.data),
                     formatValue: function (d) {
                         return d + ' ' + unit;
                     }

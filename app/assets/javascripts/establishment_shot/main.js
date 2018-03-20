@@ -15,7 +15,10 @@ EstablishmentShot.Main = (function() {
             if (Quantity.isSupported(query.unit)) {
                 quantity = new Quantity(query.present, query.unit).smartScale();
 
-                result.gqueries[key] = { present: quantity.value, unit: quantity.unit.name }
+                result.gqueries[key] = {
+                    present: quantity.value,
+                    unit: quantity.unit.name
+                }
             } else {
                 result.gqueries[key] = query;
             }
@@ -25,8 +28,8 @@ EstablishmentShot.Main = (function() {
     }
 
     function finished(data) {
-        EstablishmentShot.TextUpdater.update(this, prepare(data));
-        EstablishmentShot.ChartRenderer.render(this, prepare(data));
+        EstablishmentShot.TextUpdater.update(this, data);
+        EstablishmentShot.ChartRenderer.render(this, data);
 
         this.scope.find('.overview').show();
         $("span.loading").remove();

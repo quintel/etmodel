@@ -5,24 +5,32 @@ EstablishmentShot.TextUpdater = (function () {
         factor: '%'
     };
 
+    function quantityFrom(query) {
+        if (Quantity.isSupported(query.unit)) {
+            return new Quantity(query.present, query.unit).smartScale();
+        } else {
+            return { value: query.present, unit: { name: query.unit } };
+        }
+    }
+
     return {
         update: function (scope, data) {
-            var query,
-                value,
-                unit;
+            var value,
+                unit,
+                quantity;
 
-            for (query in data.gqueries) {
-                unit  = data.gqueries[query].unit
-                value = data.gqueries[query].present;
+            $("[data-query]").each(function () {
+                quantity = quantityFrom(data.gqueries[$(this).data('query')]);
+
+                unit  = quantity.unit.name;
+                value = quantity.value;
 
                 if (UNITS[unit]) {
                     unit = UNITS[unit];
                 }
 
-                $("[data-query='" + query + "']").text(
-                    (Math.round(value * 100) / 100) + ' ' + unit
-                );
-            }
+                $(this).text((Math.round(value * 100) / 100) + ' ' + unit);
+            });
         }
     }
 }());

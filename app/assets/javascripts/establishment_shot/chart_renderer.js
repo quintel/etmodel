@@ -1,13 +1,37 @@
 EstablishmentShot.ChartRenderer = (function () {
     'use strict';
 
-    function mergeSeries(series, data) {
-        series.forEach(function(serie) {
-            serie.value = data.gqueries[serie.key].present;
-            serie.unit  = data.gqueries[serie.key].unit;
+    function quantityFrom(query) {
+        return new Quantity(query.present, query.unit);
+    }
+
+    function mergeSeries(info, data) {
+        var i,
+            quantity,
+            unit,
+            maxMultiple = 0,
+            result = [];
+
+        // Determine the max unit
+        info.series.forEach(function (serie) {
+            quantity = quantityFrom(data.gqueries[serie.key]).smartScale();
+
+            if (quantity.unit.power.multiple > maxMultiple) {
+                unit        = quantity.unit;
+                maxMultiple = unit.power.multiple;
+            }
         });
 
-        return series;
+        // Convert the series to the max unit
+        return info.series.map(function (serie, i) {
+            quantity = quantityFrom(data.gqueries[serie.key]).to(unit.name);
+
+            serie.value = quantity.value;
+            serie.unit  = unit.name;
+            serie.color = info.color_gradient[i];
+
+            return serie;
+        });
     }
 
     return {
@@ -20,7 +44,7 @@ EstablishmentShot.ChartRenderer = (function () {
                 chart = $(this).data('chart');
                 info  = EstablishmentShot.Charts.charts[chart];
 
-                new info.type($(this), mergeSeries(info.series, data)).render();
+                new info.type($(this), mergeSeries(info, data)).render();
             });
         }
     }

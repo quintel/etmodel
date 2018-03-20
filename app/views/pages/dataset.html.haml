@@ -12,7 +12,7 @@
 
     .page#establishment_shot{ data: { area: @area.area, host: APP_CONFIG[:api_url] } }
       %h1
-        = I18n.t(@area.area)
+        = I18n.t(@area.area, default: [@area.area.to_sym, @area.area.humanize])
         %span.loading
           = image_tag('layout/ajax-loader-small.gif')
       %ul.dataset-info

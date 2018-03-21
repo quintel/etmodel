@@ -164,6 +164,7 @@
    * provided.
    */
   function stackedBarChart(selector, userSettings) {
+    var labelText;
     var element = d3.select(selector)[0][0];
 
     var settings = Object.assign(
@@ -182,6 +183,8 @@
     var y = yScale(innerHeight, settings.series, settings.max);
 
     var series = seriesToRender(settings.series);
+
+    var roundedMax = Math.round(settings.max * 100) / 100;
 
     var svg = d3
       .select(selector)
@@ -250,6 +253,16 @@
         .append('g')
         .attr('class', 'y axis')
         .call(yAxis(y, settings.formatValue));
+    }
+
+    if (settings.showMaxLabel) {
+      labelText = roundedMax + ' ' + series[0].unit;
+
+      svg.append('text')
+         .style("text-anchor", "middle")
+         .attr('x', x(settings.title) + (x.rangeBand() / 2))
+         .attr('y', y(settings.max) + 5)
+         .text(labelText);
     }
 
     if (settings.drawLabels) {

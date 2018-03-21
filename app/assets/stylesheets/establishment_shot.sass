@@ -11,7 +11,7 @@ body
         box-shadow: 0px 3px 19px 1px #CCC
         margin: 30px 0
         background-color: #FFFFEE
-        padding: 12px 32px 26px
+        padding: 12px 32px
 
       .error
         background-color: #FFEEEE
@@ -41,6 +41,9 @@ body
       stroke: #000
       shape-rendering: crispEdges
 
+    .introduction
+      text-align: justify
+
     g.series:hover
       cursor: pointer
 
@@ -58,31 +61,32 @@ body
         vertical-align: top
         clear: none
 
-      .column:first-child
+      .column
         width: 33%
+
+      .column:first-child, .column.center
         border-right: 1px dashed $border-color
 
-      .column.last
-        width: 66%
+      .column.center
+        width: 29%
 
-        .column-inner
-          width: 49%
+    .column-inner
+      width: 100%
 
-          &:first-child
-            border-right: 1px dashed $border-color
+      .chart:first-child
+        border-bottom: 1px dashed $border-color
+        margin-bottom: 12px
 
-          .chart:last-child
-            margin-top: 18px
-            padding-top: 18px
-            border-top: 1px dashed $border-color
-
-    .column-inner .chart > .legend
-      margin-right: 10px
-      max-width: 110px
+      .chart > .legend
+        margin-right: 0px
+        position: absolute
+        transform: translate(0%,-50%)
+        right: 15px
+        top: 50%
 
     .chart
+      position: relative
       > .legend
-        float: right
         margin-right: 20px
         > ul
           margin-top: 0
@@ -96,6 +100,12 @@ body
 
             i.fa-square
               margin-right: 5px
+
+    .column.center .chart > .legend
+      float: none
+
+      > ul
+        text-align: center
 
     .footer
       padding-top: 7px

@@ -39,7 +39,7 @@ EstablishmentShot.Charts = (function () {
             return {
                 type: EstablishmentShot.BarChart,
                 width: 150,
-                height: 188,
+                height: 190,
                 color_gradient: smallColors[count++],
                 margin: {
                     top: 10,
@@ -64,13 +64,13 @@ EstablishmentShot.Charts = (function () {
     return {
         charts: {
             bar_chart: {
-                width: 150,
-                height: 419,
+                width: 250,
+                height: 310,
                 margin: {
                     top: 10,
                     right: 0,
                     bottom: 25,
-                    left: 60
+                    left: 10
                 },
                 color_gradient: colors,
                 type: EstablishmentShot.BarChart,
@@ -81,14 +81,14 @@ EstablishmentShot.Charts = (function () {
                     { key: 'co2_sheet_buildings_households_total_co2_emissions' }
                 ],
                 mouseover: function (d) {
-                    $(".column.last .chart")
+                    $(".column .column-inner .chart")
                         .stop().animate({ 'opacity': 0.2 }, 500);
 
-                    $(".column.last .chart[data-chart='" + d.key + "']")
+                    $(".column .column-inner .chart[data-chart='" + d.key + "']")
                         .stop().animate({'opacity': 1.0 }, 500);
                 },
                 mouseout: function (d) {
-                    $(".column.last .chart")
+                    $(".column .column-inner .chart")
                         .stop().animate({'opacity': 1.0 }, 500);
                 }
             },

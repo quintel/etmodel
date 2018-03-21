@@ -3,7 +3,12 @@
 @import dataset_page
 
 @media print
+  @page
+    size: landscape
+
   body
+    -webkit-print-color-adjust: exact !important
+
     header, footer, ul li.print, div.navigation
       display: none
 

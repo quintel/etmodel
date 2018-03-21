@@ -74,11 +74,10 @@ body
       .column
         width: 33%
 
-      .column:first-child, .column.center
-        border-right: 1px dashed $border-color
-
       .column.center
         width: 29%
+        border-right: 1px dashed $border-color
+        border-left: 1px dashed $border-color
 
     .column-inner
       width: 100%
@@ -96,6 +95,13 @@ body
 
     .chart
       position: relative
+      h5
+        margin: 0
+        text-align: center
+
+        span
+          font-family: FontAwesome
+          margin-right: 5px
       > .legend
         margin-right: 20px
         > ul

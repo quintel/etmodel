@@ -45,6 +45,22 @@ EstablishmentShot.BarChart = (function () {
         this.scope.append(legend);
     }
 
+    function drawTitle(info) {
+        var span,
+            title = $('<h5/>');
+
+        if (info.fa_icon) {
+            span = $('<span/>');
+            span.html('&#x' + info.fa_icon);
+        }
+
+        title.append(span,
+            I18n.t('establishment_shot.charts.' + this.scope.data('chart'))
+        );
+
+        this.scope.prepend(title);
+    }
+
     function calculateMax(data) {
         return d3.sum(data.map(function(serie) {
             return serie.value;
@@ -63,7 +79,7 @@ EstablishmentShot.BarChart = (function () {
                     width: info.width,
                     height: info.height,
                     series: this.data,
-                    title: I18n.t('establishment_shot.charts.' + this.scope.data('chart')),
+                    title: '',
                     margin: info.margin,
                     showY: info.showY,
                     showMaxLabel: info.showMaxLabel,
@@ -76,6 +92,7 @@ EstablishmentShot.BarChart = (function () {
                 }
             );
 
+            drawTitle.call(this, info);
             drawLegend.call(this);
         }
     }

@@ -39,7 +39,7 @@ EstablishmentShot.Charts = (function () {
             return {
                 type: EstablishmentShot.BarChart,
                 width: 150,
-                height: 190,
+                height: 163,
                 color_gradient: smallColors[count++],
                 showY: true,
                 showMaxLabel: false,
@@ -67,7 +67,7 @@ EstablishmentShot.Charts = (function () {
         charts: {
             bar_chart: {
                 width: 250,
-                height: 310,
+                height: 300,
                 margin: {
                     top: 10,
                     right: 0,
@@ -101,6 +101,7 @@ EstablishmentShot.Charts = (function () {
                 }
             },
             co2_sheet_buildings_households_total_co2_emissions: $.extend({
+                fa_icon: 'f015',
                 series: [
                     { key: 'co2_sheet_buildings_households_space_heating_cooling_co2_emissions' },
                     { key: 'co2_sheet_buildings_households_hot_water_co2_emissions' },
@@ -109,6 +110,7 @@ EstablishmentShot.Charts = (function () {
                 ]
             }, smallChartDefaults()),
             co2_sheet_industry_energy_total_co2_emissions: $.extend({
+                fa_icon: 'f275',
                 series: [
                     { key: 'co2_sheet_industry_metal_co2_emissions' },
                     { key: 'co2_sheet_industry_chemical_co2_emissions' },
@@ -119,12 +121,14 @@ EstablishmentShot.Charts = (function () {
                 ]
             }, smallChartDefaults()),
             co2_sheet_agriculture_total_co2_emissions: $.extend({
+                fa_icon: 'f06c',
                 series: [
                     { key: 'co2_sheet_agriculture_heat_co2_emissions' },
                     { key: 'co2_sheet_agriculture_power_and_light_co2_emissions' }
                 ]
             }, smallChartDefaults()),
             co2_sheet_transport_total_co2_emissions: $.extend({
+                fa_icon: 'f1b9',
                 series: [
                     { key: 'co2_sheet_transport_car_co2_emissions' },
                     { key: 'co2_sheet_transport_busses_co2_emissions' },

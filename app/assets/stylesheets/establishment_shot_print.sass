@@ -3,7 +3,12 @@
 @import dataset_page
 
 @media print
+  @page
+    size: landscape
+
   body
+    -webkit-print-color-adjust: exact !important
+
     header, footer, ul li.print, div.navigation
       display: none
 
@@ -12,6 +17,9 @@
       margin: 0 !important
       background-color: #FFF !important
       padding: 0 !important
+
+      .introduction
+        margin-top: 10px
 
     .clearfix
       clear: both

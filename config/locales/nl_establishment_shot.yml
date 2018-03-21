@@ -1,8 +1,19 @@
 ---
 nl:
   establishment_shot:
+    introduction_html:
+        In dit overzicht vind je alle huidige CO<sub>2</sub>-uitstoot als gevolg van het
+        energiegebruik van de regio. Het overzicht omvat alle CO<sub>2</sub>-uitstoot
+        binnen de grenzen van de regio, plus de uitstoot van de
+        geïmporteerde elektriciteit. Alle niet-energetische uitstoot
+        van bijvoorbeeld CH<sub>4</sub> en N<sub>2</sub>O zijn hier niet in opgenomen.
+        De emissies van energiegebruik die buiten het gebied plaatsvinden,
+        zoals van import en productie van goederen vallen buiten de
+        scope. Deze uitstoot vind je weer terug binnen de regio
+        waar het geproduceerd wordt.
+
     charts:
-      bar_chart: "CO2 Emissies"
+      bar_chart: "CO<sub>2</sub> Emissies"
       co2_sheet_agriculture_total_co2_emissions: Landbouw
       co2_sheet_industry_energy_total_co2_emissions: Industrie & energie
       co2_sheet_transport_total_co2_emissions: Transport & mobiliteit
@@ -32,3 +43,7 @@ nl:
       co2_sheet_industry_other_co2_emissions: Overig
       co2_sheet_agriculture_heat_co2_emissions: Warmte
       co2_sheet_agriculture_power_and_light_co2_emissions: Kracht & Licht
+      co2_sheet_transport_total_domestic_aviation_co2_emissions: Binnenlandse vluchten
+      co2_sheet_transport_total_domestic_freight_co2_emissions: Vrachtvervoer
+      co2_sheet_transport_total_private_transport_co2_emissions: Eigen vervoer
+      co2_sheet_transport_total_public_transport_co2_emissions: Openbaar vervoer

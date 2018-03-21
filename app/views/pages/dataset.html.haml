@@ -18,7 +18,7 @@
       %ul.dataset-info
         %li
           = I18n.t("dataset.number_of_inhabitants")
-          %span= @area.number_of_inhabitants.to_i
+          %span= number_with_delimiter(@area.number_of_inhabitants.to_i)
 
         %li
           = I18n.t("dataset.total_energy_demand")
@@ -35,15 +35,18 @@
       .clearfix
 
       .introduction
+        = t('establishment_shot.introduction_html')
 
       .overview
         .column
-          .chart{ data: { chart: 'bar_chart' } }
-
-        .column.last
           .column-inner
             .chart.buildings{ data: { chart: 'co2_sheet_buildings_households_total_co2_emissions' } }
             .chart.transport{ data: { chart: 'co2_sheet_transport_total_co2_emissions' } }
+
+        .column.center
+          .chart{ data: { chart: 'bar_chart' } }
+
+        .column
           .column-inner
             .chart.industry{ data: { chart: 'co2_sheet_industry_energy_total_co2_emissions' } }
             .chart.agriculture{ data: { chart: 'co2_sheet_agriculture_total_co2_emissions' } }
@@ -55,7 +58,7 @@
         = link_to 'energytransitionmodel.com', '/'
 
     .navigation
-      = link_to I18n.t("dataset.start_scenario", area: I18n.t(@area.area, default: [@area.area.to_sym, @area.area.humanize])), root_path(country: @area.area), class: "button primary"
+      = link_to I18n.t("dataset.start_scenario", area: I18n.t(@area.area, default: [@area.area.to_sym, @area.area.humanize])), root_path(country: @area.area), class: 'button primary scenario-link'
 
       %span.or or
       = link_to "Back", root_path, class: "button"

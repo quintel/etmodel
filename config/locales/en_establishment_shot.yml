@@ -1,8 +1,18 @@
 ---
 en:
   establishment_shot:
+    introduction_html:
+      In this overview you will find all current CO<sub>2</sub> emissions as a
+      result of the energy consumption of the region. The overview covers all
+      CO<sub>2</sub> emissions within the boundaries of the region, plus the
+      emissions of the imported electricity. All non-energetic emissions of,
+      for example, CH<sub>4</sub> and N<sub>2</sub>O are not included here.
+      The emissions of energy use that took place outside the area, such as
+      the import and production of goods, fall outside the scope. These
+      emissions can be traced back within the region where it is produced.
+
     charts:
-      bar_chart: "CO2 Emissions"
+      bar_chart: "CO<sub>2</sub> Emissions"
       co2_sheet_agriculture_total_co2_emissions: Agriculture
       co2_sheet_industry_energy_total_co2_emissions: Industry & energy
       co2_sheet_transport_total_co2_emissions: Transport & mobility
@@ -32,3 +42,7 @@ en:
       co2_sheet_industry_other_co2_emissions: Other
       co2_sheet_agriculture_heat_co2_emissions: Heat
       co2_sheet_agriculture_power_and_light_co2_emissions: Power & Light
+      co2_sheet_transport_total_domestic_aviation_co2_emissions: Domestic aviation
+      co2_sheet_transport_total_domestic_freight_co2_emissions: Freight transport
+      co2_sheet_transport_total_private_transport_co2_emissions: Private transport
+      co2_sheet_transport_total_public_transport_co2_emissions: Public transport

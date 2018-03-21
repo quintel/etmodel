@@ -39,8 +39,10 @@ EstablishmentShot.Charts = (function () {
             return {
                 type: EstablishmentShot.BarChart,
                 width: 150,
-                height: 188,
+                height: 163,
                 color_gradient: smallColors[count++],
+                showY: true,
+                showMaxLabel: false,
                 margin: {
                     top: 10,
                     right: 0,
@@ -64,35 +66,42 @@ EstablishmentShot.Charts = (function () {
     return {
         charts: {
             bar_chart: {
-                width: 150,
-                height: 419,
+                width: 250,
+                height: 300,
                 margin: {
                     top: 10,
                     right: 0,
                     bottom: 25,
-                    left: 60
+                    left: 10
                 },
+                showY: false,
+                showMaxLabel: true,
                 color_gradient: colors,
                 type: EstablishmentShot.BarChart,
                 series: [
-                    { key: 'co2_sheet_agriculture_total_co2_emissions' },
-                    { key: 'co2_sheet_industry_energy_total_co2_emissions' },
-                    { key: 'co2_sheet_transport_total_co2_emissions' },
-                    { key: 'co2_sheet_buildings_households_total_co2_emissions' }
+                    { key: 'co2_sheet_agriculture_total_co2_emissions',
+                      fa_icon: 'f06c' },
+                    { key: 'co2_sheet_industry_energy_total_co2_emissions',
+                      fa_icon: 'f275' },
+                    { key: 'co2_sheet_transport_total_co2_emissions',
+                      fa_icon: 'f1b9' },
+                    { key: 'co2_sheet_buildings_households_total_co2_emissions',
+                      fa_icon: 'f015' }
                 ],
                 mouseover: function (d) {
-                    $(".column.last .chart")
+                    $(".column .column-inner .chart")
                         .stop().animate({ 'opacity': 0.2 }, 500);
 
-                    $(".column.last .chart[data-chart='" + d.key + "']")
+                    $(".column .column-inner .chart[data-chart='" + d.key + "']")
                         .stop().animate({'opacity': 1.0 }, 500);
                 },
                 mouseout: function (d) {
-                    $(".column.last .chart")
+                    $(".column .column-inner .chart")
                         .stop().animate({'opacity': 1.0 }, 500);
                 }
             },
             co2_sheet_buildings_households_total_co2_emissions: $.extend({
+                fa_icon: 'f015',
                 series: [
                     { key: 'co2_sheet_buildings_households_space_heating_cooling_co2_emissions' },
                     { key: 'co2_sheet_buildings_households_hot_water_co2_emissions' },
@@ -101,6 +110,7 @@ EstablishmentShot.Charts = (function () {
                 ]
             }, smallChartDefaults()),
             co2_sheet_industry_energy_total_co2_emissions: $.extend({
+                fa_icon: 'f275',
                 series: [
                     { key: 'co2_sheet_industry_metal_co2_emissions' },
                     { key: 'co2_sheet_industry_chemical_co2_emissions' },
@@ -111,12 +121,14 @@ EstablishmentShot.Charts = (function () {
                 ]
             }, smallChartDefaults()),
             co2_sheet_agriculture_total_co2_emissions: $.extend({
+                fa_icon: 'f06c',
                 series: [
                     { key: 'co2_sheet_agriculture_heat_co2_emissions' },
                     { key: 'co2_sheet_agriculture_power_and_light_co2_emissions' }
                 ]
             }, smallChartDefaults()),
             co2_sheet_transport_total_co2_emissions: $.extend({
+                fa_icon: 'f1b9',
                 series: [
                     { key: 'co2_sheet_transport_car_co2_emissions' },
                     { key: 'co2_sheet_transport_busses_co2_emissions' },

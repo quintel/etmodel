@@ -1,4 +1,5 @@
 $border-color: #ddd
+$bg-color: #FFEEEE
 
 body
   .information_page
@@ -11,10 +12,10 @@ body
         box-shadow: 0px 3px 19px 1px #CCC
         margin: 30px 0
         background-color: #FFFFEE
-        padding: 12px 32px 26px
+        padding: 12px 32px
 
       .error
-        background-color: #FFEEEE
+        background-color: $bg-color
         color: #C22
         padding: 12px 14px
 
@@ -41,8 +42,20 @@ body
       stroke: #000
       shape-rendering: crispEdges
 
-    g.series:hover
+    .introduction
+      text-align: justify
+
+    g.series
       cursor: pointer
+
+      text.icon-text
+        font-family: FontAwesome
+        font-size: 19px
+        fill: $bg-color
+
+    text.max-label
+      font-size: 1.3em
+      font-weight: bold
 
     .axis--x path
       display: none
@@ -58,31 +71,39 @@ body
         vertical-align: top
         clear: none
 
-      .column:first-child
+      .column
         width: 33%
+
+      .column.center
+        width: 29%
         border-right: 1px dashed $border-color
+        border-left: 1px dashed $border-color
 
-      .column.last
-        width: 66%
+    .column-inner
+      width: 100%
 
-        .column-inner
-          width: 49%
+      .chart:first-child
+        border-bottom: 1px dashed $border-color
+        margin-bottom: 12px
 
-          &:first-child
-            border-right: 1px dashed $border-color
-
-          .chart:last-child
-            margin-top: 18px
-            padding-top: 18px
-            border-top: 1px dashed $border-color
-
-    .column-inner .chart > .legend
-      margin-right: 10px
-      max-width: 110px
+      .chart > .legend
+        margin-right: 0px
+        position: absolute
+        transform: translate(0%,-50%)
+        right: 0px
+        top: 50%
+        width: 100px
 
     .chart
+      position: relative
+      h5
+        margin: 0
+        text-align: center
+
+        span
+          font-family: FontAwesome
+          margin-right: 5px
       > .legend
-        float: right
         margin-right: 20px
         > ul
           margin-top: 0
@@ -96,6 +117,12 @@ body
 
             i.fa-square
               margin-right: 5px
+
+    .column.center .chart > .legend
+      float: none
+
+      > ul
+        text-align: center
 
     .footer
       padding-top: 7px

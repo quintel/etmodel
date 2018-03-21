@@ -32,7 +32,8 @@ EstablishmentShot.Main = (function() {
         EstablishmentShot.ChartRenderer.render(this, data);
 
         this.scope.find('.overview').show();
-        $("span.loading").remove();
+        $('a.scenario-link').attr('href', '/scenarios/' + data.scenario.id + '/load');
+        $('span.loading').remove();
     }
 
     function updateScenario(data) {

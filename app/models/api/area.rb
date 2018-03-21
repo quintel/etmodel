@@ -49,7 +49,8 @@ class Api::Area < ActiveResource::Base
   def self.grouped
     all_by_area_code
       .values
-      .sort_by { |a| ORDER.index(a.group) || ORDER.length + 1 }
+      .select { |d| d.useable }
+      .sort_by { |d| ORDER.index(d.group) || ORDER.length + 1 }
       .group_by(&:group)
   end
 

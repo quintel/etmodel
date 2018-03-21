@@ -41,6 +41,8 @@ EstablishmentShot.Charts = (function () {
                 width: 150,
                 height: 190,
                 color_gradient: smallColors[count++],
+                showY: true,
+                showMaxLabel: false,
                 margin: {
                     top: 10,
                     right: 0,
@@ -72,13 +74,19 @@ EstablishmentShot.Charts = (function () {
                     bottom: 25,
                     left: 10
                 },
+                showY: false,
+                showMaxLabel: true,
                 color_gradient: colors,
                 type: EstablishmentShot.BarChart,
                 series: [
-                    { key: 'co2_sheet_agriculture_total_co2_emissions' },
-                    { key: 'co2_sheet_industry_energy_total_co2_emissions' },
-                    { key: 'co2_sheet_transport_total_co2_emissions' },
-                    { key: 'co2_sheet_buildings_households_total_co2_emissions' }
+                    { key: 'co2_sheet_agriculture_total_co2_emissions',
+                      fa_icon: 'f06c' },
+                    { key: 'co2_sheet_industry_energy_total_co2_emissions',
+                      fa_icon: 'f275' },
+                    { key: 'co2_sheet_transport_total_co2_emissions',
+                      fa_icon: 'f1b9' },
+                    { key: 'co2_sheet_buildings_households_total_co2_emissions',
+                      fa_icon: 'f015' }
                 ],
                 mouseover: function (d) {
                     $(".column .column-inner .chart")

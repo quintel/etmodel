@@ -155,6 +155,35 @@
   }
 
   /**
+   * On series with an "icon", draws the matching fa icon in the middle of the
+   * bar, provided the bar is tall enough.
+   */
+  function drawFaIcons(svg, x, y, allSeries) {
+    allSeries.forEach(function(series) {
+      if (!series.fa_icon) {
+        return;
+      }
+
+      var top = y(series.y1),
+          bottom = y(series.y0);
+
+      if (bottom - top < 26) {
+        // do not render icons on series too small to show them
+        return;
+      }
+
+      svg.selectAll('g.series.' + series.key).each(function() {
+        d3.select(this)
+          .append('text')
+          .attr('x', x.rangeBand() / 2 - 12 + 'px')
+          .attr('y', top + (bottom - top) / 2 + 10 + 'px')
+          .attr('class', 'icon-text')
+          .html("&#x" + series.fa_icon)
+      });
+    });
+  }
+
+  /**
    * Renders a static bar chart in the given CSS "selector" using the
    * "userSettings" provided.
    *
@@ -184,7 +213,7 @@
 
     var series = seriesToRender(settings.series);
 
-    var roundedMax = Math.round(settings.max * 100) / 100;
+    var roundedMax = Math.round(settings.max);
 
     var svg = d3
       .select(selector)
@@ -260,6 +289,7 @@
 
       svg.append('text')
          .style("text-anchor", "middle")
+         .attr('class', 'max-label')
          .attr('x', x(settings.title) + (x.rangeBand() / 2))
          .attr('y', y(settings.max) + 5)
          .text(labelText);
@@ -270,6 +300,7 @@
     }
 
     drawIcons(svg, x, y, series);
+    drawFaIcons(svg, x, y, series);
   }
 
   window.stackedBarChart = stackedBarChart;

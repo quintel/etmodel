@@ -1,4 +1,5 @@
 $border-color: #ddd
+$bg-color: #FFEEEE
 
 body
   .information_page
@@ -14,7 +15,7 @@ body
         padding: 12px 32px
 
       .error
-        background-color: #FFEEEE
+        background-color: $bg-color
         color: #C22
         padding: 12px 14px
 
@@ -44,8 +45,17 @@ body
     .introduction
       text-align: justify
 
-    g.series:hover
+    g.series
       cursor: pointer
+
+      text.icon-text
+        font-family: FontAwesome
+        font-size: 19px
+        fill: $bg-color
+
+    text.max-label
+      font-size: 1.3em
+      font-weight: bold
 
     .axis--x path
       display: none

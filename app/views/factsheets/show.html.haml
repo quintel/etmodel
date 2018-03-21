@@ -72,7 +72,7 @@
               %span(data-query="factsheet_capacity_of_wind_turbine_inland" data-as="MW")<> &mdash;
               )
             %li.spacer
-              %span(data-query="factsheet_number_of_offshore_turbines_needed")> &mdash;
+              %span(data-query="factsheet_number_of_wind_turbines_offshore")> &mdash;
               &nbsp;windturbines op zee (10 MW)
 
         .panel.solar
@@ -122,19 +122,24 @@
               %span(data-query="factsheet_share_of_waste_heat_in_collective_heat_sources")<> &mdash;
               )
             %li
-              LT bronnen
+              Warmtepompen
               (
               %span(data-query="factsheet_share_of_lt_in_collective_heat_sources")<> &mdash;
+              )
+            %li
+              Overig
+              (
+              %span(data-query="factsheet_share_of_other_in_collective_heat_sources")<> &mdash;
               )
         .panel.heat
           %h3 Individuele Warmte
           .value(data-query="factsheet_supply_of_individual_heat_total") &mdash;
           %ul
             %li
-              Elektrisch verwarmen
-              %span(data-query="factsheet_share_electricity_in_individual_heat") &mdash;
+              Warmtepompen
+              %span(data-query="factsheet_share_ambient_in_individual_heat") &mdash;
             %li
-              Anders verwarmen
+              Overig
               %span(data-query="factsheet_share_other_in_individual_heat") &mdash;
           .solar-arrow
             .tail

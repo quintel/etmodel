@@ -46,7 +46,7 @@ module LayoutHelper
   def area_links
     options = []
 
-    Api::Area.all_by_area_code.values.group_by(&:group).map do |group, areas|
+    Api::Area.grouped.map do |group, areas|
       options.push(
         text: I18n.t("country_select.groups.#{ group }"),
         data: areas.sort_by{ |a| name_for(a.area) }.map(&method(:area_choice))

@@ -82,7 +82,7 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'rails-controller-testing'
   gem 'simplecov'
-  gem 'webmock', '~> 1.8.0'
+  gem 'webmock'
   gem 'capybara'
   gem 'launchy'
   gem 'vcr', '~> 3.0.3'

@@ -34,7 +34,7 @@ module LayoutHelper
     selector = params[:country] || Current.setting.area_code
     selected = selector == code ? "selected='true'" : nil
 
-    label = I18n.t("country_select.areas.#{ code }", default: [code.to_sym, code.humanize])
+    label = name_for(code)
     label += " (#{ I18n.t('new') })" if area[:test]
 
     content_tag :option, label.html_safe,
@@ -44,33 +44,17 @@ module LayoutHelper
   end
 
   def area_links
-    [ { text: I18n.t('country_select.groups.countries'),
-        data: [
-          area_choice_from_code('be'),
-          area_choice_from_code('fr'),
-          area_choice_from_code('de'),
-          area_choice_from_code('nl'),
-          area_choice_from_code('pl'),
-          area_choice_from_code('es'),
-          area_choice_from_code('uk'),
-        ]
-      },
-      :separator,
-      { text: I18n.t('country_select.groups.regions_nl'),
-        data: derived_dataset_choices
-      },
-      :separator,
-      { text: I18n.t('country_select.groups.third_party'),
-        data: [
-          area_choice_from_code('eu'),
-          area_choice_from_code('br')
-        ]
-      }
-    ].compact
-  end
+    options = []
 
-  def area_choice_from_code(area_code)
-    area_choice(Api::Area.find_by_country_memoized(area_code))
+    Api::Area.grouped.map do |group, areas|
+      options.push(
+        text: I18n.t("country_select.groups.#{ group }"),
+        data: areas.sort_by{ |a| name_for(a.area) }.map(&method(:area_choice))
+      )
+      options.push(:separator)
+    end
+
+    options
   end
 
   def area_choice(area)
@@ -82,10 +66,9 @@ module LayoutHelper
     end
   end
 
-  def derived_dataset_choices
-    Api::Area.derived_datasets.map do |area|
-      area_choice(area)
-    end
+  def name_for(area)
+    I18n.t("country_select.areas.#{ area }",
+      default: [area.to_sym, area.humanize])
   end
 
   # Creates the language selection drop-down.

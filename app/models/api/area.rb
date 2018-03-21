@@ -1,4 +1,11 @@
 class Api::Area < ActiveResource::Base
+  ORDER = %w(
+    country
+    province
+    municipality
+    neighborhood
+  )
+
   self.site = "#{APP_CONFIG[:api_url]}/api/v3"
 
   # Represents an optional nested "scaling" attribute within an Api::Area
@@ -39,6 +46,14 @@ class Api::Area < ActiveResource::Base
     :has_aggregated_other_industry
   ]
 
+  def self.grouped
+    all_by_area_code
+      .values
+      .select { |d| d.useable }
+      .sort_by { |d| ORDER.index(d.group) || ORDER.length + 1 }
+      .group_by(&:group)
+  end
+
   def self.find_by_country_memoized(area_code)
     all_by_area_code[area_code]
   end
@@ -51,10 +66,6 @@ class Api::Area < ActiveResource::Base
     Rails.cache.fetch(:api_areas) do
       all.index_by(&:area).with_indifferent_access
     end
-  end
-
-  def self.derived_datasets
-    all_by_area_code.sort.map(&:last).select(&:derived?)
   end
 
   def use_network_calculations?

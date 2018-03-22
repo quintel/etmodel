@@ -3,7 +3,6 @@ EstablishmentShot.Charts = (function () {
 
     var count = 0,
         colors = [
-            '#DDDDDE',
             '#26b01f', // green
             '#ffcf28', // yellow
             '#009cff', // blue
@@ -19,7 +18,7 @@ EstablishmentShot.Charts = (function () {
             ],
             [
                 '#DDDDDE',
-                '#99D4FF',
+                '#CCE4FF',
                 '#80D4FF',
                 '#3C9AC9',
                 '#B01200',
@@ -84,7 +83,6 @@ EstablishmentShot.Charts = (function () {
                 color_gradient: colors,
                 type: EstablishmentShot.BarChart,
                 series: [
-                    { key: 'co2_sheet_buildings_households_appliances_light_co2_emissions' },
                     { key: 'co2_sheet_agriculture_total_co2_emissions',
                       fa_icon: '\uf06c' },
                     { key: 'co2_sheet_industry_energy_total_co2_emissions',
@@ -111,7 +109,7 @@ EstablishmentShot.Charts = (function () {
                 top: false,
                 fa_icon: 'f015',
                 series: [
-                    { key: 'co2_sheet_buildings_households_appliances_light_co2_emissions' },
+                    { key: 'co2_sheet_non_energy_emissions_built_environment' },
                     { key: 'co2_sheet_buildings_households_space_heating_cooling_co2_emissions' },
                     { key: 'co2_sheet_buildings_households_hot_water_co2_emissions' },
                     { key: 'co2_sheet_buildings_households_cooking_co2_emissions' },
@@ -123,7 +121,7 @@ EstablishmentShot.Charts = (function () {
                 top: false,
                 fa_icon: 'f275',
                 series: [
-                    { key: 'co2_sheet_industry_other_co2_emissions' },
+                    { key: 'co2_sheet_non_energy_emissions_industry_energy' },
                     { key: 'co2_sheet_industry_metal_co2_emissions' },
                     { key: 'co2_sheet_industry_chemical_co2_emissions' },
                     { key: 'co2_sheet_industry_food_co2_emissions' },
@@ -137,7 +135,7 @@ EstablishmentShot.Charts = (function () {
                 top: true,
                 fa_icon: 'f06c',
                 series: [
-                    { key: 'co2_sheet_agriculture_power_and_light_co2_emissions' },
+                    { key: 'co2_sheet_non_energy_emissions_agriculture' },
                     { key: 'co2_sheet_agriculture_heat_co2_emissions' },
                     { key: 'co2_sheet_agriculture_power_and_light_co2_emissions' }
                 ]
@@ -147,7 +145,7 @@ EstablishmentShot.Charts = (function () {
                 top: true,
                 fa_icon: 'f1b9',
                 series: [
-                    { key: 'co2_sheet_transport_total_public_transport_co2_emissions' },
+                    { key: 'co2_sheet_non_energy_emissions_transport' },
                     { key: 'co2_sheet_transport_total_domestic_aviation_co2_emissions' },
                     { key: 'co2_sheet_transport_total_domestic_freight_co2_emissions' },
                     { key: 'co2_sheet_transport_total_private_transport_co2_emissions' },

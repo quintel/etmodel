@@ -291,7 +291,7 @@
          .style("text-anchor", "middle")
          .attr('class', 'max-label')
          .attr('x', x(settings.title) + (x.rangeBand() / 2))
-         .attr('y', y(settings.max) + 5)
+         .attr('y', y(settings.max) - 10)
          .text(labelText);
     }
 

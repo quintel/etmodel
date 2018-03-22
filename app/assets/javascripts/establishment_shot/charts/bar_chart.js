@@ -91,7 +91,7 @@ EstablishmentShot.BarChart = (function () {
     function calculateMax(data) {
         return d3.sum(data.map(function(serie) {
             return serie.value;
-        })) * 1.05;
+        }));
     }
 
     BarChart.prototype = {

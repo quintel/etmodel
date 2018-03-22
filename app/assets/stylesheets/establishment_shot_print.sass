@@ -5,22 +5,26 @@
 @media print
   @page
     size: landscape
+    margin: 2mm 2mm 2mm 2mm
 
   body
     -webkit-print-color-adjust: exact !important
     color-adjust: exact !important
+    margin: 0
+    padding: 0
+
+    .information_page.wider
+      width: 293mm
+
+      .page
+        box-shadow: none !important
+        margin: 0
+
+        .introduction
+          margin-top: 10px
 
     header, footer, ul li.print, div.navigation
       display: none
-
-    .page
-      box-shadow: none !important
-      margin: 0 !important
-      background-color: #FFF !important
-      padding: 0 !important
-
-      .introduction
-        margin-top: 10px
 
     #content #establishment_shot .overview .column
       width: 35% !important

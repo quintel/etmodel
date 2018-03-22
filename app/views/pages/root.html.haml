@@ -11,8 +11,10 @@
       %a{href: '#top'}= t 'intro.start_a_new_scenario'
     #new_scenario{style: "display: #{ has_active_scenario? ? 'none' : 'block' };"}
       = form_tag root_path do
-        = render "pages/root_page/country_select"
-        = render "pages/root_page/year_select"
+        .country
+          = render "pages/root_page/country_select"
+        .year
+          = render "pages/root_page/year_select"
         #submit
           = render "pages/root_page/start_button"
     .clear

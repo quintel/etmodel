@@ -12,9 +12,15 @@
 
     .page#establishment_shot{ data: { area: @area.area, host: APP_CONFIG[:api_url] } }
       %h1
-        = I18n.t(@area.area, default: [@area.area.to_sym, @area.area.humanize])
+        = t('establishment_shot.header_html', area: I18n.t(@area.area, default: [@area.area.to_sym, @area.area.humanize]))
         %span.loading
           = image_tag('layout/ajax-loader-small.gif')
+
+      .introduction
+        = t('establishment_shot.introduction_html')
+
+      .clearfix
+
       %ul.dataset-info
         %li
           = I18n.t("dataset.present_year")
@@ -34,9 +40,6 @@
 
       .clearfix
 
-      .introduction
-        = t('establishment_shot.introduction_html')
-
       .overview
         .column
           .column-inner
@@ -53,9 +56,11 @@
 
         .clearfix
 
+        .small-text
+          = t('establishment_shot.footer_text_html')
+
       .footer
-        Created by the
-        = link_to 'energytransitionmodel.com', '/'
+        = t('establishment_shot.created_by_html')
 
     .navigation
       = link_to I18n.t("dataset.start_scenario", area: I18n.t(@area.area, default: [@area.area.to_sym, @area.area.humanize])), root_path(country: @area.area), class: 'button primary scenario-link'

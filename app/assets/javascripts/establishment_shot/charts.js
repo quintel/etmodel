@@ -43,7 +43,7 @@ EstablishmentShot.Charts = (function () {
             return {
                 type: EstablishmentShot.BarChart,
                 width: 150,
-                height: 202,
+                height: 198,
                 color_gradient: smallColors[count++],
                 showY: true,
                 showMaxLabel: false,
@@ -71,7 +71,7 @@ EstablishmentShot.Charts = (function () {
         charts: {
             bar_chart: {
                 width: 250,
-                height: 383,
+                height: 380,
                 margin: {
                     top: 10,
                     right: 0,

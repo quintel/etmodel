@@ -1,27 +1,28 @@
 ---
 nl:
   establishment_shot:
+    created_by_html: "Gemaakt met <a href='/'>energietransitiemodel.nl</a>"
+    header_html: "CO<sub>2</sub>-voetafdruk van %{area}"
+    footer_text_html:
+      '* Energiegebruik wordt uitgedrukt in Joule (J), CO<sub>2</sub>-uitstoot wordt uitgedrukt in ton (T). Een kilo (k) is 10<sup>3</sup>, mega (M) 10<sup>6</sup>, giga (G) 10<sup>9</sup>, tera (T) 10<sup>12</sup>, peta (P) 10<sup>15</sup> en exa (E) 10<sup>18</sup>.'
+
     introduction_html:
-        In dit overzicht vind je alle huidige CO<sub>2</sub>-uitstoot als gevolg van het
-        energiegebruik van de regio. Het overzicht omvat alle CO<sub>2</sub>-uitstoot
-        binnen de grenzen van de regio, plus de uitstoot van de
-        geïmporteerde elektriciteit.
+      In dit overzicht vind je alle directe uitstoot van broeikasgassen van de regio.
 
     charts:
-      bar_chart: "CO<sub>2</sub> uitstoot van energiegebruik en overige broeikasgasemissies"
+      bar_chart: "CO<sub>2</sub>-uitstoot van energiegebruik en overige broeikasgassen"
       co2_sheet_agriculture_total_co2_emissions: Landbouw
-      co2_sheet_industry_energy_total_co2_emissions: Industrie & energie
-      co2_sheet_transport_total_co2_emissions: Transport & mobiliteit
-      co2_sheet_buildings_households_total_co2_emissions: Gebouwdge omgeving
+      co2_sheet_industry_energy_total_co2_emissions: Industrie & Energie
+      co2_sheet_transport_total_co2_emissions: Transport & Mobiliteit
+      co2_sheet_buildings_households_total_co2_emissions: Gebouwde omgeving
     legend:
       co2_sheet_inhabitants: Inwoners
       co2_sheet_total_final_energy_demand: Totaal jaarlijks energiegebruik (finaal)
-      co2_sheet_renewability_percentage: "% Hernieuwbaarheid"
       co2_sheet_buildings_households_total_co2_emissions: Gebouwde omgeving
-      co2_sheet_transport_total_co2_emissions: Transport & mobiliteit
-      co2_sheet_industry_energy_total_co2_emissions: Industrie & energie
+      co2_sheet_transport_total_co2_emissions: Transport & Mobiliteit
+      co2_sheet_industry_energy_total_co2_emissions: Industrie & Energie
       co2_sheet_agriculture_total_co2_emissions: Landbouw
-      co2_sheet_buildings_households_space_heating_cooling_co2_emissions: Ruimteverwarming & -koeling
+      co2_sheet_buildings_households_space_heating_cooling_co2_emissions: Verwarming & koeling
       co2_sheet_buildings_households_hot_water_co2_emissions: Warm water
       co2_sheet_buildings_households_cooking_co2_emissions: Koken
       co2_sheet_buildings_households_appliances_light_co2_emissions: Apparaten & verlichting
@@ -35,15 +36,15 @@ nl:
       co2_sheet_industry_food_co2_emissions: Voedsel
       co2_sheet_industry_paper_co2_emissions: Papier
       co2_sheet_energy_sector_total_co2_emissions: Energie
-      co2_sheet_industry_other_co2_emissions: Overig
+      co2_sheet_industry_other_co2_emissions: Overige industrie
       co2_sheet_agriculture_heat_co2_emissions: Warmte
-      co2_sheet_agriculture_power_and_light_co2_emissions: Kracht & Licht
-      co2_sheet_transport_total_domestic_aviation_co2_emissions: Binnenlandse vluchten
+      co2_sheet_agriculture_power_and_light_co2_emissions: Kracht & licht
+      co2_sheet_transport_total_domestic_aviation_co2_emissions: Binnenlandse luchtvaart
       co2_sheet_transport_total_domestic_freight_co2_emissions: Vrachtvervoer
-      co2_sheet_transport_total_private_transport_co2_emissions: Eigen vervoer
+      co2_sheet_transport_total_private_transport_co2_emissions: Personenvervoer
       co2_sheet_transport_total_public_transport_co2_emissions: Openbaar vervoer
-      co2_sheet_non_energy_emissions_agriculture: Overige emissies
-      co2_sheet_non_energy_emissions_built_environment: Overige emissies
-      co2_sheet_non_energy_emissions_industry_energy: Overige emissies
-      co2_sheet_non_energy_emissions_total: Overige emissies
-      co2_sheet_non_energy_emissions_transport: Overige emissies
+      co2_sheet_non_energy_emissions_agriculture: Overige broeikasgassen
+      co2_sheet_non_energy_emissions_built_environment: Overige broeikasgassen
+      co2_sheet_non_energy_emissions_industry_energy: Overige broeikasgassen
+      co2_sheet_non_energy_emissions_total: Overige broeikasgassen
+      co2_sheet_non_energy_emissions_transport: Overige broeikasgassen

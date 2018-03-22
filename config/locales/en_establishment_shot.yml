@@ -1,27 +1,29 @@
 ---
 en:
   establishment_shot:
+    created_by_html: "Created with <a href='/'>energytransitionmodel.com</a>"
+    header_html: "CO<sub>2</sub> footprint of %{area}"
+    footer_text_html:
+      '* Energy use is expressed in Joule (J), CO<sub>2</sub> emissions are expressed in tonne (T). A kilo (k) is 10<sup>3</sup>, mega (M) 10<sup>6</sup>, giga (G) 10<sup>9</sup>, tera (T) 10<sup>12</sup>, peta (P) 10<sup>15</sup> and exa (E) 10<sup>18</sup>.'
+
     introduction_html:
-      In this overview you will find all current CO<sub>2</sub> emissions as a
-      result of the energy consumption of the region. The overview covers all
-      CO<sub>2</sub> emissions within the boundaries of the region, plus the
-      emissions of the imported electricity.
+      This overview shows all direct greenhouse gas emissions of this area.
 
     charts:
       bar_chart: "CO<sub>2</sub> emissions of energy use and other greenhouse gasses"
       co2_sheet_agriculture_total_co2_emissions: Agriculture
-      co2_sheet_industry_energy_total_co2_emissions: Industry & energy
-      co2_sheet_transport_total_co2_emissions: Transport & mobility
+      co2_sheet_industry_energy_total_co2_emissions: Industry & Energy
+      co2_sheet_transport_total_co2_emissions: Transport & Mobility
       co2_sheet_buildings_households_total_co2_emissions: Built environment
     legend:
       co2_sheet_inhabitants: Inhabitants
       co2_sheet_total_final_energy_demand: Total annual energy use (final)
       co2_sheet_renewability_percentage: "% Renewability"
       co2_sheet_buildings_households_total_co2_emissions: Built environment
-      co2_sheet_transport_total_co2_emissions: Transport & mobility
-      co2_sheet_industry_energy_total_co2_emissions: Industry & energy
+      co2_sheet_transport_total_co2_emissions: Transport & Mobility
+      co2_sheet_industry_energy_total_co2_emissions: Industry & Energy
       co2_sheet_agriculture_total_co2_emissions: Agriculture
-      co2_sheet_buildings_households_space_heating_cooling_co2_emissions: Space heating & cooling
+      co2_sheet_buildings_households_space_heating_cooling_co2_emissions: Heating & cooling
       co2_sheet_buildings_households_hot_water_co2_emissions: Hot water
       co2_sheet_buildings_households_cooking_co2_emissions: Cooking
       co2_sheet_buildings_households_appliances_light_co2_emissions: Appliances & lighting
@@ -35,16 +37,15 @@ en:
       co2_sheet_industry_food_co2_emissions: Food
       co2_sheet_industry_paper_co2_emissions: Paper
       co2_sheet_energy_sector_total_co2_emissions: Energy
-      co2_sheet_industry_other_co2_emissions: Other
+      co2_sheet_industry_other_co2_emissions: Other industry
       co2_sheet_agriculture_heat_co2_emissions: Heat
-      co2_sheet_agriculture_power_and_light_co2_emissions: Power & Light
+      co2_sheet_agriculture_power_and_light_co2_emissions: Power & light
       co2_sheet_transport_total_domestic_aviation_co2_emissions: Domestic aviation
       co2_sheet_transport_total_domestic_freight_co2_emissions: Freight transport
       co2_sheet_transport_total_private_transport_co2_emissions: Private transport
       co2_sheet_transport_total_public_transport_co2_emissions: Public transport
-      co2_sheet_non_energy_emissions_agriculture: Other emissions
-      co2_sheet_non_energy_emissions_built_environment: Other emissions
-      co2_sheet_non_energy_emissions_industry_energy: Other emissions
-      co2_sheet_non_energy_emissions_total: Other emissions
-      co2_sheet_non_energy_emissions_transport: Other emissions
-
+      co2_sheet_non_energy_emissions_agriculture: Other greenhouse gasses
+      co2_sheet_non_energy_emissions_built_environment: Other greenhouse gasses
+      co2_sheet_non_energy_emissions_industry_energy: Other greenhouse gasses
+      co2_sheet_non_energy_emissions_total: Other greenhouse gasses
+      co2_sheet_non_energy_emissions_transport: Other greenhouse gasses

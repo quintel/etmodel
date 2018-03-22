@@ -16,10 +16,10 @@ EstablishmentShot.Charts = (function () {
                 '#EB2B00'
             ],
             [
-                '#888888',
+                '#99D4FF',
                 '#80D4FF',
                 '#3C9AC9',
-                '#B0.200',
+                '#B01200',
                 '#E6C337',
                 '#ffcf28'
             ],
@@ -39,14 +39,14 @@ EstablishmentShot.Charts = (function () {
             return {
                 type: EstablishmentShot.BarChart,
                 width: 150,
-                height: 163,
+                height: 160,
                 color_gradient: smallColors[count++],
                 showY: true,
                 showMaxLabel: false,
                 margin: {
                     top: 10,
                     right: 0,
-                    bottom: 25,
+                    bottom: 20,
                     left: 50
                 },
                 mouseover: function (d) {
@@ -101,6 +101,7 @@ EstablishmentShot.Charts = (function () {
                 }
             },
             co2_sheet_buildings_households_total_co2_emissions: $.extend({
+                left: true,
                 fa_icon: 'f015',
                 series: [
                     { key: 'co2_sheet_buildings_households_space_heating_cooling_co2_emissions' },
@@ -110,6 +111,7 @@ EstablishmentShot.Charts = (function () {
                 ]
             }, smallChartDefaults()),
             co2_sheet_industry_energy_total_co2_emissions: $.extend({
+                left: false,
                 fa_icon: 'f275',
                 series: [
                     { key: 'co2_sheet_industry_metal_co2_emissions' },
@@ -121,6 +123,7 @@ EstablishmentShot.Charts = (function () {
                 ]
             }, smallChartDefaults()),
             co2_sheet_agriculture_total_co2_emissions: $.extend({
+                left: false,
                 fa_icon: 'f06c',
                 series: [
                     { key: 'co2_sheet_agriculture_heat_co2_emissions' },
@@ -128,13 +131,13 @@ EstablishmentShot.Charts = (function () {
                 ]
             }, smallChartDefaults()),
             co2_sheet_transport_total_co2_emissions: $.extend({
+                left: true,
                 fa_icon: 'f1b9',
                 series: [
-                    { key: 'co2_sheet_transport_car_co2_emissions' },
-                    { key: 'co2_sheet_transport_busses_co2_emissions' },
-                    { key: 'co2_sheet_transport_trains_co2_emissions' },
-                    { key: 'co2_sheet_transport_trucks_co2_emissions' },
-                    { key: 'co2_sheet_transport_ships_co2_emissions' }
+                    { key: 'co2_sheet_transport_total_domestic_aviation_co2_emissions' },
+                    { key: 'co2_sheet_transport_total_domestic_freight_co2_emissions' },
+                    { key: 'co2_sheet_transport_total_private_transport_co2_emissions' },
+                    { key: 'co2_sheet_transport_total_public_transport_co2_emissions' }
                 ]
             }, smallChartDefaults())
         },

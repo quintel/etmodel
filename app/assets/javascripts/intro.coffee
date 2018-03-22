@@ -76,8 +76,6 @@ $ ->
 
     $("p.dataset_information a")
       .attr("href", "/regions/" + areaValue)
-      .find(".link")
-      .text(selectedOption.text())
 
   areaSelect.change(areaOnChange).change()
 

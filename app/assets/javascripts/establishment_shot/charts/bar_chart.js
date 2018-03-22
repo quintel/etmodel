@@ -45,20 +45,45 @@ EstablishmentShot.BarChart = (function () {
         this.scope.append(legend);
     }
 
-    function drawTitle(info) {
-        var span,
-            title = $('<h5/>');
+    function color_for(info) {
+        var i, found,
+            chart = EstablishmentShot.Charts.charts.bar_chart;
 
-        if (info.fa_icon) {
-            span = $('<span/>');
-            span.html('&#x' + info.fa_icon);
+        for (i = 0; i < chart.series.length; i++) {
+            if (chart.series[i].key === info) {
+                found = chart.color_gradient[i];
+                break;
+            }
         }
 
-        title.append(span,
-            I18n.t('establishment_shot.charts.' + this.scope.data('chart'))
+        return found || '#000';
+    }
+
+    function drawTitle(info) {
+        var span,
+            chart = this.scope.data('chart'),
+            title = $('<h5/>');
+
+        title.append(
+            I18n.t('establishment_shot.charts.' + chart)
         );
 
-        this.scope.prepend(title);
+        if (info.fa_icon) {
+            span = $('<span/>').css('color', color_for(chart));
+            span.html('&#x' + info.fa_icon);
+
+            if (info.left) {
+                title.append("&nbsp;", span);
+            } else {
+                title.prepend(span, "&nbsp;");
+            }
+        }
+
+        if (info.showMaxLabel) {
+            this.scope.parents('div.overview').prepend(title);
+        } else {
+            this.scope.append(title);
+        }
     }
 
     function calculateMax(data) {

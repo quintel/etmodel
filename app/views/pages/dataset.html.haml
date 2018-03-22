@@ -17,6 +17,10 @@
           = image_tag('layout/ajax-loader-small.gif')
       %ul.dataset-info
         %li
+          = I18n.t("dataset.present_year")
+          %span= @area.analysis_year
+
+        %li
           = I18n.t("dataset.number_of_inhabitants")
           %span= number_with_delimiter(@area.number_of_inhabitants.to_i)
 
@@ -24,13 +28,9 @@
           = I18n.t("dataset.total_energy_demand")
           %span{ data: { query: 'co2_sheet_total_final_energy_demand', unit: 'J' } }
 
-        %li
+        %li.green
           = I18n.t("dataset.renewability")
           %span{ data: { query: 'co2_sheet_renewability_percentage', unit: '%' } }
-
-        %li
-          = I18n.t("dataset.present_year")
-          %span= @area.analysis_year
 
       .clearfix
 

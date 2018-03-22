@@ -54,7 +54,7 @@ body
         fill: $bg-color
 
     text.max-label
-      font-size: 1.3em
+      font-size: 1.1em
       font-weight: bold
 
     .axis--x path
@@ -64,6 +64,11 @@ body
       display: none
       margin-top: 20px
 
+      > h5
+        text-align: center
+        font-size: 120%
+        margin: 0 0 20px 0
+
       .column, .column > .column-inner
         display: inline-block
 
@@ -72,7 +77,7 @@ body
         clear: none
 
       .column
-        width: 33%
+        width: 34.9%
 
       .column.center
         width: 29%
@@ -89,20 +94,25 @@ body
       .chart > .legend
         margin-right: 0px
         position: absolute
-        transform: translate(0%,-50%)
         right: 0px
-        top: 50%
+        top: 0px
+        margin-top: 10px
         width: 100px
 
     .chart
       position: relative
       h5
-        margin: 0
+        margin: -10px 0 0 0
         text-align: center
+        padding-bottom: 10px
+        font-size: 90%
 
         span
           font-family: FontAwesome
-          margin-right: 5px
+          font-size: 160%
+          font-weight: normal
+          padding: 0 4px
+
       > .legend
         margin-right: 20px
         > ul

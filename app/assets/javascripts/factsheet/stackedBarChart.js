@@ -178,7 +178,7 @@
           .attr('x', x.rangeBand() / 2 - 12 + 'px')
           .attr('y', top + (bottom - top) / 2 + 10 + 'px')
           .attr('class', 'icon-text')
-          .html("&#x" + series.fa_icon)
+          .text(series.fa_icon);
       });
     });
   }

@@ -86,13 +86,13 @@ EstablishmentShot.Charts = (function () {
                 series: [
                     { key: 'co2_sheet_buildings_households_appliances_light_co2_emissions' },
                     { key: 'co2_sheet_agriculture_total_co2_emissions',
-                      fa_icon: 'f06c' },
+                      fa_icon: '\uf06c' },
                     { key: 'co2_sheet_industry_energy_total_co2_emissions',
-                      fa_icon: 'f275' },
+                      fa_icon: '\uf275' },
                     { key: 'co2_sheet_transport_total_co2_emissions',
-                      fa_icon: 'f1b9' },
+                      fa_icon: '\uf1b9' },
                     { key: 'co2_sheet_buildings_households_total_co2_emissions',
-                      fa_icon: 'f015' }
+                      fa_icon: '\uf015' }
                 ],
                 mouseover: function (d) {
                     $(".column .column-inner .chart")

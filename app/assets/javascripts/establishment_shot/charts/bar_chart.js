@@ -15,13 +15,14 @@ EstablishmentShot.BarChart = (function () {
         chart.find('g.series').stop().animate({ 'opacity': 1.0 });
     }
 
-    function drawLegend() {
+    function drawLegend(info) {
         var key,
             item,
             square,
             listItem,
             legend = $('<div/>').addClass('legend'),
-            list   = $('<ul/>');
+            list   = $('<ul/>'),
+            pos    = info.top ? 'bottom' : 'top';
 
         this.data.forEach(function (serie) {
             listItem = $('<li/>');
@@ -40,6 +41,8 @@ EstablishmentShot.BarChart = (function () {
 
             list.prepend(listItem);
         });
+
+        legend.css(pos, '0px');
 
         legend.append(list);
         this.scope.append(legend);
@@ -71,18 +74,17 @@ EstablishmentShot.BarChart = (function () {
         if (info.fa_icon) {
             span = $('<span/>').css('color', color_for(chart));
             span.html('&#x' + info.fa_icon);
+            title.css('text-align', function () {
+                return info.left ? 'right': 'left';
+            });
 
-            if (info.left) {
-                title.append("&nbsp;", span);
-            } else {
-                title.prepend(span, "&nbsp;");
-            }
+            info.left ? title.append(span) : title.prepend(span);
         }
 
         if (info.showMaxLabel) {
             this.scope.parents('div.overview').prepend(title);
         } else {
-            this.scope.append(title);
+            info.top ? this.scope.prepend(title) : this.scope.append(title);
         }
     }
 
@@ -118,7 +120,7 @@ EstablishmentShot.BarChart = (function () {
             );
 
             drawTitle.call(this, info);
-            drawLegend.call(this);
+            drawLegend.call(this, info);
         }
     }
 

@@ -1,4 +1,4 @@
-$border-color: #ddd
+$border-color: #CCC
 $bg-color: #FFEEEE
 
 body
@@ -81,28 +81,34 @@ body
 
       .column.center
         width: 29%
-        border-right: 1px dashed $border-color
-        border-left: 1px dashed $border-color
+        border-right: 1px solid $border-color
+        border-left: 1px solid $border-color
 
     .column-inner
       width: 100%
 
       .chart:first-child
-        border-bottom: 1px dashed $border-color
+        border-bottom: 1px solid $border-color
         margin-bottom: 12px
 
       .chart > .legend
-        margin-right: 0px
         position: absolute
         right: 0px
-        top: 0px
-        margin-top: 10px
+        margin: 10px 0
         width: 100px
 
     .chart
       position: relative
+
+      // Custom styling for houses
+      &.buildings h5 span
+        font-size: 190%
+
+      g.series.co2_sheet_buildings_households_total_co2_emissions text
+        font-size: 180%
+
       h5
-        margin: -10px 0 0 0
+        margin: 0
         text-align: center
         padding-bottom: 10px
         font-size: 90%
@@ -111,7 +117,7 @@ body
           font-family: FontAwesome
           font-size: 160%
           font-weight: normal
-          padding: 0 4px
+          padding: 0 12px
 
       > .legend
         margin-right: 20px
@@ -136,6 +142,6 @@ body
 
     .footer
       padding-top: 7px
-      border-top: 1px dashed $border-color
+      border-top: 1px solid $border-color
       font-size: 80%
       text-align: center

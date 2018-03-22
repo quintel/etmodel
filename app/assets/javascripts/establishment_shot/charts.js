@@ -39,7 +39,7 @@ EstablishmentShot.Charts = (function () {
             return {
                 type: EstablishmentShot.BarChart,
                 width: 150,
-                height: 160,
+                height: 153,
                 color_gradient: smallColors[count++],
                 showY: true,
                 showMaxLabel: false,
@@ -102,6 +102,7 @@ EstablishmentShot.Charts = (function () {
             },
             co2_sheet_buildings_households_total_co2_emissions: $.extend({
                 left: true,
+                top: false,
                 fa_icon: 'f015',
                 series: [
                     { key: 'co2_sheet_buildings_households_space_heating_cooling_co2_emissions' },
@@ -112,6 +113,7 @@ EstablishmentShot.Charts = (function () {
             }, smallChartDefaults()),
             co2_sheet_industry_energy_total_co2_emissions: $.extend({
                 left: false,
+                top: false,
                 fa_icon: 'f275',
                 series: [
                     { key: 'co2_sheet_industry_metal_co2_emissions' },
@@ -124,6 +126,7 @@ EstablishmentShot.Charts = (function () {
             }, smallChartDefaults()),
             co2_sheet_agriculture_total_co2_emissions: $.extend({
                 left: false,
+                top: true,
                 fa_icon: 'f06c',
                 series: [
                     { key: 'co2_sheet_agriculture_heat_co2_emissions' },
@@ -132,6 +135,7 @@ EstablishmentShot.Charts = (function () {
             }, smallChartDefaults()),
             co2_sheet_transport_total_co2_emissions: $.extend({
                 left: true,
+                top: true,
                 fa_icon: 'f1b9',
                 series: [
                     { key: 'co2_sheet_transport_total_domestic_aviation_co2_emissions' },

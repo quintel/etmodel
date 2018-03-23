@@ -95,8 +95,6 @@ nl:
     biodiesel: "Biodiesel"
     biomass: "Biomassa"
     biomass_chp: "Biomassa WKK"
-    biomass_gasification: "Biomassa vergassing"
-    biomass_gasification_ccs: "Biomassa vergassing CCS"
     biomass_plants: "Biomassa"
     biomass_plants_capacity: "Biomassa centrales (capaciteit)"
     biomass_plants_investm: "Biomassa centrales (investering)"
@@ -219,8 +217,7 @@ nl:
     electricity_stored_in_EV: "Opgeslagen in elektrische auto's"
     electricity_converted_to_heat_households: "Omgezet naar warmte voor huishoudens"
     electricity_converted_to_heat_industry: "Omgezet naar warmte voor industrie"
-    electricity_converted_to_gas: "Omgezet naar gas voor transport"
-    electricity_converted_to_gas_industry: "Omgezet naar gas voor industrie"
+    electricity_converted_to_hydrogen: "Omgezet naar waterstof"
     electricity_converted_to_kerosene: "Omgezet naar kerosine voor luchtvaart"
     electricity_exported: "Geëxporteerd"
     electricity_curtailed: "Productieverlaging"
@@ -235,7 +232,7 @@ nl:
     energy_chp_ultra_supercritical_lignite: 'Bruinkoolcentrale met warmtelevering (WKK)'
     energy_export_electricity: 'Geëxporteerd'
     energy_flexibility_curtailment_electricity: 'Productieverlaging'
-    energy_flexibility_p2g_electricity: 'Omgezet naar waterstof voor transport'
+    energy_hydrogen_flexibility_p2g_electricity: 'Omgezet naar waterstof'
     energy_import: "Energie-import"
     energy_power_combined_cycle_ccs_coal: 'Kolenvergassing CCS'
     energy_power_combined_cycle_ccs_network_gas: 'Gas STEG CCS'
@@ -253,6 +250,7 @@ nl:
     energy_power_supercritical_coal: 'Kolen conventioneel'
     energy_power_supercritical_waste_mix: 'Afvalverbranding'
     energy_power_turbine_network_gas: 'Gasturbine'
+    energy_power_turbine_hydrogen: 'Waterstofturbine'
     energy_power_ultra_supercritical_ccs_coal: 'Poederkolen CCS'
     energy_power_ultra_supercritical_coal: 'Poederkolen'
     energy_power_ultra_supercritical_cofiring_coal: 'Poederkolen met bijstook'
@@ -263,6 +261,21 @@ nl:
     energy_power_wind_turbine_coastal: 'Windmolens aan kust'
     energy_power_wind_turbine_inland: 'Windmolens op land'
     energy_power_wind_turbine_offshore: 'Windmolens op zee'
+    energy_export_hydrogen_for_mekko: 'Export'
+    energy_hydrogen_biomass_gasification_for_mekko: 'Biomassavergassing'
+    energy_hydrogen_biomass_gasification_ccs_for_mekko: "Biomassavergassing + CCS"
+    energy_hydrogen_electrolysis_wind_electricity_for_mekko: "Offshore windmolens voor H2"
+    energy_hydrogen_electrolysis_solar_electricity_for_mekko: "Zonnecentrales voor H2"
+    energy_hydrogen_flexibility_p2g_electricity_for_mekko: "H2 uit elektriciteitsoverschotten"
+    energy_hydrogen_steam_methane_reformer_ccs_for_mekko: "SMR + CCS"
+    energy_hydrogen_steam_methane_reformer_for_mekko: "SMR"
+    energy_import_hydrogen_for_mekko: "Import"
+    energy_power_turbine_hydrogen_for_mekko: "Elektriciteitsproductie"
+    industry_final_demand_hydrogen_non_energetic_for_mekko: "Kunstmestproductie"
+    industry_final_demand_hydrogen_for_mekko: "Warmteproductie industrie"
+    agriculture_final_demand_hydrogen_for_mekko: "Warmteproductie landbouw"
+    buildings_collective_burner_hydrogen_for_mekko: "Warmteproductie gebouwen"
+    households_collective_burner_hydrogen_for_mekko: "Warmteproductie huishoudens"
     environment: "Omgeving"
     excess_electricity: "Elektriciteit uit overschot"
     final_demand_greengas: "Finaal gebruik groengas"
@@ -368,9 +381,11 @@ nl:
     hydro_mountain: "Water stuwmeer"
     hydro_river: "Water rivier"
     hydrogen: "Waterstof"
+    hydrogen_non_energetic: "Niet-energetische waterstof"
     hydrogen_cars: "Waterstofauto's"
     hydrogen_busses: "Waterstofbussen"
     hydrogen_trucks: "Waterstofvrachtwagens"
+    hydrogen_turbine: "Waterstofturbine"
     import: "Import"
     imported: "Geïmporteerde"
     imported_electricity: "Geïmporteerde elektriciteit"
@@ -379,7 +394,6 @@ nl:
     industry_chp_engine_gas_power_fuelmix: 'Gasmotor WKK industrie'
     industry_chp_turbine_gas_power_fuelmix: 'Gasturbine WKK industrie'
     industry_chp_ultra_supercritical_coal: 'Kolen WKK industrie'
-    industry_flexibility_p2g_electricity: "Omgezet naar waterstof voor industrie"
     industry_flexibility_p2h_electricity: "Omgezet naar warmte voor industrie"
     inland: "Op land"
     insulation_savings_new_houses: "Isolatiebesparingen, nieuwe huizen"

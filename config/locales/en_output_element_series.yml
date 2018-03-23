@@ -219,8 +219,7 @@ en:
     electricity_stored_in_EV: "Stored in EV"
     electricity_converted_to_heat_households: "Converted to heat for households"
     electricity_converted_to_heat_industry: "Converted to heat for industry"
-    electricity_converted_to_gas: "Converted to gas for transport"
-    electricity_converted_to_gas_industry: "Converted to gas for industry"
+    electricity_converted_to_hydrogen: "Converted to hydrogen"
     electricity_converted_to_kerosene: "Converted to kerosene for aviation"
     electricity_exported: "Exported"
     electricity_curtailed: "Curtailed"
@@ -235,7 +234,7 @@ en:
     energy_chp_ultra_supercritical_lignite: 'Lignite plant for district heat (CHP)'
     energy_export_electricity: "Exported"
     energy_flexibility_curtailment_electricity: "Curtailed"
-    energy_flexibility_p2g_electricity: 'Converted to hydrogen for transport'
+    energy_hydrogen_flexibility_p2g_electricity: 'Converted to hydrogen'
     energy_import: "Energy import"
     energy_power_combined_cycle_ccs_coal: 'Coal IGCC CCS'
     energy_power_combined_cycle_ccs_network_gas: 'Gas CCGT CCS'
@@ -253,6 +252,7 @@ en:
     energy_power_supercritical_coal: 'Coal conventional'
     energy_power_supercritical_waste_mix: 'Waste incinerator'
     energy_power_turbine_network_gas: 'Gas turbine'
+    energy_power_turbine_turbine: 'Hydrogen turbine'
     energy_power_ultra_supercritical_ccs_coal: 'Pulverized coal CCS'
     energy_power_ultra_supercritical_coal: 'Pulverized coal'
     energy_power_ultra_supercritical_cofiring_coal: 'Pulverized coal with co-firing'
@@ -263,6 +263,22 @@ en:
     energy_power_wind_turbine_coastal: 'Wind turbines onshore coastal'
     energy_power_wind_turbine_inland: 'Wind turbines onshore inland'
     energy_power_wind_turbine_offshore: 'Wind turbines offshore'
+    energy_compressor_hydrogen_transport_for_mekko: 'Transport'
+    energy_export_hydrogen_for_mekko: 'Export'
+    energy_hydrogen_biomass_gasification_for_mekko: 'Biomass gasification'
+    energy_hydrogen_biomass_gasification_ccs_for_mekko: "Biomass gasification + CCS"
+    energy_hydrogen_electrolysis_wind_electricity_for_mekko: "Offshore wind turbines for H2"
+    energy_hydrogen_electrolysis_solar_electricity_for_mekko: "Solar PV plants for H2"
+    energy_hydrogen_flexibility_p2g_electricity_for_mekko: "H2 from excess electricity"
+    energy_hydrogen_steam_methane_reformer_ccs_for_mekko: "SMR + CCS"
+    energy_hydrogen_steam_methane_reformer_for_mekko: "SMR"
+    energy_import_hydrogen_for_mekko: "Import"
+    energy_power_turbine_hydrogen_for_mekko: "Electricity production"
+    industry_final_demand_hydrogen_non_energetic_for_mekko: "Fertilizer production"
+    industry_final_demand_hydrogen_for_mekko: "Heat production industry"
+    agriculture_final_demand_hydrogen_for_mekko: "Heat production agriculture"
+    buildings_collective_burner_hydrogen_for_mekko: "Heat production buildings"
+    households_collective_burner_hydrogen_for_mekko: "Heat production households"
     environment: "Environment"
     excess_electricity: "Excess electricity"
     final_demand_greengas: "Final demand green gas"
@@ -368,9 +384,11 @@ en:
     hydro_mountain: "Hydro mountain"
     hydro_river: "Hydro river"
     hydrogen: "Hydrogen"
+    hydrogen_non_energetic: "Non-energetic hydrogen"
     hydrogen_cars: "Hydrogen cars"
     hydrogen_busses: "Hydrogen busses"
     hydrogen_trucks: "Hydrogen trucks"
+    hydrogen_turbine: "Hydrogen turbine"
     import: "Import"
     imported: "Imported"
     imported_electricity: "Imported Electricity"
@@ -379,7 +397,6 @@ en:
     industry_chp_engine_gas_power_fuelmix: 'Gas motor CHP industry'
     industry_chp_turbine_gas_power_fuelmix: 'Gas turbine CHP industry'
     industry_chp_ultra_supercritical_coal: 'Coal CHP industry'
-    industry_flexibility_p2g_electricity: "Converted to hydrogen for industry"
     industry_flexibility_p2h_electricity: "Converted to heat for industry"
     inland: "Inland"
     insulation_savings_new_houses: "Insulation savings, new houses"

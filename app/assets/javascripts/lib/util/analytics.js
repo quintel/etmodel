@@ -1,31 +1,36 @@
-var Analytics = (function () {
-    'use strict';
+window.Analytics = (function() {
+  'use strict';
 
-    function track(obj) {
-        if (window.ga) {
-            window.ga('send', 'event', obj.scope, obj.type, obj.data);
-        }
+  /**
+   * Create a new Analytics instance.
+   *
+   * @param {function} sender
+   *   A function which, when invoked, will send an event to the analytics
+   *   endpoint. May be an empty function if you want no events to be sent.
+   */
+  function Analytics(sender) {
+    this.sendEvent = sender || function() {};
+
+    // Only send these events the first time they occur (i.e. notify that user
+    // has changed "input_1" the first time it is changed and ignore further
+    // changes).
+    this.chartAdded = _.memoize(this.chartAdded);
+    this.inputChanged = _.memoize(this.inputChanged);
+  }
+
+  Analytics.prototype = {
+    track: function(scope, type, data) {
+      this.sendEvent('send', 'event', scope, type, data);
+    },
+
+    chartAdded: function(key) {
+      this.track('chart', 'added', key);
+    },
+
+    inputChanged: function(key) {
+      this.track('input', 'changed', key);
     }
+  };
 
-    Analytics.prototype = {
-        chartAdded: function (key) {
-            _.memoize(track({
-                scope: 'chart',
-                type: 'added',
-                data: key
-            }));
-        },
-
-        inputChanged: function (e) {
-            track({
-                scope: 'input',
-                type: 'changed',
-                data: e.attributes.key
-            });
-        }
-    }
-
-    function Analytics () { return; }
-
-    return Analytics;
-}());
+  return Analytics;
+})();

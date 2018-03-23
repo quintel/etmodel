@@ -74,7 +74,7 @@ $ ->
     areaValue = $(this).val()
     selectedOption = $(this).find("option[value='" + areaValue + "']")
 
-    $("p.dataset_information a")
+    $(".dataset_information a")
       .attr("href", "/regions/" + areaValue)
 
   areaSelect.change(areaOnChange).change()

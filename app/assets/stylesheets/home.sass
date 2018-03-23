@@ -16,24 +16,33 @@ body#outside-model
   background-color: #f4f4f4
   select[name=area_code]
     margin-bottom: 5px
-  p.dataset_information
-    margin: 0 0 10px 0
-
+  .dataset_information
+    border-left: 1px solid #ccc
+    border-image: linear-gradient(#f4f4f4 15%, #ccc 16%, #ccc 84%, #f4f4f4 85%) 100%
+    border-image-slice: 1
+    display: inline-block
+    margin-left: 7px
+    padding-left: 10px
     a
+      background: linear-gradient(#fff, #eee)
+      border-color: #bbb
       border-radius: 5px
-      padding: 5px 11px 5px
-
-      span
-        font-size: 100%
+      color: #444
+      font-size: 12px
+      font-weight: normal
+      margin: 0
+      padding: 6px 11px 5px
+      text-shadow: none
 
   h4
     cursor: pointer
   #new_scenario
     border-bottom: 1px solid #ddd
     padding: 20px
-
-    #submit
-      margin-top: 12px
+    p
+      line-height: 1
+    .country, .year
+      margin-bottom: 10px
   #submit button
     border-radius: 5px
     margin: 0

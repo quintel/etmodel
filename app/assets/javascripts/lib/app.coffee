@@ -12,7 +12,7 @@ class @AppView extends Backbone.View
     @scenario    = new Scenario()
     @router      = new Router()
     @merit_order = new MeritOrder(this)
-    @analytics   = new Analytics()
+    @analytics   = new Analytics(window.ga);
     Backbone.history.start({pushState: true, root: '/scenario'})
 
     @api = new ApiGateway

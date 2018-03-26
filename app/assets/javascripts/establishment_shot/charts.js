@@ -73,7 +73,7 @@ EstablishmentShot.Charts = (function () {
                 width: 250,
                 height: 380,
                 margin: {
-                    top: 20,
+                    top: 25,
                     right: 0,
                     bottom: 25,
                     left: 10

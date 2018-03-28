@@ -168,16 +168,6 @@
     %td{:data => {:gquery => "energy_chp_ultra_supercritical_lignite_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "energy_chp_ultra_supercritical_lignite_delta_in_investment_cost_table"}}
   %tr.even
-    %th= t "input_elements.number_of_energy_flexibility_p2g_electricity"
-    %td.border-rgt{:data => {:gquery => "energy_flexibility_p2g_electricity_present_in_investment_cost_table", :graph => :present}}
-    %td{:data => {:gquery => "energy_flexibility_p2g_electricity_future_in_investment_cost_table"}}
-    %td{:data => {:gquery => "energy_flexibility_p2g_electricity_delta_in_investment_cost_table"}}
-  %tr.odd
-    %th= t "input_elements.number_of_flexibility_p2l_electricity"
-    %td.border-rgt{:data => {:gquery => "bunkers_flexibility_p2l_electricity_present_in_investment_cost_table", :graph => :present}}
-    %td{:data => {:gquery => "bunkers_flexibility_p2l_electricity_future_in_investment_cost_table"}}
-    %td{:data => {:gquery => "bunkers_flexibility_p2l_electricity_delta_in_investment_cost_table"}}
-  %tr.even
     %th= t "input_elements.number_of_energy_heater_for_heat_network_coal"
     %td.border-rgt{:data => {:gquery => "energy_heater_for_heat_network_coal_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "energy_heater_for_heat_network_coal_future_in_investment_cost_table"}}
@@ -342,6 +332,17 @@
     %td.border-rgt{:data => {:gquery => "energy_power_wind_turbine_offshore_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "energy_power_wind_turbine_offshore_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "energy_power_wind_turbine_offshore_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t "input_elements.number_of_energy_hydrogen_flexibility_p2g_electricity"
+    %td.border-rgt{:data => {:gquery => "energy_hydrogen_flexibility_p2g_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_hydrogen_flexibility_p2g_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_hydrogen_flexibility_p2g_electricity_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t "input_elements.number_of_flexibility_p2l_electricity"
+    %td.border-rgt{:data => {:gquery => "bunkers_flexibility_p2l_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "bunkers_flexibility_p2l_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "bunkers_flexibility_p2l_electricity_delta_in_investment_cost_table"}}
+
   %thead.subhead
     %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.households'
   %tr.odd
@@ -547,10 +548,10 @@
     %td{:data => {:gquery => "industry_chemicals_refineries_burner_wood_pellets_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "industry_chemicals_refineries_burner_wood_pellets_delta_in_investment_cost_table"}}
   %tr.odd
-    %th= t "input_elements.number_of_industry_flexibility_p2g_electricity"
-    %td.border-rgt{:data => {:gquery => "industry_flexibility_p2g_electricity_present_in_investment_cost_table", :graph => :present}}
-    %td{:data => {:gquery => "industry_flexibility_p2g_electricity_future_in_investment_cost_table"}}
-    %td{:data => {:gquery => "industry_flexibility_p2g_electricity_delta_in_investment_cost_table"}}
+    %th= t "input_elements.number_of_energy_hydrogen_flexibility_p2g_electricity"
+    %td.border-rgt{:data => {:gquery => "energy_hydrogen_flexibility_p2g_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_hydrogen_flexibility_p2g_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_hydrogen_flexibility_p2g_electricity_delta_in_investment_cost_table"}}
   %tr.even
     %th= t "input_elements.number_of_industry_flexibility_p2h_electricity"
     %td.border-rgt{:data => {:gquery => "industry_flexibility_p2h_electricity_present_in_investment_cost_table", :graph => :present}}

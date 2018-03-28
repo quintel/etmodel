@@ -18,6 +18,7 @@ module Colors
       'geothermal_brown' => '#BA7D40',
       'green'            => '#228B22',
       'grey'             => '#A9A9A9',
+      'hydogen_blue'     => '#87CEEB',
       'lignite_grey'     => '#666666',
       'lightorange'      => '#E69567',
       'lightgreen'       => '#B3CF7B',

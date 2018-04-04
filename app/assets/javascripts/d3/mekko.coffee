@@ -250,8 +250,6 @@ D3.mekko =
     display_legend: =>
       $(@container_selector()).find('.legend').remove()
 
-      legend_columns = if @carrier_list.length > 9 then 3 else 2
-
       series = _.filter(@carrier_list.models, (s) ->
         Math.abs(s.total_value()) > 1e-7
       )
@@ -260,7 +258,7 @@ D3.mekko =
         series: series
         width: @width
         vertical_offset: @series_height + @label_height
-        columns: legend_columns
+        columns: 2
 
     wrapLabels: =>
       label_height = @label_height

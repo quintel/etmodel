@@ -84,6 +84,9 @@ D3.mekko =
       max_y_value = _.max(@sector_list.map((a) -> a.total_value()))
       Quantity.scaleAndFormatBy(max_y_value, @model.get('unit'))
 
+    is_empty: =>
+      _.sum(@model.values_future()) <= 0
+
     draw: =>
       @prepare_data()
       [@width, @height] = @available_size()
@@ -294,7 +297,8 @@ D3.mekko =
     fitHeightToLabels: ->
       # @svg is actually the <g> element...
       real_svg   = @svg.node().parentNode
-      svg_height = real_svg.getBoundingClientRect().height
+      svg_height = Math.max(real_svg.getBoundingClientRect().height, @series_height + @label_height)
+
       g_height   = @svg.node().getBoundingClientRect().height
 
       # Need to adjust the height for the transform of the <g> element. Only the

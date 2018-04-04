@@ -25,7 +25,7 @@ D3.import_export_flows =
       delta_y1 = ratio*delta_x1
       delta_x2 = Math.sqrt(Math.pow(r2,2)/ (1 + Math.pow(ratio,2)))
       delta_y2 = ratio*delta_x2
-    
+
       if (data.x1 > data.x2 && data.y1 < data.y2)
         adjusted_x1 = Math.round(data.x1 - delta_x1)
         adjusted_y1 = Math.round(data.y1 + delta_y1)
@@ -103,7 +103,7 @@ D3.import_export_flows =
                       {'from': 'BE', 'to': 'FR', 'capacity': '2300 MW', 'direction': 1},
                       {'from': 'FR', 'to': 'BE', 'capacity': '3200 MW', 'direction': 1},{'from': 'FR', 'to': 'DE', 'capacity': '2750 MW', 'direction': 2}]
 
-      svg = @create_svg_container @width, @height, @margins
+      svg = @create_svg_container @width, @height + @margins.top, @margins
 
       svg.append("defs").append("marker")
           .attr("id", "arrowhead")
@@ -185,4 +185,4 @@ D3.import_export_flows =
                   )
 
     refresh: =>
-      
+

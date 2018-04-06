@@ -13,6 +13,10 @@
 class Setting
   extend ActiveModel::Naming
 
+  MIN_YEAR = 2013
+  DEFAULT_YEAR = 2050
+  MAX_YEAR = 2050
+
   # A list of all attributes which may be stored in the Setting, and their
   # default values.
   def self.default_attributes

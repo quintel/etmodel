@@ -155,4 +155,18 @@ module LayoutHelper
       Dir.glob("icons/areas/*.png")
     end
   end
+
+  def preset_years
+    custom_years
+      .select { |year| (year % 10).zero? }
+      .push([I18n.t('scenario.other').html_safe, 'other'])
+  end
+
+  def other_year_selected
+    !preset_years.include?(Current.setting.end_year)
+  end
+
+  def custom_years
+    (Setting::MIN_YEAR..Setting::MAX_YEAR)
+  end
 end

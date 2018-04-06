@@ -79,14 +79,24 @@ $ ->
 
   areaSelect.change(areaOnChange).change()
 
+  setParamForEstablishmentShot = ->
+    $('.dataset_information > a')[0].search = "end_year=#{ $(this).val() }"
+
   # Checks the select tag to show custom year field select when
   # other is clicked.
   checkYearRadioButtons = ->
     elements = $('#end_year option:selected')
 
     if elements.val() == 'other'
-      cYearSelect.select2(minimumResultsForSearch: -1).show()
+      cYearSelect
+        .select2(minimumResultsForSearch: -1)
+        .show()
+        .change(setParamForEstablishmentShot)
+        .change()
+
     else
+      setParamForEstablishmentShot.call(this)
+
       if cYearSelect.hasClass('select2-hidden-accessible')
         cYearSelect.select2('destroy').hide()
 

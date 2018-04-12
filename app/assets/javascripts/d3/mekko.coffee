@@ -85,7 +85,10 @@ D3.mekko =
       Quantity.scaleAndFormatBy(max_y_value, @model.get('unit'))
 
     is_empty: =>
-      _.sum(@model.values_future()) <= 0
+      _.sum(@series.map((s) ->
+        s.attributes.gquery.attributes.present +
+        s.attributes.gquery.attributes.future
+      )) <= 0
 
     draw: =>
       @prepare_data()

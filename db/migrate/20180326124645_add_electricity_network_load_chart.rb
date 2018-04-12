@@ -3,7 +3,7 @@ class AddElectricityNetworkLoadChart < ActiveRecord::Migration[5.1]
     chart = OutputElement.create!(
       key: 'electricity_network_load',
       unit: 'MW',
-      group: 'Supply',
+      group: 'Merit',
       output_element_type: OutputElementType.find_by_name('d3'),
       requires_merit_order: true
     )

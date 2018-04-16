@@ -36,6 +36,8 @@ D3.electricity_hv_network_load =
         .attr('stroke-width', 2)
         .attr('fill', 'none')
 
+      @svg.append('rect').attr('class', 'subzero')
+
     line: (xScale, yScale) ->
       d3.svg.line()
         .x((data) -> xScale(data.x))
@@ -43,14 +45,14 @@ D3.electricity_hv_network_load =
         .interpolate('monotone')
 
     refresh: ->
+      @rawChartData = @dataForChart()
+      data = @convertToXY(@visibleData())
+
       xScale = @createTimeScale(@dateSelect.getCurrentRange())
       yScale = @createLinearScale()
 
       @svg.select(".x_axis").call(@createTimeAxis(xScale))
       @svg.select(".y_axis").call(@createLinearAxis(yScale))
-
-      @rawChartData = @dataForChart()
-      data = @convertToXY(@visibleData())
 
       if @container_node().find("g.serie").length > 0
         line_function = @line(xScale, yScale)
@@ -62,8 +64,20 @@ D3.electricity_hv_network_load =
       else
         @drawData(data, xScale, yScale)
 
-    maxYvalue: ->
-      d3.max(@rawChartData.map (serie) -> d3.max(serie.values))
+      @svg.selectAll('rect.subzero')
+        .attr('height', (s) => yScale(yScale.domain()[0]) - yScale(0))
+        .attr('y', (s) => yScale(0))
+        .attr('width', @width)
+
+    yValueExtent: ->
+      [min, max] = d3.extent(_.flatten(
+        @visibleData().map((serie) -> d3.extent(serie.values))
+      ))
+
+      min = 0.0 if min > 0
+      max = 0.0 if max < 0
+
+      [min, max]
 
     createLinearScale: ->
-      d3.scale.linear().domain([0, @maxYvalue()]).range([@height, 0]).nice()
+      d3.scale.linear().domain(@yValueExtent()).range([@height, 0]).nice()

@@ -9,7 +9,7 @@ D3.electricity_hv_network_load =
     margins:
       top: 20
       bottom: 20
-      left: 50
+      left: 75
       right: 20
       label_left: 20
 

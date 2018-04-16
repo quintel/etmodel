@@ -1,0 +1,62 @@
+-# Capacity table
+.merit_order_enabled
+%table#carbon_balance.chart.centered.autostripe
+  %thead
+    %tr
+      %th
+      %th
+        = t 'output_elements.tables.carbon_balance.peak_present'
+        (MW)
+      %th
+        = t 'output_elements.tables.carbon_balance.capacity_present'
+        (MW)
+        %th
+          = t 'output_elements.tables.carbon_balance.peak_future'
+          (MW)
+        %th
+          = t 'output_elements.tables.carbon_balance.capacity_future'
+          (MW)
+          %th
+            = t 'output_elements.tables.carbon_balance.delta_capacity'
+            (MW)
+
+  %tbody
+    %tr
+      %th= t "output_elements.tables.capacity_table.low_voltage_network"
+      %td{:data => {:gquery => "lv_net_peak_load_present", :graph => :present}}
+      %td{:data => {:gquery => "lv_net_capacity_present", :graph => :present}}
+      %td{:data => {:gquery => "lv_net_peak_load_future", :graph => :future}}
+      %td{:data => {:gquery => "lv_net_capacity_future", :graph => :future}}
+      %td{:data => {:gquery => "lv_net_capacity_delta_present_future", :graph => :future}}
+
+    %tr
+      %th= t "output_elements.tables.capacity_table.lv_mv_transformer"
+      %td{:data => {:gquery => "lv_mv_trafo_peak_load_present", :graph => :present}}
+      %td{:data => {:gquery => "lv_mv_trafo_capacity_present", :graph => :present}}
+      %td{:data => {:gquery => "lv_mv_trafo_peak_load_future", :graph => :future}}
+      %td{:data => {:gquery => "lv_mv_trafo_capacity_future", :graph => :future}}
+      %td{:data => {:gquery => "lv_mv_trafo_capacity_delta_present_future", :graph => :future}}
+
+    %tr
+      %th= t "output_elements.tables.capacity_table.medium_voltage_network"
+      %td{:data => {:gquery => "mv_net_peak_load_present", :graph => :present}}
+      %td{:data => {:gquery => "mv_net_capacity_present", :graph => :present}}
+      %td{:data => {:gquery => "mv_net_peak_load_future", :graph => :future}}
+      %td{:data => {:gquery => "mv_net_capacity_future", :graph => :future}}
+      %td{:data => {:gquery => "mv_net_capacity_delta_present_future", :graph => :future}}
+
+    %tr
+      %th= t "output_elements.tables.capacity_table.mv_hv_transformer"
+      %td{:data => {:gquery => "mv_hv_trafo_peak_load_present", :graph => :present}}
+      %td{:data => {:gquery => "mv_hv_trafo_capacity_present", :graph => :present}}
+      %td{:data => {:gquery => "mv_hv_trafo_peak_load_future", :graph => :future}}
+      %td{:data => {:gquery => "mv_hv_trafo_capacity_future", :graph => :future}}
+      %td{:data => {:gquery => "mv_hv_trafo_capacity_delta_present_future", :graph => :future}}
+
+    %tr
+      %th= t "output_elements.tables.capacity_table.high_voltage_network"
+      %td{:data => {:gquery => "hv_net_peak_load_present", :graph => :present}}
+      %td{:data => {:gquery => "hv_net_capacity_present", :graph => :present}}
+      %td{:data => {:gquery => "hv_net_peak_load_future", :graph => :future}}
+      %td{:data => {:gquery => "hv_net_capacity_future", :graph => :future}}
+      %td{:data => {:gquery => "hv_net_capacity_delta_present_future", :graph => :future}}

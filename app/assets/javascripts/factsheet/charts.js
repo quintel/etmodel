@@ -44,7 +44,7 @@
       { key: 'factsheet_supply_electricity_from_solar',                 color: '#f9b233' },
       { key: 'factsheet_supply_heat_from_rest_and_geothermal',          color: '#861612' },
       { key: 'factsheet_supply_heat_from_ambient',                      color: '#a61612' },
-      { key: 'factsheet_supply_heat_from_biomass',                      color: '#e6332a' },
+      { key: 'factsheet_supply_woody_biomass',                          color: '#e6332a' },
       { key: 'factsheet_supply_heat_from_solar_thermal',                color: '#ec6839' },
       { key: 'factsheet_supply_gas_from_biogas',                        color: '#1d71b8' },
       { key: 'factsheet_supply_gas_from_fossil',                        color: '#36a9e1' },
@@ -106,7 +106,7 @@
     return demandChart(gqueries, {
       drawLabels: false,
       period: 'present',
-      title: 'Heden',
+      title: gqueries.graph_year.present,
       unit: unit
     });
   }
@@ -121,7 +121,7 @@
       },
       period: 'future',
       unit: unit,
-      title: 'Toekomst',
+      title: gqueries.graph_year.future,
       showY: false
     });
   }

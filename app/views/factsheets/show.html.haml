@@ -11,9 +11,9 @@
         %strong= t(@scenario.area_code)
     %dl.detail-list
       %dt Inwoners
-      %dd(data-query="households_number_of_inhabitants" data-period="present" data-precision="-3") &mdash;
+      %dd(data-query="households_number_of_inhabitants" data-period="present") &mdash;
       %dt Woningen
-      %dd(data-query="households_number_of_residences" data-period="present" data-precision="-3") &mdash;
+      %dd(data-query="households_number_of_residences" data-period="present") &mdash;
       %dt Energiegebruik gebouwde omgeving
       %dd(data-query="factsheet_share_households_buildings_in_total_demand" data-period="present") &mdash;
     .logos
@@ -38,8 +38,8 @@
           .legend.column
             .legend-row.header
               %span.key
-              %span.value Heden
-              %span.value Toekomst
+              %span.value(data-query="graph_year" data-period="present") &mdash;
+              %span.value(data-query="graph_year" data-period="future") &mdash;
             .items
             .total.legend-row
               %span.key
@@ -178,7 +178,7 @@
           %ul.has-icons
             %li
               Bijstook biomassa
-              %span.icon.biomass-heat(data-query="factsheet_demand_of_biomass_in_households_and_buildings") &mdash;
+              %span.icon.biomass-heat(data-query="factsheet_demand_of_biomass_in_individual_heat_production") &mdash;
             %li
               Transport
               %span.icon.biomass-transport(data-query="factsheet_demand_of_biomass_transport") &mdash;

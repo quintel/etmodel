@@ -46,6 +46,7 @@
       { key: 'factsheet_supply_heat_from_ambient',                      color: '#a61612' },
       { key: 'factsheet_supply_woody_biomass',                          color: '#e6332a' },
       { key: 'factsheet_supply_heat_from_solar_thermal',                color: '#ec6839' },
+      { key: 'factsheet_supply_gas_from_synthetic_gas',                 color: '#2c3480' },
       { key: 'factsheet_supply_gas_from_biogas',                        color: '#1d71b8' },
       { key: 'factsheet_supply_gas_from_fossil',                        color: '#36a9e1' },
       { key: 'factsheet_supply_biofuels',                               color: '#82ca39' },

@@ -53,9 +53,10 @@ $ ->
   areaSelect.select2(
     width: '231px',
     templateResult: areaTemplate,
-    dropdownParent: $('#area-select-options')
+    dropdownParent: $('#area-select-options'),
+    dropdownAutoWidth : true
   )
-  sYearSelect.select2(minimumResultsForSearch: -1)
+  sYearSelect.select2(minimumResultsForSearch: -1, dropdownAutoWidth : true)
 
   areaOnChange = ->
     earliest = areaSelect.find(':selected').data('earliest')

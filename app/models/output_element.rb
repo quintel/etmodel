@@ -19,7 +19,7 @@
 #
 
 class OutputElement < ActiveRecord::Base
-  MENU_ORDER = %w(Overview Merit Cost Supply Demand Policy FCE)
+  MENU_ORDER = %w(Overview Merit Cost Supply Demand Network Policy FCE)
 
   include AreaDependent
 

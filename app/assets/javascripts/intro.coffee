@@ -56,7 +56,7 @@ $ ->
     dropdownParent: $('#area-select-options'),
     dropdownAutoWidth : true
   )
-  sYearSelect.select2(minimumResultsForSearch: -1, dropdownAutoWidth : true)
+  sYearSelect.select2(minimumResultsForSearch: -1, dropdownAutoWidth : true, width: 'auto')
 
   areaOnChange = ->
     earliest = areaSelect.find(':selected').data('earliest')

@@ -13,7 +13,14 @@ D3.dynamic_demand_curve =
       label_left: 30
 
     visibleData: ->
-      super().filter (data) => !data.skip
+      data = super().filter (data) => !data.skip
+
+      # Remove sub-zero values which indicate supply, not demand.
+      data.forEach (serie) ->
+        serie.values = serie.values.map (val) ->
+          if val < 0 then 0 else val
+
+      data
 
     draw: ->
       super

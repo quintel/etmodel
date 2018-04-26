@@ -69,6 +69,15 @@ D3.electricity_hv_network_load =
         .attr('y', (s) => yScale(0))
         .attr('width', @width)
 
+    visibleData: ->
+      data = super()
+
+      data.forEach (serie) ->
+        if serie.key.match(/supply/)
+          serie.values = serie.values.map (v) -> -v
+
+      data
+
     yValueExtent: ->
       [min, max] = d3.extent(_.flatten(
         @visibleData().map((serie) -> d3.extent(serie.values))
@@ -77,7 +86,13 @@ D3.electricity_hv_network_load =
       min = 0.0 if min > 0
       max = 0.0 if max < 0
 
-      [min, max]
+      if min < 0 && max > 0
+        if Math.abs(min) > max
+          [min, -min]
+        else
+          [-max, max]
+      else
+        [min, max]
 
     createLinearScale: ->
       d3.scale.linear().domain(@yValueExtent()).range([@height, 0]).nice()

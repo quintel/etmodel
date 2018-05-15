@@ -8,6 +8,8 @@ class @D3YearlyChartView extends D3ChartView
     right: 20
     label_left: 30
 
+  downsampleWith: 'mean'
+
   draw: ->
     [@width, @height] = @available_size()
 
@@ -141,7 +143,7 @@ class @D3YearlyChartView extends D3ChartView
   visibleData: =>
     @rawChartData.map (serie) =>
       $.extend({}, serie, values: MeritTransformator.transform(
-        serie.values, this.dateSelect.val()
+        serie.values, this.dateSelect.val(), @downsampleWith
       ))
 
   convertData: =>

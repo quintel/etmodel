@@ -13,6 +13,8 @@ D3.electricity_hv_network_load =
       right: 20
       label_left: 20
 
+    downsampleWith: 'max'
+
     draw: ->
       @legendSeries = @model.non_target_series()
 

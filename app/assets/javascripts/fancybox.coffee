@@ -6,6 +6,7 @@ $ ->
     href: $(this).attr('href')
     autoSize: true
     maxWidth: 960
+    title: null
 
   $("a.fancybox_image").fancybox
     type: 'image'

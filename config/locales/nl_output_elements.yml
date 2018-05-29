@@ -130,6 +130,12 @@ nl:
       distribution_refinery_gas: "raffinagegas"
       energy: "energie"
     tables:
+      capacity:
+        peak_present: "Peak load, huidige"
+        peak_future: "Peak load, toekomstige"
+        capacity_present: "Capacity, huidige"
+        capacity_future: "Capacity, toekomstige"
+        delta: "Capacity delta"
       merit_order:
         available_capacity: "Beschikbaar vermogen"
         installed_capacity: "Geïnstalleerd vermogen"

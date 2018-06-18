@@ -33,7 +33,8 @@ class ApplicationController < ActionController::Base
 
   def ensure_valid_browser
     # check lib/browser.rb
-    flash[:notice] = I18n.t 'flash.unsupported_browser' unless supported_browser?
+    return if supported_browser?
+    flash[:notice] = I18n.t('flash.unsupported_browser').html_safe
   end
 
 protected

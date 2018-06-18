@@ -9,7 +9,6 @@ module Browser
     when /Opera/      then 'opera'
     when /Trident\/7/ then 'ie11'
     when /MSIE 10/    then 'ie10'
-    when /MSIE 9/     then 'ie9'
     end
   end
 

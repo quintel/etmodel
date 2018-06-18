@@ -60,12 +60,6 @@ class @CommonInterface
          !$t.is('a.menu_toggler')
         @close_all_menus()
 
-    # Menu items
-    #
-    $(document).on 'click', '#disable_peak_load_tracking', ->
-      if App.peak_load
-        App.peak_load.disable_peak_load_tracking()
-
     $("select#locale").change ->
       $.ajax
         url: "/set_locale"

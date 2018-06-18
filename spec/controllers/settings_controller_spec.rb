@@ -9,9 +9,9 @@ describe SettingsController do
     end
 
     it "should update individual settings passed as strings" do
-      put :update, params: { format: :json, "track_peak_load" => true }
+      put :update, params: { format: :json, "use_fce" => true }
       expect(response).to be_success
-      expect(session[:setting][:track_peak_load].to_s).to eq('true')
+      expect(session[:setting][:use_fce].to_s).to eq('true')
     end
 
     it "should update the charts hash" do

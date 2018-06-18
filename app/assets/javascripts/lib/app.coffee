@@ -80,9 +80,6 @@ class @AppView extends Backbone.View
     if dashChangeEl.length > 0
       new DashboardChangerView(dashChangeEl)
 
-    if @settings.get('area_code') == 'nl'
-      @peak_load = new PeakLoad()
-
     window.charts = @charts = new ChartList()
     @accordion = new Accordion()
     @accordion.setup()
@@ -159,9 +156,6 @@ class @AppView extends Backbone.View
       t.invoke('update_view')
       t.update_totals()
     @sidebar.update_bars()
-
-    if App.settings.get('track_peak_load') && App.peak_load
-      App.peak_load.trigger('change')
 
   # Set the update in a cancelable action. When you
   # pull a slider A this method is called. It will call doUpdateRequest

@@ -22,7 +22,6 @@ class Setting
   def self.default_attributes
     {
       network_parts_affected: [],
-      track_peak_load:        false,
       area_code:              'nl',
       start_year:             2011,
       end_year:               2050,
@@ -103,14 +102,6 @@ class Setting
 
   def end_year=(end_year)
     @end_year = end_year.to_i
-  end
-
-  def track_peak_load?
-    use_peak_load && track_peak_load
-  end
-
-  def use_peak_load
-    use_network_calculations?
   end
 
   def use_network_calculations?

@@ -120,11 +120,6 @@ class ScenariosController < ApplicationController
     redirect_to play_path
   end
 
-  # GET /scenario/grid_investment_needed
-  def grid_investment_needed
-    render layout: false
-  end
-
   # This is the main scenario action
   #
   def play

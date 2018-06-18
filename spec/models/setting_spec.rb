@@ -20,10 +20,10 @@ describe Setting do
     end
 
     context "other settings" do
-      subject { Setting.new(track_peak_load: :bar, use_fce: :baz) }
+      subject { Setting.new(use_merit_order: :bar, use_fce: :baz) }
 
-      it 'sets a custom track_peak_load' do
-        expect(subject[:track_peak_load]).to eql(:bar)
+      it 'sets a custom use_merit_order' do
+        expect(subject[:use_merit_order]).to eql(:bar)
       end
 
       it 'sets a custom use_fce' do
@@ -62,49 +62,6 @@ describe Setting do
     end
   end
 
-  describe "#track_peak_load?" do
-    context "use_peak_load is off" do
-      before do
-        @s = Setting.new
-        allow(@s).to receive(:use_peak_load).and_return(false)
-      end
-
-      context "track_peak_load on" do
-        before { @s.track_peak_load = true }
-        subject { @s }
-
-        it 'is not tracking peak load' do
-          expect(subject.track_peak_load?).to be(false)
-        end
-      end
-
-      context "track_peak_load off" do
-        before { @s.track_peak_load = false }
-        subject { @s }
-
-        it 'is not tracking peak load' do
-          expect(subject.track_peak_load?).to be(false)
-        end
-      end
-    end
-
-    context "use_peak_load is on" do
-      before do
-        @setting = Setting.new(track_peak_load: true)
-      end
-
-      it "should" do
-        allow(@setting).to receive(:use_peak_load).and_return(true)
-        expect(@setting.track_peak_load?).to be(true)
-      end
-
-      it "should" do
-        allow(@setting).to receive(:use_peak_load).and_return(false)
-        expect(@setting.track_peak_load?).to be(false)
-      end
-    end
-  end
-
   describe "#reset!", vcr: true do
     before do
       @random_attributes = Setting.default_attributes.clone
@@ -135,15 +92,6 @@ describe Setting do
       }
       it "should return area" do
         expect(@setting.area).to eq(@area)
-      end
-    end
-  end
-
-  describe "#use_peak_load" do
-    [true, false].each do |flag|
-      context "use_network_calculations? = #{flag}" do
-        before  { allow(@setting).to receive(:use_network_calculations?).and_return(flag) }
-        specify { expect(@setting.use_peak_load).to eq(flag)}
       end
     end
   end

@@ -39,14 +39,6 @@
         = link_to t('header.scale_scenario'), scaled_path
       %li.sep
 
-      - if Current.setting.use_peak_load
-        %li.scenario_option
-          = check_box :track_peak_load, :settings,
-            :onchange => 'App.settings.toggle_peak_load_tracking()',
-            :checked => Current.setting.track_peak_load
-          %label{:for => "track_peak_load_settings"}
-            = t 'header.notify_of_grid_investments'
-
       - if Current.setting.allow_fce?
         %li.scenario_option
           = check_box :settings, :use_fce, :checked => Current.setting.use_fce

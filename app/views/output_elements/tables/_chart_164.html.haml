@@ -11,11 +11,11 @@
         = t 'output_elements.tables.flexibility.storage_volume'
         (MWh)
       %th
-        = t 'output_elements.tables.flexibility.annual_stored_energy'
+        = t 'output_elements.tables.flexibility.annual_energy_output'
         (PJ)
       %th
-        = t 'output_elements.tables.flexibility.annual_stored_energy'
-        (TWh)
+        = t 'output_elements.tables.flexibility.annual_electricity_input'
+        (PJ)
       %th
         = t 'output_elements.tables.flexibility.full_load_hours'
         (hrs)
@@ -24,70 +24,70 @@
       %th= t "output_elements.tables.flexibility.electricity_stored_in_batteries"
       %td{:data => {:gquery => "households_flexibility_p2p_electricity_capacity", :graph => :future}}
       %td{:data => {:gquery => "households_flexibility_p2p_electricity_volume", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "households_flexibility_p2p_electricity_demand", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "households_flexibility_p2p_electricity_usage_twh", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "households_flexibility_p2p_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "households_flexibility_p2p_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 1, :gquery => "households_flexibility_p2p_electricity_flhs", :graph => :future}}
     %tr
       %th= t "output_elements.tables.flexibility.electricity_stored_in_EV"
       %td{:data => {:gquery => "transport_car_using_electricity_capacity", :graph => :future}}
       %td{:data => {:gquery => "transport_car_using_electricity_volume", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "transport_car_using_electricity_demand", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "transport_car_using_electricity_usage_twh", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "transport_car_using_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "transport_car_using_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 1, :gquery => "transport_car_using_electricity_flhs", :graph => :future}}
     %tr
       %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_households"
       %td{:data => {:gquery => "households_flexibility_p2h_electricity_capacity", :graph => :future}}
       %td{:data => {:gquery => "households_flexibility_p2h_electricity_volume", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "households_flexibility_p2h_electricity_demand", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "households_flexibility_p2h_electricity_usage_twh", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "households_flexibility_p2h_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "households_flexibility_p2h_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 1, :gquery => "households_flexibility_p2h_electricity_flhs", :graph => :future}}
 
     %tr
       %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_industry"
       %td{:data => {:gquery => "industry_flexibility_p2h_electricity_capacity", :graph => :future}}
       %td{:data => {:gquery => "industry_flexibility_p2h_electricity_volume", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_electricity_demand", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_electricity_usage_twh", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 1, :gquery => "industry_flexibility_p2h_electricity_flhs", :graph => :future}}
     %tr
       %th= t "output_elements.tables.flexibility.electricity_converted_to_hydrogen"
       %td{:data => {:gquery => "energy_hydrogen_flexibility_p2g_electricity_capacity", :graph => :future}}
       %td
-      %td{:data => {:decimals => 4, :gquery => "energy_hydrogen_flexibility_p2g_electricity_demand", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "energy_hydrogen_flexibility_p2g_electricity_usage_twh", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_hydrogen_flexibility_p2g_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_hydrogen_flexibility_p2g_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 1, :gquery => "energy_hydrogen_flexibility_p2g_electricity_flhs", :graph => :future}}
     %tr
       %th= t "output_elements.tables.flexibility.electricity_converted_to_kerosene_aviation"
       %td{:data => {:gquery => "bunkers_flexibility_p2g_electricity_capacity", :graph => :future}}
       %td
-      %td{:data => {:decimals => 4, :gquery => "bunkers_flexibility_p2g_electricity_demand", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "bunkers_flexibility_p2g_electricity_usage_twh", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "bunkers_flexibility_p2g_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "bunkers_flexibility_p2g_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 1, :gquery => "bunkers_flexibility_p2g_electricity_flhs", :graph => :future}}
     %tr
       %th= t "output_elements.tables.flexibility.losses_in_storage"
       %td
       %td
       %td{:data => {:decimals => 4, :gquery => "losses_in_storage", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "losses_in_storage_twh", :graph => :future}}
+      %td
       %td
     %tr
       %th= t "output_elements.tables.flexibility.electricity_exported"
       %td{:data => {:gquery => "energy_export_electricity_capacity", :graph => :future}}
       %td
-      %td{:data => {:decimals => 4, :gquery => "energy_export_electricity_demand", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "energy_export_electricity_usage_twh", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_export_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_export_electricity_input", :graph => :future}}
       %td
     %tr
       %th= t "output_elements.tables.flexibility.electricity_curtailed"
       %td
       %td
-      %td{:data => {:decimals => 4, :gquery => "energy_curtailment_electricity_demand", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "energy_curtailment_electricity_usage_twh", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_curtailment_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_curtailment_electricity_input", :graph => :future}}
       %td
     %tr
       %th= t "output_elements.tables.flexibility.total"
       %td{:data => {:gquery => "flexibility_total_capacity", :graph => :future}}
       %td{:data => {:gquery => "flexibility_total_volume", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "flexibility_total_demand", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "flexibility_total_usage_twh", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "flexibility_total_output", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "flexibility_total_input", :graph => :future}}
       %td

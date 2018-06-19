@@ -178,11 +178,13 @@
    * Given the slider value, formats the value taking into account the
    * conversion multiplier and precision. Returns a string.
    *
+   * Optional noDelimiter parameter omits thousand separators from the output.
+   *
    * For example:
    *
    *    u.format(2) # => "4.2"
    */
-  UnitConversion.prototype.format = function (value) {
+  UnitConversion.prototype.format = function (value, noDelimiter) {
     var multiplied = value * this.multiplier,
         precision  = this.precision,
         power      = Metric.power_of_thousand(multiplied),
@@ -201,7 +203,10 @@
       scale      = Metric.power_symbols[power];
     }
 
-    formatted = I18n.toNumber(multiplied, { precision: precision });
+    formatted = I18n.toNumber(multiplied, {
+      precision: precision,
+      delimiter: noDelimiter ? '' : null
+    });
 
     if (multiplied == 0) {
       // Reformat, to ensure that we don't display "-0.0".
@@ -890,7 +895,7 @@
       ACTIVE_VALUE_SELECTOR   = this.uid;
       this.selectedConversion = this.view.conversion;
 
-      this.inputEl.val(this.selectedConversion.format(this.model.value));
+      this.inputEl.val(this.selectedConversion.format(this.model.value, true));
       this.unitEl.val(this.selectedConversion.uid);
       this.unitNameEl.text(this.selectedConversion.unit);
 

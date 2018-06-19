@@ -26,12 +26,8 @@ D3.merit_order_hourly_supply =
           .attr('height', @height)
 
     getLegendSeries: ->
-      legendSeries = []
-      @series.forEach (serie) =>
-         if _.find(serie.future_value(), (v) -> (v > 0))
-           legendSeries.push(serie)
-
-      legendSeries
+      # Filter series whose values are all zero.
+      @series.filter (serie) -> _.some(serie.future_value())
 
     getSeries: ->
       weekNum = this.dateSelect && this.dateSelect.val() || 0

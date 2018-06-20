@@ -2,95 +2,56 @@
   %h1 What's new in the Energy transition model?
 
   %section
-    %h2 Transport and Mobility
-
+    %h2 Hydrogen as fully-fledged carrier
     %p
-      %a(href="https://pro.energytransitionmodel.com/scenario/demand/transport_international_transport/international-transport")<
-        International aviation and navigation (shipping)
-      has been added.
+      Hydrogen is now a full-fledged energy carrier and it is possible to choose
+      from several production routes in the ETM:
+    %ul
+      %li steam-methane reforming (SMR) with or without CCS
+      %li offshore wind parks solely producing hydrogen by electrolysis
+      %li solar parks solely producing hydrogen by electrolysis
+      %li electrolyzers that run on excess electricity from the HV-net
+
+    %h2 A renewed electricity network calculation
+    %p
+      The ETM can calculate the hourly impact on the different future net levels
+      based on the choices of the user. As a result, the ETM calculates the
+      needed capacity and the costs of the future net levels.
     %ul
       %li
-        You can choose yourself what percentage of the related emissions should
-        be allocated to your area.
+        The ETM distinguishes between low, medium and the high voltage level.
+        Also, it includes the transformers between the voltage levels.
       %li
-        %a(href="https://pro.energytransitionmodel.com/scenario/flexibility/flexibility_conversion/conversion-to-kerosene-for-aviation")<
-          You can create synthetic kerosene for the aviation industry.
-        This synthetic kerosene is made from excess wind and solar power and
-        captured carbon.
+        Next to this, it includes the offshore wind net and the interconnection
+        net between a region and its neighbours.
+      %li
+        All technologies have a profile that together adds up to mimic the
+        TenneT-curve.
+      %li
+        These technologies are connected to a specific net level.
+      %li
+        The peaks of the future determine the needed capacity of the future net.
 
-    %p Transport is extended with bikes and public transport, including:
+    %h2 New regions can explore their future
+    %ul
+      %li Utrecht, Province
+      %li Haarlemmermeer
+      %li Noord-Beveland
+      %li Schouwen-Duiveland
+      %li Veere
+
+    %h2 New charts:
     %ul
       %li
-        %a(href="https://pro.energytransitionmodel.com/scenario/demand/transport_passenger_transport/tram-metro-technology")
-          Trams and subways
+        Sankey with alle energy flows including hydrogen.
       %li
-        %a(href="https://pro.energytransitionmodel.com/scenario/demand/transport_passenger_transport/bicycle-technology")
-          Bikes and e-bikes
+        A chart that shows energetic final demand.
       %li
-        %a(href="https://pro.energytransitionmodel.com/scenario/demand/transport_passenger_transport/motorcycle-technology")
-          Motorcycles (petrol or electric)
+        A supply and demand chart for the hydrogen net
       %li
-        %a(href="https://pro.energytransitionmodel.com/scenario/demand/transport_passenger_transport/bus-technology")
-          Busses (diesel, LNG, CNG, petrol, hydrogen, and electric)
-
-    %h2 Built environment (households and buildings)
-
-    %ul
-      %li
-        %a(href="https://pro.energytransitionmodel.com/scenario/demand/buildings/district-heating")<
-          High temperature heat pump
-        for local heat networks in the built environment.
-
-    %h2 Industry
-    %ul
-      %li
-        %a(href="https://pro.energytransitionmodel.com/scenario/demand/industry/chemicals")
-          Electric heaters
-        have been added in the industry.
-
-    %h2 Analysis
-
-    %ul
-      %li
-        %p
-          %a(href="https://pro.energytransitionmodel.com/local-global")<
-            Local versus Global:
-          When developing scenarios for small regions, it's easy
-          to forget that your scenario is not an island but affects - and is affected
-          by - nearby regions. By combining the results for these areas, you can see
-          how each individual contributes to the whole. It is possible to compare the
-          outcomes of scenarios between different levels on costs and CO<sub>2</sub>
-          emissions.
-        %p
-          You can find the Local vs. Global feature on the front page, in the menu
-          at the left.
-
-    %h2 Many new and improved regions
-    %ul
-      %li
-        For Gelderland, 66 regions have been added, including all municipalities,
-        the province and Cleantech region, Noord-Veluwe, Foodvalley, Rivierenland,
-        MARN and the Achterhoek.
-      %li
-        The Reitdiep district has been added for Groningen.
-      %li
-        For Zeeland the villages' s-Heer Hendrikskinderen, Oostkapelle and
-        Baarland have been added.
-      %li
-        A number of cities have been added: Antwerp, Amersfoort and the
-        Stedendriehoek.
-      %li
-        The Netherlands has been updated with the most recent and complete data
-        Dutch Statistical Office (CBS, 2015)
-
-  %section
-    %h2 What is expected soon?
-
-    %ul
-      %li Create a fact sheet of your scenario with the touch of a single button.
-      %li A big update fully focused on hydrogen.
-      %li More opportunities for CCS in industry.
-      %li Renewed calculations of future costs of the electricity network.
+        Several new charts for the new network calculation. Showing per net
+        level the dynamic demand, net impact, the required new net, and the
+        costs.
 
   %section
     %p= link_to "← #{t('back_to_model')}", root_path, class: 'button'

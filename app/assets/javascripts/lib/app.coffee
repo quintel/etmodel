@@ -29,8 +29,9 @@ class @AppView extends Backbone.View
 
     # Store the scenario id
     @api.ensure_id().done (id) =>
-      @settings.save { api_session_id: id },
-        success: @enableIdDependantSettings
+      if id != globals.api_session_id
+        @settings.save({ api_session_id: id })
+      @enableIdDependantSettings()
 
   # (Re)builds the list of sliders and renders them. This is usually called by
   # play.js.erb
@@ -203,8 +204,10 @@ class @AppView extends Backbone.View
     $(@disabledSettings())
       .removeClass('wait').off('click', disabledSetting)
 
+    id = @settings.get('api_session_id')
+
     $('#settings_menu a#show_graph').attr('href', ->
-      $(this).data('url').replace(/:id/, App.settings.get('api_session_id'))
+      $(this).data('url').replace(/:id/, id)
     )
 
   # TODO: Move this interface methods to a separate Interface class

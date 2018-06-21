@@ -13,7 +13,6 @@ class @AppView extends Backbone.View
     @router      = new Router()
     @merit_order = new MeritOrder(this)
     @analytics   = new Analytics(window.ga);
-    Backbone.history.start({pushState: true, root: '/scenario'})
 
     @api = new ApiGateway
       api_path:           globals.api_url
@@ -70,10 +69,11 @@ class @AppView extends Backbone.View
 
   # At this point we have all the settings initialized.
   bootstrap: =>
+    Backbone.history.start({pushState: true, root: '/scenario'})
     @sidebar.bootstrap()
 
     unless Backbone.history.getFragment().match(/^reports\//)
-      @router.load_default_slides()
+      @router.update_sidebar()
 
     # If a "change dashboard" button is present, set up the DashboardChanger.
     dashChangeEl = $('#dashboard_change')

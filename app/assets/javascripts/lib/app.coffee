@@ -109,7 +109,7 @@ class @AppView extends Backbone.View
 
   # Used on the console for debugging
   scenario_url: =>
-    "#{globals.api_url.replace('api/v3', 'scenarios')}/#{@scenario.api_session_id()}"
+    "#{globals.api_url}/data/#{@scenario.api_session_id()}"
 
   # Prepares the Merit Order abd FCE checkboxes
   setup_checkboxes: =>

@@ -612,11 +612,13 @@ D3.sankey =
 
     # this method is called every time we're updating the chart
     refresh: =>
-      max_height = @max_column_value()
+      { sum: max_value, nodeCompensation } = @max_column_data(@y)
 
-      # update the scaling function
-      @y.domain([0, max_height * 1.25])
-        .range([0, @height * .90])
+      # Update the scaling function.
+      @y.domain([0, max_value])
+        # Remove from the available height space which will be taken up by
+        # margins between nodes.
+        .range([0, @height - nodeCompensation])
 
       # update the node label
       @nodes.data(@nodes_excluding_loss, (d) -> d.get('id'))
@@ -633,7 +635,7 @@ D3.sankey =
 
       # move the rectangles
       @nodes.selectAll("rect")
-        .attr("height", (d) => @y d.value())
+        .attr("height", (d) => @y(d.value()))
         .attr("y", (d) => @y(d.y_offset()))
 
       # then move the node label
@@ -658,6 +660,26 @@ D3.sankey =
         sums[column] = sums[column] || 0
         sums[column] += n.value()
       _.max _.values(sums)
+
+    # Returns an object describing the `sum` of the largest column in the chart,
+    # and the number of `nodes` contributing, and a `nodeCompensation` total
+    # number of pixels which will be used to separate nodes from one another.
+    max_column_data: (axis) =>
+      data = []
+
+      for node in @nodes_excluding_loss
+        column = node.get('column')
+
+        data[column] ||= { sum: 0.0, nodes: 0, nodeCompensation: 0 }
+
+        colData = data[column]
+        colData.sum += node.value()
+        colData.nodes += 1
+
+        if colData.nodes > 1
+          colData.nodeCompensation += D3.sankey.Node.prototype.vertical_margin
+
+      _.max(data, (col) -> axis(col.sum) + col.nodeCompensation)
 
     number_of_columns: =>
       @__column_number ?= d3.max(@nodes_excluding_loss, (n) -> n.get 'column') + 1

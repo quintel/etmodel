@@ -566,8 +566,8 @@ D3.sankey =
             title: -> $(this).parent('g').attr('data-tooltip-title')
             text: -> $(this).parent('g').attr('data-tooltip')
           position:
-            my: 'right center'
-            at: 'left center'
+            my: 'bottom center'
+            at: 'top center'
             viewport: $("#{@container_selector()}")
             adjust:
               method: 'flipinvert'

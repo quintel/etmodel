@@ -26,7 +26,7 @@ class Setting
       start_year:             2011,
       end_year:               2050,
       use_fce:                false,
-      use_merit_order:        false,
+      use_merit_order:        true,
       locked_charts:          [],
       last_etm_page:          nil,
       scaling:                nil,

@@ -13,7 +13,6 @@ class @AppView extends Backbone.View
     @router      = new Router()
     @merit_order = new MeritOrder(this)
     @analytics   = new Analytics(window.ga);
-    Backbone.history.start({pushState: true, root: '/scenario'})
 
     @api = new ApiGateway
       api_path:           globals.api_url
@@ -30,8 +29,9 @@ class @AppView extends Backbone.View
 
     # Store the scenario id
     @api.ensure_id().done (id) =>
-      @settings.save { api_session_id: id },
-        success: @enableIdDependantSettings
+      if id != globals.api_session_id
+        @settings.save({ api_session_id: id })
+      @enableIdDependantSettings()
 
   # (Re)builds the list of sliders and renders them. This is usually called by
   # play.js.erb
@@ -70,10 +70,11 @@ class @AppView extends Backbone.View
 
   # At this point we have all the settings initialized.
   bootstrap: =>
+    Backbone.history.start({pushState: true, root: '/scenario'})
     @sidebar.bootstrap()
 
     unless Backbone.history.getFragment().match(/^reports\//)
-      @router.load_default_slides()
+      @router.update_sidebar()
 
     # If a "change dashboard" button is present, set up the DashboardChanger.
     dashChangeEl = $('#dashboard_change')
@@ -108,7 +109,7 @@ class @AppView extends Backbone.View
 
   # Used on the console for debugging
   scenario_url: =>
-    "#{globals.api_url.replace('api/v3', 'scenarios')}/#{@scenario.api_session_id()}"
+    "#{globals.api_url}/data/#{@scenario.api_session_id()}"
 
   # Prepares the Merit Order abd FCE checkboxes
   setup_checkboxes: =>
@@ -203,8 +204,10 @@ class @AppView extends Backbone.View
     $(@disabledSettings())
       .removeClass('wait').off('click', disabledSetting)
 
+    id = @settings.get('api_session_id')
+
     $('#settings_menu a#show_graph').attr('href', ->
-      $(this).data('url').replace(/:id/, App.settings.get('api_session_id'))
+      $(this).data('url').replace(/:id/, id)
     )
 
   # TODO: Move this interface methods to a separate Interface class

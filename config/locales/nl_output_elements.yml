@@ -7,7 +7,25 @@ nl:
     demand: "Vraag"
     cost: "Kosten"
     fce: "Ketenanalyse"
-    merit: "Merit order en flexibiliteit"
+    merit: "Elektriciteitsbalans"
+  chart_sub_group:
+    supply:
+      electricity: "Elektriciteit"
+      heat: "Warmte"
+      transport_fuels: "Transportbrandstoffen"
+      production_curves_and_import: "Productiecurves en import"
+      biomass: "Biomassa"
+    demand:
+      agriculture: "Landbouw"
+      industry: "Industrie"
+      transport: "Transport"
+      households: "Huishoudens"
+      overview: "Overzicht"
+      buildings: "Gebouwen"
+    merit:
+      merit_order: "Merit order"
+      flexibility: "Flexibiliteit"
+      import_export: "Import/export"
   output_elements:
     co2_sankey: "Sankey diagram van directe energetische CO<sub>2</sub> uitstoot"
     common:

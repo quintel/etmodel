@@ -19,7 +19,26 @@
 #
 
 class OutputElement < ActiveRecord::Base
-  MENU_ORDER = %w(Overview Merit Cost Supply Demand Network Policy FCE)
+  MENU_ORDER = %w[Overview Merit Cost Supply Demand Network Policy FCE].freeze
+
+  SUB_GROUP_ORDER = %w[
+    households
+    buildings
+    transport
+    industry
+    agriculture
+    other
+
+    electricity
+    heat
+    transport_fuels
+    biomass
+    production_curves_and_import
+
+    merit_order
+    flexibility
+    import_export
+  ].freeze
 
   include AreaDependent
 
@@ -86,7 +105,12 @@ class OutputElement < ActiveRecord::Base
     all.reject(&:area_dependent).
         reject(&:block_chart?).
         reject(&:not_allowed_in_this_area).
-        sort_by{|c| MENU_ORDER.index(c.group) || -1 }
+        sort_by do |c|
+          [
+            MENU_ORDER.index(c.group) || -1,
+            SUB_GROUP_ORDER.index(c.sub_group) || -1
+          ]
+        end
   end
 
   def allowed_output_element_series

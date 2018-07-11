@@ -8,11 +8,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user, :admin?
 
   before_action :initialize_current
-  before_action :locale
+  before_action :assign_locale
 
   after_action  :teardown_current
 
-  def locale
+  def assign_locale
     # update session if passed
     if params[:locale]
       redirect_params = params.permit(:controller, :action)
@@ -20,15 +20,10 @@ class ApplicationController < ActionController::Base
       redirect_to(redirect_params) if request.get?
     end
 
-    # set locale based on session or url
-    loc =  session[:locale] || get_locale_from_url
-    loc = I18n.default_locale unless ['en', 'nl'].include?(loc.to_s)
-    I18n.locale = loc
-  end
-
-  def get_locale_from_url
-    # set locale based on host or default
-    request.host.split(".").last == 'nl' ? 'nl' : I18n.default_locale
+    I18n.locale =
+      session[:locale] ||
+      http_accept_language.compatible_language_from(I18n.available_locales) ||
+      I18n.default_locale
   end
 
   def ensure_valid_browser

@@ -93,7 +93,7 @@ jQuery(function() {
     // Must show the factsheet prior to rendering the charts to get accurate
     // element sizes for the charts.
     $('#factsheet-pending').remove();
-    $('#factsheet-content').show();
+    $('#factsheet-content, #factsheet-reverse').show();
 
     stackedBarChart(
       '#summary .chart.present',

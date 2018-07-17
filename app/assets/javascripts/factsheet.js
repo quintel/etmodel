@@ -124,4 +124,9 @@ jQuery(function() {
       .append('<h4>Oops!</h4>', $('<ul />').append(messages))
       .appendTo($('#factsheet-pending'));
   });
+
+  $('#disclaimer button').on('click', function() {
+    // Fade out but leave in place to avoid the page jumping.
+    $('#disclaimer').animate({ opacity: 0 });
+  });
 });

@@ -6,13 +6,13 @@ class AddDataVisualsSlides < ActiveRecord::Migration[5.1]
     output_element_key: households_final_demand_per_application
     description_attributes:
       content_en: |
-        The scenario report is a printable description of the decisions you made in your current scenario, progress made towards important coals, and includes charts showing breakdowns of energy use, electricity production, and much more.
+        The scenario report is a printable description of the decisions you made in your current scenario, progress made towards important goals, and includes charts showing breakdowns of energy use, electricity production, and much more.
 
         <ul class="data-download">
           <li><a href="/scenario/reports/main"><span class="fa fa-book"></span> View the report →</a></li>
         </ul>
       content_nl: |
-        The scenario report is a printable description of the decisions you made in your current scenario, progress made towards important coals, and includes charts showing breakdowns of energy use, electricity production, and much more.
+        Het scenarioverslag beschrijft je scenario in woord en beeld. Het bevat informatie over de behaalde doelen, toont uitsplitsingen van energiegebruik en elektriciteitsproductie, wijst je op mogelijke inconsistenties en nog veel meer.
 
         <ul class="data-download">
           <li><a href="/scenario/reports/main"><span class="fa fa-book"></span> View the report →</a></li>

@@ -93,7 +93,7 @@ jQuery(function() {
     // Must show the factsheet prior to rendering the charts to get accurate
     // element sizes for the charts.
     $('#factsheet-pending').remove();
-    $('#factsheet-content').show();
+    $('#factsheet-content, #factsheet-reverse').show();
 
     stackedBarChart(
       '#summary .chart.present',
@@ -123,5 +123,10 @@ jQuery(function() {
     $('<div class="errors" />')
       .append('<h4>Oops!</h4>', $('<ul />').append(messages))
       .appendTo($('#factsheet-pending'));
+  });
+
+  $('#disclaimer button').on('click', function() {
+    // Fade out but leave in place to avoid the page jumping.
+    $('#disclaimer').animate({ opacity: 0 });
   });
 });

@@ -193,8 +193,7 @@ class @AppView extends Backbone.View
 
   disabledSettings: ->
     '#settings_menu a.save,
-     #settings_menu a#reset_scenario,
-     #settings_menu a#show_graph'
+     #settings_menu a#reset_scenario'
 
   disableIdDependantSettings: =>
     $(@disabledSettings()).
@@ -203,12 +202,6 @@ class @AppView extends Backbone.View
   enableIdDependantSettings: (args...) =>
     $(@disabledSettings())
       .removeClass('wait').off('click', disabledSetting)
-
-    id = @settings.get('api_session_id')
-
-    $('#settings_menu a#show_graph').attr('href', ->
-      $(this).data('url').replace(/:id/, id)
-    )
 
   # TODO: Move this interface methods to a separate Interface class
   #

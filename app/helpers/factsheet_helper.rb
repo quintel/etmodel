@@ -6,4 +6,8 @@ module FactsheetHelper
 
     { endpoint: url }
   end
+
+  def can_dismiss_disclaimer?
+    current_user.admin? || current_user.role.try(:name) == 'overmorgen'
+  end
 end

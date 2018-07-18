@@ -23,16 +23,16 @@ class AddDataVisualsSlides < ActiveRecord::Migration[5.1]
     output_element_key: households_final_demand_per_application
     description_attributes:
       content_en: |
-        A printable A3 or A4 factsheet describing how energy is produced and consumed in your scenario. Unfortunately, the factsheet is currently available in Dutch only.
+        A printable A3 or A4 infographic describing how energy is produced and consumed in your scenario. Unfortunately, the infographic is currently available in Dutch only.
 
         <ul class="data-download">
-          <li><a href="/scenarios/%{scenario_id}/factsheet"><span class="fa fa-newspaper-o"></span> View the factsheet →</a></li>
+          <li><a href="/scenarios/%{scenario_id}/factsheet"><span class="fa fa-newspaper-o"></span> View the energy mix infographic →</a></li>
         </ul>
       content_nl: |
-        Een printklare A3 'factsheet' waarin de energie-mix voor zowel vraag als aanbod wordt samengevat voor je scenario.
+        Een printklare A3 'infographic' waarin de energie-mix voor zowel vraag als aanbod wordt samengevat voor je scenario.
 
         <ul class="data-download">
-          <li><a href="/scenarios/%{scenario_id}/factsheet"><span class="fa fa-newspaper-o"></span> View the factsheet →</a></li>
+          <li><a href="/scenarios/%{scenario_id}/factsheet"><span class="fa fa-newspaper-o"></span> Bekijk de energie-mix infographic →</a></li>
         </ul>
 
   - key: data_visuals_graph

@@ -29,7 +29,7 @@ class AddDataVisualsSlides < ActiveRecord::Migration[5.1]
           <li><a href="/scenarios/%{scenario_id}/factsheet"><span class="fa fa-newspaper-o"></span> View the factsheet →</a></li>
         </ul>
       content_nl: |
-        A printable A3 or A4 factsheet describing how energy is produced and consumed in your scenario.
+        Een printklare A3 'factsheet' waarin de energie-mix voor zowel vraag als aanbod wordt samengevat voor je scenario.
 
         <ul class="data-download">
           <li><a href="/scenarios/%{scenario_id}/factsheet"><span class="fa fa-newspaper-o"></span> View the factsheet →</a></li>

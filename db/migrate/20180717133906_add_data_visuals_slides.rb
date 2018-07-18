@@ -46,7 +46,7 @@ class AddDataVisualsSlides < ActiveRecord::Migration[5.1]
           <li><a href="%{etengine_url}/data/%{scenario_id}/layout"><span class="fa fa-object-group"></span> View the graph →</a></li>
         </ul>
       content_nl: |
-        A detailed breakdown of energy flows throughout the Energy Transition Model for your scenario. Recommended only for advanced users.
+        Gedetailleerde en interactieve weergave van de energiestromen en energie-omzetters van het Energietransitiemodel. Bedoeld voor gevorderde gebruikers.
 
         <ul class="data-download">
           <li><a href="%{etengine_url}/data/%{scenario_id}/layout"><span class="fa fa-object-group"></span> View the graph →</a></li>

@@ -23,6 +23,7 @@ gem 'nokogiri', '~> 1.8'
 gem 'redcarpet'
 gem 'font-awesome-rails'
 gem 'non-stupid-digest-assets'
+gem 'http_accept_language'
 
 # javascript
 gem 'i18n-js', '~> 3'

@@ -1,11 +1,8 @@
 class Api::Scenario < ActiveResource::Base
   PRESET_GROUPS = [
-    'Actueel',
-    'High Energy Productivity Growth',
-    'Watt Nu?! 2013',
-    'Watt Nu?! 2012',
-    'EC2013',
-    'Regional',
+    'National scenarios',
+    'Scenarios for provinces and regions',
+    'Scenarios for municipalities and neigbourhoods',
     :rest,
     nil
   ].freeze

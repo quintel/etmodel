@@ -3,6 +3,45 @@ require 'rails_helper'
 describe PagesController, vcr: true do
   render_views
 
+  context 'visiting with a preferred language of nl' do
+    before do
+      request.env['HTTP_ACCEPT_LANGUAGE'] = 'nl'
+      get :root
+    end
+
+    after { I18n.locale = I18n.default_locale }
+
+    it 'loads in the NL locale' do
+      expect(I18n.locale).to eq(:nl)
+    end
+  end
+
+  context 'visiting with a preferred language of en' do
+    before do
+      request.env['HTTP_ACCEPT_LANGUAGE'] = 'en'
+      get :root
+    end
+
+    after { I18n.locale = I18n.default_locale }
+
+    it 'loads in the EN locale' do
+      expect(I18n.locale).to eq(:en)
+    end
+  end
+
+  context 'visiting with a preferred language of de' do
+    before do
+      request.env['HTTP_ACCEPT_LANGUAGE'] = 'de'
+      get :root
+    end
+
+    after { I18n.locale = I18n.default_locale }
+
+    it 'loads in the EN locale' do
+      expect(I18n.locale).to eq(:en)
+    end
+  end
+
   {'nl' => 2030, 'de' => 2050}.each do |country, year|
     describe "selecting #{country} #{year}" do
       before do
@@ -52,6 +91,8 @@ describe PagesController, vcr: true do
   end
 
   context "setting locale" do
+    after { I18n.locale = I18n.default_locale }
+
     it "should set the locale and redirect" do
       expect {
         put :set_locale, params: { locale: 'nl' }

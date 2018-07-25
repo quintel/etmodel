@@ -17,8 +17,8 @@ D3.heat_demand_and_production =
     dataForChart: ->
       data = super
 
-      demandVals = data.find((serie) => serie.key == @demandKey).values
-      production = data.find((serie) => serie.key == @productionKey)
+      demandVals = _.find(data, (serie) => serie.key == @demandKey).values
+      production = _.find(data, (serie) => serie.key == @productionKey)
 
       surplusVals = new Array(demandVals.length)
       deficitVals = new Array(demandVals.length)

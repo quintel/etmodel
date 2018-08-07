@@ -212,7 +212,7 @@ ActiveRecord::Schema.define(version: 20180717133906) do
     t.string "name", null: false
     t.string "email", null: false
     t.string "company_school"
-    t.boolean "allow_news", default: false
+    t.boolean "allow_news", default: true
     t.string "heared_first_at", default: ".."
     t.string "crypted_password"
     t.string "password_salt"

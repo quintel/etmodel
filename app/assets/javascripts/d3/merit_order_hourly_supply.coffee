@@ -8,10 +8,7 @@ D3.merit_order_hourly_supply =
       @series.map(@getSerie)
 
     filterYValue: (value) ->
-      if this.key == 'households_flexibility_p2p_electricity'
-        if value > 0 then value else 0
-      else
-        value
+      if value > 0 then value else 0
 
     draw: ->
       super

@@ -41,8 +41,8 @@ D3.dynamic_demand_curve =
         .interpolate('monotone')
 
     getStackedData: ->
-      stacked: @stack(@chartData.filter((d) -> d.key != 'total_demand')),
-      total: @chartData.filter((d) -> d.key == 'total_demand')
+      stacked: @stack(@chartData.filter((d) -> !d.is_target)),
+      total: @chartData.filter((d) -> d.is_target)
 
     getLegendSeries: ->
       legendSeries = []

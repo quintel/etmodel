@@ -95,6 +95,7 @@ class @Chart extends Backbone.Model
       when 'sankey'                     then D3.sankey.View
       when 'refinery'                   then D3.sankey.View
       when 'target_bar'                 then D3.target_bar.View
+      when 'cost_capacity_bar'          then D3.cost_capacity_bar.View
       when 'd3'                         then @d3_view_factory()
       when 'storage'                    then D3.storage.View
       when 'import_export_cwe'          then D3.import_export_cwe.View

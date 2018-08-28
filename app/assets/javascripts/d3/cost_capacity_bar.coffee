@@ -1,4 +1,6 @@
-D3.merit_order =
+# A bar chart / histogram which plots capacity and cost. Both the height and
+# width of the bar are adjusted according to the x and y values.
+D3.cost_capacity_bar =
   View: class extends D3ChartView
     initialize: ->
       # the initalizer is wrapped in a try to prevent IE8 errors. The d3.scale()
@@ -11,6 +13,13 @@ D3.merit_order =
       bottom: 40
       left: 50
       right: 10
+
+    # Provides axis and tooltip translations customised for the chart.
+    t: (key) =>
+      I18n.t(
+        "output_elements.#{@model.get('key')}_chart.#{key}",
+        defaults: [{ scope: "output_elements.cost_capacity_chart.#{key}" }]
+      )
 
     draw: =>
       [@width, @height] = @available_size()
@@ -37,7 +46,7 @@ D3.merit_order =
         .call(@y_axis)
 
       @svg.append("svg:text")
-        .text("#{I18n.t('output_elements.merit_order_chart.operating_costs')} [EUR/MWh]")
+        .text("#{@t('operating_costs')} [EUR/MWh]")
         .attr("x", @height / -2)
         .attr("y", -35)
         .attr("text-anchor", "middle")
@@ -45,7 +54,7 @@ D3.merit_order =
         .attr("transform", "rotate(270)")
 
       @svg.append("svg:text")
-        .text("#{I18n.t('output_elements.merit_order_chart.installed_capacity')}")
+        .text("#{@t('installed_capacity')}")
         .attr("x", @width / 2)
         .attr("y", @height + 30)
         .attr("text-anchor", "middle")
@@ -142,11 +151,11 @@ D3.merit_order =
         )
         .attr("x", (d) => @x(d.x_offset))
         .attr("data-tooltip-text", (d) =>
-          html = "#{I18n.t('output_elements.merit_order_chart.installed_capacity')}: #{@main_formatter(precision: 2)(d.capacity)}
+          html = "#{@t('installed_capacity')}: #{@main_formatter(precision: 2)(d.capacity)}
                   <br/>
-                  #{I18n.t('output_elements.merit_order_chart.operating_costs')}: #{Metric.autoscale_value d.operating_costs, 'Eur/Mwh', 2}
+                  #{@t('operating_costs')}: #{Metric.autoscale_value d.operating_costs, 'Eur/Mwh', 2}
                   <br/>
-                  Load factor: #{d.load_factor}
+                  #{@t('load_factor')}: #{d.load_factor}
                   "
           if d.key == 'must_run'
             html += '*<br/>* Must run plants do not participate in merit order'

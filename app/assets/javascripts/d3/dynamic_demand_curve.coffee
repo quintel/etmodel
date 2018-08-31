@@ -5,6 +5,9 @@ D3.dynamic_demand_curve =
 
     can_be_shown_as_table: -> false
 
+    is_empty: =>
+      _.all(@visibleData(), (d) -> _.all(d.values, (v) -> v == 0))
+
     margins :
       top: 20
       bottom: 50

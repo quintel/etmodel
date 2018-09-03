@@ -159,6 +159,16 @@ describe ScenariosController, vcr: true do
         end
       end
 
+      describe "#weighted_merge" do
+        it "should compare them" do
+          post :perform_weighted_merge, params: {
+            'merge_scenarios' => { '925863' => 1.0, '925864' => 2.0 }
+          }
+
+          expect(response).to be_redirect
+        end
+      end
+
       describe "#merge" do
         it "should create a remote scenario with the average values" do
           post :merge, params: {

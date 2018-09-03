@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://beta-engine.energytransitionmodel.com/api/v3/scenarios/merge
+    body:
+      encoding: UTF-8
+      string: '{"scenarios":[{"scenario_id":"925863","weight":"1.0"},{"scenario_id":"925864","weight":"2.0"}]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.14.0
+      Date:
+      - Mon, 03 Sep 2018 15:59:16 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"4f77986395235a428219b5764e39e3dc"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b9244a45-51ba-4c91-85d4-00d507027827
+      X-Runtime:
+      - '0.033003'
+    body:
+      encoding: UTF-8
+      string: '{"id":925865,"title":"Merged Scenario","area_code":"nl","start_year":2015,"end_year":2050,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/925865","ordering":null,"display_group":null,"scaling":null,"source":"ETEngine
+        Merger","template":null,"created_at":"2018-09-03T17:59:16.000+02:00"}'
+    http_version: 
+  recorded_at: Mon, 03 Sep 2018 15:59:16 GMT
+recorded_with: VCR 3.0.3

@@ -157,7 +157,7 @@ class ScenariosController < ApplicationController
   end
 
   def perform_weighted_merge
-    scenarios = params.require(:merge_scenarios)
+    scenarios = params.require(:merge_scenarios).permit!.to_h
 
     req_body = scenarios.map do |id, weight|
       { scenario_id: id, weight: weight }

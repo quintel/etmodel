@@ -56,7 +56,7 @@ D3.cost_capacity_bar =
       @svg.append("svg:text")
         .text("#{@t('installed_capacity')}")
         .attr("x", @width / 2)
-        .attr("y", @height + 30)
+        .attr("y", @height + 35)
         .attr("text-anchor", "middle")
         .attr("class", "axis_label")
 

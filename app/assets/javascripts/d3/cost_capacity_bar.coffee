@@ -68,14 +68,14 @@ D3.cost_capacity_bar =
         .attr("data-rel", (d) -> d.key)
         .attr("class", "merit_order_node")
         .attr("fill", (d) => d.color)
-        .style("stroke", (d) => d3.rgb(d.color).darker(1))
+        .style("stroke", (d) => d3.rgb(d.color).darker(0.5))
         .on("mouseover", ->
-          d3.select(this).attr("fill", (d) -> d3.rgb(d.color).brighter(1))
+          d3.select(this).attr("fill", (d) -> d3.rgb(d.color).brighter(0.5))
         )
         .on("mouseout", ->
           d3.select(this).attr("fill", (d) -> d.color)
         )
-        .attr('data-tooltip-title', (d) -> I18n.t "output_element_series.#{ d.key }")
+        .attr('data-tooltip-title', (d) -> d.label)
 
       $("#{@container_selector()} rect.merit_order_node").qtip
         content:
@@ -93,7 +93,7 @@ D3.cost_capacity_bar =
       @$el.find("div.legend").remove()
 
       @draw_legend
-        columns:     3
+        columns:     2
         width:       @width
         series:      @merit_data.legendData()
         left_margin: 15
@@ -149,15 +149,20 @@ D3.cost_capacity_bar =
           else
             @height - height
         )
-        .attr("x", (d) => @x(d.x_offset))
+        .attr("x", (d) => @x(d.x_offset) + 1)
         .attr("data-tooltip-text", (d) =>
-          html = "#{@t('installed_capacity')}: #{@main_formatter(precision: 2)(d.capacity)}
-                  <br/>
-                  #{@t('operating_costs')}: #{Metric.autoscale_value d.operating_costs, 'Eur/Mwh', 2}
-                  <br/>
-                  #{@t('load_factor')}: #{d.load_factor}
-                  "
+          html =
+          """
+          #{@t('installed_capacity')}: #{@main_formatter(precision: 2)(d.capacity)}
+          <br/>
+          #{@t('operating_costs')}: #{Metric.autoscale_value d.operating_costs, 'Eur/Mwh', 2}
+          """
+
+          if d.load_factor
+            html += "<br/>#{@t('load_factor')}: #{Metric.ratio_as_percentage(d.load_factor)}"
+
           if d.key == 'must_run'
             html += '*<br/>* Must run plants do not participate in merit order'
+
           html
         )

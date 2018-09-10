@@ -102,8 +102,10 @@ D3.dynamic_demand_curve =
     refresh: (xScale, yScale) ->
       super
 
+      legendSeries = @getLegendSeries()
+
       @setStackedData()
-      @drawLegend(@getLegendSeries())
+      @drawLegend(legendSeries)
 
       xScale = @createTimeScale(@dateSelect.getCurrentRange())
       yScale = @createLinearScale()
@@ -131,3 +133,14 @@ D3.dynamic_demand_curve =
 
       else
         @initialDraw(xScale, yScale, area, line)
+
+      serie = @svg.selectAll('g.serie')
+        .style('opacity', (data) ->
+          # Sets the opacity of invisible series (particularly those whose
+          # values are all zeroes) to avoid rendering artifacts when multiple
+          # such series overlap.
+          if _.find(legendSeries, (s) -> s.get('gquery_key') == data.key)
+            1.0
+          else
+            0.0
+        )

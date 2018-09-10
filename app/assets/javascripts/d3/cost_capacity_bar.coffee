@@ -46,7 +46,7 @@ D3.cost_capacity_bar =
         .call(@y_axis)
 
       @svg.append("svg:text")
-        .text("#{@t('operating_costs')} [EUR/MWh]")
+        .text("#{@t('operating_costs')} (#{@format_cost(1).split(' ')[1]})")
         .attr("x", @height / -2)
         .attr("y", -35)
         .attr("text-anchor", "middle")
@@ -103,6 +103,10 @@ D3.cost_capacity_bar =
     main_formatter: (opts = {}) =>
       @create_scaler(@max_series_value(), 'MW', opts)
 
+    # Formats a cost / price value shown on the y-axis.
+    format_cost: (value) =>
+      Metric.autoscale_value(value, @model.get('unit'), 2)
+
     max_series_value: ->
       _.max(_.map(@data, (n) -> n.capacity))
 
@@ -155,7 +159,7 @@ D3.cost_capacity_bar =
           """
           #{@t('installed_capacity')}: #{@main_formatter(precision: 2)(d.capacity)}
           <br/>
-          #{@t('operating_costs')}: #{Metric.autoscale_value d.operating_costs, 'Eur/Mwh', 2}
+          #{@t('operating_costs')}: #{@format_cost(d.operating_costs)}
           """
 
           if d.load_factor

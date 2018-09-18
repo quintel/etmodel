@@ -29,6 +29,27 @@ $ ->
     existingScenario.addClass('active')
     $("#new_scenario").hide().removeClass('active')
 
+  $(".movie_tabs button").click (e) ->
+    currentMovie = $('.movie_tabs .active').find('button').data('movie')
+    movieId = $(e.target).data('movie')
+
+    return if currentMovie == movieId
+
+    currentContainer = $('#movie_content iframe')
+
+    Interface.set_active_movie_tab(movieId);
+    currentContainer.hide()
+
+    $.get("/select_movie/" + movieId)
+      .done((responseBody) ->
+        currentContainer.remove()
+        $("#movie_content").html(responseBody)
+      )
+      .fail(->
+        Interface.set_active_movie_tab(currentMovie)
+        currentContainer.show()
+      )
+
   areaTemplate = (state) ->
     if !state.id
       return state.text

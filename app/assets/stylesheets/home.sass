@@ -204,6 +204,7 @@ body#outside-model
     margin: auto
     width: 512px
     margin-top: 30px
+    margin-bottom: -2px
     ul, li
       padding: 0
       margin: 0
@@ -217,12 +218,16 @@ body#outside-model
         padding-bottom: 8px
         margin-right: 15px
         height: 28px
-        a
-          float: left
+        button
           color: #333
+          cursor: pointer
           border: 2px solid #dfe8f3
           border-bottom: 0px
-          padding: 4px 10px 4px 10px
+          outline: none
+          font-family: $body_font_family
+          font-size: 13px
+          margin: 0
+          padding: 6px 10px
           background: #dfe8f3
           text-decoration: none
           &:hover
@@ -232,11 +237,12 @@ body#outside-model
         cursor: pointer
       li.active
         background: #fff
-      li.active a
+      li.active button
         background: #fff
         margin: 0
 
   #movie_content
+    background: asset-url("layout/ajax-loader.gif") center center no-repeat
     margin: -2px auto 0 auto
     width: 512px
     height: 289px

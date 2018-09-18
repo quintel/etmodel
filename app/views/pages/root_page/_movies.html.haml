@@ -12,9 +12,9 @@
   .movie_tabs
     %ul
       %li#what.active
-        = link_to t('intro.what_is_this'), "/select_movie/what", :remote => true
+        %button{ data: { movie: 'what' } }= t('intro.what_is_this')
       %li#how
-        = link_to t('intro.how_does_this_work'), "/select_movie/how", :remote => true
+        %button{ data: { movie: 'how' } }= t('intro.how_does_this_work')
   /
     [if lt IE 8]><style>#information .tabs {height: 50px} </style><![endif]
   #movie_content

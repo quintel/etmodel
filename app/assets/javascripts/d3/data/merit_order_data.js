@@ -25,11 +25,17 @@ var MeritOrderData = (function () {
 
         formatItem: function (item) {
             var future = item.future_value();
+            var load_factor = null;
+
+            if (future.load_factor) {
+                load_factor = future.load_factor;
+            }
 
             this.formatted.push($.extend(future, {
                 color:           item.attributes.color,
                 key:             item.attributes.gquery_key.replace(/\_merit_order$/, ''),
-                load_factor:     Metric.ratio_as_percentage(future.load_factor),
+                label:           item.attributes.label,
+                load_factor:     load_factor,
                 operating_costs: this.operatingCosts.call(item)
             }));
         },

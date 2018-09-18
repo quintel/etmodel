@@ -107,9 +107,9 @@
       when 'FTE'
         "#{@round_number x, 0} #{@scaling_in_words(0, 'FTE')}"
       when 'Eur/Mwh'
-        "#{@round_number x, 0} €/Mwh"
+        "#{@round_number x, 2} €/MWh"
       when 'Eur/MWhe'
-        "#{@round_number x, 0} €/MWhe"
+        "#{@round_number x, 2} €/MWhe"
       when 'Eur/MWe'
         "#{@round_number x, 2} €/MWe"
       when 'MEur/MWe'

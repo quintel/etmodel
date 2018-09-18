@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180717133906) do
+ActiveRecord::Schema.define(version: 20180910084924) do
 
   create_table "area_dependencies", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string "dependent_on"
@@ -212,7 +212,7 @@ ActiveRecord::Schema.define(version: 20180717133906) do
     t.string "name", null: false
     t.string "email", null: false
     t.string "company_school"
-    t.boolean "allow_news", default: true
+    t.boolean "allow_news", default: false
     t.string "heared_first_at", default: ".."
     t.string "crypted_password"
     t.string "password_salt"

@@ -5,6 +5,9 @@ D3.dynamic_demand_curve =
 
     can_be_shown_as_table: -> false
 
+    is_empty: =>
+      _.all(@visibleData(), (d) -> _.all(d.values, (v) -> v == 0))
+
     margins :
       top: 20
       bottom: 50
@@ -41,8 +44,8 @@ D3.dynamic_demand_curve =
         .interpolate('monotone')
 
     getStackedData: ->
-      stacked: @stack(@chartData.filter((d) -> d.key != 'total_demand')),
-      total: @chartData.filter((d) -> d.key == 'total_demand')
+      stacked: @stack(@chartData.filter((d) -> !d.is_target)),
+      total: @chartData.filter((d) -> d.is_target)
 
     getLegendSeries: ->
       legendSeries = []
@@ -99,8 +102,10 @@ D3.dynamic_demand_curve =
     refresh: (xScale, yScale) ->
       super
 
+      legendSeries = @getLegendSeries()
+
       @setStackedData()
-      @drawLegend(@getLegendSeries())
+      @drawLegend(legendSeries)
 
       xScale = @createTimeScale(@dateSelect.getCurrentRange())
       yScale = @createLinearScale()
@@ -128,3 +133,14 @@ D3.dynamic_demand_curve =
 
       else
         @initialDraw(xScale, yScale, area, line)
+
+      serie = @svg.selectAll('g.serie')
+        .style('opacity', (data) ->
+          # Sets the opacity of invisible series (particularly those whose
+          # values are all zeroes) to avoid rendering artifacts when multiple
+          # such series overlap.
+          if _.find(legendSeries, (s) -> s.get('gquery_key') == data.key)
+            1.0
+          else
+            0.0
+        )

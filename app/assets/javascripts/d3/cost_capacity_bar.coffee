@@ -1,4 +1,6 @@
-D3.merit_order =
+# A bar chart / histogram which plots capacity and cost. Both the height and
+# width of the bar are adjusted according to the x and y values.
+D3.cost_capacity_bar =
   View: class extends D3ChartView
     initialize: ->
       # the initalizer is wrapped in a try to prevent IE8 errors. The d3.scale()
@@ -11,6 +13,13 @@ D3.merit_order =
       bottom: 40
       left: 50
       right: 10
+
+    # Provides axis and tooltip translations customised for the chart.
+    t: (key) =>
+      I18n.t(
+        "output_elements.#{@model.get('key')}_chart.#{key}",
+        defaults: [{ scope: "output_elements.cost_capacity_chart.#{key}" }]
+      )
 
     draw: =>
       [@width, @height] = @available_size()
@@ -37,7 +46,7 @@ D3.merit_order =
         .call(@y_axis)
 
       @svg.append("svg:text")
-        .text("#{I18n.t('output_elements.merit_order_chart.operating_costs')} [EUR/MWh]")
+        .text("#{@t('operating_costs')} (#{@format_cost(1).split(' ')[1]})")
         .attr("x", @height / -2)
         .attr("y", -35)
         .attr("text-anchor", "middle")
@@ -45,9 +54,9 @@ D3.merit_order =
         .attr("transform", "rotate(270)")
 
       @svg.append("svg:text")
-        .text("#{I18n.t('output_elements.merit_order_chart.installed_capacity')}")
+        .text("#{@t('installed_capacity')}")
         .attr("x", @width / 2)
-        .attr("y", @height + 30)
+        .attr("y", @height + 35)
         .attr("text-anchor", "middle")
         .attr("class", "axis_label")
 
@@ -59,14 +68,14 @@ D3.merit_order =
         .attr("data-rel", (d) -> d.key)
         .attr("class", "merit_order_node")
         .attr("fill", (d) => d.color)
-        .style("stroke", (d) => d3.rgb(d.color).darker(1))
+        .style("stroke", (d) => d3.rgb(d.color).darker(0.5))
         .on("mouseover", ->
-          d3.select(this).attr("fill", (d) -> d3.rgb(d.color).brighter(1))
+          d3.select(this).attr("fill", (d) -> d3.rgb(d.color).brighter(0.5))
         )
         .on("mouseout", ->
           d3.select(this).attr("fill", (d) -> d.color)
         )
-        .attr('data-tooltip-title', (d) -> I18n.t "output_element_series.#{ d.key }")
+        .attr('data-tooltip-title', (d) -> d.label)
 
       $("#{@container_selector()} rect.merit_order_node").qtip
         content:
@@ -84,7 +93,7 @@ D3.merit_order =
       @$el.find("div.legend").remove()
 
       @draw_legend
-        columns:     3
+        columns:     2
         width:       @width
         series:      @merit_data.legendData()
         left_margin: 15
@@ -93,6 +102,10 @@ D3.merit_order =
     # of the chart.
     main_formatter: (opts = {}) =>
       @create_scaler(@max_series_value(), 'MW', opts)
+
+    # Formats a cost / price value shown on the y-axis.
+    format_cost: (value) =>
+      Metric.autoscale_value(value, @model.get('unit'), 2)
 
     max_series_value: ->
       _.max(_.map(@data, (n) -> n.capacity))
@@ -140,15 +153,20 @@ D3.merit_order =
           else
             @height - height
         )
-        .attr("x", (d) => @x(d.x_offset))
+        .attr("x", (d) => @x(d.x_offset) + 1)
         .attr("data-tooltip-text", (d) =>
-          html = "#{I18n.t('output_elements.merit_order_chart.installed_capacity')}: #{@main_formatter(precision: 2)(d.capacity)}
-                  <br/>
-                  #{I18n.t('output_elements.merit_order_chart.operating_costs')}: #{Metric.autoscale_value d.operating_costs, 'Eur/Mwh', 2}
-                  <br/>
-                  Load factor: #{d.load_factor}
-                  "
+          html =
+          """
+          #{@t('installed_capacity')}: #{@main_formatter(precision: 2)(d.capacity)}
+          <br/>
+          #{@t('operating_costs')}: #{@format_cost(d.operating_costs)}
+          """
+
+          if d.load_factor
+            html += "<br/>#{@t('load_factor')}: #{Metric.ratio_as_percentage(d.load_factor)}"
+
           if d.key == 'must_run'
             html += '*<br/>* Must run plants do not participate in merit order'
+
           html
         )

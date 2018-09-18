@@ -23,6 +23,7 @@ nl:
     merit_order: "Merit order"
     flexibility: "Flexibiliteit"
     import_export: "Import/export"
+    hydrogen: "Waterstof"
   output_elements:
     co2_sankey: "Sankey diagram van directe energetische CO<sub>2</sub> uitstoot"
     common:
@@ -69,9 +70,12 @@ nl:
       costs: "Kosten elektriciteitsproductie"
       investment_costs: "Investeringskosten"
       total_investment_cost_of_production: "Investeringskosten (MEur/MWe)"
-    merit_order_chart:
+    cost_capacity_chart:
       installed_capacity: "Geïnstalleerd vermogen"
+      load_factor: "Load factor"
       operating_costs: "Marginale kosten"
+    hydrogen_cost_capacity_chart:
+      operating_costs: "Productiekosten"
     merit_excess_chart:
       minimum_duration: "Minimale duur [uur]"
       no_excess_message: "Geen elektriciteitsoverschotten"
@@ -328,6 +332,10 @@ nl:
     gas_versus_other_primary_energy: "Gas vs overig primair verbruik"
     hydrogen_production_for_transport: "Waterstofproductie voor transport"
     hydrogen_production_for_fertilizers: "Waterstofproductie voor de kunstmestindustrie"
+    hydrogen_cost_capacity: "Productiecapaciteiten en kosten van waterstof"
+    hydrogen_demand: "Waterstofvraag"
+    hydrogen_production: "Waterstofproductie"
+    hydrogen_storage: "Waterstofsopslag"
     hydrogen_turbine: "Waterstofturbine"
     hv_demand_curves: "HS vraag"
     impact_on_electricity_grid: "Veranderingen elektriciteitsnet"

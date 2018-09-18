@@ -119,11 +119,12 @@ class @D3YearlyChartView extends D3ChartView
     max
 
   getSerie: (serie) =>
-    color:  serie.get('color'),
-    label:  serie.get('label'),
-    key:    serie.get('gquery').get('key'),
-    skip:   serie.get('skip'),
-    values: serie.future_value()
+    color:     serie.get('color'),
+    label:     serie.get('label'),
+    key:       serie.get('gquery').get('key'),
+    skip:      serie.get('skip'),
+    is_target: serie.get('is_target_line')
+    values:    serie.future_value()
 
   createLinearScale: ->
     d3.scale.linear().domain([0, @maxYvalue()]).range([@height, 0]).nice()

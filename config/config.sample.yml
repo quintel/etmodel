@@ -36,9 +36,9 @@ development: &DEV
     # mixer_url: http://mixer.et-model.com
     # etflex_url: http://light.et-model.com
 
-    # Optionally send error messages to the Airbrake service by providing your
-    # API key:
-    airbrake_api_key: false
+    # Optionally send error messages to the Sentry service by providing your
+    # Sentry DSN:
+    sentry_dsn: false
 
     # Creating PDF versions of reports requires an external request back to the
     # app. This may not work in the development environments which run only a

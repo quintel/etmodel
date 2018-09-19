@@ -47,7 +47,8 @@ D3.electricity_hv_network_load =
         .interpolate('monotone')
 
     refresh: ->
-      @rawChartData = @dataForChart()
+      super
+
       data = @convertToXY(@visibleData())
 
       xScale = @createTimeScale(@dateSelect.getCurrentRange())
@@ -95,6 +96,9 @@ D3.electricity_hv_network_load =
           [-max, max]
       else
         [min, max]
+
+    maxYvalue: ->
+      Math.max(@yValueExtent().map(Math.abs)...)
 
     createLinearScale: ->
       d3.scale.linear().domain(@yValueExtent()).range([@height, 0]).nice()

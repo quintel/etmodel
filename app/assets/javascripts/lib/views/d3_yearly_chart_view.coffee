@@ -24,6 +24,12 @@ class @D3YearlyChartView extends D3ChartView
     @xScale     = @drawXAxis()
     @yScale     = @drawYAxis()
 
+  # Internal: Returns a function which will format values for the "main" axis
+  # of the chart.
+  main_formatter: (opts = {}) =>
+    # Formatter allows values up to 100,000 before moving up to the next
+    # magnitude.
+    @create_scaler(@maxYvalue() / 100, @model.get('unit'), opts)
 
   dataForChart: ->
     @series = @model.non_target_series().concat(@model.target_series())
@@ -52,6 +58,9 @@ class @D3YearlyChartView extends D3ChartView
 
   refresh: ->
     @rawChartData = @dataForChart()
+
+    @svg.select('g.y_axis text.unit')
+      .text(@main_formatter()(1).split(' ')[1])
 
   drawLegend: (series, columns = 2) ->
     height = ((series.length + 1) / columns) * 15
@@ -88,12 +97,12 @@ class @D3YearlyChartView extends D3ChartView
       .call(axis)
       .append("text")
       .attr("transform", "rotate(-90)")
+      .attr("class", "unit")
       .attr("y", ((@margins.left / 2) * -1) - @margins.label_left)
-      .attr("x", ((@height / 2) * -1) + 30)
+      .attr("x", ((@height / 2) * -1) + 12)
       .attr("dy", ".71em")
       .attr("font-weight", "bold")
       .style("text-anchor", "end")
-      .text(@model.get('unit'))
 
     scale
 
@@ -130,7 +139,13 @@ class @D3YearlyChartView extends D3ChartView
     d3.scale.linear().domain([0, @maxYvalue()]).range([@height, 0]).nice()
 
   createLinearAxis: (scale) ->
-    d3.svg.axis().scale(scale).orient('left').ticks(7).tickSize(-@width, 0)
+    formatter = @main_formatter()
+
+    d3.svg.axis().scale(scale)
+      .orient('left')
+      .ticks(7)
+      .tickSize(-@width, 0)
+      .tickFormat((v) => formatter(v).split(' ')[0])
 
   createTimeScale: (domain) ->
     d3.time.scale.utc().range([0, @width]).domain(domain)

@@ -58,6 +58,9 @@ D3.merit_order_price_curve =
         .y((data) -> yScale(data.y))
         .interpolate('step-after')
 
+    main_formatter: () ->
+      (value) -> Metric.euros_to_string(value)
+
     refresh: ->
       super
 

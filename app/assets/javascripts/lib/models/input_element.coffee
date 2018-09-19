@@ -17,10 +17,17 @@ class @InputElement extends Backbone.Model
     conversions = @get('conversions') or []
 
     if App.settings.get_scaling() and Quantity.isSupported(@get('unit'))
-      base   = new Quantity(@get('start_value'), @get('unit'))
+      base = new Quantity(
+        # If start value is zero, we can't scale down to a different unit, as it
+        # will always default to the smallest possible. In these cases, try the
+        # maximum.
+        @get('start_value') || @get('max_value'),
+        @get('unit')
+      )
+
       scaled = base.smartScale()
 
-      if scaled.unit.name isnt base.unit.name
+      if scaled.unit.power.multiple < base.unit.power.multiple
         conversions = conversions.slice()
 
         conversions.push({

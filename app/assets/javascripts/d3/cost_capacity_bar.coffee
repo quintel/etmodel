@@ -14,6 +14,12 @@ D3.cost_capacity_bar =
       left: 50
       right: 10
 
+    is_empty: =>
+      !_.find(
+        @model.non_target_series(), (s) -> s.future_value().capacity,
+        _.identity
+      )
+
     # Provides axis and tooltip translations customised for the chart.
     t: (key) =>
       I18n.t(

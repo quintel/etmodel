@@ -1,3 +1,6 @@
+$chart-header-title-color: #374d5c
+$chart-header-icon-color: #8895b2
+
 .chart_holder
   width: 600px
   display: inline-block
@@ -12,7 +15,7 @@
       margin: 0 0 3px 0
       font-size: 14px
       line-height: 30px
-      color: #374d5c
+      color: $chart-header-title-color
       padding: 0 0 0 11px
       overflow: hidden
       text-overflow: ellipsis
@@ -21,7 +24,7 @@
     .actions
       float: right
       a
-        color: #a5b9ce
+        color: $chart-header-icon-color
         text-decoration: none
 
         display: block
@@ -31,7 +34,6 @@
         vertical-align: text-top
         width: 15px
         font-size: 14px
-        color: #8895b2
         border-left: 1px solid white
 
         &.fa-table
@@ -49,21 +51,27 @@
     background-color: #fff
 
     .empty
-      svg, .legend
+      svg, .legend, .d3-chart-date-select
         display: none
 
       .empty-wrapper
-        background: linear-gradient(#fbfbfb, #f0f0f0)
-        border-bottom: 1px solid #bbb
+        background: #f5faff
+        border-top: 1px solid white
+        height: 330px
         width: 100%
         text-align: center
 
         p
-          padding-top: 135px
-          margin: 0
+          color: lighten($chart-header-title-color, 5%)
+          padding-top: 150px
+          margin: 0 0 5px
+
+        &.has-annotation p
+          padding-top: 140px
 
         .annotation
-          font-size: 80%
+          color: lighten($chart-header-icon-color, 5%)
+          font-size: 12px
 
     select.d3-chart-date-select
       float: right

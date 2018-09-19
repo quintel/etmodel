@@ -1,3 +1,4 @@
+$chart-header-background-color: #dfe8f3
 $chart-header-title-color: #374d5c
 $chart-header-icon-color: #8895b2
 
@@ -8,7 +9,7 @@ $chart-header-icon-color: #8895b2
   vertical-align: top
   margin: 0 2px 15px 0
   header
-    background: #dfe8f3
+    background: $chart-header-background-color
     height: 30px
     h3
       float: left
@@ -55,7 +56,7 @@ $chart-header-icon-color: #8895b2
         display: none
 
       .empty-wrapper
-        background: #f5faff
+        background: lighten($chart-header-background-color, 6%)
         border-top: 1px solid white
         height: 330px
         width: 100%
@@ -343,7 +344,7 @@ div.d3_container
   h2
     margin-top: 0
     padding: 10px
-    background: #dfe8f3
+    background: $chart-header-background-color
     color: #224368
   #zoomed_chart_wrapper
     padding: 10px
@@ -365,7 +366,7 @@ div.d3_container
     clear: both
     font-size: 18px
     padding-left: 10px
-    background-color: #DFE8F3
+    background-color: $chart-header-background-color
     color: #224368
     padding: 10px
     margin-top: 0
@@ -383,7 +384,7 @@ div.d3_container
     margin-left: 10px
     margin-bottom: 10px
     &:hover
-      background: #dfe8f3
+      background: $chart-header-background-color
     a
       img
         float: left

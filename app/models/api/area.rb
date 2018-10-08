@@ -41,9 +41,7 @@ class Api::Area < ActiveResource::Base
     :is_national_scenario,
     :is_local_scenario,
     :has_detailed_chemical_industry,
-    :has_detailed_other_industry,
-    :has_aggregated_chemical_industry,
-    :has_aggregated_other_industry
+    :has_aggregated_chemical_industry
   ]
 
   def self.grouped

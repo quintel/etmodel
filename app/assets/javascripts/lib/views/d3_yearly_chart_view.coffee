@@ -159,7 +159,7 @@ class @D3YearlyChartView extends D3ChartView
   visibleData: =>
     @rawChartData.map (serie) =>
       $.extend({}, serie, values: MeritTransformator.transform(
-        serie.values, this.dateSelect.val(), @downsampleWith
+        serie.values || [], this.dateSelect.val(), @downsampleWith
       ))
 
   convertData: =>

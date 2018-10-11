@@ -133,14 +133,20 @@ D3.stacked_bar =
         .data(@model.target_series(), (d) ->
           "#{ d.get('gquery_key') }_#{ d.get('target_line_position') }"
         )
+        .style 'opacity', (d) =>
+          if d.get('target_line_position') is '1'
+            if d.present_value() == null then 0 else 1
+          else
+            if d.future_value() == null then 0 else 1
         .transition()
         .attr 'y', (d) =>
           value = if d.get('target_line_position') is '1'
-            if d.present_value() == null and d.safe_present_value() == 0 then 3*@series_height else d.safe_present_value()
+            d.safe_present_value()
           else
-            if d.future_value() == null and d.safe_future_value() == 0 then 3*@series_height else d.safe_future_value()
+            d.safe_future_value()
 
           @series_height - @y(value)
+
 
       @display_legend()
 

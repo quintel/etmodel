@@ -82,6 +82,11 @@ class Api::Scenario < ActiveResource::Base
     end
   end
 
+  # Public: Determines if this scenario can be loaded.
+  def loadable?
+    Api::Area.code_exists?(area_code)
+  end
+
   # description for a locale is enclosed in
   # <span class='en'>
   # </span>

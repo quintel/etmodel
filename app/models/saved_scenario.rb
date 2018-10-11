@@ -20,12 +20,14 @@ class SavedScenario < ActiveRecord::Base
   validates :title,       presence: true
 
   def self.batch_load(saved_scenarios)
-    ids       = saved_scenarios.map(&:scenario_id)
-    scenarios = Api::Scenario.batch_load(ids)
+    ids    = saved_scenarios.map(&:scenario_id)
+    loaded = Api::Scenario.batch_load(ids).index_by(&:id)
 
-    saved_scenarios.length.times do |idx|
-      saved_scenarios[idx].scenario = scenarios[idx]
+    saved_scenarios.each do |saved|
+      saved.scenario = loaded[saved.id]
     end
+
+    saved_scenarios
   end
 
   def scenario

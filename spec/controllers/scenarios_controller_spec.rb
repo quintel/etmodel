@@ -79,6 +79,29 @@ describe ScenariosController, vcr: true do
         end
       end
 
+      describe '#show' do
+        context 'with a loadable scenario' do
+          it 'shows information about the scenario' do
+            expect(user_scenario.scenario).to receive(:loadable?).and_return(true)
+
+            get :show, params: { id: user_scenario.id }
+
+            expect(response).to be_success
+            expect(response).to render_template(:show)
+          end
+        end
+
+        context 'with a not-loadable scenario' do
+          it 'shows information about the scenario' do
+            expect(user_scenario.scenario).to receive(:loadable?).and_return(false)
+
+            get :show, params: { id: user_scenario.id }
+
+            expect(response).to be_redirect
+          end
+        end
+      end
+
       context 'with a scenario for a non-existent region' do
         before do
           session[:setting] = Setting.new(area_code: 'nope')

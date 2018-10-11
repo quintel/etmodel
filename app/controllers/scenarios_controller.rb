@@ -41,7 +41,7 @@ class ScenariosController < ApplicationController
   end
 
   def show
-    if @scenario.nil?
+    if @scenario.nil? || !@scenario.loadable?
       redirect_to root_path, notice: "Scenario not found" and return
     end
     if @scenario.description
@@ -100,7 +100,7 @@ class ScenariosController < ApplicationController
   # POST /scenarios/:id/load
   #
   def load
-    if @scenario.nil?
+    if @scenario.nil? || !@scenario.loadable?
       redirect_to play_path, notice: "Scenario not found" and return
     end
 

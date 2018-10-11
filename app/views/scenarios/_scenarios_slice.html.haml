@@ -1,5 +1,5 @@
 - @saved_scenarios.each do |ss|
-  - if ss.scenario
+  - if ss.scenario&.loadable?
     %tr{class: cycle('even', 'odd') + (' highlight' if @student_ids.include?(ss.user_id)).to_s}
       %td= check_box_tag 'scenario_ids[]', ss.scenario.id
       %td= link_to ss.scenario.title, "/scenarios/#{ss.scenario.id}"
@@ -7,10 +7,17 @@
       %td= ss.scenario.parsed_created_at.andand.strftime("%d %b %H:%M")
       %td= ss.user.name + ' ( ' + ss.user.email + ' )'
   - elsif current_user.admin?
-    %tr{class: cycle('even', 'odd')}
+    %tr{class: "unavailable #{cycle('even', 'odd')}" }
       -# DEBT: use I18n here.
-      %td= "#{ss.scenario_id}"
-      %td= "does not exist anymore on the server."
+      %td= check_box_tag 'scenario_ids[]', -1, false, disabled: true
+      %td
+        = ss.scenario&.title
+        == (#{ss.scenario_id})
+        &ndash;
+        - if ss.scenario
+          cannot be loaded
+        - else
+          does not exist
       %td= ""
       %td= ss.created_at.to_datetime.andand.strftime("%d %b %Y")
       %td= ss.user.email

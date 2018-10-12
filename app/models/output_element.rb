@@ -107,8 +107,8 @@ class OutputElement < ActiveRecord::Base
         reject(&:not_allowed_in_this_area).
         sort_by do |c|
           [
-            MENU_ORDER.index(c.group) || -1,
-            SUB_GROUP_ORDER.index(c.sub_group) || -1
+            MENU_ORDER.index(c.group) || Float::INFINITY,
+            SUB_GROUP_ORDER.index(c.sub_group) || Float::INFINITY
           ]
         end
   end

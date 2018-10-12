@@ -29,7 +29,11 @@ class OutputElementsController < ApplicationController
   def index
     # id of the element the chart will be placed in
     @chart_holder = params[:holder]
-    @groups = OutputElement.not_hidden.select_by_group
+
+    @groups =
+      OutputElement
+        .includes(:output_element_type, :area_dependency)
+        .not_hidden.select_by_group
   end
 
   # legacy actions used by the block charts

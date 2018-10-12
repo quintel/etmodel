@@ -1,4 +1,4 @@
-- charts.each do |chart|
+- i18n_sorted_output_elements(charts).each do |chart|
   %div.pick_chart{'data-chart_id' => chart.id, 'data-chart_holder' => @chart_holder}
     %a
       = image_tag "output_elements/#{chart.icon}", :size => "50x30"

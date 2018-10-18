@@ -2,83 +2,40 @@
   %h1 What's new in the Energy transition model?
 
   %section
-    %h2 Hydrogen as fully-fledged energy carrier
+    %h2 Hydrogen calculation updated
     %p
-      Hydrogen is now a fully-fledged energy carrier and it is possible to
-      choose from several production routes in the ETM:
-    %ul
-      %li
-        %a(href="/scenario/supply/hydrogen/hydrogen-production")
-          Steam-methane reforming (SMR), with or without CCS
-      %li
-        %a(href="/scenario/supply/hydrogen/hydrogen-production")
-          Offshore wind parks solely producing hydrogen by electrolysis
-      %li
-        %a(href="/scenario/supply/hydrogen/hydrogen-production")
-          Solar parks solely producing hydrogen by electrolysis
-      %li
-        %a(href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen")
-          Electrolyzers that run on excess electricity from the HV-net
+      The ETM now calculates hydrogen demand and supply on an hourly-basis,
+      which makes it possible to identify moments of excess hydrogen production
+      and shortages. The ETM ensures that hydrogen supply matches demand for
+      every hour per year by automatically storing excess hydrogen production in
+      a buffer. New hourly charts are added for hydrogen supply, hydrogen demand
+      and hydrogen storage. Navigate to
+      %a(href="https://pro.energytransitionmodel.com/scenario/supply/hydrogen/hydrogen-production")
+        the updated hydrogen section
+      in the ETM and
+      %a(href="https://github.com/quintel/documentation/blob/613e0f3b9566cf038ac47271e8591ca05d418c9b/general/Hydrogen.md")
+        see the documentation
+      for more details.
+    %p(style="text-align: center")
+      = image_tag 'pages/whats_new/h2_chart_en.png', alt: ''
 
-    %p The produced H<sub>2</sub> can then be used:
+    %h2 Many new regions can explore their future energy system
     %ul
-      %li
-        %a(href="/scenario/demand/transport_passenger_transport/car-technology")
-          As fuel in cars, busses and trucks
-      %li
-        %a(href="/scenario/demand/industry/refineries")
-          For heat production in industry and built environment
-      %li
-        %a(href="/scenario/supply/electricity_renewable/hydrogen-plants")
-          For electricity production
-      %li
-        %a(href="/scenario/demand/industry/fertilizers")
-          As feedstock for fertilizer production
+      %li Denmark and Germany 
+      %li All 48 municipalities of Noord-Holland
+      %li 16 municipalities of Utrecht (U16) and 6 combined regions in Utrecht
+      %li New provinces: Noord-Holland and Overijssel
+      %li Updated provinces: Flevoland and Friesland
+      %li Municipality De Friese Meren
 
-    %h2 A renewed electricity network calculation
-    %p
-      The ETM can calculate the hourly impact on the different future net levels
-      based on the choices you make in your scenario. As a result, the ETM
-      calculates the needed capacity and the costs of the future net levels.
+    %h2 Furthermore, we have:
     %ul
+      %li Added pumped hydro storage in reservoirs (only for Germany)
       %li
-        The ETM distinguishes between low, medium and high voltage levels, and
-        also the transformers between the voltage levels.
-      %li
-        It includes the offshore wind net and the interconnection net between a
-        region and its neighbours.
-      %li
-        All technologies have a profile that together adds up to mimic the
-        TenneT-curve.
-      %li
-        These technologies are connected to a specific net level.
-      %li
-        The peaks of the future determine the needed capacity of the future net.
-      %li
-        %a(href="https://github.com/quintel/documentation/blob/master/general/network.md")
-          See the documentation of the network calculation for more details.
-
-    %h2 New regions can explore their future
-    %ul
-      %li Utrecht, Province
-      %li Haarlemmermeer
-      %li Noord-Beveland
-      %li Schouwen-Duiveland
-      %li Veere
-
-    %h2 New charts
-    %ul
-      %li
-        A chart that shows energetic final demand.
-      %li
-        A supply and demand chart for the hydrogen net
-      %li
-        Several new charts for the new network calculation. Showing per net
-        level the dynamic demand, net impact, the required new net, and the
-        costs.
-
-    %h2 CO<sub>2</sub> factsheet
-    %p All regions can start with an overview of their CO<sub>2</sub> footprint.
+        Updated
+        %a(href="https://pro.energytransitionmodel.com/scenario/demand/industry/other")
+          the other industry sector
+        with new sliders for energy carriers
 
   %section
     %p= link_to "← #{t('back_to_model')}", root_path, class: 'button'

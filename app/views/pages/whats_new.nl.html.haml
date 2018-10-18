@@ -2,88 +2,39 @@
   %h1 Wat is er nieuw in het Energietransitiemodel?
 
   %section
-    %h2 Waterstof als volwaardige drager
-
+    %h2 Update waterstofberekening
     %p
-      Waterstof is nu een volwaardige energiedrager en het is mogelijk om uit
-      verschillende productieroutes in het ETM te kiezen:
-    %ul
-      %li
-        %a(href="/scenario/supply/hydrogen/hydrogen-production")
-          Produceren vanuit stoom-methaan (SMR) met of zonder CCS
-      %li
-        %a(href="/scenario/supply/hydrogen/hydrogen-production")
-          Produceren vanuit wind op zee parken die uitsluitend waterstof door middel van
-          elektrolyse
-      %li
-        %a(href="/scenario/supply/hydrogen/hydrogen-production")
-          Produceren vanuit zonneparken die uitsluitend waterstof produceren door middel van
-          elektrolyse
-      %li
-        %a(href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen")
-          Produceren vanuit overtollige elektriciteit op het HV-net 
+      Het ETM modelleert nu waterstofvraag en -aanbod op uurbasis. Het ETM zorgt
+      ervoor dat waterstofvraag en -aanbod ieder uur per jaar met elkaar in
+      balans zijn. Dit gebeurt door waterstof productieoverschotten automatisch
+      op te slaan in een buffer, waterstof uit deze buffer te halen tijdens
+      vraagpieken en eventuele overschotten te importeren/exporteren. Er zijn
+      nieuwe grafieken op uurbasis toegevoegd voor waterstofproductie,
+      waterstofvraag en waterstofopslag.
+      %a(href="https://pro.energytransitionmodel.com/scenario/supply/hydrogen/hydrogen-production")
+        Klik hier om de updates te bekijken in het ETM
+      en ga naar de
+      %a(href="https://github.com/quintel/documentation/blob/613e0f3b9566cf038ac47271e8591ca05d418c9b/general/Hydrogen.md")
+        documentatie van waterstof
+      voor meer details.
+    %p(style="text-align: center")
+      = image_tag 'pages/whats_new/h2_chart_nl.png', alt: ''
 
-    %p De geproduceerde waterstof kan dan worden gebruikt:
+    %h2 Veel nieuwe regio's kunnen hun toekomstige energiesysteem verkennen
     %ul
-      %li
-        %a(href="/scenario/demand/transport_passenger_transport/car-technology")
-          Als brandstof in auto's, bussen en vrachtwagens
-      %li
-        %a(href="/scenario/demand/industry/refineries")
-          Voor warmteproductie in industrie en gebouwde omgeving
-      %li
-        %a(href="/scenario/supply/electricity_renewable/hydrogen-plants")
-          Voor elektriciteitsproductie
-      %li
-        %a(href="/scenario/demand/industry/fertilizers")
-          Als grondstof voor de productie van meststoffen
+      %li Denemarken en Duitsland
+      %li Alle 48 gemeenten in Noord-Holland
+      %li 16 Utrechtse gemeenten (U16) en 6 gecombineerde regio’s in Utrecht
+      %li 4 provincies: Noord-Holland, Overijssel, Flevoland (update) and Friesland (update)
+      %li Gemeente De Friese Meren
 
-    %h2 Een hernieuwde berekening van het elektriciteitsnetwerk
-    %p
-      Het ETM kan de uurlijkse impact op de verschillende netniveaus
-      berekenen op basis van de keuzes van de gebruiker. Als gevolg
-      hiervan berekent het ETM de benodigde capaciteit en de kosten van de
-      toekomstige netniveaus.
+    %h2 Verder hebben we:
     %ul
+      %li Stuwmeren toegevoegd voor energieopslag (alleen voor Duitsland)
       %li
-        Het ETM maakt onderscheid tussen laag-, midden- en hoogspanningsniveau.
-        Het bevat ook de transformatoren tussen deze spanningsniveaus.
-      %li
-        Daarnaast omvat het de wind op zee aansluitingen en het
-        interconnectienet tussen een gebied en zijn/haar omliggende gebieden.
-      %li
-        Alle technologieën hebben een profiel dat samen optelt om de
-        TenneT-curve na te bootsen.
-      %li
-        Deze technologieën zijn verbonden met een specifiek netniveau.
-      %li
-        De pieken van de toekomst bepalen de benodigde capaciteit van het
-        toekomstige net.
-      %li
-        %a(href="https://github.com/quintel/documentation/blob/master/general/network.md")
-          Bekijk de documentatie voor meer achtergrond.
-
-    %h2 U kunt nu ook voor deze nieuwe regio's de toekomst verkennen
-    %ul
-      %li Provincie Utrecht
-      %li Gemeente Haarlemmermeer
-      %li Gemeente Noord-Beveland
-      %li Gemeente Schouwen-Duiveland
-      %li Gemeente Veere
-
-    %h2 Nieuwe grafieken
-    %ul
-      %li
-        Een grafiek met een energetische finale vraag.
-      %li
-        Een vraag- en aanbodgrafiek voor het waterstofnet
-      %li
-        Een hoop nieuwe grafieken voor de nieuwe netwerkberekening. Weergave per
-        netniveau van de dynamische vraag, netto-impact, het vereiste nieuwe
-        net en de bijbehorende kosten.
-
-    %h2 CO<sub>2</sub>-factsheet:
-    %p Alle regio's kunnen beginnen met een overzicht van hun CO2-voetafdruk.
+        %a(href="https://pro.energytransitionmodel.com/scenario/demand/industry/other")
+          De overige industrie sector
+        verbeterd door nieuwe schuifjes toe te voegen
 
   %section
     %p= link_to "← #{t('back_to_model')}", root_path, class: 'button'

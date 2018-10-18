@@ -1,10 +1,11 @@
 #introduction
-  .whats_new
-    .fa.fa-bullhorn
-    %strong= t('updated.title')
-    = t('updated.description')
-    %br
-    = link_to "#{t('more_information')} →", whats_new_path
+  - if show_whats_new_banner?
+    .whats_new
+      .fa.fa-bullhorn
+      %strong= t('updated.title')
+      = t('updated.description')
+      %br
+      = link_to "#{t('more_information')} →", whats_new_path
 
   %h1= t 'intro.introduction'
   %p= t 'intro.root_text'

@@ -12,7 +12,10 @@ class ScenariosController < ApplicationController
   # scenario in progress. See quintel/etengine#542.
   class NoScenarioIdError < RuntimeError
     def initialize(controller)
-      "Cannot save ETM scenario with settings: #{ Current.setting.inspect }"
+      super(
+        'Cannot save ETM scenario with settings: ' \
+        "#{Current.setting.to_hash.inspect}"
+      )
     end
   end
 
@@ -61,7 +64,8 @@ class ScenariosController < ApplicationController
 
   def new
     if Current.setting.api_session_id.blank?
-      raise NoScenarioIdError.new(self)
+      redirect_to root_path
+      return
     end
 
     @saved_scenario = SavedScenario.new

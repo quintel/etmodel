@@ -30,7 +30,7 @@ D3.merit_order_hourly_supply =
       weekNum = this.dateSelect && this.dateSelect.val() || 0
 
       _.sortBy @model.non_target_series(), (serie) =>
-        values = MeritTransformator.sliceValues(serie.future_value(), weekNum)
+        values = MeritTransformator.transform(serie.future_value(), weekNum)
 
         min = max = sum = 0
 

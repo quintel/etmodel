@@ -48,13 +48,12 @@ describe ScenariosController, vcr: true do
           expect(assigns(:saved_scenario).api_session_id).to eq(12345)
         end
 
-        it "raises an error if no scenario is in progress" do
+        it "redirects to root" do
           session[:setting] = Setting.default
 
           get :new
 
-          expect(response).to_not be_success
-          expect(response).to render_template(:cannot_save_without_id)
+          expect(response).to be_redirect
         end
       end
 

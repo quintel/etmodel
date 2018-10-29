@@ -128,12 +128,16 @@ class @D3YearlyChartView extends D3ChartView
     max
 
   getSerie: (serie) =>
+    # Creates a default array of values (8760 x 0.0) if the query does not have
+    # a value. This may be the case if the user quickly loads one slide, then a
+    # slide containing this chart: the chart will be rendered before the second
+    # request containing data is received.
     color:     serie.get('color'),
     label:     serie.get('label'),
     key:       serie.get('gquery').get('key'),
     skip:      serie.get('skip'),
     is_target: serie.get('is_target_line')
-    values:    serie.future_value()
+    values:    serie.future_value() || Array.apply(null, Array(8760)).map(-> 0)
 
   createLinearScale: ->
     d3.scale.linear().domain([0, @maxYvalue()]).range([@height, 0]).nice()

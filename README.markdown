@@ -1,9 +1,9 @@
 # The Energy Transition Model (ETM) Professional
 
-![](http://f.cl.ly/items/291h3S0g3E2U3L1T0Z2H/Screen%20Shot%202013-12-10%20at%2013.38.35.png)
+![](https://github.com/quintel/documentation/blob/master/images/20181031_etmodel_screenshot.png)
 
 This is the source code of the [ETM Pro](http://pro.et-model.com):
-an online web app that let you create a future energy scenario for various countries.
+an online web app that let you create a future energy scenario for various countries, municipalities, neighbourhoods and more.
 This software is [Open Source](LICENSE.txt), so you can fork it and alter at your will.
 
 If you have any questions, please [contact us](http://quintel.com/contact).

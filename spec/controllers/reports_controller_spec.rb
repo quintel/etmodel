@@ -49,4 +49,42 @@ describe ReportsController, vcr: true do
       end
     end
   end
+
+  describe '#auto' do
+    context 'without an active scenario' do
+      before { get(:auto) }
+
+      it 'redirects to the "main" report' do
+        expect(response).to redirect_to(report_url('main'))
+      end
+    end
+
+    context 'with an active country scenario' do
+      before { session[:setting] = Setting.new(api_session_id: 648_695) }
+      before { FactoryBot.create(:tab, key: 'demand') }
+
+      before { get(:auto) }
+
+      it 'redirects to the "main" report' do
+        expect(response).to redirect_to(report_url('main'))
+      end
+    end
+
+    context 'with an active non-country scenario' do
+      before do
+        session[:setting] = Setting.new(
+          api_session_id: 956_091,
+          area_code: 'drenthe'
+        )
+      end
+
+      before { FactoryBot.create(:tab, key: 'demand') }
+
+      before { get(:auto) }
+
+      it 'redirects to the "regional" report' do
+        expect(response).to redirect_to(report_url('regional'))
+      end
+    end
+  end
 end

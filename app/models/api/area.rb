@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::Area < ActiveResource::Base
   ORDER = %w(
     country
@@ -69,5 +71,9 @@ class Api::Area < ActiveResource::Base
 
   def use_network_calculations?
     !!attributes[:use_network_calculations]
+  end
+
+  def country?
+    %w[province municipality neighborhood].exclude?(group)
   end
 end

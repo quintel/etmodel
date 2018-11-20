@@ -14,7 +14,8 @@ class ApplicationController < ActionController::Base
 
   def assign_locale
     # update session if passed
-    if params[:locale]
+    if params[:locale].present? &&
+        I18n.available_locales.include?(params[:locale].to_sym)
       redirect_params = params.permit(:controller, :action)
       session[:locale] = params[:locale]
       redirect_to(redirect_params) if request.get?

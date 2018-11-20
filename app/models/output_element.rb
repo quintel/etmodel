@@ -47,6 +47,13 @@ class OutputElement < ActiveRecord::Base
   has_one :description, as: :describable, dependent: :destroy
   has_one :area_dependency, as: :dependable, dependent: :destroy
 
+  # Charts may link to other charts to provide a user with additional insight.
+  belongs_to :related_output_element, class_name: 'OutputElement',
+    optional: true
+
+  has_many :relatee_output_elements, class_name: 'OutputElement',
+    dependent: :nullify, foreign_key: 'related_output_element_id'
+
   accepts_nested_attributes_for :description, :area_dependency
 
   validates :key, presence: true, uniqueness: true

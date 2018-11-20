@@ -13,6 +13,9 @@
   = f.input :growth_chart, :hint => "Do you want your chart to be exponential? check this box. (only applies to bezier chart)"
   = f.input :min_axis_value, :hint => "When filled in this will override the generated axis values (only applies to horizontal stacked bar chart)"
   = f.input :max_axis_value, :hint => "When filled in this will override the generated axis values (only applies to horizontal stacked bar chart)"
+  = f.association :related_output_element,
+    :collection => OutputElement.where('id != ?', @output_element.id).map{ |c| ["##{c.id} #{c.key}", c.id] },
+    :hint => 'Shows an extra "View related hourly chart" button next to the chart title'
 
   = f.simple_fields_for :area_dependency do |j|
     = j.input :dependent_on, :as => :select, :collection => Api::Area::DEPENDABLE_ATTRIBUTES, :hint => "When you dont want to show the chart for areas which have a certain setting. E.g. dont wanna show Solar CSP in NL? Put this to 'has_solar_csp' and be sure that for NL this value is false in the area data."

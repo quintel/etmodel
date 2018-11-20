@@ -160,6 +160,10 @@ class @ChartList extends Backbone.Collection
     @chart_in_holder(@default_holder).toggle_lock(false)
     @load @default_chart_id, @default_holder
 
+  load_related: (holder, related_chart_id) =>
+    @chart_in_holder(holder).toggle_lock(false)
+    @load related_chart_id, holder
+
   # With the list of locked charts (formatted as their ID and display format,
   # e.g. "190-C"), renders each chart in a unique holder. Used when the page is
   # first loaded.
@@ -333,6 +337,33 @@ class @ChartList extends Backbone.Collection
       $(".chart_holder[data-holder_id=#{holder_id}]").remove()
       if chart = @chart_in_holder holder_id
         chart.delete()
+        @remove chart
+
+    $(document).on 'touchend click', 'a.show_related', (e) =>
+      e.preventDefault()
+
+      holder_id = $(e.target).parents('.chart_holder').data('holder_id')
+
+      if chart = @chart_in_holder holder_id
+        chart.delete()
+
+        @load_related(holder_id, chart.get('related_id')).success =>
+          @chart_in_holder(holder_id)
+            .set('previous_id', chart.get('chart_id'))
+
+          $(e.target).parents('.chart_holder')
+            .find('.actions .show_previous').show()
+
+        @remove chart
+
+    $(document).on 'touchend click', 'a.show_previous', (e) =>
+      e.preventDefault()
+
+      holder_id = $(e.target).parents('.chart_holder').data('holder_id')
+
+      if chart = @chart_in_holder holder_id
+        chart.delete()
+        @load_related(holder_id, chart.get('previous_id'))
         @remove chart
 
     # Toggle chart/table format

@@ -100,6 +100,8 @@ class @BaseChartView extends Backbone.View
     @$el.find(".actions a.chart_info").attr "href", "/descriptions/charts/#{id}"
     @$el.find(".actions a.zoom_chart").attr "href", "/output_elements/#{id}/zoom"
 
+    @$el.find('.actions a').removeClass('loading')
+
     @format_wrapper = if @$el.parents(".fancybox-inner").length > 0
       @$el.parents(".fancybox-inner")
     else
@@ -114,6 +116,9 @@ class @BaseChartView extends Backbone.View
 
     @$el.find(".chart_not_finished").toggle @model.get("under_construction")
     @$el.find("a.default_chart").toggle @model.wants_default_button()
+    @$el.find('a.show_related').toggle @model.wants_related_button()
+    @$el.find('a.show_previous').toggle @model.wants_previous_button()
+
     @update_lock_icon()
     @$el.find('.actions').show()
 

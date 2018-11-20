@@ -81,6 +81,11 @@ class @ChartList extends Backbone.Collection
       "#{ window.location.origin }/admin/output_elements/#{ chart_id }"
     )
 
+    # If an old chart is already present in the holder, replace it with a
+    # loading message.
+    if holder_id && (existing_chart = @chart_in_holder(holder_id))
+      existing_chart.trigger('willReplace')
+
     $.ajax(url: "/output_elements/#{ chart_id }")
       .fail (jqXHR) ->
           if jqXHR.status == 404

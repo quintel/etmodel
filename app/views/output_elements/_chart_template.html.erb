@@ -3,7 +3,7 @@
     <%% if (header !== false) { %>
       <header>
         <h3><%%= title %></h3>
-        <div class="actions">
+        <div class="actions" style="display: none">
 
           <%% if (holder_id != window.charts.default_holder) { %>
           <a class="remove_chart tooltip fa fa-times"
@@ -44,7 +44,9 @@
     <%% } %>
     <div class="charts_container">
       <div class="chart_not_finished"></div>
-      <div class="chart_canvas" id="<%%= holder_id %>"></div>
+      <div class="chart_canvas" id="<%%= holder_id %>">
+         <div class="loading"></div>
+      </div>
     </div>
   </div>
 </script>

@@ -61,8 +61,6 @@ class @Chart extends Backbone.Model
       el: @outer_container()
     )
 
-    @view.update_header()
-
   # -- view class detection --------------------------------------------------
 
   find_view_class: =>

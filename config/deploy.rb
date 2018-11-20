@@ -1,4 +1,4 @@
-lock '3.10.1'
+lock '3.11.0'
 
 set :log_level, 'info'
 

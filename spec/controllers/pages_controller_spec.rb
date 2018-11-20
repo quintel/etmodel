@@ -99,6 +99,14 @@ describe PagesController, vcr: true do
         expect(response).to be_success
       }.to change { I18n.locale }.from(:en).to(:nl)
     end
+
+
+    it 'ignores invalid locales' do
+      expect {
+        put :set_locale, params: { locale: 'nl1212' }
+        expect(response).to be_success
+      }.to_not change { I18n.locale }.from(:en)
+    end
   end
 
   describe "#prominent_users" do

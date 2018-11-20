@@ -13,14 +13,14 @@ describe Admin::ConstraintsController do
   describe "GET index" do
     let(:response) { get(:index) }
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(response).to render_template(:index) }
   end
 
   describe "GET new" do
     let(:response) { get(:new) }
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(response).to render_template(:new) }
   end
 
@@ -43,14 +43,14 @@ describe Admin::ConstraintsController do
   describe "GET show" do
     let(:response) { get(:show, params: { id: constraint.id }) }
 
-    it { expect(response).to be_success}
+    it { expect(response).to be_successful}
     it { expect(response).to render_template :show}
   end
 
   describe "GET edit" do
     let(:response) { get(:edit, params: { id: constraint.id }) }
 
-    it { expect(response).to be_success}
+    it { expect(response).to be_successful}
     it { expect(response).to render_template :edit}
   end
 

@@ -7,7 +7,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.1'
+gem 'rails', '~> 5.2'
 gem 'activerecord-session_store'
 gem 'activeresource', '~> 5.0'
 
@@ -33,7 +33,7 @@ gem 'jbuilder'
 gem 'sentry-raven'
 
 # system gems
-gem 'mysql2', '~>0.3.11'
+gem 'mysql2'
 gem 'dalli'
 
 gem 'dynamic_form'

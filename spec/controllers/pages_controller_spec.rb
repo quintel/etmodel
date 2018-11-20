@@ -83,7 +83,7 @@ describe PagesController, vcr: true do
       describe "#{page} page" do
         it "should work" do
           get page
-          expect(response).to be_success
+          expect(response).to be_successful
           expect(response).to render_template(page)
         end
       end
@@ -96,7 +96,7 @@ describe PagesController, vcr: true do
     it "should set the locale and redirect" do
       expect {
         put :set_locale, params: { locale: 'nl' }
-        expect(response).to be_success
+        expect(response).to be_successful
       }.to change { I18n.locale }.from(:en).to(:nl)
     end
 
@@ -104,7 +104,7 @@ describe PagesController, vcr: true do
     it 'ignores invalid locales' do
       expect {
         put :set_locale, params: { locale: 'nl1212' }
-        expect(response).to be_success
+        expect(response).to be_successful
       }.to_not change { I18n.locale }.from(:en)
     end
   end
@@ -112,7 +112,7 @@ describe PagesController, vcr: true do
   describe "#prominent_users" do
     it "should render correctly" do
       get :prominent_users
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response).to render_template(:prominent_users)
     end
   end
@@ -135,7 +135,7 @@ describe PagesController, vcr: true do
       t = FactoryBot.create :text, key: 'foo_bar'
 
       get :info, params: { ctrl: 'foo', act: 'bar' }
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response).to render_template(:info)
     end
   end
@@ -143,7 +143,7 @@ describe PagesController, vcr: true do
   describe "#feedback" do
     it "should render the form" do
       get :feedback, xhr: true
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response).to render_template(:feedback)
     end
 
@@ -155,7 +155,7 @@ describe PagesController, vcr: true do
         msg: "I'll be back"
       }, format: :js }
 
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response).to render_template(:feedback)
       emails = ActionMailer::Base.deliveries
       expect(emails.size).to eql(2)

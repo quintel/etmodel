@@ -37,10 +37,13 @@ class OutputElementSerie < ActiveRecord::Base
   has_one :description, as: :describable
   has_one :area_dependency, as: :dependable
 
-  scope :gquery_contains,   ->(q) { where("gquery LIKE ?", "%#{q}%")}
-  scope :ordered_for_admin, -> { order("`output_elements`.`key`").joins(:output_element) }
+  scope :gquery_contains, ->(q) { where("gquery LIKE ?", "%#{q}%")}
+
+  scope :ordered_for_admin,
+    -> { joins(:output_element).merge(OutputElement.order(key: :asc)) }
+
   # Hmmm ugly
-  scope :block_charts,      -> { where(output_element_id: OutputElementType::BLOCK_CHART_ID) }
+  scope :block_charts, -> { where(output_element_id: OutputElementType::BLOCK_CHART_ID) }
 
   scope :contains, ->(search) { where("`key` LIKE ?", "%#{search}%") }
 

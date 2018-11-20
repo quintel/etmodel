@@ -6,7 +6,7 @@ describe TextsController do
   describe "#show" do
     it "should show the text detail page" do
       get :show, params: { id: 'foobar' }
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response).to render_template(:show)
     end
   end

@@ -8,7 +8,7 @@ describe UsersController do
   describe "#new" do
     it "should show the signup form" do
       get :new
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response).to render_template(:new)
     end
   end
@@ -28,7 +28,7 @@ describe UsersController do
       end
 
       it 'renders a page succesfully' do
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it 'shows you have been unsubscribed' do
@@ -46,7 +46,7 @@ describe UsersController do
       end
 
       it 'renders a page succesfully' do
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it 'shows you have been unsubscribed ALREADY' do
@@ -68,7 +68,7 @@ describe UsersController do
       end
 
       it 'renders a page succesfully' do
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it 'shows that user has not been unsubscribed' do
@@ -133,7 +133,7 @@ describe UsersController do
 
       it "the system finds a correct user" do
         get :edit, params: { id: user }
-        expect(response).to be_success
+        expect(response).to be_successful
         expect(assigns(:user)).to eql user
       end
     end

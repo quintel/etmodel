@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :output_element_type do
-    name 'test_chart'
+    name { 'test_chart' }
   end
 
   factory :output_element do
@@ -10,7 +10,7 @@ FactoryBot.define do
 
   factory :output_element_serie do
     association :output_element, factory: :output_element
-    gquery 'gquery_foobar'
+    gquery { 'gquery_foobar' }
   end
 
   factory :output_element_with_description, parent: :output_element do

@@ -8,7 +8,7 @@ RSpec.describe PasswordResetsController do
   it "visits new path" do
     get :new
 
-    expect(response).to be_success
+    expect(response).to be_successful
   end
 
   it "can't visit new path when signed in" do
@@ -53,7 +53,7 @@ RSpec.describe PasswordResetsController do
     it "requests successfully" do
       get :edit, params: { id: user.perishable_token }
 
-      expect(response).to be_success
+      expect(response).to be_successful
     end
 
     it "requests unsuccessfully" do

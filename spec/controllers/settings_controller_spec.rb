@@ -4,13 +4,13 @@ describe SettingsController do
   describe 'on PUT /settings', vcr: true do
     it "should update individual settings" do
       put :update, params: { format: :json, use_fce: true }
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(session[:setting][:use_fce].to_s).to eq('true')
     end
 
     it "should update individual settings passed as strings" do
       put :update, params: { format: :json, "use_fce" => true }
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(session[:setting][:use_fce].to_s).to eq('true')
     end
 
@@ -19,13 +19,13 @@ describe SettingsController do
         format: :json, locked_charts: [123]
       }
 
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(session[:setting][:locked_charts]).to eql(['123'])
     end
 
     it "should update the charts hash" do
       put :update, params: { format: :json, locked_charts: [] }
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(session[:setting][:locked_charts]).to eql([])
     end
   end

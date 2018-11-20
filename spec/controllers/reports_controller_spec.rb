@@ -12,7 +12,7 @@ describe ReportsController, vcr: true do
       end
 
       it 'renders the report' do
-        expect(response).to be_success
+        expect(response).to be_successful
         expect(response).to render_template(:show)
       end
     end
@@ -29,7 +29,7 @@ describe ReportsController, vcr: true do
       it 'renders the report' do
         get :show, params: { id: 'sample' }
 
-        expect(response).to be_success
+        expect(response).to be_successful
         expect(response).to render_template(:show)
       end
 

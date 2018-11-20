@@ -10,7 +10,7 @@ describe UserSessionsController do
   context "User is not logged in" do
     it "should get to the login page" do
       get :new
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response.body).to have_selector("form") do |form|
         expect(form).to have_selector("input", type: "text", name: "user_session[email]")
         expect(form).to have_selector("input", type: "password", name: "user_session[password]")
@@ -32,7 +32,7 @@ describe UserSessionsController do
       }
 
       expect(controller.send(:current_user)).to be_nil
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 end

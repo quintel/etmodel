@@ -11,14 +11,14 @@ describe Admin::GeneralUserNotificationsController do
   describe "GET new" do
     let(:response) { get(:new) }
 
-    it { expect(response).to be_success}
+    it { expect(response).to be_successful}
     it { expect(response).to render_template :new}
   end
 
   describe "GET index" do
     let(:response) { get(:index) }
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(response).to render_template(:index) }
   end
 
@@ -27,7 +27,7 @@ describe Admin::GeneralUserNotificationsController do
       get :show, params: { id: general_user_notification.id }
     end
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(response).to render_template(:show) }
   end
 
@@ -36,7 +36,7 @@ describe Admin::GeneralUserNotificationsController do
       get :edit, params: { id: general_user_notification.id }
     end
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(response).to render_template(:edit) }
   end
 

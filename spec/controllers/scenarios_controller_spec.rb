@@ -31,7 +31,7 @@ describe ScenariosController, vcr: true do
     describe "#index" do
       it "should get a list of his saved scenarios" do
         get :index
-        expect(response).to be_success
+        expect(response).to be_successful
         expect(assigns(:saved_scenarios)).to eq([user_scenario])
       end
     end
@@ -44,7 +44,7 @@ describe ScenariosController, vcr: true do
       describe "#new" do
         it "should show a form to save the scenario" do
           get :new
-          expect(response).to be_success
+          expect(response).to be_successful
           expect(assigns(:saved_scenario).api_session_id).to eq(12345)
         end
 
@@ -73,7 +73,7 @@ describe ScenariosController, vcr: true do
             post :create, params: { saved_scenario: { api_session_id: '' } }
           }.to_not change(SavedScenario, :count)
 
-          expect(response).to_not be_success
+          expect(response).to_not be_successful
           expect(response).to render_template(:cannot_save_without_id)
         end
       end
@@ -85,7 +85,7 @@ describe ScenariosController, vcr: true do
 
             get :show, params: { id: user_scenario.id }
 
-            expect(response).to be_success
+            expect(response).to be_successful
             expect(response).to render_template(:show)
           end
         end
@@ -146,7 +146,7 @@ describe ScenariosController, vcr: true do
           s1 = FactoryBot.create :saved_scenario
           s2 = FactoryBot.create :saved_scenario
           get :compare, params: { scenario_ids: [s1.id, s2.id] }
-          expect(response).to be_success
+          expect(response).to be_successful
           expect(response).to render_template(:compare)
         end
 
@@ -199,7 +199,7 @@ describe ScenariosController, vcr: true do
             inputs_def: { households_number_of_inhabitants: 1.0 }.to_yaml
           }
 
-          expect(response).to be_success
+          expect(response).to be_successful
         end
       end
     end
@@ -213,7 +213,7 @@ describe ScenariosController, vcr: true do
     describe "#index" do
       it "should get a list of all saved scenarios" do
         get :index
-        expect(response).to be_success
+        expect(response).to be_successful
         expect(assigns(:saved_scenarios)).to include user_scenario
         expect(assigns(:saved_scenarios)).to include admin_scenario
       end
@@ -230,7 +230,7 @@ describe ScenariosController, vcr: true do
     describe "#index" do
       it "gets a list of teacher's and students' scenarios" do
         get :index
-        expect(response).to be_success
+        expect(response).to be_successful
         expect(assigns(:saved_scenarios)).to_not include(admin_scenario)
 
         expect(assigns(:saved_scenarios).length).to eql(2)

@@ -55,28 +55,34 @@ $chart-header-icon-color: #8895b2
       svg, .legend, .d3-chart-date-select
         display: none
 
-      .empty-wrapper
-        background: lighten($chart-header-background-color, 6%)
-        border-top: 1px solid white
-        height: 330px
-        width: 100%
-        text-align: center
-
-        p
-          color: lighten($chart-header-title-color, 5%)
-          padding-top: 150px
-          margin: 0 0 5px
-
-        &.has-annotation p
-          padding-top: 140px
-
-        .annotation
-          color: lighten($chart-header-icon-color, 5%)
-          font-size: 12px
-
     select.d3-chart-date-select
       float: right
       margin-top: 10px
+
+  .loading, .empty-wrapper
+    background: lighten($chart-header-background-color, 6%)
+    border-top: 1px solid white
+    height: 330px
+    width: 100%
+    text-align: center
+
+  .loading
+    background-image: asset-url("charts/loading.gif")
+    background-position: center center
+    background-repeat: no-repeat
+
+  .empty-wrapper
+    p
+      color: lighten($chart-header-title-color, 5%)
+      padding-top: 150px
+      margin: 0 0 5px
+
+    &.has-annotation p
+      padding-top: 140px
+
+    .annotation
+      color: lighten($chart-header-icon-color, 5%)
+      font-size: 12px
 
   .table_canvas
     // free to expand as needed
@@ -95,6 +101,10 @@ $chart-header-icon-color: #8895b2
   // overlap charts under them
   .jqplot-target
     margin-bottom: 100px
+
+// Disable background color for loading div for charts in dashboard popups.
+#dashboard_popup .charts_container .chart_canvas .loading
+  background-color: white
 
 // ======== Wells ============================================================
 

@@ -23,10 +23,35 @@ class @BaseChartView extends Backbone.View
 
   initialize_defaults: =>
     @model.bind('refresh', @render_as_needed)
+    @model.bind('willReplace', @prepare_replace)
     @init_margins && @init_margins()
+
+  # Triggered by the willReplace event; removes action buttons and shows a
+  # loading block while a new chart is loaded.
+  prepare_replace: =>
+    console.log ('prepare_replace')
+    loading_el = $('<div class="loading" />')
+    canvas = @$el.find('.chart_canvas')
+
+    if canvas.length > 0
+      # Set the height of the loading element to be the same as the chart it
+      # replaces to prevent a second/third/... chart from jumping up and down
+      # the page. Don't bother if this is the only chart.
+      if @model.collection.length > 1
+        loading_el.css(height: canvas.height() - 1)
+    else
+      canvas = @$el.find('.table_canvas')
+
+    canvas.empty().append(loading_el)
+
+    @$el.find('header h3').text('Loading')
+    @$el.find('.actions').hide()
+
+    @model.set(will_replace: true)
 
   # Separate chart and table rendering
   render_as_needed: =>
+    @update_header()
     @setup_holder_class()
     if @model.get('as_table') && @can_be_shown_as_table()
       @render_as_table()
@@ -64,6 +89,9 @@ class @BaseChartView extends Backbone.View
   # templating
   #
   update_header: =>
+    # Skip re-rendering if this chart is about to be replaced.
+    return if @model.get('will_replace')
+
     id = @model.get 'chart_id'
     @$el.data('chart_id', id)
     @$el.find('h3').html(@model.get("name"))
@@ -71,6 +99,8 @@ class @BaseChartView extends Backbone.View
     @$el.find('a.chart_info').toggle(@model.get('has_description'))
     @$el.find(".actions a.chart_info").attr "href", "/descriptions/charts/#{id}"
     @$el.find(".actions a.zoom_chart").attr "href", "/output_elements/#{id}/zoom"
+
+    @$el.find('.actions a').removeClass('loading')
 
     @format_wrapper = if @$el.parents(".fancybox-inner").length > 0
       @$el.parents(".fancybox-inner")
@@ -86,7 +116,12 @@ class @BaseChartView extends Backbone.View
 
     @$el.find(".chart_not_finished").toggle @model.get("under_construction")
     @$el.find("a.default_chart").toggle @model.wants_default_button()
+    @$el.find('a.show_related').toggle @model.wants_related_button()
+    @$el.find('a.show_previous').toggle @model.wants_previous_button()
+
     @update_lock_icon()
+    @$el.find('.actions').show()
+
     this
 
   update_lock_icon: =>

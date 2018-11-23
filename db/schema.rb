@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180910084924) do
+ActiveRecord::Schema.define(version: 2018_11_20_114830) do
 
-  create_table "area_dependencies", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "area_dependencies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
     t.text "description"
     t.integer "dependable_id"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180910084924) do
     t.index ["dependable_id", "dependable_type"], name: "index_area_dependencies_on_dependable_id_and_dependable_type"
   end
 
-  create_table "constraints", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "constraints", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "key"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20180910084924) do
     t.index ["position"], name: "index_constraints_on_position"
   end
 
-  create_table "descriptions", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "descriptions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.text "content_en"
     t.text "short_content_en"
     t.integer "describable_id"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20180910084924) do
     t.index ["describable_id", "describable_type"], name: "index_descriptions_on_describable_id_and_describable_type"
   end
 
-  create_table "general_user_notifications", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "general_user_notifications", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "key"
     t.string "notification_nl"
     t.string "notification_en"
@@ -55,10 +55,10 @@ ActiveRecord::Schema.define(version: 20180910084924) do
     t.datetime "updated_at"
   end
 
-  create_table "input_elements", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "input_elements", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "key"
     t.string "share_group"
-    t.float "step_value", limit: 24
+    t.float "step_value"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string "unit"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20180910084924) do
     t.index ["slide_id"], name: "index_input_elements_on_slide_id"
   end
 
-  create_table "output_element_series", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "output_element_series", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "output_element_id"
     t.string "label"
     t.string "color"
@@ -91,13 +91,13 @@ ActiveRecord::Schema.define(version: 20180910084924) do
     t.index ["output_element_id"], name: "index_output_element_series_on_output_element_id"
   end
 
-  create_table "output_element_types", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "output_element_types", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "output_elements", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "output_elements", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "output_element_type_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -109,21 +109,23 @@ ActiveRecord::Schema.define(version: 20180910084924) do
     t.boolean "show_point_label", default: false
     t.boolean "growth_chart", default: false
     t.string "key", null: false
-    t.float "max_axis_value", limit: 24
-    t.float "min_axis_value", limit: 24
+    t.float "max_axis_value"
+    t.float "min_axis_value"
     t.boolean "hidden", default: false
     t.boolean "requires_merit_order", default: false
+    t.bigint "related_output_element_id"
     t.index ["hidden"], name: "index_output_elements_on_hidden"
     t.index ["key"], name: "index_output_elements_on_key"
+    t.index ["related_output_element_id"], name: "index_output_elements_on_related_output_element_id"
   end
 
-  create_table "roles", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "roles", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "saved_scenarios", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "saved_scenarios", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "scenario_id", null: false
     t.text "settings"
@@ -133,7 +135,7 @@ ActiveRecord::Schema.define(version: 20180910084924) do
     t.index ["user_id"], name: "index_saved_scenarios_on_user_id"
   end
 
-  create_table "sessions", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin" do |t|
+  create_table "sessions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin", force: :cascade do |t|
     t.string "session_id", null: false
     t.text "data"
     t.datetime "created_at", null: false
@@ -142,7 +144,7 @@ ActiveRecord::Schema.define(version: 20180910084924) do
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
   end
 
-  create_table "sidebar_items", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "sidebar_items", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "key"
     t.string "section"
     t.text "percentage_bar_query"
@@ -157,7 +159,7 @@ ActiveRecord::Schema.define(version: 20180910084924) do
     t.index ["tab_id"], name: "index_sidebar_items_on_tab_id"
   end
 
-  create_table "slides", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "slides", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "image"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -174,7 +176,7 @@ ActiveRecord::Schema.define(version: 20180910084924) do
     t.index ["sidebar_item_id"], name: "index_slides_on_sidebar_item_id"
   end
 
-  create_table "tabs", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "tabs", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "key"
     t.string "nl_vimeo_id"
     t.string "en_vimeo_id"
@@ -183,7 +185,7 @@ ActiveRecord::Schema.define(version: 20180910084924) do
     t.index ["position"], name: "index_tabs_on_position"
   end
 
-  create_table "targets", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "targets", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "code"
     t.string "query"
     t.string "unit"
@@ -195,7 +197,7 @@ ActiveRecord::Schema.define(version: 20180910084924) do
     t.index ["code"], name: "index_policy_goals_on_key"
   end
 
-  create_table "texts", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "texts", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "key"
     t.text "content_en"
     t.text "content_nl"
@@ -208,7 +210,7 @@ ActiveRecord::Schema.define(version: 20180910084924) do
     t.index ["key"], name: "index_translations_on_key"
   end
 
-  create_table "users", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
     t.string "company_school"

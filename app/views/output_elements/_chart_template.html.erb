@@ -3,7 +3,7 @@
     <%% if (header !== false) { %>
       <header>
         <h3><%%= title %></h3>
-        <div class="actions">
+        <div class="actions" style="display: none">
 
           <%% if (holder_id != window.charts.default_holder) { %>
           <a class="remove_chart tooltip fa fa-times"
@@ -27,9 +27,17 @@
              href="#"
              title="<%= t 'output_elements.tooltips.table' %>"></a>
 
+          <a class="show_related tooltip fa fa-area-chart"
+             href="#"
+             title="<%= t 'output_elements.tooltips.related' %>"></a>
+
           <a class="default_chart tooltip fa fa-home"
              href="#"
              title="<%= t 'output_elements.tooltips.default' %>"></a>
+
+          <a class="show_previous tooltip fa fa-arrow-circle-left"
+             href="#"
+             title="<%= t 'output_elements.tooltips.previous' %>"></a>
 
           <a class="select_chart tooltip fa fa-cogs"
              href="<%= output_elements_path %>?holder=<%%= holder_id %>"
@@ -44,7 +52,9 @@
     <%% } %>
     <div class="charts_container">
       <div class="chart_not_finished"></div>
-      <div class="chart_canvas" id="<%%= holder_id %>"></div>
+      <div class="chart_canvas" id="<%%= holder_id %>">
+         <div class="loading"></div>
+      </div>
     </div>
   </div>
 </script>

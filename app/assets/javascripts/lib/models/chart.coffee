@@ -61,8 +61,6 @@ class @Chart extends Backbone.Model
       el: @outer_container()
     )
 
-    @view.update_header()
-
   # -- view class detection --------------------------------------------------
 
   find_view_class: =>
@@ -250,3 +248,9 @@ class @Chart extends Backbone.Model
   wants_default_button: =>
     (@get('chart_id') != App.charts.default_chart_id) &&
     (@get('container') == App.charts.default_holder)
+
+  wants_related_button: =>
+    @get('related_id')?
+
+  wants_previous_button: =>
+    @get('previous_id')?

@@ -29,7 +29,6 @@ class @BaseChartView extends Backbone.View
   # Triggered by the willReplace event; removes action buttons and shows a
   # loading block while a new chart is loaded.
   prepare_replace: =>
-    console.log ('prepare_replace')
     loading_el = $('<div class="loading" />')
     canvas = @$el.find('.chart_canvas')
 

@@ -36,8 +36,9 @@ Etm::Application.routes.draw do
 
   resource :settings, only: [:edit, :update]
 
-  get '/settings/dashboard', to: 'settings#dashboard'
-  put '/settings/dashboard', to: 'settings#update_dashboard'
+  get '/settings/dashboard',        to: 'settings#dashboard'
+  put '/settings/dashboard',        to: 'settings#update_dashboard'
+  put '/settings/hide_results_tip', to: 'settings#hide_results_tip'
 
   namespace :admin do
     root to: 'pages#index'

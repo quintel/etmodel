@@ -14,4 +14,18 @@ module ScenarioHelper
       check_box_tag("has_#{ name }", '1', checked)
     end
   end
+
+  # Determines if the user should be shown the tooltip highlighting the results
+  # section.
+  def show_results_tip?
+    # Logged-in user who has the tip hidden?
+    return false if current_user&.hide_results_tip
+
+    setting = session[:hide_results_tip]
+
+    return true unless setting
+    return false if setting == :all
+
+    setting != Current.setting.api_session_id
+  end
 end

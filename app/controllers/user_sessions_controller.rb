@@ -51,6 +51,7 @@ class UserSessionsController < ApplicationController
   def destroy
     @user_session = UserSession.find
     @user_session.destroy if @user_session
+    reset_session
 
     respond_to do |format|
       flash[:notice] = I18n.t("flash.logout")

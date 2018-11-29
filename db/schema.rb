@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_20_114830) do
+ActiveRecord::Schema.define(version: 2018_11_28_115253) do
 
   create_table "area_dependencies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
@@ -228,6 +228,7 @@ ActiveRecord::Schema.define(version: 2018_11_20_114830) do
     t.string "current_login_ip"
     t.string "last_login_ip"
     t.integer "role_id"
+    t.boolean "hide_results_tip", default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string "phone_number"

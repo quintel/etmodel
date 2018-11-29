@@ -88,6 +88,33 @@ class SettingsController < ApplicationController
     render json: { error: e.message }, status: :bad_request
   end
 
+
+  # Records that the user has hidden the "results tip" which advises them of
+  # the results/data section.
+  #
+  # The user may hide the tip for a specific scenario (given as a paramter) or
+  # for all scenarios.
+  #
+  # PUT /settings/hide_results_tip
+  #
+  def hide_results_tip
+    scenario_id =
+      if params[:scenario_id].to_s.match(/\A\d+\z/)
+        params[:scenario_id].to_i
+      else
+        :all
+      end
+
+    if scenario_id == :all && current_user
+      current_user.update_attribute(:hide_results_tip, true)
+      session.delete(:hide_results_tip)
+    else
+      session[:hide_results_tip] = scenario_id
+    end
+
+    render json: {}, status: :ok
+  end
+
   #######
   private
   #######

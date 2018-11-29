@@ -9,13 +9,22 @@
 # hash
 class @SidebarView extends Backbone.View
   bootstrap: ->
+    self = this
+
     # setup accordion
     $('#sidebar h4').on 'click', ->
+      tab = $(this)
+
       $("#sidebar h4").removeClass("active")
-      $(this).addClass('active')
-      target = $(this).next('ul')
+      tab.addClass('active')
+
+      target = tab.next('ul')
       target.slideDown('fast')
+
       $("#sidebar ul").not(target).slideUp('fast')
+
+      if tab.data('key') == 'data' && self.results_tip
+        self.results_tip.close()
 
     # Create gqueries for the inline bars
     for item in $("#sidebar ul li")
@@ -41,6 +50,7 @@ class @SidebarView extends Backbone.View
       App.router.navigate(key, { trigger: true })
 
     @show_sub_items()
+    @setup_results_tip()
 
   show_sub_items: ->
     e = $("#sidebar ul li.active")
@@ -74,3 +84,18 @@ class @SidebarView extends Backbone.View
 
       $item.find('.bar').animate(width: pixels, 300)
       $item.find('.value').html("#{ percentage }%").animate(left: vPixels, 300)
+
+  # Shows a pop-up tip directing the user to the "Results" section some time
+  # after the scenario has loaded.
+  setup_results_tip: (after = 60000) =>
+    return unless ResultsTipView.shouldShow()
+
+    window.setTimeout(
+      =>
+        @results_tip = new ResultsTipView(
+          getScenarioID: App.scenario.api_session_id
+        )
+
+        $('#sidebar').append(@results_tip.render().hide().fadeIn())
+      after
+    )

@@ -194,6 +194,7 @@
               user_values: mapInputsToSlides(inputVals[0], slides[0]),
               settings: {
                 area_code: App.settings.get('area_code'),
+                area_name: App.settings.get('area_name'),
                 end_year: App.settings.get('end_year'),
                 merit_order_enabled: App.settings.merit_order_enabled(),
                 scaling: App.api.scenario.scale,

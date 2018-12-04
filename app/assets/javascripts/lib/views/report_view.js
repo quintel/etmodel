@@ -167,12 +167,60 @@
     return userVals;
   };
 
+  /**
+   * Fetches the original (untouched) input values for a scenario.
+   *
+   * For most scenarios, this is already part of the inputs.json, however for
+   * presets, the default values are overwritten with the initial values from
+   * the preset. Therefore we must create a new scenario with the same region
+   * and end year to get the true initial values.
+   *
+   * @param {Setting} settings
+   *   the scenario settings object
+   *
+   * @return {$.Deferred}
+   *   returns a Deferred which resolves with the input values, or an empty
+   *   object if the scenario is not a preset
+   */
+  var getOriginalInputValues = function getOriginalInputValues(settings) {
+    var valuesDef = $.Deferred();
+
+    if (!settings.get('preset_scenario_id')) {
+      valuesDef.resolve({});
+      return valuesDef;
+    }
+
+    $.ajax({
+      dataType: "json",
+      url: App.api.opts.api_path + '/api/v3/scenarios',
+      data: {
+        scenario: {
+          area_code: settings.get('area_code'),
+          end_year: settings.get('end_year'),
+          source: 'ETM',
+          title: 'Scenario report temporary scenario'
+        }
+      },
+      method: 'POST',
+      success: function(data) {
+        $.getJSON(
+          App.api.opts.api_path + '/api/v3/scenarios/' + data.id + '/inputs',
+          {},
+          function(data) { valuesDef.resolve(data); }
+        )
+      }
+    });
+
+    return valuesDef;
+  };
+
   var renderLiquid = function renderLiquid(onSuccess, onError) {
     var template = Liquid.parse($('#report-template').html());
     var queryKeys = extractQueries(template.root.nodelist);
 
     var queriesDef = $.Deferred();
     var slidesDef = $.getJSON('/input_elements/by_slide');
+    var originalInputsDef = getOriginalInputValues(App.settings);
 
     // In order to fetch the query values during App.call_api, the queries
     // need to be added to the global collection.
@@ -185,8 +233,16 @@
       error: queriesDef.reject
     });
 
-    $.when(queriesDef, App.user_values(), slidesDef)
-      .then(function (queryVals, inputVals, slides) {
+    $.when(queriesDef, App.user_values(), originalInputsDef, slidesDef)
+      .then(function (queryVals, inputVals, origInputVals, slides) {
+        // Set the default value of the input values to those from a blank
+        // scenario. Only applies to presets.
+        if (_.any(origInputVals)) {
+          _.keys(inputVals[0]).forEach(function (iKey) {
+            inputVals[0][iKey].default = origInputVals[iKey].default;
+          });
+        }
+
         onSuccess(template.render(
           $.extend(
             queryValues(queryKeys),

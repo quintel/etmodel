@@ -30,13 +30,13 @@ $grey: #7e868e
 
 html.report
   background: white
-  font-size: 112.5%
+  font-size: 100%
   font-family: $font-family
   line-height: 150%
 
   body
     margin: 0
-    padding-top: 53px
+    padding-top: 50px
 
 sup, sub
   line-height: 0
@@ -52,8 +52,7 @@ a
     color: $font-color
 
 abbr
-  font-size: 0.8333rem
-  font-weight: 500
+  font-size: 0.875rem
   line-height: 0
   text-transform: uppercase
 strong abbr
@@ -96,7 +95,7 @@ blockquote
   background: white
   background: rgba(254, 254, 254, 0.95)
   border-bottom: 1px solid #ddd
-  font-size: 0.8333rem
+  font-size: 0.9375rem
   line-height: 100%
   position: fixed
   padding: 1rem 20px
@@ -155,7 +154,7 @@ blockquote
     padding: 20px
     position: fixed
     transition: all 0.3s ease-in-out
-    top: 53px
+    top: 50px
     width: 230px
 
     &:hover
@@ -172,7 +171,7 @@ blockquote
         &:hover
           color: $font-color
       li
-        font-size: 14px
+        font-size: 0.875rem
         font-weight: bold
         margin-top: 0.5rem
         overflow: hidden
@@ -186,7 +185,7 @@ blockquote
         li
           margin-top: 0
           a
-            font-size: 13px
+            font-size: 0.8125rem
             font-weight: normal
             text-decoration: none
         ol.toc
@@ -195,14 +194,14 @@ blockquote
   .report-view main, .report-view section, header .inner
     margin: 1em auto
     padding: 0 1rem
-    width: 38em
+    width: 46em
 
   article, #credits
     margin-left: 271px
 
   #credits
     color: lighten($grey, 20%)
-    font-size: 14px
+    font-size: 0.875rem
     margin-top: 4rem
     margin-bottom: 2rem
     text-align: center
@@ -233,7 +232,7 @@ blockquote
     h1
       background: image-url("reports/title.svg") top center no-repeat
       background-size: 96px
-      font-size: 2rem
+      font-size: 2.25rem
       padding: 122px 5rem 0
       line-height: 125%
       max-width: initial
@@ -242,7 +241,7 @@ blockquote
     h1 + p
       color: darken($grey, 5%)
       margin-top: -0.5rem
-      font-size: 15px
+      font-size: 0.9375rem
 
     .scenario-details
       img
@@ -322,7 +321,7 @@ blockquote
 
     .chart_holder
       float: none
-      width: 662px
+      width: 716px
       .chart_canvas
         min-height: 300px
 
@@ -343,7 +342,7 @@ blockquote
     .caption
       border-top: 1px solid #ddd
       color: #777
-      font-size: 0.8333rem
+      font-size: 0.875rem
       font-weight: 300
       line-height: 1.5
       margin: 1rem 2rem
@@ -351,7 +350,7 @@ blockquote
       text-align: center
 
     &, .legend .legend-item, text
-      font-size: 0.8333rem
+      font-size: 0.875rem
       font-weight: 300
 
     .legend .legend-item span.rect
@@ -504,14 +503,14 @@ blockquote
 
 @media print
   @page
-    margin: 3cm 4cm
+    margin: 2cm 3cm
 
   #navbar, #credits, nav
     display: none
 
   html.report
     background: none
-    font-size: 77.778%
+    font-size: 100%
     line-height: 150%
     body
       padding-top: 0
@@ -604,6 +603,10 @@ blockquote
 
       &.hidden-legend .legend
         display: block
+
+    .chart_holder
+      padding: 30px
+      width: 716px - 30px
 
     .chart_canvas
       #canvas_container

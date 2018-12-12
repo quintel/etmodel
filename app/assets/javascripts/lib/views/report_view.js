@@ -599,7 +599,11 @@
      */
     i18n: function (name, prefix) {
       if (prefix.length) {
-        return I18n.t(prefix + '.' + name);
+        name = prefix + '.' +name;
+      }
+
+      if (!I18n.lookup(name)) {
+        return '<span class="missing-translation">' + I18n.t(name) + '</span>';
       }
 
       return I18n.t(name);

@@ -20,7 +20,7 @@ $chart-header-icon-color: #8895b2
       padding: 0 0 0 11px
       overflow: hidden
       text-overflow: ellipsis
-      max-width: 396px
+      max-width: 340px
       white-space: nowrap
     .actions
       float: right
@@ -43,6 +43,56 @@ $chart-header-icon-color: #8895b2
         &:hover
           background: #71a2cf
           color: white
+
+        &.show_related
+          // width: 100px
+
+      a.show_related, a.show_previous
+        border-left: none
+        line-height: 17px
+        padding-left: 0
+        padding-top: 6px
+        padding-bottom: 4px
+        width: auto
+
+        &:hover
+          background: transparent
+          .toggle
+            background: darken($chart-header-icon-color, 11%)
+
+      .toggle
+        background: $chart-header-icon-color
+        border-radius: 17px
+        color: $chart-header-background-color
+        display: inline-block
+        font-size: 11px
+        height: 17px
+        padding: 0 6px
+        position: relative
+
+        &.off
+          padding-left: 18px
+          &:before
+            background: $chart-header-background-color
+            border-radius: 50%
+            bottom: 2px
+            content: ""
+            height: 13px
+            left: 2px
+            position: absolute
+            width: 13px
+
+        &.on
+          padding-right: 18px
+          &:after
+            background: $chart-header-background-color
+            border-radius: 50%
+            bottom: 2px
+            content: ""
+            height: 13px
+            right: 2px
+            position: absolute
+            width: 13px
 
 .charts_container
   position: relative

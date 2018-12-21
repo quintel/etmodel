@@ -27,17 +27,9 @@
              href="#"
              title="<%= t 'output_elements.tooltips.table' %>"></a>
 
-          <a class="show_related tooltip fa fa-area-chart"
-             href="#"
-             title="<%= t 'output_elements.tooltips.related' %>"></a>
-
           <a class="default_chart tooltip fa fa-home"
              href="#"
              title="<%= t 'output_elements.tooltips.default' %>"></a>
-
-          <a class="show_previous tooltip fa fa-arrow-circle-left"
-             href="#"
-             title="<%= t 'output_elements.tooltips.previous' %>"></a>
 
           <a class="select_chart tooltip fa fa-cogs"
              href="<%= output_elements_path %>?holder=<%%= holder_id %>"
@@ -46,6 +38,22 @@
           <a class="chart_info tooltip fancybox fa fa-question"
              href="/descriptions/charts/<%%= chart_id %>"
              title="<%= t 'output_elements.tooltips.info' %>"></a>
+
+          <a class="show_related tooltip"
+             href="#"
+             title="<%= t 'output_elements.tooltips.related' %>">
+            <span class="toggle off">
+               <%= t 'output_elements.tooltips.related_toggle'%>
+            </span>
+         </a>
+
+          <a class="show_previous tooltip"
+             href="#"
+             title="<%= t 'output_elements.tooltips.previous' %>">
+            <span class="toggle on">
+               <%= t 'output_elements.tooltips.previous_toggle'%>
+            </span>
+         </a>
 
         </div>
       </header>

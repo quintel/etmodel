@@ -91,14 +91,19 @@ $sidebar-spacing: 20px
     @include sidebar-icon(fce)
   #electricity_backup
     @include sidebar-icon(electricity_backup)
-  #excess_electricity, #costs_flexibility
-    @include sidebar-icon(excess_electricity)
-  #electricity_import_export
-    @include sidebar-icon(import_export)
   #fuel_production
     @include sidebar-icon(curves)
   #hydrogen
     @include sidebar-icon(hydrogen)
+
+  // Flexibility
+
+  #excess_electricity, #costs_flexibility
+    @include sidebar-icon(excess_electricity)
+  #flexibility_demand_response
+    @include sidebar-icon(demand_response)
+  #electricity_import_export
+    @include sidebar-icon(import_export)
 
   // Data
 

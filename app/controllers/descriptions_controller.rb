@@ -2,9 +2,10 @@ class DescriptionsController < ApplicationController
   def show
     @description = Description.find(params[:id]) rescue nil
     if @description.nil?
-      render text: 'Description is not yet available.'
+      head :ok
+    else
+      render layout: false if request.xhr?
     end
-    render layout: false if request.xhr?
   end
 
   # This is used in the '?'- button for output elements. It gets the description
@@ -12,6 +13,11 @@ class DescriptionsController < ApplicationController
   def charts
     chart = OutputElement.find params[:id]
     @description = chart.try :description
-    render :show, layout: false
+
+    if @description.nil?
+      head :ok
+    else
+      render :show, layout: false
+    end
   end
 end

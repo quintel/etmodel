@@ -184,7 +184,7 @@
     {% if future.dashboard_blackout_hours > 0 %}
       <li class="target-missed">
         Je scenario heeft {{ future.dashboard_blackout_hours | without_unit }}
-        blackout uren. Reduceer de vraag naar elektriciteit of instaleer meer 
+        blackout uren. Reduceer de vraag naar elektriciteit of instaleer meer
         backup-vermogen.
         <a href="#betrouwbaarheid" class="learn-more">Lees verder &raquo;</a>
       </li>
@@ -217,7 +217,7 @@
 
     {% if future.bio_footprint > 1 %}
       <li class="target-missed">
-        Je gebruikt meer dan het beschikbare landbouwareaal in jou regio! 
+        Je gebruikt meer dan het beschikbare landbouwareaal in jou regio!
         De bio-voetafdruk van je scenario is
     {% else %}
       <li>
@@ -227,7 +227,7 @@
       {% if present.bio_footprint.value == future.bio_footprint.value %}
         gelijk aan de startwaarde in {{ settings.start_year }}.
       {% else %}
-        in het startjaar is dat 
+        in het startjaar is dat
         {{ present.bio_footprint | round: 1 }}x{{ settings.area_code | upcase }}.
       {% endif %}
       <a href="#biovoetafdruk" class="learn-more">Lees verder &raquo;</a>
@@ -235,7 +235,7 @@
 
     {% if future.share_of_greengas_in_gas_network > 0.1 %}
       <li class="target-missed">
-        Bijmengen van meer dan 10% groen gas in het gas netwerk vergt grote 
+        Bijmengen van meer dan 10% groen gas in het gas netwerk vergt grote
         aanpassingen en investering. Jouw scenario heeft
         {{ future.share_of_greengas_in_gas_network | times: 100 | round: 1 }}%
         groen gas in het gasnet.
@@ -245,8 +245,8 @@
 
     {% if future.profitability_percentage.value < 100 %}
       <li>
-        {{ 100 | minus: future.profitability_percentage | round: 1 }}% van de 
-        elektriciteitscentrales in je scenario zijn niet winstgevend. Denk 
+        {{ 100 | minus: future.profitability_percentage | round: 1 }}% van de
+        elektriciteitscentrales in je scenario zijn niet winstgevend. Denk
         je dat ze er nog zullen zijn in {{ settings.end_year }}?
         <a href="#winstgevendheid-van-elektriciteitscentrales" class="learn-more">
           Lees verder &raquo;
@@ -269,9 +269,9 @@
     <abbr>(ETM)</abbr> en is gebaseerd op de schuifjes-instellingen in jouw scenario.
   </p>
   <p>
-    Elk hoofdstuk behandelt een belangrijk aspect van je scenario zoals CO<sub>2</sub>-uitstoot, 
+    Elk hoofdstuk behandelt een belangrijk aspect van je scenario zoals CO<sub>2</sub>-uitstoot,
     kosten, hernieuwbaarheid etc. welke overeenkomen met de dashboard-waarden in het
-    <abbr>ETM</abbr> front-end. Grafieken tonen extra informatie als je er met 
+    <abbr>ETM</abbr> front-end. Grafieken tonen extra informatie als je er met
     je cursor overheen beweegt.
   </p>
   <p>
@@ -279,7 +279,7 @@
     voor verbetering van je scenario.
   </p>
   <p>
-    Tenslotte bevat appendix A een lijst met alle schuifjes die ten opzichte van 
+    Tenslotte bevat appendix A een lijst met alle schuifjes die ten opzichte van
     de startwaarde zijn verzet.
     Appendix B geeft een gedetailleerd overzicht van de investeringskosten.
     Appendix C geeft verdere informatie over het Energietransitiemodel.
@@ -323,7 +323,7 @@
               hernieuwbare energie geraliseerd met een resultaat van
               {{ future.policy_goal_renewable_percentage_value | times: 100 | round: 1 }}%!
             {% else %}
-              Je scenario heeft slechts een hernieuwbaarheids-percentage van 
+              Je scenario heeft slechts een hernieuwbaarheids-percentage van
               {{ future.policy_goal_renewable_percentage_value | times: 100 | round: 1 }}%
               terwijl je doel
               {{ future.policy_goal_renewable_percentage_target_value | times: 100 | round: 1 }}% was.
@@ -336,12 +336,12 @@
         <h2>Costs of energy</h2>
           <p>
             {% if future.policy_goal_total_energy_costs_reached.value %}
-              Je hebt de kosten succesvol onder je doelwaarde van 
+              Je hebt de kosten succesvol onder je doelwaarde van
               {{ future.policy_goal_total_energy_costs_target_value | round: 1 }} mld EUR per jaar
-              gehouden: 
+              gehouden:
               {{ future.policy_goal_total_energy_costs_value | round: 1 }} mld EUR/j!
             {% else %}
-              De jaarlijkse kosten van je scenario zijn 
+              De jaarlijkse kosten van je scenario zijn
               {{ future.policy_goal_total_energy_costs_value |  round: 1 }} mld EUR,
               meer dan je doel van
               {{ future.policy_goal_total_energy_costs_target_value | round: 1 }} mld EUR.
@@ -357,7 +357,7 @@
       <p>
         De {{ future.biggest_final_demand_sector_name | without_unit }}-sector
         is de grootste eindgebruiker van energie met
-        {{ future.biggest_final_demand_sector_value | autoscale: 'MJ'}} 
+        {{ future.biggest_final_demand_sector_value | autoscale: 'MJ'}}
         <strong>finaal gebruik</strong> (de energie die direct wordt geconsumeerd).
       </p>
 
@@ -367,7 +367,7 @@
 
       <p>
         Het <strong>primaire energiegebruik</strong> (finaal gebruik plus alle
-        transformatie- en distributieverliezen), van het 
+        transformatie- en distributieverliezen), van het
         energiesysteem als geheel ziet er als volgt uit:
       </p>
 
@@ -426,7 +426,7 @@
         <p>Je kunt vraag en aanbod als volgt op elkaar afstemmen:</p>
 
         <ul>
-          <li><strong>Productieverhoging</strong>: vergroot het aantal WKK-centrales en branders in 
+          <li><strong>Productieverhoging</strong>: vergroot het aantal WKK-centrales en branders in
             landbouw en industrie.</li>
           <li><strong>Vraagverlaging</strong>: reduceer de warmtevraag van de sectoren in het linkerdeel van de grafiek.</li>
         </ul>
@@ -435,9 +435,9 @@
   <h1 class="banner">Uitstoot</h1>
 
     <p>
-      In je scenario is een CO<sub>2</sub>-reductie van 
+      In je scenario is een CO<sub>2</sub>-reductie van
       {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
-      gerealiseerd. De onderstaande grafiek relateert de CO<sub>2</sub>-uitstoot in {{ settings.end_year }} aan de referentiewaarde uit 1990 
+      gerealiseerd. De onderstaande grafiek relateert de CO<sub>2</sub>-uitstoot in {{ settings.end_year }} aan de referentiewaarde uit 1990
       en de uitstoot in {{ settings.start_year }}.
     </p>
 
@@ -451,7 +451,7 @@
     <!-- Supports else, elsif, and unless. -->
     {% if future.co2_reduction_percentage > 40.0 %}
       <p>
-        De CO<sub>2</sub>-afname van {{ future.co2_reduction_percentage | round: 1 | without_unit }}% gaat 
+        De CO<sub>2</sub>-afname van {{ future.co2_reduction_percentage | round: 1 | without_unit }}% gaat
         verder dan het Nederlandse doel voor 2030 van 40%.
 
       {% if future.co2_reduction_percentage > 80.0 %}
@@ -466,15 +466,15 @@
 
       <ul>
         <li><strong>Besparing</strong>: reduceer de vraag in de meest energie-intensieve sectoren</li>
-        <li><strong>Uitfaseren fossiel</strong>: ruimteverwarming en warm water in huishoudens en gebouwen, 
+        <li><strong>Uitfaseren fossiel</strong>: ruimteverwarming en warm water in huishoudens en gebouwen,
           transport en elektriciteitsproductie zijn toepassingen waar fossiele brandstoffen kunnen worden
           vervangen door CO<sub>2</sub>-neutrale alternatieven.</li>
         <li><strong>CCS(U)</strong>: Afvangen, opslag en (optionele) inzet van CO<sub>2</sub> kunnen wellicht uitkomst
           bieden in de elektriciteitsproductie en de energie-intensieve industrie.</li>
-        <li><strong>Flexibiliteit</strong>: opslag en omzetting van elektriciteitsoverschotten verlagen de 
+        <li><strong>Flexibiliteit</strong>: opslag en omzetting van elektriciteitsoverschotten verlagen de
           vraag naar fossiele vormen van energie.</li>
         <li><strong>Brandstof- en CO<sub>2</sub>-beprijzing</strong>: door de prijs van CO<sub>2</sub> en fossiele brandstoffen te
-          verhogen kunnen de draaiuren van fossiele centrales worden teruggebracht afhankelijk van de 
+          verhogen kunnen de draaiuren van fossiele centrales worden teruggebracht afhankelijk van de
           beschikbaarheid van andere opwekmethoden.</li>
       </ul>
     {% endif %}
@@ -484,7 +484,7 @@
     <p>
      Het onderstaande Sankey diagram toont:
      <ul>
-        <li><strong>welke</strong> energiedragers met name verantwoordelijk zijn voor CO<sub>2</sub>-uitstoot 
+        <li><strong>welke</strong> energiedragers met name verantwoordelijk zijn voor CO<sub>2</sub>-uitstoot
           (linker kolom)</li>
         <li><strong>waar</strong> in het systeem CO<sub>2</sub> wordt uitgestoten (middelste kolom)</li>
         <li><strong>welk deel</strong> van de CO<sub>2</sub> wordt opgeslagen of uitgestoten (rechter kolom)</li>
@@ -496,7 +496,7 @@
     {% endchart %}
 
     <p>
-      Je kunt Carbon Capture and Storage (CCS) centrales bouwen in het 'Aanbod' deel van het ETM om de 
+      Je kunt Carbon Capture and Storage (CCS) centrales bouwen in het 'Aanbod' deel van het ETM om de
       CO<sub>2</sub>-uitstoot van elektriciteitsopwek te verkleinen.
     </p>
 <!--     <h2>CO<sub>2</sub> emissions of biomass</h2>
@@ -567,7 +567,7 @@
     <h2>Elektriciteitsoverschotten</h2>
 
       <p>In je scenario zijn er {{ future.dashboard_total_number_of_excess_events | without_unit }}
-        uren per jaar waar (hernieuwbare en must-run) elektriciteitsproductie de vraag overstijgt. 
+        uren per jaar waar (hernieuwbare en must-run) elektriciteitsproductie de vraag overstijgt.
         Het onderstaande histogram toont de frequentie en duur van deze events.
       </p>
 
@@ -576,7 +576,7 @@
       {% endchart %}
 
       <p>
-        Flexibiliteitsopties zoals batterijen, power-to-heat (P2H) en power-to-gas (P2G) 
+        Flexibiliteitsopties zoals batterijen, power-to-heat (P2H) en power-to-gas (P2G)
         kunnen worden gebruikt om elektriciteitsoverschotten te gebruiken.
         In de sectie <a href="#onbenut-potentieel">Onbenut potentieel</a> kun je meer lezen over deze opties.
       </p>
@@ -616,7 +616,7 @@
           De <i>merit order</i> sorteert 'dispatchable' (regelbare) elektriciteitscentrales
           op <i>marginale kosten</i> (de kosten van het produceren van een extra MWh elektriciteit).
           Wind, zon-PV en must-run WKK hebben effectief marginale kosten van nul.
-          De onderstaande grafiek toont marginale kosten en geïnstalleerd vermogen van elektriciteitsproductie in 
+          De onderstaande grafiek toont marginale kosten en geïnstalleerd vermogen van elektriciteitsproductie in
           jouw scenario.
         </p>
 
@@ -625,14 +625,14 @@
         {% endchart %}
 
         <p>
-          Afhankelijk van de vraag op elk moment in het jaar bepaalt de merit order welke centrales draaien en welke niet. 
+          Afhankelijk van de vraag op elk moment in het jaar bepaalt de merit order welke centrales draaien en welke niet.
           Centrales met lage marginale kosten zoals kerncentrales draaien meestal 'baseload' terwijl centrales met hogere
           marginale kosten de pieken in de vraag opvangen.
         </p>
 
         <p>
-          Marginale kosten voor centrales worden voornamelijk door brandstofprijzen bepaald. Door de 
-          prijs van kolen of CO<sub>2</sub> op te voeren in het ETM kunnen gasgestookte centrales meer competitief 
+          Marginale kosten voor centrales worden voornamelijk door brandstofprijzen bepaald. Door de
+          prijs van kolen of CO<sub>2</sub> op te voeren in het ETM kunnen gasgestookte centrales meer competitief
           worden met kolencentrales.
         </p>
 
@@ -652,13 +652,13 @@
       De 'loss of load expectation' (LOLE) is het verwachte aantal uur per jaar dat er
       niet aan de elektriciteitsvraag kan worden voldaan met het opgestelde productievermogen.
       Een LOLE groter dan nul betekent niet direct dat het licht uitgaat omdat elektriciteit kan worden
-      geïmporteerd of uit batterijen kan worden gehaald. In Nederland wordt een LOLE van 4 u/j 
+      geïmporteerd of uit batterijen kan worden gehaald. In Nederland wordt een LOLE van 4 u/j
       acceptabel geacht.
     </p>
 
     <p>
-      In jouw scenario staat {{ future.dispatchable_electricity_production_capacity | autoscale: 'MW' }} 
-      betrouwbaar (dispatchable) productievermogen opgesteld. Dit resulteert in 
+      In jouw scenario staat {{ future.dispatchable_electricity_production_capacity | autoscale: 'MW' }}
+      betrouwbaar (dispatchable) productievermogen opgesteld. Dit resulteert in
       {{ future.dashboard_security_of_supply | without_unit }} uur 'loss of load' per jaar.
     </p>
 
@@ -667,7 +667,7 @@
     {% endchart %}
 
     <p>
-      Net zoals LOLE is het aantal black-out uren een maat voor de betrouwbaarheid van je elektriciteitssysteem. 
+      Net zoals LOLE is het aantal black-out uren een maat voor de betrouwbaarheid van je elektriciteitssysteem.
       Het verschil met LOLE is dat nu ook de mogelijkheid van import en opslag in batterijen wordt meegenomen om
       tekorten op te vangen.
     </p>
@@ -690,15 +690,15 @@
 
         <p>
           Betrouwbaarheid van (elektriciteits)aanbod en de winstgevendheid van centrales zijn direct met elkaar gelinkt.
-          Dispatchble centrales maken winst als ze veel draaiuren hebben, liefst op momenten dat de elektriciteitsprijs 
+          Dispatchble centrales maken winst als ze veel draaiuren hebben, liefst op momenten dat de elektriciteitsprijs
           hoog is.
-          Een betrouwbaar elektriciteitssysteem heeft echter back-up centrales nodig om extreme pieken op te vangen 
+          Een betrouwbaar elektriciteitssysteem heeft echter back-up centrales nodig om extreme pieken op te vangen
           die maar een paar keer per jaar optreden. Die centrales hebben dus typisch weinig draaiuren.
         </p>
 
         <p>
           In jouw scenario is {{ 100 | minus: future.profitability_percentage | round: 1 }}% van de centrales
-          verliesgevend. Dit betekent dat ze hun investeringen niet terugverdienen (oranje in onderstaande tabel) 
+          verliesgevend. Dit betekent dat ze hun investeringen niet terugverdienen (oranje in onderstaande tabel)
           of zelfs hun OPEX (operational expenditure) niet dekken (rood).
         </p>
 
@@ -707,8 +707,8 @@
         {% endchart %}
 
         <p>
-          Verliesgevende centrales zullen waarschijnlijk op den duur uit bedrijf worden genomen. 
-          Je kunt de winstgevendheid van het centralepark vergroten door de vraag toe te laten nemen. 
+          Verliesgevende centrales zullen waarschijnlijk op den duur uit bedrijf worden genomen.
+          Je kunt de winstgevendheid van het centralepark vergroten door de vraag toe te laten nemen.
           Ook het verlagen van elektriciteitsopwek met lage marginale kosten (zoals zon en wind) kan de
           winstgevendheid van dispatchable centrales verhogen.
         </p>
@@ -759,7 +759,7 @@
   </ul>
 
   <p>
-    Een complete tabel met investeringskosten per technologie kun je vinden in 
+    Een complete tabel met investeringskosten per technologie kun je vinden in
     <a href="#appendix-b-investment-costs">Appendix B</a>.
   </p>
 
@@ -823,10 +823,10 @@
 
     <h3>Ruimteverwarming en warm-water technologieën</h3>
     <p>
-      De technologieën voor ruimteverwarming en warm water in jouw scenario zijn niet consistent. 
-      De meeste huizen worden verwarmd met 
+      De technologieën voor ruimteverwarming en warm water in jouw scenario zijn niet consistent.
+      De meeste huizen worden verwarmd met
       {{ future.biggest_space_heater_share_name | i18n: 'input_element_series'  }} terwijl het warme water
-      voornamelijk door 
+      voornamelijk door
       {{ future.biggest_water_heater_share_name | i18n: 'input_element_series'  }} wordt geleverd. Is
       dat opzettelijk?
     </p>
@@ -892,7 +892,7 @@
   <h2>Extreme aannames</h2>
 
   <p>
-    Afhankelijk van je keuzes worden er in deze sectie aannames uitgelicht die een extreme verandering van het 
+    Afhankelijk van je keuzes worden er in deze sectie aannames uitgelicht die een extreme verandering van het
     energiesysteem impliceren.
     Dit kan helpen om te bepalen welke aspecten van je scenario nog extra onderbouwing of onderzoek vergen.
   </p>
@@ -921,9 +921,9 @@
         <ul>
           <li><strong>Elektriciteitsvraag laten toenemen</strong>: door centrales meer draaiuren te geven kun je hun winstgevendheid
             verbeteren.</li>
-          <li><strong>Concurrerende productie verlagen</strong>: elektriciteit uit wind en zon-PV heeft zeer lage marginale kosten, 
+          <li><strong>Concurrerende productie verlagen</strong>: elektriciteit uit wind en zon-PV heeft zeer lage marginale kosten,
             daardoor worden conventionele (dispatchable) centrales uit de markt 'gedrukt'.</li>
-          <li><strong>Sluiten van centrales</strong>: dit vergroot het realisme van je scenario en kan de kosten voor het systeem 
+          <li><strong>Sluiten van centrales</strong>: dit vergroot het realisme van je scenario en kan de kosten voor het systeem
             verlagen.</li>
         </ul>
       </p>
@@ -966,11 +966,11 @@
 
 
   {% chart 142 %}
-    Deze tabel geeft een overzicht van de investeringskosten van warmte- en elektriciteitsproductie. 
-    De investeringskosten worden weergegeven voor zowel het startscenario ({{ settings.start_year }}) 
-    als voor het toekomstjaar. 
-    In beide gevallen wordt een 'green-field' benadering genomen: er worden geen eerder geïnstalleerde 
-    technologieën meegenomen. De laatste kolom laat het verschil zien tussen de investeringskosten 
+    Deze tabel geeft een overzicht van de investeringskosten van warmte- en elektriciteitsproductie.
+    De investeringskosten worden weergegeven voor zowel het startscenario ({{ settings.start_year }})
+    als voor het toekomstjaar.
+    In beide gevallen wordt een 'green-field' benadering genomen: er worden geen eerder geïnstalleerde
+    technologieën meegenomen. De laatste kolom laat het verschil zien tussen de investeringskosten
     voor begin- en het eindjaar.
   {% endchart %}
 
@@ -1011,14 +1011,14 @@
 
       <p>
         Hoewel Quintel alle belangrijke kenmerken van het energiesysteem probeert mee te nemen, heeft het ETM noodzakelijkerwijs
-        een beperkte reikwijdte en mag het niet worden gebruikt als vervanging voor kritisch denken. Integendeel! Hopelijk, wordt de 
+        een beperkte reikwijdte en mag het niet worden gebruikt als vervanging voor kritisch denken. Integendeel! Hopelijk, wordt de
         gebruiker geïnspireerd om dieper na te denken over de resultaten en de grenzen van het model op te zoeken!
       </p>
 
       <p>
         De volgende (zeer) onvolledige lijst van onderwerpen is indicatief voor de grenzen van het ETM:
         <ul>
-          <li><strong>Menselijk gedrag</strong>: ongetwijfeld de grootste impact op het succes of het mislukken van de 
+          <li><strong>Menselijk gedrag</strong>: ongetwijfeld de grootste impact op het succes of het mislukken van de
             energietransitie valt buiten de scope van het voornamelijk technisch/financiële ETM.</li>
           <li><strong>Economische verbanden</strong>: het ETM berekent kosten op basis van gepubliceerde huidige waarden en neemt
             geen prijselasticiteit of andere economische relaties aan die in de toekomst wellicht niet langer gelden.</li>

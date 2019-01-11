@@ -8,7 +8,8 @@
       <span class="bullet">&bull;</span>
       by Quintel Intelligence<br />
       <span class="region {{ settings.area_code }}">
-        {{ settings.area_code | upcase }}
+        {{ settings.area_name }}
+
       </span>
       <span class="bullet">&bull;</span>
       {{ settings.start_year }}
@@ -17,92 +18,50 @@
   </div>
 </header>
 
+
+  <h1> Disclaimer </h1>
+    <p>
+      Dit rapport is automatisch gegenereerd door het
+      <a href="https://energytransitionmodel.com">Energietransitiemodel</a>
+      <abbr>(ETM)</abbr> en is gebaseerd op de schuifjes-instellingen in jouw scenario.
+    </p>
+
 <!-- Summary table for easy comparison-->
 <section class="snapshot">
-  <h1 class="banner">In een oogopslag&hellip;</h1>
+  <h1 class="banner">Hoofduitkomsten&hellip;</h1>
 
   <ul class="summary-main">
 
     <li><!-- class="target-met"> -->
       <p>
-        <strong><a href="#energiegebruik-en--productie">Totale energie</a></strong><br />
-        Startwaarde:
-        <strong>{{ present.dashboard_energy_demand_primary_of_final | autoscale: 'MJ' }}</strong>
-        <span class="bullet">&bull;</span>
-        Scenarioresultaat:
-        <strong>{{ future.dashboard_energy_demand_primary_of_final | autoscale: 'MJ' }}</strong>
+        <strong><a href="#A. Duurzaamheid (CO<sub>2</sub>)">Duurzaamheid</a></strong><br />
+        De CO<sub>2</sub>-uitstoot van het energiesysteem in het scenario is <strong>{{future.policy_goal_co2_emissions_value | autoscale: 'MT'}}</strong>, dat is <strong> {{future.dashboard_co2_emissions_versus_start_year | times: 100 | round: 1 }}% </strong> ten opzichte van {{ settings.start_year }} met <strong>{{ present.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong>.
       </p>
     </li>
 
-    {% if future.policy_goal_co2_emissions_target_value.value %}
-      {% if future.policy_goal_co2_emissions_reached.value %}
-        <li class="target-met">
-      {% else %}
-        <li class="target-missed">
-      {% endif %}
-    {% else %}
+    <li>
+        <strong><a href="Besparing">Besparing</a></strong><br />
+        De finale energievraag van de gebouwde omgeving (<strong>{{ future.final_demand_from_built_environment | autoscale: 'MJ' }}</strong>) is <strong> {{future.final_demand_from_built_environment_difference | times: 100 | round: 1 }}% </strong> ten opzichte van {{ settings.start_year }} (<strong>{{present.final_demand_from_built_environment | autoscale: 'MJ' }}</strong>)
+      </p>
+    </li>
+
+
+    <li>
+      <strong><a href="#Betrouwbaarheid">Betrouwbaarheid</a></strong><br />
+      Het scenario heeft <strong>{{ future.dashboard_blackout_hours | without_unit }}</strong> blackout uren. Daarnaast ben je voor <strong>{{future.dashboard_energy_import_netto | times: 100 | round: 1 }}%</strong> afhankelijk van import.
+    </li>
+
+
       <li>
-    {% endif %}
       <p>
-        <strong><a href="#co2-uitstoot">CO<sub>2</sub>-uitstoot</a></strong><br />
-        Startwaarde:
-        <strong>{{ present.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong>
-        <span class="bullet">&bull;</span>
-        Scenarioresultaat:
-        <strong>{{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong>
-        {% if future.policy_goal_co2_emissions_target_value.value %}
-          <span class="bullet">&bull;</span>
-          Doel:
-          <strong>{{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}</strong>
-        {% endif %}
+        <strong><a href="#kosten-van-het-energiesysteem">Betaalbaarheid</a></strong><br />
+        De kale kosten voor het hele energiesysteem zijn jaarlijks <strong>{{future.total_costs_percentage | times: 100 | round: 1 }}%</strong> hoger dan {{ settings.start_year }}.
       </p>
     </li>
+    <li>
+        <strong><a href="#hernieuwbaarheid">Ruimtelijke impact</a></strong><br />
+        Biomassa, hectares voor zon, voor wind is zoveel van het totale oppervlakte.
 
-    {% if future.policy_goal_renewable_percentage_target_value.value  %}
-      {% if future.policy_goal_renewable_percentage_reached.value %}
-        <li class="target-met">
-      {% else %}
-        <li class="target-missed">
-      {% endif %}
-    {% else %}
-      <li>
-    {% endif %}
-      <strong><a href="#hernieuwbaarheid">Hernieuwbaarheid</a></strong><br />
-      Startwaarde:
-      <strong>{{ present.dashboard_renewability | times: 100 | round: 1 }}%</strong>
-      <span class="bullet">&bull;</span>
-      Scenarioresultaat:
-      <strong>{{ future.dashboard_renewability | times: 100 | round: 1 }}%</strong>
-
-      {% if future.policy_goal_renewable_percentage_target_value.value  %}
-        <span class="bullet">&bull;</span>
-        Doel:
-        <strong>{{ future.policy_goal_renewable_percentage_target_value | times: 100 | round: 1 }}%</strong>
-      {% endif %}
-    </li>
-
-    {% if future.policy_goal_total_energy_costs_target_value.value %}
-      {% if future.policy_goal_total_energy_costs_reached.value %}
-        <li class="target-met">
-      {% else %}
-        <li class="target-missed">
-      {% endif %}
-    {% else %}
-      <li>
-    {% endif %}
-      <p>
-        <strong><a href="#kosten-van-het-energiesysteem">Kosten</a></strong><br />
-        Startwaarde:
-        <strong>{{ present.policy_goal_total_energy_costs_value | autoscale: 'bln_euro' }}</strong>
-        <span class="bullet">&bull;</span>
-        Scenarioresultaat:
-        <strong>{{ future.policy_goal_total_energy_costs_value | autoscale: 'bln_euro' }}</strong>
-
-        {% if future.policy_goal_total_energy_costs_target_value.value %}
-          <span class="bullet">&bull;</span>
-          Doel: <strong>3 <abbr>EJ</abbr></strong>
-        {% endif %}
-      </p>
     </li>
   </ul>
   <!-- end: main summary items -->
@@ -110,32 +69,222 @@
 <main>
   {% toc %}
 
-  <h1 class="banner">Samenvatting</h1>
+  <h1 class="banner">1. Inleiding</h1>
 
     <p>
-    Dit rapport is automatisch gegenereerd door het
-    <a href="https://energytransitionmodel.com">Energietransitiemodel</a>
-    <abbr>(ETM)</abbr> en is gebaseerd op de schuifjes-instellingen in jouw scenario.
-  </p>
+    De totale broeikasgasuitstoot in {{ settings.area_name}} was <strong>{{ present.total_energetic_and_non_energetic_co2_emissions | autoscale: 'T' }}</strong> in {{ settings.start_year }}. In Parijs spraken wij af deze broeikasgasuitstoot met 95% te reduceren in 2050 en het Nationale Klimaatakkoord gaat voor -49% in 2030. Van deze broeikasgasuitstoot is <strong>{{present.non_energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> non-energetisch, dus is niet het gevolg van het energiesysteem. De non-energetische broeikasgasuitstoot omvat bijvoorbeeld methaan van koeien, koelgassen in de voedselindustrie of CO<sub>2</sub>-uitstoot van Veenweidegebieden. Deze non-energetische uitstoot is Nationaal sterk gedaald sinds 1990. Aanpak hiervan is niet onbelangrijk, wel is het anders dan de aanpak via het energiesysteem.
+    </p>
+    <p>
+    Het Energietransitiemodel richt zich op het energiesysteem van {{ settings.area_name }}. De totale huidige uitstoot van het energiesysteem is nu <strong>{{ present.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong> en <strong>{{present.energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> van de totale broeikasgasuitstoot van regio. Het gemaakte scenario zorgt dat deze energetische CO<sub>2</sub>-uitstoot van het energiesysteem in eindjaar <strong> {{future.dashboard_reduction_of_co2_emissions_versus_1990 | times: 100 | round: 1 }}% </strong> is ten opzichte van 1990. Net als de Regionale Energiestrategie (<a href="https://www.regionale-energiestrategie.nl/default.aspx" target="_blank">RES</a>) richt dit rapport zich voornamelijk op de vraag uit de gebouwde omgeving en aanbod, maar wel in context van mobiliteit, industrie en landbouw.
+
+  <h1 class="banner">2. Energievraag</h1>
+
+    <p>
+    Het omlaag brengen CO<sub>2</sub>-uitstoot kan door de fossiele energievraag omlaag te brengen. Deze energievraag is een optelsom uit vele losse ontwikkelingen. Zowel een toename, afname als een verandering in vraag kunnen tegelijkertijd spelen. Bijvoorbeeld een grotere bevolking, meer huizen en/of meer vervoer zorgen voor een toename in de energievraag. Daarentegen zorgen tegelijkertijd besparingen zoals isolatie en groeiende efficiënties weer voor een afname van de energievraag. Als laatste zorgen technologieveranderingen soms voor een verandering in de vraag, zowel in volume als in type energiedrager. Ter illustratie, bij een warmtepomp of elektrische auto is geen directe vraag meer naar aardgas, maar wel naar elektriciteit. De energiedrager is veranderd van gas naar elektriciteit. Ook zijn in deze gevallen de technologieën efficienter, waardoor het volume afneemt. </p>
 
 
-  <h1 class="banner">De Gebouwde Omgeving</h1>
+    <h2 class="banner">A. Gebouwde Omgeving</h2>
+      <p>
+     Dit hoofdstuk neemt u mee door de toekomstige energievraag van de gebouwde omgeving het gemaakte scenario, dit zijn de huishoudens (=woningen) en gebouwen. Gebouwen betreft alles met een dak dat geen woning of zware industrie is. Dit zijn bijvoorbeel scholen, gemeentehuizen en bedrijfskantoren. Zowel het volume (jaarlijkse vraag in Joule) als de nodige energiedrager (gas, elektriciteit, warmte, waterstof, biomassa, etc...) komen aan bod.  Aan de hand van de twee vraagfuncties Kracht en Licht en Lage temperatuurwarmte zal de toekomstige energiebehoefte worden toegelicht.
+      </p>
 
-  <h1 class="banner">Mobiliteit en transport</h1>
+      <h3 class="banner">A1. Kracht en Licht</h3>
+        <p>
+        De elektriciteitsvraag van apparaten en van verlichting valt onder Kracht en Licht.</p>
+        <h4 class="banner">Vraagontwikkeling</h4>
+          <p> De Kracht en Licht vraag in de huishoudens is in {{ settings.start_year }}  XPJ en X% van de totale energievraag in huishoudens. In {{ settings.end_year }} is dit totaal XPJ en % van de totale energievraag in huishoudens. Dit komt door in de toekomst gemiddeld X% minder zijn gaan gebruiken, bevolkingsomvang én gebruik per inwoner. Daarnaast is er een keuze gemaakt voor techologie LED, gloeilamp of halogeen.
+          </p>
 
-  <h1 class="banner">Opwek en energie-import</h1>
+        {% chart 2 %}
+          Finale elektriciteitsvraag van apparaten en verlichting in
+          {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
+        {% endchart %}
 
-  <h1 class="banner">Ruimtelijke impact</h1>
+        Voor alle niet-woningen is de vraagontwikkeling Kracht en Licht door jaarlijkse groei van X% en door efficiënties hieronder te zien. Je kunt het meteen vergelijken met de elektriciteit die voor warmte en koeling wordt gebruikt.
+        {% chart 72 %}
+        Kracht en Licht in gebouwen
+          {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
+        {% endchart %}
+          </p>
 
-  <h1 class="banner">Duurzaamheidsambitie</h1>
+      <h3 class="banner">A2. Lage temperatuurwarmte</h3>
+        <p>Lage temperatuurwarmte gaat over de vraag naar ruimteverwarming(x TJ), warm water en ook koken in de gebouwde omgeving. Ook landbouw (XTJ) en industrie (X TJ) hebben soms een lage temperatuurwarmtevraag.
+        </p>
+        <h4 class="banner">Vraagontwikkeling</h4>
+          <p>
+          In het gemaakte scenario wordt X% van de warmtevraag in huishoudens bespaard door isolatie. Bij gebouwen levert isolatie X% besparing op.
 
-    <h2 class="banner">Klimaatneutraal</h2>
+            {% chart 58 %}
+              Isolatie in woningen/huishoudens
+              {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
+            {% endchart %}
 
-    <h2 class="banner">Energieneutraal</h2>
+            {% chart 69 %}
+              Isolatie in gebouwen
+              {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
+            {% endchart %}
+          </p>
+        <h4 class="banner"1>Invulling technologie</h4>
+          <p> Een keuze voor een andere technologie om het het huis, het water of het eten te verwarmen kan zorgen voor een verandering in volume, maar ook voor een verandering in vraag. De verandering in volume komt doordat een technologie meer of minder efficiënt is. Een warmtepomp is bijvoorbeeld efficiënter dan een cv-ketel. De verandering in type-vraag komt wanneer een technologie op een andere manier warmte maakt, zoals een cv-ketel met gas nodig heeft en een houtkachel hout.Hieronder zie je de verandering van vraag in volume en energiedrager voor eerst huishoudens en daarna gebouwen.
+          </p>
+            {% chart 56 %}
+              Finale warmtevraag in huishoudens
+              {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
+            {% endchart %}
 
-  <h1 class="banner">Opgave per jaar</h1>
+            {% chart 70 %}
+              Finale warmtevraag in gebouwen
+              {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
+            {% endchart %}
 
-  <h1 class="banner">Schuifjesinstellingen</h1>
+          <p> Koken is in STARTJAAR voor X% verantwoordelijk voor de finale energievraag van huishoudens. In TOEKOMSTJAAR is dat X% van de finale energievraag in huishoudens. Hieronder kun je zien wat de technologiekeuze voor energievraag creëert.
+          </p>
 
+          {% chart 67 %}
+            Overzicht van hoe de huishoudens koken in
+            {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
+          {% endchart %}
+
+    <h2 class="banner">B. Totale energievraag (inclusief Mobiliteit, Landbouw en Industrie)</h2>
+
+        {% chart 224 %}
+          Totale eindvraag van energie in {{ settings.end_year }} in {{ settings.area_name }}
+        {% endchart %}
+
+  <h1 class="banner">3. Matchen van vraag en aanbod</h1>
+    <p> Alle vraag naar warmte, elektriciteit, biomassa en gassen moet natuurlijk ergens vandaan komen. De vraag is natuurlijk hoe hernieuwbaar, betrouwbaar en betaalbaar deze bronnen zijn.
+    </p>
+
+    <h2 class="banner">A. Warmte (warmtenet)</h2>
+      <p>
+      Hieronder zie je een overzicht van de vraag (links) en aanbod (rechts) op het warmtenet. Wanneer je te weinig warmteaanbod hebt, dan springt er een gas back-up centrale aan. Wanneer je overschotten hebt, dan zie je dit aan de linker kant in het lichtroze.
+        {% chart 174 %}
+          Vraag (links) en aanbod (rechts) op het warmtenet in {{ settings.end_year }}.
+        {% endchart %}
+      </p>
+
+    <h2 class="banner">B. Elektriciteit</h2>
+      <h3> B1. Vraag en aanbod </h3>
+      <p>
+      Ook de elektriciteit moet natuurlijk ergens vandaan komen. Het rode lijntje is het jaarlijkse volume aan elektriciteit dat er in het scenario nodig is. Het kan voorkomen dat er veel import (donkerblauw) nodig is terwijl er jaarlijks (meer dan) genoeg elektriciteit wordt opgewekt. Het ETM berekent vraag en aanbod van elektriciteit op uurbasis. In dit scenario is X% import en heb je X uren per jaar overschotten. Flexibiliteitsopties zoals opslag in batterijen, waterstof of slim omgaan met de vraag kunnen helpen om dit omlaag te brengen.
+      </p>
+      {% chart 99 %}
+          Elektriciteitsvraag- en aanbod voor {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
+      {% endchart %}
+
+        <h3> B2. Elektriciteitsnetten </h3>
+          <p>De energietransitie heeft gevolgen voor het elektriciteitsnet. In de tabel rechts kan je de piekbelasting en bruikbare capaciteit zien op de verschillende netniveau's.
+          </p>
+          {% chart 223 %}
+              Deze tabel geeft een overzicht van de impact op de netten op laagspanning (ls), middenspanning (ms) en hoogspanning (hs), evenals de tussenliggende transformatoren. Voor detailvragen over de netten zul je altijd de netbeheerder moeten bevragen.
+          {% endchart %}
+
+    <h2 class="banner">C. Waterstof</h2>
+      <p> Wanneer je waterstof inzet in het scenario krijg je een waterstofvraag. Deze waterstof moet ergens vandaan komen. Hieronder zie je links de vraag van waterstof en rechts het aanbod. Wanneer jouw aanbod (door bijvoorbeeld elektriciteitsoverschotten om te zetten in waterstof) lager is dan de vraag, dan ga je importeren. Wanneer het aanbod hoger is dan de vraag, dan zie je overschotten. Wanneer of de waterstofimport of het -overschot groot is ben je als {{ settings.area_name }} gevoelig voor de waterstofprijs.
+      </p>
+      {% chart 214 %}
+        Waterstofvraag- (links) en aanbod (rechts).
+      {% endchart %}
+
+    <h2 class="banner">D. Biomassa</h2>
+
+      <p>
+      Wanneer er biomassa in het scenario wordt gebruikt is de impact dat heir te zien. Er wordt XTJ biomassa gebruikt en X TJ en X% daarvan wordt geïmporteerd.
+      {% chart 169 %}
+        Biomassa ruimtegebruik in alle sectoren.
+      {% endchart %}
+      </p>
+
+    <h2 class="banner">E. Fossiel</h2>
+    <p> Er is x% van de primaire energievraag nog fossiel. Hieronder is een overzicht te zien van de totale primaire energievraag van het scenario. Hier is goed te zien wanneer er nog fossiele vraag in het scenario zit.
+    {% chart 52 %}
+    Overzicht van de primaire energievraag in het scenario
+    {% endchart %}
+    </p>
+
+    </p>
+
+  <h1 class="banner">4. Conclusies</h1>
+    <h2 class="banner">A. Duurzaamheid (CO<sub>2</sub>)</h2>
+
+      Het effect van dit scenario op de CO<sub>2</sub>-uitstoot is <strong> {{future.dashboard_co2_emissions_versus_start_year | times: 100 | round: 1 }}% </strong>. De gebouwde omgeving is van een uitstoot van X MT CO<sub>2</sub> naar X MT CO<sub>2</sub> gegaan dat is een verandering van X%. De finale energievraag van de gebouwde omgeving gaat van X PJ naar X PJ dit is een verschil van X%. De kosten zvoor het hele energiesysteem zijn van X naar X gegaan. Er is X uur stroomuitval in het jaar en X% van de elektriciteit is import. Ruimtelijk is er X hectare nodig voor zonnevelden en X hectare voor windmolens.
+
+      {% chart 46 %}
+        CO<sub>2</sub>-uitstoot gebaseerd op primair energiegebruik en uitgesplitst in sectoren voor 1990 (links),
+        {{ settings.start_year }} (midden),
+        en {{ settings.end_year }} (rechts). Deze getallen gelden voor de hele energetische keten inclusief
+        omzet- en transportverliezen.
+      {% endchart %}
+
+    <h2 class="banner">B. Besparing</h2>
+      <p>De finale energievraag van de gebouwde omgeving (<strong>{{ future.final_demand_from_built_environment | autoscale: 'MJ' }}</strong>) is <strong> {{future.final_demand_from_built_environment_difference | times: 100 | round: 1 }}% </strong> ten opzichte van {{ settings.start_year }} (<strong>{{present.final_demand_from_built_environment | autoscale: 'MJ' }}</strong>)
+      </p>
+    <h2 class="banner">C. Betrouwbaarheid</h2>
+      <p> Het scenario heeft <strong>{{ future.dashboard_blackout_hours | without_unit }}</strong> blackout uren. Daarnaast ben je voor <strong>{{future.dashboard_energy_import_netto | times: 100 | round: 1 }}%</strong> afhankelijk van import.
+      </p>
+
+    <h2 class="banner">D. Betaalbaarheid</h2>
+      <p>
+      Alle gekozen sliders voor het scenario hebben in meer of mindere mate invloed op de kosten van het energiesysteem. Aan de hand van kengetallen berekent het ETM de de kale kosten van het energiesysteem. Dit zijn jaarlijkse afschrijvingen, rentes en operationele kosten. De aannames achter de kostenberekening kun je vinden in tab Kosten in het scenario.
+      </p>
+        <h3>D1. Kosten </h3>
+
+        {% chart 113 %}
+          Deze tabel geeft een overzicht van de totale kosten van het energiesysteem, uitgesplitst over de X AANTAL huishoudens.
+        {% endchart %}
+
+        <h3>D2. Investeringen </h3>
+
+        {% chart 142 %}
+          Deze tabel geeft een overzicht van de totale investeringen.
+        {% endchart %}
+
+    <h2 class="banner">E. Ruimte</h2>
+      Alle ingrepen in onze fysieke wereld hebben per definitie een ruimtelijke impact. De omvang van deze impact is heel verschillend en ook niet makkelijk te kwantificeren. Dit rapport kijkt nu vooral naar de ruimtelijke impact van elektriciteitsaanbod. Wetende dat een hectare met een zonnepark een andere impact heeft dan een hectare met een windmolen.
+
+  <h1 class="banner">5. Actieagenda</h1>
+      Er zijn veel keuzes gemaakt waarvan de impact concreter wordt als je kijkt wat dit per jaar betekent. In de werkelijkheid ontwikkelt zich natuurlijk niet alles lineair. Wanneer dat wel zou gebeuren dan betekent dat het volgende:
+    <ul>
+        <li>
+          Er worden jaarlijks X huizen bijgebouwd
+        </li>
+        <li>
+          Er worden jaarlijks X warmtepompen geïnstalleerd
+        </li>
+        <li>
+          Er worden jaarlijks X zonnepanelen neergelegd
+        </li>
+        <li>
+          Er worden jaarlijks X MW windmolens bijgebouwd
+        </li>
+      </ul>
+
+
+  <h1 class="banner">6. Appendix A: Slider-settings</h1>
+
+  In deze appendix wordt een lijst gegeven van alle schuifjes die van hun startwaarde zijn verplaatst.
+
+  {% if user_values.length %}
+    <ul class="user-values">
+      {% for slide in user_values %}
+        <li>
+          <p><strong>{{ slide.path | join: " • " }}</strong></p>
+          <ul>
+            {% for input in slide.user_values %}
+              <li>
+                {{ input.name }}:
+                {{ input.default | autoscale: input.unit }} →
+                {{ input.user | autoscale: input.unit }}
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>
+      Er zijn geen schuifjes aangepast.
+    </p>
+  {% endif %}
 
 </main>

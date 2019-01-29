@@ -3,6 +3,7 @@ en:
     groups:
       aggregated_other: "Other"
       agriculture: "Agriculture"
+      abroad: "Import"
       bio: "Bio"
       buildings: "Buildings"
       central: "Central"
@@ -11,6 +12,7 @@ en:
       coal: "Coal"
       conversion: "4.&nbsp;Conversion"
       demand: "Demand"
+      domestic: "Regional production"
       export: "Export"
       export_and_curtailment: "Export and curtailment"
       extraction: "1.&nbsp;Extraction"
@@ -46,15 +48,15 @@ en:
     actual_2010: "2010"
     actual_20xx: "future"
     actual_co2_emitted: "Actual CO2 emissions"
-    agriculture_chp_engine_biogas: 'Biogas CHP agriculture'
-    agriculture_chp_engine_network_gas: 'Gas CHP agriculture'
-    agriculture_chp_supercritical_wood_pellets: 'Wood chip CHP agriculture'
-    agriculture_locally_available_steam_hot_water_in_heat_network_mekko: "Agricultural heat demand"
+    agriculture_chp_engine_biogas: 'Biogas CHP - agriculture'
+    agriculture_chp_engine_network_gas: 'Gas CHP - agriculture'
+    agriculture_chp_supercritical_wood_pellets: 'Wood chip CHP - agriculture'
+    agriculture_locally_available_steam_hot_water_in_heat_network_mekko: "Agriculture"
     agriculture_unused_local_production_steam_hot_water_in_heat_network_mekko: "Agricultural heat supply"
-    buildings_heat_network_connection_steam_hot_water_in_heat_network_mekko: "Buildings heat network"
+    buildings_heat_network_connection_steam_hot_water_in_heat_network_mekko: "Buildings"
     energy_chp_combined_cycle_network_gas_in_heat_network_mekko: "Central gas CHP"
     energy_chp_supercritical_waste_mix_in_heat_network_mekko: "Central waste CHP"
-    energy_chp_ultra_supercritical_coal_in_heat_network_mekko: "Coal CHPs"
+    energy_chp_ultra_supercritical_coal_in_heat_network_mekko: "Central coal CHPs"
     energy_chp_ultra_supercritical_cofiring_coal_in_heat_network_mekko: "Central cofiring coal CHP"
     energy_chp_ultra_supercritical_lignite_in_heat_network_mekko: "Central lignite CHP"
     energy_heat_network_backup_heater_network_gas_in_heat_network_mekko: "Heat deficit (back-up heater)"
@@ -67,11 +69,21 @@ en:
     energy_heater_for_heat_network_network_gas_in_heat_network_mekko: "Central gas heater"
     energy_heater_for_heat_network_waste_mix_in_heat_network_mekko: "Central waste heater"
     energy_heater_for_heat_network_wood_pellets_in_heat_network_mekko: "Central biomass heater"
-    households_heat_network_connection_steam_hot_water_in_heat_network_mekko: "Households heat network"
+    households_heat_network_connection_steam_hot_water_in_heat_network_mekko: "Households"
     energy_interconnector_imported_electricity: "Imported electricity"
-    industry_locally_available_steam_hot_water_in_heat_network_mekko: "Industrial heat demand"
+    energy_steel_hisarna_transformation_coal: "Cyclone furnace on biomass - steel industry"
+    excess_heat_industrial_heat_network: "Excess heat going to other heat networks"
+    heat_from_central_heat_network: "Heat from other heat sources"
+    heat_network_demand_industry: "Industry"
+    heat_network_demand_households: "Households"
+    heat_network_demand_buildings: "Buildings"
+    heat_network_demand_agriculture: "Agriculture"
+    heat_network_demand_other: "Other"
+    industry_locally_available_steam_hot_water_in_heat_network_mekko: "Industry"
     industry_unused_local_production_steam_hot_water_in_heat_network_mekko: "Industrial heat supply"
-    other_final_demand_steam_hot_water_in_heat_network_mekko: "Other heat network"
+    other_final_demand_steam_hot_water_in_heat_network_mekko: "Other"
+    total_heat_network_demand_agriculture: "Agricultural heat network demand"
+    total_heat_network_demand_industry: "Industrial heat network demand"
     all_plants_capacity: "All Plants (capacity)"
     aluminium: "Aluminium"
     ambient: "Ambient heat and cold"
@@ -83,9 +95,10 @@ en:
     associated_renewable: "Transformation losses renewable"
     available_network_capacity: "Available network capacity"
     bicycles: "Bicycles"
+    biocoal: "Biocoal"
     bio_ethanol: "Bio-ethanol"
     bio_oil: "Bio-oil"
-    biogenic_waste: "Biogenic waste"
+    biogenic_waste: "Biogenic waste (waste CHP/incineration)"
     biofuels: "Bio-fuels"
     bio_fuels: "Liquid bio-fuels"
     biogenic_fuels: "Biogenic fuels"
@@ -95,6 +108,7 @@ en:
     bio_lng: "Bio LNG"
     biogas: "Biogas"
     biodiesel: "Biodiesel"
+    biodiesel_biokerosene: "Biodiesel/biokerosene"
     biomass: "Biomass"
     biomass_chp: "Biomass CHP"
     biomass_gasification: "Biomass gasification"
@@ -107,9 +121,13 @@ en:
     biomass_products: "Biomass and derivatives"
     biomass_products_non_energetic: "Non-energetic biomass products and derivatives"
     blue_energy: "Blue Energy"
-    buildings_chp_engine_biogas: 'Biogas CHP buildings'
-    buildings_collective_chp_network_gas: 'Gas CHP buildings'
-    buildings_collective_chp_wood_pellets: 'Biomass CHP buildings'
+    buildings_chp_engine_biogas: 'Biogas CHP - buildings'
+    buildings_collective_chp_network_gas: 'Gas CHP - buildings'
+    buildings_collective_chp_wood_pellets: 'Biomass CHP - buildings'
+    buildings_collective_burner_hydrogen: "Hydrogen burner - buildings"
+    buildings_collective_burner_network_gas: "Gas-fired burner - buildings"
+    buildings_collective_geothermal: "Geothermal - buildings"
+    buildings_collective_heatpump_water_water_electricity: "Collective heat pump - buildings"
     buildings_cooling_demand: "Cooling buildings"
     buildings_heating_demand: "Heating buildings"
     buildings_solar_pv_solar_radiation: 'Solar panels buildings'
@@ -173,6 +191,7 @@ en:
     compressed_natural_gas_busses: "Compressed gas busses"
     compressed_natural_gas_trucks: "Compressed gas trucks"
     conventional: "Conventional"
+    conversion_losses: "Conversion losses"
     cooking: "Cooking"
     cooking_from_biomass: "Cooking from biomass"
     cooking_from_electricity: "Cooking from electricity"
@@ -181,7 +200,7 @@ en:
     cooling_demand: "Cooling demand"
     cooling_from_electricity: "Cooling from electricity"
     cooling_from_gas: "Cooling from gas"
-    corn: "Corn"
+    corn: "Corn (green gas/bio-ethanol)"
     cost_of_capital: "Cost of capital"
     crude_oil: "Crude oil"
     csp: "CSP"
@@ -326,7 +345,11 @@ en:
     greengas_to_electricity_production: "Green gas for electricity production"
     growth: "Growth"
     heat: "Heat"
-    heat_demand_including_electric_heating: "Heat demand, including electric heating"
+    heat_demand_apartments: "Heat demand apartments"
+    heat_demand_detached_houses: "Heat demand detached houses"
+    heat_demand_semi_detached_houses: "Heat demand semi-detached houses"
+    heat_demand_terraced_houses: "Heat demand terraced houses"
+    heat_demand_corner_houses: "Heat demand corner houses"
     heat_demand_buildings: "Heat demand"
     heat_from_biomass: "Heat from biomass"
     heat_from_chp: "Heat from CHP"
@@ -351,11 +374,17 @@ en:
     hot_water_from_electricity: "Hot water from electricity"
     hot_water_from_fossil_fuels: "Hot water from fossil fuels"
     hot_water_from_renewables: "Hot water from renewables"
+    hourly_buildings_heat_surplus: "Buffering and time-shifting"
+    hourly_buildings_heat_deficit: "Deficit"
     hourly_household_heat_surplus: "Buffering and time-shifting"
     hourly_household_heat_deficit: "Deficit"
-    households_collective_chp_biogas: 'Biogas CHP households'
-    households_collective_chp_network_gas: 'Gas CHP households'
-    households_collective_chp_wood_pellets: 'Biomass CHP households'
+    households_collective_chp_biogas: 'Biogas CHP - households'
+    households_collective_chp_network_gas: 'Gas CHP - households'
+    households_collective_chp_wood_pellets: 'Biomass CHP - households'
+    households_collective_burner_hydrogen: "Hydrogen burner - households"
+    households_collective_burner_network_gas: "Gas-fired burner - households"
+    households_collective_geothermal: "Geothermal - households"
+    households_collective_heatpump_water_water_electricity: "Collective heat pump - households"
     households_cooling_demand: "Cooling households"
     households_flexibility_p2h_electricity: 'Converted to heat for households'
     households_flexibility_p2p_electricity: 'Stored in household batteries'
@@ -418,17 +447,16 @@ en:
     import: "Import"
     imported: "Imported"
     imported_electricity: "Imported electricity"
-    imported_heat: "Imported heat"
+    imported_heat: "Imported (residual) heat"
     imported_hydrogen: "Imported hydrogen"
-    industry_chp_combined_cycle_gas_power_fuelmix: 'Gas CHP industry'
-    industry_chp_engine_gas_power_fuelmix: 'Gas motor CHP industry'
-    industry_chp_turbine_gas_power_fuelmix: 'Gas turbine CHP industry'
-    industry_chp_ultra_supercritical_coal: 'Coal CHP industry'
+    industry_chp_combined_cycle_gas_power_fuelmix: 'Gas CHP - industry'
+    industry_chp_engine_gas_power_fuelmix: 'Gas motor CHP - industry'
+    industry_chp_turbine_gas_power_fuelmix: 'Gas turbine CHP - industry'
+    industry_chp_ultra_supercritical_coal: 'Coal CHP - industry'
     industry_flexibility_p2h_electricity: "Converted to heat for industry"
     inland: "Inland"
-    insulation_savings_new_houses: "Insulation savings, new houses"
-    insulation_savings_old_houses: "Insulation savings, old houses"
     insulation_savings_buildings: "Insulation savings"
+    insulation_savings: "Total insulation savings heating"
     insulation_savings_cooling: "Insulation savings cooling"
     insulation_savings_heating: "Insulation savings heating"
     interconnection_net: "Interconnection net"
@@ -477,7 +505,7 @@ en:
     lv_net: "LV net"
     maintenance: "Maintenance"
     media: "Media"
-    manure: "Manure"
+    manure: "Manure (green gas)"
     medium_voltage_network: "Medium voltage network"
     micro_chp: "Micro-CHP"
     heat: "Heat"
@@ -567,6 +595,7 @@ en:
     other_plants_investm: "Other plants (investm.)"
     other_plants_plants: "Other plants (plants)"
     other_plants_prod: "Other plants (prod.)"
+    palm: "Oil palm"
     passenger_transport: "Passenger transport"
     p2g: "Power-to-gas"
     peak_electricity_demand: "Peak power demand"
@@ -583,6 +612,7 @@ en:
     primary_energy_of_electricity_export: "Primary energy of electricity export"
     production: "Production"
     pv: "PV"
+    rapeseed: "Rapeseed (biodiesel/biokerosene)"
     refinery: "Refinery"
     regasified_bio_lng: "Regasified bio LNG"
     regasified_lng: "Regasified LNG"
@@ -601,13 +631,15 @@ en:
     steam_methane_reforming: "Steam methane reforming"
     steam_methane_reforming_ccs: "Steam methane reforming CCS"
     steel: "Steel"
+    sugar_cane: "Sugar cane (bio-ethanol)"
+    sugar_beets: "Sugar beets (bio-ethanol)"
     sustainable_electricity: "Renewable electricity"
     sustainable_heat: "Renewable heat"
     sustainable_hydrogen: "Renewable hydrogen"
     sustainable_gas: "Renewable gas"
     target: "Target"
     television: "Television"
-    torrified_biomass_pellets: "Torrified biomass pellets"
+    torrefied_biomass_pellets: "Biocoal"
     total: "Total"
     total_co2_emission: "Total CO2 emissions"
     total_demand: "Total electricity demand"
@@ -628,7 +660,9 @@ en:
     washing_machine: "Washing machine"
     waste: "Waste"
     waste_heat_and_cold: "Residue heat and cold"
-    waste_incinerator: "Waste Incinerator"
+    waste_incinerator: "Waste incinerator"
+    waste_fats: "Waste fats (biodiesel/biokerosene)"
+    wheat: "Wheat (bio-ethanol)"
     wind: "Wind"
     wind_coastal: "Wind coastal"
     wind_farms: "Wind"

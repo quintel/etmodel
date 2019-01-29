@@ -1,6 +1,7 @@
 nl:
   output_element_series:
     groups:
+      abroad: "Import"
       aggregated_other: "Overig"
       agriculture: "Landbouw"
       bio: "Bio"
@@ -11,6 +12,7 @@ nl:
       coal: "Kolen"
       conversion: "4.&nbsp;Omzetten"
       demand: "Vraag"
+      domestic: "Regional productie"
       export: "Export"
       export_and_curtailment: "Export en curtailment"
       extraction: "1.&nbsp;Extractie"
@@ -46,15 +48,15 @@ nl:
     actual_2010: "2010"
     actual_20xx: "toekomst"
     actual_co2_emitted: "Eigenlijke CO2-emissies"
-    agriculture_chp_engine_biogas: 'Biogas WKK landbouw'
-    agriculture_chp_engine_network_gas: 'Gas WKK landbouw'
-    agriculture_chp_supercritical_wood_pellets: 'Biomassa WKK landbouw'
-    agriculture_locally_available_steam_hot_water_in_heat_network_mekko: "Warmtevraag landbouw"
+    agriculture_chp_engine_biogas: 'Biogas WKK - landbouw'
+    agriculture_chp_engine_network_gas: 'Gas WKK - landbouw'
+    agriculture_chp_supercritical_wood_pellets: 'Biomassa WKK - landbouw'
+    agriculture_locally_available_steam_hot_water_in_heat_network_mekko: "Landbouw"
     agriculture_unused_local_production_steam_hot_water_in_heat_network_mekko: "Warmte-aanbod landbouw"
-    buildings_heat_network_connection_steam_hot_water_in_heat_network_mekko: "Warmtenet gebouwen"
+    buildings_heat_network_connection_steam_hot_water_in_heat_network_mekko: "Gebouwen"
     energy_chp_combined_cycle_network_gas_in_heat_network_mekko: "Centrale gas WKK"
     energy_chp_supercritical_waste_mix_in_heat_network_mekko: "Centrale afval WKK"
-    energy_chp_ultra_supercritical_coal_in_heat_network_mekko: "Kolen WKKs"
+    energy_chp_ultra_supercritical_coal_in_heat_network_mekko: "Centrale kolen WKKs"
     energy_chp_ultra_supercritical_cofiring_coal_in_heat_network_mekko: "Centrale bijstook-WKK"
     energy_chp_ultra_supercritical_lignite_in_heat_network_mekko: "Centrale bruinkool-WKK"
     energy_heat_network_backup_heater_network_gas_in_heat_network_mekko: "Warmtetekort (gas back-up)"
@@ -68,10 +70,20 @@ nl:
     energy_heater_for_heat_network_waste_mix_in_heat_network_mekko: "Centrale afvalverbrander"
     energy_heater_for_heat_network_wood_pellets_in_heat_network_mekko: "Centrale biomassaketel"
     energy_interconnector_imported_electricity: "Geïmporteerde elektriciteit"
-    households_heat_network_connection_steam_hot_water_in_heat_network_mekko: "Warmtenet huishoudens"
-    industry_locally_available_steam_hot_water_in_heat_network_mekko: "Warmtevraag industrie"
+    energy_steel_hisarna_transformation_coal: "Cycloonoven op biomassa - staalindustrie"
+    excess_heat_to_central_network: "Warmteoverschot naar andere warmtenetten"
+    heat_from_central_heat_network: "Warmte van overige warmtebronnen"
+    heat_network_demand_industry: "Industrie"
+    heat_network_demand_households: "Huishoudens"
+    heat_network_demand_buildings: "Gebouwen"
+    heat_network_demand_agriculture: "Landbouw"
+    heat_network_demand_other: "Overig"
+    households_heat_network_connection_steam_hot_water_in_heat_network_mekko: "Huishoudens"
+    industry_locally_available_steam_hot_water_in_heat_network_mekko: "Industrie"
     industry_unused_local_production_steam_hot_water_in_heat_network_mekko: "Warmte-aanbod industrie"
-    other_final_demand_steam_hot_water_in_heat_network_mekko: "Warmtenet overig"
+    other_final_demand_steam_hot_water_in_heat_network_mekko: "Overig"
+    total_heat_network_demand_agriculture: "Warmtenetvraag van landbouw"
+    total_heat_network_demand_industry: "Warmtenetvraag van industrie"
     all_plants_capacity: "Alle centrales (capaciteit)"
     aluminium: "Aluminium"
     ambient: "Omgevingswarmte en -koude"
@@ -83,8 +95,9 @@ nl:
     associated_renewable: "Transformatieverliezen hernieuwbaar"
     available_network_capacity: "Beschikbare netwerkcapaciteit"
     bicycles: "Fietsen"
+    biocoal: "Biokolen"
     bio_ethanol: "Bio-ethanol"
-    biogenic_waste: "Biogeen afval"
+    biogenic_waste: "Biogeen afval (afval WKK/AVI)"
     biofuels: "Bio-brandstoffen"
     bio_fuels: "Vloeibare bio-brandstoffen"
     biogenic_fuels: "Biogene brandstoffen"
@@ -95,6 +108,7 @@ nl:
     bio_oil: "Bio-olie"
     biogas: "Biogas"
     biodiesel: "Biodiesel"
+    biodiesel_biokerosene: "Biodiesel/biokerosine"
     biomass: "Biomassa"
     biomass_chp: "Biomassa WKK"
     biomass_plants: "Biomassa"
@@ -105,9 +119,13 @@ nl:
     biomass_products: "Biomassa en biomassaproducten"
     biomass_products_non_energetic: "Niet-energetisch biomassa en biomassaproducten"
     blue_energy: Blue Energy
-    buildings_chp_engine_biogas: 'Biogas WKK gebouwen'
-    buildings_collective_chp_network_gas: 'Gas WKK gebouwen'
-    buildings_collective_chp_wood_pellets: 'Biomassa WKK gebouwen'
+    buildings_chp_engine_biogas: 'Biogas WKK -gebouwen'
+    buildings_collective_chp_network_gas: 'Gas WKK - gebouwen'
+    buildings_collective_chp_wood_pellets: 'Biomassa WKK - gebouwen'
+    buildings_collective_burner_hydrogen: "Waterstofketel - gebouwen"
+    buildings_collective_burner_network_gas: "Gasketel - gebouwen"
+    buildings_collective_geothermal: "Geothermisch - gebouwen"
+    buildings_collective_heatpump_water_water_electricity: "Collectieve warmtepomp - gebouwen"
     buildings_cooling_demand: "Koeling - Gebouwen"
     buildings_heating_demand: "Verwarming - Gebouwen"
     buildings_solar_pv_solar_radiation: 'Zonnepanelen gebouwen'
@@ -171,6 +189,7 @@ nl:
     compressed_natural_gas_busses: "CNG-bussen (gas onder druk)"
     compressed_natural_gas_trucks: "CNG-vrachtwagens (gas onder druk)"
     conventional: "Conventioneel"
+    conversion_losses: "Omzetverliezen"
     cooking: "Koken"
     cooking_from_biomass: "Koken op biomassa"
     cooking_from_electricity: "Koken op elektriciteit"
@@ -179,7 +198,7 @@ nl:
     cooling_demand: "Koudevraag"
     cooling_from_electricity: "Koeling uit elektriciteit"
     cooling_from_gas: "Koeling uit gas"
-    corn: "Maissillage"
+    corn: "Maïs (groengas/bio-ethanol)"
     cost_of_capital: "Kapitaalkosten"
     crude_oil: "Aardolie"
     csp: "CSP"
@@ -324,7 +343,11 @@ nl:
     greengas_to_electricity_production: "Groengas voor elektriciteitsproductie"
     growth: "Groei"
     heat: "Warmte"
-    heat_demand_including_electric_heating: "Warmtevraag, inclusief elektrische verwarming"
+    heat_demand_apartments: "Warmtevraag appartmenten"
+    heat_demand_detached_houses: "Warmtevraag vrijstaande huizen"
+    heat_demand_semi_detached_houses: "Warmtevraag twee-onder-een-kapwoningen"
+    heat_demand_terraced_houses: "Warmtevraag rijtjeshuizen"
+    heat_demand_corner_houses: "Warmtevraag hoekhuizen"
     heat_demand_buildings: "Warmtevraag"
     heat_from_biomass: "Warmte uit biomassa"
     heat_from_chp: "Warmte uit WKK"
@@ -349,11 +372,17 @@ nl:
     hot_water_from_electricity: "Warm water uit elektriciteit"
     hot_water_from_fossil_fuels: "Warm water uit fossiele bronnen"
     hot_water_from_renewables: "Warm water uit hernieuwbare bronnen"
+    hourly_buildings_heat_surplus: "Bufferen en uitstellen"
+    hourly_buildings_heat_deficit: "Tekorten"
     hourly_household_heat_surplus: "Bufferen en uitstellen"
     hourly_household_heat_deficit: "Tekorten"
-    households_collective_chp_biogas: 'Biogas WKK huishoudens'
-    households_collective_chp_network_gas: 'Gas WKK huishoudens'
-    households_collective_chp_wood_pellets: 'Biomassa WKK huishoudens'
+    households_collective_chp_biogas: 'Biogas WKK - huishoudens'
+    households_collective_chp_network_gas: 'Gas WKK - huishoudens'
+    households_collective_chp_wood_pellets: 'Biomassa WKK - huishoudens'
+    households_collective_burner_hydrogen: "Waterstofketel - huishoudens"
+    households_collective_burner_network_gas: "Gasketel - huishoudens"
+    households_collective_geothermal: "Geothermisch - huishoudens"
+    households_collective_heatpump_water_water_electricity: "Collectieve warmtepomp - huishoudens"
     households_cooling_demand: "Koeling huishoudens"
     households_flexibility_p2h_electricity: 'Omgezet naar warmte voor huishoudens'
     households_flexibility_p2p_electricity: 'Opgeslagen in thuisbatterijen'
@@ -417,17 +446,16 @@ nl:
     import: "Import"
     imported: "Geïmporteerde"
     imported_electricity: "Geïmporteerde elektriciteit"
-    imported_heat: "Geïmporteerde warmte"
+    imported_heat: "Geïmporteerde (rest)warmte"
     imported_hydrogen: "Geïmporteerde waterstof"
-    industry_chp_combined_cycle_gas_power_fuelmix: 'Gas WKK industrie'
-    industry_chp_engine_gas_power_fuelmix: 'Gasmotor WKK industrie'
-    industry_chp_turbine_gas_power_fuelmix: 'Gasturbine WKK industrie'
-    industry_chp_ultra_supercritical_coal: 'Kolen WKK industrie'
+    industry_chp_combined_cycle_gas_power_fuelmix: 'Gas WKK - industrie'
+    industry_chp_engine_gas_power_fuelmix: 'Gasmotor WKK - industrie'
+    industry_chp_turbine_gas_power_fuelmix: 'Gasturbine WKK - industrie'
+    industry_chp_ultra_supercritical_coal: 'Kolen WKK - industrie'
     industry_flexibility_p2h_electricity: "Omgezet naar warmte voor industrie"
     inland: "Op land"
-    insulation_savings_new_houses: "Isolatiebesparingen, nieuwe huizen"
-    insulation_savings_old_houses: "Isolatiebesparingen, oude huizen"
     insulation_savings_buildings: "Isolatiebesparingen"
+    insulation_savings: "Totale isolatiebesparingen verwarming"
     insulation_savings_cooling: "Isolatiebesparingen koeling"
     insulation_savings_heating: "Isolatiebesparingen verwarming"
     interconnection_net: "Interconnectienet"
@@ -477,7 +505,7 @@ nl:
     lv_mv_transformer: "LS MS transformator"
     lv_net: "LS net"
     maintenance: "Onderhoud"
-    manure: "Mest"
+    manure: "Mest (groengas)"
     media: "Media"
     medium_voltage_network: "Middenspanningsnet"
     micro_chp: "Micro-WKK"
@@ -568,6 +596,7 @@ nl:
     other_plants_investm: "Overig (investering)"
     other_plants_plants: "Overig (centrales)"
     other_plants_prod: "Overig (prod.)"
+    palm: "Oliepalm"
     passenger_transport: "Passagiersvervoer"
     p2g: "Power-to-gas"
     peak_electricity_demand: "Piek elektriciteitsvraag"
@@ -584,6 +613,7 @@ nl:
     primary_energy_of_electricity_export: "Primair energiegebruik van geëxporteerde elektriciteit"
     production: "Productie"
     pv: "PV"
+    rapeseed: "Koolzaad (biodiesel/biokerosine)"
     refinery: "Raffinaderij"
     regasified_bio_lng: "Hervergast bio-LNG"
     regasified_lng: "Hervergast LNG"
@@ -602,13 +632,15 @@ nl:
     steam_methane_reforming: "Aardgas reforming"
     steam_methane_reforming_ccs: "Aardgas reforming CCS"
     steel: "Staal"
+    sugar_cane: "Suikerriet (bio-ethanol)"
+    sugar_beets: "Suikerbieten (bio-ethanol)"
     sustainable_electricity: "Hernieuwbare elektriciteit"
     sustainable_heat: "Hernieuwbare warmte"
     sustainable_hydrogen: "Hernieuwbaar waterstof"
     sustainable_gas: "Hernieuwbaar gas"
     television: "Televisie"
     target: "Doel"
-    torrified_biomass_pellets: "Getorrificeerde biomassapellets"
+    torrefied_biomass_pellets: "Biokolen"
     total: "Totaal"
     total_co2_emission: "Totale CO2-uitstoot"
     total_demand: 'Totale elektriciteitsvraag'
@@ -630,6 +662,8 @@ nl:
     waste_heat_and_cold: "Overschot warmte en koude"
     waste: "Afval"
     waste_incinerator: "Afvalverbrander"
+    waste_fats: "Restvetten (biodiesel/biokerosine)"
+    wheat: "Tarwe (bio-ethanol)"
     wind: "Wind"
     wind_coastal: "Wind aan kust"
     wind_farms: "Wind"
@@ -643,7 +677,7 @@ nl:
     with_im_export_1990: "Met im- en export 1990"
     with_im_export_2010: "Met im- en export 2010"
     with_im_export_20xx: "Met im- en export 20xx"
-    wood_pellets: "Houtpellets"
+    wood_pellets: "Houtpellets (bijstook)"
     woody_biomass: "Houtige biomassa"
     wood: "Hout"
     agriculture_final_demand_hydrogen: "Warmte voor landbouw"

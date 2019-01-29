@@ -9,6 +9,9 @@ en:
     area:
       short_name: "Area use"
       long_name: "Area use policies"
+    biomass:
+      short_name: "Biomass"
+      long_name: "Biomass"
     buildings:
       short_name: "Buildings"
       long_name: "Energy demand non-residential buildings"
@@ -21,9 +24,6 @@ en:
     co2:
       short_name: "CO<sub>2</sub> emissions"
       long_name: "CO<sub>2</sub> emissions costs"
-    co2_emissions_biomass:
-      short_name: "CO<sub>2</sub> biomass"
-      long_name: "Climate relevant CO<sub>2</sub> emissions biomass"
     combustion:
       short_name: "Combustion plants"
       long_name: "Combustion plants costs"
@@ -33,6 +33,9 @@ en:
     costs_flexibility:
       short_name: "Flexibility"
       long_name: "Flexibility costs"
+    costs_heat:
+      short_name: "Heat"
+      long_name: "Heat"
     costs_hydrogen:
       short_name: "Hydrogen"
       long_name: "Hydrogen costs"
@@ -81,9 +84,9 @@ en:
     flexibility_storage:
       short_name: "Storage"
       long_name: "Electricity storage"
-    fossil_heat:
-      short_name: "Fossil heat"
-      long_name: "Fossil heat"
+    heat:
+      short_name: "Heat networks"
+      long_name: "Heat networks"
     fuels:
       short_name: "Fuels"
       long_name: "Fuels"
@@ -93,9 +96,6 @@ en:
     fuel_production:
       short_name: "Fuel production"
       long_name: "Fuel production"
-    heating_technologies:
-      short_name: "Heating technologies"
-      long_name: "Heating technologies"
     households:
       short_name: "Households"
       long_name: "Household energy demand"
@@ -135,9 +135,6 @@ en:
     primary_production:
       short_name: "Extraction"
       long_name: "Extraction of energy carriers"
-    renewable_heat:
-      short_name: "Renewable heat"
-      long_name: "Renewable heat"
     solar:
       short_name: "Solar power"
       long_name: "Solar power costs"

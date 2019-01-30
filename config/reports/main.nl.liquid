@@ -842,7 +842,7 @@
 
     <!-- Inconsistency between heating options and insulation -->
 
-  {% if increase_in_insulation = 0 and future.share_of_heat_pumps > 10  %}
+  <!-- NOT WORKING {% if increase_in_insulation = 0 and future.share_of_heat_pumps > 10  %}
 
   {% endif %}
 
@@ -862,7 +862,7 @@
       </p>
     {% endif %}
   {% endif %}
-
+-->
 
   <!-- If curtailment occors, why not build more flex or industry use of H2? -->
   {% if future.electricity_curtailed > 0 %}

@@ -162,10 +162,10 @@
     <p> Alle energievraag van de sectoren moet natuurlijk ergens vandaan komen. Hieronder bekijken wij de invulling van warmtenetten, elektriciteit, waterstof, biomassa en indien aanwezig nog fossiele bronnen.
     </p>
 
-    <h2 class="banner">A. Warmte (warmtenet)</h2>
+    <h2 class="banner">A. Warmtenetten)</h2>
       <p>
       Hieronder zie je een overzicht van de vraag (links) en aanbod (rechts) op het warmtenet. Wanneer er te weinig warmteaanbod is in het scenario, dan springt er een gas back-up centrale aan. Wanneer er overschotten zijn, dan zie je dit aan de linker kant in het lichtroze.
-        {% chart 174 %}
+        {% chart 234 %}
           Vraag (links) en aanbod (rechts) op het warmtenet in {{ settings.end_year }}.
         {% endchart %}
       </p>
@@ -186,12 +186,11 @@
         {% endchart %}
 
         <h3> B3. Elektriciteitsnetten </h3>
-          <p>De energietransitie heeft gevolgen voor het elektriciteitsnet. In de tabel rechts kan je de piekbelasting en bruikbare capaciteit zien op de verschillende netniveau's.
+          <p>De energietransitie heeft gevolgen voor het elektriciteitsnet. In de tabel kan je de piekbelasting en bruikbare capaciteit zien op de verschillende netniveau's.
           </p>
           {% chart 223 %}
-              Deze tabel geeft een overzicht van de impact op de netten op laagspanning (ls), middenspanning (ms) en hoogspanning (hs), evenals de tussenliggende transformatoren. Voor detailvragen over de netten zul je altijd de netbeheerder moeten bevragen.
+          Deze tabel geeft een overzicht van de impact op de netten op laagspanning (ls), middenspanning (ms) en hoogspanning (hs), evenals de tussenliggende transformatoren. Voor detailvragen over de netten zul je altijd de netbeheerder moeten bevragen.
           {% endchart %}
-
     <h2 class="banner">C. Waterstof</h2>
       <p> Wanneer je waterstof inzet in het scenario krijg je een waterstofvraag. Deze waterstof moet ergens vandaan komen. Hieronder zie je links de vraag van waterstof en rechts het aanbod. Wanneer jouw aanbod (door bijvoorbeeld elektriciteitsoverschotten om te zetten in waterstof) lager is dan de vraag, dan gaat het scenario importeren. Wanneer het aanbod hoger is dan de vraag, dan zie je overschotten. Wanneer of de waterstofimport of het -overschot groot is ben je als {{ settings.area_name }} gevoelig voor de waterstofprijs.
       </p>

@@ -561,7 +561,7 @@
      *   "{{ future.query_key | round: 2 }}"
      */
     round: function (value, precision) {
-      var multiplier = Math.pow(10, precision || 2);
+      var multiplier = Math.pow(10, precision === undefined ? 2 : precision);
 
       if (value instanceof Quantity) {
         return new Quantity(

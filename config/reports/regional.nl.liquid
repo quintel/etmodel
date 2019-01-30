@@ -193,7 +193,7 @@
       {% endchart %}
 
     <h2 class="banner">D. Biomassa</h2>
-
+    
       <p>
       Wanneer er biomassa in het scenario wordt gebruikt is de impact dat hier te zien. Er wordt XTJ biomassa gebruikt en X TJ en X% daarvan wordt geïmporteerd.
       {% chart 169 %}
@@ -221,25 +221,22 @@
           <li>{{ future.number_of_wind_turbines_per_year_offshore | round: 1 }} windturbines op zee</li>
           <li>{{ future.number_of_wind_turbines_per_year_inland | round: 1 | without_unit }} windturbines op land</li>
           <li>{{ future.number_of_wind_turbines_per_year_coastal | round: 1 | without_unit }} windturbines aan de kust</li>
-          <li>{{ future.number_of_residences_built_per_year | round: 1 | without_unit }} X Huizen gebouwd=</li>
-          <li>{{ future.number_of_electric_vehicles_per_year | round: 1 | without_unit }} Huizen van het aardgas afgehaald</li>
-          <li>{{ future.number_of_electric_vehicles_per_year | round: 1 | without_unit }} zonnepanelen op daken neergelegd</li>
+          <li>{{ future.number_of_residences_built_per_year | round: 1 | without_unit }} gebouwde woningen</li>
+          <li>{{ future.number_of_residences_removed_from_natural_gas | round: 1 | without_unit }} van het aardgas afgehaalde woningen</li>
         </ul>
         <p>
-
 
         </p>
           <h1>5. Kosten </h1>
           Heel veel sliders voor het scenario hebben in meer of mindere mate invloed op de kosten van het energiesysteem. Aan de hand van kentallen berekent het ETM de de kale kosten van het energiesysteem. De kosten van een toekomstig energiesysteem inschatten is zeer sterk berust op aannames. Het getal zelf moet ook met enige voorzichtigheid worden beschouwd. Juist de schuifjes van kostenkentallen trekken in het scenario geeft een veel beter beeld van de onzekerheden van de kosten. Dit zijn jaarlijkse afschrijvingen, rentes en operationele kosten. De aannames achter de kostenberekening kun je vinden in tab Kosten in het scenario. Daarnaast zit in de appendix een overzicht van de benodigde investeringen.
 
           {% chart 48 %}
-            Deze grafiek geeft een overzicht van de totale kosten van het energiesysteem, uitgesplitst over de X AANTAL huishoudens.
+            Deze grafiek geeft een overzicht van de totale kosten van het energiesysteem.
           {% endchart %}
 
   <h1 class="banner">6. Conclusies</h1>
 
-      Het effect van dit scenario op de CO<sub>2</sub>-uitstoot is <strong> {{future.dashboard_co2_emissions_versus_start_year | times: 100 | round: 1 }}% </strong>. De gebouwde omgeving is van een uitstoot van X MT CO<sub>2</sub> naar X MT CO<sub>2</sub> gegaan dat is een verandering van X%. De finale energievraag van de gebouwde omgeving gaat van X PJ naar X PJ dit is een verschil van X%. De kosten zvoor het hele energiesysteem zijn van X naar X gegaan. Er is X uur stroomuitval in het jaar en X% van de elektriciteit is import. Ruimtelijk is er X hectare nodig voor zonnevelden en X hectare voor windmolens.
-
+      Het effect van dit scenario op de CO<sub>2</sub>-uitstoot is <strong> {{future.dashboard_co2_emissions_versus_start_year | times: 100 | round: 1 }}% </strong>.
       {% chart 46 %}
         CO<sub>2</sub>-uitstoot gebaseerd op primair energiegebruik en uitgesplitst in sectoren voor 1990 (links),
         {{ settings.start_year }} (midden),
@@ -384,6 +381,10 @@
 
   {% chart 142 %}
     Deze tabel geeft een overzicht van de totale investeringen.
+  {% endchart %}
+
+  {% chart 61 %}
+    Deze tabel geeft een overzicht van de totale investeringen in de elektriciteitsnetten.
   {% endchart %}
 
 </main>

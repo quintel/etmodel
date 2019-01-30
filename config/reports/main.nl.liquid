@@ -842,11 +842,11 @@
 
     <!-- Inconsistency between heating options and insulation -->
 
-  <!-- NOT WORKING {% if increase_in_insulation = 0 and future.share_of_heat_pumps > 10  %}
+  <!-- NOT WORKING {% if increase_in_insulation = 0 and future.share_of_heat_pumps > 10  %} -->
 
   {% endif %}
 
-  {% if future.increase_in_insulation <= 0 %}
+    <!-- NOT WORKING {% if future.increase_in_insulation <= 0 %}
     {% if future.share_of_heatpump_all_in_space_heating_production_in_households > 0.1 %}
       <h3>Warmtepompen en isolatie</h3>
       <p>
@@ -860,9 +860,9 @@
 
         Je kunt overwegen om minder lucht- en bodemwarmtepompen in te zetten of om meer te isoleren.
       </p>
-    {% endif %}
+    {% endif %} -->
   {% endif %}
--->
+
 
   <!-- If curtailment occors, why not build more flex or industry use of H2? -->
   {% if future.electricity_curtailed > 0 %}

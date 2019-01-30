@@ -27,7 +27,7 @@
       <abbr>(ETM)</abbr> en is gebaseerd op de schuifjes-instellingen in jouw scenario.
     </p>
 
-    <h1 class="banner">1. Samenvatting scenario</h1>
+    <h1 class="banner">1. Samenvatting scenario voor {{ settings.area_name }} </h1>
 
       <p>
       De totale broeikasgasuitstoot in {{ settings.area_name}} was <strong>{{ present.total_energetic_and_non_energetic_co2_emissions | autoscale: 'T' }}</strong> in {{ settings.start_year }}. In Parijs spraken wij af deze broeikasgasuitstoot met 95% te reduceren in 2050 en het Nationale Klimaatakkoord gaat voor -49% in 2030. Van deze broeikasgasuitstoot is <strong>{{present.non_energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> non-energetisch, dus is niet het gevolg van het energiesysteem. De non-energetische broeikasgasuitstoot omvat bijvoorbeeld methaan van koeien, koelgassen in de voedselindustrie of CO<sub>2</sub>-uitstoot van Veenweidegebieden. Deze non-energetische uitstoot is Nationaal sterk gedaald sinds 1990. Aanpak hiervan is niet onbelangrijk, wel is het anders dan de aanpak via het energiesysteem. Het Energietransitiemodel richt zich op het energiesysteem van {{ settings.area_name }}.
@@ -71,7 +71,7 @@
     </li>
     <li>
         <strong><a href="#hernieuwbaarheid">Ruimtelijke impact</a></strong><br />
-        De totale ruimte voor zonneparken is <strong>{{ future.solar_park_total_land_use | round: 0 | autoscale: 'km2' }}</strong> (bij 1.5 hectare per MW), dat is gelijk aan <strong>{{ future.solar_park_total_football_fields }}</strong> voetbalvelden. Ook staan er <strong>{{ future.number_of_wind_turbines_inland_and_coastal | round: 0 }}</strong> windmolens op land (inclusief kust) van 3 MW per stuk.
+        De totale ruimte voor zonneparken is <strong>{{ future.solar_park_total_land_use | round: 0 | without_unit | times: 100 }}</strong> hectare (met de aanname 1.5 hectare per MW), dat is gelijk aan <strong>{{ future.solar_park_total_football_fields }}</strong> voetbalvelden. Ook staan er <strong>{{ future.number_of_wind_turbines_inland_and_coastal | round: 0 }}</strong> windmolens op land (inclusief kust) van 3 MW per stuk.
 
     </li>
     <!-- end: class="target-met"> -->
@@ -162,7 +162,7 @@
     <p> Alle energievraag van de sectoren moet natuurlijk ergens vandaan komen. Hieronder bekijken wij de invulling van warmtenetten, elektriciteit, waterstof, biomassa en indien aanwezig nog fossiele bronnen.
     </p>
 
-    <h2 class="banner">A. Warmtenetten)</h2>
+    <h2 class="banner">A. Warmtenetten</h2>
       <p>
       Hieronder zie je een overzicht van de vraag (links) en aanbod (rechts) op het warmtenet. Wanneer er te weinig warmteaanbod is in het scenario, dan springt er een gas back-up centrale aan. Wanneer er overschotten zijn, dan zie je dit aan de linker kant in het lichtroze.
         {% chart 234 %}

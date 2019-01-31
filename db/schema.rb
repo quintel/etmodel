@@ -46,26 +46,6 @@ ActiveRecord::Schema.define(version: 2018_12_04_152301) do
     t.index ["describable_id", "describable_type"], name: "index_descriptions_on_describable_id_and_describable_type"
   end
 
-  create_table "fce_values", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "using_country"
-    t.string "origin_country"
-    t.float "co2_exploration_per_mj"
-    t.float "co2_extraction_per_mj"
-    t.float "co2_treatment_per_mj"
-    t.float "co2_transportation_per_mj"
-    t.float "co2_conversion_per_mj"
-    t.float "co2_waste_treatment_per_mj"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string "carrier"
-  end
-
-  create_table "flexibility_orders", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "scenario_id"
-    t.text "order", limit: 16777215
-    t.index ["scenario_id"], name: "index_flexibility_orders_on_scenario_id", unique: true
-  end
-
   create_table "general_user_notifications", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "key"
     t.string "notification_nl"
@@ -73,13 +53,6 @@ ActiveRecord::Schema.define(version: 2018_12_04_152301) do
     t.boolean "active"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "gquery_groups", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "group_key"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text "description", limit: 16777215
   end
 
   create_table "input_elements", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
@@ -146,64 +119,6 @@ ActiveRecord::Schema.define(version: 2018_12_04_152301) do
     t.index ["related_output_element_id"], name: "index_output_elements_on_related_output_element_id"
   end
 
-  create_table "prediction_measures", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin", force: :cascade do |t|
-    t.integer "prediction_id"
-    t.string "name"
-    t.integer "impact"
-    t.integer "cost"
-    t.integer "year_start"
-    t.string "actor"
-    t.text "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer "year_end"
-    t.index ["prediction_id"], name: "index_prediction_measures_on_prediction_id"
-  end
-
-  create_table "prediction_values", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin", force: :cascade do |t|
-    t.integer "prediction_id"
-    t.float "value"
-    t.integer "year"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["prediction_id"], name: "index_prediction_values_on_prediction_id"
-    t.index ["year"], name: "index_prediction_values_on_year"
-  end
-
-  create_table "predictions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin", force: :cascade do |t|
-    t.integer "input_element_id"
-    t.integer "user_id"
-    t.boolean "expert"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text "description"
-    t.string "title"
-    t.string "area"
-    t.index ["area"], name: "index_predictions_on_area"
-    t.index ["input_element_id"], name: "index_predictions_on_input_element_id"
-    t.index ["user_id"], name: "index_predictions_on_user_id"
-  end
-
-  create_table "query_table_cells", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "query_table_id"
-    t.integer "row"
-    t.integer "column"
-    t.string "name"
-    t.text "gquery", limit: 16777215
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["query_table_id"], name: "index_query_table_cells_on_query_table_id"
-  end
-
-  create_table "query_tables", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "name"
-    t.text "description", limit: 16777215
-    t.integer "row_count"
-    t.integer "column_count"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "roles", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at"
@@ -218,36 +133,6 @@ ActiveRecord::Schema.define(version: 2018_12_04_152301) do
     t.datetime "updated_at"
     t.index ["scenario_id"], name: "index_saved_scenarios_on_scenario_id"
     t.index ["user_id"], name: "index_saved_scenarios_on_user_id"
-  end
-
-  create_table "scenario_scalings", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "scenario_id"
-    t.string "area_attribute"
-    t.float "value"
-    t.float "base_value"
-    t.boolean "has_agriculture", default: false, null: false
-    t.boolean "has_industry", default: false, null: false
-    t.boolean "has_energy", default: true, null: false
-    t.index ["scenario_id"], name: "index_scenario_scalings_on_scenario_id", unique: true
-  end
-
-  create_table "scenarios", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "author"
-    t.string "title"
-    t.text "description", limit: 16777215
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text "user_values", limit: 16777215
-    t.integer "end_year", default: 2040
-    t.boolean "in_start_menu"
-    t.integer "user_id"
-    t.integer "preset_scenario_id"
-    t.boolean "use_fce"
-    t.datetime "present_updated_at"
-    t.integer "protected", limit: 1
-    t.string "area_code"
-    t.string "source"
-    t.text "balanced_values", limit: 16777215
   end
 
   create_table "sessions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin", force: :cascade do |t|

@@ -96,6 +96,7 @@ Etm::Application.routes.draw do
   get '/scenario/reset' => 'scenarios#reset'
   get '/scenario/grid_investment_needed' => 'scenarios#grid_investment_needed'
 
+  get '/scenario/reports/auto' => 'reports#auto'
   get '/scenario/reports/:id' => 'reports#show',
     constraints: { id: /[0-9a-z-]+/ }, as: :report
 

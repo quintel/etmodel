@@ -28,6 +28,14 @@ class ReportsController < ApplicationController
     end
   end
 
+  # Automatically directs the visitor to an appropriate report for their
+  # scenario.
+  #
+  # GET /scenario/reports/auto
+  def auto
+    redirect_to report_url(Report.key_for_area(Current.setting.area))
+  end
+
   private
 
   # Requests for PDF versions lack the scenario ID and other settings from the

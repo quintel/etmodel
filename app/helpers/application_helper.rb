@@ -114,4 +114,10 @@ module ApplicationHelper
       text
     end
   end
+
+  # Public: Receives a settings object and converts it to a hash suitable for
+  # serialization as JSON.
+  def settings_as_json(setting)
+    setting.to_hash.merge(area_name: I18n.t(setting.area_code))
+  end
 end

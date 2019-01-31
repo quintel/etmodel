@@ -20,14 +20,18 @@
 
 <section class="snapshot">
 
-  <h1 class="banner"> Disclaimer </h1>
+    <h1 class="banner"> Disclaimer </h1>
     <p>
       Dit rapport is automatisch gegenereerd door het
       <a href="https://energytransitionmodel.com">Energietransitiemodel</a>
       <abbr>(ETM)</abbr> en is gebaseerd op de schuifjes-instellingen in jouw scenario.
     </p>
+</section>
 
-    <h1 class="banner">1. Samenvatting scenario voor {{ settings.area_name }} </h1>
+<main>
+      {% toc %}
+
+    <h1 class="banner">1. Samenvatting scenario </h1>
 
       <p>
       De totale broeikasgasuitstoot in {{ settings.area_name}} was <strong>{{ present.total_energetic_and_non_energetic_co2_emissions | autoscale: 'T' }}</strong> in {{ settings.start_year }}. In Parijs spraken wij af deze broeikasgasuitstoot met 95% te reduceren in 2050 en het Nationale Klimaatakkoord gaat voor -49% in 2030. Van deze broeikasgasuitstoot is <strong>{{present.non_energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> non-energetisch, dus is niet het gevolg van het energiesysteem. De non-energetische broeikasgasuitstoot omvat bijvoorbeeld methaan van koeien, koelgassen in de voedselindustrie of CO<sub>2</sub>-uitstoot van Veenweidegebieden. Deze non-energetische uitstoot is Nationaal sterk gedaald sinds 1990. Aanpak hiervan is niet onbelangrijk, wel is het anders dan de aanpak via het energiesysteem. Het Energietransitiemodel richt zich op het energiesysteem van {{ settings.area_name }}.
@@ -77,12 +81,6 @@
     <!-- end: class="target-met"> -->
   </ul>
   <!-- end: main summary items -->
-
-<main>
-  {% toc %}
-
-
-
 
   <h1 class="banner">2. Energievraag</h1>
 

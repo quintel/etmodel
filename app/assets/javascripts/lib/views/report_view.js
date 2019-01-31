@@ -498,7 +498,8 @@
           return {
             id: chartId,
             as_table: false,
-            holder: holderId
+            holder: holderId,
+            locked: false
           };
         });
 

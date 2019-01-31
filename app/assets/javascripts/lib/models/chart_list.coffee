@@ -210,7 +210,7 @@ class @ChartList extends Backbone.Collection
     for chart, index in charts
       render_options[chart.id] = {
         holder: chart.holder,
-        locked: true,
+        locked: if chart.locked? then chart.locked else true,
         as_table: chart.as_table,
         wait: true,
         force: true # the initial render should ignore the lock check

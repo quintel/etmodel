@@ -51,33 +51,34 @@
 
     <li><!-- class="target-met"> -->
       <p>
-        <strong><a href="#A. Duurzaamheid (CO<sub>2</sub>)">Duurzaamheid</a></strong><br />
+        <strong>Duurzaamheid</strong><br />
         De CO<sub>2</sub>-uitstoot van het energiesysteem in het scenario is <strong>{{future.policy_goal_co2_emissions_value | round: 0 | autoscale: 'MT'}}</strong>, dat is <strong> {{future.dashboard_co2_emissions_versus_start_year |  round: 0 | times: 100 }}% </strong> ten opzichte van {{ settings.start_year }} met <strong>{{present.policy_goal_co2_emissions_value | round: 0 | autoscale: 'MT'}}</strong>.
       </p>
     </li>
 
     <li>
-        <strong><a href="Besparing">Besparing</a></strong><br />
+        <strong>Besparing</strong><br />
         De finale energievraag van de gebouwde omgeving (<strong>{{ future.final_demand_from_built_environment | round: 0 | autoscale: 'MJ' }}</strong>) is <strong> {{future.final_demand_from_built_environment_difference | times: 100 | round: 1 }}% </strong> ten opzichte van {{ settings.start_year }} (<strong>{{present.final_demand_from_built_environment | round: 0 | autoscale: 'MJ' }}</strong>)
       </p>
     </li>
 
     <li>
-      <strong><a href="#Betrouwbaarheid">Betrouwbaarheid</a></strong><br />
+      <strong>Betrouwbaarheid</strong><br />
       Het scenario heeft <strong>{{ future.dashboard_blackout_hours | without_unit }}</strong> uren met stroomuitval. Daarnaast komt <strong>{{future.dashboard_energy_import_netto | times: 100 | round:  }}%</strong> van de energie van buiten het eigen gebied.
     </li>
 
       <li>
       <p>
-        <strong><a href="#kosten-van-het-energiesysteem">Betaalbaarheid</a></strong><br />
+        <strong>Betaalbaarheid</strong><br />
         De kale kosten voor het hele energiesysteem zijn met de huidige aannames jaarlijks <strong>{{future.total_costs_percentage | times: 100 | round: 1 }}%</strong> hoger dan in {{ settings.start_year }}.
       </p>
     </li>
     <li>
-        <strong><a href="#hernieuwbaarheid">Ruimtelijke impact</a></strong><br />
+        <strong>Ruimtelijke impact</strong><br />
         De totale ruimte voor zonneparken is <strong>{{ future.solar_park_total_land_use | round: 0 | without_unit | times: 100 }}</strong> hectare (met de aanname 1.5 hectare per MW), dat is gelijk aan <strong>{{ future.solar_park_total_football_fields }}</strong> voetbalvelden. Ook staan er <strong>{{ future.number_of_wind_turbines_inland_and_coastal | round: 0 }}</strong> windmolens op land (inclusief kust) van 3 MW per stuk.
-
     </li>
+
+
     <!-- end: class="target-met"> -->
   </ul>
   <!-- end: main summary items -->
@@ -371,5 +372,58 @@
   {% chart 61 %}
     Deze tabel geeft een overzicht van de totale investeringen in de elektriciteitsnetten.
   {% endchart %}
+
+    <h2>Appendix C: Over het Energietransitiemodel</h2>
+
+      <h3>Inleiding</h3>
+
+        <p>
+          Het <a href="https://energytransitionmodel.com">Energyietransitiemodel (ETM)</a> is
+          een gratis, open-source, web-based
+           energiemodel om energiescenario's voor de toekomst mee te verkennen.
+        </p>
+
+        <p>
+          Het ETM is voor iedereen die energie-scenario's wil verkennen en creëren voor landen, steden,
+          wijken en zelfs straten.
+          Er wordt geen voorkennis aangenomen zodat het ETM door zowel experts als studenten kan worden gebruikt.
+          Je kunt aannames maken over vraag en aanbod van verschillende soorten energie van bron tot
+          toepassing. Het ETM bepaalt voor alle belanghebbenden in het systeem duurzaamheid, betrouwbaarheid
+          en betaalbaarheid op nationaal en lokaal niveau.
+        </p>
+
+        <p>
+          Op
+          <a href="www.energierekenmodellen.nl">energierekenmodellen.nl</a> kun je zien hoe het ETM zich
+          verhoudt tot andere modellen.
+        </p>
+
+
+      <h3>Scope van het Energietransitiemodel</h3>
+
+        <blockquote>
+          <p>
+            All models are wrong but some are useful.<br/>
+            <em>~ George Box</em>
+          </p>
+        </blockquote>
+
+        <p>
+          Hoewel Quintel alle belangrijke kenmerken van het energiesysteem probeert mee te nemen, heeft het ETM noodzakelijkerwijs
+          een beperkte reikwijdte en mag het niet worden gebruikt als vervanging voor kritisch denken. Integendeel! Hopelijk, wordt de
+          gebruiker geïnspireerd om dieper na te denken over de resultaten en de grenzen van het model op te zoeken!
+        </p>
+
+        <p>
+          De volgende (zeer) onvolledige lijst van onderwerpen is indicatief voor de grenzen van het ETM:
+          <ul>
+            <li><strong>Menselijk gedrag</strong>: ongetwijfeld de grootste impact op het succes of het mislukken van de
+              energietransitie valt buiten de scope van het voornamelijk technisch/financiële ETM.</li>
+            <li><strong>Economische verbanden</strong>: het ETM berekent kosten op basis van gepubliceerde huidige waarden en neemt
+              geen prijselasticiteit of andere economische relaties aan die in de toekomst wellicht niet langer gelden.</li>
+            <li><strong>Wetgeving</strong>: het ETM berekent kosten zonder subsidies of belastingen.</li>
+          </ul>
+
+        </p>
 
 </main>

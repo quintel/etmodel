@@ -5,7 +5,7 @@
         json.api_session_id   Current.setting.api_session_id
         json.disable_cors     APP_CONFIG[:disable_cors]
         json.standalone       APP_CONFIG[:standalone]
-        json.settings         Current.setting
+        json.settings         settings_as_json(Current.setting)
         json.debug_js         admin?
         json.env              Rails.env
         json.show_results_tip show_results_tip?

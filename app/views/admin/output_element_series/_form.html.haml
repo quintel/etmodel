@@ -14,7 +14,7 @@ Check the <a href='http://wiki.quintel.nl/index.php/Charts' target='_blank'>wiki
   = f.input :is_1990, :hint => "This sets a serie to be used for the 1990 column instead of the start year and end year columns. A chart automatically gets a 1990 column if at least one of its series has this flag."
 
   = f.simple_fields_for :area_dependency do |j|
-    = j.input :dependent_on, :as => :select, :collection => Api::Area::DEPENDABLE_ATTRIBUTES, :hint => "When you dont want to show the serie for areas which have a certain setting. E.g. dont wanna show Solar CSP in NL? Put this to 'has_solar_csp' and be sure that for NL this value is false in the area data."
+    = j.input :dependent_on, :as => :select, :collection => area_dependency_options(@output_element_serie), :hint => "When you dont want to show the serie for areas which have a certain setting. E.g. dont wanna show Solar CSP in NL? Put this to 'has_solar_csp' and be sure that for NL this value is false in the area data."
 
   = f.simple_fields_for :description do |j|
     = j.input :short_content_en, :hint => "This is only used on the cost/block chart!"

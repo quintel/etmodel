@@ -9,7 +9,7 @@
     = f.input :en_vimeo_id, :hint=>"This value should be the key of a vimeo video, it will be shown when the tutorial button is clicked"
 
     = f.simple_fields_for :area_dependency do |j|
-      = j.input :dependent_on, :as => :select, :collection => Api::Area::DEPENDABLE_ATTRIBUTES, :hint => "When you dont want to show the sidebar for areas which have a certain setting. E.g. dont wanna show Solar CSP in NL? Put this to 'has_solar_csp' and be sure that for NL this value is false in the area data."
+      = j.input :dependent_on, :as => :select, :collection => area_dependency_options(@sidebar_item), :hint => "When you dont want to show the sidebar for areas which have a certain setting. E.g. dont wanna show Solar CSP in NL? Put this to 'has_solar_csp' and be sure that for NL this value is false in the area data."
 
     = f.input :position
     = f.simple_fields_for :description do |j|

@@ -10,6 +10,6 @@
     = j.input :content_nl
   = f.simple_fields_for :area_dependency do |j|
     = j.input :dependent_on, :as => :select,
-      :collection => Api::Area::DEPENDABLE_ATTRIBUTES
+      :collection => area_dependency_options(@constraint)
 
   = f.button :submit

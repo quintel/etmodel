@@ -24,14 +24,14 @@
     <p>
       Dit rapport is automatisch gegenereerd door het
       <a href="https://energytransitionmodel.com">Energietransitiemodel</a>
-      <abbr>(ETM)</abbr> en is gebaseerd op de schuifjes-instellingen in jouw scenario.
+      <abbr>(ETM)</abbr> en is gebaseerd op de de <a href="#appendix-a-schuifjes-instellingen">schuifjes-instellingen</a> in jouw scenario (link: {% link_to_scenario %}).
     </p>
 </section>
 
 <main>
       {% toc %}
 
-    <h1 class="banner">1. Samenvatting scenario </h1>
+    <h1 class="banner">1. Samenvatting scenario voor {{ settings.area_name }} </h1>
 
       <p>
       De totale broeikasgasuitstoot in {{ settings.area_name}} was <strong>{{ present.total_energetic_and_non_energetic_co2_emissions | autoscale: 'T' }}</strong> in {{ settings.start_year }}. In Parijs spraken wij af deze broeikasgasuitstoot met 95% te reduceren in 2050 en het Nationale Klimaatakkoord gaat voor -49% in 2030. Van deze broeikasgasuitstoot is <strong>{{present.non_energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> non-energetisch, dus is niet het gevolg van het energiesysteem. De non-energetische broeikasgasuitstoot omvat bijvoorbeeld methaan van koeien, koelgassen in de voedselindustrie of CO<sub>2</sub>-uitstoot van Veenweidegebieden. Deze non-energetische uitstoot is Nationaal sterk gedaald sinds 1990. Aanpak hiervan is niet onbelangrijk, wel is het anders dan de aanpak via het energiesysteem. Het Energietransitiemodel richt zich op het energiesysteem van {{ settings.area_name }}.
@@ -64,13 +64,13 @@
 
     <li>
       <strong>Betrouwbaarheid</strong><br />
-      Het scenario heeft <strong>{{ future.dashboard_blackout_hours | without_unit }}</strong> uren met stroomuitval. Daarnaast komt <strong>{{future.dashboard_energy_import_netto | times: 100 | round:  }}%</strong> van de energie van buiten het eigen gebied.
+      Het scenario heeft <strong>{{ future.dashboard_blackout_hours | without_unit }}</strong> uren met stroomuitval. Daarnaast komt <strong>{{future.dashboard_energy_import_netto | times: 100 | round: 0 }}%</strong> van de energie van buiten het eigen gebied.
     </li>
 
       <li>
       <p>
         <strong>Betaalbaarheid</strong><br />
-        De kale kosten voor het hele energiesysteem zijn met de huidige aannames jaarlijks <strong>{{future.total_costs_percentage | times: 100 | round: 1 }}%</strong> hoger dan in {{ settings.start_year }}.
+        De kale kosten voor het hele energiesysteem zijn in dit scenario veranderd met <strong>{{future.total_costs_percentage | times: 100 | round: 1 }}%</strong> in vergelijking met {{ settings.start_year }}.
       </p>
     </li>
     <li>
@@ -190,22 +190,40 @@
           {% chart 223 %}
           Deze tabel geeft een overzicht van de impact op de netten op laagspanning (ls), middenspanning (ms) en hoogspanning (hs), evenals de tussenliggende transformatoren. Voor detailvragen over de netten zul je altijd de netbeheerder moeten bevragen.
           {% endchart %}
+
     <h2 class="banner">C. Waterstof</h2>
-      <p> Wanneer je waterstof inzet in het scenario krijg je een waterstofvraag. Deze waterstof moet ergens vandaan komen. Hieronder zie je links de vraag van waterstof en rechts het aanbod. Wanneer jouw aanbod (door bijvoorbeeld elektriciteitsoverschotten om te zetten in waterstof) lager is dan de vraag, dan gaat het scenario importeren. Wanneer het aanbod hoger is dan de vraag, dan zie je overschotten. Wanneer of de waterstofimport of het -overschot groot is ben je als {{ settings.area_name }} gevoelig voor de waterstofprijs.
+    {% if future.hydrogen_used_in_scenario > 0.0 %}
+
+      <p>
+      Wanneer je waterstof inzet in het scenario krijg je een waterstofvraag. Deze waterstof moet ergens vandaan komen. Hieronder zie je links de vraag van waterstof en rechts het aanbod. Wanneer jouw aanbod (door bijvoorbeeld elektriciteitsoverschotten om te zetten in waterstof) lager is dan de vraag, dan gaat het scenario importeren. Wanneer het aanbod hoger is dan de vraag, dan zie je overschotten. Wanneer of de waterstofimport of het -overschot groot is ben je als {{ settings.area_name }} gevoelig voor de waterstofprijs.
       </p>
 
       {% chart 214 %}
         Waterstofvraag- (links) en aanbod (rechts).
       {% endchart %}
 
-    <h2 class="banner">D. Biomassa</h2>
+    {% else %}
+    <p>
+    Er wordt geen waterstof gebruikt in het scenario.
+    </p>
+    {% endif %}
 
-      <p>
-      Wanneer er biomassa in het scenario wordt gebruikt is de impact dat hier te zien.
-      {% chart 169 %}
-        Biomassa ruimtegebruik in alle sectoren.
-      {% endchart %}
-      </p>
+    <h2 class="banner">D. Biomassa</h2>
+    {% if future.bio_footprint > 0.0 %}
+    Hieronder zie je eerste de totale primaire energievraag van biomassa en daarna de eigen productie en import van alle biomassa in het scenario.
+
+    {% chart 166 %}
+      Primaire biomassavraag
+    {% endchart %}
+    </p>
+
+    {% chart 237 %}
+      Biomassa productie en import in het scenario.
+    {% endchart %}
+    </p>
+    {% else %}
+    Er wordt geen biomassa gebruikt in het scenario
+    {% endif %}
 
     <h2 class="banner">E. Fossiel</h2>
     <p> Hieronder is een overzicht te zien van de totale primaire energievraag van het scenario. Hier is goed te zien wanneer er nog fossiele vraag in het scenario zit. Let op: Geïmporteerde elektriciteit en waterstof kunnen ook nog een fossiele bron hebben.
@@ -235,7 +253,22 @@
 
         </p>
           <h1>5. Kosten </h1>
-          Heel veel sliders voor het scenario hebben in meer of mindere mate invloed op de kosten van het energiesysteem. Aan de hand van kentallen berekent het ETM de de kale kosten van het energiesysteem. De kosten van een toekomstig energiesysteem inschatten is zeer sterk berust op aannames. Het getal zelf moet ook met enige voorzichtigheid worden beschouwd. Juist de schuifjes van kostenkentallen trekken in het scenario geeft een veel beter beeld van de onzekerheden van de kosten. Dit zijn jaarlijkse afschrijvingen, rentes en operationele kosten. De aannames achter de kostenberekening kun je vinden in tab Kosten in het scenario. Daarnaast zit in de appendix een overzicht van de benodigde investeringen.
+          <p>
+            De kosten van het toekomstige energiesysteem zijn ruwweg
+            {{ future.dashboard_total_costs | autoscale: 'euro' }} mld EUR per jaar.
+            Kosten zijn opgebouwd uit:
+
+            <ul>
+              <li><strong>Investeringen</strong>.</li>
+              <li><strong>Brandstofkosten</strong>: gebruikmakend van de prijzen welke gezet kunnen worden in de kosten sectie.</li>
+              <li><strong>Operation and Maintenance (O&M)</strong>: zowel vast als variabel.</li>
+              <li><strong>Weighted average costs of capital (WACC)</strong>: met lineaire afschrijving.</li>
+              <li><strong>Decommisioning</strong>: alleen relevant voor kerncentrales.</li>
+            </ul>
+
+            Kosten nemen <strong>geen</strong> subsidies en belastingen mee.
+
+          </p>
 
           {% chart 48 %}
             Deze grafiek geeft een overzicht van de totale kosten van het energiesysteem.
@@ -336,7 +369,7 @@
   <!-- end: summary extras -->
 
   <h1 class="banner">7. Appendixes</h1>
-  <h2>Appendix A: Slider-settings </h2>
+  <h2>Appendix A: Schuifjes-instellingen </h2>
 
   In deze appendix wordt een lijst gegeven van alle schuifjes die van hun startwaarde zijn verplaatst.
 

@@ -74,6 +74,6 @@ class Api::Area < ActiveResource::Base
   end
 
   def country?
-    %w[province municipality neighborhood].exclude?(group)
+    %w[province municipality neighborhood region].exclude?(group)
   end
 end

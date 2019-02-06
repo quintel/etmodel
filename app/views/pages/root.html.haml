@@ -1,44 +1,44 @@
-#startbar
-  - if has_active_scenario?
-    %h4#continue_current_scenario
-      %a{:href => Current.setting.last_etm_page,
-         :alt => "continue",
-         :title => "continue"}
-        == #{ t('intro.continue_with_current_scenario') }&hellip;
+- if show_whats_new_banner?
+  #whats-new
+    .content
+      %p
+        %strong= t('updated.title')
+        = t('updated.description')
+      %p
+        %strong= link_to "#{t('more_information')} →", whats_new_path
 
-  .section
-    %h4#new_scenario_button{ class: has_active_scenario? ? 'none' : 'active' }
-      %a{href: '#top'}= t 'intro.start_a_new_scenario'
-    #new_scenario{style: "display: #{ has_active_scenario? ? 'none' : 'block' };"}
-      = form_tag root_path do
-        .country
-          = render "pages/root_page/country_select"
-        .year
-          = render "pages/root_page/year_select"
-        #submit
-          = render "pages/root_page/start_button"
-          .dataset_information
-            %a.button= t("intro.dataset_information_html")
-    .clear
-  .section
-    %h4#existing_scenario_button
-      %a{href: '#top'}= t 'intro.load_a_scenario'
-    #existing_scenario{style: "display: none;"}
-      = render 'pages/root_page/existing_scenario'
+#landing
+  #blurb
+    %h1= t('intro.introduction')
+    %p= t('intro.root_text')
+
+  - if has_active_scenario?
+    = render partial: 'pages/root_page/resume_scenario'
+
+  = render partial: 'pages/root_page/new_scenario'
+  = render partial: 'pages/root_page/preset_scenario'
 
   #other_features
-    %ul
-      %li.title= t('intro.other_features')
-      %li= link_to(t('intro.local_global'), local_global_path)
+    %ul.other-features
+      %li.local-global
+        %h4= t('intro.local_vs_global.title')
+        %p= t('intro.local_vs_global.description')
+        %p
+          = link_to(local_global_path) do
+            = t('intro.local_vs_global.try_it')
+            →
+      %li.quintel
+        %h4= t('intro.about_us.title')
+        %p= t('intro.about_us.description')
+        %p
+          = link_to('https://quintel.com') do
+            = t('intro.about_us.learn_more')
+            →
+          = link_to('https://github.com/quintel/documentation') do
+            = t('intro.about_us.documentation')
+            →
 
-#information
-  = render 'pages/root_page/movies'
-  #load_existing_scenario{style: "display: none;"}
-    = render 'pages/root_page/load_existing_scenario'
-  .clear
-.clear
-
-#area-select-options
-.flags{ style: 'display: none'}
-  - flags.each do |flag|
-    = image_tag flag, class: File.basename(flag, '.png')
+  #area-select-options
+  .flags{ style: 'display: none'}
+    - flags.each do |flag|
+      = image_tag flag, class: File.basename(flag, '.png')

@@ -13,4 +13,4 @@
   - else
     %li
       = link_to scenario_path(scenario) do
-        = truncate(scenario.title, length: 40).html_safe
+        = scenario.title.html_safe

@@ -1,6 +1,0 @@
-- cache "scenario_select_#{I18n.locale}" do
-  - grouped = Api::Scenario.in_groups(Api::Scenario.all(:from => :templates))
-
-  %ul
-    - grouped.each do |data|
-      = render partial: 'pages/root_page/scenario_group', locals: { group: data[:name], scenarios: data[:scenarios] }

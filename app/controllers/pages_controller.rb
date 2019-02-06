@@ -4,6 +4,8 @@ class PagesController < ApplicationController
   layout 'static_page', only: [:about, :units, :browser_support, :bugs,
     :disclaimer, :privacy_statement, :quality, :dataset]
 
+  layout 'landing', only: :root
+
   def root
     if request.post?
       assign_settings_and_redirect
@@ -52,7 +54,7 @@ protected
 
   def assign_settings_and_redirect
     Current.setting = Setting.default
-    Current.setting.end_year = (params[:end_year] == "other") ? params[:other_year] : params[:end_year]
+    Current.setting.end_year = params[:end_year]
     Current.setting.area_code = params[:area_code]
     Current.setting.preset_scenario_id = params[:preset_scenario_id]
 

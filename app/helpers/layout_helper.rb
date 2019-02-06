@@ -51,7 +51,6 @@ module LayoutHelper
         text: I18n.t("country_select.groups.#{ group }"),
         data: areas.sort_by{ |a| name_for(a.area) }.map(&method(:area_choice))
       )
-      options.push(:separator)
     end
 
     options
@@ -152,7 +151,7 @@ module LayoutHelper
 
   def flags
     @flags ||= Dir.chdir(Rails.root.join('app/assets/images')) do
-      Dir.glob("icons/areas/*.png")
+      Dir.glob("flags-24/*.png")
     end
   end
 
@@ -160,13 +159,5 @@ module LayoutHelper
     custom_years
       .select { |year| (year % 10).zero? }
       .push([I18n.t('scenario.other').html_safe, 'other'])
-  end
-
-  def other_year_selected
-    !preset_years.include?(Current.setting.end_year)
-  end
-
-  def custom_years
-    (Setting::MIN_YEAR..Setting::MAX_YEAR)
   end
 end

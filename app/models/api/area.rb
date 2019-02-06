@@ -76,4 +76,18 @@ class Api::Area < ActiveResource::Base
   def country?
     %w[province municipality neighborhood region].exclude?(group)
   end
+
+  # Public: Gets the largest region to which the area belongs.
+  #
+  # For example, if this is a municipality in the Netherlands, the base dataset
+  # in "nl", so the Netherlands area is returned.
+  #
+  # Returns an Api::Area.
+  def top_level_area
+    if try(:base_dataset).present?
+      self.class.find_by_country_memoized(base_dataset).top_level_area
+    else
+      self
+    end
+  end
 end

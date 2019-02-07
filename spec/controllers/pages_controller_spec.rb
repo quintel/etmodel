@@ -55,25 +55,27 @@ describe PagesController, vcr: true do
   end
 
   context "setting custom year values" do
-    it "should have custom year field" do
+    it "should not have custom year values when the active scenario is for a normal year" do
+      post :root, params: { area_code: "nl", other_year: '2040' }
       get :root
 
-      expect(response.body).to have_selector("#new_scenario form") do |form|
-        expect(form).to have_selector("select", name: 'other_year')
+      expect(response.body).to have_selector('#new-scenario form') do |form|
+        expect(form).to have_selector('select', name: 'end_year') do |field|
+          expect(field).to_not have_selector('option', value: '2034')
+          expect(field).to have_selector('option', value: '2040', selected: 'selected')
+        end
       end
     end
 
-    it "should not select custom year values if it's not selected" do
+    it "should have custom year values when the active scenario is for a custom year" do
       post :root, params: { area_code: "nl", other_year: '2034' }
-      expect(session[:setting].end_year).not_to eq(2034)
-    end
+      get :root
 
-    it "should not select other field" do
-      post :root, params: {
-        area_code: "nl", end_year: 'other', other_year: '2036'
-      }
-
-      expect(session[:setting].end_year).to eq(2036)
+      expect(response.body).to have_selector('#new-scenario form') do |form|
+        expect(form).to have_selector('select', name: 'end_year') do |field|
+          expect(field).to have_selector('option', value: '2034', selected: 'selected')
+        end
+      end
     end
   end
 

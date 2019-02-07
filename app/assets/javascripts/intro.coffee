@@ -1,55 +1,5 @@
 $ ->
-  $("#new_scenario_button").click (e) ->
-    e.preventDefault()
-    newScenario = $('#new_scenario')
-
-    $("#new_scenario_button").addClass('active')
-    $("#existing_scenario_button").removeClass('active')
-
-    unless newScenario.is(':visible')
-      newScenario.slideDown
-        duration: 175
-        easing: 'easeOutQuad'
-
-    newScenario.addClass('active')
-
-    $("#existing_scenario").hide()
-    $("#load_existing_scenario").hide()
-
-  $("#existing_scenario_button").click (e) ->
-    e.preventDefault()
-    existingScenario = $('#existing_scenario')
-
-    $("#existing_scenario_button").addClass('active')
-    $("#new_scenario_button").removeClass('active')
-
-    unless existingScenario.is(':visible')
-      existingScenario.slideDown(600)
-
-    existingScenario.addClass('active')
-    $("#new_scenario").hide().removeClass('active')
-
-  $(".movie_tabs button").click (e) ->
-    currentMovie = $('.movie_tabs .active').find('button').data('movie')
-    movieId = $(e.target).data('movie')
-
-    return if currentMovie == movieId
-
-    currentContainer = $('#movie_content iframe')
-
-    Interface.set_active_movie_tab(movieId);
-    currentContainer.hide()
-
-    $.get("/select_movie/" + movieId)
-      .done((responseBody) ->
-        currentContainer.remove()
-        $("#movie_content").html(responseBody)
-      )
-      .fail(->
-        Interface.set_active_movie_tab(currentMovie)
-        currentContainer.show()
-      )
-
+  # Select2 template for region select options.
   areaTemplate = (state) ->
     if !state.id
       return state.text
@@ -61,90 +11,74 @@ $ ->
     if flag.length > 0
       root.append(flag)
 
-    root.append(inner).attr('id', state.id)
+    root.append(inner) # .attr('id', state.id)
 
-  areaSelect = $("#new_scenario select[name=area_code]")
+  # Select2 template for area select options.
+  yearTemplate = (state) ->
+    if !state.id
+      return state.text
 
-  # "Standard" years.
-  sYearSelect = $("#new_scenario select[name=end_year]")
+    $('<span/>').append(
+      $('<span class="present">Present &ndash;</span>'),
+      ' ',
+      state.text
+    )
 
-  # Custom years.
-  cYearSelect = $("#new_scenario select[name=other_year]")
+  areaSelect = $("#new-scenario select[name=area_code]")
+  sYearSelect = $("#new-scenario select[name=end_year]")
+
+  selectedYear = sYearSelect.val()
 
   areaSelect.select2(
-    width: '231px',
     templateResult: areaTemplate,
+    templateSelection: areaTemplate,
     dropdownParent: $('#area-select-options'),
-    dropdownAutoWidth : true
+    width: '348px'
   )
-  sYearSelect.select2(minimumResultsForSearch: -1, dropdownAutoWidth : true, width: 'auto')
 
-  areaOnChange = ->
+  sYearSelect.select2(
+    templateResult: yearTemplate,
+    templateSelection: yearTemplate
+    minimumResultsForSearch: -1,
+    dropdownAutoWidth: true,
+    width: '150px'
+  )
+
+  # Set the area and end year for the CO2 factsheet link.
+  setParamForEstablishmentShot = ->
+    $('.co2-factsheet a').attr(
+      'href',
+      '/regions/' + areaSelect.val() + '?end_year=' + sYearSelect.val()
+    )
+
+  # Adds options for individual years in the year select.
+  populateIndividualYears = ->
     earliest = areaSelect.find(':selected').data('earliest')
     standard = sYearSelect.find('option').map (i, o) -> parseInt(o.value, 10)
     latest   = _.max(standard)
-    selected = parseInt(cYearSelect.find('option:selected').val(), 10)
 
-    cYearSelect.empty()
+    sYearSelect.empty()
 
     for year in [earliest..latest]
-      cYearSelect.append($("<option value='#{ year }'>#{ year }</option>"))
+      sYearSelect.append($("<option value='#{ year }'>#{year}</option>"))
 
-    cYearSelect.val(selected)
+    sYearSelect.val(selectedYear)
+    sYearSelect.trigger('change')
 
-    # Set dataset information
-    areaValue = $(this).val()
-    selectedOption = $(this).find("option[value='" + areaValue + "']")
+    # Re-open the select after the event has finished.
+    window.setTimeout((-> sYearSelect.select2('open')), 1)
 
-    $(".dataset_information a")
-      .attr("href", "/regions/" + areaValue)
+  updateYearSelect = ->
+    if sYearSelect.val() == 'other'
+      populateIndividualYears()
 
-  areaSelect.change(areaOnChange).change()
+  areaSelect.change(setParamForEstablishmentShot)
+  areaSelect.change(updateYearSelect)
 
-  setParamForEstablishmentShot = ->
-    $('.dataset_information > a')[0].search = "end_year=#{ $(this).val() }"
+  sYearSelect.change(setParamForEstablishmentShot)
+  sYearSelect.change(updateYearSelect)
 
-  # Checks the select tag to show custom year field select when
-  # other is clicked.
-  checkYearRadioButtons = ->
-    elements = $('#end_year option:selected')
+  sYearSelect.change ->
+    selectedYear = sYearSelect.val()
 
-    if elements.val() == 'other'
-      cYearSelect
-        .select2(minimumResultsForSearch: -1)
-        .show()
-        .change(setParamForEstablishmentShot)
-        .change()
-
-    else
-      setParamForEstablishmentShot.call(this)
-
-      if cYearSelect.hasClass('select2-hidden-accessible')
-        cYearSelect.select2('destroy').hide()
-
-  sYearSelect.change(checkYearRadioButtons).change()
-
-  $("#new_scaled_scenario").submit ->
-    variableEl = $("#new_scaled_scenario [name=scaling_value]")
-    value      = $.trim(variableEl.val())
-
-    if not value.length or parseInt(value, 10) is 0
-      variableEl.addClass('error').focus()
-      return false
-
-    variableEl.removeClass('error')
-
-  $("#scaled_scenario_setup .selection").on "click", (event) ->
-    target = $(event.currentTarget)
-
-    $("#scaled_scenario_setup .selection").removeClass("active")
-    target.addClass("active")
-
-    if target.hasClass('new')
-      $("#new_scaled_scenario").show()
-      $("#preset_scaled_scenario").hide()
-    else
-      $("#preset_scaled_scenario").show()
-      $("#new_scaled_scenario").hide()
-
-    event.preventDefault()
+  setParamForEstablishmentShot()

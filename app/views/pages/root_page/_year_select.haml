@@ -1,3 +1,0 @@
-%p= t("choose_year")
-= select_tag :end_year, options_for_select(preset_years, other_year_selected ? 'other' : (Current.setting.end_year || Setting::DEFAULT_YEAR))
-= select_tag :other_year, options_for_select(custom_years, other_year_selected ? { selected: Current.setting.end_year } : {}), {}.merge(other_year_selected ? {} : { style: 'display:none' })

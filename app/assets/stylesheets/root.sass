@@ -1,0 +1,358 @@
+$landing-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol
+$landing-width: 652px
+$landing-green: #56b351
+$landing-grey: #78818c
+$landing-blue: #4e98e4
+$landing-gold: #e2ac49
+$landing-background-color: #eef2f7
+$landing-border-color: #d0d5d8
+
+body#root
+  font-family: $landing-font-family
+
+  &, #wrapper, #content
+    background: $landing-background-color
+    height: auto
+    height: fit-content
+
+  footer
+    display: none
+
+  a
+    color: $landing-blue
+    text-decoration: none
+
+    &:hover
+      color: black
+      text-decoration: underline
+
+#landing
+  margin: 50px auto 20px
+  width: $landing-width
+
+  #blurb
+    margin-bottom: 40px
+    h1
+      font-size: 26px
+      font-weight: normal
+      text-align: center
+    p
+      color: $landing-grey
+      font-size: 14px
+      line-height: 1.7
+      padding: 0 30px
+      text-align: center
+
+  #resume-scenario, #new-scenario, #preset-scenario, #recently-updated, .other-features li
+    background: white
+    border: 1px solid $landing-border-color
+    border-bottom-color: darken($landing-border-color, 5%)
+    border-top-width: 2px
+    box-shadow: 0 3px 5px rgba(50, 71, 93, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)
+    border-radius: 4px
+    margin: 0 0 40px
+    padding: 15px 20px
+
+  .other-features
+    list-style: none
+    padding: 5px
+    margin: -5px -45px -5px -5px
+    overflow: hidden
+    li
+      background: white asset-url("pages/home/local_global.svg") 20px 20px no-repeat
+      background-size: 32px
+      display: block
+      float: left
+      margin-right: 40px
+      width: 274px
+
+      padding-left: 68px
+      width: 216px
+      &.quintel
+        background-image: asset-url("pages/home/quintel.png")
+    h4
+      font-size: 14px
+      margin: 2px 0 0 0
+    p
+      color: $landing-grey
+      font-size: 12px
+      line-height: 1.4
+      margin: 8px 0 0 0
+
+    a
+      margin: -5px
+      padding: 5px
+      & + a
+        margin-left: 5px
+
+  #resume-scenario
+    background: #ffffef
+    border-top-color: $landing-green
+    a
+      border-top-left-radius: 3px
+      border-top-right-radius: 3px
+      display: block
+      margin: -15px -20px
+      padding: 18px 20px
+      position: relative
+      transition: all 0.1s ease-out
+      &:hover
+        text-decoration: none
+      &:hover span.root-button
+        background: linear-gradient(lighten($landing-green, 14%), lighten($landing-green, 7%))
+      &:active span.root-button
+        background: linear-gradient(darken($landing-green, 1%), darken($landing-green, 7%))
+    .title, .details
+      display: block
+    .title
+      color: $landing-grey
+      margin-bottom: 5px
+    .details
+      color: black
+      font-size: 16px
+    .country
+      background-position: 0 1px
+      background-repeat: no-repeat
+      display: inline-block // Fixes blurred background image in Chrome.
+      font-weight: bold
+      &.be, &.br, &.de, &.dk, &.es, &.fr, &.nl, &.pl, &.uk
+        padding-left: 28px
+      &.be
+        background-image: asset-url("flags-24/be.png")
+      &.br
+        background-image: asset-url("flags-24/be.png")
+      &.de
+        background-image: asset-url("flags-24/de.png")
+      &.dk
+        background-image: asset-url("flags-24/dk.png")
+      &.es
+        background-image: asset-url("flags-24/es.png")
+      &.fr
+        background-image: asset-url("flags-24/fr.png")
+      &.nl
+        background-image: asset-url("flags-24/nl.png")
+      &.pl
+        background-image: asset-url("flags-24/pl.png")
+      &.uk
+        background-image: asset-url("flags-24/uk.png")
+    span.root-button
+      background: $landing-green
+      background: linear-gradient(lighten($landing-green, 10%), $landing-green)
+      margin-top: 9px
+
+    ul.dashboard
+      background: linear-gradient(white 10%, $landing-border-color, white 90%)
+      list-style: none
+      margin: 5px -15px -10px
+      overflow: hidden
+      padding: 0
+      display: none // !!
+      li
+        background: white
+        float: left
+        margin-right: 1px
+        padding: 15px 15px 10px
+        width: 97px
+        &:last-child
+          margin-right: 0
+          width: 98px
+        .name, .value
+          display: block
+        .name
+          color: $landing-grey
+          font-size: 12px
+        .value
+          font-size: 14px
+
+  #new-scenario, #preset-scenario
+    h4
+      font-size: 16px
+      line-height: 1
+      margin: -15px -20px 0px
+      padding: 21px 20px 0
+
+  #new-scenario
+    border-top-color: $landing-blue
+    form
+      overflow: hidden
+      margin: 0 -10px
+      .country, .year, .submit
+        float: left
+        padding: 20px 10px
+      .country
+        width: 348px
+        a
+          display: inline-block
+          font-size: 11px
+          margin-top: 5px
+      .year
+        width: 150px
+      .submit
+        border-right: none
+        width: 72px
+      label
+        color: $landing-grey
+        display: block
+        font-size: 12px
+        display: none // !!
+      .select2-selection
+        border: 1px solid $landing-border-color
+        border-radius: 3px
+        cursor: pointer
+        font-size: 16px
+        height: 32px
+        padding-top: 2px
+        transition: all 0.1s ease-out
+        &:hover
+          border-color: darken($landing-border-color, 20%)
+      .select2-selection__arrow
+        top: 3px
+      .select2-selection__rendered > span > img
+        margin-right: 5px
+        vertical-align: text-top
+      .select2-container:focus, .select2-selection
+        outline: none
+      .select2-container--above.select2-container--open .select2-selection
+        border-top-left-radius: 0
+        border-top-right-radius: 0
+      .select2-container--below.select2-container--open .select2-selection
+        border-bottom-left-radius: 0
+        border-bottom-right-radius: 0
+      .value
+        border: 1px solid $landing-border-color
+        border-radius: 3px
+        cursor: pointer
+        font-size: 16px
+        padding: 5px 7px
+        transition: all 0.1s ease-out
+        .fa
+          color: $landing-grey
+          float: right
+          font-size: 14px
+          margin: 3px 0 0 3px
+          vertical-align: middle
+      .present
+        color: $landing-grey
+      .country .value
+        background-image: asset-url("flags-iso-24/nl.png")
+        background-repeat: no-repeat
+        background-position: 7px 6px
+        padding: 5px 5px 5px 35px
+      button.root-button
+        background-color: $landing-blue
+        background: linear-gradient(lighten($landing-blue, 10%), $landing-blue)
+        cursor: pointer
+        outline: none
+        padding-bottom: 7px
+        padding-top: 7px
+        transition: all 0.1s ease-out
+        &:hover
+          background: linear-gradient(lighten($landing-blue, 13%), lighten($landing-blue, 6%))
+        &:active
+          background: linear-gradient(darken($landing-blue, 1%), darken($landing-blue, 7%))
+    .hint
+      border-top: 1px solid $landing-border-color
+      color: $landing-grey
+      margin-bottom: 0
+      margin-top: 15px
+      margin: 0
+      padding-right: 25px
+      padding-top: 15px
+
+  span.root-button, button.root-button
+    background: #ccc
+    border-radius: 3px
+    border: none
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1)
+    color: white
+    float: right
+    font-family: $landing-font-family
+    font-size: 14px
+    font-weight: bold
+    margin: 0
+    padding: 5px 10px
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2)
+    transition: all 0.15s ease-out
+    white-space: nowrap
+    -webkit-font-smoothing: antialiased
+    .fa
+      color: white
+      font-size: 11px
+      margin-top: -1px
+      vertical-align: middle
+      + .fa
+        margin-left: -6px
+
+  #preset-scenario
+    border-top-color: $landing-gold
+
+    ul.scenario-list
+      list-style: none
+      margin: 20px -20px 0
+      padding: 0
+
+      li.title
+        color: $landing-grey
+        font-weight: bold
+        margin-top: 10px
+        padding: 0 20px
+
+      a
+        color: black
+        display: block
+        padding: 3px 20px
+
+        &:hover
+          background: $landing-background-color
+          text-decoration: none
+        &:active
+          background: darken($landing-background-color, 4%)
+
+      .org
+        color: $landing-grey
+        font-size: 13px
+        line-height: 1
+        margin-left: 3px
+
+#whats-new
+  background: #ffffee
+  border-bottom: 1px solid $landing-border-color
+  box-shadow: 0 3px 5px rgba(50, 71, 93, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)
+  line-height: 1.5
+  padding: 20px 0
+
+  .content
+    margin: 0 auto
+    width: $landing-width
+
+  p
+    margin-top: 0
+    &:last-child
+      color: $landing-grey
+      margin-bottom: 0
+
+.select2-dropdown
+  border-color: $landing-border-color
+  font-size: 14px !important
+
+li.select2-results__option > span > .present
+  color: $landing-grey
+
+.select2-container--default .select2-results__option--highlighted[aria-selected]
+  background-color: $landing-blue
+
+li.select2-results__option--highlighted > span > .present
+  color: white
+
+#area-select-options
+  .select2-results__group
+    color: #78818c
+
+  .select2-container--default .select2-results > .select2-results__options
+    max-height: 350px
+    min-height: 150px
+    overflow-y: auto
+
+  li.select2-results__option > span > img
+    margin-right: 5px
+    vertical-align: text-top

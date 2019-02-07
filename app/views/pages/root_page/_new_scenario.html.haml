@@ -1,0 +1,18 @@
+#new-scenario
+  %h4== #{t('intro.start_a_new_scenario')}&hellip;
+  = form_tag root_path do
+    .country
+      = render "pages/root_page/country_select"
+    .year
+      %label= t("choose_year")
+      = select_tag :end_year, options_for_select(other_year_selected? ? custom_years : preset_years, Current.setting.end_year || Setting::DEFAULT_YEAR)
+    .submit
+      %button.root-button(type="submit")
+        = t('start').titleize
+        %span.fa.fa-chevron-right
+        %span.fa.fa-chevron-right
+
+        = hidden_field_tag :reset, '1'
+
+  %p.hint
+    = t('intro.help')

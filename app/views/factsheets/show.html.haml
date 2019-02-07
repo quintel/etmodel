@@ -11,11 +11,11 @@
         %strong= t(@scenario.area_code)
     %dl.detail-list
       %dt Inwoners
-      %dd(data-query="households_number_of_inhabitants" data-period="present") &mdash;
+      %dd(data-query="households_number_of_inhabitants" data-period="future") &mdash;
       %dt Woningen
-      %dd(data-query="households_number_of_residences" data-period="present") &mdash;
+      %dd(data-query="households_number_of_residences" data-period="future") &mdash;
       %dt Energiegebruik gebouwde omgeving
-      %dd(data-query="factsheet_share_households_buildings_in_total_demand" data-period="present") &mdash;
+      %dd(data-query="factsheet_share_households_buildings_in_total_demand" data-period="future") &mdash;
     .logos
       = image_tag('factsheet/quintel.png', style: 'margin-right: 1rem; width: 8.25rem')
       = image_tag('factsheet/over-morgen.png', style: 'width: 6rem')

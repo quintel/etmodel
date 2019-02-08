@@ -35,10 +35,10 @@
     <h1 class="banner">1. Samenvatting scenario voor {{ settings.area_name }}  </h1>
 
       <p>
-      De totale broeikasgasuitstoot in {{ settings.area_name }} was <strong>{{ present.total_energetic_and_non_energetic_co2_emissions | round: 1 | autoscale: 'T' }}</strong> in {{ settings.start_year }}. In Parijs spraken wij af deze broeikasgasuitstoot met 95% te reduceren in 2050 en het Nationale Klimaatakkoord gaat voor -49% in 2030. Van deze broeikasgasuitstoot is <strong>{{present.non_energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> non-energetisch, dus is niet het gevolg van het energiesysteem. De non-energetische broeikasgasuitstoot omvat bijvoorbeeld methaan van koeien, koelgassen in de voedselindustrie of CO<sub>2</sub>-uitstoot van Veenweidegebieden. Deze non-energetische uitstoot is Nationaal sterk gedaald sinds 1990. Aanpak hiervan is niet onbelangrijk, wel is het anders dan de aanpak via het energiesysteem. Het Energietransitiemodel richt zich op het energiesysteem van {{ settings.area_name }}.
+      De totale broeikasgasuitstoot in {{ settings.area_name }} was <strong>{{ present.total_energetic_and_non_energetic_co2_emissions | round: 1 | autoscale: 'T' }}</strong> in {{ settings.start_year }}. In Parijs spraken wij af deze broeikasgasuitstoot met 95% te reduceren in 2050 en het Nationale Klimaatakkoord gaat voor -49% in 2030. Van deze broeikasgasuitstoot is <strong>{{present.non_energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> niet-energetisch, dus is niet het gevolg van het energiesysteem. De niet-energetische broeikasgasuitstoot omvat bijvoorbeeld methaan van koeien, koelgassen in de voedselindustrie of CO<sub>2</sub>-uitstoot van Veenweidegebieden. Deze niet-energetische uitstoot is Nationaal sterk gedaald sinds 1990. De aanpak hiervan is belangrijk, maar is wel anders dan de aanpak via het energiesysteem. Het Energietransitiemodel richt zich enkel op het energiesysteem van {{ settings.area_name }}.
       </p>
       <p>
-       De totale huidige uitstoot van het energiesysteem is nu <strong>{{ present.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong> en <strong>{{present.energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> van de totale broeikasgasuitstoot van regio. Het gemaakte scenario zorgt dat deze energetische CO<sub>2</sub>-uitstoot van het energiesysteem in eindjaar <strong> {{future.dashboard_reduction_of_co2_emissions_versus_1990 | times: 100 | round: 1 }}% </strong>  is veranderd ten opzichte van 1990. Dit rapport richt zich net als het model op het hele energiesysteem, namelijk huishoudens, gebouwen (=alles met een dak dat geen woning of industrie is), mobiliteit, industrie en landbouw. Hieronder is te zien hoe de energetische CO<sub>2</sub>-uitstoot zich ontwikkelt in het scenario.
+       De totale huidige uitstoot van het energiesysteem is nu <strong>{{ present.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong> en <strong>{{present.energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> van de totale broeikasgasuitstoot van regio. Het gemaakte scenario zorgt dat deze energetische CO<sub>2</sub>-uitstoot van het energiesysteem in eindjaar <strong> {{future.dashboard_reduction_of_co2_emissions_versus_1990 | times: 100 | round: 1 }}% </strong>  is veranderd ten opzichte van 1990. Dit rapport richt zich op het hele energiesysteem, namelijk huishoudens, overige gebouwen en diensten, mobiliteit, industrie en landbouw. Hieronder is te zien hoe de energetische CO<sub>2</sub>-uitstoot zich ontwikkelt in het scenario.
 
       {% chart 46 %}
         CO<sub>2</sub>-uitstoot gebaseerd op primair energiegebruik en uitgesplitst in sectoren voor 1990 (links),
@@ -86,25 +86,25 @@
   <h1 class="banner">2. Energievraag</h1>
 
     <p>
-    Het omlaag brengen CO<sub>2</sub>-uitstoot kan door de fossiele energievraag omlaag te brengen. Deze energievraag is een optelsom uit vele losse ontwikkelingen. Zowel een toename, afname als een verandering in vraag kunnen tegelijkertijd spelen. Bijvoorbeeld de veranderende bevolkingsomvang (van <strong>{{ present.households_number_of_inhabitants }}</strong> naar <strong>{{ future.households_number_of_inhabitants }}</strong>), meer huizen en/of meer vervoer zorgen voor een toename in de energievraag. Daarentegen zorgen tegelijkertijd besparingen zoals isolatie en groeiende efficiënties weer voor een afname van de energievraag. Als laatste zorgen technologieveranderingen soms voor een verandering in de vraag, zowel in volume als in type energiedrager. Ter illustratie, bij een warmtepomp of elektrische auto is geen directe vraag meer naar aardgas, maar wel naar elektriciteit. De energiedrager is veranderd van gas naar elektriciteit. Ook zijn in deze gevallen de technologieën vaak efficienter, waardoor het volume afneemt. </p>
+    Het omlaag brengen van de CO<sub>2</sub>-uitstoot kan door de fossiele energievraag te verlagen. Deze energievraag is een optelsom uit vele losse ontwikkelingen. Zowel een toename of afname als een verandering in vraag kunnen tegelijkertijd spelen. Bijvoorbeeld de veranderende bevolkingsomvang (van <strong>{{ present.households_number_of_inhabitants | round: 1 | autoscale: 'M' }} miljoen</strong> naar <strong>{{ future.households_number_of_inhabitants | round: 1 | autoscale: 'M' }} miljoen</strong>), meer huizen en/of meer vervoer zorgen voor een toename in de energievraag. Daarentegen zorgen tegelijkertijd besparingen zoals isolatie en groeiende efficiënties weer voor een afname van de energievraag. Als laatste zorgen technologieveranderingen soms voor een verandering in de vraag, zowel in volume als in type energiedrager. Ter illustratie, bij een warmtepomp of elektrische auto is geen directe vraag meer naar aardgas, maar wel naar elektriciteit. De energiedrager is veranderd van gas naar elektriciteit. Ook zijn in deze gevallen de technologieën vaak efficienter, waardoor het volume afneemt. </p>
 
 
     <h2 class="banner">A. Gebouwde Omgeving</h2>
       <p>
-     Dit hoofdstuk neemt u mee door de toekomstige energievraag van de gebouwde omgeving het gemaakte scenario, dit zijn de huishoudens (=woningen) en gebouwen. Gebouwen betreft alles met een dak dat geen woning of zware industrie is. Dit zijn bijvoorbeel scholen, gemeentehuizen en bedrijfskantoren. Zowel het volume (jaarlijkse vraag in Joule) als de nodige energiedrager (gas, elektriciteit, warmte, waterstof, biomassa, etc...) komen aan bod.  Aan de hand van de twee vraagfuncties Kracht en Licht en Lage temperatuurwarmte zal de toekomstige energiebehoefte worden toegelicht.
+     Dit hoofdstuk neemt u mee door de toekomstige energievraag van de gebouwde omgeving in het gemaakte scenario, dit zijn de huishoudens (=woningen) en overige gebouwen. Overige gebouwen betreft alles met een dak dat geen woning of zware industrie is. Dit zijn bijvoorbeel scholen, ziekenhuizen, gemeentehuizen en bedrijfskantoren. Zowel het volume (jaarlijkse energievraag) als de nodige energiedrager (gas, elektriciteit, warmte, waterstof, biomassa, etc...) komen aan bod.  Aan de hand van de twee vraagfuncties Kracht en Licht en Lage temperatuurwarmte zal de toekomstige energiebehoefte worden toegelicht.
      </p>
 
       <h3 class="banner">A1. Kracht en Licht</h3>
         <p>
         De elektriciteitsvraag van apparaten en van verlichting valt onder Kracht en Licht.</p>
-          <p> De Kracht en Licht vraag in de huishoudens is in {{ settings.start_year }}  <strong>{{ present.households_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en  <strong>{{present.households_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale huidige energievraag in huishoudens. Een samenspel van de aannames voor demografie, gebruik per inwoner en technologie (bijvoorbeeld LED, gloeilamp of halogeen) beinvloeden de toekomstige vraag. In {{ settings.end_year }} is dit totaal <strong>{{ future.households_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en <strong>{{future.households_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale energievraag in huishoudens. Hieronder ziet u de ontwikkeling van de energievraag als gevolg van de aannames in het scenario.
+          <p> De vraag naar Kracht en Licht in de huishoudens is in {{ settings.start_year }}  <strong>{{ present.households_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en  <strong>{{present.households_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale huidige energievraag in huishoudens. Een samenspel van de aannames voor demografie, gebruik per inwoner en technologie (bijvoorbeeld LED, gloeilamp of halogeen) beïnvloeden de toekomstige vraag. In {{ settings.end_year }} is dit totaal <strong>{{ future.households_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en <strong>{{future.households_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale energievraag in huishoudens. Hieronder ziet u de ontwikkeling van de energievraag als gevolg van de aannames in het scenario.
           <p>
         {% chart 2 %}
           Finale elektriciteitsvraag van apparaten en verlichting in
           {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
         {% endchart %}
         <p>
-        De Kracht en Licht vraag van alle gebouwen (exclusief woningen en zware industrie) is in {{ settings.start_year }} <strong>{{ present.buildings_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en wat <strong>{{present.buildings_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale huidige eindvraag van gebouwen. Een samenspel van de aannames voor aantal gebouwen, efficiënties en technologiekeuzes (bijvoorbeeld LED, gloeilamp of halogeen) leiden tot de toekomstige vraag. In {{ settings.end_year }} is dit totaal <strong>{{ future.buildings_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en <strong>{{future.buildings_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale energievraag in gebouwen. Hieronder ziet u de ontwikkeling van de energievraag als gevolg van de aannames in het scenario.
+        De Kracht en Licht vraag van alle overige gebouwen is in {{ settings.start_year }} <strong>{{ present.buildings_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en wat <strong>{{present.buildings_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale huidige eindvraag van gebouwen. Een samenspel van de aannames voor aantal gebouwen, efficiënties en technologiekeuzes (bijvoorbeeld LED, gloeilamp of halogeen) leiden tot de toekomstige vraag. In {{ settings.end_year }} is dit totaal <strong>{{ future.buildings_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en <strong>{{future.buildings_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale energievraag in gebouwen. Hieronder ziet u de ontwikkeling van de energievraag als gevolg van de aannames in het scenario.
 
         {% chart 72 %}
         Kracht en Licht in gebouwen
@@ -128,7 +128,7 @@
             {% endchart %}
           </p>
         <h4 class="banner"1>Invulling technologie</h4>
-          <p> Een keuze voor een andere technologie om het het huis, het water of het eten te verwarmen kan zorgen voor een verandering in volume, maar ook voor een verandering in vraag. De verandering in volume komt doordat een technologie meer of minder efficiënt is. Een warmtepomp is bijvoorbeeld efficiënter dan een cv-ketel. De verandering in type-vraag komt wanneer een technologie op een andere manier warmte maakt, zoals een cv-ketel met gas nodig heeft en een houtkachel hout. Hieronder zie je de verandering van vraag in volume en energiedrager voor eerst huishoudens en daarna gebouwen.
+          <p> Een keuze voor een andere technologie om het huis, het water of het eten te verwarmen kan zorgen voor een verandering in volume, maar ook voor een verandering in vraag. De verandering in volume komt doordat een technologie meer of minder efficiënt is. Een warmtepomp is bijvoorbeeld efficiënter dan een cv-ketel. De verandering in type-vraag komt wanneer een technologie op een andere manier warmte maakt, zoals een cv-ketel gas nodig heeft en een houtkachel hout. Hieronder zie je de verandering van vraag in volume en energiedrager voor eerst huishoudens en daarna gebouwen.
           </p>
             {% chart 56 %}
               Finale warmtevraag in huishoudens
@@ -148,27 +148,53 @@
             {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
           {% endchart %}
 
-    <h2 class="banner">B. Mobiliteit</h2>
-      <h3 class="banner">B1. Passagiersvervoer</h3>
-      {% chart 202 %}
-        Overzicht van energievraag van passagiersvervoer
+    <h2 class="banner">B. Mobiliteit en Transport</h2>
+    <p>
+    Het energiegebruik voor mobiliteit en transport is te verdelen in personenvervoer, goederenvervoer en internationaal vervoer (van goederen en personen). Hieronder kunt u zien hoe deze zich tot elkaar verhouden. Omdat internationaal transport officieel geen onderdeel is van het nationale energiegebruik, is dit energiegebruik alleen te zien als in het scenario is gekozen om het mee te laten tellen.
+		{% chart 201 %}
+        Eindgebruik energie in transport
         {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
-      {% endchart %}
+      	{% endchart %}
+		
+	</p>
+
+      <h3 class="banner">B1. Passagiersvervoer</h3>
+      <h4 class="banner">Vraagontwikkeling</h4>
+        <p>
+        In het scenario zijn de volgende aannames gemaakt over de ontwikkeling van de energievraag voor personenvervoer. Deze zijn het gevolg van keuzes voor verandering in <i>mobiliteit</i> (hoeveel we reizen), <i>modaliteit</i> (of we met de auto, de fiets de trein reizen) en de <i>technologie</i> (elektrische of benzineauto's). Tot slot kunnen deze technologieën elk nog efficiënter worden.
+        	{% chart 202 %}
+        	Overzicht van energievraag van passagiersvervoer
+        	{{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
+      		{% endchart %}
+			
+			Als voorbeeld is hier het energiegebruik van de verschillende soorten auto's te zien			
+			{% chart 203 %}
+        	Finaal energiegebruik van personenauto's
+        	{{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
+      		{% endchart %}
+
+  		</p>
 
       <h3 class="banner">B2. Goederenvervoer</h3>
-      {% chart 207 %}
-      Overzicht van energievraag van goederenvervoer
-        {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
-      {% endchart %}
+      <h4 class="banner">Vraagontwikkeling</h4>
+        <p>
+     	In het scenario zijn de volgende aannames gemaakt over de ontwikkeling van de energievraag voor goederenvervoer. Deze zijn het gevolg van keuzes voor verandering in <i>volume</i> (hoeveel we vervoeren), <i>modaliteit</i> (of we met de vrachtwagen, trein of binnenvaartschip doen) en de <i>technologie</i> (waterstof of dieseltrucks). Tot slot kunnen deze technologieën elk nog efficiënter worden.
+			{% chart 207 %}
+      		Overzicht van energievraag van goederenvervoer
+        	{{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
+      		{% endchart %}
+		</p>
 
       <h3 class="banner">B3. Internationaal vervoer</h3>
       {% if future.international_transport_in_scenario > 0.0 %}
-
-      {% chart 209 %}
-      Overzicht van internationaal transport
-        {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
-      {% endchart %}
-
+      <h4 class="banner">Vraagontwikkeling</h4>
+		<p>
+		Internationaal transport is officieel geen onderdeel van het nationaal energiegebruik. Hoewel het officieel niemands 'probleem' is, is het er natuurlijk wel. Hieronder zie je hoeveel energiegebruik er voor internationale scheep- en luchtvaart is. 
+      		{% chart 209 %}
+      		Overzicht van energiegebruik voor internationaal transport
+        	{{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
+      		{% endchart %}
+		</p>
       {% else %}
       <p>
       De internationale lucht- en scheepvaart is niet meegenomen in dit scenario.
@@ -177,7 +203,7 @@
 
 
     <h2 class="banner">C. Industrie</h2>
-      <p> Hieronder zie je de energievraag van de industriële sectoren. Er is een Kracht en Licht vraag en een warmtevraag. Sectoren als Chemie, Raffinaderijen, Kunstmest en Metaalsector hebben veelal een hoge tempereatuurwarmtevraag. De andere sectoren hebben vaker een vraag naar lage temperatuurwarmte.
+      <p> Hieronder zie je de energievraag van de industriële sectoren. Er is een Kracht en Licht vraag en een warmtevraag. Sectoren als Chemie, Raffinaderijen, Kunstmest en Metaalsector hebben veelal een hoge temperatuurwarmtevraag. Om deze temperaturen te bereiken is het meestal nodig om iets te verbranden (aardgas, groengas, waterstof of biomassa bijvoorbeeld). De andere sectoren hebben vaker een vraag naar lagere temperatuurwarmte die makelijker door duurzame alteratieven kan worden ingevuld. 
       </p>
       {% chart 178 %}
         Overzicht van alle sectoren en energievraag van de industrie in {{ settings.end_year }}

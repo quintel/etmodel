@@ -418,16 +418,29 @@
 		vraag, wordt waterstof geïmporteerd. Wanneer het aanbod hoger is dan de vraag, dan 
 		zie je overschotten. Indien of de waterstofimport of het -overschot groot is ben je 
 		als {{ settings.area_name }} gevoelig voor de waterstofprijs.
+    		{% chart 214 %}
+      		Waterstofvraag- (links) en aanbod (rechts) in {{ settings.end_year }}.
+    		{% endchart %}
     	</p>
 
-    	{% chart 214 %}
-      	Waterstofvraag- (links) en aanbod (rechts) in {{ settings.end_year }}.
-    	{% endchart %}
+		<p>
+		Hieronder staat weergegeven hoe de waterstof in het scenario ieder uur wordt ingezet. Rechtsonder de figuur
+		kun je kiezen om het hele jaar weer te geven of slecht één week van het jaar.
+		
+    		{% chart 226 %}
+      		Gebruik van waterstof door het jaar heen in {{ settings.end_year }}
+    		{% endchart %}
+ 		</p>
 
-    	{% chart 227 %}
-      	Opslag van waterstof
-    	{% endchart %}
-    {% else %}
+		<p>
+		Hieronder staat weergegeven hoe groot de benodigde opslagcapaciteit voor waterstof ten minste moet zijn. Rechtsonder de figuur
+		kun je kiezen om het hele jaar weer te geven of slecht één week van het jaar.
+		
+    		{% chart 227 %}
+      		Hoeveelheid opgeslagen waterstof door het jaar heen in {{ settings.end_year }}
+    		{% endchart %}
+ 		</p>
+   	{% else %}
     <p>
     Er wordt geen waterstof gebruikt in het scenario.
     </p>
@@ -437,7 +450,7 @@
 
     <h2 class="banner">D. Biomassa</h2>
     {% if future.bio_footprint > 0.0 %}
-    Hieronder zie je eerste de totale primaire energievraag van biomassa en daarna de eigen productie en import van alle biomassa in het scenario.
+    Hieronder zie je eerst de totale primaire energievraag van biomassa en daarna de eigen productie en import van alle biomassa in het scenario.
 
     {% chart 166 %}
       Primaire biomassavraag

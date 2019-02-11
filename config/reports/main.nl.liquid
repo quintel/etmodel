@@ -425,7 +425,7 @@
 
 		<p>
 		Hieronder staat weergegeven hoe de waterstof in het scenario ieder uur wordt ingezet. Rechtsonder de figuur
-		kun je kiezen om het hele jaar weer te geven of slecht één week van het jaar.
+		kun je kiezen om het hele jaar weer te geven of slechts één week van het jaar.
 		
     		{% chart 226 %}
       		Gebruik van waterstof door het jaar heen in {{ settings.end_year }}
@@ -434,7 +434,7 @@
 
 		<p>
 		Hieronder staat weergegeven hoe groot de benodigde opslagcapaciteit voor waterstof ten minste moet zijn. Rechtsonder de figuur
-		kun je kiezen om het hele jaar weer te geven of slecht één week van het jaar.
+		kun je kiezen om het hele jaar weer te geven of slechts één week van het jaar.
 		
     		{% chart 227 %}
       		Hoeveelheid opgeslagen waterstof door het jaar heen in {{ settings.end_year }}
@@ -556,8 +556,7 @@
       <p>
 
       <h1 class="banner">7. Biovoetafdruk en hernieuwbaarheid</h1>
-
-        <h2>Biovoetafdruk</h2>
+   		<h2 class="banner">A. Biovoetafdruk</h2>
           <p>
             Je scenario gebruikt {{ future.bio_footprint | round: 1 }} keer het beschikbare landbouwareaal voor de productie
             van biobrandstoffen zoals hout, bio-ethanol, biogas en biodiesel. Hieronder zie je hoeveel biomassa iedere sector
@@ -568,7 +567,7 @@
             Biovoetafdruk per energiedrager in {{ settings.end_year }}.
           {% endchart %}
 
-        <h2>Hernieuwbaarheid</h2>
+   		<h2 class="banner">B. Hernieuwbaarheid</h2>
 		<p>
           Het percentage hernieuwbare energie in jouw scenario is {{ future.renewability_percentage | round: 1 }}%.
 

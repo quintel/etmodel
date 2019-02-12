@@ -35,10 +35,10 @@
     <h1 class="banner">1. Samenvatting scenario voor {{ settings.area_name }}  </h1>
 
       <p>
-      De totale broeikasgasuitstoot in {{ settings.area_name }} was <strong>{{ present.total_energetic_and_non_energetic_co2_emissions | round: 1 | autoscale: 'T' }}</strong> in {{ settings.start_year }}. In Parijs spraken wij af deze broeikasgasuitstoot met 95% te reduceren in 2050 en het Nationale Klimaatakkoord gaat voor -49% in 2030. Van deze broeikasgasuitstoot is <strong>{{present.non_energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> non-energetisch, dus is niet het gevolg van het energiesysteem. De non-energetische broeikasgasuitstoot omvat bijvoorbeeld methaan van koeien, koelgassen in de voedselindustrie of CO<sub>2</sub>-uitstoot van Veenweidegebieden. Deze non-energetische uitstoot is Nationaal sterk gedaald sinds 1990. Aanpak hiervan is niet onbelangrijk, wel is het anders dan de aanpak via het energiesysteem. Het Energietransitiemodel richt zich op het energiesysteem van {{ settings.area_name }}.
+      De totale broeikasgasuitstoot in {{ settings.area_name }} was <strong>{{ present.total_energetic_and_non_energetic_co2_emissions | round: 1 | autoscale: 'T' }}</strong> in {{ settings.start_year }}. In Parijs spraken wij af deze broeikasgasuitstoot met 95% te reduceren in 2050 en het Nationale Klimaatakkoord gaat voor -49% in 2030. Van deze broeikasgasuitstoot is <strong>{{present.non_energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> niet-energetisch, dus is niet het gevolg van het energiesysteem. De niet-energetische broeikasgasuitstoot omvat bijvoorbeeld methaan van koeien, koelgassen in de voedselindustrie of CO<sub>2</sub>-uitstoot van Veenweidegebieden. Deze niet-energetische uitstoot is Nationaal sterk gedaald sinds 1990. De aanpak hiervan is belangrijk, maar is wel anders dan de aanpak via het energiesysteem. Het Energietransitiemodel richt zich enkel op het energiesysteem van {{ settings.area_name }}.
       </p>
       <p>
-       De totale huidige uitstoot van het energiesysteem is nu <strong>{{ present.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong> en <strong>{{present.energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> van de totale broeikasgasuitstoot van regio. Het gemaakte scenario zorgt dat deze energetische CO<sub>2</sub>-uitstoot van het energiesysteem in eindjaar <strong> {{future.dashboard_reduction_of_co2_emissions_versus_1990 | times: 100 | round: 1 }}% </strong>  is veranderd ten opzichte van 1990. Dit rapport richt zich net als het model op het hele energiesysteem, namelijk huishoudens, gebouwen (=alles met een dak dat geen woning of industrie is), mobiliteit, industrie en landbouw. Hieronder is te zien hoe de energetische CO<sub>2</sub>-uitstoot zich ontwikkelt in het scenario.
+       De totale huidige uitstoot van het energiesysteem is nu <strong>{{ present.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong> en <strong>{{present.energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> van de totale broeikasgasuitstoot van regio. Het gemaakte scenario zorgt dat deze energetische CO<sub>2</sub>-uitstoot van het energiesysteem in eindjaar <strong> {{future.dashboard_reduction_of_co2_emissions_versus_1990 | times: 100 | round: 1 }}% </strong>  is veranderd ten opzichte van 1990. Dit rapport richt zich op het hele energiesysteem, namelijk huishoudens, overige gebouwen en diensten, mobiliteit, industrie en landbouw. Hieronder is te zien hoe de energetische CO<sub>2</sub>-uitstoot zich ontwikkelt in het scenario.
 
       {% chart 46 %}
         CO<sub>2</sub>-uitstoot gebaseerd op primair energiegebruik en uitgesplitst in sectoren voor 1990 (links),
@@ -86,25 +86,25 @@
   <h1 class="banner">2. Energievraag</h1>
 
     <p>
-    Het omlaag brengen CO<sub>2</sub>-uitstoot kan door de fossiele energievraag omlaag te brengen. Deze energievraag is een optelsom uit vele losse ontwikkelingen. Zowel een toename, afname als een verandering in vraag kunnen tegelijkertijd spelen. Bijvoorbeeld de veranderende bevolkingsomvang (van <strong>{{ present.households_number_of_inhabitants }}</strong> naar <strong>{{ future.households_number_of_inhabitants }}</strong>), meer huizen en/of meer vervoer zorgen voor een toename in de energievraag. Daarentegen zorgen tegelijkertijd besparingen zoals isolatie en groeiende efficiënties weer voor een afname van de energievraag. Als laatste zorgen technologieveranderingen soms voor een verandering in de vraag, zowel in volume als in type energiedrager. Ter illustratie, bij een warmtepomp of elektrische auto is geen directe vraag meer naar aardgas, maar wel naar elektriciteit. De energiedrager is veranderd van gas naar elektriciteit. Ook zijn in deze gevallen de technologieën vaak efficienter, waardoor het volume afneemt. </p>
+    Het omlaag brengen van de CO<sub>2</sub>-uitstoot kan door de fossiele energievraag te verlagen. Deze energievraag is een optelsom uit vele losse ontwikkelingen. Zowel een toename of afname als een verandering in vraag kunnen tegelijkertijd spelen. Bijvoorbeeld de veranderende bevolkingsomvang (van <strong>{{ present.households_number_of_inhabitants | round: 1 | autoscale: 'M' }} miljoen</strong> naar <strong>{{ future.households_number_of_inhabitants | round: 1 | autoscale: 'M' }} miljoen</strong>), meer huizen en/of meer vervoer zorgen voor een toename in de energievraag. Daarentegen zorgen tegelijkertijd besparingen zoals isolatie en groeiende efficiënties weer voor een afname van de energievraag. Als laatste zorgen technologieveranderingen soms voor een verandering in de vraag, zowel in volume als in type energiedrager. Ter illustratie, bij een warmtepomp of elektrische auto is geen directe vraag meer naar aardgas, maar wel naar elektriciteit. De energiedrager is veranderd van gas naar elektriciteit. Ook zijn in deze gevallen de technologieën vaak efficienter, waardoor het volume afneemt. </p>
 
 
     <h2 class="banner">A. Gebouwde Omgeving</h2>
       <p>
-     Dit hoofdstuk neemt u mee door de toekomstige energievraag van de gebouwde omgeving het gemaakte scenario, dit zijn de huishoudens (=woningen) en gebouwen. Gebouwen betreft alles met een dak dat geen woning of zware industrie is. Dit zijn bijvoorbeel scholen, gemeentehuizen en bedrijfskantoren. Zowel het volume (jaarlijkse vraag in Joule) als de nodige energiedrager (gas, elektriciteit, warmte, waterstof, biomassa, etc...) komen aan bod.  Aan de hand van de twee vraagfuncties Kracht en Licht en Lage temperatuurwarmte zal de toekomstige energiebehoefte worden toegelicht.
+     Dit hoofdstuk neemt u mee door de toekomstige energievraag van de gebouwde omgeving in het gemaakte scenario, dit zijn de huishoudens (=woningen) en overige gebouwen. Overige gebouwen betreft alles met een dak dat geen woning of zware industrie is. Dit zijn bijvoorbeel scholen, ziekenhuizen, gemeentehuizen en bedrijfskantoren. Zowel het volume (jaarlijkse energievraag) als de nodige energiedrager (gas, elektriciteit, warmte, waterstof, biomassa, etc...) komen aan bod.  Aan de hand van de twee vraagfuncties Kracht en Licht en Lage temperatuurwarmte zal de toekomstige energiebehoefte worden toegelicht.
      </p>
 
       <h3 class="banner">A1. Kracht en Licht</h3>
         <p>
         De elektriciteitsvraag van apparaten en van verlichting valt onder Kracht en Licht.</p>
-          <p> De Kracht en Licht vraag in de huishoudens is in {{ settings.start_year }}  <strong>{{ present.households_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en  <strong>{{present.households_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale huidige energievraag in huishoudens. Een samenspel van de aannames voor demografie, gebruik per inwoner en technologie (bijvoorbeeld LED, gloeilamp of halogeen) beinvloeden de toekomstige vraag. In {{ settings.end_year }} is dit totaal <strong>{{ future.households_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en <strong>{{future.households_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale energievraag in huishoudens. Hieronder ziet u de ontwikkeling van de energievraag als gevolg van de aannames in het scenario.
+          <p> De vraag naar Kracht en Licht in de huishoudens is in {{ settings.start_year }}  <strong>{{ present.households_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en  <strong>{{present.households_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale huidige energievraag in huishoudens. Een samenspel van de aannames voor demografie, gebruik per inwoner en technologie (bijvoorbeeld LED, gloeilamp of halogeen) beïnvloeden de toekomstige vraag. In {{ settings.end_year }} is dit totaal <strong>{{ future.households_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en <strong>{{future.households_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale energievraag in huishoudens. Hieronder ziet u de ontwikkeling van de energievraag als gevolg van de aannames in het scenario.
           <p>
         {% chart 2 %}
           Finale elektriciteitsvraag van apparaten en verlichting in
           {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
         {% endchart %}
         <p>
-        De Kracht en Licht vraag van alle gebouwen (exclusief woningen en zware industrie) is in {{ settings.start_year }} <strong>{{ present.buildings_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en wat <strong>{{present.buildings_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale huidige eindvraag van gebouwen. Een samenspel van de aannames voor aantal gebouwen, efficiënties en technologiekeuzes (bijvoorbeeld LED, gloeilamp of halogeen) leiden tot de toekomstige vraag. In {{ settings.end_year }} is dit totaal <strong>{{ future.buildings_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en <strong>{{future.buildings_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale energievraag in gebouwen. Hieronder ziet u de ontwikkeling van de energievraag als gevolg van de aannames in het scenario.
+        De Kracht en Licht vraag van alle overige gebouwen is in {{ settings.start_year }} <strong>{{ present.buildings_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en wat <strong>{{present.buildings_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale huidige eindvraag van gebouwen. Een samenspel van de aannames voor aantal gebouwen, efficiënties en technologiekeuzes (bijvoorbeeld LED, gloeilamp of halogeen) leiden tot de toekomstige vraag. In {{ settings.end_year }} is dit totaal <strong>{{ future.buildings_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en <strong>{{future.buildings_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale energievraag in gebouwen. Hieronder ziet u de ontwikkeling van de energievraag als gevolg van de aannames in het scenario.
 
         {% chart 72 %}
         Kracht en Licht in gebouwen
@@ -128,7 +128,7 @@
             {% endchart %}
           </p>
         <h4 class="banner"1>Invulling technologie</h4>
-          <p> Een keuze voor een andere technologie om het het huis, het water of het eten te verwarmen kan zorgen voor een verandering in volume, maar ook voor een verandering in vraag. De verandering in volume komt doordat een technologie meer of minder efficiënt is. Een warmtepomp is bijvoorbeeld efficiënter dan een cv-ketel. De verandering in type-vraag komt wanneer een technologie op een andere manier warmte maakt, zoals een cv-ketel met gas nodig heeft en een houtkachel hout. Hieronder zie je de verandering van vraag in volume en energiedrager voor eerst huishoudens en daarna gebouwen.
+          <p> Een keuze voor een andere technologie om het huis, het water of het eten te verwarmen kan zorgen voor een verandering in volume, maar ook voor een verandering in vraag. De verandering in volume komt doordat een technologie meer of minder efficiënt is. Een warmtepomp is bijvoorbeeld efficiënter dan een cv-ketel. De verandering in type-vraag komt wanneer een technologie op een andere manier warmte maakt, zoals een cv-ketel gas nodig heeft en een houtkachel hout. Hieronder zie je de verandering van vraag in volume en energiedrager voor eerst huishoudens en daarna gebouwen.
           </p>
             {% chart 56 %}
               Finale warmtevraag in huishoudens
@@ -148,27 +148,53 @@
             {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
           {% endchart %}
 
-    <h2 class="banner">B. Mobiliteit</h2>
-      <h3 class="banner">B1. Passagiersvervoer</h3>
-      {% chart 202 %}
-        Overzicht van energievraag van passagiersvervoer
+    <h2 class="banner">B. Mobiliteit en Transport</h2>
+    <p>
+    Het energiegebruik voor mobiliteit en transport is te verdelen in personenvervoer, goederenvervoer en internationaal vervoer (van goederen en personen). Hieronder kunt u zien hoe deze zich tot elkaar verhouden. Omdat internationaal transport officieel geen onderdeel is van het nationale energiegebruik, is dit energiegebruik alleen te zien als in het scenario is gekozen om het mee te laten tellen.
+		{% chart 201 %}
+        Eindgebruik energie in transport
         {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
-      {% endchart %}
+      	{% endchart %}
+		
+	</p>
+
+      <h3 class="banner">B1. Passagiersvervoer</h3>
+      <h4 class="banner">Vraagontwikkeling</h4>
+        <p>
+        In het scenario zijn de volgende aannames gemaakt over de ontwikkeling van de energievraag voor personenvervoer. Deze zijn het gevolg van keuzes voor verandering in <i>mobiliteit</i> (hoeveel we reizen), <i>modaliteit</i> (of we met de auto, de fiets de trein reizen) en de <i>technologie</i> (elektrische of benzineauto's). Tot slot kunnen deze technologieën elk nog efficiënter worden.
+        	{% chart 202 %}
+        	Overzicht van energievraag van passagiersvervoer
+        	{{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
+      		{% endchart %}
+			
+			Als voorbeeld is hier het energiegebruik van de verschillende soorten auto's te zien			
+			{% chart 203 %}
+        	Finaal energiegebruik van personenauto's
+        	{{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
+      		{% endchart %}
+
+  		</p>
 
       <h3 class="banner">B2. Goederenvervoer</h3>
-      {% chart 207 %}
-      Overzicht van energievraag van goederenvervoer
-        {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
-      {% endchart %}
+      <h4 class="banner">Vraagontwikkeling</h4>
+        <p>
+     	In het scenario zijn de volgende aannames gemaakt over de ontwikkeling van de energievraag voor goederenvervoer. Deze zijn het gevolg van keuzes voor verandering in <i>volume</i> (hoeveel we vervoeren), <i>modaliteit</i> (of we met de vrachtwagen, trein of binnenvaartschip doen) en de <i>technologie</i> (waterstof of dieseltrucks). Tot slot kunnen deze technologieën elk nog efficiënter worden.
+			{% chart 207 %}
+      		Overzicht van energievraag van goederenvervoer
+        	{{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
+      		{% endchart %}
+		</p>
 
       <h3 class="banner">B3. Internationaal vervoer</h3>
       {% if future.international_transport_in_scenario > 0.0 %}
-
-      {% chart 209 %}
-      Overzicht van internationaal transport
-        {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
-      {% endchart %}
-
+      <h4 class="banner">Vraagontwikkeling</h4>
+		<p>
+		Internationaal transport is officieel geen onderdeel van het nationaal energiegebruik. Hoewel het officieel niemands 'probleem' is, is het er natuurlijk wel. Hieronder zie je hoeveel energiegebruik er voor internationale scheep- en luchtvaart is. 
+      		{% chart 209 %}
+      		Overzicht van energiegebruik voor internationaal transport
+        	{{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
+      		{% endchart %}
+		</p>
       {% else %}
       <p>
       De internationale lucht- en scheepvaart is niet meegenomen in dit scenario.
@@ -177,15 +203,15 @@
 
 
     <h2 class="banner">C. Industrie</h2>
-      <p> Hieronder zie je de energievraag van de industriële sectoren. Er is een Kracht en Licht vraag en een warmtevraag. Sectoren als Chemie, Raffinaderijen, Kunstmest en Metaalsector hebben veelal een hoge tempereatuurwarmtevraag. De andere sectoren hebben vaker een vraag naar lage temperatuurwarmte.
-      </p>
+      <p> Hieronder zie je de energievraag van de industriële sectoren. De breedte van iedere kolom geeft aan hoeveel energie deze gebruikt. De energiedragers worden ingezet voor Kracht en Licht en een Warmte. Deze grafiek bevat geen inzet van energiedragers als grondstoffen (niet-energetisch). Sectoren als Chemie, Raffinaderijen, Kunstmest en Metaalsector hebben veelal een hoge temperatuurwarmtevraag. Om deze temperaturen te bereiken is het meestal nodig om iets te verbranden (aardgas, groengas, waterstof of biomassa bijvoorbeeld). De andere sectoren hebben vaker een vraag naar lagere temperatuurwarmte die makelijker door duurzame alteratieven kan worden ingevuld. 
       {% chart 178 %}
-        Overzicht van alle sectoren en energievraag van de industrie in {{ settings.end_year }}
+        Overzicht van alle industriële sub-sectoren en energievraag in {{ settings.end_year }}
       {% endchart %}
+  	</p>
 
     <h2 class="banner">D. Totale finale energievraag van {{ settings.area_name }} (inclusief Landbouw en overig)</h2>
     <p>
-    Hieronder zie een overzicht van de totale eindvraag van alle sectoren in {{ settings.area_name }} in {{ settings.end_year }} De breedte van de balk geeft aan hoe groot de energievraag is, de kleur geeft aan wat voor vraag het is.
+    Hieronder zie een overzicht van de totale finale energievraag van alle sectoren in {{ settings.area_name }} in {{ settings.end_year }}. De breedte van iedere kolom geeft aan hoe groot de energievraag is in iedere sector, de kleur geeft aan wat voor vraag het is.
     </p>
 
         {% chart 224 %}
@@ -193,160 +219,168 @@
         {% endchart %}
 
   <h1 class="banner">3. Matchen van vraag en aanbod</h1>
-    <p> Alle energievraag van de sectoren moet natuurlijk ergens vandaan komen. Hieronder bekijken wij de invulling van  elektriciteit, warmtenetten, waterstof, biomassa en indien aanwezig nog fossiele bronnen.
+    <p> Alle energievraag van de sectoren moet natuurlijk ergens vandaan komen. Hieronder bekijken wij de invulling van  elektriciteit, warmtenetten, waterstof, biomassa en eventueel nog aanwezige fossiele bronnen.
     </p>
 
     <h2 class="banner">A. Elektriciteit</h2>
       <h3> A1. Vraag en aanbod (jaarlijks)</h3>
       <p>
-      Ook de elektriciteit moet natuurlijk ergens vandaan komen.De meeste elektriciteit in jouw scenario wordt geproduceerd door de {{ future.biggest_electricity_producer_name | i18n: 'output_element_series' }} centrale ({{ future.biggest_electricity_producer_value | autoscale: 'MJ'}}). Het rode lijntje is het jaarlijkse volume aan elektriciteit dat er in het scenario nodig is. Het kan voorkomen dat er toch veel import (donkerblauw) nodig is terwijl er jaarlijks (meer dan) genoeg elektriciteit wordt opgewekt. Het ETM berekent vraag en aanbod van elektriciteit op uurbasis. Dit scenario heeft qua volume <strong>{{future.imported_electricity_percentage| times: 100 | round: 1 }}%</strong> import van elektriciteit. Daarnaast valt de stroom in dit scenario <strong>{{ future.dashboard_blackout_hours | without_unit }}</strong> uren uit en is {{ settings.area_name }} voor <strong>{{future.dashboard_security_of_supply }}</strong> uren afhankelijk van import. Flexibiliteitsopties zoals opslag in batterijen, waterstof of slim omgaan met de vraag kunnen helpen om de overschotten en de import omlaag te brengen.
+      Ook de elektriciteit moet natuurlijk ergens vandaan komen. De meeste elektriciteit in jouw scenario wordt geproduceerd met {{ future.biggest_electricity_producer_name | i18n: 'output_element_series' }} ({{ future.biggest_electricity_producer_value | autoscale: 'MJ'}}). Het rode lijntje is het jaarlijkse volume aan elektriciteit dat er in het scenario nodig is. Het kan voorkomen dat er toch veel import (donkerblauw) nodig is terwijl er jaarlijks (meer dan) genoeg elektriciteit wordt opgewekt. Het ETM berekent vraag en aanbod van elektriciteit op uurbasis. Dit scenario heeft qua volume <strong>{{future.imported_electricity_percentage| times: 100 | round: 1 }}%</strong> import van elektriciteit. Daarnaast valt de stroom in dit scenario <strong>{{ future.dashboard_blackout_hours | without_unit }}</strong> uren uit en is {{ settings.area_name }} voor <strong>{{future.dashboard_security_of_supply }}</strong> uren afhankelijk van import. Flexibiliteitsopties zoals opslag in batterijen, waterstof of slim omgaan met de vraag kunnen helpen om de overschotten en de import omlaag te brengen.
       </p>
       {% chart 99 %}
           Elektriciteitsvraag- en aanbod voor {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
       {% endchart %}
 
         <h3> A2. Elektriciteitsmarkt en Flexibiliteit (uurbasis)</h3>
-        <!-- Unprofitable plants -->
-        {% if settings.merit_order_enabled %}
-          {% if future.profitability_percentage < 100 %}
-            <p>
-              In je scenario is {{ 100 | minus: future.profitability_percentage | round: 1 }}% van de centrales verliesgevend.
-              Dit betekent dat ze hun investeringskosten niet terugverdienen en soms zelfs niet hun draaikosten.
-              Het is niet te verwachten dat verliesgevende centrales lang open zullen blijven. Om winstgevendheid te verbeteren kun je:
-              <ul>
-                <li><strong>Elektriciteitsvraag laten toenemen</strong>: door centrales meer draaiuren te geven kun je hun winstgevendheid
-                  verbeteren.</li>
-                <li><strong>Concurrerende productie verlagen</strong>: elektriciteit uit wind en zon-PV heeft zeer lage marginale kosten,
-                  daardoor worden conventionele (dispatchable) centrales uit de markt 'gedrukt'.</li>
-                <li><strong>Sluiten van centrales</strong>: dit vergroot het realisme van je scenario en kan de kosten voor het systeem
-                  verlagen.</li>
-              </ul>
-            </p>
-          {% endif %}
-        {% endif %}
 
         {% if settings.merit_order_enabled %}
           <h4>Merit order en brandstofprijzen</h4>
 
             <p>
-              De <i>merit order</i> sorteert 'dispatchable' (regelbare) elektriciteitscentrales
-              op <i>marginale kosten</i> (de kosten van het produceren van een extra MWh elektriciteit).
-              Wind, zon-PV en must-run WKK hebben effectief marginale kosten van nul.
-              De onderstaande grafiek toont marginale kosten en geïnstalleerd vermogen van elektriciteitsproductie in
-              jouw scenario.
+            De elektrciteitsmarkt is georganiseerd volgens de zogenaamde <i>merit order</i> van elektriciteitsproductie. 
+			Deze sorteert regelbare elektriciteitscentrales op <i>marginale kosten</i> (de kosten van het produceren 
+			van een extra MWh elektriciteit).
+       		Wind, zon-PV en must-run WKK hebben effectief marginale kosten van 0 €/MWh.
+            De onderstaande grafiek toont marginale kosten en geïnstalleerd vermogen van elektriciteitsproductie in
+            jouw scenario.
             </p>
 
             {% chart 125 %}
-              Merit order en marginale kosten.
+            Merit order en marginale kosten in {{ settings.end_year }}.
             {% endchart %}
 
             <p>
-              Afhankelijk van de vraag op elk moment in het jaar bepaalt de merit order welke centrales draaien en welke niet.
-              Centrales met lage marginale kosten zoals kerncentrales draaien meestal 'baseload' terwijl centrales met hogere
-              marginale kosten de pieken in de vraag opvangen.
+            Afhankelijk van de vraag op elk moment in het jaar bepaalt de merit order welke centrales draaien en welke niet.
+			De goedkoopste mogen eerst leveren, daarna de eerstvolgende in marginale kosten, etc. Wind en zon-PV gaan dus 
+			altijd voor, terwijl
+            centrales met lage marginale kosten zoals kerncentrales meestal basislast leveren. Centrales met hogere
+            marginale kosten vangen tenslotte de pieken in de vraag op.
             </p>
 
             <p>
-              Marginale kosten voor centrales worden voornamelijk door brandstofprijzen bepaald. Door de
-              prijs van kolen of CO<sub>2</sub> op te voeren in het ETM kunnen gasgestookte centrales meer competitief
-              worden met kolencentrales.
+            Marginale kosten voor centrales worden voornamelijk door brandstofprijzen bepaald. Door de
+            prijs van kolen of CO<sub>2</sub> op te voeren in het ETM kunnen gasgestookte centrales meer competitief
+            worden met kolencentrales, bijvoorbeeld.
             </p>
 
-        {% endif %}
+	        <h4>Elektriciteitsoverschotten</h4>
+
+	        <p> 
+			Het scenario heeft <strong>{{future.dashboard_total_number_of_excess_events }}</strong> uren overschotten, 
+			van de totale <strong> 8,760 </strong> uren die er totaal in een jaar zitten. Hieronder zie je wat er 
+			gebeurt met de overschotten.
+	        
+			{% chart 163 %}
+	        Een overzicht van de overschotten van elektriciteit en hoe deze in het scenario wordt ingezet in {{ settings.end_year }}.
+	        {% endchart %}
 
 
-        <p> Het scenario heeft <strong>{{future.dashboard_total_number_of_excess_events }}</strong> uren overschotten, van de totale <strong> 8,760 </strong> uren die er totaal in een jaar zitten. Hieronder zie je wat er gebeurt met de overschotten.
-        {% chart 163 %}
-          Een overzicht van de overschotten van elektriciteit en hoe deze in het scenario wordt ingezet.
-        {% endchart %}
-
-
-        <h3> A3. Winstgevendheid </h3>
-        {% if settings.merit_order_enabled %}
+        	<h4> Winstgevendheid </h4>
 
             <p>
-              Betrouwbaarheid van (elektriciteits)aanbod en de winstgevendheid van centrales zijn direct met elkaar gelinkt.
-              Dispatchble centrales maken winst als ze veel draaiuren hebben, liefst op momenten dat de elektriciteitsprijs
-              hoog is.
-              Een betrouwbaar elektriciteitssysteem heeft echter back-up centrales nodig om extreme pieken op te vangen
-              die maar een paar keer per jaar optreden. Die centrales hebben dus typisch weinig draaiuren.
+            Betrouwbaarheid van (elektriciteits)aanbod en de winstgevendheid van centrales zijn direct met elkaar gelinkt.
+            Dispatchble centrales maken winst als ze veel draaiuren hebben, liefst op momenten dat de elektriciteitsprijs 
+			hoog is.
+            Een betrouwbaar elektriciteitssysteem heeft echter back-up centrales nodig om extreme pieken op te vangen die 
+			maar een paar keer per jaar optreden. Die centrales hebben dus typisch weinig draaiuren.
             </p>
 
-            <p>
-              In jouw scenario is {{ 100 | minus: future.profitability_percentage | round: 1 }}% van de centrales
-              verliesgevend. Dit betekent dat ze hun investeringen niet terugverdienen (oranje in onderstaande tabel)
-              of zelfs hun OPEX (operational expenditure) niet dekken (rood).
-            </p>
+	        <!-- Unprofitable plants -->
+	        	{% if future.profitability_percentage < 100 %}
 
-            {% chart 140 %}
-              Winstgevendheid van elektriciteitscentrales.
-            {% endchart %}
+	            <p>
+	            In dit scenario is {{ 100 | minus: future.profitability_percentage | round: 1 }}% van de centrales verliesgevend.
+	            Dit betekent dat ze hun investeringen (CAPEX) niet terugverdienen (oranje in onderstaande tabel)
+	            of zelfs hundraaikosten (OPEX) niet dekken (rood).
+	            	{% chart 140 %}
+	              	Winstgevendheid van elektriciteitscentrales in { settings.end_year }}.
+	            	{% endchart %}
 
-            <p>
-              Verliesgevende centrales zullen waarschijnlijk op den duur uit bedrijf worden genomen.
-              Je kunt de winstgevendheid van het centralepark vergroten door de vraag toe te laten nemen.
-              Ook het verlagen van elektriciteitsopwek met lage marginale kosten (zoals zon en wind) kan de
-              winstgevendheid van dispatchable centrales verhogen.
-            </p>
-        {% endif %}
+	            Het is niet te verwachten dat verliesgevende centrales lang open zullen blijven, tenzij de elektriciteitsmarkt 
+				hervormd wordt met een capaciteitsvergoeding bijvoorbeeld. Om winstgevendheid te verbeteren kan men:
+	              <ul>
+	                <li><strong>De elektriciteitsvraag laten toenemen</strong>: door centrales meer draaiuren te geven kun je hun winstgevendheid
+	                  verbeteren.</li>
+	                <li><strong>Concurrerende productie verlagen</strong>: elektriciteit uit wind en zon-PV heeft geen marginale kosten,
+	                  daardoor worden conventionele (dispatchable) centrales uit de markt 'gedrukt'.</li>
+	                <li><strong>Centrales sluiten</strong>: dit vergroot het realisme van het scenario en kan de kosten voor het systeem
+	                  verlagen.</li>
+	              </ul>
+	            </p>
+	        	{% endif %}
 
 
-        <h3> A4. Leveringszekerheid </h3>
+        	<h4> Leveringszekerheid </h4>
 
-        <p>
-          De 'loss of load expectation' (LOLE) is het verwachte aantal uur per jaar dat er
-          niet aan de elektriciteitsvraag kan worden voldaan met het opgestelde productievermogen.
-          Een LOLE groter dan nul betekent niet direct dat het licht uitgaat omdat elektriciteit kan worden
-          geïmporteerd of uit batterijen kan worden gehaald. In Nederland wordt een LOLE van 4 u/j
-          acceptabel geacht.
-        </p>
+        	<p>
+          	De 'loss of load expectation' (LOLE) is het verwachte aantal uur per jaar dat er
+          	niet aan de elektriciteitsvraag kan worden voldaan met het opgestelde productievermogen.
+          	Een LOLE groter dan nul betekent niet direct dat het licht uitgaat omdat elektriciteit kan worden
+          	geïmporteerd of uit batterijen kan worden gehaald. In Nederland wordt een LOLE van 4 u/j
+          	acceptabel geacht.
+        	</p>
 
-        <p>
-          In jouw scenario staat {{ future.dispatchable_electricity_production_capacity | autoscale: 'MW' }}
-          betrouwbaar (dispatchable) productievermogen opgesteld. Dit resulteert in
-          {{ future.dashboard_security_of_supply | without_unit }} uur 'loss of load' per jaar.
-        </p>
+        	<p>
+          	In jouw scenario staat {{ future.dispatchable_electricity_production_capacity | autoscale: 'MW' }}
+          	betrouwbaar (dispatchable) productievermogen opgesteld. Dit resulteert in
+          	{{ future.dashboard_security_of_supply | without_unit }} uur 'loss of load' per jaar.
+        	</p>
 
-        {% chart 111 %}
-          Betrouwbaarheid van elektriciteitsopwek.
-        {% endchart %}
+			<p>
+        	Onderstaande figuur geeft aan hoe de piekvraag naar elektriciteit zich verhoud tot de hoeveelheid 
+			regelbaar en niet-regelbaar productievermogen.
+			 
+				{% chart 111 %}
+          		Betrouwbaarheid van elektriciteitsopwek in {{ settings.end_year }}.
+        		{% endchart %}
+			
+			</p>
+        	
+			<p>
+          	Net zoals LOLE is het aantal black-out uren een maat voor de betrouwbaarheid van je elektriciteitssysteem.
+          	Het verschil met LOLE is dat nu ook de mogelijkheid van import en opslag in batterijen wordt meegenomen om
+          	tekorten op te vangen.
+        	</p>
 
-        <p>
-          Net zoals LOLE is het aantal black-out uren een maat voor de betrouwbaarheid van je elektriciteitssysteem.
-          Het verschil met LOLE is dat nu ook de mogelijkheid van import en opslag in batterijen wordt meegenomen om
-          tekorten op te vangen.
-        </p>
-
-        {% if future.dashboard_blackout_hours > 1 %}
-          <p>
+        		{% if future.dashboard_blackout_hours > 1 %}
+          	<p>
             Je scenario heeft {{ future.dashboard_blackout_hours | without_unit }} blackout-uren.
             Installeer meer back-up capaciteit in de aanbod-sectie van het ETM of verlaag de vraag naar elektriciteit.
             Stroom uit zon en wind hebben beperkte betrouwbaarheid omdat het niet altijd waait en de zon niet continu
             schijnt.
-          </p>
-        {% else %}
-          <p>
-            Je scenario heeft geen black-outs.
-          </p>
-        {% endif %}
+          	</p>
+        		{% else %}
+          	<p>
+            	Je scenario heeft geen black-outs.
+          	</p>
+        		{% endif %}
+			
+			{% endif %}
 
 
         <h3> A5. Elektriciteitsnetten </h3>
-          <p>De energietransitie heeft gevolgen voor het elektriciteitsnet. In de tabel kan je de piekbelasting en bruikbare capaciteit zien op de verschillende netniveau's.
-          </p>
-          {% chart 223 %}
-          Deze tabel geeft een overzicht van de impact op de netten op laagspanning (ls), middenspanning (ms) en hoogspanning (hs), evenals de tussenliggende transformatoren. Voor detailvragen over de netten zul je altijd de netbeheerder moeten bevragen.
-          {% endchart %}
+       	<p>
+		De energietransitie heeft gevolgen voor het elektriciteitsnet. In de tabel kan je de piekbelasting en 
+		bruikbare capaciteit zien op de verschillende netniveau's.
+        </p>
+        
+  			{% chart 223 %}
+          	Deze tabel geeft een overzicht van de impact op de netten op laagspanning (ls), middenspanning (ms)
+ 			en hoogspanning (hs), evenals de tussenliggende transformatoren. Voor detailvragen over de netten 
+			zul je altijd contact op moeten nemen met de netbeheerder.
+          	{% endchart %}
 
     <h2 class="banner">B. Warmtenetten</h2>
-      <p>
-      Hieronder zie je een overzicht van de vraag (links) en aanbod (rechts) op het warmtenet. Wanneer er te weinig warmteaanbod is in het scenario, dan springt er een gas back-up centrale aan. Wanneer er overschotten zijn, dan zie je dit aan de linker kant in het lichtroze.
+    <p>
+    Hieronder zie je een overzicht van de vraag (links) en aanbod (rechts) op het warmtenet. Wanneer er te 
+	weinig warmteaanbod is in het scenario, dan springt er een gas back-up ketel aan. Wanneer er overschotten zijn, 
+	dan zie je dit aan de linkerkant in het lichtroze.
         {% chart 234 %}
-          Vraag (links) en aanbod (rechts) op het warmtenet in {{ settings.end_year }}.
+        Vraag (links) en aanbod (rechts) op het warmtenet in {{ settings.end_year }}.
         {% endchart %}
-      </p>
+  	</p>
 
-      {% if future.energy_heat_network_unused_steam_hot_water_in_heat_network_mekko > 0.0 %}
+  	{% if future.energy_heat_network_unused_steam_hot_water_in_heat_network_mekko > 0.0 %}
         <p>
           Er wordt
           {{ future.energy_heat_network_unused_steam_hot_water_in_heat_network_mekko | autoscale: 'PJ'}}
@@ -359,9 +393,10 @@
           <li><strong>Productieverlaging</strong>: verlaag het aantal WKK-centrales in landbouw en industrie.</li>
           <li><strong>Vraagtoename</strong>: vergroot de vraag van de sectoren in het linkerdeel van de grafiek.</li>
         </ul>
-      {% else %}
+   	{% else %}
         <p>
-          Er is onvoldoende warmte geproduceerd. Een back-up gasketel wordt nu ingezet om het tekort van {{ future.energy_heat_network_backup_heater_network_gas_in_heat_network_mekko | autoscale: 'PJ'}} op te vangen.
+        Er is onvoldoende warmte geproduceerd. Een back-up gasketel wordt nu ingezet om het tekort van 
+		{{ future.energy_heat_network_backup_heater_network_gas_in_heat_network_mekko | autoscale: 'PJ'}} op te vangen.
         </p>
 
         <p>Je kunt vraag en aanbod als volgt op elkaar afstemmen:</p>
@@ -371,22 +406,41 @@
             landbouw en industrie.</li>
           <li><strong>Vraagverlaging</strong>: reduceer de warmtevraag van de sectoren in het linkerdeel van de grafiek.</li>
         </ul>
-      {% endif %}
+ 	{% endif %}
 
 
     <h2 class="banner">C. Waterstof</h2>
     {% if future.hydrogen_used_in_scenario > 0.0 %}
-    <p> Wanneer je waterstof inzet in het scenario krijg je een waterstofvraag. Deze waterstof moet ergens vandaan komen. Hieronder zie je links de vraag van waterstof en rechts het aanbod. Wanneer jouw aanbod (door bijvoorbeeld elektriciteitsoverschotten om te zetten in waterstof) lager is dan de vraag, dan gaat het scenario importeren. Wanneer het aanbod hoger is dan de vraag, dan zie je overschotten. Wanneer of de waterstofimport of het -overschot groot is ben je als {{ settings.area_name }} gevoelig voor de waterstofprijs.
-    </p>
+    	<p> 
+		Er wordt in dit scenario waterstof ingezet. Deze waterstof moet ergens vandaan komen. 
+		Hieronder zie je links de vraag van waterstof en rechts het aanbod. Wanneer jouw aanbod 
+		lager is dan de 
+		vraag, wordt waterstof geïmporteerd. Wanneer het aanbod hoger is dan de vraag, dan 
+		zie je overschotten. Indien of de waterstofimport of het -overschot groot is ben je 
+		als {{ settings.area_name }} gevoelig voor de waterstofprijs.
+    		{% chart 214 %}
+      		Waterstofvraag- (links) en aanbod (rechts) in {{ settings.end_year }}.
+    		{% endchart %}
+    	</p>
 
-    {% chart 214 %}
-      Waterstofvraag- (links) en aanbod (rechts).
-    {% endchart %}
+		<p>
+		Hieronder staat weergegeven hoe de waterstof in het scenario ieder uur wordt ingezet. Rechtsonder de figuur
+		kun je kiezen om het hele jaar weer te geven of slechts één week van het jaar.
+		
+    		{% chart 226 %}
+      		Gebruik van waterstof door het jaar heen in {{ settings.end_year }}
+    		{% endchart %}
+ 		</p>
 
-    {% chart 227 %}
-      Opslag van waterstof
-    {% endchart %}
-    {% else %}
+		<p>
+		Hieronder staat weergegeven hoe groot de benodigde opslagcapaciteit voor waterstof ten minste moet zijn. Rechtsonder de figuur
+		kun je kiezen om het hele jaar weer te geven of slechts één week van het jaar.
+		
+    		{% chart 227 %}
+      		Hoeveelheid opgeslagen waterstof door het jaar heen in {{ settings.end_year }}
+    		{% endchart %}
+ 		</p>
+   	{% else %}
     <p>
     Er wordt geen waterstof gebruikt in het scenario.
     </p>
@@ -394,34 +448,37 @@
 
 
 
-
-
-
     <h2 class="banner">D. Biomassa</h2>
     {% if future.bio_footprint > 0.0 %}
-    Hieronder zie je eerste de totale primaire energievraag van biomassa en daarna de eigen productie en import van alle biomassa in het scenario.
+    <p>
+	Hieronder zie je eerst de totale primaire energievraag van biomassa en daarna de eigen productie en import van alle biomassa in het scenario.
+	De breedte van de kolom geeft aan hoeveel biomassa wordt ingezet in iedere sector. De kleuren geven de verschillende soorten biomassa aan.
 
-    {% chart 166 %}
-      Primaire biomassavraag
-    {% endchart %}
+    	{% chart 166 %}
+      	Primaire biomassavraag in {{ settings.end_year }}
+    	{% endchart %}
+
+    	{% chart 237 %}
+      	Biomassa productie en import in {{ settings.end_year }}
+    	{% endchart %}
     </p>
 
-    {% chart 237 %}
-      Biomassa productie en import in het scenario.
-    {% endchart %}
-    </p>
     {% else %}
+	<p>
     Er wordt geen biomassa gebruikt in het scenario
+	</p>
     {% endif %}
 
     <h2 class="banner">E. Fossiel</h2>
-    <p> Hieronder is een overzicht te zien van de totale primaire energievraag van het scenario. Hier is goed te zien wanneer er nog fossiele vraag in het scenario zit. Let op: Geïmporteerde elektriciteit en waterstof kunnen ook nog een fossiele bron hebben.
-    {% chart 52 %}
-    Overzicht van de primaire energievraag in het scenario
-    {% endchart %}
+    <p> 
+	Hieronder is een overzicht te zien van de totale primaire energievraag van het scenario. 
+	Hier is goed te zien of er nog fossiel energiegebruik in het scenario zit. Let op: Geïmporteerde 
+	elektriciteit en waterstof kunnen ook nog een fossiele bron hebben.
+    	{% chart 52 %}
+    	Overzicht van de primaire energievraag in {{ settings.end_year }}
+    	{% endchart %}
     </p>
-    </p>
-
+   
     <h1>4. Import en export van energie </h1>
 
 
@@ -434,14 +491,14 @@
 
 
         {% chart 76 %}
-          Import en export van energie in het eindjaar. In dit 'waterval'-diagram wordt export negatief gerekend.
+          Import en export van energie in {{ settings.end_year }}. In dit 'waterval'-diagram wordt export negatief gerekend.
           De laatste kolom beschrijft netto import (of export) van alle energie met naburige landen of regio's.
         {% endchart %}
 
       {% else %}
         <p>
           Jouw scenario heeft -{{ future.total_net_energy_import | round: 1 | autoscale: 'MJ'}} netto energie-export
-          in het einjaar.
+          in {{ settings.end_year }}.
         </p>
 
         {% chart 76 %}
@@ -451,34 +508,41 @@
 
       {% endif %}
 
-          <h1>5. Kosten </h1>
-          <p>
-            De kosten van het toekomstige energiesysteem zijn ruwweg
-            {{ future.dashboard_total_costs | autoscale: 'euro' }} mld EUR per jaar.
-            Kosten zijn opgebouwd uit:
+	<h1>5. Kosten </h1>
+		<p>
+        De kosten van het toekomstige energiesysteem zijn ruwweg
+        {{ future.dashboard_total_costs | autoscale: 'euro' }} mld EUR per jaar. In {{ settings.start_year}} waren
+		de kosten nog {{ present.dashboard_total_costs | autoscale: 'euro' }} mld EUR per jaar.
+			
+        De kosten in {{ settings.end_year }} zijn opgebouwd uit:
 
             <ul>
               <li><strong>Investeringen</strong>.</li>
-              <li><strong>Brandstofkosten</strong>: gebruikmakend van de prijzen welke gezet kunnen worden in de kosten sectie.</li>
-              <li><strong>Operation and Maintenance (O&M)</strong>: zowel vast als variabel.</li>
-              <li><strong>Weighted average costs of capital (WACC)</strong>: met lineaire afschrijving.</li>
-              <li><strong>Decommisioning</strong>: alleen relevant voor kerncentrales.</li>
+              <li><strong>Brandstofkosten</strong>: gebruikmakend van de prijzen die gezet kunnen worden in de kosten sectie.</li>
+              <li><strong>Onderhoud en Beheer</strong>: zowel vast als variabel.</li>
+              <li><strong>Gewogen gemiddelde kapitaalkosten (WACC)</strong>: met lineaire afschrijving.</li>
+              <li><strong>Ontmanteling</strong>: alleen relevant voor kerncentrales.</li>
             </ul>
 
-            Kosten nemen <strong>geen</strong> subsidies en belastingen mee.
+   		Kosten nemen <strong>geen</strong> subsidies en belastingen mee.
 
-          </p>
+        </p>
 
           {% chart 48 %}
-            Deze grafiek geeft een overzicht van de totale kosten van het energiesysteem.
+                        Deze grafiek geeft een overzicht van de totale kosten van het energiesysteem in {{ settings.start_year }} en {{ settings.end_year }}.
           {% endchart %}
 
   <h1 class="banner">6. Actieagenda</h1>
-      Er zijn veel keuzes gemaakt waarvan de impact concreter wordt als je kijkt wat dit per jaar betekent. In de werkelijkheid ontwikkelt zich natuurlijk niet alles lineair. Wanneer dat wel zou gebeuren dan betekent dat het volgende.
-      <p>
+	<p>
+     Er zijn veel keuzes gemaakt waarvan de impact concreter wordt als je kijkt wat dit per jaar betekent. 
+	In de werkelijkheid ontwikkelt zich natuurlijk niet alles lineair. Als dat wel zou gebeuren zou dat het volgende betekenen.
+	</p>
+
+    <p>
         Het scenario overbrugt {{ future.scenario_duration | round: 0 }} jaar. De aannames in het scenario
-        resulteren er onder andere in dat <strong>jaarlijks</strong> de volgende aantallen moeten worden gerealiseerd
-      </p>
+        resulteren er onder andere in dat <strong>jaarlijks</strong> gemiddeld de volgende aantallen moeten 
+		worden gerealiseerd:
+    </p>
 
       <p>
       <ul class="user-values">
@@ -489,35 +553,36 @@
         <li>{{ future.number_of_residences_built_per_year | round: 1 | without_unit }} gebouwde woningen</li>
         <li>{{ future.number_of_residences_removed_from_natural_gas | round: 1 | without_unit }} van het aardgas afgehaalde woningen</li>
       </ul>
-      <p>
+	</p>
 
       <h1 class="banner">7. Biovoetafdruk en hernieuwbaarheid</h1>
-
-        <h2>Biovoetafdruk</h2>
+   		<h2 class="banner">A. Biovoetafdruk</h2>
           <p>
             Je scenario gebruikt {{ future.bio_footprint | round: 1 }} keer het beschikbare landbouwareaal voor de productie
-            van biobrandstoffen zoals hout, bio-ethanol, biogas en biodiesel.
+            van biobrandstoffen zoals hout, bio-ethanol, biogas en biodiesel. Hieronder zie je hoeveel biomassa iedere sector
+			gebruikt.
           </p>
 
           {% chart 168 %}
-            Biovoetafdruk per energiedrager.
+            Biovoetafdruk per energiedrager in {{ settings.end_year }}.
           {% endchart %}
 
-        <h2>Hernieuwbaarheid</h2>
-
+   		<h2 class="banner">B. Hernieuwbaarheid</h2>
+		<p>
           Het percentage hernieuwbare energie in jouw scenario is {{ future.renewability_percentage | round: 1 }}%.
 
           {% chart 49 %}
             Hernieuwbaarheidspercentage van energetisch eindgebruik.
           {% endchart %}
 
-          Voor de opwek van elektriciteit is het hernieuwbaarheidspercentage
+           Voor de opwek van elektriciteit is het hernieuwbaarheidspercentage
           {{ future.share_of_renewable_electricity | times: 100 | round: 1 }}%.
 
-          {% chart 112 %}
+          {% chart 212 %}
             Hernieuwbaarheidspercentage van elektriciteitsproductie.
           {% endchart %}
 
+		</p>
   <h1 class="banner">8. Discussie en aandachtspunten </h1>
 
   <ul class="summary-extras">
@@ -525,7 +590,7 @@
     <!-- begin: national CO2 targets -->
       {% if future.co2_reduction_percentage > 40.0 %}
         <li class="target-met">
-          De gerealiseerde CO<sub>2</sub>-reductie van
+          De gerealiseerde CO<sub>2</sub>-reductie in {{ settings.end_year }} van
           {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
           gaat verder dan de Nederlandse ambitie voor 2030 van 49%.
 
@@ -539,7 +604,7 @@
         <li class="target-missed">
           De gerealiseerde CO<sub>2</sub>-reductie van
           {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
-          haalt de Nederlandse ambitie voor 2030 van 40% niet.
+          haalt de Nederlandse ambitie voor 2030 van 49% niet.
 
         </li>
       {% endif %}
@@ -839,7 +904,7 @@
 
     {% endif %}
 
-  <h1 class="banner">9. Appendixes</h1>
+  <h1 class="banner">9. Appendices</h1>
     <h2>Appendix A: Schuifjes-instellingen</h2>
 
   In deze appendix wordt een lijst gegeven van alle schuifjes die van hun startwaarde zijn verplaatst.

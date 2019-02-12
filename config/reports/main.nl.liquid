@@ -514,14 +514,14 @@
         {{ future.dashboard_total_costs | autoscale: 'euro' }} mld EUR per jaar. In {{ settings.start_year}} waren
 		de kosten nog {{ present.dashboard_total_costs | autoscale: 'euro' }} mld EUR per jaar.
 			
-        Kosten in {{ settings.end_year }} zijn opgebouwd uit:
+        De kosten in {{ settings.end_year }} zijn opgebouwd uit:
 
             <ul>
               <li><strong>Investeringen</strong>.</li>
               <li><strong>Brandstofkosten</strong>: gebruikmakend van de prijzen die gezet kunnen worden in de kosten sectie.</li>
-              <li><strong>Operation and Maintenance (O&M)</strong>: zowel vast als variabel.</li>
-              <li><strong>Weighted average costs of capital (WACC)</strong>: met lineaire afschrijving.</li>
-              <li><strong>Decommisioning</strong>: alleen relevant voor kerncentrales.</li>
+              <li><strong>Onderhoud en Beheer</strong>: zowel vast als variabel.</li>
+              <li><strong>Gewogen gemiddelde kapitaalkosten (WACC)</strong>: met lineaire afschrijving.</li>
+              <li><strong>Ontmanteling</strong>: alleen relevant voor kerncentrales.</li>
             </ul>
 
    		Kosten nemen <strong>geen</strong> subsidies en belastingen mee.
@@ -529,7 +529,7 @@
         </p>
 
           {% chart 48 %}
-            Deze grafiek geeft een overzicht van de totale kosten van het energiesysteem in {{ settings.end_year }}.
+                        Deze grafiek geeft een overzicht van de totale kosten van het energiesysteem in {{ settings.start_year }} en {{ settings.end_year }}.
           {% endchart %}
 
   <h1 class="banner">6. Actieagenda</h1>
@@ -553,7 +553,7 @@
         <li>{{ future.number_of_residences_built_per_year | round: 1 | without_unit }} gebouwde woningen</li>
         <li>{{ future.number_of_residences_removed_from_natural_gas | round: 1 | without_unit }} van het aardgas afgehaalde woningen</li>
       </ul>
-      <p>
+	</p>
 
       <h1 class="banner">7. Biovoetafdruk en hernieuwbaarheid</h1>
    		<h2 class="banner">A. Biovoetafdruk</h2>
@@ -904,7 +904,7 @@
 
     {% endif %}
 
-  <h1 class="banner">9. Appendixes</h1>
+  <h1 class="banner">9. Appendices</h1>
     <h2>Appendix A: Schuifjes-instellingen</h2>
 
   In deze appendix wordt een lijst gegeven van alle schuifjes die van hun startwaarde zijn verplaatst.

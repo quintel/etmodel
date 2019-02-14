@@ -2,39 +2,61 @@
   %h1 Wat is er nieuw in het Energietransitiemodel?
 
   %section
-    %h2 Update waterstofberekening
+    %h2 1. Update huizenvoorraad en isolatie
     %p
-      Het ETM modelleert nu waterstofvraag en -aanbod op uurbasis. Het ETM zorgt
-      ervoor dat waterstofvraag en -aanbod ieder uur per jaar met elkaar in
-      balans zijn. Dit gebeurt door waterstof productieoverschotten automatisch
-      op te slaan in een buffer, waterstof uit deze buffer te halen tijdens
-      vraagpieken en eventuele overschotten te importeren/exporteren. Er zijn
-      nieuwe grafieken op uurbasis toegevoegd voor waterstofproductie,
-      waterstofvraag en waterstofopslag.
-      %a(href="https://pro.energytransitionmodel.com/scenario/supply/hydrogen/hydrogen-production")
-        Klik hier om de updates te bekijken in het ETM
-      en ga naar de
-      %a(href="https://github.com/quintel/documentation/blob/613e0f3b9566cf038ac47271e8591ca05d418c9b/general/Hydrogen.md")
-        documentatie van waterstof
-      voor meer details.
-    %p(style="text-align: center")
-      = image_tag 'pages/whats_new/h2_chart_nl.png', alt: ''
+      Het ETM modelleert nu met vijf verschillende huizentypes waarvan in het startjaar te zien is wat het gemiddelde label per huizentype is. Voor een toekomstig scenario is per huizentype in te vullen tot hoe ver er geïsoleerd gaat worden. Kom er nu snel achter wat een labelsprong van de woningen doet voor de energievraag van Nederland, jouw provincie of gemeente.
+      %a(href="https://pro.energytransitionmodel.com/scenario/demand/households/insulation")
+      %p(style="text-align: center")
+        = image_tag 'pages/whats_new/households_insulation_chart_nl.png', alt: ''
 
-    %h2 Veel nieuwe regio's kunnen hun toekomstige energiesysteem verkennen
+    %h2 2. Hybride warmtepomp op waterstof
+    %p
+      Het is nu mogelijk om een hybride warmtepomp met waterstof in te zetten voor alle woningen. Kijk snel wat dit doet voor de waterstofvraag. Vind zelf uit hoeveel windmolens je nodig hebt om genoeg waterstof te produceren.
+
+      %a(href="https://pro.energytransitionmodel.com/scenario/demand/households/space-heating-hot-water")
+        Ga hier naar biomassa in het model.
+
+    %h2 3. Biomassa verder uitgewerkt
+    %p
+      Biomassa zit nu veel uitgebreider in het Energietransitiemodel. Er is een uitsplitsing naar type biomassavraag per sector. Daarnaast is ook de ruimtelijk consequentie van van deze biomassavraag te vinden.
+
+      %a(href="https://pro.energytransitionmodel.com/scenario/supply/biomass/overview")
+        Ga hier naar biomassa in het model.
+      %p(style="text-align: center")
+        = image_tag 'pages/whats_new/biomass_nl.png', alt: ''
+
+    %h2 4. Tijdsopgeloste grafieken
+    %p
+      Voor veel grafiek is het nu mogelijk om te schakelen tussen jaarlijks overzicht of een uurlijkse grafiek. Klik hiervoor bovenop de de 'schakelaar'.
+      %a(href="https://pro.energytransitionmodel.com/scenario/supply/electricity_renewable/wind-turbines")
+        Ga voor een voorbeeld naar de grafiek voor elektriciteitsvraag en -aanbod
+      %p(style="text-align: center")
+        = image_tag 'pages/whats_new/electricity_nl.png', alt: ''
+
+    %h2 5. Opensource documentatie via ETLocal
+    %p
+      Wij streven ernaar om alles in het model voor iedereen zo open en toegankelijk als mogelijk te maken. Veel technische details zijn te vinden wanneer je achter een schuifje op de '?' klikt. Voor de echte die-hards is al onze code te vinden op github. Daarnaast hebben wij nu alle regiospecifieke data inzichtelijker gemaakt via ETLocal. Dit is een kaart van Nederland waar je kunt zoeken naar jouw provincie of gemeente. Alle inputdata voor de gemeente of provincie is hier terug te vinden.
+      %a(href="https://local.energytransitionmodel.com/")
+        Ga hier naar ETLocal
+      %p(style="text-align: center")
+        = image_tag 'pages/whats_new/etlocal_nl.png', alt: ''
+
+
+    %h2 6. Heel veel regio's zijn de afgelopen periode toegevoegd. Verken nu ook het energiesysteem van o.a. de volgende gebieden:
     %ul
+      %li Amsterdam en Rotterdam
+      %li Regio Midden-Holland (Gouda, Bodegraven-Reeuwijk, Waddinxveen, Krimpenerwaard en Zuidplas)
+      %li De gemeentes in Flevoland
+      %li Gemeente Leiden
       %li Denemarken en Duitsland
       %li Alle 48 gemeenten in Noord-Holland
       %li 16 Utrechtse gemeenten (U16) en 6 gecombineerde regio’s in Utrecht
       %li 4 provincies: Noord-Holland, Overijssel, Flevoland (update) and Friesland (update)
       %li Gemeente De Friese Meren
 
-    %h2 Verder hebben we:
-    %ul
-      %li Stuwmeren toegevoegd voor energieopslag (alleen voor Duitsland)
-      %li
-        %a(href="https://pro.energytransitionmodel.com/scenario/demand/industry/other")
-          De overige industrie sector
-        verbeterd door nieuwe schuifjes toe te voegen
+    %p
+      %a(href="https://pro.energytransitionmodel.com/")
+        De hele lijst van regio's is hier te vinden
 
   %section
     %p= link_to "← #{t('back_to_model')}", root_path, class: 'button'

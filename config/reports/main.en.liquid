@@ -381,7 +381,7 @@
     <h2>Electricity production</h2>
 
       <p>
-        In your scenario, most electricity is produced by the 
+        In your scenario, most electricity is produced by the
         {{ future.biggest_electricity_producer_name | i18n: 'output_element_series'  }} power plant
         ({{ future.biggest_electricity_producer_value | autoscale: 'MJ'}}).
       </p>
@@ -821,46 +821,7 @@
     {% endif %}
   {% endif %}
 
-  <!-- Inconsistency between heating options and hot water options -->
-
-  {% if future.biggest_space_heater_share_name != future.biggest_water_heater_share_name %}
-
-    <h3>Space heating and hot water technologies</h3>
-    <p>
-      The space heating technologies in your scenario are not consistent with those producing hot
-      water. You have chosen to heat most houses with a
-      {{ future.biggest_space_heater_share_name | i18n: 'output_element_series' }} whereas most of the hot water
-      in households is produced by a
-      {{ future.biggest_water_heater_share_name | i18n: 'output_element_series'  }}. Did you choose that
-      on purpose?
-    </p>
-
-    <p>
-      NOTE: The combi-technology shares (percentages) in the households space heating and hot water
-      sections represent the market share of these technologies. This means that if you choose to
-      use technology A for space heating in 100% of the houses, and technology B for hot water in
-      100% of the households, every household containes one of both A and B.
-    </p>
-  {% endif %}
-
   <!-- Inconsistency between heating options and insulation -->
-
-  {% if future.increase_in_insulation <= 0 %}
-    {% if future.share_of_heatpump_all_in_space_heating_production_in_households > 0.1 %}
-      <h3>Heat pumps and insulation</h3>
-      <p>
-        The amount of heat pumps installed in your scenario is not consistent with the level of insulation in your scenario.
-        You have installed {{ future.share_of_heatpump_air_in_space_heating_production_in_households | times: 100 | round: 1 }}%
-        air heat pumps and {{ future.share_of_heatpump_ground_in_space_heating_production_in_households | times: 100 | round: 1 }}%
-        ground heat pumps. The insulation level of old houses is {{ future.insulation_level_old_houses | round: 1 }} Rc
-        and the insulation level of new houses is {{ future.insulation_level_new_houses | round: 1 }} Rc.
-        The risk is that these heat pumps will not be able to supply enough heat during cold days
-        or that the load on the electricity network will increase significantly.
-
-        You might consider increasing the level of insulation or decreasing the share of heat pumps in your scenario.
-      </p>
-    {% endif %}
-  {% endif %}
 
   <!-- If curtailment occors, why not build more flex or industry use of H2? -->
   {% if future.electricity_curtailed > 0 %}
@@ -969,7 +930,7 @@
 
   {% chart 142 %}
     This table shows an overview of the investment cost of heat and electricity producing
-    technologies. The investment costs are shown for both the start scenario ({{ settings.start_year }}) 
+    technologies. The investment costs are shown for both the start scenario ({{ settings.start_year }})
     and for the future year. In both cases a 'green-field' approach is taken: no previously installed
     technologies are assumed. The last column shows the difference between the investment costs
     of the two scenarios.
@@ -1010,7 +971,7 @@
       </blockquote>
 
       <p>
-        Although Quintel strives to properly include all important features of the energy system, the ETM necessarily 
+        Although Quintel strives to properly include all important features of the energy system, the ETM necessarily
         has a limited scope and should not be used as a substitute for critical thought. On the contrary! Hopefully, the
         user is inspired to challenge results and limits of the model and starts thinking outside of the boundaries of
         the Energy Transition Model.

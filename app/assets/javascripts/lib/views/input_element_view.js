@@ -47,7 +47,7 @@
    * so that other numbers can be displayed with the same precisioin with
    * toFixed().
    */
-  floatPrecision = function (value) {
+  floatPrecision = function (value, delta) {
     var precision = 0, asString;
 
     if (_.isNumber(value)) {
@@ -59,6 +59,12 @@
         precision = value.toString().split('.');
         precision = precision[1] ? precision[1].length : 0;
       }
+    }
+
+    if (delta != undefined && delta > 100) {
+      // Don't use decimal places for sliders whose range of values exceeds the
+      // typical width of the slider.
+      precision = 0;
     }
 
     return precision;
@@ -74,7 +80,10 @@
   conversionsFromModel = function (model) {
     var conversions   = [],
         modelConvs    = model.conversions(),
-        mPrecision    = floatPrecision(model.get('step_value')),
+        mPrecision    = floatPrecision(
+          model.get('step_value'),
+          model.get('max_value') - model.get('min_value')
+        ),
         customDefault = false,
         i;
 
@@ -166,8 +175,11 @@
     this.uid        = _.uniqueId('uconv_');
     this.default    = data.default;
 
-    this.precision  = data.precision ||
-        originalPrecision - floatPrecision(1 / this.multiplier);
+    if (data.precision == undefined) {
+      this.precision = originalPrecision - floatPrecision(1 / this.multiplier);
+    } else {
+      this.precision = data.precision;
+    }
 
     if (this.precision < 0) {
         this.precision = 0;

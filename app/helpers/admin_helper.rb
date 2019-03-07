@@ -15,7 +15,7 @@ module AdminHelper
     base_options     = Api::Area::DEPENDABLE_ATTRIBUTES
     model_dependency = model.area_dependency&.dependent_on.presence
 
-    if model_dependency && !base_options.include?(model_dependency)
+    if model_dependency && !base_options.include?(model_dependency.to_sym)
       base_options.map { |v| [v, v] } + [
         [
           "#{model_dependency} - unsupported attribute, will always be hidden",

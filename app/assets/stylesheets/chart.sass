@@ -10,20 +10,20 @@ $chart-header-icon-color: #8895b2
   margin: 0 2px 15px 0
   header
     background: $chart-header-background-color
+    display: flex
     height: 30px
     h3
-      float: left
-      margin: 0 0 3px 0
+      color: $chart-header-title-color
+      flex: 1
       font-size: 14px
       line-height: 30px
-      color: $chart-header-title-color
-      padding: 0 0 0 11px
+      margin: 0 0 3px 0
       overflow: hidden
+      padding: 0 0 0 11px
       text-overflow: ellipsis
-      max-width: 320px
       white-space: nowrap
     .actions
-      float: right
+      margin-left: 10px
       a
         color: $chart-header-icon-color
         text-decoration: none

@@ -27,8 +27,8 @@
         .block_container{:class => show_or_not, :id => "block_container_#{block.id}", 'data-block_id' => block.id}
           .block{:id => "block_#{block.id}",
               'data-title' => t("output_element_series.#{block.label}"),
-              'data-description' => block.description.short_content,
-              'data-description_id' => block.description.andand.id}
+              'data-description' => block.description&.short_content,
+              'data-description_id' => block.description&.id}
             .header{:class => block.group.downcase}= t("output_element_series.#{block.label}")
           .balloon-tip
 

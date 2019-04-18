@@ -1,6 +1,10 @@
+# frozen_string_literal: true
+
 class Interface
-  def initialize(tab = 'demand', sidebar = nil, slide = nil)
-    @tab = tab
+  DEFAULT_TAB = 'demand'
+
+  def initialize(tab = nil, sidebar = nil, slide = nil)
+    @tab = tab || DEFAULT_TAB
     @sidebar = sidebar
     @slide = slide
   end

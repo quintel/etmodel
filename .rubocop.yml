@@ -1,4 +1,6 @@
-# require: rubocop-rspec
+require:
+  - rubocop-performance
+  - rubocop-rspec
 
 AllCops:
   Exclude:
@@ -32,7 +34,7 @@ Metrics/BlockLength:
 #     my_parameters
 #   ))
 #
-Style/FirstParameterIndentation:
+Layout/FirstParameterIndentation:
   EnforcedStyle: consistent
 
 # Indent "when" by two spaces.
@@ -66,7 +68,7 @@ Style/FirstParameterIndentation:
 #   call_something(param_one
 #     param_two, param_three)
 #
-Style/AlignParameters:
+Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
 # Spaces inside interpolated strings.
@@ -77,11 +79,8 @@ Style/AlignParameters:
 #   # Good
 #   "#{ ok }"
 
-Style/SpaceInsideStringInterpolation:
+Layout/SpaceInsideStringInterpolation:
   EnforcedStyle: space
-
-Style/SpaceInsideBrackets:
-  Enabled: false
 
 # Only suggest guard clauses when a block is three or more lines long.
 Style/GuardClause:
@@ -101,10 +100,10 @@ Style/GuardClause:
 #     "three" => 3
 #   }
 #
-Style/IndentHash:
+Layout/IndentHash:
   EnforcedStyle: consistent
 
-Style/IndentationWidth:
+Layout/IndentationWidth:
   Enabled: false
 
 # Indent array values with two spaces only.
@@ -120,7 +119,7 @@ Style/IndentationWidth:
 #     3
 #   ]
 #
-Style/IndentArray:
+Layout/IndentArray:
   EnforcedStyle: consistent
 
 # Multi-line method calls are indented by two spaces only.
@@ -138,14 +137,14 @@ Style/IndentArray:
 #   MyClass.where(thing: true, another: 'yes')
 #     .order(:created_at)
 #     .limit(5)
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
-Style/MultilineMethodCallIndentation:
+Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
 # Permit, but don't mandate, a space after the not operator.
-Style/SpaceAfterNot:
+Layout/SpaceAfterNot:
   Enabled: false
 
 # No one-line nested modules.
@@ -165,6 +164,10 @@ Style/ClassAndModuleChildren:
     - 'app/models/network/technologies/*'
     - 'app/models/market/foundations/*'
 
+# Prefer alias_method.
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
 # Temporary Settings
 # ##################
 
@@ -173,5 +176,5 @@ Style/ClassAndModuleChildren:
 Metrics/AbcSize:
   Max: 15 # Default is 15.
 
-Style/DotPosition:
+Layout/DotPosition:
   Enabled: false

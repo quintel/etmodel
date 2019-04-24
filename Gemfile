@@ -74,6 +74,10 @@ group :test, :development do
   gem 'rspec-rails', "~> 3.5"
   gem 'watchr'
 
+  gem 'rubocop', '~> 0.67.2', require: false
+  gem 'rubocop-performance',  require: false
+  gem 'rubocop-rspec',        require: false
+
   gem 'pry-byebug', platform: :mri
 end
 

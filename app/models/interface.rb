@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Interface
-  DEFAULT_TAB = 'demand'
+  DEFAULT_TAB = 'overview'
 
   def initialize(tab = nil, sidebar = nil, slide = nil)
     @tab = tab || DEFAULT_TAB

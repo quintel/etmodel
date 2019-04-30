@@ -3,7 +3,7 @@ class @Router extends Backbone.Router
     "report" : "report"
     ":tab/:sidebar(/:slide)" : "load_slides"
     "" : "load_default_slides"
-
+    
   report: =>
     # pass
 
@@ -25,7 +25,7 @@ class @Router extends Backbone.Router
     $("#sidebar li##{sidebar}").addClass 'active'
 
   ui_fragments: ->
-    (Backbone.history.getFragment() || 'demand/households').split('/')
+    (Backbone.history.getFragment() || 'overview/introduction').split('/')
 
   load_default_slides: =>
     [tab, sidebar, slide] = @ui_fragments()

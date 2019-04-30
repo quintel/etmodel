@@ -1,24 +1,9 @@
 class @Router extends Backbone.Router
   routes:
-    "demand/:sidebar(/:slide)" : "demand"
-    "costs/:sidebar(/:slide)"  : "costs"
-    "overview/:sidebar(/:slide)": "overview"
-    "supply/:sidebar(/:slide)" : "supply"
-    "flexibility/:sidebar(/:slide)" : "flexibility"
-    "data/:sidebar(/:slide)" : "data"
     "report" : "report"
     ":tab/:sidebar(/:slide)" : "load_slides"
     "" : "load_default_slides"
-
-  demand:  (sidebar, slide) => @load_slides('demand', sidebar, slide)
-  costs:   (sidebar, slide) => @load_slides('costs', sidebar, slide)
-  overview: (sidebar, slide) => @load_slides('overview', sidebar, slide)
-  supply:  (sidebar, slide) => @load_slides('supply', sidebar, slide)
-  flexibility:  (sidebar, slide) => @load_slides('flexibility', sidebar, slide)
-  data:  (sidebar, slide) => @load_slides('data', sidebar, slide)
-
-  # root:
-
+    
   report: =>
     # pass
 

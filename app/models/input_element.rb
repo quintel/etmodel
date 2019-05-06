@@ -85,6 +85,16 @@ class InputElement < ActiveRecord::Base
     slide.try :url
   end
 
+  # Allows the input to be used as an argument to play_url to link directly to
+  # the correct page.
+  #
+  # For example:
+  #
+  #   play_url(*input.url_components)
+  def url_components
+    slide ? slide.url_components : []
+  end
+
   # Silly IE8 doesn't understand &apos; entity which is added in views
   def ie8_sanitize(s)
     return '' if s.blank?

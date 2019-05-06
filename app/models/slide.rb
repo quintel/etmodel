@@ -75,7 +75,18 @@ class Slide < ActiveRecord::Base
   end
 
   def url
-    "#{sidebar_item.tab.key}/#{sidebar_item.key}/#{short_name}" rescue nil
+    url_components.join('/')
+  end
+
+  # Allows the slide to be used as an argument to play_url to link directly to
+  # the correct page.
+  #
+  # For example:
+  #
+  #   play_url(*slide.url_components)
+  def url_components
+    tab = sidebar_item&.tab
+    sidebar_item && tab ? [tab.key, sidebar_item.key, short_name] : []
   end
 
   def removed_from_interface?

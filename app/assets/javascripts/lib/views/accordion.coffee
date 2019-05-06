@@ -44,11 +44,14 @@ class @Accordion
       # settings hash (to restore properly the locked charts); after that the
       # charts are loaded according to the accordion events
       if @bootstrapped
-        App.charts.load_into_available_holder(
-          default_chart, alternate: alternate_chart
-        )
+        if App.settings.charts_enabled()
+          App.charts.load_into_available_holder(
+            default_chart, alternate: alternate_chart
+          )
 
-        App.charts.forEach((chart) -> chart.view.update_header())
+          App.charts.forEach((chart) -> chart.view.update_header())
+        else
+          App.call_api()
 
   open_right_tab: ->
     $("h3.selected").trigger 'click'

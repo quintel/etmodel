@@ -1,12 +1,13 @@
 class ScenariosController < ApplicationController
-  include MainInterfaceController.new(:play)
+  include MainInterfaceController.new(:play, :play_multi_year_charts)
 
   before_action :ensure_valid_browser
-  before_action :find_scenario, only: [:show, :load]
+  before_action :find_scenario, only: [:show, :load, :play_multi_year_charts]
   before_action :require_user, only: [:index, :new, :merge]
   before_action :redirect_compare, only: :compare
   before_action :setup_comparison, only: [:compare, :weighted_merge]
   before_action :store_last_etm_page, :prevent_browser_cache, only: :play
+  before_action :myc_content_security_policy, only: :play_multi_year_charts
 
   # Raised when trying to save a scenario, but the user does not have a
   # scenario in progress. See quintel/etengine#542.
@@ -129,9 +130,40 @@ class ScenariosController < ApplicationController
   def play
     @selected_slide_key = @interface.current_slide.short_name
     respond_to do |format|
-      format.html {render layout: 'etm'}
+      format.html { render :play, layout: 'etm' }
       format.js
     end
+  end
+
+  # A "synonym" of `play`, which acts as an entrypoint for the scenario editor
+  # used by the multi-year charts interface.
+  #
+  # MYC loads the ETM in an iframe, which prohibits redirects; redirecting
+  # causes the loss of session data when the visitor has third-party cookies
+  # disabled.
+  #
+  # This action loads the requested sceanrio with a minimal interface,
+  # optionally sending the user straight to a specific input.
+  #
+  # GET /scenario/myc/:id
+  def play_multi_year_charts
+    Current.setting.reset!
+
+    if @scenario.nil? || !@scenario.loadable?
+      redirect_to root_path, notice: 'Scenario not found'
+      return
+    end
+
+    Current.setting.api_session_id = @scenario.id
+
+    if params[:input] && (input = InputElement.find_by_key(params[:input]))
+      Current.setting.last_etm_page = play_url(*input.url_components)
+      @interface = Interface.new(*input.url_components)
+    end
+
+    @interface.variant = Interface::LiteVariant.new
+
+    play
   end
 
   def compare
@@ -248,5 +280,16 @@ class ScenariosController < ApplicationController
       else
         local_global_scenarios_url(ids.join(','))
       end
+    end
+
+    # Internal: For requests originating in the "multi-year charts" application,
+    # we must permit pages to be loaded in an iframe.
+    def myc_content_security_policy
+      url = APP_CONFIG[:multi_year_charts_url]
+
+      return unless url
+
+      response.set_header('X-Frame-Options', "allow-from #{url}")
+      response.set_header('Content-Security-Policy', "frame-ancestors #{url}")
     end
 end

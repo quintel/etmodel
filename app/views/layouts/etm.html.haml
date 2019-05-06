@@ -11,4 +11,5 @@
   = render "input_elements/input_element"
   = render "input_elements/value_selector"
   = render "converters/converter_details"
-= render template: 'layouts/application', locals: {body_id: 'model'}
+
+= render template: 'layouts/application', locals: { body_id: 'model', body_class: @interface.variant.body_class }

@@ -101,6 +101,7 @@ Etm::Application.routes.draw do
     constraints: { id: /[0-9a-z-]+/ }, as: :report
 
   # This is the main action
+  get '/scenario/myc/:id' => 'scenarios#play_multi_year_charts'
   get '/scenario(/:tab(/:sidebar(/:slide)))' => 'scenarios#play', as: :play
 
   resources :output_elements, only: [:index, :show] do

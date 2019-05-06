@@ -8,6 +8,7 @@
         json.settings         settings_as_json(Current.setting)
         json.debug_js         admin?
         json.env              Rails.env
-        json.show_results_tip show_results_tip?
+        json.show_results_tip @interface.variant.results_tip? && show_results_tip?
+        json.charts_enabled   @interface.variant.charts?
       end.html_safe %>;
 </script>

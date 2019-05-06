@@ -41,6 +41,9 @@ class @Setting extends Backbone.Model
       locked_charts:
         charts.where(locked: true).map((chart) -> chart.lock_list_id()))
 
+  charts_enabled: ->
+    window.globals.charts_enabled
+
   # Is MO enabled?
   merit_order_enabled: ->
     try

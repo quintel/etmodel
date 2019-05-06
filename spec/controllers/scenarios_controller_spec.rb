@@ -133,6 +133,78 @@ describe ScenariosController, vcr: true do
         end
       end
 
+      context 'when loading the MYC play endpoint' do
+        # Rendering the view triggers requests to ETEngine.
+        render_views false
+
+        before do
+          # Create a basic interface.
+          tab = FactoryBot.create(:tab, key: Interface::DEFAULT_TAB)
+          sidebar_item = FactoryBot.create(:sidebar_item, tab: tab)
+          FactoryBot.create(:slide, sidebar_item: sidebar_item)
+        end
+
+        context 'with a valid scenario' do
+          it 'sets the API session ID' do
+            get :play_multi_year_charts, params: { id: 123 }
+            expect(session[:setting].api_session_id).to eq('123')
+          end
+
+          it 'opens the play page' do
+            get :play_multi_year_charts, params: { id: 123 }
+            expect(response).to render_template(:play)
+          end
+        end
+
+        context 'with an invalid scenario' do
+          let(:ete_scenario_mock) { nil }
+
+          it 'does not set the API session ID' do
+            get :play_multi_year_charts, params: { id: 123 }
+            expect(session[:setting].api_session_id).to be_nil
+          end
+
+          it 'redirects to the root page' do
+            get :play_multi_year_charts, params: { id: 123 }
+            expect(response).to redirect_to(root_url)
+          end
+        end
+
+        context 'with a valid input named' do
+          let!(:input) do
+            FactoryBot.create(
+              :input_element,
+              key: 'hello',
+              slide: FactoryBot.create(:slide)
+            )
+          end
+
+          it 'opens the play page' do
+            get :play_multi_year_charts, params: { id: 123, input: 'hello' }
+            expect(response).to render_template(:play)
+          end
+
+          it 'sets the last_etm_page URL' do
+            get :play_multi_year_charts, params: { id: 123, input: 'hello' }
+
+            expect(session[:setting].last_etm_page)
+              .to eq(play_url(*input.url_components))
+          end
+        end
+
+        context 'with an invalid input named' do
+          it 'opens the play page' do
+            get :play_multi_year_charts, params: { id: 123, input: 'hello' }
+            expect(response).to render_template(:play)
+          end
+
+          it 'does not set the last_etm_page URL' do
+            get :play_multi_year_charts, params: { id: 123, input: 'hello' }
+            expect(session[:setting].last_etm_page).to be_nil
+          end
+        end
+      end
+
       describe "#reset" do
         it "should reset a scenario" do
           get :reset

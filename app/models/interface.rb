@@ -3,10 +3,44 @@
 class Interface
   DEFAULT_TAB = 'overview'
 
-  def initialize(tab = nil, sidebar = nil, slide = nil)
+  attr_accessor :variant
+
+  # Describes the features which are enabled in the normal ETM interface.
+  class StandardVariant
+    def charts?
+      true
+    end
+
+    def results_tip?
+      true
+    end
+
+    def body_class
+      ''
+    end
+  end
+
+  # Disables a number of features not needed when loading a minimal ETM
+  # interface in an iframe.
+  class LiteVariant
+    def charts?
+      false
+    end
+
+    def results_tip?
+      false
+    end
+
+    def body_class
+      'liteui'
+    end
+  end
+
+  def initialize(tab = nil, sidebar = nil, slide = nil, variant = StandardVariant.new)
     @tab = tab || DEFAULT_TAB
     @sidebar = sidebar
     @slide = slide
+    @variant = variant
   end
 
   # Returns the available tabs (AR object)

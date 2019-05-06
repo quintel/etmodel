@@ -1,0 +1,12 @@
+// Custom styles for the main scenario page (sliders, charts), which hides many
+// of the extraneous elements such that the tabs, slides, and sliders may be
+// shown in a small iframe.
+body.liteui
+  header#top, footer, #charts_wrapper, #title .help
+    display: none !important
+
+  #wrapper, #content
+    min-width: initial
+
+  #content #active-content
+    padding-bottom: 20px

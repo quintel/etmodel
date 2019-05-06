@@ -8,6 +8,9 @@ development: &DEV
     # presently supported only when "api_url" is "http://beta.et-engine.com".
     etmoses_url: https://beta-moses.energytransitionmodel.com
 
+    # URL for the Multi-Year Charts application.
+    multi_year_charts_url: http://localhost:3005
+
     # This sets the url we use as API proxy. The proxying is handled
     # by nginx or a local rack-based proxy
     api_proxy_url: /ete_proxy

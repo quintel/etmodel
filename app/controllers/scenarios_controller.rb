@@ -45,9 +45,6 @@ class ScenariosController < ApplicationController
   end
 
   def show
-    if @scenario.nil? || !@scenario.loadable?
-      redirect_to root_path, notice: "Scenario not found" and return
-    end
     if @scenario.description
       localized = @scenario.description_for_locale(I18n.locale)
       text = localized.present? ? localized : @scenario.description
@@ -105,10 +102,6 @@ class ScenariosController < ApplicationController
   # POST /scenarios/:id/load
   #
   def load
-    if @scenario.nil? || !@scenario.loadable?
-      redirect_to play_path, notice: "Scenario not found" and return
-    end
-
     scenario_attrs = { scenario_id: @scenario.id }
 
     Current.setting = Setting.load_from_scenario(@scenario)
@@ -148,11 +141,6 @@ class ScenariosController < ApplicationController
   # GET /scenario/myc/:id
   def play_multi_year_charts
     Current.setting.reset!
-
-    if @scenario.nil? || !@scenario.loadable?
-      redirect_to root_path, notice: 'Scenario not found'
-      return
-    end
 
     Current.setting.api_session_id = @scenario.id
 
@@ -223,9 +211,13 @@ class ScenariosController < ApplicationController
 
     # Finds the scenario from id
     def find_scenario
-      @scenario = Api::Scenario.find(params[:id], params: {detailed: true})
+      @scenario = Api::Scenario.find(params[:id], params: { detailed: true })
+
+      unless @scenario.loadable?
+        redirect_to root_path, notice: 'Sorry, this scenario cannot be loaded'
+      end
     rescue ActiveResource::ResourceNotFound
-      nil
+      redirect_to root_path, notice: 'Scenario not found'
     end
 
     # Remembers the most recently visited ETM page so that the visitor can be

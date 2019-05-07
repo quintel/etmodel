@@ -99,6 +99,19 @@ describe ScenariosController, vcr: true do
             expect(response).to be_redirect
           end
         end
+
+        context 'with a non-existent scenario' do
+          before do
+            allow(Api::Scenario)
+              .to receive(:find)
+              .and_raise(ActiveResource::ResourceNotFound.new(nil))
+          end
+
+          it 'shows information about the scenario' do
+            get :show, params: { id: user_scenario.id }
+            expect(response).to be_redirect
+          end
+        end
       end
 
       context 'with a scenario for a non-existent region' do
@@ -157,11 +170,15 @@ describe ScenariosController, vcr: true do
         end
 
         context 'with an invalid scenario' do
-          let(:ete_scenario_mock) { nil }
+          before do
+            allow(Api::Scenario)
+              .to receive(:find)
+              .and_raise(ActiveResource::ResourceNotFound.new(nil))
+          end
 
           it 'does not set the API session ID' do
-            get :play_multi_year_charts, params: { id: 123 }
-            expect(session[:setting].api_session_id).to be_nil
+            expect { get(:play_multi_year_charts, params: { id: 123 }) }
+              .not_to change(session[:setting], :api_session_id)
           end
 
           it 'redirects to the root page' do

@@ -1,0 +1,36 @@
+%main.intro
+  %h1 Multi-year charts
+  %p.description
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis
+    dolor ut mi vulputate, nec dictum felis cursus. Mauris gravida sollicitudin
+    sem, quis pulvinar dui finibus at. Nulla blandit, mauris.
+
+  - if current_user
+    - if current_user.saved_scenarios.count.zero?
+      %p.description
+        %strong= t('local_global.no_scenarios')
+      %ol.description.instructions
+        %li= t('local_global.how.step1_html', root_path: root_path)
+        %li
+          = t('local_global.how.step2')
+          %span#settings-menu-example
+            = t('header.settings')
+            &rarr;
+            = t('header.save_scenario')
+          #settings-menu-image
+            = image_tag "pages/compare/settings-menu.#{I18n.locale}.png"
+        %li= t('local_global.how.step3')
+
+    - else
+      %p.description
+        %strong Select a scenario&hellip;
+
+      = form_tag multi_year_charts_path, method: 'post', class: 'select-scenarios' do
+        %ul#available-scenarios
+          = render partial: 'scenarios_slice', locals: { scenarios: @scenarios }
+        -# #commit
+        -#   = submit_tag "#{t('scenario.local_vs_global')} →", name: 'combine'
+  - else
+    %p.description
+      %strong
+        = t('local_global.account_required_html', login_path: login_path)

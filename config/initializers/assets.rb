@@ -21,6 +21,7 @@ Rails.application.config.assets.precompile += %w(
   i18n/en.js
   i18n/nl.js
   ie.css
+  multi_year_charts.css
   report.css
 )
 

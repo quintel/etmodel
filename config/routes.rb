@@ -139,6 +139,9 @@ Etm::Application.routes.draw do
   get '/local-global' => 'compare#index', as: :local_global
   get '/local-global/:ids' => 'compare#show', as: :local_global_scenarios
 
+  get '/multi-year-charts'      => 'multi_year_charts#index', as: :multi_year_charts
+  post '/multi-year-charts'     => 'multi_year_charts#create'
+
   %w[404 422 500].each do |code|
     get "/#{ code }", to: 'errors#show', code: code
   end

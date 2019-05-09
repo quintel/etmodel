@@ -27,6 +27,14 @@
           = link_to(local_global_path) do
             = t('intro.local_vs_global.try_it')
             →
+      - if APP_CONFIG[:multi_year_charts_url]
+        %li.multi-year-charts
+          %h4= t('intro.multi_year_charts.title')
+          %p= t('intro.multi_year_charts.description')
+          %p
+            = link_to(multi_year_charts_path) do
+              = t('intro.multi_year_charts.try_it')
+              →
       %li.quintel
         %h4= t('intro.about_us.title')
         %p= t('intro.about_us.description')

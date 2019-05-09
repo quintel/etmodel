@@ -68,8 +68,12 @@ body#root
 
       padding-left: 68px
       width: 216px
+      &.multi-year-charts
+        background-image: asset-url("pages/home/multi_year_charts.svg")
       &.quintel
         background-image: asset-url("pages/home/quintel.png")
+      &.multi-year-charts + .quintel
+        width: 562px
     h4
       font-size: 14px
       margin: 2px 0 0 0

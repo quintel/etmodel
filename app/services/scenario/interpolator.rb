@@ -1,7 +1,7 @@
 # Receives a 2050 Api::Scenario and creates scenarios for 2020, 2030, and 2040
 # with input values interpolated from the 2050 scenario.
 class Scenario::Interpolator
-  INTERPOLATE_YEARS = [2020, 2030, 2040].freeze
+  INTERPOLATE_YEARS = [2023, 2030, 2040].freeze
 
   def self.call(api_scenario)
     new(api_scenario).scenarios

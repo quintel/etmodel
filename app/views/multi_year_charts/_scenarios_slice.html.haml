@@ -1,5 +1,5 @@
 - scenarios.each do |ss|
-  - if ss.scenario&.loadable?
+  - if can_use_as_myc_scenario?(ss)
     %li
       %button{ name: 'scenario_id', value: ss.scenario.id }
         %span.area= t(ss.scenario.area_code)

@@ -209,82 +209,82 @@ class ScenariosController < ApplicationController
 
   private
 
-    # Finds the scenario from id
-    def find_scenario
-      @scenario = Api::Scenario.find(
-        params[:id].to_i,
-        params: { detailed: true }
+  # Finds the scenario from id
+  def find_scenario
+    @scenario = Api::Scenario.find(
+      params[:id].to_i,
+      params: { detailed: true }
+    )
+
+    unless @scenario.loadable?
+      redirect_to root_path, notice: 'Sorry, this scenario cannot be loaded'
+    end
+  rescue ActiveResource::ResourceNotFound
+    redirect_to root_path, notice: 'Scenario not found'
+  end
+
+  # Remembers the most recently visited ETM page so that the visitor can be
+  # brought back here if they reload, or return to the site later.
+  def store_last_etm_page
+    render_not_found && return unless @interface.current_tab
+
+    tab_key     = @interface.current_tab.key
+    sidebar_key = @interface.try(:current_sidebar_item).try(:key)
+    slide_key   = @interface.try(:current_slide).try(:short_name)
+
+    Current.setting.last_etm_page =
+      play_url(tab_key, sidebar_key, slide_key)
+  end
+
+  def prevent_browser_cache
+    response.headers['Cache-Control'] = 'no-cache, no-store, max-age=0, must-revalidate'
+    response.headers['Pragma'] = 'no-cache'
+    response.headers['Expires'] = 'Fri, 01 Jan 1990 00:00:00 GMT'
+  end
+
+  def setup_comparison
+    scenario_ids = params[:scenario_ids] || []
+    @scenarios = scenario_ids.map{|id| Api::Scenario.find id, params: {detailed: true}}
+    if @scenarios.empty?
+      flash[:error] = "Please select one or more scenarios"
+      redirect_to scenarios_path and return
+    end
+  end
+
+  def redirect_compare
+    if params[:merge]
+      redirect_to(
+        weighted_merge_scenarios_url(params.permit(scenario_ids: []))
       )
 
-      unless @scenario.loadable?
-        redirect_to root_path, notice: 'Sorry, this scenario cannot be loaded'
-      end
-    rescue ActiveResource::ResourceNotFound
-      redirect_to root_path, notice: 'Scenario not found'
+      return
     end
 
-    # Remembers the most recently visited ETM page so that the visitor can be
-    # brought back here if they reload, or return to the site later.
-    def store_last_etm_page
-      render_not_found && return unless @interface.current_tab
-
-      tab_key     = @interface.current_tab.key
-      sidebar_key = @interface.try(:current_sidebar_item).try(:key)
-      slide_key   = @interface.try(:current_slide).try(:short_name)
-
-      Current.setting.last_etm_page =
-        play_url(tab_key, sidebar_key, slide_key)
+    if params[:combine]
+      redirect_to(local_global_comparison_url)
+      return
     end
+  end
 
-    def prevent_browser_cache
-      response.headers['Cache-Control'] = 'no-cache, no-store, max-age=0, must-revalidate'
-      response.headers['Pragma'] = 'no-cache'
-      response.headers['Expires'] = 'Fri, 01 Jan 1990 00:00:00 GMT'
+  def local_global_comparison_url
+    ids = (params.permit(scenario_ids: [])[:scenario_ids] || [])
+      .map(&:to_i).reject(&:zero?)
+
+    if ids.empty?
+      scenarios_url
+    else
+      local_global_scenarios_url(ids.join(','))
     end
+  end
 
-    def setup_comparison
-      scenario_ids = params[:scenario_ids] || []
-      @scenarios = scenario_ids.map{|id| Api::Scenario.find id, params: {detailed: true}}
-      if @scenarios.empty?
-        flash[:error] = "Please select one or more scenarios"
-        redirect_to scenarios_path and return
-      end
-    end
+  # Internal: For requests originating in the "multi-year charts" application,
+  # we must permit pages to be loaded in an iframe.
+  def myc_content_security_policy
+    url = APP_CONFIG[:multi_year_charts_url]
 
-    def redirect_compare
-      if params[:merge]
-        redirect_to(
-          weighted_merge_scenarios_url(params.permit(scenario_ids: []))
-        )
+    return unless url
 
-        return
-      end
-
-      if params[:combine]
-        redirect_to(local_global_comparison_url)
-        return
-      end
-    end
-
-    def local_global_comparison_url
-      ids = (params.permit(scenario_ids: [])[:scenario_ids] || [])
-        .map(&:to_i).reject(&:zero?)
-
-      if ids.empty?
-        scenarios_url
-      else
-        local_global_scenarios_url(ids.join(','))
-      end
-    end
-
-    # Internal: For requests originating in the "multi-year charts" application,
-    # we must permit pages to be loaded in an iframe.
-    def myc_content_security_policy
-      url = APP_CONFIG[:multi_year_charts_url]
-
-      return unless url
-
-      response.set_header('X-Frame-Options', "allow-from #{url}")
-      response.set_header('Content-Security-Policy', "frame-ancestors #{url}")
-    end
+    response.set_header('X-Frame-Options', "allow-from #{url}")
+    response.set_header('Content-Security-Policy', "frame-ancestors #{url}")
+  end
 end

@@ -51,7 +51,7 @@ class Constraint < ActiveRecord::Base
   accepts_nested_attributes_for :description, :area_dependency
 
   scope :ordered, -> { order('position') }
-  scope :default, -> { where('position IS NOT NULL') }
+  scope :default, -> { where('position IS NOT NULL').ordered }
   scope :enabled, -> { where(disabled: false) }
 
   scope :gquery_contains, ->(search) { where("`gquery_key` LIKE ?", "%#{search}%") }
@@ -72,7 +72,7 @@ class Constraint < ActiveRecord::Base
   #   Raised if one of the keys did not match a Constraint in the DB.
   #
   def self.for_dashboard!(keys)
-    return Constraint.default.ordered if !keys || keys.none?
+    return Constraint.default if !keys || keys.none?
 
     raise IllegalConstraintKey if keys.any?(&:blank?)
 
@@ -93,7 +93,7 @@ class Constraint < ActiveRecord::Base
   def self.for_dashboard(keys)
     for_dashboard!(keys)
   rescue IllegalConstraintKey, NoSuchConstraint
-    Constraint.default.ordered
+    Constraint.default
   end
 
   # INSTANCE METHODS ---------------------------------------------------------

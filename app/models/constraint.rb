@@ -71,21 +71,29 @@ class Constraint < ActiveRecord::Base
   # @raise [NoSuchConstraint]
   #   Raised if one of the keys did not match a Constraint in the DB.
   #
-  def self.for_dashboard(keys)
+  def self.for_dashboard!(keys)
     return Constraint.default.ordered if !keys || keys.none?
 
     raise IllegalConstraintKey if keys.any?(&:blank?)
 
     constraints = Constraint.enabled.where(key: keys.uniq)
 
-    # Maps the given keys to the retrieved constraints.
-    keys.to_enum.with_index.each_with_object([]) do |(key, index), ordered|
-      if constraint = constraints.detect { |c| c.key == key }
-        ordered[index] = constraint
-      else
-        raise NoSuchConstraint.new(key)
-      end
+    keys.each do |key|
+      raise(NoSuchConstraint, key) if constraints.none? { |c| c.key == key }
     end
+
+    constraints
+  end
+
+  # Given an array of keys, returns the Constraints which match those keys. If
+  # one or more constraints do not exist, the default constraints are returned
+  # instead.
+  #
+  # @see Constraint.for_dashboard!
+  def self.for_dashboard(keys)
+    for_dashboard!(keys)
+  rescue IllegalConstraintKey, NoSuchConstraint
+    Constraint.default.ordered
   end
 
   # INSTANCE METHODS ---------------------------------------------------------

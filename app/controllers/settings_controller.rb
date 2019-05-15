@@ -73,7 +73,9 @@ class SettingsController < ApplicationController
 
     # Assert that the keys are valid; exceptions are raised (and caught
     # below) otherwise.
-    constraints = Constraint.for_dashboard(keys).reject(&:not_allowed_in_this_area)
+    constraints = Constraint
+      .for_dashboard!(keys)
+      .reject(&:not_allowed_in_this_area)
 
     session[:dashboard] = keys
 

@@ -29,12 +29,13 @@ describe Constraint do
       [FactoryBot.create(:constraint, position: 0)]
     end
 
+    let(:constraints) { described_class.for_dashboard(keys) }
+
     context 'when an array of keys' do
       let(:keys) { %w[total_primary_energy co2_reduction] }
-      let(:constraints) { described_class.for_dashboard(keys) }
 
       before do
-        keys.each{ |k| FactoryBot.create(:constraint, key: k) }
+        keys.each { |k| FactoryBot.create(:constraint, key: k) }
       end
 
       it 'returns the same as for_dashboard!' do
@@ -44,7 +45,6 @@ describe Constraint do
 
     context 'when given an invalid key' do
       let(:keys) { %w[nope] }
-      let(:constraints) { described_class.for_dashboard(keys) }
 
       it 'returns the default constraints' do
         expect(constraints).to eq(default_constraints)
@@ -53,7 +53,6 @@ describe Constraint do
 
     context 'when given an empty key' do
       let(:keys) { [''] }
-      let(:constraints) { described_class.for_dashboard(keys) }
 
       it 'returns the default constraints' do
         expect(constraints).to eq(default_constraints)

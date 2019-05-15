@@ -49,7 +49,7 @@ class Interface
   end
 
   def current_tab
-    @current_tab ||= Tab.find_by_key @tab
+    @current_tab ||= (Tab.find_by_key(@tab) || Tab.find_by_key(DEFAULT_TAB))
   end
 
   def sidebar_items

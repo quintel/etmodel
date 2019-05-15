@@ -64,7 +64,7 @@ class SettingsController < ApplicationController
   # PUT /settings/dashboard
   #
   def update_dashboard
-    unless params[:dash] && params[:dash].respond_to?(:to_h)
+    unless params[:dash]&.respond_to?(:to_h)
       render json: { error: 'Invalid constraints hash' }, status: :bad_request
       return
     end
@@ -81,11 +81,10 @@ class SettingsController < ApplicationController
 
     render status: :ok, json: {
       constraints: constraints,
-      html:        constraint_html_as_json(constraints) }
-
+      html: constraint_html_as_json(constraints)
+    }
   rescue Constraint::IllegalConstraintKey
     render json: { error: 'Invalid constraints' }, status: :bad_request
-
   rescue Constraint::NoSuchConstraint => e
     render json: { error: e.message }, status: :bad_request
   end

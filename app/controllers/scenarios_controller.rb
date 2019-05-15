@@ -211,7 +211,10 @@ class ScenariosController < ApplicationController
 
     # Finds the scenario from id
     def find_scenario
-      @scenario = Api::Scenario.find(params[:id], params: { detailed: true })
+      @scenario = Api::Scenario.find(
+        params[:id].to_i,
+        params: { detailed: true }
+      )
 
       unless @scenario.loadable?
         redirect_to root_path, notice: 'Sorry, this scenario cannot be loaded'

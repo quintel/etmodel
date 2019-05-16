@@ -2,8 +2,6 @@
 
 # Fetches and presents scenario reports and summaries.
 class ReportsController < ApplicationController
-  include MainInterfaceController.new(:show)
-
   before_action :start_scenario_with_param, only: :show
   layout 'report'
 

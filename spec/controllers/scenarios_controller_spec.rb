@@ -23,6 +23,68 @@ describe ScenariosController, vcr: true do
     end
   end
 
+  describe '#play' do
+    let!(:tab) { FactoryBot.create(:tab, key: Interface::DEFAULT_TAB) }
+    let!(:sidebar_item) { FactoryBot.create(:sidebar_item, tab: tab) }
+    let!(:slide) { FactoryBot.create(:slide, sidebar_item: sidebar_item) }
+
+    before do
+      session[:setting] = Setting.new(area_code: 'nl', api_session_id: 123)
+
+      allow(Api::Area)
+        .to receive(:find_by_country_memoized)
+        .and_return(FactoryBot.build(:api_area))
+    end
+
+    context 'with no tab, sidebar, or slide params' do
+      it 'loads the page' do
+        get :play
+        expect(response).to be_successful
+      end
+    end
+
+    context 'with valid tab, sidebar, and slide params' do
+      it 'loads the page' do
+        get :play, params: {
+          tab: tab.key,
+          sidebar: sidebar_item.key,
+          slide: slide.short_name
+        }
+
+        expect(response).to be_successful
+      end
+    end
+
+    context 'with valid tab, but invalid sidebar, and slide params' do
+      let!(:second_tab) { FactoryBot.create(:tab) }
+
+      it 'redirects to the standard play url' do
+        get :play, params: {
+          tab: second_tab.key,
+          sidebar: 'invalid',
+          slide: 'nope'
+        }
+
+        expect(response).to redirect_to(play_url)
+      end
+    end
+
+    context 'with valid tab, and sidebar, but invalid slide params' do
+      let!(:second_tab) { FactoryBot.create(:tab) }
+      let!(:second_sidebar_item) { FactoryBot.create(:sidebar_item, tab: tab) }
+
+      it 'redirects to the standard play url' do
+        get :play, params: {
+          tab: second_tab.key,
+          sidebar: second_sidebar_item.key,
+          slide: 'nope'
+        }
+
+        expect(response).to redirect_to(play_url)
+      end
+    end
+  end
+
   context "a regular user" do
     before do
       login_as user

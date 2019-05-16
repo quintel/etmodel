@@ -48,6 +48,10 @@ class Interface
     @tabs ||= Tab.frontend
   end
 
+  def valid?
+    current_tab && current_sidebar_item && current_slide
+  end
+
   def current_tab
     @current_tab ||= (Tab.find_by_key(@tab) || Tab.find_by_key(DEFAULT_TAB))
   end

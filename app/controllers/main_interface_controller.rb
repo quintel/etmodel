@@ -24,6 +24,11 @@ module MainInterfaceController
     def load_interface
       @interface = Interface.new(params[:tab], params[:sidebar], params[:slide])
 
+      # If the params request a sidebar item or slide which isn't present,
+      # redirect to the standard "play" URL so the user can continue their
+      # scenario.
+      redirect_to play_url, status: :moved_permanently unless @interface.valid?
+
       # The JS app will take care of fetching a scenario id, in the meanwhile
       # we use this variable to show all the items in the top menu
       @active_scenario = true

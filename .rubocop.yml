@@ -4,21 +4,36 @@ require:
 
 AllCops:
   Exclude:
-    - 'bin/**/*'
-    - 'config/routes.rb'
-    - 'config/unicorn/**/*'
-    - 'db/migrate/**/*'
-    - 'db/schema.rb'
-    - 'spec/support/**/*'
+  - 'bin/**/*'
+  - 'config/routes.rb'
+  - 'db/migrate/**/*'
+  - 'db/schema.rb'
+  - 'db/seeds.rb'
+  - 'vendor/**/*'
 
-# Limiting methods to 10 lines is a bit excessive; increase to 20.
-Metrics/MethodLength:
-  Max: 20 # Default is 10.
+Bundler/OrderedGems:
+  Enabled: false
+Gemspec/OrderedDependencies:
+  Enabled: false
 
-# Specs often have long describe/context blocks; this is fine.
-Metrics/BlockLength:
-  Exclude:
-    - 'spec/**/*'
+# Multi-line parameters should be indented by two spaces only.
+#
+#   # Bad
+#   call_something(param_one,
+#                  param_two,
+#                  param_three)
+#
+#   # Good
+#   call_something(
+#     param_one, param_two, param_three
+#   )
+#
+#   # Acceptable, but not as readable
+#   call_something(param_one
+#     param_two, param_three)
+#
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
 
 # Indent parameters with two spaces only.
 #
@@ -37,54 +52,21 @@ Metrics/BlockLength:
 Layout/FirstParameterIndentation:
   EnforcedStyle: consistent
 
-# Indent "when" by two spaces.
+# Indent array values with two spaces only.
 #
 #   # Bad
-#   case something
-#   when 0 then something
-#   when 1 then something_else
-#   end
-#
+#   my_array = [ 1,
+#                2,
+#                3 ]
 #   # Good
-#   case something
-#     when 0 then something
-#     when 1 then something_else
-#   end
-# Style/CaseIndentation:
-  # IndentOneStep: true
-
-# Multi-line parameters should be indented by two spaces only.
+#   my_array = [
+#     1,
+#     2,
+#     3
+#   ]
 #
-#   # Bad
-#   call_something(param_one,
-#                  param_two,
-#                  param_three)
-#
-#   # Good
-#   call_something(
-#     param_one, param_two, param_three)
-#
-#   # Acceptable, but not as readable
-#   call_something(param_one
-#     param_two, param_three)
-#
-Layout/AlignParameters:
-  EnforcedStyle: with_fixed_indentation
-
-# Spaces inside interpolated strings.
-#
-#   # Bad
-#   "#{ok}"
-#
-#   # Good
-#   "#{ ok }"
-
-Layout/SpaceInsideStringInterpolation:
-  EnforcedStyle: space
-
-# Only suggest guard clauses when a block is three or more lines long.
-Style/GuardClause:
-  MinBodyLength: 3 # Default is 1.
+Layout/IndentArray:
+  EnforcedStyle: consistent
 
 # Indent hash keys with two spaces only.
 #
@@ -103,25 +85,6 @@ Style/GuardClause:
 Layout/IndentHash:
   EnforcedStyle: consistent
 
-Layout/IndentationWidth:
-  Enabled: false
-
-# Indent array values with two spaces only.
-#
-#   # Bad
-#   my_array = [ 1,
-#                2,
-#                3 ]
-#   # Good
-#   my_array = [
-#     1,
-#     2,
-#     3
-#   ]
-#
-Layout/IndentArray:
-  EnforcedStyle: consistent
-
 # Multi-line method calls are indented by two spaces only.
 #
 #   # Bad
@@ -137,44 +100,40 @@ Layout/IndentArray:
 #   MyClass.where(thing: true, another: 'yes')
 #     .order(:created_at)
 #     .limit(5)
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
-Layout/MultilineMethodCallIndentation:
-  EnforcedStyle: indented
-
-# Permit, but don't mandate, a space after the not operator.
-Layout/SpaceAfterNot:
-  Enabled: false
-
-# No one-line nested modules.
-#
-#   # Bad:
-#   module One::Two
-#   end
-#
-#   # Good
-#   module One
-#     module Two
-#     end
-#   end
-Style/ClassAndModuleChildren:
-  Enabled: true
-  Exclude:
-    - 'app/models/network/technologies/*'
-    - 'app/models/market/foundations/*'
-
-# Prefer alias_method.
+# Prefer alias_method over alias
 Style/Alias:
   EnforcedStyle: prefer_alias_method
 
-# Temporary Settings
-# ##################
+# Only suggest guard clauses when a block is three or more lines long.
+Style/GuardClause:
+  MinBodyLength: 3 # Default is 1.
 
-# Many methods have a too-high ABC complexity. Refactor and reduce to the
-# default ABC size.
 Metrics/AbcSize:
-  Max: 15 # Default is 15.
+  Enabled: false
 
-Layout/DotPosition:
+# Ignore long blocks in specs.
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+
+# Ignore long comments in deploy configs.
+Metrics/LineLength:
+  Exclude:
+  - config/deploy.rb
+  - config/deploy/*.rb
+
+# Limiting methods to 10 lines is a bit excessive; increase to 20.
+Metrics/MethodLength:
+  Max: 20 # Default is 10.
+
+# Don't require methods to be in separate spec files.
+RSpec/FilePath:
+  Enabled: false
+
+RSpec/ExampleLength:
   Enabled: false

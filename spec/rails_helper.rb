@@ -103,6 +103,10 @@ RSpec.configure do |config|
     allow(Api::Area).to receive(:code_exists?).and_return(true)
   end
 
+  config.before(:each, type: :service) do
+    config.include ServicesHelper
+  end
+
   # Database
   # --------
 

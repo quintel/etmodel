@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_152301) do
+ActiveRecord::Schema.define(version: 2019_05_15_125123) do
 
   create_table "area_dependencies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
@@ -75,6 +75,22 @@ ActiveRecord::Schema.define(version: 2018_12_04_152301) do
     t.index ["slide_id"], name: "index_input_elements_on_slide_id"
   end
 
+  create_table "multi_year_chart_scenarios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "multi_year_chart_id", null: false
+    t.integer "scenario_id", null: false
+    t.index ["multi_year_chart_id"], name: "index_multi_year_chart_scenarios_on_multi_year_chart_id"
+    t.index ["scenario_id"], name: "index_multi_year_chart_scenarios_on_scenario_id"
+  end
+
+  create_table "multi_year_charts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "title", null: false
+    t.string "area_code", null: false
+    t.integer "end_year", null: false
+    t.datetime "created_at", null: false
+    t.index ["user_id"], name: "index_multi_year_charts_on_user_id"
+  end
+
   create_table "output_element_series", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "output_element_id"
     t.string "label"
@@ -117,44 +133,6 @@ ActiveRecord::Schema.define(version: 2018_12_04_152301) do
     t.index ["hidden"], name: "index_output_elements_on_hidden"
     t.index ["key"], name: "index_output_elements_on_key"
     t.index ["related_output_element_id"], name: "index_output_elements_on_related_output_element_id"
-  end
-
-  create_table "prediction_measures", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin", force: :cascade do |t|
-    t.integer "prediction_id"
-    t.string "name"
-    t.integer "impact"
-    t.integer "cost"
-    t.integer "year_start"
-    t.string "actor"
-    t.text "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer "year_end"
-    t.index ["prediction_id"], name: "index_prediction_measures_on_prediction_id"
-  end
-
-  create_table "prediction_values", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin", force: :cascade do |t|
-    t.integer "prediction_id"
-    t.float "value"
-    t.integer "year"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["prediction_id"], name: "index_prediction_values_on_prediction_id"
-    t.index ["year"], name: "index_prediction_values_on_year"
-  end
-
-  create_table "predictions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin", force: :cascade do |t|
-    t.integer "input_element_id"
-    t.integer "user_id"
-    t.boolean "expert"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text "description"
-    t.string "title"
-    t.string "area"
-    t.index ["area"], name: "index_predictions_on_area"
-    t.index ["input_element_id"], name: "index_predictions_on_input_element_id"
-    t.index ["user_id"], name: "index_predictions_on_user_id"
   end
 
   create_table "roles", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|

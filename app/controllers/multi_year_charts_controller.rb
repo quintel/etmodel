@@ -4,6 +4,7 @@ class MultiYearChartsController < ApplicationController
   layout 'multi_year_charts'
 
   before_action :ensure_valid_config
+  before_action :require_user, only: :create
 
   def index
     @scenarios = user_scenarios
@@ -14,11 +15,28 @@ class MultiYearChartsController < ApplicationController
     end
   end
 
+  # Creates a new MultiYearChart record based on the scenario specified in the
+  # params.
+  #
+  # Redirects to the external MYC app when successful.
+  #
+  # POST /multi-year-charts
   def create
-    base_id = params.require(:scenario_id)
-    scenarios = Scenario::Interpolator.call(Api::Scenario.find(base_id))
+    base_id = params.require(:scenario_id)&.to_i
 
-    redirect_to myc_url([*scenarios.map { |s| s['id'] }, base_id])
+    result = CreateMultiYearChart.call(
+      Api::Scenario.find(base_id),
+      current_user
+    )
+
+    if result.successful?
+      redirect_to helpers.myc_url(result.value)
+    else
+      flash.now[:error] = result.errors.join(', ')
+
+      @scenarios = user_scenarios
+      render :index, status: :unprocessable_entity
+    end
   end
 
   private
@@ -35,14 +53,6 @@ class MultiYearChartsController < ApplicationController
     SavedScenario.batch_load(scenarios)
 
     scenarios
-  end
-
-  def myc_url(scenario_ids)
-    [
-      APP_CONFIG[:multi_year_charts_url],
-      scenario_ids.join(','),
-      'charts/final-demand'
-    ].join('/')
   end
 
   def ensure_valid_config

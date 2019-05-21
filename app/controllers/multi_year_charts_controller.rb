@@ -4,7 +4,7 @@ class MultiYearChartsController < ApplicationController
   layout 'multi_year_charts'
 
   before_action :ensure_valid_config
-  before_action :require_user, only: :create
+  before_action :require_user, except: :index
 
   def index
     @scenarios = user_scenarios
@@ -37,6 +37,17 @@ class MultiYearChartsController < ApplicationController
       @scenarios = user_scenarios
       render :index, status: :unprocessable_entity
     end
+  end
+
+  # Removes a MultiYearChart record.
+  #
+  # DELETE /multi_year_charts/:id
+  def destroy
+    DeleteMultiYearChart.call(
+      current_user.multi_year_charts.find(params.require(:id))
+    )
+
+    redirect_to multi_year_charts_path
   end
 
   private

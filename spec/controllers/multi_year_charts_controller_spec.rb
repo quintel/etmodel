@@ -84,4 +84,49 @@ describe MultiYearChartsController do
       end
     end
   end
+
+  describe '#destroy' do
+    let!(:service) { class_double('DeleteMultiYearChart').as_stubbed_const }
+
+    context 'when the MYC belongs to the logged-in user' do
+      let(:myc) { FactoryBot.create(:multi_year_chart) }
+
+      before do
+        allow(service).to receive(:call).and_return(ServiceResult.success)
+        login_as myc.user
+      end
+
+      it 'redirects to the MYC root' do
+        delete :destroy, params: { id: myc.id }
+        expect(response).to redirect_to(multi_year_charts_url)
+      end
+
+      it 'calls the DeleteMultiYearChart service' do
+        delete :destroy, params: { id: myc.id }
+        expect(service).to have_received(:call).with(myc)
+      end
+    end
+
+    context 'when the MYC belongs to a different user' do
+      let(:myc) { FactoryBot.create(:multi_year_chart) }
+
+      before do
+        login_as FactoryBot.create(:user)
+      end
+
+      it 'raises RecordNotFound' do
+        expect { delete :destroy, params: { id: myc.id } }
+          .to raise_error(ActiveRecord::RecordNotFound)
+      end
+    end
+
+    context 'when not signed in signed in' do
+      let(:myc) { FactoryBot.create(:multi_year_chart) }
+
+      it 'redirects to the login page' do
+        delete :destroy, params: { id: myc.id }
+        expect(response).to redirect_to(login_url)
+      end
+    end
+  end
 end

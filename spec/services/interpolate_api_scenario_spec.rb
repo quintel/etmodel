@@ -5,35 +5,36 @@ require 'rails_helper'
 describe InterpolateAPIScenario, type: :service do
   # let(:scenario) { FactoryBot.build(:api_scenario, id: 1) }
   let(:user) { FactoryBot.create(:user) }
-  let(:result) { described_class.call(1, 2030) }
+  let(:result) { described_class.call(1, 2030, protect: protect) }
+  let(:protect) { false }
 
   # --
 
   # Returns a Struct which quacks enough like an HTTParty::Response for our
   # purposes.
-  def stub_response(isok, body)
+  def stub_response(isok, body, protect = false)
     allow(HTTParty)
       .to receive(:post)
       .with(
         "#{APP_CONFIG[:api_url]}/api/v3/scenarios/1/interpolate",
-        body: { end_year: 2030 }
+        hash_including(body: { end_year: 2030, protected: protect }.to_json)
       )
       .and_return(ServicesHelper::StubResponse.new(isok, body))
   end
 
-  def stub_ok_response(id)
-    stub_response(true, 'id' => id)
+  def stub_ok_response(id, protect)
+    stub_response(true, { 'id' => id }, protect)
   end
 
   def stub_error_response(errors)
-    stub_response(false, 'errors' => errors)
+    stub_response(false, { 'errors' => errors }, false)
   end
 
   # --
 
   context 'when the interpolation is successful' do
     before do
-      stub_ok_response(2)
+      stub_ok_response(2, protect)
     end
 
     it 'returns a ServiceResult' do
@@ -58,8 +59,23 @@ describe InterpolateAPIScenario, type: :service do
     it 'sends the desired end year to ETEngine' do
       result
 
-      expect(HTTParty).to have_received(:post)
-        .with(anything, body: { end_year: 2030 })
+      expect(HTTParty).to have_received(:post).with(
+        anything,
+        hash_including(body: { end_year: 2030, protected: false }.to_json)
+      )
+    end
+
+    context 'when marking the scenario protected' do
+      let(:protect) { true }
+
+      it 'tells ETEngine to protect the scenario' do
+        result
+
+        expect(HTTParty).to have_received(:post).with(
+          anything,
+          hash_including(body: { end_year: 2030, protected: true }.to_json)
+        )
+      end
     end
   end
 

@@ -11,12 +11,14 @@ describe CreateMultiYearChart, type: :service do
 
   def stub_successful_interpolation(year, id)
     allow(InterpolateAPIScenario).to receive(:call)
-      .with(scenario.id, year).and_return(ServiceResult.success('id' => id))
+      .with(scenario.id, year, protect: true)
+      .and_return(ServiceResult.success('id' => id))
   end
 
   def stub_failed_interpolation(year, errors)
     allow(InterpolateAPIScenario).to receive(:call)
-      .with(scenario.id, year).and_return(ServiceResult.failure(errors))
+      .with(scenario.id, year, protect: true)
+      .and_return(ServiceResult.failure(errors))
   end
 
   # --

@@ -8,10 +8,13 @@ class MultiYearChartsController < ApplicationController
 
   def index
     @scenarios = user_scenarios
+    @multi_year_charts = user_multi_year_charts
 
     respond_to do |format|
       format.html
-      format.js
+      format.js do
+        render(params[:wants] == 'scenarios' ? 'scenarios' : 'index')
+      end
     end
   end
 
@@ -20,12 +23,10 @@ class MultiYearChartsController < ApplicationController
   #
   # Redirects to the external MYC app when successful.
   #
-  # POST /multi-year-charts
+  # POST /multi_year_charts
   def create
-    base_id = params.require(:scenario_id)&.to_i
-
     result = CreateMultiYearChart.call(
-      Api::Scenario.find(base_id),
+      Api::Scenario.find(params.require(:scenario_id).to_i),
       current_user
     )
 
@@ -35,6 +36,8 @@ class MultiYearChartsController < ApplicationController
       flash.now[:error] = result.errors.join(', ')
 
       @scenarios = user_scenarios
+      @multi_year_charts = user_multi_year_charts
+
       render :index, status: :unprocessable_entity
     end
   end
@@ -55,15 +58,25 @@ class MultiYearChartsController < ApplicationController
   def user_scenarios
     return [] unless current_user
 
-    scenarios = current_user.
-      saved_scenarios.
-      order('created_at DESC').
-      page(params[:page]).
-      per(50)
+    scenarios = current_user
+      .saved_scenarios
+      .order('created_at DESC')
+      .page(params[:page])
+      .per(50)
 
     SavedScenario.batch_load(scenarios)
 
     scenarios
+  end
+
+  def user_multi_year_charts
+    return [] unless current_user
+
+    current_user
+      .multi_year_charts
+      .order(created_at: :desc)
+      .page(params[:page])
+      .per(50)
   end
 
   def ensure_valid_config

@@ -27,4 +27,16 @@ module PagesHelper
   def area_css_class(area)
     area ? area.top_level_area.area : ''
   end
+
+  # Public: Returns an image tag to the flag representing the given area.
+  def area_flag_icon(area_or_code)
+    unless area_or_code.is_a?(Api::Area)
+      area_or_code = Api::Area.find_by_country_memoized(area_or_code)
+    end
+
+    image_tag(
+      "flags-24/#{area_css_class(area_or_code)}.png",
+      class: 'area-flag', alt: ''
+    )
+  end
 end

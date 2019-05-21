@@ -5,11 +5,7 @@ module MultiYearChartsHelper
   #
   # Returns a string.
   def myc_url(multi_year_chart)
-    [
-      APP_CONFIG[:multi_year_charts_url],
-      multi_year_chart.redirect_slug,
-      'charts/final-demand'
-    ].join('/')
+    "#{APP_CONFIG[:multi_year_charts_url]}/#{multi_year_chart.redirect_slug}"
   end
 
   def can_use_as_myc_scenario?(saved_scenario)

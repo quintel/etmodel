@@ -15,8 +15,11 @@
       .actions
         #existing-myc-sessions
           %h2== #{t('multi_year_charts.resume')}&hellip;
-          %ul.myc-list
-            = render partial: 'multi_year_chart', collection: @multi_year_charts
+          - if @multi_year_charts.none?
+            .get-started= t('multi_year_charts.get_started')
+          - else
+            %ul.myc-list
+              = render partial: 'multi_year_chart', collection: @multi_year_charts
           #myc-session-paginator
             = link_to_next_page @multi_year_charts, 'More...', remote: true
 

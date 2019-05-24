@@ -2,25 +2,24 @@
 nl:
   multi_year_charts:
     account_required_html: |
-      You need to be <a href="%{login_path}">logged in</a> to create a
-      multi-year chart.
-    created_at: "Created %{date} ago"
+      Je moet <a href="%{login_path}">ingelogd</a> zijn om een meerjarengrafiek te kunnen openen.
+    created_at: "%{date} geleden aangemaakt"
     get_started: |
-      Select a scenario on the right to create your first multi-year chart.
+      Selecteer rechts een scenario om je eerste meerjarengrafiek te maken.
     how:
       step1_html: |
         Maak eerst een nieuw scenario op
-        <a href="%{root_path}">de home page</a>.
+        <a href="%{root_path}">de startpagina</a>.
       step2: |
         Gebruik de schuifjes om een toekomstscenario te maken en sla het
-        vervolgens op met het "Opties" menu.
+        vervolgens op via het "Opties" menu.
       step3: |
-        Revisit this page to create a multi-year chart.
-      prompt: Select two or more scenarios below to see how they compare
+        Keer terug naar deze pagina om een meerjarengrafiek te maken.
+      prompt: Selecteer hieronder twee of meer scenario's om deze te vergelijken.
     introduction: |
-      See how a 2050 scenario can become reality by exploring the steps and
-      consequences in 2023, 2030, and 2040. Start by selecting one of your saved
-      2050 scenarios below.
-    resume: Resume an existing session
-    start: Start a new session
-    title: Multi-Year Charts
+      Bekijk hoe een toekomstscenario voor 2050 realiteit kan worden door de stappen en consequenties
+      te verkennen in 2023, 2030 en 2040. Begin door een van je opgeslagen toekomstscenario's
+      voor 2050 te selecteren.
+    resume: Ga door met een bestaand scenario
+    start: Start een nieuwe sessie
+    title: Meerjarengrafieken

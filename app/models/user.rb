@@ -33,6 +33,8 @@ class User < ActiveRecord::Base
   belongs_to :teacher,  class_name: 'User'
   has_many   :students, class_name: 'User', foreign_key: 'teacher_id'
 
+  has_many   :multi_year_charts, dependent: :destroy
+
   validates_presence_of :name
 
   attr_accessor :teacher_email

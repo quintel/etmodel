@@ -1,10 +1,11 @@
 - scenarios.each do |ss|
   - if can_use_as_myc_scenario?(ss)
     %li
-      %button{ name: 'scenario_id', value: ss.scenario.id }
-        %span.area= t(ss.scenario.area_code)
+      %button.myc-session{ name: 'scenario_id', value: ss.scenario.id }
+        = area_flag_icon(ss.scenario.area_code)
         %span.title= ss.scenario.title
-        %span.end-year== (#{ss.scenario.end_year})
+        %span.details
+          == (#{t(ss.scenario.area_code)}, #{ss.scenario.end_year})
 
 %li#scenario-paginator
-  = link_to_next_page scenarios, 'More...', remote: true
+  = link_to_next_page scenarios, 'More...', remote: true, params: { wants: 'scenarios' }

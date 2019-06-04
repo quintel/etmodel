@@ -56,6 +56,18 @@ VCR.configure do |c|
     record: :once
   }
   c.debug_logger = File.open Rails.root.join("log/vcr.log"), 'w'
+
+  c.around_http_request do |request|
+    uri = URI(request.uri)
+
+    if uri.path == '/api/v3/areas.json' && uri.query == 'detailed=false'
+      # Redirect the standard areas.json request to a specific cassette so that
+      # we don't need to store many copies.
+      VCR.use_cassette('areas', &request)
+    else
+      request.proceed
+    end
+  end
 end
 
 Shoulda::Matchers.configure do |config|

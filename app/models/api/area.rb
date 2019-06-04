@@ -65,7 +65,8 @@ class Api::Area < ActiveResource::Base
 
   def self.all_by_area_code
     Rails.cache.fetch(:api_areas) do
-      all.index_by(&:area).with_indifferent_access
+      find(:all, params: { detailed: false })
+        .index_by(&:area).with_indifferent_access
     end
   end
 

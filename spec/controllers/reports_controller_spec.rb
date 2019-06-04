@@ -74,7 +74,7 @@ describe ReportsController, vcr: true do
       before do
         session[:setting] = Setting.new(
           api_session_id: 956_091,
-          area_code: 'drenthe'
+          area_code: 'PV22_drenthe'
         )
       end
 

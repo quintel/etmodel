@@ -25,6 +25,8 @@ module Etm
 
     config.encoding = "utf-8"
 
+    config.i18n.available_locales = %i[en nl]
+
     config.generators do |g|
       g.template_engine :haml
       g.test_framework  :rspec, fixture: false

@@ -76,7 +76,9 @@ class Constraint < ActiveRecord::Base
 
     raise IllegalConstraintKey if keys.any?(&:blank?)
 
-    constraints = Constraint.enabled.where(key: keys.uniq)
+    constraints = Constraint.enabled.where(key: keys.uniq).order(
+      Arel.sql(sanitize_sql_array(['FIELD(`key`, ?)', keys]))
+    )
 
     keys.each do |key|
       raise(NoSuchConstraint, key) if constraints.none? { |c| c.key == key }

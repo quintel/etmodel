@@ -81,6 +81,24 @@ describe Constraint do
       end
     end
 
+    context 'when requesting keys in the opposite order to insertion' do
+      let(:keys) { %w[co2_reduction total_primary_energy] }
+
+      before do
+        keys.reverse_each { |k| FactoryBot.create(:constraint, key: k) }
+      end
+
+      it { expect(constraints.length).to eq(keys.length) }
+
+      it 'returns the co2_reduction constraint first' do
+        expect(constraints[0]).to eql(described_class.find_by_key(keys[0]))
+      end
+
+      it 'returns the total_primary_energy constraint second' do
+        expect(constraints[1]).to eql(described_class.find_by_key(keys[1]))
+      end
+    end
+
     context 'when given an array with a duplicate key' do
       let(:keys) { %w[total_primary_energy co2_reduction total_primary_energy] }
 

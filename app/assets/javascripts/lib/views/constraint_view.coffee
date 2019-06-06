@@ -75,7 +75,7 @@ class @ConstraintView extends Backbone.View
         # 1 point precision
         Metric.ratio_as_percentage(result, false, 1)
       when 'biomass_primary_demand','biomass_final_demand'
-        "#{Metric.round_number(result, 1)} #{I18n.t('units.joules.billions')}"
+        Metric.autoscale_value(result, @model.gquery.get('unit'), 1)
       when 'renewable_percentage'
         Metric.ratio_as_percentage(result)
       when 'renewable_percentage_households'

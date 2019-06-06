@@ -41,7 +41,7 @@
   #
   autoscale_value: (x, unit, precision = 'auto', scaleDown = true) ->
     if scaleDown and Quantity.isSupported(unit)
-      return new Quantity(x, unit).smartScale().format()
+      return new Quantity(x, unit).smartScale().format(precision: precision)
 
     if x == 0
       pow = 0

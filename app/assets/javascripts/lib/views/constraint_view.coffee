@@ -74,8 +74,8 @@ class @ConstraintView extends Backbone.View
       when 'net_energy_import', 'profitability'
         # 1 point precision
         Metric.ratio_as_percentage(result, false, 1)
-      when 'security_of_supply'
-        Metric.round_number(result, 1)
+      when 'biomass_primary_demand','biomass_final_demand'
+        Metric.autoscale_value(result, @model.gquery.get('unit'), 1)
       when 'renewable_percentage'
         Metric.ratio_as_percentage(result)
       when 'renewable_percentage_households'

@@ -75,14 +75,14 @@ ActiveRecord::Schema.define(version: 2019_05_15_125123) do
     t.index ["slide_id"], name: "index_input_elements_on_slide_id"
   end
 
-  create_table "multi_year_chart_scenarios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "multi_year_chart_scenarios", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.bigint "multi_year_chart_id", null: false
     t.integer "scenario_id", null: false
     t.index ["multi_year_chart_id"], name: "index_multi_year_chart_scenarios_on_multi_year_chart_id"
     t.index ["scenario_id"], name: "index_multi_year_chart_scenarios_on_scenario_id"
   end
 
-  create_table "multi_year_charts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "multi_year_charts", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "title", null: false
     t.string "area_code", null: false

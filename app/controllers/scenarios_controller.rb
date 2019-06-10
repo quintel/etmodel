@@ -85,12 +85,17 @@ class ScenariosController < ApplicationController
   # tells ETE to create a *copy* of the current scenario. Check in the engine
   # the Scenario#scenario_id= method to see what's going on.
   def create
-    if params[:saved_scenario][:api_session_id].blank?
-      raise NoScenarioIdError.new(self)
-    end
+    ss_params = params.require(:saved_scenario)
+      .permit(:description, :api_session_id, :title)
+
+    raise NoScenarioIdError, self if ss_params[:api_session_id].blank?
 
     begin
-      Scenario::Creator.new(current_user, params[:saved_scenario]).create
+      CreateSavedScenario.call(
+        ss_params[:api_session_id],
+        current_user,
+        ss_params
+      )
 
       redirect_to scenarios_path
     end

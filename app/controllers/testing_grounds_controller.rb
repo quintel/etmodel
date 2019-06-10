@@ -1,13 +1,22 @@
 class TestingGroundsController < ApplicationController
   def create
-    scenario_params = { title: "#{Current.setting.api_session_id} scaled",
-                        description: "",
-                        api_session_id: Current.setting.api_session_id }
+    result = CreateTestingGroundScenario.call(
+      Current.setting.api_session_id,
+      current_user
+    )
 
-    if Scenario::Creator.new(current_user, scenario_params).create
-      redirect_to "#{APP_CONFIG[:etmoses_url]}/testing_grounds/import?scenario_id=#{Current.setting.api_session_id}"
+    if result.successful?
+      redirect_to etmoses_url(result.value.id)
     else
+      flash[:error] = result.errors.join(', ')
       redirect_to play_path
     end
+  end
+
+  private
+
+  def etmoses_url(scenario_id)
+    "#{APP_CONFIG[:etmoses_url]}/testing_grounds/import?" \
+    "scenario_id=#{scenario_id}"
   end
 end

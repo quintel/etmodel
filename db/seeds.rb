@@ -2271,10 +2271,13 @@ Slide.create!([
 
 
 Tab.create!([
-  { id: 1, key: "targets", nl_vimeo_id: "19658866", en_vimeo_id: "20191755", position: 1 },
+  { id: 1, key: "overview", nl_vimeo_id: "19658866", en_vimeo_id: "20191755", position: 1 },
   { id: 2, key: "demand", nl_vimeo_id: "19658877", en_vimeo_id: "20191812", position: 2 },
   { id: 3, key: "supply", nl_vimeo_id: "19658916", en_vimeo_id: "20191972", position: 4 },
-  { id: 4, key: "costs", nl_vimeo_id: "19658896", en_vimeo_id: "20191894", position: 3 }
+  { id: 4, key: "costs", nl_vimeo_id: "19658896", en_vimeo_id: "20191894", position: 3 },
+  { id: 5, key: "flexibility", position: 4 },
+  { id: 6, key: "data", position: 6 },
+  { id: 7, key: "targets", position: 0 }
 ])
 
 
@@ -2290,5 +2293,3 @@ Target.create!([
   { id: 8, code: "onshore_coast", query: "policy_goal_onshore_coast_value", unit: "km", created_at: "2010-07-19 12:09:15", updated_at: "2011-07-15 07:47:45", display_format: "number_with_unit", reached_query: "policy_goal_onshore_coast_reached", target_query: "policy_goal_onshore_coast_target_value" },
   { id: 9, code: "offshore", query: "policy_goal_offshore_value", unit: "km&sup2;", created_at: "2010-07-19 12:09:15", updated_at: "2011-07-15 07:47:45", display_format: "number_with_unit", reached_query: "policy_goal_offshore_reached", target_query: "policy_goal_offshore_target_value" }
 ])
-
-

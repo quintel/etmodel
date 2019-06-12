@@ -142,10 +142,11 @@ class OutputElement < ActiveRecord::Base
   # template
   def template
     return nil if jqplot_based? || d3_chart?
-    template = if html_table?
-      "output_elements/tables/chart_#{id}"
+
+    if html_table?
+      "output_elements/tables/#{key}"
     else
-      "output_elements/block_chart"
+      'output_elements/block_chart'
     end
   end
 

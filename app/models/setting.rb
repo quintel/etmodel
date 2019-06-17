@@ -21,18 +21,19 @@ class Setting
   # default values.
   def self.default_attributes
     {
-      network_parts_affected: [],
-      area_code:              'nl',
-      start_year:             2011,
-      end_year:               2050,
-      use_fce:                false,
-      use_merit_order:        true,
-      locked_charts:          [],
-      last_etm_page:          nil,
-      scaling:                nil,
-      area_scaling:           nil,
-      preset_scenario_id:     nil,
-      api_session_id:         nil
+      network_parts_affected:   [],
+      area_code:                'nl',
+      start_year:               2011,
+      end_year:                 2050,
+      use_fce:                  false,
+      use_merit_order:          true,
+      locked_charts:            [],
+      last_etm_page:            nil,
+      scaling:                  nil,
+      area_scaling:             nil,
+      preset_scenario_id:       nil,
+      api_session_id:           nil,
+      active_saved_scenario_id: nil,
     }
   end
 
@@ -59,13 +60,14 @@ class Setting
   # param scenario [Api::Scenario]
   # return [Setting] setting object loaded with the country/end_year/etc from scenario
   #
-  def self.load_from_scenario(scenario)
+  def self.load_from_scenario(scenario, active_saved_scenario_id: nil)
     attrs = {
       preset_scenario_id: scenario.id,
       use_fce: scenario.use_fce,
       end_year: scenario.end_year,
       area_code: scenario.area_code,
-      scaling: scenario.scaling && scenario.scaling.attributes
+      scaling: scenario.scaling && scenario.scaling.attributes,
+      active_saved_scenario_id: active_saved_scenario_id,
     }
     new(attrs)
   end

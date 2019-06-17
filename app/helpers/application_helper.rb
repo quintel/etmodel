@@ -120,4 +120,12 @@ module ApplicationHelper
   def settings_as_json(setting)
     setting.to_hash.merge(area_name: I18n.t(setting.area_code))
   end
+
+  def active_saved_scenario_id
+    Current.setting.active_saved_scenario_id
+  end
+
+  def save_scenario_enabled?
+    Current.setting.active_saved_scenario_id.present?
+  end
 end

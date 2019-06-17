@@ -123,6 +123,27 @@ class ScenariosController < ApplicationController
     redirect_to play_path
   end
 
+  def update
+    if Current.setting.api_session_id.blank?
+      redirect_to root_path
+      return
+    end
+    @saved_scenario = SavedScenario.find(params[:id])
+    update = UpdateSavedScenario.(@saved_scenario,
+                                  Current.setting.api_session_id)
+    respond_to do |format|
+      format.js {}
+      format.html do
+        if update.successful?
+          flash[:message] = t("flash.scenario_saved")
+        else
+          flash[:error] = update.errors
+        end
+        redirect_to scenarios_path
+      end
+    end
+  end
+
   # This is the main scenario action
   #
   def play

@@ -22,3 +22,4 @@
 //= require i18n/translations
 //= require sortable.min
 //= require sign_up_form
+//= require save_indicator

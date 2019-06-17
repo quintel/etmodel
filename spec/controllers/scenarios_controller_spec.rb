@@ -392,4 +392,19 @@ describe ScenariosController, vcr: true do
     end
   end
 
+  describe 'PUT update' do
+    context 'with valid params' do
+      it 'changes the scenario_id of the saved scenario' do
+          session[:setting] = Setting.new(area_code: 'nl', api_session_id: 12345)
+        expect(UpdateSavedScenario).to receive(:call)
+          .with(user_scenario, 12345)
+        put :update, params: {id: user_scenario.id, scenario_id: 12345 }
+      end
+    end
+
+    it "redirects to root when no api_session_id exists in the session" do
+      put :update, params: {id: user_scenario.id, scenario_id: 12345 }
+      expect(response).to be_redirect
+    end
+  end
 end

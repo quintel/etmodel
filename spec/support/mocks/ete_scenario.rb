@@ -13,6 +13,8 @@ def ete_scenario_mock
   allow(mock).to receive(:all_inputs) { {} }
   allow(mock).to receive(:days_old) { 1 }
   allow(mock).to receive(:errors) { [] }
+  allow(mock).to receive(:use_fce) { nil }
+  allow(mock).to receive(:scaling) { nil }
 
   mock
 end

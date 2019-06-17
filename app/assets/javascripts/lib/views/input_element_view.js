@@ -373,6 +373,11 @@
         step:       quinnStep,
         disable:    this.model.get('disabled'),
 
+        drawTo:     {
+          left: this.model.drawToMin(),
+          right: this.model.drawToMax()
+        },
+
         // Don't round initial values which don't fit the step.
         strict:     false,
 

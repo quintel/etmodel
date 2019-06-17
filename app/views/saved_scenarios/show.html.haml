@@ -6,9 +6,11 @@
 
   %h1= @scenario.title.nil? ? t('scenario.no_title').truncate(40, separator: ' ') : @scenario.title.truncate(40, separator: ' ')
 
-  = link_to t("scenario.load"), load_saved_scenario_path(@scenario), class: "button primary"
+  = link_to t("scenario.load"), load_saved_scenario_path(@saved_scenario), class: "button primary"
 
-  - if @scenario.description
+  -# Seems a to be a reduntant check to me. Don't think this is reachable
+  -# without a saved scenario
+  - if @saved_scenario.description
     %em= @description
 
   %ul

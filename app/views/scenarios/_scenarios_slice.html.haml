@@ -2,7 +2,7 @@
   - if ss.scenario&.loadable?
     %tr{class: cycle('even', 'odd') + (' highlight' if @student_ids.include?(ss.user_id)).to_s}
       %td= check_box_tag 'scenario_ids[]', ss.scenario.id
-      %td= link_to ss.scenario.title, "/scenarios/#{ss.scenario.id}"
+      %td= link_to ss.scenario.title, ss
       %td= ss.scenario.end_year
       %td= ss.scenario.parsed_created_at.andand.strftime("%d %b %H:%M")
       %td= ss.user.name + ' ( ' + ss.user.email + ' )'

@@ -76,7 +76,7 @@ Etm::Application.routes.draw do
     resources :input_elements, except: :show
   end
 
-  resources :scenarios, except: [:edit, :update] do
+  resources :scenarios, except: [:edit] do
     collection do
       post :load
       get :compare
@@ -90,6 +90,10 @@ Etm::Application.routes.draw do
       get :load
       get 'factsheet' => 'factsheets#show'
     end
+  end
+
+  resources :saved_scenarios, only:[:show] do
+    member { get :load }
   end
 
   get '/scenario/new' => 'scenarios#new'

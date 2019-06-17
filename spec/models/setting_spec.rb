@@ -8,6 +8,8 @@ describe Setting do
     Setting.default_attributes.merge(start_year: @setting.area.analysis_year)
   end
 
+  it{ is_expected.to respond_to :active_saved_scenario_id }
+  it{ is_expected.to respond_to :active_saved_scenario_id= }
   describe "#new" do
     context "defaults", vcr: true do
       subject { Setting.new }
@@ -117,6 +119,20 @@ describe Setting do
 
         specify { expect(@setting.send(setting_method_name)).to be_falsey }
       end
+    end
+  end
+
+  describe ".load_from_scenario" do
+    it "returns a scenario" do
+      expect( Setting.load_from_scenario ete_scenario_mock ).to be_a Setting
+    end
+
+    it "takes an optional saved_scenario id" do
+      setting = Setting.load_from_scenario ete_scenario_mock,
+                                           active_saved_scenario_id: 1234
+
+      expect(setting.active_saved_scenario_id)
+        .to eq(1234)
     end
   end
 

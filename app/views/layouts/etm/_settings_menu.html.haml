@@ -23,7 +23,14 @@
     %li
       %a.load{:href => scenarios_path}= t("header.load_scenario")
       - if has_active_scenario?
-        %a.save{:href => new_scenario_path}= t("header.save_scenario")
+        - if save_scenario_enabled?
+          =link_to t('header.save_scenario'),
+                   scenario_path(active_saved_scenario_id),
+                   method: :put,
+                   class: 'save'
+
+        %a.save_as{:href => new_scenario_path}= t("header.save_scenario_as")
+
         %a#reset_scenario{:href => scenario_reset_path}= t("header.reset_scenario")
 
     - if controller_name != 'pages' && has_active_scenario?

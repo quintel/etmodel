@@ -41,6 +41,30 @@ class @InputElement extends Backbone.Model
   logUpdate: =>
     App.debug "Slider #{@get 'key'}: #{@get('user_value')}"
 
+  # The lowest value which should be shown on the input element.
+  #
+  # If this is not set, or the value is higher than the input mininum value, the
+  # input minimum is returned instead.
+  #
+  # Returns a number.
+  drawToMin: ->
+    unless this.get('draw_to_min')?
+      return this.get('min_value')
+
+    Math.min(this.get('draw_to_min'), this.get('min_value'))
+
+  # The highest value which should be shown on the input element.
+  #
+  # If this is not set, or the value is lower than the input maxinum value, the
+  # input maximum is returned instead.
+  #
+  # Returns a number.
+  drawToMax: ->
+    unless this.get('draw_to_max')?
+      return this.get('max_value')
+
+    Math.max(this.get('draw_to_max'), this.get('max_value'))
+
   # if we're caching the user_values hash then we have to store locally the
   # user_values, without querying the engine
   update_collection: =>

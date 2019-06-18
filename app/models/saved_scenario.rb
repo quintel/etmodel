@@ -44,6 +44,11 @@ class SavedScenario < ActiveRecord::Base
     end
   end
 
+  def add_id_to_history(scenario_id)
+    scenario_id_history.shift if scenario_id_history.count <= 20
+    scenario_id_history << scenario_id
+  end
+
   def scenario=(x)
     @scenario = x
     self.scenario_id = x.id unless x.nil?

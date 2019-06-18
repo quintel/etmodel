@@ -53,9 +53,11 @@ class InputElement < ActiveRecord::Base
   # Used by the interface to setup quinn
   def json_attributes
     Jbuilder.encode do |json|
-      json.(self, :id, :unit, :share_group, :key, :related_converter, :step_value,
-            :disabled, :translated_name, :sanitized_description,
-            :fixed, :has_flash_movie)
+      json.call(
+        self, :id, :unit, :share_group, :key, :related_converter, :step_value,
+        :draw_to_min, :draw_to_max, :disabled, :translated_name,
+        :sanitized_description, :fixed, :has_flash_movie
+      )
     end
   end
 

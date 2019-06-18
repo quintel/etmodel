@@ -10,6 +10,19 @@
       :hint => "Sliders with the same interface_group will be shown as a group inside the slide, divided by a line and sub_header"
     = f.input :step_value, :as => :float, :required => true
     = f.input :unit, :required => true
+    .input.float
+      %label.text.optional.control-label
+        Draw to
+      = f.input :draw_to_min, :as => :float, :label => 'Minimum'
+      = f.input :draw_to_max, :as => :float, :label => 'Maximum'
+      %span.hint
+        Set custom minimum and maximum values to which the slider will be
+        drawn. Note that  the "draw to" settings will be ignored when higher
+        (for the minimum) or lower (for the maximum) than the ETEngine input
+        min/max. For example, if the input minimum is 50 and maximum is 100, you
+        may choose to set the draw to minimum to 25; this will draw a slider
+        which starts at 25 and ends at 100, but the user will not be able to
+        select a value below 50.
     = f.input :command_type, :as => :select,
       :collection => ['growth_rate', 'value', 'efficiency_improvement'],
       :hint => "This is used by the backcasting module"

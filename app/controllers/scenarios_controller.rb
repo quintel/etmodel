@@ -131,13 +131,16 @@ class ScenariosController < ApplicationController
     @saved_scenario = SavedScenario.find(params[:id])
     update = UpdateSavedScenario.(@saved_scenario,
                                   Current.setting.api_session_id)
-
-    if update.successful?
-      flash[:message] = t("flash.scenario_saved")
-      redirect_to scenarios_path
-    else
-      flash[:error] = update.errors
-      redirect_to scenarios_path
+    respond_to do |format|
+      format.js {}
+      format.html do
+        if update.successful?
+          flash[:message] = t("flash.scenario_saved")
+        else
+          flash[:error] = update.errors
+        end
+        redirect_to scenarios_path
+      end
     end
   end
 

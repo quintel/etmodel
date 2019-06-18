@@ -27,7 +27,8 @@
           =link_to t('header.save_scenario'),
                    scenario_path(active_saved_scenario_id),
                    method: :put,
-                   class: 'save'
+                   class: 'save save-scenario',
+                   remote: true
 
         %a.save_as{:href => new_scenario_path}= t("header.save_scenario_as")
 

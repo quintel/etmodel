@@ -33,36 +33,32 @@ describe UpdateSavedScenario, type: :service do
 
     describe '#value' do
       subject { result.value }
-      it {is_expected.to be_a SavedScenario}
-      it {is_expected.to be_persisted}
+      it { is_expected.to be_a SavedScenario }
+      it { is_expected.to be_persisted }
     end
 
     it 'changes the scenario_id on the SavedScenario' do
       expect{ result }
-        .to change{saved_scenario.scenario_id}
+        .to change{ saved_scenario.scenario_id }
                 .from(648695)
                 .to(11)
     end
 
-    # This test is a little odd. In the real world it seems that the title
-    # of the saved scenario is nil before we start adopting. Not sure what is
-    # causing the tests to behave differently(bad factory?).
     it 'sets the title saved scenario to the one of old scenario' do
       expect{ result }
-        .to change{saved_scenario.title}
+        .to change{ saved_scenario.title }
               .from(nil)
               .to("title")
     end
 
     it 'changes the scenario_id_history on the SavedScenario' do
       expect{ result }
-        .to change{saved_scenario.scenario_id_history}
+        .to change{ saved_scenario.scenario_id_history }
               .from([])
               .to([648695])
     end
   end
 
-  # TODO: What are we testing exactly?
   context 'when the API response is unsuccessful' do
     let(:api_result) { ServiceResult.failure(['Nope']) }
 

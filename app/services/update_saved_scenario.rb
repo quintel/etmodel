@@ -11,25 +11,25 @@
 #
 # Returns a ServiceResult with the resulting SavedScenario.
 class UpdateSavedScenario
+
+  # Act like a lambda
+  include Service
+
   attr_reader :saved_scenario, :scenario_id, :settings
 
-  # Make the class act like a lambda
-  def self.call *args, &block
-    new.call *args, &block
-  end
-
-  # Make an instance act like a lambda
-  def call(saved_scenario, scenario_id, settings = {})
+  def initialize(saved_scenario, scenario_id, settings = {})
     @saved_scenario, @scenario_id, @settings =
       saved_scenario, scenario_id, settings
+  end
 
-    old_scenario = saved_scenario.scenario
+  def call
+    @old_scenario = saved_scenario.scenario
     return api_response if failure?
 
     saved_scenario.tap do |ss|
-      ss.scenario_id_history << ss.scenario_id
+      ss.add_id_to_history(ss.scenario_id)
       ss.scenario_id = api_scenario.id
-      ss.title = old_scenario.title
+      ss.title = @old_scenario.title
       unprotect and return failure unless saved_scenario.valid?
       ss.save
       saved_scenario.scenario = api_scenario
@@ -53,7 +53,8 @@ class UpdateSavedScenario
   end
 
   def api_response
-    @_resp ||= CreateAPIScenario.call settings.merge(scenario_id: scenario_id)
+    @_resp ||= CreateAPIScenario.call settings.merge(scenario_id: scenario_id,
+                                                     title: @old_scenario.title)
   end
 
   def failure?

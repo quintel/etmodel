@@ -146,10 +146,10 @@ ActiveRecord::Schema.define(version: 2019_06_14_144041) do
   create_table "saved_scenarios", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "scenario_id", null: false
+    t.string "scenario_id_history"
     t.text "settings"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string "scenario_id_history"
     t.index ["scenario_id"], name: "index_saved_scenarios_on_scenario_id"
     t.index ["user_id"], name: "index_saved_scenarios_on_user_id"
   end

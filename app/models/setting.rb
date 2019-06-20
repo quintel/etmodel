@@ -34,6 +34,7 @@ class Setting
       preset_scenario_id:       nil,
       api_session_id:           nil,
       active_saved_scenario_id: nil,
+      active_scenario_title:    nil,
     }
   end
 
@@ -92,7 +93,6 @@ class Setting
   def reset_scenario
     self.api_session_id = nil
     self.preset_scenario_id = nil # to go back to a blank slate scenario
-
     [:use_fce, :network_parts_affected, :locked_charts].each do |key|
       self.reset_attribute key
     end
@@ -149,5 +149,16 @@ class Setting
     self.class.default_attributes.keys.each_with_object({}) do |key, data|
       data[key] = public_send(key)
     end
+  end
+
+  def active_scenario_title
+    @active_scenario_title ||= get_active_scenario_title
+  end
+
+  private
+
+  def get_active_scenario_title
+    active_scenario = SavedScenario.where(id: active_saved_scenario_id).first
+    active_scenario&.scenario&.title or nil
   end
 end

@@ -59,13 +59,19 @@ describe SavedScenario do
   end
 
   describe 'add_id_to_history' do
-    it "adds an item to its scenario_history" do
+    it "adds the provided id to the end of its history" do
+      subject.add_id_to_history("1234")
+      expect(subject.scenario_id_history.last).to eq("1234")
+    end
+
+    it "increases the amount of items in the history by one" do
       expect{ subject.add_id_to_history("1234") }
-      .to change{subject.scenario_id_history.count}.by 1
+        .to change{subject.scenario_id_history.count}.by 1
     end
 
     it "won't add more then 20 items" do
       20.times{|n| subject.add_id_to_history(n)}
+
       expect{ subject.add_id_to_history("1234") }
         .not_to change{subject.scenario_id_history.count}
     end

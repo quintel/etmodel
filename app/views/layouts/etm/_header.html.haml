@@ -15,6 +15,9 @@
           %span.scenario_info
             = current_area_info
             = Current.setting.end_year
+            \-
+
+            .scenario_info--title= Current.setting.active_scenario_title
       = render "layouts/etm/settings_menu"
 
     - if current_user

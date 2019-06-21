@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://beta-engine.energytransitionmodel.com/api/v3/scenarios.json
+    body:
+      encoding: UTF-8
+      string: '{"scenario":{"scenario_id":648695}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.14.0
+      Date:
+      - Fri, 14 Jun 2019 13:51:03 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"341a8e62576ac03d665dd0af6b59db8b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0f31f98c-cf06-4058-a141-526d27806066
+      X-Runtime:
+      - '0.049524'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":1082087,"title":"API","area_code":"nl","start_year":2015,"end_year":2050,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/1082087","ordering":null,"display_group":null,"scaling":null,"source":null,"template":648695,"created_at":"2019-06-14T15:51:03.000+02:00"}'
+    http_version: 
+  recorded_at: Fri, 14 Jun 2019 13:51:03 GMT
+recorded_with: VCR 3.0.3

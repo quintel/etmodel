@@ -19,6 +19,8 @@ class SavedScenario < ActiveRecord::Base
   validates :scenario_id, presence: true
   validates :title,       presence: true
 
+  serialize :scenario_id_history, Array
+
   def self.batch_load(saved_scenarios)
     ids    = saved_scenarios.map(&:scenario_id)
     loaded = Api::Scenario.batch_load(ids).index_by(&:id)
@@ -30,12 +32,21 @@ class SavedScenario < ActiveRecord::Base
     saved_scenarios
   end
 
-  def scenario
+  def scenario(detailed: false)
     begin
-      @scenario ||= Api::Scenario.find(scenario_id)
+      if detailed
+        @scenario ||= Api::Scenario.find(scenario_id, params: {detailed: true})
+      else
+        @scenario ||= Api::Scenario.find(scenario_id)
+      end
     rescue ActiveResource::ResourceNotFound
       nil
     end
+  end
+
+  def add_id_to_history(scenario_id)
+    scenario_id_history.shift if scenario_id_history.count >= 20
+    scenario_id_history << scenario_id
   end
 
   def scenario=(x)
@@ -43,4 +54,11 @@ class SavedScenario < ActiveRecord::Base
     self.scenario_id = x.id unless x.nil?
   end
 
+  def build_setting(user: nil)
+    if user && (user.id == self.user_id)
+      Setting.load_from_scenario(scenario, active_saved_scenario_id: id)
+    else
+      Setting.load_from_scenario(scenario)
+    end
+  end
 end

@@ -6,7 +6,7 @@
 
   %h1= @scenario.title.nil? ? t('scenario.no_title').truncate(40, separator: ' ') : @scenario.title.truncate(40, separator: ' ')
 
-  = link_to t("scenario.load"), load_saved_scenario_path(@scenario), class: "button primary"
+  = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button primary"
 
   - if @scenario.description
     %em= @description

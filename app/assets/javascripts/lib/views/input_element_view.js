@@ -286,6 +286,7 @@
       _.bindAll(
         this,
         'updateFromModel',
+        'updateIsDisabled',
         'quinnOnChange',
         'quinnOnCommit'
       );
@@ -318,9 +319,12 @@
       this.lastStepClick  = null;
 
       this.model.bind('change', this.updateFromModel);
+
       this.model.bind('change:user_value', _.bind(function () {
         this.setTransientValue(this.model.get('user_value'));
       }, this));
+
+      this.model.bind('change:disabled', this.updateIsDisabled);
 
       // Hold off rendering until the document is ready (and the templates
       // have been parsed).
@@ -432,6 +436,14 @@
     refreshButtons: function () {
       var value = this.quinn.model.value;
 
+      if (this.model.get('disabled')) {
+        this.disableButton('decrease');
+        this.disableButton('increase');
+        this.disableButton('reset');
+
+        return true;
+      }
+
       if (value === this.quinn.model.minimum) {
         this.disableButton('decrease');
         this.enableButton('increase');
@@ -478,7 +490,6 @@
 
     /**
      * Is called when something in the constraint model changed.
-     * @override
      */
     updateFromModel: function () {
       if (! this.disableUpdate) {
@@ -490,6 +501,13 @@
       return false;
     },
 
+    /**
+     * Is called when the models "disabled" attribute is changed.
+     */
+    updateIsDisabled: function (_model, isDisabled) {
+      isDisabled ? this.quinn.disable() : this.quinn.enable();
+      this.refreshButtons();
+    },
 
     // ## Event Handlers -----------------------------------------------------
 

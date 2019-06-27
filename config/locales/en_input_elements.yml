@@ -6,6 +6,10 @@ en:
     remove: "Revert to default curve"
     upload: "Upload a custom curve"
     uploading: "Uploading curve"
+    errors:
+      illegal_value: "Curve must only contain numeric values"
+      not_a_curve: "Curve must be a CSV file containing 8760 numeric values, one for each hour in a typical year"
+      wrong_length: "Curve must have 8760 numeric values, one for each hour in a typical year"
     imported_electricity_price:
       default: "Default price curve"
       description_html: |

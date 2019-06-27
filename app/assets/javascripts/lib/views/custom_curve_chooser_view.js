@@ -213,13 +213,19 @@
               self.render();
             },
             error: function(xhr) {
-              var message = 'An error occurred.';
+              var errors = ['An error occurred.'];
 
-              if (xhr.responseJSON && xhr.responseJSON.errors) {
-                message = xhr.responseJSON.errors;
+              if (xhr.responseJSON) {
+                if (xhr.responseJSON.error_keys) {
+                  errors = xhr.responseJSON.error_keys.map(function(key) {
+                    return self.t('errors.' + key);
+                  });
+                } else if (xhr.responseJSON.errors) {
+                  errors = xhr.responseJSON.errors;
+                }
               }
 
-              self.renderError(message);
+              self.renderError(errors);
             }
           },
           options || {}

@@ -1,4 +1,19 @@
 nl:
+  custom_curves:
+    confirm_remove: "Are you sure you wish to remove this curve and revert to the default?"
+    default: "Default curve"
+    loading: "Loading..."
+    remove: "Revert to default curve"
+    upload: "Upload a custom curve"
+    uploading: "Uploading curve"
+    imported_electricity_price:
+      default: "Default price curve"
+      description_html: |
+        Is is assumed that the price of imported electricity is constant, set
+        using the slider above. You may override this assumption by uploading a
+        CSV file detailing the hourly price of imports. For more information on
+        how this works, and examples of compatible CSV files, please
+        <a href="%{docs_path}">see our documentation</a>.
   input_elements:
     agriculture_burner_crude_oil_share: "Olieketel"
     agriculture_burner_hydrogen_share: "Waterstofketel"

@@ -206,7 +206,8 @@
       } else {
         this.$el.append(
           renderCSVInfo({ name: this.t('default') }, this.t, {
-            showUpload: true
+            showUpload: true,
+            icon: 'csv-light'
           })
         );
       }

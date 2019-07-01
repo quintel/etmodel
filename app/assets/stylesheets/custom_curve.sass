@@ -21,8 +21,14 @@
     min-height: 30px
     width: 30px
 
-    &.csv
+    &.csv, &.csv-light
       background-image: asset-url("icons/csv.svg")
+    &.csv-light
+      opacity: 0.65
+      -moz-filter:    grayscale(100%)
+      -ms-filter:     grayscale(100%)
+      -o-filter:      grayscale(100%)
+      -webkit-filter: grayscale(100%)
     &.loading
       background-size: 28px
       background-image: asset-url("charts/loading.gif")

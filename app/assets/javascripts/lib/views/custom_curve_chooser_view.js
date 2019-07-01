@@ -39,6 +39,40 @@
   }
 
   /**
+   * Formats information about the curve such as the minimum, maximum, and mean.
+   *
+   * @param {object} stats
+   *   Curve stats returned by ETEngine.
+   * @param {function} t
+   *   Translation function.
+   *
+   * @return {Element | null}
+   *   Returns the rendered elements, or null if no options are to be rendered.
+   */
+  function formatCurveStats(stats, t) {
+    var info = $('<dl />');
+
+    if (!stats) {
+      return null;
+    }
+
+    info.append('<dt>' + t('mean') + '</dt>');
+    info.append('<dd>' + formatValue(stats.mean, t) + '</dd>');
+
+    info.append('<dt>' + t('min') + '</dt>');
+    info.append(
+      '<dd>' + formatTemporalValue(stats.min, stats.min_at, t) + '</dd>'
+    );
+
+    info.append('<dt>' + t('max') + '</dt>');
+    info.append(
+      '<dd>' + formatTemporalValue(stats.max, stats.max_at, t) + '</dd>'
+    );
+
+    return info;
+  }
+
+  /**
    * Renders the box containing the CSV name and size, and buttons to upload a
    * new curve or revert to default.
    *
@@ -61,14 +95,7 @@
     var details = $('<div class="details" />');
 
     details.append($('<span class="name" />').text(curveData.name));
-
-    if (curveData.date) {
-      details.append(
-        $('<span class="date" />').text(
-          I18n.strftime(new Date(curveData.date), '%-d %B, %Y')
-        )
-      );
-    }
+    details.append(formatCurveStats(curveData.stats, t));
 
     main.append($('<div class="file ' + (opts.icon || 'csv') + '" />'));
     main.append(details);
@@ -77,6 +104,40 @@
     el.append(renderCSVActions(opts, t));
 
     return el;
+  }
+
+  /**
+   * Formats a single value from the curve.
+   *
+   * @param {number} value The value to be formatted
+   * @param {function} t   Translation function.
+   *
+   * @return {string}
+   */
+  function formatValue(value, t) {
+    return t('value', { value: Math.round(value * 100) / 100 });
+  }
+
+  /**
+   * Formats a single value from the curve, including the date on which the
+   * value occurs.
+   *
+   * @param {number} value The value to be formatted
+   * @param {number} at    The index in which the value occurs.
+   * @param {function} t   Translation function.
+   *
+   * @return {string}
+   */
+  function formatTemporalValue(value, at, t) {
+    var date = new Date(0 + at * 1000 * 60 * 60);
+
+    console.log(I18n.locale);
+
+    return (
+      formatValue(value, t) +
+      ' ' +
+      t('on_date', { date: I18n.strftime(date, '%-d %B') })
+    );
   }
 
   /**
@@ -236,13 +297,20 @@
     /**
      * Returns a translation.
      */
-    t: function(id) {
+    t: function(id, data) {
       var defaultKey = 'custom_curves.' + id;
 
       if (this.options.curveName) {
-        return I18n.t('custom_curves.' + this.options.curveName + '.' + id, {
-          defaults: [{ scope: defaultKey }]
-        });
+        return I18n.t(
+          'custom_curves.' + this.options.curveName + '.' + id,
+          $.extend(
+            {},
+            {
+              defaults: [{ scope: defaultKey }]
+            },
+            data
+          )
+        );
       }
 
       return I18n.t(defaultKey);

@@ -2,61 +2,54 @@
   %h1 Wat is er nieuw in het Energietransitiemodel?
 
   %section
-    %h2 1. Update huizenvoorraad en isolatie
+    %h2 1. Alle RES-regio’s beschikbaar!
     %p
-      Het ETM modelleert nu met vijf verschillende woningtypes waarvan in het startjaar te zien is wat het gemiddelde label per woningtype is. Voor een toekomstig scenario is per woningtype in te vullen tot in welke mate er geïsoleerd gaat worden. Kom er nu snel achter wat een labelsprong van de woningen doet voor de energievraag van Nederland, jouw provincie of gemeente.
-      %a(href="https://pro.energytransitionmodel.com/scenario/demand/households/insulation")
+      Vanaf nu zijn alle 30 RES-regio’s beschikbaar in het Energietransitiemodel. Dit betekent dat iedereen deze energiesystemen kan gaan verkennen en (professionele) energiescenario’s kan gaan maken. Bekijk bijvoorbeeld het effect van:
+      %ul
+        %li Het plaatsen van een zonnepark in Drechtsteden,
+        %li Het isoleren van alle rijtjeshuizen in Midden-Holland,
+        %li Of het bouwen van tien windmolens in de Cleantechregio
+      %p
+        Voor meer informatie:
+      %a(href="https://quintel.com/res")
+        https://quintel.com/res
       %p(style="text-align: center")
-        = image_tag 'pages/whats_new/households_insulation_chart_nl.png', alt: ''
+        = image_tag 'pages/whats_new/resregions_nl.png', alt: ''
 
-    %h2 2. Hybride warmtepomp op waterstof
+    %h2 2. Gebruiksvriendelijkheid verbeterd
     %p
-      Het is nu mogelijk om een hybride warmtepomp op waterstof in te zetten voor alle woningen. Kijk snel wat dit doet voor de waterstofvraag. Vind zelf uit hoeveel windmolens je nodig hebt om genoeg waterstof te produceren.
+      Er is ook gewerkt aan de gebruiksvriendelijkheid van het Energietransitiemodel. Een aantal voorbeelden:
+      %ul
+        %li <strong>Introductie</strong>: Er is een heldere landingspagina, waar het proces voor het maken van scenario’s op hoofdlijnen wordt uitgelegd.
+        %li	<strong>Scenario’s opslaan</strong>: Je kunt eigen scenario’s zowel ‘opslaan’ als ‘opslaan’ als. Dit maakt versiebeheer veel makkelijker en intuitiever. Met opslaan overschrijf jij het scenario en blijft de naam en de link intact. Met ‘opslaan als’ maak je een kopie, waar je een nieuwe naam aan moet geven (=gelijk aan de oude manier).
+        %li <strong>Aanbod</strong>: De schuifjes voor aanbod zijn nu in MW en niet in ‘stuks’, dit maakt het voor veel mensen makkelijker om bekende plannen en doelstellingen om te zetten in schuifjes, zonder dat er zelf omrekeningen nodig zijn.
+        %li <strong>Huizenvoorraad</strong>: Je hoeft niet per type woning in een scenario aan te geven hoeveel het er worden. Wanneer je meer woningen bouwt, dan wordt de huidig mix gevolg. Deze mix kan je wel veranderen.
+      %a(href="https://beta-pro.energytransitionmodel.com")
+        Bekijk alle verbeteringen.
 
-      %a(href="https://pro.energytransitionmodel.com/scenario/demand/households/space-heating-hot-water")
-        Ga hier naar de hybride warmtepomp op waterstof in het model.
-
-    %h2 3. Biomassa verder uitgewerkt
+    %h2 3. Update van alle uurlijkse profielen
     %p
-      Biomassa zit nu veel uitgebreider in het Energietransitiemodel. Er is een uitsplitsing naar type biomassavraag per sector. Daarnaast is ook de ruimtelijk consequentie van deze biomassavraag te vinden.
-
-      %a(href="https://pro.energytransitionmodel.com/scenario/supply/biomass/overview")
-        Ga hier naar biomassa in het model.
+      Het ETM modelleert vraag en aanbod van elektriciteit en waterstof op uurbasis. We hebben in nauwe samenwerking met de energiemodellengemeenschap alle profielen herzien en de bronnen en methodes duidelijk gedocumenteerd op Github. Dit traject is afgesloten met een mini-symposium waar de resultaten zijn gepresenteerd en we verbeterpunten hebben geïdentificeerd.
+      %a(href="https://github.com/quintel/documentation/blob/master/general/curves.md")
+        Hier kun je de documentatie over de uurlijkse profielen vinden.
       %p(style="text-align: center")
-        = image_tag 'pages/whats_new/biomass_nl.png', alt: ''
+        = image_tag 'pages/whats_new/hourlyprofiles_nl.png', alt: ''
 
-    %h2 4. Tijdsopgeloste grafieken
+    %h2 4. Meerjarengrafieken
     %p
-      Voor veel grafieken is het nu mogelijk om te schakelen tussen een jaarlijks overzicht of een uurlijkse grafiek. Klik hiervoor bovenop de 'schakelaar'.
-      %a(href="https://pro.energytransitionmodel.com/scenario/supply/electricity_renewable/wind-turbines")
-        Ga voor een voorbeeld naar de grafiek voor elektriciteitsvraag en -aanbod.
+      Met de inzet van de nieuwe meerjarengrafieken module kunnen de mogelijke transitiepaden naar een 2050 toekomstbeeld verkend worden. Het stelt de gebruiker in staat om te ontdekken wat dit zou kunnen betekenen voor de tussentijdse doelstellingen voor de belangrijkste zichtjaren (2023, 2030 en 2040). Met de meerjarengrafieken krijgt de gebruiker inzicht in een drietal grafieken waarmee het transitiepad van de belangrijkste aspecten van het energiesysteem (eindgebruik energie, CO<sub>2</sub> uitstoot en hernieuwbare opwek) per zichtjaar ingezien en aangepast kunnen worden. De sessies kunnen na afloop van de verkenning opgeslagen en gedeeld worden.
+      %a(href="https://beta-pro.energytransitionmodel.com/multi_year_charts")
+        Verken de nieuwe meerjarengrafieken module.
       %p(style="text-align: center")
-        = image_tag 'pages/whats_new/electricity_nl.png', alt: ''
+        = image_tag 'pages/whats_new/myc_nl.png', alt: ''
 
-    %h2 5. Open-source documentatie via ETLocal
+    %h2 5. Overige updates
     %p
-      Wij streven ernaar om alles in het model voor iedereen zo open en toegankelijk als mogelijk te maken. Veel technische details zijn te vinden wanneer je achter een schuifje op de '?' klikt. Voor de echte die-hards is al onze code te vinden op github. Daarnaast hebben wij nu alle regiospecifieke data inzichtelijker gemaakt via ETLocal. Dit is een kaart van Nederland waar je kunt zoeken naar jouw provincie of gemeente. Alle inputdata voor de gemeente of provincie is hier terug te vinden.
-      %a(href="https://local.energytransitionmodel.com/")
-        Ga hier naar ETLocal.
-      %p(style="text-align: center")
-        = image_tag 'pages/whats_new/etlocal_nl.png', alt: ''
-
-
-    %h2 6. Heel veel regio's zijn de afgelopen periode toegevoegd. Verken nu ook het energiesysteem van o.a. de volgende gebieden:
-    %ul
-      %li Amsterdam en Rotterdam
-      %li Regio Midden-Holland (Gouda, Bodegraven-Reeuwijk, Waddinxveen, Krimpenerwaard en Zuidplas)
-      %li De gemeentes in Flevoland
-      %li Gemeente Leiden
-      %li Denemarken en Duitsland
-      %li Alle 48 gemeenten in Noord-Holland
-      %li 16 Utrechtse gemeenten (U16) en 6 gecombineerde regio’s in Utrecht
-      %li 4 provincies: Noord-Holland, Overijssel, Flevoland (update) and Friesland (update)
-      %li Gemeente De Friese Meren
-
-    %p
-      %a(href="https://pro.energytransitionmodel.com/")
-        De hele lijst van regio's is hier te vinden.
+      Verder zijn er nog twee kleinere updates die ook interessant zijn om te noemen:
+      %ul
+        %li <strong>Grondstoffen chemische industrie</strong>
+        Het is nu mogelijk om grondstoffen die gebruikt worden door de chemische industrie aan te passen. Je kan nu bijvoorbeeld fossiele grondstoffen vervangen voor biomassa/waterstof.
+        %li <strong>Waterstofcentrale (STEG) toegevoegd</strong>
 
   %section
     %p= link_to "← #{t('back_to_model')}", root_path, class: 'button'

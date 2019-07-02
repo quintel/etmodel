@@ -93,7 +93,6 @@ public
         request.format = 'js' # to render the js.erb template
         @options = params[:feedback]
         Notifier.feedback_mail(@options).deliver
-        Notifier.feedback_mail_to_sender(@options).deliver
       else
         @errors = true
       end

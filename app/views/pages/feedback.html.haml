@@ -1,16 +1,16 @@
 #feedback_form
   %h1 Feedback
   %p= t("feedback_text")
-  %p{:id=>"errors",:class=>"errors"}
-  = form_for :feedback, :url => feedback_path, :remote => true do |f|
-    %p
-      %label= t("user.message")
-      = f.text_area :msg
-    %p
+  %p#errors.errors(style="display: none")
+  = simple_form_for :feedback, :url => feedback_path, :remote => true do |f|
+    %div.field
       %label= t("user.name")
       = f.text_field :name
-    %p
+    %div.field
       %label= t("user.email")
       = f.text_field :email
-    %p
-      = f.submit "Ok"
+    %div.field
+      %label= t("user.message")
+      = f.text_area :msg
+    %div.field
+      = f.submit t('send_feedback'), class: 'btn'

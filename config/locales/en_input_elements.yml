@@ -1,30 +1,4 @@
 en:
-  custom_curves:
-    confirm_remove: "Are you sure you wish to remove this curve and revert to the default?"
-    default: "Default curve"
-    loading: "Loading..."
-    max: "Max"
-    mean: "Mean"
-    min: "Min"
-    on_date: "on %{date}"
-    remove: "Revert to default curve"
-    upload: "Upload a custom curve"
-    uploading: "Uploading curve"
-    value: "%{value}"
-    errors:
-      file_too_large: "Curve must not be larger than 1MB"
-      illegal_value: "Curve must only contain numeric values"
-      not_a_curve: "Curve must be a CSV file containing 8760 numeric values, one for each hour in a typical year"
-      wrong_length: "Curve must have 8760 numeric values, one for each hour in a typical year"
-    imported_electricity_price:
-      default: "Default price curve"
-      description_html: |
-        Is is assumed that the price of imported electricity is constant, set
-        using the slider above. You may override this assumption by uploading a
-        CSV file detailing the hourly price of imports. For more information on
-        how this works, and examples of compatible CSV files, please
-        <a href="%{docs_path}">see our documentation</a>.
-      value: "€%{value}/MWh"
   input_elements:
     agriculture_burner_crude_oil_share: "Oil-fired heater"
     agriculture_burner_hydrogen_share: "H<sub>2</sub>-fired heater"

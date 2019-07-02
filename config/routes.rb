@@ -125,6 +125,7 @@ Etm::Application.routes.draw do
 
   get '/units'                        => 'pages#units'
   get '/feedback'                     => 'pages#feedback', as: :feedback
+  post '/feedback'                    => 'pages#feedback'
   get '/tutorial/(:tab)(/:sidebar)'   => 'pages#tutorial', as: :tutorial
   get '/prominent_users'              => 'pages#prominent_users'
   get '/disclaimer'                   => 'pages#disclaimer'

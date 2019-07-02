@@ -149,7 +149,7 @@ describe PagesController, vcr: true do
       expect(response).to render_template(:feedback)
     end
 
-    it "should let the user post some feedback and send a couple emails" do
+    it "should let the user post some feedback and send an email" do
       ActionMailer::Base.deliveries = []
       post :feedback, xhr: true, params: { feedback: {
         name: 'Schwarzenegger',
@@ -160,13 +160,11 @@ describe PagesController, vcr: true do
       expect(response).to be_successful
       expect(response).to render_template(:feedback)
       emails = ActionMailer::Base.deliveries
-      expect(emails.size).to eql(2)
+      expect(emails.size).to eql(1)
 
       quintel = emails.first
       user = emails.last
-      expect(quintel.to[0]).to eql("john.kerkhoven@quintel.com")
-      expect(quintel.to[1]).to eql("dennis.schoenmakers@quintel.com")
-      expect(user.to[0]).to eql('arnold@quintel.com')
+      expect(quintel.to[0]).to eql("info@quintel.com")
     end
   end
 end

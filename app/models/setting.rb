@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Class for all user settings that should persist over a session.
 #
 # A word about locked charts:
@@ -9,7 +11,6 @@
 # The "T" means that the chart must be shown as a table. The previous
 # implementation was using a nested hash but it was a pain to maintain and
 # Rails had crazy issues saving the object in memcached-based sessions.
-#
 class Setting
   extend ActiveModel::Naming
 
@@ -38,53 +39,53 @@ class Setting
     }
   end
 
-  attr_accessor *default_attributes.keys
+  attr_accessor(*default_attributes.keys)
+
+  # Public: Create a new setting object for a Api::Scenario.
+  #
+  # The setting object has no api_session_id, so that backbone initializes a new
+  # ETengine session, based on the loaded scenario.
+  #
+  # scenario                 - The Api::Scenario being loaded.
+  # active_saved_scenario_id - Optional ID of the currently-active saved
+  #                            scenario.
+  #
+  # Returns the Setting object loaded with the country, end year, etc, from the
+  # scenario.
+  def self.load_from_scenario(scenario, active_saved_scenario_id: nil)
+    new(
+      preset_scenario_id: scenario.id,
+      use_fce: scenario.use_fce,
+      end_year: scenario.end_year,
+      area_code: scenario.area_code,
+      scaling: scenario.scaling&.attributes,
+      active_saved_scenario_id: active_saved_scenario_id,
+      # Only set the title when the user is resuming a saved scenario: prevents
+      # setting the title when the user opens a preset.
+      active_scenario_title: active_saved_scenario_id && scenario.title
+    )
+  end
+
+  def self.default
+    new(default_attributes)
+  end
 
   def initialize(attributes = {})
     self.class.default_attributes.merge(attributes).each do |name, value|
-      self.send("#{name}=", value)
+      send("#{name}=", value)
     end
   end
 
   def [](key)
-    send("#{key}")
+    send(key.to_s)
   end
 
   def []=(key, param)
     send("#{key}=", param)
   end
 
-  # Create a new setting object for a Api::Scenario.
-  # The setting object has no api_session_id, so that backbone
-  # initializes a new ETengine session, based on the loaded scenario.
-  #
-  # param scenario [Api::Scenario]
-  # return [Setting] setting object loaded with the country/end_year/etc from scenario
-  #
-  def self.load_from_scenario(scenario, active_saved_scenario_id: nil)
-    attrs = {
-      preset_scenario_id: scenario.id,
-      use_fce: scenario.use_fce,
-      end_year: scenario.end_year,
-      area_code: scenario.area_code,
-      scaling: scenario.scaling && scenario.scaling.attributes,
-      active_saved_scenario_id: active_saved_scenario_id,
-      # Only set the title when the user is resuming a saved scenario: prevents
-      # setting the title when the user opens a preset.
-      active_scenario_title: active_saved_scenario_id && scenario.title
-    }
-    new(attrs)
-  end
-
-  # ------ Defaults and Resetting ---------------------------------------------
-
-  def self.default
-    new(default_attributes)
-  end
-
-
   def reset_attribute(key)
-    self.send("#{key}=", self.class.default_attributes[key.to_sym])
+    send("#{key}=", self.class.default_attributes[key.to_sym])
   end
 
   def reset!
@@ -97,8 +98,8 @@ class Setting
     self.api_session_id = nil
     self.preset_scenario_id = nil # to go back to a blank slate scenario
 
-    [:use_fce, :network_parts_affected, :locked_charts].each do |key|
-      self.reset_attribute key
+    %i[use_fce network_parts_affected locked_charts].each do |key|
+      reset_attribute(key)
     end
   end
 
@@ -127,12 +128,12 @@ class Setting
   end
 
   def derived_dataset?
-    area && area.derived?
+    area&.derived?
   end
 
   # Returns the ActiveResource object
   def area
-    @area = if scaling.present?
+    if scaling.present?
       Api::ScaledArea.new(Api::Area.find_by_country_memoized(area_code))
     else
       Api::Area.find_by_country_memoized(area_code)
@@ -143,8 +144,7 @@ class Setting
   # nl     => nl
   # nl-bar => nl
   def country
-    return nil unless area_code
-    area_code.split('-')[0]
+    area_code.split('-')[0] if area_code
   end
 
   # Returns the Setting as a Hash (which can then be converted to JSON in a

@@ -97,6 +97,10 @@ class ScenariosController < ApplicationController
         ss_params
       )
 
+      if ss_params[:title]
+        Current.setting.active_scenario_title = ss_params[:title]
+      end
+
       redirect_to scenarios_path
     end
   end

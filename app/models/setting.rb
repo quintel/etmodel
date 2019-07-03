@@ -69,6 +69,9 @@ class Setting
       area_code: scenario.area_code,
       scaling: scenario.scaling && scenario.scaling.attributes,
       active_saved_scenario_id: active_saved_scenario_id,
+      # Only set the title when the user is resuming a saved scenario: prevents
+      # setting the title when the user opens a preset.
+      active_scenario_title: active_saved_scenario_id && scenario.title
     }
     new(attrs)
   end
@@ -93,6 +96,7 @@ class Setting
   def reset_scenario
     self.api_session_id = nil
     self.preset_scenario_id = nil # to go back to a blank slate scenario
+
     [:use_fce, :network_parts_affected, :locked_charts].each do |key|
       self.reset_attribute key
     end
@@ -149,16 +153,5 @@ class Setting
     self.class.default_attributes.keys.each_with_object({}) do |key, data|
       data[key] = public_send(key)
     end
-  end
-
-  def active_scenario_title
-    @active_scenario_title ||= get_active_scenario_title
-  end
-
-  private
-
-  def get_active_scenario_title
-    active_scenario = SavedScenario.where(id: active_saved_scenario_id).first
-    active_scenario&.scenario&.title or nil
   end
 end

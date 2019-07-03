@@ -1,49 +1,52 @@
 .information_page
-  %h1 What's new in the energy transition model?
+  %h1 What's new in the Energy Transition Model?
 
   %section
-    %h2 1. Update housing types and insulation
+    %h2 1. All RES regions available!
     %p
-      The ETM now has five different types of residences. For each type, the present average insulation level (and corresponding energy label) is indicated; for your scenario, you are able to choose how these insulation levels may change per type of residence in the future.
-      %a(href="https://pro.energytransitionmodel.com/scenario/demand/households/insulation")
-        Explore the types of residences and insulation levels here.
+      From now on, all 30 Dutch RES-regions are available in the Energy Transition Model. This means that everyone can explore these energy systems and make (professional) energy scenarios. For example, look at the effect of:
+      %ul
+        %li Placing a solar park in Drechtsteden,
+        %li Insulating all terraced houses in Central Holland,
+        %li Or building ten wind turbines in the Cleantech region
+      %p
+        For more information: <a href="https://quintel.com/res">https://quintel.com/res</a>
       %p(style="text-align: center")
-        = image_tag 'pages/whats_new/households_insulation_chart_en.png', alt: ''
+        = image_tag 'pages/whats_new/resregions_en.png', alt: ''
 
-    %h2 2. Hybrid heat pump using hydrogen
+    %h2 2. User friendliness improvements
     %p
-      Explore the future for all residences with a hybrid heat pump using hydrogen. See directly how much hydrogen you will need. Try to find out yourselves how much wind turbines are needed to produce the necessary amount of hydrogen.
-      %a(href="https://pro.energytransitionmodel.com/scenario/demand/households/space-heating-hot-water")
-        You will find the hydrogen heat pump here.
+      Work has also been done on the user friendliness of the Energy Transition Model. A few examples:
+      %ul
+        %li <strong>Introduction</strong>: There is a clear <a href="https://beta-pro.energytransitionmodel.com/scenario/overview/introduction/how-does-the-energy-transition-model-work">landing page</a>, where the process for creating scenarios is explained.
+        %li	<strong>Saving scenarios</strong>: You can use the ”save” or “save as” function for scenarios. This makes version management much easier and more intuitive. By using the "save" function you overwrite the scenario while the name and link remain intact. Using “save as” allows you to make a copy, for which you must provide a new name (= similar to the old way of saving a scenario).
+        %li <strong>Supply sliders</strong>: The units of the supply sliders changed from "units" to MW, which makes it easier for many people to translate known plans and objectives into slider settings, without the need for conversions themselves.
+        %li <strong>Residences</strong>: Changes in numbers of residences do not have to be set per type of residence anymore. An increase in the total number of residences automatically increases the numbers of different residence types, based on the current (default) mix. This mix of residence types can be changed by the user. <a href="https://beta-pro.energytransitionmodel.com/scenario/demand/households/population-housing-stock">Check out the new residences sliders.</a>
 
-    %h2 3. Biomass update
+    %h2 3. Update all hourly curves
     %p
-      Biomass has had an update in the model. You are now able to check out the demand and supply of biomass in a region. Furthermore, you can find the spatial consequences of the needed biomass production.
-      %a(href="https://pro.energytransitionmodel.com/scenario/supply/biomass/overview")
-        Go to biomass in the model
+      The ETM models supply and demand of electricity and hydrogen on an hourly basis. We have reviewed all profiles in close cooperation with the energy modelling community and clearly documented the sources and methods on Github. This process was concluded with a mini symposium where the results were presented, and we identified areas for improvement.
+      %a(href="https://github.com/quintel/documentation/blob/master/general/curves.md")
+        The documentation on all hourly curves can be found here.
       %p(style="text-align: center")
-        = image_tag 'pages/whats_new/biomass_en.png', alt: ''
+        = image_tag 'pages/whats_new/hourlyprofiles_en.png', alt: ''
 
-    %h2 4. Time resolved charts
+    %h2 4. Multi-year charts
     %p
-      For many charts it is now possible to 'toggle' easily between the yearly supply and demand to the hourly dynamics. Click the toggle at the top right if you want the explore this.
-      %a(href="https://pro.energytransitionmodel.com/scenario/supply/electricity_renewable/wind-turbines")
-        You can find a nice example here.
+      The new multi-year charts module allows the user to explore the possible transition paths to a 2050 scenario and discover the actions and consequences for aspired goals in 2023, 2030 and 2040. The charts provide insights into the transition paths of the most important aspects of the energy system (final energy demand, CO<sub>2</sub> emissions and renewables). For each of the years, the user is able to edit the slider settings.
+      %a(href="https://beta-pro.energytransitionmodel.com/multi_year_charts")
+        Explore the new multi-year charts module.
       %p(style="text-align: center")
-        = image_tag 'pages/whats_new/electricity_en.png', alt: ''
+        = image_tag 'pages/whats_new/myc_en.png', alt: ''
 
-
-    %h2 5. You can explore hundreds of new regions with the energy transition model. A couple of examples are:
-    %ul
-      %li Amsterdam
-      %li Rotterdam
-      %li Leiden
-      %li Denmark
-      %li Germany (updated)
-
+    %h2 5. Other updates
     %p
-      %a(href="https://pro.energytransitionmodel.com/")
-        You can find the whole list of regions here.
+      Furthermore, there are two smaller updates that are worth mentioning:
+      %ul
+        %li <strong>Non-energetic demand chemical industry</strong>
+        It is possible to adjust the non-energetic demand in the chemical industry. For example, fossil carriers can be substituted by biomass/hydrogen <a href="https://beta-pro.energytransitionmodel.com/scenario/demand/industry/chemicals">with the new sliders</a>.
+        %li <strong>Hydrogen plant (CCGT)</strong>
+        Besides the peak load hydrogen plant, it is also possible to use a <a href="https://beta-pro.energytransitionmodel.com/scenario/supply/electricity_renewable/hydrogen-plants">base load hydrogen plant (CCTG)</a> in a scenario.
 
   %section
     %p= link_to "← #{t('back_to_model')}", root_path, class: 'button'

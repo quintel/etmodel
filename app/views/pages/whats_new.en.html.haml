@@ -2,7 +2,7 @@
   %h1 What's new in the Energy Transition Model?
 
   %section
-    %h2 1. All RES regions are available!
+    %h2 1. All RES regions available!
     %p
       From now on, all 30 Dutch RES-regions are available in the Energy Transition Model. This means that everyone can explore these energy systems and make (professional) energy scenarios. For example, look at the effect of:
       %ul
@@ -10,22 +10,18 @@
         %li Insulating all terraced houses in Central Holland,
         %li Or building ten wind turbines in the Cleantech region
       %p
-        For more information:
-      %a(href="https://quintel.com/res")
-        https://quintel.com/res
+        For more information: <a href="https://quintel.com/res">https://quintel.com/res</a>
       %p(style="text-align: center")
         = image_tag 'pages/whats_new/resregions_en.png', alt: ''
 
-    %h2 2. Improvements in user friendliness
+    %h2 2. User friendliness improvements
     %p
-      Work has also been done on the user-friendliness of the Energy Transition Model. A few examples:
+      Work has also been done on the user friendliness of the Energy Transition Model. A few examples:
       %ul
-        %li <strong>Introduction</strong>: There is a clear landing page, where the process for creating scenarios is explained.
-        %li	<strong>Saving scenarios</strong>: You can use the ”save” or “save as” function for scenarios. This makes version management much easier and more intuitive. With saving you overwrite the scenario and the name and link remains intact. With “save as” you make a copy, to which you must give a new name (= the same as the old way).
-        %li <strong>Supply sliders</strong>: The supply is now in MW and not in ‘units’, this makes it easier for many people to convert known plans and objectives into sliders, without the need for conversions themselves.
-        %li <strong>Residences</strong>: You do not have to state per type of residence in a scenario, what type it will be. If you build more houses, the current mix will be used as default. You can change this mix.
-      %a(href="https://beta-pro.energytransitionmodel.com")
-        Check it out.
+        %li <strong>Introduction</strong>: There is a clear <a href="https://beta-pro.energytransitionmodel.com/scenario/overview/introduction/how-does-the-energy-transition-model-work">landing page</a>, where the process for creating scenarios is explained.
+        %li	<strong>Saving scenarios</strong>: You can use the ”save” or “save as” function for scenarios. This makes version management much easier and more intuitive. By using the "save" function you overwrite the scenario while the name and link remain intact. Using “save as” allows you to make a copy, for which you must provide a new name (= similar to the old way of saving a scenario).
+        %li <strong>Supply sliders</strong>: The units of the supply sliders changed from "units" to MW, which makes it easier for many people to translate known plans and objectives into slider settings, without the need for conversions themselves.
+        %li <strong>Residences</strong>: Changes in numbers of residences do not have to be set per type of residence anymore. An increase in the total number of residences automatically increases the numbers of different residence types, based on the current (default) mix. This mix of residence types can be changed by the user. <a href="https://beta-pro.energytransitionmodel.com/scenario/demand/households/population-housing-stock">Check out the new residences sliders.</a>
 
     %h2 3. Update all hourly curves
     %p
@@ -37,19 +33,20 @@
 
     %h2 4. Multi-year charts
     %p
-      The new multi-year charts module allows the user to explore the possible transition paths to a 2050 scenario and discover the actions and consequences for aspired goals in 2023, 2030 and 2040. The charts provide insights into the transition paths of the most important aspects of the energy system (final energy demand, CO<sub>2</sub> emissions and renewables). For each of the years the user is able to edit the slider settings. At the end of the exploration the sessions can be saved and shared.
+      The new multi-year charts module allows the user to explore the possible transition paths to a 2050 scenario and discover the actions and consequences for aspired goals in 2023, 2030 and 2040. The charts provide insights into the transition paths of the most important aspects of the energy system (final energy demand, CO<sub>2</sub> emissions and renewables). For each of the years, the user is able to edit the slider settings.
       %a(href="https://beta-pro.energytransitionmodel.com/multi_year_charts")
         Explore the new multi-year charts module.
       %p(style="text-align: center")
         = image_tag 'pages/whats_new/myc_en.png', alt: ''
 
-
     %h2 5. Other updates
     %p
-      Furthermore there are two smaller updates that are worth mentioning:
+      Furthermore, there are two smaller updates that are worth mentioning:
       %ul
-        %li <strong>Non-energetic demand chemical industry</strong>: It is possible to adjust the non-energetic demand in the chemical industry. For example fossil carriers can be substituted by biomass/hydrogen.
-        %li <strong>Added hydrogen plant (CCGT)</strong>
+        %li <strong>Non-energetic demand chemical industry</strong>
+        It is possible to adjust the non-energetic demand in the chemical industry. For example, fossil carriers can be substituted by biomass/hydrogen <a href="https://beta-pro.energytransitionmodel.com/scenario/demand/industry/chemicals">with the new sliders</a>.
+        %li <strong>Hydrogen plant (CCGT)</strong>
+        Besides the peak load hydrogen plant, it is also possible to use a <a href="https://beta-pro.energytransitionmodel.com/scenario/supply/electricity_renewable/hydrogen-plants">base load hydrogen plant (CCTG)</a> in a scenario.
 
   %section
     %p= link_to "← #{t('back_to_model')}", root_path, class: 'button'

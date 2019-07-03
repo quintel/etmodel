@@ -10,9 +10,7 @@
         %li Het isoleren van alle rijtjeshuizen in Midden-Holland,
         %li Of het bouwen van tien windmolens in de Cleantechregio
       %p
-        Voor meer informatie:
-      %a(href="https://quintel.com/res")
-        https://quintel.com/res
+        Voor meer informatie: <a href="https://quintel.com/res">https://quintel.com/res</a>
       %p(style="text-align: center")
         = image_tag 'pages/whats_new/resregions_nl.png', alt: ''
 
@@ -20,12 +18,10 @@
     %p
       Er is ook gewerkt aan de gebruiksvriendelijkheid van het Energietransitiemodel. Een aantal voorbeelden:
       %ul
-        %li <strong>Introductie</strong>: Er is een heldere landingspagina, waar het proces voor het maken van scenario’s op hoofdlijnen wordt uitgelegd.
-        %li	<strong>Scenario’s opslaan</strong>: Je kunt eigen scenario’s zowel ‘opslaan’ als ‘opslaan’ als. Dit maakt versiebeheer veel makkelijker en intuitiever. Met opslaan overschrijf jij het scenario en blijft de naam en de link intact. Met ‘opslaan als’ maak je een kopie, waar je een nieuwe naam aan moet geven (=gelijk aan de oude manier).
-        %li <strong>Aanbod</strong>: De schuifjes voor aanbod zijn nu in MW en niet in ‘stuks’, dit maakt het voor veel mensen makkelijker om bekende plannen en doelstellingen om te zetten in schuifjes, zonder dat er zelf omrekeningen nodig zijn.
-        %li <strong>Huizenvoorraad</strong>: Je hoeft niet per type woning in een scenario aan te geven hoeveel het er worden. Wanneer je meer woningen bouwt, dan wordt de huidig mix gevolg. Deze mix kan je wel veranderen.
-      %a(href="https://beta-pro.energytransitionmodel.com")
-        Bekijk alle verbeteringen.
+        %li <strong>Introductie</strong>: Er is een heldere <a href="https://beta-pro.energytransitionmodel.com/scenario/overview/introduction/how-does-the-energy-transition-model-work">landingspagina</a>, waar het proces voor het maken van scenario’s op hoofdlijnen wordt uitgelegd.
+        %li	<strong>Scenario’s opslaan</strong>: Je kunt eigen scenario’s zowel "opslaan" als "opslaan als". Dit maakt versiebeheer veel makkelijker en intuitiever. Met "opslaan" overschrijf jij het scenario en blijft de naam en de link intact. Met "opslaan als" maak je een kopie, waar je een nieuwe naam aan moet geven (= gelijk aan de oude manier).
+        %li <strong>Aanbod</strong>: Met de schuifjes voor aanbod geef je nu vermogen in MW aan in plaats van aantallen; dit maakt het voor veel mensen makkelijker om bekende plannen en doelstellingen om te zetten in schuifjes, zonder dat er zelf omrekeningen nodig zijn.
+        %li <strong>Huizenvoorraad</strong>: Je hoeft niet meer per type woning in een scenario aan te geven hoeveel het er worden. Als je meer woningen bouwt, wordt de huidige mix gevolgd. Deze mix kun je wel veranderen. <a href="https://beta-pro.energytransitionmodel.com/scenario/demand/households/population-housing-stock">Bekijk hier de nieuwe schuifjes voor de huizenvoorraad.</a>
 
     %h2 3. Update van alle uurlijkse profielen
     %p
@@ -37,9 +33,9 @@
 
     %h2 4. Meerjarengrafieken
     %p
-      Met de inzet van de nieuwe meerjarengrafieken module kunnen de mogelijke transitiepaden naar een 2050 toekomstbeeld verkend worden. Het stelt de gebruiker in staat om te ontdekken wat dit zou kunnen betekenen voor de tussentijdse doelstellingen voor de belangrijkste zichtjaren (2023, 2030 en 2040). Met de meerjarengrafieken krijgt de gebruiker inzicht in een drietal grafieken waarmee het transitiepad van de belangrijkste aspecten van het energiesysteem (eindgebruik energie, CO<sub>2</sub> uitstoot en hernieuwbare opwek) per zichtjaar ingezien en aangepast kunnen worden. De sessies kunnen na afloop van de verkenning opgeslagen en gedeeld worden.
+      Met de inzet van de nieuwe meerjarengrafieken module kunnen de mogelijke transitiepaden naar een 2050 toekomstbeeld verkend worden. Het stelt de gebruiker in staat om te ontdekken wat dit zou kunnen betekenen voor de tussentijdse doelstellingen voor de belangrijkste zichtjaren (2023, 2030 en 2040). Met de meerjarengrafieken krijgt de gebruiker inzicht in een drietal grafieken waarmee het transitiepad van de belangrijkste aspecten van het energiesysteem (eindgebruik energie, CO<sub>2</sub> uitstoot en hernieuwbare opwek) per zichtjaar ingezien en aangepast kunnen worden.
       %a(href="https://beta-pro.energytransitionmodel.com/multi_year_charts")
-        Verken de nieuwe meerjarengrafieken module.
+        Ontdek de nieuwe meerjarengrafieken module.
       %p(style="text-align: center")
         = image_tag 'pages/whats_new/myc_nl.png', alt: ''
 
@@ -48,8 +44,9 @@
       Verder zijn er nog twee kleinere updates die ook interessant zijn om te noemen:
       %ul
         %li <strong>Grondstoffen chemische industrie</strong>
-        Het is nu mogelijk om grondstoffen die gebruikt worden door de chemische industrie aan te passen. Je kan nu bijvoorbeeld fossiele grondstoffen vervangen voor biomassa/waterstof.
-        %li <strong>Waterstofcentrale (STEG) toegevoegd</strong>
+        Het is nu mogelijk om grondstoffen die gebruikt worden door de chemische industrie aan te passen. Je kunt nu bijvoorbeeld fossiele grondstoffen vervangen voor biomassa/waterstof <a href="https://beta-pro.energytransitionmodel.com/scenario/demand/industry/chemicals">met de nieuwe schuifjes</a>.
+        %li <strong>Waterstofcentrale (STEG)</strong>
+        Naast de pieklast waterstofcentrale kan nu ook een <a href="https://beta-pro.energytransitionmodel.com/scenario/supply/electricity_renewable/hydrogen-plants">basislast waterstofcentrale (STEG)</a> ingezet worden in een scenario.
 
   %section
     %p= link_to "← #{t('back_to_model')}", root_path, class: 'button'

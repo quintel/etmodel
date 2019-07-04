@@ -97,6 +97,12 @@
     details.append($('<span class="name" />').text(curveData.name));
     details.append(formatCurveStats(curveData.stats, t));
 
+    if (options.description) {
+      details.append(
+        $('<span class="description" />').text(options.description)
+      );
+    }
+
     main.append($('<div class="file ' + (opts.icon || 'csv') + '" />'));
     main.append(details);
 
@@ -207,7 +213,10 @@
         this.$el.append(
           renderCSVInfo({ name: this.t('default') }, this.t, {
             showUpload: true,
-            icon: 'csv-light'
+            icon: 'csv-light',
+            description: this.t('default_description', {
+              defaults: [{ message: false }]
+            })
           })
         );
       }
@@ -300,17 +309,18 @@
      */
     t: function(id, data) {
       var defaultKey = 'custom_curves.' + id;
+      var defaultScope = [{ scope: defaultKey }];
 
       if (this.options.curveName) {
+        if (data && data.defaults) {
+          defaultScope = defaultScope.concat(data.defaults);
+        }
+
         return I18n.t(
           'custom_curves.' + this.options.curveName + '.' + id,
-          $.extend(
-            {},
-            {
-              defaults: [{ scope: defaultKey }]
-            },
-            data
-          )
+          $.extend({}, data, {
+            defaults: defaultScope
+          })
         );
       }
 

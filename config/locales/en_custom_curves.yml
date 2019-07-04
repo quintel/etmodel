@@ -19,6 +19,7 @@ en:
       wrong_length: "Curve must have 8760 numeric values, one for each hour in a typical year"
     imported_electricity_price:
       default: "Default price curve"
+      default_description: "Constant price throughout the year"
       description_html: |
         It is assumed that the price of imported electricity is constant, set
         using the slider above. You may override this assumption by uploading a

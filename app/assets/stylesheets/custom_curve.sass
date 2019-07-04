@@ -1,0 +1,141 @@
+.custom-curve
+  background: #f4f8fb
+  border: 1px solid #d5dce4
+  border-radius: 5px
+  margin-bottom: 1em
+
+  .main
+    display: flex
+    align-items: center
+    justify-content: center
+
+  .file, .details, .actions
+    display: block
+
+  .file
+    align-self: start
+    background-size: 32px
+    background-repeat: no-repeat
+    background-position: 15px 15px
+    padding: 15px
+    min-height: 30px
+    width: 30px
+
+    &.csv, &.csv-light
+      background-image: asset-url("icons/csv.svg")
+    &.csv-light
+      opacity: 0.65
+      -moz-filter:    grayscale(100%)
+      -ms-filter:     grayscale(100%)
+      -o-filter:      grayscale(100%)
+      -webkit-filter: grayscale(100%)
+    &.loading
+      background-size: 28px
+      background-image: asset-url("charts/loading.gif")
+
+  .details
+    flex: 1
+    padding: 15px 0
+    margin-right: 15px
+    overflow: hidden
+
+    .name, dl
+      display: block
+    .name
+      font-size: 14px
+      font-weight: bold
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+    dl
+      color: #8895b2
+      font-size: 12px
+      margin: 5px 0 0
+      overflow: hidden
+    dt, dd
+      display: block
+      float: left
+      margin: 0
+    dt
+      width: 15%
+    dd
+      width: 85%
+
+    progress
+      display: block
+      margin-top: 3px
+      width: 100%
+
+  .actions
+    border-top: 1px solid #d5dce4
+    color: #8895b2
+    font-size: 12px
+    margin: -7px 15px 0 60px
+    padding: 10px 0 15px
+
+    ul
+      line-height: 1.3
+      list-style: none
+      margin: 0
+      overflow: hidden
+      padding: 0
+
+      li
+        float: left
+        padding: 0 10px
+        &:first-child
+          margin-left: -10px
+
+      li + li
+        border-left: 1px solid #d5dce4
+
+    .upload, .remove
+      cursor: pointer
+
+    .upload
+      color: #1982d1
+      &:hover
+        color: darken(#1982d1, 23%)
+
+    .remove
+      color: #c3685e
+      &:hover
+        color: darken(#c3685e, 20%)
+
+.curve-upload
+  .errors
+    background-color: #fbe5e2
+    border-bottom-left-radius: 5px
+    border-bottom-right-radius: 5px
+    border: 1px solid #e0c8c6
+    color: darken(#c3685e, 10%)
+    font-size: 12px
+    line-height: 1.4
+    margin-top: -1.2em
+    padding: 15px 60px
+    position: relative
+
+    ul
+      list-style: none
+      padding: 0
+
+      li + li
+        margin-top: 10px
+
+    &:before, &:after
+      right: auto
+      content: ""
+      display: inline-block
+      position: absolute
+
+    &:before
+      left: 110px
+      top: -18px
+      border: 9px solid transparent
+      border-bottom-color: #e0c8c6
+
+    &:after
+      left: 111px
+      top: -16px
+      border: 8px solid transparent
+      border-bottom-color: #fbe5e2

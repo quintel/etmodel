@@ -18,8 +18,6 @@
           - unless slide.subheader_image.blank?
             %img.sub_header_image{:src => "/assets/slides/#{slide.subheader_image}"}
 
-      = render "scenarios/slides/#{ slide.key }" rescue nil
-
       - slide.input_elements_not_belonging_to_a_group.each do |input_element|
         = render :partial => 'input_elements/slider', :object => input_element
 
@@ -31,3 +29,5 @@
               = t("subheaders.#{to_yml_syntax(group)}", default: t("subheaders.#{to_yml_syntax(slide.group_sub_header)}"))
         - sliders.each do |input_element|
           = render :partial => 'input_elements/slider', :object => input_element
+
+    = render "scenarios/slides/#{ slide.key }" rescue nil

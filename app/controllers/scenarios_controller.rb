@@ -28,7 +28,7 @@ class ScenariosController < ApplicationController
   def index
     @student_ids = current_user.students.pluck(:id)
     items = if current_user.admin?
-      SavedScenario.all
+      SavedScenario.all.includes(:user)
     elsif current_user.students.present?
       user_ids =  @student_ids << current_user.id
       SavedScenario.includes(:user).where(user_id: user_ids)
@@ -96,6 +96,10 @@ class ScenariosController < ApplicationController
         current_user,
         ss_params
       )
+
+      if ss_params[:title]
+        Current.setting.active_scenario_title = ss_params[:title]
+      end
 
       redirect_to scenarios_path
     end

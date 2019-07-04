@@ -8,6 +8,9 @@
       %li
         #year= Current.setting.end_year
         #{t "header.current_end_year"}:
+      %li
+        #{t "header.current_scenario"}:
+        %div= Current.setting.active_scenario_title
 
     - if Current.setting.scaling
       %li.scaling= scaling_summary
@@ -32,7 +35,7 @@
 
         %a.save_as{:href => new_scenario_path}= t("header.save_scenario_as")
 
-        %a#reset_scenario{:href => scenario_reset_path}= t("header.reset_scenario")
+        %a#reset_scenario{ href: scenario_reset_path, data: { confirm: t('header.reset_scenario_confirm') } }= t("header.reset_scenario")
 
     - if controller_name != 'pages' && has_active_scenario?
       %li.sep

@@ -23,7 +23,26 @@
         %li <strong>Supply sliders</strong>: The units of the supply sliders changed from "units" to MW, which makes it easier for many people to translate known plans and objectives into slider settings, without the need for conversions themselves.
         %li <strong>Residences</strong>: Changes in numbers of residences do not have to be set per type of residence anymore. An increase in the total number of residences automatically increases the numbers of different residence types, based on the current (default) mix. This mix of residence types can be changed by the user. <a href="https://beta-pro.energytransitionmodel.com/scenario/demand/households/population-housing-stock">Check out the new residences sliders.</a>
 
-    %h2 3. Update all hourly curves
+    %h2 3. Imported electricity price curve
+    %p
+      Instead of the
+      %a(href="https://beta-pro.energytransitionmodel.com/scenario/costs/electricity_import_costs/costs-of-imported-electricity")<
+        price of imported electricity
+      being constant throughout the
+      year, you may now choose to upload a CSV file which can describe a custom
+      price for each hour (of which there are 8,760 per year). The position of
+      imported electricity in the merit order will change by the hour depending
+      on how competitive it is relative to domestic generation technologies.
+    %p(style="text-align: center")
+      = image_tag 'pages/whats_new/imported_electricity_price_en.png', alt: ''
+
+    %p
+      %a(href="https://github.com/quintel/documentation/blob/master/general/costs_imported_electricity.md#uploaded-price-curves")<
+        Our documentation
+      contains more information on this feature, including instructions on how
+      to format your CSV file.
+
+    %h2 4. Update all hourly curves
     %p
       The ETM models supply and demand of electricity and hydrogen on an hourly basis. We have reviewed all profiles in close cooperation with the energy modelling community and clearly documented the sources and methods on Github. This process was concluded with a mini symposium where the results were presented, and we identified areas for improvement.
       %a(href="https://github.com/quintel/documentation/blob/master/general/curves.md")
@@ -31,7 +50,7 @@
       %p(style="text-align: center")
         = image_tag 'pages/whats_new/hourlyprofiles_en.png', alt: ''
 
-    %h2 4. Multi-year charts
+    %h2 5. Multi-year charts
     %p
       The new multi-year charts module allows the user to explore the possible transition paths to a 2050 scenario and discover the actions and consequences for aspired goals in 2023, 2030 and 2040. The charts provide insights into the transition paths of the most important aspects of the energy system (final energy demand, CO<sub>2</sub> emissions and renewables). For each of the years, the user is able to edit the slider settings.
       %a(href="https://beta-pro.energytransitionmodel.com/multi_year_charts")
@@ -39,7 +58,7 @@
       %p(style="text-align: center")
         = image_tag 'pages/whats_new/myc_en.png', alt: ''
 
-    %h2 5. Other updates
+    %h2 6. Other updates
     %p
       Furthermore, there are two smaller updates that are worth mentioning:
       %ul

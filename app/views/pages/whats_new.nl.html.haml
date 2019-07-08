@@ -25,22 +25,20 @@
 
     %h2 3. Imported electricity price curve
     %p
-      Instead of the
+      Het ETM veronderstelt standaard dat
       %a(href="https://beta-pro.energytransitionmodel.com/scenario/costs/electricity_import_costs/costs-of-imported-electricity")<
-        price of imported electricity
-      being constant throughout the
-      year, you may now choose to upload a CSV file which can describe a custom
-      price for each hour (of which there are 8.760 per year). The position of
-      imported electricity in the merit order will change by the hour depending
-      on how competitive it is relative to domestic generation technologies.
+        de prijs van geïmporteerde elektriciteit
+      constant is gedurende het jaar. Je kunt nu afwijken van deze aanname door een CSV-bestand te importeren met daarin voor elk uur van het jaar een prijs voor import-stroom (in €/MWh).
+      Hierdoor zal de positie van geïmporteerde elektriciteit in de merit order per uur verschillen.
     %p(style="text-align: center")
       = image_tag 'pages/whats_new/imported_electricity_price_en.png', alt: ''
 
     %p
       %a(href="https://github.com/quintel/documentation/blob/master/general/costs_imported_electricity.md#uploaded-price-curves")<
-        Our documentation
-      contains more information on this feature, including
-      instructions on how to format your CSV file.
+        Onze documentatie
+      bevat meer informatie over deze nieuwe feature, inclusief
+      instructies over hoe het CSV-bestand geüpload moet worden.
+
 
     %h2 4. Update van alle uurlijkse profielen
     %p

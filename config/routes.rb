@@ -145,6 +145,7 @@ Etm::Application.routes.draw do
   get '/local-global/:ids' => 'compare#show', as: :local_global_scenarios
 
   resources :multi_year_charts, only: %i[index create destroy]
+  resource :embedded_pico, only: [:show]
 
   %w[404 422 500].each do |code|
     get "/#{ code }", to: 'errors#show', code: code

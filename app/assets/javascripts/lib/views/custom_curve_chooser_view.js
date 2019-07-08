@@ -137,8 +137,6 @@
   function formatTemporalValue(value, at, t) {
     var date = new Date(0 + at * 1000 * 60 * 60);
 
-    console.log(I18n.locale);
-
     return (
       formatValue(value, t) +
       ' ' +

@@ -35,6 +35,10 @@ Gemspec/OrderedDependencies:
 Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
+Layout/MultilineAssignmentLayout:
+  Enabled: true
+  EnforcedStyle: new_line
+
 # Indent parameters with two spaces only.
 #
 #   # Bad
@@ -49,7 +53,7 @@ Layout/AlignParameters:
 #     my_parameters
 #   ))
 #
-Layout/FirstParameterIndentation:
+Layout/IndentFirstArgument:
   EnforcedStyle: consistent
 
 # Indent array values with two spaces only.
@@ -65,7 +69,7 @@ Layout/FirstParameterIndentation:
 #     3
 #   ]
 #
-Layout/IndentArray:
+Layout/IndentFirstArrayElement:
   EnforcedStyle: consistent
 
 # Indent hash keys with two spaces only.
@@ -82,7 +86,7 @@ Layout/IndentArray:
 #     "three" => 3
 #   }
 #
-Layout/IndentHash:
+Layout/IndentFirstHashElement:
   EnforcedStyle: consistent
 
 # Multi-line method calls are indented by two spaces only.

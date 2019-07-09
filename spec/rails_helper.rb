@@ -64,6 +64,8 @@ VCR.configure do |c|
       # Redirect the standard areas.json request to a specific cassette so that
       # we don't need to store many copies.
       VCR.use_cassette('areas', &request)
+    elsif uri.path == '/api/v3/scenarios/templates.json'
+      VCR.use_cassette('presets', &request)
     else
       request.proceed
     end

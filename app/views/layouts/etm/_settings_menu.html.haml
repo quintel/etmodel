@@ -8,6 +8,9 @@
       %li
         #year= Current.setting.end_year
         #{t "header.current_end_year"}:
+      %li
+        #{t "header.current_scenario"}:
+        %div= Current.setting.active_scenario_title
 
     - if Current.setting.scaling
       %li.scaling= scaling_summary
@@ -58,3 +61,7 @@
           %form{:action => 'http://beta.et-engine.com/mechanical_turk/factory', :method => 'post', :target => '_blank', :id => 'turkit'}
             %input#last_api_response{:type => 'hidden', :name => 'json_data'}
             = submit_tag "Turk it"
+
+    - if current_user&.admin?
+      %li.admin.sep
+        %a(href="/admin") Admin

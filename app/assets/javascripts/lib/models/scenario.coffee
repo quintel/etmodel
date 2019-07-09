@@ -13,6 +13,6 @@ class @Scenario extends Backbone.Model
       source: 'ETM'
 
   # Returns the base scenario URL, taking into account CORS support
-  url_path: => App.api.path "/scenarios/#{@api_session_id()}"
+  url_path: => App.api.path "scenarios/#{@api_session_id()}"
 
   reset: => App.reset_scenario()

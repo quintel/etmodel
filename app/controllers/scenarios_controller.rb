@@ -28,7 +28,7 @@ class ScenariosController < ApplicationController
   def index
     @student_ids = current_user.students.pluck(:id)
     items = if current_user.admin?
-      SavedScenario.all
+      SavedScenario.all.includes(:user)
     elsif current_user.students.present?
       user_ids =  @student_ids << current_user.id
       SavedScenario.includes(:user).where(user_id: user_ids)
@@ -97,6 +97,10 @@ class ScenariosController < ApplicationController
         ss_params
       )
 
+      if ss_params[:title]
+        Current.setting.active_scenario_title = ss_params[:title]
+      end
+
       redirect_to scenarios_path
     end
   end
@@ -111,11 +115,11 @@ class ScenariosController < ApplicationController
 
     Current.setting = Setting.load_from_scenario(@scenario)
 
-    assign_scaling_attributes(params)
-
-    if Current.setting.scaling
-      scenario_attrs.merge!(scale: Current.setting.scaling)
+    if params[:scaling_attribute]
+      Current.setting.scaling = Api::Scenario.scaling_from_params(params)
     end
+
+    scenario_attrs[:scale] = Current.setting.scaling if Current.setting.scaling
 
     new_scenario = Api::Scenario.create(scenario: { scenario: scenario_attrs })
     Current.setting.api_session_id = new_scenario.id

@@ -51,9 +51,14 @@ class @AppView extends Backbone.View
         @setup_checkboxes()
       .fail @handle_ajax_error
 
+    wrapper = $('#accordion_wrapper')
+
     # Create flexibility order.
-    if (sortable = $('#accordion_wrapper ul.sortable')).length
+    if (sortable = wrapper.find('ul.sortable')).length
       new FlexibilityOrder(sortable[0]).render()
+
+    if (curve_upload = wrapper.find('.curve-upload')).length
+      CustomCurveChooserView.setupWithWrapper(curve_upload).render();
 
     deferred
 

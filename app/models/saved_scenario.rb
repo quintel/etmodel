@@ -26,7 +26,7 @@ class SavedScenario < ActiveRecord::Base
     loaded = Api::Scenario.batch_load(ids).index_by(&:id)
 
     saved_scenarios.each do |saved|
-      saved.scenario = loaded[saved.id]
+      saved.scenario = loaded[saved.scenario_id]
     end
 
     saved_scenarios

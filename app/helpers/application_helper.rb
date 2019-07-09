@@ -118,7 +118,10 @@ module ApplicationHelper
   # Public: Receives a settings object and converts it to a hash suitable for
   # serialization as JSON.
   def settings_as_json(setting)
-    setting.to_hash.merge(area_name: I18n.t(setting.area_code))
+    setting.to_hash.merge(
+      area_name: I18n.t(setting.area_code),
+      area_scaling: setting.area.try(:scaling)
+    )
   end
 
   def active_saved_scenario_id

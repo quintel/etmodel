@@ -7,9 +7,10 @@
       'style'              => @interface.slides.size == 1 ? 'display:none;' : ''}
     = link_to t("slides.#{slide.key}").html_safe, slide.url
   .slide
-    %p
-      = image_tag(slide.image_path) if slide.image.present?
-      = raw format_description(slide.description.try(:content))
+    .description
+      %p
+        = image_tag(slide.image_path) if slide.image.present?
+        = raw format_description(slide.description.try(:content))
 
     .items
       - unless slide.general_sub_header.blank?
@@ -17,8 +18,6 @@
           %span.sub_header_arrow= t("subheaders.#{to_yml_syntax(slide.general_sub_header)}")
           - unless slide.subheader_image.blank?
             %img.sub_header_image{:src => "/assets/slides/#{slide.subheader_image}"}
-
-      = render "scenarios/slides/#{ slide.key }" rescue nil
 
       - slide.input_elements_not_belonging_to_a_group.each do |input_element|
         = render :partial => 'input_elements/slider', :object => input_element
@@ -31,3 +30,5 @@
               = t("subheaders.#{to_yml_syntax(group)}", default: t("subheaders.#{to_yml_syntax(slide.group_sub_header)}"))
         - sliders.each do |input_element|
           = render :partial => 'input_elements/slider', :object => input_element
+
+    = render "scenarios/slides/#{ slide.key }" rescue nil

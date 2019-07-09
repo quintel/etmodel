@@ -1,0 +1,28 @@
+---
+nl:
+  custom_curves:
+    confirm_remove: "Weet je zeker dat je dit profiel wilt verwijderen en de default wilt gebruiken?"
+    default: "Default profiel"
+    loading: "Laden..."
+    max: "Maximum"
+    mean: "Gemiddelde"
+    min: "Minimum"
+    on_date: "aan %{date}"
+    remove: "Zet het default-profiel terug"
+    upload: "Een eigen profiel uploaden"
+    uploading: "Uploaden profiel"
+    value: "%{value}"
+    errors:
+      file_too_large: "Profiel mag niet meer dan 1MB groot zijn"
+      illegal_value: "Profiel mag alleen numerieke waarden bevatten"
+      not_a_curve: "Profiel moet een CSV file zijn met 8760 getallen (één getal voor elk uur in een jaar)"
+      wrong_length: "Profiel moet 8760 getallen bevatten (één getal voor elk uur in een jaar)"
+    imported_electricity_price:
+      default: "Default prijsprofiel"
+      default_description: "Constante prijs gedurende het jaar"
+      description_html: |
+        Het ETM veronderstelt standaard dat de prijs van geïmporteerde stroom constant is gedurende het jaar. Deze prijs kun je instellen met de slider hierboven. Je kunt afwijken van deze aanname door hieronder een
+        CSV-bestand te importeren met daarin voor elk uur van het jaar een prijs voor
+        import-stroom (in €/MWh). Voor meer uitleg over hoe dit werkt en voorbeelden van compatibele profielen
+        kun je <a href="%{docs_path}">onze documentatie bekijken.</a>.
+      value: "€%{value}/MWh"

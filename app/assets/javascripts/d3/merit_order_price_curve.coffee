@@ -16,7 +16,7 @@ D3.merit_order_price_curve =
         label: I18n.t("output_element_series.merit_price_average")
       )
 
-      @legendSeries = @model.non_target_series()
+      @legendSeries = @model.series.slice()
       @legendSeries.push(@average)
 
       super
@@ -24,14 +24,18 @@ D3.merit_order_price_curve =
       @drawLegend(@legendSeries, 1)
 
     averageData: (data) ->
+      mean = d3.mean(data.find((series) => series.is_target).values)
+
       color:  @average.attributes.color,
       label:  @average.attributes.label,
       key:    'average',
-      values: Array.apply(null, Array(8760)).map(
-        Number.prototype.valueOf, d3.mean(data[0].values.slice()))
+      values: Array.apply(null, Array(8760)).map(() => mean)
 
     dataForChart: ->
-      data = @model.non_target_series().map(@getSerie)
+      # In this chart, we render target- and non-target- series the same. The
+      # first (and ideally only) target series is used to create a new series
+      # describing its average.
+      data = @model.series.map(@getSerie)
       data.push(@averageData(data))
       data
 
@@ -82,4 +86,4 @@ D3.merit_order_price_curve =
         @drawData(xScale, yScale, line)
 
     maxYvalue: ->
-      d3.max(@rawChartData[0].values)
+      d3.max(_.flatten(_.pluck(@visibleData(), 'values')))

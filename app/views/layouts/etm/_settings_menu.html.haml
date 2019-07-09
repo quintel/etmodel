@@ -61,3 +61,7 @@
           %form{:action => 'http://beta.et-engine.com/mechanical_turk/factory', :method => 'post', :target => '_blank', :id => 'turkit'}
             %input#last_api_response{:type => 'hidden', :name => 'json_data'}
             = submit_tag "Turk it"
+
+    - if current_user&.admin?
+      %li.admin.sep
+        %a(href="/admin") Admin

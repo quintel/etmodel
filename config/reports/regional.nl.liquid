@@ -23,7 +23,7 @@
     <h1 class="banner"> Disclaimer </h1>
     <p>
       Dit rapport is automatisch gegenereerd door het
-      <a href="https://energytransitionmodel.com">Energietransitiemodel</a>
+      <a href="https://energytransitionmodel.com" target="_blank">Energietransitiemodel</a>
       <abbr>(ETM)</abbr> en is gebaseerd op de de <a href="#appendix-a-schuifjes-instellingen">schuifjes-instellingen</a> in jouw scenario (link: {% link_to_scenario %}).
     </p>
 </section>
@@ -194,12 +194,12 @@
     <h2 class="banner">C. Waterstof</h2>
     {% if future.hydrogen_used_in_scenario > 0.0 %}
 
-	<p> 
-		Er wordt in dit scenario waterstof ingezet. Deze waterstof moet ergens vandaan komen. 
-		Hieronder zie je links de vraag van waterstof en rechts het aanbod. Wanneer jouw aanbod 
-		lager is dan de 
-		vraag, wordt waterstof geïmporteerd. Wanneer het aanbod hoger is dan de vraag, dan 
-		zie je overschotten. Indien of de waterstofimport of het -overschot groot is ben je 
+	<p>
+		Er wordt in dit scenario waterstof ingezet. Deze waterstof moet ergens vandaan komen.
+		Hieronder zie je links de vraag van waterstof en rechts het aanbod. Wanneer jouw aanbod
+		lager is dan de
+		vraag, wordt waterstof geïmporteerd. Wanneer het aanbod hoger is dan de vraag, dan
+		zie je overschotten. Indien of de waterstofimport of het -overschot groot is ben je
 		als {{ settings.area_name }} gevoelig voor de waterstofprijs.
   		{% chart 214 %}
     		Waterstofvraag- (links) en aanbod (rechts) in {{ settings.end_year }}.
@@ -209,7 +209,7 @@
 	<p>
 	Hieronder staat weergegeven hoe de waterstof in het scenario ieder uur wordt ingezet. Rechtsonder de figuur
 	kun je kiezen om het hele jaar weer te geven of slechts één week van het jaar.
-	
+
 		{% chart 226 %}
   		Gebruik van waterstof door het jaar heen in {{ settings.end_year }}
 		{% endchart %}
@@ -218,7 +218,7 @@
 	<p>
 	Hieronder staat weergegeven hoe groot de benodigde opslagcapaciteit voor waterstof ten minste moet zijn. Rechtsonder de figuur
 	kun je kiezen om het hele jaar weer te geven of slechts één week van het jaar.
-	
+
 		{% chart 227 %}
   		Hoeveelheid opgeslagen waterstof door het jaar heen in {{ settings.end_year }}
 		{% endchart %}
@@ -261,8 +261,8 @@
     <h1 class="banner">4. Actieagenda</h1>
 	<p>
         Er zijn veel keuzes gemaakt waarvan de impact concreter wordt als je kijkt wat dit per jaar betekent. In de werkelijkheid ontwikkelt zich natuurlijk niet alles lineair. WAls dat wel zou gebeuren zou dat het volgende betekenen.
-	</p>	
-	
+	</p>
+
         <p>
           Het scenario overbrugt {{ future.scenario_duration | round: 0 }} jaar. De aannames in het scenario
           resulteren er onder andere in dat <strong>jaarlijks</strong> de volgende aantallen moeten worden gerealiseerd:
@@ -440,7 +440,7 @@
       <h3>Inleiding</h3>
 
         <p>
-          Het <a href="https://energytransitionmodel.com">Energyietransitiemodel (ETM)</a> is
+          Het <a href="https://energytransitionmodel.com" target="_blank">Energyietransitiemodel (ETM)</a> is
           een gratis, open-source, web-based
            energiemodel om energiescenario's voor de toekomst mee te verkennen.
         </p>
@@ -456,7 +456,7 @@
 
         <p>
           Op
-          <a href="www.energierekenmodellen.nl">energierekenmodellen.nl</a> kun je zien hoe het ETM zich
+          <a href="http://www.energierekenmodellen.nl" target="_blank">energierekenmodellen.nl</a> kun je zien hoe het ETM zich
           verhoudt tot andere modellen.
         </p>
 

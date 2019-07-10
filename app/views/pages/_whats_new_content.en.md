@@ -2,38 +2,36 @@
 
 ## 1. All RES regions available!
 
-From now on, all 30 Dutch RES-regions are available in the Energy Transition
-Model. This means that everyone can explore these energy systems and make
-(professional) energy scenarios. For example, look at the effect of:
+All 30 Dutch RES-regions are now available in the Energy TransitioModel. You can
+explore these energy systems and make energy scenarios. For example, look at the
+effect of...
 
-* Placing a solar park in Drechtsteden,
-* Insulating all terraced houses in Central Holland,
-* Or building ten wind turbines in the Cleantech region
-
-For more information see https://quintel.com/res
+* Placing a solar park in Drechtsteden;
+* Insulating all terraced houses in Central Holland; or
+* Building ten wind turbines in the Cleantech region
 
 -> ![](assets/pages/whats_new/resregions_en.png) <-
 
 ## 2. User friendliness improvements
 
-Work has also been done on the user friendliness of the Energy Transition Model.
-A few examples:
+Many improvements have been made to the user friendliness of the ETM.
 
-* **Introduction**: There is a clear [landing page][Workflow slide], where the
+* **Introduction**: There is a [clear introduction][Workflow slide] where the
   process for creating scenarios is explained.
-* **Saving scenarios**: You can use the "save" or "save as" function for
-  scenarios. This makes version management much easier and more intuitive. By
-  using the "save" function you overwrite the scenario while the name and link
-  remain intact. Using "save as" allows you to make a copy, for which you must
-  provide a new name (= similar to the old way of saving a scenario).
-* **Supply sliders**: The units of the supply sliders changed from "units" to
-  MW, which makes it easier for many people to translate known plans and
-  objectives into slider settings, without the need for conversions themselves.
+* **Saving scenarios**: You can use the "save" or "save as" function when
+  creating your scenarios. By using the "save" function you overwrite the
+  scenario while the name and link remain intact. Using "save as" allows you to
+  make a copy, for which you must provide a new name (this is similar to the old
+  way of saving a scenario).
+* **Supply sliders**: The units of the supply sliders changed from "number of
+  units" to MW, which makes it easier to translate known plans and objectives
+  into slider settings, without the need for conversions themselves.
 * **Residences**: Changes in numbers of residences do not have to be set per
   type of residence anymore. An increase in the total number of residences
   automatically increases the numbers of different residence types, based on the
-  current (default) mix. This mix of residence types can be changed by the user.
-  Check out the [new residences sliders][Housing stock slide].
+  current) mix. This mix of residence types (terraced houses, detached houses,
+  etc) can be changed. Check out the
+  [new residences sliders][Housing stock slide].
 
 ## 3. Imported electricity price curve
 
@@ -54,27 +52,25 @@ including instructions on how to format your CSV file.
 The ETM models supply and demand of electricity and hydrogen on an hourly basis.
 We have reviewed all profiles in close cooperation with the energy modelling
 community and clearly documented the sources and methods on Github. This process
-was concluded with a mini symposium where the results were presented, and we
-identified areas for improvement. [The documentation on all hourly curves can be
-found here][Curve docs].
+was concluded with a mini-symposium where the results were presented and we
+identified areas for improvement.
+[Documentation on all hourly curves can be found here][Curve docs].
 
 -> ![](/assets/pages/whats_new/hourlyprofiles_en.png) <-
 
 ## 5. Multi-year charts
 
-The new multi-year charts module allows the user to explore the possible
-transition paths to a 2050 scenario and discover the actions and consequences
-for aspired goals in 2023, 2030 and 2040. The charts provide insights into the
-transition paths of the most important aspects of the energy system (final
-energy demand, CO<sub>2</sub> emissions and renewables). For each of the years,
-the user is able to edit the slider settings.
+The new multi-year charts module allows you to explore the possible transition
+paths to a 2050 scenario and discover the actions and consequences for aspired
+goals in 2023, 2030 and 2040. The charts provide insights into the transition
+paths of the most important aspects of the energy system (final energy demand,
+CO<sub>2</sub> emissions, and renewables). For each of these years you are able
+to further edit the slider settings to make adjustments to the scenarios.
 [Explore the new multi-year charts module][Multi year charts].
 
 -> ![](/assets/pages/whats_new/myc_en.png) <-
 
 ## 6. Other updates
-
-Furthermore, there are two smaller updates that are worth mentioning:
 
 * **Non-energetic demand chemical industry**: It is possible to adjust the
   non-energetic demand in the chemical industry. For example, fossil carriers

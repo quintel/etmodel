@@ -197,4 +197,12 @@ describe PagesController, vcr: true do
       expect(quintel.to[0]).to eql("info@quintel.com")
     end
   end
+
+  describe 'whats new' do
+    it 'renders an h1' do
+      # Assert markdown rendering works
+      get :whats_new
+      expect(response.body).to have_css('.whats_new h1', text: /what’s new/i)
+    end
+  end
 end

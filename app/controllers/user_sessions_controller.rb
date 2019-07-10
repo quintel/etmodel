@@ -27,13 +27,12 @@ class UserSessionsController < ApplicationController
     )
 
     @user_session.save do |result|
-       if result
-        flash[:notice] = I18n.t("flash.login")
+      if result
+        flash[:notice] = I18n.t('flash.login')
+
         if url = session[:return_to]
           session[:return_to] = nil
           redirect_to url
-        elsif UserSession.find.user.role.andand.name == "admin"
-          redirect_to "/admin"
         else
           redirect_to_back(root_path)
         end

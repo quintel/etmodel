@@ -42,6 +42,36 @@ describe PagesController, vcr: true do
     end
   end
 
+  context 'when visiting as a guest' do
+    before { get :root }
+
+    it 'does not have a link to the admin section' do
+      expect(response.body).not_to have_css('#settings_menu li.admin')
+    end
+  end
+
+  context 'when visiting as a signed-in user' do
+    before do
+      login_as FactoryBot.create(:user)
+      get :root
+    end
+
+    it 'does not have a link to the admin section' do
+      expect(response.body).not_to have_css('#settings_menu li.admin')
+    end
+  end
+
+  context 'when visiting as an admin' do
+    before do
+      login_as FactoryBot.create(:admin)
+      get :root
+    end
+
+    it 'has a link to the admin section' do
+      expect(response.body).to have_css('#settings_menu li.admin')
+    end
+  end
+
   {'nl' => 2030, 'de' => 2050}.each do |country, year|
     describe "selecting #{country} #{year}" do
       before do

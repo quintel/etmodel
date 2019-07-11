@@ -1,0 +1,56 @@
+= javascript_include_tag 'application'
+
+%h1 Receiving message from ETM
+=form_tag nil, remote: true, id: 'receiver-form' do
+  .group
+    = label_tag :van_bebouwing
+    = text_field_tag :van_bebouwing
+  .group
+    = label_tag :first_boolean
+    = check_box_tag :first_boolean
+  .group
+    = label_tag :second_boolean
+    = check_box_tag :second_boolean
+
+%h1 sending message to ETM
+=form_tag nil, remote: true, id: 'dummy-form' do
+  .group
+    =label_tag :result
+    =text_field_tag(:result)
+  =submit_tag
+
+:javascript
+  function setInputValues(inputName, value){
+    var els = document.getElementsByName(inputName)
+
+    for (var i=0;i<els.length;i++) {
+      if(els[i].type == "checkbox") {
+        if(value == 1)
+          els[i].checked = true
+        else
+          els[i].checked = false
+        end
+      } else {
+        els[i].value = value
+      }
+    }
+  }
+
+  $(document).ready( function() {
+    var ele = document.getElementById('dummy-form');
+    ele.addEventListener('submit', function(event){
+      window.parent
+            .postMessage(event.target.children[1].value, "http://localhost:3000")
+    }, false)
+
+    function receiveMessage(event){
+      message = event.data
+      // A case statement would make more sense then an if here.
+      // Its used here to give a name to the action.
+      if(message["action"] = "updateForm"){
+        delete message.action
+        for (var key in message) { setInputValues(key, message[key]) }
+      }
+    }
+    window.addEventListener("message", receiveMessage, false);
+  });

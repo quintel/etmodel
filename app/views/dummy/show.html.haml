@@ -17,7 +17,7 @@
   .group
     =label_tag :result
     =text_field_tag(:result)
-  =submit_tag
+  =submit_tag("stuur een alert naar het front-end")
 
 :javascript
   function setInputValues(inputName, value){
@@ -39,8 +39,9 @@
   $(document).ready( function() {
     var ele = document.getElementById('dummy-form');
     ele.addEventListener('submit', function(event){
+      var message = event.target.children[1].children[1].value
       window.parent
-            .postMessage(event.target.children[1].value, "http://localhost:3000")
+            .postMessage(message, "http://localhost:3000")
     }, false)
 
     function receiveMessage(event){

@@ -157,7 +157,8 @@ spinner = TTY::Spinner.new(
 
 spinner.run do
   commands = [
-    'bundle exec rails db:drop db:create > /dev/null',
+    'bundle exec rails db:environment:set db:drop db:create ' \
+      'RAILS_ENV=development > /dev/null',
     Kernel.format(import_command, file.path.shellescape),
     'bundle exec rails RAILS_ENV=development db:environment:set > /dev/null'
   ]

@@ -1,0 +1,23 @@
+#pico
+  %h1 PICO
+
+  .form
+    =form_tag nil, remote: true, id: 'host-form' do
+      .group
+        = label_tag :van_bebouwing
+        = number_field_tag :van_bebouwing
+      .group
+        = label_tag :first_boolean
+        = check_box_tag :first_boolean
+      .group
+        = label_tag :second_boolean
+        = check_box_tag :second_boolean
+      .group
+        = submit_tag "Update iframe"
+
+  %iframe#selframe{src: "http://localhost:3000/dummy",
+          title: "tweede",
+          width: "500",
+          sandbox: "allow-forms allow-scripts allow-same-origin",
+          height: "500",
+  }

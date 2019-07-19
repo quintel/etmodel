@@ -17,26 +17,21 @@
   .group
     =label_tag :result
     =text_field_tag(:result)
-  =submit_tag("stuur een alert naar het front-end")
+  =submit_tag "Update parent"
 
 :javascript
   function setInputValues(inputName, value){
-    var els = document.getElementsByName(inputName)
-
-    for (var i=0;i<els.length;i++) {
-      if(els[i].type == "checkbox") {
-        if(value == 1)
-          els[i].checked = true
-        else
-          els[i].checked = false
-        end
-      } else {
-        els[i].value = value
-      }
+    var selector = '#receiver-form input[name=' + inputName +']'
+    var el  = document.querySelector(selector)
+    if(el.type == "checkbox") {
+      el.checked = (value == 1 ? true : false)
+    } else {
+      el.value = value
     }
   }
 
   $(document).ready( function() {
+
     var ele = document.getElementById('dummy-form');
     ele.addEventListener('submit', function(event){
       var message = event.target.children[1].children[1].value
@@ -46,11 +41,11 @@
 
     function receiveMessage(event){
       message = event.data
-      // A case statement would make more sense then an if here.
-      // Its used here to give a name to the action.
-      if(message["action"] = "updateForm"){
+      if(message["action"] === "updateForm"){
         delete message.action
         for (var key in message) { setInputValues(key, message[key]) }
+      } else if(message["action"] === "someNotImplementedAction"){
+        // do other stuff
       }
     }
     window.addEventListener("message", receiveMessage, false);

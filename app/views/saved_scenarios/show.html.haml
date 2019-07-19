@@ -4,10 +4,18 @@
     .warning
       = @warning
 
-  %h1= @scenario.title.nil? ? t('scenario.no_title').truncate(40, separator: ' ') : @scenario.title.truncate(40, separator: ' ')
+  %h1
+    = (@scenario.title.nil? ? t('scenario.no_title') : @scenario.title) |
+        .truncate(40, separator: ' ')                                   |
 
-  = link_to t("scenario.load"), load_saved_scenario_path(@saved_scenario), class: "button primary"
-  = link_to t("scenario.load_factsheet"), factsheet_scenario_path(@saved_scenario.scenario_id), class: "button primary"
+  = link_to t("scenario.load"),
+            load_saved_scenario_path(@saved_scenario),
+            class: "button primary"
+
+  = link_to t("scenario.load_factsheet"),
+            factsheet_scenario_path(@saved_scenario.scenario_id),
+            class: "button primary"
+
   -# Seems a to be a reduntant check to me. Don't think this is reachable
   -# without a saved scenario
   - if @scenario.description

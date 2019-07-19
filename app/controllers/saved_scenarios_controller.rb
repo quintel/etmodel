@@ -3,11 +3,10 @@ class SavedScenariosController < ApplicationController
   before_action :assign_scenario, only: %i[show load]
 
   def show
-    if @saved_scenario.description
-      localized = @saved_scenario.description_for_locale(I18n.locale)
-      text = localized.present? ? localized : @saved_scenario.description
-      renderer = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
-      @description = renderer.render(text).html_safe
+    if @scenario.description
+      @description = RDiscount.new(
+        @scenario.description, :filter_html, :no_image, :no_links, :smart
+      ).to_html.html_safe
     end
     if @scenario.created_at && @scenario.days_old > 180
       if SavedScenario.where('user_id = ? AND scenario_id = ?',

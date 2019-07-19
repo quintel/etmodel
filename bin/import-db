@@ -1,0 +1,176 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'shellwords'
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+  gem 'tty-prompt'
+  gem 'tty-spinner'
+end
+
+# Setup
+# -----
+
+FileInfo = Struct.new(:path) do
+  def name
+    File.basename(path)
+  end
+end
+
+# Expect database files to begin with this string, otherwise warn the user that
+# they may be importing a DB for a different app.
+EXPECTED_FILE_START = 'etmodel'
+
+prompt = TTY::Prompt.new
+source_dir = File.expand_path('~/Downloads')
+files = []
+
+def help!(prompt)
+  pastel = Pastel.new
+
+  prompt.say(<<~HELP)
+    #{pastel.bold('Usage:')} bin/import-db [file-or-directory]
+
+    import-db looks for files ending in .sql, .sql.gz, or .sql.bz2 in your
+    Downloads directory. Alternatively, provide a path to a database file
+    or different directory.
+
+    #{pastel.yellow('# Looks in ~/Downloads for suitable files:')}
+    #{pastel.bold('bin/import-db')}
+
+    #{pastel.yellow('# Looks in db/dumps for suitable files:')}
+    #{pastel.bold('bin/import-db db/dumps')}
+
+    #{pastel.yellow('# Loads the specified database file:')}
+    #{pastel.bold('bin/import-db ~/Downloads/my-database.sql')}
+  HELP
+
+  exit(0)
+end
+
+# Takes a string and turns it into an application name.
+#
+# For example
+#   appify "etmodel"  # => "ETModel"
+#   appify "etengine" # => "ETEngine"
+#   appify "merit"    # => "Merit"
+def appify(string)
+  string = string.to_s
+
+  if string.start_with?('et')
+    "ET#{appify(string[2..-1])}"
+  else
+    "#{string[0].upcase}#{string[1..-1]}"
+  end
+end
+
+if ARGV.any?
+  filename = ARGV.first
+
+  if %w[help --help].include?(filename)
+    help!(prompt)
+  elsif File.directory?(filename)
+    source_dir = File.expand_path(filename)
+  elsif File.exist?(filename)
+    files = [FileInfo.new(ARGV.first)]
+  else
+    prompt.error("No such file: #{ARGV.first}")
+    exit(1)
+  end
+end
+
+if files.none?
+  # If there are no files specified in ARGV, search for them in the source dir.
+  files = Dir.glob(source_dir + '/*.sql{,.bz2,.gz}')
+    .sort
+    .reverse
+    .map { |path| FileInfo.new(path) }
+end
+
+# Select file
+# -----------
+
+if files.none? || ARGV.first == 'help'
+  prompt.error('No database files found')
+  prompt.say("\n")
+  help!(prompt)
+end
+
+file =
+  if files.length > 1
+    prompt.enum_select('Which database do you want to import?') do |menu|
+      files.each { |f| menu.choice(f.name, f) }
+      menu.choice('Cancel', :cancel)
+    end
+  else
+    prompt.say("Found one database file: #{files.first.name}")
+    files.first
+  end
+
+exit if file == :cancel
+
+# Sanity check
+# ------------
+
+unless file.name.match?(EXPECTED_FILE_START)
+  prompt.error(
+    'The filename suggests this might not be an ' \
+    "#{appify(EXPECTED_FILE_START)} database. " \
+    "It may belong to #{appify(file.name.split('_', 2).first)}."
+  )
+end
+
+prompt.warn('Importing will remove changes made to your local database.')
+
+unless prompt.yes?('Happy to proceed?')
+  prompt.say('Exiting without performing the import.')
+  exit
+end
+
+# How to import?
+# --------------
+
+import_command =
+  case file.name
+  when /bz2$/ then 'bunzip2 -c %s | bin/rails db'
+  when /gz$/  then 'gunzip -c %s | bin/rails db'
+  when /sql$/ then 'bin/rails db < %s'
+  end
+
+# Check that gzip/bzip are available...
+first_command = import_command.split(' ', 2).first
+
+unless Kernel.system("which #{first_command} > /dev/null")
+  prompt.error("#{first_command} not found!")
+  exit
+end
+
+# Off we go...
+# ------------
+
+spinner = TTY::Spinner.new(
+  "[:spinner] Importing #{file.name}...",
+  format: :dots
+)
+
+spinner.run do
+  commands = [
+    'bundle exec rails db:environment:set db:drop db:create ' \
+      'RAILS_ENV=development > /dev/null',
+    Kernel.format(import_command, file.path.shellescape),
+    'bundle exec rails RAILS_ENV=development db:environment:set > /dev/null'
+  ]
+
+  if commands.all? { |cmd| Kernel.system(cmd) }
+    spinner.success('done!')
+  else
+    spinner.error('error.')
+    exit
+  end
+end
+
+if prompt.yes?("Do you want to remove the database file? (#{file.name})")
+  File.unlink(file.path)
+end

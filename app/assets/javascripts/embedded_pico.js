@@ -1,10 +1,13 @@
+// requires jquery
 embeddedPico = {
   attach: function(){
     document.getElementById('host-form')
-            .addEventListener('submit', submit(event), false)
-    console.log("attached")
+            .addEventListener('submit', embeddedPico.submit, false)
+
     document.getElementById('close-modal')
-            .addEventListener('submit', close(event), false)
+            .addEventListener('click', embeddedPico.close, false)
+
+    document.addEventListener("message", receiveMessag, false);
   },
 
   submit: function(event){
@@ -27,10 +30,19 @@ embeddedPico = {
   },
 
   close: function(event){
-    document.getElementByClass("modal__backdrop")
-            .remove()
+    document.getElementsByClassName("modal__backdrop")[0].remove()
     event.preventDefault()
   },
-}
 
-$(document).ready(embeddedPico(attach));
+  updateInlandWindTurbine: function(new_value){
+    ie = App.input_elements
+            .find_by_key('capacity_of_energy_power_wind_turbine_inland')
+    ie.set({user_value: new_value})
+  },
+
+  receiveMessage: function(event){
+    console.log("receive")
+    event.preventDefault()
+    embeddedPico.updateInlandWindTurbine(event.data)
+  }
+}

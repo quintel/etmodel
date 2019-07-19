@@ -13,6 +13,9 @@
         = label_tag :second_boolean
         = check_box_tag :second_boolean
       .group
+        = label_tag :third_boolean
+        = check_box_tag :third_boolean
+      .group
         = submit_tag "Update iframe"
 
   %iframe#selframe{src: "http://localhost:3000/dummy",
@@ -21,3 +24,11 @@
           sandbox: "allow-forms allow-scripts allow-same-origin",
           height: "500",
   }
+
+:javascript
+  (function() {
+    function receiveMessage(event){
+      embeddedPico.updateInlandWindTurbine(event.data)
+    }
+    window.addEventListener("message", receiveMessage, false);
+  }())

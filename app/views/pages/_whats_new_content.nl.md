@@ -60,17 +60,17 @@ gepresenteerd en we verbeterpunten hebben geïdentificeerd.
 
 -> ![](/assets/pages/whats_new/hourlyprofiles_nl.png) <-
 
-## 5. Meerjarengrafieken
+## 5. Transitiepaden
 
-Met de inzet van de nieuwe meerjarengrafieken module kunnen de mogelijke
+Met de inzet van de nieuwe transitiepaden module kunnen de mogelijke
 transitiepaden naar een 2050 toekomstbeeld verkend worden. Het stelt de
 gebruiker in staat om te ontdekken wat dit zou kunnen betekenen voor de
 tussentijdse doelstellingen voor de belangrijkste zichtjaren (2023, 2030 en
-2040). Met de meerjarengrafieken krijgt de gebruiker inzicht in een drietal
+2040). Met de transitiepaden krijgt de gebruiker inzicht in een drietal
 grafieken waarmee het transitiepad van de belangrijkste aspecten van het
 energiesysteem (eindgebruik energie, CO<sub>2</sub> uitstoot en hernieuwbare
 opwek) per zichtjaar ingezien en aangepast kunnen worden.
-[Ontdek de nieuwe meerjarengrafieken module][Multi year charts].
+[Ontdek de nieuwe transitiepaden module][Multi year charts].
 
 -> ![](/assets/pages/whats_new/myc_nl.png) <-
 

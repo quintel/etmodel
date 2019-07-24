@@ -179,6 +179,18 @@ en:
       geo_ambient: "geothermal & ambient"
       water: "hydropower"
       feedstock: "feedstock"
+      local: 'local'
+      wet: 'wet biomass'
+      dry: 'dry biomass'
+      oily: 'oily biomass'
+      biogenic_waste: 'biogenic waste'
+      biogas: 'biogas'
+      greengas: 'greengas'
+      biofuels: 'bio fuels'
+      losses: 'losses'
+      electricity_demand: 'electricity demand'
+      heat_demand: 'heat demand'
+      hydrogen_demand: 'hydrogen demand'
     tables:
       capacity:
         peak_present: "Peak load, present"
@@ -422,6 +434,7 @@ en:
     required_network_capacity: "Required electricity network capacity"
     sankey: "Future energy flows"
     sankey_2010: "Present energy flows"
+    biomass_sankey: "Biomass flows"
     security_of_supply: "Security of supply"
     source_of_cooking_in_households: "Final energy demand - Cooking"
     source_of_cooling_in_buildings: "Cooling demand in buildings"

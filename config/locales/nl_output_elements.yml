@@ -172,6 +172,18 @@ nl:
       geo_ambient: "geothermisch & omgeving"
       water: "waterkracht"
       feedstock: "grondstof"
+      local: 'lokaal'
+      wet: 'natte biomassa'
+      dry: 'droge biomassa'
+      oily: 'oliehoudende biomassa'
+      biogenic_waste: 'biogeen afval'
+      biogas: 'biogas'
+      greengas: 'groengas'
+      biofuels: 'biobrandstoffen'
+      losses: 'verliezen'
+      electricity_demand: 'elektriciteitsvraag'
+      heat_demand: 'warmtevraag'
+      hydrogen_demand: 'waterstofvraag'
     tables:
       capacity:
         peak_present: "Huidige piekbelasting"
@@ -413,6 +425,7 @@ nl:
     required_network_capacity: "Benodigde elektriciteit capaciteitnetwerk"
     sankey: "Toekomstige energiestromen"
     sankey_2010: "Huidige energiestromen"
+    biomass_sankey: "Biomassastromen"
     security_of_supply: "Leveringszekerheid"
     source_of_cooking_in_households: "Eindgebruik energie in huishoudens voor koken"
     source_of_cooling_in_buildings: "Vraag naar koeling in gebouwen"

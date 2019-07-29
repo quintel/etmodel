@@ -416,14 +416,7 @@
       this.quinnOnChange(this.quinn.model.value, this.quinn);
       this.updateSublabel(this.quinn.model.value);
 
-      // Disable buttons?
-      if (this.model.get('disabled')) {
-        this.disableButton('reset');
-        this.disableButton('decrease');
-        this.disableButton('increase');
-      } else {
-        this.refreshButtons();
-      }
+      this.refreshButtons();
 
       return this;
     },

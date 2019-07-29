@@ -77,6 +77,12 @@ class @InputElement extends Backbone.Model
 
   setDirty: (dirty) => @dirty = dirty
 
+  does_want_reset: =>
+    @get('wants_reset') && @get('user_value') == @get('start_value')
+
+  reset: (opts) =>
+    @set({ wants_reset: true, user_value: @get('start_value') }, opts)
+
   # Extra event callbacks. We could also use an event-based strategy, ie
   # triggering, when a slider is touched, a 'slider_key:changed' event.
   #
@@ -130,15 +136,23 @@ class @InputElementList extends Backbone.Collection
   # Get the string which contains the update values for all dirty input elements
   api_update_params: =>
     out = {}
-    for s in @dirty()
-      out[s.get 'key'] = s.get 'user_value'
+
+    for input in @dirty()
+      out[input.get('key')] =
+        if input.does_want_reset()
+          'reset'
+        else
+          input.get('user_value')
+
     out
 
   dirty: =>
     @select (el) -> el.isDirty()
 
   reset_dirty: =>
-    _.each(@dirty(), (el) -> el.setDirty(false))
+    _.each @dirty(), (el) ->
+      el.set({ wants_reset: false }, { silent: true })
+      el.setDirty(false)
 
   # Creates the slider view unless the item is already on screen
   #

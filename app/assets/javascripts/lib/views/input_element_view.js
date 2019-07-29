@@ -448,7 +448,7 @@
         this.enableButton('increase');
       }
 
-      if (value === this.steppedInitialValue) {
+      if (value === this.initialValue || value === this.steppedInitialValue) {
         this.disableButton('reset');
       } else {
         this.enableButton('reset');

@@ -292,6 +292,9 @@ div.d3_container
   text
     font-family: $body_font_family
     font-size: 12px
+  .year.small
+    fill: #777
+    font-size: 11px
   .x_axis, .y_axis
     line, path
       fill: none
@@ -324,6 +327,9 @@ div.d3_container
 
     rect
       transition: fill 0.3s
+
+  &.category_bar .serie.present
+    opacity: 0.7
 
   .subzero
     fill: black

@@ -14,10 +14,10 @@ D3.sankey =
           {id: 'biofuels',                        column: 2, label: 'biofuels',                  color: '#00b894'},
           {id: 'electricity_prod',                column: 3, label: 'electricity_production',    color: '#1f77b4'},
           {id: 'central_heat_prod',               column: 3, label: 'central_heat_production',   color: '#d62728'},
-          {id: 'hydrogen_prod',                   column: 3, label: 'hydrogen_production',       color: '#82ccdd'},
+          {id: 'hydrogen_prod',                   column: 3, label: 'hydrogen_production',       color: '#74b9ff'},
           {id: 'electricity_dem',                 column: 4, label: 'electricity_demand',        color: '#0984e3'},
           {id: 'heat_dem',                        column: 4, label: 'heat_demand',               color: '#d63031'},
-          {id: 'hydrogen_dem',                    column: 4, label: 'hydrogen_demand',           color: '#74b9ff'},
+          {id: 'hydrogen_dem',                    column: 4, label: 'hydrogen_demand',           color: '#82ccdd'},
           {id: 'buildings',                       column: 4, label: 'buildings',                 color: '#ADD8E6'},
           {id: 'agriculture',                     column: 4, label: 'agriculture',               color: '#FFD700'},
           {id: 'industry',                        column: 4, label: 'industry',                  color: '#A9A9A9'},
@@ -84,7 +84,7 @@ D3.sankey =
           {left: 'electricity_prod',                right: 'losses',                      gquery: 'electricity_prod_to_losses_in_biomass_sankey', color: '#DCDCDC'},
           {left: 'central_heat_prod',               right: 'heat_dem',                    gquery: 'central_heat_prod_to_heat_dem_in_biomass_sankey', color: '#d62728'},
           {left: 'central_heat_prod',               right: 'losses',                      gquery: 'central_heat_prod_to_losses_in_biomass_sankey', color: '#DCDCDC'},
-          {left: 'hydrogen_prod',                   right: 'hydrogen_dem',                gquery: 'hydrogen_prod_to_hydrogen_dem_in_biomass_sankey', color: '#82ccdd'},
+          {left: 'hydrogen_prod',                   right: 'hydrogen_dem',                gquery: 'hydrogen_prod_to_hydrogen_dem_in_biomass_sankey', color: '#74b9ff'},
           {left: 'hydrogen_prod',                   right: 'losses',                      gquery: 'hydrogen_prod_to_losses_in_biomass_sankey', color: '#DCDCDC'}
         ]
 

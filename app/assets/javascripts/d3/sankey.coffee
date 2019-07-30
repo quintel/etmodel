@@ -22,8 +22,8 @@ D3.sankey =
           {id: 'agriculture',                     column: 4, label: 'agriculture',               color: '#FFD700'},
           {id: 'industry',                        column: 4, label: 'industry',                  color: '#A9A9A9'},
           {id: 'transport',                       column: 4, label: 'transport',                 color: '#8B0000'},
-          {id: 'households',                      column: 4, label: 'households',                color: '#4169E1'},
           {id: 'bunkers',                         column: 4, label: 'bunkers',                   color: '#8B4513'},
+          {id: 'households',                      column: 4, label: 'households',                color: '#4169E1'},
           {id: 'other',                           column: 4, label: 'other',                     color: '#E07033'},
           {id: 'export',                          column: 4, label: 'export',                    color: '#43464B'},
           {id: 'losses',                          column: 4, label: 'losses',                    color: '#DCDCDC'}

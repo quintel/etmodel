@@ -9,7 +9,7 @@ D3.sankey =
           {id: 'wet',                             column: 1, label: 'wet',                       color: '#38ada9'},
           {id: 'oily',                            column: 1, label: 'oily',                      color: '#f9ca24'},
           {id: 'dry',                             column: 1, label: 'dry',                       color: '#009432'},
-          {id: 'biogas',                          column: 2, label: 'biogas',                    color: '#C4E538'},
+          {id: 'biogas',                          column: 2, label: 'biogas',                    color: '#ffff99'},
           {id: 'greengas',                        column: 2, label: 'greengas',                  color: '#A3CB38'},
           {id: 'biofuels',                        column: 2, label: 'biofuels',                  color: '#00b894'},
           {id: 'electricity_prod',                column: 3, label: 'electricity_production',    color: '#1f77b4'},
@@ -60,8 +60,8 @@ D3.sankey =
           {left: 'biogenic_waste',                  right: 'electricity_prod',            gquery: 'biogenic_waste_to_electricity_prod_in_biomass_sankey', color: '#006266'},
           {left: 'biogenic_waste',                  right: 'central_heat_prod',           gquery: 'biogenic_waste_to_central_heat_prod_in_biomass_sankey', color: '#006266'},
           {left: 'biogenic_waste',                  right: 'export',                      gquery: 'biogenic_waste_to_export_in_biomass_sankey', color: '#006266'},
-          {left: 'biogas',                          right: 'electricity_prod',            gquery: 'biogas_to_electricity_prod_in_biomass_sankey', color: '#C4E538'},
-          {left: 'biogas',                          right: 'greengas',                    gquery: 'biogas_to_greengas_in_biomass_sankey', color: '#C4E538'},
+          {left: 'biogas',                          right: 'electricity_prod',            gquery: 'biogas_to_electricity_prod_in_biomass_sankey', color: '#ffff99'},
+          {left: 'biogas',                          right: 'greengas',                    gquery: 'biogas_to_greengas_in_biomass_sankey', color: '#ffff99'},
           {left: 'biogas',                          right: 'losses',                      gquery: 'biogas_to_losses_in_biomass_sankey', color: '#DCDCDC'},
           {left: 'greengas',                        right: 'electricity_prod',            gquery: 'greengas_to_electricity_prod_in_biomass_sankey', color: '#A3CB38'},
           {left: 'greengas',                        right: 'central_heat_prod',           gquery: 'greengas_to_central_heat_prod_in_biomass_sankey', color: '#A3CB38'},
@@ -408,7 +408,7 @@ D3.sankey =
   # In this chart most positioning is calculated by us. The D3 sankey plugin is
   # cool but not flexible enough
   Node: class extends Backbone.Model
-    width: 20
+    width: 5
     vertical_margin: 10
 
     initialize: =>
@@ -423,7 +423,7 @@ D3.sankey =
       return @__horizontal_spacing if @__horizontal_spacing?
       cols = @view.number_of_columns()
       # this should leave enough room for the node labels
-      @__horizontal_spacing = (@view.width - (50 * cols)) / (cols - 1)
+      @__horizontal_spacing = (@view.width - (25 * cols)) / (cols - 1)
       @__horizontal_spacing
 
     # vertical position of the top left corner of the node. Adds some margin
@@ -643,7 +643,7 @@ D3.sankey =
       nodes.append("svg:text")
         .attr("class", "label")
         .attr("x", (d) => d.x_offset())
-        .attr("dx", 25)
+        .attr("dx", 10)
         .attr("dy", 3)
         .attr("y", (d) => @y(d.y_offset() + d.value() / 2) )
         .text((d) -> "#{I18n.t("output_elements.sankey_labels.#{d.label()}")}")

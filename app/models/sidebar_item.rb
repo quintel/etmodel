@@ -33,7 +33,7 @@ class SidebarItem < ActiveRecord::Base
   scope :roots, -> { where(parent_id: nil) }
 
   def parsed_key_for_admin
-    "#{section.andand} | #{key}"
+    "#{section} | #{key}"
   end
 
   def short_name

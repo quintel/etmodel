@@ -28,7 +28,7 @@ class Description < ActiveRecord::Base
 
   def t(attr_name)
     lang = I18n.locale.to_s.split('-').first
-    send("#{attr_name}_#{lang}").andand.html_safe
+    send("#{attr_name}_#{lang}")&.html_safe
   end
 
   def title
@@ -44,13 +44,13 @@ class Description < ActiveRecord::Base
   # Ugly!
   #
   def embeds_player?
-    content.andand.include?("player")  || content.andand.include?("object")
+    content&.include?("player")  || content&.include?("object")
   end
 
   # For loading multiple flowplayers classname is needed instead of id
   #
   def sanitize_embedded_player
-    content.andand.gsub %(id="player"), %(class="player")
+    content&.gsub %(id="player"), %(class="player")
   end
 end
 

@@ -58,15 +58,15 @@ identified areas for improvement.
 
 -> ![](/assets/pages/whats_new/hourlyprofiles_en.png) <-
 
-## 5. Multi-year charts
+## 5. Transition path charts
 
-The new multi-year charts module allows you to explore the possible transition
+The new transition path charts module allows you to explore the possible transition
 paths to a 2050 scenario and discover the actions and consequences for aspired
 goals in 2023, 2030 and 2040. The charts provide insights into the transition
 paths of the most important aspects of the energy system (final energy demand,
 CO<sub>2</sub> emissions, and renewables). For each of these years you are able
 to further edit the slider settings to make adjustments to the scenarios.
-[Explore the new multi-year charts module][Multi year charts].
+[Explore the new transition path charts module][Multi year charts].
 
 -> ![](/assets/pages/whats_new/myc_en.png) <-
 

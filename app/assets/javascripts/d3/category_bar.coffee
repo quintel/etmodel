@@ -229,7 +229,7 @@ D3.category_bar =
       @svg.selectAll('rect.target_line')
         .data(@prepare_target_data(), (d) -> d.id)
         .transition()
-        .attr('y', (d) => Math.round(@series_height - @y(d.y) + 80))
+        .attr('y', (d) => Math.round(@series_height - @y(d.y)))
 
       @display_legend()
 

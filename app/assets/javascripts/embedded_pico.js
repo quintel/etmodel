@@ -27,6 +27,7 @@ embeddedPico = {
     document.getElementById("selframe")
             .contentWindow
             .postMessage(formData, "http://localhost:3000")
+    setTimeout(embeddedPico.close, 100)
   },
 
   close: function(event){

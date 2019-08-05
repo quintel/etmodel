@@ -6,11 +6,20 @@
     = label_tag :van_bebouwing
     = text_field_tag :van_bebouwing
   .group
-    = label_tag :first_boolean
+    = label_tag "Niet bij bestaande turbines"
     = check_box_tag :first_boolean
   .group
-    = label_tag :second_boolean
+    = label_tag "Ver van vliegvelden en radar"
     = check_box_tag :second_boolean
+  .group
+    = label_tag "Niet bij infrastructuur"
+    = check_box_tag :second_boolean
+  .group
+    = label_tag "Buiten natuurgebieden"
+    = check_box_tag :third_boolean
+  .group
+    = label_tag " Alleen in agrarisch gebied"
+    = check_box_tag :fourth_boolean
 
 %h1 sending message to ETM
 =form_tag nil, remote: true, id: 'dummy-form' do
@@ -18,6 +27,11 @@
     =label_tag :result
     =text_field_tag(:result)
   =submit_tag "Update parent"
+
+
+[Toon kaartlaag]
+[Toon kaartlaag]
+
 
 :javascript
   function setInputValues(inputName, value){
@@ -44,7 +58,9 @@
       if(message["action"] === "updateForm"){
         delete message.action
         for (var key in message) { setInputValues(key, message[key]) }
-      } else if(message["action"] === "someNotImplementedAction"){
+      }
+
+      else if(message["action"] === "someNotImplementedAction"){
         // do other stuff
       }
     }

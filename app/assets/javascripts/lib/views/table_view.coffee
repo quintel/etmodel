@@ -68,5 +68,5 @@ class @CategoryTableView extends TableView
     # Eliminate any series which have a dupliacte group and label (typically
     # taregt lines).
     _.uniq(@model.series.models, false, (serie) ->
-      [serie.get('group'), serie.get('label')]
+      "#{serie.get('group')}.#{serie.get('label')}"
     )

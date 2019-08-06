@@ -25,7 +25,7 @@ class Constraint extends Backbone.Model
       when 'total_primary_energy', 'employment'
         return Metric.calculate_performance(now, fut)
       when 'profitability'
-        App.merit_order.dashboard_value()
+        MeritOrder.dashboardValue(fut)
       else
         return fut
 
@@ -43,7 +43,7 @@ class Constraint extends Backbone.Model
   # But there's one exception...
   result: ->
     if @get('key') == 'profitability'
-      App.merit_order.dashboard_value()
+      MeritOrder.dashboardValue(@gquery.get('future'))
     else
       @get('result')
 

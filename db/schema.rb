@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_08_07_115016) do
 
-  create_table "area_dependencies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "area_dependencies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "dependent_on"
     t.text "description"
     t.integer "dependable_id"
@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(version: 2019_08_07_115016) do
     t.index ["dependable_id", "dependable_type"], name: "index_area_dependencies_on_dependable_id_and_dependable_type"
   end
 
-  create_table "constraints", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "constraints", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "key"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string "gquery_key"
-    t.string "group", limit: 25, null: false
+    t.string "group", limit: 25, default: "", null: false
     t.integer "position"
     t.boolean "disabled", default: false
     t.integer "output_element_id"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_115016) do
     t.index ["position"], name: "index_constraints_on_position"
   end
 
-  create_table "descriptions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "descriptions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content_en"
     t.text "short_content_en"
     t.integer "describable_id"
@@ -46,16 +46,16 @@ ActiveRecord::Schema.define(version: 2019_08_07_115016) do
     t.index ["describable_id", "describable_type"], name: "index_descriptions_on_describable_id_and_describable_type"
   end
 
-  create_table "general_user_notifications", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "key", collation: "latin1_swedish_ci"
-    t.string "notification_nl", collation: "latin1_swedish_ci"
-    t.string "notification_en", collation: "latin1_swedish_ci"
+  create_table "general_user_notifications", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "key"
+    t.string "notification_nl"
+    t.string "notification_en"
     t.boolean "active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "input_elements", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "input_elements", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "key"
     t.string "share_group"
     t.float "step_value"
@@ -77,23 +77,23 @@ ActiveRecord::Schema.define(version: 2019_08_07_115016) do
     t.index ["slide_id"], name: "index_input_elements_on_slide_id"
   end
 
-  create_table "multi_year_chart_scenarios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "multi_year_chart_scenarios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "multi_year_chart_id", null: false
     t.integer "scenario_id", null: false
     t.index ["multi_year_chart_id"], name: "index_multi_year_chart_scenarios_on_multi_year_chart_id"
     t.index ["scenario_id"], name: "index_multi_year_chart_scenarios_on_scenario_id"
   end
 
-  create_table "multi_year_charts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "multi_year_charts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "title", null: false, collation: "latin1_swedish_ci"
-    t.string "area_code", null: false, collation: "latin1_swedish_ci"
+    t.string "title", default: "", null: false
+    t.string "area_code", default: "", null: false
     t.integer "end_year", null: false
     t.datetime "created_at", null: false
     t.index ["user_id"], name: "index_multi_year_charts_on_user_id"
   end
 
-  create_table "output_element_series", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "output_element_series", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "output_element_id"
     t.string "label"
     t.string "color"
@@ -104,18 +104,18 @@ ActiveRecord::Schema.define(version: 2019_08_07_115016) do
     t.boolean "show_at_first"
     t.boolean "is_target_line"
     t.string "target_line_position"
-    t.string "gquery", null: false
+    t.string "gquery", default: "", null: false
     t.boolean "is_1990"
     t.index ["output_element_id"], name: "index_output_element_series_on_output_element_id"
   end
 
-  create_table "output_element_types", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "output_element_types", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "output_elements", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "output_elements", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "output_element_type_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -126,7 +126,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_115016) do
     t.string "sub_group"
     t.boolean "show_point_label", default: false
     t.boolean "growth_chart", default: false
-    t.string "key", null: false
+    t.string "key", default: "", null: false
     t.float "max_axis_value"
     t.float "min_axis_value"
     t.boolean "hidden", default: false
@@ -137,13 +137,13 @@ ActiveRecord::Schema.define(version: 2019_08_07_115016) do
     t.index ["related_output_element_id"], name: "index_output_elements_on_related_output_element_id"
   end
 
-  create_table "roles", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "roles", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "saved_scenarios", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "saved_scenarios", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "scenario_id", null: false
     t.string "scenario_id_history"
@@ -163,7 +163,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_115016) do
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
   end
 
-  create_table "sidebar_items", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "sidebar_items", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "key"
     t.string "section"
     t.text "percentage_bar_query"
@@ -178,7 +178,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_115016) do
     t.index ["tab_id"], name: "index_sidebar_items_on_tab_id"
   end
 
-  create_table "slides", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "slides", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -195,7 +195,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_115016) do
     t.index ["sidebar_item_id"], name: "index_slides_on_sidebar_item_id"
   end
 
-  create_table "tabs", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "tabs", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "key"
     t.string "nl_vimeo_id"
     t.string "en_vimeo_id"
@@ -204,7 +204,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_115016) do
     t.index ["position"], name: "index_tabs_on_position"
   end
 
-  create_table "texts", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "texts", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "key"
     t.text "content_en"
     t.text "content_nl"
@@ -217,16 +217,16 @@ ActiveRecord::Schema.define(version: 2019_08_07_115016) do
     t.index ["key"], name: "index_translations_on_key"
   end
 
-  create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "email", null: false
+  create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.string "email", default: "", null: false
     t.string "company_school"
     t.boolean "allow_news", default: false
     t.string "heared_first_at", default: ".."
     t.string "crypted_password"
     t.string "password_salt"
-    t.string "persistence_token", null: false
-    t.string "perishable_token", null: false
+    t.string "persistence_token", default: "", null: false
+    t.string "perishable_token", default: "", null: false
     t.integer "login_count", default: 0, null: false
     t.integer "failed_login_count", default: 0, null: false
     t.datetime "last_request_at"

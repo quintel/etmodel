@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_08_160301) do
+ActiveRecord::Schema.define(version: 2019_08_07_112736) do
 
   create_table "area_dependencies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(version: 2019_07_08_160301) do
     t.index ["describable_id", "describable_type"], name: "index_descriptions_on_describable_id_and_describable_type"
   end
 
-  create_table "general_user_notifications", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.string "key"
-    t.string "notification_nl"
-    t.string "notification_en"
+  create_table "general_user_notifications", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "key", collation: "latin1_swedish_ci"
+    t.string "notification_nl", collation: "latin1_swedish_ci"
+    t.string "notification_en", collation: "latin1_swedish_ci"
     t.boolean "active"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -77,17 +77,17 @@ ActiveRecord::Schema.define(version: 2019_07_08_160301) do
     t.index ["slide_id"], name: "index_input_elements_on_slide_id"
   end
 
-  create_table "multi_year_chart_scenarios", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "multi_year_chart_scenarios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "multi_year_chart_id", null: false
     t.integer "scenario_id", null: false
     t.index ["multi_year_chart_id"], name: "index_multi_year_chart_scenarios_on_multi_year_chart_id"
     t.index ["scenario_id"], name: "index_multi_year_chart_scenarios_on_scenario_id"
   end
 
-  create_table "multi_year_charts", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "multi_year_charts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "title", null: false
-    t.string "area_code", null: false
+    t.string "title", null: false, collation: "latin1_swedish_ci"
+    t.string "area_code", null: false, collation: "latin1_swedish_ci"
     t.integer "end_year", null: false
     t.datetime "created_at", null: false
     t.index ["user_id"], name: "index_multi_year_charts_on_user_id"
@@ -202,18 +202,6 @@ ActiveRecord::Schema.define(version: 2019_07_08_160301) do
     t.integer "position"
     t.index ["key"], name: "index_tabs_on_key"
     t.index ["position"], name: "index_tabs_on_position"
-  end
-
-  create_table "targets", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
-    t.string "code"
-    t.string "query"
-    t.string "unit"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string "display_format"
-    t.string "reached_query"
-    t.string "target_query"
-    t.index ["code"], name: "index_policy_goals_on_key"
   end
 
   create_table "texts", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|

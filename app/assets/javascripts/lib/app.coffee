@@ -157,9 +157,6 @@ class @AppView extends Backbone.View
         gquery.handle_api_result(values)
 
     @charts.invoke 'trigger', 'refresh'
-    if t = window.targets
-      t.invoke('update_view')
-      t.update_totals()
     @sidebar.update_bars()
 
   # Set the update in a cancelable action. When you

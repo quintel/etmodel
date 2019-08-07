@@ -32,25 +32,6 @@
         %td= link_to o.id, edit_admin_output_element_serie_path(o)
         %td= highlight o.gquery, @q
 
-- if @targets.any?
-  %h2 Targets
-  %table.autostripe
-    %thead
-      %tr
-        %th Id
-        %th Code
-        %th Query
-        %th Reached Query
-        %th Target Query
-    %tbody
-    - @targets.each do |p|
-      %tr
-        %td= p.id
-        %td= p.code
-        %td= highlight p.query, @q
-        %td= highlight p.reached_query, @q
-        %td= highlight p.target_query, @q
-
 - if @sidebar_items.any?
   %h2 Sidebar Items
   %table.autostripe

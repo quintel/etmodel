@@ -34,15 +34,7 @@
       </p>
     </li>
 
-    {% if future.policy_goal_co2_emissions_target_value.value %}
-      {% if future.policy_goal_co2_emissions_reached.value %}
-        <li class="target-met">
-      {% else %}
-        <li class="target-missed">
-      {% endif %}
-    {% else %}
-      <li>
-    {% endif %}
+    <li>
       <p>
         <strong><a href="#co2-emissions">CO<sub>2</sub> emissions</a></strong><br />
         Initial value:
@@ -50,46 +42,19 @@
         <span class="bullet">&bull;</span>
         Scenario result:
         <strong>{{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong>
-        {% if future.policy_goal_co2_emissions_target_value.value %}
-          <span class="bullet">&bull;</span>
-          Target:
-          <strong>{{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}</strong>
-        {% endif %}
       </p>
     </li>
 
-    {% if future.policy_goal_renewable_percentage_target_value.value  %}
-      {% if future.policy_goal_renewable_percentage_reached.value %}
-        <li class="target-met">
-      {% else %}
-        <li class="target-missed">
-      {% endif %}
-    {% else %}
-      <li>
-    {% endif %}
+    <li>
       <strong><a href="#renewability">Renewability</a></strong><br />
       Initial value:
       <strong>{{ present.dashboard_renewability | times: 100 | round: 1 }}%</strong>
       <span class="bullet">&bull;</span>
       Scenario result:
       <strong>{{ future.dashboard_renewability | times: 100 | round: 1 }}%</strong>
-
-      {% if future.policy_goal_renewable_percentage_target_value.value  %}
-        <span class="bullet">&bull;</span>
-        Target:
-        <strong>{{ future.policy_goal_renewable_percentage_target_value | times: 100 | round: 1 }}%</strong>
-      {% endif %}
     </li>
 
-    {% if future.policy_goal_total_energy_costs_target_value.value %}
-      {% if future.policy_goal_total_energy_costs_reached.value %}
-        <li class="target-met">
-      {% else %}
-        <li class="target-missed">
-      {% endif %}
-    {% else %}
-      <li>
-    {% endif %}
+    <li>
       <p>
         <strong><a href="#costs-of-energy">Costs</a></strong><br />
         Initial value:
@@ -97,11 +62,6 @@
         <span class="bullet">&bull;</span>
         Scenario result:
         <strong>{{ future.policy_goal_total_energy_costs_value | autoscale: 'bln_euro' }}</strong>
-
-        {% if future.policy_goal_total_energy_costs_target_value.value %}
-          <span class="bullet">&bull;</span>
-          Target: <strong>3 <abbr>EJ</abbr></strong>
-        {% endif %}
       </p>
     </li>
   </ul>
@@ -284,68 +244,6 @@
     Appendix B gives a detailed overview of all investment costs.
     Appendix C provides background information about the Energy Transition Model.
   </p>
-
-  <!-- Only display if the user has set targets -->
-  {% if future.number_of_goals.value %}
-    <h1 class="banner">Targets and goals</h1>
-
-      <!-- CO2 -->
-      {% if future.policy_goal_co2_emissions_target_value.value  %}
-        <h2>CO<sub>2</sub> reduction</h2>
-
-          {% if future.policy_goal_co2_emissions_reached.value %}
-            <p>
-              You have reached your goal of
-              {{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}
-            </p>
-          {% else %}
-            <p>
-              You have only managed to reduce emissions to
-              {{ future.policy_goal_co2_emissions_value | autoscale: 'MT' }}
-              falling short of your goal of limiting emissions to
-              {{ future.policy_goal_co2_emissions_target_value | autoscale: 'MT' }}.
-              Try to reduce more CO<sub>2</sub> by the options listed in the
-              <a href="#co2-emissions">CO<sub>2</sub> emissions</a> section.
-            </p>
-          {% endif %}
-      {% endif %}
-
-      <!-- Renewability -->
-      {% if future.policy_goal_renewable_percentage_target_value.value %}
-        <h2>Renewability</h2>
-          <p>
-            {% if future.policy_goal_renewable_percentage_reached.value %}
-              You succesfully reached your goal of
-              {{ future.policy_goal_renewable_percentage_target_value | times: 100 | round: 1 }}%
-              by realizing a renewability share for energy of
-              {{ future.policy_goal_renewable_percentage_value | times: 100 | round: 1 }}%!
-            {% else %}
-              You only managed
-              {{ future.policy_goal_renewable_percentage_value | times: 100 | round: 1 }}%
-              falling short of you goal of
-              {{ future.policy_goal_renewable_percentage_target_value | times: 100 | round: 1 }}%.
-            {% endif %}
-          </p>
-      {% endif %}
-
-      <!-- Costs -->
-      {% if future.policy_goal_total_energy_costs_target_value.value %}
-        <h2>Costs of energy</h2>
-          <p>
-            {% if future.policy_goal_total_energy_costs_reached.value %}
-              You succesfully reached your goal of keeping costs under
-              {{ future.policy_goal_total_energy_costs_target_value | round: 1 }} bln EUR per year
-              by realizing total annual costs for energy of
-              {{ future.policy_goal_total_energy_costs_value | round: 1 }} bln EUR!
-            {% else %}
-              The annual costs for energy in you scenario are
-              {{ future.policy_goal_total_energy_costs_value |  round: 1 }} bln EUR
-              which is more than your goal of
-              {{ future.policy_goal_total_energy_costs_target_value | round: 1 }} bln EUR per year.
-            {% endif %}
-          </p>
-      {% endif %}
-  {% endif %}
 
   <h1 class="banner">Energy use and production</h1>
 

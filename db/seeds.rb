@@ -398,7 +398,6 @@ Constraint.create!([
   { id: 4, key: "total_energy_cost", created_at: "2010-08-04 11:55:37", updated_at: "2012-03-22 16:44:43", gquery_key: "dashboard_total_costs", group: "costs", position: 4, disabled: false },
   { id: 5, key: "bio_footprint", created_at: "2010-08-04 11:55:37", updated_at: "2012-03-22 16:44:43", gquery_key: "dashboard_bio_footprint", group: "footprint", position: 5, disabled: false },
   { id: 6, key: "renewable_percentage", created_at: "2010-08-04 11:55:37", updated_at: "2012-03-22 16:44:43", gquery_key: "dashboard_renewability", group: "renewable", position: 6, disabled: false },
-  { id: 7, key: "targets_met", created_at: "2010-08-04 11:55:37", updated_at: "2012-03-22 16:44:43", gquery_key: "", group: "summary", position: 7, disabled: false },
   { id: 9, key: "household_energy_cost", created_at: "2011-11-09 12:48:34", updated_at: "2011-11-09 12:48:34", gquery_key: "dashboard_total_costs_per_household", group: "costs", position: 1, disabled: false },
   { id: 10, key: "loss_of_load", created_at: "2011-12-02 11:30:00", updated_at: "2012-01-30 13:56:33", gquery_key: "dashboard_security_of_supply", group: "import", position: 1, disabled: false },
   { id: 11, key: "renewable_electricity_percentage", created_at: "2012-01-04 14:01:41", updated_at: "2012-01-23 13:49:03", gquery_key: "dashboard_share_of_renewable_electricity", group: "renewable", position: 1, disabled: false },

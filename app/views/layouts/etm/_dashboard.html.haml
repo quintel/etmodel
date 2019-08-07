@@ -8,6 +8,3 @@
     %script
       - @constraints.each do |c|
         dashboard.add(#{ c.to_json.html_safe });
-
-      - @interface.targets.each do |t|
-        new Target(#{t.js_attributes.to_json.html_safe});

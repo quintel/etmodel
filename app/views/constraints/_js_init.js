@@ -3,8 +3,7 @@ $(function () {
     'use strict';
 
     var chart_data, q, i, j,
-        popup_charts = $("#dashboard_popup .chart"),
-        models       = window.targets.models;
+        popup_charts = $("#dashboard_popup .chart");
 
     for (i = 0; i < popup_charts.length; i++) {
         chart_data = $(popup_charts[i]).data();
@@ -15,10 +14,6 @@ $(function () {
             prunable: true,
             wrapper:  (chart_data.wrapper || "#charts")
         });
-    }
-
-    for (j = 0; j < models.length; j++) {
-        models[j].update_view();
     }
 
     q = gqueries.find_or_create_by_key('dashboard_bio_footprint');

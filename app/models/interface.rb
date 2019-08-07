@@ -80,10 +80,6 @@ class Interface
     current_slide.output_element
   end
 
-  def targets
-    @targets ||= Target.includes(:area_dependency).reject(&:area_dependent)
-  end
-
   def current_tutorial_movie
     current_sidebar_item.send "#{I18n.locale}_vimeo_id"
   end

@@ -19,20 +19,22 @@
                   title: t('saved_scenario.tooltips.factsheet')
 
         -# = link_to "",
-        -#           "#",
-        -#           class: "saved-scenario__nav tooltip fa fa-truck",
-        -#           title: t('saved_scenario.tooltips.transport_region')
+                  "#",
+                  class: "saved-scenario__nav tooltip fa fa-truck",
+                  title: t('saved_scenario.tooltips.transport_region')
 
     - if @scenario.description
       .saved-scenario__field
-        %p.saved-scenario__field-label= t('saved_scenario.description').capitalize
+        %p.saved-scenario__field-label
+          = t('saved_scenario.description').capitalize
         %p.saved-scenario__field-value= @description
 
 
     - if @scenario.created_at
       .saved-scenario__field
         %p.saved-scenario__field-label= t 'scenario.created'
-        %p.saved-scenario__field-value= l @scenario.parsed_created_at, :format => :long
+        %p.saved-scenario__field-value
+          = l @scenario.parsed_created_at, :format => :long
 
     .saved-scenario__field
       %p.saved-scenario__field-label= t 'scenario.area_code'
@@ -44,5 +46,7 @@
 
     .saved-scenario__actions
       .saved-scenario__cta
-        = link_to t("scenario.load"), load_saved_scenario_path(@saved_scenario), class: "button primary"
+        = link_to t("scenario.load"),
+                  load_saved_scenario_path(@saved_scenario),
+                  class: "button primary"
         .small= t("scenario.overwritten")

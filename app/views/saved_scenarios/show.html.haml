@@ -1,34 +1,48 @@
-.scenario_wrapper#show_scenario
-
+%main.saved-scenario__main
   - if @warning
     .warning
       = @warning
 
-  %h1= (@scenario.title or t 'scenario.no_title' ).truncate(40, separator: ' ')
+  .saved-scenario__title
+    %h1= (@scenario.title or t 'scenario.no_title' ).capitalize
 
-  = link_to t("scenario.load"),
-            load_saved_scenario_path(@saved_scenario),
-            class: "button primary"
+  .saved-scenario__content
+    .saved-scenario__description
+      .saved-scenario__subhead
+        = link_to "",
+                  load_saved_scenario_path(@saved_scenario),
+                  class: "saved-scenario__nav tooltip fa fa-folder-open-o",
+                  title: t('saved_scenario.tooltips.open')
 
-  = link_to t("scenario.load_factsheet"),
-            factsheet_scenario_path(@saved_scenario.scenario_id),
-            class: "button"
+        = link_to "", factsheet_scenario_path(@saved_scenario.scenario_id),
+                  class: "saved-scenario__nav tooltip fa fa-bar-chart",
+                  title: t('saved_scenario.tooltips.factsheet')
 
-  - if @scenario.description
-    %em= @description
+        -# = link_to "",
+        -#           "#",
+        -#           class: "saved-scenario__nav tooltip fa fa-truck",
+        -#           title: t('saved_scenario.tooltips.transport_region')
 
-  %ul
+    - if @scenario.description
+      .saved-scenario__field
+        %p.saved-scenario__field-label= t('saved_scenario.description').capitalize
+        %p.saved-scenario__field-value= @description
+
+
     - if @scenario.created_at
-      %li
-        %strong #{t('scenario.created')}:
-        = I18n.localize(@scenario.parsed_created_at, :format => :long)
-    %li
-      %strong #{t('scenario.area_code')}:
-      = t @scenario.area_code
-    %li
-      %strong #{t('scenario.end_year')}:
-      = @scenario.end_year
+      .saved-scenario__field
+        %p.saved-scenario__field-label= t 'scenario.created'
+        %p.saved-scenario__field-value= l @scenario.parsed_created_at, :format => :long
 
-  %p
-    %small{:style => "font-size: 12px; font-weight: normal"}
-      = t("scenario.overwritten")
+    .saved-scenario__field
+      %p.saved-scenario__field-label= t 'scenario.area_code'
+      %p.saved-scenario__field-value= t @scenario.area_code
+
+    .saved-scenario__field
+      %p.saved-scenario__field-label= t 'scenario.end_year'
+      %p.saved-scenario__field-value= @scenario.end_year
+
+    .saved-scenario__actions
+      .saved-scenario__cta
+        = link_to t("scenario.load"), load_saved_scenario_path(@saved_scenario), class: "button primary"
+        .small= t("scenario.overwritten")

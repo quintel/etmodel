@@ -41,7 +41,6 @@ D3.sankey =
           {left: 'wet',                             right: 'biofuels',                    gquery: 'wet_biomass_to_biofuels_in_biomass_sankey', color: '#38ada9'},
           {left: 'wet',                             right: 'greengas',                    gquery: 'wet_biomass_to_greengas_in_biomass_sankey', color: '#38ada9'},
           {left: 'wet',                             right: 'export',                      gquery: 'wet_biomass_to_export_in_biomass_sankey', color: '#38ada9'},
-          {left: 'wet',                             right: 'losses',                      gquery: 'wet_biomass_to_losses_in_biomass_sankey', color: '#DCDCDC'},
           {left: 'dry',                             right: 'greengas',                    gquery: 'dry_biomass_to_greengas_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'electricity_prod',            gquery: 'dry_biomass_to_electricity_prod_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'central_heat_prod',           gquery: 'dry_biomass_to_central_heat_prod_in_biomass_sankey', color: '#009432'},

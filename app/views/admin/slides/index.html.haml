@@ -19,6 +19,6 @@
         %td= s.position
         %td= link_to s.sliders.count, admin_slide_input_elements_path(s)
         %td= link_to 'edit', edit_admin_slide_path(s.id)
-        %td= link_to 'open', s.url if s.url
+        %td= link_to 'open', "/scenario/#{s.url}" if s.url
 %p
   = link_to 'New slide' , new_admin_slide_path

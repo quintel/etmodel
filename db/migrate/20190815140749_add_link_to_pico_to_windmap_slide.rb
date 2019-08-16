@@ -12,7 +12,7 @@ class AddLinkToPicoToWindmapSlide < ActiveRecord::Migration[5.2]
   def new_description
     'Gebruik de PICO kaartlaag voor windenergie om de potentie voor windmolens '+
     'op land en aan de kust te verkennen. '+
-    '<a href="/embedded_pico" data-remote="true">' +
+    '<a href="/embeds/pico" data-remote="true">' +
       'Verken de potentie van wind op land en aan de kust.'+
     '</a>'
   end

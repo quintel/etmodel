@@ -29,8 +29,8 @@ embeddedPico = {
       console.log("before close ")
 
       // close modal
-      embeddedPico.close()
 
+      embeddedPico.close()
       console.log("after close")
       console.log("before destructing listener")
 

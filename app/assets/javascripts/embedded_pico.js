@@ -1,38 +1,17 @@
 // requires jquery
 embeddedPico = {
   attach: function(){
-    document.getElementById('host-form')
-            .addEventListener('submit', embeddedPico.submit, false)
-
     document.getElementById('close-modal')
-            .addEventListener('click', embeddedPico.close, false)
-
-    document.addEventListener("message", receiveMessag, false);
-  },
-
-  submit: function(event){
-    // Collect data from form.
-    var formData = $("#host-form").serializeArray()
-                                  .reduce(function(memo, item){
-      memo[item.name] = item.value
-      return memo
-    }, {action: 'updateForm'} )
-
-    // add unchecked checkboxes to the data.
-    document.querySelectorAll("#host-form input[type='checkbox']")
-            .forEach( function(cb){
-      if(!formData[cb.name]) formData[cb.name] = 0
-    })
-
-    document.getElementById("selframe")
-            .contentWindow
-            .postMessage(formData, "http://localhost:3000")
-    setTimeout(embeddedPico.close, 100)
+            .addEventListener('click', embeddedPico.close,          false)
+    window.addEventListener("message", embeddedPico.receiveMessage, false);
   },
 
   close: function(event){
+    console.log(close)
     document.getElementsByClassName("modal__backdrop")[0].remove()
-    event.preventDefault()
+    if(event != undefined){
+      event.preventDefault()
+    }
   },
 
   updateInlandWindTurbine: function(new_value){
@@ -42,8 +21,26 @@ embeddedPico = {
   },
 
   receiveMessage: function(event){
-    console.log("receive")
-    event.preventDefault()
-    embeddedPico.updateInlandWindTurbine(event.data)
+    message = event.data
+
+    if(message["action"] === "updateInlandWindTurbine"){
+      embeddedPico.updateInlandWindTurbine(message.power)
+
+      console.log("before close ")
+
+      // close modal
+      embeddedPico.close()
+
+      console.log("after close")
+      console.log("before destructing listener")
+
+      // destruct eventlistener after use.
+      event.currentTarget
+           .removeEventListener(event.type, embeddedPico.receiveMessage)
+
+      console.log("after destructing listener")
+    } else {
+      console.log("Unmanaged postMessage action")
+    }
   }
 }

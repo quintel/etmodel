@@ -75,7 +75,6 @@ module ApplicationHelper
     links.push text: t("header.partners") ,           url: "http://#{ "beta." if is_beta? }#{ domain }/partners?locale=#{ I18n.locale }", target: "_new"
     links.push text: t("header.about_qi") ,           url: "http://quintel.com", target: "_new"
     links.push text: t("header.education") ,          url: "http://onderwijs.quintel.nl/", target: "_new"
-    links.push text: t("header.prominent_users") ,    url: "http://#{ "beta." if is_beta? }#{ domain }/presets?locale=#{ I18n.locale }", target: "_new"
     links.push text: t("header.press_releases") ,     url: "http://#{ "beta." if is_beta? }#{ domain }/press_releases?locale=#{ I18n.locale }", target: "_new"
     links.push text: t("header.quality_control") ,    url: "http://#{ "beta." if is_beta? }#{ domain }/quality_control?locale=#{ I18n.locale }", target: "_new"
     links.push text: t("header.units_used") ,         url: "http://#{ "beta." if is_beta? }#{ domain }/units?locale=#{ I18n.locale }", target: "_new"

@@ -141,13 +141,6 @@ describe PagesController, vcr: true do
     end
   end
 
-  describe "#prominent_users" do
-    it "should render correctly" do
-      get :prominent_users
-      expect(response).to be_successful
-      expect(response).to render_template(:prominent_users)
-    end
-  end
 
   context "hidden setting pages" do
     [:show_all_countries, :show_flanders].each do |p|

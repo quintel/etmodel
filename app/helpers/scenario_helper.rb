@@ -62,9 +62,13 @@ module ScenarioHelper
 
       uri = URI(node['href'].to_s)
 
-      unless uri.relative? || uri.host == request.host
-        node.replace(node.inner_text)
-      end
+      next if uri.relative?
+
+      domain = ActionDispatch::Http::URL.extract_domain(
+        uri.host.to_s, ActionDispatch::Http::URL.tld_length
+      )
+
+      node.replace(node.inner_text) unless domain == request.domain
     end)
 
     link_stripper.inner_html

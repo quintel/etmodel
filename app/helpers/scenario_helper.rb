@@ -58,7 +58,11 @@ module ScenarioHelper
     link_stripper = Loofah.fragment(text)
 
     link_stripper.scrub!(Loofah::Scrubber.new do |node|
-      if node.name == 'a' && !URI(node['href'].to_s).relative?
+      next unless node.name == 'a'
+
+      uri = URI(node['href'].to_s)
+
+      unless uri.relative? || uri.host == request.host
         node.replace(node.inner_text)
       end
     end)

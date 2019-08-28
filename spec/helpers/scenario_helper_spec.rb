@@ -54,6 +54,16 @@ describe ScenarioHelper do
       end
     end
 
+    context 'with an absolute link to a subdomain of the same domain' do
+      let(:text) { '[Ok](http://another.test.host/hi)' }
+
+      it 'keeps the link intact' do
+        expect(formatted).to eq(
+          '<p><a href="http://another.test.host/hi">Ok</a></p>'
+        )
+      end
+    end
+
     context 'with an external link' do
       let(:text) { '[Absolute](http://example/org)' }
 

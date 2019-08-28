@@ -46,6 +46,14 @@ describe ScenarioHelper do
       end
     end
 
+    context 'with a relative link and trailing whitespace' do
+      let(:text) { '<a href="/hi ">Hello</a>' }
+
+      it 'keeps the link intact' do
+        expect(formatted).to eq('<p><a href="/hi%20">Hello</a></p>')
+      end
+    end
+
     context 'with an absolute link to the same host' do
       let(:text) { '[Ok](http://test.host/hi)' }
 
@@ -69,6 +77,14 @@ describe ScenarioHelper do
 
       it 'replaces the link with the text' do
         expect(formatted).to eq('<p>Absolute</p>')
+      end
+    end
+
+    context 'with an invalid link' do
+      let(:text) { '<a href="::no">Hello</a>' }
+
+      it 'replaces the link with the text' do
+        expect(formatted).to eq('<p>Hello</p>')
       end
     end
 

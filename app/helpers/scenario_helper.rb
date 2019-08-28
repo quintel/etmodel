@@ -60,7 +60,12 @@ module ScenarioHelper
     link_stripper.scrub!(Loofah::Scrubber.new do |node|
       next unless node.name == 'a'
 
-      uri = URI(node['href'].to_s)
+      begin
+        uri = URI(node['href'].to_s.strip)
+      rescue URI::InvalidURIError
+        node.replace(node.inner_text)
+        next
+      end
 
       next if uri.relative?
 

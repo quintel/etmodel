@@ -4,7 +4,6 @@ def ete_scenario_mock
   allow(mock).to receive(:id) { "123" }
   allow(mock).to receive(:title) { "title" }
   allow(mock).to receive(:description) { 'description' }
-  allow(mock).to receive(:description_for_locale) { 'description' }
   allow(mock).to receive(:end_year) { "2050" }
   allow(mock).to receive(:area_code) { "nl" }
   allow(mock).to receive(:parsed_created_at) { Time.now }

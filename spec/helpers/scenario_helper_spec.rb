@@ -46,6 +46,14 @@ describe ScenarioHelper do
       end
     end
 
+    context 'with an absolute link to the same host' do
+      let(:text) { '[Ok](http://test.host/hi)' }
+
+      it 'keeps the link intact' do
+        expect(formatted).to eq('<p><a href="http://test.host/hi">Ok</a></p>')
+      end
+    end
+
     context 'with an external link' do
       let(:text) { '[Absolute](http://example/org)' }
 

@@ -1,11 +1,14 @@
 /*
-  This "module" is used for receiving messages from iframes and updating
+  This script is used for receiving messages from iframes and updating
   various settings in the ETM.
   It uses the postMessage browser API.
 
   To add an additional action all you have to do is add a property to the
   actions object. Be aware that an action can only be provided with a single
   argument. The argument however can be an array or map.
+
+  At the time of writing the "hook" that activates the code lives in the
+  Embeds::PicosController. wich gets
 
   Example message:
   { action: "updateInlandWindTurbine",
@@ -40,8 +43,8 @@ embeds = {
 
   /*
     All properties of the actions object will automaticly be available in the
-    postMessage API. Its advisable not to polute it with methods that don't
-    have to be public.
+    API. Its advisable not to polute it with methods that don't have to be
+    public.
   */
   actions: {
 

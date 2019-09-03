@@ -9,25 +9,8 @@
     %script{type: "text/javascript", src: "https://pico.geodan.nl/pico/minimap/ol212/OpenLayers.js"}
     %script{type: "text/javascript", src: "https://pico.geodan.nl/pico/minimap/lib/maps.js"}
     %script{type: "text/javascript", src: "https://pico.geodan.nl/pico/config/pico-prod.js"}
-    :javascript
-      function initOnload(){
-        //load the html template
-        initPico()
 
-        //initialise the map
-        initPicomap();
-
-        //initialise the windturbine module with a specified area
-        var selectedArea = {
-          areatype:'#{@region_type}', areaname:'#{@region_name}'
-          //areatype:'gemeente', areaname:'Neder-Betuwe', areacode:'1740'
-          }
-        picoInitWindenergy( selectedArea )
-
-        //get result with the function
-        //picoGetTurbineCount()
-      }
-  %body#body{ onload: "initOnload()"}
+  %body#body{ onload: "pico.main( {areaType:'#{@region_type}', areaName:'#{@region_name}'} )"}
     %div{ picomodule: "https://pico.geodan.nl/pico/minimap/windmodule.html"}
     %a.pico__submit{onclick: "pico.ready()"}
       =t("pico.ready").capitalize

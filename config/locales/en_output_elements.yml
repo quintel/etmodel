@@ -131,20 +131,20 @@ en:
       uranium: "uranium"
       biomass_waste: "biomass & waste"
       electricity_import: "electricity import"
-      electricity_production: "electricity (incl. CHP)"
+      electricity_production: "electricity & CHP"
       emitted: "emitted"
       central_heat_production: "central heat"
       households: "households"
       buildings: "buildings"
-      transport: "national transport"
-      bunkers: "international transport"
+      transport: "transport"
+      bunkers: "int. transport"
       industry: "industry"
       agriculture: "agriculture"
       other: "other"
       export: "export"
       loss: "loss"
-      conversion_losses: "conversion losses"
-      transport_losses: "transport losses"
+      conversion_losses: "conversion loss"
+      transport_losses: "transport loss"
       p2g: "power-to-gas"
       p2p: "power-to-power"
       p2h: "power-to-heat"
@@ -179,6 +179,18 @@ en:
       geo_ambient: "geothermal & ambient"
       water: "hydropower"
       feedstock: "feedstock"
+      local: 'local'
+      wet: 'wet biomass'
+      dry: 'dry biomass'
+      oily: 'oily biomass'
+      biogenic_waste: 'biogenic waste'
+      biogas: 'biogas'
+      greengas: 'green gas'
+      biofuels: 'transport fuels'
+      losses: 'losses'
+      electricity_demand: 'electricity demand'
+      heat_demand: 'heat demand'
+      hydrogen_demand: 'hydrogen demand'
     tables:
       capacity:
         peak_present: "Peak load, present"
@@ -189,6 +201,7 @@ en:
       merit_order:
         availability: "Availability"
         available_capacity: "Available capacity"
+        central_biogas_chp: "Biogas CHP"
         installed_capacity: "Installed capacity"
         central_gas_chp: "Gas plant for district heat"
         coal_chp: "Coal CHP"
@@ -257,6 +270,7 @@ en:
         buildings_collective_chp_network_gas: "Buildings gas CHP"
         buildings_collective_chp_wood_pellets: "Buildings wood-pellet CHP"
         energy_chp_combined_cycle_network_gas: "Energy gas CHP"
+        energy_chp_engine_biogas: "Energy biogas CHP"
         energy_chp_supercritical_waste_mix: "Energy waste CHP"
         energy_chp_ultra_supercritical_coal: "Energy coal CHP"
         energy_chp_ultra_supercritical_cofiring_coal: "Energy coal co-firing CHP"
@@ -314,6 +328,7 @@ en:
     annual_costs_of_infrastructure: "Annual infrastructure costs"
     area_targets: "Area use by wind turbines"
     biofuel_demand_domestic_abroad: "Regional biofuel production and import"
+    biomass_demand_by_category: Biomass demand and potential
     bioresource_demand_domestic_abroad: "Regional biomass production and import"
     breakdown_converter_costs: "Breakdown of converter costs"
     breakdown_electricity_costs: "Breakdown of electricity costs"
@@ -355,6 +370,7 @@ en:
     gas_flow_to_sectors: "Gas flow to sectors"
     gas_network_mix: "Green gas in gas network"
     gas_versus_other_primary_energy: "Gas versus other primary energy"
+    greengas_costs: "Production costs and price of green gas"
     final_energy_demand_per_sector_joule: "Final energy demand per sector (energetic)"
     final_energy_demand_per_sector_percentage: "Final energy demand per sector [%]"
     heat_deficit: "Heat deficit"
@@ -405,7 +421,7 @@ en:
     present_energy_imports: "Present energy imports"
     primary_final_useful_demand: "Primary, final, and useful energy demand"
     primary_gas_demand: "Primary gas demand"
-    production_curve_woody_biomass: "Production curve for biomass"
+    production_curve_dry_biomass: "Production curve for biomass"
     production_curve_coal: "Production curve for coal"
     production_curve_crude_oil: "Production curve for crude oil"
     production_curve_natural_gas: "Production curve for natural gas"
@@ -420,6 +436,7 @@ en:
     required_network_capacity: "Required electricity network capacity"
     sankey: "Future energy flows"
     sankey_2010: "Present energy flows"
+    biomass_sankey: "Biomass flows"
     security_of_supply: "Security of supply"
     source_of_cooking_in_households: "Final energy demand - Cooking"
     source_of_cooling_in_buildings: "Cooling demand in buildings"

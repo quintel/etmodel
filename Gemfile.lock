@@ -230,7 +230,7 @@ GEM
     net-ssh (5.0.2)
     newrelic_rpm (5.5.0.348)
     nio4r (2.3.1)
-    nokogiri (1.10.2)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     non-stupid-digest-assets (1.0.9)
       sprockets (>= 2.0)
@@ -278,7 +278,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.0.4)
+    rails-html-sanitizer (1.2.0)
       loofah (~> 2.2, >= 2.2.2)
     rails-i18n (5.1.2)
       i18n (>= 0.7, < 2)
@@ -445,9 +445,10 @@ DEPENDENCIES
   launchy
   libv8 (~> 3.16.14.3)
   listen (~> 3.0.5)
+  loofah
   mysql2
   newrelic_rpm
-  nokogiri (~> 1.8)
+  nokogiri (~> 1.10)
   non-stupid-digest-assets
   oily_png
   pry-byebug
@@ -457,6 +458,7 @@ DEPENDENCIES
   puma
   rails (~> 5.2)
   rails-controller-testing
+  rails-html-sanitizer
   rails-i18n
   rdiscount
   rspec-rails (~> 3.5)

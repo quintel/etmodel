@@ -1,5 +1,93 @@
 D3.sankey =
   charts:
+    biomass_sankey:
+      data:
+        nodes: [
+          {id: 'local',                           column: 0, label: 'local',                     color: '#416B86'},
+          {id: 'import',                          column: 0, label: 'import',                    color: '#b71540'},
+          {id: 'biogenic_waste',                  column: 1, label: 'biogenic_waste',            color: '#006266'},
+          {id: 'wet',                             column: 1, label: 'wet',                       color: '#38ada9'},
+          {id: 'oily',                            column: 1, label: 'oily',                      color: '#f9ca24'},
+          {id: 'dry',                             column: 1, label: 'dry',                       color: '#009432'},
+          {id: 'biogas',                          column: 2, label: 'biogas',                    color: '#ffff99'},
+          {id: 'greengas',                        column: 2, label: 'greengas',                  color: '#A3CB38'},
+          {id: 'biofuels',                        column: 2, label: 'biofuels',                  color: '#00b894'},
+          {id: 'electricity_prod',                column: 3, label: 'electricity_production',    color: '#1f77b4'},
+          {id: 'central_heat_prod',               column: 3, label: 'central_heat_production',   color: '#d62728'},
+          {id: 'hydrogen_prod',                   column: 3, label: 'hydrogen_production',       color: '#74b9ff'},
+          {id: 'electricity_dem',                 column: 4, label: 'electricity_demand',        color: '#0984e3'},
+          {id: 'heat_dem',                        column: 4, label: 'heat_demand',               color: '#d63031'},
+          {id: 'hydrogen_dem',                    column: 4, label: 'hydrogen_demand',           color: '#82ccdd'},
+          {id: 'buildings',                       column: 4, label: 'buildings',                 color: '#ADD8E6'},
+          {id: 'agriculture',                     column: 4, label: 'agriculture',               color: '#FFD700'},
+          {id: 'industry',                        column: 4, label: 'industry',                  color: '#A9A9A9'},
+          {id: 'transport',                       column: 4, label: 'transport',                 color: '#8B0000'},
+          {id: 'bunkers',                         column: 4, label: 'bunkers',                   color: '#8B4513'},
+          {id: 'households',                      column: 4, label: 'households',                color: '#4169E1'},
+          {id: 'other',                           column: 4, label: 'other',                     color: '#E07033'},
+          {id: 'export',                          column: 4, label: 'export',                    color: '#43464B'},
+          {id: 'losses',                          column: 4, label: 'losses',                    color: '#DCDCDC'}
+        ]
+        links: [
+          {left: 'import',                          right: 'biogenic_waste',              gquery: 'import_biogenic_waste_in_biomass_sankey', color: '#b71540'},
+          {left: 'import',                          right: 'wet',                         gquery: 'import_wet_biomass_in_biomass_sankey', color: '#b71540'},
+          {left: 'import',                          right: 'oily',                        gquery: 'import_oily_biomass_in_biomass_sankey', color: '#b71540'},
+          {left: 'import',                          right: 'dry',                         gquery: 'import_dry_biomass_in_biomass_sankey', color: '#b71540'},
+          {left: 'local',                           right: 'biogenic_waste',              gquery: 'local_biogenic_waste_in_biomass_sankey', color: '#416B86'},
+          {left: 'local',                           right: 'wet',                         gquery: 'local_wet_biomass_in_biomass_sankey', color: '#416B86'},
+          {left: 'local',                           right: 'oily',                        gquery: 'local_oily_biomass_in_biomass_sankey', color: '#416B86'},
+          {left: 'local',                           right: 'dry',                         gquery: 'local_dry_biomass_in_biomass_sankey', color: '#416B86'},
+          {left: 'wet',                             right: 'biogas',                      gquery: 'wet_biomass_to_biogas_in_biomass_sankey', color: '#38ada9'},
+          {left: 'wet',                             right: 'biofuels',                    gquery: 'wet_biomass_to_biofuels_in_biomass_sankey', color: '#38ada9'},
+          {left: 'wet',                             right: 'greengas',                    gquery: 'wet_biomass_to_greengas_in_biomass_sankey', color: '#38ada9'},
+          {left: 'wet',                             right: 'export',                      gquery: 'wet_biomass_to_export_in_biomass_sankey', color: '#38ada9'},
+          {left: 'dry',                             right: 'greengas',                    gquery: 'dry_biomass_to_greengas_in_biomass_sankey', color: '#009432'},
+          {left: 'dry',                             right: 'electricity_prod',            gquery: 'dry_biomass_to_electricity_prod_in_biomass_sankey', color: '#009432'},
+          {left: 'dry',                             right: 'central_heat_prod',           gquery: 'dry_biomass_to_central_heat_prod_in_biomass_sankey', color: '#009432'},
+          {left: 'dry',                             right: 'hydrogen_prod',               gquery: 'dry_biomass_to_hydrogen_prod_in_biomass_sankey', color: '#009432'},
+          {left: 'dry',                             right: 'households',                  gquery: 'dry_biomass_to_households_in_biomass_sankey', color: '#009432'},
+          {left: 'dry',                             right: 'buildings',                   gquery: 'dry_biomass_to_buildings_in_biomass_sankey', color: '#009432'},
+          {left: 'dry',                             right: 'transport',                   gquery: 'dry_biomass_to_transport_in_biomass_sankey', color: '#009432'},
+          {left: 'dry',                             right: 'agriculture',                 gquery: 'dry_biomass_to_agriculture_in_biomass_sankey', color: '#009432'},
+          {left: 'dry',                             right: 'industry',                    gquery: 'dry_biomass_to_industry_in_biomass_sankey', color: '#009432'},
+          {left: 'dry',                             right: 'other',                       gquery: 'dry_biomass_to_other_in_biomass_sankey', color: '#009432'},
+          {left: 'dry',                             right: 'bunkers',                     gquery: 'dry_biomass_to_bunkers_in_biomass_sankey', color: '#009432'},
+          {left: 'dry',                             right: 'export',                      gquery: 'dry_biomass_to_export_in_biomass_sankey', color: '#009432'},
+          {left: 'dry',                             right: 'losses',                      gquery: 'dry_biomass_to_losses_in_biomass_sankey', color: '#DCDCDC'},
+          {left: 'dry',                             right: 'biofuels',                    gquery: 'dry_biomass_to_biofuels_in_biomass_sankey', color: '#009432'},
+          {left: 'oily',                            right: 'biofuels',                    gquery: 'oily_biomass_to_biofuels_in_biomass_sankey', color: '#f9ca24'},
+          {left: 'oily',                            right: 'export',                      gquery: 'oily_biomass_to_export_in_biomass_sankey', color: '#f9ca24'},
+          {left: 'biogenic_waste',                  right: 'electricity_prod',            gquery: 'biogenic_waste_to_electricity_prod_in_biomass_sankey', color: '#006266'},
+          {left: 'biogenic_waste',                  right: 'central_heat_prod',           gquery: 'biogenic_waste_to_central_heat_prod_in_biomass_sankey', color: '#006266'},
+          {left: 'biogenic_waste',                  right: 'export',                      gquery: 'biogenic_waste_to_export_in_biomass_sankey', color: '#006266'},
+          {left: 'biogas',                          right: 'electricity_prod',            gquery: 'biogas_to_electricity_prod_in_biomass_sankey', color: '#ffff99'},
+          {left: 'biogas',                          right: 'greengas',                    gquery: 'biogas_to_greengas_in_biomass_sankey', color: '#ffff99'},
+          {left: 'biogas',                          right: 'losses',                      gquery: 'biogas_to_losses_in_biomass_sankey', color: '#DCDCDC'},
+          {left: 'greengas',                        right: 'electricity_prod',            gquery: 'greengas_to_electricity_prod_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas',                        right: 'central_heat_prod',           gquery: 'greengas_to_central_heat_prod_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas',                        right: 'hydrogen_prod',               gquery: 'greengas_to_hydrogen_prod_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas',                        right: 'households',                  gquery: 'greengas_to_households_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas',                        right: 'buildings',                   gquery: 'greengas_to_buildings_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas',                        right: 'transport',                   gquery: 'greengas_to_transport_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas',                        right: 'agriculture',                 gquery: 'greengas_to_agriculture_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas',                        right: 'industry',                    gquery: 'greengas_to_industry_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas',                        right: 'other',                       gquery: 'greengas_to_other_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas',                        right: 'bunkers',                     gquery: 'greengas_to_bunkers_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas',                        right: 'export',                      gquery: 'greengas_to_export_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas',                        right: 'losses',                      gquery: 'greengas_to_losses_in_biomass_sankey', color: '#DCDCDC'},
+          {left: 'biofuels',                        right: 'transport',                   gquery: 'biofuels_to_transport_in_biomass_sankey', color: '#00b894'},
+          {left: 'biofuels',                        right: 'bunkers',                     gquery: 'biofuels_to_bunkers_in_biomass_sankey', color: '#00b894'},
+          {left: 'biofuels',                        right: 'electricity_prod',            gquery: 'biofuels_to_electricity_prod_in_biomass_sankey', color: '#00b894'},
+          {left: 'biofuels',                        right: 'losses',                      gquery: 'biofuels_to_losses_in_biomass_sankey', color: '#DCDCDC'},
+          {left: 'electricity_prod',                right: 'electricity_dem',             gquery: 'electricity_prod_to_electricity_dem_in_biomass_sankey', color: '#1f77b4'},
+          {left: 'electricity_prod',                right: 'heat_dem',                    gquery: 'electricity_prod_to_heat_dem_in_biomass_sankey', color: '#d62728'},
+          {left: 'electricity_prod',                right: 'losses',                      gquery: 'electricity_prod_to_losses_in_biomass_sankey', color: '#DCDCDC'},
+          {left: 'central_heat_prod',               right: 'heat_dem',                    gquery: 'central_heat_prod_to_heat_dem_in_biomass_sankey', color: '#d62728'},
+          {left: 'central_heat_prod',               right: 'losses',                      gquery: 'central_heat_prod_to_losses_in_biomass_sankey', color: '#DCDCDC'},
+          {left: 'hydrogen_prod',                   right: 'hydrogen_dem',                gquery: 'hydrogen_prod_to_hydrogen_dem_in_biomass_sankey', color: '#74b9ff'},
+          {left: 'hydrogen_prod',                   right: 'losses',                      gquery: 'hydrogen_prod_to_losses_in_biomass_sankey', color: '#DCDCDC'}
+        ]
+
     co2_sankey:
       data:
         nodes: [
@@ -320,7 +408,7 @@ D3.sankey =
   # In this chart most positioning is calculated by us. The D3 sankey plugin is
   # cool but not flexible enough
   Node: class extends Backbone.Model
-    width: 20
+    width: 5
     vertical_margin: 10
 
     initialize: =>
@@ -335,7 +423,7 @@ D3.sankey =
       return @__horizontal_spacing if @__horizontal_spacing?
       cols = @view.number_of_columns()
       # this should leave enough room for the node labels
-      @__horizontal_spacing = (@view.width - (50 * cols)) / (cols - 1)
+      @__horizontal_spacing = (@view.width - (25 * cols)) / (cols - 1)
       @__horizontal_spacing
 
     # vertical position of the top left corner of the node. Adds some margin
@@ -555,7 +643,7 @@ D3.sankey =
       nodes.append("svg:text")
         .attr("class", "label")
         .attr("x", (d) => d.x_offset())
-        .attr("dx", 25)
+        .attr("dx", 10)
         .attr("dy", 3)
         .attr("y", (d) => @y(d.y_offset() + d.value() / 2) )
         .text((d) -> "#{I18n.t("output_elements.sankey_labels.#{d.label()}")}")

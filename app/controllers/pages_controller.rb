@@ -77,10 +77,6 @@ public
     redirect_to root_path
   end
 
-  def prominent_users
-    @users = YAML::load_file('config/prominent_users.yml').sort_by{rand()}
-  end
-
   def quality
     @quality = Text.where(key: :quality_control).first
   end

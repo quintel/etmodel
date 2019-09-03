@@ -124,20 +124,20 @@ nl:
       uranium: "uranium"
       biomass_waste: "biomassa & afval"
       electricity_import: "elektriciteit import"
-      electricity_production: "elektriciteit (incl. WKK)"
+      electricity_production: "elektriciteit & WKK"
       emitted: "uitgestoten"
       central_heat_production: "centrale warmte"
       households: "huishoudens"
       buildings: "gebouwen"
-      transport: "nationaal transport"
-      bunkers: "internationaal transport"
+      transport: "transport"
+      bunkers: "int. transport"
       industry: "industrie"
       agriculture: "landbouw"
       other: "overig"
       export: "export"
       loss: "verlies"
-      conversion_losses: "conversieverliezen"
-      transport_losses: "transportverliezen"
+      conversion_losses: "conversieverlies"
+      transport_losses: "transportverlies"
       p2g: "power-to-gas"
       p2p: "power-to-power"
       p2h: "power-to-heat"
@@ -172,6 +172,18 @@ nl:
       geo_ambient: "geothermisch & omgeving"
       water: "waterkracht"
       feedstock: "grondstof"
+      local: 'lokaal'
+      wet: 'natte biomassa'
+      dry: 'droge biomassa'
+      oily: 'oliehoudende biomassa'
+      biogenic_waste: 'biogeen afval'
+      biogas: 'biogas'
+      greengas: 'groengas'
+      biofuels: 'transportbrandstof'
+      losses: 'verliezen'
+      electricity_demand: 'elektriciteitsvraag'
+      heat_demand: 'warmtevraag'
+      hydrogen_demand: 'waterstofvraag'
     tables:
       capacity:
         peak_present: "Huidige piekbelasting"
@@ -183,6 +195,7 @@ nl:
         available_capacity: "Beschikbaar vermogen"
         installed_capacity: "Geïnstalleerd vermogen"
         availability: "Beschikbaarheid"
+        biogas_chp: "Biogas WKK"
         central_gas_chp: "Gascentrale met warmtelevering"
         coal_chp: "Kolen WKK"
         coal_chp_cofiring: "Kolen WKK met houtpellet bijstook"
@@ -247,6 +260,7 @@ nl:
         buildings_collective_chp_network_gas: "Gebouwen gas WKK"
         buildings_collective_chp_wood_pellets: "Gebouwen houtpellet WKK"
         energy_chp_combined_cycle_network_gas: "Energie gas WKK"
+        energy_chp_engine_biogas: "Energie biogas WKK"
         energy_chp_supercritical_waste_mix: "Energie afval WKK"
         energy_chp_ultra_supercritical_coal: "Energie kolen WKK"
         energy_chp_ultra_supercritical_cofiring_coal: "Energie kolen bijstook WKK"
@@ -304,6 +318,7 @@ nl:
     annual_costs_of_infrastructure: "Jaarlijkse kosten infrastructuur"
     area_targets: "Oppervlaktegebruik van windturbines"
     biofuel_demand_domestic_abroad: "Regionale biobrandstofproductie en import"
+    biomass_demand_by_category: "Biomassavraag en -potentie"
     bioresource_demand_domestic_abroad: "Regionale biomassaproductie en import"
     breakdown_converter_costs: "Specificatie kosten"
     breakdown_electricity_costs: "Specificatie elektriciteitskosten"
@@ -347,6 +362,7 @@ nl:
     gas_flow_to_sectors: "Gasstroom naar sectoren"
     gas_network_mix: "Groengas in gasnet"
     gas_versus_other_primary_energy: "Gas vs overig primair verbruik"
+    greengas_costs: "Productiekosten en prijs van groengas"
     hydrogen_production_for_transport: "Waterstofproductie voor transport"
     hydrogen_production_for_fertilizers: "Waterstofproductie voor de kunstmestindustrie"
     hydrogen_cost_capacity: "Productiecapaciteiten en kosten van waterstof"
@@ -396,7 +412,7 @@ nl:
     present_energy_imports: "Huidige energie-import"
     primary_final_useful_demand: "Primair, finaal, en nuttig energieverbruik"
     primary_gas_demand: "Primair gasverbruik"
-    production_curve_woody_biomass: "Productie curve voor biomassa"
+    production_curve_dry_biomass: "Productie curve voor biomassa"
     production_curve_coal: "Productie curve voor kolen"
     production_curve_crude_oil: "Productie curve voor aardolie"
     production_curve_natural_gas: "Productie curve voor aardgas"
@@ -411,6 +427,7 @@ nl:
     required_network_capacity: "Benodigde elektriciteit capaciteitnetwerk"
     sankey: "Toekomstige energiestromen"
     sankey_2010: "Huidige energiestromen"
+    biomass_sankey: "Biomassastromen"
     security_of_supply: "Leveringszekerheid"
     source_of_cooking_in_households: "Eindgebruik energie in huishoudens voor koken"
     source_of_cooling_in_buildings: "Vraag naar koeling in gebouwen"

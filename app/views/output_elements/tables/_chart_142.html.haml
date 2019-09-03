@@ -161,40 +161,40 @@
   %thead.subhead
     %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.energy'
   %tr.even
+    %th= t("input_elements.capacity_of_energy_chp_engine_biogas").html_safe
+    %td.border-rgt{:data => {:gquery => "energy_chp_engine_biogas_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_chp_engine_biogas_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_chp_engine_biogas_delta_in_investment_cost_table"}}
+  %tr.odd
     %th= t("input_elements.number_of_energy_power_combined_cycle_coal").html_safe
     %td.border-rgt{:data => {:gquery => "energy_power_combined_cycle_coal_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "energy_power_combined_cycle_coal_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "energy_power_combined_cycle_coal_delta_in_investment_cost_table"}}
-  %tr.odd
+  %tr.even
     %th= t("input_elements.number_of_energy_power_combined_cycle_ccs_coal").html_safe
     %td.border-rgt{:data => {:gquery => "energy_power_combined_cycle_ccs_coal_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "energy_power_combined_cycle_ccs_coal_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "energy_power_combined_cycle_ccs_coal_delta_in_investment_cost_table"}}
-  %tr.even
+  %tr.odd
     %th= t("input_elements.number_of_energy_power_supercritical_coal").html_safe
     %td.border-rgt{:data => {:gquery => "energy_power_supercritical_coal_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "energy_power_supercritical_coal_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "energy_power_supercritical_coal_delta_in_investment_cost_table"}}
-  %tr.odd
+  %tr.even
     %th= t("input_elements.number_of_energy_power_ultra_supercritical_coal").html_safe
     %td.border-rgt{:data => {:gquery => "energy_power_ultra_supercritical_coal_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "energy_power_ultra_supercritical_coal_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "energy_power_ultra_supercritical_coal_delta_in_investment_cost_table"}}
-  %tr.even
+  %tr.odd
     %th= t("input_elements.number_of_energy_power_ultra_supercritical_ccs_coal").html_safe
     %td.border-rgt{:data => {:gquery => "energy_power_ultra_supercritical_ccs_coal_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "energy_power_ultra_supercritical_ccs_coal_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "energy_power_ultra_supercritical_ccs_coal_delta_in_investment_cost_table"}}
-  %tr.odd
+  %tr.even
     %th= t("input_elements.number_of_energy_power_ultra_supercritical_cofiring_coal").html_safe
     %td.border-rgt{:data => {:gquery => "energy_power_ultra_supercritical_cofiring_coal_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "energy_power_ultra_supercritical_cofiring_coal_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "energy_power_ultra_supercritical_cofiring_coal_delta_in_investment_cost_table"}}
-  %tr.even
-    %th= t("input_elements.number_of_energy_chp_engine_biogas").html_safe
-    %td.border-rgt{:data => {:gquery => "energy_chp_engine_biogas_present_in_investment_cost_table", :graph => :present}}
-    %td{:data => {:gquery => "energy_chp_engine_biogas_future_in_investment_cost_table"}}
-    %td{:data => {:gquery => "energy_chp_engine_biogas_delta_in_investment_cost_table"}}
   %tr.odd
     %th= t("input_elements.number_of_energy_chp_ultra_supercritical_coal").html_safe
     %td.border-rgt{:data => {:gquery => "energy_chp_ultra_supercritical_coal_present_in_investment_cost_table", :graph => :present}}

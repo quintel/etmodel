@@ -8,10 +8,12 @@ var pico = {
   message: function(power){
     return {
       action: "updateInlandWindTurbine",
-      power: pico.inMegaWatt(power),
       description: "This data is used to update the windturbine power slide " +
                    "in the Enegy transition model. The unit of which power " +
-                   "represents the magnitute is Mega Watt"
+                   "represents the magnitute is Mega Watt",
+      argument: {
+        power: pico.inMegaWatt(power),
+      },
     }
   },
 
@@ -23,19 +25,18 @@ var pico = {
   main: function(opts){
     pico.areaType = opts.areaType,
     pico.areaName = opts.areaName
-    //load the html template
+    // Load the html template
     initPico()
 
-    //initialise the map
+    // Initialize the map
     initPicomap();
 
-    //initialise the windturbine module with a specified area
+    // Initialize the windturbine module with a specified area
     var selectedArea = {
       areatype: pico.areaType,
       areaname: pico.areaName
-      //areatype:'gemeente', areaname:'Neder-Betuwe', areacode:'1740'
+      // areatype:'gemeente', areaname:'Neder-Betuwe', areacode:'1740'
       }
-    console.log(selectedArea)
     picoInitWindenergy( selectedArea )
   }
 }

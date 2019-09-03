@@ -23,4 +23,4 @@
 //= require sortable.min
 //= require sign_up_form
 //= require save_indicator
-//= require embedded_pico
+//= require embeds

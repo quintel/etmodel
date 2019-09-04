@@ -16,7 +16,6 @@ class Embeds::PicoArea < SimpleDelegator
     pattern_whitelist.each do |type, pattern|
       return type if area.match?(pattern)
     end
-
     return :land
   end
 

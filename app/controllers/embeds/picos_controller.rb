@@ -1,16 +1,24 @@
 class Embeds::PicosController < ApplicationController
-  skip_before_action :verify_authenticity_token
   layout false
+
   # Generates an embedable iframe in javascript format and a PICO map
   # as html.
   def show
     respond_to do |format|
-      format.js
+      format.js {}
       format.html do
-        @region_type = 'gemeente'
-        @region_name = "Rotterdam"
+        set_scenario_area
+        @region_type = @area.type
+        @region_name = @area.area_name
         @pico_module = params[:pico_module]
       end
     end
+  end
+
+  private
+
+  def set_scenario_area
+    scenario = Api::Scenario.find(Current.setting.api_session_id)
+    @area = Embeds::PicoArea.find_by_area_code(scenario.area_code)
   end
 end

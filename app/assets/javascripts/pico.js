@@ -17,14 +17,18 @@ var pico = {
     }
   },
 
+
+  /* TODO: this conversion of turbinecount to megawatts is hardcoded now.
+           Ask the API!
+     V(energy_power_wind_turbine_inland, electricity_output_capacity) */
   inMegaWatt: function(turbines){
-    // source: V(energy_power_wind_turbine_inland, electricity_output_capacity)
     return turbines * 3.0
   },
 
   main: function(opts){
     pico.areaType = opts.areaType,
     pico.areaName = opts.areaName
+
     // Load the html template
     initPico()
 
@@ -37,6 +41,6 @@ var pico = {
       areaname: pico.areaName
       // areatype:'gemeente', areaname:'Neder-Betuwe', areacode:'1740'
       }
-    picoInitWindenergy( selectedArea )
+    picoInitWindenergy(selectedArea)
   }
 }

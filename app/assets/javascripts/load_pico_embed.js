@@ -5,7 +5,8 @@
   $(document).ready(function () {
     $(picoLinkSelector).fancybox({ href: '/embeds/pico',
                                    type: 'iframe',
-                                   minHeight: 500 });
-    embeds.attach();
+                                   minHeight: 500,
+                                   afterClose: embeds.detach,
+                                   afterLoad: embeds.attach,  });
   });
 }());

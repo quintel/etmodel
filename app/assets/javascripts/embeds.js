@@ -23,14 +23,20 @@
 
 */
 
-embeds = {
+var embeds = {
   attach: function(){
-    window.addEventListener('message', embeds.receiveMessage, false);
+    window.addEventListener('message', embeds.receiveMessage, true);
   },
 
-  // dependencies:
-  //   - jquery
-  //   - fancybox
+  detach: function(){
+    window.removeEventListener('message', embeds.receiveMessage, true)
+  },
+
+  /*
+    dependencies:
+     - jquery
+     - fancybox
+  */
   close: function(event){
     $.fancybox.close();
   },

@@ -1,21 +1,24 @@
-class Embeds::PicosController < ApplicationController
-  layout false
+# frozen_string_literal: true
+module Embeds
+  class PicosController < ApplicationController
+    layout false
 
-  # Generates an embedable iframe in javascript format and a PICO map
-  # as html.
-  def show
-    respond_to do |format|
-      format.html do
-        set_scenario_area
-        @pico_module = params[:pico_module]
+    # Generates an embedable iframe in javascript format and a PICO map
+    # as html.
+    def show
+      respond_to do |format|
+        format.html do
+          set_scenario_area
+          @pico_module = params[:pico_module]
+        end
       end
     end
-  end
 
-  private
+    private
 
-  def set_scenario_area
-    scenario = Api::Scenario.find(Current.setting.api_session_id)
-    @area = Embeds::PicoArea.find_by_area_code(scenario.area_code)
+    def set_scenario_area
+      scenario = Api::Scenario.find(Current.setting.api_session_id)
+      @area = Embeds::PicoArea.find_by_area_code(scenario.area_code)
+    end
   end
 end

@@ -25,23 +25,23 @@
 
 embeds = {
   attach: function(){
-    window.addEventListener('message', embeds.receiveMessage, false)
+    window.addEventListener('message', embeds.receiveMessage, false);
   },
 
   // dependencies:
   //   - jquery
   //   - fancybox
   close: function(event){
-    $.fancybox.close()
+    $.fancybox.close();
   },
 
   receiveMessage: function(event){
-    actionName      = event.data["action"]
-    actionArgument  = event.data["argument"]
+    actionName      = event.data["action"];
+    actionArgument  = event.data["argument"];
     if(embeds.actionIsAvailable(actionName)){
-      embeds.actions[actionName](actionArgument)
+      embeds.actions[actionName](actionArgument);
     } else {
-      console.log("Unhandled postMessage action: ", actionName)
+      console.log("Unhandled postMessage action: ", actionName);
     }
   },
 
@@ -53,29 +53,29 @@ embeds = {
     // Updates a slider and closes the modal.
     updateInlandWindTurbine: function(argument){
       var inputElement = App.input_elements
-              .find_by_key('capacity_of_energy_power_wind_turbine_inland')
-      inputElement.set({user_value: argument.power})
-      embeds.close()
+              .find_by_key('capacity_of_energy_power_wind_turbine_inland');
+      inputElement.set({user_value: argument.power});
+      embeds.close();
     },
 
     // Can be used as an event to close the modal from inside the embed.
     // e.g. the back action inside an embed.
     closeModal: function(argument){
-      embeds.close()
+      embeds.close();
     },
 
     // Method for debugging from external embed.
     sendError: function(argument){
-      console.log(argument)
+      console.log(argument);
     },
   },
 
   // Helper functions
   availableActions: function(){
-    return Object.getOwnPropertyNames(embeds.actions)
+    return Object.getOwnPropertyNames(embeds.actions);
   },
 
   actionIsAvailable: function(actionName){
-    return embeds.availableActions().includes(actionName)
+    return embeds.availableActions().includes(actionName);
   },
 }

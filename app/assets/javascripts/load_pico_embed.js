@@ -1,11 +1,11 @@
 // embeds_pico_path is mentioned
 (function(){
-  picoLinkSelector = 'a[href$="/embeds/pico"]'
+  picoLinkSelector = 'a[href$="/embeds/pico"]';
 
   $(document).ready(function () {
     $(picoLinkSelector).fancybox({ href: '/embeds/pico',
                                    type: 'iframe',
-                                   minHeight: 500 })
-    embeds.attach()
-  })
-}())
+                                   minHeight: 500 });
+    embeds.attach();
+  });
+}());

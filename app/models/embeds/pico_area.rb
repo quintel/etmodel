@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This is a simple wrapper for Api::Area.
 # Sorry for the dutch. PICO is in dutch...
 module Embeds

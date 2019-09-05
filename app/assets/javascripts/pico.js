@@ -1,8 +1,8 @@
 var pico = {
   ready: function(){
-    node = document.getElementById("picoturbinecount")
-    power = node.textContent.replace(/\./g,"")
-    window.parent.postMessage(pico.message(power))
+    node = document.getElementById("picoturbinecount");
+    power = node.textContent.replace(/\./g,"");
+    window.parent.postMessage(pico.message(power));
   },
 
   message: function(power){
@@ -14,7 +14,7 @@ var pico = {
       argument: {
         power: pico.inMegaWatt(power),
       },
-    }
+    };
   },
 
 
@@ -22,15 +22,15 @@ var pico = {
            Ask the API!
      V(energy_power_wind_turbine_inland, electricity_output_capacity) */
   inMegaWatt: function(turbines){
-    return turbines * 3.0
+    return turbines * 3.0;
   },
 
   main: function(opts){
-    pico.areaType = opts.areaType,
-    pico.areaName = opts.areaName
+    pico.areaType = opts.areaType;
+    pico.areaName = opts.areaName;
 
     // Load the html template
-    initPico()
+    initPico();
 
     // Initialize the map
     initPicomap();
@@ -40,7 +40,7 @@ var pico = {
     var selectedArea = {
       areatype: pico.areaType,
       areaname: pico.areaName
-    }
+    };
     picoInitWindenergy(selectedArea);
   }
-}
+};

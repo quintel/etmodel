@@ -23,7 +23,6 @@
 
 */
 
-
 embeds = {
   attach: function(){
     window.addEventListener('message', embeds.receiveMessage, false)

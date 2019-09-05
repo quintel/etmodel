@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe Embeds::PicoArea, vcr: true do
-  let(:nl) { described_class.find_by_area_code('nl') }
-  let(:municipality) { described_class.find_by_area_code("GM0599_rotterdam") }
-  let(:province) { described_class.find_by_area_code("PV24_flevoland") }
-  let(:neighborhood){described_class.find_by_area_code("BU00141102_de_hunze")}
+  let(:nl) { described_class.find_by_area_code'nl' }
+  let(:municipality) { described_class.find_by_area_code "GM0599_rotterdam" }
+  let(:province) { described_class.find_by_area_code "PV24_flevoland" }
+  let(:neighborhood) { described_class.find_by_area_code "BU00141102_de_hunze" }
 
   describe ".find_by_area_code" do
     subject { nl }
@@ -13,29 +13,9 @@ describe Embeds::PicoArea, vcr: true do
 
   describe "#methods" do
     subject { nl.methods }
-    it { is_expected.to include(
-        *(Api::Area.first.methods - Object.new.methods)) }
-  end
-
-  describe "#available_in_pico?" do
-    context "with a municipality" do
-      subject { municipality.available_in_pico? }
-      it{ is_expected.to be_truthy }
-    end
-
-    context "with a province" do
-      subject { province.available_in_pico? }
-      it{ is_expected.to be_truthy }
-    end
-
-    context "with the netherlands" do
-      subject { nl.available_in_pico? }
-      it{ is_expected.to be_truthy }
-    end
-
-    context "with a neighborhood" do
-      subject { neighborhood.available_in_pico? }
-      it{ is_expected.to be_falsey }
+    it do
+      api_area_methods = Api::Area.first.methods - Object.new.methods
+      is_expected.to include(*api_area_methods)
     end
   end
 
@@ -79,7 +59,7 @@ describe Embeds::PicoArea, vcr: true do
     end
 
     # Unsupported so fall-back to netherlands
-    context "with a neighborhood" do
+    context "with a non municipalityor province" do
       subject { neighborhood.area_name }
       it { is_expected.to eq "Nederland" }
     end

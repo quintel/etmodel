@@ -1,7 +1,6 @@
-# This is a simple wrapper for Api::Area. I'm using this because it allows me
-# not to worry about poluting it.
-# Sorry for the dutch. This has to do with dependecies in PICO.
-#   - "land" is the enum value that represent "country"
+# This is a simple wrapper for Api::Area.
+# Sorry for the dutch. PICO is in dutch...
+
 class Embeds::PicoArea < SimpleDelegator
   def self.find_by_area_code(area_code)
     new Api::Area.find(area_code)
@@ -19,9 +18,8 @@ class Embeds::PicoArea < SimpleDelegator
     return :land
   end
 
-  def available_in_pico?
-    pattern_whitelist.values
-                     .any?{|pattern| area.match?(pattern)}
+  def to_json
+    "{areaType:'#{type}', areaName:'#{area_name}'}"
   end
 
   private

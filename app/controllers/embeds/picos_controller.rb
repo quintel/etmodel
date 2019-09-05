@@ -7,8 +7,6 @@ class Embeds::PicosController < ApplicationController
     respond_to do |format|
       format.html do
         set_scenario_area
-        @region_type = @area.type
-        @region_name = @area.area_name
         @pico_module = params[:pico_module]
       end
     end

@@ -15,7 +15,7 @@ D3.stacked_bar =
       top: 20
       bottom: 20
       left: 30
-      right: 40
+      right: 60
 
     legend_margin: 20
 

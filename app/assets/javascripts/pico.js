@@ -36,11 +36,11 @@ var pico = {
     initPicomap();
 
     // Initialize the windturbine module with a specified area
+    // areatype:'gemeente', areaname:'Neder-Betuwe', areacode:'1740'
     var selectedArea = {
       areatype: pico.areaType,
       areaname: pico.areaName
-      // areatype:'gemeente', areaname:'Neder-Betuwe', areacode:'1740'
-      }
-    picoInitWindenergy(selectedArea)
+    }
+    picoInitWindenergy(selectedArea);
   }
 }

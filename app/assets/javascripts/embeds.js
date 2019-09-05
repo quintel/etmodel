@@ -3,7 +3,7 @@
   various settings in the ETM.
   It uses the postMessage browser API.
 
-  To add an additional action all you have to do is add a property to the
+  To add an additional action all you have to do is add a function to the
   actions object. Be aware that an action can only be provided with a single
   argument. The argument however can be an array or map.
 
@@ -38,11 +38,9 @@ embeds = {
 
   /*
     All properties of the actions object will automaticly be available in the
-    API. Its advisable not to polute it with methods that don't have to be
-    public.
+    API and callable by cross domain embeds. Its advisable not to polute.
   */
   actions: {
-
     // Updates a slider and closes the modal.
     updateInlandWindTurbine: function(argument){
       var inputElement = App.input_elements
@@ -63,13 +61,12 @@ embeds = {
     },
   },
 
-  // Meta methods dealing with actions
-    availableActions: function(){
-      return Object.getOwnPropertyNames(embeds.actions)
-    },
+  // Helper functions
+  availableActions: function(){
+    return Object.getOwnPropertyNames(embeds.actions)
+  },
 
-    actionIsAvailable: function(actionName){
-      return embeds.availableActions().includes(actionName)
-    },
-  // end meta methods
+  actionIsAvailable: function(actionName){
+    return embeds.availableActions().includes(actionName)
+  },
 }

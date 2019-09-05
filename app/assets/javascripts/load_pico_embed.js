@@ -6,8 +6,7 @@
   $(document).ready(function () {
     $(picoLinkSelector).fancybox({ href: '/embeds/pico',
                                    type: 'iframe',
-                                   minHeight: 500,
-                                   afterClose: embeds.detach})
+                                   minHeight: 500 })
     embeds.attach()
   })
 }())

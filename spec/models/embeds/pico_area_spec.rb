@@ -1,7 +1,8 @@
+# frozen_string_literal: true.
 require 'rails_helper'
 
 describe Embeds::PicoArea, vcr: true do
-  let(:nl) { described_class.find_by_area_code'nl' }
+  let(:nl) { described_class.find_by_area_code 'nl' }
   let(:municipality) { described_class.find_by_area_code 'GM0599_rotterdam' }
   let(:province) { described_class.find_by_area_code 'PV24_flevoland' }
   let(:neighborhood) { described_class.find_by_area_code 'BU00141102_de_hunze' }

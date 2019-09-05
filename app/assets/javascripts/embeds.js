@@ -1,27 +1,37 @@
 /*
   This script is used for receiving messages from iframes and updating
-  various settings in the ETM.
-  It uses the postMessage browser API.
+  settings in the ETM. It uses the postMessage browser API for receiving cross
+  domain messages.
+  To add an additional message handler all you have to do is add a function to
+  the actions object. Be aware that an action can only be provided with a single
+  argument. The however can be an array or map but can't (or shouldn't) contain
+  functions.
 
-  To add an additional action all you have to do is add a function to the
-  actions object. Be aware that an action can only be provided with a single
-  argument. The argument however can be an array or map.
+  The messages have to conform to a specific schema.
+    - An action key is required and should match an action declared in this file.
+    - An argument key with value is required and its schema is dependent on the
+      matching action below.
 
-  Example message:
-  { action: "updateInlandWindTurbine",
-    argument: {
-      power: pico.inMegaWatt(power),
-    },
-  }
+  Below is an example message.
+
+  * {
+  *   action: "updateInlandWindTurbine",
+  *   argument: {
+  *     power: pico.inMegaWatt(power)
+  *   }
+  * }
+
 */
 
-// requires jquery
-// requires fancybox
+
 embeds = {
   attach: function(){
     window.addEventListener('message', embeds.receiveMessage, false)
   },
 
+  // dependencies:
+  //   - jquery
+  //   - fancybox
   close: function(event){
     $.fancybox.close()
   },

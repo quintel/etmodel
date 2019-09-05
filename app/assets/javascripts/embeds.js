@@ -29,7 +29,7 @@ var embeds = {
   },
 
   detach: function(){
-    window.removeEventListener('message', embeds.receiveMessage, true)
+    window.removeEventListener('message', embeds.receiveMessage, true);
   },
 
   /*
@@ -82,6 +82,6 @@ var embeds = {
   },
 
   actionIsAvailable: function(actionName){
-    return embeds.availableActions().includes(actionName);
+    return embeds.availableActions().indexOf(actionName) !== -1;
   },
 }

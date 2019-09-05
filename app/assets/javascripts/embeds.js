@@ -42,8 +42,8 @@ var embeds = {
   },
 
   receiveMessage: function(event){
-    actionName      = event.data.action;
-    actionArgument  = event.data.argument;
+    var actionName      = event.data.action;
+    var actionArgument  = event.data.argument;
     if(embeds.actionIsAvailable(actionName)){
       embeds.actions[actionName](actionArgument);
     } else {

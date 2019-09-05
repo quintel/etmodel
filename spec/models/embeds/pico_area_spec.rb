@@ -7,6 +7,7 @@ describe Embeds::PicoArea, vcr: true do
   let(:municipality) { described_class.find_by_area_code 'GM0599_rotterdam' }
   let(:province) { described_class.find_by_area_code 'PV24_flevoland' }
   let(:neighborhood) { described_class.find_by_area_code 'BU00141102_de_hunze' }
+  let(:uk)  {described_class.find_by_area_code 'uk' }
 
   describe '.find_by_area_code' do
     subject { nl }
@@ -64,6 +65,18 @@ describe Embeds::PicoArea, vcr: true do
     context 'with a non municipalityor province' do
       subject { neighborhood.area_name }
       it { is_expected.to eq 'Nederland' }
+    end
+  end
+
+  describe "is_supported?" do
+    context "with an unsupported location" do
+      subject { uk.is_supported? }
+      it { is_expected.to be_falsey }
+    end
+
+    context "with a supported_location" do
+      subject { nl.is_supported? }
+      it { is_expected.to be_truthy }
     end
   end
 end

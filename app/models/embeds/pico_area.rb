@@ -26,6 +26,12 @@ module Embeds
       "{areaType:'#{type}', areaName:'#{area_name}'}"
     end
 
+    def is_supported?
+      return true if area == 'nl' || type != :land
+
+      false
+    end
+
     private
 
     def pattern_whitelist

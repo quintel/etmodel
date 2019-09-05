@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
 module Embeds
-
   # This is a simple wrapper/decorator for Api::Area.
   class PicoArea < SimpleDelegator
-
     def self.find_by_area_code(area_code)
       new Api::Area.find(area_code)
     end

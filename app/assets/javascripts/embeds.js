@@ -42,8 +42,8 @@ var embeds = {
   },
 
   receiveMessage: function(event){
-    actionName      = event.data["action"];
-    actionArgument  = event.data["argument"];
+    actionName      = event.data.action;
+    actionArgument  = event.data.argument.;
     if(embeds.actionIsAvailable(actionName)){
       embeds.actions[actionName](actionArgument);
     } else {
@@ -84,4 +84,4 @@ var embeds = {
   actionIsAvailable: function(actionName){
     return embeds.availableActions().indexOf(actionName) !== -1;
   },
-}
+};

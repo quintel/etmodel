@@ -1,7 +1,7 @@
 var pico = {
   ready: function(){
     node = document.getElementById("picoturbinecount")
-    power = node.textContent
+    power = node.textContent.replace(/\./g,"")
     window.parent.postMessage(pico.message(power))
   },
 

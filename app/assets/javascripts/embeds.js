@@ -7,9 +7,6 @@
   actions object. Be aware that an action can only be provided with a single
   argument. The argument however can be an array or map.
 
-  At the time of writing the "hook" that activates the code lives in the
-  Embeds::PicosController. wich gets
-
   Example message:
   { action: "updateInlandWindTurbine",
     argument: {
@@ -19,16 +16,14 @@
 */
 
 // requires jquery
+// requires fancybox
 embeds = {
   attach: function(){
-    document.getElementById('close-modal')
-          .addEventListener('click',   embeds.close,          false)
     window.addEventListener('message', embeds.receiveMessage, false)
   },
 
   close: function(event){
-    document.getElementsByClassName("modal__backdrop")[0].remove()
-    if(event != undefined){ event.preventDefault() }
+    $.fancybox.close()
   },
 
   receiveMessage: function(event){

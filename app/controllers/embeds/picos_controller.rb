@@ -5,7 +5,6 @@ class Embeds::PicosController < ApplicationController
   # as html.
   def show
     respond_to do |format|
-      format.js {}
       format.html do
         set_scenario_area
         @region_type = @area.type

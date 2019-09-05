@@ -24,3 +24,4 @@
 //= require sign_up_form
 //= require save_indicator
 //= require embeds
+//= require load_pico_embed

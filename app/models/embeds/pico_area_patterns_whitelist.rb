@@ -6,5 +6,5 @@ module Embeds
     gemeente: /\AGM/,
     land: /\Anl/,
     provincie: /\APV/
-  }
+  }.freeze
 end

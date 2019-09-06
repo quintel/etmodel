@@ -22,11 +22,11 @@ module Embeds
       :land
     end
 
-    def to_js()
+    def to_js
       "{areaType:'#{type}', areaName:'#{area_name}'}"
     end
 
-    def is_supported?
+    def supported?
       return true if area == 'nl' || type != :land
 
       false

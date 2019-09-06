@@ -12,5 +12,6 @@
   %body
 
     %h1= t("embeds.unsupported_area.title")
-    %a.pico__submit{ onclick:  "window.parent.postMessage({action: 'closeModal'});" }
+    %a.pico__submit{ onclick:  |
+      "window.parent.postMessage({action: 'closeModal'});" } |
       = t("embeds.unsupported_area.back")

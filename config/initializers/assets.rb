@@ -23,6 +23,8 @@ Rails.application.config.assets.precompile += %w(
   ie.css
   multi_year_charts.css
   report.css
+  pico.css
+  pico.js
 )
 
 # Compile images in vendor/assets/images

@@ -170,7 +170,7 @@ GEM
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
-    hashdiff (0.3.7)
+    hashdiff (1.0.0)
     http_accept_language (2.1.1)
     httparty (0.16.3)
       mime-types (~> 3.0)
@@ -333,7 +333,7 @@ GEM
     ruby-progressbar (1.10.1)
     ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
-    safe_yaml (1.0.4)
+    safe_yaml (1.0.5)
     sass (3.4.25)
     sass-rails (5.0.7)
       railties (>= 4.0.0, < 6)
@@ -394,10 +394,10 @@ GEM
     unicode-display_width (1.6.0)
     vcr (3.0.3)
     watchr (0.7)
-    webmock (3.4.2)
+    webmock (3.7.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
-      hashdiff
+      hashdiff (>= 0.4.0, < 2.0.0)
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -480,7 +480,7 @@ DEPENDENCIES
   uglifier
   vcr (~> 3.0.3)
   watchr
-  webmock
+  webmock (>= 3.5)
   wicked_pdf
   wkhtmltopdf-binary
   yard-tomdoc (~> 0.4.0)

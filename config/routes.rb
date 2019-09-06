@@ -145,6 +145,10 @@ Etm::Application.routes.draw do
 
   resources :multi_year_charts, only: %i[index create destroy]
 
+  namespace :embeds do
+    resource :pico, only: [:show]
+  end
+
   %w[404 422 500].each do |code|
     get "/#{ code }", to: 'errors#show', code: code
   end

@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://beta-engine.energytransitionmodel.com/api/v3/areas/GM0599_rotterdam.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.14.0
+      Date:
+      - Thu, 05 Sep 2019 10:35:11 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"f80e36718ff521827b50d6fce52d2bbe"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1e32105b-32a2-49c5-99df-f4ec8ff69db7
+      X-Runtime:
+      - '0.008483'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"area":"GM0599_rotterdam","id":883,"parent_id":883,"group":"municipality","analysis_year":2016,"has_agriculture":true,"has_buildings":true,"has_climate":true,"has_coastline":true,"has_cold_network":false,"has_electricity_storage":true,"has_employment":true,"has_fce":true,"has_industry":true,"has_lignite":false,"has_merit_order":true,"has_metal":true,"has_mountains":false,"has_old_technologies":true,"has_other":true,"has_solar_csp":false,"has_import_export":true,"use_network_calculations":true,"use_merit_order_demands":true,"has_aggregated_chemical_industry":false,"has_detailed_chemical_industry":true,"has_coal_oil_for_heating_built_environment":false,"buildings_insulation_employment_constant":0.0093,"households_insulation_employment_constant":0.014,"co2_emission_1990_aviation_bunkers":4.6046,"co2_emission_1990_marine_bunkers":34.95619,"co2_percentage_free":0.85,"co2_price":0.0078,"ccs_cost_in_industry":90.0,"economic_multiplier":1.0,"employment_fraction_production":0.5,"employment_local_fraction":0.2,"man_hours_per_man_year":1800.0,"lv_net_spare_capacity":0.25,"lv_net_total_costs_present":63549954.3513976,"lv_net_costs_per_capacity_step":18320.0,"lv_net_capacity_per_step":0.02,"mv_net_spare_capacity":0.25,"mv_net_total_costs_present":54613242.0175363,"mv_net_costs_per_capacity_step":138000.0,"mv_net_capacity_per_step":0.2,"hv_net_spare_capacity":0.25,"hv_net_total_costs_present":32092726.948327,"hv_net_costs_per_capacity_step":72800.0,"hv_net_capacity_per_step":0.2,"lv_mv_trafo_spare_capacity":0.25,"lv_mv_trafo_total_costs_present":22639671.2382063,"lv_mv_trafo_costs_per_capacity_step":4000.0,"lv_mv_trafo_capacity_per_step":0.02,"mv_hv_trafo_spare_capacity":0.25,"mv_hv_trafo_total_costs_present":19064986.3046617,"mv_hv_trafo_costs_per_capacity_step":50000.0,"mv_hv_trafo_capacity_per_step":0.2,"interconnection_net_costs_present":0.0,"offshore_net_costs_present":0.0,"flh_solar_pv_solar_radiation_max":1361.35634547,"hydrogen_electrolysis_solar_pv_capacity_ratio":0.427,"insulation_detached_houses_low_share":0.5217391304347826,"insulation_detached_houses_medium_share":0.4782608695652174,"insulation_detached_houses_high_share":0.0,"insulation_apartments_low_share":0.46875,"insulation_apartments_medium_share":0.53125,"insulation_apartments_high_share":0.0,"insulation_semi_detached_houses_low_share":0.5,"insulation_semi_detached_houses_medium_share":0.5,"insulation_semi_detached_houses_high_share":0.0,"insulation_corner_houses_low_share":0.08695652173913043,"insulation_corner_houses_medium_share":0.9130434782608696,"insulation_corner_houses_high_share":0.0,"insulation_terraced_houses_low_share":0.3225806451612903,"insulation_terraced_houses_medium_share":0.6774193548387097,"insulation_terraced_houses_high_share":0.0,"insulation_detached_houses_start_value":11.0,"insulation_semi_detached_houses_start_value":13.0,"insulation_apartments_start_value":17.0,"insulation_corner_houses_start_value":21.0,"insulation_terraced_houses_start_value":21.0,"insulation_buildings_start_value":46.0,"typical_roof_surface_corner_house_available_for_pv":3.33e-05,"typical_roof_surface_terraced_house_available_for_pv":3.25e-05,"typical_roof_surface_detached_house_available_for_pv":6.17e-05,"typical_roof_surface_semi_detached_house_available_for_pv":4.58e-05,"typical_roof_surface_apartment_available_for_pv":1.90666666666667e-05,"typical_useful_demand_space_heating_corner_house":0.0444436934929221,"typical_useful_demand_space_heating_detached_house":0.069849301483813,"typical_useful_demand_space_heating_semi_detached_house":0.0539853183103173,"typical_useful_demand_space_heating_terraced_house":0.0384769640276346,"typical_useful_demand_space_heating_apartment":0.0273790433088697,"heat_demand_reduction_medium_insulation_corner_house":23.0,"heat_demand_reduction_medium_insulation_detached_house":23.0,"heat_demand_reduction_medium_insulation_semi_detached_house":26.0,"heat_demand_reduction_medium_insulation_terraced_house":31.0,"heat_demand_reduction_medium_insulation_apartments":32.0,"heat_demand_reduction_high_insulation_corner_house":69.0,"heat_demand_reduction_high_insulation_detached_house":67.0,"heat_demand_reduction_high_insulation_semi_detached_house":69.0,"heat_demand_reduction_high_insulation_terraced_house":69.0,"heat_demand_reduction_high_insulation_apartments":67.0,"heat_demand_reduction_high_insulation_buildings":74.0,"electric_vehicle_profile_1_share":1.0,"electric_vehicle_profile_2_share":0.0,"electric_vehicle_profile_3_share":0.0,"electric_vehicle_profile_4_share":0.0,"electric_vehicle_profile_5_share":0.0,"solar_pv_profile_1_share":1.0,"solar_pv_profile_2_share":0.0,"annual_infrastructure_cost_gas":59.54376378169427,"areable_land":21.44,"co2_emission_1990":19.022889377776,"coast_line":4.125,"interconnector_capacity":239.8973954014542,"total_land_area":215.64,"number_of_buildings":33651.0,"number_of_cars":216052.0,"number_of_residences":311168.0,"number_of_inhabitants":629606.0,"offshore_suitable_for_wind":1838.81920464665,"residences_roof_surface_available_for_pv":4.33087754973631,"buildings_roof_surface_available_for_pv":2.16543877486816,"other_emission_agriculture":0.017778516,"other_emission_built_environment":0.01967901634,"other_emission_transport":0.0580000323,"other_emission_industry_energy":0.27394048514564,"number_of_detached_houses":4272.219828042709,"number_of_apartments":229687.24076909004,"number_of_semi_detached_houses":3619.103472844035,"number_of_corner_houses":17568.230765527664,"number_of_terraced_houses":56021.205164495535,"init":{},"base_dataset":"nl","scaling":{"area_attribute":"number_of_residences","value":311168,"base_value":7587964},"uses_deprecated_initializer_inputs":false,"derived":true,"last_updated_at":"2019-09-03T17:28:35.000+02:00","useable":true}'
+    http_version: 
+  recorded_at: Thu, 05 Sep 2019 10:35:11 GMT
+recorded_with: VCR 3.0.3

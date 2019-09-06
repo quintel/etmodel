@@ -22,7 +22,7 @@ module Embeds
       :land
     end
 
-    def to_json(*_args)
+    def to_js()
       "{areaType:'#{type}', areaName:'#{area_name}'}"
     end
 

@@ -63,6 +63,27 @@ describe Admin::ConstraintsController do
     it { is_expected.to redirect_to(admin_constraint_path(@constraint)) }
   end
 
+  describe 'PUT update with a new output element' do
+    let(:constraint) { FactoryBot.create(:constraint) }
+    let(:output_element) { FactoryBot.create(:output_element) }
+
+    it 'sets the new output element' do
+      running_this =
+        lambda do
+          put :update, params: {
+            id: constraint.id,
+            constraint: { output_element_id: output_element.id }
+          }
+        end
+
+      expect(&running_this)
+        .to change { constraint.reload.output_element_id }
+        .from(nil)
+        .to(output_element.id)
+    end
+
+  end
+
   describe "DELETE destroy" do
     before do
       @constraint = FactoryBot.create :constraint

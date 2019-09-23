@@ -10,7 +10,7 @@ module LayoutHelper
 
   def current_area_name
     code = Current.setting.area_code
-    I18n.t(code, default: code.humanize)
+    I18n.t("areas.#{code}", default: code.humanize)
   end
 
   def current_area_info
@@ -67,7 +67,7 @@ module LayoutHelper
 
   def name_for(area)
     I18n.t("country_select.areas.#{ area }",
-      default: [area.to_sym, area.humanize])
+      default: ["areas.#{area}".to_sym, area.humanize])
   end
 
   # Creates the language selection drop-down.

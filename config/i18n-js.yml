@@ -2,6 +2,7 @@
 translations:
   - file: "public/javascripts/i18n/%{locale}.js"
     only:
+      - '*.areas.*'
       - '*.units.*'
       - '*.output_element_series.*'
       - '*.dashboard.costs.*'

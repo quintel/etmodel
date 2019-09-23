@@ -8,5 +8,5 @@
       == #{t('intro.your_current_scenario')}&hellip;
     %span.details
       %span.country{ class: area_css_class(Current.setting.area) }
-        = t(Current.setting.area_code)
+        = current_area_name
       %span.period= Current.setting.end_year

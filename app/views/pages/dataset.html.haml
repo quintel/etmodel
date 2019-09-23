@@ -12,7 +12,7 @@
 
     .page#establishment_shot{ data: { area: @area.area, host: APP_CONFIG[:api_url], max_year: Setting::MAX_YEAR, min_year: Setting::MIN_YEAR, default_year: Setting::DEFAULT_YEAR } }
       %h1
-        = t('establishment_shot.header_html', area: I18n.t(@area.area, default: [@area.area.to_sym, @area.area.humanize]))
+        = t('establishment_shot.header_html', area: I18n.t("areas.#{@area.area}"))
         %span.loading
           = image_tag('layout/ajax-loader-small.gif')
 
@@ -63,7 +63,7 @@
         = t('establishment_shot.created_by_html')
 
     .navigation
-      = link_to I18n.t("dataset.start_scenario", area: I18n.t(@area.area, default: [@area.area.to_sym, @area.area.humanize])), root_path(country: @area.area), class: 'button primary scenario-link'
+      = link_to I18n.t("dataset.start_scenario", area: I18n.t("areas.#{@area.area}")), root_path(country: @area.area), class: 'button primary scenario-link'
 
       %span.or or
       = link_to "Back", root_path, class: "button"

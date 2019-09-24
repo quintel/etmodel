@@ -1,3 +1,5 @@
+/* globals $ _ Backbone I18n */
+
 (function() {
   'use strict';
 
@@ -107,6 +109,10 @@
       .reject(_.isNaN)
       .uniq()
       .value();
+  };
+
+  var areaName = function(areaCode) {
+    return I18n.t('areas.' + areaCode);
   };
 
   // Router --------------------------------------------------------------------
@@ -306,7 +312,7 @@
         });
 
         segment
-          .attr('data-tooltip-title', element.scenario.areaCode.toUpperCase())
+          .attr('data-tooltip-title', areaName(element.scenario.areaCode))
           .attr(
             'data-tooltip-text',
             element.value.toFixed(2) + ' ' + element.unit
@@ -458,13 +464,13 @@
             )
             .append(
               $('<a class="area-code">')
-                .text(part.scenario.areaCode.toUpperCase())
+                .text(areaName(part.scenario.areaCode))
                 .attr('href', '/scenarios/' + part.scenario.id)
                 .attr('title', I18n.t('local_global.view_scenario'))
             )
             .append(
               $('<span class="measure" />').text(
-                '(' + inhabitants + ' inhabitants)'
+                inhabitants + ' ' + I18n.t('local_global.residents')
               )
             )
         );
@@ -510,7 +516,7 @@
           $('<span class="legend-color" />').css({
             'background-color': this.options.part.scenario.color
           }),
-          this.options.part.scenario.areaCode.toUpperCase()
+          areaName(this.options.part.scenario.areaCode)
         ),
         $('<div class="delta"></div>').append(deltaView.render()),
         $('<div class="present"></div>').append(presentView.render()),

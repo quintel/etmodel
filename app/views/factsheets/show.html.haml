@@ -8,7 +8,7 @@
     #title
       %h1
         Energiemix
-        %strong= t(@scenario.area_code)
+        %strong= t("areas.#{@scenario.area_code}")
     %dl.detail-list
       %dt Inwoners
       %dd(data-query="households_number_of_inhabitants" data-period="future") &mdash;

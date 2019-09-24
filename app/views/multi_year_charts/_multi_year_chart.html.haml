@@ -3,7 +3,7 @@
     = area_flag_icon(multi_year_chart.area_code)
     %span.title= multi_year_chart.title
     %span.details
-      == (#{t(multi_year_chart.area_code)}, #{multi_year_chart.end_year})
+      == (#{t("areas.#{multi_year_chart.area_code}")}, #{multi_year_chart.end_year})
     %span.created-at
       %span{ title: multi_year_chart.created_at.to_formatted_s(:short) }
         = t('multi_year_charts.created_at', date: distance_of_time_in_words_to_now(multi_year_chart.created_at))

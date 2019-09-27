@@ -118,7 +118,7 @@ module ApplicationHelper
   # serialization as JSON.
   def settings_as_json(setting)
     setting.to_hash.merge(
-      area_name: I18n.t(setting.area_code),
+      area_name: current_area_name,
       area_scaling: setting.area.try(:scaling)
     )
   end

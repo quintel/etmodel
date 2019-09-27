@@ -3,7 +3,7 @@
     %li
       %label
         %span.check= check_box_tag('scenario_ids[]', ss.scenario.id)
-        %span.area= t(ss.scenario.area_code)
+        %span.area= t("areas.#{ss.scenario.area_code}")
         %span.title= ss.scenario.title
         %span.end-year== (#{ss.scenario.end_year})
 

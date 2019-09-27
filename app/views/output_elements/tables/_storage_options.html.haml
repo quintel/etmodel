@@ -42,6 +42,20 @@
       %td{:data => {:decimals => 4, :gquery => "energy_flexibility_pumped_storage_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 1, :gquery => "energy_flexibility_pumped_storage_electricity_flhs", :graph => :future}}
     %tr
+      %th= t "output_elements.tables.flexibility.electricity_stored_in_opac"
+      %td{:data => {:gquery => "energy_flexibility_opac_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_flexibility_opac_electricity_volume", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_flexibility_opac_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_flexibility_opac_electricity_input", :graph => :future}}
+      %td{:data => {:decimals => 1, :gquery => "energy_flexibility_opac_electricity_flhs", :graph => :future}}
+    %tr
+      %th= t "output_elements.tables.flexibility.electricity_stored_in_mv_batteries"
+      %td{:data => {:gquery => "energy_flexibility_mv_batteries_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_flexibility_mv_batteries_electricity_volume", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_flexibility_mv_batteries_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_flexibility_mv_batteries_electricity_input", :graph => :future}}
+      %td{:data => {:decimals => 1, :gquery => "energy_flexibility_mv_batteries_electricity_flhs", :graph => :future}}
+    %tr
       %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_households"
       %td{:data => {:gquery => "households_flexibility_p2h_electricity_capacity", :graph => :future}}
       %td{:data => {:gquery => "households_flexibility_p2h_electricity_volume", :graph => :future}}

@@ -16,7 +16,7 @@ var pico = {
   },
 
   turbineCount: function(){
-    return picoGetTurbineCount()
+    return picoGetTurbineCount();
   },
 
   /* TODO: this conversion of turbinecount to megawatts is hardcoded now.
@@ -27,7 +27,7 @@ var pico = {
   },
 
   main: function(opts){
-    var picoOptions = {}
+    var picoOptions = {};
 
     // Load the html template
     initPico();
@@ -50,7 +50,7 @@ var pico = {
       onlyInAgriculturalarea:0
     };
 
-    picoOptions.showMaps = []
+    picoOptions.showMaps = [];
     picoInitWindenergy(picoOptions);
   }
 };

@@ -18,7 +18,7 @@
         = I18n.localize(@scenario.parsed_created_at, :format => :long)
     %li
       %strong #{t('scenario.area_code')}:
-      = t @scenario.area_code
+      = t "areas.#{@scenario.area_code}"
     %li
       %strong #{t('scenario.end_year')}:
       = @scenario.end_year

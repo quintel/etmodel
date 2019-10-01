@@ -78,6 +78,8 @@ en:
       power_to_methane: "Conversion to methane for gas network"
       curtailment: "Curtailment"
       pumped_storage: "Storage in reservoirs"
+      opac: "Storage in underground pumped hydro storage"
+      mv_batteries: "Storage in large-scale batteries"
     block_chart:
       costs: "Cost of power production"
       investment_costs: "Investment costs"
@@ -182,7 +184,7 @@ en:
       local: 'local'
       wet: 'wet biomass'
       dry: 'dry biomass'
-      oily: 'oily biomass'
+      oily: 'oil-containing biomass'
       biogenic_waste: 'biogenic waste'
       biogas: 'biogas'
       greengas: 'green gas'
@@ -286,17 +288,18 @@ en:
         industry_chp_turbine_gas_power_fuelmix: "Industry gas turbine CHP"
         industry_chp_ultra_supercritical_coal: "Industry coal CHP"
       investments:
-        technology: "Technology"
-        investment: "Investment"
-        difference: "Difference"
         agriculture: "Agriculture"
+        bln_euro: "BLN. EURO"
         buildings: "Buildings"
+        difference: "Difference"
         energy: "Central production"
+        flexibility: "Flexibility"
         households: "Households"
         industry: "Industry"
+        investment: "Investment"
         other: "Other"
+        technology: "Technology"
         total: "Total"
-        bln_euro: "BLN. EURO"
       flexibility:
         full_load_hours: "Full load hours"
         storage_capacity: "Available capacity"
@@ -307,6 +310,8 @@ en:
         electricity_stored_in_batteries: "Storage in batteries"
         electricity_stored_in_EV: "Storage in electric vehicles"
         electricity_stored_in_pumped_storage: "Storage in reservoirs"
+        electricity_stored_in_opac: "Storage in underground pumped hydro storage"
+        electricity_stored_in_mv_batteries: "Storage in large-scale batteries"
         electricity_converted_to_heat_households: "Conversion to heat for households"
         electricity_converted_to_hydrogen: "Conversion to hydrogen"
         electricity_converted_to_heat_industry: "Conversion to heat for industry"
@@ -436,7 +441,7 @@ en:
     required_network_capacity: "Required electricity network capacity"
     sankey: "Future energy flows"
     sankey_2010: "Present energy flows"
-    biomass_sankey: "Biomass flows"
+    biomass_sankey: "Future biomass flows"
     security_of_supply: "Security of supply"
     source_of_cooking_in_households: "Final energy demand - Cooking"
     source_of_cooling_in_buildings: "Cooling demand in buildings"

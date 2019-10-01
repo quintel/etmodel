@@ -2,6 +2,9 @@
   = f.input :key
   = f.input :group, :as => :select, :collection => Constraint::GROUPS
   = f.input :gquery_key
+  = f.association :output_element,
+    :collection => OutputElement.all.map{|c| ["##{c.id} #{c.key}", c.id]},
+    :hint => "Default chart to be shown when the user clicks on the slide title"
   = f.input :disabled
   = f.simple_fields_for :description do |j|
     = j.input :short_content_en

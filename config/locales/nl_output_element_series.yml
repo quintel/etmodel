@@ -31,7 +31,7 @@ nl:
       transport: "Binnenlands transport"
       nuclear: "Nucleair"
       oil: "Olie"
-      oily: "Vet"
+      oily: "Oliehoudend"
       other: "Overig"
       other_chemical: "Overige chemie"
       paper: "Papier"
@@ -256,6 +256,8 @@ nl:
     electricity_import: "Elektriciteitsimport"
     electricity_stored_in_batteries: "Opgeslagen in batterijen"
     electricity_stored_in_EV: "Opgeslagen in elektrische auto's"
+    electricity_stored_in_opac: "Opgeslagen in OPAC"
+    electricity_stored_in_mv_batteries: "Opgeslagen in grootschalige batterijen"
     electricity_converted_to_heat_households: "Omgezet naar warmte voor huishoudens"
     electricity_converted_to_heat_industry: "Omgezet naar warmte voor industrie"
     electricity_converted_to_hydrogen: "Omgezet naar waterstof"
@@ -274,6 +276,8 @@ nl:
     energy_export_electricity: 'Geëxporteerd'
     energy_flexibility_curtailment_electricity: 'Productieverlaging'
     energy_flexibility_pumped_storage_electricity: 'Opslag in stuwmeren'
+    energy_flexibility_opac_electricity: 'Opslag in OPAC'
+    energy_flexibility_mv_batteries_electricity: 'Grootschalige batterijopslag'
     energy_hydrogen_flexibility_p2g_electricity: 'Omgezet naar waterstof'
     energy_import: "Energie-import"
     energy_power_combined_cycle_ccs_coal: 'Kolenvergassing CCS'
@@ -314,9 +318,7 @@ nl:
     energy_hydrogen_steam_methane_reformer_ccs_for_mekko: "SMR + CCS"
     energy_hydrogen_steam_methane_reformer_for_mekko: "SMR"
     energy_hydrogen_wind_turbine_offshore: "Offshore wind"
-    energy_greengas_gasification_dry_biomass: "Aandeel productiekosten t.g.v. droge vergassing"
-    energy_greengas_gasification_wet_biomass: "Aandeel productiekosten t.g.v. natte vergassing"
-    energy_greengas_fermentation_biogas: "Aandeel productiekosten t.g.v. vergisting"
+    energy_greengas_production_costs: "Gemiddelde productiekosten groengas"
     greengas_price: "Groengas prijs"
     energy_import_hydrogen_for_mekko: "Import"
     energy_imported_hydrogen_baseload: "Geïmporteerde waterstof"
@@ -369,10 +371,12 @@ nl:
     geothermal_hot_water: "Geothermie (voor warm water)"
     geothermal_well: "Aardwarmtebron"
     greengas: "Groengas"
+    greengas_biogas: "Groengas / biogas"
     greengas_final_demand: "Groengas (eindgebruik)"
     greengas_to_electricity_production: "Groengas voor elektriciteitsproductie"
     growth: "Groei"
     heat: "Warmte"
+    heat_network: "Warmte (warmtenet)"
     heat_production: "Warmteproductie en -netten"
     heat_network_hot_water: "Warmtenet (voor warm water)"
     heat_network_heating: "Warmtenet (voor verwarming)"
@@ -634,7 +638,7 @@ nl:
     oil_power_plants_investment: "Oliecentrales (investment)"
     oil_power_plants_plants: "Oliecentrales (centrales)"
     oil_power_plants_prod: "Oliecentrales (productie)"
-    oily_biomass: "Oily biomass"
+    oily_biomass: "Oliehoudende biomassa"
     old_residences: "Oude woningen"
     onshore: "Op land"
     onshore_wind_turbines: "Windmolens op land"
@@ -715,7 +719,6 @@ nl:
     waste_heat_and_cold: "Overschot warmte en koude"
     waste: "Afval"
     waste_incinerator: "Afvalverbrander"
-    waste_fats: "Restvetten (biodiesel/biokerosine)"
     wet_biomass: "Natte biomass"
     wheat: "Tarwe (bio-ethanol)"
     wind: "Wind"

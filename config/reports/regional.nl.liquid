@@ -376,12 +376,12 @@
       <li>
         De bio-voetafdruk van het scenario is
     {% endif %}
-      {{ future.bio_footprint | round: 1 }}x{{ settings.area_code | upcase }},
+      {{ future.bio_footprint | round: 1 }}x,
       {% if present.bio_footprint.value == future.bio_footprint.value %}
         gelijk aan de startwaarde in {{ settings.start_year }}.
       {% else %}
         in het startjaar is dat
-        {{ present.bio_footprint | round: 1 }}x{{ settings.area_code | upcase }}.
+        {{ present.bio_footprint | round: 1 }}x.
       {% endif %}
     </li>
 

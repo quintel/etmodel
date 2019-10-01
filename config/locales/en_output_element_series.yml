@@ -31,7 +31,7 @@ en:
       transport: "National transport"
       nuclear: "Nuclear"
       oil: "Oil"
-      oily: Oily
+      oily: "Oil-containing"
       other: "Other"
       other_chemical: "Other chemical"
       paper: "Paper"
@@ -261,6 +261,8 @@ en:
     electricity_import: "Electricity import"
     electricity_stored_in_batteries: "Stored in batteries"
     electricity_stored_in_EV: "Stored in EV"
+    electricity_stored_in_opac: "Stored in underground pumped hydro storage"
+    electricity_stored_in_mv_batteries: "Stored in large-scale batteries"
     electricity_converted_to_heat_households: "Converted to heat for households"
     electricity_converted_to_heat_industry: "Converted to heat for industry"
     electricity_converted_to_hydrogen: "Converted to hydrogen"
@@ -280,6 +282,8 @@ en:
     energy_flexibility_curtailment_electricity: "Curtailed"
     energy_hydrogen_flexibility_p2g_electricity: 'Converted to hydrogen'
     energy_flexibility_pumped_storage_electricity: 'Stored in reservoirs'
+    energy_flexibility_opac_electricity: 'Stored in underground pumped hydro storage'
+    energy_flexibility_mv_batteries_electricity: 'Stored in large-scale batteries'
     energy_import: "Energy import"
     energy_power_combined_cycle_ccs_coal: 'Coal IGCC CCS'
     energy_power_combined_cycle_ccs_network_gas: 'Gas CCGT CCS'
@@ -370,10 +374,12 @@ en:
     geothermal_hot_water: "Geothermal (for hot water)"
     geothermal_well: "Geothermal well"
     greengas: "Green gas"
+    greengas_biogas: "Green gas / biogas"
     greengas_final_demand: "Green gas (final demand)"
     greengas_to_electricity_production: "Green gas for electricity production"
     growth: "Growth"
     heat: "Heat"
+    heat_network: "Heat (heat network)"
     heat_production: "Heat production and network"
     heat_network_hot_water: "Heat network (for hot water)"
     heat_network_heating: "Heat network (for heating)"
@@ -475,9 +481,7 @@ en:
     energy_hydrogen_flexibility_p2g_electricity: "Power-to-gas"
     energy_hydrogen_steam_methane_reformer: "Steam methane reforming"
     energy_hydrogen_steam_methane_reformer_ccs: "Steam methane reforming + CCS"
-    energy_greengas_gasification_dry_biomass: "Share of production costs due to dry gasification"
-    energy_greengas_gasification_wet_biomass: "Share of production costs due to wet gasification"
-    energy_greengas_fermentation_biogas: "Share of production costs due to anaerobic digestion"
+    energy_greengas_production_costs: "Average production costs green gas"
     greengas_price: "Green gas price"
     hydrogen_demand: "Hydrogen demand"
     hydrogen_production: "Hydrogen production"
@@ -636,7 +640,7 @@ en:
     oil_power_plants_investment: "Oil power plants (investment)"
     oil_power_plants_plants: "Oil power plants (plants)"
     oil_power_plants_prod: "Oil power plants (prod)"
-    oily_biomass: "Oily biomass"
+    oily_biomass: "Oil-containing biomass"
     old_residences: "Old residences"
     onshore: "Onshore"
     onshore_wind_turbines: "Onshore wind turbines"

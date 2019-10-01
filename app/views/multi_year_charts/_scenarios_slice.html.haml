@@ -5,7 +5,7 @@
         = area_flag_icon(ss.scenario.area_code)
         %span.title= ss.scenario.title
         %span.details
-          == (#{t(ss.scenario.area_code)}, #{ss.scenario.end_year})
+          == (#{t("areas.#{ss.scenario.area_code}")}, #{ss.scenario.end_year})
 
 %li#scenario-paginator
   = link_to_next_page scenarios, 'More...', remote: true, params: { wants: 'scenarios' }

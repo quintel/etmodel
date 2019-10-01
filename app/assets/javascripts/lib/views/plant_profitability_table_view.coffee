@@ -57,6 +57,7 @@ class @PlantProfitabilityTableView extends HtmlTableChartView
     energy_power_combined_cycle_ccs_network_gas: 'gas_ccgt_ccs'
     energy_power_combined_cycle_coal: 'coal_igcc'
     energy_power_combined_cycle_network_gas: 'gas_ccgt'
+    energy_power_combined_cycle_hydrogen: 'hydrogen_ccgt'
     energy_power_engine_diesel: 'diesel_engine'
     energy_power_engine_network_gas: 'gas_engine'
     energy_power_nuclear_gen2_uranium_oxide: 'nuclear_ii'

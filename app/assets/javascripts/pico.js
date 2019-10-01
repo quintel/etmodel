@@ -1,8 +1,6 @@
 var pico = {
   ready: function(){
-    node = document.getElementById("picoturbinecount");
-    power = node.textContent.replace(/\./g,"");
-    window.parent.postMessage(pico.message(power));
+    window.parent.postMessage(pico.message(pico.turbineCount()));
   },
 
   message: function(power){
@@ -17,6 +15,9 @@ var pico = {
     };
   },
 
+  turbineCount: function(){
+    return picoGetTurbineCount()
+  },
 
   /* TODO: this conversion of turbinecount to megawatts is hardcoded now.
            Ask the API!
@@ -26,8 +27,7 @@ var pico = {
   },
 
   main: function(opts){
-    pico.areaType = opts.areaType;
-    pico.areaName = opts.areaName;
+    var picoOptions = {}
 
     // Load the html template
     initPico();
@@ -35,12 +35,22 @@ var pico = {
     // Initialize the map
     initPicomap();
 
-    // Initialize the windturbine module with a specified area
-    // areatype:'gemeente', areaname:'Neder-Betuwe', areacode:'1740'
-    var selectedArea = {
-      areatype: pico.areaType,
-      areaname: pico.areaName
+    picoOptions.selectedArea = {
+      areatype: opts.areaType,
+      areaname: opts.areaName,
     };
-    picoInitWindenergy(selectedArea);
+
+    picoOptions.windturbineRestrictions = {
+      awayFromBuildings:1,
+      buildingMinDistance:400,
+      awayFromExistingTurbines:0,
+      awayFromAirportAndRadar:0,
+      awayFromInfrastructure:0,
+      outsideNatureReserver:0,
+      onlyInAgriculturalarea:0
+    };
+
+    picoOptions.showMaps = []
+    picoInitWindenergy(picoOptions);
   }
 };

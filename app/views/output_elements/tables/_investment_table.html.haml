@@ -660,55 +660,70 @@
     %td.border-rgt{:data => {:gquery => "energy_heat_network_backup_heater_network_gas_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "energy_heat_network_backup_heater_network_gas_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "energy_heat_network_backup_heater_network_gas_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t("input_elements.energy_biogas_fermentation_share").html_safe
+    %td.border-rgt{:data => {:gquery => "energy_biogas_fermentation_wet_biomass_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_biogas_fermentation_wet_biomass_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_biogas_fermentation_wet_biomass_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t("input_elements.energy_greengas_gasification_wet_biomass_share").html_safe
+    %td.border-rgt{:data => {:gquery => "energy_greengas_gasification_wet_biomass_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_greengas_gasification_wet_biomass_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_greengas_gasification_wet_biomass_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t("input_elements.energy_greengas_gasification_dry_biomass_share").html_safe
+    %td.border-rgt{:data => {:gquery => "energy_greengas_gasification_dry_biomass_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_greengas_gasification_dry_biomass_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_greengas_gasification_dry_biomass_delta_in_investment_cost_table"}}
 
   %thead.subhead
     %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.flexibility'
-  %tr.even
+  %tr.odd
     %th= t("input_elements.households_flexibility_p2h_electricity_market_penetration").html_safe
     %td.border-rgt{:data => {:gquery => "households_flexibility_p2h_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "households_flexibility_p2h_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "households_flexibility_p2h_electricity_delta_in_investment_cost_table"}}
-  %tr.odd
+  %tr.even
     %th= t("input_elements.households_flexibility_p2p_electricity_market_penetration").html_safe
     %td.border-rgt{:data => {:gquery => "households_flexibility_p2p_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "households_flexibility_p2p_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "households_flexibility_p2p_electricity_delta_in_investment_cost_table"}}
-  %tr.even
+  %tr.odd
     %th= t("input_elements.capacity_of_industry_other_paper_flexibility_p2h_electricity").html_safe
     %td.border-rgt{:data => {:gquery => "industry_other_paper_flexibility_p2h_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "industry_other_paper_flexibility_p2h_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "industry_other_paper_flexibility_p2h_electricity_delta_in_investment_cost_table"}}
-  %tr.odd
+  %tr.even
     %th= t("input_elements.capacity_of_industry_other_food_flexibility_p2h_electricity").html_safe
     %td.border-rgt{:data => {:gquery => "industry_other_food_flexibility_p2h_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "industry_other_food_flexibility_p2h_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "industry_other_food_flexibility_p2h_electricity_delta_in_investment_cost_table"}}
-  %tr.even
+  %tr.odd
     %th= t("input_elements.capacity_of_industry_chemicals_refineries_flexibility_p2h_electricity").html_safe
     %td.border-rgt{:data => {:gquery => "industry_chemicals_refineries_flexibility_p2h_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "industry_chemicals_refineries_flexibility_p2h_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "industry_chemicals_refineries_flexibility_p2h_electricity_delta_in_investment_cost_table"}}
-  %tr.odd
+  %tr.even
     %th= t("input_elements.capacity_of_industry_chemicals_other_flexibility_p2h_electricity").html_safe
     %td.border-rgt{:data => {:gquery => "industry_chemicals_other_flexibility_p2h_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "industry_chemicals_other_flexibility_p2h_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "industry_chemicals_other_flexibility_p2h_electricity_delta_in_investment_cost_table"}}
-  %tr.even
+  %tr.odd
     %th= t("input_elements.capacity_of_energy_hydrogen_flexibility_p2g_electricity").html_safe
     %td.border-rgt{:data => {:gquery => "energy_hydrogen_flexibility_p2g_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "energy_hydrogen_flexibility_p2g_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "energy_hydrogen_flexibility_p2g_electricity_delta_in_investment_cost_table"}}
-  %tr.odd
+  %tr.even
     %th= t("input_elements.capacity_of_flexibility_p2l_electricity").html_safe
     %td.border-rgt{:data => {:gquery => "bunkers_kerosene_production_p2l_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "bunkers_kerosene_production_p2l_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "bunkers_kerosene_production_p2l_delta_in_investment_cost_table"}}
-  %tr.even
+  %tr.odd
     %th= t("input_elements.investment_costs_energy_flexibility_hv_opac_electricity").html_safe
     %td.border-rgt{:data => {:gquery => "energy_flexibility_hv_opac_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "energy_flexibility_hv_opac_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "energy_flexibility_hv_opac_electricity_delta_in_investment_cost_table"}}
-  %tr.odd
+  %tr.even
     %th= t("input_elements.investment_costs_energy_flexibility_mv_batteries_electricity").html_safe
     %td.border-rgt{:data => {:gquery => "energy_flexibility_mv_batteries_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "energy_flexibility_mv_batteries_electricity_future_in_investment_cost_table"}}
@@ -716,22 +731,22 @@
 
   %thead.subhead
     %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.other'
-  %tr.even
+  %tr.odd
     %th= t("input_elements.capacity_of_other_burner_coal").html_safe
     %td.border-rgt{:data => {:gquery => "other_burner_coal_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "other_burner_coal_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "other_burner_coal_delta_in_investment_cost_table"}}
-  %tr.odd
+  %tr.even
     %th= t("input_elements.capacity_of_other_burner_crude_oil").html_safe
     %td.border-rgt{:data => {:gquery => "other_burner_crude_oil_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "other_burner_crude_oil_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "other_burner_crude_oil_delta_in_investment_cost_table"}}
-  %tr.even
+  %tr.odd
     %th= t("input_elements.capacity_of_other_burner_network_gas").html_safe
     %td.border-rgt{:data => {:gquery => "other_burner_network_gas_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "other_burner_network_gas_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "other_burner_network_gas_delta_in_investment_cost_table"}}
-  %tr.odd
+  %tr.even
     %th= t("input_elements.capacity_of_other_burner_wood_pellets").html_safe
     %td.border-rgt{:data => {:gquery => "other_burner_wood_pellets_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "other_burner_wood_pellets_future_in_investment_cost_table"}}

@@ -233,21 +233,25 @@
     <h2 class="banner">D. Biomassa</h2>
     {% if future.bio_footprint > 0.0 %}
     <p>
-    Hieronder zie je eerst de totale primaire energievraag van biomassa en daarna de eigen productie en import van alle biomassa in het scenario.
-	De breedte van de kolom geeft aan hoeveel biomassa wordt ingezet in iedere sector. De kleuren geven de verschillende soorten biomassa aan.
+  	Hieronder zie je eerst de toekomstige biomassastromen: hoeveel
+    biogrondstoffen er nodig zijn in een regio, welke biobrandstoffen er
+    gebruikt worden en hoe die brandstoffen worden ingezet. Daaronder wordt
+    enerzijds de toepassing van biomassa per biogrondstof inzichtelijk gemaakt
+    en anderzijds hoeveel van de binnenlandse potentie voor die grondstof wordt
+    benut.
 
-    	{% chart 166 %}
-      		Primaire biomassavraag in {{ settings.end_year }}
+    	{% chart 242 %}
+      	Biomassastromen in {{ settings.end_year }}
     	{% endchart %}
 
-    	{% chart 237 %}
-      		Biomassa productie en import in  in {{ settings.end_year }}.
+    	{% chart 243 %}
+      	Biomassavraag per biogrondstof {{ settings.end_year }}
     	{% endchart %}
     </p>
 
     {% else %}
 	<p>
-    Er wordt geen biomassa gebruikt in het scenario
+    Er wordt geen biomassa gebruikt in het scenario.
 	</p>
     {% endif %}
 

@@ -163,10 +163,13 @@ class @InputElementList extends Backbone.Collection
     options = inputElement.ui_options
     @inputElements[inputElement.id] = inputElement
 
-    if inputElement.get('unit') is 'boolean'
-      view = new BooleanElementView({model : inputElement, el : options.element})
-    else
-      view = new InputElementView({model : inputElement, el : options.element})
+    switch inputElement.get('unit')
+      when 'boolean'
+        view = new BooleanElementView({model : inputElement, el : options.element})
+      when 'radio'
+        view = new RadioCollectionView(model: inputElement, el: options.element)
+      else
+        view = new InputElementView({model : inputElement, el : options.element})
 
     @inputElementViews[inputElement.id] = view
     view.bind "change", @handleUpdate

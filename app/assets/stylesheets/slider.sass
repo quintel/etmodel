@@ -331,3 +331,60 @@ html.no-opacity .quinn.disabled
       .bar, .delta-bar, .handle
         background-image: url(/assets/slider/toggle-hidpi.png)
         background-size: 144px 114px
+
+// Inputs where values are rendered as a radio button list.
+
+.radio-collection-view
+  list-style: none
+  padding: 0
+  margin: 0 0 1em
+
+  li
+    border: 1px solid #ddd
+    margin: 0
+    position: relative
+    z-index: 1
+
+    &:first-child
+      border-top-left-radius: 3px
+      border-top-right-radius: 3px
+
+    &:last-child
+      border-bottom-left-radius: 3px
+      border-bottom-right-radius: 3px
+
+    & + li
+      margin-top: -1px
+
+    &:hover
+      background: #fffced
+
+    &.is-selected
+      background: #f4f8fb
+      border-color: #d5dce4
+      border-color: #8bb4f3
+      z-index: 2
+
+      label
+        cursor: default
+
+    label
+      cursor: pointer
+      display: block
+      padding: 15px 15px 15px 40px
+
+    .title
+      font-size: 14px
+
+    input
+      font-size: 16px
+      left: 13px
+      position: absolute
+      top: 13px
+
+    .description
+      color: #586277
+      display: block
+      font-size: 12px
+      line-height: 18px
+      margin-top: 5px

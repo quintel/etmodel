@@ -118,9 +118,14 @@ class @D3YearlyChartView extends D3ChartView
 
     max = 0.0
 
+    # Negatives, typically caused by storage charting, cause incorrect
+    #calculation of the max value and result in incorrect vertical scaling.
+    nonNegative = (val) ->
+      if val < 0 then 0 else val
+
     for _load, index in series[0]
-      aggregateLoad = d3.sum(series, (s) -> s[index])
-      targetLoad = d3.max(targets, (s) -> s[index])
+      aggregateLoad = d3.sum(series, (s) -> nonNegative(s[index]))
+      targetLoad = d3.max(targets, (s) -> nonNegative(s[index]))
 
       if aggregateLoad > max then max = aggregateLoad
       if targetLoad > max then max = targetLoad

@@ -53,11 +53,7 @@ var MeritTransformator = (function () {
      */
     sliceValues: function(values, weekNum) {
       var weekLen = Math.floor(values.length / 365) * 7;
-      return values
-        .slice((weekNum - 1) * weekLen, weekNum * weekLen)
-        .map(function(val) {
-          return val < 0 ? 0 : val;
-        });
+      return values.slice((weekNum - 1) * weekLen, weekNum * weekLen);
     }
   };
 }());

@@ -50,6 +50,11 @@ development: &DEV
     #
     # report_pdf_host: http://localhost:3000
 
+    # Shows the "What's new?" banner on the home page, with a short description
+    # of recent changes in the ETM and a link to the "whats new?" page. Once the
+    # cutoff date is reached the banner will be hidden.
+    whats_new_cutoff: 2019-10-07
+
 production: &PRODUCTION
     <<: *DEV
 test:

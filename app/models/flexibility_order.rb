@@ -1,6 +1,6 @@
 class FlexibilityOrder
   def self.all
-    %w(power_to_power
+    %w(household_batteries
        mv_batteries
        electric_vehicle
        opac

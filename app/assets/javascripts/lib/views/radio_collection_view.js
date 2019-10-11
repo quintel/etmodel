@@ -1,13 +1,6 @@
 /* globals _ $ Backbone I18n */
 
 (function(window) {
-  var RADIO_VALUES = {
-    settings_heat_curve_set: [
-      { key: 'default', value: 0 },
-      { key: '1987', value: 1 }
-    ]
-  };
-
   function renderOption(input, key, value) {
     var inputEl = $('<input type="radio" />')
       .attr('name', input.get('key'))
@@ -71,8 +64,8 @@
 
       this.$el.append(
         $('<ul class="radio-collection-view"></ul>').append(
-          RADIO_VALUES[input.get('key')].map(function(option) {
-            return renderOption(input, option.key, option.value);
+          this.model.get('permitted_values').map(function(option) {
+            return renderOption(input, option.toString(), option.toString());
           })
         )
       );
@@ -88,7 +81,7 @@
     setValue: function(event) {
       var input = this.model;
       var target = event.target;
-      var value = parseInt(target.value, 10);
+      var value = target.value;
 
       if (
         target.name !== input.get('key') ||
@@ -106,18 +99,19 @@
     updateSelected: function() {
       var value = this.model.get('user_value');
       var key = this.model.get('key');
+      var options = this.model.get('permitted_values');
 
-      if (value === undefined) {
-        // This happens when called by render before the input has had the user
-        // value set (during initial page load).
-        return;
+      // If the radio option is a numeric value it is (wrongly) parsed as a
+      // number.
+      value = value.toString();
+
+      if (options.indexOf(value) === -1) {
+        value = options[0];
       }
-
-      value = parseInt(value, 10);
 
       this.$el.find('li').each(function(_i, listEl) {
         var radioEl = listEl.querySelector('input[name="' + key + '"]');
-        var selected = parseInt(radioEl.value, 10) === value;
+        var selected = radioEl.value === value;
 
         radioEl.checked = selected;
 

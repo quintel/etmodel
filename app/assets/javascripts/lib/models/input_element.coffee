@@ -112,6 +112,7 @@ class @InputElementList extends Backbone.Collection
       i.set
         min_value: values.min
         max_value: values.max
+        permitted_values: values.permitted_values
         start_value: values.default
         label: if _.isObject(values.label) then values.label else null
 

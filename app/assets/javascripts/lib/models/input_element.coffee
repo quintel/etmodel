@@ -169,6 +169,8 @@ class @InputElementList extends Backbone.Collection
         view = new BooleanElementView({model : inputElement, el : options.element})
       when 'radio'
         view = new RadioCollectionView(model: inputElement, el: options.element)
+      when 'weather-curves'
+        view = new WeatherCurveView(model: inputElement, el: options.element)
       else
         view = new InputElementView({model : inputElement, el : options.element})
 

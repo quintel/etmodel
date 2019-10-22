@@ -115,12 +115,17 @@ $slider-box-height: 22px
       -moz-user-select: none
       user-select: none
 
-
   // Adjustment to vertical alignment of label and value text.
   label, .output
     font-size: 12px
     padding-top: 1px
     min-height: $slider-box-height - 1px
+
+  &.disabled
+    label, .output
+      color: #aaa
+    .output
+      cursor: default
 
   // Buttons are only visible on hovering the slider div.
   .reset, .decrease, .increase

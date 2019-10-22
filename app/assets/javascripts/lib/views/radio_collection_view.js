@@ -1,4 +1,4 @@
-/* globals _ $ Backbone I18n */
+/* globals _ $ App Backbone I18n */
 
 (function(window) {
   function renderOption(input, key, value) {
@@ -124,5 +124,53 @@
     }
   });
 
+  /**
+   * A list of inputs which should be disabled whenever the user selects a
+   * non-default value for the weather curve input.
+   */
+  var WEATHER_CURVE_DEPENDENTS = [
+    'flexibility_outdoor_temperature',
+    'flh_of_energy_hydrogen_wind_turbine_offshore',
+    'flh_of_energy_power_wind_turbine_coastal',
+    'flh_of_energy_power_wind_turbine_inland',
+    'flh_of_energy_power_wind_turbine_offshore',
+    'flh_of_solar_pv_solar_radiation'
+  ];
+
+  /**
+   * Custom version of the RadioCollectionView which will trigger the disabling
+   * of some inputs when the user selects a non-default weather curve.
+   */
+  var WeatherCurveView = RadioCollectionView.extend({
+    setValue: function() {
+      RadioCollectionView.prototype.setValue.apply(this, arguments);
+      this.toggleDependents();
+    },
+
+    render: function() {
+      RadioCollectionView.prototype.render.apply(this, arguments);
+      this.toggleDependents();
+    },
+
+    toggleDependents: function() {
+      var userValue = this.model.get('user_value');
+      var defaultValue = this.model.get('start_value');
+
+      var shouldDisable = userValue !== undefined && userValue !== defaultValue;
+      var collection = this.model.collection;
+
+      WEATHER_CURVE_DEPENDENTS.forEach(function(dependentKey) {
+        var dependent = collection.find_by_key(dependentKey);
+
+        if (!dependent) {
+          App.debug('No such input to enable/disable: ' + dependentKey);
+        } else {
+          dependent.set('disabled', shouldDisable);
+        }
+      });
+    }
+  });
+
   window.RadioCollectionView = RadioCollectionView;
+  window.WeatherCurveView = WeatherCurveView;
 })(window);

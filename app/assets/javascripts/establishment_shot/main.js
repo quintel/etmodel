@@ -1,4 +1,9 @@
-var EstablishmentShot = {};
+var EstablishmentShot = {
+  scenarioId: false, 
+  host: false,
+  area: false,
+  queries: false,
+};
 
 EstablishmentShot.Main = (function() {
   'use strict';
@@ -28,47 +33,58 @@ EstablishmentShot.Main = (function() {
   }
 
   function finished(data) {
-    EstablishmentShot.TextUpdater.update(this, data);
-    EstablishmentShot.ChartRenderer.render(this, data);
+    var scope = EstablishmentShot.scope;
+    EstablishmentShot.TextUpdater.update(scope, data);
+    EstablishmentShot.ChartRenderer.render(scope, data, EstablishmentShot.time); 
 
-    this.scope.find('.overview').show();
-    $('a.scenario-link').attr('href', '/scenarios/' + data.scenario.id + '/load');
+    scope.find('.overview').show();
+    $('a.scenario-link').attr('href', '/scenarios/' + EstablishmentShot.scenarioId + '/load');
     $('span.loading').remove();
   }
 
-  function updateScenario(data) {
-    EstablishmentShot.ScenarioUpdater
-      .updateScenario(this, data.id)
-      .done(finished.bind(this))
-      .fail(EstablishmentShot.ErrorHandler.display.bind(this));
+  function renderWithScenario() {
+    EstablishmentShot.ScenarioUpdater.updateScenario(EstablishmentShot)
+      .done(finished)
+      .fail(EstablishmentShot.ErrorHandler.display.bind(EstablishmentShot));
   }
 
-  function createScenario() {
-    EstablishmentShot.ScenarioCreator.create(this)
-      .done(updateScenario.bind(this))
-      .fail(EstablishmentShot.ErrorHandler.display.bind(this));
+  function renderWithoutScenario() {
+    EstablishmentShot.ScenarioCreator.create(EstablishmentShot)
+      .done(function(data){  
+        EstablishmentShot.scenarioId = data.id;
+        renderWithScenario();
+      })
+      .fail(EstablishmentShot.ErrorHandler.display.bind(EstablishmentShot));
   }
 
   function getQueries() {
-    return this.scope.find('span[data-query]').map(function () {
+    return EstablishmentShot.scope.find('span[data-query]').map(function () {
       return $(this).data('query');
     }).toArray();
   }
 
   Main.prototype = {
     render: function () {
-      this.queries = getQueries.call(this)
+      EstablishmentShot.queries = getQueries()
         .concat(EstablishmentShot.Charts.getQueries());
+  
+      if (EstablishmentShot.scenarioId) {
+        renderWithScenario();
+      } else {
+        renderWithoutScenario();
+      }
 
-      createScenario.call(this);
     }
   };
 
-  function Main(scope) {
-    this.scope = scope;
-    this.data  = $(scope).data();
-    this.area  = this.data.area;
-    this.host  = this.data.host + '/api/v3/scenarios';
+  function Main(scope, time='present') {
+    var data = $(scope).data();
+    EstablishmentShot.scope = scope;
+    EstablishmentShot.host = data.host + '/api/v3/scenarios';
+    EstablishmentShot.area = data.area;
+    EstablishmentShot.scenarioId = data.scenarioId;
+    EstablishmentShot.time = time;
+    console.log(data)
   }
 
   return Main;

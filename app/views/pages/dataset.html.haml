@@ -10,7 +10,7 @@
           = image_tag 'reports/print.svg'
           %span= t('report.print')
 
-    .page#establishment_shot{ data: { area: @area.area, host: APP_CONFIG[:api_url], max_year: Setting::MAX_YEAR, min_year: Setting::MIN_YEAR, default_year: Setting::DEFAULT_YEAR } }
+    .page#establishment_shot{ data: { area: @area.area, host: APP_CONFIG[:api_url], max_year: Setting::MAX_YEAR, min_year: Setting::MIN_YEAR, default_year: Setting::DEFAULT_YEAR, scenario_id: Current.setting.api_session_id } }
       %h1
         = t('establishment_shot.header_html', area: I18n.t("areas.#{@area.area}"))
         %span.loading
@@ -22,6 +22,7 @@
       .clearfix
 
       %ul.dataset-info
+        -#this should be updated to present/future
         %li
           = I18n.t("dataset.present_year")
           %span= @area.analysis_year

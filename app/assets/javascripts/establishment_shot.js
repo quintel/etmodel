@@ -12,5 +12,6 @@
 //= require establishment_shot/chart_renderer
 
 $(document).ready(function () {
-    new EstablishmentShot.Main($("#establishment_shot")).render();
+  // add time and scenario id - Main($("#establishment_shot"), time, scenarioID)
+    new EstablishmentShot.Main($("#establishment_shot"), 'future').render();
 });

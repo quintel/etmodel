@@ -19,9 +19,10 @@
       - if params[:scenario]
         %ul.toggle_year
           %li= Current.setting.start_year
-          %li
-            - time = @time == 'present' ? 'future' : 'present'
-            %span.toggle= link_to 'toggle', region_path(time: time, scenario: true)
+          %li 
+            %span.toggle
+              - time = @time == 'present' ? 'future' : 'present'
+              = link_to 'toggle', region_path(time: time, scenario: true)
           %li= Current.setting.end_year
 
       .introduction
@@ -41,6 +42,7 @@
 
         %li
           = I18n.t("dataset.total_energy_demand")
+          - #waarom gaan jullie niet naar de toekomst?
           %span{ data: { query: 'co2_sheet_total_final_energy_demand', unit: 'J' } }
 
         %li.green

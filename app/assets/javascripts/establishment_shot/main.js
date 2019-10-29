@@ -34,7 +34,7 @@ EstablishmentShot.Main = (function() {
 
   function finished(data) {
     var scope = EstablishmentShot.scope;
-    EstablishmentShot.TextUpdater.update(scope, data);
+    EstablishmentShot.TextUpdater.update(scope, data, EstablishmentShot.time);
     EstablishmentShot.ChartRenderer.render(scope, data, EstablishmentShot.time); 
 
     scope.find('.overview').show();

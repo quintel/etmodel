@@ -77,14 +77,13 @@ EstablishmentShot.Main = (function() {
     }
   };
 
-  function Main(scope, time='present') {
+  function Main(scope) {
     var data = $(scope).data();
     EstablishmentShot.scope = scope;
     EstablishmentShot.host = data.host + '/api/v3/scenarios';
     EstablishmentShot.area = data.area;
     EstablishmentShot.scenarioId = data.scenarioId;
-    EstablishmentShot.time = time;
-    console.log(data)
+    EstablishmentShot.time = data.time;
   }
 
   return Main;

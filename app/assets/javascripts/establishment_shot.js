@@ -1,6 +1,7 @@
 //= require d3.v2
 //= require lib/models/metric
 //= require lib/models/quantity
+//= require jquery.quinn.min
 //= require establishment_shot/main
 //= require establishment_shot/error_handler
 //= require establishment_shot/scenario_creator
@@ -12,6 +13,5 @@
 //= require establishment_shot/chart_renderer
 
 $(document).ready(function () {
-  // add time and scenario id - Main($("#establishment_shot"), time, scenarioID)
-    new EstablishmentShot.Main($("#establishment_shot"), 'future').render();
+  new EstablishmentShot.Main($("#establishment_shot")).render();
 });

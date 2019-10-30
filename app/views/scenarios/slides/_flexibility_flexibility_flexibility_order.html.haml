@@ -1,9 +1,7 @@
 #flexibility-options.sortable-container
+  .loading-message
+
   %ul.sortable
-    - FlexibilityOrder.all.each do |flexibility_option|
-      %li{data: { id: flexibility_option }}
-        = t("output_elements.flexibility_options.#{ flexibility_option }")
-        %span.fa.fa-bars
 
   .curtailment
     = t('output_elements.flexibility_options.curtailment')

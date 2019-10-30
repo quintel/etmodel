@@ -14,7 +14,7 @@ ul.sortable li, #flexibility-options .curtailment
   list-style-type: none
   margin-bottom: -1px
   overflow: hidden
-  padding: 10px 14px 10px 50px
+  padding: 10px 14px 10px 53px
   position: relative
 
   &:before
@@ -26,12 +26,12 @@ ul.sortable li, #flexibility-options .curtailment
     content: counter(section)
     display: inline-block
     left: 0px
-    padding: 10px 14px 0
+    padding: 10px 0 0
     position: absolute
     right: 0px
     text-align: center
     top: 0px
-    width: 10px
+    width: 41px
 
   span.fa
     color: #BBB
@@ -72,6 +72,9 @@ ul.sortable li
       content: counter(section)
 
 #flexibility-options
+  .loading-message
+    display: none
+
   .curtailment
     border-radius: 3px
     color: #999
@@ -87,3 +90,12 @@ ul.sortable li
   .curtailment, .sortable li:last-child
     border-bottom-color: #ccc
     box-shadow: 0 1px 0 #ddd
+
+  &.loading
+    .loading-message
+      background: asset-url("layout/ajax-loader.gif") center center no-repeat
+      display: block
+      height: 100px
+
+    .sortable, .curtailment
+      display: none !important

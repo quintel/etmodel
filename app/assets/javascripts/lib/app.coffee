@@ -53,8 +53,8 @@ class @AppView extends Backbone.View
     wrapper = $('#accordion_wrapper')
 
     # Create flexibility order.
-    if (sortable = wrapper.find('ul.sortable')).length
-      new FlexibilityOrder(sortable[0]).render()
+    if (flex_order = wrapper.find('#flexibility-options')).length
+      new FlexibilityOrder(flex_order).render()
 
     if (curve_upload = wrapper.find('.curve-upload')).length
       CustomCurveChooserView.setupWithWrapper(curve_upload).render();

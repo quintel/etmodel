@@ -2,14 +2,14 @@ class @FlexibilityOrder
   constructor: (@element) ->
     @lastGood = null
 
-  url: (path) ->
-    "#{ App.scenario.url_path() }/flexibility_order/#{ path }"
+  url: ->
+    "#{App.scenario.url_path()}/flexibility_order"
 
   update: (sortable) =>
     options = sortable.toArray()
 
     $.ajax
-      url: @url('set'),
+      url: @url(),
       type: 'POST',
       data:
         flexibility_order:
@@ -23,7 +23,7 @@ class @FlexibilityOrder
 
   render: =>
     $.ajax
-      url: @url('get')
+      url: @url()
       type: 'GET'
       success: (data) =>
         Sortable.create @element,

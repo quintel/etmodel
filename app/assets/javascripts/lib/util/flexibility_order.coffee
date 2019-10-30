@@ -1,22 +1,25 @@
 class @FlexibilityOrder
   constructor: (@element) ->
-    # pass
+    @lastGood = null
 
   url: (path) ->
     "#{ App.scenario.url_path() }/flexibility_order/#{ path }"
 
-  update: (order) =>
+  update: (sortable) =>
+    options = sortable.toArray()
+
     $.ajax
       url: @url('set'),
       type: 'POST',
       data:
         flexibility_order:
-          order: order,
-          scenario_id: App.scenario.api_session_id()
-      success: ->
+          order: options
+      success: =>
         App.call_api()
-      error: (e,f) ->
-        console.log('Throw error')
+        @lastGood = options
+      error: (e,f) =>
+        if @lastGood
+          sortable.sort(@lastGood)
 
   render: =>
     $.ajax
@@ -27,8 +30,9 @@ class @FlexibilityOrder
           ghostClass: 'ghost'
           animation: 150
           store:
-            get: (sortable) ->
+            get: (_sortable) =>
+              @lastGood = data.order
               data.order
 
             set: (sortable) =>
-              @update(sortable.toArray().concat(['curtailment']))
+              @update(sortable)

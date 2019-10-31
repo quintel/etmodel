@@ -11,19 +11,21 @@
           %span= t('report.print')
 
     .page#establishment_shot{ data: { area: @area.area, host: APP_CONFIG[:api_url], max_year: Setting::MAX_YEAR, min_year: Setting::MIN_YEAR, default_year: Setting::DEFAULT_YEAR, scenario_id: Current.setting.api_session_id, time: @time } }
-      %h1
-        = t('establishment_shot.header_html', area: I18n.t("areas.#{@area.area}"))
-        %span.loading
-          = image_tag('layout/ajax-loader-small.gif')
+      .title
+        %h1
+          = t('establishment_shot.header_html', area: I18n.t("areas.#{@area.area}"))
+          %span.loading
+            = image_tag('layout/ajax-loader-small.gif')
 
-      - if params[:scenario]
-        %ul.toggle_year
-          %li= Current.setting.start_year
-          %li 
-            %span.toggle
-              - time = @time == 'present' ? 'future' : 'present'
-              = link_to 'toggle', region_path(time: time, scenario: true)
-          %li= Current.setting.end_year
+        - if params[:scenario]
+          %ul.toggle_year{ data: {time: @time}}
+            %li#present
+              = link_to Current.setting.start_year, region_path(time: 'present', scenario: true), class: 'button'
+
+            %li#future
+              = link_to Current.setting.end_year, region_path(time: 'future', scenario: true), class: 'button'
+
+      .clearfix
 
       .introduction
         = t('establishment_shot.introduction_html')

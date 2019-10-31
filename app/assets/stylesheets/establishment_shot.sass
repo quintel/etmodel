@@ -40,17 +40,23 @@ body
       stroke: #000
       shape-rendering: crispEdges
 
+    .title h1
+      float: left
+
     ul.toggle_year
       float: right
       margin: 0
       li
         list-style-type: none
-        margin-left: 0
         float: left
-        span.toggle
-          width: 50px
-          background-color: $border-color
-
+        a.inactive
+          background-color: #66A2CA
+          background-image: none
+          text-shadow: none
+          &:hover
+            text-decoration: none
+            cursor: default
+            color: #333
 
     .introduction
       text-align: justify

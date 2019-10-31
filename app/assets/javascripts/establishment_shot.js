@@ -11,6 +11,7 @@
 //= require establishment_shot/charts
 //= require establishment_shot/text_updater
 //= require establishment_shot/chart_renderer
+//= require establishment_shot/toggle_year
 
 $(document).ready(function () {
   new EstablishmentShot.Main($("#establishment_shot")).render();

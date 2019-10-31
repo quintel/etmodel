@@ -48,7 +48,7 @@ $ ->
   setParamForEstablishmentShot = ->
     $('.co2-factsheet a').attr(
       'href',
-      '/regions/' + areaSelect.val() + '?end_year=' + sYearSelect.val()
+      '/regions/' + areaSelect.val()
     )
 
   # Adds options for individual years in the year select.

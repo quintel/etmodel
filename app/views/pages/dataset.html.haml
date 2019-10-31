@@ -31,18 +31,16 @@
       .clearfix
 
       %ul.dataset-info
-        -#this should be updated to present/future
         %li
           = I18n.t("dataset.present_year")
           %span= @area.analysis_year
           
         %li
           = I18n.t("dataset.number_of_inhabitants")
-          %span= number_with_delimiter(@area.number_of_inhabitants.to_i)
+          %span{ data: { query: 'co2_sheet_inhabitants'} }
 
         %li
           = I18n.t("dataset.total_energy_demand")
-          - #waarom gaan jullie niet naar de toekomst?
           %span{ data: { query: 'co2_sheet_total_final_energy_demand', unit: 'J' } }
 
         %li.green

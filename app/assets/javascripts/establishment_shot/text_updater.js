@@ -11,7 +11,8 @@ EstablishmentShot.TextUpdater = (function () {
             value = query.present;
         } else if (time == 'future'){
             value = query.future;
-        } 
+        }
+
         if (Quantity.isSupported(query.unit)) {
             return new Quantity(value, query.unit).smartScale();
         } else {
@@ -33,9 +34,11 @@ EstablishmentShot.TextUpdater = (function () {
 
                 if (UNITS[unit]) {
                     unit = UNITS[unit];
+                } else if (!$(this).data('unit')){
+                    unit = ''
                 }
 
-                $(this).text((Math.round(value * 100) / 100) + ' ' + unit);
+                $(this).text((Math.round(value * 100) / 100).toLocaleString() + ' ' + unit);
             });
         }
     }

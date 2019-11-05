@@ -3,10 +3,11 @@
 require 'rails_helper'
 
 describe Embeds::PicoArea, vcr: true do
-  let(:nl) { described_class.find_by_area_code 'nl' }
+  let(:nl)           { described_class.find_by_area_code 'nl' }
   let(:municipality) { described_class.find_by_area_code 'GM0599_rotterdam' }
-  let(:province) { described_class.find_by_area_code 'PV24_flevoland' }
+  let(:province)     { described_class.find_by_area_code 'PV24_flevoland' }
   let(:neighborhood) { described_class.find_by_area_code 'BU00141102_de_hunze' }
+  let(:res)          { described_class.find_by_area_code 'RES01_achterhoek' }
   let(:uk) {described_class.find_by_area_code 'uk' }
 
   describe '.find_by_area_code' do
@@ -23,25 +24,26 @@ describe Embeds::PicoArea, vcr: true do
   end
 
   describe '#type' do
+
     context 'with a municipality' do
       subject { municipality.type }
-      it { is_expected.to eq :gemeente }
+      it { expect(subject).to eq Embeds::Pico::AreaType::Municipality }
     end
 
     context 'with a province' do
       subject { province.type }
-      it { is_expected.to eq :provincie }
+      it { is_expected.to eq Embeds::Pico::AreaType::Province }
     end
 
     context 'with the netherlands' do
       subject { nl.type }
-      it { is_expected.to eq :land }
+      it { is_expected.to eq Embeds::Pico::AreaType::Country }
     end
 
     # Unsupported so fall-back to country
     context 'with a neighborhood' do
       subject { neighborhood.type }
-      it { is_expected.to eq :land }
+      it { is_expected.to eq Embeds::Pico::AreaType::Country }
     end
   end
 
@@ -65,6 +67,26 @@ describe Embeds::PicoArea, vcr: true do
     context 'with a non municipalityor province' do
       subject { neighborhood.area_name }
       it { is_expected.to eq 'Nederland' }
+    end
+  end
+
+  describe "#select_field" do
+    context 'with rotterdam' do
+      subject { municipality.select_value }
+      it { is_expected.to eq '0599' }
+    end
+
+    context "with a res" do
+      subject { res.select_value }
+      it "raises an error" do
+        expect{subject}
+          .to raise_error(Embeds::Pico::AreaType::UnmatchableSelectValueError)
+      end
+    end
+
+    context "with flevoland" do
+      subject { province.select_value }
+      it { is_expected.to eq '24' }
     end
   end
 

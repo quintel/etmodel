@@ -3,39 +3,38 @@
 module Embeds
   # This is a simple wrapper/decorator for Api::Area.
   class PicoArea < SimpleDelegator
+    TYPES = Embeds::Pico::AreaType::ALL
+    FALLBACK_TYPE = Embeds::Pico::AreaType::Country
+
     def self.find_by_area_code(area_code)
       new Api::Area.find(area_code)
     end
 
     # Sorry for the dutch. PICO is in dutch...
     def area_name
-      return 'Nederland' if type == :land
+      return 'Nederland' if type == Embeds::Pico::AreaType::Country
 
       area.sub(/\A[^_]*/, '').humanize
     end
 
     # Sorry for the dutch. PICO is in dutch...
     def type
-      pattern_whitelist.each do |type, pattern|
-        return type if area.match?(pattern)
-      end
-      :land
+      TYPES.find{|type| area.match?(type.matcher) } or FALLBACK_TYPE
+    end
+
+    def select_value
+      type.get_select_value(area)
     end
 
     def to_js
-      "{areaType:'#{type}', areaName:'#{area_name}'}"
+      "{areaType:'#{type}', areaName:'#{area_name}'," +
+      " selectField:'areaName', selectvalue:'#{select_value}'}"
     end
 
     def supported?
-      return true if area == 'nl' || type != :land
+      return true if area == 'nl' || type != Embeds::Pico::AreaType::Country
 
       false
-    end
-
-    private
-
-    def pattern_whitelist
-      Embeds::PICO_AREA_PATTERNS_WHITELIST
     end
   end
 end

@@ -29,17 +29,13 @@ var pico = {
   main: function(opts){
     var picoOptions = {};
 
-    // Load the html template
+    // Pico API specifics.
     initPico();
-
-    // Initialize the map
     initPicomap();
 
-    picoOptions.selectedArea = {
-      areatype: opts.areaType,
-      areaname: opts.areaName,
-    };
 
+    picoOptions.selectedArea = opts;
+    debugger
     picoOptions.windturbineRestrictions = {
       awayFromBuildings:1,
       buildingMinDistance:400,

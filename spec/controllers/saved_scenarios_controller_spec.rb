@@ -78,10 +78,9 @@ describe SavedScenariosController, vcr: true do
       expect(response).to be_redirect
     end
 
-    it "responds to the .csv format" do
+    it 'responds to the .csv format' do
       get :show, params: {id: user_scenario.id}, format: :csv
-      debugger
-      expect(response.format).to eq(:csv)
+      expect(response.content_type).to eq("text/csv")
     end
   end
 end

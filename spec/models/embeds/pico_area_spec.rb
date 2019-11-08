@@ -101,4 +101,11 @@ describe Embeds::PicoArea, vcr: true do
       it { is_expected.to be_truthy }
     end
   end
+
+  describe "#to_js" do
+    subject { nl.to_js }
+    it "doesn't contain unexpected characters" do
+      expect(subject).to match(/^[{}:a-zA-Z', ]*$/)
+    end
+  end
 end

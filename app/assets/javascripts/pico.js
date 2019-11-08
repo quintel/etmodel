@@ -35,7 +35,6 @@ var pico = {
 
 
     picoOptions.selectedArea = opts;
-    debugger
     picoOptions.windturbineRestrictions = {
       awayFromBuildings:1,
       buildingMinDistance:400,

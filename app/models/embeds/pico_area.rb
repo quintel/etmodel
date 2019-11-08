@@ -27,7 +27,7 @@ module Embeds
     end
 
     def to_js
-      "{areaType:'#{type}', areaName:'#{area_name}'," +
+      "{areaType:'#{type.key}', areaName:'#{area_name}'," +
       " selectField:'areaName', selectvalue:'#{select_value}'}"
     end
 

@@ -1,0 +1,38 @@
+---
+nl:
+  radio_elements:
+    settings_weather_curve_set:
+      default:
+        title: Default
+        description: |
+          2015 is het startjaar van het ETM. De wind- en zonopwekprofielen zijn
+          gebaseerd op daadwerkelijke productieprofielen van ENTSO-e. Het
+          temperatuursprofiel komt van KNMI.
+      '1987':
+        title: '1987: "Dunkelflaute" en koude winter'
+        description: |
+          In 1987 was er in Nederland een uitzonderlijk koude periode gedurende
+          de tweede week van januari. Dit zorgde voor een significante toename
+          van de warmtevraag. Daarbij was er in die periode ook weinig wind: een
+          "Dunkelflaute".
+          (Vollasturen: wind op land = 1765, wind offshore = 2905,
+          zon = 738. Gemiddelde temperatuursverschil t.o.v. 2015 = -2.0 graden
+          Celsius)
+      '1997':
+        title: '1997: Energie-misoogst en extreem koude dagen'
+        description: |
+          In 1997 waren er in Nederland verschillende extreem koude dagen met
+          een hoge piek warmtevraag. Ook vonden er in dit jaar veel periodes met
+          schaarse duurzame opwek plaats (ookwel "misoogst"), met name in
+          januari en november. De schaarse duurzame opwek betreft met met name windenergie.
+          (Vollasturen: wind op land = 1759, wind offshore = 3025,
+          zon = 792. Gemiddelde temperatuursverschil t.o.v. 2015 = -0.6 graden
+          Celsius)
+      '2004':
+        title: '2004: Overschotten en tekorten'
+        description: |
+          In 2004 waren er in Nederland verschillende perioden door het jaar heen met grote
+          tekorten en in september perioden met overschotten.
+          (Vollasturen: wind op land = 1937, wind offshore = 3334,
+          zon = 807. Gemiddelde temperatuursverschil t.o.v. 2015 = -0.5 graden
+          Celsius)

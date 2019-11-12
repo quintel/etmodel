@@ -4,6 +4,7 @@
   var optionTemplate = _.template(
     '<li data-id="<%= id %>">' +
       '  <%- name %>' +
+      '  <span><%- capacity %></span>' +
       '  <span class="fa fa-bars></span>' +
       '</li>'
   );
@@ -17,7 +18,8 @@
       element.append(
         optionTemplate({
           id: optionKey,
-          name: I18n.t('output_elements.flexibility_options.' + optionKey)
+          name: I18n.t('output_elements.flexibility_options.' + optionKey),
+          capacity: '10 MW'
         })
       );
     });
@@ -42,6 +44,8 @@
 
     this.element.addClass('loading');
 
+    // this request should be expanded to also include the capacities
+    // or should there be a new request?
     var xhr = $.ajax({
       url: this.url,
       type: 'GET'

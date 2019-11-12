@@ -44,7 +44,15 @@ D3.dynamic_demand_curve =
         .interpolate('monotone')
 
     getStackedData: ->
-      stacked: @stack(@chartData.filter((d) -> !d.is_target)),
+      stacked: @stack(
+        @chartData.filter((d) ->
+          if d.values.length
+            return !d.is_target
+
+          console.log("#{d.key} has no values!")
+          return false
+        )
+      ),
       total: @chartData.filter((d) -> d.is_target)
 
     getLegendSeries: ->

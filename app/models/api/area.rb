@@ -40,6 +40,7 @@ class Api::Area < ActiveResource::Base
     :has_solar_csp,
     :use_network_calculations,
     :has_electricity_storage,
+    :has_weather_curves,
     :is_national_scenario,
     :is_local_scenario,
     :has_detailed_chemical_industry,

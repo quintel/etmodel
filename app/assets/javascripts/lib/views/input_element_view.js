@@ -498,7 +498,16 @@
      * Is called when the models "disabled" attribute is changed.
      */
     updateIsDisabled: function (_model, isDisabled) {
-      isDisabled ? this.quinn.disable() : this.quinn.enable();
+      if (isDisabled) {
+        this.$el.addClass('disabled');
+        this.valueElement.html('&mdash;');
+        this.quinn.disable();
+      } else {
+        this.$el.removeClass('disabled');
+        this.setTransientValue(this.quinn.model.value);
+        this.quinn.enable();
+      }
+
       this.refreshButtons();
     },
 
@@ -762,6 +771,10 @@
      * swap between different unit conversions supported by the model.
      */
     showValueSelector: function (event) {
+      if (this.model.get('disabled')) {
+        return false;
+      }
+
       this.valueSelector.show();
       return false;
     },

@@ -18,7 +18,7 @@
             = image_tag('layout/ajax-loader-small.gif')
 
         - if params[:scenario]
-          %ul.toggle_year{ data: {time: @time}}
+          %ul.toggle_year{ data: { time: @time } }
             %li#present
               = link_to Current.setting.start_year, region_path(time: 'present', scenario: true), class: 'button'
 

@@ -35,7 +35,7 @@ EstablishmentShot.TextUpdater = (function () {
                 if (UNITS[unit]) {
                     unit = UNITS[unit];
                 } else if (!$(this).data('unit')){
-                    unit = ''
+                    unit = '';
                 }
 
                 $(this).text((Math.round(value * 100) / 100).toLocaleString() + ' ' + unit);

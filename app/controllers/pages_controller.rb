@@ -19,10 +19,10 @@ class PagesController < ApplicationController
   end
 
   def dataset
-    @area = Api::Area.find_by_country_memoized(params[:dataset_locale])    
-    fail ActiveRecord::RecordNotFound unless @area
+    @area = Api::Area.find_by_country_memoized(params[:dataset_locale])
+    raise ActiveRecord::RecordNotFound unless @area
 
-    @time = params[:time] if ['present', 'future'].include? params[:time]
+    @time = params[:time] if %w[present future].include?(params[:time])
     @time ||= 'present'
     @area.analysis_year = Current.setting.end_year if @time == 'future'
   end

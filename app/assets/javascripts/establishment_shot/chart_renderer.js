@@ -42,7 +42,6 @@ EstablishmentShot.ChartRenderer = (function () {
 
     return {
         render: function (scope, data, time) {
-            var time = time || 'present';
             var chart,
                 chartScope,
                 info;

@@ -10,7 +10,7 @@
           = image_tag 'reports/print.svg'
           %span= t('report.print')
 
-    .page#establishment_shot{ data: { area: @area.area, host: APP_CONFIG[:api_url], max_year: Setting::MAX_YEAR, min_year: Setting::MIN_YEAR, default_year: Setting::DEFAULT_YEAR, scenario_id: Current.setting.api_session_id, time: @time, non_energetic: params[:non_energetic] } }
+    .page#establishment_shot{ data: { area: @area.area, host: APP_CONFIG[:api_url], max_year: Setting::MAX_YEAR, min_year: Setting::MIN_YEAR, default_year: Setting::DEFAULT_YEAR, scenario_id: Current.setting.api_session_id, time: @time, non_energy: params[:non_energy] } }
       .title
         %h1
           = t('establishment_shot.header_html', area: I18n.t("areas.#{@area.area}"))

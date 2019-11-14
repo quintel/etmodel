@@ -97,7 +97,7 @@ EstablishmentShot.Charts = (function () {
                 }
             }
         },
-        addNonEnergeticAttributes = function() {
+        addNonEnergyAttributes = function() {
             // Non energetic are first query/color (bottom of bar chart)
             for ( var i = 0; i < queries.length; i++ ) {
                 queries[i] = [ nonEnergyQueries[i] ].concat(queries[i]);
@@ -107,7 +107,7 @@ EstablishmentShot.Charts = (function () {
         ;
 
     return {
-        setNonEnergetic: function(n_e) { if(n_e) addNonEnergeticAttributes() },
+        setNonEnergy: function(n_e) { if(n_e) addNonEnergyAttributes() },
         getCharts: function () {
             count = 0;
             return {

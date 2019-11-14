@@ -3,36 +3,40 @@ nl:
   radio_elements:
     settings_weather_curve_set:
       default:
-        title: Default
+        title: Default (2015)
         description: |
           2015 is het startjaar van het ETM. De wind- en zonopwekprofielen zijn
           gebaseerd op daadwerkelijke productieprofielen van ENTSO-e. Het
           temperatuursprofiel komt van KNMI.
+          (Vollasturen: wind op land = 1920, wind aan de kust = 2550, wind offshore = 3500,
+          zon = 867)
       '1987':
-        title: '1987: "Dunkelflaute" en koude winter'
+        title: '1987: "Dunkelflaute" tijdens extreem koude winter'
         description: |
-          In 1987 was er in Nederland een uitzonderlijk koude periode gedurende
-          de tweede week van januari. Dit zorgde voor een significante toename
-          van de warmtevraag. Daarbij was er in die periode ook weinig wind: een
-          "Dunkelflaute".
-          (Vollasturen: wind op land = 1765, wind offshore = 2905,
-          zon = 738. Gemiddelde temperatuursverschil t.o.v. 2015 = -2.0 graden
+          In 1987 was er in Nederland een uitzonderlijk koude periode van 6 tot
+          21 januari: het was gemiddeld -6,5 graden Celsius. Dit zorgde voor een significante toename
+          van de warmtevraag. Daarbij was er in de derde week van januari ook heel
+          weinig wind: een zogenaamde "Dunkelflaute".
+          (Vollasturen: wind op land / aan de kust = 1765, wind offshore = 2905,
+          zon = 738. Gemiddelde temperatuursverschil t.o.v. 2015 = -2,0 graden
           Celsius)
       '1997':
-        title: '1997: Energie-misoogst en extreem koude dagen'
+        title: '1997: Energie-misoogst (incl. "Dunkelflaute") en extreem koude dagen'
         description: |
-          In 1997 waren er in Nederland verschillende extreem koude dagen met
-          een hoge piek warmtevraag. Ook vonden er in dit jaar veel periodes met
-          schaarse duurzame opwek plaats (ookwel "misoogst"), met name in
-          januari en november. De schaarse duurzame opwek betreft met name windenergie.
-          (Vollasturen: wind op land = 1759, wind offshore = 3025,
-          zon = 792. Gemiddelde temperatuursverschil t.o.v. 2015 = -0.6 graden
+          In 1997 vond de laatste Elfstedentocht plaats. Er
+          waren toen in Nederland door het jaar heen verschillende extreem
+          koude dagen met een hoge piek warmtevraag, zelfs in april en oktober.
+          Ook vonden er in dit jaar veel periodes met
+          schaarse duurzame opwek plaats (ookwel "misoogst"), met name een "Dunkelflaute"
+          in de hele maand januari en een windstille periode in november.
+          (Vollasturen: wind op land / aan de kust = 1759, wind offshore = 3025,
+          zon = 792. Gemiddelde temperatuursverschil t.o.v. 2015 = -0,6 graden
           Celsius)
       '2004':
         title: '2004: Overschotten en tekorten'
         description: |
           In 2004 waren er in Nederland verschillende perioden door het jaar heen met grote
           tekorten en in september perioden met overschotten.
-          (Vollasturen: wind op land = 1937, wind offshore = 3334,
-          zon = 807. Gemiddelde temperatuursverschil t.o.v. 2015 = -0.5 graden
+          (Vollasturen: wind op land / aan de kust = 1937, wind offshore = 3334,
+          zon = 807. Gemiddelde temperatuursverschil t.o.v. 2015 = -0,5 graden
           Celsius)

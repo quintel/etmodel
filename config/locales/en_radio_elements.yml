@@ -8,22 +8,28 @@ en:
           2015 is the start year of the ETM. The wind and solar curves for 2015
           are based on actual production curves of ENTSO-e. The temperature
           curve is based KNMI-data.
+          (Full load hours: wind onshore = 1920, wind coastal = 2550, wind offshore = 3500,
+          solar = 867)
       '1987':
-        title: '1987: "Dunkelflaute" and cold winter'
+        title: '1987: "Dunkelflaute" during extreme cold winter period'
         description: |
-          In 1987 the Netherlands faced an extreme cold period during the second
-          week of January. This resulted in a significant heat demand increase. In
-          these periods there was also little wind: a so-called "Dunkelflaute".
-          (Full load hours: wind onshore = 1765, wind offshore = 2905,
+          In 1987 the Netherlands faced an extreme cold period from 6 to 21 January:
+          the average temperature was -6.5 degrees Celsius. This resulted in a
+          significant heat demand increase. In
+          the second week of January there was also little wind: a so-called "Dunkelflaute".
+          (Full load hours: wind onshore / coastal = 1765, wind offshore = 2905,
           solar = 738. Average temperature difference compared to 2015 = -2.0 degrees
           Celsius)
       '1997':
-        title: '1997: Lack of sustainable energy and extreme cold days'
+        title: '1997: Lack of sustainable energy (incl. "Dunkelflaute") and extreme cold days'
         description: |
-          In 1997 there were several extreme cold days with high peak heating demands in the Netherlands.
+          In 1997 the last "Elfstedentocht" took place in the Netherlands. There
+          were several extreme cold days with high peak heating
+          demands, even in April and October.
           This year also had many periods with scarce sustainable energy generation,
-          mainly wind energy. These periods were in January and November.
-          (Full load hours: wind onshore = 1759, wind offshore = 3025,
+          mainly wind: a "Dunkelflaute" throughout the month of January
+          and a calm period in November.
+          (Full load hours: wind onshore / coastal = 1759, wind offshore = 3025,
           solar = 792. Average temperature difference compared to 2015 = -0.6 degrees
           Celsius)
       '2004':
@@ -31,6 +37,6 @@ en:
         description: |
           In 2004 the Netherlands had several periods with scarce sustainable energy generation
           and in September periods with excess sustainable electricity.
-          (Full load hours: wind onshore = 1937, wind offshore = 3334,
+          (Full load hours: wind onshore / coastal = 1937, wind offshore = 3334,
           solar = 807. Average temperature difference compared to 2015 = -0.5 degrees
           Celsius)

@@ -10,11 +10,22 @@
           = image_tag 'reports/print.svg'
           %span= t('report.print')
 
-    .page#establishment_shot{ data: { area: @area.area, host: APP_CONFIG[:api_url], max_year: Setting::MAX_YEAR, min_year: Setting::MIN_YEAR, default_year: Setting::DEFAULT_YEAR } }
-      %h1
-        = t('establishment_shot.header_html', area: I18n.t("areas.#{@area.area}"))
-        %span.loading
-          = image_tag('layout/ajax-loader-small.gif')
+    .page#establishment_shot{ data: { area: @area.area, host: APP_CONFIG[:api_url], max_year: Setting::MAX_YEAR, min_year: Setting::MIN_YEAR, default_year: Setting::DEFAULT_YEAR, scenario_id: Current.setting.api_session_id, time: @time } }
+      .title
+        %h1
+          = t('establishment_shot.header_html', area: I18n.t("areas.#{@area.area}"))
+          %span.loading
+            = image_tag('layout/ajax-loader-small.gif')
+
+        - if params[:scenario]
+          %ul.toggle_year{ data: { time: @time } }
+            %li#present
+              = link_to Current.setting.start_year, region_path(time: 'present', scenario: true), class: 'button'
+
+            %li#future
+              = link_to Current.setting.end_year, region_path(time: 'future', scenario: true), class: 'button'
+
+      .clearfix
 
       .introduction
         = t('establishment_shot.introduction_html')
@@ -28,7 +39,7 @@
 
         %li
           = I18n.t("dataset.number_of_inhabitants")
-          %span= number_with_delimiter(@area.number_of_inhabitants.to_i)
+          %span{ data: { query: 'co2_sheet_inhabitants'} }
 
         %li
           = I18n.t("dataset.total_energy_demand")
@@ -39,6 +50,7 @@
           %span{ data: { query: 'co2_sheet_renewability_percentage', unit: '%' } }
 
       .clearfix
+
 
       .overview
         .column
@@ -62,8 +74,9 @@
       .footer
         = t('establishment_shot.created_by_html')
 
-    .navigation
-      = link_to I18n.t("dataset.start_scenario", area: I18n.t("areas.#{@area.area}")), root_path(country: @area.area), class: 'button primary scenario-link'
+    - unless params[:scenario]
+      .navigation
+        = link_to I18n.t("dataset.start_scenario", area: I18n.t("areas.#{@area.area}")), root_path(country: @area.area), class: 'button primary scenario-link'
 
-      %span.or or
-      = link_to "Back", root_path, class: "button"
+        %span.or or
+        = link_to "Back", root_path, class: "button"

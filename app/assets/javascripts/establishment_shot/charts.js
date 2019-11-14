@@ -60,8 +60,8 @@ EstablishmentShot.Charts = (function () {
                 { key: 'co2_sheet_transport_total_public_transport_co2_emissions' }
             ]
         ],
-        non_energy_color =  '#DDDDDE',
-        non_energy_queries = [
+        nonEnergyColor =  '#DDDDDE',
+        nonEnergyQueries = [
             { key: 'co2_sheet_non_energy_emissions_built_environment' },
             { key: 'co2_sheet_non_energy_emissions_industry_energy' },
             { key: 'co2_sheet_non_energy_emissions_agriculture' },
@@ -97,17 +97,17 @@ EstablishmentShot.Charts = (function () {
                 }
             }
         },
-        setNonEnergeticAttributes = function() {
+        addNonEnergeticAttributes = function() {
             // Non energetic are first query/color (bottom of bar chart)
             for ( var i = 0; i < queries.length; i++ ) {
-                queries[i] = [ non_energy_queries[i] ].concat(queries[i]);
-                smallColors[i] = [ non_energy_color ].concat(smallColors[i]);
+                queries[i] = [ nonEnergyQueries[i] ].concat(queries[i]);
+                smallColors[i] = [ nonEnergyColor ].concat(smallColors[i]);
             }
         }
         ;
 
     return {
-        setNonEnergetic: function(n_e) { if(n_e) setNonEnergeticAttributes()b},
+        setNonEnergetic: function(n_e) { if(n_e) addNonEnergeticAttributes() },
         getCharts: function () {
             count = 0;
             return {

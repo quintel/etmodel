@@ -48,8 +48,8 @@ EstablishmentShot.ChartRenderer = (function () {
 
             $('div[data-chart]').each(function () {
                 chart = $(this).data('chart');
-                info  = EstablishmentShot.Charts.charts[chart];
-
+                info  = EstablishmentShot.Charts.getCharts()[chart];
+                console.log(info);
                 new info.type($(this), mergeSeries(info, data, time)).render();
             });
         }

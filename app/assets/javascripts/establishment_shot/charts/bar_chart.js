@@ -50,7 +50,7 @@ EstablishmentShot.BarChart = (function () {
 
     function color_for(info) {
         var i, found,
-            chart = EstablishmentShot.Charts.charts.bar_chart;
+            chart = EstablishmentShot.Charts.getCharts().bar_chart;
 
         for (i = 0; i < chart.series.length; i++) {
             if (chart.series[i].key === info) {
@@ -97,7 +97,7 @@ EstablishmentShot.BarChart = (function () {
     BarChart.prototype = {
         render: function () {
             var chart = this.scope.data('chart'),
-                info = EstablishmentShot.Charts.charts[chart],
+                info = EstablishmentShot.Charts.getCharts()[chart],
                 unit = this.data[0].unit;
 
             window.stackedBarChart(

@@ -24,7 +24,8 @@ class PagesController < ApplicationController
 
     @time = params[:time] if %w[present future].include?(params[:time])
     @time ||= 'present'
-    @area.analysis_year = Current.setting.end_year if @time == 'future'
+    @year = Current.setting.end_year if @time == 'future'
+    @year ||= @area.analysis_year
   end
 
   # Popup with the text description. This is confusing because the title can

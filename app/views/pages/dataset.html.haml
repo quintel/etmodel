@@ -20,7 +20,7 @@
         - if params[:scenario]
           %ul.toggle_year{ data: { time: @time } }
             %li#present
-              = link_to Current.setting.start_year, region_path(time: 'present', scenario: true), class: 'button'
+              = link_to @area.analysis_year, region_path(time: 'present', scenario: true), class: 'button'
 
             %li#future
               = link_to Current.setting.end_year, region_path(time: 'future', scenario: true), class: 'button'
@@ -35,7 +35,7 @@
       %ul.dataset-info
         %li
           = I18n.t("dataset.present_year")
-          %span= @area.analysis_year
+          %span= @year
 
         %li
           = I18n.t("dataset.number_of_inhabitants")

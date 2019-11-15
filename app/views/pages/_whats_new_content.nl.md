@@ -15,7 +15,7 @@ De resultaten zijn te zien in drie nieuwe grafieken over gasvraag, -productie en
 
 ### 2. Verken de invloed van extreme weersomstandigheden
 
-Extreme weersomstandigheden, zoals extreme koude/warme periodes en tekorten/overschotten aan zon en wind, kunnen invloed hebben op je scenario. Lage temperaturen kunnen resulteren in een verhoogde warmtevraag. Weinig zon en wind heeft een negatieve invloed op de elektriciteitsproductie. Om deze impact  op je scenario te verkennen, kan een jaar met extreme weersomstandigheden gekozen worden:
+Extreme weersomstandigheden, zoals extreme koude/warme periodes en tekorten/overschotten aan zon en wind, kunnen invloed hebben op je scenario. Lage temperaturen kunnen resulteren in een verhoogde warmtevraag. Weinig zon en wind hebben een negatieve invloed op de elektriciteitsproductie. Om deze impact  op je scenario te verkennen, kan er vanaf nu een jaar met extreme weersomstandigheden gekozen worden in het ETM:
 
 - 1987: "Dunkelflaute" tijdens extreem koude winter
 - 1997: Energie-misoogst (incl. "Dunkelflaute") en extreem koude dagen
@@ -25,9 +25,9 @@ Deze functionaliteit is alleen beschikbaar voor (regio's in) Nederland.
 
 [Verken hier de effecten van extreme weersomstandigheden!][weather slide]
 
-### 3. CO2-factsheet voor je scenario beschikbaar
+### 3. CO<sub>2</sub>-factsheet voor je scenario beschikbaar
 
-Bekijk de CO2-voetafdruk van je scenario vanaf nu onder de resultaten sectie in het ETM. Je kan zowel de voetafdruk van het startjaar als het eindjaar bekijken. Zo kan je gemakkelijk de impact van jouw keuzes op de CO2 uitstoot in jouw regio zien. Deze sheet is printklaar.
+Bekijk de CO<sub>2</sub>-voetafdruk van je scenario vanaf nu onder de resultaten sectie in het ETM. Je kan zowel de voetafdruk van het startjaar als het eindjaar bekijken. Zo kan je gemakkelijk de impact van jouw keuzes op de CO<sub>2</sub>-uitstoot in jouw regio zien. Deze sheet is printklaar.
 
 [Bekijk hier de factsheet voor je scenario!][factsheet slide]
 
@@ -35,15 +35,15 @@ Bekijk de CO2-voetafdruk van je scenario vanaf nu onder de resultaten sectie in 
 
 ### 4. Hybride warmte in industrie
 
-Het is nu mogelijk om met elektriciteitsoverschotten warmte te produceren voor de industrie en daarmee de vraag naar gas en waterstof te verminderen. Deze elektrische boilers kunnen worden ingezet naast de baseload elektrische boilers die reeds gemodelleerd waren. Met deze hybride warmte implementatie voorkom je dat de elektrische boilers draaien op elektriciteit geproduceerd door gascentrales aangezien de boilers enkel overschotten gebruiken. Deze modellering wordt per uur gedaan; de resulterende gas- en waterstofvraagprofielen zijn dus afhankelijk van de beschikbare overschotten. Hybride warmte is beschikbaar voor de volgende sectoren: chemische industrie, raffinaderijen, voedingsmiddelenindustrie en papierindustrie.
+Het is nu mogelijk om met elektriciteitsoverschotten warmte te produceren voor de industrie en daarmee de vraag naar gas en waterstof te verminderen. Deze elektrische power-to-heat-boilers kunnen worden ingezet naast de baseload elektrische boilers die reeds gemodelleerd waren. Met deze hybride warmte-implementatie voorkom je dat de elektrische boilers draaien op elektriciteit geproduceerd door gascentrales aangezien de boilers enkel overschotten gebruiken. Deze modellering wordt per uur gedaan; de resulterende gas- en waterstofvraagprofielen zijn dus afhankelijk van de beschikbare overschotten. Hybride warmte is beschikbaar voor de volgende sectoren: chemische industrie, raffinaderijen, voedingsmiddelenindustrie en papierindustrie.
 
 [Ontdek hier de impact van hybride warmte in de industrie!][hybrid heat slide]
 
 -> ![](/assets/pages/whats_new/hybrid_heat_industry_nl.png) <-
 
-### 5. Hydrogen in industry
+### 5. Waterstof in industrie
 
-It is now also possible to use hydrogen in the other industry sector, next to the energy carriers already present.
+Het is nu mogelijk om waterstof in te zetten in de 'overige industrie', naast de reeds beschikbare energiedragers.
 
 [Check out this improvement here!][hydrogen other industry slide]
 

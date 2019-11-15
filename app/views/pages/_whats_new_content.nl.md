@@ -1,7 +1,7 @@
 # Wat is er nieuw in het Energietransitiemodel?
 
 
-### 1. Gasvraag berekend op uurbasis
+## 1. Gasvraag berekend op uurbasis
 
 De vraag en productie van gas wordt vanaf nu berekend op uurbasis in plaats van op jaarbasis. Hierdoor kunnen gebruikers bekijken op welke momenten in het jaar er gas gebruikt wordt, bijvoorbeeld voor verwarming van huizen of voor elektriciteitsproductie. Ook kunnen gebruikers verkennen hoe dit in de toekomst gaat veranderen en welke impact de weersomstandigheden hebben op de (piek)vraag naar gas.
 
@@ -13,7 +13,7 @@ De resultaten zijn te zien in drie nieuwe grafieken over gasvraag, -productie en
 
 -> ![](/assets/pages/whats_new/gas_charts_nl.png) <-
 
-### 2. Verken de invloed van extreme weersomstandigheden
+## 2. Verken de invloed van extreme weersomstandigheden
 
 Extreme weersomstandigheden, zoals extreme koude/warme periodes en tekorten/overschotten aan zon en wind, kunnen invloed hebben op je scenario. Lage temperaturen kunnen resulteren in een verhoogde warmtevraag. Weinig zon en wind hebben een negatieve invloed op de elektriciteitsproductie. Om deze impact  op je scenario te verkennen, kan er vanaf nu een jaar met extreme weersomstandigheden gekozen worden in het ETM:
 
@@ -25,7 +25,7 @@ Deze functionaliteit is alleen beschikbaar voor (regio's in) Nederland.
 
 [Verken hier de effecten van extreme weersomstandigheden!][weather slide]
 
-### 3. CO<sub>2</sub>-factsheet voor je scenario beschikbaar
+## 3. CO<sub>2</sub>-factsheet voor je scenario beschikbaar
 
 Bekijk de CO<sub>2</sub>-voetafdruk van je scenario vanaf nu onder de resultaten sectie in het ETM. Je kan zowel de voetafdruk van het startjaar als het eindjaar bekijken. Zo kan je gemakkelijk de impact van jouw keuzes op de CO<sub>2</sub>-uitstoot in jouw regio zien. Deze sheet is printklaar.
 
@@ -33,7 +33,7 @@ Bekijk de CO<sub>2</sub>-voetafdruk van je scenario vanaf nu onder de resultaten
 
 -> ![](/assets/pages/whats_new/co2_factsheet_nl.png) <-
 
-### 4. Hybride warmte in industrie
+## 4. Hybride warmte in industrie
 
 Het is nu mogelijk om met elektriciteitsoverschotten warmte te produceren voor de industrie en daarmee de vraag naar gas en waterstof te verminderen. Deze elektrische power-to-heat-boilers kunnen worden ingezet naast de baseload elektrische boilers die reeds gemodelleerd waren. Met deze hybride warmte-implementatie voorkom je dat de elektrische boilers draaien op elektriciteit geproduceerd door gascentrales aangezien de boilers enkel overschotten gebruiken. Deze modellering wordt per uur gedaan; de resulterende gas- en waterstofvraagprofielen zijn dus afhankelijk van de beschikbare overschotten. Hybride warmte is beschikbaar voor de volgende sectoren: chemische industrie, raffinaderijen, voedingsmiddelenindustrie en papierindustrie.
 
@@ -41,7 +41,7 @@ Het is nu mogelijk om met elektriciteitsoverschotten warmte te produceren voor d
 
 -> ![](/assets/pages/whats_new/hybrid_heat_industry_nl.png) <-
 
-### 5. Waterstof in industrie
+## 5. Waterstof in industrie
 
 Het is nu mogelijk om waterstof in te zetten in de 'overige industrie', naast de reeds beschikbare energiedragers.
 
@@ -50,7 +50,7 @@ Het is nu mogelijk om waterstof in te zetten in de 'overige industrie', naast de
 -> ![](/assets/pages/whats_new/hydrogen_other_industry_en.png) <-
 
 
-### 6. Biomassamodellering verbeterd
+## 6. Biomassamodellering verbeterd
 
 De modellering van biomassa in het ETM is verbeterd in samenwerking met TKI Nieuw Gas, Gasunie, GasTerra en TNO. De inzet van biomassa is eenvoudiger en inzichtelijker gemaakt. Het is nu mogelijk om in één oogopslag te zien welke biomassastromen er in de regio zijn, zowel in het heden als in toekomstscenario's. Daarnaast is ook de **potentie voor verschillende biomassastromen** onderzocht door TNO, waardoor te zien is hoeveel biomassa er voor Nederland en ook per regio beschikbaar is. Een ander belangrijk verbeterpunt is het toevoegen van **superkritische watervergassing (SCW)** en **vergassing van droge biomassa** voor groengas. Alle benodigde data over biomassa en conversietechnieken is aangepast en gedocumenteerd op onze [GitHub][biomass documentation] op basis van onderzoek door TNO.
 
@@ -60,7 +60,7 @@ De modellering van biomassa in het ETM is verbeterd in samenwerking met TKI Nieu
 
 -> ![](/assets/pages/whats_new/biomass_potential_nl.png) <-
 
-### 7. Nieuwe grootschalige elektriciteitsopslag technologieën toegevoegd
+## 7. Nieuwe grootschalige elektriciteitsopslag technologieën toegevoegd
 
 Er zijn twee grootschalige elektriciteitsopslag technologieën toegevoegd aan het ETM: **Ondergrondse Pomp Accumulatie Centrale (OPAC)** en **grootschalige batterijopslag**. Elektriciteitsoverschotten kunnen nu worden opgeslagen in deze technologieën en op een later moment weer worden ingezet. De toekomstige kosten voor deze technologieën zijn door de gebruiker aan te passen.
 

@@ -13,7 +13,7 @@ The results of this time-resolved calculation are depicted in three new charts a
 
 ### 2. Explore the impact of extreme weather conditions
 
-Extreme weather conditions, such as extreme cold/warm periods and lacks/excesses of sun and wind, may affect your scenario. Low temperatures may affect the heat demand whereas a lack of wind and sun may negatively affect the electricity production from wind and solar power. To explore these effects a year with extreme weather conditions can be selected:
+Extreme weather conditions, such as extreme cold/warm periods and lack/excess of sunshine and wind, may affect your scenario. Low temperatures may impact (peak) heat demand whereas a lack of wind and sunshine may negatively affect electricity production from wind and solar power. To explore these effects a year with extreme weather conditions can now be selected in the ETM:
 
 - 1987: "Dunkelflaute" during extreme cold winter period
 - 1997: Lack of sustainable energy (incl. "Dunkelflaute") and extreme cold days
@@ -23,9 +23,9 @@ This feature is only available for (regions in) the Netherlands.
 
 [Explore the effect of extreme weather conditions here!][weather slide]
 
-### 3. CO2 factsheet available for your scenario
+### 3. CO<sub>2</sub> factsheet available for your scenario
 
-A visual representation of the CO2 footprint for your scenario is now available under the results section in the ETM. You can look at the footprint for both your scenario’s start and end year, making it easy to see the impact of your choices on the CO2 emissions in your region. This sheet is ready to print.
+A visual representation of the CO<sub>2</sub> footprint for your scenario is now available under the results section in the ETM. You can look at the footprint for both your scenario’s start and end year, making it easy to see the impact of your choices on CO<sub>2</sub> emissions in your region. This sheet is ready to print.
 
 [Check out the factsheet for your scenario!][factsheet slide]
 
@@ -33,7 +33,7 @@ A visual representation of the CO2 footprint for your scenario is now available 
 
 ### 4. Hybrid heat in industry
 
-It is now possible to convert excess electricity into heat for industry resulting in a decrease in demand for gas and hydrogen. These electric boilers can be used next to baseload boilers that were already modelled. With these newly implemented boilers you can prevent that the electric boilers run on electriciy produced by gas plants since the boilers only use excess electricity. The calculation is done on an hourly basis; the resulting gas and hydrogen demand profiles are therefore dependent on available surpluses. Hybrid heat is available in the following sectors: chemical industry, refineries, food industry and paper industry.
+It is now possible to combine gas and hydrogen burners in the industry sector with power-to-heat boilers, which reduce demand for gas and hydrogen during periods of excess electricity production. As opposed to regular (baseload) electric boilers, this new option allows users to prevent that electric boilers run on electriciy produced by gas or hydrogen plants. The calculation is done on an hourly basis; the resulting gas and hydrogen demand profiles are therefore dependent on available surpluses. Hybrid heat is available in the following sectors: chemical industry, refineries, food industry and paper industry.
 
 [Discover the impact of hybrid heat in industry here!][hybrid heat slide]
 
@@ -41,7 +41,7 @@ It is now possible to convert excess electricity into heat for industry resultin
 
 ### 5. Hydrogen in industry
 
-It is now also possible to use hydrogen in the other industry sector, next to the energy carriers already present.
+It is now also possible to use hydrogen in the 'other industry' sector, next to the energy carriers already present.
 
 [Check out this improvement here!][hydrogen other industry slide]
 

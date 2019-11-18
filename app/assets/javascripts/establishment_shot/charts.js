@@ -112,7 +112,7 @@ EstablishmentShot.Charts = (function () {
                     $(this).find(".legend ul li")
                         .stop().animate({'opacity': 1.0 }, 500);
                 }
-            }
+            };
         },
         totalChartDefaults = function () {
             return {
@@ -139,7 +139,7 @@ EstablishmentShot.Charts = (function () {
                     $(".column .column-inner .chart")
                         .stop().animate({'opacity': 1.0 }, 500);
                 }
-            }
+            };
         },
         addNonEnergyAttributes = function() {
             // Non energetic are first query/color (bottom of bar chart)
@@ -147,14 +147,14 @@ EstablishmentShot.Charts = (function () {
                 queries[i] = [ nonEnergyQueries[i] ].concat(queries[i]);
                 smallColors[i] = [ nonEnergyColor ].concat(smallColors[i]);
             }
-            total_chart_attributes.title += "_non_energy"
+            total_chart_attributes.title += "_non_energy";
             total_chart_attributes.series.forEach( function ( serie ) {
                 serie.key = serie.key.replace(/_only_energetic/g,"");
             });
         };
 
     return {
-        setNonEnergy: function(n_e) { if(n_e) addNonEnergyAttributes() },
+        setNonEnergy: function(n_e) { if(n_e) addNonEnergyAttributes(); },
         getCharts: function () {
             count = 0;
             return {

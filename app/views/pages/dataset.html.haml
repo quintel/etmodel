@@ -70,7 +70,7 @@
         .small-text
           = t('establishment_shot.footer_text_html')
         - if params[:scenario]
-          .small-text
+          .small-text.no-print
             **
             - if params[:non_energy] == "off"
               = link_to I18n.t("establishment_shot.show"), region_path(time: @time, scenario: true)

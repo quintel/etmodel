@@ -77,7 +77,8 @@
                 = link_to I18n.t("establishment_shot.hide"), region_path(time: @time, scenario: true)
               - else
                 = link_to I18n.t("establishment_shot.show"), region_path(time: @time, scenario: true, non_energy: "on")
-              #{I18n.t("establishment_shot.toggle_non_energy")} #{@area.analysis_year}
+              #{I18n.t("establishment_shot.toggle_non_energy")} #{@area.analysis_year}.
+              #{I18n.t("establishment_shot.non_energy_info")}
 
         .clearfix
 

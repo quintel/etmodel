@@ -74,10 +74,10 @@
             %span
               **
               - if params[:non_energy] == "on"
-                = link_to 'Hide', region_path(time: @time, scenario: true)
+                = link_to I18n.t("establishment_shot.hide"), region_path(time: @time, scenario: true)
               - else
-                = link_to 'Show', region_path(time: @time, scenario: true, non_energy: "on")
-              other greenhouse emissions from #{@area.analysis_year}
+                = link_to I18n.t("establishment_shot.show"), region_path(time: @time, scenario: true, non_energy: "on")
+              #{I18n.t("establishment_shot.toggle_non_energy")} #{@area.analysis_year}
 
         .clearfix
 

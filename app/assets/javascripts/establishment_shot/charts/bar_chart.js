@@ -65,11 +65,12 @@ EstablishmentShot.BarChart = (function () {
     function drawTitle(info) {
         var span,
             chart = this.scope.data('chart'),
-            title = $('<h5/>');
+            title = $('<h5/>'),
+            title_key;
 
-        title.append(
-            I18n.t('establishment_shot.charts.' + chart)
-        );
+        if (info.title) { title_key = info.title }
+        else { title_key = 'establishment_shot.charts.' + chart }
+        title.append( I18n.t(title_key) );
 
         if (info.fa_icon) {
             span = $('<span/>').css('color', color_for(chart));

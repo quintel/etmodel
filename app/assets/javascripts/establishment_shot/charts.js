@@ -67,6 +67,19 @@ EstablishmentShot.Charts = (function () {
             { key: 'co2_sheet_non_energy_emissions_agriculture' },
             { key: 'co2_sheet_non_energy_emissions_transport' }
         ],
+        total_chart_attributes = {
+            series: [
+                        { key: 'co2_sheet_agriculture_total_co2_emissions',
+                          fa_icon: '\uf06c' },
+                        { key: 'co2_sheet_industry_energy_total_co2_emissions',
+                          fa_icon: '\uf275' },
+                        { key: 'co2_sheet_transport_total_co2_emissions',
+                          fa_icon: '\uf1b9' },
+                        { key: 'co2_sheet_buildings_households_total_co2_emissions',
+                          fa_icon: '\uf015' }
+                    ],
+            title: "establishment_shot.charts.bar_chart"
+        },
         addQueries = function() {
             return { series: queries[count] };
         },
@@ -97,12 +110,40 @@ EstablishmentShot.Charts = (function () {
                 }
             }
         },
+        totalChartDefaults = function () {
+            return {
+                width: 250,
+                height: 380,
+                margin: {
+                    top: 25,
+                    right: 0,
+                    bottom: 25,
+                    left: 10
+                },
+                showY: false,
+                showMaxLabel: true,
+                color_gradient: colors,
+                type: EstablishmentShot.BarChart,
+                mouseover: function (d) {
+                    $(".column .column-inner .chart")
+                        .stop().animate({ 'opacity': 0.2 }, 500);
+
+                    $(".column .column-inner .chart[data-chart='" + d.key + "']")
+                        .stop().animate({'opacity': 1.0 }, 500);
+                },
+                mouseout: function (d) {
+                    $(".column .column-inner .chart")
+                        .stop().animate({'opacity': 1.0 }, 500);
+                }
+            }
+        },
         addNonEnergyAttributes = function() {
             // Non energetic are first query/color (bottom of bar chart)
             for ( var i = 0; i < queries.length; i++ ) {
                 queries[i] = [ nonEnergyQueries[i] ].concat(queries[i]);
                 smallColors[i] = [ nonEnergyColor ].concat(smallColors[i]);
             }
+            total_chart_attributes.title += "_non_energy"
         }
         ;
 
@@ -111,41 +152,7 @@ EstablishmentShot.Charts = (function () {
         getCharts: function () {
             count = 0;
             return {
-                bar_chart: {
-                    width: 250,
-                    height: 380,
-                    margin: {
-                        top: 25,
-                        right: 0,
-                        bottom: 25,
-                        left: 10
-                    },
-                    showY: false,
-                    showMaxLabel: true,
-                    color_gradient: colors,
-                    type: EstablishmentShot.BarChart,
-                    series: [
-                        { key: 'co2_sheet_agriculture_total_co2_emissions',
-                          fa_icon: '\uf06c' },
-                        { key: 'co2_sheet_industry_energy_total_co2_emissions',
-                          fa_icon: '\uf275' },
-                        { key: 'co2_sheet_transport_total_co2_emissions',
-                          fa_icon: '\uf1b9' },
-                        { key: 'co2_sheet_buildings_households_total_co2_emissions',
-                          fa_icon: '\uf015' }
-                    ],
-                    mouseover: function (d) {
-                        $(".column .column-inner .chart")
-                            .stop().animate({ 'opacity': 0.2 }, 500);
-
-                        $(".column .column-inner .chart[data-chart='" + d.key + "']")
-                            .stop().animate({'opacity': 1.0 }, 500);
-                    },
-                    mouseout: function (d) {
-                        $(".column .column-inner .chart")
-                            .stop().animate({'opacity': 1.0 }, 500);
-                    }
-                },
+                bar_chart: $.extend(totalChartDefaults(), total_chart_attributes),
                 co2_sheet_buildings_households_total_co2_emissions: $.extend({
                     left: true,
                     top: false,

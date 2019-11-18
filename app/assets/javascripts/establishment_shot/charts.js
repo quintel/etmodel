@@ -69,13 +69,17 @@ EstablishmentShot.Charts = (function () {
         ],
         total_chart_attributes = {
             series: [
-                        { key: 'co2_sheet_agriculture_total_co2_emissions',
+                        { key: 'co2_sheet_agriculture_total_co2_emissions_only_energetic',
+                          title: 'co2_sheet_agriculture_total_co2_emissions',
                           fa_icon: '\uf06c' },
-                        { key: 'co2_sheet_industry_energy_total_co2_emissions',
+                        { key: 'co2_sheet_industry_energy_total_co2_emissions_only_energetic',
+                          title: 'co2_sheet_industry_energy_total_co2_emissions',
                           fa_icon: '\uf275' },
-                        { key: 'co2_sheet_transport_total_co2_emissions',
+                        { key: 'co2_sheet_transport_total_co2_emissions_only_energetic',
+                          title: 'co2_sheet_transport_total_co2_emissions',
                           fa_icon: '\uf1b9' },
-                        { key: 'co2_sheet_buildings_households_total_co2_emissions',
+                        { key: 'co2_sheet_buildings_households_total_co2_emissions_only_energetic',
+                          title: 'co2_sheet_buildings_households_total_co2_emissions',
                           fa_icon: '\uf015' }
                     ],
             title: "establishment_shot.charts.bar_chart"
@@ -144,6 +148,9 @@ EstablishmentShot.Charts = (function () {
                 smallColors[i] = [ nonEnergyColor ].concat(smallColors[i]);
             }
             total_chart_attributes.title += "_non_energy"
+            total_chart_attributes.series.forEach( function ( serie ) {
+                serie.key = serie.key.replace(/_only_energetic/g,"");
+            });
         }
         ;
 

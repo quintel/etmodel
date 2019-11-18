@@ -19,6 +19,7 @@ EstablishmentShot.BarChart = (function () {
         var key,
             item,
             square,
+            title_key,
             listItem,
             legend = $('<div/>').addClass('legend'),
             list   = $('<ul/>'),
@@ -34,10 +35,12 @@ EstablishmentShot.BarChart = (function () {
                 listItem.on('mouseover', mouseover).on('mouseout', mouseout);
             }
 
+            title_key = serie.title ? serie.title : serie.key;
+
             listItem
                 .addClass(serie.key)
                 .attr('title', serie.value + ' ' + serie.unit)
-                .append(square, I18n.t('establishment_shot.legend.' + serie.key));
+                .append(square, I18n.t('establishment_shot.legend.' + title_key));
 
             list.prepend(listItem);
         });

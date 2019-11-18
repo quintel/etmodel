@@ -82,7 +82,7 @@ EstablishmentShot.Charts = (function () {
                           title: 'co2_sheet_buildings_households_total_co2_emissions',
                           fa_icon: '\uf015' }
                     ],
-            title: "establishment_shot.charts.bar_chart"
+            title: "bar_chart"
         },
         addQueries = function() {
             return { series: queries[count] };
@@ -151,8 +151,7 @@ EstablishmentShot.Charts = (function () {
             total_chart_attributes.series.forEach( function ( serie ) {
                 serie.key = serie.key.replace(/_only_energetic/g,"");
             });
-        }
-        ;
+        };
 
     return {
         setNonEnergy: function(n_e) { if(n_e) addNonEnergyAttributes() },
@@ -180,7 +179,7 @@ EstablishmentShot.Charts = (function () {
                     top: true,
                     fa_icon: 'f1b9'
                 }, addQueries(), smallChartDefaults())
-            }
+            };
         },
         getQueries: function () {
             var chart,

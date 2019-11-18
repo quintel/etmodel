@@ -86,7 +86,6 @@ EstablishmentShot.Main = (function() {
     EstablishmentShot.scenarioId = data.scenarioId;
     EstablishmentShot.time = data.time;
     EstablishmentShot.nonEnergy = data.nonEnergy != "off";
-    console.log(data)
   }
 
   return Main;

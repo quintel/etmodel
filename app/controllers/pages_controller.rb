@@ -26,6 +26,7 @@ class PagesController < ApplicationController
     @time ||= 'present'
     @year = Current.setting.end_year if @time == 'future'
     @year ||= @area.analysis_year
+    @scenario_id = Current.setting.api_session_id if params[:scenario]
   end
 
   # Popup with the text description. This is confusing because the title can

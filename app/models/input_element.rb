@@ -21,6 +21,8 @@
 class InputElement < ActiveRecord::Base
   include AreaDependent
 
+  ENUM_UNITS = %w[radio weather-curves].freeze
+
   has_one :description, as: :describable, dependent: :destroy
   has_one :area_dependency, as: :dependable, dependent: :destroy
   belongs_to :slide
@@ -101,5 +103,9 @@ class InputElement < ActiveRecord::Base
   def ie8_sanitize(s)
     return '' if s.blank?
     s.gsub("'", '&#39;').html_safe
+  end
+
+  def enum?
+    ENUM_UNITS.include?(unit)
   end
 end

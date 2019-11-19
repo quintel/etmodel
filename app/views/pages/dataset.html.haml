@@ -10,7 +10,7 @@
           = image_tag 'reports/print.svg'
           %span= t('report.print')
 
-    .page#establishment_shot{ data: { area: @area.area, host: APP_CONFIG[:api_url], max_year: Setting::MAX_YEAR, min_year: Setting::MIN_YEAR, default_year: Setting::DEFAULT_YEAR, scenario_id: Current.setting.api_session_id, time: @time } }
+    .page#establishment_shot{ data: { area: @area.area, host: APP_CONFIG[:api_url], max_year: Setting::MAX_YEAR, min_year: Setting::MIN_YEAR, default_year: Setting::DEFAULT_YEAR, scenario_id: Current.setting.api_session_id, time: @time, non_energy: params[:non_energy] } }
       .title
         %h1
           = t('establishment_shot.header_html', area: I18n.t("areas.#{@area.area}"))
@@ -20,10 +20,10 @@
         - if params[:scenario]
           %ul.toggle_year{ data: { time: @time } }
             %li#present
-              = link_to @area.analysis_year, region_path(time: 'present', scenario: true), class: 'button'
+              = link_to @area.analysis_year, region_path(time: 'present', scenario: true, non_energy: params[:non_energy]), class: 'button'
 
             %li#future
-              = link_to Current.setting.end_year, region_path(time: 'future', scenario: true), class: 'button'
+              = link_to Current.setting.end_year, region_path(time: 'future', scenario: true,non_energy: params[:non_energy]), class: 'button'
 
       .clearfix
 
@@ -51,7 +51,6 @@
 
       .clearfix
 
-
       .overview
         .column
           .column-inner
@@ -70,6 +69,15 @@
 
         .small-text
           = t('establishment_shot.footer_text_html')
+        - if params[:scenario]
+          .small-text.no-print
+            **
+            - if params[:non_energy] == "off"
+              = link_to I18n.t("establishment_shot.show"), region_path(time: @time, scenario: true)
+            - else
+              = link_to I18n.t("establishment_shot.hide"), region_path(time: @time, scenario: true, non_energy: "off")
+            #{I18n.t("establishment_shot.toggle_non_energy")} #{@area.analysis_year}.
+            = I18n.t("establishment_shot.non_energy_info")
 
       .footer
         = t('establishment_shot.created_by_html')

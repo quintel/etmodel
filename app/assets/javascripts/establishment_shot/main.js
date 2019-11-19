@@ -1,5 +1,5 @@
 var EstablishmentShot = {
-  scenarioId: false, 
+  scenarioId: false,
   host: false,
   area: false,
   queries: false,
@@ -35,7 +35,7 @@ EstablishmentShot.Main = (function() {
   function finished(data) {
     var scope = EstablishmentShot.scope;
     EstablishmentShot.TextUpdater.update(scope, data, EstablishmentShot.time);
-    EstablishmentShot.ChartRenderer.render(scope, data, EstablishmentShot.time); 
+    EstablishmentShot.ChartRenderer.render(scope, data, EstablishmentShot.time);
 
     scope.find('.overview').show();
     $('a.scenario-link').attr('href', '/scenarios/' + EstablishmentShot.scenarioId + '/load');
@@ -50,7 +50,7 @@ EstablishmentShot.Main = (function() {
 
   function renderWithoutScenario() {
     EstablishmentShot.ScenarioCreator.create(EstablishmentShot)
-      .done(function(data){  
+      .done(function(data){
         EstablishmentShot.scenarioId = data.id;
         renderWithScenario();
       })
@@ -65,9 +65,10 @@ EstablishmentShot.Main = (function() {
 
   Main.prototype = {
     render: function () {
+      EstablishmentShot.Charts.setNonEnergy(EstablishmentShot.nonEnergy);
       EstablishmentShot.queries = getQueries()
         .concat(EstablishmentShot.Charts.getQueries());
-  
+
       if (EstablishmentShot.scenarioId) {
         renderWithScenario();
       } else {
@@ -84,6 +85,7 @@ EstablishmentShot.Main = (function() {
     EstablishmentShot.area = data.area;
     EstablishmentShot.scenarioId = data.scenarioId;
     EstablishmentShot.time = data.time;
+    EstablishmentShot.nonEnergy = data.nonEnergy != "off";
   }
 
   return Main;

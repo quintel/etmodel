@@ -19,6 +19,7 @@ EstablishmentShot.BarChart = (function () {
         var key,
             item,
             square,
+            title_key,
             listItem,
             legend = $('<div/>').addClass('legend'),
             list   = $('<ul/>'),
@@ -34,10 +35,12 @@ EstablishmentShot.BarChart = (function () {
                 listItem.on('mouseover', mouseover).on('mouseout', mouseout);
             }
 
+            title_key = serie.title ? serie.title : serie.key;
+
             listItem
                 .addClass(serie.key)
                 .attr('title', serie.value + ' ' + serie.unit)
-                .append(square, I18n.t('establishment_shot.legend.' + serie.key));
+                .append(square, I18n.t('establishment_shot.legend.' + title_key));
 
             list.prepend(listItem);
         });
@@ -50,7 +53,7 @@ EstablishmentShot.BarChart = (function () {
 
     function color_for(info) {
         var i, found,
-            chart = EstablishmentShot.Charts.charts.bar_chart;
+            chart = EstablishmentShot.Charts.getCharts().bar_chart;
 
         for (i = 0; i < chart.series.length; i++) {
             if (chart.series[i].key === info) {
@@ -65,10 +68,12 @@ EstablishmentShot.BarChart = (function () {
     function drawTitle(info) {
         var span,
             chart = this.scope.data('chart'),
-            title = $('<h5/>');
+            title = $('<h5/>'),
+            title_key;
 
+        title_key = info.title ? info.title : chart;
         title.append(
-            I18n.t('establishment_shot.charts.' + chart)
+            I18n.t('establishment_shot.charts.' + title_key)
         );
 
         if (info.fa_icon) {
@@ -97,7 +102,7 @@ EstablishmentShot.BarChart = (function () {
     BarChart.prototype = {
         render: function () {
             var chart = this.scope.data('chart'),
-                info = EstablishmentShot.Charts.charts[chart],
+                info = EstablishmentShot.Charts.getCharts()[chart],
                 unit = this.data[0].unit;
 
             window.stackedBarChart(

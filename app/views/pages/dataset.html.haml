@@ -20,10 +20,10 @@
         - if params[:scenario]
           %ul.toggle_year{ data: { time: @time } }
             %li#present
-              = link_to @area.analysis_year, region_path(time: 'present', scenario: true), class: 'button'
+              = link_to @area.analysis_year, region_path(time: 'present', scenario: true, non_energy: params[:non_energy]), class: 'button'
 
             %li#future
-              = link_to Current.setting.end_year, region_path(time: 'future', scenario: true), class: 'button'
+              = link_to Current.setting.end_year, region_path(time: 'future', scenario: true,non_energy: params[:non_energy]), class: 'button'
 
       .clearfix
 

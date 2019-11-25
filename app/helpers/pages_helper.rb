@@ -53,5 +53,4 @@ module PagesHelper
       non_energy: params[:non_energy]
     }
   end
-
 end

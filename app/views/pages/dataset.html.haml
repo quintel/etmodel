@@ -73,9 +73,11 @@
           .small-text.no-print
             **
             - if params[:non_energy] == "off"
-              = link_to I18n.t("establishment_shot.show"), region_path(time: @time, scenario: params[:scenario])
+              = link_to I18n.t("establishment_shot.show"),
+                        region_path(time: @time, scenario: params[:scenario])
             - else
-              = link_to I18n.t("establishment_shot.hide"), region_path(time: @time, scenario: params[:scenario], non_energy: "off")
+              = link_to I18n.t("establishment_shot.hide"),
+                        region_path(time: @time, scenario: params[:scenario], non_energy: "off")
             #{I18n.t("establishment_shot.toggle_non_energy")} #{@area.analysis_year}.
             = I18n.t("establishment_shot.non_energy_info")
 

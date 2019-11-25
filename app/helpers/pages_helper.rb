@@ -39,4 +39,18 @@ module PagesHelper
       class: 'area-flag', alt: ''
     )
   end
+
+  # Public: Returns the options for the co2 factsheet.
+  def co2_factsheet_options
+    {
+      area: @area.area,
+      host: APP_CONFIG[:api_url],
+      max_year: Setting::MAX_YEAR,
+      min_year: Setting::MIN_YEAR,
+      default_year: Setting::DEFAULT_YEAR,
+      scenario_id: params[:scenario],
+      time: @time,
+      non_energy: params[:non_energy]
+    }
+  end
 end

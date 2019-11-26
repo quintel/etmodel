@@ -1,7 +1,7 @@
 # This code is meant to hold behaviour and data concerning the PICO area types.
 #
 # The following javascript objects come from the site below.
-#   view-source:https://pico.geodan.nl/pico:minimap/map_windmodule.html
+#   view-source:https://pico.geodan.nl/pico/minimap/map_windmodule.html
 #
 #   //areatype:'land',areaname:'Nederland',selectfield:'', selectvalue:''
 #   //areatype:'provincie', areaname:'Friesland', selectfield:'prov_code', selectvalue:'21'
@@ -29,7 +29,7 @@ module Embeds::Pico::AreaType
   #
   # select_field_stripper: Strategy for creating a select_field from
   #                        an Api::Area#area.
-  #
+
   type = Struct.new(:key, :select_field, :matcher, :select_field_stripper) do
     def get_select_value(area)
       select_field_stripper.call(area)

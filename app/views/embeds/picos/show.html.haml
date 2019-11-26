@@ -6,7 +6,7 @@
            content: "width=device-width, " + |
                     "initial-scale=1.0," + |
                     "maximum-scale=1.0, " + |
-                      "user-scalable=0" } + |
+                      "user-scalable=0" } |
     = stylesheet_link_tag :pico
     = javascript_include_tag :pico
     %link{ rel: "stylesheet",
@@ -17,7 +17,7 @@
     %script{ type: "text/javascript",
              src: "https://pico.geodan.nl/pico/minimap/lib/maps.js" }
     %script{ type: "text/javascript",
-             src: "https://pico.geodan.nl/pico/config/pico-prod.js" }
+             src: "https://pico.geodan.nl/layers/picolayers.js" }
 
   %body#body{ onload: "pico.main( #{@area.to_js} )" }
     %div{ picomodule: "https://pico.geodan.nl/pico/minimap/windmodule.html" }

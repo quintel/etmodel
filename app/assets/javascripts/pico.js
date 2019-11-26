@@ -33,8 +33,8 @@ var pico = {
     initPico();
     initPicomap();
 
-
     picoOptions.selectedArea = opts;
+
     picoOptions.windturbineRestrictions = {
       awayFromBuildings:1,
       buildingMinDistance:400,
@@ -47,5 +47,6 @@ var pico = {
 
     picoOptions.showMaps = [];
     picoInitWindenergy(picoOptions);
+    picoGetTurbineCount()
   }
 };

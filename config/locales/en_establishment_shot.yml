@@ -5,12 +5,16 @@ en:
     header_html: "CO<sub>2</sub> footprint of %{area}"
     footer_text_html:
       '* Energy use is expressed in Joule (J), CO<sub>2</sub> emissions are expressed in tonne (T). A kilo (k) is 10<sup>3</sup>, mega (M) 10<sup>6</sup>, giga (G) 10<sup>9</sup>, tera (T) 10<sup>12</sup>, peta (P) 10<sup>15</sup> and exa (E) 10<sup>18</sup>.'
-
+    show: 'Show'
+    hide: 'Hide'
+    toggle_non_energy: ' non energetic greenhouse emissions from  '
+    non_energy_info: 'The non energetic emissions are not adjustable in the ETM. You can only choose to show or to hide them.'
     introduction_html:
       This overview shows all direct greenhouse gas emissions of this area.
 
     charts:
-      bar_chart: "CO<sub>2</sub> emissions of energy use and other greenhouse gasses"
+      bar_chart: "CO<sub>2</sub> emissions of energy use"
+      bar_chart_non_energy: "CO<sub>2</sub> emissions of energy use and other greenhouse gasses"
       co2_sheet_agriculture_total_co2_emissions: Agriculture
       co2_sheet_industry_energy_total_co2_emissions: Industry & Energy
       co2_sheet_transport_total_co2_emissions: Transport & Mobility

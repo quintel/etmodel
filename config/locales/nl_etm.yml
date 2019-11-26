@@ -140,9 +140,10 @@ nl:
   updated:
     title: Het ETM is bijgewerkt!
     description:
-      De biomassasectie in het ETM is verbeterd en uitgebreid. Nieuwe grootschalige flexibiliteitsopties voor elektriciteitsopslag zijn toegevoegd en je
-      kunt nu via de PICO applicatie de ruimtelijke impact van de potenties van
-      windturbines op land verkennen.
+      De gasvraag wordt nu op uurbasis berekend, de impact van extreme
+      weersomstandigheden kan verkend worden en het is mogelijk om hybride
+      warmte en waterstof in te zetten in de industriesector. Ook is er nu
+      een CO2-factsheet voor je scenario beschikbaar.
 
   # ----------- Dashbord titles ----------- #
   dashboard:
@@ -167,8 +168,9 @@ nl:
     insulation_level: "isolatiewaarde"
     temperature: "temperatuur"
     efficiency: "%/jaar"
+    hybrid_heating: "MW"
     heat_demand_reduction: "warmtevraagreductie"
-    electricity_output: "Elektrisch vermogen"
+    electricity_output: "elektrisch vermogen"
 
   #------------ Output Serie Labels ------------- #
   scenario:
@@ -234,6 +236,7 @@ nl:
     intelligent_control: "intelligente regeling"
     insulation_level: "isolatiewaarde"
     efficiency: "efficiëntieverbetering"
+    hybrid_heating: "hybride warmte"
     empty: ""
     heat_production: "warmteproductie"
     help_me_choose: "help mij kiezen"
@@ -270,6 +273,8 @@ nl:
     carbon_source_synthetic_methane: "koolstofafvangtechnologiën"
     hydrogen_production: "waterstofproductie"
     full_load_hours: "vollasturen"
+    temperature: "temperatuur"
+    weather_years: "weerjaren"
     other_industry_energetic: "energiedragers"
     renewable_heaters: "hernieuwbare ketels"
     fossil_heaters: "fossiele ketels"

@@ -13,7 +13,7 @@ module Embeds
     # Sorry for the dutch. PICO is in dutch...
     def area_name
       return 'Nederland' if type == Embeds::Pico::AreaType::Country
-      
+
       area.sub(/\A[^_]*/, '').humanize
     end
 

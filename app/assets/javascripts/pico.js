@@ -47,6 +47,5 @@ var pico = {
 
     picoOptions.showMaps = [];
     picoInitWindenergy(picoOptions);
-    picoGetTurbineCount()
   }
 };

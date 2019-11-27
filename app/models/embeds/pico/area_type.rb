@@ -1,5 +1,5 @@
-# frozen_string_literal
-#
+# frozen_string_literal: true
+
 # This code is meant to hold behaviour and data concerning the PICO area types.
 #
 # The following javascript objects come from the site below.
@@ -17,8 +17,10 @@
 #    - prov_code, Source is CBS and should match between ETM and PICO.
 #    - gem_code, BAG mucipal ID and should match between ETM and PICO.
 #    - red_code, some unknown identifier. Doesn't match between ETM and PICO
+
 module Embeds
   module Pico
+    # no-doc
     module AreaType
       class UnmatchableSelectValueError < StandardError; end
 
@@ -35,11 +37,12 @@ module Embeds
       # select_field_stripper: Strategy for creating a select_field from
       #                        an Api::Area#area.
 
-      type = Struct.new(:key, :select_field, :matcher, :select_field_stripper) do
-        def get_select_value(area)
-          select_field_stripper.call(area)
+      type =
+        Struct.new(:key, :select_field, :matcher, :select_field_stripper) do
+          def get_select_value(area)
+            select_field_stripper.call(area)
+          end
         end
-      end
 
       Municipality = type.new(:gemeente, :gem_code, /\AGM/, proc do |area|
         area.split('_').first.sub('GM', '')
@@ -53,7 +56,7 @@ module Embeds
         raise UnmatchableSelectValueError
       end).freeze
 
-      Country = type.new(:land, ''.freeze, 'nl', proc { '' }).freeze
+      Country = type.new(:land, '', 'nl', proc { '' }).freeze
 
       ALL = [Municipality, Province, Res, Country].freeze
     end

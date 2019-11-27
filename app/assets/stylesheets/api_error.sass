@@ -1,0 +1,108 @@
+body.has-api-error
+  overflow: hidden
+
+#api-error
+  background: #fff
+  bottom: 0
+  color: #d03333
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
+  font-size: 14px
+  left: 0
+  overflow-y: scroll
+  position: fixed
+  padding: 25px
+  right: 0
+  top: 0
+  z-index: 10000
+
+  h1
+    background: #d03333
+    border-radius: 5px
+    color: white
+    margin-top: 0
+    padding: 10px
+
+    .fa
+      font-size: 22px
+      margin-top: -4px
+      margin-right: 2px
+      vertical-align: middle
+
+  .buttons
+    border-bottom: 1px solid #ccc
+    margin-bottom: 1em
+    padding-bottom: 1em
+
+    a
+      background: #ddd
+      border-radius: 2px
+      color: #555
+      display: inline-block
+      font-size: 12px
+      font-weight: bold
+      margin-right: 0.5em
+      padding: 4px 10px 3px
+      text-decoration: none
+      text-transform: uppercase
+      &:hover
+        background: #ccc
+      &.primary
+        background: #39b73e
+        color: #fff
+        &:hover
+          background: #32a037
+      &.open-api
+        float: right
+        margin-right: 0
+
+  h2
+    font-size: 16px
+    font-weight: 600
+    margin: 0
+    strong
+      font-weight: 900
+    code
+      font-size: 15px
+      line-height: 1
+      font-weight: bold
+      background: #eee
+      padding: 1px 4px
+
+  ul
+    list-style: none
+    padding-left: 0
+    margin: 0
+
+  li
+    margin-bottom: 1em
+
+  .trace
+    border-left: 2px solid #bbb
+    color: #999
+    margin: 1em 0 0 1em
+    padding-left: 1em
+
+  pre
+    font-size: 12px
+    margin: 0
+
+    strong
+      color: #555
+      background: #ffffb6
+
+    &.server-error
+      color: #555
+      font-size: 14px
+
+  .expand
+    background: #bbb
+    border-radius: 2px
+    color: #fff
+    cursor: pointer
+    display: inline-block
+    line-height: 1
+    margin-top: 4px
+    padding: 1px 4px 0px
+
+    &:hover
+      background: #999

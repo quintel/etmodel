@@ -36,19 +36,19 @@ module Embeds::Pico::AreaType
     end
   end
 
-  Municipality = type.new(:gemeente, :gem_code, /\AGM/, ->(area) do
-    area.split('_').first.sub("GM", "")
-  end)
+  Municipality = type.new(:gemeente, :gem_code, /\AGM/, Proc.new do |area|
+    area.split('_').first.sub('GM', '')
+  end).freeze
 
-  Province = type.new(:provincie, :prov_code, /\APV/, ->(area) do
-    area.split('_').first.sub("PV", "")
-  end)
+  Province = type.new(:provincie, :prov_code, /\APV/,  Proc.new do |area|
+    area.split('_').first.sub('PV', '')
+  end).freeze
 
-  Res = type.new(:res, :res_code, /\ARES/, ->(area) do
+  Res = type.new(:res, :res_code, /\ARES/, Proc.new do |area|
     raise UnmatchableSelectValueError
-  end)
+  end).freeze
 
-  Country = type.new(:land, "".freeze, "nl", ->(area){ '' })
+  Country = type.new(:land, ''.freeze, 'nl', Proc.new { '' }).freeze
 
-  ALL = [Municipality, Province, Res, Country]
+  ALL = [Municipality, Province, Res, Country].freeze
 end

@@ -24,7 +24,6 @@ describe Embeds::PicoArea, vcr: true do
   end
 
   describe '#type' do
-
     context 'with a municipality' do
       subject { municipality.type }
       it { expect(subject).to eq Embeds::Pico::AreaType::Municipality }
@@ -70,21 +69,21 @@ describe Embeds::PicoArea, vcr: true do
     end
   end
 
-  describe "#select_field" do
+  describe '#select_field' do
     context 'with rotterdam' do
       subject { municipality.select_value }
       it { is_expected.to eq '0599' }
     end
 
-    context "with a res" do
+    context 'with a res' do
       subject { res.select_value }
-      it "raises an error" do
-        expect{subject}
+      it 'raises an error' do
+        expect { subject }
           .to raise_error(Embeds::Pico::AreaType::UnmatchableSelectValueError)
       end
     end
 
-    context "with flevoland" do
+    context 'with flevoland' do
       subject { province.select_value }
       it { is_expected.to eq '24' }
     end
@@ -102,7 +101,7 @@ describe Embeds::PicoArea, vcr: true do
     end
   end
 
-  describe "#to_js" do
+  describe '#to_js' do
     subject { nl.to_js }
     it "doesn't contain unexpected characters" do
       expect(subject).to match(/^[{}:a-zA-Z', ]*$/)

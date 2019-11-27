@@ -13,12 +13,13 @@ module Embeds
     # Sorry for the dutch. PICO is in dutch...
     def area_name
       return 'Nederland' if type == Embeds::Pico::AreaType::Country
+      
       area.sub(/\A[^_]*/, '').humanize
     end
 
     # Sorry for the dutch. PICO is in dutch...
     def type
-      TYPES.find{|type| area.match?(type.matcher) } or FALLBACK_TYPE
+      TYPES.find { |type| area.match?(type.matcher) } || FALLBACK_TYPE
     end
 
     def select_value
@@ -26,8 +27,8 @@ module Embeds
     end
 
     def to_js
-      "{areatype:'#{type.key}', areaname:'#{area_name}'," +
-      " selectfield: '#{type.select_field}', selectvalue:'#{select_value}'}"
+      "{areatype:'#{type.key}', areaname:'#{area_name}'," \
+        " selectfield: '#{type.select_field}', selectvalue:'#{select_value}'}"
     end
 
     def supported?

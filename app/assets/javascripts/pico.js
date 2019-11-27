@@ -5,10 +5,10 @@ var pico = {
 
   message: function(power){
     return {
-      action: "updateInlandWindTurbine",
-      description: "This data is used to update the windturbine power slide " +
-                   "in the Enegy transition model. The unit of which power " +
-                   "represents the magnitute is Mega Watt",
+      action: 'updateInlandWindTurbine',
+      description: 'This data is used to update the windturbine power slide ' +
+                   'in the Enegy transition model. The unit of which power ' +
+                   'represents the magnitute is Mega Watt',
       argument: {
         power: pico.inMegaWatt(power),
       },

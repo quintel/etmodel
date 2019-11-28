@@ -3,8 +3,10 @@
 module Embeds
   # This is a simple wrapper/decorator for Api::Area.
   class PicoArea < SimpleDelegator
-    TYPES = Embeds::Pico::AreaType::ALL
-    FALLBACK_TYPE = Embeds::Pico::AreaType::Country
+    TYPES             = Embeds::Pico::AreaType::ALL
+    FALLBACK_TYPE     = Embeds::Pico::AreaType::Country
+    UNSUPPORTED_TYPES = [ Embeds::Pico::AreaType::Country,
+                          Embeds::Pico::AreaType::Res].freeze
 
     def self.find_by_area_code(area_code)
       new Api::Area.find(area_code)
@@ -17,13 +19,12 @@ module Embeds
       area.sub(/\A[^_]*/, '').humanize
     end
 
-    # Sorry for the dutch. PICO is in dutch...
     def type
       TYPES.find { |type| area.match?(type.matcher) } || FALLBACK_TYPE
     end
 
     def select_value
-      type.get_select_value(area)
+      type.select_value_from(area)
     end
 
     def to_js
@@ -32,9 +33,7 @@ module Embeds
     end
 
     def supported?
-      return true if area == 'nl' || type != Embeds::Pico::AreaType::Country
-
-      false
+      area == 'nl' || !UNSUPPORTED_TYPES.include?(type)
     end
   end
 end

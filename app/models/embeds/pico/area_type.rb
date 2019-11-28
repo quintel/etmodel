@@ -39,7 +39,7 @@ module Embeds
 
       type =
         Struct.new(:key, :select_field, :matcher, :select_field_stripper) do
-          def get_select_value(area)
+          def select_value_from(area)
             select_field_stripper.call(area)
           end
         end
@@ -52,11 +52,11 @@ module Embeds
         area.split('_').first.sub('PV', '')
       end).freeze
 
+      Country = type.new(:land, '', 'nl', proc { '' }).freeze
+
       Res = type.new(:res, :res_code, /\ARES/, proc do
         raise UnmatchableSelectValueError
       end).freeze
-
-      Country = type.new(:land, '', 'nl', proc { '' }).freeze
 
       ALL = [Municipality, Province, Res, Country].freeze
     end

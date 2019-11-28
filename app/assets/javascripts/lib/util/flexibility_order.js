@@ -15,13 +15,14 @@
    */
   function renderOptions(element, options, capacities) {
     options.forEach(function(optionKey) {
-      element.append(
-        optionTemplate({
-          id: optionKey,
-          name: I18n.t('output_elements.flexibility_options.' + optionKey),
-          capacity: capacities[optionKey].toString()
-        })
-      );
+      if (capacities[optionKey] > 0){
+        element.append(
+          optionTemplate({
+            id: optionKey,
+            name: I18n.t('output_elements.flexibility_options.' + optionKey),
+            capacity: capacities[optionKey].toString()
+          })
+        )};
     });
   }
 

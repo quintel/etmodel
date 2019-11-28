@@ -15,14 +15,15 @@
    */
   function renderOptions(element, options, capacities) {
     options.forEach(function(optionKey) {
-      if (capacities[optionKey] > 0){
+      if (capacities[optionKey] > 0) {
         element.append(
           optionTemplate({
             id: optionKey,
             name: I18n.t('output_elements.flexibility_options.' + optionKey),
             capacity: capacities[optionKey].toString()
           })
-        )};
+        );
+      }
     });
   }
 
@@ -37,7 +38,7 @@
         key,
         value;
 
-    options.forEach(function(optionKey){
+    options.forEach(function(optionKey) {
       queries.push('merit_flexibility_order_' + optionKey + '_capacity');
     });
 
@@ -51,7 +52,7 @@
     });
 
     xhr.success(function(data) {
-      queries.forEach(function(query_key){
+      queries.forEach(function(query_key) {
         query = data.gqueries[query_key];
         value = new Quantity(query.future, query.unit);
         key = query_key.replace(/merit_flexibility_order_|_capacity/g, '');

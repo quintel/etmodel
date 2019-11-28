@@ -5,10 +5,10 @@ var pico = {
 
   message: function(power){
     return {
-      action: "updateInlandWindTurbine",
-      description: "This data is used to update the windturbine power slide " +
-                   "in the Enegy transition model. The unit of which power " +
-                   "represents the magnitute is Mega Watt",
+      action: 'updateInlandWindTurbine',
+      description: 'This data is used to update the windturbine power slide ' +
+                   'in the Enegy transition model. The unit of which power ' +
+                   'represents the magnitute is Mega Watt',
       argument: {
         power: pico.inMegaWatt(power),
       },
@@ -29,16 +29,11 @@ var pico = {
   main: function(opts){
     var picoOptions = {};
 
-    // Load the html template
+    // Pico API specifics.
     initPico();
-
-    // Initialize the map
     initPicomap();
 
-    picoOptions.selectedArea = {
-      areatype: opts.areaType,
-      areaname: opts.areaName,
-    };
+    picoOptions.selectedArea = opts;
 
     picoOptions.windturbineRestrictions = {
       awayFromBuildings:1,

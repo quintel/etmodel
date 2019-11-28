@@ -4,7 +4,7 @@
   var optionTemplate = _.template(
     '<li data-id="<%= id %>">' +
       '  <%- name %>' +
-      '  <span><%- capacity %></span>' +
+      '  <div class="flexibility-options__capacity"><%- capacity %></div>' +
       '  <span class="fa fa-bars></span>' +
       '</li>'
   );

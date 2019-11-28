@@ -5,8 +5,8 @@ module Embeds
   class PicoArea < SimpleDelegator
     TYPES             = Embeds::Pico::AreaType::ALL
     FALLBACK_TYPE     = Embeds::Pico::AreaType::Country
-    UNSUPPORTED_TYPES = [ Embeds::Pico::AreaType::Country,
-                          Embeds::Pico::AreaType::Res].freeze
+    UNSUPPORTED_TYPES = [Embeds::Pico::AreaType::Country,
+                         Embeds::Pico::AreaType::Res].freeze
 
     def self.find_by_area_code(area_code)
       new Api::Area.find(area_code)

@@ -13,15 +13,50 @@
    * Given an element and a list of flexibility options, renders a list element
    * which may be used by Sortable.
    */
-  function renderOptions(element, options) {
+  function renderOptions(element, options, capacities) {
     options.forEach(function(optionKey) {
       element.append(
         optionTemplate({
           id: optionKey,
           name: I18n.t('output_elements.flexibility_options.' + optionKey),
-          capacity: '10 MW'
+          capacity: capacities[optionKey].toString()
         })
       );
+    });
+  }
+
+  /**
+   * Queries the capacity of each options element and stores it as
+   * a Quantity, on success calls renderOptions
+   */
+  var setCapacities = function(sortableEl, options) {
+    var queries = [],
+        capacities = {},
+        query,
+        key,
+        value;
+
+    options.forEach(function(optionKey){
+      queries.push('merit_flexibility_order_' + optionKey + '_capacity');
+    });
+
+    var xhr = $.ajax({
+      type: 'PUT',
+      dataType: 'json',
+      data: {
+          gqueries: queries
+      },
+      url: App.scenario.url_path()
+    });
+
+    xhr.success(function(data) {
+      queries.forEach(function(query_key){
+        query = data.gqueries[query_key];
+        value = new Quantity(query.future, query.unit);
+        key = query_key.replace(/merit_flexibility_order_|_capacity/g, '');
+        capacities[key] = value.smartScale();
+      });
+      renderOptions(sortableEl, options, capacities);
     });
   }
 
@@ -44,15 +79,13 @@
 
     this.element.addClass('loading');
 
-    // this request should be expanded to also include the capacities
-    // or should there be a new request?
     var xhr = $.ajax({
       url: this.url,
       type: 'GET'
     });
 
     xhr.success(function(data) {
-      renderOptions(sortableEl, data.order);
+      setCapacities(sortableEl, data.order);
       self.element.removeClass('loading');
 
       Sortable.create(sortableEl[0], {

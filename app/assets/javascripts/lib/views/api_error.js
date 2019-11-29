@@ -85,6 +85,12 @@
       'click .refresh': function(event) {
         event.preventDefault();
         window.location = window.location; // eslint-disable-line no-self-assign
+      },
+      'click .hide': function(event) {
+        event.preventDefault();
+
+        this.$el.remove();
+        $('body').removeClass('has-api-error');
       }
     },
 
@@ -103,6 +109,7 @@
             'href',
             location.pathname
           ),
+          $('<a class="hide">Hide this message</a>').attr('href', '#'),
           $('<a class="open-api">View scenario in ETEngine</a>').attr(
             'href',
             this.options.scenarioURL

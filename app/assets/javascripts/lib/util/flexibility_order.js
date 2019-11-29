@@ -59,6 +59,8 @@
 
       renderOptions(sortableEl, options, capacities);
     });
+
+    return xhr;
   };
 
   /**
@@ -86,21 +88,22 @@
     });
 
     xhr.success(function(data) {
-      setCapacities(sortableEl, data.order);
-      self.element.removeClass('loading');
+      setCapacities(sortableEl, data.order).success(function() {
+        self.element.removeClass('loading');
 
-      Sortable.create(sortableEl[0], {
-        ghostClass: 'ghost',
-        animation: 150,
-        store: {
-          get: function() {
-            self.lastGood = data.order;
-            return data.order;
-          },
-          set: function(sortable) {
-            self.update(sortable);
+        Sortable.create(sortableEl[0], {
+          ghostClass: 'ghost',
+          animation: 150,
+          store: {
+            get: function() {
+              self.lastGood = data.order;
+              return data.order;
+            },
+            set: function(sortable) {
+              self.update(sortable);
+            }
           }
-        }
+        });
       });
     });
 

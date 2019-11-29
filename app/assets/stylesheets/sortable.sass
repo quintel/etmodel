@@ -71,6 +71,12 @@ ul.sortable li
     &:before
       content: counter(section)
 
+.flexibility-options
+  &__capacity
+    float: right
+  &__header
+    padding: 4px 10px 4px 55px
+
 #flexibility-options
   .loading-message
     display: none
@@ -97,5 +103,5 @@ ul.sortable li
       display: block
       height: 100px
 
-    .sortable, .curtailment
-      display: none !important
+    .sortable, .curtailment, .flexibility-options__header
+      display: none

@@ -1,4 +1,4 @@
-/* globals _ $ App I18n Sortable */
+/* globals _ $ App I18n Sortable Quantity */
 
 (function(window) {
   var optionTemplate = _.template(
@@ -32,11 +32,8 @@
    * a Quantity, on success calls renderOptions
    */
   var setCapacities = function(sortableEl, options) {
-    var queries = [],
-        capacities = {},
-        query,
-        key,
-        value;
+    var queries = [];
+    var capacities = {};
 
     options.forEach(function(optionKey) {
       queries.push('merit_flexibility_order_' + optionKey + '_capacity');
@@ -46,21 +43,23 @@
       type: 'PUT',
       dataType: 'json',
       data: {
-          gqueries: queries
+        gqueries: queries
       },
       url: App.scenario.url_path()
     });
 
     xhr.success(function(data) {
       queries.forEach(function(query_key) {
-        query = data.gqueries[query_key];
-        value = new Quantity(query.future, query.unit);
-        key = query_key.replace(/merit_flexibility_order_|_capacity/g, '');
+        var query = data.gqueries[query_key];
+        var value = new Quantity(query.future, query.unit);
+        var key = query_key.replace(/merit_flexibility_order_|_capacity/g, '');
+
         capacities[key] = value.smartScale();
       });
+
       renderOptions(sortableEl, options, capacities);
     });
-  }
+  };
 
   /**
    * Handles setting up the user-sortable flexibility order, and triggers

@@ -5,12 +5,16 @@ nl:
     header_html: "CO<sub>2</sub>-voetafdruk van %{area}"
     footer_text_html:
       '* Energiegebruik wordt uitgedrukt in Joule (J), CO<sub>2</sub>-uitstoot wordt uitgedrukt in ton (T). Een kilo (k) is 10<sup>3</sup>, mega (M) 10<sup>6</sup>, giga (G) 10<sup>9</sup>, tera (T) 10<sup>12</sup>, peta (P) 10<sup>15</sup> en exa (E) 10<sup>18</sup>.'
-
+    show: 'Toon'
+    hide: 'Verberg'
+    toggle_non_energy: ' andere non-energetische broeikasgassen uit '
+    non_energy_info: 'De non-energetische emissies zijn niet aan te passen in het ETM. Je kunt kiezen of je ze in dit overzicht meeneemt.'
     introduction_html:
       In dit overzicht vind je alle directe uitstoot van broeikasgassen van dit gebied.
 
     charts:
-      bar_chart: "CO<sub>2</sub>-uitstoot van energiegebruik en overige broeikasgassen"
+      bar_chart: "CO<sub>2</sub>-uitstoot van energiegebruik"
+      bar_chart_non_energy: "CO<sub>2</sub>-uitstoot van energiegebruik en overige broeikasgassen"
       co2_sheet_agriculture_total_co2_emissions: Landbouw
       co2_sheet_industry_energy_total_co2_emissions: Industrie & Energie
       co2_sheet_transport_total_co2_emissions: Transport & Mobiliteit

@@ -32,7 +32,7 @@
 
       if (split[0].match(/\/(present|future)/)) {
         var title = split[0].trim().split('/', 2);
-        title[0] = '<strong>#{title[0]}</strong>';
+        title[0] = '<strong>' + title[0] + '</strong>';
         split[0] = title.join('/');
       } else if (split[0].slice(0, 11) == 'SyntaxError') {
         split[0] = split[0].replace(/in (\w+)/g, 'in <code>$1</code>');

@@ -5,7 +5,9 @@
     '<li data-id="<%= id %>">' +
       '  <%- name %>' +
       '  <span class="fa fa-bars"></span>' +
-      '  <div class="flexibility-options__capacity"><%- capacity %></div>' +
+      '  <div class="flexibility-options__capacity">' +
+      '    <%- capacity %>' +
+      '  </div>' +
       '</li>'
   );
 
@@ -20,7 +22,8 @@
           optionTemplate({
             id: optionKey,
             name: I18n.t('output_elements.flexibility_options.' + optionKey),
-            capacity: capacities[optionKey].toString()
+            capacity: capacities[optionKey].toString() + " " +
+                      I18n.t('output_elements.flexibility_options.installed')
           })
         );
       }

@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://beta-engine.energytransitionmodel.com/api/v3/scenarios/648695.json?detailed=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.14.0
+      Date:
+      - Tue, 03 Dec 2019 16:11:32 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"7a982ba738d3c9feede162fcf925644c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5391ddc2-af5b-4bf7-abc1-6330f97132f7
+      X-Runtime:
+      - '0.006847'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":648695,"title":"ETM Test Scenario","area_code":"nl","start_year":2015,"end_year":2050,"description":null,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/648695","ordering":null,"display_group":null,"scaling":null,"source":"ETM","template":null,"created_at":"2017-03-13T20:22:35.000+01:00","use_fce":false,"user_values":{}}'
+    http_version: 
+  recorded_at: Tue, 03 Dec 2019 16:11:32 GMT
+recorded_with: VCR 3.0.3

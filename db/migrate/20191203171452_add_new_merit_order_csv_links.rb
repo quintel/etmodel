@@ -53,13 +53,13 @@ class AddNewMeritOrderCsvLinks < ActiveRecord::Migration[5.2]
 
           <div class="data-deprecation">
             <span class="fa fa-info-circle"></span>
-            The format of the load and price curves has recently changed. You can
-            download copies of this data in the old format below, but note that
-            these will be discontinued in April 2020.
+            De bestandsindeling van de draaiprofielen en prijscurves is recent veranderd.
+            Hieronder kun je de data in het oude format downloaden.
+            Let op: De oude bestanden blijven beschikbaar tot april 2020.
 
             <ul class="data-download merit-data-downloads">
-              <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/loads.csv"><span class="fa fa-download"></span> Draaiprofielen (oud formaat) <span class="filetype">(11MB CSV)</span></a></li>
-              <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/price.csv"><span class="fa fa-download"></span> Prijscurve (oud formaat) <span class="filetype">(158KB CSV)</span></a></li>
+              <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/loads.csv"><span class="fa fa-download"></span> Draaiprofielen (oud format) <span class="filetype">(11MB CSV)</span></a></li>
+              <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/price.csv"><span class="fa fa-download"></span> Prijscurve (oud format) <span class="filetype">(158KB CSV)</span></a></li>
             </ul>
           </div>
         TXT

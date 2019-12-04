@@ -10,7 +10,7 @@ class AddHeatNetworkCsvSlide < ActiveRecord::Migration[5.2]
       description_attributes: {
         content_en: <<-TXT.strip_heredoc,
           Download information about the hourly demands and supplies of heat
-          through the central heat network.
+          through the central heat network for households, buildings and agriculture.
 
           <ul class="data-download">
             <li>
@@ -23,14 +23,14 @@ class AddHeatNetworkCsvSlide < ActiveRecord::Migration[5.2]
           </ul>
         TXT
         content_nl: <<-TXT.strip_heredoc,
-          Download information about the hourly demands and supplies of heat
-          through the central heat network.
+          Download informatie over de uurlijkse vraag en productie van collectieve
+          warmte voor warmtenetten in huishoudens, gebouwen en landbouw.
 
           <ul class="data-download">
             <li>
               <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/heat_network.csv">
                 <span class="fa fa-download"></span>
-                Heat network curves
+                Warmtenetcurves
                 <span class="filetype">(1.5MB CSV)</span>
               </a>
             </li>

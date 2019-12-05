@@ -7,7 +7,7 @@ class SavedScenarioReportsController < ApplicationController
     @scenario_id = SavedScenario.find(params[:saved_scenario_id]).scenario_id
     @yml = YAML.load_file("config/saved_scenario_reports/#{report_name}.yml")
 
-    if valid_api_response? && valid_report_name?
+    if valid_report_name? && valid_api_response?
       @query_api_response = api_response['gqueries']
       respond_to do |format|
         format.csv { render 'saved_scenarios/reports/show.csv.erb' }
@@ -26,7 +26,7 @@ class SavedScenarioReportsController < ApplicationController
   # yml file has queries on depth 3
   def queries
     @queries ||= @yml.flat_map do |_k, v|
-      v.flat_map { |_k_2, v_2| v_2.values }
+      v.flat_map { |_k2, v2| v2.values }
     end
   end
 
@@ -47,6 +47,6 @@ class SavedScenarioReportsController < ApplicationController
     entries = Dir.entries('config/saved_scenario_reports').map do |file|
       file.sub(/\.+\w*/, '')
     end
-    entries.reject { |file_name| file_name.empty? }
+    entries.reject(&:empty?)
   end
 end

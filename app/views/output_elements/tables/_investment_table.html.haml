@@ -712,10 +712,10 @@
   %thead.subhead
     %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.flexibility'
   %tr.odd
-    %th= t("input_elements.households_flexibility_p2h_electricity_market_penetration").html_safe
-    %td.border-rgt{:data => {:gquery => "households_flexibility_p2h_electricity_present_in_investment_cost_table", :graph => :present}}
-    %td{:data => {:gquery => "households_flexibility_p2h_electricity_future_in_investment_cost_table"}}
-    %td{:data => {:gquery => "households_flexibility_p2h_electricity_delta_in_investment_cost_table"}}
+    %th= t("input_elements.households_flexibility_p2p_electricity_market_penetration").html_safe
+    %td.border-rgt{:data => {:gquery => "households_flexibility_p2p_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "households_flexibility_p2p_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "households_flexibility_p2p_electricity_delta_in_investment_cost_table"}}
   %tr.even
     %th= t("input_elements.investment_table_industry_other_paper_flexibility_p2h_network_gas_electricity").html_safe
     %td.border-rgt{:data => {:gquery => "industry_other_paper_flexibility_p2h_network_gas_electricity_present_in_investment_cost_table", :graph => :present}}

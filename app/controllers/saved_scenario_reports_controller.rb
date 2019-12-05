@@ -1,15 +1,17 @@
+# Create a report based on a .yml file in config/saved_scenario_reports
+# The report name and format should be provided in params (only works for csv)
 class SavedScenarioReportsController < ApplicationController
   before_action :ensure_valid_browser
 
   def show
     @scenario_id = SavedScenario.find(params[:saved_scenario_id]).scenario_id
-    @yml = YAML.load_file("config/saved_scenario_reports/#{ report_name }.yml")
+    @yml = YAML.load_file("config/saved_scenario_reports/#{report_name}.yml")
 
     if valid_api_response? && valid_report_name?
       @query_api_response = api_response['gqueries']
       respond_to do |format|
-        format.csv { render "saved_scenarios/reports/show.csv.erb",
-                   content_type: 'text/csv' }
+        format.csv { render 'saved_scenarios/reports/show.csv.erb',
+                            content_type: 'text/csv' }
       end
     else
       redirect_to saved_scenario_path(id: @scenario_id),
@@ -24,8 +26,8 @@ class SavedScenarioReportsController < ApplicationController
 
   # yml file has queries on depth 3
   def queries
-    @queries ||= @yml.flat_map do | k, v |
-      v.flat_map{ | k_2, v_2 | v_2.values }
+    @queries ||= @yml.flat_map do |k, v|
+      v.flat_map{ |k_2, v_2| v_2.values }
     end
   end
 
@@ -43,8 +45,9 @@ class SavedScenarioReportsController < ApplicationController
   end
 
   def valid_report_names
-    Dir.entries('config/saved_scenario_reports').map do | file |
+    entries = Dir.entries('config/saved_scenario_reports').map do |file|
       file.sub(/\.+\w*/, '')
-    end.select{ | file_name | !file_name.empty? }
+    end
+    entries.select { |file_name| !file_name.empty? }
   end
 end

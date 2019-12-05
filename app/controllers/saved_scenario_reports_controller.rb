@@ -10,8 +10,7 @@ class SavedScenarioReportsController < ApplicationController
     if valid_api_response? && valid_report_name?
       @query_api_response = api_response['gqueries']
       respond_to do |format|
-        format.csv { render 'saved_scenarios/reports/show.csv.erb',
-                            content_type: 'text/csv' }
+        format.csv { render 'saved_scenarios/reports/show.csv.erb' }
       end
     else
       redirect_to saved_scenario_path(id: @scenario_id),
@@ -21,13 +20,13 @@ class SavedScenarioReportsController < ApplicationController
 
   def api_response
     @api_response ||= Api::Scenario.find_with_queries(@scenario_id, queries)
-                             .parsed_response
+                                   .parsed_response
   end
 
   # yml file has queries on depth 3
   def queries
-    @queries ||= @yml.flat_map do |k, v|
-      v.flat_map{ |k_2, v_2| v_2.values }
+    @queries ||= @yml.flat_map do |_k, v|
+      v.flat_map { |_k_2, v_2| v_2.values }
     end
   end
 
@@ -48,6 +47,6 @@ class SavedScenarioReportsController < ApplicationController
     entries = Dir.entries('config/saved_scenario_reports').map do |file|
       file.sub(/\.+\w*/, '')
     end
-    entries.select { |file_name| !file_name.empty? }
+    entries.reject { |file_name| file_name.empty? }
   end
 end

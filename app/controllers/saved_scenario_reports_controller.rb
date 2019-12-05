@@ -1,56 +1,50 @@
 class SavedScenarioReportsController < ApplicationController
   before_action :ensure_valid_browser
-  before_action :assign_scenario
-  before_action :assign_report_name, only: :show
 
   def show
-    @yml = YAML.load_file(yml_report_path)
-    run_queries
-    respond_to do |format|
-      format.csv { render "saved_scenarios/reports/show.csv.erb", content_type: 'text/csv' }
+    @scenario_id = SavedScenario.find(params[:saved_scenario_id]).scenario_id
+    @yml = YAML.load_file("config/saved_scenario_reports/#{ report_name }.yml")
+
+    if valid_api_response? && valid_report_name?
+      @query_api_response = api_response['gqueries']
+      respond_to do |format|
+        format.csv { render "saved_scenarios/reports/show.csv.erb",
+                   content_type: 'text/csv' }
+      end
+    else
+      redirect_to saved_scenario_path(id: @scenario_id),
+                  notice:  'Your report could not be created'
     end
   end
 
-  def run_queries
-    @queries = []
-    find_queries(@yml)
-    #doet het niet! huilen
-    # @response = Api::Scenario.find_with_queries(@scenario.id, @queries)
+  def api_response
+    @api_response ||= Api::Scenario.find_with_queries(@scenario_id, queries)
+                             .parsed_response
   end
 
-  def find_queries(yml_part)
-    if yml_part.is_a?(Hash)
-      yml_part.values.each do |yml_sub_part|
-        find_queries(yml_sub_part)
-      end
-    else
-      #can be nil because not all queries are specified yet by mart
-      @queries << yml_part if yml_part
+  # yml file has queries on depth 3
+  def queries
+    @queries ||= @yml.flat_map do | k, v |
+      v.flat_map{ | k_2, v_2 | v_2.values }
     end
   end
 
   private
-  def assign_report_name
-    @report_name = params[:report_name].split('.')[0]
-    unless Pathname.new(yml_report_path).expand_path.exist?
-      redirect_to saved_scenario_path(id: params[:saved_scenario_id])
+  def report_name
+    params[:report_name].split('.')[0]
+  end
+
+  def valid_api_response?
+    !api_response['errors'].present?
+  end
+
+  def valid_report_name?
+    valid_report_names.include?(report_name)
+  end
+
+  def valid_report_names
+    Dir.entries('config/saved_scenario_reports').map do | file |
+      file.sub(/\.+\w*/, '')
     end
   end
-
-  def yml_report_path
-    "config/saved_scenario_reports/#{ @report_name }.yml"
-  end
-
-  # copied from saved_scenario -> maybe make more available?
-  def assign_scenario
-    @saved_scenario = SavedScenario.find(params[:saved_scenario_id])
-    @scenario = @saved_scenario.scenario(detailed: true)
-
-    unless @scenario&.loadable?
-      redirect_to root_path, notice: 'Sorry, this scenario cannot be loaded'
-    end
-  rescue ActiveResource::ResourceNotFound
-    redirect_to root_path, notice: 'Scenario not found'
-  end
-
 end

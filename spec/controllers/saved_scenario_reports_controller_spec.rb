@@ -10,10 +10,6 @@ describe SavedScenarioReportsController, vcr: true do
       before(:each){ get :show, params: { report_name: 'ovm.csv',
                                           saved_scenario_id: user_scenario.id } }
 
-      it 'has name' do
-        expect(assigns(:report_name)).to eq 'ovm'
-      end
-
       it 'has yml' do
         expect(assigns(:yml)).to_not be_empty
       end
@@ -22,8 +18,8 @@ describe SavedScenarioReportsController, vcr: true do
         expect(assigns(:queries)).to_not be_empty
       end
 
-      it 'has a response' do
-        expect(assigns(:response)).to eq 3
+      it 'has an api_response with queries' do
+        expect(assigns(:query_api_response)).to_not be_empty
       end
     end
   end

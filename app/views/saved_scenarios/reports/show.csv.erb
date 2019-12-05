@@ -1,13 +1,8 @@
-<%# up to 2 nests, very very very ugly %>
-<%=@scenario.id%>
+<%=@scenario_id%>
 <%-@yml.each do |category, value| %>
   <%-value.each do |subcategory, subvalue| %>
-    <%-if subvalue.is_a?(Hash)%>
-      <%-subvalue.each do |subsubcategory, subsubvalue| %>
-        <%=category%>;<%=subcategory%>;<%=subsubcategory%>;<%=subsubvalue%>
-      <%-end%>
-    <%-else%>
-      <%=category%>;;<%=subcategory%>;<%=subvalue%>
+    <%-subvalue.each do |split, query| %>
+      <%=category%>;<%=subcategory%>;<%=split%>;<%=@query_api_response[query]['future']%>;<%=@query_api_response[query]['unit']%>
     <%-end%>
   <%-end%>
 <%-end%>

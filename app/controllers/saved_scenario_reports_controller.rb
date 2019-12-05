@@ -45,6 +45,6 @@ class SavedScenarioReportsController < ApplicationController
   def valid_report_names
     Dir.entries('config/saved_scenario_reports').map do | file |
       file.sub(/\.+\w*/, '')
-    end
+    end.select{ | file_name | !file_name.empty? }
   end
 end

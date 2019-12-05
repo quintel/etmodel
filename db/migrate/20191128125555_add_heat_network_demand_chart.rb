@@ -6,7 +6,8 @@ class AddHeatNetworkDemandChart < ActiveRecord::Migration[5.2]
     'households_final_demand_steam_hot_water_input_curve' => '#E69567',
     'other_final_demand_steam_hot_water_input_curve' => '#786FA6',
     'energy_heat_distribution_loss_input_curve' => '#800080',
-    'energy_heat_unused_steam_hot_water_input_curve' => '#FF8C8C'
+    'energy_heat_unused_steam_hot_water_input_curve' => '#FF8C8C',
+    'energy_heat_network_storage_input_curve' => '#0984E3'
   }
 
   def up
@@ -26,12 +27,13 @@ class AddHeatNetworkDemandChart < ActiveRecord::Migration[5.2]
       create_output_series(el, 'other_final_demand_steam_hot_water_input_curve', 'other_final_demand_steam_hot_water_input_curve', 5)
       create_output_series(el, 'energy_heat_distribution_loss_input_curve', 'energy_heat_distribution_loss_input_curve', 6)
       create_output_series(el, 'energy_heat_unused_steam_hot_water_input_curve', 'energy_heat_unused_steam_hot_water_input_curve', 7)
+      create_output_series(el, 'energy_heat_network_storage_input_curve', 'energy_heat_network_storage_input_curve', 8)
     end
   end
 
   def down
     ActiveRecord::Base.transaction do
-      OutputElement.find_by_key(:network_gas_demand).destroy!
+      OutputElement.find_by_key(:heat_network_demand).destroy!
     end
   end
 

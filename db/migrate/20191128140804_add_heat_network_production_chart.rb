@@ -7,7 +7,7 @@ class AddHeatNetworkProductionChart < ActiveRecord::Migration[5.2]
     'energy_chp_local_wood_pellets_steam_hot_water_output_curve' => '#3D6B0D',
     'energy_chp_supercritical_waste_mix_steam_hot_water_output_curve' => '#218C74',
     'energy_chp_ultra_supercritical_lignite_steam_hot_water_output_curve' => '#222F3E',
-    'energy_chps_coal_steam_hot_water_output_curve' => '#485460',
+    'energy_chp_coal_steam_hot_water_output_curve' => '#485460',
     'energy_heat_backup_burner_network_gas_steam_hot_water_output_curve' => '#CED6E0',
     'energy_heat_burner_crude_oil_steam_hot_water_output_curve' => '#CD6133',
     'energy_heat_burner_coal_steam_hot_water_output_curve' => '#333333',
@@ -39,7 +39,7 @@ class AddHeatNetworkProductionChart < ActiveRecord::Migration[5.2]
       create_output_series(el, 'energy_chp_local_wood_pellets_steam_hot_water_output_curve', 'energy_chp_local_wood_pellets_steam_hot_water_output_curve', 5)
       create_output_series(el, 'energy_chp_supercritical_waste_mix_steam_hot_water_output_curve', 'energy_chp_supercritical_waste_mix_steam_hot_water_output_curve', 6)
       create_output_series(el, 'energy_chp_ultra_supercritical_lignite_steam_hot_water_output_curve', 'energy_chp_ultra_supercritical_lignite_steam_hot_water_output_curve', 7)
-      create_output_series(el, 'energy_chps_coal_steam_hot_water_output_curve', 'energy_chps_coal_steam_hot_water_output_curve', 8)
+      create_output_series(el, 'energy_chp_coal_steam_hot_water_output_curve', 'energy_chps_coal_steam_hot_water_output_curve', 8)
       create_output_series(el, 'energy_heat_backup_burner_network_gas_steam_hot_water_output_curve', 'energy_heat_backup_burner_network_gas_steam_hot_water_output_curve', 9)
       create_output_series(el, 'energy_heat_burner_crude_oil_steam_hot_water_output_curve', 'energy_heat_burner_crude_oil_steam_hot_water_output_curve', 10)
       create_output_series(el, 'energy_heat_burner_coal_steam_hot_water_output_curve', 'energy_heat_burner_coal_steam_hot_water_output_curve', 11)

@@ -94,7 +94,7 @@ Etm::Application.routes.draw do
 
   resources :saved_scenarios, only:[:show] do
     member { get :load }
-    get '/report/:report_name' => 'saved_scenario_reports#show', as: :show
+    get '/report/:report_name' => 'saved_scenario_reports#show'
   end
 
   get '/scenario/new' => 'scenarios#new'

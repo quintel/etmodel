@@ -1,8 +1,0 @@
-<%=@scenario_id%>
-<%-@yml.each do |category, value| %>
-  <%-value.each do |subcategory, subvalue| %>
-    <%-subvalue.each do |split, query| %>
-      <%=category%>;<%=subcategory%>;<%=split%>;<%=@query_api_response[query]['future']%>;<%=@query_api_response[query]['unit']%>
-    <%-end%>
-  <%-end%>
-<%-end%>

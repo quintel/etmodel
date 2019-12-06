@@ -1,52 +1,42 @@
 # Create a report based on a .yml file in config/saved_scenario_reports
 # The report name and format should be provided in params (only works for csv)
 class SavedScenarioReportsController < ApplicationController
-  before_action :ensure_valid_browser
+  before_action :assign_saved_scenario
 
   def show
-    @scenario_id = SavedScenario.find(params[:saved_scenario_id]).scenario_id
-    @yml = YAML.load_file("config/saved_scenario_reports/#{report_name}.yml")
-
-    if valid_report_name? && valid_api_response?
-      @query_api_response = api_response['gqueries']
-      respond_to do |format|
-        format.csv { render 'saved_scenarios/reports/show.csv.erb' }
-      end
+    if valid_report_name? && api_response['errors'].blank?
+      respond_to { |format| format.csv }
     else
-      redirect_to saved_scenario_path(id: @scenario_id),
-                  notice:  'Your report could not be created'
-    end
-  end
-
-  def api_response
-    @api_response ||= Api::Scenario.find_with_queries(@scenario_id, queries)
-                                   .parsed_response
-  end
-
-  # yml file has queries on depth 3
-  def queries
-    @queries ||= @yml.flat_map do |_k, v|
-      v.flat_map { |_k2, v2| v2.values }
+      redirect_to @saved_scenario, notice:  'Your report could not be created'
     end
   end
 
   private
-  def report_name
-    params[:report_name].split('.')[0]
+
+  def api_response
+    @api_response ||=
+      Api::Scenario.find_with_queries(@saved_scenario.scenario_id, queries)
+                   .parsed_response
   end
 
-  def valid_api_response?
-    !api_response['errors'].present?
+  def report_template
+    template_path = "config/saved_scenario_reports/#{params[:report_name]}.yml"
+    @_tmp ||= YAML.load_file(template_path)
+  end
+
+  def queries
+    @queries ||= report_template.values.flat_map(&:values)
+                                       .flat_map(&:values)
   end
 
   def valid_report_name?
-    valid_report_names.include?(report_name)
+    report_definitions = Dir.entries('config/saved_scenario_reports')
+    report_definitions.map{ |fname| fname.sub(/\.+\w*/, '') }
+                      .reject(&:empty?)
+                      .include?(params[:report_name])
   end
 
-  def valid_report_names
-    entries = Dir.entries('config/saved_scenario_reports').map do |file|
-      file.sub(/\.+\w*/, '')
-    end
-    entries.reject(&:empty?)
+  def assign_saved_scenario
+    @saved_scenario = SavedScenario.find(params[:saved_scenario_id])
   end
 end

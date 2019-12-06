@@ -7,7 +7,7 @@ FactoryBot.define do
   factory :sidebar_item do
     sequence(:key) {|n| "sidebar_item_#{n}" }
     sequence(:position) { |n| n }
-    association :tab, factory: :tab
+    tab_id { 1 }
   end
 
   factory :slide do

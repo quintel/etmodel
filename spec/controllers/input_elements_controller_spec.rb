@@ -18,8 +18,8 @@ describe InputElementsController do
     #   SidebarItem 4
     #     Slide 4
     #       InputElement 5
-    let!(:t1) { FactoryBot.create(:tab) }
-    let!(:t2) { FactoryBot.create(:tab) }
+    let!(:t1) { Tab.all.first }
+    let!(:t2) { Tab.all.second }
 
     let!(:si1) { FactoryBot.create(:sidebar_item, tab: t1) }
     let!(:si2) { FactoryBot.create(:sidebar_item, tab: t1) }

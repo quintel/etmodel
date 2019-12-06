@@ -19,7 +19,6 @@ describe ReportsController, vcr: true do
 
     context 'with an active scenario' do
       before { session[:setting] = Setting.new(api_session_id: 648_695) }
-      before { FactoryBot.create(:tab, key: 'demand') }
 
       it 'uses the scenario' do
         get :show, params: { id: 'sample' }
@@ -78,7 +77,8 @@ describe ReportsController, vcr: true do
         )
       end
 
-      before { FactoryBot.create(:tab, key: 'demand') }
+      # TODO: DELETE this comment
+      # before { FactoryBot.create(:tab, key: 'demand') }
 
       before { get(:auto) }
 

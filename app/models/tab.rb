@@ -1,33 +1,24 @@
-# == Schema Information
-#
-# Table name: tabs
-#
-#  id          :integer          not null, primary key
-#  key         :string(255)
-#  nl_vimeo_id :string(255)
-#  en_vimeo_id :string(255)
-#  position    :integer
-#
+require "ymodel"
 
-class Tab < ActiveRecord::Base
+class Tab < YModel::Base
   include AreaDependent
-
-  validates :key, presence: true, uniqueness: true
-  validates :position, numericality: true
 
   has_many :sidebar_items, dependent: :nullify
   has_one :area_dependency, as: :dependable, dependent: :destroy
-
-  accepts_nested_attributes_for :area_dependency
-
-  scope :ordered, -> { order('position') }
 
   # Returns all Tabs intended for display to ordinary users.
   def self.frontend
     ordered.reject(&:area_dependent)
   end
 
+  def self.ordered
+    all.sort_by(&:position)
+  end
+
   def allowed_sidebar_items
-    sidebar_items.roots.includes(:area_dependency).ordered.reject(&:area_dependent)
+    sidebar_items.roots
+                 .includes(:area_dependency)
+                 .ordered
+                 .reject(&:area_dependent)
   end
 end

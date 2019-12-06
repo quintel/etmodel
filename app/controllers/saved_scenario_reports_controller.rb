@@ -7,7 +7,7 @@ class SavedScenarioReportsController < ApplicationController
     if valid_report_name? && api_response['errors'].blank?
       respond_to { |format| format.csv }
     else
-      redirect_to @saved_scenario, notice:  'Your report could not be created'
+      redirect_to @saved_scenario, notice: 'Your report could not be created'
     end
   end
 
@@ -21,19 +21,18 @@ class SavedScenarioReportsController < ApplicationController
 
   def report_template
     template_path = "config/saved_scenario_reports/#{params[:report_name]}.yml"
-    @_tmp ||= YAML.load_file(template_path)
+    @report_template ||= YAML.load_file(template_path)
   end
 
   def queries
-    @queries ||= report_template.values.flat_map(&:values)
-                                       .flat_map(&:values)
+    @queries ||= report_template.values
+                                .flat_map(&:values)
+                                .flat_map(&:values)
   end
 
   def valid_report_name?
-    report_definitions = Dir.entries('config/saved_scenario_reports')
-    report_definitions.map{ |fname| fname.sub(/\.+\w*/, '') }
-                      .reject(&:empty?)
-                      .include?(params[:report_name])
+    Dir.glob(Rails.root.join('config/saved_scenario_reports/*.yml'))
+       .any? { |fname| fname.ends_with? "#{params[:report_name]}.yml" }
   end
 
   def assign_saved_scenario

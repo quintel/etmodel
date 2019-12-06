@@ -1,0 +1,7 @@
+<%=saved_scenario_url(id: @saved_scenario.id)%>
+Category,Subcategory,Split,Value,Unit
+<%-@report_template.each do |category, value| %>
+<%-value.each do |subcategory, subvalue| %>
+<%-subvalue.each do |split, query| %>
+<%=category%>,<%=subcategory%>,<%=split%>,<%=@api_response['gqueries'][query]['future']%>,<%=@api_response['gqueries'][query]['unit']%>
+<%-end%><%-end%><%-end%>

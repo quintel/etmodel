@@ -1,0 +1,82 @@
+warmte:
+  zonthermie:
+    individueel: factsheet_share_solar_thermal_in_individual_heat
+    totaal: factsheet_share_solar_thermal_in_individual_heat
+
+  omgevingswarmte:
+    collectief : factsheet_supply_heat_from_ambient_collective
+    individueel: factsheet_supply_heat_from_ambient_individual
+    totaal: factsheet_supply_heat_from_ambient_total
+
+  restwarmte:
+    collectief : factsheet_supply_heat_from_rest_collective
+    industrieel: factsheet_supply_heat_from_rest_industry
+    totaal: factsheet_share_of_waste_heat_in_collective_heat_sources
+
+  geothermie:
+    collectief: factsheet_supply_heat_from_geothermal_collective
+    totaal: factsheet_supply_heat_from_geothermal_collective
+
+gassen:
+  aardgas:
+    individueel: factsheet_demand_gas_from_fossil_individual
+    collectief: factsheet_demand_gas_from_fossil_collective
+    industrie: factsheet_demand_gas_from_fossil_industry
+    mobiliteit: factsheet_demand_gas_from_fossil_transport
+    elektriciteit en overig: factsheet_demand_gas_from_fossil_electricity_other
+    totaal: factsheet_supply_gas_from_fossil
+
+  groen_gas_biogas:
+    individueel: factsheet_demand_gas_from_biogas_greengas_individual
+    collectief: factsheet_demand_gas_from_biogas_greengas_collective
+    industrie: factsheet_demand_gas_from_greengas_biogas_industry
+    mobiliteit: factsheet_demand_gas_from_biogas_greengas_transport
+    elektriciteit en overig: factsheet_demand_gas_from_biogas_greengas_electricity_other
+    totaal: factsheet_supply_gas_from_biogas
+
+  waterstof_import:
+    individueel: factsheet_demand_imported_hydrogen_in_individual
+    collectief: factsheet_demand_imported_hydrogen_in_collective
+    industrie: factsheet_demand_imported_hydrogen_in_industry
+    mobiliteit: factsheet_demand_imported_hydrogen_in_transport
+    elektriciteit: factsheet_demand_imported_hydrogen_in_electricity
+    totaal: factsheet_supply_gas_from_synthetic_gas
+
+elektriciteit:
+  aanbod:
+    aantal_windturbines_land: factsheet_number_of_wind_turbine_inland_coastal
+    aantal_windturbines_zee: factsheet_number_of_wind_turbines_offshore
+    opbrengst_uit_wind: factsheet_supply_from_wind_and_other_electricity
+    aantal_panelen_zon_op_dak: factsheet_number_of_solar_pv
+    hectare_zonneveld: factsheet_solar_pv_plants_land_use
+    totale_capaciteit_zon_pv: factsheet_installed_capacity_of_solar_pv
+    opbrengst_zon_pv: factsheet_supply_from_solar_pv_plants
+
+  vraag:
+    opwek_waterstof: factsheet_demand_electricity_of_production_of_hydrogen
+    elektriciteit_overig: factsheet_demand_electricity_of_other
+    elektriciteit_gebouwde_omgeving: factsheet_demand_electricity_of_built_environment_ex_heating
+    elektriciteit_individueel_verwarmen: factsheet_demand_electricity_of_individual_heating
+    elektriciteit_collectief_verwarmen : factsheet_demand_electricity_of_collective_heating
+    elektriciteit_mobiliteit: factsheet_demand_electricity_of_transport
+    elektriciteit_data_ICT : factsheet_demand_electricity_of_ict_data
+
+  hernieuwbaarheids_percentage:
+    share_solar_and_wind_in_total_electricity_mix: factsheet_share_solar_and_wind_in_electricity_production
+
+biomassa:
+  vraag:
+    collectief: factsheet_demand_of_biomass_in_collective_heat_production
+    individueel: factsheet_demand_of_biomass_in_individual_heat_production
+    transport: factsheet_demand_of_biomass_transport
+    industrie: factsheet_demand_of_biomass_industry
+    elektriciteit: factsheet_demand_of_biomass_electricity
+    overig_in_gebouwde_omgeving_(o.a.koken): factsheet_demand_of_biomass_other_built_environment
+
+fossiel:
+  vraag:
+    warmte: factsheet_demand_fossil_in_households_buildings_agriculture
+    industrie: factsheet_demand_fossil_in_industry
+    mobiliteit: factsheet_demand_fossil_in_mobility
+    elektriciteit: factsheet_demand_fossil_in_electricity
+    totaal: factsheet_demand_fossil_in_total

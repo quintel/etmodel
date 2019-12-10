@@ -7,7 +7,6 @@ module YModel
   # require 'ymodel/dump'
   # YModel::Dump.('sidebar_item')
   #
-
   module Dump
     def self.call(model, storage_path=File.join(Rails.root,'config','ymodel'))
       model = Kernel.const_get(model.to_s.singularize.camelcase)

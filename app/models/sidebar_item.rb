@@ -38,6 +38,10 @@ class SidebarItem < ActiveRecord::Base
     Tab.find(tab_id)
   end
 
+  def tab=(tab)
+    self.tab_id = tab.id
+  end
+
   def parsed_key_for_admin
     "#{section} | #{key}"
   end

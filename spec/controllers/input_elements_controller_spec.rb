@@ -21,9 +21,9 @@ describe InputElementsController do
     let!(:t1) { Tab.all.first }
     let!(:t2) { Tab.all.second }
 
-    let!(:si1) { FactoryBot.create(:sidebar_item, tab: t1) }
-    let!(:si2) { FactoryBot.create(:sidebar_item, tab: t1) }
-    let!(:si3) { FactoryBot.create(:sidebar_item, tab: t2) }
+    let!(:si1) { FactoryBot.create(:sidebar_item, tab_id: 1) }
+    let!(:si2) { FactoryBot.create(:sidebar_item, tab_id: 1) }
+    let!(:si3) { FactoryBot.create(:sidebar_item, tab_id: 1) }
 
     let!(:sl1) { FactoryBot.create(:slide, sidebar_item: si1) }
     let!(:sl2) { FactoryBot.create(:slide, sidebar_item: si1) }

@@ -37,6 +37,8 @@ module YModel
         #   options.all{ |key, val| rec.instance_variable_get('@' + key) == val }
         # end
       end
+
+      protected
     end
   end
 end

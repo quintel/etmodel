@@ -18,8 +18,7 @@ class SidebarItem < ActiveRecord::Base
 
   has_one :area_dependency, as: :dependable, dependent: :destroy
   has_one :description, as: :describable, dependent: :destroy
-  # TODO: tab relation is a ymodel
-  belongs_to :tab
+
   has_many :slides, dependent: :nullify
   belongs_to :parent, class_name: "SidebarItem"
   has_many :children, foreign_key: 'parent_id', class_name: "SidebarItem"
@@ -34,6 +33,10 @@ class SidebarItem < ActiveRecord::Base
 
   # TODO: understand and move to ymodel
   scope :roots, -> { where(parent_id: nil) }
+
+  def tab
+    Tab.find(tab_id)
+  end
 
   def parsed_key_for_admin
     "#{section} | #{key}"

@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe Admin::TabsController do
   let(:admin) { FactoryBot.create :admin }
-  let!(:tab) { FactoryBot.create :tab }
 
   before do
     login_as(admin)
@@ -15,17 +14,19 @@ describe Admin::TabsController do
     end
   end
 
-  describe "GET new" do
-    it "should be successful" do
-      get :new
-      expect(response).to render_template(:new)
-    end
-  end
+  #TODO: REMOVE
+  # describe "GET new" do
+  #   it "should be successful" do
+  #     get :new
+  #     expect(response).to render_template(:new)
+  #   end
+  # end
 
-  describe "POST create" do
-    it "should be successful" do
-      post :create, params: { tab: { key: 'a_tab', position: 0 } }
-      expect(response).to be_redirect
-    end
-  end
+  # # TODO Remove!
+  # describe "POST create" do
+  #   it "should be successful" do
+  #     post :create, params: { tab: { key: 'a_tab', position: 0 } }
+  #     expect(response).to be_redirect
+  #   end
+  # end
 end

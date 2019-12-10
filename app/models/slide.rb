@@ -85,8 +85,11 @@ class Slide < ActiveRecord::Base
   #
   #   play_url(*slide.url_components)
   def url_components
-    tab = sidebar_item&.tab
-    sidebar_item && tab ? [tab.key, sidebar_item.key, short_name] : []
+    tab ? [tab.key, sidebar_item.key, short_name] : []
+  end
+
+  def tab
+    sidebar_item&.tab
   end
 
   def removed_from_interface?

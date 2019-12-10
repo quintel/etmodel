@@ -9,6 +9,12 @@ class YModel::InvalidConcrete < YModel::Base
   source_file 'spec/support/ymodel/invalid_concrete.yml'
 end
 
+class YModel::ConcreteRelation < YModel::Base
+  source_file 'spec/support/ymodel/concrete.yml'
+
+  has_many :sidebar_items
+end
+
 describe YModel::Base do
   it 'is a class' do
     expect(YModel::Base).to be_a Class
@@ -41,6 +47,16 @@ describe YModel::Base do
     describe 'with a string' do
       subject { YModel::Concrete.find_by_key('overview') }
       it { is_expected.to be_a YModel::Concrete }
+    end
+  end
+
+  describe ".has_many decorates instances with" do
+    subject { YModel::ConcreteRelation.all }
+
+    describe "#model_name" do
+      subject { YModel::ConcreteRelation.all.first }
+      it { is_expected.to respond_to :sidebar_items}
+      it { expect(subject.sidebar_items).to be_a ActiveRecord::Relation }
     end
   end
 

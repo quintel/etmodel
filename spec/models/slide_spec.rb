@@ -34,7 +34,7 @@ describe Slide do
       let(:slide) do
         FactoryBot.create(
           :slide,
-          sidebar_item: FactoryBot.create(:sidebar_item, tab: nil)
+          sidebar_item: FactoryBot.create(:sidebar_item, tab_id: nil)
         )
       end
 

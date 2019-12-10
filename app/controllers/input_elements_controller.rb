@@ -7,11 +7,11 @@ class InputElementsController < ApplicationController
   #
   # GET /input_elements/by_slide
   def by_slide
-    slides = Slide.ordered.includes({ sidebar_item: :tab }, :sliders)
+    slides = Slide.ordered.includes(:sidebar_item, :sliders)
 
     # Include only sliders which are visible in the UI.
     slides = slides.select do |slide|
-      slide.sidebar_item.try(:tab) && slide.sliders.any?
+      slide.sidebar_item.tab_id && slide.sliders.any?
     end
 
     render(json: SlidePresenter.collection(slides))

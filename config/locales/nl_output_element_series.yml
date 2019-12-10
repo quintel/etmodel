@@ -76,12 +76,6 @@ nl:
     buildings_final_demand_steam_hot_water_input_curve: 'Gebouwen'
     households_final_demand_steam_hot_water_input_curve: 'Huishoudens'
     other_final_demand_steam_hot_water_input_curve: 'Overig'
-    agriculture_chp_engine_biogas: 'Biogas WKK - landbouw'
-    agriculture_chp_engine_network_gas: 'Gas WKK - landbouw'
-    agriculture_chp_supercritical_wood_pellets: 'Biomassa WKK - landbouw'
-    agriculture_locally_available_steam_hot_water_in_heat_network_mekko: "Landbouw"
-    agriculture_unused_local_production_steam_hot_water_in_heat_network_mekko: "Warmteaanbod landbouw"
-    buildings_heat_network_connection_steam_hot_water_in_heat_network_mekko: "Gebouwen"
     energy_chp_combined_cycle_network_gas_in_heat_network_mekko: "Gas WKK - grootschalig"
     energy_chp_engine_biogas: "Biogas WKK - grootschalig"
     energy_chp_supercritical_waste_mix_in_heat_network_mekko: "Afval WKK - grootschalig"
@@ -155,13 +149,6 @@ nl:
     biomass_products_heating: "Biomassa (voor verwarming)"
     biomass_products_non_energetic: "Biomassa (grondstof)"
     blue_energy: Blue Energy
-    buildings_chp_engine_biogas: 'Biogas WKK -gebouwen'
-    buildings_collective_chp_network_gas: 'Gas WKK - gebouwen'
-    buildings_collective_chp_wood_pellets: 'Biomassa WKK - gebouwen'
-    buildings_collective_burner_hydrogen: "Waterstofketel - gebouwen"
-    buildings_collective_burner_network_gas: "Gasketel - gebouwen"
-    buildings_collective_geothermal: "Geothermisch - gebouwen"
-    buildings_collective_heatpump_water_water_electricity: "Collectieve warmtepomp - gebouwen"
     buildings_cooling_demand: "Koeling - Gebouwen"
     buildings_heating_demand: "Verwarming - Gebouwen"
     buildings_solar_pv_solar_radiation: 'Zonnepanelen gebouwen'
@@ -439,12 +426,6 @@ nl:
     hourly_buildings_heat_deficit: "Tekorten"
     hourly_household_heat_surplus: "Bufferen en uitstellen"
     hourly_household_heat_deficit: "Tekorten"
-    households_collective_chp_biogas: 'Biogas WKK - huishoudens'
-    households_collective_chp_network_gas: 'Gas WKK - huishoudens'
-    households_collective_chp_wood_pellets: 'Biomassa WKK - huishoudens'
-    households_collective_burner_network_gas: "Gasketel - huishoudens"
-    households_collective_geothermal: "Geothermisch - huishoudens"
-    households_collective_heatpump_water_water_electricity: "Collectieve warmtepomp - huishoudens"
     households_cooling_demand: "Koeling huishoudens"
     households_flexibility_p2h_electricity: 'Omgezet naar warmte voor huishoudens'
     households_flexibility_p2p_electricity: 'Opgeslagen in thuisbatterijen'
@@ -541,6 +522,10 @@ nl:
     industry_chp_engine_gas_power_fuelmix: 'Gasmotor WKK - industrie'
     industry_chp_turbine_gas_power_fuelmix: 'Gasturbine WKK - industrie'
     industry_chp_ultra_supercritical_coal: 'Kolen WKK - industrie'
+    industry_chp_wood_pellets: 'Biomassa-WKK - industrie'
+    energy_chp_local_wood_pellets: 'Biomassa-WKK - kleinschalig'
+    energy_chp_local_engine_network_gas: 'Gas-WKK - kleinschalig'
+    energy_chp_local_engine_biogas: 'Biogas-WKK - kleinschalig'
     industry_flexibility_p2h_electricity: "Omgezet naar warmte voor industrie"
     inland: "Op land"
     insulation: "Isolatie gebouwde omgeving"
@@ -786,9 +771,6 @@ nl:
     dry_biomass: "Droge biomassa"
     wood: "Hout (eindgebruik)"
     agriculture_final_demand_hydrogen: "Warmte voor landbouw"
-    buildings_collective_burner_hydrogen: "Warmtenet voor gebouwen"
-    buildings_collective_burner_hydrogen_heat_network_mekko: "Waterstof voor gebouwen"
-    households_collective_burner_hydrogen_heat_network_mekko: "Waterstof voor huishoudens"
     exported_hydrogen: "Geëxporteerde waterstof"
     households_collective_burner_hydrogen: "Warmtenet voor huishoudens"
     industry_final_demand_hydrogen: "Warmte voor industrie"

@@ -77,14 +77,11 @@ en:
     buildings_final_demand_steam_hot_water_input_curve: 'Buildings'
     households_final_demand_steam_hot_water_input_curve: 'Households'
     other_final_demand_steam_hot_water_input_curve: 'Other'
-    agriculture_chp_engine_biogas: 'Biogas CHP - agriculture'
-    agriculture_chp_engine_network_gas: 'Gas CHP - agriculture'
-    agriculture_chp_supercritical_wood_pellets: 'Wood chip CHP - agriculture'
-    agriculture_locally_available_steam_hot_water_in_heat_network_mekko: "Agriculture"
-    agriculture_unused_local_production_steam_hot_water_in_heat_network_mekko: "Agricultural heat supply"
-    buildings_heat_network_connection_steam_hot_water_in_heat_network_mekko: "Buildings"
     energy_chp_combined_cycle_network_gas_in_heat_network_mekko: "Gas CHP - large-scale"
-    energy_chp_engine_biogas: "Biogas CHP"
+    industry_chp_wood_pellets: 'Biomass CHP - industry'
+    energy_chp_local_wood_pellets: 'Biomass CHP - small-scale'
+    energy_chp_local_engine_network_gas: 'Gas CHP - small-scale'
+    energy_chp_local_engine_biogas: 'Biogas CHP - small-scale'
     energy_chp_engine_biogas_in_heat_network_mekko: "Biogas CHP - large-scale"
     energy_chp_supercritical_waste_mix_in_heat_network_mekko: "Waste CHP - large-scale"
     energy_chp_ultra_supercritical_coal_in_heat_network_mekko: "Coal CHPs - large-scale"
@@ -160,13 +157,6 @@ en:
     biomass_products_energetic: "Biomass (energetic)"
     biomass_products_non_energetic: "Biomass (non-energetic)"
     blue_energy: "Blue Energy"
-    buildings_chp_engine_biogas: 'Biogas CHP - buildings'
-    buildings_collective_chp_network_gas: 'Gas CHP - buildings'
-    buildings_collective_chp_wood_pellets: 'Biomass CHP - buildings'
-    buildings_collective_burner_hydrogen: "Hydrogen burner - buildings"
-    buildings_collective_burner_network_gas: "Gas-fired burner - buildings"
-    buildings_collective_geothermal: "Geothermal - buildings"
-    buildings_collective_heatpump_water_water_electricity: "Collective heat pump - buildings"
     buildings_cooling_demand: "Cooling buildings"
     buildings_heating_demand: "Heating buildings"
     buildings_solar_pv_solar_radiation: 'Solar panels buildings'
@@ -442,12 +432,6 @@ en:
     hourly_buildings_heat_deficit: "Deficit"
     hourly_household_heat_surplus: "Buffering and time-shifting"
     hourly_household_heat_deficit: "Deficit"
-    households_collective_chp_biogas: 'Biogas CHP - households'
-    households_collective_chp_network_gas: 'Gas CHP - households'
-    households_collective_chp_wood_pellets: 'Biomass CHP - households'
-    households_collective_burner_network_gas: "Gas-fired burner - households"
-    households_collective_geothermal: "Geothermal - households"
-    households_collective_heatpump_water_water_electricity: "Collective heat pump - households"
     households_cooling_demand: "Cooling households"
     households_flexibility_p2h_electricity: 'Converted to heat for households'
     households_flexibility_p2p_electricity: 'Stored in household batteries'
@@ -789,11 +773,7 @@ en:
     dry_biomass: "Dry biomass"
     wood: "Wood (final demand)"
     agriculture_final_demand_hydrogen: "Heat for agriculture"
-    buildings_collective_burner_hydrogen: "Collective heating for buildings"
     exported_hydrogen: "Exported hydrogen"
-    households_collective_burner_hydrogen: "Collective heating for households"
-    buildings_collective_burner_hydrogen_heat_network_mekko: "Hydrogen for buildings"
-    households_collective_burner_hydrogen_heat_network_mekko: "Hydrogen for households"
     industry_final_demand_hydrogen: "Heat for industry"
     industry_final_demand_for_chemical_fertilizers_hydrogen_non_energetic: "Fertilizer production (non-energetic)"
     industry_final_demand_for_chemical_other_hydrogen_non_energetic: "Chemical industry (non-energetic)"

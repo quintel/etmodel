@@ -57,7 +57,7 @@ class @AppView extends Backbone.View
       new UserSortable(flex_order, 'flexibility_order', true).render()
 
     if (heat_order = wrapper.find('#heat-network-options')).length
-      new UserSortable(heat_order, 'heat_network_order').render()
+      new UserSortable(heat_order, 'heat_network_order', true).render()
 
     if (curve_upload = wrapper.find('.curve-upload')).length
       CustomCurveChooserView.setupWithWrapper(curve_upload).render();

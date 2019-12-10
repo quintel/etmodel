@@ -17,15 +17,19 @@ module YModel
 
     class << self
       def find(id)
-        all.find{ |record| record.id == id }
+        all.find { |record| record.id == id }
       end
 
       def find_by_key(key)
-        all.find{ |record| record[:key] == key }
+        all.find do |record|
+          record.key == key.to_s
+        end
       end
 
       def all
-        records.map{ |record| new(record: record) }
+        records.map { |record| new(record: record) }
+      rescue Errno::ENOENT
+        raise YModel::SourceFileNotFound
       end
 
       def where(options)

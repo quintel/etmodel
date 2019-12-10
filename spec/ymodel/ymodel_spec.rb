@@ -1,4 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 require 'ymodel'
 
 class YModel::Concrete < YModel::Base
@@ -10,7 +10,7 @@ class YModel::InvalidConcrete < YModel::Base
 end
 
 describe YModel::Base do
-  it "is a class" do
+  it 'is a class' do
     expect(YModel::Base).to be_a Class
   end
 
@@ -32,27 +32,61 @@ describe YModel::Base do
     it { is_expected.to be_a YModel::Concrete }
   end
 
-  it "With a missing source" do
-    expect{ YModel::InvalidConcrete.all }
-      .to raise_error YModel::SourceFileNotFound
+  describe '.find_by_key' do
+    describe 'with a symbol' do
+      subject { YModel::Concrete.find_by_key(:overview) }
+      it { is_expected.to be_a YModel::Concrete }
+    end
+
+    describe 'with a string' do
+      subject { YModel::Concrete.find_by_key('overview') }
+      it { is_expected.to be_a YModel::Concrete }
+    end
   end
 
-  describe "attributes" do
+  describe 'With a missing source' do
+    it 'doesn\'t raise an error upon loading' do
+      expect{ YModel::InvalidConcrete }.not_to raise_error
+    end
+
+    describe '.all' do
+      subject { YModel::InvalidConcrete.all }
+      it 'raises an error upon querying' do
+        expect{ subject }.to raise_error YModel::SourceFileNotFound
+      end
+    end
+
+    describe '.find' do
+      subject { YModel::InvalidConcrete.find(1) }
+      it 'raises an error upon querying' do
+        expect{ subject }.to raise_error YModel::SourceFileNotFound
+      end
+    end
+
+    describe '.find_by_key' do
+      subject { YModel::InvalidConcrete.find_by_key(:foo)}
+      it 'raises an error upon querying' do
+        expect{ subject }.to raise_error YModel::SourceFileNotFound
+      end
+    end
+  end
+
+  describe 'attributes' do
     # We're testing wether data is correctly loaded.
     subject { YModel::Concrete.find(2) }
-    it "has the correct key" do
+    it 'has the correct key' do
       expect(subject.key).to eq 'demand'
     end
 
-    it "has the correct nl_vimeo_id" do
+    it 'has the correct nl_vimeo_id' do
       expect(subject.nl_vimeo_id).to eq '19658877'
     end
 
-    it "has the correct en_video_id" do
+    it 'has the correct en_video_id' do
       expect(subject.en_vimeo_id).to eq '20191812'
     end
 
-    it "has the correct position" do
+    it 'has the correct position' do
       expect(subject.position).to eq 2
     end
   end
@@ -69,7 +103,7 @@ describe YModel::Schema do
 
     it { is_expected.to all(be_a Symbol) }
 
-    it "contains all keys" do
+    it 'contains all keys' do
       expect(subject.count).to eq(3)
     end
   end

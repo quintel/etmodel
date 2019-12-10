@@ -1,11 +1,13 @@
-/* globals _ $ App I18n Sortable */
+/* globals _ $ App I18n Sortable Quantity */
 
 (function(window) {
   var optionTemplate = _.template(
     '<li data-id="<%= id %>">' +
       '  <%- name %>' +
-      '  <div class="flexibility-options__capacity"><%- capacity %></div>' +
-      '  <span class="fa fa-bars></span>' +
+      '  <span class="fa fa-bars"></span>' +
+      '  <div class="flexibility-options__capacity">' +
+      '    <%- capacity %>' +
+      '  </div>' +
       '</li>'
   );
 
@@ -20,7 +22,8 @@
           optionTemplate({
             id: optionKey,
             name: I18n.t('output_elements.flexibility_options.' + optionKey),
-            capacity: capacities[optionKey].toString()
+            capacity: capacities[optionKey].toString() + " " +
+                      I18n.t('output_elements.flexibility_options.installed')
           })
         );
       }
@@ -32,11 +35,8 @@
    * a Quantity, on success calls renderOptions
    */
   var setCapacities = function(sortableEl, options) {
-    var queries = [],
-        capacities = {},
-        query,
-        key,
-        value;
+    var queries = [];
+    var capacities = {};
 
     options.forEach(function(optionKey) {
       queries.push('merit_flexibility_order_' + optionKey + '_capacity');
@@ -46,21 +46,25 @@
       type: 'PUT',
       dataType: 'json',
       data: {
-          gqueries: queries
+        gqueries: queries
       },
       url: App.scenario.url_path()
     });
 
     xhr.success(function(data) {
       queries.forEach(function(query_key) {
-        query = data.gqueries[query_key];
-        value = new Quantity(query.future, query.unit);
-        key = query_key.replace(/merit_flexibility_order_|_capacity/g, '');
+        var query = data.gqueries[query_key];
+        var value = new Quantity(query.future, query.unit);
+        var key = query_key.replace(/merit_flexibility_order_|_capacity/g, '');
+
         capacities[key] = value.smartScale();
       });
+
       renderOptions(sortableEl, options, capacities);
     });
-  }
+
+    return xhr;
+  };
 
   /**
    * Handles setting up the user-sortable flexibility order, and triggers
@@ -87,21 +91,22 @@
     });
 
     xhr.success(function(data) {
-      setCapacities(sortableEl, data.order);
-      self.element.removeClass('loading');
+      setCapacities(sortableEl, data.order).success(function() {
+        self.element.removeClass('loading');
 
-      Sortable.create(sortableEl[0], {
-        ghostClass: 'ghost',
-        animation: 150,
-        store: {
-          get: function() {
-            self.lastGood = data.order;
-            return data.order;
-          },
-          set: function(sortable) {
-            self.update(sortable);
+        Sortable.create(sortableEl[0], {
+          ghostClass: 'ghost',
+          animation: 150,
+          store: {
+            get: function() {
+              self.lastGood = data.order;
+              return data.order;
+            },
+            set: function(sortable) {
+              self.update(sortable);
+            }
           }
-        }
+        });
       });
     });
 

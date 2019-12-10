@@ -75,9 +75,6 @@ describe ReportsController, vcr: true do
         )
       end
 
-      # TODO: DELETE this comment
-      # before { Tab.find_by_key(:demand) }
-
       before { get(:auto) }
 
       it 'redirects to the "regional" report' do

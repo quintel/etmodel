@@ -18,7 +18,6 @@ class SidebarItem < ActiveRecord::Base
 
   has_one :area_dependency, as: :dependable, dependent: :destroy
   has_one :description, as: :describable, dependent: :destroy
-
   has_many :slides, dependent: :nullify
   belongs_to :parent, class_name: "SidebarItem"
   has_many :children, foreign_key: 'parent_id', class_name: "SidebarItem"
@@ -31,7 +30,6 @@ class SidebarItem < ActiveRecord::Base
   scope :ordered, -> { order('position') }
   scope :gquery_contains, ->(search) { where("percentage_bar_query LIKE ?", "%#{search}%") }
 
-  # TODO: understand and move to ymodel
   scope :roots, -> { where(parent_id: nil) }
 
   def tab

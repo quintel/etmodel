@@ -11,7 +11,7 @@ class InputElementsController < ApplicationController
 
     # Include only sliders which are visible in the UI.
     slides = slides.select do |slide|
-      slide.sidebar_item.tab_id && slide.sliders.any?
+      slide.sidebar_item&.tab_id && slide.sliders.any?
     end
 
     render(json: SlidePresenter.collection(slides))

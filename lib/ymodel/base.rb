@@ -33,12 +33,8 @@ module YModel
       end
 
       def where(options)
-        # all.select do |rec|
-        #   options.all{ |key, val| rec.instance_variable_get('@' + key) == val }
-        # end
+        raise "not yet implemented"
       end
-
-      protected
     end
   end
 end

@@ -11,7 +11,6 @@ end
 
 class YModel::ConcreteRelation < YModel::Base
   source_file 'spec/support/ymodel/concrete.yml'
-
   has_many :sidebar_items
 end
 
@@ -53,7 +52,7 @@ describe YModel::Base do
   describe ".has_many decorates instances with" do
     subject { YModel::ConcreteRelation.all }
 
-    describe "#model_name" do
+    describe "#model_names" do
       subject { YModel::ConcreteRelation.all.first }
       it { is_expected.to respond_to :sidebar_items}
       it { expect(subject.sidebar_items).to be_a ActiveRecord::Relation }
@@ -123,4 +122,9 @@ describe YModel::Schema do
       expect(subject.count).to eq(3)
     end
   end
+end
+
+describe YModel::Dump do
+  subject { YModel::Dump }
+  it { is_expected.to respond_to :call }
 end

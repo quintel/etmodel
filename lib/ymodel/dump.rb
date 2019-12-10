@@ -1,7 +1,13 @@
 require 'yaml'
 
 module YModel
-  # This service can be used for dumping models to yaml files.
+  # This service can be used for dumping models to YAML files.
+  # Example:
+  #
+  # require 'ymodel/dump'
+  # YModel::Dump.('sidebar_item')
+  #
+
   module Dump
     def self.call(model, storage_path=File.join(Rails.root,'config','ymodel'))
       model = Kernel.const_get(model.to_s.singularize.camelcase)

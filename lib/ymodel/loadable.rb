@@ -5,6 +5,8 @@ module YModel
   module Loadable
     def source_file(filename)
       @source = filename
+
+      # Similar to TModel::Trigger#inherited. A hook for loading the schema.
       set_readers self
     end
 

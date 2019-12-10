@@ -17,10 +17,9 @@ module YModel
       self.define_method(model) do
         if options[:as]
           relation_name = options[:as].to_s
-          debugger
           relation_class.where(
             relation_name + '_id' => self.id,
-            relation_name + '_type' => model.to_s.singularize
+            relation_name + '_type' => klass
           )
         else
           relation_class.where(klass.underscore + "_id" => self.id)
@@ -32,12 +31,13 @@ module YModel
       # These variable declarations are scope related. I can't seem to access
       # the private methods from within the define_method block.
       relation_class, klass = model_class(model), _klass
+
       self.define_method(model) do
         if options[:as]
             relation_name = options[:as].to_s
             relation_class.find_by(
               relation_name + '_id' => self.id,
-              relation_name + '_type' => model.to_s.singularize
+              relation_name + '_type' => klass
             )
         else
             relation_class.where(klass.underscore + "_id" => self.id)

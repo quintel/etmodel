@@ -45,7 +45,7 @@
     var deferred = $.Deferred();
 
     var queries = options.map(function(optionKey) {
-      return 'merit_flexibility_order_' + optionKey + '_capacity';
+      return 'user_sortable_' + optionKey + '_capacity';
     });
 
     var xhr = $.ajax({
@@ -61,7 +61,7 @@
       var capacities = queries.reduce(function(memo, query_key) {
         var query = data.gqueries[query_key];
         var value = new Quantity(query.future, query.unit);
-        var key = query_key.replace(/merit_flexibility_order_|_capacity/g, '');
+        var key = query_key.replace(/user_sortable_|_capacity/g, '');
 
         memo[key] = value;
 

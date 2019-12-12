@@ -21,6 +21,7 @@ class FixMeritHourlySupplyChart < ActiveRecord::Migration[5.2]
       OutputElementSerie.find_by(gquery: 'households_collective_chp_biogas').destroy!
       OutputElementSerie.find_by(gquery: 'households_collective_chp_network_gas').destroy!
       OutputElementSerie.find_by(gquery: 'households_collective_chp_wood_pellets').destroy!
+      OutputElementSerie.find_by(gquery: 'energy_chp_engine_biogas').destroy!
 
       # Add new series
       create_output_series(el_present, 'energy_chp_local_engine_biogas', 'energy_chp_local_engine_biogas', 5)

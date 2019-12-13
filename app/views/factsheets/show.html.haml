@@ -188,9 +188,11 @@
               %span(data-query="factsheet_demand_of_biomass_other") &mdash;
 
   %footer
-    Deze factsheet is gegenereerd door het Energietransitiemodel voor het volgende
-    scenario:
-    = link_to(scenario_url(@scenario.id).gsub(%r{^https?://}, ''), scenario_url(@scenario.id))
+    Deze factsheet is gegenereerd door het Energietransitiemodel
+    - if @saved_scenario
+      voor het volgende
+      scenario:
+      = link_to(saved_scenario_url(@saved_scenario.id).gsub(%r{^https?://}, ''), saved_scenario_url(@saved_scenario.id))
 
 #factsheet-reverse(style="display: none")
   .columns

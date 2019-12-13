@@ -190,8 +190,7 @@
   %footer
     Deze factsheet is gegenereerd door het Energietransitiemodel
     - if @saved_scenario
-      voor het volgende
-      scenario:
+      voor het volgende scenario:
       = link_to(saved_scenario_url(@saved_scenario.id).gsub(%r{^https?://}, ''), saved_scenario_url(@saved_scenario.id))
 
 #factsheet-reverse(style="display: none")

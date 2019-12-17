@@ -49,8 +49,16 @@ Het is nu mogelijk om waterstof in te zetten in de 'overige industrie', naast de
 
 -> ![](/assets/pages/whats_new/hydrogen_other_industry_en.png) <-
 
+## 6. Gewogen kapitaalskosten (WACC)
 
-## 6. Biomassamodellering verbeterd
+Je kunt nu de gewogen kapitaalskosten (WACC) van investeringen aanpassen voor alle technologieën in het model. Meer informatie kun je lezen in onze [documentatie][wacc documentation]. 
+
+[Verken de WACC sliders hier!][wacc slide]
+
+-> ![](/assets/pages/whats_new/wacc_nl.png) <-
+
+
+## 7. Biomassamodellering verbeterd
 
 De modellering van biomassa in het ETM is verbeterd in samenwerking met TKI Nieuw Gas, Gasunie, GasTerra en TNO. De inzet van biomassa is eenvoudiger en inzichtelijker gemaakt. Het is nu mogelijk om in één oogopslag te zien welke biomassastromen er in de regio zijn, zowel in het heden als in toekomstscenario's. Daarnaast is ook de **potentie voor verschillende biomassastromen** onderzocht door TNO, waardoor te zien is hoeveel biomassa er voor Nederland en ook per regio beschikbaar is. Een ander belangrijk verbeterpunt is het toevoegen van **superkritische watervergassing (SCW)** en **vergassing van droge biomassa** voor groengas. Alle benodigde data over biomassa en conversietechnieken is aangepast en gedocumenteerd op onze [GitHub][biomass documentation] op basis van onderzoek door TNO.
 
@@ -60,7 +68,7 @@ De modellering van biomassa in het ETM is verbeterd in samenwerking met TKI Nieu
 
 -> ![](/assets/pages/whats_new/biomass_potential_nl.png) <-
 
-## 7. Nieuwe grootschalige elektriciteitsopslag technologieën toegevoegd
+## 8. Nieuwe grootschalige elektriciteitsopslag technologieën toegevoegd
 
 Er zijn twee grootschalige elektriciteitsopslag technologieën toegevoegd aan het ETM: **Ondergrondse Pomp Accumulatie Centrale (OPAC)** en **grootschalige batterijopslag**. Elektriciteitsoverschotten kunnen nu worden opgeslagen in deze technologieën en op een later moment weer worden ingezet. De toekomstige kosten voor deze technologieën zijn door de gebruiker aan te passen.
 
@@ -70,6 +78,8 @@ Er zijn twee grootschalige elektriciteitsopslag technologieën toegevoegd aan he
 
 
 [biomass documentation]: https://github.com/quintel/documentation/blob/master/general/biomass.md
+
+[wacc documentation]: https://github.com/quintel/documentation/blob/master/general/cost_calculations.md
 
 [biomass slide]: /scenario/supply/biomass/overview
 
@@ -84,3 +94,5 @@ Er zijn twee grootschalige elektriciteitsopslag technologieën toegevoegd aan he
 [hydrogen other industry slide]: /scenario/demand/industry/other
 
 [weather slide]: /scenario/flexibility/flexibility_weather/extreme-weather-conditions
+
+[wacc slide]: /scenario/costs/wacc/weighted-average-cost-of-capital-wacc

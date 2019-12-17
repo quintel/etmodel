@@ -49,7 +49,7 @@ It is now also possible to use hydrogen in the 'other industry' sector, next to 
 
 ## 6. Weighted average costs of capital (WACC)
 
-You can now adjust the future WACC for different categories. More information can be found on our [documentation][wacc documentation]. 
+You can now adjust the future cost of capital (WACC) for all technologies in the ETM. More information can be found on our [documentation][wacc documentation]. 
 
 [Discover the WACC sliders here!][wacc slide]
 

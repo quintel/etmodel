@@ -51,7 +51,7 @@ Het is nu mogelijk om waterstof in te zetten in de 'overige industrie', naast de
 
 ## 6. Gewogen kapitaalskosten (WACC)
 
-Je kan nu de toekomstige WACC (gewogen kapitaalskosten) voor verschillende categorieën aanpassen. Meer informatie kan je lezen op onze [documentatie][wacc documentation]. 
+Je kunt nu de gewogen kapitaalskosten (WACC) van investeringen aanpassen voor alle technologieën in het model. Meer informatie kun je lezen in onze [documentatie][wacc documentation]. 
 
 [Verken de WACC sliders hier!][wacc slide]
 

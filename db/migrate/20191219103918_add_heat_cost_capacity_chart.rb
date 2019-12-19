@@ -18,7 +18,7 @@ class AddHeatCostCapacityChart < ActiveRecord::Migration[5.2]
         key: :heat_cost_capacity,
         group: 'Supply',
         output_element_type: OutputElementType.find_by_name(:cost_capacity_bar),
-        sub_group: 'heat',
+        sub_group: 'collective_heat',
         unit: 'Eur/MWh',
         requires_merit_order: true
       )

@@ -196,7 +196,7 @@ class ChangeDistrictHeatingSidebarItem < ActiveRecord::Migration[5.2]
         'position': 1,
         'sidebar_item_id': 24,
         'output_element_id': 248,
-        'general_sub_header': 'heat output'
+        'general_sub_header': 'heat_output'
         )
 
       HEAT_INPUTS.each do |key, attrs|

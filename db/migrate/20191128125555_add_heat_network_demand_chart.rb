@@ -16,7 +16,7 @@ class AddHeatNetworkDemandChart < ActiveRecord::Migration[5.2]
         key: :heat_network_demand,
         group: 'Supply',
         output_element_type: OutputElementType.find_by_name(:demand_curve),
-        sub_group: 'heat',
+        sub_group: 'collective_heat',
         unit: 'MW'
       )
 

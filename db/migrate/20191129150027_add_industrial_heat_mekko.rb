@@ -23,7 +23,7 @@ class AddIndustrialHeatMekko < ActiveRecord::Migration[5.2]
           key: :industrial_heat_mekko,
           group: 'Supply',
           output_element_type: OutputElementType.find_by_name(:mekko),
-          sub_group: 'heat',
+          sub_group: 'collective_heat',
           unit: 'MJ'
         )
 

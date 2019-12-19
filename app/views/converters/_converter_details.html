@@ -5,32 +5,10 @@
       <thead>
         <tr>
           <th></th>
-          <th>Value*</th>
+          <th>Future Value</th>
           <th>Unit</th>
         </tr>
       </thead>
-      <tfoot>
-        <tr>
-          <td colspan="3">
-            * Values are for one typical unit (future value)
-          </td>
-        </tr>
-        <% if(uses_coal_and_wood_pellets) { %>
-          <tr>
-            <td colspan="3">
-              ** The fuel input mix of this plant can be changed by your slider
-              settings. Doing so changes both technical and cost parameters in
-              this table.
-            </td>
-          </tr>
-        <% } %>
-        <tr>
-          <td colspan="3">
-            For questions about these data, please contact:
-            <a href="mailto:alexander.wirtz@quintel.com">alexander.wirtz@quintel.com</a>
-          </td>
-        </tr>
-      </tfoot>
       <tbody>
         <% _.each( data, function(items, group) { %>
           <tr>
@@ -54,5 +32,15 @@
         <% }) %>
       </tbody>
     </table>
+    <a class="button" href=<%=converter_url%> >
+        Download sourcefile
+    </a>
+    <div class="popup_converter_details__stars">
+      <% if(uses_coal_and_wood_pellets) { %>
+        * The fuel input mix of this plant can be changed by your slider
+        settings. Doing so changes both technical and cost parameters in
+        this table.
+      <% } %>
+    </div>
   <div>
 </script>

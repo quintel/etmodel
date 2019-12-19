@@ -786,6 +786,7 @@
         e.preventDefault();
         var title = $(e.target).data('title');
         var converter = $(e.target).data('converter');
+        var converter_url = "bla";
         var url = App.scenario.url_path() + "/converters/" + converter;
 
         $.ajax({
@@ -795,6 +796,7 @@
             var content = CONVERTER_INFO_T({
               title: title,
               data: data.data,
+              converter_url: converter_url,
               uses_coal_and_wood_pellets: data.uses_coal_and_wood_pellets
             });
             $.fancybox({

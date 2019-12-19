@@ -11,7 +11,7 @@ class AddHeatNetworkProductionChart < ActiveRecord::Migration[5.2]
     'energy_heat_backup_burner_network_gas_steam_hot_water_output_curve' => '#CED6E0',
     'energy_heat_burner_crude_oil_steam_hot_water_output_curve' => '#CD6133',
     'energy_heat_burner_coal_steam_hot_water_output_curve' => '#333333',
-    'energy_heat_burner_hydrogen_steam_hot_water_output_curve' => '#FFA500',
+    'energy_heat_burner_hydrogen_steam_hot_water_output_curve' => '#87CEEB',
     'energy_heat_burner_network_gas_steam_hot_water_output_curve' => '#A4B0BE',
     'energy_heat_burner_waste_mix_steam_hot_water_output_curve' => '#006266',
     'energy_heat_burner_wood_pellets_steam_hot_water_output_curve' => '#009432',

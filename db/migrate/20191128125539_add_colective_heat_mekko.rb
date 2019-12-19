@@ -12,7 +12,7 @@ class AddColectiveHeatMekko < ActiveRecord::Migration[5.2]
     'energy_heat_solar_thermal_in_collective_heat_network_mekko' => '#FFD700',
     'energy_heat_backup_burner_network_gas_in_collective_heat_network_mekko' => '#CED6E0',
     'energy_heat_burner_crude_oil_in_collective_heat_network_mekko' => '#CD6133',
-    'energy_heat_burner_hydrogen_in_collective_heat_network_mekko' => '#FFA500',
+    'energy_heat_burner_hydrogen_in_collective_heat_network_mekko' => '#87CEEB',
     'energy_heat_burner_network_gas_in_collective_heat_network_mekko' => '#A4B0BE',
     'energy_heat_burner_waste_mix_in_collective_heat_network_mekko' => '#006266',
     'energy_chp_supercritical_waste_mix_in_collective_heat_network_mekko' => '#218C74',

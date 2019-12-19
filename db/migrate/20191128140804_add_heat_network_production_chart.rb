@@ -16,7 +16,7 @@ class AddHeatNetworkProductionChart < ActiveRecord::Migration[5.2]
     'energy_heat_burner_waste_mix_steam_hot_water_output_curve' => '#006266',
     'energy_heat_burner_wood_pellets_steam_hot_water_output_curve' => '#009432',
     'energy_heat_heatpump_water_water_electricity_steam_hot_water_output_curve' => '#ADD8E6',
-    'energy_heat_import_steam_hot_water_steam_hot_water_output_curve' => '#e61919',
+    'energy_heat_import_steam_hot_water_steam_hot_water_output_curve' => '#FF8C8C',
     'energy_heat_solar_thermal_steam_hot_water_output_curve' => '#FFD700',
     'energy_heat_well_geothermal_steam_hot_water_output_curve' => '#FFA502',
     'energy_heat_network_storage_output_curve' => '#0984E3'

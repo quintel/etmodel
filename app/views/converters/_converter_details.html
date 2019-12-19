@@ -2,17 +2,11 @@
   <div class="popup_converter_details">
     <h3><%= title %></h3>
     <table class="converter-detail">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Future Value</th>
-          <th>Unit</th>
-        </tr>
-      </thead>
       <tbody>
         <% _.each( data, function(items, group) { %>
-          <tr>
-            <th colspan="3"><%= group %></th>
+          <tr class="popup_converter_details__subheader">
+            <th><%= group %></th>
+            <th colspan=2>Future Value</th>
           </tr>
 
           <% _.each( items, function(data, attr) { %>

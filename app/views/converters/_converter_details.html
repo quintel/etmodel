@@ -32,9 +32,11 @@
         <% }) %>
       </tbody>
     </table>
-    <a class="button" href=<%=converter_url%> >
-        Download sourcefile
-    </a>
+    <% if(converter_source_url) { %>
+      <a class="button" href=<%=converter_source_url%> >
+          Download source .xls
+      </a>
+      <% } %>
     <div class="popup_converter_details__stars">
       <% if(uses_coal_and_wood_pellets) { %>
         * The fuel input mix of this plant can be changed by your slider

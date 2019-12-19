@@ -23,14 +23,14 @@ class AddHeatCostCapacityChart < ActiveRecord::Migration[5.2]
         requires_merit_order: true
       )
 
-      create_output_series(el, 'energy_heat_backup_burner_network_gas_heat_cost_capacity_chart', 'energy_heat_burner_network_gas', 1)
-      create_output_series(el, 'energy_heat_burner_coal_heat_cost_capacity_chart', 'energy_heat_burner_hydrogen', 1)
-      create_output_series(el, 'energy_heat_burner_crude_oil_heat_cost_capacity_chart', 'energy_heat_heatpump_water_water_electricity', 1)
-      create_output_series(el, 'energy_heat_burner_hydrogen_heat_cost_capacity_chart', 'energy_heat_burner_crude_oil', 1)
-      create_output_series(el, 'energy_heat_burner_network_gas_heat_cost_capacity_chart', 'energy_heat_burner_coal', 1)
+      create_output_series(el, 'energy_heat_backup_burner_network_gas_heat_cost_capacity_chart', 'energy_heat_backup_burner_network_gas', 1)
+      create_output_series(el, 'energy_heat_burner_coal_heat_cost_capacity_chart', 'energy_heat_burner_coal', 1)
+      create_output_series(el, 'energy_heat_burner_crude_oil_heat_cost_capacity_chart', 'energy_heat_burner_crude_oil', 1)
+      create_output_series(el, 'energy_heat_burner_hydrogen_heat_cost_capacity_chart', 'energy_heat_burner_hydrogen', 1)
+      create_output_series(el, 'energy_heat_burner_network_gas_heat_cost_capacity_chart', 'energy_heat_burner_network_gas', 1)
       create_output_series(el, 'energy_heat_burner_waste_mix_heat_cost_capacity_chart', 'energy_heat_burner_waste_mix', 1)
       create_output_series(el, 'energy_heat_burner_wood_pellets_heat_cost_capacity_chart', 'energy_heat_burner_wood_pellets', 1)
-      create_output_series(el, 'energy_heat_heatpump_water_water_electricity_heat_cost_capacity_chart', 'energy_heat_backup_burner_network_gas', 1)
+      create_output_series(el, 'energy_heat_heatpump_water_water_electricity_heat_cost_capacity_chart', 'energy_heat_heatpump_water_water_electricity', 1)
       create_output_series(el, 'energy_heat_network_storage_heat_cost_capacity_chart', 'energy_heat_network_storage', 1)
     end
   end

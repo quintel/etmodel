@@ -6,7 +6,7 @@ class AddHeatNetworkDemandChart < ActiveRecord::Migration[5.2]
     'households_final_demand_steam_hot_water_input_curve' => '#E69567',
     'other_final_demand_steam_hot_water_input_curve' => '#786FA6',
     'energy_heat_distribution_loss_input_curve' => '#800080',
-    'energy_heat_unused_steam_hot_water_input_curve' => '#FF8C8C',
+    'energy_heat_unused_steam_hot_water_input_curve' => '#BFEFFF',
     'energy_heat_network_storage_input_curve' => '#0984E3'
   }
 

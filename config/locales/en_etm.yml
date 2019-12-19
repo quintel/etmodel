@@ -52,7 +52,7 @@ en:
     load_scenario: "Load scenario"
     scale_scenario: 'Scale this scenario'
     save_and_enter_testing_ground: 'Save and open as local energy solution'
-    merit_order_check: "Enable merit order"
+    merit_order_check: "Enable hourly calculations"
     overview: "Overview"
     partners: "Partners"
     press_releases: "Press releases"
@@ -279,7 +279,7 @@ en:
     residual_heat: "(residual) heat import"
     heat_network_households: "households heat network"
     heat_network_buildings: "buildings heat network"
-    residual_heat: "(residual) heat"
+    residual_heat: "Residual heat"
     coal_plant: "coal plant"
     gas_fired_chp: "gas-fired chp"
     chemical_other_non_energetic: "non-energetic use"
@@ -287,6 +287,8 @@ en:
     mv_network: "medium voltage network"
     hv_network: "high voltage network"
     heat_network_storage: "heat storage"
+    non_dispatchable_heat: "Must-run / volatile heat sources"
+    dispatchable_heat: "Dispatchable heat sources"
 
   "or": "or"
   "go": "go"

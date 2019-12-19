@@ -13,6 +13,7 @@ en:
   chart_sub_group:
     electricity: "Electricity"
     heat: "Heat"
+    collective_heat: "Collective heat"
     transport_fuels: "Transport fuels"
     production_curves_and_import: "Production curves and import"
     biomass: "Biomass"
@@ -273,6 +274,8 @@ en:
         unprofitable: "Unprofitable"
         wind_turbines: "Wind turbines"
         wood_pellets_chp: "Wood pellets CHP"
+        local_chp_gas: "Gas engine CHP (small-scale)"
+        local_chp_wood: "Biomass CHP (small-scale)"
       network_capacity:
         peak_present: "Present peak"
         low_voltage_network: "Low voltage net"
@@ -393,8 +396,8 @@ en:
     final_energy_demand_per_sector_joule: "Final energy demand per sector (energetic)"
     final_energy_demand_per_sector_percentage: "Final energy demand per sector [%]"
     heat_deficit: "Heat deficit"
-    heat_network_demand: "Hourly heat demand in heat networks"
-    heat_network_production: "Hourly heat production in heat networks"
+    heat_network_demand: "Hourly heat demand for district heating"
+    heat_network_production: "Hourly heat production for district heating"
     households_final_demand_per_application: 'Final demand households per application'
     household_heat_demand_and_production: "Heat demand and production in households"
     hydrogen_production_for_transport: "Hydrogen production for transport"
@@ -417,7 +420,7 @@ en:
     mekko_of_final_demand: "Final energy demand"
     mekko_of_final_demand_in_industry_nl: "Final energy demand in the industry"
     mekko_of_detailed_final_demand_in_industry: "Final energy demand in the industry (energetic + non-energetic)"
-    collective_heat_mekko: "Demand and supply on collective heat network"
+    collective_heat_mekko: "Demand and supply of district heating"
     mekko_of_detailed_final_demand_in_industry_energetic: "Final energy demand in the industry (energetic)"
     mekko_of_final_demand_in_industry_other: "Final energy demand in the industry"
     mekko_of_heat_network: "Central heat network - demand and supply"

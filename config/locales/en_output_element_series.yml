@@ -53,14 +53,35 @@ en:
     actual_2010: "2010"
     actual_20xx: "future"
     actual_co2_emitted: "Actual CO2 emissions"
-    agriculture_chp_engine_biogas: 'Biogas CHP - agriculture'
-    agriculture_chp_engine_network_gas: 'Gas CHP - agriculture'
-    agriculture_chp_supercritical_wood_pellets: 'Wood chip CHP - agriculture'
-    agriculture_locally_available_steam_hot_water_in_heat_network_mekko: "Agriculture"
-    agriculture_unused_local_production_steam_hot_water_in_heat_network_mekko: "Agricultural heat supply"
-    buildings_heat_network_connection_steam_hot_water_in_heat_network_mekko: "Buildings"
+    energy_chp_combined_cycle_network_gas_steam_hot_water_output_curve: 'Gas CC CHP'
+    energy_chp_local_engine_biogas_steam_hot_water_output_curve: 'Biogas CHP'
+    energy_chp_local_engine_network_gas_steam_hot_water_output_curve: 'Gas engine CHP'
+    energy_chp_local_wood_pellets_steam_hot_water_output_curve: 'Biomass CHP'
+    energy_chp_supercritical_waste_mix_steam_hot_water_output_curve: 'Waste CHP'
+    energy_chp_ultra_supercritical_lignite_steam_hot_water_output_curve: 'Brown coal CHP'
+    energy_chps_coal_steam_hot_water_output_curve: 'Coal CHP'
+    energy_heat_backup_burner_network_gas_steam_hot_water_output_curve: 'Heat shortage (gas backup)'
+    energy_heat_burner_crude_oil_steam_hot_water_output_curve: 'Oil heater'
+    energy_heat_burner_coal_steam_hot_water_output_curve: 'Coal heater'
+    energy_heat_burner_hydrogen_steam_hot_water_output_curve: 'Hydrogen heater'
+    energy_heat_burner_network_gas_steam_hot_water_output_curve: 'Gas heater (network gas)'
+    energy_heat_burner_waste_mix_steam_hot_water_output_curve: 'Waste heater'
+    energy_heat_burner_wood_pellets_steam_hot_water_output_curve: 'Biomass heater'
+    energy_heat_heatpump_water_water_electricity_steam_hot_water_output_curve: 'Collective heat pump'
+    energy_heat_import_steam_hot_water_steam_hot_water_output_curve: 'Imported heat'
+    energy_heat_solar_thermal_steam_hot_water_output_curve: 'Solar thermal'
+    energy_heat_well_geothermal_steam_hot_water_output_curve: 'Geothermal heat'
+    energy_heat_distribution_loss_input_curve: 'Distribution losses'
+    energy_heat_unused_steam_hot_water_input_curve: 'Heat surplus (wasted)'
+    agriculture_final_demand_steam_hot_water_input_curve: 'Agriculture'
+    buildings_final_demand_steam_hot_water_input_curve: 'Buildings'
+    households_final_demand_steam_hot_water_input_curve: 'Households'
+    other_final_demand_steam_hot_water_input_curve: 'Other'
     energy_chp_combined_cycle_network_gas_in_heat_network_mekko: "Gas CHP - large-scale"
-    energy_chp_engine_biogas: "Biogas CHP"
+    industry_chp_wood_pellets: 'Biomass CHP - industry'
+    energy_chp_local_wood_pellets: 'Biomass CHP - small-scale'
+    energy_chp_local_engine_network_gas: 'Gas engine CHP - small-scale'
+    energy_chp_local_engine_biogas: 'Biogas engine CHP - small-scale'
     energy_chp_engine_biogas_in_heat_network_mekko: "Biogas CHP - large-scale"
     energy_chp_supercritical_waste_mix_in_heat_network_mekko: "Waste CHP - large-scale"
     energy_chp_ultra_supercritical_coal_in_heat_network_mekko: "Coal CHPs - large-scale"
@@ -69,13 +90,15 @@ en:
     energy_heat_network_backup_heater_network_gas_in_heat_network_mekko: "Heat deficit (back-up heater)"
     energy_heat_network_loss_in_heat_network_mekko: "Losses in heat network"
     energy_heat_network_unused_steam_hot_water_in_heat_network_mekko: "Heat excess (wasted heat)"
-    energy_heater_for_heat_network_coal_in_heat_network_mekko: "Coal heater - large-scale"
-    energy_heater_for_heat_network_crude_oil_in_heat_network_mekko: "Oil heater - large-scale"
-    energy_heater_for_heat_network_geothermal_in_heat_network_mekko: "Geothermal heater - large-scale"
-    energy_heater_for_heat_network_lignite_in_heat_network_mekko: "Lignite heater - large-scale"
-    energy_heater_for_heat_network_network_gas_in_heat_network_mekko: "Gas heater - large-scale"
-    energy_heater_for_heat_network_waste_mix_in_heat_network_mekko: "Waste heater - large-scale"
-    energy_heater_for_heat_network_wood_pellets_in_heat_network_mekko: "Biomass heater - large-scale"
+    energy_heat_network_storage: "Seasonal storage"
+    energy_heat_heatpump_water_water_electricity: "Electric heat pump"
+    energy_heat_burner_wood_pellets: "Biomass burner"
+    energy_heat_burner_waste_mix: "Waste incineration"
+    energy_heat_burner_network_gas: "Network gas burner"
+    energy_heat_burner_hydrogen: "Hydrogen burner"
+    energy_heat_burner_crude_oil: "Oil burner"
+    energy_heat_burner_coal: "Coal burner"
+    energy_heat_backup_burner_network_gas: "Network gas burner (back-up)"
     households_heat_network_connection_steam_hot_water_in_heat_network_mekko: "Households"
     energy_interconnector_imported_electricity: "Imported electricity"
     energy_steel_hisarna_transformation_coal: "Cyclone furnace on biomass - steel industry"
@@ -136,13 +159,6 @@ en:
     biomass_products_energetic: "Biomass (energetic)"
     biomass_products_non_energetic: "Biomass (non-energetic)"
     blue_energy: "Blue Energy"
-    buildings_chp_engine_biogas: 'Biogas CHP - buildings'
-    buildings_collective_chp_network_gas: 'Gas CHP - buildings'
-    buildings_collective_chp_wood_pellets: 'Biomass CHP - buildings'
-    buildings_collective_burner_hydrogen: "Hydrogen burner - buildings"
-    buildings_collective_burner_network_gas: "Gas-fired burner - buildings"
-    buildings_collective_geothermal: "Geothermal - buildings"
-    buildings_collective_heatpump_water_water_electricity: "Collective heat pump - buildings"
     buildings_cooling_demand: "Cooling buildings"
     buildings_heating_demand: "Heating buildings"
     buildings_solar_pv_solar_radiation: 'Solar panels buildings'
@@ -157,6 +173,7 @@ en:
     centrally_produced: "Centrally produced"
     centrally_produced_heat: "District heating - centrally produced heat"
     centrally_produced_electricity: "Centrally produced electricity"
+    collective_heat_in_source_of_heat_and_electricity_in_industry: "Collective heat for heat network"
     chp_electricity: "CHP electricity"
     chp_fossil_electricity: "CHP fossil electricity"
     chp_fossil_heat: "CHP fossil heat"
@@ -332,8 +349,7 @@ en:
     industry_final_demand_for_chemical_other_hydrogen_non_energetic_for_mekko: "Chemical industry (non-energetic)"
     industry_final_demand_hydrogen_for_mekko: "Heat for industry"
     agriculture_final_demand_hydrogen_for_mekko: "Heat for agriculture"
-    buildings_collective_burner_hydrogen_for_mekko: "Heat network buildings"
-    households_collective_burner_hydrogen_for_mekko: "Heat network households"
+    energy_heat_from_hydrogen_for_mekko: "Heat for district heating"
     households_inidividual_hybrid_heat_pump_hydrogen_for_mekko: "Individual heat households"
     environment: "Environment"
     excess_electricity: "Excess electricity"
@@ -401,6 +417,8 @@ en:
     heat_from_renewables: "Heat from renewables"
     heat_from_waste: "Heat from waste"
     heat_hot_water: "Heat / Hot water"
+    heat_network_production: "Heat production"
+    heat_network_demand: "Heat demand"
     heatpumps: "Heatpumps"
     heavy_fuel_oil: "Heavy fuel oil"
     heavy_fuel_oil_for_ships: "Heavy fuel oil ships"
@@ -417,12 +435,6 @@ en:
     hourly_buildings_heat_deficit: "Deficit"
     hourly_household_heat_surplus: "Buffering and time-shifting"
     hourly_household_heat_deficit: "Deficit"
-    households_collective_chp_biogas: 'Biogas CHP - households'
-    households_collective_chp_network_gas: 'Gas CHP - households'
-    households_collective_chp_wood_pellets: 'Biomass CHP - households'
-    households_collective_burner_network_gas: "Gas-fired burner - households"
-    households_collective_geothermal: "Geothermal - households"
-    households_collective_heatpump_water_water_electricity: "Collective heat pump - households"
     households_cooling_demand: "Cooling households"
     households_flexibility_p2h_electricity: 'Converted to heat for households'
     households_flexibility_p2p_electricity: 'Stored in household batteries'
@@ -493,8 +505,8 @@ en:
     network_gas_production: "Gas production"
     network_gas_storage_input: "Gas to gas storage"
     hydrogen_demand_network_gas: "Hydrogen production"
-    heat_demand_network_gas: "Heat production"
-    power_demand_network_gas: "Electricity production"
+    heat_demand_network_gas: "Collective heat"
+    power_demand_network_gas: "Power & CHP"
     bunkers_final_demand_network_gas: "International transport"
     other_final_demand_network_gas: "Other"
     households_final_demand_network_gas: "Households"
@@ -514,6 +526,7 @@ en:
     imported_electricity: "Imported electricity"
     imported_electricity_price_curve: "Price of imported electricity"
     imported_heat: "Imported (residual) heat"
+    imported_heat_waterfall: "(Residual) heat"
     imported_hydrogen: "Imported hydrogen"
     industry_chp_combined_cycle_gas_power_fuelmix: 'Gas CHP - industry'
     industry_chp_engine_gas_power_fuelmix: 'Gas motor CHP - industry'
@@ -576,6 +589,9 @@ en:
     medium_voltage_network: "Medium voltage network"
     micro_chp: "Micro-CHP"
     heat: "Heat"
+    waste_chp_merit: "Waste incineration CHP"
+    local_chp_wood_merit: "Biomass CHP (small-scale)"
+    local_chp_gas_merit: "Gas CHP (small-scale)"
     merit_agriculture: "Agriculture"
     merit_buildings_appliances: "Buildings - Appliances"
     merit_buildings_cooling: "Buildings - Cooling"
@@ -601,6 +617,7 @@ en:
     mv_buildings_space_heating: "Space heating in buildings"
     mv_distribution: "MV distribution"
     mv_households_space_heating: "Space heating in households"
+    mv_energy_heat_load_curve: "Heat for district heating"
     mv_hv_transformer: "MV HV transformer"
     mv_net: "MV net"
     mv_industry_metals: "Metals industry"
@@ -762,13 +779,47 @@ en:
     dry_biomass: "Dry biomass"
     wood: "Wood (final demand)"
     agriculture_final_demand_hydrogen: "Heat for agriculture"
-    buildings_collective_burner_hydrogen: "Collective heating for buildings"
     exported_hydrogen: "Exported hydrogen"
-    households_collective_burner_hydrogen: "Collective heating for households"
-    buildings_collective_burner_hydrogen_heat_network_mekko: "Hydrogen for buildings"
-    households_collective_burner_hydrogen_heat_network_mekko: "Hydrogen for households"
     industry_final_demand_hydrogen: "Heat for industry"
     industry_final_demand_for_chemical_fertilizers_hydrogen_non_energetic: "Fertilizer production (non-energetic)"
     industry_final_demand_for_chemical_other_hydrogen_non_energetic: "Chemical industry (non-energetic)"
     transport_final_demand_hydrogen: "Fuel for transport"
     households_final_demand_hydrogen: "Heat for households"
+    energy_heat_from_hydrogen: "Heat for district heating"
+    other_final_demand_steam_hot_water_in_collective_heat_network_mekko: "Other"
+    energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko: "Heat surplus (wasted)"
+    energy_heat_well_geothermal_in_collective_heat_network_mekko: "Geothermal heat"
+    households_final_demand_steam_hot_water_in_collective_heat_network_mekko: "Households"
+    energy_heat_burner_wood_pellets_in_collective_heat_network_mekko: "Biomass heater"
+    energy_heat_distribution_loss_in_collective_heat_network_mekko: "Distribution losses"
+    energy_heat_heatpump_water_water_electricity_in_collective_heat_network_mekko: "Electric heat pump"
+    energy_heat_import_steam_hot_water_in_collective_heat_network_mekko: "Imported heat"
+    energy_heat_solar_thermal_in_collective_heat_network_mekko: "Solar thermal"
+    energy_heat_backup_burner_network_gas_in_collective_heat_network_mekko: "Heat shortage (gas backup)"
+    energy_heat_burner_crude_oil_in_collective_heat_network_mekko: "Oil heater"
+    energy_heat_burner_hydrogen_in_collective_heat_network_mekko: "Hydrogen heater"
+    energy_heat_burner_network_gas_in_collective_heat_network_mekko: "Gas heater (network gas)"
+    energy_heat_burner_waste_mix_in_collective_heat_network_mekko: "Waste heater"
+    energy_chp_supercritical_waste_mix_in_collective_heat_network_mekko: "Waste CHP"
+    energy_chp_ultra_supercritical_lignite_in_collective_heat_network_mekko: "Brown coal CHP"
+    energy_chps_coal_in_collective_heat_network_mekko: "Coal CHP"
+    energy_chp_local_engine_network_gas_in_collective_heat_network_mekko: "Gas engine CHP"
+    energy_chp_local_wood_pellets_in_collective_heat_network_mekko: "Biomass CHP"
+    buildings_final_demand_steam_hot_water_in_collective_heat_network_mekko: "Buildings"
+    energy_chp_combined_cycle_network_gas_in_collective_heat_network_mekko: "Gas CC CHP"
+    energy_chp_local_engine_biogas_in_collective_heat_network_mekko: "Biogas CHP"
+    agriculture_final_demand_steam_hot_water_in_collective_heat_network_mekko: "Agriculture"
+    energy_heat_burner_coal_in_collective_heat_network_mekko: "Coal heater"
+    industry_final_demand_steam_hot_water_in_industrial_heat_network_mekko: "Heat network demand industry"
+    industry_unused_local_production_steam_hot_water_in_industrial_heat_network_mekko: "Heat surplus (wasted)"
+    energy_steel_hisarna_transformation_coal_in_industrial_heat_network_mekko: "Hisarna Steel"
+    industry_chp_combined_cycle_gas_power_fuelmix_in_industrial_heat_network_mekko: "Gas CC CHP"
+    industry_chp_engine_gas_power_fuelmix_in_industrial_heat_network_mekko: "Gas engine CHP"
+    industry_chp_turbine_gas_power_fuelmix_in_industrial_heat_network_mekko: "Gas turbine CHP"
+    industry_chp_ultra_supercritical_coal_in_industrial_heat_network_mekko: "Coal CHP"
+    industry_chp_wood_pellets_in_industrial_heat_network_mekko: "Biomass CHP"
+    industry_heat_backup_burner_network_gas_in_industrial_heat_network_mekko: "Heat shortage (gas backup)"
+    industry_heat_burner_coal_in_industrial_heat_network_mekko: "Coal heater"
+    industry_heat_burner_crude_oil_in_industrial_heat_network_mekko: "Oil heater"
+    industry_heat_burner_lignite_in_industrial_heat_network_mekko: "Lignite heater"
+    industry_heat_well_geothermal_in_industrial_heat_network_mekko: "Geothermal heat"

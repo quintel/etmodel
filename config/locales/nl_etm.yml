@@ -52,7 +52,7 @@ nl:
     load_scenario: "Scenario laden"
     scale_scenario: 'Schaal dit scenario'
     save_and_enter_testing_ground: 'Opslaan en openen als lokale energie oplossing'
-    merit_order_check: "Gebruik merit order"
+    merit_order_check: "Gebruik uurlijkse berekeningen"
     overview: "Overview"
     partners: "Partners"
     press_releases: "In het nieuws"
@@ -171,6 +171,7 @@ nl:
     hybrid_heating: "MW"
     heat_demand_reduction: "warmtevraagreductie"
     electricity_output: "elektrisch vermogen"
+    heat_output: "warmte-output"
 
   #------------ Output Serie Labels ------------- #
   scenario:
@@ -281,13 +282,16 @@ nl:
     residual_heat: "import (rest)warmte"
     heat_network_households: "warmtenet huishoudens"
     heat_network_buildings: "warmtenet gebouwen"
-    residual_heat: "(rest)warmte"
+    residual_heat: "Restwarmte"
     coal_plant: "kolencentrale"
     gas_fired_chp: "gasgestookte wkk"
     chemical_other_non_energetic: "grondstoffen (niet-energetisch)"
     lv_network: "laagspanningsnet"
     mv_network: "middenspanningsnet"
     hv_network: "hoogspanningsnet"
+    heat_network_storage: "warmteopslag"
+    non_dispatchable_heat: "Niet-regelbare / volatiele warmtebronnen"
+    dispatchable_heat: "Regelbare warmtebronnen"
 
   "or": "of"
   "go": "ga"

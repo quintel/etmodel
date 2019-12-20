@@ -16,10 +16,12 @@ class AddHeatStorageToggleInput < ActiveRecord::Migration[5.2]
           of dispatchable capacity required during large spikes in demand.
         TEXT
         content_nl: <<-TEXT.strip_heredoc
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam rutrum
-          in nunc quis feugiat. Fusce ut mauris orci. Ut facilisis quam ex, in
-          pellentesque neque volutpat ut. Aenean pulvinar ligula sed ullamcorper
-          vestibulum. Aliquam hendrerit hendrerit nulla.
+          Scenario's met een grote hoeveelheid 'must run' en volatiele warmteproductie
+          zoals zonthermie, geothermie of restwarmte, hebben vaak een aanzienlijke
+          warmteproductie in uren met geen of weinig vraag. (Seizoens)opslag stelt
+          je in staat om deze warmte op te slaan en op een later moment in te zetten.
+          Hierdoor is er minder regelbaar vermogen nodig, zoals warmteketels, om de
+          vraagpieken te voorzien.
         TEXT
       }
     )

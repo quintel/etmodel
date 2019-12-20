@@ -14,10 +14,6 @@ task :fetch_converters_download_source => :environment do
     end
   end
   File.write(yml_file, yml.to_yaml)
-
-  # write to yml
-
-  #if time: check if locked/changed by hand
 end
 
 

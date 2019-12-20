@@ -64,6 +64,8 @@ class InputElement < ActiveRecord::Base
     end
   end
 
+  # Feels very unsafe and like it should not be here, but how else will
+  # this information reach the js?
   def converter_source_url
     return if related_converter.blank?
     sources = YAML::load_file('config/converters_download_source.yml')

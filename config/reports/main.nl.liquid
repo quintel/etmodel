@@ -380,10 +380,10 @@
         {% endchart %}
   	</p>
 
-  	{% if future.energy_heat_network_unused_steam_hot_water_in_heat_network_mekko > 0.0 %}
+  	{% if future.energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko > 0.0 %}
         <p>
           Er wordt
-          {{ future.energy_heat_network_unused_steam_hot_water_in_heat_network_mekko | autoscale: 'PJ'}}
+          {{ future.energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko | autoscale: 'PJ'}}
           aan restwarmte uit het netwerk niet gebruikt!
         </p>
 
@@ -396,7 +396,7 @@
    	{% else %}
         <p>
         Er is onvoldoende warmte geproduceerd. Een back-up gasketel wordt nu ingezet om het tekort van
-		{{ future.energy_heat_network_backup_heater_network_gas_in_heat_network_mekko | autoscale: 'PJ'}} op te vangen.
+		{{ future.energy_heat_backup_burner_network_gas_in_collective_heat_network_mekko | autoscale: 'PJ'}} op te vangen.
         </p>
 
         <p>Je kunt vraag en aanbod als volgt op elkaar afstemmen:</p>

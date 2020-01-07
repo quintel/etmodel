@@ -300,10 +300,10 @@
         Heat balance of central heat network.
       {% endchart %}
 
-      {% if future.energy_heat_network_unused_steam_hot_water_in_heat_network_mekko > 0.0 %}
+      {% if future.energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko > 0.0 %}
         <p>
           There is
-          {{ future.energy_heat_network_unused_steam_hot_water_in_heat_network_mekko | autoscale: 'PJ'}}
+          {{ future.energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko | autoscale: 'PJ'}}
           excess heat produced in agriculture or industry which flows back into the central heat
           network but is not used by other sectors.
         </p>
@@ -319,7 +319,7 @@
       {% else %}
         <p>
           There is
-          {{ future.energy_heat_network_backup_heater_network_gas_in_heat_network_mekko | autoscale: 'PJ'}}
+          {{ future.energy_heat_backup_burner_network_gas_in_collective_heat_network_mekko | autoscale: 'PJ'}}
           insufficient heat produced to satisfy the demand of the central heat network. A backup
           gas heater is deployed to satisfy the deficit.
         </p>

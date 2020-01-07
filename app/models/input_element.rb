@@ -20,7 +20,6 @@
 
 class InputElement < ActiveRecord::Base
   include AreaDependent
-  require 'yaml'
 
   ENUM_UNITS = %w[radio weather-curves].freeze
 
@@ -57,19 +56,17 @@ class InputElement < ActiveRecord::Base
   def json_attributes
     Jbuilder.encode do |json|
       json.call(
-        self, :id, :unit, :share_group, :key, :related_converter, :converter_source_url, :step_value,
-        :draw_to_min, :draw_to_max, :disabled, :translated_name,
-        :sanitized_description, :fixed, :has_flash_movie
+        self, :id, :unit, :share_group, :key, :related_converter,
+        :converter_source_url, :step_value, :draw_to_min, :draw_to_max,
+        :disabled, :translated_name, :sanitized_description, :fixed,
+        :has_flash_movie
       )
     end
   end
 
-  # Feels very unsafe and like it should not be here, but how else will
-  # this information reach the js?
   def converter_source_url
-    return if related_converter.blank?
-    sources = YAML::load_file('config/converters_download_source.yml')
-    sources[related_converter]
+    return Converter.find related_converter if related_converter.present?
+    nil
   end
 
   ##

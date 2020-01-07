@@ -1,11 +1,12 @@
+# frozen_string_literal: true
 require 'net/http'
 require 'yaml'
 
 desc 'Fetch download links to converters node source analysis from github'
-task :fetch_converters_download_source => :environment do
+task fetch_converters_download_source: :environment do
   yml_file = Rails.root.join('config', 'converters_download_source.yml')
 
-  yml = YAML::load_file(yml_file)
+  yml = YAML.load_file(yml_file)
   converters = InputElement.all.map(&:related_converter).uniq.reject!(&:blank?)
   converters.each do |converter|
     converter = converter.gsub(/ $/, '')
@@ -16,11 +17,10 @@ task :fetch_converters_download_source => :environment do
   File.write(yml_file, yml.to_yaml)
 end
 
-
 def generate_urls(converter)
   git_url = 'https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/'
   folder = converter.gsub(/_.*/, '')
-  %w(.converter.xlsx .central_producer.xlsx).map do |ending|
+  %w[.converter.xlsx .central_producer.xlsx].map do |ending|
     git_url + folder + '/' + converter + ending
   end
 end
@@ -31,5 +31,6 @@ def valid_url?(url)
   request.use_ssl = true
   response = request.request_head(parsed_url.path)
   return true if response.code == '200'
+
   false
 end

@@ -66,6 +66,7 @@ class InputElement < ActiveRecord::Base
 
   def converter_source_url
     return Converter.find related_converter if related_converter.present?
+
     nil
   end
 

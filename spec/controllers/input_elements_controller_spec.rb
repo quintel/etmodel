@@ -1,6 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
+
+
 describe InputElementsController do
+  include FactoryBot::Syntax::Methods
+
   render_views
 
   describe 'by_slide' do
@@ -16,25 +22,27 @@ describe InputElementsController do
     #       InputElement 4
     # Tab 2
     #   SidebarItem 4
+
     #     Slide 4
     #       InputElement 5
+
     let!(:t1) { Tab.all.first }
     let!(:t2) { Tab.all.second }
 
-    let!(:si1) { FactoryBot.create(:sidebar_item, tab_id: 1) }
-    let!(:si2) { FactoryBot.create(:sidebar_item, tab_id: 1) }
-    let!(:si3) { FactoryBot.create(:sidebar_item, tab_id: 1) }
+    let!(:si1) { create :sidebar_item, tab_id: t1.id }
+    let!(:si2) { create :sidebar_item, tab_id: t1.id }
+    let!(:si3) { create :sidebar_item, tab_id: t2.id }
 
-    let!(:sl1) { FactoryBot.create(:slide, sidebar_item: si1) }
-    let!(:sl2) { FactoryBot.create(:slide, sidebar_item: si1) }
-    let!(:sl3) { FactoryBot.create(:slide, sidebar_item: si2) }
-    let!(:sl4) { FactoryBot.create(:slide, sidebar_item: si3) }
+    let!(:sl1) { create :slide, sidebar_item: si1 }
+    let!(:sl2) { create :slide, sidebar_item: si1 }
+    let!(:sl3) { create :slide, sidebar_item: si2 }
+    let!(:sl4) { create :slide, sidebar_item: si3 }
 
-    let!(:ie1) { FactoryBot.create(:input_element, slide: sl1) }
-    let!(:ie2) { FactoryBot.create(:input_element, slide: sl1) }
-    let!(:ie3) { FactoryBot.create(:input_element, slide: sl2) }
-    let!(:ie4) { FactoryBot.create(:input_element, slide: sl3) }
-    let!(:ie5) { FactoryBot.create(:input_element, slide: sl4) }
+    let!(:ie1) { create :input_element, slide: sl1 }
+    let!(:ie2) { create :input_element, slide: sl1 }
+    let!(:ie3) { create :input_element, slide: sl2 }
+    let!(:ie4) { create :input_element, slide: sl3 }
+    let!(:ie5) { create :input_element, slide: sl4 }
 
     let(:json) do
       get(:by_slide)
@@ -56,14 +64,16 @@ describe InputElementsController do
       expect(json[3]['input_elements'][0]['key']).to eq(ie5.key)
     end
 
-    it 'assigns a path/name to each slide' do
-      path = json[0]['path']
+    describe "json[path]" do
+      # this translation code is quite similar to that in "slide_presenter.rb"
+      let(:translator) { ->(ns, n) { I18n.t("#{ns}.#{n}") } }
 
-      expect(path.length).to eq(3)
+      subject{ json[0]['path'] }
 
-      expect(path[0]).to include(t1.key)
-      expect(path[1]).to include(si1.key)
-      expect(path[2]).to include(sl1.key)
+      it { is_expected.to satisfy { |path| path.length == 3 } }
+      it { is_expected.to include translator.('tabs', t1.key) }
+      it { is_expected.to include translator.('sidebar_items', si1.key) }
+      it { is_expected.to include translator.('slides', sl1.key) }
     end
 
     context 'the inputs' do

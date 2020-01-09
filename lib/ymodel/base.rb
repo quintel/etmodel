@@ -15,6 +15,16 @@ module YModel
       end
     end
 
+    def ==(other)
+      attributes == other.attributes
+    end
+
+    def attributes
+      schema.attributes
+            .map {|attr| { attr => self.send(attr) } }
+            .reduce(&:merge)
+    end
+
     class << self
       def find(id)
         all.find { |record| record.id == id }
@@ -32,9 +42,18 @@ module YModel
         raise YModel::SourceFileNotFound
       end
 
-      def where(options)
-        raise "not yet implemented"
+      def where(**attributes)
+        attributes.symbolize_keys!
+        all.select do |record|
+          attributes.all?{|key, value| record.send(key) == value }
+        end
       end
+    end
+
+    private
+
+    def schema
+      self.class.schema
     end
   end
 end

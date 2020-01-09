@@ -35,7 +35,6 @@ class InputElement < ActiveRecord::Base
 
   accepts_nested_attributes_for :description, :area_dependency
 
-
   def title_for_description
     "input_elements.#{key}"
   end

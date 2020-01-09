@@ -37,6 +37,14 @@ describe YModel::Base do
     it { is_expected.to be_a YModel::Concrete }
   end
 
+  describe '.where' do
+    subject { YModel::Concrete.where( key: 'overview',
+                                      en_vimeo_id: '',
+                                      nillable: nil) }
+    it { is_expected.to be_a Array }
+    it { is_expected.to eq [YModel::Concrete.find(1)] }
+  end
+
   describe '.find_by_key' do
     describe 'with a symbol' do
       subject { YModel::Concrete.find_by_key(:overview) }
@@ -87,8 +95,9 @@ describe YModel::Base do
   end
 
   describe 'attributes' do
-    # We're testing wether data is correctly loaded.
+    # We're testing if data is correctly loaded.
     subject { YModel::Concrete.find(2) }
+
     it 'has the correct key' do
       expect(subject.key).to eq 'demand'
     end
@@ -105,6 +114,19 @@ describe YModel::Base do
       expect(subject.position).to eq 2
     end
   end
+
+  describe '#attributes' do
+    subject { YModel::Concrete.find(1).attributes }
+
+    it 'returns a hash with all attributes contained within the record' do
+      is_expected.to eq({id: 1,
+                         key: 'overview',
+                         nl_vimeo_id: '',
+                         en_vimeo_id: '',
+                         position: 1,
+                         nillable: nil})
+    end
+  end
 end
 
 describe YModel::Schema do
@@ -115,7 +137,6 @@ describe YModel::Schema do
 
   describe 'attributes' do
     subject { schema.attributes }
-
     it { is_expected.to all(be_a Symbol) }
 
     it 'contains all keys' do

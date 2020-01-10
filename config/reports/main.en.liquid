@@ -288,22 +288,22 @@
         Electricity mix.
       {% endchart %}
 
-    <h2>Central heat network</h2>
+    <h2>District heating</h2>
 
       <p>
-        The central heat network in your scenario can be used to heat houses and
-        buildings and provides heat to the industry and agricultural sectors. The
-        chart below show the balance of heat produced and consumed centrally.
+        District heating in your scenario can be used to heat houses and
+        buildings and provide heat to agricultural sectors. The
+        chart below shows the yearly balance of heat produced and consumed.
       </p>
 
-      {% chart 174 %}
-        Heat balance of central heat network.
+      {% chart 248 %}
+         Demand and supply of district heating
       {% endchart %}
 
       {% if future.energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko > 0.0 %}
         <p>
           There is
-          {{ future.energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko | autoscale: 'PJ'}}
+          {{ future.energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko | autoscale: 'MJ'}}
           excess heat produced in agriculture or industry which flows back into the central heat
           network but is not used by other sectors.
         </p>
@@ -311,15 +311,14 @@
         <p>You can balance the network by</p>
 
         <ul>
-          <li><strong>Reducing heat production</strong>: in the industry and agriculture sections you can
-            decrease numbers of CHPs and burners.</li>
-          <li><strong>Increase demand</strong>: by increasing the demand of all sectors in the left-hand side
-            of the diagram.</li>
+          <li><strong>Reducing heat production</strong>: you can decrease the number of heat sources</li>
+          <li><strong>Increase demand</strong>: you can increase the demand of all sectors in the left-hand side
+            of the diagram</li>
         </ul>
       {% else %}
         <p>
           There is
-          {{ future.energy_heat_backup_burner_network_gas_in_collective_heat_network_mekko | autoscale: 'PJ'}}
+          {{ future.energy_heat_backup_burner_network_gas_in_collective_heat_network_mekko | autoscale: 'MJ'}}
           insufficient heat produced to satisfy the demand of the central heat network. A backup
           gas heater is deployed to satisfy the deficit.
         </p>
@@ -327,10 +326,9 @@
         <p>You can balance the network by</p>
 
         <ul>
-          <li><strong>Building more heat production</strong>: in the industry and agriculture sections you can
-            generate more heat by increasing numbers of CHPs and burners.</li>
+          <li><strong>Building more heat production</strong>: you can generate more heat by increasing the number of heat sources</li>
           <li><strong>Decreasing demand</strong>: by reducing the demand of all sectors in the left-hand side
-            of the diagram.</li>
+            of the diagram</li>
         </ul>
       {% endif %}
 
@@ -637,7 +635,7 @@
       For electricity generation, the renewability is
       {{ future.share_of_renewable_electricity | times: 100 | round: 1 }}%.
 
-      {% chart 112 %}
+      {% chart 212 %}
         Renewability of produced electricity. The renewability is defined as all renewable electricity
         production divided by local electricity consumption and can be larger than 100%.
       {% endchart %}

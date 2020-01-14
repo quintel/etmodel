@@ -19,9 +19,10 @@
 #
 
 class OutputElement < ActiveRecord::Base
-  MENU_ORDER = %w[Overview Merit Cost Supply Demand Network Policy FCE].freeze
+  MENU_ORDER = %w[Overview Merit Supply Demand Cost Network Policy FCE].freeze
 
   SUB_GROUP_ORDER = %w[
+    overview
     households
     buildings
     transport
@@ -30,7 +31,9 @@ class OutputElement < ActiveRecord::Base
     other
 
     electricity
-    heat
+    network_gas
+    collective_heat
+    hydrogen
     transport_fuels
     biomass
     production_curves_and_import

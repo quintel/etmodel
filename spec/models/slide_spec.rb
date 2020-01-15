@@ -32,10 +32,7 @@ describe Slide do
 
     context 'when the sidebar item has no tab' do
       let(:slide) do
-        FactoryBot.create(
-          :slide,
-          sidebar_item: FactoryBot.create(:sidebar_item, tab_id: nil)
-        )
+        Slide.new(sidebar_item: SidebarItem.new(tab_id: nil))
       end
 
       it 'returns an empty array' do

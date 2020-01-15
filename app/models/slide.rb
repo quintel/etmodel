@@ -19,7 +19,6 @@
 class Slide < ActiveRecord::Base
   include AreaDependent
 
-  belongs_to :sidebar_item
   has_one :description, as: :describable
   has_many :sliders, dependent: :nullify, class_name: 'InputElement'
   belongs_to :output_element # default chart
@@ -86,6 +85,14 @@ class Slide < ActiveRecord::Base
   #   play_url(*slide.url_components)
   def url_components
     tab ? [tab.key, sidebar_item.key, short_name] : []
+  end
+
+  def sidebar_item
+    SidebarItem.find(sidebar_item_id)
+  end
+
+  def sidebar_item=(sidebar_item)
+    self.sidebar_item_id = sidebar_item&.id
   end
 
   def tab

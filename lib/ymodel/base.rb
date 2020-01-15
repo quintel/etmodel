@@ -9,9 +9,9 @@ module YModel
     extend YModel::Loadable
     extend YModel::Trigger
 
-    def initialize(record: {})
+    def initialize(**record)
       record.each do |k, v|
-        instance_variable_set '@' + k, v
+        instance_variable_set '@' + k.to_s, v
       end
     end
 
@@ -37,7 +37,7 @@ module YModel
       end
 
       def all
-        records.map { |record| new(record: record) }
+        records.map { |record| new(record) }
       rescue Errno::ENOENT
         raise YModel::SourceFileNotFound
       end

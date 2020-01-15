@@ -13,7 +13,10 @@ describe ScenariosController, vcr: true do
   let(:admin) { FactoryBot.create :admin }
   let!(:user_scenario) { FactoryBot.create :saved_scenario, user: user, id: 648695 }
   let!(:admin_scenario) { FactoryBot.create :saved_scenario, user: admin, id: 648696 }
+
   let(:tab) { Tab.find_by_key(Interface::DEFAULT_TAB) }
+  let(:sidebar_item) { tab.sidebar_items.first }
+  let(:second_sidebar_item) { second_tab.sidebar_items.second }
 
   context "a guest" do
     describe "#index" do
@@ -25,8 +28,6 @@ describe ScenariosController, vcr: true do
   end
 
   describe '#play' do
-
-    let!(:sidebar_item) { FactoryBot.create(:sidebar_item, tab_id: tab.id) }
     let!(:slide) { FactoryBot.create(:slide, sidebar_item: sidebar_item) }
 
     before do
@@ -70,8 +71,6 @@ describe ScenariosController, vcr: true do
     end
 
     context 'with valid tab, and sidebar, but invalid slide params' do
-      let!(:second_sidebar_item) { FactoryBot.create(:sidebar_item, tab_id: tab.id) }
-
       it 'redirects to the standard play url' do
         get :play, params: {
           tab: second_tab.key,
@@ -213,7 +212,6 @@ describe ScenariosController, vcr: true do
 
         before do
           # Create a basic interface.
-          sidebar_item = FactoryBot.create(:sidebar_item, tab_id: tab.id)
           FactoryBot.create(:slide, sidebar_item: sidebar_item)
         end
 

@@ -11,7 +11,7 @@ end
 
 class YModel::ConcreteRelation < YModel::Base
   source_file 'spec/support/ymodel/concrete.yml'
-  has_many :sidebar_items
+  has_many :concretes, class_name: YModel::Concrete
 end
 
 describe YModel::Base do
@@ -33,8 +33,15 @@ describe YModel::Base do
   end
 
   describe '.find' do
-    subject { YModel::Concrete.find(1) }
-    it { is_expected.to be_a YModel::Concrete }
+    describe 'with an actual record' do
+      subject { YModel::Concrete.find(1) }
+      it { is_expected.to be_a YModel::Concrete }
+    end
+
+    # describe 'with a nil as argument' do
+    #   subject { YModel::Concrete.find(nil) }
+    #   it { is_expected.to eq nil }
+    # end
   end
 
   describe '.where' do
@@ -57,13 +64,19 @@ describe YModel::Base do
     end
   end
 
-  describe ".has_many decorates instances with" do
-    subject { YModel::ConcreteRelation.all }
-
-    describe "#model_names" do
+  describe ".has_many" do
+    it "raises an error when called with both an " \
+       "`as` and a `foreign_key` option" do
+      expect { YModel::Concrete.has_many(:foo, as: 'bar', foreign_key: :qux ) }
+        .to raise_error(YModel::UnacceptableOptionsError)
+    end
+    describe" decorates instances with" do
       subject { YModel::ConcreteRelation.all.first }
-      it { is_expected.to respond_to :sidebar_items}
-      it { expect(subject.sidebar_items).to be_a ActiveRecord::Relation }
+
+      describe "#model_names" do
+        it { is_expected.to respond_to :concretes}
+        it { expect(subject.concretes).to be_a Array }
+      end
     end
   end
 
@@ -124,7 +137,8 @@ describe YModel::Base do
                          nl_vimeo_id: '',
                          en_vimeo_id: '',
                          position: 1,
-                         nillable: nil})
+                         nillable: nil,
+                         concrete_relation_id: 2})
     end
   end
 end

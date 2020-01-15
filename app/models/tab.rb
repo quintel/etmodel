@@ -1,4 +1,4 @@
-require "ymodel"
+require 'ymodel'
 
 class Tab < YModel::Base
   include AreaDependent
@@ -16,9 +16,8 @@ class Tab < YModel::Base
   end
 
   def allowed_sidebar_items
-    sidebar_items.roots
-                 .includes(:area_dependency)
-                 .ordered
+    sidebar_items.select(&:root?)
                  .reject(&:area_dependent)
+                 .sort_by(&:position)
   end
 end

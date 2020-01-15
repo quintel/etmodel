@@ -57,8 +57,9 @@ class Interface
   end
 
   def sidebar_items
-    @sidebar_items ||= current_tab.sidebar_items.ordered
-      .includes(:area_dependency).reject(&:area_dependent)
+    @sidebar_items ||= current_tab.sidebar_items
+                                  .sort_by(&:position)
+                                  .reject(&:area_dependent)
   end
 
   def current_sidebar_item

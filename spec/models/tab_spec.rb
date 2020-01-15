@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'support/model_with_a_position_attribute'
 
 describe Tab do
 # We are testing YModel in this file as well.

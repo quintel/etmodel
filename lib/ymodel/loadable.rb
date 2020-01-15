@@ -20,6 +20,7 @@ module YModel
 
     def records
       @records ||= YAML.load_file(source)
+                       .map(&:symbolize_keys)
     end
 
     def source
@@ -32,7 +33,7 @@ module YModel
       File.join(Rails.root,
                 'config',
                 'ymodel',
-                self.name.gsub('::', '/').pluralize.downcase + ".yml")
+                self.name.gsub('::', '/').pluralize.underscore + ".yml")
 
     end
   end

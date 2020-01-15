@@ -13,31 +13,36 @@
 #  parent_id            :integer
 #
 
-class SidebarItem < ActiveRecord::Base
+require 'ymodel'
+class SidebarItem < YModel::Base
   include AreaDependent
 
   has_one :area_dependency, as: :dependable, dependent: :destroy
   has_one :description, as: :describable, dependent: :destroy
   has_many :slides, dependent: :nullify
   belongs_to :parent, class_name: "SidebarItem"
-  has_many :children, foreign_key: 'parent_id', class_name: "SidebarItem"
+  has_many :children, foreign_key: :parent_id, class_name: "SidebarItem"
 
-  accepts_nested_attributes_for :description, :area_dependency
+  class << self
+    def ordered
+      all.sort_by(&:position)
+    end
 
-  validates :key, presence: true, uniqueness: true
-  validates :position, numericality: true
+    def gquery_contains(search)
+      all.select {|rec| rec.percentage_bar_query.include?(search || '') }
+    end
 
-  scope :ordered, -> { order('position') }
-  scope :gquery_contains, ->(search) { where("percentage_bar_query LIKE ?", "%#{search}%") }
+    def roots
+      where(parent_id: nil)
+    end
 
-  scope :roots, -> { where(parent_id: nil) }
+    def find_by_section_and_key(section, key)
+      where(section: section, key: key)&.first
+    end
+  end
 
   def tab
     Tab.find(tab_id)
-  end
-
-  def tab=(tab)
-    self.tab_id = tab.id
   end
 
   def parsed_key_for_admin
@@ -46,5 +51,14 @@ class SidebarItem < ActiveRecord::Base
 
   def short_name
     "#{tab.try :key} : #{key}"
+  end
+
+  def root?
+    parent_id == nil
+  end
+
+  def visible_children
+    children.reject(&:area_dependent)
+            .sort_by(&:position)
   end
 end

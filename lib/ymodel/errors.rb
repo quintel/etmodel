@@ -24,4 +24,10 @@ module YModel
       super(message)
     end
   end
+
+  class MissingConstant < YModelError
+  end
+
+  class UnacceptableOptionsError < YModelError
+  end
 end

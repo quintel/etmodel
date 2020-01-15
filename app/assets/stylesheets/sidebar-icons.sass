@@ -2,9 +2,9 @@ $sidebar-spacing: 20px
 
 @import "sidebar/*.png"
 
-@mixin sidebar-icon($name)
+@mixin sidebar-icon($name, $v-offset: 0px)
   span.title
-    @include sidebar-sprite($name)
+    @include sidebar-sprite($name, false, 0px, $v-offset)
 
 #sidebar
 
@@ -42,7 +42,7 @@ $sidebar-spacing: 20px
   #solar
     @include sidebar-icon(solar)
   #co2
-    @include sidebar-icon(co2)
+    @include sidebar-icon(co2, 3px)
   #infrastructure
     @include sidebar-icon(infrastructure)
   #earth
@@ -57,6 +57,8 @@ $sidebar-spacing: 20px
     @include sidebar-icon(electricity)
   #costs_hydrogen
     @include sidebar-icon(hydrogen)
+  #wacc
+    @include sidebar-icon(wacc)
 
   // Overview
 
@@ -83,7 +85,7 @@ $sidebar-spacing: 20px
   #electricity_renewable
     @include sidebar-icon(electricity_renewable)
   #heat, #costs_heat
-    @include sidebar-icon(heat)
+    @include sidebar-icon(heat, -1px)
   #fuels
     @include sidebar-icon(fuels)
   #other_fuels

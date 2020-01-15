@@ -60,9 +60,6 @@ en:
     electricity_import_export:
       short_name: "Import/Export"
       long_name: "Import and export of electricity"
-    electricity_backup:
-      short_name: "Security of supply"
-      long_name: "Security of supply"
     electricity_renewable:
       short_name: "Renewable electricity"
       long_name: "Renewable electricity"
@@ -88,8 +85,8 @@ en:
       short_name: "Weather conditions"
       long_name: "Weather conditions"
     heat:
-      short_name: "Heat networks"
-      long_name: "Heat networks"
+      short_name: "District heating"
+      long_name: "District heating"
     fuels:
       short_name: "Fuels"
       long_name: "Fuels"
@@ -102,6 +99,9 @@ en:
     households:
       short_name: "Households"
       long_name: "Household energy demand"
+    heat_merit:
+      short_name: "Merit order"
+      long_name: "Merit order dispatchable heat sources"
     hydrogen:
       short_name: "Hydrogen"
       long_name: "Hydrogen"
@@ -141,6 +141,9 @@ en:
     primary_production:
       short_name: "Extraction"
       long_name: "Extraction of energy carriers"
+    security_of_supply:
+      short_name: "Security of supply"
+      long_name: "Security of supply"
     solar:
       short_name: "Solar power"
       long_name: "Solar power costs"
@@ -165,6 +168,9 @@ en:
     transport_passenger_transport:
       short_name: "Passenger transport"
       long_name: "Passenger transport"
+    wacc:
+      short_name: "WACC"
+      long_name: "Weighted average cost of capital (WACC)"
     water:
       short_name: "Hydro electric"
       long_name: "Water power costs"

@@ -8,7 +8,7 @@
 ul.sortable
   padding-left: 0
 
-ul.sortable li, #flexibility-options .curtailment
+ul.sortable li, .sortable-container .fixed
   background: white
   border: 1px solid #ddd
   list-style-type: none
@@ -79,11 +79,11 @@ ul.sortable li
     font-size: 11px
     color: #999
 
-#flexibility-options
+.sortable-container
   .loading-message
     display: none
 
-  .curtailment
+  .fixed
     border-radius: 3px
     color: #999
     cursor: default
@@ -94,7 +94,7 @@ ul.sortable li
       color: #ccc
       font-size: 17px
 
-  .curtailment, .sortable li:last-child
+  .fixed, .sortable li:last-child
     border-bottom-color: #ccc
     box-shadow: 0 1px 0 #ddd
 
@@ -104,5 +104,5 @@ ul.sortable li
       display: block
       height: 100px
 
-    .sortable, .curtailment, .flexibility-options__header
+    .sortable, .fixed, .flexibility-options__header
       display: none

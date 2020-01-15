@@ -47,8 +47,15 @@ It is now also possible to use hydrogen in the 'other industry' sector, next to 
 
 -> ![](/assets/pages/whats_new/hydrogen_other_industry_en.png) <-
 
+## 6. Weighted average costs of capital (WACC)
 
-## 6. Improvements in biomass modelling
+You can now adjust the future cost of capital (WACC) for all technologies in the ETM. More information can be found on our [documentation][wacc documentation]. 
+
+[Discover the WACC sliders here!][wacc slide]
+
+-> ![](/assets/pages/whats_new/wacc_en.png) <-
+
+## 7. Improvements in biomass modelling
 
 The modelling of biomass in the ETM has been improved in collaboration with TKI Nieuw Gas, Gasunie, GasTerra and TNO. Using biomass in a scenario is now simpler and more transparent. The improvements allow the user to see at a glance which biomass flows exist for the region, both for the present and the future. In addition, **potentials for various biomass flows** have been investigated by TNO. The ETM now shows these potentials for each region. Another important point of improvement is the addition of **supercritical water gasification (SCW)** and **gasification of dry biomass** for green gas. All required data on biomass and conversion techniques have been adjusted and documented on our [GitHub][biomass documentation] based on research by TNO.
 
@@ -58,7 +65,7 @@ The modelling of biomass in the ETM has been improved in collaboration with TKI 
 
 -> ![](/assets/pages/whats_new/biomass_potential_en.png) <-
 
-## 7. New large-scale electricity storage technologies
+## 8. New large-scale electricity storage technologies
 
 Two large-scale electricity storage technologies have been added: **underground pumped hydro storage** and **large-scale batteries**. Excess electricity from renewable sources can now be stored in these technologies and supplied to the grid at a later moment. The user can adjust the costs of these technologies.
 
@@ -67,6 +74,8 @@ Two large-scale electricity storage technologies have been added: **underground 
 -> ![](/assets/pages/whats_new/new_flex_options_en.png) <-
 
 [biomass documentation]: https://github.com/quintel/documentation/blob/master/general/biomass.md
+
+[wacc documentation]: https://github.com/quintel/documentation/blob/master/general/cost_calculations.md
 
 [biomass slide]: /scenario/supply/biomass/overview
 
@@ -79,3 +88,5 @@ Two large-scale electricity storage technologies have been added: **underground 
 [hydrogen other industry slide]: /scenario/demand/industry/other
 
 [weather slide]: /scenario/flexibility/flexibility_weather/extreme-weather-conditions
+
+[wacc slide]: /scenario/costs/wacc/weighted-average-cost-of-capital-wacc

@@ -7,6 +7,8 @@ Current goals are:
   - Providing an AR like interface so its easy to replace the old AR model
   - Being able to interoperate with existing AR objects.
 
+
+
 ## The old Schema
 
 Models:
@@ -25,37 +27,39 @@ Models:
   - Text
 
 
-## Plan of attack:
-
-We've decided its best to chop the work into chunks.
+## Roadmap:
 
 
-WUT IS THIS?
-  - OutputElementSerie
-  - OutputElementType
-  - AreaDependency
-  - Text
-  - Constraint
-  - SidebarItem
+#### First stage
+- Build a library that enables us to wrap a yaml file with a simple AR-like API implementing methods such as find, where and the simple relations.
+- Build a script that dumps a record to YAML.
+- Migrate Tabs and Sidebar items to YModel.
+
+#### Second stage
+- Convert all "Semi-static data models" to YModel.
+
+## What models do we want to migrate?
+
+#### These models have been migrated
+- Tab
+- SidebarItem
+
+#### These models need to be migrated but seem simple to tackle:
+- Slide
+- InputElement
+- OutputElement
+
+#### These models need to be migrated but seem simple to tackle:
+- OutputElementSerie
+- OutputElementType
+- AreaDependency
+- Text
+- Constraint
+- Target
+
+
+#### These models can be deleted
   - Target
 
-Some models can stay more or less the same.
-  - Tab
-  - Slide
-  - InputElement
-  - OutputElement
-
-Some models can be deleted.
-  - Target
-
-Some models could be implemented in a different way.
+#### These models should be implemented in a different way.
   - Description
-
-
-create_table "area_dependencies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
-  t.string "dependent_on"
-  t.text "description"
-  t.integer "dependable_id"
-  t.string "dependable_type", limit: 191
-  t.index ["dependable_id", "dependable_type"], name: "index_area_dependencies_on_dependable_id_and_dependable_type"
-end

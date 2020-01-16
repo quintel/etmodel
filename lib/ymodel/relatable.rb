@@ -1,7 +1,7 @@
 require 'active_support/inflector'
 require 'ymodel/errors'
 # This module contains YModel logic for managing relations. Some caveats:
-#   - combining as and foreign_key won't work.
+#   - combining the 'as' and 'foreign_key' options won't work.
 #   - the default foreign_key won't contain namespaces.
 #   - Seems to be the most smelly piece of code in YModel.
 

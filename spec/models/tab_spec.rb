@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 describe Tab do
-# We are testing YModel in this file as well.
-
   describe '.' do
     subject { Tab }
     it { is_expected.to respond_to :all }

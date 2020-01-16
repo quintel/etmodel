@@ -1,13 +1,18 @@
-require "ymodel/schema"
-require "ymodel/errors"
+# frozen_string_literal: true
+
+require 'ymodel/schema'
+require 'ymodel/errors'
 
 module YModel
+  # Module resposible for loading the schema and data from the yaml files.
   module Loadable
+    # This method can be called from within a concrete implementation to
+    # overwrite the default ymodel filename associated with that model.
     def source_file(filename)
       @source = filename
 
       # Similar to YModel::Trigger#inherited. A hook for loading the schema.
-      set_readers self
+      define_readers self
     end
 
     def schema
@@ -20,7 +25,7 @@ module YModel
 
     def records
       @records ||= YAML.load_file(source)
-                       .map(&:symbolize_keys)
+        .map(&:symbolize_keys)
     end
 
     def source
@@ -33,7 +38,7 @@ module YModel
       File.join(Rails.root,
                 'config',
                 'ymodel',
-                self.name.gsub('::', '/').pluralize.underscore + ".yml")
+                name.gsub('::', '/').pluralize.underscore + '.yml')
     end
   end
 end

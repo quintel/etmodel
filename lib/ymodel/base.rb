@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'ymodel/relatable'
 require 'ymodel/loadable'
 require 'ymodel/trigger'
 
-# YModel is a ActiveRecord like interface to wrap YAML.
 module YModel
+  # This is used in a similar manner to ActiveRecord
   class Base
     extend YModel::Relatable
     extend YModel::Loadable
@@ -21,8 +23,8 @@ module YModel
 
     def attributes
       schema.attributes
-            .map {|attr| { attr => self.send(attr) } }
-            .reduce(&:merge)
+        .map { |attr| { attr => send(attr) } }
+        .reduce(&:merge)
     end
 
     class << self
@@ -45,7 +47,7 @@ module YModel
       def where(**attributes)
         attributes.symbolize_keys!
         all.select do |record|
-          attributes.all?{|key, value| record.send(key) == value }
+          attributes.all? { |key, value| record.send(key) == value }
         end
       end
     end

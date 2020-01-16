@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'yaml'
 
 module YModel
@@ -12,11 +14,14 @@ module YModel
   #   YModel::Dump.('sidebar_items')
   # end
   module Dump
-    def self.call(model, storage_path=File.join(Rails.root,'config','ymodel'))
-      model = Kernel.const_get(model.to_s.singularize.camelcase)
-      file_path  = File.join(storage_path, model.name.underscore.pluralize + ".yml")
+    def self.call(model,
+      storage_path = File.join(Rails.root, 'config', 'ymodel'))
 
-      File.write(file_path, model.all.map(&:attributes).to_yaml )
+      model = Kernel.const_get(model.to_s.singularize.camelcase)
+      file_path = File.join(storage_path,
+                            model.name.underscore.pluralize + '.yml')
+
+      File.write(file_path, model.all.map(&:attributes).to_yaml)
     end
   end
 end

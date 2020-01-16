@@ -10,7 +10,6 @@ class InputElementsController < ApplicationController
     slides = Slide.ordered.includes(:sliders)
 
     # Include only sliders which are visible in the UI.
-    # Shouldn't this be a scope?
     slides = slides.select do |slide|
       slide.sidebar_item&.tab_id && slide.sliders.any?
     end

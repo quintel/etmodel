@@ -1,8 +1,9 @@
 require 'active_support/inflector'
 require 'ymodel/errors'
-# This module contains YModel logic for managin relations. Some caveats:
-# - combining as and foreign_key won't work
-# - the default foreign_key won't contain namespaces.
+# This module contains YModel logic for managing relations. Some caveats:
+#   - combining as and foreign_key won't work.
+#   - the default foreign_key won't contain namespaces.
+#   - Seems to be the most smelly piece of code in YModel.
 
 module YModel
   module Relatable
@@ -46,6 +47,8 @@ module YModel
       end
     end
 
+    private
+
     def default_foreign_key
       klass_name.underscore
                 .split('/')
@@ -53,8 +56,6 @@ module YModel
                 .+('_id')
                 .to_sym
     end
-
-    private
 
     def model_class(model)
       Kernel.const_get(model.to_s.singularize.camelcase)

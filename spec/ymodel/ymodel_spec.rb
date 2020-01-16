@@ -38,10 +38,10 @@ describe YModel::Base do
       it { is_expected.to be_a YModel::Concrete }
     end
 
-    # describe 'with a nil as argument' do
-    #   subject { YModel::Concrete.find(nil) }
-    #   it { is_expected.to eq nil }
-    # end
+    describe 'with a nil as argument' do
+      subject { YModel::Concrete.find(nil) }
+      it { is_expected.to eq nil }
+    end
   end
 
   describe '.where' do

@@ -6,7 +6,6 @@ describe SidebarItem do
   subject { SidebarItem }
   it { is_expected.to respond_to(:ordered) }
   it { is_expected.to respond_to(:gquery_contains) }
-  it { is_expected.to respond_to(:roots) }
 
   describe '.new' do
     subject { SidebarItem.new }

@@ -32,10 +32,6 @@ class SidebarItem < YModel::Base
       all.select {|rec| rec.percentage_bar_query.include?(search || '') }
     end
 
-    def roots
-      where(parent_id: nil)
-    end
-
     def find_by_section_and_key(section, key)
       where(section: section, key: key)&.first
     end

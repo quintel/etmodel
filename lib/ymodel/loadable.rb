@@ -6,7 +6,7 @@ module YModel
     def source_file(filename)
       @source = filename
 
-      # Similar to TModel::Trigger#inherited. A hook for loading the schema.
+      # Similar to YModel::Trigger#inherited. A hook for loading the schema.
       set_readers self
     end
 
@@ -34,7 +34,6 @@ module YModel
                 'config',
                 'ymodel',
                 self.name.gsub('::', '/').pluralize.underscore + ".yml")
-
     end
   end
 end

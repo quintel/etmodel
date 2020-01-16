@@ -2,6 +2,7 @@ module YModel
   module Trigger
 
     protected
+
     def set_readers(model)
       model.instance_eval { attr_reader *schema.attributes }
     end

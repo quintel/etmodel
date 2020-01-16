@@ -1,4 +1,16 @@
+# == Schema Information
+#
+# Table name: tabs
+#
+#  id          :integer
+#  key         :string
+#  nl_vimeo_id :string
+#  en_vimeo_id :string
+#  position    :integer
+#
+
 require 'ymodel'
+
 
 class Tab < YModel::Base
   include AreaDependent

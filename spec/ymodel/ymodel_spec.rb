@@ -64,17 +64,17 @@ describe YModel::Base do
     end
   end
 
-  describe ".has_many" do
-    it "raises an error when called with both an " \
+  describe '.has_many' do
+    it 'raises an error when called with both an ' \
        "`as` and a `foreign_key` option" do
-      expect { YModel::Concrete.has_many(:foo, as: 'bar', foreign_key: :qux ) }
+      expect { YModel::Concrete.has_many(:foo, as: 'bar', foreign_key: :qux) }
         .to raise_error(YModel::UnacceptableOptionsError)
     end
-    describe" decorates instances with" do
+    describe 'decorates instances with' do
       subject { YModel::ConcreteRelation.all.first }
 
-      describe "#model_names" do
-        it { is_expected.to respond_to :concretes}
+      describe '#model_names' do
+        it { is_expected.to respond_to :concretes }
         it { expect(subject.concretes).to be_a Array }
       end
     end
@@ -82,27 +82,27 @@ describe YModel::Base do
 
   describe 'With a missing source' do
     it 'doesn\'t raise an error upon loading' do
-      expect{ YModel::InvalidConcrete }.not_to raise_error
+      expect { YModel::InvalidConcrete }.not_to raise_error
     end
 
     describe '.all' do
       subject { YModel::InvalidConcrete.all }
       it 'raises an error upon querying' do
-        expect{ subject }.to raise_error YModel::SourceFileNotFound
+        expect { subject }.to raise_error YModel::SourceFileNotFound
       end
     end
 
     describe '.find' do
       subject { YModel::InvalidConcrete.find(1) }
       it 'raises an error upon querying' do
-        expect{ subject }.to raise_error YModel::SourceFileNotFound
+        expect { subject }.to raise_error YModel::SourceFileNotFound
       end
     end
 
     describe '.find_by_key' do
-      subject { YModel::InvalidConcrete.find_by_key(:foo)}
+      subject { YModel::InvalidConcrete.find_by_key(:foo) }
       it 'raises an error upon querying' do
-        expect{ subject }.to raise_error YModel::SourceFileNotFound
+        expect { subject }.to raise_error YModel::SourceFileNotFound
       end
     end
   end
@@ -132,21 +132,21 @@ describe YModel::Base do
     subject { YModel::Concrete.find(1).attributes }
 
     it 'returns a hash with all attributes contained within the record' do
-      is_expected.to eq({id: 1,
+      is_expected.to eq( id: 1,
                          key: 'overview',
                          nl_vimeo_id: '',
                          en_vimeo_id: '',
                          position: 1,
                          nillable: nil,
-                         concrete_relation_id: 2})
+                         concrete_relation_id: 2 )
     end
   end
 end
 
 describe YModel::Schema do
-  let (:schema) do
-    YModel::Schema.new([{'key1' => 'value', 'key2' => 'value'},
-                        {'key1' => 'value', 'key3' => 'value'}])
+  let(:schema) do
+    YModel::Schema.new([{ 'key1' => 'value', 'key2' => 'value' },
+                        { 'key1' => 'value', 'key3' => 'value' }])
   end
 
   describe 'attributes' do

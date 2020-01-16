@@ -45,8 +45,7 @@ Etm::Application.routes.draw do
     get 'map', to: 'pages#map', as: :map
     post 'clear_cache' => 'pages#clear_cache', as: :clear_cache
 
-    resources :sidebar_items,
-              :output_elements,
+    resources :output_elements,
               :output_element_series,
               :general_user_notifications,
               :constraints,
@@ -54,10 +53,6 @@ Etm::Application.routes.draw do
 
     resources :texts, except: [:show]
     resources :areas, only: [:index, :show]
-
-    resources :tabs do
-      resources :sidebar_items
-    end
 
     resources :sidebar_items do
       resources :slides

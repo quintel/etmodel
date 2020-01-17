@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_19_125858) do
+ActiveRecord::Schema.define(version: 2020_01_17_111223) do
 
   create_table "area_dependencies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
@@ -163,21 +163,6 @@ ActiveRecord::Schema.define(version: 2019_12_19_125858) do
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
   end
 
-  create_table "sidebar_items", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
-    t.string "key", limit: 191
-    t.string "section"
-    t.text "percentage_bar_query"
-    t.string "nl_vimeo_id"
-    t.string "en_vimeo_id"
-    t.integer "tab_id"
-    t.integer "position"
-    t.integer "parent_id"
-    t.index ["key"], name: "index_sidebar_items_on_key"
-    t.index ["parent_id"], name: "index_sidebar_items_on_parent_id"
-    t.index ["position"], name: "index_sidebar_items_on_position"
-    t.index ["tab_id"], name: "index_sidebar_items_on_tab_id"
-  end
-
   create_table "slides", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "image"
     t.datetime "created_at"
@@ -193,15 +178,6 @@ ActiveRecord::Schema.define(version: 2019_12_19_125858) do
     t.index ["key"], name: "index_slides_on_key"
     t.index ["position"], name: "index_slides_on_position"
     t.index ["sidebar_item_id"], name: "index_slides_on_sidebar_item_id"
-  end
-
-  create_table "tabs", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
-    t.string "key", limit: 191
-    t.string "nl_vimeo_id"
-    t.string "en_vimeo_id"
-    t.integer "position"
-    t.index ["key"], name: "index_tabs_on_key"
-    t.index ["position"], name: "index_tabs_on_position"
   end
 
   create_table "texts", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|

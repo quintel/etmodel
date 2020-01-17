@@ -2,7 +2,6 @@ require 'rails_helper'
 require 'support/model_with_a_position_attribute'
 
 describe SidebarItem do
-
   subject { SidebarItem }
   it { is_expected.to respond_to(:ordered) }
   it { is_expected.to respond_to(:gquery_contains) }

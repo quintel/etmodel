@@ -86,7 +86,7 @@ describe InputElementsController do
       is_expected.to include translator.call('sidebar_items', si1.key)
     end
 
-    it { is_expected.to satisfy { |path| path.length == 3 } }
+    it { is_expected.to(satisfy { |path| path.length == 3 }) }
     it { is_expected.to include translator.call('tabs', t1.key) }
 
     it { is_expected.to include translator.call('slides', sl1.key) }

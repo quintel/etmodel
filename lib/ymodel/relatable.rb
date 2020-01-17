@@ -17,50 +17,46 @@ module YModel
     end
 
     # These cop is disabled because I'm just copying ActiveRecords interface
-    # rubocop:disable Naming/PredicateName,
+    # rubocop:disable Naming/PredicateName
     # rubocop:disable Naming/UncommunicativeMethodParamName
-    def has_many(model, class_name: nil, as: nil, foreign_key: nil, **_options)
+    def has_many(model, class_name: nil, as: nil, foreign_key: nil)
       raise_options_error if as && foreign_key
 
-      foreign_key   ||= default_foreign_key
-      relation_class  = model_class(class_name || model)
-      klass_name      = klass_name
+      foreign_key ||= default_foreign_key
+      relation_class = model_class(class_name || model)
+
       define_method(model) do
-        if as
-          relation_class.where("#{as}_id" => id,
-                               "#{as}_type" => klass_name)
-        else
-          relation_class.where(foreign_key.to_sym => id)
-        end
+        return relation_class.where(foreign_key.to_sym => id) unless as
+
+        relation_class.where("#{as}_id" => id,
+                             "#{as}_type" => self.class.name)
       end
     end
 
-    def has_one(model, class_name: nil, as: nil, foreign_key: nil, **_options)
+    def has_one(model, class_name: nil, as: nil, foreign_key: nil)
       raise_options_error if as && foreign_key
 
-      foreign_key   ||= default_foreign_key
-      relation_class  = model_class(class_name || model)
-      klass_name      = klass_name
+      foreign_key ||= default_foreign_key
+      relation_class = model_class(class_name || model)
 
       define_method(model) do
-        if as
-          relation_class.find_by("#{as}_id" => id,
-                                 "#{as}_type" => klass_name)
-        else
-          relation_class.find_by(foreign_key => id)
-        end
+        return relation_class.find_by(foreign_key => id) unless as
+
+        relation_class.find_by("#{as}_id" => id,
+                               "#{as}_type" => self.class.name)
       end
     end
-    # rubocop:enable Naming/PredicateName,
+    # rubocop:enable Naming/PredicateName
     # rubocop:enable Naming/UncommunicativeMethodParamName
 
     private
 
     def default_foreign_key
-      klass_name.underscore
-        .split('/')
+      name
+        .split('::')
         .last
-                .+('_id')
+        .underscore
+        .+('_id')
         .to_sym
     end
 
@@ -70,10 +66,6 @@ module YModel
       message = "relation `#{model}` couldn't be made because constant "\
                 "`#{model.to_s.singularize.camelcase}` doesn't exist."
       raise YModel::MissingConstant, message
-    end
-
-    def klass_name
-      name
     end
 
     def raise_options_error

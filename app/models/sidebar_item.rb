@@ -14,14 +14,18 @@
 #
 
 require 'ymodel'
+
+# This model represents the secondary menu-item category in the sidebar of the
+# scenario section of the application. The ones you click to a `slide`.
+# ie "Households", "Electricity" and "Fuel prices"
 class SidebarItem < YModel::Base
   include AreaDependent
 
-  has_one :area_dependency, as: :dependable, dependent: :destroy
-  has_one :description, as: :describable, dependent: :destroy
-  has_many :slides, dependent: :nullify
-  belongs_to :parent, class_name: "SidebarItem"
-  has_many :children, foreign_key: :parent_id, class_name: "SidebarItem"
+  has_one :area_dependency, as: :dependable
+  has_one :description, as: :describable
+  has_many :slides
+  belongs_to :parent, class_name: 'SidebarItem'
+  has_many :children, foreign_key: :parent_id, class_name: 'SidebarItem'
 
   class << self
     def ordered
@@ -29,7 +33,7 @@ class SidebarItem < YModel::Base
     end
 
     def gquery_contains(search)
-      all.select {|rec| rec.percentage_bar_query.include?(search || '') }
+      all.select { |rec| rec.percentage_bar_query.include?(search || '') }
     end
 
     def find_by_section_and_key(section, key)
@@ -50,7 +54,7 @@ class SidebarItem < YModel::Base
   end
 
   def root?
-    parent_id == nil
+    parent_id.nil?
   end
 
   def visible_children

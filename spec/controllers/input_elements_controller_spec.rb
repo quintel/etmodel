@@ -51,12 +51,12 @@ describe InputElementsController do
 
   # Something is going wrong here. We want to preserve the old test. We might be
   # Able to by better selecting the tabs
-  describe "length of input_elements" do
+  describe 'length of input_elements' do
     subject { json[0]['input_elements'].length }
     it { is_expected.to eq 2 } # should be 4 ?
   end
 
-  describe "contains some data." do
+  describe 'contains some data.' do
     subject { json[0]['input_elements'] }
 
     it { expect(subject[0]['key']).to eq(ie1.key) }
@@ -75,21 +75,21 @@ describe InputElementsController do
     expect(json[3]['input_elements'][0]['key']).to eq(ie5.key)
   end
 
-  describe "[path]" do
+  describe '[path]' do
     # this translation code is quite similar to that in "slide_presenter.rb"
     let(:translator) { ->(ns, n) { I18n.t("#{ns}.#{n}") } }
 
     subject { json[0]['path'] }
 
-    it "includes the s1 key" do
-      pending "should be tested on the presenter"
-      is_expected.to include translator.('sidebar_items', si1.key)
+    it 'includes the s1 key' do
+      pending 'should be tested on the presenter'
+      is_expected.to include translator.call('sidebar_items', si1.key)
     end
 
     it { is_expected.to satisfy { |path| path.length == 3 } }
-    it { is_expected.to include translator.('tabs', t1.key) }
+    it { is_expected.to include translator.call('tabs', t1.key) }
 
-    it { is_expected.to include translator.('slides', sl1.key) }
+    it { is_expected.to include translator.call('slides', sl1.key) }
   end
 
   context 'the inputs' do

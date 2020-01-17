@@ -11,12 +11,14 @@
 
 require 'ymodel'
 
-
+# This model represents the top-most clickable menu-item category in the
+# sidebar of the scenario section of the application. i.e. Demand, Supply,
+# Flexibility.
 class Tab < YModel::Base
   include AreaDependent
 
-  has_many :sidebar_items, dependent: :nullify
-  has_one :area_dependency, as: :dependable, dependent: :destroy
+  has_many :sidebar_items
+  has_one :area_dependency, as: :dependable
 
   # Returns all Tabs intended for display to ordinary users.
   def self.frontend

@@ -20,7 +20,8 @@
       :hint => "Secondary / legacy chart"
 
     .input.select.optional.sidebar_item_tab
-      %label.select.optional.control-label{for: "sidebar_item_tab_id"} Sidebar item
+      %label.select.optional.control-label{ for: "sidebar_item_tab_id" }
+        Sidebar item
       = f.select :sidebar_item_id, SidebarItem.all.map{|s| [s.short_name, s.id] }
     = f.simple_fields_for :area_dependency do |j|
       = j.input :dependent_on, :as => :select, :collection => area_dependency_options(@slide), :hint => "When you don't want to show the slide for areas without a certain setting. E.g. dont wanna show Solar CSP in NL? Put this to 'has_solar_csp' and be sure that for NL this value is false in the area data."

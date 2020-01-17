@@ -2101,45 +2101,6 @@ Role.create!([
 
 
 
-SidebarItem.create!([
-  { id: 1, key: "households", section: "demand", percentage_bar_query: "share_of_households_in_final_demand", nl_vimeo_id: "19652713", en_vimeo_id: "20191822", tab_id: 2, position: 1, parent_id: nil },
-  { id: 2, key: "buildings", section: "demand", percentage_bar_query: "share_of_buildings_in_final_demand", nl_vimeo_id: "19652798", en_vimeo_id: "20191840", tab_id: 2, position: 2, parent_id: nil },
-  { id: 3, key: "transport", section: "demand", percentage_bar_query: "share_of_transport_in_final_demand", nl_vimeo_id: "19652922", en_vimeo_id: "20191849", tab_id: 2, position: 3, parent_id: nil },
-  { id: 4, key: "industry", section: "demand", percentage_bar_query: "share_of_industry_and_energy_in_final_demand", nl_vimeo_id: "19652933", en_vimeo_id: "20191863", tab_id: 2, position: 4, parent_id: nil },
-  { id: 5, key: "agriculture", section: "demand", percentage_bar_query: "share_of_agriculture_in_final_demand", nl_vimeo_id: "19652963", en_vimeo_id: "20191872", tab_id: 2, position: 5, parent_id: nil },
-  { id: 6, key: "other", section: "demand", percentage_bar_query: "share_of_other_in_final_demand", nl_vimeo_id: "19653269", en_vimeo_id: "20191883", tab_id: 2, position: 6, parent_id: nil },
-  { id: 12, key: "combustion", section: "costs", percentage_bar_query: "", nl_vimeo_id: "19654068", en_vimeo_id: "20191900", tab_id: 4, position: 2, parent_id: nil },
-  { id: 13, key: "nuclear", section: "costs", percentage_bar_query: "", nl_vimeo_id: "19654110", en_vimeo_id: "20191910", tab_id: 4, position: 3, parent_id: nil },
-  { id: 14, key: "wind", section: "costs", percentage_bar_query: "", nl_vimeo_id: "19654118", en_vimeo_id: "20191918", tab_id: 4, position: 4, parent_id: nil },
-  { id: 15, key: "water", section: "costs", percentage_bar_query: "", nl_vimeo_id: "19654125", en_vimeo_id: "20191931", tab_id: 4, position: 5, parent_id: nil },
-  { id: 16, key: "solar", section: "costs", percentage_bar_query: "", nl_vimeo_id: "19654162", en_vimeo_id: "20191945", tab_id: 4, position: 6, parent_id: nil },
-  { id: 17, key: "earth", section: "costs", percentage_bar_query: "", nl_vimeo_id: "19654166", en_vimeo_id: "20191955", tab_id: 4, position: 7, parent_id: nil },
-  { id: 18, key: "co2", section: "costs", percentage_bar_query: "", nl_vimeo_id: "19654252", en_vimeo_id: "20191967", tab_id: 4, position: 8, parent_id: nil },
-  { id: 19, key: "sustainability", section: "targets", percentage_bar_query: "", nl_vimeo_id: "19653521", en_vimeo_id: "20191776", tab_id: 1, position: 1, parent_id: nil },
-  { id: 20, key: "dependence", section: "targets", percentage_bar_query: "", nl_vimeo_id: "19653562", en_vimeo_id: "20191790", tab_id: 1, position: 2, parent_id: nil },
-  { id: 21, key: "cost", section: "targets", percentage_bar_query: "", nl_vimeo_id: "19653577", en_vimeo_id: "20191797", tab_id: 1, position: 3, parent_id: nil },
-  { id: 22, key: "electricity", section: "supply", percentage_bar_query: "", nl_vimeo_id: "19655989", en_vimeo_id: "20191982", tab_id: 3, position: 1, parent_id: nil },
-  { id: 23, key: "electricity_renewable", section: "supply", percentage_bar_query: "", nl_vimeo_id: "19655994", en_vimeo_id: "20191993", tab_id: 3, position: 2, parent_id: nil },
-  { id: 24, key: "fossil_heat", section: "supply", percentage_bar_query: "", nl_vimeo_id: "19656001", en_vimeo_id: "20246914", tab_id: 3, position: 3, parent_id: nil },
-  { id: 25, key: "renewable_heat", section: "supply", percentage_bar_query: "", nl_vimeo_id: "19656053", en_vimeo_id: "20192022", tab_id: 3, position: 4, parent_id: nil },
-  { id: 26, key: "transport_fuels", section: "supply", percentage_bar_query: "", nl_vimeo_id: "19656013", en_vimeo_id: "20192035", tab_id: 3, position: 5, parent_id: nil },
-  { id: 28, key: "infrastructure", section: "costs", percentage_bar_query: "", nl_vimeo_id: "19656045", en_vimeo_id: "20192061", tab_id: 4, position: 8, parent_id: nil },
-  { id: 29, key: "area", section: "targets", percentage_bar_query: "", nl_vimeo_id: "19653880", en_vimeo_id: "20191803", tab_id: 1, position: 4, parent_id: nil },
-  { id: 31, key: "other_fuels", section: "supply", percentage_bar_query: "", nl_vimeo_id: "19655994", en_vimeo_id: "20191993", tab_id: 3, position: 6, parent_id: nil },
-  { id: 32, key: "fce", section: "supply", percentage_bar_query: "", nl_vimeo_id: "", en_vimeo_id: "", tab_id: 3, position: 8, parent_id: nil },
-  { id: 33, key: "electricity_backup", section: "supply", percentage_bar_query: "", nl_vimeo_id: "", en_vimeo_id: "", tab_id: 3, position: 9, parent_id: nil },
-  { id: 34, key: "merit_order", section: "costs", percentage_bar_query: "", nl_vimeo_id: "", en_vimeo_id: "", tab_id: 4, position: 9, parent_id: nil },
-  { id: 35, key: "employment", section: "costs", percentage_bar_query: "", nl_vimeo_id: "", en_vimeo_id: "", tab_id: 4, position: 10, parent_id: nil },
-  { id: 36, key: "heating_technologies", section: "costs", percentage_bar_query: "", nl_vimeo_id: "", en_vimeo_id: "", tab_id: 4, position: 11, parent_id: nil },
-  { id: 37, key: "fuel_costs", section: "costs", percentage_bar_query: "", nl_vimeo_id: "", en_vimeo_id: "", tab_id: 4, position: 1, parent_id: nil },
-  { id: 38, key: "industry_metal", section: "demand", percentage_bar_query: "", nl_vimeo_id: "19652933", en_vimeo_id: "20191863", tab_id: 2, position: 2, parent_id: 4 },
-  { id: 39, key: "electricity_storage", section: "supply", percentage_bar_query: "", nl_vimeo_id: "", en_vimeo_id: "", tab_id: 3, position: 10, parent_id: nil },
-  { id: 40, key: "electricity_import_export", section: "supply", percentage_bar_query: "", nl_vimeo_id: "", en_vimeo_id: "", tab_id: 3, position: 11, parent_id: nil },
-  { id: 41, key: "industry_chemical", section: "demand", percentage_bar_query: "", nl_vimeo_id: "", en_vimeo_id: "", tab_id: 2, position: 1, parent_id: 4 }
-])
-
-
-
 Slide.create!([
   { id: 1, image: "house_insulation.gif", created_at: nil, updated_at: "2013-07-18 13:16:35", general_sub_header: "", group_sub_header: "", subheader_image: "", key: "demand_households_insulation", position: 4, sidebar_item_id: 1, output_element_id: 58, alt_output_element_id: 58 },
   { id: 2, image: "house_lighting.gif", created_at: nil, updated_at: "2013-11-25 12:57:28", general_sub_header: "share", group_sub_header: "", subheader_image: "", key: "demand_households_lighting", position: 12, sidebar_item_id: 1, output_element_id: 57, alt_output_element_id: 57 },
@@ -2265,13 +2226,4 @@ Slide.create!([
   { id: 176, image: "industry.gif", created_at: "2013-12-04 13:40:23", updated_at: "2013-12-05 09:26:39", general_sub_header: "%/year", group_sub_header: "", subheader_image: "", key: "demand_industry_chemical_demand_growth", position: 1, sidebar_item_id: 41, output_element_id: 150, alt_output_element_id: 150 },
   { id: 177, image: "industry.gif", created_at: "2013-12-04 15:38:13", updated_at: "2013-12-05 09:26:53", general_sub_header: "%/year", group_sub_header: "", subheader_image: "", key: "demand_industry_chemical_efficiency_improvement", position: 2, sidebar_item_id: 41, output_element_id: 150, alt_output_element_id: 150 },
   { id: 178, image: "industry.gif", created_at: "2013-12-04 15:53:37", updated_at: "2013-12-05 10:12:59", general_sub_header: "share", group_sub_header: "", subheader_image: "", key: "demand_industry_chemical_heat", position: 3, sidebar_item_id: 41, output_element_id: 151, alt_output_element_id: 151 }
-])
-
-
-
-Tab.create!([
-  { id: 1, key: "targets", nl_vimeo_id: "19658866", en_vimeo_id: "20191755", position: 1 },
-  { id: 2, key: "demand", nl_vimeo_id: "19658877", en_vimeo_id: "20191812", position: 2 },
-  { id: 3, key: "supply", nl_vimeo_id: "19658916", en_vimeo_id: "20191972", position: 4 },
-  { id: 4, key: "costs", nl_vimeo_id: "19658896", en_vimeo_id: "20191894", position: 3 }
 ])

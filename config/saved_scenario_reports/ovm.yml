@@ -34,13 +34,18 @@ gassen:
     elektriciteit en overig: factsheet_demand_gas_from_biogas_greengas_electricity_other
     totaal: factsheet_supply_gas_from_biogas
 
-  waterstof_import:
-    individueel: factsheet_demand_imported_hydrogen_in_individual
-    collectief: factsheet_demand_imported_hydrogen_in_collective
-    industrie: factsheet_demand_imported_hydrogen_in_industry
-    mobiliteit: factsheet_demand_imported_hydrogen_in_transport
-    elektriciteit: factsheet_demand_imported_hydrogen_in_electricity
-    totaal: factsheet_supply_gas_from_synthetic_gas
+  waterstof_vraag:
+    individueel: factsheet_demand_hydrogen_in_individual_heat
+    collectief: factsheet_demand_hydrogen_in_collective_heat
+    industrie: factsheet_demand_hydrogen_in_industry
+    mobiliteit: factsheet_demand_hydrogen_in_transport
+    elektriciteit: factsheet_demand_hydrogen_in_electricity
+    transportverliezen: factsheet_demand_hydrogen_distribution_losses
+    export: factsheet_demand_hydrogen_exported
+
+  waterstof_productie:
+    import: factsheet_supply_hydrogen_imported
+    lokaal geproduceerd: factsheet_supply_hydrogen_locally_produced
 
 elektriciteit:
   aanbod:

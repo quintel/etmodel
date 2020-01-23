@@ -15,19 +15,22 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 422
-      message: Unprocessable Entity
+      code: 200
+      message: OK
     headers:
       Server:
       - nginx/1.14.0
       Date:
-      - Wed, 22 Jan 2020 12:51:41 GMT
+      - Thu, 23 Jan 2020 09:24:55 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -40,26 +43,17 @@ http_interactions:
       - none
       Referrer-Policy:
       - strict-origin-when-cross-origin
+      Etag:
+      - W/"2522ca072d5e86745325a8adde37e1bc"
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7668205e-967f-43ec-a8fd-5bd0d6233af4
+      - b763a729-30d0-4234-affd-587a36d4e576
       X-Runtime:
-      - '0.009391'
-      Vary:
-      - Origin
+      - '1.011370'
     body:
-      encoding: UTF-8
-      string: '{"errors":["Gquery factsheet_demand_hydrogen_in_individual_heat does
-        not exist","Gquery factsheet_demand_hydrogen_in_collective_heat does not exist","Gquery
-        factsheet_demand_hydrogen_in_industry does not exist","Gquery factsheet_demand_hydrogen_in_transport
-        does not exist","Gquery factsheet_demand_hydrogen_in_electricity does not
-        exist","Gquery factsheet_demand_hydrogen_distribution_losses does not exist","Gquery
-        factsheet_demand_hydrogen_exported does not exist","Gquery factsheet_supply_hydrogen_imported
-        does not exist","Gquery factsheet_supply_hydrogen_locally_produced does not
-        exist","Gquery factsheet_supply_electricity_from_roof_solar_households does
-        not exist","Gquery factsheet_supply_electricity_from_roof_solar_buildings
-        does not exist"]}'
+      encoding: ASCII-8BIT
+      string: '{"scenario":{"id":648695,"title":"ETM Test Scenario","area_code":"nl","start_year":2015,"end_year":2050,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/648695","ordering":null,"display_group":null,"scaling":null,"source":"ETM","template":null,"created_at":"2017-03-13T20:22:35.000+01:00"},"gqueries":{"factsheet_supply_heat_from_solar_thermal":{"present":1136800000.0,"future":1136800000.0,"unit":"MJ"},"factsheet_supply_heat_from_ambient_collective":{"present":0.0,"future":0.0,"unit":"MJ"},"factsheet_supply_heat_from_ambient_individual":{"present":82870170468.16107,"future":82719868914.94661,"unit":"MJ"},"factsheet_supply_heat_from_ambient_total":{"present":82870170468.16107,"future":82719868914.94661,"unit":"MJ"},"factsheet_supply_heat_from_rest_collective":{"present":94105077185.6693,"future":65599496849.379395,"unit":"MJ"},"factsheet_supply_heat_from_rest_industry":{"present":96486420000.0,"future":96486420000.0,"unit":"MJ"},"factsheet_supply_heat_from_rest":{"present":190591497185.6693,"future":162085916849.3794,"unit":"MJ"},"factsheet_supply_heat_from_geothermal_collective":{"present":2553933913.0434747,"future":2553933913.0434747,"unit":"MJ"},"factsheet_demand_gas_from_fossil_individual":{"present":410180056921.6081,"future":410188920791.62463,"unit":"MJ"},"factsheet_demand_gas_from_fossil_collective":{"present":106221652462.9421,"future":32722748956.74522,"unit":"MJ"},"factsheet_demand_gas_from_fossil_industry":{"present":244661250243.10114,"future":244661250243.10114,"unit":"MJ"},"factsheet_demand_gas_from_fossil_transport":{"present":286514238.12386316,"future":286514238.12386316,"unit":"MJ"},"factsheet_demand_gas_from_fossil_electricity_other":{"present":352495819136.59814,"future":433050519703.8861,"unit":"MJ"},"factsheet_supply_gas_from_fossil":{"present":1113845293002.3733,"future":1120909953933.481,"unit":"MJ"},"factsheet_demand_gas_from_biogas_greengas_individual":{"present":1586271814.557947,"future":1586302405.7550263,"unit":"MJ"},"factsheet_demand_gas_from_biogas_greengas_collective":{"present":0.0,"future":0.0,"unit":"MJ"},"factsheet_demand_gas_from_biogas_greengas_industry":{"present":844380672.3119079,"future":844380672.3119079,"unit":"MJ"},"factsheet_demand_gas_from_biogas_greengas_transport":{"present":0.004256701390515224,"future":0.004256701390515224,"unit":"MJ"},"factsheet_demand_gas_from_biogas_greengas_electricity_other":{"present":10481765153.210535,"future":10526554271.682995,"unit":"MJ"},"factsheet_supply_gas_from_biogas":{"present":12912417640.084646,"future":12957237349.754187,"unit":"MJ"},"factsheet_demand_hydrogen_in_individual_heat":{"present":0.0,"future":0.0,"unit":"MJ"},"factsheet_demand_hydrogen_in_collective_heat":{"present":0.0,"future":0.0,"unit":"MJ"},"factsheet_demand_hydrogen_in_industry":{"present":0.0,"future":0.0,"unit":"MJ"},"factsheet_demand_hydrogen_in_transport":{"present":0.0,"future":0.0,"unit":"MJ"},"factsheet_demand_hydrogen_in_electricity":{"present":0.0,"future":0.0,"unit":"MJ"},"factsheet_demand_hydrogen_distribution_losses":{"present":0.0,"future":0.0,"unit":"MJ"},"factsheet_demand_hydrogen_exported":{"present":0.0,"future":0.0,"unit":"MJ"},"factsheet_supply_hydrogen_imported":{"present":0.0,"future":0.0,"unit":"MJ"},"factsheet_supply_hydrogen_locally_produced":{"present":0.0,"future":0.0,"unit":"MJ"},"factsheet_number_of_wind_turbine_inland_coastal":{"present":1010.1980187908475,"future":1010.1980187908475,"unit":"#"},"merit_order_onshore_wind_turbines_full_load_hours_in_merit_order_table":{"present":1920.0,"future":1920.0,"unit":"hours"},"factsheet_number_of_wind_turbines_offshore":{"present":32.357142857142826,"future":32.357142857142826,"unit":"#"},"merit_order_offshore_wind_turbines_full_load_hours_in_merit_order_table":{"present":3500.0,"future":3500.0,"unit":"hours"},"factsheet_supply_from_wind_and_other_electricity":{"present":27179999999.99995,"future":27179999999.99995,"unit":"MJ"},"factsheet_number_of_solar_pv":{"present":3598615.9166260054,"future":3598615.9166260054,"unit":"#"},"factsheet_supply_electricity_from_roof_solar_households":{"present":2851308781.8696947,"future":2851308781.8696947,"unit":"MJ"},"factsheet_supply_electricity_from_roof_solar_buildings":{"present":1079891218.1303117,"future":1079891218.1303117,"unit":"MJ"},"factsheet_supply_from_solar_pv_plants":{"present":108000000.00000003,"future":108000000.00000003,"unit":"MJ"},"factsheet_solar_pv_plants_land_use":{"present":40.33613445009364,"future":40.33613445009364,"unit":"#"},"factsheet_installed_capacity_of_solar_pv":{"present":1294.1176470588257,"future":1294.1176470588257,"unit":"MW"},"factsheet_demand_electricity_of_production_of_hydrogen":{"present":0.0,"future":0.0,"unit":"MJ"},"factsheet_demand_electricity_of_other":{"present":178430733179.01373,"future":185686723738.3697,"unit":"MJ"},"factsheet_demand_electricity_of_built_environment_ex_heating":{"present":205992560703.13852,"future":205992560703.1385,"unit":"MJ"},"factsheet_demand_electricity_of_individual_heating":{"present":11797669296.861479,"future":11853293033.636429,"unit":"MJ"},"factsheet_demand_electricity_of_collective_heating":{"present":0.0,"future":0.0,"unit":"MJ"},"factsheet_demand_electricity_of_transport":{"present":6308330000.0,"future":6308330000.0,"unit":"MJ"},"factsheet_demand_electricity_of_ict_data":{"present":23499999999.999996,"future":23499999999.999996,"unit":"MJ"},"factsheet_share_solar_and_wind_in_electricity_production":{"present":7.327946810193149,"future":7.327119463623938,"unit":"%"},"factsheet_demand_of_biomass_in_collective_heat_production":{"present":6558881892.584921,"future":646981134.825295,"unit":"MJ"},"factsheet_demand_of_biomass_in_individual_heat_production":{"present":21958770000.0,"future":21958769999.989735,"unit":"MJ"},"factsheet_demand_of_biomass_transport":{"present":12451999999.999996,"future":12451999999.999996,"unit":"MJ"},"factsheet_demand_of_biomass_industry":{"present":5913489241.570863,"future":5913489241.570863,"unit":"MJ"},"factsheet_demand_of_biomass_electricity":{"present":14785714285.7143,"future":0.0,"unit":"MJ"},"factsheet_demand_of_biomass_other_built_environment":{"present":0.0,"future":0.0,"unit":"MJ"},"factsheet_demand_fossil_in_households_buildings_agriculture":{"present":558237833857.8528,"future":552167087174.8083,"unit":"MJ"},"factsheet_demand_fossil_in_industry":{"present":1217371467814.5862,"future":1211753431918.5195,"unit":"MJ"},"factsheet_demand_fossil_in_mobility":{"present":449194000523.52313,"future":449084902599.1209,"unit":"MJ"},"factsheet_demand_fossil_in_electricity":{"present":598923610337.0707,"future":686712278817.3772,"unit":"MJ"},"factsheet_demand_fossil_in_total":{"present":2823726912533.0327,"future":2899717700509.826,"unit":"MJ"}}}'
     http_version: 
-  recorded_at: Wed, 22 Jan 2020 12:51:41 GMT
+  recorded_at: Thu, 23 Jan 2020 09:24:55 GMT
 recorded_with: VCR 3.0.3

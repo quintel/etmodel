@@ -26,17 +26,17 @@ describe InputElementsController do
   #     Slide 4
   #       InputElement 5
 
-  let(:t1) { Tab.all.first }
-  let(:t2) { Tab.all.second }
+  let(:t1) { Tab.all.second } #demand <- shouldn't we fake this instead of using real data?
+  let(:t2) { Tab.all.third } #supply
 
   let(:si1) { t1.sidebar_items.first }
   let(:si2) { t1.sidebar_items.second }
   let(:si3) { t2.sidebar_items.first }
 
-  let!(:sl1) { si1.slides.first }
-  let!(:sl2) { si1.slides.second }
-  let!(:sl3) { si2.slides.first }
-  let!(:sl4) { si3.slides.first }
+  let(:sl1) { si1.slides.first }
+  let(:sl2) { si1.slides.second }
+  let(:sl3) { si2.slides.first }
+  let(:sl4) { si3.slides.first }
 
   let!(:ie1) { create :input_element, slide: sl1 }
   let!(:ie2) { create :input_element, slide: sl1 }
@@ -66,12 +66,12 @@ describe InputElementsController do
   it { expect(json[1]['input_elements'][0]['key']).to eq(ie3.key) }
 
   it 'contains input element 5' do
-    pending 'This test should be somewhere else'
+    # pending 'This test should be somewhere else'
     expect(json[2]['input_elements'][0]['key']).to eq(ie4.key)
   end
 
   it 'contains input_element_5' do
-    pending 'This test should be somewhere else'
+    # pending 'This test should be somewhere else'
     expect(json[3]['input_elements'][0]['key']).to eq(ie5.key)
   end
 

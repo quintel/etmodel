@@ -36,7 +36,7 @@ class SlidePresenter
   def inputs
     # Sort in Ruby to avoid N+1 query.
     @slide.sliders.sort_by(&:position).map do |ie|
-      ie.as_json(only: %i[key unit]).merge(
+      ie.as_json(only: %w[key unit]).merge(
         name: translate_item(:input_elements, ie)
       )
     end

@@ -6,7 +6,7 @@ describe InputElement do
 
   describe '#url_components' do
     context 'when the input a slide, sidebar item, and tab' do
-      let(:slide) { FactoryBot.create(:slide) }
+      let(:slide) { Slide.visible.first }
       let(:input) { FactoryBot.create(:input_element, slide: slide) }
 
       it 'returns the slide URL components' do

@@ -28,7 +28,7 @@ describe ScenariosController, vcr: true do
   end
 
   describe '#play' do
-    let!(:slide) { FactoryBot.create(:slide, sidebar_item: sidebar_item) }
+    let(:slide) { sidebar_item.slides.first }
 
     before do
       session[:setting] = Setting.new(area_code: 'nl', api_session_id: 123)
@@ -210,10 +210,10 @@ describe ScenariosController, vcr: true do
         # Rendering the view triggers requests to ETEngine.
         render_views false
 
-        before do
-          # Create a basic interface.
-          FactoryBot.create(:slide, sidebar_item: sidebar_item)
-        end
+        # before do
+        #   # Create a basic interface.
+        #   sidebar_item.slides.first
+        # end
 
         context 'with a valid scenario' do
           it 'sets the API session ID' do
@@ -250,7 +250,7 @@ describe ScenariosController, vcr: true do
             FactoryBot.create(
               :input_element,
               key: 'hello',
-              slide: FactoryBot.create(:slide)
+              slide: sidebar_item.slides.first
             )
           end
 

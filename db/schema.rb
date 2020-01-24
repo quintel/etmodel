@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_17_111223) do
+ActiveRecord::Schema.define(version: 2020_01_23_152335) do
 
   create_table "area_dependencies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
@@ -161,23 +161,6 @@ ActiveRecord::Schema.define(version: 2020_01_17_111223) do
     t.datetime "updated_at", null: false
     t.index ["session_id"], name: "index_sessions_on_session_id"
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
-  end
-
-  create_table "slides", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
-    t.string "image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string "general_sub_header"
-    t.string "group_sub_header"
-    t.string "subheader_image"
-    t.string "key", limit: 191
-    t.integer "position"
-    t.integer "sidebar_item_id"
-    t.integer "output_element_id"
-    t.integer "alt_output_element_id"
-    t.index ["key"], name: "index_slides_on_key"
-    t.index ["position"], name: "index_slides_on_position"
-    t.index ["sidebar_item_id"], name: "index_slides_on_sidebar_item_id"
   end
 
   create_table "texts", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|

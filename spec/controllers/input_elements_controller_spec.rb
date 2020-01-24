@@ -33,10 +33,10 @@ describe InputElementsController do
   let(:si2) { t1.sidebar_items.second }
   let(:si3) { t2.sidebar_items.first }
 
-  let!(:sl1) { create :slide, sidebar_item: si1 }
-  let!(:sl2) { create :slide, sidebar_item: si1 }
-  let!(:sl3) { create :slide, sidebar_item: si2 }
-  let!(:sl4) { create :slide, sidebar_item: si3 }
+  let!(:sl1) { si1.slides.first }
+  let!(:sl2) { si1.slides.second }
+  let!(:sl3) { si2.slides.first }
+  let!(:sl4) { si3.slides.first }
 
   let!(:ie1) { create :input_element, slide: sl1 }
   let!(:ie2) { create :input_element, slide: sl1 }

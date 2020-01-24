@@ -8,7 +8,7 @@
           %li.empty
             %span.title== Empty item: #{ item.key }
         - else
-          - slide_key = slide = item.slides.ordered.first.short_name
+          - slide_key = slide = item.slides.sort_by(&:position)[0].short_name
           %li{:id => item.key, :data => {:gquery => item.percentage_bar_query}}
 
             = link_to play_path(tab.key, item.key, slide_key),
@@ -26,7 +26,7 @@
               %span.bullet.fa.fa-chevron-right
               %span.title== Empty item: #{ child.key }
           - else
-            - slide_key = child.slides.ordered.first.short_name
+            - slide_key = child.slides.sort_by(&:position)[0].short_name
             %li.child{:id => child.key , data: { parent: item.key }}
               = link_to play_path(tab.key, child.key, slide_key),
                 :data => {:nav => true, :key => "#{tab.key}/#{child.key}/#{slide_key}" } do

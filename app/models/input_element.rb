@@ -25,7 +25,7 @@ class InputElement < ActiveRecord::Base
 
   has_one :description, as: :describable, dependent: :destroy
   has_one :area_dependency, as: :dependable, dependent: :destroy
-  belongs_to :slide
+  # belongs_to :slide
 
   validates :key, presence: true, uniqueness: true
   validates :position, numericality: true
@@ -37,6 +37,14 @@ class InputElement < ActiveRecord::Base
 
   def title_for_description
     "input_elements.#{key}"
+  end
+
+  def slide
+    Slide.find slide_id
+  end
+
+  def slide=(slide)
+    self.slide_id = slide&.id
   end
 
   def translated_name

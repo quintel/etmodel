@@ -36,6 +36,11 @@ class InputElement < YModel::Base
     def ordered
       all.sort_by(&:position)
     end
+
+    def with_related_converter_like(converter_name)
+      all.reject{ |ie| ie.related_converter.nil? }
+         .select{ |ie| ie.related_converter.include?(converter_name || '')}
+    end
   end
 
   def title_for_description

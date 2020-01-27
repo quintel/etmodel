@@ -46,6 +46,12 @@ describe InputElement do
 
   end
 
+  describe '.with_related_converter_like' do
+    let(:ie) { InputElement.where( related_converter: 'households_solar_pv_solar_radiation')[0] }
+    subject { InputElement.with_related_converter_like('households') }
+    it { is_expected.to include ie }
+  end
+
   # describe '#url_components' do
   #   context 'when the input a slide, sidebar item, and tab' do
   #     let(:slide) { Slide.visible.first }

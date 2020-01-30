@@ -79,7 +79,6 @@ describe SavedScenariosController, vcr: true do
     end
 
     it 'responds to the .csv format' do
-      pending 'ete_scenario_mock does not respond to user_values anymore (?)'
       get :show, params: { id: user_scenario.id }, format: :csv
       expect(response.content_type).to eq('text/csv')
     end

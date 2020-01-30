@@ -12,6 +12,7 @@ class SavedScenariosController < ApplicationController
         @warning = t('scenario.warning')
       end
     end
+
     respond_to do |format|
       format.html
       format.csv

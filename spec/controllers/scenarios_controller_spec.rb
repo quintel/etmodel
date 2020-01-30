@@ -56,33 +56,6 @@ describe ScenariosController, vcr: true do
         expect(response).to be_successful
       end
     end
-
-    context 'with valid tab, but invalid sidebar, and slide params' do
-
-      it 'redirects to the standard play url' do
-        pending 'Interface sets invalid sidebaritem to first sidebaritem'
-        get :play, params: {
-          tab: second_tab.key,
-          sidebar: 'invalid',
-          slide: 'nope'
-        }
-
-        expect(response).to redirect_to(play_url)
-      end
-    end
-
-    context 'with valid tab, and sidebar, but invalid slide params' do
-      it 'redirects to the standard play url' do
-        pending 'Interface sets invalid slide to first slide'
-        get :play, params: {
-          tab: second_tab.key,
-          sidebar: second_sidebar_item.key,
-          slide: 'nope'
-        }
-
-        expect(response).to redirect_to(play_url)
-      end
-    end
   end
 
   context "a regular user" do
@@ -288,7 +261,6 @@ describe ScenariosController, vcr: true do
 
       describe "#compare" do
         it "should compare them" do
-          pending 'ete_scenario_mock does not respond to user_values anymore (?)'
           s1 = FactoryBot.create :saved_scenario
           s2 = FactoryBot.create :saved_scenario
           get :compare, params: { scenario_ids: [s1.scenario_id, s2.scenario_id] }

@@ -71,7 +71,6 @@ class Interface
     current_sidebar_item.slides
                         .sort_by(&:position)
                         .reject(&:area_dependent)
-                        # .includes(:description)
   end
 
   def current_slide

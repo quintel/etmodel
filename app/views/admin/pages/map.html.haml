@@ -12,7 +12,7 @@
           %li
             = link_to sidebar_item.key, edit_admin_sidebar_item_path(sidebar_item)
             %ul.slides
-              - sidebar_item.slides.ordered.each do |slide|
+              - sidebar_item.slides.sort_by(&:position).each do |slide|
                 %li
                   = link_to slide.key, edit_admin_slide_path(slide)
                   %ul.sliders

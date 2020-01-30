@@ -54,10 +54,6 @@ Etm::Application.routes.draw do
     resources :texts, except: [:show]
     resources :areas, only: [:index, :show]
 
-    resources :sidebar_items do
-      resources :slides
-    end
-
     resources :slides, except: :show do
       resources :input_elements
     end

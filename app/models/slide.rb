@@ -15,23 +15,32 @@
 #  output_element_id     :integer
 #  alt_output_element_id :integer
 #
+require 'ymodel'
 
-class Slide < ActiveRecord::Base
+# This model represents a slide within an opened SideBarItem
+# (e.g. "Insulation", "Cooking", for "Households" item)
+class Slide < YModel::Base
   include AreaDependent
 
   has_one :description, as: :describable
-  has_many :sliders, dependent: :nullify, class_name: 'InputElement'
+  has_many :sliders, class_name: 'InputElement'
   belongs_to :output_element # default chart
   belongs_to :alt_output_element, class_name: 'OutputElement' # secondary chart
-  has_one :area_dependency, as: :dependable, dependent: :destroy
+  has_one :area_dependency, as: :dependable
 
-  validates :key, presence: true, uniqueness: true
-  validates :position, numericality: true
+  class << self
+    def controller(controller)
+      where(controller_name: controller)
+    end
 
-  scope :controller, ->(controller) { where(controller_name: controller) }
-  scope :ordered,    -> { order('position') }
+    def ordered
+      visible.sort_by(&:position)
+    end
 
-  accepts_nested_attributes_for :description, :area_dependency
+    def visible
+      all.reject{ |s| s.position.nil? }
+    end
+  end
 
   def image_path
     "/assets/slides/drawings/#{image}" if image.present?

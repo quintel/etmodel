@@ -68,8 +68,10 @@ class Interface
   end
 
   def slides
-    current_sidebar_item.slides.ordered.includes(:area_dependency).
-      includes(:description).reject(&:area_dependent)
+    current_sidebar_item.slides
+                        .sort_by(&:position)
+                        .reject(&:area_dependent)
+                        # .includes(:description)
   end
 
   def current_slide

@@ -7,7 +7,7 @@ class InputElementsController < ApplicationController
   #
   # GET /input_elements/by_slide
   def by_slide
-    slides = Slide.ordered.includes(:sliders)
+    slides = Slide.ordered
 
     # Include only sliders which are visible in the UI.
     slides = slides.select do |slide|

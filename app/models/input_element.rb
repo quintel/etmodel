@@ -18,22 +18,30 @@
 #  position          :integer
 #
 
-class InputElement < ActiveRecord::Base
+require 'ymodel'
+
+class InputElement < YModel::Base
   include AreaDependent
 
   ENUM_UNITS = %w[radio weather-curves].freeze
 
-  has_one :description, as: :describable, dependent: :destroy
-  has_one :area_dependency, as: :dependable, dependent: :destroy
-  # belongs_to :slide
+  has_one :description, as: :describable
+  has_one :area_dependency, as: :dependable
 
-  validates :key, presence: true, uniqueness: true
-  validates :position, numericality: true
+  class << self
+    def households_heating_sliders
+      where(share_group: 'heating_households')
+    end
 
-  scope :households_heating_sliders, -> { where(share_group: 'heating_households') }
-  scope :ordered, -> { order('position') }
+    def ordered
+      all.sort_by(&:position)
+    end
 
-  accepts_nested_attributes_for :description, :area_dependency
+    def with_related_converter_like(converter_name)
+      all.reject{ |ie| ie.related_converter.nil? }
+         .select{ |ie| ie.related_converter.include?(converter_name || '')}
+    end
+  end
 
   def title_for_description
     "input_elements.#{key}"

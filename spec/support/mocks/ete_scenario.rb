@@ -14,6 +14,9 @@ def ete_scenario_mock
   allow(mock).to receive(:errors) { [] }
   allow(mock).to receive(:use_fce) { nil }
   allow(mock).to receive(:scaling) { nil }
+  allow(mock).to receive(:user_values)  do
+    double('user_values', attributes: { foo: :bar })
+  end
 
   mock
 end

@@ -6,6 +6,6 @@ class Admin::GqlController < Admin::BaseController
     @output_element_series = OutputElementSerie.gquery_contains(@q)
     @constraints = Constraint.gquery_contains(@q)
     @sidebar_items = SidebarItem.gquery_contains(@q)
-    @sliders = InputElement.where(["related_converter LIKE ?", "%#{@q}%"])
+    @sliders = InputElement.with_related_converter_like(@q)
   end
 end

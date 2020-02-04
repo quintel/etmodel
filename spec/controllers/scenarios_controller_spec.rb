@@ -56,31 +56,6 @@ describe ScenariosController, vcr: true do
         expect(response).to be_successful
       end
     end
-
-    context 'with valid tab, but invalid sidebar, and slide params' do
-
-      it 'redirects to the standard play url' do
-        get :play, params: {
-          tab: second_tab.key,
-          sidebar: 'invalid',
-          slide: 'nope'
-        }
-
-        expect(response).to redirect_to(play_url)
-      end
-    end
-
-    context 'with valid tab, and sidebar, but invalid slide params' do
-      it 'redirects to the standard play url' do
-        get :play, params: {
-          tab: second_tab.key,
-          sidebar: second_sidebar_item.key,
-          slide: 'nope'
-        }
-
-        expect(response).to redirect_to(play_url)
-      end
-    end
   end
 
   context "a regular user" do
@@ -246,21 +221,17 @@ describe ScenariosController, vcr: true do
         end
 
         context 'with a valid input named' do
-          let!(:input) do
-            FactoryBot.create(
-              :input_element,
-              key: 'hello',
-              slide: sidebar_item.slides.first
-            )
+          let(:input) do
+            second_sidebar_item.slides.first.sliders.first
           end
 
           it 'opens the play page' do
-            get :play_multi_year_charts, params: { id: 123, input: 'hello' }
+            get :play_multi_year_charts, params: { id: 123, input: input.key }
             expect(response).to render_template(:play)
           end
 
           it 'sets the last_etm_page URL' do
-            get :play_multi_year_charts, params: { id: 123, input: 'hello' }
+            get :play_multi_year_charts, params: { id: 123, input: input.key }
 
             expect(session[:setting].last_etm_page)
               .to eq(play_url(*input.url_components))
@@ -292,7 +263,7 @@ describe ScenariosController, vcr: true do
         it "should compare them" do
           s1 = FactoryBot.create :saved_scenario
           s2 = FactoryBot.create :saved_scenario
-          get :compare, params: { scenario_ids: [s1.id, s2.id] }
+          get :compare, params: { scenario_ids: [s1.scenario_id, s2.scenario_id] }
           expect(response).to be_successful
           expect(response).to render_template(:compare)
         end

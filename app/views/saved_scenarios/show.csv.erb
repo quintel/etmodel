@@ -1,4 +1,4 @@
 <%-api_scenario = @saved_scenario.scenario(detailed: true) %>
-<%-InputElement.all.order(:key).each do |ie| %>
+<%-InputElement.all.sort_by(&:key).each do |ie| %>
 <%=ie.key%>;<%=api_scenario.user_values.attributes[ie.key]%>
 <%-end%>

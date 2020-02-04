@@ -354,6 +354,7 @@
           info:             this.model.get('sanitized_description'),
           sublabel:         this.model.get('label'),
           converter:        this.model.get('related_converter'),
+          converter_source: this.model.get('converter_source_url'),
           input_element_id: this.model.get("id"),
           end_year:         App.settings.get("end_year"),
           info_link:        I18n.t('input_elements.common.info_link')
@@ -786,6 +787,7 @@
         e.preventDefault();
         var title = $(e.target).data('title');
         var converter = $(e.target).data('converter');
+        var converter_source_url = $(e.target).data('converter_source_url');
         var url = App.scenario.url_path() + "/converters/" + converter;
 
         $.ajax({
@@ -795,6 +797,7 @@
             var content = CONVERTER_INFO_T({
               title: title,
               data: data.data,
+              converter_source_url: converter_source_url,
               uses_coal_and_wood_pellets: data.uses_coal_and_wood_pellets
             });
             $.fancybox({

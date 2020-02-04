@@ -23,8 +23,7 @@ module YModel
 
     def attributes
       schema.attributes
-        .map { |attr| { attr => send(attr) } }
-        .reduce(&:merge)
+        .each_with_object({}) { |attr, memo| memo[attr] = send(attr) }
     end
 
     class << self

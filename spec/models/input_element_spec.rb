@@ -55,7 +55,7 @@ describe InputElement do
   describe '#url_components' do
     context 'when the input a slide, sidebar item, and tab' do
       let(:slide) { Slide.visible.first }
-      let(:input) { FactoryBot.create(:input_element, slide: slide) }
+      let(:input) { slide.sliders.first }
 
       it 'returns the slide URL components' do
         expect(input.url_components).to eq(slide.url_components)
@@ -63,7 +63,7 @@ describe InputElement do
     end
 
     context 'when the input has no slide' do
-      let(:input) { FactoryBot.create(:input_element, slide: nil) }
+      let(:input) { InputElement.where(slide_id: nil).first }
 
       it 'returns an empty array' do
         expect(input.url_components).to eq([])

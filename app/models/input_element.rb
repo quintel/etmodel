@@ -27,6 +27,7 @@ class InputElement < YModel::Base
 
   has_one :description, as: :describable
   has_one :area_dependency, as: :dependable
+  belongs_to :slide
 
   class << self
     def households_heating_sliders

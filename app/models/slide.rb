@@ -23,10 +23,12 @@ class Slide < YModel::Base
   include AreaDependent
 
   has_one :description, as: :describable
-  has_many :sliders, class_name: 'InputElement'
+  has_many :input_elements
+  alias_method :sliders, :input_elements
   belongs_to :output_element # default chart
   belongs_to :alt_output_element, class_name: 'OutputElement' # secondary chart
   has_one :area_dependency, as: :dependable
+
 
   class << self
     def controller(controller)

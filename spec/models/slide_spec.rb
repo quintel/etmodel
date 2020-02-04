@@ -46,12 +46,9 @@ describe Slide do
     it { is_expected.to respond_to(:removed_from_interface?) }
   end
 
-
-
-
   describe '#url_components' do
     context 'when the slide has a sidebar item and tab' do
-      let(:slide) { FactoryBot.create(:slide) }
+      let(:slide) { Slide.all.first }
 
       it 'returns the tab key first' do
         expect(slide.url_components[0]).to eq(slide.sidebar_item.tab.key)
@@ -67,7 +64,7 @@ describe Slide do
     end
 
     context 'when the slide has no sidebar item' do
-      let(:slide) { FactoryBot.create(:slide, sidebar_item: nil) }
+      let(:slide) { Slide.where(sidebar_item_id: nil).first }
 
       it 'returns an empty array' do
         expect(slide.url_components).to eq([])
@@ -82,6 +79,12 @@ describe Slide do
       it 'returns an empty array' do
         expect(slide.url_components).to eq([])
       end
+    end
+  end
+
+  describe "#input_elements" do
+    it "is an alias of #sliders" do
+      expect(subject.input_elements).to eq(subject.sliders)
     end
   end
 end

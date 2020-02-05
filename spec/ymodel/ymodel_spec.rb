@@ -34,11 +34,19 @@ describe YModel::Base do
     expect(described_class).to be_a Class
   end
 
-  it { is_expected.to respond_to :key }
-  it { is_expected.to respond_to :id }
-  it { is_expected.to respond_to :nl_vimeo_id }
-  it { is_expected.to respond_to :en_vimeo_id }
-  it { is_expected.to respond_to :position }
+  describe '#new' do
+    subject { YModel::Concrete.new }
+    it { is_expected.to respond_to :key }
+    it { is_expected.to respond_to :id }
+    it { is_expected.to respond_to :nl_vimeo_id }
+    it { is_expected.to respond_to :en_vimeo_id }
+    it { is_expected.to respond_to :position }
+
+    it "doesn't set attributes that aren't present in the schema" do
+      instance = YModel::Concrete.new(key: "1", foo: "bar")
+      expect(instance.instance_variable_get("@foo")).to be nil
+    end
+  end
 
   describe '.all' do
     subject { YModel::Concrete.all }
@@ -57,6 +65,14 @@ describe YModel::Base do
       subject { YModel::Concrete.find(nil) }
 
       it { is_expected.to eq nil }
+    end
+  end
+
+  def find_by
+    describe 'with an actual record' do
+      subject { YModel::Concrete.find_by(id: 1) }
+
+      it { is_expected.to be_a YModel::Concrete }
     end
   end
 
@@ -135,6 +151,14 @@ describe YModel::Base do
       end
     end
 
+    describe '.find_by' do
+      subject { YModel::InvalidConcrete.find(1) }
+
+      it 'raises an error upon querying' do
+        expect { subject }.to raise_error YModel::SourceFileNotFound
+      end
+    end
+
     describe '.find_by_key' do
       subject { YModel::InvalidConcrete.find_by_key(:foo) }
 
@@ -176,6 +200,16 @@ describe YModel::Base do
                             position: 1,
                             nillable: nil,
                             concrete_relation_id: 2)
+    end
+  end
+
+  describe '#attribute?' do
+    it "when the the attribute is included in its schema" do
+      expect(YModel::Concrete.find(1).attribute?('key')).to be_truthy
+    end
+
+    it "when the attribute is not included in its schema" do
+      expect(YModel::Concrete.find(1).attribute?('bar')).to be_falsy
     end
   end
 end

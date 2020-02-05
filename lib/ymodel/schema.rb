@@ -1,8 +1,14 @@
 # frozen_string_literal: true
+require 'forwardable'
 
 module YModel
   # Represents a schema of all keys found in the source.
   class Schema
+    extend Forwardable
+    include Enumerable
+
+    def_delegators :attributes, :each
+
     def initialize(source)
       @source = source
     end
@@ -13,9 +19,8 @@ module YModel
         .map(&:to_sym)
     end
 
-    # Make this a delegator
-    def include?(args)
-      attributes.include?(args)
+    def include?(key)
+      attributes.include?(key.to_sym)
     end
   end
 end

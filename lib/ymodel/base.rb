@@ -5,7 +5,7 @@ require 'ymodel/loadable'
 require 'ymodel/trigger'
 
 module YModel
-  # This is used in a similar manner to ActiveRecord
+  # This is used to wrap a YAML file in a similar manner to ActiveRecord wrapping a database.
   class Base
     extend YModel::Relatable
     extend YModel::Loadable
@@ -13,7 +13,7 @@ module YModel
 
     def initialize(**record)
       record.each do |k, v|
-        instance_variable_set '@' + k.to_s, v
+        instance_variable_set "@#{k}".to_s, v if attribute?(k)
       end
     end
 
@@ -26,9 +26,20 @@ module YModel
         .each_with_object({}) { |attr, memo| memo[attr] = send(attr) }
     end
 
+    def attribute?(key)
+      schema.include?(key)
+    end
+
     class << self
       def find(id)
         all.find { |record| record.id == id }
+      end
+
+      def find_by(attributes)
+        sanitized = sanitize_attributes(attributes)
+        all.each do |record|
+          return record if sanitized.all? { |key, value| record.send(key) == value }
+        end
       end
 
       def find_by_key(key)
@@ -44,11 +55,15 @@ module YModel
       end
 
       def where(attributes)
-        attributes.symbolize_keys!
-                  .select! { |attr| schema.include?(attr) }
+        sanitized = sanitize_attributes(attributes)
         all.select do |record|
-          attributes.all? { |key, value| record.send(key) == value }
+          sanitized.all? { |key, value| record.send(key) == value }
         end
+      end
+
+      def sanitize_attributes(attributes)
+        attributes.symbolize_keys!
+          .select { |attr| schema.include?(attr) }
       end
     end
 

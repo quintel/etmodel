@@ -33,7 +33,9 @@ class SidebarItem < YModel::Base
     end
 
     def gquery_contains(search)
-      all.select { |rec| rec.percentage_bar_query.include?(search || '') }
+      return all if search.blank? || search.empty?
+
+      all.select { |si| si.percentage_bar_query.include?(search) }
     end
 
     def find_by_section_and_key(section, key)

@@ -12,5 +12,10 @@ module YModel
         .uniq
         .map(&:to_sym)
     end
+
+    # Make this a delegator
+    def include?(args)
+      attributes.include?(args)
+    end
   end
 end

@@ -43,8 +43,9 @@ module YModel
         raise YModel::SourceFileNotFound
       end
 
-      def where(**attributes)
+      def where(attributes)
         attributes.symbolize_keys!
+                  .select! { |attr| schema.include?(attr) }
         all.select do |record|
           attributes.all? { |key, value| record.send(key) == value }
         end

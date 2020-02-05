@@ -6,6 +6,14 @@ require 'ymodel'
 # rubocop:disable Style/ClassAndModuleChildren
 class YModel::Concrete < YModel::Base
   source_file 'spec/support/ymodel/concrete.yml'
+
+  def spy
+    $spy
+  end
+
+  def set_spy
+    $spy = true
+  end
 end
 
 class YModel::InvalidConcrete < YModel::Base
@@ -61,6 +69,20 @@ describe YModel::Base do
 
     it { is_expected.to be_a Array }
     it { is_expected.to eq [YModel::Concrete.find(1)] }
+
+    describe 'with malicious params' do
+      subject  do
+        YModel::Concrete.where(key: 'overview',
+                               en_vimeo_id: '',
+                               nillable: nil,
+                               set_spy: true)
+      end
+
+      it 'only "sends" whitelabeled schema attributes' do
+        expect { subject }
+          .not_to change { YModel::Concrete.all.first.spy }
+      end
+    end
   end
 
   describe '.find_by_key' do
@@ -180,4 +202,6 @@ describe YModel::Dump do
 
   it { is_expected.to respond_to :call }
 end
+
+
 # rubocop:enable RSpec/MultipleDescribes

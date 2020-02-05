@@ -56,11 +56,18 @@ class InputElement < ActiveRecord::Base
   def json_attributes
     Jbuilder.encode do |json|
       json.call(
-        self, :id, :unit, :share_group, :key, :related_converter, :step_value,
-        :draw_to_min, :draw_to_max, :disabled, :translated_name,
-        :sanitized_description, :fixed, :has_flash_movie
+        self, :id, :unit, :share_group, :key, :related_converter,
+        :converter_source_url, :step_value, :draw_to_min, :draw_to_max,
+        :disabled, :translated_name, :sanitized_description, :fixed,
+        :has_flash_movie
       )
     end
+  end
+
+  def converter_source_url
+    return Converter.find related_converter if related_converter.present?
+
+    nil
   end
 
   ##

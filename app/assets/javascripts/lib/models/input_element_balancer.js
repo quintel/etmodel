@@ -66,6 +66,11 @@
   // rounded to the input "step" value.
   Balancer.EXTRA_PRECISION = 6;
 
+  // We stop balancing when the remaining amount to be assigned is zero, or less
+  // than the error margin (i.e. when EXTRA_PRECISION is 6, the ERROR_MARGIN is
+  // 0.000001);
+  Balancer.ERROR_MARGIN = 1 / Math.pow(10, Balancer.EXTRA_PRECISION);
+
   // ## Instance-Level Stuff -------------------------------------------------
 
   /**
@@ -139,7 +144,12 @@
 
       // Reduce the flex by the amount by which the slider was changed,
       // ready for the next slider.
-      flex = this.snapValue(flex - (slider.model.value - prevValue));
+      flex -= slider.model.value - prevValue;
+
+      if (Math.abs(flex) < Balancer.ERROR_MARGIN) {
+        flex = 0;
+        break;
+      }
     }
 
     if (flex !== 0) {

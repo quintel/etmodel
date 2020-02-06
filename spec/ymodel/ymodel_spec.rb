@@ -5,23 +5,27 @@ require 'ymodel'
 # These cops are disables because it saves space and its just a spec.
 # rubocop:disable Style/ClassAndModuleChildren
 class YModel::Concrete < YModel::Base
-  source_file 'spec/support/ymodel/concrete.yml'
+  source_file 'spec/fixtures/ymodel/concrete.yml'
 
   def spy
-    $spy
+    @@spy ||= nil
   end
 
   def set_spy
-    $spy = true
+    @@spy = true
+  end
+
+  def unset_spy
+    @@spy = nil
   end
 end
 
 class YModel::InvalidConcrete < YModel::Base
-  source_file 'spec/support/ymodel/invalid_concrete.yml'
+  source_file 'spec/fixtures/ymodel/invalid_concrete.yml'
 end
 
 class YModel::ConcreteRelation < YModel::Base
-  source_file 'spec/support/ymodel/concrete.yml'
+  source_file 'spec/fixtures/ymodel/concrete.yml'
   has_many :concretes, class_name: YModel::Concrete
 end
 # rubocop:enable Style/ClassAndModuleChildren

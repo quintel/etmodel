@@ -6,15 +6,11 @@ module YModel
   class Schema
     extend Forwardable
     include Enumerable
-
+    attr_reader :attributes
     def_delegators :attributes, :each
 
     def initialize(source)
-      @source = source
-    end
-
-    def attributes
-      @source.flat_map(&:keys)
+      @attributes = source.flat_map(&:keys)
         .uniq
         .map(&:to_sym)
     end

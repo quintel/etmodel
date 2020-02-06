@@ -52,12 +52,7 @@ module YModel
     private
 
     def default_foreign_key
-      name
-        .split('::')
-        .last
-        .underscore
-        .+('_id')
-        .to_sym
+      name.foreign_key
     end
 
     def model_class(model)

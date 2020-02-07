@@ -16,7 +16,7 @@ module YModel
     end
 
     def schema
-      YModel::Schema.new(records)
+      @schema ||= YModel::Schema.new(records)
     rescue Errno::ENOENT
       YModel::Schema.new({})
     end

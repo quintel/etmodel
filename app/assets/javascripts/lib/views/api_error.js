@@ -38,7 +38,7 @@
         split[0] = split[0].replace(/in (\w+)/g, 'in <code>$1</code>');
       }
 
-      this.$el.append($('<h2/>').html(split[0]), this.renderTrace(split[1]));
+      this.$el.append($('<h2/>').text(split[0]), this.renderTrace(split[1]));
 
       return this.$el;
     },

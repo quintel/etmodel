@@ -15,7 +15,6 @@
 #  output_element_id     :integer
 #  alt_output_element_id :integer
 #
-require 'ymodel'
 
 # This model represents a slide within an opened SideBarItem
 # (e.g. "Insulation", "Cooking", for "Households" item)

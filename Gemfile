@@ -50,6 +50,9 @@ gem 'wkhtmltopdf-binary'
 # gem "jquery-etmodel-rails", :path => "~/Sites/etplugin"
 gem 'jquery-etmodel-rails', ref: 'c668ad4', github: 'quintel/etplugin'
 
+
+gem 'ymodel', path: 'lib/ymodel/'
+
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'

@@ -14,6 +14,5 @@ describe Tab do
   subject { Tab.new }
   it { is_expected.to respond_to :allowed_sidebar_items }
   it { is_expected.to respond_to :sidebar_items }
-  it { is_expected.to respond_to :area_dependency }
-  it { is_expected.to be_a AreaDependent::ActiveRecord }
+  it { is_expected.to be_a AreaDependent::YModel }
 end

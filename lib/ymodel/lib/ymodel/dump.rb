@@ -14,7 +14,7 @@ module YModel
   #   YModel::Dump.('sidebar_items')
   # end
   module Dump
-    DEFAULT_PATH = File.join(Rails.root, 'config', 'ymodel')
+    DEFAULT_PATH = File.join('config', 'ymodel')
 
     def self.call(model, storage_path = DEFAULT_PATH)
       model = Kernel.const_get(model.to_s.singularize.camelcase)

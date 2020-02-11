@@ -18,8 +18,6 @@
 #  position          :integer
 #
 
-require 'ymodel'
-
 class InputElement < YModel::Base
   include AreaDependent::YModel
 

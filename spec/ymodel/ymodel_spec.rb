@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
+
 require 'rails_helper'
-require 'ymodel'
+# This file shouldn't actually exist within the rails app since it tests the
+# gem ''. It does exist here for two reasons:
+#  1. It might assert some stuff about the application.
+#  2. Moving the specs to the gem is a hassle.
+
 # These cops are disables because it saves space and its just a spec.
 # rubocop:disable Style/ClassAndModuleChildren
 class YModel::Concrete < YModel::Base
@@ -241,5 +246,13 @@ describe YModel::Dump do
   it { is_expected.to respond_to :call }
 end
 
+describe YModel::Railtie do
+  describe "rake tasks" do
+    it { expect(Rake::Task.task_defined?('db:migrate')).to be_truthy }
+    it { expect(Rake::Task.task_defined?('ymodel:dump')).to be_truthy }
+  end
+
+  Rake::Task.task_defined?('assets:precompile')
+end
 
 # rubocop:enable RSpec/MultipleDescribes

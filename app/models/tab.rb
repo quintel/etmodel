@@ -9,8 +9,6 @@
 #  position    :integer
 #
 
-require 'ymodel'
-
 # This model represents the top-most clickable menu-item category in the
 # sidebar of the scenario section of the application. i.e. Demand, Supply,
 # Flexibility.

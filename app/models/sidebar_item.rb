@@ -13,8 +13,6 @@
 #  parent_id            :integer
 #
 
-require 'ymodel'
-
 # This model represents the secondary menu-item category in the sidebar of the
 # scenario section of the application. The ones you click to a `slide`.
 # ie "Households", "Electricity" and "Fuel prices"

@@ -22,7 +22,7 @@ gem 'simple_form'
 gem 'nokogiri', '~> 1.10'
 gem 'rdiscount'
 gem 'loofah'
-gem 'rails-html-sanitizer'
+gem 'rails-html-sanitizer', '~> 1.3.0'
 gem 'font-awesome-rails'
 gem 'non-stupid-digest-assets'
 gem 'http_accept_language'
@@ -49,7 +49,6 @@ gem 'wkhtmltopdf-binary'
 # When working on the plugin, use :path => '/path/to/etplugin'
 # gem "jquery-etmodel-rails", :path => "~/Sites/etplugin"
 gem 'jquery-etmodel-rails', ref: 'c668ad4', github: 'quintel/etplugin'
-
 
 gem 'ymodel', path: 'lib/ymodel/'
 

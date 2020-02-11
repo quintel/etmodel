@@ -148,7 +148,7 @@ GEM
     concurrent-ruby (1.1.5)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
-    crass (1.0.5)
+    crass (1.0.6)
     dalli (2.7.9)
     database_cleaner (1.7.0)
     debug_inspector (0.0.3)
@@ -211,7 +211,7 @@ GEM
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    loofah (2.3.1)
+    loofah (2.4.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -235,7 +235,7 @@ GEM
     net-ssh (5.0.2)
     newrelic_rpm (5.5.0.348)
     nio4r (2.3.1)
-    nokogiri (1.10.4)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     non-stupid-digest-assets (1.0.9)
       sprockets (>= 2.0)
@@ -283,8 +283,8 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.2.0)
-      loofah (~> 2.2, >= 2.2.2)
+    rails-html-sanitizer (1.3.0)
+      loofah (~> 2.3)
     rails-i18n (5.1.2)
       i18n (>= 0.7, < 2)
       railties (>= 5.0, < 6)
@@ -463,7 +463,7 @@ DEPENDENCIES
   puma
   rails (~> 5.2)
   rails-controller-testing
-  rails-html-sanitizer
+  rails-html-sanitizer (~> 1.3.0)
   rails-i18n
   rdiscount
   rspec-rails (~> 3.5)

@@ -4,24 +4,23 @@ require 'yaml'
 
 module YModel
   # This service can be used for dumping models to YAML files.
-  # Example:
-  #
-  # def migrate_sidebar_items
-  #   # Monkeypatch The class to be dumped if its already a YModel class.
-  #   class SidebarItem < ActiveRecord::Base; end
-  #
-  #   require 'ymodel/dump'
-  #   YModel::Dump.('sidebar_items')
-  # end
   module Dump
     DEFAULT_PATH = File.join('config', 'ymodel')
 
-    def self.call(model, storage_path = DEFAULT_PATH)
-      model = Kernel.const_get(model.to_s.singularize.camelcase)
-      file_path = File.join(storage_path,
-                            model.name.underscore.pluralize + '.yml')
+    def self.call(model, storage_path: DEFAULT_PATH, namespace: Object)
+      model       = model.to_s.singularize.camelcase
+      model_class = Kernel.const_get(model)
+      file_path   = File.join(storage_path,
+                              model.underscore.pluralize + '.yml')
 
-      File.write(file_path, model.all.map(&:attributes).to_yaml)
+      namespace.const_set(model, Class.new(ActiveRecord::Base))
+
+      records = model_class.all.map do |record|
+        attributes = record.attributes.stringify_keys
+        block_given? ? yield(attributes, record) : attributes
+      end
+
+      File.write(file_path, records.to_yaml)
     end
   end
 end

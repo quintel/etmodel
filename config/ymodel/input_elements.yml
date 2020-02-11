@@ -484,7 +484,7 @@
   position: 2
   dependent_on: has_mountains
 - id: 132
-  key: om_costs_earth_geothermal_electricity
+  key: om_costs_geothermal
   share_group: ''
   step_value: 1.0
   draw_to_min: 
@@ -494,17 +494,17 @@
     zone: *1
     time: 2012-08-07 15:13:52.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-07-30 13:25:11.000000000 Z
+    utc: 2020-01-09 10:05:48.000000000 Z
     zone: *1
-    time: 2012-07-30 15:25:11.000000000 Z
+    time: 2020-01-09 11:05:48.000000000 Z
   unit: "%"
   fixed: false
   comments: ''
   interface_group: ''
   command_type: ''
-  related_converter: energy_power_geothermal
-  slide_id: 16
-  position: 1
+  related_converter: energy_heat_well_geothermal
+  slide_id: 13
+  position: 2
   dependent_on: ''
 - id: 133
   key: investment_costs_solar_solar_panels
@@ -1772,7 +1772,7 @@
   position: 1
   dependent_on: ''
 - id: 247
-  key: investment_costs_earth_geothermal_electricity
+  key: investment_costs_geothermal
   share_group: ''
   step_value: 1.0
   draw_to_min: 
@@ -1782,15 +1782,15 @@
     zone: *1
     time: 2012-08-07 15:13:53.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-07-30 13:25:12.000000000 Z
+    utc: 2020-01-09 10:05:55.000000000 Z
     zone: *1
-    time: 2012-07-30 15:25:12.000000000 Z
+    time: 2020-01-09 11:05:55.000000000 Z
   unit: "%"
   fixed: false
   comments: ''
   interface_group: ''
   command_type: ''
-  related_converter: energy_power_geothermal
+  related_converter: energy_heat_well_geothermal
   slide_id: 13
   position: 1
   dependent_on: ''
@@ -5161,7 +5161,7 @@
   position: 999
   dependent_on: ''
 - id: 615
-  key: households_climate_influence
+  key: flexibility_outdoor_temperature
   share_group: ''
   step_value: 0.1
   draw_to_min: 
@@ -5171,13 +5171,13 @@
     zone: *1
     time: 2012-11-05 14:05:31.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-05-29 19:05:03.000000000 Z
+    utc: 2019-11-11 15:31:06.000000000 Z
     zone: *1
-    time: 2019-05-29 21:05:03.000000000 Z
+    time: 2019-11-11 16:31:06.000000000 Z
   unit: degC
   fixed: false
   comments: ''
-  interface_group: ''
+  interface_group: temperature
   command_type: value
   related_converter: ''
   slide_id: 163
@@ -5542,9 +5542,9 @@
     zone: *1
     time: 2015-03-17 16:40:32.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-26 10:57:33.000000000 Z
+    utc: 2019-11-26 13:47:33.000000000 Z
     zone: *1
-    time: 2019-11-26 11:57:33.000000000 Z
+    time: 2019-11-26 14:47:33.000000000 Z
   unit: "%"
   fixed: false
   comments: ''
@@ -5565,9 +5565,9 @@
     zone: *1
     time: 2015-03-18 10:05:26.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-26 12:27:52.000000000 Z
+    utc: 2019-11-26 13:47:33.000000000 Z
     zone: *1
-    time: 2019-11-26 13:27:52.000000000 Z
+    time: 2019-11-26 14:47:33.000000000 Z
   unit: "%"
   fixed: false
   comments: ''
@@ -7612,17 +7612,17 @@
     zone: *1
     time: 2017-07-27 17:38:42.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-07-28 11:51:45.000000000 Z
+    utc: 2019-11-11 16:07:01.000000000 Z
     zone: *1
-    time: 2017-07-28 13:51:45.000000000 Z
+    time: 2019-11-11 17:07:01.000000000 Z
   unit: MW
   fixed: false
   comments: ''
-  interface_group: ''
+  interface_group: hybrid_heating
   command_type: ''
-  related_converter: industry_chemicals_other_flexibility_p2h_electricity
-  slide_id: 213
-  position: 2
+  related_converter: industry_chemicals_other_flexibility_p2h_network_gas_electricity
+  slide_id: 202
+  position: 13
   dependent_on: ''
 - id: 773
   key: capacity_of_industry_chemicals_refineries_flexibility_p2h_electricity
@@ -7635,17 +7635,17 @@
     zone: *1
     time: 2017-07-27 17:39:54.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-07-28 11:51:55.000000000 Z
+    utc: 2019-11-11 16:06:29.000000000 Z
     zone: *1
-    time: 2017-07-28 13:51:55.000000000 Z
+    time: 2019-11-11 17:06:29.000000000 Z
   unit: MW
   fixed: false
   comments: ''
-  interface_group: ''
+  interface_group: hybrid_heating
   command_type: ''
-  related_converter: industry_chemicals_refineries_flexibility_p2h_electricity
-  slide_id: 213
-  position: 3
+  related_converter: industry_chemicals_refineries_flexibility_p2h_network_gas_electricity
+  slide_id: 199
+  position: 10
   dependent_on: ''
 - id: 774
   key: capacity_of_industry_other_food_flexibility_p2h_electricity
@@ -7658,17 +7658,17 @@
     zone: *1
     time: 2017-07-27 17:41:28.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-07-28 11:52:04.000000000 Z
+    utc: 2019-11-11 16:07:59.000000000 Z
     zone: *1
-    time: 2017-07-28 13:52:04.000000000 Z
+    time: 2019-11-11 17:07:59.000000000 Z
   unit: MW
   fixed: false
   comments: ''
-  interface_group: ''
+  interface_group: hybrid_heating
   command_type: ''
-  related_converter: industry_other_food_flexibility_p2h_electricity
-  slide_id: 213
-  position: 4
+  related_converter: industry_other_food_flexibility_p2h_network_gas_electricity
+  slide_id: 203
+  position: 10
   dependent_on: ''
 - id: 775
   key: capacity_of_industry_other_paper_flexibility_p2h_electricity
@@ -7681,17 +7681,17 @@
     zone: *1
     time: 2017-07-27 17:42:29.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-07-28 11:52:13.000000000 Z
+    utc: 2019-11-11 16:08:50.000000000 Z
     zone: *1
-    time: 2017-07-28 13:52:13.000000000 Z
+    time: 2019-11-11 17:08:50.000000000 Z
   unit: MW
   fixed: false
   comments: ''
-  interface_group: ''
+  interface_group: hybrid_heating
   command_type: ''
-  related_converter: industry_other_paper_flexibility_p2h_electricity
-  slide_id: 213
-  position: 5
+  related_converter: industry_other_paper_flexibility_p2h_network_gas_electricity
+  slide_id: 204
+  position: 10
   dependent_on: ''
 - id: 776
   key: industry_chemicals_other_heater_electricity_share
@@ -7902,7 +7902,7 @@
   dependent_on: ''
 - id: 785
   key: settings_weather_curve_set
-  share_group: 
+  share_group: ''
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
@@ -7911,17 +7911,17 @@
     zone: *1
     time: 2017-09-05 18:29:10.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-12 10:02:39.000000000 Z
+    utc: 2019-11-11 16:43:15.000000000 Z
     zone: *1
-    time: 2019-11-12 11:02:39.000000000 Z
+    time: 2019-11-11 17:43:15.000000000 Z
   unit: weather-curves
-  fixed: 
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
-  slide_id: 217
-  position: 1
+  fixed: false
+  comments: ''
+  interface_group: weather_years
+  command_type: ''
+  related_converter: ''
+  slide_id: 163
+  position: 7
   dependent_on: has_weather_curves
 - id: 786
   key: households_flexibility_water_heating_buffer_size_heatpump_ground_water_electricity
@@ -9407,17 +9407,17 @@
     zone: *1
     time: 2018-06-01 13:31:28.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-01 14:04:15.000000000 Z
+    utc: 2019-11-11 15:33:28.000000000 Z
     zone: *1
-    time: 2018-06-01 16:04:15.000000000 Z
+    time: 2019-11-11 16:33:28.000000000 Z
   unit: "#"
   fixed: false
   comments: ''
   interface_group: full_load_hours
   command_type: ''
   related_converter: ''
-  slide_id: 51
-  position: 5
+  slide_id: 163
+  position: 3
   dependent_on: has_coastline
 - id: 904
   key: flh_of_energy_power_wind_turbine_inland
@@ -9430,17 +9430,17 @@
     zone: *1
     time: 2018-06-01 13:32:15.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-01 11:33:05.000000000 Z
+    utc: 2019-11-11 15:33:18.000000000 Z
     zone: *1
-    time: 2018-06-01 13:33:05.000000000 Z
+    time: 2019-11-11 16:33:18.000000000 Z
   unit: "#"
   fixed: false
   comments: ''
   interface_group: full_load_hours
   command_type: ''
   related_converter: ''
-  slide_id: 51
-  position: 4
+  slide_id: 163
+  position: 2
   dependent_on: ''
 - id: 905
   key: flh_of_energy_power_wind_turbine_offshore
@@ -9453,17 +9453,17 @@
     zone: *1
     time: 2018-06-01 13:32:50.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-01 14:04:35.000000000 Z
+    utc: 2019-11-11 15:38:48.000000000 Z
     zone: *1
-    time: 2018-06-01 16:04:35.000000000 Z
+    time: 2019-11-11 16:38:48.000000000 Z
   unit: "#"
   fixed: false
   comments: ''
   interface_group: full_load_hours
   command_type: ''
   related_converter: ''
-  slide_id: 51
-  position: 6
+  slide_id: 163
+  position: 4
   dependent_on: ''
 - id: 906
   key: flh_of_energy_hydrogen_wind_turbine_offshore
@@ -9476,17 +9476,17 @@
     zone: *1
     time: 2018-06-01 13:52:22.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-01 12:15:34.000000000 Z
+    utc: 2019-11-11 15:33:53.000000000 Z
     zone: *1
-    time: 2018-06-01 14:15:34.000000000 Z
+    time: 2019-11-11 16:33:53.000000000 Z
   unit: "#"
   fixed: false
   comments: ''
   interface_group: full_load_hours
   command_type: ''
   related_converter: ''
-  slide_id: 193
-  position: 6
+  slide_id: 163
+  position: 5
   dependent_on: ''
 - id: 907
   key: flh_of_solar_pv_solar_radiation
@@ -9499,17 +9499,17 @@
     zone: *1
     time: 2018-06-01 16:29:47.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-01 14:29:47.000000000 Z
+    utc: 2019-11-11 15:34:08.000000000 Z
     zone: *1
-    time: 2018-06-01 16:29:47.000000000 Z
+    time: 2019-11-11 16:34:08.000000000 Z
   unit: ''
   fixed: false
   comments: ''
   interface_group: full_load_hours
   command_type: ''
   related_converter: ''
-  slide_id: 54
-  position: 2
+  slide_id: 163
+  position: 6
   dependent_on: ''
 - id: 909
   key: capacity_of_energy_flexibility_pumped_storage_electricity
@@ -10028,16 +10028,16 @@
     zone: *1
     time: 2019-01-03 17:02:59.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   unit: PJ
   fixed: false
   comments: ''
   interface_group: residual_heat
   command_type: ''
   related_converter: ''
-  slide_id: 275
+  slide_id: 277
   position: 4
   dependent_on: ''
 - id: 934
@@ -10051,16 +10051,16 @@
     zone: *1
     time: 2019-01-04 16:45:52.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   unit: kg/GJ
   fixed: false
   comments: ''
   interface_group: residual_heat
   command_type: ''
   related_converter: ''
-  slide_id: 275
+  slide_id: 277
   position: 5
   dependent_on: ''
 - id: 935
@@ -10731,19 +10731,180 @@
   position: 20
   dependent_on: ''
 - id: 966
+  key: investment_costs_energy_flexibility_hv_opac_electricity
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-10-03 15:49:34.000000000 Z
+    zone: *1
+    time: 2019-10-03 17:49:34.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-10-03 15:49:34.000000000 Z
+    zone: *1
+    time: 2019-10-03 17:49:34.000000000 Z
+  unit: "%"
+  fixed: false
+  comments: ''
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  slide_id: 232
+  position: 3
+  dependent_on: ''
+- id: 967
+  key: investment_costs_energy_flexibility_mv_batteries_electricity
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-10-03 15:50:53.000000000 Z
+    zone: *1
+    time: 2019-10-03 17:50:53.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-10-03 15:50:53.000000000 Z
+    zone: *1
+    time: 2019-10-03 17:50:53.000000000 Z
+  unit: "%"
+  fixed: false
+  comments: ''
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  slide_id: 232
+  position: 2
+  dependent_on: ''
+- id: 968
+  key: industry_aggregated_other_industry_hydrogen_share
+  share_group: other_industry_energetic
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-11-04 10:28:45.000000000 Z
+    zone: *1
+    time: 2019-11-04 11:28:45.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-11-04 10:28:45.000000000 Z
+    zone: *1
+    time: 2019-11-04 11:28:45.000000000 Z
+  unit: "%"
+  fixed: false
+  comments: ''
+  interface_group: other_industry_energetic
+  command_type: ''
+  related_converter: ''
+  slide_id: 205
+  position: 0
+  dependent_on: ''
+- id: 969
+  key: costs_wacc_households
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-13 14:21:30.000000000 Z
+    zone: *1
+    time: 2019-12-13 15:21:30.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-13 14:21:30.000000000 Z
+    zone: *1
+    time: 2019-12-13 15:21:30.000000000 Z
+  unit: "%"
+  fixed: false
+  comments: ''
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  slide_id: 274
+  position: 1
+  dependent_on: ''
+- id: 970
+  key: costs_wacc_public_infrastructure
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-13 14:22:01.000000000 Z
+    zone: *1
+    time: 2019-12-13 15:22:01.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-13 14:22:01.000000000 Z
+    zone: *1
+    time: 2019-12-13 15:22:01.000000000 Z
+  unit: "%"
+  fixed: false
+  comments: ''
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  slide_id: 274
+  position: 2
+  dependent_on: ''
+- id: 971
+  key: costs_wacc_proven_technologies
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-13 14:22:25.000000000 Z
+    zone: *1
+    time: 2019-12-13 15:22:25.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-13 14:22:25.000000000 Z
+    zone: *1
+    time: 2019-12-13 15:22:25.000000000 Z
+  unit: "%"
+  fixed: false
+  comments: ''
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  slide_id: 274
+  position: 3
+  dependent_on: ''
+- id: 972
+  key: costs_wacc_unproven_technologies
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-13 14:22:46.000000000 Z
+    zone: *1
+    time: 2019-12-13 15:22:46.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-13 14:22:46.000000000 Z
+    zone: *1
+    time: 2019-12-13 15:22:46.000000000 Z
+  unit: "%"
+  fixed: false
+  comments: ''
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  slide_id: 274
+  position: 4
+  dependent_on: ''
+- id: 973
   key: capacity_of_industry_chp_wood_pellets
   share_group: 
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:37.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:37.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:37.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:37.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
   fixed: 
   comments: 
@@ -10752,21 +10913,21 @@
   related_converter: industry_chp_wood_pellets
   slide_id: 44
   position: 5
-  dependent_on: ''
-- id: 967
+  dependent_on: 
+- id: 974
   key: capacity_of_industry_heat_burner_coal
   share_group: 
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:37.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:37.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:37.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:37.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
   fixed: 
   comments: 
@@ -10775,21 +10936,21 @@
   related_converter: industry_heat_burner_coal
   slide_id: 44
   position: 6
-  dependent_on: ''
-- id: 968
+  dependent_on: 
+- id: 975
   key: capacity_of_industry_heat_burner_crude_oil
   share_group: 
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:37.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:37.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:37.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:37.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
   fixed: 
   comments: 
@@ -10798,44 +10959,44 @@
   related_converter: industry_heat_burner_crude_oil
   slide_id: 44
   position: 7
-  dependent_on: ''
-- id: 969
+  dependent_on: 
+- id: 976
   key: capacity_of_industry_heat_burner_lignite
-  share_group: 
+  share_group: ''
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:37.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:37.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:37.000000000 Z
+    utc: 2020-01-02 08:17:23.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:37.000000000 Z
+    time: 2020-01-02 09:17:23.000000000 Z
   unit: MW
-  fixed: 
-  comments: 
-  interface_group: 
-  command_type: 
+  fixed: false
+  comments: ''
+  interface_group: ''
+  command_type: ''
   related_converter: industry_heat_burner_lignite
   slide_id: 44
   position: 8
-  dependent_on: ''
-- id: 970
+  dependent_on: has_lignite
+- id: 977
   key: capacity_of_industry_heat_well_geothermal
   share_group: 
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:37.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:37.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:37.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:37.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
   fixed: 
   comments: 
@@ -10844,257 +11005,441 @@
   related_converter: industry_heat_well_geothermal
   slide_id: 44
   position: 9
-  dependent_on: ''
-- id: 971
+  dependent_on: 
+- id: 978
   key: capacity_of_energy_heat_well_geothermal
   share_group: 
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
   fixed: 
   comments: 
   interface_group: non_dispatchable_heat
   command_type: 
   related_converter: energy_heat_well_geothermal
-  slide_id: 275
+  slide_id: 277
   position: 1
-  dependent_on: ''
-- id: 972
+  dependent_on: 
+- id: 979
   key: capacity_of_energy_heat_solar_thermal
   share_group: 
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
   fixed: 
   comments: 
   interface_group: non_dispatchable_heat
   command_type: 
   related_converter: energy_heat_solar_thermal
-  slide_id: 275
+  slide_id: 277
   position: 2
-  dependent_on: ''
-- id: 973
+  dependent_on: 
+- id: 980
   key: capacity_of_energy_chp_local_engine_biogas
-  share_group: 
+  share_group: ''
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2020-01-02 15:21:56.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2020-01-02 16:21:56.000000000 Z
   unit: MW
-  fixed: 
-  comments: 
-  interface_group: non_dispatchable_heat
-  command_type: 
+  fixed: false
+  comments: ''
+  interface_group: ''
+  command_type: ''
   related_converter: energy_chp_local_engine_biogas
-  slide_id: 275
-  position: 3
-  dependent_on: 
-- id: 974
+  slide_id: 279
+  position: 2
+  dependent_on: ''
+- id: 981
   key: capacity_of_energy_heat_heatpump_water_water_electricity
   share_group: 
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
   fixed: 
   comments: 
   interface_group: dispatchable_heat
   command_type: 
   related_converter: energy_heat_heatpump_water_water_electricity
-  slide_id: 275
+  slide_id: 277
   position: 6
   dependent_on: 
-- id: 975
+- id: 982
   key: capacity_of_energy_heat_burner_network_gas
   share_group: 
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
   fixed: 
   comments: 
   interface_group: dispatchable_heat
   command_type: 
   related_converter: energy_heat_burner_network_gas
-  slide_id: 275
+  slide_id: 277
   position: 7
   dependent_on: 
-- id: 976
+- id: 983
   key: capacity_of_energy_heat_burner_hydrogen
   share_group: 
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
   fixed: 
   comments: 
   interface_group: dispatchable_heat
   command_type: 
   related_converter: energy_heat_burner_hydrogen
-  slide_id: 275
+  slide_id: 277
   position: 8
-  dependent_on: has_lignite
-- id: 977
+  dependent_on: 
+- id: 984
   key: capacity_of_energy_heat_burner_wood_pellets
   share_group: 
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
   fixed: 
   comments: 
   interface_group: dispatchable_heat
   command_type: 
   related_converter: energy_heat_burner_wood_pellets
-  slide_id: 275
+  slide_id: 277
   position: 9
   dependent_on: 
-- id: 978
+- id: 985
   key: capacity_of_energy_heat_burner_waste_mix
   share_group: 
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
   fixed: 
   comments: 
   interface_group: dispatchable_heat
   command_type: 
   related_converter: energy_heat_burner_waste_mix
-  slide_id: 275
+  slide_id: 277
   position: 10
   dependent_on: 
-- id: 979
+- id: 986
   key: capacity_of_energy_heat_burner_coal
-  share_group: 
+  share_group: ''
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2020-01-09 08:43:42.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2020-01-09 09:43:42.000000000 Z
   unit: MW
-  fixed: 
-  comments: 
+  fixed: false
+  comments: ''
   interface_group: dispatchable_heat
-  command_type: 
+  command_type: ''
   related_converter: energy_heat_burner_coal
-  slide_id: 275
+  slide_id: 278
   position: 11
-  dependent_on: 
-- id: 980
+  dependent_on: has_coal_oil_for_heating_built_environment
+- id: 987
   key: capacity_of_energy_heat_burner_crude_oil
-  share_group: 
+  share_group: ''
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 11:54:31.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2020-01-09 08:43:49.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2020-01-09 09:43:49.000000000 Z
   unit: MW
-  fixed: 
-  comments: 
+  fixed: false
+  comments: ''
   interface_group: dispatchable_heat
-  command_type: 
+  command_type: ''
   related_converter: energy_heat_burner_crude_oil
-  slide_id: 275
+  slide_id: 277
   position: 12
-  dependent_on: ''
-- id: 981
+  dependent_on: has_coal_oil_for_heating_built_environment
+- id: 988
   key: heat_storage_enabled
   share_group: 
   step_value: 1.0
   draw_to_min: 
   draw_to_max: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 16:26:23.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 17:26:23.000000000 Z
   updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:22:38.000000000 Z
+    utc: 2019-12-20 16:26:23.000000000 Z
     zone: *1
-    time: 2020-01-06 10:22:38.000000000 Z
+    time: 2019-12-20 17:26:23.000000000 Z
   unit: boolean
   fixed: 
   comments: 
   interface_group: 
   command_type: 
   related_converter: 
-  slide_id: 276
+  slide_id: 278
   position: 1
   dependent_on: 
+- id: 989
+  key: costs_heat_network_storage
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-31 15:31:02.000000000 Z
+    zone: *1
+    time: 2019-12-31 16:31:02.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-31 15:31:32.000000000 Z
+    zone: *1
+    time: 2019-12-31 16:31:32.000000000 Z
+  unit: "€/MWh"
+  fixed: false
+  comments: ''
+  interface_group: heat_network_storage
+  command_type: ''
+  related_converter: ''
+  slide_id: 263
+  position: 10
+  dependent_on: ''
+- id: 990
+  key: capacity_of_energy_chp_local_wood_pellets
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-02 15:22:32.000000000 Z
+    zone: *1
+    time: 2020-01-02 16:22:32.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-02 15:25:51.000000000 Z
+    zone: *1
+    time: 2020-01-02 16:25:51.000000000 Z
+  unit: MW
+  fixed: false
+  comments: ''
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_chp_local_wood_pellets
+  slide_id: 279
+  position: 1
+  dependent_on: ''
+- id: 991
+  key: capacity_of_energy_chp_local_engine_network_gas
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-02 15:24:54.000000000 Z
+    zone: *1
+    time: 2020-01-02 16:24:54.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-02 15:26:29.000000000 Z
+    zone: *1
+    time: 2020-01-02 16:26:29.000000000 Z
+  unit: MW
+  fixed: false
+  comments: ''
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_chp_local_engine_network_gas
+  slide_id: 46
+  position: 6
+  dependent_on: ''
+- id: 992
+  key: energy_heat_distribution_loss_share
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-03 16:05:53.000000000 Z
+    zone: *1
+    time: 2020-01-03 17:05:53.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-03 16:22:35.000000000 Z
+    zone: *1
+    time: 2020-01-03 17:22:35.000000000 Z
+  unit: "%"
+  fixed: false
+  comments: ''
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  slide_id: 280
+  position: 18
+  dependent_on: ''
+- id: 993
+  key: om_costs_solar_thermal
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-09 10:20:10.000000000 Z
+    zone: *1
+    time: 2020-01-09 11:20:10.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-09 10:20:10.000000000 Z
+    zone: *1
+    time: 2020-01-09 11:20:10.000000000 Z
+  unit: "%"
+  fixed: false
+  comments: ''
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_heat_solar_thermal
+  slide_id: 281
+  position: 2
+  dependent_on: ''
+- id: 994
+  key: investment_costs_solar_thermal
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-09 10:22:04.000000000 Z
+    zone: *1
+    time: 2020-01-09 11:22:04.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-09 10:22:04.000000000 Z
+    zone: *1
+    time: 2020-01-09 11:22:04.000000000 Z
+  unit: "%"
+  fixed: false
+  comments: ''
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_heat_solar_thermal
+  slide_id: 281
+  position: 1
+  dependent_on: ''
+- id: 995
+  key: energy_heat_network_storage_loss_share
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-22 10:42:12.000000000 Z
+    zone: *1
+    time: 2020-01-22 11:42:12.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-22 10:42:12.000000000 Z
+    zone: *1
+    time: 2020-01-22 11:42:12.000000000 Z
+  unit: "%"
+  fixed: false
+  comments: ''
+  interface_group: heat_storage_losses
+  command_type: ''
+  related_converter: ''
+  slide_id: 278
+  position: 5
+  dependent_on: ''
+- id: 996
+  key: merit_order_subtype_of_energy_power_nuclear_uranium_oxide
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-22 15:18:18.000000000 Z
+    zone: *1
+    time: 2020-01-22 16:18:18.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-22 15:18:18.000000000 Z
+    zone: *1
+    time: 2020-01-22 16:18:18.000000000 Z
+  unit: boolean
+  fixed: false
+  comments: ''
+  interface_group: must_run_dispatchable
+  command_type: ''
+  related_converter: ''
+  slide_id: 48
+  position: 10
+  dependent_on: ''

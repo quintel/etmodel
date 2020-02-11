@@ -246,13 +246,4 @@ describe YModel::Dump do
   it { is_expected.to respond_to :call }
 end
 
-describe YModel::Railtie do
-  describe "rake tasks" do
-    it { expect(Rake::Task.task_defined?('db:migrate')).to be_truthy }
-    it { expect(Rake::Task.task_defined?('ymodel:dump')).to be_truthy }
-  end
-
-  Rake::Task.task_defined?('assets:precompile')
-end
-
 # rubocop:enable RSpec/MultipleDescribes

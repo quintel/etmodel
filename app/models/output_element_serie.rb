@@ -29,7 +29,7 @@
 #
 class OutputElementSerie < ActiveRecord::Base
   include Colors
-  include AreaDependent
+  include AreaDependent::ActiveRecord
 
 
 

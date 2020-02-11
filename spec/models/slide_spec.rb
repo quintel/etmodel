@@ -16,7 +16,6 @@ describe Slide do
     it { is_expected.to respond_to(:sliders) }
     it { is_expected.to respond_to(:output_element) }
     it { is_expected.to respond_to(:alt_output_element) }
-    it { is_expected.to respond_to(:area_dependency) }
     it { is_expected.to respond_to(:sidebar_item) }
     it { is_expected.to respond_to(:tab) }
 
@@ -82,8 +81,8 @@ describe Slide do
     end
   end
 
-  describe "#input_elements" do
-    it "is an alias of #sliders" do
+  describe '#input_elements' do
+    it 'is an alias of #sliders' do
       expect(subject.input_elements).to eq(subject.sliders)
     end
   end

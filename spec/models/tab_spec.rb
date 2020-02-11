@@ -15,5 +15,5 @@ describe Tab do
   it { is_expected.to respond_to :allowed_sidebar_items }
   it { is_expected.to respond_to :sidebar_items }
   it { is_expected.to respond_to :area_dependency }
-  it { is_expected.to be_a AreaDependent }
+  it { is_expected.to be_a AreaDependent::ActiveRecord }
 end

@@ -18,6 +18,7 @@
   sidebar_item_id: 1
   output_element_id: 58
   alt_output_element_id: 58
+  dependent_on: ''
 - id: 2
   image: house_lighting.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -36,6 +37,7 @@
   sidebar_item_id: 1
   output_element_id: 2
   alt_output_element_id: 2
+  dependent_on: ''
 - id: 3
   image: house_appliances.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -54,6 +56,7 @@
   sidebar_item_id: 1
   output_element_id: 2
   alt_output_element_id: 2
+  dependent_on: ''
 - id: 4
   image: house_heating.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -72,6 +75,7 @@
   sidebar_item_id: 1
   output_element_id: 56
   alt_output_element_id: 56
+  dependent_on: ''
 - id: 5
   image: house_solarpanels.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -90,6 +94,7 @@
   sidebar_item_id: 1
   output_element_id: 5
   alt_output_element_id: 5
+  dependent_on: ''
 - id: 6
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -108,6 +113,7 @@
   sidebar_item_id: 37
   output_element_id: 32
   alt_output_element_id: 32
+  dependent_on: ''
 - id: 7
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -126,6 +132,7 @@
   sidebar_item_id: 12
   output_element_id: 32
   alt_output_element_id: 32
+  dependent_on: 
 - id: 8
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -144,6 +151,7 @@
   sidebar_item_id: 12
   output_element_id: 32
   alt_output_element_id: 32
+  dependent_on: 
 - id: 9
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -162,6 +170,7 @@
   sidebar_item_id: 14
   output_element_id: 32
   alt_output_element_id: 32
+  dependent_on: 
 - id: 10
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -180,6 +189,7 @@
   sidebar_item_id: 14
   output_element_id: 32
   alt_output_element_id: 32
+  dependent_on: 
 - id: 11
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -198,6 +208,7 @@
   sidebar_item_id: 15
   output_element_id: 32
   alt_output_element_id: 32
+  dependent_on: 
 - id: 12
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -216,6 +227,7 @@
   sidebar_item_id: 15
   output_element_id: 32
   alt_output_element_id: 32
+  dependent_on: 
 - id: 13
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -234,6 +246,7 @@
   sidebar_item_id: 17
   output_element_id: 32
   alt_output_element_id: 32
+  dependent_on: ''
 - id: 16
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -252,6 +265,7 @@
   sidebar_item_id: 17
   output_element_id: 32
   alt_output_element_id: 32
+  dependent_on: 
 - id: 17
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -270,6 +284,7 @@
   sidebar_item_id: 16
   output_element_id: 32
   alt_output_element_id: 32
+  dependent_on: ''
 - id: 19
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -288,6 +303,7 @@
   sidebar_item_id: 13
   output_element_id: 32
   alt_output_element_id: 32
+  dependent_on: 
 - id: 20
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -306,6 +322,7 @@
   sidebar_item_id: 13
   output_element_id: 32
   alt_output_element_id: 32
+  dependent_on: 
 - id: 21
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -324,6 +341,7 @@
   sidebar_item_id: 37
   output_element_id: 32
   alt_output_element_id: 32
+  dependent_on: ''
 - id: 22
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -342,6 +360,7 @@
   sidebar_item_id: 18
   output_element_id: 32
   alt_output_element_id: 32
+  dependent_on: ''
 - id: 23
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -360,6 +379,7 @@
   sidebar_item_id: 18
   output_element_id: 32
   alt_output_element_id: 32
+  dependent_on: ''
 - id: 24
   image: car.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -378,6 +398,7 @@
   sidebar_item_id: 51
   output_element_id: 202
   alt_output_element_id: 
+  dependent_on: ''
 - id: 25
   image: engine.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -396,6 +417,7 @@
   sidebar_item_id: 51
   output_element_id: 203
   alt_output_element_id: 
+  dependent_on: ''
 - id: 26
   image: engine.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -414,6 +436,7 @@
   sidebar_item_id: 52
   output_element_id: 207
   alt_output_element_id: 
+  dependent_on: ''
 - id: 27
   image: industry.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -432,6 +455,7 @@
   sidebar_item_id: 42
   output_element_id: 153
   alt_output_element_id: 153
+  dependent_on: ''
 - id: 28
   image: industry.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -450,6 +474,7 @@
   sidebar_item_id: 42
   output_element_id: 154
   alt_output_element_id: 154
+  dependent_on: ''
 - id: 29
   image: industry.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -468,6 +493,7 @@
   sidebar_item_id: 42
   output_element_id: 153
   alt_output_element_id: 153
+  dependent_on: ''
 - id: 30
   image: tractor_and_greenhouse.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -486,6 +512,7 @@
   sidebar_item_id: 5
   output_element_id: 29
   alt_output_element_id: 29
+  dependent_on: 
 - id: 31
   image: tractor_and_greenhouse.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -504,6 +531,7 @@
   sidebar_item_id: 5
   output_element_id: 30
   alt_output_element_id: 30
+  dependent_on: ''
 - id: 32
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -522,6 +550,7 @@
   sidebar_item_id: 6
   output_element_id: 31
   alt_output_element_id: 31
+  dependent_on: 
 - id: 34
   image: car_engine.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -540,6 +569,7 @@
   sidebar_item_id: 3
   output_element_id: 201
   alt_output_element_id: 
+  dependent_on: ''
 - id: 35
   image: windmills.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -558,6 +588,7 @@
   sidebar_item_id: 29
   output_element_id: 134
   alt_output_element_id: 52
+  dependent_on: 
 - id: 36
   image: house_solarpanels.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -576,6 +607,7 @@
   sidebar_item_id: 
   output_element_id: 36
   alt_output_element_id: 36
+  dependent_on: 
 - id: 37
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -594,6 +626,7 @@
   sidebar_item_id: 
   output_element_id: 
   alt_output_element_id: 
+  dependent_on: 
 - id: 38
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -612,6 +645,7 @@
   sidebar_item_id: 19
   output_element_id: 127
   alt_output_element_id: 46
+  dependent_on: ''
 - id: 39
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -630,6 +664,7 @@
   sidebar_item_id: 19
   output_element_id: 127
   alt_output_element_id: 34
+  dependent_on: 
 - id: 40
   image: dependence_chart.png
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -648,6 +683,7 @@
   sidebar_item_id: 20
   output_element_id: 132
   alt_output_element_id: 76
+  dependent_on: ''
 - id: 41
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -666,6 +702,7 @@
   sidebar_item_id: 21
   output_element_id: 133
   alt_output_element_id: 39
+  dependent_on: 
 - id: 42
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -684,6 +721,7 @@
   sidebar_item_id: 
   output_element_id: 
   alt_output_element_id: 
+  dependent_on: 
 - id: 43
   image: house.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -702,6 +740,7 @@
   sidebar_item_id: 1
   output_element_id: 213
   alt_output_element_id: 213
+  dependent_on: ''
 - id: 44
   image: industry_solarpanels.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -720,6 +759,7 @@
   sidebar_item_id: 4
   output_element_id: 235
   alt_output_element_id: 28
+  dependent_on: ''
 - id: 45
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -738,6 +778,7 @@
   sidebar_item_id: 22
   output_element_id: 99
   alt_output_element_id: 99
+  dependent_on: ''
 - id: 46
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -756,6 +797,7 @@
   sidebar_item_id: 22
   output_element_id: 99
   alt_output_element_id: 99
+  dependent_on: ''
 - id: 47
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -774,6 +816,7 @@
   sidebar_item_id: 22
   output_element_id: 99
   alt_output_element_id: 99
+  dependent_on: ''
 - id: 48
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -792,6 +835,7 @@
   sidebar_item_id: 22
   output_element_id: 99
   alt_output_element_id: 99
+  dependent_on: ''
 - id: 49
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -810,6 +854,7 @@
   sidebar_item_id: 47
   output_element_id: 77
   alt_output_element_id: 77
+  dependent_on: ''
 - id: 51
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -828,6 +873,7 @@
   sidebar_item_id: 23
   output_element_id: 99
   alt_output_element_id: 99
+  dependent_on: ''
 - id: 52
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -846,6 +892,7 @@
   sidebar_item_id: 23
   output_element_id: 99
   alt_output_element_id: 99
+  dependent_on: ''
 - id: 53
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -864,6 +911,7 @@
   sidebar_item_id: 23
   output_element_id: 99
   alt_output_element_id: 99
+  dependent_on: ''
 - id: 54
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -882,6 +930,7 @@
   sidebar_item_id: 23
   output_element_id: 99
   alt_output_element_id: 99
+  dependent_on: ''
 - id: 55
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -900,6 +949,7 @@
   sidebar_item_id: 23
   output_element_id: 99
   alt_output_element_id: 99
+  dependent_on: ''
 - id: 61
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -918,6 +968,7 @@
   sidebar_item_id: 
   output_element_id: 
   alt_output_element_id: 
+  dependent_on: 
 - id: 62
   image: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -936,6 +987,7 @@
   sidebar_item_id: 
   output_element_id: 
   alt_output_element_id: 
+  dependent_on: 
 - id: 63
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -954,6 +1006,7 @@
   sidebar_item_id: 
   output_element_id: 
   alt_output_element_id: 
+  dependent_on: 
 - id: 99
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -972,6 +1025,7 @@
   sidebar_item_id: 21
   output_element_id: 133
   alt_output_element_id: 40
+  dependent_on: 
 - id: 102
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -990,6 +1044,7 @@
   sidebar_item_id: 
   output_element_id: 63
   alt_output_element_id: 63
+  dependent_on: ''
 - id: 103
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1008,6 +1063,7 @@
   sidebar_item_id: 28
   output_element_id: 61
   alt_output_element_id: 61
+  dependent_on: 
 - id: 104
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1026,6 +1082,7 @@
   sidebar_item_id: 28
   output_element_id: 61
   alt_output_element_id: 61
+  dependent_on: 
 - id: 105
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1044,6 +1101,7 @@
   sidebar_item_id: 
   output_element_id: 
   alt_output_element_id: 
+  dependent_on: 
 - id: 108
   image: house_heating.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1062,6 +1120,7 @@
   sidebar_item_id: 1
   output_element_id: 66
   alt_output_element_id: 66
+  dependent_on: ''
 - id: 109
   image: house_heating.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1080,6 +1139,7 @@
   sidebar_item_id: 1
   output_element_id: 67
   alt_output_element_id: 67
+  dependent_on: ''
 - id: 110
   image: house_heating.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1098,6 +1158,7 @@
   sidebar_item_id: 1
   output_element_id: 213
   alt_output_element_id: 213
+  dependent_on: ''
 - id: 113
   image: building_uncapped.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1116,6 +1177,7 @@
   sidebar_item_id: 2
   output_element_id: 68
   alt_output_element_id: 68
+  dependent_on: ''
 - id: 114
   image: building_insulation.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1134,6 +1196,7 @@
   sidebar_item_id: 2
   output_element_id: 68
   alt_output_element_id: 69
+  dependent_on: ''
 - id: 115
   image: building_heating_uncapped.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1152,6 +1215,7 @@
   sidebar_item_id: 2
   output_element_id: 70
   alt_output_element_id: 70
+  dependent_on: 
 - id: 116
   image: building_cooling_uncapped.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1170,6 +1234,7 @@
   sidebar_item_id: 2
   output_element_id: 71
   alt_output_element_id: 71
+  dependent_on: 
 - id: 117
   image: building_ventilation_uncapped.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1188,6 +1253,7 @@
   sidebar_item_id: 
   output_element_id: 68
   alt_output_element_id: 68
+  dependent_on: ''
 - id: 118
   image: building_appliances_uncapped.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1206,6 +1272,7 @@
   sidebar_item_id: 2
   output_element_id: 72
   alt_output_element_id: 72
+  dependent_on: 
 - id: 119
   image: building_lighting_uncapped.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1224,6 +1291,7 @@
   sidebar_item_id: 2
   output_element_id: 72
   alt_output_element_id: 72
+  dependent_on: 
 - id: 121
   image: building_decentral_uncapped.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1242,6 +1310,7 @@
   sidebar_item_id: 2
   output_element_id: 74
   alt_output_element_id: 74
+  dependent_on: 
 - id: 122
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1260,6 +1329,7 @@
   sidebar_item_id: 25
   output_element_id: 42
   alt_output_element_id: 42
+  dependent_on: ''
 - id: 123
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1278,6 +1348,7 @@
   sidebar_item_id: 51
   output_element_id: 205
   alt_output_element_id: 
+  dependent_on: ''
 - id: 124
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1296,6 +1367,7 @@
   sidebar_item_id: 26
   output_element_id: 43
   alt_output_element_id: 43
+  dependent_on: ''
 - id: 125
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1314,6 +1386,7 @@
   sidebar_item_id: 51
   output_element_id: 206
   alt_output_element_id: 
+  dependent_on: ''
 - id: 131
   image: car.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1332,6 +1405,7 @@
   sidebar_item_id: 
   output_element_id: 
   alt_output_element_id: 
+  dependent_on: 
 - id: 140
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1350,6 +1424,7 @@
   sidebar_item_id: 47
   output_element_id: 242
   alt_output_element_id: 99
+  dependent_on: ''
 - id: 143
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1368,6 +1443,7 @@
   sidebar_item_id: 32
   output_element_id: 100
   alt_output_element_id: 100
+  dependent_on: ''
 - id: 144
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1386,6 +1462,7 @@
   sidebar_item_id: 32
   output_element_id: 100
   alt_output_element_id: 100
+  dependent_on: ''
 - id: 145
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1404,6 +1481,7 @@
   sidebar_item_id: 32
   output_element_id: 100
   alt_output_element_id: 100
+  dependent_on: ''
 - id: 146
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1422,6 +1500,7 @@
   sidebar_item_id: 32
   output_element_id: 105
   alt_output_element_id: 105
+  dependent_on: ''
 - id: 147
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1440,6 +1519,7 @@
   sidebar_item_id: 32
   output_element_id: 107
   alt_output_element_id: 107
+  dependent_on: ''
 - id: 148
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1458,6 +1538,7 @@
   sidebar_item_id: 32
   output_element_id: 107
   alt_output_element_id: 107
+  dependent_on: ''
 - id: 151
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1476,6 +1557,7 @@
   sidebar_item_id: 
   output_element_id: 115
   alt_output_element_id: 115
+  dependent_on: ''
 - id: 152
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1494,6 +1576,7 @@
   sidebar_item_id: 33
   output_element_id: 111
   alt_output_element_id: 111
+  dependent_on: ''
 - id: 153
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1512,6 +1595,7 @@
   sidebar_item_id: 34
   output_element_id: 172
   alt_output_element_id: 172
+  dependent_on: ''
 - id: 154
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1530,6 +1614,7 @@
   sidebar_item_id: 35
   output_element_id: 118
   alt_output_element_id: 118
+  dependent_on: _always_hidden
 - id: 155
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1548,6 +1633,7 @@
   sidebar_item_id: 26
   output_element_id: 43
   alt_output_element_id: 43
+  dependent_on: ''
 - id: 156
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1566,6 +1652,7 @@
   sidebar_item_id: 26
   output_element_id: 43
   alt_output_element_id: 43
+  dependent_on: ''
 - id: 157
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1584,6 +1671,7 @@
   sidebar_item_id: 36
   output_element_id: 113
   alt_output_element_id: 113
+  dependent_on: ''
 - id: 158
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1602,6 +1690,7 @@
   sidebar_item_id: 32
   output_element_id: 100
   alt_output_element_id: 100
+  dependent_on: ''
 - id: 159
   image: industry.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1620,6 +1709,7 @@
   sidebar_item_id: 38
   output_element_id: 136
   alt_output_element_id: 136
+  dependent_on: ''
 - id: 160
   image: industry.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1638,6 +1728,7 @@
   sidebar_item_id: 4
   output_element_id: 130
   alt_output_element_id: 130
+  dependent_on: has_metal
 - id: 161
   image: industry.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1656,6 +1747,7 @@
   sidebar_item_id: 4
   output_element_id: 131
   alt_output_element_id: 131
+  dependent_on: ''
 - id: 162
   image: industry.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1674,6 +1766,7 @@
   sidebar_item_id: 4
   output_element_id: 135
   alt_output_element_id: 135
+  dependent_on: has_metal
 - id: 163
   image: house.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1692,6 +1785,7 @@
   sidebar_item_id: 1
   output_element_id: 137
   alt_output_element_id: 57
+  dependent_on: ''
 - id: 164
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1710,6 +1804,7 @@
   sidebar_item_id: 32
   output_element_id: 138
   alt_output_element_id: 138
+  dependent_on: ''
 - id: 165
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1728,6 +1823,7 @@
   sidebar_item_id: 39
   output_element_id: 143
   alt_output_element_id: 143
+  dependent_on: _always_hidden
 - id: 166
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1746,6 +1842,7 @@
   sidebar_item_id: 53
   output_element_id: 163
   alt_output_element_id: 143
+  dependent_on: ''
 - id: 168
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1764,6 +1861,7 @@
   sidebar_item_id: 54
   output_element_id: 163
   alt_output_element_id: 163
+  dependent_on: ''
 - id: 169
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1782,6 +1880,7 @@
   sidebar_item_id: 39
   output_element_id: 143
   alt_output_element_id: 143
+  dependent_on: _always_hidden
 - id: 170
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1800,6 +1899,7 @@
   sidebar_item_id: 55
   output_element_id: 223
   alt_output_element_id: 216
+  dependent_on: ''
 - id: 171
   image: house.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1818,6 +1918,7 @@
   sidebar_item_id: 1
   output_element_id: 213
   alt_output_element_id: 145
+  dependent_on: ''
 - id: 172
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1836,6 +1937,7 @@
   sidebar_item_id: 40
   output_element_id: 156
   alt_output_element_id: 
+  dependent_on: _always_hidden
 - id: 173
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1854,6 +1956,7 @@
   sidebar_item_id: 40
   output_element_id: 149
   alt_output_element_id: 149
+  dependent_on: _always_hidden
 - id: 174
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1872,6 +1975,7 @@
   sidebar_item_id: 40
   output_element_id: 99
   alt_output_element_id: 147
+  dependent_on: _always_hidden
 - id: 175
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1890,6 +1994,7 @@
   sidebar_item_id: 40
   output_element_id: 148
   alt_output_element_id: 
+  dependent_on: _always_hidden
 - id: 176
   image: industry.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1908,6 +2013,7 @@
   sidebar_item_id: 41
   output_element_id: 152
   alt_output_element_id: 152
+  dependent_on: ''
 - id: 177
   image: industry.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1926,6 +2032,7 @@
   sidebar_item_id: 41
   output_element_id: 152
   alt_output_element_id: 152
+  dependent_on: ''
 - id: 178
   image: industry.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1944,6 +2051,7 @@
   sidebar_item_id: 41
   output_element_id: 151
   alt_output_element_id: 151
+  dependent_on: ''
 - id: 179
   image: industry.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1962,6 +2070,7 @@
   sidebar_item_id: 4
   output_element_id: 178
   alt_output_element_id: 176
+  dependent_on: ''
 - id: 180
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1980,6 +2089,7 @@
   sidebar_item_id: 43
   output_element_id: 158
   alt_output_element_id: 
+  dependent_on: ''
 - id: 181
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -1998,6 +2108,7 @@
   sidebar_item_id: 43
   output_element_id: 157
   alt_output_element_id: 
+  dependent_on: ''
 - id: 182
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2016,6 +2127,7 @@
   sidebar_item_id: 43
   output_element_id: 159
   alt_output_element_id: 
+  dependent_on: ''
 - id: 184
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2034,6 +2146,7 @@
   sidebar_item_id: 43
   output_element_id: 161
   alt_output_element_id: 
+  dependent_on: ''
 - id: 185
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2052,6 +2165,7 @@
   sidebar_item_id: 43
   output_element_id: 76
   alt_output_element_id: 
+  dependent_on: ''
 - id: 186
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2070,6 +2184,7 @@
   sidebar_item_id: 53
   output_element_id: 163
   alt_output_element_id: 
+  dependent_on: _always_hidden
 - id: 187
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2088,6 +2203,7 @@
   sidebar_item_id: 40
   output_element_id: 164
   alt_output_element_id: 164
+  dependent_on: ''
 - id: 191
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2106,6 +2222,7 @@
   sidebar_item_id: 52
   output_element_id: 207
   alt_output_element_id: 
+  dependent_on: ''
 - id: 192
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2124,6 +2241,7 @@
   sidebar_item_id: 32
   output_element_id: 100
   alt_output_element_id: 100
+  dependent_on: _always_hidden
 - id: 193
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2142,6 +2260,7 @@
   sidebar_item_id: 45
   output_element_id: 214
   alt_output_element_id: 225
+  dependent_on: ''
 - id: 194
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2160,6 +2279,7 @@
   sidebar_item_id: 39
   output_element_id: 173
   alt_output_element_id: 164
+  dependent_on: ''
 - id: 195
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2178,6 +2298,7 @@
   sidebar_item_id: 46
   output_element_id: 170
   alt_output_element_id: 170
+  dependent_on: ''
 - id: 196
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2196,6 +2317,7 @@
   sidebar_item_id: 34
   output_element_id: 125
   alt_output_element_id: 116
+  dependent_on: ''
 - id: 197
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2214,6 +2336,7 @@
   sidebar_item_id: 48
   output_element_id: 171
   alt_output_element_id: 171
+  dependent_on: ''
 - id: 198
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2232,6 +2355,7 @@
   sidebar_item_id: 
   output_element_id: 175
   alt_output_element_id: 175
+  dependent_on: ''
 - id: 199
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2250,6 +2374,7 @@
   sidebar_item_id: 4
   output_element_id: 190
   alt_output_element_id: 180
+  dependent_on: ''
 - id: 201
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2268,6 +2393,7 @@
   sidebar_item_id: 4
   output_element_id: 184
   alt_output_element_id: 184
+  dependent_on: has_detailed_chemical_industry
 - id: 202
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2286,6 +2412,7 @@
   sidebar_item_id: 4
   output_element_id: 182
   alt_output_element_id: 182
+  dependent_on: ''
 - id: 203
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2304,6 +2431,7 @@
   sidebar_item_id: 4
   output_element_id: 183
   alt_output_element_id: 183
+  dependent_on: ''
 - id: 204
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2322,6 +2450,7 @@
   sidebar_item_id: 4
   output_element_id: 181
   alt_output_element_id: 181
+  dependent_on: ''
 - id: 205
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2340,6 +2469,7 @@
   sidebar_item_id: 4
   output_element_id: 186
   alt_output_element_id: 186
+  dependent_on: ''
 - id: 207
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2358,6 +2488,7 @@
   sidebar_item_id: 4
   output_element_id: 182
   alt_output_element_id: 182
+  dependent_on: _always_hidden
 - id: 208
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2376,6 +2507,7 @@
   sidebar_item_id: 47
   output_element_id: 188
   alt_output_element_id: 
+  dependent_on: ''
 - id: 211
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2394,6 +2526,7 @@
   sidebar_item_id: 4
   output_element_id: 189
   alt_output_element_id: 189
+  dependent_on: ''
 - id: 212
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2412,6 +2545,7 @@
   sidebar_item_id: 55
   output_element_id: 194
   alt_output_element_id: 
+  dependent_on: ''
 - id: 213
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2430,6 +2564,7 @@
   sidebar_item_id: 54
   output_element_id: 163
   alt_output_element_id: 163
+  dependent_on: ''
 - id: 214
   image: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2448,6 +2583,7 @@
   sidebar_item_id: 48
   output_element_id: 45
   alt_output_element_id: 
+  dependent_on: 
 - id: 215
   image: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2466,6 +2602,7 @@
   sidebar_item_id: 48
   output_element_id: 142
   alt_output_element_id: 
+  dependent_on: 
 - id: 216
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2484,6 +2621,7 @@
   sidebar_item_id: 55
   output_element_id: 194
   alt_output_element_id: 
+  dependent_on: ''
 - id: 217
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2502,6 +2640,7 @@
   sidebar_item_id: 1
   output_element_id: 196
   alt_output_element_id: 
+  dependent_on: ''
 - id: 218
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2520,6 +2659,7 @@
   sidebar_item_id: 48
   output_element_id: 123
   alt_output_element_id: 
+  dependent_on: ''
 - id: 219
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2538,6 +2678,7 @@
   sidebar_item_id: 50
   output_element_id: 209
   alt_output_element_id: 198
+  dependent_on: ''
 - id: 220
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2556,6 +2697,7 @@
   sidebar_item_id: 26
   output_element_id: 199
   alt_output_element_id: 
+  dependent_on: ''
 - id: 221
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2574,6 +2716,7 @@
   sidebar_item_id: 26
   output_element_id: 199
   alt_output_element_id: 190
+  dependent_on: ''
 - id: 222
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2592,6 +2735,7 @@
   sidebar_item_id: 50
   output_element_id: 209
   alt_output_element_id: 198
+  dependent_on: ''
 - id: 223
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2610,6 +2754,7 @@
   sidebar_item_id: 50
   output_element_id: 198
   alt_output_element_id: 199
+  dependent_on: ''
 - id: 224
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2628,6 +2773,7 @@
   sidebar_item_id: 50
   output_element_id: 198
   alt_output_element_id: 
+  dependent_on: ''
 - id: 225
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2646,6 +2792,7 @@
   sidebar_item_id: 54
   output_element_id: 211
   alt_output_element_id: 200
+  dependent_on: ''
 - id: 226
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2664,6 +2811,7 @@
   sidebar_item_id: 51
   output_element_id: 206
   alt_output_element_id: 
+  dependent_on: ''
 - id: 227
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2682,6 +2830,7 @@
   sidebar_item_id: 51
   output_element_id: 204
   alt_output_element_id: 
+  dependent_on: ''
 - id: 228
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2700,6 +2849,7 @@
   sidebar_item_id: 51
   output_element_id: 204
   alt_output_element_id: 
+  dependent_on: ''
 - id: 229
   image: truck.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2718,6 +2868,7 @@
   sidebar_item_id: 52
   output_element_id: 208
   alt_output_element_id: 
+  dependent_on: ''
 - id: 230
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2736,6 +2887,7 @@
   sidebar_item_id: 52
   output_element_id: 207
   alt_output_element_id: 
+  dependent_on: ''
 - id: 232
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2754,6 +2906,7 @@
   sidebar_item_id: 44
   output_element_id: 48
   alt_output_element_id: 
+  dependent_on: ''
 - id: 233
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2772,6 +2925,7 @@
   sidebar_item_id: 44
   output_element_id: 48
   alt_output_element_id: 
+  dependent_on: ''
 - id: 234
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2790,6 +2944,7 @@
   sidebar_item_id: 51
   output_element_id: 206
   alt_output_element_id: 
+  dependent_on: ''
 - id: 235
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2808,6 +2963,7 @@
   sidebar_item_id: 3
   output_element_id: 201
   alt_output_element_id: 
+  dependent_on: ''
 - id: 236
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2826,6 +2982,7 @@
   sidebar_item_id: 40
   output_element_id: 46
   alt_output_element_id: 
+  dependent_on: ''
 - id: 237
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2844,6 +3001,7 @@
   sidebar_item_id: 
   output_element_id: 
   alt_output_element_id: 
+  dependent_on: ''
 - id: 238
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2862,6 +3020,7 @@
   sidebar_item_id: 56
   output_element_id: 171
   alt_output_element_id: 102
+  dependent_on: ''
 - id: 239
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2880,6 +3039,7 @@
   sidebar_item_id: 23
   output_element_id: 99
   alt_output_element_id: 
+  dependent_on: ''
 - id: 240
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2898,6 +3058,7 @@
   sidebar_item_id: 45
   output_element_id: 214
   alt_output_element_id: 
+  dependent_on: ''
 - id: 242
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2916,6 +3077,7 @@
   sidebar_item_id: 45
   output_element_id: 46
   alt_output_element_id: 
+  dependent_on: ''
 - id: 243
   image: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2934,6 +3096,7 @@
   sidebar_item_id: 28
   output_element_id: 61
   alt_output_element_id: 
+  dependent_on: ''
 - id: 244
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2952,6 +3115,7 @@
   sidebar_item_id: 28
   output_element_id: 
   alt_output_element_id: 
+  dependent_on: _always_hidden
 - id: 245
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2970,6 +3134,7 @@
   sidebar_item_id: 18
   output_element_id: 48
   alt_output_element_id: 
+  dependent_on: has_detailed_chemical_industry
 - id: 246
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -2988,6 +3153,7 @@
   sidebar_item_id: 4
   output_element_id: 46
   alt_output_element_id: 
+  dependent_on: has_detailed_chemical_industry
 - id: 248
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3006,6 +3172,7 @@
   sidebar_item_id: 48
   output_element_id: 196
   alt_output_element_id: 
+  dependent_on: ''
 - id: 249
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3024,6 +3191,7 @@
   sidebar_item_id: 57
   output_element_id: 213
   alt_output_element_id: 
+  dependent_on: ''
 - id: 250
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3042,6 +3210,7 @@
   sidebar_item_id: 57
   output_element_id: 213
   alt_output_element_id: 
+  dependent_on: ''
 - id: 251
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3060,6 +3229,7 @@
   sidebar_item_id: 57
   output_element_id: 213
   alt_output_element_id: 
+  dependent_on: ''
 - id: 252
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3078,6 +3248,7 @@
   sidebar_item_id: 53
   output_element_id: 163
   alt_output_element_id: 
+  dependent_on: _always_hidden
 - id: 253
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3096,6 +3267,7 @@
   sidebar_item_id: 58
   output_element_id: 228
   alt_output_element_id: 
+  dependent_on: ''
 - id: 254
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3114,6 +3286,7 @@
   sidebar_item_id: 58
   output_element_id: 48
   alt_output_element_id: 
+  dependent_on: ''
 - id: 255
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3132,6 +3305,7 @@
   sidebar_item_id: 58
   output_element_id: 48
   alt_output_element_id: 
+  dependent_on: ''
 - id: 256
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3150,6 +3324,7 @@
   sidebar_item_id: 45
   output_element_id: 227
   alt_output_element_id: 
+  dependent_on: ''
 - id: 257
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3168,6 +3343,7 @@
   sidebar_item_id: 45
   output_element_id: 226
   alt_output_element_id: 
+  dependent_on: ''
 - id: 258
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3186,6 +3362,7 @@
   sidebar_item_id: 48
   output_element_id: 226
   alt_output_element_id: 
+  dependent_on: ''
 - id: 259
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3204,6 +3381,7 @@
   sidebar_item_id: 47
   output_element_id: 242
   alt_output_element_id: 
+  dependent_on: ''
 - id: 260
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3222,6 +3400,7 @@
   sidebar_item_id: 47
   output_element_id: 168
   alt_output_element_id: 
+  dependent_on: _always_hidden
 - id: 263
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3240,6 +3419,7 @@
   sidebar_item_id: 36
   output_element_id: 48
   alt_output_element_id: 
+  dependent_on: ''
 - id: 264
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3258,6 +3438,7 @@
   sidebar_item_id: 36
   output_element_id: 48
   alt_output_element_id: 
+  dependent_on: ''
 - id: 265
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3276,6 +3457,7 @@
   sidebar_item_id: 59
   output_element_id: 241
   alt_output_element_id: 
+  dependent_on: ''
 - id: 266
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3294,6 +3476,7 @@
   sidebar_item_id: 59
   output_element_id: 240
   alt_output_element_id: 
+  dependent_on: ''
 - id: 267
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3312,6 +3495,7 @@
   sidebar_item_id: 59
   output_element_id: 46
   alt_output_element_id: 
+  dependent_on: ''
 - id: 268
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3330,6 +3514,7 @@
   sidebar_item_id: 47
   output_element_id: 242
   alt_output_element_id: 
+  dependent_on: ''
 - id: 269
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3348,6 +3533,7 @@
   sidebar_item_id: 37
   output_element_id: 244
   alt_output_element_id: 
+  dependent_on: ''
 - id: 270
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3366,6 +3552,7 @@
   sidebar_item_id: 47
   output_element_id: 243
   alt_output_element_id: 
+  dependent_on: ''
 - id: 272
   image: ''
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3384,6 +3571,7 @@
   sidebar_item_id: 57
   output_element_id: 213
   alt_output_element_id: 
+  dependent_on: ''
 - id: 273
   image: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3402,6 +3590,7 @@
   sidebar_item_id: 24
   output_element_id: 241
   alt_output_element_id: 
+  dependent_on: ''
 - id: 274
   image: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3420,6 +3609,7 @@
   sidebar_item_id: 48
   output_element_id: 249
   alt_output_element_id: 
+  dependent_on: ''
 - id: 275
   image: house_direct_heating.gif
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3438,6 +3628,7 @@
   sidebar_item_id: 24
   output_element_id: 248
   alt_output_element_id: 
+  dependent_on: ''
 - id: 276
   image: 
   created_at: !ruby/object:ActiveSupport::TimeWithZone
@@ -3456,3 +3647,4 @@
   sidebar_item_id: 24
   output_element_id: 248
   alt_output_element_id: 
+  dependent_on: 

@@ -19,9 +19,8 @@ require 'ymodel'
 # scenario section of the application. The ones you click to a `slide`.
 # ie "Households", "Electricity" and "Fuel prices"
 class SidebarItem < YModel::Base
-  include AreaDependent
+  include AreaDependent::YModel
 
-  has_one :area_dependency, as: :dependable
   has_one :description, as: :describable
   has_many :slides
   belongs_to :parent, class_name: 'SidebarItem'

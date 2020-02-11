@@ -15,7 +15,7 @@
 #
 class Constraint < ActiveRecord::Base
 
-  include AreaDependent
+  include AreaDependent::ActiveRecord
 
   # Groups names to which a constraint must belong. Used both during
   # Constraint validation, and within the dashboard views.

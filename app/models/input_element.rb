@@ -21,12 +21,11 @@
 require 'ymodel'
 
 class InputElement < YModel::Base
-  include AreaDependent
+  include AreaDependent::YModel
 
   ENUM_UNITS = %w[radio weather-curves].freeze
 
   has_one :description, as: :describable
-  has_one :area_dependency, as: :dependable
   belongs_to :slide
 
   class << self

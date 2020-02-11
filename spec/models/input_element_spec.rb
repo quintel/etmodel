@@ -13,7 +13,6 @@ describe InputElement do
     # Relations
     it { is_expected.to respond_to(:slide) }
     it { is_expected.to respond_to(:description) }
-    it { is_expected.to respond_to(:area_dependency) }
 
     # Attributes
     it { is_expected.to respond_to(:key) }

@@ -22,6 +22,7 @@
   related_converter: ''
   slide_id: 3
   position: 2
+  dependent_on: ''
 - id: 11
   key: costs_oil
   share_group: ''
@@ -44,6 +45,7 @@
   related_converter: ''
   slide_id: 6
   position: 2
+  dependent_on: ''
 - id: 12
   key: investment_costs_wind_onshore
   share_group: ''
@@ -66,6 +68,7 @@
   related_converter: energy_power_wind_turbine_inland
   slide_id: 9
   position: 1
+  dependent_on: 
 - id: 14
   key: investment_costs_wind_offshore
   share_group: ''
@@ -88,6 +91,7 @@
   related_converter: energy_power_wind_turbine_offshore
   slide_id: 9
   position: 2
+  dependent_on: 
 - id: 16
   key: investment_costs_combustion_gas_plant
   share_group: ''
@@ -110,6 +114,7 @@
   related_converter: energy_power_combined_cycle_network_gas
   slide_id: 7
   position: 1
+  dependent_on: ''
 - id: 17
   key: investment_costs_combustion_oil_plant
   share_group: ''
@@ -132,6 +137,7 @@
   related_converter: energy_power_ultra_supercritical_crude_oil
   slide_id: 7
   position: 2
+  dependent_on: 
 - id: 18
   key: investment_costs_combustion_coal_plant
   share_group: ''
@@ -154,6 +160,7 @@
   related_converter: energy_power_ultra_supercritical_coal
   slide_id: 7
   position: 3
+  dependent_on: 
 - id: 19
   key: investment_costs_combustion_biomass_plants
   share_group: ''
@@ -176,6 +183,7 @@
   related_converter: ''
   slide_id: 7
   position: 4
+  dependent_on: ''
 - id: 43
   key: households_lighting_efficient_fluorescent_electricity_share
   share_group: household_light
@@ -198,6 +206,7 @@
   related_converter: 
   slide_id: 2
   position: 2
+  dependent_on: 
 - id: 44
   key: households_lighting_led_electricity_share
   share_group: household_light
@@ -220,6 +229,7 @@
   related_converter: 
   slide_id: 2
   position: 3
+  dependent_on: 
 - id: 47
   key: households_solar_pv_solar_radiation_market_penetration
   share_group: ''
@@ -242,6 +252,7 @@
   related_converter: households_solar_pv_solar_radiation
   slide_id: 5
   position: 1
+  dependent_on: ''
 - id: 52
   key: households_heater_electricity_share
   share_group: heating_households
@@ -264,6 +275,7 @@
   related_converter: households_space_heater_electricity
   slide_id: 4
   position: 9
+  dependent_on: ''
 - id: 57
   key: costs_coal
   share_group: ''
@@ -286,6 +298,7 @@
   related_converter: ''
   slide_id: 6
   position: 3
+  dependent_on: ''
 - id: 58
   key: costs_gas
   share_group: ''
@@ -308,6 +321,7 @@
   related_converter: ''
   slide_id: 6
   position: 1
+  dependent_on: ''
 - id: 114
   key: investment_costs_water_river
   share_group: ''
@@ -330,6 +344,7 @@
   related_converter: energy_power_hydro_river
   slide_id: 11
   position: 1
+  dependent_on: 
 - id: 115
   key: investment_costs_water_mountains
   share_group: ''
@@ -352,6 +367,7 @@
   related_converter: energy_power_hydro_mountain
   slide_id: 11
   position: 2
+  dependent_on: has_mountains
 - id: 121
   key: om_costs_nuclear_nuclear_plant
   share_group: ''
@@ -374,6 +390,7 @@
   related_converter: energy_power_nuclear_gen3_uranium_oxide
   slide_id: 20
   position: 1
+  dependent_on: 
 - id: 126
   key: om_costs_wind_onshore
   share_group: ''
@@ -396,6 +413,7 @@
   related_converter: energy_power_wind_turbine_inland
   slide_id: 10
   position: 1
+  dependent_on: 
 - id: 127
   key: om_costs_wind_offshore
   share_group: ''
@@ -418,6 +436,7 @@
   related_converter: energy_power_wind_turbine_offshore
   slide_id: 10
   position: 2
+  dependent_on: 
 - id: 129
   key: om_costs_water_river
   share_group: ''
@@ -440,6 +459,7 @@
   related_converter: energy_power_hydro_river
   slide_id: 12
   position: 1
+  dependent_on: 
 - id: 131
   key: om_costs_water_mountains
   share_group: ''
@@ -462,6 +482,7 @@
   related_converter: energy_power_hydro_mountain
   slide_id: 12
   position: 2
+  dependent_on: has_mountains
 - id: 132
   key: om_costs_earth_geothermal_electricity
   share_group: ''
@@ -484,6 +505,7 @@
   related_converter: energy_power_geothermal
   slide_id: 16
   position: 1
+  dependent_on: ''
 - id: 133
   key: investment_costs_solar_solar_panels
   share_group: ''
@@ -506,6 +528,7 @@
   related_converter: households_solar_pv_solar_radiation
   slide_id: 17
   position: 1
+  dependent_on: ''
 - id: 136
   key: investment_costs_nuclear_nuclear_plant
   share_group: ''
@@ -528,6 +551,7 @@
   related_converter: energy_power_nuclear_gen3_uranium_oxide
   slide_id: 19
   position: 1
+  dependent_on: 
 - id: 137
   key: costs_co2
   share_group: ''
@@ -550,6 +574,7 @@
   related_converter: ''
   slide_id: 22
   position: 1
+  dependent_on: ''
 - id: 138
   key: costs_co2_free_allocation
   share_group: ''
@@ -572,6 +597,7 @@
   related_converter: ''
   slide_id: 22
   position: 2
+  dependent_on: 
 - id: 139
   key: om_costs_co2_ccs
   share_group: ''
@@ -594,6 +620,7 @@
   related_converter: 
   slide_id: 23
   position: 2
+  dependent_on: 
 - id: 140
   key: investment_costs_co2_ccs
   share_group: ''
@@ -616,6 +643,7 @@
   related_converter: 
   slide_id: 23
   position: 1
+  dependent_on: 
 - id: 141
   key: transport_cars_share
   share_group: passenger_transport
@@ -638,6 +666,7 @@
   related_converter: ''
   slide_id: 24
   position: 2
+  dependent_on: ''
 - id: 142
   key: transport_trucks_share
   share_group: freight_transport
@@ -660,6 +689,7 @@
   related_converter: ''
   slide_id: 229
   position: 2
+  dependent_on: ''
 - id: 143
   key: transport_passenger_trains_share
   share_group: passenger_transport
@@ -682,6 +712,7 @@
   related_converter: ''
   slide_id: 24
   position: 3
+  dependent_on: ''
 - id: 144
   key: transport_planes_share
   share_group: passenger_transport
@@ -704,6 +735,7 @@
   related_converter: ''
   slide_id: 24
   position: 8
+  dependent_on: is_national_scenario
 - id: 145
   key: transport_ships_share
   share_group: freight_transport
@@ -726,6 +758,7 @@
   related_converter: ''
   slide_id: 229
   position: 4
+  dependent_on: ''
 - id: 146
   key: transport_car_using_electricity_share
   share_group: transport_car_tech
@@ -748,6 +781,7 @@
   related_converter: ''
   slide_id: 25
   position: 1
+  dependent_on: ''
 - id: 147
   key: transport_car_using_diesel_mix_share
   share_group: transport_car_tech
@@ -770,6 +804,7 @@
   related_converter: ''
   slide_id: 25
   position: 3
+  dependent_on: ''
 - id: 148
   key: transport_car_using_gasoline_mix_share
   share_group: transport_car_tech
@@ -792,6 +827,7 @@
   related_converter: ''
   slide_id: 25
   position: 4
+  dependent_on: ''
 - id: 157
   key: transport_truck_using_gasoline_mix_share
   share_group: transport_truck_tech
@@ -814,6 +850,7 @@
   related_converter: ''
   slide_id: 26
   position: 3
+  dependent_on: ''
 - id: 158
   key: transport_truck_using_diesel_mix_share
   share_group: transport_truck_tech
@@ -836,6 +873,7 @@
   related_converter: ''
   slide_id: 26
   position: 2
+  dependent_on: ''
 - id: 159
   key: transport_truck_using_electricity_share
   share_group: transport_truck_tech
@@ -858,6 +896,7 @@
   related_converter: ''
   slide_id: 26
   position: 1
+  dependent_on: ''
 - id: 171
   key: transport_vehicle_using_electricity_efficiency
   share_group: ''
@@ -880,6 +919,7 @@
   related_converter: ''
   slide_id: 34
   position: 1
+  dependent_on: ''
 - id: 178
   key: policy_area_onshore_land
   share_group: ''
@@ -902,6 +942,7 @@
   related_converter: 
   slide_id: 35
   position: 1
+  dependent_on: 
 - id: 179
   key: policy_area_onshore_coast
   share_group: ''
@@ -924,6 +965,7 @@
   related_converter: ''
   slide_id: 35
   position: 2
+  dependent_on: has_coastline
 - id: 180
   key: om_costs_combustion_gas_plant
   share_group: ''
@@ -946,6 +988,7 @@
   related_converter: energy_power_combined_cycle_network_gas
   slide_id: 8
   position: 1
+  dependent_on: ''
 - id: 181
   key: om_costs_combustion_oil_plant
   share_group: ''
@@ -968,6 +1011,7 @@
   related_converter: energy_power_ultra_supercritical_crude_oil
   slide_id: 8
   position: 2
+  dependent_on: 
 - id: 182
   key: om_costs_combustion_coal_plant
   share_group: ''
@@ -990,6 +1034,7 @@
   related_converter: energy_power_ultra_supercritical_coal
   slide_id: 8
   position: 3
+  dependent_on: 
 - id: 183
   key: om_costs_combustion_biomass_plant
   share_group: ''
@@ -1012,6 +1057,7 @@
   related_converter: 
   slide_id: 8
   position: 4
+  dependent_on: 
 - id: 185
   key: costs_uranium
   share_group: ''
@@ -1034,6 +1080,7 @@
   related_converter: ''
   slide_id: 21
   position: 1
+  dependent_on: ''
 - id: 186
   key: transport_vehicle_combustion_engine_efficiency
   share_group: ''
@@ -1056,6 +1103,7 @@
   related_converter: ''
   slide_id: 34
   position: 4
+  dependent_on: ''
 - id: 187
   key: transport_ships_efficiency
   share_group: ''
@@ -1078,6 +1126,7 @@
   related_converter: ''
   slide_id: 34
   position: 6
+  dependent_on: ''
 - id: 188
   key: transport_planes_efficiency
   share_group: ''
@@ -1100,6 +1149,7 @@
   related_converter: ''
   slide_id: 34
   position: 7
+  dependent_on: ''
 - id: 193
   key: policy_area_roofs_for_solar_panels
   share_group: ''
@@ -1122,6 +1172,7 @@
   related_converter: 
   slide_id: 36
   position: 1
+  dependent_on: 
 - id: 194
   key: policy_area_land_for_solar_panels
   share_group: ''
@@ -1144,6 +1195,7 @@
   related_converter: 
   slide_id: 36
   position: 2
+  dependent_on: 
 - id: 195
   key: policy_area_land_for_csp
   share_group: ''
@@ -1166,6 +1218,7 @@
   related_converter: ''
   slide_id: 36
   position: 3
+  dependent_on: has_solar_csp
 - id: 198
   key: policy_sustainability_co2_emissions
   share_group: ''
@@ -1188,6 +1241,7 @@
   related_converter: 
   slide_id: 38
   position: 1
+  dependent_on: 
 - id: 204
   key: households_useful_demand_for_cooling
   share_group: ''
@@ -1210,6 +1264,7 @@
   related_converter: ''
   slide_id: 43
   position: 6
+  dependent_on: ''
 - id: 206
   key: policy_dependence_max_dependence
   share_group: ''
@@ -1232,6 +1287,7 @@
   related_converter: ''
   slide_id: 40
   position: 1
+  dependent_on: ''
 - id: 207
   key: policy_cost_electricity_cost
   share_group: ''
@@ -1254,6 +1310,7 @@
   related_converter: ''
   slide_id: 99
   position: 1
+  dependent_on: ''
 - id: 208
   key: policy_cost_total_energy_cost
   share_group: ''
@@ -1276,6 +1333,7 @@
   related_converter: ''
   slide_id: 41
   position: 1
+  dependent_on: ''
 - id: 212
   key: policy_dependence_max_electricity_dependence
   share_group: ''
@@ -1298,6 +1356,7 @@
   related_converter: ''
   slide_id: 40
   position: 2
+  dependent_on: ''
 - id: 220
   key: agriculture_useful_demand_electricity
   share_group: ''
@@ -1320,6 +1379,7 @@
   related_converter: ''
   slide_id: 30
   position: 1
+  dependent_on: ''
 - id: 221
   key: agriculture_useful_demand_useable_heat
   share_group: ''
@@ -1342,6 +1402,7 @@
   related_converter: ''
   slide_id: 30
   position: 2
+  dependent_on: ''
 - id: 223
   key: agriculture_burner_crude_oil_share
   share_group: agri_heat
@@ -1364,6 +1425,7 @@
   related_converter: agriculture_burner_crude_oil
   slide_id: 31
   position: 2
+  dependent_on: ''
 - id: 225
   key: agriculture_burner_wood_pellets_share
   share_group: agri_heat
@@ -1386,6 +1448,7 @@
   related_converter: agriculture_burner_wood_pellets
   slide_id: 31
   position: 3
+  dependent_on: ''
 - id: 227
   key: agriculture_heatpump_water_water_ts_electricity_share
   share_group: agri_heat
@@ -1408,6 +1471,7 @@
   related_converter: agriculture_heatpump_water_water_ts_electricity
   slide_id: 31
   position: 4
+  dependent_on: ''
 - id: 228
   key: agriculture_geothermal_share
   share_group: agri_heat
@@ -1430,6 +1494,7 @@
   related_converter: 
   slide_id: 31
   position: 5
+  dependent_on: 
 - id: 229
   key: other_useful_demand_electricity
   share_group: ''
@@ -1452,6 +1517,7 @@
   related_converter: ''
   slide_id: 32
   position: 1
+  dependent_on: ''
 - id: 230
   key: other_useful_demand_useable_heat
   share_group: ''
@@ -1474,6 +1540,7 @@
   related_converter: ''
   slide_id: 32
   position: 2
+  dependent_on: ''
 - id: 231
   key: investment_costs_combustion_waste_incinerator
   share_group: ''
@@ -1496,6 +1563,7 @@
   related_converter: 
   slide_id: 7
   position: 5
+  dependent_on: 
 - id: 232
   key: om_costs_combustion_waste_incinerator
   share_group: ''
@@ -1518,6 +1586,7 @@
   related_converter: 
   slide_id: 8
   position: 5
+  dependent_on: 
 - id: 233
   key: policy_area_offshore
   share_group: ''
@@ -1540,6 +1609,7 @@
   related_converter: ''
   slide_id: 35
   position: 3
+  dependent_on: has_coastline
 - id: 234
   key: policy_sustainability_renewable_percentage
   share_group: ''
@@ -1562,6 +1632,7 @@
   related_converter: ''
   slide_id: 39
   position: 1
+  dependent_on: ''
 - id: 238
   key: transport_car_using_lpg_share
   share_group: transport_car_tech
@@ -1584,6 +1655,7 @@
   related_converter: ''
   slide_id: 25
   position: 5
+  dependent_on: ''
 - id: 239
   key: transport_car_using_compressed_natural_gas_share
   share_group: transport_car_tech
@@ -1606,6 +1678,7 @@
   related_converter: ''
   slide_id: 25
   position: 6
+  dependent_on: ''
 - id: 240
   key: transport_truck_using_compressed_natural_gas_share
   share_group: transport_truck_tech
@@ -1628,6 +1701,7 @@
   related_converter: ''
   slide_id: 26
   position: 4
+  dependent_on: ''
 - id: 241
   key: transport_trains_efficiency
   share_group: ''
@@ -1650,6 +1724,7 @@
   related_converter: ''
   slide_id: 34
   position: 5
+  dependent_on: ''
 - id: 245
   key: households_lighting_incandescent_electricity_share
   share_group: household_light
@@ -1672,6 +1747,7 @@
   related_converter: ''
   slide_id: 2
   position: 1
+  dependent_on: ''
 - id: 246
   key: agriculture_burner_network_gas_share
   share_group: agri_heat
@@ -1694,6 +1770,7 @@
   related_converter: agriculture_burner_network_gas
   slide_id: 31
   position: 1
+  dependent_on: ''
 - id: 247
   key: investment_costs_earth_geothermal_electricity
   share_group: ''
@@ -1716,6 +1793,7 @@
   related_converter: energy_power_geothermal
   slide_id: 13
   position: 1
+  dependent_on: ''
 - id: 248
   key: households_heater_crude_oil_share
   share_group: heating_households
@@ -1738,6 +1816,7 @@
   related_converter: households_space_heater_crude_oil
   slide_id: 4
   position: 11
+  dependent_on: has_coal_oil_for_heating_built_environment
 - id: 250
   key: capacity_of_energy_power_ultra_supercritical_coal
   share_group: ''
@@ -1760,6 +1839,7 @@
   related_converter: energy_power_ultra_supercritical_coal
   slide_id: 45
   position: 1
+  dependent_on: ''
 - id: 251
   key: capacity_of_energy_power_ultra_supercritical_ccs_coal
   share_group: ''
@@ -1782,6 +1862,7 @@
   related_converter: energy_power_ultra_supercritical_ccs_coal
   slide_id: 45
   position: 3
+  dependent_on: ''
 - id: 253
   key: capacity_of_energy_power_combined_cycle_coal
   share_group: ''
@@ -1804,6 +1885,7 @@
   related_converter: energy_power_combined_cycle_coal
   slide_id: 45
   position: 4
+  dependent_on: ''
 - id: 254
   key: capacity_of_energy_power_combined_cycle_ccs_coal
   share_group: ''
@@ -1826,6 +1908,7 @@
   related_converter: energy_power_combined_cycle_ccs_coal
   slide_id: 45
   position: 5
+  dependent_on: ''
 - id: 255
   key: capacity_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite
   share_group: ''
@@ -1848,6 +1931,7 @@
   related_converter: energy_power_ultra_supercritical_oxyfuel_ccs_lignite
   slide_id: 45
   position: 6
+  dependent_on: has_lignite
 - id: 256
   key: capacity_of_energy_power_ultra_supercritical_network_gas
   share_group: ''
@@ -1870,6 +1954,7 @@
   related_converter: energy_power_ultra_supercritical_network_gas
   slide_id: 46
   position: 4
+  dependent_on: ''
 - id: 257
   key: capacity_of_energy_power_combined_cycle_network_gas
   share_group: ''
@@ -1892,6 +1977,7 @@
   related_converter: energy_power_combined_cycle_network_gas
   slide_id: 46
   position: 1
+  dependent_on: ''
 - id: 258
   key: capacity_of_energy_power_ultra_supercritical_crude_oil
   share_group: ''
@@ -1914,6 +2000,7 @@
   related_converter: energy_power_ultra_supercritical_crude_oil
   slide_id: 47
   position: 1
+  dependent_on: ''
 - id: 259
   key: capacity_of_energy_power_nuclear_gen3_uranium_oxide
   share_group: ''
@@ -1936,6 +2023,7 @@
   related_converter: energy_power_nuclear_gen3_uranium_oxide
   slide_id: 48
   position: 3
+  dependent_on: ''
 - id: 260
   key: energy_mixer_for_gas_power_fuel_bio_oil_share
   share_group: energy_sector_gas
@@ -1958,6 +2046,7 @@
   related_converter: ''
   slide_id: 140
   position: 4
+  dependent_on: ''
 - id: 263
   key: capacity_of_energy_power_wind_turbine_inland
   share_group: ''
@@ -1980,6 +2069,7 @@
   related_converter: energy_power_wind_turbine_inland
   slide_id: 51
   position: 1
+  dependent_on: ''
 - id: 264
   key: capacity_of_energy_power_wind_turbine_coastal
   share_group: ''
@@ -2002,6 +2092,7 @@
   related_converter: energy_power_wind_turbine_coastal
   slide_id: 51
   position: 2
+  dependent_on: has_coastline
 - id: 265
   key: capacity_of_energy_power_wind_turbine_offshore
   share_group: ''
@@ -2024,6 +2115,7 @@
   related_converter: energy_power_wind_turbine_offshore
   slide_id: 51
   position: 3
+  dependent_on: ''
 - id: 266
   key: capacity_of_energy_power_hydro_river
   share_group: ''
@@ -2046,6 +2138,7 @@
   related_converter: energy_power_hydro_river
   slide_id: 52
   position: 1
+  dependent_on: ''
 - id: 267
   key: capacity_of_energy_power_hydro_mountain
   share_group: ''
@@ -2068,6 +2161,7 @@
   related_converter: energy_power_hydro_mountain
   slide_id: 52
   position: 2
+  dependent_on: has_mountains
 - id: 270
   key: capacity_of_energy_power_geothermal
   share_group: ''
@@ -2090,6 +2184,7 @@
   related_converter: energy_power_geothermal
   slide_id: 53
   position: 1
+  dependent_on: ''
 - id: 271
   key: capacity_of_energy_power_supercritical_waste_mix
   share_group: ''
@@ -2112,6 +2207,7 @@
   related_converter: energy_power_supercritical_waste_mix
   slide_id: 55
   position: 1
+  dependent_on: ''
 - id: 276
   key: capacity_of_energy_chp_combined_cycle_network_gas
   share_group: ''
@@ -2134,6 +2230,7 @@
   related_converter: energy_chp_combined_cycle_network_gas
   slide_id: 46
   position: 5
+  dependent_on: ''
 - id: 292
   key: transport_road_mixer_diesel_diesel_share
   share_group: transport_diesel
@@ -2156,6 +2253,7 @@
   related_converter: 
   slide_id: 156
   position: 1
+  dependent_on: 
 - id: 293
   key: transport_road_mixer_diesel_biodiesel_share
   share_group: transport_diesel
@@ -2178,6 +2276,7 @@
   related_converter: ''
   slide_id: 156
   position: 2
+  dependent_on: ''
 - id: 294
   key: transport_road_mixer_gasoline_gasoline_share
   share_group: transport_gasoline
@@ -2200,6 +2299,7 @@
   related_converter: 
   slide_id: 156
   position: 3
+  dependent_on: 
 - id: 295
   key: transport_road_mixer_gasoline_ethanol_share
   share_group: transport_gasoline
@@ -2222,6 +2322,7 @@
   related_converter: ''
   slide_id: 156
   position: 4
+  dependent_on: ''
 - id: 298
   key: capacity_of_energy_power_solar_pv_solar_radiation
   share_group: ''
@@ -2244,6 +2345,7 @@
   related_converter: energy_power_solar_pv_solar_radiation
   slide_id: 54
   position: 1
+  dependent_on: ''
 - id: 299
   key: capacity_of_energy_power_solar_csp_solar_radiation
   share_group: ''
@@ -2266,6 +2368,7 @@
   related_converter: energy_power_solar_csp_solar_radiation
   slide_id: 54
   position: 2
+  dependent_on: has_solar_csp
 - id: 315
   key: capacity_of_energy_power_supercritical_coal
   share_group: ''
@@ -2288,6 +2391,7 @@
   related_converter: 'energy_power_supercritical_coal '
   slide_id: 45
   position: 7
+  dependent_on: ''
 - id: 316
   key: capacity_of_energy_power_ultra_supercritical_lignite
   share_group: ''
@@ -2310,6 +2414,7 @@
   related_converter: energy_power_ultra_supercritical_lignite
   slide_id: 45
   position: 8
+  dependent_on: has_lignite
 - id: 321
   key: capacity_of_other_chp_engine_network_gas
   share_group: ''
@@ -2335,6 +2440,7 @@
   related_converter: other_chp_engine_network_gas
   slide_id: 102
   position: 1
+  dependent_on: ''
 - id: 322
   key: capacity_of_industry_chp_combined_cycle_gas_power_fuelmix
   share_group: ''
@@ -2360,6 +2466,7 @@
   related_converter: industry_chp_combined_cycle_gas_power_fuelmix
   slide_id: 44
   position: 1
+  dependent_on: ''
 - id: 327
   key: agriculture_final_demand_steam_hot_water_share
   share_group: agri_heat
@@ -2384,6 +2491,7 @@
   related_converter: ''
   slide_id: 31
   position: 6
+  dependent_on: ''
 - id: 333
   key: households_heater_combined_network_gas_share
   share_group: heating_households
@@ -2406,6 +2514,7 @@
   related_converter: households_space_heater_combined_network_gas
   slide_id: 4
   position: 1
+  dependent_on: ''
 - id: 335
   key: households_number_of_inhabitants
   share_group: ''
@@ -2428,6 +2537,7 @@
   related_converter: ''
   slide_id: 171
   position: 0
+  dependent_on: ''
 - id: 338
   key: households_heater_heatpump_ground_water_electricity_share
   share_group: heating_households
@@ -2450,6 +2560,7 @@
   related_converter: households_space_heater_heatpump_ground_water_electricity
   slide_id: 4
   position: 4
+  dependent_on: ''
 - id: 340
   key: households_heater_wood_pellets_share
   share_group: heating_households
@@ -2472,6 +2583,7 @@
   related_converter: households_space_heater_wood_pellets
   slide_id: 4
   position: 8
+  dependent_on: ''
 - id: 341
   key: households_heat_network_connection_steam_hot_water_share
   share_group: households_district_heating
@@ -2494,6 +2606,7 @@
   related_converter: ''
   slide_id: 
   position: 8
+  dependent_on: ''
 - id: 348
   key: households_water_heater_solar_thermal_share
   share_group: ''
@@ -2516,6 +2629,7 @@
   related_converter: households_water_heater_solar_thermal
   slide_id: 5
   position: 2
+  dependent_on: ''
 - id: 351
   key: households_cooling_heatpump_ground_water_electricity_share
   share_group: cooling_households
@@ -2538,6 +2652,7 @@
   related_converter: households_cooling_heatpump_ground_water_electricity
   slide_id: 108
   position: 1
+  dependent_on: ''
 - id: 353
   key: households_cooling_airconditioning_electricity_share
   share_group: cooling_households
@@ -2560,6 +2675,7 @@
   related_converter: households_cooling_airconditioning_electricity
   slide_id: 108
   position: 4
+  dependent_on: ''
 - id: 354
   key: households_cooker_network_gas_share
   share_group: cooking
@@ -2582,6 +2698,7 @@
   related_converter: 
   slide_id: 109
   position: 1
+  dependent_on: 
 - id: 355
   key: households_cooker_resistive_electricity_share
   share_group: cooking
@@ -2604,6 +2721,7 @@
   related_converter: 
   slide_id: 109
   position: 2
+  dependent_on: 
 - id: 356
   key: households_cooker_halogen_electricity_share
   share_group: cooking
@@ -2626,6 +2744,7 @@
   related_converter: 
   slide_id: 109
   position: 3
+  dependent_on: 
 - id: 357
   key: households_cooker_induction_electricity_share
   share_group: cooking
@@ -2648,6 +2767,7 @@
   related_converter: 
   slide_id: 109
   position: 4
+  dependent_on: 
 - id: 359
   key: households_appliances_dishwasher_electricity_efficiency
   share_group: ''
@@ -2670,6 +2790,7 @@
   related_converter: ''
   slide_id: 3
   position: 1
+  dependent_on: ''
 - id: 360
   key: households_appliances_vacuum_cleaner_electricity_efficiency
   share_group: ''
@@ -2692,6 +2813,7 @@
   related_converter: ''
   slide_id: 3
   position: 7
+  dependent_on: ''
 - id: 361
   key: households_appliances_washing_machine_electricity_efficiency
   share_group: ''
@@ -2714,6 +2836,7 @@
   related_converter: ''
   slide_id: 3
   position: 3
+  dependent_on: ''
 - id: 362
   key: households_appliances_clothes_dryer_electricity_efficiency
   share_group: ''
@@ -2736,6 +2859,7 @@
   related_converter: ''
   slide_id: 3
   position: 4
+  dependent_on: ''
 - id: 363
   key: households_appliances_television_electricity_efficiency
   share_group: ''
@@ -2758,6 +2882,7 @@
   related_converter: ''
   slide_id: 3
   position: 5
+  dependent_on: ''
 - id: 364
   key: households_appliances_computer_media_electricity_efficiency
   share_group: ''
@@ -2780,6 +2905,7 @@
   related_converter: 
   slide_id: 3
   position: 6
+  dependent_on: 
 - id: 366
   key: households_behavior_standby_killer_turn_off_appliances
   share_group: ''
@@ -2802,6 +2928,7 @@
   related_converter: ''
   slide_id: 110
   position: 1
+  dependent_on: ''
 - id: 368
   key: households_behavior_turn_off_the_light
   share_group: ''
@@ -2824,6 +2951,7 @@
   related_converter: 
   slide_id: 110
   position: 2
+  dependent_on: 
 - id: 370
   key: households_behavior_close_windows_turn_off_heating
   share_group: ''
@@ -2846,6 +2974,7 @@
   related_converter: 
   slide_id: 110
   position: 3
+  dependent_on: 
 - id: 371
   key: households_behavior_low_temperature_washing
   share_group: ''
@@ -2868,6 +2997,7 @@
   related_converter: ''
   slide_id: 110
   position: 4
+  dependent_on: ''
 - id: 372
   key: households_useful_demand_heat_per_person
   share_group: ''
@@ -2890,6 +3020,7 @@
   related_converter: ''
   slide_id: 43
   position: 5
+  dependent_on: ''
 - id: 373
   key: households_useful_demand_hot_water_share
   share_group: ''
@@ -2912,6 +3043,7 @@
   related_converter: ''
   slide_id: 43
   position: 1
+  dependent_on: ''
 - id: 374
   key: households_cooling_heatpump_air_water_electricity_share
   share_group: cooling_households
@@ -2934,6 +3066,7 @@
   related_converter: households_cooling_heatpump_air_water_electricity
   slide_id: 108
   position: 2
+  dependent_on: ''
 - id: 375
   key: households_heater_heatpump_air_water_electricity_share
   share_group: heating_households
@@ -2956,6 +3089,7 @@
   related_converter: households_space_heater_heatpump_air_water_electricity
   slide_id: 4
   position: 3
+  dependent_on: ''
 - id: 376
   key: number_of_buildings
   share_group: ''
@@ -2978,6 +3112,7 @@
   related_converter: 
   slide_id: 113
   position: 1
+  dependent_on: 
 - id: 377
   key: buildings_useful_demand_electricity
   share_group: ''
@@ -3000,6 +3135,7 @@
   related_converter: ''
   slide_id: 113
   position: 2
+  dependent_on: ''
 - id: 378
   key: buildings_useful_demand_for_space_heating
   share_group: ''
@@ -3022,6 +3158,7 @@
   related_converter: ''
   slide_id: 113
   position: 3
+  dependent_on: ''
 - id: 381
   key: buildings_insulation_level
   share_group: ''
@@ -3044,6 +3181,7 @@
   related_converter: ''
   slide_id: 114
   position: 1
+  dependent_on: has_buildings
 - id: 383
   key: buildings_space_heater_network_gas_share
   share_group: heating_buildings
@@ -3066,6 +3204,7 @@
   related_converter: buildings_space_heater_network_gas
   slide_id: 115
   position: 1
+  dependent_on: ''
 - id: 386
   key: buildings_collective_chp_network_gas_share
   share_group: district_heating_buildings
@@ -3088,6 +3227,7 @@
   related_converter: buildings_collective_chp_network_gas
   slide_id: 
   position: 3
+  dependent_on: ''
 - id: 387
   key: buildings_space_heater_electricity_share
   share_group: heating_buildings
@@ -3110,6 +3250,7 @@
   related_converter: buildings_space_heater_electricity
   slide_id: 115
   position: 4
+  dependent_on: ''
 - id: 388
   key: buildings_heat_network_connection_steam_hot_water_share
   share_group: district_heating_buildings
@@ -3132,6 +3273,7 @@
   related_converter: buildings_heat_network_connection_steam_hot_water
   slide_id: 
   position: 8
+  dependent_on: ''
 - id: 389
   key: buildings_space_heater_solar_thermal_share
   share_group: ''
@@ -3154,6 +3296,7 @@
   related_converter: buildings_space_heater_solar_thermal
   slide_id: 121
   position: 2
+  dependent_on: ''
 - id: 390
   key: buildings_space_heater_heatpump_air_water_network_gas_share
   share_group: heating_buildings
@@ -3176,6 +3319,7 @@
   related_converter: buildings_space_heater_heatpump_air_water_network_gas
   slide_id: 115
   position: 3
+  dependent_on: ''
 - id: 391
   key: buildings_cooling_heatpump_air_water_network_gas_share
   share_group: cooling_buildings
@@ -3198,6 +3342,7 @@
   related_converter: buildings_cooling_heatpump_air_water_network_gas
   slide_id: 116
   position: 2
+  dependent_on: ''
 - id: 392
   key: buildings_cooling_collective_heatpump_water_water_ts_electricity_share
   share_group: cooling_buildings
@@ -3220,6 +3365,7 @@
   related_converter: buildings_cooling_collective_heatpump_water_water_ts_electricity
   slide_id: 116
   position: 1
+  dependent_on: ''
 - id: 393
   key: buildings_cooling_airconditioning_share
   share_group: cooling_buildings
@@ -3242,6 +3388,7 @@
   related_converter: buildings_cooling_airconditioning
   slide_id: 116
   position: 3
+  dependent_on: ''
 - id: 394
   key: buildings_space_heater_collective_heatpump_water_water_ts_electricity_share
   share_group: heating_buildings
@@ -3264,6 +3411,7 @@
   related_converter: buildings_space_heater_collective_heatpump_water_water_ts_electricity
   slide_id: 115
   position: 2
+  dependent_on: ''
 - id: 395
   key: buildings_ventilation_rate
   share_group: ''
@@ -3286,6 +3434,7 @@
   related_converter: 
   slide_id: 117
   position: 1
+  dependent_on: 
 - id: 396
   key: buildings_recirculation
   share_group: ''
@@ -3308,6 +3457,7 @@
   related_converter: ''
   slide_id: 117
   position: 2
+  dependent_on: 
 - id: 397
   key: buildings_waste_heat_recovery
   share_group: ''
@@ -3330,6 +3480,7 @@
   related_converter: 
   slide_id: 117
   position: 3
+  dependent_on: 
 - id: 398
   key: buildings_useful_demand_for_appliances
   share_group: ''
@@ -3352,6 +3503,7 @@
   related_converter: 
   slide_id: 118
   position: 1
+  dependent_on: 
 - id: 400
   key: buildings_lighting_standard_fluorescent_electricity_share
   share_group: lighting_buildings
@@ -3374,6 +3526,7 @@
   related_converter: 
   slide_id: 119
   position: 1
+  dependent_on: 
 - id: 401
   key: buildings_lighting_efficient_fluorescent_electricity_share
   share_group: lighting_buildings
@@ -3396,6 +3549,7 @@
   related_converter: 
   slide_id: 119
   position: 2
+  dependent_on: 
 - id: 402
   key: buildings_lighting_led_electricity_share
   share_group: lighting_buildings
@@ -3418,6 +3572,7 @@
   related_converter: 
   slide_id: 119
   position: 3
+  dependent_on: 
 - id: 403
   key: buildings_lighting_savings_from_motion_detection_light
   share_group: ''
@@ -3440,6 +3595,7 @@
   related_converter: 
   slide_id: 119
   position: 4
+  dependent_on: 
 - id: 404
   key: buildings_lighting_savings_from_daylight_control_light
   share_group: ''
@@ -3462,6 +3618,7 @@
   related_converter: 
   slide_id: 119
   position: 5
+  dependent_on: 
 - id: 405
   key: buildings_solar_pv_solar_radiation_market_penetration
   share_group: ''
@@ -3484,6 +3641,7 @@
   related_converter: buildings_solar_pv_solar_radiation
   slide_id: 121
   position: 1
+  dependent_on: ''
 - id: 406
   key: buildings_space_heater_wood_pellets_share
   share_group: heating_buildings
@@ -3506,6 +3664,7 @@
   related_converter: buildings_space_heater_wood_pellets
   slide_id: 115
   position: 8
+  dependent_on: ''
 - id: 408
   key: buildings_useful_demand_cooling
   share_group: ''
@@ -3528,6 +3687,7 @@
   related_converter: 
   slide_id: 113
   position: 4
+  dependent_on: 
 - id: 409
   key: buildings_space_heater_crude_oil_share
   share_group: heating_buildings
@@ -3550,6 +3710,7 @@
   related_converter: buildings_space_heater_crude_oil
   slide_id: 115
   position: 7
+  dependent_on: has_coal_oil_for_heating_built_environment
 - id: 411
   key: households_heater_coal_share
   share_group: heating_households
@@ -3572,6 +3733,7 @@
   related_converter: households_space_heater_coal
   slide_id: 4
   position: 12
+  dependent_on: has_coal_oil_for_heating_built_environment
 - id: 412
   key: households_appliances_other_electricity_efficiency
   share_group: ''
@@ -3594,6 +3756,7 @@
   related_converter: 
   slide_id: 3
   position: 8
+  dependent_on: 
 - id: 413
   key: capacity_of_energy_power_nuclear_gen2_uranium_oxide
   share_group: ''
@@ -3616,6 +3779,7 @@
   related_converter: energy_power_nuclear_gen2_uranium_oxide
   slide_id: 48
   position: 2
+  dependent_on: has_old_technologies
 - id: 416
   key: capacity_of_energy_power_combined_cycle_ccs_network_gas
   share_group: ''
@@ -3638,6 +3802,7 @@
   related_converter: energy_power_combined_cycle_ccs_network_gas
   slide_id: 46
   position: 2
+  dependent_on: ''
 - id: 422
   key: capacity_of_energy_chp_ultra_supercritical_lignite
   share_group: ''
@@ -3660,6 +3825,7 @@
   related_converter: energy_chp_ultra_supercritical_lignite
   slide_id: 45
   position: 9
+  dependent_on: has_lignite
 - id: 423
   key: transport_plane_using_kerosene_share
   share_group: transport_aviation
@@ -3682,6 +3848,7 @@
   related_converter: ''
   slide_id: 123
   position: 1
+  dependent_on: ''
 - id: 424
   key: transport_plane_using_bio_ethanol_share
   share_group: transport_aviation
@@ -3704,6 +3871,7 @@
   related_converter: transport_plane_using_bio_ethanol
   slide_id: 123
   position: 3
+  dependent_on: ''
 - id: 427
   key: transport_passenger_train_using_coal_share
   share_group: transport_passenger_train_tech
@@ -3726,6 +3894,7 @@
   related_converter: transport_passenger_train_using_coal
   slide_id: 125
   position: 3
+  dependent_on: ''
 - id: 428
   key: transport_passenger_train_using_diesel_mix_share
   share_group: transport_passenger_train_tech
@@ -3748,6 +3917,7 @@
   related_converter: transport_passenger_train_using_diesel_mix
   slide_id: 125
   position: 2
+  dependent_on: ''
 - id: 429
   key: transport_passenger_train_using_electricity_share
   share_group: transport_passenger_train_tech
@@ -3770,6 +3940,7 @@
   related_converter: transport_passenger_train_using_electricity
   slide_id: 125
   position: 1
+  dependent_on: ''
 - id: 436
   key: households_cooker_wood_pellets_share
   share_group: cooking
@@ -3792,6 +3963,7 @@
   related_converter: households_cooker_wood_pellets
   slide_id: 109
   position: 5
+  dependent_on: ''
 - id: 441
   key: households_heater_network_gas_share
   share_group: heating_households
@@ -3814,6 +3986,7 @@
   related_converter: households_space_heater_network_gas
   slide_id: 4
   position: 10
+  dependent_on: ''
 - id: 488
   key: green_gas_total_share
   share_group: fuels_gas
@@ -3836,6 +4009,7 @@
   related_converter: ''
   slide_id: 49
   position: 2
+  dependent_on: ''
 - id: 489
   key: natural_gas_total_share
   share_group: fuels_gas
@@ -3858,6 +4032,7 @@
   related_converter: 
   slide_id: 49
   position: 1
+  dependent_on: 
 - id: 549
   key: buildings_cooling_collective_cooling_network_electricity_share
   share_group: cooling_buildings
@@ -3880,6 +4055,7 @@
   related_converter: buildings_cooling_collective_cooling_network_electricity
   slide_id: 116
   position: 4
+  dependent_on: has_cold_network
 - id: 551
   key: capacity_of_energy_chp_ultra_supercritical_coal
   share_group: ''
@@ -3902,6 +4078,7 @@
   related_converter: energy_chp_ultra_supercritical_coal
   slide_id: 45
   position: 10
+  dependent_on: ''
 - id: 559
   key: co_firing_biocoal_share
   share_group: coal_plant_fuel
@@ -3924,6 +4101,7 @@
   related_converter: ''
   slide_id: 140
   position: 2
+  dependent_on: ''
 - id: 560
   key: co_firing_coal_share
   share_group: coal_plant_fuel
@@ -3946,6 +4124,7 @@
   related_converter: ''
   slide_id: 140
   position: 1
+  dependent_on: ''
 - id: 561
   key: energy_mixer_for_gas_power_fuel_natural_gas_share
   share_group: energy_sector_gas
@@ -3968,6 +4147,7 @@
   related_converter: ''
   slide_id: 140
   position: 3
+  dependent_on: ''
 - id: 562
   key: energy_import_steam_hot_water_preset_demands
   share_group: ''
@@ -3990,6 +4170,7 @@
   related_converter: ''
   slide_id: 
   position: 9
+  dependent_on: has_heat_import
 - id: 563
   key: coal_from_south_africa_share
   share_group: coal_lce
@@ -4012,6 +4193,7 @@
   related_converter: 
   slide_id: 143
   position: 1
+  dependent_on: 
 - id: 564
   key: coal_from_north_america_share
   share_group: coal_lce
@@ -4034,6 +4216,7 @@
   related_converter: 
   slide_id: 143
   position: 2
+  dependent_on: 
 - id: 565
   key: coal_from_australia_share
   share_group: coal_lce
@@ -4056,6 +4239,7 @@
   related_converter: 
   slide_id: 143
   position: 3
+  dependent_on: 
 - id: 566
   key: coal_from_eastern_europe_share
   share_group: coal_lce
@@ -4078,6 +4262,7 @@
   related_converter: 
   slide_id: 143
   position: 4
+  dependent_on: 
 - id: 567
   key: coal_from_russia_share
   share_group: coal_lce
@@ -4100,6 +4285,7 @@
   related_converter: 
   slide_id: 143
   position: 5
+  dependent_on: 
 - id: 568
   key: coal_from_south_america_share
   share_group: coal_lce
@@ -4122,6 +4308,7 @@
   related_converter: 
   slide_id: 143
   position: 6
+  dependent_on: 
 - id: 569
   key: coal_from_east_asia_share
   share_group: coal_lce
@@ -4144,6 +4331,7 @@
   related_converter: 
   slide_id: 143
   position: 7
+  dependent_on: 
 - id: 571
   key: gas_from_nederlands_share
   share_group: gas_lce
@@ -4166,6 +4354,7 @@
   related_converter: ''
   slide_id: 144
   position: 2
+  dependent_on: ''
 - id: 572
   key: gas_from_russia_share
   share_group: gas_lce
@@ -4188,6 +4377,7 @@
   related_converter: ''
   slide_id: 144
   position: 4
+  dependent_on: ''
 - id: 575
   key: gas_from_norway_share
   share_group: gas_lce
@@ -4210,6 +4400,7 @@
   related_converter: ''
   slide_id: 144
   position: 3
+  dependent_on: ''
 - id: 576
   key: gas_from_algeria_share
   share_group: gas_lce
@@ -4232,6 +4423,7 @@
   related_converter: ''
   slide_id: 144
   position: 1
+  dependent_on: ''
 - id: 578
   key: uranium_from_kazachstan_share
   share_group: nuclear_lce
@@ -4254,6 +4446,7 @@
   related_converter: 
   slide_id: 146
   position: 1
+  dependent_on: 
 - id: 579
   key: uranium_from_australia_share
   share_group: nuclear_lce
@@ -4276,6 +4469,7 @@
   related_converter: 
   slide_id: 146
   position: 2
+  dependent_on: 
 - id: 580
   key: uranium_from_canada_share
   share_group: nuclear_lce
@@ -4298,6 +4492,7 @@
   related_converter: 
   slide_id: 146
   position: 3
+  dependent_on: 
 - id: 581
   key: energy_mixer_for_gas_power_fuel_crude_oil_share
   share_group: energy_sector_gas
@@ -4320,6 +4515,7 @@
   related_converter: ''
   slide_id: 140
   position: 5
+  dependent_on: ''
 - id: 582
   key: households_heater_district_heating_steam_hot_water_share
   share_group: heating_households
@@ -4342,6 +4538,7 @@
   related_converter: ''
   slide_id: 4
   position: 2
+  dependent_on: ''
 - id: 583
   key: capacity_of_energy_power_turbine_network_gas
   share_group: ''
@@ -4364,6 +4561,7 @@
   related_converter: energy_power_turbine_network_gas
   slide_id: 46
   position: 3
+  dependent_on: ''
 - id: 584
   key: capacity_of_energy_power_engine_diesel
   share_group: ''
@@ -4386,6 +4584,7 @@
   related_converter: energy_power_engine_diesel
   slide_id: 47
   position: 2
+  dependent_on: ''
 - id: 585
   key: buildings_space_heater_district_heating_steam_hot_water_share
   share_group: heating_buildings
@@ -4408,6 +4607,7 @@
   related_converter: ''
   slide_id: 115
   position: 11
+  dependent_on: ''
 - id: 586
   key: employment_local_fraction
   share_group: ''
@@ -4430,6 +4630,7 @@
   related_converter: ''
   slide_id: 154
   position: 2
+  dependent_on: ''
 - id: 587
   key: employment_economic_multiplier
   share_group: ''
@@ -4452,6 +4653,7 @@
   related_converter: ''
   slide_id: 154
   position: 3
+  dependent_on: 
 - id: 588
   key: transport_plane_using_gasoline_share
   share_group: transport_aviation
@@ -4474,6 +4676,7 @@
   related_converter: ''
   slide_id: 123
   position: 2
+  dependent_on: 
 - id: 590
   key: transport_rail_mixer_diesel_biodiesel_share
   share_group: transport_rail_diesel
@@ -4496,6 +4699,7 @@
   related_converter: ''
   slide_id: 155
   position: 2
+  dependent_on: ''
 - id: 591
   key: transport_rail_mixer_diesel_diesel_share
   share_group: transport_rail_diesel
@@ -4518,6 +4722,7 @@
   related_converter: ''
   slide_id: 155
   position: 1
+  dependent_on: 
 - id: 592
   key: employment_fraction_production
   share_group: ''
@@ -4540,6 +4745,7 @@
   related_converter: ''
   slide_id: 154
   position: 1
+  dependent_on: ''
 - id: 594
   key: investment_costs_micro_chp
   share_group: ''
@@ -4562,6 +4768,7 @@
   related_converter: households_space_heater_micro_chp_network_gas
   slide_id: 157
   position: 1
+  dependent_on: _always_hidden
 - id: 595
   key: investment_costs_fuel_cell
   share_group: ''
@@ -4584,6 +4791,7 @@
   related_converter: households_water_heater_fuel_cell_chp_network_gas
   slide_id: 157
   position: 2
+  dependent_on: _always_hidden
 - id: 599
   key: industry_aluminium_production
   share_group: ''
@@ -4606,6 +4814,7 @@
   related_converter: ''
   slide_id: 160
   position: 1
+  dependent_on: ''
 - id: 600
   key: industry_aluminium_electrolysis_bat_electricity_share
   share_group: aluminium_production
@@ -4628,6 +4837,7 @@
   related_converter: ''
   slide_id: 160
   position: 2
+  dependent_on: ''
 - id: 601
   key: industry_aluminium_smeltoven_electricity_share
   share_group: aluminium_production
@@ -4650,6 +4860,7 @@
   related_converter: ''
   slide_id: 160
   position: 4
+  dependent_on: ''
 - id: 602
   key: industry_aluminium_carbothermalreduction_electricity_share
   share_group: aluminium_production
@@ -4672,6 +4883,7 @@
   related_converter: ''
   slide_id: 160
   position: 3
+  dependent_on: ''
 - id: 603
   key: industry_aluminium_electrolysis_current_electricity_share
   share_group: aluminium_production
@@ -4694,6 +4906,7 @@
   related_converter: ''
   slide_id: 160
   position: 1
+  dependent_on: ''
 - id: 604
   key: industry_other_metals_process_electricity_efficiency
   share_group: ''
@@ -4716,6 +4929,7 @@
   related_converter: ''
   slide_id: 161
   position: 2
+  dependent_on: ''
 - id: 605
   key: industry_other_metals_process_heat_useable_heat_efficiency
   share_group: ''
@@ -4738,6 +4952,7 @@
   related_converter: ''
   slide_id: 161
   position: 3
+  dependent_on: ''
 - id: 606
   key: industry_other_metals_production
   share_group: ''
@@ -4760,6 +4975,7 @@
   related_converter: ''
   slide_id: 161
   position: 1
+  dependent_on: ''
 - id: 607
   key: buildings_space_heater_coal_share
   share_group: heating_buildings
@@ -4782,6 +4998,7 @@
   related_converter: ''
   slide_id: 115
   position: 6
+  dependent_on: has_coal_oil_for_heating_built_environment
 - id: 608
   key: industry_steel_production
   share_group: ''
@@ -4804,6 +5021,7 @@
   related_converter: ''
   slide_id: 162
   position: 1
+  dependent_on: ''
 - id: 609
   key: industry_steel_blastfurnace_bat_consumption_useable_heat_share
   share_group: steel_production
@@ -4826,6 +5044,7 @@
   related_converter: ''
   slide_id: 162
   position: 2
+  dependent_on: ''
 - id: 610
   key: industry_steel_blastfurnace_current_consumption_useable_heat_share
   share_group: steel_production
@@ -4848,6 +5067,7 @@
   related_converter: ''
   slide_id: 162
   position: 1
+  dependent_on: ''
 - id: 611
   key: industry_steel_hisarna_consumption_useable_heat_share
   share_group: steel_production
@@ -4870,6 +5090,7 @@
   related_converter: ''
   slide_id: 162
   position: 3
+  dependent_on: ''
 - id: 612
   key: industry_steel_electricfurnace_electricity_share
   share_group: steel_production
@@ -4892,6 +5113,7 @@
   related_converter: ''
   slide_id: 162
   position: 4
+  dependent_on: ''
 - id: 613
   key: energy_steel_hisarna_transformation_coal_woodpellets_share
   share_group: ''
@@ -4914,6 +5136,7 @@
   related_converter: ''
   slide_id: 162
   position: 5
+  dependent_on: ''
 - id: 614
   key: settings_enable_merit_order
   share_group: ''
@@ -4936,6 +5159,7 @@
   related_converter: ''
   slide_id: 153
   position: 999
+  dependent_on: ''
 - id: 615
   key: households_climate_influence
   share_group: ''
@@ -4958,6 +5182,7 @@
   related_converter: ''
   slide_id: 163
   position: 1
+  dependent_on: ''
 - id: 627
   key: investment_costs_electric_heat_pumps
   share_group: ''
@@ -4980,6 +5205,7 @@
   related_converter: households_space_heater_heatpump_ground_water_electricity
   slide_id: 157
   position: 3
+  dependent_on: ''
 - id: 628
   key: investment_costs_gas_heat_pumps
   share_group: ''
@@ -5002,6 +5228,7 @@
   related_converter: buildings_space_heater_heatpump_air_water_network_gas
   slide_id: 157
   position: 4
+  dependent_on: ''
 - id: 630
   key: capacity_of_industry_chp_turbine_gas_power_fuelmix
   share_group: ''
@@ -5024,6 +5251,7 @@
   related_converter: industry_chp_turbine_gas_power_fuelmix
   slide_id: 44
   position: 2
+  dependent_on: ''
 - id: 631
   key: capacity_of_industry_chp_engine_gas_power_fuelmix
   share_group: ''
@@ -5046,6 +5274,7 @@
   related_converter: industry_chp_engine_gas_power_fuelmix
   slide_id: 44
   position: 4
+  dependent_on: ''
 - id: 634
   key: capacity_of_energy_chp_supercritical_waste_mix
   share_group: ''
@@ -5068,6 +5297,7 @@
   related_converter: energy_chp_supercritical_waste_mix
   slide_id: 55
   position: 2
+  dependent_on: ''
 - id: 635
   key: capacity_of_other_chp_engine_biogas
   share_group: ''
@@ -5093,6 +5323,7 @@
   related_converter: other_chp_engine_biogas
   slide_id: 102
   position: 2
+  dependent_on: ''
 - id: 636
   key: households_useful_demand_cooking_per_person
   share_group: ''
@@ -5115,6 +5346,7 @@
   related_converter: ''
   slide_id: 43
   position: 4
+  dependent_on: ''
 - id: 637
   key: households_useful_demand_electric_appliances
   share_group: ''
@@ -5137,6 +5369,7 @@
   related_converter: ''
   slide_id: 43
   position: 2
+  dependent_on: ''
 - id: 638
   key: households_useful_demand_lighting
   share_group: ''
@@ -5159,6 +5392,7 @@
   related_converter: ''
   slide_id: 43
   position: 3
+  dependent_on: ''
 - id: 642
   key: capacity_of_energy_chp_ultra_supercritical_cofiring_coal
   share_group: ''
@@ -5181,6 +5415,7 @@
   related_converter: energy_chp_ultra_supercritical_cofiring_coal
   slide_id: 45
   position: 11
+  dependent_on: ''
 - id: 643
   key: capacity_of_energy_power_ultra_supercritical_cofiring_coal
   share_group: ''
@@ -5203,6 +5438,7 @@
   related_converter: energy_power_ultra_supercritical_cofiring_coal
   slide_id: 45
   position: 2
+  dependent_on: ''
 - id: 644
   key: investment_costs_solar_concentrated_solar_power
   share_group: ''
@@ -5225,6 +5461,7 @@
   related_converter: ''
   slide_id: 17
   position: 2
+  dependent_on: has_solar_csp
 - id: 645
   key: other_useful_demand_non_energetic
   share_group: ''
@@ -5247,6 +5484,7 @@
   related_converter: ''
   slide_id: 32
   position: 3
+  dependent_on: ''
 - id: 659
   key: capacity_of_energy_power_engine_network_gas
   share_group: ''
@@ -5269,6 +5507,7 @@
   related_converter: energy_power_engine_network_gas
   slide_id: 46
   position: 4
+  dependent_on: ''
 - id: 660
   key: capacity_of_industry_chp_ultra_supercritical_coal
   share_group: ''
@@ -5291,6 +5530,7 @@
   related_converter: industry_chp_ultra_supercritical_coal
   slide_id: 44
   position: 4
+  dependent_on: ''
 - id: 661
   key: households_flexibility_p2p_electricity_market_penetration
   share_group: ''
@@ -5313,6 +5553,7 @@
   related_converter: households_flexibility_p2p_electricity
   slide_id: 166
   position: 1
+  dependent_on: ''
 - id: 662
   key: transport_car_using_electricity_availability
   share_group: ''
@@ -5335,6 +5576,7 @@
   related_converter: ''
   slide_id: 166
   position: 2
+  dependent_on: ''
 - id: 663
   key: capacity_of_energy_hydrogen_flexibility_p2g_electricity
   share_group: ''
@@ -5357,6 +5599,7 @@
   related_converter: energy_hydrogen_flexibility_p2g_electricity
   slide_id: 168
   position: 1
+  dependent_on: ''
 - id: 664
   key: interconnectors_availability_for_export
   share_group: ''
@@ -5379,6 +5622,7 @@
   related_converter: ''
   slide_id: 187
   position: 3
+  dependent_on: ''
 - id: 665
   key: interconnectors_availability_for_import
   share_group: ''
@@ -5401,6 +5645,7 @@
   related_converter: ''
   slide_id: 187
   position: 2
+  dependent_on: ''
 - id: 666
   key: interconnectors_interconnector_capacity
   share_group: ''
@@ -5423,6 +5668,7 @@
   related_converter: ''
   slide_id: 187
   position: 1
+  dependent_on: ''
 - id: 668
   key: investment_costs_households_flexibility_p2p_electricity
   share_group: ''
@@ -5445,6 +5691,7 @@
   related_converter: households_flexibility_p2p_electricity
   slide_id: 232
   position: 1
+  dependent_on: ''
 - id: 669
   key: investment_costs_flexibility_p2h_electricity
   share_group: ''
@@ -5467,6 +5714,7 @@
   related_converter: industry_other_food_flexibility_p2h_electricity
   slide_id: 233
   position: 1
+  dependent_on: ''
 - id: 670
   key: investment_costs_hydrogen_electrolysis
   share_group: ''
@@ -5489,6 +5737,7 @@
   related_converter: energy_hydrogen_flexibility_p2g_electricity
   slide_id: 233
   position: 1
+  dependent_on: ''
 - id: 672
   key: transport_ship_using_diesel_mix_share
   share_group: transport_marine
@@ -5511,6 +5760,7 @@
   related_converter: ''
   slide_id: 191
   position: 1
+  dependent_on: ''
 - id: 673
   key: transport_ship_using_lng_mix_share
   share_group: transport_marine
@@ -5533,6 +5783,7 @@
   related_converter: ''
   slide_id: 191
   position: 2
+  dependent_on: ''
 - id: 674
   key: transport_truck_using_lng_mix_share
   share_group: transport_truck_tech
@@ -5555,6 +5806,7 @@
   related_converter: ''
   slide_id: 26
   position: 5
+  dependent_on: ''
 - id: 675
   key: transport_road_mixer_lng_lng_share
   share_group: transport_lng_road
@@ -5577,6 +5829,7 @@
   related_converter: ''
   slide_id: 156
   position: 5
+  dependent_on: ''
 - id: 676
   key: transport_road_mixer_lng_bio_lng_share
   share_group: transport_lng_road
@@ -5599,6 +5852,7 @@
   related_converter: ''
   slide_id: 156
   position: 6
+  dependent_on: ''
 - id: 677
   key: energy_treatment_natural_gas_share
   share_group: grid_natural_gas_origin
@@ -5621,6 +5875,7 @@
   related_converter: ''
   slide_id: 49
   position: 3
+  dependent_on: ''
 - id: 678
   key: energy_regasification_lng_share
   share_group: grid_natural_gas_origin
@@ -5643,6 +5898,7 @@
   related_converter: ''
   slide_id: 49
   position: 4
+  dependent_on: ''
 - id: 681
   key: transport_shipping_mixer_lng_lng_share
   share_group: transport_lng_ship
@@ -5665,6 +5921,7 @@
   related_converter: ''
   slide_id: 124
   position: 6
+  dependent_on: ''
 - id: 682
   key: transport_shipping_mixer_lng_bio_lng_share
   share_group: transport_lng_ship
@@ -5687,6 +5944,7 @@
   related_converter: ''
   slide_id: 124
   position: 7
+  dependent_on: ''
 - id: 683
   key: transport_shipping_mixer_diesel_diesel_share
   share_group: transport_diesel_ship
@@ -5709,6 +5967,7 @@
   related_converter: ''
   slide_id: 124
   position: 1
+  dependent_on: ''
 - id: 684
   key: transport_shipping_mixer_diesel_biodiesel_share
   share_group: transport_diesel_ship
@@ -5731,6 +5990,7 @@
   related_converter: ''
   slide_id: 124
   position: 2
+  dependent_on: ''
 - id: 685
   key: transport_shipping_mixer_diesel_lng_share
   share_group: transport_diesel_ship
@@ -5753,6 +6013,7 @@
   related_converter: ''
   slide_id: 124
   position: 3
+  dependent_on: ''
 - id: 686
   key: transport_shipping_mixer_diesel_bio_lng_share
   share_group: transport_diesel_ship
@@ -5775,6 +6036,7 @@
   related_converter: ''
   slide_id: 124
   position: 4
+  dependent_on: ''
 - id: 687
   key: transport_shipping_mixer_diesel_heavy_fuel_oil_share
   share_group: transport_diesel_ship
@@ -5797,6 +6059,7 @@
   related_converter: ''
   slide_id: 124
   position: 5
+  dependent_on: ''
 - id: 688
   key: lng_from_algeria_share
   share_group: lng_fce
@@ -5819,6 +6082,7 @@
   related_converter: ''
   slide_id: 144
   position: 5
+  dependent_on: ''
 - id: 689
   key: lng_from_norway_share
   share_group: lng_fce
@@ -5841,6 +6105,7 @@
   related_converter: ''
   slide_id: 144
   position: 6
+  dependent_on: ''
 - id: 690
   key: lng_from_qatar_share
   share_group: lng_fce
@@ -5863,6 +6128,7 @@
   related_converter: ''
   slide_id: 144
   position: 7
+  dependent_on: ''
 - id: 691
   key: lng_from_trinidad_share
   share_group: lng_fce
@@ -5885,6 +6151,7 @@
   related_converter: ''
   slide_id: 144
   position: 8
+  dependent_on: ''
 - id: 692
   key: households_heater_hybrid_heatpump_air_water_electricity_share
   share_group: heating_households
@@ -5907,6 +6174,7 @@
   related_converter: households_space_heater_hybrid_heatpump_air_water_electricity
   slide_id: 4
   position: 5
+  dependent_on: ''
 - id: 696
   key: transport_car_using_hydrogen_share
   share_group: transport_car_tech
@@ -5929,6 +6197,7 @@
   related_converter: ''
   slide_id: 25
   position: 2
+  dependent_on: ''
 - id: 697
   key: transport_vehicle_using_hydrogen_efficiency
   share_group: ''
@@ -5951,6 +6220,7 @@
   related_converter: ''
   slide_id: 34
   position: 2
+  dependent_on: ''
 - id: 698
   key: capacity_of_energy_hydrogen_steam_methane_reformer_ccs
   share_group: ''
@@ -5973,6 +6243,7 @@
   related_converter: energy_hydrogen_steam_methane_reformer_ccs
   slide_id: 193
   position: 4
+  dependent_on: ''
 - id: 699
   key: capacity_of_energy_hydrogen_steam_methane_reformer
   share_group: ''
@@ -5995,6 +6266,7 @@
   related_converter: energy_hydrogen_steam_methane_reformer
   slide_id: 193
   position: 3
+  dependent_on: ''
 - id: 700
   key: energy_local_electrolysis_hydrogen_share
   share_group: hydrogen_production
@@ -6017,6 +6289,7 @@
   related_converter: ''
   slide_id: 193
   position: 5
+  dependent_on: _always_hidden
 - id: 701
   key: capacity_of_energy_hydrogen_biomass_gasification_ccs
   share_group: ''
@@ -6039,6 +6312,7 @@
   related_converter: ''
   slide_id: 193
   position: 7
+  dependent_on: _always_hidden
 - id: 702
   key: capacity_of_energy_hydrogen_biomass_gasification
   share_group: ''
@@ -6061,6 +6335,7 @@
   related_converter: energy_hydrogen_biomass_gasification
   slide_id: 193
   position: 5
+  dependent_on: ''
 - id: 703
   key: investment_costs_electric_cars
   share_group: ''
@@ -6083,6 +6358,7 @@
   related_converter: ''
   slide_id: 195
   position: 1
+  dependent_on: ''
 - id: 704
   key: industry_useful_demand_for_chemical_refineries
   share_group: ''
@@ -6105,6 +6381,7 @@
   related_converter: ''
   slide_id: 199
   position: 1
+  dependent_on: ''
 - id: 705
   key: industry_useful_demand_for_chemical_refineries_electricity_efficiency
   share_group: ''
@@ -6127,6 +6404,7 @@
   related_converter: ''
   slide_id: 199
   position: 2
+  dependent_on: ''
 - id: 706
   key: industry_useful_demand_for_chemical_refineries_useable_heat_efficiency
   share_group: ''
@@ -6149,6 +6427,7 @@
   related_converter: ''
   slide_id: 199
   position: 3
+  dependent_on: ''
 - id: 707
   key: industry_chemicals_refineries_burner_network_gas_share
   share_group: chemical_refineries_heat
@@ -6171,6 +6450,7 @@
   related_converter: industry_chemicals_refineries_burner_network_gas
   slide_id: 199
   position: 4
+  dependent_on: ''
 - id: 708
   key: industry_chemicals_refineries_burner_crude_oil_share
   share_group: chemical_refineries_heat
@@ -6193,6 +6473,7 @@
   related_converter: industry_chemicals_refineries_burner_crude_oil
   slide_id: 199
   position: 5
+  dependent_on: ''
 - id: 709
   key: industry_chemicals_refineries_burner_wood_pellets_share
   share_group: chemical_refineries_heat
@@ -6215,6 +6496,7 @@
   related_converter: industry_chemicals_refineries_burner_wood_pellets
   slide_id: 199
   position: 6
+  dependent_on: ''
 - id: 710
   key: industry_chemicals_refineries_burner_coal_share
   share_group: chemical_refineries_heat
@@ -6237,6 +6519,7 @@
   related_converter: industry_chemicals_refineries_burner_coal
   slide_id: 199
   position: 7
+  dependent_on: ''
 - id: 711
   key: industry_final_demand_for_chemical_refineries_steam_hot_water_share
   share_group: chemical_refineries_heat
@@ -6259,6 +6542,7 @@
   related_converter: ''
   slide_id: 199
   position: 8
+  dependent_on: ''
 - id: 712
   key: industry_useful_demand_for_chemical_fertilizers
   share_group: ''
@@ -6281,6 +6565,7 @@
   related_converter: ''
   slide_id: 201
   position: 1
+  dependent_on: ''
 - id: 713
   key: industry_useful_demand_for_chemical_fertilizers_electricity_efficiency
   share_group: ''
@@ -6303,6 +6588,7 @@
   related_converter: ''
   slide_id: 201
   position: 2
+  dependent_on: ''
 - id: 714
   key: industry_useful_demand_for_chemical_fertilizers_useable_heat_efficiency
   share_group: ''
@@ -6325,6 +6611,7 @@
   related_converter: ''
   slide_id: 201
   position: 3
+  dependent_on: ''
 - id: 715
   key: industry_chemicals_fertilizers_burner_network_gas_share
   share_group: chemical_fertilizers_heat
@@ -6347,6 +6634,7 @@
   related_converter: industry_chemicals_fertilizers_burner_network_gas
   slide_id: 201
   position: 4
+  dependent_on: ''
 - id: 716
   key: industry_chemicals_fertilizers_burner_crude_oil_share
   share_group: chemical_fertilizers_heat
@@ -6369,6 +6657,7 @@
   related_converter: industry_chemicals_fertilizers_burner_crude_oil
   slide_id: 201
   position: 5
+  dependent_on: ''
 - id: 717
   key: industry_chemicals_fertilizers_burner_coal_share
   share_group: chemical_fertilizers_heat
@@ -6391,6 +6680,7 @@
   related_converter: industry_chemicals_fertilizers_burner_coal
   slide_id: 201
   position: 7
+  dependent_on: ''
 - id: 718
   key: industry_chemicals_fertilizers_burner_wood_pellets_share
   share_group: chemical_fertilizers_heat
@@ -6413,6 +6703,7 @@
   related_converter: industry_chemicals_fertilizers_burner_wood_pellets
   slide_id: 201
   position: 6
+  dependent_on: ''
 - id: 719
   key: industry_final_demand_for_chemical_fertilizers_steam_hot_water_share
   share_group: chemical_fertilizers_heat
@@ -6435,6 +6726,7 @@
   related_converter: ''
   slide_id: 201
   position: 10
+  dependent_on: ''
 - id: 720
   key: industry_useful_demand_for_chemical_other
   share_group: ''
@@ -6457,6 +6749,7 @@
   related_converter: ''
   slide_id: 202
   position: 1
+  dependent_on: ''
 - id: 721
   key: industry_useful_demand_for_chemical_other_electricity_efficiency
   share_group: ''
@@ -6479,6 +6772,7 @@
   related_converter: ''
   slide_id: 202
   position: 2
+  dependent_on: ''
 - id: 722
   key: industry_useful_demand_for_chemical_other_useable_heat_efficiency
   share_group: ''
@@ -6501,6 +6795,7 @@
   related_converter: ''
   slide_id: 202
   position: 3
+  dependent_on: ''
 - id: 723
   key: industry_chemicals_other_burner_network_gas_share
   share_group: chemical_other_heat
@@ -6523,6 +6818,7 @@
   related_converter: industry_chemicals_other_burner_network_gas
   slide_id: 202
   position: 4
+  dependent_on: ''
 - id: 724
   key: industry_chemicals_other_burner_crude_oil_share
   share_group: chemical_other_heat
@@ -6545,6 +6841,7 @@
   related_converter: industry_chemicals_other_burner_crude_oil
   slide_id: 202
   position: 5
+  dependent_on: ''
 - id: 725
   key: industry_chemicals_other_burner_wood_pellets_share
   share_group: chemical_other_heat
@@ -6567,6 +6864,7 @@
   related_converter: industry_chemicals_other_burner_wood_pellets
   slide_id: 202
   position: 7
+  dependent_on: ''
 - id: 726
   key: industry_chemicals_other_burner_coal_share
   share_group: chemical_other_heat
@@ -6589,6 +6887,7 @@
   related_converter: industry_chemicals_other_burner_coal
   slide_id: 202
   position: 6
+  dependent_on: ''
 - id: 727
   key: industry_final_demand_for_chemical_other_steam_hot_water_share
   share_group: chemical_other_heat
@@ -6611,6 +6910,7 @@
   related_converter: ''
   slide_id: 202
   position: 13
+  dependent_on: ''
 - id: 728
   key: industry_useful_demand_for_other_food
   share_group: ''
@@ -6633,6 +6933,7 @@
   related_converter: ''
   slide_id: 203
   position: 1
+  dependent_on: ''
 - id: 729
   key: industry_useful_demand_for_other_food_efficiency
   share_group: ''
@@ -6655,6 +6956,7 @@
   related_converter: ''
   slide_id: 203
   position: 2
+  dependent_on: ''
 - id: 731
   key: industry_useful_demand_for_other_paper
   share_group: ''
@@ -6677,6 +6979,7 @@
   related_converter: ''
   slide_id: 204
   position: 1
+  dependent_on: ''
 - id: 732
   key: industry_useful_demand_for_other_paper_efficiency
   share_group: ''
@@ -6699,6 +7002,7 @@
   related_converter: ''
   slide_id: 204
   position: 2
+  dependent_on: ''
 - id: 745
   key: climate_relevant_co2_biomass_gas_present
   share_group: ''
@@ -6721,6 +7025,7 @@
   related_converter: ''
   slide_id: 208
   position: 1
+  dependent_on: ''
 - id: 746
   key: climate_relevant_co2_biomass_liquid_present
   share_group: ''
@@ -6743,6 +7048,7 @@
   related_converter: ''
   slide_id: 208
   position: 2
+  dependent_on: ''
 - id: 747
   key: climate_relevant_co2_biomass_solid_present
   share_group: ''
@@ -6765,6 +7071,7 @@
   related_converter: ''
   slide_id: 208
   position: 3
+  dependent_on: ''
 - id: 748
   key: climate_relevant_co2_biomass_gas_future
   share_group: ''
@@ -6787,6 +7094,7 @@
   related_converter: ''
   slide_id: 208
   position: 4
+  dependent_on: ''
 - id: 749
   key: climate_relevant_co2_biomass_liquid_future
   share_group: ''
@@ -6809,6 +7117,7 @@
   related_converter: ''
   slide_id: 208
   position: 5
+  dependent_on: ''
 - id: 750
   key: climate_relevant_co2_biomass_solid_future
   share_group: ''
@@ -6831,6 +7140,7 @@
   related_converter: ''
   slide_id: 208
   position: 6
+  dependent_on: ''
 - id: 751
   key: industry_useful_demand_for_other_ict
   share_group: ''
@@ -6853,6 +7163,7 @@
   related_converter: ''
   slide_id: 211
   position: 1
+  dependent_on: ''
 - id: 752
   key: industry_useful_demand_for_other_ict_efficiency
   share_group: ''
@@ -6875,6 +7186,7 @@
   related_converter: ''
   slide_id: 211
   position: 2
+  dependent_on: ''
 - id: 753
   key: industry_other_food_burner_coal_share
   share_group: other_food_heat
@@ -6897,6 +7209,7 @@
   related_converter: industry_other_food_burner_coal
   slide_id: 203
   position: 5
+  dependent_on: ''
 - id: 754
   key: industry_other_food_burner_crude_oil_share
   share_group: other_food_heat
@@ -6919,6 +7232,7 @@
   related_converter: industry_other_food_burner_crude_oil
   slide_id: 203
   position: 4
+  dependent_on: ''
 - id: 755
   key: industry_other_food_burner_network_gas_share
   share_group: other_food_heat
@@ -6941,6 +7255,7 @@
   related_converter: industry_other_food_burner_network_gas
   slide_id: 203
   position: 3
+  dependent_on: ''
 - id: 756
   key: industry_other_food_burner_wood_pellets_share
   share_group: other_food_heat
@@ -6963,6 +7278,7 @@
   related_converter: industry_other_food_burner_wood_pellets
   slide_id: 203
   position: 6
+  dependent_on: ''
 - id: 757
   key: industry_final_demand_for_other_food_steam_hot_water_share
   share_group: other_food_heat
@@ -6985,6 +7301,7 @@
   related_converter: ''
   slide_id: 203
   position: 9
+  dependent_on: ''
 - id: 758
   key: industry_other_food_heater_electricity_share
   share_group: other_food_heat
@@ -7007,6 +7324,7 @@
   related_converter: industry_other_food_heater_electricity
   slide_id: 203
   position: 8
+  dependent_on: ''
 - id: 759
   key: industry_other_paper_burner_network_gas_share
   share_group: other_paper_heat
@@ -7029,6 +7347,7 @@
   related_converter: industry_other_paper_burner_network_gas
   slide_id: 204
   position: 3
+  dependent_on: ''
 - id: 760
   key: industry_other_paper_burner_crude_oil_share
   share_group: other_paper_heat
@@ -7051,6 +7370,7 @@
   related_converter: industry_other_paper_burner_crude_oil
   slide_id: 204
   position: 4
+  dependent_on: ''
 - id: 761
   key: industry_other_paper_burner_wood_pellets_share
   share_group: other_paper_heat
@@ -7073,6 +7393,7 @@
   related_converter: industry_other_paper_burner_wood_pellets
   slide_id: 204
   position: 6
+  dependent_on: ''
 - id: 762
   key: industry_other_paper_burner_coal_share
   share_group: other_paper_heat
@@ -7095,6 +7416,7 @@
   related_converter: industry_other_paper_burner_coal
   slide_id: 204
   position: 5
+  dependent_on: ''
 - id: 763
   key: industry_final_demand_for_other_paper_steam_hot_water_share
   share_group: other_paper_heat
@@ -7117,6 +7439,7 @@
   related_converter: ''
   slide_id: 204
   position: 9
+  dependent_on: ''
 - id: 764
   key: industry_other_paper_heater_electricity_share
   share_group: other_paper_heat
@@ -7139,6 +7462,7 @@
   related_converter: industry_other_paper_heater_electricity
   slide_id: 204
   position: 8
+  dependent_on: ''
 - id: 766
   key: transport_car_using_electricity_fast_charging_share
   share_group: flexibility_demand_response_electric_vehicle_profiles
@@ -7161,6 +7485,7 @@
   related_converter: ''
   slide_id: 212
   position: 3
+  dependent_on: ''
 - id: 767
   key: transport_car_using_electricity_hybrid_charging_share
   share_group: flexibility_demand_response_electric_vehicle_profiles
@@ -7183,6 +7508,7 @@
   related_converter: ''
   slide_id: 212
   position: 2
+  dependent_on: ''
 - id: 768
   key: transport_car_using_electricity_home_charging_share
   share_group: flexibility_demand_response_electric_vehicle_profiles
@@ -7205,6 +7531,7 @@
   related_converter: ''
   slide_id: 212
   position: 1
+  dependent_on: ''
 - id: 769
   key: transport_truck_using_hydrogen_share
   share_group: transport_truck_tech
@@ -7227,6 +7554,7 @@
   related_converter: ''
   slide_id: 26
   position: 2
+  dependent_on: ''
 - id: 770
   key: industry_chemicals_other_steam_recompression_electricity_share
   share_group: chemical_other_heat
@@ -7249,6 +7577,7 @@
   related_converter: industry_chemicals_other_steam_recompression_electricity
   slide_id: 202
   position: 11
+  dependent_on: ''
 - id: 771
   key: industry_chemicals_other_heatpump_water_water_electricity_share
   share_group: chemical_other_heat
@@ -7271,6 +7600,7 @@
   related_converter: industry_chemicals_other_heatpump_water_water_electricity
   slide_id: 202
   position: 12
+  dependent_on: ''
 - id: 772
   key: capacity_of_industry_chemicals_other_flexibility_p2h_electricity
   share_group: ''
@@ -7293,6 +7623,7 @@
   related_converter: industry_chemicals_other_flexibility_p2h_electricity
   slide_id: 213
   position: 2
+  dependent_on: ''
 - id: 773
   key: capacity_of_industry_chemicals_refineries_flexibility_p2h_electricity
   share_group: ''
@@ -7315,6 +7646,7 @@
   related_converter: industry_chemicals_refineries_flexibility_p2h_electricity
   slide_id: 213
   position: 3
+  dependent_on: ''
 - id: 774
   key: capacity_of_industry_other_food_flexibility_p2h_electricity
   share_group: ''
@@ -7337,6 +7669,7 @@
   related_converter: industry_other_food_flexibility_p2h_electricity
   slide_id: 213
   position: 4
+  dependent_on: ''
 - id: 775
   key: capacity_of_industry_other_paper_flexibility_p2h_electricity
   share_group: ''
@@ -7359,6 +7692,7 @@
   related_converter: industry_other_paper_flexibility_p2h_electricity
   slide_id: 213
   position: 5
+  dependent_on: ''
 - id: 776
   key: industry_chemicals_other_heater_electricity_share
   share_group: chemical_other_heat
@@ -7381,6 +7715,7 @@
   related_converter: industry_chemicals_other_heater_electricity
   slide_id: 202
   position: 9
+  dependent_on: ''
 - id: 777
   key: households_flexibility_space_heating_buffer_size_heatpump_air_water_electricity
   share_group: ''
@@ -7403,6 +7738,7 @@
   related_converter: ''
   slide_id: 216
   position: 1
+  dependent_on: ''
 - id: 778
   key: households_flexibility_water_heating_buffer_size_heatpump_air_water_electricity
   share_group: ''
@@ -7425,6 +7761,7 @@
   related_converter: ''
   slide_id: 216
   position: 1
+  dependent_on: ''
 - id: 779
   key: households_flexibility_space_heating_cop_cutoff
   share_group: ''
@@ -7447,6 +7784,7 @@
   related_converter: ''
   slide_id: 216
   position: 2
+  dependent_on: ''
 - id: 780
   key: households_flexibility_water_heating_cop_cutoff
   share_group: ''
@@ -7469,6 +7807,7 @@
   related_converter: ''
   slide_id: 216
   position: 3
+  dependent_on: ''
 - id: 781
   key: investment_costs_households_storage_space_heating
   share_group: 
@@ -7491,6 +7830,7 @@
   related_converter: 
   slide_id: 157
   position: 1
+  dependent_on: 
 - id: 782
   key: investment_costs_households_storage_water_heating
   share_group: 
@@ -7513,6 +7853,7 @@
   related_converter: 
   slide_id: 157
   position: 2
+  dependent_on: 
 - id: 783
   key: households_flexibility_space_heating_buffer_size_heatpump_ground_water_electricity
   share_group: ''
@@ -7535,6 +7876,7 @@
   related_converter: ''
   slide_id: 216
   position: 2
+  dependent_on: ''
 - id: 784
   key: households_flexibility_space_heating_buffer_size_hybrid_heatpump_air_water_electricity
   share_group: ''
@@ -7557,6 +7899,7 @@
   related_converter: ''
   slide_id: 216
   position: 3
+  dependent_on: ''
 - id: 785
   key: settings_weather_curve_set
   share_group: 
@@ -7579,6 +7922,7 @@
   related_converter: 
   slide_id: 217
   position: 1
+  dependent_on: has_weather_curves
 - id: 786
   key: households_flexibility_water_heating_buffer_size_heatpump_ground_water_electricity
   share_group: ''
@@ -7601,6 +7945,7 @@
   related_converter: ''
   slide_id: 216
   position: 2
+  dependent_on: ''
 - id: 787
   key: households_flexibility_water_heating_buffer_size_hybrid_heatpump_air_water_electricity
   share_group: ''
@@ -7623,6 +7968,7 @@
   related_converter: ''
   slide_id: 216
   position: 3
+  dependent_on: ''
 - id: 789
   key: bunkers_useful_demand_planes
   share_group: ''
@@ -7645,6 +7991,7 @@
   related_converter: ''
   slide_id: 222
   position: 1
+  dependent_on: ''
 - id: 790
   key: bunkers_plane_using_kerosene_share
   share_group: bunkers_aviation
@@ -7667,6 +8014,7 @@
   related_converter: ''
   slide_id: 220
   position: 1
+  dependent_on: ''
 - id: 791
   key: bunkers_plane_using_bio_kerosene_share
   share_group: bunkers_aviation
@@ -7689,6 +8037,7 @@
   related_converter: ''
   slide_id: 220
   position: 2
+  dependent_on: ''
 - id: 792
   key: bunkers_useful_demand_ships
   share_group: ''
@@ -7711,6 +8060,7 @@
   related_converter: ''
   slide_id: 222
   position: 2
+  dependent_on: ''
 - id: 793
   key: bunkers_ship_using_heavy_fuel_oil_share
   share_group: bunkers_shipping
@@ -7733,6 +8083,7 @@
   related_converter: ''
   slide_id: 223
   position: 1
+  dependent_on: ''
 - id: 794
   key: bunkers_ship_using_lng_share
   share_group: bunkers_shipping
@@ -7755,6 +8106,7 @@
   related_converter: ''
   slide_id: 223
   position: 2
+  dependent_on: ''
 - id: 795
   key: bunkers_allocated_percentage_aviation
   share_group: ''
@@ -7777,6 +8129,7 @@
   related_converter: ''
   slide_id: 219
   position: 1
+  dependent_on: ''
 - id: 796
   key: bunkers_allocated_percentage_shipping
   share_group: ''
@@ -7799,6 +8152,7 @@
   related_converter: ''
   slide_id: 219
   position: 2
+  dependent_on: ''
 - id: 797
   key: capacity_of_flexibility_p2l_electricity
   share_group: ''
@@ -7821,6 +8175,7 @@
   related_converter: bunkers_kerosene_production_p2l
   slide_id: 225
   position: 1
+  dependent_on: ''
 - id: 798
   key: flexibility_p2l_direct_air_capture
   share_group: carbon_source_p2l
@@ -7843,6 +8198,7 @@
   related_converter: bunkers_p2l_direct_air_capture
   slide_id: 225
   position: 4
+  dependent_on: ''
 - id: 799
   key: flexibility_p2l_point_source_CO
   share_group: carbon_source_p2l
@@ -7865,6 +8221,7 @@
   related_converter: bunkers_p2l_point_source_CO
   slide_id: 225
   position: 2
+  dependent_on: ''
 - id: 800
   key: flexibility_p2l_point_source_CO2
   share_group: carbon_source_p2l
@@ -7887,6 +8244,7 @@
   related_converter: bunkers_p2l_point_source_CO2
   slide_id: 225
   position: 3
+  dependent_on: ''
 - id: 841
   key: transport_useful_demand_passenger_kms
   share_group: ''
@@ -7909,6 +8267,7 @@
   related_converter: ''
   slide_id: 24
   position: 1
+  dependent_on: ''
 - id: 842
   key: transport_useful_demand_freight_tonne_kms
   share_group: ''
@@ -7931,6 +8290,7 @@
   related_converter: ''
   slide_id: 229
   position: 1
+  dependent_on: ''
 - id: 843
   key: transport_busses_share
   share_group: passenger_transport
@@ -7953,6 +8313,7 @@
   related_converter: ''
   slide_id: 24
   position: 5
+  dependent_on: ''
 - id: 844
   key: transport_trams_share
   share_group: passenger_transport
@@ -7975,6 +8336,7 @@
   related_converter: ''
   slide_id: 24
   position: 4
+  dependent_on: ''
 - id: 845
   key: transport_bicycles_share
   share_group: passenger_transport
@@ -7997,6 +8359,7 @@
   related_converter: ''
   slide_id: 24
   position: 7
+  dependent_on: ''
 - id: 846
   key: transport_motorcycles_share
   share_group: passenger_transport
@@ -8019,6 +8382,7 @@
   related_converter: ''
   slide_id: 24
   position: 6
+  dependent_on: ''
 - id: 847
   key: transport_freight_trains_share
   share_group: freight_transport
@@ -8041,6 +8405,7 @@
   related_converter: ''
   slide_id: 229
   position: 3
+  dependent_on: ''
 - id: 848
   key: transport_bus_using_electricity_share
   share_group: transport_bus_tech
@@ -8063,6 +8428,7 @@
   related_converter: ''
   slide_id: 226
   position: 1
+  dependent_on: ''
 - id: 849
   key: transport_bus_using_hydrogen_share
   share_group: transport_bus_tech
@@ -8085,6 +8451,7 @@
   related_converter: ''
   slide_id: 226
   position: 2
+  dependent_on: ''
 - id: 850
   key: transport_bus_using_diesel_mix_share
   share_group: transport_bus_tech
@@ -8107,6 +8474,7 @@
   related_converter: ''
   slide_id: 226
   position: 3
+  dependent_on: ''
 - id: 851
   key: transport_bus_using_gasoline_mix_share
   share_group: transport_bus_tech
@@ -8129,6 +8497,7 @@
   related_converter: ''
   slide_id: 226
   position: 4
+  dependent_on: ''
 - id: 852
   key: transport_bus_using_lng_share
   share_group: transport_bus_tech
@@ -8151,6 +8520,7 @@
   related_converter: ''
   slide_id: 226
   position: 5
+  dependent_on: ''
 - id: 853
   key: transport_bus_using_compressed_natural_gas_share
   share_group: transport_bus_tech
@@ -8173,6 +8543,7 @@
   related_converter: ''
   slide_id: 226
   position: 6
+  dependent_on: ''
 - id: 854
   key: transport_bicycle_using_human_power_share
   share_group: transport_bicycle_tech
@@ -8195,6 +8566,7 @@
   related_converter: ''
   slide_id: 227
   position: 1
+  dependent_on: ''
 - id: 855
   key: transport_bicycle_using_electricity_share
   share_group: transport_bicycle_tech
@@ -8217,6 +8589,7 @@
   related_converter: ''
   slide_id: 227
   position: 2
+  dependent_on: ''
 - id: 856
   key: transport_motorcycle_using_gasoline_mix_share
   share_group: transport_motorcycle_tech
@@ -8239,6 +8612,7 @@
   related_converter: ''
   slide_id: 228
   position: 1
+  dependent_on: ''
 - id: 857
   key: transport_motorcycle_using_electricity_share
   share_group: transport_motorcycle_tech
@@ -8261,6 +8635,7 @@
   related_converter: ''
   slide_id: 228
   position: 2
+  dependent_on: ''
 - id: 858
   key: transport_freight_train_using_electricity_share
   share_group: transport_freight_train_share
@@ -8283,6 +8658,7 @@
   related_converter: ''
   slide_id: 230
   position: 1
+  dependent_on: ''
 - id: 859
   key: transport_freight_train_using_diesel_mix_share
   share_group: transport_freight_train_share
@@ -8305,6 +8681,7 @@
   related_converter: ''
   slide_id: 230
   position: 2
+  dependent_on: ''
 - id: 861
   key: flexibility_p2l_co2_reduction_industry
   share_group: co2_reduction_p2l
@@ -8327,6 +8704,7 @@
   related_converter: ''
   slide_id: 225
   position: 5
+  dependent_on: ''
 - id: 862
   key: flexibility_p2l_co2_reduction_bunkers
   share_group: co2_reduction_p2l
@@ -8349,6 +8727,7 @@
   related_converter: ''
   slide_id: 225
   position: 6
+  dependent_on: ''
 - id: 863
   key: co2_emissions_of_imported_electricity_present
   share_group: ''
@@ -8372,6 +8751,7 @@
   related_converter: ''
   slide_id: 236
   position: 0
+  dependent_on: ''
 - id: 864
   key: co2_emissions_of_imported_electricity_future
   share_group: ''
@@ -8394,6 +8774,7 @@
   related_converter: ''
   slide_id: 236
   position: 1
+  dependent_on: ''
 - id: 868
   key: costs_imported_electricity
   share_group: ''
@@ -8416,6 +8797,7 @@
   related_converter: ''
   slide_id: 238
   position: 0
+  dependent_on: ''
 - id: 871
   key: capacity_of_energy_hydrogen_wind_turbine_offshore
   share_group: ''
@@ -8438,6 +8820,7 @@
   related_converter: energy_hydrogen_electrolysis_wind_electricity
   slide_id: 193
   position: 1
+  dependent_on: ''
 - id: 872
   key: capacity_of_energy_hydrogen_solar_pv_solar_radiation
   share_group: ''
@@ -8460,6 +8843,7 @@
   related_converter: energy_hydrogen_electrolysis_solar_electricity
   slide_id: 193
   position: 2
+  dependent_on: ''
 - id: 873
   key: industry_chemicals_fertilizers_steam_methane_reformer_hydrogen_share
   share_group: hydrogen_production
@@ -8482,6 +8866,7 @@
   related_converter: ''
   slide_id: 201
   position: 4
+  dependent_on: ''
 - id: 874
   key: industry_chemicals_fertilizers_hydrogen_network_share
   share_group: hydrogen_production
@@ -8504,6 +8889,7 @@
   related_converter: ''
   slide_id: 201
   position: 5
+  dependent_on: ''
 - id: 875
   key: capacity_of_energy_power_turbine_hydrogen
   share_group: ''
@@ -8526,6 +8912,7 @@
   related_converter: energy_power_turbine_hydrogen
   slide_id: 239
   position: 1
+  dependent_on: ''
 - id: 876
   key: industry_chemicals_refineries_burner_hydrogen_share
   share_group: chemical_refineries_heat
@@ -8548,6 +8935,7 @@
   related_converter: industry_chemicals_refineries_burner_hydrogen
   slide_id: 199
   position: 8
+  dependent_on: ''
 - id: 877
   key: industry_chemicals_fertilizers_burner_hydrogen_share
   share_group: chemical_fertilizers_heat
@@ -8570,6 +8958,7 @@
   related_converter: industry_chemicals_fertilizers_burner_hydrogen
   slide_id: 201
   position: 10
+  dependent_on: ''
 - id: 878
   key: industry_chemicals_other_burner_hydrogen_share
   share_group: chemical_other_heat
@@ -8592,6 +8981,7 @@
   related_converter: industry_chemicals_other_burner_hydrogen
   slide_id: 202
   position: 8
+  dependent_on: ''
 - id: 879
   key: industry_other_food_burner_hydrogen_share
   share_group: other_food_heat
@@ -8614,6 +9004,7 @@
   related_converter: industry_other_food_burner_hydrogen
   slide_id: 203
   position: 7
+  dependent_on: ''
 - id: 880
   key: industry_other_paper_burner_hydrogen_share
   share_group: other_paper_heat
@@ -8636,6 +9027,7 @@
   related_converter: industry_other_paper_burner_hydrogen
   slide_id: 204
   position: 7
+  dependent_on: ''
 - id: 881
   key: agriculture_burner_hydrogen_share
   share_group: agri_heat
@@ -8658,6 +9050,7 @@
   related_converter: agriculture_burner_hydrogen
   slide_id: 31
   position: 4
+  dependent_on: ''
 - id: 886
   key: energy_transport_hydrogen_compressed_trucks_share
   share_group: hydrogen_transport
@@ -8680,6 +9073,7 @@
   related_converter: ''
   slide_id: 240
   position: 2
+  dependent_on: ''
 - id: 887
   key: energy_transport_hydrogen_pipelines_share
   share_group: hydrogen_transport
@@ -8702,6 +9096,7 @@
   related_converter: ''
   slide_id: 240
   position: 1
+  dependent_on: ''
 - id: 888
   key: costs_hydrogen
   share_group: ''
@@ -8724,6 +9119,7 @@
   related_converter: ''
   slide_id: 253
   position: 1
+  dependent_on: ''
 - id: 890
   key: co2_emissions_of_imported_hydrogen_present
   share_group: ''
@@ -8746,6 +9142,7 @@
   related_converter: ''
   slide_id: 242
   position: 1
+  dependent_on: ''
 - id: 891
   key: co2_emissions_of_imported_hydrogen_future
   share_group: ''
@@ -8768,6 +9165,7 @@
   related_converter: ''
   slide_id: 242
   position: 2
+  dependent_on: ''
 - id: 893
   key: costs_infrastructure_electricity_lv_net
   share_group: ''
@@ -8790,6 +9188,7 @@
   related_converter: ''
   slide_id: 243
   position: 1
+  dependent_on: ''
 - id: 894
   key: costs_infrastructure_electricity_lv_mv_trafo
   share_group: ''
@@ -8812,6 +9211,7 @@
   related_converter: ''
   slide_id: 243
   position: 2
+  dependent_on: ''
 - id: 895
   key: costs_infrastructure_electricity_mv_net
   share_group: ''
@@ -8834,6 +9234,7 @@
   related_converter: ''
   slide_id: 243
   position: 3
+  dependent_on: ''
 - id: 896
   key: costs_infrastructure_electricity_mv_hv_trafo
   share_group: ''
@@ -8856,6 +9257,7 @@
   related_converter: ''
   slide_id: 243
   position: 4
+  dependent_on: ''
 - id: 897
   key: costs_infrastructure_electricity_hv_net
   share_group: ''
@@ -8878,6 +9280,7 @@
   related_converter: ''
   slide_id: 243
   position: 5
+  dependent_on: ''
 - id: 898
   key: costs_infrastructure_electricity_interconnector_net
   share_group: ''
@@ -8900,6 +9303,7 @@
   related_converter: ''
   slide_id: 243
   position: 6
+  dependent_on: ''
 - id: 899
   key: costs_infrastructure_electricity_offshore_net
   share_group: ''
@@ -8922,6 +9326,7 @@
   related_converter: ''
   slide_id: 243
   position: 7
+  dependent_on: ''
 - id: 900
   key: costs_infrastructure_useable_spare_capacity
   share_group: ''
@@ -8944,6 +9349,7 @@
   related_converter: ''
   slide_id: 244
   position: 1
+  dependent_on: ''
 - id: 901
   key: costs_ccs_per_ton_in_industry
   share_group: ''
@@ -8966,6 +9372,7 @@
   related_converter: ''
   slide_id: 245
   position: 1
+  dependent_on: has_detailed_chemical_industry
 - id: 902
   key: industry_ccs_in_industry
   share_group: ''
@@ -8988,6 +9395,7 @@
   related_converter: ''
   slide_id: 246
   position: 1
+  dependent_on: has_detailed_chemical_industry
 - id: 903
   key: flh_of_energy_power_wind_turbine_coastal
   share_group: ''
@@ -9010,6 +9418,7 @@
   related_converter: ''
   slide_id: 51
   position: 5
+  dependent_on: has_coastline
 - id: 904
   key: flh_of_energy_power_wind_turbine_inland
   share_group: ''
@@ -9032,6 +9441,7 @@
   related_converter: ''
   slide_id: 51
   position: 4
+  dependent_on: ''
 - id: 905
   key: flh_of_energy_power_wind_turbine_offshore
   share_group: ''
@@ -9054,6 +9464,7 @@
   related_converter: ''
   slide_id: 51
   position: 6
+  dependent_on: ''
 - id: 906
   key: flh_of_energy_hydrogen_wind_turbine_offshore
   share_group: ''
@@ -9076,6 +9487,7 @@
   related_converter: ''
   slide_id: 193
   position: 6
+  dependent_on: ''
 - id: 907
   key: flh_of_solar_pv_solar_radiation
   share_group: ''
@@ -9098,6 +9510,7 @@
   related_converter: ''
   slide_id: 54
   position: 2
+  dependent_on: ''
 - id: 909
   key: capacity_of_energy_flexibility_pumped_storage_electricity
   share_group: ''
@@ -9120,6 +9533,7 @@
   related_converter: ''
   slide_id: 166
   position: 30
+  dependent_on: has_mountains
 - id: 910
   key: costs_hydrogen_transport_compressed_trucks
   share_group: ''
@@ -9142,6 +9556,7 @@
   related_converter: ''
   slide_id: 255
   position: 2
+  dependent_on: ''
 - id: 911
   key: costs_hydrogen_transport_pipelines
   share_group: ''
@@ -9164,6 +9579,7 @@
   related_converter: ''
   slide_id: 255
   position: 1
+  dependent_on: ''
 - id: 912
   key: costs_hydrogen_storage
   share_group: ''
@@ -9186,6 +9602,7 @@
   related_converter: ''
   slide_id: 254
   position: 1
+  dependent_on: ''
 - id: 913
   key: capacity_of_energy_imported_hydrogen_baseload
   share_group: ''
@@ -9208,6 +9625,7 @@
   related_converter: ''
   slide_id: 193
   position: 6
+  dependent_on: ''
 - id: 914
   key: industry_aggregated_other_industry_wood_pellets_share
   share_group: other_industry_energetic
@@ -9230,6 +9648,7 @@
   related_converter: ''
   slide_id: 205
   position: 1
+  dependent_on: ''
 - id: 915
   key: industry_aggregated_other_industry_electricity_share
   share_group: other_industry_energetic
@@ -9252,6 +9671,7 @@
   related_converter: ''
   slide_id: 205
   position: 2
+  dependent_on: ''
 - id: 916
   key: industry_aggregated_other_industry_crude_oil_share
   share_group: other_industry_energetic
@@ -9274,6 +9694,7 @@
   related_converter: ''
   slide_id: 205
   position: 3
+  dependent_on: ''
 - id: 917
   key: industry_aggregated_other_industry_network_gas_share
   share_group: other_industry_energetic
@@ -9296,6 +9717,7 @@
   related_converter: ''
   slide_id: 205
   position: 4
+  dependent_on: ''
 - id: 918
   key: industry_aggregated_other_industry_coal_share
   share_group: other_industry_energetic
@@ -9318,6 +9740,7 @@
   related_converter: ''
   slide_id: 205
   position: 5
+  dependent_on: ''
 - id: 919
   key: industry_aggregated_other_industry_useable_heat_share
   share_group: other_industry_energetic
@@ -9340,6 +9763,7 @@
   related_converter: ''
   slide_id: 205
   position: 6
+  dependent_on: ''
 - id: 920
   key: industry_useful_demand_for_aggregated_other
   share_group: ''
@@ -9362,6 +9786,7 @@
   related_converter: ''
   slide_id: 205
   position: 1
+  dependent_on: ''
 - id: 921
   key: households_apartments_share
   share_group: housing_stock
@@ -9384,6 +9809,7 @@
   related_converter: ''
   slide_id: 171
   position: 2
+  dependent_on: ''
 - id: 922
   key: households_corner_houses_share
   share_group: housing_stock
@@ -9406,6 +9832,7 @@
   related_converter: ''
   slide_id: 171
   position: 3
+  dependent_on: ''
 - id: 923
   key: households_detached_houses_share
   share_group: housing_stock
@@ -9428,6 +9855,7 @@
   related_converter: ''
   slide_id: 171
   position: 4
+  dependent_on: ''
 - id: 924
   key: households_semi_detached_houses_share
   share_group: housing_stock
@@ -9450,6 +9878,7 @@
   related_converter: ''
   slide_id: 171
   position: 5
+  dependent_on: ''
 - id: 925
   key: households_terraced_houses_share
   share_group: housing_stock
@@ -9472,6 +9901,7 @@
   related_converter: ''
   slide_id: 171
   position: 6
+  dependent_on: ''
 - id: 926
   key: households_insulation_level_apartments
   share_group: ''
@@ -9494,6 +9924,7 @@
   related_converter: ''
   slide_id: 1
   position: 6
+  dependent_on: ''
 - id: 927
   key: households_insulation_level_corner_houses
   share_group: ''
@@ -9516,6 +9947,7 @@
   related_converter: ''
   slide_id: 1
   position: 7
+  dependent_on: ''
 - id: 928
   key: households_insulation_level_detached_houses
   share_group: ''
@@ -9538,6 +9970,7 @@
   related_converter: ''
   slide_id: 1
   position: 8
+  dependent_on: ''
 - id: 929
   key: households_insulation_level_semi_detached_houses
   share_group: ''
@@ -9560,6 +9993,7 @@
   related_converter: ''
   slide_id: 1
   position: 9
+  dependent_on: ''
 - id: 930
   key: households_insulation_level_terraced_houses
   share_group: ''
@@ -9582,6 +10016,7 @@
   related_converter: ''
   slide_id: 1
   position: 10
+  dependent_on: ''
 - id: 933
   key: volume_of_imported_heat
   share_group: ''
@@ -9604,6 +10039,7 @@
   related_converter: ''
   slide_id: 275
   position: 4
+  dependent_on: ''
 - id: 934
   key: co2_emissions_of_imported_heat
   share_group: ''
@@ -9626,6 +10062,7 @@
   related_converter: ''
   slide_id: 275
   position: 5
+  dependent_on: ''
 - id: 935
   key: costs_imported_heat
   share_group: ''
@@ -9648,6 +10085,7 @@
   related_converter: ''
   slide_id: 264
   position: 8
+  dependent_on: ''
 - id: 937
   key: investment_costs_heat_network_households
   share_group: ''
@@ -9670,6 +10108,7 @@
   related_converter: ''
   slide_id: 263
   position: 1
+  dependent_on: ''
 - id: 938
   key: om_costs_heat_network_households
   share_group: ''
@@ -9692,6 +10131,7 @@
   related_converter: ''
   slide_id: 263
   position: 2
+  dependent_on: ''
 - id: 939
   key: households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share
   share_group: heating_households
@@ -9714,6 +10154,7 @@
   related_converter: households_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   slide_id: 4
   position: 6
+  dependent_on: ''
 - id: 940
   key: investment_costs_heat_network_buildings
   share_group: ''
@@ -9736,6 +10177,7 @@
   related_converter: ''
   slide_id: 263
   position: 3
+  dependent_on: ''
 - id: 941
   key: om_costs_heat_network_buildings
   share_group: ''
@@ -9758,6 +10200,7 @@
   related_converter: ''
   slide_id: 263
   position: 4
+  dependent_on: ''
 - id: 942
   key: capacity_of_energy_power_combined_cycle_hydrogen
   share_group: ''
@@ -9780,6 +10223,7 @@
   related_converter: energy_power_combined_cycle_hydrogen
   slide_id: 239
   position: 2
+  dependent_on: ''
 - id: 943
   key: industry_chemicals_other_wood_pellets_non_energetic_share
   share_group: chemical_other_non_energetic
@@ -9802,6 +10246,7 @@
   related_converter: ''
   slide_id: 202
   position: 14
+  dependent_on: ''
 - id: 944
   key: industry_chemicals_other_hydrogen_non_energetic_share
   share_group: chemical_other_non_energetic
@@ -9824,6 +10269,7 @@
   related_converter: ''
   slide_id: 202
   position: 15
+  dependent_on: ''
 - id: 945
   key: industry_chemicals_other_network_gas_non_energetic_share
   share_group: chemical_other_non_energetic
@@ -9846,6 +10292,7 @@
   related_converter: ''
   slide_id: 202
   position: 16
+  dependent_on: ''
 - id: 946
   key: industry_chemicals_other_crude_oil_non_energetic_share
   share_group: chemical_other_non_energetic
@@ -9868,6 +10315,7 @@
   related_converter: ''
   slide_id: 202
   position: 17
+  dependent_on: ''
 - id: 947
   key: industry_chemicals_other_coal_non_energetic_share
   share_group: chemical_other_non_energetic
@@ -9890,6 +10338,7 @@
   related_converter: ''
   slide_id: 202
   position: 18
+  dependent_on: ''
 - id: 948
   key: households_number_of_residences
   share_group: ''
@@ -9912,6 +10361,7 @@
   related_converter: ''
   slide_id: 171
   position: 1
+  dependent_on: ''
 - id: 949
   key: transport_car_using_electricity_regular_charging_share
   share_group: flexibility_demand_response_electric_vehicle_profiles
@@ -9934,6 +10384,7 @@
   related_converter: ''
   slide_id: 212
   position: 5
+  dependent_on: ''
 - id: 950
   key: transport_car_using_electricity_smart_charging_share
   share_group: flexibility_demand_response_electric_vehicle_profiles
@@ -9956,6 +10407,7 @@
   related_converter: ''
   slide_id: 212
   position: 4
+  dependent_on: ''
 - id: 951
   key: energy_biogas_fermentation_share
   share_group: greengas
@@ -9978,6 +10430,7 @@
   related_converter: energy_biogas_fermentation_wet_biomass
   slide_id: 268
   position: 0
+  dependent_on: ''
 - id: 952
   key: energy_greengas_gasification_dry_biomass_share
   share_group: greengas
@@ -10000,6 +10453,7 @@
   related_converter: energy_greengas_gasification_dry_biomass
   slide_id: 268
   position: 1
+  dependent_on: ''
 - id: 953
   key: energy_greengas_gasification_wet_biomass_share
   share_group: greengas
@@ -10022,6 +10476,7 @@
   related_converter: energy_greengas_gasification_wet_biomass
   slide_id: 268
   position: 2
+  dependent_on: ''
 - id: 955
   key: costs_biogas
   share_group: ''
@@ -10044,6 +10499,7 @@
   related_converter: ''
   slide_id: 269
   position: 2
+  dependent_on: ''
 - id: 956
   key: costs_greengas
   share_group: ''
@@ -10066,6 +10522,7 @@
   related_converter: ''
   slide_id: 269
   position: 1
+  dependent_on: ''
 - id: 957
   key: costs_wood
   share_group: ''
@@ -10088,6 +10545,7 @@
   related_converter: ''
   slide_id: 269
   position: 3
+  dependent_on: ''
 - id: 958
   key: costs_biodiesel
   share_group: ''
@@ -10110,6 +10568,7 @@
   related_converter: ''
   slide_id: 269
   position: 4
+  dependent_on: ''
 - id: 959
   key: costs_bio_ethanol
   share_group: ''
@@ -10132,6 +10591,7 @@
   related_converter: ''
   slide_id: 269
   position: 5
+  dependent_on: ''
 - id: 960
   key: max_demand_of_biogenic_waste
   share_group: ''
@@ -10154,6 +10614,7 @@
   related_converter: ''
   slide_id: 270
   position: 4
+  dependent_on: ''
 - id: 961
   key: max_demand_of_wet_biomass
   share_group: ''
@@ -10176,6 +10637,7 @@
   related_converter: ''
   slide_id: 270
   position: 1
+  dependent_on: ''
 - id: 962
   key: max_demand_of_dry_biomass
   share_group: ''
@@ -10198,6 +10660,7 @@
   related_converter: ''
   slide_id: 270
   position: 2
+  dependent_on: ''
 - id: 963
   key: max_demand_of_oily_biomass
   share_group: ''
@@ -10220,6 +10683,7 @@
   related_converter: ''
   slide_id: 270
   position: 3
+  dependent_on: ''
 - id: 964
   key: capacity_of_energy_flexibility_hv_opac_electricity
   share_group: ''
@@ -10242,6 +10706,7 @@
   related_converter: energy_flexibility_hv_opac_electricity
   slide_id: 166
   position: 31
+  dependent_on: ''
 - id: 965
   key: capacity_of_energy_flexibility_mv_batteries_electricity
   share_group: ''
@@ -10264,6 +10729,7 @@
   related_converter: energy_flexibility_mv_batteries_electricity
   slide_id: 166
   position: 20
+  dependent_on: ''
 - id: 966
   key: capacity_of_industry_chp_wood_pellets
   share_group: 
@@ -10286,6 +10752,7 @@
   related_converter: industry_chp_wood_pellets
   slide_id: 44
   position: 5
+  dependent_on: ''
 - id: 967
   key: capacity_of_industry_heat_burner_coal
   share_group: 
@@ -10308,6 +10775,7 @@
   related_converter: industry_heat_burner_coal
   slide_id: 44
   position: 6
+  dependent_on: ''
 - id: 968
   key: capacity_of_industry_heat_burner_crude_oil
   share_group: 
@@ -10330,6 +10798,7 @@
   related_converter: industry_heat_burner_crude_oil
   slide_id: 44
   position: 7
+  dependent_on: ''
 - id: 969
   key: capacity_of_industry_heat_burner_lignite
   share_group: 
@@ -10352,6 +10821,7 @@
   related_converter: industry_heat_burner_lignite
   slide_id: 44
   position: 8
+  dependent_on: ''
 - id: 970
   key: capacity_of_industry_heat_well_geothermal
   share_group: 
@@ -10374,6 +10844,7 @@
   related_converter: industry_heat_well_geothermal
   slide_id: 44
   position: 9
+  dependent_on: ''
 - id: 971
   key: capacity_of_energy_heat_well_geothermal
   share_group: 
@@ -10396,6 +10867,7 @@
   related_converter: energy_heat_well_geothermal
   slide_id: 275
   position: 1
+  dependent_on: ''
 - id: 972
   key: capacity_of_energy_heat_solar_thermal
   share_group: 
@@ -10418,6 +10890,7 @@
   related_converter: energy_heat_solar_thermal
   slide_id: 275
   position: 2
+  dependent_on: ''
 - id: 973
   key: capacity_of_energy_chp_local_engine_biogas
   share_group: 
@@ -10440,6 +10913,7 @@
   related_converter: energy_chp_local_engine_biogas
   slide_id: 275
   position: 3
+  dependent_on: 
 - id: 974
   key: capacity_of_energy_heat_heatpump_water_water_electricity
   share_group: 
@@ -10462,6 +10936,7 @@
   related_converter: energy_heat_heatpump_water_water_electricity
   slide_id: 275
   position: 6
+  dependent_on: 
 - id: 975
   key: capacity_of_energy_heat_burner_network_gas
   share_group: 
@@ -10484,6 +10959,7 @@
   related_converter: energy_heat_burner_network_gas
   slide_id: 275
   position: 7
+  dependent_on: 
 - id: 976
   key: capacity_of_energy_heat_burner_hydrogen
   share_group: 
@@ -10506,6 +10982,7 @@
   related_converter: energy_heat_burner_hydrogen
   slide_id: 275
   position: 8
+  dependent_on: has_lignite
 - id: 977
   key: capacity_of_energy_heat_burner_wood_pellets
   share_group: 
@@ -10528,6 +11005,7 @@
   related_converter: energy_heat_burner_wood_pellets
   slide_id: 275
   position: 9
+  dependent_on: 
 - id: 978
   key: capacity_of_energy_heat_burner_waste_mix
   share_group: 
@@ -10550,6 +11028,7 @@
   related_converter: energy_heat_burner_waste_mix
   slide_id: 275
   position: 10
+  dependent_on: 
 - id: 979
   key: capacity_of_energy_heat_burner_coal
   share_group: 
@@ -10572,6 +11051,7 @@
   related_converter: energy_heat_burner_coal
   slide_id: 275
   position: 11
+  dependent_on: 
 - id: 980
   key: capacity_of_energy_heat_burner_crude_oil
   share_group: 
@@ -10594,6 +11074,7 @@
   related_converter: energy_heat_burner_crude_oil
   slide_id: 275
   position: 12
+  dependent_on: ''
 - id: 981
   key: heat_storage_enabled
   share_group: 
@@ -10616,3 +11097,4 @@
   related_converter: 
   slide_id: 276
   position: 1
+  dependent_on: 

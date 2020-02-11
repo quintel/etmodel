@@ -8,6 +8,7 @@
   tab_id: 2
   position: 1
   parent_id: 
+  dependent_on: ''
 - id: 2
   key: buildings
   section: demand
@@ -17,6 +18,7 @@
   tab_id: 2
   position: 2
   parent_id: 
+  dependent_on: has_buildings
 - id: 3
   key: transport
   section: demand
@@ -26,6 +28,7 @@
   tab_id: 2
   position: 3
   parent_id: 
+  dependent_on: ''
 - id: 4
   key: industry
   section: demand
@@ -35,6 +38,7 @@
   tab_id: 2
   position: 4
   parent_id: 
+  dependent_on: has_industry
 - id: 5
   key: agriculture
   section: demand
@@ -44,6 +48,7 @@
   tab_id: 2
   position: 5
   parent_id: 
+  dependent_on: has_agriculture
 - id: 6
   key: other
   section: demand
@@ -53,6 +58,7 @@
   tab_id: 2
   position: 6
   parent_id: 
+  dependent_on: has_other
 - id: 12
   key: combustion
   section: costs
@@ -62,6 +68,7 @@
   tab_id: 4
   position: 4
   parent_id: 
+  dependent_on: ''
 - id: 13
   key: nuclear
   section: costs
@@ -71,6 +78,7 @@
   tab_id: 4
   position: 4
   parent_id: 
+  dependent_on: ''
 - id: 14
   key: wind
   section: costs
@@ -80,6 +88,7 @@
   tab_id: 4
   position: 5
   parent_id: 
+  dependent_on: ''
 - id: 15
   key: water
   section: costs
@@ -89,6 +98,7 @@
   tab_id: 4
   position: 6
   parent_id: 
+  dependent_on: ''
 - id: 16
   key: solar
   section: costs
@@ -98,6 +108,7 @@
   tab_id: 4
   position: 7
   parent_id: 
+  dependent_on: ''
 - id: 17
   key: earth
   section: costs
@@ -107,6 +118,7 @@
   tab_id: 
   position: 8
   parent_id: 
+  dependent_on: ''
 - id: 18
   key: co2
   section: costs
@@ -116,6 +128,7 @@
   tab_id: 4
   position: 9
   parent_id: 
+  dependent_on: ''
 - id: 19
   key: sustainability
   section: targets
@@ -125,6 +138,7 @@
   tab_id: 7
   position: 1
   parent_id: 
+  dependent_on: _always_hidden
 - id: 20
   key: dependence
   section: targets
@@ -134,6 +148,7 @@
   tab_id: 7
   position: 2
   parent_id: 
+  dependent_on: _always_hidden
 - id: 21
   key: cost
   section: targets
@@ -143,6 +158,7 @@
   tab_id: 7
   position: 3
   parent_id: 
+  dependent_on: _always_hidden
 - id: 22
   key: electricity
   section: supply
@@ -152,6 +168,7 @@
   tab_id: 3
   position: 1
   parent_id: 
+  dependent_on: ''
 - id: 23
   key: electricity_renewable
   section: supply
@@ -161,6 +178,7 @@
   tab_id: 3
   position: 2
   parent_id: 
+  dependent_on: ''
 - id: 24
   key: heat
   section: supply
@@ -170,6 +188,7 @@
   tab_id: 3
   position: 3
   parent_id: 
+  dependent_on: ''
 - id: 25
   key: renewable_heat
   section: supply
@@ -179,6 +198,7 @@
   tab_id: 3
   position: 4
   parent_id: 
+  dependent_on: _always_hidden
 - id: 26
   key: transport_fuels
   section: supply
@@ -188,6 +208,7 @@
   tab_id: 3
   position: 7
   parent_id: 
+  dependent_on: ''
 - id: 28
   key: infrastructure
   section: costs
@@ -197,6 +218,7 @@
   tab_id: 4
   position: 8
   parent_id: 
+  dependent_on: use_network_calculations
 - id: 29
   key: area
   section: overview
@@ -206,6 +228,7 @@
   tab_id: 7
   position: 4
   parent_id: 
+  dependent_on: _always_hidden
 - id: 32
   key: fce
   section: supply
@@ -215,6 +238,7 @@
   tab_id: 3
   position: 9
   parent_id: 
+  dependent_on: _always_hidden
 - id: 33
   key: security_of_supply
   section: flexibility
@@ -224,6 +248,7 @@
   tab_id: 5
   position: 10
   parent_id: 
+  dependent_on: ''
 - id: 34
   key: merit_order
   section: flexibility
@@ -233,6 +258,7 @@
   tab_id: 4
   position: 1
   parent_id: 
+  dependent_on: has_merit_order
 - id: 35
   key: employment
   section: costs
@@ -242,6 +268,7 @@
   tab_id: 4
   position: 11
   parent_id: 
+  dependent_on: _always_hidden
 - id: 36
   key: costs_heat
   section: costs
@@ -251,6 +278,7 @@
   tab_id: 4
   position: 3
   parent_id: 
+  dependent_on: ''
 - id: 37
   key: fuel_costs
   section: costs
@@ -260,6 +288,7 @@
   tab_id: 4
   position: 1
   parent_id: 
+  dependent_on: ''
 - id: 38
   key: industry_metal
   section: demand
@@ -269,6 +298,7 @@
   tab_id: 2
   position: 2
   parent_id: 4
+  dependent_on: _always_hidden
 - id: 39
   key: excess_electricity
   section: flexibility
@@ -278,6 +308,7 @@
   tab_id: 5
   position: 2
   parent_id: 
+  dependent_on: has_electricity_storage
 - id: 40
   key: electricity_import_export
   section: flexibility
@@ -287,6 +318,7 @@
   tab_id: 5
   position: 4
   parent_id: 
+  dependent_on: is_national_scenario
 - id: 41
   key: industry_chemical
   section: demand
@@ -296,6 +328,7 @@
   tab_id: 2
   position: 1
   parent_id: 4
+  dependent_on: _always_hidden
 - id: 42
   key: industry_other
   section: demand
@@ -305,6 +338,7 @@
   tab_id: 2
   position: 3
   parent_id: 4
+  dependent_on: _always_hidden
 - id: 43
   key: fuel_production
   section: supply
@@ -314,6 +348,7 @@
   tab_id: 3
   position: 11
   parent_id: 
+  dependent_on: is_national_scenario
 - id: 44
   key: costs_flexibility
   section: costs
@@ -323,6 +358,7 @@
   tab_id: 4
   position: 7
   parent_id: 
+  dependent_on: ''
 - id: 45
   key: hydrogen
   section: supply
@@ -332,6 +368,7 @@
   tab_id: 3
   position: 5
   parent_id: 
+  dependent_on: ''
 - id: 46
   key: transport_costs
   section: costs
@@ -341,6 +378,7 @@
   tab_id: 4
   position: 4
   parent_id: 
+  dependent_on: ''
 - id: 47
   key: biomass
   section: supply
@@ -350,6 +388,7 @@
   tab_id: 3
   position: 8
   parent_id: 
+  dependent_on: ''
 - id: 48
   key: data_export
   section: data
@@ -359,6 +398,7 @@
   tab_id: 6
   position: 2
   parent_id: 
+  dependent_on: ''
 - id: 49
   key: heat_buffer_technologies
   section: costs
@@ -368,6 +408,7 @@
   tab_id: 
   position: 14
   parent_id: 
+  dependent_on: ''
 - id: 50
   key: transport_international_transport
   section: ''
@@ -377,6 +418,7 @@
   tab_id: 2
   position: 3
   parent_id: 3
+  dependent_on: ''
 - id: 51
   key: transport_passenger_transport
   section: ''
@@ -386,6 +428,7 @@
   tab_id: 2
   position: 1
   parent_id: 3
+  dependent_on: ''
 - id: 52
   key: transport_freight_transport
   section: ''
@@ -395,6 +438,7 @@
   tab_id: 2
   position: 2
   parent_id: 3
+  dependent_on: ''
 - id: 53
   key: flexibility_storage
   section: ''
@@ -404,6 +448,7 @@
   tab_id: 5
   position: 1
   parent_id: 39
+  dependent_on: ''
 - id: 54
   key: flexibility_conversion
   section: ''
@@ -413,6 +458,7 @@
   tab_id: 5
   position: 2
   parent_id: 39
+  dependent_on: ''
 - id: 55
   key: flexibility_net_load
   section: ''
@@ -422,6 +468,7 @@
   tab_id: 5
   position: 3
   parent_id: 
+  dependent_on: ''
 - id: 56
   key: electricity_import_costs
   section: ''
@@ -431,6 +478,7 @@
   tab_id: 4
   position: 5
   parent_id: 
+  dependent_on: ''
 - id: 57
   key: data_visuals
   section: data
@@ -440,6 +488,7 @@
   tab_id: 6
   position: 1
   parent_id: 
+  dependent_on: ''
 - id: 58
   key: costs_hydrogen
   section: ''
@@ -449,6 +498,7 @@
   tab_id: 4
   position: 5
   parent_id: 
+  dependent_on: ''
 - id: 59
   key: introduction
   section: ''
@@ -458,6 +508,7 @@
   tab_id: 1
   position: 1
   parent_id: 
+  dependent_on: ''
 - id: 60
   key: flexibility_weather
   section: ''
@@ -467,6 +518,7 @@
   tab_id: 5
   position: 4
   parent_id: 
+  dependent_on: ''
 - id: 61
   key: wacc
   section: ''
@@ -476,6 +528,7 @@
   tab_id: 4
   position: 16
   parent_id: 
+  dependent_on: ''
 - id: 62
   key: heat_merit
   section: ''
@@ -485,3 +538,4 @@
   tab_id: 3
   position: 1
   parent_id: 24
+  dependent_on: ''

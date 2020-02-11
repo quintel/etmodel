@@ -15,10 +15,9 @@ require 'ymodel'
 # sidebar of the scenario section of the application. i.e. Demand, Supply,
 # Flexibility.
 class Tab < YModel::Base
-  include AreaDependent
+  include AreaDependent::YModel
 
   has_many :sidebar_items
-  has_one :area_dependency, as: :dependable
 
   # Returns all Tabs intended for display to ordinary users.
   def self.frontend

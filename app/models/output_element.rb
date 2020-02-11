@@ -43,7 +43,7 @@ class OutputElement < ActiveRecord::Base
     import_export
   ].freeze
 
-  include AreaDependent
+  include AreaDependent::ActiveRecord
 
   has_many :output_element_series, ->{ order(:order_by) }, dependent: :destroy
   belongs_to :output_element_type

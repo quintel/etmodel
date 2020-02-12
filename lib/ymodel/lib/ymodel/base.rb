@@ -5,7 +5,8 @@ require 'ymodel/loadable'
 require 'ymodel/trigger'
 
 module YModel
-  # This is used to wrap a YAML file in a similar manner to ActiveRecord wrapping a database.
+  # This is used to wrap a YAML file in a similar manner to ActiveRecord
+  # wrapping a database.
   class Base
     extend YModel::Relatable
     extend YModel::Loadable
@@ -38,7 +39,7 @@ module YModel
       def find_by(attributes)
         sanitized = sanitize_attributes(attributes)
         all.each do |record|
-          return record if sanitized.all? { |key, value| record.send(key) == value }
+          return record if sanitized.all? { |k, v| record.send(k) == v }
         end
       end
 

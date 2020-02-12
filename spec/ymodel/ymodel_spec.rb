@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 require 'rails_helper'
 # This file shouldn't actually exist within the rails app since it tests the
 # gem ''. It does exist here for two reasons:
@@ -12,6 +11,9 @@ require 'rails_helper'
 class YModel::Concrete < YModel::Base
   source_file 'spec/fixtures/ymodel/concrete.yml'
 
+  # This class var is used in the intended way, to save state over multiple
+  # instances.
+  # rubocop:disable Style/ClassVars
   def spy
     @@spy ||= nil
   end
@@ -23,6 +25,7 @@ class YModel::Concrete < YModel::Base
   def unset_spy
     @@spy = nil
   end
+  # rubocop:enable Style/ClassVars
 end
 
 class YModel::InvalidConcrete < YModel::Base
@@ -45,6 +48,7 @@ describe YModel::Base do
 
   describe '#new' do
     subject { YModel::Concrete.new }
+
     it { is_expected.to respond_to :key }
     it { is_expected.to respond_to :id }
     it { is_expected.to respond_to :nl_vimeo_id }
@@ -52,8 +56,8 @@ describe YModel::Base do
     it { is_expected.to respond_to :position }
 
     it "doesn't set attributes that aren't present in the schema" do
-      instance = YModel::Concrete.new(key: "1", foo: "bar")
-      expect(instance.instance_variable_get("@foo")).to be nil
+      instance = YModel::Concrete.new(key: '1', foo: 'bar')
+      expect(instance.instance_variable_get('@foo')).to be nil
     end
   end
 
@@ -96,16 +100,15 @@ describe YModel::Base do
     it { is_expected.to eq [YModel::Concrete.find(1)] }
 
     describe 'with malicious params' do
-      subject  do
+      subject do
         YModel::Concrete.where(key: 'overview',
                                en_vimeo_id: '',
                                nillable: nil,
                                set_spy: true)
       end
 
-      it 'only "sends" whitelabeled schema attributes' do
-        expect { subject }
-          .not_to change { YModel::Concrete.all.first.spy }
+      it 'doesn\'t send non-whitelabeled schema attributes' do
+        expect { subject }.not_to(change { YModel::Concrete.all.first.spy })
       end
     end
   end
@@ -213,12 +216,12 @@ describe YModel::Base do
   end
 
   describe '#attribute?' do
-    it "when the the attribute is included in its schema" do
-      expect(YModel::Concrete.find(1).attribute?('key')).to be_truthy
+    it 'when the the attribute is included in its schema' do
+      expect(YModel::Concrete.find(1)).to be_attribute('key')
     end
 
-    it "when the attribute is not included in its schema" do
-      expect(YModel::Concrete.find(1).attribute?('bar')).to be_falsy
+    it 'when the attribute is not included in its schema' do
+      expect(YModel::Concrete.find(1)).not_to be_attribute('bar')
     end
   end
 end

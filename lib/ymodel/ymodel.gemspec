@@ -1,5 +1,6 @@
+# frozen_string_literal: true
 
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'ymodel/version'
 
@@ -9,13 +10,14 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Steven Kemp']
   spec.email         = ['steven.kemp@quintel.com']
 
-  spec.description   = %q{ActiveRecord like interface for wrapping yaml data}
+  spec.description   = 'ActiveRecord like interface for wrapping yaml data'
   spec.summary       = spec.description
   spec.homepage      = 'https://www.quintel.com'
   spec.license       = 'MIT'
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
+  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the
+  # 'allowed_push_host' to allow pushing to a single host or delete this section
+  # to allow pushing to any host.
   if spec.respond_to?(:metadata)
     spec.metadata['homepage_uri'] = spec.homepage
     spec.metadata['source_code_uri'] = 'https://github.com/sfp-kemp/etmodel.'

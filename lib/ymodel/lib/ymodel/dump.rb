@@ -15,10 +15,11 @@ module YModel
 
       namespace.const_set(model, Class.new(ActiveRecord::Base))
 
-      records = model_class.all.map do |record|
-        attributes = record.attributes.stringify_keys
-        block_given? ? yield(attributes, record) : attributes
-      end
+      records =
+        model_class.all.map do |record|
+          attributes = record.attributes.stringify_keys
+          block_given? ? yield(attributes, record) : attributes
+        end
 
       File.write(file_path, records.to_yaml)
     end

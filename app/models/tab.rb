@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: tabs
@@ -28,7 +30,7 @@ class Tab < YModel::Base
 
   def allowed_sidebar_items
     sidebar_items.select(&:root?)
-                 .reject(&:area_dependent)
-                 .sort_by(&:position)
+      .reject(&:area_dependent)
+      .sort_by(&:position)
   end
 end

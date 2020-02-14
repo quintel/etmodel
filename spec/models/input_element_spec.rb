@@ -1,16 +1,20 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'support/model_with_a_position_attribute'
 
 describe InputElement do
   describe '.' do
-    subject { InputElement }
+    subject { described_class }
+
     it { is_expected.to respond_to :ordered }
     it { is_expected.to respond_to :households_heating_sliders }
   end
 
   describe '.new' do
-    subject{ InputElement.new }
+    subject { described_class.new }
     # Relations
+
     it { is_expected.to respond_to(:slide) }
     it { is_expected.to respond_to(:description) }
 
@@ -42,12 +46,13 @@ describe InputElement do
     it { is_expected.to respond_to(:url_components) }
     it { is_expected.to respond_to(:ie8_sanitize) }
     it { is_expected.to respond_to(:enum?) }
-
   end
 
   describe '.with_related_converter_like' do
-    let(:ie) { InputElement.where( related_converter: 'households_solar_pv_solar_radiation')[0] }
-    subject { InputElement.with_related_converter_like('households') }
+    subject { described_class.with_related_converter_like('households') }
+
+    let(:ie) { described_class.where(related_converter: 'households_solar_pv_solar_radiation')[0] }
+
     it { is_expected.to include ie }
   end
 
@@ -62,7 +67,7 @@ describe InputElement do
     end
 
     context 'when the input has no slide' do
-      let(:input) { InputElement.where(slide_id: nil).first }
+      let(:input) { described_class.where(slide_id: nil).first }
 
       it 'returns an empty array' do
         expect(input.url_components).to eq([])

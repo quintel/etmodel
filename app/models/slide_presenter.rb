@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Presents a simplfied version of a slide and its sliders as JSON.
 class SlidePresenter
   # Public: Presents a single Slide as a JSON-compatible Hash.
@@ -8,11 +10,12 @@ class SlidePresenter
   # Public: Presents multiple Slides as an array.
   def self.collection(slides)
     # Sort by tab > sidebar_item > slide
-    slides = slides.sort_by do |slide|
-      [ slide.sidebar_item.tab.position,
-        slide.sidebar_item.position,
-        slide.position ]
-    end
+    slides =
+      slides.sort_by do |slide|
+        [slide.sidebar_item.tab.position,
+         slide.sidebar_item.position,
+         slide.position]
+      end
 
     slides.map { |slide| present(slide) }
   end
@@ -28,9 +31,9 @@ class SlidePresenter
   private
 
   def path
-    [ translate_item(:tabs, @slide.sidebar_item.tab),
-      translate_item(:sidebar_items, @slide.sidebar_item),
-      translate_item(:slides, @slide) ]
+    [translate_item(:tabs, @slide.sidebar_item.tab),
+     translate_item(:sidebar_items, @slide.sidebar_item),
+     translate_item(:slides, @slide)]
   end
 
   def inputs
@@ -48,7 +51,7 @@ class SlidePresenter
   # Returns the name of the item. If the translation contains both a long
   # and short name, the short version is returned.
   def translate_item(namespace, item)
-    name = I18n.t("#{ namespace }.#{ item.key }")
+    name = I18n.t("#{namespace}.#{item.key}")
     name.is_a?(Hash) ? name[:short_name] : name
   end
 end

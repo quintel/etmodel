@@ -1,13 +1,16 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'support/model_with_a_position_attribute'
 
 describe SidebarItem do
-  subject { SidebarItem }
+  subject { described_class }
+
   it { is_expected.to respond_to(:ordered) }
   it { is_expected.to respond_to(:gquery_contains) }
 
   describe '.new' do
-    subject { SidebarItem.new }
+    subject { described_class.new }
 
     # Relations
     it { is_expected.to respond_to(:area_dependent) }

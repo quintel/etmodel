@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: input_elements
@@ -18,6 +20,7 @@
 #  position          :integer
 #
 
+# Model representing a slider in the front-end. Settings get stored in scenarios
 class InputElement < YModel::Base
   include AreaDependent::YModel
 
@@ -36,8 +39,8 @@ class InputElement < YModel::Base
     end
 
     def with_related_converter_like(converter_name)
-      all.reject{ |ie| ie.related_converter.nil? }
-         .select{ |ie| ie.related_converter.include?(converter_name || '')}
+      all.reject { |ie| ie.related_converter.nil? }
+        .select { |ie| ie.related_converter.include?(converter_name || '') }
     end
   end
 
@@ -91,7 +94,7 @@ class InputElement < YModel::Base
     "#{key} | #{unit}"
   end
 
-  def has_flash_movie
+  def has_flash_movie # rubocop:disable Naming/PredicateName
     description.try :embeds_player?
   end
 
@@ -120,9 +123,10 @@ class InputElement < YModel::Base
   end
 
   # Silly IE8 doesn't understand &apos; entity which is added in views
-  def ie8_sanitize(s)
-    return '' if s.blank?
-    s.gsub("'", '&#39;').html_safe
+  def ie8_sanitize(string)
+    return '' if string.blank?
+
+    string.gsub("'", '&#39;').html_safe
   end
 
   def enum?

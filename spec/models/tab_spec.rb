@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe Tab do
   describe '.' do
-    subject { Tab }
+    subject { described_class }
+
     it { is_expected.to respond_to :all }
     it { is_expected.to respond_to :where }
     it { is_expected.to respond_to :find }
@@ -11,7 +14,8 @@ describe Tab do
     it { is_expected.to respond_to :frontend }
   end
 
-  subject { Tab.new }
+  subject { described_class.new }
+
   it { is_expected.to respond_to :allowed_sidebar_items }
   it { is_expected.to respond_to :sidebar_items }
   it { is_expected.to be_a AreaDependent::YModel }

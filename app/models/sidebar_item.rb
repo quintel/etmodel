@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: sidebar_items
@@ -58,6 +60,6 @@ class SidebarItem < YModel::Base
 
   def visible_children
     children.reject(&:area_dependent)
-            .sort_by(&:position)
+      .sort_by(&:position)
   end
 end

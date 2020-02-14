@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe ReportsController, vcr: true do
@@ -5,31 +7,31 @@ describe ReportsController, vcr: true do
 
   describe '#show' do
     context 'without an active scenario' do
+      subject { response }
+
       before { get(:show, params: { id: 'sample' }) }
 
       it 'starts a new scenario' do
         expect(response.body).to include('"api_session_id":null')
       end
 
-      it 'renders the report' do
-        expect(response).to be_successful
-        expect(response).to render_template(:show)
-      end
+      it { is_expected.to be_successful }
+      it { is_expected.to render_template(:show) }
     end
 
     context 'with an active scenario' do
-      before { session[:setting] = Setting.new(api_session_id: 648_695) }
+      subject { response }
 
-      it 'uses the scenario' do
+      before do
+        session[:setting] = Setting.new(api_session_id: 648_695)
         get :show, params: { id: 'sample' }
-        expect(response.body).to include('"api_session_id":648695')
       end
 
-      it 'renders the report' do
-        get :show, params: { id: 'sample' }
+      it { is_expected.to be_successful }
+      it { is_expected.to render_template(:show) }
 
-        expect(response).to be_successful
-        expect(response).to render_template(:show)
+      it 'uses the scenario' do
+        expect(subject.body).to include('"api_session_id":648695')
       end
 
       it 'renders 404 when the specified report does not exist' do
@@ -58,27 +60,25 @@ describe ReportsController, vcr: true do
     end
 
     context 'with an active country scenario' do
-      before { session[:setting] = Setting.new(api_session_id: 648_695) }
-
-      before { get(:auto) }
-
-      it 'redirects to the "main" report' do
-        expect(response).to redirect_to(report_url('main'))
+      subject do
+        session[:setting] = Setting.new(api_session_id: 648_695)
+        get(:auto)
+        response
       end
+
+      it { is_expected.to redirect_to report_url('main') }
     end
 
     context 'with an active non-country scenario' do
-      before do
-        session[:setting] = Setting.new(
-          api_session_id: 956_091,
-          area_code: 'PV22_drenthe'
-        )
+      subject do
+        session[:setting] = Setting.new(api_session_id: 956_091,
+                                        area_code: 'PV22_drenthe')
+        get(:auto)
+        subject
       end
 
-      before { get(:auto) }
-
       it 'redirects to the "regional" report' do
-        expect(response).to redirect_to(report_url('regional'))
+        it { is_expected.to redirect_to(report_url('regional')) }
       end
     end
   end

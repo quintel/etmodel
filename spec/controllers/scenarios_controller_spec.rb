@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe ScenariosController, vcr: true do
@@ -11,16 +13,16 @@ describe ScenariosController, vcr: true do
 
   let(:user) { FactoryBot.create :user }
   let(:admin) { FactoryBot.create :admin }
-  let!(:user_scenario) { FactoryBot.create :saved_scenario, user: user, id: 648695 }
-  let!(:admin_scenario) { FactoryBot.create :saved_scenario, user: admin, id: 648696 }
+  let!(:user_scenario) { FactoryBot.create :saved_scenario, user: user, id: 648_695 }
+  let!(:admin_scenario) { FactoryBot.create :saved_scenario, user: admin, id: 648_696 }
 
   let(:tab) { Tab.find_by_key(Interface::DEFAULT_TAB) }
   let(:sidebar_item) { tab.sidebar_items.first }
   let(:second_sidebar_item) { second_tab.sidebar_items.second }
 
-  context "a guest" do
-    describe "#index" do
-      it "should be redirected" do
+  context 'a guest' do
+    describe '#index' do
+      it 'is redirected' do
         get :index
         expect(response).to redirect_to(login_url)
       end
@@ -58,32 +60,32 @@ describe ScenariosController, vcr: true do
     end
   end
 
-  context "a regular user" do
+  context 'a regular user' do
     before do
       login_as user
     end
 
-    describe "#index" do
-      it "should get a list of his saved scenarios" do
+    describe '#index' do
+      it 'gets a list of his saved scenarios' do
         get :index
         expect(response).to be_successful
         expect(assigns(:saved_scenarios)).to eq([user_scenario])
       end
     end
 
-    context "with an active scenario" do
+    context 'with an active scenario' do
       before do
-        session[:setting] = Setting.new(api_session_id: 12345)
+        session[:setting] = Setting.new(api_session_id: 12_345)
       end
 
-      describe "#new" do
-        it "should show a form to save the scenario" do
+      describe '#new' do
+        it 'shows a form to save the scenario' do
           get :new
           expect(response).to be_successful
-          expect(assigns(:saved_scenario).api_session_id).to eq(12345)
+          expect(assigns(:saved_scenario).api_session_id).to eq(12_345)
         end
 
-        it "redirects to root" do
+        it 'redirects to root' do
           session[:setting] = Setting.default
 
           get :new
@@ -92,23 +94,23 @@ describe ScenariosController, vcr: true do
         end
       end
 
-      describe "#create" do
-        it "should save a scenario" do
+      describe '#create' do
+        it 'saves a scenario' do
           allow(Api::Scenario).to receive(:create).and_return scenario_mock
-          expect {
-            post :create, params: { saved_scenario: { api_session_id: 12345 } }
+          expect do
+            post :create, params: { saved_scenario: { api_session_id: 12_345 } }
             expect(response).to redirect_to(scenarios_path)
-          }.to change(SavedScenario, :count)
+          end.to change(SavedScenario, :count)
         end
 
-        it "does not save if no scenario is in progress" do
+        it 'does not save if no scenario is in progress' do
           expect(Api::Scenario).not_to receive(:create)
 
-          expect {
+          expect do
             post :create, params: { saved_scenario: { api_session_id: '' } }
-          }.to_not change(SavedScenario, :count)
+          end.not_to change(SavedScenario, :count)
 
-          expect(response).to_not be_successful
+          expect(response).not_to be_successful
           expect(response).to render_template(:cannot_save_without_id)
         end
       end
@@ -251,16 +253,16 @@ describe ScenariosController, vcr: true do
         end
       end
 
-      describe "#reset" do
-        it "should reset a scenario" do
+      describe '#reset' do
+        it 'resets a scenario' do
           get :reset
           expect(session[:setting].api_session_id).to be_nil
           expect(response).to be_redirect
         end
       end
 
-      describe "#compare" do
-        it "should compare them" do
+      describe '#compare' do
+        it 'compares them' do
           s1 = FactoryBot.create :saved_scenario
           s2 = FactoryBot.create :saved_scenario
           get :compare, params: { scenario_ids: [s1.scenario_id, s2.scenario_id] }
@@ -269,16 +271,16 @@ describe ScenariosController, vcr: true do
         end
 
         describe 'with a "combine" option' do
-          it 'should redirect to Local vs. Global' do
-            get :compare, params: { scenario_ids: %w(1 2), combine: '1' }
+          it 'redirects to Local vs. Global' do
+            get :compare, params: { scenario_ids: %w[1 2], combine: '1' }
 
             expect(response).to redirect_to(
-              local_global_scenarios_url("1,2")
+              local_global_scenarios_url('1,2')
             )
           end
 
           it 'omits invalid IDs' do
-            get :compare, params: { scenario_ids: %w(1 no), combine: '1' }
+            get :compare, params: { scenario_ids: %w[1 no], combine: '1' }
 
             expect(response).to redirect_to(
               local_global_scenarios_url('1')
@@ -299,8 +301,8 @@ describe ScenariosController, vcr: true do
         end
       end
 
-      describe "#weighted_merge" do
-        it "should compare them" do
+      describe '#weighted_merge' do
+        it 'compares them' do
           post :perform_weighted_merge, params: {
             'merge_scenarios' => { '925863' => 1.0, '925864' => 2.0 }
           }
@@ -309,8 +311,8 @@ describe ScenariosController, vcr: true do
         end
       end
 
-      describe "#merge" do
-        it "should create a remote scenario with the average values" do
+      describe '#merge' do
+        it 'creates a remote scenario with the average values' do
           post :merge, params: {
             inputs: 'average',
             inputs_avg: { households_number_of_inhabitants: 1.0 }.to_yaml,
@@ -323,13 +325,13 @@ describe ScenariosController, vcr: true do
     end
   end
 
-  context "an admin" do
+  context 'an admin' do
     before do
       login_as admin
     end
 
-    describe "#index" do
-      it "should get a list of all saved scenarios" do
+    describe '#index' do
+      it 'gets a list of all saved scenarios' do
         get :index
         expect(response).to be_successful
         expect(assigns(:saved_scenarios)).to include user_scenario
@@ -338,20 +340,20 @@ describe ScenariosController, vcr: true do
     end
   end
 
-  context "a teacher" do
-    before(:each) do
+  context 'a teacher' do
+    before do
       login_as user
-      student= FactoryBot.create(:user, teacher_email: user.email)
+      student = FactoryBot.create(:user, teacher_email: user.email)
       @student_scenario = FactoryBot.create(:saved_scenario, user: student)
     end
 
-    describe "#index" do
+    describe '#index' do
       it "gets a list of teacher's and students' scenarios" do
         get :index
         expect(response).to be_successful
-        expect(assigns(:saved_scenarios)).to_not include(admin_scenario)
+        expect(assigns(:saved_scenarios)).not_to include(admin_scenario)
 
-        expect(assigns(:saved_scenarios).length).to eql(2)
+        expect(assigns(:saved_scenarios).length).to be(2)
 
         expect(assigns(:saved_scenarios)).to include(user_scenario)
         expect(assigns(:saved_scenarios)).to include(@student_scenario)
@@ -362,16 +364,16 @@ describe ScenariosController, vcr: true do
   describe 'PUT update' do
     context 'with valid params' do
       it 'changes the scenario_id of the saved scenario' do
-          session[:setting] = Setting.new(area_code: 'nl', api_session_id: 12345)
+        session[:setting] = Setting.new(area_code: 'nl', api_session_id: 12_345)
         expect(UpdateSavedScenario).to receive(:call)
-          .with(user_scenario, 12345)
-          .and_return(ServiceResult.success("123"))
-        put :update, params: {id: user_scenario.id, scenario_id: 12345 }
+          .with(user_scenario, 12_345)
+          .and_return(ServiceResult.success('123'))
+        put :update, params: { id: user_scenario.id, scenario_id: 12_345 }
       end
     end
 
-    it "redirects to root when no api_session_id exists in the session" do
-      put :update, params: {id: user_scenario.id, scenario_id: 12345 }
+    it 'redirects to root when no api_session_id exists in the session' do
+      put :update, params: { id: user_scenario.id, scenario_id: 12_345 }
       expect(response).to be_redirect
     end
   end

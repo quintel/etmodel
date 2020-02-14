@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Represents the interface of the application.
 class Interface
   DEFAULT_TAB = 'overview'
 
@@ -36,7 +37,13 @@ class Interface
     end
   end
 
-  def initialize(tab = nil, sidebar = nil, slide = nil, variant = StandardVariant.new)
+  def initialize(
+    tab = nil,
+    sidebar = nil,
+    slide = nil,
+    variant = StandardVariant.new
+  )
+
     @tab = tab || DEFAULT_TAB
     @sidebar = sidebar
     @slide = slide
@@ -58,24 +65,25 @@ class Interface
 
   def sidebar_items
     @sidebar_items ||= current_tab.sidebar_items
-                                  .sort_by(&:position)
-                                  .reject(&:area_dependent)
+      .sort_by(&:position)
+      .reject(&:area_dependent)
   end
 
   def current_sidebar_item
     @current_sidebar_item ||=
-      (sidebar_items.find{|s| s.key == @sidebar} || sidebar_items.first)
+      (sidebar_items.find { |s| s.key == @sidebar } || sidebar_items.first)
   end
 
   def slides
     current_sidebar_item.slides
-                        .sort_by(&:position)
-                        .reject(&:area_dependent)
+      .sort_by(&:position)
+      .reject(&:area_dependent)
   end
 
   def current_slide
     @current_slide ||=
-      (current_sidebar_item.slides.find{|s| s.short_name == @slide} || slides.first)
+      current_sidebar_item.slides.find { |s| s.short_name == @slide } ||
+      slides.first
   end
 
   def default_chart
@@ -87,12 +95,16 @@ class Interface
   end
 
   def tutorial_movie_path
-    Rails.application.routes.url_helpers.tutorial_path tab: current_tab.key,
+    Rails.application.routes.url_helpers.tutorial_path(
+      tab: current_tab.key,
       sidebar: current_sidebar_item.key
+    )
   end
 
   def tab_info_path
-    Rails.application.routes.url_helpers.tab_info_path ctrl: current_tab.key,
+    Rails.application.routes.url_helpers.tab_info_path(
+      ctrl: current_tab.key,
       act: current_sidebar_item.key
+    )
   end
 end

@@ -1,16 +1,19 @@
+# frozen_string_literal: true
+
+# The controller that handles calls to the saved_scenario entity
 class SavedScenariosController < ApplicationController
   before_action :ensure_valid_browser
   before_action :assign_scenario, only: %i[show load]
 
   def show
     if @scenario.created_at && @scenario.days_old > 180
-      if SavedScenario.where('user_id = ? AND scenario_id = ?',
-                             current_user,
-                             @scenario.id).empty?
-        @warning = t('scenario.preset_warning')
-      else
-        @warning = t('scenario.warning')
-      end
+      warning_type =
+        if scenario_by_current_user?(@scenario)
+          'preset_warning'
+        else
+          'warning'
+        end
+      @warning = t("scenario.#{warning_type}")
     end
 
     respond_to do |format|
@@ -25,21 +28,26 @@ class SavedScenariosController < ApplicationController
     # Setting an active_saved_scenario_id enables saving a scenario. We only
     # do this for the owner of a scenario.
     if @saved_scenario.user_id == current_user&.id
-      Current.setting = Setting.load_from_scenario(@scenario,
-                          active_saved_scenario_id: @saved_scenario.id)
+      Current.setting = Setting
+        .load_from_scenario(@scenario,
+                            active_saved_scenario_id: @saved_scenario.id)
     else
       Current.setting = Setting.load_from_scenario @scenario
     end
 
-    if Current.setting.scaling
-      scenario_attrs.merge!(scale: Current.setting.scaling)
-    end
+    scenario_attrs[:scale] = Current.setting.scaling if Current.setting.scaling
     new_scenario = Api::Scenario.create(scenario: { scenario: scenario_attrs })
     Current.setting.api_session_id = new_scenario.id
     redirect_to play_path
   end
 
   private
+
+  def scenario_by_current_user?(scenario)
+    SavedScenario.exists?('user_id = ? AND scenario_id = ?',
+                          current_user,
+                          scenario.id)
+  end
 
   def assign_scenario
     @saved_scenario = SavedScenario.find(params[:id])

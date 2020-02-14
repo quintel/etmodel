@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# A controller for the retrieving the input_element resource.
 class InputElementsController < ApplicationController
   # Responds with a JSON array containing the name and key of each slide which
   # has at least one slider, and belongs to a sidebar item and tab. The slide
@@ -10,9 +11,10 @@ class InputElementsController < ApplicationController
     slides = Slide.ordered
 
     # Include only sliders which are visible in the UI.
-    slides = slides.select do |slide|
-      slide.sidebar_item&.tab_id && slide.sliders.any?
-    end
+    slides =
+      slides.select do |slide|
+        slide.sidebar_item&.tab_id && slide.sliders.any?
+      end
 
     render(json: SlidePresenter.collection(slides))
   end

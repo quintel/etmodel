@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
 require 'active_resource'
-
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -24,7 +25,7 @@ module Etm
     config.active_support.deprecation = :log
     config.time_zone = 'Amsterdam'
 
-    config.encoding = "utf-8"
+    config.encoding = 'utf-8'
 
     config.i18n.available_locales = %i[en nl]
 
@@ -33,9 +34,9 @@ module Etm
       g.test_framework  :rspec, fixture: false
     end
 
-    #custom 404 and 500 page
-    config.exceptions_app = self.routes
+    # custom 404 and 500 page
+    config.exceptions_app = routes
   end
 
-  Date::DATE_FORMATS[:default] = "%d-%m-%Y"
+  Date::DATE_FORMATS[:default] = '%d-%m-%Y'
 end

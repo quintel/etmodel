@@ -1,17 +1,21 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'support/model_with_a_position_attribute'
 
 describe Slide do
   describe '.' do
-    subject { Slide }
+    subject { described_class }
+
     it { is_expected.to respond_to :ordered }
     it { is_expected.to respond_to :controller }
     it { is_expected.to respond_to :visible }
   end
 
   describe '.new' do
-    subject{ Slide.new }
+    subject { described_class.new }
     # Relations
+
     it { is_expected.to respond_to(:description) }
     it { is_expected.to respond_to(:sliders) }
     it { is_expected.to respond_to(:output_element) }
@@ -47,7 +51,7 @@ describe Slide do
 
   describe '#url_components' do
     context 'when the slide has a sidebar item and tab' do
-      let(:slide) { Slide.all.first }
+      let(:slide) { described_class.all.first }
 
       it 'returns the tab key first' do
         expect(slide.url_components[0]).to eq(slide.sidebar_item.tab.key)
@@ -63,7 +67,7 @@ describe Slide do
     end
 
     context 'when the slide has no sidebar item' do
-      let(:slide) { Slide.where(sidebar_item_id: nil).first }
+      let(:slide) { described_class.where(sidebar_item_id: nil).first }
 
       it 'returns an empty array' do
         expect(slide.url_components).to eq([])
@@ -72,7 +76,7 @@ describe Slide do
 
     context 'when the sidebar item has no tab' do
       let(:slide) do
-        Slide.new(sidebar_item: SidebarItem.new(tab_id: nil))
+        described_class.new(sidebar_item: SidebarItem.new(tab_id: nil))
       end
 
       it 'returns an empty array' do

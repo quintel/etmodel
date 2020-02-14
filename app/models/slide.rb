@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: slides
@@ -27,7 +29,6 @@ class Slide < YModel::Base
   belongs_to :output_element # default chart
   belongs_to :alt_output_element, class_name: 'OutputElement' # secondary chart
 
-
   class << self
     def controller(controller)
       where(controller_name: controller)
@@ -38,7 +39,7 @@ class Slide < YModel::Base
     end
 
     def visible
-      all.reject{ |s| s.position.nil? }
+      all.reject { |s| s.position.nil? }
     end
   end
 
@@ -58,7 +59,7 @@ class Slide < YModel::Base
   # Some sliders cannot be used on some areas. Let's filter them out
   def safe_input_elements
     @safe_input_elements ||= sliders.reject(&:area_dependent)
-                                    .sort_by(&:position)
+      .sort_by(&:position)
   end
 
   # Complementary to grouped_input_elements

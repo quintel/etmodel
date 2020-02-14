@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
+# Controller that handles calls related to the user entity
 class UsersController < ApplicationController
   layout 'static_page'
-  layout 'form_only', only: %w( new create )
+  layout 'form_only', only: %w[new create]
 
-  before_action :require_user, except: %i( new create unsubscribe )
+  before_action :require_user, except: %i[new create unsubscribe]
 
   def new
     @user = User.new
@@ -20,7 +23,10 @@ class UsersController < ApplicationController
     @user = User.new(users_parameters)
 
     if @user.save
-      redirect_to root_path, notice: I18n.t("flash.register")
+      notice = { notice: I18n.t('flash.register') }
+      redirect_to(session[:return_to], notice) && return if session[:return_to]
+
+      redirect_to root_path, notice
     else
       render :new
     end
@@ -32,7 +38,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     unless @user.md5_hash == params[:h]
-      render plain: 'invalid link. Cannot unsubscribe.' and return
+      render(plain: 'invalid link. Cannot unsubscribe.') && return
     end
 
     @allow_news_changed = @user.allow_news == true
@@ -44,15 +50,13 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(users_parameters)
-      redirect_to edit_user_path, notice: I18n.t("flash.edit_profile")
+      redirect_to edit_user_path, notice: I18n.t('flash.edit_profile')
     else
       render :edit
     end
-
   end
 
-  def confirm_delete
-  end
+  def confirm_delete; end
 
   def destroy
     confirmation = UserSession.new(
@@ -60,7 +64,7 @@ class UsersController < ApplicationController
       password: params[:password]
     )
 
-    if !confirmation.valid?
+    unless confirmation.valid?
       @confirm_error = true
       render :confirm_delete
 
@@ -75,6 +79,7 @@ class UsersController < ApplicationController
 
   #######
   private
+
   #######
 
   def require_user

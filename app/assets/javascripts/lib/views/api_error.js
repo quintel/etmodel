@@ -10,7 +10,7 @@
       return [string];
     }
 
-    return [string.slice(0, index + 1), string.slice(index)];
+    return [string.slice(0, index), string.slice(index + 1)];
   }
 
   /**
@@ -28,7 +28,13 @@
 
     render: function() {
       var message = this.options.message;
-      var split = splitAtFirst(message, '\n');
+      var split;
+
+      if (message.indexOf('|') !== -1) {
+        split = splitAtFirst(message, '|');
+      } else {
+        split = splitAtFirst(message, '\n');
+      }
 
       if (split[0].match(/\/(present|future)/)) {
         var title = split[0].trim().split('/');

@@ -20,7 +20,10 @@ class UsersController < ApplicationController
     @user = User.new(users_parameters)
 
     if @user.save
-      redirect_to root_path, notice: I18n.t("flash.register")
+      notice = {notice: I18n.t("flash.register")}
+      redirect_to session[:return_to], notice and return if session[:return_to]
+
+      redirect_to root_path, notice
     else
       render :new
     end

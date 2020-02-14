@@ -44,23 +44,13 @@
           = link_to t('header.save_and_enter_testing_ground'), testing_grounds_path, target: "_blank", method: :post
       %li.scenario_option
         = link_to t('header.scale_scenario'), scaled_path
-      %li.sep
-
-      - if Current.setting.allow_fce?
-        %li.scenario_option
-          = check_box :settings, :use_fce, :checked => Current.setting.use_fce
-          %label{:for => "settings_use_fce"}= t('fce.check')
-
-      - if Current.setting.allow_merit_order?
-        %li.scenario_option
-          = check_box :settings, :use_merit_order, :checked => Current.setting.use_merit_order
-          %label{:for => "settings_use_merit_order"}= t('header.merit_order_check')
 
       - if params[:debug]
-        %li
-          %form{:action => 'http://beta.et-engine.com/mechanical_turk/factory', :method => 'post', :target => '_blank', :id => 'turkit'}
-            %input#last_api_response{:type => 'hidden', :name => 'json_data'}
-            = submit_tag "Turk it"
+        %li.sep
+          %li
+            %form{:action => 'http://beta.et-engine.com/mechanical_turk/factory', :method => 'post', :target => '_blank', :id => 'turkit'}
+              %input#last_api_response{:type => 'hidden', :name => 'json_data'}
+              = submit_tag "Turk it"
 
     - if current_user&.admin?
       %li.admin.sep

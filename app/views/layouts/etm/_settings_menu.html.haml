@@ -19,12 +19,7 @@
       #{t "header.current_language"}:
       = language_select
 
-    - if current_user
-      %li
-        = link_to t("header.my_profile"), edit_user_path
-
     %li
-      %a.load{:href => scenarios_path}= t("header.load_scenario")
       - if has_active_scenario?
         - if save_scenario_enabled?
           =link_to t('header.save_scenario'),

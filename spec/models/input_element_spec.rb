@@ -51,7 +51,10 @@ describe InputElement do
   describe '.with_related_converter_like' do
     subject { described_class.with_related_converter_like('households') }
 
-    let(:ie) { described_class.where(related_converter: 'households_solar_pv_solar_radiation')[0] }
+    let(:ie) do
+      described_class
+        .where(related_converter: 'households_solar_pv_solar_radiation')[0]
+    end
 
     it { is_expected.to include ie }
   end

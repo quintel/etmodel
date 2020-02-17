@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:disable RSpec/VerifiedDoubles
 def ete_scenario_mock
   mock = double('api_scenario')
 
@@ -22,3 +23,4 @@ def ete_scenario_mock
 
   mock
 end
+# rubocop:enable RSpec/VerifiedDoubles

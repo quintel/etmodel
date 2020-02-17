@@ -5,22 +5,27 @@ require 'rails_helper'
 describe ScenariosController, vcr: true do
   render_views
 
-  let(:scenario_mock) { ete_scenario_mock }
+  # Interface elements
+  let(:tab) { Tab.find_by_key(Interface::DEFAULT_TAB) }
   let(:second_tab) { Tab.all.second }
+  let(:sidebar_item) { tab.sidebar_items.first }
+  let(:second_sidebar_item) { second_tab.sidebar_items.second }
+  # Scenarios
+  let(:scenario_mock) { ete_scenario_mock }
+  let(:user) { FactoryBot.create :user }
+  let(:admin) { FactoryBot.create :admin }
+  let!(:user_scenario) do
+    FactoryBot.create :saved_scenario, user: user, id: 648_695
+  end
+  let!(:admin_scenario) do
+    FactoryBot.create :saved_scenario, user: admin, id: 648_696
+  end
+
   before do
     allow(Api::Scenario).to receive(:find).and_return scenario_mock
   end
 
-  let(:user) { FactoryBot.create :user }
-  let(:admin) { FactoryBot.create :admin }
-  let!(:user_scenario) { FactoryBot.create :saved_scenario, user: user, id: 648_695 }
-  let!(:admin_scenario) { FactoryBot.create :saved_scenario, user: admin, id: 648_696 }
-
-  let(:tab) { Tab.find_by_key(Interface::DEFAULT_TAB) }
-  let(:sidebar_item) { tab.sidebar_items.first }
-  let(:second_sidebar_item) { second_tab.sidebar_items.second }
-
-  context 'a guest' do
+  context 'with a guest' do
     describe '#index' do
       it 'is redirected' do
         get :index
@@ -60,81 +65,104 @@ describe ScenariosController, vcr: true do
     end
   end
 
-  context 'a regular user' do
+  context 'with a registered user' do
     before do
       login_as user
     end
 
     describe '#index' do
-      it 'gets a list of his saved scenarios' do
+      before do
         get :index
-        expect(response).to be_successful
+      end
+
+      it { expect(response).to be_successful }
+      it 'gets the users saved scenario' do
         expect(assigns(:saved_scenarios)).to eq([user_scenario])
       end
     end
 
+    # rubocop:disable RSpec/NestedGroups
+    # TODO: Refactor thi
     context 'with an active scenario' do
       before do
         session[:setting] = Setting.new(api_session_id: 12_345)
       end
 
       describe '#new' do
-        it 'shows a form to save the scenario' do
+        subject do
           get :new
-          expect(response).to be_successful
-          expect(assigns(:saved_scenario).api_session_id).to eq(12_345)
+          response
         end
 
+        it { is_expected.to be_successful }
+        it 'shows a form to save the scenario' do
+          subject
+          expect(assigns(:saved_scenario).api_session_id).to eq(12_345)
+        end
         it 'redirects to root' do
           session[:setting] = Setting.default
-
-          get :new
-
-          expect(response).to be_redirect
+          expect(subject).to be_redirect
         end
       end
 
       describe '#create' do
-        it 'saves a scenario' do
-          allow(Api::Scenario).to receive(:create).and_return scenario_mock
-          expect do
+        context 'with a current scenario' do
+          subject do
+            allow(Api::Scenario).to receive(:create).and_return scenario_mock
             post :create, params: { saved_scenario: { api_session_id: 12_345 } }
-            expect(response).to redirect_to(scenarios_path)
-          end.to change(SavedScenario, :count)
+            response
+          end
+
+          it { is_expected.to redirect_to(scenarios_path) }
+          it 'saves a scenario' do
+            expect { subject }.to change(SavedScenario, :count)
+          end
         end
 
-        it 'does not save if no scenario is in progress' do
-          expect(Api::Scenario).not_to receive(:create)
-
-          expect do
+        context 'with no current scenario' do
+          subject do
+            allow(Api::Scenario).to receive(:create)
             post :create, params: { saved_scenario: { api_session_id: '' } }
-          end.not_to change(SavedScenario, :count)
+            response
+          end
 
-          expect(response).not_to be_successful
-          expect(response).to render_template(:cannot_save_without_id)
+          it { is_expected.not_to be_successful }
+          it { is_expected.to render_template(:cannot_save_without_id) }
+          it 'does not call create' do
+            subject
+            expect(Api::Scenario).not_to have_received(:create)
+          end
+          it 'does not save' do
+            expect { subject }.not_to change(SavedScenario, :count)
+          end
         end
       end
 
       describe '#show' do
         context 'with a loadable scenario' do
-          it 'shows information about the scenario' do
-            expect(user_scenario.scenario).to receive(:loadable?).and_return(true)
-
+          subject do
             get :show, params: { id: user_scenario.id }
+            response
+          end
 
-            expect(response).to be_successful
-            expect(response).to render_template(:show)
+          it { is_expected.to be_successful }
+          it { is_expected.to render_template(:show) }
+          it 'calls loadable?' do
+            subject
+            expect(user_scenario.scenario).to have_received(:loadable?)
           end
         end
 
         context 'with a not-loadable scenario' do
-          it 'shows information about the scenario' do
-            expect(user_scenario.scenario).to receive(:loadable?).and_return(false)
-
+          subject do
+            allow(user_scenario.scenario)
+              .to receive(:loadable?)
+              .and_return(false)
             get :show, params: { id: user_scenario.id }
-
-            expect(response).to be_redirect
+            response
           end
+
+          it { is_expected.to be_redirect }
         end
 
         context 'with a non-existent scenario' do
@@ -155,7 +183,7 @@ describe ScenariosController, vcr: true do
         before do
           session[:setting] = Setting.new(area_code: 'nope')
 
-          expect(Api::Area)
+          allow(Api::Area)
             .to receive(:code_exists?)
             .with('nope').and_return(false)
         end
@@ -167,19 +195,21 @@ describe ScenariosController, vcr: true do
       end
 
       context 'with a scenario for a existing region' do
-        before do
+        subject do
           session[:setting] = Setting.new(area_code: 'de', api_session_id: 123)
-
-          expect(Api::Area)
+          allow(Api::Area)
             .to receive(:code_exists?)
             .with('de').and_return(true)
-        end
-
-        it 'does not reset to the default setting' do
           get :play
 
-          expect(session[:setting].area_code).to eq('de')
-          expect(session[:setting].api_session_id).to eq(123)
+          session[:setting]
+        end
+
+        it 'retains the area code' do
+          expect(subject.area_code).to eq('de')
+        end
+        it 'retains the api session id' do
+          expect(subject.api_session_id).to eq(123)
         end
       end
 
@@ -254,21 +284,30 @@ describe ScenariosController, vcr: true do
       end
 
       describe '#reset' do
-        it 'resets a scenario' do
+        subject do
           get :reset
+          response
+        end
+
+        it { is_expected.to be_redirect }
+        it 'resets the session settings' do
+          subject
           expect(session[:setting].api_session_id).to be_nil
-          expect(response).to be_redirect
         end
       end
 
       describe '#compare' do
-        it 'compares them' do
+        subject do
           s1 = FactoryBot.create :saved_scenario
           s2 = FactoryBot.create :saved_scenario
-          get :compare, params: { scenario_ids: [s1.scenario_id, s2.scenario_id] }
-          expect(response).to be_successful
-          expect(response).to render_template(:compare)
+          get :compare, params: {
+            scenario_ids: [s1.scenario_id, s2.scenario_id]
+          }
+          response
         end
+
+        it { is_expected.to be_successful }
+        it { is_expected.to render_template(:compare) }
 
         describe 'with a "combine" option' do
           it 'redirects to Local vs. Global' do
@@ -323,45 +362,55 @@ describe ScenariosController, vcr: true do
         end
       end
     end
+    # rubocop:enable RSpec/NestedGroups
   end
 
-  context 'an admin' do
+  context 'with an admin' do
     before do
       login_as admin
     end
 
     describe '#index' do
-      it 'gets a list of all saved scenarios' do
+      subject do
         get :index
-        expect(response).to be_successful
-        expect(assigns(:saved_scenarios)).to include user_scenario
-        expect(assigns(:saved_scenarios)).to include admin_scenario
+        response
+      end
+
+      it { is_expected.to be_successful }
+      it 'gets a list of all saved scenarios' do
+        subject
+        expect(assigns(:saved_scenarios))
+          .to include user_scenario, admin_scenario
       end
     end
   end
 
-  context 'a teacher' do
+  context 'with a teacher' do
+    let(:student) { FactoryBot.create(:user, teacher_email: user.email) }
+    let(:student_scenario) { FactoryBot.create(:saved_scenario, user: student) }
+
     before do
       login_as user
-      student = FactoryBot.create(:user, teacher_email: user.email)
-      @student_scenario = FactoryBot.create(:saved_scenario, user: student)
+      student_scenario
     end
 
     describe '#index' do
-      it "gets a list of teacher's and students' scenarios" do
+      subject do
         get :index
-        expect(response).to be_successful
-        expect(assigns(:saved_scenarios)).not_to include(admin_scenario)
+        response
+      end
 
-        expect(assigns(:saved_scenarios).length).to be(2)
-
-        expect(assigns(:saved_scenarios)).to include(user_scenario)
-        expect(assigns(:saved_scenarios)).to include(@student_scenario)
+      it { is_expected.to be_successful }
+      it 'shows only the teachers and their students scenarios' do
+        subject
+        expect(assigns(:saved_scenarios))
+          .to contain_exactly(user_scenario, student_scenario)
       end
     end
   end
 
   describe 'PUT update' do
+    # rubocop:disable RSpec/MessageSpies
     context 'with valid params' do
       it 'changes the scenario_id of the saved scenario' do
         session[:setting] = Setting.new(area_code: 'nl', api_session_id: 12_345)
@@ -371,6 +420,7 @@ describe ScenariosController, vcr: true do
         put :update, params: { id: user_scenario.id, scenario_id: 12_345 }
       end
     end
+    # rubocop:enable RSpec/MessageSpies
 
     it 'redirects to root when no api_session_id exists in the session' do
       put :update, params: { id: user_scenario.id, scenario_id: 12_345 }

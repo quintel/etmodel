@@ -74,12 +74,10 @@ describe ReportsController, vcr: true do
         session[:setting] = Setting.new(api_session_id: 956_091,
                                         area_code: 'PV22_drenthe')
         get(:auto)
-        subject
+        response
       end
 
-      it 'redirects to the "regional" report' do
-        it { is_expected.to redirect_to(report_url('regional')) }
-      end
+      it { is_expected.to redirect_to(report_url('regional')) }
     end
   end
 end

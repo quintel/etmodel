@@ -10,7 +10,7 @@
       %ul
         - tab.sidebar_items.sort_by(&:position).each do |sidebar_item|
           %li
-            =sidebar_item.key
+            = sidebar_item.key
             %ul.slides
               - sidebar_item.slides.sort_by(&:position).each do |slide|
                 %li
@@ -18,4 +18,3 @@
                   %ul.sliders
                     - slide.sliders.sort_by(&:position).each do |slider|
                       %li= slider.key
-

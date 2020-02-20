@@ -38,7 +38,7 @@ module YModel
       File.join(Rails.root,
                 'config',
                 'ymodel',
-                name.gsub('::', '/').pluralize.underscore + '.yml')
+                name.tableize + '.yml')
     end
   end
 end

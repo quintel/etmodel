@@ -5,6 +5,5 @@ namespace :y_model do
 
   task dump_model: :environment do
     # TODO: Implement this.
-    puts 'hello world'
   end
 end

@@ -12,7 +12,7 @@ module YModel
     extend YModel::Loadable
     extend YModel::Trigger
 
-    def initialize(**record)
+    def initialize(record = {})
       record.each do |k, v|
         instance_variable_set "@#{k}".to_s, v if attribute?(k)
       end
@@ -50,7 +50,7 @@ module YModel
       end
 
       def all
-        records.map { |record| new(record) }
+        @all ||= records.map { |record| new(record) }
       rescue Errno::ENOENT
         raise YModel::SourceFileNotFound
       end

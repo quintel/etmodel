@@ -124,11 +124,11 @@ class OutputElement < ActiveRecord::Base
       .reject(&:block_chart?)
       .reject(&:not_allowed_in_this_area)
       .sort_by do |c|
-      [
-        MENU_ORDER.index(c.group) || Float::INFINITY,
-        SUB_GROUP_ORDER.index(c.sub_group) || Float::INFINITY
-      ]
-    end
+        [
+          MENU_ORDER.index(c.group) || Float::INFINITY,
+          SUB_GROUP_ORDER.index(c.sub_group) || Float::INFINITY
+        ]
+      end
   end
 
   def allowed_output_element_series

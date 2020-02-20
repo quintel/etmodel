@@ -55,28 +55,6 @@ ActiveRecord::Schema.define(version: 2020_02_12_161017) do
     t.datetime "updated_at"
   end
 
-  create_table "input_elements", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
-    t.string "key", limit: 191
-    t.string "share_group"
-    t.float "step_value"
-    t.float "draw_to_min"
-    t.float "draw_to_max"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string "unit"
-    t.boolean "fixed"
-    t.text "comments"
-    t.string "interface_group"
-    t.string "command_type", limit: 191
-    t.string "related_converter"
-    t.integer "slide_id"
-    t.integer "position"
-    t.index ["command_type"], name: "index_input_elements_on_command_type"
-    t.index ["key"], name: "unique api key", unique: true
-    t.index ["position"], name: "index_input_elements_on_position"
-    t.index ["slide_id"], name: "index_input_elements_on_slide_id"
-  end
-
   create_table "multi_year_chart_scenarios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "multi_year_chart_id", null: false
     t.integer "scenario_id", null: false
@@ -161,47 +139,6 @@ ActiveRecord::Schema.define(version: 2020_02_12_161017) do
     t.datetime "updated_at", null: false
     t.index ["session_id"], name: "index_sessions_on_session_id"
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
-  end
-
-  create_table "sidebar_items", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
-    t.string "key", limit: 191
-    t.string "section"
-    t.text "percentage_bar_query"
-    t.string "nl_vimeo_id"
-    t.string "en_vimeo_id"
-    t.integer "tab_id"
-    t.integer "position"
-    t.integer "parent_id"
-    t.index ["key"], name: "index_sidebar_items_on_key"
-    t.index ["parent_id"], name: "index_sidebar_items_on_parent_id"
-    t.index ["position"], name: "index_sidebar_items_on_position"
-    t.index ["tab_id"], name: "index_sidebar_items_on_tab_id"
-  end
-
-  create_table "slides", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
-    t.string "image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string "general_sub_header"
-    t.string "group_sub_header"
-    t.string "subheader_image"
-    t.string "key", limit: 191
-    t.integer "position"
-    t.integer "sidebar_item_id"
-    t.integer "output_element_id"
-    t.integer "alt_output_element_id"
-    t.index ["key"], name: "index_slides_on_key"
-    t.index ["position"], name: "index_slides_on_position"
-    t.index ["sidebar_item_id"], name: "index_slides_on_sidebar_item_id"
-  end
-
-  create_table "tabs", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
-    t.string "key", limit: 191
-    t.string "nl_vimeo_id"
-    t.string "en_vimeo_id"
-    t.integer "position"
-    t.index ["key"], name: "index_tabs_on_key"
-    t.index ["position"], name: "index_tabs_on_position"
   end
 
   create_table "texts", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|

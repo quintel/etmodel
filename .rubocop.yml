@@ -10,6 +10,7 @@ AllCops:
   - 'db/schema.rb'
   - 'db/seeds.rb'
   - 'vendor/**/*'
+  - 'config/application.rb'
 
 Bundler/OrderedGems:
   Enabled: false
@@ -140,4 +141,7 @@ RSpec/FilePath:
   Enabled: false
 
 RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/NamedSubject:
   Enabled: false

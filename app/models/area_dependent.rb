@@ -1,9 +1,25 @@
-module AreaDependent
-  def area_dependent
-    dependent_on = area_dependency&.dependent_on
-    return false if dependent_on.blank?
+# frozen_string_literal: true
 
-    dependent_on ? !Current.setting.area.attributes[dependent_on] : false
+module AreaDependent
+  # Load Areadependencies to ActiveRecord::Base descendents
+  module ActiveRecord
+    def area_dependent
+      dependent_on = area_dependency&.dependent_on
+      return false if dependent_on.blank?
+
+      dependent_on ? !Current.setting.area.attributes[dependent_on] : false
+    end
+    alias_method :not_allowed_in_this_area, :area_dependent
   end
-  alias_method :not_allowed_in_this_area, :area_dependent
+
+  # Load Areadependencies to YModel::Base descendents
+  module YModel
+    def area_dependent
+      return false if dependent_on.blank?
+
+      dependent_on ? !Current.setting.area.attributes[dependent_on] : false
+    end
+
+    alias_method :not_allowed_in_this_area, :area_dependent
+  end
 end

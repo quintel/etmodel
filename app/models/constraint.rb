@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: constraints
@@ -14,12 +16,11 @@
 # TODO: this should be renamed, DashboardItem would be a better name
 #
 class Constraint < ActiveRecord::Base
-
-  include AreaDependent
+  include AreaDependent::ActiveRecord
 
   # Groups names to which a constraint must belong. Used both during
   # Constraint validation, and within the dashboard views.
-  GROUPS = %w(
+  GROUPS = %w[
     energy_use
     co2
     import
@@ -27,7 +28,7 @@ class Constraint < ActiveRecord::Base
     footprint
     renewable
     summary
-  ).freeze
+  ].freeze
 
   # Raised when given a blank key to Constraint.for_dashboard.
   class IllegalConstraintKey < StandardError
@@ -36,8 +37,13 @@ class Constraint < ActiveRecord::Base
   # Raised when searching for a constraint in Constraint.for_dashboard, and
   # the constraint does not exist.
   class NoSuchConstraint < ActiveRecord::RecordNotFound
-    def initialize(key) ; @key = key end
-    def message ; "No such constraint: #{@key.inspect}" end
+    def initialize(key)
+      @key = key
+    end
+
+    def message
+      "No such constraint: #{@key.inspect}"
+    end
   end
 
   # --------------------------------------------------------------------------
@@ -54,7 +60,8 @@ class Constraint < ActiveRecord::Base
   scope :default, -> { where('position IS NOT NULL').ordered }
   scope :enabled, -> { where(disabled: false) }
 
-  scope :gquery_contains, ->(search) { where("`gquery_key` LIKE ?", "%#{search}%") }
+  scope :gquery_contains,
+        ->(search) { where('`gquery_key` LIKE ?', "%#{search}%") }
 
   # CLASS METHODS ------------------------------------------------------------
 
@@ -106,11 +113,8 @@ class Constraint < ActiveRecord::Base
   # @return [Hash{String => Object}]
   #
   def as_json(*)
-    json = super(only: [ :id, :key, :gquery_key ])
+    json = super(only: %i[id key gquery_key])
 
-    if ActiveRecord::Base.include_root_in_json
-      json['constraint']
-    else json end
+    ActiveRecord::Base.include_root_in_json ? json['constraint'] : json
   end
-
 end

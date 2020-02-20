@@ -1,22 +1,33 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe ScenariosController, vcr: true do
   render_views
 
+  # Interface elements
+  let(:tab) { Tab.find_by_key(Interface::DEFAULT_TAB) }
+  let(:second_tab) { Tab.all.second }
+  let(:sidebar_item) { tab.sidebar_items.first }
+  let(:second_sidebar_item) { second_tab.sidebar_items.second }
+  # Scenarios
   let(:scenario_mock) { ete_scenario_mock }
+  let(:user) { FactoryBot.create :user }
+  let(:admin) { FactoryBot.create :admin }
+  let!(:user_scenario) do
+    FactoryBot.create :saved_scenario, user: user, id: 648_695
+  end
+  let!(:admin_scenario) do
+    FactoryBot.create :saved_scenario, user: admin, id: 648_696
+  end
 
   before do
     allow(Api::Scenario).to receive(:find).and_return scenario_mock
   end
 
-  let(:user) { FactoryBot.create :user }
-  let(:admin) { FactoryBot.create :admin }
-  let!(:user_scenario) { FactoryBot.create :saved_scenario, user: user, id: 648695 }
-  let!(:admin_scenario) { FactoryBot.create :saved_scenario, user: admin, id: 648696 }
-
-  context "a guest" do
-    describe "#index" do
-      it "should be redirected" do
+  context 'with a guest' do
+    describe '#index' do
+      it 'is redirected' do
         get :index
         expect(response).to redirect_to(login_url)
       end
@@ -24,9 +35,7 @@ describe ScenariosController, vcr: true do
   end
 
   describe '#play' do
-    let!(:tab) { FactoryBot.create(:tab, key: Interface::DEFAULT_TAB) }
-    let!(:sidebar_item) { FactoryBot.create(:sidebar_item, tab: tab) }
-    let!(:slide) { FactoryBot.create(:slide, sidebar_item: sidebar_item) }
+    let(:slide) { sidebar_item.slides.first }
 
     before do
       session[:setting] = Setting.new(area_code: 'nl', api_session_id: 123)
@@ -54,112 +63,106 @@ describe ScenariosController, vcr: true do
         expect(response).to be_successful
       end
     end
-
-    context 'with valid tab, but invalid sidebar, and slide params' do
-      let!(:second_tab) { FactoryBot.create(:tab) }
-
-      it 'redirects to the standard play url' do
-        get :play, params: {
-          tab: second_tab.key,
-          sidebar: 'invalid',
-          slide: 'nope'
-        }
-
-        expect(response).to redirect_to(play_url)
-      end
-    end
-
-    context 'with valid tab, and sidebar, but invalid slide params' do
-      let!(:second_tab) { FactoryBot.create(:tab) }
-      let!(:second_sidebar_item) { FactoryBot.create(:sidebar_item, tab: tab) }
-
-      it 'redirects to the standard play url' do
-        get :play, params: {
-          tab: second_tab.key,
-          sidebar: second_sidebar_item.key,
-          slide: 'nope'
-        }
-
-        expect(response).to redirect_to(play_url)
-      end
-    end
   end
 
-  context "a regular user" do
+  context 'with a registered user' do
     before do
       login_as user
     end
 
-    describe "#index" do
-      it "should get a list of his saved scenarios" do
+    describe '#index' do
+      before do
         get :index
-        expect(response).to be_successful
+      end
+
+      it { expect(response).to be_successful }
+      it 'gets the users saved scenario' do
         expect(assigns(:saved_scenarios)).to eq([user_scenario])
       end
     end
 
-    context "with an active scenario" do
+    # rubocop:disable RSpec/NestedGroups
+    # TODO: Refactor thi
+    context 'with an active scenario' do
       before do
-        session[:setting] = Setting.new(api_session_id: 12345)
+        session[:setting] = Setting.new(api_session_id: 12_345)
       end
 
-      describe "#new" do
-        it "should show a form to save the scenario" do
+      describe '#new' do
+        subject do
           get :new
-          expect(response).to be_successful
-          expect(assigns(:saved_scenario).api_session_id).to eq(12345)
+          response
         end
 
-        it "redirects to root" do
+        it { is_expected.to be_successful }
+        it 'shows a form to save the scenario' do
+          subject
+          expect(assigns(:saved_scenario).api_session_id).to eq(12_345)
+        end
+        it 'redirects to root' do
           session[:setting] = Setting.default
-
-          get :new
-
-          expect(response).to be_redirect
+          expect(subject).to be_redirect
         end
       end
 
-      describe "#create" do
-        it "should save a scenario" do
-          allow(Api::Scenario).to receive(:create).and_return scenario_mock
-          expect {
-            post :create, params: { saved_scenario: { api_session_id: 12345 } }
-            expect(response).to redirect_to(scenarios_path)
-          }.to change(SavedScenario, :count)
+      describe '#create' do
+        context 'with a current scenario' do
+          subject do
+            allow(Api::Scenario).to receive(:create).and_return scenario_mock
+            post :create, params: { saved_scenario: { api_session_id: 12_345 } }
+            response
+          end
+
+          it { is_expected.to redirect_to(scenarios_path) }
+          it 'saves a scenario' do
+            expect { subject }.to change(SavedScenario, :count)
+          end
         end
 
-        it "does not save if no scenario is in progress" do
-          expect(Api::Scenario).not_to receive(:create)
-
-          expect {
+        context 'with no current scenario' do
+          subject do
+            allow(Api::Scenario).to receive(:create)
             post :create, params: { saved_scenario: { api_session_id: '' } }
-          }.to_not change(SavedScenario, :count)
+            response
+          end
 
-          expect(response).to_not be_successful
-          expect(response).to render_template(:cannot_save_without_id)
+          it { is_expected.not_to be_successful }
+          it { is_expected.to render_template(:cannot_save_without_id) }
+          it 'does not call create' do
+            subject
+            expect(Api::Scenario).not_to have_received(:create)
+          end
+          it 'does not save' do
+            expect { subject }.not_to change(SavedScenario, :count)
+          end
         end
       end
 
       describe '#show' do
         context 'with a loadable scenario' do
-          it 'shows information about the scenario' do
-            expect(user_scenario.scenario).to receive(:loadable?).and_return(true)
-
+          subject do
             get :show, params: { id: user_scenario.id }
+            response
+          end
 
-            expect(response).to be_successful
-            expect(response).to render_template(:show)
+          it { is_expected.to be_successful }
+          it { is_expected.to render_template(:show) }
+          it 'calls loadable?' do
+            subject
+            expect(user_scenario.scenario).to have_received(:loadable?)
           end
         end
 
         context 'with a not-loadable scenario' do
-          it 'shows information about the scenario' do
-            expect(user_scenario.scenario).to receive(:loadable?).and_return(false)
-
+          subject do
+            allow(user_scenario.scenario)
+              .to receive(:loadable?)
+              .and_return(false)
             get :show, params: { id: user_scenario.id }
-
-            expect(response).to be_redirect
+            response
           end
+
+          it { is_expected.to be_redirect }
         end
 
         context 'with a non-existent scenario' do
@@ -180,7 +183,7 @@ describe ScenariosController, vcr: true do
         before do
           session[:setting] = Setting.new(area_code: 'nope')
 
-          expect(Api::Area)
+          allow(Api::Area)
             .to receive(:code_exists?)
             .with('nope').and_return(false)
         end
@@ -192,19 +195,21 @@ describe ScenariosController, vcr: true do
       end
 
       context 'with a scenario for a existing region' do
-        before do
+        subject do
           session[:setting] = Setting.new(area_code: 'de', api_session_id: 123)
-
-          expect(Api::Area)
+          allow(Api::Area)
             .to receive(:code_exists?)
             .with('de').and_return(true)
-        end
-
-        it 'does not reset to the default setting' do
           get :play
 
-          expect(session[:setting].area_code).to eq('de')
-          expect(session[:setting].api_session_id).to eq(123)
+          session[:setting]
+        end
+
+        it 'retains the area code' do
+          expect(subject.area_code).to eq('de')
+        end
+        it 'retains the api session id' do
+          expect(subject.api_session_id).to eq(123)
         end
       end
 
@@ -212,12 +217,10 @@ describe ScenariosController, vcr: true do
         # Rendering the view triggers requests to ETEngine.
         render_views false
 
-        before do
-          # Create a basic interface.
-          tab = FactoryBot.create(:tab, key: Interface::DEFAULT_TAB)
-          sidebar_item = FactoryBot.create(:sidebar_item, tab: tab)
-          FactoryBot.create(:slide, sidebar_item: sidebar_item)
-        end
+        # before do
+        #   # Create a basic interface.
+        #   sidebar_item.slides.first
+        # end
 
         context 'with a valid scenario' do
           it 'sets the API session ID' do
@@ -250,21 +253,17 @@ describe ScenariosController, vcr: true do
         end
 
         context 'with a valid input named' do
-          let!(:input) do
-            FactoryBot.create(
-              :input_element,
-              key: 'hello',
-              slide: FactoryBot.create(:slide)
-            )
+          let(:input) do
+            second_sidebar_item.slides.first.sliders.first
           end
 
           it 'opens the play page' do
-            get :play_multi_year_charts, params: { id: 123, input: 'hello' }
+            get :play_multi_year_charts, params: { id: 123, input: input.key }
             expect(response).to render_template(:play)
           end
 
           it 'sets the last_etm_page URL' do
-            get :play_multi_year_charts, params: { id: 123, input: 'hello' }
+            get :play_multi_year_charts, params: { id: 123, input: input.key }
 
             expect(session[:setting].last_etm_page)
               .to eq(play_url(*input.url_components))
@@ -284,34 +283,43 @@ describe ScenariosController, vcr: true do
         end
       end
 
-      describe "#reset" do
-        it "should reset a scenario" do
+      describe '#reset' do
+        subject do
           get :reset
+          response
+        end
+
+        it { is_expected.to be_redirect }
+        it 'resets the session settings' do
+          subject
           expect(session[:setting].api_session_id).to be_nil
-          expect(response).to be_redirect
         end
       end
 
-      describe "#compare" do
-        it "should compare them" do
+      describe '#compare' do
+        subject do
           s1 = FactoryBot.create :saved_scenario
           s2 = FactoryBot.create :saved_scenario
-          get :compare, params: { scenario_ids: [s1.id, s2.id] }
-          expect(response).to be_successful
-          expect(response).to render_template(:compare)
+          get :compare, params: {
+            scenario_ids: [s1.scenario_id, s2.scenario_id]
+          }
+          response
         end
 
+        it { is_expected.to be_successful }
+        it { is_expected.to render_template(:compare) }
+
         describe 'with a "combine" option' do
-          it 'should redirect to Local vs. Global' do
-            get :compare, params: { scenario_ids: %w(1 2), combine: '1' }
+          it 'redirects to Local vs. Global' do
+            get :compare, params: { scenario_ids: %w[1 2], combine: '1' }
 
             expect(response).to redirect_to(
-              local_global_scenarios_url("1,2")
+              local_global_scenarios_url('1,2')
             )
           end
 
           it 'omits invalid IDs' do
-            get :compare, params: { scenario_ids: %w(1 no), combine: '1' }
+            get :compare, params: { scenario_ids: %w[1 no], combine: '1' }
 
             expect(response).to redirect_to(
               local_global_scenarios_url('1')
@@ -332,8 +340,8 @@ describe ScenariosController, vcr: true do
         end
       end
 
-      describe "#weighted_merge" do
-        it "should compare them" do
+      describe '#weighted_merge' do
+        it 'compares them' do
           post :perform_weighted_merge, params: {
             'merge_scenarios' => { '925863' => 1.0, '925864' => 2.0 }
           }
@@ -342,8 +350,8 @@ describe ScenariosController, vcr: true do
         end
       end
 
-      describe "#merge" do
-        it "should create a remote scenario with the average values" do
+      describe '#merge' do
+        it 'creates a remote scenario with the average values' do
           post :merge, params: {
             inputs: 'average',
             inputs_avg: { households_number_of_inhabitants: 1.0 }.to_yaml,
@@ -354,57 +362,68 @@ describe ScenariosController, vcr: true do
         end
       end
     end
+    # rubocop:enable RSpec/NestedGroups
   end
 
-  context "an admin" do
+  context 'with an admin' do
     before do
       login_as admin
     end
 
-    describe "#index" do
-      it "should get a list of all saved scenarios" do
+    describe '#index' do
+      subject do
         get :index
-        expect(response).to be_successful
-        expect(assigns(:saved_scenarios)).to include user_scenario
-        expect(assigns(:saved_scenarios)).to include admin_scenario
+        response
+      end
+
+      it { is_expected.to be_successful }
+      it 'gets a list of all saved scenarios' do
+        subject
+        expect(assigns(:saved_scenarios))
+          .to include user_scenario, admin_scenario
       end
     end
   end
 
-  context "a teacher" do
-    before(:each) do
+  context 'with a teacher' do
+    let(:student) { FactoryBot.create(:user, teacher_email: user.email) }
+    let(:student_scenario) { FactoryBot.create(:saved_scenario, user: student) }
+
+    before do
       login_as user
-      student= FactoryBot.create(:user, teacher_email: user.email)
-      @student_scenario = FactoryBot.create(:saved_scenario, user: student)
+      student_scenario
     end
 
-    describe "#index" do
-      it "gets a list of teacher's and students' scenarios" do
+    describe '#index' do
+      subject do
         get :index
-        expect(response).to be_successful
-        expect(assigns(:saved_scenarios)).to_not include(admin_scenario)
+        response
+      end
 
-        expect(assigns(:saved_scenarios).length).to eql(2)
-
-        expect(assigns(:saved_scenarios)).to include(user_scenario)
-        expect(assigns(:saved_scenarios)).to include(@student_scenario)
+      it { is_expected.to be_successful }
+      it 'shows only the teachers and their students scenarios' do
+        subject
+        expect(assigns(:saved_scenarios))
+          .to contain_exactly(user_scenario, student_scenario)
       end
     end
   end
 
   describe 'PUT update' do
+    # rubocop:disable RSpec/MessageSpies
     context 'with valid params' do
       it 'changes the scenario_id of the saved scenario' do
-          session[:setting] = Setting.new(area_code: 'nl', api_session_id: 12345)
+        session[:setting] = Setting.new(area_code: 'nl', api_session_id: 12_345)
         expect(UpdateSavedScenario).to receive(:call)
-          .with(user_scenario, 12345)
-          .and_return(ServiceResult.success("123"))
-        put :update, params: {id: user_scenario.id, scenario_id: 12345 }
+          .with(user_scenario, 12_345)
+          .and_return(ServiceResult.success('123'))
+        put :update, params: { id: user_scenario.id, scenario_id: 12_345 }
       end
     end
+    # rubocop:enable RSpec/MessageSpies
 
-    it "redirects to root when no api_session_id exists in the session" do
-      put :update, params: {id: user_scenario.id, scenario_id: 12345 }
+    it 'redirects to root when no api_session_id exists in the session' do
+      put :update, params: { id: user_scenario.id, scenario_id: 12_345 }
       expect(response).to be_redirect
     end
   end

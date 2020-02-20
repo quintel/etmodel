@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: output_elements
@@ -18,6 +20,7 @@
 #  hidden                 :boolean          default(FALSE)
 #
 
+# Entity used for filling charts
 class OutputElement < ActiveRecord::Base
   MENU_ORDER = %w[Overview Merit Supply Demand Cost Network Policy FCE].freeze
 
@@ -43,19 +46,20 @@ class OutputElement < ActiveRecord::Base
     import_export
   ].freeze
 
-  include AreaDependent
+  include AreaDependent::ActiveRecord
 
-  has_many :output_element_series, ->{ order(:order_by) }, dependent: :destroy
+  has_many :output_element_series, -> { order(:order_by) }, dependent: :destroy
   belongs_to :output_element_type
   has_one :description, as: :describable, dependent: :destroy
   has_one :area_dependency, as: :dependable, dependent: :destroy
 
   # Charts may link to other charts to provide a user with additional insight.
   belongs_to :related_output_element, class_name: 'OutputElement',
-    optional: true
+                                      optional: true
 
   has_many :relatee_output_elements, class_name: 'OutputElement',
-    dependent: :nullify, foreign_key: 'related_output_element_id'
+                                     dependent: :nullify,
+                                     foreign_key: 'related_output_element_id'
 
   accepts_nested_attributes_for :description, :area_dependency
 
@@ -79,7 +83,7 @@ class OutputElement < ActiveRecord::Base
   end
 
   def d3_chart?
-    ['d3', 'sankey'].include?(type)
+    %w[d3 sankey].include?(type)
   end
 
   def jqplot_based?
@@ -90,6 +94,8 @@ class OutputElement < ActiveRecord::Base
     type == 'sankey'
   end
 
+  # TODO: fix this code with predicate naming.
+  # rubocop:disable Naming/PredicateName
   # some charts don't have their series defined in the database. This method
   # makes view code simpler
   #
@@ -100,6 +106,8 @@ class OutputElement < ActiveRecord::Base
   def has_description?
     description.present?
   end
+
+  # rubocop:enable Naming/PredicateName
 
   def self.select_by_group
     Hash[whitelisted.group_by(&:group).each.map do |group, elements|
@@ -112,15 +120,15 @@ class OutputElement < ActiveRecord::Base
   end
 
   def self.whitelisted
-    all.reject(&:area_dependent).
-        reject(&:block_chart?).
-        reject(&:not_allowed_in_this_area).
-        sort_by do |c|
-          [
-            MENU_ORDER.index(c.group) || Float::INFINITY,
-            SUB_GROUP_ORDER.index(c.sub_group) || Float::INFINITY
-          ]
-        end
+    all.reject(&:area_dependent)
+      .reject(&:block_chart?)
+      .reject(&:not_allowed_in_this_area)
+      .sort_by do |c|
+        [
+          MENU_ORDER.index(c.group) || Float::INFINITY,
+          SUB_GROUP_ORDER.index(c.sub_group) || Float::INFINITY
+        ]
+      end
   end
 
   def allowed_output_element_series
@@ -134,11 +142,7 @@ class OutputElement < ActiveRecord::Base
 
   # Icon shown on the select chart popup
   def icon
-    if d3_chart? && !sankey?
-      "#{key}.png"
-    else
-      "#{type}.png"
-    end
+    d3_chart? && !sankey? ? "#{key}.png" : "#{type}.png"
   end
 
   # Some charts require custom HTML. This method returns the appropriate

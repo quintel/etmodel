@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: sidebar_items
@@ -13,24 +15,36 @@
 #  parent_id            :integer
 #
 
-class SidebarItem < ActiveRecord::Base
-  include AreaDependent
+# This model represents the secondary menu-item category in the sidebar of the
+# scenario section of the application. The ones you click to a `slide`.
+# ie "Households", "Electricity" and "Fuel prices"
+class SidebarItem < YModel::Base
+  include AreaDependent::YModel
 
-  has_one :area_dependency, as: :dependable, dependent: :destroy
-  has_one :description, as: :describable, dependent: :destroy
-  belongs_to :tab
-  has_many :slides, dependent: :nullify
-  belongs_to :parent, class_name: "SidebarItem"
-  has_many :children, foreign_key: 'parent_id', class_name: "SidebarItem"
+  has_one :description, as: :describable
+  has_many :slides
+  belongs_to :parent, class_name: 'SidebarItem'
+  has_many :children, foreign_key: :parent_id, class_name: 'SidebarItem'
 
-  accepts_nested_attributes_for :description, :area_dependency
+  class << self
+    def ordered
+      all.sort_by(&:position)
+    end
 
-  validates :key, presence: true, uniqueness: true
-  validates :position, numericality: true
+    def gquery_contains(search)
+      return all if search.blank? || search.empty?
 
-  scope :ordered, -> { order('position') }
-  scope :gquery_contains, ->(search) { where("percentage_bar_query LIKE ?", "%#{search}%") }
-  scope :roots, -> { where(parent_id: nil) }
+      all.select { |si| si.percentage_bar_query.include?(search) }
+    end
+
+    def find_by_section_and_key(section, key)
+      where(section: section, key: key)&.first
+    end
+  end
+
+  def tab
+    Tab.find(tab_id)
+  end
 
   def parsed_key_for_admin
     "#{section} | #{key}"
@@ -38,5 +52,14 @@ class SidebarItem < ActiveRecord::Base
 
   def short_name
     "#{tab.try :key} : #{key}"
+  end
+
+  def root?
+    parent_id.nil?
+  end
+
+  def visible_children
+    children.reject(&:area_dependent)
+      .sort_by(&:position)
   end
 end

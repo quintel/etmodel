@@ -1,0 +1,3745 @@
+---
+- id: 1
+  image: house_insulation.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-12-19 14:38:37.000000000 Z
+    zone: &1 !ruby/object:ActiveSupport::TimeZone
+      name: Europe/Amsterdam
+    time: 2018-12-19 15:38:37.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-12-19 14:38:37.000000000 Z
+    zone: *1
+    time: 2018-12-19 15:38:37.000000000 Z
+  general_sub_header: heat_demand_reduction
+  group_sub_header: ''
+  subheader_image: households_insulation_energy_label.png
+  key: demand_households_insulation
+  position: 4
+  sidebar_item_id: 1
+  output_element_id: 58
+  alt_output_element_id: 58
+  dependent_on: ''
+- id: 2
+  image: house_lighting.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:56.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:56.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-06-24 14:39:54.000000000 Z
+    zone: *1
+    time: 2014-06-24 16:39:54.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_households_lighting
+  position: 12
+  sidebar_item_id: 1
+  output_element_id: 2
+  alt_output_element_id: 2
+  dependent_on: ''
+- id: 3
+  image: house_appliances.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:56.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:56.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-07-10 11:57:56.000000000 Z
+    zone: *1
+    time: 2013-07-10 13:57:56.000000000 Z
+  general_sub_header: change
+  group_sub_header: change
+  subheader_image: energy_label.png
+  key: demand_households_appliances
+  position: 11
+  sidebar_item_id: 1
+  output_element_id: 2
+  alt_output_element_id: 2
+  dependent_on: ''
+- id: 4
+  image: house_heating.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:56.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:56.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-07-10 11:58:58.000000000 Z
+    zone: *1
+    time: 2013-07-10 13:58:58.000000000 Z
+  general_sub_header: ''
+  group_sub_header: share
+  subheader_image: ''
+  key: demand_households_heating
+  position: 5
+  sidebar_item_id: 1
+  output_element_id: 56
+  alt_output_element_id: 56
+  dependent_on: ''
+- id: 5
+  image: house_solarpanels.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:56.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:56.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-07-10 11:58:28.000000000 Z
+    zone: *1
+    time: 2013-07-10 13:58:28.000000000 Z
+  general_sub_header: of_potential
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_households_solar_panels
+  position: 8
+  sidebar_item_id: 1
+  output_element_id: 5
+  alt_output_element_id: 5
+  dependent_on: ''
+- id: 6
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-24 15:33:25.000000000 Z
+    zone: *1
+    time: 2019-12-24 16:33:25.000000000 Z
+  general_sub_header: price
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_combustion_fuel
+  position: 1
+  sidebar_item_id: 37
+  output_element_id: 32
+  alt_output_element_id: 32
+  dependent_on: ''
+- id: 7
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: change
+  group_sub_header: 
+  subheader_image: 
+  key: costs_combustion_investment
+  position: 2
+  sidebar_item_id: 12
+  output_element_id: 32
+  alt_output_element_id: 32
+  dependent_on: 
+- id: 8
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: change
+  group_sub_header: 
+  subheader_image: 
+  key: costs_combustion_operational_and_maintenance
+  position: 3
+  sidebar_item_id: 12
+  output_element_id: 32
+  alt_output_element_id: 32
+  dependent_on: 
+- id: 9
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: change
+  group_sub_header: 
+  subheader_image: 
+  key: costs_wind_investment
+  position: 1
+  sidebar_item_id: 14
+  output_element_id: 32
+  alt_output_element_id: 32
+  dependent_on: 
+- id: 10
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: change
+  group_sub_header: 
+  subheader_image: 
+  key: costs_wind_operational_and_maintenance
+  position: 2
+  sidebar_item_id: 14
+  output_element_id: 32
+  alt_output_element_id: 32
+  dependent_on: 
+- id: 11
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: change
+  group_sub_header: 
+  subheader_image: 
+  key: costs_water_investment
+  position: 1
+  sidebar_item_id: 15
+  output_element_id: 32
+  alt_output_element_id: 32
+  dependent_on: 
+- id: 12
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: change
+  group_sub_header: 
+  subheader_image: 
+  key: costs_water_operational_and_maintenance
+  position: 2
+  sidebar_item_id: 15
+  output_element_id: 32
+  alt_output_element_id: 32
+  dependent_on: 
+- id: 13
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-09 10:11:18.000000000 Z
+    zone: *1
+    time: 2020-01-09 11:11:18.000000000 Z
+  general_sub_header: change
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_geothermal
+  position: 2
+  sidebar_item_id: 36
+  output_element_id: 48
+  alt_output_element_id: 32
+  dependent_on: ''
+- id: 16
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: change
+  group_sub_header: 
+  subheader_image: 
+  key: costs_earth_operational_and_maintenance
+  position: 2
+  sidebar_item_id: 17
+  output_element_id: 32
+  alt_output_element_id: 32
+  dependent_on: 
+- id: 17
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-09-02 09:36:23.000000000 Z
+    zone: *1
+    time: 2013-09-02 11:36:23.000000000 Z
+  general_sub_header: change
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_solar_investment
+  position: 1
+  sidebar_item_id: 16
+  output_element_id: 32
+  alt_output_element_id: 32
+  dependent_on: ''
+- id: 19
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: change
+  group_sub_header: 
+  subheader_image: 
+  key: costs_nuclear_investment
+  position: 2
+  sidebar_item_id: 13
+  output_element_id: 32
+  alt_output_element_id: 32
+  dependent_on: 
+- id: 20
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: change
+  group_sub_header: 
+  subheader_image: 
+  key: costs_nuclear_operational_and_maintenance
+  position: 3
+  sidebar_item_id: 13
+  output_element_id: 32
+  alt_output_element_id: 32
+  dependent_on: 
+- id: 21
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-07-19 12:04:53.000000000 Z
+    zone: *1
+    time: 2012-07-19 14:04:53.000000000 Z
+  general_sub_header: change
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_nuclear_fuel
+  position: 1
+  sidebar_item_id: 37
+  output_element_id: 32
+  alt_output_element_id: 32
+  dependent_on: ''
+- id: 22
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-01-24 13:13:50.000000000 Z
+    zone: *1
+    time: 2014-01-24 14:13:50.000000000 Z
+  general_sub_header: change
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_co2_prices
+  position: 1
+  sidebar_item_id: 18
+  output_element_id: 32
+  alt_output_element_id: 32
+  dependent_on: ''
+- id: 23
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-01-24 13:14:14.000000000 Z
+    zone: *1
+    time: 2014-01-24 14:14:14.000000000 Z
+  general_sub_header: change
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_co2_ccs
+  position: 2
+  sidebar_item_id: 18
+  output_element_id: 32
+  alt_output_element_id: 32
+  dependent_on: ''
+- id: 24
+  image: car.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-28 14:23:19.000000000 Z
+    zone: *1
+    time: 2017-11-28 15:23:19.000000000 Z
+  general_sub_header: "%/year"
+  group_sub_header: share
+  subheader_image: ''
+  key: demand_transport_passenger_transport
+  position: 1
+  sidebar_item_id: 51
+  output_element_id: 202
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 25
+  image: engine.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-22 15:29:02.000000000 Z
+    zone: *1
+    time: 2017-11-22 16:29:02.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_transport_car_technology
+  position: 2
+  sidebar_item_id: 51
+  output_element_id: 203
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 26
+  image: engine.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-12-20 10:48:30.000000000 Z
+    zone: *1
+    time: 2017-12-20 11:48:30.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_transport_truck_technology
+  position: 12
+  sidebar_item_id: 52
+  output_element_id: 207
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 27
+  image: industry.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-01-07 09:30:21.000000000 Z
+    zone: *1
+    time: 2014-01-07 10:30:21.000000000 Z
+  general_sub_header: "%/year"
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_industry_demand_growth
+  position: 1
+  sidebar_item_id: 42
+  output_element_id: 153
+  alt_output_element_id: 153
+  dependent_on: ''
+- id: 28
+  image: industry.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-01-07 09:39:22.000000000 Z
+    zone: *1
+    time: 2014-01-07 10:39:22.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_industry_heat
+  position: 3
+  sidebar_item_id: 42
+  output_element_id: 154
+  alt_output_element_id: 154
+  dependent_on: ''
+- id: 29
+  image: industry.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-01-07 09:30:34.000000000 Z
+    zone: *1
+    time: 2014-01-07 10:30:34.000000000 Z
+  general_sub_header: "%/year"
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_industry_efficiency_improvement
+  position: 2
+  sidebar_item_id: 42
+  output_element_id: 153
+  alt_output_element_id: 153
+  dependent_on: ''
+- id: 30
+  image: tractor_and_greenhouse.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-09 14:41:16.000000000 Z
+    zone: *1
+    time: 2012-08-09 16:41:16.000000000 Z
+  general_sub_header: "%/year"
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_agriculture_demand_growth
+  position: 1
+  sidebar_item_id: 5
+  output_element_id: 29
+  alt_output_element_id: 29
+  dependent_on: 
+- id: 31
+  image: tractor_and_greenhouse.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-06-07 13:37:56.000000000 Z
+    zone: *1
+    time: 2018-06-07 15:37:56.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_agriculture_heat
+  position: 2
+  sidebar_item_id: 5
+  output_element_id: 30
+  alt_output_element_id: 30
+  dependent_on: ''
+- id: 32
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: "%/year"
+  group_sub_header: 
+  subheader_image: 
+  key: demand_other_demand_growth
+  position: 1
+  sidebar_item_id: 6
+  output_element_id: 31
+  alt_output_element_id: 31
+  dependent_on: 
+- id: 34
+  image: car_engine.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-01-03 12:45:55.000000000 Z
+    zone: *1
+    time: 2018-01-03 13:45:55.000000000 Z
+  general_sub_header: "%/year"
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_transport_efficiency_improvement
+  position: 2
+  sidebar_item_id: 3
+  output_element_id: 201
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 35
+  image: windmills.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-09-27 08:59:47.000000000 Z
+    zone: *1
+    time: 2012-09-27 10:59:47.000000000 Z
+  general_sub_header: max surface
+  group_sub_header: ''
+  subheader_image: ''
+  key: policy_area_wind_turbines
+  position: 1
+  sidebar_item_id: 29
+  output_element_id: 134
+  alt_output_element_id: 52
+  dependent_on: 
+- id: 36
+  image: house_solarpanels.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: max surface
+  group_sub_header: ''
+  subheader_image: ''
+  key: policy_area_solar_power
+  position: 2
+  sidebar_item_id: 
+  output_element_id: 36
+  alt_output_element_id: 36
+  dependent_on: 
+- id: 37
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2011-03-10 06:04:33.000000000 Z
+    zone: *1
+    time: 2011-03-10 07:04:33.000000000 Z
+  general_sub_header: max surface
+  group_sub_header: ''
+  subheader_image: ''
+  key: policy_area_biomass
+  position: 
+  sidebar_item_id: 
+  output_element_id: 
+  alt_output_element_id: 
+  dependent_on: 
+- id: 38
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-07-31 10:24:42.000000000 Z
+    zone: *1
+    time: 2012-07-31 12:24:42.000000000 Z
+  general_sub_header: change
+  group_sub_header: ''
+  subheader_image: ''
+  key: policy_sustainability_co2_emission_compared_to_1990
+  position: 1
+  sidebar_item_id: 19
+  output_element_id: 127
+  alt_output_element_id: 46
+  dependent_on: ''
+- id: 39
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-07-31 10:25:43.000000000 Z
+    zone: *1
+    time: 2012-07-31 12:25:43.000000000 Z
+  general_sub_header: "% of total"
+  group_sub_header: ''
+  subheader_image: ''
+  key: policy_sustainability_renewables
+  position: 2
+  sidebar_item_id: 19
+  output_element_id: 127
+  alt_output_element_id: 34
+  dependent_on: 
+- id: 40
+  image: dependence_chart.png
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-09-27 08:58:47.000000000 Z
+    zone: *1
+    time: 2012-09-27 10:58:47.000000000 Z
+  general_sub_header: maximum
+  group_sub_header: ''
+  subheader_image: ''
+  key: policy_dependence_foreign_dependence
+  position: 1
+  sidebar_item_id: 20
+  output_element_id: 132
+  alt_output_element_id: 76
+  dependent_on: ''
+- id: 41
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-09-27 08:59:08.000000000 Z
+    zone: *1
+    time: 2012-09-27 10:59:08.000000000 Z
+  general_sub_header: maximum increase
+  group_sub_header: ''
+  subheader_image: ''
+  key: policy_cost_energy
+  position: 1
+  sidebar_item_id: 21
+  output_element_id: 133
+  alt_output_element_id: 39
+  dependent_on: 
+- id: 42
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2011-03-10 06:04:33.000000000 Z
+    zone: *1
+    time: 2011-03-10 07:04:33.000000000 Z
+  general_sub_header: 'NULL'
+  group_sub_header: 
+  subheader_image: 
+  key: policy_grid_grid_and_interconnectivity
+  position: 
+  sidebar_item_id: 
+  output_element_id: 
+  alt_output_element_id: 
+  dependent_on: 
+- id: 43
+  image: house.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-11-15 13:44:51.000000000 Z
+    zone: *1
+    time: 2018-11-15 14:44:51.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-11-15 13:44:51.000000000 Z
+    zone: *1
+    time: 2018-11-15 14:44:51.000000000 Z
+  general_sub_header: ''
+  group_sub_header: "%/year"
+  subheader_image: ''
+  key: demand_households_demand_growth
+  position: 13
+  sidebar_item_id: 1
+  output_element_id: 213
+  alt_output_element_id: 213
+  dependent_on: ''
+- id: 44
+  image: industry_solarpanels.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-01-10 13:46:05.000000000 Z
+    zone: *1
+    time: 2019-01-10 14:46:05.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-20 10:54:31.000000000 Z
+    zone: *1
+    time: 2019-12-20 11:54:31.000000000 Z
+  general_sub_header: heat output
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_heat_network_industry
+  position: 13
+  sidebar_item_id: 4
+  output_element_id: 251
+  alt_output_element_id: 28
+  dependent_on: ''
+- id: 45
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-05-09 14:40:21.000000000 Z
+    zone: *1
+    time: 2019-05-09 16:40:21.000000000 Z
+  general_sub_header: electricity output
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_electricity_coal_plants
+  position: 1
+  sidebar_item_id: 22
+  output_element_id: 99
+  alt_output_element_id: 99
+  dependent_on: ''
+- id: 46
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-05-09 14:40:33.000000000 Z
+    zone: *1
+    time: 2019-05-09 16:40:33.000000000 Z
+  general_sub_header: electricity output
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_electricity_gas_plants
+  position: 2
+  sidebar_item_id: 22
+  output_element_id: 99
+  alt_output_element_id: 99
+  dependent_on: ''
+- id: 47
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-05-09 14:40:58.000000000 Z
+    zone: *1
+    time: 2019-05-09 16:40:58.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_electricity_oil_plants
+  position: 3
+  sidebar_item_id: 22
+  output_element_id: 99
+  alt_output_element_id: 99
+  dependent_on: ''
+- id: 48
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-05-09 14:40:47.000000000 Z
+    zone: *1
+    time: 2019-05-09 16:40:47.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_electricity_nuclear_plant
+  position: 4
+  sidebar_item_id: 22
+  output_element_id: 99
+  alt_output_element_id: 99
+  dependent_on: ''
+- id: 49
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-12-12 14:16:02.000000000 Z
+    zone: *1
+    time: 2018-12-12 15:16:02.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-12-12 14:16:02.000000000 Z
+    zone: *1
+    time: 2018-12-12 15:16:02.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_electricity_renewable_gas
+  position: 2
+  sidebar_item_id: 47
+  output_element_id: 77
+  alt_output_element_id: 77
+  dependent_on: ''
+- id: 51
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-05-09 14:38:18.000000000 Z
+    zone: *1
+    time: 2019-05-09 16:38:18.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_electricity_renewable_wind_turbines
+  position: 1
+  sidebar_item_id: 23
+  output_element_id: 99
+  alt_output_element_id: 99
+  dependent_on: ''
+- id: 52
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-05-09 14:38:25.000000000 Z
+    zone: *1
+    time: 2019-05-09 16:38:25.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_electricity_renewable_hydro_electric
+  position: 3
+  sidebar_item_id: 23
+  output_element_id: 99
+  alt_output_element_id: 99
+  dependent_on: ''
+- id: 53
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-02 15:14:17.000000000 Z
+    zone: *1
+    time: 2020-01-02 16:14:17.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_electricity_renewable_geothermal
+  position: 7
+  sidebar_item_id: 23
+  output_element_id: 99
+  alt_output_element_id: 99
+  dependent_on: ''
+- id: 54
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-02 15:13:09.000000000 Z
+    zone: *1
+    time: 2020-01-02 16:13:09.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_electricity_renewable_solar_power
+  position: 2
+  sidebar_item_id: 23
+  output_element_id: 99
+  alt_output_element_id: 99
+  dependent_on: ''
+- id: 55
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-02 15:17:15.000000000 Z
+    zone: *1
+    time: 2020-01-02 16:17:15.000000000 Z
+  general_sub_header: electricity output
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_electricity_renewable_waste_power
+  position: 5
+  sidebar_item_id: 23
+  output_element_id: 99
+  alt_output_element_id: 99
+  dependent_on: ''
+- id: 61
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-01-16 15:21:40.000000000 Z
+    zone: *1
+    time: 2012-01-16 16:21:40.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_transport_diesel
+  position: 
+  sidebar_item_id: 
+  output_element_id: 
+  alt_output_element_id: 
+  dependent_on: 
+- id: 62
+  image: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2011-03-10 06:04:33.000000000 Z
+    zone: *1
+    time: 2011-03-10 07:04:33.000000000 Z
+  general_sub_header: share
+  group_sub_header: 
+  subheader_image: 
+  key: supply_transport_gasoline
+  position: 
+  sidebar_item_id: 
+  output_element_id: 
+  alt_output_element_id: 
+  dependent_on: 
+- id: 63
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2011-03-10 06:04:33.000000000 Z
+    zone: *1
+    time: 2011-03-10 07:04:33.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: 
+  key: supply_transport_compressed_gas
+  position: 
+  sidebar_item_id: 
+  output_element_id: 
+  alt_output_element_id: 
+  dependent_on: 
+- id: 99
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-09-27 08:59:20.000000000 Z
+    zone: *1
+    time: 2012-09-27 10:59:20.000000000 Z
+  general_sub_header: maximum increase
+  group_sub_header: ''
+  subheader_image: ''
+  key: policy_cost_electricity
+  position: 2
+  sidebar_item_id: 21
+  output_element_id: 133
+  alt_output_element_id: 40
+  dependent_on: 
+- id: 102
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-10-10 11:36:39.000000000 Z
+    zone: *1
+    time: 2013-10-10 13:36:39.000000000 Z
+  general_sub_header: number
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_other_combined_heat_power
+  position: 2
+  sidebar_item_id: 
+  output_element_id: 63
+  alt_output_element_id: 63
+  dependent_on: ''
+- id: 103
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_infrastructure_high_voltage_network
+  position: 1
+  sidebar_item_id: 28
+  output_element_id: 61
+  alt_output_element_id: 61
+  dependent_on: 
+- id: 104
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_infrastructure_low_medium_voltage_network
+  position: 2
+  sidebar_item_id: 28
+  output_element_id: 61
+  alt_output_element_id: 61
+  dependent_on: 
+- id: 105
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2011-03-10 06:04:33.000000000 Z
+    zone: *1
+    time: 2011-03-10 07:04:33.000000000 Z
+  general_sub_header: change
+  group_sub_header: 
+  subheader_image: 
+  key: hidden_infrastructure_gas_network
+  position: 
+  sidebar_item_id: 
+  output_element_id: 
+  alt_output_element_id: 
+  dependent_on: 
+- id: 108
+  image: house_heating.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-07-10 11:58:19.000000000 Z
+    zone: *1
+    time: 2013-07-10 13:58:19.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_households_cooling
+  position: 9
+  sidebar_item_id: 1
+  output_element_id: 66
+  alt_output_element_id: 66
+  dependent_on: ''
+- id: 109
+  image: house_heating.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-07-10 11:58:06.000000000 Z
+    zone: *1
+    time: 2013-07-10 13:58:06.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_households_cooking
+  position: 10
+  sidebar_item_id: 1
+  output_element_id: 67
+  alt_output_element_id: 67
+  dependent_on: ''
+- id: 110
+  image: house_heating.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-11-15 13:45:04.000000000 Z
+    zone: *1
+    time: 2018-11-15 14:45:04.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-11-15 13:45:04.000000000 Z
+    zone: *1
+    time: 2018-11-15 14:45:04.000000000 Z
+  general_sub_header: change
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_households_behaviour
+  position: 14
+  sidebar_item_id: 1
+  output_element_id: 213
+  alt_output_element_id: 213
+  dependent_on: ''
+- id: 113
+  image: building_uncapped.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-02-01 15:45:17.000000000 Z
+    zone: *1
+    time: 2019-02-01 16:45:17.000000000 Z
+  general_sub_header: "%/year"
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_buildings_demand_growth
+  position: 10
+  sidebar_item_id: 2
+  output_element_id: 68
+  alt_output_element_id: 68
+  dependent_on: ''
+- id: 114
+  image: building_insulation.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-12-19 14:38:51.000000000 Z
+    zone: *1
+    time: 2018-12-19 15:38:51.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-04-17 09:05:17.000000000 Z
+    zone: *1
+    time: 2019-04-17 11:05:17.000000000 Z
+  general_sub_header: heat_demand_reduction
+  group_sub_header: ''
+  subheader_image: buildings_insulation_energy_label.png
+  key: demand_buildings_insulation
+  position: 2
+  sidebar_item_id: 2
+  output_element_id: 68
+  alt_output_element_id: 69
+  dependent_on: ''
+- id: 115
+  image: building_heating_uncapped.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: share
+  group_sub_header: 
+  subheader_image: 
+  key: demand_buildings_heating
+  position: 3
+  sidebar_item_id: 2
+  output_element_id: 70
+  alt_output_element_id: 70
+  dependent_on: 
+- id: 116
+  image: building_cooling_uncapped.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_buildings_cooling
+  position: 5
+  sidebar_item_id: 2
+  output_element_id: 71
+  alt_output_element_id: 71
+  dependent_on: 
+- id: 117
+  image: building_ventilation_uncapped.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-08-19 14:48:28.000000000 Z
+    zone: *1
+    time: 2013-08-19 16:48:28.000000000 Z
+  general_sub_header: " "
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_buildings_ventilation
+  position: 6
+  sidebar_item_id: 
+  output_element_id: 68
+  alt_output_element_id: 68
+  dependent_on: ''
+- id: 118
+  image: building_appliances_uncapped.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: "%/year"
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_buildings_appliances
+  position: 7
+  sidebar_item_id: 2
+  output_element_id: 72
+  alt_output_element_id: 72
+  dependent_on: 
+- id: 119
+  image: building_lighting_uncapped.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:16.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:16.000000000 Z
+  general_sub_header: share
+  group_sub_header: "% of potential"
+  subheader_image: ''
+  key: demand_buildings_lighting
+  position: 8
+  sidebar_item_id: 2
+  output_element_id: 72
+  alt_output_element_id: 72
+  dependent_on: 
+- id: 121
+  image: building_decentral_uncapped.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-07-04 11:24:13.000000000 Z
+    zone: *1
+    time: 2012-07-04 13:24:13.000000000 Z
+  general_sub_header: "% of potential"
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_buildings_solar_panels
+  position: 9
+  sidebar_item_id: 2
+  output_element_id: 74
+  alt_output_element_id: 74
+  dependent_on: 
+- id: 122
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-06-15 09:17:54.000000000 Z
+    zone: *1
+    time: 2018-06-15 11:17:54.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_renewable_heat_solar
+  position: 4
+  sidebar_item_id: 25
+  output_element_id: 42
+  alt_output_element_id: 42
+  dependent_on: ''
+- id: 123
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-28 13:06:42.000000000 Z
+    zone: *1
+    time: 2017-11-28 14:06:42.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_transport_domestic_aviation_technology
+  position: 9
+  sidebar_item_id: 51
+  output_element_id: 205
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 124
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2015-12-09 13:08:45.000000000 Z
+    zone: *1
+    time: 2015-12-09 14:08:45.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_transport_marine_fuels
+  position: 4
+  sidebar_item_id: 26
+  output_element_id: 43
+  alt_output_element_id: 43
+  dependent_on: ''
+- id: 125
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2015-12-10 11:28:37.000000000 Z
+    zone: *1
+    time: 2015-12-10 12:28:37.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_transport_passenger_train_technology
+  position: 3
+  sidebar_item_id: 51
+  output_element_id: 206
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 131
+  image: car.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2011-03-10 06:04:34.000000000 Z
+    zone: *1
+    time: 2011-03-10 07:04:34.000000000 Z
+  general_sub_header: number
+  group_sub_header: 
+  subheader_image: 
+  key: supply_transport_public_transport_technologies
+  position: 
+  sidebar_item_id: 
+  output_element_id: 
+  alt_output_element_id: 
+  dependent_on: 
+- id: 140
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-12-14 09:43:39.000000000 Z
+    zone: *1
+    time: 2018-12-14 10:43:39.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-08-21 12:22:24.000000000 Z
+    zone: *1
+    time: 2019-08-21 14:22:24.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_biomass_bio_coal_bio_oil
+  position: 4
+  sidebar_item_id: 47
+  output_element_id: 242
+  alt_output_element_id: 99
+  dependent_on: ''
+- id: 143
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2011-04-20 11:13:17.000000000 Z
+    zone: *1
+    time: 2011-04-20 13:13:17.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:17.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:17.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: fce_coal
+  position: 2
+  sidebar_item_id: 32
+  output_element_id: 100
+  alt_output_element_id: 100
+  dependent_on: ''
+- id: 144
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2011-04-20 11:13:46.000000000 Z
+    zone: *1
+    time: 2011-04-20 13:13:46.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:17.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:17.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: fce_gas
+  position: 4
+  sidebar_item_id: 32
+  output_element_id: 100
+  alt_output_element_id: 100
+  dependent_on: ''
+- id: 145
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2011-04-20 11:14:10.000000000 Z
+    zone: *1
+    time: 2011-04-20 13:14:10.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:17.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:17.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: fce_oil
+  position: 3
+  sidebar_item_id: 32
+  output_element_id: 100
+  alt_output_element_id: 100
+  dependent_on: ''
+- id: 146
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2011-04-20 11:15:32.000000000 Z
+    zone: *1
+    time: 2011-04-20 13:15:32.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-12-10 19:07:53.000000000 Z
+    zone: *1
+    time: 2012-12-10 20:07:53.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: fce_uranium
+  position: 8
+  sidebar_item_id: 32
+  output_element_id: 105
+  alt_output_element_id: 105
+  dependent_on: ''
+- id: 147
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2011-04-20 11:15:32.000000000 Z
+    zone: *1
+    time: 2011-04-20 13:15:32.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-12-10 19:08:26.000000000 Z
+    zone: *1
+    time: 2012-12-10 20:08:26.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: fce_biomass
+  position: 7
+  sidebar_item_id: 32
+  output_element_id: 107
+  alt_output_element_id: 107
+  dependent_on: ''
+- id: 148
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2011-04-20 11:15:32.000000000 Z
+    zone: *1
+    time: 2011-04-20 13:15:32.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:17.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:17.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: fce_greengas
+  position: 6
+  sidebar_item_id: 32
+  output_element_id: 107
+  alt_output_element_id: 107
+  dependent_on: ''
+- id: 151
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-03-13 12:48:53.000000000 Z
+    zone: *1
+    time: 2012-03-13 13:48:53.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-11-03 13:50:51.000000000 Z
+    zone: *1
+    time: 2014-11-03 14:50:51.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_electricity_backup_backup_options
+  position: 2
+  sidebar_item_id: 
+  output_element_id: 115
+  alt_output_element_id: 115
+  dependent_on: ''
+- id: 152
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-03-13 12:53:13.000000000 Z
+    zone: *1
+    time: 2012-03-13 13:53:13.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-16 13:55:38.000000000 Z
+    zone: *1
+    time: 2020-01-16 14:55:38.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_security_of_supply_electricity
+  position: 1
+  sidebar_item_id: 33
+  output_element_id: 172
+  alt_output_element_id: 125
+  dependent_on: ''
+- id: 153
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-03-13 13:23:00.000000000 Z
+    zone: *1
+    time: 2012-03-13 14:23:00.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-07-20 08:56:35.000000000 Z
+    zone: *1
+    time: 2016-07-20 10:56:35.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_merit_order_merit_order
+  position: 1
+  sidebar_item_id: 34
+  output_element_id: 172
+  alt_output_element_id: 172
+  dependent_on: ''
+- id: 154
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-03-13 19:54:25.000000000 Z
+    zone: *1
+    time: 2012-03-13 20:54:25.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:17.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:17.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_employment
+  position: 1
+  sidebar_item_id: 35
+  output_element_id: 118
+  alt_output_element_id: 118
+  dependent_on: _always_hidden
+- id: 155
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2015-12-10 11:24:42.000000000 Z
+    zone: *1
+    time: 2015-12-10 12:24:42.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_transport_trains
+  position: 2
+  sidebar_item_id: 26
+  output_element_id: 43
+  alt_output_element_id: 43
+  dependent_on: ''
+- id: 156
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-07 13:13:57.000000000 Z
+    zone: *1
+    time: 2012-08-07 15:13:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-28 13:55:17.000000000 Z
+    zone: *1
+    time: 2012-06-28 15:55:17.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_transport_road_transport
+  position: 1
+  sidebar_item_id: 26
+  output_element_id: 43
+  alt_output_element_id: 43
+  dependent_on: ''
+- id: 157
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-06-18 14:28:20.000000000 Z
+    zone: *1
+    time: 2012-06-18 16:28:20.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-09 09:59:37.000000000 Z
+    zone: *1
+    time: 2020-01-09 10:59:37.000000000 Z
+  general_sub_header: change
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_heatpumps
+  position: 5
+  sidebar_item_id: 36
+  output_element_id: 113
+  alt_output_element_id: 113
+  dependent_on: ''
+- id: 158
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-24 20:00:38.000000000 Z
+    zone: *1
+    time: 2012-08-24 22:00:38.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-08-24 20:00:38.000000000 Z
+    zone: *1
+    time: 2012-08-24 22:00:38.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: fce_settings
+  position: 1
+  sidebar_item_id: 32
+  output_element_id: 100
+  alt_output_element_id: 100
+  dependent_on: ''
+- id: 159
+  image: industry.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-09-07 09:42:28.000000000 Z
+    zone: *1
+    time: 2012-09-07 11:42:28.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-10-15 12:30:54.000000000 Z
+    zone: *1
+    time: 2012-10-15 14:30:54.000000000 Z
+  general_sub_header: "%/year"
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_industry_metal_production
+  position: 21
+  sidebar_item_id: 38
+  output_element_id: 136
+  alt_output_element_id: 136
+  dependent_on: ''
+- id: 160
+  image: industry.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-09-07 13:24:20.000000000 Z
+    zone: *1
+    time: 2012-09-07 15:24:20.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-08-30 09:00:07.000000000 Z
+    zone: *1
+    time: 2016-08-30 11:00:07.000000000 Z
+  general_sub_header: ''
+  group_sub_header: share
+  subheader_image: ''
+  key: demand_industry_aluminium
+  position: 3
+  sidebar_item_id: 4
+  output_element_id: 130
+  alt_output_element_id: 130
+  dependent_on: has_metal
+- id: 161
+  image: industry.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-09-12 12:44:00.000000000 Z
+    zone: *1
+    time: 2012-09-12 14:44:00.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-08-09 15:35:50.000000000 Z
+    zone: *1
+    time: 2016-08-09 17:35:50.000000000 Z
+  general_sub_header: ''
+  group_sub_header: "%/year"
+  subheader_image: ''
+  key: demand_industry_other_metals
+  position: 4
+  sidebar_item_id: 4
+  output_element_id: 131
+  alt_output_element_id: 131
+  dependent_on: ''
+- id: 162
+  image: industry.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-10-04 14:48:58.000000000 Z
+    zone: *1
+    time: 2012-10-04 16:48:58.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-08-09 15:36:23.000000000 Z
+    zone: *1
+    time: 2016-08-09 17:36:23.000000000 Z
+  general_sub_header: ''
+  group_sub_header: share
+  subheader_image: ''
+  key: demand_industry_steel
+  position: 2
+  sidebar_item_id: 4
+  output_element_id: 135
+  alt_output_element_id: 135
+  dependent_on: has_metal
+- id: 163
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-11-05 13:00:19.000000000 Z
+    zone: *1
+    time: 2012-11-05 14:00:19.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-11-11 15:27:03.000000000 Z
+    zone: *1
+    time: 2019-11-11 16:27:03.000000000 Z
+  general_sub_header: temperature
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_weather_conditions_and_flh
+  position: 1
+  sidebar_item_id: 60
+  output_element_id: 137
+  alt_output_element_id: 57
+  dependent_on: ''
+- id: 164
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-12-10 19:06:29.000000000 Z
+    zone: *1
+    time: 2012-12-10 20:06:29.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2012-12-11 17:00:32.000000000 Z
+    zone: *1
+    time: 2012-12-11 18:00:32.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: fce_liquid_biofuels
+  position: 5
+  sidebar_item_id: 32
+  output_element_id: 138
+  alt_output_element_id: 138
+  dependent_on: ''
+- id: 165
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-06-07 14:27:09.000000000 Z
+    zone: *1
+    time: 2013-06-07 16:27:09.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-16 15:01:48.000000000 Z
+    zone: *1
+    time: 2017-11-16 16:01:48.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_excess
+  position: 11
+  sidebar_item_id: 39
+  output_element_id: 143
+  alt_output_element_id: 143
+  dependent_on: _always_hidden
+- id: 166
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-06-07 16:00:14.000000000 Z
+    zone: *1
+    time: 2013-06-07 18:00:14.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-09-27 09:58:00.000000000 Z
+    zone: *1
+    time: 2019-09-27 11:58:00.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_power_storage
+  position: 1
+  sidebar_item_id: 53
+  output_element_id: 163
+  alt_output_element_id: 143
+  dependent_on: ''
+- id: 168
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-06-07 16:09:51.000000000 Z
+    zone: *1
+    time: 2013-06-07 18:09:51.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-03-05 15:42:23.000000000 Z
+    zone: *1
+    time: 2018-03-05 16:42:23.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_power_to_gas
+  position: 1
+  sidebar_item_id: 54
+  output_element_id: 163
+  alt_output_element_id: 163
+  dependent_on: ''
+- id: 169
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-06-10 09:38:42.000000000 Z
+    zone: *1
+    time: 2013-06-10 11:38:42.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-16 15:01:49.000000000 Z
+    zone: *1
+    time: 2017-11-16 16:01:49.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_wind_cost
+  position: 12
+  sidebar_item_id: 39
+  output_element_id: 143
+  alt_output_element_id: 143
+  dependent_on: _always_hidden
+- id: 170
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-06-18 08:04:17.000000000 Z
+    zone: *1
+    time: 2013-06-18 10:04:17.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-02-07 17:18:31.000000000 Z
+    zone: *1
+    time: 2019-02-07 18:18:31.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_net_load
+  position: 9
+  sidebar_item_id: 55
+  output_element_id: 223
+  alt_output_element_id: 216
+  dependent_on: ''
+- id: 171
+  image: house.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-07-10 12:01:19.000000000 Z
+    zone: *1
+    time: 2013-07-10 14:01:19.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-11-15 13:52:17.000000000 Z
+    zone: *1
+    time: 2018-11-15 14:52:17.000000000 Z
+  general_sub_header: number
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_households_population
+  position: 2
+  sidebar_item_id: 1
+  output_element_id: 213
+  alt_output_element_id: 145
+  dependent_on: ''
+- id: 172
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-11-04 09:55:13.000000000 Z
+    zone: *1
+    time: 2013-11-04 10:55:13.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-07-20 09:54:47.000000000 Z
+    zone: *1
+    time: 2016-07-20 11:54:47.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_electricity_import_export_markets
+  position: 2
+  sidebar_item_id: 40
+  output_element_id: 156
+  alt_output_element_id: 
+  dependent_on: _always_hidden
+- id: 173
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-11-04 10:05:21.000000000 Z
+    zone: *1
+    time: 2013-11-04 11:05:21.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-07-20 09:55:01.000000000 Z
+    zone: *1
+    time: 2016-07-20 11:55:01.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_electricity_import_export_edp
+  position: 3
+  sidebar_item_id: 40
+  output_element_id: 149
+  alt_output_element_id: 149
+  dependent_on: _always_hidden
+- id: 174
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-11-04 10:16:21.000000000 Z
+    zone: *1
+    time: 2013-11-04 11:16:21.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-06-15 13:42:49.000000000 Z
+    zone: *1
+    time: 2018-06-15 15:42:49.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_electricity_import_export_interconnectors
+  position: 4
+  sidebar_item_id: 40
+  output_element_id: 99
+  alt_output_element_id: 147
+  dependent_on: _always_hidden
+- id: 175
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-11-05 15:24:18.000000000 Z
+    zone: *1
+    time: 2013-11-05 16:24:18.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-07-20 09:55:33.000000000 Z
+    zone: *1
+    time: 2016-07-20 11:55:33.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_electricity_import_export_renewables
+  position: 5
+  sidebar_item_id: 40
+  output_element_id: 148
+  alt_output_element_id: 
+  dependent_on: _always_hidden
+- id: 176
+  image: industry.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-12-04 13:40:23.000000000 Z
+    zone: *1
+    time: 2013-12-04 14:40:23.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-01-14 10:46:50.000000000 Z
+    zone: *1
+    time: 2014-01-14 11:46:50.000000000 Z
+  general_sub_header: "%/year"
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_industry_chemical_demand_growth
+  position: 1
+  sidebar_item_id: 41
+  output_element_id: 152
+  alt_output_element_id: 152
+  dependent_on: ''
+- id: 177
+  image: industry.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-12-04 15:38:13.000000000 Z
+    zone: *1
+    time: 2013-12-04 16:38:13.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-01-14 10:47:03.000000000 Z
+    zone: *1
+    time: 2014-01-14 11:47:03.000000000 Z
+  general_sub_header: "%/year"
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_industry_chemical_efficiency_improvement
+  position: 2
+  sidebar_item_id: 41
+  output_element_id: 152
+  alt_output_element_id: 152
+  dependent_on: ''
+- id: 178
+  image: industry.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-12-04 15:53:37.000000000 Z
+    zone: *1
+    time: 2013-12-04 16:53:37.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2013-12-05 10:12:59.000000000 Z
+    zone: *1
+    time: 2013-12-05 11:12:59.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_industry_chemical_heat
+  position: 3
+  sidebar_item_id: 41
+  output_element_id: 151
+  alt_output_element_id: 151
+  dependent_on: ''
+- id: 179
+  image: industry.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-01-06 10:26:50.000000000 Z
+    zone: *1
+    time: 2014-01-06 11:26:50.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-10-09 07:59:51.000000000 Z
+    zone: *1
+    time: 2018-10-09 09:59:51.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_industry
+  position: 1
+  sidebar_item_id: 4
+  output_element_id: 178
+  alt_output_element_id: 176
+  dependent_on: ''
+- id: 180
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-04-28 12:01:18.000000000 Z
+    zone: *1
+    time: 2014-04-28 14:01:18.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-05-15 11:12:43.000000000 Z
+    zone: *1
+    time: 2014-05-15 13:12:43.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_primary_production_oil
+  position: 3
+  sidebar_item_id: 43
+  output_element_id: 158
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 181
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-04-28 12:40:07.000000000 Z
+    zone: *1
+    time: 2014-04-28 14:40:07.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-05-15 11:12:07.000000000 Z
+    zone: *1
+    time: 2014-05-15 13:12:07.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_primary_production_coal
+  position: 2
+  sidebar_item_id: 43
+  output_element_id: 157
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 182
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-04-28 12:42:04.000000000 Z
+    zone: *1
+    time: 2014-04-28 14:42:04.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-05-15 11:12:59.000000000 Z
+    zone: *1
+    time: 2014-05-15 13:12:59.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_primary_production_natural_gas
+  position: 4
+  sidebar_item_id: 43
+  output_element_id: 159
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 184
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-04-28 13:14:52.000000000 Z
+    zone: *1
+    time: 2014-04-28 15:14:52.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-05-15 11:13:25.000000000 Z
+    zone: *1
+    time: 2014-05-15 13:13:25.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_primary_production_uranium
+  position: 6
+  sidebar_item_id: 43
+  output_element_id: 161
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 185
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-04-28 13:52:35.000000000 Z
+    zone: *1
+    time: 2014-04-28 15:52:35.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2014-04-28 13:52:35.000000000 Z
+    zone: *1
+    time: 2014-04-28 15:52:35.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_primary_production
+  position: 1
+  sidebar_item_id: 43
+  output_element_id: 76
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 186
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2015-03-17 10:59:52.000000000 Z
+    zone: *1
+    time: 2015-03-17 11:59:52.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-08-07 07:28:30.000000000 Z
+    zone: *1
+    time: 2018-08-07 09:28:30.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_power_to_power_EV
+  position: 2
+  sidebar_item_id: 53
+  output_element_id: 163
+  alt_output_element_id: 
+  dependent_on: _always_hidden
+- id: 187
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2015-03-17 15:19:46.000000000 Z
+    zone: *1
+    time: 2015-03-17 16:19:46.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-07-20 09:54:31.000000000 Z
+    zone: *1
+    time: 2016-07-20 11:54:31.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_electricity_import_export_interconnectivity
+  position: 1
+  sidebar_item_id: 40
+  output_element_id: 164
+  alt_output_element_id: 164
+  dependent_on: ''
+- id: 191
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2015-11-09 08:19:36.000000000 Z
+    zone: *1
+    time: 2015-11-09 09:19:36.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2015-11-09 08:19:36.000000000 Z
+    zone: *1
+    time: 2015-11-09 09:19:36.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_transport_domestic_navigation_technology
+  position: 14
+  sidebar_item_id: 52
+  output_element_id: 207
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 192
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2015-11-16 13:29:30.000000000 Z
+    zone: *1
+    time: 2015-11-16 14:29:30.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2015-11-16 13:29:30.000000000 Z
+    zone: *1
+    time: 2015-11-16 14:29:30.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: fce_lng
+  position: 5
+  sidebar_item_id: 32
+  output_element_id: 100
+  alt_output_element_id: 100
+  dependent_on: _always_hidden
+- id: 193
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-03-29 11:07:33.000000000 Z
+    zone: *1
+    time: 2018-03-29 13:07:33.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-10-02 12:44:30.000000000 Z
+    zone: *1
+    time: 2018-10-02 14:44:30.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_hydrogen_production
+  position: 1
+  sidebar_item_id: 45
+  output_element_id: 214
+  alt_output_element_id: 225
+  dependent_on: ''
+- id: 194
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-02-02 10:33:08.000000000 Z
+    zone: *1
+    time: 2016-02-02 11:33:08.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-03-01 13:09:37.000000000 Z
+    zone: *1
+    time: 2018-03-01 14:09:37.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_flexibility_order
+  position: 1
+  sidebar_item_id: 39
+  output_element_id: 173
+  alt_output_element_id: 164
+  dependent_on: ''
+- id: 195
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-02-05 15:07:50.000000000 Z
+    zone: *1
+    time: 2016-02-05 16:07:50.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-02-05 15:11:00.000000000 Z
+    zone: *1
+    time: 2016-02-05 16:11:00.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_electric_car_investment
+  position: 1
+  sidebar_item_id: 46
+  output_element_id: 170
+  alt_output_element_id: 170
+  dependent_on: ''
+- id: 196
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-07-20 08:55:20.000000000 Z
+    zone: *1
+    time: 2016-07-20 10:55:20.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-10-14 11:05:38.000000000 Z
+    zone: *1
+    time: 2016-10-14 13:05:38.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_merit_order_merit_order_positions
+  position: 2
+  sidebar_item_id: 34
+  output_element_id: 125
+  alt_output_element_id: 116
+  dependent_on: ''
+- id: 197
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-07-20 08:56:01.000000000 Z
+    zone: *1
+    time: 2016-07-20 10:56:01.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-07-08 13:51:18.000000000 Z
+    zone: *1
+    time: 2019-07-08 15:51:18.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_merit_order_merit_order_price
+  position: 4
+  sidebar_item_id: 48
+  output_element_id: 171
+  alt_output_element_id: 171
+  dependent_on: ''
+- id: 198
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-07-20 09:16:33.000000000 Z
+    zone: *1
+    time: 2016-07-20 11:16:33.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-02-26 09:38:53.000000000 Z
+    zone: *1
+    time: 2018-02-26 10:38:53.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_excess_electricity
+  position: 1
+  sidebar_item_id: 
+  output_element_id: 175
+  alt_output_element_id: 175
+  dependent_on: ''
+- id: 199
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-08-08 15:31:09.000000000 Z
+    zone: *1
+    time: 2016-08-08 17:31:09.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-09-14 08:25:08.000000000 Z
+    zone: *1
+    time: 2016-09-14 10:25:08.000000000 Z
+  general_sub_header: ''
+  group_sub_header: share
+  subheader_image: ''
+  key: demand_industry_chemical_refineries
+  position: 5
+  sidebar_item_id: 4
+  output_element_id: 190
+  alt_output_element_id: 180
+  dependent_on: ''
+- id: 201
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-08-09 07:45:06.000000000 Z
+    zone: *1
+    time: 2016-08-09 09:45:06.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-08-09 14:02:32.000000000 Z
+    zone: *1
+    time: 2016-08-09 16:02:32.000000000 Z
+  general_sub_header: ''
+  group_sub_header: share
+  subheader_image: ''
+  key: demand_industry_chemical_fertilizers
+  position: 6
+  sidebar_item_id: 4
+  output_element_id: 184
+  alt_output_element_id: 184
+  dependent_on: has_detailed_chemical_industry
+- id: 202
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-08-09 08:06:39.000000000 Z
+    zone: *1
+    time: 2016-08-09 10:06:39.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-08-09 14:02:42.000000000 Z
+    zone: *1
+    time: 2016-08-09 16:02:42.000000000 Z
+  general_sub_header: ''
+  group_sub_header: share
+  subheader_image: ''
+  key: demand_industry_chemical_other
+  position: 7
+  sidebar_item_id: 4
+  output_element_id: 182
+  alt_output_element_id: 182
+  dependent_on: ''
+- id: 203
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-08-09 08:22:16.000000000 Z
+    zone: *1
+    time: 2016-08-09 10:22:16.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-11-11 16:17:21.000000000 Z
+    zone: *1
+    time: 2019-11-11 17:17:21.000000000 Z
+  general_sub_header: ''
+  group_sub_header: share
+  subheader_image: ''
+  key: demand_industry_other_food
+  position: 9
+  sidebar_item_id: 4
+  output_element_id: 183
+  alt_output_element_id: 183
+  dependent_on: ''
+- id: 204
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-08-09 08:27:26.000000000 Z
+    zone: *1
+    time: 2016-08-09 10:27:26.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-11-11 16:29:51.000000000 Z
+    zone: *1
+    time: 2019-11-11 17:29:51.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_industry_other_paper
+  position: 10
+  sidebar_item_id: 4
+  output_element_id: 181
+  alt_output_element_id: 181
+  dependent_on: ''
+- id: 205
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-08-09 08:31:01.000000000 Z
+    zone: *1
+    time: 2016-08-09 10:31:01.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-10-10 14:35:24.000000000 Z
+    zone: *1
+    time: 2018-10-10 16:35:24.000000000 Z
+  general_sub_header: ''
+  group_sub_header: share
+  subheader_image: ''
+  key: demand_industry_aggregated_other
+  position: 11
+  sidebar_item_id: 4
+  output_element_id: 186
+  alt_output_element_id: 186
+  dependent_on: ''
+- id: 207
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-08-09 08:53:04.000000000 Z
+    zone: *1
+    time: 2016-08-09 10:53:04.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-08-10 14:38:54.000000000 Z
+    zone: *1
+    time: 2016-08-10 16:38:54.000000000 Z
+  general_sub_header: ''
+  group_sub_header: share
+  subheader_image: ''
+  key: demand_industry_aggregated_chemical_other
+  position: 7
+  sidebar_item_id: 4
+  output_element_id: 182
+  alt_output_element_id: 182
+  dependent_on: _always_hidden
+- id: 208
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-08-22 13:12:53.000000000 Z
+    zone: *1
+    time: 2016-08-22 15:12:53.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-12-14 09:03:18.000000000 Z
+    zone: *1
+    time: 2018-12-14 10:03:18.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_co2_emissions_biomass
+  position: 5
+  sidebar_item_id: 47
+  output_element_id: 188
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 211
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-08-23 14:48:59.000000000 Z
+    zone: *1
+    time: 2016-08-23 16:48:59.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2016-08-30 09:02:52.000000000 Z
+    zone: *1
+    time: 2016-08-30 11:02:52.000000000 Z
+  general_sub_header: ''
+  group_sub_header: "%/year"
+  subheader_image: ''
+  key: demand_industry_other_ict
+  position: 8
+  sidebar_item_id: 4
+  output_element_id: 189
+  alt_output_element_id: 189
+  dependent_on: ''
+- id: 212
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-04-19 08:21:33.000000000 Z
+    zone: *1
+    time: 2017-04-19 10:21:33.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-28 09:42:11.000000000 Z
+    zone: *1
+    time: 2017-11-28 10:42:11.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_demand_response_ev
+  position: 10
+  sidebar_item_id: 55
+  output_element_id: 194
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 214
+  image: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-08-11 16:16:45.000000000 Z
+    zone: *1
+    time: 2017-08-11 18:16:45.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-08-11 16:16:45.000000000 Z
+    zone: *1
+    time: 2017-08-11 18:16:45.000000000 Z
+  general_sub_header: 
+  group_sub_header: 
+  subheader_image: 
+  key: data_export_application_demands
+  position: 2
+  sidebar_item_id: 48
+  output_element_id: 45
+  alt_output_element_id: 
+  dependent_on: 
+- id: 215
+  image: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-08-11 16:16:45.000000000 Z
+    zone: *1
+    time: 2017-08-11 18:16:45.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-08-11 16:16:45.000000000 Z
+    zone: *1
+    time: 2017-08-11 18:16:45.000000000 Z
+  general_sub_header: 
+  group_sub_header: 
+  subheader_image: 
+  key: data_export_production
+  position: 3
+  sidebar_item_id: 48
+  output_element_id: 142
+  alt_output_element_id: 
+  dependent_on: 
+- id: 216
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-08-23 14:57:05.000000000 Z
+    zone: *1
+    time: 2017-08-23 16:57:05.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-28 09:42:37.000000000 Z
+    zone: *1
+    time: 2017-11-28 10:42:37.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_demand_response_hp
+  position: 10
+  sidebar_item_id: 55
+  output_element_id: 194
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 218
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-10-12 14:39:03.000000000 Z
+    zone: *1
+    time: 2017-10-12 16:39:03.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-07-08 13:50:56.000000000 Z
+    zone: *1
+    time: 2019-07-08 15:50:56.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: data_export_energy_flows
+  position: 1
+  sidebar_item_id: 48
+  output_element_id: 123
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 219
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-15 16:30:59.000000000 Z
+    zone: *1
+    time: 2017-11-15 17:30:59.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-23 15:27:32.000000000 Z
+    zone: *1
+    time: 2017-11-23 16:27:32.000000000 Z
+  general_sub_header: of_total
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_transport_international_transport
+  position: 1
+  sidebar_item_id: 50
+  output_element_id: 209
+  alt_output_element_id: 198
+  dependent_on: ''
+- id: 220
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-15 16:30:59.000000000 Z
+    zone: *1
+    time: 2017-11-15 17:30:59.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-23 14:46:47.000000000 Z
+    zone: *1
+    time: 2017-11-23 15:46:47.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_transport_international_aviation
+  position: 5
+  sidebar_item_id: 26
+  output_element_id: 199
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 221
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-15 16:30:59.000000000 Z
+    zone: *1
+    time: 2017-11-15 17:30:59.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-01-16 15:19:11.000000000 Z
+    zone: *1
+    time: 2018-01-16 16:19:11.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_transport_international_shipping
+  position: 6
+  sidebar_item_id: 26
+  output_element_id: 199
+  alt_output_element_id: 190
+  dependent_on: ''
+- id: 222
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-15 16:30:59.000000000 Z
+    zone: *1
+    time: 2017-11-15 17:30:59.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-23 15:27:52.000000000 Z
+    zone: *1
+    time: 2017-11-23 16:27:52.000000000 Z
+  general_sub_header: year
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_transport_international_transport_mobility_growth
+  position: 2
+  sidebar_item_id: 50
+  output_element_id: 209
+  alt_output_element_id: 198
+  dependent_on: ''
+- id: 223
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-15 16:30:59.000000000 Z
+    zone: *1
+    time: 2017-11-15 17:30:59.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-02-07 14:59:41.000000000 Z
+    zone: *1
+    time: 2018-02-07 15:59:41.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_transport_international_navigation_technology
+  position: 4
+  sidebar_item_id: 50
+  output_element_id: 198
+  alt_output_element_id: 199
+  dependent_on: ''
+- id: 224
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-15 16:30:59.000000000 Z
+    zone: *1
+    time: 2017-11-15 17:30:59.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-02-07 14:59:53.000000000 Z
+    zone: *1
+    time: 2018-02-07 15:59:53.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_transport_international_aviation_technology
+  position: 3
+  sidebar_item_id: 50
+  output_element_id: 198
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 225
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-16 15:01:49.000000000 Z
+    zone: *1
+    time: 2017-11-16 16:01:49.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-03-05 15:42:52.000000000 Z
+    zone: *1
+    time: 2018-03-05 16:42:52.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_power_to_kerosene
+  position: 4
+  sidebar_item_id: 54
+  output_element_id: 211
+  alt_output_element_id: 200
+  dependent_on: ''
+- id: 226
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-03 13:15:28.000000000 Z
+    zone: *1
+    time: 2017-11-03 14:15:28.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-12-07 12:47:58.000000000 Z
+    zone: *1
+    time: 2017-12-07 13:47:58.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_transport_bus_technology
+  position: 6
+  sidebar_item_id: 51
+  output_element_id: 206
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 227
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-03 13:18:17.000000000 Z
+    zone: *1
+    time: 2017-11-03 14:18:17.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-12-07 12:48:32.000000000 Z
+    zone: *1
+    time: 2017-12-07 13:48:32.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_transport_bicycle_technology
+  position: 8
+  sidebar_item_id: 51
+  output_element_id: 204
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 228
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-03 13:21:54.000000000 Z
+    zone: *1
+    time: 2017-11-03 14:21:54.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-12-07 12:48:25.000000000 Z
+    zone: *1
+    time: 2017-12-07 13:48:25.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_transport_motorcycle_technology
+  position: 7
+  sidebar_item_id: 51
+  output_element_id: 204
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 229
+  image: truck.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-03 13:22:59.000000000 Z
+    zone: *1
+    time: 2017-11-03 14:22:59.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-12-20 10:35:10.000000000 Z
+    zone: *1
+    time: 2017-12-20 11:35:10.000000000 Z
+  general_sub_header: year
+  group_sub_header: share
+  subheader_image: ''
+  key: demand_transport_freight_transport
+  position: 11
+  sidebar_item_id: 52
+  output_element_id: 208
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 230
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-03 13:34:31.000000000 Z
+    zone: *1
+    time: 2017-11-03 14:34:31.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-28 14:25:13.000000000 Z
+    zone: *1
+    time: 2017-11-28 15:25:13.000000000 Z
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_transport_freight_train_technology
+  position: 13
+  sidebar_item_id: 52
+  output_element_id: 207
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 232
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-28 12:55:25.000000000 Z
+    zone: *1
+    time: 2017-11-28 13:55:25.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-04-18 15:31:39.000000000 Z
+    zone: *1
+    time: 2018-04-18 17:31:39.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_flexibility_storage
+  position: 1
+  sidebar_item_id: 44
+  output_element_id: 48
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 233
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-11-28 12:56:19.000000000 Z
+    zone: *1
+    time: 2017-11-28 13:56:19.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-04-18 15:30:14.000000000 Z
+    zone: *1
+    time: 2018-04-18 17:30:14.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_flexibility_conversion
+  position: 2
+  sidebar_item_id: 44
+  output_element_id: 48
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 234
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-12-07 12:50:43.000000000 Z
+    zone: *1
+    time: 2017-12-07 13:50:43.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-12-07 12:52:51.000000000 Z
+    zone: *1
+    time: 2017-12-07 13:52:51.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_transport_tram_technology
+  position: 5
+  sidebar_item_id: 51
+  output_element_id: 206
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 235
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-01-03 12:47:27.000000000 Z
+    zone: *1
+    time: 2018-01-03 13:47:27.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-01-03 13:00:31.000000000 Z
+    zone: *1
+    time: 2018-01-03 14:00:31.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_transport_overview
+  position: 1
+  sidebar_item_id: 3
+  output_element_id: 201
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 236
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-01-05 11:18:47.000000000 Z
+    zone: *1
+    time: 2018-01-05 12:18:47.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-01-05 15:53:25.000000000 Z
+    zone: *1
+    time: 2018-01-05 16:53:25.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_electricity_import_export_properties
+  position: 1
+  sidebar_item_id: 40
+  output_element_id: 46
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 237
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-01-18 13:54:14.000000000 Z
+    zone: *1
+    time: 2018-01-18 14:54:14.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-10-09 08:10:22.000000000 Z
+    zone: *1
+    time: 2018-10-09 10:10:22.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_power_to_methane
+  position: 9
+  sidebar_item_id: 
+  output_element_id: 
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 238
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-02-20 13:29:04.000000000 Z
+    zone: *1
+    time: 2018-02-20 14:29:04.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-07-08 17:02:41.000000000 Z
+    zone: *1
+    time: 2019-07-08 19:02:41.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_imported_electricity
+  position: 0
+  sidebar_item_id: 56
+  output_element_id: 171
+  alt_output_element_id: 102
+  dependent_on: ''
+- id: 239
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-03-13 11:21:48.000000000 Z
+    zone: *1
+    time: 2018-03-13 12:21:48.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-02 15:16:53.000000000 Z
+    zone: *1
+    time: 2020-01-02 16:16:53.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_electricity_renewable_hydrogen_plants
+  position: 6
+  sidebar_item_id: 23
+  output_element_id: 99
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 240
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-03-21 13:43:58.000000000 Z
+    zone: *1
+    time: 2018-03-21 14:43:58.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-10-02 13:12:06.000000000 Z
+    zone: *1
+    time: 2018-10-02 15:12:06.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_hydrogen_transport
+  position: 3
+  sidebar_item_id: 45
+  output_element_id: 214
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 242
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-03-30 14:31:57.000000000 Z
+    zone: *1
+    time: 2018-03-30 16:31:57.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-09-19 12:03:58.000000000 Z
+    zone: *1
+    time: 2018-09-19 14:03:58.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_hydrogen_co2_import
+  position: 5
+  sidebar_item_id: 45
+  output_element_id: 46
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 243
+  image: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-04-18 11:19:45.000000000 Z
+    zone: *1
+    time: 2018-04-18 13:19:45.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-04-18 11:19:45.000000000 Z
+    zone: *1
+    time: 2018-04-18 13:19:45.000000000 Z
+  general_sub_header: 
+  group_sub_header: 
+  subheader_image: 
+  key: costs_infrastructure_electricity
+  position: 3
+  sidebar_item_id: 28
+  output_element_id: 61
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 244
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-04-20 13:51:08.000000000 Z
+    zone: *1
+    time: 2018-04-20 15:51:08.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-04-20 13:51:08.000000000 Z
+    zone: *1
+    time: 2018-04-20 15:51:08.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_infrastructure_electricity_investement_regime
+  position: 4
+  sidebar_item_id: 28
+  output_element_id: 
+  alt_output_element_id: 
+  dependent_on: _always_hidden
+- id: 245
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-05-17 16:09:58.000000000 Z
+    zone: *1
+    time: 2018-05-17 18:09:58.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-05-18 07:57:21.000000000 Z
+    zone: *1
+    time: 2018-05-18 09:57:21.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_co2_ccs_industry
+  position: 3
+  sidebar_item_id: 18
+  output_element_id: 48
+  alt_output_element_id: 
+  dependent_on: has_detailed_chemical_industry
+- id: 246
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-05-17 16:19:04.000000000 Z
+    zone: *1
+    time: 2018-05-17 18:19:04.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-05-17 16:19:04.000000000 Z
+    zone: *1
+    time: 2018-05-17 18:19:04.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_industry_ccs
+  position: 1
+  sidebar_item_id: 4
+  output_element_id: 46
+  alt_output_element_id: 
+  dependent_on: has_detailed_chemical_industry
+- id: 248
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-06-28 14:00:46.000000000 Z
+    zone: *1
+    time: 2018-06-28 16:00:46.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-06-28 14:00:46.000000000 Z
+    zone: *1
+    time: 2018-06-28 16:00:46.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: data_export_household_heat
+  position: 5
+  sidebar_item_id: 48
+  output_element_id: 196
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 249
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-07-18 17:46:20.000000000 Z
+    zone: *1
+    time: 2018-07-18 19:46:20.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-07-19 07:14:46.000000000 Z
+    zone: *1
+    time: 2018-07-19 09:14:46.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: data_visuals_scenario_report
+  position: 1
+  sidebar_item_id: 57
+  output_element_id: 213
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 250
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-07-18 17:46:20.000000000 Z
+    zone: *1
+    time: 2018-07-18 19:46:20.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-07-19 07:15:47.000000000 Z
+    zone: *1
+    time: 2018-07-19 09:15:47.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: data_visuals_factsheet
+  position: 2
+  sidebar_item_id: 57
+  output_element_id: 213
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 251
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-07-18 17:46:20.000000000 Z
+    zone: *1
+    time: 2018-07-18 19:46:20.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-11-14 10:26:26.000000000 Z
+    zone: *1
+    time: 2019-11-14 11:26:26.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: data_visuals_graph
+  position: 4
+  sidebar_item_id: 57
+  output_element_id: 213
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 252
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-08-07 07:26:59.000000000 Z
+    zone: *1
+    time: 2018-08-07 09:26:59.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-08-07 07:26:59.000000000 Z
+    zone: *1
+    time: 2018-08-07 09:26:59.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_pumped_storage
+  position: 3
+  sidebar_item_id: 53
+  output_element_id: 163
+  alt_output_element_id: 
+  dependent_on: _always_hidden
+- id: 253
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-09-18 14:41:38.000000000 Z
+    zone: *1
+    time: 2018-09-18 16:41:38.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-09-18 14:41:38.000000000 Z
+    zone: *1
+    time: 2018-09-18 16:41:38.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_hydrogen_import
+  position: 1
+  sidebar_item_id: 58
+  output_element_id: 228
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 254
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-09-18 14:42:05.000000000 Z
+    zone: *1
+    time: 2018-09-18 16:42:05.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-09-19 15:21:38.000000000 Z
+    zone: *1
+    time: 2018-09-19 17:21:38.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_hydrogen_storage
+  position: 2
+  sidebar_item_id: 58
+  output_element_id: 48
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 255
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-09-18 14:42:22.000000000 Z
+    zone: *1
+    time: 2018-09-18 16:42:22.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-09-19 15:20:41.000000000 Z
+    zone: *1
+    time: 2018-09-19 17:20:41.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_hydrogen_transport
+  position: 3
+  sidebar_item_id: 58
+  output_element_id: 48
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 256
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-09-18 14:51:14.000000000 Z
+    zone: *1
+    time: 2018-09-18 16:51:14.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-10-02 13:12:08.000000000 Z
+    zone: *1
+    time: 2018-10-02 15:12:08.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_hydrogen_storage
+  position: 4
+  sidebar_item_id: 45
+  output_element_id: 227
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 257
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-09-19 12:03:12.000000000 Z
+    zone: *1
+    time: 2018-09-19 14:03:12.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-10-02 12:45:10.000000000 Z
+    zone: *1
+    time: 2018-10-02 14:45:10.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_hydrogen_demand
+  position: 2
+  sidebar_item_id: 45
+  output_element_id: 226
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 258
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-10-29 11:11:49.000000000 Z
+    zone: *1
+    time: 2018-10-29 12:11:49.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-11-11 15:49:58.000000000 Z
+    zone: *1
+    time: 2019-11-11 16:49:58.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: data_export_hydrogen
+  position: 7
+  sidebar_item_id: 48
+  output_element_id: 226
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 259
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-12-12 13:44:37.000000000 Z
+    zone: *1
+    time: 2018-12-12 14:44:37.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-08-16 07:31:24.000000000 Z
+    zone: *1
+    time: 2019-08-16 09:31:24.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_biomass_overview
+  position: 1
+  sidebar_item_id: 47
+  output_element_id: 242
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 260
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2018-12-14 09:04:32.000000000 Z
+    zone: *1
+    time: 2018-12-14 10:04:32.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-08-21 12:46:14.000000000 Z
+    zone: *1
+    time: 2019-08-21 14:46:14.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_biomass_bio_footprint
+  position: 6
+  sidebar_item_id: 47
+  output_element_id: 168
+  alt_output_element_id: 
+  dependent_on: _always_hidden
+- id: 263
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-01-11 08:37:35.000000000 Z
+    zone: *1
+    time: 2019-01-11 09:37:35.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-09 09:48:40.000000000 Z
+    zone: *1
+    time: 2020-01-09 10:48:40.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_heat_network
+  position: 1
+  sidebar_item_id: 36
+  output_element_id: 48
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 264
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-01-11 08:39:49.000000000 Z
+    zone: *1
+    time: 2019-01-11 09:39:49.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-09 10:16:19.000000000 Z
+    zone: *1
+    time: 2020-01-09 11:16:19.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_residual_heat
+  position: 4
+  sidebar_item_id: 36
+  output_element_id: 48
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 265
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-04-18 13:36:04.000000000 Z
+    zone: *1
+    time: 2019-04-18 15:36:04.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-06-21 14:08:28.000000000 Z
+    zone: *1
+    time: 2019-06-21 16:08:28.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: introduction_to_etm
+  position: 1
+  sidebar_item_id: 59
+  output_element_id: 241
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 266
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-04-18 14:11:53.000000000 Z
+    zone: *1
+    time: 2019-04-18 16:11:53.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-05-10 07:34:25.000000000 Z
+    zone: *1
+    time: 2019-05-10 09:34:25.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: overview_final_demand
+  position: 3
+  sidebar_item_id: 59
+  output_element_id: 240
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 267
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-04-18 14:13:51.000000000 Z
+    zone: *1
+    time: 2019-04-18 16:13:51.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-04-18 14:13:51.000000000 Z
+    zone: *1
+    time: 2019-04-18 16:13:51.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: overview_co2_emissions
+  position: 2
+  sidebar_item_id: 59
+  output_element_id: 46
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 268
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-07-19 14:28:02.000000000 Z
+    zone: *1
+    time: 2019-07-19 16:28:02.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-08-21 12:21:56.000000000 Z
+    zone: *1
+    time: 2019-08-21 14:21:56.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_biomass_greengas_production
+  position: 3
+  sidebar_item_id: 47
+  output_element_id: 242
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 269
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-07-31 10:25:04.000000000 Z
+    zone: *1
+    time: 2019-07-31 12:25:04.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-08-27 17:46:18.000000000 Z
+    zone: *1
+    time: 2019-08-27 19:46:18.000000000 Z
+  general_sub_header: price
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_bio_fuel
+  position: 2
+  sidebar_item_id: 37
+  output_element_id: 244
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 270
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-08-16 10:04:41.000000000 Z
+    zone: *1
+    time: 2019-08-16 12:04:41.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-08-16 10:04:41.000000000 Z
+    zone: *1
+    time: 2019-08-16 12:04:41.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_biomass_potential
+  position: 2
+  sidebar_item_id: 47
+  output_element_id: 243
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 271
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-11-11 15:50:00.000000000 Z
+    zone: *1
+    time: 2019-11-11 16:50:00.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-11-11 15:50:00.000000000 Z
+    zone: *1
+    time: 2019-11-11 16:50:00.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: data_export_network_gas
+  position: 6
+  sidebar_item_id: 48
+  output_element_id: 245
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 272
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-11-13 12:56:10.000000000 Z
+    zone: *1
+    time: 2019-11-13 13:56:10.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-11-13 14:51:34.000000000 Z
+    zone: *1
+    time: 2019-11-13 15:51:34.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_power_to_heat_for_industry
+  position: 3
+  sidebar_item_id: 54
+  output_element_id: 163
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 273
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-11-14 08:44:18.000000000 Z
+    zone: *1
+    time: 2019-11-14 09:44:18.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-11-14 10:26:31.000000000 Z
+    zone: *1
+    time: 2019-11-14 11:26:31.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: data_visuals_co2_sheet
+  position: 3
+  sidebar_item_id: 57
+  output_element_id: 213
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 274
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-13 14:17:08.000000000 Z
+    zone: *1
+    time: 2019-12-13 15:17:08.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-13 16:19:01.000000000 Z
+    zone: *1
+    time: 2019-12-13 17:19:01.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_wacc
+  position: 1
+  sidebar_item_id: 61
+  output_element_id: 48
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 275
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-20 10:54:31.000000000 Z
+    zone: *1
+    time: 2019-12-20 11:54:31.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-15 08:52:52.000000000 Z
+    zone: *1
+    time: 2020-01-15 09:52:52.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_heat_network_order
+  position: 4
+  sidebar_item_id: 62
+  output_element_id: 253
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 276
+  image: 
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-20 10:54:31.000000000 Z
+    zone: *1
+    time: 2019-12-20 11:54:31.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-20 10:54:31.000000000 Z
+    zone: *1
+    time: 2019-12-20 11:54:31.000000000 Z
+  general_sub_header: 
+  group_sub_header: 
+  subheader_image: 
+  key: data_export_heat_network
+  position: 8
+  sidebar_item_id: 48
+  output_element_id: 249
+  alt_output_element_id: 
+  dependent_on: 
+- id: 277
+  image: house_direct_heating.gif
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-20 10:54:31.000000000 Z
+    zone: *1
+    time: 2019-12-20 11:54:31.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-02 14:39:07.000000000 Z
+    zone: *1
+    time: 2020-01-02 15:39:07.000000000 Z
+  general_sub_header: heat_output
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_heat_sources
+  position: 1
+  sidebar_item_id: 24
+  output_element_id: 248
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 278
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-12-20 16:26:23.000000000 Z
+    zone: *1
+    time: 2019-12-20 17:26:23.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-06 08:53:14.000000000 Z
+    zone: *1
+    time: 2020-01-06 09:53:14.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_heat_network_storage_toggle
+  position: 3
+  sidebar_item_id: 24
+  output_element_id: 252
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 279
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-02 15:18:07.000000000 Z
+    zone: *1
+    time: 2020-01-02 16:18:07.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-02 15:41:50.000000000 Z
+    zone: *1
+    time: 2020-01-02 16:41:50.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_electricity_renewable_biomass_plants
+  position: 4
+  sidebar_item_id: 23
+  output_element_id: 99
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 280
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-03 16:21:25.000000000 Z
+    zone: *1
+    time: 2020-01-03 17:21:25.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-03 16:21:25.000000000 Z
+    zone: *1
+    time: 2020-01-03 17:21:25.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_heat_network_losses
+  position: 2
+  sidebar_item_id: 24
+  output_element_id: 248
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 281
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-09 10:15:37.000000000 Z
+    zone: *1
+    time: 2020-01-09 11:15:37.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-09 10:15:37.000000000 Z
+    zone: *1
+    time: 2020-01-09 11:15:37.000000000 Z
+  general_sub_header: change
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_solar_thermal
+  position: 3
+  sidebar_item_id: 36
+  output_element_id: 48
+  alt_output_element_id: 
+  dependent_on: ''
+- id: 282
+  image: ''
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-16 15:14:03.000000000 Z
+    zone: *1
+    time: 2020-01-16 16:14:03.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2020-01-16 15:25:16.000000000 Z
+    zone: *1
+    time: 2020-01-16 16:25:16.000000000 Z
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_security_of_supply_heat
+  position: 2
+  sidebar_item_id: 33
+  output_element_id: 250
+  alt_output_element_id: 249
+  dependent_on: ''

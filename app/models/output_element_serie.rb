@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: output_element_series
@@ -29,23 +31,22 @@
 #
 class OutputElementSerie < ActiveRecord::Base
   include Colors
-  include AreaDependent
-
-
+  include AreaDependent::ActiveRecord
 
   belongs_to :output_element
   has_one :description, as: :describable
   has_one :area_dependency, as: :dependable
 
-  scope :gquery_contains, ->(q) { where("gquery LIKE ?", "%#{q}%")}
+  scope :gquery_contains, ->(q) { where('gquery LIKE ?', "%#{q}%") }
 
   scope :ordered_for_admin,
-    -> { joins(:output_element).merge(OutputElement.order(key: :asc)) }
+        -> { joins(:output_element).merge(OutputElement.order(key: :asc)) }
 
   # Hmmm ugly
-  scope :block_charts, -> { where(output_element_id: OutputElementType::BLOCK_CHART_ID) }
+  scope :block_charts,
+        -> { where(output_element_id: OutputElementType::BLOCK_CHART_ID) }
 
-  scope :contains, ->(search) { where("`key` LIKE ?", "%#{search}%") }
+  scope :contains, ->(search) { where('`key` LIKE ?', "%#{search}%") }
 
   validates :gquery, presence: true
 
@@ -60,19 +61,21 @@ class OutputElementSerie < ActiveRecord::Base
     I18n.t("output_element_series.groups.#{group}") unless group.blank?
   end
 
+  # rubocop:disable Metrics/LineLength
   def json_attributes
     {
       id: id, # needed for block charts
       gquery_key: gquery,
       color: color,
       label: title_translated,
-      group: group, #used to group series
+      group: group, # used to group series
       group_translated: group_translated, # used to display groups in mekkos's & horizontal_stacked_bar
       is_target_line: is_target_line,
       target_line_position: target_line_position,
-      is_1990: is_1990,
+      is_1990: is_1990
     }
   end
+  # rubocop:enable Metrics/LineLength
 
   def url_in_etengine
     "#{APP_CONFIG[:gquery_detail_url]}#{gquery}"

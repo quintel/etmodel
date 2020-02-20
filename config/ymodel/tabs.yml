@@ -1,0 +1,43 @@
+---
+- id: 1
+  key: overview
+  nl_vimeo_id: ''
+  en_vimeo_id: ''
+  position: 1
+  dependent_on: ''
+- id: 2
+  key: demand
+  nl_vimeo_id: '19658877'
+  en_vimeo_id: '20191812'
+  position: 2
+  dependent_on: 
+- id: 3
+  key: supply
+  nl_vimeo_id: '19658916'
+  en_vimeo_id: '20191972'
+  position: 3
+  dependent_on: ''
+- id: 4
+  key: costs
+  nl_vimeo_id: '19658896'
+  en_vimeo_id: '20191894'
+  position: 5
+  dependent_on: ''
+- id: 5
+  key: flexibility
+  nl_vimeo_id: ''
+  en_vimeo_id: ''
+  position: 4
+  dependent_on: has_electricity_storage
+- id: 6
+  key: data
+  nl_vimeo_id: 
+  en_vimeo_id: 
+  position: 6
+  dependent_on: 
+- id: 7
+  key: targets
+  nl_vimeo_id: ''
+  en_vimeo_id: ''
+  position: 0
+  dependent_on: _always_hidden

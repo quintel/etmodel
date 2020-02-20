@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 ruby '2.6.3'
 
 source 'http://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 
@@ -11,7 +13,7 @@ gem 'rails', '~> 5.2'
 gem 'activerecord-session_store'
 gem 'activeresource', '~> 5.0'
 
-gem 'jquery-rails', "~> 4.2.2"
+gem 'jquery-rails', '~> 4.2.2'
 gem 'haml', '~> 5.0'
 gem 'authlogic'
 gem 'bcrypt'
@@ -22,7 +24,7 @@ gem 'simple_form'
 gem 'nokogiri', '~> 1.10'
 gem 'rdiscount'
 gem 'loofah'
-gem 'rails-html-sanitizer'
+gem 'rails-html-sanitizer', '~> 1.3.0'
 gem 'font-awesome-rails'
 gem 'non-stupid-digest-assets'
 gem 'http_accept_language'
@@ -50,13 +52,15 @@ gem 'wkhtmltopdf-binary'
 # gem "jquery-etmodel-rails", :path => "~/Sites/etplugin"
 gem 'jquery-etmodel-rails', ref: 'c668ad4', github: 'quintel/etplugin'
 
+gem 'ymodel', path: 'lib/ymodel/'
+
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'tomdoc'
-  gem 'yard-tomdoc', "~> 0.4.0"
+  gem 'yard-tomdoc', '~> 0.4.0'
 
   gem 'better_errors'
   gem 'seed_dump'
@@ -74,7 +78,7 @@ group :test, :development do
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'pry-stack_explorer'
-  gem 'rspec-rails', "~> 3.5"
+  gem 'rspec-rails', '~> 3.5'
   gem 'watchr'
 
   gem 'rubocop', '~> 0.71.0', require: false

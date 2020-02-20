@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: slides
@@ -16,23 +18,30 @@
 #  alt_output_element_id :integer
 #
 
-class Slide < ActiveRecord::Base
-  include AreaDependent
+# This model represents a slide within an opened SideBarItem
+# (e.g. "Insulation", "Cooking", for "Households" item)
+class Slide < YModel::Base
+  include AreaDependent::YModel
 
-  belongs_to :sidebar_item
   has_one :description, as: :describable
-  has_many :sliders, dependent: :nullify, class_name: 'InputElement'
+  has_many :input_elements
+  alias_method :sliders, :input_elements
   belongs_to :output_element # default chart
   belongs_to :alt_output_element, class_name: 'OutputElement' # secondary chart
-  has_one :area_dependency, as: :dependable, dependent: :destroy
 
-  validates :key, presence: true, uniqueness: true
-  validates :position, numericality: true
+  class << self
+    def controller(controller)
+      where(controller_name: controller)
+    end
 
-  scope :controller, ->(controller) { where(controller_name: controller) }
-  scope :ordered,    -> { order('position') }
+    def ordered
+      visible.sort_by(&:position)
+    end
 
-  accepts_nested_attributes_for :description, :area_dependency
+    def visible
+      all.reject { |s| s.position.nil? }
+    end
+  end
 
   def image_path
     "/assets/slides/drawings/#{image}" if image.present?
@@ -49,8 +58,8 @@ class Slide < ActiveRecord::Base
   # See Current.view
   # Some sliders cannot be used on some areas. Let's filter them out
   def safe_input_elements
-    @safe_input_elements ||= sliders.includes(:area_dependency)
-      .includes(:description).ordered.reject(&:area_dependent)
+    @safe_input_elements ||= sliders.reject(&:area_dependent)
+      .sort_by(&:position)
   end
 
   # Complementary to grouped_input_elements
@@ -85,8 +94,19 @@ class Slide < ActiveRecord::Base
   #
   #   play_url(*slide.url_components)
   def url_components
-    tab = sidebar_item&.tab
-    sidebar_item && tab ? [tab.key, sidebar_item.key, short_name] : []
+    tab ? [tab.key, sidebar_item.key, short_name] : []
+  end
+
+  def sidebar_item
+    SidebarItem.find(sidebar_item_id)
+  end
+
+  def sidebar_item=(sidebar_item)
+    self.sidebar_item_id = sidebar_item&.id
+  end
+
+  def tab
+    sidebar_item&.tab
   end
 
   def removed_from_interface?

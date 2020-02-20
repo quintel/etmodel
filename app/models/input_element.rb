@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: input_elements
@@ -18,26 +20,40 @@
 #  position          :integer
 #
 
-class InputElement < ActiveRecord::Base
-  include AreaDependent
+# Model representing a slider in the front-end. Settings get stored in scenarios
+class InputElement < YModel::Base
+  include AreaDependent::YModel
 
   ENUM_UNITS = %w[radio weather-curves].freeze
 
-  has_one :description, as: :describable, dependent: :destroy
-  has_one :area_dependency, as: :dependable, dependent: :destroy
+  has_one :description, as: :describable
   belongs_to :slide
 
-  validates :key, presence: true, uniqueness: true
-  validates :position, numericality: true
+  class << self
+    def households_heating_sliders
+      where(share_group: 'heating_households')
+    end
 
-  scope :households_heating_sliders, -> { where(share_group: 'heating_households') }
-  scope :ordered, -> { order('position') }
+    def ordered
+      all.sort_by(&:position)
+    end
 
-  accepts_nested_attributes_for :description, :area_dependency
-
+    def with_related_converter_like(converter_name)
+      all.reject { |ie| ie.related_converter.nil? }
+        .select { |ie| ie.related_converter.include?(converter_name || '') }
+    end
+  end
 
   def title_for_description
     "input_elements.#{key}"
+  end
+
+  def slide
+    Slide.find slide_id
+  end
+
+  def slide=(slide)
+    self.slide_id = slide&.id
   end
 
   def translated_name
@@ -78,7 +94,7 @@ class InputElement < ActiveRecord::Base
     "#{key} | #{unit}"
   end
 
-  def has_flash_movie
+  def has_flash_movie # rubocop:disable Naming/PredicateName
     description.try :embeds_player?
   end
 
@@ -107,9 +123,10 @@ class InputElement < ActiveRecord::Base
   end
 
   # Silly IE8 doesn't understand &apos; entity which is added in views
-  def ie8_sanitize(s)
-    return '' if s.blank?
-    s.gsub("'", '&#39;').html_safe
+  def ie8_sanitize(string)
+    return '' if string.blank?
+
+    string.gsub("'", '&#39;').html_safe
   end
 
   def enum?

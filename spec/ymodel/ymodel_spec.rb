@@ -143,7 +143,7 @@ describe YModel::Base do
   end
 
   describe 'With a missing source' do
-    it 'doesn\'t raise an error upon loading' do
+    it "doesn't raise an error upon loading" do
       expect { YModel::InvalidConcrete }.not_to raise_error
     end
 

@@ -1,9 +1,9 @@
 class HeatInfraCostChart < ActiveRecord::Migration[5.2]
   COLORS = {
     'heat_infrastructure_indoor_annualised_costs' => '#6AB04C',
-    'heat_infrastructure_secondary_distribution_pipelines_annualised_costs' => '#E84118',
+    'heat_infrastructure_distribution_pipelines_annualised_costs' => '#E84118',
     'heat_infrastructure_distribution_stations_annualised_costs' => '#F9CA24',
-    'heat_infrastructure_primary_distribution_pipelines_annualised_costs' => '#0984E3',
+    'heat_infrastructure_primary_pipelines_annualised_costs' => '#0984E3',
     'heat_infrastructure_storage_annualised_costs' => '#416B86',
   }
 
@@ -16,8 +16,8 @@ class HeatInfraCostChart < ActiveRecord::Migration[5.2]
         unit: 'euro'
       )
 
-      create_output_series(el, 'heat_infrastructure_secondary_distribution_pipelines_annualised_costs', 'heat_infrastructure_secondary_distribution_pipelines_annualised_costs', 1)
-      create_output_series(el, 'heat_infrastructure_primary_distribution_pipelines_annualised_costs', 'heat_infrastructure_primary_distribution_pipelines_annualised_costs', 2)
+      create_output_series(el, 'heat_infrastructure_distribution_pipelines_annualised_costs', 'heat_infrastructure_distribution_pipelines_annualised_costs', 1)
+      create_output_series(el, 'heat_infrastructure_primary_pipelines_annualised_costs', 'heat_infrastructure_primary_pipelines_annualised_costs', 2)
       create_output_series(el, 'heat_infrastructure_distribution_stations_annualised_costs', 'heat_infrastructure_distribution_stations_annualised_costs', 3)
       create_output_series(el, 'heat_infrastructure_indoor_annualised_costs', 'heat_infrastructure_indoor_annualised_costs', 4)
       create_output_series(el, 'heat_infrastructure_storage_annualised_costs', 'heat_infrastructure_storage_annualised_costs', 5)

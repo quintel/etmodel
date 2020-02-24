@@ -28,8 +28,6 @@ Etm::Application.routes.draw do
     post :confirm_delete, on: :member
   end
 
-  resources :testing_grounds, only: [:create]
-
   # Old partner paths.
   get '/partners/:id', to: redirect("#{Partner::REMOTE_URL}/partners/%{id}")
   get '/partners',     to: redirect("#{Partner::REMOTE_URL}/partners")

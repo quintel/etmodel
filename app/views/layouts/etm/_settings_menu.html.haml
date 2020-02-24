@@ -34,9 +34,6 @@
 
     - if controller_name != 'pages' && has_active_scenario?
       %li.sep
-      - if current_scenario_scaled?
-        %li.scenario_option
-          = link_to t('header.save_and_enter_testing_ground'), testing_grounds_path, target: "_blank", method: :post
       %li.scenario_option
         = link_to t('header.scale_scenario'), scaled_path
       - if params[:debug]

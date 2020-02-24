@@ -4,10 +4,6 @@ development: &DEV
     # local rack-based AJAX proxy
     api_url: https://beta-engine.energytransitionmodel.com
 
-    # URL for the ETMoses application. ETMoses and testing ground features are
-    # presently supported only when "api_url" is "http://beta.et-engine.com".
-    etmoses_url: https://beta-moses.energytransitionmodel.com
-
     # URL for the Multi-Year Charts application.
     multi_year_charts_url: http://localhost:3005
 

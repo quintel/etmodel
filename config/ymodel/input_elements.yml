@@ -3,8 +3,8 @@
   key: households_appliances_fridge_freezer_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: &1 !ruby/object:ActiveSupport::TimeZone
@@ -27,8 +27,8 @@
   key: costs_oil
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -50,8 +50,8 @@
   key: investment_costs_wind_onshore
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -68,13 +68,13 @@
   related_converter: energy_power_wind_turbine_inland
   slide_id: 9
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 14
   key: investment_costs_wind_offshore
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -91,13 +91,13 @@
   related_converter: energy_power_wind_turbine_offshore
   slide_id: 9
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 16
   key: investment_costs_combustion_gas_plant
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -119,8 +119,8 @@
   key: investment_costs_combustion_oil_plant
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -137,13 +137,13 @@
   related_converter: energy_power_ultra_supercritical_crude_oil
   slide_id: 7
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 18
   key: investment_costs_combustion_coal_plant
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -160,13 +160,13 @@
   related_converter: energy_power_ultra_supercritical_coal
   slide_id: 7
   position: 3
-  dependent_on: 
+  dependent_on:
 - id: 19
   key: investment_costs_combustion_biomass_plants
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -188,8 +188,8 @@
   key: households_lighting_efficient_fluorescent_electricity_share
   share_group: household_light
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -200,19 +200,19 @@
     time: 2013-05-28 10:28:19.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 2
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 44
   key: households_lighting_led_electricity_share
   share_group: household_light
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -223,19 +223,19 @@
     time: 2013-05-28 10:28:19.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 2
   position: 3
-  dependent_on: 
+  dependent_on:
 - id: 47
   key: households_solar_pv_solar_radiation_market_penetration
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -257,8 +257,8 @@
   key: households_heater_electricity_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -280,8 +280,8 @@
   key: costs_coal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -303,8 +303,8 @@
   key: costs_gas
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -326,8 +326,8 @@
   key: investment_costs_water_river
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -344,13 +344,13 @@
   related_converter: energy_power_hydro_river
   slide_id: 11
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 115
   key: investment_costs_water_mountains
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -372,8 +372,8 @@
   key: om_costs_nuclear_nuclear_plant
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -390,13 +390,13 @@
   related_converter: energy_power_nuclear_gen3_uranium_oxide
   slide_id: 20
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 126
   key: om_costs_wind_onshore
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -413,13 +413,13 @@
   related_converter: energy_power_wind_turbine_inland
   slide_id: 10
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 127
   key: om_costs_wind_offshore
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -436,13 +436,13 @@
   related_converter: energy_power_wind_turbine_offshore
   slide_id: 10
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 129
   key: om_costs_water_river
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -459,13 +459,13 @@
   related_converter: energy_power_hydro_river
   slide_id: 12
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 131
   key: om_costs_water_mountains
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -487,8 +487,8 @@
   key: om_costs_geothermal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -510,8 +510,8 @@
   key: investment_costs_solar_solar_panels
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -533,8 +533,8 @@
   key: investment_costs_nuclear_nuclear_plant
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -551,13 +551,13 @@
   related_converter: energy_power_nuclear_gen3_uranium_oxide
   slide_id: 19
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 137
   key: costs_co2
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -579,8 +579,8 @@
   key: costs_co2_free_allocation
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -597,13 +597,13 @@
   related_converter: ''
   slide_id: 22
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 139
   key: om_costs_co2_ccs
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -614,19 +614,19 @@
     time: 2012-07-30 15:25:11.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 23
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 140
   key: investment_costs_co2_ccs
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -637,19 +637,19 @@
     time: 2012-07-30 15:25:11.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 23
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 141
   key: transport_cars_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -671,8 +671,8 @@
   key: transport_trucks_share
   share_group: freight_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -694,8 +694,8 @@
   key: transport_passenger_trains_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -717,8 +717,8 @@
   key: transport_planes_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -740,8 +740,8 @@
   key: transport_ships_share
   share_group: freight_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -763,8 +763,8 @@
   key: transport_car_using_electricity_share
   share_group: transport_car_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -786,8 +786,8 @@
   key: transport_car_using_diesel_mix_share
   share_group: transport_car_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -809,8 +809,8 @@
   key: transport_car_using_gasoline_mix_share
   share_group: transport_car_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -832,8 +832,8 @@
   key: transport_truck_using_gasoline_mix_share
   share_group: transport_truck_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -855,8 +855,8 @@
   key: transport_truck_using_diesel_mix_share
   share_group: transport_truck_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -878,8 +878,8 @@
   key: transport_truck_using_electricity_share
   share_group: transport_truck_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -901,8 +901,8 @@
   key: transport_vehicle_using_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -924,8 +924,8 @@
   key: policy_area_onshore_land
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -937,18 +937,18 @@
   unit: km2
   fixed: false
   comments: ''
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 35
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 179
   key: policy_area_onshore_coast
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -970,8 +970,8 @@
   key: om_costs_combustion_gas_plant
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -993,8 +993,8 @@
   key: om_costs_combustion_oil_plant
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:52.000000000 Z
     zone: *1
@@ -1011,13 +1011,13 @@
   related_converter: energy_power_ultra_supercritical_crude_oil
   slide_id: 8
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 182
   key: om_costs_combustion_coal_plant
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1034,13 +1034,13 @@
   related_converter: energy_power_ultra_supercritical_coal
   slide_id: 8
   position: 3
-  dependent_on: 
+  dependent_on:
 - id: 183
   key: om_costs_combustion_biomass_plant
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1051,19 +1051,19 @@
     time: 2012-07-30 15:25:11.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 8
   position: 4
-  dependent_on: 
+  dependent_on:
 - id: 185
   key: costs_uranium
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1085,8 +1085,8 @@
   key: transport_vehicle_combustion_engine_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1108,8 +1108,8 @@
   key: transport_ships_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1131,8 +1131,8 @@
   key: transport_planes_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1154,8 +1154,8 @@
   key: policy_area_roofs_for_solar_panels
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1166,19 +1166,19 @@
     time: 2012-07-30 15:25:12.000000000 Z
   unit: km2
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 36
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 194
   key: policy_area_land_for_solar_panels
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1189,19 +1189,19 @@
     time: 2012-07-30 15:25:12.000000000 Z
   unit: km2
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 36
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 195
   key: policy_area_land_for_csp
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1223,8 +1223,8 @@
   key: policy_sustainability_co2_emissions
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1235,19 +1235,19 @@
     time: 2012-07-30 15:25:12.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 38
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 204
   key: households_useful_demand_for_cooling
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1269,8 +1269,8 @@
   key: policy_dependence_max_dependence
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1292,8 +1292,8 @@
   key: policy_cost_electricity_cost
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1315,8 +1315,8 @@
   key: policy_cost_total_energy_cost
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1338,8 +1338,8 @@
   key: policy_dependence_max_electricity_dependence
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1361,8 +1361,8 @@
   key: agriculture_useful_demand_electricity
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1384,8 +1384,8 @@
   key: agriculture_useful_demand_useable_heat
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1407,8 +1407,8 @@
   key: agriculture_burner_crude_oil_share
   share_group: agri_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1430,8 +1430,8 @@
   key: agriculture_burner_wood_pellets_share
   share_group: agri_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1453,8 +1453,8 @@
   key: agriculture_heatpump_water_water_ts_electricity_share
   share_group: agri_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1476,8 +1476,8 @@
   key: agriculture_geothermal_share
   share_group: agri_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1488,19 +1488,19 @@
     time: 2013-05-28 10:28:20.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 31
   position: 5
-  dependent_on: 
+  dependent_on:
 - id: 229
   key: other_useful_demand_electricity
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1522,8 +1522,8 @@
   key: other_useful_demand_useable_heat
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1545,8 +1545,8 @@
   key: investment_costs_combustion_waste_incinerator
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1557,19 +1557,19 @@
     time: 2012-07-30 15:25:12.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 7
   position: 5
-  dependent_on: 
+  dependent_on:
 - id: 232
   key: om_costs_combustion_waste_incinerator
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1580,19 +1580,19 @@
     time: 2012-07-30 15:25:12.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 8
   position: 5
-  dependent_on: 
+  dependent_on:
 - id: 233
   key: policy_area_offshore
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1614,8 +1614,8 @@
   key: policy_sustainability_renewable_percentage
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1637,8 +1637,8 @@
   key: transport_car_using_lpg_share
   share_group: transport_car_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1660,8 +1660,8 @@
   key: transport_car_using_compressed_natural_gas_share
   share_group: transport_car_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1683,8 +1683,8 @@
   key: transport_truck_using_compressed_natural_gas_share
   share_group: transport_truck_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1706,8 +1706,8 @@
   key: transport_trains_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1729,8 +1729,8 @@
   key: households_lighting_incandescent_electricity_share
   share_group: household_light
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1752,8 +1752,8 @@
   key: agriculture_burner_network_gas_share
   share_group: agri_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1775,8 +1775,8 @@
   key: investment_costs_geothermal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1798,8 +1798,8 @@
   key: households_heater_crude_oil_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1821,8 +1821,8 @@
   key: capacity_of_energy_power_ultra_supercritical_coal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1844,8 +1844,8 @@
   key: capacity_of_energy_power_ultra_supercritical_ccs_coal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1867,8 +1867,8 @@
   key: capacity_of_energy_power_combined_cycle_coal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1890,8 +1890,8 @@
   key: capacity_of_energy_power_combined_cycle_ccs_coal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1913,8 +1913,8 @@
   key: capacity_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1936,8 +1936,8 @@
   key: capacity_of_energy_power_ultra_supercritical_network_gas
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1959,8 +1959,8 @@
   key: capacity_of_energy_power_combined_cycle_network_gas
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -1982,8 +1982,8 @@
   key: capacity_of_energy_power_ultra_supercritical_crude_oil
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2005,8 +2005,8 @@
   key: capacity_of_energy_power_nuclear_gen3_uranium_oxide
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2028,8 +2028,8 @@
   key: energy_mixer_for_gas_power_fuel_bio_oil_share
   share_group: energy_sector_gas
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-12-14 08:58:06.000000000 Z
     zone: *1
@@ -2051,8 +2051,8 @@
   key: capacity_of_energy_power_wind_turbine_inland
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2074,8 +2074,8 @@
   key: capacity_of_energy_power_wind_turbine_coastal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2097,8 +2097,8 @@
   key: capacity_of_energy_power_wind_turbine_offshore
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2120,8 +2120,8 @@
   key: capacity_of_energy_power_hydro_river
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2143,8 +2143,8 @@
   key: capacity_of_energy_power_hydro_mountain
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2166,8 +2166,8 @@
   key: capacity_of_energy_power_geothermal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2189,8 +2189,8 @@
   key: capacity_of_energy_power_supercritical_waste_mix
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2212,8 +2212,8 @@
   key: capacity_of_energy_chp_combined_cycle_network_gas
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2235,8 +2235,8 @@
   key: transport_road_mixer_diesel_diesel_share
   share_group: transport_diesel
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2247,19 +2247,19 @@
     time: 2013-05-28 10:28:18.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
+  comments:
   interface_group: diesel_mix
-  command_type: 
-  related_converter: 
+  command_type:
+  related_converter:
   slide_id: 156
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 293
   key: transport_road_mixer_diesel_biodiesel_share
   share_group: transport_diesel
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2281,8 +2281,8 @@
   key: transport_road_mixer_gasoline_gasoline_share
   share_group: transport_gasoline
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2293,19 +2293,19 @@
     time: 2013-05-28 10:28:18.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
+  comments:
   interface_group: gasoline_mix
-  command_type: 
-  related_converter: 
+  command_type:
+  related_converter:
   slide_id: 156
   position: 3
-  dependent_on: 
+  dependent_on:
 - id: 295
   key: transport_road_mixer_gasoline_ethanol_share
   share_group: transport_gasoline
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2327,8 +2327,8 @@
   key: capacity_of_energy_power_solar_pv_solar_radiation
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2350,8 +2350,8 @@
   key: capacity_of_energy_power_solar_csp_solar_radiation
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2373,8 +2373,8 @@
   key: capacity_of_energy_power_supercritical_coal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2396,8 +2396,8 @@
   key: capacity_of_energy_power_ultra_supercritical_lignite
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2419,8 +2419,8 @@
   key: capacity_of_other_chp_engine_network_gas
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2445,8 +2445,8 @@
   key: capacity_of_industry_chp_combined_cycle_gas_power_fuelmix
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2471,8 +2471,8 @@
   key: agriculture_final_demand_steam_hot_water_share
   share_group: agri_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2496,8 +2496,8 @@
   key: households_heater_combined_network_gas_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2519,8 +2519,8 @@
   key: households_number_of_inhabitants
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2542,8 +2542,8 @@
   key: households_heater_heatpump_ground_water_electricity_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2565,8 +2565,8 @@
   key: households_heater_wood_pellets_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2588,8 +2588,8 @@
   key: households_heat_network_connection_steam_hot_water_share
   share_group: households_district_heating
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2604,15 +2604,15 @@
   interface_group: ''
   command_type: ''
   related_converter: ''
-  slide_id: 
+  slide_id:
   position: 8
   dependent_on: ''
 - id: 348
   key: households_water_heater_solar_thermal_share
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2634,8 +2634,8 @@
   key: households_cooling_heatpump_ground_water_electricity_share
   share_group: cooling_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2657,8 +2657,8 @@
   key: households_cooling_airconditioning_electricity_share
   share_group: cooling_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2680,8 +2680,8 @@
   key: households_cooker_network_gas_share
   share_group: cooking
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2692,19 +2692,19 @@
     time: 2013-05-28 10:28:20.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 109
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 355
   key: households_cooker_resistive_electricity_share
   share_group: cooking
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2715,19 +2715,19 @@
     time: 2013-05-28 10:28:20.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 109
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 356
   key: households_cooker_halogen_electricity_share
   share_group: cooking
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2738,19 +2738,19 @@
     time: 2013-05-28 10:28:20.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 109
   position: 3
-  dependent_on: 
+  dependent_on:
 - id: 357
   key: households_cooker_induction_electricity_share
   share_group: cooking
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2761,19 +2761,19 @@
     time: 2013-05-28 10:28:20.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 109
   position: 4
-  dependent_on: 
+  dependent_on:
 - id: 359
   key: households_appliances_dishwasher_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2795,8 +2795,8 @@
   key: households_appliances_vacuum_cleaner_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2818,8 +2818,8 @@
   key: households_appliances_washing_machine_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2841,8 +2841,8 @@
   key: households_appliances_clothes_dryer_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2864,8 +2864,8 @@
   key: households_appliances_television_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2887,8 +2887,8 @@
   key: households_appliances_computer_media_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2901,17 +2901,17 @@
   fixed: false
   comments: ''
   interface_group: appliances without label
-  command_type: 
-  related_converter: 
+  command_type:
+  related_converter:
   slide_id: 3
   position: 6
-  dependent_on: 
+  dependent_on:
 - id: 366
   key: households_behavior_standby_killer_turn_off_appliances
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2933,8 +2933,8 @@
   key: households_behavior_turn_off_the_light
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2945,19 +2945,19 @@
     time: 2012-07-30 15:25:14.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 110
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 370
   key: households_behavior_close_windows_turn_off_heating
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -2968,19 +2968,19 @@
     time: 2012-07-30 15:25:14.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 110
   position: 3
-  dependent_on: 
+  dependent_on:
 - id: 371
   key: households_behavior_low_temperature_washing
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3002,8 +3002,8 @@
   key: households_useful_demand_heat_per_person
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3025,8 +3025,8 @@
   key: households_useful_demand_hot_water_share
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3048,8 +3048,8 @@
   key: households_cooling_heatpump_air_water_electricity_share
   share_group: cooling_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3071,8 +3071,8 @@
   key: households_heater_heatpump_air_water_electricity_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3094,8 +3094,8 @@
   key: number_of_buildings
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3107,18 +3107,18 @@
   unit: "%"
   fixed: false
   comments: ''
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 113
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 377
   key: buildings_useful_demand_electricity
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3140,8 +3140,8 @@
   key: buildings_useful_demand_for_space_heating
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3164,7 +3164,7 @@
   share_group: ''
   step_value: 0.1
   draw_to_min: 0.0
-  draw_to_max: 
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-11-27 15:27:30.000000000 Z
     zone: *1
@@ -3186,8 +3186,8 @@
   key: buildings_space_heater_network_gas_share
   share_group: heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3209,8 +3209,8 @@
   key: buildings_collective_chp_network_gas_share
   share_group: district_heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3225,15 +3225,15 @@
   interface_group: ''
   command_type: value
   related_converter: buildings_collective_chp_network_gas
-  slide_id: 
+  slide_id:
   position: 3
   dependent_on: ''
 - id: 387
   key: buildings_space_heater_electricity_share
   share_group: heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3255,8 +3255,8 @@
   key: buildings_heat_network_connection_steam_hot_water_share
   share_group: district_heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3271,15 +3271,15 @@
   interface_group: ''
   command_type: ''
   related_converter: buildings_heat_network_connection_steam_hot_water
-  slide_id: 
+  slide_id:
   position: 8
   dependent_on: ''
 - id: 389
   key: buildings_space_heater_solar_thermal_share
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-11-15 15:42:41.000000000 Z
     zone: *1
@@ -3301,8 +3301,8 @@
   key: buildings_space_heater_heatpump_air_water_network_gas_share
   share_group: heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3324,8 +3324,8 @@
   key: buildings_cooling_heatpump_air_water_network_gas_share
   share_group: cooling_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3347,8 +3347,8 @@
   key: buildings_cooling_collective_heatpump_water_water_ts_electricity_share
   share_group: cooling_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3370,8 +3370,8 @@
   key: buildings_cooling_airconditioning_share
   share_group: cooling_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3393,8 +3393,8 @@
   key: buildings_space_heater_collective_heatpump_water_water_ts_electricity_share
   share_group: heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3416,8 +3416,8 @@
   key: buildings_ventilation_rate
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3429,18 +3429,18 @@
   unit: x
   fixed: false
   comments: ''
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 117
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 396
   key: buildings_recirculation
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3457,13 +3457,13 @@
   related_converter: ''
   slide_id: 117
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 397
   key: buildings_waste_heat_recovery
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3475,18 +3475,18 @@
   unit: "%"
   fixed: false
   comments: ''
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 117
   position: 3
-  dependent_on: 
+  dependent_on:
 - id: 398
   key: buildings_useful_demand_for_appliances
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3497,19 +3497,19 @@
     time: 2013-05-28 10:28:20.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 118
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 400
   key: buildings_lighting_standard_fluorescent_electricity_share
   share_group: lighting_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3521,18 +3521,18 @@
   unit: "%"
   fixed: false
   comments: ''
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 119
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 401
   key: buildings_lighting_efficient_fluorescent_electricity_share
   share_group: lighting_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3543,19 +3543,19 @@
     time: 2013-05-28 10:28:19.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 119
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 402
   key: buildings_lighting_led_electricity_share
   share_group: lighting_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3566,19 +3566,19 @@
     time: 2013-05-28 10:28:19.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 119
   position: 3
-  dependent_on: 
+  dependent_on:
 - id: 403
   key: buildings_lighting_savings_from_motion_detection_light
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3591,17 +3591,17 @@
   fixed: false
   comments: ''
   interface_group: intelligent control
-  command_type: 
-  related_converter: 
+  command_type:
+  related_converter:
   slide_id: 119
   position: 4
-  dependent_on: 
+  dependent_on:
 - id: 404
   key: buildings_lighting_savings_from_daylight_control_light
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3614,17 +3614,17 @@
   fixed: false
   comments: ''
   interface_group: intelligent control
-  command_type: 
-  related_converter: 
+  command_type:
+  related_converter:
   slide_id: 119
   position: 5
-  dependent_on: 
+  dependent_on:
 - id: 405
   key: buildings_solar_pv_solar_radiation_market_penetration
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3646,8 +3646,8 @@
   key: buildings_space_heater_wood_pellets_share
   share_group: heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3669,8 +3669,8 @@
   key: buildings_useful_demand_cooling
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3682,18 +3682,18 @@
   unit: "%"
   fixed: false
   comments: ''
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 113
   position: 4
-  dependent_on: 
+  dependent_on:
 - id: 409
   key: buildings_space_heater_crude_oil_share
   share_group: heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3715,8 +3715,8 @@
   key: households_heater_coal_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3738,8 +3738,8 @@
   key: households_appliances_other_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3752,17 +3752,17 @@
   fixed: false
   comments: ''
   interface_group: appliances without label
-  command_type: 
-  related_converter: 
+  command_type:
+  related_converter:
   slide_id: 3
   position: 8
-  dependent_on: 
+  dependent_on:
 - id: 413
   key: capacity_of_energy_power_nuclear_gen2_uranium_oxide
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3784,8 +3784,8 @@
   key: capacity_of_energy_power_combined_cycle_ccs_network_gas
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3807,8 +3807,8 @@
   key: capacity_of_energy_chp_ultra_supercritical_lignite
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3830,8 +3830,8 @@
   key: transport_plane_using_kerosene_share
   share_group: transport_aviation
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3853,8 +3853,8 @@
   key: transport_plane_using_bio_ethanol_share
   share_group: transport_aviation
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3876,8 +3876,8 @@
   key: transport_passenger_train_using_coal_share
   share_group: transport_passenger_train_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3899,8 +3899,8 @@
   key: transport_passenger_train_using_diesel_mix_share
   share_group: transport_passenger_train_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3922,8 +3922,8 @@
   key: transport_passenger_train_using_electricity_share
   share_group: transport_passenger_train_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:53.000000000 Z
     zone: *1
@@ -3945,8 +3945,8 @@
   key: households_cooker_wood_pellets_share
   share_group: cooking
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -3968,8 +3968,8 @@
   key: households_heater_network_gas_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-11-09 14:27:45.000000000 Z
     zone: *1
@@ -3991,8 +3991,8 @@
   key: green_gas_total_share
   share_group: fuels_gas
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:57.000000000 Z
     zone: *1
@@ -4014,8 +4014,8 @@
   key: natural_gas_total_share
   share_group: fuels_gas
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4026,19 +4026,19 @@
     time: 2012-07-30 15:25:16.000000000 Z
   unit: "%"
   fixed: false
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 49
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 549
   key: buildings_cooling_collective_cooling_network_electricity_share
   share_group: cooling_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4060,8 +4060,8 @@
   key: capacity_of_energy_chp_ultra_supercritical_coal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2011-03-21 08:26:07.000000000 Z
     zone: *1
@@ -4083,8 +4083,8 @@
   key: co_firing_biocoal_share
   share_group: coal_plant_fuel
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2011-04-21 12:12:08.000000000 Z
     zone: *1
@@ -4106,8 +4106,8 @@
   key: co_firing_coal_share
   share_group: coal_plant_fuel
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2011-04-21 12:12:08.000000000 Z
     zone: *1
@@ -4129,8 +4129,8 @@
   key: energy_mixer_for_gas_power_fuel_natural_gas_share
   share_group: energy_sector_gas
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-12-14 08:58:46.000000000 Z
     zone: *1
@@ -4152,8 +4152,8 @@
   key: energy_import_steam_hot_water_preset_demands
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4168,15 +4168,15 @@
   interface_group: ''
   command_type: ''
   related_converter: ''
-  slide_id: 
+  slide_id:
   position: 9
   dependent_on: has_heat_import
 - id: 563
   key: coal_from_south_africa_share
   share_group: coal_lce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4188,18 +4188,18 @@
   unit: "%"
   fixed: false
   comments: ''
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 143
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 564
   key: coal_from_north_america_share
   share_group: coal_lce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4211,18 +4211,18 @@
   unit: "%"
   fixed: false
   comments: ''
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 143
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 565
   key: coal_from_australia_share
   share_group: coal_lce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4234,18 +4234,18 @@
   unit: "%"
   fixed: false
   comments: ''
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 143
   position: 3
-  dependent_on: 
+  dependent_on:
 - id: 566
   key: coal_from_eastern_europe_share
   share_group: coal_lce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4257,18 +4257,18 @@
   unit: "%"
   fixed: false
   comments: ''
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 143
   position: 4
-  dependent_on: 
+  dependent_on:
 - id: 567
   key: coal_from_russia_share
   share_group: coal_lce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4280,18 +4280,18 @@
   unit: "%"
   fixed: false
   comments: ''
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 143
   position: 5
-  dependent_on: 
+  dependent_on:
 - id: 568
   key: coal_from_south_america_share
   share_group: coal_lce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4303,18 +4303,18 @@
   unit: "%"
   fixed: false
   comments: ''
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 143
   position: 6
-  dependent_on: 
+  dependent_on:
 - id: 569
   key: coal_from_east_asia_share
   share_group: coal_lce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4326,18 +4326,18 @@
   unit: "%"
   fixed: false
   comments: ''
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 143
   position: 7
-  dependent_on: 
+  dependent_on:
 - id: 571
   key: gas_from_nederlands_share
   share_group: gas_lce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4359,8 +4359,8 @@
   key: gas_from_russia_share
   share_group: gas_lce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4382,8 +4382,8 @@
   key: gas_from_norway_share
   share_group: gas_lce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4405,8 +4405,8 @@
   key: gas_from_algeria_share
   share_group: gas_lce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4428,8 +4428,8 @@
   key: uranium_from_kazachstan_share
   share_group: nuclear_lce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4441,18 +4441,18 @@
   unit: "%"
   fixed: false
   comments: ''
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 146
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 579
   key: uranium_from_australia_share
   share_group: nuclear_lce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4464,18 +4464,18 @@
   unit: "%"
   fixed: false
   comments: ''
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 146
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 580
   key: uranium_from_canada_share
   share_group: nuclear_lce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4487,18 +4487,18 @@
   unit: "%"
   fixed: false
   comments: ''
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 146
   position: 3
-  dependent_on: 
+  dependent_on:
 - id: 581
   key: energy_mixer_for_gas_power_fuel_crude_oil_share
   share_group: energy_sector_gas
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-12-14 08:59:00.000000000 Z
     zone: *1
@@ -4520,8 +4520,8 @@
   key: households_heater_district_heating_steam_hot_water_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4543,8 +4543,8 @@
   key: capacity_of_energy_power_turbine_network_gas
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4566,8 +4566,8 @@
   key: capacity_of_energy_power_engine_diesel
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4589,8 +4589,8 @@
   key: buildings_space_heater_district_heating_steam_hot_water_share
   share_group: heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-03-06 13:28:21.000000000 Z
     zone: *1
@@ -4612,8 +4612,8 @@
   key: employment_local_fraction
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-03-13 21:26:57.000000000 Z
     zone: *1
@@ -4635,8 +4635,8 @@
   key: employment_economic_multiplier
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-03-13 21:30:01.000000000 Z
     zone: *1
@@ -4653,13 +4653,13 @@
   related_converter: ''
   slide_id: 154
   position: 3
-  dependent_on: 
+  dependent_on:
 - id: 588
   key: transport_plane_using_gasoline_share
   share_group: transport_aviation
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4676,13 +4676,13 @@
   related_converter: ''
   slide_id: 123
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 590
   key: transport_rail_mixer_diesel_biodiesel_share
   share_group: transport_rail_diesel
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4704,8 +4704,8 @@
   key: transport_rail_mixer_diesel_diesel_share
   share_group: transport_rail_diesel
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-08-07 13:13:54.000000000 Z
     zone: *1
@@ -4722,13 +4722,13 @@
   related_converter: ''
   slide_id: 155
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 592
   key: employment_fraction_production
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-03-19 14:32:24.000000000 Z
     zone: *1
@@ -4750,8 +4750,8 @@
   key: investment_costs_micro_chp
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-06-18 12:26:15.000000000 Z
     zone: *1
@@ -4773,8 +4773,8 @@
   key: investment_costs_fuel_cell
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-06-18 12:27:14.000000000 Z
     zone: *1
@@ -4796,8 +4796,8 @@
   key: industry_aluminium_production
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-09-07 09:49:33.000000000 Z
     zone: *1
@@ -4819,8 +4819,8 @@
   key: industry_aluminium_electrolysis_bat_electricity_share
   share_group: aluminium_production
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-09-07 13:31:51.000000000 Z
     zone: *1
@@ -4842,8 +4842,8 @@
   key: industry_aluminium_smeltoven_electricity_share
   share_group: aluminium_production
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-09-07 13:33:13.000000000 Z
     zone: *1
@@ -4865,8 +4865,8 @@
   key: industry_aluminium_carbothermalreduction_electricity_share
   share_group: aluminium_production
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-09-07 13:36:20.000000000 Z
     zone: *1
@@ -4888,8 +4888,8 @@
   key: industry_aluminium_electrolysis_current_electricity_share
   share_group: aluminium_production
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-09-07 13:41:57.000000000 Z
     zone: *1
@@ -4911,8 +4911,8 @@
   key: industry_other_metals_process_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-09-12 12:47:00.000000000 Z
     zone: *1
@@ -4934,8 +4934,8 @@
   key: industry_other_metals_process_heat_useable_heat_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-09-12 12:51:47.000000000 Z
     zone: *1
@@ -4957,8 +4957,8 @@
   key: industry_other_metals_production
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-09-12 13:54:49.000000000 Z
     zone: *1
@@ -4980,8 +4980,8 @@
   key: buildings_space_heater_coal_share
   share_group: heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-09-24 12:44:26.000000000 Z
     zone: *1
@@ -5003,8 +5003,8 @@
   key: industry_steel_production
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-10-04 14:58:04.000000000 Z
     zone: *1
@@ -5026,8 +5026,8 @@
   key: industry_steel_blastfurnace_bat_consumption_useable_heat_share
   share_group: steel_production
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-10-04 15:01:34.000000000 Z
     zone: *1
@@ -5049,8 +5049,8 @@
   key: industry_steel_blastfurnace_current_consumption_useable_heat_share
   share_group: steel_production
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-10-04 15:02:55.000000000 Z
     zone: *1
@@ -5072,8 +5072,8 @@
   key: industry_steel_hisarna_consumption_useable_heat_share
   share_group: steel_production
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-10-04 15:04:19.000000000 Z
     zone: *1
@@ -5095,8 +5095,8 @@
   key: industry_steel_electricfurnace_electricity_share
   share_group: steel_production
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-10-04 15:06:54.000000000 Z
     zone: *1
@@ -5118,8 +5118,8 @@
   key: energy_steel_hisarna_transformation_coal_woodpellets_share
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-10-04 15:13:31.000000000 Z
     zone: *1
@@ -5141,8 +5141,8 @@
   key: settings_enable_merit_order
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-10-24 11:49:01.000000000 Z
     zone: *1
@@ -5164,8 +5164,8 @@
   key: flexibility_outdoor_temperature
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2012-11-05 13:05:31.000000000 Z
     zone: *1
@@ -5187,8 +5187,8 @@
   key: investment_costs_electric_heat_pumps
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2013-04-10 15:44:28.000000000 Z
     zone: *1
@@ -5210,8 +5210,8 @@
   key: investment_costs_gas_heat_pumps
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2013-04-10 15:45:47.000000000 Z
     zone: *1
@@ -5233,8 +5233,8 @@
   key: capacity_of_industry_chp_turbine_gas_power_fuelmix
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2013-04-11 15:33:06.000000000 Z
     zone: *1
@@ -5256,8 +5256,8 @@
   key: capacity_of_industry_chp_engine_gas_power_fuelmix
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2013-04-11 15:34:32.000000000 Z
     zone: *1
@@ -5279,8 +5279,8 @@
   key: capacity_of_energy_chp_supercritical_waste_mix
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2013-05-02 09:50:40.000000000 Z
     zone: *1
@@ -5302,8 +5302,8 @@
   key: capacity_of_other_chp_engine_biogas
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2013-05-06 07:33:08.000000000 Z
     zone: *1
@@ -5328,8 +5328,8 @@
   key: households_useful_demand_cooking_per_person
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2013-07-10 14:28:55.000000000 Z
     zone: *1
@@ -5351,8 +5351,8 @@
   key: households_useful_demand_electric_appliances
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2013-07-10 14:58:18.000000000 Z
     zone: *1
@@ -5374,8 +5374,8 @@
   key: households_useful_demand_lighting
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2013-07-10 14:59:13.000000000 Z
     zone: *1
@@ -5397,8 +5397,8 @@
   key: capacity_of_energy_chp_ultra_supercritical_cofiring_coal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2013-08-30 14:26:00.000000000 Z
     zone: *1
@@ -5420,8 +5420,8 @@
   key: capacity_of_energy_power_ultra_supercritical_cofiring_coal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2013-08-30 14:38:49.000000000 Z
     zone: *1
@@ -5443,8 +5443,8 @@
   key: investment_costs_solar_concentrated_solar_power
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2013-10-10 09:22:25.000000000 Z
     zone: *1
@@ -5466,8 +5466,8 @@
   key: other_useful_demand_non_energetic
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2013-11-26 15:34:47.000000000 Z
     zone: *1
@@ -5489,8 +5489,8 @@
   key: capacity_of_energy_power_engine_network_gas
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2014-03-20 17:51:45.000000000 Z
     zone: *1
@@ -5512,8 +5512,8 @@
   key: capacity_of_industry_chp_ultra_supercritical_coal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2014-11-18 09:01:11.000000000 Z
     zone: *1
@@ -5535,8 +5535,8 @@
   key: households_flexibility_p2p_electricity_market_penetration
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-03-17 15:40:32.000000000 Z
     zone: *1
@@ -5558,8 +5558,8 @@
   key: transport_car_using_electricity_availability
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-03-18 09:05:26.000000000 Z
     zone: *1
@@ -5581,8 +5581,8 @@
   key: capacity_of_energy_hydrogen_flexibility_p2g_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-03-18 09:20:07.000000000 Z
     zone: *1
@@ -5604,8 +5604,8 @@
   key: interconnectors_availability_for_export
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-03-18 09:44:12.000000000 Z
     zone: *1
@@ -5627,8 +5627,8 @@
   key: interconnectors_availability_for_import
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-03-18 09:44:55.000000000 Z
     zone: *1
@@ -5650,8 +5650,8 @@
   key: interconnectors_interconnector_capacity
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-03-18 09:45:28.000000000 Z
     zone: *1
@@ -5673,8 +5673,8 @@
   key: investment_costs_households_flexibility_p2p_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-03-20 09:50:07.000000000 Z
     zone: *1
@@ -5696,8 +5696,8 @@
   key: investment_costs_flexibility_p2h_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-03-20 09:51:08.000000000 Z
     zone: *1
@@ -5719,8 +5719,8 @@
   key: investment_costs_hydrogen_electrolysis
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-03-20 09:51:45.000000000 Z
     zone: *1
@@ -5742,8 +5742,8 @@
   key: transport_ship_using_diesel_mix_share
   share_group: transport_marine
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-09 08:26:48.000000000 Z
     zone: *1
@@ -5765,8 +5765,8 @@
   key: transport_ship_using_lng_mix_share
   share_group: transport_marine
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-09 08:29:04.000000000 Z
     zone: *1
@@ -5788,8 +5788,8 @@
   key: transport_truck_using_lng_mix_share
   share_group: transport_truck_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-09 08:34:43.000000000 Z
     zone: *1
@@ -5811,8 +5811,8 @@
   key: transport_road_mixer_lng_lng_share
   share_group: transport_lng_road
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-09 08:38:27.000000000 Z
     zone: *1
@@ -5834,8 +5834,8 @@
   key: transport_road_mixer_lng_bio_lng_share
   share_group: transport_lng_road
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-09 08:41:30.000000000 Z
     zone: *1
@@ -5857,8 +5857,8 @@
   key: energy_treatment_natural_gas_share
   share_group: grid_natural_gas_origin
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-09 08:52:12.000000000 Z
     zone: *1
@@ -5880,8 +5880,8 @@
   key: energy_regasification_lng_share
   share_group: grid_natural_gas_origin
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-09 08:57:04.000000000 Z
     zone: *1
@@ -5903,8 +5903,8 @@
   key: transport_shipping_mixer_lng_lng_share
   share_group: transport_lng_ship
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-09 09:24:19.000000000 Z
     zone: *1
@@ -5926,8 +5926,8 @@
   key: transport_shipping_mixer_lng_bio_lng_share
   share_group: transport_lng_ship
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-09 09:29:36.000000000 Z
     zone: *1
@@ -5949,8 +5949,8 @@
   key: transport_shipping_mixer_diesel_diesel_share
   share_group: transport_diesel_ship
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-09 09:42:30.000000000 Z
     zone: *1
@@ -5972,8 +5972,8 @@
   key: transport_shipping_mixer_diesel_biodiesel_share
   share_group: transport_diesel_ship
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-09 09:44:47.000000000 Z
     zone: *1
@@ -5995,8 +5995,8 @@
   key: transport_shipping_mixer_diesel_lng_share
   share_group: transport_diesel_ship
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-09 09:46:54.000000000 Z
     zone: *1
@@ -6018,8 +6018,8 @@
   key: transport_shipping_mixer_diesel_bio_lng_share
   share_group: transport_diesel_ship
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-09 09:48:55.000000000 Z
     zone: *1
@@ -6041,8 +6041,8 @@
   key: transport_shipping_mixer_diesel_heavy_fuel_oil_share
   share_group: transport_diesel_ship
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-09 09:50:34.000000000 Z
     zone: *1
@@ -6064,8 +6064,8 @@
   key: lng_from_algeria_share
   share_group: lng_fce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-16 13:36:21.000000000 Z
     zone: *1
@@ -6087,8 +6087,8 @@
   key: lng_from_norway_share
   share_group: lng_fce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-16 13:37:09.000000000 Z
     zone: *1
@@ -6110,8 +6110,8 @@
   key: lng_from_qatar_share
   share_group: lng_fce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-16 13:37:53.000000000 Z
     zone: *1
@@ -6133,8 +6133,8 @@
   key: lng_from_trinidad_share
   share_group: lng_fce
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-11-16 13:38:33.000000000 Z
     zone: *1
@@ -6156,8 +6156,8 @@
   key: households_heater_hybrid_heatpump_air_water_electricity_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2015-12-10 13:20:17.000000000 Z
     zone: *1
@@ -6179,8 +6179,8 @@
   key: transport_car_using_hydrogen_share
   share_group: transport_car_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-01-13 09:39:45.000000000 Z
     zone: *1
@@ -6202,8 +6202,8 @@
   key: transport_vehicle_using_hydrogen_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-01-13 09:42:11.000000000 Z
     zone: *1
@@ -6225,8 +6225,8 @@
   key: capacity_of_energy_hydrogen_steam_methane_reformer_ccs
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-01-13 09:51:26.000000000 Z
     zone: *1
@@ -6248,8 +6248,8 @@
   key: capacity_of_energy_hydrogen_steam_methane_reformer
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-01-13 09:52:05.000000000 Z
     zone: *1
@@ -6271,8 +6271,8 @@
   key: energy_local_electrolysis_hydrogen_share
   share_group: hydrogen_production
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-01-13 09:52:45.000000000 Z
     zone: *1
@@ -6294,8 +6294,8 @@
   key: capacity_of_energy_hydrogen_biomass_gasification_ccs
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-01-13 09:54:47.000000000 Z
     zone: *1
@@ -6317,8 +6317,8 @@
   key: capacity_of_energy_hydrogen_biomass_gasification
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-01-13 09:55:58.000000000 Z
     zone: *1
@@ -6340,8 +6340,8 @@
   key: investment_costs_electric_cars
   share_group: ''
   step_value: 250.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-02-05 15:12:17.000000000 Z
     zone: *1
@@ -6363,8 +6363,8 @@
   key: industry_useful_demand_for_chemical_refineries
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-08 15:32:50.000000000 Z
     zone: *1
@@ -6386,8 +6386,8 @@
   key: industry_useful_demand_for_chemical_refineries_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-08 15:34:01.000000000 Z
     zone: *1
@@ -6409,8 +6409,8 @@
   key: industry_useful_demand_for_chemical_refineries_useable_heat_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-08 15:34:37.000000000 Z
     zone: *1
@@ -6432,8 +6432,8 @@
   key: industry_chemicals_refineries_burner_network_gas_share
   share_group: chemical_refineries_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-08 15:35:41.000000000 Z
     zone: *1
@@ -6455,8 +6455,8 @@
   key: industry_chemicals_refineries_burner_crude_oil_share
   share_group: chemical_refineries_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-08 15:36:24.000000000 Z
     zone: *1
@@ -6478,8 +6478,8 @@
   key: industry_chemicals_refineries_burner_wood_pellets_share
   share_group: chemical_refineries_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-08 15:37:07.000000000 Z
     zone: *1
@@ -6501,8 +6501,8 @@
   key: industry_chemicals_refineries_burner_coal_share
   share_group: chemical_refineries_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-08 15:38:32.000000000 Z
     zone: *1
@@ -6524,8 +6524,8 @@
   key: industry_final_demand_for_chemical_refineries_steam_hot_water_share
   share_group: chemical_refineries_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-08 15:39:05.000000000 Z
     zone: *1
@@ -6547,8 +6547,8 @@
   key: industry_useful_demand_for_chemical_fertilizers
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 07:45:49.000000000 Z
     zone: *1
@@ -6570,8 +6570,8 @@
   key: industry_useful_demand_for_chemical_fertilizers_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 07:47:14.000000000 Z
     zone: *1
@@ -6593,8 +6593,8 @@
   key: industry_useful_demand_for_chemical_fertilizers_useable_heat_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 07:53:44.000000000 Z
     zone: *1
@@ -6616,8 +6616,8 @@
   key: industry_chemicals_fertilizers_burner_network_gas_share
   share_group: chemical_fertilizers_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 07:54:47.000000000 Z
     zone: *1
@@ -6639,8 +6639,8 @@
   key: industry_chemicals_fertilizers_burner_crude_oil_share
   share_group: chemical_fertilizers_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 07:55:52.000000000 Z
     zone: *1
@@ -6662,8 +6662,8 @@
   key: industry_chemicals_fertilizers_burner_coal_share
   share_group: chemical_fertilizers_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 07:56:42.000000000 Z
     zone: *1
@@ -6685,8 +6685,8 @@
   key: industry_chemicals_fertilizers_burner_wood_pellets_share
   share_group: chemical_fertilizers_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 07:57:30.000000000 Z
     zone: *1
@@ -6708,8 +6708,8 @@
   key: industry_final_demand_for_chemical_fertilizers_steam_hot_water_share
   share_group: chemical_fertilizers_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 07:58:12.000000000 Z
     zone: *1
@@ -6731,8 +6731,8 @@
   key: industry_useful_demand_for_chemical_other
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 08:07:07.000000000 Z
     zone: *1
@@ -6754,8 +6754,8 @@
   key: industry_useful_demand_for_chemical_other_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 08:07:42.000000000 Z
     zone: *1
@@ -6777,8 +6777,8 @@
   key: industry_useful_demand_for_chemical_other_useable_heat_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 08:08:17.000000000 Z
     zone: *1
@@ -6800,8 +6800,8 @@
   key: industry_chemicals_other_burner_network_gas_share
   share_group: chemical_other_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 08:09:48.000000000 Z
     zone: *1
@@ -6823,8 +6823,8 @@
   key: industry_chemicals_other_burner_crude_oil_share
   share_group: chemical_other_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 08:10:40.000000000 Z
     zone: *1
@@ -6846,8 +6846,8 @@
   key: industry_chemicals_other_burner_wood_pellets_share
   share_group: chemical_other_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 08:11:23.000000000 Z
     zone: *1
@@ -6869,8 +6869,8 @@
   key: industry_chemicals_other_burner_coal_share
   share_group: chemical_other_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 08:12:04.000000000 Z
     zone: *1
@@ -6892,8 +6892,8 @@
   key: industry_final_demand_for_chemical_other_steam_hot_water_share
   share_group: chemical_other_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 08:12:48.000000000 Z
     zone: *1
@@ -6915,8 +6915,8 @@
   key: industry_useful_demand_for_other_food
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 08:23:20.000000000 Z
     zone: *1
@@ -6938,8 +6938,8 @@
   key: industry_useful_demand_for_other_food_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 08:23:59.000000000 Z
     zone: *1
@@ -6961,8 +6961,8 @@
   key: industry_useful_demand_for_other_paper
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 08:28:05.000000000 Z
     zone: *1
@@ -6984,8 +6984,8 @@
   key: industry_useful_demand_for_other_paper_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-09 08:28:50.000000000 Z
     zone: *1
@@ -7007,8 +7007,8 @@
   key: climate_relevant_co2_biomass_gas_present
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-22 13:24:10.000000000 Z
     zone: *1
@@ -7030,8 +7030,8 @@
   key: climate_relevant_co2_biomass_liquid_present
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-22 13:27:04.000000000 Z
     zone: *1
@@ -7053,8 +7053,8 @@
   key: climate_relevant_co2_biomass_solid_present
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-22 13:28:23.000000000 Z
     zone: *1
@@ -7076,8 +7076,8 @@
   key: climate_relevant_co2_biomass_gas_future
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-22 13:32:12.000000000 Z
     zone: *1
@@ -7099,8 +7099,8 @@
   key: climate_relevant_co2_biomass_liquid_future
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-22 13:33:21.000000000 Z
     zone: *1
@@ -7122,8 +7122,8 @@
   key: climate_relevant_co2_biomass_solid_future
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-22 13:34:51.000000000 Z
     zone: *1
@@ -7145,8 +7145,8 @@
   key: industry_useful_demand_for_other_ict
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-23 14:55:38.000000000 Z
     zone: *1
@@ -7168,8 +7168,8 @@
   key: industry_useful_demand_for_other_ict_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-23 14:56:14.000000000 Z
     zone: *1
@@ -7191,8 +7191,8 @@
   key: industry_other_food_burner_coal_share
   share_group: other_food_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-31 15:24:40.000000000 Z
     zone: *1
@@ -7214,8 +7214,8 @@
   key: industry_other_food_burner_crude_oil_share
   share_group: other_food_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-31 15:25:26.000000000 Z
     zone: *1
@@ -7237,8 +7237,8 @@
   key: industry_other_food_burner_network_gas_share
   share_group: other_food_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-31 15:26:22.000000000 Z
     zone: *1
@@ -7260,8 +7260,8 @@
   key: industry_other_food_burner_wood_pellets_share
   share_group: other_food_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-31 15:27:53.000000000 Z
     zone: *1
@@ -7283,8 +7283,8 @@
   key: industry_final_demand_for_other_food_steam_hot_water_share
   share_group: other_food_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-31 15:29:25.000000000 Z
     zone: *1
@@ -7306,8 +7306,8 @@
   key: industry_other_food_heater_electricity_share
   share_group: other_food_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-31 15:30:20.000000000 Z
     zone: *1
@@ -7329,8 +7329,8 @@
   key: industry_other_paper_burner_network_gas_share
   share_group: other_paper_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-31 15:31:51.000000000 Z
     zone: *1
@@ -7352,8 +7352,8 @@
   key: industry_other_paper_burner_crude_oil_share
   share_group: other_paper_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-31 15:32:35.000000000 Z
     zone: *1
@@ -7375,8 +7375,8 @@
   key: industry_other_paper_burner_wood_pellets_share
   share_group: other_paper_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-31 15:33:26.000000000 Z
     zone: *1
@@ -7398,8 +7398,8 @@
   key: industry_other_paper_burner_coal_share
   share_group: other_paper_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-31 15:34:53.000000000 Z
     zone: *1
@@ -7421,8 +7421,8 @@
   key: industry_final_demand_for_other_paper_steam_hot_water_share
   share_group: other_paper_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-31 15:35:43.000000000 Z
     zone: *1
@@ -7444,8 +7444,8 @@
   key: industry_other_paper_heater_electricity_share
   share_group: other_paper_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2016-08-31 15:36:15.000000000 Z
     zone: *1
@@ -7467,8 +7467,8 @@
   key: transport_car_using_electricity_fast_charging_share
   share_group: flexibility_demand_response_electric_vehicle_profiles
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-04-19 08:43:43.000000000 Z
     zone: *1
@@ -7490,8 +7490,8 @@
   key: transport_car_using_electricity_hybrid_charging_share
   share_group: flexibility_demand_response_electric_vehicle_profiles
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-04-19 08:43:43.000000000 Z
     zone: *1
@@ -7513,8 +7513,8 @@
   key: transport_car_using_electricity_home_charging_share
   share_group: flexibility_demand_response_electric_vehicle_profiles
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-04-19 08:43:43.000000000 Z
     zone: *1
@@ -7536,8 +7536,8 @@
   key: transport_truck_using_hydrogen_share
   share_group: transport_truck_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-05-24 10:26:29.000000000 Z
     zone: *1
@@ -7559,8 +7559,8 @@
   key: industry_chemicals_other_steam_recompression_electricity_share
   share_group: chemical_other_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-07-25 13:25:38.000000000 Z
     zone: *1
@@ -7582,8 +7582,8 @@
   key: industry_chemicals_other_heatpump_water_water_electricity_share
   share_group: chemical_other_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-07-25 13:27:36.000000000 Z
     zone: *1
@@ -7605,8 +7605,8 @@
   key: capacity_of_industry_chemicals_other_flexibility_p2h_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-07-27 15:38:42.000000000 Z
     zone: *1
@@ -7628,8 +7628,8 @@
   key: capacity_of_industry_chemicals_refineries_flexibility_p2h_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-07-27 15:39:54.000000000 Z
     zone: *1
@@ -7651,8 +7651,8 @@
   key: capacity_of_industry_other_food_flexibility_p2h_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-07-27 15:41:28.000000000 Z
     zone: *1
@@ -7674,8 +7674,8 @@
   key: capacity_of_industry_other_paper_flexibility_p2h_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-07-27 15:42:29.000000000 Z
     zone: *1
@@ -7697,8 +7697,8 @@
   key: industry_chemicals_other_heater_electricity_share
   share_group: chemical_other_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-08-10 16:13:14.000000000 Z
     zone: *1
@@ -7720,8 +7720,8 @@
   key: households_flexibility_space_heating_buffer_size_heatpump_air_water_electricity
   share_group: ''
   step_value: 0.5
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-08-23 14:57:06.000000000 Z
     zone: *1
@@ -7743,8 +7743,8 @@
   key: households_flexibility_water_heating_buffer_size_heatpump_air_water_electricity
   share_group: ''
   step_value: 0.5
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-08-23 14:57:06.000000000 Z
     zone: *1
@@ -7766,8 +7766,8 @@
   key: households_flexibility_space_heating_cop_cutoff
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-08-23 14:57:09.000000000 Z
     zone: *1
@@ -7789,8 +7789,8 @@
   key: households_flexibility_water_heating_cop_cutoff
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-08-23 14:57:09.000000000 Z
     zone: *1
@@ -7810,10 +7810,10 @@
   dependent_on: ''
 - id: 781
   key: investment_costs_households_storage_space_heating
-  share_group: 
+  share_group:
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-09-01 19:59:10.000000000 Z
     zone: *1
@@ -7823,20 +7823,20 @@
     zone: *1
     time: 2017-09-01 21:59:10.000000000 Z
   unit: "€/kWh"
-  fixed: 
-  comments: 
+  fixed:
+  comments:
   interface_group: heat_buffer_costs
-  command_type: 
-  related_converter: 
+  command_type:
+  related_converter:
   slide_id: 157
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 782
   key: investment_costs_households_storage_water_heating
-  share_group: 
+  share_group:
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-09-01 19:59:10.000000000 Z
     zone: *1
@@ -7846,20 +7846,20 @@
     zone: *1
     time: 2017-09-01 21:59:10.000000000 Z
   unit: "€/kWh"
-  fixed: 
-  comments: 
+  fixed:
+  comments:
   interface_group: heat_buffer_costs
-  command_type: 
-  related_converter: 
+  command_type:
+  related_converter:
   slide_id: 157
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 783
   key: households_flexibility_space_heating_buffer_size_heatpump_ground_water_electricity
   share_group: ''
   step_value: 0.5
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-09-05 16:20:31.000000000 Z
     zone: *1
@@ -7881,8 +7881,8 @@
   key: households_flexibility_space_heating_buffer_size_hybrid_heatpump_air_water_electricity
   share_group: ''
   step_value: 0.5
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-09-05 16:21:29.000000000 Z
     zone: *1
@@ -7904,8 +7904,8 @@
   key: settings_weather_curve_set
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-09-05 16:29:10.000000000 Z
     zone: *1
@@ -7927,8 +7927,8 @@
   key: households_flexibility_water_heating_buffer_size_heatpump_ground_water_electricity
   share_group: ''
   step_value: 0.5
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-09-05 17:01:39.000000000 Z
     zone: *1
@@ -7950,8 +7950,8 @@
   key: households_flexibility_water_heating_buffer_size_hybrid_heatpump_air_water_electricity
   share_group: ''
   step_value: 0.5
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-09-05 17:01:43.000000000 Z
     zone: *1
@@ -7973,8 +7973,8 @@
   key: bunkers_useful_demand_planes
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-15 16:30:59.000000000 Z
     zone: *1
@@ -7996,8 +7996,8 @@
   key: bunkers_plane_using_kerosene_share
   share_group: bunkers_aviation
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-15 16:30:59.000000000 Z
     zone: *1
@@ -8019,8 +8019,8 @@
   key: bunkers_plane_using_bio_kerosene_share
   share_group: bunkers_aviation
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-15 16:30:59.000000000 Z
     zone: *1
@@ -8042,8 +8042,8 @@
   key: bunkers_useful_demand_ships
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-15 16:30:59.000000000 Z
     zone: *1
@@ -8065,8 +8065,8 @@
   key: bunkers_ship_using_heavy_fuel_oil_share
   share_group: bunkers_shipping
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-15 16:30:59.000000000 Z
     zone: *1
@@ -8088,8 +8088,8 @@
   key: bunkers_ship_using_lng_share
   share_group: bunkers_shipping
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-15 16:30:59.000000000 Z
     zone: *1
@@ -8111,8 +8111,8 @@
   key: bunkers_allocated_percentage_aviation
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-15 16:30:59.000000000 Z
     zone: *1
@@ -8134,8 +8134,8 @@
   key: bunkers_allocated_percentage_shipping
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-15 16:30:59.000000000 Z
     zone: *1
@@ -8157,8 +8157,8 @@
   key: capacity_of_flexibility_p2l_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-16 15:01:49.000000000 Z
     zone: *1
@@ -8180,8 +8180,8 @@
   key: flexibility_p2l_direct_air_capture
   share_group: carbon_source_p2l
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-17 09:50:58.000000000 Z
     zone: *1
@@ -8203,8 +8203,8 @@
   key: flexibility_p2l_point_source_CO
   share_group: carbon_source_p2l
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-17 09:56:45.000000000 Z
     zone: *1
@@ -8226,8 +8226,8 @@
   key: flexibility_p2l_point_source_CO2
   share_group: carbon_source_p2l
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-17 09:57:40.000000000 Z
     zone: *1
@@ -8249,8 +8249,8 @@
   key: transport_useful_demand_passenger_kms
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 13:05:13.000000000 Z
     zone: *1
@@ -8272,8 +8272,8 @@
   key: transport_useful_demand_freight_tonne_kms
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 14:04:35.000000000 Z
     zone: *1
@@ -8295,8 +8295,8 @@
   key: transport_busses_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 14:20:37.000000000 Z
     zone: *1
@@ -8318,8 +8318,8 @@
   key: transport_trams_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 14:23:03.000000000 Z
     zone: *1
@@ -8341,8 +8341,8 @@
   key: transport_bicycles_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 14:24:24.000000000 Z
     zone: *1
@@ -8364,8 +8364,8 @@
   key: transport_motorcycles_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 14:26:09.000000000 Z
     zone: *1
@@ -8387,8 +8387,8 @@
   key: transport_freight_trains_share
   share_group: freight_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 14:54:01.000000000 Z
     zone: *1
@@ -8410,8 +8410,8 @@
   key: transport_bus_using_electricity_share
   share_group: transport_bus_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 15:16:14.000000000 Z
     zone: *1
@@ -8433,8 +8433,8 @@
   key: transport_bus_using_hydrogen_share
   share_group: transport_bus_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 15:17:16.000000000 Z
     zone: *1
@@ -8456,8 +8456,8 @@
   key: transport_bus_using_diesel_mix_share
   share_group: transport_bus_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 15:33:54.000000000 Z
     zone: *1
@@ -8479,8 +8479,8 @@
   key: transport_bus_using_gasoline_mix_share
   share_group: transport_bus_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 15:35:09.000000000 Z
     zone: *1
@@ -8502,8 +8502,8 @@
   key: transport_bus_using_lng_share
   share_group: transport_bus_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 15:35:55.000000000 Z
     zone: *1
@@ -8525,8 +8525,8 @@
   key: transport_bus_using_compressed_natural_gas_share
   share_group: transport_bus_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 15:37:47.000000000 Z
     zone: *1
@@ -8548,8 +8548,8 @@
   key: transport_bicycle_using_human_power_share
   share_group: transport_bicycle_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 15:41:05.000000000 Z
     zone: *1
@@ -8571,8 +8571,8 @@
   key: transport_bicycle_using_electricity_share
   share_group: transport_bicycle_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 15:41:45.000000000 Z
     zone: *1
@@ -8594,8 +8594,8 @@
   key: transport_motorcycle_using_gasoline_mix_share
   share_group: transport_motorcycle_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 15:43:02.000000000 Z
     zone: *1
@@ -8617,8 +8617,8 @@
   key: transport_motorcycle_using_electricity_share
   share_group: transport_motorcycle_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 15:43:29.000000000 Z
     zone: *1
@@ -8640,8 +8640,8 @@
   key: transport_freight_train_using_electricity_share
   share_group: transport_freight_train_share
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 15:49:32.000000000 Z
     zone: *1
@@ -8663,8 +8663,8 @@
   key: transport_freight_train_using_diesel_mix_share
   share_group: transport_freight_train_share
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-11-03 15:53:09.000000000 Z
     zone: *1
@@ -8686,8 +8686,8 @@
   key: flexibility_p2l_co2_reduction_industry
   share_group: co2_reduction_p2l
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-12-15 14:46:05.000000000 Z
     zone: *1
@@ -8709,8 +8709,8 @@
   key: flexibility_p2l_co2_reduction_bunkers
   share_group: co2_reduction_p2l
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2017-12-15 14:47:19.000000000 Z
     zone: *1
@@ -8732,8 +8732,8 @@
   key: co2_emissions_of_imported_electricity_present
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-01-05 11:22:26.000000000 Z
     zone: *1
@@ -8756,8 +8756,8 @@
   key: co2_emissions_of_imported_electricity_future
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-01-05 11:23:18.000000000 Z
     zone: *1
@@ -8779,8 +8779,8 @@
   key: costs_imported_electricity
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-02-20 13:31:32.000000000 Z
     zone: *1
@@ -8802,8 +8802,8 @@
   key: capacity_of_energy_hydrogen_wind_turbine_offshore
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-03-02 13:47:39.000000000 Z
     zone: *1
@@ -8825,8 +8825,8 @@
   key: capacity_of_energy_hydrogen_solar_pv_solar_radiation
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-03-02 13:54:33.000000000 Z
     zone: *1
@@ -8848,8 +8848,8 @@
   key: industry_chemicals_fertilizers_steam_methane_reformer_hydrogen_share
   share_group: hydrogen_production
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-03-08 14:37:07.000000000 Z
     zone: *1
@@ -8871,8 +8871,8 @@
   key: industry_chemicals_fertilizers_hydrogen_network_share
   share_group: hydrogen_production
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-03-08 14:38:15.000000000 Z
     zone: *1
@@ -8894,8 +8894,8 @@
   key: capacity_of_energy_power_turbine_hydrogen
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-03-13 11:29:56.000000000 Z
     zone: *1
@@ -8917,8 +8917,8 @@
   key: industry_chemicals_refineries_burner_hydrogen_share
   share_group: chemical_refineries_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-03-15 09:01:41.000000000 Z
     zone: *1
@@ -8940,8 +8940,8 @@
   key: industry_chemicals_fertilizers_burner_hydrogen_share
   share_group: chemical_fertilizers_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-03-15 09:10:31.000000000 Z
     zone: *1
@@ -8963,8 +8963,8 @@
   key: industry_chemicals_other_burner_hydrogen_share
   share_group: chemical_other_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-03-15 09:30:44.000000000 Z
     zone: *1
@@ -8986,8 +8986,8 @@
   key: industry_other_food_burner_hydrogen_share
   share_group: other_food_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-03-15 09:39:42.000000000 Z
     zone: *1
@@ -9009,8 +9009,8 @@
   key: industry_other_paper_burner_hydrogen_share
   share_group: other_paper_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-03-15 09:41:33.000000000 Z
     zone: *1
@@ -9032,8 +9032,8 @@
   key: agriculture_burner_hydrogen_share
   share_group: agri_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-03-16 08:25:23.000000000 Z
     zone: *1
@@ -9055,8 +9055,8 @@
   key: energy_transport_hydrogen_compressed_trucks_share
   share_group: hydrogen_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-03-21 13:50:50.000000000 Z
     zone: *1
@@ -9078,8 +9078,8 @@
   key: energy_transport_hydrogen_pipelines_share
   share_group: hydrogen_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-03-21 13:51:25.000000000 Z
     zone: *1
@@ -9101,8 +9101,8 @@
   key: costs_hydrogen
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-03-28 09:56:17.000000000 Z
     zone: *1
@@ -9124,8 +9124,8 @@
   key: co2_emissions_of_imported_hydrogen_present
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-03-30 15:39:18.000000000 Z
     zone: *1
@@ -9147,8 +9147,8 @@
   key: co2_emissions_of_imported_hydrogen_future
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-03-30 15:39:54.000000000 Z
     zone: *1
@@ -9170,8 +9170,8 @@
   key: costs_infrastructure_electricity_lv_net
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-04-18 11:19:45.000000000 Z
     zone: *1
@@ -9193,8 +9193,8 @@
   key: costs_infrastructure_electricity_lv_mv_trafo
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-04-18 11:19:45.000000000 Z
     zone: *1
@@ -9216,8 +9216,8 @@
   key: costs_infrastructure_electricity_mv_net
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-04-18 11:19:45.000000000 Z
     zone: *1
@@ -9239,8 +9239,8 @@
   key: costs_infrastructure_electricity_mv_hv_trafo
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-04-18 11:19:45.000000000 Z
     zone: *1
@@ -9262,8 +9262,8 @@
   key: costs_infrastructure_electricity_hv_net
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-04-18 11:19:45.000000000 Z
     zone: *1
@@ -9285,8 +9285,8 @@
   key: costs_infrastructure_electricity_interconnector_net
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-04-18 11:19:45.000000000 Z
     zone: *1
@@ -9308,8 +9308,8 @@
   key: costs_infrastructure_electricity_offshore_net
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-04-18 11:19:45.000000000 Z
     zone: *1
@@ -9331,8 +9331,8 @@
   key: costs_infrastructure_useable_spare_capacity
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-04-20 13:51:50.000000000 Z
     zone: *1
@@ -9354,8 +9354,8 @@
   key: costs_ccs_per_ton_in_industry
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-05-17 16:15:07.000000000 Z
     zone: *1
@@ -9377,8 +9377,8 @@
   key: industry_ccs_in_industry
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-05-17 16:21:14.000000000 Z
     zone: *1
@@ -9400,8 +9400,8 @@
   key: flh_of_energy_power_wind_turbine_coastal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-06-01 11:31:28.000000000 Z
     zone: *1
@@ -9423,8 +9423,8 @@
   key: flh_of_energy_power_wind_turbine_inland
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-06-01 11:32:15.000000000 Z
     zone: *1
@@ -9446,8 +9446,8 @@
   key: flh_of_energy_power_wind_turbine_offshore
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-06-01 11:32:50.000000000 Z
     zone: *1
@@ -9469,8 +9469,8 @@
   key: flh_of_energy_hydrogen_wind_turbine_offshore
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-06-01 11:52:22.000000000 Z
     zone: *1
@@ -9492,8 +9492,8 @@
   key: flh_of_solar_pv_solar_radiation
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-06-01 14:29:47.000000000 Z
     zone: *1
@@ -9515,8 +9515,8 @@
   key: capacity_of_energy_flexibility_pumped_storage_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-08-07 07:30:17.000000000 Z
     zone: *1
@@ -9538,8 +9538,8 @@
   key: costs_hydrogen_transport_compressed_trucks
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-09-18 14:43:44.000000000 Z
     zone: *1
@@ -9561,8 +9561,8 @@
   key: costs_hydrogen_transport_pipelines
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-09-18 14:44:40.000000000 Z
     zone: *1
@@ -9584,8 +9584,8 @@
   key: costs_hydrogen_storage
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-09-18 14:45:15.000000000 Z
     zone: *1
@@ -9607,8 +9607,8 @@
   key: capacity_of_energy_imported_hydrogen_baseload
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-09-18 14:46:16.000000000 Z
     zone: *1
@@ -9630,8 +9630,8 @@
   key: industry_aggregated_other_industry_wood_pellets_share
   share_group: other_industry_energetic
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-10-09 07:54:02.000000000 Z
     zone: *1
@@ -9653,8 +9653,8 @@
   key: industry_aggregated_other_industry_electricity_share
   share_group: other_industry_energetic
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-10-09 08:00:50.000000000 Z
     zone: *1
@@ -9676,8 +9676,8 @@
   key: industry_aggregated_other_industry_crude_oil_share
   share_group: other_industry_energetic
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-10-09 08:01:27.000000000 Z
     zone: *1
@@ -9699,8 +9699,8 @@
   key: industry_aggregated_other_industry_network_gas_share
   share_group: other_industry_energetic
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-10-09 08:01:57.000000000 Z
     zone: *1
@@ -9722,8 +9722,8 @@
   key: industry_aggregated_other_industry_coal_share
   share_group: other_industry_energetic
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-10-09 08:02:33.000000000 Z
     zone: *1
@@ -9745,8 +9745,8 @@
   key: industry_aggregated_other_industry_useable_heat_share
   share_group: other_industry_energetic
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-10-09 08:03:09.000000000 Z
     zone: *1
@@ -9768,8 +9768,8 @@
   key: industry_useful_demand_for_aggregated_other
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-10-10 14:25:10.000000000 Z
     zone: *1
@@ -9791,8 +9791,8 @@
   key: households_apartments_share
   share_group: housing_stock
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-11-09 14:47:31.000000000 Z
     zone: *1
@@ -9814,8 +9814,8 @@
   key: households_corner_houses_share
   share_group: housing_stock
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-11-09 14:50:15.000000000 Z
     zone: *1
@@ -9837,8 +9837,8 @@
   key: households_detached_houses_share
   share_group: housing_stock
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-11-09 14:50:51.000000000 Z
     zone: *1
@@ -9860,8 +9860,8 @@
   key: households_semi_detached_houses_share
   share_group: housing_stock
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-11-09 14:51:19.000000000 Z
     zone: *1
@@ -9883,8 +9883,8 @@
   key: households_terraced_houses_share
   share_group: housing_stock
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-11-09 14:51:53.000000000 Z
     zone: *1
@@ -9907,7 +9907,7 @@
   share_group: ''
   step_value: 0.1
   draw_to_min: 0.0
-  draw_to_max: 
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-11-09 15:13:32.000000000 Z
     zone: *1
@@ -9930,7 +9930,7 @@
   share_group: ''
   step_value: 0.1
   draw_to_min: 0.0
-  draw_to_max: 
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-11-09 15:14:21.000000000 Z
     zone: *1
@@ -9953,7 +9953,7 @@
   share_group: ''
   step_value: 0.1
   draw_to_min: 0.0
-  draw_to_max: 
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-11-09 15:15:43.000000000 Z
     zone: *1
@@ -9976,7 +9976,7 @@
   share_group: ''
   step_value: 0.1
   draw_to_min: 0.0
-  draw_to_max: 
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-11-09 15:16:36.000000000 Z
     zone: *1
@@ -9999,7 +9999,7 @@
   share_group: ''
   step_value: 0.1
   draw_to_min: 0.0
-  draw_to_max: 
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2018-11-09 15:17:36.000000000 Z
     zone: *1
@@ -10021,8 +10021,8 @@
   key: volume_of_imported_heat
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-01-03 16:02:59.000000000 Z
     zone: *1
@@ -10044,8 +10044,8 @@
   key: co2_emissions_of_imported_heat
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-01-04 15:45:52.000000000 Z
     zone: *1
@@ -10067,8 +10067,8 @@
   key: costs_imported_heat
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-01-04 16:13:46.000000000 Z
     zone: *1
@@ -10087,11 +10087,11 @@
   position: 8
   dependent_on: ''
 - id: 937
-  key: investment_costs_heat_network_households
+  key: costs_heat_infra_indoors
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-01-11 09:06:41.000000000 Z
     zone: *1
@@ -10100,21 +10100,21 @@
     utc: 2019-01-11 09:10:09.000000000 Z
     zone: *1
     time: 2019-01-11 10:10:09.000000000 Z
-  unit: "€"
+  unit: "%"
   fixed: false
   comments: ''
-  interface_group: heat_network_households
+  interface_group: ''
   command_type: ''
   related_converter: ''
   slide_id: 263
   position: 1
   dependent_on: ''
 - id: 938
-  key: om_costs_heat_network_households
+  key: costs_heat_infra_outdoors
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-01-11 09:07:41.000000000 Z
     zone: *1
@@ -10123,10 +10123,10 @@
     utc: 2019-01-11 09:10:24.000000000 Z
     zone: *1
     time: 2019-01-11 10:10:24.000000000 Z
-  unit: "€/year"
+  unit: "%"
   fixed: false
   comments: ''
-  interface_group: heat_network_households
+  interface_group: ''
   command_type: ''
   related_converter: ''
   slide_id: 263
@@ -10136,8 +10136,8 @@
   key: households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-02-08 16:03:07.000000000 Z
     zone: *1
@@ -10155,58 +10155,12 @@
   slide_id: 4
   position: 6
   dependent_on: ''
-- id: 940
-  key: investment_costs_heat_network_buildings
-  share_group: ''
-  step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-02-27 15:29:18.000000000 Z
-    zone: *1
-    time: 2019-02-27 16:29:18.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-02-27 15:30:52.000000000 Z
-    zone: *1
-    time: 2019-02-27 16:30:52.000000000 Z
-  unit: "€"
-  fixed: false
-  comments: ''
-  interface_group: heat_network_buildings
-  command_type: ''
-  related_converter: ''
-  slide_id: 263
-  position: 3
-  dependent_on: ''
-- id: 941
-  key: om_costs_heat_network_buildings
-  share_group: ''
-  step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-02-27 15:30:34.000000000 Z
-    zone: *1
-    time: 2019-02-27 16:30:34.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-02-27 15:30:34.000000000 Z
-    zone: *1
-    time: 2019-02-27 16:30:34.000000000 Z
-  unit: "€/year"
-  fixed: false
-  comments: ''
-  interface_group: heat_network_buildings
-  command_type: ''
-  related_converter: ''
-  slide_id: 263
-  position: 4
-  dependent_on: ''
 - id: 942
   key: capacity_of_energy_power_combined_cycle_hydrogen
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-03-26 16:25:09.000000000 Z
     zone: *1
@@ -10228,8 +10182,8 @@
   key: industry_chemicals_other_wood_pellets_non_energetic_share
   share_group: chemical_other_non_energetic
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-06-04 14:41:49.000000000 Z
     zone: *1
@@ -10251,8 +10205,8 @@
   key: industry_chemicals_other_hydrogen_non_energetic_share
   share_group: chemical_other_non_energetic
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-06-04 14:42:24.000000000 Z
     zone: *1
@@ -10274,8 +10228,8 @@
   key: industry_chemicals_other_network_gas_non_energetic_share
   share_group: chemical_other_non_energetic
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-06-04 14:42:52.000000000 Z
     zone: *1
@@ -10297,8 +10251,8 @@
   key: industry_chemicals_other_crude_oil_non_energetic_share
   share_group: chemical_other_non_energetic
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-06-04 14:43:20.000000000 Z
     zone: *1
@@ -10320,8 +10274,8 @@
   key: industry_chemicals_other_coal_non_energetic_share
   share_group: chemical_other_non_energetic
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-06-04 14:43:48.000000000 Z
     zone: *1
@@ -10343,8 +10297,8 @@
   key: households_number_of_residences
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-07-01 12:21:24.000000000 Z
     zone: *1
@@ -10366,8 +10320,8 @@
   key: transport_car_using_electricity_regular_charging_share
   share_group: flexibility_demand_response_electric_vehicle_profiles
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-07-01 13:47:22.000000000 Z
     zone: *1
@@ -10389,8 +10343,8 @@
   key: transport_car_using_electricity_smart_charging_share
   share_group: flexibility_demand_response_electric_vehicle_profiles
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-07-01 13:47:25.000000000 Z
     zone: *1
@@ -10412,8 +10366,8 @@
   key: energy_biogas_fermentation_share
   share_group: greengas
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-07-19 14:37:41.000000000 Z
     zone: *1
@@ -10435,8 +10389,8 @@
   key: energy_greengas_gasification_dry_biomass_share
   share_group: greengas
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-07-19 14:38:41.000000000 Z
     zone: *1
@@ -10458,8 +10412,8 @@
   key: energy_greengas_gasification_wet_biomass_share
   share_group: greengas
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-07-19 14:39:33.000000000 Z
     zone: *1
@@ -10481,8 +10435,8 @@
   key: costs_biogas
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-07-25 08:48:47.000000000 Z
     zone: *1
@@ -10504,8 +10458,8 @@
   key: costs_greengas
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-07-25 08:49:13.000000000 Z
     zone: *1
@@ -10527,8 +10481,8 @@
   key: costs_wood
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-07-31 10:28:24.000000000 Z
     zone: *1
@@ -10550,8 +10504,8 @@
   key: costs_biodiesel
   share_group: ''
   step_value: 0.01
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-07-31 10:29:16.000000000 Z
     zone: *1
@@ -10573,8 +10527,8 @@
   key: costs_bio_ethanol
   share_group: ''
   step_value: 0.01
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-07-31 10:29:56.000000000 Z
     zone: *1
@@ -10596,8 +10550,8 @@
   key: max_demand_of_biogenic_waste
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-08-16 11:45:20.000000000 Z
     zone: *1
@@ -10619,8 +10573,8 @@
   key: max_demand_of_wet_biomass
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-08-16 12:22:14.000000000 Z
     zone: *1
@@ -10642,8 +10596,8 @@
   key: max_demand_of_dry_biomass
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-08-16 12:22:40.000000000 Z
     zone: *1
@@ -10665,8 +10619,8 @@
   key: max_demand_of_oily_biomass
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-08-16 12:23:03.000000000 Z
     zone: *1
@@ -10688,8 +10642,8 @@
   key: capacity_of_energy_flexibility_hv_opac_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-09-27 10:18:07.000000000 Z
     zone: *1
@@ -10711,8 +10665,8 @@
   key: capacity_of_energy_flexibility_mv_batteries_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-09-27 10:19:38.000000000 Z
     zone: *1
@@ -10734,8 +10688,8 @@
   key: investment_costs_energy_flexibility_hv_opac_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-10-03 15:49:34.000000000 Z
     zone: *1
@@ -10757,8 +10711,8 @@
   key: investment_costs_energy_flexibility_mv_batteries_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-10-03 15:50:53.000000000 Z
     zone: *1
@@ -10780,8 +10734,8 @@
   key: industry_aggregated_other_industry_hydrogen_share
   share_group: other_industry_energetic
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-11-04 10:28:45.000000000 Z
     zone: *1
@@ -10803,8 +10757,8 @@
   key: costs_wacc_households
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-13 14:21:30.000000000 Z
     zone: *1
@@ -10826,8 +10780,8 @@
   key: costs_wacc_public_infrastructure
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-13 14:22:01.000000000 Z
     zone: *1
@@ -10849,8 +10803,8 @@
   key: costs_wacc_proven_technologies
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-13 14:22:25.000000000 Z
     zone: *1
@@ -10872,8 +10826,8 @@
   key: costs_wacc_unproven_technologies
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-13 14:22:46.000000000 Z
     zone: *1
@@ -10893,10 +10847,10 @@
   dependent_on: ''
 - id: 973
   key: capacity_of_industry_chp_wood_pellets
-  share_group: 
+  share_group:
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
@@ -10906,20 +10860,20 @@
     zone: *1
     time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
-  fixed: 
-  comments: 
-  interface_group: 
-  command_type: 
+  fixed:
+  comments:
+  interface_group:
+  command_type:
   related_converter: industry_chp_wood_pellets
   slide_id: 44
   position: 5
-  dependent_on: 
+  dependent_on:
 - id: 974
   key: capacity_of_industry_heat_burner_coal
-  share_group: 
+  share_group:
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
@@ -10929,20 +10883,20 @@
     zone: *1
     time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
-  fixed: 
-  comments: 
-  interface_group: 
-  command_type: 
+  fixed:
+  comments:
+  interface_group:
+  command_type:
   related_converter: industry_heat_burner_coal
   slide_id: 44
   position: 6
-  dependent_on: 
+  dependent_on:
 - id: 975
   key: capacity_of_industry_heat_burner_crude_oil
-  share_group: 
+  share_group:
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
@@ -10952,20 +10906,20 @@
     zone: *1
     time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
-  fixed: 
-  comments: 
-  interface_group: 
-  command_type: 
+  fixed:
+  comments:
+  interface_group:
+  command_type:
   related_converter: industry_heat_burner_crude_oil
   slide_id: 44
   position: 7
-  dependent_on: 
+  dependent_on:
 - id: 976
   key: capacity_of_industry_heat_burner_lignite
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
@@ -10985,10 +10939,10 @@
   dependent_on: has_lignite
 - id: 977
   key: capacity_of_industry_heat_well_geothermal
-  share_group: 
+  share_group:
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
@@ -10998,20 +10952,20 @@
     zone: *1
     time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
-  fixed: 
-  comments: 
-  interface_group: 
-  command_type: 
+  fixed:
+  comments:
+  interface_group:
+  command_type:
   related_converter: industry_heat_well_geothermal
   slide_id: 44
   position: 9
-  dependent_on: 
+  dependent_on:
 - id: 978
   key: capacity_of_energy_heat_well_geothermal
-  share_group: 
+  share_group:
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
@@ -11021,20 +10975,20 @@
     zone: *1
     time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
-  fixed: 
-  comments: 
+  fixed:
+  comments:
   interface_group: non_dispatchable_heat
-  command_type: 
+  command_type:
   related_converter: energy_heat_well_geothermal
   slide_id: 277
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 979
   key: capacity_of_energy_heat_solar_thermal
-  share_group: 
+  share_group:
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
@@ -11044,20 +10998,20 @@
     zone: *1
     time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
-  fixed: 
-  comments: 
+  fixed:
+  comments:
   interface_group: non_dispatchable_heat
-  command_type: 
+  command_type:
   related_converter: energy_heat_solar_thermal
   slide_id: 277
   position: 2
-  dependent_on: 
+  dependent_on:
 - id: 980
   key: capacity_of_energy_chp_local_engine_biogas
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
@@ -11077,10 +11031,10 @@
   dependent_on: ''
 - id: 981
   key: capacity_of_energy_heat_heatpump_water_water_electricity
-  share_group: 
+  share_group:
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
@@ -11090,20 +11044,20 @@
     zone: *1
     time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
-  fixed: 
-  comments: 
+  fixed:
+  comments:
   interface_group: dispatchable_heat
-  command_type: 
+  command_type:
   related_converter: energy_heat_heatpump_water_water_electricity
   slide_id: 277
   position: 6
-  dependent_on: 
+  dependent_on:
 - id: 982
   key: capacity_of_energy_heat_burner_network_gas
-  share_group: 
+  share_group:
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
@@ -11113,20 +11067,20 @@
     zone: *1
     time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
-  fixed: 
-  comments: 
+  fixed:
+  comments:
   interface_group: dispatchable_heat
-  command_type: 
+  command_type:
   related_converter: energy_heat_burner_network_gas
   slide_id: 277
   position: 7
-  dependent_on: 
+  dependent_on:
 - id: 983
   key: capacity_of_energy_heat_burner_hydrogen
-  share_group: 
+  share_group:
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
@@ -11136,20 +11090,20 @@
     zone: *1
     time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
-  fixed: 
-  comments: 
+  fixed:
+  comments:
   interface_group: dispatchable_heat
-  command_type: 
+  command_type:
   related_converter: energy_heat_burner_hydrogen
   slide_id: 277
   position: 8
-  dependent_on: 
+  dependent_on:
 - id: 984
   key: capacity_of_energy_heat_burner_wood_pellets
-  share_group: 
+  share_group:
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
@@ -11159,20 +11113,20 @@
     zone: *1
     time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
-  fixed: 
-  comments: 
+  fixed:
+  comments:
   interface_group: dispatchable_heat
-  command_type: 
+  command_type:
   related_converter: energy_heat_burner_wood_pellets
   slide_id: 277
   position: 9
-  dependent_on: 
+  dependent_on:
 - id: 985
   key: capacity_of_energy_heat_burner_waste_mix
-  share_group: 
+  share_group:
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
@@ -11182,20 +11136,20 @@
     zone: *1
     time: 2019-12-20 11:54:31.000000000 Z
   unit: MW
-  fixed: 
-  comments: 
+  fixed:
+  comments:
   interface_group: dispatchable_heat
-  command_type: 
+  command_type:
   related_converter: energy_heat_burner_waste_mix
   slide_id: 277
   position: 10
-  dependent_on: 
+  dependent_on:
 - id: 986
   key: capacity_of_energy_heat_burner_coal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
@@ -11217,8 +11171,8 @@
   key: capacity_of_energy_heat_burner_crude_oil
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-20 10:54:31.000000000 Z
     zone: *1
@@ -11238,10 +11192,10 @@
   dependent_on: has_coal_oil_for_heating_built_environment
 - id: 988
   key: heat_storage_enabled
-  share_group: 
+  share_group:
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-20 16:26:23.000000000 Z
     zone: *1
@@ -11251,20 +11205,20 @@
     zone: *1
     time: 2019-12-20 17:26:23.000000000 Z
   unit: boolean
-  fixed: 
-  comments: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  fixed:
+  comments:
+  interface_group:
+  command_type:
+  related_converter:
   slide_id: 278
   position: 1
-  dependent_on: 
+  dependent_on:
 - id: 989
   key: costs_heat_network_storage
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2019-12-31 15:31:02.000000000 Z
     zone: *1
@@ -11286,8 +11240,8 @@
   key: capacity_of_energy_chp_local_wood_pellets
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2020-01-02 15:22:32.000000000 Z
     zone: *1
@@ -11309,8 +11263,8 @@
   key: capacity_of_energy_chp_local_engine_network_gas
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2020-01-02 15:24:54.000000000 Z
     zone: *1
@@ -11332,8 +11286,8 @@
   key: energy_heat_distribution_loss_share
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2020-01-03 16:05:53.000000000 Z
     zone: *1
@@ -11355,8 +11309,8 @@
   key: om_costs_solar_thermal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2020-01-09 10:20:10.000000000 Z
     zone: *1
@@ -11378,8 +11332,8 @@
   key: investment_costs_solar_thermal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2020-01-09 10:22:04.000000000 Z
     zone: *1
@@ -11401,8 +11355,8 @@
   key: energy_heat_network_storage_loss_share
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2020-01-22 10:42:12.000000000 Z
     zone: *1
@@ -11424,8 +11378,8 @@
   key: merit_order_subtype_of_energy_power_nuclear_uranium_oxide
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   created_at: !ruby/object:ActiveSupport::TimeWithZone
     utc: 2020-01-22 15:18:18.000000000 Z
     zone: *1

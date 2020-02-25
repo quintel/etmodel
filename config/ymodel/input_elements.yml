@@ -10086,7 +10086,7 @@
   slide_id: 264
   position: 8
   dependent_on: ''
-- id: 937
+- id: 1001
   key: costs_heat_infra_indoors
   share_group: ''
   step_value: 0.1
@@ -10109,7 +10109,7 @@
   slide_id: 263
   position: 1
   dependent_on: ''
-- id: 938
+- id: 1002
   key: costs_heat_infra_outdoors
   share_group: ''
   step_value: 0.1
@@ -11396,4 +11396,64 @@
   related_converter: ''
   slide_id: 48
   position: 10
+  dependent_on: ''
+- id: 997
+  key: share_of_industry_chemicals_other_reused_residual_heat
+  share_group: ''
+  step_value: 1.0
+  draw_to_min:
+  draw_to_max:
+  unit: "%"
+  fixed: false
+  comments: ''
+  interface_group: 'residual_heat'
+  command_type: ''
+  related_converter: ''
+  slide_id: 277
+  position: 3
+  dependent_on: ''
+- id: 998
+  key: share_of_industry_chemicals_fertilizers_reused_residual_heat
+  share_group: ''
+  step_value: 1.0
+  draw_to_min:
+  draw_to_max:
+  unit: "%"
+  fixed: false
+  comments: ''
+  interface_group: 'residual_heat'
+  command_type: ''
+  related_converter: ''
+  slide_id: 277
+  position: 3
+  dependent_on: ''
+- id: 999
+  key: share_of_industry_chemicals_refineries_reused_residual_heat
+  share_group: ''
+  step_value: 1.0
+  draw_to_min:
+  draw_to_max:
+  unit: "%"
+  fixed: false
+  comments: ''
+  interface_group: 'residual_heat'
+  command_type: ''
+  related_converter: ''
+  slide_id: 277
+  position: 3
+  dependent_on: ''
+- id: 1000
+  key: share_of_industry_other_ict_reused_residual_heat
+  share_group: ''
+  step_value: 1.0
+  draw_to_min:
+  draw_to_max:
+  unit: "%"
+  fixed: false
+  comments: ''
+  interface_group: 'residual_heat'
+  command_type: ''
+  related_converter: ''
+  slide_id: 277
+  position: 3
   dependent_on: ''

@@ -51,6 +51,24 @@ development: &DEV
     # cutoff date is reached the banner will be hidden.
     whats_new_cutoff: 2019-10-07
 
+    # When integrating with Mailchimp to send newsletters to users, the API key
+    # and URL of the list must be configured. Check the Mailchimp documentation
+    # for information on how to get an API key.
+    #
+    # The URL should be: https://SERVER.api.mailchimp.com/3.0/lists/AUDIENCE_ID,
+    # where SERVER is the server ID used by your Mailchimp account (e.g. us4)
+    # and is part of your API key, and AUDIENCE_ID is the unique ID of the
+    # audience/list.
+    # mailchimp_api_key:
+    # mailchimp_list_url:
+
+    # Allows Mailchimp to communicate changes in membership back to the
+    # application. Generate a unique token (`rake secret`), include it here in
+    # the config, and add it to the webhook URL provided to Mailchimp. For
+    # example: https://your-app/incoming_webhooks/mailchimp/TOKEN.
+    # incoming_webhook_keys:
+    #   mailchimp:
+
 production: &PRODUCTION
     <<: *DEV
 test:

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   layout 'static_page'
   layout 'form_only', only: %w[new create]
 
-  before_action :require_user, except: %i[new create unsubscribe]
+  before_action :require_user, except: %i[new create]
 
   def new
     @user = User.new
@@ -23,6 +23,8 @@ class UsersController < ApplicationController
     @user = User.new(users_parameters)
 
     if @user.save
+      CreateNewsletterSubscription.call(@user) if @user.allow_news
+
       notice = { notice: I18n.t('flash.register') }
       redirect_to(session[:return_to], notice) && return if session[:return_to]
 
@@ -32,24 +34,11 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET (This is a bit un-REST-ful, but makes it clickable from
-  # emails...)
-  def unsubscribe
-    @user = User.find(params[:id])
-
-    unless @user.md5_hash == params[:h]
-      render(plain: 'invalid link. Cannot unsubscribe.') && return
-    end
-
-    @allow_news_changed = @user.allow_news == true
-    @user.allow_news = false
-
-    @user.save!
-  end
-
   def update
     @user = current_user
+
     if @user.update_attributes(users_parameters)
+      update_newsletter_subscription(@user)
       redirect_to edit_user_path, notice: I18n.t('flash.edit_profile')
     else
       render :edit
@@ -74,13 +63,12 @@ class UsersController < ApplicationController
     current_user_session.destroy
     current_user.destroy
 
+    DestroyMailchimpContact.call(current_user)
+
     redirect_to root_path, notice: I18n.t('flash.account_deleted')
   end
 
-  #######
   private
-
-  #######
 
   def require_user
     redirect_to(root_url) unless current_user
@@ -91,5 +79,18 @@ class UsersController < ApplicationController
       :name, :email, :company_school, :allow_news, :teacher_email,
       :password, :password_confirmation
     )
+  end
+
+  # Called when the user updates their profile, to sync changes with Mailchimp.
+  def update_newsletter_subscription(user)
+    if user.allow_news != user.allow_news_before_last_save
+      if user.allow_news
+        CreateNewsletterSubscription.call(user)
+      else
+        DestroyNewsletterSubscription.call(user)
+      end
+    elsif user.email_before_last_save && user.allow_news
+      UpdateNewsletterSubscription.call(user)
+    end
   end
 end

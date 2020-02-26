@@ -15,12 +15,12 @@
       lowerBetter: true
     },
     {
-      key: 'dashboard_total_costs',
+      key: 'total_costs',
       unit: 'BLN',
       lowerBetter: true
     },
     {
-      key: 'dashboard_energy_demand_primary_of_final',
+      key: 'primary_demand_caused_by_final_demand',
       unit: 'PJ',
       lowerBetter: true
     }
@@ -81,7 +81,8 @@
     _.keys(results).forEach(function(key) {
       switch (key) {
         case 'total_co2_emissions': // kg to MT
-        case 'dashboard_energy_demand_primary_of_final': // MJ to PJ
+        case 'primary_demand_caused_by_final_demand': // MJ to PJ
+        case 'total_costs': // EUR to billion EUR
           newRes[key].present /= 1000000000;
           newRes[key].future /= 1000000000;
           break;

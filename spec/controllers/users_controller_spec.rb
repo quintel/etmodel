@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe UsersController do
@@ -5,26 +7,29 @@ describe UsersController do
 
   let(:user) { FactoryBot.create(:user) }
 
-  describe "#new" do
-    it "should show the signup form" do
+  describe '#new' do
+    it 'is successful' do
       get :new
       expect(response).to be_successful
+    end
+
+    it 'shows the signup form' do
+      get :new
       expect(response).to render_template(:new)
     end
   end
 
   describe '#unsubscribe' do
-
     context 'with a formerly interested subscriber' do
+      let(:user) { FactoryBot.create(:user, allow_news: true) }
 
       before do
-        @user = FactoryBot.create(:user, allow_news: true)
-        get :unsubscribe, params: { id: @user.id, h: @user.md5_hash }
-        @user.reload
+        get :unsubscribe, params: { id: user.id, h: user.md5_hash }
+        user.reload
       end
 
       it 'registers in the database' do
-        expect(@user.allow_news).to be(false)
+        expect(user.allow_news).to be(false)
       end
 
       it 'renders a page succesfully' do
@@ -34,15 +39,14 @@ describe UsersController do
       it 'shows you have been unsubscribed' do
         expect(response.body).to match(/You have been unsubscribed/i)
       end
-
     end
 
     context 'with an already signed-out user' do
+      let(:user) { FactoryBot.create(:user, allow_news: false) }
 
       before do
-        @user = FactoryBot.create(:user, allow_news: false)
-        get :unsubscribe, params: { id: @user.id, h: @user.md5_hash }
-        @user.reload
+        get :unsubscribe, params: { id: user.id, h: user.md5_hash }
+        user.reload
       end
 
       it 'renders a page succesfully' do
@@ -52,19 +56,18 @@ describe UsersController do
       it 'shows you have been unsubscribed ALREADY' do
         expect(response.body).to match(/already/i)
       end
-
     end
 
     context 'with invalid hash' do
+      let(:user) { FactoryBot.create(:user, allow_news: true) }
 
       before do
-        @user = FactoryBot.create(:user, allow_news: true)
-        get :unsubscribe, params: { id: @user.id, h: 'i-am-a-hacker' }
-        @user.reload
+        get :unsubscribe, params: { id: user.id, h: 'i-am-a-hacker' }
+        user.reload
       end
 
       it 'does not register in the database' do
-        expect(@user.allow_news).to be(true)
+        expect(user.allow_news).to be(true)
       end
 
       it 'renders a page succesfully' do
@@ -74,64 +77,77 @@ describe UsersController do
       it 'shows that user has not been unsubscribed' do
         expect(response.body).to match(/cannot unsubscribe/i)
       end
-
     end
-
   end
 
-  describe "#create" do
-    it "should create a new user" do
-      expect {
-        post :create, params: { user: {
-          name: 'Rocky Balboa',
-          email: 'rb@quintel.com',
-          password: 'adriana_',
-          password_confirmation: 'adriana_'
-        } }
+  describe '#create' do
+    let(:user_attributes) do
+      {
+        name: 'Rocky Balboa',
+        email: 'rb@quintel.com',
+        password: 'adriana_',
+        password_confirmation: 'adriana_'
+      }
+    end
+
+    let(:request) do
+      post :create, params: { user: user_attributes }
+    end
+
+    context 'with valid attributes' do
+      it 'creates a new user' do
+        expect { request }.to change(User, :count).by(1)
+      end
+
+      it 'redirects' do
+        request
         expect(response).to be_redirect
-      }.to change{ User.count }
+      end
     end
 
-    it "should not create a new user with invalid data" do
-      expect {
-        post :create, params: { user: {
-          name: 'Rocky Balboa',
-          email: 'rb@quintel.com'
-        } }
+    context 'with invalid attributes' do
+      let(:user_attributes) do
+        super().merge(password: nil)
+      end
 
+      it 'does not create a new user' do
+        expect { request }.not_to change(User, :count)
+      end
+
+      it 'renders the signup form' do
+        request
         expect(response).to render_template(:new)
-      }.to_not change{ User.count }
+      end
     end
-    describe "when teacher email is provided" do
-      context "and it is valid" do
-        before(:each) do
-          @teacher = FactoryBot.create(:user)
-        end
 
-        it "assigns a correct teacher_id to the user" do
-          expect {
+    describe 'when teacher email is provided' do
+      context 'when the user is valid' do
+        let(:teacher) { FactoryBot.create(:user) }
+
+        it 'assigns a correct teacher_id to the user' do
+          expect do
             post :create, params: { user: {
               name: 'Student one',
               email: 'stu@quintel.com',
-              teacher_email: @teacher.email,
+              teacher_email: teacher.email,
               password: '12345678',
               password_confirmation: '12345678'
             } }
-          }.to change{ User.count }
+          end.to change(User, :count)
 
-          expect(User.last.teacher_id).to eql @teacher.id
+          expect(User.last.teacher_id).to eql teacher.id
         end
       end
     end
   end
 
-  describe "#edit" do
-    context "when user wants to edit his own profile" do
-      before(:each) do
+  describe '#edit' do
+    context 'when user wants to edit his own profile' do
+      before do
         login_as user
       end
 
-      it "the system finds a correct user" do
+      it 'the system finds a correct user' do
         get :edit, params: { id: user }
         expect(response).to be_successful
         expect(assigns(:user)).to eql user
@@ -139,19 +155,19 @@ describe UsersController do
     end
 
     context "when user wants to edit another user's account" do
-      it "he is redirected to the home page" do
+      it 'he is redirected to the home page' do
         get :edit, params: { id: user }
         expect(response).to redirect_to(:root)
       end
     end
   end
 
-  describe "#update" do
-    before(:each) do
+  describe '#update' do
+    before do
       login_as user
     end
 
-    context "with valid parameters" do
+    context 'with valid parameters' do
       it "updates user's account" do
         user.name = 'Shiny'
         post :update, params: { id: user, user: user.attributes }
@@ -159,7 +175,7 @@ describe UsersController do
       end
     end
 
-    context "with invalid parameters" do
+    context 'with invalid parameters' do
       it "does not update user's account" do
         user.name = ''
         post :update, params: { id: user, user: user.attributes }
@@ -167,10 +183,10 @@ describe UsersController do
         expect(response).to render_template(:edit)
 
         expect(response.body)
-          .to have_selector("input#user_name", text: user.name)
+          .to have_selector('input#user_name', text: user.name)
 
         expect(response.body)
-          .to have_selector("span.error", text: "can't be blank")
+          .to have_selector('span.error', text: "can't be blank")
       end
     end
   end
@@ -181,15 +197,13 @@ describe UsersController do
         :user,
         password: 'my-password',
         password_confirmation: 'my-password'
-        )
+      )
     end
-
-    let!(:scenario) { FactoryBot.create(:saved_scenario, user: user) }
 
     let(:password) { '' }
     let(:request) { delete(:destroy, params: { password: password }) }
 
-    context 'as a guest' do
+    context 'when signed in as a guest' do
       it 'redirects to the root' do
         expect(request).to be_redirect
       end
@@ -205,11 +219,12 @@ describe UsersController do
       end
 
       it 'deletes the account' do
-        expect { request }.to change { User.count }.by(-1)
+        expect { request }.to change(User, :count).by(-1)
       end
 
       it 'deletes saved scenarios' do
-        expect { request }.to change { SavedScenario.count }.by(-1)
+        FactoryBot.create(:saved_scenario, user: user)
+        expect { request }.to change(SavedScenario, :count).by(-1)
       end
     end
 
@@ -223,7 +238,7 @@ describe UsersController do
       end
 
       it 'does not delete the account' do
-        expect { request }.to_not change { User.count }
+        expect { request }.not_to change(User, :count)
       end
     end
 
@@ -237,7 +252,7 @@ describe UsersController do
       end
 
       it 'does not delete the account' do
-        expect { request }.to_not change { User.count }
+        expect { request }.not_to change(User, :count)
       end
     end
 
@@ -251,7 +266,7 @@ describe UsersController do
       end
 
       it 'does not delete the account' do
-        expect { request }.to_not change { User.count }
+        expect { request }.not_to change(User, :count)
       end
     end
   end

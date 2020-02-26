@@ -22,8 +22,6 @@ Etm::Application.routes.draw do
   resources :users, except: %i[index show edit destroy]
   resources :password_resets, only: %i[new create edit update]
 
-  get '/users/:id/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
-
   resource :user, only: %i[edit update destroy] do
     post :confirm_delete, on: :member
   end

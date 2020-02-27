@@ -54,9 +54,11 @@ class UpdateSavedScenario
   end
 
   def api_response
-    @_resp ||= CreateAPIScenario.call settings.merge(scenario_id: scenario_id,
-                                                     title: @old_scenario.title,
-                                                     description: @old_scenario.description)
+    @_resp ||= CreateAPIScenario.call settings.merge(
+                                        scenario_id: scenario_id,
+                                        title: @old_scenario.title,
+                                        description: @old_scenario.description
+                                      )
   end
 
   def failure?

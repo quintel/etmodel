@@ -139,6 +139,9 @@ Etm::Application.routes.draw do
     resource :pico, only: [:show]
   end
 
+  # Incoming webhooks
+  post '/incoming_webhooks/mailchimp/:key' => 'incoming_webhooks#mailchimp'
+
   %w[404 422 500].each do |code|
     get "/#{code}", to: 'errors#show', code: code
   end

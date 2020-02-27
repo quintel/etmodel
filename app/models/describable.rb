@@ -1,4 +1,7 @@
+# frozen_string_literal: true
 
+# Contains methods dealing with the descriptions in YModel classes such as
+# Slides and InputElements
 module Describable
   def description_short_content
     t :short_content
@@ -16,7 +19,8 @@ module Describable
   # Ugly!
   #
   def description_embeds_player?
-    description_content&.include?("player")  || description_content&.include?("object")
+    description_content&.include?('player') ||
+      description_content&.include?('object')
   end
 
   # For loading multiple flowplayers classname is needed instead of id

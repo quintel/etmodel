@@ -16,7 +16,6 @@ describe InputElement do
     # Relations
 
     it { is_expected.to respond_to(:slide) }
-    it { is_expected.to respond_to(:description) }
 
     # Attributes
     it { is_expected.to respond_to(:key) }
@@ -80,9 +79,11 @@ describe InputElement do
   end
 
   describe '#sanitized_description' do
-    let(:ie) { described_class.new ({description: {"content_en" => "foobar"}}) }
-    subject { ie.sanitized_description }
+    subject do
+      ie = described_class.new(description: { 'content_en' => 'foobar' })
+      ie.sanitized_description
+    end
 
-    it { is_expected.to eq "foobar"}
+    it { is_expected.to eq 'foobar' }
   end
 end

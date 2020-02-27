@@ -1,10 +1,10 @@
 
 module Describable
-  def short_content
+  def description_short_content
     t :short_content
   end
 
-  def content
+  def description_content
     t :content
   end
 
@@ -16,12 +16,12 @@ module Describable
   # Ugly!
   #
   def description_embeds_player?
-    content&.include?("player")  || content&.include?("object")
+    description_content&.include?("player")  || description_content&.include?("object")
   end
 
   # For loading multiple flowplayers classname is needed instead of id
   #
   def description_sanitize_embedded_player
-    content&.gsub %(id="player"), %(class="player")
+    description_content&.gsub %(id="player"), %(class="player")
   end
 end

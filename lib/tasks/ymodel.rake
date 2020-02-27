@@ -8,6 +8,14 @@ namespace :ymodel do
       dep = AreaDependency.find_by(dependable_type: record.class.name,
                                    dependable_id: record.id)
       attributes['dependent_on'] = dep&.dependent_on
+
+      desc = Description.find_by(describable_type: record.class.name,
+                                 describable_id: record.id)
+      attributes['description']['content_en'] = desc&.content_en
+      attributes['description']['content_nl'] = desc&.content_nl
+      attributes['description']['short_content_en'] = desc&.short_content_en
+      attributes['description']['short_content_en'] = desc&.short_content_nl
+
       attributes
     end
   end

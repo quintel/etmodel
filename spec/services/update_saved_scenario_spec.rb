@@ -51,6 +51,13 @@ describe UpdateSavedScenario, type: :service do
               .to("title")
     end
 
+    it 'sets the saved scenario description to the one of old scenario' do
+      expect{ result }
+        .to change{ saved_scenario.description }
+              .from(nil)
+              .to("description")
+    end
+
     it 'changes the scenario_id_history on the SavedScenario' do
       expect{ result }
         .to change{ saved_scenario.scenario_id_history }

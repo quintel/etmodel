@@ -11,11 +11,13 @@ namespace :ymodel do
 
       desc = Description.find_by(describable_type: record.class.name,
                                  describable_id: record.id)
-      attributes['description']['content_en'] = desc&.content_en
-      attributes['description']['content_nl'] = desc&.content_nl
-      attributes['description']['short_content_en'] = desc&.short_content_en
-      attributes['description']['short_content_en'] = desc&.short_content_nl
-
+      if desc
+        attributes['description'] = {}
+        attributes['description']['content_en'] = desc&.content_en
+        attributes['description']['content_nl'] = desc&.content_nl
+        attributes['description']['short_content_en'] = desc&.short_content_en
+        attributes['description']['short_content_nl'] = desc&.short_content_nl
+      end
       attributes
     end
   end

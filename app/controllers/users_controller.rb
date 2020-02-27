@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 
     if @user.update_attributes(users_parameters)
       update_newsletter_subscription(@user)
-      redirect_to edit_user_path, notice: I18n.t('flash.edit_profile')
+      redirect_to edit_user_path, notice: user_update_notice(@user)
     else
       render :edit
     end
@@ -91,6 +91,19 @@ class UsersController < ApplicationController
       end
     elsif user.email_before_last_save && user.allow_news
       UpdateNewsletterSubscription.call(user)
+    end
+  end
+
+  # Message shown to the user after updating their account.
+  def user_update_notice(user)
+    if user.allow_news != user.allow_news_before_last_save
+      if user.allow_news
+        I18n.t('flash.newsletter_subscribe')
+      else
+        I18n.t('flash.newsletter_unsubscribe')
+      end
+    else
+      I18n.t('flash.edit_profile')
     end
   end
 end

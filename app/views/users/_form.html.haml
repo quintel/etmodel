@@ -41,7 +41,8 @@
         = f.input :company_school
         = f.input :teacher_email
 
-    = f.input :allow_news
+    - if MailchimpService.configured?
+      = f.input :allow_news
 
     = f.button :submit, I18n.t('simple_form.labels.user.submit'), class: 'primary'
 

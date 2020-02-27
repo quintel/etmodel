@@ -251,7 +251,9 @@ describe UsersController do
       it 'does not update the subscription' do
         allow(UpdateNewsletterSubscription).to receive(:call)
         request
-        expect(UpdateNewsletterSubscription).not_to have_received(:call).with(user)
+
+        expect(UpdateNewsletterSubscription)
+          .not_to have_received(:call).with(user)
       end
     end
 

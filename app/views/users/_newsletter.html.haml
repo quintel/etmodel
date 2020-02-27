@@ -1,0 +1,16 @@
+.newsletter_settings
+  %h2= t('user.newsletter.title')
+
+  = form_for user do |f|
+    - if user.allow_news
+      = f.hidden_field :allow_news, value: false
+      %p
+        %button.button.right{ type: 'submit' }
+          = t('user.newsletter.unsubscribe')
+        = t('user.newsletter.subscribed')
+    - else
+      = f.hidden_field :allow_news, value: true
+      %p
+        %button.button.right{ type: 'submit' }
+          = t('user.newsletter.subscribe')
+        = t('user.newsletter.not_subscribed')

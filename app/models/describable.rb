@@ -22,5 +22,4 @@ module Describable
     description_content&.include?('player') ||
       description_content&.include?('object')
   end
-
 end

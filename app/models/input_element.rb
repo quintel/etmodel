@@ -23,10 +23,10 @@
 # Model representing a slider in the front-end. Settings get stored in scenarios
 class InputElement < YModel::Base
   include AreaDependent::YModel
+  include Describable
 
   ENUM_UNITS = %w[radio weather-curves].freeze
 
-  has_one :description, as: :describable
   belongs_to :slide
 
   class << self
@@ -95,7 +95,7 @@ class InputElement < YModel::Base
   end
 
   def has_flash_movie # rubocop:disable Naming/PredicateName
-    description.try :embeds_player?
+    description_embeds_player?
   end
 
   # For loading multiple flowplayers classname is needed instead of id
@@ -103,7 +103,7 @@ class InputElement < YModel::Base
   #
   def sanitized_description
     ie8_sanitize(
-      description.try(:sanitize_embedded_player)
+      description_content
     ).html_safe
   end
 

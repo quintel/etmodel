@@ -16,7 +16,6 @@ describe InputElement do
     # Relations
 
     it { is_expected.to respond_to(:slide) }
-    it { is_expected.to respond_to(:description) }
 
     # Attributes
     it { is_expected.to respond_to(:key) }
@@ -32,6 +31,7 @@ describe InputElement do
     it { is_expected.to respond_to(:related_converter) }
     it { is_expected.to respond_to(:slide_id) }
     it { is_expected.to respond_to(:position) }
+    it { is_expected.to respond_to(:description) }
 
     # Methods
     it { is_expected.to respond_to(:title_for_description) }
@@ -76,5 +76,14 @@ describe InputElement do
         expect(input.url_components).to eq([])
       end
     end
+  end
+
+  describe '#sanitized_description' do
+    subject do
+      ie = described_class.new(description: { 'content_en' => "'foobar'" })
+      ie.sanitized_description
+    end
+
+    it { is_expected.to eq '&#39;foobar&#39;' }
   end
 end

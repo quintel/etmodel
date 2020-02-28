@@ -10,7 +10,7 @@
     .description
       %p
         = image_tag(slide.image_path) if slide.image.present?
-        = raw format_description(slide.description.try(:content))
+        = raw format_description(slide.description_content)
 
     .items
       - unless slide.general_sub_header.blank?

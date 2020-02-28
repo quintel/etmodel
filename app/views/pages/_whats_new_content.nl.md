@@ -1,98 +1,55 @@
 # Wat is er nieuw in het Energietransitiemodel?
 
+## 1. Warmtenetten verbeterd en uitgebreid
 
-## 1. Gasvraag berekend op uurbasis
+De modellering van warmtenetten is verbeterd en uitgebreid! Hieronder vindt u de wijzigingen:
 
-De vraag en productie van gas wordt vanaf nu berekend op uurbasis in plaats van op jaarbasis. Hierdoor kunnen gebruikers bekijken op welke momenten in het jaar er gas gebruikt wordt, bijvoorbeeld voor verwarming van huizen of voor elektriciteitsproductie. Ook kunnen gebruikers verkennen hoe dit in de toekomst gaat veranderen en welke impact de weersomstandigheden hebben op de (piek)vraag naar gas.
+- Warmtenetten in huishoudens, gebouwen en landbouw zijn samengevoegd tot één net (‘**residentieel warmtenet**’). Er is geen uitwisseling van warmteoverschotten meer mogelijk tussen industriële (stoom)netten en residentiële netten
 
--> ![](/assets/pages/whats_new/gas_demand_chart_nl.png) <-
+- De vraag en productie van warmte in residentiële warmtenetten wordt vanaf nu berekend op **uurbasis** in plaats van op jaarbasis
 
--> ![](/assets/pages/whats_new/gas_storage_chart_nl.png) <-
+  -> ![](/assets/pages/whats_new/hourly_heat_nl.png) <-
 
-De resultaten zijn te zien in drie nieuwe grafieken over gasvraag, -productie en -opslag. Vind ze door rechtsboven in het model op 'Meer grafieken bekijken' te klikken en te scrollen naar 'netwerkgas'
+- Er wordt onderscheid gemaakt tussen ‘**must-run**’-bronnen (niet-regelbare) en ‘**dispatchable**’-bronnen (regelbare). Dispatchables draaien alleen als de must-runs niet voldoende produceren om aan de vraag te voldoen. Hun draaiuren en profielen zijn daarmee variabel. Gebruikers kunnen instellen welke ketels als eerst aanspringen
 
--> ![](/assets/pages/whats_new/gas_charts_nl.png) <-
+  -> ![](/assets/pages/whats_new/heat_merit_order_nl.png) <-
 
-## 2. Verken de invloed van extreme weersomstandigheden
+- Het is nu mogelijk **grootschalige zonthermieparken** in te zetten voor residentiële warmtenetten
 
-Extreme weersomstandigheden, zoals extreme koude/warme periodes en tekorten/overschotten aan zon en wind, kunnen invloed hebben op je scenario. Lage temperaturen kunnen resulteren in een verhoogde warmtevraag. Weinig zon en wind hebben een negatieve invloed op de elektriciteitsproductie. Om deze impact  op je scenario te verkennen, kan er vanaf nu een jaar met extreme weersomstandigheden gekozen worden in het ETM:
+- Gebruikers kunnen ervoor kiezen om **seizoensopslag** van warmte ‘aan’ te zetten. In dat geval wordt overproductie van must-runbronnen opgeslagen voor later gebruik in plaats van gedumpt
 
-- 1987: "Dunkelflaute" tijdens extreem koude winter
-- 1997: Energie-misoogst (incl. "Dunkelflaute") en extreem koude dagen
-- 2004: Overschotten en tekorten
+  -> ![](/assets/pages/whats_new/seasonal_storage_heat_nl.png) <-
 
-Deze functionaliteit is alleen beschikbaar voor (regio's in) Nederland.
+- **Restwarmte** uit de kunstmest-, chemie-, raffinage- en ICT-sector kan worden uitgekoppeld en worden ingevoed op residentiële warmtenetten. Bekijk onze documentatie op [GitHub][residual heat documentation] voor de methode en gebruikte bronnen
 
-[Verken hier de effecten van extreme weersomstandigheden!][weather slide]
+-	De **kostenberekening** voor warmte-infrastructuur is uitgebreid. In plaats van te rekenen met een vast bedrag per aansluiting, zijn de kosten nu onderverdeeld in inpandige kosten, distributiekosten (leidingen, onderstations) en primaire netkosten. De kostenberekening is afgestemd op het Vesta MAIS-model, waardoor vergelijking en uitwisseling van resultaten tussen de ETM en Vesta MAIS eenvoudiger is geworden. Bekijk onze documentatie op [GitHub][heat-infra costs documentation] voor meer informatie.
 
-## 3. CO<sub>2</sub>-factsheet voor je scenario beschikbaar
+[Ontdek hier de verbeterde modellering van warmtenetten!][district heating slide]
 
-Bekijk de CO<sub>2</sub>-voetafdruk van je scenario vanaf nu onder de resultaten sectie in het ETM. Je kan zowel de voetafdruk van het startjaar als het eindjaar bekijken. Zo kan je gemakkelijk de impact van jouw keuzes op de CO<sub>2</sub>-uitstoot in jouw regio zien. Deze sheet is printklaar.
+## 2. WKK's anders gemodelleerd
 
-[Bekijk hier de factsheet voor je scenario!][factsheet slide]
+Alle WKKs (m.u.v. biogas-WKK) draaien nu mee als dispatchable in de elektriciteitsmerit order, ook de industriële WKKs. WKKs draaien dus nu primair voor de elektriciteitsmarkt. Hun warmteproductie is daarmee een ‘gegeven’ (must-run) voor warmtenetten. Voorheen waren WKKs niet-regelbaar en draaiden ze met een vast vlak productieprofiel. Let op: deze wijziging kan mogelijk impact hebben op je scenariouitkomsten!
 
--> ![](/assets/pages/whats_new/co2_factsheet_nl.png) <-
+## 3. Documentatie toegankelijker
 
-## 4. Hybride warmte in industrie
+Voor bepaalde schuifjes was het al mogelijk om de technische specificaties te bekijken, zodat je onze aannames kon zien. Nu gaan we nog een stapje verder en maken we voor veel schuifjes ook onze gehele achtergrond analyse (die al op GitHub staat) beschikbaar met één druk op de knop. Vanuit de technische specificaties tabel kan je deze analyse direct downloaden als Excel.
 
-Het is nu mogelijk om met elektriciteitsoverschotten warmte te produceren voor de industrie en daarmee de vraag naar gas en waterstof te verminderen. Deze elektrische power-to-heat-boilers kunnen worden ingezet naast de baseload elektrische boilers die reeds gemodelleerd waren. Met deze hybride warmte-implementatie voorkom je dat de elektrische boilers draaien op elektriciteit geproduceerd door gascentrales aangezien de boilers enkel overschotten gebruiken. Deze modellering wordt per uur gedaan; de resulterende gas- en waterstofvraagprofielen zijn dus afhankelijk van de beschikbare overschotten. Hybride warmte is beschikbaar voor de volgende sectoren: chemische industrie, raffinaderijen, voedingsmiddelenindustrie en papierindustrie.
+-> ![](/assets/pages/whats_new/documentation_download_nl.png) <-
 
-[Ontdek hier de impact van hybride warmte in de industrie!][hybrid heat slide]
+## 4. Download schuifjesinstellingen
 
--> ![](/assets/pages/whats_new/hybrid_heat_industry_nl.png) <-
+Voor opgeslagen scenarios is het vanaf nu mogelijk om de waardes van je gezette schuifjes te downloaden als csv bestand. Dit kan handig zijn als je al jouw scenariowijzigingen op een rijtje wil hebben. Bekijk je opgeslagen scenarios via "Gebruiker > Mijn scenario's" (rechtsboven in het ETM) en klik op de titel van het gewenste scenario. Achter de url typ je nu '.csv' (je krijgt dus bijvoorbeeld pro.energytransitionmodel.com/saved_scenarios/0000.csv) en de download begint direct.
 
-## 5. Waterstof in industrie
+## 5. Data-export aangepast
 
-Het is nu mogelijk om waterstof in te zetten in de 'overige industrie', naast de reeds beschikbare energiedragers.
+De bestandsindeling van de draaiprofielen en prijscurves van elektriciteit is veranderd. Per kolom uit de data-export wordt nu met "input" of "output" aangegeven of het om vraag of aanbod van elektriciteit gaat. Flexibiliteitsoplossingen hebben nu dus ook zowel een input als output kolom. Hiermee is de vorm van de data-export voor elektriciteit consistenter met de data-exports voor netwerkgas en waterstof.
 
-[Check out this improvement here!][hydrogen other industry slide]
+[Hier vind je de aangepaste data-export voor elektriciteit!][data export slide]
 
--> ![](/assets/pages/whats_new/hydrogen_other_industry_en.png) <-
+[district heating slide]: /scenario/supply/heat/heat-sources
 
-## 6. Gewogen kapitaalskosten (WACC)
+[data export slide]: /scenario/data/data_export/merit-order-price
 
-Je kunt nu de gewogen kapitaalskosten (WACC) van investeringen aanpassen voor alle technologieën in het model. Meer informatie kun je lezen in onze [documentatie][wacc documentation]. 
+[heat-infra costs documentation]: https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md
 
-[Verken de WACC sliders hier!][wacc slide]
-
--> ![](/assets/pages/whats_new/wacc_nl.png) <-
-
-
-## 7. Biomassamodellering verbeterd
-
-De modellering van biomassa in het ETM is verbeterd in samenwerking met TKI Nieuw Gas, Gasunie, GasTerra en TNO. De inzet van biomassa is eenvoudiger en inzichtelijker gemaakt. Het is nu mogelijk om in één oogopslag te zien welke biomassastromen er in de regio zijn, zowel in het heden als in toekomstscenario's. Daarnaast is ook de **potentie voor verschillende biomassastromen** onderzocht door TNO, waardoor te zien is hoeveel biomassa er voor Nederland en ook per regio beschikbaar is. Een ander belangrijk verbeterpunt is het toevoegen van **superkritische watervergassing (SCW)** en **vergassing van droge biomassa** voor groengas. Alle benodigde data over biomassa en conversietechnieken is aangepast en gedocumenteerd op onze [GitHub][biomass documentation] op basis van onderzoek door TNO.
-
-[Ontdek hier alle verbeteringen rondom de inzet van biomassa in het ETM!][biomass slide]
-
--> ![](/assets/pages/whats_new/biomass_sankey_nl.png) <-
-
--> ![](/assets/pages/whats_new/biomass_potential_nl.png) <-
-
-## 8. Nieuwe grootschalige elektriciteitsopslag technologieën toegevoegd
-
-Er zijn twee grootschalige elektriciteitsopslag technologieën toegevoegd aan het ETM: **Ondergrondse Pomp Accumulatie Centrale (OPAC)** en **grootschalige batterijopslag**. Elektriciteitsoverschotten kunnen nu worden opgeslagen in deze technologieën en op een later moment weer worden ingezet. De toekomstige kosten voor deze technologieën zijn door de gebruiker aan te passen.
-
-[Bekijk hier de impact van deze nieuwe opslagtechnologieën op het elektriciteitsnetwerk!][flex slide]
-
--> ![](/assets/pages/whats_new/new_flex_options_nl.png) <-
-
-
-[biomass documentation]: https://github.com/quintel/documentation/blob/master/general/biomass.md
-
-[wacc documentation]: https://github.com/quintel/documentation/blob/master/general/cost_calculations.md
-
-[biomass slide]: /scenario/supply/biomass/overview
-
-[flex slide]: /scenario/flexibility/excess_electricity/order-of-flexibility-options
-
-[wind slide]: /scenario/supply/electricity_renewable/wind-turbines
-
-[factsheet slide]: /scenario/data/data_visuals/co-sub-2-sub-footprint
-
-[hybrid heat slide]: /scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry
-
-[hydrogen other industry slide]: /scenario/demand/industry/other
-
-[weather slide]: /scenario/flexibility/flexibility_weather/extreme-weather-conditions
-
-[wacc slide]: /scenario/costs/wacc/weighted-average-cost-of-capital-wacc
+[residual heat documentation]: https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md

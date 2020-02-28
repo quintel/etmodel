@@ -12,6 +12,8 @@ module Describable
   end
 
   def t(attr_name)
+    return '' unless description
+
     lang = I18n.locale.to_s.split('-').first
     description["#{attr_name}_#{lang}"]&.html_safe
   end

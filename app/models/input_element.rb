@@ -27,7 +27,6 @@ class InputElement < YModel::Base
 
   ENUM_UNITS = %w[radio weather-curves].freeze
 
-  # has_one :description, as: :describable
   belongs_to :slide
 
   class << self
@@ -104,7 +103,7 @@ class InputElement < YModel::Base
   #
   def sanitized_description
     ie8_sanitize(
-      description_sanitize_embedded_player
+      description_content
     ).html_safe
   end
 

@@ -80,10 +80,10 @@ describe InputElement do
 
   describe '#sanitized_description' do
     subject do
-      ie = described_class.new(description: { 'content_en' => 'foobar' })
+      ie = described_class.new(description: { 'content_en' => "'foobar'" })
       ie.sanitized_description
     end
 
-    it { is_expected.to eq 'foobar' }
+    it { is_expected.to eq '&#39;foobar&#39;' }
   end
 end

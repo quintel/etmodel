@@ -23,9 +23,4 @@ module Describable
       description_content&.include?('object')
   end
 
-  # For loading multiple flowplayers classname is needed instead of id
-  #
-  def description_sanitize_embedded_player
-    description_content&.gsub %(id="player"), %(class="player")
-  end
 end

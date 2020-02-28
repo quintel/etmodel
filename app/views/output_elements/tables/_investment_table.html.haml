@@ -88,16 +88,6 @@
     %td.border-rgt{:data => {:gquery => "households_cooling_airconditioning_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "households_cooling_airconditioning_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "households_cooling_airconditioning_electricity_delta_in_investment_cost_table"}}
-  %tr.even
-    %th= t("input_elements.households_heat_network_connection_steam_hot_water_share").html_safe
-    %td.border-rgt{:data => {:gquery => "households_heat_network_connection_steam_hot_water_present_in_investment_cost_table", :graph => :present}}
-    %td{:data => {:gquery => "households_heat_network_connection_steam_hot_water_future_in_investment_cost_table"}}
-    %td{:data => {:gquery => "households_heat_network_connection_steam_hot_water_delta_in_investment_cost_table"}}
-  %tr.odd
-    %th= t("input_elements.households_heater_district_heating_steam_hot_water_share").html_safe
-    %td.border-rgt{:data => {:gquery => "households_space_heater_district_heating_steam_hot_water_present_in_investment_cost_table", :graph => :present}}
-    %td{:data => {:gquery => "households_space_heater_district_heating_steam_hot_water_future_in_investment_cost_table"}}
-    %td{:data => {:gquery => "households_space_heater_district_heating_steam_hot_water_delta_in_investment_cost_table"}}
 
   %thead.subhead
     %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.buildings'
@@ -151,16 +141,6 @@
     %td.border-rgt{:data => {:gquery => "buildings_cooling_airconditioning_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "buildings_cooling_airconditioning_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "buildings_cooling_airconditioning_electricity_delta_in_investment_cost_table"}}
-  %tr.even
-    %th= t("input_elements.buildings_heat_network_connection_steam_hot_water_share").html_safe
-    %td.border-rgt{:data => {:gquery => "buildings_heat_network_connection_steam_hot_water_present_in_investment_cost_table", :graph => :present}}
-    %td{:data => {:gquery => "buildings_heat_network_connection_steam_hot_water_future_in_investment_cost_table"}}
-    %td{:data => {:gquery => "buildings_heat_network_connection_steam_hot_water_delta_in_investment_cost_table"}}
-  %tr.odd
-    %th= t("input_elements.buildings_space_heater_district_heating_steam_hot_water_share").html_safe
-    %td.border-rgt{:data => {:gquery => "buildings_space_heater_district_heating_steam_hot_water_present_in_investment_cost_table", :graph => :present}}
-    %td{:data => {:gquery => "buildings_space_heater_district_heating_steam_hot_water_future_in_investment_cost_table"}}
-    %td{:data => {:gquery => "buildings_space_heater_district_heating_steam_hot_water_delta_in_investment_cost_table"}}
 
   %thead.subhead
     %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.agriculture'

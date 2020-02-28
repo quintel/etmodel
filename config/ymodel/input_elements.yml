@@ -17128,17 +17128,12 @@
   position: 1
   dependent_on: ''
   description:
-    content_en: This slider sets the change in future investment and O&M costs for
-      residual heat from all industrial sectors. Costs are compared to current costs.
-      The costs in the link below depict the costs that are used for residual heat
-      from the chemical industry, refineries and fertilizer industry. For low temperature
-      heat from datacenters we use different costs.
-    content_nl: Met deze schuif stel je de toe- of afname in die je verwacht voor
-      de investeringskosten en onderhouds- en beheerkosten van het uitkoppelen van
-      industriële restwarmte. De kosten worden vergeleken met de kosten van vandaag
-      de dag. De kosten in de link hieronder zijn de kosten die we hanteren voor restwarmte
-      uit de chemische industrie, raffinaderijen en kunstmestindustrie. Voor lage
-      temperatuur restwarmte uit datacenters rekenen we met andere kosten.
+    content_en: "This slider sets the change in future investment and O&M costs for
+      indoor heating infrastructure. This includes indoor pipelines and heat meters. See <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md\"
+      >our documentation</a> for more info."
+    content_nl: "Met deze schuif stel je de toe- of afname in die je verwacht voor
+      de investeringskosten en onderhouds- en beheerkosten van inpandige warmte-infrastructuur. Hieronder vallen inpandige leidingen en warmtemeters. Zie <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md\"
+      >onze documentatie</a> voor meer info."
     short_content_en:
     short_content_nl:
 - id: 1002
@@ -17164,6 +17159,15 @@
   slide_id: 263
   position: 2
   dependent_on: ''
+  description:
+    content_en: "This slider sets the change in future investment and O&M costs for
+      outdoor heating infrastructure. This includes district heating pipelines and exchanger stations. See <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md\"
+      >our documentation</a> for more info."
+    content_nl: "Met deze schuif stel je de toe- of afname in die je verwacht voor
+      de investeringskosten en onderhouds- en beheerkosten van leidingen en onderstations voor warmtenetten. Zie <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md\"
+      >onze documentatie</a> voor meer info."
+    short_content_en:
+    short_content_nl:
 - id: 939
   key: households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share
   share_group: heating_households
@@ -19170,5 +19174,42 @@
       overwegingen en alternatieven die nu al beter voor bedrijven zijn. De kosten
       voor het uitkoppelen van restwarmte kunnen <a href=\"/scenario/costs/costs_heat/residual-heat\">hier</a>
       aangepast worden.\r\n</br>"
+    short_content_en:
+    short_content_nl:
+- id: 1005
+  key: costs_industry_residual_heat.ad
+  share_group: ''
+  step_value: 0.1
+  draw_to_min:
+  draw_to_max:
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-01-11 09:06:41.000000000 Z
+    zone: *1
+    time: 2019-01-11 10:06:41.000000000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2019-01-11 09:10:09.000000000 Z
+    zone: *1
+    time: 2019-01-11 10:10:09.000000000 Z
+  unit: "%"
+  fixed: false
+  comments: ''
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  slide_id: 264
+  position: 1
+  dependent_on: ''
+  description:
+    content_en: This slider sets the change in future investment and O&M costs for
+      residual heat from all industrial sectors. Costs are compared to current costs.
+      The costs in the link below depict the costs that are used for residual heat
+      from the chemical industry, refineries and fertilizer industry. For low temperature
+      heat from datacenters we use different costs.
+    content_nl: Met deze schuif stel je de toe- of afname in die je verwacht voor
+      de investeringskosten en onderhouds- en beheerkosten van het uitkoppelen van
+      industriële restwarmte. De kosten worden vergeleken met de kosten van vandaag
+      de dag. De kosten in de link hieronder zijn de kosten die we hanteren voor restwarmte
+      uit de chemische industrie, raffinaderijen en kunstmestindustrie. Voor lage
+      temperatuur restwarmte uit datacenters rekenen we met andere kosten.
     short_content_en:
     short_content_nl:

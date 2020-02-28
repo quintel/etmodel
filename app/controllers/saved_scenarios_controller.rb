@@ -44,9 +44,7 @@ class SavedScenariosController < ApplicationController
   private
 
   def scenario_by_current_user?(scenario)
-    SavedScenario.exists?('user_id = ? AND scenario_id = ?',
-                          current_user,
-                          scenario.id)
+    SavedScenario.where(user: current_user, scenario_id: scenario.id).exists?
   end
 
   def assign_scenario

@@ -5,12 +5,12 @@ require 'rails_helper'
 describe UpdateSavedScenario, type: :service do
   let(:user) { FactoryBot.create(:user) }
   let(:result_scenario) { FactoryBot.build(:api_scenario, id: 11) }
-  let(:api_result)  { ServiceResult.success(result_scenario) }
+  let(:api_result) { ServiceResult.success(result_scenario) }
   let(:result) { described_class.call(saved_scenario, 10) }
   let!(:saved_scenario) do
     FactoryBot.create :saved_scenario,
                       user: user,
-                      id: 648695
+                      id: 648_695
   end
 
   before do
@@ -33,29 +33,41 @@ describe UpdateSavedScenario, type: :service do
 
     describe '#value' do
       subject { result.value }
+
       it { is_expected.to be_a SavedScenario }
       it { is_expected.to be_persisted }
     end
 
     it 'changes the scenario_id on the SavedScenario' do
-      expect{ result }
-        .to change{ saved_scenario.scenario_id }
-                .from(648695)
-                .to(11)
+      expect { result }.to(
+        change(saved_scenario, :scenario_id)
+          .from(648_695)
+          .to(11)
+      )
     end
 
     it 'sets the title saved scenario to the one of old scenario' do
-      expect{ result }
-        .to change{ saved_scenario.title }
-              .from(nil)
-              .to("title")
+      expect { result }.to(
+        change(saved_scenario, :title)
+          .from(nil)
+          .to('title')
+      )
+    end
+
+    it 'sets the saved scenario description to the one of old scenario' do
+      expect { result }.to(
+        change(saved_scenario, :description)
+          .from(nil)
+          .to('description')
+      )
     end
 
     it 'changes the scenario_id_history on the SavedScenario' do
-      expect{ result }
-        .to change{ saved_scenario.scenario_id_history }
-              .from([])
-              .to([648695])
+      expect { result }.to(
+        change(saved_scenario, :scenario_id_history)
+          .from([])
+          .to([648_695])
+      )
     end
   end
 

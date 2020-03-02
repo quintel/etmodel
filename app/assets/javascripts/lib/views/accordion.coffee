@@ -25,6 +25,16 @@ class @Accordion
       url = header.find('a').attr('href')
       App.router.navigate(url)
 
+    # update page title
+      titleComponents = [
+        $("h3.selected").text().trim(),
+        $('#title h2').text().trim(),
+        I18n.t('meta.name')
+      ]
+
+      window.document.title =
+        titleComponents.filter((comp) => comp.length).join(' - ')
+
       # Track event (legacy, can we remove this?)
       slide_title = $.trim(header.text())
       Tracker.track({slide: slide_title})

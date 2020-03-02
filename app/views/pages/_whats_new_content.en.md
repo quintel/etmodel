@@ -28,17 +28,23 @@ The modeling of district heating has been improved and expanded!
 
 All CHPs (with the exception of biogas-CHP) now also work as dispatchable in the electricity merit order, including the industrial CHPs. CHPs are therefore now running primarily for the electricity market. Their heat production is therefore a "given" (must-run) for heat networks. Previously, CHPs were uncontrollable and ran with a fixed, flat production profile. This change may have an impact on your scenario outcomes!
 
-## 3. Documentation more accessible
+## 3. Wind load curves improved
+
+The wind load curves for the default dataset of the Netherlands are now created using the same (KNMI-based) method as used for the [extreme weather years (1987, 1997, 2004)][weather years slide]. This ensures more consistency between the different datasets for the Netherlands. Check out our [Github documentation][wind curves documentation] for a more detailed explanation of this method.
+
+-> ![](/assets/pages/whats_new/wind_curves_en.png) <-
+
+## 4. Documentation more accessible
 
 For certain sliders it was already possible to view the technical specifications so that you could see our assumptions. Now we go one step further and for many sliders we also make our entire background analysis available (which is already on GitHub) at the touch of a button. From the technical specifications table you can download this analysis directly as an Excel file.
 
 -> ![](/assets/pages/whats_new/documentation_download_en.png) <-
 
-## 4. Download slider settings
+## 5. Download slider settings
 
 For saved scenarios it is possible to download the values ​​of your sliders as a CSV file. This can be useful if you want to list all your scenario changes. View your saved scenarios via "User> My scenarios" (top right in the ETM) and click on the title of the desired scenario. Now enter '.csv' after the url (so you get pro.energytransitionmodel.com/saved_scenarios/0000.csv) and the download starts immediately.
 
-## 5. Data export adjusted
+## 6. Data export adjusted
 
 The format of the load and price curves of electricity has recently changed. For each column in the data export the extension "input" or "output" is used to indicate whether the data represents demand or supply of electricity. Flexibility solutions have two columns now, both for the electricity input and output. With these changes, the format of the data exports of electricity, network gas and hydrogen are more consistent.
 
@@ -46,6 +52,10 @@ The format of the load and price curves of electricity has recently changed. For
 
 [data export slide]: /scenario/data/data_export/merit-order-price
 
+[weather years slide]: /scenario/flexibility/flexibility_weather/extreme-weather-conditions
+
 [heat-infra costs documentation]: https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md
 
 [residual heat documentation]: https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md
+
+[wind curves documentation]: https://github.com/quintel/etdataset-public/tree/master/curves/supply/wind

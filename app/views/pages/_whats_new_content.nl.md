@@ -28,17 +28,23 @@ De modellering van warmtenetten is verbeterd en uitgebreid! Hieronder vindt u de
 
 Alle WKKs (m.u.v. biogas-WKK) draaien nu mee als dispatchable in de elektriciteitsmerit order, ook de industriële WKKs. WKKs draaien dus nu primair voor de elektriciteitsmarkt. Hun warmteproductie is daarmee een ‘gegeven’ (must-run) voor warmtenetten. Voorheen waren WKKs niet-regelbaar en draaiden ze met een vast vlak productieprofiel. Let op: deze wijziging kan mogelijk impact hebben op je scenariouitkomsten!
 
-## 3. Documentatie toegankelijker
+## 3. Windprofielen verbeterd
+
+De windprofielen voor de default dataset van Nederland zijn nu gegenereerd volgens dezelfde methode (gebaseerd op KNMI data) als gebruikt voor de [extreme weerjaren (1987, 1997, 2004)][weather years slide]. Dit waarborgt de  consistentie tussen de verschillende datasets voor Nederland. Check onze [Github documentatie][wind curves documentation] voor een uitgebreidere toelichting op deze methode.
+
+-> ![](/assets/pages/whats_new/wind_curves_nl.png) <-
+
+## 4. Documentatie toegankelijker
 
 Voor bepaalde schuifjes was het al mogelijk om de technische specificaties te bekijken, zodat je onze aannames kon zien. Nu gaan we nog een stapje verder en maken we voor veel schuifjes ook onze gehele achtergrond analyse (die al op GitHub staat) beschikbaar met één druk op de knop. Vanuit de technische specificaties tabel kan je deze analyse direct downloaden als Excel.
 
 -> ![](/assets/pages/whats_new/documentation_download_nl.png) <-
 
-## 4. Download schuifjesinstellingen
+## 5. Download schuifjesinstellingen
 
 Voor opgeslagen scenarios is het vanaf nu mogelijk om de waardes van je gezette schuifjes te downloaden als csv bestand. Dit kan handig zijn als je al jouw scenariowijzigingen op een rijtje wil hebben. Bekijk je opgeslagen scenarios via "Gebruiker > Mijn scenario's" (rechtsboven in het ETM) en klik op de titel van het gewenste scenario. Achter de url typ je nu '.csv' (je krijgt dus bijvoorbeeld pro.energytransitionmodel.com/saved_scenarios/0000.csv) en de download begint direct.
 
-## 5. Data-export aangepast
+## 6. Data-export aangepast
 
 De bestandsindeling van de draaiprofielen en prijscurves van elektriciteit is veranderd. Per kolom uit de data-export wordt nu met "input" of "output" aangegeven of het om vraag of aanbod van elektriciteit gaat. Flexibiliteitsoplossingen hebben nu dus ook zowel een input als output kolom. Hiermee is de vorm van de data-export voor elektriciteit consistenter met de data-exports voor netwerkgas en waterstof.
 
@@ -46,6 +52,10 @@ De bestandsindeling van de draaiprofielen en prijscurves van elektriciteit is ve
 
 [data export slide]: /scenario/data/data_export/merit-order-price
 
+[weather years slide]: /scenario/flexibility/flexibility_weather/extreme-weather-conditions
+
 [heat-infra costs documentation]: https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md
 
 [residual heat documentation]: https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md
+
+[wind curves documentation]: https://github.com/quintel/etdataset-public/tree/master/curves/supply/wind

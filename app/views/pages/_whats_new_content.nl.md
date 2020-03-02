@@ -4,9 +4,9 @@
 
 De modellering van warmtenetten is verbeterd en uitgebreid! Hieronder vindt u de wijzigingen:
 
-- Warmtenetten in huishoudens, gebouwen en landbouw zijn samengevoegd tot één net (‘**residentieel warmtenet**’). Er is geen uitwisseling van warmteoverschotten meer mogelijk tussen industriële (stoom)netten en residentiële netten
+- Warmtenetten in huishoudens, gebouwen en landbouw zijn samengevoegd tot één ‘**residentieel warmtenet**’. Er is geen uitwisseling van warmteoverschotten meer mogelijk tussen industriële (stoom)netten en residentiële netten
 
-- De vraag en productie van warmte in residentiële warmtenetten wordt vanaf nu berekend op **uurbasis** in plaats van op jaarbasis
+- De vraag en productie van warmte in residentiële warmtenetten worden vanaf nu berekend op **uurbasis** in plaats van op jaarbasis
 
   -> ![](/assets/pages/whats_new/hourly_heat_nl.png) <-
 
@@ -23,8 +23,6 @@ De modellering van warmtenetten is verbeterd en uitgebreid! Hieronder vindt u de
 - **Restwarmte** uit de kunstmest-, chemie-, raffinage- en ICT-sector kan worden uitgekoppeld en worden ingevoed op residentiële warmtenetten. Bekijk onze documentatie op [GitHub][residual heat documentation] voor de methode en gebruikte bronnen
 
 -	De **kostenberekening** voor warmte-infrastructuur is uitgebreid. In plaats van te rekenen met een vast bedrag per aansluiting, zijn de kosten nu onderverdeeld in inpandige kosten, distributiekosten (leidingen, onderstations) en primaire netkosten. De kostenberekening is afgestemd op het Vesta MAIS-model, waardoor vergelijking en uitwisseling van resultaten tussen de ETM en Vesta MAIS eenvoudiger is geworden. Bekijk onze documentatie op [GitHub][heat-infra costs documentation] voor meer informatie.
-
-[Ontdek hier de verbeterde modellering van warmtenetten!][district heating slide]
 
 ## 2. WKK's anders gemodelleerd
 
@@ -43,8 +41,6 @@ Voor opgeslagen scenarios is het vanaf nu mogelijk om de waardes van je gezette 
 ## 5. Data-export aangepast
 
 De bestandsindeling van de draaiprofielen en prijscurves van elektriciteit is veranderd. Per kolom uit de data-export wordt nu met "input" of "output" aangegeven of het om vraag of aanbod van elektriciteit gaat. Flexibiliteitsoplossingen hebben nu dus ook zowel een input als output kolom. Hiermee is de vorm van de data-export voor elektriciteit consistenter met de data-exports voor netwerkgas en waterstof.
-
-[Hier vind je de aangepaste data-export voor elektriciteit!][data export slide]
 
 [district heating slide]: /scenario/supply/heat/heat-sources
 

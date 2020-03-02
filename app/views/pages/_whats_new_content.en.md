@@ -24,8 +24,6 @@ The modeling of district heating has been improved and expanded!
 
 - The **cost calculation** for heat infrastructure has been improved. Instead of calculating a fixed amount per connection, the costs are now subdivided into indoor costs, distribution costs (pipelines, substations) and primary network costs. The cost calculation has been aligned with the Vesta MAIS model, making comparisons and exchange of outcomes between the ETM and Vesta MAIS easier. View [our documentation on GitHub][heat-infra costs documentation] for more information.
 
-Discover the improved modeling of district heating in the **[District heating → Heat sources][district heating slide]** section.
-
 ## 2. CHPs modeled differently
 
 All CHPs (with the exception of biogas-CHP) now also work as dispatchable in the electricity merit order, including the industrial CHPs. CHPs are therefore now running primarily for the electricity market. Their heat production is therefore a "given" (must-run) for heat networks. Previously, CHPs were uncontrollable and ran with a fixed, flat production profile. This change may have an impact on your scenario outcomes!
@@ -43,8 +41,6 @@ For saved scenarios it is possible to download the values ​​of your sliders 
 ## 5. Data export adjusted
 
 The format of the load and price curves of electricity has recently changed. For each column in the data export the extension "input" or "output" is used to indicate whether the data represents demand or supply of electricity. Flexibility solutions have two columns now, both for the electricity input and output. With these changes, the format of the data exports of electricity, network gas and hydrogen are more consistent.
-
-You can find the adjusted data export here in the **[Data export → Merit order price][data export slide]** section.
 
 [district heating slide]: /scenario/supply/heat/heat-sources
 

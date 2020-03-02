@@ -129,7 +129,7 @@
 
     {% if future.electricity_curtailed > 0 %}
       <li class="target-missed">
-        Your scenario has {{ future.electricity_curtailed | autoscale: 'MJ' }}
+        Your scenario has {{ future.electricity_curtailed | autoscale: 'PJ' }}
         of curtailed electricity production. You can put this electricity to
         good use!
         <a href="#suggestions-for-improvement" class="learn-more">

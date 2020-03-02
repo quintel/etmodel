@@ -27,10 +27,10 @@
       <p>
         <strong><a href="#energy-use-and-production">Total energy</a></strong><br />
         Initial value:
-        <strong>{{ present.dashboard_energy_demand_primary_of_final | autoscale: 'MJ' }}</strong>
+        <strong>{{ present.primary_demand_caused_by_final_demand | autoscale: 'MJ' }}</strong>
         <span class="bullet">&bull;</span>
         Scenario result:
-        <strong>{{ future.dashboard_energy_demand_primary_of_final | autoscale: 'MJ' }}</strong>
+        <strong>{{ future.primary_demand_caused_by_final_demand | autoscale: 'MJ' }}</strong>
       </p>
     </li>
 
@@ -48,10 +48,10 @@
     <li>
       <strong><a href="#renewability">Renewability</a></strong><br />
       Initial value:
-      <strong>{{ present.dashboard_renewability | times: 100 | round: 1 }}%</strong>
+      <strong>{{ present.renewability | times: 100 | round: 1 }}%</strong>
       <span class="bullet">&bull;</span>
       Scenario result:
-      <strong>{{ future.dashboard_renewability | times: 100 | round: 1 }}%</strong>
+      <strong>{{ future.renewability | times: 100 | round: 1 }}%</strong>
     </li>
 
     <li>

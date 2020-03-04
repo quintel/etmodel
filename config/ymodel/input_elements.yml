@@ -16101,26 +16101,22 @@
       hours for these panels, more electricity will be produced with the same number
       of panels and the same load on the electricity infrastructure. To make this
       happen, the slider not only increases the number of full load hours but also
-      changes the shape of the hourly production profile for solar PV panels. Typically,
+      changes the shape of the hourly production profile for solar PV plants. Typically,
       the peaks will become broader and flatter with increasing full load hours as
       the solar PV panels spend more time at higher capacity. Take a look at the ‘Electricity
       production per hour’-chart to see the effect of your changes on the solar PV
-      production profile.\r\n</br></br>\r\nNote that this slider adjusts the full
-      load hours for all solar PV panels modelled in the ETM; both for de-central
-      panels installed on roofs as for solar PV panels in central solar power plants."
+      production profile.\r\n</br></br>\r\n"
     content_nl: "In het ETM heeft een zonnepaneel standaard 867 vollasturen. Het is
       aannemelijk dat toekomstige zonnepanelen meer elektriciteit zullen produceren
       per geïnstalleerd vermogen dan nu. Door de vollasturen te verhogen voor zonnepanelen
       zal er meer elektriciteit geproduceerd worden met hetzelfde aantal panelen en
       dezelfde belasting op het elektriciteitsnetwerk. Om dit mogelijk te maken neemt
       niet alleen het aantal vollasturen toe met dit schuifje, maar verandert tegelijkertijd
-      ook het productieprofiel per uur voor de zonnepanelen. Bij een toenemend aantal
+      ook het productieprofiel per uur voor de zonneparken. Bij een toenemend aantal
       vollasturen zullen de pieken breder en platter worden doordat het paneel langer
       op hogere capaciteit elektriciteit produceert. Bekijk de 'Elektriciteitsproductie
       op uurbasis'-grafiek voor meer inzicht in het effect van het aantal vollasturen
-      op het zonneprofiel.\r\n</br></br>\r\nMerk op dat dit schuifje de vollasturen
-      aanpast voor alle zonnepanelen die gemodelleerd worden in het ETM; zowel voor
-      decentrale zonnepanelen op daken als voor zonnepalen in centrale zonneparken. "
+      op het zonneprofiel.\r\n</br></br>\r\n "
     short_content_en:
     short_content_nl:
 - id: 909
@@ -17130,10 +17126,10 @@
   description:
     content_en: "This slider sets the change in future investment and O&M costs for
       indoor heating infrastructure. This includes indoor pipelines and heat meters. See <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md\"
-      >our documentation</a> for more info."
+      target =\"_blank\">our documentation</a> for more info."
     content_nl: "Met deze schuif stel je de toe- of afname in die je verwacht voor
       de investeringskosten en onderhouds- en beheerkosten van inpandige warmte-infrastructuur. Hieronder vallen inpandige leidingen en warmtemeters. Zie <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md\"
-      >onze documentatie</a> voor meer info."
+      target =\"_blank\">onze documentatie</a> voor meer info."
     short_content_en:
     short_content_nl:
 - id: 1002
@@ -17512,15 +17508,16 @@
   position: 5
   dependent_on: ''
   description:
-    content_en: This curve is the regular charging curve from the study [Impact of
-      Smart Charging on EVs Charging Behaviour Assessed from Real Charging Events](https://refman.energytransitionmodel.com/publications/2099)
-      by ELaad and Jedlix. This study analyses data from 10,000 charging sessions
-      of 140 cars.
-    content_nl: 'Dit profiel is het profiel dat bij type laadsessie Regulier van de
-      studie [Impact of Smart Charging on EVs Charging Behaviour Assessed from Real
-      Charging Events](https://refman.energytransitionmodel.com/publications/2099)
-      van ELaad and Jedlix hoort. Deze studie analyseert 10.000 laadsessies van 140
-      automobilisten. '
+    content_en: "This curve is the regular charging curve from the study
+      <a href=\"https://refman.energytransitionmodel.com/publications/2099\"
+      target=\"_blank\">Impact of Smart Charging on EVs Charging Behaviour Assessed from Real
+      Charging Events</a> by ELaad and Jedlix. This study analyses data from 10,000 charging sessions
+      of 140 cars."
+    content_nl: "Dit profiel is het profiel dat bij type laadsessie Regulier van de
+      studie <a href=\"https://refman.energytransitionmodel.com/publications/2099\"
+      target=\"_blank\">Impact of Smart Charging on EVs Charging Behaviour Assessed from Real
+      Charging Events</a> van ELaad and Jedlix hoort. Deze studie analyseert 10.000 laadsessies van 140
+      automobilisten."
     short_content_en:
     short_content_nl:
 - id: 950
@@ -17547,14 +17544,16 @@
   position: 4
   dependent_on: ''
   description:
-    content_en: This curve is the smart charging curve from the study [Impact of Smart
-      Charging on EVs Charging Behaviour Assessed from Real Charging Events](https://refman.energytransitionmodel.com/publications/2099)
-      by ELaad and Jedlix. This study analyses data from 10,000 charging sessions
-      of 140 cars.
-    content_nl: 'Dit profiel is het profiel dat bij type laadsessie Slim van de studie
-      [Impact of Smart Charging on EVs Charging Behaviour Assessed from Real Charging
-      Events](https://refman.energytransitionmodel.com/publications/2099) van ELaad
-      and Jedlix hoort. Deze studie analyseert 10.000 laadsessies van 140 automobilisten. '
+    content_en: "This curve is the smart charging curve from the study
+      <a href=\"https://refman.energytransitionmodel.com/publications/2099\"
+      target=\"_blank\">Impact of Smart Charging on EVs Charging Behaviour Assessed from Real
+      Charging Events</a> by ELaad and Jedlix. This study analyses data
+      from 10,000 charging sessions of 140 cars."
+    content_nl: "Dit profiel is het profiel dat bij type laadsessie Slim van de studie
+      <a href=\"https://refman.energytransitionmodel.com/publications/2099\"
+      target=\"_blank\">Impact of Smart Charging on EVs Charging Behaviour Assessed from Real
+      Charging Events</a> van ELaad
+      and Jedlix hoort. Deze studie analyseert 10.000 laadsessies van 140 automobilisten."
     short_content_en:
     short_content_nl:
 - id: 951
@@ -19159,19 +19158,34 @@
   position: 3
   dependent_on: ''
   description:
-    content_en: "What percentage of the available residual heat from datacenters do
+    content_en: "What percentage of the available residual heat from data centers do
       you want to use in heat networks? How the residual heat potential is determined
       can be read in our <a href=\"https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md\"
-      target=\"_blank\">documentation</a>. Often no more than 10-20% of the available
-      heat is used due to short-term restrictions, strategic considerations and alternatives
-      that are already better for companies. The costs of using residual heat can
+      target=\"_blank\">documentation</a>.</br></br>
+
+      Often no more than 10-20% of the available heat can realistically be used due to short-term restrictions and strategic
+      and economic considerations. It is challenging to find a good data source for
+      the electricity demand of the ICT sector and especially data centers. As a result the
+      residual heat assessment in the ETM is a rough estimate. Berenschot calculated that
+      the residual heat potential from datacenters in the Netherlands is 6.3 PJ for 2018 (see <a href=\"https://www.berenschot.nl/actueel/2018/november/410-kton-co2-besparing\"
+      target=\"_blank\">this report</a>).<br /><br />
+
+      The costs of using residual heat can
       be adjusted <a href=\"/scenario/costs/costs_heat/residual-heat\">here</a>.\r\n</br>"
     content_nl: "Hoeveel procent van de beschikbare restwarmte uit datacenters wil
-      je uitkoppelen? Hoe de restwarmte potentie is bepaald, is te lezen in onze <a
+      je uitkoppelen? Hoe de restwarmtepotentie is bepaald, is te lezen in onze <a
       href=\"https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md\"
-      target=\"_blank\">documentatie</a>. Vaak wordt er niet meer dan 10-20% van de
-      beschikbare warmte uitgekoppeld in verband met korte termijn restricties, strategische
-      overwegingen en alternatieven die nu al beter voor bedrijven zijn. De kosten
+      target=\"_blank\">documentatie</a>.<br /><br />
+
+      In de praktijk kan de praktisch beschikbare restwarmte een factor vijf lager liggen in verband met kortetermijnrestricties en strategische
+      en economische overwegingen. Het is uitdagend
+      om een goede bron te vinden voor de elektriciteitsvraag van ICT in Nederland en dan met
+      name voor datacenters. Daarom is de restwarmte inschatting in het ETM een ruwe schatting. Berenschot
+      heeft berekend dat de potentiële restwarmte van datacenters in
+      Nederland 6.3 PJ is in 2018 (zie <a href=\"https://www.berenschot.nl/actueel/2018/november/410-kton-co2-besparing\"
+      target=\"_blank\">dit rapport</a>).<br /><br />
+
+      De kosten
       voor het uitkoppelen van restwarmte kunnen <a href=\"/scenario/costs/costs_heat/residual-heat\">hier</a>
       aangepast worden.\r\n</br>"
     short_content_en:

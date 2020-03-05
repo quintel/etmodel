@@ -13,7 +13,7 @@ class FixMeritOrderCostChart < ActiveRecord::Migration[5.2]
   def up
      ActiveRecord::Base.transaction do
       # Remove old series
-      OutputElementSerie.find_by(gquery: 'central_biogas_chp_merit_order').destroy!
+      OutputElementSerie.find_by(gquery: 'central_biogas_chp_merit_order')&.destroy
 
       el = OutputElement.find_by_key(:merit_order)
       # Add new series

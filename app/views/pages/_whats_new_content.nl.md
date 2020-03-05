@@ -24,7 +24,7 @@ De modellering van warmtenetten is verbeterd en uitgebreid! Hieronder vindt u de
 
 -	De **kostenberekening** voor warmte-infrastructuur is uitgebreid. In plaats van te rekenen met een vast bedrag per aansluiting, zijn de kosten nu onderverdeeld in inpandige kosten, distributiekosten (leidingen, onderstations) en primaire netkosten. De kostenberekening is afgestemd op het Vesta MAIS-model, waardoor vergelijking en uitwisseling van resultaten tussen de ETM en Vesta MAIS eenvoudiger is geworden. Bekijk onze documentatie op [GitHub][heat-infra costs documentation] voor meer informatie.
 
-[Ontdek hier de verbeterde modellering van warmtenetten!][district heating slide]
+Ontdek [hier][district heating slide] de verbeterde modellering van warmtenetten en check onze [Github documentatie][heat network documentation] voor een uitgebreidere toelichting.
 
 ## 2. WKK's anders gemodelleerd
 
@@ -59,6 +59,8 @@ De bestandsindeling van de draaiprofielen en prijscurves van elektriciteit is ve
 [weather years slide]: /scenario/flexibility/flexibility_weather/extreme-weather-conditions
 
 [heat-infra costs documentation]: https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md
+
+[heat network documentation]: https://github.com/quintel/documentation/blob/master/general/heat_networks.md
 
 [residual heat documentation]: https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md
 

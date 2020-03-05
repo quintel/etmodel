@@ -24,7 +24,7 @@ The modeling of district heating has been improved and expanded!
 
 - The **cost calculation** for heat infrastructure has been improved. Instead of calculating a fixed amount per connection, the costs are now subdivided into indoor costs, distribution costs (pipelines, substations) and primary network costs. The cost calculation has been aligned with the Vesta MAIS model, making comparisons and exchange of outcomes between the ETM and Vesta MAIS easier. View [our documentation on GitHub][heat-infra costs documentation] for more information.
 
-Discover the improved modeling of district heating in the **[District heating → Heat sources][district heating slide]** section.
+Discover the improved modelling of district heating in the **[District heating → Heat sources][district heating slide]** section and check out our [Github documentation][heat network documentation] for a more detailed explanation.
 
 ## 2. CHPs modeled differently
 
@@ -59,6 +59,8 @@ You can find the adjusted data export here in the **[Data export → Merit order
 [weather years slide]: /scenario/flexibility/flexibility_weather/extreme-weather-conditions
 
 [heat-infra costs documentation]: https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md
+
+[heat network documentation]: https://github.com/quintel/documentation/blob/master/general/heat_networks.md
 
 [residual heat documentation]: https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md
 

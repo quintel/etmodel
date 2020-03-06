@@ -1,15 +1,6 @@
 ---
 - id: 1
   image: house_insulation.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-12-19 14:38:37.000000000 Z
-    zone: &1 !ruby/object:ActiveSupport::TimeZone
-      name: Europe/Amsterdam
-    time: 2018-12-19 15:38:37.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-12-19 14:38:37.000000000 Z
-    zone: *1
-    time: 2018-12-19 15:38:37.000000000 Z
   general_sub_header: heat_demand_reduction
   group_sub_header: ''
   subheader_image: households_insulation_energy_label.png
@@ -30,14 +21,6 @@
     short_content_nl: ''
 - id: 2
   image: house_lighting.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-06-24 14:39:54.000000000 Z
-    zone: *1
-    time: 2014-06-24 16:39:54.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -55,14 +38,6 @@
     short_content_nl: ''
 - id: 3
   image: house_appliances.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-07-10 11:57:56.000000000 Z
-    zone: *1
-    time: 2013-07-10 13:57:56.000000000 Z
   general_sub_header: change
   group_sub_header: change
   subheader_image: energy_label.png
@@ -81,14 +56,6 @@
     short_content_nl: ''
 - id: 4
   image: house_heating.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-07-10 11:58:58.000000000 Z
-    zone: *1
-    time: 2013-07-10 13:58:58.000000000 Z
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
@@ -105,14 +72,6 @@
     short_content_nl: ''
 - id: 5
   image: house_solarpanels.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-07-10 11:58:28.000000000 Z
-    zone: *1
-    time: 2013-07-10 13:58:28.000000000 Z
   general_sub_header: of_potential
   group_sub_header: ''
   subheader_image: ''
@@ -131,14 +90,6 @@
     short_content_nl: ''
 - id: 6
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-24 15:33:25.000000000 Z
-    zone: *1
-    time: 2019-12-24 16:33:25.000000000 Z
   general_sub_header: price
   group_sub_header: ''
   subheader_image: ''
@@ -158,14 +109,6 @@
     short_content_nl: ''
 - id: 7
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: change
   group_sub_header:
   subheader_image:
@@ -186,14 +129,6 @@
     short_content_nl: ''
 - id: 8
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: change
   group_sub_header:
   subheader_image:
@@ -212,14 +147,6 @@
     short_content_nl: ''
 - id: 9
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: change
   group_sub_header:
   subheader_image:
@@ -240,14 +167,6 @@
     short_content_nl: ''
 - id: 10
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: change
   group_sub_header:
   subheader_image:
@@ -266,14 +185,6 @@
     short_content_nl: ''
 - id: 11
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: change
   group_sub_header:
   subheader_image:
@@ -294,14 +205,6 @@
     short_content_nl: ''
 - id: 12
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: change
   group_sub_header:
   subheader_image:
@@ -320,14 +223,6 @@
     short_content_nl: ''
 - id: 13
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-09 10:11:18.000000000 Z
-    zone: *1
-    time: 2020-01-09 11:11:18.000000000 Z
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
@@ -347,14 +242,6 @@
     short_content_nl: ''
 - id: 16
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: change
   group_sub_header:
   subheader_image:
@@ -375,14 +262,6 @@
     short_content_nl: ''
 - id: 17
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-09-02 09:36:23.000000000 Z
-    zone: *1
-    time: 2013-09-02 11:36:23.000000000 Z
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
@@ -403,14 +282,6 @@
     short_content_nl: ''
 - id: 19
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: change
   group_sub_header:
   subheader_image:
@@ -431,14 +302,6 @@
     short_content_nl: ''
 - id: 20
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: change
   group_sub_header:
   subheader_image:
@@ -458,14 +321,6 @@
     short_content_nl: ''
 - id: 21
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-07-19 12:04:53.000000000 Z
-    zone: *1
-    time: 2012-07-19 14:04:53.000000000 Z
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
@@ -485,14 +340,6 @@
     short_content_nl: ''
 - id: 22
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-24 13:13:50.000000000 Z
-    zone: *1
-    time: 2014-01-24 14:13:50.000000000 Z
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
@@ -513,14 +360,6 @@
     short_content_nl: ''
 - id: 23
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-24 13:14:14.000000000 Z
-    zone: *1
-    time: 2014-01-24 14:14:14.000000000 Z
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
@@ -539,14 +378,6 @@
     short_content_nl: ''
 - id: 24
   image: car.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-28 14:23:19.000000000 Z
-    zone: *1
-    time: 2017-11-28 15:23:19.000000000 Z
   general_sub_header: "%/year"
   group_sub_header: share
   subheader_image: ''
@@ -581,14 +412,6 @@
     short_content_nl: ''
 - id: 25
   image: engine.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-22 15:29:02.000000000 Z
-    zone: *1
-    time: 2017-11-22 16:29:02.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -616,14 +439,6 @@
     short_content_nl: ''
 - id: 26
   image: engine.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-12-20 10:48:30.000000000 Z
-    zone: *1
-    time: 2017-12-20 11:48:30.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -645,14 +460,6 @@
     short_content_nl: ''
 - id: 27
   image: industry.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-07 09:30:21.000000000 Z
-    zone: *1
-    time: 2014-01-07 10:30:21.000000000 Z
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
@@ -675,14 +482,6 @@
     short_content_nl: ''
 - id: 28
   image: industry.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-07 09:39:22.000000000 Z
-    zone: *1
-    time: 2014-01-07 10:39:22.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -707,14 +506,6 @@
     short_content_nl: ''
 - id: 29
   image: industry.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-07 09:30:34.000000000 Z
-    zone: *1
-    time: 2014-01-07 10:30:34.000000000 Z
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
@@ -734,14 +525,6 @@
     short_content_nl: ''
 - id: 30
   image: tractor_and_greenhouse.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-09 14:41:16.000000000 Z
-    zone: *1
-    time: 2012-08-09 16:41:16.000000000 Z
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
@@ -762,14 +545,6 @@
     short_content_nl: ''
 - id: 31
   image: tractor_and_greenhouse.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-07 13:37:56.000000000 Z
-    zone: *1
-    time: 2018-06-07 15:37:56.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -790,14 +565,6 @@
     short_content_nl: ''
 - id: 32
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: "%/year"
   group_sub_header:
   subheader_image:
@@ -816,14 +583,6 @@
     short_content_nl: ''
 - id: 34
   image: car_engine.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-01-03 12:45:55.000000000 Z
-    zone: *1
-    time: 2018-01-03 13:45:55.000000000 Z
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
@@ -844,14 +603,6 @@
     short_content_nl: ''
 - id: 35
   image: windmills.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-09-27 08:59:47.000000000 Z
-    zone: *1
-    time: 2012-09-27 10:59:47.000000000 Z
   general_sub_header: max surface
   group_sub_header: ''
   subheader_image: ''
@@ -870,14 +621,6 @@
     short_content_nl: ''
 - id: 36
   image: house_solarpanels.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: max surface
   group_sub_header: ''
   subheader_image: ''
@@ -897,14 +640,6 @@
     short_content_nl: ''
 - id: 37
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2011-03-10 06:04:33.000000000 Z
-    zone: *1
-    time: 2011-03-10 07:04:33.000000000 Z
   general_sub_header: max surface
   group_sub_header: ''
   subheader_image: ''
@@ -924,14 +659,6 @@
     short_content_nl: ''
 - id: 38
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-07-31 10:24:42.000000000 Z
-    zone: *1
-    time: 2012-07-31 12:24:42.000000000 Z
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
@@ -950,14 +677,6 @@
     short_content_nl: ''
 - id: 39
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-07-31 10:25:43.000000000 Z
-    zone: *1
-    time: 2012-07-31 12:25:43.000000000 Z
   general_sub_header: "% of total"
   group_sub_header: ''
   subheader_image: ''
@@ -976,14 +695,6 @@
     short_content_nl: ''
 - id: 40
   image: dependence_chart.png
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-09-27 08:58:47.000000000 Z
-    zone: *1
-    time: 2012-09-27 10:58:47.000000000 Z
   general_sub_header: maximum
   group_sub_header: ''
   subheader_image: ''
@@ -1016,14 +727,6 @@
     short_content_nl: ''
 - id: 41
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-09-27 08:59:08.000000000 Z
-    zone: *1
-    time: 2012-09-27 10:59:08.000000000 Z
   general_sub_header: maximum increase
   group_sub_header: ''
   subheader_image: ''
@@ -1040,14 +743,6 @@
     short_content_nl: ''
 - id: 42
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2011-03-10 06:04:33.000000000 Z
-    zone: *1
-    time: 2011-03-10 07:04:33.000000000 Z
   general_sub_header: 'NULL'
   group_sub_header:
   subheader_image:
@@ -1066,14 +761,6 @@
     short_content_nl: ''
 - id: 43
   image: house.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-11-15 13:44:51.000000000 Z
-    zone: *1
-    time: 2018-11-15 14:44:51.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-11-15 13:44:51.000000000 Z
-    zone: *1
-    time: 2018-11-15 14:44:51.000000000 Z
   general_sub_header: ''
   group_sub_header: "%/year"
   subheader_image: ''
@@ -1097,14 +784,6 @@
     short_content_nl: ''
 - id: 44
   image: industry_solarpanels.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-01-10 13:46:05.000000000 Z
-    zone: *1
-    time: 2019-01-10 14:46:05.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-20 10:54:31.000000000 Z
-    zone: *1
-    time: 2019-12-20 11:54:31.000000000 Z
   general_sub_header: heat output
   group_sub_header: ''
   subheader_image: ''
@@ -1129,14 +808,6 @@
     short_content_nl: ''
 - id: 45
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-05-09 14:40:21.000000000 Z
-    zone: *1
-    time: 2019-05-09 16:40:21.000000000 Z
   general_sub_header: electricity output
   group_sub_header: ''
   subheader_image: ''
@@ -1157,14 +828,6 @@
     short_content_nl: ''
 - id: 46
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-05-09 14:40:33.000000000 Z
-    zone: *1
-    time: 2019-05-09 16:40:33.000000000 Z
   general_sub_header: electricity output
   group_sub_header: ''
   subheader_image: ''
@@ -1185,14 +848,6 @@
     short_content_nl: ''
 - id: 47
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-05-09 14:40:58.000000000 Z
-    zone: *1
-    time: 2019-05-09 16:40:58.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -1215,14 +870,6 @@
     short_content_nl: ''
 - id: 48
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-05-09 14:40:47.000000000 Z
-    zone: *1
-    time: 2019-05-09 16:40:47.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -1251,14 +898,6 @@
     short_content_nl: ''
 - id: 49
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-12-12 14:16:02.000000000 Z
-    zone: *1
-    time: 2018-12-12 15:16:02.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-12-12 14:16:02.000000000 Z
-    zone: *1
-    time: 2018-12-12 15:16:02.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -1281,14 +920,6 @@
     short_content_nl: ''
 - id: 51
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-05-09 14:38:18.000000000 Z
-    zone: *1
-    time: 2019-05-09 16:38:18.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -1310,14 +941,6 @@
     short_content_nl: ''
 - id: 52
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-05-09 14:38:25.000000000 Z
-    zone: *1
-    time: 2019-05-09 16:38:25.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -1337,14 +960,6 @@
     short_content_nl: ''
 - id: 53
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-02 15:14:17.000000000 Z
-    zone: *1
-    time: 2020-01-02 16:14:17.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -1363,14 +978,6 @@
     short_content_nl: ''
 - id: 54
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-02 15:13:09.000000000 Z
-    zone: *1
-    time: 2020-01-02 16:13:09.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -1400,14 +1007,6 @@
     short_content_nl: ''
 - id: 55
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-02 15:17:15.000000000 Z
-    zone: *1
-    time: 2020-01-02 16:17:15.000000000 Z
   general_sub_header: electricity output
   group_sub_header: ''
   subheader_image: ''
@@ -1427,14 +1026,6 @@
     short_content_nl: ''
 - id: 61
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-01-16 15:21:40.000000000 Z
-    zone: *1
-    time: 2012-01-16 16:21:40.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -1455,14 +1046,6 @@
     short_content_nl: ''
 - id: 62
   image:
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2011-03-10 06:04:33.000000000 Z
-    zone: *1
-    time: 2011-03-10 07:04:33.000000000 Z
   general_sub_header: share
   group_sub_header:
   subheader_image:
@@ -1482,14 +1065,6 @@
     short_content_nl: ''
 - id: 63
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2011-03-10 06:04:33.000000000 Z
-    zone: *1
-    time: 2011-03-10 07:04:33.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image:
@@ -1509,14 +1084,6 @@
     short_content_nl: ''
 - id: 99
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-09-27 08:59:20.000000000 Z
-    zone: *1
-    time: 2012-09-27 10:59:20.000000000 Z
   general_sub_header: maximum increase
   group_sub_header: ''
   subheader_image: ''
@@ -1533,14 +1100,6 @@
     short_content_nl: ''
 - id: 102
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-10-10 11:36:39.000000000 Z
-    zone: *1
-    time: 2013-10-10 13:36:39.000000000 Z
   general_sub_header: number
   group_sub_header: ''
   subheader_image: ''
@@ -1561,14 +1120,6 @@
     short_content_nl: ''
 - id: 103
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -1610,14 +1161,6 @@
     short_content_nl: ''
 - id: 104
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -1660,14 +1203,6 @@
     short_content_nl: ''
 - id: 105
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2011-03-10 06:04:33.000000000 Z
-    zone: *1
-    time: 2011-03-10 07:04:33.000000000 Z
   general_sub_header: change
   group_sub_header:
   subheader_image:
@@ -1687,14 +1222,6 @@
     short_content_nl: ''
 - id: 108
   image: house_heating.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-07-10 11:58:19.000000000 Z
-    zone: *1
-    time: 2013-07-10 13:58:19.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -1713,14 +1240,6 @@
     short_content_nl: ''
 - id: 109
   image: house_heating.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-07-10 11:58:06.000000000 Z
-    zone: *1
-    time: 2013-07-10 13:58:06.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -1737,14 +1256,6 @@
     short_content_nl: ''
 - id: 110
   image: house_heating.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-11-15 13:45:04.000000000 Z
-    zone: *1
-    time: 2018-11-15 14:45:04.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-11-15 13:45:04.000000000 Z
-    zone: *1
-    time: 2018-11-15 14:45:04.000000000 Z
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
@@ -1763,14 +1274,6 @@
     short_content_nl: ''
 - id: 113
   image: building_uncapped.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-02-01 15:45:17.000000000 Z
-    zone: *1
-    time: 2019-02-01 16:45:17.000000000 Z
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
@@ -1791,14 +1294,6 @@
     short_content_nl: ''
 - id: 114
   image: building_insulation.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-12-19 14:38:51.000000000 Z
-    zone: *1
-    time: 2018-12-19 15:38:51.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-17 09:05:17.000000000 Z
-    zone: *1
-    time: 2019-04-17 11:05:17.000000000 Z
   general_sub_header: heat_demand_reduction
   group_sub_header: ''
   subheader_image: buildings_insulation_energy_label.png
@@ -1819,14 +1314,6 @@
     short_content_nl: ''
 - id: 115
   image: building_heating_uncapped.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: share
   group_sub_header:
   subheader_image:
@@ -1846,14 +1333,6 @@
     short_content_nl: ''
 - id: 116
   image: building_cooling_uncapped.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -1870,14 +1349,6 @@
     short_content_nl: ''
 - id: 117
   image: building_ventilation_uncapped.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-08-19 14:48:28.000000000 Z
-    zone: *1
-    time: 2013-08-19 16:48:28.000000000 Z
   general_sub_header: " "
   group_sub_header: ''
   subheader_image: ''
@@ -1896,14 +1367,6 @@
     short_content_nl: ''
 - id: 118
   image: building_appliances_uncapped.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
@@ -1922,14 +1385,6 @@
     short_content_nl: ''
 - id: 119
   image: building_lighting_uncapped.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:16.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:16.000000000 Z
   general_sub_header: share
   group_sub_header: "% of potential"
   subheader_image: ''
@@ -1949,14 +1404,6 @@
     short_content_nl: ''
 - id: 121
   image: building_decentral_uncapped.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-07-04 11:24:13.000000000 Z
-    zone: *1
-    time: 2012-07-04 13:24:13.000000000 Z
   general_sub_header: "% of potential"
   group_sub_header: ''
   subheader_image: ''
@@ -1975,14 +1422,6 @@
     short_content_nl: ''
 - id: 122
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-15 09:17:54.000000000 Z
-    zone: *1
-    time: 2018-06-15 11:17:54.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -2007,14 +1446,6 @@
     short_content_nl: ''
 - id: 123
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-28 13:06:42.000000000 Z
-    zone: *1
-    time: 2017-11-28 14:06:42.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -2035,14 +1466,6 @@
     short_content_nl: ''
 - id: 124
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2015-12-09 13:08:45.000000000 Z
-    zone: *1
-    time: 2015-12-09 14:08:45.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -2068,14 +1491,6 @@
     short_content_nl: ''
 - id: 125
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2015-12-10 11:28:37.000000000 Z
-    zone: *1
-    time: 2015-12-10 12:28:37.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -2099,14 +1514,6 @@
     short_content_nl: ''
 - id: 131
   image: car.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2011-03-10 06:04:34.000000000 Z
-    zone: *1
-    time: 2011-03-10 07:04:34.000000000 Z
   general_sub_header: number
   group_sub_header:
   subheader_image:
@@ -2118,14 +1525,6 @@
   dependent_on:
 - id: 140
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-12-14 09:43:39.000000000 Z
-    zone: *1
-    time: 2018-12-14 10:43:39.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-08-21 12:22:24.000000000 Z
-    zone: *1
-    time: 2019-08-21 14:22:24.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -2155,14 +1554,6 @@
     short_content_nl: ''
 - id: 143
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2011-04-20 11:13:17.000000000 Z
-    zone: *1
-    time: 2011-04-20 13:13:17.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:17.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:17.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -2190,14 +1581,6 @@
     short_content_nl: ''
 - id: 144
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2011-04-20 11:13:46.000000000 Z
-    zone: *1
-    time: 2011-04-20 13:13:46.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:17.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:17.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -2232,14 +1615,6 @@
     short_content_nl: ''
 - id: 145
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2011-04-20 11:14:10.000000000 Z
-    zone: *1
-    time: 2011-04-20 13:14:10.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:17.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:17.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -2268,14 +1643,6 @@
     short_content_nl:
 - id: 146
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2011-04-20 11:15:32.000000000 Z
-    zone: *1
-    time: 2011-04-20 13:15:32.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-12-10 19:07:53.000000000 Z
-    zone: *1
-    time: 2012-12-10 20:07:53.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -2302,14 +1669,6 @@
     short_content_nl: ''
 - id: 147
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2011-04-20 11:15:32.000000000 Z
-    zone: *1
-    time: 2011-04-20 13:15:32.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-12-10 19:08:26.000000000 Z
-    zone: *1
-    time: 2012-12-10 20:08:26.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -2338,14 +1697,6 @@
     short_content_nl: ''
 - id: 148
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2011-04-20 11:15:32.000000000 Z
-    zone: *1
-    time: 2011-04-20 13:15:32.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:17.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:17.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -2375,14 +1726,6 @@
     short_content_nl: ''
 - id: 151
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-03-13 12:48:53.000000000 Z
-    zone: *1
-    time: 2012-03-13 13:48:53.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-11-03 13:50:51.000000000 Z
-    zone: *1
-    time: 2014-11-03 14:50:51.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -2431,14 +1774,6 @@
     short_content_nl:
 - id: 152
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-03-13 12:53:13.000000000 Z
-    zone: *1
-    time: 2012-03-13 13:53:13.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-16 13:55:38.000000000 Z
-    zone: *1
-    time: 2020-01-16 14:55:38.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -2493,14 +1828,6 @@
     short_content_nl:
 - id: 153
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-03-13 13:23:00.000000000 Z
-    zone: *1
-    time: 2012-03-13 14:23:00.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-07-20 08:56:35.000000000 Z
-    zone: *1
-    time: 2016-07-20 10:56:35.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -2551,14 +1878,6 @@
     short_content_nl:
 - id: 154
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-03-13 19:54:25.000000000 Z
-    zone: *1
-    time: 2012-03-13 20:54:25.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:17.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:17.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -2578,14 +1897,6 @@
     short_content_nl:
 - id: 155
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2015-12-10 11:24:42.000000000 Z
-    zone: *1
-    time: 2015-12-10 12:24:42.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -2610,14 +1921,6 @@
     short_content_nl: ''
 - id: 156
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:57.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-28 13:55:17.000000000 Z
-    zone: *1
-    time: 2012-06-28 15:55:17.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -2645,14 +1948,6 @@
     short_content_nl: ''
 - id: 157
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-18 14:28:20.000000000 Z
-    zone: *1
-    time: 2012-06-18 16:28:20.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-09 09:59:37.000000000 Z
-    zone: *1
-    time: 2020-01-09 10:59:37.000000000 Z
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
@@ -2672,14 +1967,6 @@
     short_content_nl:
 - id: 158
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-24 20:00:38.000000000 Z
-    zone: *1
-    time: 2012-08-24 22:00:38.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-24 20:00:38.000000000 Z
-    zone: *1
-    time: 2012-08-24 22:00:38.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -2714,14 +2001,6 @@
     short_content_nl:
 - id: 159
   image: industry.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-09-07 09:42:28.000000000 Z
-    zone: *1
-    time: 2012-09-07 11:42:28.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-10-15 12:30:54.000000000 Z
-    zone: *1
-    time: 2012-10-15 14:30:54.000000000 Z
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
@@ -2744,14 +2023,6 @@
     short_content_nl:
 - id: 160
   image: industry.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-09-07 13:24:20.000000000 Z
-    zone: *1
-    time: 2012-09-07 15:24:20.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-30 09:00:07.000000000 Z
-    zone: *1
-    time: 2016-08-30 11:00:07.000000000 Z
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
@@ -2774,14 +2045,6 @@
     short_content_nl:
 - id: 161
   image: industry.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-09-12 12:44:00.000000000 Z
-    zone: *1
-    time: 2012-09-12 14:44:00.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-09 15:35:50.000000000 Z
-    zone: *1
-    time: 2016-08-09 17:35:50.000000000 Z
   general_sub_header: ''
   group_sub_header: "%/year"
   subheader_image: ''
@@ -2802,14 +2065,6 @@
     short_content_nl:
 - id: 162
   image: industry.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-10-04 14:48:58.000000000 Z
-    zone: *1
-    time: 2012-10-04 16:48:58.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-09 15:36:23.000000000 Z
-    zone: *1
-    time: 2016-08-09 17:36:23.000000000 Z
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
@@ -2834,14 +2089,6 @@
     short_content_nl:
 - id: 163
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-11-05 13:00:19.000000000 Z
-    zone: *1
-    time: 2012-11-05 14:00:19.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-11 15:27:03.000000000 Z
-    zone: *1
-    time: 2019-11-11 16:27:03.000000000 Z
   general_sub_header: temperature
   group_sub_header: ''
   subheader_image: ''
@@ -2884,14 +2131,6 @@
     short_content_nl:
 - id: 164
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-12-10 19:06:29.000000000 Z
-    zone: *1
-    time: 2012-12-10 20:06:29.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-12-11 17:00:32.000000000 Z
-    zone: *1
-    time: 2012-12-11 18:00:32.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -2922,14 +2161,6 @@
     short_content_nl:
 - id: 165
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-06-07 14:27:09.000000000 Z
-    zone: *1
-    time: 2013-06-07 16:27:09.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-16 15:01:48.000000000 Z
-    zone: *1
-    time: 2017-11-16 16:01:48.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -2974,14 +2205,6 @@
     short_content_nl:
 - id: 166
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-06-07 16:00:14.000000000 Z
-    zone: *1
-    time: 2013-06-07 18:00:14.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-09-27 09:58:00.000000000 Z
-    zone: *1
-    time: 2019-09-27 11:58:00.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3002,14 +2225,6 @@
     short_content_nl:
 - id: 168
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-06-07 16:09:51.000000000 Z
-    zone: *1
-    time: 2013-06-07 18:09:51.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-03-05 15:42:23.000000000 Z
-    zone: *1
-    time: 2018-03-05 16:42:23.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3034,14 +2249,6 @@
     short_content_nl:
 - id: 169
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-06-10 09:38:42.000000000 Z
-    zone: *1
-    time: 2013-06-10 11:38:42.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-16 15:01:49.000000000 Z
-    zone: *1
-    time: 2017-11-16 16:01:49.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3081,14 +2288,6 @@
     short_content_nl:
 - id: 170
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-06-18 08:04:17.000000000 Z
-    zone: *1
-    time: 2013-06-18 10:04:17.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-02-07 17:18:31.000000000 Z
-    zone: *1
-    time: 2019-02-07 18:18:31.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3123,14 +2322,6 @@
     short_content_nl:
 - id: 171
   image: house.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-07-10 12:01:19.000000000 Z
-    zone: *1
-    time: 2013-07-10 14:01:19.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-11-15 13:52:17.000000000 Z
-    zone: *1
-    time: 2018-11-15 14:52:17.000000000 Z
   general_sub_header: number
   group_sub_header: ''
   subheader_image: ''
@@ -3149,14 +2340,6 @@
     short_content_nl:
 - id: 172
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-11-04 09:55:13.000000000 Z
-    zone: *1
-    time: 2013-11-04 10:55:13.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-07-20 09:54:47.000000000 Z
-    zone: *1
-    time: 2016-07-20 11:54:47.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3196,14 +2379,6 @@
     short_content_nl:
 - id: 173
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-11-04 10:05:21.000000000 Z
-    zone: *1
-    time: 2013-11-04 11:05:21.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-07-20 09:55:01.000000000 Z
-    zone: *1
-    time: 2016-07-20 11:55:01.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3234,14 +2409,6 @@
     short_content_nl:
 - id: 174
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-11-04 10:16:21.000000000 Z
-    zone: *1
-    time: 2013-11-04 11:16:21.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-15 13:42:49.000000000 Z
-    zone: *1
-    time: 2018-06-15 15:42:49.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3290,14 +2457,6 @@
     short_content_nl:
 - id: 175
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-11-05 15:24:18.000000000 Z
-    zone: *1
-    time: 2013-11-05 16:24:18.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-07-20 09:55:33.000000000 Z
-    zone: *1
-    time: 2016-07-20 11:55:33.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3342,14 +2501,6 @@
     short_content_nl:
 - id: 176
   image: industry.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-12-04 13:40:23.000000000 Z
-    zone: *1
-    time: 2013-12-04 14:40:23.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-14 10:46:50.000000000 Z
-    zone: *1
-    time: 2014-01-14 11:46:50.000000000 Z
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
@@ -3370,14 +2521,6 @@
     short_content_nl:
 - id: 177
   image: industry.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-12-04 15:38:13.000000000 Z
-    zone: *1
-    time: 2013-12-04 16:38:13.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-14 10:47:03.000000000 Z
-    zone: *1
-    time: 2014-01-14 11:47:03.000000000 Z
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
@@ -3397,14 +2540,6 @@
     short_content_nl:
 - id: 178
   image: industry.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-12-04 15:53:37.000000000 Z
-    zone: *1
-    time: 2013-12-04 16:53:37.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-12-05 10:12:59.000000000 Z
-    zone: *1
-    time: 2013-12-05 11:12:59.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -3429,14 +2564,6 @@
     short_content_nl:
 - id: 179
   image: industry.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-06 10:26:50.000000000 Z
-    zone: *1
-    time: 2014-01-06 11:26:50.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-10-09 07:59:51.000000000 Z
-    zone: *1
-    time: 2018-10-09 09:59:51.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3474,14 +2601,6 @@
     short_content_nl:
 - id: 180
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-04-28 12:01:18.000000000 Z
-    zone: *1
-    time: 2014-04-28 14:01:18.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-05-15 11:12:43.000000000 Z
-    zone: *1
-    time: 2014-05-15 13:12:43.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3515,14 +2634,6 @@
     short_content_nl:
 - id: 181
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-04-28 12:40:07.000000000 Z
-    zone: *1
-    time: 2014-04-28 14:40:07.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-05-15 11:12:07.000000000 Z
-    zone: *1
-    time: 2014-05-15 13:12:07.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3556,14 +2667,6 @@
     short_content_nl:
 - id: 182
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-04-28 12:42:04.000000000 Z
-    zone: *1
-    time: 2014-04-28 14:42:04.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-05-15 11:12:59.000000000 Z
-    zone: *1
-    time: 2014-05-15 13:12:59.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3597,14 +2700,6 @@
     short_content_nl:
 - id: 184
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-04-28 13:14:52.000000000 Z
-    zone: *1
-    time: 2014-04-28 15:14:52.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-05-15 11:13:25.000000000 Z
-    zone: *1
-    time: 2014-05-15 13:13:25.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3638,14 +2733,6 @@
     short_content_nl:
 - id: 185
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-04-28 13:52:35.000000000 Z
-    zone: *1
-    time: 2014-04-28 15:52:35.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-04-28 13:52:35.000000000 Z
-    zone: *1
-    time: 2014-04-28 15:52:35.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3688,14 +2775,6 @@
     short_content_nl:
 - id: 186
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2015-03-17 10:59:52.000000000 Z
-    zone: *1
-    time: 2015-03-17 11:59:52.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-08-07 07:28:30.000000000 Z
-    zone: *1
-    time: 2018-08-07 09:28:30.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3728,14 +2807,6 @@
     short_content_nl:
 - id: 187
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2015-03-17 15:19:46.000000000 Z
-    zone: *1
-    time: 2015-03-17 16:19:46.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-07-20 09:54:31.000000000 Z
-    zone: *1
-    time: 2016-07-20 11:54:31.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3768,14 +2839,6 @@
     short_content_nl:
 - id: 191
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2015-11-09 08:19:36.000000000 Z
-    zone: *1
-    time: 2015-11-09 09:19:36.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2015-11-09 08:19:36.000000000 Z
-    zone: *1
-    time: 2015-11-09 09:19:36.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -3798,14 +2861,6 @@
     short_content_nl:
 - id: 192
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2015-11-16 13:29:30.000000000 Z
-    zone: *1
-    time: 2015-11-16 14:29:30.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2015-11-16 13:29:30.000000000 Z
-    zone: *1
-    time: 2015-11-16 14:29:30.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3835,14 +2890,6 @@
     short_content_nl:
 - id: 193
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-03-29 11:07:33.000000000 Z
-    zone: *1
-    time: 2018-03-29 13:07:33.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-10-02 12:44:30.000000000 Z
-    zone: *1
-    time: 2018-10-02 14:44:30.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3883,14 +2930,6 @@
     short_content_nl:
 - id: 194
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-02-02 10:33:08.000000000 Z
-    zone: *1
-    time: 2016-02-02 11:33:08.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-03-01 13:09:37.000000000 Z
-    zone: *1
-    time: 2018-03-01 14:09:37.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3932,14 +2971,6 @@
     short_content_nl:
 - id: 195
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-02-05 15:07:50.000000000 Z
-    zone: *1
-    time: 2016-02-05 16:07:50.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-02-05 15:11:00.000000000 Z
-    zone: *1
-    time: 2016-02-05 16:11:00.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -3960,14 +2991,6 @@
     short_content_nl:
 - id: 196
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-07-20 08:55:20.000000000 Z
-    zone: *1
-    time: 2016-07-20 10:55:20.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-10-14 11:05:38.000000000 Z
-    zone: *1
-    time: 2016-10-14 13:05:38.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -4022,14 +3045,6 @@
     short_content_nl:
 - id: 197
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-07-20 08:56:01.000000000 Z
-    zone: *1
-    time: 2016-07-20 10:56:01.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-07-08 13:51:18.000000000 Z
-    zone: *1
-    time: 2019-07-08 15:51:18.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -4102,14 +3117,6 @@
     short_content_nl:
 - id: 198
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-07-20 09:16:33.000000000 Z
-    zone: *1
-    time: 2016-07-20 11:16:33.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-02-26 09:38:53.000000000 Z
-    zone: *1
-    time: 2018-02-26 10:38:53.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -4139,14 +3146,6 @@
     short_content_nl:
 - id: 199
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-08 15:31:09.000000000 Z
-    zone: *1
-    time: 2016-08-08 17:31:09.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-09-14 08:25:08.000000000 Z
-    zone: *1
-    time: 2016-09-14 10:25:08.000000000 Z
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
@@ -4185,14 +3184,6 @@
     short_content_nl:
 - id: 201
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-09 07:45:06.000000000 Z
-    zone: *1
-    time: 2016-08-09 09:45:06.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-09 14:02:32.000000000 Z
-    zone: *1
-    time: 2016-08-09 16:02:32.000000000 Z
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
@@ -4223,14 +3214,6 @@
     short_content_nl:
 - id: 202
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-09 08:06:39.000000000 Z
-    zone: *1
-    time: 2016-08-09 10:06:39.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-09 14:02:42.000000000 Z
-    zone: *1
-    time: 2016-08-09 16:02:42.000000000 Z
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
@@ -4260,14 +3243,6 @@
     short_content_nl:
 - id: 203
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-09 08:22:16.000000000 Z
-    zone: *1
-    time: 2016-08-09 10:22:16.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-11 16:17:21.000000000 Z
-    zone: *1
-    time: 2019-11-11 17:17:21.000000000 Z
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
@@ -4288,14 +3263,6 @@
     short_content_nl:
 - id: 204
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-09 08:27:26.000000000 Z
-    zone: *1
-    time: 2016-08-09 10:27:26.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-11 16:29:51.000000000 Z
-    zone: *1
-    time: 2019-11-11 17:29:51.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -4317,14 +3284,6 @@
     short_content_nl:
 - id: 205
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-09 08:31:01.000000000 Z
-    zone: *1
-    time: 2016-08-09 10:31:01.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-10-10 14:35:24.000000000 Z
-    zone: *1
-    time: 2018-10-10 16:35:24.000000000 Z
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
@@ -4345,14 +3304,6 @@
     short_content_nl:
 - id: 207
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-09 08:53:04.000000000 Z
-    zone: *1
-    time: 2016-08-09 10:53:04.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-10 14:38:54.000000000 Z
-    zone: *1
-    time: 2016-08-10 16:38:54.000000000 Z
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
@@ -4372,14 +3323,6 @@
     short_content_nl:
 - id: 208
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-22 13:12:53.000000000 Z
-    zone: *1
-    time: 2016-08-22 15:12:53.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-12-14 09:03:18.000000000 Z
-    zone: *1
-    time: 2018-12-14 10:03:18.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -4415,14 +3358,6 @@
     short_content_nl:
 - id: 211
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-23 14:48:59.000000000 Z
-    zone: *1
-    time: 2016-08-23 16:48:59.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-30 09:02:52.000000000 Z
-    zone: *1
-    time: 2016-08-30 11:02:52.000000000 Z
   general_sub_header: ''
   group_sub_header: "%/year"
   subheader_image: ''
@@ -4443,14 +3378,6 @@
     short_content_nl:
 - id: 212
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-04-19 08:21:33.000000000 Z
-    zone: *1
-    time: 2017-04-19 10:21:33.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-28 09:42:11.000000000 Z
-    zone: *1
-    time: 2017-11-28 10:42:11.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -4478,14 +3405,6 @@
     short_content_nl:
 - id: 214
   image:
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-08-11 16:16:45.000000000 Z
-    zone: *1
-    time: 2017-08-11 18:16:45.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-08-11 16:16:45.000000000 Z
-    zone: *1
-    time: 2017-08-11 18:16:45.000000000 Z
   general_sub_header:
   group_sub_header:
   subheader_image:
@@ -4510,14 +3429,6 @@
     short_content_nl:
 - id: 215
   image:
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-08-11 16:16:45.000000000 Z
-    zone: *1
-    time: 2017-08-11 18:16:45.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-08-11 16:16:45.000000000 Z
-    zone: *1
-    time: 2017-08-11 18:16:45.000000000 Z
   general_sub_header:
   group_sub_header:
   subheader_image:
@@ -4542,14 +3453,6 @@
     short_content_nl:
 - id: 216
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-08-23 14:57:05.000000000 Z
-    zone: *1
-    time: 2017-08-23 16:57:05.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-28 09:42:37.000000000 Z
-    zone: *1
-    time: 2017-11-28 10:42:37.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -4586,14 +3489,6 @@
     short_content_nl:
 - id: 218
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-10-12 14:39:03.000000000 Z
-    zone: *1
-    time: 2017-10-12 16:39:03.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-07-08 13:50:56.000000000 Z
-    zone: *1
-    time: 2019-07-08 15:50:56.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -4620,14 +3515,6 @@
     short_content_nl:
 - id: 219
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-15 16:30:59.000000000 Z
-    zone: *1
-    time: 2017-11-15 17:30:59.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-23 15:27:32.000000000 Z
-    zone: *1
-    time: 2017-11-23 16:27:32.000000000 Z
   general_sub_header: of_total
   group_sub_header: ''
   subheader_image: ''
@@ -4658,14 +3545,6 @@
     short_content_nl:
 - id: 220
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-15 16:30:59.000000000 Z
-    zone: *1
-    time: 2017-11-15 17:30:59.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-23 14:46:47.000000000 Z
-    zone: *1
-    time: 2017-11-23 15:46:47.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -4692,14 +3571,6 @@
     short_content_nl:
 - id: 221
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-15 16:30:59.000000000 Z
-    zone: *1
-    time: 2017-11-15 17:30:59.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-01-16 15:19:11.000000000 Z
-    zone: *1
-    time: 2018-01-16 16:19:11.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -4723,14 +3594,6 @@
     short_content_nl:
 - id: 222
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-15 16:30:59.000000000 Z
-    zone: *1
-    time: 2017-11-15 17:30:59.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-23 15:27:52.000000000 Z
-    zone: *1
-    time: 2017-11-23 16:27:52.000000000 Z
   general_sub_header: year
   group_sub_header: ''
   subheader_image: ''
@@ -4751,14 +3614,6 @@
     short_content_nl:
 - id: 223
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-15 16:30:59.000000000 Z
-    zone: *1
-    time: 2017-11-15 17:30:59.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-02-07 14:59:41.000000000 Z
-    zone: *1
-    time: 2018-02-07 15:59:41.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -4779,14 +3634,6 @@
     short_content_nl:
 - id: 224
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-15 16:30:59.000000000 Z
-    zone: *1
-    time: 2017-11-15 17:30:59.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-02-07 14:59:53.000000000 Z
-    zone: *1
-    time: 2018-02-07 15:59:53.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -4809,14 +3656,6 @@
     short_content_nl:
 - id: 225
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-16 15:01:49.000000000 Z
-    zone: *1
-    time: 2017-11-16 16:01:49.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-03-05 15:42:52.000000000 Z
-    zone: *1
-    time: 2018-03-05 16:42:52.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -4853,14 +3692,6 @@
     short_content_nl:
 - id: 226
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-03 13:15:28.000000000 Z
-    zone: *1
-    time: 2017-11-03 14:15:28.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-12-07 12:47:58.000000000 Z
-    zone: *1
-    time: 2017-12-07 13:47:58.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -4882,14 +3713,6 @@
     short_content_nl:
 - id: 227
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-03 13:18:17.000000000 Z
-    zone: *1
-    time: 2017-11-03 14:18:17.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-12-07 12:48:32.000000000 Z
-    zone: *1
-    time: 2017-12-07 13:48:32.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -4906,14 +3729,6 @@
     short_content_nl:
 - id: 228
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-03 13:21:54.000000000 Z
-    zone: *1
-    time: 2017-11-03 14:21:54.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-12-07 12:48:25.000000000 Z
-    zone: *1
-    time: 2017-12-07 13:48:25.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -4932,14 +3747,6 @@
     short_content_nl:
 - id: 229
   image: truck.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-03 13:22:59.000000000 Z
-    zone: *1
-    time: 2017-11-03 14:22:59.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-12-20 10:35:10.000000000 Z
-    zone: *1
-    time: 2017-12-20 11:35:10.000000000 Z
   general_sub_header: year
   group_sub_header: share
   subheader_image: ''
@@ -4972,14 +3779,6 @@
     short_content_nl:
 - id: 230
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-03 13:34:31.000000000 Z
-    zone: *1
-    time: 2017-11-03 14:34:31.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-28 14:25:13.000000000 Z
-    zone: *1
-    time: 2017-11-28 15:25:13.000000000 Z
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
@@ -5003,14 +3802,6 @@
     short_content_nl:
 - id: 232
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-28 12:55:25.000000000 Z
-    zone: *1
-    time: 2017-11-28 13:55:25.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-04-18 15:31:39.000000000 Z
-    zone: *1
-    time: 2018-04-18 17:31:39.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5031,14 +3822,6 @@
     short_content_nl:
 - id: 233
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-28 12:56:19.000000000 Z
-    zone: *1
-    time: 2017-11-28 13:56:19.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-04-18 15:30:14.000000000 Z
-    zone: *1
-    time: 2018-04-18 17:30:14.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5060,14 +3843,6 @@
     short_content_nl:
 - id: 234
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-12-07 12:50:43.000000000 Z
-    zone: *1
-    time: 2017-12-07 13:50:43.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-12-07 12:52:51.000000000 Z
-    zone: *1
-    time: 2017-12-07 13:52:51.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5084,14 +3859,6 @@
     short_content_nl:
 - id: 235
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-01-03 12:47:27.000000000 Z
-    zone: *1
-    time: 2018-01-03 13:47:27.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-01-03 13:00:31.000000000 Z
-    zone: *1
-    time: 2018-01-03 14:00:31.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5118,14 +3885,6 @@
     short_content_nl:
 - id: 236
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-01-05 11:18:47.000000000 Z
-    zone: *1
-    time: 2018-01-05 12:18:47.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-01-05 15:53:25.000000000 Z
-    zone: *1
-    time: 2018-01-05 16:53:25.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5156,14 +3915,6 @@
     short_content_nl:
 - id: 237
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-01-18 13:54:14.000000000 Z
-    zone: *1
-    time: 2018-01-18 14:54:14.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-10-09 08:10:22.000000000 Z
-    zone: *1
-    time: 2018-10-09 10:10:22.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5180,14 +3931,6 @@
     short_content_nl:
 - id: 238
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-02-20 13:29:04.000000000 Z
-    zone: *1
-    time: 2018-02-20 14:29:04.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-07-08 17:02:41.000000000 Z
-    zone: *1
-    time: 2019-07-08 19:02:41.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5205,14 +3948,6 @@
     short_content_nl:
 - id: 239
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-03-13 11:21:48.000000000 Z
-    zone: *1
-    time: 2018-03-13 12:21:48.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-02 15:16:53.000000000 Z
-    zone: *1
-    time: 2020-01-02 16:16:53.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5239,14 +3974,6 @@
     short_content_nl:
 - id: 240
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-03-21 13:43:58.000000000 Z
-    zone: *1
-    time: 2018-03-21 14:43:58.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-10-02 13:12:06.000000000 Z
-    zone: *1
-    time: 2018-10-02 15:12:06.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5285,14 +4012,6 @@
     short_content_nl:
 - id: 242
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-03-30 14:31:57.000000000 Z
-    zone: *1
-    time: 2018-03-30 16:31:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-09-19 12:03:58.000000000 Z
-    zone: *1
-    time: 2018-09-19 14:03:58.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5328,14 +4047,6 @@
     short_content_nl:
 - id: 243
   image:
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-04-18 11:19:45.000000000 Z
-    zone: *1
-    time: 2018-04-18 13:19:45.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-04-18 11:19:45.000000000 Z
-    zone: *1
-    time: 2018-04-18 13:19:45.000000000 Z
   general_sub_header:
   group_sub_header:
   subheader_image:
@@ -5347,14 +4058,6 @@
   dependent_on: ''
 - id: 244
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-04-20 13:51:08.000000000 Z
-    zone: *1
-    time: 2018-04-20 15:51:08.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-04-20 13:51:08.000000000 Z
-    zone: *1
-    time: 2018-04-20 15:51:08.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5371,14 +4074,6 @@
     short_content_nl:
 - id: 245
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-05-17 16:09:58.000000000 Z
-    zone: *1
-    time: 2018-05-17 18:09:58.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-05-18 07:57:21.000000000 Z
-    zone: *1
-    time: 2018-05-18 09:57:21.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5398,14 +4093,6 @@
     short_content_nl:
 - id: 246
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-05-17 16:19:04.000000000 Z
-    zone: *1
-    time: 2018-05-17 18:19:04.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-05-17 16:19:04.000000000 Z
-    zone: *1
-    time: 2018-05-17 18:19:04.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5426,14 +4113,6 @@
     short_content_nl:
 - id: 248
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-28 14:00:46.000000000 Z
-    zone: *1
-    time: 2018-06-28 16:00:46.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-28 14:00:46.000000000 Z
-    zone: *1
-    time: 2018-06-28 16:00:46.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5462,14 +4141,6 @@
     short_content_nl:
 - id: 249
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-07-18 17:46:20.000000000 Z
-    zone: *1
-    time: 2018-07-18 19:46:20.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-07-19 07:14:46.000000000 Z
-    zone: *1
-    time: 2018-07-19 09:14:46.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5494,14 +4165,6 @@
     short_content_nl:
 - id: 250
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-07-18 17:46:20.000000000 Z
-    zone: *1
-    time: 2018-07-18 19:46:20.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-07-19 07:15:47.000000000 Z
-    zone: *1
-    time: 2018-07-19 09:15:47.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5524,14 +4187,6 @@
     short_content_nl:
 - id: 251
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-07-18 17:46:20.000000000 Z
-    zone: *1
-    time: 2018-07-18 19:46:20.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-14 10:26:26.000000000 Z
-    zone: *1
-    time: 2019-11-14 11:26:26.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5555,14 +4210,6 @@
     short_content_nl:
 - id: 252
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-08-07 07:26:59.000000000 Z
-    zone: *1
-    time: 2018-08-07 09:26:59.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-08-07 07:26:59.000000000 Z
-    zone: *1
-    time: 2018-08-07 09:26:59.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5590,14 +4237,6 @@
     short_content_nl:
 - id: 253
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-09-18 14:41:38.000000000 Z
-    zone: *1
-    time: 2018-09-18 16:41:38.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-09-18 14:41:38.000000000 Z
-    zone: *1
-    time: 2018-09-18 16:41:38.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5614,14 +4253,6 @@
     short_content_nl:
 - id: 254
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-09-18 14:42:05.000000000 Z
-    zone: *1
-    time: 2018-09-18 16:42:05.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-09-19 15:21:38.000000000 Z
-    zone: *1
-    time: 2018-09-19 17:21:38.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5638,14 +4269,6 @@
     short_content_nl:
 - id: 255
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-09-18 14:42:22.000000000 Z
-    zone: *1
-    time: 2018-09-18 16:42:22.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-09-19 15:20:41.000000000 Z
-    zone: *1
-    time: 2018-09-19 17:20:41.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5664,14 +4287,6 @@
     short_content_nl:
 - id: 256
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-09-18 14:51:14.000000000 Z
-    zone: *1
-    time: 2018-09-18 16:51:14.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-10-02 13:12:08.000000000 Z
-    zone: *1
-    time: 2018-10-02 15:12:08.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5703,14 +4318,6 @@
     short_content_nl:
 - id: 257
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-09-19 12:03:12.000000000 Z
-    zone: *1
-    time: 2018-09-19 14:03:12.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-10-02 12:45:10.000000000 Z
-    zone: *1
-    time: 2018-10-02 14:45:10.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5749,14 +4356,6 @@
     short_content_nl:
 - id: 258
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-10-29 11:11:49.000000000 Z
-    zone: *1
-    time: 2018-10-29 12:11:49.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-11 15:49:58.000000000 Z
-    zone: *1
-    time: 2019-11-11 16:49:58.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5784,14 +4383,6 @@
     short_content_nl:
 - id: 259
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-12-12 13:44:37.000000000 Z
-    zone: *1
-    time: 2018-12-12 14:44:37.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-08-16 07:31:24.000000000 Z
-    zone: *1
-    time: 2019-08-16 09:31:24.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5831,14 +4422,6 @@
     short_content_nl:
 - id: 260
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-12-14 09:04:32.000000000 Z
-    zone: *1
-    time: 2018-12-14 10:04:32.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-08-21 12:46:14.000000000 Z
-    zone: *1
-    time: 2019-08-21 14:46:14.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5859,14 +4442,6 @@
     short_content_nl:
 - id: 263
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-01-11 08:37:35.000000000 Z
-    zone: *1
-    time: 2019-01-11 09:37:35.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-09 09:48:40.000000000 Z
-    zone: *1
-    time: 2020-01-09 10:48:40.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5888,14 +4463,6 @@
     short_content_nl:
 - id: 264
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-01-11 08:39:49.000000000 Z
-    zone: *1
-    time: 2019-01-11 09:39:49.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-09 10:16:19.000000000 Z
-    zone: *1
-    time: 2020-01-09 11:16:19.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -5917,14 +4484,6 @@
     short_content_nl:
 - id: 265
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 13:36:04.000000000 Z
-    zone: *1
-    time: 2019-04-18 15:36:04.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-06-21 14:08:28.000000000 Z
-    zone: *1
-    time: 2019-06-21 16:08:28.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -6002,14 +4561,6 @@
     short_content_nl:
 - id: 266
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 14:11:53.000000000 Z
-    zone: *1
-    time: 2019-04-18 16:11:53.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-05-10 07:34:25.000000000 Z
-    zone: *1
-    time: 2019-05-10 09:34:25.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -6048,14 +4599,6 @@
     short_content_nl:
 - id: 267
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 14:13:51.000000000 Z
-    zone: *1
-    time: 2019-04-18 16:13:51.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 14:13:51.000000000 Z
-    zone: *1
-    time: 2019-04-18 16:13:51.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -6089,14 +4632,6 @@
     short_content_nl:
 - id: 268
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-07-19 14:28:02.000000000 Z
-    zone: *1
-    time: 2019-07-19 16:28:02.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-08-21 12:21:56.000000000 Z
-    zone: *1
-    time: 2019-08-21 14:21:56.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -6136,14 +4671,6 @@
     short_content_nl:
 - id: 269
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-07-31 10:25:04.000000000 Z
-    zone: *1
-    time: 2019-07-31 12:25:04.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-08-27 17:46:18.000000000 Z
-    zone: *1
-    time: 2019-08-27 19:46:18.000000000 Z
   general_sub_header: price
   group_sub_header: ''
   subheader_image: ''
@@ -6162,14 +4689,6 @@
     short_content_nl:
 - id: 270
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-08-16 10:04:41.000000000 Z
-    zone: *1
-    time: 2019-08-16 12:04:41.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-08-16 10:04:41.000000000 Z
-    zone: *1
-    time: 2019-08-16 12:04:41.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -6196,14 +4715,6 @@
     short_content_nl:
 - id: 271
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-11 15:50:00.000000000 Z
-    zone: *1
-    time: 2019-11-11 16:50:00.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-11 15:50:00.000000000 Z
-    zone: *1
-    time: 2019-11-11 16:50:00.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -6231,14 +4742,6 @@
     short_content_nl:
 - id: 272
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-13 12:56:10.000000000 Z
-    zone: *1
-    time: 2019-11-13 13:56:10.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-13 14:51:34.000000000 Z
-    zone: *1
-    time: 2019-11-13 15:51:34.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -6268,14 +4771,6 @@
     short_content_nl:
 - id: 273
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-14 08:44:18.000000000 Z
-    zone: *1
-    time: 2019-11-14 09:44:18.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-14 10:26:31.000000000 Z
-    zone: *1
-    time: 2019-11-14 11:26:31.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -6298,14 +4793,6 @@
     short_content_nl:
 - id: 274
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-13 14:17:08.000000000 Z
-    zone: *1
-    time: 2019-12-13 15:17:08.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-13 16:19:01.000000000 Z
-    zone: *1
-    time: 2019-12-13 17:19:01.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -6331,14 +4818,6 @@
     short_content_nl:
 - id: 275
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-20 10:54:31.000000000 Z
-    zone: *1
-    time: 2019-12-20 11:54:31.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-15 08:52:52.000000000 Z
-    zone: *1
-    time: 2020-01-15 09:52:52.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -6375,14 +4854,6 @@
     short_content_nl:
 - id: 276
   image:
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-20 10:54:31.000000000 Z
-    zone: *1
-    time: 2019-12-20 11:54:31.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-20 10:54:31.000000000 Z
-    zone: *1
-    time: 2019-12-20 11:54:31.000000000 Z
   general_sub_header:
   group_sub_header:
   subheader_image:
@@ -6423,14 +4894,6 @@
     short_content_nl:
 - id: 277
   image: house_direct_heating.gif
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-20 10:54:31.000000000 Z
-    zone: *1
-    time: 2019-12-20 11:54:31.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-02 14:39:07.000000000 Z
-    zone: *1
-    time: 2020-01-02 15:39:07.000000000 Z
   general_sub_header: heat_output
   group_sub_header: ''
   subheader_image: ''
@@ -6484,14 +4947,6 @@
     short_content_nl:
 - id: 278
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-20 16:26:23.000000000 Z
-    zone: *1
-    time: 2019-12-20 17:26:23.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 08:53:14.000000000 Z
-    zone: *1
-    time: 2020-01-06 09:53:14.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -6545,14 +5000,6 @@
     short_content_nl:
 - id: 279
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-02 15:18:07.000000000 Z
-    zone: *1
-    time: 2020-01-02 16:18:07.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-02 15:41:50.000000000 Z
-    zone: *1
-    time: 2020-01-02 16:41:50.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -6569,14 +5016,6 @@
     short_content_nl:
 - id: 280
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-03 16:21:25.000000000 Z
-    zone: *1
-    time: 2020-01-03 17:21:25.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-03 16:21:25.000000000 Z
-    zone: *1
-    time: 2020-01-03 17:21:25.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
@@ -6603,14 +5042,6 @@
     short_content_nl:
 - id: 281
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-09 10:15:37.000000000 Z
-    zone: *1
-    time: 2020-01-09 11:15:37.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-09 10:15:37.000000000 Z
-    zone: *1
-    time: 2020-01-09 11:15:37.000000000 Z
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
@@ -6631,14 +5062,6 @@
     short_content_nl:
 - id: 282
   image: ''
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-16 15:14:03.000000000 Z
-    zone: *1
-    time: 2020-01-16 16:14:03.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-16 15:25:16.000000000 Z
-    zone: *1
-    time: 2020-01-16 16:25:16.000000000 Z
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''

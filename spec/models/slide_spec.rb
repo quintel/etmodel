@@ -25,8 +25,6 @@ describe Slide do
 
     # Attributes
     it { is_expected.to respond_to(:image) }
-    it { is_expected.to respond_to(:created_at) }
-    it { is_expected.to respond_to(:updated_at) }
     it { is_expected.to respond_to(:general_sub_header) }
     it { is_expected.to respond_to(:group_sub_header) }
     it { is_expected.to respond_to(:subheader_image) }

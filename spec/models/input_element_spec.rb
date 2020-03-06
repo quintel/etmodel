@@ -21,11 +21,8 @@ describe InputElement do
     it { is_expected.to respond_to(:key) }
     it { is_expected.to respond_to(:share_group) }
     it { is_expected.to respond_to(:step_value) }
-    it { is_expected.to respond_to(:created_at) }
-    it { is_expected.to respond_to(:updated_at) }
     it { is_expected.to respond_to(:unit) }
     it { is_expected.to respond_to(:fixed) }
-    it { is_expected.to respond_to(:comments) }
     it { is_expected.to respond_to(:interface_group) }
     it { is_expected.to respond_to(:command_type) }
     it { is_expected.to respond_to(:related_converter) }

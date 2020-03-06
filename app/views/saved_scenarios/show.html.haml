@@ -13,9 +13,6 @@
   = link_to t("scenario.load_factsheet"),
             factsheet_scenario_path(@saved_scenario.scenario_id),
             class: "button"
-  %a{href:"mailto:?subject=#{t('scenario.share.email_subject')} #{@scenario&.title}&body=#{t('scenario.share.message')} #{request.original_url}", class: 'button'}
-    = t('scenario.share.by')
-    Email
 
   - if @scenario.description
     %em= formatted_scenario_description(@scenario.description)
@@ -31,6 +28,10 @@
     %li
       %strong #{t('scenario.end_year')}:
       = @scenario.end_year
+  = t('scenario.share.by')
+  %a{href:"mailto:?subject=#{t('scenario.share.email_subject')} #{@scenario&.title}&body=#{t('scenario.share.message')} #{request.original_url}"}
+    = image_tag 'reports/share.svg'
+    Email
 
   %p
     %small{:style => "font-size: 12px; font-weight: normal"}

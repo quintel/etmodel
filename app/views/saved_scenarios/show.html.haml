@@ -28,11 +28,38 @@
     %li
       %strong #{t('scenario.end_year')}:
       = @scenario.end_year
-  = t('scenario.share.by')
-  %a{href:"mailto:?subject=#{t('scenario.share.email_subject')} #{@scenario&.title}&body=#{t('scenario.share.message')} #{request.original_url}"}
+  %p= t('scenario.share.by')
+  %a.copy_link{url: request.original_url}
+    = image_tag 'reports/share.svg'
+    Copy link
+  = link_to ("mailto: |
+    ?subject=#{t('scenario.share.email_subject')} #{@scenario&.title} |
+    &body=#{t('scenario.share.message')} #{request.original_url}") do |
     = image_tag 'reports/share.svg'
     Email
+  = link_to "http://www.twitter.com/share?url=#{request.original_url}",
+            target:"_blank" do
+    = image_tag 'reports/share.svg'
+    Twitter
+  = link_to "http://www.linkedin.com/shareArticle?mini=true&url=#{request.original_url}",
+            target:"_blank" do
+    = image_tag 'reports/share.svg'
+    LinkedIn
+  = link_to "http://www.facebook.com/sharer.php?u=#{request.original_url}",
+            target:"_blank" do
+    = image_tag 'reports/share.svg'
+    Facebook
 
   %p
     %small{:style => "font-size: 12px; font-weight: normal"}
       = t("scenario.overwritten")
+
+:javascript
+  $(document).ready( function() {
+    $('.copy_link').click(function() {
+      var url = this.attributes.url.value
+      var copy_box = $("<div>").addClass('copy_box');
+      copy_box.append($('<p>').text(url));
+      $(this).append(copy_box);
+    });
+  });

@@ -24,8 +24,6 @@ describe SidebarItem do
     it { is_expected.to respond_to(:key) }
     it { is_expected.to respond_to(:section) }
     it { is_expected.to respond_to(:percentage_bar_query) }
-    it { is_expected.to respond_to(:nl_vimeo_id) }
-    it { is_expected.to respond_to(:en_vimeo_id) }
     it { is_expected.to respond_to(:tab_id) }
     it { is_expected.to respond_to(:position) }
     it { is_expected.to respond_to(:parent_id) }

@@ -32,9 +32,9 @@
     = t('scenario.share.by')
     .copy_link
       %a
-        .icon{ class: 'fa fa-copy'}
+        .icon{ class: 'fa fa-copy' }
         Copy link
-      .copy_box{ style: 'display: none' }
+      .copy_box
         .arrow
         .cross{ class: 'fa fa-times', title: 'Close' }
         .url= text_field_tag 'url', request.original_url
@@ -42,20 +42,20 @@
     = link_to "mailto: |
               ?subject=#{t('scenario.share.email_subject')} #{@scenario&.title} |
               &body=#{t('scenario.share.message')} #{request.original_url}" do |
-      .icon{ class: 'fa fa-envelope-o'}
+      .icon{ class: 'fa fa-envelope-o' }
       Email
     = link_to "http://www.twitter.com/share?url=#{request.original_url}",
               target: "_blank" do
-      .icon{ class: 'fa fa-twitter'}
+      .icon{ class: 'fa fa-twitter' }
       Twitter
     = link_to "http://www.linkedin.com/shareArticle?mini=true |
               &url=#{request.original_url}", |
               target: "_blank" do
-      .icon{ class: 'fa fa-linkedin'}
+      .icon{ class: 'fa fa-linkedin' }
       LinkedIn
     = link_to "http://www.facebook.com/sharer.php?u=#{request.original_url}",
               target: "_blank" do
-      .icon{ class: 'fa fa-facebook-official'}
+      .icon{ class: 'fa fa-facebook-official' }
       Facebook
 
   %p

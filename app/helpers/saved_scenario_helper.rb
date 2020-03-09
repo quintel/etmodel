@@ -16,7 +16,7 @@ module SavedScenarioHelper
   end
 
   def share_by_facebook_link
-    "http://www.facebook.com/sharer.php?u=#{request.original_url}",
+    "http://www.facebook.com/sharer.php?u=#{request.original_url}"
   end
 
   def open_attributes

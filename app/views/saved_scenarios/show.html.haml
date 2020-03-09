@@ -39,22 +39,16 @@
         .cross{ class: 'fa fa-times', title: 'Close' }
         .url= text_field_tag 'url', request.original_url
 
-    = link_to "mailto: |
-              ?subject=#{t('scenario.share.email_subject')} #{@scenario&.title} |
-              &body=#{t('scenario.share.message')} #{request.original_url}" do |
+    = link_to share_by_mail_link do
       .icon{ class: 'fa fa-envelope-o' }
       Email
-    = link_to "http://www.twitter.com/share?url=#{request.original_url}",
-              target: "_blank" do
+    = link_to share_by_twitter_link, open_attributes do
       .icon{ class: 'fa fa-twitter' }
       Twitter
-    = link_to "http://www.linkedin.com/shareArticle?mini=true |
-              &url=#{request.original_url}", |
-              target: "_blank" do
+    = link_to share_by_linkedin_link, open_attributes do
       .icon{ class: 'fa fa-linkedin' }
       LinkedIn
-    = link_to "http://www.facebook.com/sharer.php?u=#{request.original_url}",
-              target: "_blank" do
+    = link_to share_by_facebook_link, open_attributes do
       .icon{ class: 'fa fa-facebook-official' }
       Facebook
 

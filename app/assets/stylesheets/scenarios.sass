@@ -46,20 +46,53 @@ table.default
     display: inline-block
     margin: 15px 0 15px 15px
     float: right
-  a
-    text-decoration: none
-    font-weight: bold
-    color: grey
-    img
-      width: 20px
-      margin: 0 0 -5px 5px
+
+  .sharing_links
+    display: flex
+
+    a
+      text-decoration: none
+      font-weight: bold
+      color: grey
+      &:hover
+        cursor: pointer
+      img
+        width: 20px
+        margin: 0 0 -3px 15px
+      .icon
+        font-size: 20px
+        margin-left: 15px
 
   .copy_box
     position: absolute
-    border: 1px solid #ddd
+    border: 1px solid rgba(0, 0, 0, 0.2)
     border-radius: 5px
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
     background-color: white
-    padding: 0 5px
+    color: grey
+    padding: 0 5px 5px
+    .arrow
+      height: 0
+      position: absolute
+      top: -22px
+      width: 0
+      border: 11px solid transparent
+      border-bottom-color: rgba(0, 0, 0, 0.2)
+      &:before
+        border: 10px solid transparent
+        border-bottom-color: #fff
+        content: ''
+        position: absolute
+        top: -8.5px
+        left: -10px
+    .cross
+      float: right
+      margin: 2px 0 2px
+      &:hover
+        cursor: pointer
+    .url input
+      width: 350px
+      color: #333
 
   hr
     border: none

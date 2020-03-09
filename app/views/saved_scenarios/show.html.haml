@@ -42,7 +42,7 @@
     = link_to "mailto: |
               ?subject=#{t('scenario.share.email_subject')} #{@scenario&.title} |
               &body=#{t('scenario.share.message')} #{request.original_url}" do |
-      = image_tag 'reports/share.svg'
+      .icon{ class: 'fa fa-envelope-o'}
       Email
     = link_to "http://www.twitter.com/share?url=#{request.original_url}",
               target: "_blank" do
@@ -55,7 +55,7 @@
       LinkedIn
     = link_to "http://www.facebook.com/sharer.php?u=#{request.original_url}",
               target: "_blank" do
-      .icon{ class: 'fa fa-facebook'}
+      .icon{ class: 'fa fa-facebook-official'}
       Facebook
 
   %p

@@ -208,6 +208,7 @@ describe ScenariosController, vcr: true do
         it 'retains the area code' do
           expect(subject.area_code).to eq('de')
         end
+        
         it 'retains the api session id' do
           expect(subject.api_session_id).to eq(123)
         end

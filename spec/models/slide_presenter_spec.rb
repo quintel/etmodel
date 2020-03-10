@@ -60,7 +60,7 @@ describe SlidePresenter do
 
       let(:translator) { ->(ns, n) { I18n.t("#{ns}.#{n}") } }
 
-      it 'has the ecpected short name' do
+      it 'has the expected short name' do
         expect(subject)
           .to include translator.call('sidebar_items', si1.key)[:short_name]
       end

@@ -9,14 +9,19 @@ module YModel
   #   - the default foreign_key won't contain namespaces.
   #   - Seems to be the most smelly piece of code in YModel.
   module Relatable
-    def belongs_to(model, _options = {})
+    def belongs_to(model, options = {})
+      related_class = options[:class_name] || model_class(model)
       define_method(model) do
-        foreign_key = model.to_s.singularize + '_id'
-        relation_class.find(instance_variable_get(foreign_key))
+        if related_class < YModel::Base
+          key = :"#{model.to_s.singularize}_#{related_class.index}"
+        else
+          key = :"#{related_class.to_s.singularize}_id"
+        end
+        related_class.find(self[key])
       end
     end
 
-    # These cop is disabled because I'm just copying ActiveRecords interface
+    # These cop is disabled because Its just a copy of ActiveRecords interface
     # rubocop:disable Naming/PredicateName
     # rubocop:disable Naming/UncommunicativeMethodParamName
     def has_many(model, class_name: nil, as: nil, foreign_key: nil)
@@ -26,10 +31,12 @@ module YModel
       relation_class = model_class(class_name || model)
 
       define_method(model) do
-        return relation_class.where(foreign_key.to_sym => id) unless as
-
-        relation_class.where("#{as}_id" => id,
-                             "#{as}_type" => self.class.name)
+        if as
+          relation_class.where("#{as}_id" => id,
+                               "#{as}_type" => self.class.name)
+        else
+          relation_class.where(foreign_key.to_sym => index)
+        end
       end
     end
 
@@ -40,7 +47,7 @@ module YModel
       relation_class = model_class(class_name || model)
 
       define_method(model) do
-        return relation_class.find_by(foreign_key => id) unless as
+        return relation_class.find_by(foreign_key => index) unless as
 
         relation_class.find_by("#{as}_id" => id,
                                "#{as}_type" => self.class.name)
@@ -56,10 +63,11 @@ module YModel
     end
 
     def model_class(model)
-      Kernel.const_get(model.to_s.singularize.camelcase)
+      as_const = model.to_s.singularize.camelcase
+      Kernel.const_get(as_const)
     rescue StandardError
       message = "relation `#{model}` couldn't be made because constant "\
-                "`#{model.to_s.singularize.camelcase}` doesn't exist."
+                "`#{as_const}` doesn't exist."
       raise YModel::MissingConstant, message
     end
 

@@ -6,6 +6,8 @@ require 'ymodel/errors'
 module YModel
   # Module resposible for loading the schema and data from the yaml files.
   module Loadable
+    attr_reader :index
+    
     # This method can be called from within a concrete implementation to
     # overwrite the default ymodel filename associated with that model.
     def source_file(filename)
@@ -13,6 +15,10 @@ module YModel
 
       # Similar to YModel::Trigger#inherited. A hook for loading the schema.
       define_readers self
+    end
+
+    def index_on(key)
+      @index = key
     end
 
     def schema

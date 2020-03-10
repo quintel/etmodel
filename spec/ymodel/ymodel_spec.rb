@@ -32,22 +32,30 @@ class YModel::InvalidConcrete < YModel::Base
   source_file 'spec/fixtures/ymodel/invalid_concrete.yml'
 end
 
-class YModel::ConcreteRelation < YModel::Base
+class YModel::Related < YModel::Base
   source_file 'spec/fixtures/ymodel/concrete.yml'
-  has_many :concretes, class_name: YModel::Concrete
+  has_many :concretes,
+           class_name: YModel::Concrete,
+           foreign_key: :concrete_relation_id
+
 end
+
+class YModel::RelatedOnKey < YModel::Base
+  source_file 'spec/fixures/ymodel/concrete'
+  index_on :key
+end
+
 # rubocop:enable Style/ClassAndModuleChildren
 
 # rubocop:disable RSpec/MultipleDescribes
 describe YModel::Base do
-  subject { YModel::Concrete.new }
+  subject { described_class }
 
-  it 'is a class' do
-    expect(described_class).to be_a Class
-  end
+  it { is_expected.to be_a Class }
+  it { is_expected.to respond_to :index_on }
 
   describe '#new' do
-    subject { YModel::Concrete.new }
+    subject { YModel::Concrete.new(id: 1) }
 
     it { is_expected.to respond_to :key }
     it { is_expected.to respond_to :id }
@@ -56,7 +64,7 @@ describe YModel::Base do
     it { is_expected.to respond_to :position }
 
     it "doesn't set attributes that aren't present in the schema" do
-      instance = YModel::Concrete.new(key: '1', foo: 'bar')
+      instance = YModel::Concrete.new(foo: 'bar', id: '1')
       expect(instance.instance_variable_get('@foo')).to be nil
     end
   end
@@ -101,7 +109,7 @@ describe YModel::Base do
 
     describe 'with malicious params' do
       subject do
-        YModel::Concrete.where(key: 'overview',
+        YModel::Concrete.where!(key: 'overview',
                                en_vimeo_id: '',
                                nillable: nil,
                                set_spy: true)
@@ -135,7 +143,7 @@ describe YModel::Base do
     end
 
     describe 'decorates instances with' do
-      subject { YModel::ConcreteRelation.all.first }
+      subject { YModel::Related.all.first }
 
       it { is_expected.to respond_to :concretes }
       it { is_expected.to(satisfy { |sub| sub.concretes.class == Array }) }
@@ -181,7 +189,7 @@ describe YModel::Base do
   end
 
   describe 'attributes' do
-    # We're testing if data is correctly loaded.
+    # Is data correctly loaded?
     subject { YModel::Concrete.find(2) }
 
     it 'has the correct key' do

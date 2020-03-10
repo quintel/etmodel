@@ -10,7 +10,7 @@
 #  percentage_bar_query :text
 #  nl_vimeo_id          :string(255)
 #  en_vimeo_id          :string(255)
-#  tab_id               :integer
+#  tab_key              :integer
 #  position             :integer
 #  parent_id            :integer
 #
@@ -22,6 +22,7 @@ class SidebarItem < YModel::Base
   include AreaDependent::YModel
 
   has_one :description, as: :describable
+  belongs_to :tab
   has_many :slides
   belongs_to :parent, class_name: 'SidebarItem'
   has_many :children, foreign_key: :parent_id, class_name: 'SidebarItem'
@@ -40,10 +41,6 @@ class SidebarItem < YModel::Base
     def find_by_section_and_key(section, key)
       where(section: section, key: key)&.first
     end
-  end
-
-  def tab
-    Tab.find(tab_id)
   end
 
   def parsed_key_for_admin

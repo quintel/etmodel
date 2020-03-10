@@ -20,5 +20,14 @@ module YModel
 
   class UnacceptableOptionsError < YModelError
   end
+
+  class MissingAttributeError < YModelError
+  end
+
+  class UnpermittedParamsError < YModelError
+  end
+
+  class RecordNotFoundError < YModelError
+  end
 end
 # rubocop:enable Style/Documentation

@@ -10091,8 +10091,8 @@
   interface_group: flexibility_cop
   command_type: ''
   related_converter: ''
-  slide_id: 216
-  position: 2
+  slide_id: 283
+  position: 1
   dependent_on: ''
   description:
     content_en: "Here you indicate the threshold COP of hybrid heat pumps for space
@@ -10118,8 +10118,8 @@
   interface_group: flexibility_cop
   command_type: ''
   related_converter: ''
-  slide_id: 216
-  position: 3
+  slide_id: 283
+  position: 2
   dependent_on: ''
   description:
     content_en: "Here you indicate the threshold COP of hybrid heat pumps for hot
@@ -14762,5 +14762,71 @@
       de dag. De kosten in de link hieronder zijn de kosten die we hanteren voor restwarmte
       uit de chemische industrie, raffinaderijen en kunstmestindustrie. Voor lage
       temperatuur restwarmte uit datacenters rekenen we met andere kosten.
+    short_content_en:
+    short_content_nl:
+- id: 1006
+  key: households_flexibility_consumer_gas_price
+  share_group: ''
+  step_value: 0.1
+  draw_to_min:
+  draw_to_max:
+  unit: "ct/m3"
+  fixed: false
+  interface_group: 'consumer_price'
+  command_type: ''
+  related_converter: ''
+  slide_id: 283
+  position: 3
+  dependent_on: ''
+  description:
+    content_en: "The rate of a m3 gas in 2020 is on average 81.4 cents in the Netherlands.
+      Of this, 32 cents is for the gas itself (the market price) and 50 cents for the
+      energy tax and the 'opslag duurzame energie' (ODE) (<a
+      href=\"https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening\"
+      target=\"_blank\">Milieu Centraal</a>).</br> </br>
+
+      This slider only has influence on the recommended treshold COP in the chart
+      on the right and not on other ETM calculations."
+    content_nl: "Het tarief van een m3 gas is in 2020 gemiddeld 81,4 eurocent in Nederland.
+      Daarvan is 32 cent voor het gas zelf (de marktprijs) en 50 cent voor de
+      energiebelasting en de opslag duurzame energie (ODE) (<a
+      href=\"https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening\"
+      target=\"_blank\">Milieu Centraal</a>).</br></br>
+
+      Deze slider heeft enkel invloed
+      op de geadviseerde omslag COP in de grafiek rechts en dus niet op andere ETM-berekeningen."
+    short_content_en:
+    short_content_nl:
+- id: 1007
+  key: households_flexibility_consumer_electricity_price
+  share_group: ''
+  step_value: 0.1
+  draw_to_min:
+  draw_to_max:
+  unit: "ct/kWh"
+  fixed: false
+  interface_group: 'consumer_price'
+  command_type: ''
+  related_converter: ''
+  slide_id: 283
+  position: 4
+  dependent_on: ''
+  description:
+    content_en: "The rate of a kWh power in 2020 is on average 22.5
+      in the Netherlands. Of this, 7.5 cents is for the electricity itself (the market price) and
+      15 cents for energy tax and renewable energy storage (ODE) (<a
+      href=\"https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening\"
+      target=\"_blank\">Milieu Centraal</a>).</br></br>
+
+      This slider only has influence on the recommended treshold COP in the chart
+      on the right and not on other ETM calculations."
+    content_nl: "Het tarief van een kWh stroom is in 2020 gemiddeld 22,5
+      cent in Nederland. Daarvan is 7,5 cent voor de elektriciteit zelf (de marktprijs) en
+      15 cent voor de energiebelasting en de opslag duurzame energie (ODE) (<a
+      href=\"https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening\"
+      target=\"_blank\">Milieu Centraal</a>).</br></br>
+
+      Deze slider heeft enkel invloed
+      op de geadviseerde omslag COP in de grafiek rechts en dus niet op andere ETM-berekeningen"
     short_content_en:
     short_content_nl:

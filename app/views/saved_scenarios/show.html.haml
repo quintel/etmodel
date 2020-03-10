@@ -33,7 +33,7 @@
     .copy_link
       %a
         .icon{ class: 'fa fa-copy' }
-        Copy link
+        = t('scenario.share.copy')
       .copy_box
         .arrow
         .cross{ class: 'fa fa-times', title: 'Close' }
@@ -55,14 +55,3 @@
   %p
     %small{:style => "font-size: 12px; font-weight: normal"}
       = t("scenario.overwritten")
-
-:javascript
-  $(document).ready( function() {
-    $('.copy_link a').click(function() {
-      $('.copy_box').show();
-      $('.url input').focus();
-    });
-    $('.cross').click(function() {
-      $('.copy_box').hide();
-    });
-  });

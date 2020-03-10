@@ -5126,19 +5126,49 @@
   alt_output_element_id:
   dependent_on: ''
   description:
-    content_en: "The efficiency of (hybrid) heat pumps is dependent on the ambient temperature and
-      is depicted by the coefficient of performance (COP). When the COP is low it
-      can be desirable (for example for financial reasons) to only use the gas part
-      of the hybrid heat pump. The default threshold COP represents using the electric
+    content_en: "The efficiency of hybrid heat pumps (HHP) is dependent on the ambient temperature and
+      is depicted by the coefficient of performance (COP). The COP becomes lower as
+      the outside temperature decreases. Below you can set the COP for which the
+      HHP must switch between electricity and gas. You can choose a setting that is
+      most financially attractive for the consumer, but you can also choose a setting
+      that produces less impact on the electricity network.
+      \r\n</br></br>\r\n
+      To help you decide the cost-optimal COP setting from a consumer perspective, have a
+      look at the chart on the right. It shows how much it costs to make a unit of heat
+      with the HHP. For the gas part, these costs are independent of the COP
+      (and therefore the outside temperature). The costs for the electrical part are
+      decreasing with increasing COP (and increasing outside temperature). The intersection of
+      the two curves is the cost-optimal COP setting for the given cost price
+      gas and electricity. This cost price of gas and electricity can be set below.
+      \r\n</br></br>\r\n
+      When you're interested in the impact of HHPs on the electricity grid, have a look
+      at the chart that is shown when clicking on the 'Annual'-button in the right corner
+      of the chart. This chart shows the hourly gas and electricity demand of HHPs.
+      \r\n</br></br>\r\n
+      The default threshold COP represents using the electric
       part of the hybrid heat pump maximally for space heating and using gas for hot
-      water. The sliders below allow you to indicate the buffer size and the threshold
-      COP."
+      water."
     content_nl: "De efficiëntie van (hybride) warmtepompen is afhankelijk van
       de buitentemperatuur en wordt aangegeven met de 'coefficient of performance'
-      (COP). Bij lage COP kan het (bijvoorbeeld om financiële redenen) wenselijk zijn
-      om alleen het gasgedeelte van hybride warmtepompen te gebruiken. De standaard
-      omslag-COP representeert dat voor ruimteverwarming het elektrisch deel van de
-      hybride warmtepomp maximaal wordt gebruikt en voor warm water het gasdeel.\r\n<br></br>\r\nMet
-      de schuifjes hieronder kun je de buffergrootte en de omslag-COP instellen."
+      (COP). De COP wordt lager als de buitentemperatuur afneemt. Hieronder kan je
+      instellen voor welke COP de HWP moet omschakelen tussen elektriciteit en gas.
+      Je kan deze instellen op de financieel meest aantrekkelijke voor de consument,
+      maar kan ook een instelling kiezen die minder netwerkimpact oplevert.
+      \r\n</br></br>\r\n
+      Bekijk de grafiek aan de rechterkant voor advies bij het kiezen van de kostenoptimale
+      COP-instelling vanuit een consumentenperspectief. Deze laat zien hoeveel het kost om een eenheid warmte te maken
+      met de HWP. Voor gas zijn die kosten onafhankelijk van de COP
+      (en dus de buitentemperatuur). Voor elektriciteit nemen de kosten
+      af met toenemende COP (en toenemende buitentemperatuur). Het kruispunt van
+      de twee curves is de kosten-optimale COP-instelling voor de gegeven kostprijs
+      van gas en elektriciteit. Deze kostprijs van gas en elektriciteit is hieronder
+      in te stellen.
+      \r\n</br></br>\r\n
+      Als je geïnteresseerd bent in de impact van HWP's op het elektriciteitsnet, kijk
+      dan naar de grafiek die wordt weergegeven wanneer je op de 'Jaarlijkse'-knop in de
+      rechterhoek van de grafiek klikt. Deze grafiek toont de gas- en elektriciteitsvraag per uur van HHP's.
+      \r\n</br></br>\r\n
+      De standaard omslag-COP representeert dat voor ruimteverwarming het elektrisch deel van de
+      hybride warmtepomp maximaal wordt gebruikt en voor warm water het gasdeel."
     short_content_en:
     short_content_nl:

@@ -28,13 +28,13 @@
     %li
       %strong #{t('scenario.end_year')}:
       = @scenario.end_year
-  .sharing_links
+  .sharing-links
     = t('scenario.share.by')
-    .copy_link
+    .copy-link
       %a
         .icon{ class: 'fa fa-copy' }
         = t('scenario.share.copy')
-      .copy_box
+      .copy-box
         .arrow
         .cross{ class: 'fa fa-times', title: 'Close' }
         .url= text_field_tag 'url', request.original_url

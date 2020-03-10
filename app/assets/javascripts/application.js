@@ -25,3 +25,4 @@
 //= require save_indicator
 //= require embeds
 //= require load_pico_embed
+//= require copy_link_box

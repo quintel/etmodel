@@ -5,7 +5,6 @@
   percentage_bar_query: share_of_households_in_final_demand
   tab_key: demand
   position: 1
-  parent_id:
   dependent_on: ''
 - id: 2
   key: buildings
@@ -13,7 +12,6 @@
   percentage_bar_query: share_of_buildings_in_final_demand
   tab_key: demand
   position: 2
-  parent_id:
   dependent_on: has_buildings
 - id: 3
   key: transport
@@ -21,7 +19,6 @@
   percentage_bar_query: share_of_transport_in_final_demand
   tab_key: demand
   position: 3
-  parent_id:
   dependent_on: ''
 - id: 4
   key: industry
@@ -29,7 +26,6 @@
   percentage_bar_query: share_of_industry_and_energy_in_final_demand
   tab_key: demand
   position: 4
-  parent_id:
   dependent_on: has_industry
 - id: 5
   key: agriculture
@@ -37,7 +33,6 @@
   percentage_bar_query: share_of_agriculture_in_final_demand
   tab_key: demand
   position: 5
-  parent_id:
   dependent_on: has_agriculture
 - id: 6
   key: other
@@ -45,7 +40,6 @@
   percentage_bar_query: share_of_other_in_final_demand
   tab_key: demand
   position: 6
-  parent_id:
   dependent_on: has_other
 - id: 12
   key: combustion
@@ -53,7 +47,6 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 4
-  parent_id:
   dependent_on: ''
 - id: 13
   key: nuclear
@@ -61,7 +54,6 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 4
-  parent_id:
   dependent_on: ''
 - id: 14
   key: wind
@@ -69,7 +61,6 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 5
-  parent_id:
   dependent_on: ''
 - id: 15
   key: water
@@ -77,7 +68,6 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 6
-  parent_id:
   dependent_on: ''
 - id: 16
   key: solar
@@ -85,7 +75,6 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 7
-  parent_id:
   dependent_on: ''
 - id: 18
   key: co2
@@ -93,7 +82,6 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 9
-  parent_id:
   dependent_on: ''
 - id: 19
   key: sustainability
@@ -101,7 +89,6 @@
   percentage_bar_query: ''
   tab_key: targets
   position: 1
-  parent_id:
   dependent_on: _always_hidden
 - id: 20
   key: dependence
@@ -109,7 +96,6 @@
   percentage_bar_query: ''
   tab_key: targets
   position: 2
-  parent_id:
   dependent_on: _always_hidden
 - id: 21
   key: cost
@@ -117,7 +103,6 @@
   percentage_bar_query: ''
   tab_key: targets
   position: 3
-  parent_id:
   dependent_on: _always_hidden
 - id: 22
   key: electricity
@@ -125,7 +110,6 @@
   percentage_bar_query: ''
   tab_key: supply
   position: 1
-  parent_id:
   dependent_on: ''
 - id: 23
   key: electricity_renewable
@@ -133,7 +117,6 @@
   percentage_bar_query: ''
   tab_key: supply
   position: 2
-  parent_id:
   dependent_on: ''
 - id: 24
   key: heat
@@ -141,7 +124,6 @@
   percentage_bar_query: ''
   tab_key: supply
   position: 3
-  parent_id:
   dependent_on: ''
 - id: 25
   key: renewable_heat
@@ -149,7 +131,6 @@
   percentage_bar_query: ''
   tab_key: supply
   position: 4
-  parent_id:
   dependent_on: _always_hidden
 - id: 26
   key: transport_fuels
@@ -157,7 +138,6 @@
   percentage_bar_query: ''
   tab_key: supply
   position: 7
-  parent_id:
   dependent_on: ''
 - id: 28
   key: infrastructure
@@ -165,7 +145,6 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 8
-  parent_id:
   dependent_on: use_network_calculations
 - id: 29
   key: area
@@ -173,7 +152,6 @@
   percentage_bar_query: ''
   tab_key: targets
   position: 4
-  parent_id:
   dependent_on: _always_hidden
 - id: 32
   key: fce
@@ -181,7 +159,6 @@
   percentage_bar_query: ''
   tab_key: supply
   position: 9
-  parent_id:
   dependent_on: _always_hidden
 - id: 33
   key: security_of_supply
@@ -189,7 +166,6 @@
   percentage_bar_query: ''
   tab_key: flexibility
   position: 10
-  parent_id:
   dependent_on: ''
 - id: 34
   key: merit_order
@@ -197,7 +173,6 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 1
-  parent_id:
   dependent_on: has_merit_order
 - id: 35
   key: employment
@@ -205,7 +180,6 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 11
-  parent_id:
   dependent_on: _always_hidden
 - id: 36
   key: costs_heat
@@ -213,7 +187,6 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 3
-  parent_id:
   dependent_on: ''
 - id: 37
   key: fuel_costs
@@ -221,7 +194,6 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 1
-  parent_id:
   dependent_on: ''
 - id: 38
   key: industry_metal
@@ -229,7 +201,7 @@
   percentage_bar_query: ''
   tab_key: demand
   position: 2
-  parent_id: 4
+  parent_key: industry
   dependent_on: _always_hidden
 - id: 39
   key: excess_electricity
@@ -237,7 +209,6 @@
   percentage_bar_query: ''
   tab_key: flexibility
   position: 2
-  parent_id:
   dependent_on: has_electricity_storage
 - id: 40
   key: electricity_import_export
@@ -245,7 +216,6 @@
   percentage_bar_query: ''
   tab_key: flexibility
   position: 4
-  parent_id:
   dependent_on: is_national_scenario
 - id: 41
   key: industry_chemical
@@ -253,7 +223,7 @@
   percentage_bar_query: ''
   tab_key: demand
   position: 1
-  parent_id: 4
+  parent_key: industry
   dependent_on: _always_hidden
 - id: 42
   key: industry_other
@@ -261,7 +231,7 @@
   percentage_bar_query: ''
   tab_key: demand
   position: 3
-  parent_id: 4
+  parent_key: industry
   dependent_on: _always_hidden
 - id: 43
   key: fuel_production
@@ -269,7 +239,6 @@
   percentage_bar_query: ''
   tab_key: supply
   position: 11
-  parent_id:
   dependent_on: is_national_scenario
 - id: 44
   key: costs_flexibility
@@ -277,7 +246,6 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 7
-  parent_id:
   dependent_on: ''
 - id: 45
   key: hydrogen
@@ -285,7 +253,6 @@
   percentage_bar_query: ''
   tab_key: supply
   position: 5
-  parent_id:
   dependent_on: ''
 - id: 46
   key: transport_costs
@@ -293,7 +260,6 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 4
-  parent_id:
   dependent_on: ''
 - id: 47
   key: biomass
@@ -301,7 +267,6 @@
   percentage_bar_query: ''
   tab_key: supply
   position: 8
-  parent_id:
   dependent_on: ''
 - id: 48
   key: data_export
@@ -309,7 +274,6 @@
   percentage_bar_query: ''
   tab_key: data
   position: 2
-  parent_id:
   dependent_on: ''
 - id: 50
   key: transport_international_transport
@@ -317,7 +281,7 @@
   percentage_bar_query: ''
   tab_key: demand
   position: 3
-  parent_id: 3
+  parent_key: transport
   dependent_on: ''
 - id: 51
   key: transport_passenger_transport
@@ -325,7 +289,7 @@
   percentage_bar_query: ''
   tab_key: demand
   position: 1
-  parent_id: 3
+  parent_key: transport
   dependent_on: ''
 - id: 52
   key: transport_freight_transport
@@ -333,7 +297,7 @@
   percentage_bar_query: ''
   tab_key: demand
   position: 2
-  parent_id: 3
+  parent_key: transport
   dependent_on: ''
 - id: 53
   key: flexibility_storage
@@ -341,7 +305,7 @@
   percentage_bar_query: ''
   tab_key: flexibility
   position: 1
-  parent_id: 39
+  parent_key: excess_electricity
   dependent_on: ''
 - id: 54
   key: flexibility_conversion
@@ -349,7 +313,7 @@
   percentage_bar_query: ''
   tab_key: flexibility
   position: 2
-  parent_id: 39
+  parent_key: excess_electricity
   dependent_on: ''
 - id: 55
   key: flexibility_net_load
@@ -357,7 +321,6 @@
   percentage_bar_query: ''
   tab_key: flexibility
   position: 3
-  parent_id:
   dependent_on: ''
 - id: 56
   key: electricity_import_costs
@@ -365,7 +328,6 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 5
-  parent_id:
   dependent_on: ''
 - id: 57
   key: data_visuals
@@ -373,7 +335,6 @@
   percentage_bar_query: ''
   tab_key: data
   position: 1
-  parent_id:
   dependent_on: ''
 - id: 58
   key: costs_hydrogen
@@ -381,7 +342,6 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 5
-  parent_id:
   dependent_on: ''
 - id: 59
   key: introduction
@@ -389,7 +349,6 @@
   percentage_bar_query: ''
   tab_key: overview
   position: 1
-  parent_id:
   dependent_on: ''
 - id: 60
   key: flexibility_weather
@@ -397,7 +356,6 @@
   percentage_bar_query: ''
   tab_key: flexibility
   position: 4
-  parent_id:
   dependent_on: ''
 - id: 61
   key: wacc
@@ -405,7 +363,6 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 16
-  parent_id:
   dependent_on: ''
 - id: 62
   key: heat_merit
@@ -413,5 +370,5 @@
   percentage_bar_query: ''
   tab_key: supply
   position: 1
-  parent_id: 24
+  parent_key: heat
   dependent_on: ''

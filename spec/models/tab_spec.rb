@@ -19,4 +19,8 @@ describe Tab do
   it { is_expected.to respond_to :allowed_sidebar_items }
   it { is_expected.to respond_to :sidebar_items }
   it { is_expected.to be_a AreaDependent::YModel }
+
+  it ".index is :key" do
+    expect(described_class.index).to eq(:key)
+  end
 end

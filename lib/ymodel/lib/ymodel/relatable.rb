@@ -2,16 +2,26 @@
 
 require 'active_support/inflector'
 require 'ymodel/errors'
+require 'ymodel/helper'
 
 module YModel
-  # This module contains YModel logic for managing relations. Some caveats:
-  #   - combining the 'as' and 'foreign_key' options won't work.
-  #   - the default foreign_key won't contain namespaces.
-  #   - Seems to be the most smelly piece of code in YModel.
+  # This module contains YModel logic for managing relations.
   module Relatable
+
+    # This method is used to define the key on which relations are build.
+    # We default to 'id'.
+    def index_on(key)
+      @index = key
+    end
+
+    def index
+      @index || :id
+    end
+
     def belongs_to(model, options = {})
-      related_class = options[:class_name] || model_class(model)
       define_method(model) do
+        # We might want to create a mechanism to memoize this.
+        related_class = options[:class_name] || YModel::Helper.model_class(model)
         if related_class < YModel::Base
           key = :"#{model.to_s.singularize}_#{related_class.index}"
         else
@@ -28,9 +38,8 @@ module YModel
       raise_options_error if as && foreign_key
 
       foreign_key ||= default_foreign_key
-      relation_class = model_class(class_name || model)
-
       define_method(model) do
+        relation_class = YModel::Helper.model_class(class_name || model)
         if as
           relation_class.where("#{as}_id" => id,
                                "#{as}_type" => self.class.name)
@@ -44,9 +53,8 @@ module YModel
       raise_options_error if as && foreign_key
 
       foreign_key ||= default_foreign_key
-      relation_class = model_class(class_name || model)
-
       define_method(model) do
+        relation_class = YModel::Helper.model_class(class_name || model)
         return relation_class.find_by(foreign_key => index) unless as
 
         relation_class.find_by("#{as}_id" => id,
@@ -60,15 +68,6 @@ module YModel
 
     def default_foreign_key
       name.foreign_key
-    end
-
-    def model_class(model)
-      as_const = model.to_s.singularize.camelcase
-      Kernel.const_get(as_const)
-    rescue StandardError
-      message = "relation `#{model}` couldn't be made because constant "\
-                "`#{as_const}` doesn't exist."
-      raise YModel::MissingConstant, message
     end
 
     def raise_options_error

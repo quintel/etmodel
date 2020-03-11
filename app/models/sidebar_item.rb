@@ -4,15 +4,12 @@
 #
 # Table name: sidebar_items
 #
-#  id                   :integer          not null, primary key
 #  key                  :string(255)
 #  section              :string(255)
 #  percentage_bar_query :text
-#  nl_vimeo_id          :string(255)
-#  en_vimeo_id          :string(255)
 #  tab_key              :integer
 #  position             :integer
-#  parent_id            :integer
+#  parent_key            :integer
 #
 
 # This model represents the secondary menu-item category in the sidebar of the
@@ -21,11 +18,12 @@
 class SidebarItem < YModel::Base
   include AreaDependent::YModel
 
+  index_on :key
   has_one :description, as: :describable
   belongs_to :tab
-  has_many :slides
+  has_many :slides, foreign_key: :sidebar_item_key
   belongs_to :parent, class_name: 'SidebarItem'
-  has_many :children, foreign_key: :parent_id, class_name: 'SidebarItem'
+  has_many :children, foreign_key: :parent_key, class_name: 'SidebarItem'
 
   class << self
     def ordered
@@ -52,7 +50,7 @@ class SidebarItem < YModel::Base
   end
 
   def root?
-    parent_id.nil?
+    parent_key.nil?
   end
 
   def visible_children

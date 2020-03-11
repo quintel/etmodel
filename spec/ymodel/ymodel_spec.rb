@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 # This file shouldn't actually exist within the rails app since it tests the
-# gem ''. It does exist here for two reasons:
+# gem. It does exist here for two reasons:
 #  1. It might assert some stuff about the application.
 #  2. Moving the specs to the gem is a hassle.
 

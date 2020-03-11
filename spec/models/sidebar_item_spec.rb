@@ -25,7 +25,7 @@ describe SidebarItem do
     it { is_expected.to respond_to(:section) }
     it { is_expected.to respond_to(:percentage_bar_query) }
     it { is_expected.to respond_to(:position) }
-    it { is_expected.to respond_to(:parent_id) }
+    it { is_expected.to respond_to(:parent_key) }
 
     # methods
     it { is_expected.to respond_to(:parsed_key_for_admin) }
@@ -39,12 +39,8 @@ describe SidebarItem do
       end
     end
 
-    describe ".where" do
-      subject { SidebarItem.where( tab_key: "overview" ) }
-
-      it "only includes on sidebaritem" do
-        expect(subject.count).to eq(1)
-      end
+    it ".where(:overview) only includes one sidebar_item" do
+      expect(SidebarItem.where( tab_key: "overview" ).count).to eq(1)
     end
   end
 end

@@ -2292,7 +2292,7 @@
   group_sub_header: ''
   subheader_image: ''
   key: flexibility_flexibility_net_load
-  position: 9
+  position: 1
   sidebar_item_id: 55
   output_element_id: 223
   alt_output_element_id: 216
@@ -3457,7 +3457,7 @@
   group_sub_header: ''
   subheader_image: ''
   key: flexibility_flexibility_demand_response_hp
-  position: 10
+  position: 12
   sidebar_item_id: 55
   output_element_id: 194
   alt_output_element_id:
@@ -5178,21 +5178,33 @@
   group_sub_header: ''
   subheader_image: ''
   key: flexibility_flexibility_solar_pv_curtailment
-  position: 11
+  position: 2
   sidebar_item_id: 55
   output_element_id: 194
   alt_output_element_id:
   dependent_on: ''
   description:
-    content_en: |
-      Cupcake ipsum dolor sit amet dragée oat cake ice cream macaroon. Soufflé
-      marshmallow croissant candy sesame snaps gummi bears jelly chocolate cake.
-      Chupa chups tootsie roll bonbon sesame snaps cookie brownie cheesecake
-      toffee cake.
-    content_nl: |
-      Cupcake ipsum dolor sit amet dragée oat cake ice cream macaroon. Soufflé
-      marshmallow croissant candy sesame snaps gummi bears jelly chocolate cake.
-      Chupa chups tootsie roll bonbon sesame snaps cookie brownie cheesecake
-      toffee cake.
+    content_en:
+      "When a lot of solar PV is installed, this can cause high peaks on the
+      electricity network. It is therefore desirable to be able to curtail the these peaks.
+      In some cases it is smart to connect solar parks to only a certain percentage
+      of the peak power. With the sliders below it is possible to set the
+      curtailment as a percentage of the peak power.
+      \r\n</br></br>\r\n
+      In the chart on the right you can see the effect of curtailment on the peaks of
+      the production curves and the yearly electricity production. When you are interested
+      in annual figures, click on the table icon in the right corner of the chart."
+    content_nl:
+      "Wanneer veel zon-PV geïnstalleerd is, kan dit zorgen voor hoge pieken op het
+      elektriciteitsnetwerk. Daarom is het wenselijk de productie te kunnen verlagen.
+      In sommige gevallen is het slim om zonneparken aan te sluiten
+      op slechts een bepaald percentage van het piekvermogen. Met onderstaande schuifjes
+      is het mogelijk de productiebeperking in te stellen als percentage van het
+      piekvermogen.
+      \r\n</br></br>\r\n
+      In de grafiek rechts zie je het effect van productiebeperking op de productiepieken
+      én op de jaarlijkse elektriciteitsproductie. Wanneer je geïnteresseerd bent in
+      de jaarlijkse cijfers, klik op het tabel-icoontje in de rechterbovenhoek van
+      de grafiek."
     short_content_en:
     short_content_nl:

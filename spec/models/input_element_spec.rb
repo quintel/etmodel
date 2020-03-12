@@ -26,7 +26,6 @@ describe InputElement do
     it { is_expected.to respond_to(:interface_group) }
     it { is_expected.to respond_to(:command_type) }
     it { is_expected.to respond_to(:related_converter) }
-    it { is_expected.to respond_to(:slide_id) }
     it { is_expected.to respond_to(:position) }
     it { is_expected.to respond_to(:description) }
 
@@ -67,12 +66,18 @@ describe InputElement do
     end
 
     context 'when the input has no slide' do
-      let(:input) { described_class.where(slide_id: nil).first }
+      let(:input) { described_class.new(slide_key: nil) }
 
       it 'returns an empty array' do
         expect(input.url_components).to eq([])
       end
     end
+  end
+
+  it '#slide returns the slide' do
+    slide = Slide.all.first
+    ie = described_class.new(slide_key: slide.key)
+    expect(ie.slide).to eq slide
   end
 
   describe '#sanitized_description' do

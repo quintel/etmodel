@@ -24,8 +24,9 @@ class Slide < YModel::Base
   include AreaDependent::YModel
   include Describable
 
+  index_on :key
   belongs_to :sidebar_item, foreign_key: :sidebar_item_key
-  has_many :input_elements
+  has_many :input_elements, foreign_key: :slide_key
   alias_method :sliders, :input_elements
 
   belongs_to :output_element # default chart

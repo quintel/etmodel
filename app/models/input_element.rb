@@ -27,7 +27,7 @@ class InputElement < YModel::Base
 
   ENUM_UNITS = %w[radio weather-curves].freeze
 
-  belongs_to :slide
+  belongs_to :slide, foreign_key: :sidebar_item_key
 
   class << self
     def households_heating_sliders
@@ -46,14 +46,6 @@ class InputElement < YModel::Base
 
   def title_for_description
     "input_elements.#{key}"
-  end
-
-  def slide
-    Slide.find slide_id
-  end
-
-  def slide=(slide)
-    self.slide_id = slide&.id
   end
 
   def translated_name

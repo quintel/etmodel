@@ -30,7 +30,7 @@
   percentage_bar_query: share_of_buildings_in_final_demand
   tab_key: demand
   position: 2
-  dependent_on:
+  dependent_on: has_buildings
   parent_key:
   description:
     content_en: "How much energy will offices, schools, hospitals and other buildings
@@ -81,7 +81,7 @@
   percentage_bar_query: share_of_industry_and_energy_in_final_demand
   tab_key: demand
   position: 4
-  dependent_on:
+  dependent_on: has_industry
   parent_key:
   description:
     content_en: "Industry often represents a large part of a country's energy use.
@@ -118,7 +118,7 @@
   percentage_bar_query: share_of_agriculture_in_final_demand
   tab_key: demand
   position: 5
-  dependent_on:
+  dependent_on: has_agriculture
   parent_key:
   description:
     content_en: "In general, agriculture is not very energy intensive, with the exception
@@ -144,7 +144,7 @@
   percentage_bar_query: share_of_other_in_final_demand
   tab_key: demand
   position: 6
-  dependent_on:
+  dependent_on: has_other
   parent_key:
   description:
     content_en: "How much energy will the energy consumers use that are not included
@@ -352,7 +352,7 @@
   percentage_bar_query: ''
   tab_key: targets
   position: 1
-  dependent_on:
+  dependent_on: _always_hidden
   parent_key:
   description:
     content_en: "By how much will the government want to cut CO<sub>2</sub> emissions
@@ -376,7 +376,7 @@
   percentage_bar_query: ''
   tab_key: targets
   position: 2
-  dependent_on:
+  dependent_on: _always_hidden
   parent_key:
   description:
     content_en: "How much energy do you want to import from other countries? Since
@@ -402,7 +402,7 @@
   percentage_bar_query: ''
   tab_key: targets
   position: 3
-  dependent_on:
+  dependent_on: _always_hidden
   parent_key:
   description:
     content_en: By how much may energy costs increase or decrease? Everyone needs
@@ -493,7 +493,7 @@
   percentage_bar_query: ''
   tab_key: supply
   position: 4
-  dependent_on:
+  dependent_on: _always_hidden
   parent_key:
   description:
     content_en: "How much of the heat needed should be produced from renewable sources?\r\n<br/><br/>\r\nKeep
@@ -536,7 +536,7 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 8
-  dependent_on:
+  dependent_on: use_network_calculations
   parent_key:
   description:
     content_en: 'Additional electricity generation capacity and extra electricity
@@ -556,7 +556,7 @@
   percentage_bar_query: ''
   tab_key: targets
   position: 4
-  dependent_on:
+  dependent_on: _always_hidden
   parent_key:
   description:
     content_en: "How much land, sea or coast will the government allocate to energy
@@ -582,7 +582,7 @@
   percentage_bar_query: ''
   tab_key: supply
   position: 9
-  dependent_on:
+  dependent_on: _always_hidden
   parent_key:
   description:
     content_en: "Greenhouse gases are emitted when fuels are used, but also when they
@@ -646,7 +646,7 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 1
-  dependent_on:
+  dependent_on: has_merit_order
   parent_key:
   description:
     content_en: This page shows the 'merit order' of power producing technologies
@@ -665,7 +665,7 @@
   percentage_bar_query: ''
   tab_key: costs
   position: 11
-  dependent_on:
+  dependent_on: _always_hidden
   parent_key:
   description:
     content_en: "Increased employment might be good reason to make the transition
@@ -740,7 +740,7 @@
   percentage_bar_query: ''
   tab_key: demand
   position: 2
-  dependent_on:
+  dependent_on: _always_hidden
   parent_key: industry
   description:
     content_en: "Metal processing represents a large part of industrial energy use.
@@ -762,7 +762,7 @@
   percentage_bar_query: ''
   tab_key: flexibility
   position: 2
-  dependent_on:
+  dependent_on: has_electricity_storage
   parent_key:
   description:
     content_en: "This page addresses the biggest obstacle facing integration of large
@@ -808,7 +808,7 @@
   percentage_bar_query: ''
   tab_key: flexibility
   position: 4
-  dependent_on:
+  dependent_on: is_national_scenario
   parent_key:
   description:
     content_en: "The European Union mandates energy market integration. For electricity
@@ -854,7 +854,7 @@
   percentage_bar_query: ''
   tab_key: demand
   position: 1
-  dependent_on:
+  dependent_on: _always_hidden
   parent_key: industry
   description:
     content_en: "The chemical sector represents a large part of the industrial energy
@@ -879,7 +879,7 @@
   percentage_bar_query: ''
   tab_key: demand
   position: 3
-  dependent_on:
+  dependent_on: _always_hidden
   parent_key: industry
   description:
     content_en: "The other industry sector includes the energy consumption that is
@@ -903,7 +903,7 @@
   percentage_bar_query: ''
   tab_key: supply
   position: 11
-  dependent_on:
+  dependent_on: is_national_scenario
   parent_key:
   description:
     content_en: ''

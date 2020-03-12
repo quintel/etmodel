@@ -103,7 +103,6 @@ describe Slide do
 
   describe '.index' do
     it 'is indexed on :key' do
-      pending "this isn't implemented yet"
       expect(described_class.index).to eq(:key)
     end
   end

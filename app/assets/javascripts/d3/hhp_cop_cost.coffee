@@ -1,6 +1,12 @@
 D3.hhp_cop_cost =
   View: class extends D3ChartView
-    COP_LIST = [1, 2, 3, 4, 5, 6]
+    MIN_COP = 1
+    MAX_COP = 6
+
+    COP_LIST = [MIN_COP]
+
+    while COP_LIST[COP_LIST.length - 1] < MAX_COP
+      COP_LIST.push(Math.round(10 * (COP_LIST[COP_LIST.length - 1] + 0.1)) / 10)
 
     initialize: ->
       D3ChartView.prototype.initialize.call(this)
@@ -85,8 +91,8 @@ D3.hhp_cop_cost =
         .attr('cx', (data) -> xScale(data.x))
         .attr('cy', (data) -> yScale(data.y))
         .attr('data-tooltip-text', (data) =>
-          "COP #{Metric.round_number(data.y, 2)}, " +
-          "#{Metric.round_number(data.x, 2)} #{@model.get('unit')} "
+          "COP #{Metric.round_number(data.x, 2)}, " +
+          "#{Metric.round_number(data.y, 2)} #{@model.get('unit')} "
         )
 
       @drawLegend(@model.non_target_series().concat(@model.target_series()), 2)
@@ -103,10 +109,13 @@ D3.hhp_cop_cost =
       )
 
     serieData: (serie) =>
-      values = serie.future_value()
+      value = serie.future_value()
 
-      if typeof values == 'number' || !values
-        values = Array.apply(null, Array(COP_LIST.length)).map(-> values || 0)
+      values =
+        if serie.get('gquery_key').match(/_electricity_cop/) && value
+          (value / num for num in COP_LIST)
+        else
+          Array.apply(null, Array(COP_LIST.length)).map(-> value || 0)
 
       {
         color:     serie.get('color'),
@@ -125,7 +134,7 @@ D3.hhp_cop_cost =
     maxYValue: ->
       d3.max(
         @model.target_series().map(
-          (serie) -> d3.max(serie.future_value())
+          (serie) -> serie.future_value()
         )
       )
 
@@ -136,9 +145,7 @@ D3.hhp_cop_cost =
       d3.scale.linear().domain([0, @maxYValue()]).range([@height, 0]).nice()
 
     createXScale: ->
-      d3.scale.linear().domain([
-        COP_LIST[COP_LIST.length - 1], COP_LIST[0]]
-      ).range([@width, 0])
+      d3.scale.linear().domain([MAX_COP, MIN_COP]).range([@width, 0])
 
     # Draws the Y axis onto charts, configuring the scaling and grey grid lines.
     drawYAxis: (scale) ->
@@ -155,15 +162,6 @@ D3.hhp_cop_cost =
         .attr("font-weight", "bold")
         .style("text-anchor", "end")
         .text(@model.get('unit'))
-
-      yaxisg.selectAll("line").data(scale.ticks(8), (d) => d)
-        .enter()
-        .append("line")
-        .attr("class", "minor")
-        .attr("y1", scale)
-        .attr("y2", scale)
-        .attr("x1", 0)
-        .attr("x2", @width)
 
       scale
 
@@ -190,20 +188,11 @@ D3.hhp_cop_cost =
         .attr('y', @margins.bottom)
         .text('COP')
 
-      xaxisg.selectAll("line").data(scale.ticks(12), (d) => d)
-        .enter()
-        .append("line")
-        .attr("class", "minor")
-        .attr("y1", 0)
-        .attr("y2", -@height)
-        .attr("x1", scale)
-        .attr("x2", scale)
-
       scale
 
     createXAxis: (scale) ->
       d3.svg.axis().scale(scale)
-        .ticks(COP_LIST.length)
+        .ticks(COP_LIST.length / 10)
         .tickSize(-@height, 0)
         .tickFormat((v) => v)
 

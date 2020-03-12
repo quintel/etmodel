@@ -9,17 +9,17 @@
 #  percentage_bar_query :text
 #  tab_key              :integer
 #  position             :integer
-#  parent_key            :integer
-#
+#  parent_key           :integer
+#  description:         :hash
 
 # This model represents the secondary menu-item category in the sidebar of the
 # scenario section of the application. The ones you click to a `slide`.
 # ie "Households", "Electricity" and "Fuel prices"
 class SidebarItem < YModel::Base
   include AreaDependent::YModel
+  include Describable
 
   index_on :key
-  has_one :description, as: :describable
   belongs_to :tab
   has_many :slides, foreign_key: :sidebar_item_key
   belongs_to :parent, class_name: 'SidebarItem'

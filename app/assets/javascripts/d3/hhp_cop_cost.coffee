@@ -168,7 +168,7 @@ D3.hhp_cop_cost =
     createYAxis: (scale) ->
       d3.svg.axis().scale(scale)
         .orient('left')
-        .ticks(4)
+        .ticks(6)
         .tickSize(-@width, 0)
         .tickFormat((v) => v)
 

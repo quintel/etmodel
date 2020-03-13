@@ -32,7 +32,7 @@ module YModel
       end
     end
 
-    # These cop is disabled because Its just a copy of ActiveRecords interface
+    # These cop is disabled because its  a copy of ActiveRecords interface
     # rubocop:disable Naming/PredicateName
     # rubocop:disable Naming/UncommunicativeMethodParamName
     def has_many(model, class_name: nil, as: nil, foreign_key: nil)

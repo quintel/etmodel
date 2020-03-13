@@ -36,9 +36,6 @@ module YModel
     end
 
     class << self
-      def all_validated
-        raise unless all.all?(&:index_set?)
-      end
 
       def find(index)
         all.find { |record| record.index == index }

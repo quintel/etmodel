@@ -84,26 +84,37 @@ describe Slide do
   describe '#tab' do
     it 'the same tab as the tab of its sidebar_item' do
       sidebar_item = Tab.all.first.sidebar_items.first
-      slide = Slide.new(sidebar_item_key: sidebar_item.key)
+      slide = described_class.new(sidebar_item_key: sidebar_item.key)
       expect(slide.tab).to eq(sidebar_item.tab)
     end
   end
 
   describe '#sidebar_item' do
     it 'returns a sidebar_item' do
-      expect(Slide.all.first.sidebar_item)
+      expect(described_class.all.first.sidebar_item)
         .to be_a(SidebarItem)
     end
 
     it 'returns the related sidebar_item' do
       sidebar_item = SidebarItem.all.first
-      subject { Slide.find_by(sidebar_item_id: sidebar_item.id)}
+      subject { described_class.find_by(sidebar_item_id: sidebar_item.id) }
     end
   end
 
   describe '.index' do
     it 'is indexed on :key' do
       expect(described_class.index).to eq(:key)
+    end
+  end
+
+  # We might want to lift these preconditions to the applications from the
+  # testsuite as it provides better feedback to the modelers that way.
+  describe 'YAML file' do
+    subject { described_class.all }
+
+    it 'has unique keys' do
+      keys = subject.map(&:key)
+      expect(keys.size).to eq(keys.uniq.size)
     end
   end
 end

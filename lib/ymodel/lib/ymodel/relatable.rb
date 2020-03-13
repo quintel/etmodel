@@ -7,7 +7,6 @@ require 'ymodel/helper'
 module YModel
   # This module contains YModel logic for managing relations.
   module Relatable
-
     # This method is used to define the key on which relations are build.
     # We default to 'id'.
     def index_on(key)
@@ -21,12 +20,14 @@ module YModel
     def belongs_to(model, options = {})
       define_method(model) do
         # We might want to create a mechanism to memoize this.
-        related_class = options[:class_name] || YModel::Helper.model_class(model)
-        if related_class < YModel::Base
-          key = :"#{model.to_s.singularize}_#{related_class.index}"
-        else
-          key = :"#{related_class.to_s.singularize}_id"
-        end
+        related_class =
+          options[:class_name] || YModel::Helper.model_class(model)
+        key =
+          if related_class < YModel::Base
+            :"#{model.to_s.singularize}_#{related_class.index}"
+          else
+            :"#{related_class.to_s.singularize}_id"
+          end
         related_class.find(self[key])
       end
     end

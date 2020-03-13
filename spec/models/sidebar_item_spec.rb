@@ -31,16 +31,23 @@ describe SidebarItem do
     it { is_expected.to respond_to(:parsed_key_for_admin) }
     it { is_expected.to respond_to(:short_name) }
 
+    describe '.tab' do
+      subject { described_class.all.first }
 
-    describe ".tab" do
-      subject { SidebarItem.all.first }
-      it "returns a tab" do
+      it 'returns a tab' do
         expect(subject.tab).to be_a Tab
       end
     end
+  end
 
-    it ".where(:overview) only includes one sidebar_item" do
-      expect(SidebarItem.where( tab_key: "overview" ).count).to eq(1)
+  # We might want to lift these preconditions to the applications from the
+  # testsuite as it provides better feedback to the modelers that way.
+  describe 'YAML file' do
+    subject { described_class.all }
+
+    it 'has unique keys' do
+      keys = subject.map(&:key)
+      expect(keys.size).to eq(keys.uniq.size)
     end
   end
 end

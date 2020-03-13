@@ -37,7 +37,6 @@ class YModel::Related < YModel::Base
   has_many :concretes,
            class_name: YModel::Concrete,
            foreign_key: :concrete_relation_id
-
 end
 
 class YModel::RelatedOnKey < YModel::Base
@@ -110,9 +109,9 @@ describe YModel::Base do
     describe 'with malicious params' do
       subject do
         YModel::Concrete.where!(key: 'overview',
-                               en_vimeo_id: '',
-                               nillable: nil,
-                               set_spy: true)
+                                en_vimeo_id: '',
+                                nillable: nil,
+                                set_spy: true)
       end
 
       it 'doesn\'t send non-whitelabeled schema attributes' do

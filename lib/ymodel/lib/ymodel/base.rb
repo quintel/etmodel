@@ -49,7 +49,7 @@ module YModel
         all.each do |record|
           return record if sanitized.all? { |k, v| record.send(k) == v }
         end
-        raise RecordNotFoundError.new
+        raise RecordNotFoundError, attributes
       end
 
       def find_by_key(key)
@@ -71,7 +71,7 @@ module YModel
           unpermitted = (attributes.keys.map(&:to_sym) - sanitized.keys)
           message = "These attributes are not allowed: #{unpermitted}"
 
-          raise UnpermittedParamsError.new(message)
+          raise UnpermittedParamsError, message
         end
 
         all.select do |record|
@@ -105,7 +105,7 @@ module YModel
     end
 
     def index_key
-       self.class.instance_variable_get('@index') || :id
+      self.class.instance_variable_get('@index') || :id
     end
 
     def index_set?

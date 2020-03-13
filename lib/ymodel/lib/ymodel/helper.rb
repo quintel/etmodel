@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module YModel
   # This module contains YModel logic for managing relations.
   module Helper

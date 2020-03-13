@@ -4,14 +4,13 @@
 #
 # Table name: slides
 #
-#  id                    :integer          not null, primary key
+#  key                   :string(255)
 #  image                 :string(255)
 #  created_at            :datetime
 #  updated_at            :datetime
 #  general_sub_header    :string(255)
 #  group_sub_header      :string(255)
 #  subheader_image       :string(255)
-#  key                   :string(255)
 #  position              :integer
 #  sidebar_item_key      :string
 #  output_element_id     :integer

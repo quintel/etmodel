@@ -88,4 +88,20 @@ describe InputElement do
 
     it { is_expected.to eq '&#39;foobar&#39;' }
   end
+
+  # We might want to lift these preconditions to the applications from the
+  # testsuite as it provides better feedback to the modelers that way.
+  describe 'YAML file' do
+    subject { described_class.all }
+
+    it 'has unique keys' do
+      keys = subject.map(&:key)
+      expect(keys.size).to eq(keys.uniq.size)
+    end
+
+    it 'has unique ids' do
+      ids = subject.map(&:id)
+      expect(ids.size).to eq(ids.uniq.size)
+    end
+  end
 end

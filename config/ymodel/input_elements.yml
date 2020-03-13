@@ -10094,15 +10094,17 @@
   dependent_on: ''
   description:
     content_en: "Here you indicate the threshold COP of hybrid heat pumps for space
-      heating.\r\n<p>\r\nThe default setting is that the electric part of the HHP
-      is used maximally for space heating.\r\n<p>\r\nWith the current gas and electricity
+      heating. \r\n<p>\r\nThe default setting is that the electric part of the HHP
+      is used maximally for space heating. With the current gas and electricity
       price financial optimization for the user is achieved with a threshold COP of
-      \ 3.6.\r\nFor calculations see <a href=\"https://github.com/quintel/documentation/blob/bd77c99e145958613a8c2e45116e887a1d01a39a/general/heat_pumps.md\">Documentation</a>"
+      \ 2.6, this can be concluded from the chart on the right.\r\nFor more information
+      about (hybrid) heat pumps see our <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_pumps.md\">documentation</a>."
     content_nl: "Geef hier aan wat de omslag-COP van het hybride warmtepompen is voor
       ruimteverwarming.\r\n<p>\r\nMet de standaardinstelling voor de omslag-COP wordt
-      het elektrische deel van de hybride warmtepomp maximal gebruikt voor ruimteverwarming.\r\n<p>\r\nMet
+      het elektrische deel van de hybride warmtepomp maximal gebruikt voor ruimteverwarming. Met
       de huidige gas- en elektriciteitsprijs wordt financiële optimalisatie voor de
-      gebruiker bereikt met een omslag-COP van 3.6. Voor meer informatie zie: <a href=\"https://github.com/quintel/documentation/blob/bd77c99e145958613a8c2e45116e887a1d01a39a/general/heat_pumps.md\">Documentatie</a>"
+      gebruiker bereikt met een omslag-COP van 2.6, dit is te zien in de grafiek rechts
+      weergegeven. Voor meer informatie over (hybride) warmtepompen zie onze <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_pumps.md\">documentatie</a>."
     short_content_en:
     short_content_nl:
 - id: 780
@@ -10118,7 +10120,7 @@
   related_converter: ''
   slide_id: 283
   position: 2
-  dependent_on: ''
+  dependent_on: _always_hidden
   description:
     content_en: "Here you indicate the threshold COP of hybrid heat pumps for hot
       water.\r\n<p>\r\nThe default setting is that the gas part of the HHP is used

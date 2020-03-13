@@ -91,7 +91,7 @@ D3.hhp_cop_cost =
         .attr('cx', (data) -> xScale(data.x))
         .attr('cy', (data) -> yScale(data.y))
         .attr('data-tooltip-text', (data) =>
-          "COP #{Metric.round_number(data.x, 2)}, " +
+          "COP #{Metric.round_number(data.x, 1)}, " +
           "#{Metric.round_number(data.y, 2)} #{@model.get('unit')} "
         )
 

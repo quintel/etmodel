@@ -5,7 +5,7 @@ class AddHhpCopCostChart < ActiveRecord::Migration[5.2]
     chart = OutputElement.create!(
       key: 'household_network_gas_hhp_cop_cost',
       output_element_type: type,
-      unit: '€/MW',
+      unit: '€/MJ heat',
       group: 'Cost'
     )
 

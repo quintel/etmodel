@@ -36,7 +36,6 @@ module YModel
     end
 
     class << self
-
       def find(index)
         all.find { |record| record.index == index }
       end

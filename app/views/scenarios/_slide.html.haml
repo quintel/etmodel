@@ -14,7 +14,7 @@
 
     .items
       - unless slide.general_sub_header.blank?
-        .sub_header{:id => "sub_header_#{slide.key}"}
+        .sub_header{ :id => "sub_header_#{slide.key}" }
           %span.sub_header_arrow= t("subheaders.#{to_yml_syntax(slide.general_sub_header)}")
           - unless slide.subheader_image.blank?
             %img.sub_header_image{:src => "/assets/slides/#{slide.subheader_image}"}

@@ -3,17 +3,14 @@ D3.solar_curtailment_curve =
 
 
     draw: ->
-      @serieSelect = new D3ChartSerieSelect(@container_selector(),
-                                            ['solar_pv',
-                                             'buildings_solar_pv',
-                                             'households_solar_pv',
-                                             'energy_power_solar_pv'])
-      @serieSelect.draw(@refresh.bind(this))
-
       super
 
+      @serieSelect = new D3ChartSerieSelect(@container_selector(),
+                                            @serieSelectOptions())
+      @serieSelect.draw(@refresh.bind(this))
+
     visibleData: ->
-      val = @serieSelect.selectBox.val()
+      val = @serieSelect?.selectBox.val() || @serieSelectOptions()[0]
       super().filter((serie) -> serie.key.includes(val))
 
     getLegendSeries: ->
@@ -25,10 +22,15 @@ D3.solar_curtailment_curve =
 
       legendSeries
 
+    serieSelectOptions: ->
+      return ['solar_pv',
+             'buildings_solar_pv',
+             'households_solar_pv',
+             'energy_power_solar_pv']
+
 
 # TODO
 # generate options instead of putting them in hard
-# translations of options
 # tooltips
 # link the table view
 

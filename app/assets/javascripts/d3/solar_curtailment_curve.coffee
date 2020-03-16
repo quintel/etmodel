@@ -23,6 +23,6 @@ D3.solar_curtailment_curve =
 
     serieSelectOptions: ->
       return ['solar_pv',
-             'buildings_solar_pv',
              'households_solar_pv',
+             'buildings_solar_pv',
              'energy_power_solar_pv']

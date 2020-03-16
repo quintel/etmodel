@@ -1,16 +1,17 @@
 var D3ChartSerieSelect = (function () {
 
   function setChartSerie(){
-    // console.log(this.selectBox.val())
     this.updateChart && this.updateChart();
   }
 
   function createOptions(){
     var html_options = [];
     this.options.forEach( option =>
-      html_options += '<option value=' + option + '>' + I18n.t("output_element_series." + option) + '</option>'
-    )
-    return html_options
+      html_options += '<option value=' + option + '>'
+                    + I18n.t("output_element_series." + option)
+                    + '</option>'
+    );
+    return html_options;
   }
 
   function buildSelectBox(){
@@ -27,9 +28,6 @@ var D3ChartSerieSelect = (function () {
       this.selectBox = buildSelectBox.call(this);
 
       this.scope.append(this.selectBox);
-    },
-    val: function() {
-      return this.selectBox.val();
     }
   };
 

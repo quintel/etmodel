@@ -1,7 +1,6 @@
 D3.solar_curtailment_curve =
   View: class extends D3.dynamic_demand_curve.View
 
-
     draw: ->
       super
 
@@ -17,8 +16,8 @@ D3.solar_curtailment_curve =
       legendSeries = []
       val = @serieSelect.selectBox.val()
       @series.forEach (serie) =>
-         if serie.attributes.gquery_key.includes(val)
-           legendSeries.push(serie)
+        if serie.attributes.gquery_key.includes(val)
+          legendSeries.push(serie)
 
       legendSeries
 
@@ -27,10 +26,3 @@ D3.solar_curtailment_curve =
              'buildings_solar_pv',
              'households_solar_pv',
              'energy_power_solar_pv']
-
-
-# TODO
-# generate options instead of putting them in hard
-# tooltips
-# link the table view
-

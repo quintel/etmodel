@@ -1,4 +1,4 @@
-/* globals $ App d3 */
+/* globals $ App d3 I18n */
 
 var D3ChartDateSelect = (function() {
   'use strict';
@@ -19,11 +19,19 @@ var D3ChartDateSelect = (function() {
     return '<option value="' + nextIndex + '">' + optionText + '</option>';
   }
 
-  function createOptions() {
-    var i,
-      options = '<option value="0">Whole year</option>';
+  function createOptions(downsampleMethod) {
+    var textNamespace = 'output_elements.common.';
 
-    for (i = 0; i < 52; i += 1) {
+    var yearText = I18n.t(
+      textNamespace + 'whole_year_daily_' + downsampleMethod,
+      {
+        defaultValue: I18n.t(textNamespace + 'whole_year')
+      }
+    );
+
+    var options = '<option value="0">' + yearText + '</option>';
+
+    for (var i = 0; i < 52; i += 1) {
       options += buildOption.call(this, i);
     }
 
@@ -39,10 +47,10 @@ var D3ChartDateSelect = (function() {
     App.settings.set('merit_charts_date', $(this).val());
   }
 
-  function buildSelectBox() {
+  function buildSelectBox(downsampleMethod) {
     return $('<select/>')
       .addClass('d3-chart-date-select')
-      .append(createOptions.call(this))
+      .append(createOptions.call(this, downsampleMethod))
       .val(App.settings.get('merit_charts_date') || '1')
       .on('change', setMeritChartsDate);
   }
@@ -53,7 +61,7 @@ var D3ChartDateSelect = (function() {
 
     draw: function(updateChart) {
       this.updateChart = updateChart;
-      this.selectBox = buildSelectBox.call(this);
+      this.selectBox = buildSelectBox.call(this, this.downsampleMethod);
 
       this.scope.append(this.selectBox);
 
@@ -76,9 +84,10 @@ var D3ChartDateSelect = (function() {
     }
   };
 
-  function D3ChartDateSelect(scope, range) {
+  function D3ChartDateSelect(scope, range, downsampleMethod) {
     this.scope = $(scope);
     this.range = range;
+    this.downsampleMethod = downsampleMethod;
   }
 
   return D3ChartDateSelect;

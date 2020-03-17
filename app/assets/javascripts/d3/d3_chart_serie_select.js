@@ -6,11 +6,11 @@ var D3ChartSerieSelect = (function () {
 
   function createOptions(){
     var html_options = [];
-    this.options.forEach( option =>
-      html_options += '<option value=' + option + '>'
-                    + I18n.t("output_element_series." + option)
-                    + '</option>'
-    );
+    this.options.forEach(function(option) {
+      html_options += '<option value=' + option + '>' +
+                      I18n.t("output_element_series." + option) +
+                      '</option>';
+    });
     return html_options;
   }
 

@@ -12,18 +12,34 @@ class AddChartHhpHourlyDemand < ActiveRecord::Migration[5.2]
 
     OutputElementSerie.create!(
       output_element: chart,
-      color: '#a4b0be',
-      label: 'gas',
-      gquery: 'households_space_heater_hybrid_heatpump_network_gas_input_curve',
+      color: '#00008B',
+      label: 'households_water_heater_hybrid_heatpump_electricity_input_curve',
+      gquery: 'households_water_heater_hybrid_heatpump_electricity_input_curve',
+      order_by: 0
+    )
+
+    OutputElementSerie.create!(
+      output_element: chart,
+      color: '#696969',
+      label: 'households_water_heater_hybrid_heatpump_network_gas_input_curve',
+      gquery: 'households_water_heater_hybrid_heatpump_network_gas_input_curve',
       order_by: 1
     )
 
     OutputElementSerie.create!(
       output_element: chart,
-      color: '#ffa500',
-      label: 'electricity',
+      color: '#4169E1',
+      label: 'households_space_heater_hybrid_heatpump_electricity_input_curve',
       gquery: 'households_space_heater_hybrid_heatpump_electricity_input_curve',
       order_by: 2
+    )
+
+    OutputElementSerie.create!(
+      output_element: chart,
+      color: '#a4b0be',
+      label: 'households_space_heater_hybrid_heatpump_network_gas_input_curve',
+      gquery: 'households_space_heater_hybrid_heatpump_network_gas_input_curve',
+      order_by: 3
     )
 
   end

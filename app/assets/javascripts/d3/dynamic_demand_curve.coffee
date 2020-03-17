@@ -168,7 +168,7 @@ D3.dynamic_demand_curve =
       @svg.select(".x_axis").call(@createTimeAxis(xScale))
       @svg.select(".y_axis").call(@createLinearAxis(yScale))
 
-      if @container_node().find("g.serie").length > 0
+      if @container_node().find("g.serie").length >= @stackedData.length
         serie = @svg.selectAll('g.serie')
           .data(@stackedData)
           .select('path.area')

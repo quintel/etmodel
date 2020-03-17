@@ -1,7 +1,7 @@
 var D3ChartSerieSelect = (function () {
 
   function setChartSerie(){
-    this.updateChart && this.updateChart();
+    this.updateChart();
   }
 
   function createOptions(){

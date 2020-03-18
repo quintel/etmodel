@@ -10120,7 +10120,7 @@
   related_converter: ''
   slide_id: 283
   position: 2
-  dependent_on: 
+  dependent_on:
   description:
     content_en: "Here you indicate the threshold COP of hybrid heat pumps for hot
       water.\r\n<p>\r\nThe default setting is that the gas part of the HHP is used
@@ -14901,5 +14901,53 @@
     het piekvermogen. Zonneparken zijn verbonden aan het hoogspanningsnet in het ETM.
     Het geïnstalleerd vermogen is
     <a href=\"/scenario/supply/electricity_renewable/solar-power\">hier</a> aan te passen."
+    short_content_en:
+    short_content_nl:
+- id: 1011
+  key: capacity_of_energy_heat_flexibility_p2h_boiler_electricity
+  share_group: ''
+  step_value: 0.1
+  draw_to_min:
+  draw_to_max:
+  unit: "MW"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: 'energy_heat_flexibility_p2h_boiler_electricity'
+  slide_id: 285
+  position: 1
+  dependent_on: ''
+  description:
+    content_en: "Power-to-heat boilers convert <strong>excess</strong> electricity to
+      heat. This slider allows this heat to be used in the
+      <a href=\"/scenario/supply/heat/heat-sources\">residential district heating
+      network</a>."
+    content_nl: "Power-to-heat boilers produceren warmte met elektriciteitsoverschotten.
+      Dit schuifje zorgt ervoor dat deze warmte wordt ingezet in het
+      <a href=\"/scenario/supply/heat/heat-sources\">residentiële warmtenet</a>."
+    short_content_en:
+    short_content_nl:
+- id: 1012
+  key: capacity_of_energy_heat_flexibility_p2h_heatpump_electricity
+  share_group: ''
+  step_value: 0.1
+  draw_to_min:
+  draw_to_max:
+  unit: "MW"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: 'energy_heat_flexibility_p2h_heatpump_electricity'
+  slide_id: 285
+  position: 2
+  dependent_on: ''
+  description:
+    content_en: "Power-to-heat heat pumps convert <strong>excess</strong> electricity to
+      heat. This slider allows this heat to be used in the
+      <a href=\"/scenario/supply/heat/heat-sources\">residential district heating
+      network</a>."
+    content_nl: "Power-to-heat warmtepompen produceren warmte met elektriciteitsoverschotten.
+      Dit schuifje zorgt ervoor dat deze warmte wordt ingezet in het
+      <a href=\"/scenario/supply/heat/heat-sources\">residentiële warmtenet</a>."
     short_content_en:
     short_content_nl:

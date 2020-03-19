@@ -16,8 +16,11 @@ class @D3YearlyChartView extends D3ChartView
     @svg          = @create_svg_container @width, @height, @margins
     @rawChartData = @dataForChart()
 
-    @dateSelect = new D3ChartDateSelect(@container_selector(),
-                                        @rawChartData[0].values.length)
+    @dateSelect = new D3ChartDateSelect(
+      @container_selector(),
+      @rawChartData[0].values.length,
+      @downsampleWith
+    )
 
     @dateSelect.draw(@refresh.bind(this))
 

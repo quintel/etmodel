@@ -19,7 +19,7 @@ class AddHhpCopCostChart < ActiveRecord::Migration[5.2]
 
     OutputElementSerie.create!(
       output_element: chart,
-      color: '#ffa500',
+      color: '#4169E1',
       label: 'electricity',
       gquery: 'household_space_heater_hhp_network_gas_electricity_cop_costs',
       order_by: 2,

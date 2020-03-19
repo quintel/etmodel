@@ -15,8 +15,6 @@ describe Slide do
   describe '.new' do
     subject { described_class.new }
     # Relations
-
-    it { is_expected.to respond_to(:description) }
     it { is_expected.to respond_to(:sliders) }
     it { is_expected.to respond_to(:output_element) }
     it { is_expected.to respond_to(:alt_output_element) }

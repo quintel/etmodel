@@ -22,7 +22,6 @@
 # (e.g. "Insulation", "Cooking", for "Households" item)
 class Slide < YModel::Base
   include AreaDependent::YModel
-  include Describable
 
   has_many :input_elements
   alias_method :sliders, :input_elements

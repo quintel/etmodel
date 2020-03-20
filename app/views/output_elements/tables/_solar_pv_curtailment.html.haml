@@ -1,0 +1,56 @@
+-# Solar PV curtailment table
+%table#solar_pv_curtailment.chart.centered.autostripe
+  %thead
+    %tr
+      %th
+      %th
+      %th
+      %th
+      %th{:colspan => 2, :style => "text-align: center"}= t 'output_elements.tables.solar_pv_curtailment.before_curtailment'
+      %th{:colspan => 2, :style => "text-align: center"}= t 'output_elements.tables.solar_pv_curtailment.after_curtailment'
+    %tr
+      %th
+      %th= t 'output_elements.tables.solar_pv_curtailment.installed_capacity'
+      %th= t 'output_elements.tables.solar_pv_curtailment.curtailment_percentage'
+      %th= t 'output_elements.tables.solar_pv_curtailment.curtailed_electricity_percentage'
+      %th= t 'output_elements.tables.solar_pv_curtailment.peak_power_before_curtailment'
+      %th= t 'output_elements.tables.solar_pv_curtailment.production_before_curtailment'
+      %th= t 'output_elements.tables.solar_pv_curtailment.peak_power_after_curtailment'
+      %th= t 'output_elements.tables.solar_pv_curtailment.production_after_curtailment'
+    %tr
+      %th
+      %th MW
+      %th %
+      %th %
+      %th MW
+      %th PJ
+      %th MW
+      %th PJ
+  %tbody
+    %tr
+      %th= t "output_elements.tables.solar_pv_curtailment.households_solar_pv"
+      %td{:data => {:gquery => "households_solar_pv_installed_capacity", :graph => :future}}
+      %td{:data => {:gquery => "households_solar_pv_curtailment_percentage", :graph => :future}}
+      %td{:data => {:gquery => "households_solar_pv_curtailed_electricity_percentage", :graph => :future}}
+      %td{:data => {:gquery => "households_solar_pv_peak_power_before_curtailment", :graph => :future}}
+      %td{:data => {:gquery => "households_solar_pv_production_before_curtailment", :graph => :future, decimals: 3 }}
+      %td{:data => {:gquery => "households_solar_pv_peak_power_after_curtailment", :graph => :future}}
+      %td{:data => {:gquery => "households_solar_pv_production_after_curtailment", :graph => :future, decimals: 3 }}
+    %tr
+      %th= t "output_elements.tables.solar_pv_curtailment.buildings_solar_pv"
+      %td{:data => {:gquery => "buildings_solar_pv_installed_capacity", :graph => :future}}
+      %td{:data => {:gquery => "buildings_solar_pv_curtailment_percentage", :graph => :future}}
+      %td{:data => {:gquery => "buildings_solar_pv_curtailed_electricity_percentage", :graph => :future}}
+      %td{:data => {:gquery => "buildings_solar_pv_peak_power_before_curtailment", :graph => :future}}
+      %td{:data => {:gquery => "buildings_solar_pv_production_before_curtailment", :graph => :future, decimals: 3 }}
+      %td{:data => {:gquery => "buildings_solar_pv_peak_power_after_curtailment", :graph => :future}}
+      %td{:data => {:gquery => "buildings_solar_pv_production_after_curtailment", :graph => :future, decimals: 3 }}
+    %tr
+      %th= t "output_elements.tables.solar_pv_curtailment.energy_power_solar_pv"
+      %td{:data => {:gquery => "energy_power_solar_pv_installed_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_power_solar_pv_curtailment_percentage", :graph => :future}}
+      %td{:data => {:gquery => "energy_power_solar_pv_curtailed_electricity_percentage", :graph => :future}}
+      %td{:data => {:gquery => "energy_power_solar_pv_peak_power_before_curtailment", :graph => :future}}
+      %td{:data => {:gquery => "energy_power_solar_pv_production_before_curtailment", :graph => :future, decimals: 3 }}
+      %td{:data => {:gquery => "energy_power_solar_pv_peak_power_after_curtailment", :graph => :future}}
+      %td{:data => {:gquery => "energy_power_solar_pv_production_after_curtailment", :graph => :future, decimals: 3 }}

@@ -301,37 +301,33 @@
   position: 1
   dependent_on: ''
   description:
-    content_en: "Market penetration means the percentage of households that has solar
-      panels. We assume that all available roof space for each house is used. \r\n<br/><br/>\r\nSolar
-      cells transform sunlight into electricity. Solar panels are installed on rooftops
-      and may compete for space with solar water heaters. This technology is developing
-      rapidly and solar panels are becoming ever more efficient and cheaper. Solar
-      panels are expected to become much cheaper in the coming 40 years. For more
-      information, see the 'technology curves'. \r\n<br/><br/>\r\nSolar panels produce
+    content_en: "With this slider you set the percentage of the potential roof area
+      where you want to install solar panels. Do you want to know the installed capacity?
+      Then look in the 'Merit order table', which can be found in the chart list
+      (you can get here by clicking 'See more charts' at the top right).
+      \r\n<br/><br/>\r\n
+      This technology is developing
+      rapidly and solar panels are becoming ever more efficient and cheaper. Solar panels produce
       electricity on site, so transport of electricity is not always required. This
       avoids losses on the grid and that saves energy. Feeding locally produced power
       back into the local power grid requires a higher capacity or smarter local grid,
-      to prevent it from overloading. The electricity produced by these solar panels
-      is shown in the chart on the right.\r\n<br/><br/>\r\nIn the ETM solar PV panels
-      have 867 full load hours by default. Because of technological developments it
-      is likely that future solar PV panels may produce more electricity per installed
-      capacity than today. You can adjust the full load hours of solar panels <a href=\"/scenario/supply/electricity_renewable/solar-power\"
-      >here</a>.\r\n</br>"
-    content_nl: "Marktpenetratie betekent het percentage van alle huishoudens dat
-      zonnepanelen heeft. We nemen aan dat alle beschikbare ruimte op het dak gebruikt
-      wordt.\r\n<br/><br/>\r\nZonnecellen zetten licht om in elektriciteit. Zonnepanelen
-      liggen op het dak en kunnen concurreren met zonneboilers om ruimte. Deze technologie
-      is nog volop in ontwikkeling en zonnepanelen worden steeds efficiënter en goedkoper.
-      Verwacht wordt dat zonnecellen de komende 40 jaar veel goedkoper zullen worden.\r\n<br/><br/>\r\nZonnepanelen
-      produceren stroom op de plek waar het gebruikt wordt (in huis) en dus is het
+      to prevent it from overloading. It may be desirable to curtail the power peaks in order
+      to decrease the load on the net, you can set this
+      <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.
+      \r\n<br/>\r\n"
+    content_nl: "Met dit schuifje stel je het percentage van het potentiële dakoppervlak in
+      waar je zonnepanelen wil installeren. Wil je weten hoeveel vermogen dit is? Kijk dan in
+      de 'Merit order tabel', deze is te vinden in de grafiekenlijst (hier kom je door rechtsbovenaan
+      op 'Meer grafieken bekijken' te klikken).
+      \r\n<br/><br/>\r\n
+      Zonnepanelen zijn nog volop in ontwikkeling en ze worden
+      steeds efficiënter en goedkoper. Ze produceren stroom op de plek waar het gebruikt wordt (in huis) en dus is het
       niet altijd nodig om de elektriciteit te transporteren over het elektriciteitsnet.
       Zo worden netwerkverliezen vermeden en energie bespaard. Stroom die niet wordt
-      gebruikt kan aan het lokale netwerk worden teruggeleverd. De stroom die deze
-      panelen produceren zie je terug in de grafiek rechts.\r\n<br/><br/>\r\nIn het
-      ETM heeft een zonnepaneel standaard 867 vollasturen. Het is aannemelijk dat
-      toekomstige zonnepanelen meer elektriciteit zullen produceren per geïnstalleerd
-      vermogen dan nu. Je kunt het aantal vollasturen voor zonnepanelen <a href=\"/scenario/supply/electricity_renewable/solar-power\"
-      >hier</a> aanpassen.\r\n</br>"
+      gebruikt kan aan het lokale netwerk worden teruggeleverd. Het kan wenselijk zijn om de
+      productie te beperken om zo het net te ontlasten, dit kan je
+      <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a> instellen.
+      \r\n<br/>\r\n"
     short_content_en: ''
     short_content_nl: ''
 - id: 52
@@ -3024,21 +3020,21 @@
   position: 1
   dependent_on: ''
   description:
-    content_en: "This builds centralized plants of photovoltaic solar power panels.
-      These are not mounted on roofs, but are usually placed in a field.<br/><br/>\r\nSince
-      Northern Europe receives relatively little sun, solar power is still much more
-      expensive than other renewable technologies. Like wind power, solar power output
+    content_en: "With this slider you build centralized plants of photovoltaic solar power panels.
+      These are not mounted on roofs, but are usually placed in a field.<br/><br/>\r\n
+      Like wind power, solar power output
       fluctuates over time, but in a more predictable way, making it easier to keep
       the electricity grid in balance. Still, the impact of installing large numbers
       of solar panels can be large, because electricity is fed back into the local
-      grid. This may require balancing solutions at the local level for the grid."
-    content_nl: "Hiermee bouw je een centrale van zonnepanelen. Deze panelen zijn
-      in een veld opgesteld, of maken gebruik van daken van zeer grote gebouwen. <br/>\r\nIn
-      Noord Europa is zonnestroom nog veel duurder dan wind bijvoorbeeld, doordat
-      er relatief weinig zonuren zijn. Net als windstroom, is zonnestroom fluctuerend.
+      grid. This may require balancing solutions at the local level for the grid. In some
+      cases it is smart to connect solar parks to only a certain percentage of the peak power,
+      you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.\r\n<br/>\r\n"
+    content_nl: "Met dit schuifje bouw je een grootschalig zonnepark.<br/>\r\nNet als windstroom, is zonnestroom fluctuerend.
       Toch is de variatie van zonnestroom beter te voorspellen. Als zeer veel zonnepanelen
       geïnstalleerd worden, kan het nodig zijn om oplossingen te vinden voor onbalans
-      op het laagspanningsnet.\r\n"
+      op het laagspanningsnet. In sommige gevallen is het slim om zonneparken aan te
+      sluiten op slechts een bepaald percentage van het piekvermogen, dit kan je
+      <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a> instellen.\r\n<br/>\r\n"
     short_content_en: ''
     short_content_nl: ''
 - id: 299
@@ -4907,31 +4903,33 @@
   position: 1
   dependent_on: ''
   description:
-    content_en: "Solar cells transform sunlight into electricity. These solar panels
-      are mostly installed on rooftops. This technology is developing rapidly and
-      solar panels are becoming ever more efficient and cheaper. Solar panels are
-      expected to become much cheaper in the coming 40 years.\r\n<br/><br/>\r\nSolar
-      panels produce electricity on site, so transport of electricity is not always
-      required. This avoids losses on the grid and that saves energy. Feeding locally
-      produced power back into the local power grid requires a higher capacity or
-      smarter local grid, to prevent it from overloading. \r\n<br/><br/>\r\nIn the
-      ETM solar PV panels have 867 full load hours by default. Because of technological
-      developments it is likely that future solar PV panels may produce more electricity
-      per installed capacity than today. You can adjust the full load hours of solar
-      panels <a href=\"/scenario/supply/electricity_renewable/solar-power\" >here</a>\r\n</br>"
-    content_nl: "Zonnecellen zetten licht om in elektriciteit. Deze zonnepanelen liggen
-      meestal op het dak. Deze technologie is nog volop in ontwikkeling en zonnepanelen
-      worden steeds efficiënter en goedkoper. Verwacht wordt dat zonnecellen de komende
-      40 jaar veel goedkoper zullen worden. Zie hiervoor ook de 'Expert voorspellingen'
-      in het Kosten hoofdstuk.\r\n<br/><br/>\r\nZonnepanelen produceren stroom op
-      de plek waar het gebruikt wordt en dus is het niet altijd nodig om de elektriciteit
-      te transporteren over het elektriciteitsnet. Zo worden netwerkverliezen vermeden
-      en energie bespaard. Stroom die niet wordt gebruikt kan aan het lokale netwerk
-      worden teruggeleverd. \r\n<br/><br/>\r\nIn het ETM heeft een zonnepaneel standaard
-      867 vollasturen. Het is aannemelijk dat toekomstige zonnepanelen meer elektriciteit
-      zullen produceren per geïnstalleerd vermogen dan nu. Je kunt het aantal vollasturen
-      voor zonnepanelen <a href=\"/scenario/supply/electricity_renewable/solar-power\"
-      >hier</a> aanpassen.\r\n</br>"
+    content_en: "With this slider you set the percentage of the potential roof area
+      where you want to install solar panels. Do you want to know the installed capacity?
+      Then look in the 'Merit order table', which can be found in the chart list
+      (you can get here by clicking 'See more charts' at the top right).
+      \r\n<br/><br/>\r\n
+      This technology is developing
+      rapidly and solar panels are becoming ever more efficient and cheaper. Solar panels produce
+      electricity on site, so transport of electricity is not always required. This
+      avoids losses on the grid and that saves energy. Feeding locally produced power
+      back into the local power grid requires a higher capacity or smarter local grid,
+      to prevent it from overloading. It may be desirable to curtail the power peaks in order
+      to decrease the load on the net, you can set this
+      <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.
+      \r\n<br/>\r\n"
+    content_nl: "Met dit schuifje stel je het percentage van het potentiële dakoppervlak in
+      waar je zonnepanelen wil installeren. Wil je weten hoeveel vermogen dit is? Kijk dan in
+      de 'Merit order tabel', deze is te vinden in de grafiekenlijst (hier kom je door rechtsbovenaan
+      op 'Meer grafieken bekijken' te klikken).
+      \r\n<br/><br/>\r\n
+      Zonnepanelen zijn nog volop in ontwikkeling en ze worden
+      steeds efficiënter en goedkoper. Ze produceren stroom op de plek waar het gebruikt wordt (in huis) en dus is het
+      niet altijd nodig om de elektriciteit te transporteren over het elektriciteitsnet.
+      Zo worden netwerkverliezen vermeden en energie bespaard. Stroom die niet wordt
+      gebruikt kan aan het lokale netwerk worden teruggeleverd. Het kan wenselijk zijn om de
+      productie te beperken om zo het net te ontlasten, dit kan je
+      <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a> instellen.
+      \r\n<br/>\r\n"
     short_content_en: ''
     short_content_nl: ''
 - id: 406
@@ -10091,20 +10089,22 @@
   interface_group: flexibility_cop
   command_type: ''
   related_converter: ''
-  slide_id: 216
-  position: 2
+  slide_id: 283
+  position: 1
   dependent_on: ''
   description:
     content_en: "Here you indicate the threshold COP of hybrid heat pumps for space
-      heating.\r\n<p>\r\nThe default setting is that the electric part of the HHP
-      is used maximally for space heating.\r\n<p>\r\nWith the current gas and electricity
+      heating. \r\n<p>\r\nThe default setting is that the electric part of the HHP
+      is used maximally for space heating. With the current gas and electricity
       price financial optimization for the user is achieved with a threshold COP of
-      \ 3.6.\r\nFor calculations see <a href=\"https://github.com/quintel/documentation/blob/bd77c99e145958613a8c2e45116e887a1d01a39a/general/heat_pumps.md\">Documentation</a>"
+      \ 2.6, this can be concluded from the chart on the right.\r\nFor more information
+      about (hybrid) heat pumps see our <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_pumps.md\">documentation</a>."
     content_nl: "Geef hier aan wat de omslag-COP van het hybride warmtepompen is voor
       ruimteverwarming.\r\n<p>\r\nMet de standaardinstelling voor de omslag-COP wordt
-      het elektrische deel van de hybride warmtepomp maximal gebruikt voor ruimteverwarming.\r\n<p>\r\nMet
+      het elektrische deel van de hybride warmtepomp maximal gebruikt voor ruimteverwarming. Met
       de huidige gas- en elektriciteitsprijs wordt financiële optimalisatie voor de
-      gebruiker bereikt met een omslag-COP van 3.6. Voor meer informatie zie: <a href=\"https://github.com/quintel/documentation/blob/bd77c99e145958613a8c2e45116e887a1d01a39a/general/heat_pumps.md\">Documentatie</a>"
+      gebruiker bereikt met een omslag-COP van 2.6, dit is te zien in de grafiek rechts
+      weergegeven. Voor meer informatie over (hybride) warmtepompen zie onze <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_pumps.md\">documentatie</a>."
     short_content_en:
     short_content_nl:
 - id: 780
@@ -10118,9 +10118,9 @@
   interface_group: flexibility_cop
   command_type: ''
   related_converter: ''
-  slide_id: 216
-  position: 3
-  dependent_on: ''
+  slide_id: 283
+  position: 2
+  dependent_on: 
   description:
     content_en: "Here you indicate the threshold COP of hybrid heat pumps for hot
       water.\r\n<p>\r\nThe default setting is that the gas part of the HHP is used
@@ -14762,5 +14762,144 @@
       de dag. De kosten in de link hieronder zijn de kosten die we hanteren voor restwarmte
       uit de chemische industrie, raffinaderijen en kunstmestindustrie. Voor lage
       temperatuur restwarmte uit datacenters rekenen we met andere kosten.
+    short_content_en:
+    short_content_nl:
+- id: 1006
+  key: households_flexibility_consumer_gas_price
+  share_group: ''
+  step_value: 0.1
+  draw_to_min:
+  draw_to_max:
+  unit: "ct/m3"
+  fixed: false
+  interface_group: 'consumer_price'
+  command_type: ''
+  related_converter: ''
+  slide_id: 283
+  position: 3
+  dependent_on: ''
+  description:
+    content_en: "The rate of a m3 gas in 2020 is on average 81.4 cents in the Netherlands.
+      Of this, 32 cents is for the gas itself (the market price) and 50 cents for the
+      energy tax and the 'opslag duurzame energie' (ODE) (<a
+      href=\"https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening\"
+      target=\"_blank\">Milieu Centraal</a>).</br> </br>
+
+      This slider only has influence on the recommended treshold COP in the chart
+      on the right and not on other ETM calculations."
+    content_nl: "Het tarief van een m3 gas is in 2020 gemiddeld 81,4 eurocent in Nederland.
+      Daarvan is 32 cent voor het gas zelf (de marktprijs) en 50 cent voor de
+      energiebelasting en de opslag duurzame energie (ODE) (<a
+      href=\"https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening\"
+      target=\"_blank\">Milieu Centraal</a>).</br></br>
+
+      Deze slider heeft enkel invloed
+      op de geadviseerde omslag COP in de grafiek rechts en dus niet op andere ETM-berekeningen."
+    short_content_en:
+    short_content_nl:
+- id: 1007
+  key: households_flexibility_consumer_electricity_price
+  share_group: ''
+  step_value: 0.1
+  draw_to_min:
+  draw_to_max:
+  unit: "ct/kWh"
+  fixed: false
+  interface_group: 'consumer_price'
+  command_type: ''
+  related_converter: ''
+  slide_id: 283
+  position: 4
+  dependent_on: ''
+  description:
+    content_en: "The rate of a kWh power in 2020 is on average 22.5
+      in the Netherlands. Of this, 7.5 cents is for the electricity itself (the market price) and
+      15 cents for energy tax and renewable energy storage (ODE) (<a
+      href=\"https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening\"
+      target=\"_blank\">Milieu Centraal</a>).</br></br>
+
+      This slider only has influence on the recommended treshold COP in the chart
+      on the right and not on other ETM calculations."
+    content_nl: "Het tarief van een kWh stroom is in 2020 gemiddeld 22,5
+      cent in Nederland. Daarvan is 7,5 cent voor de elektriciteit zelf (de marktprijs) en
+      15 cent voor de energiebelasting en de opslag duurzame energie (ODE) (<a
+      href=\"https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening\"
+      target=\"_blank\">Milieu Centraal</a>).</br></br>
+
+      Deze slider heeft enkel invloed
+      op de geadviseerde omslag COP in de grafiek rechts en dus niet op andere ETM-berekeningen"
+- id: 1008
+  key: curtailment_of_households_solar_pv_solar_radiation
+  share_group: ''
+  step_value: 0.1
+  draw_to_min:
+  draw_to_max:
+  unit: "%"
+  fixed: false
+  interface_group: 'curtailment'
+  command_type: ''
+  related_converter: ''
+  slide_id: 284
+  position: 1
+  dependent_on: ''
+  description:
+    content_en: "With this slider you set the curtailment as a percentage of the
+    peak power. Solar panels on houses are connected to the LV-net in the ETM.
+    The installed capacity can be adjusted
+    <a href=\"/scenario/demand/households/solar-panels\">here</a>."
+    content_nl: "Met dit schuifje stel je de productiebeperking in als percentage van
+    het piekvermogen. Zonnepanelen op huizen zijn verbonden aan het laagspanningsnet
+    in het ETM. Het geïnstalleerd vermogen is
+    <a href=\"/scenario/demand/households/solar-panels\">hier</a> aan te passen."
+    short_content_en:
+    short_content_nl:
+- id: 1009
+  key: curtailment_of_buildings_solar_pv_solar_radiation
+  share_group: ''
+  step_value: 0.1
+  draw_to_min:
+  draw_to_max:
+  unit: "%"
+  fixed: false
+  interface_group: 'curtailment'
+  command_type: ''
+  related_converter: ''
+  slide_id: 284
+  position: 2
+  dependent_on: ''
+  description:
+    content_en: "With this slider you set the curtailment as a percentage of the
+    peak power. Solar panels on buildings are connected to the LV-net in the ETM.
+    The installed capacity can be adjusted
+    <a href=\"/scenario/demand/buildings/solar-panels\">here</a>."
+    content_nl: "Met dit schuifje stel je de productiebeperking in als percentage van
+    het piekvermogen. Zonnepanelen op gebouwen zijn verbonden aan het laagspanningsnet
+    in het ETM. Het geïnstalleerd vermogen is
+    <a href=\"/scenario/demand/buildings/solar-panels\">hier</a> aan te passen."
+    short_content_en:
+    short_content_nl:
+- id: 1010
+  key: curtailment_of_energy_power_solar_pv_solar_radiation
+  share_group: ''
+  step_value: 0.1
+  draw_to_min:
+  draw_to_max:
+  unit: "%"
+  fixed: false
+  interface_group: 'curtailment'
+  command_type: ''
+  related_converter: ''
+  slide_id: 284
+  position: 3
+  dependent_on: ''
+  description:
+    content_en: "With this slider you set the curtailment as a percentage of the
+    peak power. Solar PV plants are connected to the HV-net in the ETM. The installed
+    capacity can be adjusted
+    <a href=\"/scenario/supply/electricity_renewable/solar-power\">here</a>."
+    content_nl: "Met dit schuifje stel je de productiebeperking in als percentage van
+    het piekvermogen. Zonneparken zijn verbonden aan het hoogspanningsnet in het ETM.
+    Het geïnstalleerd vermogen is
+    <a href=\"/scenario/supply/electricity_renewable/solar-power\">hier</a> aan te passen."
     short_content_en:
     short_content_nl:

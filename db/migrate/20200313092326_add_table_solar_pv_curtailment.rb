@@ -6,7 +6,8 @@ class AddTableSolarPvCurtailment < ActiveRecord::Migration[5.2]
       key: 'solar_pv_curtailment',
       output_element_type: type,
       group: 'Merit',
-      sub_group: 'flexibility'
+      sub_group: 'flexibility',
+      related_output_element_id: '257'
     )
 
   end

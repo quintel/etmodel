@@ -6,7 +6,8 @@ class AddHhpCopCostChart < ActiveRecord::Migration[5.2]
       key: 'household_network_gas_hhp_cop_cost',
       output_element_type: type,
       unit: '€/MJ heat',
-      group: 'Cost'
+      group: 'Cost',
+      related_output_element_id: '258'
     )
 
     OutputElementSerie.create!(

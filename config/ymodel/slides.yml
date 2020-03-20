@@ -4920,9 +4920,11 @@
       >(Natural) gas plants</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
       >Coal plants</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
       >Biomass plants</a> and <a href=\"/scenario/supply/electricity_renewable/waste-power\"
-      >Waste incineration</a>\r\n<br /><br />\r\nMore information
+      >Waste incineration</a>. It is also possible to convert excess electricity in heat through
+      power-to-heat boilers or heat pumps in the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+      >Flexibility section</a>.\r\n<br /><br />\r\nMore information
       can be found in our <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_networks.md\"
-      target =\"_blank\">documentation</a> "
+      target =\"_blank\">documentation</a>."
     content_nl: "Warmtenetten kunnen worden ingezet als verwarmingstechnologie in
       <a href=\"/scenario/demand/households/space-heating-hot-water\" >huishoudens</a>,
       <a href=\"/scenario/demand/buildings/space-heating\" >gebouwen</a> en <a href=\"/scenario/demand/agriculture/heat\"
@@ -4939,8 +4941,10 @@
       centrales: <a href=\"/scenario/supply/electricity/gas-plants\" >(Aard)gascentrales</a>,
       <a href=\"/scenario/supply/electricity/coal-plants\" >Kolencentrales</a>, <a
       href=\"/scenario/supply/electricity_renewable/biomass-plants\" >Biomassacentrales</a>
-      en <a href=\"/scenario/supply/electricity_renewable/waste-power\" >Afvalverbranding</a>
-      \r\n\r\n<br /><br />\r\nMeer informatie kunt u vinden in onze
+      en <a href=\"/scenario/supply/electricity_renewable/waste-power\" >Afvalverbranding</a>.
+      Daarbij is het mogelijk om elektriciteitsoverschotten om te zetten in warmte d.m.v. power-to-heat
+      boilers of warmtepompen bij <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+      >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nMeer informatie kunt u vinden in onze
       <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_networks.md\"
       target =\"_blank\">documentatie</a>."
     short_content_en:
@@ -5220,8 +5224,12 @@
   dependent_on: ''
   description:
     content_en: "At times of excess electricity supply, an electric boiler or heat pump
-      could convert excess electricity into heat for district heating."
+      could convert excess electricity into heat for district heating. Other heat sources
+      for district heating can be set in <a href=\"/scenario/supply/heat/heat-sources\"
+      >Supply > District Heating</a>."
     content_nl: "Wanneer er elektriciteitsoverschotten zijn, kunnen elektrische boilers
-      of warmtepompen deze overschotten omzetten in warmte voor warmtenetten."
+      of warmtepompen deze overschotten omzetten in warmte voor warmtenetten. Overige
+      warmtebronnen voor warmtenetten kunnen bij <a href=\"/scenario/supply/heat/heat-sources\"
+      >Aanbod > Warmtenetten</a> worden ingesteld."
     short_content_en:
     short_content_nl:

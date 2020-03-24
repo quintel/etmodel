@@ -19,7 +19,7 @@ namespace :ymodel do
         attributes['description']['short_content_en'] = desc&.short_content_en
         attributes['description']['short_content_nl'] = desc&.short_content_nl
       end
-      attributes
+      attributes.except!('created_at', 'updated_at')
     end
   end
 

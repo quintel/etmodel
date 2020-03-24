@@ -107,6 +107,18 @@ class OutputElement < ActiveRecord::Base
     description.present?
   end
 
+  # some charts only have one relatee output element, in that case
+  # the hourly/yearly toggle should also show on the current chart
+  def has_one_relatee_output_element?
+    relatee_output_elements.length == 1
+  end
+
+  def relatee_output_element
+    return unless has_one_relatee_output_element?
+
+    relatee_output_elements[0]
+  end
+
   # rubocop:enable Naming/PredicateName
 
   def self.select_by_group

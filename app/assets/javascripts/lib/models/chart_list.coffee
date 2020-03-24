@@ -363,7 +363,8 @@ class @ChartList extends Backbone.Collection
 
       if chart = @chart_in_holder holder_id
         chart.delete()
-        @load_related(holder_id, chart.get('previous_id'))
+        chart_id = chart.get('previous_id') || chart.get('relatee_id')
+        @load_related(holder_id, chart_id)
         @remove chart
 
     # Toggle chart/table format

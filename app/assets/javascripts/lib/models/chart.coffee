@@ -256,4 +256,4 @@ class @Chart extends Backbone.Model
     @get('related_id')?
 
   wants_previous_button: =>
-    @get('previous_id')?
+    @get('previous_id')? || @get('relatee_id')?

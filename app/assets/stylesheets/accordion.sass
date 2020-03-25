@@ -12,41 +12,42 @@
     &:hover
       color: darken(#1982d1, 23%)
 
-  .data-deprecation
-    background: linear-gradient(#f5f5f5, #fff)
-    border-radius: 5px
-    color: #999
-    font-size: 11px
-    line-height: 1.5
-    padding: 15px 15px 0
+  // .data-deprecation
+  //   background: linear-gradient(#f5f5f5, #fff)
+  //   border-radius: 5px
+  //   color: #999
+  //   font-size: 11px
+  //   line-height: 1.5
+  //   padding: 15px 15px 0
 
-    .fa-info-circle
-      float: left
-      font-size: 24px
-      margin: 1px 8px 10px 0
+  //   .fa-info-circle
+  //     float: left
+  //     font-size: 24px
+  //     margin: 1px 8px 10px 0
 
-    .data-download
-      border: none
-      margin-top: 8px
-      margin-left: 27px
-      padding: 0
-      li
-        float: none
-        padding: 2px 0
-        text-align: left
-        width: auto
-        a
-          font-size: 11px
-        &:last-child
-          border-left: none
+  //   .data-download
+  //     border: none
+  //     margin-top: 8px
+  //     margin-left: 27px
+  //     padding: 0
+  //     li
+  //       float: none
+  //       padding: 2px 0
+  //       text-align: left
+  //       width: auto
+  //       a
+  //         font-size: 11px
+  //       &:last-child
+  //         border-left: none
 
   .data-download
-    border: 1px solid #e5e5e5
-    border-radius: 4px
+    // border: 1px solid #e5e5e5
+    // border-radius: 4px
     list-style: none
     margin: 1.5em 0
-    overflow: hidden
-    padding: .5em 1em
+    padding: 0
+    // overflow: hidden
+    // padding: .5em 1em
 
     .fa
       font-size: 14px
@@ -55,36 +56,54 @@
       vertical-align: middle
 
     li
-      float: left
-      text-align: center
-      width: 50%
+      & + li
+        margin-top: 10px
 
       .filetype
-        color: #aaa
+        color: #91ab9c
+        display: block
         font-size: 11px
-        line-height: 0
+        font-weight: normal
+        margin-top: 2px
         white-space: nowrap
 
+      // !TEMP!
+      .fa
+        display: none
+
       a
-        font-size: 12px
-        padding: 5px 0
+        background-color: #f5f9f5
+        background-image: asset-url("icons/csv.svg")
+        background-size: 32px 32px
+        background-repeat: no-repeat
+        background-position: 10px 10px
+        border-left: 3px solid darken(#f5f9f5, 10%)
+        color: #247547
+        display: block
+        min-height: 32px
+        font-size: 13px
+        font-weight: bold
+        line-height: 1.2
+        padding: 10px 20px 10px 50px
 
-        &:hover .filetype
-          color: #777
+        &:hover
+          background-color: darken(#f5f9f5, 3%)
+          border-left-color: darken(#f5f9f5, 15%)
+          color: darken(#247547, 8%)
 
-      &:last-child
-        border-left: 1px solid #e5e5e5
-        margin-right: -1px
+        &:hover .filetype, &:active .filetype
+          color: darken(#91ab9c, 5%)
 
-      &:first-child:last-child
-        width: 100%
-        border-left: 0
+        &:active
+          background-color: darken(#f5f9f5, 5%)
+          border-left-color: darken(#f5f9f5, 18%)
+          color: darken(#247547, 8%)
 
-    &.electricity-download
-      li
-        width: 44%
-      li:first-child
-        width: 56%
+    // &.electricity-download
+    //   li
+    //     width: 44%
+    //   li:first-child
+    //     width: 56%
 
   ul.accordion
     float: left

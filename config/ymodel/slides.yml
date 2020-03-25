@@ -3026,8 +3026,8 @@
       curve for your scenario using the download buttons below.
 
       <ul class="data-download merit-data-downloads electricity-download">
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="fa fa-download"></span> Electricity load curves <span class="filetype">(7MB CSV)</span></a></li>
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="fa fa-download"></span> Price curve <span class="filetype">(300KB CSV)</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="fa fa-download"></span> Electricity load curves <span class="filetype">7MB CSV</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="fa fa-download"></span> Price curve <span class="filetype">300KB CSV</span></a></li>
       </ul
     content_nl: |
       De merit order rangschikt de elektriciteitscentrales naar marginale
@@ -3054,8 +3054,8 @@
       stroomprijscurve voor jouw scenario downloaden via onderstaande knoppen.
 
       <ul class="data-download merit-data-downloads electricity-download">
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="fa fa-download"></span> Elektriciteitsprofielen <span class="filetype">(7MB CSV)</span></a></li>
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="fa fa-download"></span> Prijscurve <span class="filetype">(300KB CSV)</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="fa fa-download"></span> Elektriciteitsprofielen <span class="filetype">7MB CSV</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="fa fa-download"></span> Prijscurve <span class="filetype">300KB CSV</span></a></li>
       </ul>
     short_content_en:
     short_content_nl:
@@ -3084,8 +3084,8 @@
       The hourly load curves for all electricity production and consumption for your scenario, as well as the price curve, can be downloaded following the links below.
 
       <ul class="data-download merit-data-downloads electricity-download">
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="fa fa-download"></span> Electricity load curves <span class="filetype">(7MB CSV)</span></a></li>
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="fa fa-download"></span> Price curve <span class="filetype">(300KB CSV)</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="fa fa-download"></span> Electricity load curves <span class="filetype">7MB CSV</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="fa fa-download"></span> Price curve <span class="filetype">300KB CSV</span></a></li>
       </ul>
     content_nl: |
       De merit order rangschikt de elektriciteitscentrales naar marginale
@@ -3101,8 +3101,8 @@
       hieronder.
 
       <ul class="data-download merit-data-downloads electricity-download">
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="fa fa-download"></span> Elektriciteitsprofielen <span class="filetype">(7MB CSV)</span></a></li>
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="fa fa-download"></span> Prijscurve <span class="filetype">(300KB CSV)</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="fa fa-download"></span> Elektriciteitsprofielen <span class="filetype">7MB CSV</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="fa fa-download"></span> Prijscurve <span class="filetype">300KB CSV</span></a></li>
       </ul>
     short_content_en:
     short_content_nl:
@@ -3409,12 +3409,12 @@
     content_en: |
       Download information about the primary and final demands, and also the primary CO<sub>2</sub> emissions of applications (such as cooking, appliances, heating, transport, etc).
       <ul class="data-download">
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv"><span class="fa fa-download"></span> Application primary and final demands <span class="filetype">(40KB CSV)</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv"><span class="fa fa-download"></span> Application primary and final demands <span class="filetype">40KB CSV</span></a></li>
       </ul>
     content_nl: |
       Download informatie over de primaire en finale vraag – en de primaire CO<sub>2</sub>-uitstoot – van toepassingen van energie (zoals koken, apparaten, ruimterverwarming en transport).
       <ul class="data-download">
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv"><span class="fa fa-download"></span> Primaire en finale vraag per toepassing <span class="filetype">(40KB CSV)</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv"><span class="fa fa-download"></span> Primaire en finale vraag per toepassing <span class="filetype">40KB CSV</span></a></li>
       </ul>
     short_content_en:
     short_content_nl:
@@ -3433,12 +3433,12 @@
     content_en: |
       Download details of heat and electricity producers. Includes information about the electrical and heat capacities, number of units, and costs.
       <ul class="data-download">
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv"><span class="fa fa-download"></span> Production capacity and costs <span class="filetype">(15KB CSV)</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv"><span class="fa fa-download"></span> Production capacity and costs <span class="filetype">15KB CSV</span></a></li>
       </ul>
     content_nl: |
       Download details over de technologieën die elektriciteit en warmte produceren. Bevat informatie over de elektrische en warmtecapaciteit, het aantal opgestelde eenheden en de kosten.
       <ul class="data-download">
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv"><span class="fa fa-download"></span> Capaciteiten en kosten <span class="filetype">(15KB CSV)</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv"><span class="fa fa-download"></span> Capaciteiten en kosten <span class="filetype">15KB CSV</span></a></li>
       </ul>
     short_content_en:
     short_content_nl:
@@ -3493,15 +3493,15 @@
     content_en: "The Energy Transition Model describes the energy flows through several\r\nhundred
       uses and conversions; this CSV provides a list of each of\r\nthese flows (inputs
       and outputs).\r\n<ul class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv\"><span
-      class=\"fa fa-download\"></span> Energy flows <span class=\"filetype\">(375KB
-      CSV)</span></a></li>\r\n</ul>\r\n"
+      class=\"fa fa-download\"></span> Energy flows <span class=\"filetype\">375KB
+      CSV</span></a></li>\r\n</ul>\r\n"
     content_nl: "Het Energietransitiemodel beschrijft het energiesysteem als een verzameling
       van honderden energie-omzetters (nodes) die verbonden zijn met energiestromen
       (edges). \r\nDeze CSV geeft een lijst van alle energie-omzetters en de energiestromen
       die daar ingaan en uitkomen (uitgesplitst naar drager).\r\n<ul class=\"data-download\">\r\n
       \ <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv\"><span
-      class=\"fa fa-download\"></span> Energiestromen <span class=\"filetype\">(375KB
-      CSV)</span></a></li>\r\n</ul>\r\n"
+      class=\"fa fa-download\"></span> Energiestromen <span class=\"filetype\">375KB
+      CSV</span></a></li>\r\n</ul>\r\n"
     short_content_en:
     short_content_nl:
 - id: 219
@@ -4117,8 +4117,8 @@
     content_en: "Download information about demand and supply of (individual) heat
       in households per hour (space heating and tap water); including deficits, buffering,
       and time-shifting.\r\n<ul class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/household_heat.csv\"><span
-      class=\"fa fa-download\"></span> Household heat curves <span class=\"filetype\">(400KB
-      CSV)</span></a></li>\r\n</ul>\r\n"
+      class=\"fa fa-download\"></span> Household heat curves <span class=\"filetype\">400KB
+      CSV</span></a></li>\r\n</ul>\r\n"
     content_nl: "Download informatie over de individuele warmtevraag en -productie
       van huishoudens (ruimteverwarming en warm water). Het bestand laat op uurbasis
       zien hoeveel warmte er gevraagd wordt, hoeveel warmte de geïnstalleerde technieken
@@ -4126,8 +4126,8 @@
       tekorten. Dit kan het geval zijn als de gekozen verwarmingstechnieken onvoldoende
       capaciteit hebben om op bepaalde momenten aan de vraag te voldoen.\r\n\r\n<ul
       class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/household_heat.csv\"><span
-      class=\"fa fa-download\"></span> Warmteprofiel huishoudens <span class=\"filetype\">(400KB
-      CSV)</span></a></li>\r\n</ul>\r\n"
+      class=\"fa fa-download\"></span> Warmteprofiel huishoudens <span class=\"filetype\">400KB
+      CSV</span></a></li>\r\n</ul>\r\n"
     short_content_en:
     short_content_nl:
 - id: 249
@@ -4361,14 +4361,14 @@
       and storage per hour in your scenario.\r\n\r\n<ul class=\"data-download\">\r\n
       \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/hydrogen.csv\">\r\n
       \     <span class=\"fa fa-download\"></span>\r\n      Hydrogen demand, production
-      and storage per hour\r\n      <span class=\"filetype\">(750KB CSV)</span>\r\n
+      and storage per hour\r\n      <span class=\"filetype\">750KB CSV</span>\r\n
       \   </a>\r\n  </li>\r\n</ul>"
     content_nl: "Het Energietransitiemodel rekent op uurbasis de vraag, productie
       en opslag van waterstof uit. Hieronder kun je deze gegevens downloaden als CSV-bestand,
       uitgesplitst naar technologie/sector.\r\n\r\n\r\n<ul class=\"data-download\">\r\n
       \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/hydrogen.csv\">\r\n
       \     <span class=\"fa fa-download\"></span>\r\n      Waterstofvraag, -productie
-      en -opslag per uur\r\n      <span class=\"filetype\">(750KB CSV)</span>\r\n
+      en -opslag per uur\r\n      <span class=\"filetype\">750KB CSV</span>\r\n
       \   </a>\r\n  </li>\r\n</ul>"
     short_content_en:
     short_content_nl:
@@ -4720,14 +4720,14 @@
       and storage per hour in your scenario.\r\n\r\n<ul class=\"data-download\">\r\n
       \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/network_gas.csv\">\r\n
       \     <span class=\"fa fa-download\"></span>\r\n      Network gas demand, production
-      and storage per hour\r\n      <span class=\"filetype\">(3MB CSV)</span>\r\n
+      and storage per hour\r\n      <span class=\"filetype\">3MB CSV</span>\r\n
       \   </a>\r\n  </li>\r\n</ul>"
     content_nl: "Het Energietransitiemodel rekent op uurbasis de vraag, productie
       en opslag van netwerkgas uit. Hieronder kun je deze gegevens downloaden als
       CSV-bestand, uitgesplitst naar technologie/sector.\r\n\r\n<ul class=\"data-download\">\r\n
       \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/network_gas.csv\">\r\n
       \     <span class=\"fa fa-download\"></span>\r\n      Netwerkgasvraag, -productie
-      en -opslag per uur\r\n      <span class=\"filetype\">(3MB CSV)</span>\r\n    </a>\r\n
+      en -opslag per uur\r\n      <span class=\"filetype\">3MB CSV</span>\r\n    </a>\r\n
       \ </li>\r\n</ul>"
     short_content_en:
     short_content_nl:
@@ -4864,7 +4864,7 @@
           <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/heat_network.csv">
             <span class="fa fa-download"></span>
             Heat network demand, production and storage per hour
-            <span class="filetype">(1.5MB CSV)</span>
+            <span class="filetype">1.5MB CSV</span>
           </a>
         </li>
       </ul>
@@ -4877,7 +4877,7 @@
           <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/heat_network.csv">
             <span class="fa fa-download"></span>
             Warmtenetvraag, -productie en -opslag per uur
-            <span class="filetype">(1.5MB CSV)</span>
+            <span class="filetype">1.5MB CSV</span>
           </a>
         </li>
       </ul>

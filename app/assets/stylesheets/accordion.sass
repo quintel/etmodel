@@ -57,53 +57,43 @@
 
     li
       & + li
-        margin-top: 10px
+        margin-top: 5px
 
       .filetype
         color: #91ab9c
-        display: block
         font-size: 11px
         font-weight: normal
         margin-top: 2px
         white-space: nowrap
 
-      // !TEMP!
-      .fa
-        display: none
-
       a
         background-color: #f5f9f5
-        background-image: asset-url("icons/csv.svg")
-        background-size: 32px 32px
-        background-repeat: no-repeat
-        background-position: 10px 10px
-        border-left: 3px solid darken(#f5f9f5, 10%)
+        background-image: asset-url("icons/csv.svg"), linear-gradient(rgba(255, 255, 255, 0.5), transparent)
+        background-size: 22px
+        background-repeat: no-repeat, repeat-x
+        background-position: 10px center
+        border: 1px solid darken(#f5f9f5, 8%)
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05)
+        border-radius: 2px
         color: #247547
         display: block
-        min-height: 32px
-        font-size: 13px
         font-weight: bold
         line-height: 1.2
-        padding: 10px 20px 10px 50px
+        padding: 13px 10px 13px 40px
 
         &:hover
           background-color: darken(#f5f9f5, 3%)
-          border-left-color: darken(#f5f9f5, 15%)
+          border-color: darken(#f5f9f5, 12%)
           color: darken(#247547, 8%)
 
         &:hover .filetype, &:active .filetype
           color: darken(#91ab9c, 5%)
 
         &:active
-          background-color: darken(#f5f9f5, 5%)
-          border-left-color: darken(#f5f9f5, 18%)
+          background-color: darken(#f5f9f5, 6%)
+          border-color: darken(#f5f9f5, 16%)
+          box-shadow: none
           color: darken(#247547, 8%)
-
-    // &.electricity-download
-    //   li
-    //     width: 44%
-    //   li:first-child
-    //     width: 56%
 
   ul.accordion
     float: left

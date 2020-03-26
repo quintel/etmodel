@@ -26,7 +26,7 @@ The efficiency of hybrid heat pumps (HHP) is dependent on the ambient temperatur
 
 The improved hourly heating demand curves used in the ETM better account for the concurrency of heating demand. The new curves are based on the average demand of 300 houses. Previously, demand curves were based on individual households which led to an overestimation of demand peaks.
 
-Note: because the heat demand peaks for households are lower, the results of your scenario might change. For example, when many houses are connected to district heating, fewer back-up boilers may be required. Or if many houses have a heat pump installed, the peak load on the electricity grid will be less. If you are having trouble explaining the differences, don't hesitate to email us at info@energytransitionmodel.com.
+Note: Because the heat demand peaks for households are lower, the results of your scenario might change. For example, when many houses are connected to district heating fewer back-up boilers may be required. If many houses have a heat pump installed, the peak load on the electricity grid will be reduced. If you are having trouble understanding the differences, don't hesitate to <a href="mailto:info@energytransitionmodel.com">email us</a>.
 
 ## Data export adjusted
 

@@ -8032,13 +8032,11 @@
       use whichever part (heat pump or gas-fired heater) is the most efficient or
       cost-effective given the weather conditions and insulation level. Houses with
       limited insulation will rely on the gas-fired part more, better insulated ones
-      will make more use of the heat pump.\r\n<br/><br/>\r\nThe COP of the electric
-      part of the hybrid heat pump is dependent of ambient temperature. When the COP
-      drops below the threshold value the hybrid heat pump switches to gas. With the
-      default value of the threshold COP space heating is as much as possible supplied
-      by the electric part of the hybrid heat pump. The threshold value can be adjusted
-      in the section <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-heat-pumps\"
-      >Demand response - Heat pumps</a>. \r\n\r\n"
+      will make more use of the heat pump.\r\n<br/><br/>\r\nThe COP of the electric part
+      of the hybrid heat pump depends on ambient temperature. When the COP
+      drops below the threshold value the hybrid heat pump switches to gas. The threshold
+      value can be adjusted in the section <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
+      >Demand response - behavior of hybrid heat pumps</a>. \r\n\r\n"
     content_nl: "Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
       met een gasgestookte HR-ketel. Een hybride warmtepomp maakt het mogelijk om
       snel veel gas voor verwarming te besparen en geeft netbeheerders bovendien meer
@@ -8058,11 +8056,9 @@
       huizen zullen de gasketel vaker nodig hebben, beter geïsoleerde huizen gebruiken
       vooral de warmtepomp.  \r\n<br/><br/>\r\nDe COP van het elektrische deel van
       de hybride warmtepomp is afhankelijk van de buitentemperatuur. Als de COP onder
-      de drempelwaarde zakt schakelt de hybride warmtepomp volledig over op gas. De
-      standaard-drempelwaarde zorgt dat ruimteverwarming zo veel mogelijk via het
-      elektrische gedeelte van de hybride warmtepomp gebeurt. De omslag-COP is in
-      de sectie <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-heat-pumps\"
-      >Vraagsturing - Warmtepompen</a> aan te passen. \r\n"
+      de drempelwaarde zakt schakelt de hybride warmtepomp volledig over op gas. De omslag-COP is in
+      de sectie <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
+      >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen. \r\n"
     short_content_en:
     short_content_nl:
 - id: 696
@@ -13240,13 +13236,11 @@
       whichever part (heat pump or hydrogen-fired heater) is the most efficient or
       cost-effective given the weather conditions and insulation level. Houses with
       limited insulation will rely on the hydrogen-fired part more, better insulated
-      ones will make more use of the heat pump.\r\n<br/><br/>\r\nThe COP of the electric
-      part of the hybrid hydrogen heat pump is dependent of ambient temperature. When
-      the COP drops below the threshold value the hybrid hydrogen heat pump switches
-      to hydrogen. With the default value of the threshold COP space heating is as
-      much as possible supplied by the electric part of the hybrid hydrogen heat pump.
-      The threshold value can be adjusted in the section <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-heat-pumps\"
-      >Demand response - Heat pumps</a>. "
+      ones will make more use of the heat pump.\r\n<br/><br/>\r\nThe COP of the electric part
+      of the hybrid hydrogen heat pump depends on ambient temperature. When the COP
+      drops below the threshold value the hybrid heat pump switches to hydrogen. The threshold
+      value can be adjusted in the section <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
+      >Demand response - behavior of hybrid heat pumps</a>. \r\n\r\n"
     content_nl: "Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
       met een waterstofgestookte HR-ketel.\r\n<br/><br/>\r\nHet werkt zo:<br/>\r\nDe
       waterstofketel verwarmt het huis op koude dagen, als de warmtevraag het hoogst
@@ -13262,13 +13256,11 @@
       welk deel (de warmtepomp of de waterstofketel) het meest efficiënt of kosteneffectief
       is om aan te zetten, afhankelijk van het weer en hoe goed een huis geïsoleerd
       is. Minder geïsoleerde huizen zullen de waterstofketel vaker nodig hebben, beter
-      geïsoleerde huizen gebruiken vooral de warmtepomp.  \r\n<br/><br/>\r\nDe COP
-      van het elektrische deel van de hybride waterstofwarmtepomp is afhankelijk van
-      de buitentemperatuur. Als de COP onder de drempelwaarde zakt schakelt de hybride
-      waterstofwarmtepomp volledig over op waterstof. De standaard-drempelwaarde zorgt
-      dat ruimteverwarming zo veel mogelijk via het elektrische gedeelte van de hybride
-      waterstofwarmtepomp gebeurt. De omslag-COP is in de sectie <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-heat-pumps\"
-      >Vraagsturing - Warmtepompen</a> aan te passen. "
+      geïsoleerde huizen gebruiken vooral de warmtepomp.  \r\n<br/><br/>\r\nDe COP van het elektrische deel van
+      de hybride waterstofwarmtepomp is afhankelijk van de buitentemperatuur. Als de COP onder
+      de drempelwaarde zakt schakelt de hybride warmtepomp volledig over op gas. Deze omslag-COP is in
+      de sectie <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
+      >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen. \r\n"
     short_content_en:
     short_content_nl:
 - id: 942

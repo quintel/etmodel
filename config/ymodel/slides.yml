@@ -3457,25 +3457,13 @@
     content_en: "In the ETM all heat pumps have the option to install a buffer for
       space heating and a buffer for hot water. The default settings of these buffers
       represent a common setup of heat pumps in households. However, in the future
-      these buffers might also be used to store larger amounts of heat. \r\n<br></br>\r\nThe
-      efficiency of (hybrid) heat pumps is dependent on the ambient temperature and
-      is depicted by the coefficient of performance (COP). When the COP is low it
-      can be desirable (for example for financial reasons) to only use the gas part
-      of the hybrid heat pump. The default threshold COP represents using the electric
-      part of the hybrid heat pump maximally for space heating and using gas for hot
-      water. The sliders below allow you to indicate the buffer size and the threshold
-      COP."
+      these buffers might also be used to store larger amounts of heat. \r\n<br></br>\r\n
+      The sliders below allow you to indicate the buffer size for different heat pumps."
     content_nl: "In het ETM hebben alle warmtepompen een optie voor een buffer voor
       ruimteverwarming en een buffer voor warm water. Deze buffers zijn gemodelleerd
       met een standaard warmtepompopstelling in huishoudens. Buffers kunnen in de
       toekomst wellicht ook gebruikt worden om grotere hoeveelheden warmte op te slaan.
-      \r\n<br></br>\r\nDe efficiëntie van (hybride) warmtepompen is afhankelijk van
-      de buitentemperatuur en wordt aangegeven met de 'coefficient of performance'
-      (COP). Bij lage COP kan het (bijvoorbeeld om financiële redenen) wenselijk zijn
-      om alleen het gasgedeelte van hybride warmtepompen te gebruiken. De standaard
-      omslag-COP representeert dat voor ruimteverwarming het elektrisch deel van de
-      hybride warmtepomp maximaal wordt gebruikt en voor warm water het gasdeel.\r\n<br></br>\r\nMet
-      de schuifjes hieronder kun je de buffergrootte en de omslag-COP instellen."
+      \r\n<br></br>\r\nMet de schuifjes hieronder kun je de buffergrootte voor verschillende warmtepompen instellen."
     short_content_en:
     short_content_nl:
 - id: 218
@@ -5121,19 +5109,20 @@
   description:
     content_en: "The efficiency of hybrid heat pumps (HHP) is dependent on the ambient temperature and
       is depicted by the coefficient of performance (COP). The COP becomes lower as
-      the outside temperature decreases. Below you can set the COP for which the
-      HHP must switch between electricity and gas. You can choose a setting that is
+      the outside temperature decreases. Below you can set the so-called 'threshold COP': if
+      the COP of the heat pump is below this threshold then the HHP switches from electricity
+      to gas. You can choose a setting that is
       most financially attractive for the consumer, but you can also choose a setting
       that produces less impact on the electricity network.
       \r\n</br></br>\r\n
-      To help you decide the cost-optimal COP setting from a consumer perspective, have a
+      To help you decide the cost-optimal threshold COP setting from a consumer perspective, have a
       look at the chart on the right. It shows how much it costs to make a unit of heat
       with the HHP for space heating. For the gas part, these costs are independent of the COP
       (and therefore the outside temperature). The costs for the electrical part are
       decreasing with increasing COP (and increasing outside temperature). The intersection of
       the two curves is the cost-optimal COP setting for the given cost price
-      gas and electricity. This cost price of gas and electricity can be set below. The start value
-      of the slider matches the calculated cost-optimal threshold COP for space heating.
+      gas and electricity. This cost price of gas and electricity can be adjusted below. The start value
+      of the treshold COP slider matches the calculated cost-optimal threshold COP for space heating.
       \r\n</br></br>\r\n
       If you're interested in the impact of HHPs on the electricity grid, have a look
       at the chart that is shown when clicking on the 'Annual'-button in the right corner
@@ -5145,19 +5134,20 @@
     content_nl: "De efficiëntie van (hybride) warmtepompen is afhankelijk van
       de buitentemperatuur en wordt aangegeven met de 'coefficient of performance'
       (COP). De COP wordt lager als de buitentemperatuur afneemt. Hieronder kan je
-      instellen voor welke COP de HWP moet omschakelen tussen elektriciteit en gas.
+      de zogenaamde 'omslag-COP' instellen: wanneer de COP van de warmtepomp onder de
+      omslag-COP ligt dan schakelt de hybride warmtepomp van elektriciteit naar gas.
       Je kan deze instellen op de financieel meest aantrekkelijke voor de consument,
       maar kan ook een instelling kiezen die minder netwerkimpact oplevert.
       \r\n</br></br>\r\n
       Bekijk de grafiek aan de rechterkant voor advies bij het kiezen van de kostenoptimale
-      COP-instelling vanuit een consumentenperspectief. Deze laat zien hoeveel het kost om een eenheid warmte te maken
+      omslag-COP instelling vanuit een consumentenperspectief. Deze laat zien hoeveel het kost om een eenheid warmte te maken
       met de HWP voor ruimteverwarming. Voor gas zijn die kosten onafhankelijk van de COP
       (en dus de buitentemperatuur). Voor elektriciteit nemen de kosten
       af met toenemende COP (en toenemende buitentemperatuur). Het kruispunt van
       de twee curves is de kosten-optimale COP-instelling voor de gegeven kostprijs
       van gas en elektriciteit. Deze kostprijs van gas en elektriciteit is hieronder
-      in te stellen. De startwaarde van het schuifje staat gelijk aan de kostenoptimale
-      omslag COP bij de ingesteld kosten.
+      in te stellen. De startwaarde van het omslag-COP schuifje staat gelijk aan de kostenoptimale
+      omslag-COP bij de ingestelde kosten.
       \r\n</br></br>\r\n
       Als je geïnteresseerd bent in de impact van HWP's op het elektriciteitsnet, kijk
       dan naar de grafiek die wordt weergegeven wanneer je op de 'Jaarlijkse'-knop in de
@@ -5177,17 +5167,19 @@
   dependent_on: ''
   description:
     content_en:
-      "When a lot of solar PV is installed, this can cause high peaks on the
-      electricity network. It is therefore desirable to be able to curtail the these peaks.
+      "If a lot of solar PV is installed, this can cause high peaks on the
+      electricity network. It is therefore desirable to be able to curtail these peaks.
       In some cases it is smart to connect solar parks to only a certain percentage
       of the peak power. With the sliders below it is possible to set the
       curtailment as a percentage of the peak power.
       \r\n</br></br>\r\n
       In the chart on the right you can see the effect of curtailment on the peaks of
-      the production curves and the yearly electricity production. When you are interested
-      in annual figures, click on the 'Annual'-button in the right corner of the chart."
+      the production curves and the yearly electricity production. If you are interested
+      in the effect of curtailment on the annual electricity production, have a look
+      at the table 'Curtailment of solar PV'. Click on 'see more charts' and you'll find
+      the table in the section 'Electricity balance > Flexibility'."
     content_nl:
-      "Wanneer veel zon-PV geïnstalleerd is, kan dit zorgen voor hoge pieken op het
+      "Als veel zon-PV geïnstalleerd is, kan dit zorgen voor hoge pieken op het
       elektriciteitsnetwerk. Daarom is het wenselijk de productie te kunnen verlagen.
       In sommige gevallen is het slim om zonneparken aan te sluiten
       op slechts een bepaald percentage van het piekvermogen. Met onderstaande schuifjes
@@ -5195,14 +5187,16 @@
       piekvermogen.
       \r\n</br></br>\r\n
       In de grafiek rechts zie je het effect van productiebeperking op de productiepieken
-      én op de jaarlijkse elektriciteitsproductie. Wanneer je geïnteresseerd bent in
-      de jaarlijkse cijfers, klik op de 'Jaarlijkse'-knop in de rechterbovenhoek van
-      de grafiek."
+      én op de jaarlijkse elektriciteitsproductie. Als je geïnteresseerd bent in
+      het effect van productiebeperking op de jaarlijkse elektriciteitsproductie, kijk dan
+      in de tabel 'Productiebeperking van zonnepanelen'. Deze vind je als je klikt op
+      'meer grafieken bekijken' (rechtsboven) en kijkt bij 'Elektriciteitsbalans >
+      Flexibiliteit'."
     short_content_en:
     short_content_nl:
 - id: 285
   image: ''
-  general_sub_header: ''
+  general_sub_header: heat_output
   group_sub_header: ''
   subheader_image: ''
   key: flexibility_flexibility_power_to_heat_for_district_heating
@@ -5215,10 +5209,17 @@
     content_en: "At times of excess electricity supply, an electric boiler or heat pump
       could convert excess electricity into heat for district heating. Other heat sources
       for district heating can be set in <a href=\"/scenario/supply/heat/heat-sources\"
-      >Supply > District Heating</a>."
+      >Supply > District Heating</a>.
+      \r\n</br></br>\r\n
+      Please note that 1 MWth of power-to-heat boiler uses more electricity than 1 MWth
+      of power-to-heat pump. They produce the same amount of heat per hour, of course."
     content_nl: "Wanneer er elektriciteitsoverschotten zijn, kunnen elektrische boilers
       of warmtepompen deze overschotten omzetten in warmte voor warmtenetten. Overige
       warmtebronnen voor warmtenetten kunnen bij <a href=\"/scenario/supply/heat/heat-sources\"
-      >Aanbod > Warmtenetten</a> worden ingesteld."
+      >Aanbod > Warmtenetten</a> worden ingesteld.
+      \r\n</br></br>\r\n
+      Houd er rekening mee dat 1 MWth power-to-heat boiler meer elektriciteit gebruikt
+      dan 1 MWth power-to-heat warmtepomp. Ze produceren natuurlijk wel dezelfde
+      hoeveelheid warmte."
     short_content_en:
     short_content_nl:

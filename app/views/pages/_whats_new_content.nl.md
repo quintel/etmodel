@@ -7,16 +7,22 @@
 ## Beperk de productie van zonnepanelen
 Als er veel zonnepanelen geïnstalleerd zijn, kan dit resulteren in hoge pieken op het elektriciteitsnetwerk. Daarom is het wenselijk de productie te kunnen verlagen. In sommige gevallen is het slim om zonneparken aan te sluiten op slechts een bepaald percentage van het piekvermogen. In het ETM is het nu mogelijk om het percentage productiebeperking in te stellen voor verschillende types zonnepanelen.
 
+Ontdek de productiebeperking van zonnepanelen bij **[Flexibiliteit → Netbelasting][solar pv curtailment slide]**!
+
 ![](/assets/pages/whats_new/curtailment_solar_pv_nl.png)
 
 ## Zet elektriciteitsoverschotten om in warmte voor warmtenetten
 Het is nu mogelijk om elektriciteitsoverschotten van zon en wind om te zetten in warmte voor warmtenetten. Dit kan middels een power-to-heat (P2H) elektrische boiler en een P2H warmtepomp die alleen warmte produceren als er overschotten zijn. De geproduceerde warmte kan direct worden ingezet of worden opgeslagen voor een later moment. Zo kun je bijvoorbeeld overschotten van wind en zon gebruiken om 's winters huizen mee te verwarmen.
+
+Bekijk de P2H schuifjes voor warmtenetten bij **[Flexibiliteit → Elektriciteitsoverschotten → Conversie][p2h district heating slide]**!
 
 ![](/assets/pages/whats_new/p2h_seasonal_storage_nl.png)
 
 ## Bekijk het schakelgedrag van hybride warmtepompen
 
 De efficiëntie van (hybride) warmtepompen is afhankelijk van de buitentemperatuur en wordt aangegeven met de 'coefficient of performance' (COP). De COP wordt lager als de buitentemperatuur afneemt. In het ETM was het al mogelijk om in te stellen boven welke COP de hybride warmtepomp moet schakelen van gas naar elektriciteit; dit noemen we de omslag-COP. Je kunt deze instellen op de financieel meest aantrekkelijke waarde voor de consument, maar kunt ook een instelling kiezen die minder netwerkimpact oplevert. Er zijn twee grafieken toegevoegd die de gebruiker ondersteunen in het maken van deze keuze: een grafiek die inzicht geeft in de kostenoptimale omslag-COP en een grafiek die de gas en elektriciteitsvraag per uur toont.
+
+Bekijk het gedrag van hybride warmtepompen in detail bij **[Flexibiliteit → Netbelasting][behavior hhp slide]**!
 
 ![](/assets/pages/whats_new/HHP_behaviour_nl.png)
 
@@ -85,6 +91,12 @@ Voor opgeslagen scenarios is het vanaf nu mogelijk om de waardes van je gezette 
 De bestandsindeling van de draaiprofielen en prijscurves van elektriciteit is veranderd. Per kolom uit de data-export wordt nu met "input" of "output" aangegeven of het om vraag of aanbod van elektriciteit gaat. Flexibiliteitsoplossingen hebben nu dus ook zowel een input als output kolom. Hiermee is de vorm van de data-export voor elektriciteit consistenter met de data-exports voor netwerkgas en waterstof.
 
 [Hier vind je de aangepaste data-export voor elektriciteit!][data export slide]
+
+[solar pv curtailment slide]: /scenario/flexibility/flexibility_net_load/curtailment-solar-pv
+
+[p2h district heating slide]: /scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating
+
+[behavior hhp slide]: /scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps
 
 [district heating slide]: /scenario/supply/heat/heat-sources
 

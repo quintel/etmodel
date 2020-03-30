@@ -8,17 +8,23 @@
 
 Installing a large capacity of solar PV panels may cause high peak demands on the electricity network. It is therefore desirable to be able to curtail these peaks. In some cases it might be smart to connect solar parks to a certain percentage of its peak power. It is now possible to set the curtailment as a percentage of the peak power in the ETM.
 
+Discover the curtailment of solar panels in the **[Flexibility → Net load][solar pv curtailment slide]** section!
+
 ![](/assets/pages/whats_new/curtailment_solar_pv_en.png)
 
 ## Convert excess electricity into heat for district heating
 
 It is now possible to convert electricity excesses from solar and wind production into heat for district heating. This can be done by means of a power-to-heat (P2H) electric boiler and a P2H heat pump that only produce heat when there is an excess of electricity. The produced heat can be used immediately or can be stored for later use. For example, it is now possible to use solar and wind electricity excesses to heat households during winter.
 
+Check out the P2H sliders for district heating in the **[Flexibility → Excess electricity → Conversion][p2h district heating slide]** section!
+
 ![](/assets/pages/whats_new/p2h_seasonal_storage_en.png)
 
 ## Get insight in behaviour of hybrid heat pumps
 
 The efficiency of hybrid heat pumps (HHP) is dependent on the ambient temperature and is depicted by the coefficient of performance (COP). The COP becomes lower as the outside temperature decreases. In the ETM you can set the COP threshold above which the HHP switches from gas to electricity. You can choose a setting that is most financially attractive for the consumer, but you can also choose a setting that produces less impact on the electricity network. Two charts have been added to assist the user in making this choice: a chart showing the cost-optimal threshold COP based on the consumer gas/electricity price and a chart showing gas and electricity demand per hour.
+
+Get insight in hybrid heat pump behavior in the **[Flexibility → Net load][behavior hhp slide]** section!
 
 ![](/assets/pages/whats_new/HHP_behaviour_en.png)
 
@@ -87,6 +93,12 @@ For saved scenarios it is possible to download the values ​​of your sliders 
 The format of the load and price curves of electricity has recently changed. For each column in the data export the extension "input" or "output" is used to indicate whether the data represents demand or supply of electricity. Flexibility solutions have two columns now, both for the electricity input and output. With these changes, the format of the data exports of electricity, network gas and hydrogen are more consistent.
 
 You can find the adjusted data export here in the **[Data export → Merit order price][data export slide]** section.
+
+[solar pv curtailment slide]: /scenario/flexibility/flexibility_net_load/curtailment-solar-pv
+
+[p2h district heating slide]: /scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating
+
+[behavior hhp slide]: /scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps
 
 [district heating slide]: /scenario/supply/heat/heat-sources
 

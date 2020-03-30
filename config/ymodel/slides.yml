@@ -4130,16 +4130,26 @@
   alt_output_element_id:
   dependent_on: ''
   description:
-    content_en: "The scenario report is a printable description of the decisions you
-      made in your current scenario, progress made towards important goals, and includes
-      charts showing breakdowns of energy use, electricity production, and much more.\r\n\r\n<ul
-      class=\"data-download\">\r\n  <li><a href=\"/scenario/reports/auto\"><span class=\"fa
-      fa-book\"></span> View the report →</a></li>\r\n</ul>\r\n"
-    content_nl: "Het scenarioverslag beschrijft je scenario in woord en beeld. Het
-      bevat informatie over de behaalde doelen, toont uitsplitsingen van energiegebruik
-      en elektriciteitsproductie, wijst je op mogelijke inconsistenties en nog veel
-      meer.\r\n\r\n<ul class=\"data-download\">\r\n  <li><a href=\"/scenario/reports/auto\"><span
-      class=\"fa fa-book\"></span> Bekijk het verslag →</a></li>\r\n</ul>\r\n"
+    content_en: |
+      The scenario report is a printable description of the decisions you
+      made in your current scenario, progress made towards important goals, and
+      includes charts showing breakdowns of energy use, electricity production,
+      and much more.
+      <br /><br />
+      <a href="/scenario/reports/auto">
+        <span class="fa fa-book"></span>
+        <strong>View the report</strong> →
+      </a>
+    content_nl: |
+      Het scenarioverslag beschrijft je scenario in woord en beeld. Het bevat
+      informatie over de behaalde doelen, toont uitsplitsingen van
+      energiegebruik en elektriciteitsproductie, wijst je op mogelijke
+      inconsistenties en nog veel meer.
+      <br /><br />
+      <a href="/scenario/reports/auto">
+        <span class="fa fa-book"></span>
+        <strong>Bekijk het verslag</strong> →
+      </a>
     short_content_en:
     short_content_nl:
 - id: 250
@@ -4154,14 +4164,23 @@
   alt_output_element_id:
   dependent_on: ''
   description:
-    content_en: "A printable A3 or A4 factsheet describing how energy is produced
-      and consumed in your scenario. Unfortunately, the factsheet is currently available
-      in Dutch only.\r\n\r\n<ul class=\"data-download\">\r\n  <li><a href=\"/scenarios/%{scenario_id}/factsheet\"><span
-      class=\"fa fa-newspaper-o\"></span> View the factsheet →</a></li>\r\n</ul>\r\n"
-    content_nl: "Een printklare A3 'factsheet' waarin de energie-mix voor zowel vraag
-      als aanbod wordt samengevat voor je scenario.\r\n\r\n<ul class=\"data-download\">\r\n
-      \ <li><a href=\"/scenarios/%{scenario_id}/factsheet\"><span class=\"fa fa-newspaper-o\"></span>
-      Bekijk de factsheet →</a></li>\r\n</ul>\r\n"
+    content_en: |
+      A printable A3 or A4 factsheet describing how energy is produced and
+      consumed in your scenario. Unfortunately, the factsheet is currently
+      available in Dutch only.
+      <br /><br />
+      <a href="/scenario/reports/auto">
+        <span class="fa fa-book"></span>
+        <strong>View the factsheet</strong> →
+      </a>
+    content_nl: |
+      Een printklare A3 'factsheet' waarin de energie-mix voor zowel vraag als
+      aanbod wordt samengevat voor je scenario.
+      <br /><br />
+      <a href="/scenario/reports/auto">
+        <span class="fa fa-book"></span>
+        <strong>Bekijk de factsheet</strong> →
+      </a>
     short_content_en:
     short_content_nl:
 - id: 251
@@ -4176,15 +4195,23 @@
   alt_output_element_id:
   dependent_on: ''
   description:
-    content_en: "A detailed breakdown of energy flows throughout the Energy Transition
-      Model for your scenario. Recommended only for advanced users.\r\n\r\n<ul class=\"data-download\">\r\n
-      \ <li><a href=\"%{etengine_url}/data/%{scenario_id}/layout\" target=\"_blank\"><span
-      class=\"fa fa-object-group\"></span> View the graph →</a></li>\r\n</ul>\r\n"
-    content_nl: "Gedetailleerde en interactieve weergave van de energiestromen en
-      energie-omzetters van het Energietransitiemodel. Bedoeld voor gevorderde gebruikers.\r\n\r\n<ul
-      class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/data/%{scenario_id}/layout\"
-      target=\"_blank\"><span class=\"fa fa-object-group\"></span> Bekijk de energiegraaf
-      →</a></li>\r\n</ul>\r\n"
+    content_en: |
+      A detailed breakdown of energy flows throughout the Energy Transition
+      Model for your scenario. Recommended only for advanced users.
+      <br /><br />
+      <a href="/scenario/reports/auto">
+        <span class="fa fa-book"></span>
+        <strong>View the graph</strong> →
+      </a>
+    content_nl: |
+      Gedetailleerde en interactieve weergave van de energiestromen en
+      energie-omzetters van het Energietransitiemodel. Bedoeld voor gevorderde
+      gebruikers.
+      <br /><br />
+      <a href="/scenario/reports/auto">
+        <span class="fa fa-book"></span>
+        <strong>Bekijk de energiegraaf</strong> →
+      </a>
     short_content_en:
     short_content_nl:
 - id: 252
@@ -4760,14 +4787,22 @@
   alt_output_element_id:
   dependent_on: ''
   description:
-    content_en: "A printable sheet depicting the CO<sub>2</sub> footprint for your
-      scenario.\r\n  <ul class=\"data-download\">\r\n    <li><a href=\"%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}\"
-      target=\"_blank\"><span class=\"fa fa-newspaper-o\"></span> View the sheet →</a></li>\r\n
-      \ </ul>\r\n"
-    content_nl: "Een printklare sheet met een visuele samenvatting van de CO<sub>2</sub>-voetafdruk
-      voor jouw scenario.\r\n<ul class=\"data-download\">\r\n  <li><a href=\"%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}\"
-      target=\"_blank\"><span class=\"fa fa-newspaper-o\"></span> Bekijk de sheet
-      →</a></li>\r\n</ul>\r\n"
+    content_en: |
+      A printable sheet depicting the CO<sub>2</sub> footprint for your
+      scenario.
+      <br /><br />
+      <a href="%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}" target="_blank">
+        <span class="fa fa-newspaper-o"></span>
+        <strong>View the sheet</strong> →
+      </a>
+    content_nl: |
+      Een printklare sheet met een visuele samenvatting van de
+      CO<sub>2</sub>-voetafdruk voor jouw scenario.
+      <br /><br />
+      <a href="%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}" target="_blank">
+        <span class="fa fa-newspaper-o"></span>
+        <strong>Bekijk de sheet</strong> →
+      </a>
     short_content_en:
     short_content_nl:
 - id: 274

@@ -2,7 +2,7 @@
 
 ---
 
-# Maart 2020
+# March 2020
 
 ## Curtailment of solar panels
 

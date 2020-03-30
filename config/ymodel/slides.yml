@@ -4167,14 +4167,14 @@
       consumed in your scenario. Unfortunately, the factsheet is currently
       available in Dutch only.
       <br /><br />
-      <a href="/scenario/reports/auto" class="simple-button">
+      <a href="/scenarios/%{scenario_id}/factsheet" class="simple-button">
         <span class="fa fa-book"></span> View the factsheet →
       </a>
     content_nl: |
       Een printklare A3 'factsheet' waarin de energie-mix voor zowel vraag als
       aanbod wordt samengevat voor je scenario.
       <br /><br />
-      <a href="/scenario/reports/auto" class="simple-button">
+      <a href="/scenarios/%{scenario_id}/factsheet" class="simple-button">
         <span class="fa fa-book"></span> Bekijk de factsheet →
       </a>
     short_content_en:
@@ -4195,7 +4195,7 @@
       A detailed breakdown of energy flows throughout the Energy Transition
       Model for your scenario. Recommended only for advanced users.
       <br /><br />
-      <a href="/scenario/reports/auto" class="simple-button">
+      <a href="%{etengine_url}/data/%{scenario_id}/layout" class="simple-button">
         <span class="fa fa-book"></span> View the graph →
       </a>
     content_nl: |
@@ -4203,7 +4203,7 @@
       energie-omzetters van het Energietransitiemodel. Bedoeld voor gevorderde
       gebruikers.
       <br /><br />
-      <a href="/scenario/reports/auto" class="simple-button">
+      <a href="%{etengine_url}/data/%{scenario_id}/layout" class="simple-button">
         <span class="fa fa-book"></span> Bekijk de energiegraaf →
       </a>
     short_content_en:

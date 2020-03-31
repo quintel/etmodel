@@ -29,29 +29,41 @@
 #  ...
 #
 #
-class OutputElementSerie < ActiveRecord::Base
+class OutputElementSerie < YModel::Base
   include Colors
-  include AreaDependent::ActiveRecord
+  include AreaDependent::YModel
+  include Describable
 
   belongs_to :output_element
-  has_one :description, as: :describable
-  has_one :area_dependency, as: :dependable
 
-  scope :gquery_contains, ->(q) { where('gquery LIKE ?', "%#{q}%") }
+  # should this be part of attribute api of ymodel?
+  # validates :gquery, presence: true
 
-  scope :ordered_for_admin,
-        -> { joins(:output_element).merge(OutputElement.order(key: :asc)) }
+  # accepts_nested_attributes_for :description, reject_if: :all_blank
+  # accepts_nested_attributes_for :area_dependency, reject_if: :all_blank
 
-  # Hmmm ugly
-  scope :block_charts,
-        -> { where(output_element_id: OutputElementType::BLOCK_CHART_ID) }
+  class << self
+    def contains
+      return all if search.blank? || search.empty?
 
-  scope :contains, ->(search) { where('`key` LIKE ?', "%#{search}%") }
+      all.select { |oes| oes.key.include?(search) }
+    end
 
-  validates :gquery, presence: true
+    def gquery_contains(search)
+      return all if search.blank? || search.empty?
 
-  accepts_nested_attributes_for :description, reject_if: :all_blank
-  accepts_nested_attributes_for :area_dependency, reject_if: :all_blank
+      all.select { |oes| oes.gquery.include?(search) }
+    end
+
+    # Hmmm ugly
+    def block_charts
+      where(output_element_id: OutputElementType::BLOCK_CHART_ID)
+    end
+
+    # def ordered
+    #   all.sort_by { |oes| oes.order_by }
+    # end
+  end
 
   def title_translated
     I18n.t("output_element_series.#{label}") unless label.blank?

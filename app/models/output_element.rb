@@ -21,7 +21,7 @@
 #
 
 # Entity used for filling charts
-class OutputElement < ActiveRecord::Base
+class OutputElement < YModel::Base
   MENU_ORDER = %w[Overview Merit Supply Demand Cost Network Policy FCE].freeze
 
   SUB_GROUP_ORDER = %w[
@@ -46,27 +46,26 @@ class OutputElement < ActiveRecord::Base
     import_export
   ].freeze
 
-  include AreaDependent::ActiveRecord
+  include AreaDependent::YModel
+  include Describable
 
-  has_many :output_element_series, -> { order(:order_by) }, dependent: :destroy
+  has_many :output_element_series #, -> { order(:order_by) }
   belongs_to :output_element_type
-  has_one :description, as: :describable, dependent: :destroy
-  has_one :area_dependency, as: :dependable, dependent: :destroy
 
   # Charts may link to other charts to provide a user with additional insight.
-  belongs_to :related_output_element, class_name: 'OutputElement',
-                                      optional: true
+  belongs_to :related_output_element, class_name: 'OutputElement'
 
   has_many :relatee_output_elements, class_name: 'OutputElement',
-                                     dependent: :nullify,
                                      foreign_key: 'related_output_element_id'
 
-  accepts_nested_attributes_for :description, :area_dependency
+  # accepts_nested_attributes_for :description, :area_dependency
 
-  validates :key, presence: true, uniqueness: true
+  # validates :key, presence: true, uniqueness: true
   delegate :html_table?, to: :output_element_type
 
-  scope :not_hidden, -> { where(hidden: false) }
+  def self.not_hidden
+    where(hidden: false)
+  end
 
   def title_for_description
     "output_elements.#{key}"
@@ -120,7 +119,7 @@ class OutputElement < ActiveRecord::Base
   end
 
   def self.whitelisted
-    all.reject(&:area_dependent)
+    not_hidden.reject(&:area_dependent)
       .reject(&:block_chart?)
       .reject(&:not_allowed_in_this_area)
       .sort_by do |c|
@@ -132,7 +131,7 @@ class OutputElement < ActiveRecord::Base
   end
 
   def allowed_output_element_series
-    output_element_series.includes(:area_dependency).reject(&:area_dependent)
+    output_element_series.reject(&:area_dependent)
   end
 
   # returns the type of chart (bezier, html_table, ...)

@@ -19,7 +19,7 @@ class OutputElementPresenter
     under_construction: true,
     related_id: ->(oe) { oe.related_output_element&.id },
     has_description: ->(oe) { oe.has_description? },
-    requires_merit_order: ->(oe) { oe.requires_merit_order? }
+    requires_merit_order: ->(oe) { oe.requires_merit_order }
   }.freeze
 
   # Public: Presents a single element as a JSON-compatible Hash.

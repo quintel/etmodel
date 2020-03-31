@@ -8,11 +8,10 @@
 #  updated_at :datetime
 #
 
-class OutputElementType < ActiveRecord::Base
+class OutputElementType < YModel::Base
   BLOCK_CHART_ID = 8 # Ugly
-  
 
-  has_many :output_elements, dependent: :nullify
+  has_many :output_elements
 
   def html_table?
     name == 'html_table'

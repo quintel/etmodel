@@ -10,7 +10,7 @@ describe OutputElementsController, vcr: true do
   end
 
   describe '#show' do
-    let!(:output_element) { FactoryBot.create(:output_element, key: 'abc') }
+    let!(:output_element) { OutputElement.all.first }
 
     context 'with a numeric ID' do
       before { get(:show, params: { id: output_element.id }) }
@@ -34,7 +34,7 @@ describe OutputElementsController, vcr: true do
     context 'with an invalid numeric ID' do
       it 'responds 404 Not Found' do
         expect { get(:show, params: { id: '0' }) }
-          .to raise_error(ActiveRecord::RecordNotFound)
+          .to raise_error(YModel::RecordNotFound)
       end
     end
 
@@ -60,7 +60,7 @@ describe OutputElementsController, vcr: true do
     context 'with an invalid key' do
       it 'responds 404 Not Found' do
         expect { get(:show, params: { id: 'nope' }) }
-          .to raise_error(ActiveRecord::RecordNotFound)
+          .to raise_error(YModel::RecordNotFound)
       end
     end
   end # #show

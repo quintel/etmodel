@@ -30,10 +30,7 @@ class OutputElementsController < ApplicationController
     # id of the element the chart will be placed in
     @chart_holder = params[:holder]
 
-    @groups =
-      OutputElement
-        .includes(:output_element_type, :area_dependency)
-        .not_hidden.select_by_group
+    @groups = OutputElement.select_by_group
   end
 
   # legacy actions used by the block charts
@@ -60,7 +57,7 @@ class OutputElementsController < ApplicationController
       if params[:id] && params[:id] =~ /\D/
         OutputElement.find_by_key!(params[:id])
       else
-        OutputElement.find(params[:id])
+        OutputElement.find!(params[:id].to_i)
       end
   end
 end

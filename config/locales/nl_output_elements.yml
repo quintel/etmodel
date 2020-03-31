@@ -354,6 +354,11 @@ nl:
         peak_power_before_curtailment: "Piek- vermogen"
         production_after_curtailment: "Productie"
         production_before_curtailment: "Productie"
+      hybrid_heat_pump:
+        households_space_heater_hybrid_heatpump: Ruimteverwarming
+        households_water_heater_hybrid_heatpump: Warm water
+        heat_output_share_network_gas: Aandeel gas (in warmteoutput)
+        heat_output_share_electricity: Aandeel elektrisch (in warmteoutput)
     investment_table: "Investeringen voor warmte- en elektriciteitproductie"
     investment_electric_cars: "Gemiddelde investeringskosten per elektrische auto"
     additional_infrastructure_investments: "Benodigde meerinvestering infrastructuur"
@@ -409,6 +414,7 @@ nl:
     heat_network_demand: "Uurlijkse warmtevraag in warmtenetten"
     heat_network_production: "Uurlijkse warmteproductie in warmtenetten"
     hourly_solar_pv_curtailment: "Uurlijkse productie van zonnepanelen"
+    hybrid_heat_pump: "Hybride warmtepomp: aandeel elektrisch en gas"
     hydrogen_production_for_transport: "Waterstofproductie voor transport"
     hydrogen_production_for_fertilizers: "Waterstofproductie voor de kunstmestindustrie"
     hydrogen_cost_capacity: "Productiecapaciteiten en kosten van waterstof"

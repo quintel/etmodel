@@ -15,7 +15,6 @@ Etm::Application.routes.draw do
   get 'login'  => 'user_sessions#new', as: :login
   get 'logout' => 'user_sessions#destroy', as: :logout
 
-  resources :descriptions, only: :show
   get '/descriptions/charts/:id' => 'descriptions#charts'
 
   resources :user_sessions

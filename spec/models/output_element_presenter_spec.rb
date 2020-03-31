@@ -1,8 +1,12 @@
 require 'rails_helper'
 
+OutputElementType.source_file Rails.root.join('spec', 'fixtures', 'output_element_types.yml')
+OutputElement.source_file Rails.root.join('spec', 'fixtures', 'output_elements.yml')
+OutputElementSerie.source_file Rails.root.join('spec', 'fixtures', 'output_element_series.yml')
+
 RSpec.describe OutputElementPresenter do
   let(:oe) do
-    FactoryBot.create(:output_element, key: 'useful_demand_in_households')
+    OutputElement.all.first
   end
 
   let(:renderer) { ->(*) {} }
@@ -21,14 +25,11 @@ RSpec.describe OutputElementPresenter do
 
     it 'includes the translated name' do
       expect(json[:attributes][:name]).
-        to eq(I18n.t(:'output_elements.useful_demand_in_households'))
+        to eq(I18n.t(:'output_elements.use_of_final_electricity_demand_in_households'))
     end
   end
 
   it 'includes the element series' do
-    FactoryBot.create(:output_element_serie, output_element: oe)
-    FactoryBot.create(:output_element_serie, output_element: oe)
-
     expect(json[:series].length).to eq(2)
   end
 
@@ -65,7 +66,7 @@ RSpec.describe OutputElementPresenter do
   end
 
   describe '.collection' do
-    let(:other) { FactoryBot.create(:output_element) }
+    let(:other) { OutputElement.all.second }
 
     it 'presents multiple elements' do
       json = OutputElementPresenter.collection([oe, other], ->(*) {})

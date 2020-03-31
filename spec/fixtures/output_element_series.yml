@@ -1,0 +1,25 @@
+---
+- id: 4
+  output_element_id: 2
+  label: television
+  color: "#854321"
+  order_by: 5
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: television_in_use_of_final_electricity_demand_in_households
+  is_1990:
+  dependent_on:
+- id: 6
+  output_element_id: 2
+  label: vacuum_cleaner
+  color: "#32CD32"
+  order_by: 7
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: vacuum_cleaner_in_use_of_final_electricity_demand_in_households
+  is_1990:
+  dependent_on:

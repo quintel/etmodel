@@ -1,5 +1,60 @@
-use_of_final_demand_in_households:
-  id: 57
-  unit: PJ
-  key: use_of_final_demand_in_households
+---
+- id: 2
   output_element_type_id: 13
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: false
+  growth_chart: false
+  key: use_of_final_electricity_demand_in_households
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  related_output_element_id:
+  dependent_on: ''
+  description:
+    content_en: "This graph shows how household demand for electricity will change
+      as a result of the choices you make in this section. Electricity demand is broken
+      down into applications.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
+      above the graph, to select different graphs about energy demand."
+    content_nl: "Deze grafiek toont hoe de huishoudelijke vraag naar elektriciteit
+      verandert als gevolg van de keuzes en aannames die je in dit onderdeel maakt.
+      De vraag naar elektriciteit is onderverdeeld naar toepassing.\r\n<br/><br/>\r\nKies
+      '<u>Wijzig grafiek</u>' om andere grafieken te tonen over energiegebruik."
+    short_content_en: Households, by application
+    short_content_nl: Huishoudelijk, naar toepassing
+- id: 28
+  output_element_type_id: 13
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: industry
+  show_point_label: false
+  growth_chart: false
+  key: source_of_heat_and_electricity_in_industry
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  related_output_element_id:
+  dependent_on: ''
+  description:
+    content_en: "This graph shows how the electricity and heat that industry uses,
+      is generated. If it is not generated using CHP units, heat is made with the
+      other options visible on the Industry 'Heat' page. Centrally produced electricity
+      is lumped together here. You will get a chance to choose production methods
+      under the 'Supply' section. \r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
+      above the graph, to select different graphs about industrial energy demand."
+    content_nl: "Deze grafiek laat zien hoe de elektriciteit en warmte die de industrie
+      gebruikt, wordt opgewekt. Warmte die niet met WKK is gemaakt, kan worden geproduceerd
+      met één van de opties op de Industrie 'Warmte' pagina. Centraal geproduceerde
+      elektriciteit is hier op één hoop gegooid. Bij het onderdeel 'Aanbod' heb je
+      de mogelijkheid om te kiezen hoe dit wordt opgewekt en hoeveel.\r\n<br/><br/>\r\nKies
+      '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over industrieel
+      energiegebruik."
+    short_content_en: Industrial
+    short_content_nl: Industrie

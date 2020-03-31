@@ -60,6 +60,8 @@ en:
     energy_chp_supercritical_waste_mix_steam_hot_water_output_curve: 'Waste CHP'
     energy_chp_ultra_supercritical_lignite_steam_hot_water_output_curve: 'Brown coal CHP'
     energy_chps_coal_steam_hot_water_output_curve: 'Coal CHP'
+    energy_heat_flexibility_p2h_heatpump_electricity_steam_hot_water_output_curve: "Power-to-heat heat pump"
+    energy_heat_flexibility_p2h_boiler_electricity_steam_hot_water_output_curve: "Power-to-heat boiler"
     energy_heat_backup_burner_network_gas_steam_hot_water_output_curve: 'Heat shortage (gas backup)'
     energy_heat_burner_crude_oil_steam_hot_water_output_curve: 'Oil heater'
     energy_heat_burner_coal_steam_hot_water_output_curve: 'Coal heater'
@@ -164,6 +166,9 @@ en:
     blue_energy: "Blue Energy"
     buildings_cooling_demand: "Cooling buildings"
     buildings_heating_demand: "Heating buildings"
+    buildings_solar_pv: 'Buildings'
+    buildings_solar_pv_curtailed_electricity_output_curve: 'Curtailment buildings'
+    buildings_solar_pv_electricity_output_curve: 'Production buildings'
     buildings_solar_pv_solar_radiation: 'Solar panels buildings'
     bunkers_flexibility_p2g_electricity: "Converted to kerosene for aviation"
     busses: "Busses"
@@ -284,12 +289,15 @@ en:
     electricity_stored_in_EV: "Stored in EV"
     electricity_stored_in_opac: "Stored in underground pumped hydro storage"
     electricity_stored_in_mv_batteries: "Stored in large-scale batteries"
+    electricity_converted_to_heat_district_heating_heatpump: "Converted to heat for district heating (heat pump)"
+    electricity_converted_to_heat_district_heating_boiler: "Converted to heat for district heating (boiler)"
     electricity_converted_to_heat_households: "Converted to heat for households"
     electricity_converted_to_heat_industry: "Converted to heat for industry"
     electricity_converted_to_hydrogen: "Converted to hydrogen"
     electricity_converted_to_kerosene: "Converted to kerosene for aviation"
     electricity_exported: "Exported"
-    electricity_curtailed: "Curtailed"
+    electricity_curtailed: "Curtailment of volatile producers"
+    electricity_curtailed_solar_pv: "Curtailment of solar PV"
     electrical_appliances: "Electrical appliances"
     losses_in_storage: "Losses"
     energetic_use: "Energetic use"
@@ -336,6 +344,8 @@ en:
     energy_power_wind_turbine_offshore: 'Wind turbines offshore'
     transport_final_demand_hydrogen_for_mekko: 'Fuel for transport'
     energy_export_hydrogen_for_mekko: 'Export'
+    energy_heat_flexibility_p2h_boiler_electricity: "Converted to heat for district heating (boiler)"
+    energy_heat_flexibility_p2h_heatpump_electricity: "Converted to heat for district heating (heat pump)"
     energy_hydrogen_biomass_gasification_for_mekko: 'Biomass gasification'
     energy_hydrogen_biomass_gasification_ccs_for_mekko: "Biomass gasification + CCS"
     energy_hydrogen_electrolysis_wind_electricity_for_mekko: "Offshore wind"
@@ -448,6 +458,9 @@ en:
     households_flexibility_p2p_electricity: 'Stored in household batteries'
     households_flexibility_p2p: 'Household batteries'
     households_heating_demand: "Heating households"
+    households_solar_pv: 'Households'
+    households_solar_pv_curtailed_electricity_output_curve: 'Curtailment households'
+    households_solar_pv_electricity_output_curve: 'Production households'
     households_solar_pv_solar_radiation: 'Solar panels households'
     households_space_heater_coal: "Coal-fired heater space heating"
     households_space_heater_combined_network_gas: "Condensing combi boiler space heating"
@@ -457,6 +470,8 @@ en:
     households_space_heater_heatpump_air_water_electricity: "Heat pump (air) space heating"
     households_space_heater_heatpump_ground_water_electricity: "Heat pump (ground) space heating"
     households_space_heater_hybrid_heatpump_air_water_electricity: "Hybrid heat pump space heating"
+    households_space_heater_hybrid_heatpump_electricity_input_curve: "Elektricity"
+    households_space_heater_hybrid_heatpump_network_gas_input_curve: "Network gas"
     households_space_heater_micro_chp_network_gas: "Micro-CHP space heating"
     households_space_heater_network_gas: "Gas-fired heater space heating"
     households_space_heater_wood_pellets: "Wood pellet stove space heating"
@@ -473,6 +488,10 @@ en:
     households_water_heater_resistive_electricity: "Electric boiler water heating"
     households_water_heater_solar_thermal: "Solar thermal collectors water heating"
     households_water_heater_wood_pellets: "Wood pellet stove water heating"
+    households_space_heater_hybrid_heatpump_electricity_input_curve: "Electricity (space heating)"
+    households_space_heater_hybrid_heatpump_network_gas_input_curve: "Gas (space heating)"
+    households_water_heater_hybrid_heatpump_electricity_input_curve: "Electricity (hot water)"
+    households_water_heater_hybrid_heatpump_network_gas_input_curve: "Gas (hot water)"
     human_powered_bicycles: "Non-electric bicycles"
     hv_buildings_space_heating: "Space heating in buildings"
     hv_agriculture: "Agriculture"
@@ -503,6 +522,9 @@ en:
     energy_hydrogen_steam_methane_reformer: "Steam methane reforming"
     energy_hydrogen_steam_methane_reformer_ccs: "Steam methane reforming + CCS"
     energy_greengas_production_costs: "Average production costs green gas"
+    energy_power_solar_pv: 'Solar PV plants'
+    energy_power_solar_pv_curtailed_electricity_output_curve: 'Curtailment solar PV plants'
+    energy_power_solar_pv_electricity_output_curve: 'Production solar PV plants'
     greengas_price: "Green gas price"
     hydrogen_demand: "Hydrogen demand"
     hydrogen_production: "Hydrogen production"
@@ -698,6 +720,7 @@ en:
     onshore: "Onshore"
     onshore_wind_turbines: "Onshore wind turbines"
     operation_maintenance_cost: "Operation & maintenance cost"
+    optimal_threshold: "Cost-optimal threshold"
     other: "Other"
     other_heat: "Individual heat"
     other_metals: "Other metals"
@@ -737,6 +760,7 @@ en:
     solar_csp: "Solar CSP plant"
     solar_panels: "Solar panels"
     solar_pv: "Solar PV"
+    solar_pv_total_curtailed_electricity_curve: "Curtailment of solar PV"
     solar_thermal: "Solar thermal"
     solar_thermal_hot_water: "Solar thermal (for hot water)"
     solar_thermal_heating: "Solar thermal (for heating)"
@@ -802,6 +826,8 @@ en:
     households_final_demand_hydrogen: "Heat for households"
     energy_heat_from_hydrogen: "Heat for district heating"
     other_final_demand_steam_hot_water_in_collective_heat_network_mekko: "Other"
+    energy_heat_flexibility_p2h_boiler_electricity_in_collective_heat_network_mekko: "Power-to-heat boiler"
+    energy_heat_flexibility_p2h_heatpump_electricity_in_collective_heat_network_mekko: "Power-to-heat heat pump"
     energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko: "Heat surplus (wasted)"
     energy_heat_network_storage_loss_in_collective_heat_network_mekko: "Storage losses (incl. surplus)"
     energy_heat_well_geothermal_in_collective_heat_network_mekko: "Geothermal heat"

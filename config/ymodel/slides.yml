@@ -1,10 +1,12 @@
 ---
-- key: demand_households_insulation
+- id: 1
   image: house_insulation.gif
   general_sub_header: heat_demand_reduction
   group_sub_header: ''
   subheader_image: households_insulation_energy_label.png
+  key: demand_households_insulation
   position: 4
+  sidebar_item_id: 1
   output_element_id: 58
   alt_output_element_id: 58
   dependent_on: ''
@@ -17,13 +19,14 @@
       met energielabel G.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: households
-- key: demand_households_lighting
+- id: 2
   image: house_lighting.gif
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_households_lighting
   position: 12
+  sidebar_item_id: 1
   output_element_id: 2
   alt_output_element_id: 2
   dependent_on: ''
@@ -33,13 +36,14 @@
       van een huishouden.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: households
-- key: demand_households_appliances
+- id: 3
   image: house_appliances.gif
   general_sub_header: change
   group_sub_header: change
   subheader_image: energy_label.png
+  key: demand_households_appliances
   position: 11
+  sidebar_item_id: 1
   output_element_id: 2
   alt_output_element_id: 2
   dependent_on: ''
@@ -50,13 +54,14 @@
       efficiënter denk jij dat ze zullen worden? '
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: households
-- key: demand_households_heating
+- id: 4
   image: house_heating.gif
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
+  key: demand_households_heating
   position: 5
+  sidebar_item_id: 1
   output_element_id: 56
   alt_output_element_id: 56
   dependent_on: ''
@@ -65,13 +70,14 @@
     content_nl: "Hoe zullen huishoudens verwarmd worden en hun warm water maken? \r\n"
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: households
-- key: demand_households_solar_panels
+- id: 5
   image: house_solarpanels.gif
   general_sub_header: of_potential
   group_sub_header: ''
   subheader_image: ''
+  key: demand_households_solar_panels
   position: 8
+  sidebar_item_id: 1
   output_element_id: 5
   alt_output_element_id: 5
   dependent_on: ''
@@ -82,13 +88,14 @@
       mogelijk ook geld.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: households
-- key: costs_combustion_fuel
+- id: 6
   image: ''
   general_sub_header: price
   group_sub_header: ''
   subheader_image: ''
+  key: costs_combustion_fuel
   position: 1
+  sidebar_item_id: 37
   output_element_id: 32
   alt_output_element_id: 32
   dependent_on: ''
@@ -100,13 +107,14 @@
       brandstoffen volgens jou kosten in de toekomst?
     short_content_en: test
     short_content_nl: ''
-  sidebar_item_key: fuel_costs
-- key: costs_combustion_investment
+- id: 7
   image: ''
   general_sub_header: change
   group_sub_header:
   subheader_image:
+  key: costs_combustion_investment
   position: 2
+  sidebar_item_id: 12
   output_element_id: 32
   alt_output_element_id: 32
   dependent_on:
@@ -119,13 +127,14 @@
       doorbraken, enz.'
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: combustion
-- key: costs_combustion_operational_and_maintenance
+- id: 8
   image: ''
   general_sub_header: change
   group_sub_header:
   subheader_image:
+  key: costs_combustion_operational_and_maintenance
   position: 3
+  sidebar_item_id: 12
   output_element_id: 32
   alt_output_element_id: 32
   dependent_on:
@@ -136,13 +145,14 @@
       hoog denk je dat ze in de toekomst zullen zijn?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: combustion
-- key: costs_wind_investment
+- id: 9
   image: ''
   general_sub_header: change
   group_sub_header:
   subheader_image:
+  key: costs_wind_investment
   position: 1
+  sidebar_item_id: 14
   output_element_id: 32
   alt_output_element_id: 32
   dependent_on:
@@ -155,13 +165,14 @@
       technologische doorbraken, enz.'
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: wind
-- key: costs_wind_operational_and_maintenance
+- id: 10
   image: ''
   general_sub_header: change
   group_sub_header:
   subheader_image:
+  key: costs_wind_operational_and_maintenance
   position: 2
+  sidebar_item_id: 14
   output_element_id: 32
   alt_output_element_id: 32
   dependent_on:
@@ -172,13 +183,14 @@
       tijd. Hoe hoog denk je dat ze in de toekomst zullen zijn?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: wind
-- key: costs_water_investment
+- id: 11
   image: ''
   general_sub_header: change
   group_sub_header:
   subheader_image:
+  key: costs_water_investment
   position: 1
+  sidebar_item_id: 15
   output_element_id: 32
   alt_output_element_id: 32
   dependent_on:
@@ -191,13 +203,14 @@
       door strengere milieuwetten?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: water
-- key: costs_water_operational_and_maintenance
+- id: 12
   image: ''
   general_sub_header: change
   group_sub_header:
   subheader_image:
+  key: costs_water_operational_and_maintenance
   position: 2
+  sidebar_item_id: 15
   output_element_id: 32
   alt_output_element_id: 32
   dependent_on:
@@ -208,13 +221,14 @@
       deel van het totaal. Hoe denk je dat deze zullen veranderen?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: water
-- key: costs_geothermal
+- id: 13
   image: ''
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
+  key: costs_geothermal
   position: 2
+  sidebar_item_id: 36
   output_element_id: 48
   alt_output_element_id: 32
   dependent_on: ''
@@ -226,13 +240,34 @@
       investeringskosten en onderhoudskosten van deze technologie in de toekomst?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: costs_heat
-- key: costs_solar_investment
+- id: 16
+  image: ''
+  general_sub_header: change
+  group_sub_header:
+  subheader_image:
+  key: costs_earth_operational_and_maintenance
+  position: 2
+  sidebar_item_id: 17
+  output_element_id: 32
+  alt_output_element_id: 32
+  dependent_on:
+  description:
+    content_en: 'Geothermal power is getting quite a bit of attention these days.
+      Operational and maintenance costs are a minor part of geothermal electricity
+      costs. What do you think they will be in the future? '
+    content_nl: 'Er is tegenwoordig veel aandacht voor stroom uit aardwarmte. De onderhouds-
+      en beheerkosten zijn maar een klein deel van het geheel. Hoe denk jij dat ze
+      in de toekomst zullen veranderen? '
+    short_content_en: ''
+    short_content_nl: ''
+- id: 17
   image: ''
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
+  key: costs_solar_investment
   position: 1
+  sidebar_item_id: 16
   output_element_id: 32
   alt_output_element_id: 32
   dependent_on: ''
@@ -245,13 +280,14 @@
       efficiëntie toenam.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: solar
-- key: costs_nuclear_investment
+- id: 19
   image: ''
   general_sub_header: change
   group_sub_header:
   subheader_image:
+  key: costs_nuclear_investment
   position: 2
+  sidebar_item_id: 13
   output_element_id: 32
   alt_output_element_id: 32
   dependent_on:
@@ -264,13 +300,14 @@
       technologische doorbraken, voldoende technisch geschoolde mensen, enz.'
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: nuclear
-- key: costs_nuclear_operational_and_maintenance
+- id: 20
   image: ''
   general_sub_header: change
   group_sub_header:
   subheader_image:
+  key: costs_nuclear_operational_and_maintenance
   position: 3
+  sidebar_item_id: 13
   output_element_id: 32
   alt_output_element_id: 32
   dependent_on:
@@ -282,13 +319,14 @@
       hoog denk jij dat ze zullen zijn?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: nuclear
-- key: costs_nuclear_fuel
+- id: 21
   image: ''
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
+  key: costs_nuclear_fuel
   position: 1
+  sidebar_item_id: 37
   output_element_id: 32
   alt_output_element_id: 32
   dependent_on: ''
@@ -300,13 +338,14 @@
       voor de prijzen van uranium.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: fuel_costs
-- key: costs_co2_prices
+- id: 22
   image: ''
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
+  key: costs_co2_prices
   position: 1
+  sidebar_item_id: 18
   output_element_id: 32
   alt_output_element_id: 32
   dependent_on: ''
@@ -319,13 +358,14 @@
       in de toekomst zijn?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: co2
-- key: costs_co2_ccs
+- id: 23
   image: ''
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
+  key: costs_co2_ccs
   position: 2
+  sidebar_item_id: 18
   output_element_id: 32
   alt_output_element_id: 32
   dependent_on: ''
@@ -336,13 +376,14 @@
       worden? Weet jij ook hoeveel?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: co2
-- key: demand_transport_passenger_transport
+- id: 24
   image: car.gif
   general_sub_header: "%/year"
   group_sub_header: share
   subheader_image: ''
+  key: demand_transport_passenger_transport
   position: 1
+  sidebar_item_id: 51
   output_element_id: 202
   alt_output_element_id:
   dependent_on: ''
@@ -369,13 +410,14 @@
       'internationaal transport'</a>."
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: transport_passenger_transport
-- key: demand_transport_car_technology
+- id: 25
   image: engine.gif
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_transport_car_technology
   position: 2
+  sidebar_item_id: 51
   output_element_id: 203
   alt_output_element_id:
   dependent_on: ''
@@ -395,13 +437,14 @@
       opladen.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: transport_passenger_transport
-- key: demand_transport_truck_technology
+- id: 26
   image: engine.gif
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_transport_truck_technology
   position: 12
+  sidebar_item_id: 52
   output_element_id: 207
   alt_output_element_id:
   dependent_on: ''
@@ -415,13 +458,14 @@
       vrachtwagens zullen rijden.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: transport_freight_transport
-- key: demand_industry_demand_growth
+- id: 27
   image: industry.gif
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
+  key: demand_industry_demand_growth
   position: 1
+  sidebar_item_id: 42
   output_element_id: 153
   alt_output_element_id: 153
   dependent_on: ''
@@ -436,13 +480,14 @@
       die je in de gedeeltes hieronder kunt aangeven.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: industry_other
-- key: demand_industry_heat
+- id: 28
   image: industry.gif
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_industry_heat
   position: 3
+  sidebar_item_id: 42
   output_element_id: 154
   alt_output_element_id: 154
   dependent_on: ''
@@ -459,13 +504,14 @@
       Warmte-kracht koppeling</a> gedeelte.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: industry_other
-- key: demand_industry_efficiency_improvement
+- id: 29
   image: industry.gif
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
+  key: demand_industry_efficiency_improvement
   position: 2
+  sidebar_item_id: 42
   output_element_id: 153
   alt_output_element_id: 153
   dependent_on: ''
@@ -477,13 +523,14 @@
       geld besparen.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: industry_other
-- key: demand_agriculture_demand_growth
+- id: 30
   image: tractor_and_greenhouse.gif
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
+  key: demand_agriculture_demand_growth
   position: 1
+  sidebar_item_id: 5
   output_element_id: 29
   alt_output_element_id: 29
   dependent_on:
@@ -496,13 +543,14 @@
       andere technologieën die je in de gedeeltes hieronder kunt aangeven.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: agriculture
-- key: demand_agriculture_heat
+- id: 31
   image: tractor_and_greenhouse.gif
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_agriculture_heat
   position: 2
+  sidebar_item_id: 5
   output_element_id: 30
   alt_output_element_id: 30
   dependent_on: ''
@@ -515,13 +563,14 @@
       duurzaamheid en CO<sub>2</sub>-uitstoot in de landbouw.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: agriculture
-- key: demand_other_demand_growth
+- id: 32
   image: ''
   general_sub_header: "%/year"
   group_sub_header:
   subheader_image:
+  key: demand_other_demand_growth
   position: 1
+  sidebar_item_id: 6
   output_element_id: 31
   alt_output_element_id: 31
   dependent_on:
@@ -532,13 +581,14 @@
       Dit is dus <strong>exclusief</strong> efficiëntieverbeteringen en andere technologieën.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: other
-- key: demand_transport_efficiency_improvement
+- id: 34
   image: car_engine.gif
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
+  key: demand_transport_efficiency_improvement
   position: 2
+  sidebar_item_id: 3
   output_element_id: 201
   alt_output_element_id:
   dependent_on: ''
@@ -551,13 +601,14 @@
       in procenten per jaar bepalen.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: transport
-- key: policy_area_wind_turbines
+- id: 35
   image: windmills.gif
   general_sub_header: max surface
   group_sub_header: ''
   subheader_image: ''
+  key: policy_area_wind_turbines
   position: 1
+  sidebar_item_id: 29
   output_element_id: 134
   alt_output_element_id: 52
   dependent_on:
@@ -568,13 +619,52 @@
       denken. Hoeveel land en zeeoppervlak stelt de overheid beschikbaar voor windstroom?"
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: area
-- key: policy_sustainability_co2_emission_compared_to_1990
+- id: 36
+  image: house_solarpanels.gif
+  general_sub_header: max surface
+  group_sub_header: ''
+  subheader_image: ''
+  key: policy_area_solar_power
+  position: 2
+  sidebar_item_id:
+  output_element_id: 36
+  alt_output_element_id: 36
+  dependent_on:
+  description:
+    content_en: Governments may set aside land for solar power or make solar panels
+      on roofs mandatory. How much do you want to allocate?
+    content_nl: Misschien reserveert de overheid wel land voor zonnecentrales, of
+      worden zonnepanelen op daken verplicht. Hoeveel oppervlak wil jij beschikbaar
+      stellen?
+    short_content_en: ''
+    short_content_nl: ''
+- id: 37
+  image: ''
+  general_sub_header: max surface
+  group_sub_header: ''
+  subheader_image: ''
+  key: policy_area_biomass
+  position:
+  sidebar_item_id:
+  output_element_id:
+  alt_output_element_id:
+  dependent_on:
+  description:
+    content_en: 'Biomass can be imported or ''home-grown''. The latter partly competes
+      with food production. How much land should be designated for energy crops? '
+    content_nl: Biomassa kun je importeren of in eigen land verbouwen. Dat laatste
+      gaat dan deels ten koste van voedselproductie. Hoeveel land moet beschikbaar
+      gesteld worden voor energieteelt?
+    short_content_en: ''
+    short_content_nl: ''
+- id: 38
   image: ''
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
+  key: policy_sustainability_co2_emission_compared_to_1990
   position: 1
+  sidebar_item_id: 19
   output_element_id: 127
   alt_output_element_id: 46
   dependent_on: ''
@@ -585,13 +675,14 @@
       dat de doelstelling moet zijn?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: sustainability
-- key: policy_sustainability_renewables
+- id: 39
   image: ''
   general_sub_header: "% of total"
   group_sub_header: ''
   subheader_image: ''
+  key: policy_sustainability_renewables
   position: 2
+  sidebar_item_id: 19
   output_element_id: 127
   alt_output_element_id: 34
   dependent_on:
@@ -602,13 +693,14 @@
       moet zijn. Wat moet dat percentage zijn volgens jou?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: sustainability
-- key: policy_dependence_foreign_dependence
+- id: 40
   image: dependence_chart.png
   general_sub_header: maximum
   group_sub_header: ''
   subheader_image: ''
+  key: policy_dependence_foreign_dependence
   position: 1
+  sidebar_item_id: 20
   output_element_id: 132
   alt_output_element_id: 76
   dependent_on: ''
@@ -633,13 +725,14 @@
       de brandstofproductie sectie.</a></DE>"
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: dependence
-- key: policy_cost_energy
+- id: 41
   image: ''
   general_sub_header: maximum increase
   group_sub_header: ''
   subheader_image: ''
+  key: policy_cost_energy
   position: 1
+  sidebar_item_id: 21
   output_element_id: 133
   alt_output_element_id: 39
   dependent_on:
@@ -648,13 +741,32 @@
     content_nl: Hoeveel mogen de kosten voor energie veranderen in de toekomst?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: cost
-- key: demand_households_demand_growth
+- id: 42
+  image: ''
+  general_sub_header: 'NULL'
+  group_sub_header:
+  subheader_image:
+  key: policy_grid_grid_and_interconnectivity
+  position:
+  sidebar_item_id:
+  output_element_id:
+  alt_output_element_id:
+  dependent_on:
+  description:
+    content_en: 'How much power can come from intermittent sources? How much baseload
+      power production capacity is allowed and how much power may be imported? '
+    content_nl: Hoeveel stroom mag afkomstig zijn van fluctuerende bronnen? Wat is
+      het maximum percentage basislast vermogen en import van elektriciteit?
+    short_content_en: ''
+    short_content_nl: ''
+- id: 43
   image: house.gif
   general_sub_header: ''
   group_sub_header: "%/year"
   subheader_image: ''
+  key: demand_households_demand_growth
   position: 13
+  sidebar_item_id: 1
   output_element_id: 213
   alt_output_element_id: 213
   dependent_on: ''
@@ -670,13 +782,14 @@
       kunt aangeven.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: households
-- key: supply_heat_network_industry
+- id: 44
   image: industry_solarpanels.gif
   general_sub_header: heat output
   group_sub_header: ''
   subheader_image: ''
+  key: supply_heat_network_industry
   position: 13
+  sidebar_item_id: 4
   output_element_id: 251
   alt_output_element_id: 28
   dependent_on: ''
@@ -693,13 +806,14 @@
       warmte en restwarmte bronnen</a> bijspringen. '
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: industry
-- key: supply_electricity_coal_plants
+- id: 45
   image: ''
   general_sub_header: electricity output
   group_sub_header: ''
   subheader_image: ''
+  key: supply_electricity_coal_plants
   position: 1
+  sidebar_item_id: 22
   output_element_id: 99
   alt_output_element_id: 99
   dependent_on: ''
@@ -712,13 +826,14 @@
       grofweg twee keer zoveel CO<sub>2</sub> als gascentrales.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: electricity
-- key: supply_electricity_gas_plants
+- id: 46
   image: ''
   general_sub_header: electricity output
   group_sub_header: ''
   subheader_image: ''
+  key: supply_electricity_gas_plants
   position: 2
+  sidebar_item_id: 22
   output_element_id: 99
   alt_output_element_id: 99
   dependent_on: ''
@@ -731,13 +846,14 @@
       gebruikt om de pieken in de vraag op te vangen.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: electricity
-- key: supply_electricity_oil_plants
+- id: 47
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_electricity_oil_plants
   position: 3
+  sidebar_item_id: 22
   output_element_id: 99
   alt_output_element_id: 99
   dependent_on: ''
@@ -752,13 +868,14 @@
       of stabilisatie van het stroomnet."
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: electricity
-- key: supply_electricity_nuclear_plant
+- id: 48
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_electricity_nuclear_plant
   position: 4
+  sidebar_item_id: 22
   output_element_id: 99
   alt_output_element_id: 99
   dependent_on: ''
@@ -779,13 +896,14 @@
       draaien. Ze hebben namelijk lage draaikosten en hoge kapitaalkosten.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: electricity
-- key: supply_electricity_renewable_gas
+- id: 49
   image: ''
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: supply_electricity_renewable_gas
   position: 3
+  sidebar_item_id: 47
   output_element_id: 77
   alt_output_element_id: 77
   dependent_on: ''
@@ -800,13 +918,14 @@
       omgezet worden naar gas en in het gasnetwerk ingevoerd worden. '
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: biomass
-- key: supply_electricity_renewable_wind_turbines
+- id: 51
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_electricity_renewable_wind_turbines
   position: 1
+  sidebar_item_id: 23
   output_element_id: 99
   alt_output_element_id: 99
   dependent_on: ''
@@ -820,13 +939,14 @@
       vollasturen voor wind en zon kunnen worden ingesteld in bij <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">'Weersomstandigheden'</a>.\r\n</p>"
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: electricity_renewable
-- key: supply_electricity_renewable_hydro_electric
+- id: 52
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_electricity_renewable_hydro_electric
   position: 3
+  sidebar_item_id: 23
   output_element_id: 99
   alt_output_element_id: 99
   dependent_on: ''
@@ -838,13 +958,14 @@
       Wat is het potentieel?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: electricity_renewable
-- key: supply_electricity_renewable_geothermal
+- id: 53
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_electricity_renewable_geothermal
   position: 7
+  sidebar_item_id: 23
   output_element_id: 99
   alt_output_element_id: 99
   dependent_on: ''
@@ -855,13 +976,14 @@
       bekend. Hoeveel denk jij dat er gemaakt zou kunnen worden?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: electricity_renewable
-- key: supply_electricity_renewable_solar_power
+- id: 54
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_electricity_renewable_solar_power
   position: 2
+  sidebar_item_id: 23
   output_element_id: 99
   alt_output_element_id: 99
   dependent_on: ''
@@ -883,13 +1005,14 @@
       voor andere doeleinden."
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: electricity_renewable
-- key: supply_electricity_renewable_waste_power
+- id: 55
   image: ''
   general_sub_header: electricity output
   group_sub_header: ''
   subheader_image: ''
+  key: supply_electricity_renewable_waste_power
   position: 5
+  sidebar_item_id: 23
   output_element_id: 99
   alt_output_element_id: 99
   dependent_on: ''
@@ -901,13 +1024,72 @@
       afval?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: electricity_renewable
-- key: policy_cost_electricity
+- id: 61
+  image: ''
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_transport_diesel
+  position:
+  sidebar_item_id:
+  output_element_id:
+  alt_output_element_id:
+  dependent_on:
+  description:
+    content_en: How much of the diesel used in road transport will come from renewable
+      sources? Do consider the impact on land (and sea) use for growing the required
+      crops.
+    content_nl: Hoeveel van de gebruikte diesel voor wegtransport komt van hernieuwbare
+      bronnen? Houd rekening met de impact op landgebruik (of zeegebruik) als hiervoor
+      gewassen geteeld moeten worden.
+    short_content_en: ''
+    short_content_nl: ''
+- id: 62
+  image:
+  general_sub_header: share
+  group_sub_header:
+  subheader_image:
+  key: supply_transport_gasoline
+  position:
+  sidebar_item_id:
+  output_element_id:
+  alt_output_element_id:
+  dependent_on:
+  description:
+    content_en: How much of the gasoline used will come from renewable sources? Do
+      not forget that currently, growing the required crops competes with food production
+      for arable land.
+    content_nl: 'Hoeveel van de gebruikte benzine komt van hernieuwbare bronnen? Vergeet
+      niet dat het telen van gewassen hiervoor deels ten koste gaat van voedselproductie. '
+    short_content_en: ''
+    short_content_nl: ''
+- id: 63
+  image: ''
+  general_sub_header: share
+  group_sub_header: ''
+  subheader_image:
+  key: supply_transport_compressed_gas
+  position:
+  sidebar_item_id:
+  output_element_id:
+  alt_output_element_id:
+  dependent_on:
+  description:
+    content_en: How much of the compressed gas (CNG) used in transport will come from
+      renewable sources? Does your country have enough bio-resources?
+    content_nl: Hoeveel van het hogedruk gas (CNG) dat als transportbrandstof gebruikt
+      wordt, komt van hernieuwbare bronnen? Heeft jouw land wel genoeg biologische
+      bronnen?
+    short_content_en: ''
+    short_content_nl: ''
+- id: 99
   image: ''
   general_sub_header: maximum increase
   group_sub_header: ''
   subheader_image: ''
+  key: policy_cost_electricity
   position: 2
+  sidebar_item_id: 21
   output_element_id: 133
   alt_output_element_id: 40
   dependent_on:
@@ -916,13 +1098,34 @@
     content_nl: 'Hoeveel mogen de kosten voor elektriciteit veranderen in de toekomst? '
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: cost
-- key: supply_infrastructure_high_voltage_network
+- id: 102
+  image: ''
+  general_sub_header: number
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_other_combined_heat_power
+  position: 2
+  sidebar_item_id:
+  output_element_id: 63
+  alt_output_element_id: 63
+  dependent_on: ''
+  description:
+    content_en: 'How many combined heat and power (CHP) units will be used in the
+      service and government sectors? These generate heat and electricity locally,
+      which saves energy. '
+    content_nl: Hoeveel warmte-kracht koppelingen (WKK's) worden door de dienstensector
+      en overheid gebruikt? Deze maken warmte en elektriciteit op locatie en besparen
+      zo energie.
+    short_content_en: ''
+    short_content_nl: ''
+- id: 103
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_infrastructure_high_voltage_network
   position: 1
+  sidebar_item_id: 28
   output_element_id: 61
   alt_output_element_id: 61
   dependent_on:
@@ -956,13 +1159,14 @@
       bij ‘Aanbod’."
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: infrastructure
-- key: supply_infrastructure_low_medium_voltage_network
+- id: 104
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_infrastructure_low_medium_voltage_network
   position: 2
+  sidebar_item_id: 28
   output_element_id: 61
   alt_output_element_id: 61
   dependent_on:
@@ -997,13 +1201,33 @@
       als gevolg van jouw keuzes bij ‘Vraag’. "
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: infrastructure
-- key: demand_households_cooling
+- id: 105
+  image: ''
+  general_sub_header: change
+  group_sub_header:
+  subheader_image:
+  key: hidden_infrastructure_gas_network
+  position:
+  sidebar_item_id:
+  output_element_id:
+  alt_output_element_id:
+  dependent_on:
+  description:
+    content_en: The model does not yet take costs for extra gas infrastrucure into
+      account. Such costs could result from plans to use lots of green gas.
+    content_nl: Het model neemt nog geen extra kosten mee voor het gasnetwerk die
+      het gevolg zouden kunnen zijn van de keuze om op grote schaal groengas in te
+      zetten, bijvoorbeeld.
+    short_content_en: ''
+    short_content_nl: ''
+- id: 108
   image: house_heating.gif
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_households_cooling
   position: 9
+  sidebar_item_id: 1
   output_element_id: 66
   alt_output_element_id: 66
   dependent_on: ''
@@ -1014,13 +1238,14 @@
       apparaten worden gebruikt als voor verwarming.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: households
-- key: demand_households_cooking
+- id: 109
   image: house_heating.gif
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_households_cooking
   position: 10
+  sidebar_item_id: 1
   output_element_id: 67
   alt_output_element_id: 67
   dependent_on: ''
@@ -1029,13 +1254,14 @@
     content_nl: Zal de energievraag veel veranderen als huishoudens anders gaan koken?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: households
-- key: demand_households_behaviour
+- id: 110
   image: house_heating.gif
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
+  key: demand_households_behaviour
   position: 14
+  sidebar_item_id: 1
   output_element_id: 213
   alt_output_element_id: 213
   dependent_on: ''
@@ -1046,13 +1272,14 @@
       aanpassen?  '
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: households
-- key: demand_buildings_demand_growth
+- id: 113
   image: building_uncapped.gif
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
+  key: demand_buildings_demand_growth
   position: 10
+  sidebar_item_id: 2
   output_element_id: 68
   alt_output_element_id: 68
   dependent_on: ''
@@ -1065,13 +1292,14 @@
       en andere technologieën die je in de gedeeltes hieronder kunt aangeven.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: buildings
-- key: demand_buildings_insulation
+- id: 114
   image: building_insulation.gif
   general_sub_header: heat_demand_reduction
   group_sub_header: ''
   subheader_image: buildings_insulation_energy_label.png
+  key: demand_buildings_insulation
   position: 2
+  sidebar_item_id: 2
   output_element_id: 68
   alt_output_element_id: 69
   dependent_on: ''
@@ -1084,13 +1312,14 @@
       gebouwen in de toekomst?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: buildings
-- key: demand_buildings_heating
+- id: 115
   image: building_heating_uncapped.gif
   general_sub_header: share
   group_sub_header:
   subheader_image:
+  key: demand_buildings_heating
   position: 3
+  sidebar_item_id: 2
   output_element_id: 70
   alt_output_element_id: 70
   dependent_on:
@@ -1102,13 +1331,14 @@
       manier te verwarmen.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: buildings
-- key: demand_buildings_cooling
+- id: 116
   image: building_cooling_uncapped.gif
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_buildings_cooling
   position: 5
+  sidebar_item_id: 2
   output_element_id: 71
   alt_output_element_id: 71
   dependent_on:
@@ -1117,13 +1347,32 @@
     content_nl: 'Hoe worden kantoren en andere gebouwen in de toekomst gekoeld? '
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: buildings
-- key: demand_buildings_appliances
+- id: 117
+  image: building_ventilation_uncapped.gif
+  general_sub_header: " "
+  group_sub_header: ''
+  subheader_image: ''
+  key: demand_buildings_ventilation
+  position: 6
+  sidebar_item_id:
+  output_element_id: 68
+  alt_output_element_id: 68
+  dependent_on: ''
+  description:
+    content_en: Ventilation of well-insulated spaces is essential to people's health.
+      It also causes a loss of precious heat.
+    content_nl: Ventilatie van goed geïsoleerde ruimtes is nodig voor ieders gezondheid.
+      Ventilatie zorgt alleen ook voor warmteverlies.
+    short_content_en: ''
+    short_content_nl: ''
+- id: 118
   image: building_appliances_uncapped.gif
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
+  key: demand_buildings_appliances
   position: 7
+  sidebar_item_id: 2
   output_element_id: 72
   alt_output_element_id: 72
   dependent_on:
@@ -1134,13 +1383,14 @@
       monitoren en dergelijke worden steeds zuiniger. Weet jij hoeveel?
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: buildings
-- key: demand_buildings_lighting
+- id: 119
   image: building_lighting_uncapped.gif
   general_sub_header: share
   group_sub_header: "% of potential"
   subheader_image: ''
+  key: demand_buildings_lighting
   position: 8
+  sidebar_item_id: 2
   output_element_id: 72
   alt_output_element_id: 72
   dependent_on:
@@ -1152,13 +1402,14 @@
       overige gebouwen.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: buildings
-- key: demand_buildings_solar_panels
+- id: 121
   image: building_decentral_uncapped.gif
   general_sub_header: "% of potential"
   group_sub_header: ''
   subheader_image: ''
+  key: demand_buildings_solar_panels
   position: 9
+  sidebar_item_id: 2
   output_element_id: 74
   alt_output_element_id: 74
   dependent_on:
@@ -1169,13 +1420,14 @@
       mogelijk ook geld.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: buildings
-- key: supply_renewable_heat_solar
+- id: 122
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_renewable_heat_solar
   position: 4
+  sidebar_item_id: 25
   output_element_id: 42
   alt_output_element_id: 42
   dependent_on: ''
@@ -1192,13 +1444,14 @@
       van gebouwen</a>.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: renewable_heat
-- key: demand_transport_domestic_aviation_technology
+- id: 123
   image: ''
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_transport_domestic_aviation_technology
   position: 9
+  sidebar_item_id: 51
   output_element_id: 205
   alt_output_element_id:
   dependent_on: ''
@@ -1211,13 +1464,14 @@
       van voedselproductie. '
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: transport_passenger_transport
-- key: supply_transport_marine_fuels
+- id: 124
   image: ''
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: supply_transport_marine_fuels
   position: 4
+  sidebar_item_id: 26
   output_element_id: 43
   alt_output_element_id: 43
   dependent_on: ''
@@ -1235,13 +1489,14 @@
       uitgerust zijn.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: transport_fuels
-- key: demand_transport_passenger_train_technology
+- id: 125
   image: ''
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_transport_passenger_train_technology
   position: 3
+  sidebar_item_id: 51
   output_element_id: 206
   alt_output_element_id:
   dependent_on: ''
@@ -1257,13 +1512,25 @@
       zullen gebruiken.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: transport_passenger_transport
-- key: supply_biomass_bio_coal_bio_oil
+- id: 131
+  image: car.gif
+  general_sub_header: number
+  group_sub_header:
+  subheader_image:
+  key: supply_transport_public_transport_technologies
+  position:
+  sidebar_item_id:
+  output_element_id:
+  alt_output_element_id:
+  dependent_on:
+- id: 140
   image: ''
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: supply_biomass_bio_coal_bio_oil
   position: 5
+  sidebar_item_id: 47
   output_element_id: 242
   alt_output_element_id: 99
   dependent_on: ''
@@ -1285,13 +1552,14 @@
       stoken."
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: biomass
-- key: fce_coal
+- id: 143
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: fce_coal
   position: 2
+  sidebar_item_id: 32
   output_element_id: 100
   alt_output_element_id: 100
   dependent_on: ''
@@ -1311,13 +1579,14 @@
       <a href="/texts/fce_coal" class="fancybox">lees verder</a>
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: fce
-- key: fce_gas
+- id: 144
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: fce_gas
   position: 4
+  sidebar_item_id: 32
   output_element_id: 100
   alt_output_element_id: 100
   dependent_on: ''
@@ -1344,13 +1613,14 @@
       class=\"fancybox\">lees verder</a>\r\n<br/> \r\n\r\n"
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: fce
-- key: fce_oil
+- id: 145
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: fce_oil
   position: 3
+  sidebar_item_id: 32
   output_element_id: 100
   alt_output_element_id: 100
   dependent_on: ''
@@ -1371,13 +1641,14 @@
       href=\"/texts/fce_oil\" class=\"fancybox\">lees verder</a>"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: fce
-- key: fce_uranium
+- id: 146
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: fce_uranium
   position: 8
+  sidebar_item_id: 32
   output_element_id: 105
   alt_output_element_id: 105
   dependent_on: ''
@@ -1396,13 +1667,14 @@
       verder</a>'
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: fce
-- key: fce_biomass
+- id: 147
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: fce_biomass
   position: 7
+  sidebar_item_id: 32
   output_element_id: 107
   alt_output_element_id: 107
   dependent_on: ''
@@ -1423,13 +1695,14 @@
       class="fancybox">lees verder</a>
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: fce
-- key: fce_greengas
+- id: 148
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: fce_greengas
   position: 6
+  sidebar_item_id: 32
   output_element_id: 107
   alt_output_element_id: 107
   dependent_on: ''
@@ -1451,13 +1724,62 @@
       class="fancybox">lees verder</a>
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: fce
-- key: flexibility_security_of_supply_electricity
+- id: 151
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_electricity_backup_backup_options
+  position: 2
+  sidebar_item_id:
+  output_element_id: 115
+  alt_output_element_id: 115
+  dependent_on: ''
+  description:
+    content_en: "Electricity production from wind and solar is not always available
+      and therefore some form of electricity backup is required to ensure security
+      of supply. \r\n<br/><br/>\r\nThe chart at the right shows the costs and emissions
+      associated with backup of volatile power production. These costs are incurred
+      <i>on top of</i> the power production costs of volatile technologies. For example:
+      A 3 MW wind turbine will produce 6 - 10 GWh of electricity per year at a certain
+      cost. On top of this about 0.6 - 1.5 MW backup capacity is required. This is
+      not free of charge. During times of low wind, CO<sub>2</sub> emitting backup
+      capacity will come online to produce electricity at a certain cost. \r\n<br/><br/>\r\nBackup
+      options need to deal with short term fluctuations in wind and solar output.
+      This means they operate at a less than optimal efficiency. This contributes
+      to small increases in emissions and electricity production costs when compared
+      to operating at maximum efficiency. Increasing the share of volatile electricity
+      increases the fluctuations and in turn the backup requirements.\r\n<br/><br/>\r\nPicking
+      a clean and cheap backup option to work together with the wind turbines and
+      solar panels in your scenario is desirable.\r\n<br/><br/>\r\nMore information
+      can be found in our <a href=\"https://github.com/quintel/documentation/blob/master/general/electricity_backup.md\"
+      target =\"_blank\">documentation</a>."
+    content_nl: "Je kunt niet altijd rekenen op stroom van windmolens of zonnepanelen
+      en daarom is backup vermogen nodig om de leveringszekerheid te garanderen. \r\n<br/><br/>\r\nDe
+      grafiek rechts toont de kosten en uitstoot van backupopties voor volatiele stroomopwek.
+      Deze kosten komen <i>bovenop</i> de productiekosten van deze technologieën.
+      Bijvoorbeeld: Een 3 MW windmolen produceert per jaar 6 - 10 GWh aan stroom tegen
+      bepaalde kosten. Daarbij is 0,6 - 1,5 GW aan backupvermogen nodig die niet gratis
+      is. Als er weinig wind is, gaat deze backup optie draaien met bijbehorende CO<sub>2</sub>
+      uitstoot en kosten.\r\n<br/><br/>\r\nDe backup centrales moeten omgaan met korte
+      termijn fluctuaties in de productie van wind en zon. Daardoor zijn ze minder
+      efficiënt. Dat betekent weer dat de kosten en uitstoot ook iets hoger zijn dan
+      bij optimale efficiëntie. Door meer volatiele technieken in te zetten, nemen
+      de fluctuaties toe en dus ook de vraag naar backup.\r\n<br/><br/> \r\nHet is
+      aan te raden om een schone en goedkope backup optie te bouwen naast het zon-
+      en windvermogen in jouw scenario.\r\n<br/><br/> \r\nMeer informatie kunt u:
+      <a href=\"https://github.com/quintel/documentation/blob/master/general/electricity_backup.md\"
+      target =\"_blank\">hier</a> vinden.\r\n"
+    short_content_en:
+    short_content_nl:
+- id: 152
+  image: ''
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_security_of_supply_electricity
   position: 1
+  sidebar_item_id: 33
   output_element_id: 172
   alt_output_element_id: 125
   dependent_on: ''
@@ -1504,13 +1826,14 @@
       als het een paar weken niet waait?"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: security_of_supply
-- key: flexibility_merit_order_merit_order
+- id: 153
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_merit_order_merit_order
   position: 1
+  sidebar_item_id: 34
   output_element_id: 172
   alt_output_element_id: 172
   dependent_on: ''
@@ -1553,13 +1876,14 @@
       target =\"_blank\">onze documentatie</a>."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: merit_order
-- key: costs_employment
+- id: 154
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: costs_employment
   position: 1
+  sidebar_item_id: 35
   output_element_id: 118
   alt_output_element_id: 118
   dependent_on: _always_hidden
@@ -1571,13 +1895,14 @@
       warmte en elektriciteit worden gemaakt.\r\n"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: employment
-- key: supply_transport_trains
+- id: 155
   image: ''
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: supply_transport_trains
   position: 2
+  sidebar_item_id: 26
   output_element_id: 43
   alt_output_element_id: 43
   dependent_on: ''
@@ -1594,13 +1919,14 @@
       >technologie goederentreinen</a> kun je de treintechnologie specificeren.
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: transport_fuels
-- key: supply_transport_road_transport
+- id: 156
   image: ''
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: supply_transport_road_transport
   position: 1
+  sidebar_item_id: 26
   output_element_id: 43
   alt_output_element_id: 43
   dependent_on: ''
@@ -1620,13 +1946,14 @@
       maar niet door auto''s.'
     short_content_en: ''
     short_content_nl: ''
-  sidebar_item_key: transport_fuels
-- key: costs_heatpumps
+- id: 157
   image: ''
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
+  key: costs_heatpumps
   position: 5
+  sidebar_item_id: 36
   output_element_id: 113
   alt_output_element_id: 113
   dependent_on: ''
@@ -1638,13 +1965,14 @@
       in individuele huishoudens.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: costs_heat
-- key: fce_settings
+- id: 158
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: fce_settings
   position: 1
+  sidebar_item_id: 32
   output_element_id: 100
   alt_output_element_id: 100
   dependent_on: ''
@@ -1671,13 +1999,14 @@
       class=\"fce-toggle\"></div>"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: fce
-- key: demand_industry_metal_production
+- id: 159
   image: industry.gif
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
+  key: demand_industry_metal_production
   position: 21
+  sidebar_item_id: 38
   output_element_id: 136
   alt_output_element_id: 136
   dependent_on: ''
@@ -1692,13 +2021,14 @@
       kunt kiezen.\r\n"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry_metal
-- key: demand_industry_aluminium
+- id: 160
   image: industry.gif
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
+  key: demand_industry_aluminium
   position: 3
+  sidebar_item_id: 4
   output_element_id: 130
   alt_output_element_id: 130
   dependent_on: has_metal
@@ -1713,13 +2043,14 @@
       bestaand aluminium. Geef aan hoe jij denkt dat de verdeling gaat worden.\r\n"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry
-- key: demand_industry_other_metals
+- id: 161
   image: industry.gif
   general_sub_header: ''
   group_sub_header: "%/year"
   subheader_image: ''
+  key: demand_industry_other_metals
   position: 4
+  sidebar_item_id: 4
   output_element_id: 131
   alt_output_element_id: 131
   dependent_on: ''
@@ -1732,13 +2063,14 @@
       aangeven van elektrische en van warmteprocessen voor deze sector.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry
-- key: demand_industry_steel
+- id: 162
   image: industry.gif
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
+  key: demand_industry_steel
   position: 2
+  sidebar_item_id: 4
   output_element_id: 135
   alt_output_element_id: 135
   dependent_on: has_metal
@@ -1755,13 +2087,14 @@
       Alleen de cycloonoven kan volledig op biogrondstof overschakelen.\r\n"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry
-- key: flexibility_weather_conditions_and_flh
+- id: 163
   image: ''
   general_sub_header: temperature
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_weather_conditions_and_flh
   position: 1
+  sidebar_item_id: 60
   output_element_id: 137
   alt_output_element_id: 57
   dependent_on: ''
@@ -1796,13 +2129,14 @@
       sectie</a>.\r\n\r\n\r\n"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: flexibility_weather
-- key: fce_liquid_biofuels
+- id: 164
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: fce_liquid_biofuels
   position: 5
+  sidebar_item_id: 32
   output_element_id: 138
   alt_output_element_id: 138
   dependent_on: ''
@@ -1825,13 +2159,14 @@
       class=\"fancybox\">lees verder</a>"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: fce
-- key: flexibility_flexibility_excess
+- id: 165
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_flexibility_excess
   position: 11
+  sidebar_item_id: 39
   output_element_id: 143
   alt_output_element_id: 143
   dependent_on: _always_hidden
@@ -1868,13 +2203,14 @@
       documentatie =\"_blank\">documentatie</a>. "
     short_content_en:
     short_content_nl:
-  sidebar_item_key: excess_electricity
-- key: flexibility_flexibility_power_storage
+- id: 166
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_flexibility_power_storage
   position: 1
+  sidebar_item_id: 53
   output_element_id: 163
   alt_output_element_id: 143
   dependent_on: ''
@@ -1887,13 +2223,14 @@
       worden opgeslagen en ingezet zodra er geen overproductie meer is.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: flexibility_storage
-- key: flexibility_flexibility_power_to_gas
+- id: 168
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_flexibility_power_to_gas
   position: 1
+  sidebar_item_id: 54
   output_element_id: 163
   alt_output_element_id: 163
   dependent_on: ''
@@ -1910,13 +2247,14 @@
       Overtollige waterstof wordt geëxporteerd.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: flexibility_conversion
-- key: flexibility_flexibility_wind_cost
+- id: 169
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_flexibility_wind_cost
   position: 12
+  sidebar_item_id: 39
   output_element_id: 143
   alt_output_element_id: 143
   dependent_on: _always_hidden
@@ -1948,13 +2286,14 @@
       en conversietechnologieën te introduceren om bruikbaar vermogen te vergroten."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: excess_electricity
-- key: flexibility_flexibility_net_load
+- id: 170
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
-  position: 9
+  key: flexibility_flexibility_net_load
+  position: 1
+  sidebar_item_id: 55
   output_element_id: 223
   alt_output_element_id: 216
   dependent_on: ''
@@ -1981,13 +2320,14 @@
       >Kosten</a> kopje worden ingesteld."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: flexibility_net_load
-- key: demand_households_population
+- id: 171
   image: house.gif
   general_sub_header: number
   group_sub_header: ''
   subheader_image: ''
+  key: demand_households_population
   position: 2
+  sidebar_item_id: 1
   output_element_id: 213
   alt_output_element_id: 145
   dependent_on: ''
@@ -1998,13 +2338,14 @@
       aantal inwoners en het aantal huizen, welke je beide hier kunt instellen.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: households
-- key: flexibility_electricity_import_export_markets
+- id: 172
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_electricity_import_export_markets
   position: 2
+  sidebar_item_id: 40
   output_element_id: 156
   alt_output_element_id:
   dependent_on: _always_hidden
@@ -2036,13 +2377,14 @@
       van verschillende lidstaten.  \r\n\r\n \r\n"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: electricity_import_export
-- key: flexibility_electricity_import_export_edp
+- id: 173
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_electricity_import_export_edp
   position: 3
+  sidebar_item_id: 40
   output_element_id: 149
   alt_output_element_id: 149
   dependent_on: _always_hidden
@@ -2065,13 +2407,14 @@
       het gebruik ervan geoptimaliseerd."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: electricity_import_export
-- key: flexibility_electricity_import_export_interconnectors
+- id: 174
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_electricity_import_export_interconnectors
   position: 4
+  sidebar_item_id: 40
   output_element_id: 99
   alt_output_element_id: 147
   dependent_on: _always_hidden
@@ -2112,13 +2455,14 @@
       maximaal benut is en convergeren de prijzen vaker.  "
     short_content_en:
     short_content_nl:
-  sidebar_item_key: electricity_import_export
-- key: flexibility_electricity_import_export_renewables
+- id: 175
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_electricity_import_export_renewables
   position: 5
+  sidebar_item_id: 40
   output_element_id: 148
   alt_output_element_id:
   dependent_on: _always_hidden
@@ -2155,13 +2499,14 @@
       stijgen dan dalen bij toenemende hernieuwbare productie."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: electricity_import_export
-- key: demand_industry_chemical_demand_growth
+- id: 176
   image: industry.gif
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
+  key: demand_industry_chemical_demand_growth
   position: 1
+  sidebar_item_id: 41
   output_element_id: 152
   alt_output_element_id: 152
   dependent_on: ''
@@ -2174,13 +2519,14 @@
       en andere technologieën die je in de gedeeltes hieronder kunt aangeven.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry_chemical
-- key: demand_industry_chemical_efficiency_improvement
+- id: 177
   image: industry.gif
   general_sub_header: "%/year"
   group_sub_header: ''
   subheader_image: ''
+  key: demand_industry_chemical_efficiency_improvement
   position: 2
+  sidebar_item_id: 41
   output_element_id: 152
   alt_output_element_id: 152
   dependent_on: ''
@@ -2192,13 +2538,14 @@
       geld besparen.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry_chemical
-- key: demand_industry_chemical_heat
+- id: 178
   image: industry.gif
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_industry_chemical_heat
   position: 3
+  sidebar_item_id: 41
   output_element_id: 151
   alt_output_element_id: 151
   dependent_on: ''
@@ -2215,13 +2562,14 @@
       Warmte-kracht koppeling</a> gedeelte.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry_chemical
-- key: demand_industry
+- id: 179
   image: industry.gif
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: demand_industry
   position: 1
+  sidebar_item_id: 4
   output_element_id: 178
   alt_output_element_id: 176
   dependent_on: ''
@@ -2251,13 +2599,14 @@
       target =\"_blank\">Industrie in transitie</a>."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry
-- key: supply_primary_production_oil
+- id: 180
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_primary_production_oil
   position: 3
+  sidebar_item_id: 43
   output_element_id: 158
   alt_output_element_id:
   dependent_on: ''
@@ -2283,13 +2632,14 @@
       this text</a> uit het gedeelte over <a href=\"/scenario/supply/fce/mineral-oil\">ketenemissies.</a>"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: fuel_production
-- key: supply_primary_production_coal
+- id: 181
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_primary_production_coal
   position: 2
+  sidebar_item_id: 43
   output_element_id: 157
   alt_output_element_id:
   dependent_on: ''
@@ -2315,13 +2665,14 @@
       class=\"fancybox\">deze tekst</a> uit het gedeelte over <a href=\"/scenario/supply/fce/coal\">ketenemissies.</a>"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: fuel_production
-- key: supply_primary_production_natural_gas
+- id: 182
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_primary_production_natural_gas
   position: 4
+  sidebar_item_id: 43
   output_element_id: 159
   alt_output_element_id:
   dependent_on: ''
@@ -2347,13 +2698,14 @@
       tekst</a> uit het gedeelte over <a href=\"/scenario/supply/fce/natural-gas\">ketenemissies.</a>"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: fuel_production
-- key: supply_primary_production_uranium
+- id: 184
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_primary_production_uranium
   position: 6
+  sidebar_item_id: 43
   output_element_id: 161
   alt_output_element_id:
   dependent_on: ''
@@ -2379,13 +2731,14 @@
       tekst</a> uit het gedeelte over <a href=\"/scenario/supply/fce/uranium\">ketenemissies.</a>"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: fuel_production
-- key: supply_primary_production
+- id: 185
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_primary_production
   position: 1
+  sidebar_item_id: 43
   output_element_id: 76
   alt_output_element_id:
   dependent_on: ''
@@ -2420,13 +2773,14 @@
       extra input (schuifjes) vergen."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: fuel_production
-- key: flexibility_flexibility_power_to_power_EV
+- id: 186
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_flexibility_power_to_power_EV
   position: 2
+  sidebar_item_id: 53
   output_element_id: 163
   alt_output_element_id:
   dependent_on: _always_hidden
@@ -2451,13 +2805,14 @@
       de batterij en ingezet zodra er geen overproductie meer is."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: flexibility_storage
-- key: flexibility_electricity_import_export_interconnectivity
+- id: 187
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_electricity_import_export_interconnectivity
   position: 1
+  sidebar_item_id: 40
   output_element_id: 164
   alt_output_element_id: 164
   dependent_on: ''
@@ -2482,13 +2837,14 @@
       Lees meer over import/export <a href="https://github.com/quintel/documentation/blob/master/general/import_export.md">hier</a>.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: electricity_import_export
-- key: demand_transport_domestic_navigation_technology
+- id: 191
   image: ''
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_transport_domestic_navigation_technology
   position: 14
+  sidebar_item_id: 52
   output_element_id: 207
   alt_output_element_id:
   dependent_on: ''
@@ -2503,13 +2859,14 @@
       deze motoren aangedreven worden.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: transport_freight_transport
-- key: fce_lng
+- id: 192
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: fce_lng
   position: 5
+  sidebar_item_id: 32
   output_element_id: 100
   alt_output_element_id: 100
   dependent_on: _always_hidden
@@ -2531,13 +2888,14 @@
       transport, met name door vrachtwagens en schepen.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: fce
-- key: supply_hydrogen_production
+- id: 193
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_hydrogen_production
   position: 1
+  sidebar_item_id: 45
   output_element_id: 214
   alt_output_element_id: 225
   dependent_on: ''
@@ -2570,13 +2928,14 @@
       >documentatie</a>."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: hydrogen
-- key: flexibility_flexibility_flexibility_order
+- id: 194
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_flexibility_flexibility_order
   position: 1
+  sidebar_item_id: 39
   output_element_id: 173
   alt_output_element_id: 164
   dependent_on: ''
@@ -2610,13 +2969,14 @@
       kunt de technologieën in de gewenste volgorde verslepen."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: excess_electricity
-- key: costs_electric_car_investment
+- id: 195
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: costs_electric_car_investment
   position: 1
+  sidebar_item_id: 46
   output_element_id: 170
   alt_output_element_id: 170
   dependent_on: ''
@@ -2629,66 +2989,84 @@
       verbrandingsmotoren. Vergeet niet dat waterstofauto's ook elektrisch zijn!
     short_content_en:
     short_content_nl:
-  sidebar_item_key: transport_costs
-- key: flexibility_merit_order_merit_order_positions
+- id: 196
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_merit_order_merit_order_positions
   position: 2
+  sidebar_item_id: 34
   output_element_id: 125
   alt_output_element_id: 116
   dependent_on: ''
   description:
-    content_en: "The merit order ranks power plants according to their marginal costs.
-      Not all electricity production technologies participate in the merit order.
-      Renewable power from wind and solar has priority, for example, and so increasing
-      the share of such technologies in your scenario will decrease the operating
-      hours of the remaining plants. Since the merit order is determined solely by
-      marginal costs, it is possible that more efficient technologies are 'pushed'
-      out of the electricity generation mix this way.\r\n<br/><br/>\r\nFurthermore,
-      certain technologies are considered 'must-run'. These are mainly CHPs that satisfy
-      a certain heat demand and do not primarily run to sell power. These must-run
-      plants are therefore not included in the merit order. They do influence the
-      operating hours of other plants of course.\r\n<br/><br/>\r\nThe ETM calculates
-      which power plants are dispatched at each hour in the year. The results are
-      updated every time you make changes to your scenario and communicated through
-      various charts. You can download the resulting hourly load curves for each type
-      of power plant as well as the power price curve for your scenario using the
-      download buttons below.\r\n<ul class=\"data-download merit-data-downloads\">\r\n
-      \ <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/loads.csv\"><span
-      class=\"fa fa-download\"></span> Electricity demand and supply per hour <span
-      class=\"filetype\">(3.8MB CSV)</span></a></li>\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/price.csv\"><span
-      class=\"fa fa-download\"></span> Price curve <span class=\"filetype\">(158KB
-      CSV)</span></a></li>\r\n</ul>"
-    content_nl: "De merit order rangschikt de elektriciteitscentrales naar marginale
-      kosten. Niet alle soorten stroomopwek doen mee in de merit order. Hernieuwbare
-      stroom van wind en zon heeft marginale kosten van 0 EUR/MWh en krijgt voorrang
-      op het net, dus als je hier meer van bouwt, zakt het aantal draaiuren van fossiele
-      centrales. Aangezien alleen op draaikosten gerangschikt wordt, kan dit betekenen
-      dat efficiënte maar dure fossiele centrales uit de mix worden geduwd. \r\n<br/><br/>\r\nOok
-      'must run' technologieën doen niet mee in de merit order. Dit zijn bijvoorbeeld
-      WKK's die warmte leveren en niet primair draaien vanwege de stroom die ze maken.
-      Toch hebben ze invloed op de draaiuren van andere centrales.\r\n<br/><br/>\r\nHet
-      ETM berekent op uurbasis welke centrales zijn ingeschakeld. De berekening wordt
-      elke keer dat je je scenario aanpast opnieuw uitgevoerd en de resultaten worden
-      weergegeven in diverse grafieken. Je kunt ook de draaiprofielen van de verschillende
-      soorten centrales en de resulterende stroomprijscurve voor jouw scenario downloaden
-      via onderstaande knoppen.\r\n<ul class=\"data-download merit-data-downloads\">\r\n
-      \ <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/loads.csv\"><span
-      class=\"fa fa-download\"></span> Elektriciteitsproductie en -vraag per uur <span
-      class=\"filetype\">(3.8MB CSV)</span></a></li>\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/price.csv\"><span
-      class=\"fa fa-download\"></span> Prijscurve <span class=\"filetype\">(158KB
-      CSV)</span></a></li>\r\n</ul>"
+    content_en: |
+      The merit order ranks power plants according to their marginal costs. Not
+      all electricity production technologies participate in the merit order.
+      Renewable power from wind and solar has priority, for example, and so
+      increasing the share of such technologies in your scenario will decrease
+      the operating hours of the remaining plants. Since the merit order is
+      determined solely by marginal costs, it is possible that more efficient
+      technologies are 'pushed' out of the electricity generation mix this way
+
+      <br/><br/>
+
+      Furthermore, certain technologies are considered 'must-run'. These are
+      mainly CHPs that satisfy a certain heat demand and do not primarily run to
+      sell power. These must-runplants are therefore not included in the merit
+      order. They do influence the operating hours of other plants of course.
+
+      <br/><br/>
+
+      The ETM calculates which power plants are dispatched at each hour in the
+      year. The results areupdated every time you make changes to your scenario
+      and communicated through various charts. You can download the resulting
+      hourly load curves for each type of power plant as well as the power price
+      curve for your scenario using the download buttons below.
+
+      <ul class="data-download merit-data-downloads">
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Electricity load curves</span> <span class="filetype">7MB CSV</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Price curve</span> <span class="filetype">300KB CSV</span></a></li>
+      </ul
+    content_nl: |
+      De merit order rangschikt de elektriciteitscentrales naar marginale
+      kosten. Niet alle soorten stroomopwek doen mee in de merit order.
+      Hernieuwbare stroom van wind en zon heeft marginale kosten van 0 EUR/MWh
+      en krijgt voorrang op het net, dus als je hier meer van bouwt, zakt het
+      aantal draaiuren van fossiele centrales. Aangezien alleen op draaikosten
+      gerangschikt wordt, kan dit betekenen dat efficiënte maar dure fossiele
+      centrales uit de mix worden geduwd.
+
+      <br/><br/>
+
+      Ook 'must run' technologieën doen niet mee in de merit order. Dit zijn
+      bijvoorbeeld WKK's die warmte leveren en niet primair draaien vanwege de
+      stroom die ze maken. Toch hebben ze invloed op de draaiuren van andere
+      centrales.
+
+      <br/><br/>
+
+      Het ETM berekent op uurbasis welke centrales zijn ingeschakeld. De
+      berekening wordt elke keer dat je je scenario aanpast opnieuw uitgevoerd
+      en de resultaten worden weergegeven in diverse grafieken. Je kunt ook de
+      draaiprofielen van de verschillende soorten centrales en de resulterende
+      stroomprijscurve voor jouw scenario downloaden via onderstaande knoppen.
+
+      <ul class="data-download merit-data-downloads">
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Elektriciteitsprofielen</span> <span class="filetype">7MB CSV</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
+      </ul>
     short_content_en:
     short_content_nl:
-  sidebar_item_key: merit_order
-- key: flexibility_merit_order_merit_order_price
+- id: 197
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_merit_order_merit_order_price
   position: 4
+  sidebar_item_id: 48
   output_element_id: 171
   alt_output_element_id: 171
   dependent_on: ''
@@ -2706,21 +3084,9 @@
       The hourly load curves for all electricity production and consumption for your scenario, as well as the price curve, can be downloaded following the links below.
 
       <ul class="data-download merit-data-downloads">
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="fa fa-download"></span> Electricity load curves <span class="filetype">(7MB CSV)</span></a></li>
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="fa fa-download"></span> Price curve <span class="filetype">(300KB CSV)</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Electricity load curves</span> <span class="filetype">7MB CSV</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Price curve</span> <span class="filetype">300KB CSV</span></a></li>
       </ul>
-
-      <div class="data-deprecation">
-        <span class="fa fa-info-circle"></span>
-        The format of the data exports above has recently changed. You can
-        download copies of this data in the old format below, but note that
-        these will be discontinued in April 2020.
-
-        <ul class="data-download merit-data-downloads">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/loads.csv"><span class="fa fa-download"></span> Electricity load curves (old format) <span class="filetype">(11MB CSV)</span></a></li>
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/price.csv"><span class="fa fa-download"></span> Price curve (old format) <span class="filetype">(158KB CSV)</span></a></li>
-        </ul>
-      </div>
     content_nl: |
       De merit order rangschikt de elektriciteitscentrales naar marginale
       kosten. In combinatie met de elektriciteitsvraag op uurbasis, berekent
@@ -2735,31 +3101,48 @@
       hieronder.
 
       <ul class="data-download merit-data-downloads">
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="fa fa-download"></span> Elektriciteitsprofielen <span class="filetype">(7MB CSV)</span></a></li>
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="fa fa-download"></span> Prijscurve <span class="filetype">(300KB CSV)</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Elektriciteitsprofielen</span> <span class="filetype">7MB CSV</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
       </ul>
-
-
-      <div class="data-deprecation">
-        <span class="fa fa-info-circle"></span>
-        De bestandsindeling van de bovenstaande data-export is recent veranderd.
-        Hieronder kun je de data in het oude format downloaden.
-        Let op: De oude bestanden blijven beschikbaar tot april 2020.
-
-        <ul class="data-download merit-data-downloads">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/loads.csv"><span class="fa fa-download"></span> Elektriciteitsprofielen (oud format) <span class="filetype">(11MB CSV)</span></a></li>
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/price.csv"><span class="fa fa-download"></span> Prijscurve (oud format) <span class="filetype">(158KB CSV)</span></a></li>
-        </ul>
-      </div>
     short_content_en:
     short_content_nl:
-  sidebar_item_key: data_export
-- key: demand_industry_chemical_refineries
+- id: 198
+  image: ''
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_excess_electricity
+  position: 1
+  sidebar_item_id:
+  output_element_id: 175
+  alt_output_element_id: 175
+  dependent_on: ''
+  description:
+    content_en: "Wind turbines and solar panels are subject to volatile natural patterns.
+      The electricity that they produce might therefore not always be used to match
+      demand directly. This mismatch will lead to excess electricity, in particular
+      in scenarios with large amounts of volatile production capacity. The ETM keeps
+      track of the number of hours with excess electricity and the duration of these
+      excess events.\r\n<br/><br/>\r\nTo prevent curtailment of this excess electricity
+      production, the ETM contains several flexibility technologies that can make
+      good use of it."
+    content_nl: "Windmolens en zonnepanelen hebben van nature een grillig productiepatroon.
+      De elektriciteit die ze produceren kan daarom niet noodzakelijk altijd worden
+      gebruikt om elektriciteitsvraag in te vullen. Dit kan leiden tot overproductie
+      van elektriciteit. Het ETM houdt bij op welke uren er een overschot van elektriciteit
+      is en hoe lang deze elektriciteitsoverschotten duren.\r\n<br/><br/>\r\nOm te
+      voorkomen dat deze elektriciteitsproductie moet worden beperkt, kent het ETM
+      een aantal flexibiliteitstechnologieën die goed kunnen omgaan met deze elektriciteitsoverschotten."
+    short_content_en:
+    short_content_nl:
+- id: 199
   image: ''
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
+  key: demand_industry_chemical_refineries
   position: 5
+  sidebar_item_id: 4
   output_element_id: 190
   alt_output_element_id: 180
   dependent_on: ''
@@ -2790,13 +3173,14 @@
       door de wereldwijde markt. "
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry
-- key: demand_industry_chemical_fertilizers
+- id: 201
   image: ''
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
+  key: demand_industry_chemical_fertilizers
   position: 6
+  sidebar_item_id: 4
   output_element_id: 184
   alt_output_element_id: 184
   dependent_on: has_detailed_chemical_industry
@@ -2819,13 +3203,14 @@
       >'waterstofproductie'</a>.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry
-- key: demand_industry_chemical_other
+- id: 202
   image: ''
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
+  key: demand_industry_chemical_other
   position: 7
+  sidebar_item_id: 4
   output_element_id: 182
   alt_output_element_id: 182
   dependent_on: ''
@@ -2847,13 +3232,14 @@
       hierover is te vinden bij het \"?\" naast de schuifjes."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry
-- key: demand_industry_other_food
+- id: 203
   image: ''
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
+  key: demand_industry_other_food
   position: 9
+  sidebar_item_id: 4
   output_element_id: 183
   alt_output_element_id: 183
   dependent_on: ''
@@ -2866,13 +3252,14 @@
       instellen.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry
-- key: demand_industry_other_paper
+- id: 204
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: demand_industry_other_paper
   position: 10
+  sidebar_item_id: 4
   output_element_id: 181
   alt_output_element_id: 181
   dependent_on: ''
@@ -2886,13 +3273,14 @@
       deze sector afzonderlijk instellen.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry
-- key: demand_industry_aggregated_other
+- id: 205
   image: ''
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
+  key: demand_industry_aggregated_other
   position: 11
+  sidebar_item_id: 4
   output_element_id: 186
   alt_output_element_id: 186
   dependent_on: ''
@@ -2905,13 +3293,14 @@
       kan je hieronder direct de verdeling van energiedragers instellen.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry
-- key: demand_industry_aggregated_chemical_other
+- id: 207
   image: ''
   general_sub_header: ''
   group_sub_header: share
   subheader_image: ''
+  key: demand_industry_aggregated_chemical_other
   position: 7
+  sidebar_item_id: 4
   output_element_id: 182
   alt_output_element_id: 182
   dependent_on: _always_hidden
@@ -2923,13 +3312,14 @@
       producten, inclusief kunstmest.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry
-- key: supply_co2_emissions_biomass
+- id: 208
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_co2_emissions_biomass
   position: 6
+  sidebar_item_id: 47
   output_element_id: 188
   alt_output_element_id:
   dependent_on: ''
@@ -2957,13 +3347,14 @@
       manier meegenomen in jouw scenario.</strong>"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: biomass
-- key: demand_industry_other_ict
+- id: 211
   image: ''
   general_sub_header: ''
   group_sub_header: "%/year"
   subheader_image: ''
+  key: demand_industry_other_ict
   position: 8
+  sidebar_item_id: 4
   output_element_id: 189
   alt_output_element_id: 189
   dependent_on: ''
@@ -2976,13 +3367,14 @@
       efficiëntieverbeteringen van deze sector afzonderlijk instellen.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry
-- key: flexibility_flexibility_demand_response_ev
+- id: 212
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_flexibility_demand_response_ev
   position: 10
+  sidebar_item_id: 55
   output_element_id: 194
   alt_output_element_id:
   dependent_on: ''
@@ -3002,13 +3394,14 @@
       >technologie auto's sectie</a>."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: flexibility_net_load
-- key: data_export_application_demands
+- id: 214
   image:
   general_sub_header:
   group_sub_header:
   subheader_image:
+  key: data_export_application_demands
   position: 2
+  sidebar_item_id: 48
   output_element_id: 45
   alt_output_element_id:
   dependent_on:
@@ -3016,22 +3409,23 @@
     content_en: |
       Download information about the primary and final demands, and also the primary CO<sub>2</sub> emissions of applications (such as cooking, appliances, heating, transport, etc).
       <ul class="data-download">
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv"><span class="fa fa-download"></span> Application primary and final demands <span class="filetype">(40KB CSV)</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv"><span class="name">Application primary and final demands</span> <span class="filetype">40KB CSV</span></a></li>
       </ul>
     content_nl: |
       Download informatie over de primaire en finale vraag – en de primaire CO<sub>2</sub>-uitstoot – van toepassingen van energie (zoals koken, apparaten, ruimterverwarming en transport).
       <ul class="data-download">
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv"><span class="fa fa-download"></span> Primaire en finale vraag per toepassing <span class="filetype">(40KB CSV)</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv"><span class="name">Primaire en finale vraag per toepassing</span> <span class="filetype">40KB CSV</span></a></li>
       </ul>
     short_content_en:
     short_content_nl:
-  sidebar_item_key: data_export
-- key: data_export_production
+- id: 215
   image:
   general_sub_header:
   group_sub_header:
   subheader_image:
+  key: data_export_production
   position: 3
+  sidebar_item_id: 48
   output_element_id: 142
   alt_output_element_id:
   dependent_on:
@@ -3039,22 +3433,23 @@
     content_en: |
       Download details of heat and electricity producers. Includes information about the electrical and heat capacities, number of units, and costs.
       <ul class="data-download">
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv"><span class="fa fa-download"></span> Production capacity and costs <span class="filetype">(15KB CSV)</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv"><span class="name">Production capacity and costs</span> <span class="filetype">15KB CSV</span></a></li>
       </ul>
     content_nl: |
       Download details over de technologieën die elektriciteit en warmte produceren. Bevat informatie over de elektrische en warmtecapaciteit, het aantal opgestelde eenheden en de kosten.
       <ul class="data-download">
-        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv"><span class="fa fa-download"></span> Capaciteiten en kosten <span class="filetype">(15KB CSV)</span></a></li>
+        <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv"><span class="name">Capaciteiten en kosten</span> <span class="filetype">15KB CSV</span></a></li>
       </ul>
     short_content_en:
     short_content_nl:
-  sidebar_item_key: data_export
-- key: flexibility_flexibility_demand_response_hp
+- id: 216
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
-  position: 10
+  key: flexibility_flexibility_demand_response_hp
+  position: 12
+  sidebar_item_id: 55
   output_element_id: 194
   alt_output_element_id:
   dependent_on: ''
@@ -3062,59 +3457,49 @@
     content_en: "In the ETM all heat pumps have the option to install a buffer for
       space heating and a buffer for hot water. The default settings of these buffers
       represent a common setup of heat pumps in households. However, in the future
-      these buffers might also be used to store larger amounts of heat. \r\n<br></br>\r\nThe
-      efficiency of (hybrid) heat pumps is dependent on the ambient temperature and
-      is depicted by the coefficient of performance (COP). When the COP is low it
-      can be desirable (for example for financial reasons) to only use the gas part
-      of the hybrid heat pump. The default threshold COP represents using the electric
-      part of the hybrid heat pump maximally for space heating and using gas for hot
-      water. The sliders below allow you to indicate the buffer size and the threshold
-      COP."
+      these buffers might also be used to store larger amounts of heat. \r\n<br></br>\r\n
+      The sliders below allow you to indicate the buffer size for different heat pumps."
     content_nl: "In het ETM hebben alle warmtepompen een optie voor een buffer voor
       ruimteverwarming en een buffer voor warm water. Deze buffers zijn gemodelleerd
       met een standaard warmtepompopstelling in huishoudens. Buffers kunnen in de
       toekomst wellicht ook gebruikt worden om grotere hoeveelheden warmte op te slaan.
-      \r\n<br></br>\r\nDe efficiëntie van (hybride) warmtepompen is afhankelijk van
-      de buitentemperatuur en wordt aangegeven met de 'coefficient of performance'
-      (COP). Bij lage COP kan het (bijvoorbeeld om financiële redenen) wenselijk zijn
-      om alleen het gasgedeelte van hybride warmtepompen te gebruiken. De standaard
-      omslag-COP representeert dat voor ruimteverwarming het elektrisch deel van de
-      hybride warmtepomp maximaal wordt gebruikt en voor warm water het gasdeel.\r\n<br></br>\r\nMet
-      de schuifjes hieronder kun je de buffergrootte en de omslag-COP instellen."
+      \r\n<br></br>\r\nMet de schuifjes hieronder kun je de buffergrootte voor verschillende warmtepompen instellen."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: flexibility_net_load
-- key: data_export_energy_flows
+- id: 218
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: data_export_energy_flows
   position: 1
+  sidebar_item_id: 48
   output_element_id: 123
   alt_output_element_id:
   dependent_on: ''
   description:
     content_en: "The Energy Transition Model describes the energy flows through several\r\nhundred
       uses and conversions; this CSV provides a list of each of\r\nthese flows (inputs
-      and outputs).\r\n<ul class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv\"><span
-      class=\"fa fa-download\"></span> Energy flows <span class=\"filetype\">(375KB
-      CSV)</span></a></li>\r\n</ul>\r\n"
+      and outputs).\r\n<ul class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv\">
+      <span class=\"name\">Energy flows</span> <span class=\"filetype\">375KB
+      CSV</span></a></li>\r\n</ul>\r\n"
     content_nl: "Het Energietransitiemodel beschrijft het energiesysteem als een verzameling
       van honderden energie-omzetters (nodes) die verbonden zijn met energiestromen
       (edges). \r\nDeze CSV geeft een lijst van alle energie-omzetters en de energiestromen
       die daar ingaan en uitkomen (uitgesplitst naar drager).\r\n<ul class=\"data-download\">\r\n
-      \ <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv\"><span
-      class=\"fa fa-download\"></span> Energiestromen <span class=\"filetype\">(375KB
-      CSV)</span></a></li>\r\n</ul>\r\n"
+      \ <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv\">
+      <span class=\"name\">Energiestromen</span> <span class=\"filetype\">375KB
+      CSV</span></a></li>\r\n</ul>\r\n"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: data_export
-- key: demand_transport_international_transport
+- id: 219
   image: ''
   general_sub_header: of_total
   group_sub_header: ''
   subheader_image: ''
+  key: demand_transport_international_transport
   position: 1
+  sidebar_item_id: 50
   output_element_id: 209
   alt_output_element_id: 198
   dependent_on: ''
@@ -3137,13 +3522,14 @@
       je mee wilt laten tellen.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: transport_international_transport
-- key: supply_transport_international_aviation
+- id: 220
   image: ''
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: supply_transport_international_aviation
   position: 5
+  sidebar_item_id: 26
   output_element_id: 199
   alt_output_element_id:
   dependent_on: ''
@@ -3162,13 +3548,14 @@
       > de flexibiliteitssectie</a>. "
     short_content_en:
     short_content_nl:
-  sidebar_item_key: transport_fuels
-- key: supply_transport_international_shipping
+- id: 221
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_transport_international_shipping
   position: 6
+  sidebar_item_id: 26
   output_element_id: 199
   alt_output_element_id: 190
   dependent_on: ''
@@ -3184,13 +3571,14 @@
       op dat het nog niet mogelijk is om biobrandstoffen in te zetten in deze sector. '
     short_content_en:
     short_content_nl:
-  sidebar_item_key: transport_fuels
-- key: demand_transport_international_transport_mobility_growth
+- id: 222
   image: ''
   general_sub_header: year
   group_sub_header: ''
   subheader_image: ''
+  key: demand_transport_international_transport_mobility_growth
   position: 2
+  sidebar_item_id: 50
   output_element_id: 209
   alt_output_element_id: 198
   dependent_on: ''
@@ -3203,13 +3591,14 @@
       de hele sector en hangt niet af van de bevolkingsgroei.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: transport_international_transport
-- key: demand_transport_international_navigation_technology
+- id: 223
   image: ''
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_transport_international_navigation_technology
   position: 4
+  sidebar_item_id: 50
   output_element_id: 198
   alt_output_element_id: 199
   dependent_on: ''
@@ -3222,13 +3611,14 @@
       transport?
     short_content_en:
     short_content_nl:
-  sidebar_item_key: transport_international_transport
-- key: demand_transport_international_aviation_technology
+- id: 224
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: demand_transport_international_aviation_technology
   position: 3
+  sidebar_item_id: 50
   output_element_id: 198
   alt_output_element_id:
   dependent_on: ''
@@ -3243,13 +3633,14 @@
       >brandstoffen </a>sectie.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: transport_international_transport
-- key: flexibility_flexibility_power_to_kerosene
+- id: 225
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_flexibility_power_to_kerosene
   position: 4
+  sidebar_item_id: 54
   output_element_id: 211
   alt_output_element_id: 200
   dependent_on: ''
@@ -3278,13 +3669,14 @@
       nodig hebt en aan welke sector de CO<sub>2</sub>-reductie moet worden toegeschreven.\r\n<br/><br/>"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: flexibility_conversion
-- key: demand_transport_bus_technology
+- id: 226
   image: ''
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_transport_bus_technology
   position: 6
+  sidebar_item_id: 51
   output_element_id: 206
   alt_output_element_id:
   dependent_on: ''
@@ -3298,13 +3690,14 @@
       zullen rijden. '
     short_content_en:
     short_content_nl:
-  sidebar_item_key: transport_passenger_transport
-- key: demand_transport_bicycle_technology
+- id: 227
   image: ''
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_transport_bicycle_technology
   position: 8
+  sidebar_item_id: 51
   output_element_id: 204
   alt_output_element_id:
   dependent_on: ''
@@ -3313,13 +3706,14 @@
     content_nl: E-bikes worden steeds meer gebruikt; zet deze trend door?
     short_content_en:
     short_content_nl:
-  sidebar_item_key: transport_passenger_transport
-- key: demand_transport_motorcycle_technology
+- id: 228
   image: ''
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_transport_motorcycle_technology
   position: 7
+  sidebar_item_id: 51
   output_element_id: 204
   alt_output_element_id:
   dependent_on: ''
@@ -3330,13 +3724,14 @@
       de toekomst? Ook scooters vallen onder deze categorie.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: transport_passenger_transport
-- key: demand_transport_freight_transport
+- id: 229
   image: truck.gif
   general_sub_header: year
   group_sub_header: share
   subheader_image: ''
+  key: demand_transport_freight_transport
   position: 11
+  sidebar_item_id: 52
   output_element_id: 208
   alt_output_element_id:
   dependent_on: ''
@@ -3361,13 +3756,14 @@
       transport'</a>."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: transport_freight_transport
-- key: demand_transport_freight_train_technology
+- id: 230
   image: ''
   general_sub_header: share
   group_sub_header: ''
   subheader_image: ''
+  key: demand_transport_freight_train_technology
   position: 13
+  sidebar_item_id: 52
   output_element_id: 207
   alt_output_element_id:
   dependent_on: ''
@@ -3383,13 +3779,14 @@
       zullen gebruiken.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: transport_freight_transport
-- key: costs_flexibility_storage
+- id: 232
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: costs_flexibility_storage
   position: 1
+  sidebar_item_id: 44
   output_element_id: 48
   alt_output_element_id:
   dependent_on: ''
@@ -3402,13 +3799,14 @@
       van deze technologie in de toekomst zullen veranderen.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: costs_flexibility
-- key: costs_flexibility_conversion
+- id: 233
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: costs_flexibility_conversion
   position: 2
+  sidebar_item_id: 44
   output_element_id: 48
   alt_output_element_id:
   dependent_on: ''
@@ -3422,13 +3820,14 @@
       in de toekomst zullen veranderen."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: costs_flexibility
-- key: demand_transport_tram_technology
+- id: 234
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: demand_transport_tram_technology
   position: 5
+  sidebar_item_id: 51
   output_element_id: 206
   alt_output_element_id:
   dependent_on: ''
@@ -3437,13 +3836,14 @@
     content_nl: Het ETM modelleert alleen elektrische trams en metro's.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: transport_passenger_transport
-- key: demand_transport_overview
+- id: 235
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: demand_transport_overview
   position: 1
+  sidebar_item_id: 3
   output_element_id: 201
   alt_output_element_id:
   dependent_on: ''
@@ -3462,13 +3862,14 @@
       zullen domineren.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: transport
-- key: flexibility_electricity_import_export_properties
+- id: 236
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_electricity_import_export_properties
   position: 1
+  sidebar_item_id: 40
   output_element_id: 46
   alt_output_element_id:
   dependent_on: ''
@@ -3491,13 +3892,30 @@
       sectie kosten</a> worden gezet."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: electricity_import_export
-- key: costs_imported_electricity
+- id: 237
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_flexibility_power_to_methane
+  position: 9
+  sidebar_item_id:
+  output_element_id:
+  alt_output_element_id:
+  dependent_on: ''
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en:
+    short_content_nl:
+- id: 238
+  image: ''
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: costs_imported_electricity
   position: 0
+  sidebar_item_id: 56
   output_element_id: 171
   alt_output_element_id: 102
   dependent_on: ''
@@ -3507,13 +3925,14 @@
       de toekomst?
     short_content_en:
     short_content_nl:
-  sidebar_item_key: electricity_import_costs
-- key: supply_electricity_renewable_hydrogen_plants
+- id: 239
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_electricity_renewable_hydrogen_plants
   position: 6
+  sidebar_item_id: 23
   output_element_id: 99
   alt_output_element_id:
   dependent_on: ''
@@ -3532,13 +3951,14 @@
       van de toekomst.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: electricity_renewable
-- key: supply_hydrogen_transport
+- id: 240
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_hydrogen_transport
   position: 3
+  sidebar_item_id: 45
   output_element_id: 214
   alt_output_element_id:
   dependent_on: ''
@@ -3569,13 +3989,14 @@
       >kosten</a>."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: hydrogen
-- key: supply_hydrogen_co2_import
+- id: 242
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_hydrogen_co2_import
   position: 5
+  sidebar_item_id: 45
   output_element_id: 46
   alt_output_element_id:
   dependent_on: ''
@@ -3603,23 +4024,25 @@
       kosten voor geïmporteerde waterstof kunnen worden aangepast in de <a href=\"/scenario/costs/fuel_costs/combustion-fuel\">kostensectie</a>."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: hydrogen
-- key: costs_infrastructure_electricity
+- id: 243
   image:
   general_sub_header:
   group_sub_header:
   subheader_image:
+  key: costs_infrastructure_electricity
   position: 3
+  sidebar_item_id: 28
   output_element_id: 61
   alt_output_element_id:
   dependent_on: ''
-  sidebar_item_key: infrastructure
-- key: costs_infrastructure_electricity_investement_regime
+- id: 244
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: costs_infrastructure_electricity_investement_regime
   position: 4
+  sidebar_item_id: 28
   output_element_id:
   alt_output_element_id:
   dependent_on: _always_hidden
@@ -3628,13 +4051,14 @@
     content_nl: ''
     short_content_en:
     short_content_nl:
-  sidebar_item_key: infrastructure
-- key: costs_co2_ccs_industry
+- id: 245
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: costs_co2_ccs_industry
   position: 3
+  sidebar_item_id: 18
   output_element_id: 48
   alt_output_element_id:
   dependent_on: has_detailed_chemical_industry
@@ -3646,13 +4070,14 @@
       gedetailleerde modellering.'
     short_content_en:
     short_content_nl:
-  sidebar_item_key: co2
-- key: demand_industry_ccs
+- id: 246
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: demand_industry_ccs
   position: 1
+  sidebar_item_id: 4
   output_element_id: 46
   alt_output_element_id:
   dependent_on: has_detailed_chemical_industry
@@ -3665,106 +4090,132 @@
       termijn vervangen zal worden door meer gedetailleerde modellering.'
     short_content_en:
     short_content_nl:
-  sidebar_item_key: industry
-- key: data_export_household_heat
+- id: 248
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: data_export_household_heat
   position: 5
+  sidebar_item_id: 48
   output_element_id: 196
   alt_output_element_id:
   dependent_on: ''
   description:
     content_en: "Download information about demand and supply of (individual) heat
       in households per hour (space heating and tap water); including deficits, buffering,
-      and time-shifting.\r\n<ul class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/household_heat.csv\"><span
-      class=\"fa fa-download\"></span> Household heat curves <span class=\"filetype\">(400KB
-      CSV)</span></a></li>\r\n</ul>\r\n"
+      and time-shifting.\r\n<ul class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/household_heat.csv\">
+      <span class=\"name\">Household heat curves</span> <span class=\"filetype\">400KB
+      CSV</span></a></li>\r\n</ul>\r\n"
     content_nl: "Download informatie over de individuele warmtevraag en -productie
       van huishoudens (ruimteverwarming en warm water). Het bestand laat op uurbasis
       zien hoeveel warmte er gevraagd wordt, hoeveel warmte de geïnstalleerde technieken
       leveren en of er sprake is van warmtebuffering, uitstel van warmtelevering of
       tekorten. Dit kan het geval zijn als de gekozen verwarmingstechnieken onvoldoende
       capaciteit hebben om op bepaalde momenten aan de vraag te voldoen.\r\n\r\n<ul
-      class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/household_heat.csv\"><span
-      class=\"fa fa-download\"></span> Warmteprofiel huishoudens <span class=\"filetype\">(400KB
-      CSV)</span></a></li>\r\n</ul>\r\n"
+      class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/household_heat.csv\">
+      <span class=\"name\">Warmteprofiel huishoudens <span class=\"filetype\">400KB
+      CSV</span></a></li>\r\n</ul>\r\n"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: data_export
-- key: data_visuals_scenario_report
+- id: 249
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: data_visuals_scenario_report
   position: 1
+  sidebar_item_id: 57
   output_element_id: 213
   alt_output_element_id:
   dependent_on: ''
   description:
-    content_en: "The scenario report is a printable description of the decisions you
-      made in your current scenario, progress made towards important goals, and includes
-      charts showing breakdowns of energy use, electricity production, and much more.\r\n\r\n<ul
-      class=\"data-download\">\r\n  <li><a href=\"/scenario/reports/auto\"><span class=\"fa
-      fa-book\"></span> View the report →</a></li>\r\n</ul>\r\n"
-    content_nl: "Het scenarioverslag beschrijft je scenario in woord en beeld. Het
-      bevat informatie over de behaalde doelen, toont uitsplitsingen van energiegebruik
-      en elektriciteitsproductie, wijst je op mogelijke inconsistenties en nog veel
-      meer.\r\n\r\n<ul class=\"data-download\">\r\n  <li><a href=\"/scenario/reports/auto\"><span
-      class=\"fa fa-book\"></span> Bekijk het verslag →</a></li>\r\n</ul>\r\n"
+    content_en: |
+      The scenario report is a printable description of the decisions you
+      made in your current scenario, progress made towards important goals, and
+      includes charts showing breakdowns of energy use, electricity production,
+      and much more.
+      <br /><br />
+      <a href="/scenario/reports/auto" class="simple-button">
+        <span class="fa fa-book"></span> View the report →
+      </a>
+    content_nl: |
+      Het scenarioverslag beschrijft je scenario in woord en beeld. Het bevat
+      informatie over de behaalde doelen, toont uitsplitsingen van
+      energiegebruik en elektriciteitsproductie, wijst je op mogelijke
+      inconsistenties en nog veel meer.
+      <br /><br />
+      <a href="/scenario/reports/auto" class="simple-button">
+        <span class="fa fa-book"></span> Bekijk het verslag →
+      </a>
     short_content_en:
     short_content_nl:
-  sidebar_item_key: data_visuals
-- key: data_visuals_factsheet
+- id: 250
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: data_visuals_factsheet
   position: 2
+  sidebar_item_id: 57
   output_element_id: 213
   alt_output_element_id:
   dependent_on: ''
   description:
-    content_en: "A printable A3 or A4 factsheet describing how energy is produced
-      and consumed in your scenario. Unfortunately, the factsheet is currently available
-      in Dutch only.\r\n\r\n<ul class=\"data-download\">\r\n  <li><a href=\"/scenarios/%{scenario_id}/factsheet\"><span
-      class=\"fa fa-newspaper-o\"></span> View the factsheet →</a></li>\r\n</ul>\r\n"
-    content_nl: "Een printklare A3 'factsheet' waarin de energie-mix voor zowel vraag
-      als aanbod wordt samengevat voor je scenario.\r\n\r\n<ul class=\"data-download\">\r\n
-      \ <li><a href=\"/scenarios/%{scenario_id}/factsheet\"><span class=\"fa fa-newspaper-o\"></span>
-      Bekijk de factsheet →</a></li>\r\n</ul>\r\n"
+    content_en: |
+      A printable A3 or A4 factsheet describing how energy is produced and
+      consumed in your scenario. Unfortunately, the factsheet is currently
+      available in Dutch only.
+      <br /><br />
+      <a href="/scenarios/%{scenario_id}/factsheet" class="simple-button">
+        <span class="fa fa-book"></span> View the factsheet →
+      </a>
+    content_nl: |
+      Een printklare A3 'factsheet' waarin de energie-mix voor zowel vraag als
+      aanbod wordt samengevat voor je scenario.
+      <br /><br />
+      <a href="/scenarios/%{scenario_id}/factsheet" class="simple-button">
+        <span class="fa fa-book"></span> Bekijk de factsheet →
+      </a>
     short_content_en:
     short_content_nl:
-  sidebar_item_key: data_visuals
-- key: data_visuals_graph
+- id: 251
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: data_visuals_graph
   position: 4
+  sidebar_item_id: 57
   output_element_id: 213
   alt_output_element_id:
   dependent_on: ''
   description:
-    content_en: "A detailed breakdown of energy flows throughout the Energy Transition
-      Model for your scenario. Recommended only for advanced users.\r\n\r\n<ul class=\"data-download\">\r\n
-      \ <li><a href=\"%{etengine_url}/data/%{scenario_id}/layout\" target=\"_blank\"><span
-      class=\"fa fa-object-group\"></span> View the graph →</a></li>\r\n</ul>\r\n"
-    content_nl: "Gedetailleerde en interactieve weergave van de energiestromen en
-      energie-omzetters van het Energietransitiemodel. Bedoeld voor gevorderde gebruikers.\r\n\r\n<ul
-      class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/data/%{scenario_id}/layout\"
-      target=\"_blank\"><span class=\"fa fa-object-group\"></span> Bekijk de energiegraaf
-      →</a></li>\r\n</ul>\r\n"
+    content_en: |
+      A detailed breakdown of energy flows throughout the Energy Transition
+      Model for your scenario. Recommended only for advanced users.
+      <br /><br />
+      <a href="%{etengine_url}/data/%{scenario_id}/layout" class="simple-button">
+        <span class="fa fa-book"></span> View the graph →
+      </a>
+    content_nl: |
+      Gedetailleerde en interactieve weergave van de energiestromen en
+      energie-omzetters van het Energietransitiemodel. Bedoeld voor gevorderde
+      gebruikers.
+      <br /><br />
+      <a href="%{etengine_url}/data/%{scenario_id}/layout" class="simple-button">
+        <span class="fa fa-book"></span> Bekijk de energiegraaf →
+      </a>
     short_content_en:
     short_content_nl:
-  sidebar_item_key: data_visuals
-- key: flexibility_flexibility_pumped_storage
+- id: 252
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_flexibility_pumped_storage
   position: 3
+  sidebar_item_id: 53
   output_element_id: 163
   alt_output_element_id:
   dependent_on: _always_hidden
@@ -3784,13 +4235,14 @@
       wordt de opgeslagen energie teruggeleverd aan het elektriciteitsnet."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: flexibility_storage
-- key: costs_hydrogen_import
+- id: 253
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: costs_hydrogen_import
   position: 1
+  sidebar_item_id: 58
   output_element_id: 228
   alt_output_element_id:
   dependent_on: ''
@@ -3799,13 +4251,14 @@
     content_nl: Wat gaat geïmporteerde waterstof volgens jou kosten in de toekomst?
     short_content_en:
     short_content_nl:
-  sidebar_item_key: costs_hydrogen
-- key: costs_hydrogen_storage
+- id: 254
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: costs_hydrogen_storage
   position: 2
+  sidebar_item_id: 58
   output_element_id: 48
   alt_output_element_id:
   dependent_on: ''
@@ -3814,13 +4267,14 @@
     content_nl: Wat denk je dat de kosten van waterstofopslag zullen zijn in de toekomst?
     short_content_en:
     short_content_nl:
-  sidebar_item_key: costs_hydrogen
-- key: costs_hydrogen_transport
+- id: 255
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: costs_hydrogen_transport
   position: 3
+  sidebar_item_id: 58
   output_element_id: 48
   alt_output_element_id:
   dependent_on: ''
@@ -3831,13 +4285,14 @@
       zijn in de toekomst?
     short_content_en:
     short_content_nl:
-  sidebar_item_key: costs_hydrogen
-- key: supply_hydrogen_storage
+- id: 256
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_hydrogen_storage
   position: 4
+  sidebar_item_id: 45
   output_element_id: 227
   alt_output_element_id:
   dependent_on: ''
@@ -3861,13 +4316,14 @@
       >kosten</a>."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: hydrogen
-- key: supply_hydrogen_demand
+- id: 257
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_hydrogen_demand
   position: 2
+  sidebar_item_id: 45
   output_element_id: 226
   alt_output_element_id:
   dependent_on: ''
@@ -3898,13 +4354,14 @@
       en <a href=\"/scenario/demand/transport_freight_transport/truck-technology\">vrachtwagens</a>)</li></ul>"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: hydrogen
-- key: data_export_hydrogen
+- id: 258
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: data_export_hydrogen
   position: 7
+  sidebar_item_id: 48
   output_element_id: 226
   alt_output_element_id:
   dependent_on: ''
@@ -3912,25 +4369,26 @@
     content_en: "Below you can download information about hydrogen demand, supply
       and storage per hour in your scenario.\r\n\r\n<ul class=\"data-download\">\r\n
       \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/hydrogen.csv\">\r\n
-      \     <span class=\"fa fa-download\"></span>\r\n      Hydrogen demand, production
-      and storage per hour\r\n      <span class=\"filetype\">(750KB CSV)</span>\r\n
+      \     <span class=\"name\">Hydrogen demand, production
+      and storage per hour</span>\r\n      <span class=\"filetype\">750KB CSV</span>\r\n
       \   </a>\r\n  </li>\r\n</ul>"
     content_nl: "Het Energietransitiemodel rekent op uurbasis de vraag, productie
       en opslag van waterstof uit. Hieronder kun je deze gegevens downloaden als CSV-bestand,
       uitgesplitst naar technologie/sector.\r\n\r\n\r\n<ul class=\"data-download\">\r\n
       \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/hydrogen.csv\">\r\n
-      \     <span class=\"fa fa-download\"></span>\r\n      Waterstofvraag, -productie
-      en -opslag per uur\r\n      <span class=\"filetype\">(750KB CSV)</span>\r\n
+      \     <span class=\"name\">Waterstofvraag, -productie
+      en -opslag per uur</span>\r\n      <span class=\"filetype\">750KB CSV</span>\r\n
       \   </a>\r\n  </li>\r\n</ul>"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: data_export
-- key: supply_biomass_overview
+- id: 259
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_biomass_overview
   position: 1
+  sidebar_item_id: 47
   output_element_id: 242
   alt_output_element_id:
   dependent_on: ''
@@ -3962,13 +4420,14 @@
       target=\"_blank\">documentatie</a>."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: biomass
-- key: supply_biomass_bio_footprint
+- id: 260
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_biomass_bio_footprint
   position: 6
+  sidebar_item_id: 47
   output_element_id: 168
   alt_output_element_id:
   dependent_on: _always_hidden
@@ -3981,52 +4440,56 @@
       jouw scenario.
     short_content_en:
     short_content_nl:
-  sidebar_item_key: biomass
-- key: costs_heat_network
+- id: 263
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: costs_heat_network
   position: 1
+  sidebar_item_id: 36
   output_element_id: 254
   alt_output_element_id:
   dependent_on: ''
   description:
-    content_en: What do you think the costs for heat network infrastructure will be
-      in the future? See <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md"
-      target ="_blank">our documentation</a> for information about the cost calculation.
-    content_nl: Wat denk je dat de kosten van warmtenetinfrastructuur zullen zijn
-      in de toekomst? Zie <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md"
-      target ="_blank">onze documentatie</a> voor informatie over de kostenberekening.
+    content_en: "What do you think the costs for heat network infrastructure will be
+      in the future? See <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md\"
+      target =\"_blank\">our documentation</a> for information about the cost calculation."
+    content_nl: "Wat denk je dat de kosten van warmtenetinfrastructuur zullen zijn
+      in de toekomst? Zie
+      <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md\"
+      target =\"_blank\">onze documentatie</a> voor informatie over de kostenberekening."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: costs_heat
-- key: costs_residual_heat
+- id: 264
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: costs_residual_heat
   position: 4
+  sidebar_item_id: 36
   output_element_id: 48
   alt_output_element_id:
   dependent_on: ''
   description:
-    content_en: What would the costs of residual heat from industry and imported heat
-      be in the future? See <a href="https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md"
-      target ="_blank">our documentation</a> for information about industrial residual
-      heat.
-    content_nl: Wat zijn volgens jou de toekomstige kosten van industriële restwarmte
-      en geïmporteerde warmte? Zie <a href="https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md"
-      target ="_blank">onze documentatie</a> voor informatie over industriële restwarmte.
+    content_en: "What would the costs of residual heat from industry and imported heat
+      be in the future? See <a href=\"https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md\"
+      target =\"_blank\">our documentation</a> for information about industrial residual heat."
+    content_nl: "Wat zijn volgens jou de toekomstige kosten van industriële restwarmte
+      en geïmporteerde warmte? Zie
+      <a href=\"https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md\"
+      target =\"_blank\">onze documentatie</a> voor informatie over industriële restwarmte."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: costs_heat
-- key: introduction_to_etm
+- id: 265
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: introduction_to_etm
   position: 1
+  sidebar_item_id: 59
   output_element_id: 241
   alt_output_element_id:
   dependent_on: ''
@@ -4096,13 +4559,14 @@
       Energietransitiemodel."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: introduction
-- key: overview_final_demand
+- id: 266
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: overview_final_demand
   position: 3
+  sidebar_item_id: 59
   output_element_id: 240
   alt_output_element_id:
   dependent_on: ''
@@ -4133,13 +4597,14 @@
       >merit order pagina</a> bevat meer informatie over de elektriciteitsmarkt)."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: introduction
-- key: overview_co2_emissions
+- id: 267
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: overview_co2_emissions
   position: 2
+  sidebar_item_id: 59
   output_element_id: 46
   alt_output_element_id:
   dependent_on: ''
@@ -4165,13 +4630,14 @@
       altijd oproepen door op dit getal onderaan te klikken."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: introduction
-- key: supply_biomass_greengas_production
+- id: 268
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_biomass_greengas_production
   position: 4
+  sidebar_item_id: 47
   output_element_id: 242
   alt_output_element_id:
   dependent_on: ''
@@ -4203,13 +4669,14 @@
       kosten op te baseren.\r\n<br /><br />"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: biomass
-- key: costs_bio_fuel
+- id: 269
   image: ''
   general_sub_header: price
   group_sub_header: ''
   subheader_image: ''
+  key: costs_bio_fuel
   position: 2
+  sidebar_item_id: 37
   output_element_id: 244
   alt_output_element_id:
   dependent_on: ''
@@ -4220,13 +4687,14 @@
       op: onderstaande brandstofprijzen hebben invloed op de merit order van elektriciteit.'
     short_content_en:
     short_content_nl:
-  sidebar_item_key: fuel_costs
-- key: supply_biomass_potential
+- id: 270
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_biomass_potential
   position: 2
+  sidebar_item_id: 47
   output_element_id: 243
   alt_output_element_id:
   dependent_on: ''
@@ -4245,13 +4713,14 @@
       je dat hier doen.'
     short_content_en:
     short_content_nl:
-  sidebar_item_key: biomass
-- key: data_export_network_gas
+- id: 271
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: data_export_network_gas
   position: 6
+  sidebar_item_id: 48
   output_element_id: 245
   alt_output_element_id:
   dependent_on: ''
@@ -4259,25 +4728,26 @@
     content_en: "Below you can download information about network gas demand, supply
       and storage per hour in your scenario.\r\n\r\n<ul class=\"data-download\">\r\n
       \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/network_gas.csv\">\r\n
-      \     <span class=\"fa fa-download\"></span>\r\n      Network gas demand, production
-      and storage per hour\r\n      <span class=\"filetype\">(3MB CSV)</span>\r\n
+      \     <span class=\"name\">Network gas demand, production
+      and storage per hour</span>\r\n      <span class=\"filetype\">3MB CSV</span>\r\n
       \   </a>\r\n  </li>\r\n</ul>"
     content_nl: "Het Energietransitiemodel rekent op uurbasis de vraag, productie
       en opslag van netwerkgas uit. Hieronder kun je deze gegevens downloaden als
       CSV-bestand, uitgesplitst naar technologie/sector.\r\n\r\n<ul class=\"data-download\">\r\n
       \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/network_gas.csv\">\r\n
-      \     <span class=\"fa fa-download\"></span>\r\n      Netwerkgasvraag, -productie
-      en -opslag per uur\r\n      <span class=\"filetype\">(3MB CSV)</span>\r\n    </a>\r\n
+      \     <span class=\"name\">Netwerkgasvraag, -productie
+      en -opslag per uur</span>\r\n      <span class=\"filetype\">3MB CSV</span>\r\n    </a>\r\n
       \ </li>\r\n</ul>"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: data_export
-- key: flexibility_flexibility_power_to_heat_for_industry
+- id: 272
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_flexibility_power_to_heat_for_industry
   position: 3
+  sidebar_item_id: 54
   output_element_id: 163
   alt_output_element_id:
   dependent_on: ''
@@ -4299,34 +4769,50 @@
       \ <li><a href=\"/scenario/demand/industry/paper\">papierindustrie</a></li></ul>"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: flexibility_conversion
-- key: data_visuals_co2_sheet
+- id: 273
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: data_visuals_co2_sheet
   position: 3
+  sidebar_item_id: 57
   output_element_id: 213
   alt_output_element_id:
   dependent_on: ''
   description:
-    content_en: "A printable sheet depicting the CO<sub>2</sub> footprint for your
-      scenario.\r\n  <ul class=\"data-download\">\r\n    <li><a href=\"%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}\"
-      target=\"_blank\"><span class=\"fa fa-newspaper-o\"></span> View the sheet →</a></li>\r\n
-      \ </ul>\r\n"
-    content_nl: "Een printklare sheet met een visuele samenvatting van de CO<sub>2</sub>-voetafdruk
-      voor jouw scenario.\r\n<ul class=\"data-download\">\r\n  <li><a href=\"%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}\"
-      target=\"_blank\"><span class=\"fa fa-newspaper-o\"></span> Bekijk de sheet
-      →</a></li>\r\n</ul>\r\n"
+    content_en: |
+      A printable sheet depicting the CO<sub>2</sub> footprint for your
+      scenario.
+      <br /><br />
+      <a
+        href="%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}"
+        target="_blank"
+        class="simple-button"
+      >
+        <span class="fa fa-newspaper-o"></span> View the sheet →
+      </a>
+    content_nl: |
+      Een printklare sheet met een visuele samenvatting van de
+      CO<sub>2</sub>-voetafdruk voor jouw scenario.
+      <br /><br />
+      <a
+        href="%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}"
+        target="_blank"
+        class="simple-button"
+      >
+        <span class="fa fa-newspaper-o"></span> Bekijk de sheet →
+      </a>
     short_content_en:
     short_content_nl:
-  sidebar_item_key: data_visuals
-- key: costs_wacc
+- id: 274
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: costs_wacc
   position: 1
+  sidebar_item_id: 61
   output_element_id: 48
   alt_output_element_id:
   dependent_on: ''
@@ -4344,13 +4830,14 @@
       target ="_blank">documentatie</a>.'
     short_content_en:
     short_content_nl:
-  sidebar_item_key: wacc
-- key: supply_heat_network_order
+- id: 275
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_heat_network_order
   position: 4
+  sidebar_item_id: 62
   output_element_id: 253
   alt_output_element_id:
   dependent_on: ''
@@ -4379,13 +4866,14 @@
       de verschillende regelbare bronnen."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: heat_merit
-- key: data_export_heat_network
+- id: 276
   image:
   general_sub_header:
   group_sub_header:
   subheader_image:
+  key: data_export_heat_network
   position: 8
+  sidebar_item_id: 48
   output_element_id: 249
   alt_output_element_id:
   dependent_on:
@@ -4397,9 +4885,8 @@
       <ul class="data-download">
         <li>
           <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/heat_network.csv">
-            <span class="fa fa-download"></span>
-            Heat network demand, production and storage per hour
-            <span class="filetype">(1.5MB CSV)</span>
+            <span class="name">Heat network demand, production and storage per hour</span>
+            <span class="filetype">1.5MB CSV</span>
           </a>
         </li>
       </ul>
@@ -4410,21 +4897,21 @@
       <ul class="data-download">
         <li>
           <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/heat_network.csv">
-            <span class="fa fa-download"></span>
-            Warmtenetvraag, -productie en -opslag per uur
-            <span class="filetype">(1.5MB CSV)</span>
+            <span class="name">Warmtenetvraag, -productie en -opslag per uur</span>
+            <span class="filetype">1.5MB CSV</span>
           </a>
         </li>
       </ul>
     short_content_en:
     short_content_nl:
-  sidebar_item_key: data_export
-- key: supply_heat_sources
+- id: 277
   image: house_direct_heating.gif
   general_sub_header: heat_output
   group_sub_header: ''
   subheader_image: ''
+  key: supply_heat_sources
   position: 1
+  sidebar_item_id: 24
   output_element_id: 248
   alt_output_element_id:
   dependent_on: ''
@@ -4445,9 +4932,11 @@
       >(Natural) gas plants</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
       >Coal plants</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
       >Biomass plants</a> and <a href=\"/scenario/supply/electricity_renewable/waste-power\"
-      >Waste incineration</a>\r\n<br /><br />\r\nMore information can be found in
-      our <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_networks.md\"
-      target =\"_blank\">documentation</a> "
+      >Waste incineration</a>. It is also possible to convert excess electricity in heat through
+      power-to-heat boilers or heat pumps in the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+      >Flexibility section</a>.\r\n<br /><br />\r\nMore information
+      can be found in our <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_networks.md\"
+      target =\"_blank\">documentation</a>."
     content_nl: "Warmtenetten kunnen worden ingezet als verwarmingstechnologie in
       <a href=\"/scenario/demand/households/space-heating-hot-water\" >huishoudens</a>,
       <a href=\"/scenario/demand/buildings/space-heating\" >gebouwen</a> en <a href=\"/scenario/demand/agriculture/heat\"
@@ -4464,18 +4953,22 @@
       centrales: <a href=\"/scenario/supply/electricity/gas-plants\" >(Aard)gascentrales</a>,
       <a href=\"/scenario/supply/electricity/coal-plants\" >Kolencentrales</a>, <a
       href=\"/scenario/supply/electricity_renewable/biomass-plants\" >Biomassacentrales</a>
-      en <a href=\"/scenario/supply/electricity_renewable/waste-power\" >Afvalverbranding</a>
-      \r\n\r\n<br /><br />\r\nMeer informatie kunt u vinden in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_networks.md\"
+      en <a href=\"/scenario/supply/electricity_renewable/waste-power\" >Afvalverbranding</a>.
+      Daarbij is het mogelijk om elektriciteitsoverschotten om te zetten in warmte d.m.v. power-to-heat
+      boilers of warmtepompen bij <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+      >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nMeer informatie kunt u vinden in onze
+      <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_networks.md\"
       target =\"_blank\">documentatie</a>."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: heat
-- key: supply_heat_network_storage_toggle
+- id: 278
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_heat_network_storage_toggle
   position: 3
+  sidebar_item_id: 24
   output_element_id: 252
   alt_output_element_id:
   dependent_on: ''
@@ -4521,13 +5014,14 @@
       >kosten</a>.\r\n"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: heat
-- key: supply_electricity_renewable_biomass_plants
+- id: 279
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_electricity_renewable_biomass_plants
   position: 4
+  sidebar_item_id: 23
   output_element_id: 99
   alt_output_element_id:
   dependent_on: ''
@@ -4536,13 +5030,14 @@
     content_nl: Hoeveel warmte wordt er d.m.v. biomassa geproduceerd?
     short_content_en:
     short_content_nl:
-  sidebar_item_key: electricity_renewable
-- key: supply_heat_network_losses
+- id: 280
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: supply_heat_network_losses
   position: 2
+  sidebar_item_id: 24
   output_element_id: 248
   alt_output_element_id:
   dependent_on: ''
@@ -4561,13 +5056,14 @@
       je de distributieverliezen in jouw scenario instellen."
     short_content_en:
     short_content_nl:
-  sidebar_item_key: heat
-- key: costs_solar_thermal
+- id: 281
   image: ''
   general_sub_header: change
   group_sub_header: ''
   subheader_image: ''
+  key: costs_solar_thermal
   position: 3
+  sidebar_item_id: 36
   output_element_id: 48
   alt_output_element_id:
   dependent_on: ''
@@ -4580,13 +5076,14 @@
       en onderhoudskosten van deze technologie in de toekomst?
     short_content_en:
     short_content_nl:
-  sidebar_item_key: costs_heat
-- key: flexibility_security_of_supply_heat
+- id: 282
   image: ''
   general_sub_header: ''
   group_sub_header: ''
   subheader_image: ''
+  key: flexibility_security_of_supply_heat
   position: 2
+  sidebar_item_id: 33
   output_element_id: 250
   alt_output_element_id: 249
   dependent_on: ''
@@ -4633,4 +5130,131 @@
       in je scenario afhangen van het weer.\r\n"
     short_content_en:
     short_content_nl:
-  sidebar_item_key: security_of_supply
+- id: 283
+  image: ''
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_demand_response_hhp
+  position: 11
+  sidebar_item_id: 55
+  output_element_id: 255
+  alt_output_element_id:
+  dependent_on: ''
+  description:
+    content_en: "The efficiency of hybrid heat pumps (HHP) is dependent on the ambient temperature and
+      is depicted by the coefficient of performance (COP). The COP becomes lower as
+      the outside temperature decreases. Below you can set the so-called 'threshold COP': if
+      the COP of the heat pump is below this threshold then the HHP switches from electricity
+      to gas. You can choose a setting that is
+      most financially attractive for the consumer, but you can also choose a setting
+      that produces less impact on the electricity network.
+      \r\n</br></br>\r\n
+      To help you decide the cost-optimal threshold COP setting from a consumer perspective, have a
+      look at the chart on the right. It shows how much it costs to make a unit of heat
+      with the HHP for space heating. For the gas part, these costs are independent of the COP
+      (and therefore the outside temperature). The costs for the electrical part are
+      decreasing with increasing COP (and increasing outside temperature). The intersection of
+      the two curves is the cost-optimal COP setting for the given cost price
+      gas and electricity. This cost price of gas and electricity can be adjusted below. The start value
+      of the treshold COP slider matches the calculated cost-optimal threshold COP for space heating.
+      \r\n</br></br>\r\n
+      If you're interested in the impact of HHPs on the electricity grid, have a look
+      at the chart that is shown when clicking on the 'Annual'-button in the right corner
+      of the chart. This chart shows the hourly gas and electricity demand of HHPs.
+      \r\n</br></br>\r\n
+      The default threshold COP represents using the electric
+      part of the hybrid heat pump maximally for space heating and using gas for hot
+      water."
+    content_nl: "De efficiëntie van (hybride) warmtepompen is afhankelijk van
+      de buitentemperatuur en wordt aangegeven met de 'coefficient of performance'
+      (COP). De COP wordt lager als de buitentemperatuur afneemt. Hieronder kan je
+      de zogenaamde 'omslag-COP' instellen: wanneer de COP van de warmtepomp onder de
+      omslag-COP ligt dan schakelt de hybride warmtepomp van elektriciteit naar gas.
+      Je kan deze instellen op de financieel meest aantrekkelijke voor de consument,
+      maar kan ook een instelling kiezen die minder netwerkimpact oplevert.
+      \r\n</br></br>\r\n
+      Bekijk de grafiek aan de rechterkant voor advies bij het kiezen van de kostenoptimale
+      omslag-COP instelling vanuit een consumentenperspectief. Deze laat zien hoeveel het kost om een eenheid warmte te maken
+      met de HWP voor ruimteverwarming. Voor gas zijn die kosten onafhankelijk van de COP
+      (en dus de buitentemperatuur). Voor elektriciteit nemen de kosten
+      af met toenemende COP (en toenemende buitentemperatuur). Het kruispunt van
+      de twee curves is de kosten-optimale COP-instelling voor de gegeven kostprijs
+      van gas en elektriciteit. Deze kostprijs van gas en elektriciteit is hieronder
+      in te stellen. De startwaarde van het omslag-COP schuifje staat gelijk aan de kostenoptimale
+      omslag-COP bij de ingestelde kosten.
+      \r\n</br></br>\r\n
+      Als je geïnteresseerd bent in de impact van HWP's op het elektriciteitsnet, kijk
+      dan naar de grafiek die wordt weergegeven wanneer je op de 'Jaarlijkse'-knop in de
+      rechterhoek van de grafiek klikt. Deze grafiek toont de gas- en elektriciteitsvraag per uur van HHP's."
+    short_content_en:
+    short_content_nl:
+- id: 284
+  image: ''
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_solar_pv_curtailment
+  position: 2
+  sidebar_item_id: 55
+  output_element_id: 257
+  alt_output_element_id:
+  dependent_on: ''
+  description:
+    content_en:
+      "If a lot of solar PV is installed, this can cause high peaks on the
+      electricity network. It is therefore desirable to be able to curtail these peaks.
+      In some cases it is smart to connect solar parks to only a certain percentage
+      of the peak power. With the sliders below it is possible to set the
+      curtailment as a percentage of the peak power.
+      \r\n</br></br>\r\n
+      In the chart on the right you can see the effect of curtailment on the peaks of
+      the production curves and the yearly electricity production. If you are interested
+      in the effect of curtailment on the annual electricity production, have a look
+      at the table 'Curtailment of solar PV'. Click on 'see more charts' and you'll find
+      the table in the section 'Electricity balance > Flexibility'."
+    content_nl:
+      "Als veel zon-PV geïnstalleerd is, kan dit zorgen voor hoge pieken op het
+      elektriciteitsnetwerk. Daarom is het wenselijk de productie te kunnen verlagen.
+      In sommige gevallen is het slim om zonneparken aan te sluiten
+      op slechts een bepaald percentage van het piekvermogen. Met onderstaande schuifjes
+      is het mogelijk de productiebeperking in te stellen als percentage van het
+      piekvermogen.
+      \r\n</br></br>\r\n
+      In de grafiek rechts zie je het effect van productiebeperking op de productiepieken
+      én op de jaarlijkse elektriciteitsproductie. Als je geïnteresseerd bent in
+      het effect van productiebeperking op de jaarlijkse elektriciteitsproductie, kijk dan
+      in de tabel 'Productiebeperking van zonnepanelen'. Deze vind je als je klikt op
+      'meer grafieken bekijken' (rechtsboven) en kijkt bij 'Elektriciteitsbalans >
+      Flexibiliteit'."
+    short_content_en:
+    short_content_nl:
+- id: 285
+  image: ''
+  general_sub_header: heat_output
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_power_to_heat_for_district_heating
+  position: 2
+  sidebar_item_id: 54
+  output_element_id: 163
+  alt_output_element_id:
+  dependent_on: ''
+  description:
+    content_en: "At times of excess electricity supply, an electric boiler or heat pump
+      could convert excess electricity into heat for district heating. Other heat sources
+      for district heating can be set in <a href=\"/scenario/supply/heat/heat-sources\"
+      >Supply > District Heating</a>.
+      \r\n</br></br>\r\n
+      Please note that 1 MWth of power-to-heat boiler uses more electricity than 1 MWth
+      of power-to-heat pump. They produce the same amount of heat per hour, of course."
+    content_nl: "Wanneer er elektriciteitsoverschotten zijn, kunnen elektrische boilers
+      of warmtepompen deze overschotten omzetten in warmte voor warmtenetten. Overige
+      warmtebronnen voor warmtenetten kunnen bij <a href=\"/scenario/supply/heat/heat-sources\"
+      >Aanbod > Warmtenetten</a> worden ingesteld.
+      \r\n</br></br>\r\n
+      Houd er rekening mee dat 1 MWth power-to-heat boiler meer elektriciteit gebruikt
+      dan 1 MWth power-to-heat warmtepomp. Ze produceren natuurlijk wel dezelfde
+      hoeveelheid warmte."
+    short_content_en:
+    short_content_nl:

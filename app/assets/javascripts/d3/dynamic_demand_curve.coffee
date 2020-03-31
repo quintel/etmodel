@@ -1,3 +1,48 @@
+# Creates a function which may be used to determine the opacity of each serie in
+# the chart. This is used as a D3 function:
+#
+#   d3.selectAll('selector').style(opacity, seriesOpacity(visible))
+#
+# When a serie is made invisible, it is no longer included in the list of
+# visibleData. This can cause D3 to reuse a g.serie element which was previously
+# assigned to another serie. The initial chart may be:
+#
+#   1. data.key = serie_one
+#   2. data.key = serie_two
+#   3. data.key = serie_three
+#
+# If serie_one is made invisible, D3 will use that SVG element for serie_two,
+# and the element for serie_two is used for serie_three. Since elements are
+# hidden based on their keys, this results in the old serie_three element still
+# being visible:
+#
+#   1. data.key = serie_two
+#   2. data.key = serie_three
+#   3. data.key = serie_three <- unused serie with old data!
+#
+# `seriesOpacity` keeps track of series already seen so that they may be made
+# invisible:
+#
+#   1. data.key = serie_two
+#   2. data.key = serie_three
+#
+# Returns a function.
+seriesOpacity = (visibleSeries) ->
+  seen = {}
+
+  (serieData) ->
+    if seen[serieData.key] then return 0.0
+
+    seen[serieData.key] = true
+
+    # Sets the opacity of invisible series (particularly those whose
+    # values are all zeroes) to avoid rendering artifacts when multiple
+    # such series overlap.
+    if visibleSeries.some((serie) -> serie.get('gquery_key') == serieData.key)
+      1.0
+    else
+      0.0
+
 D3.dynamic_demand_curve =
   View: class extends D3YearlyChartView
     initialize: ->
@@ -123,7 +168,7 @@ D3.dynamic_demand_curve =
       @svg.select(".x_axis").call(@createTimeAxis(xScale))
       @svg.select(".y_axis").call(@createLinearAxis(yScale))
 
-      if @container_node().find("g.serie").length > 0
+      if @container_node().find("g.serie").length == @stackedData.length
         serie = @svg.selectAll('g.serie')
           .data(@stackedData)
           .select('path.area')
@@ -142,13 +187,4 @@ D3.dynamic_demand_curve =
       else
         @initialDraw(xScale, yScale, area, line)
 
-      serie = @svg.selectAll('g.serie')
-        .style('opacity', (data) ->
-          # Sets the opacity of invisible series (particularly those whose
-          # values are all zeroes) to avoid rendering artifacts when multiple
-          # such series overlap.
-          if _.find(legendSeries, (s) -> s.get('gquery_key') == data.key)
-            1.0
-          else
-            0.0
-        )
+      @svg.selectAll('g.serie').style('opacity', seriesOpacity(legendSeries))

@@ -15,10 +15,12 @@
       .row
         = f.input :company_school
 
-    = f.input :allow_news
-
     = f.button :submit, I18n.t('simple_form.labels.user.update'), class: 'primary'
     = link_to t('cancel'), root_path, class: 'button'
+
+
+- if MailchimpService.configured? || Rails.env.development?
+  = render partial: 'newsletter', locals: { user: @user }
 
 .delete_account
   %h2= t('user.delete_account.title')

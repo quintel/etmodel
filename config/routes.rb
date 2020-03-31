@@ -22,8 +22,6 @@ Etm::Application.routes.draw do
   resources :users, except: %i[index show edit destroy]
   resources :password_resets, only: %i[new create edit update]
 
-  get '/users/:id/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
-
   resource :user, only: %i[edit update destroy] do
     post :confirm_delete, on: :member
   end
@@ -140,6 +138,10 @@ Etm::Application.routes.draw do
   namespace :embeds do
     resource :pico, only: [:show]
   end
+
+  # Incoming webhooks
+  get '/incoming_webhooks/mailchimp/:key'  => 'incoming_webhooks#verify'
+  post '/incoming_webhooks/mailchimp/:key' => 'incoming_webhooks#mailchimp'
 
   %w[404 422 500].each do |code|
     get "/#{code}", to: 'errors#show', code: code

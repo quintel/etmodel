@@ -60,8 +60,7 @@ class Slide < YModel::Base
   # See Current.view
   # Some sliders cannot be used on some areas. Let's filter them out
   def safe_input_elements
-    @safe_input_elements ||= sliders.reject(&:area_dependent)
-      .sort_by(&:position)
+    sliders.reject(&:area_dependent).sort_by(&:position)
   end
 
   # Complementary to grouped_input_elements

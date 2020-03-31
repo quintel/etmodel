@@ -66,6 +66,8 @@ nl:
     energy_heat_burner_network_gas_steam_hot_water_output_curve: 'Gasketel (netwerk gas)'
     energy_heat_burner_waste_mix_steam_hot_water_output_curve: 'Afvalverbranding'
     energy_heat_burner_wood_pellets_steam_hot_water_output_curve: 'Biomassaketel'
+    energy_heat_flexibility_p2h_heatpump_electricity_steam_hot_water_output_curve: "Power-to-heat warmtepomp"
+    energy_heat_flexibility_p2h_boiler_electricity_steam_hot_water_output_curve: "Power-to-heat boiler"
     energy_heat_heatpump_water_water_electricity_steam_hot_water_output_curve: 'Elektrische warmtepomp'
     energy_heat_import_steam_hot_water_steam_hot_water_output_curve: 'Geïmporteerde warmte'
     energy_heat_industry_residual_heat_steam_hot_water_output_curve: 'Restwarmte uit de industrie'
@@ -155,6 +157,9 @@ nl:
     blue_energy: Blue Energy
     buildings_cooling_demand: "Koeling - Gebouwen"
     buildings_heating_demand: "Verwarming - Gebouwen"
+    buildings_solar_pv: 'Gebouwen'
+    buildings_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging gebouwen'
+    buildings_solar_pv_electricity_output_curve: 'Opwek gebouwen'
     buildings_solar_pv_solar_radiation: 'Zonnepanelen gebouwen'
     bunkers_flexibility_p2g_electricity: "Omgezet naar kerosine voor luchtvaart"
     busses: "Bussen"
@@ -275,12 +280,15 @@ nl:
     electricity_stored_in_EV: "Opgeslagen in elektrische auto's"
     electricity_stored_in_opac: "Opgeslagen in OPAC"
     electricity_stored_in_mv_batteries: "Opgeslagen in grootschalige batterijen"
+    electricity_converted_to_heat_district_heating_heatpump: "Omgezet in warmte voor warmtenetten (boiler)"
+    electricity_converted_to_heat_district_heating_boiler: "Omgezet in warmte voor warmtenetten (warmtepomp)"
     electricity_converted_to_heat_households: "Omgezet naar warmte voor huishoudens"
     electricity_converted_to_heat_industry: "Omgezet naar warmte voor industrie"
     electricity_converted_to_hydrogen: "Omgezet naar waterstof"
     electricity_converted_to_kerosene: "Omgezet naar kerosine voor luchtvaart"
     electricity_exported: "Geëxporteerd"
-    electricity_curtailed: "Productieverlaging"
+    electricity_curtailed: "Productiebeperking volatiele bronnen"
+    electricity_curtailed_solar_pv: "Productiebeperking zon PV"
     electrical_appliances: "Elektrische apparaten"
     losses_in_storage: "Verliezen"
     energetic_use: "Energetisch gebruik"
@@ -295,6 +303,8 @@ nl:
     energy_flexibility_pumped_storage_electricity: 'Opslag in stuwmeren'
     energy_flexibility_opac_electricity: 'Opslag in OPAC'
     energy_flexibility_mv_batteries_electricity: 'Grootschalige batterijopslag'
+    energy_heat_flexibility_p2h_boiler_electricity: "Omgezet in warmte voor warmtenetten (boiler)"
+    energy_heat_flexibility_p2h_heatpump_electricity: "Omgezet in warmte voor warmtenetten (warmtepomp)"
     energy_hydrogen_flexibility_p2g_electricity: 'Omgezet naar waterstof'
     energy_import: "Energie-import"
     energy_power_combined_cycle_ccs_coal: 'Kolenvergassing CCS'
@@ -310,6 +320,9 @@ nl:
     energy_power_nuclear_gen2_uranium_oxide: 'Kern conventioneel'
     energy_power_nuclear_gen3_uranium_oxide: 'Kern 3e Gen'
     energy_power_solar_csp_solar_radiation: 'Geconcentreerde zonnestroom'
+    energy_power_solar_pv: 'Zonneparken'
+    energy_power_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging zonneparken'
+    energy_power_solar_pv_electricity_output_curve: 'Opwek zonneparken'
     energy_power_solar_pv_solar_radiation: 'Zonnecentrales PV'
     energy_power_supercritical_coal: 'Kolen conventioneel'
     energy_power_supercritical_waste_mix: 'Afvalverbranding'
@@ -441,6 +454,9 @@ nl:
     households_flexibility_p2p_electricity: 'Opgeslagen in thuisbatterijen'
     households_flexibility_p2p: 'Thuisbatterijen'
     households_heating_demand: "Verwarming huishoudens"
+    households_solar_pv: 'Huishoudens'
+    households_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging huishoudens'
+    households_solar_pv_electricity_output_curve: 'Opwek huishoudens'
     households_solar_pv_solar_radiation: 'Zonnepanelen huishoudens'
     households_space_heater_coal: "Kolenketel ruimteverwarming"
     households_space_heater_combined_network_gas: "HR combiketel ruimteverwarming"
@@ -450,6 +466,8 @@ nl:
     households_space_heater_heatpump_air_water_electricity: "Luchtwarmtepomp ruimteverwarming"
     households_space_heater_heatpump_ground_water_electricity: "Bodemwarmtepomp ruimteverwarming"
     households_space_heater_hybrid_heatpump_air_water_electricity: "Hybride warmtepomp ruimteverwarming"
+    households_space_heater_hybrid_heatpump_electricity_input_curve: "Elektriciteit"
+    households_space_heater_hybrid_heatpump_network_gas_input_curve: "Netwerkgas"
     households_space_heater_micro_chp_network_gas: "Micro-WKK ruimteverwarming"
     households_space_heater_network_gas: "Gasketel ruimteverwarming"
     households_space_heater_wood_pellets: "Houtpelletkachel ruimteverwarming"
@@ -466,6 +484,10 @@ nl:
     households_water_heater_resistive_electricity: "Elektrische boiler heet water"
     households_water_heater_solar_thermal: "Zonthermische collectoren heet water"
     households_water_heater_wood_pellets: "Houtpelletkachel heet water"
+    households_space_heater_hybrid_heatpump_electricity_input_curve: "Elektriciteit (ruimteverwarming)"
+    households_space_heater_hybrid_heatpump_network_gas_input_curve: "Gas (ruimteverwarming)"
+    households_water_heater_hybrid_heatpump_electricity_input_curve: "Elektriciteit (warm water)"
+    households_water_heater_hybrid_heatpump_network_gas_input_curve: "Gas (warm water)"
     human_powered_bicycles: "Fietsen"
     hv_buildings_space_heating: "Warmte in gebouwen"
     hv_agriculture: "Landbouw"
@@ -696,6 +718,7 @@ nl:
     onshore: "Op land"
     onshore_wind_turbines: "Windmolens op land"
     operation_maintenance_cost: "Onderhoud en beheer"
+    optimal_threshold: "Kostenoptimaal omslagpunt"
     other: "Overig"
     other_heat: "Individuele warmte"
     other_metals: "Overige metalen"
@@ -735,6 +758,7 @@ nl:
     solar_csp: "Zon CSP"
     solar_panels: "Zonnepanelen"
     solar_pv: "Zon PV"
+    solar_pv_total_curtailed_electricity_curve: "Productiebeperking zon PV"
     solar_thermal: "Zonthermie"
     solar_thermal_hot_water: "Zonthermie (voor warm water)"
     solar_thermal_heating: "Zonthermie (voor verwarming)"
@@ -800,6 +824,8 @@ nl:
     households_final_demand_hydrogen: "Warmte voor huishoudens"
     energy_heat_from_hydrogen: "Warmte voor warmtenetten"
     other_final_demand_steam_hot_water_in_collective_heat_network_mekko: "Overig"
+    energy_heat_flexibility_p2h_boiler_electricity_in_collective_heat_network_mekko: "Power-to-heat boiler"
+    energy_heat_flexibility_p2h_heatpump_electricity_in_collective_heat_network_mekko: "Power-to-heat warmtepomp"
     energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko: "Warmte-overschot (verspild)"
     energy_heat_network_storage_loss_in_collective_heat_network_mekko: "Opslagverliezen (incl. overschot)"
     energy_heat_well_geothermal_in_collective_heat_network_mekko: "Geothermie"

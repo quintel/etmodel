@@ -33,15 +33,18 @@ class @D3ChartView extends BaseChartView
   render: (force_redraw) =>
     return false unless @model.supported_by_current_browser()
 
+    if @model.get('requires_merit_order')
+      @check_merit_enabled()
+
+      unless App.settings.merit_order_enabled()
+        @drawn = false
+        return
+
     if force_redraw || !@drawn
       @clear_container()
       @container_node().html(@html())
       @draw()
       @drawn = true
-
-    if @model.get('requires_merit_order')
-      @check_merit_enabled()
-      @drawn = App.settings.merit_order_enabled()
 
     @refresh()
     @display_empty_message()

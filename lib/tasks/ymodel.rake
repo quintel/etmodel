@@ -26,7 +26,7 @@ namespace :ymodel do
   # This task is used to migrate from ids to keys as index.
 
   task :migrate_refering_ids,
-       %i[referenced_model efering_model] => [:environment] do |_t, args|
+       %i[referenced_model refering_model] => [:environment] do |_t, args|
     referenced_model = Kernel.const_get(args.referenced_model.camelcase)
     refering_model   = Kernel.const_get(args.refering_model.camelcase)
 

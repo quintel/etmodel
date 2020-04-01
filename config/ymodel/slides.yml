@@ -4857,31 +4857,34 @@
       can be adjusted below. The start value of the treshold COP slider matches the
       calculated cost-optimal threshold COP for space heating. \r\n</br></br>\r\n
       If you're interested in the impact of HHPs on the electricity grid, have a look
-      at the chart that is shown when clicking on the 'Annual'-button in the right
-      corner of the chart. This chart shows the hourly gas and electricity demand
-      of HHPs. \r\n</br></br>\r\n The default threshold COP represents using the electric
-      part of the hybrid heat pump maximally for space heating and using gas for hot
-      water."
-    content_nl: "De efficiëntie van (hybride) warmtepompen is afhankelijk van de buitentemperatuur
-      en wordt aangegeven met de 'coefficient of performance' (COP). De COP wordt
-      lager als de buitentemperatuur afneemt. Hieronder kan je de zogenaamde 'omslag-COP'
-      instellen: wanneer de COP van de warmtepomp onder de omslag-COP ligt dan schakelt
-      de hybride warmtepomp van elektriciteit naar gas. Je kan deze instellen op de
-      financieel meest aantrekkelijke voor de consument, maar kan ook een instelling
-      kiezen die minder netwerkimpact oplevert. \r\n</br></br>\r\n Bekijk de grafiek
-      aan de rechterkant voor advies bij het kiezen van de kostenoptimale omslag-COP
-      instelling vanuit een consumentenperspectief. Deze laat zien hoeveel het kost
-      om een eenheid warmte te maken met de HWP voor ruimteverwarming. Voor gas zijn
-      die kosten onafhankelijk van de COP (en dus de buitentemperatuur). Voor elektriciteit
-      nemen de kosten af met toenemende COP (en toenemende buitentemperatuur). Het
-      kruispunt van de twee curves is de kosten-optimale COP-instelling voor de gegeven
-      kostprijs van gas en elektriciteit. Deze kostprijs van gas en elektriciteit
-      is hieronder in te stellen. De startwaarde van het omslag-COP schuifje staat
-      gelijk aan de kostenoptimale omslag-COP bij de ingestelde kosten. \r\n</br></br>\r\n
-      Als je geïnteresseerd bent in de impact van HWP's op het elektriciteitsnet,
-      kijk dan naar de grafiek die wordt weergegeven wanneer je op de 'Jaarlijkse'-knop
-      in de rechterhoek van de grafiek klikt. Deze grafiek toont de gas- en elektriciteitsvraag
-      per uur van HHP's."
+      at the chart that is shown when clicking on the 'Annual'-button in the right corner
+      of the chart. This chart shows the hourly gas and electricity demand of HHPs. If you're
+      interested in the share of gas and electricity used by HHPs, have a look at the table
+      'Hybrid heat pump gas and electricity shares' in the chart list (Demand -> Households)."
+
+    content_nl: "De efficiëntie van (hybride) warmtepompen is afhankelijk van
+      de buitentemperatuur en wordt aangegeven met de 'coefficient of performance'
+      (COP). De COP wordt lager als de buitentemperatuur afneemt. Hieronder kan je
+      de zogenaamde 'omslag-COP' instellen: wanneer de COP van de warmtepomp onder de
+      omslag-COP ligt dan schakelt de hybride warmtepomp van elektriciteit naar gas.
+      Je kan deze instellen op de financieel meest aantrekkelijke voor de consument,
+      maar kan ook een instelling kiezen die minder netwerkimpact oplevert.
+      \r\n</br></br>\r\n
+      Bekijk de grafiek aan de rechterkant voor advies bij het kiezen van de kostenoptimale
+      omslag-COP instelling vanuit een consumentenperspectief. Deze laat zien hoeveel het kost om een eenheid warmte te maken
+      met de HWP voor ruimteverwarming. Voor gas zijn die kosten onafhankelijk van de COP
+      (en dus de buitentemperatuur). Voor elektriciteit nemen de kosten
+      af met toenemende COP (en toenemende buitentemperatuur). Het kruispunt van
+      de twee curves is de kosten-optimale COP-instelling voor de gegeven kostprijs
+      van gas en elektriciteit. Deze kostprijs van gas en elektriciteit is hieronder
+      in te stellen. De startwaarde van het omslag-COP schuifje staat gelijk aan de kostenoptimale
+      omslag-COP bij de ingestelde kosten.
+      \r\n</br></br>\r\n
+      Als je geïnteresseerd bent in de impact van HWP's op het elektriciteitsnet, kijk
+      dan naar de grafiek die wordt weergegeven wanneer je op de 'Jaarlijkse'-knop in de
+      rechterhoek van de grafiek klikt. Deze grafiek toont de gas- en elektriciteitsvraag per uur van HHP's.
+      Als je geïnteresseerd bent in het aandeel gas en elektriciteit dat de HHP's gebruiken,
+      kijk dan naar de table 'Hybride warmtepomp: aandeel elektrisch en gas' in de grafiekenlijst (Vraag -> Huishoudens)"
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: flexibility_net_load

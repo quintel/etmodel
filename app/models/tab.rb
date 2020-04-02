@@ -17,7 +17,8 @@
 class Tab < YModel::Base
   include AreaDependent::YModel
 
-  has_many :sidebar_items
+  index_on :key
+  has_many :sidebar_items, foreign_key: :tab_key
 
   # Returns all Tabs intended for display to ordinary users.
   def self.frontend

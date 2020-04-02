@@ -24,12 +24,30 @@ describe SidebarItem do
     it { is_expected.to respond_to(:key) }
     it { is_expected.to respond_to(:section) }
     it { is_expected.to respond_to(:percentage_bar_query) }
-    it { is_expected.to respond_to(:tab_id) }
     it { is_expected.to respond_to(:position) }
-    it { is_expected.to respond_to(:parent_id) }
+    it { is_expected.to respond_to(:parent_key) }
 
     # methods
     it { is_expected.to respond_to(:parsed_key_for_admin) }
     it { is_expected.to respond_to(:short_name) }
+
+    describe '.tab' do
+      subject { described_class.all.first }
+
+      it 'returns a tab' do
+        expect(subject.tab).to be_a Tab
+      end
+    end
+  end
+
+  # We might want to lift these preconditions to the applications from the
+  # testsuite as it provides better feedback to the modelers that way.
+  describe 'YAML file' do
+    subject { described_class.all }
+
+    it 'has unique keys' do
+      keys = subject.map(&:key)
+      expect(keys.size).to eq(keys.uniq.size)
+    end
   end
 end

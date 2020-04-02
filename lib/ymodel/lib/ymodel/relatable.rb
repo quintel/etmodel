@@ -2,34 +2,51 @@
 
 require 'active_support/inflector'
 require 'ymodel/errors'
+require 'ymodel/helper'
 
 module YModel
-  # This module contains YModel logic for managing relations. Some caveats:
-  #   - combining the 'as' and 'foreign_key' options won't work.
-  #   - the default foreign_key won't contain namespaces.
-  #   - Seems to be the most smelly piece of code in YModel.
+  # This module contains YModel logic for managing relations.
   module Relatable
-    def belongs_to(model, _options = {})
+    # This method is used to define the key on which relations are build.
+    # We default to 'id'.
+    def index_on(key)
+      @index = key
+    end
+
+    def index
+      @index || :id
+    end
+
+    def belongs_to(model, options = {})
       define_method(model) do
-        foreign_key = model.to_s.singularize + '_id'
-        relation_class.find(instance_variable_get(foreign_key))
+        # We might want to create a mechanism to memoize this.
+        related_class =
+          options[:class_name] || YModel::Helper.model_class(model)
+        key =
+          if related_class < YModel::Base
+            :"#{model.to_s.singularize}_#{related_class.index}"
+          else
+            :"#{related_class.to_s.singularize}_id"
+          end
+        related_class.find(self[key])
       end
     end
 
-    # These cop is disabled because I'm just copying ActiveRecords interface
+    # These cop is disabled because its  a copy of ActiveRecords interface
     # rubocop:disable Naming/PredicateName
     # rubocop:disable Naming/UncommunicativeMethodParamName
     def has_many(model, class_name: nil, as: nil, foreign_key: nil)
       raise_options_error if as && foreign_key
 
       foreign_key ||= default_foreign_key
-      relation_class = model_class(class_name || model)
-
       define_method(model) do
-        return relation_class.where(foreign_key.to_sym => id) unless as
-
-        relation_class.where("#{as}_id" => id,
-                             "#{as}_type" => self.class.name)
+        relation_class = YModel::Helper.model_class(class_name || model)
+        if as
+          relation_class.where("#{as}_id" => id,
+                               "#{as}_type" => self.class.name)
+        else
+          relation_class.where(foreign_key.to_sym => index)
+        end
       end
     end
 
@@ -37,10 +54,9 @@ module YModel
       raise_options_error if as && foreign_key
 
       foreign_key ||= default_foreign_key
-      relation_class = model_class(class_name || model)
-
       define_method(model) do
-        return relation_class.find_by(foreign_key => id) unless as
+        relation_class = YModel::Helper.model_class(class_name || model)
+        return relation_class.find_by(foreign_key => index) unless as
 
         relation_class.find_by("#{as}_id" => id,
                                "#{as}_type" => self.class.name)
@@ -53,14 +69,6 @@ module YModel
 
     def default_foreign_key
       name.foreign_key
-    end
-
-    def model_class(model)
-      Kernel.const_get(model.to_s.singularize.camelcase)
-    rescue StandardError
-      message = "relation `#{model}` couldn't be made because constant "\
-                "`#{model.to_s.singularize.camelcase}` doesn't exist."
-      raise YModel::MissingConstant, message
     end
 
     def raise_options_error

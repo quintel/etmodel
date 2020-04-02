@@ -208,6 +208,7 @@ describe ScenariosController, vcr: true do
         it 'retains the area code' do
           expect(subject.area_code).to eq('de')
         end
+
         it 'retains the api session id' do
           expect(subject.api_session_id).to eq(123)
         end
@@ -216,11 +217,6 @@ describe ScenariosController, vcr: true do
       context 'when loading the MYC play endpoint' do
         # Rendering the view triggers requests to ETEngine.
         render_views false
-
-        # before do
-        #   # Create a basic interface.
-        #   sidebar_item.slides.first
-        # end
 
         context 'with a valid scenario' do
           it 'sets the API session ID' do

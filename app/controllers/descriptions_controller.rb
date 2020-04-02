@@ -6,10 +6,6 @@ class DescriptionsController < ApplicationController
     @chart = OutputElement.find params[:id]
     @description = @chart.description_content
 
-    if @description.blank?
-      head :ok
-    else
-      render :show, layout: false
-    end
+    render :show, layout: false
   end
 end

@@ -2,7 +2,10 @@
   %h1= I18n.t(@chart.title_for_description)
 
   %p
-    = @description
+    -if @description.blank?
+      No description available yet
+    -else
+      = @description
     %div{:style => 'clear:both'} &nbsp;
 
 - if @chart.description_embeds_player?

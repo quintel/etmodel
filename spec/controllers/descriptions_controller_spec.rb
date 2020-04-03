@@ -3,8 +3,8 @@ require 'rails_helper'
 describe DescriptionsController do
   render_views
 
-  let!(:chart) { OutputElement.all.first }
-  let!(:description) { chart.description}
+  let(:chart) { OutputElement.all.first }
+  let(:description) { chart.description }
 
   describe "#charts" do
     it "should return the chart description" do

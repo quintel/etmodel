@@ -13,7 +13,7 @@ describe OutputElementSerie do
     it { is_expected.to respond_to(:output_element) }
 
     # Attributes
-    it { is_expected.to respond_to(:output_element_id) }
+    it { is_expected.to respond_to(:output_element_key) }
     it { is_expected.to respond_to(:label) }
     it { is_expected.to respond_to(:color) }
     it { is_expected.to respond_to(:order_by) }

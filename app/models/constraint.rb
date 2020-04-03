@@ -50,7 +50,6 @@ class Constraint < ActiveRecord::Base
 
   validates :group, presence: true, inclusion: GROUPS
 
-  belongs_to :output_element
   has_one :description, as: :describable, dependent: :destroy
   has_one :area_dependency, as: :dependable, dependent: :destroy
 
@@ -116,5 +115,12 @@ class Constraint < ActiveRecord::Base
     json = super(only: %i[id key gquery_key])
 
     ActiveRecord::Base.include_root_in_json ? json['constraint'] : json
+  end
+
+  # OutputElements are now indexed on keys, but we still have the id relation
+  # for Constraints
+  def output_element
+    return unless output_element_id
+    OutputElement.find_by(id: output_element_id)
   end
 end

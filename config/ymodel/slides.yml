@@ -6,8 +6,6 @@
   subheader_image: households_insulation_energy_label.png
   key: demand_households_insulation
   position: 4
-  output_element_id: 58
-  alt_output_element_id: 58
   dependent_on: ''
   description:
     content_en: 'The demand for heating depends on the level of insulation. Below
@@ -19,6 +17,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: households
+  alt_output_element_key: effect_of_insulation_in_households
+  output_element_key: effect_of_insulation_in_households
 - id: 2
   image: house_lighting.gif
   general_sub_header: share
@@ -26,8 +26,6 @@
   subheader_image: ''
   key: demand_households_lighting
   position: 12
-  output_element_id: 2
-  alt_output_element_id: 2
   dependent_on: ''
   description:
     content_en: Lighting is a small but obvious part of a household's need for energy.
@@ -36,6 +34,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: households
+  alt_output_element_key: use_of_final_electricity_demand_in_households
+  output_element_key: use_of_final_electricity_demand_in_households
 - id: 3
   image: house_appliances.gif
   general_sub_header: change
@@ -43,8 +43,6 @@
   subheader_image: energy_label.png
   key: demand_households_appliances
   position: 11
-  output_element_id: 2
-  alt_output_element_id: 2
   dependent_on: ''
   description:
     content_en: 'There is ample room for improvement of household appliances. How
@@ -54,6 +52,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: households
+  alt_output_element_key: use_of_final_electricity_demand_in_households
+  output_element_key: use_of_final_electricity_demand_in_households
 - id: 4
   image: house_heating.gif
   general_sub_header: ''
@@ -61,8 +61,6 @@
   subheader_image: ''
   key: demand_households_heating
   position: 5
-  output_element_id: 56
-  alt_output_element_id: 56
   dependent_on: ''
   description:
     content_en: "How will households be heated and generate hot water? \r\n"
@@ -70,6 +68,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: households
+  alt_output_element_key: source_of_heat_used_in_households
+  output_element_key: source_of_heat_used_in_households
 - id: 5
   image: house_solarpanels.gif
   general_sub_header: of_potential
@@ -77,8 +77,6 @@
   subheader_image: ''
   key: demand_households_solar_panels
   position: 8
-  output_element_id: 5
-  alt_output_element_id: 5
   dependent_on: ''
   description:
     content_en: Generating electricity locally saves energy and maybe also money in
@@ -88,6 +86,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: households
+  alt_output_element_key: source_of_electricity_in_households
+  output_element_key: source_of_electricity_in_households
 - id: 6
   image: ''
   general_sub_header: price
@@ -95,8 +95,6 @@
   subheader_image: ''
   key: costs_combustion_fuel
   position: 1
-  output_element_id: 32
-  alt_output_element_id: 32
   dependent_on: ''
   description:
     content_en: Nobody can predict future fuel prices. This makes electricity costs
@@ -107,6 +105,8 @@
     short_content_en: test
     short_content_nl: ''
   sidebar_item_key: fuel_costs
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production
 - id: 7
   image: ''
   general_sub_header: change
@@ -114,8 +114,6 @@
   subheader_image: 
   key: costs_combustion_investment
   position: 2
-  output_element_id: 32
-  alt_output_element_id: 32
   dependent_on: 
   description:
     content_en: 'How will the investment costs of these plants change in the future?
@@ -127,6 +125,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: combustion
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production
 - id: 8
   image: ''
   general_sub_header: change
@@ -134,8 +134,6 @@
   subheader_image: 
   key: costs_combustion_operational_and_maintenance
   position: 3
-  output_element_id: 32
-  alt_output_element_id: 32
   dependent_on: 
   description:
     content_en: The costs to run power plants may be different in the future. How
@@ -145,6 +143,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: combustion
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production
 - id: 9
   image: ''
   general_sub_header: change
@@ -152,8 +152,6 @@
   subheader_image: 
   key: costs_wind_investment
   position: 1
-  output_element_id: 32
-  alt_output_element_id: 32
   dependent_on: 
   description:
     content_en: 'How will the investment costs of wind turbines change in the future?
@@ -165,6 +163,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: wind
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production
 - id: 10
   image: ''
   general_sub_header: change
@@ -172,8 +172,6 @@
   subheader_image: 
   key: costs_wind_operational_and_maintenance
   position: 2
-  output_element_id: 32
-  alt_output_element_id: 32
   dependent_on: 
   description:
     content_en: The costs to run wind power may change in the future, as the technology
@@ -183,6 +181,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: wind
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production
 - id: 11
   image: ''
   general_sub_header: change
@@ -190,8 +190,6 @@
   subheader_image: 
   key: costs_water_investment
   position: 1
-  output_element_id: 32
-  alt_output_element_id: 32
   dependent_on: 
   description:
     content_en: How will the investment costs of water power change in the future?
@@ -203,6 +201,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: water
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production
 - id: 12
   image: ''
   general_sub_header: change
@@ -210,8 +210,6 @@
   subheader_image: 
   key: costs_water_operational_and_maintenance
   position: 2
-  output_element_id: 32
-  alt_output_element_id: 32
   dependent_on: 
   description:
     content_en: 'The costs to run hydro-electric dams are a minor part of the total.
@@ -221,6 +219,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: water
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production
 - id: 13
   image: ''
   general_sub_header: change
@@ -228,8 +228,6 @@
   subheader_image: ''
   key: costs_geothermal
   position: 2
-  output_element_id: 48
-  alt_output_element_id: 32
   dependent_on: ''
   description:
     content_en: Geothermal energy is getting quite a bit of attention these days.
@@ -240,6 +238,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: costs_heat
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: breakdown_of_total_costs
 - id: 17
   image: ''
   general_sub_header: change
@@ -247,8 +247,6 @@
   subheader_image: ''
   key: costs_solar_investment
   position: 1
-  output_element_id: 32
-  alt_output_element_id: 32
   dependent_on: ''
   description:
     content_en: How will investment costs for realizing solar power in your own country
@@ -260,6 +258,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: solar
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production
 - id: 19
   image: ''
   general_sub_header: change
@@ -267,8 +267,6 @@
   subheader_image: 
   key: costs_nuclear_investment
   position: 2
-  output_element_id: 32
-  alt_output_element_id: 32
   dependent_on: 
   description:
     content_en: 'How will the investment costs for nuclear plants change in the future?
@@ -280,6 +278,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: nuclear
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production
 - id: 20
   image: ''
   general_sub_header: change
@@ -287,8 +287,6 @@
   subheader_image: 
   key: costs_nuclear_operational_and_maintenance
   position: 3
-  output_element_id: 32
-  alt_output_element_id: 32
   dependent_on: 
   description:
     content_en: The costs to run nuclear plants may be different in the future. How
@@ -299,6 +297,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: nuclear
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production
 - id: 21
   image: ''
   general_sub_header: change
@@ -306,8 +306,6 @@
   subheader_image: ''
   key: costs_nuclear_fuel
   position: 1
-  output_element_id: 32
-  alt_output_element_id: 32
   dependent_on: ''
   description:
     content_en: How much will nuclear fuel cost compared to today's prices? On the
@@ -318,6 +316,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: fuel_costs
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production
 - id: 22
   image: ''
   general_sub_header: change
@@ -325,8 +325,6 @@
   subheader_image: ''
   key: costs_co2_prices
   position: 1
-  output_element_id: 32
-  alt_output_element_id: 32
   dependent_on: ''
   description:
     content_en: Emitting CO<sub>2</sub> is no longer free for European power producers.
@@ -338,6 +336,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: co2
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production
 - id: 23
   image: ''
   general_sub_header: change
@@ -345,8 +345,6 @@
   subheader_image: ''
   key: costs_co2_ccs
   position: 2
-  output_element_id: 32
-  alt_output_element_id: 32
   dependent_on: ''
   description:
     content_en: Will CO<sub>2</sub> capture and storage really become cheaper than
@@ -356,6 +354,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: co2
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production
 - id: 24
   image: car.gif
   general_sub_header: "%/year"
@@ -363,8 +363,6 @@
   subheader_image: ''
   key: demand_transport_passenger_transport
   position: 1
-  output_element_id: 202
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "Our mobility has grown as a result of a growing economy. Will this
@@ -390,6 +388,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: transport_passenger_transport
+  alt_output_element_key: 
+  output_element_key: use_of_final_demand_in_passenger_transport
 - id: 25
   image: engine.gif
   general_sub_header: share
@@ -397,8 +397,6 @@
   subheader_image: ''
   key: demand_transport_car_technology
   position: 2
-  output_element_id: 203
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: Will there be a shift away from cars that run on fossil fuels? How
@@ -417,6 +415,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: transport_passenger_transport
+  alt_output_element_key: 
+  output_element_key: use_of_final_demand_in_cars
 - id: 26
   image: engine.gif
   general_sub_header: share
@@ -424,8 +424,6 @@
   subheader_image: ''
   key: demand_transport_truck_technology
   position: 12
-  output_element_id: 207
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: Will there be a shift away from trucks that run on fossil fuels? How
@@ -438,6 +436,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: transport_freight_transport
+  alt_output_element_key: 
+  output_element_key: use_of_final_demand_in_freight_transport_technologies
 - id: 27
   image: industry.gif
   general_sub_header: "%/year"
@@ -445,8 +445,6 @@
   subheader_image: ''
   key: demand_industry_demand_growth
   position: 1
-  output_element_id: 153
-  alt_output_element_id: 153
   dependent_on: ''
   description:
     content_en: 'The growth you indicate here is due to economic and population growth
@@ -460,6 +458,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: industry_other
+  alt_output_element_key: 
+  output_element_key: 
 - id: 28
   image: industry.gif
   general_sub_header: share
@@ -467,8 +467,6 @@
   subheader_image: ''
   key: demand_industry_heat
   position: 3
-  output_element_id: 154
-  alt_output_element_id: 154
   dependent_on: ''
   description:
     content_en: How will industry meet heat demand? A different mix of technologies
@@ -484,6 +482,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: industry_other
+  alt_output_element_key: 
+  output_element_key: 
 - id: 29
   image: industry.gif
   general_sub_header: "%/year"
@@ -491,8 +491,6 @@
   subheader_image: ''
   key: demand_industry_efficiency_improvement
   position: 2
-  output_element_id: 153
-  alt_output_element_id: 153
   dependent_on: ''
   description:
     content_en: Of all sectors in the economy, industry has the strongest track record
@@ -503,6 +501,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: industry_other
+  alt_output_element_key: 
+  output_element_key: 
 - id: 30
   image: tractor_and_greenhouse.gif
   general_sub_header: "%/year"
@@ -510,8 +510,6 @@
   subheader_image: ''
   key: demand_agriculture_demand_growth
   position: 1
-  output_element_id: 29
-  alt_output_element_id: 29
   dependent_on: 
   description:
     content_en: 'The growth you indicate here is due to economic and population growth.
@@ -523,6 +521,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: agriculture
+  alt_output_element_key: use_of_final_demand_in_agriculture
+  output_element_key: use_of_final_demand_in_agriculture
 - id: 31
   image: tractor_and_greenhouse.gif
   general_sub_header: share
@@ -530,8 +530,6 @@
   subheader_image: ''
   key: demand_agriculture_heat
   position: 2
-  output_element_id: 30
-  alt_output_element_id: 30
   dependent_on: ''
   description:
     content_en: How is heat produced in agriculture? A different mix of heat generating
@@ -543,6 +541,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: agriculture
+  alt_output_element_key: source_of_heat_in_agriculture
+  output_element_key: source_of_heat_in_agriculture
 - id: 32
   image: ''
   general_sub_header: "%/year"
@@ -550,8 +550,6 @@
   subheader_image: 
   key: demand_other_demand_growth
   position: 1
-  output_element_id: 31
-  alt_output_element_id: 31
   dependent_on: 
   description:
     content_en: 'The growth you indicate here is due to economic and population growth.
@@ -561,6 +559,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: other
+  alt_output_element_key: use_of_final_demand_in_other_sector
+  output_element_key: use_of_final_demand_in_other_sector
 - id: 34
   image: car_engine.gif
   general_sub_header: "%/year"
@@ -568,8 +568,6 @@
   subheader_image: ''
   key: demand_transport_efficiency_improvement
   position: 2
-  output_element_id: 201
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: Transport vehicles tend to become more energy efficient over time,
@@ -581,6 +579,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: transport
+  alt_output_element_key: 
+  output_element_key: transport_categories_overview
 - id: 35
   image: windmills.gif
   general_sub_header: max surface
@@ -588,8 +588,6 @@
   subheader_image: ''
   key: policy_area_wind_turbines
   position: 1
-  output_element_id: 134
-  alt_output_element_id: 52
   dependent_on: 
   description:
     content_en: "'Not in my backyard' is most people's attitude to wind turbines.
@@ -599,6 +597,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: area
+  alt_output_element_key: mekko_of_primary_demand
+  output_element_key: area_targets
 - id: 38
   image: ''
   general_sub_header: change
@@ -606,8 +606,6 @@
   subheader_image: ''
   key: policy_sustainability_co2_emission_compared_to_1990
   position: 1
-  output_element_id: 127
-  alt_output_element_id: 46
   dependent_on: ''
   description:
     content_en: Governments set CO<sub>2</sub> reduction targets. By how much do you
@@ -617,6 +615,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: sustainability
+  alt_output_element_key: co2_emissions
+  output_element_key: renewability_targets
 - id: 39
   image: ''
   general_sub_header: "% of total"
@@ -624,8 +624,6 @@
   subheader_image: ''
   key: policy_sustainability_renewables
   position: 2
-  output_element_id: 127
-  alt_output_element_id: 34
   dependent_on: 
   description:
     content_en: 'Governments set targets for how much of the energy used should be
@@ -635,6 +633,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: sustainability
+  alt_output_element_key: 
+  output_element_key: renewability_targets
 - id: 40
   image: dependence_chart.png
   general_sub_header: maximum
@@ -642,8 +642,6 @@
   subheader_image: ''
   key: policy_dependence_foreign_dependence
   position: 1
-  output_element_id: 132
-  alt_output_element_id: 76
   dependent_on: ''
   description:
     content_en: "Import and export contribute positively to the economic activity
@@ -667,6 +665,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: dependence
+  alt_output_element_key: future_energy_imports
+  output_element_key: dependence_targets
 - id: 41
   image: ''
   general_sub_header: maximum increase
@@ -674,8 +674,6 @@
   subheader_image: ''
   key: policy_cost_energy
   position: 1
-  output_element_id: 133
-  alt_output_element_id: 39
   dependent_on: 
   description:
     content_en: By how much are energy costs allowed to change in the future?
@@ -683,6 +681,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: cost
+  alt_output_element_key: 
+  output_element_key: cost_targets
 - id: 43
   image: house.gif
   general_sub_header: ''
@@ -690,8 +690,6 @@
   subheader_image: ''
   key: demand_households_demand_growth
   position: 13
-  output_element_id: 213
-  alt_output_element_id: 213
   dependent_on: ''
   description:
     content_en: Changes in personal prosperity influence the household energy demand.
@@ -706,6 +704,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: households
+  alt_output_element_key: households_final_demand_per_application
+  output_element_key: households_final_demand_per_application
 - id: 44
   image: industry_solarpanels.gif
   general_sub_header: heat output
@@ -713,8 +713,6 @@
   subheader_image: ''
   key: supply_heat_network_industry
   position: 13
-  output_element_id: 251
-  alt_output_element_id: 28
   dependent_on: ''
   description:
     content_en: 'Below you can set the number of local combined heat and power (CHP)
@@ -730,6 +728,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: industry
+  alt_output_element_key: source_of_heat_and_electricity_in_industry
+  output_element_key: industrial_heat_mekko
 - id: 45
   image: ''
   general_sub_header: electricity output
@@ -737,8 +737,6 @@
   subheader_image: ''
   key: supply_electricity_coal_plants
   position: 1
-  output_element_id: 99
-  alt_output_element_id: 99
   dependent_on: ''
   description:
     content_en: Coal-fired power plants tend to be running as much as possible. They
@@ -750,6 +748,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: electricity
+  alt_output_element_key: source_of_electricity_production
+  output_element_key: source_of_electricity_production
 - id: 46
   image: ''
   general_sub_header: electricity output
@@ -757,8 +757,6 @@
   subheader_image: ''
   key: supply_electricity_gas_plants
   position: 2
-  output_element_id: 99
-  alt_output_element_id: 99
   dependent_on: ''
   description:
     content_en: Gas-fired power plants produce roughly half as much CO<sub>2</sub>
@@ -770,6 +768,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: electricity
+  alt_output_element_key: source_of_electricity_production
+  output_element_key: source_of_electricity_production
 - id: 47
   image: ''
   general_sub_header: ''
@@ -777,8 +777,6 @@
   subheader_image: ''
   key: supply_electricity_oil_plants
   position: 3
-  output_element_id: 99
-  alt_output_element_id: 99
   dependent_on: ''
   description:
     content_en: "Oil-fired power plants are not common in Europe. These plants produce
@@ -792,6 +790,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: electricity
+  alt_output_element_key: source_of_electricity_production
+  output_element_key: source_of_electricity_production
 - id: 48
   image: ''
   general_sub_header: ''
@@ -799,8 +799,6 @@
   subheader_image: ''
   key: supply_electricity_nuclear_plant
   position: 4
-  output_element_id: 99
-  alt_output_element_id: 99
   dependent_on: ''
   description:
     content_en: Here you can set the capacity for conventional and 3rd generation
@@ -820,6 +818,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: electricity
+  alt_output_element_key: source_of_electricity_production
+  output_element_key: source_of_electricity_production
 - id: 49
   image: ''
   general_sub_header: share
@@ -827,8 +827,6 @@
   subheader_image: ''
   key: supply_electricity_renewable_gas
   position: 3
-  output_element_id: 77
-  alt_output_element_id: 77
   dependent_on: ''
   description:
     content_en: 'Natural gas in the gas network can be mixed with green gas to make
@@ -842,6 +840,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: biomass
+  alt_output_element_key: gas_network_mix
+  output_element_key: gas_network_mix
 - id: 51
   image: ''
   general_sub_header: ''
@@ -849,8 +849,6 @@
   subheader_image: ''
   key: supply_electricity_renewable_wind_turbines
   position: 1
-  output_element_id: 99
-  alt_output_element_id: 99
   dependent_on: ''
   description:
     content_en: "How much wind power to you want to install? Full load hours for wind
@@ -863,6 +861,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: electricity_renewable
+  alt_output_element_key: source_of_electricity_production
+  output_element_key: source_of_electricity_production
 - id: 52
   image: ''
   general_sub_header: ''
@@ -870,8 +870,6 @@
   subheader_image: ''
   key: supply_electricity_renewable_hydro_electric
   position: 3
-  output_element_id: 99
-  alt_output_element_id: 99
   dependent_on: ''
   description:
     content_en: Hydro-electricity is considered renewable, but large dams are often
@@ -882,6 +880,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: electricity_renewable
+  alt_output_element_key: source_of_electricity_production
+  output_element_key: source_of_electricity_production
 - id: 53
   image: ''
   general_sub_header: ''
@@ -889,8 +889,6 @@
   subheader_image: ''
   key: supply_electricity_renewable_geothermal
   position: 7
-  output_element_id: 99
-  alt_output_element_id: 99
   dependent_on: ''
   description:
     content_en: 'The potential of geothermal power is not very well known in many
@@ -900,6 +898,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: electricity_renewable
+  alt_output_element_key: source_of_electricity_production
+  output_element_key: source_of_electricity_production
 - id: 54
   image: ''
   general_sub_header: ''
@@ -907,8 +907,6 @@
   subheader_image: ''
   key: supply_electricity_renewable_solar_power
   position: 2
-  output_element_id: 99
-  alt_output_element_id: 99
   dependent_on: ''
   description:
     content_en: "Is solar power the future? How much do you want to produce? \r\n<br><br>\r\nThe
@@ -929,6 +927,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: electricity_renewable
+  alt_output_element_key: source_of_electricity_production
+  output_element_key: source_of_electricity_production
 - id: 55
   image: ''
   general_sub_header: electricity output
@@ -936,8 +936,6 @@
   subheader_image: ''
   key: supply_electricity_renewable_waste_power
   position: 5
-  output_element_id: 99
-  alt_output_element_id: 99
   dependent_on: ''
   description:
     content_en: Burning waste to produce electricity competes with other uses for
@@ -948,6 +946,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: electricity_renewable
+  alt_output_element_key: source_of_electricity_production
+  output_element_key: source_of_electricity_production
 - id: 99
   image: ''
   general_sub_header: maximum increase
@@ -955,8 +955,6 @@
   subheader_image: ''
   key: policy_cost_electricity
   position: 2
-  output_element_id: 133
-  alt_output_element_id: 40
   dependent_on: 
   description:
     content_en: By how much are electricity costs allowed to change in the future?
@@ -964,6 +962,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: cost
+  alt_output_element_key: 
+  output_element_key: cost_targets
 - id: 103
   image: ''
   general_sub_header: ''
@@ -971,8 +971,6 @@
   subheader_image: ''
   key: supply_infrastructure_high_voltage_network
   position: 1
-  output_element_id: 61
-  alt_output_element_id: 61
   dependent_on: 
   description:
     content_en: "The high voltage (HV) network is used for the long distance transport
@@ -1005,6 +1003,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: infrastructure
+  alt_output_element_key: additional_infrastructure_investments
+  output_element_key: additional_infrastructure_investments
 - id: 104
   image: ''
   general_sub_header: ''
@@ -1012,8 +1012,6 @@
   subheader_image: ''
   key: supply_infrastructure_low_medium_voltage_network
   position: 2
-  output_element_id: 61
-  alt_output_element_id: 61
   dependent_on: 
   description:
     content_en: "Households, buildings, agricultural users, and small industrial users,
@@ -1047,6 +1045,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: infrastructure
+  alt_output_element_key: additional_infrastructure_investments
+  output_element_key: additional_infrastructure_investments
 - id: 108
   image: house_heating.gif
   general_sub_header: share
@@ -1054,8 +1054,6 @@
   subheader_image: ''
   key: demand_households_cooling
   position: 9
-  output_element_id: 66
-  alt_output_element_id: 66
   dependent_on: ''
   description:
     content_en: 'How will households be cooled? Some of the same technologies as listed
@@ -1065,6 +1063,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: households
+  alt_output_element_key: source_of_cooling_in_households
+  output_element_key: source_of_cooling_in_households
 - id: 109
   image: house_heating.gif
   general_sub_header: share
@@ -1072,8 +1072,6 @@
   subheader_image: ''
   key: demand_households_cooking
   position: 10
-  output_element_id: 67
-  alt_output_element_id: 67
   dependent_on: ''
   description:
     content_en: 'Will energy use change much if households change the way they cook? '
@@ -1081,6 +1079,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: households
+  alt_output_element_key: source_of_cooking_in_households
+  output_element_key: source_of_cooking_in_households
 - id: 110
   image: house_heating.gif
   general_sub_header: change
@@ -1088,8 +1088,6 @@
   subheader_image: ''
   key: demand_households_behaviour
   position: 14
-  output_element_id: 213
-  alt_output_element_id: 213
   dependent_on: ''
   description:
     content_en: Will changing our behavior make a big difference for household energy
@@ -1099,6 +1097,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: households
+  alt_output_element_key: households_final_demand_per_application
+  output_element_key: households_final_demand_per_application
 - id: 113
   image: building_uncapped.gif
   general_sub_header: "%/year"
@@ -1106,8 +1106,6 @@
   subheader_image: ''
   key: demand_buildings_demand_growth
   position: 10
-  output_element_id: 68
-  alt_output_element_id: 68
   dependent_on: ''
   description:
     content_en: 'The changes in energy use per building you indicate here are due
@@ -1119,6 +1117,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: buildings
+  alt_output_element_key: use_of_final_demand_in_buildings
+  output_element_key: use_of_final_demand_in_buildings
 - id: 114
   image: building_insulation.gif
   general_sub_header: heat_demand_reduction
@@ -1126,8 +1126,6 @@
   subheader_image: buildings_insulation_energy_label.png
   key: demand_buildings_insulation
   position: 2
-  output_element_id: 68
-  alt_output_element_id: 69
   dependent_on: ''
   description:
     content_en: The insulation of buildings such as offices, schools, shops, hospitals,
@@ -1139,6 +1137,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: buildings
+  alt_output_element_key: effect_of_insulation_in_buildings
+  output_element_key: use_of_final_demand_in_buildings
 - id: 115
   image: building_heating_uncapped.gif
   general_sub_header: share
@@ -1146,8 +1146,6 @@
   subheader_image: 
   key: demand_buildings_heating
   position: 3
-  output_element_id: 70
-  alt_output_element_id: 70
   dependent_on: 
   description:
     content_en: How will offices and other buildings be heated? European countries
@@ -1158,6 +1156,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: buildings
+  alt_output_element_key: source_of_heat_in_buildings
+  output_element_key: source_of_heat_in_buildings
 - id: 116
   image: building_cooling_uncapped.gif
   general_sub_header: share
@@ -1165,8 +1165,6 @@
   subheader_image: ''
   key: demand_buildings_cooling
   position: 5
-  output_element_id: 71
-  alt_output_element_id: 71
   dependent_on: 
   description:
     content_en: How will offices and other buildings be cooled in the future?
@@ -1174,6 +1172,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: buildings
+  alt_output_element_key: source_of_cooling_in_buildings
+  output_element_key: source_of_cooling_in_buildings
 - id: 118
   image: building_appliances_uncapped.gif
   general_sub_header: "%/year"
@@ -1181,8 +1181,6 @@
   subheader_image: ''
   key: demand_buildings_appliances
   position: 7
-  output_element_id: 72
-  alt_output_element_id: 72
   dependent_on: 
   description:
     content_en: There is ample room for improvement of appliances. Computers, monitors
@@ -1192,6 +1190,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: buildings
+  alt_output_element_key: use_of_electricity_in_buildings
+  output_element_key: use_of_electricity_in_buildings
 - id: 119
   image: building_lighting_uncapped.gif
   general_sub_header: share
@@ -1199,8 +1199,6 @@
   subheader_image: ''
   key: demand_buildings_lighting
   position: 8
-  output_element_id: 72
-  alt_output_element_id: 72
   dependent_on: 
   description:
     content_en: 'Whereas lighting is a small part of household energy consumption,
@@ -1211,6 +1209,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: buildings
+  alt_output_element_key: use_of_electricity_in_buildings
+  output_element_key: use_of_electricity_in_buildings
 - id: 121
   image: building_decentral_uncapped.gif
   general_sub_header: "% of potential"
@@ -1218,8 +1218,6 @@
   subheader_image: ''
   key: demand_buildings_solar_panels
   position: 9
-  output_element_id: 74
-  alt_output_element_id: 74
   dependent_on: 
   description:
     content_en: Generating electricity locally saves energy and maybe also money in
@@ -1229,6 +1227,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: buildings
+  alt_output_element_key: source_of_electricity_in_buildings
+  output_element_key: source_of_electricity_in_buildings
 - id: 122
   image: ''
   general_sub_header: ''
@@ -1236,8 +1236,6 @@
   subheader_image: ''
   key: supply_renewable_heat_solar
   position: 4
-  output_element_id: 42
-  alt_output_element_id: 42
   dependent_on: ''
   description:
     content_en: Solar water heaters are a relatively cheap and reliable source of
@@ -1253,6 +1251,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: renewable_heat
+  alt_output_element_key: source_of_heat_production
+  output_element_key: source_of_heat_production
 - id: 123
   image: ''
   general_sub_header: share
@@ -1260,8 +1260,6 @@
   subheader_image: ''
   key: demand_transport_domestic_aviation_technology
   position: 9
-  output_element_id: 205
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: How much of the aviation fuel used will come from renewable sources?
@@ -1273,6 +1271,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: transport_passenger_transport
+  alt_output_element_key: 
+  output_element_key: use_of_final_demand_in_planes
 - id: 124
   image: ''
   general_sub_header: share
@@ -1280,8 +1280,6 @@
   subheader_image: ''
   key: supply_transport_marine_fuels
   position: 4
-  output_element_id: 43
-  alt_output_element_id: 43
   dependent_on: ''
   description:
     content_en: Which fuels will power your ships? Keep in mind that ships with diesel
@@ -1298,6 +1296,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: transport_fuels
+  alt_output_element_key: use_of_transport_fuels
+  output_element_key: use_of_transport_fuels
 - id: 125
   image: ''
   general_sub_header: share
@@ -1305,8 +1305,6 @@
   subheader_image: ''
   key: demand_transport_passenger_train_technology
   position: 3
-  output_element_id: 206
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: Which train technologies will be mostly used? Electric trains are
@@ -1321,6 +1319,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: transport_passenger_transport
+  alt_output_element_key: 
+  output_element_key: use_of_final_demand_in_busses_trains_and_trams
 - id: 140
   image: ''
   general_sub_header: share
@@ -1328,8 +1328,6 @@
   subheader_image: ''
   key: supply_biomass_bio_coal_bio_oil
   position: 5
-  output_element_id: 242
-  alt_output_element_id: 99
   dependent_on: ''
   description:
     content_en: "The fuel mix of your coal plants can be made greener by using biomass
@@ -1350,6 +1348,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: biomass
+  alt_output_element_key: source_of_electricity_production
+  output_element_key: biomass_sankey
 - id: 143
   image: ''
   general_sub_header: ''
@@ -1357,8 +1357,6 @@
   subheader_image: ''
   key: fce_coal
   position: 2
-  output_element_id: 100
-  alt_output_element_id: 100
   dependent_on: ''
   description:
     content_en: "Coal is used worldwide as a fuel. It is readily available and therefore
@@ -1377,6 +1375,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: fce
+  alt_output_element_key: fuel_chain_emissions
+  output_element_key: fuel_chain_emissions
 - id: 144
   image: ''
   general_sub_header: ''
@@ -1384,8 +1384,6 @@
   subheader_image: ''
   key: fce_gas
   position: 4
-  output_element_id: 100
-  alt_output_element_id: 100
   dependent_on: ''
   description:
     content_en: "Natural gas is a burning fossil fuel, of which global reserves are
@@ -1411,6 +1409,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: fce
+  alt_output_element_key: fuel_chain_emissions
+  output_element_key: fuel_chain_emissions
 - id: 145
   image: ''
   general_sub_header: ''
@@ -1418,8 +1418,6 @@
   subheader_image: ''
   key: fce_oil
   position: 3
-  output_element_id: 100
-  alt_output_element_id: 100
   dependent_on: ''
   description:
     content_en: "Mineral oil is the source of many energy carriers, chemicals, plastics,
@@ -1439,6 +1437,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: fce
+  alt_output_element_key: fuel_chain_emissions
+  output_element_key: fuel_chain_emissions
 - id: 146
   image: ''
   general_sub_header: ''
@@ -1446,8 +1446,6 @@
   subheader_image: ''
   key: fce_uranium
   position: 8
-  output_element_id: 105
-  alt_output_element_id: 105
   dependent_on: ''
   description:
     content_en: 'Nuclear energy is a low-carbon technology: nuclear power plants do
@@ -1465,6 +1463,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: fce
+  alt_output_element_key: fuel_chain_emissions_scaled_for_uranium
+  output_element_key: fuel_chain_emissions_scaled_for_uranium
 - id: 147
   image: ''
   general_sub_header: ''
@@ -1472,8 +1472,6 @@
   subheader_image: ''
   key: fce_biomass
   position: 7
-  output_element_id: 107
-  alt_output_element_id: 107
   dependent_on: ''
   description:
     content_en: Wood pellets can be co-fired in coal-fired power plants. Although
@@ -1493,6 +1491,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: fce
+  alt_output_element_key: fuel_chain_emissions_scaled_for_greengas
+  output_element_key: fuel_chain_emissions_scaled_for_greengas
 - id: 148
   image: ''
   general_sub_header: ''
@@ -1500,8 +1500,6 @@
   subheader_image: ''
   key: fce_greengas
   position: 6
-  output_element_id: 107
-  alt_output_element_id: 107
   dependent_on: ''
   description:
     content_en: Green gas is treated biogas, which is produced from biomass. The biogas
@@ -1522,6 +1520,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: fce
+  alt_output_element_key: fuel_chain_emissions_scaled_for_greengas
+  output_element_key: fuel_chain_emissions_scaled_for_greengas
 - id: 152
   image: ''
   general_sub_header: ''
@@ -1529,8 +1529,6 @@
   subheader_image: ''
   key: flexibility_security_of_supply_electricity
   position: 1
-  output_element_id: 172
-  alt_output_element_id: 125
   dependent_on: ''
   description:
     content_en: "Will there be sufficient power supply in the future to meet demand
@@ -1576,6 +1574,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: security_of_supply
+  alt_output_element_key: merit_order
+  output_element_key: merit_order_hourly_supply
 - id: 153
   image: ''
   general_sub_header: ''
@@ -1583,8 +1583,6 @@
   subheader_image: ''
   key: flexibility_merit_order_merit_order
   position: 1
-  output_element_id: 172
-  alt_output_element_id: 172
   dependent_on: ''
   description:
     content_en: "Generally speaking, electricity generation follows electricity demand.
@@ -1626,6 +1624,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: merit_order
+  alt_output_element_key: merit_order_hourly_supply
+  output_element_key: merit_order_hourly_supply
 - id: 154
   image: ''
   general_sub_header: ''
@@ -1633,8 +1633,6 @@
   subheader_image: ''
   key: costs_employment
   position: 1
-  output_element_id: 118
-  alt_output_element_id: 118
   dependent_on: _always_hidden
   description:
     content_en: "The ETM calculates impact on employment for technologies used to
@@ -1645,6 +1643,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: employment
+  alt_output_element_key: employment_categories
+  output_element_key: employment_categories
 - id: 155
   image: ''
   general_sub_header: share
@@ -1652,8 +1652,6 @@
   subheader_image: ''
   key: supply_transport_trains
   position: 2
-  output_element_id: 43
-  alt_output_element_id: 43
   dependent_on: ''
   description:
     content_en: How much of the fuel used by diesel trains will come from renewable
@@ -1669,6 +1667,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: transport_fuels
+  alt_output_element_key: use_of_transport_fuels
+  output_element_key: use_of_transport_fuels
 - id: 156
   image: ''
   general_sub_header: share
@@ -1676,8 +1676,6 @@
   subheader_image: ''
   key: supply_transport_road_transport
   position: 1
-  output_element_id: 43
-  alt_output_element_id: 43
   dependent_on: ''
   description:
     content_en: How much of the fuels used in road transport will come from renewable
@@ -1696,6 +1694,8 @@
     short_content_en: ''
     short_content_nl: ''
   sidebar_item_key: transport_fuels
+  alt_output_element_key: use_of_transport_fuels
+  output_element_key: use_of_transport_fuels
 - id: 157
   image: ''
   general_sub_header: change
@@ -1703,8 +1703,6 @@
   subheader_image: ''
   key: costs_heatpumps
   position: 5
-  output_element_id: 113
-  alt_output_element_id: 113
   dependent_on: ''
   description:
     content_en: Below you can change the investment costs of heat pumps (both collective
@@ -1715,6 +1713,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: costs_heat
+  alt_output_element_key: breakdown_of_total_cost_per_household
+  output_element_key: breakdown_of_total_cost_per_household
 - id: 158
   image: ''
   general_sub_header: ''
@@ -1722,8 +1722,6 @@
   subheader_image: ''
   key: fce_settings
   position: 1
-  output_element_id: 100
-  alt_output_element_id: 100
   dependent_on: ''
   description:
     content_en: "<p>Greenhouse gasses are emitted when fuels are used, but also when
@@ -1749,6 +1747,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: fce
+  alt_output_element_key: fuel_chain_emissions
+  output_element_key: fuel_chain_emissions
 - id: 159
   image: industry.gif
   general_sub_header: "%/year"
@@ -1756,8 +1756,6 @@
   subheader_image: ''
   key: demand_industry_metal_production
   position: 21
-  output_element_id: 136
-  alt_output_element_id: 136
   dependent_on: ''
   description:
     content_en: Here you can indicate how you think industrial production volumes
@@ -1771,6 +1769,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry_metal
+  alt_output_element_key: use_of_final_demand_in_industry_metal
+  output_element_key: use_of_final_demand_in_industry_metal
 - id: 160
   image: industry.gif
   general_sub_header: ''
@@ -1778,8 +1778,6 @@
   subheader_image: ''
   key: demand_industry_aluminium
   position: 3
-  output_element_id: 130
-  alt_output_element_id: 130
   dependent_on: has_metal
   description:
     content_en: After steel production, aluminium production is the most energy intensive.
@@ -1793,6 +1791,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_aluminium
+  output_element_key: use_of_final_demand_in_industry_aluminium
 - id: 161
   image: industry.gif
   general_sub_header: ''
@@ -1800,8 +1800,6 @@
   subheader_image: ''
   key: demand_industry_other_metals
   position: 4
-  output_element_id: 131
-  alt_output_element_id: 131
   dependent_on: ''
   description:
     content_en: This sector includes the production of lead, zinc, copper, silver
@@ -1813,6 +1811,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_other_metals
+  output_element_key: use_of_final_demand_in_industry_other_metals
 - id: 162
   image: industry.gif
   general_sub_header: ''
@@ -1820,8 +1820,6 @@
   subheader_image: ''
   key: demand_industry_steel
   position: 2
-  output_element_id: 135
-  alt_output_element_id: 135
   dependent_on: has_metal
   description:
     content_en: 'Steel processing requires energy-intensive furnaces. Several alternatives
@@ -1837,6 +1835,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_steel
+  output_element_key: use_of_final_demand_in_industry_steel
 - id: 163
   image: ''
   general_sub_header: temperature
@@ -1844,8 +1844,6 @@
   subheader_image: ''
   key: flexibility_weather_conditions_and_flh
   position: 1
-  output_element_id: 137
-  alt_output_element_id: 57
   dependent_on: ''
   description:
     content_en: "Outdoor temperature and technical developments of wind and solar
@@ -1879,6 +1877,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: flexibility_weather
+  alt_output_element_key: useful_demand_in_households
+  output_element_key: impact_of_climate_on_heat_and_cooling_demand_households_and_buildings
 - id: 164
   image: ''
   general_sub_header: ''
@@ -1886,8 +1886,6 @@
   subheader_image: ''
   key: fce_liquid_biofuels
   position: 5
-  output_element_id: 138
-  alt_output_element_id: 138
   dependent_on: ''
   description:
     content_en: "The EU mandates a minimum percentage of liquid biofuels for road
@@ -1909,6 +1907,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: fce
+  alt_output_element_key: fuel_chain_emissions_scaled_for_liquid_biofuels
+  output_element_key: fuel_chain_emissions_scaled_for_liquid_biofuels
 - id: 165
   image: ''
   general_sub_header: ''
@@ -1916,8 +1916,6 @@
   subheader_image: ''
   key: flexibility_flexibility_excess
   position: 11
-  output_element_id: 143
-  alt_output_element_id: 143
   dependent_on: _always_hidden
   description:
     content_en: "This page is about excess electricity and what to do with it. Wind
@@ -1953,6 +1951,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: excess_electricity
+  alt_output_element_key: energy_storage
+  output_element_key: energy_storage
 - id: 166
   image: ''
   general_sub_header: ''
@@ -1960,8 +1960,6 @@
   subheader_image: ''
   key: flexibility_flexibility_power_storage
   position: 1
-  output_element_id: 163
-  alt_output_element_id: 143
   dependent_on: ''
   description:
     content_en: Using the sliders below you can set the electricity storage options
@@ -1973,6 +1971,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: flexibility_storage
+  alt_output_element_key: energy_storage
+  output_element_key: use_of_excess_electricity
 - id: 168
   image: ''
   general_sub_header: ''
@@ -1980,8 +1980,6 @@
   subheader_image: ''
   key: flexibility_flexibility_power_to_gas
   position: 1
-  output_element_id: 163
-  alt_output_element_id: 163
   dependent_on: ''
   description:
     content_en: Excess electricity can be used to produce hydrogen in an electrolysis
@@ -1997,6 +1995,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: flexibility_conversion
+  alt_output_element_key: use_of_excess_electricity
+  output_element_key: use_of_excess_electricity
 - id: 169
   image: ''
   general_sub_header: ''
@@ -2004,8 +2004,6 @@
   subheader_image: ''
   key: flexibility_flexibility_wind_cost
   position: 12
-  output_element_id: 143
-  alt_output_element_id: 143
   dependent_on: _always_hidden
   description:
     content_en: "Why should wind power production costs increase from a certain level
@@ -2036,6 +2034,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: excess_electricity
+  alt_output_element_key: energy_storage
+  output_element_key: energy_storage
 - id: 170
   image: ''
   general_sub_header: ''
@@ -2043,8 +2043,6 @@
   subheader_image: ''
   key: flexibility_flexibility_net_load
   position: 1
-  output_element_id: 223
-  alt_output_element_id: 216
   dependent_on: ''
   description:
     content_en: "The energy transition affects the electricity network. In the table
@@ -2070,6 +2068,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: flexibility_net_load
+  alt_output_element_key: electricity_network_load
+  output_element_key: electricity_network_capacity_and_peaks
 - id: 171
   image: house.gif
   general_sub_header: number
@@ -2077,8 +2077,6 @@
   subheader_image: ''
   key: demand_households_population
   position: 2
-  output_element_id: 213
-  alt_output_element_id: 145
   dependent_on: ''
   description:
     content_en: 'The energy demand for all residences combined depends on the size
@@ -2088,6 +2086,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: households
+  alt_output_element_key: population_residences_overview
+  output_element_key: households_final_demand_per_application
 - id: 172
   image: ''
   general_sub_header: ''
@@ -2095,8 +2095,6 @@
   subheader_image: ''
   key: flexibility_electricity_import_export_markets
   position: 2
-  output_element_id: 156
-  alt_output_element_id: 
   dependent_on: _always_hidden
   description:
     content_en: "The electricity market is one of the last markets in the EU facing
@@ -2127,6 +2125,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: electricity_import_export
+  alt_output_element_key: 
+  output_element_key: import_export_cwe
 - id: 173
   image: ''
   general_sub_header: ''
@@ -2134,8 +2134,6 @@
   subheader_image: ''
   key: flexibility_electricity_import_export_edp
   position: 3
-  output_element_id: 149
-  alt_output_element_id: 149
   dependent_on: _always_hidden
   description:
     content_en: "The so-called <strong>merit order</strong> (also see <a href=\"/scenario/costs/merit_order/merit-order\"
@@ -2157,6 +2155,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: electricity_import_export
+  alt_output_element_key: import_export_flows
+  output_element_key: import_export_flows
 - id: 174
   image: ''
   general_sub_header: ''
@@ -2164,8 +2164,6 @@
   subheader_image: ''
   key: flexibility_electricity_import_export_interconnectors
   position: 4
-  output_element_id: 99
-  alt_output_element_id: 147
   dependent_on: _always_hidden
   description:
     content_en: "Countries in the EU are planning to invest in increasing interconnection
@@ -2205,6 +2203,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: electricity_import_export
+  alt_output_element_key: import_export_capacity
+  output_element_key: source_of_electricity_production
 - id: 175
   image: ''
   general_sub_header: ''
@@ -2212,8 +2212,6 @@
   subheader_image: ''
   key: flexibility_electricity_import_export_renewables
   position: 5
-  output_element_id: 148
-  alt_output_element_id: 
   dependent_on: _always_hidden
   description:
     content_en: "The EU has the goal to increase the available capacity of renewable
@@ -2249,6 +2247,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: electricity_import_export
+  alt_output_element_key: 
+  output_element_key: import_export_renewables
 - id: 176
   image: industry.gif
   general_sub_header: "%/year"
@@ -2256,8 +2256,6 @@
   subheader_image: ''
   key: demand_industry_chemical_demand_growth
   position: 1
-  output_element_id: 152
-  alt_output_element_id: 152
   dependent_on: ''
   description:
     content_en: 'The growth you indicate here is due to economic and population growth.
@@ -2269,6 +2267,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry_chemical
+  alt_output_element_key: use_of_final_demand_in_industry_chemical_detailed
+  output_element_key: use_of_final_demand_in_industry_chemical_detailed
 - id: 177
   image: industry.gif
   general_sub_header: "%/year"
@@ -2276,8 +2276,6 @@
   subheader_image: ''
   key: demand_industry_chemical_efficiency_improvement
   position: 2
-  output_element_id: 152
-  alt_output_element_id: 152
   dependent_on: ''
   description:
     content_en: Of all sectors in the economy, industry has the strongest track record
@@ -2288,6 +2286,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry_chemical
+  alt_output_element_key: use_of_final_demand_in_industry_chemical_detailed
+  output_element_key: use_of_final_demand_in_industry_chemical_detailed
 - id: 178
   image: industry.gif
   general_sub_header: share
@@ -2295,8 +2295,6 @@
   subheader_image: ''
   key: demand_industry_chemical_heat
   position: 3
-  output_element_id: 151
-  alt_output_element_id: 151
   dependent_on: ''
   description:
     content_en: How will the chemical industry meet its heat demand? A different mix
@@ -2312,6 +2310,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry_chemical
+  alt_output_element_key: 
+  output_element_key: 
 - id: 179
   image: industry.gif
   general_sub_header: ''
@@ -2319,8 +2319,6 @@
   subheader_image: ''
   key: demand_industry
   position: 1
-  output_element_id: 178
-  alt_output_element_id: 176
   dependent_on: ''
   description:
     content_en: "In most countries industry is responsible for the largest part of
@@ -2349,6 +2347,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry
+  alt_output_element_key: mekko_of_detailed_final_demand_in_industry
+  output_element_key: mekko_of_detailed_final_demand_in_industry_energetic
 - id: 180
   image: ''
   general_sub_header: ''
@@ -2356,8 +2356,6 @@
   subheader_image: ''
   key: supply_primary_production_oil
   position: 3
-  output_element_id: 158
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "The chart on the right shows our <strong>estimates</strong> of annual
@@ -2382,6 +2380,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: fuel_production
+  alt_output_element_key: 
+  output_element_key: production_curve_crude_oil
 - id: 181
   image: ''
   general_sub_header: ''
@@ -2389,8 +2389,6 @@
   subheader_image: ''
   key: supply_primary_production_coal
   position: 2
-  output_element_id: 157
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "The chart on the right shows our <strong>estimates</strong> of annual
@@ -2415,6 +2413,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: fuel_production
+  alt_output_element_key: 
+  output_element_key: production_curve_coal
 - id: 182
   image: ''
   general_sub_header: ''
@@ -2422,8 +2422,6 @@
   subheader_image: ''
   key: supply_primary_production_natural_gas
   position: 4
-  output_element_id: 159
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "The chart on the right shows our <strong>estimates</strong> of annual
@@ -2448,6 +2446,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: fuel_production
+  alt_output_element_key: 
+  output_element_key: production_curve_natural_gas
 - id: 184
   image: ''
   general_sub_header: ''
@@ -2455,8 +2455,6 @@
   subheader_image: ''
   key: supply_primary_production_uranium
   position: 6
-  output_element_id: 161
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "The chart on the right shows our <strong>estimates</strong> of annual
@@ -2481,6 +2479,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: fuel_production
+  alt_output_element_key: 
+  output_element_key: production_curve_uranium
 - id: 185
   image: ''
   general_sub_header: ''
@@ -2488,8 +2488,6 @@
   subheader_image: ''
   key: supply_primary_production
   position: 1
-  output_element_id: 76
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "The energy we use every day comes in the form of energy carriers
@@ -2523,6 +2521,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: fuel_production
+  alt_output_element_key: 
+  output_element_key: future_energy_imports
 - id: 186
   image: ''
   general_sub_header: ''
@@ -2530,8 +2530,6 @@
   subheader_image: ''
   key: flexibility_flexibility_power_to_power_EV
   position: 2
-  output_element_id: 163
-  alt_output_element_id: 
   dependent_on: _always_hidden
   description:
     content_en: "Electric vehicles could provide a cost-effective way of storing electricity
@@ -2555,6 +2553,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: flexibility_storage
+  alt_output_element_key: 
+  output_element_key: use_of_excess_electricity
 - id: 187
   image: ''
   general_sub_header: ''
@@ -2562,8 +2562,6 @@
   subheader_image: ''
   key: flexibility_electricity_import_export_interconnectivity
   position: 1
-  output_element_id: 164
-  alt_output_element_id: 164
   dependent_on: ''
   description:
     content_en: The difference between the hourly electricity supply and demand can
@@ -2587,6 +2585,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: electricity_import_export
+  alt_output_element_key: storage_options
+  output_element_key: storage_options
 - id: 191
   image: ''
   general_sub_header: share
@@ -2594,8 +2594,6 @@
   subheader_image: ''
   key: demand_transport_domestic_navigation_technology
   position: 14
-  output_element_id: 207
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "Will ships owners hold on to conventional diesel engine ships, or
@@ -2609,6 +2607,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: transport_freight_transport
+  alt_output_element_key: 
+  output_element_key: use_of_final_demand_in_freight_transport_technologies
 - id: 192
   image: ''
   general_sub_header: ''
@@ -2616,8 +2616,6 @@
   subheader_image: ''
   key: fce_lng
   position: 5
-  output_element_id: 100
-  alt_output_element_id: 100
   dependent_on: _always_hidden
   description:
     content_en: 'When natural gas is cooled down to - 162 degrees celsius (under atmospheric
@@ -2638,6 +2636,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: fce
+  alt_output_element_key: fuel_chain_emissions
+  output_element_key: fuel_chain_emissions
 - id: 193
   image: ''
   general_sub_header: ''
@@ -2645,8 +2645,6 @@
   subheader_image: ''
   key: supply_hydrogen_production
   position: 1
-  output_element_id: 214
-  alt_output_element_id: 225
   dependent_on: ''
   description:
     content_en: "Below you can specify how hydrogen will be produced in the future.
@@ -2678,6 +2676,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: hydrogen
+  alt_output_element_key: hydrogen_production
+  output_element_key: mekko_of_hydrogen_network
 - id: 194
   image: ''
   general_sub_header: ''
@@ -2685,8 +2685,6 @@
   subheader_image: ''
   key: flexibility_flexibility_flexibility_order
   position: 1
-  output_element_id: 173
-  alt_output_element_id: 164
   dependent_on: ''
   description:
     content_en: "Wind turbines and solar panels are subject to volatile natural patterns.
@@ -2719,6 +2717,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: excess_electricity
+  alt_output_element_key: storage_options
+  output_element_key: merit_order_hourly_flexibility
 - id: 195
   image: ''
   general_sub_header: ''
@@ -2726,8 +2726,6 @@
   subheader_image: ''
   key: costs_electric_car_investment
   position: 1
-  output_element_id: 170
-  alt_output_element_id: 170
   dependent_on: ''
   description:
     content_en: Here you can specify how much higher the average initial investment
@@ -2739,6 +2737,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: transport_costs
+  alt_output_element_key: investment_electric_cars
+  output_element_key: investment_electric_cars
 - id: 196
   image: ''
   general_sub_header: ''
@@ -2746,8 +2746,6 @@
   subheader_image: ''
   key: flexibility_merit_order_merit_order_positions
   position: 2
-  output_element_id: 125
-  alt_output_element_id: 116
   dependent_on: ''
   description:
     content_en: |
@@ -2809,6 +2807,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: merit_order
+  alt_output_element_key: merit_order_table
+  output_element_key: merit_order
 - id: 197
   image: ''
   general_sub_header: ''
@@ -2816,8 +2816,6 @@
   subheader_image: ''
   key: flexibility_merit_order_merit_order_price
   position: 4
-  output_element_id: 171
-  alt_output_element_id: 171
   dependent_on: ''
   description:
     content_en: |
@@ -2856,6 +2854,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: data_export
+  alt_output_element_key: merit_order_price_curve
+  output_element_key: merit_order_price_curve
 - id: 199
   image: ''
   general_sub_header: ''
@@ -2863,8 +2863,6 @@
   subheader_image: ''
   key: demand_industry_chemical_refineries
   position: 5
-  output_element_id: 190
-  alt_output_element_id: 180
   dependent_on: ''
   description:
     content_en: "Refineries turn crude oil into oil products. These oil products are
@@ -2894,6 +2892,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_chemical_refineries
+  output_element_key: refinery
 - id: 201
   image: ''
   general_sub_header: ''
@@ -2901,8 +2901,6 @@
   subheader_image: ''
   key: demand_industry_chemical_fertilizers
   position: 6
-  output_element_id: 184
-  alt_output_element_id: 184
   dependent_on: has_detailed_chemical_industry
   description:
     content_en: "Ammonia (NH<sub>3</sub>) constitutes the basis of all nitrogen-based
@@ -2924,6 +2922,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_chemical_fertilizers
+  output_element_key: use_of_final_demand_in_industry_chemical_fertilizers
 - id: 202
   image: ''
   general_sub_header: ''
@@ -2931,8 +2931,6 @@
   subheader_image: ''
   key: demand_industry_chemical_other
   position: 7
-  output_element_id: 182
-  alt_output_element_id: 182
   dependent_on: ''
   description:
     content_en: "This sector includes the production of chemicals. Fertilizer production
@@ -2953,6 +2951,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_chemical_other
+  output_element_key: use_of_final_demand_in_industry_chemical_other
 - id: 203
   image: ''
   general_sub_header: ''
@@ -2960,8 +2960,6 @@
   subheader_image: ''
   key: demand_industry_other_food
   position: 9
-  output_element_id: 183
-  alt_output_element_id: 183
   dependent_on: ''
   description:
     content_en: This sector includes the manufacturing of food products, beverages
@@ -2973,6 +2971,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_other_food
+  output_element_key: use_of_final_demand_in_industry_other_food
 - id: 204
   image: ''
   general_sub_header: ''
@@ -2980,8 +2980,6 @@
   subheader_image: ''
   key: demand_industry_other_paper
   position: 10
-  output_element_id: 181
-  alt_output_element_id: 181
   dependent_on: ''
   description:
     content_en: This sector includes the manufacturing of paper and paper products
@@ -2994,6 +2992,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_other_paper
+  output_element_key: use_of_final_demand_in_industry_other_paper
 - id: 205
   image: ''
   general_sub_header: ''
@@ -3001,8 +3001,6 @@
   subheader_image: ''
   key: demand_industry_aggregated_other
   position: 11
-  output_element_id: 186
-  alt_output_element_id: 186
   dependent_on: ''
   description:
     content_en: The other industry comprises all sectors that are not shown explicitly
@@ -3014,6 +3012,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_other
+  output_element_key: use_of_final_demand_in_industry_other
 - id: 207
   image: ''
   general_sub_header: ''
@@ -3021,8 +3021,6 @@
   subheader_image: ''
   key: demand_industry_aggregated_chemical_other
   position: 7
-  output_element_id: 182
-  alt_output_element_id: 182
   dependent_on: _always_hidden
   description:
     content_en: The growth you indicate here is due to economic and population growth.
@@ -3033,6 +3031,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_chemical_other
+  output_element_key: use_of_final_demand_in_industry_chemical_other
 - id: 208
   image: ''
   general_sub_header: ''
@@ -3040,8 +3040,6 @@
   subheader_image: ''
   key: supply_co2_emissions_biomass
   position: 6
-  output_element_id: 188
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "Usually no CO<sub>2</sub> emissions are attributed to biomass as
@@ -3068,6 +3066,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: biomass
+  alt_output_element_key: 
+  output_element_key: co2_emissions_biomass
 - id: 211
   image: ''
   general_sub_header: ''
@@ -3075,8 +3075,6 @@
   subheader_image: ''
   key: demand_industry_other_ict
   position: 8
-  output_element_id: 189
-  alt_output_element_id: 189
   dependent_on: ''
   description:
     content_en: This sector encompasses all centralized ICT services. Its most notable
@@ -3088,6 +3086,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_other_ict
+  output_element_key: use_of_final_demand_in_industry_other_ict
 - id: 212
   image: ''
   general_sub_header: ''
@@ -3095,8 +3095,6 @@
   subheader_image: ''
   key: flexibility_flexibility_demand_response_ev
   position: 10
-  output_element_id: 194
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "Demand response is a form of flexibility where energy demand is adjusted
@@ -3115,6 +3113,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: flexibility_net_load
+  alt_output_element_key: 
+  output_element_key: dynamic_demand_curve
 - id: 214
   image: 
   general_sub_header: 
@@ -3122,8 +3122,6 @@
   subheader_image: 
   key: data_export_application_demands
   position: 2
-  output_element_id: 45
-  alt_output_element_id: 
   dependent_on: 
   description:
     content_en: |
@@ -3139,6 +3137,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: data_export
+  alt_output_element_key: 
+  output_element_key: use_of_primary_energy
 - id: 215
   image: 
   general_sub_header: 
@@ -3146,8 +3146,6 @@
   subheader_image: 
   key: data_export_production
   position: 3
-  output_element_id: 142
-  alt_output_element_id: 
   dependent_on: 
   description:
     content_en: |
@@ -3163,6 +3161,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: data_export
+  alt_output_element_key: 
+  output_element_key: investment_table
 - id: 216
   image: ''
   general_sub_header: ''
@@ -3170,8 +3170,6 @@
   subheader_image: ''
   key: flexibility_flexibility_demand_response_hp
   position: 12
-  output_element_id: 194
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "In the ETM all heat pumps have the option to install a buffer for
@@ -3188,6 +3186,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: flexibility_net_load
+  alt_output_element_key: 
+  output_element_key: dynamic_demand_curve
 - id: 218
   image: ''
   general_sub_header: ''
@@ -3195,8 +3195,6 @@
   subheader_image: ''
   key: data_export_energy_flows
   position: 1
-  output_element_id: 123
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "The Energy Transition Model describes the energy flows through several\r\nhundred
@@ -3212,6 +3210,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: data_export
+  alt_output_element_key: 
+  output_element_key: sankey
 - id: 219
   image: ''
   general_sub_header: of_total
@@ -3219,8 +3219,6 @@
   subheader_image: ''
   key: demand_transport_international_transport
   position: 1
-  output_element_id: 209
-  alt_output_element_id: 198
   dependent_on: ''
   description:
     content_en: Currently emissions from international transport are not included
@@ -3242,6 +3240,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: transport_international_transport
+  alt_output_element_key: use_of_final_demand_in_international_transport
+  output_element_key: international_transport_categories_overview
 - id: 220
   image: ''
   general_sub_header: share
@@ -3249,8 +3249,6 @@
   subheader_image: ''
   key: supply_transport_international_aviation
   position: 5
-  output_element_id: 199
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "Will bio-kerosene contribute more to the aviation fuels mix in the
@@ -3268,6 +3266,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: transport_fuels
+  alt_output_element_key: 
+  output_element_key: co2_emission_international_transportation
 - id: 221
   image: ''
   general_sub_header: ''
@@ -3275,8 +3275,6 @@
   subheader_image: ''
   key: supply_transport_international_shipping
   position: 6
-  output_element_id: 199
-  alt_output_element_id: 190
   dependent_on: ''
   description:
     content_en: The transport fuels for international navigation depend directly on
@@ -3291,6 +3289,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: transport_fuels
+  alt_output_element_key: refinery
+  output_element_key: co2_emission_international_transportation
 - id: 222
   image: ''
   general_sub_header: year
@@ -3298,8 +3298,6 @@
   subheader_image: ''
   key: demand_transport_international_transport_mobility_growth
   position: 2
-  output_element_id: 209
-  alt_output_element_id: 198
   dependent_on: ''
   description:
     content_en: International transportation has grown as a result of increasing globalisation.
@@ -3311,6 +3309,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: transport_international_transport
+  alt_output_element_key: use_of_final_demand_in_international_transport
+  output_element_key: international_transport_categories_overview
 - id: 223
   image: ''
   general_sub_header: share
@@ -3318,8 +3318,6 @@
   subheader_image: ''
   key: demand_transport_international_navigation_technology
   position: 4
-  output_element_id: 198
-  alt_output_element_id: 199
   dependent_on: ''
   description:
     content_en: Will ships owners hold on to conventional ships running on heavy fuel
@@ -3331,6 +3329,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: transport_international_transport
+  alt_output_element_key: co2_emission_international_transportation
+  output_element_key: use_of_final_demand_in_international_transport
 - id: 224
   image: ''
   general_sub_header: ''
@@ -3338,8 +3338,6 @@
   subheader_image: ''
   key: demand_transport_international_aviation_technology
   position: 3
-  output_element_id: 198
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: 'For international aviation primarily large aircrafts are used that
@@ -3353,6 +3351,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: transport_international_transport
+  alt_output_element_key: 
+  output_element_key: use_of_final_demand_in_international_transport
 - id: 225
   image: ''
   general_sub_header: ''
@@ -3360,8 +3360,6 @@
   subheader_image: ''
   key: flexibility_flexibility_power_to_kerosene
   position: 4
-  output_element_id: 211
-  alt_output_element_id: 200
   dependent_on: ''
   description:
     content_en: "Excess electricity can be used to produce synthetic kerosene for
@@ -3389,6 +3387,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: flexibility_conversion
+  alt_output_element_key: kerosene_production_in_bunkers
+  output_element_key: carbon_balance
 - id: 226
   image: ''
   general_sub_header: share
@@ -3396,8 +3396,6 @@
   subheader_image: ''
   key: demand_transport_bus_technology
   position: 6
-  output_element_id: 206
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: Nowadays most busses are powered by diesel or gas. What will happen
@@ -3410,6 +3408,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: transport_passenger_transport
+  alt_output_element_key: 
+  output_element_key: use_of_final_demand_in_busses_trains_and_trams
 - id: 227
   image: ''
   general_sub_header: share
@@ -3417,8 +3417,6 @@
   subheader_image: ''
   key: demand_transport_bicycle_technology
   position: 8
-  output_element_id: 204
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: E-bikes are upcoming; will this trend continue?
@@ -3426,6 +3424,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: transport_passenger_transport
+  alt_output_element_key: 
+  output_element_key: use_of_final_demand_in_motorcycles_and_bicycles
 - id: 228
   image: ''
   general_sub_header: share
@@ -3433,8 +3433,6 @@
   subheader_image: ''
   key: demand_transport_motorcycle_technology
   position: 7
-  output_element_id: 204
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: What will the share of gasoline and electric motorcycles and scooters
@@ -3444,6 +3442,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: transport_passenger_transport
+  alt_output_element_key: 
+  output_element_key: use_of_final_demand_in_motorcycles_and_bicycles
 - id: 229
   image: truck.gif
   general_sub_header: year
@@ -3451,8 +3451,6 @@
   subheader_image: ''
   key: demand_transport_freight_transport
   position: 11
-  output_element_id: 208
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "Will freight transport increase or decrease in the future? The growth
@@ -3476,6 +3474,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: transport_freight_transport
+  alt_output_element_key: 
+  output_element_key: use_of_final_demand_in_freight_transport
 - id: 230
   image: ''
   general_sub_header: share
@@ -3483,8 +3483,6 @@
   subheader_image: ''
   key: demand_transport_freight_train_technology
   position: 13
-  output_element_id: 207
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: Which train technologies will be mostly used? Electric trains are
@@ -3499,6 +3497,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: transport_freight_transport
+  alt_output_element_key: 
+  output_element_key: use_of_final_demand_in_freight_transport_technologies
 - id: 232
   image: ''
   general_sub_header: ''
@@ -3506,8 +3506,6 @@
   subheader_image: ''
   key: costs_flexibility_storage
   position: 1
-  output_element_id: 48
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: Excess electricity can temporarily be stored in for example household
@@ -3519,6 +3517,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: costs_flexibility
+  alt_output_element_key: 
+  output_element_key: breakdown_of_total_costs
 - id: 233
   image: ''
   general_sub_header: ''
@@ -3526,8 +3526,6 @@
   subheader_image: ''
   key: costs_flexibility_conversion
   position: 2
-  output_element_id: 48
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "(Excess) electricity can be converted to other energy carriers, like
@@ -3540,6 +3538,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: costs_flexibility
+  alt_output_element_key: 
+  output_element_key: breakdown_of_total_costs
 - id: 234
   image: ''
   general_sub_header: ''
@@ -3547,8 +3547,6 @@
   subheader_image: ''
   key: demand_transport_tram_technology
   position: 5
-  output_element_id: 206
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: 'The ETM only models electric trams and metros. '
@@ -3556,6 +3554,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: transport_passenger_transport
+  alt_output_element_key: 
+  output_element_key: use_of_final_demand_in_busses_trains_and_trams
 - id: 235
   image: ''
   general_sub_header: ''
@@ -3563,8 +3563,6 @@
   subheader_image: ''
   key: demand_transport_overview
   position: 1
-  output_element_id: 201
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: In the side bar on the left you can click on <a href="/scenario/demand/transport_passenger_transport/applications">'Passenger
@@ -3582,6 +3580,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: transport
+  alt_output_element_key: 
+  output_element_key: transport_categories_overview
 - id: 236
   image: ''
   general_sub_header: ''
@@ -3589,8 +3589,6 @@
   subheader_image: ''
   key: flexibility_electricity_import_export_properties
   position: 1
-  output_element_id: 46
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "In some scenarios you will import electricity from outside your area.
@@ -3612,6 +3610,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: electricity_import_export
+  alt_output_element_key: 
+  output_element_key: co2_emissions
 - id: 238
   image: ''
   general_sub_header: ''
@@ -3619,8 +3619,6 @@
   subheader_image: ''
   key: costs_imported_electricity
   position: 0
-  output_element_id: 171
-  alt_output_element_id: 102
   dependent_on: ''
   description:
     content_en: What will be the costs of imported electricity in the future?
@@ -3629,6 +3627,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: electricity_import_costs
+  alt_output_element_key: breakdown_electricity_costs
+  output_element_key: merit_order_price_curve
 - id: 239
   image: ''
   general_sub_header: ''
@@ -3636,8 +3636,6 @@
   subheader_image: ''
   key: supply_electricity_renewable_hydrogen_plants
   position: 6
-  output_element_id: 99
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: Hydrogen power plants use hydrogen to generate electricity. As the
@@ -3655,6 +3653,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: electricity_renewable
+  alt_output_element_key: 
+  output_element_key: source_of_electricity_production
 - id: 240
   image: ''
   general_sub_header: ''
@@ -3662,8 +3662,6 @@
   subheader_image: ''
   key: supply_hydrogen_transport
   position: 3
-  output_element_id: 214
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "How will hydrogen be transported in the future? At the moment, two
@@ -3693,6 +3691,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: hydrogen
+  alt_output_element_key: 
+  output_element_key: mekko_of_hydrogen_network
 - id: 242
   image: ''
   general_sub_header: ''
@@ -3700,8 +3700,6 @@
   subheader_image: ''
   key: supply_hydrogen_co2_import
   position: 5
-  output_element_id: 46
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "In some scenarios hydrogen will be imported from outside your area.
@@ -3728,6 +3726,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: hydrogen
+  alt_output_element_key: 
+  output_element_key: co2_emissions
 - id: 243
   image: 
   general_sub_header: 
@@ -3735,10 +3735,10 @@
   subheader_image: 
   key: costs_infrastructure_electricity
   position: 3
-  output_element_id: 61
-  alt_output_element_id: 
   dependent_on: ''
   sidebar_item_key: infrastructure
+  alt_output_element_key: 
+  output_element_key: additional_infrastructure_investments
 - id: 244
   image: ''
   general_sub_header: ''
@@ -3746,8 +3746,6 @@
   subheader_image: ''
   key: costs_infrastructure_electricity_investement_regime
   position: 4
-  output_element_id: 
-  alt_output_element_id: 
   dependent_on: _always_hidden
   description:
     content_en: ''
@@ -3755,6 +3753,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: infrastructure
+  alt_output_element_key: 
+  output_element_key: 
 - id: 245
   image: ''
   general_sub_header: ''
@@ -3762,8 +3762,6 @@
   subheader_image: ''
   key: costs_co2_ccs_industry
   position: 3
-  output_element_id: 48
-  alt_output_element_id: 
   dependent_on: has_detailed_chemical_industry
   description:
     content_en: 'What will CCS in industry cost on average? Note: this is an expert
@@ -3774,6 +3772,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: co2
+  alt_output_element_key: 
+  output_element_key: breakdown_of_total_costs
 - id: 246
   image: ''
   general_sub_header: ''
@@ -3781,8 +3781,6 @@
   subheader_image: ''
   key: demand_industry_ccs
   position: 1
-  output_element_id: 46
-  alt_output_element_id: 
   dependent_on: has_detailed_chemical_industry
   description:
     content_en: 'What percentage of direct CO2 emissions in industry will be captured
@@ -3794,6 +3792,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: industry
+  alt_output_element_key: 
+  output_element_key: co2_emissions
 - id: 248
   image: ''
   general_sub_header: ''
@@ -3801,8 +3801,6 @@
   subheader_image: ''
   key: data_export_household_heat
   position: 5
-  output_element_id: 196
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "Download information about demand and supply of (individual) heat
@@ -3822,6 +3820,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: data_export
+  alt_output_element_key: 
+  output_element_key: household_heat_demand_and_production
 - id: 249
   image: ''
   general_sub_header: ''
@@ -3829,8 +3829,6 @@
   subheader_image: ''
   key: data_visuals_scenario_report
   position: 1
-  output_element_id: 213
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: |
@@ -3854,6 +3852,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: data_visuals
+  alt_output_element_key: 
+  output_element_key: households_final_demand_per_application
 - id: 250
   image: ''
   general_sub_header: ''
@@ -3861,8 +3861,6 @@
   subheader_image: ''
   key: data_visuals_factsheet
   position: 2
-  output_element_id: 213
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: |
@@ -3883,6 +3881,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: data_visuals
+  alt_output_element_key: 
+  output_element_key: households_final_demand_per_application
 - id: 251
   image: ''
   general_sub_header: ''
@@ -3890,8 +3890,6 @@
   subheader_image: ''
   key: data_visuals_graph
   position: 4
-  output_element_id: 213
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: |
@@ -3912,6 +3910,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: data_visuals
+  alt_output_element_key: 
+  output_element_key: households_final_demand_per_application
 - id: 252
   image: ''
   general_sub_header: ''
@@ -3919,8 +3919,6 @@
   subheader_image: ''
   key: flexibility_flexibility_pumped_storage
   position: 3
-  output_element_id: 163
-  alt_output_element_id: 
   dependent_on: _always_hidden
   description:
     content_en: "Pumped storage provides a cheap way for large-scale storage of electricity.
@@ -3939,6 +3937,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: flexibility_storage
+  alt_output_element_key: 
+  output_element_key: use_of_excess_electricity
 - id: 253
   image: ''
   general_sub_header: ''
@@ -3946,8 +3946,6 @@
   subheader_image: ''
   key: costs_hydrogen_import
   position: 1
-  output_element_id: 228
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: What do you think imported hydrogen will cost in the future?
@@ -3955,6 +3953,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: costs_hydrogen
+  alt_output_element_key: 
+  output_element_key: hydrogen_cost_capacity
 - id: 254
   image: ''
   general_sub_header: ''
@@ -3962,8 +3962,6 @@
   subheader_image: ''
   key: costs_hydrogen_storage
   position: 2
-  output_element_id: 48
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: What do you think the costs for hydrogen storage will be in the future?
@@ -3971,6 +3969,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: costs_hydrogen
+  alt_output_element_key: 
+  output_element_key: breakdown_of_total_costs
 - id: 255
   image: ''
   general_sub_header: ''
@@ -3978,8 +3978,6 @@
   subheader_image: ''
   key: costs_hydrogen_transport
   position: 3
-  output_element_id: 48
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: What will the costs for different hydrogen transport technologies
@@ -3989,6 +3987,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: costs_hydrogen
+  alt_output_element_key: 
+  output_element_key: breakdown_of_total_costs
 - id: 256
   image: ''
   general_sub_header: ''
@@ -3996,8 +3996,6 @@
   subheader_image: ''
   key: supply_hydrogen_storage
   position: 4
-  output_element_id: 227
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "The ETM calculates hydrogen demand and supply on an hourly-basis
@@ -4020,6 +4018,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: hydrogen
+  alt_output_element_key: 
+  output_element_key: hydrogen_storage
 - id: 257
   image: ''
   general_sub_header: ''
@@ -4027,8 +4027,6 @@
   subheader_image: ''
   key: supply_hydrogen_demand
   position: 2
-  output_element_id: 226
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "There is a growing interest in using hydrogen as energy carrier,
@@ -4058,6 +4056,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: hydrogen
+  alt_output_element_key: 
+  output_element_key: hydrogen_demand
 - id: 258
   image: ''
   general_sub_header: ''
@@ -4065,8 +4065,6 @@
   subheader_image: ''
   key: data_export_hydrogen
   position: 7
-  output_element_id: 226
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "Below you can download information about hydrogen demand, supply
@@ -4083,6 +4081,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: data_export
+  alt_output_element_key: 
+  output_element_key: hydrogen_demand
 - id: 259
   image: ''
   general_sub_header: ''
@@ -4090,8 +4090,6 @@
   subheader_image: ''
   key: supply_biomass_overview
   position: 1
-  output_element_id: 242
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "Biomass can be used in different places throughout the model:\r\n<ul>\r\n
@@ -4122,6 +4120,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: biomass
+  alt_output_element_key: 
+  output_element_key: biomass_sankey
 - id: 260
   image: ''
   general_sub_header: ''
@@ -4129,8 +4129,6 @@
   subheader_image: ''
   key: supply_biomass_bio_footprint
   position: 6
-  output_element_id: 168
-  alt_output_element_id: 
   dependent_on: _always_hidden
   description:
     content_en: What is the future biomass footprint of this region? The chart shown
@@ -4142,6 +4140,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: biomass
+  alt_output_element_key: 
+  output_element_key: mekko_of_bio_footprint
 - id: 263
   image: ''
   general_sub_header: ''
@@ -4149,8 +4149,6 @@
   subheader_image: ''
   key: costs_heat_network
   position: 1
-  output_element_id: 254
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: What do you think the costs for heat network infrastructure will be
@@ -4162,6 +4160,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: costs_heat
+  alt_output_element_key: 
+  output_element_key: heat_infrastructure_annualised_costs
 - id: 264
   image: ''
   general_sub_header: ''
@@ -4169,8 +4169,6 @@
   subheader_image: ''
   key: costs_residual_heat
   position: 4
-  output_element_id: 48
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: What would the costs of residual heat from industry and imported heat
@@ -4183,6 +4181,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: costs_heat
+  alt_output_element_key: 
+  output_element_key: breakdown_of_total_costs
 - id: 265
   image: ''
   general_sub_header: ''
@@ -4190,8 +4190,6 @@
   subheader_image: ''
   key: introduction_to_etm
   position: 1
-  output_element_id: 241
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "The ETM helps you explore future energy scenarios for a region of
@@ -4260,6 +4258,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: introduction
+  alt_output_element_key: 
+  output_element_key: workflow
 - id: 266
   image: ''
   general_sub_header: ''
@@ -4267,8 +4267,6 @@
   subheader_image: ''
   key: overview_final_demand
   position: 3
-  output_element_id: 240
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "How much energy is used by the different sectors in your region and
@@ -4298,6 +4296,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: introduction
+  alt_output_element_key: 
+  output_element_key: final_energy_demand_per_sector_joule
 - id: 267
   image: ''
   general_sub_header: ''
@@ -4305,8 +4305,6 @@
   subheader_image: ''
   key: overview_co2_emissions
   position: 2
-  output_element_id: 46
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "How much CO<sub>2</sub> is currently emitted by the various sectors
@@ -4331,6 +4329,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: introduction
+  alt_output_element_key: 
+  output_element_key: co2_emissions
 - id: 268
   image: ''
   general_sub_header: ''
@@ -4338,8 +4338,6 @@
   subheader_image: ''
   key: supply_biomass_greengas_production
   position: 4
-  output_element_id: 242
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "How will green gas be produced in the future? Currently fermentation
@@ -4370,6 +4368,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: biomass
+  alt_output_element_key: 
+  output_element_key: biomass_sankey
 - id: 269
   image: ''
   general_sub_header: price
@@ -4377,8 +4377,6 @@
   subheader_image: ''
   key: costs_bio_fuel
   position: 2
-  output_element_id: 244
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: 'What do you think these biofuels will cost in the future? Note: choices
@@ -4388,6 +4386,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: fuel_costs
+  alt_output_element_key: 
+  output_element_key: greengas_costs
 - id: 270
   image: ''
   general_sub_header: ''
@@ -4395,8 +4395,6 @@
   subheader_image: ''
   key: supply_biomass_potential
   position: 2
-  output_element_id: 243
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: 'The ETM distinguishes four resource categories: wet, dry, oil-containing
@@ -4414,6 +4412,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: biomass
+  alt_output_element_key: 
+  output_element_key: biomass_demand_by_category
 - id: 271
   image: ''
   general_sub_header: ''
@@ -4421,8 +4421,6 @@
   subheader_image: ''
   key: data_export_network_gas
   position: 6
-  output_element_id: 245
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "Below you can download information about network gas demand, supply
@@ -4439,6 +4437,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: data_export
+  alt_output_element_key: 
+  output_element_key: network_gas_demand
 - id: 272
   image: ''
   general_sub_header: ''
@@ -4446,8 +4446,6 @@
   subheader_image: ''
   key: flexibility_flexibility_power_to_heat_for_industry
   position: 3
-  output_element_id: 163
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "At times of excess electricity supply, an electric boiler in industry
@@ -4468,6 +4466,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: flexibility_conversion
+  alt_output_element_key: 
+  output_element_key: use_of_excess_electricity
 - id: 273
   image: ''
   general_sub_header: ''
@@ -4475,8 +4475,6 @@
   subheader_image: ''
   key: data_visuals_co2_sheet
   position: 3
-  output_element_id: 213
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: |
@@ -4504,6 +4502,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: data_visuals
+  alt_output_element_key: 
+  output_element_key: households_final_demand_per_application
 - id: 274
   image: ''
   general_sub_header: ''
@@ -4511,8 +4511,6 @@
   subheader_image: ''
   key: costs_wacc
   position: 1
-  output_element_id: 48
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: 'With the sliders below you can adjust the future WACC for different
@@ -4529,6 +4527,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: wacc
+  alt_output_element_key: 
+  output_element_key: breakdown_of_total_costs
 - id: 275
   image: ''
   general_sub_header: ''
@@ -4536,8 +4536,6 @@
   subheader_image: ''
   key: supply_heat_network_order
   position: 4
-  output_element_id: 253
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "The ETM makes a distinction between 'must-run' / volatile heat sources
@@ -4565,6 +4563,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: heat_merit
+  alt_output_element_key: 
+  output_element_key: heat_cost_capacity
 - id: 276
   image: 
   general_sub_header: 
@@ -4572,8 +4572,6 @@
   subheader_image: 
   key: data_export_heat_network
   position: 8
-  output_element_id: 249
-  alt_output_element_id: 
   dependent_on: 
   description:
     content_en: |
@@ -4603,6 +4601,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: data_export
+  alt_output_element_key: 
+  output_element_key: heat_network_demand
 - id: 277
   image: house_direct_heating.gif
   general_sub_header: heat_output
@@ -4610,8 +4610,6 @@
   subheader_image: ''
   key: supply_heat_sources
   position: 1
-  output_element_id: 248
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "District heating can be used as heating technology in <a href=\"/scenario/demand/households/space-heating-hot-water\"
@@ -4660,6 +4658,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: heat
+  alt_output_element_key: 
+  output_element_key: collective_heat_mekko
 - id: 278
   image: ''
   general_sub_header: ''
@@ -4667,8 +4667,6 @@
   subheader_image: ''
   key: supply_heat_network_storage_toggle
   position: 3
-  output_element_id: 252
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "Scenarios with large amounts of \"must-run\" and volatile heat sources
@@ -4713,6 +4711,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: heat
+  alt_output_element_key: 
+  output_element_key: heat_network_storage
 - id: 279
   image: ''
   general_sub_header: ''
@@ -4720,8 +4720,6 @@
   subheader_image: ''
   key: supply_electricity_renewable_biomass_plants
   position: 4
-  output_element_id: 99
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: How much heat will be produced with biomass?
@@ -4729,6 +4727,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: electricity_renewable
+  alt_output_element_key: 
+  output_element_key: source_of_electricity_production
 - id: 280
   image: ''
   general_sub_header: ''
@@ -4736,8 +4736,6 @@
   subheader_image: ''
   key: supply_heat_network_losses
   position: 2
-  output_element_id: 248
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "In a district heating network, heat is generated in a centralised
@@ -4755,6 +4753,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: heat
+  alt_output_element_key: 
+  output_element_key: collective_heat_mekko
 - id: 281
   image: ''
   general_sub_header: change
@@ -4762,8 +4762,6 @@
   subheader_image: ''
   key: costs_solar_thermal
   position: 3
-  output_element_id: 48
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: Solar thermal energy is an interesting sustainable heat source. Both
@@ -4775,6 +4773,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: costs_heat
+  alt_output_element_key: 
+  output_element_key: breakdown_of_total_costs
 - id: 282
   image: ''
   general_sub_header: ''
@@ -4782,8 +4782,6 @@
   subheader_image: ''
   key: flexibility_security_of_supply_heat
   position: 2
-  output_element_id: 250
-  alt_output_element_id: 249
   dependent_on: ''
   description:
     content_en: "Will the future supply of heat be sufficient during every hour per
@@ -4829,6 +4827,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: security_of_supply
+  alt_output_element_key: heat_network_demand
+  output_element_key: heat_network_production
 - id: 283
   image: ''
   general_sub_header: ''
@@ -4836,8 +4836,6 @@
   subheader_image: ''
   key: flexibility_flexibility_demand_response_hhp
   position: 11
-  output_element_id: 255
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "The efficiency of hybrid heat pumps (HHP) is dependent on the ambient
@@ -4857,37 +4855,38 @@
       can be adjusted below. The start value of the treshold COP slider matches the
       calculated cost-optimal threshold COP for space heating. \r\n</br></br>\r\n
       If you're interested in the impact of HHPs on the electricity grid, have a look
-      at the chart that is shown when clicking on the 'Annual'-button in the right corner
-      of the chart. This chart shows the hourly gas and electricity demand of HHPs. If you're
-      interested in the share of gas and electricity used by HHPs, have a look at the table
-      'Hybrid heat pump gas and electricity shares' in the chart list (Demand -> Households)."
-
-    content_nl: "De efficiëntie van (hybride) warmtepompen is afhankelijk van
-      de buitentemperatuur en wordt aangegeven met de 'coefficient of performance'
-      (COP). De COP wordt lager als de buitentemperatuur afneemt. Hieronder kan je
-      de zogenaamde 'omslag-COP' instellen: wanneer de COP van de warmtepomp onder de
-      omslag-COP ligt dan schakelt de hybride warmtepomp van elektriciteit naar gas.
-      Je kan deze instellen op de financieel meest aantrekkelijke voor de consument,
-      maar kan ook een instelling kiezen die minder netwerkimpact oplevert.
-      \r\n</br></br>\r\n
-      Bekijk de grafiek aan de rechterkant voor advies bij het kiezen van de kostenoptimale
-      omslag-COP instelling vanuit een consumentenperspectief. Deze laat zien hoeveel het kost om een eenheid warmte te maken
-      met de HWP voor ruimteverwarming. Voor gas zijn die kosten onafhankelijk van de COP
-      (en dus de buitentemperatuur). Voor elektriciteit nemen de kosten
-      af met toenemende COP (en toenemende buitentemperatuur). Het kruispunt van
-      de twee curves is de kosten-optimale COP-instelling voor de gegeven kostprijs
-      van gas en elektriciteit. Deze kostprijs van gas en elektriciteit is hieronder
-      in te stellen. De startwaarde van het omslag-COP schuifje staat gelijk aan de kostenoptimale
-      omslag-COP bij de ingestelde kosten.
-      \r\n</br></br>\r\n
-      Als je geïnteresseerd bent in de impact van HWP's op het elektriciteitsnet, kijk
-      dan naar de grafiek die wordt weergegeven wanneer je op de 'Jaarlijkse'-knop in de
-      rechterhoek van de grafiek klikt. Deze grafiek toont de gas- en elektriciteitsvraag per uur van HHP's.
-      Als je geïnteresseerd bent in het aandeel gas en elektriciteit dat de HHP's gebruiken,
-      kijk dan naar de table 'Hybride warmtepomp: aandeel elektrisch en gas' in de grafiekenlijst (Vraag -> Huishoudens)"
+      at the chart that is shown when clicking on the 'Annual'-button in the right
+      corner of the chart. This chart shows the hourly gas and electricity demand
+      of HHPs. If you're interested in the share of gas and electricity used by HHPs,
+      have a look at the table 'Hybrid heat pump gas and electricity shares' in the
+      chart list (Demand -> Households)."
+    content_nl: "De efficiëntie van (hybride) warmtepompen is afhankelijk van de buitentemperatuur
+      en wordt aangegeven met de 'coefficient of performance' (COP). De COP wordt
+      lager als de buitentemperatuur afneemt. Hieronder kan je de zogenaamde 'omslag-COP'
+      instellen: wanneer de COP van de warmtepomp onder de omslag-COP ligt dan schakelt
+      de hybride warmtepomp van elektriciteit naar gas. Je kan deze instellen op de
+      financieel meest aantrekkelijke voor de consument, maar kan ook een instelling
+      kiezen die minder netwerkimpact oplevert. \r\n</br></br>\r\n Bekijk de grafiek
+      aan de rechterkant voor advies bij het kiezen van de kostenoptimale omslag-COP
+      instelling vanuit een consumentenperspectief. Deze laat zien hoeveel het kost
+      om een eenheid warmte te maken met de HWP voor ruimteverwarming. Voor gas zijn
+      die kosten onafhankelijk van de COP (en dus de buitentemperatuur). Voor elektriciteit
+      nemen de kosten af met toenemende COP (en toenemende buitentemperatuur). Het
+      kruispunt van de twee curves is de kosten-optimale COP-instelling voor de gegeven
+      kostprijs van gas en elektriciteit. Deze kostprijs van gas en elektriciteit
+      is hieronder in te stellen. De startwaarde van het omslag-COP schuifje staat
+      gelijk aan de kostenoptimale omslag-COP bij de ingestelde kosten. \r\n</br></br>\r\n
+      Als je geïnteresseerd bent in de impact van HWP's op het elektriciteitsnet,
+      kijk dan naar de grafiek die wordt weergegeven wanneer je op de 'Jaarlijkse'-knop
+      in de rechterhoek van de grafiek klikt. Deze grafiek toont de gas- en elektriciteitsvraag
+      per uur van HHP's. Als je geïnteresseerd bent in het aandeel gas en elektriciteit
+      dat de HHP's gebruiken, kijk dan naar de table 'Hybride warmtepomp: aandeel
+      elektrisch en gas' in de grafiekenlijst (Vraag -> Huishoudens)"
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: flexibility_net_load
+  alt_output_element_key: 
+  output_element_key: household_network_gas_hhp_cop_cost
 - id: 284
   image: ''
   general_sub_header: ''
@@ -4895,8 +4894,6 @@
   subheader_image: ''
   key: flexibility_flexibility_solar_pv_curtailment
   position: 2
-  output_element_id: 257
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "If a lot of solar PV is installed, this can cause high peaks on the
@@ -4923,6 +4920,8 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: flexibility_net_load
+  alt_output_element_key: 
+  output_element_key: hourly_solar_pv_curtailment
 - id: 285
   image: ''
   general_sub_header: heat_output
@@ -4930,8 +4929,6 @@
   subheader_image: ''
   key: flexibility_flexibility_power_to_heat_for_district_heating
   position: 2
-  output_element_id: 163
-  alt_output_element_id: 
   dependent_on: ''
   description:
     content_en: "At times of excess electricity supply, an electric boiler or heat
@@ -4949,3 +4946,5 @@
     short_content_en: 
     short_content_nl: 
   sidebar_item_key: flexibility_conversion
+  alt_output_element_key: 
+  output_element_key: use_of_excess_electricity

@@ -1,15 +1,5 @@
 ---
 - id: 2
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: &1 !ruby/object:ActiveSupport::TimeZone
-      name: Europe/Amsterdam
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:31:17.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:31:17.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -22,7 +12,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how household demand for electricity will change
@@ -35,16 +24,8 @@
       '<u>Wijzig grafiek</u>' om andere grafieken te tonen over energiegebruik."
     short_content_en: Households, by application
     short_content_nl: Huishoudelijk, naar toepassing
+  output_element_type_name: bezier
 - id: 5
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:31:28.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:31:28.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -57,7 +38,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how the electricity that households use, is generated.
@@ -71,16 +51,8 @@
       boven de grafiek om andere grafieken te tonen over energiegebruik."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 28
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:31:41.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:31:41.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -93,7 +65,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how the electricity and heat that industry uses,
@@ -111,16 +82,8 @@
       energiegebruik."
     short_content_en: Industrial
     short_content_nl: Industrie
+  output_element_type_name: bezier
 - id: 29
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:31:52.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:31:52.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -133,7 +96,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_agriculture
   description:
     content_en: "This graph shows how agricultural demand for energy will change as
@@ -149,16 +111,8 @@
       '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over energiegebruik."
     short_content_en: Agriculture
     short_content_nl: Landbouw
+  output_element_type_name: bezier
 - id: 30
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:32:05.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:32:05.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -171,7 +125,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_agriculture
   description:
     content_en: "This graph shows agricultural heat demand changes from now to the
@@ -193,16 +146,8 @@
       andere grafieken te tonen over energiegebruik."
     short_content_en: Agricultural
     short_content_nl: Agricultural
+  output_element_type_name: bezier
 - id: 31
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:32:17.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:32:17.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -215,7 +160,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how demand for energy in the building, service and
@@ -230,16 +174,8 @@
       boven de grafiek om andere grafieken te tonen over energiegebruik."
     short_content_en: Other sectors
     short_content_nl: Overige sectoren
+  output_element_type_name: bezier
 - id: 32
-  output_element_type_id: 8
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2011-03-10 06:04:34.000000000 Z
-    zone: *1
-    time: 2011-03-10 07:04:34.000000000 Z
   under_construction: false
   unit: 
   percentage: 
@@ -252,7 +188,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: 
   description:
     content_en: "When comparing different types of electricity generation, only the
@@ -277,16 +212,8 @@
       href=\"/units\">Meer informatie over eenheden...</a>"
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: block
 - id: 42
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-14 13:35:43.000000000 Z
-    zone: *1
-    time: 2020-01-14 14:35:43.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -299,7 +226,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows the composition of the total heat production. \r\n<br/><br/>\r\nYou
@@ -310,16 +236,8 @@
       zal de warmtemix veranderen."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 43
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 13:56:50.000000000 Z
-    zone: *1
-    time: 2018-06-27 15:56:50.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -332,7 +250,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: This graph shows the road transport fuel mix in the present and future.
@@ -342,16 +259,8 @@
       mix van nu. '
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 45
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 12:24:44.000000000 Z
-    zone: *1
-    time: 2018-06-27 14:24:44.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -364,7 +273,6 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows total primary energy use for your country in the
@@ -375,16 +283,8 @@
       grafiek om andere grafieken te tonen over energiegebruik."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 46
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 12:04:41.000000000 Z
-    zone: *1
-    time: 2018-06-27 14:04:41.000000000 Z
   under_construction: false
   unit: MT
   percentage: false
@@ -397,7 +297,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph compares energetic CO<sub>2</sub> emissions between 1990,
@@ -433,16 +332,8 @@
       worden niet getoond."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 47
-  output_element_type_id: 3
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:07:43.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:07:43.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -455,7 +346,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph compares the net foreign energy dependence in the present
@@ -470,16 +360,8 @@
       \r\n<br/><br/> Zie voor meer informatie het onderdeel 'Doelen'."
     short_content_en: Present year
     short_content_nl: Startjaar
+  output_element_type_name: waterfall
 - id: 48
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-05-18 07:14:26.000000000 Z
-    zone: *1
-    time: 2018-05-18 09:14:26.000000000 Z
   under_construction: false
   unit: euro
   percentage: false
@@ -492,7 +374,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph show how energy costs will change between the present
@@ -503,16 +384,8 @@
       opgedeeld in een aantal relevante categorieën. "
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 49
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2011-03-10 06:04:34.000000000 Z
-    zone: *1
-    time: 2011-03-10 07:04:34.000000000 Z
   under_construction: false
   unit: "%"
   percentage: false
@@ -525,7 +398,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: 
   description:
     content_en: "This graph shows how the percentage of sustainable final energy use
@@ -538,16 +410,8 @@
       of warmte niet zijn meegenomen."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 52
-  output_element_type_id: 4
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2011-03-10 06:04:34.000000000 Z
-    zone: *1
-    time: 2011-03-10 07:04:34.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -560,7 +424,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: 
   description:
     content_en: "This graph compares primary energy consumption in your country (horizontal
@@ -592,16 +455,8 @@
       boven de grafiek om andere grafieken te tonen over energiegebruik.\r\n\r\n"
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: mekko
 - id: 56
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-01-03 10:11:36.000000000 Z
-    zone: *1
-    time: 2019-01-03 11:11:36.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -614,7 +469,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 196
   dependent_on: ''
   description:
     content_en: "This graph shows how household heat demand changes from now to the
@@ -635,16 +489,9 @@
       grafiek</u>' boven de grafiek om andere grafieken te tonen over energiegebruik.\r\n"
     short_content_en: Household
     short_content_nl: Huishoudelijk
+  output_element_type_name: bezier
+  related_output_element_key: household_heat_demand_and_production
 - id: 57
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:33:44.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:33:44.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -657,7 +504,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how household final demand for heat and electricity
@@ -685,16 +531,8 @@
       '<u>Andere grafiek</u>' boven de grafiek om andere grafieken te tonen over energiegebruik."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 58
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-12-10 12:54:24.000000000 Z
-    zone: *1
-    time: 2018-12-10 13:54:24.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -707,7 +545,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 196
   dependent_on: ''
   description:
     content_en: "This graph shows how household final demand for heat and electricity
@@ -737,16 +574,9 @@
       '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over energiegebruik.\r\n"
     short_content_en: Household
     short_content_nl: Huishoudelijke
+  output_element_type_name: bezier
+  related_output_element_key: household_heat_demand_and_production
 - id: 61
-  output_element_type_id: 3
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-15 12:53:28.000000000 Z
-    zone: *1
-    time: 2018-06-15 14:53:28.000000000 Z
   under_construction: false
   unit: euro
   percentage: false
@@ -759,7 +589,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: use_network_calculations
   description:
     content_en: "This chart shows how investment costs for the gas and electricity
@@ -779,16 +608,8 @@
       en de midden- en hoogspanningsnetten verzwaren.\r\n\r\n"
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: waterfall
 - id: 62
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:34:11.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:34:11.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -801,7 +622,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_agriculture
   description:
     content_en: "This chart shows how much of the heat and electricity that is used
@@ -818,16 +638,8 @@
       boven de grafiek om andere grafieken te tonen over industrieel energiegebruik."
     short_content_en: Agriculture
     short_content_nl: Landbouw
+  output_element_type_name: bezier
 - id: 65
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:34:33.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:34:33.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -840,7 +652,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: _always_hidden
   description:
     content_en: "This graph shows the energy that is used for hot water in the households
@@ -861,16 +672,8 @@
       grafiek om andere grafieken te tonen over energiegebruik in deze sector."
     short_content_en: Households
     short_content_nl: Huishoudelijk
+  output_element_type_name: bezier
 - id: 66
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:34:43.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:34:43.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -883,7 +686,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how household cooling demand changes from now to
@@ -908,16 +710,8 @@
       boven de grafiek om deze grafiek te kunnen selecteren.\r\n"
     short_content_en: Households
     short_content_nl: Huishoudelijk
+  output_element_type_name: bezier
 - id: 67
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:34:53.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:34:53.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -930,7 +724,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows the energy used for cooking in households.\r\n<br/><br/>\r\nThe
@@ -946,16 +739,8 @@
       energievraag."
     short_content_en: Cooking
     short_content_nl: Koken
+  output_element_type_name: bezier
 - id: 68
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:35:07.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:35:07.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -968,7 +753,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_buildings
   description:
     content_en: "This chart shows how much of the heat and electricity that is used
@@ -985,16 +769,8 @@
       de grafiek om andere grafieken te tonen over industrieel energiegebruik."
     short_content_en: Buildings
     short_content_nl: Gebouwen
+  output_element_type_name: bezier
 - id: 69
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:35:16.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:35:16.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -1007,7 +783,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_buildings
   description:
     content_en: "This graph shows how the final demand for heat and electricity in
@@ -1024,16 +799,8 @@
       boven de grafiek om andere grafieken te tonen over energiegebruik."
     short_content_en: Buildings
     short_content_nl: Gebouwen
+  output_element_type_name: bezier
 - id: 70
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:35:23.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:35:23.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -1046,7 +813,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_buildings
   description:
     content_en: "This graph shows how heat demand in buildings changes from now to
@@ -1068,16 +834,8 @@
       grafiek</u>' boven de grafiek om andere grafieken te tonen over energiegebruik."
     short_content_en: Building
     short_content_nl: Gebouwen
+  output_element_type_name: bezier
 - id: 71
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:35:31.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:35:31.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -1090,7 +848,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_buildings
   description:
     content_en: "This graph shows how cooling demand in buildings changes from now
@@ -1115,16 +872,8 @@
       boven de grafiek om deze grafiek te kunnen selecteren.\r\n"
     short_content_en: Buildings
     short_content_nl: Gebouwen
+  output_element_type_name: bezier
 - id: 72
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:35:39.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:35:39.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -1137,7 +886,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_buildings
   description:
     content_en: "This graph shows how buildings demand for electricity will change
@@ -1150,16 +898,8 @@
       '<u>Wijzig grafiek</u>' om andere grafieken te tonen over energiegebruik."
     short_content_en: Buildings
     short_content_nl: Gebouwen
+  output_element_type_name: bezier
 - id: 74
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:35:47.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:35:47.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -1172,7 +912,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_buildings
   description:
     content_en: "This graph shows how the electricity that buildings use, is generated.
@@ -1186,16 +925,8 @@
       boven de grafiek om andere grafieken te tonen over energiegebruik."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 76
-  output_element_type_id: 3
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:07:56.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:07:56.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -1208,7 +939,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows a breakdown of the energy that we import from other
@@ -1222,16 +952,8 @@
       minder geïmporteerd wordt, des te beter het is."
     short_content_en: Future year
     short_content_nl: Toekomst jaar
+  output_element_type_name: waterfall
 - id: 77
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-14 13:32:26.000000000 Z
-    zone: *1
-    time: 2020-01-14 14:32:26.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -1244,23 +966,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: This chart shows the mix of natural- and green gas in the gas network.
     content_nl: Deze grafiek toont de mix van aardgas and groengas in het gasnet.
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 99
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-12-10 12:49:50.000000000 Z
-    zone: *1
-    time: 2018-12-10 13:49:50.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -1273,7 +986,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 172
   dependent_on: ''
   description:
     content_en: "This graph gives a breakdown of current and future electricity production
@@ -1292,16 +1004,9 @@
       weinig productiecapaciteit bouwt, zal het model stroom importeren.\r\n"
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
+  related_output_element_key: merit_order_hourly_supply
 - id: 100
-  output_element_type_id: 5
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 12:40:16.000000000 Z
-    zone: *1
-    time: 2019-04-18 14:40:16.000000000 Z
   under_construction: false
   unit: kg/GJ
   percentage: false
@@ -1314,7 +1019,6 @@
   min_axis_value: 0.0
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_fce
   description:
     content_en: "This chart shows how much greenhouse gas is emitted during the life
@@ -1341,16 +1045,8 @@
       kunt <a href='http://refman.et-model.com/publications/1623' target='blank'>downloaden</a>."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: horizontal_stacked_bar
 - id: 102
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-12-09 09:54:33.000000000 Z
-    zone: *1
-    time: 2013-12-09 10:54:33.000000000 Z
   under_construction: false
   unit: bln_euro
   percentage: false
@@ -1363,7 +1059,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph show how energy costs will change between the present
@@ -1374,16 +1069,8 @@
       opgedeeld in een aantal relevante categorieën. "
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 105
-  output_element_type_id: 5
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 12:40:26.000000000 Z
-    zone: *1
-    time: 2019-04-18 14:40:26.000000000 Z
   under_construction: false
   unit: kg/GJ
   percentage: false
@@ -1396,7 +1083,6 @@
   min_axis_value: 0.0
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_fce
   description:
     content_en: "This chart shows how much greenhouse gas is emitted during the life
@@ -1423,16 +1109,8 @@
       kunt <a href='http://refman.et-model.com/publications/1623' target='blank'>downloaden</a>."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: horizontal_stacked_bar
 - id: 107
-  output_element_type_id: 5
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 12:40:34.000000000 Z
-    zone: *1
-    time: 2019-04-18 14:40:34.000000000 Z
   under_construction: false
   unit: kg/GJ
   percentage: false
@@ -1445,7 +1123,6 @@
   min_axis_value: 0.0
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_fce
   description:
     content_en: "This chart shows how much greenhouse gas is emitted during the life
@@ -1472,16 +1149,8 @@
       kunt <a href='http://refman.et-model.com/publications/1623' target='blank'>downloaden</a>."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: horizontal_stacked_bar
 - id: 111
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2011-12-05 15:41:50.000000000 Z
-    zone: *1
-    time: 2011-12-05 16:41:50.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:05:28.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:05:28.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -1494,7 +1163,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: 'This chart shows the peak power demand as well as available production
@@ -1509,16 +1177,8 @@
       het betrouwbare vermogen, neemt de kans op onvermogen toe.
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 113
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-02-24 09:21:36.000000000 Z
-    zone: *1
-    time: 2012-02-24 10:21:36.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-10-10 13:01:10.000000000 Z
-    zone: *1
-    time: 2013-10-10 15:01:10.000000000 Z
   under_construction: false
   unit: euro
   percentage: false
@@ -1531,7 +1191,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph show how energy costs will change between the present
@@ -1542,16 +1201,8 @@
       opgedeeld in een aantal relevante categorieën. "
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 115
-  output_element_type_id: 15
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-03-09 10:31:20.000000000 Z
-    zone: *1
-    time: 2012-03-09 11:31:20.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-11-03 13:51:15.000000000 Z
-    zone: *1
-    time: 2014-11-03 14:51:15.000000000 Z
   under_construction: false
   unit: Additional emissions (kgCO2/MWhe volatile) ; Additional costs (EUR/MWhe volatile)
   percentage: false
@@ -1564,7 +1215,6 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This chart shows the additional costs and CO<sub>2</sub> emissions
@@ -1587,16 +1237,8 @@
       scenario. "
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: scatter
 - id: 116
-  output_element_type_id: 12
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-03-12 12:09:52.000000000 Z
-    zone: *1
-    time: 2012-03-12 13:09:52.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:40:16.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:40:16.000000000 Z
   under_construction: false
   unit: ''
   percentage: false
@@ -1609,7 +1251,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_merit_order
   description:
     content_en: "This table shows the merit order of your scenario. Based on your
@@ -1627,16 +1268,8 @@
       draaikosten. Ook zie je het beschikbare vermogen en het aantal vollast draaiuren."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: html_table
 - id: 118
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-03-13 14:02:54.000000000 Z
-    zone: *1
-    time: 2012-03-13 15:02:54.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-03-07 09:25:54.000000000 Z
-    zone: *1
-    time: 2019-03-07 10:25:54.000000000 Z
   under_construction: false
   unit: FTE
   percentage: false
@@ -1649,7 +1282,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: _always_hidden
   description:
     content_en: "This graph shows the net local employment associated with energy
@@ -1670,16 +1302,8 @@
       target=\"_blank\">documentatie</a> voor meer informatie."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 123
-  output_element_type_id: 17
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-05-16 13:44:46.000000000 Z
-    zone: *1
-    time: 2012-05-16 15:44:46.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-08-09 12:46:29.000000000 Z
-    zone: *1
-    time: 2018-08-09 14:46:29.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -1692,7 +1316,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "Sankey diagrams show how, where and how much energy is used. At the
@@ -1710,16 +1333,8 @@
       en raffinage van energiedragers zijn buiten beschouwing gelaten.\r\n\r\n"
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: sankey
 - id: 125
-  output_element_type_id: 29
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-05-31 13:16:16.000000000 Z
-    zone: *1
-    time: 2012-05-31 15:16:16.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-09-18 14:34:00.000000000 Z
-    zone: *1
-    time: 2018-09-18 16:34:00.000000000 Z
   under_construction: false
   unit: Eur/Mwh
   percentage: false
@@ -1732,7 +1347,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_merit_order
   description:
     content_en: "This chart shows the merit order of your scenario. Based on your
@@ -1750,16 +1364,8 @@
       draaikosten."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: cost_capacity_bar
 - id: 127
-  output_element_type_id: 18
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-06-26 12:18:18.000000000 Z
-    zone: *1
-    time: 2012-06-26 14:18:18.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 12:41:35.000000000 Z
-    zone: *1
-    time: 2019-04-18 14:41:35.000000000 Z
   under_construction: false
   unit: ''
   percentage: false
@@ -1772,7 +1378,6 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: This chart summarizes the targets that can be set in this section.
@@ -1786,16 +1391,8 @@
       in het toekomst-scenario en rood als dat niet het geval is.
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: target_bar
 - id: 129
-  output_element_type_id: 17
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-07-16 14:31:54.000000000 Z
-    zone: *1
-    time: 2012-07-16 16:31:54.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-08-09 12:46:39.000000000 Z
-    zone: *1
-    time: 2018-08-09 14:46:39.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -1808,23 +1405,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: sankey
 - id: 130
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-31 12:45:09.000000000 Z
-    zone: *1
-    time: 2012-08-31 14:45:09.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:38:12.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:38:12.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -1837,7 +1425,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how demand for energy of the aluminium industry
@@ -1859,16 +1446,8 @@
       andere grafieken te tonen over industrieel energiegebruik."
     short_content_en: Aluminium
     short_content_nl: Aluminium
+  output_element_type_name: bezier
 - id: 131
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-09-12 12:55:16.000000000 Z
-    zone: *1
-    time: 2012-09-12 14:55:16.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:38:21.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:38:21.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -1881,7 +1460,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how industrial demand for energy will change as
@@ -1903,16 +1481,8 @@
       energiegebruik."
     short_content_en: Other metals
     short_content_nl: Overige metalen
+  output_element_type_name: bezier
 - id: 132
-  output_element_type_id: 18
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-09-27 08:55:41.000000000 Z
-    zone: *1
-    time: 2012-09-27 10:55:41.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 12:41:47.000000000 Z
-    zone: *1
-    time: 2019-04-18 14:41:47.000000000 Z
   under_construction: false
   unit: ''
   percentage: false
@@ -1925,7 +1495,6 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: This chart summarizes the targets that can be set in this section.
@@ -1939,16 +1508,8 @@
       in het toekomst-scenario en rood als dat niet het geval is.
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: target_bar
 - id: 133
-  output_element_type_id: 18
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-09-27 08:57:15.000000000 Z
-    zone: *1
-    time: 2012-09-27 10:57:15.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 12:42:42.000000000 Z
-    zone: *1
-    time: 2019-04-18 14:42:42.000000000 Z
   under_construction: false
   unit: ''
   percentage: false
@@ -1961,7 +1522,6 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: This chart summarizes the targets that can be set in this section.
@@ -1975,16 +1535,8 @@
       in het toekomst-scenario en rood als dat niet het geval is.
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: target_bar
 - id: 134
-  output_element_type_id: 18
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-09-27 08:57:40.000000000 Z
-    zone: *1
-    time: 2012-09-27 10:57:40.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 12:42:50.000000000 Z
-    zone: *1
-    time: 2019-04-18 14:42:50.000000000 Z
   under_construction: false
   unit: ''
   percentage: false
@@ -1997,7 +1549,6 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: This chart summarizes the targets that can be set in this section.
@@ -2011,16 +1562,8 @@
       in het toekomst-scenario en rood als dat niet het geval is.
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: target_bar
 - id: 135
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-10-04 13:08:51.000000000 Z
-    zone: *1
-    time: 2012-10-04 15:08:51.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:38:32.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:38:32.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -2033,7 +1576,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how the steel industry's demand for energy will
@@ -2050,16 +1592,8 @@
       maar voor omzettingen naar bijvoorbeeld cokes en cokes gas wel."
     short_content_en: Steel
     short_content_nl: Staal
+  output_element_type_name: bezier
 - id: 136
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-10-15 12:25:11.000000000 Z
-    zone: *1
-    time: 2012-10-15 14:25:11.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:39:10.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:39:10.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -2072,7 +1606,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how the metal industry's demand for energy will
@@ -2089,16 +1622,8 @@
       omzettingen naar bijvoorbeeld cokes en cokes gas wel."
     short_content_en: Metal
     short_content_nl: Metaal
+  output_element_type_name: bezier
 - id: 137
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-11-06 09:56:28.000000000 Z
-    zone: *1
-    time: 2012-11-06 10:56:28.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:39:28.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:39:28.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -2111,7 +1636,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how heating and cooling demand in households and
@@ -2121,16 +1645,8 @@
       in het onderdeel ''Vraag''. '
     short_content_en: Heating and cooling demand of households and buildings
     short_content_nl: Warmte- en koudevraag van huishoudens en gebouwen
+  output_element_type_name: bezier
 - id: 138
-  output_element_type_id: 5
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-12-11 16:23:45.000000000 Z
-    zone: *1
-    time: 2012-12-11 17:23:45.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 12:41:18.000000000 Z
-    zone: *1
-    time: 2019-04-18 14:41:18.000000000 Z
   under_construction: false
   unit: kg/GJ
   percentage: false
@@ -2143,7 +1659,6 @@
   min_axis_value: 0.0
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_fce
   description:
     content_en: "This chart shows how much greenhouse gas is emitted during the life
@@ -2170,16 +1685,8 @@
       kunt <a href='http://refman.et-model.com/publications/1623' target='blank'>downloaden</a>."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: horizontal_stacked_bar
 - id: 140
-  output_element_type_id: 12
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-12-19 15:00:38.000000000 Z
-    zone: *1
-    time: 2012-12-19 16:00:38.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:40:42.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:40:42.000000000 Z
   under_construction: false
   unit: ''
   percentage: false
@@ -2192,23 +1699,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_merit_order
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: html_table
 - id: 141
-  output_element_type_id: 12
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-02-19 10:06:20.000000000 Z
-    zone: *1
-    time: 2013-02-19 11:06:20.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-14 13:31:50.000000000 Z
-    zone: *1
-    time: 2020-01-14 14:31:50.000000000 Z
   under_construction: false
   unit: ''
   percentage: false
@@ -2221,7 +1719,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This table shows an overview of all CHP plants installed in your
@@ -2233,16 +1730,8 @@
       (elektrische) vermogen van WKK.\r\n"
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: html_table
 - id: 142
-  output_element_type_id: 12
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-03-14 08:36:25.000000000 Z
-    zone: *1
-    time: 2013-03-14 09:36:25.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-11-13 13:53:49.000000000 Z
-    zone: *1
-    time: 2013-11-13 14:53:49.000000000 Z
   under_construction: false
   unit: bln_euro
   percentage: false
@@ -2255,7 +1744,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: 'This table shows an overview of the investment cost of heat and electricity
@@ -2271,16 +1759,8 @@
       tussen de investeringskosten voor de twee scenarios. '
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: html_table
 - id: 143
-  output_element_type_id: 19
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-06-14 14:27:13.000000000 Z
-    zone: *1
-    time: 2013-06-14 16:27:13.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 12:23:23.000000000 Z
-    zone: *1
-    time: 2019-04-18 14:23:23.000000000 Z
   under_construction: false
   unit: ''
   percentage: false
@@ -2293,7 +1773,6 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This chart gives an impression of how the costs of conversion technologies
@@ -2355,16 +1834,8 @@
     short_content_nl: Deze grafiek geeft een impressie hoe de kosten van conversietechnologieën
       zich tot elkaar verhouden en op welk moment het economisch rendabel wordt om
       de eerste conversie-eenheden te bouwen.
+  output_element_type_name: storage
 - id: 145
-  output_element_type_id: 12
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-07-17 14:31:16.000000000 Z
-    zone: *1
-    time: 2013-07-17 16:31:16.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-28 16:05:46.000000000 Z
-    zone: *1
-    time: 2018-06-28 18:05:46.000000000 Z
   under_construction: false
   unit: ''
   percentage: false
@@ -2377,7 +1848,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: This table displays the population, the number of residences and the
@@ -2389,16 +1859,8 @@
       scenario.
     short_content_nl: Deze tabel toont het aantal inwoners, het aantal huishoudens
       en het gemiddelde aantal inwoners per huishouden.
+  output_element_type_name: html_table
 - id: 146
-  output_element_type_id: 4
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-11-04 12:37:05.000000000 Z
-    zone: *1
-    time: 2013-11-04 13:37:05.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 13:06:44.000000000 Z
-    zone: *1
-    time: 2018-06-27 15:06:44.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -2411,7 +1873,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This section compares your country's final energy consumption (horizontal
@@ -2441,16 +1902,8 @@
       '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over energiegebruik.\r\n"
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: mekko
 - id: 147
-  output_element_type_id: 20
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 12:23:00.000000000 Z
-    zone: *1
-    time: 2019-04-18 14:23:00.000000000 Z
   under_construction: false
   unit: ''
   percentage: false
@@ -2463,7 +1916,6 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "The data in this chart is based on a relatively simple four country
@@ -2483,16 +1935,8 @@
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: import_export_capacity
 - id: 148
-  output_element_type_id: 21
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-11-07 16:41:47.000000000 Z
-    zone: *1
-    time: 2013-11-07 17:41:47.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 12:22:45.000000000 Z
-    zone: *1
-    time: 2019-04-18 14:22:45.000000000 Z
   under_construction: false
   unit: ''
   percentage: false
@@ -2505,7 +1949,6 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This chart illustrates the effect that increased renewables have
@@ -2520,16 +1963,8 @@
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: import_export_renewables
 - id: 149
-  output_element_type_id: 22
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-11-11 00:00:00.000000000 Z
-    zone: *1
-    time: 2013-11-11 01:00:00.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 12:23:11.000000000 Z
-    zone: *1
-    time: 2019-04-18 14:23:11.000000000 Z
   under_construction: false
   unit: ''
   percentage: false
@@ -2542,7 +1977,6 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This chart shows the interconnection capacity between the Netherlands,
@@ -2557,16 +1991,8 @@
       de interconnector tussen België en Frankrijk is asymmetrisch."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: import_export_flows
 - id: 152
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2013-12-09 08:25:10.000000000 Z
-    zone: *1
-    time: 2013-12-09 09:25:10.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:39:40.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:39:40.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -2579,7 +2005,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how demand for energy in the chemical industry will
@@ -2603,16 +2028,8 @@
       over industrieel energiegebruik."
     short_content_en: Chemical industry
     short_content_nl: Chemische industrie
+  output_element_type_name: bezier
 - id: 156
-  output_element_type_id: 23
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-24 10:26:46.000000000 Z
-    zone: *1
-    time: 2014-01-24 11:26:46.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:02:42.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:02:42.000000000 Z
   under_construction: false
   unit: EUR/MWh
   percentage: false
@@ -2625,7 +2042,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: _always_hidden
   description:
     content_en: "This chart shows the 'day-ahead' price of electricity for the Central
@@ -2644,16 +2060,8 @@
       tussen landen en door slimmere marktmechanismen in te zetten.\r\n"
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: import_export_cwe
 - id: 157
-  output_element_type_id: 24
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-05-15 11:11:04.000000000 Z
-    zone: *1
-    time: 2014-05-15 13:11:04.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:06:41.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:06:41.000000000 Z
   under_construction: false
   unit: EJ
   percentage: false
@@ -2666,23 +2074,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: time_curve
 - id: 158
-  output_element_type_id: 24
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-05-15 11:11:04.000000000 Z
-    zone: *1
-    time: 2014-05-15 13:11:04.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:06:51.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:06:51.000000000 Z
   under_construction: false
   unit: EJ
   percentage: false
@@ -2695,23 +2094,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: time_curve
 - id: 159
-  output_element_type_id: 24
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-05-15 11:11:04.000000000 Z
-    zone: *1
-    time: 2014-05-15 13:11:04.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:07:01.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:07:01.000000000 Z
   under_construction: false
   unit: EJ
   percentage: false
@@ -2724,23 +2114,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: time_curve
 - id: 161
-  output_element_type_id: 24
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-05-15 11:11:04.000000000 Z
-    zone: *1
-    time: 2014-05-15 13:11:04.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:07:24.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:07:24.000000000 Z
   under_construction: false
   unit: EJ
   percentage: false
@@ -2753,23 +2134,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: time_curve
 - id: 162
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-12-15 15:38:00.000000000 Z
-    zone: *1
-    time: 2014-12-15 16:38:00.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 13:53:31.000000000 Z
-    zone: *1
-    time: 2018-06-27 15:53:31.000000000 Z
   under_construction: false
   unit: MT
   percentage: false
@@ -2782,23 +2154,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 163
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2015-03-18 10:23:17.000000000 Z
-    zone: *1
-    time: 2015-03-18 11:23:17.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-12-10 12:56:34.000000000 Z
-    zone: *1
-    time: 2018-12-10 13:56:34.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -2811,7 +2174,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 173
   dependent_on: has_electricity_storage
   description:
     content_en: The ETM contains several flexibility technologies that are able to
@@ -2826,16 +2188,9 @@
       je in jouw scenario wilt inzetten.
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
+  related_output_element_key: merit_order_hourly_flexibility
 - id: 164
-  output_element_type_id: 12
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2015-03-18 14:11:42.000000000 Z
-    zone: *1
-    time: 2015-03-18 15:11:42.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-01-03 10:26:33.000000000 Z
-    zone: *1
-    time: 2019-01-03 11:26:33.000000000 Z
   under_construction: false
   unit: ''
   percentage: false
@@ -2848,7 +2203,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 173
   dependent_on: ''
   description:
     content_en: "The ETM contains several flexibility technologies that are able to
@@ -2871,16 +2225,9 @@
       scenario wilt inzetten."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: html_table
+  related_output_element_key: merit_order_hourly_flexibility
 - id: 165
-  output_element_type_id: 4
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 12:07:45.000000000 Z
-    zone: *1
-    time: 2018-06-27 14:07:45.000000000 Z
   under_construction: false
   unit: T
   percentage: false
@@ -2893,7 +2240,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This 'Mekko' chart shows the CO<sub>2</sub> emissions for the sectors
@@ -2910,16 +2256,8 @@
       bij de primaire energiedragers zoals aardolie en kolen uitkomen."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: mekko
 - id: 166
-  output_element_type_id: 4
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2015-08-17 15:42:45.000000000 Z
-    zone: *1
-    time: 2015-08-17 17:42:45.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-10-04 10:18:22.000000000 Z
-    zone: *1
-    time: 2019-10-04 12:18:22.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -2932,7 +2270,6 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: _always_hidden
   description:
     content_en: 'This ''Mekko'' chart shows the use of primary biofuel for the sectors
@@ -2941,16 +2278,8 @@
       voor de sectoren van het ETM.
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: mekko
 - id: 168
-  output_element_type_id: 4
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2015-10-08 13:40:00.000000000 Z
-    zone: *1
-    time: 2015-10-08 15:40:00.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-09-18 08:58:49.000000000 Z
-    zone: *1
-    time: 2019-09-18 10:58:49.000000000 Z
   under_construction: true
   unit: km2
   percentage: false
@@ -2963,23 +2292,14 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: mekko
 - id: 170
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-02-05 15:08:50.000000000 Z
-    zone: *1
-    time: 2016-02-05 16:08:50.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-02-08 16:11:28.000000000 Z
-    zone: *1
-    time: 2016-02-08 17:11:28.000000000 Z
   under_construction: false
   unit: euro
   percentage: false
@@ -2992,7 +2312,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: 'This chart shows the average initial investment price excluding taxes
@@ -3008,16 +2327,8 @@
     short_content_nl: Deze grafiek toont de gemiddelde aanschafprijs exclusief belastingen
       voor elektrische auto's en auto's met verbrandingsmotoren. De laatstgenoemde
       is een referentie benzine auto.
+  output_element_type_name: vertical_stacked_bar
 - id: 171
-  output_element_type_id: 16
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-05-03 10:16:09.000000000 Z
-    zone: *1
-    time: 2016-05-03 12:16:09.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:41:40.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:41:40.000000000 Z
   under_construction: false
   unit: EUR/MWh
   percentage: false
@@ -3030,7 +2341,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: The ETM calculates the hourly supply of electricity from the hourly
@@ -3045,16 +2355,8 @@
       duurste centrale die op dat moment draait.
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: d3
 - id: 172
-  output_element_type_id: 16
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-05-03 10:16:09.000000000 Z
-    zone: *1
-    time: 2016-05-03 12:16:09.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:42:04.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:42:04.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -3067,7 +2369,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: The ETM calculates the hourly supply of electricity from the hourly
@@ -3084,16 +2385,8 @@
       op uurbasis.
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: d3
 - id: 173
-  output_element_type_id: 16
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-05-03 10:16:22.000000000 Z
-    zone: *1
-    time: 2016-05-03 12:16:22.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:43:02.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:43:02.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -3106,7 +2399,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: The ETM determines on an hourly basis if there is excess electricity
@@ -3115,16 +2407,8 @@
       en hoe deze worden ingezet.
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: d3
 - id: 175
-  output_element_type_id: 16
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-06-30 10:02:33.000000000 Z
-    zone: *1
-    time: 2016-06-30 12:02:33.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:41:52.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:41:52.000000000 Z
   under_construction: false
   unit: ''
   percentage: false
@@ -3137,7 +2421,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: As a result of large numbers of wind turbines and solar panels installed,
@@ -3152,16 +2435,8 @@
       afnemen.
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: d3
 - id: 176
-  output_element_type_id: 4
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-07 10:03:20.000000000 Z
-    zone: *1
-    time: 2014-01-07 11:03:20.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-10-09 08:45:21.000000000 Z
-    zone: *1
-    time: 2018-10-09 10:45:21.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -3174,7 +2449,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_detailed_chemical_industry
   description:
     content_en: "This graph shows how the demand for energy of the industry sectors
@@ -3191,16 +2465,8 @@
       maar voor omzettingen naar bijvoorbeeld cokes en cokes gas wel.\r\n\r\n"
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: mekko
 - id: 178
-  output_element_type_id: 4
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-07 10:03:20.000000000 Z
-    zone: *1
-    time: 2014-01-07 11:03:20.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-10-09 08:45:33.000000000 Z
-    zone: *1
-    time: 2018-10-09 10:45:33.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -3213,7 +2479,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_detailed_chemical_industry
   description:
     content_en: "This graph shows how the demand for energy of the industry sectors
@@ -3230,16 +2495,8 @@
       maar voor omzettingen naar bijvoorbeeld cokes en cokes gas wel."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: mekko
 - id: 180
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-07 09:25:06.000000000 Z
-    zone: *1
-    time: 2014-01-07 10:25:06.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:39:54.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:39:54.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -3252,7 +2509,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how energy demand of the refineries will change
@@ -3274,16 +2530,8 @@
       energiegebruik."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 181
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-07 09:25:06.000000000 Z
-    zone: *1
-    time: 2014-01-07 10:25:06.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:40:02.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:40:02.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -3296,7 +2544,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how energy demand of the paper industry will change
@@ -3318,16 +2565,8 @@
       energiegebruik."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 182
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-07 09:25:06.000000000 Z
-    zone: *1
-    time: 2014-01-07 10:25:06.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:40:14.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:40:14.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -3340,7 +2579,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_detailed_chemical_industry
   description:
     content_en: "This graph shows how energy demand of the chemicals industry will
@@ -3362,16 +2600,8 @@
       andere grafieken te tonen over industrieel energiegebruik."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 183
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-07 09:25:06.000000000 Z
-    zone: *1
-    time: 2014-01-07 10:25:06.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:40:25.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:40:25.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -3384,7 +2614,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how energy demand of the food industry will change
@@ -3406,16 +2635,8 @@
       andere grafieken te tonen over industrieel energiegebruik."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 184
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-07 09:25:06.000000000 Z
-    zone: *1
-    time: 2014-01-07 10:25:06.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:40:32.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:40:32.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -3428,7 +2649,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: has_detailed_chemical_industry
   description:
     content_en: "This graph shows how energy demand of the fertilizer industry will
@@ -3450,16 +2670,8 @@
       energiegebruik."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 186
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-07 09:25:06.000000000 Z
-    zone: *1
-    time: 2014-01-07 10:25:06.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-10-09 07:56:48.000000000 Z
-    zone: *1
-    time: 2018-10-09 09:56:48.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -3472,7 +2684,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how energy demand of the other industry will change
@@ -3494,16 +2705,8 @@
       energiegebruik."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 187
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2014-01-07 09:25:06.000000000 Z
-    zone: *1
-    time: 2014-01-07 10:25:06.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:41:06.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:41:06.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -3516,23 +2719,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: _always_hidden
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 188
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-22 08:01:17.000000000 Z
-    zone: *1
-    time: 2016-08-22 10:01:17.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:09:58.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:09:58.000000000 Z
   under_construction: false
   unit: MT
   percentage: false
@@ -3545,7 +2739,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "Which part of the CO<sub>2</sub> emissions from biomass is relevant
@@ -3589,16 +2782,8 @@
       worden niet getoond."
     short_content_en: CO2 biomass
     short_content_nl: CO2 biomassa
+  output_element_type_name: vertical_stacked_bar
 - id: 189
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-23 14:50:57.000000000 Z
-    zone: *1
-    time: 2016-08-23 16:50:57.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:41:18.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:41:18.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -3611,7 +2796,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how energy demand of the central ICT sector will
@@ -3630,16 +2814,8 @@
       om andere grafieken te tonen over industrieel energiegebruik."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 190
-  output_element_type_id: 17
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-08-29 10:58:43.000000000 Z
-    zone: *1
-    time: 2016-08-29 12:58:43.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:08:31.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:08:31.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -3652,23 +2828,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: sankey
 - id: 191
-  output_element_type_id: 17
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-09-28 09:29:03.000000000 Z
-    zone: *1
-    time: 2016-09-28 11:29:03.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-25 10:39:18.000000000 Z
-    zone: *1
-    time: 2019-04-25 12:39:18.000000000 Z
   under_construction: false
   unit: T
   percentage: false
@@ -3681,23 +2848,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: sankey
 - id: 192
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-11-10 17:07:46.000000000 Z
-    zone: *1
-    time: 2016-11-10 18:07:46.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:13:57.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:13:57.000000000 Z
   under_construction: false
   unit: "%"
   percentage: false
@@ -3710,23 +2868,14 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 193
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2016-11-10 17:07:46.000000000 Z
-    zone: *1
-    time: 2016-11-10 18:07:46.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:14:12.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:14:12.000000000 Z
   under_construction: false
   unit: "%"
   percentage: false
@@ -3739,23 +2888,14 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 194
-  output_element_type_id: 28
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-05-15 16:15:21.000000000 Z
-    zone: *1
-    time: 2017-05-15 18:15:21.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:46:53.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:46:53.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -3768,7 +2908,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This chart shows the impact of technology choices and demand growth
@@ -3798,16 +2937,8 @@
       onder de rode lijn."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: demand_curve
 - id: 195
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-08-23 14:57:06.000000000 Z
-    zone: *1
-    time: 2017-08-23 16:57:06.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-14 13:34:23.000000000 Z
-    zone: *1
-    time: 2020-01-14 14:34:23.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -3820,23 +2951,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 196
-  output_element_type_id: 27
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-08-31 15:15:26.000000000 Z
-    zone: *1
-    time: 2017-08-31 17:15:26.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 12:49:00.000000000 Z
-    zone: *1
-    time: 2019-04-18 14:49:00.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -3849,23 +2971,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: heat_demand_and_production
 - id: 197
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-10-30 09:29:34.000000000 Z
-    zone: *1
-    time: 2017-10-30 10:29:34.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-04-10 08:14:03.000000000 Z
-    zone: *1
-    time: 2018-04-10 10:14:03.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -3878,7 +2991,6 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: This graph shows the hydrogen production for use in the fertilizer
@@ -3890,16 +3002,8 @@
       en 'Flexibiliteit' (conversie naar gas).
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 198
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-15 16:30:59.000000000 Z
-    zone: *1
-    time: 2017-11-15 17:30:59.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:12:21.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:12:21.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -3912,7 +3016,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: This chart shows how the amount of CO<sub>2</sub> emissions caused
@@ -3927,16 +3030,8 @@
       more bio-fuels used the less CO<sub>2</sub> emissions are caused.
     short_content_en: CO<sub>2</sub> emissions by international aviation
     short_content_nl: CO<sub>2</sub> emissions by international aviation
+  output_element_type_name: bezier
 - id: 199
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-15 16:30:59.000000000 Z
-    zone: *1
-    time: 2017-11-15 17:30:59.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:12:31.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:12:31.000000000 Z
   under_construction: false
   unit: MT
   percentage: false
@@ -3949,7 +3044,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: This chart shows how energy demand for international aviation will
@@ -3960,16 +3054,8 @@
       on how much people will use flights for international traveling.
     short_content_en: Energy demand of international aviation
     short_content_nl: Energy demand of international aviation
+  output_element_type_name: vertical_stacked_bar
 - id: 200
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-17 14:31:50.000000000 Z
-    zone: *1
-    time: 2017-11-17 15:31:50.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 14:01:30.000000000 Z
-    zone: *1
-    time: 2018-06-27 16:01:30.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -3982,23 +3068,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 201
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-09 15:06:34.000000000 Z
-    zone: *1
-    time: 2017-11-09 16:06:34.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:41:31.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:41:31.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -4011,23 +3088,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 202
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-16 09:07:46.000000000 Z
-    zone: *1
-    time: 2017-11-16 10:07:46.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:41:40.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:41:40.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -4040,23 +3108,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 203
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:41:49.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:41:49.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -4069,23 +3128,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 204
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:41:56.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:41:56.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -4098,23 +3148,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 205
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:42:04.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:42:04.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -4127,23 +3168,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 206
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:42:11.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:42:11.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -4156,23 +3188,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 207
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:42:19.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:42:19.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -4185,23 +3208,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 208
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:42:29.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:42:29.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -4214,23 +3228,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 209
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-11-23 15:02:55.000000000 Z
-    zone: *1
-    time: 2017-11-23 16:02:55.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:42:36.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:42:36.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -4243,7 +3248,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: This chart shows the final energy demand for international navigation
@@ -4252,16 +3256,8 @@
       en luchtvaart.
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 211
-  output_element_type_id: 12
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2017-12-18 15:27:00.000000000 Z
-    zone: *1
-    time: 2017-12-18 16:27:00.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 12:46:17.000000000 Z
-    zone: *1
-    time: 2019-04-18 14:46:17.000000000 Z
   under_construction: false
   unit: MT
   percentage: false
@@ -4274,23 +3270,14 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: html_table
 - id: 212
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-02-20 14:18:29.000000000 Z
-    zone: *1
-    time: 2018-02-20 15:18:29.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 13:34:48.000000000 Z
-    zone: *1
-    time: 2018-06-27 15:34:48.000000000 Z
   under_construction: false
   unit: "%"
   percentage: true
@@ -4303,7 +3290,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: This chart shows the share of different renewable electricity sources
@@ -4313,16 +3299,8 @@
     short_content_en: This chart shows the share of renewable electricity sources
       in the current and future scenarios.
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 213
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-03-05 08:23:59.000000000 Z
-    zone: *1
-    time: 2018-03-05 09:23:59.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-27 11:47:22.000000000 Z
-    zone: *1
-    time: 2018-06-27 13:47:22.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -4335,7 +3313,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This graph shows how household final demand for energy will change
@@ -4348,16 +3325,8 @@
       over energiegebruik."
     short_content_en: Households, by application
     short_content_nl: Huishoudelijk, naar toepassing
+  output_element_type_name: bezier
 - id: 214
-  output_element_type_id: 4
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-03-08 15:22:30.000000000 Z
-    zone: *1
-    time: 2018-03-08 16:22:30.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-01-03 10:13:49.000000000 Z
-    zone: *1
-    time: 2019-01-03 11:13:49.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -4370,23 +3339,15 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 225
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: mekko
+  related_output_element_key: hydrogen_production
 - id: 215
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-03-30 15:21:20.000000000 Z
-    zone: *1
-    time: 2018-03-30 17:21:20.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-03-30 15:21:20.000000000 Z
-    zone: *1
-    time: 2018-03-30 17:21:20.000000000 Z
   under_construction: false
   unit: bln_euro
   percentage: false
@@ -4399,7 +3360,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: This chart shows the total cost of different transport fuels in the
@@ -4407,16 +3367,8 @@
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 216
-  output_element_type_id: 16
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-04-18 11:19:45.000000000 Z
-    zone: *1
-    time: 2018-04-18 13:19:45.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-20 09:28:26.000000000 Z
-    zone: *1
-    time: 2018-06-20 11:28:26.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -4429,23 +3381,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: d3
 - id: 217
-  output_element_type_id: 16
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-04-18 11:19:45.000000000 Z
-    zone: *1
-    time: 2018-04-18 13:19:45.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-20 09:28:40.000000000 Z
-    zone: *1
-    time: 2018-06-20 11:28:40.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -4458,23 +3401,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: d3
 - id: 218
-  output_element_type_id: 16
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-04-18 11:19:45.000000000 Z
-    zone: *1
-    time: 2018-04-18 13:19:45.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-20 09:29:18.000000000 Z
-    zone: *1
-    time: 2018-06-20 11:29:18.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -4487,23 +3421,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: d3
 - id: 219
-  output_element_type_id: 16
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-04-18 11:19:45.000000000 Z
-    zone: *1
-    time: 2018-04-18 13:19:45.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-20 09:31:48.000000000 Z
-    zone: *1
-    time: 2018-06-20 11:31:48.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -4516,23 +3441,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: d3
 - id: 220
-  output_element_type_id: 28
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-04-18 11:19:45.000000000 Z
-    zone: *1
-    time: 2018-04-18 13:19:45.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-20 09:29:12.000000000 Z
-    zone: *1
-    time: 2018-06-20 11:29:12.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -4545,23 +3461,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: demand_curve
 - id: 221
-  output_element_type_id: 28
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-04-18 11:19:45.000000000 Z
-    zone: *1
-    time: 2018-04-18 13:19:45.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-20 09:31:56.000000000 Z
-    zone: *1
-    time: 2018-06-20 11:31:56.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -4574,23 +3481,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: demand_curve
 - id: 222
-  output_element_type_id: 28
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-04-18 11:19:45.000000000 Z
-    zone: *1
-    time: 2018-04-18 13:19:45.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-20 09:29:05.000000000 Z
-    zone: *1
-    time: 2018-06-20 11:29:05.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -4603,23 +3501,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: demand_curve
 - id: 223
-  output_element_type_id: 12
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-04-18 11:19:45.000000000 Z
-    zone: *1
-    time: 2018-04-18 13:19:45.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-01-03 12:43:44.000000000 Z
-    zone: *1
-    time: 2019-01-03 13:43:44.000000000 Z
   under_construction: false
   unit: ''
   percentage: false
@@ -4632,23 +3521,15 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 216
   dependent_on: use_network_calculations
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: html_table
+  related_output_element_key: electricity_network_load
 - id: 224
-  output_element_type_id: 4
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-06-19 12:30:32.000000000 Z
-    zone: *1
-    time: 2018-06-19 14:30:32.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-12-10 12:55:20.000000000 Z
-    zone: *1
-    time: 2018-12-10 13:55:20.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -4661,23 +3542,15 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 194
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: mekko
+  related_output_element_key: dynamic_demand_curve
 - id: 225
-  output_element_type_id: 28
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-09-18 14:34:00.000000000 Z
-    zone: *1
-    time: 2018-09-18 16:34:00.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-09-18 14:34:00.000000000 Z
-    zone: *1
-    time: 2018-09-18 16:34:00.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -4690,18 +3563,10 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: 
+  description: 
+  output_element_type_name: demand_curve
 - id: 226
-  output_element_type_id: 28
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-09-18 14:34:00.000000000 Z
-    zone: *1
-    time: 2018-09-18 16:34:00.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-09-18 14:34:00.000000000 Z
-    zone: *1
-    time: 2018-09-18 16:34:00.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -4714,18 +3579,10 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: 
+  description: 
+  output_element_type_name: demand_curve
 - id: 227
-  output_element_type_id: 28
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-09-18 14:34:00.000000000 Z
-    zone: *1
-    time: 2018-09-18 16:34:00.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-10-09 08:54:45.000000000 Z
-    zone: *1
-    time: 2018-10-09 10:54:45.000000000 Z
   under_construction: false
   unit: MWh
   percentage: false
@@ -4738,23 +3595,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: demand_curve
 - id: 228
-  output_element_type_id: 29
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-09-18 14:34:00.000000000 Z
-    zone: *1
-    time: 2018-09-18 16:34:00.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-12-10 12:57:40.000000000 Z
-    zone: *1
-    time: 2018-12-10 13:57:40.000000000 Z
   under_construction: false
   unit: Eur/Mwh
   percentage: false
@@ -4767,18 +3615,11 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 225
   dependent_on: ''
+  description: 
+  output_element_type_name: cost_capacity_bar
+  related_output_element_key: hydrogen_production
 - id: 230
-  output_element_type_id: 4
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2012-08-07 13:13:56.000000000 Z
-    zone: *1
-    time: 2012-08-07 15:13:56.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -4791,18 +3632,10 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: 
+  description: 
+  output_element_type_name: mekko
 - id: 231
-  output_element_type_id: 27
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2018-12-05 09:13:05.000000000 Z
-    zone: *1
-    time: 2018-12-05 10:13:05.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 12:49:33.000000000 Z
-    zone: *1
-    time: 2019-04-18 14:49:33.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -4815,23 +3648,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: heat_demand_and_production
 - id: 238
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-18 14:31:51.000000000 Z
-    zone: *1
-    time: 2019-04-18 16:31:51.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-25 12:36:53.000000000 Z
-    zone: *1
-    time: 2019-04-25 14:36:53.000000000 Z
   under_construction: false
   unit: "%"
   percentage: true
@@ -4844,23 +3668,14 @@
   min_axis_value: 0.0
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 240
-  output_element_type_id: 13
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-04-25 13:36:54.000000000 Z
-    zone: *1
-    time: 2019-04-25 15:36:54.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-05-24 12:26:12.000000000 Z
-    zone: *1
-    time: 2019-05-24 14:26:12.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -4873,23 +3688,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: bezier
 - id: 241
-  output_element_type_id: 12
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-06-21 14:08:28.000000000 Z
-    zone: *1
-    time: 2019-06-21 16:08:28.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-06-21 14:08:28.000000000 Z
-    zone: *1
-    time: 2019-06-21 16:08:28.000000000 Z
   under_construction: false
   unit: 
   percentage: false
@@ -4902,18 +3708,10 @@
   min_axis_value: 
   hidden: true
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: 
+  description: 
+  output_element_type_name: html_table
 - id: 242
-  output_element_type_id: 17
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-07-24 07:25:24.000000000 Z
-    zone: *1
-    time: 2019-07-24 09:25:24.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-14 13:26:53.000000000 Z
-    zone: *1
-    time: 2020-01-14 14:26:53.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -4926,7 +3724,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: "This chart shows the biomass flows in this area. On the left primary
@@ -4945,16 +3742,8 @@
       onderdelen oplichten en kun je meer informatie krijgen."
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: sankey
 - id: 243
-  output_element_type_id: 30
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-08-15 14:57:51.000000000 Z
-    zone: *1
-    time: 2019-08-15 16:57:51.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-08-15 14:57:51.000000000 Z
-    zone: *1
-    time: 2019-08-15 16:57:51.000000000 Z
   under_construction: false
   unit: PJ
   percentage: false
@@ -4967,18 +3756,10 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: 
+  description: 
+  output_element_type_name: category_bar
 - id: 244
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-08-27 08:11:35.000000000 Z
-    zone: *1
-    time: 2019-08-27 10:11:35.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-08-28 13:45:03.000000000 Z
-    zone: *1
-    time: 2019-08-28 15:45:03.000000000 Z
   under_construction: false
   unit: Eur/Mwh
   percentage: false
@@ -4991,23 +3772,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: vertical_stacked_bar
 - id: 245
-  output_element_type_id: 28
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-11 15:22:31.000000000 Z
-    zone: *1
-    time: 2019-11-11 16:22:31.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-11 15:22:31.000000000 Z
-    zone: *1
-    time: 2019-11-11 16:22:31.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -5020,18 +3792,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
-  dependent_on: 
+  dependent_on: ''
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''
+  output_element_type_name: demand_curve
 - id: 246
-  output_element_type_id: 28
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-11 15:22:31.000000000 Z
-    zone: *1
-    time: 2019-11-11 16:22:31.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-11 15:22:31.000000000 Z
-    zone: *1
-    time: 2019-11-11 16:22:31.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -5044,18 +3812,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
-  dependent_on: 
+  dependent_on: ''
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''
+  output_element_type_name: demand_curve
 - id: 247
-  output_element_type_id: 28
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-11 15:22:31.000000000 Z
-    zone: *1
-    time: 2019-11-11 16:22:31.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-11-11 15:22:31.000000000 Z
-    zone: *1
-    time: 2019-11-11 16:22:31.000000000 Z
   under_construction: false
   unit: MWh
   percentage: false
@@ -5068,18 +3832,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
-  dependent_on: 
+  dependent_on: ''
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''
+  output_element_type_name: demand_curve
 - id: 248
-  output_element_type_id: 4
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-20 10:54:31.000000000 Z
-    zone: *1
-    time: 2019-12-20 11:54:31.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-09 11:02:19.000000000 Z
-    zone: *1
-    time: 2020-01-09 12:02:19.000000000 Z
   under_construction: false
   unit: MJ
   percentage: false
@@ -5092,23 +3852,15 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 249
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: mekko
+  related_output_element_key: heat_network_demand
 - id: 249
-  output_element_type_id: 28
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-20 10:54:31.000000000 Z
-    zone: *1
-    time: 2019-12-20 11:54:31.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-20 10:54:31.000000000 Z
-    zone: *1
-    time: 2019-12-20 11:54:31.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -5121,18 +3873,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
-  dependent_on: 
+  dependent_on: ''
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''
+  output_element_type_name: demand_curve
 - id: 250
-  output_element_type_id: 28
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-20 10:54:31.000000000 Z
-    zone: *1
-    time: 2019-12-20 11:54:31.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-20 10:54:31.000000000 Z
-    zone: *1
-    time: 2019-12-20 11:54:31.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -5145,18 +3893,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
-  dependent_on: 
+  dependent_on: ''
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''
+  output_element_type_name: demand_curve
 - id: 251
-  output_element_type_id: 4
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-20 10:54:31.000000000 Z
-    zone: *1
-    time: 2019-12-20 11:54:31.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-20 10:54:31.000000000 Z
-    zone: *1
-    time: 2019-12-20 11:54:31.000000000 Z
   under_construction: false
   unit: MJ
   percentage: false
@@ -5169,18 +3913,10 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: 
+  description: 
+  output_element_type_name: mekko
 - id: 252
-  output_element_type_id: 28
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-20 10:54:31.000000000 Z
-    zone: *1
-    time: 2019-12-20 11:54:31.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-06 09:00:52.000000000 Z
-    zone: *1
-    time: 2020-01-06 10:00:52.000000000 Z
   under_construction: false
   unit: MWh
   percentage: false
@@ -5193,23 +3929,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: demand_curve
 - id: 253
-  output_element_type_id: 29
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2019-12-20 10:54:31.000000000 Z
-    zone: *1
-    time: 2019-12-20 11:54:31.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-01-03 10:25:12.000000000 Z
-    zone: *1
-    time: 2020-01-03 11:25:12.000000000 Z
   under_construction: false
   unit: Eur/Mwh
   percentage: false
@@ -5222,23 +3949,14 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  related_output_element_id: 
   dependent_on: ''
   description:
     content_en: ''
     content_nl: ''
     short_content_en: ''
     short_content_nl: ''
+  output_element_type_name: cost_capacity_bar
 - id: 254
-  output_element_type_id: 11
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-02-25 15:45:00.000000000 Z
-    zone: *1
-    time: 2020-02-25 16:45:00.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-02-25 15:45:00.000000000 Z
-    zone: *1
-    time: 2020-02-25 16:45:00.000000000 Z
   under_construction: false
   unit: euro
   percentage: false
@@ -5251,18 +3969,10 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: 
+  description: 
+  output_element_type_name: vertical_stacked_bar
 - id: 255
-  output_element_type_id: 31
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-03-17 13:58:11.000000000 Z
-    zone: *1
-    time: 2020-03-17 14:58:11.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-03-17 13:58:11.000000000 Z
-    zone: *1
-    time: 2020-03-17 14:58:11.000000000 Z
   under_construction: false
   unit: "€/MJ heat"
   percentage: false
@@ -5275,18 +3985,10 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: 
+  description: 
+  output_element_type_name: hhp_cop_cost
 - id: 256
-  output_element_type_id: 32
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-03-17 13:58:11.000000000 Z
-    zone: *1
-    time: 2020-03-17 14:58:11.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-03-17 13:58:11.000000000 Z
-    zone: *1
-    time: 2020-03-17 14:58:11.000000000 Z
   under_construction: false
   unit: 
   percentage: false
@@ -5299,18 +4001,10 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: 
+  description: 
+  output_element_type_name: html_table
 - id: 257
-  output_element_type_id: 33
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-03-17 13:58:11.000000000 Z
-    zone: *1
-    time: 2020-03-17 14:58:11.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-03-17 13:58:11.000000000 Z
-    zone: *1
-    time: 2020-03-17 14:58:11.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -5323,18 +4017,10 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: 
+  description: 
+  output_element_type_name: solar_curtailment
 - id: 258
-  output_element_type_id: 34
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-03-20 08:10:00.000000000 Z
-    zone: *1
-    time: 2020-03-20 09:10:00.000000000 Z
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: 2020-03-20 08:10:00.000000000 Z
-    zone: *1
-    time: 2020-03-20 09:10:00.000000000 Z
   under_construction: false
   unit: MW
   percentage: false
@@ -5347,5 +4033,6 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: false
-  related_output_element_id: 
   dependent_on: 
+  description: 
+  output_element_type_name: demand_curve

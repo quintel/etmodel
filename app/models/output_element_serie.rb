@@ -34,13 +34,8 @@ class OutputElementSerie < YModel::Base
   include AreaDependent::YModel
   include Describable
 
+  index_on :key
   belongs_to :output_element
-
-  # should this be part of attribute api of ymodel?
-  # validates :gquery, presence: true
-
-  # accepts_nested_attributes_for :description, reject_if: :all_blank
-  # accepts_nested_attributes_for :area_dependency, reject_if: :all_blank
 
   class << self
     def contains
@@ -54,15 +49,6 @@ class OutputElementSerie < YModel::Base
 
       all.select { |oes| oes.gquery.include?(search) }
     end
-
-    # Hmmm ugly
-    def block_charts
-      where(output_element_id: OutputElementType::BLOCK_CHART_ID)
-    end
-
-    # def ordered
-    #   all.sort_by { |oes| oes.order_by }
-    # end
   end
 
   def title_translated
@@ -76,7 +62,7 @@ class OutputElementSerie < YModel::Base
   # rubocop:disable Metrics/LineLength
   def json_attributes
     {
-      id: id, # needed for block charts
+      id: key, # needed for block charts
       gquery_key: gquery,
       color: color,
       label: title_translated,

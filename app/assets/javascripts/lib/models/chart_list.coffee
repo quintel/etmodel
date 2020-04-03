@@ -112,8 +112,8 @@ class @ChartList extends Backbone.Collection
     # want to be able to show the same chart more than once
     #
     settings = _.extend {}, data.attributes, {
-        id: "#{ data.attributes.id }-#{ holder_id }"
-        chart_id: data.attributes.id
+        id: "#{ data.attributes.key }-#{ holder_id }"
+        chart_id: data.attributes.key
         container: holder_id
         html: data.html # tables and block chart
         locked: options.locked

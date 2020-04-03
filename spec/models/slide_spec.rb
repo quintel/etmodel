@@ -31,8 +31,7 @@ describe Slide do
     it { is_expected.to respond_to(:key) }
     it { is_expected.to respond_to(:position) }
     it { is_expected.to respond_to(:sidebar_item_key) }
-    it { is_expected.to respond_to(:output_element_id) }
-    it { is_expected.to respond_to(:alt_output_element_id) }
+    it { is_expected.to respond_to(:output_element_key) }
 
     # Methods
     it { is_expected.to respond_to(:image_path) }

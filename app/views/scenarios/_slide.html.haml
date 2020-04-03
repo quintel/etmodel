@@ -2,8 +2,8 @@
 %li.accordion_element
   %h3{:class               => item_class,
       'data-slide'         => slide.url,
-      'data-default_chart' => slide.output_element_id,
-      'data-alt_chart'     => slide.alt_output_element_id,
+      'data-default_chart' => slide.output_element_key,
+      'data-alt_chart'     => slide.alt_output_element_key,
       'style'              => @interface.slides.size == 1 ? 'display:none;' : ''}
     = link_to t("slides.#{slide.key}").html_safe, slide.url
   .slide

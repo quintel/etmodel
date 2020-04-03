@@ -49,6 +49,7 @@ class OutputElement < YModel::Base
   include AreaDependent::YModel
   include Describable
 
+  index_on :key
   has_many :output_element_series #, -> { order(:order_by) }
   belongs_to :output_element_type
 
@@ -56,11 +57,8 @@ class OutputElement < YModel::Base
   belongs_to :related_output_element, class_name: 'OutputElement'
 
   has_many :relatee_output_elements, class_name: 'OutputElement',
-                                     foreign_key: 'related_output_element_id'
+                                     foreign_key: 'related_output_element_key'
 
-  # accepts_nested_attributes_for :description, :area_dependency
-
-  # validates :key, presence: true, uniqueness: true
   delegate :html_table?, to: :output_element_type
 
   def self.not_hidden
@@ -157,6 +155,6 @@ class OutputElement < YModel::Base
   end
 
   def slides
-    Slide.where(output_element_id: id)
+    Slide.where(output_element_key: key)
   end
 end

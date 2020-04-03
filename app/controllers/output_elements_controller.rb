@@ -19,7 +19,7 @@ class OutputElementsController < ApplicationController
     ids = params[:ids].to_s.split(',').reject(&:blank?).uniq
 
     json = OutputElementPresenter.collection(
-      OutputElement.where(id: ids),
+      OutputElement.where(key: ids),
       ->(*args) { render_to_string(*args) }
     )
 
@@ -53,11 +53,6 @@ class OutputElementsController < ApplicationController
   def find_output_element
     @as_table = params[:format] == 'table'
 
-    @chart =
-      if params[:id] && params[:id] =~ /\D/
-        OutputElement.find_by_key!(params[:id])
-      else
-        OutputElement.find!(params[:id].to_i)
-      end
+    @chart = OutputElement.find!(params[:id])
   end
 end

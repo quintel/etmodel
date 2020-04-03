@@ -26,6 +26,7 @@ module YModel
       unless all.map(&:index) == all.map(&:index).uniq
         raise YModel::DuplicateIndexError, 'Some records share the same index.'
       end
+
       all
     end
 
@@ -39,19 +40,21 @@ module YModel
 
     protected
 
+    # I dislike the format of this method a lot. Rubocop made me do it..
     def records
-      @records ||= if compiled?
-        Dir.foreach(source).reduce([]) do |memo, filename|
-          if filename.match? /\A.*(.yaml|.yml)\z/
-            memo + YAML.load_file(File.join( source, filename))
-          else
-            memo
+      @records ||=
+        if compiled?
+          Dir.foreach(source).reduce([]) do |memo, filename|
+            if filename.match?(/\A.*(.yaml|.yml)\z/)
+              memo + YAML.load_file(File.join(source, filename))
+            else
+              memo
+            end
           end
+        else
+          YAML.load_file(source)
+            .map(&:symbolize_keys)
         end
-      else
-        YAML.load_file(source)
-          .map(&:symbolize_keys)
-      end
     end
 
     def source

@@ -105,4 +105,10 @@ class Slide < YModel::Base
   def removed_from_interface?
     sidebar_item.nil? || sidebar_item.tab.nil?
   end
+
+  # Returns if the slide is shown in the interface and has at least one input
+  # assigned.
+  def visible_with_inputs?
+    !removed_from_interface? && sliders.any?
+  end
 end

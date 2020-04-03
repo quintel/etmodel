@@ -21,11 +21,37 @@ module YModel
       YModel::Schema.new({})
     end
 
+    def load_records!
+      all = records.map { |record| new(record) }
+      unless all.map(&:index) == all.map(&:index).uniq
+        raise YModel::DuplicateIndexError, 'Some records share the same index.'
+      end
+      all
+    end
+
+    def index_on(key)
+      @index = key
+    end
+
+    def index
+      @index || :id
+    end
+
     protected
 
     def records
-      @records ||= YAML.load_file(source)
-        .map(&:symbolize_keys)
+      @records ||= if compiled?
+        Dir.foreach(source).reduce([]) do |memo, filename|
+          if filename.match? /\A.*(.yaml|.yml)\z/
+            memo + YAML.load_file(File.join( source, filename))
+          else
+            memo
+          end
+        end
+      else
+        YAML.load_file(source)
+          .map(&:symbolize_keys)
+      end
     end
 
     def source
@@ -33,6 +59,10 @@ module YModel
     end
 
     private
+
+    def compiled?
+      File.directory?(File.join(Rails.root, source))
+    end
 
     def _source
       File.join(Rails.root,

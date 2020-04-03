@@ -5,7 +5,7 @@ require 'rails_helper'
 # gem. It does exist here for two reasons:
 #  1. It might assert some stuff about the application.
 #  2. Moving the specs to the gem is a hassle.
-
+require 'ymodel/errors'
 # These cops are disables because it saves space and its just a spec.
 # rubocop:disable Style/ClassAndModuleChildren
 class YModel::Concrete < YModel::Base
@@ -44,6 +44,15 @@ class YModel::RelatedOnKey < YModel::Base
   index_on :key
 end
 
+# Is used to test compiling multiple yaml files into one model.
+class YModel::Compiled < YModel::Base
+  source_file 'spec/fixtures/ymodel/compiled'
+end
+
+class YModel::InvalidCompiled < YModel::Base
+  source_file 'spec/fixtures/ymodel/invalid_compiled'
+  index_on :key
+end
 # rubocop:enable Style/ClassAndModuleChildren
 
 # rubocop:disable RSpec/MultipleDescribes
@@ -254,6 +263,25 @@ describe YModel::Dump do
   subject { described_class }
 
   it { is_expected.to respond_to :call }
+end
+
+describe YModel::Compiled do
+  it 'contains a record from first.yml' do
+    expect(described_class.find(1)).to be_a described_class
+  end
+
+  it 'contains a record from second.yml' do
+    expect(described_class.find(2)).to be_a described_class
+  end
+end
+
+describe YModel::InvalidCompiled do
+  subject { described_class }
+
+  it 'raises duplicate index error' do
+    expect { described_class.all }
+      .to raise_error(YModel::DuplicateIndexError)
+  end
 end
 
 # rubocop:enable RSpec/MultipleDescribes

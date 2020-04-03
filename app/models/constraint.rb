@@ -121,6 +121,7 @@ class Constraint < ActiveRecord::Base
   # for Constraints
   def output_element
     return unless output_element_id
+
     OutputElement.find_by(id: output_element_id)
   end
 end

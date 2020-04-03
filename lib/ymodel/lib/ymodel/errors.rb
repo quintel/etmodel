@@ -28,9 +28,6 @@ module YModel
   end
 
   class RecordNotFound < YModelError
-    def initialize(message = nil)
-      super(message)
-    end
   end
 end
 # rubocop:enable Style/Documentation

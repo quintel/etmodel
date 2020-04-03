@@ -1,24 +1,21 @@
 require 'rails_helper'
 
-# Using fixtures
 describe OutputElement do
+  include YmodelFixtures
 
   subject { described_class.new }
 
+  let(:output_element) { described_class.all.first }
+
   it { is_expected.to respond_to(:output_element_series) }
 
-  subject { OutputElement.all.first }
-
   it 'contains series' do
-    expect(subject.output_element_series).to_not be_empty
+    expect(output_element.output_element_series).to_not be_empty
   end
-  context 'a chart with a relatee' do
-    let(:output_element) do
-      OutputElement.all.first
-    end
 
+  context 'a chart with a relatee' do
     let(:relatee) do
-      OutputElement.all.second
+      described_class.all.second
     end
 
     it 'has one related output element' do

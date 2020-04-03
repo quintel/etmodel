@@ -1,10 +1,8 @@
 require 'rails_helper'
 
-OutputElementType.source_file Rails.root.join('spec', 'fixtures', 'output_element_types.yml')
-OutputElement.source_file Rails.root.join('spec', 'fixtures', 'output_elements.yml')
-OutputElementSerie.source_file Rails.root.join('spec', 'fixtures', 'output_element_series.yml')
-
 RSpec.describe OutputElementPresenter do
+  include YmodelFixtures
+
   let(:oe) do
     OutputElement.all.first
   end
@@ -24,8 +22,10 @@ RSpec.describe OutputElementPresenter do
     end
 
     it 'includes the translated name' do
-      expect(json[:attributes][:name]).
-        to eq(I18n.t(:'output_elements.use_of_final_electricity_demand_in_households'))
+      expect(json[:attributes][:name])
+        .to eq(I18n.t(
+          :'output_elements.use_of_final_electricity_demand_in_households'
+        ))
     end
   end
 

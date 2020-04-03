@@ -35,24 +35,24 @@ namespace :ymodel do
 
     # find the name of the old and new foreign keys please note that we have to
     # set new_index with 'YModel::Relatable#index_on'
-    old_foreign_key = "id"#args.referenced_model.foreign_key
-    new_foreign_key = "key"#{args.referenced_model}_#{new_index}"
+    old_foreign_key = args.referenced_model.foreign_key
+    new_foreign_key = "#{args.referenced_model}_#{new_index}"
 
     # Grab and parse yaml files
     refering_yaml = refering_model.send(:source)
     refering_records = YAML.load_file(refering_yaml)
-    # referenced_records = YAML.load_file(referenced_model.send(:source))
+    referenced_records = YAML.load_file(referenced_model.send(:source))
 
     migrated_records = refering_records.map do |record|
       # Filter out broken records.
-      # related =
-      #   referenced_records.find do |ref|
-      #     ref['id'] == record[old_foreign_key]
-      #   end
+      related =
+        referenced_records.find do |ref|
+          ref['id'] == record[old_foreign_key]
+        end
       # Some relations are optional
-      # new_foreign_val = related.present? ? related[new_index] : nil
+      new_foreign_val = related.present? ? related[new_index] : nil
       # add new key
-      record["key"] = "#{record['label']}_#{record['output_element_key']}"
+      record[new_foreign_key] = new_foreign_val
 
       # remove old key
       record.delete old_foreign_key

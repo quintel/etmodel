@@ -2,10 +2,7 @@
 #
 # Table name: output_element_types
 #
-#  id         :integer          not null, primary key
 #  name       :string(255)
-#  created_at :datetime
-#  updated_at :datetime
 #
 
 class OutputElementType < YModel::Base
@@ -16,4 +13,3 @@ class OutputElementType < YModel::Base
     name == 'html_table'
   end
 end
-

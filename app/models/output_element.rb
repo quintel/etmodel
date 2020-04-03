@@ -4,20 +4,18 @@
 #
 # Table name: output_elements
 #
-#  id                     :integer          not null, primary key
-#  output_element_type_id :integer
-#  created_at             :datetime
-#  updated_at             :datetime
-#  under_construction     :boolean          default(FALSE)
-#  unit                   :string(255)
-#  percentage             :boolean
-#  group                  :string(255)
-#  show_point_label       :boolean
-#  growth_chart           :boolean
-#  key                    :string(255)
-#  max_axis_value         :float
-#  min_axis_value         :float
-#  hidden                 :boolean          default(FALSE)
+#  key                        :string(255),     primary key
+#  output_element_type_name   :string
+#  related_output_element_key :string
+#  under_construction         :boolean          default(FALSE)
+#  unit                       :string(255)
+#  percentage                 :boolean
+#  group                      :string(255)
+#  show_point_label           :boolean
+#  growth_chart               :boolean
+#  max_axis_value             :float
+#  min_axis_value             :float
+#  hidden                     :boolean          default(FALSE)
 #
 
 # Entity used for filling charts
@@ -50,7 +48,7 @@ class OutputElement < YModel::Base
   include Describable
 
   index_on :key
-  has_many :output_element_series #, -> { order(:order_by) }
+  has_many :output_element_series
   belongs_to :output_element_type
 
   # Charts may link to other charts to provide a user with additional insight.
@@ -129,7 +127,7 @@ class OutputElement < YModel::Base
   end
 
   def allowed_output_element_series
-    output_element_series.reject(&:area_dependent)
+    output_element_series.sort_by(&:order_by).reject(&:area_dependent)
   end
 
   # returns the type of chart (bezier, html_table, ...)

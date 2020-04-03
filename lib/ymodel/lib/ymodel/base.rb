@@ -49,7 +49,7 @@ module YModel
         all.each do |record|
           return record if sanitized.all? { |k, v| record.send(k) == v }
         end
-        raise_record_not_found_exception!(attributes = attributes)
+        raise_record_not_found_exception!(attributes)
       end
 
       def find_by_key(key)
@@ -97,14 +97,14 @@ module YModel
           .select { |attr| schema.include?(attr) }
       end
 
-      def raise_record_not_found_exception!(key = nil, attributes = nil)
-        if attributes
+      def raise_record_not_found_exception!(attributes = nil)
+        if attributes.is_a?(Hash)
           message = "Couldn't find #{name} with"
-          attributes.each { |a| message << "#{a.key}: #{a.value}"}
+          attributes.each { |a| message << "#{a.key}: #{a.value}" }
         else
-          message = "Couldn't find #{name} #{key}"
+          message = "Couldn't find #{name} #{attributes}"
         end
-        raise YModel::RecordNotFound.new(message)
+        raise YModel::RecordNotFound, message
       end
     end
 

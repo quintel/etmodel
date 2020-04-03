@@ -4,18 +4,16 @@
 #
 # Table name: output_element_series
 #
-#  id                   :integer          not null, primary key
-#  output_element_id    :integer
+#  key                  :integer
+#  output_element_key   :integer
 #  label                :string(255)
 #  color                :string(255)
 #  order_by             :integer
 #  group                :string(255)
-#  created_at           :datetime
-#  updated_at           :datetime
 #  show_at_first        :boolean
 #  is_target_line       :boolean
 #  target_line_position :string(255)
-#  gquery               :string(255)      not null
+#  gquery               :string(255)
 #
 
 # Old tables use the order_by attribute to specify the cell position:

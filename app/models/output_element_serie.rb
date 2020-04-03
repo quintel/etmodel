@@ -36,7 +36,7 @@ class OutputElementSerie < YModel::Base
   belongs_to :output_element
 
   class << self
-    def contains
+    def contains(search)
       return all if search.blank? || search.empty?
 
       all.select { |oes| oes.key.include?(search) }

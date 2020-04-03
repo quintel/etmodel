@@ -5,7 +5,6 @@ require 'rails_helper'
 # gem. It does exist here for two reasons:
 #  1. It might assert some stuff about the application.
 #  2. Moving the specs to the gem is a hassle.
-require 'ymodel/errors'
 # These cops are disables because it saves space and its just a spec.
 # rubocop:disable Style/ClassAndModuleChildren
 class YModel::Concrete < YModel::Base

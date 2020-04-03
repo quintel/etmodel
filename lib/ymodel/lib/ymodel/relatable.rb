@@ -21,7 +21,7 @@ module YModel
       define_method(model) do
         # We might want to create a mechanism to memoize this.
         related_class =
-           YModel::Helper.model_class(options[:class_name] || model)
+          YModel::Helper.model_class(options[:class_name] || model)
         key =
           if related_class < YModel::Base
             :"#{model.to_s.singularize}_#{related_class.index}"

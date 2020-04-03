@@ -19,7 +19,7 @@
 
   - if @constraint.output_element
     #charts
-      .chart{:'data-chart_id' => @constraint.output_element.key }
+      .chart{ :'data-chart_id' => @constraint.output_element.key }
 
   = render partial: @constraint.key rescue nil
 

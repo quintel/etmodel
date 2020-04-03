@@ -4,7 +4,6 @@
 #
 #  name       :string(255)
 #
-
 class OutputElementType < YModel::Base
   index_on :name
   has_many :output_elements

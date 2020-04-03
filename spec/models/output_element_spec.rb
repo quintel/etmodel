@@ -10,10 +10,10 @@ describe OutputElement do
   it { is_expected.to respond_to(:output_element_series) }
 
   it 'contains series' do
-    expect(output_element.output_element_series).to_not be_empty
+    expect(output_element.output_element_series).not_to be_empty
   end
 
-  context 'a chart with a relatee' do
+  context 'with a relatee output_element' do
     let(:relatee) do
       described_class.all.second
     end

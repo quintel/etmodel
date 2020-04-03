@@ -143,7 +143,7 @@ describe YModel::Base do
 
     describe 'with a nonexsisting key' do
       it 'raises an error' do
-        expect{ YModel::Concrete.find_by_key!(:nonexisting) }
+        expect { YModel::Concrete.find_by_key!(:nonexisting) }
           .to raise_error(YModel::RecordNotFound)
       end
     end

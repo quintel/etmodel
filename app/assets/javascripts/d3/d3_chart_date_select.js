@@ -51,7 +51,7 @@ var D3ChartDateSelect = (function() {
     return $('<select/>')
       .addClass('d3-chart-date-select')
       .append(createOptions.call(this, downsampleMethod))
-      .val(App.settings.get('merit_charts_date') || '1')
+      .val(App.settings.get('merit_charts_date') || '0')
       .on('change', setMeritChartsDate);
   }
 

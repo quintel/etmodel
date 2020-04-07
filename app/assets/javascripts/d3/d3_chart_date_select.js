@@ -57,7 +57,7 @@ var D3ChartDateSelect = (function() {
 
   D3ChartDateSelect.prototype = {
     selectBox: undefined,
-    weeks: [[epoch, new Date(1970, 11, 30)]],
+    weeks: [[epoch, new Date(1970, 11, 30, 23)]],
 
     draw: function(updateChart) {
       this.updateChart = updateChart;

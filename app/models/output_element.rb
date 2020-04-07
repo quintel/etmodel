@@ -93,10 +93,6 @@ class OutputElement < YModel::Base
     !block_chart? && !html_table? && !d3_chart?
   end
 
-  def sankey?
-    type == 'sankey'
-  end
-
   # TODO: fix this code with predicate naming.
   # rubocop:disable Naming/PredicateName
   # some charts don't have their series defined in the database. This method
@@ -144,7 +140,7 @@ class OutputElement < YModel::Base
 
   # Icon shown on the select chart popup
   def icon
-    d3_chart? && !sankey? ? "#{key}.png" : "#{type}.png"
+    type == 'd3' ? "#{key}.png" : "#{type}.png"
   end
 
   # Some charts require custom HTML. This method returns the appropriate

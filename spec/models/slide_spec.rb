@@ -28,7 +28,7 @@ describe Slide do
     it { is_expected.to respond_to(:subheader_image) }
     it { is_expected.to respond_to(:key) }
     it { is_expected.to respond_to(:position) }
-    it { is_expected.to respond_to(:sidebar_item_id) }
+    it { is_expected.to respond_to(:sidebar_item_key) }
     it { is_expected.to respond_to(:output_element_id) }
     it { is_expected.to respond_to(:alt_output_element_id) }
 
@@ -62,14 +62,6 @@ describe Slide do
       end
     end
 
-    context 'when the slide has no sidebar item' do
-      let(:slide) { described_class.where(sidebar_item_id: nil).first }
-
-      it 'returns an empty array' do
-        expect(slide.url_components).to eq([])
-      end
-    end
-
     context 'when the sidebar item has no tab' do
       let(:slide) do
         described_class.new(sidebar_item: SidebarItem.new(tab_id: nil))
@@ -84,6 +76,43 @@ describe Slide do
   describe '#input_elements' do
     it 'is an alias of #sliders' do
       expect(subject.input_elements).to eq(subject.sliders)
+    end
+  end
+
+  describe '#tab' do
+    it 'the same tab as the tab of its sidebar_item' do
+      sidebar_item = Tab.all.first.sidebar_items.first
+      slide = described_class.new(sidebar_item_key: sidebar_item.key)
+      expect(slide.tab).to eq(sidebar_item.tab)
+    end
+  end
+
+  describe '#sidebar_item' do
+    it 'returns a sidebar_item' do
+      expect(described_class.all.first.sidebar_item)
+        .to be_a(SidebarItem)
+    end
+
+    it 'returns the related sidebar_item' do
+      sidebar_item = SidebarItem.all.first
+      subject { described_class.find_by(sidebar_item_id: sidebar_item.id) }
+    end
+  end
+
+  describe '.index' do
+    it 'is indexed on :key' do
+      expect(described_class.index).to eq(:key)
+    end
+  end
+
+  # We might want to lift these preconditions to the applications from the
+  # testsuite as it provides better feedback to the modelers that way.
+  describe 'YAML file' do
+    subject { described_class.all }
+
+    it 'has unique keys' do
+      keys = subject.map(&:key)
+      expect(keys.size).to eq(keys.uniq.size)
     end
   end
 end

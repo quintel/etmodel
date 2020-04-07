@@ -19,67 +19,6 @@ describe UsersController do
     end
   end
 
-  describe '#unsubscribe' do
-    context 'with a formerly interested subscriber' do
-      let(:user) { FactoryBot.create(:user, allow_news: true) }
-
-      before do
-        get :unsubscribe, params: { id: user.id, h: user.md5_hash }
-        user.reload
-      end
-
-      it 'registers in the database' do
-        expect(user.allow_news).to be(false)
-      end
-
-      it 'renders a page succesfully' do
-        expect(response).to be_successful
-      end
-
-      it 'shows you have been unsubscribed' do
-        expect(response.body).to match(/You have been unsubscribed/i)
-      end
-    end
-
-    context 'with an already signed-out user' do
-      let(:user) { FactoryBot.create(:user, allow_news: false) }
-
-      before do
-        get :unsubscribe, params: { id: user.id, h: user.md5_hash }
-        user.reload
-      end
-
-      it 'renders a page succesfully' do
-        expect(response).to be_successful
-      end
-
-      it 'shows you have been unsubscribed ALREADY' do
-        expect(response.body).to match(/already/i)
-      end
-    end
-
-    context 'with invalid hash' do
-      let(:user) { FactoryBot.create(:user, allow_news: true) }
-
-      before do
-        get :unsubscribe, params: { id: user.id, h: 'i-am-a-hacker' }
-        user.reload
-      end
-
-      it 'does not register in the database' do
-        expect(user.allow_news).to be(true)
-      end
-
-      it 'renders a page succesfully' do
-        expect(response).to be_successful
-      end
-
-      it 'shows that user has not been unsubscribed' do
-        expect(response.body).to match(/cannot unsubscribe/i)
-      end
-    end
-  end
-
   describe '#create' do
     let(:user_attributes) do
       {
@@ -117,6 +56,33 @@ describe UsersController do
       it 'renders the signup form' do
         request
         expect(response).to render_template(:new)
+      end
+    end
+
+    context 'when the user wants to subscribe to the newsletter' do
+      let(:user_attributes) do
+        super().merge(allow_news: true)
+      end
+
+      it 'calls the CreateNewsletterSubscription service' do
+        allow(CreateNewsletterSubscription).to receive(:call)
+        request
+
+        expect(CreateNewsletterSubscription)
+          .to have_received(:call)
+          .with(User.find_by_email('rb@quintel.com'))
+      end
+    end
+
+    context 'when the user does not want to subscribe to the newsletter' do
+      let(:user_attributes) do
+        super().merge(allow_news: false)
+      end
+
+      it 'does not call the CreateNewsletterSubscription service' do
+        allow(CreateNewsletterSubscription).to receive(:call)
+        request
+        expect(CreateNewsletterSubscription).not_to have_received(:call)
       end
     end
 
@@ -172,6 +138,122 @@ describe UsersController do
         user.name = 'Shiny'
         post :update, params: { id: user, user: user.attributes }
         expect(response).to redirect_to(edit_user_path)
+      end
+    end
+
+    context 'when subscribed to the newsletter' do
+      before { user.update(allow_news: true) }
+
+      let(:request) do
+        post :update, params: {
+          id: user.id,
+          user: user.attributes.merge('allow_news' => true)
+        }
+      end
+
+      it "doesn't create a new subscription when allow_news is unchanged" do
+        allow(CreateNewsletterSubscription).to receive(:call)
+        request
+        expect(CreateNewsletterSubscription).not_to have_received(:call)
+      end
+
+      it "doesn't delete their subscription when allow_news is unchanged" do
+        allow(DestroyNewsletterSubscription).to receive(:call)
+        request
+        expect(DestroyNewsletterSubscription).not_to have_received(:call)
+      end
+    end
+
+    context 'when unsubscribed from the newsletter' do
+      before { user.update(allow_news: false) }
+
+      let(:request) do
+        post :update, params: {
+          id: user.id,
+          user: user.attributes.merge('allow_news' => false)
+        }
+      end
+
+      it "doesn't create a new subscription when allow_news is unchanged" do
+        allow(CreateNewsletterSubscription).to receive(:call)
+        request
+        expect(CreateNewsletterSubscription).not_to have_received(:call)
+      end
+
+      it "doesn't delete their subscription when allow_news is unchanged" do
+        allow(DestroyNewsletterSubscription).to receive(:call)
+        request
+        expect(DestroyNewsletterSubscription).not_to have_received(:call)
+      end
+    end
+
+    context 'when subscribing to the newsletter' do
+      before { user.update(allow_news: false) }
+
+      let(:request) do
+        post :update, params: {
+          id: user.id,
+          user: user.attributes.merge('allow_news' => true)
+        }
+      end
+
+      it 'creates a subscription' do
+        allow(CreateNewsletterSubscription).to receive(:call)
+        request
+        expect(CreateNewsletterSubscription).to have_received(:call).with(user)
+      end
+    end
+
+    context 'when unsubscribing from the newsletter' do
+      before { user.update(allow_news: true) }
+
+      let(:request) do
+        post :update, params: {
+          id: user.id,
+          user: user.attributes.merge('allow_news' => false)
+        }
+      end
+
+      it 'removes their subscription' do
+        allow(DestroyNewsletterSubscription).to receive(:call)
+        request
+        expect(DestroyNewsletterSubscription).to have_received(:call).with(user)
+      end
+    end
+
+    context 'when subscibed to updates and changing e-mail address' do
+      before { user.update(allow_news: true) }
+
+      let(:request) do
+        post :update, params: {
+          id: user.id,
+          user: user.attributes.merge('email' => 'new@quintel.com')
+        }
+      end
+
+      it 'updates the subscription' do
+        allow(UpdateNewsletterSubscription).to receive(:call)
+        request
+        expect(UpdateNewsletterSubscription).to have_received(:call).with(user)
+      end
+    end
+
+    context 'when not subscribed to updates and changing e-mail address' do
+      before { user.update(allow_news: false) }
+
+      let(:request) do
+        post :update, params: {
+          id: user.id,
+          user: user.attributes.merge('email' => 'new@quintel.com')
+        }
+      end
+
+      it 'does not update the subscription' do
+        allow(UpdateNewsletterSubscription).to receive(:call)
+        request
+
+        expect(UpdateNewsletterSubscription)
+          .not_to have_received(:call).with(user)
       end
     end
 

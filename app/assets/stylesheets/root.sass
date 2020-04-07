@@ -27,7 +27,8 @@ body#root
       text-decoration: underline
 
 #landing
-  margin: 50px auto 20px
+  margin: 0 auto
+  padding: 50px 0 20px
   width: $landing-width
 
   #blurb
@@ -54,10 +55,12 @@ body#root
     padding: 15px 20px
 
   .other-features
+    display: flex
+    flex-wrap: wrap
     list-style: none
-    padding: 5px
     margin: -5px -45px -5px -5px
     overflow: hidden
+    padding: 5px
     li
       background: white asset-url("pages/home/local_global.svg") 20px 20px no-repeat
       background-size: 32px
@@ -317,6 +320,30 @@ body#root
         font-size: 13px
         line-height: 1
         margin-left: 3px
+
+  #legal
+    border-top: 1px solid $landing-border-color
+    font-size: 12px
+    margin: 0 0 -20px
+    opacity: 0.3
+    overflow: hidden
+    padding: 20px 0
+    text-align: center
+    transition: opacity ease-in 0.15s
+
+    &:hover
+      opacity: 1
+
+    ul
+      list-style: none
+      margin: 0
+      padding: 0
+
+      li
+        display: inline
+        margin: 0 10px
+      a
+        color: $landing-grey
 
 #whats-new
   background: #fffced

@@ -1,433 +1,1148 @@
 ---
-- id: 1
-  key: households
+- key: households
   section: demand
   percentage_bar_query: share_of_households_in_final_demand
-  tab_id: 2
+  tab_key: demand
   position: 1
-  parent_id:
-  dependent_on: ''
-- id: 2
-  key: buildings
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "How much energy will households need in the future?\r\n<br/>\r\n<br/>\r\n\r\nThe
+      answer depends on your assumptions about the adoption of new technologies and
+      economic or population growth, for example. You can fill in these assumptions
+      and the graphs will show how things change. \r\n<br/>\r\n<br/>\r\nHouseholds
+      mostly need heat and electricity. Heat use has been steadily decreasing the
+      past years, because of better insulation in houses. Electricity demand has kept
+      increasing. As people get richer, they use ever more electrical appliances.\r\n\r\n\r\n"
+    content_nl: "Hoeveel energie zullen huishoudens nodig hebben in de toekomst? \r\n<br/><br/>\r\n\r\nDat
+      hangt af van je aannames over de toepassing van nieuwe technologieën en economische
+      of bevolkingsgroei bijvoorbeeld. Deze aannames kun je hier invullen. In de grafieken
+      zie je dan hoe alles verandert. \r\n<br/><br/>\r\nHuishoudens hebben vooral
+      behoefte aan warmte en elektriciteit. De warmtevraag neemt gestaag af door betere
+      isolatie van gebouwen. De elektriciteitsvraag is alsmaar gegroeid. Als mensen
+      rijker worden, gaan ze meer elektrische apparaten gebruiken.\r\n\r\n"
+    short_content_en: "How much energy will households need in the future?\r\nThe
+      answer depends ..."
+    short_content_nl: Hoeveel energie zullen huishoudens nodig hebben in de toekomst?
+      Dat hangt ervan af ...
+- key: buildings
   section: demand
   percentage_bar_query: share_of_buildings_in_final_demand
-  tab_id: 2
+  tab_key: demand
   position: 2
-  parent_id:
-  dependent_on: has_buildings
-- id: 3
-  key: transport
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "How much energy will offices, schools, hospitals and other buildings
+      need in the future?\r\n<br/>\r\n<br/>\r\n\r\nThe answer depends on your assumptions
+      about the adoption of new technologies and economic or population growth, for
+      example. You can fill in these assumptions and the graphs will show how things
+      change. \r\n<br/>\r\n<br/>\r\nNon-residential buildings mostly need heat, cooling
+      and electricity for appliances. Electricity and cooling demand have been increasing
+      for a while now. Both are the result of ever more electrical appliances being
+      used.\r\n\r\n"
+    content_nl: "Hoeveel energie zullen kantoren, scholen, ziekenhuizen en andere
+      gebouwen nodig hebben in de toekomst? \r\n<br/><br/>\r\n\r\nDat hangt af van
+      je aannames over de toepassing van nieuwe technologieën en economische of bevolkingsgroei
+      bijvoorbeeld. Deze aannames kun je hier invullen. In de grafieken zie je dan
+      hoe alles verandert. \r\n<br/><br/>\r\nDeze gebouwen hebben vooral behoefte
+      aan warmte, koeling en elektriciteit. De koudevraag en elektriciteitsvraag zijn
+      al lang alsmaar aan het groeien. In beide gevallen komt dat vooral doordat meer
+      elektrische apparaten gebruikt worden.\r\n"
+    short_content_en: "How much energy will offices, schools and other buildings need
+      in the future?\r\n"
+    short_content_nl: 'Hoeveel energie zullen kantoren, scholen en andere gebouwen
+      nodig hebben in de toekomst? '
+- key: transport
   section: demand
   percentage_bar_query: share_of_transport_in_final_demand
-  tab_id: 2
+  tab_key: demand
   position: 3
-  parent_id:
-  dependent_on: ''
-- id: 4
-  key: industry
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "Will we need more or less energy for transporting people and goods
+      in the future?\r\n<br/>\r\n<br/>\r\n\r\nThe answer depends on your assumptions
+      about the adoption of new technologies, economic growth and efficiency improvements,
+      for example. You can fill in these assumptions and the graphs will show how
+      things change.\r\n<br/>\r\n<br/>\r\nAlmost all modes of transport have been
+      steadily increasing in volume over the last decades.\r\n\r\n"
+    content_nl: "Zullen we in de toekomst meer of minder energie gebruiken voor transport?\r\n<br/>\r\n<br/>\r\nDat
+      hangt af van je aannames over de toepassing van nieuwe technologieën en economische
+      of bevolkingsgroei bijvoorbeeld. Deze aannames kun je hier invullen. In de grafieken
+      zie je dan hoe alles verandert. \r\n<br/>\r\n<br/>\r\nBijna alle vormen van
+      transport zijn in volume toegenomen de afgelopen decennia.\r\n\r\n"
+    short_content_en: Will we need more or less energy for transporting people and
+      goods in the future? The answer depends ...
+    short_content_nl: Zullen we in de toekomst meer of minder energie gebruiken voor
+      transport? Dat hangt ervan af...
+- key: industry
   section: demand
   percentage_bar_query: share_of_industry_and_energy_in_final_demand
-  tab_id: 2
+  tab_key: demand
   position: 4
-  parent_id:
-  dependent_on: has_industry
-- id: 5
-  key: agriculture
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "Industry often represents a large part of a country's energy use.
+      How much energy will industry need in the future?\r\nThe answer depends on your
+      assumptions about the adoption of new technologies and economic or population
+      growth, for example. You can fill in these assumptions and the graphs will show
+      how things change.\r\n<br/><br/>\r\nThe industry sector is divided into 10 sub-sectors
+      and CHPs. Assumptions about the energy consumption in the industry can be set
+      in those sub-sectors. Only the heat production by CHPs is covered for the industry
+      as a whole.\r\n<br/><br/>\r\nBecause industry uses so much energy, it is the
+      only sector that has steadily improved its energy efficiency over the past decades,
+      as energy has become more expensive. In many developed countries, industrial
+      energy use has hardly increased since the early 1990's."
+    content_nl: "In veel landen is het industrieel energiegebruik een flink deel van
+      het totaal. Hoeveel energie zullen we in de toekomst nodig hebben? \r\nDat hangt
+      af van je aannames over de toepassing van nieuwe technologieën en economische
+      of bevolkingsgroei bijvoorbeeld. Deze aannames kun je hier invullen. In de grafieken
+      zie je dan hoe alles verandert.\r\n<br/><br/>\r\nDe industriesector is onderverdeeld
+      in 10 subsectoren en warmte-kracht koppeling. Je keuzes over het energiegebruik
+      in de industrie kun je maken in die subsectoren. Alleen de warmte productie
+      door WKKs moet worden ingesteld voor de industrie als geheel.\r\n<br/><br/>\r\nOmdat
+      industrie vaak energie-intensief is, is het de enige sector van de economie
+      die stelselmatig efficiënter is geworden gedurende de afgelopen twee decennia.
+      Energie is namelijk steeds duurder geworden. In veel ontwikkelde landen is deze
+      sector ondanks groei nauwelijks meer energie gaan gebruiken sinds de vroege
+      jaren '90."
+    short_content_en: Industrial use is often a large chunk of a country's total.
+      How much energy will industry need in the future? The answer depends...
+    short_content_nl: In veel landen is het industrieel energiegebruik een flink deel
+      van het totaal. Hoeveel energie zullen we in de toekomst nodig hebben? Dat hangt
+      ervan af...
+- key: agriculture
   section: demand
   percentage_bar_query: share_of_agriculture_in_final_demand
-  tab_id: 2
+  tab_key: demand
   position: 5
-  parent_id:
-  dependent_on: has_agriculture
-- id: 6
-  key: other
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "In general, agriculture is not very energy intensive, with the exception
+      of greenhouses. How much energy will your country use for agriculture in the
+      future?\r\n<br/>\r\n<br/>\r\n\t\r\nThe answer depends on your assumptions about
+      the adoption of new technologies, mostly for heating. You can fill in these
+      assumptions and the graphs will show how things change.\r\n<br/>\r\n<br/>\r\nIn
+      the Netherlands, more than 80% of the energy used in this sector is for greenhouses.\r\n"
+    content_nl: "Landbouw is over het algemeen niet extreem energie-intensief, met
+      uitzondering van broeikassen. Hoeveel energie zal jouw land voor landbouw gebruiken
+      in de toekomst?\r\n<br/>\r\n<br/>\r\nDat hangt af van je aannames over de toepassing
+      van nieuwe technologieën en economische of bevolkingsgroei bijvoorbeeld. Deze
+      aannames kun je hier invullen. In de grafieken zie je dan hoe alles verandert.
+      \r\n<br/>\r\n<br/>\r\nIn Nederland gebruiken broeikassen 80% van alle energie
+      voor landbouw."
+    short_content_en: "How much energy will your country use for agriculture in the
+      future? The answer depends ...\r\n"
+    short_content_nl: Landbouw is over het algemeen niet extreem energie-intensief,
+      met uitzondering van broeikassen. Hoeveel energie zal jouw land voor landbouw
+      gebruiken in de toekomst?
+- key: other
   section: demand
   percentage_bar_query: share_of_other_in_final_demand
-  tab_id: 2
+  tab_key: demand
   position: 6
-  parent_id:
-  dependent_on: has_other
-- id: 12
-  key: combustion
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "How much energy will the energy consumers use that are not included
+      in the categories above? These remaining energy consumers include the construction
+      sector, hydrological sector (dams, levies etc), the military etc.\r\n<br/>\r\n<br/>\r\nThe
+      answer depends on your assumptions about the adoption of new technologies and
+      economic or population growth, for example. You can fill in these assumptions
+      and the graphs will show how things change.\r\n"
+    content_nl: "Hoeveel energie zullen de overige energiegebruikers nodig hebben
+      in de toekomst? Het gaat hierbij om gebruikers als de bouwsector, de waterwerken
+      (stuwen en sluizen, etc) en het leger.\r\n<br/>\r\n<br/>\r\nDe energievraag
+      hangt af van je aannames over de toepassing van nieuwe technologieën en economische
+      of bevolkingsgroei bijvoorbeeld. Deze aannames kun je hier invullen. In de grafieken
+      zie je dan hoe alles verandert. \r\n"
+    short_content_en: How much energy will the energy consumers use that are not included
+      in the categories above? The answer depends ...
+    short_content_nl: Hoeveel energie zullen de overige energiegebruikers nodig hebben
+      in de toekomst? Dat hangt ervan af...
+- key: combustion
   section: costs
   percentage_bar_query: ''
-  tab_id: 4
+  tab_key: costs
   position: 4
-  parent_id:
-  dependent_on: ''
-- id: 13
-  key: nuclear
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "How will the costs of fuel, the costs of building power plants and
+      even the costs of CO<sub>2</sub> emissions change in the future? \r\n<br/>\r\nCombustion
+      power plants burn fuels to make electricity. To compare their costs to different
+      technologies, you can fill in your assumptions for these technologies. \r\n<br/><br/>\r\nHere
+      you will find an overview of all types of electricity production used in the
+      model. Of each type we use the most modern, commercially available technology.
+      \r\n<br/>\r\n<br/>\r\nThe model takes into account the lifetime of the power
+      plant. The chart on the right shows how costs compare."
+    content_nl: "Hoe gaan de kosten van brandstof, het bouwen van centrales en de
+      kosten van CO<sub>2</sub> uitstoot veranderen in de toekomst?\r\n<br/><br/>\r\nVerbrandingscentrales
+      zijn afhankelijk van brandstoffen om elektriciteit te kunnen maken. Om hun kosten
+      te vergelijken, kun je hier je aannames invullen voor deze technologieën. \r\n<br/>\r\nHier
+      vind je een overzicht van alle soorten elektriciteitsproductie in het model.
+      Van elk type is steeds de meest moderne, commercieel toegepaste technologie
+      genomen. \r\n<br/>\r\n<br/>\r\nHet model houdt rekening met de levensduur van
+      een centrale. In de grafiek rechts worden de kosten vergeleken."
+    short_content_en: "Combustion power plants burn fuels to make electricity.\r\nHow
+      will costs for electricity production change in the future?"
+    short_content_nl: Verbrandingscentrales zijn afhankelijk van brandstoffen om elektriciteit
+      te kunnen maken. Hoe zullen de kosten van elektriciteitsproductie veranderen
+      in de toekomst?
+- key: nuclear
   section: costs
   percentage_bar_query: ''
-  tab_id: 4
+  tab_key: costs
   position: 4
-  parent_id:
-  dependent_on: ''
-- id: 14
-  key: wind
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "How will the costs of nuclear power change in the future?\r\n<br/><br/>\r\nNuclear
+      power will probably always stir debates about its safety. Comparing it to other
+      technologies on a factual - and neutral - basis may contribute to this debate.\r\n<br/><br/>\r\nHere
+      you will find an overview of all types of electricity production used in the
+      model. The graph on the right shows how costs compare. Of each type we use the
+      most modern, commercially available technology.\r\n<br/><br/>\r\nThe model takes
+      the lifetime of a power plant into account when calculating costs. "
+    content_nl: "Hoe zullen de kosten van kernenergie gaan veranderen in de toekomst?\r\n<br/><br/>\r\nKernenergie
+      zal waarschijnlijk altijd controversieel blijven. Een feitelijke - en neutrale
+      - vergelijking met andere technologieën kan aan het debat bijdragen. \r\n<br/><br/>\r\nHier
+      vind je een overzicht van allerlei gangbare soorten elektriciteitsproductie.
+      In de rechter grafiek worden de productiekosten vergeleken. Van elk type gebruikt
+      het model de meest moderne, commercieel toegepaste technologie.\r\n<br/><br/>\r\nHet
+      model houdt voor de kosten rekening met de levensduren van de centrales."
+    short_content_en: "How will the costs of nuclear power change in the future? \r\nComparing
+      nuclear power to other technologies on a factual - and neutral - basis is useful."
+    short_content_nl: Het is zinvol om bijvoorbeeld kernenergie op een feitelijke
+      - en neutrale - basis met andere technologieën te vergelijken.
+- key: wind
   section: costs
   percentage_bar_query: ''
-  tab_id: 4
+  tab_key: costs
   position: 5
-  parent_id:
-  dependent_on: ''
-- id: 15
-  key: water
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "How will the costs of wind power change in the future? \r\n<br/><br/>\r\nOnshore
+      and offshore wind are technologically quite different, so they may develop separately.
+      To compare their costs of making electricity with different technologies, you
+      can fill in your assumptions relevant for these technologies.\r\n<br/><br/>\r\nHere
+      you will find an overview of all types of electricity production used in the
+      model. Of each type we use the most modern, commercially available technology.
+      \r\n<br/>\r\n<br/>\r\nThe model takes into account the lifetime of the wind
+      turbine and how much wind energy is available in your country. The graph on
+      the right shows how costs compare. "
+    content_nl: "Hoe zullen de kosten van windstroom veranderen in de toekomst? \r\n<br/><br/>\r\nWind
+      op land en wind op zee zijn qua techniek behoorlijk anders, en zouden zich best
+      eens anders kunnen ontwikkelen. Om deze kosten te kunnen vergelijken met andere
+      technologieën, kun je hier je aannames invullen.\r\n<br/><br/>\r\nHier vind
+      je een overzicht van alle soorten elektriciteitsproductie in het model. Van
+      elk type is steeds de meest moderne, commercieel toegepaste technologie genomen.
+      \r\n<br/>\r\n<br/>\r\nHet model neemt voor de kosten de levensduur van de windmolens
+      mee en hoeveel windenergie er in jouw land beschikbaar is. De grafiek rechts
+      vergelijkt de kosten van stroomopwek."
+    short_content_en: How will the costs of wind power change in the future? Onshore
+      and offshore wind are technologically quite different, so they may develop separately.
+    short_content_nl: 'Hoe zullen de kosten van windstroom veranderen in de toekomst?
+      Wind op land en wind op zee zijn qua techniek behoorlijk anders, en zouden zich
+      best eens anders kunnen ontwikkelen. '
+- key: water
   section: costs
   percentage_bar_query: ''
-  tab_id: 4
+  tab_key: costs
   position: 6
-  parent_id:
-  dependent_on: ''
-- id: 16
-  key: solar
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "How will the costs of hydro-electricity change in the future?\r\n<br/>\r\n<br/>\r\nHydro-electricity's
+      technology is quite mature, but changing rainfall patterns make it hard to predict
+      how plants will perform. \r\n<br/><br/>\r\nHere you will find an overview of
+      all types of electricity production used in the model. Of each type we use the
+      most modern, commercially available technology. The graph on the right shows
+      how costs compare.\r\n<br/>\r\n<br/>\r\nThe model takes into account the lifetime
+      of the power plants when calculating costs."
+    content_nl: "Hoe gaan de kosten van waterkracht veranderen in de toekomst?\r\n<br/><br/>\r\nWaterkracht
+      is een technologie die al redelijk ver is uitontwikkeld, maar doordat het anders
+      gaat regenen zijn centrales niet altijd verzekerd van water. \r\n<br/><br/>\r\nHier
+      vind je een overzicht van alle soorten elektriciteitsproductie in het model.
+      Van elk type is steeds de meest moderne, commercieel toegepaste technologie
+      genomen.\r\n<br/>\r\n<br/>\r\nHet model neemt voor de kosten de levensduur van
+      de centrales mee en hoeveel stroom met water kan worden opgewekt in jouw land.
+      De grafiek rechts vergelijkt de kosten van stroomopwek."
+    short_content_en: "How will the costs of hydro-electricity change in the future?
+      \r\nHydro-electricity's technology is quite mature, but changing rainfall patterns
+      make it hard to predict how plants will perform.  "
+    short_content_nl: "Hoe gaan de kosten van waterkracht veranderen in de toekomst?\r\nWaterkracht
+      is een technologie die al redelijk ver is uitontwikkeld, maar doordat het anders
+      gaat regenen zijn centrales niet altijd verzekerd van water."
+- key: solar
   section: costs
   percentage_bar_query: ''
-  tab_id: 4
+  tab_key: costs
   position: 7
-  parent_id:
-  dependent_on: ''
-- id: 17
-  key: earth
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "How will the costs of solar power change for your country? \r\n<br/><br/>\r\nSolar
+      power is developing fast. Technologies are available for hot, sunny climates,
+      but also for more temperate climates. That is why some people believe it is
+      the energy source of the future. Comparing it on a factual - and neutral - basis
+      to the costs of other technologies can be useful. \r\n<br/><br/>\r\nHere you
+      will find an overview of all types of electricity production used in the model.
+      Of each type we use the most modern, commercially available technology. \r\n<br/>\r\n<br/>\r\nThe
+      model takes into account the lifetime of the solar panels and how much solar
+      energy is available in your country. The graph on the right shows how costs
+      compare. "
+    content_nl: "Hoe gaan de kosten van zonnestroom veranderen in jouw land?\r\n<br/>\r\n<br/>\r\nZonnestroom
+      ontwikkelt zich snel. Er zijn technologieën die geschikt zijn voor warme zonnige
+      klimaten, maar ook andere voor minder warme gebieden. Daarom geloven sommigen
+      dat het de energiebron van de toekomst is. Het kan handig zijn om het met andere
+      technologieën te vergelijken op een feitelijke - en neutrale - basis. \r\n<br/><br/>\r\nHier
+      vind je een overzicht van alle soorten elektriciteitsproductie in het model.
+      Van elk type is steeds de meest moderne, commercieel toegepaste technologie
+      genomen. \r\n<br/>\r\n<br/>\r\nHet model neemt voor de kosten de levensduur
+      van de zonnepanelen mee en hoeveel zonne-energie er in jouw land beschikbaar
+      is. De grafiek rechts vergelijkt de kosten van stroomproductie."
+    short_content_en: "How will the costs of solar power change for your country?
+      \r\nSolar power is developing fast. Comparing it on a factual - and neutral
+      - basis to the costs of other technologies can be useful. "
+    short_content_nl: "Hoe gaan de kosten van zonnestroom veranderen in jouw land?\r\nZonnestroom
+      ontwikkelt zich snel. Het kan handig zijn om het met andere technologieën te
+      vergelijken op een feitelijke - en neutrale - basis.\r\n"
+- key: co2
   section: costs
   percentage_bar_query: ''
-  tab_id:
-  position: 8
-  parent_id:
-  dependent_on: ''
-- id: 18
-  key: co2
-  section: costs
-  percentage_bar_query: ''
-  tab_id: 4
+  tab_key: costs
   position: 9
-  parent_id:
-  dependent_on: ''
-- id: 19
-  key: sustainability
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "Will CO<sub>2</sub> emission costs make the difference between renewable
+      and fossil-fuelled power?\r\n<br/>\r\n<br/>\r\nIn Europe, emitting CO<sub>2</sub>
+      is no longer free for energy intensive companies. A decreasing number of emission
+      certificates is awarded to them every year, forcing them (in theory at least)
+      to become more efficient. In reality, this depends on whether politicians will
+      compromise climate legislation for economic gains. \r\n<br/>\r\n<br/>\r\nLike
+      fuel costs, therefore, emission costs make up part of the costs of fossil-fuelled
+      power. These costs may be (mostly) avoided by Carbon Capture and Storage (CCS).
+      Of course, it is only profitable to do so if emitting CO<sub>2</sub> costs more
+      than capturing and storing it. \r\n"
+    content_nl: "Zullen de kosten van CO<sub>2</sub> uitstoot het verschil maken tussen
+      hernieuwbare en fossiele stroom? \r\n<br/>\r\n<br/>\r\nIn Europa is uitstoot
+      niet gratis meer voor energie-intensieve bedrijven. Elk jaar wordt een afnemend
+      aantal emissierechten toegekend, waardoor bedrijven gedwongen worden efficiënter
+      te worden, of rechten bij te kopen van efficiëntere partijen. Dat is de theorie.
+      In de praktijk hangt het antwoord ervan af of politici de wetgeving zullen afzwakken
+      om economische redenen.\r\n<br/>\r\n<br/>\r\nNet als brandstofkosten zijn uitstootkosten
+      een onderdeel van de totale kosten voor fossiele stroom. Deze kosten worden
+      voor een groot deel vermeden door de afvang en opslag van CO<sub>2</sub> (CCS).
+      Dit is natuurlijk alleen aantrekkelijk als CCS goedkoper is dan de emissierechten
+      zelf."
+    short_content_en: 'Will CO<sub>2</sub> emission costs make the difference between
+      renewable and fossil-fueled power? In Europe, emitting CO<sub>2</sub> when generating
+      power is no longer free. '
+    short_content_nl: 'Zullen de kosten van CO<sub>2</sub> uitstoot het verschil maken
+      tussen hernieuwbare en fossiele stroom? In Europa is uitstoot niet gratis meer
+      voor energie-intensieve bedrijven. '
+- key: sustainability
   section: targets
   percentage_bar_query: ''
-  tab_id: 7
+  tab_key: targets
   position: 1
-  parent_id:
-  dependent_on: _always_hidden
-- id: 20
-  key: dependence
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "By how much will the government want to cut CO<sub>2</sub> emissions
+      compared to 1990 levels? What percentage of all energy use do you think should
+      be renewable in the future?\r\n<br/>\r\n<br/>\r\nHere you may set the national
+      renewability targets. At 'Targets' at the bottom of each page, you can see whether
+      you have managed to meet your own policy targets after you have filled out the
+      'Supply' section. "
+    content_nl: "Met hoeveel wil de overheid de CO<sub>2</sub> emissies omlaag brengen,
+      ten opzichte van het niveau van 1990? Welk percentage van het totale energiegebruik
+      moet volgens jou hernieuwbaar zijn in de toekomst?\r\n<br/>\r\n<br/>\r\nHier
+      kun je de hernieuwbaarheidsdoelstellingen invullen. Bij 'Doelen' onderaan de
+      pagina zie je of je erin geslaagd bent je eigen beleidsdoelen te halen, nadat
+      je het onderdeel 'Aanbod' hebt ingevuld.\r\n"
+    short_content_en: "By how much will the government want to cut CO<sub>2</sub>
+      emissions compared to 1990 levels? How about sustainable energy quotas?\r\n"
+    short_content_nl: 'Met hoeveel wil de overheid de CO<sub>2</sub> emissies omlaag
+      brengen, ten opzichte van het niveau van 1990? '
+- key: dependence
   section: targets
   percentage_bar_query: ''
-  tab_id: 7
+  tab_key: targets
   position: 2
-  parent_id:
-  dependent_on: _always_hidden
-- id: 21
-  key: cost
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "How much energy do you want to import from other countries? Since
+      energy is of crucial importance to any economy, security of supply is a major
+      concern of all governments. \r\n<br/>\r\n<br/>\r\nFood for thought:<br/>\r\nImporting
+      energy is not necessarily a bad thing. Most Europeans will probably feel different
+      about importing wood chips from Canada or even uranium from Australia, than
+      they do about imports of oil from Saudi Arabia or natural gas from Russia. Most
+      countries have learned to live with some form of dependence on imports. "
+    content_nl: "Hoeveel energie wil je importeren uit andere landen? Energie is van
+      cruciaal belang voor elke economie en daarom is leveringszekerheid iets waar
+      alle overheden zich zorgen over maken.\r\n<br/>\r\n<br/>\r\nIets om over na
+      te denken:<br/>\r\nEnergie-import is niet altijd een probleem. De meeste West
+      Europeanen zullen minder problemen hebben met houtsnippers importeren uit Canada
+      of zelfs uranium uit Australië dan met de import van Russisch aardgas. De meeste
+      landen hebben leren leven met een bepaalde vorm van energie-afhankelijkheid."
+    short_content_en: How much energy do you want to import from other countries?
+      Will your country import all energy?
+    short_content_nl: 'Hoeveel energie wil je importeren uit andere landen? Gaat jouw
+      land alles importeren? '
+- key: cost
   section: targets
   percentage_bar_query: ''
-  tab_id: 7
+  tab_key: targets
   position: 3
-  parent_id:
-  dependent_on: _always_hidden
-- id: 22
-  key: electricity
+  dependent_on:
+  parent_key:
+  description:
+    content_en: By how much may energy costs increase or decrease? Everyone needs
+      energy. If it becomes more expensive, that means people will have less money
+      to spend on other things.
+    content_nl: Hoeveel mogen de kosten van energie toe- of afnemen? Iedereen heeft
+      energie nodig. Als het te duur wordt, hebben mensen minder te besteden voor
+      andere dingen.
+    short_content_en: Everyone needs energy. By how much may energy costs increase
+      or decrease?
+    short_content_nl: 'Iedereen heeft energie nodig. Hoeveel mogen de kosten van energie
+      toe- of afnemen? '
+- key: electricity
   section: supply
   percentage_bar_query: ''
-  tab_id: 3
+  tab_key: supply
   position: 1
-  parent_id:
-  dependent_on: ''
-- id: 23
-  key: electricity_renewable
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "How many power plants for  'non-renewable' electricity do you think
+      should be built?\r\nHere, you can choose how you want to generate the electricity
+      you need. \r\n<br/>\r\n<br/>\r\nKeep in mind what you may have already filled
+      in for the sections 'Demand', 'Costs' and 'Targets'. At the bottom of the screen
+      ('Targets'), you can see how many of your own policy targets you meet with the
+      current electricity production mix. If you move your cursor over this indicator,
+      you will see a table with more details.\r\n"
+    content_nl: "Hoeveel niet hernieuwbare elektriciteitscentrales moeten er gebouwd
+      worden? Hier kun je kiezen hoe je de elektriciteit wilt opwekken die nodig is
+      in jouw scenario. \r\n<br/>\r\n<br/>\r\nVergeet niet wat je misschien al hebt
+      ingevuld in de onderdelen 'Vraag', 'Kosten' en 'Doelen'. Onderaan het scherm
+      ('Doelen'), kun je zien hoeveel van je beleidsdoelen gehaald worden met de huidige
+      samenstelling van de elektriciteitsproductie. Als je met je cursor hiernaartoe
+      gaat, zie je een tabel met meer details."
+    short_content_en: "How many power plants for  'non-renewable' electricity do you
+      think should be built?\r\nHow will you generate the electricity you need?"
+    short_content_nl: 'Hoeveel niet hernieuwbare elektriciteitscentrales moeten er
+      gebouwd worden? Hier kun je kiezen hoe je de elektriciteit wilt opwekken die
+      nodig is in jouw scenario. '
+- key: electricity_renewable
   section: supply
   percentage_bar_query: ''
-  tab_id: 3
+  tab_key: supply
   position: 2
-  parent_id:
-  dependent_on: ''
-- id: 24
-  key: heat
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "How much renewable electricity do you think should be generated?\r\nHow
+      will you generate the electricity you need?\r\n<br/>\r\n<br/>\r\nKeep in mind
+      what you have already filled in for the sections 'Demand', 'Costs' and 'Targets'.
+      At the bottom of the screen ('Targets'), you can see how many of your own policy
+      targets you meet with the current electricity production mix. If you move your
+      cursor over this indicator, you will see a table with more details."
+    content_nl: "Hoeveel hernieuwbare elektriciteit moet er gemaakt worden? Hoe wek
+      je de elektriciteit op die nodig is in jouw scenario? \r\n<br/>\r\n<br/>\r\nVergeet
+      niet wat je al hebt ingevuld in de onderdelen 'Vraag', 'Kosten' en 'Doelen'.
+      Onderaan het scherm ('Doelen'), kun je zien hoeveel van je beleidsdoelen gehaald
+      worden met de huidige samenstelling van de elektriciteitsproductie. Als je met
+      je cursor hiernaartoe gaat, zie je een tabel met meer details."
+    short_content_en: "How much renewable electricity do you think should be generated?\r\nHow
+      will you generate the electricity you need?"
+    short_content_nl: 'Hoeveel hernieuwbare elektriciteit moet er gemaakt worden?
+      Hoe wek je de elektriciteit op die nodig is in jouw scenario? '
+- key: heat
   section: supply
   percentage_bar_query: ''
-  tab_id: 3
+  tab_key: supply
   position: 3
-  parent_id:
-  dependent_on: ''
-- id: 25
-  key: renewable_heat
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "How much of the heat needed should be produced by burning fossil
+      fuels?\r\n<br/><br/>\r\nKeep in mind what you have already filled in for the
+      sections 'Demand', 'Costs' and 'Targets'. At the bottom of the screen ('Targets'),
+      you can see how many of your own policy targets you meet with the current heat
+      production mix. If you move your cursor over this indicator, you will see a
+      table with more details."
+    content_nl: "Welk deel van de warmtevraag wordt ingevuld door fossiele brandstoffen?\r\n<br/><br/>\r\nVergeet
+      niet wat je al hebt ingevuld in de onderdelen 'Vraag', 'Kosten' en 'Doelen'.
+      Onderaan het scherm ('Doelen'), kun je zien hoeveel van je beleidsdoelen gehaald
+      worden met de huidige samenstelling van de warmteproductie. Als je met je cursor
+      hiernaartoe gaat, zie je een tabel met meer details.\r\n"
+    short_content_en: How much of the heat needed should be produced by burning fossil
+      fuels?
+    short_content_nl: Welk deel van de warmtevraag wordt ingevuld door fossiele brandstoffen?
+- key: renewable_heat
   section: supply
   percentage_bar_query: ''
-  tab_id: 3
+  tab_key: supply
   position: 4
-  parent_id:
-  dependent_on: _always_hidden
-- id: 26
-  key: transport_fuels
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "How much of the heat needed should be produced from renewable sources?\r\n<br/><br/>\r\nKeep
+      in mind what you have already filled in for the sections 'Demand', 'Costs' and
+      'Targets'. At the bottom of the screen ('Targets'), you can see how many of
+      your own policy targets you meet with the current heat production mix. If you
+      move your cursor over this indicator, you will see a table with more details"
+    content_nl: "Welk deel van de warmtevraag moet hernieuwbaar ingevuld worden? \r\n<br/><br/>\r\nVergeet
+      niet wat je al hebt ingevuld in de onderdelen 'Vraag', 'Kosten' en 'Doelen'.
+      Onderaan het scherm ('Doelen'), kun je zien hoeveel van je beleidsdoelen gehaald
+      worden met de huidige samenstelling van de warmteproductie. Als je met je cursor
+      hiernaartoe gaat, zie je een tabel met meer details."
+    short_content_en: How much of the heat needed should be produced from renewable
+      sources?
+    short_content_nl: 'Welk deel van de warmtevraag moet hernieuwbaar ingevuld worden? '
+- key: transport_fuels
   section: supply
   percentage_bar_query: ''
-  tab_id: 3
+  tab_key: supply
   position: 7
-  parent_id:
-  dependent_on: ''
-- id: 28
-  key: infrastructure
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "What mix of transport fuels will you use? What part will be renewable?\r\n<br/><br/>\r\nKeep
+      in mind what you have already filled in for the sections 'Demand', 'Costs' and
+      'Targets'. At the bottom of the screen ('Targets'), you can see how many of
+      your own policy targets you meet with the current transport fuel mix. If you
+      click on it, you will see a table with more details."
+    content_nl: "Welke brandstoffen gebruik je voor transport? Welk deel daarvan is
+      hernieuwbaar?\r\n<br/><br/>\r\nVergeet niet wat je al hebt ingevuld in de onderdelen
+      'Vraag', 'Kosten' en 'Doelen'. Onderaan het scherm ('Doelen'), kun je zien hoeveel
+      van je beleidsdoelen gehaald worden met de huidige transportbrandstoffen. Als
+      je hierop klikt zie je een tabel met meer details."
+    short_content_en: What mix of transport fuels will you use? What part will be
+      renewable?
+    short_content_nl: "Welke brandstoffen gebruik je voor transport? Welk deel daarvan
+      is hernieuwbaar?\r\n"
+- key: infrastructure
   section: costs
   percentage_bar_query: ''
-  tab_id: 4
+  tab_key: costs
   position: 8
-  parent_id:
-  dependent_on: use_network_calculations
-- id: 29
-  key: area
+  dependent_on:
+  parent_key:
+  description:
+    content_en: 'Additional electricity generation capacity and extra electricity
+      use by new technologies may require improvements or enhancements to the electricity
+      grid. This page explains additional costs for the electricity and gas networks,
+      as a result of your choices. '
+    content_nl: 'Extra elektriciteitscentrales en meer elektriciteitsvraag maken het
+      misschien noodzakelijk dat het netwerk wordt verbeterd of uitgebreid. Op deze
+      pagina wordt uitgelegd hoe en waarom het model extra kosten uitrekent voor de
+      elektriciteits- en gasnetwerken als gevolg van je keuzes. '
+    short_content_en: This page explains additional costs for the electricity and
+      gas networks, as a result of your choices.
+    short_content_nl: 'Op deze pagina wordt uitgelegd hoe het model extra kosten uitrekent
+      voor de elektriciteits- en gasnetwerken als gevolg van je keuzes. '
+- key: area
   section: overview
   percentage_bar_query: ''
-  tab_id: 7
+  tab_key: targets
   position: 4
-  parent_id:
-  dependent_on: _always_hidden
-- id: 32
-  key: fce
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "How much land, sea or coast will the government allocate to energy
+      production? \r\n<br/><br/>\r\nRenewable energy production takes a lot of space,
+      whether it is wind power, solar power or biomass production. Governments (national,
+      regional or local) need to set aside land for this purpose. Here you can fill
+      in how much land is set aside. \r\n<br/>\r\n<br/>\r\nNote that setting aside
+      land does not mean the wind turbines will also be built. You can do that in
+      the Supply section.\r\n "
+    content_nl: "Hoeveel land, kust en zee gaat de overheid aan de productie van energie
+      toekennen?\r\n<br/><br/>\r\nVoor hernieuwbare energie is veel ruimte nodig,
+      of het nu om windstroom, zonnestroom of biomassaproductie gaat. Het is aan nationale,
+      regionale of lokale overheden om hiervoor landoppervlak vrij te maken. Je kunt
+      hier invullen hoeveel oppervlak beschikbaar moet komen.\r\n<br/>\r\n<br/>\r\nLet
+      op! Dat het land beschikbaar is, betekent nog niet dat er ook echt windmolens
+      gebouwd worden. Dat moet je in het onderdeel Aanbod doen."
+    short_content_en: 'Sustainable energy takes a lot of space. How much land, sea
+      or coast will be allocated to energy production by the government? '
+    short_content_nl: Voor hernieuwbare energie is veel ruimte nodig. Hoeveel land,
+      kust en zee gaat de overheid aan de productie van energie toekennen?
+- key: fce
   section: supply
   percentage_bar_query: ''
-  tab_id: 3
+  tab_key: supply
   position: 9
-  parent_id:
-  dependent_on: _always_hidden
-- id: 33
-  key: security_of_supply
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "Greenhouse gases are emitted when fuels are used, but also when they
+      are extracted, treated and transported to their final destination. In this section,
+      you can see how these 'fuel chain emissions' change for different geographic
+      origins of some of the fuels.\r\n<br/><br/>\r\nUnder 'Settings' you can choose
+      to include fuel chain emissions in the CO<sub>2</sub> calculations. \r\n<br/><br/>\r\nFor
+      each fuel you can click on '<u>read more</u>' to see more information about
+      the fuel chain and what pollution plays a role. When you click on the question
+      mark <img src='/assets/slider/slider-down-button.png' /> after each slider you
+      can read more about the specific characteristics of the fuel from that region.\r\n<br/>\r\n<a
+      href=\"http://www.cedelft.eu/\" target=\"_blank\"><img alt=\"Powered_by_cedelft_bis\"
+      src=\"/assets/layout/powered_by_cedelft_bis.png?1313676637\" style=\"float:right\">\r\n</a>"
+    content_nl: "Broeikasgassen worden uitgestoten bij de het gebruik van brandstoffen,
+      maar ook bij de extractie, bewerking en transport ervan. Deze ketenemissies
+      gebeuren vaak buiten de grenzen van het land dat de brandstoffen gebruikt. In
+      dit gedeelte kun je zien hoe ze voor sommige brandstoffen afhangen van de regio
+      van herkomst.\r\n</br>\r\nBij 'Opties' kun je kiezen of je wilt dat het model
+      in de CO<sub>2</sub> berekeningen ook de ketenemissies meeneemt. \r\n<br/><br/>\r\nVoor
+      elke brandstof kun je klikken op '<u>lees verder</u>' om meer te leren over
+      de brandstofketen en de verschillende vervuilende factoren van deze brandstof.
+      Daarnaast kun je bij elk schuifje klikken op het vraagtekentje <img src='/assets/slider/slider-down-button.png'
+      /> om te lezen over de specifieke kenmerken van de brandstof uit die regio.</br>\r\n\r\n\r\n<a
+      href=\"http://www.cedelft.eu/\" target=\"_blank\"><img alt=\"Powered_by_cedelft_bis\"
+      src=\"/assets/layout/powered_by_cedelft_bis.png?1313676637\" style=\"float:right\">\r\n</a>"
+    short_content_en: "Greenhouse gases are emitted when fuels are used, but also
+      when they are extracted, treated and transported to their final destination.
+      <br/>\r\n<a href=\"http://www.cedelft.eu/\" target=\"_blank\"><img alt=\"Powered_by_cedelft_bis\"
+      src=\"/assets/layout/powered_by_cedelft_bis.png?1313676637\" style=\"float:right\"></a>\r\n"
+    short_content_nl: "Broeikasgassen worden uitgestoten bij de het gebruik van brandstoffen,
+      maar ook bij de extractie, bewerking en transport ervan. <br/>\r\n<a href=\"http://www.cedelft.eu/\"
+      target=\"_blank\"><img alt=\"Powered_by_cedelft_bis\" src=\"/assets/layout/powered_by_cedelft_bis.png?1313676637\"
+      style=\"float:right\"></a>\r\n"
+- key: security_of_supply
   section: flexibility
   percentage_bar_query: ''
-  tab_id: 5
+  tab_key: flexibility
   position: 10
-  parent_id:
-  dependent_on: ''
-- id: 34
-  key: merit_order
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "Volatile energy production from wind turbines and solar panels cannot
+      always be relied upon. They need some form of backup. In absence of storage
+      options, such backup will be provided by fossil power plants. This means extra
+      CO<sub>2</sub> emissions and costs for electricity produced by volatile techniques.
+      \ \r\n<br/>\r\n<br/>\r\nThis page compares the available technologies that can
+      serve as backup for volatile wind or solar power."
+    content_nl: "Je kunt niet altijd rekenen op volatiele stroomproductie van bijvoorbeeld
+      windmolens of zonnepanelen. Ze hebben dus een soort 'backup' nodig. Zonder vormen
+      van opslag komt die backup van fossiele centrales. Dit betekent extra CO<sub>2</sub>
+      uitstoot en kosten voor stroomproductie door wind of zon. \r\n<br/>\r\n<br/>\r\nDeze
+      pagina vergelijkt de verschillende technologieën die als 'backup' ingezet kunnen
+      worden voor wind of zon."
+    short_content_en: This page compares the available technologies that can serve
+      as backup for volatile renewable source like wind or solar power.
+    short_content_nl: Deze pagina vergelijkt de verschillende technologieën die als
+      'backup' ingezet kunnen worden voor volatiele hernieuwbare bronnen als wind
+      en zon.
+- key: merit_order
   section: flexibility
   percentage_bar_query: ''
-  tab_id: 4
+  tab_key: costs
   position: 1
-  parent_id:
-  dependent_on: has_merit_order
-- id: 35
-  key: employment
+  dependent_on:
+  parent_key:
+  description:
+    content_en: This page shows the 'merit order' of power producing technologies
+      that you have chosen in your scenario. The merit order compares the running
+      costs, which include  fuel costs, CO<sub>2</sub> costs, and variable operation
+      and maintenance costs.
+    content_nl: 'Deze pagina toont de merit order voor stroomproductie in jouw scenario.
+      Hiervoor vergelijkt men voor iedere beschikbare technologie de som van alle
+      draaikosten: brandstof-, CO<sub>2</sub>-, en variabele onderhouds- en beheerkosten.'
+    short_content_en: 'This page shows the merit order of power producing technologies
+      that you have chosen in your scenario. '
+    short_content_nl: Deze pagina toont de merit order voor stroomproductie in jouw
+      scenario.
+- key: employment
   section: costs
   percentage_bar_query: ''
-  tab_id: 4
+  tab_key: costs
   position: 11
-  parent_id:
-  dependent_on: _always_hidden
-- id: 36
-  key: costs_heat
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "Increased employment might be good reason to make the transition
+      to more sustainable energy production technologies. But how large are the effects?\r\n<br/><br/>\r\nThe
+      employment calculation for the ETM is currently limited in scope; the 'Agriculture'
+      and 'Industry' sectors are not taken into account. More details can be found
+      on our <a href=\"https://github.com/quintel/documentation/blob/master/general/employment.md\"
+      target=\"_blank\">documentation</a> page."
+    content_nl: "Extra werkgelegenheid zou een goede reden kunnen zijn om in te zetten
+      op duurzame technologieën voor de opwekking van energie.\r\nMaar hoe sterk is
+      dat effect eigenlijk?\r\n<br/><br/>\r\nDe werkgelegenheidsmodule is momenteel
+      beperkt. De sectoren 'Landbouw' en 'Industrie' zijn uitgesloten van de berekening.
+      Bekijk onze <a href=\"https://github.com/quintel/documentation/blob/master/general/employment.md\"
+      target=\"_blank\">documentatie</a> voor meer informatie."
+    short_content_en: ''
+    short_content_nl: ''
+- key: costs_heat
   section: costs
   percentage_bar_query: ''
-  tab_id: 4
+  tab_key: costs
   position: 3
-  parent_id:
-  dependent_on: ''
-- id: 37
-  key: fuel_costs
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "Heating devices in both residential and non-residential buildings
+      tend to become cheaper as they become more common, due to economies of scale.
+      This is illustrated in the fictional learning curve below.\r\n<br/><br/>\r\nIf
+      you believe certain space or water heating technologies will be widely used
+      in the future, you may also want to think about how much cheaper they will become.
+      \r\n<br/><br/>\r\n<img src=\"/assets/popups/learning_curve_600px.png\" style=\"float:left;margin-right:20px\"/>"
+    content_nl: "Verwarmingsapparaten in huizen en de utiliteitsbouw worden dankzij
+      schaalvoordelen goedkoper naarmate ze meer voorkomen. De fictieve leercurve
+      die hieronder staat illustreert dit. \r\n<br/><br/>\r\nAls jij denkt dat sommige
+      apparaten in de toekomst veel gebruikt zullen worden voor ruimteverwarming of
+      warm water, kun je hier aangeven hoeveel ze in prijs zullen dalen. \r\n<br/><br/>\r\n<img
+      src=\"/assets/popups/learning_curve_600px.png\" style=\"float:left;margin-right:20px\"/>"
+    short_content_en: ''
+    short_content_nl: ''
+- key: fuel_costs
   section: costs
   percentage_bar_query: ''
-  tab_id: 4
+  tab_key: costs
   position: 1
-  parent_id:
-  dependent_on: ''
-- id: 38
-  key: industry_metal
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "It is difficult to predict the future price of fuel commodities.
+      Yet fuel is currently the largest contribution to the total cost of energy supply.
+      In this section you can set the price of fuel that you think is realistic. The
+      ETM will use this fuel price in all cost calculations. By varying the fuel price
+      you can see how robust your scenario is as far as uncertain future fuel prices
+      are concerned.\r\n<br/><br/>\r\nThe chart below shows the historic oil price
+      (orange) and the forecasts that the International Energy Agency, has made of
+      the oil price in various years. If even the IEA cannot accurately predict the
+      future oil price, who can?\r\n<br/>\r\n<img src=\"/assets/layout/forecast_iea_2008_and_2009_added.png\"
+      style=\"float:left;margin-right:20px\"/>"
+    content_nl: "Het is moeilijk om de prijs van brandstoffen te voorspellen. Toch
+      is brandstof op dit moment de grootste bijdrage aan de totale kosten van onze
+      energievoorziening. In deze sectie kun je de brandstofprijs invullen die jij
+      zelf realistisch vindt. Het ETM gebruikt deze prijs dan in alle kostenberekeningen.
+      Door de brandstofprijzen te variëren kun je zien hoe robuust de totale kosten
+      in jouw scenario zijn wat onzekere toekomstige brandstofprijzen betreft.\r\n<br/><br/>\r\nDe
+      grafiek hieronder toont de historische olieprijs (oranje) en de voorspellingen
+      die het Internationaal Energie Agentschap (IEA), in verschillende jaren heeft
+      opgesteld. Als zelfs de IEA de toekomstige olieprijs niet precies kan voorspellen,
+      wie dan wel? \r\n<br/>\r\n<img src=\"/assets/layout/forecast_iea_2008_and_2009_added.png\"
+      style=\"float:left;margin-right:20px\"/>"
+    short_content_en: ''
+    short_content_nl: ''
+- key: industry_metal
   section: demand
   percentage_bar_query: ''
-  tab_id: 2
+  tab_key: demand
   position: 2
-  parent_id: 4
-  dependent_on: _always_hidden
-- id: 39
-  key: excess_electricity
+  dependent_on:
+  parent_key: industry
+  description:
+    content_en: "Metal processing represents a large part of industrial energy use.
+      How much will it use in the future?<br/><br/>\r\nThe answer depends on your
+      assumptions about the adoption of new technologies and economic or population
+      growth, for example. You can fill in these assumptions and the graphs will show
+      how things change.\r\n<br/><br/>\r\nThis sector is part of industry, so changes
+      made here will show up in the charts for industry as a whole."
+    content_nl: "De metaalsector vertegenwoordigt een groot deel van het industrieel
+      energiegebruik. Hoeveel zal in de toekomst nodig zijn?\r\nDat hangt af van je
+      aannames over de toepassing van nieuwe technologieën en economische of bevolkingsgroei
+      bijvoorbeeld. Deze aannames kun je hier invullen. In de grafieken zie je dan
+      hoe alles verandert.\r\n<br/><br/>\r\nDe metaalsector is onderdeel van de industriesector,
+      dus veranderingen die je hier maakt, zullen de totalen onder industrie beïnvloeden."
+    short_content_en: ''
+    short_content_nl: ''
+- key: excess_electricity
   section: flexibility
   percentage_bar_query: ''
-  tab_id: 5
+  tab_key: flexibility
   position: 2
-  parent_id:
-  dependent_on: has_electricity_storage
-- id: 40
-  key: electricity_import_export
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "This page addresses the biggest obstacle facing integration of large
+      amounts of wind or solar power: generation does not necessarily coincide with
+      demand. This can lead to both shortage and excess. Large amounts of excess electricity
+      cannot always be reliably exported to neighboring countries, especially if volatile
+      renewable power takes up an increasing share of production there too. \r\n\r\n<br/><br/>\r\n\r\nIn
+      the absence of storage options, the only way to maintain grid stability is 'curtailment'
+      or discarding free and renewable electricity by turning off wind or solar power
+      generation. \r\nAt present, wasting their output increases production cost for
+      wind turbines and solar panels and results in increased costs for the whole
+      system. Whether this effect will occur in the future is uncertain, since nobody
+      can predict how the market will react to scenarios that temporarily produce
+      too much electricity on a regular basis. If excess production occurs frequently
+      enough, it might become economically attractive to start converting electricity
+      into another useful form of energy and integrate it into the energy system.
+      \r\n\r\n<br/><br/>\r\n\r\nThe chart gives an impression of how the costs for
+      several conversion technologies compare and at what point it might become economically
+      interesting to build the first conversion units. "
+    content_nl: "Deze pagina behandelt het grootste obstakel wat betreft de integratie
+      van grote hoeveelheden wind- of zonne-energie: de opwekking ervan valt niet
+      altijd samen met de vraag ernaar. Dit kan leiden tot zowel overschotten als
+      \ tekorten aan elektriciteit. Grote elektriciteitsoverschotten kunnen niet altijd
+      zomaar geëxporteerd worden naar omliggende landen, vooral als ook in deze landen
+      de fractie volatiele hernieuwbare elektriciteit toeneemt.\r\n\r\n<br/><br/>\r\n\r\nZonder
+      opslagmogelijkheden voor elektriciteit, is de enige manier om de netstabiliteit
+      te waarborgen het uitschakelen van de gratis en hernieuwbare wind- en zonne-energie.
+      Op dit moment zorgt het verspillen van deze productie voor hogere kosten voor
+      wind turbines en zonnepanelen en voor hogere kosten van het energiesysteem in
+      het algemeen. Of dit effect ook in de toekomst van toepassing blijft is onzeker,
+      aangezien niemand kan voorspellen hoe de markt zal reageren op scenario’s waarin
+      regelmatig teveel elektriciteit wordt geproduceerd. Als het productie overschot
+      vaak genoeg voorkomt zou het economisch aantrekkelijk kunnen worden om elektriciteit
+      om the zetten in een andere bruikbare vorm van energie en dit te integreren
+      in het energiesysteem.\r\n\r\n<br/><br/>\r\n\r\nDe grafiek geeft een indicatie
+      van hoe de kosten van een aantal conversietechnologieën zich tot elkaar verhouden
+      en wanneer het economisch interessant zou kunnnen worden om conversie-eenheden
+      te bouwen."
+    short_content_en: ''
+    short_content_nl: ''
+- key: electricity_import_export
   section: flexibility
   percentage_bar_query: ''
-  tab_id: 5
+  tab_key: flexibility
   position: 4
-  parent_id:
-  dependent_on: is_national_scenario
-- id: 41
-  key: industry_chemical
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "The European Union mandates energy market integration. For electricity
+      this has meant first the creation of regional European markets - clusters of
+      countries with coupled markets - to be followed by complete integration of all
+      European regional markets. In practice, European markets are already heavily
+      interconnected and integrated with their neighbors'. This means increasing flows
+      of imported and exported electricity. \r\n<br/><br/>\r\nAt the same time, national
+      governments are stimulating the generation of renewable electricity. As a result,
+      volatile production (solar and wind) is growing rapidly every year. Because
+      electricity is difficult to store, countries with large volatile production
+      such as Germany, regularly export excess electricity to neighboring countries
+      at low prices.\r\n<br/><br/>\r\nThese two effects, larger volumes of import
+      and export and tighter coupling of the markets, need to be taken into account
+      when planning for the future. How can we make the markets perform well? What
+      is the influence of renewables on the electricity price? These are the type
+      of questions that we address in this section.\r\n<br><br>\r\nWe note that the
+      impact of import and export of electricity are included in the ETM in a simplified
+      way. The content of this section is derived using separate research and is not
+      dynamic. "
+    content_nl: "De Europese Unie stimuleert de integratie van energiemarkten actief.
+      Voor elektriciteit leidt dit in eerste instantie tot het creëeren van lokale
+      markten - clusters van landen met gekoppelde markten - en vervolgens de complete
+      integratie van alle Europese regionale markten. In de praktijk zijn  Europese
+      markten nu al sterk gekoppeld en geïntegreerd met die van buurlanden. Dit vertaalt
+      zich in toenemende volumes van elektriciteit-import en -export. \r\n<br/><br/>\r\nTegelijkertijd
+      wordt de opwek van hernieuwbare elektriciteit op nationaal niveau gestimuleerd.
+      Als gevolg daarvan neemt de volatiele opwek (zon en wind) elk jaar sterk toe.
+      Omdat opslag van elektriciteit moeilijk is, exporteren landen met grote volatiele
+      opwek (zoals Duitsland) regelmatig overschotten van stroom naar het buitenland
+      voor lage tarieven.\r\n<br/><br/>\r\nDeze twee effecten, grotere volumes van
+      import en export en sterkere marktkoppeling, moeten worden meegenomen in een
+      visie voor de toekomst. Hoe kunnen we de markten goed laten functioneren? Wat
+      is de invloed van hernieuwbare opwek op de elektriciteitsprijs? Dit zijn het
+      soort vragen die we in deze sectie behandelen.\r\n<br><br>\r\nWe merken verder
+      op dat import en export van elektriciteit vereenvoudigd in het ETM zit. De inhoud
+      van deze sectie is dan ook tot stand gekomen met extra onderzoek en is niet
+      dynamisch."
+    short_content_en: ''
+    short_content_nl: ''
+- key: industry_chemical
   section: demand
   percentage_bar_query: ''
-  tab_id: 2
+  tab_key: demand
   position: 1
-  parent_id: 4
-  dependent_on: _always_hidden
-- id: 42
-  key: industry_other
+  dependent_on:
+  parent_key: industry
+  description:
+    content_en: "The chemical sector represents a large part of the industrial energy
+      use, partly as result of the use of energy carriers as feedstock for products.
+      How much will it use in the future? The answer depends on your assumptions about
+      the adoption of new technologies and economic or population growth, for example.
+      You can fill in these assumptions and the graphs will show how things change.
+      <br /><br />\r\nThe chemical sector is part of industry, so changes made here
+      will show up in the charts for industry as a whole.\r\n"
+    content_nl: "De chemiesector is onder andere door het gebruik van energiedragers
+      als grondstof voor producten, verantwoordelijk voor een groot deel van het industrieel
+      energiegebruik. Hoeveel zal in de toekomst nodig zijn? Dat hangt bijvoorbeeld
+      af van je aannames over de toepassing van nieuwe technologieën en economische
+      groei of bevolkingsgroei. Deze aannames kun je hier invullen. In de grafieken
+      zie je dan hoe alles verandert.<br /><br />\r\nDe chemiesector is onderdeel
+      van de industriesector. Veranderingen die je hier maakt, zullen de totalen onder
+      industrie beïnvloeden. \r\n"
+    short_content_en: ''
+    short_content_nl: ''
+- key: industry_other
   section: demand
   percentage_bar_query: ''
-  tab_id: 2
+  tab_key: demand
   position: 3
-  parent_id: 4
-  dependent_on: _always_hidden
-- id: 43
-  key: fuel_production
+  dependent_on:
+  parent_key: industry
+  description:
+    content_en: "The other industry sector includes the energy consumption that is
+      not covered by the chemical industry and the metal industrie. How much energy
+      will the other industry use in the future? The answer depends on your assumptions
+      about the adoption of new technologies and economic or population growth, for
+      example. You can fill in these assumptions and the graphs will show how things
+      change. \r\n<br /><br />\r\nThe other industry sector is part of industry, so
+      changes made here will show up in the charts for industry as a whole."
+    content_nl: "De overige industrie omvat het energiegebruik dat niet ondergebracht
+      is bij de chemische industrie en metaal industrie. Hoeveel energie zal in de
+      toekomst nodig zijn? Dat hangt bijvoorbeeld af van je aannames over de toepassing
+      van nieuwe technologieën en economische groei of bevolkingsgroei. Deze aannames
+      kun je hier invullen. In de grafieken zie je dan hoe alles verandert.\r\n<br
+      /><br />\r\nDe overige industrie sector is onderdeel van de industriesector.
+      Veranderingen die je hier maakt, zullen de totalen onder industrie beïnvloeden. "
+    short_content_en: ''
+    short_content_nl: ''
+- key: fuel_production
   section: supply
   percentage_bar_query: ''
-  tab_id: 3
+  tab_key: supply
   position: 11
-  parent_id:
-  dependent_on: is_national_scenario
-- id: 44
-  key: costs_flexibility
+  dependent_on:
+  parent_key:
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: Primary production of energy carriers.
+    short_content_nl: Primaire productie van energiedragers.
+- key: costs_flexibility
   section: costs
   percentage_bar_query: ''
-  tab_id: 4
+  tab_key: costs
   position: 7
-  parent_id:
-  dependent_on: ''
-- id: 45
-  key: hydrogen
+  dependent_on:
+  parent_key:
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''
+- key: hydrogen
   section: supply
   percentage_bar_query: ''
-  tab_id: 3
+  tab_key: supply
   position: 5
-  parent_id:
-  dependent_on: ''
-- id: 46
-  key: transport_costs
+  dependent_on:
+  parent_key:
+  description:
+    content_en: 'How will your hydrogen be produced? '
+    content_nl: 'Hoe zal jouw waterstof geproduceerd worden? '
+    short_content_en: How will your hydrogen be produced?
+    short_content_nl: Hoe zal jouw waterstof geproduceerd worden?
+- key: transport_costs
   section: costs
   percentage_bar_query: ''
-  tab_id: 4
+  tab_key: costs
   position: 4
-  parent_id:
-  dependent_on: ''
-- id: 47
-  key: biomass
+  dependent_on:
+  parent_key:
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: How expensive will transport be in the future? Will investment
+      costs for new technologies even out or will we (still) be paying more?
+    short_content_nl: Hoe duur zal transport zijn in de toekomst? Zullen investeringskosten
+      voor nieuwe technologieën op gelijke hoogte komen of betalen wij (nog steeds)
+      meer?
+- key: biomass
   section: supply
   percentage_bar_query: ''
-  tab_id: 3
+  tab_key: supply
   position: 8
-  parent_id:
-  dependent_on: ''
-- id: 48
-  key: data_export
+  dependent_on:
+  parent_key:
+  description:
+    content_en: "Which part of the CO<sub>2</sub> emissions from biomass is relevant
+      to the environment is uncertain and speculative. \r\n<p>\r\nHere you can explore
+      the potential amount of climate-relevant CO<sub>2</sub> emissions that are caused
+      by combustion of biomass."
+    content_nl: "Welk deel van de CO<sub>2</sub>-uitstoot van biomassa relevant is
+      voor het klimaat is in grote mate onzeker en speculatief. \r\n<p> \r\nHieronder
+      kun je verkennen hoe groot deze klimaatrelevante CO<sub>2</sub>-uitstoot (potentieel)
+      is."
+    short_content_en: "Which part of the CO<sub>2</sub> emissions from biomass is
+      relevant to the environment is uncertain and speculative. \r\n<p>\r\nHere you
+      can explore the potential amount of climate-relevant CO<sub>2</sub> emissions
+      that are caused by combustion of biomass.?\r\n"
+    short_content_nl: "Welk deel van de CO<sub>2</sub>-uitstoot van biomassa relevant
+      is voor het klimaat is in grote mate onzeker en speculatief. \r\n<p> \r\nHieronder
+      kun je verkennen hoe groot deze klimaatrelevante CO<sub>2</sub>-uitstoot (potentieel)
+      is."
+- key: data_export
   section: data
   percentage_bar_query: ''
-  tab_id: 6
+  tab_key: data
   position: 2
-  parent_id:
-  dependent_on: ''
-- id: 49
-  key: heat_buffer_technologies
-  section: costs
-  percentage_bar_query: ''
-  tab_id:
-  position: 14
-  parent_id:
-  dependent_on: ''
-- id: 50
-  key: transport_international_transport
+  dependent_on:
+  parent_key:
+  description:
+    content_en: Download information about your scenario, such as merit order price
+      and load curves, and application demands.
+    content_nl: Download informatie over je scenario, zoals draaiprofielen en de prijscurve
+      uit de merit order berekening en de vraag per toepassing.
+    short_content_en: Download information about your scenario
+    short_content_nl: Download informatie over je scenario.
+- key: transport_international_transport
   section: ''
   percentage_bar_query: ''
-  tab_id: 2
+  tab_key: demand
   position: 3
-  parent_id: 3
-  dependent_on: ''
-- id: 51
-  key: transport_passenger_transport
+  dependent_on:
+  parent_key: transport
+  description:
+    content_en: The answer depends on your estimation about the number of international
+      travel and international shipping. You can fill in your assumptions and the
+      graphs will show how things change.
+    content_nl: The answer depends on your estimation about the number of international
+      travel and international shipping. You can fill in your assumptions and the
+      graphs will show how things change.
+    short_content_en: Will we need more or less energy for bunkering in the future?
+      Will people depend more on local products in the future so international trade
+      decreases or globalization will keep increasing?
+    short_content_nl: Will we need more or less energy for bunkering in the future?
+      Will people depend more on local products in the future so international trade
+      decreases or globalization will keep increasing?
+- key: transport_passenger_transport
   section: ''
   percentage_bar_query: ''
-  tab_id: 2
+  tab_key: demand
   position: 1
-  parent_id: 3
-  dependent_on: ''
-- id: 52
-  key: transport_freight_transport
+  dependent_on:
+  parent_key: transport
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''
+- key: transport_freight_transport
   section: ''
   percentage_bar_query: ''
-  tab_id: 2
+  tab_key: demand
   position: 2
-  parent_id: 3
-  dependent_on: ''
-- id: 53
-  key: flexibility_storage
+  dependent_on:
+  parent_key: transport
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''
+- key: flexibility_storage
   section: ''
   percentage_bar_query: ''
-  tab_id: 5
+  tab_key: flexibility
   position: 1
-  parent_id: 39
-  dependent_on: ''
-- id: 54
-  key: flexibility_conversion
+  dependent_on:
+  parent_key: excess_electricity
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''
+- key: flexibility_conversion
   section: ''
   percentage_bar_query: ''
-  tab_id: 5
+  tab_key: flexibility
   position: 2
-  parent_id: 39
-  dependent_on: ''
-- id: 55
-  key: flexibility_net_load
+  dependent_on:
+  parent_key: excess_electricity
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''
+- key: flexibility_net_load
   section: ''
   percentage_bar_query: ''
-  tab_id: 5
+  tab_key: flexibility
   position: 3
-  parent_id:
-  dependent_on: ''
-- id: 56
-  key: electricity_import_costs
+  dependent_on:
+  parent_key:
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''
+- key: electricity_import_costs
   section: ''
   percentage_bar_query: ''
-  tab_id: 4
+  tab_key: costs
   position: 5
-  parent_id:
-  dependent_on: ''
-- id: 57
-  key: data_visuals
+  dependent_on:
+  parent_key:
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''
+- key: data_visuals
   section: data
   percentage_bar_query: ''
-  tab_id: 6
+  tab_key: data
   position: 1
-  parent_id:
-  dependent_on: ''
-- id: 58
-  key: costs_hydrogen
+  dependent_on:
+  parent_key:
+- key: costs_hydrogen
   section: ''
   percentage_bar_query: ''
-  tab_id: 4
+  tab_key: costs
   position: 5
-  parent_id:
-  dependent_on: ''
-- id: 59
-  key: introduction
+  dependent_on:
+  parent_key:
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''
+- key: introduction
   section: ''
   percentage_bar_query: ''
-  tab_id: 1
+  tab_key: overview
   position: 1
-  parent_id:
-  dependent_on: ''
-- id: 60
-  key: flexibility_weather
+  dependent_on:
+  parent_key:
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''
+- key: flexibility_weather
   section: ''
   percentage_bar_query: ''
-  tab_id: 5
+  tab_key: flexibility
   position: 4
-  parent_id:
-  dependent_on: ''
-- id: 61
-  key: wacc
+  dependent_on:
+  parent_key:
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''
+- key: wacc
   section: ''
   percentage_bar_query: ''
-  tab_id: 4
+  tab_key: costs
   position: 16
-  parent_id:
-  dependent_on: ''
-- id: 62
-  key: heat_merit
+  dependent_on:
+  parent_key:
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''
+- key: heat_merit
   section: ''
   percentage_bar_query: ''
-  tab_id: 3
+  tab_key: supply
   position: 1
-  parent_id: 24
-  dependent_on: ''
+  dependent_on:
+  parent_key: heat
+  description:
+    content_en: ''
+    content_nl: ''
+    short_content_en: ''
+    short_content_nl: ''

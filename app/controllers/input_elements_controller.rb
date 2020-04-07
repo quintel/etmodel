@@ -8,14 +8,8 @@ class InputElementsController < ApplicationController
   #
   # GET /input_elements/by_slide
   def by_slide
-    slides = Slide.ordered
-
     # Include only sliders which are visible in the UI.
-    slides =
-      slides.select do |slide|
-        slide.sidebar_item&.tab_id && slide.sliders.any?
-      end
-
+    slides = Slide.ordered.select(&:visible_with_inputs?)
     render(json: SlidePresenter.collection(slides))
   end
 end

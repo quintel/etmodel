@@ -4,27 +4,26 @@
 #
 # Table name: sidebar_items
 #
-#  id                   :integer          not null, primary key
 #  key                  :string(255)
 #  section              :string(255)
 #  percentage_bar_query :text
-#  nl_vimeo_id          :string(255)
-#  en_vimeo_id          :string(255)
-#  tab_id               :integer
+#  tab_key              :integer
 #  position             :integer
-#  parent_id            :integer
-#
+#  parent_key           :integer
+#  description:         :hash
 
 # This model represents the secondary menu-item category in the sidebar of the
 # scenario section of the application. The ones you click to a `slide`.
 # ie "Households", "Electricity" and "Fuel prices"
 class SidebarItem < YModel::Base
   include AreaDependent::YModel
+  include Describable
 
-  has_one :description, as: :describable
-  has_many :slides
+  index_on :key
+  belongs_to :tab
+  has_many :slides, foreign_key: :sidebar_item_key
   belongs_to :parent, class_name: 'SidebarItem'
-  has_many :children, foreign_key: :parent_id, class_name: 'SidebarItem'
+  has_many :children, foreign_key: :parent_key, class_name: 'SidebarItem'
 
   class << self
     def ordered
@@ -42,10 +41,6 @@ class SidebarItem < YModel::Base
     end
   end
 
-  def tab
-    Tab.find(tab_id)
-  end
-
   def parsed_key_for_admin
     "#{section} | #{key}"
   end
@@ -55,7 +50,7 @@ class SidebarItem < YModel::Base
   end
 
   def root?
-    parent_id.nil?
+    parent_key.nil?
   end
 
   def visible_children

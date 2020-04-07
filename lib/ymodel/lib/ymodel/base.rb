@@ -27,13 +27,17 @@ module YModel
         .each_with_object({}) { |attr, memo| memo[attr] = send(attr) }
     end
 
+    def [](property)
+      instance_variable_get("@#{property}")
+    end
+
     def attribute?(key)
       schema.include?(key)
     end
 
     class << self
-      def find(id)
-        all.find { |record| record.id == id }
+      def find(index)
+        all.find { |record| record.index == index }
       end
 
       def find_by(attributes)
@@ -41,6 +45,7 @@ module YModel
         all.each do |record|
           return record if sanitized.all? { |k, v| record.send(k) == v }
         end
+        raise RecordNotFoundError, attributes
       end
 
       def find_by_key(key)
@@ -57,6 +62,23 @@ module YModel
 
       def where(attributes)
         sanitized = sanitize_attributes(attributes)
+
+        if sanitized.length != attributes.length
+          unpermitted = (attributes.keys.map(&:to_sym) - sanitized.keys)
+          message = "These attributes are not allowed: #{unpermitted}"
+
+          raise UnpermittedParamsError, message
+        end
+
+        all.select do |record|
+          sanitized.all? { |key, value| record.send(key) == value }
+        end
+      end
+
+      # Beware of using this method. If all attributes get removed during
+      # sanitation it returns the equivalent of #all.
+      def where!(attributes)
+        sanitized = sanitize_attributes(attributes)
         all.select do |record|
           sanitized.all? { |key, value| record.send(key) == value }
         end
@@ -68,10 +90,25 @@ module YModel
       end
     end
 
+    def index
+      self[index_key]
+    end
+
     private
 
     def schema
       self.class.schema
+    end
+
+    def index_key
+      self.class.instance_variable_get('@index') || :id
+    end
+
+    def index_set?
+      # The name of the key of the index is stored as an instance variable in
+      # the class.
+      index = self.class.instance_variable_get('@index') || :id
+      self[index]
     end
   end
 end

@@ -4,27 +4,29 @@
 #
 # Table name: slides
 #
-#  id                    :integer          not null, primary key
+#  key                   :string(255)
 #  image                 :string(255)
 #  created_at            :datetime
 #  updated_at            :datetime
 #  general_sub_header    :string(255)
 #  group_sub_header      :string(255)
 #  subheader_image       :string(255)
-#  key                   :string(255)
 #  position              :integer
-#  sidebar_item_id       :integer
+#  sidebar_item_key      :string
 #  output_element_id     :integer
 #  alt_output_element_id :integer
 #
 
-# This model represents a slide within an opened SideBarItem
+# This model represents a slide within an opened SidebarItem
 # (e.g. "Insulation", "Cooking", for "Households" item)
 class Slide < YModel::Base
   include AreaDependent::YModel
 
-  has_many :input_elements
+  index_on :key
+  belongs_to :sidebar_item, foreign_key: :sidebar_item_key
+  has_many :input_elements, foreign_key: :slide_key
   alias_method :sliders, :input_elements
+
   belongs_to :output_element # default chart
   belongs_to :alt_output_element, class_name: 'OutputElement' # secondary chart
 
@@ -95,19 +97,17 @@ class Slide < YModel::Base
     tab ? [tab.key, sidebar_item.key, short_name] : []
   end
 
-  def sidebar_item
-    SidebarItem.find(sidebar_item_id)
-  end
-
-  def sidebar_item=(sidebar_item)
-    self.sidebar_item_id = sidebar_item&.id
-  end
-
   def tab
     sidebar_item&.tab
   end
 
   def removed_from_interface?
     sidebar_item.nil? || sidebar_item.tab.nil?
+  end
+
+  # Returns if the slide is shown in the interface and has at least one input
+  # assigned.
+  def visible_with_inputs?
+    !removed_from_interface? && sliders.any?
   end
 end

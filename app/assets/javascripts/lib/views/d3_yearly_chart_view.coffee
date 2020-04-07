@@ -166,7 +166,8 @@ class @D3YearlyChartView extends D3ChartView
     formatStr = if @dateSelect.isWeekly() then '%-d %b' else '%b'
     formatter = (val) -> I18n.strftime(val, formatStr)
 
-    d3.svg.axis().scale(scale).orient('bottom').tickFormat(formatter).ticks(7)
+    d3.svg.axis().scale(scale).orient('bottom')
+      .tickValues(@dateSelect.tickValues()).tickFormat(formatter)
 
   visibleData: =>
     @rawChartData

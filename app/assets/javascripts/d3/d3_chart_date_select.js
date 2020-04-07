@@ -85,6 +85,29 @@ var D3ChartDateSelect = (function() {
       return this.weeks[this.val()];
     },
 
+    /**
+     * Returns an array of dates which should be shown in the time axis, based
+     * on the currently-selected week.
+     */
+    tickValues: function() {
+      var values = [];
+
+      if (this.isWeekly()) {
+        var startDate = this.weeks[this.val()][0];
+        var msInDay = 1000 * 60 * 60 * 24;
+
+        for (var i = 0; i < 7; i++) {
+          values.push(new Date(startDate.getTime() + msInDay * i));
+        }
+      } else {
+        for (var j = 0; j < 12; j++) {
+          values.push(new Date(Date.UTC(1970, j, 1)));
+        }
+      }
+
+      return values;
+    },
+
     val: function() {
       return parseInt(this.selectBox.val(), 10);
     },

@@ -42,7 +42,7 @@ class PagesController < ApplicationController
     @title = Text.find_by_key("#{ctrl}_#{act}").try(:title) ||
       t("sidebar_items.#{s.key}.long_name") rescue nil
 
-    @description = s.description.try(:content) if s
+    @description = s.description
     render layout: false
   end
 

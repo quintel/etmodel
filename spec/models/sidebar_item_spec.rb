@@ -14,7 +14,6 @@ describe SidebarItem do
 
     # Relations
     it { is_expected.to respond_to(:area_dependent) }
-    it { is_expected.to respond_to(:description) }
     it { is_expected.to respond_to(:slides) }
     it { is_expected.to respond_to(:parent) }
     it { is_expected.to respond_to(:children) }
@@ -30,6 +29,7 @@ describe SidebarItem do
     # methods
     it { is_expected.to respond_to(:parsed_key_for_admin) }
     it { is_expected.to respond_to(:short_name) }
+    it { is_expected.to respond_to(:description) }
 
     describe '.tab' do
       subject { described_class.all.first }

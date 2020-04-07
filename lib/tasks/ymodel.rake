@@ -5,6 +5,13 @@ namespace :ymodel do
   desc 'dump interface models of the provided class to yaml'
 
   task :dump_interface_model, [:model] => [:environment] do |_t, args|
+    include LocalizeDescriptions
+
+    raise ArgumentError, "No ['model'] specified" unless args.model
+
+    en_descriptions = {}
+    nl_descriptions = {}
+
     YModel::Dump.call(args.model) do |attributes, record|
       dep = AreaDependency.find_by(dependable_type: record.class.name,
                                    dependable_id: record.id)
@@ -13,14 +20,19 @@ namespace :ymodel do
       desc = Description.find_by(describable_type: record.class.name,
                                  describable_id: record.id)
       if desc
-        attributes['description'] = {}
-        attributes['description']['content_en'] = desc&.content_en
-        attributes['description']['content_nl'] = desc&.content_nl
-        attributes['description']['short_content_en'] = desc&.short_content_en
-        attributes['description']['short_content_nl'] = desc&.short_content_nl
+        en_descriptions[record.key] =
+          { 'short_content' => desc&.short_content_en,
+            'content' => desc&.content_en }
+        nl_descriptions[record.key] =
+          { 'short_content' => desc&.short_content_nl,
+            'content' => desc&.content_nl }
       end
+
       attributes
     end
+
+    write_to_locale(args.model, 'en', en_descriptions)
+    write_to_locale(args.model, 'nl', nl_descriptions)
   end
 
   # This task is used to migrate from ids to keys as index.

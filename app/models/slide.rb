@@ -21,7 +21,6 @@
 # (e.g. "Insulation", "Cooking", for "Households" item)
 class Slide < YModel::Base
   include AreaDependent::YModel
-  include Describable
 
   index_on :key
   belongs_to :sidebar_item, foreign_key: :sidebar_item_key

@@ -1,20 +1,16 @@
+# frozen_string_literal: true
+
 require 'yaml'
 
 desc 'Move descriptions from interface ymls to I18n files.'
 task move_descriptions: :environment do
   include LocalizeDescriptions
 
-
   model = ENV['model']
 
-  unless model
-    raise ArgumentError.new("You should specify which `model`")
-  end
+  raise ArgumentError, "You should specify which `model`" unless model
 
-  interface_path = Rails.root.join( 'config', 'ymodel', model + '.yml')
-  localization_path = Rails.root.join( 'config', 'locales')
-  en_path = localization_path.join('en_descriptions_' + model + '.yml')
-  nl_path = localization_path.join('nl_descriptions_' + model + '.yml')
+  interface_path = Rails.root.join('config', 'ymodel', model + '.yml')
 
   en_descriptions = {}
   nl_descriptions = {}
@@ -25,7 +21,7 @@ task move_descriptions: :environment do
     en_descriptions[item['key']] = build_description('en', item['description'])
     nl_descriptions[item['key']] = build_description('nl', item['description'])
 
-    item = item.except!('description')
+    item.except!('description')
   end
 
   write_to_locale(model, 'en', en_descriptions)
@@ -46,7 +42,7 @@ module LocalizeDescriptions
     path = Rails.root.join( 'config', 'locales', file_name)
     File.write(
       path,
-      { language => { "descriptions_#{model_name}" => descriptions_hash }}
+      { language => { "descriptions_#{model_name}" => descriptions_hash } }
         .to_yaml
     )
   end

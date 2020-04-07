@@ -1,0 +1,959 @@
+---
+en:
+  descriptions_output_elements:
+    use_of_final_electricity_demand_in_households:
+      short_content: Households, by application
+      content: "This graph shows how household demand for electricity will change
+        as a result of the choices you make in this section. Electricity demand is
+        broken down into applications.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
+        above the graph, to select different graphs about energy demand."
+    source_of_electricity_in_households:
+      short_content: ''
+      content: "This graph shows how the electricity that households use, is generated.
+        Centrally produced electricity is lumped together here. You will get a chance
+        to choose production methods under the 'Supply' section. \r\n<br/><br/>\r\nYou
+        can click '<u>Change chart</u>' above the graph, to select different graphs
+        about energy use."
+    source_of_heat_and_electricity_in_industry:
+      short_content: Industrial
+      content: "This graph shows how the electricity and heat that industry uses,
+        is generated. If it is not generated using CHP units, heat is made with the
+        other options visible on the Industry 'Heat' page. Centrally produced electricity
+        is lumped together here. You will get a chance to choose production methods
+        under the 'Supply' section. \r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
+        above the graph, to select different graphs about industrial energy demand."
+    use_of_final_demand_in_agriculture:
+      short_content: Agriculture
+      content: "This graph shows how agricultural demand for energy will change as
+        a result of the choices you make in this section. Agricultural energy use
+        occurs mainly in greenhouses. The graph shows final energy use, so conversion
+        losses for producing heat or power are not included. \r\n<br/><br/>\r\nYou
+        can click '<u>Change chart</u>' above the graph, to select different graphs
+        about energy demand."
+    source_of_heat_in_agriculture:
+      short_content: Agricultural
+      content: "This graph shows agricultural heat demand changes from now to the
+        future, as a result of the choices in 'Demand'. Heat demand is broken down
+        into 'heat from fossil fuels, heat from electricity, heat from biomass and
+        ambient heat'.\r\n<br/><br/>\r\nOf course, what technologies are used, does
+        not really change the actual demand for heat, but it can change energy efficiency
+        and sustainability of heat production. In order to reduce heat demand, buildings
+        will need to be better insulated, for example.\r\n<br/><br/>\r\nYou can click
+        '<u>Change chart</u>' above the graph, to select different graphs about energy
+        demand."
+    use_of_final_demand_in_other_sector:
+      short_content: Other sectors
+      content: "This graph shows how demand for energy in the building, service and
+        government sectors will change as a result of the choices you make in this
+        section. The graph shows final energy use, so conversion losses for producing
+        heat or power are not included. \r\n\r\n<br/><br/>\r\nYou can click '<u>Change
+        chart</u>' above the graph, to select different graphs about energy demand."
+    overview_costs_of_electricity_production:
+      short_content: ''
+      content: "When comparing different types of electricity generation, only the
+        vertical position on this graph is relevant for its total cost.\r\n<br/><br/>\r\nSelect
+        different electricity production technologies by 'clicking' them in the legend
+        below the graph.\r\n<br/><br/>\r\nThe vertical axis shows all relevant production
+        costs of electricity for various generation technologies (in €/MWhe). This
+        <strong>includes</strong> finance and capital costs, but <strong>excludes</strong>
+        all taxes and subsidies. We call this 'integral production costs'.\r\n<br/><br/>\r\nThe
+        horizontal axis shows the investment costs (in million €/MWe). The horizontal
+        position reveals how much money is needed to construct a power plant with
+        a certain production capacity.\r\n<br/><br/>\r\n<a href=\"/units\">More information
+        on units...</a>"
+    source_of_heat_production:
+      short_content: ''
+      content: "This graph shows the composition of the total heat production. \r\n<br/><br/>\r\nYou
+        can use the sliders to change the extent to which a technology is used. This
+        will result in heat mix shift."
+    use_of_transport_fuels:
+      short_content: ''
+      content: This graph shows the road transport fuel mix in the present and future.
+        The latter is the result of your settings in sections 'Demand' and 'Supply'.
+    use_of_primary_energy:
+      short_content: ''
+      content: "This graph shows total primary energy use for your country in the
+        present and future years.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
+        above the graph, to select different graphs about energy demand."
+    co2_emissions:
+      short_content: ''
+      content: "This graph compares energetic CO<sub>2</sub> emissions between 1990,
+        the present and the future. The year 1990 is often used as a reference year
+        for CO<sub>2</sub> emissions targets. The red line indicates the target you
+        have set under 'Goals'. \r\n<br/><br/>\r\nThe graph only displays energetic
+        CO<sub>2</sub> emissions, which are emitted in domestic energy use and production.
+        Non-energetic emissions are not included. Non-energetic emissions are related
+        to processes other than the production of usable energy like electricity or
+        heat. An example of such emissions are the CO<sub>2</sub> emissions that are
+        released from cement during its making. The CO<sub>2</sub> emissions related
+        to the needed energy for cement production <em>do</em> count as energetic
+        emissions.\r\n<br/><br/>\r\n\L\LNote: When the Fuel Chain Emissions module
+        is turned on, the graph also includes CO<sub>2</sub> equivalents of other
+        greenhouse gas emissions, like methane (CH<sub>4</sub>) or nitrous oxide (N<sub>2</sub>O)
+        related to the fuel chain in this graph. Non-energetic emissions and greenhouse
+        gas emissions not related to the fuel chain are not included.`"
+    present_energy_imports:
+      short_content: Present year
+      content: "This graph compares the net foreign energy dependence in the present
+        and future years as a result of your choices. Net energy dependence means
+        that we subtract all energy exports from energy imports and divide the result
+        by the total primary energy use.\r\n<br/><br/> For more information see the
+        'Goals' section."
+    breakdown_of_total_costs:
+      short_content: ''
+      content: "This graph show how energy costs will change between the present and
+        future as a result of your choices. \r\n<br/><br/>\r\nCosts are broken down
+        into various relevant categories. "
+    renewability:
+      short_content: ''
+      content: "This graph shows how the percentage of sustainable final energy use
+        changes between now and the future year. This is the result of your choices.\r\n<br/><br/>\r\nFinal
+        energy use means that losses during conversions of energy carriers to electricity
+        or heat are not taken into account."
+    mekko_of_primary_demand:
+      short_content: ''
+      content: "This graph compares primary energy consumption in your country (horizontal
+        axis) by various segments of society and energy sources (vertical axis). Primary
+        use means we are looking at the origins of derived energy carriers like heat,
+        electricity and transport fuels. We also take into consideration the losses
+        that occur when these energy carriers are made.  \r\n<br/><br/>\r\nThe graph
+        for the future is the result of your choices in determining the future energy
+        demand and the future energy generation. The efficiencies for making heat
+        and power are higher in the future than in the present.\r\n<br/><br/>\r\nExample:
+        Economic growth leads to increased energy demand. Energy saving and modern
+        technologies lead to lower energy demand. Choices for heat pumps and electric
+        transport lead to lower total energy demand, but an increase in demand for
+        electricity. How electricity, heat and fuels are generated determines the
+        primary energy demand.\r\n\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
+        above the graph, to select different graphs about energy demand."
+    source_of_heat_used_in_households:
+      short_content: Household
+      content: "This graph shows how household heat demand changes from now to the
+        future, as a result of the choices in 'Demand'. The demand for heating is
+        divided into all the different technologies available for heating in households.\r\n<br/><br/>\r\nOf
+        course, what technologies are used, does not really change the actual demand
+        for heat, but it can change energy efficiency and sustainability of heat production.
+        In order to reduce heat demand, houses will need to be better insulated, for
+        example.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>' above the graph,
+        to select different graphs about energy demand."
+    useful_demand_in_households:
+      short_content: ''
+      content: "This graph shows how household final demand for heat and electricity
+        change in the future. Heat and electricity demand depend in part on economic
+        or population growth, but electricity demand also depends on efficiency improvements
+        or the use of alternative technologies.\r\n<br/><br/>\r\nThis graph shows
+        \"useful demand\", which is the energy actually used for a given purpose.
+        This differs from \"final demand\" shown in some of the other graphs in the
+        model, which is the input from energy sources before it's converted to it's
+        useful purpose.\r\n<br/><br/>\r\nThat is why the electricity demand in this
+        graph does not include electricity used for heating, as it is already included
+        in the heating demand.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
+        above the graph, to select different graphs about energy demand."
+    effect_of_insulation_in_households:
+      short_content: Household
+      content: "This graph shows how household final demand for heat and electricity
+        change in the future. It also shows reduction in heat demand as a result of
+        better insulation. Heat and electricity demand depend in part on economic
+        or population growth, but electricity demand also depends on efficiency improvements
+        or the use of alternative technologies.\r\n<br/><br/>\r\nThis graph shows
+        \"useful demand\", which is the energy actually used for a given purpose.
+        This differs from \"final demand\" shown in some of the other graphs in the
+        model, which is the input from energy sources before it's converted to it's
+        useful purpose.\r\n<br/><br/>\r\nThat is why the electricity demand in this
+        graph does not include electricity used for heating, as it is already included
+        in the heating demand.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
+        above the graph, to select different graphs about energy demand."
+    additional_infrastructure_investments:
+      short_content: ''
+      content: "This chart shows how investment costs for the gas and electricity
+        networks change as a result of your choices in sections 'Demand' and 'Supply'.
+        For more information, see section 'Supply' and page 'Infrastructure'. \r\n<br/><br/>\r\n\r\nIf
+        you build more power plants, the high-voltage (HV) grid will need to be extended
+        to accommodate the extra power. If you connect more appliances that need electricity,
+        you may need to enhance the low-voltage (LV) grid or transformers and cables
+        between the LV and medium-voltage (MV) and HV grids. \r\n\r\n"
+    source_of_heat_and_electricity_in_agriculture:
+      short_content: Agriculture
+      content: "This chart shows how much of the heat and electricity that is used
+        in agriculture is produced using combined heat and power (CHP) units. If it
+        is not generated using CHP units, heat is made with the other options visible
+        on the Agriculture 'Heat' page, and electricity is produced centrally.\r\n<br/><br/>\r\nYou
+        can click '<u>Change chart</u>' above the graph, to select different graphs
+        about energy demand."
+    source_of_hot_water_in_households:
+      short_content: Households
+      content: "This graph shows the energy that is used for hot water in the households
+        sector.\r\n<br/><br/>\r\nWhen you change the technologies in the demand for
+        hot water under the households sector you will see the graph change to show
+        what types of energy will be used to produce the heat demand.\r\n<br/><br/>\r\nThe
+        technologies you choose don't really affect the actual demand for hot water,
+        but it can change the energy efficiency and sustainability of hot water production.\r\n<br/><br/>\r\nYou
+        can click '<u>Change chart</u>' above the graph, to select different graphs
+        about energy demand."
+    source_of_cooling_in_households:
+      short_content: Households
+      content: "This graph shows how household cooling demand changes from now to
+        the future, as a result of the choices in 'Demand'. The demand for cooling
+        is dependent on the different technologies available for <strong>heating</strong>
+        in households.\r\n<br/><br/>\r\nOf course, what technologies are used, does
+        not really change the actual demand for cooling, but it can change energy
+        efficiency and sustainability of cooling production. In order to reduce cooling
+        demand, houses will need to be better ventilated, for example.\r\n<br/><br/>\r\nIn
+        order to view this graph under the heating section, click on this section
+        and then click '<u>Change chart</u>' above the graph, to select this graph
+        or another one about energy demand."
+    source_of_cooking_in_households:
+      short_content: Cooking
+      content: "This graph shows the energy used for cooking in households.\r\n<br/><br/>\r\nThe
+        energy used for cooking is dependent on the technologies are used for cooking.
+        Will households keep using mostly gas, or will they switch to electric cooking
+        or any of the other available technologies? It all changes the energy mix
+        used for cooking."
+    use_of_final_demand_in_buildings:
+      short_content: Buildings
+      content: "This chart shows how much of the heat and electricity that is used
+        in buildings is produced using combined heat and power (CHP) units. If it
+        is not generated using CHP units, heat is produced with the other options
+        available on the Buildings 'Heating' page, and electricity is taken from the
+        electricity grid.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>' above
+        the graph, to select different graphs about energy demand."
+    effect_of_insulation_in_buildings:
+      short_content: Buildings
+      content: "This graph shows how the final demand for heat and electricity in
+        buildings change in the future. It also shows reduction in heat demand as
+        a result of better insulation. Heat and electricity demand depend in part
+        on economic and population growth, but electricity demand also depends on
+        efficiency improvements or the use of alternative technologies.\r\n<br/><br/>\r\nYou
+        can click '<u>Change chart</u>' above the graph, to select different graphs
+        about energy demand."
+    source_of_heat_in_buildings:
+      short_content: Building
+      content: "This graph shows how heat demand in buildings changes from now to
+        the future, as a result of the choices in 'Demand'. Heating demand is broken
+        down into all the different technologies that are available for producing
+        heat in the building sector.\r\n<br/><br/>\r\nOf course, what technologies
+        are used, does not really change the actual demand for heat, but it can change
+        energy efficiency and sustainability of heat production. In order to reduce
+        heat demand, buildings will need to be better insulated, for example.\r\n<br/><br/>\r\nYou
+        can click '<u>Change chart</u>' above the graph, to select different graphs
+        about energy demand."
+    source_of_cooling_in_buildings:
+      short_content: Buildings
+      content: "This graph shows how cooling demand in buildings changes from now
+        to the future, as a result of the choices in 'Demand'. The demand for cooling
+        is dependent on the different technologies available for <strong>heating</strong>
+        in buildings.\r\n<br/><br/>\r\nOf course, what technologies are used, does
+        not really change the actual demand for cooling, but it can change energy
+        efficiency and sustainability of cooling production. In order to reduce cooling
+        demand, buildings will need to be better ventilated, for example.\r\n<br/><br/>\r\nIn
+        order to view this graph under the heating section, click on this section
+        and then click '<u>Change chart</u>' above the graph, to select this graph
+        or another one about energy demand."
+    use_of_electricity_in_buildings:
+      short_content: Buildings
+      content: "This graph shows how buildings demand for electricity will change
+        as a result of the choices you make in this section. Electricity demand is
+        dependent on the efficiency of appliances.\r\n<br/><br/>\r\nYou can click
+        '<u>Change chart</u>' above the graph, to select different graphs about energy
+        demand."
+    source_of_electricity_in_buildings:
+      short_content: ''
+      content: "This graph shows how the electricity that buildings use, is generated.
+        Centrally produced electricity is lumped together here. You will get a chance
+        to choose production methods under the 'Supply' section. \r\n<br/><br/>\r\nYou
+        can click '<u>Change chart</u>' above the graph, to select different graphs
+        about energy use."
+    future_energy_imports:
+      short_content: Future year
+      content: "This graph shows a breakdown of the energy that we import from other
+        countries in the future by energy source. Each of the bars add up to the end
+        result in the end year (the black bar to the far right of the graph).\r\n<br/><br/>\r\nOverall,
+        the lower the dependence on foreign energy the better it is."
+    gas_network_mix:
+      short_content: ''
+      content: This chart shows the mix of natural- and green gas in the gas network.
+    source_of_electricity_production:
+      short_content: ''
+      content: "This graph gives a breakdown of current and future electricity production
+        into types of power plants. By default, the future electricity mix is the
+        same as the present one. You can choose how to meet future energy demand with
+        the sliders to the left of the graph. <br/><br/>\r\nDemand for electricity
+        is indicated by the horizontal line. If the resulting electricity production
+        is higher than demand, the model will automatically start exporting this electricity.
+        If you do not build enough production capacity, the model will import electricity. "
+    fuel_chain_emissions:
+      short_content: ''
+      content: "This chart shows how much greenhouse gas is emitted during the life
+        cycles of the fuels listed below. These emissions (in CO<sub>2</sub> equivalents)
+        are broken down into four steps: <br/><br/>\r\n1. Extraction - production
+        of the raw material <br/>\r\n2. Treatment - processing the raw material into
+        the final form in which the fuel is used <br/>\r\n3. Transportation - transporting
+        the fuel to the locations at which it is used <br/>\r\n4. Conversion - use
+        of the fuel for production of heat or electricity for example <br/>\r\n<br/>\r\nThe
+        last steps also includes any emissions occurring during waste treatment or
+        storage.\r\n<br/><br/>\r\nThe numbers and references used to quantify the
+        fuel chain emissions can be found in a document that can be <a href='http://refman.et-model.com/publications/1623'
+        target='blank'>downloaded from here</a>."
+    breakdown_electricity_costs:
+      short_content: ''
+      content: "This graph show how energy costs will change between the present and
+        future as a result of your choices. \r\n<br/><br/>\r\nCosts are broken down
+        into various relevant categories."
+    fuel_chain_emissions_scaled_for_uranium:
+      short_content: ''
+      content: "This chart shows how much greenhouse gas is emitted during the life
+        cycles of the fuels listed below. These emissions (in CO2 equivalents) are
+        broken down into four steps: <br/><br/>\r\n1. Extraction - production of the
+        raw material <br/>\r\n2. Treatment - processing the raw material into the
+        final form in which the fuel is used <br/>\r\n3. Transportation - transporting
+        the fuel to the locations at which it is used <br/>\r\n4. Conversion - use
+        of the fuel for production of heat or electricity for example <br/>\r\n<br/>\r\nThe
+        last steps also includes any emissions occurring during waste treatment or
+        storage.\r\n<br/><br/>\r\nThe numbers and references used to quantify the
+        fuel chain emissions can be found in a document that can be <a href='http://refman.et-model.com/publications/1623'
+        target='blank'>downloaded from here</a>.\r\n"
+    fuel_chain_emissions_scaled_for_greengas:
+      short_content: ''
+      content: "This chart shows how much greenhouse gas is emitted during the life
+        cycles of the fuels listed below. These emissions (in CO2 equivalents) are
+        broken down into four steps: <br/><br/>\r\n1. Extraction - production of the
+        raw material <br/>\r\n2. Treatment - processing the raw material into the
+        final form in which the fuel is used <br/>\r\n3. Transportation - transporting
+        the fuel to the locations at which it is used <br/>\r\n4. Conversion - use
+        of the fuel for production of heat or electricity for example <br/>\r\n<br/>\r\nThe
+        last steps also includes any emissions occurring during waste treatment or
+        storage.\r\n<br/><br/>\r\nThe numbers and references used to quantify the
+        fuel chain emissions can be found in a document that can be <a href='http://refman.et-model.com/publications/1623'
+        target='blank'>downloaded from here</a>.\r\n"
+    security_of_supply:
+      short_content: ''
+      content: 'This chart shows the peak power demand as well as available production
+        capacity. It shows what shares of available production capacity are reliable
+        and unreliable. Things such as wind turbines and solar PV panels are examples
+        of unreliable power production. If the peak power demand is higher than the
+        reliable capacity the loss of load probability will increase. '
+    breakdown_of_total_cost_per_household:
+      short_content: ''
+      content: "This graph show how energy costs will change between the present and
+        future as a result of your choices. \r\n<br/><br/>\r\nCosts are broken down
+        into various relevant categories."
+    flexibility_of_backup_scatter_plot:
+      short_content: ''
+      content: "This chart shows the additional costs and CO<sub>2</sub> emissions
+        for different backup options for volatile power. Volatile technologies like
+        wind or solar cannot always be relied upon to produce power. This is unfortunate,
+        because most backup plants use fossil fuels, making volatile electricity less
+        free and clean than many people claim or expect it to be. The choice of a
+        backup technology is therefore an important one, as this will determine the
+        effective emissions and costs of electricity for volatile electricity production.\r\n<br/><br/>\r\nThe
+        additional costs and emissions are both expressed per MWh<sub>e</sub> of the
+        volatile electricity production in your scenario."
+    merit_order_table:
+      short_content: ''
+      content: "This table shows the merit order of your scenario. Based on your assumptions
+        concerning available electricity production technologies, fuel prices, CO<sub>2</sub>
+        emissions costs, and operating and maintenance costs the model calculates
+        the order in which power plants are used to meet the demand.\r\n<br/><br/>\r\nThe
+        table shows what place in the merit order each technology has, which is based
+        on the operating costs. Also the table shows the available capacity of each
+        technology as well as the full load hours."
+    employment_categories:
+      short_content: ''
+      content: "This graph shows the net local employment associated with energy technologies
+        in the present and future. The latter is the result of your settings in sections
+        'Demand' and 'Supply'. Both the present and future values get updated by your
+        settings in the  'Costs' section.\r\n \r\n<br/><br/>\r\nThe employment module
+        is currently limited in scope; the 'Agriculture' and 'Industry' sectors are
+        excluded from the employment calculation. More details can be found in our
+        <a href=\"https://github.com/quintel/documentation/blob/master/general/employment.md\"
+        target=\"_blank\">documentation</a>."
+    sankey:
+      short_content: ''
+      content: "Sankey diagrams show how, where and how much energy is used. At the
+        left this diagram starts with primary energy forms. The energy that is used
+        to generate electricity and heat is shown in the middle. On the right you
+        can see where the energy is used. <br/>\r\nFloating over the chart with you
+        mouse will highlight different parts and reveal more information.\r\n<br><br>\r\nNote
+        that losses due to distribution and refinement are not taking into account.\r\n\r\n"
+    merit_order:
+      short_content: ''
+      content: "This chart shows the merit order of your scenario. Based on your assumptions
+        concerning available electricity production technologies, fuel prices, CO<sub>2</sub>
+        emissions costs, and operating and maintenance costs the model calculates
+        the order in which power plants are used to meet the demand.\r\n<br/><br/>\r\nThe
+        chart shows what place in the merit order each technology has, which is based
+        on the operating costs. Also the table shows the available capacity of each
+        technology as well as the full load hours."
+    renewability_targets:
+      short_content: ''
+      content: This chart summarizes the targets that can be set in this section.
+        For each target, it shows both the present and the future values. When you
+        set a target, a line will appear on the chart to indicate it. If the target
+        is met in the future scenario, the line is green, if not, the line shows up
+        red.
+    sankey_2010:
+      short_content: ''
+      content: ''
+    use_of_final_demand_in_industry_aluminium:
+      short_content: Aluminium
+      content: "This graph shows how demand for energy of the aluminium industry will
+        change as a result of the choices you make in this section. Industrial energy
+        demand is mainly determined by growth of the sector’s output and investments
+        in energy saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy
+        use, so conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
+        use is the use of energy carriers (like oil) to make non-energy products such
+        as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
+        to select different graphs about industrial energy demand."
+    use_of_final_demand_in_industry_other_metals:
+      short_content: Other metals
+      content: "This graph shows how industrial demand for energy will change as a
+        result of the choices you make in this section. Industrial energy demand is
+        mainly determined by growth of the sector’s output and investments in energy
+        saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy use,
+        so conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
+        use is the use of energy carriers (like oil) to make non-energy products such
+        as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
+        to select different graphs about industrial energy demand."
+    dependence_targets:
+      short_content: ''
+      content: This chart summarizes the targets that can be set in this section.
+        For each target, it shows both the present and the future values. When you
+        set a target, a line will appear on the chart to indicate it. If the target
+        is met in the future scenario, the line is green, if not, the line shows up
+        red.
+    cost_targets:
+      short_content: ''
+      content: This chart summarizes the targets that can be set in this section.
+        For each target, it shows both the present and the future values. When you
+        set a target, a line will appear on the chart to indicate it. If the target
+        is met in the future scenario, the line is green, if not, the line shows up
+        red.
+    area_targets:
+      short_content: ''
+      content: This chart summarizes the targets that can be set in this section.
+        For each target, it shows both the present and the future values. When you
+        set a target, a line will appear on the chart to indicate it. If the target
+        is met in the future scenario, the line is green, if not, the line shows up
+        red.
+    use_of_final_demand_in_industry_steel:
+      short_content: Steel
+      content: "This graph shows how the steel industry's demand for energy will change
+        as a result of the choices you make in this section. This is mainly determined
+        by growth of the sector’s output and investments in energy saving technologies.
+        \r\n<br/><br/> \r\nThe graph shows final energy use and some conversion losses
+        in making steel. Conversion losses for producing heat or power are not included,
+        but conversion losses for making cokes or coking gas, for example, are."
+    use_of_final_demand_in_industry_metal:
+      short_content: Metal
+      content: "This graph shows how the metal industry's demand for energy will change
+        as a result of the choices you make in this section. This is mainly determined
+        by growth of the sector’s output and investments in energy saving technologies.
+        \r\n<br/><br/> \r\nThe graph shows mostly final energy use. Conversion losses
+        for producing heat or power are not included, but conversion losses for making
+        cokes or coke gas, for example, are."
+    impact_of_climate_on_heat_and_cooling_demand_households_and_buildings:
+      short_content: Heating and cooling demand of households and buildings
+      content: "This graph shows how heating and cooling demand in households and
+        buildings changes from now to the future, as a result of the choices in 'Demand'.\r\n"
+    fuel_chain_emissions_scaled_for_liquid_biofuels:
+      short_content: ''
+      content: "This chart shows how much greenhouse gas is emitted during the life
+        cycles of the fuels listed below. These emissions (in CO2 equivalents) are
+        broken down into four steps: <br/><br/>\r\n1. Extraction - production of the
+        raw material <br/>\r\n2. Treatment - processing the raw material into the
+        final form in which the fuel is used <br/>\r\n3. Transportation - transporting
+        the fuel to the locations at which it is used <br/>\r\n4. Conversion - use
+        of the fuel for production of heat or electricity for example <br/>\r\n<br/>\r\nThe
+        last steps also includes any emissions occurring during waste treatment or
+        storage.\r\n<br/><br/>\r\nThe numbers and references used to quantify the
+        fuel chain emissions can be found in a document that can be <a href='http://refman.et-model.com/publications/1623'
+        target='blank'>downloaded from here</a>."
+    plant_profitability:
+      short_content: ''
+      content: ''
+    chp_properties:
+      short_content: ''
+      content: "This table shows an overview of all CHP plants installed in your scenario.
+        The columns contain (from left to right) name, number of units, electricity
+        production, heat production and installed capacity of CHP plants.\r\n"
+    investment_table:
+      short_content: ''
+      content: 'This table shows an overview of the investment cost of heat and electricity
+        producing technologies. The investment costs are shown for both the start
+        scenario (2010) and for the future scenario. In both cases a ''green-field''
+        approach is taken: no previously installed technologies are assumed. The last
+        column shows the difference between the investment costs of the two scenarios.'
+    energy_storage:
+      short_content: This chart gives an impression of how the costs of conversion
+        technologies compare and at what point it might become economically interesting
+        to build first conversion units.
+      content: "This chart gives an impression of how the costs of conversion technologies
+        compare and at what point it might become economically interesting to build
+        first conversion units.\r\n\r\n<br/><br/>\r\n\r\nThe <b>x-axis</b> of the
+        chart displays the total installed generation capacity of wind and solar.
+        If values of ~15 GW of wind and solar capacity are exceeded, the first occurrences
+        of excess power are observed in The Netherlands. The <b>y-axis</b> has the
+        unit € / MWh. In case of wind turbines, it refers to the <i>present</i> costs
+        of total electricity production of inland wind turbines, as shown in \r\n<a
+        href=\"/scenario/costs/wind/investment\">'wind turbines' section of Costs</a>
+        \r\n\r\nIn case of the storage and conversion technology, the y-axis indicates
+        the cost for delivering useful energy via the conversion of excess. \r\n\r\n<br/><br/>\r\n\r\nThe
+        indicator line shows how much volatile capacity you have installed (if you
+        do not see a line, you installed more than 120 GW). It is the only thing in
+        the chart that responds to your slider settings. \r\n\r\n<br/><br/>\r\n\r\nTo
+        generate the curves in this chart we made quite a few assumptions, most importantly:
+        \r\n\r\n<ul style=\"overflow: hidden\">\r\n\r\n<li>Excess electricity is not
+        exported, but curtailed, stored or converted.</li> \r\n<li>The ratio of installed
+        wind and solar capacities (x-axis) is fixed to the ratio installed in 2010.</li>
+        \r\n<li>Everything else stays the same; the chart does not react to your slider
+        settings.</li> \r\n<li>Only marginal cost are displayed; in other words, the
+        curves represent the cost for installing a first conversion unit or one more
+        wind turbine. </li> \r\n<li>Future cost reductions of technologies are not
+        taken into account (learning effects and economy of scale).</li> \r\n</ul>
+        \r\n\r\nFor a detailed explanation and a complete list of assumptions, have
+        a look at our <a href=\"https://github.com/quintel/documentation/blob/master/general/storage.md\"
+        target =\"_blank\">documentation</a>. "
+    population_residences_overview:
+      short_content: This table displays the population, the number of residences
+        and the average number of inhabitants per residence in the present and the
+        future scenario.
+      content: This table displays the population, the number of residences and the
+        average number of inhabitants per residence in the present and the future
+        scenario.
+    final_demand_mekko_mece:
+      short_content: ''
+      content: "This section compares your country's final energy consumption (horizontal
+        axis of graph) by various segments of society and final energy carriers (vertical
+        axis of graph). An energy carrier is a usable form of energy, such as electricity
+        of gasoline. Final use means that we do not take into account any losses in
+        producing the energy carriers.\r\n<br/><br/>\r\nThe graph for the future is
+        the result of your choices in section 'Demand'.\r\n<br/><br/>\r\nExample:
+        Strong economic growth leads to increased energy demand. Energy savings and
+        choices for modern technologies lead to lower energy demand. Choices for heat
+        pumps and electric transportation lead to lower total energy demand, but an
+        increase in demand for electricity. How this electricity is generated (you
+        will choose this later on in the model) determines the total primary amount
+        of energy saved. \r\n\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
+        above the graph, to select different graphs about energy demand.\r\n"
+    import_export_capacity:
+      short_content: ''
+      content: "The data in this chart is based on a relatively simple four country
+        model (including NL, DE, BE and FR). The model optimises the production of
+        electricity of the whole system taking interconnector capacities as boundary
+        conditions.\r\n<br><br>\r\nThe main assumptions / simplifications used in
+        the model are:\r\n<br>\r\n<ul>\r\n<li>The Merit Order can be represented as
+        a polynomial of second degree. A smooth function is needed for the optimisation
+        to reach a unique solution.</li>\r\n<li>Ramping speeds are not modeled: plants
+        can switch on and off instantaneously.</li>\r\n<li>Loop flows are excluded
+        (it is not possible for a country to receive its own exported electricity).</li>\r\n</ul>\r\nIn
+        this research, each country is represented as one single price\r\nzone comprising
+        generation and load with interconnection to neighbouring countries. And only
+        cross-border transmission capacities are taken into account. This means that
+        constraints within each country are not considered. (see Chapter 4.3.2 of
+        <a href=\"http://refman.et-model.com/publications/820\" target=\"_blank\">Wind
+        Integration</a>)"
+    import_export_renewables:
+      short_content: ''
+      content: "This chart illustrates the effect that increased renewables have on
+        wholesale electricity prices.<br><br>\r\nBecause the Merit Order prioritises
+        the production by cheap producers, the increase of Renewable capacity translates
+        in lower electricity prices for the country with the capacity. (see <a href=\"/scenario/costs/merit_order/merit-order\"
+        >Merit Order</a>)\r\n<br><br>\r\nRenewable production is not dispatchable,
+        so whenever there is a surplus of production it will be exported to other
+        price-zones (countries in the model), respecting interconnection constraints.\r\nThis
+        translates in lower prices also for the importer country because part of its
+        demand is met by 'zero-cost' (and possibly negatively priced) supply. "
+    import_export_flows:
+      short_content: ''
+      content: "This chart shows the interconnection capacity between the Netherlands,
+        Germany, France and Belgium. \r\nLarger capacity allows for higher electricity
+        import and export spikes, resulting in better convergence of electricity prices
+        across countries.\r\n<br><br>\r\nNOTE: the interconnector between Belgium
+        and France is asymmetrical."
+    use_of_final_demand_in_industry_chemical_detailed:
+      short_content: Chemical industry
+      content: "This graph shows how demand for energy in the chemical industry will
+        change as a result of the choices you make in this section. Industrial energy
+        demand is mainly determined by growth of the sector’s output and investments
+        in energy saving technologies.\r\n<br /><br />\r\nThe graph shows final energy
+        use, so conversion losses for producing heat or power are not included.\r\nNon-energetic
+        demand is the use of energy carriers to make chemical products that not serve
+        as fuels. For example, oil and natural gas can be used to produce plastics
+        and fertilizers. \r\n<br /><br />\r\nYou can choose 'Change chart' to select
+        different graphs about industrial energy demand."
+    import_export_cwe:
+      short_content: ''
+      content: "This chart shows the 'day-ahead' price of electricity for the Central
+        Western European (CWE) countries (BE, DE, FR, LU and NL) for the month of
+        January 2014 as published on <a href=\"http://www.apxgroup.com/market-results/cwe/\"
+        target=\"_blank\">http://www.apxgroup.com/market-results/cwe</a>.\r\n<br/><br/>\r\nThe
+        extent of price 'convergence' (how often prices are equal) is a measure for
+        the success of market coupling. Coupling can be improved by increasing interconnector
+        capacity between countries or by employing smarter market mechanisms."
+    production_curve_coal:
+      short_content: ''
+      content: ''
+    production_curve_crude_oil:
+      short_content: ''
+      content: ''
+    production_curve_natural_gas:
+      short_content: ''
+      content: ''
+    production_curve_uranium:
+      short_content: ''
+      content: ''
+    co2_of_electricity_production:
+      short_content: ''
+      content: ''
+    use_of_excess_electricity:
+      short_content: ''
+      content: The ETM contains several flexibility technologies that are able to
+        deal with excess electricity from wind turbines and solar panels. This chart
+        shows the amount of electricity that is used by the different technologies
+        in your scenario. You can set how much of each of these technologies you would
+        like to install in your scenario in the Flexibility menu.
+    storage_options:
+      short_content: ''
+      content: "The ETM contains several flexibility technologies that are able to
+        deal with excess electricity from wind turbines and solar panels. For each
+        of these technologies, this table shows the installed capacity, which determines
+        how much electricity you can store or convert at any time. The table also
+        shows the storage volume, indicating the maximum volume available for storage
+        or conversion. Finally, the last columns show the annual usage of the flexibility
+        technologies in your scenario, both in PJ and TWh.\r\n</br></br>\r\nYou can
+        set how much of each of these technologies you would like to install in your
+        scenario in the Flexibility menu."
+    mekko_of_primary_co2:
+      short_content: ''
+      content: "This 'Mekko' chart shows the CO<sub>2</sub> emissions for the sectors
+        of the ETM subdivided by final demand carriers. For each final demand carrier,
+        transformation and transportation losses have been taken into account. \r\n<br><br>\r\nFor
+        example, the CO<sub>2</sub> emissions associated with electricity in the household
+        sector is calculated by tracing back all transformations until we arrive at
+        the primary carriers such as natural oil and coal."
+    mekko_of_primary_demand_of_biomass:
+      short_content: ''
+      content: 'This ''Mekko'' chart shows the use of primary biofuel for the sectors
+        of the ETM. '
+    mekko_of_bio_footprint:
+      short_content: ''
+      content: ''
+    investment_electric_cars:
+      short_content: 'This chart shows the average initial investment price excluding
+        taxes for electric cars and combustion engine cars. The latter is a reference
+        petrol car. '
+      content: 'This chart shows the average initial investment price excluding taxes
+        for electric cars and combustion engine cars. The latter are based on the
+        reference petrol car as included in TNO''s 2013 report "Natural Gas in Transport". '
+    merit_order_price_curve:
+      short_content: ''
+      content: The ETM calculates the hourly supply of electricity from the hourly
+        demand and the installed capacities of all electricity producers. The order
+        in which the producers are dispatched is determined by the merit order. The
+        hourly merit order price is equal to the marginal costs of the most expensive
+        plant running at that hour.
+    merit_order_hourly_supply:
+      short_content: ''
+      content: The ETM calculates the hourly supply of electricity from the hourly
+        demand and the installed capacities of all electricity producers. The order
+        in which the producers are dispatched is determined by the merit order. Volatile
+        electricity producers as well as must-run technologies are not included in
+        the merit order calculation. This chart shows the hourly production of electricity
+        and gives a visual clue of the electricity generation mix.
+    merit_order_hourly_flexibility:
+      short_content: ''
+      content: The ETM determines on an hourly basis if there is excess electricity
+        and how this electricity is used.
+    merit_order_excess_events:
+      short_content: ''
+      content: As a result of large numbers of wind turbines and solar panels installed,
+        the supply of electricity can be larger than the demand. The ETM keeps track
+        of the number of consecutive hours in which this is the case for you scenario.
+        If you include flexibility options in your scenario, the number of excess
+        events decreases.
+    mekko_of_detailed_final_demand_in_industry:
+      short_content: ''
+      content: "This graph shows how the demand for energy of the industry sectors
+        will change as a result of the choices you make in this section. This is mainly
+        determined by growth of the sector’s output and investments in energy saving
+        technologies. \r\n</br></br>\r\nThe graph shows final energy use and some
+        conversion losses. Conversion losses for producing heat or power are not included,
+        but conversion losses for making cokes or coking gas, for example, are."
+    mekko_of_detailed_final_demand_in_industry_energetic:
+      short_content: ''
+      content: "This graph shows how the demand for energy of the industry sectors
+        will change as a result of the choices you make in this section. This is mainly
+        determined by growth of the sector’s output and investments in energy saving
+        technologies. \r\n</br></br>\r\nThe graph shows final energy use and some
+        conversion losses. Conversion losses for producing heat or power are not included,
+        but conversion losses for making cokes or coking gas, for example, are."
+    use_of_final_demand_in_industry_chemical_refineries:
+      short_content: ''
+      content: "This graph shows how energy demand of the refineries will change as
+        a result of the choices you make in this section. Industrial energy demand
+        is mainly determined by growth of the sector’s output and investments in energy
+        saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy use,
+        so conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
+        use is the use of energy carriers (like oil) to make non-energy products such
+        as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
+        to select different graphs about industrial energy demand."
+    use_of_final_demand_in_industry_other_paper:
+      short_content: ''
+      content: "This graph shows how energy demand of the paper industry will change
+        as a result of the choices you make in this section. Industrial energy demand
+        is mainly determined by growth of the sector’s output and investments in energy
+        saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy use,
+        so conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
+        use is the use of energy carriers (like oil) to make non-energy products such
+        as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
+        to select different graphs about industrial energy demand."
+    use_of_final_demand_in_industry_chemical_other:
+      short_content: ''
+      content: "This graph shows how energy demand of the chemicals industry will
+        change as a result of the choices you make in this section. Industrial energy
+        demand is mainly determined by growth of the sector’s output and investments
+        in energy saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy
+        use, so conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
+        use is the use of energy carriers (like oil) to make non-energy products such
+        as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
+        to select different graphs about industrial energy demand."
+    use_of_final_demand_in_industry_other_food:
+      short_content: ''
+      content: "This graph shows how energy demand of the food industry will change
+        as a result of the choices you make in this section. Industrial energy demand
+        is mainly determined by growth of the sector’s output and investments in energy
+        saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy use,
+        so conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
+        use is the use of energy carriers (like oil) to make non-energy products such
+        as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
+        to select different graphs about industrial energy demand."
+    use_of_final_demand_in_industry_chemical_fertilizers:
+      short_content: ''
+      content: "This graph shows how energy demand of the fertilizer industry will
+        change as a result of the choices you make in this section. Industrial energy
+        demand is mainly determined by growth of the sector’s output and investments
+        in energy saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy
+        use, so conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
+        use is the use of energy carriers (like oil) to make non-energy products such
+        as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
+        to select different graphs about industrial energy demand."
+    use_of_final_demand_in_industry_other:
+      short_content: ''
+      content: "This graph shows how energy demand of the other industry will change
+        as a result of the choices you make in this section. Industrial energy demand
+        is mainly determined by growth of the sector’s output and investments in energy
+        saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy use,
+        so conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
+        use is the use of energy carriers (like oil) to make non-energy products such
+        as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
+        to select different graphs about industrial energy demand."
+    use_of_final_demand_in_industry_chemical:
+      short_content: ''
+      content: ''
+    co2_emissions_biomass:
+      short_content: CO2 biomass
+      content: "Which part of the CO<sub>2</sub> emissions from biomass is relevant
+        to the environment is uncertain and speculative. This chart serves to explore
+        the (potential) amount of these emissions.\r\n<br/><br/>\r\nBesides the official
+        UNFCCC accounted  CO<sub>2</sub> emission this graph also shows the CO<sub>2</sub>
+        which is emitted due the use of biomass and is (potentially) relevant for
+        climate change. Which part of the biomass CO<sub>2</sub> emissions should
+        be shown can be set with the sliders in the CO<sub>2</sub> biomass section.\r\n<br/><br/>\r\nThe
+        graph only displays energetic CO<sub>2</sub> emissions, which are emitted
+        in domestic energy use and production. Non-energetic emissions are not included.
+        Non-energetic emissions are related to processes other than the production
+        of usable energy like electricity or heat. An example of such emissions are
+        the CO<sub>2</sub> emissions that are released from cement during its making.
+        The CO<sub>2</sub> emissions related to the needed energy for cement production
+        <em>do</em> count as energetic emissions.\r\n<br/><br/>\L\r\nNote: When the
+        Fuel Chain Emissions module is turned on, the graph also includes CO<sub>2</sub>
+        equivalents of other greenhouse gas emissions, like methane (CH<sub>4</sub>)
+        or nitrous oxide (N<sub>2</sub>O) related to the fuel chain in this graph.
+        Non-energetic emissions and greenhouse gas emissions not related to the fuel
+        chain are not included."
+    use_of_final_demand_in_industry_other_ict:
+      short_content: ''
+      content: "This graph shows how energy demand of the central ICT sector will
+        change as a result of the choices you make in this section. Industrial energy
+        demand is mainly determined by growth of the sector’s output and investments
+        in energy saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy
+        use, so conversion losses for producing heat or power are not included.<br/><br/>\r\nYou
+        can choose 'Change chart' to select different graphs about industrial energy
+        demand."
+    refinery:
+      short_content: ''
+      content: ''
+    co2_sankey:
+      short_content: ''
+      content: ''
+    relative_primary_co2:
+      short_content: ''
+      content: ''
+    relative_primary_demand_of_coal_oil_and_gas:
+      short_content: ''
+      content: ''
+    dynamic_demand_curve:
+      short_content: ''
+      content: "This chart shows the impact of technology choices and demand growth
+        on the hight and shape of the total electricity demand profile at high voltage
+        level (red line).\r\n<br>\r\n<br>\r\nFor the following technologies and choices
+        the impact on the profile is explicitly shown:\r\n<ul>\r\n<li>electric space
+        heating technologies such as heat pumps</li>\r\n<li>insulation levels and
+        heating demand (if electric space heating technologies are used)</li>\r\n<li>hot
+        water technologies such as heat pumps</li>\r\n<li>hot water demand (if electric
+        hot water technologies are used)</li>\r\n<li>use of power-to-heat (if electric
+        hot water technologies are used)</li>\r\n<li>market share and charging strategies
+        of electric vehicles</li>\r\n</ul>\r\nFor the electricity demand of other
+        technologies and applications in the ETM, the fixed TenneT curve is assumed.
+        This part is shown as the white region under the red line.\r\n"
+    heat_deficit:
+      short_content: ''
+      content: ''
+    household_heat_demand_and_production:
+      short_content: ''
+      content: ''
+    hydrogen_production_for_fertilizers:
+      short_content: ''
+      content: This graph shows the hydrogen production for use in the fertilizer
+        industry in the present and future. The latter is the result of your settings
+        in sections 'Demand' (size of the fertilizers industry) and 'Flexibility'
+        (conversion to gas).
+    use_of_final_demand_in_international_transport:
+      short_content: CO<sub>2</sub> emissions by international aviation
+      content: This chart shows how the amount of CO<sub>2</sub> emissions caused
+        by different aviation fuels will change as a result of the choices you make
+        in this section. The CO<sub>2</sub> emissions of fuels which are consumed
+        at international flights depends on how the aviation fuel mix consists of.
+        The more bio-fuels used the less CO<sub>2</sub> emissions are caused.
+    co2_emission_international_transportation:
+      short_content: Energy demand of international aviation
+      content: This chart shows how energy demand for international aviation will
+        change as a result of the choices you make in this section. Energy use depends
+        on how much people will use flights for international traveling.
+    kerosene_production_in_bunkers:
+      short_content: ''
+      content: ''
+    transport_categories_overview:
+      short_content: ''
+      content: ''
+    use_of_final_demand_in_passenger_transport:
+      short_content: ''
+      content: ''
+    use_of_final_demand_in_cars:
+      short_content: ''
+      content: ''
+    use_of_final_demand_in_motorcycles_and_bicycles:
+      short_content: ''
+      content: ''
+    use_of_final_demand_in_planes:
+      short_content: ''
+      content: ''
+    use_of_final_demand_in_busses_trains_and_trams:
+      short_content: ''
+      content: ''
+    use_of_final_demand_in_freight_transport_technologies:
+      short_content: ''
+      content: ''
+    use_of_final_demand_in_freight_transport:
+      short_content: ''
+      content: ''
+    international_transport_categories_overview:
+      short_content: ''
+      content: This chart shows the final energy demand for international navigation
+        and aviation.
+    carbon_balance:
+      short_content: ''
+      content: ''
+    renewable_electricity:
+      short_content: This chart shows the share of renewable electricity sources in
+        the current and future scenarios.
+      content: This chart shows the share of different renewable electricity sources
+        in the current and future scenarios.
+    households_final_demand_per_application:
+      short_content: Households, by application
+      content: "This graph shows how household final demand for energy will change
+        as a result of the choices you make in this section. \r\n<br/><br/>\r\nYou
+        can click '<u>Change chart</u>' above the graph, to select different graphs
+        about energy demand."
+    mekko_of_hydrogen_network:
+      short_content: ''
+      content: ''
+    transport_fuel_costs_overview:
+      short_content: ''
+      content: This chart shows the total cost of different transport fuels in the
+        current and future scenarios.
+    electricity_network_load:
+      short_content: ''
+      content: ''
+    electricity_lv_network_load:
+      short_content: ''
+      content: ''
+    electricity_mv_network_load:
+      short_content: ''
+      content: ''
+    electricity_hv_network_load:
+      short_content: ''
+      content: ''
+    lv_demand_curves:
+      short_content: ''
+      content: ''
+    mv_demand_curves:
+      short_content: ''
+      content: ''
+    hv_demand_curves:
+      short_content: ''
+      content: ''
+    electricity_network_capacity_and_peaks:
+      short_content: ''
+      content: ''
+    final_demand_mekko_energetic_mece:
+      short_content: ''
+      content: ''
+    hydrogen_storage:
+      short_content: ''
+      content: ''
+    buildings_heat_demand_and_production:
+      short_content: ''
+      content: ''
+    final_energy_demand_per_sector_percentage:
+      short_content: ''
+      content: ''
+    final_energy_demand_per_sector_joule:
+      short_content: ''
+      content: ''
+    biomass_sankey:
+      short_content: ''
+      content: "This chart shows the biomass flows in this area. On the left primary
+        biomass resources are shown and the origin of these sources (locally sourced
+        or imported). The middle of the chart shows the conversion of biomass resources
+        into other energy carriers (like greengas, bio fuels, electricity and heat).
+        On the right side you can see the sectors in which the energy is ultimately
+        used. <br/>\r\nFloating over the chart with you mouse will highlight different
+        parts and reveal more information."
+    greengas_costs:
+      short_content: ''
+      content: ''
+    network_gas_demand:
+      short_content: ''
+      content: ''
+    network_gas_production:
+      short_content: ''
+      content: ''
+    network_gas_storage:
+      short_content: ''
+      content: ''
+    collective_heat_mekko:
+      short_content: ''
+      content: ''
+    heat_network_demand:
+      short_content: ''
+      content: ''
+    heat_network_production:
+      short_content: ''
+      content: ''
+    heat_network_storage:
+      short_content: ''
+      content: ''
+    heat_cost_capacity:
+      short_content: ''
+      content: ''

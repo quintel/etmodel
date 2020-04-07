@@ -8,22 +8,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_electricity_demand_in_households
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how household demand for electricity will change
-      as a result of the choices you make in this section. Electricity demand is broken
-      down into applications.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
-      above the graph, to select different graphs about energy demand."
-    content_nl: "Deze grafiek toont hoe de huishoudelijke vraag naar elektriciteit
-      verandert als gevolg van de keuzes en aannames die je in dit onderdeel maakt.
-      De vraag naar elektriciteit is onderverdeeld naar toepassing.\r\n<br/><br/>\r\nKies
-      '<u>Wijzig grafiek</u>' om andere grafieken te tonen over energiegebruik."
-    short_content_en: Households, by application
-    short_content_nl: Huishoudelijk, naar toepassing
   output_element_type_name: bezier
 - id: 5
   under_construction: false
@@ -34,23 +23,11 @@
   show_point_label: false
   growth_chart: false
   key: source_of_electricity_in_households
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how the electricity that households use, is generated.
-      Centrally produced electricity is lumped together here. You will get a chance
-      to choose production methods under the 'Supply' section. \r\n<br/><br/>\r\nYou
-      can click '<u>Change chart</u>' above the graph, to select different graphs
-      about energy use."
-    content_nl: "Deze grafiek toont hoe de elektriciteitsvraag door huishoudens wordt
-      ingevuld. Centraal geproduceerde electriciteit is op één hoop gegooid. Die kun
-      je instellen bij onderdeel 'Aanbod'. \r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>'
-      boven de grafiek om andere grafieken te tonen over energiegebruik."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 28
   under_construction: false
@@ -61,27 +38,11 @@
   show_point_label: false
   growth_chart: false
   key: source_of_heat_and_electricity_in_industry
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how the electricity and heat that industry uses,
-      is generated. If it is not generated using CHP units, heat is made with the
-      other options visible on the Industry 'Heat' page. Centrally produced electricity
-      is lumped together here. You will get a chance to choose production methods
-      under the 'Supply' section. \r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
-      above the graph, to select different graphs about industrial energy demand."
-    content_nl: "Deze grafiek laat zien hoe de elektriciteit en warmte die de industrie
-      gebruikt, wordt opgewekt. Warmte die niet met WKK is gemaakt, kan worden geproduceerd
-      met één van de opties op de Industrie 'Warmte' pagina. Centraal geproduceerde
-      elektriciteit is hier op één hoop gegooid. Bij het onderdeel 'Aanbod' heb je
-      de mogelijkheid om te kiezen hoe dit wordt opgewekt en hoeveel.\r\n<br/><br/>\r\nKies
-      '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over industrieel
-      energiegebruik."
-    short_content_en: Industrial
-    short_content_nl: Industrie
   output_element_type_name: bezier
 - id: 29
   under_construction: false
@@ -92,25 +53,11 @@
   show_point_label: false
   growth_chart: true
   key: use_of_final_demand_in_agriculture
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_agriculture
-  description:
-    content_en: "This graph shows how agricultural demand for energy will change as
-      a result of the choices you make in this section. Agricultural energy use occurs
-      mainly in greenhouses. The graph shows final energy use, so conversion losses
-      for producing heat or power are not included. \r\n<br/><br/>\r\nYou can click
-      '<u>Change chart</u>' above the graph, to select different graphs about energy
-      demand."
-    content_nl: "Deze grafiek toont hoe de vraag naar energie in de land- en tuinbouw
-      gaat veranderen als gevolg van jouw keuzes. De meeste energie wordt in broeikassen
-      gebruikt. Deze grafiek toont eindgebruik van energie, dus verliezen bij de omzetting
-      van energiedragers naar warmte of elektriciteit zijn niet meegenomen.\r\n<br/><br/>\r\nKies
-      '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over energiegebruik."
-    short_content_en: Agriculture
-    short_content_nl: Landbouw
   output_element_type_name: bezier
 - id: 30
   under_construction: false
@@ -121,31 +68,11 @@
   show_point_label: false
   growth_chart: false
   key: source_of_heat_in_agriculture
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_agriculture
-  description:
-    content_en: "This graph shows agricultural heat demand changes from now to the
-      future, as a result of the choices in 'Demand'. Heat demand is broken down into
-      'heat from fossil fuels, heat from electricity, heat from biomass and ambient
-      heat'.\r\n<br/><br/>\r\nOf course, what technologies are used, does not really
-      change the actual demand for heat, but it can change energy efficiency and sustainability
-      of heat production. In order to reduce heat demand, buildings will need to be
-      better insulated, for example.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
-      above the graph, to select different graphs about energy demand."
-    content_nl: "Deze grafiek laat zien hoe de warmtevraag in de landbouw verandert
-      in de toekomst, als gevolg van jouw keuzes in het onderdeel 'Vraag'. De warmtevraag
-      valt hier uiteen in 'warmte uit fossiel, warmte uit elektriciteit, warmte uit
-      biomassa en omgevingswarmte'.\r\n<br/><br/>\r\nDe technieken die je gebruikt
-      om te verwarmen bepalen natuurlijk de warmtevraag niet, maar wel de energie-efficiëntie
-      en hernieuwbaarheid van de warmteproductie. Om de warmtevraag af te laten nemen,
-      moeten broeikassen bijvoorbeeld beter geïsoleerd worden, of andere gewassen
-      gaan telen.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de grafiek om
-      andere grafieken te tonen over energiegebruik."
-    short_content_en: Agricultural
-    short_content_nl: Agricultural
   output_element_type_name: bezier
 - id: 31
   under_construction: false
@@ -156,62 +83,26 @@
   show_point_label: false
   growth_chart: true
   key: use_of_final_demand_in_other_sector
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how demand for energy in the building, service and
-      government sectors will change as a result of the choices you make in this section.
-      The graph shows final energy use, so conversion losses for producing heat or
-      power are not included. \r\n\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
-      above the graph, to select different graphs about energy demand."
-    content_nl: "Deze grafiek toont hoeveel het energiegebruik in de diensten-, bouw
-      en overheidssectoren gaat veranderen als gevolg van jouw keuzes. Eindgebruik
-      van energie betekent dat verliezen bij omzetting van energiedragers naar elektriciteit
-      of warmte niet zijn meegenomen.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>'
-      boven de grafiek om andere grafieken te tonen over energiegebruik."
-    short_content_en: Other sectors
-    short_content_nl: Overige sectoren
   output_element_type_name: bezier
 - id: 32
   under_construction: false
-  unit: 
-  percentage: 
+  unit:
+  percentage:
   group: Cost
-  sub_group: 
-  show_point_label: 
-  growth_chart: 
+  sub_group:
+  show_point_label:
+  growth_chart:
   key: overview_costs_of_electricity_production
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
-  dependent_on: 
-  description:
-    content_en: "When comparing different types of electricity generation, only the
-      vertical position on this graph is relevant for its total cost.\r\n<br/><br/>\r\nSelect
-      different electricity production technologies by 'clicking' them in the legend
-      below the graph.\r\n<br/><br/>\r\nThe vertical axis shows all relevant production
-      costs of electricity for various generation technologies (in €/MWhe). This <strong>includes</strong>
-      finance and capital costs, but <strong>excludes</strong> all taxes and subsidies.
-      We call this 'integral production costs'.\r\n<br/><br/>\r\nThe horizontal axis
-      shows the investment costs (in million €/MWe). The horizontal position reveals
-      how much money is needed to construct a power plant with a certain production
-      capacity.\r\n<br/><br/>\r\n<a href=\"/units\">More information on units...</a>"
-    content_nl: "Bij het vergelijken van verschillende soorten stroommopwek, is alleen
-      de verticale positie op deze grafiek van belang. <br/><br/>\r\nJe kunt verschillende
-      technologieën tonen en verbergen door ze in de legenda te kiezen.  \r\n<br/><br/>\r\nDe
-      verticale as toont de totale relevante productiekosten van elektriciteit (in
-      &euro;/MWhe). Dit is dus <strong>inclusief</strong> \r\ninvesteringen en kapitaalslasten,
-      maar <strong>exclusief</strong> alle belastingen en subsidies. We noemen dit
-      'integrale productiekosten'.\r\n<br/><br/>\r\nDe horizontale as geeft alleen
-      de inversteringskosten (in miljoen €/MWe). De horizontale positie toont hoeveel
-      geld er nodig is om een bepaald productievermogen van iedere techniek te bouwen.\r\n<br/><br/>\r\n<a
-      href=\"/units\">Meer informatie over eenheden...</a>"
-    short_content_en: ''
-    short_content_nl: ''
+  dependent_on:
   output_element_type_name: block
 - id: 42
   under_construction: false
@@ -222,20 +113,11 @@
   show_point_label: false
   growth_chart: false
   key: source_of_heat_production
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows the composition of the total heat production. \r\n<br/><br/>\r\nYou
-      can use the sliders to change the extent to which a technology is used. This
-      will result in heat mix shift."
-    content_nl: "Deze grafiek toont hoe de totale warmteproductie tot stand komt.\r\n<br/><br/>\r\nJe
-      kunt met de schuifjes het aandeel van iedere technologie instellen. Hierdoor
-      zal de warmtemix veranderen."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 43
   under_construction: false
@@ -246,19 +128,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_transport_fuels
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: This graph shows the road transport fuel mix in the present and future.
-      The latter is the result of your settings in sections 'Demand' and 'Supply'.
-    content_nl: 'Deze grafiek geeft de brandstofmix voor wegtransport als gevolg van
-      jouw instellingen in de onderdelen ''Vraag'' en ''Aanbod'', vergeleken met de
-      mix van nu. '
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 45
   under_construction: false
@@ -269,20 +143,11 @@
   show_point_label: true
   growth_chart: false
   key: use_of_primary_energy
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows total primary energy use for your country in the
-      present and future years.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
-      above the graph, to select different graphs about energy demand."
-    content_nl: "De grafiek toont de totale primaire energievraag in jouw land voor
-      nu en in de toekomst.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de
-      grafiek om andere grafieken te tonen over energiegebruik."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 46
   under_construction: false
@@ -293,45 +158,11 @@
   show_point_label: false
   growth_chart: false
   key: co2_emissions
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph compares energetic CO<sub>2</sub> emissions between 1990,
-      the present and the future. The year 1990 is often used as a reference year
-      for CO<sub>2</sub> emissions targets. The red line indicates the target you
-      have set under 'Goals'. \r\n<br/><br/>\r\nThe graph only displays energetic
-      CO<sub>2</sub> emissions, which are emitted in domestic energy use and production.
-      Non-energetic emissions are not included. Non-energetic emissions are related
-      to processes other than the production of usable energy like electricity or
-      heat. An example of such emissions are the CO<sub>2</sub> emissions that are
-      released from cement during its making. The CO<sub>2</sub> emissions related
-      to the needed energy for cement production <em>do</em> count as energetic emissions.\r\n<br/><br/>\r\n\L\LNote:
-      When the Fuel Chain Emissions module is turned on, the graph also includes CO<sub>2</sub>
-      equivalents of other greenhouse gas emissions, like methane (CH<sub>4</sub>)
-      or nitrous oxide (N<sub>2</sub>O) related to the fuel chain in this graph. Non-energetic
-      emissions and greenhouse gas emissions not related to the fuel chain are not
-      included.`"
-    content_nl: "Deze grafiek vergelijkt de uitstoot van energetische CO<sub>2</sub>
-      in 1990, het heden en de toekomst. Het jaar 1990 wordt vaak als referentiejaar
-      genoemd in CO<sub>2</sub> doelstellingen. De lijn is de doelstelling die is
-      ingesteld in het onderdeel 'Doelen'. \r\n<br/><br/>\r\nDeze grafiek toont alleen
-      binnenlandse, energetische CO<sub>2</sub>-uitstoot. Niet-energetische emissies
-      van CO<sub>2</sub> zijn niet meegenomen. Deze emissies zijn gerelateerd aan
-      processen waarbij het eindproduct geen bruikbare energie (zoals elektriciteit
-      of warmte) oplevert. Een voorbeeld van niet-energetische uitstoot van CO<sub>2</sub>
-      is de CO<sub>2</sub> die opgesloten zit in cement en vrijkomt bij het maken
-      ervan. De emissies die vrijkomen bij het produceren van de energie die nodig
-      is om cement te maken tellen overigens wel mee als energetische CO<sub>2</sub>
-      emissies.\r\n<br/><br/>\r\nLet op: Als de Ketenanalyse-module is ingeschakeld
-      toont deze grafiek ook andere broeikasgassen als methaan (CH<sub>4</sub>) of
-      lachgas (N<sub>2</sub>O) die gerelateerd zijn aan de brandstofproductieketen.
-      Niet-energetische emissies en broeikasgassen die ongerelateerd zijn aan de brandstofproductieketen
-      worden niet getoond."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 47
   under_construction: false
@@ -342,24 +173,11 @@
   show_point_label: true
   growth_chart: false
   key: present_energy_imports
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph compares the net foreign energy dependence in the present
-      and future years as a result of your choices. Net energy dependence means that
-      we subtract all energy exports from energy imports and divide the result by
-      the total primary energy use.\r\n<br/><br/> For more information see the 'Goals'
-      section."
-    content_nl: "Deze grafiek vergelijkt de netto afhankelijkheid van buitenlandse
-      energie in het heden en in de toekomst. Dit is het gevolg van jouw keuzes in
-      het model. Netto afhankelijkheid betekent dat we de energie-export aftrekken
-      van de energie-import en het resultaat delen door de totale primaire energievraag.
-      \r\n<br/><br/> Zie voor meer informatie het onderdeel 'Doelen'."
-    short_content_en: Present year
-    short_content_nl: Startjaar
   output_element_type_name: waterfall
 - id: 48
   under_construction: false
@@ -370,91 +188,41 @@
   show_point_label: false
   growth_chart: false
   key: breakdown_of_total_costs
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph show how energy costs will change between the present
-      and future as a result of your choices. \r\n<br/><br/>\r\nCosts are broken down
-      into various relevant categories. "
-    content_nl: "Deze grafiek laat zien hoe de kosten voor energie zullen toenemen
-      in de toekomst als gevolg van jouw keuzes. \r\n<br/><br/>\r\nDe kosten zijn
-      opgedeeld in een aantal relevante categorieën. "
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 49
   under_construction: false
   unit: "%"
   percentage: false
   group: Overview
-  sub_group: 
+  sub_group:
   show_point_label: true
-  growth_chart: 
+  growth_chart:
   key: renewability
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
-  dependent_on: 
-  description:
-    content_en: "This graph shows how the percentage of sustainable final energy use
-      changes between now and the future year. This is the result of your choices.\r\n<br/><br/>\r\nFinal
-      energy use means that losses during conversions of energy carriers to electricity
-      or heat are not taken into account."
-    content_nl: "Deze grafiek laat zien hoe het percentage hernieuwbaar eindgebruik
-      van energie toeneemt in de toekomst, als gevolg van jouw keuzes en instellingen.\r\n<br/><br/>\r\nEindgebruik
-      van energie betekent dat verliezen bij omzetting van energiedragers naar elektriciteit
-      of warmte niet zijn meegenomen."
-    short_content_en: ''
-    short_content_nl: ''
+  dependent_on:
   output_element_type_name: vertical_stacked_bar
 - id: 52
   under_construction: false
   unit: PJ
   percentage: false
   group: Overview
-  sub_group: 
-  show_point_label: 
-  growth_chart: 
+  sub_group:
+  show_point_label:
+  growth_chart:
   key: mekko_of_primary_demand
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
-  dependent_on: 
-  description:
-    content_en: "This graph compares primary energy consumption in your country (horizontal
-      axis) by various segments of society and energy sources (vertical axis). Primary
-      use means we are looking at the origins of derived energy carriers like heat,
-      electricity and transport fuels. We also take into consideration the losses
-      that occur when these energy carriers are made.  \r\n<br/><br/>\r\nThe graph
-      for the future is the result of your choices in determining the future energy
-      demand and the future energy generation. The efficiencies for making heat and
-      power are higher in the future than in the present.\r\n<br/><br/>\r\nExample:
-      Economic growth leads to increased energy demand. Energy saving and modern technologies
-      lead to lower energy demand. Choices for heat pumps and electric transport lead
-      to lower total energy demand, but an increase in demand for electricity. How
-      electricity, heat and fuels are generated determines the primary energy demand.\r\n\r\n<br/><br/>\r\nYou
-      can click '<u>Change chart</u>' above the graph, to select different graphs
-      about energy demand."
-    content_nl: "Dit plaatje vergelijkt het primaire energiegebruik in jouw land (horizontale
-      as) voor nu en in de toekomst, opgesplitst naar sector en energiebron (verticale
-      as). Primair gebruik betekent dat we kijken naar de oorsprong van alle energiedragers
-      als warmte, elektriciteit en transportbrandstoffen. We rekenen dus ook de verliezen
-      mee die optreden als een energiedrager wordt gemaakt. \r\n<br/><br/>\r\nDe toekomstgrafiek
-      is het resultaat van jouw keuzes bij het vaststellen van de toekomstige vraag
-      en opwekking van energie en van de toekomstige rendementen van centrales.\r\n<br/><br/>\r\nVoorbeeld:
-      Groei van de economie geeft een hoger energieverbruik. Besparingen en moderne
-      technieken geven een lager verbruik. Keuzes voor warmtepompen en elektrisch
-      vervoer geven een lager totaal energieverbruik maar een hoger aandeel elektriciteit
-      daarbinnen. Hoe jij de elektriciteit, warmte en brandstoffen maakt, bepaalt
-      uiteindelijk de primaire energievraag.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>'
-      boven de grafiek om andere grafieken te tonen over energiegebruik.\r\n\r\n"
-    short_content_en: ''
-    short_content_nl: ''
+  dependent_on:
   output_element_type_name: mekko
 - id: 56
   under_construction: false
@@ -465,30 +233,11 @@
   show_point_label: false
   growth_chart: false
   key: source_of_heat_used_in_households
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how household heat demand changes from now to the
-      future, as a result of the choices in 'Demand'. The demand for heating is divided
-      into all the different technologies available for heating in households.\r\n<br/><br/>\r\nOf
-      course, what technologies are used, does not really change the actual demand
-      for heat, but it can change energy efficiency and sustainability of heat production.
-      In order to reduce heat demand, houses will need to be better insulated, for
-      example.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>' above the graph,
-      to select different graphs about energy demand."
-    content_nl: "Deze grafiek laat zien hoe de warmtevraag van huishoudens verandert
-      in de toekomst, als gevolg van jouw keuzes in het onderdeel 'Vraag'. De warmtevraag
-      valt hier uiteen in alle verschillende technologiën die beschikbaar zijn voor
-      het verwarmen van huizen.\r\n<br/><br/>\r\nDe technieken die je gebruikt om
-      te verwarmen bepalen natuurlijk de warmtevraag niet, maar wel de energie-efficiëntie
-      en hernieuwbaarheid van de warmteproductie. Om de warmtevraag af te laten nemen,
-      moeten huizen bijvoorbeeld beter geïsoleerd worden.\r\n<br/><br/>\r\nKies '<u>Wijzig
-      grafiek</u>' boven de grafiek om andere grafieken te tonen over energiegebruik.\r\n"
-    short_content_en: Household
-    short_content_nl: Huishoudelijk
   output_element_type_name: bezier
   related_output_element_key: household_heat_demand_and_production
 - id: 57
@@ -500,37 +249,11 @@
   show_point_label: true
   growth_chart: true
   key: useful_demand_in_households
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how household final demand for heat and electricity
-      change in the future. Heat and electricity demand depend in part on economic
-      or population growth, but electricity demand also depends on efficiency improvements
-      or the use of alternative technologies.\r\n<br/><br/>\r\nThis graph shows \"useful
-      demand\", which is the energy actually used for a given purpose. This differs
-      from \"final demand\" shown in some of the other graphs in the model, which
-      is the input from energy sources before it's converted to it's useful purpose.\r\n<br/><br/>\r\nThat
-      is why the electricity demand in this graph does not include electricity used
-      for heating, as it is already included in the heating demand.\r\n<br/><br/>\r\nYou
-      can click '<u>Change chart</u>' above the graph, to select different graphs
-      about energy demand."
-    content_nl: "Deze grafiek toont hoe de huishoudelijke vraag naar warmte en elektriciteit
-      veranderen in de toekomst. Deze zijn onder andere afhankelijk van de economische
-      en bevolkingsgroei, maar de elektriciteitsvraag ook van efficiëntieverbeteringen
-      en inzet van alternatieve technologieën.\r\n<br/><br/>\r\nDeze grafiek toont
-      \"nuttig gebruik\", dat betekent dat het de energie toont die nuttig gebruikt
-      wordt voor een bepaald doel. Dit verschilt van \"finaal gebruik\", zoals in
-      sommige andere grafieken in het model. Dit zijn namelijk de verschillende soorten
-      energie die gebruikt worden om tot het nuttige gebruik te komen, waarbij ook
-      een deel van de energie verloren gaat aan omzetting.\r\n<br/><br/>\r\nDaarom
-      wordt in deze grafiek de elektriciteitsvraag getoond exclusief elektriciteit
-      gebruikt voor warmte-opwek, deze zit namelijk al in de warmtevraag.\r\n<br/><br/>\r\nKies
-      '<u>Andere grafiek</u>' boven de grafiek om andere grafieken te tonen over energiegebruik."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 58
   under_construction: false
@@ -541,39 +264,11 @@
   show_point_label: false
   growth_chart: true
   key: effect_of_insulation_in_households
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how household final demand for heat and electricity
-      change in the future. It also shows reduction in heat demand as a result of
-      better insulation. Heat and electricity demand depend in part on economic or
-      population growth, but electricity demand also depends on efficiency improvements
-      or the use of alternative technologies.\r\n<br/><br/>\r\nThis graph shows \"useful
-      demand\", which is the energy actually used for a given purpose. This differs
-      from \"final demand\" shown in some of the other graphs in the model, which
-      is the input from energy sources before it's converted to it's useful purpose.\r\n<br/><br/>\r\nThat
-      is why the electricity demand in this graph does not include electricity used
-      for heating, as it is already included in the heating demand.\r\n<br/><br/>\r\nYou
-      can click '<u>Change chart</u>' above the graph, to select different graphs
-      about energy demand."
-    content_nl: "Deze grafiek toont hoe de huishoudelijke vraag naar warmte en elektriciteit
-      veranderen in de toekomst. Je ziet ook wat de warmtebesparingen zijn als gevolg
-      van betere isolatie. De vraag naar warmte en elektriciteit zijn onder andere
-      afhankelijk van de economische en bevolkingsgroei, maar de elektriciteitsvraag
-      ook van efficiëntieverbeteringen en inzet van alternatieve technologieën.\r\n<br/><br/>\r\nDeze
-      grafiek toont \"nuttig gebruik\", dat betekent dat het de energie toont die
-      nuttig gebruikt wordt voor een bepaald doel. Dit verschilt van \"finaal gebruik\",
-      zoals in sommige andere grafieken in het model. Dit zijn namelijk de verschillende
-      soorten energie die gebruikt worden om tot het nuttige gebruik te komen, waarbij
-      ook een deel van de energie verloren gaat aan omzetting.ul purpose.\r\n<br/><br/>\r\nDaarom
-      wordt in deze grafiek de elektriciteitsvraag getoond exclusief elektriciteit
-      gebruikt voor warmte-opwek, deze zit namelijk al in de warmtevraag.\r\n<br/><br/>\r\nKies
-      '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over energiegebruik.\r\n"
-    short_content_en: Household
-    short_content_nl: Huishoudelijke
   output_element_type_name: bezier
   related_output_element_key: household_heat_demand_and_production
 - id: 61
@@ -585,29 +280,11 @@
   show_point_label: false
   growth_chart: false
   key: additional_infrastructure_investments
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: use_network_calculations
-  description:
-    content_en: "This chart shows how investment costs for the gas and electricity
-      networks change as a result of your choices in sections 'Demand' and 'Supply'.
-      For more information, see section 'Supply' and page 'Infrastructure'. \r\n<br/><br/>\r\n\r\nIf
-      you build more power plants, the high-voltage (HV) grid will need to be extended
-      to accommodate the extra power. If you connect more appliances that need electricity,
-      you may need to enhance the low-voltage (LV) grid or transformers and cables
-      between the LV and medium-voltage (MV) and HV grids. \r\n\r\n"
-    content_nl: "Deze grafiek toont de verandering in investeringskosten in het gasnet
-      en de elektriciteitsnetten als gevolg van jouw keuzes onder 'Vraag' en 'Aanbod'.
-      Voor meer informatie, zie ook het onderdeel 'Aanbod' op pagina 'Elektriciteitsnet'.
-      \r\n\r\n<br/><br/>\r\n\r\nAls je meer elektriciteitscentrales bouwt, moet je
-      het hoogspanningsnet (HS net) verzwaren en uitbreiden om ruimte te maken voor
-      de extra stroom. Als je meer apparaten aan het laagspanningsnet (LS net) hangt,
-      moet je misschien het LS net of de transformatoren en kabels tussen het LS net
-      en de midden- en hoogspanningsnetten verzwaren.\r\n\r\n"
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: waterfall
 - id: 62
   under_construction: false
@@ -618,26 +295,11 @@
   show_point_label: false
   growth_chart: false
   key: source_of_heat_and_electricity_in_agriculture
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_agriculture
-  description:
-    content_en: "This chart shows how much of the heat and electricity that is used
-      in agriculture is produced using combined heat and power (CHP) units. If it
-      is not generated using CHP units, heat is made with the other options visible
-      on the Agriculture 'Heat' page, and electricity is produced centrally.\r\n<br/><br/>\r\nYou
-      can click '<u>Change chart</u>' above the graph, to select different graphs
-      about energy demand."
-    content_nl: "Deze grafiek toont hoeveel van het warmte- en elektriciteitsgebruik
-      in de landbouwsector door warmte-kracht koppelingen (WKK's) wordt ingevuld.
-      Warmte die niet met WKK is gemaakt, kan worden geproduceerd met één van de opties
-      op de Landbouw 'Warmte' pagina. Elektriciteit die niet decentraal wordt gemaakt,
-      komt uit elektriciteitscentrales. \r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>'
-      boven de grafiek om andere grafieken te tonen over industrieel energiegebruik."
-    short_content_en: Agriculture
-    short_content_nl: Landbouw
   output_element_type_name: bezier
 - id: 65
   under_construction: false
@@ -648,30 +310,11 @@
   show_point_label: false
   growth_chart: false
   key: source_of_hot_water_in_households
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: _always_hidden
-  description:
-    content_en: "This graph shows the energy that is used for hot water in the households
-      sector.\r\n<br/><br/>\r\nWhen you change the technologies in the demand for
-      hot water under the households sector you will see the graph change to show
-      what types of energy will be used to produce the heat demand.\r\n<br/><br/>\r\nThe
-      technologies you choose don't really affect the actual demand for hot water,
-      but it can change the energy efficiency and sustainability of hot water production.\r\n<br/><br/>\r\nYou
-      can click '<u>Change chart</u>' above the graph, to select different graphs
-      about energy demand."
-    content_nl: "Deze grafiek toont de hoeveelheid energie die gebruikt wordt voor
-      warm water in huishoudens.\r\n<br/><br/>\r\nAls je de technologieën aanpast
-      waarmee de vraag naar warm water wordt geleverd past de grafiek zich automatisch
-      aan om de vraag naar verschillende energiebronnen aan te passen.\r\n<br/><br/>\r\nDe
-      technologieën die je kiest hebben natuurlijk niet echt invloed op de warmtevraag,
-      maar het kan wel de energie-efficiëntie aanpassen en de hernieuwbaarheid van
-      warm waterproductie.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de
-      grafiek om andere grafieken te tonen over energiegebruik in deze sector."
-    short_content_en: Households
-    short_content_nl: Huishoudelijk
   output_element_type_name: bezier
 - id: 66
   under_construction: false
@@ -682,34 +325,11 @@
   show_point_label: false
   growth_chart: false
   key: source_of_cooling_in_households
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how household cooling demand changes from now to
-      the future, as a result of the choices in 'Demand'. The demand for cooling is
-      dependent on the different technologies available for <strong>heating</strong>
-      in households.\r\n<br/><br/>\r\nOf course, what technologies are used, does
-      not really change the actual demand for cooling, but it can change energy efficiency
-      and sustainability of cooling production. In order to reduce cooling demand,
-      houses will need to be better ventilated, for example.\r\n<br/><br/>\r\nIn order
-      to view this graph under the heating section, click on this section and then
-      click '<u>Change chart</u>' above the graph, to select this graph or another
-      one about energy demand."
-    content_nl: "Deze grafiek laat zien hoe de vraag naar koeling van huishoudens
-      verandert in de toekomst, als gevolg van jouw keuzes in het onderdeel 'Vraag'.
-      De koelingsvraag is afhankelijk van alle verschillende technologieën die beschikbaar
-      zijn voor het <strong>verwarmen</strong> van huizen.\r\n<br/><br/>\r\nDe technieken
-      die je gebruikt om te koelen bepalen natuurlijk de vraag naar koeling niet,
-      maar wel de energie-efficiëntie en hernieuwbaarheid van de koude-productie.
-      Om de koude-vraag af te laten nemen, moeten huizen bijvoorbeeld beter geventileerd
-      worden.\r\n<br/><br/>\r\nAls je deze grafiek wilt zien terwijl je de warmtevraag
-      aanpast klik dan op het tabje verwarming en daar op '<u>Wijzig grafiek</u>'
-      boven de grafiek om deze grafiek te kunnen selecteren.\r\n"
-    short_content_en: Households
-    short_content_nl: Huishoudelijk
   output_element_type_name: bezier
 - id: 67
   under_construction: false
@@ -720,25 +340,11 @@
   show_point_label: false
   growth_chart: false
   key: source_of_cooking_in_households
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows the energy used for cooking in households.\r\n<br/><br/>\r\nThe
-      energy used for cooking is dependent on the technologies are used for cooking.
-      Will households keep using mostly gas, or will they switch to electric cooking
-      or any of the other available technologies? It all changes the energy mix used
-      for cooking."
-    content_nl: "Deze grafiek toont de energie die gebruikt wordt voor koken door
-      huishoudens.\r\n<br/><br/>\r\nDe energie die gebruikt wordt voor koken is afhankelijk
-      van welk soort kooktoestellen ervoor gebruikt worden. Zullen huishoudens in
-      de toekomst vooral gastoestellen blijven gebruiken, of gaan ze over naar andere
-      manieren van koken zoals elektrisch of inductief? Het verandert allemaal de
-      energievraag."
-    short_content_en: Cooking
-    short_content_nl: Koken
   output_element_type_name: bezier
 - id: 68
   under_construction: false
@@ -749,26 +355,11 @@
   show_point_label: false
   growth_chart: true
   key: use_of_final_demand_in_buildings
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_buildings
-  description:
-    content_en: "This chart shows how much of the heat and electricity that is used
-      in buildings is produced using combined heat and power (CHP) units. If it is
-      not generated using CHP units, heat is produced with the other options available
-      on the Buildings 'Heating' page, and electricity is taken from the electricity
-      grid.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>' above the graph,
-      to select different graphs about energy demand."
-    content_nl: "Deze grafiek toont hoeveel van het warmte- en elektriciteitsgebruik
-      in de gebouwensector door warmte-kracht koppelingen (WKK's) wordt ingevuld.
-      Warmte die niet met WKK is gemaakt wordt geproduceerd met de opties op de Gebouwen
-      'Verwarming' pagina. Elektriciteit die niet decentraal wordt gemaakt, komt van
-      het elektriciteitsnet. \r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven
-      de grafiek om andere grafieken te tonen over industrieel energiegebruik."
-    short_content_en: Buildings
-    short_content_nl: Gebouwen
   output_element_type_name: bezier
 - id: 69
   under_construction: false
@@ -779,26 +370,11 @@
   show_point_label: false
   growth_chart: true
   key: effect_of_insulation_in_buildings
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_buildings
-  description:
-    content_en: "This graph shows how the final demand for heat and electricity in
-      buildings change in the future. It also shows reduction in heat demand as a
-      result of better insulation. Heat and electricity demand depend in part on economic
-      and population growth, but electricity demand also depends on efficiency improvements
-      or the use of alternative technologies.\r\n<br/><br/>\r\nYou can click '<u>Change
-      chart</u>' above the graph, to select different graphs about energy demand."
-    content_nl: "Deze grafiek toont hoe de vraag naar warmte en elektriciteit in gebouwen
-      veranderen in de toekomst. Je ziet ook wat de warmte-besparingen zijn als gevolg
-      van betere isolatie. De vraag naar warmte en elektriciteit zijn onder andere
-      afhankelijk van de economische en bevolkingsgroei, maar ook van efficiëntieverbeteringen
-      en inzet van alternatieve technologieën.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>'
-      boven de grafiek om andere grafieken te tonen over energiegebruik."
-    short_content_en: Buildings
-    short_content_nl: Gebouwen
   output_element_type_name: bezier
 - id: 70
   under_construction: false
@@ -809,31 +385,11 @@
   show_point_label: false
   growth_chart: false
   key: source_of_heat_in_buildings
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_buildings
-  description:
-    content_en: "This graph shows how heat demand in buildings changes from now to
-      the future, as a result of the choices in 'Demand'. Heating demand is broken
-      down into all the different technologies that are available for producing heat
-      in the building sector.\r\n<br/><br/>\r\nOf course, what technologies are used,
-      does not really change the actual demand for heat, but it can change energy
-      efficiency and sustainability of heat production. In order to reduce heat demand,
-      buildings will need to be better insulated, for example.\r\n<br/><br/>\r\nYou
-      can click '<u>Change chart</u>' above the graph, to select different graphs
-      about energy demand."
-    content_nl: "Deze grafiek laat zien hoe de warmtevraag van gebouwen verandert
-      in de toekomst, als gevolg van jouw keuzes in het onderdeel 'Vraag'. De warmtevraag
-      valt hier uiteen in alle verschillende technologiën die beschikbaar zijn voor
-      ruimteverwarming in gebouwen.\r\n<br/><br/>\r\nDe technieken die je gebruikt
-      om te verwarmen bepalen natuurlijk de vraag naar warmte niet, maar wel de energie-efficiëntie
-      en hernieuwbaarheid van de warmteproductie. Om de warmtevraag af te laten nemen,
-      moeten huizen bijvoorbeeld beter geïsoleerd worden.\r\n<br/><br/>\r\nKies '<u>Wijzig
-      grafiek</u>' boven de grafiek om andere grafieken te tonen over energiegebruik."
-    short_content_en: Building
-    short_content_nl: Gebouwen
   output_element_type_name: bezier
 - id: 71
   under_construction: false
@@ -844,34 +400,11 @@
   show_point_label: false
   growth_chart: false
   key: source_of_cooling_in_buildings
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_buildings
-  description:
-    content_en: "This graph shows how cooling demand in buildings changes from now
-      to the future, as a result of the choices in 'Demand'. The demand for cooling
-      is dependent on the different technologies available for <strong>heating</strong>
-      in buildings.\r\n<br/><br/>\r\nOf course, what technologies are used, does not
-      really change the actual demand for cooling, but it can change energy efficiency
-      and sustainability of cooling production. In order to reduce cooling demand,
-      buildings will need to be better ventilated, for example.\r\n<br/><br/>\r\nIn
-      order to view this graph under the heating section, click on this section and
-      then click '<u>Change chart</u>' above the graph, to select this graph or another
-      one about energy demand."
-    content_nl: "Deze grafiek laat zien hoe de vraag naar koeling van gebouwen verandert
-      in de toekomst, als gevolg van jouw keuzes in het onderdeel 'Vraag'. De koelingsvraag
-      is afhankelijk van alle verschillende technologieën die beschikbaar zijn voor
-      het <strong>verwarmen</strong> van gebouwen.\r\n<br/><br/>\r\nDe technieken
-      die je gebruikt om te koelen bepalen natuurlijk de vraag naar koeling niet,
-      maar wel de energie-efficiëntie en hernieuwbaarheid van de koude-productie.
-      Om de koude-vraag af te laten nemen, moeten gebouwen bijvoorbeeld beter geventileerd
-      worden.\r\n<br/><br/>\r\nAls je deze grafiek wilt zien terwijl je de warmtevraag
-      aanpast klik dan op het tabje verwarming en daar op '<u>Wijzig grafiek</u>'
-      boven de grafiek om deze grafiek te kunnen selecteren.\r\n"
-    short_content_en: Buildings
-    short_content_nl: Gebouwen
   output_element_type_name: bezier
 - id: 72
   under_construction: false
@@ -882,22 +415,11 @@
   show_point_label: false
   growth_chart: true
   key: use_of_electricity_in_buildings
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_buildings
-  description:
-    content_en: "This graph shows how buildings demand for electricity will change
-      as a result of the choices you make in this section. Electricity demand is dependent
-      on the efficiency of appliances.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
-      above the graph, to select different graphs about energy demand."
-    content_nl: "Deze grafiek toont hoe de elektriciteitsvraag in gebouwen verandert
-      als gevolg van de keuzes en aannames die je in dit onderdeel maakt. De vraag
-      naar elektriciteit is afhankelijk van de efficiëntie van de apparaten.\r\n<br/><br/>\r\nKies
-      '<u>Wijzig grafiek</u>' om andere grafieken te tonen over energiegebruik."
-    short_content_en: Buildings
-    short_content_nl: Gebouwen
   output_element_type_name: bezier
 - id: 74
   under_construction: false
@@ -908,23 +430,11 @@
   show_point_label: false
   growth_chart: false
   key: source_of_electricity_in_buildings
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_buildings
-  description:
-    content_en: "This graph shows how the electricity that buildings use, is generated.
-      Centrally produced electricity is lumped together here. You will get a chance
-      to choose production methods under the 'Supply' section. \r\n<br/><br/>\r\nYou
-      can click '<u>Change chart</u>' above the graph, to select different graphs
-      about energy use."
-    content_nl: "Deze grafiek toont hoe de elektriciteitsvraag door gebouwen wordt
-      ingevuld. Centraal geproduceerde electriciteit is op één hoop gegooid. Die kun
-      je instellen bij onderdeel 'Aanbod'. \r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>'
-      boven de grafiek om andere grafieken te tonen over energiegebruik."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 76
   under_construction: false
@@ -935,23 +445,11 @@
   show_point_label: true
   growth_chart: false
   key: future_energy_imports
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows a breakdown of the energy that we import from other
-      countries in the future by energy source. Each of the bars add up to the end
-      result in the end year (the black bar to the far right of the graph).\r\n<br/><br/>\r\nOverall,
-      the lower the dependence on foreign energy the better it is."
-    content_nl: "Deze grafiek toont de energie die in de toekomst geïmporteerd wordt
-      vanuit andere landen uitgesplitst naar de verschillende energiebronnen. Elk
-      staafje in de grafiek telt op tot de totale import in het eindjaar (het zwarte
-      staafje helemaal rechts).\r\n<br/><br/>\r\nOver het algemeen geldt dat des te
-      minder geïmporteerd wordt, des te beter het is."
-    short_content_en: Future year
-    short_content_nl: Toekomst jaar
   output_element_type_name: waterfall
 - id: 77
   under_construction: false
@@ -962,16 +460,11 @@
   show_point_label: false
   growth_chart: false
   key: gas_network_mix
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: This chart shows the mix of natural- and green gas in the gas network.
-    content_nl: Deze grafiek toont de mix van aardgas and groengas in het gasnet.
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 99
   under_construction: false
@@ -982,28 +475,11 @@
   show_point_label: false
   growth_chart: false
   key: source_of_electricity_production
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph gives a breakdown of current and future electricity production
-      into types of power plants. By default, the future electricity mix is the same
-      as the present one. You can choose how to meet future energy demand with the
-      sliders to the left of the graph. <br/><br/>\r\nDemand for electricity is indicated
-      by the horizontal line. If the resulting electricity production is higher than
-      demand, the model will automatically start exporting this electricity. If you
-      do not build enough production capacity, the model will import electricity. "
-    content_nl: "Deze grafiek toont welke technologieën gebruikt worden voor de huidige
-      en toekomstige elektriciteitsproductie. De toekomstige samenstelling van het
-      productiepark is standaard hetzelfde als de huidige. Je kunt kiezen hoe je de
-      toekomstige vraag wilt invullen met de schuifjes links van de grafiek.\r\n<br/><br/>\r\nDe
-      vraag naar elektriciteit wordt aangegeven met de horizontale lijn. Als de productie
-      hoger is dan de vraag, zal het model automatisch stroom exporteren. Als je te
-      weinig productiecapaciteit bouwt, zal het model stroom importeren.\r\n"
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
   related_output_element_key: merit_order_hourly_supply
 - id: 100
@@ -1020,55 +496,21 @@
   hidden: true
   requires_merit_order: false
   dependent_on: has_fce
-  description:
-    content_en: "This chart shows how much greenhouse gas is emitted during the life
-      cycles of the fuels listed below. These emissions (in CO<sub>2</sub> equivalents)
-      are broken down into four steps: <br/><br/>\r\n1. Extraction - production of
-      the raw material <br/>\r\n2. Treatment - processing the raw material into the
-      final form in which the fuel is used <br/>\r\n3. Transportation - transporting
-      the fuel to the locations at which it is used <br/>\r\n4. Conversion - use of
-      the fuel for production of heat or electricity for example <br/>\r\n<br/>\r\nThe
-      last steps also includes any emissions occurring during waste treatment or storage.\r\n<br/><br/>\r\nThe
-      numbers and references used to quantify the fuel chain emissions can be found
-      in a document that can be <a href='http://refman.et-model.com/publications/1623'
-      target='blank'>downloaded from here</a>."
-    content_nl: "Deze grafiek toont hoeveel broeikasgassen worden uitgestoten tijdens
-      de hele levensduur van onderstaande brandstoffen. De totale uitstoot (in CO<sub>2</sub>
-      equivalenten) is opgedeeld in vier stappen: <br/><br/>\r\n1. Extractie - productie
-      van de ruwe grondstof <br/>\r\n2. Bewerken - omzetten van de grondstof in de
-      bruikbare vorm van de brandstof<br/>\r\n3. Transport - vervoeren naar de locaties
-      waar het wordt gebruikt <br/>\r\n4. Omzetten - gebruik voor bijvoorbeeld het
-      maken van warmte of elektriciteit <br/>\r\n<br/>\r\nDe laatste stap bevat ook
-      alle broeikasgassen die worden uitgestoten tijdens het verwerken of opslaan
-      van afval.\r\n<br/><br/>\r\nDe getallen en referenties die gebruikt zijn om
-      de ketenemissies te kwantificeren zijn te vinden in een document dat je hiervandaan
-      kunt <a href='http://refman.et-model.com/publications/1623' target='blank'>downloaden</a>."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: horizontal_stacked_bar
 - id: 102
   under_construction: false
   unit: bln_euro
   percentage: false
   group: Cost
-  sub_group: 
+  sub_group:
   show_point_label: false
   growth_chart: false
   key: breakdown_electricity_costs
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph show how energy costs will change between the present
-      and future as a result of your choices. \r\n<br/><br/>\r\nCosts are broken down
-      into various relevant categories."
-    content_nl: "Deze grafiek laat zien hoe de kosten voor energie zullen toenemen
-      in de toekomst als gevolg van jouw keuzes. \r\n<br/><br/>\r\nDe kosten zijn
-      opgedeeld in een aantal relevante categorieën. "
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 105
   under_construction: false
@@ -1084,31 +526,6 @@
   hidden: true
   requires_merit_order: false
   dependent_on: has_fce
-  description:
-    content_en: "This chart shows how much greenhouse gas is emitted during the life
-      cycles of the fuels listed below. These emissions (in CO2 equivalents) are broken
-      down into four steps: <br/><br/>\r\n1. Extraction - production of the raw material
-      <br/>\r\n2. Treatment - processing the raw material into the final form in which
-      the fuel is used <br/>\r\n3. Transportation - transporting the fuel to the locations
-      at which it is used <br/>\r\n4. Conversion - use of the fuel for production
-      of heat or electricity for example <br/>\r\n<br/>\r\nThe last steps also includes
-      any emissions occurring during waste treatment or storage.\r\n<br/><br/>\r\nThe
-      numbers and references used to quantify the fuel chain emissions can be found
-      in a document that can be <a href='http://refman.et-model.com/publications/1623'
-      target='blank'>downloaded from here</a>.\r\n"
-    content_nl: "Deze grafiek toont hoeveel broeikasgassen worden uitgestoten tijdens
-      de hele levensduur van onderstaande brandstoffen. De totale uitstoot (in CO2
-      equivalenten) is opgedeeld in vier stappen: <br/><br/>\r\n1. Extractie - productie
-      van de ruwe grondstof <br/>\r\n2. Bewerken - omzetten van de grondstof in de
-      bruikbare vorm van de brandstof<br/>\r\n3. Transport - vervoeren naar de locaties
-      waar het wordt gebruikt <br/>\r\n4. Omzetten - gebruik voor bijvoorbeeld het
-      maken van warmte of elektriciteit <br/>\r\n<br/>\r\nDe laatste stap bevat ook
-      alle broeikasgassen die worden uitgestoten tijdens het verwerken of opslaan
-      van afval.\r\n<br/><br/>\r\nDe getallen en referenties die gebruikt zijn om
-      de ketenemissies \\te kwantificeren zijn te vinden in een document dat je hiervandaan
-      kunt <a href='http://refman.et-model.com/publications/1623' target='blank'>downloaden</a>."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: horizontal_stacked_bar
 - id: 107
   under_construction: false
@@ -1124,31 +541,6 @@
   hidden: true
   requires_merit_order: false
   dependent_on: has_fce
-  description:
-    content_en: "This chart shows how much greenhouse gas is emitted during the life
-      cycles of the fuels listed below. These emissions (in CO2 equivalents) are broken
-      down into four steps: <br/><br/>\r\n1. Extraction - production of the raw material
-      <br/>\r\n2. Treatment - processing the raw material into the final form in which
-      the fuel is used <br/>\r\n3. Transportation - transporting the fuel to the locations
-      at which it is used <br/>\r\n4. Conversion - use of the fuel for production
-      of heat or electricity for example <br/>\r\n<br/>\r\nThe last steps also includes
-      any emissions occurring during waste treatment or storage.\r\n<br/><br/>\r\nThe
-      numbers and references used to quantify the fuel chain emissions can be found
-      in a document that can be <a href='http://refman.et-model.com/publications/1623'
-      target='blank'>downloaded from here</a>.\r\n"
-    content_nl: "Deze grafiek toont hoeveel broeikasgassen worden uitgestoten tijdens
-      de hele levensduur van onderstaande brandstoffen. De totale uitstoot (in CO2
-      equivalenten) is opgedeeld in vier stappen: <br/><br/>\r\n1. Extractie - productie
-      van de ruwe grondstof <br/>\r\n2. Bewerken - omzetten van de grondstof in de
-      bruikbare vorm van de brandstof<br/>\r\n3. Transport - vervoeren naar de locaties
-      waar het wordt gebruikt <br/>\r\n4. Omzetten - gebruik voor bijvoorbeeld het
-      maken van warmte of elektriciteit <br/>\r\n<br/>\r\nDe laatste stap bevat ook
-      alle broeikasgassen die worden uitgestoten tijdens het verwerken of opslaan
-      van afval.\r\n<br/><br/>\r\nDe getallen en referenties die gebruikt zijn om
-      de ketenemissies \\te kwantificeren zijn te vinden in een document dat je hiervandaan
-      kunt <a href='http://refman.et-model.com/publications/1623' target='blank'>downloaden</a>."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: horizontal_stacked_bar
 - id: 111
   under_construction: false
@@ -1159,84 +551,41 @@
   show_point_label: false
   growth_chart: false
   key: security_of_supply
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: 'This chart shows the peak power demand as well as available production
-      capacity. It shows what shares of available production capacity are reliable
-      and unreliable. Things such as wind turbines and solar PV panels are examples
-      of unreliable power production. If the peak power demand is higher than the
-      reliable capacity the loss of load probability will increase. '
-    content_nl: Deze grafiek toont de piekvraag naar elektriciteit en ook het beschikbare
-      stroomproductievermogen. Je kunt zien welk deel hiervan altijd beschikbaar is
-      en welk niet. Windmolens en zonnepanelen zijn alleen beschikbaar als het weer
-      dat toelaat en daarom niet helemaal betrouwbaar. As de piekvraag hoger is dan
-      het betrouwbare vermogen, neemt de kans op onvermogen toe.
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 113
   under_construction: false
   unit: euro
   percentage: false
   group: Cost
-  sub_group: 
+  sub_group:
   show_point_label: false
   growth_chart: false
   key: breakdown_of_total_cost_per_household
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph show how energy costs will change between the present
-      and future as a result of your choices. \r\n<br/><br/>\r\nCosts are broken down
-      into various relevant categories."
-    content_nl: "Deze grafiek laat zien hoe de kosten voor energie zullen toenemen
-      in de toekomst als gevolg van jouw keuzes. \r\n<br/><br/>\r\nDe kosten zijn
-      opgedeeld in een aantal relevante categorieën. "
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 115
   under_construction: false
   unit: Additional emissions (kgCO2/MWhe volatile) ; Additional costs (EUR/MWhe volatile)
   percentage: false
   group: Supply
-  sub_group: 
+  sub_group:
   show_point_label: false
   growth_chart: false
   key: flexibility_of_backup_scatter_plot
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This chart shows the additional costs and CO<sub>2</sub> emissions
-      for different backup options for volatile power. Volatile technologies like
-      wind or solar cannot always be relied upon to produce power. This is unfortunate,
-      because most backup plants use fossil fuels, making volatile electricity less
-      free and clean than many people claim or expect it to be. The choice of a backup
-      technology is therefore an important one, as this will determine the effective
-      emissions and costs of electricity for volatile electricity production.\r\n<br/><br/>\r\nThe
-      additional costs and emissions are both expressed per MWh<sub>e</sub> of the
-      volatile electricity production in your scenario."
-    content_nl: "Deze grafiek toont de extra kosten en CO<sub>2</sub> uitstoot voor
-      backup opties voor volatiele stroomopwek.\r\nJe kunt niet altijd rekenen op
-      stroom van volatiele technologieën als wind en zon. Dat is jammer, want de meeste
-      backup opties gebruiken fossiele brandstoffen. Daardoor zijn en wind en zon
-      niet zo schoon en gratis als men zou willen of denken. De keuze voor backup
-      is dan ook zeer belangrijk, omdat hierdoor de effectieve kosten en uitstoot
-      van volatiele stroom bepaald worden. \r\n<br/><br/>\r\nDe extra kosten en uitstoot
-      zijn uitgedrukt per MWh<sub>e</sub> van de volatiele stroomproductie in jouw
-      scenario. "
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: scatter
 - id: 116
   under_construction: false
@@ -1247,27 +596,11 @@
   show_point_label: false
   growth_chart: false
   key: merit_order_table
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_merit_order
-  description:
-    content_en: "This table shows the merit order of your scenario. Based on your
-      assumptions concerning available electricity production technologies, fuel prices,
-      CO<sub>2</sub> emissions costs, and operating and maintenance costs the model
-      calculates the order in which power plants are used to meet the demand.\r\n<br/><br/>\r\nThe
-      table shows what place in the merit order each technology has, which is based
-      on the operating costs. Also the table shows the available capacity of each
-      technology as well as the full load hours."
-    content_nl: "Deze tabel toont de 'merit order' van jouw scenario. Gebaseerd op
-      je aannames over de kosten voor onderhoud en beheer, brandstof en CO<sub>2</sub>
-      van de gebouwde  elektriciteitscentrales, berekent het ETM de volgorde waarmee
-      centrales de stroomvraag invullen. \r\n<br/><br/>\r\nIn de tabel kun je zien
-      welke plek iedere technologie in de rangschikking heeft, gebaseerd op de bijbehorende
-      draaikosten. Ook zie je het beschikbare vermogen en het aantal vollast draaiuren."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: html_table
 - id: 118
   under_construction: false
@@ -1278,30 +611,11 @@
   show_point_label: false
   growth_chart: false
   key: employment_categories
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: _always_hidden
-  description:
-    content_en: "This graph shows the net local employment associated with energy
-      technologies in the present and future. The latter is the result of your settings
-      in sections 'Demand' and 'Supply'. Both the present and future values get updated
-      by your settings in the  'Costs' section.\r\n \r\n<br/><br/>\r\nThe employment
-      module is currently limited in scope; the 'Agriculture' and 'Industry' sectors
-      are excluded from the employment calculation. More details can be found in our
-      <a href=\"https://github.com/quintel/documentation/blob/master/general/employment.md\"
-      target=\"_blank\">documentation</a>."
-    content_nl: "Deze grafiek vergelijkt de energie-technologieën gebonden binnenlandse
-      werkgelegenheid in de toekomst met de huidige waarde.\r\nDe waardes in de toekomst
-      veranderen als gevolg van jouw instellingen in de onderdelen 'Vraag' en 'Aanbod'.
-      Zowel de huidige als toekomstige waardes veranderen door je instellingen bij
-      het onderdeel 'Kosten'.\r\n\r\n<br/><br/>\r\nDe werkgelegenheidsmodule is momenteel
-      beperkt. De sectoren 'Landbouw' en 'Industrie' zijn uitgesloten van de berekening.
-      Bekijk onze <a href=\"https://github.com/quintel/documentation/blob/master/general/employment.md\"
-      target=\"_blank\">documentatie</a> voor meer informatie."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 123
   under_construction: false
@@ -1312,27 +626,11 @@
   show_point_label: false
   growth_chart: false
   key: sankey
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "Sankey diagrams show how, where and how much energy is used. At the
-      left this diagram starts with primary energy forms. The energy that is used
-      to generate electricity and heat is shown in the middle. On the right you can
-      see where the energy is used. <br/>\r\nFloating over the chart with you mouse
-      will highlight different parts and reveal more information.\r\n<br><br>\r\nNote
-      that losses due to distribution and refinement are not taking into account.\r\n\r\n"
-    content_nl: "Sankey diagrammen tonen hoe, waar en hoeveel energie wordt gebruikt.
-      Aan de linkerkant zijn de primaire energievormen te zien. Het energiegebruik
-      voor de productie van elektriciteit en warmte is in het midden te zien. Aan
-      de rechterkant is te zien waar de energie gebruikt wordt. <br/>\r\nAls je met
-      je muis over de grafiek gaat, zie je verschillende onderdelen oplichten en kun
-      je meer informatie krijgen.\r\n<br><br>\r\nNB: verliezen tengevolge van transport
-      en raffinage van energiedragers zijn buiten beschouwing gelaten.\r\n\r\n"
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: sankey
 - id: 125
   under_construction: false
@@ -1343,27 +641,11 @@
   show_point_label: false
   growth_chart: false
   key: merit_order
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_merit_order
-  description:
-    content_en: "This chart shows the merit order of your scenario. Based on your
-      assumptions concerning available electricity production technologies, fuel prices,
-      CO<sub>2</sub> emissions costs, and operating and maintenance costs the model
-      calculates the order in which power plants are used to meet the demand.\r\n<br/><br/>\r\nThe
-      chart shows what place in the merit order each technology has, which is based
-      on the operating costs. Also the table shows the available capacity of each
-      technology as well as the full load hours."
-    content_nl: "Deze grafiek toont de 'merit order' van jouw scenario. Gebaseerd
-      op je aannames over de kosten voor onderhoud en beheer, brandstof en CO<sub>2</sub>
-      van de gebouwde  elektriciteitscentrales, berekent het ETM de volgorde waarmee
-      centrales de stroomvraag invullen. \r\n<br/><br/>\r\nIn de grafiek kun je zien
-      welke plek iedere technologie in de rangschikking heeft, gebaseerd op de bijbehorende
-      draaikosten."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: cost_capacity_bar
 - id: 127
   under_construction: false
@@ -1374,23 +656,11 @@
   show_point_label: false
   growth_chart: false
   key: renewability_targets
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: This chart summarizes the targets that can be set in this section.
-      For each target, it shows both the present and the future values. When you set
-      a target, a line will appear on the chart to indicate it. If the target is met
-      in the future scenario, the line is green, if not, the line shows up red.
-    content_nl: Deze grafiek geeft een overzicht van de doelen die hier ingesteld
-      kunnen worden. De grafiek toont steeds de waardes die horen bij de huidige situatie
-      en bij jouw toekomstscenario. Als je een doel instelt, verschijnt er een lijn
-      op de grafiek die je doel aangeeft. Deze lijn is groen als het doel wordt gehaald
-      in het toekomst-scenario en rood als dat niet het geval is.
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: target_bar
 - id: 129
   under_construction: false
@@ -1401,16 +671,11 @@
   show_point_label: false
   growth_chart: false
   key: sankey_2010
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: sankey
 - id: 130
   under_construction: false
@@ -1421,31 +686,11 @@
   show_point_label: false
   growth_chart: true
   key: use_of_final_demand_in_industry_aluminium
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how demand for energy of the aluminium industry
-      will change as a result of the choices you make in this section. Industrial
-      energy demand is mainly determined by growth of the sector’s output and investments
-      in energy saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy
-      use, so conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
-      use is the use of energy carriers (like oil) to make non-energy products such
-      as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
-      to select different graphs about industrial energy demand."
-    content_nl: "Deze grafiek toont hoe de industriële energievraag van de aluminium
-      sector gaat veranderen als gevolg van jouw keuzes. Industrieel energiegebruik
-      wordt vooral bepaald door de groei van de sector en investeringen in energiebesparende
-      technologieën. \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie,
-      dus verliezen bij de omzetting van energiedragers naar warmte en elektriciteit
-      zijn niet meegenomen. <br/> \r\nNiet-energetisch gebruik is het gebruik van
-      energiedragers (zoals olie) om bijvoorbeeld producten als kunstmest of smeermiddelen
-      te maken.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de grafiek om
-      andere grafieken te tonen over industrieel energiegebruik."
-    short_content_en: Aluminium
-    short_content_nl: Aluminium
   output_element_type_name: bezier
 - id: 131
   under_construction: false
@@ -1456,31 +701,11 @@
   show_point_label: false
   growth_chart: true
   key: use_of_final_demand_in_industry_other_metals
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how industrial demand for energy will change as
-      a result of the choices you make in this section. Industrial energy demand is
-      mainly determined by growth of the sector’s output and investments in energy
-      saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy use, so
-      conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
-      use is the use of energy carriers (like oil) to make non-energy products such
-      as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
-      to select different graphs about industrial energy demand."
-    content_nl: "Deze grafiek toont hoe de industriële energievraag gaat veranderen
-      als gevolg van jouw keuzes. Industrieel energiegebruik wordt vooral bepaald
-      door de groei van de sector en investeringen in energiebesparende technologieën.
-      \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie, dus verliezen
-      bij de omzetting van energiedragers naar warmte en elektriciteit zijn niet meegenomen.
-      <br/> \r\nNiet-energetisch gebruik is het gebruik van energiedragers (zoals
-      olie) om bijvoorbeeld producten als kunstmest of smeermiddelen te maken.\r\n<br/><br/>\r\nKies
-      '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over industrieel
-      energiegebruik."
-    short_content_en: Other metals
-    short_content_nl: Overige metalen
   output_element_type_name: bezier
 - id: 132
   under_construction: false
@@ -1491,23 +716,11 @@
   show_point_label: false
   growth_chart: false
   key: dependence_targets
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: This chart summarizes the targets that can be set in this section.
-      For each target, it shows both the present and the future values. When you set
-      a target, a line will appear on the chart to indicate it. If the target is met
-      in the future scenario, the line is green, if not, the line shows up red.
-    content_nl: Deze grafiek geeft een overzicht van de doelen die hier ingesteld
-      kunnen worden. De grafiek toont steeds de waardes die horen bij de huidige situatie
-      en bij jouw toekomstscenario. Als je een doel instelt, verschijnt er een lijn
-      op de grafiek die je doel aangeeft. Deze lijn is groen als het doel wordt gehaald
-      in het toekomst-scenario en rood als dat niet het geval is.
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: target_bar
 - id: 133
   under_construction: false
@@ -1518,23 +731,11 @@
   show_point_label: false
   growth_chart: false
   key: cost_targets
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: This chart summarizes the targets that can be set in this section.
-      For each target, it shows both the present and the future values. When you set
-      a target, a line will appear on the chart to indicate it. If the target is met
-      in the future scenario, the line is green, if not, the line shows up red.
-    content_nl: Deze grafiek geeft een overzicht van de doelen die hier ingesteld
-      kunnen worden. De grafiek toont steeds de waardes die horen bij de huidige situatie
-      en bij jouw toekomstscenario. Als je een doel instelt, verschijnt er een lijn
-      op de grafiek die je doel aangeeft. Deze lijn is groen als het doel wordt gehaald
-      in het toekomst-scenario en rood als dat niet het geval is.
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: target_bar
 - id: 134
   under_construction: false
@@ -1545,23 +746,11 @@
   show_point_label: false
   growth_chart: false
   key: area_targets
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: This chart summarizes the targets that can be set in this section.
-      For each target, it shows both the present and the future values. When you set
-      a target, a line will appear on the chart to indicate it. If the target is met
-      in the future scenario, the line is green, if not, the line shows up red.
-    content_nl: Deze grafiek geeft een overzicht van de doelen die hier ingesteld
-      kunnen worden. De grafiek toont steeds de waardes die horen bij de huidige situatie
-      en bij jouw toekomstscenario. Als je een doel instelt, verschijnt er een lijn
-      op de grafiek die je doel aangeeft. Deze lijn is groen als het doel wordt gehaald
-      in het toekomst-scenario en rood als dat niet het geval is.
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: target_bar
 - id: 135
   under_construction: false
@@ -1572,26 +761,11 @@
   show_point_label: false
   growth_chart: true
   key: use_of_final_demand_in_industry_steel
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how the steel industry's demand for energy will
-      change as a result of the choices you make in this section. This is mainly determined
-      by growth of the sector’s output and investments in energy saving technologies.
-      \r\n<br/><br/> \r\nThe graph shows final energy use and some conversion losses
-      in making steel. Conversion losses for producing heat or power are not included,
-      but conversion losses for making cokes or coking gas, for example, are."
-    content_nl: "Deze grafiek toont hoe de energievraag van de staalindustrie gaat
-      veranderen als gevolg van jouw keuzes. Dit wordt vooral bepaald door de groei
-      van de sector en investeringen in energiebesparende technologieën. \r\n<br/><br/>\r\nDeze
-      grafiek toont eindgebruik van energie en sommige omzetverliezen. Verliezen bij
-      de omzetting van energiedragers naar warmte en elektriciteit zijn niet meegenomen,
-      maar voor omzettingen naar bijvoorbeeld cokes en cokes gas wel."
-    short_content_en: Steel
-    short_content_nl: Staal
   output_element_type_name: bezier
 - id: 136
   under_construction: false
@@ -1602,26 +776,11 @@
   show_point_label: false
   growth_chart: true
   key: use_of_final_demand_in_industry_metal
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how the metal industry's demand for energy will
-      change as a result of the choices you make in this section. This is mainly determined
-      by growth of the sector’s output and investments in energy saving technologies.
-      \r\n<br/><br/> \r\nThe graph shows mostly final energy use. Conversion losses
-      for producing heat or power are not included, but conversion losses for making
-      cokes or coke gas, for example, are."
-    content_nl: "Deze grafiek toont hoe de energievraag van de metaalindustrie gaat
-      veranderen als gevolg van jouw keuzes. Dit wordt vooral bepaald door de groei
-      van de sector en investeringen in energiebesparende technologieën. \r\n<br/><br/>\r\nDeze
-      grafiek toont overwegend eindgebruik van energie. Verliezen bij de omzetting
-      van energiedragers naar warmte en elektriciteit zijn niet meegenomen, maar voor
-      omzettingen naar bijvoorbeeld cokes en cokes gas wel."
-    short_content_en: Metal
-    short_content_nl: Metaal
   output_element_type_name: bezier
 - id: 137
   under_construction: false
@@ -1632,19 +791,11 @@
   show_point_label: false
   growth_chart: false
   key: impact_of_climate_on_heat_and_cooling_demand_households_and_buildings
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how heating and cooling demand in households and
-      buildings changes from now to the future, as a result of the choices in 'Demand'.\r\n"
-    content_nl: 'Deze grafiek laat zien hoe de vraag naar verwarming en koeling van
-      huishoudens en gebouwen verandert in de toekomst, als gevolg van jouw keuzes
-      in het onderdeel ''Vraag''. '
-    short_content_en: Heating and cooling demand of households and buildings
-    short_content_nl: Warmte- en koudevraag van huishoudens en gebouwen
   output_element_type_name: bezier
 - id: 138
   under_construction: false
@@ -1660,31 +811,6 @@
   hidden: true
   requires_merit_order: false
   dependent_on: has_fce
-  description:
-    content_en: "This chart shows how much greenhouse gas is emitted during the life
-      cycles of the fuels listed below. These emissions (in CO2 equivalents) are broken
-      down into four steps: <br/><br/>\r\n1. Extraction - production of the raw material
-      <br/>\r\n2. Treatment - processing the raw material into the final form in which
-      the fuel is used <br/>\r\n3. Transportation - transporting the fuel to the locations
-      at which it is used <br/>\r\n4. Conversion - use of the fuel for production
-      of heat or electricity for example <br/>\r\n<br/>\r\nThe last steps also includes
-      any emissions occurring during waste treatment or storage.\r\n<br/><br/>\r\nThe
-      numbers and references used to quantify the fuel chain emissions can be found
-      in a document that can be <a href='http://refman.et-model.com/publications/1623'
-      target='blank'>downloaded from here</a>."
-    content_nl: "Deze grafiek toont hoeveel broeikasgassen worden uitgestoten tijdens
-      de hele levensduur van onderstaande brandstoffen. De totale uitstoot (in CO2
-      equivalenten) is opgedeeld in vier stappen: <br/><br/>\r\n1. Extractie - productie
-      van de ruwe grondstof <br/>\r\n2. Bewerken - omzetten van de grondstof in de
-      bruikbare vorm van de brandstof<br/>\r\n3. Transport - vervoeren naar de locaties
-      waar het wordt gebruikt <br/>\r\n4. Omzetten - gebruik voor bijvoorbeeld het
-      maken van warmte of elektriciteit <br/>\r\n<br/>\r\nDe laatste stap bevat ook
-      alle broeikasgassen die worden uitgestoten tijdens het verwerken of opslaan
-      van afval.\r\n<br/><br/>\r\nDe getallen en referenties die gebruikt zijn om
-      de ketenemissies \\te kwantificeren zijn te vinden in een document dat je hiervandaan
-      kunt <a href='http://refman.et-model.com/publications/1623' target='blank'>downloaden</a>."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: horizontal_stacked_bar
 - id: 140
   under_construction: false
@@ -1695,16 +821,11 @@
   show_point_label: false
   growth_chart: false
   key: plant_profitability
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_merit_order
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: html_table
 - id: 141
   under_construction: false
@@ -1715,50 +836,26 @@
   show_point_label: false
   growth_chart: false
   key: chp_properties
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This table shows an overview of all CHP plants installed in your
-      scenario. The columns contain (from left to right) name, number of units, electricity
-      production, heat production and installed capacity of CHP plants.\r\n"
-    content_nl: "Deze tabel geeft een overzicht van alle geïnstalleerde WKK in je
-      toekomstscenario. De kolommen bevatten (van links naar rechts) de naam, het
-      aantal, de productie van elektriciteit, de productie van warmte en het geïnstalleerde
-      (elektrische) vermogen van WKK.\r\n"
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: html_table
 - id: 142
   under_construction: false
   unit: bln_euro
   percentage: false
   group: Cost
-  sub_group: 
+  sub_group:
   show_point_label: false
   growth_chart: false
   key: investment_table
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: 'This table shows an overview of the investment cost of heat and electricity
-      producing technologies. The investment costs are shown for both the start scenario
-      (2010) and for the future scenario. In both cases a ''green-field'' approach
-      is taken: no previously installed technologies are assumed. The last column
-      shows the difference between the investment costs of the two scenarios.'
-    content_nl: 'Deze tabel geeft een overzicht van de investeringskosten van warmte-
-      en elektriciteit producerende technologieën. De investeringskosten worden getoond
-      voor zowel het startscenario (2010) als het toekomstscenario. In beide gevallen
-      wordt een ''green-field'' aanpak gebruikt: er wordt aangenomen dat er eerder
-      geen technologieën zijn geïnstalleerd. De laatste kolom laat het verschil zien
-      tussen de investeringskosten voor de twee scenarios. '
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: html_table
 - id: 143
   under_construction: false
@@ -1769,71 +866,11 @@
   show_point_label: false
   growth_chart: false
   key: energy_storage
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This chart gives an impression of how the costs of conversion technologies
-      compare and at what point it might become economically interesting to build
-      first conversion units.\r\n\r\n<br/><br/>\r\n\r\nThe <b>x-axis</b> of the chart
-      displays the total installed generation capacity of wind and solar. If values
-      of ~15 GW of wind and solar capacity are exceeded, the first occurrences of
-      excess power are observed in The Netherlands. The <b>y-axis</b> has the unit
-      € / MWh. In case of wind turbines, it refers to the <i>present</i> costs of
-      total electricity production of inland wind turbines, as shown in \r\n<a href=\"/scenario/costs/wind/investment\">'wind
-      turbines' section of Costs</a> \r\n\r\nIn case of the storage and conversion
-      technology, the y-axis indicates the cost for delivering useful energy via the
-      conversion of excess. \r\n\r\n<br/><br/>\r\n\r\nThe indicator line shows how
-      much volatile capacity you have installed (if you do not see a line, you installed
-      more than 120 GW). It is the only thing in the chart that responds to your slider
-      settings. \r\n\r\n<br/><br/>\r\n\r\nTo generate the curves in this chart we
-      made quite a few assumptions, most importantly: \r\n\r\n<ul style=\"overflow:
-      hidden\">\r\n\r\n<li>Excess electricity is not exported, but curtailed, stored
-      or converted.</li> \r\n<li>The ratio of installed wind and solar capacities
-      (x-axis) is fixed to the ratio installed in 2010.</li> \r\n<li>Everything else
-      stays the same; the chart does not react to your slider settings.</li> \r\n<li>Only
-      marginal cost are displayed; in other words, the curves represent the cost for
-      installing a first conversion unit or one more wind turbine. </li> \r\n<li>Future
-      cost reductions of technologies are not taken into account (learning effects
-      and economy of scale).</li> \r\n</ul> \r\n\r\nFor a detailed explanation and
-      a complete list of assumptions, have a look at our <a href=\"https://github.com/quintel/documentation/blob/master/general/storage.md\"
-      target =\"_blank\">documentation</a>. "
-    content_nl: "Deze grafiek geeft een indicatie van hoe de kosten van een aantal
-      conversie technologieën zich tot elkaar verhouden en vanaf welk punt het economisch
-      interessant zou kunnnen worden om conversie eenheden te bouwen.\r\n\r\n<br/><br/>\r\n\r\nDe
-      <b>x-as</b> van de grafiek toont het totaal geïnstalleerd vermogen van wind-
-      en zonne-energie. Als dit vermogen hoger komt te liggen dan ~15GW, zullen in
-      Nederland de eerste momenten met een overschot aan elektriciteit zich voordoen.
-      De <b>y-as</b> heeft als eenheid € / MWh. In het geval van windturbines verwijst
-      dit naar de <i>huidige</i> kosten van de totale elektriciteit productie van
-      wind turbines op land, zoals te zien in <a href=\"/scenario/costs/wind/investment\">'Windmolens'
-      sectie van Kosten</a>. \r\n\r\nIn het geval van opslag en conversie technologie
-      geeft de y-as een indicatie van de kosten om bruikbare energie te leveren door
-      de conversie van overtollige elektriciteit.\r\n\r\n<br/><br/>\r\n\r\nDe stippellijn
-      laat zien hoeveel volatiel vermogen jij in jouw scenario hebt opgesteld (als
-      je geen lijn ziet heb je meer dan 120GW opgesteld). Deze lijn is het enige dat
-      beïnvloed wordt door jouw slider instellingen.\r\n\r\n<br/><br/>\r\n\r\nOm de
-      curves in deze grafiek te genereren hebben wij een heel aantal aannames gedaan,
-      de belangrijkste zijn:\r\n\r\n<ul style=\"overflow: hidden\">\r\n\r\n<li>Overtollige
-      elektriciteit wordt niet geëxporteerd, maar opgeslagen, omgezet of vermeden
-      door het uitschakelen van wind- en/of zonne-energie. </li>\r\n<li>De verhouding
-      van het geïnstalleerde wind en zon vermogen is vastgezet op de verhouding in
-      2010. </li>\r\n<li>Al het andere blijft hetzelfde; de grafiek reageert niet
-      op je slider instellingen. </li>\r\n<li>Slechts de marginale kosten worden weergegeven;
-      in andere woorden de curves representeren de kosten om een eerste conversie
-      eenheid of een extra wind turbine te plaatsen.</li>\r\n<li>Toekomstige kostendalingen
-      van de verschillende technologieën worden niet in ogenschouw genomen (leereffecten
-      en schaalvoordelen).</li>\r\n</ul> \r\n\r\nVoor een gedetailleerde uitleg en
-      een complete lijst van aannames, kunt u onze <a href=\"https://github.com/quintel/documentation/blob/master/general/storage.md\"
-      target =\"_blank\">documentatie</a> bekijken. "
-    short_content_en: This chart gives an impression of how the costs of conversion
-      technologies compare and at what point it might become economically interesting
-      to build first conversion units.
-    short_content_nl: Deze grafiek geeft een impressie hoe de kosten van conversietechnologieën
-      zich tot elkaar verhouden en op welk moment het economisch rendabel wordt om
-      de eerste conversie-eenheden te bouwen.
   output_element_type_name: storage
 - id: 145
   under_construction: false
@@ -1844,21 +881,11 @@
   show_point_label: false
   growth_chart: false
   key: population_residences_overview
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: This table displays the population, the number of residences and the
-      average number of inhabitants per residence in the present and the future scenario.
-    content_nl: Deze tabel toont het aantal inwoners, het aantal huishoudens en het
-      gemiddelde aantal inwoners per huishouden.
-    short_content_en: This table displays the population, the number of residences
-      and the average number of inhabitants per residence in the present and the future
-      scenario.
-    short_content_nl: Deze tabel toont het aantal inwoners, het aantal huishoudens
-      en het gemiddelde aantal inwoners per huishouden.
   output_element_type_name: html_table
 - id: 146
   under_construction: false
@@ -1869,39 +896,11 @@
   show_point_label: false
   growth_chart: false
   key: final_demand_mekko_mece
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This section compares your country's final energy consumption (horizontal
-      axis of graph) by various segments of society and final energy carriers (vertical
-      axis of graph). An energy carrier is a usable form of energy, such as electricity
-      of gasoline. Final use means that we do not take into account any losses in
-      producing the energy carriers.\r\n<br/><br/>\r\nThe graph for the future is
-      the result of your choices in section 'Demand'.\r\n<br/><br/>\r\nExample: Strong
-      economic growth leads to increased energy demand. Energy savings and choices
-      for modern technologies lead to lower energy demand. Choices for heat pumps
-      and electric transportation lead to lower total energy demand, but an increase
-      in demand for electricity. How this electricity is generated (you will choose
-      this later on in the model) determines the total primary amount of energy saved.
-      \r\n\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>' above the graph, to
-      select different graphs about energy demand.\r\n"
-    content_nl: "Dit gedeelte vergelijkt het eindgebruik van energie (horizontale
-      as) in jouw land voor nu en in de toekomst, opgesplitst naar sector en energiedrager
-      (verticale as). Een energiedrager is een nuttige vorm van energie, zoals benzine
-      of elektriciteit bijvoorbeeld. Eindgebruik betekent dat we verloren energie
-      niet meerekenen bij het maken van de drager. \r\n<br/><br/>\r\n\r\nDe toekomstgrafiek
-      is het resultaat van jouw keuzes bij het onderdeel 'Vraag'.\r\n<br/><br/>\r\n\r\nVoorbeeld:
-      Sterke groei van de economie geeft aanleiding tot een hoger energieverbruik.
-      Besparingen en moderne technieken leiden tot een lager energieverbruik. Keuzes
-      voor warmtepompen, en elektrisch vervoer geven aanleiding tot lager totaal energieverbruik
-      maar wel een hoger percentage elektriciteit binnen het totaal. Hoe jij verderop
-      de elektriciteit opwekt, bepaalt uiteindelijk de totale primaire energiebesparing.\r\n\r\n<br/><br/>\r\nKies
-      '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over energiegebruik.\r\n"
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: mekko
 - id: 147
   under_construction: false
@@ -1912,29 +911,11 @@
   show_point_label: false
   growth_chart: false
   key: import_export_capacity
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "The data in this chart is based on a relatively simple four country
-      model (including NL, DE, BE and FR). The model optimises the production of electricity
-      of the whole system taking interconnector capacities as boundary conditions.\r\n<br><br>\r\nThe
-      main assumptions / simplifications used in the model are:\r\n<br>\r\n<ul>\r\n<li>The
-      Merit Order can be represented as a polynomial of second degree. A smooth function
-      is needed for the optimisation to reach a unique solution.</li>\r\n<li>Ramping
-      speeds are not modeled: plants can switch on and off instantaneously.</li>\r\n<li>Loop
-      flows are excluded (it is not possible for a country to receive its own exported
-      electricity).</li>\r\n</ul>\r\nIn this research, each country is represented
-      as one single price\r\nzone comprising generation and load with interconnection
-      to neighbouring countries. And only cross-border transmission capacities are
-      taken into account. This means that constraints within each country are not
-      considered. (see Chapter 4.3.2 of <a href=\"http://refman.et-model.com/publications/820\"
-      target=\"_blank\">Wind Integration</a>)"
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: import_export_capacity
 - id: 148
   under_construction: false
@@ -1945,24 +926,11 @@
   show_point_label: false
   growth_chart: false
   key: import_export_renewables
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This chart illustrates the effect that increased renewables have
-      on wholesale electricity prices.<br><br>\r\nBecause the Merit Order prioritises
-      the production by cheap producers, the increase of Renewable capacity translates
-      in lower electricity prices for the country with the capacity. (see <a href=\"/scenario/costs/merit_order/merit-order\"
-      >Merit Order</a>)\r\n<br><br>\r\nRenewable production is not dispatchable, so
-      whenever there is a surplus of production it will be exported to other price-zones
-      (countries in the model), respecting interconnection constraints.\r\nThis translates
-      in lower prices also for the importer country because part of its demand is
-      met by 'zero-cost' (and possibly negatively priced) supply. "
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: import_export_renewables
 - id: 149
   under_construction: false
@@ -1973,24 +941,11 @@
   show_point_label: false
   growth_chart: false
   key: import_export_flows
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This chart shows the interconnection capacity between the Netherlands,
-      Germany, France and Belgium. \r\nLarger capacity allows for higher electricity
-      import and export spikes, resulting in better convergence of electricity prices
-      across countries.\r\n<br><br>\r\nNOTE: the interconnector between Belgium and
-      France is asymmetrical."
-    content_nl: "Deze grafiek toont de interconnectie capaciteit tussen Nederland,
-      Duitsland, Frankrijk en België.\r\nHoge pieken in import en export van elektriciteit
-      kunnen beter worden opgevangen als de interconnectie capaciteit groot is, wat
-      een positief effect heeft op de prijsconvergentie in de verbonden landen.\r\n<br><br>\r\nNB:
-      de interconnector tussen België en Frankrijk is asymmetrisch."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: import_export_flows
 - id: 152
   under_construction: false
@@ -2001,33 +956,11 @@
   show_point_label: false
   growth_chart: true
   key: use_of_final_demand_in_industry_chemical_detailed
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how demand for energy in the chemical industry will
-      change as a result of the choices you make in this section. Industrial energy
-      demand is mainly determined by growth of the sector’s output and investments
-      in energy saving technologies.\r\n<br /><br />\r\nThe graph shows final energy
-      use, so conversion losses for producing heat or power are not included.\r\nNon-energetic
-      demand is the use of energy carriers to make chemical products that not serve
-      as fuels. For example, oil and natural gas can be used to produce plastics and
-      fertilizers. \r\n<br /><br />\r\nYou can choose 'Change chart' to select different
-      graphs about industrial energy demand."
-    content_nl: "Deze grafiek toont hoe de energievraag van de chemische industrie
-      gaat veranderen als gevolg van jouw keuzes. Industrieel energiegebruik wordt
-      vooral bepaald door de groei van de sector en investeringen in energiebesparende
-      technologieën.\r\n<br /><br />\r\nDeze grafiek toont eindgebruik van energie,
-      dus verliezen bij de omzetting van energiedragers naar warmte en elektriciteit
-      zijn niet meegenomen. \r\nNiet-energetisch gebruik is het gebruik van energiedragers
-      om chemische producten te maken. Zo wordt olie gebruikt voor het produceren
-      van plastics en kan aardgas gebruikt worden voor de productie van kunstmest.\r\n<br
-      /><br />\r\nKies 'Wijzig grafiek' boven de grafiek om andere grafieken te tonen
-      over industrieel energiegebruik."
-    short_content_en: Chemical industry
-    short_content_nl: Chemische industrie
   output_element_type_name: bezier
 - id: 156
   under_construction: false
@@ -2038,28 +971,11 @@
   show_point_label: false
   growth_chart: false
   key: import_export_cwe
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: _always_hidden
-  description:
-    content_en: "This chart shows the 'day-ahead' price of electricity for the Central
-      Western European (CWE) countries (BE, DE, FR, LU and NL) for the month of January
-      2014 as published on <a href=\"http://www.apxgroup.com/market-results/cwe/\"
-      target=\"_blank\">http://www.apxgroup.com/market-results/cwe</a>.\r\n<br/><br/>\r\nThe
-      extent of price 'convergence' (how often prices are equal) is a measure for
-      the success of market coupling. Coupling can be improved by increasing interconnector
-      capacity between countries or by employing smarter market mechanisms."
-    content_nl: "Deze grafiek toont de 'day-ahead' prijs van elektriciteit voor de
-      Centraal West Europese (CWE) landen (BE, DE, FR, LU en NL) voor de maand januari
-      in 2014 zoals gepubliceerd op <a href=\"http://www.apxgroup.com/market-results/cwe/\"
-      target=\"_blank\">http://www.apxgroup.com/market-results/cwe</a>.\r\n<br/><br/>\r\nDe
-      prijsconvergentie (hoe vaak prijzen gelijk zijn) is een maat voor het succes
-      van de marktkoppeling. De koppeling wordt geholpen door meer interconnectiecapaciteit
-      tussen landen en door slimmere marktmechanismen in te zetten.\r\n"
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: import_export_cwe
 - id: 157
   under_construction: false
@@ -2070,16 +986,11 @@
   show_point_label: false
   growth_chart: false
   key: production_curve_coal
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: time_curve
 - id: 158
   under_construction: false
@@ -2090,16 +1001,11 @@
   show_point_label: false
   growth_chart: false
   key: production_curve_crude_oil
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: time_curve
 - id: 159
   under_construction: false
@@ -2110,16 +1016,11 @@
   show_point_label: false
   growth_chart: false
   key: production_curve_natural_gas
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: time_curve
 - id: 161
   under_construction: false
@@ -2130,16 +1031,11 @@
   show_point_label: false
   growth_chart: false
   key: production_curve_uranium
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: time_curve
 - id: 162
   under_construction: false
@@ -2150,16 +1046,11 @@
   show_point_label: false
   growth_chart: false
   key: co2_of_electricity_production
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 163
   under_construction: false
@@ -2170,24 +1061,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_excess_electricity
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: has_electricity_storage
-  description:
-    content_en: The ETM contains several flexibility technologies that are able to
-      deal with excess electricity from wind turbines and solar panels. This chart
-      shows the amount of electricity that is used by the different technologies in
-      your scenario. You can set how much of each of these technologies you would
-      like to install in your scenario in the Flexibility menu.
-    content_nl: Het ETM kent een aantal flexibiliteitstechnologieën die goed kunnen
-      omgaan met elektriciteitsoverschotten uit windmolens en zonnepanelen. Deze grafiek
-      toont hoeveel elektriciteit door de verschillende opties wordt gebruikt in jouw
-      scenario. Via het Flexibiliteit menu kun je bepalen hoeveel van elke technologie
-      je in jouw scenario wilt inzetten.
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
   related_output_element_key: merit_order_hourly_flexibility
 - id: 164
@@ -2199,32 +1077,11 @@
   show_point_label: false
   growth_chart: false
   key: storage_options
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: "The ETM contains several flexibility technologies that are able to
-      deal with excess electricity from wind turbines and solar panels. For each of
-      these technologies, this table shows the installed capacity, which determines
-      how much electricity you can store or convert at any time. The table also shows
-      the storage volume, indicating the maximum volume available for storage or conversion.
-      Finally, the last columns show the annual usage of the flexibility technologies
-      in your scenario, both in PJ and TWh.\r\n</br></br>\r\nYou can set how much
-      of each of these technologies you would like to install in your scenario in
-      the Flexibility menu."
-    content_nl: "Het ETM kent een aantal flexibiliteitstechnologieën die goed kunnen
-      omgaan met elektriciteitsoverschotten uit windmolens en zonnepanelen. Deze tabel
-      toont het totale geïnstalleerde vermogen van elk van deze technologieën in jouw
-      scenario; dit bepaald hoeveel elektriciteit je op elk moment kunt opslaan of
-      omzetten. Verder toont de tabel het totale volume dat beschikbaar is voor opslag
-      en conversie. Tenslotte toont de tabel hoeveel elektriciteit op jaarbasis wordt
-      gebruikt door de verschillende opties; zowel in PJ als in TWh.\r\n</br></br>\r\nVia
-      het Flexibiliteit menu kun je bepalen hoeveel van elke technologie je in jouw
-      scenario wilt inzetten."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: html_table
   related_output_element_key: merit_order_hourly_flexibility
 - id: 165
@@ -2236,26 +1093,11 @@
   show_point_label: false
   growth_chart: false
   key: mekko_of_primary_co2
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This 'Mekko' chart shows the CO<sub>2</sub> emissions for the sectors
-      of the ETM subdivided by final demand carriers. For each final demand carrier,
-      transformation and transportation losses have been taken into account. \r\n<br><br>\r\nFor
-      example, the CO<sub>2</sub> emissions associated with electricity in the household
-      sector is calculated by tracing back all transformations until we arrive at
-      the primary carriers such as natural oil and coal."
-    content_nl: "Deze 'Mekko' grafiek laat de CO<sub>2</sub> uitstoot van de verschillende
-      sectoren in het ETM zien uitgesplitst naar de energiedragers in eindgebruik.
-      Voor elke energiedrager worden transformatie- en transportverliezen meegenomen.
-      \r\n<br><br>\r\nDe CO<sub>2</sub> uitstoot van elektriciteit in de huishoudens-sector
-      wordt bijvoorbeeld berekend door alle omzettingen terug te traceren totdat we
-      bij de primaire energiedragers zoals aardolie en kolen uitkomen."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: mekko
 - id: 166
   under_construction: false
@@ -2266,18 +1108,11 @@
   show_point_label: false
   growth_chart: false
   key: mekko_of_primary_demand_of_biomass
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: _always_hidden
-  description:
-    content_en: 'This ''Mekko'' chart shows the use of primary biofuel for the sectors
-      of the ETM. '
-    content_nl: Deze 'Mekko' grafiek toont het gebruik van primaire biobrandstoffen
-      voor de sectoren van het ETM.
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: mekko
 - id: 168
   under_construction: true
@@ -2288,16 +1123,11 @@
   show_point_label: false
   growth_chart: false
   key: mekko_of_bio_footprint
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: mekko
 - id: 170
   under_construction: false
@@ -2308,25 +1138,11 @@
   show_point_label: false
   growth_chart: false
   key: investment_electric_cars
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: 'This chart shows the average initial investment price excluding taxes
-      for electric cars and combustion engine cars. The latter are based on the reference
-      petrol car as included in TNO''s 2013 report "Natural Gas in Transport". '
-    content_nl: Deze grafiek toont de gemiddelde aanschafprijs exclusief belastingen
-      voor elektrische auto's en auto's met verbrandingsmotoren. Laatstgenoemde zijn
-      gebaseerd op de referentie benzine auto zoals bepaald in TNO's rapport "Natural
-      Gas in Transport" van 2013.
-    short_content_en: 'This chart shows the average initial investment price excluding
-      taxes for electric cars and combustion engine cars. The latter is a reference
-      petrol car. '
-    short_content_nl: Deze grafiek toont de gemiddelde aanschafprijs exclusief belastingen
-      voor elektrische auto's en auto's met verbrandingsmotoren. De laatstgenoemde
-      is een referentie benzine auto.
   output_element_type_name: vertical_stacked_bar
 - id: 171
   under_construction: false
@@ -2337,24 +1153,11 @@
   show_point_label: false
   growth_chart: false
   key: merit_order_price_curve
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: The ETM calculates the hourly supply of electricity from the hourly
-      demand and the installed capacities of all electricity producers. The order
-      in which the producers are dispatched is determined by the merit order. The
-      hourly merit order price is equal to the marginal costs of the most expensive
-      plant running at that hour.
-    content_nl: Het ETM berekent de elektriciteitsmix op uurbasis afhankelijk van
-      de elektriciteitsvraag en de geïnstalleerde vermogens van alle elektriciteitsproducerende
-      technologieën. De merit order bepaalt de volgorde waarin deze technologieën
-      worden ingeschakeld. De prijs op uurbasis is gelijk aan de draaikosten van de
-      duurste centrale die op dat moment draait.
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: d3
 - id: 172
   under_construction: false
@@ -2365,26 +1168,11 @@
   show_point_label: false
   growth_chart: false
   key: merit_order_hourly_supply
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: The ETM calculates the hourly supply of electricity from the hourly
-      demand and the installed capacities of all electricity producers. The order
-      in which the producers are dispatched is determined by the merit order. Volatile
-      electricity producers as well as must-run technologies are not included in the
-      merit order calculation. This chart shows the hourly production of electricity
-      and gives a visual clue of the electricity generation mix.
-    content_nl: Het ETM berekent de elektriciteitsmix op uurbasis afhankelijk van
-      de elektriciteitsvraag en de geïnstalleerde vermogens van alle elektriciteitsproducerende
-      technologieën. De merit order bepaalt de volgorde waarin deze technologieën
-      worden ingeschakeld. Volatiele bronnen van elektriciteit en must-run technologieën
-      worden niet meegenomen in de merit order. Deze grafiek toont de elektriciteitsmix
-      op uurbasis.
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: d3
 - id: 173
   under_construction: false
@@ -2395,18 +1183,11 @@
   show_point_label: false
   growth_chart: false
   key: merit_order_hourly_flexibility
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: The ETM determines on an hourly basis if there is excess electricity
-      and how this electricity is used.
-    content_nl: Het ETM houdt op uurbasis bij of er elektriciteitsoverschotten zijn
-      en hoe deze worden ingezet.
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: d3
 - id: 175
   under_construction: false
@@ -2417,24 +1198,11 @@
   show_point_label: false
   growth_chart: false
   key: merit_order_excess_events
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: As a result of large numbers of wind turbines and solar panels installed,
-      the supply of electricity can be larger than the demand. The ETM keeps track
-      of the number of consecutive hours in which this is the case for you scenario.
-      If you include flexibility options in your scenario, the number of excess events
-      decreases.
-    content_nl: Als gevolg van de grote inzet van volatiele vormen van elektriciteitsproductie
-      kan het aanbod van elektriciteit de vraag overstijgen. Het ETM houdt het aantal
-      opeenvolgende uren bij waarop dit het geval is in jouw scenario. Wanneer je
-      flexibiliteitsopties inzet in je scenario zal het aantal uren met elektriciteitsoverschotten
-      afnemen.
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: d3
 - id: 176
   under_construction: false
@@ -2445,26 +1213,11 @@
   show_point_label: false
   growth_chart: false
   key: mekko_of_detailed_final_demand_in_industry
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_detailed_chemical_industry
-  description:
-    content_en: "This graph shows how the demand for energy of the industry sectors
-      will change as a result of the choices you make in this section. This is mainly
-      determined by growth of the sector’s output and investments in energy saving
-      technologies. \r\n</br></br>\r\nThe graph shows final energy use and some conversion
-      losses. Conversion losses for producing heat or power are not included, but
-      conversion losses for making cokes or coking gas, for example, are."
-    content_nl: "Deze grafiek toont hoe de energievraag van de industrie gaat veranderen
-      als gevolg van jouw keuzes. Dit wordt vooral bepaald door de groei van de sector
-      en investeringen in energiebesparende technologieën. \r\n</br></br>\r\nDeze
-      grafiek toont eindgebruik van energie en sommige omzetverliezen. Verliezen bij
-      de omzetting van energiedragers naar warmte en elektriciteit zijn niet meegenomen,
-      maar voor omzettingen naar bijvoorbeeld cokes en cokes gas wel.\r\n\r\n"
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: mekko
 - id: 178
   under_construction: false
@@ -2475,26 +1228,11 @@
   show_point_label: false
   growth_chart: false
   key: mekko_of_detailed_final_demand_in_industry_energetic
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_detailed_chemical_industry
-  description:
-    content_en: "This graph shows how the demand for energy of the industry sectors
-      will change as a result of the choices you make in this section. This is mainly
-      determined by growth of the sector’s output and investments in energy saving
-      technologies. \r\n</br></br>\r\nThe graph shows final energy use and some conversion
-      losses. Conversion losses for producing heat or power are not included, but
-      conversion losses for making cokes or coking gas, for example, are."
-    content_nl: "Deze grafiek toont hoe de energievraag van de industrie gaat veranderen
-      als gevolg van jouw keuzes. Dit wordt vooral bepaald door de groei van de sector
-      en investeringen in energiebesparende technologieën. \r\n</br></br>\r\nDeze
-      grafiek toont eindgebruik van energie en sommige omzetverliezen. Verliezen bij
-      de omzetting van energiedragers naar warmte en elektriciteit zijn niet meegenomen,
-      maar voor omzettingen naar bijvoorbeeld cokes en cokes gas wel."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: mekko
 - id: 180
   under_construction: false
@@ -2505,31 +1243,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_demand_in_industry_chemical_refineries
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how energy demand of the refineries will change
-      as a result of the choices you make in this section. Industrial energy demand
-      is mainly determined by growth of the sector’s output and investments in energy
-      saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy use, so
-      conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
-      use is the use of energy carriers (like oil) to make non-energy products such
-      as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
-      to select different graphs about industrial energy demand."
-    content_nl: "Deze grafiek toont hoe de energievraag van de raffinaderijen gaat
-      veranderen als gevolg van jouw keuzes. Industrieel energiegebruik wordt vooral
-      bepaald door de groei van de sector en investeringen in energiebesparende technologieën.
-      \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie, dus verliezen
-      bij de omzetting van energiedragers naar warmte en elektriciteit zijn niet meegenomen.
-      <br/> \r\nNiet-energetisch gebruik is het gebruik van energiedragers (zoals
-      olie) om bijvoorbeeld producten als kunstmest of smeermiddelen te maken.\r\n<br/><br/>\r\nKies
-      '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over industrieel
-      energiegebruik."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 181
   under_construction: false
@@ -2540,31 +1258,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_demand_in_industry_other_paper
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how energy demand of the paper industry will change
-      as a result of the choices you make in this section. Industrial energy demand
-      is mainly determined by growth of the sector’s output and investments in energy
-      saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy use, so
-      conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
-      use is the use of energy carriers (like oil) to make non-energy products such
-      as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
-      to select different graphs about industrial energy demand."
-    content_nl: "Deze grafiek toont hoe de energievraag van de papierindustrie gaat
-      veranderen als gevolg van jouw keuzes. Industrieel energiegebruik wordt vooral
-      bepaald door de groei van de sector en investeringen in energiebesparende technologieën.
-      \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie, dus verliezen
-      bij de omzetting van energiedragers naar warmte en elektriciteit zijn niet meegenomen.
-      <br/> \r\nNiet-energetisch gebruik is het gebruik van energiedragers (zoals
-      olie) om bijvoorbeeld producten als kunstmest of smeermiddelen te maken.\r\n<br/><br/>\r\nKies
-      '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over industrieel
-      energiegebruik."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 182
   under_construction: false
@@ -2575,31 +1273,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_demand_in_industry_chemical_other
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_detailed_chemical_industry
-  description:
-    content_en: "This graph shows how energy demand of the chemicals industry will
-      change as a result of the choices you make in this section. Industrial energy
-      demand is mainly determined by growth of the sector’s output and investments
-      in energy saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy
-      use, so conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
-      use is the use of energy carriers (like oil) to make non-energy products such
-      as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
-      to select different graphs about industrial energy demand."
-    content_nl: "Deze grafiek toont hoe de energievraag van de chemische industrie
-      gaat veranderen als gevolg van jouw keuzes. Industrieel energiegebruik wordt
-      vooral bepaald door de groei van de sector en investeringen in energiebesparende
-      technologieën. \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie,
-      dus verliezen bij de omzetting van energiedragers naar warmte en elektriciteit
-      zijn niet meegenomen. <br/> \r\nNiet-energetisch gebruik is het gebruik van
-      energiedragers (zoals olie) om bijvoorbeeld producten als kunstmest of smeermiddelen
-      te maken.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de grafiek om
-      andere grafieken te tonen over industrieel energiegebruik."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 183
   under_construction: false
@@ -2610,31 +1288,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_demand_in_industry_other_food
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how energy demand of the food industry will change
-      as a result of the choices you make in this section. Industrial energy demand
-      is mainly determined by growth of the sector’s output and investments in energy
-      saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy use, so
-      conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
-      use is the use of energy carriers (like oil) to make non-energy products such
-      as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
-      to select different graphs about industrial energy demand."
-    content_nl: "Deze grafiek toont hoe de energievraag van de voedingsmiddelenindustrie
-      gaat veranderen als gevolg van jouw keuzes. Industrieel energiegebruik wordt
-      vooral bepaald door de groei van de sector en investeringen in energiebesparende
-      technologieën. \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie,
-      dus verliezen bij de omzetting van energiedragers naar warmte en elektriciteit
-      zijn niet meegenomen. <br/> \r\nNiet-energetisch gebruik is het gebruik van
-      energiedragers (zoals olie) om bijvoorbeeld producten als kunstmest of smeermiddelen
-      te maken.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de grafiek om
-      andere grafieken te tonen over industrieel energiegebruik."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 184
   under_construction: false
@@ -2645,31 +1303,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_demand_in_industry_chemical_fertilizers
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_detailed_chemical_industry
-  description:
-    content_en: "This graph shows how energy demand of the fertilizer industry will
-      change as a result of the choices you make in this section. Industrial energy
-      demand is mainly determined by growth of the sector’s output and investments
-      in energy saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy
-      use, so conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
-      use is the use of energy carriers (like oil) to make non-energy products such
-      as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
-      to select different graphs about industrial energy demand."
-    content_nl: "Deze grafiek toont hoe de energievraag van de kunstmestsector gaat
-      veranderen als gevolg van jouw keuzes. Industrieel energiegebruik wordt vooral
-      bepaald door de groei van de sector en investeringen in energiebesparende technologieën.
-      \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie, dus verliezen
-      bij de omzetting van energiedragers naar warmte en elektriciteit zijn niet meegenomen.
-      <br/> \r\nNiet-energetisch gebruik is het gebruik van energiedragers (zoals
-      olie) om bijvoorbeeld producten als kunstmest of smeermiddelen te maken.\r\n<br/><br/>\r\nKies
-      '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over industrieel
-      energiegebruik."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 186
   under_construction: false
@@ -2680,31 +1318,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_demand_in_industry_other
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how energy demand of the other industry will change
-      as a result of the choices you make in this section. Industrial energy demand
-      is mainly determined by growth of the sector’s output and investments in energy
-      saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy use, so
-      conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
-      use is the use of energy carriers (like oil) to make non-energy products such
-      as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
-      to select different graphs about industrial energy demand."
-    content_nl: "Deze grafiek toont hoe de energievraag van de overige industrie gaat
-      veranderen als gevolg van jouw keuzes. Industrieel energiegebruik wordt vooral
-      bepaald door de groei van de sector en investeringen in energiebesparende technologieën.
-      \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie, dus verliezen
-      bij de omzetting van energiedragers naar warmte en elektriciteit zijn niet meegenomen.
-      <br/> \r\nNiet-energetisch gebruik is het gebruik van energiedragers (zoals
-      olie) om bijvoorbeeld producten als kunstmest of smeermiddelen te maken.\r\n<br/><br/>\r\nKies
-      '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over industrieel
-      energiegebruik."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 187
   under_construction: false
@@ -2715,16 +1333,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_demand_in_industry_chemical
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: _always_hidden
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 188
   under_construction: false
@@ -2735,53 +1348,11 @@
   show_point_label: false
   growth_chart: false
   key: co2_emissions_biomass
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "Which part of the CO<sub>2</sub> emissions from biomass is relevant
-      to the environment is uncertain and speculative. This chart serves to explore
-      the (potential) amount of these emissions.\r\n<br/><br/>\r\nBesides the official
-      UNFCCC accounted  CO<sub>2</sub> emission this graph also shows the CO<sub>2</sub>
-      which is emitted due the use of biomass and is (potentially) relevant for climate
-      change. Which part of the biomass CO<sub>2</sub> emissions should be shown can
-      be set with the sliders in the CO<sub>2</sub> biomass section.\r\n<br/><br/>\r\nThe
-      graph only displays energetic CO<sub>2</sub> emissions, which are emitted in
-      domestic energy use and production. Non-energetic emissions are not included.
-      Non-energetic emissions are related to processes other than the production of
-      usable energy like electricity or heat. An example of such emissions are the
-      CO<sub>2</sub> emissions that are released from cement during its making. The
-      CO<sub>2</sub> emissions related to the needed energy for cement production
-      <em>do</em> count as energetic emissions.\r\n<br/><br/>\L\r\nNote: When the
-      Fuel Chain Emissions module is turned on, the graph also includes CO<sub>2</sub>
-      equivalents of other greenhouse gas emissions, like methane (CH<sub>4</sub>)
-      or nitrous oxide (N<sub>2</sub>O) related to the fuel chain in this graph. Non-energetic
-      emissions and greenhouse gas emissions not related to the fuel chain are not
-      included."
-    content_nl: "Welk deel van de CO<sub>2</sub>-uitstoot van biomassa relevant is
-      voor het klimaat is in grote mate onzeker en speculatief. Deze grafiek dient
-      om te verkennen hoe groot deze uitstoot (potentieel) is.\r\n<p>\r\nDeze grafiek
-      toont naast de volgens officiële UNFCCC administratie uitgestoten CO<sub>2</sub>
-      ook het deel van de CO<sub>2</sub>-uitstoot veroorzaakt door verbranding van
-      biomassa dat relevant is voor klimaatverandering. Met behulp van de sliders
-      in de \"CO<sub>2</sub> biomass\" sectie kan ingesteld worden welk deel van de
-      CO<sub>2</sub>-uitstoot van biomassa wordt weergegeven.\r\n<p>\r\nDeze grafiek
-      toont alleen binnenlandse, energetische CO<sub>2</sub>-uitstoot. Niet-energetische
-      emissies van CO<sub>2</sub> zijn niet meegenomen. Deze emissies zijn gerelateerd
-      aan processen waarbij het eindproduct geen bruikbare energie (zoals elektriciteit
-      of warmte) oplevert. Een voorbeeld van niet-energetische uitstoot van CO<sub>2</sub>
-      is de CO<sub>2</sub> die opgesloten zit in cement en vrijkomt bij het maken
-      ervan. De emissies die vrijkomen bij het produceren van de energie die nodig
-      is om cement te maken tellen overigens wel mee als energetische CO<sub>2</sub>
-      emissies.\r\n<br/><br/>\r\nLet op: Als de Ketenanalyse-module is ingeschakeld
-      toont deze grafiek ook andere broeikasgassen als methaan (CH<sub>4</sub>) of
-      lachgas (N<sub>2</sub>O) die gerelateerd zijn aan de brandstofproductieketen.
-      Niet-energetische emissies en broeikasgassen die ongerelateerd zijn aan de brandstofproductieketen
-      worden niet getoond."
-    short_content_en: CO2 biomass
-    short_content_nl: CO2 biomassa
   output_element_type_name: vertical_stacked_bar
 - id: 189
   under_construction: false
@@ -2792,28 +1363,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_demand_in_industry_other_ict
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how energy demand of the central ICT sector will
-      change as a result of the choices you make in this section. Industrial energy
-      demand is mainly determined by growth of the sector’s output and investments
-      in energy saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy
-      use, so conversion losses for producing heat or power are not included.<br/><br/>\r\nYou
-      can choose 'Change chart' to select different graphs about industrial energy
-      demand."
-    content_nl: "Deze grafiek toont hoe de energievraag van de centrale ICT-sector
-      gaat veranderen als gevolg van jouw keuzes. Industrieel energiegebruik wordt
-      vooral bepaald door de groei van de sector en investeringen in energiebesparende
-      technologieën. \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie,
-      dus verliezen bij de omzetting van energiedragers naar warmte en elektriciteit
-      zijn niet meegenomen. <br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de grafiek
-      om andere grafieken te tonen over industrieel energiegebruik."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 190
   under_construction: false
@@ -2824,16 +1378,11 @@
   show_point_label: false
   growth_chart: false
   key: refinery
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: sankey
 - id: 191
   under_construction: false
@@ -2844,16 +1393,11 @@
   show_point_label: false
   growth_chart: false
   key: co2_sankey
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: sankey
 - id: 192
   under_construction: false
@@ -2864,16 +1408,11 @@
   show_point_label: false
   growth_chart: false
   key: relative_primary_co2
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 193
   under_construction: false
@@ -2884,16 +1423,11 @@
   show_point_label: false
   growth_chart: false
   key: relative_primary_demand_of_coal_oil_and_gas
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 194
   under_construction: false
@@ -2904,39 +1438,11 @@
   show_point_label: false
   growth_chart: false
   key: dynamic_demand_curve
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This chart shows the impact of technology choices and demand growth
-      on the hight and shape of the total electricity demand profile at high voltage
-      level (red line).\r\n<br>\r\n<br>\r\nFor the following technologies and choices
-      the impact on the profile is explicitly shown:\r\n<ul>\r\n<li>electric space
-      heating technologies such as heat pumps</li>\r\n<li>insulation levels and heating
-      demand (if electric space heating technologies are used)</li>\r\n<li>hot water
-      technologies such as heat pumps</li>\r\n<li>hot water demand (if electric hot
-      water technologies are used)</li>\r\n<li>use of power-to-heat (if electric hot
-      water technologies are used)</li>\r\n<li>market share and charging strategies
-      of electric vehicles</li>\r\n</ul>\r\nFor the electricity demand of other technologies
-      and applications in the ETM, the fixed TenneT curve is assumed. This part is
-      shown as the white region under the red line.\r\n"
-    content_nl: "Deze grafiek toont de impact van keuzes over vraag en inzet van technologieën
-      op de hoogte en vorm van de totale elektriciteitsvraag op hoogspanningsniveau
-      (rode lijn).\r\n<br>\r\n<br>\r\nVoor de volgende technologieën en keuzes wordt
-      de impact op de vraagcurve expliciet getoond:\r\n<ul>\r\n<li>elektrische ruimteverwarmingstechnologieën
-      zoals warmtepompen</li>\r\n<li>woningisolatie en warmtevraag (als elektrische
-      ruimteverwarmingstechnologieën worden ingezet)</li>\r\n<li>elektrische warm
-      watertechnologieën zoals warmtepompen</li>\r\n<li>warm watervraag (als elektrische
-      warm watertechnologieën worden ingezet)</li>\r\n<li>inzet van power-to-heat
-      (als elektrische warm watertechnologieën worden ingezet)</li>\r\n<li>marktaandeel
-      en laadstrategieën van elektrische auto's</li>\r\n</ul>\r\nVoor het overige
-      elektriciteitsgebruik van technologieën en toepassingen in het ETM word de statische
-      TenneT vraagcurve aangenomen. Dit deel wordt getoond als het witte gedeelte
-      onder de rode lijn."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: demand_curve
 - id: 195
   under_construction: false
@@ -2947,16 +1453,11 @@
   show_point_label: false
   growth_chart: false
   key: heat_deficit
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 196
   under_construction: false
@@ -2967,16 +1468,11 @@
   show_point_label: false
   growth_chart: false
   key: household_heat_demand_and_production
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: heat_demand_and_production
 - id: 197
   under_construction: false
@@ -2987,21 +1483,11 @@
   show_point_label: false
   growth_chart: false
   key: hydrogen_production_for_fertilizers
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: This graph shows the hydrogen production for use in the fertilizer
-      industry in the present and future. The latter is the result of your settings
-      in sections 'Demand' (size of the fertilizers industry) and 'Flexibility' (conversion
-      to gas).
-    content_nl: Deze grafiek geeft de waterstofproductie voor de kunstmestsector als
-      gevolg van jouw instellingen in de onderdelen 'Vraag' (omvang van de kunstmestindustrie)
-      en 'Flexibiliteit' (conversie naar gas).
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 198
   under_construction: false
@@ -3012,24 +1498,11 @@
   show_point_label: false
   growth_chart: true
   key: use_of_final_demand_in_international_transport
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: This chart shows how the amount of CO<sub>2</sub> emissions caused
-      by different aviation fuels will change as a result of the choices you make
-      in this section. The CO<sub>2</sub> emissions of fuels which are consumed at
-      international flights depends on how the aviation fuel mix consists of. The
-      more bio-fuels used the less CO<sub>2</sub> emissions are caused.
-    content_nl: This chart shows how the amount of CO<sub>2</sub> emissions caused
-      by different aviation fuels will change as a result of the choices you make
-      in this section. The CO<sub>2</sub> emissions of fuels which are consumed at
-      international flights depends on how the aviation fuel mix consists of. The
-      more bio-fuels used the less CO<sub>2</sub> emissions are caused.
-    short_content_en: CO<sub>2</sub> emissions by international aviation
-    short_content_nl: CO<sub>2</sub> emissions by international aviation
   output_element_type_name: bezier
 - id: 199
   under_construction: false
@@ -3040,20 +1513,11 @@
   show_point_label: false
   growth_chart: false
   key: co2_emission_international_transportation
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: This chart shows how energy demand for international aviation will
-      change as a result of the choices you make in this section. Energy use depends
-      on how much people will use flights for international traveling.
-    content_nl: This chart shows how energy demand for international aviation will
-      change as a result of the choices you make in this section. Energy use depends
-      on how much people will use flights for international traveling.
-    short_content_en: Energy demand of international aviation
-    short_content_nl: Energy demand of international aviation
   output_element_type_name: vertical_stacked_bar
 - id: 200
   under_construction: false
@@ -3064,16 +1528,11 @@
   show_point_label: false
   growth_chart: false
   key: kerosene_production_in_bunkers
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 201
   under_construction: false
@@ -3084,16 +1543,11 @@
   show_point_label: false
   growth_chart: false
   key: transport_categories_overview
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 202
   under_construction: false
@@ -3104,16 +1558,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_demand_in_passenger_transport
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 203
   under_construction: false
@@ -3124,16 +1573,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_demand_in_cars
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 204
   under_construction: false
@@ -3144,16 +1588,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_demand_in_motorcycles_and_bicycles
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 205
   under_construction: false
@@ -3164,16 +1603,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_demand_in_planes
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 206
   under_construction: false
@@ -3184,16 +1618,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_demand_in_busses_trains_and_trams
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 207
   under_construction: false
@@ -3204,16 +1633,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_demand_in_freight_transport_technologies
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 208
   under_construction: false
@@ -3224,16 +1648,11 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_demand_in_freight_transport
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 209
   under_construction: false
@@ -3244,18 +1663,11 @@
   show_point_label: false
   growth_chart: false
   key: international_transport_categories_overview
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: This chart shows the final energy demand for international navigation
-      and aviation.
-    content_nl: Deze grafiek laat het finale eindgebruik zien van internationale scheepvaart
-      en luchtvaart.
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 211
   under_construction: false
@@ -3266,16 +1678,11 @@
   show_point_label: false
   growth_chart: false
   key: carbon_balance
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: html_table
 - id: 212
   under_construction: false
@@ -3286,19 +1693,11 @@
   show_point_label: false
   growth_chart: false
   key: renewable_electricity
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: This chart shows the share of different renewable electricity sources
-      in the current and future scenarios.
-    content_nl: Deze grafiek toont het aandeel van verschillende hernieuwbare elektriciteitsbronnen
-      in de huidige en toekomstige scenario's.
-    short_content_en: This chart shows the share of renewable electricity sources
-      in the current and future scenarios.
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 213
   under_construction: false
@@ -3309,22 +1708,11 @@
   show_point_label: false
   growth_chart: false
   key: households_final_demand_per_application
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This graph shows how household final demand for energy will change
-      as a result of the choices you make in this section. \r\n<br/><br/>\r\nYou can
-      click '<u>Change chart</u>' above the graph, to select different graphs about
-      energy demand."
-    content_nl: "Deze grafiek toont hoe de huishoudelijke finale vraag naar energie
-      verandert als gevolg van de keuzes en aannames die je in dit onderdeel maakt.
-      \r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' om andere grafieken te tonen
-      over energiegebruik."
-    short_content_en: Households, by application
-    short_content_nl: Huishoudelijk, naar toepassing
   output_element_type_name: bezier
 - id: 214
   under_construction: false
@@ -3335,16 +1723,11 @@
   show_point_label: false
   growth_chart: false
   key: mekko_of_hydrogen_network
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: mekko
   related_output_element_key: hydrogen_production
 - id: 215
@@ -3356,17 +1739,11 @@
   show_point_label: false
   growth_chart: false
   key: transport_fuel_costs_overview
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: This chart shows the total cost of different transport fuels in the
-      current and future scenarios.
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 216
   under_construction: false
@@ -3377,16 +1754,11 @@
   show_point_label: false
   growth_chart: false
   key: electricity_network_load
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: d3
 - id: 217
   under_construction: false
@@ -3397,16 +1769,11 @@
   show_point_label: false
   growth_chart: false
   key: electricity_lv_network_load
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: d3
 - id: 218
   under_construction: false
@@ -3417,16 +1784,11 @@
   show_point_label: false
   growth_chart: false
   key: electricity_mv_network_load
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: d3
 - id: 219
   under_construction: false
@@ -3437,16 +1799,11 @@
   show_point_label: false
   growth_chart: false
   key: electricity_hv_network_load
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: d3
 - id: 220
   under_construction: false
@@ -3457,16 +1814,11 @@
   show_point_label: false
   growth_chart: false
   key: lv_demand_curves
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: demand_curve
 - id: 221
   under_construction: false
@@ -3477,16 +1829,11 @@
   show_point_label: false
   growth_chart: false
   key: mv_demand_curves
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: demand_curve
 - id: 222
   under_construction: false
@@ -3497,16 +1844,11 @@
   show_point_label: false
   growth_chart: false
   key: hv_demand_curves
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: demand_curve
 - id: 223
   under_construction: false
@@ -3517,16 +1859,11 @@
   show_point_label: false
   growth_chart: false
   key: electricity_network_capacity_and_peaks
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: use_network_calculations
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: html_table
   related_output_element_key: electricity_network_load
 - id: 224
@@ -3538,16 +1875,11 @@
   show_point_label: false
   growth_chart: false
   key: final_demand_mekko_energetic_mece
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: mekko
   related_output_element_key: dynamic_demand_curve
 - id: 225
@@ -3559,12 +1891,12 @@
   show_point_label: false
   growth_chart: false
   key: hydrogen_production
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
-  dependent_on: 
-  description: 
+  dependent_on:
+  description:
   output_element_type_name: demand_curve
 - id: 226
   under_construction: false
@@ -3575,12 +1907,12 @@
   show_point_label: false
   growth_chart: false
   key: hydrogen_demand
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
-  dependent_on: 
-  description: 
+  dependent_on:
+  description:
   output_element_type_name: demand_curve
 - id: 227
   under_construction: false
@@ -3591,16 +1923,11 @@
   show_point_label: false
   growth_chart: false
   key: hydrogen_storage
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: demand_curve
 - id: 228
   under_construction: false
@@ -3611,12 +1938,12 @@
   show_point_label: false
   growth_chart: false
   key: hydrogen_cost_capacity
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description: 
+  description:
   output_element_type_name: cost_capacity_bar
   related_output_element_key: hydrogen_production
 - id: 230
@@ -3628,12 +1955,12 @@
   show_point_label: false
   growth_chart: false
   key: mekko_demand_bio_resource
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
-  dependent_on: 
-  description: 
+  dependent_on:
+  description:
   output_element_type_name: mekko
 - id: 231
   under_construction: false
@@ -3644,16 +1971,11 @@
   show_point_label: false
   growth_chart: false
   key: buildings_heat_demand_and_production
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: heat_demand_and_production
 - id: 238
   under_construction: false
@@ -3669,11 +1991,6 @@
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 240
   under_construction: false
@@ -3684,32 +2001,27 @@
   show_point_label: false
   growth_chart: false
   key: final_energy_demand_per_sector_joule
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: bezier
 - id: 241
   under_construction: false
-  unit: 
+  unit:
   percentage: false
   group: Overview
-  sub_group: 
+  sub_group:
   show_point_label: false
   growth_chart: false
   key: workflow
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
-  dependent_on: 
-  description: 
+  dependent_on:
+  description:
   output_element_type_name: html_table
 - id: 242
   under_construction: false
@@ -3720,28 +2032,11 @@
   show_point_label: false
   growth_chart: false
   key: biomass_sankey
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: "This chart shows the biomass flows in this area. On the left primary
-      biomass resources are shown and the origin of these sources (locally sourced
-      or imported). The middle of the chart shows the conversion of biomass resources
-      into other energy carriers (like greengas, bio fuels, electricity and heat).
-      On the right side you can see the sectors in which the energy is ultimately
-      used. <br/>\r\nFloating over the chart with you mouse will highlight different
-      parts and reveal more information."
-    content_nl: "Deze flowchart laat de biomassastromen zien in dit gebied. Aan de
-      linkerkant zijn de primaire biomassabronnen te zien en hun herkomst (lokaal
-      of import). In het midden van de grafiek zie je de omzetting van deze biomassabronnen
-      in andere energiedragers, zoals groengas, biobrandstoffen, elektriciteit en
-      warmte. Aan de rechterkant zie je ten slotte in welke sectoren de energie gebruikt
-      wordt. \r\n<br/>\r\nAls je met je muis over de grafiek gaat, zie je verschillende
-      onderdelen oplichten en kun je meer informatie krijgen."
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: sankey
 - id: 243
   under_construction: false
@@ -3752,12 +2047,12 @@
   show_point_label: false
   growth_chart: false
   key: biomass_demand_by_category
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
-  dependent_on: 
-  description: 
+  dependent_on:
+  description:
   output_element_type_name: category_bar
 - id: 244
   under_construction: false
@@ -3768,16 +2063,11 @@
   show_point_label: false
   growth_chart: false
   key: greengas_costs
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: vertical_stacked_bar
 - id: 245
   under_construction: false
@@ -3788,16 +2078,11 @@
   show_point_label: false
   growth_chart: false
   key: network_gas_demand
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: demand_curve
 - id: 246
   under_construction: false
@@ -3808,16 +2093,11 @@
   show_point_label: false
   growth_chart: false
   key: network_gas_production
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: demand_curve
 - id: 247
   under_construction: false
@@ -3828,16 +2108,11 @@
   show_point_label: false
   growth_chart: false
   key: network_gas_storage
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: demand_curve
 - id: 248
   under_construction: false
@@ -3848,16 +2123,11 @@
   show_point_label: false
   growth_chart: false
   key: collective_heat_mekko
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: mekko
   related_output_element_key: heat_network_demand
 - id: 249
@@ -3869,16 +2139,11 @@
   show_point_label: false
   growth_chart: false
   key: heat_network_demand
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: demand_curve
 - id: 250
   under_construction: false
@@ -3889,16 +2154,11 @@
   show_point_label: false
   growth_chart: false
   key: heat_network_production
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: demand_curve
 - id: 251
   under_construction: false
@@ -3909,12 +2169,12 @@
   show_point_label: false
   growth_chart: false
   key: industrial_heat_mekko
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
-  dependent_on: 
-  description: 
+  dependent_on:
+  description:
   output_element_type_name: mekko
 - id: 252
   under_construction: false
@@ -3925,16 +2185,11 @@
   show_point_label: false
   growth_chart: false
   key: heat_network_storage
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: demand_curve
 - id: 253
   under_construction: false
@@ -3945,64 +2200,59 @@
   show_point_label: false
   growth_chart: false
   key: heat_cost_capacity
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  description:
-    content_en: ''
-    content_nl: ''
-    short_content_en: ''
-    short_content_nl: ''
   output_element_type_name: cost_capacity_bar
 - id: 254
   under_construction: false
   unit: euro
   percentage: false
   group: Cost
-  sub_group: 
+  sub_group:
   show_point_label: false
   growth_chart: false
   key: heat_infrastructure_annualised_costs
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
-  dependent_on: 
-  description: 
+  dependent_on:
+  description:
   output_element_type_name: vertical_stacked_bar
 - id: 255
   under_construction: false
   unit: "€/MJ heat"
   percentage: false
   group: Cost
-  sub_group: 
+  sub_group:
   show_point_label: false
   growth_chart: false
   key: household_network_gas_hhp_cop_cost
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
-  dependent_on: 
-  description: 
+  dependent_on:
+  description:
   output_element_type_name: hhp_cop_cost
 - id: 256
   under_construction: false
-  unit: 
+  unit:
   percentage: false
   group: Merit
   sub_group: flexibility
   show_point_label: false
   growth_chart: false
   key: solar_pv_curtailment
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
-  dependent_on: 
-  description: 
+  dependent_on:
+  description:
   output_element_type_name: html_table
 - id: 257
   under_construction: false
@@ -4013,12 +2263,12 @@
   show_point_label: false
   growth_chart: false
   key: hourly_solar_pv_curtailment
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
-  dependent_on: 
-  description: 
+  dependent_on:
+  description:
   output_element_type_name: solar_curtailment
 - id: 258
   under_construction: false
@@ -4029,10 +2279,10 @@
   show_point_label: false
   growth_chart: false
   key: household_space_heater_hhp_hourly_demand
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
-  dependent_on: 
-  description: 
+  dependent_on:
+  description:
   output_element_type_name: demand_curve

@@ -4,7 +4,7 @@ class DescriptionsController < ApplicationController
   # using the outputelement key
   def charts
     @chart = OutputElement.find params[:id]
-    @description = @chart.description_content
+    @description = @chart.description
 
     render :show, layout: false
   end

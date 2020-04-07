@@ -17,7 +17,7 @@ describe DescriptionsController do
     end
 
     it 'shows message if the chart has no description' do
-      allow(chart).to receive(:description_content).and_return('')
+      allow(chart).to receive(:description).and_return('')
 
       get :charts, params: { id: chart.key }
 

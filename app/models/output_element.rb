@@ -45,7 +45,6 @@ class OutputElement < YModel::Base
   ].freeze
 
   include AreaDependent::YModel
-  include Describable
 
   index_on :key
   has_many :output_element_series
@@ -65,6 +64,17 @@ class OutputElement < YModel::Base
 
   def title_for_description
     "output_elements.#{key}"
+  end
+
+  # Descriptions are optional for output elements
+  def description
+    I18n.t("descriptions_output_elements.#{key}.content",
+            default: '')
+  end
+
+  def description_embeds_player?
+    description&.include?('player') ||
+      description&.include?('object')
   end
 
   def block_chart?

@@ -30,7 +30,6 @@
 class OutputElementSerie < YModel::Base
   include Colors
   include AreaDependent::YModel
-  include Describable
 
   index_on :key
   belongs_to :output_element
@@ -55,6 +54,12 @@ class OutputElementSerie < YModel::Base
 
   def group_translated
     I18n.t("output_element_series.groups.#{group}") unless group.blank?
+  end
+
+  #  Descriptions are optional for output element series
+  def description
+    I18n.t("descriptions_output_element_series.#{key}.content",
+            default: '')
   end
 
   # rubocop:disable Metrics/LineLength

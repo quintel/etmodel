@@ -17,7 +17,6 @@
 # ie "Households", "Electricity" and "Fuel prices"
 class SidebarItem < YModel::Base
   include AreaDependent::YModel
-  include Describable
 
   index_on :key
   belongs_to :tab
@@ -47,6 +46,10 @@ class SidebarItem < YModel::Base
 
   def short_name
     "#{tab.try :key} : #{key}"
+  end
+
+  def description
+    I18n.t("descriptions_sidebar_items.#{key}.content")
   end
 
   def root?

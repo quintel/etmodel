@@ -27,7 +27,6 @@ describe InputElement do
     it { is_expected.to respond_to(:command_type) }
     it { is_expected.to respond_to(:related_converter) }
     it { is_expected.to respond_to(:position) }
-    it { is_expected.to respond_to(:description) }
 
     # Methods
     it { is_expected.to respond_to(:title_for_description) }
@@ -82,7 +81,8 @@ describe InputElement do
 
   describe '#sanitized_description' do
     subject do
-      ie = described_class.new(description: { 'content_en' => "'foobar'" })
+      ie = described_class.new
+      allow(ie).to receive(:description).and_return "'foobar'"
       ie.sanitized_description
     end
 

@@ -55,7 +55,7 @@ D3.dynamic_demand_curve =
 
     margins :
       top: 20
-      bottom: 50
+      bottom: 20
       left: 65
       right: 20
       label_left: 30

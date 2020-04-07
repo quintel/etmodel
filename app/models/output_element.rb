@@ -101,7 +101,6 @@ class OutputElement < YModel::Base
   # rubocop:disable Naming/PredicateName
   # some charts don't have their series defined in the database. This method
   # makes view code simpler
-  #
   def has_series_in_db?
     !(html_table? || d3_chart?)
   end

@@ -29,5 +29,8 @@ module YModel
 
   class RecordNotFound < YModelError
   end
+
+  class DuplicateIndexError < YModelError
+  end
 end
 # rubocop:enable Style/Documentation

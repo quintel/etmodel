@@ -63,7 +63,7 @@ module YModel
       end
 
       def all
-        @all ||= records.map { |record| new(record) }
+        @all ||= load_records!
       rescue Errno::ENOENT
         raise YModel::SourceFileNotFound
       end

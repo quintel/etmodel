@@ -22,11 +22,35 @@ module YModel
       YModel::Schema.new({})
     end
 
+    def load_records!
+      all = records.map { |record| new(record) }
+      unless all.map(&:index) == all.map(&:index).uniq
+        raise YModel::DuplicateIndexError, 'Some records share the same index.'
+      end
+
+      all
+    end
+
+    def index_on(key)
+      @index = key
+    end
+
+    def index
+      @index || :id
+    end
+
     protected
 
+    # I dislike the format of this method a lot. Rubocop made me do it..
     def records
-      @records ||= YAML.load_file(source)
-        .map(&:symbolize_keys)
+      @records ||=
+        if compiled?
+          Dir.glob(File.join(source, '*.yml'))
+            .flat_map { |name| YAML.load_file(name) }
+        else
+          YAML.load_file(source)
+            .map(&:symbolize_keys)
+        end
     end
 
     def source
@@ -34,6 +58,10 @@ module YModel
     end
 
     private
+
+    def compiled?
+      File.directory?(File.join(Rails.root, source))
+    end
 
     def _source
       File.join(Rails.root,

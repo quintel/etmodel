@@ -9,13 +9,6 @@ module YModel
   module Relatable
     # This method is used to define the key on which relations are build.
     # We default to 'id'.
-    def index_on(key)
-      @index = key
-    end
-
-    def index
-      @index || :id
-    end
 
     def belongs_to(model, options = {})
       define_method(model) do

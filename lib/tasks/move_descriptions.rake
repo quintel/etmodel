@@ -16,8 +16,9 @@ task move_descriptions: :environment do
   nl_descriptions = {}
 
   interface_yml = YAML.load_file(interface_path)
-  interface_yml.each do |item, empty|
+  interface_yml.each do |item, _empty|
     next unless item && item['description']
+
     en_descriptions[item['key']] = build_description('en', item['description'])
     nl_descriptions[item['key']] = build_description('nl', item['description'])
 
@@ -29,6 +30,8 @@ task move_descriptions: :environment do
   File.write(interface_path, interface_yml.to_yaml)
 end
 
+# Some methods to help move the descriptions from the interface files
+# to the localization files
 module LocalizeDescriptions
   require 'yaml'
 
@@ -39,7 +42,7 @@ module LocalizeDescriptions
 
   def write_to_locale(model_name, language, descriptions_hash)
     file_name = language + '_descriptions_' + model_name + '.yml'
-    path = Rails.root.join( 'config', 'locales', file_name)
+    path = Rails.root.join('config', 'locales', file_name)
     File.write(
       path,
       { language => { "descriptions_#{model_name}" => descriptions_hash } }

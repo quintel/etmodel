@@ -3,14 +3,18 @@
 var D3ChartDateSelect = (function() {
   'use strict';
 
-  var epoch = new Date(0),
-    msInWeek = 604800000;
+  var msInHour = 60 * 60 * 1000;
+  var epoch = new Date(0);
+  var msInWeek = msInHour * 24 * 7;
 
   function buildOption(i) {
-    var nextIndex = i + 1,
-      msOffset = msInWeek * i,
-      start = new Date(epoch.getDate() + msOffset),
-      end = new Date(start.getDate() + msOffset + msInWeek);
+    var nextIndex = i + 1;
+    var msOffset = msInWeek * i;
+    var start = new Date(epoch.getDate() + msOffset);
+
+    // Remove an hour from the end of the range to as the range should be 00:00
+    // to 23:00, not 00:00 to 00:00.
+    var end = new Date(start.getDate() + msOffset + msInWeek - msInHour);
 
     this.weeks[nextIndex] = [start, end];
 

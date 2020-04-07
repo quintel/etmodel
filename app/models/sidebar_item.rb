@@ -48,6 +48,10 @@ class SidebarItem < YModel::Base
     "#{tab.try :key} : #{key}"
   end
 
+  def translated_description
+    I18n.t("descriptions_sidebar_items.#{key}.content")
+  end
+
   def root?
     parent_key.nil?
   end

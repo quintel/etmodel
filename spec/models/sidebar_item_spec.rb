@@ -29,6 +29,7 @@ describe SidebarItem do
     # methods
     it { is_expected.to respond_to(:parsed_key_for_admin) }
     it { is_expected.to respond_to(:short_name) }
+    it { is_expected.to respond_to(:translated_description) }
 
     describe '.tab' do
       subject { described_class.all.first }

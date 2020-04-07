@@ -14,7 +14,6 @@ describe SidebarItem do
 
     # Relations
     it { is_expected.to respond_to(:area_dependent) }
-    it { is_expected.to respond_to(:description) }
     it { is_expected.to respond_to(:slides) }
     it { is_expected.to respond_to(:parent) }
     it { is_expected.to respond_to(:children) }

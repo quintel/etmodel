@@ -17,7 +17,6 @@
 # ie "Households", "Electricity" and "Fuel prices"
 class SidebarItem < YModel::Base
   include AreaDependent::YModel
-  include Describable
 
   index_on :key
   belongs_to :tab

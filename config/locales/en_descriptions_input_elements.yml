@@ -1578,13 +1578,13 @@ en:
         100% of the gas in this way without losing efficiency. In practice less than
         the theoretical maximum is co-fired in such plants.
     households_heater_district_heating_steam_hot_water_share:
-      short_content: 
+      short_content:
       content: District heating is heat supplied by a heat network. The heat can be
         produced by local heat plants / large-scale burners or the heat can be imported
         from outside your region. You can set the heat sources in the Supply-section
         under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
     capacity_of_energy_power_turbine_network_gas:
-      short_content: 
+      short_content:
       content: "Here you can set capacity of gas turbine power plants. These are less
         efficient than the combined-cycle gas turbines (CCGT), but have the advantage
         that they can handle being turned on and off within minutes. \r\nThese turbines
@@ -1593,7 +1593,7 @@ en:
         these plants are quite limited, they are extremely useful to have in your
         power mix."
     capacity_of_energy_power_engine_diesel:
-      short_content: 
+      short_content:
       content: "This is a small diesel generator of 2 MWe. <br/>\r\nA diesel generator
         is the combination of a diesel engine with an electric generator to generate
         electrical energy. Although they are expensive to run, their relative simplicity,
@@ -1605,30 +1605,30 @@ en:
         supply, meaning it only runs occasionally.\r\n<br/><br/>\r\nThe input of the
         slider (in MW) is converted to a (partial) number of the plant described above."
     buildings_space_heater_district_heating_steam_hot_water_share:
-      short_content: 
+      short_content:
       content: District heating is heat supplied by a heat network. The heat can be
         produced by local heat plants / large-scale burners or the heat can be imported
         from outside your region. You can set the heat sources in the Supply-section
         under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
     employment_local_fraction:
-      short_content: 
+      short_content:
       content: "What fraction of total labor for the production of parts do you think
         is done locally?\r\n<br/><br/>\r\n\r\nHow much local employment results from
         the use of a technology, depends on how much of the labor is done abroad.
         Especially the production of parts (such as piping, bolts and screws) is chiefly
         done abroad."
     employment_economic_multiplier:
-      short_content: 
+      short_content:
       content: "Employment has a positive feedback effect. If employment increases,
         consumption increases accordingly, allowing employment to grow even more.\r\nHow
         strong do you think this effect is for energy-related jobs?"
     transport_plane_using_gasoline_share:
-      short_content: 
+      short_content:
       content: 'Not a large percentage of airplanes use gasoline as fuel. Its use
         is mostly limited to smaller private planes, since larger planes need higher
         energy content fuels to get far enough. '
     transport_rail_mixer_diesel_biodiesel_share:
-      short_content: 
+      short_content:
       content: "Biodiesel can be made from a range of vegetable or animals fats. Seed
         oils are particularly popular. Diesel produced from algae has captured people's
         imagination, since growing crops for biodiesel often still competes for space
@@ -1638,52 +1638,52 @@ en:
         tend to be rather corrosive to the engine.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/carriers_source_analyses\">documentation
         on GitHub</a> for more information on the numbers used."
     transport_rail_mixer_diesel_diesel_share:
-      short_content: 
+      short_content:
       content: Diesel is the standard fossil fuel for trains in 'remote' areas that
         lack an electric rail system. Diesel engines are quite efficient and sturdy.
         Due to emissions of fine particulate matter, filters are becoming mandatory
         in most parts of the world.
     employment_fraction_production:
-      short_content: 
+      short_content:
       content: "What contribution do you think the production phase makes to employment?\r\n</br></br>\r\nAlthough
         the production of parts for heaters, plants and other energy related appliances
         represents a significant part of the total employment, the share of this phase
         is uncertain."
     investment_costs_micro_chp:
-      short_content: 
+      short_content:
       content: "As more micro-CHPs are installed their costs are likely to decrease.
         If you believe this technology will be successful in the future, you can indicate
         how much cheaper you think they may become.\r\n<br/>\r\nMicro-CHPs can be
         chosen as heating technology in the <a href=\"/scenario/demand/households/space-heating\"a>households
         section<a/>. \r\n"
     investment_costs_fuel_cell:
-      short_content: 
+      short_content:
       content: "As more fuel cells are installed their costs are likely to decrease.
         If you believe this technology will be successful in the future, you can indicate
         how much cheaper you think they may become. <br/>\r\nFuel cells can be chosen
         as water heating technology in the <a href=\"/scenario/demand/households/space-heating\"a>households
         section<a/>. \r\n"
     industry_aluminium_production:
-      short_content: 
+      short_content:
       content: "Here you can indicate by how much production volumes of aluminium
         will change. \r\n</br></br>\r\nProduction of aluminium in Europe has on average
         increased by 1% per year since 2001. Globally growth is over ~6% with China
         the strongest contributor ( ~18% annually). "
     industry_aluminium_electrolysis_bat_electricity_share:
-      short_content: 
+      short_content:
       content: "Production of primary aluminium by electrolysis is quite energy intensive,
         but there is room for improvement. Best available technology (BAT) is ~10%
         more efficient than plants operating today.\r\n</br></br>\r\nHere you can
         indicate what share BAT electrolysis has in aluminium production."
     industry_aluminium_smeltoven_electricity_share:
-      short_content: 
+      short_content:
       content: "Aluminium (like all metals) can be recycled endlessly. To do so, it
         needs to be melted down, a process that represents a 95% energy reduction
         compared to production of primary aluminium. \r\n</br></br>\r\nHere you can
         indicate what share of total aluminium production comes from recycled aluminium.
         \ "
     industry_aluminium_carbothermalreduction_electricity_share:
-      short_content: 
+      short_content:
       content: "Separating aluminium and oxygen by carbothermal reduction is a fundamentally
         different method of primary aluminium production from electrolysis. The former
         is a temperature assisted chemical reaction, the latter an electrochemical
@@ -1692,21 +1692,21 @@ en:
         for large-scale industrial application. \r\n</br></br>\r\nHere you can indicate
         what share of aluminium production will come from carbothermal reduction."
     industry_aluminium_electrolysis_current_electricity_share:
-      short_content: 
+      short_content:
       content: "The standard process for producing primary aluminium from ore is by
         electrolysis (Hall-Héroult process). This process separates aluminium and
         oxygen from aluminiumoxide and requires large amounts of electricity. All
         primary aluminium production around the world is presently done by electrolysis.\r\n</br></br>\r\nHere
         you can indicate what share electrolysis will have in aluminium production."
     industry_other_metals_process_electricity_efficiency:
-      short_content: 
+      short_content:
       content: "Producing and processing other metals requires large amounts of electricity.
         Examples of electricity applications are pressing, cutting and pumping. Quite
         a few energy saving measures are available. Together, these measures can result
         in incremental improvements in energy efficiency for electricity application.\r\n</br></br>\r\nHere
         you can indicate what annual efficiency improvements will be. "
     industry_other_metals_process_heat_useable_heat_efficiency:
-      short_content: 
+      short_content:
       content: "Melting down, smelting and processing other metals requires heat.
         Quite a few energy saving measures are available, such as insulation of production
         spaces, ovens or pipes, more efficient burners, etc. All these measures together
@@ -1714,21 +1714,21 @@ en:
         \r\n</br></br>\r\nHere you can indicate what the annual efficiency improvements
         will be."
     industry_other_metals_production:
-      short_content: 
+      short_content:
       content: "The 'other metals' sector comprises the production of lead, zinc,
         copper and precious metals like gold and silver. \r\n</br></br>\r\nHere you
         can indicate how the total production volumes of these metals will change. "
     buildings_space_heater_coal_share:
-      short_content: 
+      short_content:
       content: This shows what part of heating is produced by coal-fired heaters.
     industry_steel_production:
-      short_content: 
+      short_content:
       content: "Here you can indicate how the production of crude steel will change
         in the future. \r\n</br></br>\r\nIn Europe, steel production has grown by
         0.5% annually since 2001. Globally, growth is more than 5% with China the
         biggest contributor (~16% annually).  "
     industry_steel_blastfurnace_bat_consumption_useable_heat_share:
-      short_content: 
+      short_content:
       content: "Blast furnaces are part of extensive industrial complexes that have
         a technical lifetime of decades. Few adjustments are possible during their
         lifetime, making optimal efficiencies difficult to attain. Best available
@@ -1737,13 +1737,13 @@ en:
         furnaces.\r\n</br></br>\r\nHere you can indicate what share of iron and steel
         production uses BAT blast furnaces.\r\n<br>"
     industry_steel_blastfurnace_current_consumption_useable_heat_share:
-      short_content: 
+      short_content:
       content: "Iron and steel are conventionally produced in a blastfurnace. Globally,
         two-thirds of all iron and steel is produced this way (the rest is recycled
         steel).  \r\n</br></br>\r\nHere you can indicate what share blast furnaces
         have in total iron and steel production ."
     industry_steel_hisarna_consumption_useable_heat_share:
-      short_content: 
+      short_content:
       content: "Iron production is energy and carbon intensive, so a strong incentive
         exists to look for alternative technologies to make the process more efficient.
         \r\nCyclone ovens (also known as Hisarna ovens) will combine several different
@@ -1753,14 +1753,14 @@ en:
         fully mature. \r\n<br/><br/>\r\nHere you can indicate what share cyclone ovens
         will have in future iron and steel production. "
     industry_steel_electricfurnace_electricity_share:
-      short_content: 
+      short_content:
       content: "Steel (like all metals) can be endlessly recycled. Electric arc furnaces
         are used to recycle 100% used steel. Steel can also be melted in blast furnaces,
         but input is limited to 20% there (80% new iron is required). Globally, almost
         one third of steel is produced in electric arc furnaces. \r\n<p>\r\nHere you
         can indicate what share electric arc furnaces will have in steel production. "
     energy_steel_hisarna_transformation_coal_woodpellets_share:
-      short_content: 
+      short_content:
       content: "Producing pig iron for steel in a blast furnace requires large amounts
         of coal. The coal serves a source of carbon and 'reducing agent' for separating
         iron and oxygen from iron ore. Coal is used partly in the form of cokes and
@@ -1771,10 +1771,10 @@ en:
         you can indicate what share of coal input in cyclone furnaces is replaced
         by torrified wood pellets. "
     settings_enable_merit_order:
-      short_content: 
+      short_content:
       content: ''
     flexibility_outdoor_temperature:
-      short_content: 
+      short_content:
       content: "By how much do you think the outdoor temperature will change in the
         future?\r\n<br/><br/>\r\nYour choice will affect the useful demand for heating
         and cooling in households and buildings. To translate a temperature change
@@ -1784,7 +1784,7 @@ en:
         about the climate change calculation consult our <a href=\"https://github.com/quintel/documentation/blob/master/general/climate.md\"
         target =\"_blank\">documentation</a>."
     investment_costs_electric_heat_pumps:
-      short_content: 
+      short_content:
       content: "As more electric heat pumps are installed their costs are likely to
         decrease. If you believe this technology will be successful in the future,
         you can indicate how much cheaper you think they may become.\r\n<br/><br/>\r\nVarious
@@ -1796,7 +1796,7 @@ en:
         industry<a/>. \r\n<br/><br/>\r\nThe technical and financial parameters of
         one kind of heat pump can be seen by clicking the link below."
     investment_costs_gas_heat_pumps:
-      short_content: 
+      short_content:
       content: "As more gas-fired heat pumps are installed their costs are likely
         to decrease. If you believe this technology will be successful in the future,
         you can indicate how much cheaper you think they may become.\r\n<br/>\r\nGas-fired
@@ -1804,7 +1804,7 @@ en:
         section<a/>. <br/>\r\nThe technical and financial parameters of one kind of
         gas-fired heat pump can be seen by clicking the link below."
     capacity_of_industry_chp_turbine_gas_power_fuelmix:
-      short_content: 
+      short_content:
       content: "This gas turbine CHP is typically found at a medium-sized industrial
         firm to deliver power and steam. Several units are sometimes found on one
         site in order to deliver steam to neighboring firms.\r\n<br/><br/>\r\nFirms
@@ -1813,14 +1813,14 @@ en:
         example as a result of seasonal differences, meaning full load hours for heat
         are lower at 6000 hours per year. "
     capacity_of_industry_chp_engine_gas_power_fuelmix:
-      short_content: 
+      short_content:
       content: "This gas-powered engine may well produce heat and power for local
         use in the food industry.\r\nFor a three-shift work rotation common in the
         food industry, the number of full load hours would be ~6000 hours per year.\r\n<br/><br/>\r\nGenerating
         heat and power for local use can be considerably more efficient than buying
         power from the grid and generating heat with a burner. "
     capacity_of_energy_chp_supercritical_waste_mix:
-      short_content: 
+      short_content:
       content: "This builds a high energy yield waste-incineration plant that delivers
         heat to a central heating grid (60 MWe and 33 MWth). Waste that can be safely
         burnt is used to generate electricity and heat. By incinerating waste under
@@ -1831,28 +1831,28 @@ en:
         assume no waste will be imported.\r\n<br/><br/>\r\nThe input of the slider
         (in MW) is converted to a (partial) number of the plant described above."
     households_useful_demand_cooking_per_person:
-      short_content: 
+      short_content:
       content: "Note: these changes in energy demand do <strong>not</strong> depend
         on the technologies chosen below (Cooking slide). \r\n<br/>\r\n<br/>\r\nHere
         you can indicate how you expect the demand for cooking per person to change.
         As people become wealthier, they go out for dinner or take away food more
         often, resulting in a lower demand for cooking at home."
     households_useful_demand_electric_appliances:
-      short_content: 
+      short_content:
       content: "Note: these changes in energy demand do <strong>not</strong> depend
         on the technologies chosen below (Appliances slide). \r\n<br/>\r\n<br/>\r\nHere
         you indicate how you expect demand for appliances per person to change. This
         is mainly determined by growth in prosperity. As people become richer, they
         tend to possess more electric appliances."
     households_useful_demand_lighting:
-      short_content: 
+      short_content:
       content: "Note: these changes in energy demand do <strong>not</strong> depend
         on the technologies chosen below (Lighting slide). \r\n<br/>\r\n<br/>\r\nHere
         you indicate how you expect demand for lighting per person to change. This
         is mainly determined by growth in prosperity. As people become richer, they
         start living in larger houses that require more lighting."
     capacity_of_energy_chp_ultra_supercritical_cofiring_coal:
-      short_content: 
+      short_content:
       content: "Large ultra-supercritical pulverized coal-fired CHP plant. \r\nSuch
         plants are identical to a common coal plant, except that it also supplies
         heat to large heating grids. This comes at the expense of some power production.
@@ -1860,7 +1860,7 @@ en:
         changing the capacity of plants with and without co-firing an overall percentage
         of co-firing can be established between 0% and 50%."
     capacity_of_energy_power_ultra_supercritical_cofiring_coal:
-      short_content: 
+      short_content:
       content: "730 megawatt electric (MWe) ultra-supercritical pulverized coal-fired
         plant with 50% co-firing of biomass. Of all types of power plants, coal and
         lignite-fired ones contribute most to pollution of the environment. By co-firing
@@ -1877,18 +1877,18 @@ en:
         25% co-firing in total.\r\n<br/><br/>\r\nThe input of the slider (in MW) is
         converted to a (partial) number of the plant described above."
     investment_costs_solar_concentrated_solar_power:
-      short_content: 
+      short_content:
       content: This slider sets the height of the assumed costs for concentrated solar
         power (CSP). Costs are compared to current costs.
     other_useful_demand_non_energetic:
-      short_content: 
+      short_content:
       content: "Note: these changes in energy demand do <strong>not</strong> depend
         on the technologies chosen below.\r\n<br/><br/>\r\nWhat do you expect the
         development of non-energetic demand in the other sector will be like? This
         depends primarily on the growth of the this sector (determined by economic
         growth, but also conditions for investment etc.)."
     capacity_of_energy_power_engine_network_gas:
-      short_content: 
+      short_content:
       content: "This is a power plant made up of 22 reciprocating combustion engine
         units (18 MWe each), which makes for a 400 MWe power plant. The engines are
         flexible in terms of what fuel they can use, but in the ETM they are gas-fired.\r\n<br/><br/>\r\nAlthough
@@ -1913,7 +1913,7 @@ en:
         efficient in balancing wind power. \r\n<br/><br/>\r\nThe input of the slider
         (in MW) is converted to a (partial) number of the plant described above."
     capacity_of_industry_chp_ultra_supercritical_coal:
-      short_content: 
+      short_content:
       content: "Combined heat and power (CHP) plants generate both heat and electricity.
         The combination of heat and electricity makes this option quite energy efficient.
         Also, locally producing and using heat and electricity reduces transportation
@@ -1922,14 +1922,14 @@ en:
         CHP plants are gas-fired, but depending on the availability of fuels coal-fired
         CHP plants can be installed as well."
     households_flexibility_p2p_electricity_market_penetration:
-      short_content: 
+      short_content:
       content: 'Household batteries are often mentioned as a convenient way to store
         excess electricity such that you can use it at a later time. Using this slider
         you can set the percentage of households that is equipped with a household
         battery. Households batteries in the ETM have a battery volume of 19.8 kWh
         and can be charged using grid power or solar panels. '
     transport_car_using_electricity_availability:
-      short_content: 
+      short_content:
       content: "Electric vehicles could provide a cost-effective way of storing electricity
         as they contain a relatively large battery. With this slider, you can set
         which percentage of the electric vehicles' battery is reserved for flexibility
@@ -1940,46 +1940,46 @@ en:
         next ride. With this slider you can set the percentage of the battery volume
         that can be used for flexibility purposes."
     capacity_of_energy_hydrogen_flexibility_p2g_electricity:
-      short_content: 
+      short_content:
       content: Power-to-gas plants convert <strong>excess</strong> electricity to
         hydrogen. This slider allows this hydrogen to be used in the central hydrogen
         network. Any excess hydrogen is exported. The power-to-gas plants have an
         input capacity of 10 MWe.
     interconnectors_availability_for_export:
-      short_content: 
+      short_content:
       content: It is very likely that not all of the physical interconnector capacity
         can be used during times of excess electricity production. When there is to
         much electricity production by wind turbines and solar panels, this is probably
         also true for the neighbouring countries. Using this slider you can set the
         percentage of the interconnector capacity that is available for export.
     interconnectors_availability_for_import:
-      short_content: 
+      short_content:
       content: It is very likely that not all of the physical interconnector capacity
         can be used during times of excess electricity production. When there is to
         much electricity production by wind turbines and solar panels, this is probably
         also true for the neighbouring countries. Using this slider you can set the
         percentage of the interconnector capacity that is available for import.
     interconnectors_interconnector_capacity:
-      short_content: 
+      short_content:
       content: The interconnectors with neighbouring countries have limited capacity.
         Using this slider you can change the interconnector capacity from its present
         value.
     investment_costs_households_flexibility_p2p_electricity:
-      short_content: 
+      short_content:
       content: "Household batteries are often mentioned as a convenient way to store
         excess electricity such that you can use it at a later time. With <a href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\"
         >this slider</a> you can choose what percentage of all households should have
         such a battery and with the above slider you can presumably set your assumption
         for the future change in investment costs of households batteries.\r\n</br>"
     investment_costs_flexibility_p2h_electricity:
-      short_content: 
+      short_content:
       content: Power-to-heat plants convert excess electricity to heat. In the ETM
         power-to-heat can be used in <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-households">households</a>
         and in <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">industry</a>.
         This slider determines the future change in investment costs of electric boilers.<br
         />
     investment_costs_hydrogen_electrolysis:
-      short_content: 
+      short_content:
       content: Power-to-gas plants use electricity to produce gas (like hydrogen or
         methane). This is called electrolysis. This slider determines the change in
         investment costs of power-to-gas plants. This affects the costs of hydrogen
@@ -1988,7 +1988,7 @@ en:
         electricity</a> and the costs of <a href="/scenario/flexibility/flexibility_conversion/conversion-to-kerosene-for-aviation">synthetic
         kerosene production</a> for aviation.<br />
     transport_ship_using_diesel_mix_share:
-      short_content: 
+      short_content:
       content: "The vast majority of ships for inland waterway transport are powered
         by diesel engines. These engines can run in several cycles and at high and
         low pressures. Depending on the exact engine configuration, diesel engines
@@ -1999,7 +1999,7 @@ en:
         with diesel / dual fuel engines.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_ship_using_lng_mix_share:
-      short_content: 
+      short_content:
       content: "(Liquefied) natural gas engines are a rather novel ship engine technology.
         They are spark-ignited engines which operate at low pressures and are optimized
         for liquefied natural gas (LNG). As a result, these engines can only run on
@@ -2008,7 +2008,7 @@ en:
         availability of shipping fuels.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_truck_using_lng_mix_share:
-      short_content: 
+      short_content:
       content: "What percentage of all trucks will use liquefied natural gas (LNG)
         fueled internal combustion engine (ICE) technology? LNG trucks have a longer
         driving range than compressed network gas (CNG) trucks, because the energy
@@ -2016,7 +2016,7 @@ en:
         insulated tanks.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_road_mixer_lng_lng_share:
-      short_content: 
+      short_content:
       content: "Liquefied Natural Gas (LNG) is a clean burning fossil fuel. Liquefaction
         makes natural gas significantly richer in energy, and therefore interesting
         for long distance transport. Currently the only large scale European liquefaction
@@ -2027,7 +2027,7 @@ en:
         and almost continuous, the high energy content allows for a large driving
         range while LNG evaporation does not pose a problem."
     transport_road_mixer_lng_bio_lng_share:
-      short_content: 
+      short_content:
       content: Bio LNG is in fact liquefied bio methane. Through anaerobic digestion
         or fermentation biodegradable materials can be converted into biogas. This
         gas consists of mostly bio methane, carbondioxide and several other gases.
@@ -2036,17 +2036,17 @@ en:
         burnt. To then increase the energetic density, bio methane is liquefied and
         bio LNG is obtained.
     energy_treatment_natural_gas_share:
-      short_content: 
+      short_content:
       content: Which percentage of the natural gas in the national gas network is
         natural gas?
     energy_regasification_lng_share:
-      short_content: 
+      short_content:
       content: Which percentage of the natural gas in the national gas network is
         regasified LNG? LNG is mainly imported from Norway and the Middle East, then
         regasified to natural gas at import terminals and fed into the national gas
         network. In liquid form (hence, as LNG) it is only used in the transport sector.
     transport_shipping_mixer_lng_lng_share:
-      short_content: 
+      short_content:
       content: Liquified Natural Gas (LNG) is a rather novel shipping fuel. Traditionally,
         large ships use large fractions of oil and smaller vessels typically run on
         diesel-like fuels. Ships transporting large cargo over long distances require
@@ -2056,7 +2056,7 @@ en:
         LNG is also a clean-burning fossil fuel, it is an alternative shipping fuel
         worth considering.
     transport_shipping_mixer_lng_bio_lng_share:
-      short_content: 
+      short_content:
       content: 'Bio-based fuels for navigation are not common. Very large ocean-faring
         vessels tend to use extremely heavy tar-like oil fractions that will probably
         never be replaced by bio-fuels, as this is hardly economical. Furthermore,
@@ -2064,14 +2064,14 @@ en:
         idea  to have them run on bio-fuels. Road transport being far less efficient,
         bio-fuels will have a much larger impact there. '
     transport_shipping_mixer_diesel_diesel_share:
-      short_content: 
+      short_content:
       content: Large ships use tar-like fractions of oil, which tend to be a waste
         product of all but the most advanced refineries. This makes this fuel very
         cheap (and rich in energy). The smaller a ship becomes, the closer its fuel
         will tend to common diesel. Since ships in domestic navigation are relatively
         small, diesel is a rather common fuel there.
     transport_shipping_mixer_diesel_biodiesel_share:
-      short_content: 
+      short_content:
       content: 'Bio-based fuels for navigation are not common. Very large ocean-faring
         vessels tend to use extremely heavy tar-like oil fractions that will probably
         never be replaced by bio-fuels, as this is hardly economical. Furthermore,
@@ -2079,7 +2079,7 @@ en:
         idea  to have them run on bio-fuels. Road transport being far less efficient,
         bio-fuels will have a much larger impact there. '
     transport_shipping_mixer_diesel_lng_share:
-      short_content: 
+      short_content:
       content: Liquified Natural Gas (LNG) is a rather novel shipping fuel. Traditionally,
         large ships use large fractions of oil and smaller vessels typically run on
         diesel-like fuels. Ships transporting large loads over long distances, require
@@ -2089,7 +2089,7 @@ en:
         LNG is also a clean-burning fossil fuel, it is an alternative shipping fuel
         worth considering.
     transport_shipping_mixer_diesel_bio_lng_share:
-      short_content: 
+      short_content:
       content: 'Bio-based fuels for navigation are not common. Very large ocean-faring
         vessels tend to use extremely heavy tar-like oil fractions that will probably
         never be replaced by bio-fuels, as this is hardly economical. Furthermore,
@@ -2097,33 +2097,33 @@ en:
         idea  to have them run on bio-fuels. Road transport being far less efficient,
         bio-fuels will have a much larger impact there. '
     transport_shipping_mixer_diesel_heavy_fuel_oil_share:
-      short_content: 
+      short_content:
       content: The larger a ship becomes, the heavier the fuel it uses. Large ocean-faring
         ships use a tar-like substance that is a waste product of all but the most
         advanced refineries. Since these fractions have few other uses without being
         broken down further, they are relatively cheap.
     lng_from_algeria_share:
-      short_content: 
+      short_content:
       content: Algeria also exports natural gas as liquefied natural gas. It has several
         liquefaction plants, but Algeria mostly delivers LNG to countries in Southern
         Europe such as France and Spain because of their proximity.
     lng_from_norway_share:
-      short_content: 
+      short_content:
       content: Norway is the only country in Europe which has large scale natural
         gas liquefaction facilities. It is relatively close to the Netherlands, so
         energy use and CO<sub>2</sub> emissions for transport are relatively low.
     lng_from_qatar_share:
-      short_content: 
+      short_content:
       content: Qatar is the main exporter of LNG worldwide. It also delivers LNG to
         all of the three LNG trading markets, which are Europe, Asia and the Americas.
     lng_from_trinidad_share:
-      short_content: 
+      short_content:
       content: Trinidad (& Tobago) is a rather small player in the LNG market, and
         mostly exports LNG to the Americas. However, it also ships small quantities
         to Europe, but due to the long distance the CO<sub>2</sub> emissions for transport
         are quite high.
     households_heater_hybrid_heatpump_air_water_electricity_share:
-      short_content: 
+      short_content:
       content: "This heater is a combination of an electric heat pump that draws its
         heat from the outside air and an efficient conventional gas-fired boiler.
         Essentially, the hybrid heat pump offers a way to strongly reduce natural
@@ -2148,7 +2148,7 @@ en:
         to gas. The threshold value can be adjusted in the section <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
         >Demand response - behavior of hybrid heat pumps</a>. \r\n\r\n"
     transport_car_using_hydrogen_share:
-      short_content: 
+      short_content:
       content: "What percentage of all cars will be hydrogen fuelled vehicles in the
         future? Hydrogen cars have been hyped as well as criticised a lot, and as
         with many choices, their value depends on other choices you make. Hydrogen
@@ -2172,7 +2172,7 @@ en:
         as power plants and storage devices.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_vehicle_using_hydrogen_efficiency:
-      short_content: 
+      short_content:
       content: "Here you can indicate how much more efficient future hydrogen vehicles
         will become every year. Hydrogen vehicles include all vehicles that can run
         on hydrogen: cars, busses and trucks.\r\n<br/><br/>\r\nSince hydrogen vehicles
@@ -2182,7 +2182,7 @@ en:
         the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
         on GitHub</a> for detailed information on the numbers and sources used."
     capacity_of_energy_hydrogen_steam_methane_reformer_ccs:
-      short_content: 
+      short_content:
       content: "Steam methane reforming is a very mature hydrogen production process.
         It works like this: methane reacts in the presence of a catalyst with high
         temperature steam and gives a mixture of hydrogen and other gases. The unwanted
@@ -2201,7 +2201,7 @@ en:
         of course requires higher investments and maintenance costs, but in return
         significantly cuts GHG emissions.<br/>"
     capacity_of_energy_hydrogen_steam_methane_reformer:
-      short_content: 
+      short_content:
       content: "Steam methane reforming is a very mature hydrogen production process.
         It works like this: methane reacts in the presence of a catalyst with high
         temperature steam and gives a mixture of hydrogen and other gases. The unwanted
@@ -2215,7 +2215,7 @@ en:
         far from the cleanest and greenest, but able to facilitate upcoming hydrogen
         demand.<br />"
     energy_local_electrolysis_hydrogen_share:
-      short_content: 
+      short_content:
       content: "Electrolysis is a hydrogen production process known for many, many
         years. Put simply, by adding to electrodes and applying a current to a container
         filled with water, water molecules are forced to split into hydrogen and oxygen.
@@ -2234,15 +2234,15 @@ en:
         process that, especially when coupled with renewably produced electricity,
         can be a major leap in greening our fuels."
     capacity_of_energy_hydrogen_biomass_gasification_ccs:
-      short_content: 
+      short_content:
       content: 'Biomass gasification with carbon capture and storage is a hydrogen
         production technique that is not yet available for large scale production. '
     capacity_of_energy_hydrogen_biomass_gasification:
-      short_content: 
+      short_content:
       content: Biomass gasification is a mature technology in which biomass is converted
         into hydrogen. <br />
     investment_costs_electric_cars:
-      short_content: 
+      short_content:
       content: "With this slider you can determine how much higher the average purchase
         price (excluding taxes) of an electric car is compared to that of a combustion
         engine car. You therefore set the price <i>difference</i> between the two.
@@ -2253,40 +2253,40 @@ en:
         you specify here. This is because the total costs in the dashboard would otherwise
         be dominated by the resulting costs."
     industry_useful_demand_for_chemical_refineries:
-      short_content: 
+      short_content:
       content: Here you can indicate the total size of refineries in the future.
     industry_useful_demand_for_chemical_refineries_electricity_efficiency:
-      short_content: 
+      short_content:
       content: How will electric efficiency in refineries improve every year? These
         improvements are the result of technological innovation or newer and more
         efficient energetic processes.
     industry_useful_demand_for_chemical_refineries_useable_heat_efficiency:
-      short_content: 
+      short_content:
       content: How will the demand for heat generated by burning fuels change in refineries?
         These improvements are the result of newer and more efficient energetic processes
         or the result of replacement of fuel-fired heat by ambient or electric heat.
     industry_chemicals_refineries_burner_network_gas_share:
-      short_content: 
+      short_content:
       content: "All heat that is not generated with any of the methods below will
         be generated using a gas-fired heating system. These systems are quite energy
         efficient, but emit CO<sub>2</sub>. The latter is a problem if you wish to
         reduce emissions significantly.\r\n<br>"
     industry_chemicals_refineries_burner_crude_oil_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is met by oil-fired heaters?
         </br></br>\r\nIndustrial heat demand tends to be for high-grade heat, which
         is best generated by burning fuel.\r\nThe mix you fill in here is probably
         mostly determined by fuel prices and environmental legislation. See also the
         <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a> part. \r\n<br>"
     industry_chemicals_refineries_burner_wood_pellets_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is met by biomass-firing?
         \r\n</br></br>\r\nThis can be used to generate high-grade heat, which is the
         kind most in demand in industry.\r\nThe mix you fill in here is probably mostly
         determined by fuel prices and environmental legislation. See also the <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a>
         part.\r\n<br>"
     industry_chemicals_refineries_burner_coal_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is met by coal-firing?
         \r\n</br></br>\r\nCoal (or cokes) are mainly used in the steel manufacturing
         industry to produce the heat to smelt iron ore.\r\nThe mix you fill in here
@@ -2294,41 +2294,41 @@ en:
         See also the <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a>
         part.\r\n<br>"
     industry_final_demand_for_chemical_refineries_steam_hot_water_share:
-      short_content: 
+      short_content:
       content: "District heating is heat supplied by a heat network. The heat can
         be produced by local heat plants / large-scale burners or the heat can be
         imported from outside your region. You can set the heat sources in the Supply-section
         under the header <a href=\"/scenario/supply/heat\" >\"Heat networks\"</a>.\r\n"
     industry_useful_demand_for_chemical_fertilizers:
-      short_content: 
+      short_content:
       content: Here you can indicate the total size of the fertilizer industry in
         the future.
     industry_useful_demand_for_chemical_fertilizers_electricity_efficiency:
-      short_content: 
+      short_content:
       content: "How will electric efficiency in the fertilizer industry improve every
         year? \r\n</br></br>\r\nThese improvements are the result of technological
         innovation or newer and more efficient energetic processes."
     industry_useful_demand_for_chemical_fertilizers_useable_heat_efficiency:
-      short_content: 
+      short_content:
       content: "How will the demand for heat generated by burning fuels change in
         the fertilizer industry? \r\n</br></br>\r\nThese improvements are the result
         of newer and more efficient energetic processes or the result of replacement
         of fuel-fired heat by ambient or electric heat."
     industry_chemicals_fertilizers_burner_network_gas_share:
-      short_content: 
+      short_content:
       content: "All heat that is not generated with any of the methods below will
         be generated using a gas-fired heating system. These systems are quite energy
         efficient, but emit CO<sub>2</sub>. The latter is a problem if you wish to
         reduce emissions significantly.\r\n<br>"
     industry_chemicals_fertilizers_burner_crude_oil_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is met by oil-fired heaters?
         \r\n</br></br>\r\nIndustrial heat demand tends to be for high-grade heat,
         which is best generated by burning fuel.\r\nThe mix you fill in here is probably
         mostly determined by fuel prices and environmental legislation. See also the
         <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a> part. \r\n<br>"
     industry_chemicals_fertilizers_burner_coal_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is met by coal-firing?
         \r\n</br></br>\r\nCoal (or cokes) are mainly used in the steel manufacturing
         industry to produce the heat to smelt iron ore.\r\nThe mix you fill in here
@@ -2336,57 +2336,57 @@ en:
         See also the <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a>
         part.\r\n<br>"
     industry_chemicals_fertilizers_burner_wood_pellets_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is met by biomass-firing?
         \r\n</br></br>\r\nThis can be used to generate high-grade heat, which is the
         kind most in demand in industry.\r\nThe mix you fill in here is probably mostly
         determined by fuel prices and environmental legislation. See also the <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a>
         part.\r\n<br>"
     industry_final_demand_for_chemical_fertilizers_steam_hot_water_share:
-      short_content: 
+      short_content:
       content: District heating is heat supplied by a heat network. The heat can be
         produced by local heat plants / large-scale burners or the heat can be imported
         from outside your region. You can set the heat sources in the Supply-section
         under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
     industry_useful_demand_for_chemical_other:
-      short_content: 
+      short_content:
       content: "Non-energetic demand for oil products is the use of oil to make chemical
         products that do not serve as fuels. For example, plastics, pharmaceuticals
         and dyes are mainly made from oil.\r\n</br></br>\r\nHere you can indicate
         the total size of the chemical industry in the future."
     industry_useful_demand_for_chemical_other_electricity_efficiency:
-      short_content: 
+      short_content:
       content: "How will electric efficiency in the chemical industry improve every
         year?\r\n</br></br>\r\nThese improvements are the result of technological
         innovation or newer and more efficient energetic processes."
     industry_useful_demand_for_chemical_other_useable_heat_efficiency:
-      short_content: 
+      short_content:
       content: "How will the demand for heat generated by burning fuels change in
         the chemical industry? \r\n</br></br>\r\nThese improvements are the result
         of newer and more efficient energetic processes or the result of replacement
         of fuel-fired heat by ambient or electric heat."
     industry_chemicals_other_burner_network_gas_share:
-      short_content: 
+      short_content:
       content: All heat that is not generated with any of the methods below will be
         generated using a gas-fired heating system. These systems are quite energy
         efficient, but emit CO<sub>2</sub>. The latter is a problem if you wish to
         reduce emissions significantly.
     industry_chemicals_other_burner_crude_oil_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is met by oil-fired heaters?
         \r\n</br></br>\r\nIndustrial heat demand tends to be for high-grade heat,
         which is best generated by burning fuel.\r\nThe mix you fill in here is probably
         mostly determined by fuel prices and environmental legislation. See also the
         <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a> part. \r\n<br>"
     industry_chemicals_other_burner_wood_pellets_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is met by biomass-firing?
         \r\n</br></br>\r\nThis can be used to generate high-grade heat, which is the
         kind most in demand in industry.\r\nThe mix you fill in here is probably mostly
         determined by fuel prices and environmental legislation. See also the <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a>
         part.\r\n<br>"
     industry_chemicals_other_burner_coal_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is met by coal-firing?
         \r\n</br></br>\r\nCoal (or cokes) are mainly used in the steel manufacturing
         industry to produce the heat to smelt iron ore.\r\nThe mix you fill in here
@@ -2394,30 +2394,30 @@ en:
         See also the <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a>
         part.\r\n<br>"
     industry_final_demand_for_chemical_other_steam_hot_water_share:
-      short_content: 
+      short_content:
       content: District heating is heat supplied by a heat network. The heat can be
         produced by local heat plants / large-scale burners or the heat can be imported
         from outside your region. You can set the heat sources in the Supply-section
         under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
     industry_useful_demand_for_other_food:
-      short_content: 
+      short_content:
       content: Here you can indicate the total size of the food industry in the future.
     industry_useful_demand_for_other_food_efficiency:
-      short_content: 
+      short_content:
       content: "How will efficiency in the food industry improve every year? \r\n</br></br>\r\nThese
         improvements are the result of technological innovation or newer and more
         efficient energetic processes."
     industry_useful_demand_for_other_paper:
-      short_content: 
+      short_content:
       content: Here you can indicate the total size of the paper industrie in the
         future.
     industry_useful_demand_for_other_paper_efficiency:
-      short_content: 
+      short_content:
       content: "How will efficiency in the paper industry improve every year? \r\n</br></br>\r\nThese
         improvements are the result of technological innovation or newer and more
         efficient energetic processes."
     climate_relevant_co2_biomass_gas_present:
-      short_content: 
+      short_content:
       content: "Here you indicate which part of CO<sub>2</sub> emission caused by
         combustion of gaseous biomass is relevant for climate change.\r\n<p>\r\nBiogas
         made by fermentation of wet biomass (manure,roadside grass, organic waste
@@ -2428,7 +2428,7 @@ en:
         href=\"https://github.com/quintel/documentation/blob/master/general/co2_biomass.md\"
         target =\"_blank\">documentation</a>. \r\n"
     climate_relevant_co2_biomass_liquid_present:
-      short_content: 
+      short_content:
       content: "Here you indicate which part of CO<sub>2</sub> emission caused by
         combustion of gaseous biomass is relevant for climate change.\r\n<p>\r\nThe
         raw materials for liquid biomass (corn, sugar beet, palm) are commonly grown
@@ -2438,7 +2438,7 @@ en:
         find more information in our <a href=\"https://github.com/quintel/documentation/blob/master/general/co2_biomass.md\"
         target =\"_blank\">documentation</a>. "
     climate_relevant_co2_biomass_solid_present:
-      short_content: 
+      short_content:
       content: "Here you indicate which part of CO<sub>2</sub> emission caused by
         combustion of gaseous biomass is relevant for climate change.\r\n<p>\r\nRegrowth
         after logging takes 20 to 100 years (for example poplar grows fast, birch
@@ -2450,7 +2450,7 @@ en:
         (LUC and ILUC).\r\n<p>\r\nYou can find more information in our <a href=\"https://github.com/quintel/documentation/blob/master/general/co2_biomass.md\"
         target =\"_blank\">documentation</a>. "
     climate_relevant_co2_biomass_gas_future:
-      short_content: 
+      short_content:
       content: "Here you indicate which part of CO<sub>2</sub> emission caused by
         combustion of gaseous biomass is relevant for climate change.\r\n<p>\r\nBiogas
         made by fermentation of wet biomass (manure,roadside grass, organic waste
@@ -2461,7 +2461,7 @@ en:
         <a href=\"https://github.com/quintel/documentation/blob/master/general/co2_biomass.md\"
         target =\"_blank\">documentation</a>. "
     climate_relevant_co2_biomass_liquid_future:
-      short_content: 
+      short_content:
       content: "Here you indicate which part of CO<sub>2</sub> emission caused by
         combustion of gaseous biomass is relevant for climate change.\r\n<p>\r\nThe
         raw materials for liquid biomass (corn, sugar beet, palm) are commonly grown
@@ -2471,7 +2471,7 @@ en:
         find more information in our <a href=\"https://github.com/quintel/documentation/blob/master/general/co2_biomass.md\"
         target =\"_blank\">documentation</a>. "
     climate_relevant_co2_biomass_solid_future:
-      short_content: 
+      short_content:
       content: "Here you indicate which part of CO<sub>2</sub> emission caused by
         combustion of gaseous biomass is relevant for climate change.\r\n<p>\r\nRegrowth
         after logging takes 20 to 100 years (for example poplar grows fast, birch
@@ -2483,16 +2483,16 @@ en:
         change (LUC and ILUC).\r\n<p>\r\nYou can find more information in our <a href=\"https://github.com/quintel/documentation/blob/master/general/co2_biomass.md\"
         target =\"_blank\">documentation</a>. "
     industry_useful_demand_for_other_ict:
-      short_content: 
+      short_content:
       content: Here you can indicate the total size of the central ICT industry in
         the future.
     industry_useful_demand_for_other_ict_efficiency:
-      short_content: 
+      short_content:
       content: "How will efficiency in the ICT industry improve every year? \r\n</br></br>\r\nThese
         improvements are the result of technological innovation or newer and more
         efficient energetic processes."
     industry_other_food_burner_coal_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is met by coal-firing?
         \r\n</br></br>\r\nCoal (or cokes) are mainly used in the steel manufacturing
         industry to produce the heat to smelt iron ore.\r\nThe mix you fill in here
@@ -2500,33 +2500,33 @@ en:
         See also the <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a>
         part.\r\n<br>"
     industry_other_food_burner_crude_oil_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is met by oil-fired heaters?
         \r\n</br></br>\r\nIndustrial heat demand tends to be for high-grade heat,
         which is best generated by burning fuel.\r\nThe mix you fill in here is probably
         mostly determined by fuel prices and environmental legislation. See also the
         <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a> part. \r\n<br>"
     industry_other_food_burner_network_gas_share:
-      short_content: 
+      short_content:
       content: "All heat that is not generated with any of the methods below will
         be generated using a gas-fired heating system. These systems are quite energy
         efficient, but emit CO<sub>2</sub>. The latter is a problem if you wish to
         reduce emissions significantly.\r\n<br>"
     industry_other_food_burner_wood_pellets_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is met by biomass-firing?
         \r\n</br></br>\r\nThis can be used to generate high-grade heat, which is the
         kind most in demand in industry.\r\nThe mix you fill in here is probably mostly
         determined by fuel prices and environmental legislation. See also the <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a>
         part.\r\n<br>"
     industry_final_demand_for_other_food_steam_hot_water_share:
-      short_content: 
+      short_content:
       content: District heating is heat supplied by a heat network. The heat can be
         produced by local heat plants / large-scale burners or the heat can be imported
         from outside your region. You can set the heat sources in the Supply-section
         under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
     industry_other_food_heater_electricity_share:
-      short_content: 
+      short_content:
       content: "Industrial electric boilers are massively enlarged and more sophisticated
         versions of the common household electric boiler. These boilers can deliver
         heat of a temperature up to 300 <sup>o</sup>C. Since the temperature of the
@@ -2534,27 +2534,27 @@ en:
         as a heating solution in those industries in which all heat demand is of a
         relatively low temperature.\r\n<br>"
     industry_other_paper_burner_network_gas_share:
-      short_content: 
+      short_content:
       content: "All heat that is not generated with any of the methods below will
         be generated using a gas-fired heating system. These systems are quite energy
         efficient, but emit CO<sub>2</sub>. The latter is a problem if you wish to
         reduce emissions significantly.\r\n<br>"
     industry_other_paper_burner_crude_oil_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is met by oil-fired heaters?
         \r\n</br></br>\r\nIndustrial heat demand tends to be for high-grade heat,
         which is best generated by burning fuel.\r\nThe mix you fill in here is probably
         mostly determined by fuel prices and environmental legislation. See also the
         <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a> part. \r\n<br>"
     industry_other_paper_burner_wood_pellets_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is met by biomass-firing?
         \r\n</br></br>\r\nThis can be used to generate high-grade heat, which is the
         kind most in demand in industry.\r\nThe mix you fill in here is probably mostly
         determined by fuel prices and environmental legislation. See also the <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a>
         part.\r\n<br>"
     industry_other_paper_burner_coal_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is met by coal-firing?
         \r\n</br></br>\r\nCoal (or cokes) are mainly used in the steel manufacturing
         industry to produce the heat to smelt iron ore.\r\nThe mix you fill in here
@@ -2562,13 +2562,13 @@ en:
         See also the <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a>
         part.\r\n<br>"
     industry_final_demand_for_other_paper_steam_hot_water_share:
-      short_content: 
+      short_content:
       content: District heating is heat supplied by a heat network. The heat can be
         produced by local heat plants / large-scale burners or the heat can be imported
         from outside your region. You can set the heat sources in the Supply-section
         under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
     industry_other_paper_heater_electricity_share:
-      short_content: 
+      short_content:
       content: "Industrial electric boilers are massively enlarged and more sophisticated
         versions of the common household electric boiler. These boilers can deliver
         heat of a temperature up to 300 <sup>o</sup>C. Since the temperature of the
@@ -2576,28 +2576,28 @@ en:
         as a heating solution in those industries in which all heat demand is of a
         relatively low temperature.\r\n<br>"
     transport_car_using_electricity_fast_charging_share:
-      short_content: 
+      short_content:
       content: "Which fraction of electricity used by electric vehicles is supplied
         by so-called 'fast charging'? This type of charging typically happens at charging
         capacities between 11 to 22 kW.\r\n<br>\r\n<br>\r\nThe profile used to describe
         this type of charging behaviour has been taken from the <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
         target=\"_blank\">Movares study \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
     transport_car_using_electricity_hybrid_charging_share:
-      short_content: 
+      short_content:
       content: "Which fraction of electricity used by electric vehicles is supplied
         by a charging profile which describes people charging at the office as well
         as at home?\r\n<br>\r\n<br>\r\nThe profile used to describe this type of charging
         behaviour has been taken from the <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
         target=\"_blank\">Movares study \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
     transport_car_using_electricity_home_charging_share:
-      short_content: 
+      short_content:
       content: "Which fraction of electricity used by electric vehicles is supplied
         by people charging exclusively at home? Charging at home typically happens
         at a capacity of 3.7 kW.\r\n<br>\r\n<br>\r\nThe profile used to describe this
         type of charging behaviour has been taken from the <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
         target=\"_blank\">Movares study \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
     transport_truck_using_hydrogen_share:
-      short_content: 
+      short_content:
       content: "What percentage of all trucks will be hydrogen fuelled vehicles in
         the future?<br/><br/>\r\nHydrogen is an energy carrier - not an energy source
         -, so it has to be produced first. In the <a href=\"/scenario/supply/hydrogen/hydrogen-production\"
@@ -2611,7 +2611,7 @@ en:
         the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
         on GitHub</a> for detailed information on the numbers and sources used."
     industry_chemicals_other_steam_recompression_electricity_share:
-      short_content: 
+      short_content:
       content: "Which percentage of the heat demand of the chemical sector will be
         supplied by mechanical vapour recompression?\r\n<br></br>\r\nThis technology
         uses waste steam as input. Through compression both pressure and temperature
@@ -2622,7 +2622,7 @@ en:
         in the Dutch report <a href=\"https://refman.energytransitionmodel.com/publications/2052\"
         target=\"_blank\">Denktank Energiemarkt Industriële warmtemarkt\"</a>.\r\n<br>"
     industry_chemicals_other_heatpump_water_water_electricity_share:
-      short_content: 
+      short_content:
       content: "Which percentage of the heat demand of the chemical sector will be
         supplied by industrial heat pumps?\r\n<br></br>\r\nThe end product of this
         process is steam. The steam generation is carried out in two process steps.
@@ -2634,7 +2634,7 @@ en:
         can be found in the Dutch report <a href=\"https://refman.energytransitionmodel.com/publications/2052\"
         target=\"_blank\">Denktank Energiemarkt Industriële warmtemarkt\"</a>.\r\n<br>"
     capacity_of_industry_chemicals_other_flexibility_p2h_electricity:
-      short_content: 
+      short_content:
       content: "Power-to-heat (P2H) boilers convert <strong>excess</strong> electricity
         into heat. These boilers can be installed as an add-on for the existing gas
         and hydrogen burners. During moments of excess electricity gas and hydrogen
@@ -2645,7 +2645,7 @@ en:
         Therefore, the order in which the flexibility technologies have to be applied
         can be chosen <a href=\"/scenario/flexibility/excess_electricity/order-of-flexibility-options\">here</a>.\r\n</br>"
     capacity_of_industry_chemicals_refineries_flexibility_p2h_electricity:
-      short_content: 
+      short_content:
       content: "Power-to-heat (P2H) boilers convert <strong>excess</strong> electricity
         into heat. These boilers can be installed as an add-on for the existing gas
         and hydrogen burners. During moments of excess electricity gas and hydrogen
@@ -2656,7 +2656,7 @@ en:
         Therefore, the order in which the flexibility technologies have to be applied
         can be chosen <a href=\"/scenario/flexibility/excess_electricity/order-of-flexibility-options\">here</a>.\r\n</br>"
     capacity_of_industry_other_food_flexibility_p2h_electricity:
-      short_content: 
+      short_content:
       content: "Power-to-heat (P2H) boilers convert <strong>excess</strong> electricity
         into heat. These boilers can be installed as an add-on for the existing gas
         and hydrogen burners. During moments of excess electricity gas and hydrogen
@@ -2667,7 +2667,7 @@ en:
         Therefore, the order in which the flexibility technologies have to be applied
         can be chosen <a href=\"/scenario/flexibility/excess_electricity/order-of-flexibility-options\">here</a>.\r\n</br>"
     capacity_of_industry_other_paper_flexibility_p2h_electricity:
-      short_content: 
+      short_content:
       content: "Power-to-heat (P2H) boilers convert <strong>excess</strong> electricity
         into heat. These boilers can be installed as an add-on for the existing gas
         and hydrogen burners. During moments of excess electricity gas and hydrogen
@@ -2678,7 +2678,7 @@ en:
         Therefore, the order in which the flexibility technologies have to be applied
         can be chosen <a href=\"/scenario/flexibility/excess_electricity/order-of-flexibility-options\">here</a>.\r\n</br>"
     industry_chemicals_other_heater_electricity_share:
-      short_content: 
+      short_content:
       content: "Industrial electric boilers are massively enlarged and more sophisticated
         versions of the common household electric boiler. These boilers can deliver
         heat of a temperature up to 300 <sup>o</sup>C. Since the temperature of the
@@ -2686,7 +2686,7 @@ en:
         implemented as a heating solution for the part of the heating demand which
         require relatively low temperatures.\r\n<br>"
     households_flexibility_space_heating_buffer_size_heatpump_air_water_electricity:
-      short_content: 
+      short_content:
       content: "Currently most heat pumps (air) are installed without a buffer for
         space heating. \r\n</p>\r\nMost heat pumps (air) require a buffer to prevent
         unnecessarily\r\nfrequent on and off switching of the compressors. In the
@@ -2695,13 +2695,13 @@ en:
         through an <a href=\"http://www.ecovat.eu/?lang=en\">Ecovat</a>\r\n</p>\r\nHere
         you can indicate the buffer size you expect in the future per heat pumps (air)."
     households_flexibility_water_heating_buffer_size_heatpump_air_water_electricity:
-      short_content: 
+      short_content:
       content: "In the current situation this buffer represents a tank of 100 liter,
         the typical tank size for a Dutch household.\r\n</p>\r\nIn the future buffers
         can also be used to store larger amounts of heat.\r\n</p>\r\nHere you can
         indicate the buffer size you expect in the future per heat pump (air)."
     households_flexibility_space_heating_cop_cutoff:
-      short_content: 
+      short_content:
       content: "Here you indicate the threshold COP of hybrid heat pumps for space
         heating. \r\n<p>\r\nThe default setting is that the electric part of the HHP
         is used maximally for space heating. With the current gas and electricity
@@ -2709,13 +2709,13 @@ en:
         of  2.6, this can be concluded from the chart on the right.\r\nFor more information
         about (hybrid) heat pumps see our <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_pumps.md\">documentation</a>."
     households_flexibility_water_heating_cop_cutoff:
-      short_content: 
+      short_content:
       content: "Here you indicate the threshold COP of hybrid heat pumps for hot water.\r\n<p>\r\nThe
         default setting is that the gas part of the HHP is used for hot water.\r\n<p>\r\nWith
         the current gas and electricity price financial optimization for the user
         is achieved with a threshold COP of  3.1.\r\nFor calculations see <a href=\"https://github.com/quintel/documentation/blob/bd77c99e145958613a8c2e45116e887a1d01a39a/general/heat_pumps.md\">Documentation</a>"
     households_flexibility_space_heating_buffer_size_heatpump_ground_water_electricity:
-      short_content: 
+      short_content:
       content: "Currently most ground heat pumps are installed without a buffer for
         space heating. \r\n</p>\r\nMost ground heat pumps require a buffer to prevent
         unnecessarily\r\nfrequent on and off switching of the compressors. In the
@@ -2725,23 +2725,23 @@ en:
         you can indicate the buffer size you expect in the future per ground heat
         pump."
     households_flexibility_space_heating_buffer_size_hybrid_heatpump_air_water_electricity:
-      short_content: 
+      short_content:
       content: "Most hybrid heat pumps are self-regulating. They don't need a buffer
         to protect the compressor.\r\n</p>\r\nIn the future buffers can also be used
         to store larger amounts of heat. For example through an <a href=\"http://www.ecovat.eu/?lang=en\">Ecovat</a>\r\n</p>\r\nHere
         you can indicate the buffer size you expect in the future per hybrid heat
         pump."
     settings_weather_curve_set:
-      short_content: 
+      short_content:
       content: ''
     households_flexibility_water_heating_buffer_size_heatpump_ground_water_electricity:
-      short_content: 
+      short_content:
       content: "In the current situation this buffer represents a tank of 100 liter,
         the typical tank size for a Dutch household.\r\n</p>\r\nIn the future buffers
         can also be used to store larger amounts of heat.\r\n</p>\r\nHere you can
         indicate the buffer size you expect in the future per heat pump ground."
     households_flexibility_water_heating_buffer_size_hybrid_heatpump_air_water_electricity:
-      short_content: 
+      short_content:
       content: "With the default settings the hybrid heat pump supplies hot water
         with gas. In that case a buffer for hot water is not needed.\r\n</p>\r\nBy
         lowering the threshold COP the electric part of the hybrid heat pump can also
@@ -2750,15 +2750,15 @@ en:
         future buffers can also be used to store larger amounts of heat.\r\n</p>\r\nHere
         you can indicate the buffer size you expect in the future per heat pump (air)."
     bunkers_useful_demand_planes:
-      short_content: 
+      short_content:
       content: Please indicate how the number of international flights will change
         every year in the future.
     bunkers_plane_using_kerosene_share:
-      short_content: 
+      short_content:
       content: 'For international aviation mainly large aircrafts are used and they
         consume primarily kerosene. '
     bunkers_plane_using_bio_kerosene_share:
-      short_content: 
+      short_content:
       content: "Instead of using fossil kerosene also bio-kerosene can be used in
         the same type of engines; it is a so-called \"drop-in fuel\". At the moment
         four technologies are certified to supply bio-kerosene to commercial aviation,
@@ -2767,15 +2767,15 @@ en:
         the required crops. \r\n</br></br>\r\nCurrently, it is possible to tank bio-kerosene
         at two airports: Los Angeles and Oslo. "
     bunkers_useful_demand_ships:
-      short_content: 
+      short_content:
       content: Please indicate how the number of international shipping trades will
         change every year in the future.
     bunkers_ship_using_heavy_fuel_oil_share:
-      short_content: 
+      short_content:
       content: 'Large international cargo ships generally operate on HFO, which is
         the heaviest commercial fuel that can be obtained from crude oil. '
     bunkers_ship_using_lng_share:
-      short_content: 
+      short_content:
       content: "Ships transporting large cargo over long distances require very powerful
         engines and energy-rich fuels. Natural gas is an unsuitable shipping fuel
         as its energetic density is very low, but through liquefaction it increases
@@ -2788,7 +2788,7 @@ en:
         and particulate matter. Therefore, it is an alternative shipping fuel worth
         considering. "
     bunkers_allocated_percentage_aviation:
-      short_content: 
+      short_content:
       content: "What percentage of the energy demand for international aviation should
         be included in your scenario? The total energy demand includes deliveries
         of aviation fuels to aircraft for international aviation. Fuels used by airlines
@@ -2805,7 +2805,7 @@ en:
         international aviation to the specific region where the international airport
         is located. "
     bunkers_allocated_percentage_shipping:
-      short_content: 
+      short_content:
       content: "What percentage of the energy demand for international navigation
         should be included in your scenario? The total energy demand covers those
         quantities delivered to ships of all flags that are engaged in international
@@ -2822,7 +2822,7 @@ en:
         international navigation to the specific region where the international seaport
         is located. "
     capacity_of_flexibility_p2l_electricity:
-      short_content: 
+      short_content:
       content: "How much synthetic kerosene do you want to produce?\r\n<br/><br/>\r\nThe
         production of synthetic kerosene is not yet applied on a commercial scale,
         mostly because fossil kerosene is still available and affordable. However,
@@ -2836,7 +2836,7 @@ en:
         electricity.\r\n<br/><br/>\r\nThe input of the slider (in MW) is converted
         to a (partial) number of the plant described above."
     flexibility_p2l_direct_air_capture:
-      short_content: 
+      short_content:
       content: "What percentage of the carbon comes from Direct Air Capture (DAC)?\r\n<br/><br/>
         \r\nDAC allows us to recycle CO<sub>2</sub> indefinitely and yields negative
         emissions as we remove CO<sub>2</sub> from the atmosphere. After that, kerosene
@@ -2852,7 +2852,7 @@ en:
         model the CO<sub>2</sub> reduction caused by DAC will solely benefit the international
         aviation sector. \r\n<br/>"
     flexibility_p2l_point_source_CO:
-      short_content: 
+      short_content:
       content: "What percentage of the carbon comes from point sources of CO?\r\n<br/><br/>
         \r\nCompared to using sources of CO<sub>2</sub> for kerosene synthesis, point
         sources of CO have the advantage that no conversion to CO is needed anymore.
@@ -2866,7 +2866,7 @@ en:
         but attempts have been successful.\r\n<br/><br/> \r\nIn this model only CO
         from the steel industry is taken into account.\r\n<br/>"
     flexibility_p2l_point_source_CO2:
-      short_content: 
+      short_content:
       content: "What percentage of the carbon comes from point sources of CO<sub>2</sub>?\r\n<br/><br/>
         \r\nMany industrial and power plants emit waste gasses containing mainly CO<sub>2</sub>.
         There exist various CO<sub>2</sub> separation techniques, of which adsorption
@@ -2881,38 +2881,38 @@ en:
         point source, although point sources of CO<sub>2</sub> are readily available
         in many more industries.\r\n<br/>"
     transport_useful_demand_passenger_kms:
-      short_content: 
+      short_content:
       content: Do you believe people will travel more or less in the future? Please
         indicate here by what percentage you think the number of 'passenger kilometres'
         will change each year.
     transport_useful_demand_freight_tonne_kms:
-      short_content: 
+      short_content:
       content: Do you believe that more or less freight will be transported in the
         future? Please indicate by what percentage per year you think the number of
         'freight tonne kilometres' will change.
     transport_busses_share:
-      short_content: 
+      short_content:
       content: Please indicate what percentage of the kilometres we travel is covered
         by busses.
     transport_trams_share:
-      short_content: 
+      short_content:
       content: Please indicate what percentage of the kilometres we travel is covered
         by trams and metros.
     transport_bicycles_share:
-      short_content: 
+      short_content:
       content: Please indicate what percentage of the kilometres we travel is covered
         by bicycles.
     transport_motorcycles_share:
-      short_content: 
+      short_content:
       content: Please indicate what percentage of the kilometres we travel is covered
         by motorcycles and mopeds
     transport_freight_trains_share:
-      short_content: 
+      short_content:
       content: What do you think will happen to freight transport by rail? Trains
         are relatively energy-efficient, but depend on the presence of high-quality
         infrastructure.
     transport_bus_using_electricity_share:
-      short_content: 
+      short_content:
       content: "What percentage of all busses will be fully electric in the future?
         \r\n<br/><br/>\r\nGovernments and other regulatory boards in many countries
         are now trying to push electric busses as one of the primary modes of public
@@ -2923,7 +2923,7 @@ en:
         of electric busses to change?\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_bus_using_hydrogen_share:
-      short_content: 
+      short_content:
       content: "What percentage of all busses will be hydrogen fuelled vehicles in
         the future? \r\n<br/><br/>\r\nThe use of hydrogen for transport has been hyped
         as well as criticised a lot, and as with many choices, their value depends
@@ -2943,7 +2943,7 @@ en:
         the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_bus_using_diesel_mix_share:
-      short_content: 
+      short_content:
       content: "What percentage of all cars will use conventional diesel fueled internal
         combustion engine (ICE) technology? \r\n<br/><br/>\r\nToday, nearly all of
         the busses use diesel as the primary source of fuel; however, competition
@@ -2951,7 +2951,7 @@ en:
         share for diesel powered busses. \r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_bus_using_gasoline_mix_share:
-      short_content: 
+      short_content:
       content: "What percentage of all busses will be using gasoline fuelled internal
         combustion engine (ICE) technology in the future?  \r\n<br/><br/>\r\nCompetition
         from zero-emissions technologies, like electric and hydrogen vehicles is pushing
@@ -2960,7 +2960,7 @@ en:
         the demand for gasoline fuelled busses in the future, how do you suppose the
         demand will change?"
     transport_bus_using_lng_share:
-      short_content: 
+      short_content:
       content: "What percentage of all busses will be using liquefied natural gas
         (LNG) technology in the future?\r\n<br/><br/>\r\nAs environmental concerns
         become a prime factor in shaping the demand for fuels in the transport sector,
@@ -2971,7 +2971,7 @@ en:
         near future.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_bus_using_compressed_natural_gas_share:
-      short_content: 
+      short_content:
       content: "What percentage of all busses will use compressed natural gas fueled
         internal combustion engine (ICE) technology? \r\n<br/><br/>\r\nGas fueled
         busses are relatively clean compared to gasoline or diesel fueled ones. In
@@ -2990,13 +2990,13 @@ en:
         on GitHub</a> for detailed information on the numbers and sources used.\r\nNatural
         gas fueled engines are already commercially available. "
     transport_bicycle_using_human_power_share:
-      short_content: 
+      short_content:
       content: "How do you suppose the demand for bicycles will change in the future?
         Will it increase or decrease?\r\n<br/><br/>\r\nBicycles are one of the most
         traditional forms of transport and are rapidly coming back into style as people
         become more aware of the environmental as well as health benefits.\r\n"
     transport_bicycle_using_electricity_share:
-      short_content: 
+      short_content:
       content: "Will the share of electric bikes (e-bikes) expand in the future?\r\n<br/><br/>\r\nElectric
         bikes play a big role in expanding the existing market for bicycles as they
         provide speed and reduced effort which stretches the market to include parts
@@ -3006,7 +3006,7 @@ en:
         the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_motorcycle_using_gasoline_mix_share:
-      short_content: 
+      short_content:
       content: "What percentage of all motorcycles will be using gasoline fuelled
         technology in the future?\r\n<br/><br/>\r\nMany areas of the world are experiencing
         a rapid demand in motorcycle usage as this form of personal transport provides
@@ -3019,7 +3019,7 @@ en:
         on GitHub</a> for detailed information on the numbers and sources used.\r\nNatural
         gas fueled engines are already commercially available. "
     transport_motorcycle_using_electricity_share:
-      short_content: 
+      short_content:
       content: "How do you think the demand for electric motorcycles will change in
         the future?\r\n<br/><br/>\r\nAs of today, electric motorcycles aren't yet
         used very often. Competition with cars at charging stations as well as a smaller
@@ -3033,7 +3033,7 @@ en:
         on GitHub</a> for detailed information on the numbers and sources used.\r\nNatural
         gas fueled engines are already commercially available. "
     transport_freight_train_using_electricity_share:
-      short_content: 
+      short_content:
       content: "Electric trains are the standard in all developed regions of the world.
         They are a very energy efficient and rather clean form of transport. They
         are not particularly flexible of course, and rely on expensive electric infrastructure,
@@ -3041,7 +3041,7 @@ en:
         href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_freight_train_using_diesel_mix_share:
-      short_content: 
+      short_content:
       content: "Diesel-powered trains are not uncommon as they do not rely on expensive
         electricity infrastructure. They are ideal for very remote and sparsely populated
         regions, or for international transport of goods. Because Europe is a patchwork
@@ -3049,21 +3049,21 @@ en:
         borders in Europe. \r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
         on GitHub</a> for detailed information on the numbers and sources used."
     flexibility_p2l_co2_reduction_industry:
-      short_content: 
+      short_content:
       content: "Which sector should benefit from the CO<sub>2</sub> reduction when
         CO/CO<sub>2</sub> from industrial flue gasses are used?\r\n<br/><br/> \r\nThe
         steel industry delivers the CO/CO<sub>2</sub> for the synthetic kerosene production.
         What percentage of the CO<sub>2</sub> reduction is therefor appropriate to
         allocate to them?"
     flexibility_p2l_co2_reduction_bunkers:
-      short_content: 
+      short_content:
       content: "Which sector should benefit from the CO<sub>2</sub> reduction when
         CO/CO<sub>2</sub> from industrial flue gasses are used?\r\n<br/><br/> \r\nThe
         international aviation sector has chosen to use synthetic kerosene instead
         of fossil kerosene or bio-kerosene. What percentage of the CO<sub>2</sub>
         reduction is therefor appropriate to allocate to them?"
     co2_emissions_of_imported_electricity_present:
-      short_content: 
+      short_content:
       content: "The average emission in gram CO<sub>2</sub> emissions per kWh of the
         Dutch electricity grid is 527 gram  <a href=\"https://www.cbs.nl/nl-nl/achtergrond/2017/06/rendementen-en-co2-emissie-elektriciteitsproductie-2015\"
         target =\"_blank\">(CBS, 2015)</a>.\r\n\r\n</p>\r\n\r\nThe European electricity
@@ -3073,7 +3073,7 @@ en:
         kWh in our <a href=\"https://github.com/quintel/documentation/blob/master/general/CO2_emissions_of_imported_electricity.md\"
         target =\"_blank\">documentation</a>. "
     co2_emissions_of_imported_electricity_future:
-      short_content: 
+      short_content:
       content: "What will be the related emissions of imported electricity in the
         future? \r\n\r\n</p>\r\nThis electricity could come from renewable sources
         like sun and wind, with an emission close to 0 gram CO<sub>2</sub>/kWh. \r\n\r\n</p>\r\n\r\nOn
@@ -3087,7 +3087,7 @@ en:
         emissions per kWh in our <a href=\"https://github.com/quintel/documentation/blob/master/general/CO2_emissions_of_imported_electricity.md\"
         target =\"_blank\">documentation</a>. "
     costs_imported_electricity:
-      short_content: 
+      short_content:
       content: "Do you think that when you have to import electricity that on average
         it will be cheap because of peak production, or will it be expensive because
         of peak demand?\r\n</p>\r\n\r\nThe average costs of electricity at the Central
@@ -3097,7 +3097,7 @@ en:
         more information about the fluctuating prices see the <a href=\"https://github.com/quintel/documentation/blob/master/general/costs_imported_electricity.md\"
         target =\"_blank\">documentation</a>. "
     capacity_of_energy_hydrogen_wind_turbine_offshore:
-      short_content: 
+      short_content:
       content: "How many wind turbines will produce electricity that will directly
         be converted into hydrogen with electrolysers?\r\n</br></br>\r\nThere are
         a number of plans for building wind parks far out on sea. For these parks
@@ -3112,7 +3112,7 @@ en:
         of the wind turbines can be found in the <a href=\"/scenario/supply/electricity_renewable/wind-turbines\">Renewable
         electricity section</a>.<br />"
     capacity_of_energy_hydrogen_solar_pv_solar_radiation:
-      short_content: 
+      short_content:
       content: "How many solar pv plants will be build in the future for hydrogen
         production using electrolysers?\r\n<br/><br/>\r\nThis slider sets installed
         solar PV capacity and the installed capacity of electrolysis plants to produce
@@ -3129,7 +3129,7 @@ en:
         of the solar panels can be found in the <a href=\"/scenario/supply/electricity_renewable/solar-power\">Renewable
         electricity section</a>.<br />"
     industry_chemicals_fertilizers_steam_methane_reformer_hydrogen_share:
-      short_content: 
+      short_content:
       content: "The fertilizers industry uses non-energetic hydrogen for the production
         of ammonia. Currently, fertilizer plants typically produce this hydrogen in-house
         using natural gas. In the future this 'fossil' hydrogen may be replaced by
@@ -3139,7 +3139,7 @@ en:
         hydrogen is produced locally using natural gas and how much is drawn from
         the central hydrogen network."
     industry_chemicals_fertilizers_hydrogen_network_share:
-      short_content: 
+      short_content:
       content: "The fertilizers industry uses non-energetic hydrogen for the production
         of ammonia. Currently, fertilizer plants typically produce this hydrogen in-house
         using natural gas. In the future this 'fossil' hydrogen may be replaced by
@@ -3149,7 +3149,7 @@ en:
         hydrogen is produced locally using natural gas and how much is drawn from
         the central hydrogen network."
     capacity_of_energy_power_turbine_hydrogen:
-      short_content: 
+      short_content:
       content: "Here you can build hydrogen turbine power plants. At the moment, these
         turbines are not used (yet) on a large scale. Because hydrogen turbine technology
         is very similar to natural gas turbines, we assume that both plants have the
@@ -3161,53 +3161,53 @@ en:
         limited, they can play an important role in balancing the energy system. <br
         />"
     industry_chemicals_refineries_burner_hydrogen_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is supplied by hydrogen
         burners? <br /><br />\r\n\r\nThis burner can be used to generate high-grade
         heat, which is the kind most in demand in industry. You can specify how this
         hydrogen is produced in the <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
         Supply section </a>. <br />"
     industry_chemicals_fertilizers_burner_hydrogen_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is supplied by hydrogen
         burners? <br /><br />\r\n\r\nThis burner can be used to generate high-grade
         heat, which is the kind most in demand in industry. You can specify how this
         hydrogen is produced in the <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
         Supply section </a>. <br />"
     industry_chemicals_other_burner_hydrogen_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is supplied by hydrogen
         burners? <br /><br />\r\n\r\nThis burner can be used to generate high-grade
         heat, which is the kind most in demand in industry. You can specify how this
         hydrogen is produced in the <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
         Supply section </a>. <br />"
     industry_other_food_burner_hydrogen_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is supplied by hydrogen
         burners? <br /><br />\r\n\r\nThis burner can be used to generate high-grade
         heat, which is the kind most in demand in industry. You can specify how this
         hydrogen is produced in the <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
         Supply section </a>. <br />"
     industry_other_paper_burner_hydrogen_share:
-      short_content: 
+      short_content:
       content: "What percentage of heat demand in industry is supplied by hydrogen
         burners? <br /><br />\r\n\r\nThis burner can be used to generate high-grade
         heat, which is the kind most in demand in industry. You can specify how this
         hydrogen is produced in the <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
         Supply section </a>. <br />"
     agriculture_burner_hydrogen_share:
-      short_content: 
+      short_content:
       content: What percentage of heat demand in agriculture (greenhouses) is met
         by hydrogen heaters? <br />
     energy_transport_hydrogen_compressed_trucks_share:
-      short_content: 
+      short_content:
       content: What percentage of the total central hydrogen production in your scenario
         is transported via trucks? Truck transport is flexible and can be scaled up
         or down relatively easily. As such, it is a suitable option when hydrogen
         demand is more dispersed and when volumes are lower. This may for example
         be the case for hydrogen delivery to refuelling stations.
     energy_transport_hydrogen_pipelines_share:
-      short_content: 
+      short_content:
       content: What percentage of the total central hydrogen production in your scenario
         is transported via pipelines? Pipeline transport can be relatively cheap but
         requires large investments up-front. As such, this option seems to be the
@@ -3216,7 +3216,7 @@ en:
         hydrogen. In the future it may be possible to repurpose (parts of) the existing
         gas networks, which can reduce investment costs.
     costs_hydrogen:
-      short_content: 
+      short_content:
       content: "This slider sets the future wholesale price of hydrogen (in €/MWh).
         This slider affects the costs of imported hydrogen and influences the position
         of hydrogen fired gas turbines in the merit order of the electricity market.
@@ -3239,7 +3239,7 @@ en:
         solid fuels. In: Biofuels (8), pp.725-745 <br />\r\n2. CE Delft (2018). Waterstofroutes
         Nederland\r\n"
     co2_emissions_of_imported_hydrogen_present:
-      short_content: 
+      short_content:
       content: "Below you can find reference values for the CO<sub>2</sub> emissions
         of some common hydrogen production technologies (kg CO<sub>2</sub> per MWh
         H2): <br /><br />\r\n<ul>\r\n<li>Steam Methane Reforming (SMR): 281 kg</li>\r\n<li>Autothermal
@@ -3253,7 +3253,7 @@ en:
         N.V. & M.A. Rosen (2017). A review of hydrogen production using coal, biomass
         and other solid fuels. In: Biofuels (8), pp.725-745\r\n"
     co2_emissions_of_imported_hydrogen_future:
-      short_content: 
+      short_content:
       content: "Below you can find reference values for the CO<sub>2</sub> emissions
         of some common hydrogen production technologies (kg CO<sub>2</sub> per MWh
         H2): <br /><br />\r\n<ul>\r\n<li>Steam Methane Reforming (SMR): 281 kg</li>\r\n<li>Autothermal
@@ -3267,62 +3267,62 @@ en:
         N.V. & M.A. Rosen (2017). A review of hydrogen production using coal, biomass
         and other solid fuels. In: Biofuels (8), pp.725-745"
     costs_infrastructure_electricity_lv_net:
-      short_content: 
+      short_content:
       content: These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
         for the Future', CE Delft (2017).
     costs_infrastructure_electricity_lv_mv_trafo:
-      short_content: 
+      short_content:
       content: These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
         for the Future', CE Delft (2017).
     costs_infrastructure_electricity_mv_net:
-      short_content: 
+      short_content:
       content: These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
         for the Future', CE Delft (2017).
     costs_infrastructure_electricity_mv_hv_trafo:
-      short_content: 
+      short_content:
       content: These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
         for the Future', CE Delft (2017).
     costs_infrastructure_electricity_hv_net:
-      short_content: 
+      short_content:
       content: These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
         for the Future', CE Delft (2017).
     costs_infrastructure_electricity_interconnector_net:
-      short_content: 
+      short_content:
       content: These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
         for the Future', CE Delft (2017).
     costs_infrastructure_electricity_offshore_net:
-      short_content: 
+      short_content:
       content: These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
         for the Future', CE Delft (2017).
     costs_infrastructure_useable_spare_capacity:
-      short_content: 
+      short_content:
       content: ''
     costs_ccs_per_ton_in_industry:
-      short_content: 
+      short_content:
       content: 'The costs of CCS depend on many factors, including but not limited
         to: the process CO2 is captured from, how it is captured, how it is transported,
         over what distance it is transported and how it is stored.'
     industry_ccs_in_industry:
-      short_content: 
+      short_content:
       content: Which percentage of direct CO2 emissions in industry will be captured
         and stored? Note that the additional electricity and heat required has only
         been taken into account financially, not energetically.
     flh_of_energy_power_wind_turbine_coastal:
-      short_content: 
+      short_content:
       content: In the ETM coastal wind turbines have 2550 full load hours by default.
         Because of technological developments it is likely that future wind turbines
         may produce more electricity per installed capacity than today. By increasing
@@ -3335,7 +3335,7 @@ en:
         at higher capacity. Take a look at the ‘Electricity production per hour’-chart
         to see the effect of your changes on the coastal wind profile.
     flh_of_energy_power_wind_turbine_inland:
-      short_content: 
+      short_content:
       content: In the ETM inland wind turbines have 1920 full load hours by default.
         Because of technological developments it is likely that future wind turbines
         may produce more electricity per installed capacity than today. By increasing
@@ -3348,7 +3348,7 @@ en:
         at higher capacity. Take a look at the ‘Electricity production per hour’-chart
         to see the effect of your changes on the inland wind profile.
     flh_of_energy_power_wind_turbine_offshore:
-      short_content: 
+      short_content:
       content: In the ETM offshore wind turbines have 3500 full load hours by default.
         Because of technological developments it is likely that future wind turbines
         may produce more electricity per installed capacity than today. By increasing
@@ -3361,14 +3361,14 @@ en:
         at higher capacity. Take a look at the ‘Electricity production per hour’-chart
         to see the effect of your changes on the offshore wind profile.
     flh_of_energy_hydrogen_wind_turbine_offshore:
-      short_content: 
+      short_content:
       content: In the ETM offshore wind turbines have 3500 full load hours by default.
         Because of technological developments it is likely that future wind turbines
         may produce more electricity per installed capacity than today. By increasing
         the full load hours for this type of wind turbine, more electricity will be
         produced with the same number of turbines.
     flh_of_solar_pv_solar_radiation:
-      short_content: 
+      short_content:
       content: "In the ETM solar PV panels have 867 full load hours by default. Because
         of technological developments it is likely that future solar PV panels may
         produce more electricity per installed capacity than today. By increasing
@@ -3381,7 +3381,7 @@ en:
         Take a look at the ‘Electricity production per hour’-chart to see the effect
         of your changes on the solar PV production profile.\r\n</br></br>\r\n"
     capacity_of_energy_flexibility_pumped_storage_electricity:
-      short_content: 
+      short_content:
       content: "Pumped storage provides a cheap way for large-scale storage of electricity.
         Electricity can be used to pump water from the lower reservoir to a higher
         reservoir. At times of high electricity demand electricity is generated by
@@ -3392,14 +3392,14 @@ en:
         3 GWh.\r\n<br/><br/>\r\nThe input of the slider (in MW) is converted to a
         (partial) number of the plant described above."
     costs_hydrogen_transport_compressed_trucks:
-      short_content: 
+      short_content:
       content: "The costs of hydrogen transport with trucks is mostly depended on
         labour costs, which is almost half of the total costs. So technology improvement
         (bigger trucks/higher pressure) will only have little influence on the total
         costs. \r\n<br><br>\r\nFor the costs calculation an average transport distance
         of 100km is assumed."
     costs_hydrogen_transport_pipelines:
-      short_content: 
+      short_content:
       content: "The costs for hydrogen transport through pipelines depend on whether
         already existing gas pipelines will be reused or whether new pipelines will
         be constructed. Existing pipelines could be reused in two ways; the hydrogen
@@ -3411,7 +3411,7 @@ en:
         setting of the slider is based on the construction of new dedicated hydrogen
         pipelines."
     costs_hydrogen_storage:
-      short_content: 
+      short_content:
       content: "The default setting of the slider is based hydrogen storage in salt
         caverns. Hydrogen storage in salt caverns is a cheap way to store large quantities
         of hydrogen over a long period of time. The total costs of hydrogen storage
@@ -3422,7 +3422,7 @@ en:
         />   \r\n1. Berenschot (2017). CO<sub>2</sub>-free hydrogen production from
         gas"
     capacity_of_energy_imported_hydrogen_baseload:
-      short_content: 
+      short_content:
       content: "How much hydrogen will be imported in the future?\r\n<br><br>\r\nThis
         slider sets the amount of hydrogen that is imported from outside your area.
         The hydrogen can originate from different countries and can be produced with
@@ -3433,50 +3433,50 @@ en:
         hydrogen in the <a href=\"/scenario/costs/costs_hydrogen/hydrogen-import\"
         >costs section</a>."
     industry_aggregated_other_industry_wood_pellets_share:
-      short_content: 
+      short_content:
       content: What will the share of biomass be in total energy demand of the 'other
         industry' sector?
     industry_aggregated_other_industry_electricity_share:
-      short_content: 
+      short_content:
       content: What will the share of electricity be in total energy demand of the
         'other industry' sector?
     industry_aggregated_other_industry_crude_oil_share:
-      short_content: 
+      short_content:
       content: What will the share of oil be in total energy demand of the 'other
         industry' sector?
     industry_aggregated_other_industry_network_gas_share:
-      short_content: 
+      short_content:
       content: What will the share of gas be in total energy demand of the 'other
         industry' sector?
     industry_aggregated_other_industry_coal_share:
-      short_content: 
+      short_content:
       content: What will the share of coal be in total energy demand of the 'other
         industry' sector?
     industry_aggregated_other_industry_useable_heat_share:
-      short_content: 
+      short_content:
       content: What will the share of central heat be in total energy demand of the
         'other industry' sector?
     industry_useful_demand_for_aggregated_other:
-      short_content: 
+      short_content:
       content: Here you can indicate the total size of the 'Other industry' sector
         in the future.
     households_apartments_share:
-      short_content: 
+      short_content:
       content: How many apartments will there be in the future?
     households_corner_houses_share:
-      short_content: 
+      short_content:
       content: How many corner houses will there be in the future?
     households_detached_houses_share:
-      short_content: 
+      short_content:
       content: How many detached houses will there be in the future?
     households_semi_detached_houses_share:
-      short_content: 
+      short_content:
       content: How many semi-detached houses will there be in the future?
     households_terraced_houses_share:
-      short_content: 
+      short_content:
       content: How many terraced houses will there be in the future?
     households_insulation_level_apartments:
-      short_content: 
+      short_content:
       content: "The heat demand reduction is the percentage by which the heat demand
         is reduced compared to a badly insulated house (characterised by label G),
         i.e. the slider indicates how much of the potential savings has been achieved.
@@ -3497,7 +3497,7 @@ en:
         costs depend on the level of insulation in the present year: e.g. going from
         0 to 30% is cheaper than going from 30% to 60% insulation."
     households_insulation_level_corner_houses:
-      short_content: 
+      short_content:
       content: "The heat demand reduction is the percentage by which the heat demand
         is reduced compared to a badly insulated house (characterised by label G),
         i.e. the slider indicates how much of the potential savings has been achieved.
@@ -3518,7 +3518,7 @@ en:
         costs depend on the level of insulation in the present year: e.g. going from
         0 to 30% is cheaper than going from 30% to 60% insulation."
     households_insulation_level_detached_houses:
-      short_content: 
+      short_content:
       content: "The heat demand reduction is the percentage by which the heat demand
         is reduced compared to a badly insulated house (characterised by label G),
         i.e. the slider indicates how much of the potential savings has been achieved.
@@ -3539,7 +3539,7 @@ en:
         costs depend on the level of insulation in the present year: e.g. going from
         0 to 30% is cheaper than going from 30% to 60% insulation."
     households_insulation_level_semi_detached_houses:
-      short_content: 
+      short_content:
       content: "The heat demand reduction is the percentage by which the heat demand
         is reduced compared to a badly insulated house (characterised by label G),
         i.e. the slider indicates how much of the potential savings has been achieved.
@@ -3560,7 +3560,7 @@ en:
         costs depend on the level of insulation in the present year: e.g. going from
         0 to 30% is cheaper than going from 30% to 60% insulation."
     households_insulation_level_terraced_houses:
-      short_content: 
+      short_content:
       content: "The heat demand reduction is the percentage by which the heat demand
         is reduced compared to a badly insulated house (characterised by label G),
         i.e. the slider indicates how much of the potential savings has been achieved.
@@ -3581,38 +3581,38 @@ en:
         costs depend on the level of insulation in the present year: e.g. going from
         0 to 30% is cheaper than going from 30% to 60% insulation."
     volume_of_imported_heat:
-      short_content: 
+      short_content:
       content: "How much (residual) heat can be imported from outside your region?
         With this slider you can set the amount. \r\n</br></br>\r\nAdditionally, with
         the slider below you can set the CO<sub>2</sub>-emissions of imported heat
         and under <a href=\"/scenario/costs/costs_heat/imported-residual-heat\" >'Costs'</a>
         you can set the costs for imported heat."
     co2_emissions_of_imported_heat:
-      short_content: 
+      short_content:
       content: "How much CO<sub>2</sub>-emissions are associated with the imported
         heat? \r\n</br></br>\r\nThis strongly depends on the heat source. For reference:
         when heat originates from a gas CCGT plant, the emissions are around 36,0
         kg/GJ (<a href=\"https://www.co2emissiefactoren.nl/lijst-emissiefactoren\"
         >source</a>(in Dutch!))"
     costs_imported_heat:
-      short_content: 
+      short_content:
       content: "How much would imported (residual) heat cost?\r\n</br></br>\r\nThe
         start value of 11.6 €/GJ is an estimate based on the average costs for heat
         extraction from different industrial processes. "
     costs_heat_infra_indoors:
-      short_content: 
+      short_content:
       content: This slider sets the change in future investment and O&M costs for
         indoor heating infrastructure. This includes indoor pipelines and heat meters.
         See <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md"
         target ="_blank">our documentation</a> for more info.
     costs_heat_infra_outdoors:
-      short_content: 
+      short_content:
       content: This slider sets the change in future investment and O&M costs for
         outdoor heating infrastructure. This includes district heating pipelines and
         exchanger stations. See <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md"
         >our documentation</a> for more info.
     households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share:
-      short_content: 
+      short_content:
       content: "This heater is a combination of an electric heat pump that draws its
         heat from the outside air and an efficient conventional hydrogen-fired boiler.\r\n<br/><br/>\r\nThis
         works as follows:<br/>\r\nThe hydrogen-fired part takes over all of the heating
@@ -3636,27 +3636,27 @@ en:
         <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
         >Demand response - behavior of hybrid heat pumps</a>. \r\n\r\n"
     capacity_of_energy_power_combined_cycle_hydrogen:
-      short_content: 
+      short_content:
       content: 'Here you can build capacity of combined cycle hydrogen plants. At
         the moment, these turbines are not used (yet) on a large scale. Because combined
         cycle hydrogen plant technology is very similar to combined cycle gas plants,
         we assume that both plants have the same specifications. '
     industry_chemicals_other_wood_pellets_non_energetic_share:
-      short_content: 
+      short_content:
       content: The chemical industry traditionally uses crude oil as the main carbon
         feedstock for the production of basic chemicals (such as methanol and ethylene).
         In the future this oil may be replaced with other sources, like biomass or
         hydrogen. These sliders allow you to change the future feedstock mix. What
         will be the share of biomass feedstock in the chemical industry of the future?
     industry_chemicals_other_hydrogen_non_energetic_share:
-      short_content: 
+      short_content:
       content: The chemical industry traditionally uses crude oil as the main carbon
         feedstock for the production of basic chemicals (such as methanol and ethylene).
         In the future this oil may be replaced with other sources, like biomass or
         hydrogen. These sliders allow you to change the future feedstock mix. What
         will be the share of hydrogen feedstock in the chemical industry of the future?
     industry_chemicals_other_network_gas_non_energetic_share:
-      short_content: 
+      short_content:
       content: The chemical industry traditionally uses crude oil as the main carbon
         feedstock for the production of basic chemicals (such as methanol and ethylene).
         In the future this oil may be replaced with other sources, like biomass or
@@ -3664,36 +3664,36 @@ en:
         will be the share of natural gas feedstock in the chemical industry of the
         future?
     industry_chemicals_other_crude_oil_non_energetic_share:
-      short_content: 
+      short_content:
       content: The chemical industry traditionally uses crude oil as the main carbon
         feedstock for the production of basic chemicals (such as methanol and ethylene).
         In the future this oil may be replaced with other sources, like biomass or
         hydrogen. These sliders allow you to change the future feedstock mix. What
         will be the share of crude oil feedstock in the chemical industry of the future?
     industry_chemicals_other_coal_non_energetic_share:
-      short_content: 
+      short_content:
       content: The chemical industry traditionally uses crude oil as the main carbon
         feedstock for the production of basic chemicals (such as methanol and ethylene).
         In the future this oil may be replaced with other sources, like biomass or
         hydrogen. These sliders allow you to change the future feedstock mix. What
         will be the share of coal feedstock in the chemical industry of the future?
     households_number_of_residences:
-      short_content: 
+      short_content:
       content: How do you expect the number of residences to develop over time?
     transport_car_using_electricity_regular_charging_share:
-      short_content: 
+      short_content:
       content: This curve is the regular charging curve from the study <a href="https://refman.energytransitionmodel.com/publications/2099"
         target="_blank">Impact of Smart Charging on EVs Charging Behaviour Assessed
         from Real Charging Events</a> by ELaad and Jedlix. This study analyses data
         from 10,000 charging sessions of 140 cars.
     transport_car_using_electricity_smart_charging_share:
-      short_content: 
+      short_content:
       content: This curve is the smart charging curve from the study <a href="https://refman.energytransitionmodel.com/publications/2099"
         target="_blank">Impact of Smart Charging on EVs Charging Behaviour Assessed
         from Real Charging Events</a> by ELaad and Jedlix. This study analyses data
         from 10,000 charging sessions of 140 cars.
     energy_biogas_fermentation_share:
-      short_content: 
+      short_content:
       content: "Currently green gas is mostly generated from the anaerobic digestion
         of organic biomass and residues produced in agriculture, food production and
         waste processing. There are two methods for biomass digestion: mono-digestion
@@ -3704,7 +3704,7 @@ en:
         type of digester that digests wet biomass. The specifications of this technology
         can be found below."
     energy_greengas_gasification_dry_biomass_share:
-      short_content: 
+      short_content:
       content: During dry gasification dry biomass is gasified at high temperatures
         (800 to 1000 °C), a kind of combustion with a lack of oxygen. The formation
         of a synthesis gas is central to gasification. This synthesis gas is a flammable
@@ -3714,7 +3714,7 @@ en:
         In the case of green gas production, gasification is followed by methane synthesis,
         and reprocessing into green gas of natural gas quality.
     energy_greengas_gasification_wet_biomass_share:
-      short_content: 
+      short_content:
       content: Wet gasification is also called Super Critical Water gasification (SCW).
         During SCW wet biomass is converted into green gas under high pressure and
         temperature (at least 375 °C and 221 bar). Above this critical point, water
@@ -3723,32 +3723,32 @@ en:
         gas (methane, hydrogen, CO<sub>2</sub> and CO) (Gasunie, 2019). Inorganic
         substances crystallize out simultaneously so that they can be recovered.
     costs_biogas:
-      short_content: 
+      short_content:
       content: How much will biogas cost in the future?
     costs_greengas:
-      short_content: 
+      short_content:
       content: How much will green gas cost in the future?
     costs_wood:
-      short_content: 
+      short_content:
       content: How much will wood cost in the future?
     costs_biodiesel:
-      short_content: 
+      short_content:
       content: How much will biodiesel cost in the future?
     costs_bio_ethanol:
-      short_content: 
+      short_content:
       content: How much will bioethanol cost in the future?
     max_demand_of_biogenic_waste:
-      short_content: 
+      short_content:
       content: With this slider you can set the potential of biogenic waste that is
         available for combustion in waste incinerators or waste CHPs.
     max_demand_of_wet_biomass:
-      short_content: 
+      short_content:
       content: 'Wet biomass is biomass with a moisture percentage of at least 40-50%.
         This includes: residues from the food and beverage industry, agricultural
         residual streams, sewage sludge, aquatic biomass, cultivated grain products,
         etc.'
     max_demand_of_dry_biomass:
-      short_content: 
+      short_content:
       content: 'Dry biomass consists of relatively dry organic material, like wood.
         Dry biomass is ''simple biomass'': it requires no processing and provides
         a high return. There is therefore a great demand for clean, woody biomass.
@@ -3756,14 +3756,14 @@ en:
         bark, branches), recycled waste wood, residual streams from agriculture (straw),
         and fast-growing bio-energy crops (elephant grass, willow, poplar).'
     max_demand_of_oily_biomass:
-      short_content: 
+      short_content:
       content: 'Oil-containing biomass is biomass with seeds that contain oil. Crude
         biodiesel is produced by pressing oil seeds. This can be converted into biodiesel
         in an esterification process with the addition of methanol. Examples of oil-containing
         biomass are: rapeseed, sunflower seeds, oil palm. Used frying fats also fall
         within this category.'
     capacity_of_energy_flexibility_hv_opac_electricity:
-      short_content: 
+      short_content:
       content: The underground pumped hydro storage (UPHS) allows for large-scale
         storage of electricity. It uses the height difference between two water-reservoirs
         to store electricity as potential energy. If must-run and volatile electricity
@@ -3773,76 +3773,76 @@ en:
         which is returned to the high voltage network. This UPHS has a storage volume
         of 8400 MWh and can be completely filled in 6 hours.
     capacity_of_energy_flexibility_mv_batteries_electricity:
-      short_content: 
+      short_content:
       content: "This large-scale (129 MWh) battery can be used to store excess electricity
         from must-run and volatile electricity production. At a later time, when overproduction
         has ended, the stored electricity is returned to the medium voltage network.
         \r\nAlthough the battery does not react to congestion events, its behavior
         can help prevent capacity issues in the electricity network.\r\n"
     investment_costs_energy_flexibility_hv_opac_electricity:
-      short_content: 
+      short_content:
       content: This slider determines the future change in investment costs of underground
         hydro pumped storage.
     investment_costs_energy_flexibility_mv_batteries_electricity:
-      short_content: 
+      short_content:
       content: This slider determines the future change in investment costs large-scale
         battery storage.
     industry_aggregated_other_industry_hydrogen_share:
-      short_content: 
+      short_content:
       content: What will the share of hydrogen be in total energy demand of the 'other
         industry' sector?
     costs_wacc_households:
-      short_content: 
+      short_content:
       content: 'This category comprises all technologies used in households, including
         solar panels and solar thermal collectors. Note: heat network infrastructure
         and heaters belong to ''commercial / proven technologies''.'
     costs_wacc_public_infrastructure:
-      short_content: 
+      short_content:
       content: This category comprises the costs of public infrastructure. For the
         ETM this currently means the power grid costs. Costs for the hydrogen network
         are part of the 'new technologies' category. Costs for heat networks are part
         of the commercial technologies section. For natural gas infrastructure the
         ETM currently uses a fixed annual sum that is unaffected by the WACC.
     costs_wacc_proven_technologies:
-      short_content: 
+      short_content:
       content: This category comprises all commercial and proven technologies. This
         is by far the largest category.
     costs_wacc_unproven_technologies:
-      short_content: 
+      short_content:
       content: 'This category comprises all immature / unproven / risky technologies.
         Currently these technologies are included: hydrogen technologies (electrolyzers,
         power plants, infrastructure, storage), synthetic kerosene technologies, nuclear
         plants, carbon capture and storage (CCS), supercritical water gasification
         (SCWG) and underground pumped hydro storage.'
     capacity_of_industry_chp_wood_pellets:
-      short_content: 
+      short_content:
       content: A CHP produces electricity and heat. In the industry sector this heat
         is very often stored in steam. Here you can choose the capacity of wood pellet
         CHPs delivering to the industrial steam network.
     capacity_of_industry_heat_burner_coal:
-      short_content: 
+      short_content:
       content: A burner produces heat. In the industry sector this heat is very often
         stored in steam. Here you can choose the capacity of coal burner delivering
         to the industrial steam network.”
     capacity_of_industry_heat_burner_crude_oil:
-      short_content: 
+      short_content:
       content: A burner produces heat. In the industry sector this heat is very often
         stored in steam. Here you can choose the capacity of oil burners delivering
         to the industrial steam network.”
     capacity_of_industry_heat_burner_lignite:
-      short_content: 
+      short_content:
       content: A burner produces heat. In the industry sector this heat is very often
         stored in steam. Here you can choose the capacity of lignite burners delivering
         to the industrial steam network.”
     capacity_of_industry_heat_well_geothermal:
-      short_content: 
+      short_content:
       content: Geothermal heat wells extract heat from the earth. In many cases the
         temperature of this heat is too low for industrial processes. However, in
         some sectors like Food and Paper geothermal heat could be an interesting heat
         source. Here you can choose the capacity of geothermal wells delivering heat
         to the industry sector.”
     capacity_of_energy_heat_well_geothermal:
-      short_content: 
+      short_content:
       content: 'Thermal energy from below 500 meters depth is called geothermal energy.
         This heat can be used to heat buildings. How much heat in your scenario comes
         from geothermal heat pumps? Caution: geothermal heat pumps typically produce
@@ -3850,46 +3850,46 @@ en:
         use of a lot of geothermal heat, seasonal storage is crucial to ensure that
         heat produced in summer can be utilised in winter'
     capacity_of_energy_heat_solar_thermal:
-      short_content: 
+      short_content:
       content: Solar thermal collectors generate heat from the sun and use this to
         heat water. This heat production is especially high in the summer. Heat demand,
         on the other hand, peaks in the winter. Use seasonal heat storage for effective
         deployment.
     capacity_of_energy_chp_local_engine_biogas:
-      short_content: 
+      short_content:
       content: "A CHP produces both heat and electricity. Here you can set the capacity
         of biogas CHPs that supply heat for district heating.\r\n</br>"
     capacity_of_energy_heat_heatpump_water_water_electricity:
-      short_content: 
+      short_content:
       content: A heat pump produces heat with electricity and ambient heat. Specify
         here the capacity of collective heat pumps that supplies heat for district
         heating
     capacity_of_energy_heat_burner_network_gas:
-      short_content: 
+      short_content:
       content: A burner produces heat. Specify here the capacity of gas heaters that
         supplies heat for district heating.
     capacity_of_energy_heat_burner_hydrogen:
-      short_content: 
+      short_content:
       content: A burner produces heat. Specify here the capacity of hydrogen heaters
         that supplies heat for district heating.
     capacity_of_energy_heat_burner_wood_pellets:
-      short_content: 
+      short_content:
       content: A burner produces heat. Specify here the capacity of biomass heaters
         that supplies heat for district heating.
     capacity_of_energy_heat_burner_waste_mix:
-      short_content: 
+      short_content:
       content: A burner produces heat. Specify here the capacity of waste heaters
         that supplies heat for district heating.
     capacity_of_energy_heat_burner_coal:
-      short_content: 
+      short_content:
       content: A burner produces heat. Specify here the capacity of coal heaters that
         supplies heat for district heating.
     capacity_of_energy_heat_burner_crude_oil:
-      short_content: 
+      short_content:
       content: A boiler produces heat. Specify here the capacity of oil heaters that
         supplies heat for district heating.
     costs_heat_network_storage:
-      short_content: 
+      short_content:
       content: "Scenarios with large amounts of \"must-run\" heat production will
         often have considerable excesses of heat. Storage allows you to preserve this
         heat for later use. Seasonal storage can be switched on/off <a href=\"scenario/supply/heat/seasonal-storage-of-heat\"
@@ -3901,15 +3901,15 @@ en:
         water basins. However, this is more difficult to apply in the Netherlands
         due to the higher groundwater level."
     capacity_of_energy_chp_local_wood_pellets:
-      short_content: 
+      short_content:
       content: "A CHP produces both heat and electricity. Here you can set the capacity
         of biomass CHPs that supply heat for district heating.\r\n</br>"
     capacity_of_energy_chp_local_engine_network_gas:
-      short_content: 
+      short_content:
       content: "A CHP produces both heat and electricity. Here you can set the capacity
         of gas CHPs that supply heat for district heating.\r\n</br>"
     energy_heat_distribution_loss_share:
-      short_content: 
+      short_content:
       content: The default value for the distribution losses slider is typically low
         or even zero for many regions modelled in the ETM. This is mainly due to a
         lack of reliable data for the present year. Please make sure to change this
@@ -3917,15 +3917,15 @@ en:
         scenario. A 15% loss value is a sensible default for new district heating
         systems. For older systems, this is closer to 25-30%.
     om_costs_solar_thermal:
-      short_content: 
+      short_content:
       content: This slider sets the future change in operational and maintenance costs
         for solar thermal energy. Costs are compared to current costs.
     investment_costs_solar_thermal:
-      short_content: 
+      short_content:
       content: This slider sets the change in future investment costs for solar thermal
         energy. Costs are compared to current costs.
     energy_heat_network_storage_loss_share:
-      short_content: 
+      short_content:
       content: 'The start value (15%) is based on the yearly losses of an ''Ecovat''
         system (link: https://www.ecovat.eu/): a large underground buffer tank filled
         with water. Storage losses are highly dependent on the type of system. For
@@ -3933,10 +3933,10 @@ en:
         the other hand, the losses increase when an open system is used (eg WKO) instead
         of a closed system such as Ecovat.'
     merit_order_subtype_of_energy_power_nuclear_uranium_oxide:
-      short_content: 
+      short_content:
       content: ''
     share_of_industry_chemicals_other_reused_residual_heat:
-      short_content: 
+      short_content:
       content: "What percentage of the available residual heat from the chemical industry
         do you want to use in heat networks? How the residual heat potential is determined
         can be read in our <a href=\"https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md\"
@@ -3944,7 +3944,7 @@ en:
         heat is used due to short-term restrictions and strategic considerations.
         The costs of using residual heat can be adjusted <a href=\"/scenario/costs/costs_heat/residual-heat\">here</a>.\r\n</br>"
     share_of_industry_chemicals_fertilizers_reused_residual_heat:
-      short_content: 
+      short_content:
       content: "What percentage of the available residual heat from the fertilizer
         industry do you want to use in heat networks? How the residual heat potential
         is determined can be read in our <a href=\"https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md\"
@@ -3952,7 +3952,7 @@ en:
         heat is used due to short-term restrictions and strategic considerations.
         The costs of using residual heat can be adjusted <a href=\"/scenario/costs/costs_heat/residual-heat\">here</a>.\r\n</br>"
     share_of_industry_chemicals_refineries_reused_residual_heat:
-      short_content: 
+      short_content:
       content: "What percentage of the available residual heat from refineries do
         you want to use in heat networks? How the residual heat potential is determined
         can be read in our <a href=\"https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md\"
@@ -3960,7 +3960,7 @@ en:
         heat is used due to short-term restrictions and strategic considerations.
         The costs of using residual heat can be adjusted <a href=\"/scenario/costs/costs_heat/residual-heat\">here</a>.\r\n</br>"
     share_of_industry_other_ict_reused_residual_heat:
-      short_content: 
+      short_content:
       content: "What percentage of the available residual heat from data centers do
         you want to use in heat networks? How the residual heat potential is determined
         can be read in our <a href=\"https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md\"
@@ -3974,44 +3974,44 @@ en:
         target=\"_blank\">this report</a>).<br /><br />\nThe costs of using residual
         heat can be adjusted <a href=\"/scenario/costs/costs_heat/residual-heat\">here</a>.\r\n</br>"
     costs_industry_residual_heat:
-      short_content: 
+      short_content:
       content: This slider sets the change in future investment and O&M costs for
         residual heat from all industrial sectors. Costs are compared to current costs.
         The costs in the link below depict the costs that are used for residual heat
         from the chemical industry, refineries and fertilizer industry. For low temperature
         heat from datacenters we use different costs.
     households_flexibility_consumer_gas_price:
-      short_content: 
+      short_content:
       content: |-
         The rate of a m3 gas in 2020 is on average 81.4 cents in the Netherlands. Of this, 32 cents is for the gas itself (the market price) and 50 cents for the energy tax and the 'opslag duurzame energie' (ODE) (<a href="https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening" target="_blank">Milieu Centraal</a>).</br> </br>
         This slider only has influence on the recommended treshold COP in the chart on the right and not on other ETM calculations.
     households_flexibility_consumer_electricity_price:
-      short_content: 
+      short_content:
       content: |-
         The rate of a kWh power in 2020 is on average 22.5 in the Netherlands. Of this, 7.5 cents is for the electricity itself (the market price) and 15 cents for energy tax and renewable energy storage (ODE) (<a href="https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening" target="_blank">Milieu Centraal</a>).</br></br>
         This slider only has influence on the recommended treshold COP in the chart on the right and not on other ETM calculations.
     curtailment_of_households_solar_pv_solar_radiation:
-      short_content: 
+      short_content:
       content: With this slider you set the curtailment as a percentage of the peak
         power. Solar panels on houses are connected to the LV-net in the ETM. The
         installed capacity can be adjusted <a href="/scenario/demand/households/solar-panels">here</a>.
     curtailment_of_buildings_solar_pv_solar_radiation:
-      short_content: 
+      short_content:
       content: With this slider you set the curtailment as a percentage of the peak
         power. Solar panels on buildings are connected to the LV-net in the ETM. The
         installed capacity can be adjusted <a href="/scenario/demand/buildings/solar-panels">here</a>.
     curtailment_of_energy_power_solar_pv_solar_radiation:
-      short_content: 
+      short_content:
       content: With this slider you set the curtailment as a percentage of the peak
         power. Solar PV plants are connected to the HV-net in the ETM. The installed
         capacity can be adjusted <a href="/scenario/supply/electricity_renewable/solar-power">here</a>.
     capacity_of_energy_heat_flexibility_p2h_boiler_electricity:
-      short_content: 
+      short_content:
       content: Power-to-heat boilers convert <strong>excess</strong> electricity to
         heat. This slider allows this heat to be used in the <a href="/scenario/supply/heat/heat-sources">residential
         district heating network</a>.
     capacity_of_energy_heat_flexibility_p2h_heatpump_electricity:
-      short_content: 
+      short_content:
       content: Power-to-heat heat pumps convert <strong>excess</strong> electricity
         to heat. This slider allows this heat to be used in the <a href="/scenario/supply/heat/heat-sources">residential
         district heating network</a>.

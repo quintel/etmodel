@@ -8,15 +8,25 @@ var D3ChartDateSelect = (function() {
 
   function buildOption(i) {
     var nextIndex = i + 1,
-      timeFormat = d3.time.format('%b %d'),
       msOffset = msInWeek * i,
       start = new Date(epoch.getDate() + msOffset),
-      end = new Date(start.getDate() + msOffset + msInWeek),
-      optionText = timeFormat(start) + ' - ' + timeFormat(end);
+      end = new Date(start.getDate() + msOffset + msInWeek);
 
     this.weeks[nextIndex] = [start, end];
 
-    return '<option value="' + nextIndex + '">' + optionText + '</option>';
+    return (
+      '<option value="' +
+      nextIndex +
+      '">' +
+      optionText(start, end) +
+      '</option>'
+    );
+  }
+
+  function optionText(start, end) {
+    return (
+      I18n.strftime(start, '%-d %b') + ' - ' + I18n.strftime(end, '%-d %b')
+    );
   }
 
   function createOptions(downsampleMethod) {

@@ -81,22 +81,18 @@ en:
         Incandescent:  ~1.000 hours"
     households_solar_pv_solar_radiation_market_penetration:
       short_content: ''
-      content: "Market penetration means the percentage of households that has solar
-        panels. We assume that all available roof space for each house is used. \r\n<br/><br/>\r\nSolar
-        cells transform sunlight into electricity. Solar panels are installed on rooftops
-        and may compete for space with solar water heaters. This technology is developing
-        rapidly and solar panels are becoming ever more efficient and cheaper. Solar
-        panels are expected to become much cheaper in the coming 40 years. For more
-        information, see the 'technology curves'. \r\n<br/><br/>\r\nSolar panels produce
-        electricity on site, so transport of electricity is not always required. This
-        avoids losses on the grid and that saves energy. Feeding locally produced
-        power back into the local power grid requires a higher capacity or smarter
-        local grid, to prevent it from overloading. The electricity produced by these
-        solar panels is shown in the chart on the right.\r\n<br/><br/>\r\nIn the ETM
-        solar PV panels have 867 full load hours by default. Because of technological
-        developments it is likely that future solar PV panels may produce more electricity
-        per installed capacity than today. You can adjust the full load hours of solar
-        panels <a href=\"/scenario/supply/electricity_renewable/solar-power\" >here</a>.\r\n</br>"
+      content: "With this slider you set the percentage of the potential roof area
+        where you want to install solar panels. Do you want to know the installed
+        capacity? Then look in the 'Merit order table', which can be found in the
+        chart list (you can get here by clicking 'See more charts' at the top right).
+        \r\n<br/><br/>\r\n This technology is developing rapidly and solar panels
+        are becoming ever more efficient and cheaper. Solar panels produce electricity
+        on site, so transport of electricity is not always required. This avoids losses
+        on the grid and that saves energy. Feeding locally produced power back into
+        the local power grid requires a higher capacity or smarter local grid, to
+        prevent it from overloading. It may be desirable to curtail the power peaks
+        in order to decrease the load on the net, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.
+        \r\n<br/>\r\n"
     households_heater_electricity_share:
       short_content: ''
       content: "Electric heaters directly convert electricity back to heat.\r\n<br/>\r\nSome
@@ -381,22 +377,6 @@ en:
       content: "Here you can indicate how much more efficient future airplanes will
         become every year. <br/> <br/>\r\nThere is some room for improvement, but
         not much."
-    policy_area_roofs_for_solar_panels:
-      short_content: ''
-      content: "This slider sets the surface area of rooftops oriented southward that
-        have been assigned to solar panels. This is only a boundary condition. You
-        can choose to build these solar panels in section “Supply”. \r\n"
-    policy_area_land_for_solar_panels:
-      short_content: ''
-      content: "This slider sets the surface area of the land you assign to building
-        photovoltaic solar power plants. On the right, you can see what percentage
-        of arable land you have allocated to these plants. \r\n"
-    policy_area_land_for_csp:
-      short_content: ''
-      content: "This slider sets the surface area of the land you assign to solar
-        power plants that use Concentrated Solar Power (CSP). On the right, you can
-        see how much of the available land has been allocated, as a result of your
-        choices.\r\n"
     policy_sustainability_co2_emissions:
       short_content: ''
       content: "This slider sets the total CO<sub>2</sub> emissions target w.r.t.
@@ -841,15 +821,15 @@ en:
         on GitHub</a> for more information on the numbers used."
     capacity_of_energy_power_solar_pv_solar_radiation:
       short_content: ''
-      content: "This builds centralized plants of photovoltaic solar power panels.
-        These are not mounted on roofs, but are usually placed in a field.<br/><br/>\r\nSince
-        Northern Europe receives relatively little sun, solar power is still much
-        more expensive than other renewable technologies. Like wind power, solar power
-        output fluctuates over time, but in a more predictable way, making it easier
-        to keep the electricity grid in balance. Still, the impact of installing large
-        numbers of solar panels can be large, because electricity is fed back into
-        the local grid. This may require balancing solutions at the local level for
-        the grid."
+      content: "With this slider you build centralized plants of photovoltaic solar
+        power panels. These are not mounted on roofs, but are usually placed in a
+        field.<br/><br/>\r\n Like wind power, solar power output fluctuates over time,
+        but in a more predictable way, making it easier to keep the electricity grid
+        in balance. Still, the impact of installing large numbers of solar panels
+        can be large, because electricity is fed back into the local grid. This may
+        require balancing solutions at the local level for the grid. In some cases
+        it is smart to connect solar parks to only a certain percentage of the peak
+        power, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.\r\n<br/>\r\n"
     capacity_of_energy_power_solar_csp_solar_radiation:
       short_content: ''
       content: "This builds a 50 MWe concentrated solar power (CSP) plant with heat
@@ -885,16 +865,6 @@ en:
         at maximum capacity more than 75% of the time.\r\n\r\n<br/><br/> \r\nThe input
         of the slider (in MW) is converted to a (partial) number of the plant described
         above."
-    capacity_of_other_chp_engine_network_gas:
-      short_content: ''
-      content: "Small Combined heat and power (CHP) engines like these (~2 MWe and
-        ~2 MWth) are gas-fired engines that generate both heat and electricity. The
-        combination of heat and electricity makes this option quite energy efficient.
-        Also, locally producing and using heat and electricity reduces transportation
-        losses and saves energy. CHPs are primarily used at sites with a predictable
-        demand for heat.\r\n<br/><br/>\r\nA gas-fired CHP uses more natural gas to
-        make heat than a good gas-fired boiler, and is only attractive if the electricity
-        is used or can be sold over the grid.\r\n"
     capacity_of_industry_chp_combined_cycle_gas_power_fuelmix:
       short_content: ''
       content: "Combined heat and power (CHP) engines are (mostly) gas-fired engines
@@ -945,15 +915,6 @@ en:
         biomass consumes fuel and the smaller the scale at which it is used, the less
         'green' this option becomes.\r\n<br/><br/>\r\nConventional stoves or fireplaces
         have not been included separately."
-    households_heat_network_connection_steam_hot_water_share:
-      short_content: ''
-      content: Heat for district heating can be produced by local burners, but also
-        by large-scale heat plants. You can choose to build large-scale plants in
-        a the <a href="/scenario/supply/fossil_heat/fossil-fired-heaters" >fossil
-        heat</a> and <a href="/scenario/supply/renewable_heat/biomass" >renewable
-        heat</a> slides in the supply section. You can also choose to use waste heat
-        from power plants and waste CHPs (see the <a href="/scenario/supply/electricity/coal-plants"
-        >electricity production</a> slide).
     households_water_heater_solar_thermal_share:
       short_content: ''
       content: 'Solar water heaters (SWH) use solar thermal panels to produce warm
@@ -1204,16 +1165,6 @@ en:
       content: These heaters are part of a gas-fired high efficiency central heating
         system running on natural gas. These systems are quite energy efficient, but
         emit CO<sub>2</sub>.
-    buildings_collective_chp_network_gas_share:
-      short_content: ''
-      content: "Small Combined heat and power (CHP) engines like these (~2 MWe and
-        ~2 MWth) are gas-fired engines that generate both heat and electricity. The
-        combination of heat and electricity makes this option quite energy efficient.
-        Also, locally producing and using heat and electricity reduces transportation
-        losses and saves energy. CHPs are primarily used at sites with a predictable
-        demand for heat, such as hospitals or swimming pools.\r\n<br/><br/>\r\nA gas-fired
-        CHP uses more natural gas to make heat than a good gas-fired boiler, and is
-        only attractive if the electricity is used or can be sold over the grid.\r\n"
     buildings_space_heater_electricity_share:
       short_content: ''
       content: "Electric heaters directly convert electricity back to heat.\r\n<br/>\r\nSome
@@ -1226,15 +1177,6 @@ en:
         during cold days, impact on the local electricity grid can be extreme. If
         you want to see what will happen to the grid you can set the electric heater
         slider to the same percentage as electric heat pumps (ground). "
-    buildings_heat_network_connection_steam_hot_water_share:
-      short_content: ''
-      content: Heat for district heating can be produced by local burners, but also
-        by large-scale heat plants. You can choose to build large-scale plants in
-        a the <a href="/scenario/supply/fossil_heat/fossil-fired-heaters" >fossil
-        heat</a> and <a href="/scenario/supply/renewable_heat/biomass" >renewable
-        heat</a> slides in the supply section. You can also choose to use waste heat
-        from power plants and waste CHPs (see the <a href="/scenario/supply/electricity/coal-plants"
-        >electricity production</a> slide).
     buildings_space_heater_solar_thermal_share:
       short_content: ''
       content: "Solar water heaters (SWH) use solar thermal panels to produce warm
@@ -1292,42 +1234,6 @@ en:
         It is difficult to realize underground thermal storage in densely populated
         areas so this is only lucrative for large projects supplying heat and cold
         to larger office buildings, for example. "
-    buildings_ventilation_rate:
-      short_content: ''
-      content: "This slider sets the amount of times air gets refreshed per hour in
-        an average building. There are two sources of refreshed air. One is air that
-        flows in from the outside in a natural fashion (through open windows and doors,
-        small seams etc), the other is air that gets refreshed through a mechanical
-        ventilation system. As isolation of buildings gets better natural ventilation
-        rate goes down and it becomes more important to have good mechanical ventilation,
-        because otherwise the air can get contaminated with bacteria and pollution
-        and oxygen in the air will be depleted.\r\n<br/><br/>\r\nThe default value
-        of the slider is the current average refreshment rate of air in buildings.
-        The trend over the years is that the ventilation rate has gone down a bit.
-        Do you think this will change in the future?"
-    buildings_recirculation:
-      short_content: ''
-      content: "Recirculation is a technology that reuses the air in a building by
-        using filters to clean the air and re-supplying it through the ventilation
-        system. This technology saves energy by maintaining the heated air, instead
-        of releasing it into the open air. Please note that the cost of these ventilation
-        systems is not used in the cost calculations in the Energy Transition Model.\r\n<br/><br/>\r\nWhat
-        percentage of air will be recirculated in buildings through their ventilation
-        system? Note that this cannot be 100%, because not all air flows through the
-        ventilation system (dependent on the level of insulation) and that air cannot
-        be recirculated indefinitely; at one point new air has to flow into the system."
-    buildings_waste_heat_recovery:
-      short_content: ''
-      content: "Heat recovery is a technology that keeps drawing in new air from outside,
-        but it uses a system to recover the heat from the outgoing air and supply
-        it to the outgoing air. In this way there is a supply of clean air in the
-        building, while still saving the heat that would otherwise be wasted by releasing
-        it into the outside. Please note that the cost of these ventilation systems
-        is not used in the cost calculations in the Energy Transition Model.\r\n<br/><br/>\r\nWhat
-        percentage of air in buildings will have their heat recovered through the
-        their ventilation system? Note that this cannot be 100%, because not all air
-        flows through the ventilation system (dependent on the level of insulation)
-        and that not all heat in the air can be recovered."
     buildings_useful_demand_for_appliances:
       short_content: ''
       content: "How much more efficient do you think appliances in non-residential
@@ -1409,18 +1315,18 @@ en:
         from outside."
     buildings_solar_pv_solar_radiation_market_penetration:
       short_content: ''
-      content: "Solar cells transform sunlight into electricity. These solar panels
-        are mostly installed on rooftops. This technology is developing rapidly and
-        solar panels are becoming ever more efficient and cheaper. Solar panels are
-        expected to become much cheaper in the coming 40 years.\r\n<br/><br/>\r\nSolar
-        panels produce electricity on site, so transport of electricity is not always
-        required. This avoids losses on the grid and that saves energy. Feeding locally
-        produced power back into the local power grid requires a higher capacity or
-        smarter local grid, to prevent it from overloading. \r\n<br/><br/>\r\nIn the
-        ETM solar PV panels have 867 full load hours by default. Because of technological
-        developments it is likely that future solar PV panels may produce more electricity
-        per installed capacity than today. You can adjust the full load hours of solar
-        panels <a href=\"/scenario/supply/electricity_renewable/solar-power\" >here</a>\r\n</br>"
+      content: "With this slider you set the percentage of the potential roof area
+        where you want to install solar panels. Do you want to know the installed
+        capacity? Then look in the 'Merit order table', which can be found in the
+        chart list (you can get here by clicking 'See more charts' at the top right).
+        \r\n<br/><br/>\r\n This technology is developing rapidly and solar panels
+        are becoming ever more efficient and cheaper. Solar panels produce electricity
+        on site, so transport of electricity is not always required. This avoids losses
+        on the grid and that saves energy. Feeding locally produced power back into
+        the local power grid requires a higher capacity or smarter local grid, to
+        prevent it from overloading. It may be desirable to curtail the power peaks
+        in order to decrease the load on the net, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.
+        \r\n<br/>\r\n"
     buildings_space_heater_wood_pellets_share:
       short_content: ''
       content: "What percentage of heat demand in offices and other buildings is met
@@ -1569,9 +1475,6 @@ en:
       content: "Gas-fired power plants obtain their gas from the gas mains, of course.
         Some of this gas may be green gas, if you have set this to be the case. \r\n<br/>\r\nAlternatively,
         gas-fired plants can co-fire oil and bio-oil."
-    energy_import_steam_hot_water_preset_demands:
-      short_content: 
-      content: ''
     coal_from_south_africa_share:
       short_content: ''
       content: 'In South Africa both opencast and underground mining are being applied.
@@ -1927,17 +1830,6 @@ en:
         potential for these power plants is limited by available domestic waste. We
         assume no waste will be imported.\r\n<br/><br/>\r\nThe input of the slider
         (in MW) is converted to a (partial) number of the plant described above."
-    capacity_of_other_chp_engine_biogas:
-      short_content: 
-      content: "Combined heat and power (CHP) engines like these (~1 MWe and ~1 MWth)
-        are gas-fired engines that generate both heat and electricity. The combination
-        of heat and electricity makes this option quite energy efficient. CHPs are
-        primarily used at sites with a predictable demand for heat, such as greenhouses
-        for example.\r\n<br/><br/>\r\nThis unit is powered by locally produced biogas.
-        The biogas is created by sewage treatment or from rotting waste in covered
-        dump sites. Gas is produced in a steady flow, meaning this CHP is running
-        all the time.\r\n<br/><br/>\r\nThe input of the slider (in MW) is converted
-        to a (partial) number of the plant described above."
     households_useful_demand_cooking_per_person:
       short_content: 
       content: "Note: these changes in energy demand do <strong>not</strong> depend
@@ -2251,12 +2143,10 @@ en:
         efficient or cost-effective given the weather conditions and insulation level.
         Houses with limited insulation will rely on the gas-fired part more, better
         insulated ones will make more use of the heat pump.\r\n<br/><br/>\r\nThe COP
-        of the electric part of the hybrid heat pump is dependent of ambient temperature.
+        of the electric part of the hybrid heat pump depends on ambient temperature.
         When the COP drops below the threshold value the hybrid heat pump switches
-        to gas. With the default value of the threshold COP space heating is as much
-        as possible supplied by the electric part of the hybrid heat pump. The threshold
-        value can be adjusted in the section <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-heat-pumps\"
-        >Demand response - Heat pumps</a>. \r\n\r\n"
+        to gas. The threshold value can be adjusted in the section <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
+        >Demand response - behavior of hybrid heat pumps</a>. \r\n\r\n"
     transport_car_using_hydrogen_share:
       short_content: 
       content: "What percentage of all cars will be hydrogen fuelled vehicles in the
@@ -2813,10 +2703,11 @@ en:
     households_flexibility_space_heating_cop_cutoff:
       short_content: 
       content: "Here you indicate the threshold COP of hybrid heat pumps for space
-        heating.\r\n<p>\r\nThe default setting is that the electric part of the HHP
-        is used maximally for space heating.\r\n<p>\r\nWith the current gas and electricity
+        heating. \r\n<p>\r\nThe default setting is that the electric part of the HHP
+        is used maximally for space heating. With the current gas and electricity
         price financial optimization for the user is achieved with a threshold COP
-        of  3.6.\r\nFor calculations see <a href=\"https://github.com/quintel/documentation/blob/bd77c99e145958613a8c2e45116e887a1d01a39a/general/heat_pumps.md\">Documentation</a>"
+        of  2.6, this can be concluded from the chart on the right.\r\nFor more information
+        about (hybrid) heat pumps see our <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_pumps.md\">documentation</a>."
     households_flexibility_water_heating_cop_cutoff:
       short_content: 
       content: "Here you indicate the threshold COP of hybrid heat pumps for hot water.\r\n<p>\r\nThe
@@ -3739,13 +3630,11 @@ en:
         is the most efficient or cost-effective given the weather conditions and insulation
         level. Houses with limited insulation will rely on the hydrogen-fired part
         more, better insulated ones will make more use of the heat pump.\r\n<br/><br/>\r\nThe
-        COP of the electric part of the hybrid hydrogen heat pump is dependent of
-        ambient temperature. When the COP drops below the threshold value the hybrid
-        hydrogen heat pump switches to hydrogen. With the default value of the threshold
-        COP space heating is as much as possible supplied by the electric part of
-        the hybrid hydrogen heat pump. The threshold value can be adjusted in the
-        section <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-heat-pumps\"
-        >Demand response - Heat pumps</a>. "
+        COP of the electric part of the hybrid hydrogen heat pump depends on ambient
+        temperature. When the COP drops below the threshold value the hybrid heat
+        pump switches to hydrogen. The threshold value can be adjusted in the section
+        <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
+        >Demand response - behavior of hybrid heat pumps</a>. \r\n\r\n"
     capacity_of_energy_power_combined_cycle_hydrogen:
       short_content: 
       content: 'Here you can build capacity of combined cycle hydrogen plants. At
@@ -4091,3 +3980,38 @@ en:
         The costs in the link below depict the costs that are used for residual heat
         from the chemical industry, refineries and fertilizer industry. For low temperature
         heat from datacenters we use different costs.
+    households_flexibility_consumer_gas_price:
+      short_content: 
+      content: |-
+        The rate of a m3 gas in 2020 is on average 81.4 cents in the Netherlands. Of this, 32 cents is for the gas itself (the market price) and 50 cents for the energy tax and the 'opslag duurzame energie' (ODE) (<a href="https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening" target="_blank">Milieu Centraal</a>).</br> </br>
+        This slider only has influence on the recommended treshold COP in the chart on the right and not on other ETM calculations.
+    households_flexibility_consumer_electricity_price:
+      short_content: 
+      content: |-
+        The rate of a kWh power in 2020 is on average 22.5 in the Netherlands. Of this, 7.5 cents is for the electricity itself (the market price) and 15 cents for energy tax and renewable energy storage (ODE) (<a href="https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening" target="_blank">Milieu Centraal</a>).</br></br>
+        This slider only has influence on the recommended treshold COP in the chart on the right and not on other ETM calculations.
+    curtailment_of_households_solar_pv_solar_radiation:
+      short_content: 
+      content: With this slider you set the curtailment as a percentage of the peak
+        power. Solar panels on houses are connected to the LV-net in the ETM. The
+        installed capacity can be adjusted <a href="/scenario/demand/households/solar-panels">here</a>.
+    curtailment_of_buildings_solar_pv_solar_radiation:
+      short_content: 
+      content: With this slider you set the curtailment as a percentage of the peak
+        power. Solar panels on buildings are connected to the LV-net in the ETM. The
+        installed capacity can be adjusted <a href="/scenario/demand/buildings/solar-panels">here</a>.
+    curtailment_of_energy_power_solar_pv_solar_radiation:
+      short_content: 
+      content: With this slider you set the curtailment as a percentage of the peak
+        power. Solar PV plants are connected to the HV-net in the ETM. The installed
+        capacity can be adjusted <a href="/scenario/supply/electricity_renewable/solar-power">here</a>.
+    capacity_of_energy_heat_flexibility_p2h_boiler_electricity:
+      short_content: 
+      content: Power-to-heat boilers convert <strong>excess</strong> electricity to
+        heat. This slider allows this heat to be used in the <a href="/scenario/supply/heat/heat-sources">residential
+        district heating network</a>.
+    capacity_of_energy_heat_flexibility_p2h_heatpump_electricity:
+      short_content: 
+      content: Power-to-heat heat pumps convert <strong>excess</strong> electricity
+        to heat. This slider allows this heat to be used in the <a href="/scenario/supply/heat/heat-sources">residential
+        district heating network</a>.

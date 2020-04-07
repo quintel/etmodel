@@ -83,21 +83,18 @@ nl:
         Gloeilamp: ~1.000 uur"
     households_solar_pv_solar_radiation_market_penetration:
       short_content: ''
-      content: "Marktpenetratie betekent het percentage van alle huishoudens dat zonnepanelen
-        heeft. We nemen aan dat alle beschikbare ruimte op het dak gebruikt wordt.\r\n<br/><br/>\r\nZonnecellen
-        zetten licht om in elektriciteit. Zonnepanelen liggen op het dak en kunnen
-        concurreren met zonneboilers om ruimte. Deze technologie is nog volop in ontwikkeling
-        en zonnepanelen worden steeds efficiënter en goedkoper. Verwacht wordt dat
-        zonnecellen de komende 40 jaar veel goedkoper zullen worden.\r\n<br/><br/>\r\nZonnepanelen
-        produceren stroom op de plek waar het gebruikt wordt (in huis) en dus is het
-        niet altijd nodig om de elektriciteit te transporteren over het elektriciteitsnet.
-        Zo worden netwerkverliezen vermeden en energie bespaard. Stroom die niet wordt
-        gebruikt kan aan het lokale netwerk worden teruggeleverd. De stroom die deze
-        panelen produceren zie je terug in de grafiek rechts.\r\n<br/><br/>\r\nIn
-        het ETM heeft een zonnepaneel standaard 867 vollasturen. Het is aannemelijk
-        dat toekomstige zonnepanelen meer elektriciteit zullen produceren per geïnstalleerd
-        vermogen dan nu. Je kunt het aantal vollasturen voor zonnepanelen <a href=\"/scenario/supply/electricity_renewable/solar-power\"
-        >hier</a> aanpassen.\r\n</br>"
+      content: "Met dit schuifje stel je het percentage van het potentiële dakoppervlak
+        in waar je zonnepanelen wil installeren. Wil je weten hoeveel vermogen dit
+        is? Kijk dan in de 'Merit order tabel', deze is te vinden in de grafiekenlijst
+        (hier kom je door rechtsbovenaan op 'Meer grafieken bekijken' te klikken).
+        \r\n<br/><br/>\r\n Zonnepanelen zijn nog volop in ontwikkeling en ze worden
+        steeds efficiënter en goedkoper. Ze produceren stroom op de plek waar het
+        gebruikt wordt (in huis) en dus is het niet altijd nodig om de elektriciteit
+        te transporteren over het elektriciteitsnet. Zo worden netwerkverliezen vermeden
+        en energie bespaard. Stroom die niet wordt gebruikt kan aan het lokale netwerk
+        worden teruggeleverd. Het kan wenselijk zijn om de productie te beperken om
+        zo het net te ontlasten, dit kan je <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
+        instellen. \r\n<br/>\r\n"
     households_heater_electricity_share:
       short_content: ''
       content: "Electrische kachels zetten elektriciteit direct om in warmte. Op zich
@@ -397,25 +394,6 @@ nl:
       content: "Geef hier aan hoeveel efficienter jij denkt dat vliegtuigen ieder
         jaar zullen worden. \r\n<br/> <br/>\r\nHier bestaat nog ruimte voor verbetering,
         maar niet heel veel."
-    policy_area_roofs_for_solar_panels:
-      short_content: ''
-      content: 'Deze schuif stelt in hoeveel naar het zuiden gericht dakoppervlak
-        toegewezen moet worden aan zonnepanelen. Dit is slechts een randvoorwaarde.
-        Om zonnepanelen in te zetten, moet je bij het onderdeel ''Aanbod'' zijn.  '
-    policy_area_land_for_solar_panels:
-      short_content: ''
-      content: "Deze schuif stelt in hoeveel landoppervlak beschikbaar moet worden
-        gesteld voor parken met zonnepanelen. Rechts kun je zien, welk percentage
-        van het totale landbouwareaal je hebt toegekend. <br/>\r\nDit is slechts een
-        randvoorwaarde. Als je zonneparken wilt bouwen, moet je in het onderdeel 'Aanbod'
-        zijn."
-    policy_area_land_for_csp:
-      short_content: ''
-      content: "Deze schuif stelt in hoeveel landoppervlak beschikbaar moet worden
-        gesteld voor parken met zonnewarmte centrales. Rechts kun je zien, welk percentage
-        van het totale landbouwareaal je hebt toegekend. <br/>\r\nDit is slechts een
-        randvoorwaarde. Als je zonneparken wilt bouwen, moet je in het onderdeel 'Aanbod'
-        zijn."
     policy_sustainability_co2_emissions:
       short_content: ''
       content: "Deze schuif stelt de doelstelling in voor totale CO<sub>2</sub> emissiereductie.
@@ -880,13 +858,13 @@ nl:
         width=\"425\" height=\"300\"></embed></object>"
     capacity_of_energy_power_solar_pv_solar_radiation:
       short_content: ''
-      content: "Hiermee bouw je een centrale van zonnepanelen. Deze panelen zijn in
-        een veld opgesteld, of maken gebruik van daken van zeer grote gebouwen. <br/>\r\nIn
-        Noord Europa is zonnestroom nog veel duurder dan wind bijvoorbeeld, doordat
-        er relatief weinig zonuren zijn. Net als windstroom, is zonnestroom fluctuerend.
-        Toch is de variatie van zonnestroom beter te voorspellen. Als zeer veel zonnepanelen
-        geïnstalleerd worden, kan het nodig zijn om oplossingen te vinden voor onbalans
-        op het laagspanningsnet.\r\n"
+      content: "Met dit schuifje bouw je een grootschalig zonnepark.<br/>\r\nNet als
+        windstroom, is zonnestroom fluctuerend. Toch is de variatie van zonnestroom
+        beter te voorspellen. Als zeer veel zonnepanelen geïnstalleerd worden, kan
+        het nodig zijn om oplossingen te vinden voor onbalans op het laagspanningsnet.
+        In sommige gevallen is het slim om zonneparken aan te sluiten op slechts een
+        bepaald percentage van het piekvermogen, dit kan je <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
+        instellen.\r\n<br/>\r\n"
     capacity_of_energy_power_solar_csp_solar_radiation:
       short_content: ''
       content: "Hiermee bouw je 50 MWe geconcentreerde zonnewarmte centrales (Concentrated
@@ -921,15 +899,6 @@ nl:
         kolencentrale is een basislast-centrale, en daarom draait hij meer dan 75%
         van de tijd op vol vermogen.\r\n\r\n<br/><br/>\r\nDe schuifjesinstelling wordt
         omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven."
-    capacity_of_other_chp_engine_network_gas:
-      short_content: ''
-      content: "Kleine warmtekrachtkoppelingen (WKK’s) als deze (~2 MWe and ~2 MWth)
-        maken warmte en elektriciteit. Deze combinatie maakt WKK's vrij energie-efficiënt.
-        Lokaal produceren en gebruiken van warmte en elektriciteit vermijdt transportverliezen
-        en dat bespaart weer energie. WKK's worden vooral gebouwd op locaties met
-        een voorspelbare warmtevraag.\r\n<br/<br/>\r\nEen gas-WKK gebruikt meer aardgas
-        om warmte te maken, dan een HR CV-ketel. Daarom is deze optie pas aantrekkelijk
-        als de elektriciteit kan worden benut of kan worden verkocht over het net."
     capacity_of_industry_chp_combined_cycle_gas_power_fuelmix:
       short_content: ''
       content: "Warmtekrachtkoppelingen (WKK’s) maken warmte en elektriciteit. Deze
@@ -984,15 +953,6 @@ nl:
         zijn geproduceerd. Het transport van biomassa kost brandstof en hoe kleiner
         de schaal waarop het wordt toegepast, hoe minder 'groen' het wordt.\r\n<br/><br/>\r\nOuderwetse
         houtkachels en open haarden zijn niet als aparte opties in het model opgenomen."
-    households_heat_network_connection_steam_hot_water_share:
-      short_content: ''
-      content: Warmte uit een warmtenet kan geproduceerd worden door lokale warmteketels,
-        maar kan ook komen van grootschalige  een grootschalige centrales. Bij <a
-        href="/scenario/supply/fossil_heat/fossil-fired-heaters" >'fossiele warmte'</a>
-        en <a href="/scenario/supply/renewable_heat/biomass" >'hernieuwbare warmte'</a>
-        in de Aanbodsectie kun je hiervoor een aantal opties kiezen. Ook kun je gebruik
-        maken van restwarmte van elektriciteitscentrales en afvalverbranders (zie
-        de slide <a href="/scenario/supply/electricity/coal-plants" >'Elektriciteit'</a>).
     households_water_heater_solar_thermal_share:
       short_content: ''
       content: "Een zonneboiler maakt warm water via zonthermische panelen. Deze warmte
@@ -1249,21 +1209,6 @@ nl:
       short_content: ''
       content: Deze ketels zijn gasgestookte HR-ketels. Dit zijn zeer efficiënte systemen,
         maar ze stoten wel CO<sub>2</sub> uit.
-    buildings_collective_chp_network_gas_share:
-      short_content: ''
-      content: "Kleine warmtekrachtkoppelingen (WKK’s) als deze (~2 MWe en ~2 MWth)
-        maken warmte en elektriciteit. Deze combinatie maakt WKK's vrij energie-efficiënt.
-        Lokaal produceren en gebruiken van warmte en elektriciteit vermijdt transportverliezen
-        en dat bespaart weer energie. WKK's worden vooral gebouwd op locaties met
-        een voorspelbare warmtevraag, zoals bijvoorbeeld zwembaden en ziekenhuizen.\r\n<br/<br/>\r\nEen
-        gas-WKK gebruikt meer aardgas om warmte te maken, dan een HR CV-ketel. Daarom
-        is deze optie pas aantrekkelijk als de elektriciteit kan worden benut of kan
-        worden verkocht over het net.\r\n\r\n<br/><br/>\r\n<object width=\"640\" height=\"385\"><param
-        name=\"movie\" value=\"http://www.youtube.com/v/HjVqJPqR0IU?fs=1&amp;hl=en_US&amp;rel=0\"></param><param
-        name=\"allowFullScreen\" value=\"true\"></param><param name=\"allowscriptaccess\"
-        value=\"always\"></param><embed src=\"http://www.youtube.com/v/HjVqJPqR0IU?fs=1&amp;hl=en_US&amp;rel=0\"
-        type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\"
-        width=\"425\" height=\"300\"></embed></object>"
     buildings_space_heater_electricity_share:
       short_content: ''
       content: "Electrische kachels zetten elektriciteit direct om in warmte. Op zich
@@ -1277,15 +1222,6 @@ nl:
         \ Als je wilt zien wat de impact van elektrische bijstook bij warmtepompen
         is, kun je deze schuif op hetzelfde percentage zetten als de elektrische warmtepomp
         (bodem) schuif."
-    buildings_heat_network_connection_steam_hot_water_share:
-      short_content: ''
-      content: Warmte uit een warmtenet kan geproduceerd worden door lokale warmteketels,
-        maar kan ook komen van grootschalige  een grootschalige centrales. Bij <a
-        href="/scenario/supply/fossil_heat/fossil-fired-heaters" >'fossiele warmte'</a>
-        en <a href="/scenario/supply/renewable_heat/biomass" >'hernieuwbare warmte'</a>
-        in de Aanbodsectie kun je hiervoor een aantal opties kiezen. Ook kun je gebruik
-        maken van restwarmte van elektriciteitscentrales en afvalverbranders (zie
-        de slide <a href="/scenario/supply/electricity/coal-plants" >'Elektriciteit'</a>).
     buildings_space_heater_solar_thermal_share:
       short_content: ''
       content: Een zonneboiler maakt warm water via zonthermische panelen op je dak.
@@ -1348,44 +1284,6 @@ nl:
         helaas praktisch niet altijd mogelijk om de ondergrondse opslag te realiseren
         (bijvoorbeeld in stedelijk gebied). Daarom is WKO alleen lucratief op grote
         schaal, zoals voor grote kantoorpanden bijvoorbeeld."
-    buildings_ventilation_rate:
-      short_content: ''
-      content: "Dit schuifje verandert het aantal keer dat de lucht in een gebouw
-        per uur vervangen wordt. Er zijn twee manieren waarop deze lucht vervangen
-        wordt. De eerste is via natuurlijke ventilatie, hierbij komt nieuwe lucht
-        binnen via open deuren en ramen, kiertjes etc. De tweede manier waarop nieuwe
-        lucht aangevoerd wordt is via mechanische ventilatie door het ventilatiesysteem
-        van een gebouw. Met de toenemende mate van isolatie in gebouwen wordt het
-        ook belangrijker om goed te ventileren. De lucht kan anders vervuild raken
-        met bacteriën en schadelijke stoffen, terwijl het zuurstofgehalte naar beneden
-        gaat.\r\n<br/><br/>\r\nDe standaardwaarde van dit schuifje is de huidige gemiddelde
-        verversingsgraad van de lucht in gebouwen. De trend over de afgelopen jaren
-        is dat deze ventilatievoud iets daalt. Denk je dat dit verandert in de toekomst?"
-    buildings_recirculation:
-      short_content: ''
-      content: "Recirculatie is een technologie die de lucht in een gebouw hergebruikt
-        door filters toe te passen op de lucht en het via het ventilatiesysteem weer
-        het gebouw in te brengen. Op deze manier wordt energie bespaard doordat de
-        warme lucht hergebruikt wordt, in plaats van de buitenlucht in te worden gestuurd.
-        Let op: de kosten van deze ventilatiesystemen wordt niet meegenomen in de
-        kostenberekening van het model.\r\n<br/><br/>\r\nHoeveel procent van de lucht
-        in gebouwen wordt gerecirculeerd door hun ventilatiesysteem? Dit getal kan
-        geen 100% zijn, omdat via natuurlijke weg een deel van de lucht in het gebouw
-        wegstroomt (afhankelijk van isolatie) en de lucht in het recirculatiesysteem
-        ook niet voor eeuwig gerecirculeerd kan worden; op een gegeven moment moet
-        het ververst worden."
-    buildings_waste_heat_recovery:
-      short_content: ''
-      content: "Warmte terugwinning is een technologie die wel nieuwe lucht blijft
-        aanvoeren via het ventilatiestysteem, maar waarbij de warmte uit de uitgaande
-        lucht wordt teruggewonnen en doorgegeven aan de inkomende lucht. Zo komt er
-        dus continue schone lucht het gebouw in, maar wordt de warmte, die anders
-        aan de buitenlucht verloren zou gaan, opnieuw gebruikt. Let op: de kosten
-        van deze ventilatiesystemen wordt niet meegenomen in de kostenberekening van
-        het model.\r\n<br/><br/>\r\nHoeveel procent van de gebouwen gebruiken warmte
-        terugwinning in hun ventilatiesysteem? Dit getal kan geen 100% zijn, omdat
-        via natuurlijke weg een deel van de lucht in het gebouw wegstroomt (afhankelijk
-        van isolatie) en niet alle warmte uit de lucht teruggewonnen kan worden."
     buildings_useful_demand_for_appliances:
       short_content: ''
       content: "Hoeveel efficiënter zullen apparaten in de utiliteitsbouw in de toekomst
@@ -1468,19 +1366,18 @@ nl:
         er niet al genoeg licht van buiten is."
     buildings_solar_pv_solar_radiation_market_penetration:
       short_content: ''
-      content: "Zonnecellen zetten licht om in elektriciteit. Deze zonnepanelen liggen
-        meestal op het dak. Deze technologie is nog volop in ontwikkeling en zonnepanelen
-        worden steeds efficiënter en goedkoper. Verwacht wordt dat zonnecellen de
-        komende 40 jaar veel goedkoper zullen worden. Zie hiervoor ook de 'Expert
-        voorspellingen' in het Kosten hoofdstuk.\r\n<br/><br/>\r\nZonnepanelen produceren
-        stroom op de plek waar het gebruikt wordt en dus is het niet altijd nodig
-        om de elektriciteit te transporteren over het elektriciteitsnet. Zo worden
-        netwerkverliezen vermeden en energie bespaard. Stroom die niet wordt gebruikt
-        kan aan het lokale netwerk worden teruggeleverd. \r\n<br/><br/>\r\nIn het
-        ETM heeft een zonnepaneel standaard 867 vollasturen. Het is aannemelijk dat
-        toekomstige zonnepanelen meer elektriciteit zullen produceren per geïnstalleerd
-        vermogen dan nu. Je kunt het aantal vollasturen voor zonnepanelen <a href=\"/scenario/supply/electricity_renewable/solar-power\"
-        >hier</a> aanpassen.\r\n</br>"
+      content: "Met dit schuifje stel je het percentage van het potentiële dakoppervlak
+        in waar je zonnepanelen wil installeren. Wil je weten hoeveel vermogen dit
+        is? Kijk dan in de 'Merit order tabel', deze is te vinden in de grafiekenlijst
+        (hier kom je door rechtsbovenaan op 'Meer grafieken bekijken' te klikken).
+        \r\n<br/><br/>\r\n Zonnepanelen zijn nog volop in ontwikkeling en ze worden
+        steeds efficiënter en goedkoper. Ze produceren stroom op de plek waar het
+        gebruikt wordt (in huis) en dus is het niet altijd nodig om de elektriciteit
+        te transporteren over het elektriciteitsnet. Zo worden netwerkverliezen vermeden
+        en energie bespaard. Stroom die niet wordt gebruikt kan aan het lokale netwerk
+        worden teruggeleverd. Het kan wenselijk zijn om de productie te beperken om
+        zo het net te ontlasten, dit kan je <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
+        instellen. \r\n<br/>\r\n"
     buildings_space_heater_wood_pellets_share:
       short_content: ''
       content: "Welk percentage van de warmtevraag in kantoren en andere gebouwen
@@ -1641,9 +1538,6 @@ nl:
       content: "Gascentrales halen hun gas natuurlijk uit het gasnet. Een deel hiervan
         is mogelijk groengas als je dat hierboven hebt ingesteld.\r\n<br/>\r\nAls
         alternatief kunnen deze centrales ook olie en bio-olie bijstoken."
-    energy_import_steam_hot_water_preset_demands:
-      short_content: 
-      content: ''
     coal_from_south_africa_share:
       short_content: ''
       content: In Zuid-Afrika zijn er beide bovengronds en ondergrondse mijnen. Voor
@@ -2015,16 +1909,6 @@ nl:
         model importeert geen afval, dus de beschikbare hoeveelheid afval bepaalt
         het potentieel voor deze technologie.\r\n<br/><br/>\r\nDe schuifjesinstelling
         wordt omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven."
-    capacity_of_other_chp_engine_biogas:
-      short_content: 
-      content: "Kleine warmtekrachtkoppelingen (WKK’s) als deze (~1 MWe en ~1 MWth)
-        maken warmte en elektriciteit. Deze combinatie maakt WKK's vrij energie-efficiënt.
-        WKK's worden vooral gebouwd op locaties met een voorspelbare warmtevraag,
-        zoals bijvoorbeeld broeikassen.\r\n<br/<br/>\r\nDeze WKK gebruikt biogas dat
-        gemaakt wordt in rioolwaterzuivering of door verrotting van afval op een vuilstort.
-        Omdat een constante stroom van gas geproduceerd wordt, staat deze WKK vrijwel
-        constant aan.\r\n<br/><br/>\r\nDe schuifjesinstelling wordt omgezet naar (deel)aantallen
-        van de centrale zoals hierboven omschreven."
     households_useful_demand_cooking_per_person:
       short_content: 
       content: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
@@ -2354,10 +2238,8 @@ nl:
         huizen gebruiken vooral de warmtepomp.  \r\n<br/><br/>\r\nDe COP van het elektrische
         deel van de hybride warmtepomp is afhankelijk van de buitentemperatuur. Als
         de COP onder de drempelwaarde zakt schakelt de hybride warmtepomp volledig
-        over op gas. De standaard-drempelwaarde zorgt dat ruimteverwarming zo veel
-        mogelijk via het elektrische gedeelte van de hybride warmtepomp gebeurt. De
-        omslag-COP is in de sectie <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-heat-pumps\"
-        >Vraagsturing - Warmtepompen</a> aan te passen. \r\n"
+        over op gas. De omslag-COP is in de sectie <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
+        >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen. \r\n"
     transport_car_using_hydrogen_share:
       short_content: 
       content: "Welk percentage van alle auto's zal op waterstof rijden in de toekomst?
@@ -2935,9 +2817,10 @@ nl:
       content: "Geef hier aan wat de omslag-COP van het hybride warmtepompen is voor
         ruimteverwarming.\r\n<p>\r\nMet de standaardinstelling voor de omslag-COP
         wordt het elektrische deel van de hybride warmtepomp maximal gebruikt voor
-        ruimteverwarming.\r\n<p>\r\nMet de huidige gas- en elektriciteitsprijs wordt
-        financiële optimalisatie voor de gebruiker bereikt met een omslag-COP van
-        3.6. Voor meer informatie zie: <a href=\"https://github.com/quintel/documentation/blob/bd77c99e145958613a8c2e45116e887a1d01a39a/general/heat_pumps.md\">Documentatie</a>"
+        ruimteverwarming. Met de huidige gas- en elektriciteitsprijs wordt financiële
+        optimalisatie voor de gebruiker bereikt met een omslag-COP van 2.6, dit is
+        te zien in de grafiek rechts weergegeven. Voor meer informatie over (hybride)
+        warmtepompen zie onze <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_pumps.md\">documentatie</a>."
     households_flexibility_water_heating_cop_cutoff:
       short_content: 
       content: "Geef hier aan wat de omslag-COP van het hybride warmtepompen is voor
@@ -3855,11 +3738,9 @@ nl:
         de waterstofketel vaker nodig hebben, beter geïsoleerde huizen gebruiken vooral
         de warmtepomp.  \r\n<br/><br/>\r\nDe COP van het elektrische deel van de hybride
         waterstofwarmtepomp is afhankelijk van de buitentemperatuur. Als de COP onder
-        de drempelwaarde zakt schakelt de hybride waterstofwarmtepomp volledig over
-        op waterstof. De standaard-drempelwaarde zorgt dat ruimteverwarming zo veel
-        mogelijk via het elektrische gedeelte van de hybride waterstofwarmtepomp gebeurt.
-        De omslag-COP is in de sectie <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-heat-pumps\"
-        >Vraagsturing - Warmtepompen</a> aan te passen. "
+        de drempelwaarde zakt schakelt de hybride warmtepomp volledig over op gas.
+        Deze omslag-COP is in de sectie <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
+        >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen. \r\n"
     capacity_of_energy_power_combined_cycle_hydrogen:
       short_content: 
       content: 'Met deze schuif kun je capaciteit van STEG-waterstofcentrales opstellen
@@ -4241,3 +4122,41 @@ nl:
         de dag. De kosten in de link hieronder zijn de kosten die we hanteren voor
         restwarmte uit de chemische industrie, raffinaderijen en kunstmestindustrie.
         Voor lage temperatuur restwarmte uit datacenters rekenen we met andere kosten.
+    households_flexibility_consumer_gas_price:
+      short_content: 
+      content: |-
+        Het tarief van een m3 gas is in 2020 gemiddeld 81,4 eurocent in Nederland. Daarvan is 32 cent voor het gas zelf (de marktprijs) en 50 cent voor de energiebelasting en de opslag duurzame energie (ODE) (<a href="https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening" target="_blank">Milieu Centraal</a>).</br></br>
+        Deze slider heeft enkel invloed op de geadviseerde omslag COP in de grafiek rechts en dus niet op andere ETM-berekeningen.
+    households_flexibility_consumer_electricity_price:
+      short_content: 
+      content: |-
+        Het tarief van een kWh stroom is in 2020 gemiddeld 22,5 cent in Nederland. Daarvan is 7,5 cent voor de elektriciteit zelf (de marktprijs) en 15 cent voor de energiebelasting en de opslag duurzame energie (ODE) (<a href="https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening" target="_blank">Milieu Centraal</a>).</br></br>
+        Deze slider heeft enkel invloed op de geadviseerde omslag COP in de grafiek rechts en dus niet op andere ETM-berekeningen
+    curtailment_of_households_solar_pv_solar_radiation:
+      short_content: 
+      content: Met dit schuifje stel je de productiebeperking in als percentage van
+        het piekvermogen. Zonnepanelen op huizen zijn verbonden aan het laagspanningsnet
+        in het ETM. Het geïnstalleerd vermogen is <a href="/scenario/demand/households/solar-panels">hier</a>
+        aan te passen.
+    curtailment_of_buildings_solar_pv_solar_radiation:
+      short_content: 
+      content: Met dit schuifje stel je de productiebeperking in als percentage van
+        het piekvermogen. Zonnepanelen op gebouwen zijn verbonden aan het laagspanningsnet
+        in het ETM. Het geïnstalleerd vermogen is <a href="/scenario/demand/buildings/solar-panels">hier</a>
+        aan te passen.
+    curtailment_of_energy_power_solar_pv_solar_radiation:
+      short_content: 
+      content: Met dit schuifje stel je de productiebeperking in als percentage van
+        het piekvermogen. Zonneparken zijn verbonden aan het hoogspanningsnet in het
+        ETM. Het geïnstalleerd vermogen is <a href="/scenario/supply/electricity_renewable/solar-power">hier</a>
+        aan te passen.
+    capacity_of_energy_heat_flexibility_p2h_boiler_electricity:
+      short_content: 
+      content: Power-to-heat boilers produceren warmte met elektriciteitsoverschotten.
+        Dit schuifje zorgt ervoor dat deze warmte wordt ingezet in het <a href="/scenario/supply/heat/heat-sources">residentiële
+        warmtenet</a>.
+    capacity_of_energy_heat_flexibility_p2h_heatpump_electricity:
+      short_content: 
+      content: Power-to-heat warmtepompen produceren warmte met elektriciteitsoverschotten.
+        Dit schuifje zorgt ervoor dat deze warmte wordt ingezet in het <a href="/scenario/supply/heat/heat-sources">residentiële
+        warmtenet</a>.

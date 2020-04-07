@@ -56,11 +56,6 @@ en:
       content: Geothermal energy is getting quite a bit of attention these days. How
         will the investment costs and operation costs change for this technology in
         the future?
-    costs_earth_operational_and_maintenance:
-      short_content: ''
-      content: 'Geothermal power is getting quite a bit of attention these days. Operational
-        and maintenance costs are a minor part of geothermal electricity costs. What
-        do you think they will be in the future? '
     costs_solar_investment:
       short_content: ''
       content: How will investment costs for realizing solar power in your own country
@@ -154,14 +149,6 @@ en:
       short_content: ''
       content: "'Not in my backyard' is most people's attitude to wind turbines. How
         much land and sea will governments allocate to wind power?"
-    policy_area_solar_power:
-      short_content: ''
-      content: Governments may set aside land for solar power or make solar panels
-        on roofs mandatory. How much do you want to allocate?
-    policy_area_biomass:
-      short_content: ''
-      content: 'Biomass can be imported or ''home-grown''. The latter partly competes
-        with food production. How much land should be designated for energy crops? '
     policy_sustainability_co2_emission_compared_to_1990:
       short_content: ''
       content: Governments set CO<sub>2</sub> reduction targets. By how much do you
@@ -184,10 +171,6 @@ en:
     policy_cost_energy:
       short_content: ''
       content: By how much are energy costs allowed to change in the future?
-    policy_grid_grid_and_interconnectivity:
-      short_content: ''
-      content: 'How much power can come from intermittent sources? How much baseload
-        power production capacity is allowed and how much power may be imported? '
     demand_households_demand_growth:
       short_content: ''
       content: Changes in personal prosperity influence the household energy demand.
@@ -259,28 +242,9 @@ en:
       short_content: ''
       content: Burning waste to produce electricity competes with other uses for waste.
         How much power can be produced?
-    supply_transport_diesel:
-      short_content: ''
-      content: How much of the diesel used in road transport will come from renewable
-        sources? Do consider the impact on land (and sea) use for growing the required
-        crops.
-    supply_transport_gasoline:
-      short_content: ''
-      content: How much of the gasoline used will come from renewable sources? Do
-        not forget that currently, growing the required crops competes with food production
-        for arable land.
-    supply_transport_compressed_gas:
-      short_content: ''
-      content: How much of the compressed gas (CNG) used in transport will come from
-        renewable sources? Does your country have enough bio-resources?
     policy_cost_electricity:
       short_content: ''
       content: By how much are electricity costs allowed to change in the future?
-    demand_other_combined_heat_power:
-      short_content: ''
-      content: 'How many combined heat and power (CHP) units will be used in the service
-        and government sectors? These generate heat and electricity locally, which
-        saves energy. '
     supply_infrastructure_high_voltage_network:
       short_content: ''
       content: "The high voltage (HV) network is used for the long distance transport
@@ -313,10 +277,6 @@ en:
         the largest costs due to the necessity to open up streets to place new cables.\r\n\r\n<br/><br/>\r\n\r\nIn
         the chart you see the required network investments as a result of your choices
         in the section ‘Demand’."
-    hidden_infrastructure_gas_network:
-      short_content: ''
-      content: The model does not yet take costs for extra gas infrastrucure into
-        account. Such costs could result from plans to use lots of green gas.
     demand_households_cooling:
       short_content: ''
       content: 'How will households be cooled? Some of the same technologies as listed
@@ -345,10 +305,6 @@ en:
     demand_buildings_cooling:
       short_content: ''
       content: How will offices and other buildings be cooled in the future?
-    demand_buildings_ventilation:
-      short_content: ''
-      content: Ventilation of well-insulated spaces is essential to people's health.
-        It also causes a loss of precious heat.
     demand_buildings_appliances:
       short_content: ''
       content: There is ample room for improvement of appliances. Computers, monitors
@@ -451,26 +407,6 @@ en:
         Greenhouse gas emissions occur during maize cultivation and during biogas
         production and treatment. <a href="/texts/fce_greengas" class="fancybox">read
         more</a>
-    supply_electricity_backup_backup_options:
-      short_content: 
-      content: "Electricity production from wind and solar is not always available
-        and therefore some form of electricity backup is required to ensure security
-        of supply. \r\n<br/><br/>\r\nThe chart at the right shows the costs and emissions
-        associated with backup of volatile power production. These costs are incurred
-        <i>on top of</i> the power production costs of volatile technologies. For
-        example: A 3 MW wind turbine will produce 6 - 10 GWh of electricity per year
-        at a certain cost. On top of this about 0.6 - 1.5 MW backup capacity is required.
-        This is not free of charge. During times of low wind, CO<sub>2</sub> emitting
-        backup capacity will come online to produce electricity at a certain cost.
-        \r\n<br/><br/>\r\nBackup options need to deal with short term fluctuations
-        in wind and solar output. This means they operate at a less than optimal efficiency.
-        This contributes to small increases in emissions and electricity production
-        costs when compared to operating at maximum efficiency. Increasing the share
-        of volatile electricity increases the fluctuations and in turn the backup
-        requirements.\r\n<br/><br/>\r\nPicking a clean and cheap backup option to
-        work together with the wind turbines and solar panels in your scenario is
-        desirable.\r\n<br/><br/>\r\nMore information can be found in our <a href=\"https://github.com/quintel/documentation/blob/master/general/electricity_backup.md\"
-        target =\"_blank\">documentation</a>."
     flexibility_security_of_supply_electricity:
       short_content: 
       content: "Will there be sufficient power supply in the future to meet demand
@@ -894,27 +830,34 @@ en:
         engine cars. Keep in mind that hydrogen-powered cars are electric too!
     flexibility_merit_order_merit_order_positions:
       short_content: 
-      content: "The merit order ranks power plants according to their marginal costs.
-        Not all electricity production technologies participate in the merit order.
-        Renewable power from wind and solar has priority, for example, and so increasing
-        the share of such technologies in your scenario will decrease the operating
-        hours of the remaining plants. Since the merit order is determined solely
-        by marginal costs, it is possible that more efficient technologies are 'pushed'
-        out of the electricity generation mix this way.\r\n<br/><br/>\r\nFurthermore,
-        certain technologies are considered 'must-run'. These are mainly CHPs that
-        satisfy a certain heat demand and do not primarily run to sell power. These
-        must-run plants are therefore not included in the merit order. They do influence
-        the operating hours of other plants of course.\r\n<br/><br/>\r\nThe ETM calculates
-        which power plants are dispatched at each hour in the year. The results are
-        updated every time you make changes to your scenario and communicated through
-        various charts. You can download the resulting hourly load curves for each
-        type of power plant as well as the power price curve for your scenario using
-        the download buttons below.\r\n<ul class=\"data-download merit-data-downloads\">\r\n
-        \ <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/loads.csv\"><span
-        class=\"fa fa-download\"></span> Electricity demand and supply per hour <span
-        class=\"filetype\">(3.8MB CSV)</span></a></li>\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/price.csv\"><span
-        class=\"fa fa-download\"></span> Price curve <span class=\"filetype\">(158KB
-        CSV)</span></a></li>\r\n</ul>"
+      content: |
+        The merit order ranks power plants according to their marginal costs. Not
+        all electricity production technologies participate in the merit order.
+        Renewable power from wind and solar has priority, for example, and so
+        increasing the share of such technologies in your scenario will decrease
+        the operating hours of the remaining plants. Since the merit order is
+        determined solely by marginal costs, it is possible that more efficient
+        technologies are 'pushed' out of the electricity generation mix this way
+
+        <br/><br/>
+
+        Furthermore, certain technologies are considered 'must-run'. These are
+        mainly CHPs that satisfy a certain heat demand and do not primarily run to
+        sell power. These must-runplants are therefore not included in the merit
+        order. They do influence the operating hours of other plants of course.
+
+        <br/><br/>
+
+        The ETM calculates which power plants are dispatched at each hour in the
+        year. The results areupdated every time you make changes to your scenario
+        and communicated through various charts. You can download the resulting
+        hourly load curves for each type of power plant as well as the power price
+        curve for your scenario using the download buttons below.
+
+        <ul class="data-download merit-data-downloads">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Electricity load curves</span> <span class="filetype">7MB CSV</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Price curve</span> <span class="filetype">300KB CSV</span></a></li>
+        </ul
     flexibility_merit_order_merit_order_price:
       short_content: 
       content: |
@@ -930,31 +873,9 @@ en:
         The hourly load curves for all electricity production and consumption for your scenario, as well as the price curve, can be downloaded following the links below.
 
         <ul class="data-download merit-data-downloads">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="fa fa-download"></span> Electricity load curves <span class="filetype">(7MB CSV)</span></a></li>
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="fa fa-download"></span> Price curve <span class="filetype">(300KB CSV)</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Electricity load curves</span> <span class="filetype">7MB CSV</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Price curve</span> <span class="filetype">300KB CSV</span></a></li>
         </ul>
-
-        <div class="data-deprecation">
-          <span class="fa fa-info-circle"></span>
-          The format of the data exports above has recently changed. You can
-          download copies of this data in the old format below, but note that
-          these will be discontinued in April 2020.
-
-          <ul class="data-download merit-data-downloads">
-            <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/loads.csv"><span class="fa fa-download"></span> Electricity load curves (old format) <span class="filetype">(11MB CSV)</span></a></li>
-            <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/price.csv"><span class="fa fa-download"></span> Price curve (old format) <span class="filetype">(158KB CSV)</span></a></li>
-          </ul>
-        </div>
-    flexibility_flexibility_excess_electricity:
-      short_content: 
-      content: "Wind turbines and solar panels are subject to volatile natural patterns.
-        The electricity that they produce might therefore not always be used to match
-        demand directly. This mismatch will lead to excess electricity, in particular
-        in scenarios with large amounts of volatile production capacity. The ETM keeps
-        track of the number of hours with excess electricity and the duration of these
-        excess events.\r\n<br/><br/>\r\nTo prevent curtailment of this excess electricity
-        production, the ETM contains several flexibility technologies that can make
-        good use of it."
     demand_industry_chemical_refineries:
       short_content: 
       content: "Refineries turn crude oil into oil products. These oil products are
@@ -1038,35 +959,29 @@ en:
       content: |
         Download information about the primary and final demands, and also the primary CO<sub>2</sub> emissions of applications (such as cooking, appliances, heating, transport, etc).
         <ul class="data-download">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv"><span class="fa fa-download"></span> Application primary and final demands <span class="filetype">(40KB CSV)</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv"><span class="name">Application primary and final demands</span> <span class="filetype">40KB CSV</span></a></li>
         </ul>
     data_export_production:
       short_content: 
       content: |
         Download details of heat and electricity producers. Includes information about the electrical and heat capacities, number of units, and costs.
         <ul class="data-download">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv"><span class="fa fa-download"></span> Production capacity and costs <span class="filetype">(15KB CSV)</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv"><span class="name">Production capacity and costs</span> <span class="filetype">15KB CSV</span></a></li>
         </ul>
     flexibility_flexibility_demand_response_hp:
       short_content: 
       content: "In the ETM all heat pumps have the option to install a buffer for
         space heating and a buffer for hot water. The default settings of these buffers
         represent a common setup of heat pumps in households. However, in the future
-        these buffers might also be used to store larger amounts of heat. \r\n<br></br>\r\nThe
-        efficiency of (hybrid) heat pumps is dependent on the ambient temperature
-        and is depicted by the coefficient of performance (COP). When the COP is low
-        it can be desirable (for example for financial reasons) to only use the gas
-        part of the hybrid heat pump. The default threshold COP represents using the
-        electric part of the hybrid heat pump maximally for space heating and using
-        gas for hot water. The sliders below allow you to indicate the buffer size
-        and the threshold COP."
+        these buffers might also be used to store larger amounts of heat. \r\n<br></br>\r\n
+        The sliders below allow you to indicate the buffer size for different heat
+        pumps."
     data_export_energy_flows:
       short_content: 
       content: "The Energy Transition Model describes the energy flows through several\r\nhundred
         uses and conversions; this CSV provides a list of each of\r\nthese flows (inputs
-        and outputs).\r\n<ul class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv\"><span
-        class=\"fa fa-download\"></span> Energy flows <span class=\"filetype\">(375KB
-        CSV)</span></a></li>\r\n</ul>\r\n"
+        and outputs).\r\n<ul class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv\">
+        <span class=\"name\">Energy flows</span> <span class=\"filetype\">375KB CSV</span></a></li>\r\n</ul>\r\n"
     demand_transport_international_transport:
       short_content: 
       content: Currently emissions from international transport are not included in
@@ -1185,9 +1100,6 @@ en:
         below. For more information checkout the '?'.<br/><br/>\r\n\r\nThe costs related
         to this imported electricity can be set in the <a href=\"/scenario/costs/electricity_import_costs/costs-of-imported-electricity\">
         section of costs</a>."
-    flexibility_flexibility_power_to_methane:
-      short_content: 
-      content: ''
     costs_imported_electricity:
       short_content: 
       content: What will be the costs of imported electricity in the future?
@@ -1242,28 +1154,39 @@ en:
       content: "Download information about demand and supply of (individual) heat
         in households per hour (space heating and tap water); including deficits,
         buffering, and time-shifting.\r\n<ul class=\"data-download\">\r\n  <li><a
-        href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/household_heat.csv\"><span
-        class=\"fa fa-download\"></span> Household heat curves <span class=\"filetype\">(400KB
-        CSV)</span></a></li>\r\n</ul>\r\n"
+        href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/household_heat.csv\">
+        <span class=\"name\">Household heat curves</span> <span class=\"filetype\">400KB
+        CSV</span></a></li>\r\n</ul>\r\n"
     data_visuals_scenario_report:
       short_content: 
-      content: "The scenario report is a printable description of the decisions you
+      content: |
+        The scenario report is a printable description of the decisions you
         made in your current scenario, progress made towards important goals, and
         includes charts showing breakdowns of energy use, electricity production,
-        and much more.\r\n\r\n<ul class=\"data-download\">\r\n  <li><a href=\"/scenario/reports/auto\"><span
-        class=\"fa fa-book\"></span> View the report →</a></li>\r\n</ul>\r\n"
+        and much more.
+        <br /><br />
+        <a href="/scenario/reports/auto" class="simple-button">
+          <span class="fa fa-book"></span> View the report →
+        </a>
     data_visuals_factsheet:
       short_content: 
-      content: "A printable A3 or A4 factsheet describing how energy is produced and
-        consumed in your scenario. Unfortunately, the factsheet is currently available
-        in Dutch only.\r\n\r\n<ul class=\"data-download\">\r\n  <li><a href=\"/scenarios/%{scenario_id}/factsheet\"><span
-        class=\"fa fa-newspaper-o\"></span> View the factsheet →</a></li>\r\n</ul>\r\n"
+      content: |
+        A printable A3 or A4 factsheet describing how energy is produced and
+        consumed in your scenario. Unfortunately, the factsheet is currently
+        available in Dutch only.
+        <br /><br />
+        <a href="/scenarios/%{scenario_id}/factsheet" class="simple-button">
+          <span class="fa fa-book"></span> View the factsheet →
+        </a>
     data_visuals_graph:
       short_content: 
-      content: "A detailed breakdown of energy flows throughout the Energy Transition
-        Model for your scenario. Recommended only for advanced users.\r\n\r\n<ul class=\"data-download\">\r\n
-        \ <li><a href=\"%{etengine_url}/data/%{scenario_id}/layout\" target=\"_blank\"><span
-        class=\"fa fa-object-group\"></span> View the graph →</a></li>\r\n</ul>\r\n"
+      content: |
+        A detailed breakdown of energy flows throughout the Energy Transition
+        Model for your scenario. Recommended only for advanced users.
+        <br /><br />
+        <a href="%{etengine_url}/data/%{scenario_id}/layout" class="simple-button">
+          <span class="fa fa-book"></span> View the graph →
+        </a>
     flexibility_flexibility_pumped_storage:
       short_content: 
       content: "Pumped storage provides a cheap way for large-scale storage of electricity.
@@ -1313,9 +1236,8 @@ en:
       content: "Below you can download information about hydrogen demand, supply and
         storage per hour in your scenario.\r\n\r\n<ul class=\"data-download\">\r\n
         \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/hydrogen.csv\">\r\n
-        \     <span class=\"fa fa-download\"></span>\r\n      Hydrogen demand, production
-        and storage per hour\r\n      <span class=\"filetype\">(750KB CSV)</span>\r\n
-        \   </a>\r\n  </li>\r\n</ul>"
+        \     <span class=\"name\">Hydrogen demand, production and storage per hour</span>\r\n
+        \     <span class=\"filetype\">750KB CSV</span>\r\n    </a>\r\n  </li>\r\n</ul>"
     supply_biomass_overview:
       short_content: 
       content: "Biomass can be used in different places throughout the model:\r\n<ul>\r\n
@@ -1437,9 +1359,9 @@ en:
       content: "Below you can download information about network gas demand, supply
         and storage per hour in your scenario.\r\n\r\n<ul class=\"data-download\">\r\n
         \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/network_gas.csv\">\r\n
-        \     <span class=\"fa fa-download\"></span>\r\n      Network gas demand,
-        production and storage per hour\r\n      <span class=\"filetype\">(3MB CSV)</span>\r\n
-        \   </a>\r\n  </li>\r\n</ul>"
+        \     <span class=\"name\">Network gas demand, production and storage per
+        hour</span>\r\n      <span class=\"filetype\">3MB CSV</span>\r\n    </a>\r\n
+        \ </li>\r\n</ul>"
     flexibility_flexibility_power_to_heat_for_industry:
       short_content: 
       content: "At times of excess electricity supply, an electric boiler in industry
@@ -1452,10 +1374,17 @@ en:
         industry</a></li></ul>"
     data_visuals_co2_sheet:
       short_content: 
-      content: "A printable sheet depicting the CO<sub>2</sub> footprint for your
-        scenario.\r\n  <ul class=\"data-download\">\r\n    <li><a href=\"%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}\"
-        target=\"_blank\"><span class=\"fa fa-newspaper-o\"></span> View the sheet
-        →</a></li>\r\n  </ul>\r\n"
+      content: |
+        A printable sheet depicting the CO<sub>2</sub> footprint for your
+        scenario.
+        <br /><br />
+        <a
+          href="%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}"
+          target="_blank"
+          class="simple-button"
+        >
+          <span class="fa fa-newspaper-o"></span> View the sheet →
+        </a>
     costs_wacc:
       short_content: 
       content: 'With the sliders below you can adjust the future WACC for different
@@ -1484,9 +1413,8 @@ en:
         <ul class="data-download">
           <li>
             <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/heat_network.csv">
-              <span class="fa fa-download"></span>
-              Heat network demand, production and storage per hour
-              <span class="filetype">(1.5MB CSV)</span>
+              <span class="name">Heat network demand, production and storage per hour</span>
+              <span class="filetype">1.5MB CSV</span>
             </a>
           </li>
         </ul>
@@ -1508,9 +1436,11 @@ en:
         >(Natural) gas plants</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
         >Coal plants</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
         >Biomass plants</a> and <a href=\"/scenario/supply/electricity_renewable/waste-power\"
-        >Waste incineration</a>\r\n<br /><br />\r\nMore information can be found in
-        our <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_networks.md\"
-        target =\"_blank\">documentation</a> "
+        >Waste incineration</a>. It is also possible to convert excess electricity
+        in heat through power-to-heat boilers or heat pumps in the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+        >Flexibility section</a>.\r\n<br /><br />\r\nMore information can be found
+        in our <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_networks.md\"
+        target =\"_blank\">documentation</a>."
     supply_heat_network_storage_toggle:
       short_content: 
       content: "Scenarios with large amounts of \"must-run\" and volatile heat sources
@@ -1570,3 +1500,48 @@ en:
         /><br />\r\n<strong>Tip:</strong> Take a look at the\r\n<a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">Weather
         Conditions</a> slide to explore how variations in outdoor temperature affect
         heat demand peaks in your scenario.\r\n"
+    flexibility_flexibility_demand_response_hhp:
+      short_content: 
+      content: "The efficiency of hybrid heat pumps (HHP) is dependent on the ambient
+        temperature and is depicted by the coefficient of performance (COP). The COP
+        becomes lower as the outside temperature decreases. Below you can set the
+        so-called 'threshold COP': if the COP of the heat pump is below this threshold
+        then the HHP switches from electricity to gas. You can choose a setting that
+        is most financially attractive for the consumer, but you can also choose a
+        setting that produces less impact on the electricity network. \r\n</br></br>\r\n
+        To help you decide the cost-optimal threshold COP setting from a consumer
+        perspective, have a look at the chart on the right. It shows how much it costs
+        to make a unit of heat with the HHP for space heating. For the gas part, these
+        costs are independent of the COP (and therefore the outside temperature).
+        The costs for the electrical part are decreasing with increasing COP (and
+        increasing outside temperature). The intersection of the two curves is the
+        cost-optimal COP setting for the given cost price gas and electricity. This
+        cost price of gas and electricity can be adjusted below. The start value of
+        the treshold COP slider matches the calculated cost-optimal threshold COP
+        for space heating. \r\n</br></br>\r\n If you're interested in the impact of
+        HHPs on the electricity grid, have a look at the chart that is shown when
+        clicking on the 'Annual'-button in the right corner of the chart. This chart
+        shows the hourly gas and electricity demand of HHPs. If you're interested
+        in the share of gas and electricity used by HHPs, have a look at the table
+        'Hybrid heat pump gas and electricity shares' in the chart list (Demand ->
+        Households)."
+    flexibility_flexibility_solar_pv_curtailment:
+      short_content: 
+      content: "If a lot of solar PV is installed, this can cause high peaks on the
+        electricity network. It is therefore desirable to be able to curtail these
+        peaks. In some cases it is smart to connect solar parks to only a certain
+        percentage of the peak power. With the sliders below it is possible to set
+        the curtailment as a percentage of the peak power. \r\n</br></br>\r\n In the
+        chart on the right you can see the effect of curtailment on the peaks of the
+        production curves and the yearly electricity production. If you are interested
+        in the effect of curtailment on the annual electricity production, have a
+        look at the table 'Curtailment of solar PV'. Click on 'see more charts' and
+        you'll find the table in the section 'Electricity balance > Flexibility'."
+    flexibility_flexibility_power_to_heat_for_district_heating:
+      short_content: 
+      content: "At times of excess electricity supply, an electric boiler or heat
+        pump could convert excess electricity into heat for district heating. Other
+        heat sources for district heating can be set in <a href=\"/scenario/supply/heat/heat-sources\"
+        >Supply > District Heating</a>. \r\n</br></br>\r\n Please note that 1 MWth
+        of power-to-heat boiler uses more electricity than 1 MWth of power-to-heat
+        pump. They produce the same amount of heat per hour, of course."

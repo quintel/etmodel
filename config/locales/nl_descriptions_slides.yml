@@ -57,11 +57,6 @@ nl:
       short_content: ''
       content: Er is veel aandacht voor aardwarmte tegenwoordig. Hoe veranderen de
         investeringskosten en onderhoudskosten van deze technologie in de toekomst?
-    costs_earth_operational_and_maintenance:
-      short_content: ''
-      content: 'Er is tegenwoordig veel aandacht voor stroom uit aardwarmte. De onderhouds-
-        en beheerkosten zijn maar een klein deel van het geheel. Hoe denk jij dat
-        ze in de toekomst zullen veranderen? '
     costs_solar_investment:
       short_content: ''
       content: Hoe zullen de investeringen die zijn nodig voor zonnestroom veranderen
@@ -159,15 +154,6 @@ nl:
       short_content: ''
       content: "'Not in my backyard' is hoe de meeste mensen over grote windmolens
         denken. Hoeveel land en zeeoppervlak stelt de overheid beschikbaar voor windstroom?"
-    policy_area_solar_power:
-      short_content: ''
-      content: Misschien reserveert de overheid wel land voor zonnecentrales, of worden
-        zonnepanelen op daken verplicht. Hoeveel oppervlak wil jij beschikbaar stellen?
-    policy_area_biomass:
-      short_content: ''
-      content: Biomassa kun je importeren of in eigen land verbouwen. Dat laatste
-        gaat dan deels ten koste van voedselproductie. Hoeveel land moet beschikbaar
-        gesteld worden voor energieteelt?
     policy_sustainability_co2_emission_compared_to_1990:
       short_content: ''
       content: Overheden maken CO<sub>2</sub> reductiedoelstellingen. Wat denk jij
@@ -190,10 +176,6 @@ nl:
     policy_cost_energy:
       short_content: ''
       content: Hoeveel mogen de kosten voor energie veranderen in de toekomst?
-    policy_grid_grid_and_interconnectivity:
-      short_content: ''
-      content: Hoeveel stroom mag afkomstig zijn van fluctuerende bronnen? Wat is
-        het maximum percentage basislast vermogen en import van elektriciteit?
     demand_households_demand_growth:
       short_content: ''
       content: Veranderingen in persoonlijke welvaart beïnvloeden het energiegebruik
@@ -269,28 +251,9 @@ nl:
       content: Het verbranden van afval om elektriciteit op te wekken gaat ten koste
         van andere toepassingen van afval. Hoeveel stroom kan er gemaakt worden met
         afval?
-    supply_transport_diesel:
-      short_content: ''
-      content: Hoeveel van de gebruikte diesel voor wegtransport komt van hernieuwbare
-        bronnen? Houd rekening met de impact op landgebruik (of zeegebruik) als hiervoor
-        gewassen geteeld moeten worden.
-    supply_transport_gasoline:
-      short_content: ''
-      content: 'Hoeveel van de gebruikte benzine komt van hernieuwbare bronnen? Vergeet
-        niet dat het telen van gewassen hiervoor deels ten koste gaat van voedselproductie. '
-    supply_transport_compressed_gas:
-      short_content: ''
-      content: Hoeveel van het hogedruk gas (CNG) dat als transportbrandstof gebruikt
-        wordt, komt van hernieuwbare bronnen? Heeft jouw land wel genoeg biologische
-        bronnen?
     policy_cost_electricity:
       short_content: ''
       content: 'Hoeveel mogen de kosten voor elektriciteit veranderen in de toekomst? '
-    demand_other_combined_heat_power:
-      short_content: ''
-      content: Hoeveel warmte-kracht koppelingen (WKK's) worden door de dienstensector
-        en overheid gebruikt? Deze maken warmte en elektriciteit op locatie en besparen
-        zo energie.
     supply_infrastructure_high_voltage_network:
       short_content: ''
       content: "Het hoogspanningsnet (HS-net) wordt gebruik om elektriciteit over
@@ -322,11 +285,6 @@ nl:
         deze het duurst zijn. Hiervoor moeten namelijk de straten worden opengebroken.\r\n\r\n<br/><br/>\r\n\r\nIn
         de grafiek zie je de benodigde meerinvestering in de elektriciteitsinfrastructuur
         als gevolg van jouw keuzes bij ‘Vraag’. "
-    hidden_infrastructure_gas_network:
-      short_content: ''
-      content: Het model neemt nog geen extra kosten mee voor het gasnetwerk die het
-        gevolg zouden kunnen zijn van de keuze om op grote schaal groengas in te zetten,
-        bijvoorbeeld.
     demand_households_cooling:
       short_content: ''
       content: Hoe worden woningen gekoeld? Hiervoor kunnen voor een deel dezelfde
@@ -357,10 +315,6 @@ nl:
     demand_buildings_cooling:
       short_content: ''
       content: 'Hoe worden kantoren en andere gebouwen in de toekomst gekoeld? '
-    demand_buildings_ventilation:
-      short_content: ''
-      content: Ventilatie van goed geïsoleerde ruimtes is nodig voor ieders gezondheid.
-        Ventilatie zorgt alleen ook voor warmteverlies.
     demand_buildings_appliances:
       short_content: ''
       content: Er kan nog veel verbeterd worden aan apparaten in kantoren. Computers,
@@ -469,24 +423,6 @@ nl:
         maar is niet compleet klimaatneutraal. Broeikasgasemissies vinden plaats bij
         het telen van snijmaïs en tijdens het produceren en behandelen van biogas.
         <a href="/texts/fce_greengas" class="fancybox">lees verder</a>
-    supply_electricity_backup_backup_options:
-      short_content: 
-      content: "Je kunt niet altijd rekenen op stroom van windmolens of zonnepanelen
-        en daarom is backup vermogen nodig om de leveringszekerheid te garanderen.
-        \r\n<br/><br/>\r\nDe grafiek rechts toont de kosten en uitstoot van backupopties
-        voor volatiele stroomopwek. Deze kosten komen <i>bovenop</i> de productiekosten
-        van deze technologieën. Bijvoorbeeld: Een 3 MW windmolen produceert per jaar
-        6 - 10 GWh aan stroom tegen bepaalde kosten. Daarbij is 0,6 - 1,5 GW aan backupvermogen
-        nodig die niet gratis is. Als er weinig wind is, gaat deze backup optie draaien
-        met bijbehorende CO<sub>2</sub> uitstoot en kosten.\r\n<br/><br/>\r\nDe backup
-        centrales moeten omgaan met korte termijn fluctuaties in de productie van
-        wind en zon. Daardoor zijn ze minder efficiënt. Dat betekent weer dat de kosten
-        en uitstoot ook iets hoger zijn dan bij optimale efficiëntie. Door meer volatiele
-        technieken in te zetten, nemen de fluctuaties toe en dus ook de vraag naar
-        backup.\r\n<br/><br/> \r\nHet is aan te raden om een schone en goedkope backup
-        optie te bouwen naast het zon- en windvermogen in jouw scenario.\r\n<br/><br/>
-        \r\nMeer informatie kunt u: <a href=\"https://github.com/quintel/documentation/blob/master/general/electricity_backup.md\"
-        target =\"_blank\">hier</a> vinden.\r\n"
     flexibility_security_of_supply_electricity:
       short_content: 
       content: "Is er in de toekomst op ieder moment voldoende elektriciteit om aan
@@ -907,26 +843,34 @@ nl:
         verbrandingsmotoren. Vergeet niet dat waterstofauto's ook elektrisch zijn!
     flexibility_merit_order_merit_order_positions:
       short_content: 
-      content: "De merit order rangschikt de elektriciteitscentrales naar marginale
-        kosten. Niet alle soorten stroomopwek doen mee in de merit order. Hernieuwbare
-        stroom van wind en zon heeft marginale kosten van 0 EUR/MWh en krijgt voorrang
-        op het net, dus als je hier meer van bouwt, zakt het aantal draaiuren van
-        fossiele centrales. Aangezien alleen op draaikosten gerangschikt wordt, kan
-        dit betekenen dat efficiënte maar dure fossiele centrales uit de mix worden
-        geduwd. \r\n<br/><br/>\r\nOok 'must run' technologieën doen niet mee in de
-        merit order. Dit zijn bijvoorbeeld WKK's die warmte leveren en niet primair
-        draaien vanwege de stroom die ze maken. Toch hebben ze invloed op de draaiuren
-        van andere centrales.\r\n<br/><br/>\r\nHet ETM berekent op uurbasis welke
-        centrales zijn ingeschakeld. De berekening wordt elke keer dat je je scenario
-        aanpast opnieuw uitgevoerd en de resultaten worden weergegeven in diverse
-        grafieken. Je kunt ook de draaiprofielen van de verschillende soorten centrales
-        en de resulterende stroomprijscurve voor jouw scenario downloaden via onderstaande
-        knoppen.\r\n<ul class=\"data-download merit-data-downloads\">\r\n  <li><a
-        href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/loads.csv\"><span
-        class=\"fa fa-download\"></span> Elektriciteitsproductie en -vraag per uur
-        <span class=\"filetype\">(3.8MB CSV)</span></a></li>\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/price.csv\"><span
-        class=\"fa fa-download\"></span> Prijscurve <span class=\"filetype\">(158KB
-        CSV)</span></a></li>\r\n</ul>"
+      content: |
+        De merit order rangschikt de elektriciteitscentrales naar marginale
+        kosten. Niet alle soorten stroomopwek doen mee in de merit order.
+        Hernieuwbare stroom van wind en zon heeft marginale kosten van 0 EUR/MWh
+        en krijgt voorrang op het net, dus als je hier meer van bouwt, zakt het
+        aantal draaiuren van fossiele centrales. Aangezien alleen op draaikosten
+        gerangschikt wordt, kan dit betekenen dat efficiënte maar dure fossiele
+        centrales uit de mix worden geduwd.
+
+        <br/><br/>
+
+        Ook 'must run' technologieën doen niet mee in de merit order. Dit zijn
+        bijvoorbeeld WKK's die warmte leveren en niet primair draaien vanwege de
+        stroom die ze maken. Toch hebben ze invloed op de draaiuren van andere
+        centrales.
+
+        <br/><br/>
+
+        Het ETM berekent op uurbasis welke centrales zijn ingeschakeld. De
+        berekening wordt elke keer dat je je scenario aanpast opnieuw uitgevoerd
+        en de resultaten worden weergegeven in diverse grafieken. Je kunt ook de
+        draaiprofielen van de verschillende soorten centrales en de resulterende
+        stroomprijscurve voor jouw scenario downloaden via onderstaande knoppen.
+
+        <ul class="data-download merit-data-downloads">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Elektriciteitsprofielen</span> <span class="filetype">7MB CSV</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
+        </ul>
     flexibility_merit_order_merit_order_price:
       short_content: 
       content: |
@@ -943,32 +887,9 @@ nl:
         hieronder.
 
         <ul class="data-download merit-data-downloads">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="fa fa-download"></span> Elektriciteitsprofielen <span class="filetype">(7MB CSV)</span></a></li>
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="fa fa-download"></span> Prijscurve <span class="filetype">(300KB CSV)</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Elektriciteitsprofielen</span> <span class="filetype">7MB CSV</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
         </ul>
-
-
-        <div class="data-deprecation">
-          <span class="fa fa-info-circle"></span>
-          De bestandsindeling van de bovenstaande data-export is recent veranderd.
-          Hieronder kun je de data in het oude format downloaden.
-          Let op: De oude bestanden blijven beschikbaar tot april 2020.
-
-          <ul class="data-download merit-data-downloads">
-            <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/loads.csv"><span class="fa fa-download"></span> Elektriciteitsprofielen (oud format) <span class="filetype">(11MB CSV)</span></a></li>
-            <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/merit/price.csv"><span class="fa fa-download"></span> Prijscurve (oud format) <span class="filetype">(158KB CSV)</span></a></li>
-          </ul>
-        </div>
-    flexibility_flexibility_excess_electricity:
-      short_content: 
-      content: "Windmolens en zonnepanelen hebben van nature een grillig productiepatroon.
-        De elektriciteit die ze produceren kan daarom niet noodzakelijk altijd worden
-        gebruikt om elektriciteitsvraag in te vullen. Dit kan leiden tot overproductie
-        van elektriciteit. Het ETM houdt bij op welke uren er een overschot van elektriciteit
-        is en hoe lang deze elektriciteitsoverschotten duren.\r\n<br/><br/>\r\nOm
-        te voorkomen dat deze elektriciteitsproductie moet worden beperkt, kent het
-        ETM een aantal flexibiliteitstechnologieën die goed kunnen omgaan met deze
-        elektriciteitsoverschotten."
     demand_industry_chemical_refineries:
       short_content: 
       content: "Raffinaderijen maken van ruwe olie olieproducten. Deze olieproducten
@@ -1057,14 +978,14 @@ nl:
       content: |
         Download informatie over de primaire en finale vraag – en de primaire CO<sub>2</sub>-uitstoot – van toepassingen van energie (zoals koken, apparaten, ruimterverwarming en transport).
         <ul class="data-download">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv"><span class="fa fa-download"></span> Primaire en finale vraag per toepassing <span class="filetype">(40KB CSV)</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv"><span class="name">Primaire en finale vraag per toepassing</span> <span class="filetype">40KB CSV</span></a></li>
         </ul>
     data_export_production:
       short_content: 
       content: |
         Download details over de technologieën die elektriciteit en warmte produceren. Bevat informatie over de elektrische en warmtecapaciteit, het aantal opgestelde eenheden en de kosten.
         <ul class="data-download">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv"><span class="fa fa-download"></span> Capaciteiten en kosten <span class="filetype">(15KB CSV)</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv"><span class="name">Capaciteiten en kosten</span> <span class="filetype">15KB CSV</span></a></li>
         </ul>
     flexibility_flexibility_demand_response_hp:
       short_content: 
@@ -1072,22 +993,17 @@ nl:
         ruimteverwarming en een buffer voor warm water. Deze buffers zijn gemodelleerd
         met een standaard warmtepompopstelling in huishoudens. Buffers kunnen in de
         toekomst wellicht ook gebruikt worden om grotere hoeveelheden warmte op te
-        slaan. \r\n<br></br>\r\nDe efficiëntie van (hybride) warmtepompen is afhankelijk
-        van de buitentemperatuur en wordt aangegeven met de 'coefficient of performance'
-        (COP). Bij lage COP kan het (bijvoorbeeld om financiële redenen) wenselijk
-        zijn om alleen het gasgedeelte van hybride warmtepompen te gebruiken. De standaard
-        omslag-COP representeert dat voor ruimteverwarming het elektrisch deel van
-        de hybride warmtepomp maximaal wordt gebruikt en voor warm water het gasdeel.\r\n<br></br>\r\nMet
-        de schuifjes hieronder kun je de buffergrootte en de omslag-COP instellen."
+        slaan. \r\n<br></br>\r\nMet de schuifjes hieronder kun je de buffergrootte
+        voor verschillende warmtepompen instellen."
     data_export_energy_flows:
       short_content: 
       content: "Het Energietransitiemodel beschrijft het energiesysteem als een verzameling
         van honderden energie-omzetters (nodes) die verbonden zijn met energiestromen
         (edges). \r\nDeze CSV geeft een lijst van alle energie-omzetters en de energiestromen
         die daar ingaan en uitkomen (uitgesplitst naar drager).\r\n<ul class=\"data-download\">\r\n
-        \ <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv\"><span
-        class=\"fa fa-download\"></span> Energiestromen <span class=\"filetype\">(375KB
-        CSV)</span></a></li>\r\n</ul>\r\n"
+        \ <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv\">
+        <span class=\"name\">Energiestromen</span> <span class=\"filetype\">375KB
+        CSV</span></a></li>\r\n</ul>\r\n"
     demand_transport_international_transport:
       short_content: 
       content: Internationaal transport is op dit moment geen onderdeel van nationale
@@ -1205,9 +1121,6 @@ nl:
         Voor meer informatie klik op de '?' achter de slider.\r\n\r\n<br/><br/>\r\nDe
         kosten voor geïmporteerde elektriciteit kunnen in de<a href=\"/scenario/costs/electricity_import_costs/costs-of-imported-electricity\">
         sectie kosten</a> worden gezet."
-    flexibility_flexibility_power_to_methane:
-      short_content: 
-      content: ''
     costs_imported_electricity:
       short_content: 
       content: Wat zijn volgens jou de kosten van geïmporteerde elektriciteit in de
@@ -1268,29 +1181,39 @@ nl:
         leveren en of er sprake is van warmtebuffering, uitstel van warmtelevering
         of tekorten. Dit kan het geval zijn als de gekozen verwarmingstechnieken onvoldoende
         capaciteit hebben om op bepaalde momenten aan de vraag te voldoen.\r\n\r\n<ul
-        class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/household_heat.csv\"><span
-        class=\"fa fa-download\"></span> Warmteprofiel huishoudens <span class=\"filetype\">(400KB
-        CSV)</span></a></li>\r\n</ul>\r\n"
+        class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/household_heat.csv\">
+        <span class=\"name\">Warmteprofiel huishoudens <span class=\"filetype\">400KB
+        CSV</span></a></li>\r\n</ul>\r\n"
     data_visuals_scenario_report:
       short_content: 
-      content: "Het scenarioverslag beschrijft je scenario in woord en beeld. Het
-        bevat informatie over de behaalde doelen, toont uitsplitsingen van energiegebruik
-        en elektriciteitsproductie, wijst je op mogelijke inconsistenties en nog veel
-        meer.\r\n\r\n<ul class=\"data-download\">\r\n  <li><a href=\"/scenario/reports/auto\"><span
-        class=\"fa fa-book\"></span> Bekijk het verslag →</a></li>\r\n</ul>\r\n"
+      content: |
+        Het scenarioverslag beschrijft je scenario in woord en beeld. Het bevat
+        informatie over de behaalde doelen, toont uitsplitsingen van
+        energiegebruik en elektriciteitsproductie, wijst je op mogelijke
+        inconsistenties en nog veel meer.
+        <br /><br />
+        <a href="/scenario/reports/auto" class="simple-button">
+          <span class="fa fa-book"></span> Bekijk het verslag →
+        </a>
     data_visuals_factsheet:
       short_content: 
-      content: "Een printklare A3 'factsheet' waarin de energie-mix voor zowel vraag
-        als aanbod wordt samengevat voor je scenario.\r\n\r\n<ul class=\"data-download\">\r\n
-        \ <li><a href=\"/scenarios/%{scenario_id}/factsheet\"><span class=\"fa fa-newspaper-o\"></span>
-        Bekijk de factsheet →</a></li>\r\n</ul>\r\n"
+      content: |
+        Een printklare A3 'factsheet' waarin de energie-mix voor zowel vraag als
+        aanbod wordt samengevat voor je scenario.
+        <br /><br />
+        <a href="/scenarios/%{scenario_id}/factsheet" class="simple-button">
+          <span class="fa fa-book"></span> Bekijk de factsheet →
+        </a>
     data_visuals_graph:
       short_content: 
-      content: "Gedetailleerde en interactieve weergave van de energiestromen en energie-omzetters
-        van het Energietransitiemodel. Bedoeld voor gevorderde gebruikers.\r\n\r\n<ul
-        class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/data/%{scenario_id}/layout\"
-        target=\"_blank\"><span class=\"fa fa-object-group\"></span> Bekijk de energiegraaf
-        →</a></li>\r\n</ul>\r\n"
+      content: |
+        Gedetailleerde en interactieve weergave van de energiestromen en
+        energie-omzetters van het Energietransitiemodel. Bedoeld voor gevorderde
+        gebruikers.
+        <br /><br />
+        <a href="%{etengine_url}/data/%{scenario_id}/layout" class="simple-button">
+          <span class="fa fa-book"></span> Bekijk de energiegraaf →
+        </a>
     flexibility_flexibility_pumped_storage:
       short_content: 
       content: "Stuwmeren zijn een goedkope, grootschalige manier om elektriciteit
@@ -1340,9 +1263,8 @@ nl:
         opslag van waterstof uit. Hieronder kun je deze gegevens downloaden als CSV-bestand,
         uitgesplitst naar technologie/sector.\r\n\r\n\r\n<ul class=\"data-download\">\r\n
         \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/hydrogen.csv\">\r\n
-        \     <span class=\"fa fa-download\"></span>\r\n      Waterstofvraag, -productie
-        en -opslag per uur\r\n      <span class=\"filetype\">(750KB CSV)</span>\r\n
-        \   </a>\r\n  </li>\r\n</ul>"
+        \     <span class=\"name\">Waterstofvraag, -productie en -opslag per uur</span>\r\n
+        \     <span class=\"filetype\">750KB CSV</span>\r\n    </a>\r\n  </li>\r\n</ul>"
     supply_biomass_overview:
       short_content: 
       content: "Biomassa kan op verschillende plekken in het model worden ingezet:\r\n<ul>\r\n
@@ -1467,9 +1389,8 @@ nl:
         opslag van netwerkgas uit. Hieronder kun je deze gegevens downloaden als CSV-bestand,
         uitgesplitst naar technologie/sector.\r\n\r\n<ul class=\"data-download\">\r\n
         \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/network_gas.csv\">\r\n
-        \     <span class=\"fa fa-download\"></span>\r\n      Netwerkgasvraag, -productie
-        en -opslag per uur\r\n      <span class=\"filetype\">(3MB CSV)</span>\r\n
-        \   </a>\r\n  </li>\r\n</ul>"
+        \     <span class=\"name\">Netwerkgasvraag, -productie en -opslag per uur</span>\r\n
+        \     <span class=\"filetype\">3MB CSV</span>\r\n    </a>\r\n  </li>\r\n</ul>"
     flexibility_flexibility_power_to_heat_for_industry:
       short_content: 
       content: "Wanneer er elektriciteitsoverschotten zijn, kunnen elektrische boilers
@@ -1482,10 +1403,17 @@ nl:
         \ <li><a href=\"/scenario/demand/industry/paper\">papierindustrie</a></li></ul>"
     data_visuals_co2_sheet:
       short_content: 
-      content: "Een printklare sheet met een visuele samenvatting van de CO<sub>2</sub>-voetafdruk
-        voor jouw scenario.\r\n<ul class=\"data-download\">\r\n  <li><a href=\"%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}\"
-        target=\"_blank\"><span class=\"fa fa-newspaper-o\"></span> Bekijk de sheet
-        →</a></li>\r\n</ul>\r\n"
+      content: |
+        Een printklare sheet met een visuele samenvatting van de
+        CO<sub>2</sub>-voetafdruk voor jouw scenario.
+        <br /><br />
+        <a
+          href="%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}"
+          target="_blank"
+          class="simple-button"
+        >
+          <span class="fa fa-newspaper-o"></span> Bekijk de sheet →
+        </a>
     costs_wacc:
       short_content: 
       content: 'Met onderstaande sliders kun je de toekomstige WACC (gewogen kapitaalskosten)
@@ -1518,9 +1446,8 @@ nl:
         <ul class="data-download">
           <li>
             <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/heat_network.csv">
-              <span class="fa fa-download"></span>
-              Warmtenetvraag, -productie en -opslag per uur
-              <span class="filetype">(1.5MB CSV)</span>
+              <span class="name">Warmtenetvraag, -productie en -opslag per uur</span>
+              <span class="filetype">1.5MB CSV</span>
             </a>
           </li>
         </ul>
@@ -1543,8 +1470,11 @@ nl:
         >(Aard)gascentrales</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
         >Kolencentrales</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
         >Biomassacentrales</a> en <a href=\"/scenario/supply/electricity_renewable/waste-power\"
-        >Afvalverbranding</a> \r\n\r\n<br /><br />\r\nMeer informatie kunt u vinden
-        in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_networks.md\"
+        >Afvalverbranding</a>. Daarbij is het mogelijk om elektriciteitsoverschotten
+        om te zetten in warmte d.m.v. power-to-heat boilers of warmtepompen bij <a
+        href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+        >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nMeer informatie kunt u vinden in
+        onze <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_networks.md\"
         target =\"_blank\">documentatie</a>."
     supply_heat_network_storage_toggle:
       short_content: 
@@ -1607,3 +1537,49 @@ nl:
         Op de pagina\r\n<a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">Weersomstandigheden</a>
         kun je verschillende weerjaren inladen, om te zien hoe de warmtevraagpieken
         in je scenario afhangen van het weer.\r\n"
+    flexibility_flexibility_demand_response_hhp:
+      short_content: 
+      content: "De efficiëntie van (hybride) warmtepompen is afhankelijk van de buitentemperatuur
+        en wordt aangegeven met de 'coefficient of performance' (COP). De COP wordt
+        lager als de buitentemperatuur afneemt. Hieronder kan je de zogenaamde 'omslag-COP'
+        instellen: wanneer de COP van de warmtepomp onder de omslag-COP ligt dan schakelt
+        de hybride warmtepomp van elektriciteit naar gas. Je kan deze instellen op
+        de financieel meest aantrekkelijke voor de consument, maar kan ook een instelling
+        kiezen die minder netwerkimpact oplevert. \r\n</br></br>\r\n Bekijk de grafiek
+        aan de rechterkant voor advies bij het kiezen van de kostenoptimale omslag-COP
+        instelling vanuit een consumentenperspectief. Deze laat zien hoeveel het kost
+        om een eenheid warmte te maken met de HWP voor ruimteverwarming. Voor gas
+        zijn die kosten onafhankelijk van de COP (en dus de buitentemperatuur). Voor
+        elektriciteit nemen de kosten af met toenemende COP (en toenemende buitentemperatuur).
+        Het kruispunt van de twee curves is de kosten-optimale COP-instelling voor
+        de gegeven kostprijs van gas en elektriciteit. Deze kostprijs van gas en elektriciteit
+        is hieronder in te stellen. De startwaarde van het omslag-COP schuifje staat
+        gelijk aan de kostenoptimale omslag-COP bij de ingestelde kosten. \r\n</br></br>\r\n
+        Als je geïnteresseerd bent in de impact van HWP's op het elektriciteitsnet,
+        kijk dan naar de grafiek die wordt weergegeven wanneer je op de 'Jaarlijkse'-knop
+        in de rechterhoek van de grafiek klikt. Deze grafiek toont de gas- en elektriciteitsvraag
+        per uur van HHP's. Als je geïnteresseerd bent in het aandeel gas en elektriciteit
+        dat de HHP's gebruiken, kijk dan naar de table 'Hybride warmtepomp: aandeel
+        elektrisch en gas' in de grafiekenlijst (Vraag -> Huishoudens)"
+    flexibility_flexibility_solar_pv_curtailment:
+      short_content: 
+      content: "Als veel zon-PV geïnstalleerd is, kan dit zorgen voor hoge pieken
+        op het elektriciteitsnetwerk. Daarom is het wenselijk de productie te kunnen
+        verlagen. In sommige gevallen is het slim om zonneparken aan te sluiten op
+        slechts een bepaald percentage van het piekvermogen. Met onderstaande schuifjes
+        is het mogelijk de productiebeperking in te stellen als percentage van het
+        piekvermogen. \r\n</br></br>\r\n In de grafiek rechts zie je het effect van
+        productiebeperking op de productiepieken én op de jaarlijkse elektriciteitsproductie.
+        Als je geïnteresseerd bent in het effect van productiebeperking op de jaarlijkse
+        elektriciteitsproductie, kijk dan in de tabel 'Productiebeperking van zonnepanelen'.
+        Deze vind je als je klikt op 'meer grafieken bekijken' (rechtsboven) en kijkt
+        bij 'Elektriciteitsbalans > Flexibiliteit'."
+    flexibility_flexibility_power_to_heat_for_district_heating:
+      short_content: 
+      content: "Wanneer er elektriciteitsoverschotten zijn, kunnen elektrische boilers
+        of warmtepompen deze overschotten omzetten in warmte voor warmtenetten. Overige
+        warmtebronnen voor warmtenetten kunnen bij <a href=\"/scenario/supply/heat/heat-sources\"
+        >Aanbod > Warmtenetten</a> worden ingesteld. \r\n</br></br>\r\n Houd er rekening
+        mee dat 1 MWth power-to-heat boiler meer elektriciteit gebruikt dan 1 MWth
+        power-to-heat warmtepomp. Ze produceren natuurlijk wel dezelfde hoeveelheid
+        warmte."

@@ -7,9 +7,7 @@ namespace :ymodel do
   task :dump_interface_model, [:model] => [:environment] do |_t, args|
     include LocalizeDescriptions
 
-    unless args.model
-      raise ArgumentError.new("No ['model'] specified")
-    end
+    raise ArgumentError, "No ['model'] specified" unless args.model
 
     en_descriptions = {}
     nl_descriptions = {}

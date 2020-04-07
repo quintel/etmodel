@@ -52,7 +52,6 @@ class OutputElement < YModel::Base
 
   # Charts may link to other charts to provide a user with additional insight.
   belongs_to :related_output_element, class_name: 'OutputElement'
-
   has_many :relatee_output_elements, class_name: 'OutputElement',
                                      foreign_key: 'related_output_element_key'
 
@@ -68,8 +67,7 @@ class OutputElement < YModel::Base
 
   # Descriptions are optional for output elements
   def description
-    I18n.t("descriptions_output_elements.#{key}.content",
-            default: '')
+    I18n.t("descriptions_output_elements.#{key}.content", default: '')
   end
 
   def description_embeds_player?

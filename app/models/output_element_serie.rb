@@ -58,8 +58,7 @@ class OutputElementSerie < YModel::Base
 
   #  Descriptions are optional for output element series
   def description
-    I18n.t("descriptions_output_element_series.#{key}.content",
-            default: '')
+    I18n.t("descriptions_output_element_series.#{key}.content", default: '')
   end
 
   # rubocop:disable Metrics/LineLength

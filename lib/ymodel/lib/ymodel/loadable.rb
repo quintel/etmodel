@@ -44,13 +44,8 @@ module YModel
     def records
       @records ||=
         if compiled?
-          Dir.foreach(source).reduce([]) do |memo, filename|
-            if filename.match?(/\A.*(.yaml|.yml)\z/)
-              memo + YAML.load_file(File.join(source, filename))
-            else
-              memo
-            end
-          end
+          Dir.glob(File.join(source, '*.yml'))
+            .flat_map { |name| YAML.load_file(name) }
         else
           YAML.load_file(source)
             .map(&:symbolize_keys)

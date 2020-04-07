@@ -50,7 +50,7 @@ class InputElement < YModel::Base
     ie8_sanitize I18n.t(title_for_description)
   end
 
-  def translated_description
+  def description
     I18n.t("descriptions_input_elements.#{key}.content")
   end
 
@@ -89,17 +89,15 @@ class InputElement < YModel::Base
   end
 
   def has_flash_movie # rubocop:disable Naming/PredicateName
-    translated_description&.include?('player') ||
-      translated_description&.include?('object')
+    description&.include?('player') ||
+      description&.include?('object')
   end
 
   # For loading multiple flowplayers classname is needed instead of id
   # added the andand check and html_safe to clean up the helper
   #
   def sanitized_description
-    ie8_sanitize(
-      translated_description
-    ).html_safe
+    ie8_sanitize(description).html_safe
   end
 
   # Used by admin page

@@ -82,7 +82,7 @@ describe InputElement do
   describe '#sanitized_description' do
     subject do
       ie = described_class.new
-      allow(ie).to receive(:translated_description).and_return "'foobar'"
+      allow(ie).to receive(:description).and_return "'foobar'"
       ie.sanitized_description
     end
 

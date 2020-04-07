@@ -5,7 +5,7 @@ class @D3YearlyChartView extends D3ChartView
     top: 20
     bottom: 20
     left: 65
-    right: 20
+    right: 2
     label_left: 30
 
   downsampleWith: 'mean'

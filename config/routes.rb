@@ -97,11 +97,11 @@ Etm::Application.routes.draw do
   get '/scenario/myc/:id' => 'scenarios#play_multi_year_charts'
   get '/scenario(/:tab(/:sidebar(/:slide)))' => 'scenarios#play', as: :play
 
-  resources :output_elements, only: %i[index show] do
+  resources :output_elements, param: :key, only: %i[index show] do
     collection do
-      get 'visible/:id',   action: :visible
-      get 'invisible/:id', action: :invisible
-      get 'batch/:ids',    action: :batch
+      get 'visible/:key',   action: :visible
+      get 'invisible/:key', action: :invisible
+      get 'batch/:keys',    action: :batch
     end
 
     get :zoom, on: :member

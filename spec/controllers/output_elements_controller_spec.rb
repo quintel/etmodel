@@ -13,7 +13,7 @@ describe OutputElementsController, vcr: true do
     let!(:output_element) { OutputElement.all.first }
 
     context 'with a key' do
-      before { get(:show, params: { id: output_element.key }) }
+      before { get(:show, params: { key: output_element.key }) }
 
       it 'responds successfully' do
         expect(response.status).to eq(200)
@@ -32,7 +32,7 @@ describe OutputElementsController, vcr: true do
 
     context 'with an invalid key' do
       it 'responds 404 Not Found' do
-        expect { get(:show, params: { id: 'nope' }) }
+        expect { get(:show, params: { key: 'nope' }) }
           .to raise_error(YModel::RecordNotFound)
       end
     end

@@ -16,10 +16,10 @@ class OutputElementsController < ApplicationController
   # Returns all the data required to show multiple charts. Renders a JSON object
   # where each key matches that of the requested chart.
   def batch
-    ids = params[:ids].to_s.split(',').reject(&:blank?).uniq
+    keys = params[:keys].to_s.split(',').reject(&:blank?).uniq
 
     json = OutputElementPresenter.collection(
-      OutputElement.where(key: ids),
+      OutputElement.where(key: keys),
       ->(*args) { render_to_string(*args) }
     )
 
@@ -36,12 +36,12 @@ class OutputElementsController < ApplicationController
   # legacy actions used by the block charts
   #
   def invisible
-    session[params[:id]] = 'invisible'
+    session[params[:key]] = 'invisible'
     render js: ""
   end
 
   def visible
-    session[params[:id]] = 'visible'
+    session[params[:key]] = 'visible'
     render js: ""
   end
 
@@ -53,6 +53,6 @@ class OutputElementsController < ApplicationController
   def find_output_element
     @as_table = params[:format] == 'table'
 
-    @chart = OutputElement.find!(params[:id])
+    @chart = OutputElement.find!(params[:key])
   end
 end

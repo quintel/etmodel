@@ -1,1 +1,21 @@
-= render 'form'
+%main.main
+  %h1=t('user.new.header')
+  = simple_form_for @user, html: { class: 'vertical' } do |f|
+    = hidden_field_tag :mode, params[:mode]
+
+    .section
+      .row
+        = f.input :name
+        = f.input :email, required: true
+
+      .row
+        = f.input :password, required: true
+        = f.input :password_confirmation, required: true
+
+    .section.highlight
+      .row
+        = f.input :company_school
+
+    = f.input :allow_news
+
+    = f.button :submit, I18n.t('simple_form.labels.user.submit'), class: 'primary'

@@ -4,8 +4,8 @@
       %td= check_box_tag 'scenario_ids[]', ss.scenario.id
       %td= link_to ss.scenario.title, ss
       %td= ss.scenario.end_year
-      %td= ss.scenario.parsed_created_at&.strftime("%d %b %H:%M")
-      %td= ss.user.name + ' ( ' + ss.user.email + ' )'
+      %td= ss.scenario.parsed_created_at&.to_formatted_s(:long)
+      %td= ss.user.name
   - elsif current_user.admin?
     %tr{class: "unavailable #{cycle('even', 'odd')}" }
       -# DEBT: use I18n here.
@@ -19,7 +19,7 @@
         - else
           does not exist
       %td= ""
-      %td= ss.created_at.to_datetime&.strftime("%d %b %Y")
+      %td= ss.created_at.to_datetime&.to_formatted_s(:long)
       %td= ss.user.email
 %tr#scenario_paginator
   %td{colspan: 5}= link_to_next_page @saved_scenarios, 'More...', remote: true

@@ -30,8 +30,8 @@ class ScenariosController < ApplicationController
     items = if current_user.admin?
       SavedScenario.all.includes(:user)
     elsif current_user.students.present?
-      user_ids =  @student_ids << current_user.id
-      SavedScenario.includes(:user).where(user_id: user_ids)
+      SavedScenario.includes(:user)
+        .where(user_id: @student_ids + [current_user.id])
     else
       current_user.saved_scenarios
     end

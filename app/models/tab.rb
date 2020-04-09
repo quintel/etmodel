@@ -18,7 +18,7 @@ class Tab < YModel::Base
   include AreaDependent::YModel
 
   index_on :key
-  source_file "config/interface/tabs.yml"
+  source_file 'config/interface/tabs.yml'
   has_many :sidebar_items, foreign_key: :tab_key
 
   # Returns all Tabs intended for display to ordinary users.

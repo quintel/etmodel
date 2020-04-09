@@ -24,7 +24,7 @@ class Slide < YModel::Base
 
 
   index_on :key
-  source_file "config/interface/slides.yml"
+  source_file 'config/interface/slides.yml'
 
   belongs_to :sidebar_item, foreign_key: :sidebar_item_key
   has_many :input_elements, foreign_key: :slide_key

@@ -18,7 +18,11 @@
 class SidebarItem < YModel::Base
   include AreaDependent::YModel
 
+
+
   index_on :key
+  source_file "config/interface/sidebar_items.yml"
+
   belongs_to :tab
   has_many :slides, foreign_key: :sidebar_item_key
   belongs_to :parent, class_name: 'SidebarItem'

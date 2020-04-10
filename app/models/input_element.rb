@@ -22,6 +22,7 @@
 # Model representing a slider in the front-end. Settings get stored in scenarios
 class InputElement < YModel::Base
   include AreaDependent::YModel
+  source_file 'config/interface/input_elements.yml'
 
   ENUM_UNITS = %w[radio weather-curves].freeze
 

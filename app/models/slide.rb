@@ -22,7 +22,6 @@
 class Slide < YModel::Base
   include AreaDependent::YModel
 
-
   index_on :key
   source_file 'config/interface/slides.yml'
 

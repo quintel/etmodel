@@ -18,8 +18,6 @@
 class SidebarItem < YModel::Base
   include AreaDependent::YModel
 
-
-
   index_on :key
   source_file 'config/interface/sidebar_items.yml'
 

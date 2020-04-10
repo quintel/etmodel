@@ -1,0 +1,29 @@
+---
+- id: 137
+  key: costs_co2
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: "€/tonne"
+  fixed: false
+  interface_group: ''
+  command_type: value
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: costs_co2_prices
+- id: 138
+  key: costs_co2_free_allocation
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 2
+  dependent_on: 
+  slide_key: costs_co2_prices

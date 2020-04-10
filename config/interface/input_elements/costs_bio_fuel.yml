@@ -1,0 +1,71 @@
+---
+- id: 955
+  key: costs_biogas
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: " €/MWh"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 2
+  dependent_on: ''
+  slide_key: costs_bio_fuel
+- id: 956
+  key: costs_greengas
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: " €/MWh"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: costs_bio_fuel
+- id: 957
+  key: costs_wood
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: " €/Tonne"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 3
+  dependent_on: ''
+  slide_key: costs_bio_fuel
+- id: 958
+  key: costs_biodiesel
+  share_group: ''
+  step_value: 0.01
+  draw_to_min: 
+  draw_to_max: 
+  unit: " €/liter"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 4
+  dependent_on: ''
+  slide_key: costs_bio_fuel
+- id: 959
+  key: costs_bio_ethanol
+  share_group: ''
+  step_value: 0.01
+  draw_to_min: 
+  draw_to_max: 
+  unit: " €/liter"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 5
+  dependent_on: ''
+  slide_key: costs_bio_fuel

@@ -1,0 +1,43 @@
+---
+- id: 43
+  key: households_lighting_efficient_fluorescent_electricity_share
+  share_group: household_light
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: 
+  command_type: 
+  related_converter: 
+  position: 2
+  dependent_on: 
+  slide_key: demand_households_lighting
+- id: 44
+  key: households_lighting_led_electricity_share
+  share_group: household_light
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: 
+  command_type: 
+  related_converter: 
+  position: 3
+  dependent_on: 
+  slide_key: demand_households_lighting
+- id: 245
+  key: households_lighting_incandescent_electricity_share
+  share_group: household_light
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: demand_households_lighting

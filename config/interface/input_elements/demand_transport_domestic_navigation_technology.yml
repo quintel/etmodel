@@ -1,0 +1,29 @@
+---
+- id: 672
+  key: transport_ship_using_diesel_mix_share
+  share_group: transport_marine
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: demand_transport_domestic_navigation_technology
+- id: 673
+  key: transport_ship_using_lng_mix_share
+  share_group: transport_marine
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 2
+  dependent_on: ''
+  slide_key: demand_transport_domestic_navigation_technology

@@ -1,0 +1,29 @@
+---
+- id: 793
+  key: bunkers_ship_using_heavy_fuel_oil_share
+  share_group: bunkers_shipping
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: demand_transport_international_navigation_technology
+- id: 794
+  key: bunkers_ship_using_lng_share
+  share_group: bunkers_shipping
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 2
+  dependent_on: ''
+  slide_key: demand_transport_international_navigation_technology

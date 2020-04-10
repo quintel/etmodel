@@ -1,0 +1,113 @@
+---
+- id: 698
+  key: capacity_of_energy_hydrogen_steam_methane_reformer_ccs
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: value
+  related_converter: energy_hydrogen_steam_methane_reformer_ccs
+  position: 4
+  dependent_on: ''
+  slide_key: supply_hydrogen_production
+- id: 699
+  key: capacity_of_energy_hydrogen_steam_methane_reformer
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: value
+  related_converter: energy_hydrogen_steam_methane_reformer
+  position: 3
+  dependent_on: ''
+  slide_key: supply_hydrogen_production
+- id: 700
+  key: energy_local_electrolysis_hydrogen_share
+  share_group: hydrogen_production
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 5
+  dependent_on: _always_hidden
+  slide_key: supply_hydrogen_production
+- id: 701
+  key: capacity_of_energy_hydrogen_biomass_gasification_ccs
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 7
+  dependent_on: _always_hidden
+  slide_key: supply_hydrogen_production
+- id: 702
+  key: capacity_of_energy_hydrogen_biomass_gasification
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_hydrogen_biomass_gasification
+  position: 5
+  dependent_on: ''
+  slide_key: supply_hydrogen_production
+- id: 871
+  key: capacity_of_energy_hydrogen_wind_turbine_offshore
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: value
+  related_converter: energy_hydrogen_electrolysis_wind_electricity
+  position: 1
+  dependent_on: ''
+  slide_key: supply_hydrogen_production
+- id: 872
+  key: capacity_of_energy_hydrogen_solar_pv_solar_radiation
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: value
+  related_converter: energy_hydrogen_electrolysis_solar_electricity
+  position: 2
+  dependent_on: ''
+  slide_key: supply_hydrogen_production
+- id: 913
+  key: capacity_of_energy_imported_hydrogen_baseload
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: value
+  related_converter: ''
+  position: 6
+  dependent_on: ''
+  slide_key: supply_hydrogen_production

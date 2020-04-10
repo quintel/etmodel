@@ -56,7 +56,7 @@ describe InputElement do
 
   describe '#url_components' do
     context 'when the input a slide, sidebar item, and tab' do
-      let(:slide) { Slide.visible.first }
+      let(:slide) { Slide.find("demand_households_insulation") }
       let(:input) { slide.sliders.first }
 
       it 'returns the slide URL components' do

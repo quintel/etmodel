@@ -1,0 +1,29 @@
+---
+- id: 669
+  key: investment_costs_flexibility_p2h_electricity
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: industry_other_food_flexibility_p2h_electricity
+  position: 1
+  dependent_on: ''
+  slide_key: costs_flexibility_conversion
+- id: 670
+  key: investment_costs_hydrogen_electrolysis
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_hydrogen_flexibility_p2g_electricity
+  position: 1
+  dependent_on: ''
+  slide_key: costs_flexibility_conversion

@@ -1,0 +1,29 @@
+---
+- id: 980
+  key: capacity_of_energy_chp_local_engine_biogas
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_chp_local_engine_biogas
+  position: 2
+  dependent_on: ''
+  slide_key: supply_electricity_renewable_biomass_plants
+- id: 990
+  key: capacity_of_energy_chp_local_wood_pellets
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_chp_local_wood_pellets
+  position: 1
+  dependent_on: ''
+  slide_key: supply_electricity_renewable_biomass_plants

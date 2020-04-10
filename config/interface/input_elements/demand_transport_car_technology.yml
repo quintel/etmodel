@@ -1,0 +1,85 @@
+---
+- id: 146
+  key: transport_car_using_electricity_share
+  share_group: transport_car_tech
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: value
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: demand_transport_car_technology
+- id: 147
+  key: transport_car_using_diesel_mix_share
+  share_group: transport_car_tech
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 3
+  dependent_on: ''
+  slide_key: demand_transport_car_technology
+- id: 148
+  key: transport_car_using_gasoline_mix_share
+  share_group: transport_car_tech
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 4
+  dependent_on: ''
+  slide_key: demand_transport_car_technology
+- id: 238
+  key: transport_car_using_lpg_share
+  share_group: transport_car_tech
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 5
+  dependent_on: ''
+  slide_key: demand_transport_car_technology
+- id: 239
+  key: transport_car_using_compressed_natural_gas_share
+  share_group: transport_car_tech
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 6
+  dependent_on: ''
+  slide_key: demand_transport_car_technology
+- id: 696
+  key: transport_car_using_hydrogen_share
+  share_group: transport_car_tech
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 2
+  dependent_on: ''
+  slide_key: demand_transport_car_technology

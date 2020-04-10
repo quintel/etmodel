@@ -36,10 +36,6 @@ class SidebarItem < YModel::Base
 
       all.select { |si| si.percentage_bar_query.include?(search) }
     end
-
-    def find_by_section_and_key(section, key)
-      where(section: section, key: key)&.first
-    end
   end
 
   def parsed_key_for_admin

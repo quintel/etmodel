@@ -8,8 +8,6 @@ Etm::Application.routes.draw do
 
   get '/scaled', to: 'pages#scaled'
 
-  get '/info/:ctrl/:act' => 'pages#info', as: :tab_info
-
   get '/texts/:id' => 'texts#show'
 
   get 'login'  => 'user_sessions#new', as: :login

@@ -1,0 +1,253 @@
+---
+- id: 720
+  key: industry_useful_demand_for_chemical_other
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 721
+  key: industry_useful_demand_for_chemical_other_electricity_efficiency
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%/year"
+  fixed: false
+  interface_group: efficiency
+  command_type: ''
+  related_converter: ''
+  position: 2
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 722
+  key: industry_useful_demand_for_chemical_other_useable_heat_efficiency
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%/year"
+  fixed: false
+  interface_group: efficiency
+  command_type: ''
+  related_converter: ''
+  position: 3
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 723
+  key: industry_chemicals_other_burner_network_gas_share
+  share_group: chemical_other_heat
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: heat production
+  command_type: ''
+  related_converter: industry_chemicals_other_burner_network_gas
+  position: 4
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 724
+  key: industry_chemicals_other_burner_crude_oil_share
+  share_group: chemical_other_heat
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: heat production
+  command_type: ''
+  related_converter: industry_chemicals_other_burner_crude_oil
+  position: 5
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 725
+  key: industry_chemicals_other_burner_wood_pellets_share
+  share_group: chemical_other_heat
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: heat production
+  command_type: ''
+  related_converter: industry_chemicals_other_burner_wood_pellets
+  position: 7
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 726
+  key: industry_chemicals_other_burner_coal_share
+  share_group: chemical_other_heat
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: heat production
+  command_type: ''
+  related_converter: industry_chemicals_other_burner_coal
+  position: 6
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 727
+  key: industry_final_demand_for_chemical_other_steam_hot_water_share
+  share_group: chemical_other_heat
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: heat production
+  command_type: ''
+  related_converter: ''
+  position: 13
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 770
+  key: industry_chemicals_other_steam_recompression_electricity_share
+  share_group: chemical_other_heat
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: heat production
+  command_type: ''
+  related_converter: industry_chemicals_other_steam_recompression_electricity
+  position: 11
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 771
+  key: industry_chemicals_other_heatpump_water_water_electricity_share
+  share_group: chemical_other_heat
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: heat production
+  command_type: ''
+  related_converter: industry_chemicals_other_heatpump_water_water_electricity
+  position: 12
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 772
+  key: capacity_of_industry_chemicals_other_flexibility_p2h_electricity
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: hybrid_heating
+  command_type: ''
+  related_converter: industry_chemicals_other_flexibility_p2h_network_gas_electricity
+  position: 13
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 776
+  key: industry_chemicals_other_heater_electricity_share
+  share_group: chemical_other_heat
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: heat production
+  command_type: ''
+  related_converter: industry_chemicals_other_heater_electricity
+  position: 9
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 878
+  key: industry_chemicals_other_burner_hydrogen_share
+  share_group: chemical_other_heat
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: heat production
+  command_type: ''
+  related_converter: industry_chemicals_other_burner_hydrogen
+  position: 8
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 943
+  key: industry_chemicals_other_wood_pellets_non_energetic_share
+  share_group: chemical_other_non_energetic
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: chemical_other_non_energetic
+  command_type: ''
+  related_converter: ''
+  position: 14
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 944
+  key: industry_chemicals_other_hydrogen_non_energetic_share
+  share_group: chemical_other_non_energetic
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: chemical_other_non_energetic
+  command_type: ''
+  related_converter: ''
+  position: 15
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 945
+  key: industry_chemicals_other_network_gas_non_energetic_share
+  share_group: chemical_other_non_energetic
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: chemical_other_non_energetic
+  command_type: ''
+  related_converter: ''
+  position: 16
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 946
+  key: industry_chemicals_other_crude_oil_non_energetic_share
+  share_group: chemical_other_non_energetic
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: chemical_other_non_energetic
+  command_type: ''
+  related_converter: ''
+  position: 17
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other
+- id: 947
+  key: industry_chemicals_other_coal_non_energetic_share
+  share_group: chemical_other_non_energetic
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: chemical_other_non_energetic
+  command_type: ''
+  related_converter: ''
+  position: 18
+  dependent_on: ''
+  slide_key: demand_industry_chemical_other

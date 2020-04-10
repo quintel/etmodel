@@ -1,0 +1,29 @@
+---
+- id: 206
+  key: policy_dependence_max_dependence
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: policy_dependence_foreign_dependence
+- id: 212
+  key: policy_dependence_max_electricity_dependence
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 2
+  dependent_on: ''
+  slide_key: policy_dependence_foreign_dependence

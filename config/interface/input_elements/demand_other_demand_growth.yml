@@ -1,0 +1,43 @@
+---
+- id: 229
+  key: other_useful_demand_electricity
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: demand_other_demand_growth
+- id: 230
+  key: other_useful_demand_useable_heat
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 2
+  dependent_on: ''
+  slide_key: demand_other_demand_growth
+- id: 645
+  key: other_useful_demand_non_energetic
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: growth_rate
+  related_converter: ''
+  position: 3
+  dependent_on: ''
+  slide_key: demand_other_demand_growth

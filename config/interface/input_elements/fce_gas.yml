@@ -1,0 +1,113 @@
+---
+- id: 571
+  key: gas_from_nederlands_share
+  share_group: gas_lce
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: pipeline_natural_gas
+  command_type: ''
+  related_converter: ''
+  position: 2
+  dependent_on: ''
+  slide_key: fce_gas
+- id: 572
+  key: gas_from_russia_share
+  share_group: gas_lce
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: pipeline_natural_gas
+  command_type: ''
+  related_converter: ''
+  position: 4
+  dependent_on: ''
+  slide_key: fce_gas
+- id: 575
+  key: gas_from_norway_share
+  share_group: gas_lce
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: pipeline_natural_gas
+  command_type: ''
+  related_converter: ''
+  position: 3
+  dependent_on: ''
+  slide_key: fce_gas
+- id: 576
+  key: gas_from_algeria_share
+  share_group: gas_lce
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: pipeline_natural_gas
+  command_type: ''
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: fce_gas
+- id: 688
+  key: lng_from_algeria_share
+  share_group: lng_fce
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: liquefied_natural_gas
+  command_type: ''
+  related_converter: ''
+  position: 5
+  dependent_on: ''
+  slide_key: fce_gas
+- id: 689
+  key: lng_from_norway_share
+  share_group: lng_fce
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: liquefied_natural_gas
+  command_type: ''
+  related_converter: ''
+  position: 6
+  dependent_on: ''
+  slide_key: fce_gas
+- id: 690
+  key: lng_from_qatar_share
+  share_group: lng_fce
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: liquefied_natural_gas
+  command_type: ''
+  related_converter: ''
+  position: 7
+  dependent_on: ''
+  slide_key: fce_gas
+- id: 691
+  key: lng_from_trinidad_share
+  share_group: lng_fce
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: liquefied_natural_gas
+  command_type: ''
+  related_converter: ''
+  position: 8
+  dependent_on: ''
+  slide_key: fce_gas

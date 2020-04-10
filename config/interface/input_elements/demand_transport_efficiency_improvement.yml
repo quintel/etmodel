@@ -1,0 +1,85 @@
+---
+- id: 171
+  key: transport_vehicle_using_electricity_efficiency
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: efficiency_improvement
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: demand_transport_efficiency_improvement
+- id: 186
+  key: transport_vehicle_combustion_engine_efficiency
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: efficiency_improvement
+  related_converter: ''
+  position: 4
+  dependent_on: ''
+  slide_key: demand_transport_efficiency_improvement
+- id: 187
+  key: transport_ships_efficiency
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 6
+  dependent_on: ''
+  slide_key: demand_transport_efficiency_improvement
+- id: 188
+  key: transport_planes_efficiency
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 7
+  dependent_on: ''
+  slide_key: demand_transport_efficiency_improvement
+- id: 241
+  key: transport_trains_efficiency
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 5
+  dependent_on: ''
+  slide_key: demand_transport_efficiency_improvement
+- id: 697
+  key: transport_vehicle_using_hydrogen_efficiency
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 2
+  dependent_on: ''
+  slide_key: demand_transport_efficiency_improvement

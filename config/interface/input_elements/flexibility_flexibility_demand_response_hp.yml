@@ -1,0 +1,85 @@
+---
+- id: 777
+  key: households_flexibility_space_heating_buffer_size_heatpump_air_water_electricity
+  share_group: ''
+  step_value: 0.5
+  draw_to_min: 
+  draw_to_max: 
+  unit: kWh
+  fixed: false
+  interface_group: flexibility_buffers_space
+  command_type: ''
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: flexibility_flexibility_demand_response_hp
+- id: 778
+  key: households_flexibility_water_heating_buffer_size_heatpump_air_water_electricity
+  share_group: ''
+  step_value: 0.5
+  draw_to_min: 
+  draw_to_max: 
+  unit: kWh
+  fixed: false
+  interface_group: flexibility_buffers_water
+  command_type: ''
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: flexibility_flexibility_demand_response_hp
+- id: 783
+  key: households_flexibility_space_heating_buffer_size_heatpump_ground_water_electricity
+  share_group: ''
+  step_value: 0.5
+  draw_to_min: 
+  draw_to_max: 
+  unit: kWh
+  fixed: false
+  interface_group: flexibility_buffers_space
+  command_type: ''
+  related_converter: ''
+  position: 2
+  dependent_on: ''
+  slide_key: flexibility_flexibility_demand_response_hp
+- id: 784
+  key: households_flexibility_space_heating_buffer_size_hybrid_heatpump_air_water_electricity
+  share_group: ''
+  step_value: 0.5
+  draw_to_min: 
+  draw_to_max: 
+  unit: kWh
+  fixed: false
+  interface_group: flexibility_buffers_space
+  command_type: ''
+  related_converter: ''
+  position: 3
+  dependent_on: ''
+  slide_key: flexibility_flexibility_demand_response_hp
+- id: 786
+  key: households_flexibility_water_heating_buffer_size_heatpump_ground_water_electricity
+  share_group: ''
+  step_value: 0.5
+  draw_to_min: 
+  draw_to_max: 
+  unit: kWh
+  fixed: false
+  interface_group: flexibility_buffers_water
+  command_type: ''
+  related_converter: ''
+  position: 2
+  dependent_on: ''
+  slide_key: flexibility_flexibility_demand_response_hp
+- id: 787
+  key: households_flexibility_water_heating_buffer_size_hybrid_heatpump_air_water_electricity
+  share_group: ''
+  step_value: 0.5
+  draw_to_min: 
+  draw_to_max: 
+  unit: kWh
+  fixed: false
+  interface_group: flexibility_buffers_water
+  command_type: ''
+  related_converter: ''
+  position: 3
+  dependent_on: ''
+  slide_key: flexibility_flexibility_demand_response_hp

@@ -1,0 +1,85 @@
+---
+- id: 848
+  key: transport_bus_using_electricity_share
+  share_group: transport_bus_tech
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: value
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: demand_transport_bus_technology
+- id: 849
+  key: transport_bus_using_hydrogen_share
+  share_group: transport_bus_tech
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: value
+  related_converter: ''
+  position: 2
+  dependent_on: ''
+  slide_key: demand_transport_bus_technology
+- id: 850
+  key: transport_bus_using_diesel_mix_share
+  share_group: transport_bus_tech
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: value
+  related_converter: ''
+  position: 3
+  dependent_on: ''
+  slide_key: demand_transport_bus_technology
+- id: 851
+  key: transport_bus_using_gasoline_mix_share
+  share_group: transport_bus_tech
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 4
+  dependent_on: ''
+  slide_key: demand_transport_bus_technology
+- id: 852
+  key: transport_bus_using_lng_share
+  share_group: transport_bus_tech
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 5
+  dependent_on: ''
+  slide_key: demand_transport_bus_technology
+- id: 853
+  key: transport_bus_using_compressed_natural_gas_share
+  share_group: transport_bus_tech
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 6
+  dependent_on: ''
+  slide_key: demand_transport_bus_technology

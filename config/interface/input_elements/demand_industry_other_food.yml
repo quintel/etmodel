@@ -1,0 +1,141 @@
+---
+- id: 728
+  key: industry_useful_demand_for_other_food
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: demand_industry_other_food
+- id: 729
+  key: industry_useful_demand_for_other_food_efficiency
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: efficiency
+  command_type: ''
+  related_converter: ''
+  position: 2
+  dependent_on: ''
+  slide_key: demand_industry_other_food
+- id: 753
+  key: industry_other_food_burner_coal_share
+  share_group: other_food_heat
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: heat production
+  command_type: ''
+  related_converter: industry_other_food_burner_coal
+  position: 5
+  dependent_on: ''
+  slide_key: demand_industry_other_food
+- id: 754
+  key: industry_other_food_burner_crude_oil_share
+  share_group: other_food_heat
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: heat production
+  command_type: ''
+  related_converter: industry_other_food_burner_crude_oil
+  position: 4
+  dependent_on: ''
+  slide_key: demand_industry_other_food
+- id: 755
+  key: industry_other_food_burner_network_gas_share
+  share_group: other_food_heat
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: heat production
+  command_type: ''
+  related_converter: industry_other_food_burner_network_gas
+  position: 3
+  dependent_on: ''
+  slide_key: demand_industry_other_food
+- id: 756
+  key: industry_other_food_burner_wood_pellets_share
+  share_group: other_food_heat
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: heat production
+  command_type: ''
+  related_converter: industry_other_food_burner_wood_pellets
+  position: 6
+  dependent_on: ''
+  slide_key: demand_industry_other_food
+- id: 757
+  key: industry_final_demand_for_other_food_steam_hot_water_share
+  share_group: other_food_heat
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: heat production
+  command_type: ''
+  related_converter: ''
+  position: 9
+  dependent_on: ''
+  slide_key: demand_industry_other_food
+- id: 758
+  key: industry_other_food_heater_electricity_share
+  share_group: other_food_heat
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: heat production
+  command_type: ''
+  related_converter: industry_other_food_heater_electricity
+  position: 8
+  dependent_on: ''
+  slide_key: demand_industry_other_food
+- id: 774
+  key: capacity_of_industry_other_food_flexibility_p2h_electricity
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: hybrid_heating
+  command_type: ''
+  related_converter: industry_other_food_flexibility_p2h_network_gas_electricity
+  position: 10
+  dependent_on: ''
+  slide_key: demand_industry_other_food
+- id: 879
+  key: industry_other_food_burner_hydrogen_share
+  share_group: other_food_heat
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: heat production
+  command_type: ''
+  related_converter: industry_other_food_burner_hydrogen
+  position: 7
+  dependent_on: ''
+  slide_key: demand_industry_other_food

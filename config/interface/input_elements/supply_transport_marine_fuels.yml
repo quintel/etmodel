@@ -1,0 +1,99 @@
+---
+- id: 681
+  key: transport_shipping_mixer_lng_lng_share
+  share_group: transport_lng_ship
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: lng_shipping_mix
+  command_type: ''
+  related_converter: ''
+  position: 6
+  dependent_on: ''
+  slide_key: supply_transport_marine_fuels
+- id: 682
+  key: transport_shipping_mixer_lng_bio_lng_share
+  share_group: transport_lng_ship
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: lng_shipping_mix
+  command_type: ''
+  related_converter: ''
+  position: 7
+  dependent_on: ''
+  slide_key: supply_transport_marine_fuels
+- id: 683
+  key: transport_shipping_mixer_diesel_diesel_share
+  share_group: transport_diesel_ship
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: diesel_shipping_mix
+  command_type: ''
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: supply_transport_marine_fuels
+- id: 684
+  key: transport_shipping_mixer_diesel_biodiesel_share
+  share_group: transport_diesel_ship
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: diesel_shipping_mix
+  command_type: ''
+  related_converter: ''
+  position: 2
+  dependent_on: ''
+  slide_key: supply_transport_marine_fuels
+- id: 685
+  key: transport_shipping_mixer_diesel_lng_share
+  share_group: transport_diesel_ship
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: diesel_shipping_mix
+  command_type: ''
+  related_converter: ''
+  position: 3
+  dependent_on: ''
+  slide_key: supply_transport_marine_fuels
+- id: 686
+  key: transport_shipping_mixer_diesel_bio_lng_share
+  share_group: transport_diesel_ship
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: diesel_shipping_mix
+  command_type: ''
+  related_converter: ''
+  position: 4
+  dependent_on: ''
+  slide_key: supply_transport_marine_fuels
+- id: 687
+  key: transport_shipping_mixer_diesel_heavy_fuel_oil_share
+  share_group: transport_diesel_ship
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: diesel_shipping_mix
+  command_type: ''
+  related_converter: ''
+  position: 5
+  dependent_on: ''
+  slide_key: supply_transport_marine_fuels

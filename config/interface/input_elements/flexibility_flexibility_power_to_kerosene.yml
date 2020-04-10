@@ -1,0 +1,85 @@
+---
+- id: 797
+  key: capacity_of_flexibility_p2l_electricity
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: bunkers_kerosene_production_p2l
+  position: 1
+  dependent_on: ''
+  slide_key: flexibility_flexibility_power_to_kerosene
+- id: 798
+  key: flexibility_p2l_direct_air_capture
+  share_group: carbon_source_p2l
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: carbon_source_p2l
+  command_type: ''
+  related_converter: bunkers_p2l_direct_air_capture
+  position: 4
+  dependent_on: ''
+  slide_key: flexibility_flexibility_power_to_kerosene
+- id: 799
+  key: flexibility_p2l_point_source_CO
+  share_group: carbon_source_p2l
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: carbon_source_p2l
+  command_type: ''
+  related_converter: bunkers_p2l_point_source_CO
+  position: 2
+  dependent_on: ''
+  slide_key: flexibility_flexibility_power_to_kerosene
+- id: 800
+  key: flexibility_p2l_point_source_CO2
+  share_group: carbon_source_p2l
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: carbon_source_p2l
+  command_type: ''
+  related_converter: bunkers_p2l_point_source_CO2
+  position: 3
+  dependent_on: ''
+  slide_key: flexibility_flexibility_power_to_kerosene
+- id: 861
+  key: flexibility_p2l_co2_reduction_industry
+  share_group: co2_reduction_p2l
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: co2_reduction_p2l
+  command_type: ''
+  related_converter: ''
+  position: 5
+  dependent_on: ''
+  slide_key: flexibility_flexibility_power_to_kerosene
+- id: 862
+  key: flexibility_p2l_co2_reduction_bunkers
+  share_group: co2_reduction_p2l
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: co2_reduction_p2l
+  command_type: ''
+  related_converter: ''
+  position: 6
+  dependent_on: ''
+  slide_key: flexibility_flexibility_power_to_kerosene

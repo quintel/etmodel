@@ -1,0 +1,57 @@
+---
+- id: 779
+  key: households_flexibility_space_heating_cop_cutoff
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "#"
+  fixed: false
+  interface_group: flexibility_cop
+  command_type: ''
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: flexibility_flexibility_demand_response_hhp
+- id: 780
+  key: households_flexibility_water_heating_cop_cutoff
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "#"
+  fixed: false
+  interface_group: flexibility_cop
+  command_type: ''
+  related_converter: ''
+  position: 2
+  dependent_on: 
+  slide_key: flexibility_flexibility_demand_response_hhp
+- id: 1006
+  key: households_flexibility_consumer_gas_price
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: ct/m3
+  fixed: false
+  interface_group: consumer_price
+  command_type: ''
+  related_converter: ''
+  position: 3
+  dependent_on: ''
+  slide_key: flexibility_flexibility_demand_response_hhp
+- id: 1007
+  key: households_flexibility_consumer_electricity_price
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: ct/kWh
+  fixed: false
+  interface_group: consumer_price
+  command_type: ''
+  related_converter: ''
+  position: 4
+  dependent_on: ''
+  slide_key: flexibility_flexibility_demand_response_hhp

@@ -10,7 +10,6 @@ module YModel
     # overwrite the default ymodel filename associated with that model.
     def source_file(filename)
       @source = filename
-      @records = nil
 
       # Similar to YModel::Trigger#inherited. A hook for loading the schema.
       define_readers self

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe OutputElementPresenter do
-  include YmodelFixtures
 
   let(:oe) do
     OutputElement.all.first
@@ -30,7 +29,7 @@ RSpec.describe OutputElementPresenter do
   end
 
   it 'includes the element series' do
-    expect(json[:series].length).to eq(2)
+    expect(json[:series].length).to eq(oe.output_element_series.size)
   end
 
   context 'when the element defines a template' do

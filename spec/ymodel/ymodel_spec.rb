@@ -290,9 +290,9 @@ describe YModel::Compiled do
 
   describe '.source_files' do
     it 'returns a listing of files in the source directory' do
-      expect(described_class.source_files)
+      expect(described_class.source_files.to_set)
         .to eq(['spec/fixtures/ymodel/compiled/first.yml',
-                'spec/fixtures/ymodel/compiled/second.yml'])
+                'spec/fixtures/ymodel/compiled/second.yml'].to_set)
     end
   end
 end

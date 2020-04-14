@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# rubocop:disable  Metrics/BlockLength
+# rubocop:disable  Metrics/BlockLength, Style/SymbolArray, MultilineBlockChain
 namespace :ymodel do
   desc 'dump interface models of the provided class to yaml'
 
@@ -95,7 +95,6 @@ namespace :ymodel do
     end
   end
 
-
   # This task is quite the mess. My guess that we wont need it often if at all.
   # Just keeping it here in case its handy to have in the future.
   desc 'Sort yaml files. Keep key name on top.'
@@ -104,14 +103,16 @@ namespace :ymodel do
       current_block = []
       blocks = []
 
-      starts_with_dash = ->(text) do
-        text.match?(/^-{1} /)
-      end
+      starts_with_dash =
+        lambda do |text|
+          text.match?(/^-{1} /)
+        end
 
-      strip_yaml_grammar = ->(line) do
-        line.sub(/^-{1} /, '')
+      strip_yaml_grammar =
+        lambda do |line|
+          line.sub(/^-{1} /, '')
             .sub(/^ {2}/, '')
-      end
+        end
 
       File.readlines(file_path).each do |line|
         # empty current_block if we open up a new object.
@@ -122,26 +123,27 @@ namespace :ymodel do
         current_block << strip_yaml_grammar.call(line)
       end
 
-      # Using state to remember where you are while iterating can be confusing..
-      # We are doing this because we didn't map in the block above...
       blocks << current_block
 
       # sort blocks
-      blocks = blocks.each_with_index.flat_map do |lines, index|
+      blocks = blocks.each_with_index.flat_map do |lines, index1|
+        next lines if index1.zero?
 
-        next lines if index == 0
         # Make sure the key is on the first line of the yaml object. sort the
         # alphabetically.
-        lines = lines.sort do |a, b|
-          next -1 if a.match(/^key/)
-          next 1 if b.match(/^key/)
-          a <=> b
-        end
+        lines =
+          lines.sort do |a, b|
+            next -1 if a =~ /^key/
+
+            next 1 if b =~ /^key/
+
+            a <=> b
+          end
 
         # Reduce the arrays to a single yaml string
-        lines.each_with_index.map do |line, index|
+        lines.each_with_index.map do |line, index2|
           # Inject YAML grammar
-          index == 0 ? "- #{line}" : "  #{line}"
+          index2.zero? ? "- #{line}" : "  #{line}"
         end
       end.reduce(&:+)
       File.write(file_path, blocks)
@@ -152,9 +154,10 @@ namespace :ymodel do
   task :remove_empty_values, [:model] => [:environment] do |_t, args|
     Kernel.const_get(args.model.camelcase).source_files.each do |file_path|
       data = YAML.load_file(file_path)
-      transformed_data = data.map do |record|
-        record.delete_if{|k, v| v.blank? }
-      end
+      transformed_data =
+        data.map do |record|
+          record.delete_if { |_k, v| v.blank? }
+        end
       File.write(file_path, transformed_data.to_yaml)
     end
   end
@@ -163,11 +166,12 @@ namespace :ymodel do
   task :remove_ids, [:model] => [:environment] do |_t, args|
     Kernel.const_get(args.model.camelcase).source_files.each do |file_path|
       data = YAML.load_file(file_path)
-      transformed_data = data.map do |record|
-        record.delete_if{|k, v| k == 'id' }
-      end
-      File.write(file_path + ".new", transformed_data.to_yaml)
+      transformed_data =
+        data.map do |record|
+          record.delete_if { |k, _v| k == 'id' }
+        end
+      File.write(file_path, transformed_data.to_yaml)
     end
   end
 end
-# rubocop:enable  Metrics/BlockLength
+# rubocop:enable  Metrics/BlockLength, Style/SymbolArray, MultilineBlockChain

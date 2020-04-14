@@ -169,17 +169,6 @@ describe PagesController, vcr: true do
     end
   end
 
-  describe '#info' do
-    # rubocop:disable  RSpec/MultipleExpectations
-    it 'renders title and description' do
-      s = SidebarItem.all.first
-      get :info, params: { ctrl: s.section, act: s.key }
-      expect(response).to be_successful
-      expect(response).to render_template(:info)
-    end
-    # rubocop:enable  RSpec/MultipleExpectations
-  end
-
   describe '#feedback' do
     subject do
       get :feedback, xhr: true

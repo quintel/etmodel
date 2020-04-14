@@ -100,11 +100,4 @@ class Interface
       sidebar: current_sidebar_item.key
     )
   end
-
-  def tab_info_path
-    Rails.application.routes.url_helpers.tab_info_path(
-      ctrl: current_tab.key,
-      act: current_sidebar_item.key
-    )
-  end
 end

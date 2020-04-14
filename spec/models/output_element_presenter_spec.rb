@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe OutputElementPresenter do
-
   let(:oe) do
     OutputElement.all.first
   end

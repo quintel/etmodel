@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe OutputElement do
-
   subject { described_class.new }
 
   # Using an input element here that has some relatees

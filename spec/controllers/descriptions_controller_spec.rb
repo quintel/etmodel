@@ -15,13 +15,5 @@ describe DescriptionsController do
 
       expect(response.body).to_not be_empty
     end
-
-    it 'shows message if the chart has no description' do
-      allow(chart).to receive(:description).and_return('')
-
-      get :charts, params: { id: chart.key }
-
-      expect(response.body).to include('No description available yet')
-    end
   end
 end

@@ -3,20 +3,34 @@
 var D3ChartDateSelect = (function() {
   'use strict';
 
-  var epoch = new Date(0),
-    msInWeek = 604800000;
+  var msInHour = 60 * 60 * 1000;
+  var epoch = new Date(0);
+  var msInWeek = msInHour * 24 * 7;
 
   function buildOption(i) {
-    var nextIndex = i + 1,
-      timeFormat = d3.time.format('%b %d'),
-      msOffset = msInWeek * i,
-      start = new Date(epoch.getDate() + msOffset),
-      end = new Date(start.getDate() + msOffset + msInWeek),
-      optionText = timeFormat(start) + ' - ' + timeFormat(end);
+    var nextIndex = i + 1;
+    var msOffset = msInWeek * i;
+    var start = new Date(epoch.getDate() + msOffset);
+
+    // Remove an hour from the end of the range to as the range should be 00:00
+    // to 23:00, not 00:00 to 00:00.
+    var end = new Date(start.getDate() + msOffset + msInWeek - msInHour);
 
     this.weeks[nextIndex] = [start, end];
 
-    return '<option value="' + nextIndex + '">' + optionText + '</option>';
+    return (
+      '<option value="' +
+      nextIndex +
+      '">' +
+      optionText(start, end) +
+      '</option>'
+    );
+  }
+
+  function optionText(start, end) {
+    return (
+      I18n.strftime(start, '%-d %b') + ' - ' + I18n.strftime(end, '%-d %b')
+    );
   }
 
   function createOptions(downsampleMethod) {
@@ -51,13 +65,13 @@ var D3ChartDateSelect = (function() {
     return $('<select/>')
       .addClass('d3-chart-date-select')
       .append(createOptions.call(this, downsampleMethod))
-      .val(App.settings.get('merit_charts_date') || '1')
+      .val(App.settings.get('merit_charts_date') || '0')
       .on('change', setMeritChartsDate);
   }
 
   D3ChartDateSelect.prototype = {
     selectBox: undefined,
-    weeks: [[epoch, new Date(1970, 11, 30)]],
+    weeks: [[epoch, new Date(1970, 11, 31, 1)]],
 
     draw: function(updateChart) {
       this.updateChart = updateChart;
@@ -73,6 +87,29 @@ var D3ChartDateSelect = (function() {
 
     getCurrentRange: function() {
       return this.weeks[this.val()];
+    },
+
+    /**
+     * Returns an array of dates which should be shown in the time axis, based
+     * on the currently-selected week.
+     */
+    tickValues: function() {
+      var values = [];
+
+      if (this.isWeekly()) {
+        var startDate = this.weeks[this.val()][0];
+        var msInDay = 1000 * 60 * 60 * 24;
+
+        for (var i = 0; i < 7; i++) {
+          values.push(new Date(startDate.getTime() + msInDay * i));
+        }
+      } else {
+        for (var j = 0; j < 12; j++) {
+          values.push(new Date(Date.UTC(1970, j, 1)));
+        }
+      }
+
+      return values;
     },
 
     val: function() {

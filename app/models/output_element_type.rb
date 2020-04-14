@@ -6,6 +6,7 @@
 #
 class OutputElementType < YModel::Base
   index_on :name
+  source_file 'config/interface/output_element_types.yml'
   has_many :output_elements
 
   def html_table?

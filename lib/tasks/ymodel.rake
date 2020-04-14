@@ -76,5 +76,22 @@ namespace :ymodel do
 
     File.write(refering_yaml, migrated_records.to_yaml)
   end
+
+  # This task was used for splitting input_Elements and slides into seperate
+  # files. Remember to delete the starting yaml after to make sure you don't
+  # get duplicate index errors.
+  #
+  # I write the command tasks like this:
+  # $ rake "ymodel:split_yaml[config/interface/input_elements.yml,slide_key]"
+  task :split_yaml, [:yaml_file, :group_by_key] => [:environment] do |_t, args|
+    YAML.load_file(args.yaml_file).group_by do |record|
+      record[args.group_by_key]
+    end.each do |filename, records|
+      file = File.join(Rails.root,
+                       File.dirname(args.yaml_file),
+                       "#{filename}.yml")
+      File.write(file, records.to_yaml)
+    end
+  end
 end
 # rubocop:enable  Metrics/BlockLength

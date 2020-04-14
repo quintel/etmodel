@@ -19,6 +19,8 @@ class SidebarItem < YModel::Base
   include AreaDependent::YModel
 
   index_on :key
+  source_file 'config/interface/sidebar_items.yml'
+
   belongs_to :tab
   has_many :slides, foreign_key: :sidebar_item_key
   belongs_to :parent, class_name: 'SidebarItem'
@@ -33,10 +35,6 @@ class SidebarItem < YModel::Base
       return all if search.blank? || search.empty?
 
       all.select { |si| si.percentage_bar_query.include?(search) }
-    end
-
-    def find_by_section_and_key(section, key)
-      where(section: section, key: key)&.first
     end
   end
 

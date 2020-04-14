@@ -1,0 +1,23 @@
+---
+- id: 9
+  image: ''
+  general_sub_header: change
+  group_sub_header:
+  subheader_image:
+  key: costs_wind_investment
+  position: 1
+  dependent_on:
+  sidebar_item_key: wind
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production
+- id: 10
+  image: ''
+  general_sub_header: change
+  group_sub_header:
+  subheader_image:
+  key: costs_wind_operational_and_maintenance
+  position: 2
+  dependent_on:
+  sidebar_item_key: wind
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production

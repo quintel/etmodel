@@ -1,0 +1,29 @@
+---
+- id: 863
+  key: co2_emissions_of_imported_electricity_present
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: g/kWh
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 0
+  dependent_on: ''
+  slide_key: flexibility_electricity_import_export_properties
+- id: 864
+  key: co2_emissions_of_imported_electricity_future
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: g/kWh
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: flexibility_electricity_import_export_properties

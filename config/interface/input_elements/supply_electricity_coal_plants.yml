@@ -1,0 +1,155 @@
+---
+- id: 250
+  key: capacity_of_energy_power_ultra_supercritical_coal
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_power_ultra_supercritical_coal
+  position: 1
+  dependent_on: ''
+  slide_key: supply_electricity_coal_plants
+- id: 251
+  key: capacity_of_energy_power_ultra_supercritical_ccs_coal
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_power_ultra_supercritical_ccs_coal
+  position: 3
+  dependent_on: ''
+  slide_key: supply_electricity_coal_plants
+- id: 253
+  key: capacity_of_energy_power_combined_cycle_coal
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_power_combined_cycle_coal
+  position: 4
+  dependent_on: ''
+  slide_key: supply_electricity_coal_plants
+- id: 254
+  key: capacity_of_energy_power_combined_cycle_ccs_coal
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_power_combined_cycle_ccs_coal
+  position: 5
+  dependent_on: ''
+  slide_key: supply_electricity_coal_plants
+- id: 255
+  key: capacity_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_power_ultra_supercritical_oxyfuel_ccs_lignite
+  position: 6
+  dependent_on: has_lignite
+  slide_key: supply_electricity_coal_plants
+- id: 315
+  key: capacity_of_energy_power_supercritical_coal
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: 'energy_power_supercritical_coal '
+  position: 7
+  dependent_on: ''
+  slide_key: supply_electricity_coal_plants
+- id: 316
+  key: capacity_of_energy_power_ultra_supercritical_lignite
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_power_ultra_supercritical_lignite
+  position: 8
+  dependent_on: has_lignite
+  slide_key: supply_electricity_coal_plants
+- id: 422
+  key: capacity_of_energy_chp_ultra_supercritical_lignite
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_chp_ultra_supercritical_lignite
+  position: 9
+  dependent_on: has_lignite
+  slide_key: supply_electricity_coal_plants
+- id: 551
+  key: capacity_of_energy_chp_ultra_supercritical_coal
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_chp_ultra_supercritical_coal
+  position: 10
+  dependent_on: ''
+  slide_key: supply_electricity_coal_plants
+- id: 642
+  key: capacity_of_energy_chp_ultra_supercritical_cofiring_coal
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_chp_ultra_supercritical_cofiring_coal
+  position: 11
+  dependent_on: ''
+  slide_key: supply_electricity_coal_plants
+- id: 643
+  key: capacity_of_energy_power_ultra_supercritical_cofiring_coal
+  share_group: ''
+  step_value: 1.0
+  draw_to_min: 
+  draw_to_max: 
+  unit: MW
+  fixed: false
+  interface_group: ''
+  command_type: ''
+  related_converter: energy_power_ultra_supercritical_cofiring_coal
+  position: 2
+  dependent_on: ''
+  slide_key: supply_electricity_coal_plants

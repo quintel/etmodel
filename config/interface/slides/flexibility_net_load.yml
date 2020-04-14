@@ -1,0 +1,56 @@
+---
+- id: 170
+  image: ''
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_net_load
+  position: 1
+  dependent_on: ''
+  sidebar_item_key: flexibility_net_load
+  alt_output_element_key: electricity_network_load
+  output_element_key: electricity_network_capacity_and_peaks
+- id: 212
+  image: ''
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_demand_response_ev
+  position: 10
+  dependent_on: ''
+  sidebar_item_key: flexibility_net_load
+  alt_output_element_key:
+  output_element_key: dynamic_demand_curve
+- id: 216
+  image: ''
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_demand_response_hp
+  position: 12
+  dependent_on: ''
+  sidebar_item_key: flexibility_net_load
+  alt_output_element_key:
+  output_element_key: dynamic_demand_curve
+- id: 283
+  image: ''
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_demand_response_hhp
+  position: 11
+  dependent_on: ''
+  sidebar_item_key: flexibility_net_load
+  alt_output_element_key:
+  output_element_key: household_network_gas_hhp_cop_cost
+- id: 284
+  image: ''
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: flexibility_flexibility_solar_pv_curtailment
+  position: 2
+  dependent_on: ''
+  sidebar_item_key: flexibility_net_load
+  alt_output_element_key:
+  output_element_key: hourly_solar_pv_curtailment

@@ -1,0 +1,43 @@
+---
+- id: 1008
+  key: curtailment_of_households_solar_pv_solar_radiation
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: curtailment
+  command_type: ''
+  related_converter: ''
+  position: 1
+  dependent_on: ''
+  slide_key: flexibility_flexibility_solar_pv_curtailment
+- id: 1009
+  key: curtailment_of_buildings_solar_pv_solar_radiation
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: curtailment
+  command_type: ''
+  related_converter: ''
+  position: 2
+  dependent_on: ''
+  slide_key: flexibility_flexibility_solar_pv_curtailment
+- id: 1010
+  key: curtailment_of_energy_power_solar_pv_solar_radiation
+  share_group: ''
+  step_value: 0.1
+  draw_to_min: 
+  draw_to_max: 
+  unit: "%"
+  fixed: false
+  interface_group: curtailment
+  command_type: ''
+  related_converter: ''
+  position: 3
+  dependent_on: ''
+  slide_key: flexibility_flexibility_solar_pv_curtailment

@@ -47,6 +47,8 @@ class OutputElement < YModel::Base
   include AreaDependent::YModel
 
   index_on :key
+  source_file 'config/interface/output_elements.yml'
+
   has_many :output_element_series
   belongs_to :output_element_type
   has_many :slides

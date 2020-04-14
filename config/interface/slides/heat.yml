@@ -1,0 +1,34 @@
+---
+- id: 277
+  image: house_direct_heating.gif
+  general_sub_header: heat_output
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_heat_sources
+  position: 1
+  dependent_on: ''
+  sidebar_item_key: heat
+  alt_output_element_key:
+  output_element_key: collective_heat_mekko
+- id: 278
+  image: ''
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_heat_network_storage_toggle
+  position: 3
+  dependent_on: ''
+  sidebar_item_key: heat
+  alt_output_element_key:
+  output_element_key: heat_network_storage
+- id: 280
+  image: ''
+  general_sub_header: ''
+  group_sub_header: ''
+  subheader_image: ''
+  key: supply_heat_network_losses
+  position: 2
+  dependent_on: ''
+  sidebar_item_key: heat
+  alt_output_element_key:
+  output_element_key: collective_heat_mekko

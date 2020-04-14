@@ -142,6 +142,21 @@ describe YModel::Base do
     end
   end
 
+  describe '.find_by_key!' do
+    describe 'with an existing key' do
+      subject { YModel::Concrete.find_by_key!(:overview) }
+
+      it { is_expected.to be_a YModel::Concrete }
+    end
+
+    describe 'with a nonexsisting key' do
+      it 'raises an error' do
+        expect { YModel::Concrete.find_by_key!(:nonexisting) }
+          .to raise_error(YModel::RecordNotFound)
+      end
+    end
+  end
+
   describe '.has_many' do
     it 'raises an error when called with both an ' \
        '`as` and a `foreign_key` option' do

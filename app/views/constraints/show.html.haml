@@ -17,13 +17,12 @@
   - if @constraint.description
     .description= @constraint.description.try :short_content
 
-  - if @constraint.output_element_id
+  - if @constraint.output_element
     #charts
-      .chart{:'data-chart_id' => @constraint.output_element_id }
+      .chart{ :'data-chart_id' => @constraint.output_element.key }
 
   = render partial: @constraint.key rescue nil
 
   = render 'output_elements/chart_template'
   :javascript
     #{render 'js_init.js'}
-

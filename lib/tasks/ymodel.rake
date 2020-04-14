@@ -28,7 +28,7 @@ namespace :ymodel do
             'content' => desc&.content_nl }
       end
 
-      attributes
+      attributes.except!('created_at', 'updated_at')
     end
 
     write_to_locale(args.model, 'en', en_descriptions)
@@ -61,11 +61,10 @@ namespace :ymodel do
         referenced_records.find do |ref|
           ref['id'] == record[old_foreign_key]
         end
-
-      next unless related.present?
-
+      # Some relations are optional
+      new_foreign_val = related.present? ? related[new_index] : nil
       # add new key
-      record[new_foreign_key] = related[new_index]
+      record[new_foreign_key] = new_foreign_val
 
       # remove old key
       record.delete old_foreign_key

@@ -4,18 +4,16 @@
 #
 # Table name: output_element_series
 #
-#  id                   :integer          not null, primary key
-#  output_element_id    :integer
+#  key                  :integer
+#  output_element_key   :integer
 #  label                :string(255)
 #  color                :string(255)
 #  order_by             :integer
 #  group                :string(255)
-#  created_at           :datetime
-#  updated_at           :datetime
 #  show_at_first        :boolean
 #  is_target_line       :boolean
 #  target_line_position :string(255)
-#  gquery               :string(255)      not null
+#  gquery               :string(255)
 #
 
 # Old tables use the order_by attribute to specify the cell position:
@@ -29,29 +27,27 @@
 #  ...
 #
 #
-class OutputElementSerie < ActiveRecord::Base
+class OutputElementSerie < YModel::Base
   include Colors
-  include AreaDependent::ActiveRecord
+  include AreaDependent::YModel
 
+  index_on :key
+  source_file 'config/interface/output_element_series.yml'
   belongs_to :output_element
-  has_one :description, as: :describable
-  has_one :area_dependency, as: :dependable
 
-  scope :gquery_contains, ->(q) { where('gquery LIKE ?', "%#{q}%") }
+  class << self
+    def contains(search)
+      return all if search.blank? || search.empty?
 
-  scope :ordered_for_admin,
-        -> { joins(:output_element).merge(OutputElement.order(key: :asc)) }
+      all.select { |oes| oes.key.include?(search) }
+    end
 
-  # Hmmm ugly
-  scope :block_charts,
-        -> { where(output_element_id: OutputElementType::BLOCK_CHART_ID) }
+    def gquery_contains(search)
+      return all if search.blank? || search.empty?
 
-  scope :contains, ->(search) { where('`key` LIKE ?', "%#{search}%") }
-
-  validates :gquery, presence: true
-
-  accepts_nested_attributes_for :description, reject_if: :all_blank
-  accepts_nested_attributes_for :area_dependency, reject_if: :all_blank
+      all.select { |oes| oes.gquery.include?(search) }
+    end
+  end
 
   def title_translated
     I18n.t("output_element_series.#{label}") unless label.blank?
@@ -61,10 +57,15 @@ class OutputElementSerie < ActiveRecord::Base
     I18n.t("output_element_series.groups.#{group}") unless group.blank?
   end
 
+  #  Descriptions are optional for output element series
+  def description
+    I18n.t("descriptions_output_element_series.#{key}.content", default: '')
+  end
+
   # rubocop:disable Metrics/LineLength
   def json_attributes
     {
-      id: id, # needed for block charts
+      id: key, # needed for block charts
       gquery_key: gquery,
       color: color,
       label: title_translated,

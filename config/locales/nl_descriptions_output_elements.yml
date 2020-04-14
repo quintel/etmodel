@@ -1,0 +1,954 @@
+---
+nl:
+  descriptions_output_elements:
+    use_of_final_electricity_demand_in_households:
+      short_content: Huishoudelijk, naar toepassing
+      content: "Deze grafiek toont hoe de huishoudelijke vraag naar elektriciteit
+        verandert als gevolg van de keuzes en aannames die je in dit onderdeel maakt.
+        De vraag naar elektriciteit is onderverdeeld naar toepassing.\r\n<br/><br/>\r\nKies
+        '<u>Wijzig grafiek</u>' om andere grafieken te tonen over energiegebruik."
+    source_of_electricity_in_households:
+      short_content: ''
+      content: "Deze grafiek toont hoe de elektriciteitsvraag door huishoudens wordt
+        ingevuld. Centraal geproduceerde electriciteit is op één hoop gegooid. Die
+        kun je instellen bij onderdeel 'Aanbod'. \r\n<br/><br/>\r\nKies '<u>Wijzig
+        grafiek</u>' boven de grafiek om andere grafieken te tonen over energiegebruik."
+    source_of_heat_and_electricity_in_industry:
+      short_content: Industrie
+      content: "Deze grafiek laat zien hoe de elektriciteit en warmte die de industrie
+        gebruikt, wordt opgewekt. Warmte die niet met WKK is gemaakt, kan worden geproduceerd
+        met één van de opties op de Industrie 'Warmte' pagina. Centraal geproduceerde
+        elektriciteit is hier op één hoop gegooid. Bij het onderdeel 'Aanbod' heb
+        je de mogelijkheid om te kiezen hoe dit wordt opgewekt en hoeveel.\r\n<br/><br/>\r\nKies
+        '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over
+        industrieel energiegebruik."
+    use_of_final_demand_in_agriculture:
+      short_content: Landbouw
+      content: "Deze grafiek toont hoe de vraag naar energie in de land- en tuinbouw
+        gaat veranderen als gevolg van jouw keuzes. De meeste energie wordt in broeikassen
+        gebruikt. Deze grafiek toont eindgebruik van energie, dus verliezen bij de
+        omzetting van energiedragers naar warmte of elektriciteit zijn niet meegenomen.\r\n<br/><br/>\r\nKies
+        '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over
+        energiegebruik."
+    source_of_heat_in_agriculture:
+      short_content: Agricultural
+      content: "Deze grafiek laat zien hoe de warmtevraag in de landbouw verandert
+        in de toekomst, als gevolg van jouw keuzes in het onderdeel 'Vraag'. De warmtevraag
+        valt hier uiteen in 'warmte uit fossiel, warmte uit elektriciteit, warmte
+        uit biomassa en omgevingswarmte'.\r\n<br/><br/>\r\nDe technieken die je gebruikt
+        om te verwarmen bepalen natuurlijk de warmtevraag niet, maar wel de energie-efficiëntie
+        en hernieuwbaarheid van de warmteproductie. Om de warmtevraag af te laten
+        nemen, moeten broeikassen bijvoorbeeld beter geïsoleerd worden, of andere
+        gewassen gaan telen.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de
+        grafiek om andere grafieken te tonen over energiegebruik."
+    use_of_final_demand_in_other_sector:
+      short_content: Overige sectoren
+      content: "Deze grafiek toont hoeveel het energiegebruik in de diensten-, bouw
+        en overheidssectoren gaat veranderen als gevolg van jouw keuzes. Eindgebruik
+        van energie betekent dat verliezen bij omzetting van energiedragers naar elektriciteit
+        of warmte niet zijn meegenomen.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>'
+        boven de grafiek om andere grafieken te tonen over energiegebruik."
+    overview_costs_of_electricity_production:
+      short_content: ''
+      content: "Bij het vergelijken van verschillende soorten stroommopwek, is alleen
+        de verticale positie op deze grafiek van belang. <br/><br/>\r\nJe kunt verschillende
+        technologieën tonen en verbergen door ze in de legenda te kiezen.  \r\n<br/><br/>\r\nDe
+        verticale as toont de totale relevante productiekosten van elektriciteit (in
+        &euro;/MWhe). Dit is dus <strong>inclusief</strong> \r\ninvesteringen en kapitaalslasten,
+        maar <strong>exclusief</strong> alle belastingen en subsidies. We noemen dit
+        'integrale productiekosten'.\r\n<br/><br/>\r\nDe horizontale as geeft alleen
+        de inversteringskosten (in miljoen €/MWe). De horizontale positie toont hoeveel
+        geld er nodig is om een bepaald productievermogen van iedere techniek te bouwen.\r\n<br/><br/>\r\n<a
+        href=\"/units\">Meer informatie over eenheden...</a>"
+    source_of_heat_production:
+      short_content: ''
+      content: "Deze grafiek toont hoe de totale warmteproductie tot stand komt.\r\n<br/><br/>\r\nJe
+        kunt met de schuifjes het aandeel van iedere technologie instellen. Hierdoor
+        zal de warmtemix veranderen."
+    use_of_transport_fuels:
+      short_content: ''
+      content: 'Deze grafiek geeft de brandstofmix voor wegtransport als gevolg van
+        jouw instellingen in de onderdelen ''Vraag'' en ''Aanbod'', vergeleken met
+        de mix van nu. '
+    use_of_primary_energy:
+      short_content: ''
+      content: "De grafiek toont de totale primaire energievraag in jouw land voor
+        nu en in de toekomst.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven
+        de grafiek om andere grafieken te tonen over energiegebruik."
+    co2_emissions:
+      short_content: ''
+      content: "Deze grafiek vergelijkt de uitstoot van energetische CO<sub>2</sub>
+        in 1990, het heden en de toekomst. Het jaar 1990 wordt vaak als referentiejaar
+        genoemd in CO<sub>2</sub> doelstellingen. De lijn is de doelstelling die is
+        ingesteld in het onderdeel 'Doelen'. \r\n<br/><br/>\r\nDeze grafiek toont
+        alleen binnenlandse, energetische CO<sub>2</sub>-uitstoot. Niet-energetische
+        emissies van CO<sub>2</sub> zijn niet meegenomen. Deze emissies zijn gerelateerd
+        aan processen waarbij het eindproduct geen bruikbare energie (zoals elektriciteit
+        of warmte) oplevert. Een voorbeeld van niet-energetische uitstoot van CO<sub>2</sub>
+        is de CO<sub>2</sub> die opgesloten zit in cement en vrijkomt bij het maken
+        ervan. De emissies die vrijkomen bij het produceren van de energie die nodig
+        is om cement te maken tellen overigens wel mee als energetische CO<sub>2</sub>
+        emissies.\r\n<br/><br/>\r\nLet op: Als de Ketenanalyse-module is ingeschakeld
+        toont deze grafiek ook andere broeikasgassen als methaan (CH<sub>4</sub>)
+        of lachgas (N<sub>2</sub>O) die gerelateerd zijn aan de brandstofproductieketen.
+        Niet-energetische emissies en broeikasgassen die ongerelateerd zijn aan de
+        brandstofproductieketen worden niet getoond."
+    present_energy_imports:
+      short_content: Startjaar
+      content: "Deze grafiek vergelijkt de netto afhankelijkheid van buitenlandse
+        energie in het heden en in de toekomst. Dit is het gevolg van jouw keuzes
+        in het model. Netto afhankelijkheid betekent dat we de energie-export aftrekken
+        van de energie-import en het resultaat delen door de totale primaire energievraag.
+        \r\n<br/><br/> Zie voor meer informatie het onderdeel 'Doelen'."
+    breakdown_of_total_costs:
+      short_content: ''
+      content: "Deze grafiek laat zien hoe de kosten voor energie zullen toenemen
+        in de toekomst als gevolg van jouw keuzes. \r\n<br/><br/>\r\nDe kosten zijn
+        opgedeeld in een aantal relevante categorieën. "
+    renewability:
+      short_content: ''
+      content: "Deze grafiek laat zien hoe het percentage hernieuwbaar eindgebruik
+        van energie toeneemt in de toekomst, als gevolg van jouw keuzes en instellingen.\r\n<br/><br/>\r\nEindgebruik
+        van energie betekent dat verliezen bij omzetting van energiedragers naar elektriciteit
+        of warmte niet zijn meegenomen."
+    mekko_of_primary_demand:
+      short_content: ''
+      content: "Dit plaatje vergelijkt het primaire energiegebruik in jouw land (horizontale
+        as) voor nu en in de toekomst, opgesplitst naar sector en energiebron (verticale
+        as). Primair gebruik betekent dat we kijken naar de oorsprong van alle energiedragers
+        als warmte, elektriciteit en transportbrandstoffen. We rekenen dus ook de
+        verliezen mee die optreden als een energiedrager wordt gemaakt. \r\n<br/><br/>\r\nDe
+        toekomstgrafiek is het resultaat van jouw keuzes bij het vaststellen van de
+        toekomstige vraag en opwekking van energie en van de toekomstige rendementen
+        van centrales.\r\n<br/><br/>\r\nVoorbeeld: Groei van de economie geeft een
+        hoger energieverbruik. Besparingen en moderne technieken geven een lager verbruik.
+        Keuzes voor warmtepompen en elektrisch vervoer geven een lager totaal energieverbruik
+        maar een hoger aandeel elektriciteit daarbinnen. Hoe jij de elektriciteit,
+        warmte en brandstoffen maakt, bepaalt uiteindelijk de primaire energievraag.\r\n<br/><br/>\r\nKies
+        '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over
+        energiegebruik.\r\n\r\n"
+    source_of_heat_used_in_households:
+      short_content: Huishoudelijk
+      content: "Deze grafiek laat zien hoe de warmtevraag van huishoudens verandert
+        in de toekomst, als gevolg van jouw keuzes in het onderdeel 'Vraag'. De warmtevraag
+        valt hier uiteen in alle verschillende technologiën die beschikbaar zijn voor
+        het verwarmen van huizen.\r\n<br/><br/>\r\nDe technieken die je gebruikt om
+        te verwarmen bepalen natuurlijk de warmtevraag niet, maar wel de energie-efficiëntie
+        en hernieuwbaarheid van de warmteproductie. Om de warmtevraag af te laten
+        nemen, moeten huizen bijvoorbeeld beter geïsoleerd worden.\r\n<br/><br/>\r\nKies
+        '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over
+        energiegebruik.\r\n"
+    useful_demand_in_households:
+      short_content: ''
+      content: "Deze grafiek toont hoe de huishoudelijke vraag naar warmte en elektriciteit
+        veranderen in de toekomst. Deze zijn onder andere afhankelijk van de economische
+        en bevolkingsgroei, maar de elektriciteitsvraag ook van efficiëntieverbeteringen
+        en inzet van alternatieve technologieën.\r\n<br/><br/>\r\nDeze grafiek toont
+        \"nuttig gebruik\", dat betekent dat het de energie toont die nuttig gebruikt
+        wordt voor een bepaald doel. Dit verschilt van \"finaal gebruik\", zoals in
+        sommige andere grafieken in het model. Dit zijn namelijk de verschillende
+        soorten energie die gebruikt worden om tot het nuttige gebruik te komen, waarbij
+        ook een deel van de energie verloren gaat aan omzetting.\r\n<br/><br/>\r\nDaarom
+        wordt in deze grafiek de elektriciteitsvraag getoond exclusief elektriciteit
+        gebruikt voor warmte-opwek, deze zit namelijk al in de warmtevraag.\r\n<br/><br/>\r\nKies
+        '<u>Andere grafiek</u>' boven de grafiek om andere grafieken te tonen over
+        energiegebruik."
+    effect_of_insulation_in_households:
+      short_content: Huishoudelijke
+      content: "Deze grafiek toont hoe de huishoudelijke vraag naar warmte en elektriciteit
+        veranderen in de toekomst. Je ziet ook wat de warmtebesparingen zijn als gevolg
+        van betere isolatie. De vraag naar warmte en elektriciteit zijn onder andere
+        afhankelijk van de economische en bevolkingsgroei, maar de elektriciteitsvraag
+        ook van efficiëntieverbeteringen en inzet van alternatieve technologieën.\r\n<br/><br/>\r\nDeze
+        grafiek toont \"nuttig gebruik\", dat betekent dat het de energie toont die
+        nuttig gebruikt wordt voor een bepaald doel. Dit verschilt van \"finaal gebruik\",
+        zoals in sommige andere grafieken in het model. Dit zijn namelijk de verschillende
+        soorten energie die gebruikt worden om tot het nuttige gebruik te komen, waarbij
+        ook een deel van de energie verloren gaat aan omzetting.ul purpose.\r\n<br/><br/>\r\nDaarom
+        wordt in deze grafiek de elektriciteitsvraag getoond exclusief elektriciteit
+        gebruikt voor warmte-opwek, deze zit namelijk al in de warmtevraag.\r\n<br/><br/>\r\nKies
+        '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over
+        energiegebruik.\r\n"
+    additional_infrastructure_investments:
+      short_content: ''
+      content: "Deze grafiek toont de verandering in investeringskosten in het gasnet
+        en de elektriciteitsnetten als gevolg van jouw keuzes onder 'Vraag' en 'Aanbod'.
+        Voor meer informatie, zie ook het onderdeel 'Aanbod' op pagina 'Elektriciteitsnet'.
+        \r\n\r\n<br/><br/>\r\n\r\nAls je meer elektriciteitscentrales bouwt, moet
+        je het hoogspanningsnet (HS net) verzwaren en uitbreiden om ruimte te maken
+        voor de extra stroom. Als je meer apparaten aan het laagspanningsnet (LS net)
+        hangt, moet je misschien het LS net of de transformatoren en kabels tussen
+        het LS net en de midden- en hoogspanningsnetten verzwaren.\r\n\r\n"
+    source_of_heat_and_electricity_in_agriculture:
+      short_content: Landbouw
+      content: "Deze grafiek toont hoeveel van het warmte- en elektriciteitsgebruik
+        in de landbouwsector door warmte-kracht koppelingen (WKK's) wordt ingevuld.
+        Warmte die niet met WKK is gemaakt, kan worden geproduceerd met één van de
+        opties op de Landbouw 'Warmte' pagina. Elektriciteit die niet decentraal wordt
+        gemaakt, komt uit elektriciteitscentrales. \r\n<br/><br/>\r\nKies '<u>Wijzig
+        grafiek</u>' boven de grafiek om andere grafieken te tonen over industrieel
+        energiegebruik."
+    source_of_hot_water_in_households:
+      short_content: Huishoudelijk
+      content: "Deze grafiek toont de hoeveelheid energie die gebruikt wordt voor
+        warm water in huishoudens.\r\n<br/><br/>\r\nAls je de technologieën aanpast
+        waarmee de vraag naar warm water wordt geleverd past de grafiek zich automatisch
+        aan om de vraag naar verschillende energiebronnen aan te passen.\r\n<br/><br/>\r\nDe
+        technologieën die je kiest hebben natuurlijk niet echt invloed op de warmtevraag,
+        maar het kan wel de energie-efficiëntie aanpassen en de hernieuwbaarheid van
+        warm waterproductie.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de
+        grafiek om andere grafieken te tonen over energiegebruik in deze sector."
+    source_of_cooling_in_households:
+      short_content: Huishoudelijk
+      content: "Deze grafiek laat zien hoe de vraag naar koeling van huishoudens verandert
+        in de toekomst, als gevolg van jouw keuzes in het onderdeel 'Vraag'. De koelingsvraag
+        is afhankelijk van alle verschillende technologieën die beschikbaar zijn voor
+        het <strong>verwarmen</strong> van huizen.\r\n<br/><br/>\r\nDe technieken
+        die je gebruikt om te koelen bepalen natuurlijk de vraag naar koeling niet,
+        maar wel de energie-efficiëntie en hernieuwbaarheid van de koude-productie.
+        Om de koude-vraag af te laten nemen, moeten huizen bijvoorbeeld beter geventileerd
+        worden.\r\n<br/><br/>\r\nAls je deze grafiek wilt zien terwijl je de warmtevraag
+        aanpast klik dan op het tabje verwarming en daar op '<u>Wijzig grafiek</u>'
+        boven de grafiek om deze grafiek te kunnen selecteren.\r\n"
+    source_of_cooking_in_households:
+      short_content: Koken
+      content: "Deze grafiek toont de energie die gebruikt wordt voor koken door huishoudens.\r\n<br/><br/>\r\nDe
+        energie die gebruikt wordt voor koken is afhankelijk van welk soort kooktoestellen
+        ervoor gebruikt worden. Zullen huishoudens in de toekomst vooral gastoestellen
+        blijven gebruiken, of gaan ze over naar andere manieren van koken zoals elektrisch
+        of inductief? Het verandert allemaal de energievraag."
+    use_of_final_demand_in_buildings:
+      short_content: Gebouwen
+      content: "Deze grafiek toont hoeveel van het warmte- en elektriciteitsgebruik
+        in de gebouwensector door warmte-kracht koppelingen (WKK's) wordt ingevuld.
+        Warmte die niet met WKK is gemaakt wordt geproduceerd met de opties op de
+        Gebouwen 'Verwarming' pagina. Elektriciteit die niet decentraal wordt gemaakt,
+        komt van het elektriciteitsnet. \r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>'
+        boven de grafiek om andere grafieken te tonen over industrieel energiegebruik."
+    effect_of_insulation_in_buildings:
+      short_content: Gebouwen
+      content: "Deze grafiek toont hoe de vraag naar warmte en elektriciteit in gebouwen
+        veranderen in de toekomst. Je ziet ook wat de warmte-besparingen zijn als
+        gevolg van betere isolatie. De vraag naar warmte en elektriciteit zijn onder
+        andere afhankelijk van de economische en bevolkingsgroei, maar ook van efficiëntieverbeteringen
+        en inzet van alternatieve technologieën.\r\n<br/><br/>\r\nKies '<u>Wijzig
+        grafiek</u>' boven de grafiek om andere grafieken te tonen over energiegebruik."
+    source_of_heat_in_buildings:
+      short_content: Gebouwen
+      content: "Deze grafiek laat zien hoe de warmtevraag van gebouwen verandert in
+        de toekomst, als gevolg van jouw keuzes in het onderdeel 'Vraag'. De warmtevraag
+        valt hier uiteen in alle verschillende technologiën die beschikbaar zijn voor
+        ruimteverwarming in gebouwen.\r\n<br/><br/>\r\nDe technieken die je gebruikt
+        om te verwarmen bepalen natuurlijk de vraag naar warmte niet, maar wel de
+        energie-efficiëntie en hernieuwbaarheid van de warmteproductie. Om de warmtevraag
+        af te laten nemen, moeten huizen bijvoorbeeld beter geïsoleerd worden.\r\n<br/><br/>\r\nKies
+        '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over
+        energiegebruik."
+    source_of_cooling_in_buildings:
+      short_content: Gebouwen
+      content: "Deze grafiek laat zien hoe de vraag naar koeling van gebouwen verandert
+        in de toekomst, als gevolg van jouw keuzes in het onderdeel 'Vraag'. De koelingsvraag
+        is afhankelijk van alle verschillende technologieën die beschikbaar zijn voor
+        het <strong>verwarmen</strong> van gebouwen.\r\n<br/><br/>\r\nDe technieken
+        die je gebruikt om te koelen bepalen natuurlijk de vraag naar koeling niet,
+        maar wel de energie-efficiëntie en hernieuwbaarheid van de koude-productie.
+        Om de koude-vraag af te laten nemen, moeten gebouwen bijvoorbeeld beter geventileerd
+        worden.\r\n<br/><br/>\r\nAls je deze grafiek wilt zien terwijl je de warmtevraag
+        aanpast klik dan op het tabje verwarming en daar op '<u>Wijzig grafiek</u>'
+        boven de grafiek om deze grafiek te kunnen selecteren.\r\n"
+    use_of_electricity_in_buildings:
+      short_content: Gebouwen
+      content: "Deze grafiek toont hoe de elektriciteitsvraag in gebouwen verandert
+        als gevolg van de keuzes en aannames die je in dit onderdeel maakt. De vraag
+        naar elektriciteit is afhankelijk van de efficiëntie van de apparaten.\r\n<br/><br/>\r\nKies
+        '<u>Wijzig grafiek</u>' om andere grafieken te tonen over energiegebruik."
+    source_of_electricity_in_buildings:
+      short_content: ''
+      content: "Deze grafiek toont hoe de elektriciteitsvraag door gebouwen wordt
+        ingevuld. Centraal geproduceerde electriciteit is op één hoop gegooid. Die
+        kun je instellen bij onderdeel 'Aanbod'. \r\n<br/><br/>\r\nKies '<u>Wijzig
+        grafiek</u>' boven de grafiek om andere grafieken te tonen over energiegebruik."
+    future_energy_imports:
+      short_content: Toekomst jaar
+      content: "Deze grafiek toont de energie die in de toekomst geïmporteerd wordt
+        vanuit andere landen uitgesplitst naar de verschillende energiebronnen. Elk
+        staafje in de grafiek telt op tot de totale import in het eindjaar (het zwarte
+        staafje helemaal rechts).\r\n<br/><br/>\r\nOver het algemeen geldt dat des
+        te minder geïmporteerd wordt, des te beter het is."
+    gas_network_mix:
+      short_content: ''
+      content: Deze grafiek toont de mix van aardgas and groengas in het gasnet.
+    source_of_electricity_production:
+      short_content: ''
+      content: "Deze grafiek toont welke technologieën gebruikt worden voor de huidige
+        en toekomstige elektriciteitsproductie. De toekomstige samenstelling van het
+        productiepark is standaard hetzelfde als de huidige. Je kunt kiezen hoe je
+        de toekomstige vraag wilt invullen met de schuifjes links van de grafiek.\r\n<br/><br/>\r\nDe
+        vraag naar elektriciteit wordt aangegeven met de horizontale lijn. Als de
+        productie hoger is dan de vraag, zal het model automatisch stroom exporteren.
+        Als je te weinig productiecapaciteit bouwt, zal het model stroom importeren.\r\n"
+    fuel_chain_emissions:
+      short_content: ''
+      content: "Deze grafiek toont hoeveel broeikasgassen worden uitgestoten tijdens
+        de hele levensduur van onderstaande brandstoffen. De totale uitstoot (in CO<sub>2</sub>
+        equivalenten) is opgedeeld in vier stappen: <br/><br/>\r\n1. Extractie - productie
+        van de ruwe grondstof <br/>\r\n2. Bewerken - omzetten van de grondstof in
+        de bruikbare vorm van de brandstof<br/>\r\n3. Transport - vervoeren naar de
+        locaties waar het wordt gebruikt <br/>\r\n4. Omzetten - gebruik voor bijvoorbeeld
+        het maken van warmte of elektriciteit <br/>\r\n<br/>\r\nDe laatste stap bevat
+        ook alle broeikasgassen die worden uitgestoten tijdens het verwerken of opslaan
+        van afval.\r\n<br/><br/>\r\nDe getallen en referenties die gebruikt zijn om
+        de ketenemissies te kwantificeren zijn te vinden in een document dat je hiervandaan
+        kunt <a href='http://refman.et-model.com/publications/1623' target='blank'>downloaden</a>."
+    breakdown_electricity_costs:
+      short_content: ''
+      content: "Deze grafiek laat zien hoe de kosten voor energie zullen toenemen
+        in de toekomst als gevolg van jouw keuzes. \r\n<br/><br/>\r\nDe kosten zijn
+        opgedeeld in een aantal relevante categorieën. "
+    fuel_chain_emissions_scaled_for_uranium:
+      short_content: ''
+      content: "Deze grafiek toont hoeveel broeikasgassen worden uitgestoten tijdens
+        de hele levensduur van onderstaande brandstoffen. De totale uitstoot (in CO2
+        equivalenten) is opgedeeld in vier stappen: <br/><br/>\r\n1. Extractie - productie
+        van de ruwe grondstof <br/>\r\n2. Bewerken - omzetten van de grondstof in
+        de bruikbare vorm van de brandstof<br/>\r\n3. Transport - vervoeren naar de
+        locaties waar het wordt gebruikt <br/>\r\n4. Omzetten - gebruik voor bijvoorbeeld
+        het maken van warmte of elektriciteit <br/>\r\n<br/>\r\nDe laatste stap bevat
+        ook alle broeikasgassen die worden uitgestoten tijdens het verwerken of opslaan
+        van afval.\r\n<br/><br/>\r\nDe getallen en referenties die gebruikt zijn om
+        de ketenemissies \\te kwantificeren zijn te vinden in een document dat je
+        hiervandaan kunt <a href='http://refman.et-model.com/publications/1623' target='blank'>downloaden</a>."
+    fuel_chain_emissions_scaled_for_greengas:
+      short_content: ''
+      content: "Deze grafiek toont hoeveel broeikasgassen worden uitgestoten tijdens
+        de hele levensduur van onderstaande brandstoffen. De totale uitstoot (in CO2
+        equivalenten) is opgedeeld in vier stappen: <br/><br/>\r\n1. Extractie - productie
+        van de ruwe grondstof <br/>\r\n2. Bewerken - omzetten van de grondstof in
+        de bruikbare vorm van de brandstof<br/>\r\n3. Transport - vervoeren naar de
+        locaties waar het wordt gebruikt <br/>\r\n4. Omzetten - gebruik voor bijvoorbeeld
+        het maken van warmte of elektriciteit <br/>\r\n<br/>\r\nDe laatste stap bevat
+        ook alle broeikasgassen die worden uitgestoten tijdens het verwerken of opslaan
+        van afval.\r\n<br/><br/>\r\nDe getallen en referenties die gebruikt zijn om
+        de ketenemissies \\te kwantificeren zijn te vinden in een document dat je
+        hiervandaan kunt <a href='http://refman.et-model.com/publications/1623' target='blank'>downloaden</a>."
+    security_of_supply:
+      short_content: ''
+      content: Deze grafiek toont de piekvraag naar elektriciteit en ook het beschikbare
+        stroomproductievermogen. Je kunt zien welk deel hiervan altijd beschikbaar
+        is en welk niet. Windmolens en zonnepanelen zijn alleen beschikbaar als het
+        weer dat toelaat en daarom niet helemaal betrouwbaar. As de piekvraag hoger
+        is dan het betrouwbare vermogen, neemt de kans op onvermogen toe.
+    breakdown_of_total_cost_per_household:
+      short_content: ''
+      content: "Deze grafiek laat zien hoe de kosten voor energie zullen toenemen
+        in de toekomst als gevolg van jouw keuzes. \r\n<br/><br/>\r\nDe kosten zijn
+        opgedeeld in een aantal relevante categorieën. "
+    flexibility_of_backup_scatter_plot:
+      short_content: ''
+      content: "Deze grafiek toont de extra kosten en CO<sub>2</sub> uitstoot voor
+        backup opties voor volatiele stroomopwek.\r\nJe kunt niet altijd rekenen op
+        stroom van volatiele technologieën als wind en zon. Dat is jammer, want de
+        meeste backup opties gebruiken fossiele brandstoffen. Daardoor zijn en wind
+        en zon niet zo schoon en gratis als men zou willen of denken. De keuze voor
+        backup is dan ook zeer belangrijk, omdat hierdoor de effectieve kosten en
+        uitstoot van volatiele stroom bepaald worden. \r\n<br/><br/>\r\nDe extra kosten
+        en uitstoot zijn uitgedrukt per MWh<sub>e</sub> van de volatiele stroomproductie
+        in jouw scenario. "
+    merit_order_table:
+      short_content: ''
+      content: "Deze tabel toont de 'merit order' van jouw scenario. Gebaseerd op
+        je aannames over de kosten voor onderhoud en beheer, brandstof en CO<sub>2</sub>
+        van de gebouwde  elektriciteitscentrales, berekent het ETM de volgorde waarmee
+        centrales de stroomvraag invullen. \r\n<br/><br/>\r\nIn de tabel kun je zien
+        welke plek iedere technologie in de rangschikking heeft, gebaseerd op de bijbehorende
+        draaikosten. Ook zie je het beschikbare vermogen en het aantal vollast draaiuren."
+    employment_categories:
+      short_content: ''
+      content: "Deze grafiek vergelijkt de energie-technologieën gebonden binnenlandse
+        werkgelegenheid in de toekomst met de huidige waarde.\r\nDe waardes in de
+        toekomst veranderen als gevolg van jouw instellingen in de onderdelen 'Vraag'
+        en 'Aanbod'. Zowel de huidige als toekomstige waardes veranderen door je instellingen
+        bij het onderdeel 'Kosten'.\r\n\r\n<br/><br/>\r\nDe werkgelegenheidsmodule
+        is momenteel beperkt. De sectoren 'Landbouw' en 'Industrie' zijn uitgesloten
+        van de berekening. Bekijk onze <a href=\"https://github.com/quintel/documentation/blob/master/general/employment.md\"
+        target=\"_blank\">documentatie</a> voor meer informatie."
+    sankey:
+      short_content: ''
+      content: "Sankey diagrammen tonen hoe, waar en hoeveel energie wordt gebruikt.
+        Aan de linkerkant zijn de primaire energievormen te zien. Het energiegebruik
+        voor de productie van elektriciteit en warmte is in het midden te zien. Aan
+        de rechterkant is te zien waar de energie gebruikt wordt. <br/>\r\nAls je
+        met je muis over de grafiek gaat, zie je verschillende onderdelen oplichten
+        en kun je meer informatie krijgen.\r\n<br><br>\r\nNB: verliezen tengevolge
+        van transport en raffinage van energiedragers zijn buiten beschouwing gelaten.\r\n\r\n"
+    merit_order:
+      short_content: ''
+      content: "Deze grafiek toont de 'merit order' van jouw scenario. Gebaseerd op
+        je aannames over de kosten voor onderhoud en beheer, brandstof en CO<sub>2</sub>
+        van de gebouwde  elektriciteitscentrales, berekent het ETM de volgorde waarmee
+        centrales de stroomvraag invullen. \r\n<br/><br/>\r\nIn de grafiek kun je
+        zien welke plek iedere technologie in de rangschikking heeft, gebaseerd op
+        de bijbehorende draaikosten."
+    renewability_targets:
+      short_content: ''
+      content: Deze grafiek geeft een overzicht van de doelen die hier ingesteld kunnen
+        worden. De grafiek toont steeds de waardes die horen bij de huidige situatie
+        en bij jouw toekomstscenario. Als je een doel instelt, verschijnt er een lijn
+        op de grafiek die je doel aangeeft. Deze lijn is groen als het doel wordt
+        gehaald in het toekomst-scenario en rood als dat niet het geval is.
+    sankey_2010:
+      short_content: ''
+      content: ''
+    use_of_final_demand_in_industry_aluminium:
+      short_content: Aluminium
+      content: "Deze grafiek toont hoe de industriële energievraag van de aluminium
+        sector gaat veranderen als gevolg van jouw keuzes. Industrieel energiegebruik
+        wordt vooral bepaald door de groei van de sector en investeringen in energiebesparende
+        technologieën. \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie,
+        dus verliezen bij de omzetting van energiedragers naar warmte en elektriciteit
+        zijn niet meegenomen. <br/> \r\nNiet-energetisch gebruik is het gebruik van
+        energiedragers (zoals olie) om bijvoorbeeld producten als kunstmest of smeermiddelen
+        te maken.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de grafiek om
+        andere grafieken te tonen over industrieel energiegebruik."
+    use_of_final_demand_in_industry_other_metals:
+      short_content: Overige metalen
+      content: "Deze grafiek toont hoe de industriële energievraag gaat veranderen
+        als gevolg van jouw keuzes. Industrieel energiegebruik wordt vooral bepaald
+        door de groei van de sector en investeringen in energiebesparende technologieën.
+        \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie, dus verliezen
+        bij de omzetting van energiedragers naar warmte en elektriciteit zijn niet
+        meegenomen. <br/> \r\nNiet-energetisch gebruik is het gebruik van energiedragers
+        (zoals olie) om bijvoorbeeld producten als kunstmest of smeermiddelen te maken.\r\n<br/><br/>\r\nKies
+        '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over
+        industrieel energiegebruik."
+    dependence_targets:
+      short_content: ''
+      content: Deze grafiek geeft een overzicht van de doelen die hier ingesteld kunnen
+        worden. De grafiek toont steeds de waardes die horen bij de huidige situatie
+        en bij jouw toekomstscenario. Als je een doel instelt, verschijnt er een lijn
+        op de grafiek die je doel aangeeft. Deze lijn is groen als het doel wordt
+        gehaald in het toekomst-scenario en rood als dat niet het geval is.
+    cost_targets:
+      short_content: ''
+      content: Deze grafiek geeft een overzicht van de doelen die hier ingesteld kunnen
+        worden. De grafiek toont steeds de waardes die horen bij de huidige situatie
+        en bij jouw toekomstscenario. Als je een doel instelt, verschijnt er een lijn
+        op de grafiek die je doel aangeeft. Deze lijn is groen als het doel wordt
+        gehaald in het toekomst-scenario en rood als dat niet het geval is.
+    area_targets:
+      short_content: ''
+      content: Deze grafiek geeft een overzicht van de doelen die hier ingesteld kunnen
+        worden. De grafiek toont steeds de waardes die horen bij de huidige situatie
+        en bij jouw toekomstscenario. Als je een doel instelt, verschijnt er een lijn
+        op de grafiek die je doel aangeeft. Deze lijn is groen als het doel wordt
+        gehaald in het toekomst-scenario en rood als dat niet het geval is.
+    use_of_final_demand_in_industry_steel:
+      short_content: Staal
+      content: "Deze grafiek toont hoe de energievraag van de staalindustrie gaat
+        veranderen als gevolg van jouw keuzes. Dit wordt vooral bepaald door de groei
+        van de sector en investeringen in energiebesparende technologieën. \r\n<br/><br/>\r\nDeze
+        grafiek toont eindgebruik van energie en sommige omzetverliezen. Verliezen
+        bij de omzetting van energiedragers naar warmte en elektriciteit zijn niet
+        meegenomen, maar voor omzettingen naar bijvoorbeeld cokes en cokes gas wel."
+    use_of_final_demand_in_industry_metal:
+      short_content: Metaal
+      content: "Deze grafiek toont hoe de energievraag van de metaalindustrie gaat
+        veranderen als gevolg van jouw keuzes. Dit wordt vooral bepaald door de groei
+        van de sector en investeringen in energiebesparende technologieën. \r\n<br/><br/>\r\nDeze
+        grafiek toont overwegend eindgebruik van energie. Verliezen bij de omzetting
+        van energiedragers naar warmte en elektriciteit zijn niet meegenomen, maar
+        voor omzettingen naar bijvoorbeeld cokes en cokes gas wel."
+    impact_of_climate_on_heat_and_cooling_demand_households_and_buildings:
+      short_content: Warmte- en koudevraag van huishoudens en gebouwen
+      content: 'Deze grafiek laat zien hoe de vraag naar verwarming en koeling van
+        huishoudens en gebouwen verandert in de toekomst, als gevolg van jouw keuzes
+        in het onderdeel ''Vraag''. '
+    fuel_chain_emissions_scaled_for_liquid_biofuels:
+      short_content: ''
+      content: "Deze grafiek toont hoeveel broeikasgassen worden uitgestoten tijdens
+        de hele levensduur van onderstaande brandstoffen. De totale uitstoot (in CO2
+        equivalenten) is opgedeeld in vier stappen: <br/><br/>\r\n1. Extractie - productie
+        van de ruwe grondstof <br/>\r\n2. Bewerken - omzetten van de grondstof in
+        de bruikbare vorm van de brandstof<br/>\r\n3. Transport - vervoeren naar de
+        locaties waar het wordt gebruikt <br/>\r\n4. Omzetten - gebruik voor bijvoorbeeld
+        het maken van warmte of elektriciteit <br/>\r\n<br/>\r\nDe laatste stap bevat
+        ook alle broeikasgassen die worden uitgestoten tijdens het verwerken of opslaan
+        van afval.\r\n<br/><br/>\r\nDe getallen en referenties die gebruikt zijn om
+        de ketenemissies \\te kwantificeren zijn te vinden in een document dat je
+        hiervandaan kunt <a href='http://refman.et-model.com/publications/1623' target='blank'>downloaden</a>."
+    plant_profitability:
+      short_content: ''
+      content: ''
+    chp_properties:
+      short_content: ''
+      content: "Deze tabel geeft een overzicht van alle geïnstalleerde WKK in je toekomstscenario.
+        De kolommen bevatten (van links naar rechts) de naam, het aantal, de productie
+        van elektriciteit, de productie van warmte en het geïnstalleerde (elektrische)
+        vermogen van WKK.\r\n"
+    investment_table:
+      short_content: ''
+      content: 'Deze tabel geeft een overzicht van de investeringskosten van warmte-
+        en elektriciteit producerende technologieën. De investeringskosten worden
+        getoond voor zowel het startscenario (2010) als het toekomstscenario. In beide
+        gevallen wordt een ''green-field'' aanpak gebruikt: er wordt aangenomen dat
+        er eerder geen technologieën zijn geïnstalleerd. De laatste kolom laat het
+        verschil zien tussen de investeringskosten voor de twee scenarios. '
+    energy_storage:
+      short_content: Deze grafiek geeft een impressie hoe de kosten van conversietechnologieën
+        zich tot elkaar verhouden en op welk moment het economisch rendabel wordt
+        om de eerste conversie-eenheden te bouwen.
+      content: "Deze grafiek geeft een indicatie van hoe de kosten van een aantal
+        conversie technologieën zich tot elkaar verhouden en vanaf welk punt het economisch
+        interessant zou kunnnen worden om conversie eenheden te bouwen.\r\n\r\n<br/><br/>\r\n\r\nDe
+        <b>x-as</b> van de grafiek toont het totaal geïnstalleerd vermogen van wind-
+        en zonne-energie. Als dit vermogen hoger komt te liggen dan ~15GW, zullen
+        in Nederland de eerste momenten met een overschot aan elektriciteit zich voordoen.
+        De <b>y-as</b> heeft als eenheid € / MWh. In het geval van windturbines verwijst
+        dit naar de <i>huidige</i> kosten van de totale elektriciteit productie van
+        wind turbines op land, zoals te zien in <a href=\"/scenario/costs/wind/investment\">'Windmolens'
+        sectie van Kosten</a>. \r\n\r\nIn het geval van opslag en conversie technologie
+        geeft de y-as een indicatie van de kosten om bruikbare energie te leveren
+        door de conversie van overtollige elektriciteit.\r\n\r\n<br/><br/>\r\n\r\nDe
+        stippellijn laat zien hoeveel volatiel vermogen jij in jouw scenario hebt
+        opgesteld (als je geen lijn ziet heb je meer dan 120GW opgesteld). Deze lijn
+        is het enige dat beïnvloed wordt door jouw slider instellingen.\r\n\r\n<br/><br/>\r\n\r\nOm
+        de curves in deze grafiek te genereren hebben wij een heel aantal aannames
+        gedaan, de belangrijkste zijn:\r\n\r\n<ul style=\"overflow: hidden\">\r\n\r\n<li>Overtollige
+        elektriciteit wordt niet geëxporteerd, maar opgeslagen, omgezet of vermeden
+        door het uitschakelen van wind- en/of zonne-energie. </li>\r\n<li>De verhouding
+        van het geïnstalleerde wind en zon vermogen is vastgezet op de verhouding
+        in 2010. </li>\r\n<li>Al het andere blijft hetzelfde; de grafiek reageert
+        niet op je slider instellingen. </li>\r\n<li>Slechts de marginale kosten worden
+        weergegeven; in andere woorden de curves representeren de kosten om een eerste
+        conversie eenheid of een extra wind turbine te plaatsen.</li>\r\n<li>Toekomstige
+        kostendalingen van de verschillende technologieën worden niet in ogenschouw
+        genomen (leereffecten en schaalvoordelen).</li>\r\n</ul> \r\n\r\nVoor een
+        gedetailleerde uitleg en een complete lijst van aannames, kunt u onze <a href=\"https://github.com/quintel/documentation/blob/master/general/storage.md\"
+        target =\"_blank\">documentatie</a> bekijken. "
+    population_residences_overview:
+      short_content: Deze tabel toont het aantal inwoners, het aantal huishoudens
+        en het gemiddelde aantal inwoners per huishouden.
+      content: Deze tabel toont het aantal inwoners, het aantal huishoudens en het
+        gemiddelde aantal inwoners per huishouden.
+    final_demand_mekko_mece:
+      short_content: ''
+      content: "Dit gedeelte vergelijkt het eindgebruik van energie (horizontale as)
+        in jouw land voor nu en in de toekomst, opgesplitst naar sector en energiedrager
+        (verticale as). Een energiedrager is een nuttige vorm van energie, zoals benzine
+        of elektriciteit bijvoorbeeld. Eindgebruik betekent dat we verloren energie
+        niet meerekenen bij het maken van de drager. \r\n<br/><br/>\r\n\r\nDe toekomstgrafiek
+        is het resultaat van jouw keuzes bij het onderdeel 'Vraag'.\r\n<br/><br/>\r\n\r\nVoorbeeld:
+        Sterke groei van de economie geeft aanleiding tot een hoger energieverbruik.
+        Besparingen en moderne technieken leiden tot een lager energieverbruik. Keuzes
+        voor warmtepompen, en elektrisch vervoer geven aanleiding tot lager totaal
+        energieverbruik maar wel een hoger percentage elektriciteit binnen het totaal.
+        Hoe jij verderop de elektriciteit opwekt, bepaalt uiteindelijk de totale primaire
+        energiebesparing.\r\n\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven
+        de grafiek om andere grafieken te tonen over energiegebruik.\r\n"
+    import_export_capacity:
+      short_content: ''
+      content: ''
+    import_export_renewables:
+      short_content: ''
+      content: ''
+    import_export_flows:
+      short_content: ''
+      content: "Deze grafiek toont de interconnectie capaciteit tussen Nederland,
+        Duitsland, Frankrijk en België.\r\nHoge pieken in import en export van elektriciteit
+        kunnen beter worden opgevangen als de interconnectie capaciteit groot is,
+        wat een positief effect heeft op de prijsconvergentie in de verbonden landen.\r\n<br><br>\r\nNB:
+        de interconnector tussen België en Frankrijk is asymmetrisch."
+    use_of_final_demand_in_industry_chemical_detailed:
+      short_content: Chemische industrie
+      content: "Deze grafiek toont hoe de energievraag van de chemische industrie
+        gaat veranderen als gevolg van jouw keuzes. Industrieel energiegebruik wordt
+        vooral bepaald door de groei van de sector en investeringen in energiebesparende
+        technologieën.\r\n<br /><br />\r\nDeze grafiek toont eindgebruik van energie,
+        dus verliezen bij de omzetting van energiedragers naar warmte en elektriciteit
+        zijn niet meegenomen. \r\nNiet-energetisch gebruik is het gebruik van energiedragers
+        om chemische producten te maken. Zo wordt olie gebruikt voor het produceren
+        van plastics en kan aardgas gebruikt worden voor de productie van kunstmest.\r\n<br
+        /><br />\r\nKies 'Wijzig grafiek' boven de grafiek om andere grafieken te
+        tonen over industrieel energiegebruik."
+    import_export_cwe:
+      short_content: ''
+      content: "Deze grafiek toont de 'day-ahead' prijs van elektriciteit voor de
+        Centraal West Europese (CWE) landen (BE, DE, FR, LU en NL) voor de maand januari
+        in 2014 zoals gepubliceerd op <a href=\"http://www.apxgroup.com/market-results/cwe/\"
+        target=\"_blank\">http://www.apxgroup.com/market-results/cwe</a>.\r\n<br/><br/>\r\nDe
+        prijsconvergentie (hoe vaak prijzen gelijk zijn) is een maat voor het succes
+        van de marktkoppeling. De koppeling wordt geholpen door meer interconnectiecapaciteit
+        tussen landen en door slimmere marktmechanismen in te zetten.\r\n"
+    production_curve_coal:
+      short_content: ''
+      content: ''
+    production_curve_crude_oil:
+      short_content: ''
+      content: ''
+    production_curve_natural_gas:
+      short_content: ''
+      content: ''
+    production_curve_uranium:
+      short_content: ''
+      content: ''
+    co2_of_electricity_production:
+      short_content: ''
+      content: ''
+    use_of_excess_electricity:
+      short_content: ''
+      content: Het ETM kent een aantal flexibiliteitstechnologieën die goed kunnen
+        omgaan met elektriciteitsoverschotten uit windmolens en zonnepanelen. Deze
+        grafiek toont hoeveel elektriciteit door de verschillende opties wordt gebruikt
+        in jouw scenario. Via het Flexibiliteit menu kun je bepalen hoeveel van elke
+        technologie je in jouw scenario wilt inzetten.
+    storage_options:
+      short_content: ''
+      content: "Het ETM kent een aantal flexibiliteitstechnologieën die goed kunnen
+        omgaan met elektriciteitsoverschotten uit windmolens en zonnepanelen. Deze
+        tabel toont het totale geïnstalleerde vermogen van elk van deze technologieën
+        in jouw scenario; dit bepaald hoeveel elektriciteit je op elk moment kunt
+        opslaan of omzetten. Verder toont de tabel het totale volume dat beschikbaar
+        is voor opslag en conversie. Tenslotte toont de tabel hoeveel elektriciteit
+        op jaarbasis wordt gebruikt door de verschillende opties; zowel in PJ als
+        in TWh.\r\n</br></br>\r\nVia het Flexibiliteit menu kun je bepalen hoeveel
+        van elke technologie je in jouw scenario wilt inzetten."
+    mekko_of_primary_co2:
+      short_content: ''
+      content: "Deze 'Mekko' grafiek laat de CO<sub>2</sub> uitstoot van de verschillende
+        sectoren in het ETM zien uitgesplitst naar de energiedragers in eindgebruik.
+        Voor elke energiedrager worden transformatie- en transportverliezen meegenomen.
+        \r\n<br><br>\r\nDe CO<sub>2</sub> uitstoot van elektriciteit in de huishoudens-sector
+        wordt bijvoorbeeld berekend door alle omzettingen terug te traceren totdat
+        we bij de primaire energiedragers zoals aardolie en kolen uitkomen."
+    mekko_of_primary_demand_of_biomass:
+      short_content: ''
+      content: Deze 'Mekko' grafiek toont het gebruik van primaire biobrandstoffen
+        voor de sectoren van het ETM.
+    mekko_of_bio_footprint:
+      short_content: ''
+      content: ''
+    investment_electric_cars:
+      short_content: Deze grafiek toont de gemiddelde aanschafprijs exclusief belastingen
+        voor elektrische auto's en auto's met verbrandingsmotoren. De laatstgenoemde
+        is een referentie benzine auto.
+      content: Deze grafiek toont de gemiddelde aanschafprijs exclusief belastingen
+        voor elektrische auto's en auto's met verbrandingsmotoren. Laatstgenoemde
+        zijn gebaseerd op de referentie benzine auto zoals bepaald in TNO's rapport
+        "Natural Gas in Transport" van 2013.
+    merit_order_price_curve:
+      short_content: ''
+      content: Het ETM berekent de elektriciteitsmix op uurbasis afhankelijk van de
+        elektriciteitsvraag en de geïnstalleerde vermogens van alle elektriciteitsproducerende
+        technologieën. De merit order bepaalt de volgorde waarin deze technologieën
+        worden ingeschakeld. De prijs op uurbasis is gelijk aan de draaikosten van
+        de duurste centrale die op dat moment draait.
+    merit_order_hourly_supply:
+      short_content: ''
+      content: Het ETM berekent de elektriciteitsmix op uurbasis afhankelijk van de
+        elektriciteitsvraag en de geïnstalleerde vermogens van alle elektriciteitsproducerende
+        technologieën. De merit order bepaalt de volgorde waarin deze technologieën
+        worden ingeschakeld. Volatiele bronnen van elektriciteit en must-run technologieën
+        worden niet meegenomen in de merit order. Deze grafiek toont de elektriciteitsmix
+        op uurbasis.
+    merit_order_hourly_flexibility:
+      short_content: ''
+      content: Het ETM houdt op uurbasis bij of er elektriciteitsoverschotten zijn
+        en hoe deze worden ingezet.
+    merit_order_excess_events:
+      short_content: ''
+      content: Als gevolg van de grote inzet van volatiele vormen van elektriciteitsproductie
+        kan het aanbod van elektriciteit de vraag overstijgen. Het ETM houdt het aantal
+        opeenvolgende uren bij waarop dit het geval is in jouw scenario. Wanneer je
+        flexibiliteitsopties inzet in je scenario zal het aantal uren met elektriciteitsoverschotten
+        afnemen.
+    mekko_of_detailed_final_demand_in_industry:
+      short_content: ''
+      content: "Deze grafiek toont hoe de energievraag van de industrie gaat veranderen
+        als gevolg van jouw keuzes. Dit wordt vooral bepaald door de groei van de
+        sector en investeringen in energiebesparende technologieën. \r\n</br></br>\r\nDeze
+        grafiek toont eindgebruik van energie en sommige omzetverliezen. Verliezen
+        bij de omzetting van energiedragers naar warmte en elektriciteit zijn niet
+        meegenomen, maar voor omzettingen naar bijvoorbeeld cokes en cokes gas wel.\r\n\r\n"
+    mekko_of_detailed_final_demand_in_industry_energetic:
+      short_content: ''
+      content: "Deze grafiek toont hoe de energievraag van de industrie gaat veranderen
+        als gevolg van jouw keuzes. Dit wordt vooral bepaald door de groei van de
+        sector en investeringen in energiebesparende technologieën. \r\n</br></br>\r\nDeze
+        grafiek toont eindgebruik van energie en sommige omzetverliezen. Verliezen
+        bij de omzetting van energiedragers naar warmte en elektriciteit zijn niet
+        meegenomen, maar voor omzettingen naar bijvoorbeeld cokes en cokes gas wel."
+    use_of_final_demand_in_industry_chemical_refineries:
+      short_content: ''
+      content: "Deze grafiek toont hoe de energievraag van de raffinaderijen gaat
+        veranderen als gevolg van jouw keuzes. Industrieel energiegebruik wordt vooral
+        bepaald door de groei van de sector en investeringen in energiebesparende
+        technologieën. \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie,
+        dus verliezen bij de omzetting van energiedragers naar warmte en elektriciteit
+        zijn niet meegenomen. <br/> \r\nNiet-energetisch gebruik is het gebruik van
+        energiedragers (zoals olie) om bijvoorbeeld producten als kunstmest of smeermiddelen
+        te maken.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de grafiek om
+        andere grafieken te tonen over industrieel energiegebruik."
+    use_of_final_demand_in_industry_other_paper:
+      short_content: ''
+      content: "Deze grafiek toont hoe de energievraag van de papierindustrie gaat
+        veranderen als gevolg van jouw keuzes. Industrieel energiegebruik wordt vooral
+        bepaald door de groei van de sector en investeringen in energiebesparende
+        technologieën. \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie,
+        dus verliezen bij de omzetting van energiedragers naar warmte en elektriciteit
+        zijn niet meegenomen. <br/> \r\nNiet-energetisch gebruik is het gebruik van
+        energiedragers (zoals olie) om bijvoorbeeld producten als kunstmest of smeermiddelen
+        te maken.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de grafiek om
+        andere grafieken te tonen over industrieel energiegebruik."
+    use_of_final_demand_in_industry_chemical_other:
+      short_content: ''
+      content: "Deze grafiek toont hoe de energievraag van de chemische industrie
+        gaat veranderen als gevolg van jouw keuzes. Industrieel energiegebruik wordt
+        vooral bepaald door de groei van de sector en investeringen in energiebesparende
+        technologieën. \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie,
+        dus verliezen bij de omzetting van energiedragers naar warmte en elektriciteit
+        zijn niet meegenomen. <br/> \r\nNiet-energetisch gebruik is het gebruik van
+        energiedragers (zoals olie) om bijvoorbeeld producten als kunstmest of smeermiddelen
+        te maken.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de grafiek om
+        andere grafieken te tonen over industrieel energiegebruik."
+    use_of_final_demand_in_industry_other_food:
+      short_content: ''
+      content: "Deze grafiek toont hoe de energievraag van de voedingsmiddelenindustrie
+        gaat veranderen als gevolg van jouw keuzes. Industrieel energiegebruik wordt
+        vooral bepaald door de groei van de sector en investeringen in energiebesparende
+        technologieën. \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie,
+        dus verliezen bij de omzetting van energiedragers naar warmte en elektriciteit
+        zijn niet meegenomen. <br/> \r\nNiet-energetisch gebruik is het gebruik van
+        energiedragers (zoals olie) om bijvoorbeeld producten als kunstmest of smeermiddelen
+        te maken.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de grafiek om
+        andere grafieken te tonen over industrieel energiegebruik."
+    use_of_final_demand_in_industry_chemical_fertilizers:
+      short_content: ''
+      content: "Deze grafiek toont hoe de energievraag van de kunstmestsector gaat
+        veranderen als gevolg van jouw keuzes. Industrieel energiegebruik wordt vooral
+        bepaald door de groei van de sector en investeringen in energiebesparende
+        technologieën. \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie,
+        dus verliezen bij de omzetting van energiedragers naar warmte en elektriciteit
+        zijn niet meegenomen. <br/> \r\nNiet-energetisch gebruik is het gebruik van
+        energiedragers (zoals olie) om bijvoorbeeld producten als kunstmest of smeermiddelen
+        te maken.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de grafiek om
+        andere grafieken te tonen over industrieel energiegebruik."
+    use_of_final_demand_in_industry_other:
+      short_content: ''
+      content: "Deze grafiek toont hoe de energievraag van de overige industrie gaat
+        veranderen als gevolg van jouw keuzes. Industrieel energiegebruik wordt vooral
+        bepaald door de groei van de sector en investeringen in energiebesparende
+        technologieën. \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie,
+        dus verliezen bij de omzetting van energiedragers naar warmte en elektriciteit
+        zijn niet meegenomen. <br/> \r\nNiet-energetisch gebruik is het gebruik van
+        energiedragers (zoals olie) om bijvoorbeeld producten als kunstmest of smeermiddelen
+        te maken.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de grafiek om
+        andere grafieken te tonen over industrieel energiegebruik."
+    use_of_final_demand_in_industry_chemical:
+      short_content: ''
+      content: ''
+    co2_emissions_biomass:
+      short_content: CO2 biomassa
+      content: "Welk deel van de CO<sub>2</sub>-uitstoot van biomassa relevant is
+        voor het klimaat is in grote mate onzeker en speculatief. Deze grafiek dient
+        om te verkennen hoe groot deze uitstoot (potentieel) is.\r\n<p>\r\nDeze grafiek
+        toont naast de volgens officiële UNFCCC administratie uitgestoten CO<sub>2</sub>
+        ook het deel van de CO<sub>2</sub>-uitstoot veroorzaakt door verbranding van
+        biomassa dat relevant is voor klimaatverandering. Met behulp van de sliders
+        in de \"CO<sub>2</sub> biomass\" sectie kan ingesteld worden welk deel van
+        de CO<sub>2</sub>-uitstoot van biomassa wordt weergegeven.\r\n<p>\r\nDeze
+        grafiek toont alleen binnenlandse, energetische CO<sub>2</sub>-uitstoot. Niet-energetische
+        emissies van CO<sub>2</sub> zijn niet meegenomen. Deze emissies zijn gerelateerd
+        aan processen waarbij het eindproduct geen bruikbare energie (zoals elektriciteit
+        of warmte) oplevert. Een voorbeeld van niet-energetische uitstoot van CO<sub>2</sub>
+        is de CO<sub>2</sub> die opgesloten zit in cement en vrijkomt bij het maken
+        ervan. De emissies die vrijkomen bij het produceren van de energie die nodig
+        is om cement te maken tellen overigens wel mee als energetische CO<sub>2</sub>
+        emissies.\r\n<br/><br/>\r\nLet op: Als de Ketenanalyse-module is ingeschakeld
+        toont deze grafiek ook andere broeikasgassen als methaan (CH<sub>4</sub>)
+        of lachgas (N<sub>2</sub>O) die gerelateerd zijn aan de brandstofproductieketen.
+        Niet-energetische emissies en broeikasgassen die ongerelateerd zijn aan de
+        brandstofproductieketen worden niet getoond."
+    use_of_final_demand_in_industry_other_ict:
+      short_content: ''
+      content: "Deze grafiek toont hoe de energievraag van de centrale ICT-sector
+        gaat veranderen als gevolg van jouw keuzes. Industrieel energiegebruik wordt
+        vooral bepaald door de groei van de sector en investeringen in energiebesparende
+        technologieën. \r\n<br/><br/>\r\nDeze grafiek toont eindgebruik van energie,
+        dus verliezen bij de omzetting van energiedragers naar warmte en elektriciteit
+        zijn niet meegenomen. <br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de
+        grafiek om andere grafieken te tonen over industrieel energiegebruik."
+    refinery:
+      short_content: ''
+      content: ''
+    co2_sankey:
+      short_content: ''
+      content: ''
+    relative_primary_co2:
+      short_content: ''
+      content: ''
+    relative_primary_demand_of_coal_oil_and_gas:
+      short_content: ''
+      content: ''
+    dynamic_demand_curve:
+      short_content: ''
+      content: "Deze grafiek toont de impact van keuzes over vraag en inzet van technologieën
+        op de hoogte en vorm van de totale elektriciteitsvraag op hoogspanningsniveau
+        (rode lijn).\r\n<br>\r\n<br>\r\nVoor de volgende technologieën en keuzes wordt
+        de impact op de vraagcurve expliciet getoond:\r\n<ul>\r\n<li>elektrische ruimteverwarmingstechnologieën
+        zoals warmtepompen</li>\r\n<li>woningisolatie en warmtevraag (als elektrische
+        ruimteverwarmingstechnologieën worden ingezet)</li>\r\n<li>elektrische warm
+        watertechnologieën zoals warmtepompen</li>\r\n<li>warm watervraag (als elektrische
+        warm watertechnologieën worden ingezet)</li>\r\n<li>inzet van power-to-heat
+        (als elektrische warm watertechnologieën worden ingezet)</li>\r\n<li>marktaandeel
+        en laadstrategieën van elektrische auto's</li>\r\n</ul>\r\nVoor het overige
+        elektriciteitsgebruik van technologieën en toepassingen in het ETM word de
+        statische TenneT vraagcurve aangenomen. Dit deel wordt getoond als het witte
+        gedeelte onder de rode lijn."
+    heat_deficit:
+      short_content: ''
+      content: ''
+    household_heat_demand_and_production:
+      short_content: ''
+      content: ''
+    hydrogen_production_for_fertilizers:
+      short_content: ''
+      content: Deze grafiek geeft de waterstofproductie voor de kunstmestsector als
+        gevolg van jouw instellingen in de onderdelen 'Vraag' (omvang van de kunstmestindustrie)
+        en 'Flexibiliteit' (conversie naar gas).
+    use_of_final_demand_in_international_transport:
+      short_content: CO<sub>2</sub> emissions by international aviation
+      content: This chart shows how the amount of CO<sub>2</sub> emissions caused
+        by different aviation fuels will change as a result of the choices you make
+        in this section. The CO<sub>2</sub> emissions of fuels which are consumed
+        at international flights depends on how the aviation fuel mix consists of.
+        The more bio-fuels used the less CO<sub>2</sub> emissions are caused.
+    co2_emission_international_transportation:
+      short_content: Energy demand of international aviation
+      content: This chart shows how energy demand for international aviation will
+        change as a result of the choices you make in this section. Energy use depends
+        on how much people will use flights for international traveling.
+    kerosene_production_in_bunkers:
+      short_content: ''
+      content: ''
+    transport_categories_overview:
+      short_content: ''
+      content: ''
+    use_of_final_demand_in_passenger_transport:
+      short_content: ''
+      content: ''
+    use_of_final_demand_in_cars:
+      short_content: ''
+      content: ''
+    use_of_final_demand_in_motorcycles_and_bicycles:
+      short_content: ''
+      content: ''
+    use_of_final_demand_in_planes:
+      short_content: ''
+      content: ''
+    use_of_final_demand_in_busses_trains_and_trams:
+      short_content: ''
+      content: ''
+    use_of_final_demand_in_freight_transport_technologies:
+      short_content: ''
+      content: ''
+    use_of_final_demand_in_freight_transport:
+      short_content: ''
+      content: ''
+    international_transport_categories_overview:
+      short_content: ''
+      content: Deze grafiek laat het finale eindgebruik zien van internationale scheepvaart
+        en luchtvaart.
+    carbon_balance:
+      short_content: ''
+      content: ''
+    renewable_electricity:
+      short_content: ''
+      content: Deze grafiek toont het aandeel van verschillende hernieuwbare elektriciteitsbronnen
+        in de huidige en toekomstige scenario's.
+    households_final_demand_per_application:
+      short_content: Huishoudelijk, naar toepassing
+      content: "Deze grafiek toont hoe de huishoudelijke finale vraag naar energie
+        verandert als gevolg van de keuzes en aannames die je in dit onderdeel maakt.
+        \r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' om andere grafieken te tonen
+        over energiegebruik."
+    mekko_of_hydrogen_network:
+      short_content: ''
+      content: ''
+    transport_fuel_costs_overview:
+      short_content: ''
+      content: ''
+    electricity_network_load:
+      short_content: ''
+      content: ''
+    electricity_lv_network_load:
+      short_content: ''
+      content: ''
+    electricity_mv_network_load:
+      short_content: ''
+      content: ''
+    electricity_hv_network_load:
+      short_content: ''
+      content: ''
+    lv_demand_curves:
+      short_content: ''
+      content: ''
+    mv_demand_curves:
+      short_content: ''
+      content: ''
+    hv_demand_curves:
+      short_content: ''
+      content: ''
+    electricity_network_capacity_and_peaks:
+      short_content: ''
+      content: ''
+    final_demand_mekko_energetic_mece:
+      short_content: ''
+      content: ''
+    hydrogen_storage:
+      short_content: ''
+      content: ''
+    buildings_heat_demand_and_production:
+      short_content: ''
+      content: ''
+    final_energy_demand_per_sector_percentage:
+      short_content: ''
+      content: ''
+    final_energy_demand_per_sector_joule:
+      short_content: ''
+      content: ''
+    biomass_sankey:
+      short_content: ''
+      content: "Deze flowchart laat de biomassastromen zien in dit gebied. Aan de
+        linkerkant zijn de primaire biomassabronnen te zien en hun herkomst (lokaal
+        of import). In het midden van de grafiek zie je de omzetting van deze biomassabronnen
+        in andere energiedragers, zoals groengas, biobrandstoffen, elektriciteit en
+        warmte. Aan de rechterkant zie je ten slotte in welke sectoren de energie
+        gebruikt wordt. \r\n<br/>\r\nAls je met je muis over de grafiek gaat, zie
+        je verschillende onderdelen oplichten en kun je meer informatie krijgen."
+    greengas_costs:
+      short_content: ''
+      content: ''
+    network_gas_demand:
+      short_content: ''
+      content: ''
+    network_gas_production:
+      short_content: ''
+      content: ''
+    network_gas_storage:
+      short_content: ''
+      content: ''
+    collective_heat_mekko:
+      short_content: ''
+      content: ''
+    heat_network_demand:
+      short_content: ''
+      content: ''
+    heat_network_production:
+      short_content: ''
+      content: ''
+    heat_network_storage:
+      short_content: ''
+      content: ''
+    heat_cost_capacity:
+      short_content: ''
+      content: ''

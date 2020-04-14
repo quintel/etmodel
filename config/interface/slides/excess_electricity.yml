@@ -6,10 +6,10 @@
   subheader_image: ''
   key: flexibility_flexibility_excess
   position: 11
-  output_element_id: 143
-  alt_output_element_id: 143
   dependent_on: _always_hidden
   sidebar_item_key: excess_electricity
+  alt_output_element_key: energy_storage
+  output_element_key: energy_storage
 - id: 169
   image: ''
   general_sub_header: ''
@@ -17,10 +17,10 @@
   subheader_image: ''
   key: flexibility_flexibility_wind_cost
   position: 12
-  output_element_id: 143
-  alt_output_element_id: 143
   dependent_on: _always_hidden
   sidebar_item_key: excess_electricity
+  alt_output_element_key: energy_storage
+  output_element_key: energy_storage
 - id: 194
   image: ''
   general_sub_header: ''
@@ -28,7 +28,7 @@
   subheader_image: ''
   key: flexibility_flexibility_flexibility_order
   position: 1
-  output_element_id: 173
-  alt_output_element_id: 164
   dependent_on: ''
   sidebar_item_key: excess_electricity
+  alt_output_element_key: storage_options
+  output_element_key: merit_order_hourly_flexibility

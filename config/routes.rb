@@ -13,7 +13,6 @@ Etm::Application.routes.draw do
   get 'login'  => 'user_sessions#new', as: :login
   get 'logout' => 'user_sessions#destroy', as: :logout
 
-  resources :descriptions, only: :show
   get '/descriptions/charts/:id' => 'descriptions#charts'
 
   resources :user_sessions
@@ -96,14 +95,16 @@ Etm::Application.routes.draw do
   get '/scenario/myc/:id' => 'scenarios#play_multi_year_charts'
   get '/scenario(/:tab(/:sidebar(/:slide)))' => 'scenarios#play', as: :play
 
-  resources :output_elements, only: %i[index show] do
-    collection do
-      get 'visible/:id',   action: :visible
-      get 'invisible/:id', action: :invisible
-      get 'batch/:ids',    action: :batch
+  resources :output_elements, param: :key, only: %i[index show] do
+    member do
+      get :visible
+      get :invisible
+      get :zoom
     end
 
-    get :zoom, on: :member
+    collection do
+      get 'batch/:keys',    action: :batch
+    end
   end
 
   get '/input_elements/by_slide' => 'input_elements#by_slide'

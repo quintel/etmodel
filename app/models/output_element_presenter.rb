@@ -5,7 +5,6 @@ class OutputElementPresenter
   # which case the appropriate method is called on the element, or a block which
   # into which the element will be passed.
   ATTRIBUTES = {
-    id: true,
     type: ->(oe) { oe.output_element_type.name },
     percentage: ->(oe) { oe.percentage == true },
     unit: true,
@@ -17,9 +16,9 @@ class OutputElementPresenter
     growth_chart: true,
     key: true,
     under_construction: true,
-    related_id: ->(oe) { oe.related_output_element&.id },
+    related_id: ->(oe) { oe.related_output_element&.key },
     has_description: ->(oe) { oe.has_description? },
-    requires_merit_order: ->(oe) { oe.requires_merit_order? }
+    requires_merit_order: ->(oe) { oe.requires_merit_order }
   }.freeze
 
   # Public: Presents a single element as a JSON-compatible Hash.

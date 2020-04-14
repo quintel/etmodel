@@ -6,10 +6,10 @@
   subheader_image: ''
   key: flexibility_electricity_import_export_markets
   position: 2
-  output_element_id: 156
-  alt_output_element_id: 
   dependent_on: _always_hidden
   sidebar_item_key: electricity_import_export
+  alt_output_element_key:
+  output_element_key: import_export_cwe
 - id: 173
   image: ''
   general_sub_header: ''
@@ -17,10 +17,10 @@
   subheader_image: ''
   key: flexibility_electricity_import_export_edp
   position: 3
-  output_element_id: 149
-  alt_output_element_id: 149
   dependent_on: _always_hidden
   sidebar_item_key: electricity_import_export
+  alt_output_element_key: import_export_flows
+  output_element_key: import_export_flows
 - id: 174
   image: ''
   general_sub_header: ''
@@ -28,10 +28,10 @@
   subheader_image: ''
   key: flexibility_electricity_import_export_interconnectors
   position: 4
-  output_element_id: 99
-  alt_output_element_id: 147
   dependent_on: _always_hidden
   sidebar_item_key: electricity_import_export
+  alt_output_element_key: import_export_capacity
+  output_element_key: source_of_electricity_production
 - id: 175
   image: ''
   general_sub_header: ''
@@ -39,10 +39,10 @@
   subheader_image: ''
   key: flexibility_electricity_import_export_renewables
   position: 5
-  output_element_id: 148
-  alt_output_element_id: 
   dependent_on: _always_hidden
   sidebar_item_key: electricity_import_export
+  alt_output_element_key:
+  output_element_key: import_export_renewables
 - id: 187
   image: ''
   general_sub_header: ''
@@ -50,10 +50,10 @@
   subheader_image: ''
   key: flexibility_electricity_import_export_interconnectivity
   position: 1
-  output_element_id: 164
-  alt_output_element_id: 164
   dependent_on: ''
   sidebar_item_key: electricity_import_export
+  alt_output_element_key: storage_options
+  output_element_key: storage_options
 - id: 236
   image: ''
   general_sub_header: ''
@@ -61,7 +61,7 @@
   subheader_image: ''
   key: flexibility_electricity_import_export_properties
   position: 1
-  output_element_id: 46
-  alt_output_element_id: 
   dependent_on: ''
   sidebar_item_key: electricity_import_export
+  alt_output_element_key:
+  output_element_key: co2_emissions

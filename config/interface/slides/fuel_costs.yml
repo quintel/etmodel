@@ -6,10 +6,10 @@
   subheader_image: ''
   key: costs_combustion_fuel
   position: 1
-  output_element_id: 32
-  alt_output_element_id: 32
   dependent_on: ''
   sidebar_item_key: fuel_costs
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production
 - id: 21
   image: ''
   general_sub_header: change
@@ -17,10 +17,10 @@
   subheader_image: ''
   key: costs_nuclear_fuel
   position: 1
-  output_element_id: 32
-  alt_output_element_id: 32
   dependent_on: ''
   sidebar_item_key: fuel_costs
+  alt_output_element_key: overview_costs_of_electricity_production
+  output_element_key: overview_costs_of_electricity_production
 - id: 269
   image: ''
   general_sub_header: price
@@ -28,7 +28,7 @@
   subheader_image: ''
   key: costs_bio_fuel
   position: 2
-  output_element_id: 244
-  alt_output_element_id: 
   dependent_on: ''
   sidebar_item_key: fuel_costs
+  alt_output_element_key:
+  output_element_key: greengas_costs

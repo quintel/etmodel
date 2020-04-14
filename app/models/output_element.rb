@@ -49,6 +49,7 @@ class OutputElement < YModel::Base
   index_on :key
   has_many :output_element_series
   belongs_to :output_element_type
+  has_many :slides
 
   # Charts may link to other charts to provide a user with additional insight.
   belongs_to :related_output_element, class_name: 'OutputElement'
@@ -153,9 +154,5 @@ class OutputElement < YModel::Base
     else
       'output_elements/block_chart'
     end
-  end
-
-  def slides
-    Slide.where(output_element_key: key)
   end
 end

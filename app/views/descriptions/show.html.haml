@@ -1,18 +1,11 @@
 #overlay_container
-  - if @description.title
-    %h1= raw t(@description.title)
+  %h1= I18n.t(@chart.title_for_description)
 
   %p
-    - if @description.content
-      = raw @description.content
-    - else
-      %small (Nederlandse tekst nog niet beschikbaar)
-      %br
-      = raw @description.content_en
-
+    = raw @chart.description
     %div{:style => 'clear:both'} &nbsp;
 
-- if @description.embeds_player?
+- if @chart.description_embeds_player?
   %script flowplayer("player", "/flash/flowplayer-3.2.6.swf");
 
 

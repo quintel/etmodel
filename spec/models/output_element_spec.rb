@@ -1,28 +1,30 @@
 require 'rails_helper'
 
 describe OutputElement do
-  context 'a chart with a relatee' do
-    let(:output_element) do
-      FactoryBot.create(:output_element)
-    end
+  subject { described_class.new }
 
-    let!(:relatee) do
-      FactoryBot.create(:output_element, related_output_element: output_element)
+  # Using an input element here that has some relatees
+  let(:output_element) do
+    described_class.find('household_heat_demand_and_production')
+  end
+
+  it { is_expected.to respond_to(:output_element_series) }
+
+  it 'contains series' do
+    expect(output_element.output_element_series).not_to be_empty
+  end
+
+  context 'with a relatee output_element' do
+    let(:relatee) do
+      described_class.find('source_of_heat_used_in_households')
     end
 
     it 'has one related output element' do
-      expect(output_element.relatee_output_elements).to eq([relatee])
+      expect(output_element.relatee_output_elements).to include relatee
     end
 
     it 'has an association between relatee and output element' do
       expect(relatee.related_output_element).to eq(output_element)
-    end
-
-    it 'nullifies the relatee related_output_element_id when deleted' do
-      expect { output_element.destroy }
-        .to change { relatee.reload.related_output_element_id }
-        .from(output_element.id)
-        .to(nil)
     end
   end
 end

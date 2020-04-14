@@ -6,10 +6,10 @@
   subheader_image: ''
   key: demand_buildings_demand_growth
   position: 10
-  output_element_id: 68
-  alt_output_element_id: 68
   dependent_on: ''
   sidebar_item_key: buildings
+  alt_output_element_key: use_of_final_demand_in_buildings
+  output_element_key: use_of_final_demand_in_buildings
 - id: 114
   image: building_insulation.gif
   general_sub_header: heat_demand_reduction
@@ -17,21 +17,21 @@
   subheader_image: buildings_insulation_energy_label.png
   key: demand_buildings_insulation
   position: 2
-  output_element_id: 68
-  alt_output_element_id: 69
   dependent_on: ''
   sidebar_item_key: buildings
+  alt_output_element_key: effect_of_insulation_in_buildings
+  output_element_key: use_of_final_demand_in_buildings
 - id: 115
   image: building_heating_uncapped.gif
   general_sub_header: share
-  group_sub_header: 
-  subheader_image: 
+  group_sub_header:
+  subheader_image:
   key: demand_buildings_heating
   position: 3
-  output_element_id: 70
-  alt_output_element_id: 70
-  dependent_on: 
+  dependent_on:
   sidebar_item_key: buildings
+  alt_output_element_key: source_of_heat_in_buildings
+  output_element_key: source_of_heat_in_buildings
 - id: 116
   image: building_cooling_uncapped.gif
   general_sub_header: share
@@ -39,10 +39,10 @@
   subheader_image: ''
   key: demand_buildings_cooling
   position: 5
-  output_element_id: 71
-  alt_output_element_id: 71
-  dependent_on: 
+  dependent_on:
   sidebar_item_key: buildings
+  alt_output_element_key: source_of_cooling_in_buildings
+  output_element_key: source_of_cooling_in_buildings
 - id: 118
   image: building_appliances_uncapped.gif
   general_sub_header: "%/year"
@@ -50,10 +50,10 @@
   subheader_image: ''
   key: demand_buildings_appliances
   position: 7
-  output_element_id: 72
-  alt_output_element_id: 72
-  dependent_on: 
+  dependent_on:
   sidebar_item_key: buildings
+  alt_output_element_key: use_of_electricity_in_buildings
+  output_element_key: use_of_electricity_in_buildings
 - id: 119
   image: building_lighting_uncapped.gif
   general_sub_header: share
@@ -61,10 +61,10 @@
   subheader_image: ''
   key: demand_buildings_lighting
   position: 8
-  output_element_id: 72
-  alt_output_element_id: 72
-  dependent_on: 
+  dependent_on:
   sidebar_item_key: buildings
+  alt_output_element_key: use_of_electricity_in_buildings
+  output_element_key: use_of_electricity_in_buildings
 - id: 121
   image: building_decentral_uncapped.gif
   general_sub_header: "% of potential"
@@ -72,7 +72,7 @@
   subheader_image: ''
   key: demand_buildings_solar_panels
   position: 9
-  output_element_id: 74
-  alt_output_element_id: 74
-  dependent_on: 
+  dependent_on:
   sidebar_item_key: buildings
+  alt_output_element_key: source_of_electricity_in_buildings
+  output_element_key: source_of_electricity_in_buildings

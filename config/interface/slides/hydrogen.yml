@@ -6,10 +6,10 @@
   subheader_image: ''
   key: supply_hydrogen_production
   position: 1
-  output_element_id: 214
-  alt_output_element_id: 225
   dependent_on: ''
   sidebar_item_key: hydrogen
+  alt_output_element_key: hydrogen_production
+  output_element_key: mekko_of_hydrogen_network
 - id: 240
   image: ''
   general_sub_header: ''
@@ -17,10 +17,10 @@
   subheader_image: ''
   key: supply_hydrogen_transport
   position: 3
-  output_element_id: 214
-  alt_output_element_id: 
   dependent_on: ''
   sidebar_item_key: hydrogen
+  alt_output_element_key:
+  output_element_key: mekko_of_hydrogen_network
 - id: 242
   image: ''
   general_sub_header: ''
@@ -28,10 +28,10 @@
   subheader_image: ''
   key: supply_hydrogen_co2_import
   position: 5
-  output_element_id: 46
-  alt_output_element_id: 
   dependent_on: ''
   sidebar_item_key: hydrogen
+  alt_output_element_key:
+  output_element_key: co2_emissions
 - id: 256
   image: ''
   general_sub_header: ''
@@ -39,10 +39,10 @@
   subheader_image: ''
   key: supply_hydrogen_storage
   position: 4
-  output_element_id: 227
-  alt_output_element_id: 
   dependent_on: ''
   sidebar_item_key: hydrogen
+  alt_output_element_key:
+  output_element_key: hydrogen_storage
 - id: 257
   image: ''
   general_sub_header: ''
@@ -50,7 +50,7 @@
   subheader_image: ''
   key: supply_hydrogen_demand
   position: 2
-  output_element_id: 226
-  alt_output_element_id: 
   dependent_on: ''
   sidebar_item_key: hydrogen
+  alt_output_element_key:
+  output_element_key: hydrogen_demand

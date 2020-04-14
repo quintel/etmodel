@@ -6,10 +6,10 @@
   subheader_image: ''
   key: supply_heat_network_industry
   position: 13
-  output_element_id: 251
-  alt_output_element_id: 28
   dependent_on: ''
   sidebar_item_key: industry
+  alt_output_element_key: source_of_heat_and_electricity_in_industry
+  output_element_key: industrial_heat_mekko
 - id: 160
   image: industry.gif
   general_sub_header: ''
@@ -17,10 +17,10 @@
   subheader_image: ''
   key: demand_industry_aluminium
   position: 3
-  output_element_id: 130
-  alt_output_element_id: 130
   dependent_on: has_metal
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_aluminium
+  output_element_key: use_of_final_demand_in_industry_aluminium
 - id: 161
   image: industry.gif
   general_sub_header: ''
@@ -28,10 +28,10 @@
   subheader_image: ''
   key: demand_industry_other_metals
   position: 4
-  output_element_id: 131
-  alt_output_element_id: 131
   dependent_on: ''
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_other_metals
+  output_element_key: use_of_final_demand_in_industry_other_metals
 - id: 162
   image: industry.gif
   general_sub_header: ''
@@ -39,10 +39,10 @@
   subheader_image: ''
   key: demand_industry_steel
   position: 2
-  output_element_id: 135
-  alt_output_element_id: 135
   dependent_on: has_metal
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_steel
+  output_element_key: use_of_final_demand_in_industry_steel
 - id: 179
   image: industry.gif
   general_sub_header: ''
@@ -50,10 +50,10 @@
   subheader_image: ''
   key: demand_industry
   position: 1
-  output_element_id: 178
-  alt_output_element_id: 176
   dependent_on: ''
   sidebar_item_key: industry
+  alt_output_element_key: mekko_of_detailed_final_demand_in_industry
+  output_element_key: mekko_of_detailed_final_demand_in_industry_energetic
 - id: 199
   image: ''
   general_sub_header: ''
@@ -61,10 +61,10 @@
   subheader_image: ''
   key: demand_industry_chemical_refineries
   position: 5
-  output_element_id: 190
-  alt_output_element_id: 180
   dependent_on: ''
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_chemical_refineries
+  output_element_key: refinery
 - id: 201
   image: ''
   general_sub_header: ''
@@ -72,10 +72,10 @@
   subheader_image: ''
   key: demand_industry_chemical_fertilizers
   position: 6
-  output_element_id: 184
-  alt_output_element_id: 184
   dependent_on: has_detailed_chemical_industry
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_chemical_fertilizers
+  output_element_key: use_of_final_demand_in_industry_chemical_fertilizers
 - id: 202
   image: ''
   general_sub_header: ''
@@ -83,10 +83,10 @@
   subheader_image: ''
   key: demand_industry_chemical_other
   position: 7
-  output_element_id: 182
-  alt_output_element_id: 182
   dependent_on: ''
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_chemical_other
+  output_element_key: use_of_final_demand_in_industry_chemical_other
 - id: 203
   image: ''
   general_sub_header: ''
@@ -94,10 +94,10 @@
   subheader_image: ''
   key: demand_industry_other_food
   position: 9
-  output_element_id: 183
-  alt_output_element_id: 183
   dependent_on: ''
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_other_food
+  output_element_key: use_of_final_demand_in_industry_other_food
 - id: 204
   image: ''
   general_sub_header: ''
@@ -105,10 +105,10 @@
   subheader_image: ''
   key: demand_industry_other_paper
   position: 10
-  output_element_id: 181
-  alt_output_element_id: 181
   dependent_on: ''
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_other_paper
+  output_element_key: use_of_final_demand_in_industry_other_paper
 - id: 205
   image: ''
   general_sub_header: ''
@@ -116,10 +116,10 @@
   subheader_image: ''
   key: demand_industry_aggregated_other
   position: 11
-  output_element_id: 186
-  alt_output_element_id: 186
   dependent_on: ''
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_other
+  output_element_key: use_of_final_demand_in_industry_other
 - id: 207
   image: ''
   general_sub_header: ''
@@ -127,10 +127,10 @@
   subheader_image: ''
   key: demand_industry_aggregated_chemical_other
   position: 7
-  output_element_id: 182
-  alt_output_element_id: 182
   dependent_on: _always_hidden
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_chemical_other
+  output_element_key: use_of_final_demand_in_industry_chemical_other
 - id: 211
   image: ''
   general_sub_header: ''
@@ -138,10 +138,10 @@
   subheader_image: ''
   key: demand_industry_other_ict
   position: 8
-  output_element_id: 189
-  alt_output_element_id: 189
   dependent_on: ''
   sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_other_ict
+  output_element_key: use_of_final_demand_in_industry_other_ict
 - id: 246
   image: ''
   general_sub_header: ''
@@ -149,7 +149,7 @@
   subheader_image: ''
   key: demand_industry_ccs
   position: 1
-  output_element_id: 46
-  alt_output_element_id: 
   dependent_on: has_detailed_chemical_industry
   sidebar_item_key: industry
+  alt_output_element_key:
+  output_element_key: co2_emissions

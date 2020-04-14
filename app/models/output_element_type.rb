@@ -2,20 +2,14 @@
 #
 # Table name: output_element_types
 #
-#  id         :integer          not null, primary key
 #  name       :string(255)
-#  created_at :datetime
-#  updated_at :datetime
 #
-
-class OutputElementType < ActiveRecord::Base
-  BLOCK_CHART_ID = 8 # Ugly
-  
-
-  has_many :output_elements, dependent: :nullify
+class OutputElementType < YModel::Base
+  index_on :name
+  source_file 'config/interface/output_element_types.yml'
+  has_many :output_elements
 
   def html_table?
     name == 'html_table'
   end
 end
-

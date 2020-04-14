@@ -65,7 +65,7 @@ describe Admin::ConstraintsController do
 
   describe 'PUT update with a new output element' do
     let(:constraint) { FactoryBot.create(:constraint) }
-    let(:output_element) { FactoryBot.create(:output_element) }
+    let(:output_element) { OutputElement.all.first }
 
     it 'sets the new output element' do
       running_this =

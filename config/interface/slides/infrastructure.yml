@@ -6,10 +6,10 @@
   subheader_image: ''
   key: supply_infrastructure_high_voltage_network
   position: 1
-  output_element_id: 61
-  alt_output_element_id: 61
-  dependent_on: 
+  dependent_on:
   sidebar_item_key: infrastructure
+  alt_output_element_key: additional_infrastructure_investments
+  output_element_key: additional_infrastructure_investments
 - id: 104
   image: ''
   general_sub_header: ''
@@ -17,21 +17,21 @@
   subheader_image: ''
   key: supply_infrastructure_low_medium_voltage_network
   position: 2
-  output_element_id: 61
-  alt_output_element_id: 61
-  dependent_on: 
+  dependent_on:
   sidebar_item_key: infrastructure
+  alt_output_element_key: additional_infrastructure_investments
+  output_element_key: additional_infrastructure_investments
 - id: 243
-  image: 
-  general_sub_header: 
-  group_sub_header: 
-  subheader_image: 
+  image:
+  general_sub_header:
+  group_sub_header:
+  subheader_image:
   key: costs_infrastructure_electricity
   position: 3
-  output_element_id: 61
-  alt_output_element_id: 
   dependent_on: ''
   sidebar_item_key: infrastructure
+  alt_output_element_key:
+  output_element_key: additional_infrastructure_investments
 - id: 244
   image: ''
   general_sub_header: ''
@@ -39,7 +39,7 @@
   subheader_image: ''
   key: costs_infrastructure_electricity_investement_regime
   position: 4
-  output_element_id: 
-  alt_output_element_id: 
   dependent_on: _always_hidden
   sidebar_item_key: infrastructure
+  alt_output_element_key:
+  output_element_key:

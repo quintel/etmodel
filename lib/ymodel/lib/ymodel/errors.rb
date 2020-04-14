@@ -27,7 +27,7 @@ module YModel
   class UnpermittedParamsError < YModelError
   end
 
-  class RecordNotFoundError < YModelError
+  class RecordNotFound < YModelError
   end
 
   class DuplicateIndexError < YModelError

@@ -14,7 +14,7 @@ module YModel
       define_method(model) do
         # We might want to create a mechanism to memoize this.
         related_class =
-          options[:class_name] || YModel::Helper.model_class(model)
+          YModel::Helper.model_class(options[:class_name] || model)
         key =
           if related_class < YModel::Base
             :"#{model.to_s.singularize}_#{related_class.index}"
@@ -61,7 +61,7 @@ module YModel
     private
 
     def default_foreign_key
-      name.foreign_key
+      "#{name.to_s.underscore.singularize}_#{index}"
     end
 
     def raise_options_error

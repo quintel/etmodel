@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# rubocop:disable  Metrics/BlockLength
+# rubocop:disable  Metrics/BlockLength, Style/SymbolArray, MultilineBlockChain
 namespace :ymodel do
   desc 'dump interface models of the provided class to yaml'
 
@@ -93,5 +93,84 @@ namespace :ymodel do
       File.write(file, records.to_yaml)
     end
   end
+
+  # This task is quite the mess. My guess that we wont need it often if at all.
+  # Just keeping it here in case its handy to have in the future.
+  desc 'Sort yaml files. Keep key name on top.'
+  task :sort_yaml, [:model] => [:environment] do |_t, args|
+    Kernel.const_get(args.model.camelcase).source_files.each do |file_path|
+      current_block = []
+      blocks = []
+
+      starts_with_dash =
+        lambda do |text|
+          text.match?(/^-{1} /)
+        end
+
+      strip_yaml_grammar =
+        lambda do |line|
+          line.sub(/^-{1} /, '')
+            .sub(/^ {2}/, '')
+        end
+
+      File.readlines(file_path).each do |line|
+        # empty current_block if we open up a new object.
+        if starts_with_dash.call(line)
+          blocks << current_block
+          current_block = []
+        end
+        current_block << strip_yaml_grammar.call(line)
+      end
+
+      blocks << current_block
+
+      # sort blocks
+      blocks = blocks.each_with_index.flat_map do |lines, index1|
+        next lines if index1.zero?
+
+        # Make sure the key is on the first line of the yaml object. sort the
+        # alphabetically.
+        lines =
+          lines.sort do |a, b|
+            next -1 if a =~ /^key/
+
+            next 1 if b =~ /^key/
+
+            a <=> b
+          end
+
+        # Reduce the arrays to a single yaml string
+        lines.each_with_index.map do |line, index2|
+          # Inject YAML grammar
+          index2.zero? ? "- #{line}" : "  #{line}"
+        end
+      end.reduce(&:+)
+      File.write(file_path, blocks)
+    end
+  end
+
+  desc 'Remove empty values from all yaml files that belong to a model.'
+  task :remove_empty_values, [:model] => [:environment] do |_t, args|
+    Kernel.const_get(args.model.camelcase).source_files.each do |file_path|
+      data = YAML.load_file(file_path)
+      transformed_data =
+        data.map do |record|
+          record.delete_if { |_k, v| v.blank? }
+        end
+      File.write(file_path, transformed_data.to_yaml)
+    end
+  end
+
+  desc 'Remove ids from all yaml files that belong to a model.'
+  task :remove_ids, [:model] => [:environment] do |_t, args|
+    Kernel.const_get(args.model.camelcase).source_files.each do |file_path|
+      data = YAML.load_file(file_path)
+      transformed_data =
+        data.map do |record|
+          record.delete_if { |k, _v| k == 'id' }
+        end
+      File.write(file_path, transformed_data.to_yaml)
+    end
+  end
 end
-# rubocop:enable  Metrics/BlockLength
+# rubocop:enable  Metrics/BlockLength, Style/SymbolArray, MultilineBlockChain

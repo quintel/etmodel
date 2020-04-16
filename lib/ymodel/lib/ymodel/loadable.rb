@@ -39,18 +39,20 @@ module YModel
       @index || :id
     end
 
+    def source_files
+      if compiled?
+        Dir.glob(File.join(source, '*.yml'))
+      else
+        [@source]
+      end
+    end
+
     protected
 
     # I dislike the format of this method a lot. Rubocop made me do it..
     def records
-      @records ||=
-        if compiled?
-          Dir.glob(File.join(source, '*.yml'))
-            .flat_map { |name| YAML.load_file(name) }
-        else
-          YAML.load_file(source)
-            .map(&:symbolize_keys)
-        end
+      @records ||= source_files.flat_map { |name| YAML.load_file(name) }
+        .map(&:symbolize_keys)
     end
 
     def source

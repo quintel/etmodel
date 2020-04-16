@@ -287,6 +287,14 @@ describe YModel::Compiled do
   it 'contains a record from second.yml' do
     expect(described_class.find(2)).to be_a described_class
   end
+
+  describe '.source_files' do
+    it 'returns a listing of files in the source directory' do
+      expect(described_class.source_files.to_set)
+        .to eq(['spec/fixtures/ymodel/compiled/first.yml',
+                'spec/fixtures/ymodel/compiled/second.yml'].to_set)
+    end
+  end
 end
 
 describe YModel::InvalidCompiled do

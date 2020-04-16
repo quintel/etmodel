@@ -1,10 +1,9 @@
 ---
-- id: 335
-  key: households_number_of_inhabitants
+- key: households_number_of_inhabitants
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: mln
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 0
   dependent_on: ''
   slide_key: demand_households_population
-- id: 921
-  key: households_apartments_share
+- key: households_apartments_share
   share_group: housing_stock
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: housing_stock
@@ -27,12 +25,11 @@
   position: 2
   dependent_on: ''
   slide_key: demand_households_population
-- id: 922
-  key: households_corner_houses_share
+- key: households_corner_houses_share
   share_group: housing_stock
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: housing_stock
@@ -41,12 +38,11 @@
   position: 3
   dependent_on: ''
   slide_key: demand_households_population
-- id: 923
-  key: households_detached_houses_share
+- key: households_detached_houses_share
   share_group: housing_stock
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: housing_stock
@@ -55,12 +51,11 @@
   position: 4
   dependent_on: ''
   slide_key: demand_households_population
-- id: 924
-  key: households_semi_detached_houses_share
+- key: households_semi_detached_houses_share
   share_group: housing_stock
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: housing_stock
@@ -69,12 +64,11 @@
   position: 5
   dependent_on: ''
   slide_key: demand_households_population
-- id: 925
-  key: households_terraced_houses_share
+- key: households_terraced_houses_share
   share_group: housing_stock
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: housing_stock
@@ -83,12 +77,11 @@
   position: 6
   dependent_on: ''
   slide_key: demand_households_population
-- id: 948
-  key: households_number_of_residences
+- key: households_number_of_residences
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "#"
   fixed: false
   interface_group: ''

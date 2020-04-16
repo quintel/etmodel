@@ -1,0 +1,46 @@
+---
+- id: 111
+  under_construction: false
+  unit: MW
+  percentage: false
+  group: Supply
+  sub_group: electricity
+  show_point_label: false
+  growth_chart: false
+  key: security_of_supply
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar
+- id: 162
+  under_construction: false
+  unit: MT
+  percentage: false
+  group: Supply
+  sub_group: electricity
+  show_point_label: false
+  growth_chart: false
+  key: co2_of_electricity_production
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar
+- id: 212
+  under_construction: false
+  unit: "%"
+  percentage: true
+  group: Supply
+  sub_group: electricity
+  show_point_label: false
+  growth_chart: false
+  key: renewable_electricity
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar

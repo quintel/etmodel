@@ -1,0 +1,1249 @@
+---
+- label: solid_biomass
+  color: "#5D7929"
+  order_by: 1
+  group: industry
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: solid_biomass_industry_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: solid_biomass_industry_mekko_of_primary_demand
+- label: oil
+  color: "#854321"
+  order_by: 2
+  group: industry
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: oil_industry_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: oil_industry_mekko_of_primary_demand
+- label: natural_gas
+  color: "#CCCCCC"
+  order_by: 3
+  group: industry
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gas_industry_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: natural_gas_industry_mekko_of_primary_demand
+- label: uranium
+  color: "#E07033"
+  order_by: 4
+  group: industry
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: uranium_industry_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: uranium_industry_mekko_of_primary_demand
+- label: coal
+  color: "#333333"
+  order_by: 5
+  group: industry
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: coal_industry_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: coal_industry_mekko_of_primary_demand
+- label: lignite
+  color: "#666666"
+  order_by: 6
+  group: industry
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: lignite_industry_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: lignite_industry_mekko_of_primary_demand
+- label: waste
+  color: "#394C19"
+  order_by: 7
+  group: industry
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: waste_industry_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: waste_industry_mekko_of_primary_demand
+- label: bio_fuels
+  color: "#ADDE4C"
+  order_by: 8
+  group: industry
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: bio_fuels_industry_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: bio_fuels_industry_mekko_of_primary_demand
+- label: greengas_biogas
+  color: "#92B940"
+  order_by: 9
+  group: industry
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: greengas_and_biogas_industry_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: greengas_biogas_industry_mekko_of_primary_demand
+- label: solid_biomass
+  color: "#5D7929"
+  order_by: 1
+  group: households
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: solid_biomass_households_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: solid_biomass_households_mekko_of_primary_demand
+- label: oil
+  color: "#854321"
+  order_by: 2
+  group: households
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: oil_households_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: oil_households_mekko_of_primary_demand
+- label: natural_gas
+  color: "#CCCCCC"
+  order_by: 3
+  group: households
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gas_households_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: natural_gas_households_mekko_of_primary_demand
+- label: uranium
+  color: "#E07033"
+  order_by: 4
+  group: households
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: uranium_households_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: uranium_households_mekko_of_primary_demand
+- label: coal
+  color: "#333333"
+  order_by: 5
+  group: households
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: coal_households_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: coal_households_mekko_of_primary_demand
+- label: lignite
+  color: "#666666"
+  order_by: 6
+  group: households
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: lignite_households_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: lignite_households_mekko_of_primary_demand
+- label: waste
+  color: "#394C19"
+  order_by: 7
+  group: households
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: waste_households_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: waste_households_mekko_of_primary_demand
+- label: bio_fuels
+  color: "#ADDE4C"
+  order_by: 8
+  group: households
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: bio_fuels_households_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: bio_fuels_households_mekko_of_primary_demand
+- label: solid_biomass
+  color: "#5D7929"
+  order_by: 1
+  group: buildings
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: solid_biomass_buildings_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: solid_biomass_buildings_mekko_of_primary_demand
+- label: oil
+  color: "#854321"
+  order_by: 2
+  group: transport
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: oil_transport_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: oil_transport_mekko_of_primary_demand
+- label: natural_gas
+  color: "#CCCCCC"
+  order_by: 3
+  group: transport
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gas_transport_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: natural_gas_transport_mekko_of_primary_demand
+- label: uranium
+  color: "#E07033"
+  order_by: 4
+  group: transport
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: uranium_transport_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: uranium_transport_mekko_of_primary_demand
+- label: coal
+  color: "#333333"
+  order_by: 5
+  group: transport
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: coal_transport_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: coal_transport_mekko_of_primary_demand
+- label: lignite
+  color: "#666666"
+  order_by: 6
+  group: transport
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: lignite_transport_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: lignite_transport_mekko_of_primary_demand
+- label: waste
+  color: "#394C19"
+  order_by: 7
+  group: transport
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: waste_transport_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: waste_transport_mekko_of_primary_demand
+- label: bio_fuels
+  color: "#ADDE4C"
+  order_by: 8
+  group: transport
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: bio_fuels_transport_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: bio_fuels_transport_mekko_of_primary_demand
+- label: greengas_biogas
+  color: "#92B940"
+  order_by: 9
+  group: transport
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: greengas_and_biogas_transport_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: greengas_biogas_transport_mekko_of_primary_demand
+- label: greengas_biogas
+  color: "#92B940"
+  order_by: 9
+  group: households
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: greengas_and_biogas_households_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: greengas_biogas_households_mekko_of_primary_demand
+- label: solid_biomass
+  color: "#5D7929"
+  order_by: 1
+  group: transport
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: solid_biomass_transport_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: solid_biomass_transport_mekko_of_primary_demand
+- label: oil
+  color: "#854321"
+  order_by: 2
+  group: agriculture
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: oil_agriculture_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: oil_agriculture_mekko_of_primary_demand
+- label: uranium
+  color: "#E07033"
+  order_by: 4
+  group: agriculture
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: uranium_agriculture_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: uranium_agriculture_mekko_of_primary_demand
+- label: natural_gas
+  color: "#CCCCCC"
+  order_by: 3
+  group: agriculture
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gas_agriculture_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: natural_gas_agriculture_mekko_of_primary_demand
+- label: coal
+  color: "#333333"
+  order_by: 5
+  group: agriculture
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: coal_agriculture_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: coal_agriculture_mekko_of_primary_demand
+- label: lignite
+  color: "#666666"
+  order_by: 6
+  group: agriculture
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: lignite_agriculture_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: lignite_agriculture_mekko_of_primary_demand
+- label: waste
+  color: "#394C19"
+  order_by: 7
+  group: agriculture
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: waste_agriculture_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: waste_agriculture_mekko_of_primary_demand
+- label: bio_fuels
+  color: "#ADDE4C"
+  order_by: 8
+  group: agriculture
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: bio_fuels_agriculture_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: bio_fuels_agriculture_mekko_of_primary_demand
+- label: greengas_biogas
+  color: "#92B940"
+  order_by: 9
+  group: agriculture
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: greengas_and_biogas_agriculture_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: greengas_biogas_agriculture_mekko_of_primary_demand
+- label: solid_biomass
+  color: "#5D7929"
+  order_by: 1
+  group: agriculture
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: solid_biomass_agriculture_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: solid_biomass_agriculture_mekko_of_primary_demand
+- label: oil
+  color: "#854321"
+  order_by: 2
+  group: other
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: oil_other_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: oil_other_mekko_of_primary_demand
+- label: natural_gas
+  color: "#CCCCCC"
+  order_by: 3
+  group: other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gas_other_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: natural_gas_other_mekko_of_primary_demand
+- label: uranium
+  color: "#E07033"
+  order_by: 4
+  group: other
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: uranium_other_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: uranium_other_mekko_of_primary_demand
+- label: coal
+  color: "#333333"
+  order_by: 5
+  group: other
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: coal_other_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: coal_other_mekko_of_primary_demand
+- label: lignite
+  color: "#666666"
+  order_by: 6
+  group: other
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: lignite_other_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: lignite_other_mekko_of_primary_demand
+- label: waste
+  color: "#394C19"
+  order_by: 7
+  group: other
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: waste_other_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: waste_other_mekko_of_primary_demand
+- label: bio_fuels
+  color: "#ADDE4C"
+  order_by: 8
+  group: other
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: bio_fuels_other_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: bio_fuels_other_mekko_of_primary_demand
+- label: greengas_biogas
+  color: "#92B940"
+  order_by: 9
+  group: other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: greengas_and_biogas_other_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: greengas_biogas_other_mekko_of_primary_demand
+- label: sustainable_electricity
+  color: "#4169E1"
+  order_by: 10
+  group: industry
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: sustainable_electricity_industry_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: sustainable_electricity_industry_mekko_of_primary_demand
+- label: sustainable_electricity
+  color: "#4169E1"
+  order_by: 10
+  group: other
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: sustainable_electricity_other_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: sustainable_electricity_other_mekko_of_primary_demand
+- label: sustainable_electricity
+  color: "#4169E1"
+  order_by: 10
+  group: agriculture
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: sustainable_electricity_agriculture_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: sustainable_electricity_agriculture_mekko_of_primary_demand
+- label: sustainable_electricity
+  color: "#4169E1"
+  order_by: 10
+  group: transport
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: sustainable_electricity_transport_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: sustainable_electricity_transport_mekko_of_primary_demand
+- label: sustainable_electricity
+  color: "#4169E1"
+  order_by: 10
+  group: households
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: sustainable_electricity_households_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: sustainable_electricity_households_mekko_of_primary_demand
+- label: imported_electricity
+  color: "#00008B"
+  order_by: 11
+  group: industry
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: imported_electricity_industry_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_electricity_industry_mekko_of_primary_demand
+- label: imported_electricity
+  color: "#00008B"
+  order_by: 11
+  group: households
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_electricity_households_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_electricity_households_mekko_of_primary_demand
+- label: imported_electricity
+  color: "#00008B"
+  order_by: 11
+  group: agriculture
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: imported_electricity_agriculture_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_electricity_agriculture_mekko_of_primary_demand
+- label: imported_electricity
+  color: "#00008B"
+  order_by: 11
+  group: other
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: imported_electricity_other_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_electricity_other_mekko_of_primary_demand
+- label: imported_electricity
+  color: "#00008B"
+  order_by: 11
+  group: transport
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: imported_electricity_transport_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_electricity_transport_mekko_of_primary_demand
+- label: solid_biomass
+  color: "#5D7929"
+  order_by: 1
+  group: other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: solid_biomass_other_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: solid_biomass_other_mekko_of_primary_demand
+- label: oil
+  color: "#854321"
+  order_by: 2
+  group: buildings
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: oil_buildings_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: oil_buildings_mekko_of_primary_demand
+- label: natural_gas
+  color: "#CCCCCC"
+  order_by: 3
+  group: buildings
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gas_buildings_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: natural_gas_buildings_mekko_of_primary_demand
+- label: uranium
+  color: "#E07033"
+  order_by: 4
+  group: buildings
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: uranium_buildings_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: uranium_buildings_mekko_of_primary_demand
+- label: coal
+  color: "#333333"
+  order_by: 5
+  group: buildings
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: coal_buildings_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: coal_buildings_mekko_of_primary_demand
+- label: lignite
+  color: "#666666"
+  order_by: 6
+  group: buildings
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: lignite_buildings_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: lignite_buildings_mekko_of_primary_demand
+- label: waste
+  color: "#394C19"
+  order_by: 7
+  group: buildings
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: waste_buildings_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: waste_buildings_mekko_of_primary_demand
+- label: bio_fuels
+  color: "#ADDE4C"
+  order_by: 8
+  group: buildings
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: bio_fuels_buildings_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: bio_fuels_buildings_mekko_of_primary_demand
+- label: greengas_biogas
+  color: "#92B940"
+  order_by: 9
+  group: buildings
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: greengas_and_biogas_buildings_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: greengas_biogas_buildings_mekko_of_primary_demand
+- label: sustainable_electricity
+  color: "#4169E1"
+  order_by: 10
+  group: buildings
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: sustainable_electricity_buildings_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: sustainable_electricity_buildings_mekko_of_primary_demand
+- label: imported_electricity
+  color: "#00008B"
+  order_by: 11
+  group: buildings
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: imported_electricity_buildings_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_electricity_buildings_mekko_of_primary_demand
+- label: lng
+  color: "#696969"
+  order_by: 12
+  group: agriculture
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lng_agriculture_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: lng_agriculture_mekko_of_primary_demand
+- label: lng
+  color: "#696969"
+  order_by: 12
+  group: buildings
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lng_buildings_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: lng_buildings_mekko_of_primary_demand
+- label: lng
+  color: "#696969"
+  order_by: 12
+  group: households
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lng_households_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: lng_households_mekko_of_primary_demand
+- label: lng
+  color: "#696969"
+  order_by: 12
+  group: industry
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lng_industry_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: lng_industry_mekko_of_primary_demand
+- label: lng
+  color: "#696969"
+  order_by: 12
+  group: other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lng_other_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: lng_other_mekko_of_primary_demand
+- label: lng
+  color: "#696969"
+  order_by: 12
+  group: transport
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lng_transport_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: lng_transport_mekko_of_primary_demand
+- label: sustainable_electricity
+  color: "#4169E1"
+  order_by: 10
+  group: export_and_curtailment
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: sustainable_electricity_export_and_curtailment_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: sustainable_electricity_export_and_curtailment_mekko_of_primary_demand
+- label: imported_electricity
+  color: "#00008B"
+  order_by: 11
+  group: export_and_curtailment
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: imported_electricity_export_and_curtailment_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_electricity_export_and_curtailment_mekko_of_primary_demand
+- label: oil
+  color: "#854321"
+  order_by: 2
+  group: export_and_curtailment
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: oil_export_and_curtailment_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: oil_export_and_curtailment_mekko_of_primary_demand
+- label: natural_gas
+  color: "#CCCCCC"
+  order_by: 3
+  group: export_and_curtailment
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gas_export_and_curtailment_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: natural_gas_export_and_curtailment_mekko_of_primary_demand
+- label: uranium
+  color: "#E07033"
+  order_by: 4
+  group: export_and_curtailment
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: uranium_export_and_curtailment_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: uranium_export_and_curtailment_mekko_of_primary_demand
+- label: coal
+  color: "#333333"
+  order_by: 5
+  group: export_and_curtailment
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: coal_export_and_curtailment_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: coal_export_and_curtailment_mekko_of_primary_demand
+- label: lignite
+  color: "#666666"
+  order_by: 6
+  group: export_and_curtailment
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: lignite_export_and_curtailment_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: lignite_export_and_curtailment_mekko_of_primary_demand
+- label: waste
+  color: "#394C19"
+  order_by: 7
+  group: export_and_curtailment
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: waste_export_and_curtailment_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: waste_export_and_curtailment_mekko_of_primary_demand
+- label: bio_fuels
+  color: "#ADDE4C"
+  order_by: 8
+  group: export_and_curtailment
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: bio_fuels_export_and_curtailment_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: bio_fuels_export_and_curtailment_mekko_of_primary_demand
+- label: greengas_biogas
+  color: "#92B940"
+  order_by: 9
+  group: export_and_curtailment
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: greengas_and_biogas_export_and_curtailment_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: greengas_biogas_export_and_curtailment_mekko_of_primary_demand
+- label: solid_biomass
+  color: "#5D7929"
+  order_by: 1
+  group: export_and_curtailment
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: solid_biomass_export_and_curtailment_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: solid_biomass_export_and_curtailment_mekko_of_primary_demand
+- label: lng
+  color: "#696969"
+  order_by: 12
+  group: export_and_curtailment
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lng_export_and_curtailment_in_mekko_of_primary_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: lng_export_and_curtailment_mekko_of_primary_demand
+- label: solid_biomass
+  color: "#5D7929"
+  order_by: 1
+  group: bunkers
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: solid_biomass_bunkers_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: solid_biomass_bunkers_mekko_of_primary_demand
+- label: oil
+  color: "#854321"
+  order_by: 2
+  group: bunkers
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: oil_bunkers_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: oil_bunkers_mekko_of_primary_demand
+- label: natural_gas
+  color: "#CCCCCC"
+  order_by: 3
+  group: bunkers
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: gas_bunkers_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: natural_gas_bunkers_mekko_of_primary_demand
+- label: uranium
+  color: "#E07033"
+  order_by: 4
+  group: bunkers
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: uranium_bunkers_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: uranium_bunkers_mekko_of_primary_demand
+- label: coal
+  color: "#333333"
+  order_by: 5
+  group: bunkers
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: coal_bunkers_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: coal_bunkers_mekko_of_primary_demand
+- label: lignite
+  color: "#666666"
+  order_by: 6
+  group: bunkers
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: lignite_bunkers_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: lignite_bunkers_mekko_of_primary_demand
+- label: waste
+  color: "#394C19"
+  order_by: 7
+  group: bunkers
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: waste_bunkers_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: waste_bunkers_mekko_of_primary_demand
+- label: bio_fuels
+  color: "#ADDE4C"
+  order_by: 8
+  group: bunkers
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: bio_fuels_bunkers_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: bio_fuels_bunkers_mekko_of_primary_demand
+- label: greengas_biogas
+  color: "#92B940"
+  order_by: 9
+  group: bunkers
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: greengas_and_biogas_bunkers_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: greengas_biogas_bunkers_mekko_of_primary_demand
+- label: sustainable_electricity
+  color: "#4169E1"
+  order_by: 10
+  group: bunkers
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: sustainable_electricity_bunkers_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: sustainable_electricity_bunkers_mekko_of_primary_demand
+- label: imported_electricity
+  color: "#00008B"
+  order_by: 11
+  group: bunkers
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: imported_electricity_bunkers_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_electricity_bunkers_mekko_of_primary_demand
+- label: lng
+  color: "#696969"
+  order_by: 12
+  group: bunkers
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: lng_bunkers_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: lng_bunkers_mekko_of_primary_demand
+- label: imported_hydrogen
+  color: "#87CEEB"
+  order_by: 13
+  group: industry
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_hydrogen_industry_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_hydrogen_industry_mekko_of_primary_demand
+- label: imported_hydrogen
+  color: "#87CEEB"
+  order_by: 13
+  group: households
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_hydrogen_households_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_hydrogen_households_mekko_of_primary_demand
+- label: imported_hydrogen
+  color: "#87CEEB"
+  order_by: 13
+  group: bunkers
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_hydrogen_bunkers_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_hydrogen_bunkers_mekko_of_primary_demand
+- label: imported_hydrogen
+  color: "#87CEEB"
+  order_by: 13
+  group: agriculture
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_hydrogen_agriculture_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_hydrogen_agriculture_mekko_of_primary_demand
+- label: imported_hydrogen
+  color: "#87CEEB"
+  order_by: 13
+  group: other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_hydrogen_other_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_hydrogen_other_mekko_of_primary_demand
+- label: imported_hydrogen
+  color: "#87CEEB"
+  order_by: 13
+  group: transport
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_hydrogen_transport_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_hydrogen_transport_mekko_of_primary_demand
+- label: imported_hydrogen
+  color: "#87CEEB"
+  order_by: 13
+  group: buildings
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_hydrogen_buildings_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_hydrogen_buildings_mekko_of_primary_demand
+- label: imported_hydrogen
+  color: "#87CEEB"
+  order_by: 13
+  group: export_and_curtailment
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_hydrogen_export_and_curtailment_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_hydrogen_export_and_curtailment_mekko_of_primary_demand

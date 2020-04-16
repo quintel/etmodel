@@ -5,7 +5,7 @@
 
   :javascript
     $(function(){
-      App.charts.load(#{@chart.id}, null, {
+      App.charts.load('#{@chart.key}', null, {
         wrapper: '#zoomed_chart_wrapper',
         prunable: true,
         force: true,

@@ -1,0 +1,25 @@
+---
+- label: merit_price
+  color: "#5D7929"
+  order_by: 2
+  group: 
+  show_at_first: 
+  is_target_line: true
+  target_line_position: 
+  gquery: merit_order_price_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order_price_curve
+  key: merit_price_merit_order_price_curve
+- label: imported_electricity_price_curve
+  color: "#a9a9a9"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: imported_electricity_price_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order_price_curve
+  key: imported_electricity_price_curve_merit_order_price_curve

@@ -1,24 +1,22 @@
 ---
-- id: 292
-  key: transport_road_mixer_diesel_diesel_share
+- key: transport_road_mixer_diesel_diesel_share
   share_group: transport_diesel
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: diesel_mix
-  command_type: 
-  related_converter: 
+  command_type:
+  related_converter:
   position: 1
-  dependent_on: 
+  dependent_on:
   slide_key: supply_transport_road_transport
-- id: 293
-  key: transport_road_mixer_diesel_biodiesel_share
+- key: transport_road_mixer_diesel_biodiesel_share
   share_group: transport_diesel
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: diesel_mix
@@ -27,26 +25,24 @@
   position: 2
   dependent_on: ''
   slide_key: supply_transport_road_transport
-- id: 294
-  key: transport_road_mixer_gasoline_gasoline_share
+- key: transport_road_mixer_gasoline_gasoline_share
   share_group: transport_gasoline
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: gasoline_mix
-  command_type: 
-  related_converter: 
+  command_type:
+  related_converter:
   position: 3
-  dependent_on: 
+  dependent_on:
   slide_key: supply_transport_road_transport
-- id: 295
-  key: transport_road_mixer_gasoline_ethanol_share
+- key: transport_road_mixer_gasoline_ethanol_share
   share_group: transport_gasoline
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: gasoline_mix
@@ -55,12 +51,11 @@
   position: 4
   dependent_on: ''
   slide_key: supply_transport_road_transport
-- id: 675
-  key: transport_road_mixer_lng_lng_share
+- key: transport_road_mixer_lng_lng_share
   share_group: transport_lng_road
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: lng_road_mix
@@ -69,12 +64,11 @@
   position: 5
   dependent_on: ''
   slide_key: supply_transport_road_transport
-- id: 676
-  key: transport_road_mixer_lng_bio_lng_share
+- key: transport_road_mixer_lng_bio_lng_share
   share_group: transport_lng_road
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: lng_road_mix

@@ -1,10 +1,9 @@
 ---
-- id: 951
-  key: energy_biogas_fermentation_share
+- key: energy_biogas_fermentation_share
   share_group: greengas
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 0
   dependent_on: ''
   slide_key: supply_biomass_greengas_production
-- id: 952
-  key: energy_greengas_gasification_dry_biomass_share
+- key: energy_greengas_gasification_dry_biomass_share
   share_group: greengas
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -27,12 +25,11 @@
   position: 1
   dependent_on: ''
   slide_key: supply_biomass_greengas_production
-- id: 953
-  key: energy_greengas_gasification_wet_biomass_share
+- key: energy_greengas_gasification_wet_biomass_share
   share_group: greengas
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''

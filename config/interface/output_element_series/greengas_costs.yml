@@ -1,0 +1,37 @@
+---
+- label: greengas_price
+  color: "#006400"
+  order_by: 10
+  group: ''
+  show_at_first: 
+  is_target_line: true
+  target_line_position: '1'
+  gquery: present_greengas_price
+  is_1990: false
+  dependent_on: 
+  output_element_key: greengas_costs
+  key: present_greengas_price_greengas_costs
+- label: greengas_price
+  color: "#006400"
+  order_by: 10
+  group: ''
+  show_at_first: 
+  is_target_line: true
+  target_line_position: '2'
+  gquery: future_greengas_price
+  is_1990: false
+  dependent_on: 
+  output_element_key: greengas_costs
+  key: future_greengas_price_greengas_costs
+- label: energy_greengas_production_costs
+  color: "#B3CF7B"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: average_production_costs_per_mwh_greengas
+  is_1990: false
+  dependent_on: 
+  output_element_key: greengas_costs
+  key: energy_greengas_production_costs_greengas_costs

@@ -1,0 +1,145 @@
+---
+- label: agriculture_final_demand_hydrogen
+  color: "#6AB04C"
+  order_by: 5
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: agriculture_final_demand_hydrogen_hydrogen_input_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_demand
+  key: agriculture_final_demand_hydrogen_hydrogen_demand
+- label: exported_hydrogen
+  color: "#485460"
+  order_by: 2
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_export_hydrogen_hydrogen_input_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_demand
+  key: exported_hydrogen_hydrogen_demand
+- label: hydrogen_storage_input
+  color: "#87CEEB"
+  order_by: 12
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_storage_hydrogen_input_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_demand
+  key: hydrogen_storage_input_hydrogen_demand
+- label: energy_power_turbine_hydrogen
+  color: "#FF8C8C"
+  order_by: 10
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_power_turbine_hydrogen_hydrogen_input_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_demand
+  key: energy_power_turbine_hydrogen_hydrogen_demand
+- label: industry_final_demand_hydrogen
+  color: "#416B86"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: industry_final_demand_hydrogen_energetic_hydrogen_input_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_demand
+  key: industry_final_demand_hydrogen_hydrogen_demand
+- label: industry_final_demand_for_chemical_other_hydrogen_non_energetic
+  color: "#228B22"
+  order_by: 4
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: industry_final_demand_for_chemical_other_hydrogen_non_energetic_hydrogen_input_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_demand
+  key: industry_final_demand_for_chemical_other_hydrogen_non_energetic_hydrogen_demand
+- label: transport_final_demand_hydrogen
+  color: "#0984E3"
+  order_by: 9
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: transport_final_demand_hydrogen_hydrogen_input_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_demand
+  key: transport_final_demand_hydrogen_hydrogen_demand
+- label: hydrogen_production
+  color: "#FF0000"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: true
+  target_line_position: ''
+  gquery: hydrogen_production_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_demand
+  key: hydrogen_production_hydrogen_demand
+- label: households_final_demand_hydrogen
+  color: "#E07033"
+  order_by: 8
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: households_final_demand_hydrogen_hydrogen_input_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_demand
+  key: households_final_demand_hydrogen_hydrogen_demand
+- label: energy_power_combined_cycle_hydrogen
+  color: "#FF6B6B"
+  order_by: 11
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_power_combined_cycle_hydrogen_hydrogen_input_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_demand
+  key: energy_power_combined_cycle_hydrogen_hydrogen_demand
+- label: industry_final_demand_for_chemical_fertilizers_hydrogen_non_energetic
+  color: "#74B9FF"
+  order_by: 4
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: industry_final_demand_for_chemical_fertilizers_hydrogen_non_energetic_hydrogen_input_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_demand
+  key: industry_final_demand_for_chemical_fertilizers_hydrogen_non_energetic_hydrogen_demand
+- label: energy_heat_from_hydrogen
+  color: "#F9CA24"
+  order_by: 6
+  group: ''
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_from_hydrogen_input_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: hydrogen_demand
+  key: energy_heat_from_hydrogen_hydrogen_demand

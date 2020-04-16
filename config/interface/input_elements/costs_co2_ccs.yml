@@ -1,29 +1,27 @@
 ---
-- id: 139
-  key: om_costs_co2_ccs
+- key: om_costs_co2_ccs
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   position: 2
-  dependent_on: 
+  dependent_on:
   slide_key: costs_co2_ccs
-- id: 140
-  key: investment_costs_co2_ccs
+- key: investment_costs_co2_ccs
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   position: 1
-  dependent_on: 
+  dependent_on:
   slide_key: costs_co2_ccs

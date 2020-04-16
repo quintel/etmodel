@@ -1,0 +1,37 @@
+---
+- label: cooking_from_biomass
+  color: "#5D7929"
+  order_by: 3
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: ''
+  gquery: cooking_from_biomass_in_source_of_cooking_in_households
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_cooking_in_households
+  key: cooking_from_biomass_source_of_cooking_in_households
+- label: cooking_from_electricity
+  color: "#4169E1"
+  order_by: 3
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: cooking_from_electricity_in_source_of_cooking_in_households
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_cooking_in_households
+  key: cooking_from_electricity_source_of_cooking_in_households
+- label: cooking_from_gas
+  color: "#CCCCCC"
+  order_by: 3
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: cooking_from_gas_in_source_of_cooking_in_households
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_cooking_in_households
+  key: cooking_from_gas_source_of_cooking_in_households

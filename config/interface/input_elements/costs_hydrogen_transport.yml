@@ -1,10 +1,9 @@
 ---
-- id: 910
-  key: costs_hydrogen_transport_compressed_trucks
+- key: costs_hydrogen_transport_compressed_trucks
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "€/MWh"
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 2
   dependent_on: ''
   slide_key: costs_hydrogen_transport
-- id: 911
-  key: costs_hydrogen_transport_pipelines
+- key: costs_hydrogen_transport_pipelines
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "€/MWh"
   fixed: false
   interface_group: ''

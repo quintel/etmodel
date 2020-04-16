@@ -1,0 +1,46 @@
+---
+- id: 43
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: transport_fuels
+  show_point_label: false
+  growth_chart: false
+  key: use_of_transport_fuels
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar
+- id: 190
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: transport_fuels
+  show_point_label: false
+  growth_chart: false
+  key: refinery
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: sankey
+- id: 200
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: transport_fuels
+  show_point_label: false
+  growth_chart: false
+  key: kerosene_production_in_bunkers
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar

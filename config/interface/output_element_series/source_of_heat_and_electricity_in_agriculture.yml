@@ -1,0 +1,37 @@
+---
+- label: centrally_produced_electricity
+  color: "#4169E1"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: centrally_produced_electricity_in_source_of_heat_and_electricity_in_agriculture
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_heat_and_electricity_in_agriculture
+  key: centrally_produced_electricity_source_of_heat_and_electricity_in_agriculture
+- label: centrally_produced_heat
+  color: "#A9A9A9"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: centrally_produced_heat_in_source_of_heat_and_electricity_in_agriculture
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_heat_and_electricity_in_agriculture
+  key: centrally_produced_heat_source_of_heat_and_electricity_in_agriculture
+- label: other_heat
+  color: "#8B0000"
+  order_by: 5
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: other_heat_in_source_of_heat_and_electricity_in_agriculture
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_heat_and_electricity_in_agriculture
+  key: other_heat_source_of_heat_and_electricity_in_agriculture

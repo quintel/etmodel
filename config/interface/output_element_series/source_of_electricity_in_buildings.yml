@@ -1,0 +1,49 @@
+---
+- label: solar_panels
+  color: "#B3CF7B"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: solar_panels_in_source_of_electricity_in_buildings
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_electricity_in_buildings
+  key: solar_panels_source_of_electricity_in_buildings
+- label: centrally_produced
+  color: "#4169E1"
+  order_by: 4
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: centrally_produced_in_source_of_electricity_in_buildings
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_electricity_in_buildings
+  key: centrally_produced_source_of_electricity_in_buildings
+- label: demand
+  color: "#FFA500"
+  order_by: 5
+  group: 
+  show_at_first: 
+  is_target_line: true
+  target_line_position: '2'
+  gquery: future_demand_in_source_of_electricity_in_buildings
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_electricity_in_buildings
+  key: future_demand_source_of_electricity_in_buildings
+- label: demand
+  color: "#FFA500"
+  order_by: 6
+  group: 
+  show_at_first: 
+  is_target_line: true
+  target_line_position: '1'
+  gquery: present_demand_in_source_of_electricity_in_buildings
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_electricity_in_buildings
+  key: present_demand_source_of_electricity_in_buildings

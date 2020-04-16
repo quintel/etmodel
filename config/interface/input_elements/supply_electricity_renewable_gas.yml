@@ -1,10 +1,9 @@
 ---
-- id: 488
-  key: green_gas_total_share
+- key: green_gas_total_share
   share_group: fuels_gas
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -13,26 +12,24 @@
   position: 2
   dependent_on: ''
   slide_key: supply_electricity_renewable_gas
-- id: 489
-  key: natural_gas_total_share
+- key: natural_gas_total_share
   share_group: fuels_gas
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   position: 1
-  dependent_on: 
+  dependent_on:
   slide_key: supply_electricity_renewable_gas
-- id: 677
-  key: energy_treatment_natural_gas_share
+- key: energy_treatment_natural_gas_share
   share_group: grid_natural_gas_origin
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: grid_natural_gas
@@ -41,12 +38,11 @@
   position: 3
   dependent_on: ''
   slide_key: supply_electricity_renewable_gas
-- id: 678
-  key: energy_regasification_lng_share
+- key: energy_regasification_lng_share
   share_group: grid_natural_gas_origin
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: grid_natural_gas

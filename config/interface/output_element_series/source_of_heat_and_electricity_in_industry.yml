@@ -1,0 +1,61 @@
+---
+- label: centrally_produced_electricity
+  color: "#4169E1"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: centrally_produced_electricity_in_source_of_heat_and_electricity_in_industry
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_heat_and_electricity_in_industry
+  key: centrally_produced_electricity_source_of_heat_and_electricity_in_industry
+- label: chp_electricity
+  color: "#ADDE4C"
+  order_by: 2
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: chp_electricity_in_source_of_heat_and_electricity_in_industry
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_heat_and_electricity_in_industry
+  key: chp_electricity_source_of_heat_and_electricity_in_industry
+- label: chp_heat
+  color: "#000000"
+  order_by: 4
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: chp_heat_in_source_of_heat_and_electricity_in_industry
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_heat_and_electricity_in_industry
+  key: chp_heat_source_of_heat_and_electricity_in_industry
+- label: other_heat
+  color: "#8B0000"
+  order_by: 5
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: locally_produced_heat_in_source_of_heat_and_electricity_in_industry
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_heat_and_electricity_in_industry
+  key: other_heat_source_of_heat_and_electricity_in_industry
+- label: collective_heat_in_source_of_heat_and_electricity_in_industry
+  color: "#F9CA24"
+  order_by: 3
+  group: ''
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: collective_heat_in_source_of_heat_and_electricity_in_industry
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_heat_and_electricity_in_industry
+  key: collective_heat_in_source_of_heat_and_electricity_in_industry_source_of_heat_and_electricity_in_industry

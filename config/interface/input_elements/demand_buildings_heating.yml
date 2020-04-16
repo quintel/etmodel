@@ -1,10 +1,9 @@
 ---
-- id: 383
-  key: buildings_space_heater_network_gas_share
+- key: buildings_space_heater_network_gas_share
   share_group: heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 1
   dependent_on: ''
   slide_key: demand_buildings_heating
-- id: 387
-  key: buildings_space_heater_electricity_share
+- key: buildings_space_heater_electricity_share
   share_group: heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -27,12 +25,11 @@
   position: 4
   dependent_on: ''
   slide_key: demand_buildings_heating
-- id: 390
-  key: buildings_space_heater_heatpump_air_water_network_gas_share
+- key: buildings_space_heater_heatpump_air_water_network_gas_share
   share_group: heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -41,12 +38,11 @@
   position: 3
   dependent_on: ''
   slide_key: demand_buildings_heating
-- id: 394
-  key: buildings_space_heater_collective_heatpump_water_water_ts_electricity_share
+- key: buildings_space_heater_collective_heatpump_water_water_ts_electricity_share
   share_group: heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -55,12 +51,11 @@
   position: 2
   dependent_on: ''
   slide_key: demand_buildings_heating
-- id: 406
-  key: buildings_space_heater_wood_pellets_share
+- key: buildings_space_heater_wood_pellets_share
   share_group: heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -69,12 +64,11 @@
   position: 8
   dependent_on: ''
   slide_key: demand_buildings_heating
-- id: 409
-  key: buildings_space_heater_crude_oil_share
+- key: buildings_space_heater_crude_oil_share
   share_group: heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -83,12 +77,11 @@
   position: 7
   dependent_on: has_coal_oil_for_heating_built_environment
   slide_key: demand_buildings_heating
-- id: 585
-  key: buildings_space_heater_district_heating_steam_hot_water_share
+- key: buildings_space_heater_district_heating_steam_hot_water_share
   share_group: heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -97,12 +90,11 @@
   position: 11
   dependent_on: ''
   slide_key: demand_buildings_heating
-- id: 607
-  key: buildings_space_heater_coal_share
+- key: buildings_space_heater_coal_share
   share_group: heating_buildings
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''

@@ -32,7 +32,7 @@ class OutputElementSerie < YModel::Base
   include AreaDependent::YModel
 
   index_on :key
-  source_file 'config/interface/output_element_series.yml'
+  source_file 'config/interface/output_element_series'
   belongs_to :output_element
 
   class << self
@@ -55,6 +55,13 @@ class OutputElementSerie < YModel::Base
 
   def group_translated
     I18n.t("output_element_series.groups.#{group}") unless group.blank?
+  end
+
+  def short_description
+    I18n.t(
+      "descriptions_output_element_series.#{key}.short_content",
+      default: ''
+    )
   end
 
   #  Descriptions are optional for output element series

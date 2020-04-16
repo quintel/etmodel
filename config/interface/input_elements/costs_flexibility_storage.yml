@@ -1,10 +1,9 @@
 ---
-- id: 668
-  key: investment_costs_households_flexibility_p2p_electricity
+- key: investment_costs_households_flexibility_p2p_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 1
   dependent_on: ''
   slide_key: costs_flexibility_storage
-- id: 966
-  key: investment_costs_energy_flexibility_hv_opac_electricity
+- key: investment_costs_energy_flexibility_hv_opac_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -27,12 +25,11 @@
   position: 3
   dependent_on: ''
   slide_key: costs_flexibility_storage
-- id: 967
-  key: investment_costs_energy_flexibility_mv_batteries_electricity
+- key: investment_costs_energy_flexibility_mv_batteries_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''

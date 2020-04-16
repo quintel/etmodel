@@ -39,7 +39,7 @@
       <p>
        De totale huidige uitstoot van het energiesysteem is nu <strong>{{ present.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong> en <strong>{{present.energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> van de totale broeikasgasuitstoot van regio. Het gemaakte scenario zorgt dat deze energetische CO<sub>2</sub>-uitstoot van het energiesysteem in eindjaar <strong> {{future.dashboard_reduction_of_co2_emissions_versus_1990 | times: 100 | round: 1 }}% </strong> is veranderd ten opzichte van 1990. Net als de Regionale Energiestrategie (<a href="https://www.regionale-energiestrategie.nl/default.aspx" target="_blank">RES</a>) richt dit rapport zich voornamelijk op de vraag uit de gebouwde omgeving en aanbod van energie, maar wel in context van mobiliteit, industrie en landbouw. Hieronder is te zien hoe de energetische CO<sub>2</sub>-uitstoot zich ontwikkelt in het scenario.
 
-      {% chart 46 %}
+      {% chart co2_emissions %}
         CO<sub>2</sub>-uitstoot gebaseerd op primair energiegebruik en uitgesplitst in sectoren voor 1990 (links),
         {{ settings.start_year }} (midden),
         en {{ settings.end_year }} (rechts). Deze getallen gelden voor de hele energetische keten inclusief
@@ -99,14 +99,14 @@
         De elektriciteitsvraag van apparaten en van verlichting valt onder Kracht en Licht.</p>
           <p> De vraag naar Kracht en Licht in de huishoudens is in {{ settings.start_year }}  <strong>{{ present.households_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en  <strong>{{present.households_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale huidige energievraag in huishoudens. Een samenspel van de aannames voor demografie, gebruik per inwoner en technologie (bijvoorbeeld LED, gloeilamp of halogeen) beïnvloeden de toekomstige vraag. In {{ settings.end_year }} is dit totaal <strong>{{ future.households_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en <strong>{{future.households_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale energievraag in huishoudens. Hieronder ziet u de ontwikkeling van de energievraag als gevolg van de aannames in het scenario.
           <p>
-        {% chart 2 %}
+        {% chart use_of_final_electricity_demand_in_households %}
           Finale elektriciteitsvraag van apparaten en verlichting in
           {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
         {% endchart %}
         <p>
         De Kracht en Licht vraag van alle overige gebouwen is in {{ settings.start_year }} <strong>{{ present.buildings_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en wat <strong>{{present.buildings_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale huidige eindvraag van gebouwen. Een samenspel van de aannames voor aantal gebouwen, efficiënties en technologiekeuzes (bijvoorbeeld LED, gloeilamp of halogeen) leiden tot de toekomstige vraag. In {{ settings.end_year }} is dit totaal <strong>{{ future.buildings_final_demand_power_and_light | autoscale: 'MJ' }}</strong> en <strong>{{future.buildings_final_demand_power_and_light_percentage | times: 100 | round: 1 }}%</strong> van de totale energievraag in gebouwen. Hieronder ziet u de ontwikkeling van de energievraag als gevolg van de aannames in het scenario.
 
-        {% chart 72 %}
+        {% chart use_of_electricity_in_buildings %}
         Kracht en Licht in gebouwen
           {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
         {% endchart %}
@@ -117,12 +117,12 @@
         <h4 class="banner">Vraagontwikkeling</h4>
           <p>
           In het gemaakte scenario zijn de volgende aannames gemaakt over de ontwikkeling van de huizenvoorraad en de gevolgen van isoleren.
-            {% chart 58 %}
+            {% chart effect_of_insulation_in_households %}
               Isolatie in woningen/huishoudens
               {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
             {% endchart %}
 
-            {% chart 69 %}
+            {% chart effect_of_insulation_in_buildings %}
               Isolatie in gebouwen
               {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
             {% endchart %}
@@ -130,12 +130,12 @@
         <h4 class="banner"1>Invulling technologie</h4>
           <p> Een keuze voor een andere technologie om het huis, het water of het eten te verwarmen kan zorgen voor een verandering in volume, maar ook voor een verandering in vraag. De verandering in volume komt doordat een technologie meer of minder efficiënt is. Een warmtepomp is bijvoorbeeld efficiënter dan een cv-ketel. De verandering in type-vraag komt wanneer een technologie op een andere manier warmte maakt, zoals een cv-ketel gas nodig heeft en een houtkachel hout. Hieronder zie je de verandering van vraag in volume en energiedrager voor eerst huishoudens en daarna gebouwen.
           </p>
-            {% chart 56 %}
+            {% chart source_of_heat_used_in_households %}
               Finale warmtevraag in huishoudens
               {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
             {% endchart %}
 
-            {% chart 70 %}
+            {% chart source_of_heat_in_buildings %}
               Finale warmtevraag in gebouwen
               {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
             {% endchart %}
@@ -143,7 +143,7 @@
           <p> Koken is in {{ settings.start_year }} voor <strong>{{present.households_final_demand_cooking_percentage| times: 100 | round: 1 }}%</strong> (<strong>{{present.households_final_cooking_demand | autoscale: 'MJ' }}</strong>) verantwoordelijk voor de finale energievraag van huishoudens. In {{ settings.end_year }} is dat <strong>{{future.households_final_demand_cooking_percentage| times: 100 | round: 1 }}%</strong> (<strong>{{future.households_final_cooking_demand | autoscale: 'MJ' }}</strong>) van de finale energievraag in huishoudens. Hieronder kun je zien wat de technologiekeuze voor type energievraag creëert.
           </p>
 
-          {% chart 67 %}
+          {% chart source_of_cooking_in_households %}
             Overzicht van hoe de huishoudens koken in
             {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
           {% endchart %}
@@ -153,7 +153,7 @@
     Hieronder zie een overzicht van de totale eindvraag van alle sectoren in {{ settings.area_name }} in {{ settings.end_year }}, en dus ook de energievraag van de sectoren Mobiliteit, Industrie en Landbouw. De breedte van de balk geeft aan hoe groot de energievraag is, de kleur geeft aan wat voor vraag het is.
     </p>
 
-        {% chart 224 %}
+        {% chart final_demand_mekko_energetic_mece %}
           Totale eindvraag van energie in {{ settings.end_year }} in {{ settings.area_name }}
         {% endchart %}
 
@@ -166,7 +166,7 @@
     Hieronder zie je een overzicht van de vraag (links) en aanbod (rechts) op het warmtenet. Wanneer er te
 	weinig warmteaanbod is in het scenario, dan springt er een gas back-up ketel aan. Wanneer er overschotten zijn,
 	dan zie je dit aan de linkerkant in het lichtroze.
-        {% chart 248 %}
+        {% chart collective_heat_mekko %}
         Vraag (links) en aanbod (rechts) op het warmtenet in {{ settings.end_year }}.
         {% endchart %}
   	</p>
@@ -203,20 +203,20 @@
       <p>
       Ook de elektriciteit moet natuurlijk ergens vandaan komen. Het rode lijntje is het jaarlijkse volume aan elektriciteit dat er in het scenario nodig is. Het kan voorkomen dat er toch veel import (donkerblauw) nodig is terwijl er jaarlijks (meer dan) genoeg elektriciteit wordt opgewekt. Het ETM berekent vraag en aanbod van elektriciteit op uurbasis. Dit scenario heeft qua volume <strong>{{future.imported_electricity_percentage| times: 100 | round: 1 }}%</strong> import van elektriciteit. Daarnaast valt de stroom in dit scenario <strong>{{ future.dashboard_blackout_hours | without_unit }}</strong> uren uit en is {{ settings.area_name }} voor <strong>{{future.dashboard_security_of_supply }}</strong> uren afhankelijk van import van buiten het gebied. Flexibiliteitsopties zoals opslag in batterijen, waterstof of slim omgaan met de vraag kunnen helpen om de overschotten en de import omlaag te brengen.
       </p>
-      {% chart 99 %}
+      {% chart source_of_electricity_production %}
           Elektriciteitsvraag- en aanbod voor {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
       {% endchart %}
 
         <h3> B2. Flexibiliteit (uurbasis)</h3>
          <p> Het scenario heeft <strong>{{future.dashboard_total_number_of_excess_events }}</strong> uren overschotten, van de totale <strong> 8,760 </strong> uren die er totaal in een jaar zitten. Hieronder zie je wat er gebeurt met de overschotten.
-        {% chart 163 %}
+        {% chart use_of_excess_electricity %}
           Een overzicht van de overschotten van elektriciteit en hoe deze in het scenario wordt ingezet.
         {% endchart %}
 
         <h3> B3. Elektriciteitsnetten </h3>
           <p>De energietransitie heeft gevolgen voor het elektriciteitsnet. In de tabel kan je de piekbelasting en bruikbare capaciteit zien op de verschillende netniveau's.
           </p>
-          {% chart 223 %}
+          {% chart electricity_network_capacity_and_peaks %}
           Deze tabel geeft een overzicht van de impact op de netten op laagspanning (ls), middenspanning (ms) en hoogspanning (hs), evenals de tussenliggende transformatoren. Voor detailvragen over de netten zul je altijd de netbeheerder moeten bevragen.
           {% endchart %}
 
@@ -230,7 +230,7 @@
 		vraag, wordt waterstof geïmporteerd. Wanneer het aanbod hoger is dan de vraag, dan
 		zie je overschotten. Indien of de waterstofimport of het -overschot groot is ben je
 		als {{ settings.area_name }} gevoelig voor de waterstofprijs.
-  		{% chart 214 %}
+  		{% chart mekko_of_hydrogen_network %}
     		Waterstofvraag- (links) en aanbod (rechts) in {{ settings.end_year }}.
   		{% endchart %}
   	</p>
@@ -239,7 +239,7 @@
 	Hieronder staat weergegeven hoe de waterstof in het scenario ieder uur wordt ingezet. Rechtsonder de figuur
 	kun je kiezen om het hele jaar weer te geven of slechts één week van het jaar.
 
-		{% chart 226 %}
+		{% chart hydrogen_demand %}
   		Gebruik van waterstof door het jaar heen in {{ settings.end_year }}
 		{% endchart %}
 	</p>
@@ -248,7 +248,7 @@
 	Hieronder staat weergegeven hoe groot de benodigde opslagcapaciteit voor waterstof ten minste moet zijn. Rechtsonder de figuur
 	kun je kiezen om het hele jaar weer te geven of slechts één week van het jaar.
 
-		{% chart 227 %}
+		{% chart hydrogen_storage %}
   		Hoeveelheid opgeslagen waterstof door het jaar heen in {{ settings.end_year }}
 		{% endchart %}
 	</p>
@@ -269,11 +269,11 @@
     en anderzijds hoeveel van de binnenlandse potentie voor die grondstof wordt
     benut.
 
-    	{% chart 242 %}
+    	{% chart biomass_sankey %}
       	Biomassastromen in {{ settings.end_year }}
     	{% endchart %}
 
-    	{% chart 243 %}
+    	{% chart biomass_demand_by_category %}
       	Biomassavraag per biogrondstof {{ settings.end_year }}
     	{% endchart %}
     </p>
@@ -286,7 +286,7 @@
 
     <h2 class="banner">E. Fossiel</h2>
     <p> Hieronder is een overzicht te zien van de totale primaire energievraag van het scenario. Hier is goed te zien wanneer er nog fossiele vraag in het scenario zit. Let op: Geïmporteerde elektriciteit en waterstof kunnen ook nog een fossiele bron hebben.
-    {% chart 52 %}
+    {% chart mekko_of_primary_demand %}
 	Overzicht van de primaire energievraag in {{ settings.end_year }}
     {% endchart %}
     </p>
@@ -332,7 +332,7 @@
 
           </p>
 
-          {% chart 48 %}
+          {% chart breakdown_of_total_costs %}
             Deze grafiek geeft een overzicht van de totale kosten van het energiesysteem in {{ settings.start_year }} en {{ settings.end_year }}.
           {% endchart %}
 
@@ -460,11 +460,11 @@
 
   <h2>Appendix B: Investeringen </h2>
 
-  {% chart 142 %}
+  {% chart investment_table %}
     Deze tabel geeft een overzicht van de totale investeringen.
   {% endchart %}
 
-  {% chart 61 %}
+  {% chart additional_infrastructure_investments %}
     Deze tabel geeft een overzicht van de totale investeringen in de elektriciteitsnetten.
   {% endchart %}
 

@@ -1,0 +1,37 @@
+---
+- label: kerosene
+  color: "#BFEFFF"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: kerosene_planes_in_use_of_final_demand_in_planes
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_planes
+  key: kerosene_use_of_final_demand_in_planes
+- label: gasoline
+  color: "#8B0000"
+  order_by: 2
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gasoline_planes_in_use_of_final_demand_in_planes
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_planes
+  key: gasoline_use_of_final_demand_in_planes
+- label: bio_ethanol
+  color: "#5D7929"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bio_ethanol_planes_in_use_of_final_demand_in_planes
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_planes
+  key: bio_ethanol_use_of_final_demand_in_planes

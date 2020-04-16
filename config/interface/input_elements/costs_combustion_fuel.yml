@@ -1,10 +1,9 @@
 ---
-- id: 11
-  key: costs_oil
+- key: costs_oil
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "$/barrel"
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 2
   dependent_on: ''
   slide_key: costs_combustion_fuel
-- id: 57
-  key: costs_coal
+- key: costs_coal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "$/tonne"
   fixed: false
   interface_group: ''
@@ -27,12 +25,11 @@
   position: 3
   dependent_on: ''
   slide_key: costs_combustion_fuel
-- id: 58
-  key: costs_gas
+- key: costs_gas
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: " €/MWh"
   fixed: false
   interface_group: ''

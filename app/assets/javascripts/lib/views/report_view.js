@@ -621,7 +621,7 @@
    *   "{% chart 52 %}This is a caption{% endchart %}"
    */
   Liquid.Template.registerTag('chart', Liquid.Block.extend({
-    tagSyntax: /(\d+)( ?\| .*)?/,
+    tagSyntax: /([\w\d_-]+)( ?\| .*)?/,
 
     // Underscore template which renders the necessary elements around the
     // chart.

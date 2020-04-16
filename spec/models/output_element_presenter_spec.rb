@@ -74,8 +74,8 @@ RSpec.describe OutputElementPresenter do
     it 'presents multiple elements' do
       json = OutputElementPresenter.collection([oe, other], ->(*) {})
 
-      expect(json).to have_key(oe.id)
-      expect(json).to have_key(other.id)
+      expect(json).to have_key(oe.key)
+      expect(json).to have_key(other.key)
     end
   end
 end

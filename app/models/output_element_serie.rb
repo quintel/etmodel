@@ -57,6 +57,13 @@ class OutputElementSerie < YModel::Base
     I18n.t("output_element_series.groups.#{group}") unless group.blank?
   end
 
+  def short_description
+    I18n.t(
+      "descriptions_output_element_series.#{key}.short_content",
+      default: ''
+    )
+  end
+
   #  Descriptions are optional for output element series
   def description
     I18n.t("descriptions_output_element_series.#{key}.content", default: '')

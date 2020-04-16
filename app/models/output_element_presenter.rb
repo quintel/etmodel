@@ -26,10 +26,10 @@ class OutputElementPresenter
     new(element, renderer).as_json
   end
 
-  # Public: Presents multiple elements in a hash, keyed on their ID.
+  # Public: Presents multiple elements in a hash, keyed on their key.
   def self.collection(elements, renderer)
     elements.each_with_object({}) do |element, data|
-      data[element.id] = present(element, renderer)
+      data[element.key] = present(element, renderer)
     end
   end
 

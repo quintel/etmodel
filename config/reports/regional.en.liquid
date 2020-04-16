@@ -256,7 +256,7 @@
         a sector).
       </p>
 
-      {% chart 146 %}
+      {% chart final_demand_mekko_mece %}
         Final energy demand for all sectors.
       {% endchart %}
 
@@ -266,7 +266,7 @@
         system looks like this:
       </p>
 
-      {% chart 52 %}
+      {% chart mekko_of_primary_demand %}
         Primary energy demand for all sectors.
       {% endchart %}
 
@@ -283,7 +283,7 @@
         ({{ future.biggest_electricity_producer_value | autoscale: 'MJ'}}).
       </p>
 
-      {% chart 99 %}
+      {% chart source_of_electricity_production %}
         Electricity mix.
       {% endchart %}
 
@@ -295,7 +295,7 @@
         chart below shows the yearly balance of heat produced and consumed.
       </p>
 
-      {% chart 248 %}
+      {% chart collective_heat_mekko %}
         Demand and supply of district heating
       {% endchart %}
 
@@ -339,7 +339,7 @@
       emissions in {{ settings.start_year }}.
     </p>
 
-    {% chart 46 %}
+    {% chart co2_emissions %}
       CO<sub>2</sub> emissions based on primary energy demand broken down by sector for 1990 (left),
       {{ settings.start_year }} (middle),
       and {{ settings.end_year }} (right). These figures represent emissions across the complete fuel chain
@@ -386,7 +386,7 @@
       </ul>
     </p>
 
-    {% chart 191 %}
+    {% chart co2_sankey %}
       Sankey diagram showing which carriers and sectors are primarily responsible for CO<sub>2</sub> emissions.
     {% endchart %}
 
@@ -406,7 +406,7 @@
     not always absorbed within a time-scale that is relevant for climate change.
     </p>
 
-    {% chart 188 %}
+    {% chart co2_emissions_biomass %}
       Which part of the CO<sub>2</sub> emissions from biomass is relevant to the environment is uncertain and
       speculative. This chart serves to explore the (potential) amount of these emissions.
     {% endchart %}
@@ -421,7 +421,7 @@
     </p>
 
 
-    {% chart 76 %}
+    {% chart future_energy_imports %}
       Import and export of energy in the end-year. In this 'waterfall' diagram, export is indicated with a minus sign.
       The last column depicts the net import (or export) of all energy with neighbouring countries.
     {% endchart %}
@@ -435,7 +435,7 @@
           self-sufficient with respect to natural gas, the production of Dutch gas is declining see image
           below:
 
-          {% chart 159 %}
+          {% chart production_curve_natural_gas %}
             Production of natural gas as projected by Energie Beheer Nederland.
           {% endchart %}
         </p>
@@ -451,7 +451,7 @@
     </p>
 
 
-    {% chart 76 %}
+    {% chart future_energy_imports %}
       Import and export of energy in the end-year. In this 'waterfall' diagram, export is indicated with a minus sign.
       The last column depicts the net import (or export) of all energy with neighbouring countries.
     {% endchart %}
@@ -468,7 +468,7 @@
         shows what the frequency and distribution of durations of excess events are.
       </p>
 
-      {% chart 175 %}
+      {% chart merit_order_excess_events %}
         Histogram showing number and duration of excess events.
       {% endchart %}
 
@@ -502,7 +502,7 @@
 
       </p>
 
-      {% chart 48 %}
+      {% chart breakdown_of_total_costs %}
         Costs of the energy system.
       {% endchart %}
 
@@ -518,7 +518,7 @@
           chart below.
         </p>
 
-        {% chart 125 %}
+        {% chart merit_order %}
           Merit order.
         {% endchart %}
 
@@ -533,7 +533,7 @@
           and/or CO<sub>2</sub> can, for instance, make gas fuelled power plants more competitive with coal fired power plants.
         </p>
 
-<!--         {% chart 32 %}
+<!--         {% chart overview_costs_of_electricity_production %}
           The vertical axis shows all relevant production costs of electricity for various generation technologies
           (in €/MWhe). The horizontal axis shows the investment costs (in million €/MWe).
         {% endchart %} -->
@@ -559,7 +559,7 @@
       {{ future.dashboard_security_of_supply | without_unit }} hours of loss of load.
     </p>
 
-    {% chart 111 %}
+    {% chart security_of_supply %}
       Reliability of production capacity.
     {% endchart %}
 
@@ -600,7 +600,7 @@
           (orange in table below) or are not even earning their OPEX (operational expenditure) back (red).
         </p>
 
-        {% chart 140 %}
+        {% chart plant_profitability %}
           Profitability of power plants.
         {% endchart %}
 
@@ -619,7 +619,7 @@
         the production of bio-fuels such as wood, ethanol, bio-gas and bio-diesel.
       </p>
 
-      {% chart 168 %}
+      {% chart mekko_of_bio_footprint %}
         Bio footprint per carrier.
       {% endchart %}
 
@@ -627,14 +627,14 @@
 
       The percentage of renewable energy in your scenario is {{ future.renewability_percentage | round: 1 }}%.
 
-      {% chart 49 %}
+      {% chart renewability %}
         Renewability percentage of final energy demand.
       {% endchart %}
 
       For electricity generation, the renewability is
       {{ future.share_of_renewable_electricity | times: 100 | round: 1 }}%.
 
-      {% chart 212 %}
+      {% chart renewable_electricity %}
         Renewability of produced electricity. The renewability is defined as all renewable electricity
         production divided by local electricity consumption and can be larger than 100%.
       {% endchart %}
@@ -692,7 +692,7 @@
         "Industry in Transition" (Quintel Intelligence 2016).
       </p>
 
-      {% chart 190 %}
+      {% chart refinery %}
         Sankey diagram of oil products in refineries.
       {% endchart %}
 
@@ -824,7 +824,7 @@
   </p>
 
 
-  {% chart 142 %}
+  {% chart investment_table %}
     This table shows an overview of the investment cost of heat and electricity producing
     technologies. The investment costs are shown for both the start scenario ({{ settings.start_year }})
     and for the future year. In both cases a 'green-field' approach is taken: no previously installed

@@ -19,7 +19,7 @@ class OutputElementsController < ApplicationController
     keys = params[:keys].to_s.split(',').reject(&:blank?).uniq
 
     json = OutputElementPresenter.collection(
-      OutputElement.where(key: keys),
+      keys.map { |key| OutputElement.find(key) },
       ->(*args) { render_to_string(*args) }
     )
 
@@ -31,18 +31,6 @@ class OutputElementsController < ApplicationController
     @chart_holder = params[:holder]
 
     @groups = OutputElement.select_by_group
-  end
-
-  # legacy actions used by the block charts
-  #
-  def invisible
-    session[params[:key]] = 'invisible'
-    render js: ""
-  end
-
-  def visible
-    session[params[:key]] = 'visible'
-    render js: ""
   end
 
   def zoom

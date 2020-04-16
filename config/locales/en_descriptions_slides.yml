@@ -99,16 +99,13 @@ en:
       short_content: ''
       content: Will there be a shift away from cars that run on fossil fuels? How
         will a massive roll-out of electric cars affect energy use? Please indicate
-        what cars we drive in the future. In the <a href="/scenario/supply/transport_fuels/road-transport"
-        >road fuels section</a> you can determine which fuel blends cars will use
-        and in the <a href="/scenario/flexibility/flexibility_demand/demand-response-electric-vehicles"
-        >demand response ev section</a> you can determine where electric cars will
+        what cars we drive in the future. In the <a href="/scenario/supply/transport_fuels/road-transport">road fuels section</a> you can determine which fuel blends cars will use
+        and in the <a href="/scenario/flexibility/flexibility_demand/demand-response-electric-vehicles">demand response ev section</a> you can determine where electric cars will
         charge.
     demand_transport_truck_technology:
       short_content: ''
       content: Will there be a shift away from trucks that run on fossil fuels? How
-        does this affect energy use? In the <a href="/scenario/supply/transport_fuels/road-transport"
-        >road fuels section</a> you can determine which fuels trucks will use.
+        does this affect energy use? In the <a href="/scenario/supply/transport_fuels/road-transport">road fuels section</a> you can determine which fuels trucks will use.
     demand_industry_demand_growth:
       short_content: ''
       content: 'The growth you indicate here is due to economic and population growth
@@ -372,7 +369,7 @@ en:
         therefore the attributes of natural gas, because some components are removed.
         <a href=\"/texts/fce_naturalgas\" class=\"fancybox\">read more</a>\r\n<br/>"
     fce_oil:
-      short_content: 
+      short_content:
       content: "Mineral oil is the source of many energy carriers, chemicals, plastics,
         fertilizer, etc. The numbers shown here are for crude oil itself. Emissions
         for refining or processing to obtain chemicals have not been included. <br/>\r\nThe
@@ -408,7 +405,7 @@ en:
         production and treatment. <a href="/texts/fce_greengas" class="fancybox">read
         more</a>
     flexibility_security_of_supply_electricity:
-      short_content: 
+      short_content:
       content: "Will there be sufficient power supply in the future to meet demand
         at any moment? For example, is your scenario robust for extended periods of
         low wind and solar generation combined with demand peaks? Renewable power
@@ -431,7 +428,7 @@ en:
         cope with extreme weather conditions? Will people be left in the dark during
         periods of very low wind and solar generation?"
     flexibility_merit_order_merit_order:
-      short_content: 
+      short_content:
       content: "Generally speaking, electricity generation follows electricity demand.
         The order in which power plants are dispatched is determined by the merit
         order. The merit order ranks power plants according to their marginal costs.
@@ -451,7 +448,7 @@ en:
         the merit order calculation <a href=\"https://github.com/quintel/documentation/blob/master/general/merit_order.md\"
         target =\"_blank\">consult our documentation</a>."
     costs_employment:
-      short_content: 
+      short_content:
       content: "The ETM calculates impact on employment for technologies used to supply
         heat and electricity. To do this, the ETM makes assumptions about the production
         of these technologies. You can change these assumptions here.\r\n\r\n"
@@ -471,11 +468,11 @@ en:
         >truck technology</a> section you can select the engine type of your cars
         and trucks. Keep in mind that LNG is used by trucks, but not by cars.
     costs_heatpumps:
-      short_content: 
+      short_content:
       content: Below you can change the investment costs of heat pumps (both collective
         and individual systems) and the costs for heat buffers in individual households.
     fce_settings:
-      short_content: 
+      short_content:
       content: "<p>Greenhouse gasses are emitted when fuels are used, but also when
         they are extracted, treated and transported to their final destination. In
         this section,  you can choose to include these fuel chain emissions in the
@@ -487,31 +484,31 @@ en:
         CO<sub>2</sub> emissions, regardless of whether 'FCE' is 'ON' or 'OFF'.</p>\r\n\r\n<div
         class=\"fce-toggle\"></div>"
     demand_industry_metal_production:
-      short_content: 
+      short_content:
       content: Here you can indicate how you think industrial production volumes might
         change. These are often the result of economic changes. These <strong> do
         not include</strong> efficiency improvements</strong> or newer technologies
         chosen in the sections below.
     demand_industry_aluminium:
-      short_content: 
+      short_content:
       content: After steel production, aluminium production is the most energy intensive.
         You can choose from three measures to reduce energy consumption. Note that
         the smelt oven only recycles used aluminium. Here you can indicate what you
         think will happen.
     demand_industry_other_metals:
-      short_content: 
+      short_content:
       content: This sector includes the production of lead, zinc, copper, silver or
         gold and post-processing of produced steel and aluminium. You can indicate
         efficiency changes for electric and heat processes in this sector.
     demand_industry_steel:
-      short_content: 
+      short_content:
       content: 'Steel processing requires energy-intensive furnaces. Several alternatives
         are possible. The percentage of recycled steel that can be used as input varies
         per technology: blast furnaces and cyclone furnaces use up to 20% recycled
         steel and electric ovens are used for recycling only. The cyclone furnaces
         are unique in the sense that they can run on 100% bio-fuel.'
     flexibility_weather_conditions_and_flh:
-      short_content: 
+      short_content:
       content: "Outdoor temperature and technical developments of wind and solar technologies
         and have an effect on (hourly) demand and supply. Here you can set the average
         temperature and full load hours of wind turbines and solar pv.\r\n<p>\r\nFurthermore,
@@ -527,7 +524,7 @@ en:
         can be downloaded in the <a href=\"/scenario/data/data_export/merit-order-prices\">results
         section</a>."
     fce_liquid_biofuels:
-      short_content: 
+      short_content:
       content: "The EU mandates a minimum percentage of liquid biofuels for road transport.
         Such fuels are often produced more efficiently in tropical countries. Is the
         entire fuel chain also more efficient in terms of greenhouse gas emissions?
@@ -537,7 +534,7 @@ en:
         under 'Transport fuels'\r\n\r\n<a href=\"/texts/fce_liquid_biofuels\" class=\"fancybox\">read
         more</a>"
     flexibility_flexibility_excess:
-      short_content: 
+      short_content:
       content: "This page is about excess electricity and what to do with it. Wind
         turbines and solar panels are subject to volatile natural patterns. Their
         electricity supply does not match  demand and large amounts of volatile production
@@ -554,12 +551,12 @@ en:
         <a href=\"https://github.com/quintel/documentation/blob/master/general/storage.md\"
         target =\"_blank\">documentation</a>. "
     flexibility_flexibility_power_storage:
-      short_content: 
+      short_content:
       content: Using the sliders below you can set the electricity storage options
         for the different network levels. Excess electricity is stored and supplied
         to the grid later, once the "excess event" has passed.
     flexibility_flexibility_power_to_gas:
-      short_content: 
+      short_content:
       content: Excess electricity can be used to produce hydrogen in an electrolysis
         process. In the ETM, the hydrogen produced by using excess power will be fed
         into the central hydrogen network. In addition to this hydrogen producing
@@ -567,7 +564,7 @@ en:
         <a href="/scenario/supply/hydrogen/hydrogen-production" >hydrogen production
         slide</a>. Any excess hydrogen will be exported.
     flexibility_flexibility_wind_cost:
-      short_content: 
+      short_content:
       content: "Why should wind power production costs increase from a certain level
         of penetration? \r\n<br/><br/>\r\nIf we assume wind power that exceeds demand
         cannot be exported, stored or converted into something economically useful,
@@ -581,7 +578,7 @@ en:
         more wind turbines, it might become economically interesting to introduce
         storage and conversion technologies in order to have more useful power available."
     flexibility_flexibility_net_load:
-      short_content: 
+      short_content:
       content: "The energy transition affects the electricity network. In the table
         on the right you can see the peak load and usable capacity for the different
         grid levels. When you click on the 'Annual'-toggle in the top bar, you will
@@ -593,11 +590,11 @@ en:
         on the investments costs per grid level. These can be set in the <a href=\"/scenario/costs/infrastructure/electricity-infrastructure-costs\"
         >Costs</a> section."
     demand_households_population:
-      short_content: 
+      short_content:
       content: 'The energy demand for all residences combined depends on the size
         of the population and the number of residences, which both can be set here. '
     flexibility_electricity_import_export_markets:
-      short_content: 
+      short_content:
       content: "The electricity market is one of the last markets in the EU facing
         cross-border integration. Most industries are already competing in the EU
         Single Market. The proposal of the European Commission to create a common
@@ -611,7 +608,7 @@ en:
         practice, market distortions by (the mismatch of) individual member states'
         policies may result in less than perfect market coupling."
     flexibility_electricity_import_export_edp:
-      short_content: 
+      short_content:
       content: "The so-called <strong>merit order</strong> (also see <a href=\"/scenario/costs/merit_order/merit-order\"
         >Merit Order</a>) determines the order in which producers of electricity meet
         demand. Producers with the lowest marginal costs have priority.\r\n<br/><br/>\r\nThis
@@ -622,7 +619,7 @@ en:
         interconnections between countries are being increased and their utilization
         optimized. "
     flexibility_electricity_import_export_interconnectors:
-      short_content: 
+      short_content:
       content: "Countries in the EU are planning to invest in increasing interconnection
         capacity (see <a href=\"http://refman.et-model.com/publications/1829\" target=\"_blank\">10-Year
         Network Development Plan (ENTSO-E)</a>). In the chart on the right, we qualitatively
@@ -642,7 +639,7 @@ en:
         interconnector is congested less often and the price of electricity converges
         more frequently."
     flexibility_electricity_import_export_renewables:
-      short_content: 
+      short_content:
       content: "The EU has the goal to increase the available capacity of renewable
         energy sources (RES) for 2020 (<a href=\"http://refman.et-model.com/publications/1830\"
         target=\"_blank\">Scenario Outlook and System Adequacy Forecast 2011-2025
@@ -660,23 +657,23 @@ en:
         much higher than for non-renewable capacity. The <em>integral production costs</em>
         are therefore likely to increase with more renewable capacity."
     demand_industry_chemical_demand_growth:
-      short_content: 
+      short_content:
       content: 'The growth you indicate here is due to economic and population growth.
         This growth is <strong>excluding</strong> efficiencies and technological changes
         you can indicate in the subsections below.  '
     demand_industry_chemical_efficiency_improvement:
-      short_content: 
+      short_content:
       content: Of all sectors in the economy, industry has the strongest track record
         in energy efficiency improvements. Saving energy, means reducing costs.
     demand_industry_chemical_heat:
-      short_content: 
+      short_content:
       content: How will the chemical industry meet its heat demand? A different mix
         of technologies for heat can strongly affect energy efficiency, sustainability
         and CO<sub>2</sub> emissions. The number and kind of CHPs you want in order
         to meet this demand can be set in the  <a href="/scenario/demand/industry/combined-heat-power">
         Combined heat & power</a> section.
     demand_industry:
-      short_content: 
+      short_content:
       content: "In most countries industry is responsible for the largest part of
         the energy use. Because this industry is very diverse, we split it up in different
         sectors. We follow the division of the industry into subsectors as used by
@@ -690,7 +687,7 @@ en:
         for this from the report <a href=\"http://refman.energytransitionmodel.com/publications/2037\"
         target =\"_blank\">Industrie in transitie (in Dutch)</a>."
     supply_primary_production_oil:
-      short_content: 
+      short_content:
       content: "The chart on the right shows our <strong>estimates</strong> of annual
         extraction of mineral oil. This curve cannot be adjusted by the user and it
         does not respond to changing market conditions (for example how competitive
@@ -702,7 +699,7 @@ en:
         this text</a> from the <a href=\"/scenario/supply/fce/mineral-oil\">fuel chain
         emissions section.</a>\r\n"
     supply_primary_production_coal:
-      short_content: 
+      short_content:
       content: "The chart on the right shows our <strong>estimates</strong> of annual
         extraction of coal and lignite. This curve cannot be adjusted by the user
         and it does not respond to changing market conditions (for example how competitive
@@ -714,7 +711,7 @@ en:
         this text</a> from the <a href=\"/scenario/supply/fce/coal\">fuel chain emissions
         section.</a>\r\n"
     supply_primary_production_natural_gas:
-      short_content: 
+      short_content:
       content: "The chart on the right shows our <strong>estimates</strong> of annual
         extraction of natural gas. This curve cannot be adjusted by the user and it
         does not respond to changing market conditions (for example how competitive
@@ -727,7 +724,7 @@ en:
         from the <a href=\"/scenario/supply/fce/natural-gas\">fuel chain emissions
         section.</a>\r\n"
     supply_primary_production_uranium:
-      short_content: 
+      short_content:
       content: "The chart on the right shows our <strong>estimates</strong> of annual
         extraction of uranium oxide. This curve cannot be adjusted by the user and
         it does not respond to changing market conditions (for example how competitive
@@ -739,7 +736,7 @@ en:
         class=\"fancybox\">in this text</a> from the <a href=\"/scenario/supply/fce/uranium\">fuel
         chain emissions section.</a>\r\n"
     supply_primary_production:
-      short_content: 
+      short_content:
       content: "The energy we use every day comes in the form of energy carriers like
         electricity, coal or natural gas. Some of these carriers are extracted from
         mines or wells. Such carriers are called primary carriers. They are often
@@ -755,7 +752,7 @@ en:
         to different circumstances in the market?</li>\r\n</ul>\r\nSuch questions
         are not easily answered and would require quite a nit of extra input (sliders). "
     flexibility_flexibility_power_to_power_EV:
-      short_content: 
+      short_content:
       content: "Electric vehicles could provide a cost-effective way of storing electricity
         as they contain a relatively large battery. Some of the charge in the battery
         is, however, needed in order to fuel your next ride. With the slider below,
@@ -767,7 +764,7 @@ en:
         by volatile sources and is supplied to the grid once the 'excess event' has
         passed."
     flexibility_electricity_import_export_interconnectivity:
-      short_content: 
+      short_content:
       content: The difference between the hourly electricity supply and demand can
         be imported or exported. The interconnector capacity between countries is,
         however, limited, restricting the amount of electricity that can be imported
@@ -778,13 +775,13 @@ en:
         physical interconnector capacity is available for export using the sliders
         below. Read more about import/export <a href="https://github.com/quintel/documentation/blob/master/general/import_export.md">here</a>.
     demand_transport_domestic_navigation_technology:
-      short_content: 
+      short_content:
       content: "Will ships owners hold on to conventional diesel engine ships, or
         will they make a transition to Liquefied Natural Gas (LNG) engine ships? In
         the <a href=\"/scenario/supply/transport_fuels/domestic-navigation\" >domestic
         navigation fuels section</a> you can set the fuel mix these engines run on.\r\n"
     fce_lng:
-      short_content: 
+      short_content:
       content: 'When natural gas is cooled down to - 162 degrees celsius (under atmospheric
         pressure), it becomes liquid and its energetic density is higher by a factor
         of about 600. Then it is transported from the Middle East (main producer)
@@ -794,7 +791,7 @@ en:
         and other factors. LNG is also used in transport, most notably by trucks and
         ships. '
     supply_hydrogen_production:
-      short_content: 
+      short_content:
       content: "Below you can specify how hydrogen will be produced in the future.
         The ETM offers the following options: electrolysis of wind and solar power
         from wind/solar farms dedicated to hydrogen production; steam methane reforming
@@ -809,7 +806,7 @@ en:
         our <a href=\"https://github.com/quintel/documentation/blob/master/general/Hydrogen.md\"
         >documentation</a>."
     flexibility_flexibility_flexibility_order:
-      short_content: 
+      short_content:
       content: "Wind turbines and solar panels are subject to volatile natural patterns.
         The electricity that they produce might therefore not always be used to match
         demand directly and consequently lead to excess electricity. To prevent curtailment
@@ -824,12 +821,12 @@ en:
         on your list and so on. Finally, any remaining excess electricity is curtailed.
         You can drag and drop the technologies in the desired order."
     costs_electric_car_investment:
-      short_content: 
+      short_content:
       content: Here you can specify how much higher the average initial investment
         costs of electric cars (excl. taxes) will be than those of conventional combustion
         engine cars. Keep in mind that hydrogen-powered cars are electric too!
     flexibility_merit_order_merit_order_positions:
-      short_content: 
+      short_content:
       content: |
         The merit order ranks power plants according to their marginal costs. Not
         all electricity production technologies participate in the merit order.
@@ -859,7 +856,7 @@ en:
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Price curve</span> <span class="filetype">300KB CSV</span></a></li>
         </ul
     flexibility_merit_order_merit_order_price:
-      short_content: 
+      short_content:
       content: |
         The merit order ranks power plants according to their marginal costs.
         Based on the hourly demand, the ETM calculates which power plants are
@@ -877,7 +874,7 @@ en:
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Price curve</span> <span class="filetype">300KB CSV</span></a></li>
         </ul>
     demand_industry_chemical_refineries:
-      short_content: 
+      short_content:
       content: "Refineries turn crude oil into oil products. These oil products are
         used as fuel in the transport sector or feedstock in the chemical industry.
         Refineries make most of their money by selling transport fuels. The demand
@@ -890,7 +887,7 @@ en:
         Below you can set the growth and efficiency improvements of the refineries
         separately. Note that the demand for refinery products is set by global markets. "
     demand_industry_chemical_fertilizers:
-      short_content: 
+      short_content:
       content: "Ammonia (NH<sub>3</sub>) constitutes the basis of all nitrogen-based
         fertilizers. The most important step in producing ammonia is reacting hydrogen
         with nitrogen. At the moment the required hydrogen is produced locally by
@@ -900,7 +897,7 @@ en:
         originating from different processes that can be chosen in the \r\n<a href=\"/scenario/supply/hydrogen/hydrogen-production\"
         >hydrogen production slide</a>."
     demand_industry_chemical_other:
-      short_content: 
+      short_content:
       content: "This sector includes the production of chemicals. Fertilizer production
         has been excluded from this sector and is represented as a <a href=\"/scenario/demand/industry/fertilizers\"
         > separate sector</a>. \r\n<br><br/>\r\nThe growth you indicate here is due
@@ -909,27 +906,27 @@ en:
         not all heat production technologies are suited to supply the full heat demand.
         More information on this can be found in the \"?\" next to the slider."
     demand_industry_other_food:
-      short_content: 
+      short_content:
       content: This sector includes the manufacturing of food products, beverages
         and tobacco. Below you can set the growth and efficiency improvements of this
         sector separately.
     demand_industry_other_paper:
-      short_content: 
+      short_content:
       content: This sector includes the manufacturing of paper and paper products
         as well as printing and reproduction of recorded media. Below you can set
         the growth and efficiency improvements of this sector separately.
     demand_industry_aggregated_other:
-      short_content: 
+      short_content:
       content: The other industry comprises all sectors that are not shown explicitly
         above. Since the specific technologies used in this sector are not known,
         you can directly set the shares of energy carriers below.
     demand_industry_aggregated_chemical_other:
-      short_content: 
+      short_content:
       content: The growth you indicate here is due to economic and population growth.
         This growth is excluding efficiencies and technological changes you can indicate
         in the subsections below.
     supply_co2_emissions_biomass:
-      short_content: 
+      short_content:
       content: "Usually no CO<sub>2</sub> emissions are attributed to biomass as biomass
         absorbs as much CO<sub>2</sub> as is emitted during combustion (over the complete
         life cycle). However, the CO<sub>2</sub> emitted by combustion of biomass
@@ -941,12 +938,12 @@ en:
         emissions that you include here are only shown in the chart and not included
         in your scenario!</strong>"
     demand_industry_other_ict:
-      short_content: 
+      short_content:
       content: This sector encompasses all centralized ICT services. Its most notable
         components are datacenters and telecom. Below you can set the growth and efficiency
         improvements of this sector separately.
     flexibility_flexibility_demand_response_ev:
-      short_content: 
+      short_content:
       content: "Demand response is a form of flexibility where energy demand is adjusted
         or shifted in time. The goal is to reduce peaks in energy demand. With the
         sliders in this section, you can adjust the charging behaviour of electric
@@ -955,21 +952,21 @@ en:
         the <a href=\"/scenario/demand/transport_passenger_transport/car-technology\"
         >car technology section</a>."
     data_export_application_demands:
-      short_content: 
+      short_content:
       content: |
         Download information about the primary and final demands, and also the primary CO<sub>2</sub> emissions of applications (such as cooking, appliances, heating, transport, etc).
         <ul class="data-download">
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv"><span class="name">Application primary and final demands</span> <span class="filetype">40KB CSV</span></a></li>
         </ul>
     data_export_production:
-      short_content: 
+      short_content:
       content: |
         Download details of heat and electricity producers. Includes information about the electrical and heat capacities, number of units, and costs.
         <ul class="data-download">
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv"><span class="name">Production capacity and costs</span> <span class="filetype">15KB CSV</span></a></li>
         </ul>
     flexibility_flexibility_demand_response_hp:
-      short_content: 
+      short_content:
       content: "In the ETM all heat pumps have the option to install a buffer for
         space heating and a buffer for hot water. The default settings of these buffers
         represent a common setup of heat pumps in households. However, in the future
@@ -977,13 +974,13 @@ en:
         The sliders below allow you to indicate the buffer size for different heat
         pumps."
     data_export_energy_flows:
-      short_content: 
+      short_content:
       content: "The Energy Transition Model describes the energy flows through several\r\nhundred
         uses and conversions; this CSV provides a list of each of\r\nthese flows (inputs
         and outputs).\r\n<ul class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv\">
         <span class=\"name\">Energy flows</span> <span class=\"filetype\">375KB CSV</span></a></li>\r\n</ul>\r\n"
     demand_transport_international_transport:
-      short_content: 
+      short_content:
       content: Currently emissions from international transport are not included in
         national energy statistics, since it is complex to decide to which country
         they should be allocated. However, international aviation and navigation are
@@ -993,7 +990,7 @@ en:
         it is possible to include international aviation and navigation to a desired
         percentage by using the sliders below.
     supply_transport_international_aviation:
-      short_content: 
+      short_content:
       content: "Will bio-kerosene contribute more to the aviation fuels mix in the
         future? You can choose your blend of kerosene here. \r\n</br></br>\r\nIf you
         have moments of excess electricity in your scenario, it is possible to use
@@ -1001,32 +998,32 @@ en:
         in the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-kerosene-for-aviation\"
         > flexibility section</a>. "
     supply_transport_international_shipping:
-      short_content: 
+      short_content:
       content: The transport fuels for international navigation depend directly on
         the type of ship engines you choose. In the <a href="/scenario/demand/transport_international_transport/international-navigation-technology"
         >international navigation section</a> you can select the engines (HFO or LNG)
         your international ships will be equipped with. Note that use biofuels is
         not yet possible for this sector.
     demand_transport_international_transport_mobility_growth:
-      short_content: 
+      short_content:
       content: International transportation has grown as a result of increasing globalisation.
         Will this trend continue in the future? The growth rates that you indicate
         here apply to the sector as a whole and are not influenced by the population
         growth.
     demand_transport_international_navigation_technology:
-      short_content: 
+      short_content:
       content: Will ships owners hold on to conventional ships running on heavy fuel
         oil (HFO) or will they make a transition to liquefied natural gas-fired (LNG)
         ships for international navigation?
     demand_transport_international_aviation_technology:
-      short_content: 
+      short_content:
       content: 'For international aviation primarily large aircrafts are used that
         consume kerosene. Therefore, different aviation technologies cannot be chosen
         here, but in the <a href="/scenario/supply/transport_fuels/international-aviation"
         >fuels</a> section it is possible to choose the blend of kerosene for your
         planes. '
     flexibility_flexibility_power_to_kerosene:
-      short_content: 
+      short_content:
       content: "Excess electricity can be used to produce synthetic kerosene for aviation.
         For this process carbon is needed which can be recycled, for example from
         flue gasses from industries or directly from the air. Hence the production
@@ -1040,19 +1037,18 @@ en:
         allocate the CO<sub>2</sub> reduction to either the industry or international
         transport sector.\r\n<br/><br/>"
     demand_transport_bus_technology:
-      short_content: 
+      short_content:
       content: Nowadays most busses are powered by diesel or gas. What will happen
-        in the future? In the <a href="/scenario/supply/transport_fuels/road-transport"
-        >road fuels section</a> you can determine which fuel blends busses will use.
+        in the future? In the <a href="/scenario/supply/transport_fuels/road-transport">road fuels section</a> you can determine which fuel blends busses will use.
     demand_transport_bicycle_technology:
-      short_content: 
+      short_content:
       content: E-bikes are upcoming; will this trend continue?
     demand_transport_motorcycle_technology:
-      short_content: 
+      short_content:
       content: What will the share of gasoline and electric motorcycles and scooters
         be in the future?
     demand_transport_freight_transport:
-      short_content: 
+      short_content:
       content: "Will freight transport increase or decrease in the future? The growth
         rate that you indicate here determines the future demand for 'freight tonne
         kilometres', the total number of kilometres freight is shipped per year. This
@@ -1063,27 +1059,27 @@ en:
         container ships are part of the <a href=\"/scenario/demand/transport_international_transport/international-transport\">international
         transport section</a>."
     demand_transport_freight_train_technology:
-      short_content: 
+      short_content:
       content: Which train technologies will be mostly used? Electric trains are cleaner
         and more efficient than diesel trains, but require more infrastructure to
         run. In the <a href="/scenario/supply/transport_fuels/rail-transport" >train
         fuels section</a> you can determine which fuels diesel trains will use.
     costs_flexibility_storage:
-      short_content: 
+      short_content:
       content: Excess electricity can temporarily be stored in for example household
         batteries. Below, you can specify how much the investment costs of this technology
         will change in the future.
     costs_flexibility_conversion:
-      short_content: 
+      short_content:
       content: "(Excess) electricity can be converted to other energy carriers, like
         hydrogen or heat. Below, you can specify how much the investment costs of
         these conversion devices (like boilers and electrolysers) will change in the
         future."
     demand_transport_tram_technology:
-      short_content: 
+      short_content:
       content: 'The ETM only models electric trams and metros. '
     demand_transport_overview:
-      short_content: 
+      short_content:
       content: In the side bar on the left you can click on <a href="/scenario/demand/transport_passenger_transport/applications">'Passenger
         transport'</a>, <a href="/scenario/demand/transport_freight_transport/applications">'Freight
         transport'</a> and <a href="/scenario/demand/transport_international_transport/international-transport">'International
@@ -1091,7 +1087,7 @@ en:
         in the future, which means of transport we will use and which drive technologies
         will prevail.
     flexibility_electricity_import_export_properties:
-      short_content: 
+      short_content:
       content: "In some scenarios you will import electricity from outside your area.
         The production and distribution of this electricity could have caused CO<sub>2</sub>
         emissions elsewhere. How much of these emissions do you want to attribute
@@ -1101,10 +1097,10 @@ en:
         to this imported electricity can be set in the <a href=\"/scenario/costs/electricity_import_costs/costs-of-imported-electricity\">
         section of costs</a>."
     costs_imported_electricity:
-      short_content: 
+      short_content:
       content: What will be the costs of imported electricity in the future?
     supply_electricity_renewable_hydrogen_plants:
-      short_content: 
+      short_content:
       content: Hydrogen power plants use hydrogen to generate electricity. As the
         market share of volatile production technologies like solar and wind increases,
         the importance of dispatchable power plants that can supply power at moments
@@ -1112,7 +1108,7 @@ en:
         their output and can therefore play a role in balancing the sustainable energy
         system of the future.
     supply_hydrogen_transport:
-      short_content: 
+      short_content:
       content: "How will hydrogen be transported in the future? At the moment, two
         distribution methods seem to be the most viable: compressed hydrogen transport
         via pipelines and via trucks.\r\n<br/><br/>\r\nTransport via pipelines can
@@ -1125,7 +1121,7 @@ en:
         The costs of both technologies can be adjusted in the <a href=\"/scenario/costs/costs_hydrogen/hydrogen-transport\"
         >costs section</a>."
     supply_hydrogen_co2_import:
-      short_content: 
+      short_content:
       content: "In some scenarios hydrogen will be imported from outside your area.
         This depends on how much hydrogen you chose to produce locally in the <a href=\"/scenario/supply/hydrogen/hydrogen-production\">'Hydrogen
         production'</a> tab. The production and distribution of imported hydrogen
@@ -1138,19 +1134,19 @@ en:
         to this imported hydrogen can be set in the <a href=\"/scenario/costs/fuel_costs/combustion-fuel\">costs
         section</a>.\r\n\r\n"
     costs_infrastructure_electricity_investement_regime:
-      short_content: 
+      short_content:
       content: ''
     costs_co2_ccs_industry:
-      short_content: 
+      short_content:
       content: 'What will CCS in industry cost on average? Note: this is an expert
         function which shall be superseded by more detailed modelling soon.'
     demand_industry_ccs:
-      short_content: 
+      short_content:
       content: 'What percentage of direct CO2 emissions in industry will be captured
         and stored? Note: this is an expert function which will be superseded by more
         detailed modelling soon.'
     data_export_household_heat:
-      short_content: 
+      short_content:
       content: "Download information about demand and supply of (individual) heat
         in households per hour (space heating and tap water); including deficits,
         buffering, and time-shifting.\r\n<ul class=\"data-download\">\r\n  <li><a
@@ -1158,7 +1154,7 @@ en:
         <span class=\"name\">Household heat curves</span> <span class=\"filetype\">400KB
         CSV</span></a></li>\r\n</ul>\r\n"
     data_visuals_scenario_report:
-      short_content: 
+      short_content:
       content: |
         The scenario report is a printable description of the decisions you
         made in your current scenario, progress made towards important goals, and
@@ -1169,7 +1165,7 @@ en:
           <span class="fa fa-book"></span> View the report →
         </a>
     data_visuals_factsheet:
-      short_content: 
+      short_content:
       content: |
         A printable A3 or A4 factsheet describing how energy is produced and
         consumed in your scenario. Unfortunately, the factsheet is currently
@@ -1179,7 +1175,7 @@ en:
           <span class="fa fa-book"></span> View the factsheet →
         </a>
     data_visuals_graph:
-      short_content: 
+      short_content:
       content: |
         A detailed breakdown of energy flows throughout the Energy Transition
         Model for your scenario. Recommended only for advanced users.
@@ -1188,7 +1184,7 @@ en:
           <span class="fa fa-book"></span> View the graph →
         </a>
     flexibility_flexibility_pumped_storage:
-      short_content: 
+      short_content:
       content: "Pumped storage provides a cheap way for large-scale storage of electricity.
         Electricity can be used to pump water from the lower reservoir to a higher
         reservoir. At times of high electricity demand electricity is generated by
@@ -1196,17 +1192,17 @@ en:
         storage can only be used with excess electricity and the stored energy will
         be provided as soon as there is no more excess production."
     costs_hydrogen_import:
-      short_content: 
+      short_content:
       content: What do you think imported hydrogen will cost in the future?
     costs_hydrogen_storage:
-      short_content: 
+      short_content:
       content: What do you think the costs for hydrogen storage will be in the future?
     costs_hydrogen_transport:
-      short_content: 
+      short_content:
       content: What will the costs for different hydrogen transport technologies be
         in the future?
     supply_hydrogen_storage:
-      short_content: 
+      short_content:
       content: "The ETM calculates hydrogen demand and supply on an hourly-basis which
         makes it possible to identify moments of excess hydrogen production and shortages.
         The ETM ensures that hydrogen supply matches demand for every hour per year
@@ -1217,7 +1213,7 @@ en:
         can be adjusted in the <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\"
         >costs section</a>."
     supply_hydrogen_demand:
-      short_content: 
+      short_content:
       content: "There is a growing interest in using hydrogen as energy carrier, for
         instance for heat production, electricity production, transport fuel or as
         a feedstock for the chemical industry. The ETM allows you to explore a future
@@ -1232,14 +1228,14 @@ en:
         <a href=\"/scenario/demand/transport_passenger_transport/bus-technology\">busses</a>
         and <a href=\"/scenario/demand/transport_freight_transport/truck-technology\">trucks</a>)</li></ul>"
     data_export_hydrogen:
-      short_content: 
+      short_content:
       content: "Below you can download information about hydrogen demand, supply and
         storage per hour in your scenario.\r\n\r\n<ul class=\"data-download\">\r\n
         \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/hydrogen.csv\">\r\n
         \     <span class=\"name\">Hydrogen demand, production and storage per hour</span>\r\n
         \     <span class=\"filetype\">750KB CSV</span>\r\n    </a>\r\n  </li>\r\n</ul>"
     supply_biomass_overview:
-      short_content: 
+      short_content:
       content: "Biomass can be used in different places throughout the model:\r\n<ul>\r\n
         \ <li>as <a href=\"/scenario/supply/biomass/green-gas-in-gas-network\">green
         gas</a> in the gas network</li>\r\n  <li>in biomass heaters for <a href=\"/scenario/supply/renewable_heat/biomass\">(local)
@@ -1254,23 +1250,23 @@ en:
         <a href=\"https://github.com/quintel/documentation/blob/master/general/biomass.md\"
         target=\"_blank\">documentation</a>."
     supply_biomass_bio_footprint:
-      short_content: 
+      short_content:
       content: What is the future biomass footprint of this region? The chart shown
         on the right shows how much arable land you would need to cover this region's
         biomass demand.
     costs_heat_network:
-      short_content: 
+      short_content:
       content: What do you think the costs for heat network infrastructure will be
         in the future? See <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md"
         target ="_blank">our documentation</a> for information about the cost calculation.
     costs_residual_heat:
-      short_content: 
+      short_content:
       content: What would the costs of residual heat from industry and imported heat
         be in the future? See <a href="https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md"
         target ="_blank">our documentation</a> for information about industrial residual
         heat.
     introduction_to_etm:
-      short_content: 
+      short_content:
       content: "The ETM helps you explore future energy scenarios for a region of
         your choice. The model is easy to use.\r\n<ol>\r\n<li>Before you start, think
         about the goal of your scenario, then you know what to focus on.</li>\r\n<li>The
@@ -1301,7 +1297,7 @@ en:
         questions or need help? Please, feel free to contact <a href=\"https://quintel.com/contact\"
         >Quintel</a>, the developers of the Energy Transition Model."
     overview_final_demand:
-      short_content: 
+      short_content:
       content: "How much energy is used by the different sectors in your region and
         what is the impact of adjustments to the energy system?\r\n</br> </br>\r\nThe
         chart on the right gives you an overview of the total <em>energetic</em> energy
@@ -1315,7 +1311,7 @@ en:
         year and is used in the future year (the <a href =\"/scenario/costs/merit_order/merit-order\">merit
         order section </a> has more information about the electricity market module)."
     overview_co2_emissions:
-      short_content: 
+      short_content:
       content: "How much CO<sub>2</sub> is currently emitted by the various sectors
         in your region and what is the impact of adjustments to the energy system?\r\n</br></br>\r\nThe
         chart on the right shows the total <em>energetic</em> CO<sub>2</sub>-emissions
@@ -1327,7 +1323,7 @@ en:
         the ETM. You can re-visit the chart on the right at any time by clicking on
         this number at the bottom. "
     supply_biomass_greengas_production:
-      short_content: 
+      short_content:
       content: "How will green gas be produced in the future? Currently fermentation
         is the dominant production technology. In the future, gasification may become
         an important technology as well. Below you can specify the future market shares
@@ -1343,11 +1339,11 @@ en:
         there are not many practical examples on which the costs can be based.\r\n<br
         /><br />"
     costs_bio_fuel:
-      short_content: 
+      short_content:
       content: 'What do you think these biofuels will cost in the future? Note: choices
         made here may impact the electricity merit order. '
     supply_biomass_potential:
-      short_content: 
+      short_content:
       content: 'The ETM distinguishes four resource categories: wet, dry, oil-containing
         biomass and biogenic waste. How much biomass will be available within your
         region in the future? We have made estimations based on national potentials
@@ -1355,7 +1351,7 @@ en:
         target="_blank">documentation</a>). When you would like to adjust the potential,
         you can do that here.'
     data_export_network_gas:
-      short_content: 
+      short_content:
       content: "Below you can download information about network gas demand, supply
         and storage per hour in your scenario.\r\n\r\n<ul class=\"data-download\">\r\n
         \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/network_gas.csv\">\r\n
@@ -1363,7 +1359,7 @@ en:
         hour</span>\r\n      <span class=\"filetype\">3MB CSV</span>\r\n    </a>\r\n
         \ </li>\r\n</ul>"
     flexibility_flexibility_power_to_heat_for_industry:
-      short_content: 
+      short_content:
       content: "At times of excess electricity supply, an electric boiler in industry
         could convert excess electricity into heat. This in turn lowers the gas and
         hydrogen demands (if present). This hybrid heating option can be used in these
@@ -1373,7 +1369,7 @@ en:
         industry</a></li>\r\n  <li><a href=\"/scenario/demand/industry/paper\">paper
         industry</a></li></ul>"
     data_visuals_co2_sheet:
-      short_content: 
+      short_content:
       content: |
         A printable sheet depicting the CO<sub>2</sub> footprint for your
         scenario.
@@ -1386,14 +1382,14 @@ en:
           <span class="fa fa-newspaper-o"></span> View the sheet →
         </a>
     costs_wacc:
-      short_content: 
+      short_content:
       content: 'With the sliders below you can adjust the future WACC for different
         categories. Note: this is the real WACC, so corrected for inflation. The ETM
         does not take inflation into account. The sources used to determine the current
         WACC percentages can be found on our <a href="https://github.com/quintel/documentation/blob/master/general/cost_calculations.md"
         target ="_blank">documentation</a>.'
     supply_heat_network_order:
-      short_content: 
+      short_content:
       content: "The ETM makes a distinction between 'must-run' / volatile heat sources
         (such as geothermal, solar thermal and residual heat) and dispatchable heat
         sources. In contrast to the first category, dispatchable heat sources can
@@ -1405,7 +1401,7 @@ en:
         is switched on first in case of a heat deficit? The chart to the right shows
         the marginal costs of each dispatchable source."
     data_export_heat_network:
-      short_content: 
+      short_content:
       content: |
         Download information about the hourly demands and supplies of heat
         through the central heat network for households, buildings and agriculture.
@@ -1419,7 +1415,7 @@ en:
           </li>
         </ul>
     supply_heat_sources:
-      short_content: 
+      short_content:
       content: "District heating can be used as heating technology in <a href=\"/scenario/demand/households/space-heating-hot-water\"
         >households</a>, <a href=\"/scenario/demand/buildings/space-heating\" >buildings</a>
         and <a href=\"/scenario/demand/agriculture/heat\" >agriculture</a>. There
@@ -1442,7 +1438,7 @@ en:
         in our <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_networks.md\"
         target =\"_blank\">documentation</a>."
     supply_heat_network_storage_toggle:
-      short_content: 
+      short_content:
       content: "Scenarios with large amounts of \"must-run\" and volatile heat sources
         will often\r\nhave considerable heat production during hours of low demand.
         (Seasonal) storage allows you to preserve\r\nthis heat for later use, reducing
@@ -1462,10 +1458,10 @@ en:
         can be adjusted in the <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
         >costs section</a>."
     supply_electricity_renewable_biomass_plants:
-      short_content: 
+      short_content:
       content: How much heat will be produced with biomass?
     supply_heat_network_losses:
-      short_content: 
+      short_content:
       content: "In a district heating network, heat is generated in a centralised
         location and subsequently distributed to residential and commercial facilities
         via a network of insulated pipes. This transportation of heat leads to energy
@@ -1473,12 +1469,12 @@ en:
         30% or even higher in older networks. \r\n<br /><br />\r\nBelow you change
         the distribution losses in your scenario."
     costs_solar_thermal:
-      short_content: 
+      short_content:
       content: Solar thermal energy is an interesting sustainable heat source. Both
         individual and collective systems are available on the market. How will the
         investment costs and operation costs change for this technology in the future?
     flexibility_security_of_supply_heat:
-      short_content: 
+      short_content:
       content: "Will the future supply of heat be sufficient during every hour per
         year to meet demand of district heating networks? This depends of course on
         the heat sources connected to the network. We distinguish between 'must-run'
@@ -1501,7 +1497,7 @@ en:
         Conditions</a> slide to explore how variations in outdoor temperature affect
         heat demand peaks in your scenario.\r\n"
     flexibility_flexibility_demand_response_hhp:
-      short_content: 
+      short_content:
       content: "The efficiency of hybrid heat pumps (HHP) is dependent on the ambient
         temperature and is depicted by the coefficient of performance (COP). The COP
         becomes lower as the outside temperature decreases. Below you can set the
@@ -1526,7 +1522,7 @@ en:
         'Hybrid heat pump gas and electricity shares' in the chart list (Demand ->
         Households)."
     flexibility_flexibility_solar_pv_curtailment:
-      short_content: 
+      short_content:
       content: "If a lot of solar PV is installed, this can cause high peaks on the
         electricity network. It is therefore desirable to be able to curtail these
         peaks. In some cases it is smart to connect solar parks to only a certain
@@ -1538,10 +1534,15 @@ en:
         look at the table 'Curtailment of solar PV'. Click on 'see more charts' and
         you'll find the table in the section 'Electricity balance > Flexibility'."
     flexibility_flexibility_power_to_heat_for_district_heating:
-      short_content: 
+      short_content:
       content: "At times of excess electricity supply, an electric boiler or heat
         pump could convert excess electricity into heat for district heating. Other
         heat sources for district heating can be set in <a href=\"/scenario/supply/heat/heat-sources\"
         >Supply > District Heating</a>. \r\n</br></br>\r\n Please note that 1 MWth
         of power-to-heat boiler uses more electricity than 1 MWth of power-to-heat
         pump. They produce the same amount of heat per hour, of course."
+    technology_solar_panels:
+      content: "How efficient will solar PV be in the future? The slider below allows you
+        to make assumptions about this. A higher efficiency means that a solar panel produces
+        more electricity and has a higher (peak) capacity. Click on '?' for more information."
+

@@ -1,10 +1,9 @@
 ---
-- id: 1011
-  key: capacity_of_energy_heat_flexibility_p2h_boiler_electricity
+- key: capacity_of_energy_heat_flexibility_p2h_boiler_electricity
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: MW
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 1
   dependent_on: ''
   slide_key: flexibility_flexibility_power_to_heat_for_district_heating
-- id: 1012
-  key: capacity_of_energy_heat_flexibility_p2h_heatpump_electricity
+- key: capacity_of_energy_heat_flexibility_p2h_heatpump_electricity
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: MW
   fixed: false
   interface_group: ''

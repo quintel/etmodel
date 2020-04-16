@@ -1,10 +1,9 @@
 ---
-- id: 180
-  key: om_costs_combustion_gas_plant
+- key: om_costs_combustion_gas_plant
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -13,59 +12,55 @@
   position: 1
   dependent_on: ''
   slide_key: costs_combustion_operational_and_maintenance
-- id: 181
-  key: om_costs_combustion_oil_plant
+- key: om_costs_combustion_oil_plant
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
   command_type: ''
   related_converter: energy_power_ultra_supercritical_crude_oil
   position: 2
-  dependent_on: 
+  dependent_on:
   slide_key: costs_combustion_operational_and_maintenance
-- id: 182
-  key: om_costs_combustion_coal_plant
+- key: om_costs_combustion_coal_plant
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
   command_type: ''
   related_converter: energy_power_ultra_supercritical_coal
   position: 3
-  dependent_on: 
+  dependent_on:
   slide_key: costs_combustion_operational_and_maintenance
-- id: 183
-  key: om_costs_combustion_biomass_plant
+- key: om_costs_combustion_biomass_plant
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   position: 4
-  dependent_on: 
+  dependent_on:
   slide_key: costs_combustion_operational_and_maintenance
-- id: 232
-  key: om_costs_combustion_waste_incinerator
+- key: om_costs_combustion_waste_incinerator
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   position: 5
-  dependent_on: 
+  dependent_on:
   slide_key: costs_combustion_operational_and_maintenance

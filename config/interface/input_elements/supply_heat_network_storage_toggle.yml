@@ -1,10 +1,9 @@
 ---
-- id: 986
-  key: capacity_of_energy_heat_burner_coal
+- key: capacity_of_energy_heat_burner_coal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: MW
   fixed: false
   interface_group: dispatchable_heat
@@ -13,26 +12,24 @@
   position: 11
   dependent_on: has_coal_oil_for_heating_built_environment
   slide_key: supply_heat_network_storage_toggle
-- id: 988
-  key: heat_storage_enabled
-  share_group: 
+- key: heat_storage_enabled
+  share_group:
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: boolean
-  fixed: 
-  interface_group: 
-  command_type: 
-  related_converter: 
+  fixed:
+  interface_group:
+  command_type:
+  related_converter:
   position: 1
-  dependent_on: 
+  dependent_on:
   slide_key: supply_heat_network_storage_toggle
-- id: 995
-  key: energy_heat_network_storage_loss_share
+- key: energy_heat_network_storage_loss_share
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: heat_storage_losses

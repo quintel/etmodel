@@ -1,10 +1,9 @@
 ---
-- id: 1001
-  key: costs_heat_infra_indoors
+- key: costs_heat_infra_indoors
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 1
   dependent_on: ''
   slide_key: costs_heat_network
-- id: 1002
-  key: costs_heat_infra_outdoors
+- key: costs_heat_infra_outdoors
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -27,12 +25,11 @@
   position: 2
   dependent_on: ''
   slide_key: costs_heat_network
-- id: 989
-  key: costs_heat_network_storage
+- key: costs_heat_network_storage
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "€/MWh"
   fixed: false
   interface_group: heat_network_storage

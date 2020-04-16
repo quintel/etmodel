@@ -98,10 +98,5 @@ describe InputElement do
       keys = subject.map(&:key)
       expect(keys.size).to eq(keys.uniq.size)
     end
-
-    it 'has unique ids' do
-      ids = subject.map(&:id)
-      expect(ids.size).to eq(ids.uniq.size)
-    end
   end
 end

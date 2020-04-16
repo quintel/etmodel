@@ -4,362 +4,228 @@
   percentage_bar_query: share_of_households_in_final_demand
   tab_key: demand
   position: 1
-  dependent_on: ''
-  parent_key:
 - key: buildings
   section: demand
   percentage_bar_query: share_of_buildings_in_final_demand
   tab_key: demand
   position: 2
   dependent_on: has_buildings
-  parent_key:
 - key: transport
   section: demand
   percentage_bar_query: share_of_transport_in_final_demand
   tab_key: demand
   position: 3
-  dependent_on: ''
-  parent_key:
 - key: industry
   section: demand
   percentage_bar_query: share_of_industry_and_energy_in_final_demand
   tab_key: demand
   position: 4
   dependent_on: has_industry
-  parent_key:
 - key: agriculture
   section: demand
   percentage_bar_query: share_of_agriculture_in_final_demand
   tab_key: demand
   position: 5
   dependent_on: has_agriculture
-  parent_key:
 - key: other
   section: demand
   percentage_bar_query: share_of_other_in_final_demand
   tab_key: demand
   position: 6
   dependent_on: has_other
-  parent_key:
 - key: combustion
   section: costs
-  percentage_bar_query: ''
   tab_key: costs
   position: 4
-  dependent_on: ''
-  parent_key:
 - key: nuclear
   section: costs
-  percentage_bar_query: ''
   tab_key: costs
   position: 4
-  dependent_on: ''
-  parent_key:
 - key: wind
   section: costs
-  percentage_bar_query: ''
   tab_key: costs
   position: 5
-  dependent_on: ''
-  parent_key:
 - key: water
   section: costs
-  percentage_bar_query: ''
   tab_key: costs
   position: 6
-  dependent_on: ''
-  parent_key:
 - key: solar
   section: costs
-  percentage_bar_query: ''
   tab_key: costs
   position: 7
-  dependent_on: ''
-  parent_key:
 - key: co2
   section: costs
-  percentage_bar_query: ''
   tab_key: costs
   position: 9
-  dependent_on: ''
-  parent_key:
 - key: sustainability
   section: targets
-  percentage_bar_query: ''
   tab_key: targets
   position: 1
   dependent_on: _always_hidden
-  parent_key:
 - key: dependence
   section: targets
-  percentage_bar_query: ''
   tab_key: targets
   position: 2
   dependent_on: _always_hidden
-  parent_key:
 - key: cost
   section: targets
-  percentage_bar_query: ''
   tab_key: targets
   position: 3
   dependent_on: _always_hidden
-  parent_key:
 - key: electricity
   section: supply
-  percentage_bar_query: ''
   tab_key: supply
   position: 1
-  dependent_on: ''
-  parent_key:
 - key: electricity_renewable
   section: supply
-  percentage_bar_query: ''
   tab_key: supply
   position: 2
-  dependent_on: ''
-  parent_key:
 - key: heat
   section: supply
-  percentage_bar_query: ''
   tab_key: supply
   position: 3
-  dependent_on: ''
-  parent_key:
 - key: renewable_heat
   section: supply
-  percentage_bar_query: ''
   tab_key: supply
   position: 4
   dependent_on: _always_hidden
-  parent_key:
 - key: transport_fuels
   section: supply
-  percentage_bar_query: ''
   tab_key: supply
   position: 7
-  dependent_on: ''
-  parent_key:
 - key: infrastructure
   section: costs
-  percentage_bar_query: ''
   tab_key: costs
   position: 8
   dependent_on: use_network_calculations
-  parent_key:
 - key: area
   section: overview
-  percentage_bar_query: ''
   tab_key: targets
   position: 4
   dependent_on: _always_hidden
-  parent_key:
 - key: fce
   section: supply
-  percentage_bar_query: ''
   tab_key: supply
   position: 9
   dependent_on: _always_hidden
-  parent_key:
 - key: security_of_supply
   section: flexibility
-  percentage_bar_query: ''
   tab_key: flexibility
   position: 10
-  dependent_on: ''
-  parent_key:
 - key: merit_order
   section: flexibility
-  percentage_bar_query: ''
   tab_key: costs
   position: 1
   dependent_on: has_merit_order
-  parent_key:
 - key: employment
   section: costs
-  percentage_bar_query: ''
   tab_key: costs
   position: 11
   dependent_on: _always_hidden
-  parent_key:
 - key: costs_heat
   section: costs
-  percentage_bar_query: ''
   tab_key: costs
   position: 3
-  dependent_on: ''
-  parent_key:
 - key: fuel_costs
   section: costs
-  percentage_bar_query: ''
   tab_key: costs
   position: 1
-  dependent_on: ''
-  parent_key:
 - key: industry_metal
   section: demand
-  percentage_bar_query: ''
   tab_key: demand
   position: 2
   dependent_on: _always_hidden
   parent_key: industry
 - key: excess_electricity
   section: flexibility
-  percentage_bar_query: ''
   tab_key: flexibility
   position: 2
   dependent_on: has_electricity_storage
-  parent_key:
 - key: electricity_import_export
   section: flexibility
-  percentage_bar_query: ''
   tab_key: flexibility
   position: 4
   dependent_on: is_national_scenario
-  parent_key:
 - key: industry_chemical
   section: demand
-  percentage_bar_query: ''
   tab_key: demand
   position: 1
   dependent_on: _always_hidden
   parent_key: industry
 - key: industry_other
   section: demand
-  percentage_bar_query: ''
   tab_key: demand
   position: 3
   dependent_on: _always_hidden
   parent_key: industry
 - key: fuel_production
   section: supply
-  percentage_bar_query: ''
   tab_key: supply
   position: 11
   dependent_on: is_national_scenario
-  parent_key:
 - key: costs_flexibility
   section: costs
-  percentage_bar_query: ''
   tab_key: costs
   position: 7
-  dependent_on: ''
-  parent_key:
 - key: hydrogen
   section: supply
-  percentage_bar_query: ''
   tab_key: supply
   position: 5
-  dependent_on: ''
-  parent_key:
 - key: transport_costs
   section: costs
-  percentage_bar_query: ''
   tab_key: costs
   position: 4
-  dependent_on: ''
-  parent_key:
 - key: biomass
   section: supply
-  percentage_bar_query: ''
   tab_key: supply
   position: 8
-  dependent_on: ''
-  parent_key:
 - key: data_export
   section: data
-  percentage_bar_query: ''
   tab_key: data
   position: 2
-  dependent_on: ''
-  parent_key:
 - key: transport_international_transport
-  section: ''
-  percentage_bar_query: ''
   tab_key: demand
   position: 3
-  dependent_on: ''
   parent_key: transport
 - key: transport_passenger_transport
-  section: ''
-  percentage_bar_query: ''
   tab_key: demand
   position: 1
-  dependent_on: ''
   parent_key: transport
 - key: transport_freight_transport
-  section: ''
-  percentage_bar_query: ''
   tab_key: demand
   position: 2
-  dependent_on: ''
   parent_key: transport
 - key: flexibility_storage
-  section: ''
-  percentage_bar_query: ''
   tab_key: flexibility
   position: 1
-  dependent_on: ''
   parent_key: excess_electricity
 - key: flexibility_conversion
-  section: ''
-  percentage_bar_query: ''
   tab_key: flexibility
   position: 2
-  dependent_on: ''
   parent_key: excess_electricity
 - key: flexibility_net_load
-  section: ''
-  percentage_bar_query: ''
   tab_key: flexibility
   position: 3
-  dependent_on: ''
-  parent_key:
 - key: electricity_import_costs
-  section: ''
-  percentage_bar_query: ''
   tab_key: costs
   position: 5
-  dependent_on: ''
-  parent_key:
 - key: data_visuals
   section: data
-  percentage_bar_query: ''
   tab_key: data
   position: 1
-  dependent_on: ''
-  parent_key:
 - key: costs_hydrogen
-  section: ''
-  percentage_bar_query: ''
   tab_key: costs
   position: 5
-  dependent_on: ''
-  parent_key:
 - key: introduction
-  section: ''
-  percentage_bar_query: ''
   tab_key: overview
   position: 1
-  dependent_on: ''
-  parent_key:
 - key: flexibility_weather
-  section: ''
-  percentage_bar_query: ''
   tab_key: flexibility
   position: 4
-  dependent_on: ''
-  parent_key:
 - key: wacc
-  section: ''
-  percentage_bar_query: ''
   tab_key: costs
   position: 16
-  dependent_on: ''
-  parent_key:
 - key: heat_merit
-  section: ''
-  percentage_bar_query: ''
   tab_key: supply
   position: 1
-  dependent_on: ''
   parent_key: heat

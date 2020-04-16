@@ -95,18 +95,12 @@ class @BlockChartView extends BaseChartView
   show_block: (block_id) =>
     $('#canvas').find('#block_container_'+block_id).removeClass('invisible').addClass('visible').css({'z-index':@current_z_index})
     $('#block_list #show_hide_block_'+block_id).addClass('visible').removeClass('invisible')
-    $.ajax
-       url: "/output_elements/visible/block_"+block_id
-       method: 'post'
     @update_block_charts()
 
   # when the user deselects a checkbox
   hide_block: (block_id) =>
     $('#canvas').find('#block_container_'+block_id).removeClass('visible').addClass('invisible')
     $('#block_list #show_hide_block_'+block_id).addClass('invisible').removeClass('visible')
-    $.ajax
-      url: "/output_elements/invisible/block_"+block_id
-      method: 'post'
     @update_block_charts()
 
   update_block: (block) =>

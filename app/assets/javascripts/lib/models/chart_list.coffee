@@ -54,7 +54,7 @@ class @ChartList extends Backbone.Collection
     # "load" is called when the page first loads; at this point the list of
     # chart models is not ready. Therefore we go to the app settings instead.
     locked_charts = App.settings.get('locked_charts').map(
-      (id) -> parseInt(id.split('-')[0], 10)
+      (id) -> id.split('-')[0]
     )
 
     # Will only have values when loading new charts (i.e. not on initial page

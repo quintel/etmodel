@@ -19,7 +19,7 @@ class OutputElementsController < ApplicationController
     keys = params[:keys].to_s.split(',').reject(&:blank?).uniq
 
     json = OutputElementPresenter.collection(
-      OutputElement.where(key: keys),
+      keys.map{ |key| OutputElement.find(key) },
       ->(*args) { render_to_string(*args) }
     )
 

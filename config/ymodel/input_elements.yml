@@ -14945,3 +14945,31 @@
       <a href=\"/scenario/supply/heat/heat-sources\">residentiële warmtenet</a>."
     short_content_en:
     short_content_nl:
+- id: 1050
+  key: technical_solar_pv_efficiency
+  step_value: 0.1
+  unit: "%"
+  related_converter: households_solar_pv_solar_radiation
+  position: 1
+  slide_id: 290
+  description:
+    content_en: "Solar technology is getting more efficient in converting sunlight into electricity.
+        This slider allows you to set the future efficiency of solar panels. <br /><br />
+        For a standard 1.6m2 solar panel, efficiency and capacity are related in the following way: <br /><br />
+        17% efficiency: 272 Wp <br/>
+        18% efficiency: 288 Wp <br/>
+        19% efficiency: 304 Wp <br/>
+        20% efficiency: 320 Wp <br/>
+        21% efficiency: 336 Wp <br/>
+        22% efficiency: 352 Wp <br/><br />
+        Please note: This slider does not affect efficiency of solar thermal and CSP"
+    content_nl: "Zonnepanelen worden steeds efficiënter in het omzetten van zonnestralen in elektriciteit.
+        Met deze schuif stel je de toekomstige efficiëntie van zonnepanelen in. <br /><br />
+        Voor een standaardpaneel van 1.6m2 hangen vermogens en efficiënties als volgt met elkaar samen: <br /><br />
+        17% efficiëntie: 272 Wp <br/>
+        18% efficiëntie: 288 Wp <br/>
+        19% efficiëntie: 304 Wp <br/>
+        20% efficiëntie: 320 Wp <br/>
+        21% efficiëntie: 336 Wp <br/>
+        22% efficiëntie: 352 Wp <br/><br />
+        Let op: Dit schuifje heeft geen invloed op de efficiëntie van zonthermie en CSP"

@@ -16,7 +16,6 @@ Bundler/OrderedGems:
   Enabled: false
 Gemspec/OrderedDependencies:
   Enabled: false
-
 # Multi-line parameters should be indented by two spaces only.
 #
 #   # Bad
@@ -144,4 +143,8 @@ RSpec/ExampleLength:
   Enabled: false
 
 RSpec/NamedSubject:
+  Enabled: false
+
+# Disabled because it fails on rails/ruby generated hashed and code.
+Style/StringLiterals:
   Enabled: false

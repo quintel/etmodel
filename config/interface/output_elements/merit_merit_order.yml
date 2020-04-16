@@ -1,0 +1,106 @@
+---
+- id: 116
+  under_construction: false
+  unit: ''
+  percentage: false
+  group: Merit
+  sub_group: merit_order
+  show_point_label: false
+  growth_chart: false
+  key: merit_order_table
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: has_merit_order
+  output_element_type_name: html_table
+- id: 125
+  under_construction: false
+  unit: Eur/Mwh
+  percentage: false
+  group: Merit
+  sub_group: merit_order
+  show_point_label: false
+  growth_chart: false
+  key: merit_order
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: has_merit_order
+  output_element_type_name: cost_capacity_bar
+- id: 140
+  under_construction: false
+  unit: ''
+  percentage: false
+  group: Merit
+  sub_group: merit_order
+  show_point_label: false
+  growth_chart: false
+  key: plant_profitability
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: has_merit_order
+  output_element_type_name: html_table
+- id: 171
+  under_construction: false
+  unit: EUR/MWh
+  percentage: false
+  group: Merit
+  sub_group: merit_order
+  show_point_label: false
+  growth_chart: false
+  key: merit_order_price_curve
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: d3
+- id: 172
+  under_construction: false
+  unit: MW
+  percentage: false
+  group: Merit
+  sub_group: merit_order
+  show_point_label: false
+  growth_chart: false
+  key: merit_order_hourly_supply
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: d3
+- id: 175
+  under_construction: false
+  unit: ''
+  percentage: false
+  group: Merit
+  sub_group: merit_order
+  show_point_label: false
+  growth_chart: false
+  key: merit_order_excess_events
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: d3
+- id: 194
+  under_construction: false
+  unit: MW
+  percentage: false
+  group: Merit
+  sub_group: merit_order
+  show_point_label: false
+  growth_chart: false
+  key: dynamic_demand_curve
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: demand_curve

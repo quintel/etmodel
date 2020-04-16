@@ -1,0 +1,85 @@
+---
+- label: co2_emissions_1990
+  color: "#696969"
+  order_by: 15
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: 1990_in_co2_emissions
+  is_1990: true
+  dependent_on: 
+  output_element_key: co2_emissions_biomass
+  key: co2_emissions_1990_co2_emissions_biomass
+- label: co2_emission_local_production
+  color: "#333333"
+  order_by: 5
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: co2_emissions_of_final_demand_excluding_imported_electricity_in_co2_emissions
+  is_1990: false
+  dependent_on: 
+  output_element_key: co2_emissions_biomass
+  key: co2_emission_local_production_co2_emissions_biomass
+- label: co2_biomass_gas
+  color: "#ADDE4C"
+  order_by: 8
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: climate_relevant_co2_biomass_gas
+  is_1990: false
+  dependent_on: 
+  output_element_key: co2_emissions_biomass
+  key: co2_biomass_gas_co2_emissions_biomass
+- label: co2_biomass_liquid
+  color: "#228B22"
+  order_by: 9
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: climate_relevant_co2_biomass_liquid
+  is_1990: false
+  dependent_on: 
+  output_element_key: co2_emissions_biomass
+  key: co2_biomass_liquid_co2_emissions_biomass
+- label: co2_biomass_solid
+  color: "#006400"
+  order_by: 10
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: climate_relevant_co2_biomass_solid
+  is_1990: false
+  dependent_on: 
+  output_element_key: co2_emissions_biomass
+  key: co2_biomass_solid_co2_emissions_biomass
+- label: international_transportation_1990
+  color: "#BA7D40"
+  order_by: 16
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: 1990_in_co2_emissions_bunkers
+  is_1990: true
+  dependent_on: 
+  output_element_key: co2_emissions_biomass
+  key: international_transportation_1990_co2_emissions_biomass
+- label: co2_emission_bunkers
+  color: "#854321"
+  order_by: 6
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: primary_co2_of_bunkers
+  is_1990: false
+  dependent_on: 
+  output_element_key: co2_emissions_biomass
+  key: co2_emission_bunkers_co2_emissions_biomass

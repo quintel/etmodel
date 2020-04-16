@@ -1,0 +1,61 @@
+---
+- id: 147
+  under_construction: false
+  unit: ''
+  percentage: false
+  group: Merit
+  sub_group: import_export
+  show_point_label: false
+  growth_chart: false
+  key: import_export_capacity
+  max_axis_value: 
+  min_axis_value: 
+  hidden: true
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: import_export_capacity
+- id: 148
+  under_construction: false
+  unit: ''
+  percentage: false
+  group: Merit
+  sub_group: import_export
+  show_point_label: false
+  growth_chart: false
+  key: import_export_renewables
+  max_axis_value: 
+  min_axis_value: 
+  hidden: true
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: import_export_renewables
+- id: 149
+  under_construction: false
+  unit: ''
+  percentage: false
+  group: Merit
+  sub_group: import_export
+  show_point_label: false
+  growth_chart: false
+  key: import_export_flows
+  max_axis_value: 
+  min_axis_value: 
+  hidden: true
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: import_export_flows
+- id: 156
+  under_construction: false
+  unit: EUR/MWh
+  percentage: false
+  group: Merit
+  sub_group: import_export
+  show_point_label: false
+  growth_chart: false
+  key: import_export_cwe
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: _always_hidden
+  output_element_type_name: import_export_cwe

@@ -1,0 +1,121 @@
+---
+- label: ambient
+  color: "#ADDE4C"
+  order_by: 8
+  group: food
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: final_demand_of_ambient_in_food_industry_energetic
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_food
+  key: ambient_food_use_of_final_demand_in_industry_other_food
+- label: biomass
+  color: "#5D7929"
+  order_by: 9
+  group: food
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_biomass_products_in_food_industry_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_food
+  key: biomass_food_use_of_final_demand_in_industry_other_food
+- label: coal
+  color: "#333333"
+  order_by: 2
+  group: food
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_coal_and_derivatives_in_food_industry_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_food
+  key: coal_food_use_of_final_demand_in_industry_other_food
+- label: electricity
+  color: "#4169E1"
+  order_by: 8
+  group: food
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: final_demand_of_electricity_in_food_industry_energetic
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_food
+  key: electricity_food_use_of_final_demand_in_industry_other_food
+- label: geothermal
+  color: "#FF8400"
+  order_by: 9
+  group: food
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: final_demand_of_geothermal_in_food_industry_energetic
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_food
+  key: geothermal_food_use_of_final_demand_in_industry_other_food
+- label: heat
+  color: "#8B0000"
+  order_by: 1
+  group: food
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: final_demand_of_heat_in_food_industry_energetic
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_food
+  key: heat_food_use_of_final_demand_in_industry_other_food
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 11
+  group: food
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: final_demand_of_hydrogen_in_food_industry_energetic
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_food
+  key: hydrogen_food_use_of_final_demand_in_industry_other_food
+- label: network_gas
+  color: "#CCCCCC"
+  order_by: 4
+  group: food
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_natural_gas_and_derivatives_in_food_industry_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_food
+  key: network_gas_food_use_of_final_demand_in_industry_other_food
+- label: oil
+  color: "#BA7D40"
+  order_by: 6
+  group: food
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_oil_and_derivatives_in_food_industry_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_food
+  key: oil_food_use_of_final_demand_in_industry_other_food
+- label: solar
+  color: "#FFD900"
+  order_by: 7
+  group: food
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: final_demand_of_solar_in_food_industry_energetic
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_food
+  key: solar_food_use_of_final_demand_in_industry_other_food

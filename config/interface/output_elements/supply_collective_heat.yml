@@ -1,0 +1,123 @@
+---
+- id: 42
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: source_of_heat_production
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar
+- id: 141
+  under_construction: false
+  unit: ''
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: chp_properties
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: html_table
+- id: 248
+  under_construction: false
+  unit: MJ
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: collective_heat_mekko
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: mekko
+  related_output_element_key: heat_network_demand
+- id: 249
+  under_construction: false
+  unit: MW
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: heat_network_demand
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: demand_curve
+- id: 250
+  under_construction: false
+  unit: MW
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: heat_network_production
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: demand_curve
+- id: 251
+  under_construction: false
+  unit: MJ
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: industrial_heat_mekko
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: 
+  description: 
+  output_element_type_name: mekko
+- id: 252
+  under_construction: false
+  unit: MWh
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: heat_network_storage
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: demand_curve
+- id: 253
+  under_construction: false
+  unit: Eur/Mwh
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: heat_cost_capacity
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: cost_capacity_bar

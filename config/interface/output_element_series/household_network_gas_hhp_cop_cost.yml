@@ -1,0 +1,37 @@
+---
+- label: optimal_threshold
+  color: green
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: household_space_heater_hhp_cost_optimal_threshold_cop
+  is_1990: 
+  dependent_on: 
+  output_element_key: household_network_gas_hhp_cop_cost
+  key: optimal_threshold_household_network_gas_hhp_cop_cost
+- label: electricity
+  color: "#ffa500"
+  order_by: 2
+  group: 
+  show_at_first: 
+  is_target_line: true
+  target_line_position: 
+  gquery: household_space_heater_hhp_network_gas_electricity_cop_costs
+  is_1990: 
+  dependent_on: 
+  output_element_key: household_network_gas_hhp_cop_cost
+  key: electricity_household_network_gas_hhp_cop_cost
+- label: gas
+  color: "#a4b0be"
+  order_by: 3
+  group: 
+  show_at_first: 
+  is_target_line: true
+  target_line_position: 
+  gquery: household_space_heater_hhp_network_gas_gas_cop_costs
+  is_1990: 
+  dependent_on: 
+  output_element_key: household_network_gas_hhp_cop_cost
+  key: gas_household_network_gas_hhp_cop_cost

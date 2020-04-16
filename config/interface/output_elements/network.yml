@@ -1,0 +1,122 @@
+---
+- id: 216
+  under_construction: false
+  unit: MW
+  percentage: false
+  group: Network
+  sub_group: ''
+  show_point_label: false
+  growth_chart: false
+  key: electricity_network_load
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: d3
+- id: 217
+  under_construction: false
+  unit: MW
+  percentage: false
+  group: Network
+  sub_group: ''
+  show_point_label: false
+  growth_chart: false
+  key: electricity_lv_network_load
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: d3
+- id: 218
+  under_construction: false
+  unit: MW
+  percentage: false
+  group: Network
+  sub_group: ''
+  show_point_label: false
+  growth_chart: false
+  key: electricity_mv_network_load
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: d3
+- id: 219
+  under_construction: false
+  unit: MW
+  percentage: false
+  group: Network
+  sub_group: ''
+  show_point_label: false
+  growth_chart: false
+  key: electricity_hv_network_load
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: d3
+- id: 220
+  under_construction: false
+  unit: MW
+  percentage: false
+  group: Network
+  sub_group: ''
+  show_point_label: false
+  growth_chart: false
+  key: lv_demand_curves
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: demand_curve
+- id: 221
+  under_construction: false
+  unit: MW
+  percentage: false
+  group: Network
+  sub_group: ''
+  show_point_label: false
+  growth_chart: false
+  key: mv_demand_curves
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: demand_curve
+- id: 222
+  under_construction: false
+  unit: MW
+  percentage: false
+  group: Network
+  sub_group: ''
+  show_point_label: false
+  growth_chart: false
+  key: hv_demand_curves
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: demand_curve
+- id: 223
+  under_construction: false
+  unit: ''
+  percentage: false
+  group: Network
+  sub_group: ''
+  show_point_label: false
+  growth_chart: false
+  key: electricity_network_capacity_and_peaks
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: use_network_calculations
+  output_element_type_name: html_table
+  related_output_element_key: electricity_network_load

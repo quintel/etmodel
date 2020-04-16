@@ -1,0 +1,97 @@
+---
+- label: groups.industry
+  color: "#A9A9A9"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_from_industry_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_energy_demand_per_sector_joule
+  key: groups.industry_final_energy_demand_per_sector_joule
+- label: groups.transport
+  color: "#8B0000"
+  order_by: 2
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_from_transport_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_energy_demand_per_sector_joule
+  key: groups.transport_final_energy_demand_per_sector_joule
+- label: groups.households
+  color: "#4169E1"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_from_households_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_energy_demand_per_sector_joule
+  key: groups.households_final_energy_demand_per_sector_joule
+- label: groups.buildings
+  color: "#ADD8E6"
+  order_by: 4
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_from_buildings_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_energy_demand_per_sector_joule
+  key: groups.buildings_final_energy_demand_per_sector_joule
+- label: groups.agriculture
+  color: "#FFD700"
+  order_by: 5
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_from_agriculture_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_energy_demand_per_sector_joule
+  key: groups.agriculture_final_energy_demand_per_sector_joule
+- label: groups.other
+  color: "#E07033"
+  order_by: 6
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_from_other_sector_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_energy_demand_per_sector_joule
+  key: groups.other_final_energy_demand_per_sector_joule
+- label: groups.energy
+  color: "#416B86"
+  order_by: 7
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_from_energy_sector_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_energy_demand_per_sector_joule
+  key: groups.energy_final_energy_demand_per_sector_joule
+- label: groups.bunkers
+  color: "#8B4513"
+  order_by: 8
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_from_bunkers_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_energy_demand_per_sector_joule
+  key: groups.bunkers_final_energy_demand_per_sector_joule

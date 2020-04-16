@@ -1,0 +1,517 @@
+---
+- label: central_gas_chp
+  color: "#d9d9d9"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: central_gas_chp_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: central_gas_chp_merit_order
+- label: coal_chp
+  color: "#737373"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: coal_chp_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: coal_chp_merit_order
+- label: coal_chp_cofiring
+  color: "#83A374"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: coal_chp_cofiring_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: coal_chp_cofiring_merit_order
+- label: coal_conv
+  color: "#000000"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: coal_conv_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: coal_conv_merit_order
+- label: coal_igcc
+  color: "#525252"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: coal_igcc_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: coal_igcc_merit_order
+- label: coal_igcc_ccs
+  color: "#9ebcda"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: coal_igcc_ccs_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: coal_igcc_ccs_merit_order
+- label: coal_pwd
+  color: "#252525"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: coal_pwd_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: coal_pwd_merit_order
+- label: coal_pwd_cofiring
+  color: "#4B8056"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: coal_pwd_cofiring_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: coal_pwd_cofiring_merit_order
+- label: coal_pwd_ccs
+  color: "#8c96c6"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: coal_pwd_ccs_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: coal_pwd_ccs_merit_order
+- label: diesel_engine
+  color: "#854321"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: diesel_engine_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: diesel_engine_merit_order
+- label: gas_ccgt
+  color: "#f0f0f0"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: gas_ccgt_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: gas_ccgt_merit_order
+- label: gas_ccgt_ccs
+  color: "#bfd3e6"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: gas_ccgt_ccs_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: gas_ccgt_ccs_merit_order
+- label: gas_conv
+  color: "#969696"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: gas_conv_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: gas_conv_merit_order
+- label: gas_engine
+  color: "#F5F5F5"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: gas_engine_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: gas_engine_merit_order
+- label: gas_turbine
+  color: "#bdbdbd"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: gas_turbine_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: gas_turbine_merit_order
+- label: lignite
+  color: "#593B0A"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: lignite_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: lignite_merit_order
+- label: lignite_chp
+  color: "#574528"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: lignite_chp_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: lignite_chp_merit_order
+- label: lignite_oxy
+  color: "#593B0A"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: lignite_oxy_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: lignite_oxy_merit_order
+- label: must_run
+  color: "#a1d99b"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: must_run_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: must_run_merit_order
+- label: nuclear_iii
+  color: "#fd8d3c"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: nuclear_iii_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: nuclear_iii_merit_order
+- label: nuclear_ii
+  color: "#C97E04"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: nuclear_ii_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: nuclear_ii_merit_order
+- label: oil_plant
+  color: "#7f2704"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: oil_plant_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: oil_plant_merit_order
+- label: buildings_solar_pv_solar_radiation
+  color: "#fed976"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: buildings_solar_pv_solar_radiation_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: buildings_solar_pv_solar_radiation_merit_order
+- label: households_solar_pv_solar_radiation
+  color: "#eed976"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: households_solar_pv_solar_radiation_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: households_solar_pv_solar_radiation_merit_order
+- label: energy_power_solar_pv_solar_radiation
+  color: "#ded976"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_power_solar_pv_solar_radiation_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: energy_power_solar_pv_solar_radiation_merit_order
+- label: energy_power_solar_csp_solar_radiation
+  color: "#ced976"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_power_solar_csp_solar_radiation_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: energy_power_solar_csp_solar_radiation_merit_order
+- label: geothermal
+  color: "#0ed976"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: geothermal_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: geothermal_merit_order
+- label: coastal_wind_turbines
+  color: "#4292c6"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: coastal_wind_turbines_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: coastal_wind_turbines_merit_order
+- label: offshore_wind_turbines
+  color: "#7292c6"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: offshore_wind_turbines_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: offshore_wind_turbines_merit_order
+- label: onshore_wind_turbines
+  color: "#9292c6"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: onshore_wind_turbines_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: onshore_wind_turbines_merit_order
+- label: hydro_mountain
+  color: "#0066ff"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: hydro_mountain_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: hydro_mountain_merit_order
+- label: hydro_river
+  color: "#0066ff"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: hydro_river_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: hydro_river_merit_order
+- label: hydrogen_turbine
+  color: "#a3def7"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: hydrogen_turbine_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: hydrogen_turbine_merit_order
+- label: electricity_import
+  color: "#800080"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_interconnector_imported_electricity_merit_order
+  is_1990: false
+  dependent_on: 
+  output_element_key: merit_order
+  key: electricity_import_merit_order
+- label: hydrogen_ccgt
+  color: "#a3def7"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: hydrogen_ccgt_merit_order
+  is_1990: false
+  dependent_on: 
+  output_element_key: merit_order
+  key: hydrogen_ccgt_merit_order
+- label: industry_chp_coal_merit
+  color: "#485460"
+  order_by: 1
+  group: ''
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: industry_chp_coal_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: industry_chp_coal_merit_merit_order
+- label: industry_chp_gas_ccgt_merit
+  color: "#A4B0BE"
+  order_by: 1
+  group: ''
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: industry_chp_gas_ccgt_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: industry_chp_gas_ccgt_merit_merit_order
+- label: industry_chp_gas_turbine_merit
+  color: "#DFE4EA"
+  order_by: 1
+  group: ''
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: industry_chp_gas_turbine_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: industry_chp_gas_turbine_merit_merit_order
+- label: industry_chp_gas_engine_merit
+  color: "#CED6E0"
+  order_by: 1
+  group: ''
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: industry_chp_gas_engine_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: industry_chp_gas_engine_merit_merit_order
+- label: industry_chp_wood_merit
+  color: "#BADC58"
+  order_by: 1
+  group: ''
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: industry_chp_wood_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: industry_chp_wood_merit_merit_order
+- label: waste_chp_merit
+  color: "#006266"
+  order_by: 1
+  group: ''
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: waste_chp_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: waste_chp_merit_merit_order
+- label: local_chp_wood_merit
+  color: "#6AB04C"
+  order_by: 1
+  group: ''
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: local_chp_wood_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: local_chp_wood_merit_merit_order
+- label: local_chp_gas_merit
+  color: "#E84118"
+  order_by: 1
+  group: ''
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: local_chp_gas_merit_order
+  is_1990: 
+  dependent_on: 
+  output_element_key: merit_order
+  key: local_chp_gas_merit_merit_order

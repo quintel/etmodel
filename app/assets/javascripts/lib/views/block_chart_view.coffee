@@ -53,13 +53,14 @@ class @BlockChartView extends BaseChartView
           item = $(this)
           cost =   Metric.autoscale_value +item.parent().attr('data-cost'), 'Eur/MWhe'
           invest = Metric.autoscale_value +item.parent().attr('data-invest'), 'MEur/MWe'
-          url = "/descriptions/#{item.attr('data-description_id')}"
-          "#{item.attr('data-description')}
-          <br/><br/>
+          description = item.attr('data-description')
+
+          if description && description.length
+            description = "#{description}<br/><br/>"
+
+          "#{description}
           #{I18n.t 'output_elements.block_chart.costs'}: #{cost}<br/>
-          #{I18n.t 'output_elements.block_chart.investment_costs'}: #{invest}
-          <br/><br>
-          <a href='#{url}' class='fancybox'>#{I18n.t 'output_elements.common.read_more'}</a>"
+          #{I18n.t 'output_elements.block_chart.investment_costs'}: #{invest}"
       hide:
         fixed: true
         delay: 300

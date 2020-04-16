@@ -1,0 +1,183 @@
+---
+- id: 32
+  under_construction: false
+  unit: 
+  percentage: 
+  group: Cost
+  sub_group: 
+  show_point_label: 
+  growth_chart: 
+  key: overview_costs_of_electricity_production
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: 
+  output_element_type_name: block
+- id: 48
+  under_construction: false
+  unit: euro
+  percentage: false
+  group: Cost
+  sub_group: ''
+  show_point_label: false
+  growth_chart: false
+  key: breakdown_of_total_costs
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar
+- id: 61
+  under_construction: false
+  unit: euro
+  percentage: false
+  group: Cost
+  sub_group: ''
+  show_point_label: false
+  growth_chart: false
+  key: additional_infrastructure_investments
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: use_network_calculations
+  output_element_type_name: waterfall
+- id: 102
+  under_construction: false
+  unit: bln_euro
+  percentage: false
+  group: Cost
+  sub_group: 
+  show_point_label: false
+  growth_chart: false
+  key: breakdown_electricity_costs
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar
+- id: 113
+  under_construction: false
+  unit: euro
+  percentage: false
+  group: Cost
+  sub_group: 
+  show_point_label: false
+  growth_chart: false
+  key: breakdown_of_total_cost_per_household
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar
+- id: 118
+  under_construction: false
+  unit: FTE
+  percentage: false
+  group: Cost
+  sub_group: ''
+  show_point_label: false
+  growth_chart: false
+  key: employment_categories
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: _always_hidden
+  output_element_type_name: vertical_stacked_bar
+- id: 142
+  under_construction: false
+  unit: bln_euro
+  percentage: false
+  group: Cost
+  sub_group: 
+  show_point_label: false
+  growth_chart: false
+  key: investment_table
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: html_table
+- id: 170
+  under_construction: false
+  unit: euro
+  percentage: false
+  group: Cost
+  sub_group: ''
+  show_point_label: false
+  growth_chart: false
+  key: investment_electric_cars
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar
+- id: 215
+  under_construction: false
+  unit: bln_euro
+  percentage: false
+  group: Cost
+  sub_group: ''
+  show_point_label: false
+  growth_chart: false
+  key: transport_fuel_costs_overview
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar
+- id: 244
+  under_construction: false
+  unit: Eur/Mwh
+  percentage: false
+  group: Cost
+  sub_group: ''
+  show_point_label: false
+  growth_chart: false
+  key: greengas_costs
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar
+- id: 254
+  under_construction: false
+  unit: euro
+  percentage: false
+  group: Cost
+  sub_group: 
+  show_point_label: false
+  growth_chart: false
+  key: heat_infrastructure_annualised_costs
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: 
+  description: 
+  output_element_type_name: vertical_stacked_bar
+- id: 255
+  under_construction: false
+  unit: "€/MJ heat"
+  percentage: false
+  group: Cost
+  sub_group: 
+  show_point_label: false
+  growth_chart: false
+  key: household_network_gas_hhp_cop_cost
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: 
+  description: 
+  output_element_type_name: hhp_cop_cost

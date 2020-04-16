@@ -1,0 +1,25 @@
+---
+- label: ambient_cold
+  color: "#ADDE4C"
+  order_by: 3
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: ambient_cold_in_source_of_cooling_in_households
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_cooling_in_households
+  key: ambient_cold_source_of_cooling_in_households
+- label: cooling_from_electricity
+  color: "#4169E1"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: cooling_from_electricity_in_source_of_cooling_in_households
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_cooling_in_households
+  key: cooling_from_electricity_source_of_cooling_in_households

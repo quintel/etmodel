@@ -1,0 +1,49 @@
+---
+- label: steam_methane_reforming
+  color: "#696969"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: steam_methane_reformer_in_fertilizers_hydrogen_production
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_for_fertilizers
+  key: steam_methane_reforming_hydrogen_production_for_fertilizers
+- label: p2g
+  color: "#5D7929"
+  order_by: 2
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: p2g_industry_hydrogen_production
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_for_fertilizers
+  key: p2g_hydrogen_production_for_fertilizers
+- label: demand
+  color: "#FF0000"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: true
+  target_line_position: '1'
+  gquery: present_demand_for_hydrogen_in_fertilizers
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_for_fertilizers
+  key: present_demand_hydrogen_production_for_fertilizers
+- label: demand
+  color: "#FF0000"
+  order_by: 4
+  group: ''
+  show_at_first: false
+  is_target_line: true
+  target_line_position: '2'
+  gquery: future_demand_for_hydrogen_in_fertilizers
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_for_fertilizers
+  key: future_demand_hydrogen_production_for_fertilizers

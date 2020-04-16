@@ -1,0 +1,121 @@
+---
+- label: ambient
+  color: "#ADDE4C"
+  order_by: 8
+  group: paper
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: final_demand_of_ambient_in_paper_industry_energetic
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_paper
+  key: ambient_paper_use_of_final_demand_in_industry_other_paper
+- label: biomass
+  color: "#5D7929"
+  order_by: 9
+  group: paper
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_biomass_products_in_paper_industry_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_paper
+  key: biomass_paper_use_of_final_demand_in_industry_other_paper
+- label: coal
+  color: "#333333"
+  order_by: 2
+  group: paper
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_coal_and_derivatives_in_paper_industry_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_paper
+  key: coal_paper_use_of_final_demand_in_industry_other_paper
+- label: electricity
+  color: "#4169E1"
+  order_by: 8
+  group: paper
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: final_demand_of_electricity_in_paper_industry_energetic
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_paper
+  key: electricity_paper_use_of_final_demand_in_industry_other_paper
+- label: geothermal
+  color: "#FF8400"
+  order_by: 9
+  group: paper
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: final_demand_of_geothermal_in_paper_industry_energetic
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_paper
+  key: geothermal_paper_use_of_final_demand_in_industry_other_paper
+- label: heat
+  color: "#8B0000"
+  order_by: 1
+  group: paper
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: final_demand_of_heat_in_paper_industry_energetic
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_paper
+  key: heat_paper_use_of_final_demand_in_industry_other_paper
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 11
+  group: paper
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: final_demand_of_hydrogen_in_paper_industry_energetic
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_paper
+  key: hydrogen_paper_use_of_final_demand_in_industry_other_paper
+- label: network_gas
+  color: "#CCCCCC"
+  order_by: 4
+  group: paper
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_natural_gas_and_derivatives_in_paper_industry_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_paper
+  key: network_gas_paper_use_of_final_demand_in_industry_other_paper
+- label: oil
+  color: "#BA7D40"
+  order_by: 6
+  group: paper
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_oil_and_derivatives_in_paper_industry_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_paper
+  key: oil_paper_use_of_final_demand_in_industry_other_paper
+- label: solar
+  color: "#FFD900"
+  order_by: 7
+  group: paper
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: final_demand_of_solar_in_paper_industry_energetic
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other_paper
+  key: solar_paper_use_of_final_demand_in_industry_other_paper

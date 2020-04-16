@@ -1,0 +1,49 @@
+---
+- label: dispatchable_electricity_production_capacity
+  color: "#CCCCCC"
+  order_by: 0
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: dispatchable_electricity_production_capacity
+  is_1990: 
+  dependent_on: 
+  output_element_key: security_of_supply
+  key: dispatchable_electricity_production_capacity_security_of_supply
+- label: peak_electricity_demand
+  color: "#FF0000"
+  order_by: 2
+  group: ''
+  show_at_first: false
+  is_target_line: true
+  target_line_position: '1'
+  gquery: present_peak_electricity_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: security_of_supply
+  key: present_peak_electricity_demand_security_of_supply
+- label: peak_electricity_demand
+  color: "#FF0000"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: true
+  target_line_position: '2'
+  gquery: future_peak_electricity_demand
+  is_1990: 
+  dependent_on: 
+  output_element_key: security_of_supply
+  key: future_peak_electricity_demand_security_of_supply
+- label: volatile_electricity_production_capacity
+  color: "#ADDE4C"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: volatile_electricity_production_capacity
+  is_1990: 
+  dependent_on: 
+  output_element_key: security_of_supply
+  key: volatile_electricity_production_capacity_security_of_supply

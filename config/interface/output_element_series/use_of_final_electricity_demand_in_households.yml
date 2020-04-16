@@ -1,0 +1,109 @@
+---
+- label: television
+  color: "#854321"
+  order_by: 5
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: television_in_use_of_final_electricity_demand_in_households
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_electricity_demand_in_households
+  key: television_use_of_final_electricity_demand_in_households
+- label: vacuum_cleaner
+  color: "#32CD32"
+  order_by: 7
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: vacuum_cleaner_in_use_of_final_electricity_demand_in_households
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_electricity_demand_in_households
+  key: vacuum_cleaner_use_of_final_electricity_demand_in_households
+- label: dish_washer
+  color: "#D87093"
+  order_by: 3
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: dish_washer_in_use_of_final_electricity_demand_in_households
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_electricity_demand_in_households
+  key: dish_washer_use_of_final_electricity_demand_in_households
+- label: computer
+  color: "#228B22"
+  order_by: 4
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: computer_in_use_of_final_electricity_demand_in_households
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_electricity_demand_in_households
+  key: computer_use_of_final_electricity_demand_in_households
+- label: fridges
+  color: "#ADD8E6"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: fridges_in_use_of_final_electricity_demand_in_households
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_electricity_demand_in_households
+  key: fridges_use_of_final_electricity_demand_in_households
+- label: washing_machine
+  color: "#8B0000"
+  order_by: 6
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: washing_machine_in_use_of_final_electricity_demand_in_households
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_electricity_demand_in_households
+  key: washing_machine_use_of_final_electricity_demand_in_households
+- label: clothes_dryer
+  color: "#4169E1"
+  order_by: 7
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: ''
+  gquery: clothes_dryer_in_use_of_final_electricity_demand_in_households
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_electricity_demand_in_households
+  key: clothes_dryer_use_of_final_electricity_demand_in_households
+- label: other
+  color: "#A9A9A9"
+  order_by: 8
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: ''
+  gquery: other_in_use_of_final_electricity_demand_in_households
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_electricity_demand_in_households
+  key: other_use_of_final_electricity_demand_in_households
+- label: lighting
+  color: "#FFD700"
+  order_by: 6
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lighting_in_use_of_final_electricity_demand_in_households
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_electricity_demand_in_households
+  key: lighting_use_of_final_electricity_demand_in_households

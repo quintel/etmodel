@@ -1,0 +1,145 @@
+---
+- label: lv_buildings_appliances
+  color: "#906BD0"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lv_buildings_appliances_load_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: lv_demand_curves
+  key: lv_buildings_appliances_lv_demand_curves
+- label: lv_buildings_cooling
+  color: "#629DF9"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lv_buildings_cooling_load_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: lv_demand_curves
+  key: lv_buildings_cooling_lv_demand_curves
+- label: lv_buildings_lighting
+  color: "#F0904C"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lv_buildings_lighting_load_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: lv_demand_curves
+  key: lv_buildings_lighting_lv_demand_curves
+- label: lv_buildings_space_heating
+  color: "#4A3609"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: lv_buildings_space_heating_load_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: lv_demand_curves
+  key: lv_buildings_space_heating_lv_demand_curves
+- label: lv_ev
+  color: "#3BFAEB"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: lv_ev_load_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: lv_demand_curves
+  key: lv_ev_lv_demand_curves
+- label: lv_households_appliances
+  color: "#B895F6"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: lv_households_appliances_load_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: lv_demand_curves
+  key: lv_households_appliances_lv_demand_curves
+- label: lv_households_cooker
+  color: "#F76814"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: lv_households_cooker_load_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: lv_demand_curves
+  key: lv_households_cooker_lv_demand_curves
+- label: lv_households_cooling
+  color: "#9DD5FA"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: lv_households_cooling_load_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: lv_demand_curves
+  key: lv_households_cooling_lv_demand_curves
+- label: lv_households_hot_water
+  color: "#AF63F1"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: lv_households_hot_water_load_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: lv_demand_curves
+  key: lv_households_hot_water_lv_demand_curves
+- label: lv_households_lighting
+  color: "#F9C955"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lv_households_lighting_load_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: lv_demand_curves
+  key: lv_households_lighting_lv_demand_curves
+- label: lv_households_space_heating
+  color: "#E83B35"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lv_households_space_heating_load_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: lv_demand_curves
+  key: lv_households_space_heating_lv_demand_curves
+- label: flexibility
+  color: "#94F95C"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: lv_flexibility_load_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: lv_demand_curves
+  key: flexibility_lv_demand_curves

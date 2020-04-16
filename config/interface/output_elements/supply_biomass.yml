@@ -1,0 +1,108 @@
+---
+- id: 77
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: biomass
+  show_point_label: false
+  growth_chart: false
+  key: gas_network_mix
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar
+- id: 166
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: biomass
+  show_point_label: false
+  growth_chart: false
+  key: mekko_of_primary_demand_of_biomass
+  max_axis_value: 
+  min_axis_value: 
+  hidden: true
+  requires_merit_order: false
+  dependent_on: _always_hidden
+  output_element_type_name: mekko
+- id: 168
+  under_construction: true
+  unit: km2
+  percentage: false
+  group: Supply
+  sub_group: biomass
+  show_point_label: false
+  growth_chart: false
+  key: mekko_of_bio_footprint
+  max_axis_value: 
+  min_axis_value: 
+  hidden: true
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: mekko
+- id: 188
+  under_construction: false
+  unit: MT
+  percentage: false
+  group: Supply
+  sub_group: biomass
+  show_point_label: false
+  growth_chart: false
+  key: co2_emissions_biomass
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar
+- id: 230
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: biomass
+  show_point_label: false
+  growth_chart: false
+  key: mekko_demand_bio_resource
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: 
+  description: 
+  output_element_type_name: mekko
+- id: 242
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: biomass
+  show_point_label: false
+  growth_chart: false
+  key: biomass_sankey
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: sankey
+- id: 243
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: biomass
+  show_point_label: false
+  growth_chart: false
+  key: biomass_demand_by_category
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: 
+  description: 
+  output_element_type_name: category_bar

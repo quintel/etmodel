@@ -1,0 +1,217 @@
+---
+- label: diesel
+  color: "#854321"
+  order_by: 5
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: diesel_in_use_of_transport_fuels
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: diesel_use_of_transport_fuels
+- label: biodiesel
+  color: "#5D7929"
+  order_by: 10
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: ''
+  gquery: biodiesel_in_use_of_transport_fuels
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: biodiesel_use_of_transport_fuels
+- label: gasoline
+  color: "#8B0000"
+  order_by: 3
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: ''
+  gquery: gasoline_in_use_of_transport_fuels
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: gasoline_use_of_transport_fuels
+- label: bio_ethanol
+  color: "#394C19"
+  order_by: 11
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bio_ethanol_in_use_of_transport_fuels
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: bio_ethanol_use_of_transport_fuels
+- label: natural_gas
+  color: "#92B940"
+  order_by: 9
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: natural_gas_in_use_of_transport_fuels
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: natural_gas_use_of_transport_fuels
+- label: greengas
+  color: "#ADDE4C"
+  order_by: 8
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: greengas_in_use_of_transport_fuels
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: greengas_use_of_transport_fuels
+- label: lpg
+  color: "#CCCCCC"
+  order_by: 2
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: lpg_in_use_of_transport_fuels
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: lpg_use_of_transport_fuels
+- label: heavy_fuel_oil_domestic_navigation
+  color: "#BA7D40"
+  order_by: 6
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: heavy_fuel_oil_in_use_of_transport_fuels
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: heavy_fuel_oil_domestic_navigation_use_of_transport_fuels
+- label: kerosene_domestic_aviation
+  color: "#BFEFFF"
+  order_by: 4
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: kerosine_in_use_of_transport_fuels
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: kerosene_domestic_aviation_use_of_transport_fuels
+- label: coal
+  color: "#333333"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: coal_in_use_of_transport_fuels
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: coal_use_of_transport_fuels
+- label: electricity
+  color: "#4169E1"
+  order_by: 13
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_in_use_of_transport_fuels
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: electricity_use_of_transport_fuels
+- label: bio_lng
+  color: "#006400"
+  order_by: 12
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bio_lng_in_use_of_transport_fuels
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: bio_lng_use_of_transport_fuels
+- label: lng_domestic_navigation
+  color: "#696969"
+  order_by: 7
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lng_in_use_of_transport_fuels
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: lng_domestic_navigation_use_of_transport_fuels
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 14
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: hydrogen_in_use_of_transport_fuels
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: hydrogen_use_of_transport_fuels
+- label: kerosene_international_aviation
+  color: "#63A1C9"
+  order_by: 4
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: kerosene_international_aviation_in_use_of_transport_fuels
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: kerosene_international_aviation_use_of_transport_fuels
+- label: bio_kerosene_international_aviation
+  color: "#5D7929"
+  order_by: 11
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: bio_kerosene_international_aviation_in_use_of_transport_fuels
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: bio_kerosene_international_aviation_use_of_transport_fuels
+- label: heavy_fuel_oil_international_navigation
+  color: "#E07033"
+  order_by: 6
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: heavy_fuel_oil_international_shipping_in_use_of_transport_fuels
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: heavy_fuel_oil_international_navigation_use_of_transport_fuels
+- label: lng_international_navigation
+  color: "#A9A9A9"
+  order_by: 7
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lng_international_shipping_in_use_of_transport_fuels
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: lng_international_navigation_use_of_transport_fuels

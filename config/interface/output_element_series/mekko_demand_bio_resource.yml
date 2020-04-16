@@ -1,0 +1,433 @@
+---
+- label: biogenic_waste
+  color: "#E07033"
+  order_by: 5
+  group: agriculture
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_biogenic_waste_in_agriculture
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: biogenic_waste_agriculture_mekko_demand_bio_resource
+- label: biogenic_waste
+  color: "#E07033"
+  order_by: 5
+  group: buildings
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_biogenic_waste_in_buildings
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: biogenic_waste_buildings_mekko_demand_bio_resource
+- label: biogenic_waste
+  color: "#E07033"
+  order_by: 5
+  group: bunkers
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_biogenic_waste_in_bunkers
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: biogenic_waste_bunkers_mekko_demand_bio_resource
+- label: biogenic_waste
+  color: "#E07033"
+  order_by: 5
+  group: energy
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_biogenic_waste_in_energy
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: biogenic_waste_energy_mekko_demand_bio_resource
+- label: biogenic_waste
+  color: "#E07033"
+  order_by: 5
+  group: households
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_biogenic_waste_in_households
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: biogenic_waste_households_mekko_demand_bio_resource
+- label: biogenic_waste
+  color: "#E07033"
+  order_by: 5
+  group: industry
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_biogenic_waste_in_industry
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: biogenic_waste_industry_mekko_demand_bio_resource
+- label: biogenic_waste
+  color: "#E07033"
+  order_by: 5
+  group: other
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_biogenic_waste_in_other
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: biogenic_waste_other_mekko_demand_bio_resource
+- label: biogenic_waste
+  color: "#E07033"
+  order_by: 5
+  group: transport
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_biogenic_waste_in_transport
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: biogenic_waste_transport_mekko_demand_bio_resource
+- label: oily_biomass
+  color: "#FFD700"
+  order_by: 3
+  group: agriculture
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_oily_biomass_in_agriculture
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: oily_biomass_agriculture_mekko_demand_bio_resource
+- label: oily_biomass
+  color: "#FFD700"
+  order_by: 3
+  group: buildings
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_oily_biomass_in_buildings
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: oily_biomass_buildings_mekko_demand_bio_resource
+- label: oily_biomass
+  color: "#FFD700"
+  order_by: 3
+  group: bunkers
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_oily_biomass_in_bunkers
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: oily_biomass_bunkers_mekko_demand_bio_resource
+- label: oily_biomass
+  color: "#FFD700"
+  order_by: 3
+  group: energy
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_oily_biomass_in_energy
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: oily_biomass_energy_mekko_demand_bio_resource
+- label: oily_biomass
+  color: "#FFD700"
+  order_by: 3
+  group: households
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_oily_biomass_in_households
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: oily_biomass_households_mekko_demand_bio_resource
+- label: oily_biomass
+  color: "#FFD700"
+  order_by: 3
+  group: industry
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_oily_biomass_in_industry
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: oily_biomass_industry_mekko_demand_bio_resource
+- label: oily_biomass
+  color: "#FFD700"
+  order_by: 3
+  group: other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_oily_biomass_in_other
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: oily_biomass_other_mekko_demand_bio_resource
+- label: oily_biomass
+  color: "#FFD700"
+  order_by: 3
+  group: transport
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_oily_biomass_in_transport
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: oily_biomass_transport_mekko_demand_bio_resource
+- label: wet_biomass
+  color: "#854321"
+  order_by: 1
+  group: agriculture
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_wet_biomass_in_agriculture
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: wet_biomass_agriculture_mekko_demand_bio_resource
+- label: wet_biomass
+  color: "#854321"
+  order_by: 1
+  group: buildings
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_wet_biomass_in_buildings
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: wet_biomass_buildings_mekko_demand_bio_resource
+- label: wet_biomass
+  color: "#854321"
+  order_by: 1
+  group: bunkers
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_wet_biomass_in_bunkers
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: wet_biomass_bunkers_mekko_demand_bio_resource
+- label: wet_biomass
+  color: "#854321"
+  order_by: 1
+  group: energy
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_wet_biomass_in_energy
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: wet_biomass_energy_mekko_demand_bio_resource
+- label: wet_biomass
+  color: "#854321"
+  order_by: 1
+  group: households
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_wet_biomass_in_households
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: wet_biomass_households_mekko_demand_bio_resource
+- label: wet_biomass
+  color: "#854321"
+  order_by: 1
+  group: industry
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_wet_biomass_in_industry
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: wet_biomass_industry_mekko_demand_bio_resource
+- label: wet_biomass
+  color: "#854321"
+  order_by: 1
+  group: other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_wet_biomass_in_other
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: wet_biomass_other_mekko_demand_bio_resource
+- label: wet_biomass
+  color: "#854321"
+  order_by: 1
+  group: transport
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_wet_biomass_in_transport
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: wet_biomass_transport_mekko_demand_bio_resource
+- label: dry_biomass
+  color: "#5D7929"
+  order_by: 2
+  group: agriculture
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_dry_biomass_in_agriculture
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: dry_biomass_agriculture_mekko_demand_bio_resource
+- label: dry_biomass
+  color: "#5D7929"
+  order_by: 2
+  group: buildings
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_dry_biomass_in_buildings
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: dry_biomass_buildings_mekko_demand_bio_resource
+- label: dry_biomass
+  color: "#5D7929"
+  order_by: 2
+  group: bunkers
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_dry_biomass_in_bunkers
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: dry_biomass_bunkers_mekko_demand_bio_resource
+- label: dry_biomass
+  color: "#5D7929"
+  order_by: 2
+  group: energy
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_dry_biomass_in_energy
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: dry_biomass_energy_mekko_demand_bio_resource
+- label: dry_biomass
+  color: "#5D7929"
+  order_by: 2
+  group: households
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_dry_biomass_in_households
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: dry_biomass_households_mekko_demand_bio_resource
+- label: dry_biomass
+  color: "#5D7929"
+  order_by: 2
+  group: industry
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_dry_biomass_in_industry
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: dry_biomass_industry_mekko_demand_bio_resource
+- label: dry_biomass
+  color: "#5D7929"
+  order_by: 2
+  group: other
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_dry_biomass_in_other
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: dry_biomass_other_mekko_demand_bio_resource
+- label: dry_biomass
+  color: "#5D7929"
+  order_by: 2
+  group: transport
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_dry_biomass_in_transport
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: dry_biomass_transport_mekko_demand_bio_resource
+- label: wet_biomass
+  color: "#854321"
+  order_by: 1
+  group: export_and_curtailment
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_wet_biomass_in_export_and_curtailment
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: wet_biomass_export_and_curtailment_mekko_demand_bio_resource
+- label: dry_biomass
+  color: "#5D7929"
+  order_by: 2
+  group: export_and_curtailment
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_dry_biomass_in_export_and_curtailment
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: dry_biomass_export_and_curtailment_mekko_demand_bio_resource
+- label: oily_biomass
+  color: "#FFD700"
+  order_by: 3
+  group: export_and_curtailment
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: demand_of_bio_resource_oily_biomass_in_export_and_curtailment
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: oily_biomass_export_and_curtailment_mekko_demand_bio_resource
+- label: biogenic_waste
+  color: "#E07033"
+  order_by: 5
+  group: export_and_curtailment
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: demand_of_bio_resource_biogenic_waste_in_export_and_curtailment
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_demand_bio_resource
+  key: biogenic_waste_export_and_curtailment_mekko_demand_bio_resource

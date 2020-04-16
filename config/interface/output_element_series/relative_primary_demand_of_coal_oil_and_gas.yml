@@ -1,0 +1,37 @@
+---
+- label: oil_and_derivatives
+  color: "#854321"
+  order_by: 1
+  group: ''
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: relative_primary_demand_of_oil_and_derivatives
+  is_1990: 
+  dependent_on: 
+  output_element_key: relative_primary_demand_of_coal_oil_and_gas
+  key: oil_and_derivatives_relative_primary_demand_of_coal_oil_and_gas
+- label: natural_gas_and_derivatives
+  color: "#CCCCCC"
+  order_by: 2
+  group: ''
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: relative_primary_demand_of_natural_gas_and_derivatives
+  is_1990: 
+  dependent_on: 
+  output_element_key: relative_primary_demand_of_coal_oil_and_gas
+  key: natural_gas_and_derivatives_relative_primary_demand_of_coal_oil_and_gas
+- label: coal_and_derivatives
+  color: "#333333"
+  order_by: 3
+  group: ''
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: relative_primary_demand_of_coal_and_derivatives
+  is_1990: 
+  dependent_on: 
+  output_element_key: relative_primary_demand_of_coal_oil_and_gas
+  key: coal_and_derivatives_relative_primary_demand_of_coal_oil_and_gas

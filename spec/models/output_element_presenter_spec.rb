@@ -2,7 +2,12 @@ require 'rails_helper'
 
 RSpec.describe OutputElementPresenter do
   let(:oe) do
-    OutputElement.all.first
+    OutputElement.new(id: 2,
+                      unit: "PJ",
+                      group: "Demand",
+                      key: "use_of_final_electricity_demand_in_households",
+                      output_element_type_name: "bezier",
+                      description: "Foo")
   end
 
   let(:renderer) { ->(*) {} }

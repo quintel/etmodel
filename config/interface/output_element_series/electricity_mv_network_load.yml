@@ -1,0 +1,37 @@
+---
+- label: network_mv_load_curve
+  color: blue
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: network_mv_load_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: electricity_mv_network_load
+  key: network_mv_load_curve_electricity_mv_network_load
+- label: network_mv_supply_curve
+  color: green
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: network_mv_supply_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: electricity_mv_network_load
+  key: network_mv_supply_curve_electricity_mv_network_load
+- label: network_mv_demand_curve
+  color: red
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: network_mv_demand_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: electricity_mv_network_load
+  key: network_mv_demand_curve_electricity_mv_network_load

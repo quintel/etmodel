@@ -1,0 +1,81 @@
+---
+- id: 214
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: hydrogen
+  show_point_label: false
+  growth_chart: false
+  key: mekko_of_hydrogen_network
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: mekko
+  related_output_element_key: hydrogen_production
+- id: 225
+  under_construction: false
+  unit: MW
+  percentage: false
+  group: Supply
+  sub_group: hydrogen
+  show_point_label: false
+  growth_chart: false
+  key: hydrogen_production
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: 
+  description: 
+  output_element_type_name: demand_curve
+- id: 226
+  under_construction: false
+  unit: MW
+  percentage: false
+  group: Supply
+  sub_group: hydrogen
+  show_point_label: false
+  growth_chart: false
+  key: hydrogen_demand
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: 
+  description: 
+  output_element_type_name: demand_curve
+- id: 227
+  under_construction: false
+  unit: MWh
+  percentage: false
+  group: Supply
+  sub_group: hydrogen
+  show_point_label: false
+  growth_chart: false
+  key: hydrogen_storage
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: demand_curve
+- id: 228
+  under_construction: false
+  unit: Eur/Mwh
+  percentage: false
+  group: Supply
+  sub_group: hydrogen
+  show_point_label: false
+  growth_chart: false
+  key: hydrogen_cost_capacity
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  description: 
+  output_element_type_name: cost_capacity_bar
+  related_output_element_key: hydrogen_production

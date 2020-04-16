@@ -1,0 +1,37 @@
+---
+- label: freight_transport
+  color: "#8B0000"
+  order_by: 2
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_freight_transport
+  is_1990: false
+  dependent_on: 
+  output_element_key: transport_categories_overview
+  key: freight_transport_transport_categories_overview
+- label: passenger_transport
+  color: "#63A1C9"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_passenger_transport
+  is_1990: false
+  dependent_on: 
+  output_element_key: transport_categories_overview
+  key: passenger_transport_transport_categories_overview
+- label: groups.bunkers
+  color: "#696969"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_international_transport
+  is_1990: false
+  dependent_on: 
+  output_element_key: transport_categories_overview
+  key: groups.bunkers_transport_categories_overview

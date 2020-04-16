@@ -47,7 +47,7 @@ class OutputElement < YModel::Base
   include AreaDependent::YModel
 
   index_on :key
-  source_file 'config/interface/output_elements.yml'
+  source_file 'config/interface/output_elements'
 
   has_many :output_element_series
   belongs_to :output_element_type

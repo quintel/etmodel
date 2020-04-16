@@ -1,0 +1,121 @@
+---
+- label: gas_ccgt
+  color: "#228B22"
+  order_by: 
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gas_ccgt_in_overview_backup_capacity_options
+  is_1990: 
+  dependent_on: 
+  output_element_key: flexibility_of_backup_scatter_plot
+  key: gas_ccgt_flexibility_of_backup_scatter_plot
+- label: coal
+  color: "#666666"
+  order_by: 
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: coal_pwd_in_overview_backup_capacity_options
+  is_1990: 
+  dependent_on: 
+  output_element_key: flexibility_of_backup_scatter_plot
+  key: coal_flexibility_of_backup_scatter_plot
+- label: coal_conventional
+  color: "#A9A9A9"
+  order_by: 
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: coal_conv_in_overview_backup_capacity_options
+  is_1990: 
+  dependent_on: 
+  output_element_key: flexibility_of_backup_scatter_plot
+  key: coal_conventional_flexibility_of_backup_scatter_plot
+- label: gas_conventional
+  color: "#5D7929"
+  order_by: 
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gas_conv_in_overview_backup_capacity_options
+  is_1990: 
+  dependent_on: 
+  output_element_key: flexibility_of_backup_scatter_plot
+  key: gas_conventional_flexibility_of_backup_scatter_plot
+- label: coal_ccs
+  color: "#4169E1"
+  order_by: 
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: coal_pwd_ccs_in_overview_backup_capacity_options
+  is_1990: 
+  dependent_on: 
+  output_element_key: flexibility_of_backup_scatter_plot
+  key: coal_ccs_flexibility_of_backup_scatter_plot
+- label: coal_igcc
+  color: "#333333"
+  order_by: 
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: coal_igcc_in_overview_backup_capacity_options
+  is_1990: 
+  dependent_on: 
+  output_element_key: flexibility_of_backup_scatter_plot
+  key: coal_igcc_flexibility_of_backup_scatter_plot
+- label: coal_igcc_ccs
+  color: "#00008B"
+  order_by: 
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: coal_igcc_ccs_in_overview_backup_capacity_options
+  is_1990: 
+  dependent_on: 
+  output_element_key: flexibility_of_backup_scatter_plot
+  key: coal_igcc_ccs_flexibility_of_backup_scatter_plot
+- label: oil
+  color: "#854321"
+  order_by: 
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: oil_plant_in_overview_backup_capacity_options
+  is_1990: 
+  dependent_on: 
+  output_element_key: flexibility_of_backup_scatter_plot
+  key: oil_flexibility_of_backup_scatter_plot
+- label: gas_ccgt_ccs
+  color: "#ADDE4C"
+  order_by: 
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gas_ccgt_ccs_in_overview_backup_capacity_options
+  is_1990: 
+  dependent_on: 
+  output_element_key: flexibility_of_backup_scatter_plot
+  key: gas_ccgt_ccs_flexibility_of_backup_scatter_plot
+- label: gas_turbine
+  color: "#B3CF7B"
+  order_by: 
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gas_turbine_in_overview_backup_capacity_options
+  is_1990: 
+  dependent_on: 
+  output_element_key: flexibility_of_backup_scatter_plot
+  key: gas_turbine_flexibility_of_backup_scatter_plot

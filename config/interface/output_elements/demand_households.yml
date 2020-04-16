@@ -1,0 +1,214 @@
+---
+- id: 2
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: false
+  growth_chart: false
+  key: use_of_final_electricity_demand_in_households
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: bezier
+- id: 5
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: false
+  growth_chart: false
+  key: source_of_electricity_in_households
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar
+- id: 56
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: false
+  growth_chart: false
+  key: source_of_heat_used_in_households
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: bezier
+  related_output_element_key: household_heat_demand_and_production
+- id: 57
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: true
+  growth_chart: true
+  key: useful_demand_in_households
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: bezier
+- id: 58
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: false
+  growth_chart: true
+  key: effect_of_insulation_in_households
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: bezier
+  related_output_element_key: household_heat_demand_and_production
+- id: 65
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: false
+  growth_chart: false
+  key: source_of_hot_water_in_households
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: _always_hidden
+  output_element_type_name: bezier
+- id: 66
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: false
+  growth_chart: false
+  key: source_of_cooling_in_households
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: bezier
+- id: 67
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: false
+  growth_chart: false
+  key: source_of_cooking_in_households
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: bezier
+- id: 137
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: false
+  growth_chart: false
+  key: impact_of_climate_on_heat_and_cooling_demand_households_and_buildings
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: bezier
+- id: 145
+  under_construction: false
+  unit: ''
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: false
+  growth_chart: false
+  key: population_residences_overview
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: html_table
+- id: 195
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: false
+  growth_chart: false
+  key: heat_deficit
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar
+- id: 196
+  under_construction: false
+  unit: MW
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: false
+  growth_chart: false
+  key: household_heat_demand_and_production
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: heat_demand_and_production
+- id: 213
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: false
+  growth_chart: false
+  key: households_final_demand_per_application
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: bezier
+- id: 258
+  under_construction: false
+  unit: MW
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: false
+  growth_chart: false
+  key: household_space_heater_hhp_hourly_demand
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: 
+  description: 
+  output_element_type_name: demand_curve

@@ -81,7 +81,7 @@ namespace :ymodel do
   # files. Remember to delete the starting yaml after to make sure you don't
   # get duplicate index errors.
   #
-  # I write the command tasks like this:
+  # I write the command like this in  zsh:
   # $ rake "ymodel:split_yaml[config/interface/input_elements.yml,slide_key]"
   task :split_yaml, [:yaml_file, :group_by_key] => [:environment] do |_t, args|
     YAML.load_file(args.yaml_file).group_by do |record|
@@ -89,14 +89,16 @@ namespace :ymodel do
     end.each do |filename, records|
       file = File.join(Rails.root,
                        File.dirname(args.yaml_file),
-                       "#{filename}.yml")
+                       "#{filename.downcase}.yml")
       File.write(file, records.to_yaml)
     end
   end
 
   # This task is quite the mess. My guess that we wont need it often if at all.
   # Just keeping it here in case its handy to have in the future.
-  desc 'Sort yaml files. Keep key name on top.'
+  # I write the command like this in  zsh:
+  # $ rake "ymodel:sort_yaml_files[input_elements]"
+  desc 'Sort yaml files alphabetically but keep key name on top.'
   task :sort_yaml, [:model] => [:environment] do |_t, args|
     Kernel.const_get(args.model.camelcase).source_files.each do |file_path|
       current_block = []
@@ -149,6 +151,8 @@ namespace :ymodel do
     end
   end
 
+  # I write the command like this in  zsh:
+  # $ rake "ymodel:remove_empty_values[input_elements]"
   desc 'Remove empty values from all yaml files that belong to a model.'
   task :remove_empty_values, [:model] => [:environment] do |_t, args|
     Kernel.const_get(args.model.camelcase).source_files.each do |file_path|
@@ -161,6 +165,8 @@ namespace :ymodel do
     end
   end
 
+  # I write the command like this in  zsh:
+  # $ rake "ymodel:remove_ids[input_elements]"
   desc 'Remove ids from all yaml files that belong to a model.'
   task :remove_ids, [:model] => [:environment] do |_t, args|
     Kernel.const_get(args.model.camelcase).source_files.each do |file_path|

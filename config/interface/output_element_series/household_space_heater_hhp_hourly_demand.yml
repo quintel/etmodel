@@ -1,0 +1,49 @@
+---
+- label: households_water_heater_hybrid_heatpump_electricity_input_curve
+  color: "#00008B"
+  order_by: 0
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: households_water_heater_hybrid_heatpump_electricity_input_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: household_space_heater_hhp_hourly_demand
+  key: households_water_heater_hybrid_heatpump_electricity_input_curve_household_space_heater_hhp_hourly_demand
+- label: households_water_heater_hybrid_heatpump_network_gas_input_curve
+  color: "#696969"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: households_water_heater_hybrid_heatpump_network_gas_input_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: household_space_heater_hhp_hourly_demand
+  key: households_water_heater_hybrid_heatpump_network_gas_input_curve_household_space_heater_hhp_hourly_demand
+- label: households_space_heater_hybrid_heatpump_electricity_input_curve
+  color: "#4169E1"
+  order_by: 2
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: households_space_heater_hybrid_heatpump_electricity_input_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: household_space_heater_hhp_hourly_demand
+  key: households_space_heater_hybrid_heatpump_electricity_input_curve_household_space_heater_hhp_hourly_demand
+- label: households_space_heater_hybrid_heatpump_network_gas_input_curve
+  color: "#a4b0be"
+  order_by: 3
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: households_space_heater_hybrid_heatpump_network_gas_input_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: household_space_heater_hhp_hourly_demand
+  key: households_space_heater_hybrid_heatpump_network_gas_input_curve_household_space_heater_hhp_hourly_demand

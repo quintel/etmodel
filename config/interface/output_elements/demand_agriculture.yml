@@ -1,0 +1,46 @@
+---
+- id: 29
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: agriculture
+  show_point_label: false
+  growth_chart: true
+  key: use_of_final_demand_in_agriculture
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: has_agriculture
+  output_element_type_name: bezier
+- id: 30
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: agriculture
+  show_point_label: false
+  growth_chart: false
+  key: source_of_heat_in_agriculture
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: has_agriculture
+  output_element_type_name: bezier
+- id: 62
+  under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: agriculture
+  show_point_label: false
+  growth_chart: false
+  key: source_of_heat_and_electricity_in_agriculture
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: has_agriculture
+  output_element_type_name: bezier

@@ -355,7 +355,7 @@
           sublabel:         this.model.get('label'),
           converter:        this.model.get('related_converter'),
           converter_source: this.model.get('converter_source_url'),
-          input_element_id: this.model.get("id"),
+          input_element_key:this.model.get('key'),
           end_year:         App.settings.get("end_year"),
           info_link:        I18n.t('input_elements.common.info_link')
         })

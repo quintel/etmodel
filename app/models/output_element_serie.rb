@@ -62,6 +62,10 @@ class OutputElementSerie < YModel::Base
     I18n.t("descriptions_output_element_series.#{key}.content", default: '')
   end
 
+  def short_description
+    I18n.t("descriptions_output_elements.#{key}.short_content")
+  end
+
   # rubocop:disable Metrics/LineLength
   def json_attributes
     {

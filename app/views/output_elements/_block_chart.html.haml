@@ -22,13 +22,12 @@
       #x-axis-label= t("output_elements.block_chart.total_investment_cost_of_production")
 
       - blocks.each do |block|
-        - show_or_not = session["block_#{block.id}"]
+        - show_or_not = session["block_#{block.key}"]
         - show_or_not ||= block.show_at_first ? 'visible' : 'invisible'
-        .block_container{:class => show_or_not, :id => "block_container_#{block.id}", 'data-block_id' => block.id}
-          .block{:id => "block_#{block.id}",
+        .block_container{:class => show_or_not, :id => "block_container_#{block.key}", 'data-block_id' => block.key}
+          .block{ :id => "block_#{block.key}",
               'data-title' => t("output_element_series.#{block.label}"),
-              'data-description' => block.description&.short_content,
-              'data-description_id' => block.description&.id}
+              'data-description' => block.short_description }
             .header{:class => block.group.downcase}= t("output_element_series.#{block.label}")
           .balloon-tip
 
@@ -39,10 +38,10 @@
       %ul.group{:id => group}
         - blocks.each do |b|
           %li
-            - show_or_not = session["block_#{b.id}"]
+            - show_or_not = session["block_#{b.key}"]
             - show_or_not ||= b.show_at_first ? 'visible' : 'invisible'
 
-            %a.show_hide_block{:href=>'#', :class => show_or_not, :id => "show_hide_block_#{b.id}", 'data-block_id' => b.id}
+            %a.show_hide_block{:href=>'#', :class => show_or_not, :id => "show_hide_block_#{b.key}", 'data-block_id' => b.key}
               = t("output_element_series.#{b.label}")
       = link_to t("output_element_series.groups.#{group}"), "#"
 

@@ -97,8 +97,8 @@ Etm::Application.routes.draw do
 
   resources :output_elements, param: :key, only: %i[index show] do
     member do
-      get :visible
-      get :invisible
+      get 'visible/:key',    action: :visible
+      get 'invisible/:key',    action: :visible
       get :zoom
     end
 

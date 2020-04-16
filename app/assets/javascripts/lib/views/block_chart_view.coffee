@@ -56,11 +56,11 @@ class @BlockChartView extends BaseChartView
           description = item.attr('data-description')
 
           if description && description.length
-            description = "#{description}<br/><br/>"
+            description = "<p>#{description}</p>"
 
-          "#{description}
+          "<div class='block-chart-tooltip'>#{description}
           #{I18n.t 'output_elements.block_chart.costs'}: #{cost}<br/>
-          #{I18n.t 'output_elements.block_chart.investment_costs'}: #{invest}"
+          #{I18n.t 'output_elements.block_chart.investment_costs'}: #{invest}</div>"
       hide:
         fixed: true
         delay: 300

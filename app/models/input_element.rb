@@ -23,6 +23,7 @@
 class InputElement < YModel::Base
   include AreaDependent::YModel
   source_file 'config/interface/input_elements'
+  index_on :key
 
   ENUM_UNITS = %w[radio weather-curves].freeze
 

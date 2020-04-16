@@ -1,10 +1,9 @@
 ---
-- id: 615
-  key: flexibility_outdoor_temperature
+- key: flexibility_outdoor_temperature
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: degC
   fixed: false
   interface_group: temperature
@@ -13,12 +12,11 @@
   position: 1
   dependent_on: ''
   slide_key: flexibility_weather_conditions_and_flh
-- id: 785
-  key: settings_weather_curve_set
+- key: settings_weather_curve_set
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: weather-curves
   fixed: false
   interface_group: weather_years
@@ -27,12 +25,11 @@
   position: 7
   dependent_on: has_weather_curves
   slide_key: flexibility_weather_conditions_and_flh
-- id: 903
-  key: flh_of_energy_power_wind_turbine_coastal
+- key: flh_of_energy_power_wind_turbine_coastal
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "#"
   fixed: false
   interface_group: full_load_hours
@@ -41,12 +38,11 @@
   position: 3
   dependent_on: has_coastline
   slide_key: flexibility_weather_conditions_and_flh
-- id: 904
-  key: flh_of_energy_power_wind_turbine_inland
+- key: flh_of_energy_power_wind_turbine_inland
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "#"
   fixed: false
   interface_group: full_load_hours
@@ -55,12 +51,11 @@
   position: 2
   dependent_on: ''
   slide_key: flexibility_weather_conditions_and_flh
-- id: 905
-  key: flh_of_energy_power_wind_turbine_offshore
+- key: flh_of_energy_power_wind_turbine_offshore
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "#"
   fixed: false
   interface_group: full_load_hours
@@ -69,12 +64,11 @@
   position: 4
   dependent_on: ''
   slide_key: flexibility_weather_conditions_and_flh
-- id: 906
-  key: flh_of_energy_hydrogen_wind_turbine_offshore
+- key: flh_of_energy_hydrogen_wind_turbine_offshore
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "#"
   fixed: false
   interface_group: full_load_hours
@@ -83,12 +77,11 @@
   position: 5
   dependent_on: ''
   slide_key: flexibility_weather_conditions_and_flh
-- id: 907
-  key: flh_of_solar_pv_solar_radiation
+- key: flh_of_solar_pv_solar_radiation
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: ''
   fixed: false
   interface_group: full_load_hours

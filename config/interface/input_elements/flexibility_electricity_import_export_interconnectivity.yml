@@ -1,10 +1,9 @@
 ---
-- id: 664
-  key: interconnectors_availability_for_export
+- key: interconnectors_availability_for_export
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 3
   dependent_on: ''
   slide_key: flexibility_electricity_import_export_interconnectivity
-- id: 665
-  key: interconnectors_availability_for_import
+- key: interconnectors_availability_for_import
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -27,12 +25,11 @@
   position: 2
   dependent_on: ''
   slide_key: flexibility_electricity_import_export_interconnectivity
-- id: 666
-  key: interconnectors_interconnector_capacity
+- key: interconnectors_interconnector_capacity
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: MW
   fixed: false
   interface_group: ''

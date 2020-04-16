@@ -1,10 +1,9 @@
 ---
-- id: 661
-  key: households_flexibility_p2p_electricity_market_penetration
+- key: households_flexibility_p2p_electricity_market_penetration
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: lv_network
@@ -13,12 +12,11 @@
   position: 1
   dependent_on: ''
   slide_key: flexibility_flexibility_power_storage
-- id: 662
-  key: transport_car_using_electricity_availability
+- key: transport_car_using_electricity_availability
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: lv_network
@@ -27,12 +25,11 @@
   position: 2
   dependent_on: ''
   slide_key: flexibility_flexibility_power_storage
-- id: 909
-  key: capacity_of_energy_flexibility_pumped_storage_electricity
+- key: capacity_of_energy_flexibility_pumped_storage_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: MW
   fixed: false
   interface_group: hv_network
@@ -41,12 +38,11 @@
   position: 30
   dependent_on: has_mountains
   slide_key: flexibility_flexibility_power_storage
-- id: 964
-  key: capacity_of_energy_flexibility_hv_opac_electricity
+- key: capacity_of_energy_flexibility_hv_opac_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: MW
   fixed: false
   interface_group: hv_network
@@ -55,12 +51,11 @@
   position: 31
   dependent_on: ''
   slide_key: flexibility_flexibility_power_storage
-- id: 965
-  key: capacity_of_energy_flexibility_mv_batteries_electricity
+- key: capacity_of_energy_flexibility_mv_batteries_electricity
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: MW
   fixed: false
   interface_group: mv_network

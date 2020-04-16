@@ -1,10 +1,9 @@
 ---
-- id: 351
-  key: households_cooling_heatpump_ground_water_electricity_share
+- key: households_cooling_heatpump_ground_water_electricity_share
   share_group: cooling_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 1
   dependent_on: ''
   slide_key: demand_households_cooling
-- id: 353
-  key: households_cooling_airconditioning_electricity_share
+- key: households_cooling_airconditioning_electricity_share
   share_group: cooling_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -27,12 +25,11 @@
   position: 4
   dependent_on: ''
   slide_key: demand_households_cooling
-- id: 374
-  key: households_cooling_heatpump_air_water_electricity_share
+- key: households_cooling_heatpump_air_water_electricity_share
   share_group: cooling_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''

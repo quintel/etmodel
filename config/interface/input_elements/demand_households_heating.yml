@@ -1,10 +1,9 @@
 ---
-- id: 52
-  key: households_heater_electricity_share
+- key: households_heater_electricity_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 9
   dependent_on: ''
   slide_key: demand_households_heating
-- id: 248
-  key: households_heater_crude_oil_share
+- key: households_heater_crude_oil_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -27,12 +25,11 @@
   position: 11
   dependent_on: has_coal_oil_for_heating_built_environment
   slide_key: demand_households_heating
-- id: 333
-  key: households_heater_combined_network_gas_share
+- key: households_heater_combined_network_gas_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -41,12 +38,11 @@
   position: 1
   dependent_on: ''
   slide_key: demand_households_heating
-- id: 338
-  key: households_heater_heatpump_ground_water_electricity_share
+- key: households_heater_heatpump_ground_water_electricity_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -55,12 +51,11 @@
   position: 4
   dependent_on: ''
   slide_key: demand_households_heating
-- id: 340
-  key: households_heater_wood_pellets_share
+- key: households_heater_wood_pellets_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -69,12 +64,11 @@
   position: 8
   dependent_on: ''
   slide_key: demand_households_heating
-- id: 375
-  key: households_heater_heatpump_air_water_electricity_share
+- key: households_heater_heatpump_air_water_electricity_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -83,12 +77,11 @@
   position: 3
   dependent_on: ''
   slide_key: demand_households_heating
-- id: 411
-  key: households_heater_coal_share
+- key: households_heater_coal_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -97,12 +90,11 @@
   position: 12
   dependent_on: has_coal_oil_for_heating_built_environment
   slide_key: demand_households_heating
-- id: 441
-  key: households_heater_network_gas_share
+- key: households_heater_network_gas_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -111,12 +103,11 @@
   position: 10
   dependent_on: ''
   slide_key: demand_households_heating
-- id: 582
-  key: households_heater_district_heating_steam_hot_water_share
+- key: households_heater_district_heating_steam_hot_water_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -125,12 +116,11 @@
   position: 2
   dependent_on: ''
   slide_key: demand_households_heating
-- id: 692
-  key: households_heater_hybrid_heatpump_air_water_electricity_share
+- key: households_heater_hybrid_heatpump_air_water_electricity_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -139,12 +129,11 @@
   position: 5
   dependent_on: ''
   slide_key: demand_households_heating
-- id: 939
-  key: households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share
+- key: households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''

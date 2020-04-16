@@ -1,10 +1,9 @@
 ---
-- id: 893
-  key: costs_infrastructure_electricity_lv_net
+- key: costs_infrastructure_electricity_lv_net
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "€/kW"
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 1
   dependent_on: ''
   slide_key: costs_infrastructure_electricity
-- id: 894
-  key: costs_infrastructure_electricity_lv_mv_trafo
+- key: costs_infrastructure_electricity_lv_mv_trafo
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "€/kW"
   fixed: false
   interface_group: ''
@@ -27,12 +25,11 @@
   position: 2
   dependent_on: ''
   slide_key: costs_infrastructure_electricity
-- id: 895
-  key: costs_infrastructure_electricity_mv_net
+- key: costs_infrastructure_electricity_mv_net
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "€/kW"
   fixed: false
   interface_group: ''
@@ -41,12 +38,11 @@
   position: 3
   dependent_on: ''
   slide_key: costs_infrastructure_electricity
-- id: 896
-  key: costs_infrastructure_electricity_mv_hv_trafo
+- key: costs_infrastructure_electricity_mv_hv_trafo
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "€/kW"
   fixed: false
   interface_group: ''
@@ -55,12 +51,11 @@
   position: 4
   dependent_on: ''
   slide_key: costs_infrastructure_electricity
-- id: 897
-  key: costs_infrastructure_electricity_hv_net
+- key: costs_infrastructure_electricity_hv_net
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "€/kW"
   fixed: false
   interface_group: ''
@@ -69,12 +64,11 @@
   position: 5
   dependent_on: ''
   slide_key: costs_infrastructure_electricity
-- id: 898
-  key: costs_infrastructure_electricity_interconnector_net
+- key: costs_infrastructure_electricity_interconnector_net
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "€/kW"
   fixed: false
   interface_group: ''
@@ -83,12 +77,11 @@
   position: 6
   dependent_on: ''
   slide_key: costs_infrastructure_electricity
-- id: 899
-  key: costs_infrastructure_electricity_offshore_net
+- key: costs_infrastructure_electricity_offshore_net
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "€/kW"
   fixed: false
   interface_group: ''

@@ -33,18 +33,6 @@ class OutputElementsController < ApplicationController
     @groups = OutputElement.select_by_group
   end
 
-  # legacy actions used by the block charts
-  #
-  def invisible
-    session[params[:key]] = 'invisible'
-    render js: ""
-  end
-
-  def visible
-    session[params[:key]] = 'visible'
-    render js: ""
-  end
-
   def zoom
   end
 

@@ -1,0 +1,73 @@
+---
+- label: compressed_natural_gas_cars
+  color: "#696969"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: compressed_natural_gas_cars_in_use_of_final_demand_in_cars
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_cars
+  key: compressed_natural_gas_cars_use_of_final_demand_in_cars
+- label: diesel_cars
+  color: "#854321"
+  order_by: 4
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: diesel_cars_in_use_of_final_demand_in_cars
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_cars
+  key: diesel_cars_use_of_final_demand_in_cars
+- label: electric_cars
+  color: "#4169E1"
+  order_by: 6
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electric_cars_in_use_of_final_demand_in_cars
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_cars
+  key: electric_cars_use_of_final_demand_in_cars
+- label: gasoline_cars
+  color: "#8B0000"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gasoline_cars_in_use_of_final_demand_in_cars
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_cars
+  key: gasoline_cars_use_of_final_demand_in_cars
+- label: hydrogen_cars
+  color: "#87CEEB"
+  order_by: 5
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: hydrogen_cars_in_use_of_final_demand_in_cars
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_cars
+  key: hydrogen_cars_use_of_final_demand_in_cars
+- label: lpg_cars
+  color: "#A9A9A9"
+  order_by: 2
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lpg_cars_in_use_of_final_demand_in_cars
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_cars
+  key: lpg_cars_use_of_final_demand_in_cars

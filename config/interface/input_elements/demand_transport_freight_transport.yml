@@ -1,10 +1,9 @@
 ---
-- id: 142
-  key: transport_trucks_share
+- key: transport_trucks_share
   share_group: freight_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: empty
@@ -13,12 +12,11 @@
   position: 2
   dependent_on: ''
   slide_key: demand_transport_freight_transport
-- id: 145
-  key: transport_ships_share
+- key: transport_ships_share
   share_group: freight_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: empty
@@ -27,12 +25,11 @@
   position: 4
   dependent_on: ''
   slide_key: demand_transport_freight_transport
-- id: 842
-  key: transport_useful_demand_freight_tonne_kms
+- key: transport_useful_demand_freight_tonne_kms
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -41,12 +38,11 @@
   position: 1
   dependent_on: ''
   slide_key: demand_transport_freight_transport
-- id: 847
-  key: transport_freight_trains_share
+- key: transport_freight_trains_share
   share_group: freight_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: empty

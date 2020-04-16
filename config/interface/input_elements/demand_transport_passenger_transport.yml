@@ -1,10 +1,9 @@
 ---
-- id: 141
-  key: transport_cars_share
+- key: transport_cars_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: empty
@@ -13,12 +12,11 @@
   position: 2
   dependent_on: ''
   slide_key: demand_transport_passenger_transport
-- id: 143
-  key: transport_passenger_trains_share
+- key: transport_passenger_trains_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: empty
@@ -27,12 +25,11 @@
   position: 3
   dependent_on: ''
   slide_key: demand_transport_passenger_transport
-- id: 144
-  key: transport_planes_share
+- key: transport_planes_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: empty
@@ -41,12 +38,11 @@
   position: 8
   dependent_on: is_national_scenario
   slide_key: demand_transport_passenger_transport
-- id: 841
-  key: transport_useful_demand_passenger_kms
+- key: transport_useful_demand_passenger_kms
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -55,12 +51,11 @@
   position: 1
   dependent_on: ''
   slide_key: demand_transport_passenger_transport
-- id: 843
-  key: transport_busses_share
+- key: transport_busses_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: empty
@@ -69,12 +64,11 @@
   position: 5
   dependent_on: ''
   slide_key: demand_transport_passenger_transport
-- id: 844
-  key: transport_trams_share
+- key: transport_trams_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: empty
@@ -83,12 +77,11 @@
   position: 4
   dependent_on: ''
   slide_key: demand_transport_passenger_transport
-- id: 845
-  key: transport_bicycles_share
+- key: transport_bicycles_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: empty
@@ -97,12 +90,11 @@
   position: 7
   dependent_on: ''
   slide_key: demand_transport_passenger_transport
-- id: 846
-  key: transport_motorcycles_share
+- key: transport_motorcycles_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: empty

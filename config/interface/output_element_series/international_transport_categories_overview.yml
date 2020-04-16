@@ -1,0 +1,25 @@
+---
+- label: international_aviation
+  color: "#8B0000"
+  order_by: 2
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bunkers_final_demand_aviation
+  is_1990: false
+  dependent_on: 
+  output_element_key: international_transport_categories_overview
+  key: international_aviation_international_transport_categories_overview
+- label: international_navigation
+  color: "#63A1C9"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bunkers_final_demand_shipping
+  is_1990: false
+  dependent_on: 
+  output_element_key: international_transport_categories_overview
+  key: international_navigation_international_transport_categories_overview

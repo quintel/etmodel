@@ -1,0 +1,49 @@
+---
+- label: trains
+  color: "#63A1C9"
+  order_by: 2
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: freight_trains_in_use_of_final_demand_in_freight_transport
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_freight_transport
+  key: trains_use_of_final_demand_in_freight_transport
+- label: trucks
+  color: "#8B0000"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: trucks_in_use_of_final_demand_in_freight_transport
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_freight_transport
+  key: trucks_use_of_final_demand_in_freight_transport
+- label: ships
+  color: "#696969"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: ships_in_use_of_final_demand_in_freight_transport
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_freight_transport
+  key: ships_use_of_final_demand_in_freight_transport
+- label: non_energetic_use
+  color: "#8B4513"
+  order_by: 4
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: non_energetic_final_demand_in_freight_transport
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_freight_transport
+  key: non_energetic_use_use_of_final_demand_in_freight_transport

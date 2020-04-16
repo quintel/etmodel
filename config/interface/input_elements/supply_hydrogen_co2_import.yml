@@ -1,10 +1,9 @@
 ---
-- id: 890
-  key: co2_emissions_of_imported_hydrogen_present
+- key: co2_emissions_of_imported_hydrogen_present
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: kg/MWh
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 1
   dependent_on: ''
   slide_key: supply_hydrogen_co2_import
-- id: 891
-  key: co2_emissions_of_imported_hydrogen_future
+- key: co2_emissions_of_imported_hydrogen_future
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: kg/MWh
   fixed: false
   interface_group: ''

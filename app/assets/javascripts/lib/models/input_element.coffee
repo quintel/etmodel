@@ -3,7 +3,7 @@ class @InputElement extends Backbone.Model
     @dirty = false
     @on_screen = false
     @ui_options =
-      element: $("#input_element_#{@get('id')}")
+      element: $("#input_element_#{@get('key')}")
     @bind('change:user_value', @markDirty)
     @bind('change:user_value', @logUpdate)
     @bind('change:user_value', @update_collection)
@@ -162,7 +162,7 @@ class @InputElementList extends Backbone.Collection
   addInputElement: (inputElement) =>
     return if inputElement.onscreen
     options = inputElement.ui_options
-    @inputElements[inputElement.id] = inputElement
+    @inputElements[inputElement.get('key')] = inputElement
 
     switch inputElement.get('unit')
       when 'boolean'
@@ -174,7 +174,7 @@ class @InputElementList extends Backbone.Collection
       else
         view = new InputElementView({model : inputElement, el : options.element})
 
-    @inputElementViews[inputElement.id] = view
+    @inputElementViews[inputElement.get('key')] = view
     view.bind "change", @handleUpdate
     inputElement.onscreen = true
     true

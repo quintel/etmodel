@@ -1,0 +1,121 @@
+---
+- label: solar
+  color: "#FFD700"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: solar_in_renewable_electricity_share
+  is_1990: false
+  dependent_on: 
+  output_element_key: renewable_electricity
+  key: solar_renewable_electricity
+- label: wind
+  color: "#63A1C9"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: wind_in_renewable_electricity_share
+  is_1990: false
+  dependent_on: 
+  output_element_key: renewable_electricity
+  key: wind_renewable_electricity
+- label: hydro
+  color: "#00008B"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: hydro_in_renewable_electricity_share
+  is_1990: false
+  dependent_on: 
+  output_element_key: renewable_electricity
+  key: hydro_renewable_electricity
+- label: bio_oil
+  color: "#854321"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bio_oil_in_renewable_electricity_share
+  is_1990: false
+  dependent_on: 
+  output_element_key: renewable_electricity
+  key: bio_oil_renewable_electricity
+- label: biogas
+  color: "#B3CF7B"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: biogas_in_renewable_electricity_share
+  is_1990: false
+  dependent_on: 
+  output_element_key: renewable_electricity
+  key: biogas_renewable_electricity
+- label: geothermal
+  color: "#BA7D40"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: geothermal_in_renewable_electricity_share
+  is_1990: false
+  dependent_on: 
+  output_element_key: renewable_electricity
+  key: geothermal_renewable_electricity
+- label: wood_pellets
+  color: "#5D7929"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: wood_pellets_in_renewable_electricity_share
+  is_1990: false
+  dependent_on: 
+  output_element_key: renewable_electricity
+  key: wood_pellets_renewable_electricity
+- label: waste
+  color: "#394C19"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: biogenic_waste_in_renewable_electricity_share
+  is_1990: false
+  dependent_on: 
+  output_element_key: renewable_electricity
+  key: waste_renewable_electricity
+- label: greengas
+  color: "#32CD32"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: greengas_in_renewable_electricity_share
+  is_1990: false
+  dependent_on: 
+  output_element_key: renewable_electricity
+  key: greengas_renewable_electricity
+- label: biomass
+  color: "#D87093"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: torrefied_biomass_in_renewable_electricity_share
+  is_1990: false
+  dependent_on: 
+  output_element_key: renewable_electricity
+  key: biomass_renewable_electricity

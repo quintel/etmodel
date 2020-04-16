@@ -1,0 +1,25 @@
+---
+- label: primary_energy
+  color: "#333333"
+  order_by: 0
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: primary_energy_in_use_of_primary_energy
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_primary_energy
+  key: primary_energy_use_of_primary_energy
+- label: losses_of_export
+  color: "#FF0000"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: losses_for_exported_energy_in_use_of_primary_energy
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_primary_energy
+  key: losses_of_export_use_of_primary_energy

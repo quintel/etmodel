@@ -1,10 +1,9 @@
 ---
-- id: 427
-  key: transport_passenger_train_using_coal_share
+- key: transport_passenger_train_using_coal_share
   share_group: transport_passenger_train_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 3
   dependent_on: ''
   slide_key: demand_transport_passenger_train_technology
-- id: 428
-  key: transport_passenger_train_using_diesel_mix_share
+- key: transport_passenger_train_using_diesel_mix_share
   share_group: transport_passenger_train_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -27,12 +25,11 @@
   position: 2
   dependent_on: ''
   slide_key: demand_transport_passenger_train_technology
-- id: 429
-  key: transport_passenger_train_using_electricity_share
+- key: transport_passenger_train_using_electricity_share
   share_group: transport_passenger_train_tech
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''

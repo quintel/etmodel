@@ -1,0 +1,61 @@
+---
+- label: bio_kerosene
+  color: "#5D7929"
+  order_by: 2
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: bio_kerosene_co2_emission_international_aviation
+  is_1990: false
+  dependent_on: 
+  output_element_key: co2_emission_international_transportation
+  key: bio_kerosene_co2_emission_international_transportation
+- label: kerosene
+  color: "#BFEFFF"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: kerosene_co2_emission_international_aviation
+  is_1990: false
+  dependent_on: 
+  output_element_key: co2_emission_international_transportation
+  key: kerosene_co2_emission_international_transportation
+- label: heavy_fuel_oil
+  color: "#BA7D40"
+  order_by: 3
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: heavy_fuel_oil_co2_emission_international_shipping
+  is_1990: false
+  dependent_on: 
+  output_element_key: co2_emission_international_transportation
+  key: heavy_fuel_oil_co2_emission_international_transportation
+- label: lng
+  color: "#696969"
+  order_by: 4
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: lng_co2_emission_international_shipping
+  is_1990: false
+  dependent_on: 
+  output_element_key: co2_emission_international_transportation
+  key: lng_co2_emission_international_transportation
+- label: international_transportation_1990
+  color: "#333333"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: 1990_in_co2_emissions_bunkers
+  is_1990: true
+  dependent_on: 
+  output_element_key: co2_emission_international_transportation
+  key: international_transportation_1990_co2_emission_international_transportation

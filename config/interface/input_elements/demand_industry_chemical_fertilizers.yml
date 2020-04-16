@@ -1,10 +1,9 @@
 ---
-- id: 712
-  key: industry_useful_demand_for_chemical_fertilizers
+- key: industry_useful_demand_for_chemical_fertilizers
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 1
   dependent_on: ''
   slide_key: demand_industry_chemical_fertilizers
-- id: 713
-  key: industry_useful_demand_for_chemical_fertilizers_electricity_efficiency
+- key: industry_useful_demand_for_chemical_fertilizers_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%/year"
   fixed: false
   interface_group: efficiency
@@ -27,12 +25,11 @@
   position: 2
   dependent_on: ''
   slide_key: demand_industry_chemical_fertilizers
-- id: 714
-  key: industry_useful_demand_for_chemical_fertilizers_useable_heat_efficiency
+- key: industry_useful_demand_for_chemical_fertilizers_useable_heat_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%/year"
   fixed: false
   interface_group: efficiency
@@ -41,12 +38,11 @@
   position: 3
   dependent_on: ''
   slide_key: demand_industry_chemical_fertilizers
-- id: 715
-  key: industry_chemicals_fertilizers_burner_network_gas_share
+- key: industry_chemicals_fertilizers_burner_network_gas_share
   share_group: chemical_fertilizers_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: heat production
@@ -55,12 +51,11 @@
   position: 4
   dependent_on: ''
   slide_key: demand_industry_chemical_fertilizers
-- id: 716
-  key: industry_chemicals_fertilizers_burner_crude_oil_share
+- key: industry_chemicals_fertilizers_burner_crude_oil_share
   share_group: chemical_fertilizers_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: heat production
@@ -69,12 +64,11 @@
   position: 5
   dependent_on: ''
   slide_key: demand_industry_chemical_fertilizers
-- id: 717
-  key: industry_chemicals_fertilizers_burner_coal_share
+- key: industry_chemicals_fertilizers_burner_coal_share
   share_group: chemical_fertilizers_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: heat production
@@ -83,12 +77,11 @@
   position: 7
   dependent_on: ''
   slide_key: demand_industry_chemical_fertilizers
-- id: 718
-  key: industry_chemicals_fertilizers_burner_wood_pellets_share
+- key: industry_chemicals_fertilizers_burner_wood_pellets_share
   share_group: chemical_fertilizers_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: heat production
@@ -97,12 +90,11 @@
   position: 6
   dependent_on: ''
   slide_key: demand_industry_chemical_fertilizers
-- id: 719
-  key: industry_final_demand_for_chemical_fertilizers_steam_hot_water_share
+- key: industry_final_demand_for_chemical_fertilizers_steam_hot_water_share
   share_group: chemical_fertilizers_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: heat production
@@ -111,12 +103,11 @@
   position: 10
   dependent_on: ''
   slide_key: demand_industry_chemical_fertilizers
-- id: 873
-  key: industry_chemicals_fertilizers_steam_methane_reformer_hydrogen_share
+- key: industry_chemicals_fertilizers_steam_methane_reformer_hydrogen_share
   share_group: hydrogen_production
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: hydrogen_production
@@ -125,12 +116,11 @@
   position: 4
   dependent_on: ''
   slide_key: demand_industry_chemical_fertilizers
-- id: 874
-  key: industry_chemicals_fertilizers_hydrogen_network_share
+- key: industry_chemicals_fertilizers_hydrogen_network_share
   share_group: hydrogen_production
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: hydrogen_production
@@ -139,12 +129,11 @@
   position: 5
   dependent_on: ''
   slide_key: demand_industry_chemical_fertilizers
-- id: 877
-  key: industry_chemicals_fertilizers_burner_hydrogen_share
+- key: industry_chemicals_fertilizers_burner_hydrogen_share
   share_group: chemical_fertilizers_heat
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: heat production

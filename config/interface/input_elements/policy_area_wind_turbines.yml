@@ -1,24 +1,22 @@
 ---
-- id: 178
-  key: policy_area_onshore_land
+- key: policy_area_onshore_land
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: km2
   fixed: false
-  interface_group: 
-  command_type: 
-  related_converter: 
+  interface_group:
+  command_type:
+  related_converter:
   position: 1
-  dependent_on: 
+  dependent_on:
   slide_key: policy_area_wind_turbines
-- id: 179
-  key: policy_area_onshore_coast
+- key: policy_area_onshore_coast
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: km
   fixed: false
   interface_group: ''
@@ -27,12 +25,11 @@
   position: 2
   dependent_on: has_coastline
   slide_key: policy_area_wind_turbines
-- id: 233
-  key: policy_area_offshore
+- key: policy_area_offshore
   share_group: ''
   step_value: 1.0
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: km2
   fixed: false
   interface_group: ''

@@ -1,10 +1,9 @@
 ---
-- id: 6
-  key: households_appliances_fridge_freezer_electricity_efficiency
+- key: households_appliances_fridge_freezer_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 2
   dependent_on: ''
   slide_key: demand_households_appliances
-- id: 359
-  key: households_appliances_dishwasher_electricity_efficiency
+- key: households_appliances_dishwasher_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -27,12 +25,11 @@
   position: 1
   dependent_on: ''
   slide_key: demand_households_appliances
-- id: 360
-  key: households_appliances_vacuum_cleaner_electricity_efficiency
+- key: households_appliances_vacuum_cleaner_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -41,12 +38,11 @@
   position: 7
   dependent_on: ''
   slide_key: demand_households_appliances
-- id: 361
-  key: households_appliances_washing_machine_electricity_efficiency
+- key: households_appliances_washing_machine_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -55,12 +51,11 @@
   position: 3
   dependent_on: ''
   slide_key: demand_households_appliances
-- id: 362
-  key: households_appliances_clothes_dryer_electricity_efficiency
+- key: households_appliances_clothes_dryer_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -69,12 +64,11 @@
   position: 4
   dependent_on: ''
   slide_key: demand_households_appliances
-- id: 363
-  key: households_appliances_television_electricity_efficiency
+- key: households_appliances_television_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: ''
@@ -83,31 +77,29 @@
   position: 5
   dependent_on: ''
   slide_key: demand_households_appliances
-- id: 364
-  key: households_appliances_computer_media_electricity_efficiency
+- key: households_appliances_computer_media_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: appliances without label
-  command_type: 
-  related_converter: 
+  command_type:
+  related_converter:
   position: 6
-  dependent_on: 
+  dependent_on:
   slide_key: demand_households_appliances
-- id: 412
-  key: households_appliances_other_electricity_efficiency
+- key: households_appliances_other_electricity_efficiency
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: "%"
   fixed: false
   interface_group: appliances without label
-  command_type: 
-  related_converter: 
+  command_type:
+  related_converter:
   position: 8
-  dependent_on: 
+  dependent_on:
   slide_key: demand_households_appliances

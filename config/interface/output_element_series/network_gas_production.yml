@@ -1,0 +1,73 @@
+---
+- label: network_gas_demand
+  color: "#FF0000"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: true
+  target_line_position: 
+  gquery: network_gas_demand_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: network_gas_production
+  key: network_gas_demand_network_gas_production
+- label: natural_gas_production
+  color: "#A4B0BE"
+  order_by: 2
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: natural_gas_extraction_network_gas_output_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: network_gas_production
+  key: natural_gas_production_network_gas_production
+- label: greengas_production
+  color: "#92B940"
+  order_by: 4
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: greengas_network_gas_output_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: network_gas_production
+  key: greengas_production_network_gas_production
+- label: lng_production
+  color: "#F6E58D"
+  order_by: 5
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lng_network_gas_output_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: network_gas_production
+  key: lng_production_network_gas_production
+- label: network_gas_storage_output
+  color: "#DFE4EA"
+  order_by: 6
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: storage_network_gas_output_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: network_gas_production
+  key: network_gas_storage_output_network_gas_production
+- label: natural_gas_import
+  color: "#666666"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: natural_gas_import_network_gas_output_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: network_gas_production
+  key: natural_gas_import_network_gas_production

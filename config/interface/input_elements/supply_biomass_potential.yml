@@ -1,10 +1,9 @@
 ---
-- id: 960
-  key: max_demand_of_biogenic_waste
+- key: max_demand_of_biogenic_waste
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: PJ
   fixed: false
   interface_group: ''
@@ -13,12 +12,11 @@
   position: 4
   dependent_on: ''
   slide_key: supply_biomass_potential
-- id: 961
-  key: max_demand_of_wet_biomass
+- key: max_demand_of_wet_biomass
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: PJ
   fixed: false
   interface_group: ''
@@ -27,12 +25,11 @@
   position: 1
   dependent_on: ''
   slide_key: supply_biomass_potential
-- id: 962
-  key: max_demand_of_dry_biomass
+- key: max_demand_of_dry_biomass
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: PJ
   fixed: false
   interface_group: ''
@@ -41,12 +38,11 @@
   position: 2
   dependent_on: ''
   slide_key: supply_biomass_potential
-- id: 963
-  key: max_demand_of_oily_biomass
+- key: max_demand_of_oily_biomass
   share_group: ''
   step_value: 0.1
-  draw_to_min: 
-  draw_to_max: 
+  draw_to_min:
+  draw_to_max:
   unit: PJ
   fixed: false
   interface_group: ''

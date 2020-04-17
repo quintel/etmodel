@@ -1,7 +1,7 @@
 #dashboard_popup{class: @constraint.key}
   %h2
     - if @constraint.output_element
-      = t("output_elements.#{@constraint.output_element.key}").html_safe
+      = t("output_elements.#{@constraint.output_element.key}.title").html_safe
     - else
       = t("constraints.#{@constraint.key}.title").html_safe
 

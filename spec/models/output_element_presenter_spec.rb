@@ -27,7 +27,7 @@ RSpec.describe OutputElementPresenter do
     it 'includes the translated name' do
       expect(json[:attributes][:name])
         .to eq(I18n.t(
-          :'output_elements.use_of_final_electricity_demand_in_households'
+          'output_elements.use_of_final_electricity_demand_in_households.title'
         ))
     end
   end

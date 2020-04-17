@@ -6,6 +6,6 @@ module OutputElementsHelper
   #
   # Returns an array.
   def i18n_sorted_output_elements(elements)
-    elements.sort_by { |el| t("output_elements.#{el.key}").downcase }
+    elements.sort_by { |el| t("output_elements.#{el.key}.title").downcase }
   end
 end

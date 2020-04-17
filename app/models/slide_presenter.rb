@@ -52,6 +52,10 @@ class SlidePresenter
   # and short name, the short version is returned.
   def translate_item(namespace, item)
     name = I18n.t("#{namespace}.#{item.key}")
-    name.is_a?(Hash) ? name[:short_name] : name
+    if name.is_a?(Hash)
+      name[:short_name] || name[:title]
+    else
+      name
+    end
   end
 end

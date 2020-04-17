@@ -56,7 +56,7 @@
 
               - slide.sliders.each do |slider|
                 %tr
-                  %th.slider= raw t "input_elements.#{slider.key}"
+                  %th.slider= raw t "input_elements.#{slider.key}.title"
                   - if slider.enum?
                     %td{ colspan: 6 }
 

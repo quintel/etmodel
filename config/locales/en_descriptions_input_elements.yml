@@ -187,7 +187,14 @@ en:
         20% efficiency: 320 Wp <br/>
         21% efficiency: 336 Wp <br/>
         22% efficiency: 352 Wp <br/><br />
-        Please note: This slider does not affect efficiency of solar thermal and CSP"
+        <b>Remark 1:</b> The impact of this slider is different for roof top and ground-mount PV.
+        For roof top PV, you can set the share of roof surface covered with solar panels in the ETM. Increasing efficiency
+        means that the capacity of these solar panels goes up and that more electricity is produced. The number of panels
+        installed remains constant. For ground-mount, you can set the installed capacity in the ETM. Increasing efficiency means
+        that less solar panels are needed to meet this installed capacity. Installed capacity and produced electricity stay the same.<br/><br/>
+        <b>Remark 2:</b> Please note that this slider interacts with the PV cost slider above. If solar panels become more
+        efficient, their price per kW goes down.<br/><br/>
+        <b>Remark 3:</b> This slider does not affect efficiency of solar thermal and CSP (concentrated solar power).<br/>"
     investment_costs_nuclear_nuclear_plant:
       short_content: ''
       content: "This slider sets the height of your assumed investment costs for a

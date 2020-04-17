@@ -150,7 +150,7 @@ class @D3ChartView extends BaseChartView
 
       scope.append("span")
         .text((d) ->
-          d.get('label') || I18n.t("output_element_series.#{d.get('key')}")
+          d.get('label') || I18n.t("output_element_series.labels.#{d.get('key')}")
         )
     )
 

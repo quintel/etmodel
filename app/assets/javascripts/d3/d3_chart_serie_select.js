@@ -3,7 +3,7 @@ var D3ChartSerieSelect = (function () {
   function createOptions(options){
     return options.map(function(option) {
       return '<option value=' + option + '>' +
-      I18n.t("output_element_series." + option) +
+      I18n.t("output_element_series.labels" + option) +
       '</option>';
     });
   }
